@@ -155,7 +155,7 @@ public class SmokeTestParser {
         List<TestcaseParams> testcaseList = new ArrayList<TestcaseParams>();
 
 
-        List<Object> objList = new ArrayList<Object>();
+        /*List<Object> objList = new ArrayList<Object>();
 
         smoketests.getTestCases().stream().forEach(test -> {
 
@@ -201,7 +201,7 @@ public class SmokeTestParser {
                 System.out.println("The object is not a Map.");
             }
 
-        });
+        });*/
         
 
         
