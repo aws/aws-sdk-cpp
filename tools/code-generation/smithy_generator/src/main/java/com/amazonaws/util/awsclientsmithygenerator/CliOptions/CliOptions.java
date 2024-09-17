@@ -18,9 +18,18 @@ public class CliOptions {
             .desc("Service Name to be generated as String")
             .build();
 
+    private static final Option SmithyModelPathOption = Option.builder()
+            .option("sm")
+            .longOpt("smithyModels")
+            .hasArg(true)
+            .required(true)
+            .desc("Path to smithy models")
+            .build();
+
     public static CliOptions BuildFromInput(String[] args) throws ParseException {
         final Options options = new Options();
         options.addOption(SerivceNameOption);
+        options.addOption(SmithyModelPathOption);
         final CommandLineParser parser = new DefaultParser();
         final CommandLine parsed = parser.parse(options, args);
         return new CliOptions(parsed);
@@ -36,9 +45,7 @@ public class CliOptions {
         return this.commandLine.getOptionValue(SerivceNameOption);
     }
 
-    public void PrintHelp() {
-        System.out.println("Could Not Find required args:");
-        Arrays.stream(this.commandLine.getOptions())
-                .forEach(System.out::println);
+    public String GetSmithyModelPath() throws ParseException {
+        return this.commandLine.getOptionValue(SmithyModelPathOption);
     }
 }

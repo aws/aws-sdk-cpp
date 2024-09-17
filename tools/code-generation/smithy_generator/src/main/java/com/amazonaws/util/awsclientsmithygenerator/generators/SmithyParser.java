@@ -22,7 +22,6 @@ import software.amazon.smithy.smoketests.traits.SmokeTestsTrait;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -80,9 +79,8 @@ public class SmithyParser {
     private final File smithyFile;
     private final String serviceName;
 
-    public static SmithyParser BuildFromServiceName(final String serviceName) throws URISyntaxException {
-        URL resource = Thread.currentThread().getContextClassLoader().getResource(RESOURCE_SMITHY_DIR);
-        final Path path = Paths.get(Objects.requireNonNull(resource).toURI());
+    public static SmithyParser BuildFromServiceName(final String serviceName, final String smithyModelPath) throws URISyntaxException {
+        final Path path = Path.of(smithyModelPath);
         try (final Stream<Path> paths = Files.walk(path)) {
             final File smithyFile = paths.filter(file -> file.toString().contains(serviceName))
                     .findFirst()

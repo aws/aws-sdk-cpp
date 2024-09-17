@@ -13,8 +13,8 @@ public class main {
     public static void main(String[] args) {
         try {
             final CliOptions options = CliOptions.BuildFromInput(args);
-            String serviceName = options.GetServiceName();
-            final SmithyParser parser = SmithyParser.BuildFromServiceName(serviceName);
+            final SmithyParser parser = SmithyParser.BuildFromServiceName(options.GetServiceName(),
+                    options.GetSmithyModelPath());
             parser.GenerateTests();
         } catch (Exception e) {
             System.out.println("Failed to generate code: " + e.getMessage());
