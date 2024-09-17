@@ -8,7 +8,6 @@ package com.amazonaws.util.awsclientgenerator;
 import com.amazonaws.util.awsclientgenerator.config.exceptions.GeneratorNotImplementedException;
 import com.amazonaws.util.awsclientgenerator.generators.DirectFromC2jGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.MainGenerator;
-import com.amazonaws.util.awsclientgenerator.generators.SmithyParser;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -31,14 +30,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import com.amazonaws.util.awsclientgenerator.generators.SmokeTestParser;
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
-//import software.amazon.smithy.smoketests.traits.SmokeTestsTrait;
-import software.amazon.smithy.model.shapes.ServiceShape;
-import software.amazon.smithy.aws.traits.auth.SigV4Trait;
-import software.amazon.smithy.aws.traits.auth.SigV4ATrait;
-import software.amazon.smithy.model.traits.HttpBearerAuthTrait;
-
-import software.amazon.smithy.aws.traits.ServiceTrait;
 
 public class main {
 
@@ -107,35 +100,22 @@ public class main {
         return null;
     }
     private static void generateSmokeTests(String serviceName){
-        //use generateSmokeTests
-        //add smithy test parser
-        try {
-            // Explicitly load the ServiceTrait class
-            Class<?> serviceTraitClass = Class.forName("software.amazon.smithy.aws.traits.ServiceTrait");
-            System.out.println("ServiceTrait class loaded successfully: " + serviceTraitClass.getName());
-        } catch (ClassNotFoundException e) {
-            // If the class is not found, log an error
-            System.err.println("ServiceTrait class not found: " + e.getMessage());
-        }
-
         try {
 
             //get project root and find model folder
-            File pomFilePath = findPomXml(new File("").getAbsoluteFile());
-            String directoryPath = pomFilePath.getParentFile().getAbsolutePath() + "/smithySmokeTests";
+            //File pomFilePath = findPomXml(new File("").getAbsoluteFile());
+            //String directoryPath = pomFilePath.getParentFile().getAbsolutePath() + "/smithySmokeTests";
+            
+            String directoryPath = "/workplace/sberas/aws-sdk-cpp/tools/code-generation/generator/smithySmokeTests/smoketest.json";
+            
             Path path = Paths.get(directoryPath).toAbsolutePath();
 
-            // Check if the directory exists
-            if (!Files.exists(path) || !Files.isDirectory(path)) {
-                //throw new RuntimeException("Directory does not exist: " + directoryPath);
-                String currentDirectory = System.getProperty("user.dir");
-                System.err.println("directoryPath: " + directoryPath + " currentDirectory:" + currentDirectory );
-                System.exit(1);
-            }
+
+            String rawJson = readFile( path.toString());
 
             // Call the parse method of SmithyParser
-            SmithyParser parser = new SmithyParser();
-            List<SmithyParser.TestcaseParams> tests = parser.parse(directoryPath);
+            SmokeTestParser parser = new SmokeTestParser();
+            List<SmokeTestParser.TestcaseParams> tests = parser.parse(rawJson, serviceName);
 
             if (tests.size() == 0) {
                 //throw new RuntimeException("Directory does not exist: " + directoryPath);
@@ -176,7 +156,8 @@ public class main {
             generated.writeTo(fileOutputStream);
             System.out.println("ZIP file for smoke tests created at: " + zipfilePath.toAbsolutePath());
             
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             // Print any exception that occurs during parsing
             e.printStackTrace();
         }
@@ -241,9 +222,6 @@ public class main {
             if (argPairs.containsKey(OUTPUT_FILE_NAME) && !argPairs.get(OUTPUT_FILE_NAME).isEmpty()) {
                 outputFileName = argPairs.get(OUTPUT_FILE_NAME);
             }
-            
-            
-            
 
             if (arbitraryJson != null && arbitraryJson.length() > 0) {
                 try {
@@ -257,7 +235,7 @@ public class main {
 
                             componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
 
-                            //generateSmokeTests(serviceName);
+                            generateSmokeTests(serviceName);
                         } else {
                             generated = generateServiceTest(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
                                     licenseText);
