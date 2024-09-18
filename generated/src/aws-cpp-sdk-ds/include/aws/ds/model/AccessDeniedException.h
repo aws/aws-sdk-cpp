@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Client authentication is not available in this region at this
-   * time.</p><p><h3>See Also:</h3>   <a
+   * <p>You do not have sufficient access to perform this action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AccessDeniedException">AWS
    * API Reference</a></p>
    */

@@ -363,9 +363,7 @@ namespace Model
     /**
      * <p>The server-side encryption algorithm used when you store this object in
      * Amazon S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>).</p>  <p>For directory buckets, only
-     * server-side encryption with Amazon S3 managed keys (SSE-S3)
-     * (<code>AES256</code>) is supported.</p> 
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
@@ -426,9 +424,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>If present, indicates the ID of the Key Management Service (KMS) symmetric
-     * encryption customer managed key that was used for the object.</p>  <p>This
-     * functionality is not supported for directory buckets.</p> 
+     * <p>If present, indicates the ID of the KMS key that was used for object
+     * encryption.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
@@ -442,8 +439,7 @@ namespace Model
     ///@{
     /**
      * <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption
-     * with Key Management Service (KMS) keys (SSE-KMS).</p>  <p>This
-     * functionality is not supported for directory buckets.</p> 
+     * with Key Management Service (KMS) keys (SSE-KMS).</p>
      */
     inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }

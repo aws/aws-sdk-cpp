@@ -37,7 +37,12 @@ ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail
     m_estimatedMonthlyOnDemandCostHasBeenSet(false),
     m_estimatedReservationCostForLookbackPeriodHasBeenSet(false),
     m_upfrontCostHasBeenSet(false),
-    m_recurringStandardMonthlyCostHasBeenSet(false)
+    m_recurringStandardMonthlyCostHasBeenSet(false),
+    m_reservedCapacityDetailsHasBeenSet(false),
+    m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet(false),
+    m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet(false),
+    m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet(false),
+    m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet(false)
 {
 }
 
@@ -182,6 +187,41 @@ ReservationPurchaseRecommendationDetail& ReservationPurchaseRecommendationDetail
     m_recurringStandardMonthlyCostHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReservedCapacityDetails"))
+  {
+    m_reservedCapacityDetails = jsonValue.GetObject("ReservedCapacityDetails");
+
+    m_reservedCapacityDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RecommendedNumberOfCapacityUnitsToPurchase"))
+  {
+    m_recommendedNumberOfCapacityUnitsToPurchase = jsonValue.GetString("RecommendedNumberOfCapacityUnitsToPurchase");
+
+    m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MinimumNumberOfCapacityUnitsUsedPerHour"))
+  {
+    m_minimumNumberOfCapacityUnitsUsedPerHour = jsonValue.GetString("MinimumNumberOfCapacityUnitsUsedPerHour");
+
+    m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaximumNumberOfCapacityUnitsUsedPerHour"))
+  {
+    m_maximumNumberOfCapacityUnitsUsedPerHour = jsonValue.GetString("MaximumNumberOfCapacityUnitsUsedPerHour");
+
+    m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AverageNumberOfCapacityUnitsUsedPerHour"))
+  {
+    m_averageNumberOfCapacityUnitsUsedPerHour = jsonValue.GetString("AverageNumberOfCapacityUnitsUsedPerHour");
+
+    m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -300,6 +340,36 @@ JsonValue ReservationPurchaseRecommendationDetail::Jsonize() const
   if(m_recurringStandardMonthlyCostHasBeenSet)
   {
    payload.WithString("RecurringStandardMonthlyCost", m_recurringStandardMonthlyCost);
+
+  }
+
+  if(m_reservedCapacityDetailsHasBeenSet)
+  {
+   payload.WithObject("ReservedCapacityDetails", m_reservedCapacityDetails.Jsonize());
+
+  }
+
+  if(m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet)
+  {
+   payload.WithString("RecommendedNumberOfCapacityUnitsToPurchase", m_recommendedNumberOfCapacityUnitsToPurchase);
+
+  }
+
+  if(m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet)
+  {
+   payload.WithString("MinimumNumberOfCapacityUnitsUsedPerHour", m_minimumNumberOfCapacityUnitsUsedPerHour);
+
+  }
+
+  if(m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet)
+  {
+   payload.WithString("MaximumNumberOfCapacityUnitsUsedPerHour", m_maximumNumberOfCapacityUnitsUsedPerHour);
+
+  }
+
+  if(m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet)
+  {
+   payload.WithString("AverageNumberOfCapacityUnitsUsedPerHour", m_averageNumberOfCapacityUnitsUsedPerHour);
 
   }
 

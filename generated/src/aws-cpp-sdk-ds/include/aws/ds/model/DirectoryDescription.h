@@ -266,7 +266,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The directory size.</p>
+     * <p>The directory type.</p>
      */
     inline const DirectoryType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

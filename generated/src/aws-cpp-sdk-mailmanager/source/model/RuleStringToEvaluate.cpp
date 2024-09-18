@@ -20,7 +20,8 @@ namespace Model
 
 RuleStringToEvaluate::RuleStringToEvaluate() : 
     m_attribute(RuleStringEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
+    m_attributeHasBeenSet(false),
+    m_mimeHeaderAttributeHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,13 @@ RuleStringToEvaluate& RuleStringToEvaluate::operator =(JsonView jsonValue)
     m_attributeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MimeHeaderAttribute"))
+  {
+    m_mimeHeaderAttribute = jsonValue.GetString("MimeHeaderAttribute");
+
+    m_mimeHeaderAttributeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +57,12 @@ JsonValue RuleStringToEvaluate::Jsonize() const
   if(m_attributeHasBeenSet)
   {
    payload.WithString("Attribute", RuleStringEmailAttributeMapper::GetNameForRuleStringEmailAttribute(m_attribute));
+  }
+
+  if(m_mimeHeaderAttributeHasBeenSet)
+  {
+   payload.WithString("MimeHeaderAttribute", m_mimeHeaderAttribute);
+
   }
 
   return payload;

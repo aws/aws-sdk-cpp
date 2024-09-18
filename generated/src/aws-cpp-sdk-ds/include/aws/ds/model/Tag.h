@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Required name of the tag. The string value can be Unicode characters and
      * cannot be prefixed with "aws:". The string can contain only the set of Unicode
-     * letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex:
+     * letters, digits, white-space, '_', '.', '/', '=', '+', '-', ':', '@'(Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>The optional value of the tag. The string value can be Unicode characters.
      * The string can contain only the set of Unicode letters, digits, white-space,
-     * '_', '.', '/', '=', '+', '-' (Java regex:
+     * '_', '.', '/', '=', '+', '-', ':', '@' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }

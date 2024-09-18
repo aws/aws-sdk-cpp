@@ -22,7 +22,8 @@ namespace Model
     Restoring,
     Deleting,
     Deleted,
-    Failed
+    Failed,
+    Updating
   };
 
 namespace DomainControllerStatusMapper
