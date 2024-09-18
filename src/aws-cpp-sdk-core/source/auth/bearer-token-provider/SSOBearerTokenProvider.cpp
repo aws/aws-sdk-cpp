@@ -35,7 +35,7 @@ SSOBearerTokenProvider::SSOBearerTokenProvider(const Aws::String& awsProfile) : 
 {
 }
 
-SSOBearerTokenProvider::SSOBearerTokenProvider(const Aws::String& awsProfile, std::shared_ptr<const Client::ClientConfiguration> config)
+SSOBearerTokenProvider::SSOBearerTokenProvider(const Aws::String& awsProfile, std::shared_ptr<const Aws::Client::ClientConfiguration> config)
     : m_profileToUse(awsProfile),
     m_config(config ? std::move(config) : Aws::MakeShared<Client::ClientConfiguration>(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG)),
     m_lastUpdateAttempt((int64_t)0)

@@ -36,7 +36,7 @@ SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile) : SSO
 {
 }
 
-SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile, std::shared_ptr<const Client::ClientConfiguration> config) :
+SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config) :
     m_profileToUse(profile),
     m_bearerTokenProvider(profile),
     m_config(std::move(config))
