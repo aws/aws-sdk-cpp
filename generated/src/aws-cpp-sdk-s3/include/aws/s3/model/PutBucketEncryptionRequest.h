@@ -53,14 +53,17 @@ namespace Model
     ///@{
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * different key options. By default, all buckets have a default encryption
-     * configuration that uses server-side encryption with Amazon S3 managed keys
-     * (SSE-S3). You can optionally configure default encryption for a bucket by using
-     * server-side encryption with an Amazon Web Services KMS key (SSE-KMS) or a
-     * customer-provided key (SSE-C). For information about the bucket default
-     * encryption feature, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-     * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * different key options.</p> <p> <b>Directory buckets </b> - When you use this
+     * operation with a directory bucket, you must use path-style requests in the
+     * format
+     * <code>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
+     * </code>. Virtual-hosted-style requests aren't supported. Directory bucket names
+     * must be unique in the chosen Availability Zone. Bucket names must also follow
+     * the format <code> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</code> (for
+     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For
+     * information about bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+     * bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
@@ -77,7 +80,8 @@ namespace Model
      * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
      * configuration.</p> <p>For requests made using the Amazon Web Services Command
      * Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated
-     * automatically.</p>
+     * automatically.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
@@ -100,7 +104,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
      * an individual checksum, Amazon S3 ignores any provided
-     * <code>ChecksumAlgorithm</code> parameter.</p>
+     * <code>ChecksumAlgorithm</code> parameter.</p>  <p>For directory buckets,
+     * when you use Amazon Web Services SDKs, <code>CRC32</code> is the default
+     * checksum algorithm that's used for performance.</p> 
      */
     inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
@@ -124,7 +130,10 @@ namespace Model
     /**
      * <p>The account ID of the expected bucket owner. If the account ID that you
      * provide does not match the actual owner of the bucket, the request fails with
-     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p> 
+     * <p>For directory buckets, this header is not supported in this API operation. If
+     * you specify this header, the request fails with the HTTP status code <code>501
+     * Not Implemented</code>.</p> 
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }

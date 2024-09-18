@@ -178,6 +178,21 @@ namespace Model
     inline EcsTaskDetails& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
     inline EcsTaskDetails& WithGroup(const char* value) { SetGroup(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A capacity on which the task is running. For example, <code>Fargate</code>
+     * and <code>EC2</code>.</p>
+     */
+    inline const Aws::String& GetLaunchType() const{ return m_launchType; }
+    inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
+    inline void SetLaunchType(const Aws::String& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+    inline void SetLaunchType(Aws::String&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
+    inline void SetLaunchType(const char* value) { m_launchTypeHasBeenSet = true; m_launchType.assign(value); }
+    inline EcsTaskDetails& WithLaunchType(const Aws::String& value) { SetLaunchType(value); return *this;}
+    inline EcsTaskDetails& WithLaunchType(Aws::String&& value) { SetLaunchType(std::move(value)); return *this;}
+    inline EcsTaskDetails& WithLaunchType(const char* value) { SetLaunchType(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -209,6 +224,9 @@ namespace Model
 
     Aws::String m_group;
     bool m_groupHasBeenSet = false;
+
+    Aws::String m_launchType;
+    bool m_launchTypeHasBeenSet = false;
   };
 
 } // namespace Model

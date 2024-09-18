@@ -16,15 +16,15 @@ namespace Aws
 namespace MailManager
 {
   /**
-   * <p><fullname>AWS SES Mail Manager API</fullname> <p> <a
-   * href="http://aws.amazon.com/ses">AWS SES Mail Manager API</a> contains
-   * operations and data types that comprise the Mail Manager feature of Amazon
-   * Simple Email Service.</p> <p>Mail Manager is a set of Amazon SES email gateway
-   * features designed to help you strengthen your organization's email
-   * infrastructure, simplify email workflow management, and streamline email
-   * compliance control. To learn more, see the <a
+   * <p><fullname>Amazon SES Mail Manager API</fullname> <p>The Amazon SES Mail
+   * Manager API contains operations and data types that comprise the Mail Manager
+   * feature of <a href="http://aws.amazon.com/ses">Amazon Simple Email Service
+   * (SES)</a>.</p> <p>Mail Manager is a set of Amazon SES email gateway features
+   * designed to help you strengthen your organization's email infrastructure,
+   * simplify email workflow management, and streamline email compliance control. To
+   * learn more, see the <a
    * href="https://docs.aws.amazon.com/ses/latest/dg/eb.html">Mail Manager
-   * chapter</a> in the Amazon SES Developer Guide.</p></p>
+   * chapter</a> in the <i>Amazon SES Developer Guide</i>.</p></p>
    */
   class AWS_MAILMANAGER_API MailManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MailManagerClient>
   {
@@ -1239,7 +1239,7 @@ namespace MailManager
         }
 
         /**
-         * <p>&gt;Update attributes of an already provisioned rule set.</p><p><h3>See
+         * <p>Update attributes of an already provisioned rule set.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/UpdateRuleSet">AWS
          * API Reference</a></p>

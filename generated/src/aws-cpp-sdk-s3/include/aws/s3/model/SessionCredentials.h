@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>The established temporary security credentials of the session.</p>  <p>
    * <b>Directory buckets</b> - These session credentials are only supported for the
-   * authentication and authorization of Zonal endpoint APIs on directory
+   * authentication and authorization of Zonal endpoint API operations on directory
    * buckets.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SessionCredentials">AWS
    * API Reference</a></p>

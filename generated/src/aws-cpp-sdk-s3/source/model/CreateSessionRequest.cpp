@@ -21,6 +21,12 @@ CreateSessionRequest::CreateSessionRequest() :
     m_sessionMode(SessionMode::NOT_SET),
     m_sessionModeHasBeenSet(false),
     m_bucketHasBeenSet(false),
+    m_serverSideEncryption(ServerSideEncryption::NOT_SET),
+    m_serverSideEncryptionHasBeenSet(false),
+    m_sSEKMSKeyIdHasBeenSet(false),
+    m_sSEKMSEncryptionContextHasBeenSet(false),
+    m_bucketKeyEnabled(false),
+    m_bucketKeyEnabledHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -78,6 +84,32 @@ Aws::Http::HeaderValueCollection CreateSessionRequest::GetRequestSpecificHeaders
   if(m_sessionModeHasBeenSet && m_sessionMode != SessionMode::NOT_SET)
   {
     headers.emplace("x-amz-create-session-mode", SessionModeMapper::GetNameForSessionMode(m_sessionMode));
+  }
+
+  if(m_serverSideEncryptionHasBeenSet && m_serverSideEncryption != ServerSideEncryption::NOT_SET)
+  {
+    headers.emplace("x-amz-server-side-encryption", ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_serverSideEncryption));
+  }
+
+  if(m_sSEKMSKeyIdHasBeenSet)
+  {
+    ss << m_sSEKMSKeyId;
+    headers.emplace("x-amz-server-side-encryption-aws-kms-key-id",  ss.str());
+    ss.str("");
+  }
+
+  if(m_sSEKMSEncryptionContextHasBeenSet)
+  {
+    ss << m_sSEKMSEncryptionContext;
+    headers.emplace("x-amz-server-side-encryption-context",  ss.str());
+    ss.str("");
+  }
+
+  if(m_bucketKeyEnabledHasBeenSet)
+  {
+    ss << std::boolalpha << m_bucketKeyEnabled;
+    headers.emplace("x-amz-server-side-encryption-bucket-key-enabled", ss.str());
+    ss.str("");
   }
 
   return headers;

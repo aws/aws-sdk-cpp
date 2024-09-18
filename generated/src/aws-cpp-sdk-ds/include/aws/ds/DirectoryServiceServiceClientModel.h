@@ -43,6 +43,7 @@
 #include <aws/ds/model/DescribeClientAuthenticationSettingsResult.h>
 #include <aws/ds/model/DescribeConditionalForwardersResult.h>
 #include <aws/ds/model/DescribeDirectoriesResult.h>
+#include <aws/ds/model/DescribeDirectoryDataAccessResult.h>
 #include <aws/ds/model/DescribeDomainControllersResult.h>
 #include <aws/ds/model/DescribeEventTopicsResult.h>
 #include <aws/ds/model/DescribeLDAPSSettingsResult.h>
@@ -53,10 +54,12 @@
 #include <aws/ds/model/DescribeTrustsResult.h>
 #include <aws/ds/model/DescribeUpdateDirectoryResult.h>
 #include <aws/ds/model/DisableClientAuthenticationResult.h>
+#include <aws/ds/model/DisableDirectoryDataAccessResult.h>
 #include <aws/ds/model/DisableLDAPSResult.h>
 #include <aws/ds/model/DisableRadiusResult.h>
 #include <aws/ds/model/DisableSsoResult.h>
 #include <aws/ds/model/EnableClientAuthenticationResult.h>
+#include <aws/ds/model/EnableDirectoryDataAccessResult.h>
 #include <aws/ds/model/EnableLDAPSResult.h>
 #include <aws/ds/model/EnableRadiusResult.h>
 #include <aws/ds/model/EnableSsoResult.h>
@@ -156,6 +159,7 @@ namespace Aws
       class DescribeClientAuthenticationSettingsRequest;
       class DescribeConditionalForwardersRequest;
       class DescribeDirectoriesRequest;
+      class DescribeDirectoryDataAccessRequest;
       class DescribeDomainControllersRequest;
       class DescribeEventTopicsRequest;
       class DescribeLDAPSSettingsRequest;
@@ -166,10 +170,12 @@ namespace Aws
       class DescribeTrustsRequest;
       class DescribeUpdateDirectoryRequest;
       class DisableClientAuthenticationRequest;
+      class DisableDirectoryDataAccessRequest;
       class DisableLDAPSRequest;
       class DisableRadiusRequest;
       class DisableSsoRequest;
       class EnableClientAuthenticationRequest;
+      class EnableDirectoryDataAccessRequest;
       class EnableLDAPSRequest;
       class EnableRadiusRequest;
       class EnableSsoRequest;
@@ -226,6 +232,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeClientAuthenticationSettingsResult, DirectoryServiceError> DescribeClientAuthenticationSettingsOutcome;
       typedef Aws::Utils::Outcome<DescribeConditionalForwardersResult, DirectoryServiceError> DescribeConditionalForwardersOutcome;
       typedef Aws::Utils::Outcome<DescribeDirectoriesResult, DirectoryServiceError> DescribeDirectoriesOutcome;
+      typedef Aws::Utils::Outcome<DescribeDirectoryDataAccessResult, DirectoryServiceError> DescribeDirectoryDataAccessOutcome;
       typedef Aws::Utils::Outcome<DescribeDomainControllersResult, DirectoryServiceError> DescribeDomainControllersOutcome;
       typedef Aws::Utils::Outcome<DescribeEventTopicsResult, DirectoryServiceError> DescribeEventTopicsOutcome;
       typedef Aws::Utils::Outcome<DescribeLDAPSSettingsResult, DirectoryServiceError> DescribeLDAPSSettingsOutcome;
@@ -236,10 +243,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeTrustsResult, DirectoryServiceError> DescribeTrustsOutcome;
       typedef Aws::Utils::Outcome<DescribeUpdateDirectoryResult, DirectoryServiceError> DescribeUpdateDirectoryOutcome;
       typedef Aws::Utils::Outcome<DisableClientAuthenticationResult, DirectoryServiceError> DisableClientAuthenticationOutcome;
+      typedef Aws::Utils::Outcome<DisableDirectoryDataAccessResult, DirectoryServiceError> DisableDirectoryDataAccessOutcome;
       typedef Aws::Utils::Outcome<DisableLDAPSResult, DirectoryServiceError> DisableLDAPSOutcome;
       typedef Aws::Utils::Outcome<DisableRadiusResult, DirectoryServiceError> DisableRadiusOutcome;
       typedef Aws::Utils::Outcome<DisableSsoResult, DirectoryServiceError> DisableSsoOutcome;
       typedef Aws::Utils::Outcome<EnableClientAuthenticationResult, DirectoryServiceError> EnableClientAuthenticationOutcome;
+      typedef Aws::Utils::Outcome<EnableDirectoryDataAccessResult, DirectoryServiceError> EnableDirectoryDataAccessOutcome;
       typedef Aws::Utils::Outcome<EnableLDAPSResult, DirectoryServiceError> EnableLDAPSOutcome;
       typedef Aws::Utils::Outcome<EnableRadiusResult, DirectoryServiceError> EnableRadiusOutcome;
       typedef Aws::Utils::Outcome<EnableSsoResult, DirectoryServiceError> EnableSsoOutcome;
@@ -296,6 +305,7 @@ namespace Aws
       typedef std::future<DescribeClientAuthenticationSettingsOutcome> DescribeClientAuthenticationSettingsOutcomeCallable;
       typedef std::future<DescribeConditionalForwardersOutcome> DescribeConditionalForwardersOutcomeCallable;
       typedef std::future<DescribeDirectoriesOutcome> DescribeDirectoriesOutcomeCallable;
+      typedef std::future<DescribeDirectoryDataAccessOutcome> DescribeDirectoryDataAccessOutcomeCallable;
       typedef std::future<DescribeDomainControllersOutcome> DescribeDomainControllersOutcomeCallable;
       typedef std::future<DescribeEventTopicsOutcome> DescribeEventTopicsOutcomeCallable;
       typedef std::future<DescribeLDAPSSettingsOutcome> DescribeLDAPSSettingsOutcomeCallable;
@@ -306,10 +316,12 @@ namespace Aws
       typedef std::future<DescribeTrustsOutcome> DescribeTrustsOutcomeCallable;
       typedef std::future<DescribeUpdateDirectoryOutcome> DescribeUpdateDirectoryOutcomeCallable;
       typedef std::future<DisableClientAuthenticationOutcome> DisableClientAuthenticationOutcomeCallable;
+      typedef std::future<DisableDirectoryDataAccessOutcome> DisableDirectoryDataAccessOutcomeCallable;
       typedef std::future<DisableLDAPSOutcome> DisableLDAPSOutcomeCallable;
       typedef std::future<DisableRadiusOutcome> DisableRadiusOutcomeCallable;
       typedef std::future<DisableSsoOutcome> DisableSsoOutcomeCallable;
       typedef std::future<EnableClientAuthenticationOutcome> EnableClientAuthenticationOutcomeCallable;
+      typedef std::future<EnableDirectoryDataAccessOutcome> EnableDirectoryDataAccessOutcomeCallable;
       typedef std::future<EnableLDAPSOutcome> EnableLDAPSOutcomeCallable;
       typedef std::future<EnableRadiusOutcome> EnableRadiusOutcomeCallable;
       typedef std::future<EnableSsoOutcome> EnableSsoOutcomeCallable;
@@ -369,6 +381,7 @@ namespace Aws
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeClientAuthenticationSettingsRequest&, const Model::DescribeClientAuthenticationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientAuthenticationSettingsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeConditionalForwardersRequest&, const Model::DescribeConditionalForwardersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConditionalForwardersResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeDirectoriesRequest&, const Model::DescribeDirectoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDirectoriesResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeDirectoryDataAccessRequest&, const Model::DescribeDirectoryDataAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDirectoryDataAccessResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeDomainControllersRequest&, const Model::DescribeDomainControllersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainControllersResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeEventTopicsRequest&, const Model::DescribeEventTopicsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventTopicsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeLDAPSSettingsRequest&, const Model::DescribeLDAPSSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLDAPSSettingsResponseReceivedHandler;
@@ -379,10 +392,12 @@ namespace Aws
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeTrustsRequest&, const Model::DescribeTrustsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeUpdateDirectoryRequest&, const Model::DescribeUpdateDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateDirectoryResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableClientAuthenticationRequest&, const Model::DisableClientAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableClientAuthenticationResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::DisableDirectoryDataAccessRequest&, const Model::DisableDirectoryDataAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableDirectoryDataAccessResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableLDAPSRequest&, const Model::DisableLDAPSOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableLDAPSResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableRadiusRequest&, const Model::DisableRadiusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableRadiusResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableSsoRequest&, const Model::DisableSsoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSsoResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::EnableClientAuthenticationRequest&, const Model::EnableClientAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableClientAuthenticationResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::EnableDirectoryDataAccessRequest&, const Model::EnableDirectoryDataAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableDirectoryDataAccessResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::EnableLDAPSRequest&, const Model::EnableLDAPSOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableLDAPSResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::EnableRadiusRequest&, const Model::EnableRadiusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableRadiusResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::EnableSsoRequest&, const Model::EnableSsoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSsoResponseReceivedHandler;

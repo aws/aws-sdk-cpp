@@ -26,7 +26,8 @@ namespace Model
     RestoreFailed,
     Deleting,
     Deleted,
-    Failed
+    Failed,
+    Updating
   };
 
 namespace DirectoryStageMapper

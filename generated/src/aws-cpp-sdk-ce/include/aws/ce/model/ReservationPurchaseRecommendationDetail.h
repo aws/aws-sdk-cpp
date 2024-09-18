@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ce/model/InstanceDetails.h>
+#include <aws/ce/model/ReservedCapacityDetails.h>
 #include <utility>
 
 namespace Aws
@@ -194,8 +195,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The average utilization of your instances. Amazon Web Services uses this to
-     * calculate your recommended reservation purchases.</p>
+     * <p>The average utilization of your recommendations. Amazon Web Services uses
+     * this to calculate your recommended reservation purchases.</p>
      */
     inline const Aws::String& GetAverageUtilization() const{ return m_averageUtilization; }
     inline bool AverageUtilizationHasBeenSet() const { return m_averageUtilizationHasBeenSet; }
@@ -209,8 +210,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>How long Amazon Web Services estimates that it takes for this instance to
-     * start saving you money, in months.</p>
+     * <p>How long Amazon Web Services estimates that it takes for this recommendation
+     * to start saving you money, in months.</p>
      */
     inline const Aws::String& GetEstimatedBreakEvenInMonths() const{ return m_estimatedBreakEvenInMonths; }
     inline bool EstimatedBreakEvenInMonthsHasBeenSet() const { return m_estimatedBreakEvenInMonthsHasBeenSet; }
@@ -225,7 +226,7 @@ namespace Model
     ///@{
     /**
      * <p>The currency code that Amazon Web Services used to calculate the costs for
-     * this instance.</p>
+     * this recommendation.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
@@ -299,7 +300,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>How much purchasing this instance costs you upfront.</p>
+     * <p>How much purchasing this recommendation costs you upfront.</p>
      */
     inline const Aws::String& GetUpfrontCost() const{ return m_upfrontCost; }
     inline bool UpfrontCostHasBeenSet() const { return m_upfrontCostHasBeenSet; }
@@ -313,7 +314,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>How much purchasing this instance costs you on a monthly basis.</p>
+     * <p>How much purchasing this recommendation costs you on a monthly basis.</p>
      */
     inline const Aws::String& GetRecurringStandardMonthlyCost() const{ return m_recurringStandardMonthlyCost; }
     inline bool RecurringStandardMonthlyCostHasBeenSet() const { return m_recurringStandardMonthlyCostHasBeenSet; }
@@ -323,6 +324,82 @@ namespace Model
     inline ReservationPurchaseRecommendationDetail& WithRecurringStandardMonthlyCost(const Aws::String& value) { SetRecurringStandardMonthlyCost(value); return *this;}
     inline ReservationPurchaseRecommendationDetail& WithRecurringStandardMonthlyCost(Aws::String&& value) { SetRecurringStandardMonthlyCost(std::move(value)); return *this;}
     inline ReservationPurchaseRecommendationDetail& WithRecurringStandardMonthlyCost(const char* value) { SetRecurringStandardMonthlyCost(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Details about the reservations that Amazon Web Services recommends that you
+     * purchase.</p>
+     */
+    inline const ReservedCapacityDetails& GetReservedCapacityDetails() const{ return m_reservedCapacityDetails; }
+    inline bool ReservedCapacityDetailsHasBeenSet() const { return m_reservedCapacityDetailsHasBeenSet; }
+    inline void SetReservedCapacityDetails(const ReservedCapacityDetails& value) { m_reservedCapacityDetailsHasBeenSet = true; m_reservedCapacityDetails = value; }
+    inline void SetReservedCapacityDetails(ReservedCapacityDetails&& value) { m_reservedCapacityDetailsHasBeenSet = true; m_reservedCapacityDetails = std::move(value); }
+    inline ReservationPurchaseRecommendationDetail& WithReservedCapacityDetails(const ReservedCapacityDetails& value) { SetReservedCapacityDetails(value); return *this;}
+    inline ReservationPurchaseRecommendationDetail& WithReservedCapacityDetails(ReservedCapacityDetails&& value) { SetReservedCapacityDetails(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of reserved capacity units that Amazon Web Services recommends
+     * that you purchase.</p>
+     */
+    inline const Aws::String& GetRecommendedNumberOfCapacityUnitsToPurchase() const{ return m_recommendedNumberOfCapacityUnitsToPurchase; }
+    inline bool RecommendedNumberOfCapacityUnitsToPurchaseHasBeenSet() const { return m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet; }
+    inline void SetRecommendedNumberOfCapacityUnitsToPurchase(const Aws::String& value) { m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = true; m_recommendedNumberOfCapacityUnitsToPurchase = value; }
+    inline void SetRecommendedNumberOfCapacityUnitsToPurchase(Aws::String&& value) { m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = true; m_recommendedNumberOfCapacityUnitsToPurchase = std::move(value); }
+    inline void SetRecommendedNumberOfCapacityUnitsToPurchase(const char* value) { m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = true; m_recommendedNumberOfCapacityUnitsToPurchase.assign(value); }
+    inline ReservationPurchaseRecommendationDetail& WithRecommendedNumberOfCapacityUnitsToPurchase(const Aws::String& value) { SetRecommendedNumberOfCapacityUnitsToPurchase(value); return *this;}
+    inline ReservationPurchaseRecommendationDetail& WithRecommendedNumberOfCapacityUnitsToPurchase(Aws::String&& value) { SetRecommendedNumberOfCapacityUnitsToPurchase(std::move(value)); return *this;}
+    inline ReservationPurchaseRecommendationDetail& WithRecommendedNumberOfCapacityUnitsToPurchase(const char* value) { SetRecommendedNumberOfCapacityUnitsToPurchase(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The minimum number of provisioned capacity units that you used in an hour
+     * during the historical period. Amazon Web Services uses this to calculate your
+     * recommended reservation purchases.</p>
+     */
+    inline const Aws::String& GetMinimumNumberOfCapacityUnitsUsedPerHour() const{ return m_minimumNumberOfCapacityUnitsUsedPerHour; }
+    inline bool MinimumNumberOfCapacityUnitsUsedPerHourHasBeenSet() const { return m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet; }
+    inline void SetMinimumNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_minimumNumberOfCapacityUnitsUsedPerHour = value; }
+    inline void SetMinimumNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_minimumNumberOfCapacityUnitsUsedPerHour = std::move(value); }
+    inline void SetMinimumNumberOfCapacityUnitsUsedPerHour(const char* value) { m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_minimumNumberOfCapacityUnitsUsedPerHour.assign(value); }
+    inline ReservationPurchaseRecommendationDetail& WithMinimumNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { SetMinimumNumberOfCapacityUnitsUsedPerHour(value); return *this;}
+    inline ReservationPurchaseRecommendationDetail& WithMinimumNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { SetMinimumNumberOfCapacityUnitsUsedPerHour(std::move(value)); return *this;}
+    inline ReservationPurchaseRecommendationDetail& WithMinimumNumberOfCapacityUnitsUsedPerHour(const char* value) { SetMinimumNumberOfCapacityUnitsUsedPerHour(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of provisioned capacity units that you used in an hour
+     * during the historical period. Amazon Web Services uses this to calculate your
+     * recommended reservation purchases.</p>
+     */
+    inline const Aws::String& GetMaximumNumberOfCapacityUnitsUsedPerHour() const{ return m_maximumNumberOfCapacityUnitsUsedPerHour; }
+    inline bool MaximumNumberOfCapacityUnitsUsedPerHourHasBeenSet() const { return m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet; }
+    inline void SetMaximumNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_maximumNumberOfCapacityUnitsUsedPerHour = value; }
+    inline void SetMaximumNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_maximumNumberOfCapacityUnitsUsedPerHour = std::move(value); }
+    inline void SetMaximumNumberOfCapacityUnitsUsedPerHour(const char* value) { m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_maximumNumberOfCapacityUnitsUsedPerHour.assign(value); }
+    inline ReservationPurchaseRecommendationDetail& WithMaximumNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { SetMaximumNumberOfCapacityUnitsUsedPerHour(value); return *this;}
+    inline ReservationPurchaseRecommendationDetail& WithMaximumNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { SetMaximumNumberOfCapacityUnitsUsedPerHour(std::move(value)); return *this;}
+    inline ReservationPurchaseRecommendationDetail& WithMaximumNumberOfCapacityUnitsUsedPerHour(const char* value) { SetMaximumNumberOfCapacityUnitsUsedPerHour(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The average number of provisioned capacity units that you used in an hour
+     * during the historical period. Amazon Web Services uses this to calculate your
+     * recommended reservation purchases.</p>
+     */
+    inline const Aws::String& GetAverageNumberOfCapacityUnitsUsedPerHour() const{ return m_averageNumberOfCapacityUnitsUsedPerHour; }
+    inline bool AverageNumberOfCapacityUnitsUsedPerHourHasBeenSet() const { return m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet; }
+    inline void SetAverageNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_averageNumberOfCapacityUnitsUsedPerHour = value; }
+    inline void SetAverageNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_averageNumberOfCapacityUnitsUsedPerHour = std::move(value); }
+    inline void SetAverageNumberOfCapacityUnitsUsedPerHour(const char* value) { m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet = true; m_averageNumberOfCapacityUnitsUsedPerHour.assign(value); }
+    inline ReservationPurchaseRecommendationDetail& WithAverageNumberOfCapacityUnitsUsedPerHour(const Aws::String& value) { SetAverageNumberOfCapacityUnitsUsedPerHour(value); return *this;}
+    inline ReservationPurchaseRecommendationDetail& WithAverageNumberOfCapacityUnitsUsedPerHour(Aws::String&& value) { SetAverageNumberOfCapacityUnitsUsedPerHour(std::move(value)); return *this;}
+    inline ReservationPurchaseRecommendationDetail& WithAverageNumberOfCapacityUnitsUsedPerHour(const char* value) { SetAverageNumberOfCapacityUnitsUsedPerHour(value); return *this;}
     ///@}
   private:
 
@@ -382,6 +459,21 @@ namespace Model
 
     Aws::String m_recurringStandardMonthlyCost;
     bool m_recurringStandardMonthlyCostHasBeenSet = false;
+
+    ReservedCapacityDetails m_reservedCapacityDetails;
+    bool m_reservedCapacityDetailsHasBeenSet = false;
+
+    Aws::String m_recommendedNumberOfCapacityUnitsToPurchase;
+    bool m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = false;
+
+    Aws::String m_minimumNumberOfCapacityUnitsUsedPerHour;
+    bool m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = false;
+
+    Aws::String m_maximumNumberOfCapacityUnitsUsedPerHour;
+    bool m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = false;
+
+    Aws::String m_averageNumberOfCapacityUnitsUsedPerHour;
+    bool m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet = false;
   };
 
 } // namespace Model

@@ -82,7 +82,7 @@ namespace Model
     ///@{
     /**
      * <p>The maximum number of times that communication with the RADIUS server is
-     * attempted.</p>
+     * retried after the initial attempt.</p>
      */
     inline int GetRadiusRetries() const{ return m_radiusRetries; }
     inline bool RadiusRetriesHasBeenSet() const { return m_radiusRetriesHasBeenSet; }

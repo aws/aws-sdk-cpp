@@ -51,8 +51,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of client authentication to disable. Currently, only the parameter,
-     * <code>SmartCard</code> is supported.</p>
+     * <p>The type of client authentication to disable. Currently the only parameter
+     * <code>"SmartCard"</code> is supported.</p>
      */
     inline const ClientAuthenticationType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

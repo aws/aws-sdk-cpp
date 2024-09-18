@@ -80,8 +80,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The trust password. The must be the same password that was used when creating
-     * the trust relationship on the external domain.</p>
+     * <p>The trust password. The trust password must be the same password that was
+     * used when creating the trust relationship on the external domain.</p>
      */
     inline const Aws::String& GetTrustPassword() const{ return m_trustPassword; }
     inline bool TrustPasswordHasBeenSet() const { return m_trustPasswordHasBeenSet; }

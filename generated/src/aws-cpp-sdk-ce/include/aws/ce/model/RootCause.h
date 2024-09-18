@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>The combination of Amazon Web Service, linked account, linked account name,
-   * Region, and usage type where a cost anomaly is observed. The linked account name
-   * will only be available when the account name can be identified.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The combination of Amazon Web Servicesservice, linked account, linked account
+   * name, Region, and usage type where a cost anomaly is observed. The linked
+   * account name will only be available when the account name can be
+   * identified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RootCause">AWS API
    * Reference</a></p>
    */
@@ -42,7 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Service name that's associated with the cost anomaly. </p>
+     * <p>The Amazon Web Servicesservice name that's associated with the cost anomaly.
+     * </p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }

@@ -87,8 +87,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The dimension for the anomaly (for example, an Amazon Web Service in a
-     * service monitor). </p>
+     * <p>The dimension for the anomaly (for example, an Amazon Web Servicesservice in
+     * a service monitor). </p>
      */
     inline const Aws::String& GetDimensionValue() const{ return m_dimensionValue; }
     inline bool DimensionValueHasBeenSet() const { return m_dimensionValueHasBeenSet; }

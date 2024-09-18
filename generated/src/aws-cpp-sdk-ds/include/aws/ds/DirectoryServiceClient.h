@@ -807,6 +807,32 @@ namespace DirectoryService
         }
 
         /**
+         * <p>Obtains status of directory data access enablement through the Directory
+         * Service Data API for the specified directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectoryDataAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDirectoryDataAccessOutcome DescribeDirectoryDataAccess(const Model::DescribeDirectoryDataAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDirectoryDataAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDirectoryDataAccessRequestT = Model::DescribeDirectoryDataAccessRequest>
+        Model::DescribeDirectoryDataAccessOutcomeCallable DescribeDirectoryDataAccessCallable(const DescribeDirectoryDataAccessRequestT& request) const
+        {
+            return SubmitCallable(&DirectoryServiceClient::DescribeDirectoryDataAccess, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDirectoryDataAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDirectoryDataAccessRequestT = Model::DescribeDirectoryDataAccessRequest>
+        void DescribeDirectoryDataAccessAsync(const DescribeDirectoryDataAccessRequestT& request, const DescribeDirectoryDataAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DirectoryServiceClient::DescribeDirectoryDataAccess, request, handler, context);
+        }
+
+        /**
          * <p>Provides information about any domain controllers in your
          * directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers">AWS
@@ -1076,6 +1102,32 @@ namespace DirectoryService
         }
 
         /**
+         * <p>Deactivates access to directory data via the Directory Service Data API for
+         * the specified directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableDirectoryDataAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableDirectoryDataAccessOutcome DisableDirectoryDataAccess(const Model::DisableDirectoryDataAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableDirectoryDataAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableDirectoryDataAccessRequestT = Model::DisableDirectoryDataAccessRequest>
+        Model::DisableDirectoryDataAccessOutcomeCallable DisableDirectoryDataAccessCallable(const DisableDirectoryDataAccessRequestT& request) const
+        {
+            return SubmitCallable(&DirectoryServiceClient::DisableDirectoryDataAccess, request);
+        }
+
+        /**
+         * An Async wrapper for DisableDirectoryDataAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableDirectoryDataAccessRequestT = Model::DisableDirectoryDataAccessRequest>
+        void DisableDirectoryDataAccessAsync(const DisableDirectoryDataAccessRequestT& request, const DisableDirectoryDataAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DirectoryServiceClient::DisableDirectoryDataAccess, request, handler, context);
+        }
+
+        /**
          * <p>Deactivates LDAP secure calls for the specified directory.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableLDAPS">AWS API
@@ -1177,6 +1229,32 @@ namespace DirectoryService
         void EnableClientAuthenticationAsync(const EnableClientAuthenticationRequestT& request, const EnableClientAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DirectoryServiceClient::EnableClientAuthentication, request, handler, context);
+        }
+
+        /**
+         * <p>Enables access to directory data via the Directory Service Data API for the
+         * specified directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableDirectoryDataAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableDirectoryDataAccessOutcome EnableDirectoryDataAccess(const Model::EnableDirectoryDataAccessRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableDirectoryDataAccess that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableDirectoryDataAccessRequestT = Model::EnableDirectoryDataAccessRequest>
+        Model::EnableDirectoryDataAccessOutcomeCallable EnableDirectoryDataAccessCallable(const EnableDirectoryDataAccessRequestT& request) const
+        {
+            return SubmitCallable(&DirectoryServiceClient::EnableDirectoryDataAccess, request);
+        }
+
+        /**
+         * An Async wrapper for EnableDirectoryDataAccess that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableDirectoryDataAccessRequestT = Model::EnableDirectoryDataAccessRequest>
+        void EnableDirectoryDataAccessAsync(const EnableDirectoryDataAccessRequestT& request, const EnableDirectoryDataAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DirectoryServiceClient::EnableDirectoryDataAccess, request, handler, context);
         }
 
         /**
@@ -1602,9 +1680,10 @@ namespace DirectoryService
 
         /**
          * <p>Resets the password for any user in your Managed Microsoft AD or Simple AD
-         * directory.</p> <p>You can reset the password for any user in your directory with
-         * the following exceptions:</p> <ul> <li> <p>For Simple AD, you cannot reset the
-         * password for any user that is a member of either the <b>Domain Admins</b> or
+         * directory. Disabled users will become enabled and can be authenticated following
+         * the API call.</p> <p>You can reset the password for any user in your directory
+         * with the following exceptions:</p> <ul> <li> <p>For Simple AD, you cannot reset
+         * the password for any user that is a member of either the <b>Domain Admins</b> or
          * <b>Enterprise Admins</b> group except for the administrator user.</p> </li> <li>
          * <p>For Managed Microsoft AD, you can only reset the password for a user that is
          * in an OU based off of the NetBIOS name that you typed when you created your
