@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import lombok.Data;
+import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jShape;
 
 @Data
 public class SmokeTestDocument {

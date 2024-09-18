@@ -6,6 +6,13 @@
 package com.amazonaws.util.awsclientgenerator;
 
 import com.amazonaws.util.awsclientgenerator.config.exceptions.GeneratorNotImplementedException;
+import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jServiceModel;
+import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jShape;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointParameterValue;
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointParameterValueDeserializer;
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointTestParamsDeserializer;
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointTests;
 import com.amazonaws.util.awsclientgenerator.generators.DirectFromC2jGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.MainGenerator;
 
@@ -32,6 +39,10 @@ import java.nio.file.Paths;
 
 import com.amazonaws.util.awsclientgenerator.generators.SmokeTestParser;
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
+import com.amazonaws.util.awsclientgenerator.transform.C2jModelToGeneratorModelTransformer;
 
 public class main {
 
@@ -99,14 +110,14 @@ public class main {
 
         return null;
     }
-    private static void generateSmokeTests(String serviceName){
+    private static void generateSmokeTests(String serviceName, Map<String, Shape> shapeMap){
         try {
 
             //get project root and find model folder
             //File pomFilePath = findPomXml(new File("").getAbsoluteFile());
             //String directoryPath = pomFilePath.getParentFile().getAbsolutePath() + "/smithySmokeTests";
             
-            String directoryPath = "/workplace/sberas/aws-sdk-cpp/tools/code-generation/generator/smithySmokeTests/smoketest.json";
+            String directoryPath = "/Users/sberas/workplace/aws-sdk-cpp/tools/code-generation/generator/smithySmokeTests/smoketest.json";
             
             Path path = Paths.get(directoryPath).toAbsolutePath();
 
@@ -114,7 +125,7 @@ public class main {
             String rawJson = readFile( path.toString());
 
             // Call the parse method of SmithyParser
-            SmokeTestParser parser = new SmokeTestParser();
+            SmokeTestParser parser = new SmokeTestParser(shapeMap);
             List<SmokeTestParser.TestcaseParams> tests = parser.parse(rawJson, serviceName);
 
             if (tests.size() == 0) {
@@ -235,7 +246,15 @@ public class main {
 
                             componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
 
-                            generateSmokeTests(serviceName);
+
+                            GsonBuilder gsonBuilder = new GsonBuilder();
+                            Gson gson = gsonBuilder.create();
+                            C2jServiceModel c2jServiceModel = gson.fromJson(arbitraryJson, C2jServiceModel.class);
+                            ServiceModel serviceModel = new C2jModelToGeneratorModelTransformer(c2jServiceModel, true).convert();
+
+
+
+                            generateSmokeTests(serviceName, serviceModel.getShapes());
                         } else {
                             generated = generateServiceTest(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
                                     licenseText);

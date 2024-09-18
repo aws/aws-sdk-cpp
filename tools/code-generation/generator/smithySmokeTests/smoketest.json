@@ -2,11 +2,11 @@
     "version": 2,
     "testCases": [
         {
-            "id": "ListTablesSuccess",
-            "operationName": "ListTables",
+            "id": "BatchExecuteStatementSuccess",
+            "operationName": "BatchExecuteStatement",
             "input": {
-                "Limit": 1,
-                "ExclusiveStartTableName": "test"
+                "Statements": [{"Statement": "test query" , "Parameters":[ {"S": "testval"} ] }],
+                "ReturnConsumedCapacity": "test"
             },
             "expectation": {
                 "success": {}
