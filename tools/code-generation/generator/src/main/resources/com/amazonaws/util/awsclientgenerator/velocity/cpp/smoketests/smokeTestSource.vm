@@ -20,7 +20,7 @@
 //client header
 \#include <aws/$client.toLowerCase()/${client}Client.h>
 #foreach($test in $tests)
-#include <aws/$test.clientName.toLowerCase()/model/${test.operationName}Request.h>
+\#include <aws/$test.clientName.toLowerCase()/model/${test.operationName}Request.h>
 #end
 \#include <utility>
 \#include <algorithm>
@@ -48,17 +48,19 @@ TEST_F(${client}SmokeTestSuite, $test.testcaseName )
 #if (($test.auth == "sigv4") || ($test.auth == "sigv4a"))
     auto clientSp = Aws::MakeShared<${client}Client>(ALLOCATION_TAG, clientConfiguration);
 #end
-    $test.inputShapeName input;
     //populate input params
-#foreach ($param in $test.paramsMap.entrySet())
-#if ($param.getValue().isStringNode())
-    input.Set${param.getKey()}($param.getValue().asStringNode().get().getValue() );
-#elif ($param.getValue().isNumberNode())
-    input.Set${param.getKey()}($param.getValue().asNumberNode().get().getValue() );
-#elif ($param.getValue().isBooleanNode())
-    input.Set${param.getKey()}($param.getValue().asBooleanNode().get().getValue() );
+    //Prepare getters
+    {
+#foreach ($param in $test.functionMap.entrySet())
+    $param.getValue()
 #end
+    }
+    //Prepare Request
+#set($lines = $test.functionBlock.split("\n"))
+#foreach($line in $lines)
+    $line
 #end
+
     auto outcome = clientSp->${test.operationName}(input);
 #if ($test.expectSuccess)
     EXPECT_TRUE( outcome.IsSuccess());

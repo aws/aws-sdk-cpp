@@ -110,63 +110,31 @@ public class main {
 
         return null;
     }
-    private static void generateSmokeTests(String serviceName, Map<String, Shape> shapeMap){
+    private static void generateSmokeTests(String serviceName,
+                                           ServiceModel serviceModel,
+                                           String outputLocation,
+                                           String inputFileLocation
+    ){
         try {
 
-            //get project root and find model folder
-            //File pomFilePath = findPomXml(new File("").getAbsoluteFile());
-            //String directoryPath = pomFilePath.getParentFile().getAbsolutePath() + "/smithySmokeTests";
-            
-            String directoryPath = "/Users/sberas/workplace/aws-sdk-cpp/tools/code-generation/generator/smithySmokeTests/smoketest.json";
-            
-            Path path = Paths.get(directoryPath).toAbsolutePath();
-
-
-            String rawJson = readFile( path.toString());
-
             // Call the parse method of SmithyParser
-            SmokeTestParser parser = new SmokeTestParser(shapeMap);
-            List<SmokeTestParser.TestcaseParams> tests = parser.parse(rawJson, serviceName);
+            SmokeTestParser parser = new SmokeTestParser(serviceModel, serviceName, outputLocation);
+            List<SmokeTestParser.TestcaseParams> tests = parser.parse(inputFileLocation);
 
-            if (tests.size() == 0) {
+            if (tests.isEmpty()) {
                 //throw new RuntimeException("Directory does not exist: " + directoryPath);
                 String currentDirectory = System.getProperty("user.dir");
-                System.err.println("no tests parsed directoryPath: " + directoryPath + " currentDirectory:" + currentDirectory );
+                System.err.println("no tests parsed directoryPath: " + inputFileLocation + " currentDirectory:" + currentDirectory );
                 System.exit(1);
             }
-
-            SdkFileEntry files[] = new SdkFileEntry[2];
-
-            //String clientName = tests.stream().findFirst().get().getClientName();
 
             //validate if same service name is same as client
             //this is the relative location from the folder of extraction
             String fileName = String.format("%sSmokeTests.cpp", serviceName);
-            files[0] =  parser.generateTestSourceFile( tests, fileName);
+            parser.generateTestSourceFile( tests, fileName);
             
             fileName = "CMakeLists.txt";
-            files[1] =  parser.generateTestCmakeFile(serviceName, fileName);
-
-            //System.out.println(files[0].sdkFile);
-            
-            String componentOutputName = String.format("%s-smoke-tests",serviceName);
-            Path zipfilePath = Paths.get("/tmp/smithySmokeTests", componentOutputName + ".zip");
-            // Ensure the parent directory (tmp) exists
-            Files.createDirectories(zipfilePath.getParent());
-
-            ByteArrayOutputStream generated = MainGenerator.compressFilesToZip(files,componentOutputName);
-            // Check if file exists before creating
-            if (Files.exists(zipfilePath)) {
-                System.out.println("File already exists: " + zipfilePath);
-            } else {
-                System.out.println("File does not exist, creating new file...");
-                Files.createFile(zipfilePath);
-            }
-            
-            FileOutputStream fileOutputStream = new FileOutputStream(zipfilePath.toFile());
-            generated.writeTo(fileOutputStream);
-            System.out.println("ZIP file for smoke tests created at: " + zipfilePath.toAbsolutePath());
-            
+            parser.generateTestCmakeFile(fileName);
         } 
         catch (Exception e) {
             // Print any exception that occurs during parsing
@@ -246,15 +214,15 @@ public class main {
 
                             componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
 
-
+                            //the service model from c2j is already generated, make use of that
                             GsonBuilder gsonBuilder = new GsonBuilder();
                             Gson gson = gsonBuilder.create();
                             C2jServiceModel c2jServiceModel = gson.fromJson(arbitraryJson, C2jServiceModel.class);
                             ServiceModel serviceModel = new C2jModelToGeneratorModelTransformer(c2jServiceModel, true).convert();
-
-
-
-                            generateSmokeTests(serviceName, serviceModel.getShapes());
+                            generateSmokeTests(serviceName,
+                                    serviceModel ,
+                                    String.format("/Users/sberas/workplace/aws-sdk-cpp/tools/code-generation/generated/smoke-tests/%s/",serviceName ) ,
+                                    "/Users/sberas/workplace/aws-sdk-cpp/tools/code-generation/generator/smithySmokeTests/smoketest.json");
                         } else {
                             generated = generateServiceTest(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
                                     licenseText);
