@@ -36,20 +36,14 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
     m_initialized(false)
 {
     // check environment variables
-    Aws::String tmpRegion = Aws::Environment::GetEnv("AWS_DEFAULT_REGION");
     m_roleArn = Aws::Environment::GetEnv("AWS_ROLE_ARN");
     m_tokenFile = Aws::Environment::GetEnv("AWS_WEB_IDENTITY_TOKEN_FILE");
     m_sessionName = Aws::Environment::GetEnv("AWS_ROLE_SESSION_NAME");
 
     // check profile_config if either m_roleArn or m_tokenFile is not loaded from environment variable
-    // region source is not enforced, but we need it to construct sts endpoint, if we can't find from environment, we should check if it's set in config file.
-    if (m_roleArn.empty() || m_tokenFile.empty() || tmpRegion.empty())
+    if (m_roleArn.empty() || m_tokenFile.empty())
     {
         auto profile = Aws::Config::GetCachedConfigProfile(Aws::Auth::GetConfigProfileName());
-        if (tmpRegion.empty())
-        {
-            tmpRegion = profile.GetRegion();
-        }
         // If either of these two were not found from environment, use whatever found for all three in config file
         if (m_roleArn.empty() || m_tokenFile.empty())
         {
@@ -79,15 +73,6 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
         AWS_LOGSTREAM_DEBUG(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Resolved role_arn from profile_config or environment variable to be " << m_roleArn);
     }
 
-    if (tmpRegion.empty())
-    {
-        tmpRegion = Aws::Region::US_EAST_1;
-    }
-    else
-    {
-        AWS_LOGSTREAM_DEBUG(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Resolved region from profile_config or environment variable to be " << tmpRegion);
-    }
-
     if (m_sessionName.empty())
     {
         m_sessionName = Aws::Utils::UUID::PseudoRandomUUID();
@@ -98,7 +83,6 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
     }
 
     config.scheme = Aws::Http::Scheme::HTTPS;
-    config.region = tmpRegion;
 
     if (config.retryStrategy == nullptr) {
         Aws::Vector<Aws::String> retryableErrors;
