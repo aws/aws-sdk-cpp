@@ -95,7 +95,7 @@ public class SmokeTestParser {
         public String inputShapeName;
         public String outputShapeName;
         public Map<String, Object> paramsMap;
-        public Map<String, CppDataPacker> functionMap;
+        public List<String> getterCodeBlock;
         public String functionBlock;
         boolean expectSuccess;
         public Optional<String> errorShapeId;
@@ -238,7 +238,9 @@ public class SmokeTestParser {
         //if object is a simple type, then return will just be the value.
         String functionName = new String();
         String indentPrefix = "\t";
-        String varName = key.toLowerCase() + "_lvl" + level + "_idx" + count;
+        String varName = key.toLowerCase();
+        String functionNameSuffix = convertSnakeToPascal(varName + "_lvl" + level + "_idx" + count);
+
         String type = shape.getName();
         //for simple types
         if (    (value instanceof Integer) ||
@@ -256,11 +258,11 @@ public class SmokeTestParser {
         {
             CppDataPacker data = new CppDataPacker();
             StringBuilder sb = new StringBuilder();
-            functionName = String.format("Get%s()", convertSnakeToPascal(varName));
+            functionName = String.format("Get%s()", functionNameSuffix);
 
             Map<String, String> fieldShapeNameMap = getShapeFields(shape);
             //define function body
-            sb.append(String.format("%s %s{\n",shape.getName(), functionName));
+            sb.append(String.format("%s %s\n{\n",shape.getName(), functionName));
 
             //declare variable
             sb.append(String.format("%s%s %s ;\n",indentPrefix,shape.getName(),varName));
@@ -304,7 +306,7 @@ public class SmokeTestParser {
         {
             CppDataPacker data = new CppDataPacker();
             StringBuilder sb = new StringBuilder();
-            functionName = String.format("Get%s()",convertSnakeToPascal(varName));
+            functionName = String.format("Get%s()",functionNameSuffix);
 
             //assume objects will be same type
             List<?> list = (List<?>) value;  // Safely cast to List
@@ -317,7 +319,7 @@ public class SmokeTestParser {
             String listType = shape.getListMember().getShape().getName();
 
             //open function body
-            sb.append(String.format("Aws::Vector<%s> %s{\n",listType, functionName));
+            sb.append(String.format("Aws::Vector<%s> %s\n{\n",listType, functionName));
 
             //vector setter
             sb.append(String.format("%sAws::Vector<%s> %s = {",indentPrefix,listType, varName));
@@ -327,7 +329,7 @@ public class SmokeTestParser {
                 Object element = list.get(i);
 
                 sb.append(
-                        String.format("%s,%s",indentPrefix,
+                        String.format("%s",
                             traverseObject(key,
                                     element,
                                     shape.getListMember().getShape(),
@@ -432,7 +434,18 @@ public class SmokeTestParser {
 
             testcase.setFunctionBlock(sb.toString());
 
-            testcase.setFunctionMap(functionMap);
+            List<String> lines = new ArrayList<>();
+
+            // Iterate through each value in the map
+            for (CppDataPacker value : functionMap.values()) {
+                // Split the value by newline (\n)
+                String[] splitLines = value.functionDefinition.toString().split("\n");
+
+                // Add each line to the vector
+                lines.addAll(Arrays.asList(splitLines));
+            }
+
+            testcase.setGetterCodeBlock(lines);
 
             testcaseList.add(testcase);
         });

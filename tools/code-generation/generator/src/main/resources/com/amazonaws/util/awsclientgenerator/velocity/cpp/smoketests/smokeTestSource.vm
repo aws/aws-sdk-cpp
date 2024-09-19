@@ -50,17 +50,14 @@ TEST_F(${client}SmokeTestSuite, $test.testcaseName )
 #end
     //populate input params
     //Prepare getters
-    {
-#foreach ($param in $test.functionMap.entrySet())
-    $param.getValue()
+#foreach ($line in $test.getterCodeBlock)
+    $line
 #end
-    }
     //Prepare Request
 #set($lines = $test.functionBlock.split("\n"))
 #foreach($line in $lines)
     $line
 #end
-
     auto outcome = clientSp->${test.operationName}(input);
 #if ($test.expectSuccess)
     EXPECT_TRUE( outcome.IsSuccess());
