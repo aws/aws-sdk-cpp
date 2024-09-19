@@ -32,7 +32,7 @@ using Aws::Utils::Threading::WriterLockGuard;
 static const char STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG[] = "STSAssumeRoleWithWebIdentityCredentialsProvider";
 static const int STS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 1000;
 
-STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider() :
+STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentialsProvider(Aws::Client::ClientConfiguration config) :
     m_initialized(false)
 {
     // check environment variables
@@ -97,15 +97,16 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
         AWS_LOGSTREAM_DEBUG(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Resolved session_name from profile_config or environment variable to be " << m_sessionName);
     }
 
-    Aws::Client::ClientConfiguration config;
     config.scheme = Aws::Http::Scheme::HTTPS;
     config.region = tmpRegion;
 
-    Aws::Vector<Aws::String> retryableErrors;
-    retryableErrors.push_back("IDPCommunicationError");
-    retryableErrors.push_back("InvalidIdentityToken");
+    if (config.retryStrategy == nullptr) {
+        Aws::Vector<Aws::String> retryableErrors;
+        retryableErrors.push_back("IDPCommunicationError");
+        retryableErrors.push_back("InvalidIdentityToken");
 
-    config.retryStrategy = Aws::MakeShared<SpecifiedRetryableErrorsRetryStrategy>(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, retryableErrors, 3/*maxRetries*/);
+        config.retryStrategy = Aws::MakeShared<SpecifiedRetryableErrorsRetryStrategy>(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, retryableErrors, 3/*maxRetries*/);
+    }
 
     m_client = Aws::MakeUnique<Aws::Internal::STSCredentialsClient>(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, config);
     m_initialized = true;
