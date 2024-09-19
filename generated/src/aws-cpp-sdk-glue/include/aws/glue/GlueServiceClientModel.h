@@ -218,6 +218,7 @@
 #include <aws/glue/model/StopTriggerResult.h>
 #include <aws/glue/model/StopWorkflowRunResult.h>
 #include <aws/glue/model/TagResourceResult.h>
+#include <aws/glue/model/TestConnectionResult.h>
 #include <aws/glue/model/UntagResourceResult.h>
 #include <aws/glue/model/UpdateBlueprintResult.h>
 #include <aws/glue/model/UpdateClassifierResult.h>
@@ -249,6 +250,7 @@
 #include <aws/glue/model/ListDataQualityRuleRecommendationRunsRequest.h>
 #include <aws/glue/model/GetTriggersRequest.h>
 #include <aws/glue/model/ListColumnStatisticsTaskRunsRequest.h>
+#include <aws/glue/model/TestConnectionRequest.h>
 #include <aws/glue/model/CreateClassifierRequest.h>
 #include <aws/glue/model/GetCrawlersRequest.h>
 #include <aws/glue/model/GetMLTransformsRequest.h>
@@ -526,6 +528,7 @@ namespace Aws
       class StopTriggerRequest;
       class StopWorkflowRunRequest;
       class TagResourceRequest;
+      class TestConnectionRequest;
       class UntagResourceRequest;
       class UpdateBlueprintRequest;
       class UpdateClassifierRequest;
@@ -753,6 +756,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StopTriggerResult, GlueError> StopTriggerOutcome;
       typedef Aws::Utils::Outcome<StopWorkflowRunResult, GlueError> StopWorkflowRunOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, GlueError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<TestConnectionResult, GlueError> TestConnectionOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, GlueError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateBlueprintResult, GlueError> UpdateBlueprintOutcome;
       typedef Aws::Utils::Outcome<UpdateClassifierResult, GlueError> UpdateClassifierOutcome;
@@ -980,6 +984,7 @@ namespace Aws
       typedef std::future<StopTriggerOutcome> StopTriggerOutcomeCallable;
       typedef std::future<StopWorkflowRunOutcome> StopWorkflowRunOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<TestConnectionOutcome> TestConnectionOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateBlueprintOutcome> UpdateBlueprintOutcomeCallable;
       typedef std::future<UpdateClassifierOutcome> UpdateClassifierOutcomeCallable;
@@ -1210,6 +1215,7 @@ namespace Aws
     typedef std::function<void(const GlueClient*, const Model::StopTriggerRequest&, const Model::StopTriggerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTriggerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::StopWorkflowRunRequest&, const Model::StopWorkflowRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopWorkflowRunResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::TestConnectionRequest&, const Model::TestConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestConnectionResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateBlueprintRequest&, const Model::UpdateBlueprintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBlueprintResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::UpdateClassifierRequest&, const Model::UpdateClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClassifierResponseReceivedHandler;

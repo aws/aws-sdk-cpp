@@ -10,6 +10,7 @@
 #include <aws/quicksight/model/SheetControlListType.h>
 #include <aws/quicksight/model/ParameterSelectableValues.h>
 #include <aws/quicksight/model/CascadingControlConfiguration.h>
+#include <aws/quicksight/model/CommitMode.h>
 #include <utility>
 
 namespace Aws
@@ -132,6 +133,19 @@ namespace Model
     inline ParameterDropDownControl& WithCascadingControlConfiguration(const CascadingControlConfiguration& value) { SetCascadingControlConfiguration(value); return *this;}
     inline ParameterDropDownControl& WithCascadingControlConfiguration(CascadingControlConfiguration&& value) { SetCascadingControlConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The visibility configuration of the Apply button on a
+     * <code>ParameterDropDownControl</code>.</p>
+     */
+    inline const CommitMode& GetCommitMode() const{ return m_commitMode; }
+    inline bool CommitModeHasBeenSet() const { return m_commitModeHasBeenSet; }
+    inline void SetCommitMode(const CommitMode& value) { m_commitModeHasBeenSet = true; m_commitMode = value; }
+    inline void SetCommitMode(CommitMode&& value) { m_commitModeHasBeenSet = true; m_commitMode = std::move(value); }
+    inline ParameterDropDownControl& WithCommitMode(const CommitMode& value) { SetCommitMode(value); return *this;}
+    inline ParameterDropDownControl& WithCommitMode(CommitMode&& value) { SetCommitMode(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_parameterControlId;
@@ -154,6 +168,9 @@ namespace Model
 
     CascadingControlConfiguration m_cascadingControlConfiguration;
     bool m_cascadingControlConfigurationHasBeenSet = false;
+
+    CommitMode m_commitMode;
+    bool m_commitModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,6 +20,7 @@ namespace Model
 
 SpekeKeyProvider::SpekeKeyProvider() : 
     m_certificateArnHasBeenSet(false),
+    m_encryptionContractConfigurationHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_systemIdsHasBeenSet(false),
     m_urlHasBeenSet(false)
@@ -39,6 +40,13 @@ SpekeKeyProvider& SpekeKeyProvider::operator =(JsonView jsonValue)
     m_certificateArn = jsonValue.GetString("certificateArn");
 
     m_certificateArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("encryptionContractConfiguration"))
+  {
+    m_encryptionContractConfiguration = jsonValue.GetObject("encryptionContractConfiguration");
+
+    m_encryptionContractConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceId"))
@@ -75,6 +83,12 @@ JsonValue SpekeKeyProvider::Jsonize() const
   if(m_certificateArnHasBeenSet)
   {
    payload.WithString("certificateArn", m_certificateArn);
+
+  }
+
+  if(m_encryptionContractConfigurationHasBeenSet)
+  {
+   payload.WithObject("encryptionContractConfiguration", m_encryptionContractConfiguration.Jsonize());
 
   }
 

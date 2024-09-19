@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the
      * connection reference when the connection is shared between Amazon Web
-     * Services.</p>  <p>The ARN is never reused if the connection is
+     * Servicesservices.</p>  <p>The ARN is never reused if the connection is
      * deleted.</p> 
      */
     inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }

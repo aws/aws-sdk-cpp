@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support
-     * adding tags to aliases or versions.</p>
+     * <p>The resource's Amazon Resource Name (ARN). Note: Lambda does not support
+     * adding tags to function aliases or versions.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }

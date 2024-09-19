@@ -24,7 +24,9 @@ FilterDateTimePickerControl::FilterDateTimePickerControl() :
     m_sourceFilterIdHasBeenSet(false),
     m_displayOptionsHasBeenSet(false),
     m_type(SheetControlDateTimePickerType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_commitMode(CommitMode::NOT_SET),
+    m_commitModeHasBeenSet(false)
 {
 }
 
@@ -71,6 +73,13 @@ FilterDateTimePickerControl& FilterDateTimePickerControl::operator =(JsonView js
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CommitMode"))
+  {
+    m_commitMode = CommitModeMapper::GetCommitModeForName(jsonValue.GetString("CommitMode"));
+
+    m_commitModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -105,6 +114,11 @@ JsonValue FilterDateTimePickerControl::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", SheetControlDateTimePickerTypeMapper::GetNameForSheetControlDateTimePickerType(m_type));
+  }
+
+  if(m_commitModeHasBeenSet)
+  {
+   payload.WithString("CommitMode", CommitModeMapper::GetNameForCommitMode(m_commitMode));
   }
 
   return payload;

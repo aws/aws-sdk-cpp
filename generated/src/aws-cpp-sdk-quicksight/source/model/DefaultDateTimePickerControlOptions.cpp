@@ -21,7 +21,9 @@ namespace Model
 DefaultDateTimePickerControlOptions::DefaultDateTimePickerControlOptions() : 
     m_type(SheetControlDateTimePickerType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
+    m_displayOptionsHasBeenSet(false),
+    m_commitMode(CommitMode::NOT_SET),
+    m_commitModeHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,13 @@ DefaultDateTimePickerControlOptions& DefaultDateTimePickerControlOptions::operat
     m_displayOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CommitMode"))
+  {
+    m_commitMode = CommitModeMapper::GetCommitModeForName(jsonValue.GetString("CommitMode"));
+
+    m_commitModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,11 @@ JsonValue DefaultDateTimePickerControlOptions::Jsonize() const
   {
    payload.WithObject("DisplayOptions", m_displayOptions.Jsonize());
 
+  }
+
+  if(m_commitModeHasBeenSet)
+  {
+   payload.WithString("CommitMode", CommitModeMapper::GetNameForCommitMode(m_commitMode));
   }
 
   return payload;

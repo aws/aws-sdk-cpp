@@ -94,10 +94,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Servicesservice or Amazon Web Services account that invokes
-     * the function. If you specify a service, use <code>SourceArn</code> or
-     * <code>SourceAccount</code> to limit who can invoke the function through that
-     * service.</p>
+     * <p>The Amazon Web Servicesservice, Amazon Web Services account, IAM user, or IAM
+     * role that invokes the function. If you specify a service, use
+     * <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the
+     * function through that service.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }

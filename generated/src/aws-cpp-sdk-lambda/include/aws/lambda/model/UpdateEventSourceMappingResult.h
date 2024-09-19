@@ -442,6 +442,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
+     */
+    inline const Aws::String& GetEventSourceMappingArn() const{ return m_eventSourceMappingArn; }
+    inline void SetEventSourceMappingArn(const Aws::String& value) { m_eventSourceMappingArn = value; }
+    inline void SetEventSourceMappingArn(Aws::String&& value) { m_eventSourceMappingArn = std::move(value); }
+    inline void SetEventSourceMappingArn(const char* value) { m_eventSourceMappingArn.assign(value); }
+    inline UpdateEventSourceMappingResult& WithEventSourceMappingArn(const Aws::String& value) { SetEventSourceMappingArn(value); return *this;}
+    inline UpdateEventSourceMappingResult& WithEventSourceMappingArn(Aws::String&& value) { SetEventSourceMappingArn(std::move(value)); return *this;}
+    inline UpdateEventSourceMappingResult& WithEventSourceMappingArn(const char* value) { SetEventSourceMappingArn(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -510,6 +523,8 @@ namespace Model
     Aws::String m_kMSKeyArn;
 
     FilterCriteriaError m_filterCriteriaError;
+
+    Aws::String m_eventSourceMappingArn;
 
     Aws::String m_requestId;
   };

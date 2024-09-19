@@ -809,6 +809,31 @@ namespace WorkSpacesWeb
         }
 
         /**
+         * <p>Expires an active secure browser session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ExpireSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExpireSessionOutcome ExpireSession(const Model::ExpireSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExpireSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExpireSessionRequestT = Model::ExpireSessionRequest>
+        Model::ExpireSessionOutcomeCallable ExpireSessionCallable(const ExpireSessionRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::ExpireSession, request);
+        }
+
+        /**
+         * An Async wrapper for ExpireSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExpireSessionRequestT = Model::ExpireSessionRequest>
+        void ExpireSessionAsync(const ExpireSessionRequestT& request, const ExpireSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::ExpireSession, request, handler, context);
+        }
+
+        /**
          * <p>Gets browser settings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetBrowserSettings">AWS
          * API Reference</a></p>
@@ -956,6 +981,31 @@ namespace WorkSpacesWeb
         void GetPortalServiceProviderMetadataAsync(const GetPortalServiceProviderMetadataRequestT& request, const GetPortalServiceProviderMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesWebClient::GetPortalServiceProviderMetadata, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information for a secure browser session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSessionOutcome GetSession(const Model::GetSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSessionRequestT = Model::GetSessionRequest>
+        Model::GetSessionOutcomeCallable GetSessionCallable(const GetSessionRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::GetSession, request);
+        }
+
+        /**
+         * An Async wrapper for GetSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSessionRequestT = Model::GetSessionRequest>
+        void GetSessionAsync(const GetSessionRequestT& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::GetSession, request, handler, context);
         }
 
         /**
@@ -1182,6 +1232,32 @@ namespace WorkSpacesWeb
         void ListPortalsAsync(const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPortalsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::ListPortals, request, handler, context);
+        }
+
+        /**
+         * <p>Lists information for multiple secure browser sessions from a specific
+         * portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSessionsOutcome ListSessions(const Model::ListSessionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSessionsRequestT = Model::ListSessionsRequest>
+        Model::ListSessionsOutcomeCallable ListSessionsCallable(const ListSessionsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::ListSessions, request);
+        }
+
+        /**
+         * An Async wrapper for ListSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSessionsRequestT = Model::ListSessionsRequest>
+        void ListSessionsAsync(const ListSessionsRequestT& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::ListSessions, request, handler, context);
         }
 
         /**

@@ -21,6 +21,7 @@ namespace Model
 SpekeKeyProviderCmaf::SpekeKeyProviderCmaf() : 
     m_certificateArnHasBeenSet(false),
     m_dashSignaledSystemIdsHasBeenSet(false),
+    m_encryptionContractConfigurationHasBeenSet(false),
     m_hlsSignaledSystemIdsHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_urlHasBeenSet(false)
@@ -50,6 +51,13 @@ SpekeKeyProviderCmaf& SpekeKeyProviderCmaf::operator =(JsonView jsonValue)
       m_dashSignaledSystemIds.push_back(dashSignaledSystemIdsJsonList[dashSignaledSystemIdsIndex].AsString());
     }
     m_dashSignaledSystemIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("encryptionContractConfiguration"))
+  {
+    m_encryptionContractConfiguration = jsonValue.GetObject("encryptionContractConfiguration");
+
+    m_encryptionContractConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hlsSignaledSystemIds"))
@@ -97,6 +105,12 @@ JsonValue SpekeKeyProviderCmaf::Jsonize() const
      dashSignaledSystemIdsJsonList[dashSignaledSystemIdsIndex].AsString(m_dashSignaledSystemIds[dashSignaledSystemIdsIndex]);
    }
    payload.WithArray("dashSignaledSystemIds", std::move(dashSignaledSystemIdsJsonList));
+
+  }
+
+  if(m_encryptionContractConfigurationHasBeenSet)
+  {
+   payload.WithObject("encryptionContractConfiguration", m_encryptionContractConfiguration.Jsonize());
 
   }
 

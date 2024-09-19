@@ -471,6 +471,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the event source mapping.</p>
+     */
+    inline const Aws::String& GetEventSourceMappingArn() const{ return m_eventSourceMappingArn; }
+    inline bool EventSourceMappingArnHasBeenSet() const { return m_eventSourceMappingArnHasBeenSet; }
+    inline void SetEventSourceMappingArn(const Aws::String& value) { m_eventSourceMappingArnHasBeenSet = true; m_eventSourceMappingArn = value; }
+    inline void SetEventSourceMappingArn(Aws::String&& value) { m_eventSourceMappingArnHasBeenSet = true; m_eventSourceMappingArn = std::move(value); }
+    inline void SetEventSourceMappingArn(const char* value) { m_eventSourceMappingArnHasBeenSet = true; m_eventSourceMappingArn.assign(value); }
+    inline EventSourceMappingConfiguration& WithEventSourceMappingArn(const Aws::String& value) { SetEventSourceMappingArn(value); return *this;}
+    inline EventSourceMappingConfiguration& WithEventSourceMappingArn(Aws::String&& value) { SetEventSourceMappingArn(std::move(value)); return *this;}
+    inline EventSourceMappingConfiguration& WithEventSourceMappingArn(const char* value) { SetEventSourceMappingArn(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -569,6 +583,9 @@ namespace Model
 
     FilterCriteriaError m_filterCriteriaError;
     bool m_filterCriteriaErrorHasBeenSet = false;
+
+    Aws::String m_eventSourceMappingArn;
+    bool m_eventSourceMappingArnHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

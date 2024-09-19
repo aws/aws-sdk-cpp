@@ -5497,6 +5497,36 @@ namespace Glue
         }
 
         /**
+         * <p>Tests a connection to a service to validate the service credentials that you
+         * provide.</p> <p>You can either provide an existing connection name or a
+         * <code>TestConnectionInput</code> for testing a non-existing connection input.
+         * Providing both at the same time will cause an error.</p> <p>If the action is
+         * successful, the service sends back an HTTP 200 response.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TestConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TestConnectionOutcome TestConnection(const Model::TestConnectionRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for TestConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TestConnectionRequestT = Model::TestConnectionRequest>
+        Model::TestConnectionOutcomeCallable TestConnectionCallable(const TestConnectionRequestT& request = {}) const
+        {
+            return SubmitCallable(&GlueClient::TestConnection, request);
+        }
+
+        /**
+         * An Async wrapper for TestConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TestConnectionRequestT = Model::TestConnectionRequest>
+        void TestConnectionAsync(const TestConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const TestConnectionRequestT& request = {}) const
+        {
+            return SubmitAsync(&GlueClient::TestConnection, request, handler, context);
+        }
+
+        /**
          * <p>Removes tags from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UntagResource">AWS
          * API Reference</a></p>

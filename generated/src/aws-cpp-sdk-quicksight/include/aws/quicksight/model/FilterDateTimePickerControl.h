@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/DateTimePickerControlDisplayOptions.h>
 #include <aws/quicksight/model/SheetControlDateTimePickerType.h>
+#include <aws/quicksight/model/CommitMode.h>
 #include <utility>
 
 namespace Aws
@@ -109,6 +110,19 @@ namespace Model
     inline FilterDateTimePickerControl& WithType(const SheetControlDateTimePickerType& value) { SetType(value); return *this;}
     inline FilterDateTimePickerControl& WithType(SheetControlDateTimePickerType&& value) { SetType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The visibility configurationof the Apply button on a
+     * <code>DateTimePickerControl</code>.</p>
+     */
+    inline const CommitMode& GetCommitMode() const{ return m_commitMode; }
+    inline bool CommitModeHasBeenSet() const { return m_commitModeHasBeenSet; }
+    inline void SetCommitMode(const CommitMode& value) { m_commitModeHasBeenSet = true; m_commitMode = value; }
+    inline void SetCommitMode(CommitMode&& value) { m_commitModeHasBeenSet = true; m_commitMode = std::move(value); }
+    inline FilterDateTimePickerControl& WithCommitMode(const CommitMode& value) { SetCommitMode(value); return *this;}
+    inline FilterDateTimePickerControl& WithCommitMode(CommitMode&& value) { SetCommitMode(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_filterControlId;
@@ -125,6 +139,9 @@ namespace Model
 
     SheetControlDateTimePickerType m_type;
     bool m_typeHasBeenSet = false;
+
+    CommitMode m_commitMode;
+    bool m_commitModeHasBeenSet = false;
   };
 
 } // namespace Model

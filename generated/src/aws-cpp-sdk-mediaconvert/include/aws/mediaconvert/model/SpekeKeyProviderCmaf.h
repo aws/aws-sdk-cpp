@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/EncryptionContractConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -77,6 +78,22 @@ namespace Model
 
     ///@{
     /**
+     * Specify the SPEKE version, either v1.0 or v2.0, that MediaConvert uses when
+     * encrypting your output. For more information, see:
+     * https://docs.aws.amazon.com/speke/latest/documentation/speke-api-specification.html
+     * To use SPEKE v1.0: Leave blank. To use SPEKE v2.0: Specify a SPEKE v2.0 video
+     * preset and a SPEKE v2.0 audio preset.
+     */
+    inline const EncryptionContractConfiguration& GetEncryptionContractConfiguration() const{ return m_encryptionContractConfiguration; }
+    inline bool EncryptionContractConfigurationHasBeenSet() const { return m_encryptionContractConfigurationHasBeenSet; }
+    inline void SetEncryptionContractConfiguration(const EncryptionContractConfiguration& value) { m_encryptionContractConfigurationHasBeenSet = true; m_encryptionContractConfiguration = value; }
+    inline void SetEncryptionContractConfiguration(EncryptionContractConfiguration&& value) { m_encryptionContractConfigurationHasBeenSet = true; m_encryptionContractConfiguration = std::move(value); }
+    inline SpekeKeyProviderCmaf& WithEncryptionContractConfiguration(const EncryptionContractConfiguration& value) { SetEncryptionContractConfiguration(value); return *this;}
+    inline SpekeKeyProviderCmaf& WithEncryptionContractConfiguration(EncryptionContractConfiguration&& value) { SetEncryptionContractConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Specify the DRM system ID that you want signaled in the HLS manifest that
      * MediaConvert creates as part of this CMAF package. The HLS manifest can
      * currently signal only one system ID. For more information, see
@@ -129,6 +146,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_dashSignaledSystemIds;
     bool m_dashSignaledSystemIdsHasBeenSet = false;
+
+    EncryptionContractConfiguration m_encryptionContractConfiguration;
+    bool m_encryptionContractConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hlsSignaledSystemIds;
     bool m_hlsSignaledSystemIdsHasBeenSet = false;

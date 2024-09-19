@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The function's Amazon Resource Name (ARN).</p>
+     * <p>The resource's Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of tags to apply to the function.</p>
+     * <p>A list of tags to apply to the resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

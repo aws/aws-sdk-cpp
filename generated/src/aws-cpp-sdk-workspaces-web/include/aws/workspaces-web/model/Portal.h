@@ -71,10 +71,9 @@ namespace Model
      * call <code>CreateIdentityProvider</code> to integrate your identity provider
      * with your web portal. User and group access to your web portal is controlled
      * through your identity provider.</p> <p> <code>IAM Identity Center</code> web
-     * portals are authenticated through IAM Identity Center (successor to Single
-     * Sign-On). Identity sources (including external identity provider integration),
-     * plus user and group access to your web portal, can be configured in the IAM
-     * Identity Center.</p>
+     * portals are authenticated through IAM Identity Center. Identity sources
+     * (including external identity provider integration), plus user and group access
+     * to your web portal, can be configured in the IAM Identity Center.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
