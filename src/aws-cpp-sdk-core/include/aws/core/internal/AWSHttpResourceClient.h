@@ -250,6 +250,7 @@ namespace Aws
          {
          public:
              SSOCredentialsClient(const Client::ClientConfiguration& clientConfiguration);
+             SSOCredentialsClient(const Client::ClientConfiguration& clientConfiguration, Aws::Http::Scheme scheme, const Aws::String& region);
 
              SSOCredentialsClient& operator =(SSOCredentialsClient& rhs) = delete;
              SSOCredentialsClient(const SSOCredentialsClient& rhs) = delete;
@@ -290,7 +291,8 @@ namespace Aws
 
              SSOCreateTokenResult CreateToken(const SSOCreateTokenRequest& request);
          private:
-             Aws::String buildEndpoint(const Aws::Client::ClientConfiguration& clientConfiguration,
+             Aws::String buildEndpoint(Aws::Http::Scheme scheme,
+                 const Aws::String& region,
                  const Aws::String& domain,
                  const Aws::String& endpoint);
              Aws::String m_endpoint;

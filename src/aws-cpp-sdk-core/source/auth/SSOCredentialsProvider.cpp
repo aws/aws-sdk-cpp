@@ -28,15 +28,29 @@ using Aws::Utils::Threading::ReaderLockGuard;
 
 static const char SSO_CREDENTIALS_PROVIDER_LOG_TAG[] = "SSOCredentialsProvider";
 
-SSOCredentialsProvider::SSOCredentialsProvider() : m_profileToUse(GetConfigProfileName())
+SSOCredentialsProvider::SSOCredentialsProvider() : SSOCredentialsProvider(GetConfigProfileName(), nullptr)
 {
-    AWS_LOGSTREAM_INFO(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Setting sso credentials provider to read config from " <<  m_profileToUse);
 }
 
-SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile) : m_profileToUse(profile),
-                                                                             m_bearerTokenProvider(profile)
+SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile) : SSOCredentialsProvider(profile, nullptr)
 {
-    AWS_LOGSTREAM_INFO(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Setting sso credentials provider to read config from " <<  m_profileToUse);
+}
+
+SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config) :
+    m_profileToUse(profile),
+    m_bearerTokenProvider(profile),
+    m_config(std::move(config))
+{
+    AWS_LOGSTREAM_INFO(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Setting sso credentials provider to read config from " << m_profileToUse);
+    if (!m_config)
+    {
+        auto defaultConfig = Aws::MakeShared<Client::ClientConfiguration>(SSO_CREDENTIALS_PROVIDER_LOG_TAG);
+        defaultConfig->scheme = Aws::Http::Scheme::HTTPS;
+        // We cannot set region to m_ssoRegion because it is not yet known at this point. But it's not obtained from the client config either way.
+        Aws::Vector<Aws::String> retryableErrors{ "TooManyRequestsException" };
+        defaultConfig->retryStrategy = Aws::MakeShared<SpecifiedRetryableErrorsRetryStrategy>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, std::move(retryableErrors), 3/*maxRetries*/);
+        m_config = std::move(defaultConfig);
+    }
 }
 
 AWSCredentials SSOCredentialsProvider::GetAWSCredentials()
@@ -80,16 +94,7 @@ void SSOCredentialsProvider::Reload()
     request.m_ssoRoleName = profile.GetSsoRoleName();
     request.m_accessToken = accessToken;
 
-    Aws::Client::ClientConfiguration config;
-    config.scheme = Aws::Http::Scheme::HTTPS;
-    config.region = m_ssoRegion;
-    AWS_LOGSTREAM_DEBUG(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Passing config to client for region: " << m_ssoRegion);
-
-    Aws::Vector<Aws::String> retryableErrors;
-    retryableErrors.push_back("TooManyRequestsException");
-
-    config.retryStrategy = Aws::MakeShared<SpecifiedRetryableErrorsRetryStrategy>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, retryableErrors, 3/*maxRetries*/);
-    m_client = Aws::MakeUnique<Aws::Internal::SSOCredentialsClient>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, config);
+    m_client = Aws::MakeUnique<Aws::Internal::SSOCredentialsClient>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, *m_config, Aws::Http::Scheme::HTTPS, m_ssoRegion);
 
     AWS_LOGSTREAM_TRACE(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Requesting credentials with AWS_ACCESS_KEY: " << m_ssoAccountId);
     auto result = m_client->GetSSOCredentials(request);

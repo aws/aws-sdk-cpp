@@ -27,18 +27,20 @@ static const char SSO_GRANT_TYPE[] = "refresh_token";
 const size_t SSOBearerTokenProvider::REFRESH_WINDOW_BEFORE_EXPIRATION_S = 600;
 const size_t SSOBearerTokenProvider::REFRESH_ATTEMPT_INTERVAL_S = 30;
 
-SSOBearerTokenProvider::SSOBearerTokenProvider()
-        : m_profileToUse(Aws::Auth::GetConfigProfileName()),
-          m_lastUpdateAttempt((int64_t) 0)
+SSOBearerTokenProvider::SSOBearerTokenProvider() : SSOBearerTokenProvider(Aws::Auth::GetConfigProfileName(), nullptr)
 {
-    AWS_LOGSTREAM_INFO(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "Setting sso bearerToken provider to read config from " <<  m_profileToUse);
 }
 
-SSOBearerTokenProvider::SSOBearerTokenProvider(const Aws::String& awsProfile)
-        : m_profileToUse(awsProfile),
-          m_lastUpdateAttempt((int64_t) 0)
+SSOBearerTokenProvider::SSOBearerTokenProvider(const Aws::String& awsProfile) : SSOBearerTokenProvider(awsProfile, nullptr)
 {
-    AWS_LOGSTREAM_INFO(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "Setting sso bearerToken provider to read config from " <<  m_profileToUse);
+}
+
+SSOBearerTokenProvider::SSOBearerTokenProvider(const Aws::String& awsProfile, std::shared_ptr<const Aws::Client::ClientConfiguration> config)
+    : m_profileToUse(awsProfile),
+    m_config(config ? std::move(config) : Aws::MakeShared<Client::ClientConfiguration>(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG)),
+    m_lastUpdateAttempt((int64_t)0)
+{
+    AWS_LOGSTREAM_INFO(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, "Setting sso bearerToken provider to read config from " << m_profileToUse);
 }
 
 AWSBearerToken SSOBearerTokenProvider::GetAWSBearerToken()
@@ -93,14 +95,14 @@ void SSOBearerTokenProvider::RefreshFromSso()
 
     if(!m_client)
     {
-        Aws::Client::ClientConfiguration config;
-        config.scheme = Aws::Http::Scheme::HTTPS;
+        auto scheme = Aws::Http::Scheme::HTTPS;
         /* The SSO token provider must not resolve if any SSO configuration values are present directly on the profile
          * instead of an `sso-session` section. The SSO token provider must ignore these configuration values if these
          * values are present directly on the profile instead of an `sso-session` section. */
-        // config.region = m_profile.GetSsoRegion(); // <- intentionally not used per comment above
-        config.region = cachedSsoToken.region;
-        m_client = Aws::MakeUnique<Aws::Internal::SSOCredentialsClient>(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, config);
+        // auto& region = m_profile.GetSsoRegion(); // <- intentionally not used per comment above
+        auto& region = cachedSsoToken.region;
+        // m_config->region might not be the same as the SSO region, but the former is not used by the SSO client.
+        m_client = Aws::MakeUnique<Aws::Internal::SSOCredentialsClient>(SSO_BEARER_TOKEN_PROVIDER_LOG_TAG, *m_config, scheme, region);
     }
 
     Aws::Internal::SSOCredentialsClient::SSOCreateTokenRequest ssoCreateTokenRequest;
