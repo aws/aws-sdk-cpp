@@ -19,7 +19,8 @@ namespace Model
 {
 
 MultiplexOutputSettings::MultiplexOutputSettings() : 
-    m_destinationHasBeenSet(false)
+    m_destinationHasBeenSet(false),
+    m_containerSettingsHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ MultiplexOutputSettings& MultiplexOutputSettings::operator =(JsonView jsonValue)
     m_destinationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("containerSettings"))
+  {
+    m_containerSettings = jsonValue.GetObject("containerSettings");
+
+    m_containerSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue MultiplexOutputSettings::Jsonize() const
   if(m_destinationHasBeenSet)
   {
    payload.WithObject("destination", m_destination.Jsonize());
+
+  }
+
+  if(m_containerSettingsHasBeenSet)
+  {
+   payload.WithObject("containerSettings", m_containerSettings.Jsonize());
 
   }
 

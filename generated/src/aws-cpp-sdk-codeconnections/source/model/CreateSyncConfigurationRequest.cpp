@@ -23,7 +23,9 @@ CreateSyncConfigurationRequest::CreateSyncConfigurationRequest() :
     m_publishDeploymentStatus(PublishDeploymentStatus::NOT_SET),
     m_publishDeploymentStatusHasBeenSet(false),
     m_triggerResourceUpdateOn(TriggerResourceUpdateOn::NOT_SET),
-    m_triggerResourceUpdateOnHasBeenSet(false)
+    m_triggerResourceUpdateOnHasBeenSet(false),
+    m_pullRequestComment(PullRequestComment::NOT_SET),
+    m_pullRequestCommentHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,11 @@ Aws::String CreateSyncConfigurationRequest::SerializePayload() const
   if(m_triggerResourceUpdateOnHasBeenSet)
   {
    payload.WithString("TriggerResourceUpdateOn", TriggerResourceUpdateOnMapper::GetNameForTriggerResourceUpdateOn(m_triggerResourceUpdateOn));
+  }
+
+  if(m_pullRequestCommentHasBeenSet)
+  {
+   payload.WithString("PullRequestComment", PullRequestCommentMapper::GetNameForPullRequestComment(m_pullRequestComment));
   }
 
   return payload.View().WriteReadable();

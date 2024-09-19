@@ -10,6 +10,7 @@
 #include <aws/codeconnections/model/SyncConfigurationType.h>
 #include <aws/codeconnections/model/PublishDeploymentStatus.h>
 #include <aws/codeconnections/model/TriggerResourceUpdateOn.h>
+#include <aws/codeconnections/model/PullRequestComment.h>
 #include <utility>
 
 namespace Aws
@@ -150,6 +151,19 @@ namespace Model
     inline CreateSyncConfigurationRequest& WithTriggerResourceUpdateOn(const TriggerResourceUpdateOn& value) { SetTriggerResourceUpdateOn(value); return *this;}
     inline CreateSyncConfigurationRequest& WithTriggerResourceUpdateOn(TriggerResourceUpdateOn&& value) { SetTriggerResourceUpdateOn(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A toggle that specifies whether to enable or disable pull request comments
+     * for the sync configuration to be created.</p>
+     */
+    inline const PullRequestComment& GetPullRequestComment() const{ return m_pullRequestComment; }
+    inline bool PullRequestCommentHasBeenSet() const { return m_pullRequestCommentHasBeenSet; }
+    inline void SetPullRequestComment(const PullRequestComment& value) { m_pullRequestCommentHasBeenSet = true; m_pullRequestComment = value; }
+    inline void SetPullRequestComment(PullRequestComment&& value) { m_pullRequestCommentHasBeenSet = true; m_pullRequestComment = std::move(value); }
+    inline CreateSyncConfigurationRequest& WithPullRequestComment(const PullRequestComment& value) { SetPullRequestComment(value); return *this;}
+    inline CreateSyncConfigurationRequest& WithPullRequestComment(PullRequestComment&& value) { SetPullRequestComment(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_branch;
@@ -175,6 +189,9 @@ namespace Model
 
     TriggerResourceUpdateOn m_triggerResourceUpdateOn;
     bool m_triggerResourceUpdateOnHasBeenSet = false;
+
+    PullRequestComment m_pullRequestComment;
+    bool m_pullRequestCommentHasBeenSet = false;
   };
 
 } // namespace Model

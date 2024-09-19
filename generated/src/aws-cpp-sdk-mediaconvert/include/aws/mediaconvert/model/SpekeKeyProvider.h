@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/EncryptionContractConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -59,6 +60,22 @@ namespace Model
 
     ///@{
     /**
+     * Specify the SPEKE version, either v1.0 or v2.0, that MediaConvert uses when
+     * encrypting your output. For more information, see:
+     * https://docs.aws.amazon.com/speke/latest/documentation/speke-api-specification.html
+     * To use SPEKE v1.0: Leave blank. To use SPEKE v2.0: Specify a SPEKE v2.0 video
+     * preset and a SPEKE v2.0 audio preset.
+     */
+    inline const EncryptionContractConfiguration& GetEncryptionContractConfiguration() const{ return m_encryptionContractConfiguration; }
+    inline bool EncryptionContractConfigurationHasBeenSet() const { return m_encryptionContractConfigurationHasBeenSet; }
+    inline void SetEncryptionContractConfiguration(const EncryptionContractConfiguration& value) { m_encryptionContractConfigurationHasBeenSet = true; m_encryptionContractConfiguration = value; }
+    inline void SetEncryptionContractConfiguration(EncryptionContractConfiguration&& value) { m_encryptionContractConfigurationHasBeenSet = true; m_encryptionContractConfiguration = std::move(value); }
+    inline SpekeKeyProvider& WithEncryptionContractConfiguration(const EncryptionContractConfiguration& value) { SetEncryptionContractConfiguration(value); return *this;}
+    inline SpekeKeyProvider& WithEncryptionContractConfiguration(EncryptionContractConfiguration&& value) { SetEncryptionContractConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Specify the resource ID that your SPEKE-compliant key provider uses to identify
      * this content.
      */
@@ -108,6 +125,9 @@ namespace Model
 
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet = false;
+
+    EncryptionContractConfiguration m_encryptionContractConfiguration;
+    bool m_encryptionContractConfigurationHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;

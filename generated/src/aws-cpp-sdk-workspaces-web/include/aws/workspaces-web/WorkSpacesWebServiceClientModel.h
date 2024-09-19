@@ -46,12 +46,14 @@
 #include <aws/workspaces-web/model/DisassociateTrustStoreResult.h>
 #include <aws/workspaces-web/model/DisassociateUserAccessLoggingSettingsResult.h>
 #include <aws/workspaces-web/model/DisassociateUserSettingsResult.h>
+#include <aws/workspaces-web/model/ExpireSessionResult.h>
 #include <aws/workspaces-web/model/GetBrowserSettingsResult.h>
 #include <aws/workspaces-web/model/GetIdentityProviderResult.h>
 #include <aws/workspaces-web/model/GetIpAccessSettingsResult.h>
 #include <aws/workspaces-web/model/GetNetworkSettingsResult.h>
 #include <aws/workspaces-web/model/GetPortalResult.h>
 #include <aws/workspaces-web/model/GetPortalServiceProviderMetadataResult.h>
+#include <aws/workspaces-web/model/GetSessionResult.h>
 #include <aws/workspaces-web/model/GetTrustStoreResult.h>
 #include <aws/workspaces-web/model/GetTrustStoreCertificateResult.h>
 #include <aws/workspaces-web/model/GetUserAccessLoggingSettingsResult.h>
@@ -61,6 +63,7 @@
 #include <aws/workspaces-web/model/ListIpAccessSettingsResult.h>
 #include <aws/workspaces-web/model/ListNetworkSettingsResult.h>
 #include <aws/workspaces-web/model/ListPortalsResult.h>
+#include <aws/workspaces-web/model/ListSessionsResult.h>
 #include <aws/workspaces-web/model/ListTagsForResourceResult.h>
 #include <aws/workspaces-web/model/ListTrustStoreCertificatesResult.h>
 #include <aws/workspaces-web/model/ListTrustStoresResult.h>
@@ -152,12 +155,14 @@ namespace Aws
       class DisassociateTrustStoreRequest;
       class DisassociateUserAccessLoggingSettingsRequest;
       class DisassociateUserSettingsRequest;
+      class ExpireSessionRequest;
       class GetBrowserSettingsRequest;
       class GetIdentityProviderRequest;
       class GetIpAccessSettingsRequest;
       class GetNetworkSettingsRequest;
       class GetPortalRequest;
       class GetPortalServiceProviderMetadataRequest;
+      class GetSessionRequest;
       class GetTrustStoreRequest;
       class GetTrustStoreCertificateRequest;
       class GetUserAccessLoggingSettingsRequest;
@@ -167,6 +172,7 @@ namespace Aws
       class ListIpAccessSettingsRequest;
       class ListNetworkSettingsRequest;
       class ListPortalsRequest;
+      class ListSessionsRequest;
       class ListTagsForResourceRequest;
       class ListTrustStoreCertificatesRequest;
       class ListTrustStoresRequest;
@@ -213,12 +219,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateTrustStoreResult, WorkSpacesWebError> DisassociateTrustStoreOutcome;
       typedef Aws::Utils::Outcome<DisassociateUserAccessLoggingSettingsResult, WorkSpacesWebError> DisassociateUserAccessLoggingSettingsOutcome;
       typedef Aws::Utils::Outcome<DisassociateUserSettingsResult, WorkSpacesWebError> DisassociateUserSettingsOutcome;
+      typedef Aws::Utils::Outcome<ExpireSessionResult, WorkSpacesWebError> ExpireSessionOutcome;
       typedef Aws::Utils::Outcome<GetBrowserSettingsResult, WorkSpacesWebError> GetBrowserSettingsOutcome;
       typedef Aws::Utils::Outcome<GetIdentityProviderResult, WorkSpacesWebError> GetIdentityProviderOutcome;
       typedef Aws::Utils::Outcome<GetIpAccessSettingsResult, WorkSpacesWebError> GetIpAccessSettingsOutcome;
       typedef Aws::Utils::Outcome<GetNetworkSettingsResult, WorkSpacesWebError> GetNetworkSettingsOutcome;
       typedef Aws::Utils::Outcome<GetPortalResult, WorkSpacesWebError> GetPortalOutcome;
       typedef Aws::Utils::Outcome<GetPortalServiceProviderMetadataResult, WorkSpacesWebError> GetPortalServiceProviderMetadataOutcome;
+      typedef Aws::Utils::Outcome<GetSessionResult, WorkSpacesWebError> GetSessionOutcome;
       typedef Aws::Utils::Outcome<GetTrustStoreResult, WorkSpacesWebError> GetTrustStoreOutcome;
       typedef Aws::Utils::Outcome<GetTrustStoreCertificateResult, WorkSpacesWebError> GetTrustStoreCertificateOutcome;
       typedef Aws::Utils::Outcome<GetUserAccessLoggingSettingsResult, WorkSpacesWebError> GetUserAccessLoggingSettingsOutcome;
@@ -228,6 +236,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListIpAccessSettingsResult, WorkSpacesWebError> ListIpAccessSettingsOutcome;
       typedef Aws::Utils::Outcome<ListNetworkSettingsResult, WorkSpacesWebError> ListNetworkSettingsOutcome;
       typedef Aws::Utils::Outcome<ListPortalsResult, WorkSpacesWebError> ListPortalsOutcome;
+      typedef Aws::Utils::Outcome<ListSessionsResult, WorkSpacesWebError> ListSessionsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, WorkSpacesWebError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTrustStoreCertificatesResult, WorkSpacesWebError> ListTrustStoreCertificatesOutcome;
       typedef Aws::Utils::Outcome<ListTrustStoresResult, WorkSpacesWebError> ListTrustStoresOutcome;
@@ -274,12 +283,14 @@ namespace Aws
       typedef std::future<DisassociateTrustStoreOutcome> DisassociateTrustStoreOutcomeCallable;
       typedef std::future<DisassociateUserAccessLoggingSettingsOutcome> DisassociateUserAccessLoggingSettingsOutcomeCallable;
       typedef std::future<DisassociateUserSettingsOutcome> DisassociateUserSettingsOutcomeCallable;
+      typedef std::future<ExpireSessionOutcome> ExpireSessionOutcomeCallable;
       typedef std::future<GetBrowserSettingsOutcome> GetBrowserSettingsOutcomeCallable;
       typedef std::future<GetIdentityProviderOutcome> GetIdentityProviderOutcomeCallable;
       typedef std::future<GetIpAccessSettingsOutcome> GetIpAccessSettingsOutcomeCallable;
       typedef std::future<GetNetworkSettingsOutcome> GetNetworkSettingsOutcomeCallable;
       typedef std::future<GetPortalOutcome> GetPortalOutcomeCallable;
       typedef std::future<GetPortalServiceProviderMetadataOutcome> GetPortalServiceProviderMetadataOutcomeCallable;
+      typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
       typedef std::future<GetTrustStoreOutcome> GetTrustStoreOutcomeCallable;
       typedef std::future<GetTrustStoreCertificateOutcome> GetTrustStoreCertificateOutcomeCallable;
       typedef std::future<GetUserAccessLoggingSettingsOutcome> GetUserAccessLoggingSettingsOutcomeCallable;
@@ -289,6 +300,7 @@ namespace Aws
       typedef std::future<ListIpAccessSettingsOutcome> ListIpAccessSettingsOutcomeCallable;
       typedef std::future<ListNetworkSettingsOutcome> ListNetworkSettingsOutcomeCallable;
       typedef std::future<ListPortalsOutcome> ListPortalsOutcomeCallable;
+      typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTrustStoreCertificatesOutcome> ListTrustStoreCertificatesOutcomeCallable;
       typedef std::future<ListTrustStoresOutcome> ListTrustStoresOutcomeCallable;
@@ -338,12 +350,14 @@ namespace Aws
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DisassociateTrustStoreRequest&, const Model::DisassociateTrustStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrustStoreResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DisassociateUserAccessLoggingSettingsRequest&, const Model::DisassociateUserAccessLoggingSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateUserAccessLoggingSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DisassociateUserSettingsRequest&, const Model::DisassociateUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateUserSettingsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesWebClient*, const Model::ExpireSessionRequest&, const Model::ExpireSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExpireSessionResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetBrowserSettingsRequest&, const Model::GetBrowserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBrowserSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetIdentityProviderRequest&, const Model::GetIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetIpAccessSettingsRequest&, const Model::GetIpAccessSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIpAccessSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetNetworkSettingsRequest&, const Model::GetNetworkSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetPortalRequest&, const Model::GetPortalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPortalResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetPortalServiceProviderMetadataRequest&, const Model::GetPortalServiceProviderMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPortalServiceProviderMetadataResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesWebClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetTrustStoreRequest&, const Model::GetTrustStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrustStoreResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetTrustStoreCertificateRequest&, const Model::GetTrustStoreCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrustStoreCertificateResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetUserAccessLoggingSettingsRequest&, const Model::GetUserAccessLoggingSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserAccessLoggingSettingsResponseReceivedHandler;
@@ -353,6 +367,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesWebClient*, const Model::ListIpAccessSettingsRequest&, const Model::ListIpAccessSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIpAccessSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::ListNetworkSettingsRequest&, const Model::ListNetworkSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNetworkSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::ListPortalsRequest&, const Model::ListPortalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPortalsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesWebClient*, const Model::ListSessionsRequest&, const Model::ListSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSessionsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::ListTrustStoreCertificatesRequest&, const Model::ListTrustStoreCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrustStoreCertificatesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::ListTrustStoresRequest&, const Model::ListTrustStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrustStoresResponseReceivedHandler;

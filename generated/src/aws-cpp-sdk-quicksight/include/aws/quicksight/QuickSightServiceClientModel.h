@@ -125,6 +125,7 @@
 #include <aws/quicksight/model/ListDataSourcesResult.h>
 #include <aws/quicksight/model/ListFolderMembersResult.h>
 #include <aws/quicksight/model/ListFoldersResult.h>
+#include <aws/quicksight/model/ListFoldersForResourceResult.h>
 #include <aws/quicksight/model/ListGroupMembershipsResult.h>
 #include <aws/quicksight/model/ListGroupsResult.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsResult.h>
@@ -342,6 +343,7 @@ namespace Aws
       class ListDataSourcesRequest;
       class ListFolderMembersRequest;
       class ListFoldersRequest;
+      class ListFoldersForResourceRequest;
       class ListGroupMembershipsRequest;
       class ListGroupsRequest;
       class ListIAMPolicyAssignmentsRequest;
@@ -522,6 +524,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListDataSourcesResult, QuickSightError> ListDataSourcesOutcome;
       typedef Aws::Utils::Outcome<ListFolderMembersResult, QuickSightError> ListFolderMembersOutcome;
       typedef Aws::Utils::Outcome<ListFoldersResult, QuickSightError> ListFoldersOutcome;
+      typedef Aws::Utils::Outcome<ListFoldersForResourceResult, QuickSightError> ListFoldersForResourceOutcome;
       typedef Aws::Utils::Outcome<ListGroupMembershipsResult, QuickSightError> ListGroupMembershipsOutcome;
       typedef Aws::Utils::Outcome<ListGroupsResult, QuickSightError> ListGroupsOutcome;
       typedef Aws::Utils::Outcome<ListIAMPolicyAssignmentsResult, QuickSightError> ListIAMPolicyAssignmentsOutcome;
@@ -702,6 +705,7 @@ namespace Aws
       typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
       typedef std::future<ListFolderMembersOutcome> ListFolderMembersOutcomeCallable;
       typedef std::future<ListFoldersOutcome> ListFoldersOutcomeCallable;
+      typedef std::future<ListFoldersForResourceOutcome> ListFoldersForResourceOutcomeCallable;
       typedef std::future<ListGroupMembershipsOutcome> ListGroupMembershipsOutcomeCallable;
       typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
       typedef std::future<ListIAMPolicyAssignmentsOutcome> ListIAMPolicyAssignmentsOutcomeCallable;
@@ -885,6 +889,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourcesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListFolderMembersRequest&, const Model::ListFolderMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFolderMembersResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListFoldersRequest&, const Model::ListFoldersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFoldersResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListFoldersForResourceRequest&, const Model::ListFoldersForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFoldersForResourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListGroupMembershipsRequest&, const Model::ListGroupMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupMembershipsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListIAMPolicyAssignmentsRequest&, const Model::ListIAMPolicyAssignmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIAMPolicyAssignmentsResponseReceivedHandler;

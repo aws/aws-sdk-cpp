@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The function's Amazon Resource Name (ARN).</p>
+     * <p>The resource's Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of tag keys to remove from the function.</p>
+     * <p>A list of tag keys to remove from the resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }

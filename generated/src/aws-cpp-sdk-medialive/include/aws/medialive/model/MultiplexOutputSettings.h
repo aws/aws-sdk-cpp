@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/OutputLocationRef.h>
+#include <aws/medialive/model/MultiplexContainerSettings.h>
 #include <utility>
 
 namespace Aws
@@ -48,10 +49,23 @@ namespace Model
     inline MultiplexOutputSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
     inline MultiplexOutputSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const MultiplexContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
+    inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
+    inline void SetContainerSettings(const MultiplexContainerSettings& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = value; }
+    inline void SetContainerSettings(MultiplexContainerSettings&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::move(value); }
+    inline MultiplexOutputSettings& WithContainerSettings(const MultiplexContainerSettings& value) { SetContainerSettings(value); return *this;}
+    inline MultiplexOutputSettings& WithContainerSettings(MultiplexContainerSettings&& value) { SetContainerSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     OutputLocationRef m_destination;
     bool m_destinationHasBeenSet = false;
+
+    MultiplexContainerSettings m_containerSettings;
+    bool m_containerSettingsHasBeenSet = false;
   };
 
 } // namespace Model

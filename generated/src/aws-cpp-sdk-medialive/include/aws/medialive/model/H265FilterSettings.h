@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/TemporalFilterSettings.h>
+#include <aws/medialive/model/BandwidthReductionFilterSettings.h>
 #include <utility>
 
 namespace Aws
@@ -46,10 +47,23 @@ namespace Model
     inline H265FilterSettings& WithTemporalFilterSettings(const TemporalFilterSettings& value) { SetTemporalFilterSettings(value); return *this;}
     inline H265FilterSettings& WithTemporalFilterSettings(TemporalFilterSettings&& value) { SetTemporalFilterSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const BandwidthReductionFilterSettings& GetBandwidthReductionFilterSettings() const{ return m_bandwidthReductionFilterSettings; }
+    inline bool BandwidthReductionFilterSettingsHasBeenSet() const { return m_bandwidthReductionFilterSettingsHasBeenSet; }
+    inline void SetBandwidthReductionFilterSettings(const BandwidthReductionFilterSettings& value) { m_bandwidthReductionFilterSettingsHasBeenSet = true; m_bandwidthReductionFilterSettings = value; }
+    inline void SetBandwidthReductionFilterSettings(BandwidthReductionFilterSettings&& value) { m_bandwidthReductionFilterSettingsHasBeenSet = true; m_bandwidthReductionFilterSettings = std::move(value); }
+    inline H265FilterSettings& WithBandwidthReductionFilterSettings(const BandwidthReductionFilterSettings& value) { SetBandwidthReductionFilterSettings(value); return *this;}
+    inline H265FilterSettings& WithBandwidthReductionFilterSettings(BandwidthReductionFilterSettings&& value) { SetBandwidthReductionFilterSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     TemporalFilterSettings m_temporalFilterSettings;
     bool m_temporalFilterSettingsHasBeenSet = false;
+
+    BandwidthReductionFilterSettings m_bandwidthReductionFilterSettings;
+    bool m_bandwidthReductionFilterSettingsHasBeenSet = false;
   };
 
 } // namespace Model

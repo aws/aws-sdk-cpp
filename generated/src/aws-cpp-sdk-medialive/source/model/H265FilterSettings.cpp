@@ -19,7 +19,8 @@ namespace Model
 {
 
 H265FilterSettings::H265FilterSettings() : 
-    m_temporalFilterSettingsHasBeenSet(false)
+    m_temporalFilterSettingsHasBeenSet(false),
+    m_bandwidthReductionFilterSettingsHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ H265FilterSettings& H265FilterSettings::operator =(JsonView jsonValue)
     m_temporalFilterSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("bandwidthReductionFilterSettings"))
+  {
+    m_bandwidthReductionFilterSettings = jsonValue.GetObject("bandwidthReductionFilterSettings");
+
+    m_bandwidthReductionFilterSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue H265FilterSettings::Jsonize() const
   if(m_temporalFilterSettingsHasBeenSet)
   {
    payload.WithObject("temporalFilterSettings", m_temporalFilterSettings.Jsonize());
+
+  }
+
+  if(m_bandwidthReductionFilterSettingsHasBeenSet)
+  {
+   payload.WithObject("bandwidthReductionFilterSettings", m_bandwidthReductionFilterSettings.Jsonize());
 
   }
 

@@ -57,6 +57,7 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_documentDBEventSourceConfigHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false),
     m_filterCriteriaErrorHasBeenSet(false),
+    m_eventSourceMappingArnHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
 }
@@ -284,6 +285,13 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_filterCriteriaErrorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EventSourceMappingArn"))
+  {
+    m_eventSourceMappingArn = jsonValue.GetString("EventSourceMappingArn");
+
+    m_eventSourceMappingArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -479,6 +487,12 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_filterCriteriaErrorHasBeenSet)
   {
    payload.WithObject("FilterCriteriaError", m_filterCriteriaError.Jsonize());
+
+  }
+
+  if(m_eventSourceMappingArnHasBeenSet)
+  {
+   payload.WithString("EventSourceMappingArn", m_eventSourceMappingArn);
 
   }
 

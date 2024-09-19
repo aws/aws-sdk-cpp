@@ -224,6 +224,12 @@ UpdateEventSourceMappingResult& UpdateEventSourceMappingResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("EventSourceMappingArn"))
+  {
+    m_eventSourceMappingArn = jsonValue.GetString("EventSourceMappingArn");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

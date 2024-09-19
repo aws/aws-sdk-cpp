@@ -26,7 +26,9 @@ ParameterDropDownControl::ParameterDropDownControl() :
     m_type(SheetControlListType::NOT_SET),
     m_typeHasBeenSet(false),
     m_selectableValuesHasBeenSet(false),
-    m_cascadingControlConfigurationHasBeenSet(false)
+    m_cascadingControlConfigurationHasBeenSet(false),
+    m_commitMode(CommitMode::NOT_SET),
+    m_commitModeHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,13 @@ ParameterDropDownControl& ParameterDropDownControl::operator =(JsonView jsonValu
     m_cascadingControlConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CommitMode"))
+  {
+    m_commitMode = CommitModeMapper::GetCommitModeForName(jsonValue.GetString("CommitMode"));
+
+    m_commitModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +142,11 @@ JsonValue ParameterDropDownControl::Jsonize() const
   {
    payload.WithObject("CascadingControlConfiguration", m_cascadingControlConfiguration.Jsonize());
 
+  }
+
+  if(m_commitModeHasBeenSet)
+  {
+   payload.WithString("CommitMode", CommitModeMapper::GetNameForCommitMode(m_commitMode));
   }
 
   return payload;

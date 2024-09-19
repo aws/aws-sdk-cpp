@@ -34,6 +34,7 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_bisectBatchOnFunctionErrorHasBeenSet(false),
     m_maximumRetryAttempts(0),
     m_maximumRetryAttemptsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_tumblingWindowInSeconds(0),
     m_tumblingWindowInSecondsHasBeenSet(false),
     m_topicsHasBeenSet(false),
@@ -126,6 +127,17 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
   if(m_maximumRetryAttemptsHasBeenSet)
   {
    payload.WithInteger("MaximumRetryAttempts", m_maximumRetryAttempts);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

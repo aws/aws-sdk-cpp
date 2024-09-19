@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/RelativeDateTimeControlDisplayOptions.h>
+#include <aws/quicksight/model/CommitMode.h>
 #include <utility>
 
 namespace Aws
@@ -49,10 +50,26 @@ namespace Model
     inline DefaultRelativeDateTimeControlOptions& WithDisplayOptions(const RelativeDateTimeControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
     inline DefaultRelativeDateTimeControlOptions& WithDisplayOptions(RelativeDateTimeControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The visibility configuration of the Apply button on a
+     * <code>RelativeDateTimeControl</code>.</p>
+     */
+    inline const CommitMode& GetCommitMode() const{ return m_commitMode; }
+    inline bool CommitModeHasBeenSet() const { return m_commitModeHasBeenSet; }
+    inline void SetCommitMode(const CommitMode& value) { m_commitModeHasBeenSet = true; m_commitMode = value; }
+    inline void SetCommitMode(CommitMode&& value) { m_commitModeHasBeenSet = true; m_commitMode = std::move(value); }
+    inline DefaultRelativeDateTimeControlOptions& WithCommitMode(const CommitMode& value) { SetCommitMode(value); return *this;}
+    inline DefaultRelativeDateTimeControlOptions& WithCommitMode(CommitMode&& value) { SetCommitMode(std::move(value)); return *this;}
+    ///@}
   private:
 
     RelativeDateTimeControlDisplayOptions m_displayOptions;
     bool m_displayOptionsHasBeenSet = false;
+
+    CommitMode m_commitMode;
+    bool m_commitModeHasBeenSet = false;
   };
 
 } // namespace Model
