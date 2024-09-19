@@ -788,7 +788,23 @@
         }
       ],
       "traits": {
-        "smithy.api#documentation": "<p>This operation allows you to perform batch reads or writes on data stored in DynamoDB,\n            using PartiQL. Each read statement in a <code>BatchExecuteStatement</code> must specify\n            an equality condition on all key attributes. This enforces that each <code>SELECT</code>\n            statement in a batch returns at most a single item. For more information, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.multiplestatements.batching.html\">Running batch operations with PartiQL for DynamoDB\n            </a>.</p>\n         <note>\n            <p>The entire batch must consist of either read statements or write statements, you\n                cannot mix both in one batch.</p>\n         </note>\n         <important>\n            <p>A HTTP 200 response does not mean that all statements in the BatchExecuteStatement\n                succeeded. Error details for individual statements can be found under the <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchStatementResponse.html#DDB-Type-BatchStatementResponse-Error\">Error</a> field of the <code>BatchStatementResponse</code> for each\n                statement.</p>\n         </important>"
+        "smithy.api#documentation": "<p>This operation allows you to perform batch reads or writes on data stored in DynamoDB,\n            using PartiQL. Each read statement in a <code>BatchExecuteStatement</code> must specify\n            an equality condition on all key attributes. This enforces that each <code>SELECT</code>\n            statement in a batch returns at most a single item. For more information, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.multiplestatements.batching.html\">Running batch operations with PartiQL for DynamoDB\n            </a>.</p>\n         <note>\n            <p>The entire batch must consist of either read statements or write statements, you\n                cannot mix both in one batch.</p>\n         </note>\n         <important>\n            <p>A HTTP 200 response does not mean that all statements in the BatchExecuteStatement\n                succeeded. Error details for individual statements can be found under the <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchStatementResponse.html#DDB-Type-BatchStatementResponse-Error\">Error</a> field of the <code>BatchStatementResponse</code> for each\n                statement.</p>\n         </important>",
+        "smithy.test#smokeTests": [
+          {
+            "id": "BatchExecuteStatementSuccess",
+            "params": {
+              "Statements": [{"Statement": "test query" , "Parameters":[ {"S": "testval"} ] }],
+              "ReturnConsumedCapacity": "test"
+            },
+            "vendorParams": {
+              "region": "us-west-2"
+            },
+            "vendorParamsShape": "aws.test#AwsVendorParams",
+            "expect": {
+              "success": {}
+            }
+          }
+        ]
       }
     },
     "com.amazonaws.dynamodb#BatchExecuteStatementInput": {

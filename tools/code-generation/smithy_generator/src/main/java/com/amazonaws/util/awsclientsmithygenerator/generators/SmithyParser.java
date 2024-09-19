@@ -14,10 +14,10 @@ import software.amazon.smithy.aws.traits.auth.SigV4Trait;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.loader.ModelAssembler;
 import software.amazon.smithy.model.node.Node;
-import software.amazon.smithy.model.shapes.OperationShape;
-import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.shapes.*;
 import software.amazon.smithy.model.traits.HttpBearerAuthTrait;
 import software.amazon.smithy.smoketests.traits.SmokeTestsTrait;
+
 
 import java.io.File;
 import java.io.FileWriter;
@@ -29,12 +29,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -47,6 +42,12 @@ public class SmithyParser {
     private static final String CMAKE_LISTS_TXT = "CMakeLists.txt";
     private static final String SMOKE_TESTS_CPP_FORMAT = "%sSmokeTests.cpp";
     private static final String OUTPUT_LOCATION_FORMAT = "output/%s";
+    Model model;
+    @Data
+    private class CppDataPacker{
+        public String functionCall;
+        public StringBuilder functionDefinition;
+    }
 
     @Data
     public static final class ClientConfiguration {
@@ -64,7 +65,8 @@ public class SmithyParser {
         public String operationName;
         public String inputShapeName;
         public String outputShapeName;
-        Map<String, Node> paramsMap;
+        public List<String> getterCodeBlock;
+        public String functionBlock;
         boolean expectSuccess;
         Optional<String> errorShapeId;
         //capture auth scheme as that decides the client constructor
@@ -147,12 +149,238 @@ public class SmithyParser {
         return context;
     }
 
-    private List<TestcaseParams> extractTests(ModelAssembler assembler) {
+    public static OperationShape getOperationShape(Model model, String operationName) {
+        ShapeId operationId = ShapeId.from(operationName);  // Get operation by ShapeId
+        Shape shape = model.expectShape(operationId);
+
+        if (shape instanceof OperationShape) {
+            return (OperationShape) shape;
+        } else {
+            throw new IllegalArgumentException("Shape is not an operation.");
+        }
+    }
+
+    public static String getShapeName(Shape shape) {
+        String input = String.valueOf(shape.getId());
+        // Find the index of the '#' character
+        int index = input.indexOf('#');
+
+        if (index != -1) {
+            // If '#' is found, return the substring after it
+            return input.substring(index + 1);
+        } else {
+            // If no '#' is found, return the entire string
+            return input;
+        }
+    }
+
+    public static String convertSnakeToPascal(String snakeCase) {
+        StringBuilder result = new StringBuilder();
+        String[] words = snakeCase.split("_");
+
+        // Capitalize the first word
+        result.append(words[0].substring(0, 1).toUpperCase())
+                .append(words[0].substring(1).toLowerCase());
+
+        // Capitalize the first letter of each remaining word and append
+        for (int i = 1; i < words.length; i++) {
+            result.append(words[i].substring(0, 1).toUpperCase())
+                    .append(words[i].substring(1).toLowerCase());
+        }
+
+        return result.toString();
+    }
+
+    Map<String, Shape> getMemberShapes(Shape shape)
+    {
+        Map<String, Shape> result = new HashMap<>();
+        Map<String, MemberShape> members = shape.getAllMembers();
+
+        // Convert MemberShape to Shape and populate the result map
+        result = members.entrySet().stream()
+        .collect(Collectors.toMap(
+                Map.Entry::getKey, // Use the original key
+                entry -> {
+                    ShapeId targetShapeId = entry.getValue().getTarget();
+                    return model.getShape(targetShapeId).orElse(null);
+                }
+        ));
+        // Optionally filter out entries with null shapes
+        result = result.entrySet().stream()
+                .filter(entry -> entry.getValue() != null)
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue
+                ));
+
+        return result;
+    }
+
+    private String GenerateCppSetters(
+            String key,
+            Node value,
+            Shape shape, //useful for C++ return type object
+            int level, //useful for depth
+            int count, //useful for array elements at same depth
+            Map<String, CppDataPacker> functionMap
+    ) throws Exception
+    {
+        if(shape == null)
+        {
+            throw new Exception("Invalid shape found");
+        }
+        //if object is a structure, then return will be a function call and the function definition will be in
+        // functionMap
+        //if object is a simple type, then return will just be the value.
+        String functionName = new String();
+        String indentPrefix = "\t";
+        String varName = key.toLowerCase();
+        String functionNameSuffix = convertSnakeToPascal(varName + "_lvl" + level + "_idx" + count);
+
+        //for simple types, use initializer list for narrow types
+        if (
+                value.isNumberNode() || value.isBooleanNode()
+        )
+        {
+            functionName = String.format("{%s}",value);
+        }
+        else if (value.isStringNode() )
+        {
+            functionName = String.format("{\"%s\"}",value);
+        }
+        else if (value.isObjectNode() )
+        {
+            if(value.asObjectNode().isEmpty()) {
+                throw new Exception("object node is empty");
+            }
+            //shape has to be list
+            if(!(shape.getType() == ShapeType.STRUCTURE) && !(shape.getType() == ShapeType.MAP) &&
+                    !(shape.getType() == ShapeType.UNION)
+            )
+            {
+                throw new Exception(String.format("Conflict. shape of type:%s, name:%s. Node is a map",shape.getType(), shape.getId()));
+            }
+            CppDataPacker data = new CppDataPacker();
+            StringBuilder sb = new StringBuilder();
+            functionName = String.format("Get%s()", functionNameSuffix);
+            String shapeName = getShapeName(shape);
+            //value
+            Map<String, Shape> fieldShapeMap = getMemberShapes(shape);
+            //define function body
+            sb.append(String.format("%s %s\n{\n", shapeName, functionName));
+
+            //declare variable
+            sb.append(String.format("%s%s %s ;\n",indentPrefix,shapeName,varName));
+            //iterate over map keys
+
+            Map<String, Node> map = value.asObjectNode().get().getStringMap();
+            for (Map.Entry<String, Node> entry : map.entrySet()) {
+
+                String mapKey = entry.getKey();
+                Node mapValue = entry.getValue();
+
+                Shape fieldShape = fieldShapeMap.get(mapKey);
+
+                //set elements of the variable
+                sb.append(String.format("%s%s.Set%s( %s );\n", indentPrefix, varName, mapKey,
+                        GenerateCppSetters(mapKey,
+                                mapValue,
+                                fieldShape,
+                                level + 1,
+                                0,
+                                functionMap
+                        )
+                ));
+            }
+
+            //prepare function code and save it for the variable name
+            //return only the function name
+            sb.append(String.format("%sreturn %s;\n}\n", indentPrefix,varName));
+
+            data.setFunctionCall(functionName);
+            data.setFunctionDefinition(sb);
+            functionMap.put(functionName, data);
+        }
+        else if (value.isArrayNode())
+        {
+            if(value.asArrayNode().isEmpty())
+            {
+                throw new Exception("array node is empty");
+            }
+            //shape has to be list
+            if(!(shape.getType() == ShapeType.LIST))
+            {
+                throw new Exception(String.format("Conflict. shape of type:%s, name:%s. Node is a list",shape.getType(), shape.getId()));
+            }
+            CppDataPacker data = new CppDataPacker();
+            StringBuilder sb = new StringBuilder();
+            functionName = String.format("Get%s()",functionNameSuffix);
+
+            //assume objects will be same type
+            List<Node> list = value.asArrayNode().get().getElements();  // Safely cast to List
+
+            String listType = getShapeName(shape);
+
+            //open function body
+            sb.append(String.format("Aws::Vector<%s> %s\n{\n",listType, functionName));
+
+            //vector setter
+            sb.append(String.format("%sAws::Vector<%s> %s = {",indentPrefix,listType, varName));
+
+            //list is assumed to have homogenous type,
+            MemberShape listShapeId = shape.asListShape().get().getMember();
+            Optional<Shape> listMemberShape = model.getShape(listShapeId.getTarget());
+
+            if(listMemberShape.isEmpty())
+            {
+                throw new Exception("List member shape is empty");
+            }
+
+            for (int i = 0; i < list.size(); i++)
+            {
+                Node element = list.get(i);
+
+                sb.append(
+                        String.format("%s",
+                                GenerateCppSetters(key,
+                                        element,
+                                        listMemberShape.get(),
+                                        level + 1,
+                                        i,
+                                        functionMap
+                                )
+                        )
+                );
+                if(i != list.size()-1)
+                {
+                    sb.append(",\n");
+                }
+            }
+            sb.append(String.format("%s};\n",indentPrefix));
+
+            //close function body
+            sb.append(String.format("%sreturn %s;\n}\n", indentPrefix,varName));
+
+            data.setFunctionCall(functionName);
+            data.setFunctionDefinition(sb);
+            functionMap.put(functionName, data);
+        }
+
+        return functionName;
+    }
+
+
+    public static Optional<Shape> getInputShape(OperationShape operation, Model model) {
+        return operation.getInput().map(model::expectShape);
+    }
+
+    private List<TestcaseParams> extractTests(ModelAssembler assembler)
+    {
         final List<TestcaseParams> testcases = new ArrayList<>();
         // Assemble the model
         if(assembler.discoverModels().assemble().getResult().isPresent())
         {
-            Model model = assembler.discoverModels().assemble().getResult().get(); 
+            model = assembler.discoverModels().assemble().getResult().get();
 
             Optional<ServiceShape> service = model.getServiceShapes().stream().filter( serviceShape -> serviceShape.getTrait(ServiceTrait.class).isPresent() ).findFirst();
 
@@ -171,6 +399,7 @@ public class SmithyParser {
                     .forEach(entry -> {
                         OperationShape operationShape = entry.getKey();
                         SmokeTestsTrait smokeTestsTrait = entry.getValue();
+
                         // Perform your logic with operationShape and smokeTestsTrait
                         System.out.println("OperationShape: " + operationShape);
                         System.out.println("SmokeTestsTrait: " + smokeTestsTrait);
@@ -198,7 +427,60 @@ public class SmithyParser {
                             //get params
                             if(testcase.getParams().isPresent())
                             {
-                                test.setParamsMap(testcase.getParams().get().getStringMap());
+                                Map<String, CppDataPacker> functionMap = new HashMap<String, CppDataPacker>();
+
+                                //build code to populate the input parameters
+                                StringBuilder sb = new StringBuilder();
+
+                                //get input shape
+                                Optional<Shape> topLevelShape = model.getShape(operationShape.getInput().get());
+
+                                if(topLevelShape.isPresent()) {
+                                    Map<String, Shape> fieldShapeMap = getMemberShapes(topLevelShape.get());
+
+                                    //declare top level variable
+                                    sb.append(String.format("%sRequest %s;\n", test.getOperationName(), "input"));
+                                    for (Map.Entry<String, Node> paramEntry : testcase.getParams().get().getStringMap().entrySet()) {
+                                        String key = paramEntry.getKey();
+
+                                        Shape fieldShape =  fieldShapeMap.get(key);
+
+                                        Node value = paramEntry.getValue();
+
+                                        if (fieldShape == null) {
+                                            continue;
+                                        }
+
+                                        try {
+                                            sb.append(String.format("input.Set%s(%s);\n", key,
+                                                    GenerateCppSetters(
+                                                            test.getOperationName().toLowerCase() + "_elem",
+                                                            value,
+                                                            fieldShape, //useful for C++ return type object
+                                                            1, //useful for depth
+                                                            0, //useful for array elements at same depth
+                                                            functionMap)
+                                            ));
+                                        } catch (Exception e) {
+                                            throw new RuntimeException(e);
+                                        }
+                                    }
+
+                                    test.setFunctionBlock(sb.toString());
+
+                                    List<String> lines = new ArrayList<>();
+
+                                    // Iterate through each value in the map
+                                    for (CppDataPacker value : functionMap.values()) {
+                                        // Split the value by newline (\n)
+                                        String[] splitLines = value.functionDefinition.toString().split("\n");
+
+                                        // Add each line to the vector
+                                        lines.addAll(Arrays.asList(splitLines));
+                                    }
+
+                                    test.setGetterCodeBlock(lines);
+                                }
                             }
                             
                             //get expectations

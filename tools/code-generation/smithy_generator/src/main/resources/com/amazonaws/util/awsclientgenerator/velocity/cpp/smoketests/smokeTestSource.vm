@@ -13,59 +13,58 @@
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #set($client = "")
 #foreach($test in $tests)
-#if($foreach.index == 0)
-#set($client = ${test.clientName})
-#end
+    #if($foreach.index == 0)
+        #set($client = ${test.clientName})
+    #end
 #end
 //client header
 \#include <aws/$client.toLowerCase()/${client}Client.h>
 #foreach($test in $tests)
-#include <aws/$test.clientName.toLowerCase()/model/${test.operationName}Request.h>
+\#include <aws/$test.clientName.toLowerCase()/model/${test.operationName}Request.h>
 #end
 \#include <utility>
-\#include <algorithm>
-using namespace Aws::Auth;
-using namespace Aws::Http;
-using namespace Aws::Client;
-using namespace Aws::$client;
-using namespace Aws::$client::Model;
+    \#include <algorithm>
+    using namespace Aws::Auth;
+    using namespace Aws::Http;
+    using namespace Aws::Client;
+    using namespace Aws::$client;
+    using namespace Aws::$client::Model;
 
-namespace ${client}SmokeTest{
-static const char ALLOCATION_TAG[] = "${client}SmokeTest";
+    namespace ${client}SmokeTest{
+    static const char ALLOCATION_TAG[] = "${client}SmokeTest";
 
-class ${client}SmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
-};
+    class ${client}SmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
+    };
 
-#foreach($test in $tests)     
-TEST_F(${client}SmokeTestSuite, $test.testcaseName )
-{
-    Aws::${client}::${client}ClientConfiguration& clientConfiguration;
-#if (!$test.config.region.isEmpty())
-    clientConfiguration.region = $test.config.region;
-#end
-    clientConfiguration.useFIPS = $test.config.useFips;
-    clientConfiguration.useDualstack = $test.config.useDualstack;
-#if (($test.auth == "sigv4") || ($test.auth == "sigv4a"))
-    auto clientSp = Aws::MakeShared<${client}Client>(ALLOCATION_TAG, clientConfiguration);
-#end
-    $test.inputShapeName input;
-    //populate input params
-#foreach ($param in $test.paramsMap.entrySet())
-#if ($param.getValue().isStringNode())
-    input.Set${param.getKey()}($param.getValue().asStringNode().get().getValue() );
-#elif ($param.getValue().isNumberNode())
-    input.Set${param.getKey()}($param.getValue().asNumberNode().get().getValue() );
-#elif ($param.getValue().isBooleanNode())
-    input.Set${param.getKey()}($param.getValue().asBooleanNode().get().getValue() );
-#end
-#end
-    auto outcome = clientSp->${test.operationName}(input);
-#if ($test.expectSuccess)
-    EXPECT_TRUE( outcome.IsSuccess());
-#else
-    EXPECT_FALSE( outcome.IsSuccess());
-#end
-}
+    #foreach($test in $tests)
+        TEST_F(${client}SmokeTestSuite, $test.testcaseName )
+        {
+        Aws::${client}::${client}ClientConfiguration& clientConfiguration;
+        #if (!$test.config.region.isEmpty())
+            clientConfiguration.region = $test.config.region;
+        #end
+        clientConfiguration.useFIPS = $test.config.useFips;
+        clientConfiguration.useDualstack = $test.config.useDualstack;
+        #if (($test.auth == "sigv4") || ($test.auth == "sigv4a"))
+            auto clientSp = Aws::MakeShared<${client}Client>(ALLOCATION_TAG, clientConfiguration);
+        #end
+        //populate input params
+        //Prepare getters
+        #foreach ($line in $test.getterCodeBlock)
+            $line
+        #end
+        //Prepare Request
+        #set($lines = $test.functionBlock.split("\n"))
+        #foreach($line in $lines)
+            $line
+        #end
+        auto outcome = clientSp->${test.operationName}(input);
+        #if ($test.expectSuccess)
+            EXPECT_TRUE( outcome.IsSuccess());
+        #else
+            EXPECT_FALSE( outcome.IsSuccess());
+        #end
+        }
 
-#end
-}
+    #end
+    }

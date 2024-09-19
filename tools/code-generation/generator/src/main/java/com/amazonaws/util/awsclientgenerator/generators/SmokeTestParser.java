@@ -94,7 +94,6 @@ public class SmokeTestParser {
         public String operationName;
         public String inputShapeName;
         public String outputShapeName;
-        public Map<String, Object> paramsMap;
         public List<String> getterCodeBlock;
         public String functionBlock;
         boolean expectSuccess;
@@ -203,24 +202,15 @@ public class SmokeTestParser {
                 );
             });
         }
-        //list will be handled in a different way
-        // else if(shape.isList())
-        //        {
-        //            shape.getMembers().entrySet().stream().forEach(entry -> {
-        //                result.put(entry.getKey(),
-        //                        entry.getValue().getShape().getName()
-        //                );
-        //            });
-        //        }
-
         return result;
     }
 
 
     //at each level use shape object from model resolution to use the code generated appropriate type
+    //if shape is a different representation, codegen will need to be changed accordingly
     //use shapes map from service model to navigate and define appropriate type
     //use key to find appropriate
-    private String traverseObject(
+    private String GenerateCppSettersFromPojo(
                                 String key,
                                 Object value,
                                 Shape shape, //useful for C++ return type object
@@ -242,7 +232,7 @@ public class SmokeTestParser {
         String functionNameSuffix = convertSnakeToPascal(varName + "_lvl" + level + "_idx" + count);
 
         String type = shape.getName();
-        //for simple types
+        //for simple types, use initializer list for narrow types
         if (    (value instanceof Integer) ||
                 (value instanceof Boolean) ||
                 (value instanceof Float)
@@ -256,6 +246,11 @@ public class SmokeTestParser {
         }
         else if (value instanceof Map)
         {
+            //shape has to be list
+            if(!shape.isMap() || !shape.isStructure())
+            {
+                throw new SourceGenerationFailedException(String.format("Conflict. shape of type:%s, name:%s. POJO is a map",shape.getType(), shape.getName()));
+            }
             CppDataPacker data = new CppDataPacker();
             StringBuilder sb = new StringBuilder();
             functionName = String.format("Get%s()", functionNameSuffix);
@@ -283,7 +278,7 @@ public class SmokeTestParser {
 
                 //set elements of the variable
                 sb.append(String.format("%s%s.Set%s( %s );\n", indentPrefix, varName, mapKey,
-                        traverseObject(mapKey,
+                        GenerateCppSettersFromPojo(mapKey,
                                 mapValue,
                                 fieldShape,
                                 level + 1,
@@ -294,7 +289,6 @@ public class SmokeTestParser {
             }
 
             //prepare function code and save it for the variable name
-
             //return only the function name
             sb.append(String.format("%sreturn %s;\n}\n", indentPrefix,varName));
 
@@ -314,7 +308,7 @@ public class SmokeTestParser {
             //shape has to be list
             if(!shape.isList())
             {
-                throw new SourceGenerationFailedException(String.format("Conflict. Object of type:%s, name:%s is list but shape is not list",shape.getType(), shape.getName()));
+                throw new SourceGenerationFailedException(String.format("Conflict. shape of type:%s, name:%s. POJO is a list",shape.getType(), shape.getName()));
             }
             String listType = shape.getListMember().getShape().getName();
 
@@ -330,7 +324,7 @@ public class SmokeTestParser {
 
                 sb.append(
                         String.format("%s",
-                            traverseObject(key,
+                            GenerateCppSettersFromPojo(key,
                                     element,
                                     shape.getListMember().getShape(),
                                     level + 1,
@@ -400,7 +394,7 @@ public class SmokeTestParser {
 
             testcase.setConfig(config);
 
-            testcase.setParamsMap(parseInput(test.getInput()));
+            Map<String, Object> paramsMap = parseInput(test.getInput());
 
             //extract all helper functions in the context of the current test case
             Map<String, CppDataPacker> functionMap = new HashMap<String, CppDataPacker>();
@@ -415,14 +409,14 @@ public class SmokeTestParser {
 
             //declare top level variable
             sb.append(String.format("%sRequest %s;\n",test.getOperationName(), "input") );
-            for (Map.Entry<String, Object> entry : testcase.getParamsMap().entrySet()) {
+            for (Map.Entry<String, Object> entry : paramsMap.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
 
                 String fieldShapeName = fieldMap.get(key);
                 Shape fieldShape = (fieldShapeName != null) ? this.shapeMap.get(fieldShapeName) : null;
                 sb.append(String.format("input.Set%s(%s);\n",key,
-                        traverseObject(
+                        GenerateCppSettersFromPojo(
                                 test.getOperationName().toLowerCase()+"_elem",
                                 value,
                                 fieldShape, //useful for C++ return type object
