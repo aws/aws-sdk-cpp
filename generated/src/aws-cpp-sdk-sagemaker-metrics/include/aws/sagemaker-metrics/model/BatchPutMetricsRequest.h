@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the Trial Component to associate with the metrics.</p>
+     * <p>The name of the Trial Component to associate with the metrics. The Trial
+     * Component name must be entirely lowercase.</p>
      */
     inline const Aws::String& GetTrialComponentName() const{ return m_trialComponentName; }
     inline bool TrialComponentNameHasBeenSet() const { return m_trialComponentNameHasBeenSet; }

@@ -46,6 +46,9 @@ namespace Aws
         static const int InPlaceUpgrade_HASH = HashingUtils::HashString("InPlaceUpgrade");
         static const int AntiVirusInstalled_HASH = HashingUtils::HashString("AntiVirusInstalled");
         static const int UEFINotSupported_HASH = HashingUtils::HashString("UEFINotSupported");
+        static const int UnknownError_HASH = HashingUtils::HashString("UnknownError");
+        static const int AppXPackagesInstalled_HASH = HashingUtils::HashString("AppXPackagesInstalled");
+        static const int ReservedStorageInUse_HASH = HashingUtils::HashString("ReservedStorageInUse");
 
 
         WorkspaceImageErrorDetailCode GetWorkspaceImageErrorDetailCodeForName(const Aws::String& name)
@@ -155,6 +158,18 @@ namespace Aws
           {
             return WorkspaceImageErrorDetailCode::UEFINotSupported;
           }
+          else if (hashCode == UnknownError_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::UnknownError;
+          }
+          else if (hashCode == AppXPackagesInstalled_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::AppXPackagesInstalled;
+          }
+          else if (hashCode == ReservedStorageInUse_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::ReservedStorageInUse;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -223,6 +238,12 @@ namespace Aws
             return "AntiVirusInstalled";
           case WorkspaceImageErrorDetailCode::UEFINotSupported:
             return "UEFINotSupported";
+          case WorkspaceImageErrorDetailCode::UnknownError:
+            return "UnknownError";
+          case WorkspaceImageErrorDetailCode::AppXPackagesInstalled:
+            return "AppXPackagesInstalled";
+          case WorkspaceImageErrorDetailCode::ReservedStorageInUse:
+            return "ReservedStorageInUse";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

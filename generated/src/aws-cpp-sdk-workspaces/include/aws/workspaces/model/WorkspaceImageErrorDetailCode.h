@@ -41,7 +41,10 @@ namespace Model
     ZeroRearmCount,
     InPlaceUpgrade,
     AntiVirusInstalled,
-    UEFINotSupported
+    UEFINotSupported,
+    UnknownError,
+    AppXPackagesInstalled,
+    ReservedStorageInUse
   };
 
 namespace WorkspaceImageErrorDetailCodeMapper

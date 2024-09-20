@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<NeptuneEndpointProviderEndpointTestCase>> NeptuneEndpointProviderTests::TEST_CASES;
-const size_t NeptuneEndpointProviderTests::TEST_CASES_SZ = 55;
+const size_t NeptuneEndpointProviderTests::TEST_CASES_SZ = 54;
 
 Aws::Vector<NeptuneEndpointProviderEndpointTestCase> NeptuneEndpointProviderTests::getTestCase() {
 
@@ -543,12 +543,6 @@ Aws::Vector<NeptuneEndpointProviderEndpointTestCase> NeptuneEndpointProviderTest
     {}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
-  },
-  /*TEST CASE 54*/
-  {"Partition doesn't support DualStack", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   }
   };
   return test_cases;
