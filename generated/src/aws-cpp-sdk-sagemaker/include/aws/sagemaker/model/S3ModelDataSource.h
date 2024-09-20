@@ -153,6 +153,21 @@ namespace Model
     inline S3ModelDataSource& WithHubAccessConfig(const InferenceHubAccessConfig& value) { SetHubAccessConfig(value); return *this;}
     inline S3ModelDataSource& WithHubAccessConfig(InferenceHubAccessConfig&& value) { SetHubAccessConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon S3 URI of the manifest file. The manifest file is a CSV file that
+     * stores the artifact locations.</p>
+     */
+    inline const Aws::String& GetManifestS3Uri() const{ return m_manifestS3Uri; }
+    inline bool ManifestS3UriHasBeenSet() const { return m_manifestS3UriHasBeenSet; }
+    inline void SetManifestS3Uri(const Aws::String& value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri = value; }
+    inline void SetManifestS3Uri(Aws::String&& value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri = std::move(value); }
+    inline void SetManifestS3Uri(const char* value) { m_manifestS3UriHasBeenSet = true; m_manifestS3Uri.assign(value); }
+    inline S3ModelDataSource& WithManifestS3Uri(const Aws::String& value) { SetManifestS3Uri(value); return *this;}
+    inline S3ModelDataSource& WithManifestS3Uri(Aws::String&& value) { SetManifestS3Uri(std::move(value)); return *this;}
+    inline S3ModelDataSource& WithManifestS3Uri(const char* value) { SetManifestS3Uri(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_s3Uri;
@@ -169,6 +184,9 @@ namespace Model
 
     InferenceHubAccessConfig m_hubAccessConfig;
     bool m_hubAccessConfigHasBeenSet = false;
+
+    Aws::String m_manifestS3Uri;
+    bool m_manifestS3UriHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in SageMakerMetricsClient header */
+#include <aws/sagemaker-metrics/model/BatchGetMetricsResult.h>
 #include <aws/sagemaker-metrics/model/BatchPutMetricsResult.h>
 /* End of service model headers required in SageMakerMetricsClient header */
 
@@ -59,14 +60,17 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in SageMakerMetricsClient header */
+      class BatchGetMetricsRequest;
       class BatchPutMetricsRequest;
       /* End of service model forward declarations required in SageMakerMetricsClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<BatchGetMetricsResult, SageMakerMetricsError> BatchGetMetricsOutcome;
       typedef Aws::Utils::Outcome<BatchPutMetricsResult, SageMakerMetricsError> BatchPutMetricsOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<BatchGetMetricsOutcome> BatchGetMetricsOutcomeCallable;
       typedef std::future<BatchPutMetricsOutcome> BatchPutMetricsOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -74,6 +78,7 @@ namespace Aws
     class SageMakerMetricsClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const SageMakerMetricsClient*, const Model::BatchGetMetricsRequest&, const Model::BatchGetMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetMetricsResponseReceivedHandler;
     typedef std::function<void(const SageMakerMetricsClient*, const Model::BatchPutMetricsRequest&, const Model::BatchPutMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutMetricsResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace SageMakerMetrics

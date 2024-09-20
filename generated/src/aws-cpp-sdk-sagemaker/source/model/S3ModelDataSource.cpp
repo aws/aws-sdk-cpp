@@ -25,7 +25,8 @@ S3ModelDataSource::S3ModelDataSource() :
     m_compressionType(ModelCompressionType::NOT_SET),
     m_compressionTypeHasBeenSet(false),
     m_modelAccessConfigHasBeenSet(false),
-    m_hubAccessConfigHasBeenSet(false)
+    m_hubAccessConfigHasBeenSet(false),
+    m_manifestS3UriHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,13 @@ S3ModelDataSource& S3ModelDataSource::operator =(JsonView jsonValue)
     m_hubAccessConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ManifestS3Uri"))
+  {
+    m_manifestS3Uri = jsonValue.GetString("ManifestS3Uri");
+
+    m_manifestS3UriHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +112,12 @@ JsonValue S3ModelDataSource::Jsonize() const
   if(m_hubAccessConfigHasBeenSet)
   {
    payload.WithObject("HubAccessConfig", m_hubAccessConfig.Jsonize());
+
+  }
+
+  if(m_manifestS3UriHasBeenSet)
+  {
+   payload.WithString("ManifestS3Uri", m_manifestS3Uri);
 
   }
 

@@ -31,6 +31,12 @@ namespace Endpoint
   {
     SetFromClientConfiguration(static_cast<const DynamoDBClientConfiguration::BaseClientConfigClass&>(config));
 
+    if(!config.accountId.empty()) {
+      SetStringParameter("AccountId", config.accountId);
+    }
+    if(!config.accountIdEndpointMode.empty()) {
+      SetStringParameter("AccountIdEndpointMode", config.accountIdEndpointMode);
+    }
   }
 } // namespace Endpoint
 } // namespace DynamoDB

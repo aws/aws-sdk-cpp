@@ -82,6 +82,14 @@ namespace Aws
              */
             Aws::Crt::Optional<bool>& enableEndpointDiscovery;
 
+            /**
+             * The AWS AccountId used for the request.
+             */
+            Aws::String accountId;
+            /**
+             * The AccountId Endpoint Mode.
+             */
+            Aws::String accountIdEndpointMode = "preferred";
         private:
             void LoadDynamoDBSpecificConfig(const Aws::String& profileName);
         };
