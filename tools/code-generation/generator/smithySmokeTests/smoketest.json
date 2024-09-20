@@ -14,6 +14,21 @@
             "config": {
                 "region": "us-west-2"
             }
+        },
+        {
+            "id": "ListTablesSuccess",
+            "operationName": "ListTables",
+            "input": {
+                "Limit": 1,
+                "ExclusiveStartTableName": "test",
+                "dummy": [ {"tkey":"test"} ]
+            },
+            "expectation": {
+                "success": {}
+            },
+            "config": {
+                "region": "us-west-2"
+            }
         }
     ]
 }
