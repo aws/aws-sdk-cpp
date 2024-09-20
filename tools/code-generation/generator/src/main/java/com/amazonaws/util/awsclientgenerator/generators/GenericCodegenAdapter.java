@@ -3,6 +3,8 @@ package com.amazonaws.util.awsclientgenerator.generators;
 import java.util.List;
 import java.util.Map;
 
+//Common Interface for Code generator adapter
+//Currently it builds setter functions from test input
 public interface GenericCodegenAdapter<SHAPE, DATA> {
 
     public Map<String, SHAPE> getMemberShapes(SHAPE shape);
@@ -67,7 +69,7 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
     }
 
     //at each level use shape object from model resolution to use the code generated appropriate type
-    //use shapes map from  model reppresentation to navigate and define appropriate type
+    //use shapes map from  model representation to navigate and define appropriate type
     //use key to find appropriate
     default public String GenerateCppSetters(
             String key,

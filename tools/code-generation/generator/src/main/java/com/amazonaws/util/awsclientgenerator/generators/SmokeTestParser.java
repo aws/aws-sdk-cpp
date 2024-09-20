@@ -266,13 +266,13 @@ public class SmokeTestParser {
                 try {
                     sb.append(String.format("input.Set%s(%s);\n", key,
 
-                            codegenAdapter.GenerateCppSetters(
-                                    test.getOperationName().toLowerCase() + "_elem",
-                                    value,
-                                    fieldShape, //useful for C++ return type object
-                                    1, //useful for depth
-                                    0, //useful for array elements at same depth
-                                    functionMap)
+                    codegenAdapter.GenerateCppSetters(
+                            test.getOperationName().toLowerCase() + "_elem",
+                            value,
+                            fieldShape, //useful for C++ return type object
+                            1, //useful for depth
+                            0, //useful for array elements at same depth
+                            functionMap)
                     ));
                 } catch (Exception e) {
                     throw new RuntimeException(e);
