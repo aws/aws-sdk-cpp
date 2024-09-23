@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/AuthenticationType.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/OAuth2PropertiesInput.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -55,6 +55,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The properties for OAuth2 authentication in the CreateConnection request.</p>
+     */
+    inline const OAuth2PropertiesInput& GetOAuth2Properties() const{ return m_oAuth2Properties; }
+    inline bool OAuth2PropertiesHasBeenSet() const { return m_oAuth2PropertiesHasBeenSet; }
+    inline void SetOAuth2Properties(const OAuth2PropertiesInput& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties = value; }
+    inline void SetOAuth2Properties(OAuth2PropertiesInput&& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties = std::move(value); }
+    inline AuthenticationConfigurationInput& WithOAuth2Properties(const OAuth2PropertiesInput& value) { SetOAuth2Properties(value); return *this;}
+    inline AuthenticationConfigurationInput& WithOAuth2Properties(OAuth2PropertiesInput&& value) { SetOAuth2Properties(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The secret manager ARN to store credentials in the CreateConnection
      * request.</p>
      */
@@ -67,28 +79,16 @@ namespace Model
     inline AuthenticationConfigurationInput& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
     inline AuthenticationConfigurationInput& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The properties for OAuth2 authentication in the CreateConnection request.</p>
-     */
-    inline const OAuth2PropertiesInput& GetOAuth2Properties() const{ return m_oAuth2Properties; }
-    inline bool OAuth2PropertiesHasBeenSet() const { return m_oAuth2PropertiesHasBeenSet; }
-    inline void SetOAuth2Properties(const OAuth2PropertiesInput& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties = value; }
-    inline void SetOAuth2Properties(OAuth2PropertiesInput&& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties = std::move(value); }
-    inline AuthenticationConfigurationInput& WithOAuth2Properties(const OAuth2PropertiesInput& value) { SetOAuth2Properties(value); return *this;}
-    inline AuthenticationConfigurationInput& WithOAuth2Properties(OAuth2PropertiesInput&& value) { SetOAuth2Properties(std::move(value)); return *this;}
-    ///@}
   private:
 
     AuthenticationType m_authenticationType;
     bool m_authenticationTypeHasBeenSet = false;
 
-    Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet = false;
-
     OAuth2PropertiesInput m_oAuth2Properties;
     bool m_oAuth2PropertiesHasBeenSet = false;
+
+    Aws::String m_secretArn;
+    bool m_secretArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -54,9 +54,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Service that is associated with the resource type. This is the
-     * primary service that lets you create and interact with resources of this
-     * type.</p>
+     * <p>The Amazon Web Servicesservice that is associated with the resource type.
+     * This is the primary service that lets you create and interact with resources of
+     * this type.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }

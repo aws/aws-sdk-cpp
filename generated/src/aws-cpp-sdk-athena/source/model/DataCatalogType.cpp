@@ -23,6 +23,7 @@ namespace Aws
         static const int LAMBDA_HASH = HashingUtils::HashString("LAMBDA");
         static const int GLUE_HASH = HashingUtils::HashString("GLUE");
         static const int HIVE_HASH = HashingUtils::HashString("HIVE");
+        static const int FEDERATED_HASH = HashingUtils::HashString("FEDERATED");
 
 
         DataCatalogType GetDataCatalogTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == HIVE_HASH)
           {
             return DataCatalogType::HIVE;
+          }
+          else if (hashCode == FEDERATED_HASH)
+          {
+            return DataCatalogType::FEDERATED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "GLUE";
           case DataCatalogType::HIVE:
             return "HIVE";
+          case DataCatalogType::FEDERATED:
+            return "FEDERATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -133,8 +133,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Service that owns the resource and is responsible for creating
-     * and updating it.</p>
+     * <p>The Amazon Web Servicesservice that owns the resource and is responsible for
+     * creating and updating it.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }

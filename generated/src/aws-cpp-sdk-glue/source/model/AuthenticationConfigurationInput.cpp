@@ -21,8 +21,8 @@ namespace Model
 AuthenticationConfigurationInput::AuthenticationConfigurationInput() : 
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_oAuth2PropertiesHasBeenSet(false)
+    m_oAuth2PropertiesHasBeenSet(false),
+    m_secretArnHasBeenSet(false)
 {
 }
 
@@ -41,18 +41,18 @@ AuthenticationConfigurationInput& AuthenticationConfigurationInput::operator =(J
     m_authenticationTypeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("SecretArn"))
-  {
-    m_secretArn = jsonValue.GetString("SecretArn");
-
-    m_secretArnHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("OAuth2Properties"))
   {
     m_oAuth2Properties = jsonValue.GetObject("OAuth2Properties");
 
     m_oAuth2PropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecretArn"))
+  {
+    m_secretArn = jsonValue.GetString("SecretArn");
+
+    m_secretArnHasBeenSet = true;
   }
 
   return *this;
@@ -67,15 +67,15 @@ JsonValue AuthenticationConfigurationInput::Jsonize() const
    payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
   }
 
-  if(m_secretArnHasBeenSet)
-  {
-   payload.WithString("SecretArn", m_secretArn);
-
-  }
-
   if(m_oAuth2PropertiesHasBeenSet)
   {
    payload.WithObject("OAuth2Properties", m_oAuth2Properties.Jsonize());
+
+  }
+
+  if(m_secretArnHasBeenSet)
+  {
+   payload.WithString("SecretArn", m_secretArn);
 
   }
 

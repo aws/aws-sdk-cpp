@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/emr-serverless/model/MonitoringConfiguration.h>
 #include <aws/emr-serverless/model/InteractiveConfiguration.h>
+#include <aws/emr-serverless/model/SchedulerConfiguration.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <aws/emr-serverless/model/WorkerTypeSpecificationInput.h>
 #include <aws/emr-serverless/model/Configuration.h>
@@ -285,6 +286,19 @@ namespace Model
     inline CreateApplicationRequest& WithInteractiveConfiguration(const InteractiveConfiguration& value) { SetInteractiveConfiguration(value); return *this;}
     inline CreateApplicationRequest& WithInteractiveConfiguration(InteractiveConfiguration&& value) { SetInteractiveConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The scheduler configuration for batch and streaming jobs running on this
+     * application. Supported with release labels emr-7.0.0 and above.</p>
+     */
+    inline const SchedulerConfiguration& GetSchedulerConfiguration() const{ return m_schedulerConfiguration; }
+    inline bool SchedulerConfigurationHasBeenSet() const { return m_schedulerConfigurationHasBeenSet; }
+    inline void SetSchedulerConfiguration(const SchedulerConfiguration& value) { m_schedulerConfigurationHasBeenSet = true; m_schedulerConfiguration = value; }
+    inline void SetSchedulerConfiguration(SchedulerConfiguration&& value) { m_schedulerConfigurationHasBeenSet = true; m_schedulerConfiguration = std::move(value); }
+    inline CreateApplicationRequest& WithSchedulerConfiguration(const SchedulerConfiguration& value) { SetSchedulerConfiguration(value); return *this;}
+    inline CreateApplicationRequest& WithSchedulerConfiguration(SchedulerConfiguration&& value) { SetSchedulerConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -334,6 +348,9 @@ namespace Model
 
     InteractiveConfiguration m_interactiveConfiguration;
     bool m_interactiveConfigurationHasBeenSet = false;
+
+    SchedulerConfiguration m_schedulerConfiguration;
+    bool m_schedulerConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

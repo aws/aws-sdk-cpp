@@ -33,7 +33,8 @@ DBShardGroup::DBShardGroup() :
     m_statusHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
-    m_endpointHasBeenSet(false)
+    m_endpointHasBeenSet(false),
+    m_dBShardGroupArnHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,12 @@ DBShardGroup& DBShardGroup::operator =(const XmlNode& xmlNode)
       m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
       m_endpointHasBeenSet = true;
     }
+    XmlNode dBShardGroupArnNode = resultNode.FirstChild("DBShardGroupArn");
+    if(!dBShardGroupArnNode.IsNull())
+    {
+      m_dBShardGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBShardGroupArnNode.GetText());
+      m_dBShardGroupArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -155,6 +162,11 @@ void DBShardGroup::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
   }
 
+  if(m_dBShardGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBShardGroupArn=" << StringUtils::URLEncode(m_dBShardGroupArn.c_str()) << "&";
+  }
+
   Aws::StringStream responseMetadataLocationAndMemberSs;
   responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
@@ -197,6 +209,10 @@ void DBShardGroup::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_endpointHasBeenSet)
   {
       oStream << location << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
+  }
+  if(m_dBShardGroupArnHasBeenSet)
+  {
+      oStream << location << ".DBShardGroupArn=" << StringUtils::URLEncode(m_dBShardGroupArn.c_str()) << "&";
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

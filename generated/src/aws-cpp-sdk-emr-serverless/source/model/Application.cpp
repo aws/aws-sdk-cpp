@@ -41,7 +41,8 @@ Application::Application() :
     m_workerTypeSpecificationsHasBeenSet(false),
     m_runtimeConfigurationHasBeenSet(false),
     m_monitoringConfigurationHasBeenSet(false),
-    m_interactiveConfigurationHasBeenSet(false)
+    m_interactiveConfigurationHasBeenSet(false),
+    m_schedulerConfigurationHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,13 @@ Application& Application::operator =(JsonView jsonValue)
     m_interactiveConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("schedulerConfiguration"))
+  {
+    m_schedulerConfiguration = jsonValue.GetObject("schedulerConfiguration");
+
+    m_schedulerConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -358,6 +366,12 @@ JsonValue Application::Jsonize() const
   if(m_interactiveConfigurationHasBeenSet)
   {
    payload.WithObject("interactiveConfiguration", m_interactiveConfiguration.Jsonize());
+
+  }
+
+  if(m_schedulerConfigurationHasBeenSet)
+  {
+   payload.WithObject("schedulerConfiguration", m_schedulerConfiguration.Jsonize());
 
   }
 

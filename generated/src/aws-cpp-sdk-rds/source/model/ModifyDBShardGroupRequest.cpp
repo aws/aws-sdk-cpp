@@ -15,7 +15,9 @@ ModifyDBShardGroupRequest::ModifyDBShardGroupRequest() :
     m_maxACU(0.0),
     m_maxACUHasBeenSet(false),
     m_minACU(0.0),
-    m_minACUHasBeenSet(false)
+    m_minACUHasBeenSet(false),
+    m_computeRedundancy(0),
+    m_computeRedundancyHasBeenSet(false)
 {
 }
 
@@ -36,6 +38,11 @@ Aws::String ModifyDBShardGroupRequest::SerializePayload() const
   if(m_minACUHasBeenSet)
   {
     ss << "MinACU=" << StringUtils::URLEncode(m_minACU) << "&";
+  }
+
+  if(m_computeRedundancyHasBeenSet)
+  {
+    ss << "ComputeRedundancy=" << m_computeRedundancy << "&";
   }
 
   ss << "Version=2014-10-31";

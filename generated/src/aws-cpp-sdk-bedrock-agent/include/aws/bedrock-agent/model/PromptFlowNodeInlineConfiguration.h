@@ -55,7 +55,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the model to run inference with.</p>
+     * <p>The unique identifier of the model or <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+     * profile</a> to run inference with.</p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }

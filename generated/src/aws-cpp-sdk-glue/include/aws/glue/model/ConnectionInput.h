@@ -185,6 +185,25 @@ namespace Model
 
     ///@{
     /**
+     * <p>This field is not currently used.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAthenaProperties() const{ return m_athenaProperties; }
+    inline bool AthenaPropertiesHasBeenSet() const { return m_athenaPropertiesHasBeenSet; }
+    inline void SetAthenaProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties = value; }
+    inline void SetAthenaProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties = std::move(value); }
+    inline ConnectionInput& WithAthenaProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetAthenaProperties(value); return *this;}
+    inline ConnectionInput& WithAthenaProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetAthenaProperties(std::move(value)); return *this;}
+    inline ConnectionInput& AddAthenaProperties(const Aws::String& key, const Aws::String& value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties.emplace(key, value); return *this; }
+    inline ConnectionInput& AddAthenaProperties(Aws::String&& key, const Aws::String& value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties.emplace(std::move(key), value); return *this; }
+    inline ConnectionInput& AddAthenaProperties(const Aws::String& key, Aws::String&& value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties.emplace(key, std::move(value)); return *this; }
+    inline ConnectionInput& AddAthenaProperties(Aws::String&& key, Aws::String&& value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties.emplace(std::move(key), std::move(value)); return *this; }
+    inline ConnectionInput& AddAthenaProperties(const char* key, Aws::String&& value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties.emplace(key, std::move(value)); return *this; }
+    inline ConnectionInput& AddAthenaProperties(Aws::String&& key, const char* value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties.emplace(std::move(key), value); return *this; }
+    inline ConnectionInput& AddAthenaProperties(const char* key, const char* value) { m_athenaPropertiesHasBeenSet = true; m_athenaProperties.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The physical connection requirements, such as virtual private cloud (VPC) and
      * <code>SecurityGroup</code>, that are needed to successfully make this
      * connection.</p>
@@ -236,6 +255,9 @@ namespace Model
 
     Aws::Map<ConnectionPropertyKey, Aws::String> m_connectionProperties;
     bool m_connectionPropertiesHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_athenaProperties;
+    bool m_athenaPropertiesHasBeenSet = false;
 
     PhysicalConnectionRequirements m_physicalConnectionRequirements;
     bool m_physicalConnectionRequirementsHasBeenSet = false;

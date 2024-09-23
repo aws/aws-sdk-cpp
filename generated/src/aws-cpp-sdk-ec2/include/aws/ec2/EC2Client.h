@@ -1496,9 +1496,7 @@ namespace EC2
          * or volume. The action removes all artifacts of the conversion, including a
          * partially uploaded volume or instance. If the conversion is complete or is in
          * the process of transferring the final disk image, the command fails and returns
-         * an exception.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
-         * a Virtual Machine Using the Amazon EC2 CLI</a>.</p><p><h3>See Also:</h3>   <a
+         * an exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">AWS
          * API Reference</a></p>
          */
@@ -14619,20 +14617,16 @@ namespace EC2
         /**
          *  <p>We recommend that you use the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">
-         * <code>ImportImage</code> </a> API. For more information, see <a
+         * <code>ImportImage</code> </a> API instead. For more information, see <a
          * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
          * a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p>  <p>Creates an import instance task using metadata from
-         * the specified disk image.</p> <p>This API action is not supported by the Command
-         * Line Interface (CLI). For information about using the Amazon EC2 CLI, which is
-         * deprecated, see <a
-         * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing
-         * a VM to Amazon EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
-         * <p>This API action supports only single-volume VMs. To import multi-volume VMs,
-         * use <a>ImportImage</a> instead.</p> <p>For information about the import manifest
-         * referenced by this API action, see <a
+         * the specified disk image.</p> <p>This API action supports only single-volume
+         * VMs. To import multi-volume VMs, use <a>ImportImage</a> instead.</p> <p>For
+         * information about the import manifest referenced by this API action, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
-         * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
+         * Import Manifest</a>.</p> <p>This API action is not supported by the Command Line
+         * Interface (CLI).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">AWS
          * API Reference</a></p>
          */
@@ -14719,18 +14713,14 @@ namespace EC2
         }
 
         /**
-         * <p>Creates an import volume task using metadata from the specified disk
-         * image.</p> <p>This API action supports only single-volume VMs. To import
+         *  <p>This API action supports only single-volume VMs. To import
          * multi-volume VMs, use <a>ImportImage</a> instead. To import a disk to a
-         * snapshot, use <a>ImportSnapshot</a> instead.</p> <p>This API action is not
-         * supported by the Command Line Interface (CLI). For information about using the
-         * Amazon EC2 CLI, which is deprecated, see <a
-         * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#importing-your-volumes-into-amazon-ebs">Importing
-         * Disks to Amazon EBS</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
-         * <p>For information about the import manifest referenced by this API action, see
-         * <a
+         * snapshot, use <a>ImportSnapshot</a> instead.</p>  <p>Creates an import
+         * volume task using metadata from the specified disk image.</p> <p>For information
+         * about the import manifest referenced by this API action, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
-         * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
+         * Import Manifest</a>.</p> <p>This API action is not supported by the Command Line
+         * Interface (CLI).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">AWS
          * API Reference</a></p>
          */

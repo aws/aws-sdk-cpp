@@ -88,6 +88,11 @@ DeleteDBShardGroupResult& DeleteDBShardGroupResult::operator =(const Aws::Amazon
     {
       m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
     }
+    XmlNode dBShardGroupArnNode = resultNode.FirstChild("DBShardGroupArn");
+    if(!dBShardGroupArnNode.IsNull())
+    {
+      m_dBShardGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBShardGroupArnNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

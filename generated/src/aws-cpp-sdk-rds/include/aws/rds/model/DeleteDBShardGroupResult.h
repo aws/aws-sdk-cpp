@@ -95,13 +95,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether to create standby instances for the DB shard group. Valid
-     * values are the following:</p> <ul> <li> <p>0 - Creates a single, primary DB
-     * instance for each physical shard. This is the default value, and the only one
-     * supported for the preview.</p> </li> <li> <p>1 - Creates a primary DB instance
-     * and a standby instance in a different Availability Zone (AZ) for each physical
-     * shard.</p> </li> <li> <p>2 - Creates a primary DB instance and two standby
-     * instances in different AZs for each physical shard.</p> </li> </ul>
+     * <p>Specifies whether to create standby DB shard groups for the DB shard group.
+     * Valid values are the following:</p> <ul> <li> <p>0 - Creates a DB shard group
+     * without a standby DB shard group. This is the default value.</p> </li> <li> <p>1
+     * - Creates a DB shard group with a standby DB shard group in a different
+     * Availability Zone (AZ).</p> </li> <li> <p>2 - Creates a DB shard group with two
+     * standby DB shard groups in two different AZs.</p> </li> </ul>
      */
     inline int GetComputeRedundancy() const{ return m_computeRedundancy; }
     inline void SetComputeRedundancy(int value) { m_computeRedundancy = value; }
@@ -154,6 +153,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB shard group.</p>
+     */
+    inline const Aws::String& GetDBShardGroupArn() const{ return m_dBShardGroupArn; }
+    inline void SetDBShardGroupArn(const Aws::String& value) { m_dBShardGroupArn = value; }
+    inline void SetDBShardGroupArn(Aws::String&& value) { m_dBShardGroupArn = std::move(value); }
+    inline void SetDBShardGroupArn(const char* value) { m_dBShardGroupArn.assign(value); }
+    inline DeleteDBShardGroupResult& WithDBShardGroupArn(const Aws::String& value) { SetDBShardGroupArn(value); return *this;}
+    inline DeleteDBShardGroupResult& WithDBShardGroupArn(Aws::String&& value) { SetDBShardGroupArn(std::move(value)); return *this;}
+    inline DeleteDBShardGroupResult& WithDBShardGroupArn(const char* value) { SetDBShardGroupArn(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -180,6 +192,8 @@ namespace Model
     bool m_publiclyAccessible;
 
     Aws::String m_endpoint;
+
+    Aws::String m_dBShardGroupArn;
 
     ResponseMetadata m_responseMetadata;
   };

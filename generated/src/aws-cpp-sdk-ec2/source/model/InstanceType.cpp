@@ -840,6 +840,14 @@ namespace Aws
         static const int r8g_metal_24xl_HASH = HashingUtils::HashString("r8g.metal-24xl");
         static const int r8g_metal_48xl_HASH = HashingUtils::HashString("r8g.metal-48xl");
         static const int mac2_m1ultra_metal_HASH = HashingUtils::HashString("mac2-m1ultra.metal");
+        static const int g6e_xlarge_HASH = HashingUtils::HashString("g6e.xlarge");
+        static const int g6e_2xlarge_HASH = HashingUtils::HashString("g6e.2xlarge");
+        static const int g6e_4xlarge_HASH = HashingUtils::HashString("g6e.4xlarge");
+        static const int g6e_8xlarge_HASH = HashingUtils::HashString("g6e.8xlarge");
+        static const int g6e_12xlarge_HASH = HashingUtils::HashString("g6e.12xlarge");
+        static const int g6e_16xlarge_HASH = HashingUtils::HashString("g6e.16xlarge");
+        static const int g6e_24xlarge_HASH = HashingUtils::HashString("g6e.24xlarge");
+        static const int g6e_48xlarge_HASH = HashingUtils::HashString("g6e.48xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -4972,6 +4980,46 @@ namespace Aws
             enumValue = InstanceType::mac2_m1ultra_metal;
             return true;
           }
+          else if (hashCode == g6e_xlarge_HASH)
+          {
+            enumValue = InstanceType::g6e_xlarge;
+            return true;
+          }
+          else if (hashCode == g6e_2xlarge_HASH)
+          {
+            enumValue = InstanceType::g6e_2xlarge;
+            return true;
+          }
+          else if (hashCode == g6e_4xlarge_HASH)
+          {
+            enumValue = InstanceType::g6e_4xlarge;
+            return true;
+          }
+          else if (hashCode == g6e_8xlarge_HASH)
+          {
+            enumValue = InstanceType::g6e_8xlarge;
+            return true;
+          }
+          else if (hashCode == g6e_12xlarge_HASH)
+          {
+            enumValue = InstanceType::g6e_12xlarge;
+            return true;
+          }
+          else if (hashCode == g6e_16xlarge_HASH)
+          {
+            enumValue = InstanceType::g6e_16xlarge;
+            return true;
+          }
+          else if (hashCode == g6e_24xlarge_HASH)
+          {
+            enumValue = InstanceType::g6e_24xlarge;
+            return true;
+          }
+          else if (hashCode == g6e_48xlarge_HASH)
+          {
+            enumValue = InstanceType::g6e_48xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -7486,6 +7534,30 @@ namespace Aws
             return true;
           case InstanceType::mac2_m1ultra_metal:
             value = "mac2-m1ultra.metal";
+            return true;
+          case InstanceType::g6e_xlarge:
+            value = "g6e.xlarge";
+            return true;
+          case InstanceType::g6e_2xlarge:
+            value = "g6e.2xlarge";
+            return true;
+          case InstanceType::g6e_4xlarge:
+            value = "g6e.4xlarge";
+            return true;
+          case InstanceType::g6e_8xlarge:
+            value = "g6e.8xlarge";
+            return true;
+          case InstanceType::g6e_12xlarge:
+            value = "g6e.12xlarge";
+            return true;
+          case InstanceType::g6e_16xlarge:
+            value = "g6e.16xlarge";
+            return true;
+          case InstanceType::g6e_24xlarge:
+            value = "g6e.24xlarge";
+            return true;
+          case InstanceType::g6e_48xlarge:
+            value = "g6e.48xlarge";
             return true;
           default:
             return false;
