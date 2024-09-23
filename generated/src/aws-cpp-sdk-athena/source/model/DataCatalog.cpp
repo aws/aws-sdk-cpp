@@ -23,7 +23,12 @@ DataCatalog::DataCatalog() :
     m_descriptionHasBeenSet(false),
     m_type(DataCatalogType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_status(DataCatalogStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_connectionType(ConnectionType::NOT_SET),
+    m_connectionTypeHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
@@ -66,6 +71,27 @@ DataCatalog& DataCatalog::operator =(JsonView jsonValue)
     m_parametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = DataCatalogStatusMapper::GetDataCatalogStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConnectionType"))
+  {
+    m_connectionType = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("ConnectionType"));
+
+    m_connectionTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Error"))
+  {
+    m_error = jsonValue.GetString("Error");
+
+    m_errorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -98,6 +124,22 @@ JsonValue DataCatalog::Jsonize() const
      parametersJsonMap.WithString(parametersItem.first, parametersItem.second);
    }
    payload.WithObject("Parameters", std::move(parametersJsonMap));
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", DataCatalogStatusMapper::GetNameForDataCatalogStatus(m_status));
+  }
+
+  if(m_connectionTypeHasBeenSet)
+  {
+   payload.WithString("ConnectionType", ConnectionTypeMapper::GetNameForConnectionType(m_connectionType));
+  }
+
+  if(m_errorHasBeenSet)
+  {
+   payload.WithString("Error", m_error);
 
   }
 

@@ -71,6 +71,21 @@ namespace Model
     inline void SetMinACU(double value) { m_minACUHasBeenSet = true; m_minACU = value; }
     inline ModifyDBShardGroupRequest& WithMinACU(double value) { SetMinACU(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to create standby DB shard groups for the DB shard group.
+     * Valid values are the following:</p> <ul> <li> <p>0 - Creates a DB shard group
+     * without a standby DB shard group. This is the default value.</p> </li> <li> <p>1
+     * - Creates a DB shard group with a standby DB shard group in a different
+     * Availability Zone (AZ).</p> </li> <li> <p>2 - Creates a DB shard group with two
+     * standby DB shard groups in two different AZs.</p> </li> </ul>
+     */
+    inline int GetComputeRedundancy() const{ return m_computeRedundancy; }
+    inline bool ComputeRedundancyHasBeenSet() const { return m_computeRedundancyHasBeenSet; }
+    inline void SetComputeRedundancy(int value) { m_computeRedundancyHasBeenSet = true; m_computeRedundancy = value; }
+    inline ModifyDBShardGroupRequest& WithComputeRedundancy(int value) { SetComputeRedundancy(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBShardGroupIdentifier;
@@ -81,6 +96,9 @@ namespace Model
 
     double m_minACU;
     bool m_minACUHasBeenSet = false;
+
+    int m_computeRedundancy;
+    bool m_computeRedundancyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,8 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_interactiveConfigurationHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
     m_runtimeConfigurationHasBeenSet(false),
-    m_monitoringConfigurationHasBeenSet(false)
+    m_monitoringConfigurationHasBeenSet(false),
+    m_schedulerConfigurationHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,12 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
   if(m_monitoringConfigurationHasBeenSet)
   {
    payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
+
+  }
+
+  if(m_schedulerConfigurationHasBeenSet)
+  {
+   payload.WithObject("schedulerConfiguration", m_schedulerConfiguration.Jsonize());
 
   }
 

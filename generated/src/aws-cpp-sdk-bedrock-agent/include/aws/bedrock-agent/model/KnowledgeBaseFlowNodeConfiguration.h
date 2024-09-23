@@ -59,9 +59,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the model to use to generate a response from the
-     * query results. Omit this field if you want to return the retrieved results as an
-     * array.</p>
+     * <p>The unique identifier of the model or <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+     * profile</a> to use to generate a response from the query results. Omit this
+     * field if you want to return the retrieved results as an array.</p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }

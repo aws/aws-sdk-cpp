@@ -30,6 +30,7 @@
 #include <aws/resource-explorer-2/model/GetViewResult.h>
 #include <aws/resource-explorer-2/model/ListIndexesResult.h>
 #include <aws/resource-explorer-2/model/ListIndexesForMembersResult.h>
+#include <aws/resource-explorer-2/model/ListResourcesResult.h>
 #include <aws/resource-explorer-2/model/ListSupportedResourceTypesResult.h>
 #include <aws/resource-explorer-2/model/ListTagsForResourceResult.h>
 #include <aws/resource-explorer-2/model/ListViewsResult.h>
@@ -40,6 +41,7 @@
 #include <aws/resource-explorer-2/model/UpdateViewResult.h>
 #include <aws/resource-explorer-2/model/GetAccountLevelServiceConfigurationRequest.h>
 #include <aws/resource-explorer-2/model/GetDefaultViewRequest.h>
+#include <aws/resource-explorer-2/model/ListResourcesRequest.h>
 #include <aws/resource-explorer-2/model/ListSupportedResourceTypesRequest.h>
 #include <aws/resource-explorer-2/model/CreateIndexRequest.h>
 #include <aws/resource-explorer-2/model/ListIndexesRequest.h>
@@ -101,6 +103,7 @@ namespace Aws
       class GetViewRequest;
       class ListIndexesRequest;
       class ListIndexesForMembersRequest;
+      class ListResourcesRequest;
       class ListSupportedResourceTypesRequest;
       class ListTagsForResourceRequest;
       class ListViewsRequest;
@@ -125,6 +128,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetViewResult, ResourceExplorer2Error> GetViewOutcome;
       typedef Aws::Utils::Outcome<ListIndexesResult, ResourceExplorer2Error> ListIndexesOutcome;
       typedef Aws::Utils::Outcome<ListIndexesForMembersResult, ResourceExplorer2Error> ListIndexesForMembersOutcome;
+      typedef Aws::Utils::Outcome<ListResourcesResult, ResourceExplorer2Error> ListResourcesOutcome;
       typedef Aws::Utils::Outcome<ListSupportedResourceTypesResult, ResourceExplorer2Error> ListSupportedResourceTypesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ResourceExplorer2Error> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListViewsResult, ResourceExplorer2Error> ListViewsOutcome;
@@ -149,6 +153,7 @@ namespace Aws
       typedef std::future<GetViewOutcome> GetViewOutcomeCallable;
       typedef std::future<ListIndexesOutcome> ListIndexesOutcomeCallable;
       typedef std::future<ListIndexesForMembersOutcome> ListIndexesForMembersOutcomeCallable;
+      typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
       typedef std::future<ListSupportedResourceTypesOutcome> ListSupportedResourceTypesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListViewsOutcome> ListViewsOutcomeCallable;
@@ -176,6 +181,7 @@ namespace Aws
     typedef std::function<void(const ResourceExplorer2Client*, const Model::GetViewRequest&, const Model::GetViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetViewResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::ListIndexesRequest&, const Model::ListIndexesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndexesResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::ListIndexesForMembersRequest&, const Model::ListIndexesForMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndexesForMembersResponseReceivedHandler;
+    typedef std::function<void(const ResourceExplorer2Client*, const Model::ListResourcesRequest&, const Model::ListResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::ListSupportedResourceTypesRequest&, const Model::ListSupportedResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSupportedResourceTypesResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ResourceExplorer2Client*, const Model::ListViewsRequest&, const Model::ListViewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListViewsResponseReceivedHandler;

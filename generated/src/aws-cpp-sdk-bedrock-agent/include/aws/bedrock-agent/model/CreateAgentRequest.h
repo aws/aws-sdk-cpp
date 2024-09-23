@@ -115,8 +115,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The foundation model to be used for orchestration by the agent you
-     * create.</p>
+     * <p>The Amazon Resource Name (ARN) of the foundation model to be used for
+     * orchestration by the agent you create.</p>
      */
     inline const Aws::String& GetFoundationModel() const{ return m_foundationModel; }
     inline bool FoundationModelHasBeenSet() const { return m_foundationModelHasBeenSet; }

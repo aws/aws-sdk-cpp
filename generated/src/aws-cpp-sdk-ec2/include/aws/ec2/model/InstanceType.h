@@ -835,7 +835,15 @@ namespace Model
     r8g_48xlarge,
     r8g_metal_24xl,
     r8g_metal_48xl,
-    mac2_m1ultra_metal
+    mac2_m1ultra_metal,
+    g6e_xlarge,
+    g6e_2xlarge,
+    g6e_4xlarge,
+    g6e_8xlarge,
+    g6e_12xlarge,
+    g6e_16xlarge,
+    g6e_24xlarge,
+    g6e_48xlarge
   };
 
 namespace InstanceTypeMapper

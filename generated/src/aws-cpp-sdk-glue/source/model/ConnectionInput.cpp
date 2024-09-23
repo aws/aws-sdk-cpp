@@ -25,6 +25,7 @@ ConnectionInput::ConnectionInput() :
     m_connectionTypeHasBeenSet(false),
     m_matchCriteriaHasBeenSet(false),
     m_connectionPropertiesHasBeenSet(false),
+    m_athenaPropertiesHasBeenSet(false),
     m_physicalConnectionRequirementsHasBeenSet(false),
     m_authenticationConfigurationHasBeenSet(false),
     m_validateCredentials(false),
@@ -79,6 +80,16 @@ ConnectionInput& ConnectionInput::operator =(JsonView jsonValue)
       m_connectionProperties[ConnectionPropertyKeyMapper::GetConnectionPropertyKeyForName(connectionPropertiesItem.first)] = connectionPropertiesItem.second.AsString();
     }
     m_connectionPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AthenaProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> athenaPropertiesJsonMap = jsonValue.GetObject("AthenaProperties").GetAllObjects();
+    for(auto& athenaPropertiesItem : athenaPropertiesJsonMap)
+    {
+      m_athenaProperties[athenaPropertiesItem.first] = athenaPropertiesItem.second.AsString();
+    }
+    m_athenaPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PhysicalConnectionRequirements"))
@@ -145,6 +156,17 @@ JsonValue ConnectionInput::Jsonize() const
      connectionPropertiesJsonMap.WithString(ConnectionPropertyKeyMapper::GetNameForConnectionPropertyKey(connectionPropertiesItem.first), connectionPropertiesItem.second);
    }
    payload.WithObject("ConnectionProperties", std::move(connectionPropertiesJsonMap));
+
+  }
+
+  if(m_athenaPropertiesHasBeenSet)
+  {
+   JsonValue athenaPropertiesJsonMap;
+   for(auto& athenaPropertiesItem : m_athenaProperties)
+   {
+     athenaPropertiesJsonMap.WithString(athenaPropertiesItem.first, athenaPropertiesItem.second);
+   }
+   payload.WithObject("AthenaProperties", std::move(athenaPropertiesJsonMap));
 
   }
 

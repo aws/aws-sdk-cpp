@@ -30,7 +30,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_workerTypeSpecificationsHasBeenSet(false),
     m_runtimeConfigurationHasBeenSet(false),
     m_monitoringConfigurationHasBeenSet(false),
-    m_interactiveConfigurationHasBeenSet(false)
+    m_interactiveConfigurationHasBeenSet(false),
+    m_schedulerConfigurationHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_interactiveConfigurationHasBeenSet)
   {
    payload.WithObject("interactiveConfiguration", m_interactiveConfiguration.Jsonize());
+
+  }
+
+  if(m_schedulerConfigurationHasBeenSet)
+  {
+   payload.WithObject("schedulerConfiguration", m_schedulerConfiguration.Jsonize());
 
   }
 

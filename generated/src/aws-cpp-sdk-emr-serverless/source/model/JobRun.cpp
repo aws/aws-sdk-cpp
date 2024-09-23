@@ -47,7 +47,11 @@ JobRun::JobRun() :
     m_attempt(0),
     m_attemptHasBeenSet(false),
     m_attemptCreatedAtHasBeenSet(false),
-    m_attemptUpdatedAtHasBeenSet(false)
+    m_attemptUpdatedAtHasBeenSet(false),
+    m_startedAtHasBeenSet(false),
+    m_endedAtHasBeenSet(false),
+    m_queuedDurationMilliseconds(0),
+    m_queuedDurationMillisecondsHasBeenSet(false)
 {
 }
 
@@ -230,6 +234,27 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_attemptUpdatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("startedAt"))
+  {
+    m_startedAt = jsonValue.GetDouble("startedAt");
+
+    m_startedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endedAt"))
+  {
+    m_endedAt = jsonValue.GetDouble("endedAt");
+
+    m_endedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("queuedDurationMilliseconds"))
+  {
+    m_queuedDurationMilliseconds = jsonValue.GetInt64("queuedDurationMilliseconds");
+
+    m_queuedDurationMillisecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -378,6 +403,22 @@ JsonValue JobRun::Jsonize() const
   if(m_attemptUpdatedAtHasBeenSet)
   {
    payload.WithDouble("attemptUpdatedAt", m_attemptUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_startedAtHasBeenSet)
+  {
+   payload.WithDouble("startedAt", m_startedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_endedAtHasBeenSet)
+  {
+   payload.WithDouble("endedAt", m_endedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_queuedDurationMillisecondsHasBeenSet)
+  {
+   payload.WithInt64("queuedDurationMilliseconds", m_queuedDurationMilliseconds);
+
   }
 
   return payload;

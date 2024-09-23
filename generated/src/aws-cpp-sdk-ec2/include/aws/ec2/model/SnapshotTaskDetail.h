@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the snapshot.</p>
+     * <p>The description of the disk image being imported.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }

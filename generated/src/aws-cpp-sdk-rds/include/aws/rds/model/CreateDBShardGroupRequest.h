@@ -66,13 +66,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether to create standby instances for the DB shard group. Valid
-     * values are the following:</p> <ul> <li> <p>0 - Creates a single, primary DB
-     * instance for each physical shard. This is the default value, and the only one
-     * supported for the preview.</p> </li> <li> <p>1 - Creates a primary DB instance
-     * and a standby instance in a different Availability Zone (AZ) for each physical
-     * shard.</p> </li> <li> <p>2 - Creates a primary DB instance and two standby
-     * instances in different AZs for each physical shard.</p> </li> </ul>
+     * <p>Specifies whether to create standby DB shard groups for the DB shard group.
+     * Valid values are the following:</p> <ul> <li> <p>0 - Creates a DB shard group
+     * without a standby DB shard group. This is the default value.</p> </li> <li> <p>1
+     * - Creates a DB shard group with a standby DB shard group in a different
+     * Availability Zone (AZ).</p> </li> <li> <p>2 - Creates a DB shard group with two
+     * standby DB shard groups in two different AZs.</p> </li> </ul>
      */
     inline int GetComputeRedundancy() const{ return m_computeRedundancy; }
     inline bool ComputeRedundancyHasBeenSet() const { return m_computeRedundancyHasBeenSet; }

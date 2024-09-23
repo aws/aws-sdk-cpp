@@ -362,6 +362,40 @@ namespace Model
     inline JobRun& WithAttemptUpdatedAt(const Aws::Utils::DateTime& value) { SetAttemptUpdatedAt(value); return *this;}
     inline JobRun& WithAttemptUpdatedAt(Aws::Utils::DateTime&& value) { SetAttemptUpdatedAt(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the job moved to the RUNNING state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
+    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
+    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
+    inline JobRun& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
+    inline JobRun& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time when the job was terminated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
+    inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
+    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
+    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
+    inline JobRun& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
+    inline JobRun& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The total time for a job in the QUEUED state in milliseconds.</p>
+     */
+    inline long long GetQueuedDurationMilliseconds() const{ return m_queuedDurationMilliseconds; }
+    inline bool QueuedDurationMillisecondsHasBeenSet() const { return m_queuedDurationMillisecondsHasBeenSet; }
+    inline void SetQueuedDurationMilliseconds(long long value) { m_queuedDurationMillisecondsHasBeenSet = true; m_queuedDurationMilliseconds = value; }
+    inline JobRun& WithQueuedDurationMilliseconds(long long value) { SetQueuedDurationMilliseconds(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -435,6 +469,15 @@ namespace Model
 
     Aws::Utils::DateTime m_attemptUpdatedAt;
     bool m_attemptUpdatedAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startedAt;
+    bool m_startedAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_endedAt;
+    bool m_endedAtHasBeenSet = false;
+
+    long long m_queuedDurationMilliseconds;
+    bool m_queuedDurationMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

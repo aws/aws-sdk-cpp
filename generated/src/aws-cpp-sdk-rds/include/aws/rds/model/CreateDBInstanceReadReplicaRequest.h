@@ -199,17 +199,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the DB parameter group to associate with this DB instance.</p>
-     * <p>If you don't specify a value for <code>DBParameterGroupName</code>, then
-     * Amazon RDS uses the <code>DBParameterGroup</code> of the source DB instance for
-     * a same Region read replica, or the default <code>DBParameterGroup</code> for the
-     * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for MySQL DB instances for
-     * cross-Region read replicas and for Oracle DB instances. It isn't supported for
-     * MySQL DB instances for same Region read replicas or for RDS Custom.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
-     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>The name of the DB parameter group to associate with this read replica DB
+     * instance.</p> <p>For Single-AZ or Multi-AZ DB instance read replica instances,
+     * if you don't specify a value for <code>DBParameterGroupName</code>, then Amazon
+     * RDS uses the <code>DBParameterGroup</code> of the source DB instance for a same
+     * Region read replica, or the default <code>DBParameterGroup</code> for the
+     * specified DB engine for a cross-Region read replica.</p> <p>For Multi-AZ DB
+     * cluster same Region read replica instances, if you don't specify a value for
+     * <code>DBParameterGroupName</code>, then Amazon RDS uses the default
+     * <code>DBParameterGroup</code>.</p> <p>Specifying a parameter group for this
+     * operation is only supported for MySQL DB instances for cross-Region read
+     * replicas, for Multi-AZ DB cluster read replica instances, and for Oracle DB
+     * instances. It isn't supported for MySQL DB instances for same Region read
+     * replicas or for RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to
+     * 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }

@@ -28,6 +28,7 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
 
 
         JobRunState GetJobRunStateForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return JobRunState::CANCELLED;
           }
+          else if (hashCode == QUEUED_HASH)
+          {
+            return JobRunState::QUEUED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +102,8 @@ namespace Aws
             return "CANCELLING";
           case JobRunState::CANCELLED:
             return "CANCELLED";
+          case JobRunState::QUEUED:
+            return "QUEUED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

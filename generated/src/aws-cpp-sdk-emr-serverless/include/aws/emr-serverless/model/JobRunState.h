@@ -23,7 +23,8 @@ namespace Model
     SUCCESS,
     FAILED,
     CANCELLING,
-    CANCELLED
+    CANCELLED,
+    QUEUED
   };
 
 namespace JobRunStateMapper

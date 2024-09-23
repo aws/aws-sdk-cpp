@@ -49,7 +49,7 @@ namespace Model
      * of the <code>promptConfigurations</code> must contain a <code>parserMode</code>
      * value that is set to <code>OVERRIDDEN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
-     * Lambda function in Agents for Amazon Bedrock</a>.</p>
+     * Lambda function in Amazon Bedrock Agents</a>.</p>
      */
     inline const Aws::String& GetOverrideLambda() const{ return m_overrideLambda; }
     inline bool OverrideLambdaHasBeenSet() const { return m_overrideLambdaHasBeenSet; }

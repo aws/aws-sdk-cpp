@@ -16,7 +16,9 @@ namespace Model
   enum class FleetCapacityReservationUsageStrategy
   {
     NOT_SET,
-    use_capacity_reservations_first
+    use_capacity_reservations_first,
+    use_capacity_reservations_only,
+    none
   };
 
 namespace FleetCapacityReservationUsageStrategyMapper

@@ -90,7 +90,8 @@ namespace Model
     ///@{
     /**
      * <p>The timestamp when the certificate that was used by edge-optimized endpoint
-     * for this domain name was uploaded.</p>
+     * for this domain name was uploaded. API Gateway doesn't change this value if you
+     * update the certificate.</p>
      */
     inline const Aws::Utils::DateTime& GetCertificateUploadDate() const{ return m_certificateUploadDate; }
     inline void SetCertificateUploadDate(const Aws::Utils::DateTime& value) { m_certificateUploadDate = value; }
