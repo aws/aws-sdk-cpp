@@ -221,6 +221,7 @@ namespace Aws
             mutable Utils::Threading::ReaderWriterLock m_partialSignatureLock;
             PayloadSigningPolicy m_payloadSigningPolicy;
             bool m_urlEscapePath;
+            mutable Aws::Crt::Auth::Sigv4HttpRequestSigner m_crtSigner{};
         };
     } // namespace Client
 } // namespace Aws
