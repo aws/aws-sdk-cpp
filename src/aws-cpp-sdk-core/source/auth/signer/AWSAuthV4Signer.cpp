@@ -146,10 +146,8 @@ bool AWSAuthV4Signer::SignRequestWithSigV4a(Aws::Http::HttpRequest& request, con
     awsSigningConfig.SetCredentials(crtCredentials);
 
     std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = request.ToCrtHttpRequest();
-
-    auto sigv4HttpRequestSigner = Aws::MakeShared<Aws::Crt::Auth::Sigv4HttpRequestSigner>(v4AsymmetricLogTag);
     bool success = true;
-    sigv4HttpRequestSigner->SignRequest(crtHttpRequest, awsSigningConfig,
+    m_crtSigner.SignRequest(crtHttpRequest, awsSigningConfig,
         [&request, &success, signatureType](const std::shared_ptr<Aws::Crt::Http::HttpRequest>& signedCrtHttpRequest, int errorCode) {
             success = (errorCode == AWS_ERROR_SUCCESS);
             if (success)
