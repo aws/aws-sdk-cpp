@@ -796,8 +796,10 @@ void AWSClient::AppendHeaderValueToRequest(const std::shared_ptr<Aws::Http::Http
     }
 }
 
+void AWSClient::SomePoorlyFormattedFunction(const Aws::String& arg,const Aws::String& anotherarg, const Aws::String& anotheranotherarg,const Aws::String& anotheranotheranotherarg) {AWS_UNREFERENCED_PARAM(arg);AWS_UNREFERENCED_PARAM(anotherarg);AWS_UNREFERENCED_PARAM(anotheranotherarg);AWS_UNREFERENCED_PARAM(anotheranotheranotherarg);}
+
 void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
-    const Aws::AmazonWebServiceRequest& request) const
+                                     const Aws::AmazonWebServiceRequest& request) const
 {
     Aws::String checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(request.GetChecksumAlgorithmName().c_str());
     if (request.GetServiceSpecificParameters()) {

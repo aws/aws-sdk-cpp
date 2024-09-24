@@ -358,6 +358,7 @@ namespace Aws
             void AppendHeaderValueToRequest(
                 const std::shared_ptr<Http::HttpRequest> &request, String header,
                 String value) const;
+            void SomePoorlyFormattedFunction(const Aws::String&arg,const Aws::String&anotherarg, const Aws::String&anotheranotherarg, const Aws::String&anotheranotheranotherarg);
         };
 
         AWS_CORE_API Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);

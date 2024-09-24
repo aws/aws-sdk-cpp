@@ -1,0 +1,12 @@
+name: Clang Format Diff Check
+on: [push]
+jobs:
+  clang-format-diff-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Sources
+        uses: actions/checkout@v4
+      - name: clang format diff check
+        run: |
+          git fetch origin main
+          git clang-format origin/main --diff
