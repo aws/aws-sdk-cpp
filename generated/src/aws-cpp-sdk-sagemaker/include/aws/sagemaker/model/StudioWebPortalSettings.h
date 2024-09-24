@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/MlTools.h>
 #include <aws/sagemaker/model/AppType.h>
+#include <aws/sagemaker/model/AppInstanceType.h>
+#include <aws/sagemaker/model/HiddenSageMakerImage.h>
 #include <utility>
 
 namespace Aws
@@ -72,6 +74,34 @@ namespace Model
     inline StudioWebPortalSettings& AddHiddenAppTypes(const AppType& value) { m_hiddenAppTypesHasBeenSet = true; m_hiddenAppTypes.push_back(value); return *this; }
     inline StudioWebPortalSettings& AddHiddenAppTypes(AppType&& value) { m_hiddenAppTypesHasBeenSet = true; m_hiddenAppTypes.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> The instance types you are hiding from the Studio user interface. </p>
+     */
+    inline const Aws::Vector<AppInstanceType>& GetHiddenInstanceTypes() const{ return m_hiddenInstanceTypes; }
+    inline bool HiddenInstanceTypesHasBeenSet() const { return m_hiddenInstanceTypesHasBeenSet; }
+    inline void SetHiddenInstanceTypes(const Aws::Vector<AppInstanceType>& value) { m_hiddenInstanceTypesHasBeenSet = true; m_hiddenInstanceTypes = value; }
+    inline void SetHiddenInstanceTypes(Aws::Vector<AppInstanceType>&& value) { m_hiddenInstanceTypesHasBeenSet = true; m_hiddenInstanceTypes = std::move(value); }
+    inline StudioWebPortalSettings& WithHiddenInstanceTypes(const Aws::Vector<AppInstanceType>& value) { SetHiddenInstanceTypes(value); return *this;}
+    inline StudioWebPortalSettings& WithHiddenInstanceTypes(Aws::Vector<AppInstanceType>&& value) { SetHiddenInstanceTypes(std::move(value)); return *this;}
+    inline StudioWebPortalSettings& AddHiddenInstanceTypes(const AppInstanceType& value) { m_hiddenInstanceTypesHasBeenSet = true; m_hiddenInstanceTypes.push_back(value); return *this; }
+    inline StudioWebPortalSettings& AddHiddenInstanceTypes(AppInstanceType&& value) { m_hiddenInstanceTypesHasBeenSet = true; m_hiddenInstanceTypes.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p> The version aliases you are hiding from the Studio user interface. </p>
+     */
+    inline const Aws::Vector<HiddenSageMakerImage>& GetHiddenSageMakerImageVersionAliases() const{ return m_hiddenSageMakerImageVersionAliases; }
+    inline bool HiddenSageMakerImageVersionAliasesHasBeenSet() const { return m_hiddenSageMakerImageVersionAliasesHasBeenSet; }
+    inline void SetHiddenSageMakerImageVersionAliases(const Aws::Vector<HiddenSageMakerImage>& value) { m_hiddenSageMakerImageVersionAliasesHasBeenSet = true; m_hiddenSageMakerImageVersionAliases = value; }
+    inline void SetHiddenSageMakerImageVersionAliases(Aws::Vector<HiddenSageMakerImage>&& value) { m_hiddenSageMakerImageVersionAliasesHasBeenSet = true; m_hiddenSageMakerImageVersionAliases = std::move(value); }
+    inline StudioWebPortalSettings& WithHiddenSageMakerImageVersionAliases(const Aws::Vector<HiddenSageMakerImage>& value) { SetHiddenSageMakerImageVersionAliases(value); return *this;}
+    inline StudioWebPortalSettings& WithHiddenSageMakerImageVersionAliases(Aws::Vector<HiddenSageMakerImage>&& value) { SetHiddenSageMakerImageVersionAliases(std::move(value)); return *this;}
+    inline StudioWebPortalSettings& AddHiddenSageMakerImageVersionAliases(const HiddenSageMakerImage& value) { m_hiddenSageMakerImageVersionAliasesHasBeenSet = true; m_hiddenSageMakerImageVersionAliases.push_back(value); return *this; }
+    inline StudioWebPortalSettings& AddHiddenSageMakerImageVersionAliases(HiddenSageMakerImage&& value) { m_hiddenSageMakerImageVersionAliasesHasBeenSet = true; m_hiddenSageMakerImageVersionAliases.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<MlTools> m_hiddenMlTools;
@@ -79,6 +109,12 @@ namespace Model
 
     Aws::Vector<AppType> m_hiddenAppTypes;
     bool m_hiddenAppTypesHasBeenSet = false;
+
+    Aws::Vector<AppInstanceType> m_hiddenInstanceTypes;
+    bool m_hiddenInstanceTypesHasBeenSet = false;
+
+    Aws::Vector<HiddenSageMakerImage> m_hiddenSageMakerImageVersionAliases;
+    bool m_hiddenSageMakerImageVersionAliasesHasBeenSet = false;
   };
 
 } // namespace Model

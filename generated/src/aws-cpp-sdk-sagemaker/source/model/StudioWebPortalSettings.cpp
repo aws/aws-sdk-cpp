@@ -20,7 +20,9 @@ namespace Model
 
 StudioWebPortalSettings::StudioWebPortalSettings() : 
     m_hiddenMlToolsHasBeenSet(false),
-    m_hiddenAppTypesHasBeenSet(false)
+    m_hiddenAppTypesHasBeenSet(false),
+    m_hiddenInstanceTypesHasBeenSet(false),
+    m_hiddenSageMakerImageVersionAliasesHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,26 @@ StudioWebPortalSettings& StudioWebPortalSettings::operator =(JsonView jsonValue)
     m_hiddenAppTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HiddenInstanceTypes"))
+  {
+    Aws::Utils::Array<JsonView> hiddenInstanceTypesJsonList = jsonValue.GetArray("HiddenInstanceTypes");
+    for(unsigned hiddenInstanceTypesIndex = 0; hiddenInstanceTypesIndex < hiddenInstanceTypesJsonList.GetLength(); ++hiddenInstanceTypesIndex)
+    {
+      m_hiddenInstanceTypes.push_back(AppInstanceTypeMapper::GetAppInstanceTypeForName(hiddenInstanceTypesJsonList[hiddenInstanceTypesIndex].AsString()));
+    }
+    m_hiddenInstanceTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HiddenSageMakerImageVersionAliases"))
+  {
+    Aws::Utils::Array<JsonView> hiddenSageMakerImageVersionAliasesJsonList = jsonValue.GetArray("HiddenSageMakerImageVersionAliases");
+    for(unsigned hiddenSageMakerImageVersionAliasesIndex = 0; hiddenSageMakerImageVersionAliasesIndex < hiddenSageMakerImageVersionAliasesJsonList.GetLength(); ++hiddenSageMakerImageVersionAliasesIndex)
+    {
+      m_hiddenSageMakerImageVersionAliases.push_back(hiddenSageMakerImageVersionAliasesJsonList[hiddenSageMakerImageVersionAliasesIndex].AsObject());
+    }
+    m_hiddenSageMakerImageVersionAliasesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +100,28 @@ JsonValue StudioWebPortalSettings::Jsonize() const
      hiddenAppTypesJsonList[hiddenAppTypesIndex].AsString(AppTypeMapper::GetNameForAppType(m_hiddenAppTypes[hiddenAppTypesIndex]));
    }
    payload.WithArray("HiddenAppTypes", std::move(hiddenAppTypesJsonList));
+
+  }
+
+  if(m_hiddenInstanceTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> hiddenInstanceTypesJsonList(m_hiddenInstanceTypes.size());
+   for(unsigned hiddenInstanceTypesIndex = 0; hiddenInstanceTypesIndex < hiddenInstanceTypesJsonList.GetLength(); ++hiddenInstanceTypesIndex)
+   {
+     hiddenInstanceTypesJsonList[hiddenInstanceTypesIndex].AsString(AppInstanceTypeMapper::GetNameForAppInstanceType(m_hiddenInstanceTypes[hiddenInstanceTypesIndex]));
+   }
+   payload.WithArray("HiddenInstanceTypes", std::move(hiddenInstanceTypesJsonList));
+
+  }
+
+  if(m_hiddenSageMakerImageVersionAliasesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> hiddenSageMakerImageVersionAliasesJsonList(m_hiddenSageMakerImageVersionAliases.size());
+   for(unsigned hiddenSageMakerImageVersionAliasesIndex = 0; hiddenSageMakerImageVersionAliasesIndex < hiddenSageMakerImageVersionAliasesJsonList.GetLength(); ++hiddenSageMakerImageVersionAliasesIndex)
+   {
+     hiddenSageMakerImageVersionAliasesJsonList[hiddenSageMakerImageVersionAliasesIndex].AsObject(m_hiddenSageMakerImageVersionAliases[hiddenSageMakerImageVersionAliasesIndex].Jsonize());
+   }
+   payload.WithArray("HiddenSageMakerImageVersionAliases", std::move(hiddenSageMakerImageVersionAliasesJsonList));
 
   }
 

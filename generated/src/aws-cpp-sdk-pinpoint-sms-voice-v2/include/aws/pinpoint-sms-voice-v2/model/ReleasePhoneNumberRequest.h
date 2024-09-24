@@ -38,7 +38,9 @@ namespace Model
     /**
      * <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can
      * use <a>DescribePhoneNumbers</a> to get the values for PhoneNumberId and
-     * PhoneNumberArn.</p>
+     * PhoneNumberArn.</p>  <p>If you are using a shared AWS End User
+     * Messaging SMS and Voice resource then you must use the full Amazon Resource
+     * Name(ARN).</p> 
      */
     inline const Aws::String& GetPhoneNumberId() const{ return m_phoneNumberId; }
     inline bool PhoneNumberIdHasBeenSet() const { return m_phoneNumberIdHasBeenSet; }

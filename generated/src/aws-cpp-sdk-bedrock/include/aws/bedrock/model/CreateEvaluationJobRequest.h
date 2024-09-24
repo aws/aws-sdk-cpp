@@ -151,8 +151,10 @@ namespace Model
     ///@{
     /**
      * <p>Specify the models you want to use in your model evaluation job. Automatic
-     * model evaluation jobs support a single model, and model evaluation job that use
-     * human workers support two models.</p>
+     * model evaluation jobs support a single model or <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+     * profile</a>, and model evaluation job that use human workers support two models
+     * or inference profiles.</p>
      */
     inline const EvaluationInferenceConfig& GetInferenceConfig() const{ return m_inferenceConfig; }
     inline bool InferenceConfigHasBeenSet() const { return m_inferenceConfigHasBeenSet; }

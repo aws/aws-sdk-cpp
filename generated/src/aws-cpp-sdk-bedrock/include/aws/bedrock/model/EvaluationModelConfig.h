@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Defines the Amazon Bedrock model and inference parameters you want used.</p>
+     * <p>Defines the Amazon Bedrock model or inference profile and inference
+     * parameters you want used.</p>
      */
     inline const EvaluationBedrockModel& GetBedrockModel() const{ return m_bedrockModel; }
     inline bool BedrockModelHasBeenSet() const { return m_bedrockModelHasBeenSet; }

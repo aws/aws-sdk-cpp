@@ -40,7 +40,9 @@ namespace Model
      * <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn,
      * SenderId or SenderIdArn. You can use <a>DescribePhoneNumbers</a> get the values
      * for PhoneNumberId and PhoneNumberArn while <a>DescribeSenderIds</a> can be used
-     * to get the values for SenderId and SenderIdArn.</p>
+     * to get the values for SenderId and SenderIdArn.</p>  <p>If you are
+     * using a shared AWS End User Messaging SMS and Voice resource then you must use
+     * the full Amazon Resource Name(ARN).</p> 
      */
     inline const Aws::String& GetOriginationIdentity() const{ return m_originationIdentity; }
     inline bool OriginationIdentityHasBeenSet() const { return m_originationIdentityHasBeenSet; }
