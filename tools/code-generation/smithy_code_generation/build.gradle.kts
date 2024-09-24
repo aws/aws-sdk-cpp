@@ -58,6 +58,9 @@ smithy {
             smithy {
                 srcDir("model/")
             }
+            resources {
+                srcDir("smoke-tests/src/main/resources")
+            }
         }
     }
 
