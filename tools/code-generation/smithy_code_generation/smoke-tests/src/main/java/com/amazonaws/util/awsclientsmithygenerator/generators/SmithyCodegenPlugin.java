@@ -13,7 +13,7 @@ public String getName() {
 }
 @Override
     public void execute(PluginContext context){
-
+        System.out.println("Executing SmithyCodegenPlugin...");
         try{
             SmithyParser parser = new SmithyParser(context.getModel(), context.getSources());
             parser.GenerateTests();
