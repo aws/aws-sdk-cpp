@@ -99,7 +99,9 @@ namespace Model
     ///@{
     /**
      * <p>The name of the OptOutList to associate with the phone number. You can use
-     * the OptOutListName or OptOutListArn.</p>
+     * the OptOutListName or OptOutListArn.</p>  <p>If you are using a
+     * shared AWS End User Messaging SMS and Voice resource then you must use the full
+     * Amazon Resource Name(ARN).</p> 
      */
     inline const Aws::String& GetOptOutListName() const{ return m_optOutListName; }
     inline bool OptOutListNameHasBeenSet() const { return m_optOutListNameHasBeenSet; }
@@ -114,7 +116,9 @@ namespace Model
     ///@{
     /**
      * <p>The pool to associated with the phone number. You can use the PoolId or
-     * PoolArn. </p>
+     * PoolArn. </p>  <p>If you are using a shared AWS End User Messaging
+     * SMS and Voice resource then you must use the full Amazon Resource Name(ARN).</p>
+     * 
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }

@@ -147,7 +147,13 @@ namespace Kinesis
          * Amazon Web Services Support</a>.</p> <p>You can use <a>DescribeStreamSummary</a>
          * to check the stream status, which is returned in <code>StreamStatus</code>.</p>
          * <p> <a>CreateStream</a> has a limit of five transactions per second per
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>You can add tags to the stream when making a
+         * <code>CreateStream</code> request by setting the <code>Tags</code> parameter. If
+         * you pass <code>Tags</code> parameter, in addition to having
+         * <code>kinesis:createStream</code> permission, you must also have
+         * <code>kinesis:addTagsToStream</code> permission for the stream that will be
+         * created. Tags will take effect from the <code>CREATING</code> status of the
+         * stream. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">AWS
          * API Reference</a></p>
          */
@@ -1117,13 +1123,13 @@ namespace Kinesis
          * every shard you subscribe to. This rate is unaffected by the total number of
          * consumers that read from the same stream.</p> <p>You can register up to 20
          * consumers per stream. A given consumer can only be registered with one stream at
-         * a time.</p> <p>For an example of how to use this operations, see <a
-         * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
-         * Using the Kinesis Data Streams API</a>.</p> <p>The use of this operation has a
-         * limit of five transactions per second per account. Also, only 5 consumers can be
-         * created simultaneously. In other words, you cannot have more than 5 consumers in
-         * a <code>CREATING</code> status at the same time. Registering a 6th consumer
-         * while there are 5 in a <code>CREATING</code> status results in a
+         * a time.</p> <p>For an example of how to use this operation, see <a
+         * href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
+         * Fan-Out Using the Kinesis Data Streams API</a>.</p> <p>The use of this operation
+         * has a limit of five transactions per second per account. Also, only 5 consumers
+         * can be created simultaneously. In other words, you cannot have more than 5
+         * consumers in a <code>CREATING</code> status at the same time. Registering a 6th
+         * consumer while there are 5 in a <code>CREATING</code> status results in a
          * <code>LimitExceededException</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer">AWS
          * API Reference</a></p>
@@ -1358,9 +1364,9 @@ namespace Kinesis
          * seconds or more after a successful call, the second call takes over the
          * subscription and the previous connection expires or fails with a
          * <code>ResourceInUseException</code>.</p> <p>For an example of how to use this
-         * operations, see <a
-         * href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out
-         * Using the Kinesis Data Streams API</a>.</p><p><h3>See Also:</h3>   <a
+         * operation, see <a
+         * href="https://docs.aws.amazon.com/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced
+         * Fan-Out Using the Kinesis Data Streams API</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShard">AWS
          * API Reference</a></p>
          */

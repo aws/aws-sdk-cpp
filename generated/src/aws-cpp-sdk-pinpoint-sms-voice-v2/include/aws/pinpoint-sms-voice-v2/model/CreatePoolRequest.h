@@ -46,6 +46,8 @@ namespace Model
      * be used to get the values for SenderId and SenderIdArn.</p> <p>After the pool is
      * created you can add more origination identities to the pool by using <a
      * href="https://docs.aws.amazon.com/pinpoint/latest/apireference_smsvoicev2/API_AssociateOriginationIdentity.html">AssociateOriginationIdentity</a>.</p>
+     *  <p>If you are using a shared AWS End User Messaging SMS and Voice
+     * resource then you must use the full Amazon Resource Name(ARN).</p> 
      */
     inline const Aws::String& GetOriginationIdentity() const{ return m_originationIdentity; }
     inline bool OriginationIdentityHasBeenSet() const { return m_originationIdentityHasBeenSet; }

@@ -864,6 +864,33 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
+         * <p>Deletes the resource-based policy document attached to the AWS End User
+         * Messaging SMS and Voice resource. A shared resource can be a Pool, Opt-out list,
+         * Sender Id, or Phone number.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Deletes an account-level monthly spending limit override for sending text
          * messages. Deleting a spend limit override will set the
          * <code>EnforcedLimit</code> to equal the <code>MaxLimit</code>, which is
@@ -1614,6 +1641,33 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
+         * <p>Retrieves the JSON text of the resource-based policy document attached to the
+         * AWS End User Messaging SMS and Voice resource. A shared resource can be a Pool,
+         * Opt-out list, Sender Id, or Phone number.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::GetResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Lists all associated origination identities in your pool.</p> <p>If you
          * specify filters, the output includes information for only those origination
          * identities that meet the filter criteria.</p><p><h3>See Also:</h3>   <a
@@ -1774,6 +1828,37 @@ namespace PinpointSMSVoiceV2
         void PutRegistrationFieldValueAsync(const PutRegistrationFieldValueRequestT& request, const PutRegistrationFieldValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::PutRegistrationFieldValue, request, handler, context);
+        }
+
+        /**
+         * <p>Attaches a resource-based policy to a AWS End User Messaging SMS and Voice
+         * resource(phone number, sender Id, phone poll, or opt-out list) that is used for
+         * sharing the resource. A shared resource can be a Pool, Opt-out list, Sender Id,
+         * or Phone number. For more information about resource-based policies, see <a
+         * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/shared-resources.html">Working
+         * with shared resources</a> in the <i>AWS End User Messaging SMS User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::PutResourcePolicy, request, handler, context);
         }
 
         /**

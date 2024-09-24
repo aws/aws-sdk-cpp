@@ -8,6 +8,7 @@
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-sms-voice-v2/model/Owner.h>
 #include <aws/pinpoint-sms-voice-v2/model/SenderIdAndCountry.h>
 #include <aws/pinpoint-sms-voice-v2/model/SenderIdFilter.h>
 #include <utility>
@@ -39,7 +40,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of SenderIdAndCountry objects to search for.</p>
+     * <p>An array of SenderIdAndCountry objects to search for.</p>  <p>If
+     * you are using a shared AWS End User Messaging SMS and Voice resource then you
+     * must use the full Amazon Resource Name(ARN).</p> 
      */
     inline const Aws::Vector<SenderIdAndCountry>& GetSenderIds() const{ return m_senderIds; }
     inline bool SenderIdsHasBeenSet() const { return m_senderIdsHasBeenSet; }
@@ -89,6 +92,21 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeSenderIdsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Use <code>SELF</code> to filter the list of Sender Ids to ones your account
+     * owns or use <code>SHARED</code> to filter on Sender Ids shared with your
+     * account. The <code>Owner</code> and <code>SenderIds</code> parameters can't be
+     * used at the same time. </p>
+     */
+    inline const Owner& GetOwner() const{ return m_owner; }
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+    inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
+    inline DescribeSenderIdsRequest& WithOwner(const Owner& value) { SetOwner(value); return *this;}
+    inline DescribeSenderIdsRequest& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<SenderIdAndCountry> m_senderIds;
@@ -102,6 +120,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Owner m_owner;
+    bool m_ownerHasBeenSet = false;
   };
 
 } // namespace Model

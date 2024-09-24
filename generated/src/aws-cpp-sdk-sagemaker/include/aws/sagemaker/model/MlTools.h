@@ -29,7 +29,8 @@ namespace Model
     InferenceRecommender,
     Endpoints,
     Projects,
-    InferenceOptimization
+    InferenceOptimization,
+    PerformanceEvaluation
   };
 
 namespace MlToolsMapper

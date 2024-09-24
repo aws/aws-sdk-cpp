@@ -37,7 +37,9 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier of the pool to update. Valid values are either the
-     * PoolId or PoolArn.</p>
+     * PoolId or PoolArn.</p>  <p>If you are using a shared AWS End User
+     * Messaging SMS and Voice resource then you must use the full Amazon Resource
+     * Name(ARN).</p> 
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
@@ -107,7 +109,9 @@ namespace Model
     ///@{
     /**
      * <p>The OptOutList to associate with the pool. Valid values are either
-     * OptOutListName or OptOutListArn.</p>
+     * OptOutListName or OptOutListArn.</p>  <p>If you are using a shared
+     * AWS End User Messaging SMS and Voice resource then you must use the full Amazon
+     * Resource Name(ARN).</p> 
      */
     inline const Aws::String& GetOptOutListName() const{ return m_optOutListName; }
     inline bool OptOutListNameHasBeenSet() const { return m_optOutListNameHasBeenSet; }

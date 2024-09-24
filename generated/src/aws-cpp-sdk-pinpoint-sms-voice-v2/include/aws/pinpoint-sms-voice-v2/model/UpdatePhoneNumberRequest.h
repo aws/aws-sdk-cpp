@@ -37,7 +37,9 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier of the phone number. Valid values for this field can be
-     * either the PhoneNumberId or PhoneNumberArn.</p>
+     * either the PhoneNumberId or PhoneNumberArn.</p>  <p>If you are using
+     * a shared AWS End User Messaging SMS and Voice resource then you must use the
+     * full Amazon Resource Name(ARN).</p> 
      */
     inline const Aws::String& GetPhoneNumberId() const{ return m_phoneNumberId; }
     inline bool PhoneNumberIdHasBeenSet() const { return m_phoneNumberIdHasBeenSet; }

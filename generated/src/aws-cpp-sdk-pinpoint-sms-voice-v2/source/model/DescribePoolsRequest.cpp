@@ -17,7 +17,9 @@ DescribePoolsRequest::DescribePoolsRequest() :
     m_filtersHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_owner(Owner::NOT_SET),
+    m_ownerHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,11 @@ Aws::String DescribePoolsRequest::SerializePayload() const
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
+  }
+
+  if(m_ownerHasBeenSet)
+  {
+   payload.WithString("Owner", OwnerMapper::GetNameForOwner(m_owner));
   }
 
   return payload.View().WriteReadable();

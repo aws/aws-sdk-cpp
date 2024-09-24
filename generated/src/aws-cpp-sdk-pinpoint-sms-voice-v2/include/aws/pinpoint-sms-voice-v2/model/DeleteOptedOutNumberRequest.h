@@ -37,6 +37,8 @@ namespace Model
     ///@{
     /**
      * <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
+     *  <p>If you are using a shared AWS End User Messaging SMS and Voice
+     * resource then you must use the full Amazon Resource Name(ARN).</p> 
      */
     inline const Aws::String& GetOptOutListName() const{ return m_optOutListName; }
     inline bool OptOutListNameHasBeenSet() const { return m_optOutListNameHasBeenSet; }

@@ -8,6 +8,7 @@
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint-sms-voice-v2/model/Owner.h>
 #include <utility>
 
 namespace Aws
@@ -38,7 +39,9 @@ namespace Model
     ///@{
     /**
      * <p>The OptOutLists to show the details of. This is an array of strings that can
-     * be either the OptOutListName or OptOutListArn.</p>
+     * be either the OptOutListName or OptOutListArn.</p>  <p>If you are
+     * using a shared AWS End User Messaging SMS and Voice resource then you must use
+     * the full Amazon Resource Name(ARN).</p> 
      */
     inline const Aws::Vector<Aws::String>& GetOptOutListNames() const{ return m_optOutListNames; }
     inline bool OptOutListNamesHasBeenSet() const { return m_optOutListNamesHasBeenSet; }
@@ -75,6 +78,21 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeOptOutListsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Use <code>SELF</code> to filter the list of Opt-Out List to ones your account
+     * owns or use <code>SHARED</code> to filter on Opt-Out List shared with your
+     * account. The <code>Owner</code> and <code>OptOutListNames</code> parameters
+     * can't be used at the same time.</p>
+     */
+    inline const Owner& GetOwner() const{ return m_owner; }
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+    inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
+    inline DescribeOptOutListsRequest& WithOwner(const Owner& value) { SetOwner(value); return *this;}
+    inline DescribeOptOutListsRequest& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_optOutListNames;
@@ -85,6 +103,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Owner m_owner;
+    bool m_ownerHasBeenSet = false;
   };
 
 } // namespace Model
