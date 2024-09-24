@@ -9,10 +9,6 @@ import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.slf4j.helpers.NOPLoggerFactory;
 
-import com.amazonaws.util.awsclientsmithygenerator.generators.SmithyParser.ClientConfiguration;
-import com.amazonaws.util.awsclientsmithygenerator.generators.SmithyParser.TestcaseParams;
-
-import javafx.scene.shape.Shape;
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import software.amazon.smithy.aws.traits.auth.SigV4ATrait;
 import software.amazon.smithy.aws.traits.auth.SigV4Trait;
@@ -26,7 +22,6 @@ import java.nio.file.Path;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -51,35 +46,6 @@ public class SmithyParser {
     Model model;
     ModelAssembler assembler;
     SmithyCodegenAdapter codegenAdapter;
-    @Data
-    private class CppDataPacker{
-        public String functionCall;
-        public StringBuilder functionDefinition;
-    }
-
-    @Data
-    public static final class ClientConfiguration {
-        public String region;
-        public List<String> sigv4aRegionSet;
-        public boolean useFips;
-        public boolean useDualstack;
-    };
-
-    @Data
-    public static final class TestcaseParams {
-        public String testcaseName;
-        public String clientName;
-        public ClientConfiguration config;
-        public String operationName;
-        public String inputShapeName;
-        public String outputShapeName;
-        public List<String> getterCodeBlock;
-        public String functionBlock;
-        boolean expectSuccess;
-        Optional<String> errorShapeId;
-        //capture auth scheme as that decides the client constructor
-        String auth;
-    };
 
     @Data
     public static final class Failure {
@@ -87,9 +53,6 @@ public class SmithyParser {
     };
 
     private final VelocityEngine velocityEngine;
-    private final File smithyFile;
-    private final String serviceName;
-
     private final Set<Path> sources;
 
     public SmithyParser(Model model ,Set<Path> sources)  {
@@ -110,22 +73,25 @@ public class SmithyParser {
         codegenAdapter = new SmithyCodegenAdapter(model);
     }
 
-    public void GenerateTests() throws IOException {
+    public void GenerateTests() throws Exception {
 
-        //loop over model paths, extract service name from filename
-        sources.stream().filter(path -> path.toString().endsWith(".json") || path.toString().endsWith(".smithy")).
-        forEach(path -> {
-
-            String fileName = path.getFileName();
-            int dotIndex = filename.lastIndexOf('.'); // Find the last dot index
-            String serviceName = (dotIndex != -1) ? filename.substring(0, dotIndex) : filename; // Extract name until dot
-
-            List<TestcaseParams> testcaseParams = extractTests();
-            generateTestSourceFile(testcaseParams, String.format(SMOKE_TESTS_CPP_FORMAT, serviceName));
-            generateTestCmakeFile(CMAKE_LISTS_TXT);
-
-        });
-        try (final Stream<Path> paths = Files.walk(path)) {
+        try{
+            sources.stream().filter(path -> path.toString().endsWith(".json") || path.toString().endsWith(".smithy")).
+            forEach(path -> {
+    
+                String filename = path.getFileName().toString();
+                int dotIndex = filename.lastIndexOf('.'); // Find the last dot index
+                String serviceName = (dotIndex != -1) ? filename.substring(0, dotIndex) : filename; // Extract name until dot
+                
+                try{
+                    List<TestcaseParams> testcaseParams = extractTests();
+                    generateTestSourceFile(testcaseParams, String.format(SMOKE_TESTS_CPP_FORMAT, serviceName));
+                    generateTestCmakeFile(CMAKE_LISTS_TXT, serviceName);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+    
+            });
             
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -136,24 +102,24 @@ public class SmithyParser {
         //assembler.reset();
     }
 
-    private void makeFile(Template template, VelocityContext context, final String fileName) throws IOException {
+    private void makeFile(Template template, VelocityContext context, final String fileName) throws Exception {
         final File outputFile = new File(fileName);
         outputFile.getParentFile().mkdirs();
         outputFile.createNewFile();
         try (FileWriter fileWriter = new FileWriter(outputFile)){
             template.merge(context, fileWriter);
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new RuntimeException(String.format("Generation of template failed for template %s", template.getName()), e);
         }
     }
 
-    public void generateTestSourceFile( List<TestcaseParams> tests, String fileName) throws IOException {
+    public void generateTestSourceFile( List<TestcaseParams> tests, String fileName) throws Exception {
         Template template = velocityEngine.getTemplate(SMOKE_TEST_SOURCE_TEMPLATE, StandardCharsets.UTF_8.name());
         VelocityContext context = createSmokeTestContext(tests);
         makeFile(template, context, String.format(OUTPUT_LOCATION_FORMAT, fileName));
     }
 
-    public void generateTestCmakeFile(String fileName) throws IOException {
+    public void generateTestCmakeFile(String fileName, final String serviceName) throws Exception {
         Template template = velocityEngine.getTemplate(CMAKE_TEMPLATE, StandardCharsets.UTF_8.name());
         VelocityContext context = new VelocityContext();
         context.put("projectName", serviceName);

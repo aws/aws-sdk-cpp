@@ -7,17 +7,20 @@ import software.amazon.smithy.model.transform.ModelTransformer;
 
 class SmithyCodegenPlugin implements SmithyBuildPlugin {
 
-String getName()
-{
-    return "cpp-smithy-smoke-tests-codegen";
-}
-
 @Override
-    void execute(PluginContext context){
-        // this is where the magic happens
+public String getName() {
+    return "cpp-smithy-smoke-tests-codegen"; // Return the name of your plugin
+}
+@Override
+    public void execute(PluginContext context){
 
-        SmithyParser parser = new SmithyParser(context.getModel(), context.getSources());
-        parser.GenerateTests();
+        try{
+            SmithyParser parser = new SmithyParser(context.getModel(), context.getSources());
+            parser.GenerateTests();
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }
         
     }
 }

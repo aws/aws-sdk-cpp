@@ -36,7 +36,8 @@ dependencies {
 
     // Other dependencies
     api("com.google.guava:guava:32.0.1-jre")
-    api("org.projectlombok:lombok:1.18.30") // Corrected Lombok dependency
+    implementation("org.projectlombok:lombok:1.18.30") // Corrected Lombok dependency
+    annotationProcessor("org.projectlombok:lombok:1.18.30")
 
     api("commons-cli:commons-cli:1.9.0")
     api("commons-io:commons-io:2.16.1")
@@ -50,6 +51,10 @@ dependencies {
 smithy {
     sourceSets {
         main {
+            java {
+                // Specify the directory where your Java files are located
+                srcDirs("smoke-tests/src/main/java")
+            }
             smithy {
                 srcDir("model/")
             }
