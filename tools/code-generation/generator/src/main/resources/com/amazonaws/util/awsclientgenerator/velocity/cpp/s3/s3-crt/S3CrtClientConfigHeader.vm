@@ -76,4 +76,14 @@
                     uint32_t maxBackoffSecs = 20;
                 } config;
             } crtRetryStrategyConfig;
+
+            /**
+             * Optional.
+             * The size threshold in bytes for when to use multipart uploads.
+             * Uploads larger than this will use the multipart upload strategy.
+             * Uploads smaller or equal to this will use a single HTTP request.
+             * If set, this should be at least `partSize`.
+             * If not set, the max of `partSize` and 5 MiB will be used.
+             */
+            size_t multipartUploadThreshold{0};
             /* End of S3 CRT specifics */
