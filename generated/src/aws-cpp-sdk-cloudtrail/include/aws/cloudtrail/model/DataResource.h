@@ -25,30 +25,32 @@ namespace Model
 {
 
   /**
-   * <p>Data events provide information about the resource operations performed on or
-   * within a resource itself. These are also known as data plane operations. You can
-   * specify up to 250 data resources for a trail.</p> <p>Configure the
-   * <code>DataResource</code> to specify the resource type and resource ARNs for
-   * which you want to log data events.</p> <p>You can specify the following resource
-   * types in your event selectors for your trail:</p> <ul> <li> <p>
-   * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
+   * <p>You can configure the <code>DataResource</code> in an
+   * <code>EventSelector</code> to log data events for the following three resource
+   * types:</p> <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
    * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-   * <code>AWS::S3::Object</code> </p> </li> </ul>  <p>The total number of
-   * allowed data resources is 250. This number can be distributed between 1 and 5
-   * event selectors, but the total cannot exceed 250 across all selectors for the
-   * trail.</p> <p>If you are using advanced event selectors, the maximum total
-   * number of values for all conditions, across all advanced event selectors for the
-   * trail, is 500.</p>  <p>The following example demonstrates how logging
-   * works when you configure logging of all data events for an S3 bucket named
-   * <code>bucket-1</code>. In this example, the CloudTrail user specified an empty
-   * prefix, and the option to log both <code>Read</code> and <code>Write</code> data
-   * events.</p> <ol> <li> <p>A user uploads an image file to
-   * <code>bucket-1</code>.</p> </li> <li> <p>The <code>PutObject</code> API
-   * operation is an Amazon S3 object-level API. It is recorded as a data event in
-   * CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty
-   * prefix, events that occur on any object in that bucket are logged. The trail
-   * processes and logs the event.</p> </li> <li> <p>A user uploads an object to an
-   * Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.</p> </li> <li> <p>The
+   * <code>AWS::S3::Object</code> </p> </li> </ul> <p>To log data events for all
+   * other resource types including objects stored in <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">directory
+   * buckets</a>, you must use <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
+   * You must also use <code>AdvancedEventSelectors</code> if you want to filter on
+   * the <code>eventName</code> field.</p> <p>Configure the <code>DataResource</code>
+   * to specify the resource type and resource ARNs for which you want to log data
+   * events.</p>  <p>The total number of allowed data resources is 250. This
+   * number can be distributed between 1 and 5 event selectors, but the total cannot
+   * exceed 250 across all selectors for the trail.</p>  <p>The following
+   * example demonstrates how logging works when you configure logging of all data
+   * events for a general purpose bucket named <code>amzn-s3-demo-bucket1</code>. In
+   * this example, the CloudTrail user specified an empty prefix, and the option to
+   * log both <code>Read</code> and <code>Write</code> data events.</p> <ol> <li>
+   * <p>A user uploads an image file to <code>amzn-s3-demo-bucket1</code>.</p> </li>
+   * <li> <p>The <code>PutObject</code> API operation is an Amazon S3 object-level
+   * API. It is recorded as a data event in CloudTrail. Because the CloudTrail user
+   * specified an S3 bucket with an empty prefix, events that occur on any object in
+   * that bucket are logged. The trail processes and logs the event.</p> </li> <li>
+   * <p>A user uploads an object to an Amazon S3 bucket named
+   * <code>arn:aws:s3:::amzn-s3-demo-bucket1</code>.</p> </li> <li> <p>The
    * <code>PutObject</code> API operation occurred for an object in an S3 bucket that
    * the CloudTrail user didn't specify for the trail. The trail doesn’t log the
    * event.</p> </li> </ol> <p>The following example demonstrates how logging works
@@ -109,20 +111,21 @@ namespace Model
      * if that activity is performed on a bucket that belongs to another Amazon Web
      * Services account.</p>  </li> <li> <p>To log data events for all objects
      * in an S3 bucket, specify the bucket and an empty object prefix such as
-     * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects
-     * in this S3 bucket.</p> </li> <li> <p>To log data events for specific objects,
-     * specify the S3 bucket and object prefix such as
-     * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events
-     * for objects in this S3 bucket that match the prefix.</p> </li> <li> <p>To log
-     * data events for all Lambda functions in your Amazon Web Services account,
-     * specify the prefix as <code>arn:aws:lambda</code>.</p>  <p>This also
-     * enables logging of <code>Invoke</code> activity performed by any user or role in
-     * your Amazon Web Services account, even if that activity is performed on a
-     * function that belongs to another Amazon Web Services account. </p>  </li>
-     * <li> <p>To log data events for a specific Lambda function, specify the function
-     * ARN.</p>  <p>Lambda function ARNs are exact. For example, if you specify a
-     * function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>,
-     * data events will only be logged for
+     * <code>arn:aws:s3:::amzn-s3-demo-bucket1/</code>. The trail logs data events for
+     * all objects in this S3 bucket.</p> </li> <li> <p>To log data events for specific
+     * objects, specify the S3 bucket and object prefix such as
+     * <code>arn:aws:s3:::amzn-s3-demo-bucket1/example-images</code>. The trail logs
+     * data events for objects in this S3 bucket that match the prefix.</p> </li> <li>
+     * <p>To log data events for all Lambda functions in your Amazon Web Services
+     * account, specify the prefix as <code>arn:aws:lambda</code>.</p>  <p>This
+     * also enables logging of <code>Invoke</code> activity performed by any user or
+     * role in your Amazon Web Services account, even if that activity is performed on
+     * a function that belongs to another Amazon Web Services account. </p> 
+     * </li> <li> <p>To log data events for a specific Lambda function, specify the
+     * function ARN.</p>  <p>Lambda function ARNs are exact. For example, if you
+     * specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events
+     * will only be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not
      * be logged for
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p> 

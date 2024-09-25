@@ -27,22 +27,31 @@ namespace Model
 
   /**
    * <p>Advanced event selectors let you create fine-grained selectors for CloudTrail
-   * management and data events. They help you control costs by logging only those
-   * events that are important to you. For more information about advanced event
-   * selectors, see <a
-   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-   * management events</a> and <a
+   * management, data, and network activity events. They help you control costs by
+   * logging only those events that are important to you. For more information about
+   * configuring advanced event selectors, see the <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-   * data events</a> in the <i>CloudTrail User Guide</i>.</p> <p>You cannot apply
-   * both event selectors and advanced event selectors to a trail.</p> <p>
-   * <b>Supported CloudTrail event record fields for management events</b> </p> <ul>
-   * <li> <p> <code>eventCategory</code> (required)</p> </li> <li> <p>
+   * data events</a>, <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging
+   * network activity events</a>, and <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+   * management events</a> topics in the <i>CloudTrail User Guide</i>.</p> <p>You
+   * cannot apply both event selectors and advanced event selectors to a trail.</p>
+   * <p> <b>Supported CloudTrail event record fields for management events</b> </p>
+   * <ul> <li> <p> <code>eventCategory</code> (required)</p> </li> <li> <p>
    * <code>eventSource</code> </p> </li> <li> <p> <code>readOnly</code> </p> </li>
    * </ul> <p> <b>Supported CloudTrail event record fields for data events</b> </p>
    * <ul> <li> <p> <code>eventCategory</code> (required)</p> </li> <li> <p>
    * <code>resources.type</code> (required)</p> </li> <li> <p> <code>readOnly</code>
    * </p> </li> <li> <p> <code>eventName</code> </p> </li> <li> <p>
-   * <code>resources.ARN</code> </p> </li> </ul>  <p>For event data stores for
+   * <code>resources.ARN</code> </p> </li> </ul> <p> <b>Supported CloudTrail event
+   * record fields for network activity events</b> </p>  <p>Network activity
+   * events is in preview release for CloudTrail and is subject to change.</p>
+   *  <ul> <li> <p> <code>eventCategory</code> (required)</p> </li> <li> <p>
+   * <code>eventSource</code> (required)</p> </li> <li> <p> <code>eventName</code>
+   * </p> </li> <li> <p> <code>errorCode</code> - The only valid value for
+   * <code>errorCode</code> is <code>VpceAccessDenied</code>.</p> </li> <li> <p>
+   * <code>vpcEndpointId</code> </p> </li> </ul>  <p>For event data stores for
    * CloudTrail Insights events, Config configuration items, Audit Manager evidence,
    * or events outside of Amazon Web Services, the only supported field is
    * <code>eventCategory</code>. </p> <p><h3>See Also:</h3>   <a
