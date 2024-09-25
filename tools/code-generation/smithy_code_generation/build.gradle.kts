@@ -46,6 +46,8 @@ dependencies {
     // Unit testing dependencies
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+
+
 }
 
 smithy {
@@ -69,4 +71,10 @@ smithy {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.register("myCustomTask") {
+    doLast {
+        println("This is a custom Kotlin task.")
+    }
 }

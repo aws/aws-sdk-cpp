@@ -10,7 +10,7 @@ class SmithyCodegenPlugin implements SmithyBuildPlugin {
 @Override
 public String getName() {
     System.out.println("getName called");
-    return "cpp-smithy-smoke-tests-codegen"; // Return the name of your plugin
+    return "smoke-tests"; // Return the name of your plugin
 }
 @Override
     public void execute(PluginContext context){
