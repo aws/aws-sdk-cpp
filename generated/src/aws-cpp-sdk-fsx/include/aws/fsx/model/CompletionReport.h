@@ -66,8 +66,8 @@ namespace Model
      * absolute path that defines where the completion report will be stored in the
      * destination location. The <code>Path</code> you provide must be located within
      * the file system’s ExportPath. An example <code>Path</code> value is
-     * "s3://myBucket/myExportPath/optionalPrefix". The report provides the following
-     * information for each file in the report: FilePath, FileStatus, and
+     * "s3://amzn-s3-demo-bucket/myExportPath/optionalPrefix". The report provides the
+     * following information for each file in the report: FilePath, FileStatus, and
      * ErrorCode.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }

@@ -81,8 +81,9 @@ namespace Model
     /**
      * <p>The path to the Amazon S3 data repository that will be linked to the file
      * system. The path can be an S3 bucket or prefix in the format
-     * <code>s3://myBucket/myPrefix/</code>. This path specifies where in the S3 data
-     * repository files will be imported from or exported to.</p>
+     * <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is optional).
+     * This path specifies where in the S3 data repository files will be imported from
+     * or exported to.</p>
      */
     inline const Aws::String& GetDataRepositoryPath() const{ return m_dataRepositoryPath; }
     inline bool DataRepositoryPathHasBeenSet() const { return m_dataRepositoryPathHasBeenSet; }

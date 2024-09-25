@@ -77,14 +77,14 @@ namespace Model
      * <code>path1</code>.</p> </li> <li> <p>For import tasks, the list contains paths
      * in the Amazon S3 bucket from which POSIX metadata changes are imported to the
      * FSx for Lustre file system. The path can be an S3 bucket or prefix in the format
-     * <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code> is optional).
-     * </p> </li> <li> <p>For release tasks, the list contains directory or file paths
-     * on the FSx for Lustre file system from which to release exported files. If a
-     * directory is specified, files within the directory are released. If a file path
-     * is specified, only that file is released. To release all exported files in the
-     * file system, specify a forward slash (/) as the path.</p>  <p>A file must
-     * also meet the last accessed time criteria specified in for the file to be
-     * released.</p>  </li> </ul>
+     * <code>s3://bucket-name/prefix</code> (where <code>prefix</code> is
+     * optional).</p> </li> <li> <p>For release tasks, the list contains directory or
+     * file paths on the FSx for Lustre file system from which to release exported
+     * files. If a directory is specified, files within the directory are released. If
+     * a file path is specified, only that file is released. To release all exported
+     * files in the file system, specify a forward slash (/) as the path.</p> 
+     * <p>A file must also meet the last accessed time criteria specified in for the
+     * file to be released.</p>  </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetPaths() const{ return m_paths; }
     inline bool PathsHasBeenSet() const { return m_pathsHasBeenSet; }
