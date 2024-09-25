@@ -83,16 +83,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda
-     * functions, and Amazon DynamoDB tables with basic event selectors. You can
-     * specify up to 250 resources for an individual event selector, but the total
-     * number of data resources cannot exceed 250 across all event selectors in a
-     * trail. This limit does not apply if you configure resource logging for all data
-     * events.</p> <p>For more information, see <a
+     * <p>CloudTrail supports data event logging for Amazon S3 objects in standard S3
+     * buckets, Lambda functions, and Amazon DynamoDB tables with basic event
+     * selectors. You can specify up to 250 resources for an individual event selector,
+     * but the total number of data resources cannot exceed 250 across all event
+     * selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Data
      * Events</a> and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
-     * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
+     * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>  <p>To log data
+     * events for all other resource types including objects stored in <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">directory
+     * buckets</a>, you must use <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
+     * You must also use <code>AdvancedEventSelectors</code> if you want to filter on
+     * the <code>eventName</code> field.</p> 
      */
     inline const Aws::Vector<DataResource>& GetDataResources() const{ return m_dataResources; }
     inline bool DataResourcesHasBeenSet() const { return m_dataResourcesHasBeenSet; }

@@ -83,7 +83,8 @@ namespace Model
      * <code>nfs://filer-domain-name</code>, which indicates the root of the
      * subdirectories specified with the <code>DataRepositorySubdirectories</code>
      * parameter.</p> </li> </ul> </li> <li> <p>The path can be an S3 bucket or prefix
-     * in the format <code>s3://myBucket/myPrefix/</code>.</p> </li> </ul>
+     * in the format <code>s3://bucket-name/prefix/</code> (where <code>prefix</code>
+     * is optional).</p> </li> </ul>
      */
     inline const Aws::String& GetDataRepositoryPath() const{ return m_dataRepositoryPath; }
     inline bool DataRepositoryPathHasBeenSet() const { return m_dataRepositoryPathHasBeenSet; }
