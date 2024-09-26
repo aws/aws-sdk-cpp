@@ -11,7 +11,6 @@
 #include <aws/lambda/model/ResourceNotFoundException.h>
 #include <aws/lambda/model/ProvisionedConcurrencyConfigNotFoundException.h>
 #include <aws/lambda/model/KMSInvalidStateException.h>
-#include <aws/lambda/model/PublicPolicyException.h>
 #include <aws/lambda/model/RecursiveInvocationException.h>
 #include <aws/lambda/model/InvalidParameterValueException.h>
 #include <aws/lambda/model/PolicyLengthExceededException.h>
@@ -83,12 +82,6 @@ template<> AWS_LAMBDA_API KMSInvalidStateException LambdaError::GetModeledError(
 {
   assert(this->GetErrorType() == LambdaErrors::K_M_S_INVALID_STATE);
   return KMSInvalidStateException(this->GetJsonPayload().View());
-}
-
-template<> AWS_LAMBDA_API PublicPolicyException LambdaError::GetModeledError()
-{
-  assert(this->GetErrorType() == LambdaErrors::PUBLIC_POLICY);
-  return PublicPolicyException(this->GetJsonPayload().View());
 }
 
 template<> AWS_LAMBDA_API RecursiveInvocationException LambdaError::GetModeledError()
@@ -296,7 +289,6 @@ static const int E_F_S_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("EFSMo
 static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
 static const int PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
 static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
-static const int PUBLIC_POLICY_HASH = HashingUtils::HashString("PublicPolicyException");
 static const int RECURSIVE_INVOCATION_HASH = HashingUtils::HashString("RecursiveInvocationException");
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFoundException");
@@ -350,10 +342,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == K_M_S_INVALID_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_INVALID_STATE), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == PUBLIC_POLICY_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PUBLIC_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RECURSIVE_INVOCATION_HASH)
   {

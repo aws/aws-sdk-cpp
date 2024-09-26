@@ -85,6 +85,37 @@ namespace Model
     inline ConfiguredTeam& WithTeamName(Aws::String&& value) { SetTeamName(std::move(value)); return *this;}
     inline ConfiguredTeam& WithTeamName(const char* value) { SetTeamName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns
+     * <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly
+     * denied that configuration. For example, if Amazon Chime is disabled.</p>
+     */
+    inline const Aws::String& GetState() const{ return m_state; }
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
+    inline ConfiguredTeam& WithState(const Aws::String& value) { SetState(value); return *this;}
+    inline ConfiguredTeam& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
+    inline ConfiguredTeam& WithState(const char* value) { SetState(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provided if State is <code>DISABLED</code>. Provides context as to why the
+     * resource is disabled.</p>
+     */
+    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+    inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
+    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
+    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
+    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
+    inline ConfiguredTeam& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
+    inline ConfiguredTeam& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
+    inline ConfiguredTeam& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_tenantId;
@@ -95,6 +126,12 @@ namespace Model
 
     Aws::String m_teamName;
     bool m_teamNameHasBeenSet = false;
+
+    Aws::String m_state;
+    bool m_stateHasBeenSet = false;
+
+    Aws::String m_stateReason;
+    bool m_stateReasonHasBeenSet = false;
   };
 
 } // namespace Model

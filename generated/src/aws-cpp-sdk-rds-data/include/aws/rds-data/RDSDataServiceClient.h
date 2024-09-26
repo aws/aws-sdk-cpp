@@ -20,8 +20,9 @@ namespace RDSDataService
    * run SQL statements on an Amazon Aurora DB cluster. To run these statements, you
    * use the RDS Data API (Data API).</p> <p>Data API is available with the following
    * types of Aurora databases:</p> <ul> <li> <p>Aurora PostgreSQL - Serverless v2,
-   * Serverless v1, and provisioned</p> </li> <li> <p>Aurora MySQL - Serverless v1
-   * only</p> </li> </ul> <p>For more information about the Data API, see <a
+   * provisioned, and Serverless v1</p> </li> <li> <p>Aurora MySQL - Serverless v2,
+   * provisioned, and Serverless v1</p> </li> </ul> <p>For more information about the
+   * Data API, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
    * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p></p>
    */
@@ -127,10 +128,10 @@ namespace RDSDataService
          * of 24 hours. A transaction is terminated and rolled back automatically after 24
          * hours.</p> <p>A transaction times out if no calls use its transaction ID in
          * three minutes. If a transaction times out before it's committed, it's rolled
-         * back automatically.</p> <p>DDL statements inside a transaction cause an implicit
-         * commit. We recommend that you run each DDL statement in a separate
-         * <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code>
-         * enabled.</p> <p><h3>See Also:</h3>   <a
+         * back automatically.</p> <p>For Aurora MySQL, DDL statements inside a transaction
+         * cause an implicit commit. We recommend that you run each MySQL DDL statement in
+         * a separate <code>ExecuteStatement</code> call with
+         * <code>continueAfterTimeout</code> enabled.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/BeginTransaction">AWS
          * API Reference</a></p>
          */

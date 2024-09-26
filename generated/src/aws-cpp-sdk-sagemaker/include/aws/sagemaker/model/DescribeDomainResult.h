@@ -14,6 +14,7 @@
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/AppSecurityGroupManagement.h>
+#include <aws/sagemaker/model/TagPropagation.h>
 #include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <utility>
 
@@ -302,6 +303,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether custom tag propagation is supported for the domain.</p>
+     */
+    inline const TagPropagation& GetTagPropagation() const{ return m_tagPropagation; }
+    inline void SetTagPropagation(const TagPropagation& value) { m_tagPropagation = value; }
+    inline void SetTagPropagation(TagPropagation&& value) { m_tagPropagation = std::move(value); }
+    inline DescribeDomainResult& WithTagPropagation(const TagPropagation& value) { SetTagPropagation(value); return *this;}
+    inline DescribeDomainResult& WithTagPropagation(TagPropagation&& value) { SetTagPropagation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The default settings used to create a space.</p>
      */
     inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
@@ -362,6 +374,8 @@ namespace Model
     Aws::String m_kmsKeyId;
 
     AppSecurityGroupManagement m_appSecurityGroupManagement;
+
+    TagPropagation m_tagPropagation;
 
     DefaultSpaceSettings m_defaultSpaceSettings;
 

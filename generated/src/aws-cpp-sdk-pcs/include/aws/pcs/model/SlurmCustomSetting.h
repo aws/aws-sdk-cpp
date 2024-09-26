@@ -41,12 +41,18 @@ namespace Model
     ///@{
     /**
      * <p>Amazon Web Services PCS supports configuration of the following Slurm
-     * parameters: <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Prolog_1">
-     * <code>Prolog</code> </a>, <a
+     * parameters:</p> <ul> <li> <p>For <b>clusters</b> </p> <ul> <li> <p> <a
+     * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Prolog_1">
+     * <code>Prolog</code> </a> </p> </li> <li> <p> <a
      * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Epilog_1">
-     * <code>Epilog</code> </a>, and <a
+     * <code>Epilog</code> </a> </p> </li> <li> <p> <a
      * href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters">
-     * <code>SelectTypeParameters</code> </a>.</p>
+     * <code>SelectTypeParameters</code> </a> </p> </li> </ul> </li> <li> <p>For
+     * <b>compute node groups</b> </p> <ul> <li> <p> <a
+     * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Weight"> <code>Weight</code>
+     * </a> </p> </li> <li> <p> <a
+     * href="https://slurm.schedmd.com/slurm.conf.html#OPT_Weight">
+     * <code>RealMemory</code> </a> </p> </li> </ul> </li> </ul>
      */
     inline const Aws::String& GetParameterName() const{ return m_parameterName; }
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }

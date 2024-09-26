@@ -39,7 +39,6 @@
 #include <aws/lambda/model/DeleteFunctionUrlConfigRequest.h>
 #include <aws/lambda/model/DeleteLayerVersionRequest.h>
 #include <aws/lambda/model/DeleteProvisionedConcurrencyConfigRequest.h>
-#include <aws/lambda/model/DeleteResourcePolicyRequest.h>
 #include <aws/lambda/model/GetAccountSettingsRequest.h>
 #include <aws/lambda/model/GetAliasRequest.h>
 #include <aws/lambda/model/GetCodeSigningConfigRequest.h>
@@ -56,8 +55,6 @@
 #include <aws/lambda/model/GetLayerVersionPolicyRequest.h>
 #include <aws/lambda/model/GetPolicyRequest.h>
 #include <aws/lambda/model/GetProvisionedConcurrencyConfigRequest.h>
-#include <aws/lambda/model/GetPublicAccessBlockConfigRequest.h>
-#include <aws/lambda/model/GetResourcePolicyRequest.h>
 #include <aws/lambda/model/GetRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/InvokeRequest.h>
 #include <aws/lambda/model/InvokeWithResponseStreamRequest.h>
@@ -80,8 +77,6 @@
 #include <aws/lambda/model/PutFunctionEventInvokeConfigRequest.h>
 #include <aws/lambda/model/PutFunctionRecursionConfigRequest.h>
 #include <aws/lambda/model/PutProvisionedConcurrencyConfigRequest.h>
-#include <aws/lambda/model/PutPublicAccessBlockConfigRequest.h>
-#include <aws/lambda/model/PutResourcePolicyRequest.h>
 #include <aws/lambda/model/PutRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/RemoveLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/RemovePermissionRequest.h>
@@ -815,39 +810,6 @@ DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurr
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
-DeleteResourcePolicyOutcome LambdaClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
-{
-  AWS_OPERATION_GUARD(DeleteResourcePolicy);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ResourceArnHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DeleteResourcePolicy", "Required field: ResourceArn, is not set");
-    return DeleteResourcePolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DeleteResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteResourcePolicy",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteResourcePolicyOutcome>(
-    [&]()-> DeleteResourcePolicyOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/2024-09-16/resource-policy/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return DeleteResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
   AWS_OPERATION_GUARD(GetAccountSettings);
@@ -1401,72 +1363,6 @@ GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyCo
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/provisioned-concurrency");
       return GetProvisionedConcurrencyConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-GetPublicAccessBlockConfigOutcome LambdaClient::GetPublicAccessBlockConfig(const GetPublicAccessBlockConfigRequest& request) const
-{
-  AWS_OPERATION_GUARD(GetPublicAccessBlockConfig);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPublicAccessBlockConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ResourceArnHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetPublicAccessBlockConfig", "Required field: ResourceArn, is not set");
-    return GetPublicAccessBlockConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetPublicAccessBlockConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetPublicAccessBlockConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetPublicAccessBlockConfig",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetPublicAccessBlockConfigOutcome>(
-    [&]()-> GetPublicAccessBlockConfigOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPublicAccessBlockConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/2024-09-16/public-access-block/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return GetPublicAccessBlockConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-GetResourcePolicyOutcome LambdaClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
-{
-  AWS_OPERATION_GUARD(GetResourcePolicy);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ResourceArnHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetResourcePolicy", "Required field: ResourceArn, is not set");
-    return GetResourcePolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetResourcePolicy",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetResourcePolicyOutcome>(
-    [&]()-> GetResourcePolicyOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/2024-09-16/resource-policy/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return GetResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2197,72 +2093,6 @@ PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyCo
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
       endpointResolutionOutcome.GetResult().AddPathSegments("/provisioned-concurrency");
       return PutProvisionedConcurrencyConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-PutPublicAccessBlockConfigOutcome LambdaClient::PutPublicAccessBlockConfig(const PutPublicAccessBlockConfigRequest& request) const
-{
-  AWS_OPERATION_GUARD(PutPublicAccessBlockConfig);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutPublicAccessBlockConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ResourceArnHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("PutPublicAccessBlockConfig", "Required field: ResourceArn, is not set");
-    return PutPublicAccessBlockConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutPublicAccessBlockConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, PutPublicAccessBlockConfig, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutPublicAccessBlockConfig",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<PutPublicAccessBlockConfigOutcome>(
-    [&]()-> PutPublicAccessBlockConfigOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutPublicAccessBlockConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/2024-09-16/public-access-block/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return PutPublicAccessBlockConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-PutResourcePolicyOutcome LambdaClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
-{
-  AWS_OPERATION_GUARD(PutResourcePolicy);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.ResourceArnHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("PutResourcePolicy", "Required field: ResourceArn, is not set");
-    return PutResourcePolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, PutResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutResourcePolicy",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<PutResourcePolicyOutcome>(
-    [&]()-> PutResourcePolicyOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/2024-09-16/resource-policy/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
-      return PutResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

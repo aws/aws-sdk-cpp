@@ -168,15 +168,15 @@ namespace Lambda
          * policies to version $LATEST.</p> <p>To grant permission to another account,
          * specify the account ID as the <code>Principal</code>. To grant permission to an
          * organization defined in Organizations, specify the organization ID as the
-         * <code>PrincipalOrgID</code>. For Amazon Web Servicesservices, the principal is a
-         * domain-style identifier that the service defines, such as
+         * <code>PrincipalOrgID</code>. For Amazon Web Services services, the principal is
+         * a domain-style identifier that the service defines, such as
          * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web
-         * Servicesservices, you can also specify the ARN of the associated resource as the
-         * <code>SourceArn</code>. If you grant permission to a service principal without
-         * specifying the source, other accounts could potentially configure resources in
-         * their account to invoke your Lambda function.</p> <p>This operation adds a
-         * statement to a resource-based permissions policy for the function. For more
-         * information about function policies, see <a
+         * Services services, you can also specify the ARN of the associated resource as
+         * the <code>SourceArn</code>. If you grant permission to a service principal
+         * without specifying the source, other accounts could potentially configure
+         * resources in their account to invoke your Lambda function.</p> <p>This operation
+         * adds a statement to a resource-based permissions policy for the function. For
+         * more information about function policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Using
          * resource-based policies for Lambda</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS
@@ -340,7 +340,7 @@ namespace Lambda
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
          * role</a>. The deployment package is a .zip file archive or container image that
          * contains your function code. The execution role grants the function permission
-         * to use Amazon Web Servicesservices, such as Amazon CloudWatch Logs for log
+         * to use Amazon Web Services services, such as Amazon CloudWatch Logs for log
          * streaming and X-Ray for request tracing.</p> <p>If the deployment package is a
          * <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
@@ -380,13 +380,13 @@ namespace Lambda
          * code package has a valid signature from a trusted publisher. The code-signing
          * configuration includes set of signing profiles, which define the trusted
          * publishers for this function.</p> <p>If another Amazon Web Services account or
-         * an Amazon Web Servicesservice invokes your function, use <a>AddPermission</a> to
-         * grant permission by creating a resource-based Identity and Access Management
+         * an Amazon Web Services service invokes your function, use <a>AddPermission</a>
+         * to grant permission by creating a resource-based Identity and Access Management
          * (IAM) policy. You can grant permissions at the function level, on a version, or
          * on an alias.</p> <p>To invoke your function directly, use <a>Invoke</a>. To
-         * invoke your function in response to events in other Amazon Web Servicesservices,
-         * create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a
-         * function trigger in the other service. For more information, see <a
+         * invoke your function in response to events in other Amazon Web Services
+         * services, create an event source mapping (<a>CreateEventSourceMapping</a>), or
+         * configure a function trigger in the other service. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
          * Lambda functions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
@@ -527,7 +527,7 @@ namespace Lambda
          * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
          * deleted. This doesn't require the user to have explicit permissions for
          * <a>DeleteAlias</a>.</p> <p>To delete Lambda event source mappings that invoke a
-         * function, use <a>DeleteEventSourceMapping</a>. For Amazon Web Servicesservices
+         * function, use <a>DeleteEventSourceMapping</a>. For Amazon Web Services services
          * and resources that invoke your function directly, delete the trigger in the
          * service where you originally configured it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
@@ -712,36 +712,6 @@ namespace Lambda
         void DeleteProvisionedConcurrencyConfigAsync(const DeleteProvisionedConcurrencyConfigRequestT& request, const DeleteProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LambdaClient::DeleteProvisionedConcurrencyConfig, request, handler, context);
-        }
-
-        /**
-         *  <p>The option to create and modify full JSON resource-based policies, and
-         * to use the PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs,
-         * won't be available in all Amazon Web Services Regions until September 30,
-         * 2024.</p>  <p>Deletes a <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-         * policy</a> from a function.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteResourcePolicy">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
-
-        /**
-         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
-        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
-        {
-            return SubmitCallable(&LambdaClient::DeleteResourcePolicy, request);
-        }
-
-        /**
-         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
-        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&LambdaClient::DeleteResourcePolicy, request, handler, context);
         }
 
         /**
@@ -1178,64 +1148,6 @@ namespace Lambda
         }
 
         /**
-         *  <p>The option to configure public-access settings, and to use the
-         * PutPublicAccessBlock and GetPublicAccessBlock APIs, won't be available in all
-         * Amazon Web Services Regions until September 30, 2024.</p>  <p>Retrieve
-         * the public-access settings for a function.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPublicAccessBlockConfig">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::GetPublicAccessBlockConfigOutcome GetPublicAccessBlockConfig(const Model::GetPublicAccessBlockConfigRequest& request) const;
-
-        /**
-         * A Callable wrapper for GetPublicAccessBlockConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename GetPublicAccessBlockConfigRequestT = Model::GetPublicAccessBlockConfigRequest>
-        Model::GetPublicAccessBlockConfigOutcomeCallable GetPublicAccessBlockConfigCallable(const GetPublicAccessBlockConfigRequestT& request) const
-        {
-            return SubmitCallable(&LambdaClient::GetPublicAccessBlockConfig, request);
-        }
-
-        /**
-         * An Async wrapper for GetPublicAccessBlockConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename GetPublicAccessBlockConfigRequestT = Model::GetPublicAccessBlockConfigRequest>
-        void GetPublicAccessBlockConfigAsync(const GetPublicAccessBlockConfigRequestT& request, const GetPublicAccessBlockConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&LambdaClient::GetPublicAccessBlockConfig, request, handler, context);
-        }
-
-        /**
-         *  <p>The option to create and modify full JSON resource-based policies, and
-         * to use the PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs,
-         * won't be available in all Amazon Web Services Regions until September 30,
-         * 2024.</p>  <p>Retrieves the <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-         * policy</a> attached to a function.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetResourcePolicy">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
-
-        /**
-         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
-        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
-        {
-            return SubmitCallable(&LambdaClient::GetResourcePolicy, request);
-        }
-
-        /**
-         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
-        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&LambdaClient::GetResourcePolicy, request, handler, context);
-        }
-
-        /**
          * <p>Retrieves the runtime management configuration for a function's version. If
          * the runtime update mode is <b>Manual</b>, this includes the ARN of the runtime
          * version and the runtime update mode. If the runtime update mode is <b>Auto</b>
@@ -1658,7 +1570,7 @@ namespace Lambda
         /**
          * <p>Returns a function, event source mapping, or code signing configuration's <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. You
-         * can also view funciton tags with <a>GetFunction</a>.</p><p><h3>See Also:</h3>  
+         * can also view function tags with <a>GetFunction</a>.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags">AWS
          * API Reference</a></p>
          */
@@ -1942,81 +1854,6 @@ namespace Lambda
         }
 
         /**
-         *  <p>The option to configure public-access settings, and to use the
-         * PutPublicAccessBlock and GetPublicAccessBlock APIs, won't be available in all
-         * Amazon Web Services Regions until September 30, 2024.</p>  <p>Configure
-         * your function's public-access settings.</p> <p>To control public access to a
-         * Lambda function, you can choose whether to allow the creation of <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-         * policies</a> that allow public access to that function. You can also block
-         * public access to a function, even if it has an existing resource-based policy
-         * that allows it.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutPublicAccessBlockConfig">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::PutPublicAccessBlockConfigOutcome PutPublicAccessBlockConfig(const Model::PutPublicAccessBlockConfigRequest& request) const;
-
-        /**
-         * A Callable wrapper for PutPublicAccessBlockConfig that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename PutPublicAccessBlockConfigRequestT = Model::PutPublicAccessBlockConfigRequest>
-        Model::PutPublicAccessBlockConfigOutcomeCallable PutPublicAccessBlockConfigCallable(const PutPublicAccessBlockConfigRequestT& request) const
-        {
-            return SubmitCallable(&LambdaClient::PutPublicAccessBlockConfig, request);
-        }
-
-        /**
-         * An Async wrapper for PutPublicAccessBlockConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename PutPublicAccessBlockConfigRequestT = Model::PutPublicAccessBlockConfigRequest>
-        void PutPublicAccessBlockConfigAsync(const PutPublicAccessBlockConfigRequestT& request, const PutPublicAccessBlockConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&LambdaClient::PutPublicAccessBlockConfig, request, handler, context);
-        }
-
-        /**
-         *  <p>The option to create and modify full JSON resource-based policies, and
-         * to use the PutResourcePolicy, GetResourcePolicy, and DeleteResourcePolicy APIs,
-         * won't be available in all Amazon Web Services Regions until September 30,
-         * 2024.</p>  <p>Adds a <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
-         * policy</a> to a function. You can use resource-based policies to grant access to
-         * other <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-cross-account.html">Amazon
-         * Web Services accounts</a>, <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-organization.html">organizations</a>,
-         * or <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/permissions-function-services.html">services</a>.
-         * Resource-based policies apply to a single function, version, or alias.</p>
-         *  <p>Adding a resource-based policy using this API action replaces any
-         * existing policy you've previously created. This means that if you've previously
-         * added resource-based permissions to a function using the <a>AddPermission</a>
-         * action, those permissions will be overwritten by your new policy.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutResourcePolicy">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
-
-        /**
-         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
-        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
-        {
-            return SubmitCallable(&LambdaClient::PutResourcePolicy, request);
-        }
-
-        /**
-         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
-        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&LambdaClient::PutResourcePolicy, request, handler, context);
-        }
-
-        /**
          * <p>Sets the runtime management configuration for a function's version. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime
@@ -2073,9 +1910,9 @@ namespace Lambda
         }
 
         /**
-         * <p>Revokes function-use permission from an Amazon Web Servicesservice or another
-         * Amazon Web Services account. You can get the ID of the statement from the output
-         * of <a>GetPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Revokes function-use permission from an Amazon Web Services service or
+         * another Amazon Web Services account. You can get the ID of the statement from
+         * the output of <a>GetPolicy</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
          * API Reference</a></p>
          */
@@ -2339,8 +2176,8 @@ namespace Lambda
          * function and are locked when you publish a version. You can't modify the
          * configuration of a published version, only the unpublished version.</p> <p>To
          * configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant
-         * invoke permissions to an Amazon Web Services account or Amazon Web
-         * Servicesservice, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * invoke permissions to an Amazon Web Services account or Amazon Web Services
+         * service, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
          * API Reference</a></p>
          */

@@ -19,7 +19,8 @@ namespace Model
     SERVICE_CONTROL_POLICY,
     TAG_POLICY,
     BACKUP_POLICY,
-    AISERVICES_OPT_OUT_POLICY
+    AISERVICES_OPT_OUT_POLICY,
+    CHATBOT_POLICY
   };
 
 namespace PolicyTypeMapper

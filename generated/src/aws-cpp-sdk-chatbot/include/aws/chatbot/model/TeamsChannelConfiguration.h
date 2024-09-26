@@ -235,6 +235,37 @@ namespace Model
     inline TeamsChannelConfiguration& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline TeamsChannelConfiguration& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Either <code>ENABLED</code> or <code>DISABLED</code>. The resource returns
+     * <code>DISABLED</code> if the organization's AWS Chatbot policy has explicitly
+     * denied that configuration. For example, if Amazon Chime is disabled.</p>
+     */
+    inline const Aws::String& GetState() const{ return m_state; }
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
+    inline TeamsChannelConfiguration& WithState(const Aws::String& value) { SetState(value); return *this;}
+    inline TeamsChannelConfiguration& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
+    inline TeamsChannelConfiguration& WithState(const char* value) { SetState(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provided if State is <code>DISABLED</code>. Provides context as to why the
+     * resource is disabled.</p>
+     */
+    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+    inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
+    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
+    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
+    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
+    inline TeamsChannelConfiguration& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
+    inline TeamsChannelConfiguration& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
+    inline TeamsChannelConfiguration& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_channelId;
@@ -275,6 +306,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_state;
+    bool m_stateHasBeenSet = false;
+
+    Aws::String m_stateReason;
+    bool m_stateReasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -153,8 +153,14 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM instance profile used to pass an
      * IAM role when launching EC2 instances. The role contained in your instance
-     * profile must have <code>pcs:RegisterComputeNodeGroupInstance</code> permissions
-     * attached to provision instances correctly.</p>
+     * profile must have the <code>pcs:RegisterComputeNodeGroupInstance</code>
+     * permission. The resource identifier of the ARN must start with
+     * <code>AWSPCS</code> or it must have <code>/aws-pcs/</code> in its path.</p> <p
+     * class="title"> <b>Examples</b> </p> <ul> <li> <p>
+     * <code>arn:aws:iam::111122223333:instance-profile/AWSPCS-example-role-1</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:iam::111122223333:instance-profile/aws-pcs/example-role-2</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetIamInstanceProfileArn() const{ return m_iamInstanceProfileArn; }
     inline bool IamInstanceProfileArnHasBeenSet() const { return m_iamInstanceProfileArnHasBeenSet; }

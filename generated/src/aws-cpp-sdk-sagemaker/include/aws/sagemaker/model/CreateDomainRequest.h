@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
 #include <aws/sagemaker/model/AppSecurityGroupManagement.h>
+#include <aws/sagemaker/model/TagPropagation.h>
 #include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -197,6 +198,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether custom tag propagation is supported for the domain.
+     * Defaults to <code>DISABLED</code>.</p>
+     */
+    inline const TagPropagation& GetTagPropagation() const{ return m_tagPropagation; }
+    inline bool TagPropagationHasBeenSet() const { return m_tagPropagationHasBeenSet; }
+    inline void SetTagPropagation(const TagPropagation& value) { m_tagPropagationHasBeenSet = true; m_tagPropagation = value; }
+    inline void SetTagPropagation(TagPropagation&& value) { m_tagPropagationHasBeenSet = true; m_tagPropagation = std::move(value); }
+    inline CreateDomainRequest& WithTagPropagation(const TagPropagation& value) { SetTagPropagation(value); return *this;}
+    inline CreateDomainRequest& WithTagPropagation(TagPropagation&& value) { SetTagPropagation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The default settings used to create a space.</p>
      */
     inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
@@ -237,6 +251,9 @@ namespace Model
 
     AppSecurityGroupManagement m_appSecurityGroupManagement;
     bool m_appSecurityGroupManagementHasBeenSet = false;
+
+    TagPropagation m_tagPropagation;
+    bool m_tagPropagationHasBeenSet = false;
 
     DefaultSpaceSettings m_defaultSpaceSettings;
     bool m_defaultSpaceSettingsHasBeenSet = false;
