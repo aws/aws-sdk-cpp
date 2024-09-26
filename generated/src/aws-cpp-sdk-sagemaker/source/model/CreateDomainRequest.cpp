@@ -26,6 +26,8 @@ CreateDomainRequest::CreateDomainRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET),
     m_appSecurityGroupManagementHasBeenSet(false),
+    m_tagPropagation(TagPropagation::NOT_SET),
+    m_tagPropagationHasBeenSet(false),
     m_defaultSpaceSettingsHasBeenSet(false)
 {
 }
@@ -99,6 +101,11 @@ Aws::String CreateDomainRequest::SerializePayload() const
   if(m_appSecurityGroupManagementHasBeenSet)
   {
    payload.WithString("AppSecurityGroupManagement", AppSecurityGroupManagementMapper::GetNameForAppSecurityGroupManagement(m_appSecurityGroupManagement));
+  }
+
+  if(m_tagPropagationHasBeenSet)
+  {
+   payload.WithString("TagPropagation", TagPropagationMapper::GetNameForTagPropagation(m_tagPropagation));
   }
 
   if(m_defaultSpaceSettingsHasBeenSet)

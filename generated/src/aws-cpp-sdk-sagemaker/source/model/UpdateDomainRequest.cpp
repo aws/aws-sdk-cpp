@@ -21,7 +21,9 @@ UpdateDomainRequest::UpdateDomainRequest() :
     m_defaultSpaceSettingsHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
-    m_appNetworkAccessTypeHasBeenSet(false)
+    m_appNetworkAccessTypeHasBeenSet(false),
+    m_tagPropagation(TagPropagation::NOT_SET),
+    m_tagPropagationHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,11 @@ Aws::String UpdateDomainRequest::SerializePayload() const
   if(m_appNetworkAccessTypeHasBeenSet)
   {
    payload.WithString("AppNetworkAccessType", AppNetworkAccessTypeMapper::GetNameForAppNetworkAccessType(m_appNetworkAccessType));
+  }
+
+  if(m_tagPropagationHasBeenSet)
+  {
+   payload.WithString("TagPropagation", TagPropagationMapper::GetNameForTagPropagation(m_tagPropagation));
   }
 
   return payload.View().WriteReadable();

@@ -31,7 +31,9 @@ SlackChannelConfiguration::SlackChannelConfiguration() :
     m_guardrailPolicyArnsHasBeenSet(false),
     m_userAuthorizationRequired(false),
     m_userAuthorizationRequiredHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_stateReasonHasBeenSet(false)
 {
 }
 
@@ -136,6 +138,20 @@ SlackChannelConfiguration& SlackChannelConfiguration::operator =(JsonView jsonVa
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("State"))
+  {
+    m_state = jsonValue.GetString("State");
+
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StateReason"))
+  {
+    m_stateReason = jsonValue.GetString("StateReason");
+
+    m_stateReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +243,18 @@ JsonValue SlackChannelConfiguration::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("State", m_state);
+
+  }
+
+  if(m_stateReasonHasBeenSet)
+  {
+   payload.WithString("StateReason", m_stateReason);
 
   }
 

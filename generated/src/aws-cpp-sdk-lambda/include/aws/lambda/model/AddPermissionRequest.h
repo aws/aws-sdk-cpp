@@ -94,8 +94,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Servicesservice, Amazon Web Services account, IAM user, or IAM
-     * role that invokes the function. If you specify a service, use
+     * <p>The Amazon Web Services service, Amazon Web Services account, IAM user, or
+     * IAM role that invokes the function. If you specify a service, use
      * <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the
      * function through that service.</p>
      */
@@ -111,7 +111,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>For Amazon Web Servicesservices, the ARN of the Amazon Web Services resource
+     * <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource
      * that invokes the function. For example, an Amazon S3 bucket or Amazon SNS
      * topic.</p> <p>Note that Lambda configures the comparison using the
      * <code>StringLike</code> operator.</p>
@@ -128,7 +128,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>For Amazon Web Servicesservice, the ID of the Amazon Web Services account
+     * <p>For Amazon Web Services service, the ID of the Amazon Web Services account
      * that owns the resource. Use this together with <code>SourceArn</code> to ensure
      * that the specified account owns the resource. It is possible for an Amazon S3
      * bucket to be deleted by its owner and recreated by another account.</p>

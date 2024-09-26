@@ -25,7 +25,9 @@ ChimeWebhookConfiguration::ChimeWebhookConfiguration() :
     m_snsTopicArnsHasBeenSet(false),
     m_configurationNameHasBeenSet(false),
     m_loggingLevelHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_stateReasonHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,20 @@ ChimeWebhookConfiguration& ChimeWebhookConfiguration::operator =(JsonView jsonVa
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("State"))
+  {
+    m_state = jsonValue.GetString("State");
+
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StateReason"))
+  {
+    m_stateReason = jsonValue.GetString("StateReason");
+
+    m_stateReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +164,18 @@ JsonValue ChimeWebhookConfiguration::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("State", m_state);
+
+  }
+
+  if(m_stateReasonHasBeenSet)
+  {
+   payload.WithString("StateReason", m_stateReason);
 
   }
 

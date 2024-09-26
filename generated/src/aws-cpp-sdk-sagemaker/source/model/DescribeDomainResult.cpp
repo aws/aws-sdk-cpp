@@ -21,7 +21,8 @@ DescribeDomainResult::DescribeDomainResult() :
     m_status(DomainStatus::NOT_SET),
     m_authMode(AuthMode::NOT_SET),
     m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
-    m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET)
+    m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET),
+    m_tagPropagation(TagPropagation::NOT_SET)
 {
 }
 
@@ -154,6 +155,12 @@ DescribeDomainResult& DescribeDomainResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("AppSecurityGroupManagement"))
   {
     m_appSecurityGroupManagement = AppSecurityGroupManagementMapper::GetAppSecurityGroupManagementForName(jsonValue.GetString("AppSecurityGroupManagement"));
+
+  }
+
+  if(jsonValue.ValueExists("TagPropagation"))
+  {
+    m_tagPropagation = TagPropagationMapper::GetTagPropagationForName(jsonValue.GetString("TagPropagation"));
 
   }
 

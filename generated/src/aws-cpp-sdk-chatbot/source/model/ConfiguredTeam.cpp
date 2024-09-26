@@ -21,7 +21,9 @@ namespace Model
 ConfiguredTeam::ConfiguredTeam() : 
     m_tenantIdHasBeenSet(false),
     m_teamIdHasBeenSet(false),
-    m_teamNameHasBeenSet(false)
+    m_teamNameHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_stateReasonHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,20 @@ ConfiguredTeam& ConfiguredTeam::operator =(JsonView jsonValue)
     m_teamNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("State"))
+  {
+    m_state = jsonValue.GetString("State");
+
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StateReason"))
+  {
+    m_stateReason = jsonValue.GetString("StateReason");
+
+    m_stateReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +92,18 @@ JsonValue ConfiguredTeam::Jsonize() const
   if(m_teamNameHasBeenSet)
   {
    payload.WithString("TeamName", m_teamName);
+
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("State", m_state);
+
+  }
+
+  if(m_stateReasonHasBeenSet)
+  {
+   payload.WithString("StateReason", m_stateReason);
 
   }
 

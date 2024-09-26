@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/DefaultSpaceSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/AppNetworkAccessType.h>
+#include <aws/sagemaker/model/TagPropagation.h>
 #include <utility>
 
 namespace Aws
@@ -146,6 +147,19 @@ namespace Model
     inline UpdateDomainRequest& WithAppNetworkAccessType(const AppNetworkAccessType& value) { SetAppNetworkAccessType(value); return *this;}
     inline UpdateDomainRequest& WithAppNetworkAccessType(AppNetworkAccessType&& value) { SetAppNetworkAccessType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether custom tag propagation is supported for the domain.
+     * Defaults to <code>DISABLED</code>.</p>
+     */
+    inline const TagPropagation& GetTagPropagation() const{ return m_tagPropagation; }
+    inline bool TagPropagationHasBeenSet() const { return m_tagPropagationHasBeenSet; }
+    inline void SetTagPropagation(const TagPropagation& value) { m_tagPropagationHasBeenSet = true; m_tagPropagation = value; }
+    inline void SetTagPropagation(TagPropagation&& value) { m_tagPropagationHasBeenSet = true; m_tagPropagation = std::move(value); }
+    inline UpdateDomainRequest& WithTagPropagation(const TagPropagation& value) { SetTagPropagation(value); return *this;}
+    inline UpdateDomainRequest& WithTagPropagation(TagPropagation&& value) { SetTagPropagation(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_domainId;
@@ -168,6 +182,9 @@ namespace Model
 
     AppNetworkAccessType m_appNetworkAccessType;
     bool m_appNetworkAccessTypeHasBeenSet = false;
+
+    TagPropagation m_tagPropagation;
+    bool m_tagPropagationHasBeenSet = false;
   };
 
 } // namespace Model
