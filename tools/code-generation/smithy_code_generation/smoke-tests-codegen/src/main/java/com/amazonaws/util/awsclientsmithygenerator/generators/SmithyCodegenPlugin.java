@@ -5,12 +5,12 @@ import software.amazon.smithy.build.SmithyBuildPlugin;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.transform.ModelTransformer;
 
-class SmithyCodegenPlugin implements SmithyBuildPlugin {
+public class SmithyCodegenPlugin implements SmithyBuildPlugin {
 
 @Override
 public String getName() {
     System.out.println("getName called");
-    return "smoke-tests"; // Return the name of your plugin
+    return "cpp-codegen-smoke-tests-plugin"; // Return the name of your plugin
 }
 @Override
     public void execute(PluginContext context){

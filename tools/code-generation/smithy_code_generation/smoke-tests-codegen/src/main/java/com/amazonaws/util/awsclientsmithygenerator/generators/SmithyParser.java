@@ -56,7 +56,7 @@ public class SmithyParser {
     private final Set<Path> sources;
 
     public SmithyParser(Model model ,Set<Path> sources)  {
-
+        System.out.println(String.format("SmithyParser being constructed, resource loader=%s",ClasspathResourceLoader.class.getName()));
         this.velocityEngine = new VelocityEngine();
         this.velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADERS, "classpath");
         this.velocityEngine.setProperty("resource.loader.classpath.class", ClasspathResourceLoader.class.getName());
@@ -64,17 +64,20 @@ public class SmithyParser {
         this.velocityEngine.setProperty("context.scope_control.template", true);
         // Migration from 1.7 to 2.3:: https://velocity.apache.org/engine/2.3/upgrading.html
         // # Use backward compatible space gobbling
-        this.velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());
-        this.velocityEngine.init();
+        //this.velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());
+        
+               this.velocityEngine.init();
 
         this.sources = sources;
 
         this.model = model;
         codegenAdapter = new SmithyCodegenAdapter(model);
+
+        
     }
 
     public void GenerateTests() throws Exception {
-
+        System.out.println("GenerateTests called");
         try{
             sources.stream().filter(path -> path.toString().endsWith(".json") || path.toString().endsWith(".smithy")).
             forEach(path -> {
@@ -82,7 +85,8 @@ public class SmithyParser {
                 String filename = path.getFileName().toString();
                 int dotIndex = filename.lastIndexOf('.'); // Find the last dot index
                 String serviceName = (dotIndex != -1) ? filename.substring(0, dotIndex) : filename; // Extract name until dot
-                
+                System.out.println(String.format("serviceName=%s",serviceName));
+
                 try{
                     List<TestcaseParams> testcaseParams = extractTests();
                     generateTestSourceFile(testcaseParams, String.format(SMOKE_TESTS_CPP_FORMAT, serviceName));
