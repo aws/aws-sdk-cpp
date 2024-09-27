@@ -81,8 +81,8 @@ namespace Model
      * rules contained within the group. Instead of blocking matching requests, those
      * requests are counted.</p> <p>
      * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
-     * updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do
-     * not use <code>ActivatedRule</code> <code>Action</code>. For all other update
+     * updating or adding a <code>RuleGroup</code> to a web ACL. In this case you don't
+     * use <code>ActivatedRule</code> <code>Action</code>. For all other update
      * requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
      * <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
      */
@@ -99,7 +99,7 @@ namespace Model
      * <p>Specifies the order in which the rules in a web ACL are evaluated. Rules with
      * a lower value for <code>Priority</code> are evaluated before rules with a higher
      * value. The value must be a unique integer. If you add multiple rules to a web
-     * ACL, the values do not need to be consecutive.</p>
+     * ACL, the values don't need to be consecutive.</p>
      */
     inline int GetPriority() const{ return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }

@@ -36,7 +36,7 @@ namespace Model
     ///@{
     /**
      * <p>The ARN of the finding aggregator. You use the finding aggregator ARN to
-     * retrieve details for, update, and stop finding aggregation.</p>
+     * retrieve details for, update, and stop cross-Region aggregation.</p>
      */
     inline const Aws::String& GetFindingAggregatorArn() const{ return m_findingAggregatorArn; }
     inline void SetFindingAggregatorArn(const Aws::String& value) { m_findingAggregatorArn = value; }
@@ -49,7 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The aggregation Region.</p>
+     * <p>The home Region. Findings generated in linked Regions are replicated and sent
+     * to the home Region.</p>
      */
     inline const Aws::String& GetFindingAggregationRegion() const{ return m_findingAggregationRegion; }
     inline void SetFindingAggregationRegion(const Aws::String& value) { m_findingAggregationRegion = value; }

@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>A finding aggregator. A finding aggregator contains the configuration for
-   * finding aggregation.</p><p><h3>See Also:</h3>   <a
+   * <p>A finding aggregator is a Security Hub resource that specifies cross-Region
+   * aggregation settings, including the home Region and any linked
+   * Regions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/FindingAggregator">AWS
    * API Reference</a></p>
    */

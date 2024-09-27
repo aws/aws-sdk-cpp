@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARNs of the insights to describe. If you do not provide any insight ARNs,
+     * <p>The ARNs of the insights to describe. If you don't provide any insight ARNs,
      * then <code>GetInsights</code> returns all of your custom insights. It does not
      * return any managed insights.</p>
      */

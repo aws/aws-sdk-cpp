@@ -43,8 +43,8 @@ namespace Model
     /**
      * <p> Describes the type of finding change event, such as a call to <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
-     * <code>BatchImportFindings</code> </a> (by an integrated Amazon Web
-     * Servicesservice or third party partner integration) or <a
+     * <code>BatchImportFindings</code> </a> (by an integrated Amazon Web Services
+     * service or third party partner integration) or <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
      * <code>BatchUpdateFindings</code> </a> (by a Security Hub customer). </p>
      */

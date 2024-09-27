@@ -2288,6 +2288,31 @@ namespace QuickSight
         }
 
         /**
+         * <p>Describes a personalization configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeQPersonalizationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeQPersonalizationConfigurationOutcome DescribeQPersonalizationConfiguration(const Model::DescribeQPersonalizationConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeQPersonalizationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeQPersonalizationConfigurationRequestT = Model::DescribeQPersonalizationConfigurationRequest>
+        Model::DescribeQPersonalizationConfigurationOutcomeCallable DescribeQPersonalizationConfigurationCallable(const DescribeQPersonalizationConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeQPersonalizationConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeQPersonalizationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeQPersonalizationConfigurationRequestT = Model::DescribeQPersonalizationConfigurationRequest>
+        void DescribeQPersonalizationConfigurationAsync(const DescribeQPersonalizationConfigurationRequestT& request, const DescribeQPersonalizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeQPersonalizationConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Provides a summary of a refresh schedule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule">AWS
          * API Reference</a></p>
@@ -4674,6 +4699,31 @@ namespace QuickSight
         void UpdatePublicSharingSettingsAsync(const UpdatePublicSharingSettingsRequestT& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::UpdatePublicSharingSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a personalization configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateQPersonalizationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQPersonalizationConfigurationOutcome UpdateQPersonalizationConfiguration(const Model::UpdateQPersonalizationConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateQPersonalizationConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateQPersonalizationConfigurationRequestT = Model::UpdateQPersonalizationConfigurationRequest>
+        Model::UpdateQPersonalizationConfigurationOutcomeCallable UpdateQPersonalizationConfigurationCallable(const UpdateQPersonalizationConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateQPersonalizationConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateQPersonalizationConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateQPersonalizationConfigurationRequestT = Model::UpdateQPersonalizationConfigurationRequest>
+        void UpdateQPersonalizationConfigurationAsync(const UpdateQPersonalizationConfigurationRequestT& request, const UpdateQPersonalizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateQPersonalizationConfiguration, request, handler, context);
         }
 
         /**

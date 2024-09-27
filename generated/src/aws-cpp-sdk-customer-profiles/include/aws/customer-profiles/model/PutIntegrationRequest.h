@@ -132,6 +132,21 @@ namespace Model
     inline PutIntegrationRequest& AddObjectTypeNames(Aws::String&& key, const char* value) { m_objectTypeNamesHasBeenSet = true; m_objectTypeNames.emplace(std::move(key), value); return *this; }
     inline PutIntegrationRequest& AddObjectTypeNames(const char* key, const char* value) { m_objectTypeNamesHasBeenSet = true; m_objectTypeNames.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this
+     * role to make Customer Profiles requests on your behalf.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+    inline PutIntegrationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+    inline PutIntegrationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+    inline PutIntegrationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_domainName;
@@ -151,6 +166,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_objectTypeNames;
     bool m_objectTypeNamesHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

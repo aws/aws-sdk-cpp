@@ -19,7 +19,9 @@ namespace Model
 {
 
 TrackingOptions::TrackingOptions() : 
-    m_customRedirectDomainHasBeenSet(false)
+    m_customRedirectDomainHasBeenSet(false),
+    m_httpsPolicy(HttpsPolicy::NOT_SET),
+    m_httpsPolicyHasBeenSet(false)
 {
 }
 
@@ -38,6 +40,13 @@ TrackingOptions& TrackingOptions::operator =(JsonView jsonValue)
     m_customRedirectDomainHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HttpsPolicy"))
+  {
+    m_httpsPolicy = HttpsPolicyMapper::GetHttpsPolicyForName(jsonValue.GetString("HttpsPolicy"));
+
+    m_httpsPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +58,11 @@ JsonValue TrackingOptions::Jsonize() const
   {
    payload.WithString("CustomRedirectDomain", m_customRedirectDomain);
 
+  }
+
+  if(m_httpsPolicyHasBeenSet)
+  {
+   payload.WithString("HttpsPolicy", HttpsPolicyMapper::GetNameForHttpsPolicy(m_httpsPolicy));
   }
 
   return payload;

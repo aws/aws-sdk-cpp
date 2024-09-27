@@ -286,7 +286,7 @@ namespace Model
      * strategy deploys exactly one task on each active container instance that meets
      * all of the task placement constraints that are specified in the cluster. The
      * service scheduler also evaluates the task placement constraints for running
-     * tasks and stops tasks that do not meet the placement constraints.</p> <p>Valid
+     * tasks and stops tasks that don't meet the placement constraints.</p> <p>Valid
      * values: <code>REPLICA</code> | <code>DAEMON</code> </p>
      */
     inline const Aws::String& GetSchedulingStrategy() const{ return m_schedulingStrategy; }

@@ -58,7 +58,7 @@ namespace Model
     ///@{
     /**
      * <p> A unique standard-agnostic identifier for a control. Values for this field
-     * typically consist of an Amazon Web Servicesservice and a number, such as
+     * typically consist of an Amazon Web Services service and a number, such as
      * APIGateway.5. This field doesn't reference a specific standard. </p>
      */
     inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }

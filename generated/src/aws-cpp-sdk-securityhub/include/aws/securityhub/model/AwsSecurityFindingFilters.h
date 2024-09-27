@@ -1257,7 +1257,7 @@ namespace Model
      * <code>ACTIVE</code>.</p> </li> <li> <p> <code>Compliance.Status</code> changes
      * from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or
      * <code>NOT_AVAILABLE</code>.</p> </li> </ul> </li> <li> <p>
-     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not
+     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't
      * believe that any action is needed.</p> <p>The workflow status of a
      * <code>SUPPRESSED</code> finding does not change if <code>RecordState</code>
      * changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p> </li> <li> <p>
@@ -1494,7 +1494,7 @@ namespace Model
     ///@{
     /**
      * <p> The unique identifier of a control across standards. Values for this field
-     * typically consist of an Amazon Web Servicesservice and a number, such as
+     * typically consist of an Amazon Web Services service and a number, such as
      * APIGateway.5. </p>
      */
     inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlId() const{ return m_complianceSecurityControlId; }

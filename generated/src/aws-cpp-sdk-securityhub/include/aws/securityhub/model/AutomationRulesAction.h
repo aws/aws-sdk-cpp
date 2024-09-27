@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> One or more actions to update finding fields if a finding matches the
-   * defined criteria of the rule. </p><p><h3>See Also:</h3>   <a
+   * <p> One or more actions that Security Hub takes when a finding matches the
+   * defined criteria of a rule. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AutomationRulesAction">AWS
    * API Reference</a></p>
    */
@@ -41,11 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies that the rule action should update the <code>Types</code> finding
-     * field. The <code>Types</code> finding field classifies findings in the format of
-     * namespace/category/classifier. For more information, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types
-     * taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+     * <p> Specifies the type of action that Security Hub takes when a finding matches
+     * the defined criteria of a rule. </p>
      */
     inline const AutomationRulesActionType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

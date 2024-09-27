@@ -48,7 +48,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The aggregation Region.</p>
+     * <p>The home Region. Findings generated in linked Regions are replicated and sent
+     * to the home Region.</p>
      */
     inline const Aws::String& GetFindingAggregationRegion() const{ return m_findingAggregationRegion; }
     inline void SetFindingAggregationRegion(const Aws::String& value) { m_findingAggregationRegion = value; }

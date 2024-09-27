@@ -56,7 +56,7 @@ namespace Model
      * when the initial reviewer is not the resource owner, and needs intervention from
      * the resource owner.</p> </li> <li> <p> <code>RESOLVED</code> - The finding was
      * reviewed and remediated and is now considered resolved.</p> </li> <li> <p>
-     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not
+     * <code>SUPPRESSED</code> - Indicates that you reviewed the finding and don't
      * believe that any action is needed. The finding is no longer updated.</p> </li>
      * </ul>
      */
