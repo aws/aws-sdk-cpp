@@ -103,7 +103,7 @@ namespace Model
     ///@{
     /**
      * <p> Typically provides the unique identifier of a control across standards. For
-     * Security Hub controls, this field consists of an Amazon Web Servicesservice and
+     * Security Hub controls, this field consists of an Amazon Web Services service and
      * a unique number, such as <code>APIGateway.5</code>. </p>
      */
     inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }

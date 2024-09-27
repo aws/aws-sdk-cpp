@@ -68,9 +68,9 @@ namespace Model
     /**
      * <p>If <code>RegionLinkingMode</code> is
      * <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated list
-     * of Regions that do not aggregate findings to the aggregation Region.</p> <p>If
+     * of Regions that don't replicate and send findings to the home Region.</p> <p>If
      * <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a
-     * space-separated list of Regions that do aggregate findings to the aggregation
+     * space-separated list of Regions that do replicate and send findings to the home
      * Region. </p> <p>An <code>InvalidInputException</code> error results if you
      * populate this field while <code>RegionLinkingMode</code> is
      * <code>NO_REGIONS</code>.</p>

@@ -56,7 +56,7 @@ namespace Model
     ///@{
     /**
      * <p>Whether to enable the security standards that Security Hub has designated as
-     * automatically enabled. If you do not provide a value for
+     * automatically enabled. If you don't provide a value for
      * <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not
      * enable the automatically enabled standards, set
      * <code>EnableDefaultStandards</code> to <code>false</code>.</p>

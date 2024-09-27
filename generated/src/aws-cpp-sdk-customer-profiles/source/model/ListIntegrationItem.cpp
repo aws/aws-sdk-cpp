@@ -28,7 +28,8 @@ ListIntegrationItem::ListIntegrationItem() :
     m_objectTypeNamesHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
     m_isUnstructured(false),
-    m_isUnstructuredHasBeenSet(false)
+    m_isUnstructuredHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,13 @@ ListIntegrationItem& ListIntegrationItem::operator =(JsonView jsonValue)
     m_isUnstructuredHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RoleArn"))
+  {
+    m_roleArn = jsonValue.GetString("RoleArn");
+
+    m_roleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -175,6 +183,12 @@ JsonValue ListIntegrationItem::Jsonize() const
   if(m_isUnstructuredHasBeenSet)
   {
    payload.WithBool("IsUnstructured", m_isUnstructured);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("RoleArn", m_roleArn);
 
   }
 

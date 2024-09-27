@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>The unique ARN associated with the server-side encryption key. You can
      * specify a key to encrypt your backups from services that support full Backup
-     * management. If you do not specify a key, Backup creates an KMS key for you by
+     * management. If you don't specify a key, Backup creates an KMS key for you by
      * default. </p>
      */
     inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }

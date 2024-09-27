@@ -66,7 +66,7 @@ namespace Model
      * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
      * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
      * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
-     * <code>Normalized</code> and do not provide <code>Label</code>, then
+     * <code>Normalized</code> and don't provide <code>Label</code>, then
      * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
      * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
      * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
@@ -85,7 +85,7 @@ namespace Model
      * <p>Deprecated. The normalized severity of a finding. Instead of providing
      * <code>Normalized</code>, provide <code>Label</code>.</p> <p>The value of
      * <code>Normalized</code> can be an integer between <code>0</code> and
-     * <code>100</code>.</p> <p>If you provide <code>Label</code> and do not provide
+     * <code>100</code>.</p> <p>If you provide <code>Label</code> and don't provide
      * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
      * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
      * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>

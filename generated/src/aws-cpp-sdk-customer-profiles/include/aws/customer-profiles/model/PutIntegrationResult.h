@@ -162,6 +162,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role. The Integration uses this
+     * role to make Customer Profiles requests on your behalf.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
+    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
+    inline PutIntegrationResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+    inline PutIntegrationResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+    inline PutIntegrationResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -190,6 +204,8 @@ namespace Model
     Aws::String m_workflowId;
 
     bool m_isUnstructured;
+
+    Aws::String m_roleArn;
 
     Aws::String m_requestId;
   };

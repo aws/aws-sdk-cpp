@@ -7,6 +7,7 @@
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/model/HttpsPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -63,6 +64,16 @@ namespace Model
     inline PutConfigurationSetTrackingOptionsRequest& WithCustomRedirectDomain(Aws::String&& value) { SetCustomRedirectDomain(std::move(value)); return *this;}
     inline PutConfigurationSetTrackingOptionsRequest& WithCustomRedirectDomain(const char* value) { SetCustomRedirectDomain(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const HttpsPolicy& GetHttpsPolicy() const{ return m_httpsPolicy; }
+    inline bool HttpsPolicyHasBeenSet() const { return m_httpsPolicyHasBeenSet; }
+    inline void SetHttpsPolicy(const HttpsPolicy& value) { m_httpsPolicyHasBeenSet = true; m_httpsPolicy = value; }
+    inline void SetHttpsPolicy(HttpsPolicy&& value) { m_httpsPolicyHasBeenSet = true; m_httpsPolicy = std::move(value); }
+    inline PutConfigurationSetTrackingOptionsRequest& WithHttpsPolicy(const HttpsPolicy& value) { SetHttpsPolicy(value); return *this;}
+    inline PutConfigurationSetTrackingOptionsRequest& WithHttpsPolicy(HttpsPolicy&& value) { SetHttpsPolicy(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_configurationSetName;
@@ -70,6 +81,9 @@ namespace Model
 
     Aws::String m_customRedirectDomain;
     bool m_customRedirectDomainHasBeenSet = false;
+
+    HttpsPolicy m_httpsPolicy;
+    bool m_httpsPolicyHasBeenSet = false;
   };
 
 } // namespace Model

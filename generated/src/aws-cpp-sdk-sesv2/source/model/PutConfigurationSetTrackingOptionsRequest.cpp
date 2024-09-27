@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 PutConfigurationSetTrackingOptionsRequest::PutConfigurationSetTrackingOptionsRequest() : 
     m_configurationSetNameHasBeenSet(false),
-    m_customRedirectDomainHasBeenSet(false)
+    m_customRedirectDomainHasBeenSet(false),
+    m_httpsPolicy(HttpsPolicy::NOT_SET),
+    m_httpsPolicyHasBeenSet(false)
 {
 }
 
@@ -26,6 +28,11 @@ Aws::String PutConfigurationSetTrackingOptionsRequest::SerializePayload() const
   {
    payload.WithString("CustomRedirectDomain", m_customRedirectDomain);
 
+  }
+
+  if(m_httpsPolicyHasBeenSet)
+  {
+   payload.WithString("HttpsPolicy", HttpsPolicyMapper::GetNameForHttpsPolicy(m_httpsPolicy));
   }
 
   return payload.View().WriteReadable();

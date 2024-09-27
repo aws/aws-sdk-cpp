@@ -19,23 +19,23 @@ namespace SecurityHub
    * <p>Security Hub provides you with a comprehensive view of your security state in
    * Amazon Web Services and helps you assess your Amazon Web Services environment
    * against security industry standards and best practices.</p> <p>Security Hub
-   * collects security data across Amazon Web Services accounts, Amazon Web
-   * Servicesservices, and supported third-party products and helps you analyze your
-   * security trends and identify the highest priority security issues.</p> <p>To
-   * help you manage the security state of your organization, Security Hub supports
-   * multiple security standards. These include the Amazon Web Services Foundational
-   * Security Best Practices (FSBP) standard developed by Amazon Web Services, and
-   * external compliance frameworks such as the Center for Internet Security (CIS),
-   * the Payment Card Industry Data Security Standard (PCI DSS), and the National
+   * collects security data across Amazon Web Services accounts, Amazon Web Services
+   * services, and supported third-party products and helps you analyze your security
+   * trends and identify the highest priority security issues.</p> <p>To help you
+   * manage the security state of your organization, Security Hub supports multiple
+   * security standards. These include the Amazon Web Services Foundational Security
+   * Best Practices (FSBP) standard developed by Amazon Web Services, and external
+   * compliance frameworks such as the Center for Internet Security (CIS), the
+   * Payment Card Industry Data Security Standard (PCI DSS), and the National
    * Institute of Standards and Technology (NIST). Each standard includes several
    * security controls, each of which represents a security best practice. Security
    * Hub runs checks against security controls and generates control findings to help
    * you assess your compliance against security best practices.</p> <p>In addition
    * to generating control findings, Security Hub also receives findings from other
-   * Amazon Web Servicesservices, such as Amazon GuardDuty and Amazon Inspector, and
+   * Amazon Web Services services, such as Amazon GuardDuty and Amazon Inspector, and
    * supported third-party products. This gives you a single pane of glass into a
    * variety of security-related issues. You can also send Security Hub findings to
-   * other Amazon Web Servicesservices and supported third-party products.</p>
+   * other Amazon Web Services services and supported third-party products.</p>
    * <p>Security Hub offers automation features that help you triage and remediate
    * security issues. For example, you can use automation rules to automatically
    * update critical findings when a security check fails. You can also leverage the
@@ -48,15 +48,15 @@ namespace SecurityHub
    * <i>Security Hub User Guide</i> </a>. The user guide explains key concepts and
    * provides procedures that demonstrate how to use Security Hub features. It also
    * provides information about topics such as integrating Security Hub with other
-   * Amazon Web Servicesservices.</p> <p>In addition to interacting with Security Hub
-   * by making calls to the Security Hub API, you can use a current version of an
+   * Amazon Web Services services.</p> <p>In addition to interacting with Security
+   * Hub by making calls to the Security Hub API, you can use a current version of an
    * Amazon Web Services command line tool or SDK. Amazon Web Services provides tools
    * and SDKs that consist of libraries and sample code for various languages and
    * platforms, such as PowerShell, Java, Go, Python, C++, and .NET. These tools and
    * SDKs provide convenient, programmatic access to Security Hub and other Amazon
-   * Web Servicesservices . They also handle tasks such as signing requests, managing
-   * errors, and retrying requests automatically. For information about installing
-   * and using the Amazon Web Services tools and SDKs, see <a
+   * Web Services services . They also handle tasks such as signing requests,
+   * managing errors, and retrying requests automatically. For information about
+   * installing and using the Amazon Web Services tools and SDKs, see <a
    * href="http://aws.amazon.com/developer/tools/">Tools to Build on Amazon Web
    * Services</a>.</p> <p>With the exception of operations that are related to
    * central configuration, Security Hub API requests are executed only in the Amazon
@@ -144,12 +144,17 @@ namespace SecurityHub
         virtual ~SecurityHubClient();
 
         /**
-         * <p>Accepts the invitation to be a member account and be monitored by the
-         * Security Hub administrator account that the invitation was sent from.</p>
-         * <p>This operation is only used by member accounts that are not added through
-         * Organizations.</p> <p>When the member account accepts the invitation, permission
-         * is granted to the administrator account to view findings generated in the member
-         * account.</p><p><h3>See Also:</h3>   <a
+         *  <p>We recommend using Organizations instead of Security Hub invitations
+         * to manage your member accounts. For information, see <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+         * Security Hub administrator and member accounts with Organizations</a> in the
+         * <i>Security Hub User Guide</i>.</p>  <p>Accepts the invitation to be a
+         * member account and be monitored by the Security Hub administrator account that
+         * the invitation was sent from.</p> <p>This operation is only used by member
+         * accounts that are not added through Organizations.</p> <p>When the member
+         * account accepts the invitation, permission is granted to the administrator
+         * account to view findings generated in the member account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptAdministratorInvitation">AWS
          * API Reference</a></p>
          */
@@ -448,7 +453,7 @@ namespace SecurityHub
          * investigation into a finding. Requested by administrator accounts or member
          * accounts. Administrator accounts can update findings for their account and their
          * member accounts. Member accounts can update findings for their account.</p>
-         * <p>Updates from <code>BatchUpdateFindings</code> do not affect the value of
+         * <p>Updates from <code>BatchUpdateFindings</code> don't affect the value of
          * <code>UpdatedAt</code> for a finding.</p> <p>Administrator and member accounts
          * can use <code>BatchUpdateFindings</code> to update the following finding fields
          * and objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
@@ -593,11 +598,13 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Used to enable finding aggregation. Must be called from the aggregation
-         * Region.</p> <p>For more details about cross-Region replication, see <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Configuring
-         * finding aggregation</a> in the <i>Security Hub User Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         *  <p>The <i>aggregation Region</i> is now called the <i>home
+         * Region</i>.</p>  <p>Used to enable cross-Region aggregation. This
+         * operation can be invoked from the home Region only.</p> <p>For information about
+         * how cross-Region aggregation works, see <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Understanding
+         * cross-Region aggregation in Security Hub</a> in the <i>Security Hub User
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateFindingAggregator">AWS
          * API Reference</a></p>
          */
@@ -666,7 +673,7 @@ namespace SecurityHub
          * invitation to the member account. To send the invitation, you use the
          * <code>InviteMembers</code> operation. If the account owner accepts the
          * invitation, the account becomes a member account in Security Hub.</p>
-         * <p>Accounts that are managed using Organizations do not receive an invitation.
+         * <p>Accounts that are managed using Organizations don't receive an invitation.
          * They automatically become a member account in Security Hub.</p> <ul> <li> <p>If
          * the organization account does not have Security Hub enabled, then Security Hub
          * and the default standards are automatically enabled. Note that Security Hub
@@ -704,10 +711,15 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Declines invitations to become a member account.</p> <p>A prospective member
-         * account uses this operation to decline an invitation to become a member.</p>
-         * <p>This operation is only called by member accounts that aren't part of an
-         * organization. Organization accounts don't receive invitations.</p><p><h3>See
+         *  <p>We recommend using Organizations instead of Security Hub invitations
+         * to manage your member accounts. For information, see <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+         * Security Hub administrator and member accounts with Organizations</a> in the
+         * <i>Security Hub User Guide</i>.</p>  <p>Declines invitations to become a
+         * Security Hub member account.</p> <p>A prospective member account uses this
+         * operation to decline an invitation to become a member.</p> <p>Only member
+         * accounts that aren't part of an Amazon Web Services organization should use this
+         * operation. Organization accounts don't receive invitations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeclineInvitations">AWS
          * API Reference</a></p>
@@ -790,10 +802,13 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Deletes a finding aggregator. When you delete the finding aggregator, you
-         * stop finding aggregation.</p> <p>When you stop finding aggregation, findings
-         * that were already aggregated to the aggregation Region are still visible from
-         * the aggregation Region. New findings and finding updates are not aggregated.
+         *  <p>The <i>aggregation Region</i> is now called the <i>home
+         * Region</i>.</p>  <p>Deletes a finding aggregator. When you delete the
+         * finding aggregator, you stop cross-Region aggregation. Finding replication stops
+         * occurring from the linked Regions to the home Region.</p> <p>When you stop
+         * cross-Region aggregation, findings that were already replicated and sent to the
+         * home Region are still visible from the home Region. However, new findings and
+         * finding updates are no longer replicated and sent to the home Region.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteFindingAggregator">AWS
          * API Reference</a></p>
@@ -845,12 +860,17 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Deletes invitations received by the Amazon Web Services account to become a
-         * member account.</p> <p>A Security Hub administrator account can use this
-         * operation to delete invitations sent to one or more member accounts.</p> <p>This
-         * operation is only used to delete invitations that are sent to member accounts
-         * that aren't part of an organization. Organization accounts don't receive
-         * invitations.</p><p><h3>See Also:</h3>   <a
+         *  <p>We recommend using Organizations instead of Security Hub invitations
+         * to manage your member accounts. For information, see <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+         * Security Hub administrator and member accounts with Organizations</a> in the
+         * <i>Security Hub User Guide</i>.</p>  <p>Deletes invitations to become a
+         * Security Hub member account.</p> <p>A Security Hub administrator account can use
+         * this operation to delete invitations sent to one or more prospective member
+         * accounts.</p> <p>This operation is only used to delete invitations that are sent
+         * to prospective member accounts that aren't part of an Amazon Web Services
+         * organization. Organization accounts don't receive invitations.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations">AWS
          * API Reference</a></p>
          */
@@ -985,7 +1005,7 @@ namespace SecurityHub
         /**
          * <p>Returns information about product integrations in Security Hub.</p> <p>You
          * can optionally provide an integration ARN. If you provide an integration ARN,
-         * then the results only include that integration.</p> <p>If you do not provide an
+         * then the results only include that integration.</p> <p>If you don't provide an
          * integration ARN, then the results include all of the available product
          * integrations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">AWS
@@ -1414,8 +1434,11 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Returns the current finding aggregation configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         *  <p>The <i>aggregation Region</i> is now called the <i>home
+         * Region</i>.</p>  <p>Returns the current configuration in the calling
+         * account for cross-Region aggregation. A finding aggregator is a resource that
+         * establishes the home Region and any linked Regions.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingAggregator">AWS
          * API Reference</a></p>
          */
@@ -1468,10 +1491,9 @@ namespace SecurityHub
 
         /**
          * <p>Returns a list of findings that match the specified criteria.</p> <p>If
-         * finding aggregation is enabled, then when you call <code>GetFindings</code> from
-         * the aggregation Region, the results include all of the matching findings from
-         * both the aggregation Region and the linked Regions.</p><p><h3>See Also:</h3>  
-         * <a
+         * cross-Region aggregation is enabled, then when you call <code>GetFindings</code>
+         * from the home Region, the results include all of the matching findings from both
+         * the home Region and linked Regions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">AWS
          * API Reference</a></p>
          */
@@ -1548,9 +1570,13 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Returns the count of all Security Hub membership invitations that were sent
-         * to the current member account, not including the currently accepted invitation.
-         * </p><p><h3>See Also:</h3>   <a
+         *  <p>We recommend using Organizations instead of Security Hub invitations
+         * to manage your member accounts. For information, see <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+         * Security Hub administrator and member accounts with Organizations</a> in the
+         * <i>Security Hub User Guide</i>.</p>  <p>Returns the count of all Security
+         * Hub membership invitations that were sent to the calling member account, not
+         * including the currently accepted invitation. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInvitationsCount">AWS
          * API Reference</a></p>
          */
@@ -1632,15 +1658,20 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Invites other Amazon Web Services accounts to become member accounts for the
-         * Security Hub administrator account that the invitation is sent from.</p> <p>This
-         * operation is only used to invite accounts that do not belong to an organization.
-         * Organization accounts do not receive invitations.</p> <p>Before you can use this
-         * action to invite a member, you must first use the <code>CreateMembers</code>
-         * action to create the member account in Security Hub.</p> <p>When the account
-         * owner enables Security Hub and accepts the invitation to become a member
-         * account, the administrator account can view the findings generated from the
-         * member account.</p><p><h3>See Also:</h3>   <a
+         *  <p>We recommend using Organizations instead of Security Hub invitations
+         * to manage your member accounts. For information, see <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+         * Security Hub administrator and member accounts with Organizations</a> in the
+         * <i>Security Hub User Guide</i>.</p>  <p>Invites other Amazon Web Services
+         * accounts to become member accounts for the Security Hub administrator account
+         * that the invitation is sent from.</p> <p>This operation is only used to invite
+         * accounts that don't belong to an Amazon Web Services organization. Organization
+         * accounts don't receive invitations.</p> <p>Before you can use this action to
+         * invite a member, you must first use the <code>CreateMembers</code> action to
+         * create the member account in Security Hub.</p> <p>When the account owner enables
+         * Security Hub and accepts the invitation to become a member account, the
+         * administrator account can view the findings generated in the member
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InviteMembers">AWS
          * API Reference</a></p>
          */
@@ -1772,8 +1803,9 @@ namespace SecurityHub
         }
 
         /**
-         * <p>If finding aggregation is enabled, then <code>ListFindingAggregators</code>
-         * returns the ARN of the finding aggregator. You can run this operation from any
+         * <p>If cross-Region aggregation is enabled, then
+         * <code>ListFindingAggregators</code> returns the Amazon Resource Name (ARN) of
+         * the finding aggregator. You can run this operation from any Amazon Web Services
          * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListFindingAggregators">AWS
          * API Reference</a></p>
@@ -1799,10 +1831,15 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Lists all Security Hub membership invitations that were sent to the current
-         * Amazon Web Services account.</p> <p>This operation is only used by accounts that
-         * are managed by invitation. Accounts that are managed using the integration with
-         * Organizations do not receive invitations.</p><p><h3>See Also:</h3>   <a
+         *  <p>We recommend using Organizations instead of Security Hub invitations
+         * to manage your member accounts. For information, see <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing
+         * Security Hub administrator and member accounts with Organizations</a> in the
+         * <i>Security Hub User Guide</i>.</p>  <p>Lists all Security Hub membership
+         * invitations that were sent to the calling account.</p> <p>Only accounts that are
+         * managed by invitation can use this operation. Accounts that are managed using
+         * the integration with Organizations don't receive invitations.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">AWS
          * API Reference</a></p>
          */
@@ -2121,11 +2158,12 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Updates the finding aggregation configuration. Used to update the Region
-         * linking mode and the list of included or excluded Regions. You cannot use
-         * <code>UpdateFindingAggregator</code> to change the aggregation Region.</p>
-         * <p>You must run <code>UpdateFindingAggregator</code> from the current
-         * aggregation Region. </p><p><h3>See Also:</h3>   <a
+         *  <p>The <i>aggregation Region</i> is now called the <i>home
+         * Region</i>.</p>  <p>Updates cross-Region aggregation settings. You can
+         * use this operation to update the Region linking mode and the list of included or
+         * excluded Amazon Web Services Regions. However, you can't use this operation to
+         * change the home Region.</p> <p>You can invoke this operation from the current
+         * home Region only. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateFindingAggregator">AWS
          * API Reference</a></p>
          */

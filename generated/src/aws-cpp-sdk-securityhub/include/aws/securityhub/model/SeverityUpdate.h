@@ -42,10 +42,10 @@ namespace Model
     /**
      * <p>The normalized severity for the finding. This attribute is to be deprecated
      * in favor of <code>Label</code>.</p> <p>If you provide <code>Normalized</code>
-     * and do not provide <code>Label</code>, <code>Label</code> is set automatically
-     * as follows.</p> <ul> <li> <p>0 - <code>INFORMATIONAL</code> </p> </li> <li>
-     * <p>1–39 - <code>LOW</code> </p> </li> <li> <p>40–69 - <code>MEDIUM</code> </p>
-     * </li> <li> <p>70–89 - <code>HIGH</code> </p> </li> <li> <p>90–100 -
+     * and don't provide <code>Label</code>, <code>Label</code> is set automatically as
+     * follows.</p> <ul> <li> <p>0 - <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39
+     * - <code>LOW</code> </p> </li> <li> <p>40–69 - <code>MEDIUM</code> </p> </li>
+     * <li> <p>70–89 - <code>HIGH</code> </p> </li> <li> <p>90–100 -
      * <code>CRITICAL</code> </p> </li> </ul>
      */
     inline int GetNormalized() const{ return m_normalized; }

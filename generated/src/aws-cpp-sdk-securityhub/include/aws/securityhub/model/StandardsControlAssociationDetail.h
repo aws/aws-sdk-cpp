@@ -58,8 +58,8 @@ namespace Model
     ///@{
     /**
      * <p> The unique identifier of a security control across standards. Values for
-     * this field typically consist of an Amazon Web Servicesservice name and a number,
-     * such as APIGateway.3. </p>
+     * this field typically consist of an Amazon Web Services service name and a
+     * number, such as APIGateway.3. </p>
      */
     inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }
     inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }

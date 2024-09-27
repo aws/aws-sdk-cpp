@@ -49,7 +49,7 @@ namespace Model
     ///@{
     /**
      * <p> The unique identifier of a security control across standards. Values for
-     * this field typically consist of an Amazon Web Servicesservice name and a number
+     * this field typically consist of an Amazon Web Services service name and a number
      * (for example, APIGateway.3). This parameter differs from
      * <code>SecurityControlArn</code>, which is a unique Amazon Resource Name (ARN)
      * assigned to a control. The ARN references the security control ID (for example,
