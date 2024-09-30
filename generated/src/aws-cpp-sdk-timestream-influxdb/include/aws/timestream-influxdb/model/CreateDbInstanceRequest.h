@@ -265,6 +265,18 @@ namespace Model
     inline CreateDbInstanceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline CreateDbInstanceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The port number on which InfluxDB accepts connections.</p> <p>Valid Values:
+     * 1024-65535</p> <p>Default: 8086</p> <p>Constraints: The value can't be
+     * 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+     */
+    inline int GetPort() const{ return m_port; }
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+    inline CreateDbInstanceRequest& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -311,6 +323,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    int m_port;
+    bool m_portHasBeenSet = false;
   };
 
 } // namespace Model

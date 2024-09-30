@@ -35,8 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or the ARN of the resource group from which to remove the
-     * resources.</p>
+     * <p>The name or the Amazon resource name (ARN) of the resource group from which
+     * to remove the resources.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
@@ -50,7 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARNs of the resources to be removed from the group.</p>
+     * <p>The Amazon resource names (ARNs) of the resources to be removed from the
+     * group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }

@@ -20,7 +20,12 @@ namespace Model
 
 GroupIdentifier::GroupIdentifier() : 
     m_groupNameHasBeenSet(false),
-    m_groupArnHasBeenSet(false)
+    m_groupArnHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_criticality(0),
+    m_criticalityHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_displayNameHasBeenSet(false)
 {
 }
 
@@ -46,6 +51,34 @@ GroupIdentifier& GroupIdentifier::operator =(JsonView jsonValue)
     m_groupArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Criticality"))
+  {
+    m_criticality = jsonValue.GetInteger("Criticality");
+
+    m_criticalityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Owner"))
+  {
+    m_owner = jsonValue.GetString("Owner");
+
+    m_ownerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DisplayName"))
+  {
+    m_displayName = jsonValue.GetString("DisplayName");
+
+    m_displayNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +95,30 @@ JsonValue GroupIdentifier::Jsonize() const
   if(m_groupArnHasBeenSet)
   {
    payload.WithString("GroupArn", m_groupArn);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_criticalityHasBeenSet)
+  {
+   payload.WithInteger("Criticality", m_criticality);
+
+  }
+
+  if(m_ownerHasBeenSet)
+  {
+   payload.WithString("Owner", m_owner);
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("DisplayName", m_displayName);
 
   }
 

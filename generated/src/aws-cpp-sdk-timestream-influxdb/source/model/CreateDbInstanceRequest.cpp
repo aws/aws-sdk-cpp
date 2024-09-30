@@ -32,7 +32,9 @@ CreateDbInstanceRequest::CreateDbInstanceRequest() :
     m_deploymentType(DeploymentType::NOT_SET),
     m_deploymentTypeHasBeenSet(false),
     m_logDeliveryConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,12 @@ Aws::String CreateDbInstanceRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_portHasBeenSet)
+  {
+   payload.WithInteger("port", m_port);
 
   }
 

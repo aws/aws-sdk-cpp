@@ -37,8 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of ARNs of the resources that this operation successfully added to the
-     * group.</p>
+     * <p>A list of Amazon resource names (ARNs) of the resources that this operation
+     * successfully added to the group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSucceeded() const{ return m_succeeded; }
     inline void SetSucceeded(const Aws::Vector<Aws::String>& value) { m_succeeded = value; }
@@ -52,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of ARNs of any resources that this operation failed to add to the
-     * group.</p>
+     * <p>A list of Amazon resource names (ARNs) of any resources that this operation
+     * failed to add to the group.</p>
      */
     inline const Aws::Vector<FailedResource>& GetFailed() const{ return m_failed; }
     inline void SetFailed(const Aws::Vector<FailedResource>& value) { m_failed = value; }
@@ -66,10 +66,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of ARNs of any resources that this operation is still in the process
-     * adding to the group. These pending additions continue asynchronously. You can
-     * check the status of pending additions by using the <code>
-     * <a>ListGroupResources</a> </code> operation, and checking the
+     * <p>A list of Amazon resource names (ARNs) of any resources that this operation
+     * is still in the process adding to the group. These pending additions continue
+     * asynchronously. You can check the status of pending additions by using the
+     * <code> <a>ListGroupResources</a> </code> operation, and checking the
      * <code>Resources</code> array in the response and the <code>Status</code> field
      * of each object in that array. </p>
      */

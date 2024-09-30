@@ -67,10 +67,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the details required to communicate with the identity provider
-     * (IdP) associated with this identity source.</p>  <p>At this time, the only
-     * valid member of this structure is a Amazon Cognito user pool configuration.</p>
-     * <p>You must specify a <code>userPoolArn</code>, and optionally, a
-     * <code>ClientId</code>.</p> 
+     * (IdP) associated with this identity source.</p>
      */
     inline const UpdateConfiguration& GetUpdateConfiguration() const{ return m_updateConfiguration; }
     inline bool UpdateConfigurationHasBeenSet() const { return m_updateConfigurationHasBeenSet; }

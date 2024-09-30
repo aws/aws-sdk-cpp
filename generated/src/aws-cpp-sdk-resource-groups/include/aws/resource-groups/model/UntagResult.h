@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the resource group from which tags have been removed.</p>
+     * <p>The Amazon resource name (ARN) of the resource group from which tags have
+     * been removed.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }

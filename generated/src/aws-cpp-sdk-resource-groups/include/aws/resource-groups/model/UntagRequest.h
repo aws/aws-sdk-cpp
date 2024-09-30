@@ -35,8 +35,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the resource group from which to remove tags. The command removed
-     * both the specified keys and any values associated with those keys.</p>
+     * <p>The Amazon resource name (ARN) of the resource group from which to remove
+     * tags. The command removed both the specified keys and any values associated with
+     * those keys.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

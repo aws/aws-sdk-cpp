@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     TELEPHONE_NUMBER,
     VOIP,
-    CONTACT_FLOW
+    CONTACT_FLOW,
+    CONNECT_PHONENUMBER_ARN
   };
 
 namespace EndpointTypeMapper

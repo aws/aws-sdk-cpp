@@ -19,8 +19,21 @@
 
 /* Service model headers required in SupplyChainClient header */
 #include <aws/supplychain/model/CreateBillOfMaterialsImportJobResult.h>
+#include <aws/supplychain/model/CreateDataIntegrationFlowResult.h>
+#include <aws/supplychain/model/CreateDataLakeDatasetResult.h>
+#include <aws/supplychain/model/DeleteDataIntegrationFlowResult.h>
+#include <aws/supplychain/model/DeleteDataLakeDatasetResult.h>
 #include <aws/supplychain/model/GetBillOfMaterialsImportJobResult.h>
+#include <aws/supplychain/model/GetDataIntegrationFlowResult.h>
+#include <aws/supplychain/model/GetDataLakeDatasetResult.h>
+#include <aws/supplychain/model/ListDataIntegrationFlowsResult.h>
+#include <aws/supplychain/model/ListDataLakeDatasetsResult.h>
+#include <aws/supplychain/model/ListTagsForResourceResult.h>
 #include <aws/supplychain/model/SendDataIntegrationEventResult.h>
+#include <aws/supplychain/model/TagResourceResult.h>
+#include <aws/supplychain/model/UntagResourceResult.h>
+#include <aws/supplychain/model/UpdateDataIntegrationFlowResult.h>
+#include <aws/supplychain/model/UpdateDataLakeDatasetResult.h>
 /* End of service model headers required in SupplyChainClient header */
 
 namespace Aws
@@ -62,20 +75,59 @@ namespace Aws
     {
       /* Service model forward declarations required in SupplyChainClient header */
       class CreateBillOfMaterialsImportJobRequest;
+      class CreateDataIntegrationFlowRequest;
+      class CreateDataLakeDatasetRequest;
+      class DeleteDataIntegrationFlowRequest;
+      class DeleteDataLakeDatasetRequest;
       class GetBillOfMaterialsImportJobRequest;
+      class GetDataIntegrationFlowRequest;
+      class GetDataLakeDatasetRequest;
+      class ListDataIntegrationFlowsRequest;
+      class ListDataLakeDatasetsRequest;
+      class ListTagsForResourceRequest;
       class SendDataIntegrationEventRequest;
+      class TagResourceRequest;
+      class UntagResourceRequest;
+      class UpdateDataIntegrationFlowRequest;
+      class UpdateDataLakeDatasetRequest;
       /* End of service model forward declarations required in SupplyChainClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateBillOfMaterialsImportJobResult, SupplyChainError> CreateBillOfMaterialsImportJobOutcome;
+      typedef Aws::Utils::Outcome<CreateDataIntegrationFlowResult, SupplyChainError> CreateDataIntegrationFlowOutcome;
+      typedef Aws::Utils::Outcome<CreateDataLakeDatasetResult, SupplyChainError> CreateDataLakeDatasetOutcome;
+      typedef Aws::Utils::Outcome<DeleteDataIntegrationFlowResult, SupplyChainError> DeleteDataIntegrationFlowOutcome;
+      typedef Aws::Utils::Outcome<DeleteDataLakeDatasetResult, SupplyChainError> DeleteDataLakeDatasetOutcome;
       typedef Aws::Utils::Outcome<GetBillOfMaterialsImportJobResult, SupplyChainError> GetBillOfMaterialsImportJobOutcome;
+      typedef Aws::Utils::Outcome<GetDataIntegrationFlowResult, SupplyChainError> GetDataIntegrationFlowOutcome;
+      typedef Aws::Utils::Outcome<GetDataLakeDatasetResult, SupplyChainError> GetDataLakeDatasetOutcome;
+      typedef Aws::Utils::Outcome<ListDataIntegrationFlowsResult, SupplyChainError> ListDataIntegrationFlowsOutcome;
+      typedef Aws::Utils::Outcome<ListDataLakeDatasetsResult, SupplyChainError> ListDataLakeDatasetsOutcome;
+      typedef Aws::Utils::Outcome<ListTagsForResourceResult, SupplyChainError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<SendDataIntegrationEventResult, SupplyChainError> SendDataIntegrationEventOutcome;
+      typedef Aws::Utils::Outcome<TagResourceResult, SupplyChainError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<UntagResourceResult, SupplyChainError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateDataIntegrationFlowResult, SupplyChainError> UpdateDataIntegrationFlowOutcome;
+      typedef Aws::Utils::Outcome<UpdateDataLakeDatasetResult, SupplyChainError> UpdateDataLakeDatasetOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<CreateBillOfMaterialsImportJobOutcome> CreateBillOfMaterialsImportJobOutcomeCallable;
+      typedef std::future<CreateDataIntegrationFlowOutcome> CreateDataIntegrationFlowOutcomeCallable;
+      typedef std::future<CreateDataLakeDatasetOutcome> CreateDataLakeDatasetOutcomeCallable;
+      typedef std::future<DeleteDataIntegrationFlowOutcome> DeleteDataIntegrationFlowOutcomeCallable;
+      typedef std::future<DeleteDataLakeDatasetOutcome> DeleteDataLakeDatasetOutcomeCallable;
       typedef std::future<GetBillOfMaterialsImportJobOutcome> GetBillOfMaterialsImportJobOutcomeCallable;
+      typedef std::future<GetDataIntegrationFlowOutcome> GetDataIntegrationFlowOutcomeCallable;
+      typedef std::future<GetDataLakeDatasetOutcome> GetDataLakeDatasetOutcomeCallable;
+      typedef std::future<ListDataIntegrationFlowsOutcome> ListDataIntegrationFlowsOutcomeCallable;
+      typedef std::future<ListDataLakeDatasetsOutcome> ListDataLakeDatasetsOutcomeCallable;
+      typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<SendDataIntegrationEventOutcome> SendDataIntegrationEventOutcomeCallable;
+      typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateDataIntegrationFlowOutcome> UpdateDataIntegrationFlowOutcomeCallable;
+      typedef std::future<UpdateDataLakeDatasetOutcome> UpdateDataLakeDatasetOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -83,8 +135,21 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const SupplyChainClient*, const Model::CreateBillOfMaterialsImportJobRequest&, const Model::CreateBillOfMaterialsImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBillOfMaterialsImportJobResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::CreateDataIntegrationFlowRequest&, const Model::CreateDataIntegrationFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataIntegrationFlowResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::CreateDataLakeDatasetRequest&, const Model::CreateDataLakeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataLakeDatasetResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::DeleteDataIntegrationFlowRequest&, const Model::DeleteDataIntegrationFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataIntegrationFlowResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::DeleteDataLakeDatasetRequest&, const Model::DeleteDataLakeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataLakeDatasetResponseReceivedHandler;
     typedef std::function<void(const SupplyChainClient*, const Model::GetBillOfMaterialsImportJobRequest&, const Model::GetBillOfMaterialsImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBillOfMaterialsImportJobResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::GetDataIntegrationFlowRequest&, const Model::GetDataIntegrationFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataIntegrationFlowResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::GetDataLakeDatasetRequest&, const Model::GetDataLakeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataLakeDatasetResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::ListDataIntegrationFlowsRequest&, const Model::ListDataIntegrationFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataIntegrationFlowsResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::ListDataLakeDatasetsRequest&, const Model::ListDataLakeDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataLakeDatasetsResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SupplyChainClient*, const Model::SendDataIntegrationEventRequest&, const Model::SendDataIntegrationEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendDataIntegrationEventResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::UpdateDataIntegrationFlowRequest&, const Model::UpdateDataIntegrationFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataIntegrationFlowResponseReceivedHandler;
+    typedef std::function<void(const SupplyChainClient*, const Model::UpdateDataLakeDatasetRequest&, const Model::UpdateDataLakeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataLakeDatasetResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace SupplyChain
 } // namespace Aws

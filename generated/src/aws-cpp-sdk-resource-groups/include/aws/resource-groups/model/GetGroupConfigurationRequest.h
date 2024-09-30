@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or the ARN of the resource group for which you want to retrive the
-     * service configuration.</p>
+     * <p>The name or the Amazon resource name (ARN) of the resource group for which
+     * you want to retrive the service configuration.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }

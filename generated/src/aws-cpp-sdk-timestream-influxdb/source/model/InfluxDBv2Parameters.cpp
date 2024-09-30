@@ -32,7 +32,53 @@ InfluxDBv2Parameters::InfluxDBv2Parameters() :
     m_tracingType(TracingType::NOT_SET),
     m_tracingTypeHasBeenSet(false),
     m_metricsDisabled(false),
-    m_metricsDisabledHasBeenSet(false)
+    m_metricsDisabledHasBeenSet(false),
+    m_httpIdleTimeoutHasBeenSet(false),
+    m_httpReadHeaderTimeoutHasBeenSet(false),
+    m_httpReadTimeoutHasBeenSet(false),
+    m_httpWriteTimeoutHasBeenSet(false),
+    m_influxqlMaxSelectBuckets(0),
+    m_influxqlMaxSelectBucketsHasBeenSet(false),
+    m_influxqlMaxSelectPoint(0),
+    m_influxqlMaxSelectPointHasBeenSet(false),
+    m_influxqlMaxSelectSeries(0),
+    m_influxqlMaxSelectSeriesHasBeenSet(false),
+    m_pprofDisabled(false),
+    m_pprofDisabledHasBeenSet(false),
+    m_queryInitialMemoryBytes(0),
+    m_queryInitialMemoryBytesHasBeenSet(false),
+    m_queryMaxMemoryBytes(0),
+    m_queryMaxMemoryBytesHasBeenSet(false),
+    m_queryMemoryBytes(0),
+    m_queryMemoryBytesHasBeenSet(false),
+    m_sessionLength(0),
+    m_sessionLengthHasBeenSet(false),
+    m_sessionRenewDisabled(false),
+    m_sessionRenewDisabledHasBeenSet(false),
+    m_storageCacheMaxMemorySize(0),
+    m_storageCacheMaxMemorySizeHasBeenSet(false),
+    m_storageCacheSnapshotMemorySize(0),
+    m_storageCacheSnapshotMemorySizeHasBeenSet(false),
+    m_storageCacheSnapshotWriteColdDurationHasBeenSet(false),
+    m_storageCompactFullWriteColdDurationHasBeenSet(false),
+    m_storageCompactThroughputBurst(0),
+    m_storageCompactThroughputBurstHasBeenSet(false),
+    m_storageMaxConcurrentCompactions(0),
+    m_storageMaxConcurrentCompactionsHasBeenSet(false),
+    m_storageMaxIndexLogFileSize(0),
+    m_storageMaxIndexLogFileSizeHasBeenSet(false),
+    m_storageNoValidateFieldSize(false),
+    m_storageNoValidateFieldSizeHasBeenSet(false),
+    m_storageRetentionCheckIntervalHasBeenSet(false),
+    m_storageSeriesFileMaxConcurrentSnapshotCompactions(0),
+    m_storageSeriesFileMaxConcurrentSnapshotCompactionsHasBeenSet(false),
+    m_storageSeriesIdSetCacheSize(0),
+    m_storageSeriesIdSetCacheSizeHasBeenSet(false),
+    m_storageWalMaxConcurrentWrites(0),
+    m_storageWalMaxConcurrentWritesHasBeenSet(false),
+    m_storageWalMaxWriteDelayHasBeenSet(false),
+    m_uiDisabled(false),
+    m_uiDisabledHasBeenSet(false)
 {
 }
 
@@ -93,6 +139,195 @@ InfluxDBv2Parameters& InfluxDBv2Parameters::operator =(JsonView jsonValue)
     m_metricsDisabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("httpIdleTimeout"))
+  {
+    m_httpIdleTimeout = jsonValue.GetObject("httpIdleTimeout");
+
+    m_httpIdleTimeoutHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("httpReadHeaderTimeout"))
+  {
+    m_httpReadHeaderTimeout = jsonValue.GetObject("httpReadHeaderTimeout");
+
+    m_httpReadHeaderTimeoutHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("httpReadTimeout"))
+  {
+    m_httpReadTimeout = jsonValue.GetObject("httpReadTimeout");
+
+    m_httpReadTimeoutHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("httpWriteTimeout"))
+  {
+    m_httpWriteTimeout = jsonValue.GetObject("httpWriteTimeout");
+
+    m_httpWriteTimeoutHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("influxqlMaxSelectBuckets"))
+  {
+    m_influxqlMaxSelectBuckets = jsonValue.GetInt64("influxqlMaxSelectBuckets");
+
+    m_influxqlMaxSelectBucketsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("influxqlMaxSelectPoint"))
+  {
+    m_influxqlMaxSelectPoint = jsonValue.GetInt64("influxqlMaxSelectPoint");
+
+    m_influxqlMaxSelectPointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("influxqlMaxSelectSeries"))
+  {
+    m_influxqlMaxSelectSeries = jsonValue.GetInt64("influxqlMaxSelectSeries");
+
+    m_influxqlMaxSelectSeriesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("pprofDisabled"))
+  {
+    m_pprofDisabled = jsonValue.GetBool("pprofDisabled");
+
+    m_pprofDisabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("queryInitialMemoryBytes"))
+  {
+    m_queryInitialMemoryBytes = jsonValue.GetInt64("queryInitialMemoryBytes");
+
+    m_queryInitialMemoryBytesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("queryMaxMemoryBytes"))
+  {
+    m_queryMaxMemoryBytes = jsonValue.GetInt64("queryMaxMemoryBytes");
+
+    m_queryMaxMemoryBytesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("queryMemoryBytes"))
+  {
+    m_queryMemoryBytes = jsonValue.GetInt64("queryMemoryBytes");
+
+    m_queryMemoryBytesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sessionLength"))
+  {
+    m_sessionLength = jsonValue.GetInteger("sessionLength");
+
+    m_sessionLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sessionRenewDisabled"))
+  {
+    m_sessionRenewDisabled = jsonValue.GetBool("sessionRenewDisabled");
+
+    m_sessionRenewDisabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageCacheMaxMemorySize"))
+  {
+    m_storageCacheMaxMemorySize = jsonValue.GetInt64("storageCacheMaxMemorySize");
+
+    m_storageCacheMaxMemorySizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageCacheSnapshotMemorySize"))
+  {
+    m_storageCacheSnapshotMemorySize = jsonValue.GetInt64("storageCacheSnapshotMemorySize");
+
+    m_storageCacheSnapshotMemorySizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageCacheSnapshotWriteColdDuration"))
+  {
+    m_storageCacheSnapshotWriteColdDuration = jsonValue.GetObject("storageCacheSnapshotWriteColdDuration");
+
+    m_storageCacheSnapshotWriteColdDurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageCompactFullWriteColdDuration"))
+  {
+    m_storageCompactFullWriteColdDuration = jsonValue.GetObject("storageCompactFullWriteColdDuration");
+
+    m_storageCompactFullWriteColdDurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageCompactThroughputBurst"))
+  {
+    m_storageCompactThroughputBurst = jsonValue.GetInt64("storageCompactThroughputBurst");
+
+    m_storageCompactThroughputBurstHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageMaxConcurrentCompactions"))
+  {
+    m_storageMaxConcurrentCompactions = jsonValue.GetInteger("storageMaxConcurrentCompactions");
+
+    m_storageMaxConcurrentCompactionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageMaxIndexLogFileSize"))
+  {
+    m_storageMaxIndexLogFileSize = jsonValue.GetInt64("storageMaxIndexLogFileSize");
+
+    m_storageMaxIndexLogFileSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageNoValidateFieldSize"))
+  {
+    m_storageNoValidateFieldSize = jsonValue.GetBool("storageNoValidateFieldSize");
+
+    m_storageNoValidateFieldSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageRetentionCheckInterval"))
+  {
+    m_storageRetentionCheckInterval = jsonValue.GetObject("storageRetentionCheckInterval");
+
+    m_storageRetentionCheckIntervalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageSeriesFileMaxConcurrentSnapshotCompactions"))
+  {
+    m_storageSeriesFileMaxConcurrentSnapshotCompactions = jsonValue.GetInteger("storageSeriesFileMaxConcurrentSnapshotCompactions");
+
+    m_storageSeriesFileMaxConcurrentSnapshotCompactionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageSeriesIdSetCacheSize"))
+  {
+    m_storageSeriesIdSetCacheSize = jsonValue.GetInt64("storageSeriesIdSetCacheSize");
+
+    m_storageSeriesIdSetCacheSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageWalMaxConcurrentWrites"))
+  {
+    m_storageWalMaxConcurrentWrites = jsonValue.GetInteger("storageWalMaxConcurrentWrites");
+
+    m_storageWalMaxConcurrentWritesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageWalMaxWriteDelay"))
+  {
+    m_storageWalMaxWriteDelay = jsonValue.GetObject("storageWalMaxWriteDelay");
+
+    m_storageWalMaxWriteDelayHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("uiDisabled"))
+  {
+    m_uiDisabled = jsonValue.GetBool("uiDisabled");
+
+    m_uiDisabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +372,168 @@ JsonValue InfluxDBv2Parameters::Jsonize() const
   if(m_metricsDisabledHasBeenSet)
   {
    payload.WithBool("metricsDisabled", m_metricsDisabled);
+
+  }
+
+  if(m_httpIdleTimeoutHasBeenSet)
+  {
+   payload.WithObject("httpIdleTimeout", m_httpIdleTimeout.Jsonize());
+
+  }
+
+  if(m_httpReadHeaderTimeoutHasBeenSet)
+  {
+   payload.WithObject("httpReadHeaderTimeout", m_httpReadHeaderTimeout.Jsonize());
+
+  }
+
+  if(m_httpReadTimeoutHasBeenSet)
+  {
+   payload.WithObject("httpReadTimeout", m_httpReadTimeout.Jsonize());
+
+  }
+
+  if(m_httpWriteTimeoutHasBeenSet)
+  {
+   payload.WithObject("httpWriteTimeout", m_httpWriteTimeout.Jsonize());
+
+  }
+
+  if(m_influxqlMaxSelectBucketsHasBeenSet)
+  {
+   payload.WithInt64("influxqlMaxSelectBuckets", m_influxqlMaxSelectBuckets);
+
+  }
+
+  if(m_influxqlMaxSelectPointHasBeenSet)
+  {
+   payload.WithInt64("influxqlMaxSelectPoint", m_influxqlMaxSelectPoint);
+
+  }
+
+  if(m_influxqlMaxSelectSeriesHasBeenSet)
+  {
+   payload.WithInt64("influxqlMaxSelectSeries", m_influxqlMaxSelectSeries);
+
+  }
+
+  if(m_pprofDisabledHasBeenSet)
+  {
+   payload.WithBool("pprofDisabled", m_pprofDisabled);
+
+  }
+
+  if(m_queryInitialMemoryBytesHasBeenSet)
+  {
+   payload.WithInt64("queryInitialMemoryBytes", m_queryInitialMemoryBytes);
+
+  }
+
+  if(m_queryMaxMemoryBytesHasBeenSet)
+  {
+   payload.WithInt64("queryMaxMemoryBytes", m_queryMaxMemoryBytes);
+
+  }
+
+  if(m_queryMemoryBytesHasBeenSet)
+  {
+   payload.WithInt64("queryMemoryBytes", m_queryMemoryBytes);
+
+  }
+
+  if(m_sessionLengthHasBeenSet)
+  {
+   payload.WithInteger("sessionLength", m_sessionLength);
+
+  }
+
+  if(m_sessionRenewDisabledHasBeenSet)
+  {
+   payload.WithBool("sessionRenewDisabled", m_sessionRenewDisabled);
+
+  }
+
+  if(m_storageCacheMaxMemorySizeHasBeenSet)
+  {
+   payload.WithInt64("storageCacheMaxMemorySize", m_storageCacheMaxMemorySize);
+
+  }
+
+  if(m_storageCacheSnapshotMemorySizeHasBeenSet)
+  {
+   payload.WithInt64("storageCacheSnapshotMemorySize", m_storageCacheSnapshotMemorySize);
+
+  }
+
+  if(m_storageCacheSnapshotWriteColdDurationHasBeenSet)
+  {
+   payload.WithObject("storageCacheSnapshotWriteColdDuration", m_storageCacheSnapshotWriteColdDuration.Jsonize());
+
+  }
+
+  if(m_storageCompactFullWriteColdDurationHasBeenSet)
+  {
+   payload.WithObject("storageCompactFullWriteColdDuration", m_storageCompactFullWriteColdDuration.Jsonize());
+
+  }
+
+  if(m_storageCompactThroughputBurstHasBeenSet)
+  {
+   payload.WithInt64("storageCompactThroughputBurst", m_storageCompactThroughputBurst);
+
+  }
+
+  if(m_storageMaxConcurrentCompactionsHasBeenSet)
+  {
+   payload.WithInteger("storageMaxConcurrentCompactions", m_storageMaxConcurrentCompactions);
+
+  }
+
+  if(m_storageMaxIndexLogFileSizeHasBeenSet)
+  {
+   payload.WithInt64("storageMaxIndexLogFileSize", m_storageMaxIndexLogFileSize);
+
+  }
+
+  if(m_storageNoValidateFieldSizeHasBeenSet)
+  {
+   payload.WithBool("storageNoValidateFieldSize", m_storageNoValidateFieldSize);
+
+  }
+
+  if(m_storageRetentionCheckIntervalHasBeenSet)
+  {
+   payload.WithObject("storageRetentionCheckInterval", m_storageRetentionCheckInterval.Jsonize());
+
+  }
+
+  if(m_storageSeriesFileMaxConcurrentSnapshotCompactionsHasBeenSet)
+  {
+   payload.WithInteger("storageSeriesFileMaxConcurrentSnapshotCompactions", m_storageSeriesFileMaxConcurrentSnapshotCompactions);
+
+  }
+
+  if(m_storageSeriesIdSetCacheSizeHasBeenSet)
+  {
+   payload.WithInt64("storageSeriesIdSetCacheSize", m_storageSeriesIdSetCacheSize);
+
+  }
+
+  if(m_storageWalMaxConcurrentWritesHasBeenSet)
+  {
+   payload.WithInteger("storageWalMaxConcurrentWrites", m_storageWalMaxConcurrentWrites);
+
+  }
+
+  if(m_storageWalMaxWriteDelayHasBeenSet)
+  {
+   payload.WithObject("storageWalMaxWriteDelay", m_storageWalMaxWriteDelay.Jsonize());
+
+  }
+
+  if(m_uiDisabledHasBeenSet)
+  {
+   payload.WithBool("uiDisabled", m_uiDisabled);
 
   }
 

@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the tagged resource group.</p>
+     * <p>TheAmazon resource name (ARN) of the tagged resource group.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }

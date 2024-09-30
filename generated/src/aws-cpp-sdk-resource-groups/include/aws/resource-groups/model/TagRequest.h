@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the resource group to which to add tags.</p>
+     * <p>The Amazon resource name (ARN) of the resource group to which to add
+     * tags.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

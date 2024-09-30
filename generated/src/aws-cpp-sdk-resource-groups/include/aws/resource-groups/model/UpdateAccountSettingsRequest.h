@@ -36,7 +36,8 @@ namespace Model
     /**
      * <p>Specifies whether you want to turn <a
      * href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group
-     * lifecycle events</a> on or off.</p>
+     * lifecycle events</a> on or off.</p> <p>You can't turn on group lifecycle events
+     * if your resource groups quota is greater than 2,000. </p>
      */
     inline const GroupLifecycleEventsDesiredStatus& GetGroupLifecycleEventsDesiredStatus() const{ return m_groupLifecycleEventsDesiredStatus; }
     inline bool GroupLifecycleEventsDesiredStatusHasBeenSet() const { return m_groupLifecycleEventsDesiredStatusHasBeenSet; }

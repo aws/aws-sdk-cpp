@@ -17,7 +17,10 @@ namespace Model
   {
     NOT_SET,
     resource_type,
-    configuration_type
+    configuration_type,
+    owner,
+    display_name,
+    criticality
   };
 
 namespace GroupFilterNameMapper

@@ -19,8 +19,8 @@ namespace ResourceGroupsErrorMapper
 {
 
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
-static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
+static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
@@ -35,13 +35,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
-  else if (hashCode == FORBIDDEN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
-  }
   else if (hashCode == UNAUTHORIZED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == FORBIDDEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ResourceGroupsErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {

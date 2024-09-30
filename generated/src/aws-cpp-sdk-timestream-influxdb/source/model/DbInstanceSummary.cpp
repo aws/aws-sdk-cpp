@@ -25,6 +25,8 @@ DbInstanceSummary::DbInstanceSummary() :
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_endpointHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_dbInstanceType(DbInstanceType::NOT_SET),
     m_dbInstanceTypeHasBeenSet(false),
     m_dbStorageType(DbStorageType::NOT_SET),
@@ -77,6 +79,13 @@ DbInstanceSummary& DbInstanceSummary::operator =(JsonView jsonValue)
     m_endpoint = jsonValue.GetString("endpoint");
 
     m_endpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("port"))
+  {
+    m_port = jsonValue.GetInteger("port");
+
+    m_portHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dbInstanceType"))
@@ -140,6 +149,12 @@ JsonValue DbInstanceSummary::Jsonize() const
   if(m_endpointHasBeenSet)
   {
    payload.WithString("endpoint", m_endpoint);
+
+  }
+
+  if(m_portHasBeenSet)
+  {
+   payload.WithInteger("port", m_port);
 
   }
 
