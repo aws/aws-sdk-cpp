@@ -16,6 +16,8 @@ UpdateDbInstanceRequest::UpdateDbInstanceRequest() :
     m_identifierHasBeenSet(false),
     m_logDeliveryConfigurationHasBeenSet(false),
     m_dbParameterGroupIdentifierHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_dbInstanceType(DbInstanceType::NOT_SET),
     m_dbInstanceTypeHasBeenSet(false),
     m_deploymentType(DeploymentType::NOT_SET),
@@ -42,6 +44,12 @@ Aws::String UpdateDbInstanceRequest::SerializePayload() const
   if(m_dbParameterGroupIdentifierHasBeenSet)
   {
    payload.WithString("dbParameterGroupIdentifier", m_dbParameterGroupIdentifier);
+
+  }
+
+  if(m_portHasBeenSet)
+  {
+   payload.WithInteger("port", m_port);
 
   }
 

@@ -79,7 +79,7 @@ namespace Model
     ///@{
     /**
      * <p>The type of the policy. This is one of the following values:</p> <ul> <li>
-     * <p> <code>static</code> </p> </li> <li> <p> <code>templateLinked</code> </p>
+     * <p> <code>STATIC</code> </p> </li> <li> <p> <code>TEMPLATE_LINKED</code> </p>
      * </li> </ul>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }

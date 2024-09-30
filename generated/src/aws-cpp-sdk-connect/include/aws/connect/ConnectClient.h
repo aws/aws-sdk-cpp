@@ -122,9 +122,8 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Associates the specified dataset for a Amazon Connect instance
-         * with the target account. You can associate only one dataset in a single
+         * <p>Associates the specified dataset for a Amazon Connect instance with the
+         * target account. You can associate only one dataset in a single
          * call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateAnalyticsDataSet">AWS
          * API Reference</a></p>
@@ -510,10 +509,9 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Associates a list of analytics datasets for a given Amazon
-         * Connect instance to a target account. You can associate multiple datasets in a
-         * single call.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a list of analytics datasets for a given Amazon Connect instance
+         * to a target account. You can associate multiple datasets in a single
+         * call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchAssociateAnalyticsDataSet">AWS
          * API Reference</a></p>
          */
@@ -538,10 +536,9 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Removes a list of analytics datasets associated with a given
-         * Amazon Connect instance. You can disassociate multiple datasets in a single
-         * call.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a list of analytics datasets associated with a given Amazon Connect
+         * instance. You can disassociate multiple datasets in a single call.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDisassociateAnalyticsDataSet">AWS
          * API Reference</a></p>
          */
@@ -2157,9 +2154,10 @@ namespace Connect
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Describes the specified contact. </p>  <p>Contact
-         * information remains available in Amazon Connect for 24 months, and then it is
-         * deleted.</p> <p>Only data from November 12, 2021, and later is returned by this
-         * API.</p> <p><h3>See Also:</h3>   <a
+         * information remains available in Amazon Connect for 24 months from the
+         * InitiationTimestamp, and then it is deleted. Only contact information that is
+         * available in Amazon Connect is returned by this API</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContact">AWS
          * API Reference</a></p>
          */
@@ -2801,8 +2799,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Removes the dataset ID associated with a given Amazon Connect
+         * <p>Removes the dataset ID associated with a given Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateAnalyticsDataSet">AWS
          * API Reference</a></p>
@@ -3575,9 +3572,8 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Lists the association status of requested dataset ID for a given
-         * Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the association status of requested dataset ID for a given Amazon
+         * Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataAssociations">AWS
          * API Reference</a></p>
          */
@@ -5669,6 +5665,48 @@ namespace Connect
         void StartContactStreamingAsync(const StartContactStreamingRequestT& request, const StartContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::StartContactStreaming, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates a new outbound SMS contact to a customer. Response of this API
+         * provides the ContactId of the outbound SMS contact created.</p> <p>
+         * <b>SourceEndpoint</b> only supports Endpoints with
+         * <code>CONNECT_PHONENUMBER_ARN</code> as Type and <b>DestinationEndpoint</b> only
+         * supports Endpoints with <code>TELEPHONE_NUMBER</code> as Type.
+         * <b>ContactFlowId</b> initiates the flow to manage the new SMS contact
+         * created.</p> <p>This API can be used to initiate outbound SMS contacts for an
+         * agent or it can also deflect an ongoing contact to an outbound SMS contact by
+         * using the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
+         * Flow Action.</p> <p>For more information about using SMS in Amazon Connect, see
+         * the following topics in the <i>Amazon Connect Administrator Guide</i>:</p> <ul>
+         * <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-sms-messaging.html">Set
+         * up SMS messaging</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request
+         * an SMS-enabled phone number through AWS End User Messaging SMS</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundChatContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartOutboundChatContactOutcome StartOutboundChatContact(const Model::StartOutboundChatContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartOutboundChatContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartOutboundChatContactRequestT = Model::StartOutboundChatContactRequest>
+        Model::StartOutboundChatContactOutcomeCallable StartOutboundChatContactCallable(const StartOutboundChatContactRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::StartOutboundChatContact, request);
+        }
+
+        /**
+         * An Async wrapper for StartOutboundChatContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartOutboundChatContactRequestT = Model::StartOutboundChatContactRequest>
+        void StartOutboundChatContactAsync(const StartOutboundChatContactRequestT& request, const StartOutboundChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::StartOutboundChatContact, request, handler, context);
         }
 
         /**

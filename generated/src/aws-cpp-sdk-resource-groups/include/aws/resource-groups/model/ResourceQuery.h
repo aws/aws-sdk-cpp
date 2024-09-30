@@ -68,10 +68,10 @@ namespace Model
      * <p>The type of the query to perform. This can have one of two values:</p> <ul>
      * <li> <p> <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> Specifies that you want
      * the group to contain the members of an CloudFormation stack. The
-     * <code>Query</code> contains a <code>StackIdentifier</code> element with an ARN
-     * for a CloudFormation stack.</p> </li> <li> <p> <i> <code>TAG_FILTERS_1_0:</code>
-     * </i> Specifies that you want the group to include resource that have tags that
-     * match the query. </p> </li> </ul>
+     * <code>Query</code> contains a <code>StackIdentifier</code> element with an
+     * Amazon resource name (ARN) for a CloudFormation stack.</p> </li> <li> <p> <i>
+     * <code>TAG_FILTERS_1_0:</code> </i> Specifies that you want the group to include
+     * resource that have tags that match the query. </p> </li> </ul>
      */
     inline const QueryType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

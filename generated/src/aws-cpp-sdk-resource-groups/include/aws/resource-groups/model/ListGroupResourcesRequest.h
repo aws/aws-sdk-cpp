@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or the ARN of the resource group</p>
+     * <p>The name or the Amazon resource name (ARN) of the resource group. </p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }

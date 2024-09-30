@@ -231,7 +231,7 @@ namespace VerifiedPermissions
          * attribute]</code>, for example
          * <code>MyCorp::User::us-east-1_EXAMPLE|a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
          * </li> <li> <p>OpenID Connect (OIDC) provider: <code>Namespace::[Entity
-         * type]::[principalIdClaim]|[user principal attribute]</code>, for example
+         * type]::[entityIdPrefix]|[user principal attribute]</code>, for example
          * <code>MyCorp::User::MyOIDCProvider|a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
          * </li> </ul>   <p>Verified Permissions is <i> <a
          * href="https://wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>
@@ -654,12 +654,11 @@ namespace VerifiedPermissions
          * Permissions can include in the evaluation. The request is evaluated against all
          * matching policies in the specified policy store. The result of the decision is
          * either <code>Allow</code> or <code>Deny</code>, along with a list of the
-         * policies that resulted in the decision.</p> <p>At this time, Verified
-         * Permissions accepts tokens from only Amazon Cognito.</p> <p>Verified Permissions
-         * validates each token that is specified in a request by checking its expiration
-         * date and its signature.</p>  <p>Tokens from an identity source user
-         * continue to be usable until they expire. Token revocation and resource deletion
-         * have no effect on the validity of a token in your policy store</p>
+         * policies that resulted in the decision.</p> <p>Verified Permissions validates
+         * each token that is specified in a request by checking its expiration date and
+         * its signature.</p>  <p>Tokens from an identity source user continue
+         * to be usable until they expire. Token revocation and resource deletion have no
+         * effect on the validity of a token in your policy store</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/IsAuthorizedWithToken">AWS
          * API Reference</a></p>

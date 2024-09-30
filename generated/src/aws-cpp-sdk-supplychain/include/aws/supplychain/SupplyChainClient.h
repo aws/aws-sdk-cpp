@@ -115,6 +115,107 @@ namespace SupplyChain
         }
 
         /**
+         * <p>Create DataIntegrationFlow to map one or more different sources to one target
+         * using the SQL transformation query.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataIntegrationFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataIntegrationFlowOutcome CreateDataIntegrationFlow(const Model::CreateDataIntegrationFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataIntegrationFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataIntegrationFlowRequestT = Model::CreateDataIntegrationFlowRequest>
+        Model::CreateDataIntegrationFlowOutcomeCallable CreateDataIntegrationFlowCallable(const CreateDataIntegrationFlowRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::CreateDataIntegrationFlow, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataIntegrationFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataIntegrationFlowRequestT = Model::CreateDataIntegrationFlowRequest>
+        void CreateDataIntegrationFlowAsync(const CreateDataIntegrationFlowRequestT& request, const CreateDataIntegrationFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::CreateDataIntegrationFlow, request, handler, context);
+        }
+
+        /**
+         * <p>Create a data lake dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataLakeDatasetOutcome CreateDataLakeDataset(const Model::CreateDataLakeDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataLakeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataLakeDatasetRequestT = Model::CreateDataLakeDatasetRequest>
+        Model::CreateDataLakeDatasetOutcomeCallable CreateDataLakeDatasetCallable(const CreateDataLakeDatasetRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::CreateDataLakeDataset, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataLakeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataLakeDatasetRequestT = Model::CreateDataLakeDatasetRequest>
+        void CreateDataLakeDatasetAsync(const CreateDataLakeDatasetRequestT& request, const CreateDataLakeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::CreateDataLakeDataset, request, handler, context);
+        }
+
+        /**
+         * <p>Delete the DataIntegrationFlow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataIntegrationFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDataIntegrationFlowOutcome DeleteDataIntegrationFlow(const Model::DeleteDataIntegrationFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDataIntegrationFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDataIntegrationFlowRequestT = Model::DeleteDataIntegrationFlowRequest>
+        Model::DeleteDataIntegrationFlowOutcomeCallable DeleteDataIntegrationFlowCallable(const DeleteDataIntegrationFlowRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::DeleteDataIntegrationFlow, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDataIntegrationFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDataIntegrationFlowRequestT = Model::DeleteDataIntegrationFlowRequest>
+        void DeleteDataIntegrationFlowAsync(const DeleteDataIntegrationFlowRequestT& request, const DeleteDataIntegrationFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::DeleteDataIntegrationFlow, request, handler, context);
+        }
+
+        /**
+         * <p>Delete a data lake dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDataLakeDatasetOutcome DeleteDataLakeDataset(const Model::DeleteDataLakeDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDataLakeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDataLakeDatasetRequestT = Model::DeleteDataLakeDatasetRequest>
+        Model::DeleteDataLakeDatasetOutcomeCallable DeleteDataLakeDatasetCallable(const DeleteDataLakeDatasetRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::DeleteDataLakeDataset, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDataLakeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDataLakeDatasetRequestT = Model::DeleteDataLakeDatasetRequest>
+        void DeleteDataLakeDatasetAsync(const DeleteDataLakeDatasetRequestT& request, const DeleteDataLakeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::DeleteDataLakeDataset, request, handler, context);
+        }
+
+        /**
          * <p>Get status and details of a BillOfMaterialsImportJob.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetBillOfMaterialsImportJob">AWS
@@ -138,6 +239,134 @@ namespace SupplyChain
         void GetBillOfMaterialsImportJobAsync(const GetBillOfMaterialsImportJobRequestT& request, const GetBillOfMaterialsImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SupplyChainClient::GetBillOfMaterialsImportJob, request, handler, context);
+        }
+
+        /**
+         * <p>View the DataIntegrationFlow details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataIntegrationFlowOutcome GetDataIntegrationFlow(const Model::GetDataIntegrationFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataIntegrationFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataIntegrationFlowRequestT = Model::GetDataIntegrationFlowRequest>
+        Model::GetDataIntegrationFlowOutcomeCallable GetDataIntegrationFlowCallable(const GetDataIntegrationFlowRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::GetDataIntegrationFlow, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataIntegrationFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataIntegrationFlowRequestT = Model::GetDataIntegrationFlowRequest>
+        void GetDataIntegrationFlowAsync(const GetDataIntegrationFlowRequestT& request, const GetDataIntegrationFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::GetDataIntegrationFlow, request, handler, context);
+        }
+
+        /**
+         * <p>Get a data lake dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataLakeDatasetOutcome GetDataLakeDataset(const Model::GetDataLakeDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataLakeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataLakeDatasetRequestT = Model::GetDataLakeDatasetRequest>
+        Model::GetDataLakeDatasetOutcomeCallable GetDataLakeDatasetCallable(const GetDataLakeDatasetRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::GetDataLakeDataset, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataLakeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataLakeDatasetRequestT = Model::GetDataLakeDatasetRequest>
+        void GetDataLakeDatasetAsync(const GetDataLakeDatasetRequestT& request, const GetDataLakeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::GetDataLakeDataset, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all the DataIntegrationFlows in a paginated way.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlows">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataIntegrationFlowsOutcome ListDataIntegrationFlows(const Model::ListDataIntegrationFlowsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDataIntegrationFlows that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataIntegrationFlowsRequestT = Model::ListDataIntegrationFlowsRequest>
+        Model::ListDataIntegrationFlowsOutcomeCallable ListDataIntegrationFlowsCallable(const ListDataIntegrationFlowsRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::ListDataIntegrationFlows, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataIntegrationFlows that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataIntegrationFlowsRequestT = Model::ListDataIntegrationFlowsRequest>
+        void ListDataIntegrationFlowsAsync(const ListDataIntegrationFlowsRequestT& request, const ListDataIntegrationFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::ListDataIntegrationFlows, request, handler, context);
+        }
+
+        /**
+         * <p>List the data lake datasets for a specific instance and name
+         * space.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeDatasets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataLakeDatasetsOutcome ListDataLakeDatasets(const Model::ListDataLakeDatasetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDataLakeDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataLakeDatasetsRequestT = Model::ListDataLakeDatasetsRequest>
+        Model::ListDataLakeDatasetsOutcomeCallable ListDataLakeDatasetsCallable(const ListDataLakeDatasetsRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::ListDataLakeDatasets, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataLakeDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataLakeDatasetsRequestT = Model::ListDataLakeDatasetsRequest>
+        void ListDataLakeDatasetsAsync(const ListDataLakeDatasetsRequestT& request, const ListDataLakeDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::ListDataLakeDatasets, request, handler, context);
+        }
+
+        /**
+         * <p>List all the tags for an Amazon Web ServicesSupply Chain
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::ListTagsForResource, request);
+        }
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+        void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::ListTagsForResource, request, handler, context);
         }
 
         /**
@@ -167,6 +396,108 @@ namespace SupplyChain
         void SendDataIntegrationEventAsync(const SendDataIntegrationEventRequestT& request, const SendDataIntegrationEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SupplyChainClient::SendDataIntegrationEvent, request, handler, context);
+        }
+
+        /**
+         * <p>Create tags for an Amazon Web Services Supply chain resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::TagResource, request);
+        }
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TagResourceRequestT = Model::TagResourceRequest>
+        void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Delete tags for an Amazon Web Services Supply chain resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::UntagResource, request);
+        }
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UntagResourceRequestT = Model::UntagResourceRequest>
+        void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Update the DataIntegrationFlow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataIntegrationFlow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDataIntegrationFlowOutcome UpdateDataIntegrationFlow(const Model::UpdateDataIntegrationFlowRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDataIntegrationFlow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDataIntegrationFlowRequestT = Model::UpdateDataIntegrationFlowRequest>
+        Model::UpdateDataIntegrationFlowOutcomeCallable UpdateDataIntegrationFlowCallable(const UpdateDataIntegrationFlowRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::UpdateDataIntegrationFlow, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDataIntegrationFlow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDataIntegrationFlowRequestT = Model::UpdateDataIntegrationFlowRequest>
+        void UpdateDataIntegrationFlowAsync(const UpdateDataIntegrationFlowRequestT& request, const UpdateDataIntegrationFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::UpdateDataIntegrationFlow, request, handler, context);
+        }
+
+        /**
+         * <p>Update a data lake dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDataLakeDatasetOutcome UpdateDataLakeDataset(const Model::UpdateDataLakeDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDataLakeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDataLakeDatasetRequestT = Model::UpdateDataLakeDatasetRequest>
+        Model::UpdateDataLakeDatasetOutcomeCallable UpdateDataLakeDatasetCallable(const UpdateDataLakeDatasetRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::UpdateDataLakeDataset, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDataLakeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDataLakeDatasetRequestT = Model::UpdateDataLakeDatasetRequest>
+        void UpdateDataLakeDatasetAsync(const UpdateDataLakeDatasetRequestT& request, const UpdateDataLakeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::UpdateDataLakeDataset, request, handler, context);
         }
 
 

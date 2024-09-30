@@ -52,6 +52,7 @@ namespace Model
      * <code>configuration-type</code> - Filter the results to include only those
      * groups that have the specified configuration types attached. The current
      * supported values are:</p> <ul> <li> <p>
+     * <code>AWS::ResourceGroups::ApplicationGroup</code> </p> </li> <li> <p>
      * <code>AWS::AppRegistry::Application</code> </p> </li> <li> <p>
      * <code>AWS::AppRegistry::ApplicationResourceGroups</code> </p> </li> <li> <p>
      * <code>AWS::CloudFormation::Stack</code> </p> </li> <li> <p>

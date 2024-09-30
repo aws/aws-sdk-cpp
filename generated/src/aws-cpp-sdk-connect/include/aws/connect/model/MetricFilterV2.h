@@ -67,12 +67,13 @@ namespace Model
      * <p>The values to use for filtering data. </p> <p>Valid metric filter values for
      * <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> |
      * <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> |
-     * <code>API</code> </p> <p>Valid metric filter values for
-     * <code>DISCONNECT_REASON</code>: <code>CUSTOMER_DISCONNECT</code> |
-     * <code>AGENT_DISCONNECT</code> | <code>THIRD_PARTY_DISCONNECT</code> |
-     * <code>TELECOM_PROBLEM</code> | <code>BARGED</code> |
-     * <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code> | <code>EXPIRED</code>
-     * | <code>API</code> </p>
+     * <code>API</code> | <code>WEBRTC_API</code> | <code>MONITOR</code> |
+     * <code>DISCONNECT</code> | <code>EXTERNAL_OUTBOUND</code> </p> <p>Valid metric
+     * filter values for <code>DISCONNECT_REASON</code>:
+     * <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> |
+     * <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> |
+     * <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code>
+     * | <code>EXPIRED</code> | <code>API</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricFilterValues() const{ return m_metricFilterValues; }
     inline bool MetricFilterValuesHasBeenSet() const { return m_metricFilterValuesHasBeenSet; }

@@ -36,8 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or ARN of the resource group with the configuration that you want to
-     * update.</p>
+     * <p>The name or Amazon resource name (ARN) of the resource group with the
+     * configuration that you want to update.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }

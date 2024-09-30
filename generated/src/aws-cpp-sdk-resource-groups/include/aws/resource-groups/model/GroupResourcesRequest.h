@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or the ARN of the resource group to add resources to.</p>
+     * <p>The name or the Amazon resource name (ARN) of the resource group to add
+     * resources to.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
@@ -49,7 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of ARNs of the resources to be added to the group. </p>
+     * <p>The list of Amazon resource names (ARNs) of the resources to be added to the
+     * group. </p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }

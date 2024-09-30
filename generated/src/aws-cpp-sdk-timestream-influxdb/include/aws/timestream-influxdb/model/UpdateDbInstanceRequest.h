@@ -82,6 +82,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The port number on which InfluxDB accepts connections.</p> <p>If you change
+     * the Port value, your database restarts immediately.</p> <p>Valid Values:
+     * 1024-65535</p> <p>Default: 8086</p> <p>Constraints: The value can't be
+     * 2375-2376, 7788-7799, 8090, or 51678-51680</p>
+     */
+    inline int GetPort() const{ return m_port; }
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+    inline UpdateDbInstanceRequest& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Timestream for InfluxDB DB instance type to run InfluxDB on.</p>
      */
     inline const DbInstanceType& GetDbInstanceType() const{ return m_dbInstanceType; }
@@ -114,6 +127,9 @@ namespace Model
 
     Aws::String m_dbParameterGroupIdentifier;
     bool m_dbParameterGroupIdentifierHasBeenSet = false;
+
+    int m_port;
+    bool m_portHasBeenSet = false;
 
     DbInstanceType m_dbInstanceType;
     bool m_dbInstanceTypeHasBeenSet = false;

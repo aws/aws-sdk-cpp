@@ -19,6 +19,7 @@ using namespace Aws;
 
 GetDbInstanceResult::GetDbInstanceResult() : 
     m_status(Status::NOT_SET),
+    m_port(0),
     m_dbInstanceType(DbInstanceType::NOT_SET),
     m_dbStorageType(DbStorageType::NOT_SET),
     m_allocatedStorage(0),
@@ -63,6 +64,12 @@ GetDbInstanceResult& GetDbInstanceResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
+
+  }
+
+  if(jsonValue.ValueExists("port"))
+  {
+    m_port = jsonValue.GetInteger("port");
 
   }
 

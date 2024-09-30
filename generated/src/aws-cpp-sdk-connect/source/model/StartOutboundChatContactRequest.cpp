@@ -1,0 +1,129 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/connect/model/StartOutboundChatContactRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Connect::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+StartOutboundChatContactRequest::StartOutboundChatContactRequest() : 
+    m_sourceEndpointHasBeenSet(false),
+    m_destinationEndpointHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_segmentAttributesHasBeenSet(false),
+    m_attributesHasBeenSet(false),
+    m_contactFlowIdHasBeenSet(false),
+    m_chatDurationInMinutes(0),
+    m_chatDurationInMinutesHasBeenSet(false),
+    m_participantDetailsHasBeenSet(false),
+    m_initialSystemMessageHasBeenSet(false),
+    m_relatedContactIdHasBeenSet(false),
+    m_supportedMessagingContentTypesHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
+{
+}
+
+Aws::String StartOutboundChatContactRequest::SerializePayload() const
+{
+  JsonValue payload;
+
+  if(m_sourceEndpointHasBeenSet)
+  {
+   payload.WithObject("SourceEndpoint", m_sourceEndpoint.Jsonize());
+
+  }
+
+  if(m_destinationEndpointHasBeenSet)
+  {
+   payload.WithObject("DestinationEndpoint", m_destinationEndpoint.Jsonize());
+
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
+
+  }
+
+  if(m_segmentAttributesHasBeenSet)
+  {
+   JsonValue segmentAttributesJsonMap;
+   for(auto& segmentAttributesItem : m_segmentAttributes)
+   {
+     segmentAttributesJsonMap.WithObject(segmentAttributesItem.first, segmentAttributesItem.second.Jsonize());
+   }
+   payload.WithObject("SegmentAttributes", std::move(segmentAttributesJsonMap));
+
+  }
+
+  if(m_attributesHasBeenSet)
+  {
+   JsonValue attributesJsonMap;
+   for(auto& attributesItem : m_attributes)
+   {
+     attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
+   }
+   payload.WithObject("Attributes", std::move(attributesJsonMap));
+
+  }
+
+  if(m_contactFlowIdHasBeenSet)
+  {
+   payload.WithString("ContactFlowId", m_contactFlowId);
+
+  }
+
+  if(m_chatDurationInMinutesHasBeenSet)
+  {
+   payload.WithInteger("ChatDurationInMinutes", m_chatDurationInMinutes);
+
+  }
+
+  if(m_participantDetailsHasBeenSet)
+  {
+   payload.WithObject("ParticipantDetails", m_participantDetails.Jsonize());
+
+  }
+
+  if(m_initialSystemMessageHasBeenSet)
+  {
+   payload.WithObject("InitialSystemMessage", m_initialSystemMessage.Jsonize());
+
+  }
+
+  if(m_relatedContactIdHasBeenSet)
+  {
+   payload.WithString("RelatedContactId", m_relatedContactId);
+
+  }
+
+  if(m_supportedMessagingContentTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> supportedMessagingContentTypesJsonList(m_supportedMessagingContentTypes.size());
+   for(unsigned supportedMessagingContentTypesIndex = 0; supportedMessagingContentTypesIndex < supportedMessagingContentTypesJsonList.GetLength(); ++supportedMessagingContentTypesIndex)
+   {
+     supportedMessagingContentTypesJsonList[supportedMessagingContentTypesIndex].AsString(m_supportedMessagingContentTypes[supportedMessagingContentTypesIndex]);
+   }
+   payload.WithArray("SupportedMessagingContentTypes", std::move(supportedMessagingContentTypesJsonList));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  return payload.View().WriteReadable();
+}
+
+
+
+

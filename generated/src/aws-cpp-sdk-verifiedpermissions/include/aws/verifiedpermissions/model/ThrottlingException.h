@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The code for the Amazon Web Service that owns the quota.</p>
+     * <p>The code for the Amazon Web Services service that owns the quota.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }

@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name or the ARN of the resource group to modify.</p>
+     * <p>The name or the ARN of the resource group to update.</p>
      */
     inline const Aws::String& GetGroup() const{ return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
@@ -61,6 +61,46 @@ namespace Model
     inline UpdateGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline UpdateGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The critical rank of the application group on a scale of 1 to 10, with a rank
+     * of 1 being the most critical, and a rank of 10 being least critical.</p>
+     */
+    inline int GetCriticality() const{ return m_criticality; }
+    inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
+    inline void SetCriticality(int value) { m_criticalityHasBeenSet = true; m_criticality = value; }
+    inline UpdateGroupRequest& WithCriticality(int value) { SetCriticality(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A name, email address or other identifier for the person or group who is
+     * considered as the owner of this application group within your organization. </p>
+     */
+    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
+    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
+    inline UpdateGroupRequest& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
+    inline UpdateGroupRequest& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
+    inline UpdateGroupRequest& WithOwner(const char* value) { SetOwner(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the application group, which you can change at any time. </p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+    inline UpdateGroupRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+    inline UpdateGroupRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+    inline UpdateGroupRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_group;
@@ -68,6 +108,15 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    int m_criticality;
+    bool m_criticalityHasBeenSet = false;
+
+    Aws::String m_owner;
+    bool m_ownerHasBeenSet = false;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

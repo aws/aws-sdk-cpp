@@ -105,6 +105,15 @@ namespace Model
 
     ///@{
     /**
+     * <p>The port number on which InfluxDB accepts connections.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+    inline void SetPort(int value) { m_port = value; }
+    inline GetDbInstanceResult& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Timestream for InfluxDB instance type that InfluxDB runs on.</p>
      */
     inline const DbInstanceType& GetDbInstanceType() const{ return m_dbInstanceType; }
@@ -272,6 +281,8 @@ namespace Model
     Status m_status;
 
     Aws::String m_endpoint;
+
+    int m_port;
 
     DbInstanceType m_dbInstanceType;
 
