@@ -2,7 +2,10 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import lombok.Data;
-
+import org.apache.velocity.Template;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.VelocityEngine;
+import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import org.slf4j.helpers.NOPLoggerFactory;
 
@@ -26,142 +29,112 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.attribute.PosixFilePermission;
-import java.nio.file.attribute.PosixFilePermissions;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import freemarker.template.Configuration;
-import freemarker.template.Template;
-import freemarker.template.TemplateException;
-import freemarker.cache.FileTemplateLoader;
-import java.nio.file.DirectoryStream;
-public class SmithyParser {
+
+
+public class SmithyParser2 {
 
     public static final String SMOKE_TEST_SOURCE_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/smoketests/smokeTestSource.vm";
     public static final String CMAKE_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/smoketests/smokeTestCmake.vm";
+    private static final String RESOURCE_SMITHY_DIR = "smithy-models";
     private static final String CMAKE_LISTS_TXT = "CMakeLists.txt";
     private static final String SMOKE_TESTS_CPP_FORMAT = "%sSmokeTests.cpp";
-    private static final String OUTPUT_LOCATION_FORMAT = "%s/%s";
-    private Model model;
-    private SmithyCodegenAdapter codegenAdapter;
-    private Configuration TemplateConfig;
+    private static final String OUTPUT_LOCATION_FORMAT = "output/%s";
+    Model model;
+    ModelAssembler assembler;
+    SmithyCodegenAdapter codegenAdapter;
 
     @Data
     public static final class Failure {
         public String error;
     };
 
+    private final VelocityEngine velocityEngine;
     private final Set<Path> sources;
 
-    public SmithyParser(Model model ,Set<Path> sources)  {
+    public SmithyParser2(Model model ,Set<Path> sources)  {
+        System.out.println(String.format("SmithyParser2 being constructed, resource loader=%s",ClasspathResourceLoader.class.getName()));
+        this.velocityEngine = new VelocityEngine();
+        this.velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADERS, "classpath");
+        this.velocityEngine.setProperty("resource.loader.classpath.class", ClasspathResourceLoader.class.getName());
+        this.velocityEngine.addProperty(RuntimeConstants.RUNTIME_LOG_INSTANCE, new NOPLoggerFactory().getLogger(""));
+        this.velocityEngine.setProperty("context.scope_control.template", true);
+        
+        // Migration from 1.7 to 2.3:: https://velocity.apache.org/engine/2.3/upgrading.html
+        // # Use backward compatible space gobbling
+        //this.velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());
+        
+               this.velocityEngine.init();
 
-        TemplateConfig = new Configuration(Configuration.VERSION_2_3_31);
-        TemplateConfig.setClassLoaderForTemplateLoading(
-            SmithyParser.class.getClassLoader(), "templates");
-
-        // Set the encoding for the template files (input)
-        TemplateConfig.setDefaultEncoding("UTF-8");
-
-        // Set encoding for the response (output)
-        TemplateConfig.setOutputEncoding("UTF-8");
-
-        System.out.println(String.format("SmithyParser being constructed, resource loader=%s",ClasspathResourceLoader.class.getName()));
         this.sources = sources;
-
-        System.out.println(String.format("Number of sources=%d",sources.size()));
 
         this.model = model;
         codegenAdapter = new SmithyCodegenAdapter(model);
+
+        
     }
 
-    public void GenerateSmokeTests() throws Exception {
-        
-            try{
-                sources.stream().forEach(path -> {
-                    try (DirectoryStream<Path> stream = Files.newDirectoryStream(path))
-                    {
-                        for (Path file: stream) {
-                            if (Files.isRegularFile(file) && 
-                            
-                                (file.toString().endsWith(".json") || file.toString().endsWith(".smithy"))
-                            ) 
-                            {
-                                System.out.println("File: " + file.getFileName());
+    public void GenerateSmokeTests(){
+        System.out.println("GenerateSmokeTests called");
+        try{
+            sources.stream().filter(path -> path.toString().endsWith(".json") || path.toString().endsWith(".smithy")).
+            forEach(path -> {
+    
+                String filename = path.getFileName().toString();
+                int dotIndex = filename.lastIndexOf('.'); // Find the last dot index
+                String serviceName = (dotIndex != -1) ? filename.substring(0, dotIndex) : filename; // Extract name until dot
+                System.out.println(String.format("serviceName=%s",serviceName));
 
-                                String filename = file.getFileName().toString();
-                                int dotIndex = filename.lastIndexOf('.'); // Find the last dot index
-                                String serviceName = (dotIndex != -1) ? filename.substring(0, dotIndex) : filename; // Extract name until dot
-                                System.out.println(String.format("test for serviceName=%s",serviceName));
-                
-                                
-                                List<TestcaseParams> testcaseParams = extractTests();
-                                GenerateSmokeTestsourceFile(testcaseParams, String.format(SMOKE_TESTS_CPP_FORMAT, serviceName), serviceName);
-                                generateTestCmakeFile(CMAKE_LISTS_TXT, serviceName);
-                                
-                            }
-                        } 
-                        System.out.println("path:"+path.toString());
-                    }
-                    catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
-                });
-            }
-            catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+                try{
+                    List<TestcaseParams> testcaseParams = extractTests();
+                    GenerateSmokeTestsourceFile(testcaseParams, String.format(SMOKE_TESTS_CPP_FORMAT, serviceName));
+                    generateTestCmakeFile(CMAKE_LISTS_TXT, serviceName);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+    
+            });
+            
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        
 
        
+        //assembler.reset();
     }
 
-    private void setDirectoryPermissions(Path path) {
-        try {
-            // Set permissions to rwxr-xr-x (owner can read/write/execute, group can read/execute, others can read/execute)
-            Set<PosixFilePermission> perms = PosixFilePermissions.fromString("rwxr-xr-x");
-            Files.setPosixFilePermissions(path, perms);
-            System.out.println("Set permissions for directory: " + path);
-        } catch (Exception e) {
-            System.err.println("Failed to set permissions: " + e.getMessage());
-        }
-    }
-
-    private void makeFile(Template template, Map<String, Object> context, final String fileName) throws Exception {
-        
-        System.out.println(String.format("Output filename=%s",fileName));
+    private void makeFile(Template template, VelocityContext context, final String fileName) throws Exception {
         final File outputFile = new File(fileName);
-        File parentDir = outputFile.getParentFile();
-
-        if (parentDir != null && !parentDir.exists()) {
-            parentDir.mkdirs(); // Create directories if they do not exist
-        }
-        System.out.println(String.format("Dir exists=%s",parentDir.exists()));
-    
-        // Create the output file if it does not exist
-        if (!outputFile.exists()) {
-            outputFile.createNewFile(); // Create the file
-        }
+        outputFile.getParentFile().mkdirs();
+        outputFile.createNewFile();
         try (FileWriter fileWriter = new FileWriter(outputFile)){
-            template.process(context, fileWriter);
+            template.merge(context, fileWriter);
         } catch (Exception e) {
             throw new RuntimeException(String.format("Generation of template failed for template %s", template.getName()), e);
         }
     }
 
-    public void GenerateSmokeTestsourceFile( List<TestcaseParams> tests, String fileName, String serviceName) throws Exception {
-        // Prepare data for the template (context)
-        Map<String, Object> context = new HashMap<>();
-        context.put("tests", tests);
-        Template template = TemplateConfig.getTemplate("smokeTestSource.ftl");
-        makeFile(template, context, String.format(OUTPUT_LOCATION_FORMAT, serviceName, fileName));
+    public void GenerateSmokeTestsourceFile( List<TestcaseParams> tests, String fileName) throws Exception {
+        Template template = velocityEngine.getTemplate(SMOKE_TEST_SOURCE_TEMPLATE, StandardCharsets.UTF_8.name());
+        VelocityContext context = createSmokeTestContext(tests);
+        makeFile(template, context, String.format(OUTPUT_LOCATION_FORMAT, fileName));
     }
 
     public void generateTestCmakeFile(String fileName, final String serviceName) throws Exception {
-        Map<String, Object> context = new HashMap<>();
+        Template template = velocityEngine.getTemplate(CMAKE_TEMPLATE, StandardCharsets.UTF_8.name());
+        VelocityContext context = new VelocityContext();
         context.put("projectName", serviceName);
-        Template template = TemplateConfig.getTemplate("smokeTestCMake.ftl");
-        makeFile(template, context, String.format(OUTPUT_LOCATION_FORMAT, serviceName,fileName));
+        makeFile(template, context, String.format(OUTPUT_LOCATION_FORMAT, fileName));
+    }
+
+    private VelocityContext createSmokeTestContext(List<TestcaseParams> test)  {
+        VelocityContext context = new VelocityContext();
+        context.put("tests", test);
+        return context;
     }
 
     private List<TestcaseParams> extractTests()

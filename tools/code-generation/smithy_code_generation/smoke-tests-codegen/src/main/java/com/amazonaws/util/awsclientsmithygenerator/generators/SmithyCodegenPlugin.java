@@ -5,6 +5,14 @@ import software.amazon.smithy.build.SmithyBuildPlugin;
 import software.amazon.smithy.model.Model;
 import software.amazon.smithy.model.transform.ModelTransformer;
 
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
+import freemarker.cache.FileTemplateLoader;
+import java.util.Map;
+import java.util.HashMap;
+import java.io.*;
+
 public class SmithyCodegenPlugin implements SmithyBuildPlugin {
 
 @Override
@@ -16,13 +24,52 @@ public String getName() {
     public void execute(PluginContext context){
         
         System.out.println("Executing SmithyCodegenPlugin...");
+
+        /*
+        Configuration cfg = new Configuration();
+
+        try{
+            System.out.println(SmithyCodegenPlugin.class.getClassLoader());
+            cfg.setClassLoaderForTemplateLoading(
+                SmithyCodegenPlugin.class.getClassLoader(), "templates");
+        
+            
+            // Prepare data for the template (context)
+            Map<String, Object> ctx = new HashMap<>();
+            Map<String, Object> user = new HashMap<>();
+            user.put("name", "John Doe");
+            user.put("age", 30);
+            ctx.put("user", user);
+            Writer out = new OutputStreamWriter(System.out);
+            Template template = cfg.getTemplate("smokeTestSource.ftl");
+
+            template.process(ctx, out);
+            out.flush();
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }
+        */
+        
+
         try{
             SmithyParser parser = new SmithyParser(context.getModel(), context.getSources());
-            parser.GenerateTests();
+            parser.GenerateSmokeTests();
+            //Optional<ObjectNode> settings = context.getSettings().asObjectNode();
+
         }
         catch(Exception e){
             System.out.println(e.toString());
         }
         
+
+
+        //try{
+        //    SmithyParser2 parser = new SmithyParser2(context.getModel(), context.getSources());
+        //    parser.GenerateSmokeTests();
+        //}
+        //catch(Exception e){
+        //    System.out.println(e.toString());
+        //}
     }
 }

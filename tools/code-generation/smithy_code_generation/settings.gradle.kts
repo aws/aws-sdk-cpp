@@ -2,6 +2,7 @@ rootProject.name = "smithy_code_generation"
 
 include("smoke-tests-codegen")
 include("smoke-tests-codegen-test")
+//include("cpp-sdk-codegen-smoke-tests-all")
 
 pluginManagement {
     repositories {
@@ -31,6 +32,8 @@ dependencyResolutionManagement {
             library("commons-cli", "commons-cli", "commons-cli").version("1.9.0")
             library("commons-io", "commons-io", "commons-io").version("2.16.1")
             library("velocity-engine-core", "org.apache.velocity", "velocity-engine-core").version("2.3")
+            library("velocity-engine-tools","org.apache.velocity", "velocity-tools").version("2.0")
+            library("slf4j","org.slf4j","slf4j-simple").version("1.7.30")
         }
 
          create("test") {

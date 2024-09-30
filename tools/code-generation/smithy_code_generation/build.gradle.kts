@@ -4,7 +4,8 @@ plugins {
 
 repositories {
     mavenLocal()
-    gradlePluginPortal()
+    mavenCentral()
+    //gradlePluginPortal()
 }
 
 allprojects {
@@ -13,6 +14,6 @@ allprojects {
 }
 
 dependencies {
-    implementation("org.apache.velocity:velocity-engine-core:2.3")
-    implementation("software.amazon.smithy:smithy-model:1.51.0")
+    //implementation("org.apache.velocity:velocity-engine-core:2.3")
+    //implementation("software.amazon.smithy:smithy-model:1.51.0")
 }

@@ -23,13 +23,14 @@ dependencies {
     annotationProcessor(codegen.lombok)
     api(codegen.commons.cli)
     api(codegen.commons.io)
-    //api(codegen.velocity.engine.core)
     api(codegen.velocity.engine.core)
-    
+    api(codegen.velocity.engine.tools)    
 
     testImplementation(test.junit.jupiter.api)
     testRuntimeOnly(test.junit.jupiter.engine)
-    //implementation("org.apache.velocity:velocity-engine-core:2.3") 
+    //implementation(codegen.slf4j)
+    //api("org.apache.velocity:velocity-engine-core:2.3") 
+    implementation ("org.freemarker:freemarker:2.3.31")
     implementation("ch.qos.logback:logback-classic:1.4.7") // Adding Logback for SLF4J
 
 }

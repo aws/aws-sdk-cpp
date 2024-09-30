@@ -13,7 +13,7 @@ buildscript {
         classpath(codegen.model)
         classpath(codegen.aws.traits)
         classpath(codegen.smoke.test.traits)
-        classpath(codegen.velocity.engine.core)
+        //classpath(codegen.velocity.engine.core)
     }
 }
 dependencies {
