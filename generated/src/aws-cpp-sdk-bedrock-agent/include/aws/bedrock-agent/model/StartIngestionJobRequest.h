@@ -53,7 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the data source to ingest.</p>
+     * <p>The unique identifier of the data source you want to ingest into your
+     * knowledge base.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
@@ -67,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description of the ingestion job.</p>
+     * <p>A description of the data ingestion job.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -81,8 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the knowledge base to which to add the data
-     * source.</p>
+     * <p>The unique identifier of the knowledge base for the data ingestion job.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }

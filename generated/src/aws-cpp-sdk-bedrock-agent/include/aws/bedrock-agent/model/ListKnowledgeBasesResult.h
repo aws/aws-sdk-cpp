@@ -36,8 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of objects, each of which contains information about a knowledge
-     * base.</p>
+     * <p>A list of knowledge bases with information about each knowledge base.</p>
      */
     inline const Aws::Vector<KnowledgeBaseSummary>& GetKnowledgeBaseSummaries() const{ return m_knowledgeBaseSummaries; }
     inline void SetKnowledgeBaseSummaries(const Aws::Vector<KnowledgeBaseSummary>& value) { m_knowledgeBaseSummaries = value; }

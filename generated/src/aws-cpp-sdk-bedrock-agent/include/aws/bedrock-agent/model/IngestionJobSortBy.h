@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Parameters by which to sort the results.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters of sorting the data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/IngestionJobSortBy">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attribute by which to sort the results.</p>
+     * <p>The name of field or attribute to apply sorting of data.</p>
      */
     inline const IngestionJobSortByAttribute& GetAttribute() const{ return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The order by which to sort the results.</p>
+     * <p>The order for sorting the data.</p>
      */
     inline const SortOrder& GetOrder() const{ return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }

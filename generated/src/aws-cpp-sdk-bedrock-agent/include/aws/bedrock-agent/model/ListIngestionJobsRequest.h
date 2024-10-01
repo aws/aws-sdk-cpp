@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the data source for which to return ingestion
+     * <p>The unique identifier of the data source for the list of data ingestion
      * jobs.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains a definition of a filter for which to filter the results.</p>
+     * <p>Contains information about the filters for filtering the data.</p>
      */
     inline const Aws::Vector<IngestionJobFilter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the knowledge base for which to return ingestion
+     * <p>The unique identifier of the knowledge base for the list of data ingestion
      * jobs.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
@@ -111,7 +111,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains details about how to sort the results.</p>
+     * <p>Contains details about how to sort the data.</p>
      */
     inline const IngestionJobSortBy& GetSortBy() const{ return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }

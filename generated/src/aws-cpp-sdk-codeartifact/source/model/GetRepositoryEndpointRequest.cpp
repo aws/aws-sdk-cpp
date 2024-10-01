@@ -20,7 +20,9 @@ GetRepositoryEndpointRequest::GetRepositoryEndpointRequest() :
     m_domainOwnerHasBeenSet(false),
     m_repositoryHasBeenSet(false),
     m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_endpointType(EndpointType::NOT_SET),
+    m_endpointTypeHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,13 @@ void GetRepositoryEndpointRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << PackageFormatMapper::GetNameForPackageFormat(m_format);
       uri.AddQueryStringParameter("format", ss.str());
+      ss.str("");
+    }
+
+    if(m_endpointTypeHasBeenSet)
+    {
+      ss << EndpointTypeMapper::GetNameForEndpointType(m_endpointType);
+      uri.AddQueryStringParameter("endpointType", ss.str());
       ss.str("");
     }
 

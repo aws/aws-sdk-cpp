@@ -36,8 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of objects, each of which contains information about an ingestion
-     * job.</p>
+     * <p>A list of data ingestion jobs with information about each job.</p>
      */
     inline const Aws::Vector<IngestionJobSummary>& GetIngestionJobSummaries() const{ return m_ingestionJobSummaries; }
     inline void SetIngestionJobSummaries(const Aws::Vector<IngestionJobSummary>& value) { m_ingestionJobSummaries = value; }

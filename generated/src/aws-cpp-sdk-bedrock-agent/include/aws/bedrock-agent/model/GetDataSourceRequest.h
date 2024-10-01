@@ -48,8 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the knowledge base that the data source was added
-     * to.</p>
+     * <p>The unique identifier of the knowledge base for the data source.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }

@@ -95,7 +95,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the knowledge base was last updated.</p>
+     * <p>The time the knowledge base was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }

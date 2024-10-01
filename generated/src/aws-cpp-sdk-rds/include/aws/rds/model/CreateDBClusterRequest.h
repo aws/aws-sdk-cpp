@@ -11,6 +11,7 @@
 #include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/RdsCustomClusterConfiguration.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
+#include <aws/rds/model/ClusterScalabilityType.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
 
@@ -967,6 +968,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the scalability mode of the Aurora DB cluster. When set to
+     * <code>limitless</code>, the cluster operates as an Aurora Limitless Database.
+     * When set to <code>standard</code> (the default), the cluster uses normal DB
+     * instance creation.</p> <p>Valid for: Aurora DB clusters only</p>  <p>You
+     * can't modify this setting after you create the DB cluster.</p> 
+     */
+    inline const ClusterScalabilityType& GetClusterScalabilityType() const{ return m_clusterScalabilityType; }
+    inline bool ClusterScalabilityTypeHasBeenSet() const { return m_clusterScalabilityTypeHasBeenSet; }
+    inline void SetClusterScalabilityType(const ClusterScalabilityType& value) { m_clusterScalabilityTypeHasBeenSet = true; m_clusterScalabilityType = value; }
+    inline void SetClusterScalabilityType(ClusterScalabilityType&& value) { m_clusterScalabilityTypeHasBeenSet = true; m_clusterScalabilityType = std::move(value); }
+    inline CreateDBClusterRequest& WithClusterScalabilityType(const ClusterScalabilityType& value) { SetClusterScalabilityType(value); return *this;}
+    inline CreateDBClusterRequest& WithClusterScalabilityType(ClusterScalabilityType&& value) { SetClusterScalabilityType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetDBSystemId() const{ return m_dBSystemId; }
@@ -1248,6 +1265,9 @@ namespace Model
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
+
+    ClusterScalabilityType m_clusterScalabilityType;
+    bool m_clusterScalabilityTypeHasBeenSet = false;
 
     Aws::String m_dBSystemId;
     bool m_dBSystemIdHasBeenSet = false;

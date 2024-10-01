@@ -24,6 +24,8 @@ namespace Aws
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
+        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
 
 
         IngestionJobStatus GetIngestionJobStatusForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return IngestionJobStatus::FAILED;
+          }
+          else if (hashCode == STOPPING_HASH)
+          {
+            return IngestionJobStatus::STOPPING;
+          }
+          else if (hashCode == STOPPED_HASH)
+          {
+            return IngestionJobStatus::STOPPED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +79,10 @@ namespace Aws
             return "COMPLETE";
           case IngestionJobStatus::FAILED:
             return "FAILED";
+          case IngestionJobStatus::STOPPING:
+            return "STOPPING";
+          case IngestionJobStatus::STOPPED:
+            return "STOPPED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

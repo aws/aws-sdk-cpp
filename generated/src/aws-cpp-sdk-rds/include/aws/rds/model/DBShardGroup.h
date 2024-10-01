@@ -7,7 +7,9 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/ResponseMetadata.h>
+#include <aws/rds/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -179,6 +181,18 @@ namespace Model
 
     ///@{
     
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+    inline DBShardGroup& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+    inline DBShardGroup& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+    inline DBShardGroup& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+    inline DBShardGroup& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
@@ -216,6 +230,9 @@ namespace Model
 
     Aws::String m_dBShardGroupArn;
     bool m_dBShardGroupArnHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
   };

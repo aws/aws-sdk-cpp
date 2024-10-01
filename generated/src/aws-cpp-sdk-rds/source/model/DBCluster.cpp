@@ -124,6 +124,8 @@ DBCluster::DBCluster() :
     m_limitlessDatabaseHasBeenSet(false),
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
+    m_clusterScalabilityType(ClusterScalabilityType::NOT_SET),
+    m_clusterScalabilityTypeHasBeenSet(false),
     m_certificateDetailsHasBeenSet(false),
     m_engineLifecycleSupportHasBeenSet(false)
 {
@@ -675,6 +677,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
       m_storageThroughputHasBeenSet = true;
     }
+    XmlNode clusterScalabilityTypeNode = resultNode.FirstChild("ClusterScalabilityType");
+    if(!clusterScalabilityTypeNode.IsNull())
+    {
+      m_clusterScalabilityType = ClusterScalabilityTypeMapper::GetClusterScalabilityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterScalabilityTypeNode.GetText()).c_str()).c_str());
+      m_clusterScalabilityTypeHasBeenSet = true;
+    }
     XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");
     if(!certificateDetailsNode.IsNull())
     {
@@ -1154,6 +1162,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 
+  if(m_clusterScalabilityTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClusterScalabilityType=" << ClusterScalabilityTypeMapper::GetNameForClusterScalabilityType(m_clusterScalabilityType) << "&";
+  }
+
   if(m_certificateDetailsHasBeenSet)
   {
       Aws::StringStream certificateDetailsLocationAndMemberSs;
@@ -1551,6 +1564,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_storageThroughputHasBeenSet)
   {
       oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+  if(m_clusterScalabilityTypeHasBeenSet)
+  {
+      oStream << location << ".ClusterScalabilityType=" << ClusterScalabilityTypeMapper::GetNameForClusterScalabilityType(m_clusterScalabilityType) << "&";
   }
   if(m_certificateDetailsHasBeenSet)
   {

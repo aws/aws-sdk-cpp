@@ -68,6 +68,7 @@
 #include <aws/bedrock-agent/model/PrepareAgentResult.h>
 #include <aws/bedrock-agent/model/PrepareFlowResult.h>
 #include <aws/bedrock-agent/model/StartIngestionJobResult.h>
+#include <aws/bedrock-agent/model/StopIngestionJobResult.h>
 #include <aws/bedrock-agent/model/TagResourceResult.h>
 #include <aws/bedrock-agent/model/UntagResourceResult.h>
 #include <aws/bedrock-agent/model/UpdateAgentResult.h>
@@ -173,6 +174,7 @@ namespace Aws
       class PrepareAgentRequest;
       class PrepareFlowRequest;
       class StartIngestionJobRequest;
+      class StopIngestionJobRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateAgentRequest;
@@ -237,6 +239,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PrepareAgentResult, BedrockAgentError> PrepareAgentOutcome;
       typedef Aws::Utils::Outcome<PrepareFlowResult, BedrockAgentError> PrepareFlowOutcome;
       typedef Aws::Utils::Outcome<StartIngestionJobResult, BedrockAgentError> StartIngestionJobOutcome;
+      typedef Aws::Utils::Outcome<StopIngestionJobResult, BedrockAgentError> StopIngestionJobOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, BedrockAgentError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, BedrockAgentError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAgentResult, BedrockAgentError> UpdateAgentOutcome;
@@ -301,6 +304,7 @@ namespace Aws
       typedef std::future<PrepareAgentOutcome> PrepareAgentOutcomeCallable;
       typedef std::future<PrepareFlowOutcome> PrepareFlowOutcomeCallable;
       typedef std::future<StartIngestionJobOutcome> StartIngestionJobOutcomeCallable;
+      typedef std::future<StopIngestionJobOutcome> StopIngestionJobOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAgentOutcome> UpdateAgentOutcomeCallable;
@@ -368,6 +372,7 @@ namespace Aws
     typedef std::function<void(const BedrockAgentClient*, const Model::PrepareAgentRequest&, const Model::PrepareAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PrepareAgentResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentClient*, const Model::PrepareFlowRequest&, const Model::PrepareFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PrepareFlowResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentClient*, const Model::StartIngestionJobRequest&, const Model::StartIngestionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartIngestionJobResponseReceivedHandler;
+    typedef std::function<void(const BedrockAgentClient*, const Model::StopIngestionJobRequest&, const Model::StopIngestionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopIngestionJobResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentClient*, const Model::UpdateAgentRequest&, const Model::UpdateAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgentResponseReceivedHandler;

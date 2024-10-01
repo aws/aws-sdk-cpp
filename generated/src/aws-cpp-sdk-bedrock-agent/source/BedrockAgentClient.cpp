@@ -71,6 +71,7 @@
 #include <aws/bedrock-agent/model/PrepareAgentRequest.h>
 #include <aws/bedrock-agent/model/PrepareFlowRequest.h>
 #include <aws/bedrock-agent/model/StartIngestionJobRequest.h>
+#include <aws/bedrock-agent/model/StopIngestionJobRequest.h>
 #include <aws/bedrock-agent/model/TagResourceRequest.h>
 #include <aws/bedrock-agent/model/UntagResourceRequest.h>
 #include <aws/bedrock-agent/model/UpdateAgentRequest.h>
@@ -2019,6 +2020,54 @@ StartIngestionJobOutcome BedrockAgentClient::StartIngestionJob(const StartIngest
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/ingestionjobs/");
       return StartIngestionJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StopIngestionJobOutcome BedrockAgentClient::StopIngestionJob(const StopIngestionJobRequest& request) const
+{
+  AWS_OPERATION_GUARD(StopIngestionJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopIngestionJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataSourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopIngestionJob", "Required field: DataSourceId, is not set");
+    return StopIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
+  }
+  if (!request.IngestionJobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopIngestionJob", "Required field: IngestionJobId, is not set");
+    return StopIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IngestionJobId]", false));
+  }
+  if (!request.KnowledgeBaseIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopIngestionJob", "Required field: KnowledgeBaseId, is not set");
+    return StopIngestionJobOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StopIngestionJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StopIngestionJob, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StopIngestionJob",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StopIngestionJobOutcome>(
+    [&]()-> StopIngestionJobOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopIngestionJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/knowledgebases/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/datasources/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSourceId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/ingestionjobs/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIngestionJobId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
+      return StopIngestionJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

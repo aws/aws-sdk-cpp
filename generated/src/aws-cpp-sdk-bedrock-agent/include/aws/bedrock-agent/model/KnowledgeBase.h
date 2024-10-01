@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the knowledge base was created.</p>
+     * <p>The time the knowledge base was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -184,7 +184,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the knowledge base was last updated.</p>
+     * <p>The time the knowledge base was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
