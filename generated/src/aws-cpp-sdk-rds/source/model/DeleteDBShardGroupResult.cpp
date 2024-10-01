@@ -93,6 +93,17 @@ DeleteDBShardGroupResult& DeleteDBShardGroupResult::operator =(const Aws::Amazon
     {
       m_dBShardGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBShardGroupArnNode.GetText());
     }
+    XmlNode tagListNode = resultNode.FirstChild("TagList");
+    if(!tagListNode.IsNull())
+    {
+      XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      while(!tagListMember.IsNull())
+      {
+        m_tagList.push_back(tagListMember);
+        tagListMember = tagListMember.NextNode("Tag");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

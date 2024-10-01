@@ -20,7 +20,8 @@ CreateDBShardGroupRequest::CreateDBShardGroupRequest() :
     m_minACU(0.0),
     m_minACUHasBeenSet(false),
     m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false)
+    m_publiclyAccessibleHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,23 @@ Aws::String CreateDBShardGroupRequest::SerializePayload() const
   if(m_publiclyAccessibleHasBeenSet)
   {
     ss << "PubliclyAccessible=" << std::boolalpha << m_publiclyAccessible << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    if (m_tags.empty())
+    {
+      ss << "Tags=&";
+    }
+    else
+    {
+      unsigned tagsCount = 1;
+      for(auto& item : m_tags)
+      {
+        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+        tagsCount++;
+      }
+    }
   }
 
   ss << "Version=2014-10-31";

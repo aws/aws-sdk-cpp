@@ -27,8 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines a filter by which to filter the results.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The definition of a filter to filter the data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/IngestionJobFilter">AWS
    * API Reference</a></p>
    */
@@ -43,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attribute by which to filter the results.</p>
+     * <p>The name of field or attribute to apply the filter.</p>
      */
     inline const IngestionJobFilterAttribute& GetAttribute() const{ return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
@@ -55,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The operation to carry out between the attribute and the values.</p>
+     * <p>The operation to apply to the field or attribute.</p>
      */
     inline const IngestionJobFilterOperator& GetOperator() const{ return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
@@ -67,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of values for the attribute.</p>
+     * <p>A list of values that belong to the field or attribute.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

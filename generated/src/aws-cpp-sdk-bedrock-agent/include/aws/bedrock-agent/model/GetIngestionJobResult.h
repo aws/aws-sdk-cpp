@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains details about the ingestion job.</p>
+     * <p>Contains details about the data ingestion job.</p>
      */
     inline const IngestionJob& GetIngestionJob() const{ return m_ingestionJob; }
     inline void SetIngestionJob(const IngestionJob& value) { m_ingestionJob = value; }

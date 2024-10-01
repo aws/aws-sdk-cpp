@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/ResponseMetadata.h>
+#include <aws/rds/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -167,6 +169,17 @@ namespace Model
 
     ///@{
     
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagList = value; }
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
+    inline CreateDBShardGroupResult& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+    inline CreateDBShardGroupResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+    inline CreateDBShardGroupResult& AddTagList(const Tag& value) { m_tagList.push_back(value); return *this; }
+    inline CreateDBShardGroupResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
@@ -194,6 +207,8 @@ namespace Model
     Aws::String m_endpoint;
 
     Aws::String m_dBShardGroupArn;
+
+    Aws::Vector<Tag> m_tagList;
 
     ResponseMetadata m_responseMetadata;
   };

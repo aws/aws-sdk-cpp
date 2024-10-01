@@ -19,6 +19,7 @@
 #include <aws/rds/model/MasterUserSecret.h>
 #include <aws/rds/model/LocalWriteForwardingStatus.h>
 #include <aws/rds/model/LimitlessDatabase.h>
+#include <aws/rds/model/ClusterScalabilityType.h>
 #include <aws/rds/model/CertificateDetails.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterStatusInfo.h>
@@ -1168,6 +1169,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The scalability mode of the Aurora DB cluster. When set to
+     * <code>limitless</code>, the cluster operates as an Aurora Limitless Database.
+     * When set to <code>standard</code> (the default), the cluster uses normal DB
+     * instance creation.</p>
+     */
+    inline const ClusterScalabilityType& GetClusterScalabilityType() const{ return m_clusterScalabilityType; }
+    inline bool ClusterScalabilityTypeHasBeenSet() const { return m_clusterScalabilityTypeHasBeenSet; }
+    inline void SetClusterScalabilityType(const ClusterScalabilityType& value) { m_clusterScalabilityTypeHasBeenSet = true; m_clusterScalabilityType = value; }
+    inline void SetClusterScalabilityType(ClusterScalabilityType&& value) { m_clusterScalabilityTypeHasBeenSet = true; m_clusterScalabilityType = std::move(value); }
+    inline DBCluster& WithClusterScalabilityType(const ClusterScalabilityType& value) { SetClusterScalabilityType(value); return *this;}
+    inline DBCluster& WithClusterScalabilityType(ClusterScalabilityType&& value) { SetClusterScalabilityType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const CertificateDetails& GetCertificateDetails() const{ return m_certificateDetails; }
     inline bool CertificateDetailsHasBeenSet() const { return m_certificateDetailsHasBeenSet; }
@@ -1426,6 +1442,9 @@ namespace Model
 
     int m_storageThroughput;
     bool m_storageThroughputHasBeenSet = false;
+
+    ClusterScalabilityType m_clusterScalabilityType;
+    bool m_clusterScalabilityTypeHasBeenSet = false;
 
     CertificateDetails m_certificateDetails;
     bool m_certificateDetailsHasBeenSet = false;

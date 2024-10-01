@@ -337,14 +337,14 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Creates a knowledge base that contains data sources from which information
-         * can be queried and used by LLMs. To create a knowledge base, you must first set
-         * up your data sources and configure a supported vector store. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html">Set
-         * up your data for ingestion</a>.</p>  <p>If you prefer to let Amazon
-         * Bedrock create and manage a vector store for you in Amazon OpenSearch Service,
-         * use the console. For more information, see <a
+         * <p>Creates a knowledge base. A knowledge base contains your data sources so that
+         * Large Language Models (LLMs) can use your data. To create a knowledge base, you
+         * must first set up your data sources and configure a supported vector store. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowlege-base-prereq.html">Set
+         * up a knowledge base</a>.</p>  <p>If you prefer to let Amazon Bedrock
+         * create and manage a vector store for you in Amazon OpenSearch Service, use the
+         * console. For more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create">Create
          * a knowledge base</a>.</p>  <ul> <li> <p>Provide the <code>name</code> and
          * an optional <code>description</code>.</p> </li> <li> <p>Provide the Amazon
@@ -977,8 +977,9 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Gets information about a ingestion job, in which a data source is added to a
-         * knowledge base.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a data ingestion job. Data sources are ingested into
+         * your knowledge base so that Large Lanaguage Models (LLMs) can use your
+         * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetIngestionJob">AWS
          * API Reference</a></p>
          */
@@ -1298,8 +1299,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Lists the ingestion jobs for a data source and information about each of
-         * them.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the data ingestion jobs for a data source. The list also includes
+         * information about each job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListIngestionJobs">AWS
          * API Reference</a></p>
          */
@@ -1324,8 +1325,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Lists the knowledge bases in an account and information about each of
-         * them.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the knowledge bases in an account. The list also includesinformation
+         * about each knowledge base.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBases">AWS
          * API Reference</a></p>
          */
@@ -1461,8 +1462,9 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Begins an ingestion job, in which a data source is added to a knowledge
-         * base.</p><p><h3>See Also:</h3>   <a
+         * <p>Begins a data ingestion job. Data sources are ingested into your knowledge
+         * base so that Large Language Models (LLMs) can use your data.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/StartIngestionJob">AWS
          * API Reference</a></p>
          */
@@ -1484,6 +1486,33 @@ namespace BedrockAgent
         void StartIngestionJobAsync(const StartIngestionJobRequestT& request, const StartIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentClient::StartIngestionJob, request, handler, context);
+        }
+
+        /**
+         * <p>Stops a currently running data ingestion job. You can send a
+         * <code>StartIngestionJob</code> request again to ingest the rest of your data
+         * when you are ready.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/StopIngestionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopIngestionJobOutcome StopIngestionJob(const Model::StopIngestionJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopIngestionJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopIngestionJobRequestT = Model::StopIngestionJobRequest>
+        Model::StopIngestionJobOutcomeCallable StopIngestionJobCallable(const StopIngestionJobRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::StopIngestionJob, request);
+        }
+
+        /**
+         * An Async wrapper for StopIngestionJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopIngestionJobRequestT = Model::StopIngestionJobRequest>
+        void StopIngestionJobAsync(const StopIngestionJobRequestT& request, const StopIngestionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::StopIngestionJob, request, handler, context);
         }
 
         /**

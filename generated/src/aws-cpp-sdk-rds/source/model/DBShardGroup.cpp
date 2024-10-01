@@ -34,7 +34,8 @@ DBShardGroup::DBShardGroup() :
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_dBShardGroupArnHasBeenSet(false)
+    m_dBShardGroupArnHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,18 @@ DBShardGroup& DBShardGroup::operator =(const XmlNode& xmlNode)
       m_dBShardGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBShardGroupArnNode.GetText());
       m_dBShardGroupArnHasBeenSet = true;
     }
+    XmlNode tagListNode = resultNode.FirstChild("TagList");
+    if(!tagListNode.IsNull())
+    {
+      XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      while(!tagListMember.IsNull())
+      {
+        m_tagList.push_back(tagListMember);
+        tagListMember = tagListMember.NextNode("Tag");
+      }
+
+      m_tagListHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -167,6 +180,17 @@ void DBShardGroup::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".DBShardGroupArn=" << StringUtils::URLEncode(m_dBShardGroupArn.c_str()) << "&";
   }
 
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location << index << locationValue << ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
+  }
+
   Aws::StringStream responseMetadataLocationAndMemberSs;
   responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
@@ -213,6 +237,16 @@ void DBShardGroup::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_dBShardGroupArnHasBeenSet)
   {
       oStream << location << ".DBShardGroupArn=" << StringUtils::URLEncode(m_dBShardGroupArn.c_str()) << "&";
+  }
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location <<  ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

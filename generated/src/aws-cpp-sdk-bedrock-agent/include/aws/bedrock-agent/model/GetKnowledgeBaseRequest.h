@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the knowledge base for which to get information.</p>
+     * <p>The unique identifier of the knowledge base you want to get information
+     * on.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }

@@ -61,7 +61,10 @@ namespace Model
      * Manager (npm) package. </p> </li> <li> <p> <code>pypi</code>: A Python Package
      * Index (PyPI) package. </p> </li> <li> <p> <code>maven</code>: A Maven package
      * that contains compiled code in a distributable format, such as a JAR file. </p>
-     * </li> <li> <p> <code>nuget</code>: A NuGet package. </p> </li> </ul>
+     * </li> <li> <p> <code>nuget</code>: A NuGet package. </p> </li> <li> <p>
+     * <code>generic</code>: A generic package. </p> </li> <li> <p> <code>ruby</code>:
+     * A Ruby package. </p> </li> <li> <p> <code>swift</code>: A Swift package. </p>
+     * </li> <li> <p> <code>cargo</code>: A Cargo package. </p> </li> </ul>
      */
     inline const PackageFormat& GetPackageFormat() const{ return m_packageFormat; }
     inline bool PackageFormatHasBeenSet() const { return m_packageFormatHasBeenSet; }

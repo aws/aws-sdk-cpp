@@ -8,6 +8,7 @@
 #include <aws/codeartifact/CodeArtifactRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codeartifact/model/PackageFormat.h>
+#include <aws/codeartifact/model/EndpointType.h>
 #include <utility>
 
 namespace Aws
@@ -94,6 +95,18 @@ namespace Model
     inline GetRepositoryEndpointRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
     inline GetRepositoryEndpointRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A string that specifies the type of endpoint.</p>
+     */
+    inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
+    inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
+    inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+    inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
+    inline GetRepositoryEndpointRequest& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
+    inline GetRepositoryEndpointRequest& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_domain;
@@ -107,6 +120,9 @@ namespace Model
 
     PackageFormat m_format;
     bool m_formatHasBeenSet = false;
+
+    EndpointType m_endpointType;
+    bool m_endpointTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about an ingestion job, which converts a data source to
-   * embeddings for a vector store in knowledge base.</p> <p>This data type is used
-   * in the following API operations:</p> <ul> <li> <p> <a
+   * <p>Contains details about a data ingestion job. Data sources are ingested into a
+   * knowledge base so that Large Language Models (LLMs) can use your data.</p>
+   * <p>This data type is used in the following API operations:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_StartIngestionJob.html#API_agent_StartIngestionJob_ResponseSyntax">StartIngestionJob
    * response</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetIngestionJob.html#API_agent_GetIngestionJob_ResponseSyntax">GetIngestionJob
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the ingested data source.</p>
+     * <p>The unique identifier of the data source for the data ingestion job.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the ingestion job.</p>
+     * <p>The description of the data ingestion job.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -79,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of reasons that the ingestion job failed.</p>
+     * <p>A list of reasons that the data ingestion job failed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFailureReasons() const{ return m_failureReasons; }
     inline bool FailureReasonsHasBeenSet() const { return m_failureReasonsHasBeenSet; }
@@ -94,7 +94,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the ingestion job.</p>
+     * <p>The unique identifier of the data ingestion job.</p>
      */
     inline const Aws::String& GetIngestionJobId() const{ return m_ingestionJobId; }
     inline bool IngestionJobIdHasBeenSet() const { return m_ingestionJobIdHasBeenSet; }
@@ -108,8 +108,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the knowledge base to which the data source is being
-     * added.</p>
+     * <p>The unique identifier of the knowledge for the data ingestion job.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
@@ -123,7 +122,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the ingestion job started.</p>
+     * <p>The time the data ingestion job started.</p> <p>If you stop a data ingestion
+     * job, the <code>startedAt</code> time is the time the job was started before the
+     * job was stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
@@ -135,7 +136,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains statistics about the ingestion job.</p>
+     * <p>Contains statistics about the data ingestion job.</p>
      */
     inline const IngestionJobStatistics& GetStatistics() const{ return m_statistics; }
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
@@ -147,7 +148,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the ingestion job.</p>
+     * <p>The status of the data ingestion job.</p>
      */
     inline const IngestionJobStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -159,7 +160,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the ingestion job was last updated.</p>
+     * <p>The time the data ingestion job was last updated.</p> <p>If you stop a data
+     * ingestion job, the <code>updatedAt</code> time is the time the job was
+     * stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }

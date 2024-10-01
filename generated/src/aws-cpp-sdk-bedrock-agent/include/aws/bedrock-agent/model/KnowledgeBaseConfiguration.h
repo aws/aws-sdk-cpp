@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about the embeddings configuration of the knowledge
+   * <p>Contains details about the vector embeddings configuration of the knowledge
    * base.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/KnowledgeBaseConfiguration">AWS
    * API Reference</a></p>
@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains details about the embeddings model that'sused to convert the data
-     * source.</p>
+     * <p>Contains details about the model that's used to convert the data source into
+     * vector embeddings.</p>
      */
     inline const VectorKnowledgeBaseConfiguration& GetVectorKnowledgeBaseConfiguration() const{ return m_vectorKnowledgeBaseConfiguration; }
     inline bool VectorKnowledgeBaseConfigurationHasBeenSet() const { return m_vectorKnowledgeBaseConfigurationHasBeenSet; }

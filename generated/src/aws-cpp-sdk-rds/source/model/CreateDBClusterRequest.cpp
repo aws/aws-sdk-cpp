@@ -76,6 +76,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_enableLimitlessDatabaseHasBeenSet(false),
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
+    m_clusterScalabilityType(ClusterScalabilityType::NOT_SET),
+    m_clusterScalabilityTypeHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
     m_manageMasterUserPassword(false),
     m_manageMasterUserPasswordHasBeenSet(false),
@@ -381,6 +383,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_networkTypeHasBeenSet)
   {
     ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
+  }
+
+  if(m_clusterScalabilityTypeHasBeenSet)
+  {
+    ss << "ClusterScalabilityType=" << ClusterScalabilityTypeMapper::GetNameForClusterScalabilityType(m_clusterScalabilityType) << "&";
   }
 
   if(m_dBSystemIdHasBeenSet)

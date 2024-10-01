@@ -19,7 +19,9 @@ namespace Model
     STARTING,
     IN_PROGRESS,
     COMPLETE,
-    FAILED
+    FAILED,
+    STOPPING,
+    STOPPED
   };
 
 namespace IngestionJobStatusMapper

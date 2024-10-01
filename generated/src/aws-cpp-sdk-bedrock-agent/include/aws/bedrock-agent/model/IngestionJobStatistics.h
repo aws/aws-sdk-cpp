@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the statistics for the ingestion job.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the statistics for the data ingestion job.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/IngestionJobStatistics">AWS
    * API Reference</a></p>
    */
@@ -37,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of source documents that was deleted.</p>
+     * <p>The number of source documents that were deleted.</p>
      */
     inline long long GetNumberOfDocumentsDeleted() const{ return m_numberOfDocumentsDeleted; }
     inline bool NumberOfDocumentsDeletedHasBeenSet() const { return m_numberOfDocumentsDeletedHasBeenSet; }
