@@ -25,6 +25,16 @@ public String getName() {
         
         System.out.println("Executing SmithyCodegenPlugin...");
 
+        /*CppBlockWriter blockWriter = new CppBlockWriter( String.format("void newFunction()"),0).
+        addCode("vector<int> test =").
+        openCodeBlock("").
+        addCode("1,2,3").
+        closeCodeBlock().
+        addCode("return test").
+        closeCodeBlock();
+        System.out.println(blockWriter.getCode());
+        */
+        
         /*
         Configuration cfg = new Configuration();
 
@@ -56,6 +66,7 @@ public String getName() {
             SmithyParser parser = new SmithyParser(context.getModel(), context.getSources());
             parser.GenerateSmokeTests();
             //Optional<ObjectNode> settings = context.getSettings().asObjectNode();
+            
 
         }
         catch(Exception e){

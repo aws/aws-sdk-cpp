@@ -84,7 +84,10 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         // functionMap
         //if object is a simple type, then return will just be the value.
         String functionName = new String();
-        String indentPrefix = "\t";
+        
+        //Everything at this level will have the same indentation
+        String indentPrefix = " ".repeat(level);
+
         String varName = key.toLowerCase();
         String functionNameSuffix = convertSnakeToPascal(varName + "_lvl" + level + "_idx" + count);
 
@@ -102,16 +105,15 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         }
         else if (isMap(value) && isMapShape(shape))
         {
-            StringBuilder sb = new StringBuilder();
+            
             functionName = String.format("Get%s()", functionNameSuffix);
             String shapeName = getShapeName(shape);
             //get all immediate map member shapes
             Map<String, SHAPE> fieldShapeMap = getMemberShapes(shape);
-            //define function body
-            sb.append(String.format("%s %s\n{\n", shapeName, functionName));
-
-            //declare variable
-            sb.append(String.format("%s%s %s ;\n",indentPrefix,shapeName,varName));
+            //define function body and declare variable
+            CppBlockWriter blockWriter = new CppBlockWriter( String.format("%s %s", shapeName, functionName), 0)
+                .addCode(String.format("%s %s ;\n",shapeName,varName));
+            
             //iterate over map keys
             Map<String, DATA> map =  getMap(value);
             for (Map.Entry<String, DATA> entry : map.entrySet()) {
@@ -121,7 +123,7 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
                 SHAPE fieldShape = fieldShapeMap.get(mapKey);
 
                 //set elements of the variable
-                sb.append(String.format("%s%s.Set%s( %s );\n", indentPrefix, varName, mapKey,
+                blockWriter.addCode(String.format("%s.Set%s( %s );\n", varName, mapKey,
                         GenerateCppSetters(mapKey,
                                 mapValue,
                                 fieldShape,
@@ -134,13 +136,12 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
 
             //prepare function code and save it for the variable name
             //return only the function name
-            sb.append(String.format("%sreturn %s;\n}\n", indentPrefix,varName));
-
-            functionMap.put(functionName, sb.toString());
+            blockWriter.addCode(String.format("return %s;\n",varName))
+                .closeCodeBlock();
+            functionMap.put(functionName, blockWriter.getCode() );
         }
         else if (isList(value) && isListShape(shape))
         {
-            StringBuilder sb = new StringBuilder();
             functionName = String.format("Get%s()",functionNameSuffix);
 
             //assume objects will be same type
@@ -148,11 +149,10 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
 
             String listType = getShapeName(shape);
 
-            //open function body
-            sb.append(String.format("Aws::Vector<%s> %s\n{\n",listType, functionName));
-
-            //vector setter
-            sb.append(String.format("%sAws::Vector<%s> %s = {",indentPrefix,listType, varName));
+            //open function body and use vector setter
+            CppBlockWriter blockWriter = new CppBlockWriter(String.format("Aws::Vector<%s> %s",listType, functionName), 0).
+                addCode(String.format("Aws::Vector<%s> %s = ",listType, varName))
+                .openCodeBlock("");
 
             //list is assumed to have homogenous type,
             SHAPE listMemberShape = getListMemberShape(shape);
@@ -161,7 +161,7 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
             {
                 DATA element = list.get(i);
 
-                sb.append(
+                blockWriter.addCode(
                         String.format("%s",
                                 GenerateCppSetters(key,
                                         element,
@@ -174,14 +174,12 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
                 );
                 if(i != list.size()-1)
                 {
-                    sb.append(",\n");
+                    blockWriter.addCode(",\n");
                 }
             }
-            sb.append(String.format("%s};\n",indentPrefix));
+            blockWriter.closeCodeBlock().addCode(String.format("return %s;\n",varName)).closeCodeBlock();
 
-            //close function body
-            sb.append(String.format("%sreturn %s;\n}\n", indentPrefix,varName));
-            functionMap.put(functionName, sb.toString());
+            functionMap.put(functionName, blockWriter.getCode());
         }
 
         return functionName;
