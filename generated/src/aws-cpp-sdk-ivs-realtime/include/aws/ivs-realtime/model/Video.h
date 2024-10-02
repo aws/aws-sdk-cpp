@@ -37,9 +37,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Video-resolution width. Note that the maximum value is determined by
-     * <code>width</code> times <code>height</code>, such that the maximum total pixels
-     * is 2073600 (1920x1080 or 1080x1920). Default: 1280.</p>
+     * <p>Video-resolution width. This must be an even number. Note that the maximum
+     * value is determined by <code>width</code> times <code>height</code>, such that
+     * the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 1280.</p>
      */
     inline int GetWidth() const{ return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
@@ -49,9 +49,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Video-resolution height. Note that the maximum value is determined by
-     * <code>width</code> times <code>height</code>, such that the maximum total pixels
-     * is 2073600 (1920x1080 or 1080x1920). Default: 720.</p>
+     * <p>Video-resolution height. This must be an even number. Note that the maximum
+     * value is determined by <code>width</code> times <code>height</code>, such that
+     * the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 720.</p>
      */
     inline int GetHeight() const{ return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }

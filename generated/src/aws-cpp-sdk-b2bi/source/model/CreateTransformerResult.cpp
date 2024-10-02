@@ -18,7 +18,6 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateTransformerResult::CreateTransformerResult() : 
-    m_fileFormat(FileFormat::NOT_SET),
     m_status(TransformerStatus::NOT_SET)
 {
 }
@@ -50,39 +49,39 @@ CreateTransformerResult& CreateTransformerResult::operator =(const Aws::AmazonWe
 
   }
 
-  if(jsonValue.ValueExists("fileFormat"))
-  {
-    m_fileFormat = FileFormatMapper::GetFileFormatForName(jsonValue.GetString("fileFormat"));
-
-  }
-
-  if(jsonValue.ValueExists("mappingTemplate"))
-  {
-    m_mappingTemplate = jsonValue.GetString("mappingTemplate");
-
-  }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TransformerStatusMapper::GetTransformerStatusForName(jsonValue.GetString("status"));
 
   }
 
-  if(jsonValue.ValueExists("ediType"))
-  {
-    m_ediType = jsonValue.GetObject("ediType");
-
-  }
-
-  if(jsonValue.ValueExists("sampleDocument"))
-  {
-    m_sampleDocument = jsonValue.GetString("sampleDocument");
-
-  }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
+
+  }
+
+  if(jsonValue.ValueExists("inputConversion"))
+  {
+    m_inputConversion = jsonValue.GetObject("inputConversion");
+
+  }
+
+  if(jsonValue.ValueExists("mapping"))
+  {
+    m_mapping = jsonValue.GetObject("mapping");
+
+  }
+
+  if(jsonValue.ValueExists("outputConversion"))
+  {
+    m_outputConversion = jsonValue.GetObject("outputConversion");
+
+  }
+
+  if(jsonValue.ValueExists("sampleDocuments"))
+  {
+    m_sampleDocuments = jsonValue.GetObject("sampleDocuments");
 
   }
 

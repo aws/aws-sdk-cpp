@@ -22,6 +22,7 @@ namespace Aws
 
         static const int XML_HASH = HashingUtils::HashString("XML");
         static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static const int NOT_USED_HASH = HashingUtils::HashString("NOT_USED");
 
 
         FileFormat GetFileFormatForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == JSON_HASH)
           {
             return FileFormat::JSON;
+          }
+          else if (hashCode == NOT_USED_HASH)
+          {
+            return FileFormat::NOT_USED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "XML";
           case FileFormat::JSON:
             return "JSON";
+          case FileFormat::NOT_USED:
+            return "NOT_USED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -23,6 +23,8 @@ PutBucketLifecycleConfigurationRequest::PutBucketLifecycleConfigurationRequest()
     m_checksumAlgorithmHasBeenSet(false),
     m_lifecycleConfigurationHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_transitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize::NOT_SET),
+    m_transitionDefaultMinimumObjectSizeHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -98,6 +100,11 @@ Aws::Http::HeaderValueCollection PutBucketLifecycleConfigurationRequest::GetRequ
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
+  }
+
+  if(m_transitionDefaultMinimumObjectSizeHasBeenSet && m_transitionDefaultMinimumObjectSize != TransitionDefaultMinimumObjectSize::NOT_SET)
+  {
+    headers.emplace("x-amz-transition-default-minimum-object-size", TransitionDefaultMinimumObjectSizeMapper::GetNameForTransitionDefaultMinimumObjectSize(m_transitionDefaultMinimumObjectSize));
   }
 
   return headers;

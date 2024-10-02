@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     XML,
-    JSON
+    JSON,
+    NOT_USED
   };
 
 namespace FileFormatMapper

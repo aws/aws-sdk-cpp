@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3-crt/model/TransitionDefaultMinimumObjectSize.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/model/LifecycleRule.h>
 #include <utility>
@@ -48,6 +49,27 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Indicates which default minimum object size behavior is applied to the
+     * lifecycle configuration.</p> <ul> <li> <p> <code>all_storage_classes_128K</code>
+     * - Objects smaller than 128 KB will not transition to any storage class by
+     * default. </p> </li> <li> <p> <code>varies_by_storage_class</code> - Objects
+     * smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier
+     * Deep Archive storage classes. By default, all other storage classes will prevent
+     * transitions smaller than 128 KB. </p> </li> </ul> <p>To customize the minimum
+     * object size for any transition you can add a filter that specifies a custom
+     * <code>ObjectSizeGreaterThan</code> or <code>ObjectSizeLessThan</code> in the
+     * body of your transition rule. Custom filters always take precedence over the
+     * default transition behavior.</p>
+     */
+    inline const TransitionDefaultMinimumObjectSize& GetTransitionDefaultMinimumObjectSize() const{ return m_transitionDefaultMinimumObjectSize; }
+    inline void SetTransitionDefaultMinimumObjectSize(const TransitionDefaultMinimumObjectSize& value) { m_transitionDefaultMinimumObjectSize = value; }
+    inline void SetTransitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize&& value) { m_transitionDefaultMinimumObjectSize = std::move(value); }
+    inline GetBucketLifecycleConfigurationResult& WithTransitionDefaultMinimumObjectSize(const TransitionDefaultMinimumObjectSize& value) { SetTransitionDefaultMinimumObjectSize(value); return *this;}
+    inline GetBucketLifecycleConfigurationResult& WithTransitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize&& value) { SetTransitionDefaultMinimumObjectSize(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -60,6 +82,8 @@ namespace Model
   private:
 
     Aws::Vector<LifecycleRule> m_rules;
+
+    TransitionDefaultMinimumObjectSize m_transitionDefaultMinimumObjectSize;
 
     Aws::String m_requestId;
   };

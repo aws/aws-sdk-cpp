@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/Metadata.h>
 #include <aws/bedrock-agent-runtime/model/PostProcessingParsedResponse.h>
+#include <aws/bedrock-agent-runtime/model/RawResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -40,6 +42,16 @@ namespace Model
 
 
     ///@{
+    
+    inline const Metadata& GetMetadata() const{ return m_metadata; }
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+    inline void SetMetadata(const Metadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+    inline void SetMetadata(Metadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+    inline PostProcessingModelInvocationOutput& WithMetadata(const Metadata& value) { SetMetadata(value); return *this;}
+    inline PostProcessingModelInvocationOutput& WithMetadata(Metadata&& value) { SetMetadata(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Details about the response from the Lambda parsing of the output of the
      * post-processing step.</p>
@@ -50,6 +62,16 @@ namespace Model
     inline void SetParsedResponse(PostProcessingParsedResponse&& value) { m_parsedResponseHasBeenSet = true; m_parsedResponse = std::move(value); }
     inline PostProcessingModelInvocationOutput& WithParsedResponse(const PostProcessingParsedResponse& value) { SetParsedResponse(value); return *this;}
     inline PostProcessingModelInvocationOutput& WithParsedResponse(PostProcessingParsedResponse&& value) { SetParsedResponse(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const RawResponse& GetRawResponse() const{ return m_rawResponse; }
+    inline bool RawResponseHasBeenSet() const { return m_rawResponseHasBeenSet; }
+    inline void SetRawResponse(const RawResponse& value) { m_rawResponseHasBeenSet = true; m_rawResponse = value; }
+    inline void SetRawResponse(RawResponse&& value) { m_rawResponseHasBeenSet = true; m_rawResponse = std::move(value); }
+    inline PostProcessingModelInvocationOutput& WithRawResponse(const RawResponse& value) { SetRawResponse(value); return *this;}
+    inline PostProcessingModelInvocationOutput& WithRawResponse(RawResponse&& value) { SetRawResponse(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,8 +89,14 @@ namespace Model
     ///@}
   private:
 
+    Metadata m_metadata;
+    bool m_metadataHasBeenSet = false;
+
     PostProcessingParsedResponse m_parsedResponse;
     bool m_parsedResponseHasBeenSet = false;
+
+    RawResponse m_rawResponse;
+    bool m_rawResponseHasBeenSet = false;
 
     Aws::String m_traceId;
     bool m_traceIdHasBeenSet = false;

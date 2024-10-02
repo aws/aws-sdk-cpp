@@ -7,6 +7,7 @@
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/b2bi/model/CapabilityOptions.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -129,6 +130,15 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const CapabilityOptions& GetCapabilityOptions() const{ return m_capabilityOptions; }
+    inline void SetCapabilityOptions(const CapabilityOptions& value) { m_capabilityOptions = value; }
+    inline void SetCapabilityOptions(CapabilityOptions&& value) { m_capabilityOptions = std::move(value); }
+    inline GetPartnershipResult& WithCapabilityOptions(const CapabilityOptions& value) { SetCapabilityOptions(value); return *this;}
+    inline GetPartnershipResult& WithCapabilityOptions(CapabilityOptions&& value) { SetCapabilityOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Returns the unique identifier for the partner for this partnership.</p>
      */
@@ -189,6 +199,8 @@ namespace Model
     Aws::String m_phone;
 
     Aws::Vector<Aws::String> m_capabilities;
+
+    CapabilityOptions m_capabilityOptions;
 
     Aws::String m_tradingPartnerId;
 

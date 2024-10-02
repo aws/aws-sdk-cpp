@@ -74,6 +74,12 @@ GetPartnershipResult& GetPartnershipResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("capabilityOptions"))
+  {
+    m_capabilityOptions = jsonValue.GetObject("capabilityOptions");
+
+  }
+
   if(jsonValue.ValueExists("tradingPartnerId"))
   {
     m_tradingPartnerId = jsonValue.GetString("tradingPartnerId");

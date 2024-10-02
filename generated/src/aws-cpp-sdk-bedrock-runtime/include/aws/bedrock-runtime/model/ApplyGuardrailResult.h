@@ -8,6 +8,7 @@
 #include <aws/bedrock-runtime/model/GuardrailUsage.h>
 #include <aws/bedrock-runtime/model/GuardrailAction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-runtime/model/GuardrailCoverage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-runtime/model/GuardrailOutputContent.h>
 #include <aws/bedrock-runtime/model/GuardrailAssessment.h>
@@ -86,6 +87,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The guardrail coverage details in the apply guardrail response.</p>
+     */
+    inline const GuardrailCoverage& GetGuardrailCoverage() const{ return m_guardrailCoverage; }
+    inline void SetGuardrailCoverage(const GuardrailCoverage& value) { m_guardrailCoverage = value; }
+    inline void SetGuardrailCoverage(GuardrailCoverage&& value) { m_guardrailCoverage = std::move(value); }
+    inline ApplyGuardrailResult& WithGuardrailCoverage(const GuardrailCoverage& value) { SetGuardrailCoverage(value); return *this;}
+    inline ApplyGuardrailResult& WithGuardrailCoverage(GuardrailCoverage&& value) { SetGuardrailCoverage(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -104,6 +116,8 @@ namespace Model
     Aws::Vector<GuardrailOutputContent> m_outputs;
 
     Aws::Vector<GuardrailAssessment> m_assessments;
+
+    GuardrailCoverage m_guardrailCoverage;
 
     Aws::String m_requestId;
   };

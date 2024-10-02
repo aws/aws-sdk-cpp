@@ -9,8 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/AppLifecycleManagement.h>
 #include <aws/sagemaker/model/EmrSettings.h>
-#include <aws/sagemaker/model/CustomImage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/CustomImage.h>
 #include <aws/sagemaker/model/CodeRepository.h>
 #include <utility>
 
@@ -127,6 +127,22 @@ namespace Model
     inline JupyterLabAppSettings& WithEmrSettings(const EmrSettings& value) { SetEmrSettings(value); return *this;}
     inline JupyterLabAppSettings& WithEmrSettings(EmrSettings&& value) { SetEmrSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The lifecycle configuration that runs before the default lifecycle
+     * configuration. It can override changes made in the default lifecycle
+     * configuration.</p>
+     */
+    inline const Aws::String& GetBuiltInLifecycleConfigArn() const{ return m_builtInLifecycleConfigArn; }
+    inline bool BuiltInLifecycleConfigArnHasBeenSet() const { return m_builtInLifecycleConfigArnHasBeenSet; }
+    inline void SetBuiltInLifecycleConfigArn(const Aws::String& value) { m_builtInLifecycleConfigArnHasBeenSet = true; m_builtInLifecycleConfigArn = value; }
+    inline void SetBuiltInLifecycleConfigArn(Aws::String&& value) { m_builtInLifecycleConfigArnHasBeenSet = true; m_builtInLifecycleConfigArn = std::move(value); }
+    inline void SetBuiltInLifecycleConfigArn(const char* value) { m_builtInLifecycleConfigArnHasBeenSet = true; m_builtInLifecycleConfigArn.assign(value); }
+    inline JupyterLabAppSettings& WithBuiltInLifecycleConfigArn(const Aws::String& value) { SetBuiltInLifecycleConfigArn(value); return *this;}
+    inline JupyterLabAppSettings& WithBuiltInLifecycleConfigArn(Aws::String&& value) { SetBuiltInLifecycleConfigArn(std::move(value)); return *this;}
+    inline JupyterLabAppSettings& WithBuiltInLifecycleConfigArn(const char* value) { SetBuiltInLifecycleConfigArn(value); return *this;}
+    ///@}
   private:
 
     ResourceSpec m_defaultResourceSpec;
@@ -146,6 +162,9 @@ namespace Model
 
     EmrSettings m_emrSettings;
     bool m_emrSettingsHasBeenSet = false;
+
+    Aws::String m_builtInLifecycleConfigArn;
+    bool m_builtInLifecycleConfigArnHasBeenSet = false;
   };
 
 } // namespace Model

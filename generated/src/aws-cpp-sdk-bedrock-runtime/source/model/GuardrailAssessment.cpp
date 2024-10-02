@@ -23,7 +23,8 @@ GuardrailAssessment::GuardrailAssessment() :
     m_contentPolicyHasBeenSet(false),
     m_wordPolicyHasBeenSet(false),
     m_sensitiveInformationPolicyHasBeenSet(false),
-    m_contextualGroundingPolicyHasBeenSet(false)
+    m_contextualGroundingPolicyHasBeenSet(false),
+    m_invocationMetricsHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,13 @@ GuardrailAssessment& GuardrailAssessment::operator =(JsonView jsonValue)
     m_contextualGroundingPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("invocationMetrics"))
+  {
+    m_invocationMetrics = jsonValue.GetObject("invocationMetrics");
+
+    m_invocationMetricsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +112,12 @@ JsonValue GuardrailAssessment::Jsonize() const
   if(m_contextualGroundingPolicyHasBeenSet)
   {
    payload.WithObject("contextualGroundingPolicy", m_contextualGroundingPolicy.Jsonize());
+
+  }
+
+  if(m_invocationMetricsHasBeenSet)
+  {
+   payload.WithObject("invocationMetrics", m_invocationMetrics.Jsonize());
 
   }
 

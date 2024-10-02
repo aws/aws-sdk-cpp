@@ -18,6 +18,7 @@ CreatePartnershipRequest::CreatePartnershipRequest() :
     m_emailHasBeenSet(false),
     m_phoneHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
+    m_capabilityOptionsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
@@ -60,6 +61,12 @@ Aws::String CreatePartnershipRequest::SerializePayload() const
      capabilitiesJsonList[capabilitiesIndex].AsString(m_capabilities[capabilitiesIndex]);
    }
    payload.WithArray("capabilities", std::move(capabilitiesJsonList));
+
+  }
+
+  if(m_capabilityOptionsHasBeenSet)
+  {
+   payload.WithObject("capabilityOptions", m_capabilityOptions.Jsonize());
 
   }
 

@@ -246,8 +246,9 @@ namespace Model
      * <code>400 Bad Request</code>.</p> <p>For the
      * <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code>
      * <i>algorithm</i> </code> with the supported algorithm from the following list:
-     * </p> <ul> <li> <p>CRC32</p> </li> <li> <p>CRC32C</p> </li> <li> <p>SHA1</p>
-     * </li> <li> <p>SHA256</p> </li> </ul> <p>For more information, see <a
+     * </p> <ul> <li> <p> <code>CRC32</code> </p> </li> <li> <p> <code>CRC32C</code>
+     * </p> </li> <li> <p> <code>SHA1</code> </p> </li> <li> <p> <code>SHA256</code>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If the
      * individual checksum value you provide through
@@ -271,7 +272,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * base64-encoded, 32-bit CRC32 checksum of the object. For more information, see
+     * base64-encoded, 32-bit CRC-32 checksum of the object. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -290,7 +291,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * base64-encoded, 32-bit CRC32C checksum of the object. For more information, see
+     * base64-encoded, 32-bit CRC-32C checksum of the object. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>

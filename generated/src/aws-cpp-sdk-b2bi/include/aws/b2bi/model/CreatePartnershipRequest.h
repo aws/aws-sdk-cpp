@@ -8,6 +8,7 @@
 #include <aws/b2bi/B2BIRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/b2bi/model/CapabilityOptions.h>
 #include <aws/b2bi/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -111,6 +112,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specify the structure that contains the details for the associated
+     * capabilities.</p>
+     */
+    inline const CapabilityOptions& GetCapabilityOptions() const{ return m_capabilityOptions; }
+    inline bool CapabilityOptionsHasBeenSet() const { return m_capabilityOptionsHasBeenSet; }
+    inline void SetCapabilityOptions(const CapabilityOptions& value) { m_capabilityOptionsHasBeenSet = true; m_capabilityOptions = value; }
+    inline void SetCapabilityOptions(CapabilityOptions&& value) { m_capabilityOptionsHasBeenSet = true; m_capabilityOptions = std::move(value); }
+    inline CreatePartnershipRequest& WithCapabilityOptions(const CapabilityOptions& value) { SetCapabilityOptions(value); return *this;}
+    inline CreatePartnershipRequest& WithCapabilityOptions(CapabilityOptions&& value) { SetCapabilityOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -154,6 +168,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_capabilities;
     bool m_capabilitiesHasBeenSet = false;
+
+    CapabilityOptions m_capabilityOptions;
+    bool m_capabilityOptionsHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;

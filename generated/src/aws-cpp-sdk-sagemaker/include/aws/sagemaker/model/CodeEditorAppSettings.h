@@ -8,8 +8,8 @@
 #include <aws/sagemaker/model/ResourceSpec.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/AppLifecycleManagement.h>
-#include <aws/sagemaker/model/CustomImage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/CustomImage.h>
 #include <utility>
 
 namespace Aws
@@ -97,6 +97,22 @@ namespace Model
     inline CodeEditorAppSettings& WithAppLifecycleManagement(const AppLifecycleManagement& value) { SetAppLifecycleManagement(value); return *this;}
     inline CodeEditorAppSettings& WithAppLifecycleManagement(AppLifecycleManagement&& value) { SetAppLifecycleManagement(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The lifecycle configuration that runs before the default lifecycle
+     * configuration. It can override changes made in the default lifecycle
+     * configuration.</p>
+     */
+    inline const Aws::String& GetBuiltInLifecycleConfigArn() const{ return m_builtInLifecycleConfigArn; }
+    inline bool BuiltInLifecycleConfigArnHasBeenSet() const { return m_builtInLifecycleConfigArnHasBeenSet; }
+    inline void SetBuiltInLifecycleConfigArn(const Aws::String& value) { m_builtInLifecycleConfigArnHasBeenSet = true; m_builtInLifecycleConfigArn = value; }
+    inline void SetBuiltInLifecycleConfigArn(Aws::String&& value) { m_builtInLifecycleConfigArnHasBeenSet = true; m_builtInLifecycleConfigArn = std::move(value); }
+    inline void SetBuiltInLifecycleConfigArn(const char* value) { m_builtInLifecycleConfigArnHasBeenSet = true; m_builtInLifecycleConfigArn.assign(value); }
+    inline CodeEditorAppSettings& WithBuiltInLifecycleConfigArn(const Aws::String& value) { SetBuiltInLifecycleConfigArn(value); return *this;}
+    inline CodeEditorAppSettings& WithBuiltInLifecycleConfigArn(Aws::String&& value) { SetBuiltInLifecycleConfigArn(std::move(value)); return *this;}
+    inline CodeEditorAppSettings& WithBuiltInLifecycleConfigArn(const char* value) { SetBuiltInLifecycleConfigArn(value); return *this;}
+    ///@}
   private:
 
     ResourceSpec m_defaultResourceSpec;
@@ -110,6 +126,9 @@ namespace Model
 
     AppLifecycleManagement m_appLifecycleManagement;
     bool m_appLifecycleManagementHasBeenSet = false;
+
+    Aws::String m_builtInLifecycleConfigArn;
+    bool m_builtInLifecycleConfigArnHasBeenSet = false;
   };
 
 } // namespace Model

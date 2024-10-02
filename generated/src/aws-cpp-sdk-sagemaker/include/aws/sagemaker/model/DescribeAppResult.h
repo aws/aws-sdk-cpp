@@ -191,6 +191,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The lifecycle configuration that runs before the default lifecycle
+     * configuration</p>
+     */
+    inline const Aws::String& GetBuiltInLifecycleConfigArn() const{ return m_builtInLifecycleConfigArn; }
+    inline void SetBuiltInLifecycleConfigArn(const Aws::String& value) { m_builtInLifecycleConfigArn = value; }
+    inline void SetBuiltInLifecycleConfigArn(Aws::String&& value) { m_builtInLifecycleConfigArn = std::move(value); }
+    inline void SetBuiltInLifecycleConfigArn(const char* value) { m_builtInLifecycleConfigArn.assign(value); }
+    inline DescribeAppResult& WithBuiltInLifecycleConfigArn(const Aws::String& value) { SetBuiltInLifecycleConfigArn(value); return *this;}
+    inline DescribeAppResult& WithBuiltInLifecycleConfigArn(Aws::String&& value) { SetBuiltInLifecycleConfigArn(std::move(value)); return *this;}
+    inline DescribeAppResult& WithBuiltInLifecycleConfigArn(const char* value) { SetBuiltInLifecycleConfigArn(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -225,6 +239,8 @@ namespace Model
     Aws::String m_failureReason;
 
     ResourceSpec m_resourceSpec;
+
+    Aws::String m_builtInLifecycleConfigArn;
 
     Aws::String m_requestId;
   };

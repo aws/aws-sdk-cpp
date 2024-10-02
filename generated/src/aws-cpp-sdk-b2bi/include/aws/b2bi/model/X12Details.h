@@ -59,8 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Returns the version to use for the specified X12 transaction set. <pre><code>
-     * &lt;/p&gt; </code></pre>
+     * <p>Returns the version to use for the specified X12 transaction set.</p>
      */
     inline const X12Version& GetVersion() const{ return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }

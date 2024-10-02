@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/ChecksumAlgorithm.h>
 #include <aws/s3/model/BucketLifecycleConfiguration.h>
+#include <aws/s3/model/TransitionDefaultMinimumObjectSize.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -114,6 +115,28 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Indicates which default minimum object size behavior is applied to the
+     * lifecycle configuration.</p> <ul> <li> <p> <code>all_storage_classes_128K</code>
+     * - Objects smaller than 128 KB will not transition to any storage class by
+     * default. </p> </li> <li> <p> <code>varies_by_storage_class</code> - Objects
+     * smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier
+     * Deep Archive storage classes. By default, all other storage classes will prevent
+     * transitions smaller than 128 KB. </p> </li> </ul> <p>To customize the minimum
+     * object size for any transition you can add a filter that specifies a custom
+     * <code>ObjectSizeGreaterThan</code> or <code>ObjectSizeLessThan</code> in the
+     * body of your transition rule. Custom filters always take precedence over the
+     * default transition behavior.</p>
+     */
+    inline const TransitionDefaultMinimumObjectSize& GetTransitionDefaultMinimumObjectSize() const{ return m_transitionDefaultMinimumObjectSize; }
+    inline bool TransitionDefaultMinimumObjectSizeHasBeenSet() const { return m_transitionDefaultMinimumObjectSizeHasBeenSet; }
+    inline void SetTransitionDefaultMinimumObjectSize(const TransitionDefaultMinimumObjectSize& value) { m_transitionDefaultMinimumObjectSizeHasBeenSet = true; m_transitionDefaultMinimumObjectSize = value; }
+    inline void SetTransitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize&& value) { m_transitionDefaultMinimumObjectSizeHasBeenSet = true; m_transitionDefaultMinimumObjectSize = std::move(value); }
+    inline PutBucketLifecycleConfigurationRequest& WithTransitionDefaultMinimumObjectSize(const TransitionDefaultMinimumObjectSize& value) { SetTransitionDefaultMinimumObjectSize(value); return *this;}
+    inline PutBucketLifecycleConfigurationRequest& WithTransitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize&& value) { SetTransitionDefaultMinimumObjectSize(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
@@ -142,6 +165,9 @@ namespace Model
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet = false;
+
+    TransitionDefaultMinimumObjectSize m_transitionDefaultMinimumObjectSize;
+    bool m_transitionDefaultMinimumObjectSizeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet = false;

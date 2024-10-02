@@ -53,7 +53,10 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the mapping template for the transformer. This template is used to
-     * map the parsed EDI file using JSONata or XSLT.</p>
+     * map the parsed EDI file using JSONata or XSLT.</p>  <p>This parameter is
+     * available for backwards compatibility. Use the <a
+     * href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_Mapping.html">Mapping</a>
+     * data type instead.</p> 
      */
     inline const Aws::String& GetMappingTemplate() const{ return m_mappingTemplate; }
     inline bool MappingTemplateHasBeenSet() const { return m_mappingTemplateHasBeenSet; }

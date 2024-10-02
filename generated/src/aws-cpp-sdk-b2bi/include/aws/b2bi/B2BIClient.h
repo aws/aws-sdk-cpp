@@ -171,9 +171,62 @@ namespace B2BI
         }
 
         /**
-         * <p>Creates a transformer. A transformer describes how to process the incoming
-         * EDI documents and extract the necessary information to the output
+         * <p>Amazon Web Services B2B Data Interchange uses a mapping template in JSONata
+         * or XSLT format to transform a customer input file into a JSON or XML file that
+         * can be converted to EDI.</p> <p>If you provide a sample EDI file with the same
+         * structure as the EDI files that you wish to generate, then the service can
+         * generate a mapping template. The starter template contains placeholder values
+         * which you can replace with JSONata or XSLT expressions to take data from your
+         * input file and insert it into the JSON or XML file that is used to generate the
+         * EDI.</p> <p>If you do not provide a sample EDI file, then the service can
+         * generate a mapping template based on the EDI settings in the
+         * <code>templateDetails</code> parameter. </p> <p> Currently, we only support
+         * generating a template that can generate the input to produce an Outbound X12 EDI
          * file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateStarterMappingTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateStarterMappingTemplateOutcome CreateStarterMappingTemplate(const Model::CreateStarterMappingTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateStarterMappingTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateStarterMappingTemplateRequestT = Model::CreateStarterMappingTemplateRequest>
+        Model::CreateStarterMappingTemplateOutcomeCallable CreateStarterMappingTemplateCallable(const CreateStarterMappingTemplateRequestT& request) const
+        {
+            return SubmitCallable(&B2BIClient::CreateStarterMappingTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for CreateStarterMappingTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateStarterMappingTemplateRequestT = Model::CreateStarterMappingTemplateRequest>
+        void CreateStarterMappingTemplateAsync(const CreateStarterMappingTemplateRequestT& request, const CreateStarterMappingTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&B2BIClient::CreateStarterMappingTemplate, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a transformer. Amazon Web Services B2B Data Interchange currently
+         * supports two scenarios:</p> <ul> <li> <p> <i>Inbound EDI</i>: the Amazon Web
+         * Services customer receives an EDI file from their trading partner. Amazon Web
+         * Services B2B Data Interchange converts this EDI file into a JSON or XML file
+         * with a service-defined structure. A mapping template provided by the customer,
+         * in JSONata or XSLT format, is optionally applied to this file to produce a JSON
+         * or XML file with the structure the customer requires.</p> </li> <li> <p>
+         * <i>Outbound EDI</i>: the Amazon Web Services customer has a JSON or XML file
+         * containing data that they wish to use in an EDI file. A mapping template,
+         * provided by the customer (in either JSONata or XSLT format) is applied to this
+         * file to generate a JSON or XML file in the service-defined structure. This file
+         * is then converted to an EDI file.</p> </li> </ul>  <p>The following fields
+         * are provided for backwards compatibility only: <code>fileFormat</code>,
+         * <code>mappingTemplate</code>, <code>ediType</code>, and
+         * <code>sampleDocument</code>.</p> <ul> <li> <p>Use the <code>mapping</code> data
+         * type in place of <code>mappingTemplate</code> and <code>fileFormat</code> </p>
+         * </li> <li> <p>Use the <code>sampleDocuments</code> data type in place of
+         * <code>sampleDocument</code> </p> </li> <li> <p>Use either the
+         * <code>inputConversion</code> or <code>outputConversion</code> in place of
+         * <code>ediType</code> </p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateTransformer">AWS
          * API Reference</a></p>
          */
@@ -278,9 +331,10 @@ namespace B2BI
         }
 
         /**
-         * <p>Deletes the specified transformer. A transformer describes how to process the
-         * incoming EDI documents and extract the necessary information to the output
-         * file.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified transformer. A transformer can take an EDI file as
+         * input and transform it into a JSON-or XML-formatted document. Alternatively, a
+         * transformer can take a JSON-or XML-formatted document as input and transform it
+         * into an EDI file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteTransformer">AWS
          * API Reference</a></p>
          */
@@ -388,8 +442,10 @@ namespace B2BI
 
         /**
          * <p>Retrieves the details for the transformer specified by the transformer ID. A
-         * transformer describes how to process the incoming EDI documents and extract the
-         * necessary information to the output file.</p><p><h3>See Also:</h3>   <a
+         * transformer can take an EDI file as input and transform it into a JSON-or
+         * XML-formatted document. Alternatively, a transformer can take a JSON-or
+         * XML-formatted document as input and transform it into an EDI file.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GetTransformer">AWS
          * API Reference</a></p>
          */
@@ -550,9 +606,10 @@ namespace B2BI
         }
 
         /**
-         * <p>Lists the available transformers. A transformer describes how to process the
-         * incoming EDI documents and extract the necessary information to the output
-         * file.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the available transformers. A transformer can take an EDI file as input
+         * and transform it into a JSON-or XML-formatted document. Alternatively, a
+         * transformer can take a JSON-or XML-formatted document as input and transform it
+         * into an EDI file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ListTransformers">AWS
          * API Reference</a></p>
          */
@@ -578,7 +635,7 @@ namespace B2BI
 
         /**
          * <p>Runs a job, using a transformer, to parse input EDI (electronic data
-         * interchange) file into the output structures used by Amazon Web Services B2BI
+         * interchange) file into the output structures used by Amazon Web Services B2B
          * Data Interchange.</p> <p>If you only want to transform EDI (electronic data
          * interchange) documents, you don't need to create profiles, partnerships or
          * capabilities. Just create and configure a transformer, and then run the
@@ -633,6 +690,33 @@ namespace B2BI
         void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&B2BIClient::TagResource, request, handler, context);
+        }
+
+        /**
+         * <p>This operation mimics the latter half of a typical Outbound EDI request. It
+         * takes an input JSON/XML in the B2Bi shape as input, converts it to an X12 EDI
+         * string, and return that string.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestConversion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TestConversionOutcome TestConversion(const Model::TestConversionRequest& request) const;
+
+        /**
+         * A Callable wrapper for TestConversion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TestConversionRequestT = Model::TestConversionRequest>
+        Model::TestConversionOutcomeCallable TestConversionCallable(const TestConversionRequestT& request) const
+        {
+            return SubmitCallable(&B2BIClient::TestConversion, request);
+        }
+
+        /**
+         * An Async wrapper for TestConversion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TestConversionRequestT = Model::TestConversionRequest>
+        void TestConversionAsync(const TestConversionRequestT& request, const TestConversionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&B2BIClient::TestConversion, request, handler, context);
         }
 
         /**
@@ -798,9 +882,10 @@ namespace B2BI
         }
 
         /**
-         * <p>Updates the specified parameters for a transformer. A transformer describes
-         * how to process the incoming EDI documents and extract the necessary information
-         * to the output file.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified parameters for a transformer. A transformer can take an
+         * EDI file as input and transform it into a JSON-or XML-formatted document.
+         * Alternatively, a transformer can take a JSON-or XML-formatted document as input
+         * and transform it into an EDI file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/UpdateTransformer">AWS
          * API Reference</a></p>
          */

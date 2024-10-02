@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdatePartnershipRequest::UpdatePartnershipRequest() : 
     m_partnershipIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
+    m_capabilitiesHasBeenSet(false),
+    m_capabilityOptionsHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String UpdatePartnershipRequest::SerializePayload() const
      capabilitiesJsonList[capabilitiesIndex].AsString(m_capabilities[capabilitiesIndex]);
    }
    payload.WithArray("capabilities", std::move(capabilitiesJsonList));
+
+  }
+
+  if(m_capabilityOptionsHasBeenSet)
+  {
+   payload.WithObject("capabilityOptions", m_capabilityOptions.Jsonize());
 
   }
 

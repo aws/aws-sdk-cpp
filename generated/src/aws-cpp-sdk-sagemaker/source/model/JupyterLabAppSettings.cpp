@@ -24,7 +24,8 @@ JupyterLabAppSettings::JupyterLabAppSettings() :
     m_lifecycleConfigArnsHasBeenSet(false),
     m_codeRepositoriesHasBeenSet(false),
     m_appLifecycleManagementHasBeenSet(false),
-    m_emrSettingsHasBeenSet(false)
+    m_emrSettingsHasBeenSet(false),
+    m_builtInLifecycleConfigArnHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,13 @@ JupyterLabAppSettings& JupyterLabAppSettings::operator =(JsonView jsonValue)
     m_emrSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BuiltInLifecycleConfigArn"))
+  {
+    m_builtInLifecycleConfigArn = jsonValue.GetString("BuiltInLifecycleConfigArn");
+
+    m_builtInLifecycleConfigArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +150,12 @@ JsonValue JupyterLabAppSettings::Jsonize() const
   if(m_emrSettingsHasBeenSet)
   {
    payload.WithObject("EmrSettings", m_emrSettings.Jsonize());
+
+  }
+
+  if(m_builtInLifecycleConfigArnHasBeenSet)
+  {
+   payload.WithString("BuiltInLifecycleConfigArn", m_builtInLifecycleConfigArn);
 
   }
 
