@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
+#include <aws/b2bi/model/CapabilityDirection.h>
 #include <aws/b2bi/model/EdiType.h>
 #include <aws/b2bi/model/S3Location.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -39,6 +40,19 @@ namespace Model
     AWS_B2BI_API EdiConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>Specifies whether this is capability is for inbound or outbound
+     * transformations.</p>
+     */
+    inline const CapabilityDirection& GetCapabilityDirection() const{ return m_capabilityDirection; }
+    inline bool CapabilityDirectionHasBeenSet() const { return m_capabilityDirectionHasBeenSet; }
+    inline void SetCapabilityDirection(const CapabilityDirection& value) { m_capabilityDirectionHasBeenSet = true; m_capabilityDirection = value; }
+    inline void SetCapabilityDirection(CapabilityDirection&& value) { m_capabilityDirectionHasBeenSet = true; m_capabilityDirection = std::move(value); }
+    inline EdiConfiguration& WithCapabilityDirection(const CapabilityDirection& value) { SetCapabilityDirection(value); return *this;}
+    inline EdiConfiguration& WithCapabilityDirection(CapabilityDirection&& value) { SetCapabilityDirection(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -93,6 +107,9 @@ namespace Model
     inline EdiConfiguration& WithTransformerId(const char* value) { SetTransformerId(value); return *this;}
     ///@}
   private:
+
+    CapabilityDirection m_capabilityDirection;
+    bool m_capabilityDirectionHasBeenSet = false;
 
     EdiType m_type;
     bool m_typeHasBeenSet = false;

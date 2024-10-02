@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Specifies the details for the Amazon S3 file location that is being used with
-   * Amazon Web Services B2BI Data Interchange. File locations in Amazon S3 are
+   * Amazon Web Services B2B Data Interchange. File locations in Amazon S3 are
    * identified using a combination of the bucket and key.</p><p><h3>See Also:</h3>  
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/S3Location">AWS
    * API Reference</a></p>

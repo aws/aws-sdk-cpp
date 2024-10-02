@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 CreateSuiteDefinitionRequest::CreateSuiteDefinitionRequest() : 
     m_suiteDefinitionConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -36,6 +38,12 @@ Aws::String CreateSuiteDefinitionRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

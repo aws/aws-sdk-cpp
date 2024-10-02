@@ -8,6 +8,7 @@
 #include <aws/b2bi/B2BIRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/b2bi/model/CapabilityOptions.h>
 #include <utility>
 
 namespace Aws
@@ -77,6 +78,19 @@ namespace Model
     inline UpdatePartnershipRequest& AddCapabilities(Aws::String&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
     inline UpdatePartnershipRequest& AddCapabilities(const char* value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>To update, specify the structure that contains the details for the associated
+     * capabilities.</p>
+     */
+    inline const CapabilityOptions& GetCapabilityOptions() const{ return m_capabilityOptions; }
+    inline bool CapabilityOptionsHasBeenSet() const { return m_capabilityOptionsHasBeenSet; }
+    inline void SetCapabilityOptions(const CapabilityOptions& value) { m_capabilityOptionsHasBeenSet = true; m_capabilityOptions = value; }
+    inline void SetCapabilityOptions(CapabilityOptions&& value) { m_capabilityOptionsHasBeenSet = true; m_capabilityOptions = std::move(value); }
+    inline UpdatePartnershipRequest& WithCapabilityOptions(const CapabilityOptions& value) { SetCapabilityOptions(value); return *this;}
+    inline UpdatePartnershipRequest& WithCapabilityOptions(CapabilityOptions&& value) { SetCapabilityOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_partnershipId;
@@ -87,6 +101,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_capabilities;
     bool m_capabilitiesHasBeenSet = false;
+
+    CapabilityOptions m_capabilityOptions;
+    bool m_capabilityOptionsHasBeenSet = false;
   };
 
 } // namespace Model

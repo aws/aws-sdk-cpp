@@ -19,6 +19,8 @@ namespace Model
 {
 
 EdiConfiguration::EdiConfiguration() : 
+    m_capabilityDirection(CapabilityDirection::NOT_SET),
+    m_capabilityDirectionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_inputLocationHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
@@ -34,6 +36,13 @@ EdiConfiguration::EdiConfiguration(JsonView jsonValue)
 
 EdiConfiguration& EdiConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("capabilityDirection"))
+  {
+    m_capabilityDirection = CapabilityDirectionMapper::GetCapabilityDirectionForName(jsonValue.GetString("capabilityDirection"));
+
+    m_capabilityDirectionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetObject("type");
@@ -68,6 +77,11 @@ EdiConfiguration& EdiConfiguration::operator =(JsonView jsonValue)
 JsonValue EdiConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_capabilityDirectionHasBeenSet)
+  {
+   payload.WithString("capabilityDirection", CapabilityDirectionMapper::GetNameForCapabilityDirection(m_capabilityDirection));
+  }
 
   if(m_typeHasBeenSet)
   {

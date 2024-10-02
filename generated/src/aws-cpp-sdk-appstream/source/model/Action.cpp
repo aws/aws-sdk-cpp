@@ -27,6 +27,7 @@ namespace Aws
         static const int PRINTING_TO_LOCAL_DEVICE_HASH = HashingUtils::HashString("PRINTING_TO_LOCAL_DEVICE");
         static const int DOMAIN_PASSWORD_SIGNIN_HASH = HashingUtils::HashString("DOMAIN_PASSWORD_SIGNIN");
         static const int DOMAIN_SMART_CARD_SIGNIN_HASH = HashingUtils::HashString("DOMAIN_SMART_CARD_SIGNIN");
+        static const int AUTO_TIME_ZONE_REDIRECTION_HASH = HashingUtils::HashString("AUTO_TIME_ZONE_REDIRECTION");
 
 
         Action GetActionForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return Action::DOMAIN_SMART_CARD_SIGNIN;
           }
+          else if (hashCode == AUTO_TIME_ZONE_REDIRECTION_HASH)
+          {
+            return Action::AUTO_TIME_ZONE_REDIRECTION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "DOMAIN_PASSWORD_SIGNIN";
           case Action::DOMAIN_SMART_CARD_SIGNIN:
             return "DOMAIN_SMART_CARD_SIGNIN";
+          case Action::AUTO_TIME_ZONE_REDIRECTION:
+            return "AUTO_TIME_ZONE_REDIRECTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

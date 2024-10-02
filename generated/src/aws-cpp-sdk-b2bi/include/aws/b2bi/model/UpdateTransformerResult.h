@@ -6,10 +6,12 @@
 #pragma once
 #include <aws/b2bi/B2BI_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/b2bi/model/FileFormat.h>
 #include <aws/b2bi/model/TransformerStatus.h>
-#include <aws/b2bi/model/EdiType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/b2bi/model/InputConversion.h>
+#include <aws/b2bi/model/Mapping.h>
+#include <aws/b2bi/model/OutputConversion.h>
+#include <aws/b2bi/model/SampleDocuments.h>
 #include <utility>
 
 namespace Aws
@@ -78,32 +80,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Returns that the currently supported file formats for EDI transformations are
-     * <code>JSON</code> and <code>XML</code>.</p>
-     */
-    inline const FileFormat& GetFileFormat() const{ return m_fileFormat; }
-    inline void SetFileFormat(const FileFormat& value) { m_fileFormat = value; }
-    inline void SetFileFormat(FileFormat&& value) { m_fileFormat = std::move(value); }
-    inline UpdateTransformerResult& WithFileFormat(const FileFormat& value) { SetFileFormat(value); return *this;}
-    inline UpdateTransformerResult& WithFileFormat(FileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Returns the mapping template for the transformer. This template is used to
-     * map the parsed EDI file using JSONata or XSLT.</p>
-     */
-    inline const Aws::String& GetMappingTemplate() const{ return m_mappingTemplate; }
-    inline void SetMappingTemplate(const Aws::String& value) { m_mappingTemplate = value; }
-    inline void SetMappingTemplate(Aws::String&& value) { m_mappingTemplate = std::move(value); }
-    inline void SetMappingTemplate(const char* value) { m_mappingTemplate.assign(value); }
-    inline UpdateTransformerResult& WithMappingTemplate(const Aws::String& value) { SetMappingTemplate(value); return *this;}
-    inline UpdateTransformerResult& WithMappingTemplate(Aws::String&& value) { SetMappingTemplate(std::move(value)); return *this;}
-    inline UpdateTransformerResult& WithMappingTemplate(const char* value) { SetMappingTemplate(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Returns the state of the newly created transformer. The transformer can be
      * either <code>active</code> or <code>inactive</code>. For the transformer to be
      * used in a capability, its status must <code>active</code>.</p>
@@ -113,33 +89,6 @@ namespace Model
     inline void SetStatus(TransformerStatus&& value) { m_status = std::move(value); }
     inline UpdateTransformerResult& WithStatus(const TransformerStatus& value) { SetStatus(value); return *this;}
     inline UpdateTransformerResult& WithStatus(TransformerStatus&& value) { SetStatus(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Returns the details for the EDI standard that is being used for the
-     * transformer. Currently, only X12 is supported. X12 is a set of standards and
-     * corresponding messages that define specific business documents.</p>
-     */
-    inline const EdiType& GetEdiType() const{ return m_ediType; }
-    inline void SetEdiType(const EdiType& value) { m_ediType = value; }
-    inline void SetEdiType(EdiType&& value) { m_ediType = std::move(value); }
-    inline UpdateTransformerResult& WithEdiType(const EdiType& value) { SetEdiType(value); return *this;}
-    inline UpdateTransformerResult& WithEdiType(EdiType&& value) { SetEdiType(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Returns a sample EDI document that is used by a transformer as a guide for
-     * processing the EDI data.</p>
-     */
-    inline const Aws::String& GetSampleDocument() const{ return m_sampleDocument; }
-    inline void SetSampleDocument(const Aws::String& value) { m_sampleDocument = value; }
-    inline void SetSampleDocument(Aws::String&& value) { m_sampleDocument = std::move(value); }
-    inline void SetSampleDocument(const char* value) { m_sampleDocument.assign(value); }
-    inline UpdateTransformerResult& WithSampleDocument(const Aws::String& value) { SetSampleDocument(value); return *this;}
-    inline UpdateTransformerResult& WithSampleDocument(Aws::String&& value) { SetSampleDocument(std::move(value)); return *this;}
-    inline UpdateTransformerResult& WithSampleDocument(const char* value) { SetSampleDocument(value); return *this;}
     ///@}
 
     ///@{
@@ -165,6 +114,54 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Returns the <code>InputConversion</code> object, which contains the format
+     * options for the inbound transformation.</p>
+     */
+    inline const InputConversion& GetInputConversion() const{ return m_inputConversion; }
+    inline void SetInputConversion(const InputConversion& value) { m_inputConversion = value; }
+    inline void SetInputConversion(InputConversion&& value) { m_inputConversion = std::move(value); }
+    inline UpdateTransformerResult& WithInputConversion(const InputConversion& value) { SetInputConversion(value); return *this;}
+    inline UpdateTransformerResult& WithInputConversion(InputConversion&& value) { SetInputConversion(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Returns the structure that contains the mapping template and its language
+     * (either XSLT or JSONATA).</p>
+     */
+    inline const Mapping& GetMapping() const{ return m_mapping; }
+    inline void SetMapping(const Mapping& value) { m_mapping = value; }
+    inline void SetMapping(Mapping&& value) { m_mapping = std::move(value); }
+    inline UpdateTransformerResult& WithMapping(const Mapping& value) { SetMapping(value); return *this;}
+    inline UpdateTransformerResult& WithMapping(Mapping&& value) { SetMapping(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Returns the <code>OutputConversion</code> object, which contains the format
+     * options for the outbound transformation.</p>
+     */
+    inline const OutputConversion& GetOutputConversion() const{ return m_outputConversion; }
+    inline void SetOutputConversion(const OutputConversion& value) { m_outputConversion = value; }
+    inline void SetOutputConversion(OutputConversion&& value) { m_outputConversion = std::move(value); }
+    inline UpdateTransformerResult& WithOutputConversion(const OutputConversion& value) { SetOutputConversion(value); return *this;}
+    inline UpdateTransformerResult& WithOutputConversion(OutputConversion&& value) { SetOutputConversion(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Returns a structure that contains the Amazon S3 bucket and an array of the
+     * corresponding keys used to identify the location for your sample documents.</p>
+     */
+    inline const SampleDocuments& GetSampleDocuments() const{ return m_sampleDocuments; }
+    inline void SetSampleDocuments(const SampleDocuments& value) { m_sampleDocuments = value; }
+    inline void SetSampleDocuments(SampleDocuments&& value) { m_sampleDocuments = std::move(value); }
+    inline UpdateTransformerResult& WithSampleDocuments(const SampleDocuments& value) { SetSampleDocuments(value); return *this;}
+    inline UpdateTransformerResult& WithSampleDocuments(SampleDocuments&& value) { SetSampleDocuments(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -182,19 +179,19 @@ namespace Model
 
     Aws::String m_name;
 
-    FileFormat m_fileFormat;
-
-    Aws::String m_mappingTemplate;
-
     TransformerStatus m_status;
-
-    EdiType m_ediType;
-
-    Aws::String m_sampleDocument;
 
     Aws::Utils::DateTime m_createdAt;
 
     Aws::Utils::DateTime m_modifiedAt;
+
+    InputConversion m_inputConversion;
+
+    Mapping m_mapping;
+
+    OutputConversion m_outputConversion;
+
+    SampleDocuments m_sampleDocuments;
 
     Aws::String m_requestId;
   };

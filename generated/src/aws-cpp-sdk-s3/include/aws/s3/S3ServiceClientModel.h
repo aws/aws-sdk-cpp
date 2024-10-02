@@ -69,6 +69,7 @@
 #include <aws/s3/model/ListObjectsResult.h>
 #include <aws/s3/model/ListObjectsV2Result.h>
 #include <aws/s3/model/ListPartsResult.h>
+#include <aws/s3/model/PutBucketLifecycleConfigurationResult.h>
 #include <aws/s3/model/PutObjectResult.h>
 #include <aws/s3/model/PutObjectAclResult.h>
 #include <aws/s3/model/PutObjectLegalHoldResult.h>
@@ -290,7 +291,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketEncryptionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketIntelligentTieringConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketInventoryConfigurationOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketLifecycleConfigurationOutcome;
+      typedef Aws::Utils::Outcome<PutBucketLifecycleConfigurationResult, S3Error> PutBucketLifecycleConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketLoggingOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketMetricsConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3Error> PutBucketNotificationConfigurationOutcome;

@@ -31,6 +31,9 @@ namespace Aws
         static const int INVALID_PROTOCOL_HASH = HashingUtils::HashString("INVALID_PROTOCOL");
         static const int INVALID_STREAM_KEY_HASH = HashingUtils::HashString("INVALID_STREAM_KEY");
         static const int REUSE_OF_STREAM_KEY_HASH = HashingUtils::HashString("REUSE_OF_STREAM_KEY");
+        static const int B_FRAME_PRESENT_HASH = HashingUtils::HashString("B_FRAME_PRESENT");
+        static const int INVALID_INPUT_HASH = HashingUtils::HashString("INVALID_INPUT");
+        static const int INTERNAL_SERVER_EXCEPTION_HASH = HashingUtils::HashString("INTERNAL_SERVER_EXCEPTION");
 
 
         EventErrorCode GetEventErrorCodeForName(const Aws::String& name)
@@ -80,6 +83,18 @@ namespace Aws
           {
             return EventErrorCode::REUSE_OF_STREAM_KEY;
           }
+          else if (hashCode == B_FRAME_PRESENT_HASH)
+          {
+            return EventErrorCode::B_FRAME_PRESENT;
+          }
+          else if (hashCode == INVALID_INPUT_HASH)
+          {
+            return EventErrorCode::INVALID_INPUT;
+          }
+          else if (hashCode == INTERNAL_SERVER_EXCEPTION_HASH)
+          {
+            return EventErrorCode::INTERNAL_SERVER_EXCEPTION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +133,12 @@ namespace Aws
             return "INVALID_STREAM_KEY";
           case EventErrorCode::REUSE_OF_STREAM_KEY:
             return "REUSE_OF_STREAM_KEY";
+          case EventErrorCode::B_FRAME_PRESENT:
+            return "B_FRAME_PRESENT";
+          case EventErrorCode::INVALID_INPUT:
+            return "INVALID_INPUT";
+          case EventErrorCode::INTERNAL_SERVER_EXCEPTION:
+            return "INTERNAL_SERVER_EXCEPTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -21,6 +21,7 @@
 #include <aws/b2bi/model/CreateCapabilityResult.h>
 #include <aws/b2bi/model/CreatePartnershipResult.h>
 #include <aws/b2bi/model/CreateProfileResult.h>
+#include <aws/b2bi/model/CreateStarterMappingTemplateResult.h>
 #include <aws/b2bi/model/CreateTransformerResult.h>
 #include <aws/b2bi/model/GetCapabilityResult.h>
 #include <aws/b2bi/model/GetPartnershipResult.h>
@@ -33,6 +34,7 @@
 #include <aws/b2bi/model/ListTagsForResourceResult.h>
 #include <aws/b2bi/model/ListTransformersResult.h>
 #include <aws/b2bi/model/StartTransformerJobResult.h>
+#include <aws/b2bi/model/TestConversionResult.h>
 #include <aws/b2bi/model/TestMappingResult.h>
 #include <aws/b2bi/model/TestParsingResult.h>
 #include <aws/b2bi/model/UpdateCapabilityResult.h>
@@ -87,6 +89,7 @@ namespace Aws
       class CreateCapabilityRequest;
       class CreatePartnershipRequest;
       class CreateProfileRequest;
+      class CreateStarterMappingTemplateRequest;
       class CreateTransformerRequest;
       class DeleteCapabilityRequest;
       class DeletePartnershipRequest;
@@ -104,6 +107,7 @@ namespace Aws
       class ListTransformersRequest;
       class StartTransformerJobRequest;
       class TagResourceRequest;
+      class TestConversionRequest;
       class TestMappingRequest;
       class TestParsingRequest;
       class UntagResourceRequest;
@@ -117,6 +121,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateCapabilityResult, B2BIError> CreateCapabilityOutcome;
       typedef Aws::Utils::Outcome<CreatePartnershipResult, B2BIError> CreatePartnershipOutcome;
       typedef Aws::Utils::Outcome<CreateProfileResult, B2BIError> CreateProfileOutcome;
+      typedef Aws::Utils::Outcome<CreateStarterMappingTemplateResult, B2BIError> CreateStarterMappingTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateTransformerResult, B2BIError> CreateTransformerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, B2BIError> DeleteCapabilityOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, B2BIError> DeletePartnershipOutcome;
@@ -134,6 +139,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTransformersResult, B2BIError> ListTransformersOutcome;
       typedef Aws::Utils::Outcome<StartTransformerJobResult, B2BIError> StartTransformerJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, B2BIError> TagResourceOutcome;
+      typedef Aws::Utils::Outcome<TestConversionResult, B2BIError> TestConversionOutcome;
       typedef Aws::Utils::Outcome<TestMappingResult, B2BIError> TestMappingOutcome;
       typedef Aws::Utils::Outcome<TestParsingResult, B2BIError> TestParsingOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, B2BIError> UntagResourceOutcome;
@@ -147,6 +153,7 @@ namespace Aws
       typedef std::future<CreateCapabilityOutcome> CreateCapabilityOutcomeCallable;
       typedef std::future<CreatePartnershipOutcome> CreatePartnershipOutcomeCallable;
       typedef std::future<CreateProfileOutcome> CreateProfileOutcomeCallable;
+      typedef std::future<CreateStarterMappingTemplateOutcome> CreateStarterMappingTemplateOutcomeCallable;
       typedef std::future<CreateTransformerOutcome> CreateTransformerOutcomeCallable;
       typedef std::future<DeleteCapabilityOutcome> DeleteCapabilityOutcomeCallable;
       typedef std::future<DeletePartnershipOutcome> DeletePartnershipOutcomeCallable;
@@ -164,6 +171,7 @@ namespace Aws
       typedef std::future<ListTransformersOutcome> ListTransformersOutcomeCallable;
       typedef std::future<StartTransformerJobOutcome> StartTransformerJobOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+      typedef std::future<TestConversionOutcome> TestConversionOutcomeCallable;
       typedef std::future<TestMappingOutcome> TestMappingOutcomeCallable;
       typedef std::future<TestParsingOutcome> TestParsingOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -180,6 +188,7 @@ namespace Aws
     typedef std::function<void(const B2BIClient*, const Model::CreateCapabilityRequest&, const Model::CreateCapabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapabilityResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::CreatePartnershipRequest&, const Model::CreatePartnershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePartnershipResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::CreateProfileRequest&, const Model::CreateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProfileResponseReceivedHandler;
+    typedef std::function<void(const B2BIClient*, const Model::CreateStarterMappingTemplateRequest&, const Model::CreateStarterMappingTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStarterMappingTemplateResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::CreateTransformerRequest&, const Model::CreateTransformerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransformerResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::DeleteCapabilityRequest&, const Model::DeleteCapabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCapabilityResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::DeletePartnershipRequest&, const Model::DeletePartnershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePartnershipResponseReceivedHandler;
@@ -197,6 +206,7 @@ namespace Aws
     typedef std::function<void(const B2BIClient*, const Model::ListTransformersRequest&, const Model::ListTransformersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTransformersResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::StartTransformerJobRequest&, const Model::StartTransformerJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTransformerJobResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const B2BIClient*, const Model::TestConversionRequest&, const Model::TestConversionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestConversionResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::TestMappingRequest&, const Model::TestMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestMappingResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::TestParsingRequest&, const Model::TestParsingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestParsingResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

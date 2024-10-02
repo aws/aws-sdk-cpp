@@ -243,7 +243,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This specifies the
-     * base64-encoded, 32-bit CRC32 checksum of the object returned by the Object
+     * base64-encoded, 32-bit CRC-32 checksum of the object returned by the Object
      * Lambda function. This may not match the checksum for the object stored in Amazon
      * S3. Amazon S3 will perform validation of the checksum values only when the
      * original <code>GetObject</code> request required checksum validation. For more
@@ -267,7 +267,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This specifies the
-     * base64-encoded, 32-bit CRC32C checksum of the object returned by the Object
+     * base64-encoded, 32-bit CRC-32C checksum of the object returned by the Object
      * Lambda function. This may not match the checksum for the object stored in Amazon
      * S3. Amazon S3 will perform validation of the checksum values only when the
      * original <code>GetObject</code> request required checksum validation. For more

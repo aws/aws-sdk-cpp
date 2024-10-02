@@ -22,7 +22,8 @@ CodeEditorAppSettings::CodeEditorAppSettings() :
     m_defaultResourceSpecHasBeenSet(false),
     m_customImagesHasBeenSet(false),
     m_lifecycleConfigArnsHasBeenSet(false),
-    m_appLifecycleManagementHasBeenSet(false)
+    m_appLifecycleManagementHasBeenSet(false),
+    m_builtInLifecycleConfigArnHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,13 @@ CodeEditorAppSettings& CodeEditorAppSettings::operator =(JsonView jsonValue)
     m_appLifecycleManagementHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BuiltInLifecycleConfigArn"))
+  {
+    m_builtInLifecycleConfigArn = jsonValue.GetString("BuiltInLifecycleConfigArn");
+
+    m_builtInLifecycleConfigArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -106,6 +114,12 @@ JsonValue CodeEditorAppSettings::Jsonize() const
   if(m_appLifecycleManagementHasBeenSet)
   {
    payload.WithObject("AppLifecycleManagement", m_appLifecycleManagement.Jsonize());
+
+  }
+
+  if(m_builtInLifecycleConfigArnHasBeenSet)
+  {
+   payload.WithString("BuiltInLifecycleConfigArn", m_builtInLifecycleConfigArn);
 
   }
 

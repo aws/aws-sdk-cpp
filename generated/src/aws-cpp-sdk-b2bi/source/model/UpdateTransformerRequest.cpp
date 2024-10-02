@@ -15,13 +15,12 @@ using namespace Aws::Utils;
 UpdateTransformerRequest::UpdateTransformerRequest() : 
     m_transformerIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_fileFormat(FileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_mappingTemplateHasBeenSet(false),
     m_status(TransformerStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_ediTypeHasBeenSet(false),
-    m_sampleDocumentHasBeenSet(false)
+    m_inputConversionHasBeenSet(false),
+    m_mappingHasBeenSet(false),
+    m_outputConversionHasBeenSet(false),
+    m_sampleDocumentsHasBeenSet(false)
 {
 }
 
@@ -41,31 +40,32 @@ Aws::String UpdateTransformerRequest::SerializePayload() const
 
   }
 
-  if(m_fileFormatHasBeenSet)
-  {
-   payload.WithString("fileFormat", FileFormatMapper::GetNameForFileFormat(m_fileFormat));
-  }
-
-  if(m_mappingTemplateHasBeenSet)
-  {
-   payload.WithString("mappingTemplate", m_mappingTemplate);
-
-  }
-
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", TransformerStatusMapper::GetNameForTransformerStatus(m_status));
   }
 
-  if(m_ediTypeHasBeenSet)
+  if(m_inputConversionHasBeenSet)
   {
-   payload.WithObject("ediType", m_ediType.Jsonize());
+   payload.WithObject("inputConversion", m_inputConversion.Jsonize());
 
   }
 
-  if(m_sampleDocumentHasBeenSet)
+  if(m_mappingHasBeenSet)
   {
-   payload.WithString("sampleDocument", m_sampleDocument);
+   payload.WithObject("mapping", m_mapping.Jsonize());
+
+  }
+
+  if(m_outputConversionHasBeenSet)
+  {
+   payload.WithObject("outputConversion", m_outputConversion.Jsonize());
+
+  }
+
+  if(m_sampleDocumentsHasBeenSet)
+  {
+   payload.WithObject("sampleDocuments", m_sampleDocuments.Jsonize());
 
   }
 

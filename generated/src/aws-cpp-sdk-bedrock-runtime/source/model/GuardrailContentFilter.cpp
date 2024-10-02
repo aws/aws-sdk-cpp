@@ -23,6 +23,8 @@ GuardrailContentFilter::GuardrailContentFilter() :
     m_typeHasBeenSet(false),
     m_confidence(GuardrailContentFilterConfidence::NOT_SET),
     m_confidenceHasBeenSet(false),
+    m_filterStrength(GuardrailContentFilterStrength::NOT_SET),
+    m_filterStrengthHasBeenSet(false),
     m_action(GuardrailContentPolicyAction::NOT_SET),
     m_actionHasBeenSet(false)
 {
@@ -50,6 +52,13 @@ GuardrailContentFilter& GuardrailContentFilter::operator =(JsonView jsonValue)
     m_confidenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("filterStrength"))
+  {
+    m_filterStrength = GuardrailContentFilterStrengthMapper::GetGuardrailContentFilterStrengthForName(jsonValue.GetString("filterStrength"));
+
+    m_filterStrengthHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("action"))
   {
     m_action = GuardrailContentPolicyActionMapper::GetGuardrailContentPolicyActionForName(jsonValue.GetString("action"));
@@ -72,6 +81,11 @@ JsonValue GuardrailContentFilter::Jsonize() const
   if(m_confidenceHasBeenSet)
   {
    payload.WithString("confidence", GuardrailContentFilterConfidenceMapper::GetNameForGuardrailContentFilterConfidence(m_confidence));
+  }
+
+  if(m_filterStrengthHasBeenSet)
+  {
+   payload.WithString("filterStrength", GuardrailContentFilterStrengthMapper::GetNameForGuardrailContentFilterStrength(m_filterStrength));
   }
 
   if(m_actionHasBeenSet)

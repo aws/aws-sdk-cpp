@@ -45,8 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
+     * <p>The configuration for the external source wrapper object in the
+     * <code>retrieveAndGenerate</code> function.</p>
      */
     inline const ExternalSourcesRetrieveAndGenerateConfiguration& GetExternalSourcesConfiguration() const{ return m_externalSourcesConfiguration; }
     inline bool ExternalSourcesConfigurationHasBeenSet() const { return m_externalSourcesConfigurationHasBeenSet; }
@@ -58,7 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains details about the resource being queried.</p>
+     * <p>Contains details about the knowledge base for retrieving information and
+     * generating responses.</p>
      */
     inline const KnowledgeBaseRetrieveAndGenerateConfiguration& GetKnowledgeBaseConfiguration() const{ return m_knowledgeBaseConfiguration; }
     inline bool KnowledgeBaseConfigurationHasBeenSet() const { return m_knowledgeBaseConfigurationHasBeenSet; }
@@ -70,7 +71,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of resource that is queried by the request.</p>
+     * <p>The type of resource that contains your data for retrieving information and
+     * generating responses.</p> <p>If you choose ot use <code>EXTERNAL_SOURCES</code>,
+     * then currently only Claude 3 Sonnet models for knowledge bases are
+     * supported.</p>
      */
     inline const RetrieveAndGenerateType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

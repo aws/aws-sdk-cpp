@@ -7,6 +7,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/GuardrailContentFilterType.h>
 #include <aws/bedrock-runtime/model/GuardrailContentFilterConfidence.h>
+#include <aws/bedrock-runtime/model/GuardrailContentFilterStrength.h>
 #include <aws/bedrock-runtime/model/GuardrailContentPolicyAction.h>
 #include <utility>
 
@@ -65,6 +66,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The filter strength setting for the guardrail content filter.</p>
+     */
+    inline const GuardrailContentFilterStrength& GetFilterStrength() const{ return m_filterStrength; }
+    inline bool FilterStrengthHasBeenSet() const { return m_filterStrengthHasBeenSet; }
+    inline void SetFilterStrength(const GuardrailContentFilterStrength& value) { m_filterStrengthHasBeenSet = true; m_filterStrength = value; }
+    inline void SetFilterStrength(GuardrailContentFilterStrength&& value) { m_filterStrengthHasBeenSet = true; m_filterStrength = std::move(value); }
+    inline GuardrailContentFilter& WithFilterStrength(const GuardrailContentFilterStrength& value) { SetFilterStrength(value); return *this;}
+    inline GuardrailContentFilter& WithFilterStrength(GuardrailContentFilterStrength&& value) { SetFilterStrength(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The guardrail action.</p>
      */
     inline const GuardrailContentPolicyAction& GetAction() const{ return m_action; }
@@ -81,6 +94,9 @@ namespace Model
 
     GuardrailContentFilterConfidence m_confidence;
     bool m_confidenceHasBeenSet = false;
+
+    GuardrailContentFilterStrength m_filterStrength;
+    bool m_filterStrengthHasBeenSet = false;
 
     GuardrailContentPolicyAction m_action;
     bool m_actionHasBeenSet = false;

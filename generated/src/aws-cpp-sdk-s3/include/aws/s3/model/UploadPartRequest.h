@@ -148,7 +148,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * base64-encoded, 32-bit CRC32 checksum of the object. For more information, see
+     * base64-encoded, 32-bit CRC-32 checksum of the object. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -167,7 +167,7 @@ namespace Model
     /**
      * <p>This header can be used as a data integrity check to verify that the data
      * received is the same data that was originally sent. This header specifies the
-     * base64-encoded, 32-bit CRC32C checksum of the object. For more information, see
+     * base64-encoded, 32-bit CRC-32C checksum of the object. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>

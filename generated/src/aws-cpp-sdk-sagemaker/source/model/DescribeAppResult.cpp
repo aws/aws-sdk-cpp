@@ -104,6 +104,12 @@ DescribeAppResult& DescribeAppResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("BuiltInLifecycleConfigArn"))
+  {
+    m_builtInLifecycleConfigArn = jsonValue.GetString("BuiltInLifecycleConfigArn");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

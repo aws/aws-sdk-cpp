@@ -61,6 +61,12 @@ ApplyGuardrailResult& ApplyGuardrailResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("guardrailCoverage"))
+  {
+    m_guardrailCoverage = jsonValue.GetObject("guardrailCoverage");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

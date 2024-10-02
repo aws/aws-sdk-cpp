@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -64,6 +65,22 @@ namespace Model
     inline CreateSuiteDefinitionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline CreateSuiteDefinitionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The client token for the test suite definition creation. This token is used
+     * for tracking test suite definition creation using retries and obtaining its
+     * status. This parameter is optional.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline CreateSuiteDefinitionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline CreateSuiteDefinitionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline CreateSuiteDefinitionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
   private:
 
     SuiteDefinitionConfiguration m_suiteDefinitionConfiguration;
@@ -71,6 +88,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

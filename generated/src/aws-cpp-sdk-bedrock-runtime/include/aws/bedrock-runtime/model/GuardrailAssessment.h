@@ -10,6 +10,7 @@
 #include <aws/bedrock-runtime/model/GuardrailWordPolicyAssessment.h>
 #include <aws/bedrock-runtime/model/GuardrailSensitiveInformationPolicyAssessment.h>
 #include <aws/bedrock-runtime/model/GuardrailContextualGroundingPolicyAssessment.h>
+#include <aws/bedrock-runtime/model/GuardrailInvocationMetrics.h>
 #include <utility>
 
 namespace Aws
@@ -101,6 +102,18 @@ namespace Model
     inline GuardrailAssessment& WithContextualGroundingPolicy(const GuardrailContextualGroundingPolicyAssessment& value) { SetContextualGroundingPolicy(value); return *this;}
     inline GuardrailAssessment& WithContextualGroundingPolicy(GuardrailContextualGroundingPolicyAssessment&& value) { SetContextualGroundingPolicy(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The invocation metrics for the guardrail assessment.</p>
+     */
+    inline const GuardrailInvocationMetrics& GetInvocationMetrics() const{ return m_invocationMetrics; }
+    inline bool InvocationMetricsHasBeenSet() const { return m_invocationMetricsHasBeenSet; }
+    inline void SetInvocationMetrics(const GuardrailInvocationMetrics& value) { m_invocationMetricsHasBeenSet = true; m_invocationMetrics = value; }
+    inline void SetInvocationMetrics(GuardrailInvocationMetrics&& value) { m_invocationMetricsHasBeenSet = true; m_invocationMetrics = std::move(value); }
+    inline GuardrailAssessment& WithInvocationMetrics(const GuardrailInvocationMetrics& value) { SetInvocationMetrics(value); return *this;}
+    inline GuardrailAssessment& WithInvocationMetrics(GuardrailInvocationMetrics&& value) { SetInvocationMetrics(std::move(value)); return *this;}
+    ///@}
   private:
 
     GuardrailTopicPolicyAssessment m_topicPolicy;
@@ -117,6 +130,9 @@ namespace Model
 
     GuardrailContextualGroundingPolicyAssessment m_contextualGroundingPolicy;
     bool m_contextualGroundingPolicyHasBeenSet = false;
+
+    GuardrailInvocationMetrics m_invocationMetrics;
+    bool m_invocationMetricsHasBeenSet = false;
   };
 
 } // namespace Model

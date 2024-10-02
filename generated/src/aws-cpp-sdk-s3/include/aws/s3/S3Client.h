@@ -3465,6 +3465,10 @@ namespace Aws
          * (or version) permission for this operation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
          * resources, and condition keys for Amazon S3</a> in the <i>Amazon S3 User
+         * Guide</i>. For more information about the permissions to S3 API operations by S3
+         * resource types, see <a
+         * href="/AmazonS3/latest/userguide/using-with-s3-policy-actions.html">Required
+         * permissions for Amazon S3 API operations</a> in the <i>Amazon S3 User
          * Guide</i>.</p> <p>If the object you request doesn't exist, the error that Amazon
          * S3 returns depends on whether you also have the <code>s3:ListBucket</code>
          * permission.</p> <ul> <li> <p>If you have the <code>s3:ListBucket</code>
@@ -4810,27 +4814,28 @@ namespace Aws
          * they must be included in the new lifecycle configuration. For information about
          * lifecycle configuration, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
-         * your storage lifecycle</a>.</p>  <p>Bucket lifecycle configuration now
-         * supports specifying a lifecycle rule using an object key name prefix, one or
-         * more object tags, object size, or any combination of these. Accordingly, this
-         * section describes the latest API. The previous version of the API supported
-         * filtering based only on an object key name prefix, which is supported for
-         * backward compatibility. For the related API description, see <a
+         * your storage lifecycle</a>.</p> <dl> <dt>Rules</dt> <dd> <p>You specify the
+         * lifecycle configuration in your request body. The lifecycle configuration is
+         * specified as XML consisting of one or more rules. An Amazon S3 Lifecycle
+         * configuration can have up to 1,000 rules. This limit is not adjustable.</p>
+         * <p>Bucket lifecycle configuration supports specifying a lifecycle rule using an
+         * object key name prefix, one or more object tags, object size, or any combination
+         * of these. Accordingly, this section describes the latest API. The previous
+         * version of the API supported filtering based only on an object key name prefix,
+         * which is supported for backward compatibility. For the related API description,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
-         *  <dl> <dt>Rules</dt> <dd> <p>You specify the lifecycle configuration in
-         * your request body. The lifecycle configuration is specified as XML consisting of
-         * one or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000
-         * rules. This limit is not adjustable. Each rule consists of the following:</p>
-         * <ul> <li> <p>A filter identifying a subset of objects to which the rule applies.
-         * The filter can be based on a key name prefix, object tags, object size, or any
-         * combination of these.</p> </li> <li> <p>A status indicating whether the rule is
-         * in effect.</p> </li> <li> <p>One or more lifecycle transition and expiration
-         * actions that you want Amazon S3 to perform on the objects identified by the
-         * filter. If the state of your bucket is versioning-enabled or
-         * versioning-suspended, you can have many versions of the same object (one current
-         * version and zero or more noncurrent versions). Amazon S3 provides predefined
-         * actions that you can specify for current and noncurrent object versions.</p>
-         * </li> </ul> <p>For more information, see <a
+         * <p>A lifecycle rule consists of the following:</p> <ul> <li> <p>A filter
+         * identifying a subset of objects to which the rule applies. The filter can be
+         * based on a key name prefix, object tags, object size, or any combination of
+         * these.</p> </li> <li> <p>A status indicating whether the rule is in effect.</p>
+         * </li> <li> <p>One or more lifecycle transition and expiration actions that you
+         * want Amazon S3 to perform on the objects identified by the filter. If the state
+         * of your bucket is versioning-enabled or versioning-suspended, you can have many
+         * versions of the same object (one current version and zero or more noncurrent
+         * versions). Amazon S3 provides predefined actions that you can specify for
+         * current and noncurrent object versions.</p> </li> </ul> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
          * Lifecycle Management</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle

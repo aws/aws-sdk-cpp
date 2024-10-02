@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p>The configurations of the external source wrapper object in the
-   * retrieveAndGenerate function.</p><p><h3>See Also:</h3>   <a
+   * <code>retrieveAndGenerate</code> function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ExternalSourcesRetrieveAndGenerateConfiguration">AWS
    * API Reference</a></p>
    */
@@ -44,7 +44,7 @@ namespace Model
     ///@{
     /**
      * <p>The prompt used with the external source wrapper object with the
-     * retrieveAndGenerate function.</p>
+     * <code>retrieveAndGenerate</code> function.</p>
      */
     inline const ExternalSourcesGenerationConfiguration& GetGenerationConfiguration() const{ return m_generationConfiguration; }
     inline bool GenerationConfigurationHasBeenSet() const { return m_generationConfigurationHasBeenSet; }
@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The modelArn used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
+     * <p>The model Amazon Resource Name (ARN) for the external source wrapper object
+     * in the <code>retrieveAndGenerate</code> function.</p>
      */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
@@ -71,8 +71,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The document used with the external source wrapper object in the
-     * retrieveAndGenerate function.</p>
+     * <p>The document for the external source wrapper object in the
+     * <code>retrieveAndGenerate</code> function.</p>
      */
     inline const Aws::Vector<ExternalSource>& GetSources() const{ return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }

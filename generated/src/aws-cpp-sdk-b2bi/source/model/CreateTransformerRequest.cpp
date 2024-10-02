@@ -14,14 +14,13 @@ using namespace Aws::Utils;
 
 CreateTransformerRequest::CreateTransformerRequest() : 
     m_nameHasBeenSet(false),
-    m_fileFormat(FileFormat::NOT_SET),
-    m_fileFormatHasBeenSet(false),
-    m_mappingTemplateHasBeenSet(false),
-    m_ediTypeHasBeenSet(false),
-    m_sampleDocumentHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_inputConversionHasBeenSet(false),
+    m_mappingHasBeenSet(false),
+    m_outputConversionHasBeenSet(false),
+    m_sampleDocumentsHasBeenSet(false)
 {
 }
 
@@ -32,29 +31,6 @@ Aws::String CreateTransformerRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
-
-  }
-
-  if(m_fileFormatHasBeenSet)
-  {
-   payload.WithString("fileFormat", FileFormatMapper::GetNameForFileFormat(m_fileFormat));
-  }
-
-  if(m_mappingTemplateHasBeenSet)
-  {
-   payload.WithString("mappingTemplate", m_mappingTemplate);
-
-  }
-
-  if(m_ediTypeHasBeenSet)
-  {
-   payload.WithObject("ediType", m_ediType.Jsonize());
-
-  }
-
-  if(m_sampleDocumentHasBeenSet)
-  {
-   payload.WithString("sampleDocument", m_sampleDocument);
 
   }
 
@@ -72,6 +48,30 @@ Aws::String CreateTransformerRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_inputConversionHasBeenSet)
+  {
+   payload.WithObject("inputConversion", m_inputConversion.Jsonize());
+
+  }
+
+  if(m_mappingHasBeenSet)
+  {
+   payload.WithObject("mapping", m_mapping.Jsonize());
+
+  }
+
+  if(m_outputConversionHasBeenSet)
+  {
+   payload.WithObject("outputConversion", m_outputConversion.Jsonize());
+
+  }
+
+  if(m_sampleDocumentsHasBeenSet)
+  {
+   payload.WithObject("sampleDocuments", m_sampleDocuments.Jsonize());
 
   }
 
