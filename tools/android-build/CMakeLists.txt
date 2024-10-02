@@ -33,6 +33,8 @@ if(BUILD_ZLIB)
 endif()
 
 # OpenSSL
+# Download and build openssl alongside the SDK. This not recommended for use. Using your platforms libcrypto is recommended. 
+# To use a custom libcrypto please follow the instructions in the developer guide (https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/libcrypto.html).
 if(BUILD_OPENSSL)
     ExternalProject_Add(OPENSSL
         SOURCE_DIR ${OPENSSL_SOURCE_DIR}
