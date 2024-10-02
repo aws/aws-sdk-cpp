@@ -8,6 +8,31 @@ import lombok.Data;
 //Helper class for c++ blocks
 public class CppBlockWriter {
 
+    public static String GetForLoopRangeInitializer(String variableName, String iterableExpr)
+    {
+        return String.format("for (auto %s in %s)", variableName, iterableExpr);
+    }
+
+    public static String GetContainerDeclaration(String containerType, String containerTemplateParam, String variableName)
+    {
+        return String.format("%s<%s> %s",containerType, containerTemplateParam,variableName );
+    }
+
+    //args  will always be even number
+    public static String GetFunctionBlock(String returnType, String functionName, String... args)
+    {   
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < args.length - 1; i += 2)
+        {
+            sb.append(String.format("%s %s",args[i],args[i+1] ));
+            if(i + 2 < args.length )
+            {
+                sb.append(", ");
+            }
+        }
+        return String.format("%s %s(%s)", returnType, functionName, sb.toString());
+    }
+
     @Data
     public static class Block {
         private List<String> lines;

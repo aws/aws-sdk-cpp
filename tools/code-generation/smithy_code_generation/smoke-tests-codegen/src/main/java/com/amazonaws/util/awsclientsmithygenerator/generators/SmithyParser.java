@@ -98,12 +98,9 @@ public class SmithyParser {
                                 
                                 List<TestcaseParams> testcaseParams = extractTests();
                                 
+                                //genrate test code
                                 CppSmokeTestsWriter smithySmokeTests = new CppSmokeTestsWriter();
-                                for(TestcaseParams test : testcaseParams){
-                                    smithySmokeTests.writeTestCase(test);
-                                    System.out.println(smithySmokeTests.toString());
-                                }
-
+                                System.out.println(smithySmokeTests.GetSmokeTestsCode(testcaseParams));
 
                                 GenerateSmokeTestsourceFile(testcaseParams, String.format(SMOKE_TESTS_CPP_FORMAT, serviceName), serviceName);
                                 generateTestCmakeFile(CMAKE_LISTS_TXT, serviceName);

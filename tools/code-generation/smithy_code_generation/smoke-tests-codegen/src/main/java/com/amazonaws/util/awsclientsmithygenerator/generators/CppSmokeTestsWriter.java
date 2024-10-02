@@ -3,25 +3,64 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.utils.SimpleCodeWriter;
 import java.util.List;
+
+import com.google.common.base.Optional;
 public final class CppSmokeTestsWriter extends SimpleCodeWriter{
     //protected CppBlockWriter blockWriter;    
     public CppSmokeTestsWriter() {
         super();
     }
 
-
-    //SimpleCodeWriter writer 
-    public void addToHeaderSection(List<String> header)
+    protected void useNamespaces()
     {
-        
+        write("$L|","using namespace Aws::Auth;\n" + //
+                        "using namespace Aws::Http;\n" + //
+                        "using namespace Aws::Client;\n" + //
+                        "using namespace Aws::$client;\n" + //
+                        "using namespace Aws::$client::Model;\n");
     };
 
-    public void defineTestFixture(String client)
+    //SimpleCodeWriter writer 
+    protected void addHeaderBlock()
     {
-
+        write("$L|",
+        
+        "#include <aws/testing/AwsCppSdkGTestSuite.h>\n" + //
+        "#include <aws/testing/AwsTestHelpers.h>\n" + //
+        "#include <aws/core/client/AsyncCallerContext.h>\n" + //
+        "#include <aws/core/client/ClientConfiguration.h>\n" + //
+        "#include <aws/core/client/CoreErrors.h>\n" + //
+        "#include <aws/core/auth/AWSCredentialsProviderChain.h>\n" + //
+        "#include <aws/core/http/HttpTypes.h>\n" + //
+        "#include <aws/core/utils/logging/LogMacros.h>\n" + //
+        "#include <aws/core/utils/memory/AWSMemory.h>\n" + //
+        "#include <aws/core/utils/UnreferencedParam.h>\n" + //
+        "#include <aws/core/utils/Outcome.h>\n" + //
+        "#include <aws/core/utils/memory/stl/AWSSet.h>\n" + //
+        "#include <aws/core/utils/memory/stl/AWSStringStream.h>\n" + //
+        "#include <utility>\n" +
+        "#include <algorithm>\n"
+        );
     }
 
-    public void writeTestCase(TestcaseParams test)
+    protected void addClientHeader(TestcaseParams test)
+    {
+        write("#include <aws/$L.toLowerCase()/$LClient.h>", test.getClientName(), test.getClientName() );
+    };
+
+    protected void addRequestHeader(TestcaseParams test)
+    {
+        write("#include <aws/$L.toLowerCase()/model/$LRequest.h>", test.getClientName(), test.getOperationName());
+    };
+
+    protected void defineTestFixture(TestcaseParams test)
+    {
+        write("class $LSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {", test.getClientName()).
+        indent().write("static const char ALLOCATION_TAG[];").
+        dedent().write("}");
+    }
+
+    protected void defineTestCase(TestcaseParams test)
     {
         //declare test fixture
         write("TEST_F($LSmokeTestSuite, $L )",test.getClientName(), test.getTestcaseName()).write("{").indent().
@@ -37,15 +76,49 @@ public final class CppSmokeTestsWriter extends SimpleCodeWriter{
         {
             write("auto clientSp = Aws::MakeShared<$LClient>(ALLOCATION_TAG, clientConfiguration);",test.getClientName());
         }
-
+        //comments
         write("//populate input params").write("//Prepare getters");
-        for (String line in test.getGetterCodeBlock())
+        //write blocks
+        test.getGetterCodeBlock().stream().forEach(getter -> {
+            write("$L", getter);
+        });
+        write("$L|", test.getFunctionBlock());
+        write("auto outcome = clientSp->$L(input);",test.getOperationName());
+        if (test.isExpectSuccess())
         {
-            write("$L", line);
+            write("EXPECT_TRUE( outcome.IsSuccess());");
         }
-        
+        else
+        {
+            write("EXPECT_FALSE( outcome.IsSuccess());");
+        }
 
         dedent().write("}");
+    }
+
+
+    public String GetSmokeTestsCode(List<TestcaseParams> tests)
+    {
+        //tests will belong to one client, so choose first one
+        TestcaseParams firstTest = tests.stream().findFirst().orElse(null);
+        if(firstTest != null)
+        {
+            addHeaderBlock();
+            addClientHeader(firstTest);
+            write("namespace $LSmokeTest{", firstTest.getClientName());
+
+            tests.stream().forEach(test -> {
+                addRequestHeader(test);
+            });
+            useNamespaces();
+
+            defineTestFixture(firstTest);
+            tests.stream().forEach(test -> {
+                defineTestCase(test);
+            });
+            write("}");
+        }
+        return toString();
     }
 
     

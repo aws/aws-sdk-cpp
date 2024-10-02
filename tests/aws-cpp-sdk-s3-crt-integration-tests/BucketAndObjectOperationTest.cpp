@@ -1504,4 +1504,20 @@ namespace
             }
         }
     }
+
+    TEST_F(BucketAndObjectOperationTest, retry_crt)
+    {
+
+        Aws::S3Crt::ClientConfiguration config;
+        config.httpRequestTimeoutMs = 100;
+        config.connectTimeoutMs = 100;
+        config.requestTimeoutMs = 100;  
+        config.crtRetryStrategyConfig.crtRetryStrategyType = 
+        Aws::S3Crt::S3CrtClientConfiguration::CrtRetryStrategyConfig::CrtRetryStrategyType::NO_RETRY;
+        config.throughputTargetGbps = 1;
+        config.partSize = 10*1024*1024;
+        auto s3_crt_client = Aws::New<Aws::S3Crt::S3CrtClient>("test", config);
+    }
+
+
 }

@@ -111,7 +111,9 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
             //get all immediate map member shapes
             Map<String, SHAPE> fieldShapeMap = getMemberShapes(shape);
             //define function body and declare variable
-            CppBlockWriter blockWriter = new CppBlockWriter( String.format("%s %s", shapeName, functionName), 0)
+            CppBlockWriter blockWriter = new CppBlockWriter( 
+                CppBlockWriter.GetFunctionBlock(shapeName,functionName)
+                , 0)
                 .addCode(String.format("%s %s ;\n",shapeName,varName));
             
             //iterate over map keys
@@ -150,7 +152,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
             String listType = getShapeName(shape);
 
             //open function body and use vector setter
-            CppBlockWriter blockWriter = new CppBlockWriter(String.format("Aws::Vector<%s> %s",listType, functionName), 0).
+            CppBlockWriter blockWriter = new CppBlockWriter
+                (CppBlockWriter.GetContainerDeclaration("Aws::Vector", listType, functionName), 0).
                 addCode(String.format("Aws::Vector<%s> %s = ",listType, varName))
                 .openCodeBlock("");
 
