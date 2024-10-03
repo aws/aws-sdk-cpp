@@ -11,6 +11,7 @@
 #include <aws/quicksight/model/AssetBundleExportFormat.h>
 #include <aws/quicksight/model/AssetBundleCloudFormationOverridePropertyConfiguration.h>
 #include <aws/quicksight/model/AssetBundleExportJobValidationStrategy.h>
+#include <aws/quicksight/model/IncludeFolderMembers.h>
 #include <utility>
 
 namespace Aws
@@ -172,6 +173,31 @@ namespace Model
     inline StartAssetBundleExportJobRequest& WithValidationStrategy(const AssetBundleExportJobValidationStrategy& value) { SetValidationStrategy(value); return *this;}
     inline StartAssetBundleExportJobRequest& WithValidationStrategy(AssetBundleExportJobValidationStrategy&& value) { SetValidationStrategy(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A Boolean that determines if the exported asset carries over information
+     * about the folders that the asset is a member of. </p>
+     */
+    inline bool GetIncludeFolderMemberships() const{ return m_includeFolderMemberships; }
+    inline bool IncludeFolderMembershipsHasBeenSet() const { return m_includeFolderMembershipsHasBeenSet; }
+    inline void SetIncludeFolderMemberships(bool value) { m_includeFolderMembershipsHasBeenSet = true; m_includeFolderMemberships = value; }
+    inline StartAssetBundleExportJobRequest& WithIncludeFolderMemberships(bool value) { SetIncludeFolderMemberships(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A setting that indicates whether you want to include folder assets. You can
+     * also use this setting to recusrsively include all subfolders of an exported
+     * folder.</p>
+     */
+    inline const IncludeFolderMembers& GetIncludeFolderMembers() const{ return m_includeFolderMembers; }
+    inline bool IncludeFolderMembersHasBeenSet() const { return m_includeFolderMembersHasBeenSet; }
+    inline void SetIncludeFolderMembers(const IncludeFolderMembers& value) { m_includeFolderMembersHasBeenSet = true; m_includeFolderMembers = value; }
+    inline void SetIncludeFolderMembers(IncludeFolderMembers&& value) { m_includeFolderMembersHasBeenSet = true; m_includeFolderMembers = std::move(value); }
+    inline StartAssetBundleExportJobRequest& WithIncludeFolderMembers(const IncludeFolderMembers& value) { SetIncludeFolderMembers(value); return *this;}
+    inline StartAssetBundleExportJobRequest& WithIncludeFolderMembers(IncludeFolderMembers&& value) { SetIncludeFolderMembers(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_awsAccountId;
@@ -200,6 +226,12 @@ namespace Model
 
     AssetBundleExportJobValidationStrategy m_validationStrategy;
     bool m_validationStrategyHasBeenSet = false;
+
+    bool m_includeFolderMemberships;
+    bool m_includeFolderMembershipsHasBeenSet = false;
+
+    IncludeFolderMembers m_includeFolderMembers;
+    bool m_includeFolderMembersHasBeenSet = false;
   };
 
 } // namespace Model

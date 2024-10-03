@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/AssetBundleExportFormat.h>
 #include <aws/quicksight/model/AssetBundleCloudFormationOverridePropertyConfiguration.h>
 #include <aws/quicksight/model/AssetBundleExportJobValidationStrategy.h>
+#include <aws/quicksight/model/IncludeFolderMembers.h>
 #include <aws/quicksight/model/AssetBundleExportJobError.h>
 #include <aws/quicksight/model/AssetBundleExportJobWarning.h>
 #include <utility>
@@ -254,6 +255,26 @@ namespace Model
     inline DescribeAssetBundleExportJobResult& AddWarnings(const AssetBundleExportJobWarning& value) { m_warnings.push_back(value); return *this; }
     inline DescribeAssetBundleExportJobResult& AddWarnings(AssetBundleExportJobWarning&& value) { m_warnings.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The include folder memberships flag.</p>
+     */
+    inline bool GetIncludeFolderMemberships() const{ return m_includeFolderMemberships; }
+    inline void SetIncludeFolderMemberships(bool value) { m_includeFolderMemberships = value; }
+    inline DescribeAssetBundleExportJobResult& WithIncludeFolderMemberships(bool value) { SetIncludeFolderMemberships(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A setting that determines whether folder members are included.</p>
+     */
+    inline const IncludeFolderMembers& GetIncludeFolderMembers() const{ return m_includeFolderMembers; }
+    inline void SetIncludeFolderMembers(const IncludeFolderMembers& value) { m_includeFolderMembers = value; }
+    inline void SetIncludeFolderMembers(IncludeFolderMembers&& value) { m_includeFolderMembers = std::move(value); }
+    inline DescribeAssetBundleExportJobResult& WithIncludeFolderMembers(const IncludeFolderMembers& value) { SetIncludeFolderMembers(value); return *this;}
+    inline DescribeAssetBundleExportJobResult& WithIncludeFolderMembers(IncludeFolderMembers&& value) { SetIncludeFolderMembers(std::move(value)); return *this;}
+    ///@}
   private:
 
     AssetBundleExportJobStatus m_jobStatus;
@@ -289,6 +310,10 @@ namespace Model
     AssetBundleExportJobValidationStrategy m_validationStrategy;
 
     Aws::Vector<AssetBundleExportJobWarning> m_warnings;
+
+    bool m_includeFolderMemberships;
+
+    IncludeFolderMembers m_includeFolderMembers;
   };
 
 } // namespace Model

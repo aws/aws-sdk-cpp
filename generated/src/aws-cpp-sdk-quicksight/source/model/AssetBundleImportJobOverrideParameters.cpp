@@ -26,7 +26,8 @@ AssetBundleImportJobOverrideParameters::AssetBundleImportJobOverrideParameters()
     m_dataSetsHasBeenSet(false),
     m_themesHasBeenSet(false),
     m_analysesHasBeenSet(false),
-    m_dashboardsHasBeenSet(false)
+    m_dashboardsHasBeenSet(false),
+    m_foldersHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,16 @@ AssetBundleImportJobOverrideParameters& AssetBundleImportJobOverrideParameters::
       m_dashboards.push_back(dashboardsJsonList[dashboardsIndex].AsObject());
     }
     m_dashboardsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Folders"))
+  {
+    Aws::Utils::Array<JsonView> foldersJsonList = jsonValue.GetArray("Folders");
+    for(unsigned foldersIndex = 0; foldersIndex < foldersJsonList.GetLength(); ++foldersIndex)
+    {
+      m_folders.push_back(foldersJsonList[foldersIndex].AsObject());
+    }
+    m_foldersHasBeenSet = true;
   }
 
   return *this;
@@ -202,6 +213,17 @@ JsonValue AssetBundleImportJobOverrideParameters::Jsonize() const
      dashboardsJsonList[dashboardsIndex].AsObject(m_dashboards[dashboardsIndex].Jsonize());
    }
    payload.WithArray("Dashboards", std::move(dashboardsJsonList));
+
+  }
+
+  if(m_foldersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> foldersJsonList(m_folders.size());
+   for(unsigned foldersIndex = 0; foldersIndex < foldersJsonList.GetLength(); ++foldersIndex)
+   {
+     foldersJsonList[foldersIndex].AsObject(m_folders[foldersIndex].Jsonize());
+   }
+   payload.WithArray("Folders", std::move(foldersJsonList));
 
   }
 

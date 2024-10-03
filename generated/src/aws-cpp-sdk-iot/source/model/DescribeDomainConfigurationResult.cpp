@@ -20,7 +20,9 @@ using namespace Aws;
 DescribeDomainConfigurationResult::DescribeDomainConfigurationResult() : 
     m_domainConfigurationStatus(DomainConfigurationStatus::NOT_SET),
     m_serviceType(ServiceType::NOT_SET),
-    m_domainType(DomainType::NOT_SET)
+    m_domainType(DomainType::NOT_SET),
+    m_authenticationType(AuthenticationType::NOT_SET),
+    m_applicationProtocol(ApplicationProtocol::NOT_SET)
 {
 }
 
@@ -99,6 +101,24 @@ DescribeDomainConfigurationResult& DescribeDomainConfigurationResult::operator =
   if(jsonValue.ValueExists("serverCertificateConfig"))
   {
     m_serverCertificateConfig = jsonValue.GetObject("serverCertificateConfig");
+
+  }
+
+  if(jsonValue.ValueExists("authenticationType"))
+  {
+    m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("authenticationType"));
+
+  }
+
+  if(jsonValue.ValueExists("applicationProtocol"))
+  {
+    m_applicationProtocol = ApplicationProtocolMapper::GetApplicationProtocolForName(jsonValue.GetString("applicationProtocol"));
+
+  }
+
+  if(jsonValue.ValueExists("clientCertificateConfig"))
+  {
+    m_clientCertificateConfig = jsonValue.GetObject("clientCertificateConfig");
 
   }
 

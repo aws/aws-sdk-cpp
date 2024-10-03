@@ -15359,6 +15359,40 @@ namespace EC2
         }
 
         /**
+         * <p>By default, all vCPUs for the instance type are active when you launch an
+         * instance. When you configure the number of active vCPUs for the instance, it can
+         * help you save on licensing costs and optimize performance. The base cost of the
+         * instance remains unchanged.</p> <p>The number of active vCPUs equals the number
+         * of threads per CPU core multiplied by the number of cores.</p>  <p>Some
+         * instance type options do not support this capability. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cpu-options-supported-instances-values.html">Supported
+         * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCpuOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceCpuOptionsOutcome ModifyInstanceCpuOptions(const Model::ModifyInstanceCpuOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyInstanceCpuOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyInstanceCpuOptionsRequestT = Model::ModifyInstanceCpuOptionsRequest>
+        Model::ModifyInstanceCpuOptionsOutcomeCallable ModifyInstanceCpuOptionsCallable(const ModifyInstanceCpuOptionsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyInstanceCpuOptions, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyInstanceCpuOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyInstanceCpuOptionsRequestT = Model::ModifyInstanceCpuOptionsRequest>
+        void ModifyInstanceCpuOptionsAsync(const ModifyInstanceCpuOptionsRequestT& request, const ModifyInstanceCpuOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyInstanceCpuOptions, request, handler, context);
+        }
+
+        /**
          * <p>Modifies the credit option for CPU usage on a running or stopped burstable
          * performance instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a

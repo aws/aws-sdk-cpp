@@ -25,7 +25,11 @@ StartAssetBundleExportJobRequest::StartAssetBundleExportJobRequest() :
     m_includePermissionsHasBeenSet(false),
     m_includeTags(false),
     m_includeTagsHasBeenSet(false),
-    m_validationStrategyHasBeenSet(false)
+    m_validationStrategyHasBeenSet(false),
+    m_includeFolderMemberships(false),
+    m_includeFolderMembershipsHasBeenSet(false),
+    m_includeFolderMembers(IncludeFolderMembers::NOT_SET),
+    m_includeFolderMembersHasBeenSet(false)
 {
 }
 
@@ -83,6 +87,17 @@ Aws::String StartAssetBundleExportJobRequest::SerializePayload() const
   {
    payload.WithObject("ValidationStrategy", m_validationStrategy.Jsonize());
 
+  }
+
+  if(m_includeFolderMembershipsHasBeenSet)
+  {
+   payload.WithBool("IncludeFolderMemberships", m_includeFolderMemberships);
+
+  }
+
+  if(m_includeFolderMembersHasBeenSet)
+  {
+   payload.WithString("IncludeFolderMembers", IncludeFolderMembersMapper::GetNameForIncludeFolderMembers(m_includeFolderMembers));
   }
 
   return payload.View().WriteReadable();

@@ -22,7 +22,12 @@ CreateDomainConfigurationRequest::CreateDomainConfigurationRequest() :
     m_serviceTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_tlsConfigHasBeenSet(false),
-    m_serverCertificateConfigHasBeenSet(false)
+    m_serverCertificateConfigHasBeenSet(false),
+    m_authenticationType(AuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false),
+    m_applicationProtocol(ApplicationProtocol::NOT_SET),
+    m_applicationProtocolHasBeenSet(false),
+    m_clientCertificateConfigHasBeenSet(false)
 {
 }
 
@@ -84,6 +89,22 @@ Aws::String CreateDomainConfigurationRequest::SerializePayload() const
   if(m_serverCertificateConfigHasBeenSet)
   {
    payload.WithObject("serverCertificateConfig", m_serverCertificateConfig.Jsonize());
+
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+  }
+
+  if(m_applicationProtocolHasBeenSet)
+  {
+   payload.WithString("applicationProtocol", ApplicationProtocolMapper::GetNameForApplicationProtocol(m_applicationProtocol));
+  }
+
+  if(m_clientCertificateConfigHasBeenSet)
+  {
+   payload.WithObject("clientCertificateConfig", m_clientCertificateConfig.Jsonize());
 
   }
 

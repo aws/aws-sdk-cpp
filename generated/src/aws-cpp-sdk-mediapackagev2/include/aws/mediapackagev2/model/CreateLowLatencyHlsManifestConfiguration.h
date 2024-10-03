@@ -7,6 +7,7 @@
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackagev2/model/ScteHls.h>
+#include <aws/mediapackagev2/model/StartTag.h>
 #include <aws/mediapackagev2/model/FilterConfiguration.h>
 #include <utility>
 
@@ -88,6 +89,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const StartTag& GetStartTag() const{ return m_startTag; }
+    inline bool StartTagHasBeenSet() const { return m_startTagHasBeenSet; }
+    inline void SetStartTag(const StartTag& value) { m_startTagHasBeenSet = true; m_startTag = value; }
+    inline void SetStartTag(StartTag&& value) { m_startTagHasBeenSet = true; m_startTag = std::move(value); }
+    inline CreateLowLatencyHlsManifestConfiguration& WithStartTag(const StartTag& value) { SetStartTag(value); return *this;}
+    inline CreateLowLatencyHlsManifestConfiguration& WithStartTag(StartTag&& value) { SetStartTag(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>The total duration (in seconds) of the manifest's content.</p>
      */
@@ -132,6 +143,9 @@ namespace Model
 
     ScteHls m_scteHls;
     bool m_scteHlsHasBeenSet = false;
+
+    StartTag m_startTag;
+    bool m_startTagHasBeenSet = false;
 
     int m_manifestWindowSeconds;
     bool m_manifestWindowSecondsHasBeenSet = false;

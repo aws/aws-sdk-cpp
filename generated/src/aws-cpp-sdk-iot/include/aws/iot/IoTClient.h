@@ -180,8 +180,8 @@ namespace IoT
         }
 
         /**
-         * <p>Associates a software bill of materials (SBOM) with a specific software
-         * package version.</p> <p>Requires permission to access the <a
+         * <p>Associates the selected software bill of materials (SBOM) with a specific
+         * software package version.</p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateSbomWithPackageVersion</a>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateSbomWithPackageVersion">AWS
@@ -614,7 +614,11 @@ namespace IoT
         }
 
         /**
-         * <p>Creates a billing group.</p> <p>Requires permission to access the <a
+         * <p>Creates a billing group. If this call is made multiple times using the same
+         * billing group name and configuration, the call will succeed. If this call is
+         * made with the same billing group name but different configuration a
+         * <code>ResourceAlreadyExistsException</code> is thrown.</p> <p>Requires
+         * permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateBillingGroup</a>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateBillingGroup">AWS
@@ -1232,7 +1236,15 @@ namespace IoT
         /**
          * <p>Creates a role alias.</p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p>  <p>The value of <a
+         * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateRoleAlias.html#iot-CreateRoleAlias-request-credentialDurationSeconds">
+         * <code>credentialDurationSeconds</code> </a> must be less than or equal to the
+         * maximum session duration of the IAM role that the role alias references. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-api.html#roles-modify_max-session-duration-api">
+         * Modifying a role maximum session duration (Amazon Web Services API)</a> from the
+         * Amazon Web Services Identity and Access Management User Guide.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateRoleAlias">AWS
          * API Reference</a></p>
          */
@@ -1409,7 +1421,11 @@ namespace IoT
         }
 
         /**
-         * <p>Creates a new thing type.</p> <p>Requires permission to access the <a
+         * <p>Creates a new thing type. If this call is made multiple times using the same
+         * thing type name and configuration, the call will succeed. If this call is made
+         * with the same thing type name but different configuration a
+         * <code>ResourceAlreadyExistsException</code> is thrown. </p> <p>Requires
+         * permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingType</a>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingType">AWS
@@ -3545,8 +3561,8 @@ namespace IoT
         }
 
         /**
-         * <p>Disassociates a software bill of materials (SBOM) from a specific software
-         * package version.</p> <p>Requires permission to access the <a
+         * <p>Disassociates the selected software bill of materials (SBOM) from a specific
+         * software package version.</p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DisassociateSbomWithPackageVersion</a>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisassociateSbomFromPackageVersion">AWS
@@ -7111,7 +7127,15 @@ namespace IoT
         /**
          * <p>Updates a role alias.</p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateRoleAlias</a>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p>  <p>The value of <a
+         * href="https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateRoleAlias.html#iot-UpdateRoleAlias-request-credentialDurationSeconds">
+         * <code>credentialDurationSeconds</code> </a> must be less than or equal to the
+         * maximum session duration of the IAM role that the role alias references. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-api.html#roles-modify_max-session-duration-api">
+         * Modifying a role maximum session duration (Amazon Web Services API)</a> from the
+         * Amazon Web Services Identity and Access Management User Guide.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateRoleAlias">AWS
          * API Reference</a></p>
          */

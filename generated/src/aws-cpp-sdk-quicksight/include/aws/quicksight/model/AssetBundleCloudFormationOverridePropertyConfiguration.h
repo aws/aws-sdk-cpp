@@ -14,6 +14,7 @@
 #include <aws/quicksight/model/AssetBundleExportJobThemeOverrideProperties.h>
 #include <aws/quicksight/model/AssetBundleExportJobAnalysisOverrideProperties.h>
 #include <aws/quicksight/model/AssetBundleExportJobDashboardOverrideProperties.h>
+#include <aws/quicksight/model/AssetBundleExportJobFolderOverrideProperties.h>
 #include <utility>
 
 namespace Aws
@@ -163,6 +164,21 @@ namespace Model
     inline AssetBundleCloudFormationOverridePropertyConfiguration& AddDashboards(const AssetBundleExportJobDashboardOverrideProperties& value) { m_dashboardsHasBeenSet = true; m_dashboards.push_back(value); return *this; }
     inline AssetBundleCloudFormationOverridePropertyConfiguration& AddDashboards(AssetBundleExportJobDashboardOverrideProperties&& value) { m_dashboardsHasBeenSet = true; m_dashboards.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>An optional list of structures that controls how <code>Folder</code>
+     * resources are parameterized in the returned CloudFormation template.</p>
+     */
+    inline const Aws::Vector<AssetBundleExportJobFolderOverrideProperties>& GetFolders() const{ return m_folders; }
+    inline bool FoldersHasBeenSet() const { return m_foldersHasBeenSet; }
+    inline void SetFolders(const Aws::Vector<AssetBundleExportJobFolderOverrideProperties>& value) { m_foldersHasBeenSet = true; m_folders = value; }
+    inline void SetFolders(Aws::Vector<AssetBundleExportJobFolderOverrideProperties>&& value) { m_foldersHasBeenSet = true; m_folders = std::move(value); }
+    inline AssetBundleCloudFormationOverridePropertyConfiguration& WithFolders(const Aws::Vector<AssetBundleExportJobFolderOverrideProperties>& value) { SetFolders(value); return *this;}
+    inline AssetBundleCloudFormationOverridePropertyConfiguration& WithFolders(Aws::Vector<AssetBundleExportJobFolderOverrideProperties>&& value) { SetFolders(std::move(value)); return *this;}
+    inline AssetBundleCloudFormationOverridePropertyConfiguration& AddFolders(const AssetBundleExportJobFolderOverrideProperties& value) { m_foldersHasBeenSet = true; m_folders.push_back(value); return *this; }
+    inline AssetBundleCloudFormationOverridePropertyConfiguration& AddFolders(AssetBundleExportJobFolderOverrideProperties&& value) { m_foldersHasBeenSet = true; m_folders.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     AssetBundleExportJobResourceIdOverrideConfiguration m_resourceIdOverrideConfiguration;
@@ -188,6 +204,9 @@ namespace Model
 
     Aws::Vector<AssetBundleExportJobDashboardOverrideProperties> m_dashboards;
     bool m_dashboardsHasBeenSet = false;
+
+    Aws::Vector<AssetBundleExportJobFolderOverrideProperties> m_folders;
+    bool m_foldersHasBeenSet = false;
   };
 
 } // namespace Model

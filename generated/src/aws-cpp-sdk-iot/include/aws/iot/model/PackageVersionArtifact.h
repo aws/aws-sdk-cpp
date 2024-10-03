@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon S3 location for the artifacts associated with a software package
+   * <p>A specific package version artifact associated with a software package
    * version.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/PackageVersionArtifact">AWS
    * API Reference</a></p>
