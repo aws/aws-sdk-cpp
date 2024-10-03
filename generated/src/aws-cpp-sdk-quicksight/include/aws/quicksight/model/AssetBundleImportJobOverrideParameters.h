@@ -14,6 +14,7 @@
 #include <aws/quicksight/model/AssetBundleImportJobThemeOverrideParameters.h>
 #include <aws/quicksight/model/AssetBundleImportJobAnalysisOverrideParameters.h>
 #include <aws/quicksight/model/AssetBundleImportJobDashboardOverrideParameters.h>
+#include <aws/quicksight/model/AssetBundleImportJobFolderOverrideParameters.h>
 #include <utility>
 
 namespace Aws
@@ -163,6 +164,21 @@ namespace Model
     inline AssetBundleImportJobOverrideParameters& AddDashboards(const AssetBundleImportJobDashboardOverrideParameters& value) { m_dashboardsHasBeenSet = true; m_dashboards.push_back(value); return *this; }
     inline AssetBundleImportJobOverrideParameters& AddDashboards(AssetBundleImportJobDashboardOverrideParameters&& value) { m_dashboardsHasBeenSet = true; m_dashboards.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of overrides for any <code>Folder</code> resources that are present in
+     * the asset bundle that is imported.</p>
+     */
+    inline const Aws::Vector<AssetBundleImportJobFolderOverrideParameters>& GetFolders() const{ return m_folders; }
+    inline bool FoldersHasBeenSet() const { return m_foldersHasBeenSet; }
+    inline void SetFolders(const Aws::Vector<AssetBundleImportJobFolderOverrideParameters>& value) { m_foldersHasBeenSet = true; m_folders = value; }
+    inline void SetFolders(Aws::Vector<AssetBundleImportJobFolderOverrideParameters>&& value) { m_foldersHasBeenSet = true; m_folders = std::move(value); }
+    inline AssetBundleImportJobOverrideParameters& WithFolders(const Aws::Vector<AssetBundleImportJobFolderOverrideParameters>& value) { SetFolders(value); return *this;}
+    inline AssetBundleImportJobOverrideParameters& WithFolders(Aws::Vector<AssetBundleImportJobFolderOverrideParameters>&& value) { SetFolders(std::move(value)); return *this;}
+    inline AssetBundleImportJobOverrideParameters& AddFolders(const AssetBundleImportJobFolderOverrideParameters& value) { m_foldersHasBeenSet = true; m_folders.push_back(value); return *this; }
+    inline AssetBundleImportJobOverrideParameters& AddFolders(AssetBundleImportJobFolderOverrideParameters&& value) { m_foldersHasBeenSet = true; m_folders.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     AssetBundleImportJobResourceIdOverrideConfiguration m_resourceIdOverrideConfiguration;
@@ -188,6 +204,9 @@ namespace Model
 
     Aws::Vector<AssetBundleImportJobDashboardOverrideParameters> m_dashboards;
     bool m_dashboardsHasBeenSet = false;
+
+    Aws::Vector<AssetBundleImportJobFolderOverrideParameters> m_folders;
+    bool m_foldersHasBeenSet = false;
   };
 
 } // namespace Model

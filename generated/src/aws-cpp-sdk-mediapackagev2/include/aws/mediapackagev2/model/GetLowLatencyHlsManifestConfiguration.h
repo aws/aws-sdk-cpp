@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackagev2/model/ScteHls.h>
 #include <aws/mediapackagev2/model/FilterConfiguration.h>
+#include <aws/mediapackagev2/model/StartTag.h>
 #include <utility>
 
 namespace Aws
@@ -136,6 +137,16 @@ namespace Model
     inline GetLowLatencyHlsManifestConfiguration& WithFilterConfiguration(const FilterConfiguration& value) { SetFilterConfiguration(value); return *this;}
     inline GetLowLatencyHlsManifestConfiguration& WithFilterConfiguration(FilterConfiguration&& value) { SetFilterConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const StartTag& GetStartTag() const{ return m_startTag; }
+    inline bool StartTagHasBeenSet() const { return m_startTagHasBeenSet; }
+    inline void SetStartTag(const StartTag& value) { m_startTagHasBeenSet = true; m_startTag = value; }
+    inline void SetStartTag(StartTag&& value) { m_startTagHasBeenSet = true; m_startTag = std::move(value); }
+    inline GetLowLatencyHlsManifestConfiguration& WithStartTag(const StartTag& value) { SetStartTag(value); return *this;}
+    inline GetLowLatencyHlsManifestConfiguration& WithStartTag(StartTag&& value) { SetStartTag(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_manifestName;
@@ -158,6 +169,9 @@ namespace Model
 
     FilterConfiguration m_filterConfiguration;
     bool m_filterConfigurationHasBeenSet = false;
+
+    StartTag m_startTag;
+    bool m_startTagHasBeenSet = false;
   };
 
 } // namespace Model

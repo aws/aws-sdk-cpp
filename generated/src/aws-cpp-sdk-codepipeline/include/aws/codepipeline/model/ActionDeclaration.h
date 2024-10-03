@@ -113,6 +113,25 @@ namespace Model
 
     ///@{
     /**
+     * <p>The shell commands to run with your compute action in CodePipeline. All
+     * commands are supported except multi-line formats. While CodeBuild logs and
+     * permissions are used, you do not need to create any resources in CodeBuild.</p>
+     *  <p>Using compute time for this action will incur separate charges in
+     * CodeBuild.</p> 
+     */
+    inline const Aws::Vector<Aws::String>& GetCommands() const{ return m_commands; }
+    inline bool CommandsHasBeenSet() const { return m_commandsHasBeenSet; }
+    inline void SetCommands(const Aws::Vector<Aws::String>& value) { m_commandsHasBeenSet = true; m_commands = value; }
+    inline void SetCommands(Aws::Vector<Aws::String>&& value) { m_commandsHasBeenSet = true; m_commands = std::move(value); }
+    inline ActionDeclaration& WithCommands(const Aws::Vector<Aws::String>& value) { SetCommands(value); return *this;}
+    inline ActionDeclaration& WithCommands(Aws::Vector<Aws::String>&& value) { SetCommands(std::move(value)); return *this;}
+    inline ActionDeclaration& AddCommands(const Aws::String& value) { m_commandsHasBeenSet = true; m_commands.push_back(value); return *this; }
+    inline ActionDeclaration& AddCommands(Aws::String&& value) { m_commandsHasBeenSet = true; m_commands.push_back(std::move(value)); return *this; }
+    inline ActionDeclaration& AddCommands(const char* value) { m_commandsHasBeenSet = true; m_commands.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The name or ID of the result of the action declaration, such as a test or
      * build artifact.</p>
      */
@@ -139,6 +158,22 @@ namespace Model
     inline ActionDeclaration& WithInputArtifacts(Aws::Vector<InputArtifact>&& value) { SetInputArtifacts(std::move(value)); return *this;}
     inline ActionDeclaration& AddInputArtifacts(const InputArtifact& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.push_back(value); return *this; }
     inline ActionDeclaration& AddInputArtifacts(InputArtifact&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The list of variables that are to be exported from the compute action. This
+     * is specifically CodeBuild environment variables as used for that action.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetOutputVariables() const{ return m_outputVariables; }
+    inline bool OutputVariablesHasBeenSet() const { return m_outputVariablesHasBeenSet; }
+    inline void SetOutputVariables(const Aws::Vector<Aws::String>& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = value; }
+    inline void SetOutputVariables(Aws::Vector<Aws::String>&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = std::move(value); }
+    inline ActionDeclaration& WithOutputVariables(const Aws::Vector<Aws::String>& value) { SetOutputVariables(value); return *this;}
+    inline ActionDeclaration& WithOutputVariables(Aws::Vector<Aws::String>&& value) { SetOutputVariables(std::move(value)); return *this;}
+    inline ActionDeclaration& AddOutputVariables(const Aws::String& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.push_back(value); return *this; }
+    inline ActionDeclaration& AddOutputVariables(Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.push_back(std::move(value)); return *this; }
+    inline ActionDeclaration& AddOutputVariables(const char* value) { m_outputVariablesHasBeenSet = true; m_outputVariables.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -212,11 +247,17 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_configuration;
     bool m_configurationHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_commands;
+    bool m_commandsHasBeenSet = false;
+
     Aws::Vector<OutputArtifact> m_outputArtifacts;
     bool m_outputArtifactsHasBeenSet = false;
 
     Aws::Vector<InputArtifact> m_inputArtifacts;
     bool m_inputArtifactsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_outputVariables;
+    bool m_outputVariablesHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

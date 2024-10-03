@@ -84,7 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Thing group names.</p>
+     * <p>Thing group and billing group names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetThingGroupNames() const{ return m_thingGroupNames; }
     inline bool ThingGroupNamesHasBeenSet() const { return m_thingGroupNamesHasBeenSet; }

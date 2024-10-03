@@ -67,6 +67,8 @@ namespace Aws
         static const int DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS_HASH = HashingUtils::HashString("DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS");
         static const int ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION");
         static const int SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY_HASH = HashingUtils::HashString("SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY");
+        static const int CLIP_START_TIME_WITH_START_OR_END_HASH = HashingUtils::HashString("CLIP_START_TIME_WITH_START_OR_END");
+        static const int START_TAG_TIME_OFFSET_INVALID_HASH = HashingUtils::HashString("START_TAG_TIME_OFFSET_INVALID");
 
 
         ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name)
@@ -260,6 +262,14 @@ namespace Aws
           {
             return ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY;
           }
+          else if (hashCode == CLIP_START_TIME_WITH_START_OR_END_HASH)
+          {
+            return ValidationExceptionType::CLIP_START_TIME_WITH_START_OR_END;
+          }
+          else if (hashCode == START_TAG_TIME_OFFSET_INVALID_HASH)
+          {
+            return ValidationExceptionType::START_TAG_TIME_OFFSET_INVALID;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -370,6 +380,10 @@ namespace Aws
             return "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION";
           case ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY:
             return "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY";
+          case ValidationExceptionType::CLIP_START_TIME_WITH_START_OR_END:
+            return "CLIP_START_TIME_WITH_START_OR_END";
+          case ValidationExceptionType::START_TAG_TIME_OFFSET_INVALID:
+            return "START_TAG_TIME_OFFSET_INVALID";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

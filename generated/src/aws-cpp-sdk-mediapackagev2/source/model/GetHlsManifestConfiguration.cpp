@@ -27,7 +27,8 @@ GetHlsManifestConfiguration::GetHlsManifestConfiguration() :
     m_programDateTimeIntervalSeconds(0),
     m_programDateTimeIntervalSecondsHasBeenSet(false),
     m_scteHlsHasBeenSet(false),
-    m_filterConfigurationHasBeenSet(false)
+    m_filterConfigurationHasBeenSet(false),
+    m_startTagHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,13 @@ GetHlsManifestConfiguration& GetHlsManifestConfiguration::operator =(JsonView js
     m_filterConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StartTag"))
+  {
+    m_startTag = jsonValue.GetObject("StartTag");
+
+    m_startTagHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +142,12 @@ JsonValue GetHlsManifestConfiguration::Jsonize() const
   if(m_filterConfigurationHasBeenSet)
   {
    payload.WithObject("FilterConfiguration", m_filterConfiguration.Jsonize());
+
+  }
+
+  if(m_startTagHasBeenSet)
+  {
+   payload.WithObject("StartTag", m_startTag.Jsonize());
 
   }
 

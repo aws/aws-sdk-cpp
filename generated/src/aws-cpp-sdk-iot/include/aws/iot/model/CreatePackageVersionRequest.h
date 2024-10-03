@@ -122,7 +122,7 @@ namespace Model
     ///@{
     /**
      * <p>The inline job document associated with a software package version used for a
-     * quick job deployment via IoT Jobs.</p>
+     * quick job deployment.</p>
      */
     inline const Aws::String& GetRecipe() const{ return m_recipe; }
     inline bool RecipeHasBeenSet() const { return m_recipeHasBeenSet; }

@@ -23,7 +23,9 @@ DescribeAssetBundleExportJobResult::DescribeAssetBundleExportJobResult() :
     m_exportFormat(AssetBundleExportFormat::NOT_SET),
     m_status(0),
     m_includePermissions(false),
-    m_includeTags(false)
+    m_includeTags(false),
+    m_includeFolderMemberships(false),
+    m_includeFolderMembers(IncludeFolderMembers::NOT_SET)
 {
 }
 
@@ -133,6 +135,18 @@ DescribeAssetBundleExportJobResult& DescribeAssetBundleExportJobResult::operator
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("IncludeFolderMemberships"))
+  {
+    m_includeFolderMemberships = jsonValue.GetBool("IncludeFolderMemberships");
+
+  }
+
+  if(jsonValue.ValueExists("IncludeFolderMembers"))
+  {
+    m_includeFolderMembers = IncludeFolderMembersMapper::GetIncludeFolderMembersForName(jsonValue.GetString("IncludeFolderMembers"));
+
   }
 
 

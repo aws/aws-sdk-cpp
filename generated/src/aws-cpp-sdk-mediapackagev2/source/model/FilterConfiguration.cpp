@@ -23,7 +23,8 @@ FilterConfiguration::FilterConfiguration() :
     m_startHasBeenSet(false),
     m_endHasBeenSet(false),
     m_timeDelaySeconds(0),
-    m_timeDelaySecondsHasBeenSet(false)
+    m_timeDelaySecondsHasBeenSet(false),
+    m_clipStartTimeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,13 @@ FilterConfiguration& FilterConfiguration::operator =(JsonView jsonValue)
     m_timeDelaySecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClipStartTime"))
+  {
+    m_clipStartTime = jsonValue.GetDouble("ClipStartTime");
+
+    m_clipStartTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +98,11 @@ JsonValue FilterConfiguration::Jsonize() const
   {
    payload.WithInteger("TimeDelaySeconds", m_timeDelaySeconds);
 
+  }
+
+  if(m_clipStartTimeHasBeenSet)
+  {
+   payload.WithDouble("ClipStartTime", m_clipStartTime.SecondsWithMSPrecision());
   }
 
   return payload;

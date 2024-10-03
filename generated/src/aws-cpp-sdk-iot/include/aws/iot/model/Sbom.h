@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon S3 location for the software bill of materials associated with a
-   * software package version.</p><p><h3>See Also:</h3>   <a
+   * <p>A specific software bill of matrerials associated with a software package
+   * version.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Sbom">AWS API
    * Reference</a></p>
    */

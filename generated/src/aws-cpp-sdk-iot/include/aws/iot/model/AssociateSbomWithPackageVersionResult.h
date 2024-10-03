@@ -71,8 +71,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the initial validation for the SBOM against the Software
-     * Package Data Exchange (SPDX) and CycloneDX industry standard format.</p>
+     * <p>The status of the initial validation for the software bill of materials
+     * against the Software Package Data Exchange (SPDX) and CycloneDX industry
+     * standard formats.</p>
      */
     inline const SbomValidationStatus& GetSbomValidationStatus() const{ return m_sbomValidationStatus; }
     inline void SetSbomValidationStatus(const SbomValidationStatus& value) { m_sbomValidationStatus = value; }

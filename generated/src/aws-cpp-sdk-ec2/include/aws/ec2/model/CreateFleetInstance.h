@@ -101,8 +101,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value is <code>Windows</code> for Windows instances. Otherwise, the value
-     * is blank.</p>
+     * <p>The value is <code>windows</code> for Windows instances in an EC2 Fleet.
+     * Otherwise, the value is blank.</p>
      */
     inline const PlatformValues& GetPlatform() const{ return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }

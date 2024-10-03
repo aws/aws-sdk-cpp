@@ -96,6 +96,20 @@ namespace Model
     inline void SetTimeDelaySeconds(int value) { m_timeDelaySecondsHasBeenSet = true; m_timeDelaySeconds = value; }
     inline FilterConfiguration& WithTimeDelaySeconds(int value) { SetTimeDelaySeconds(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Optionally specify the clip start time for all of your manifest egress
+     * requests. When you include clip start time, note that you cannot use clip start
+     * time query parameters for this manifest's endpoint URL.</p>
+     */
+    inline const Aws::Utils::DateTime& GetClipStartTime() const{ return m_clipStartTime; }
+    inline bool ClipStartTimeHasBeenSet() const { return m_clipStartTimeHasBeenSet; }
+    inline void SetClipStartTime(const Aws::Utils::DateTime& value) { m_clipStartTimeHasBeenSet = true; m_clipStartTime = value; }
+    inline void SetClipStartTime(Aws::Utils::DateTime&& value) { m_clipStartTimeHasBeenSet = true; m_clipStartTime = std::move(value); }
+    inline FilterConfiguration& WithClipStartTime(const Aws::Utils::DateTime& value) { SetClipStartTime(value); return *this;}
+    inline FilterConfiguration& WithClipStartTime(Aws::Utils::DateTime&& value) { SetClipStartTime(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_manifestFilter;
@@ -109,6 +123,9 @@ namespace Model
 
     int m_timeDelaySeconds;
     bool m_timeDelaySecondsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_clipStartTime;
+    bool m_clipStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

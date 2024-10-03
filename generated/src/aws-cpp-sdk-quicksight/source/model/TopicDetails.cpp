@@ -23,7 +23,8 @@ TopicDetails::TopicDetails() :
     m_descriptionHasBeenSet(false),
     m_userExperienceVersion(TopicUserExperienceVersion::NOT_SET),
     m_userExperienceVersionHasBeenSet(false),
-    m_dataSetsHasBeenSet(false)
+    m_dataSetsHasBeenSet(false),
+    m_configOptionsHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,13 @@ TopicDetails& TopicDetails::operator =(JsonView jsonValue)
     m_dataSetsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConfigOptions"))
+  {
+    m_configOptions = jsonValue.GetObject("ConfigOptions");
+
+    m_configOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -98,6 +106,12 @@ JsonValue TopicDetails::Jsonize() const
      dataSetsJsonList[dataSetsIndex].AsObject(m_dataSets[dataSetsIndex].Jsonize());
    }
    payload.WithArray("DataSets", std::move(dataSetsJsonList));
+
+  }
+
+  if(m_configOptionsHasBeenSet)
+  {
+   payload.WithObject("ConfigOptions", m_configOptions.Jsonize());
 
   }
 

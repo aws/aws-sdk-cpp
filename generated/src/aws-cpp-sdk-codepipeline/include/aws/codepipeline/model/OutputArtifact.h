@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -57,10 +58,29 @@ namespace Model
     inline OutputArtifact& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline OutputArtifact& WithName(const char* value) { SetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The files that you want to associate with the output artifact that will be
+     * exported from the compute action.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFiles() const{ return m_files; }
+    inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
+    inline void SetFiles(const Aws::Vector<Aws::String>& value) { m_filesHasBeenSet = true; m_files = value; }
+    inline void SetFiles(Aws::Vector<Aws::String>&& value) { m_filesHasBeenSet = true; m_files = std::move(value); }
+    inline OutputArtifact& WithFiles(const Aws::Vector<Aws::String>& value) { SetFiles(value); return *this;}
+    inline OutputArtifact& WithFiles(Aws::Vector<Aws::String>&& value) { SetFiles(std::move(value)); return *this;}
+    inline OutputArtifact& AddFiles(const Aws::String& value) { m_filesHasBeenSet = true; m_files.push_back(value); return *this; }
+    inline OutputArtifact& AddFiles(Aws::String&& value) { m_filesHasBeenSet = true; m_files.push_back(std::move(value)); return *this; }
+    inline OutputArtifact& AddFiles(const char* value) { m_filesHasBeenSet = true; m_files.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_files;
+    bool m_filesHasBeenSet = false;
   };
 
 } // namespace Model

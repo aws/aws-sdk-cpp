@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/TopicUserExperienceVersion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/TopicConfigOptions.h>
 #include <aws/quicksight/model/DatasetMetadata.h>
 #include <utility>
 
@@ -94,6 +95,18 @@ namespace Model
     inline TopicDetails& AddDataSets(const DatasetMetadata& value) { m_dataSetsHasBeenSet = true; m_dataSets.push_back(value); return *this; }
     inline TopicDetails& AddDataSets(DatasetMetadata&& value) { m_dataSetsHasBeenSet = true; m_dataSets.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Configuration options for a <code>Topic</code>.</p>
+     */
+    inline const TopicConfigOptions& GetConfigOptions() const{ return m_configOptions; }
+    inline bool ConfigOptionsHasBeenSet() const { return m_configOptionsHasBeenSet; }
+    inline void SetConfigOptions(const TopicConfigOptions& value) { m_configOptionsHasBeenSet = true; m_configOptions = value; }
+    inline void SetConfigOptions(TopicConfigOptions&& value) { m_configOptionsHasBeenSet = true; m_configOptions = std::move(value); }
+    inline TopicDetails& WithConfigOptions(const TopicConfigOptions& value) { SetConfigOptions(value); return *this;}
+    inline TopicDetails& WithConfigOptions(TopicConfigOptions&& value) { SetConfigOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -107,6 +120,9 @@ namespace Model
 
     Aws::Vector<DatasetMetadata> m_dataSets;
     bool m_dataSetsHasBeenSet = false;
+
+    TopicConfigOptions m_configOptions;
+    bool m_configOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -14,6 +14,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/TlsConfig.h>
 #include <aws/iot/model/ServerCertificateConfig.h>
+#include <aws/iot/model/AuthenticationType.h>
+#include <aws/iot/model/ApplicationProtocol.h>
+#include <aws/iot/model/ClientCertificateConfig.h>
 #include <aws/iot/model/ServerCertificateSummary.h>
 #include <utility>
 
@@ -173,6 +176,64 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>An enumerated string that speciﬁes the authentication type.</p> <ul> <li> <p>
+     * <code>CUSTOM_AUTH_X509</code> - Use custom authentication and authorization with
+     * additional details from the X.509 client certificate.</p> </li> </ul> <ul> <li>
+     * <p> <code>CUSTOM_AUTH</code> - Use custom authentication and authorization. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/custom-authentication.html">Custom
+     * authentication and authorization</a>.</p> </li> </ul> <ul> <li> <p>
+     * <code>AWS_X509</code> - Use X.509 client certificates without custom
+     * authentication and authorization. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html">X.509
+     * client certificates</a>.</p> </li> </ul> <ul> <li> <p> <code>AWS_SIGV4</code> -
+     * Use Amazon Web Services Signature Version 4. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/custom-authentication.html">IAM
+     * users, groups, and roles</a>.</p> </li> </ul> <ul> <li> <p> <code>DEFAULT</code>
+     * - Use a combination of port and Application Layer Protocol Negotiation (ALPN) to
+     * specify authentication type. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device
+     * communication protocols</a>.</p> </li> </ul>
+     */
+    inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+    inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationType = value; }
+    inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationType = std::move(value); }
+    inline DescribeDomainConfigurationResult& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
+    inline DescribeDomainConfigurationResult& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An enumerated string that speciﬁes the application-layer protocol.</p> <ul>
+     * <li> <p> <code>SECURE_MQTT</code> - MQTT over TLS.</p> </li> </ul> <ul> <li> <p>
+     * <code>MQTT_WSS</code> - MQTT over WebSocket.</p> </li> </ul> <ul> <li> <p>
+     * <code>HTTPS</code> - HTTP over TLS.</p> </li> </ul> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use a combination of port and Application Layer Protocol
+     * Negotiation (ALPN) to specify application_layer protocol. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device
+     * communication protocols</a>.</p> </li> </ul>
+     */
+    inline const ApplicationProtocol& GetApplicationProtocol() const{ return m_applicationProtocol; }
+    inline void SetApplicationProtocol(const ApplicationProtocol& value) { m_applicationProtocol = value; }
+    inline void SetApplicationProtocol(ApplicationProtocol&& value) { m_applicationProtocol = std::move(value); }
+    inline DescribeDomainConfigurationResult& WithApplicationProtocol(const ApplicationProtocol& value) { SetApplicationProtocol(value); return *this;}
+    inline DescribeDomainConfigurationResult& WithApplicationProtocol(ApplicationProtocol&& value) { SetApplicationProtocol(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object that speciﬁes the client certificate conﬁguration for a domain.</p>
+     */
+    inline const ClientCertificateConfig& GetClientCertificateConfig() const{ return m_clientCertificateConfig; }
+    inline void SetClientCertificateConfig(const ClientCertificateConfig& value) { m_clientCertificateConfig = value; }
+    inline void SetClientCertificateConfig(ClientCertificateConfig&& value) { m_clientCertificateConfig = std::move(value); }
+    inline DescribeDomainConfigurationResult& WithClientCertificateConfig(const ClientCertificateConfig& value) { SetClientCertificateConfig(value); return *this;}
+    inline DescribeDomainConfigurationResult& WithClientCertificateConfig(ClientCertificateConfig&& value) { SetClientCertificateConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -205,6 +266,12 @@ namespace Model
     TlsConfig m_tlsConfig;
 
     ServerCertificateConfig m_serverCertificateConfig;
+
+    AuthenticationType m_authenticationType;
+
+    ApplicationProtocol m_applicationProtocol;
+
+    ClientCertificateConfig m_clientCertificateConfig;
 
     Aws::String m_requestId;
   };
