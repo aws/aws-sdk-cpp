@@ -171,6 +171,9 @@ public class SmithyParser {
 
     private List<TestcaseParams> extractTests()
     {
+
+        
+        
         final List<TestcaseParams> testcases = new ArrayList<>();
 
         if(model == null)
