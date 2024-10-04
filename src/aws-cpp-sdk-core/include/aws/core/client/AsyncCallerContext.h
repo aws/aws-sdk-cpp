@@ -8,11 +8,99 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <aws/crt/http/HttpRequestResponse.h>
+#include <aws/core/monitoring/MonitoringManager.h>
 
 namespace Aws
 {
     namespace Client
     {
+
+        class AWS_CORE_API MonitorContext{
+
+            private:
+            mutable std::shared_ptr< Aws::Http::HttpRequest> httpRequest_sp;
+            mutable Aws::Monitoring::CoreMetricsCollection coreMetrics;
+            mutable String clientName;
+            mutable String requestName;
+            mutable Aws::Vector<void*> contexts;
+
+            public:
+            ~MonitorContext() = default;
+            MonitorContext() = default;
+            MonitorContext(const MonitorContext&) = delete;
+            MonitorContext( MonitorContext &&) = delete;
+            MonitorContext& operator=(const MonitorContext&) = delete;
+            MonitorContext& operator=(MonitorContext&&) = delete;
+
+            void StartMonitorContext(String client, String request, std::shared_ptr<Aws::Http::HttpRequest> httpRequest) const
+            {
+                httpRequest_sp = httpRequest;
+                clientName = client;
+                requestName = request;
+                coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
+                contexts = Aws::Monitoring::OnRequestStarted(clientName, requestName, httpRequest_sp);
+            }
+
+            inline void OnRequestFailed(const Aws::Client::HttpResponseOutcome& outcome) const
+            {
+                if(!httpRequest_sp)
+                {
+                    return;
+                }
+                
+                Aws::Monitoring::OnRequestFailed(
+                        clientName,
+                        requestName, 
+                        httpRequest_sp ,
+                        outcome, 
+                        coreMetrics, 
+                        contexts);
+                
+            }
+
+            inline void OnRequestSucceeded(const Aws::Client::HttpResponseOutcome& outcome) const
+            {
+                if(!httpRequest_sp)
+                {
+                    return;
+                }
+                Aws::Monitoring::OnRequestSucceeded(
+                        clientName,
+                        requestName, 
+                        httpRequest_sp ,
+                        outcome, 
+                        coreMetrics, 
+                        contexts);
+            }
+
+            inline void OnRetry() const
+            {
+                if(!httpRequest_sp)
+                {
+                    return;
+                }
+                Aws::Monitoring::OnRequestRetry(
+                clientName, 
+                requestName,
+                httpRequest_sp, 
+                contexts);
+            }
+
+            inline void OnFinish() const
+            {
+                if(!httpRequest_sp)
+                {
+                    return;
+                }
+                Aws::Monitoring::OnFinish(
+                        clientName,
+                        requestName, 
+                        httpRequest_sp ,
+                        contexts);
+            }
+
+        };
+
         /**
         * Call-back context for all async client methods. This allows you to pass a context to your callbacks so that you can identify your requests.
         * It is entirely intended that you override this class in-lieu of using a void* for the user context. The base class just gives you the ability to
@@ -21,6 +109,7 @@ namespace Aws
         class AWS_CORE_API AsyncCallerContext
         {
         public:
+
             /**
              * Initializes object with generated UUID
              */
@@ -53,18 +142,13 @@ namespace Aws
              */
             inline void SetUUID(const char* value) { m_uuid.assign(value); }
 
-
-            inline void SetHttpRequest(std::shared_ptr<Aws::Http::HttpRequest> httpRequest){
-                httpRequest = httpRequest;
-            }
-
-            inline std::shared_ptr<Aws::Http::HttpRequest> GetHttpRequest(){
-                return httpRequest;
+            inline const MonitorContext& GetMonitorContext() const{
+                return monitorContext;
             }
 
         private:
             Aws::String m_uuid;
-            std::shared_ptr< Aws::Http::HttpRequest> httpRequest;
+            mutable MonitorContext monitorContext;
         };
     }
 }
