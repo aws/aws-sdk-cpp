@@ -33,14 +33,21 @@ import java.util.stream.Stream;
 
 public class SmokeTestsParser {
     private Model model;
+    private SmithyCodegenAdapter codegenAdapter;
+
     
     public SmokeTestsParser(Model model)
     {
         this.model = model;
+        codegenAdapter = new SmithyCodegenAdapter(model);
+
     }
 
 
-    private List<TestcaseParams> parseSmokeTestTrait(SmokeTestsTrait smokeTestsTrait, OperationShape operationShape )
+    private List<TestcaseParams> parseSmokeTests(
+        SmokeTestsTrait smokeTestsTrait, 
+        OperationShape operationShape,
+        ServiceShape serviceShape )
     {
         final List<TestcaseParams> testcases = new ArrayList<>();
 
@@ -48,7 +55,7 @@ public class SmokeTestsParser {
             //parse each test case
             //operation name
             TestcaseParams test = new TestcaseParams();
-            String clientName = service.get().getId().getName();
+            String clientName = serviceShape.getId().getName();
             test.setClientName(clientName.substring(0, clientName.indexOf('_')));
             test.setOperationName(operationShape.getId().getName());
 
@@ -181,15 +188,15 @@ public class SmokeTestsParser {
             test.setTestcaseName(testcase.getId());
 
             //check which auth trait is present
-            if (service.get().getTrait(SigV4Trait.class).isPresent())
+            if (serviceShape.getTrait(SigV4Trait.class).isPresent())
             {
                 test.setAuth("sigv4");
             }
-            else if(service.get().getTrait(SigV4ATrait.class).isPresent())
+            else if(serviceShape.getTrait(SigV4ATrait.class).isPresent())
             {
                 test.setAuth("sigv4a");
             }
-            else if(service.get().getTrait(HttpBearerAuthTrait.class).isPresent())
+            else if(serviceShape.getTrait(HttpBearerAuthTrait.class).isPresent())
             {
                 test.setAuth("bearer");
             }
@@ -201,78 +208,52 @@ public class SmokeTestsParser {
 
     //model contains information from all the smithy files
     //extract services to smoke tests
-    private Map<String, List<TestcaseParams> > extractServiceSmokeTests(Model model)
+    public Map<String, List<TestcaseParams> > extractServiceSmokeTests()
     {
+        Map<String, List<TestcaseParams> > serviceSmokeTestsMap = new HashMap<>();
+        List<TestcaseParams> testcases = new ArrayList<>();
+
         Map<ShapeId, String> operationToServiceMap = new HashMap<>();
+        Map<String, ServiceShape> serviceShapeMap = new HashMap<>();
         
-        // Iterate over all Service shapes in the model and get the operations
-        model.getServiceShapes().stream().forEach(service -> {
-            String serviceName = service.getId().getName();
-            service.getAllOperations().stream().forEach(operation -> {
+        // Iterate over all Service shapes in the model and create map of operation to 
+        model.getServiceShapes().stream().forEach(serviceShape -> {
+            String serviceName = serviceShape.getId().getName();
+            serviceShape.getAllOperations().stream().forEach(operation -> {
                 operationToServiceMap.put( operation, serviceName);
+                serviceShapeMap.put(serviceName,serviceShape );
             });
         });
 
-        Map<String, List<TestcaseParams> > serviceSmokeTestsMap = new HashMap<>();
-
-        final List<TestcaseParams> testcases = new ArrayList<>();
-
-        if(model == null)
-        {
-            return testcases;
-        }
-        
-        //create a map of operations to shape
-
-
-
+     
         //first filter operations that have smoke test trait
         //on those operation shapes, find service trait
 
+        model.getOperationShapes().stream().
+        filter(operationShape -> operationShape.getTrait(SmokeTestsTrait.class).isPresent() ).
+        filter(operationShape ->  operationToServiceMap.containsKey(operationShape.getId()) ).
+        forEach(operationShape -> {
+
+            SmokeTestsTrait smokeTestsTrait = operationShape.getTrait(SmokeTestsTrait.class).get();
+            //get serviceShape
+            String serviceName = operationToServiceMap.get(operationShape.getId());
+
+            ServiceShape serviceShape = serviceShapeMap.get(serviceName);
+
+            System.out.println("OperationShape: " + operationShape.getName());
+            System.out.println("serviceName: " + serviceName);
+
+
+            //parseSmokeTests(
+            //                SmokeTestsTrait smokeTestsTrait, 
+            //                OperationShape operationShape,
+            //                ServiceShape serviceShape )
+
+
+
+        });
         
-        {
-            //only filter operations with smoke test trait
-            Map<OperationShape, SmokeTestsTrait> operationShapestoSmokeTestsTraitsMap = model.getOperationShapes().stream().filter(operationShape ->
-            operationShape.getTrait(SmokeTestsTrait.class).isPresent() ).
-            collect(Collectors.toMap(
-                operationShape -> operationShape,
-                operationShape -> operationShape.getTrait(SmokeTestsTrait.class).get()
-            ));
-
-            //for each operation with smoketest, extract trait info and parse into java classes
-            operationShapestoSmokeTestsTraitsMap.entrySet().stream()
-                .filter(entry ->  entry.getKey().getTrait(ServiceTrait.class).isPresent() )
-                .forEach(entry -> {
-                    OperationShape operationShape = entry.getKey();
-                    SmokeTestsTrait smokeTestsTrait = entry.getValue();
-
-                    String service =  operationToServiceMap.get(operationShape.getId())
-
-                    //add to map of services
-
-                    String serviceId =  operationShape.getTrait(ServiceTrait.class).get().getSdkId().toLowerCase();
-
-                    if (serviceSmokeTestsMap.containsKey( serviceId ))
-                    {
-                        serviceSmokeTestsMap.get(serviceId).add(null)
-                    }
-                    else
-                    {
-                        List<TestcaseParams> newList= new ArrayList<>();
-                        serviceSmokeTestsMap.put(serviceId, newList);
-                    }
-
-                    //get service trait
-
-                    // Perform your logic with operationShape and smokeTestsTrait
-                    System.out.println("OperationShape: " + operationShape);
-                    System.out.println("SmokeTestsTrait: " + smokeTestsTrait);
-
-                    
-            });
-        }
-
-        return testcases;
+        return serviceSmokeTestsMap;
     }
     
 }
