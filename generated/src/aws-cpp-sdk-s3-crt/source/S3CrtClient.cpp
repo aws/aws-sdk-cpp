@@ -136,9 +136,6 @@
 #include <aws/http/request_response.h>
 #include <aws/common/string.h>
 
-#include <aws/core/monitoring/MonitoringManager.h>
-
-
 using namespace Aws::Utils;
 
 using namespace Aws;
@@ -717,6 +714,15 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
 static void CopyObjectRequestShutdownCallback(void *user_data)
 {
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+  //log into monitor 
+  if(AWSClient::DoesResponseGenerateError(userData->response))
+  {
+    userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->response);
+  }
+  else
+  {
+    userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->response);
+  }
   // call user callback and release user_data
   S3Crt::Model::CopyObjectOutcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
   userData->copyResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const CopyObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
@@ -785,6 +791,7 @@ void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyOb
   {
     return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
   }
+  handlerContext->GetMonitorContext().StartMonitorContext("S3CrtClient",request.GetServiceRequestName(), userData->request);
   options.shutdown_callback = CopyObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_COPY_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
@@ -873,6 +880,15 @@ CopyObjectOutcome S3CrtClient::CopyObject(const CopyObjectRequest& request) cons
 static void GetObjectRequestShutdownCallback(void *user_data)
 {
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+  //log into monitor 
+  if(AWSClient::DoesResponseGenerateError(userData->response))
+  {
+    userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->response);
+  }
+  else
+  {
+    userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->response);
+  }
   // call user callback and release user_data
   S3Crt::Model::GetObjectOutcome outcome(userData->s3CrtClient->GenerateStreamOutcome(userData->response));
   userData->getResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const GetObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
@@ -936,10 +952,7 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   {
     return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Output stream in bad state", false)), handlerContext);
   }
-
-  auto contexts = Aws::Monitoring::OnRequestStarted("S3CrtClient", request.GetServiceRequestName(), userData->request);
-
-
+  handlerContext->GetMonitorContext().StartMonitorContext("S3CrtClient",request.GetServiceRequestName(), userData->request);
   options.shutdown_callback = GetObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_GET_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
@@ -962,16 +975,6 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
   options.message= crtHttpRequest->GetUnderlyingMessage();
   userData->crtHttpRequest = crtHttpRequest;
-
-  /*
-    Aws::Monitoring::CoreMetricsCollection coreMetrics;
-    auto outcome =  GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false));
-    coreMetrics.httpClientMetrics = userData->request->GetRequestMetrics();
-
-    Aws::Monitoring::OnRequestFailed("S3CrtClient", request.GetServiceRequestName(), userData->request, outcome, coreMetrics, contexts);
-
-  
-  */
 
   if (aws_s3_client_make_meta_request(m_s3CrtClient, &options) == nullptr)
   {
@@ -1007,6 +1010,15 @@ GetObjectOutcome S3CrtClient::GetObject(const GetObjectRequest& request) const
 static void PutObjectRequestShutdownCallback(void *user_data)
 {
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+  //log into monitor 
+  if(AWSClient::DoesResponseGenerateError(userData->response))
+  {
+    userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->response);
+  }
+  else
+  {
+    userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->response);
+  }
   // call user callback and release user_data
   S3Crt::Model::PutObjectOutcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
   userData->putResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const PutObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
@@ -1017,8 +1029,6 @@ static void PutObjectRequestShutdownCallback(void *user_data)
 void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
   AWS_ASYNC_OPERATION_GUARD(PutObject);
-
-
   if (!m_endpointProvider) {
     return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
   }
@@ -1076,6 +1086,7 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   {
     return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Input stream in bad state", false)), handlerContext);
   }
+  handlerContext->GetMonitorContext().StartMonitorContext("S3CrtClient",request.GetServiceRequestName(), userData->request);
   options.shutdown_callback = PutObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;

@@ -266,7 +266,7 @@ static void ${operation.name}RequestShutdownCallback(void *user_data)
 #set($refText = "")
 #end
 #if($operation.request)
-void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<Aws::Client::AsyncCallerContext>& handlerContext) const
+void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
   AWS_ASYNC_OPERATION_GUARD(${operation.name});
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
@@ -333,7 +333,7 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 #else
   InitCommonCrtRequestOption(userData, &options, &request, uri, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #end
-  handlerContext->GetMonitorContext().StartMonitorContext(${className},request.GetServiceRequestName(), userData->request);
+  handlerContext->GetMonitorContext().StartMonitorContext("${className}",request.GetServiceRequestName(), userData->request);
   options.shutdown_callback = ${operation.request.shape.name}ShutdownCallback;
 #if($operation.name == "PutObject")
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
