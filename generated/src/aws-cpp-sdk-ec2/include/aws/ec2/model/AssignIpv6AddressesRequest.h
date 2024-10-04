@@ -39,36 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of additional IPv6 addresses to assign to the network interface.
-     * The specified number of IPv6 addresses are assigned in addition to the existing
-     * IPv6 addresses that are already assigned to the network interface. Amazon EC2
-     * automatically selects the IPv6 addresses from the subnet range. You can't use
-     * this option if specifying specific IPv6 addresses.</p>
-     */
-    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
-    inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
-    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
-    inline AssignIpv6AddressesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
-     * this option if you're specifying a number of IPv6 addresses.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
-    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
-    inline void SetIpv6Addresses(const Aws::Vector<Aws::String>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
-    inline void SetIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
-    inline AssignIpv6AddressesRequest& WithIpv6Addresses(const Aws::Vector<Aws::String>& value) { SetIpv6Addresses(value); return *this;}
-    inline AssignIpv6AddressesRequest& WithIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
-    inline AssignIpv6AddressesRequest& AddIpv6Addresses(const Aws::String& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
-    inline AssignIpv6AddressesRequest& AddIpv6Addresses(Aws::String&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
-    inline AssignIpv6AddressesRequest& AddIpv6Addresses(const char* value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to
      * the network interface. You cannot use this option if you use the
      * <code>Ipv6Prefixes</code> option.</p>
@@ -108,13 +78,37 @@ namespace Model
     inline AssignIpv6AddressesRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
     inline AssignIpv6AddressesRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IPv6 addresses to be assigned to the network interface. You can't use
+     * this option if you're specifying a number of IPv6 addresses.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
+    inline void SetIpv6Addresses(const Aws::Vector<Aws::String>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+    inline void SetIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
+    inline AssignIpv6AddressesRequest& WithIpv6Addresses(const Aws::Vector<Aws::String>& value) { SetIpv6Addresses(value); return *this;}
+    inline AssignIpv6AddressesRequest& WithIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
+    inline AssignIpv6AddressesRequest& AddIpv6Addresses(const Aws::String& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+    inline AssignIpv6AddressesRequest& AddIpv6Addresses(Aws::String&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
+    inline AssignIpv6AddressesRequest& AddIpv6Addresses(const char* value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of additional IPv6 addresses to assign to the network interface.
+     * The specified number of IPv6 addresses are assigned in addition to the existing
+     * IPv6 addresses that are already assigned to the network interface. Amazon EC2
+     * automatically selects the IPv6 addresses from the subnet range. You can't use
+     * this option if specifying specific IPv6 addresses.</p>
+     */
+    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
+    inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
+    inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
+    inline AssignIpv6AddressesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
+    ///@}
   private:
-
-    int m_ipv6AddressCount;
-    bool m_ipv6AddressCountHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet = false;
 
     int m_ipv6PrefixCount;
     bool m_ipv6PrefixCountHasBeenSet = false;
@@ -124,6 +118,12 @@ namespace Model
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet = false;
+
+    int m_ipv6AddressCount;
+    bool m_ipv6AddressCountHasBeenSet = false;
   };
 
 } // namespace Model

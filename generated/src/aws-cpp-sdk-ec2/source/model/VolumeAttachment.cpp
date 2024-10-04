@@ -21,16 +21,16 @@ namespace Model
 {
 
 VolumeAttachment::VolumeAttachment() : 
-    m_attachTimeHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_state(VolumeAttachmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
     m_deleteOnTermination(false),
     m_deleteOnTerminationHasBeenSet(false),
     m_associatedResourceHasBeenSet(false),
-    m_instanceOwningServiceHasBeenSet(false)
+    m_instanceOwningServiceHasBeenSet(false),
+    m_volumeIdHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_deviceHasBeenSet(false),
+    m_state(VolumeAttachmentState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_attachTimeHasBeenSet(false)
 {
 }
 
@@ -46,36 +46,6 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
-    if(!attachTimeNode.IsNull())
-    {
-      m_attachTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
-      m_attachTimeHasBeenSet = true;
-    }
-    XmlNode deviceNode = resultNode.FirstChild("device");
-    if(!deviceNode.IsNull())
-    {
-      m_device = Aws::Utils::Xml::DecodeEscapedXmlText(deviceNode.GetText());
-      m_deviceHasBeenSet = true;
-    }
-    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
-    if(!instanceIdNode.IsNull())
-    {
-      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
-      m_instanceIdHasBeenSet = true;
-    }
-    XmlNode stateNode = resultNode.FirstChild("status");
-    if(!stateNode.IsNull())
-    {
-      m_state = VolumeAttachmentStateMapper::GetVolumeAttachmentStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
-      m_stateHasBeenSet = true;
-    }
-    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
-    if(!volumeIdNode.IsNull())
-    {
-      m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
-      m_volumeIdHasBeenSet = true;
-    }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())
     {
@@ -94,6 +64,36 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
       m_instanceOwningService = Aws::Utils::Xml::DecodeEscapedXmlText(instanceOwningServiceNode.GetText());
       m_instanceOwningServiceHasBeenSet = true;
     }
+    XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
+    if(!volumeIdNode.IsNull())
+    {
+      m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
+      m_volumeIdHasBeenSet = true;
+    }
+    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
+    if(!instanceIdNode.IsNull())
+    {
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
+      m_instanceIdHasBeenSet = true;
+    }
+    XmlNode deviceNode = resultNode.FirstChild("device");
+    if(!deviceNode.IsNull())
+    {
+      m_device = Aws::Utils::Xml::DecodeEscapedXmlText(deviceNode.GetText());
+      m_deviceHasBeenSet = true;
+    }
+    XmlNode stateNode = resultNode.FirstChild("status");
+    if(!stateNode.IsNull())
+    {
+      m_state = VolumeAttachmentStateMapper::GetVolumeAttachmentStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_stateHasBeenSet = true;
+    }
+    XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
+    if(!attachTimeNode.IsNull())
+    {
+      m_attachTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_attachTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -101,31 +101,6 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
 
 void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_attachTimeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-
-  if(m_deviceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Device=" << StringUtils::URLEncode(m_device.c_str()) << "&";
-  }
-
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << VolumeAttachmentStateMapper::GetNameForVolumeAttachmentState(m_state) << "&";
-  }
-
-  if(m_volumeIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
-  }
-
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
@@ -141,6 +116,31 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".InstanceOwningService=" << StringUtils::URLEncode(m_instanceOwningService.c_str()) << "&";
   }
 
+  if(m_volumeIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
+  if(m_deviceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Device=" << StringUtils::URLEncode(m_device.c_str()) << "&";
+  }
+
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".State=" << VolumeAttachmentStateMapper::GetNameForVolumeAttachmentState(m_state) << "&";
+  }
+
+  if(m_attachTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   Aws::StringStream responseMetadataLocationAndMemberSs;
   responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
@@ -148,26 +148,6 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
 
 void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_attachTimeHasBeenSet)
-  {
-      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-  if(m_deviceHasBeenSet)
-  {
-      oStream << location << ".Device=" << StringUtils::URLEncode(m_device.c_str()) << "&";
-  }
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << VolumeAttachmentStateMapper::GetNameForVolumeAttachmentState(m_state) << "&";
-  }
-  if(m_volumeIdHasBeenSet)
-  {
-      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
-  }
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
@@ -179,6 +159,26 @@ void VolumeAttachment::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_instanceOwningServiceHasBeenSet)
   {
       oStream << location << ".InstanceOwningService=" << StringUtils::URLEncode(m_instanceOwningService.c_str()) << "&";
+  }
+  if(m_volumeIdHasBeenSet)
+  {
+      oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if(m_deviceHasBeenSet)
+  {
+      oStream << location << ".Device=" << StringUtils::URLEncode(m_device.c_str()) << "&";
+  }
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << ".State=" << VolumeAttachmentStateMapper::GetNameForVolumeAttachmentState(m_state) << "&";
+  }
+  if(m_attachTimeHasBeenSet)
+  {
+      oStream << location << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

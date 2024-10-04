@@ -44,62 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description of the security group.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SecurityGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SecurityGroup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SecurityGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the security group.</p>
-     */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
-    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline SecurityGroup& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline SecurityGroup& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline SecurityGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The inbound rules associated with the security group.</p>
-     */
-    inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
-    inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
-    inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
-    inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
-    inline SecurityGroup& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
-    inline SecurityGroup& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
-    inline SecurityGroup& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
-    inline SecurityGroup& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the security group.</p>
-     */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
-    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline SecurityGroup& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline SecurityGroup& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline SecurityGroup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the security group.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
@@ -153,19 +97,63 @@ namespace Model
     inline SecurityGroup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
     inline SecurityGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services account ID of the owner of the security group.</p>
+     */
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+    inline SecurityGroup& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+    inline SecurityGroup& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+    inline SecurityGroup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the security group.</p>
+     */
+    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+    inline SecurityGroup& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline SecurityGroup& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
+    inline SecurityGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A description of the security group.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline SecurityGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline SecurityGroup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline SecurityGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The inbound rules associated with the security group.</p>
+     */
+    inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
+    inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
+    inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
+    inline void SetIpPermissions(Aws::Vector<IpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
+    inline SecurityGroup& WithIpPermissions(const Aws::Vector<IpPermission>& value) { SetIpPermissions(value); return *this;}
+    inline SecurityGroup& WithIpPermissions(Aws::Vector<IpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
+    inline SecurityGroup& AddIpPermissions(const IpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
+    inline SecurityGroup& AddIpPermissions(IpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
+    ///@}
   private:
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_groupName;
-    bool m_groupNameHasBeenSet = false;
-
-    Aws::Vector<IpPermission> m_ipPermissions;
-    bool m_ipPermissionsHasBeenSet = false;
-
-    Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet = false;
@@ -178,6 +166,18 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
+
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet = false;
+
+    Aws::String m_groupName;
+    bool m_groupNameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<IpPermission> m_ipPermissions;
+    bool m_ipPermissionsHasBeenSet = false;
   };
 
 } // namespace Model

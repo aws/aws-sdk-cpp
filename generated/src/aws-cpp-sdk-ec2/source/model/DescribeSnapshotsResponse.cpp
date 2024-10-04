@@ -38,6 +38,11 @@ DescribeSnapshotsResponse& DescribeSnapshotsResponse::operator =(const Aws::Amaz
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
     XmlNode snapshotsNode = resultNode.FirstChild("snapshotSet");
     if(!snapshotsNode.IsNull())
     {
@@ -48,11 +53,6 @@ DescribeSnapshotsResponse& DescribeSnapshotsResponse::operator =(const Aws::Amaz
         snapshotsMember = snapshotsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/ec2/model/ContainerFormat.h>
 #include <aws/ec2/model/DiskImageFormat.h>
+#include <aws/ec2/model/ContainerFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -43,6 +43,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The format for the exported image.</p>
+     */
+    inline const DiskImageFormat& GetDiskImageFormat() const{ return m_diskImageFormat; }
+    inline bool DiskImageFormatHasBeenSet() const { return m_diskImageFormatHasBeenSet; }
+    inline void SetDiskImageFormat(const DiskImageFormat& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = value; }
+    inline void SetDiskImageFormat(DiskImageFormat&& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = std::move(value); }
+    inline ExportToS3TaskSpecification& WithDiskImageFormat(const DiskImageFormat& value) { SetDiskImageFormat(value); return *this;}
+    inline ExportToS3TaskSpecification& WithDiskImageFormat(DiskImageFormat&& value) { SetDiskImageFormat(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The container format used to combine disk images with metadata (such as OVF).
      * If absent, only the disk image is exported.</p>
      */
@@ -52,18 +64,6 @@ namespace Model
     inline void SetContainerFormat(ContainerFormat&& value) { m_containerFormatHasBeenSet = true; m_containerFormat = std::move(value); }
     inline ExportToS3TaskSpecification& WithContainerFormat(const ContainerFormat& value) { SetContainerFormat(value); return *this;}
     inline ExportToS3TaskSpecification& WithContainerFormat(ContainerFormat&& value) { SetContainerFormat(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The format for the exported image.</p>
-     */
-    inline const DiskImageFormat& GetDiskImageFormat() const{ return m_diskImageFormat; }
-    inline bool DiskImageFormatHasBeenSet() const { return m_diskImageFormatHasBeenSet; }
-    inline void SetDiskImageFormat(const DiskImageFormat& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = value; }
-    inline void SetDiskImageFormat(DiskImageFormat&& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = std::move(value); }
-    inline ExportToS3TaskSpecification& WithDiskImageFormat(const DiskImageFormat& value) { SetDiskImageFormat(value); return *this;}
-    inline ExportToS3TaskSpecification& WithDiskImageFormat(DiskImageFormat&& value) { SetDiskImageFormat(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,11 +101,11 @@ namespace Model
     ///@}
   private:
 
-    ContainerFormat m_containerFormat;
-    bool m_containerFormatHasBeenSet = false;
-
     DiskImageFormat m_diskImageFormat;
     bool m_diskImageFormatHasBeenSet = false;
+
+    ContainerFormat m_containerFormat;
+    bool m_containerFormatHasBeenSet = false;
 
     Aws::String m_s3Bucket;
     bool m_s3BucketHasBeenSet = false;

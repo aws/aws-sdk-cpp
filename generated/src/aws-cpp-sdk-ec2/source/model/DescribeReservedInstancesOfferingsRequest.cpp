@@ -12,7 +12,6 @@ using namespace Aws::Utils;
 
 DescribeReservedInstancesOfferingsRequest::DescribeReservedInstancesOfferingsRequest() : 
     m_availabilityZoneHasBeenSet(false),
-    m_filtersHasBeenSet(false),
     m_includeMarketplace(false),
     m_includeMarketplaceHasBeenSet(false),
     m_instanceType(InstanceType::NOT_SET),
@@ -30,13 +29,14 @@ DescribeReservedInstancesOfferingsRequest::DescribeReservedInstancesOfferingsReq
     m_reservedInstancesOfferingIdsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_offeringType(OfferingTypeValues::NOT_SET),
-    m_offeringTypeHasBeenSet(false)
+    m_offeringTypeHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -47,16 +47,6 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
   if(m_availabilityZoneHasBeenSet)
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
-
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
   }
 
   if(m_includeMarketplaceHasBeenSet)
@@ -110,14 +100,24 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
+  }
+
   if(m_instanceTenancyHasBeenSet)
   {
     ss << "InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
   }
 
-  if(m_maxResultsHasBeenSet)
+  if(m_offeringTypeHasBeenSet)
   {
-    ss << "MaxResults=" << m_maxResults << "&";
+    ss << "OfferingType=" << OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType) << "&";
   }
 
   if(m_nextTokenHasBeenSet)
@@ -125,9 +125,9 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
-  if(m_offeringTypeHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-    ss << "OfferingType=" << OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType) << "&";
+    ss << "MaxResults=" << m_maxResults << "&";
   }
 
   ss << "Version=2016-11-15";

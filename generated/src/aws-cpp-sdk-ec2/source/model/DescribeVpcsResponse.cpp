@@ -38,6 +38,11 @@ DescribeVpcsResponse& DescribeVpcsResponse::operator =(const Aws::AmazonWebServi
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
     XmlNode vpcsNode = resultNode.FirstChild("vpcSet");
     if(!vpcsNode.IsNull())
     {
@@ -48,11 +53,6 @@ DescribeVpcsResponse& DescribeVpcsResponse::operator =(const Aws::AmazonWebServi
         vpcsMember = vpcsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

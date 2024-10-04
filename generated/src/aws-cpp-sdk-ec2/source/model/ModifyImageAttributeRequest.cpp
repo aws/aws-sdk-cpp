@@ -21,11 +21,11 @@ ModifyImageAttributeRequest::ModifyImageAttributeRequest() :
     m_userGroupsHasBeenSet(false),
     m_userIdsHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
     m_organizationArnsHasBeenSet(false),
     m_organizationalUnitArnsHasBeenSet(false),
-    m_imdsSupportHasBeenSet(false)
+    m_imdsSupportHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -96,11 +96,6 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
     ss << "Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_organizationArnsHasBeenSet)
   {
     unsigned organizationArnsCount = 1;
@@ -126,6 +121,11 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
   if(m_imdsSupportHasBeenSet)
   {
     m_imdsSupport.OutputToStream(ss, "ImdsSupport");
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -42,16 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The size of the disk image, in GiB.</p>
-     */
-    inline long long GetBytes() const{ return m_bytes; }
-    inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-    inline void SetBytes(long long value) { m_bytesHasBeenSet = true; m_bytes = value; }
-    inline DiskImageDetail& WithBytes(long long value) { SetBytes(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The disk image format.</p>
      */
     inline const DiskImageFormat& GetFormat() const{ return m_format; }
@@ -60,6 +50,16 @@ namespace Model
     inline void SetFormat(DiskImageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
     inline DiskImageDetail& WithFormat(const DiskImageFormat& value) { SetFormat(value); return *this;}
     inline DiskImageDetail& WithFormat(DiskImageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The size of the disk image, in GiB.</p>
+     */
+    inline long long GetBytes() const{ return m_bytes; }
+    inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
+    inline void SetBytes(long long value) { m_bytesHasBeenSet = true; m_bytes = value; }
+    inline DiskImageDetail& WithBytes(long long value) { SetBytes(value); return *this;}
     ///@}
 
     ///@{
@@ -86,11 +86,11 @@ namespace Model
     ///@}
   private:
 
-    long long m_bytes;
-    bool m_bytesHasBeenSet = false;
-
     DiskImageFormat m_format;
     bool m_formatHasBeenSet = false;
+
+    long long m_bytes;
+    bool m_bytesHasBeenSet = false;
 
     Aws::String m_importManifestUrl;
     bool m_importManifestUrlHasBeenSet = false;

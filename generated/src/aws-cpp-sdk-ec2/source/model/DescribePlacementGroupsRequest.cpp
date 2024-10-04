@@ -11,11 +11,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribePlacementGroupsRequest::DescribePlacementGroupsRequest() : 
-    m_filtersHasBeenSet(false),
+    m_groupIdsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_groupNamesHasBeenSet(false),
-    m_groupIdsHasBeenSet(false)
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -23,13 +23,14 @@ Aws::String DescribePlacementGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribePlacementGroups&";
-  if(m_filtersHasBeenSet)
+  if(m_groupIdsHasBeenSet)
   {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
+    unsigned groupIdsCount = 1;
+    for(auto& item : m_groupIds)
     {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
+      ss << "GroupId." << groupIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      groupIdsCount++;
     }
   }
 
@@ -49,14 +50,13 @@ Aws::String DescribePlacementGroupsRequest::SerializePayload() const
     }
   }
 
-  if(m_groupIdsHasBeenSet)
+  if(m_filtersHasBeenSet)
   {
-    unsigned groupIdsCount = 1;
-    for(auto& item : m_groupIds)
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
     {
-      ss << "GroupId." << groupIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      groupIdsCount++;
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
     }
   }
 

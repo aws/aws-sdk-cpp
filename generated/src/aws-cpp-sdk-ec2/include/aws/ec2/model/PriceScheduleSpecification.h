@@ -41,15 +41,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The currency for transacting the Reserved Instance resale. At this time, the
-     * only supported currency is <code>USD</code>.</p>
+     * <p>The number of months remaining in the reservation. For example, 2 is the
+     * second to the last month before the capacity reservation expires.</p>
      */
-    inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
-    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline PriceScheduleSpecification& WithCurrencyCode(const CurrencyCodeValues& value) { SetCurrencyCode(value); return *this;}
-    inline PriceScheduleSpecification& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
+    inline long long GetTerm() const{ return m_term; }
+    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
+    inline void SetTerm(long long value) { m_termHasBeenSet = true; m_term = value; }
+    inline PriceScheduleSpecification& WithTerm(long long value) { SetTerm(value); return *this;}
     ///@}
 
     ///@{
@@ -64,24 +62,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of months remaining in the reservation. For example, 2 is the
-     * second to the last month before the capacity reservation expires.</p>
+     * <p>The currency for transacting the Reserved Instance resale. At this time, the
+     * only supported currency is <code>USD</code>.</p>
      */
-    inline long long GetTerm() const{ return m_term; }
-    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
-    inline void SetTerm(long long value) { m_termHasBeenSet = true; m_term = value; }
-    inline PriceScheduleSpecification& WithTerm(long long value) { SetTerm(value); return *this;}
+    inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
+    inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
+    inline PriceScheduleSpecification& WithCurrencyCode(const CurrencyCodeValues& value) { SetCurrencyCode(value); return *this;}
+    inline PriceScheduleSpecification& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
     ///@}
   private:
 
-    CurrencyCodeValues m_currencyCode;
-    bool m_currencyCodeHasBeenSet = false;
+    long long m_term;
+    bool m_termHasBeenSet = false;
 
     double m_price;
     bool m_priceHasBeenSet = false;
 
-    long long m_term;
-    bool m_termHasBeenSet = false;
+    CurrencyCodeValues m_currencyCode;
+    bool m_currencyCodeHasBeenSet = false;
   };
 
 } // namespace Model

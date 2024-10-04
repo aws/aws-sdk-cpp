@@ -6,17 +6,17 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IamInstanceProfileSpecification.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/SpotFleetMonitoring.h>
 #include <aws/ec2/model/SpotPlacement.h>
 #include <aws/ec2/model/InstanceRequirements.h>
-#include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/SpotFleetTagSpecification.h>
+#include <aws/ec2/model/GroupIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -53,22 +53,6 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-
-    ///@{
-    /**
-     * <p>The security groups.</p> <p>If you specify a network interface, you must
-     * specify any security groups as part of the network interface instead of using
-     * this parameter.</p>
-     */
-    inline const Aws::Vector<GroupIdentifier>& GetSecurityGroups() const{ return m_securityGroups; }
-    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-    inline void SetSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-    inline void SetSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-    inline SpotFleetLaunchSpecification& WithSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { SetSecurityGroups(value); return *this;}
-    inline SpotFleetLaunchSpecification& WithSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-    inline SpotFleetLaunchSpecification& AddSecurityGroups(const GroupIdentifier& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-    inline SpotFleetLaunchSpecification& AddSecurityGroups(GroupIdentifier&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
-    ///@}
 
     ///@{
     /**
@@ -341,10 +325,23 @@ namespace Model
     inline SpotFleetLaunchSpecification& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
     inline SpotFleetLaunchSpecification& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<GroupIdentifier> m_securityGroups;
-    bool m_securityGroupsHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The security groups.</p> <p>If you specify a network interface, you must
+     * specify any security groups as part of the network interface instead of using
+     * this parameter.</p>
+     */
+    inline const Aws::Vector<GroupIdentifier>& GetSecurityGroups() const{ return m_securityGroups; }
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
+    inline void SetSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+    inline void SetSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
+    inline SpotFleetLaunchSpecification& WithSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { SetSecurityGroups(value); return *this;}
+    inline SpotFleetLaunchSpecification& WithSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { SetSecurityGroups(std::move(value)); return *this;}
+    inline SpotFleetLaunchSpecification& AddSecurityGroups(const GroupIdentifier& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    inline SpotFleetLaunchSpecification& AddSecurityGroups(GroupIdentifier&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
+    ///@}
+  private:
 
     Aws::String m_addressingType;
     bool m_addressingTypeHasBeenSet = false;
@@ -399,6 +396,9 @@ namespace Model
 
     InstanceRequirements m_instanceRequirements;
     bool m_instanceRequirementsHasBeenSet = false;
+
+    Aws::Vector<GroupIdentifier> m_securityGroups;
+    bool m_securityGroupsHasBeenSet = false;
   };
 
 } // namespace Model

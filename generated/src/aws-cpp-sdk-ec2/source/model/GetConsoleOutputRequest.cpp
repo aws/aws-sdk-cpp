@@ -12,10 +12,10 @@ using namespace Aws::Utils;
 
 GetConsoleOutputRequest::GetConsoleOutputRequest() : 
     m_instanceIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
     m_latest(false),
-    m_latestHasBeenSet(false)
+    m_latestHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -28,14 +28,14 @@ Aws::String GetConsoleOutputRequest::SerializePayload() const
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_latestHasBeenSet)
   {
     ss << "Latest=" << std::boolalpha << m_latest << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

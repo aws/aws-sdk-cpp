@@ -21,8 +21,8 @@ namespace Model
 {
 
 Ipv6Range::Ipv6Range() : 
-    m_cidrIpv6HasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_cidrIpv6HasBeenSet(false)
 {
 }
 
@@ -38,17 +38,17 @@ Ipv6Range& Ipv6Range::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode cidrIpv6Node = resultNode.FirstChild("cidrIpv6");
-    if(!cidrIpv6Node.IsNull())
-    {
-      m_cidrIpv6 = Aws::Utils::Xml::DecodeEscapedXmlText(cidrIpv6Node.GetText());
-      m_cidrIpv6HasBeenSet = true;
-    }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+    }
+    XmlNode cidrIpv6Node = resultNode.FirstChild("cidrIpv6");
+    if(!cidrIpv6Node.IsNull())
+    {
+      m_cidrIpv6 = Aws::Utils::Xml::DecodeEscapedXmlText(cidrIpv6Node.GetText());
+      m_cidrIpv6HasBeenSet = true;
     }
   }
 
@@ -57,27 +57,27 @@ Ipv6Range& Ipv6Range::operator =(const XmlNode& xmlNode)
 
 void Ipv6Range::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_cidrIpv6HasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CidrIpv6=" << StringUtils::URLEncode(m_cidrIpv6.c_str()) << "&";
-  }
-
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_cidrIpv6HasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CidrIpv6=" << StringUtils::URLEncode(m_cidrIpv6.c_str()) << "&";
   }
 
 }
 
 void Ipv6Range::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_cidrIpv6HasBeenSet)
-  {
-      oStream << location << ".CidrIpv6=" << StringUtils::URLEncode(m_cidrIpv6.c_str()) << "&";
-  }
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_cidrIpv6HasBeenSet)
+  {
+      oStream << location << ".CidrIpv6=" << StringUtils::URLEncode(m_cidrIpv6.c_str()) << "&";
   }
 }
 

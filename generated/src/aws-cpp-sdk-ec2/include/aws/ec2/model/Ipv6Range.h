@@ -41,22 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IPv6 address range. You can either specify a CIDR block or a source
-     * security group, not both. To specify a single IPv6 address, use the /128 prefix
-     * length.</p>
-     */
-    inline const Aws::String& GetCidrIpv6() const{ return m_cidrIpv6; }
-    inline bool CidrIpv6HasBeenSet() const { return m_cidrIpv6HasBeenSet; }
-    inline void SetCidrIpv6(const Aws::String& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = value; }
-    inline void SetCidrIpv6(Aws::String&& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = std::move(value); }
-    inline void SetCidrIpv6(const char* value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6.assign(value); }
-    inline Ipv6Range& WithCidrIpv6(const Aws::String& value) { SetCidrIpv6(value); return *this;}
-    inline Ipv6Range& WithCidrIpv6(Aws::String&& value) { SetCidrIpv6(std::move(value)); return *this;}
-    inline Ipv6Range& WithCidrIpv6(const char* value) { SetCidrIpv6(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A description for the security group rule that references this IPv6 address
      * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
      * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
@@ -70,13 +54,29 @@ namespace Model
     inline Ipv6Range& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline Ipv6Range& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_cidrIpv6;
-    bool m_cidrIpv6HasBeenSet = false;
+    ///@{
+    /**
+     * <p>The IPv6 address range. You can either specify a CIDR block or a source
+     * security group, not both. To specify a single IPv6 address, use the /128 prefix
+     * length.</p>
+     */
+    inline const Aws::String& GetCidrIpv6() const{ return m_cidrIpv6; }
+    inline bool CidrIpv6HasBeenSet() const { return m_cidrIpv6HasBeenSet; }
+    inline void SetCidrIpv6(const Aws::String& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = value; }
+    inline void SetCidrIpv6(Aws::String&& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = std::move(value); }
+    inline void SetCidrIpv6(const char* value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6.assign(value); }
+    inline Ipv6Range& WithCidrIpv6(const Aws::String& value) { SetCidrIpv6(value); return *this;}
+    inline Ipv6Range& WithCidrIpv6(Aws::String&& value) { SetCidrIpv6(std::move(value)); return *this;}
+    inline Ipv6Range& WithCidrIpv6(const char* value) { SetCidrIpv6(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_cidrIpv6;
+    bool m_cidrIpv6HasBeenSet = false;
   };
 
 } // namespace Model

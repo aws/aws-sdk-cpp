@@ -38,17 +38,6 @@ DescribeInstanceAttributeResponse& DescribeInstanceAttributeResponse::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode groupsNode = resultNode.FirstChild("groupSet");
-    if(!groupsNode.IsNull())
-    {
-      XmlNode groupsMember = groupsNode.FirstChild("item");
-      while(!groupsMember.IsNull())
-      {
-        m_groups.push_back(groupsMember);
-        groupsMember = groupsMember.NextNode("item");
-      }
-
-    }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
     if(!blockDeviceMappingsNode.IsNull())
     {
@@ -140,6 +129,17 @@ DescribeInstanceAttributeResponse& DescribeInstanceAttributeResponse::operator =
     if(!disableApiStopNode.IsNull())
     {
       m_disableApiStop = disableApiStopNode;
+    }
+    XmlNode groupsNode = resultNode.FirstChild("groupSet");
+    if(!groupsNode.IsNull())
+    {
+      XmlNode groupsMember = groupsNode.FirstChild("item");
+      while(!groupsMember.IsNull())
+      {
+        m_groups.push_back(groupsMember);
+        groupsMember = groupsMember.NextNode("item");
+      }
+
     }
   }
 

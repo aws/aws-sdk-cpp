@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/ec2/model/AttachmentStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/AttachmentStatus.h>
 #include <utility>
 
 namespace Aws
@@ -43,18 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current state of the attachment.</p>
-     */
-    inline const AttachmentStatus& GetState() const{ return m_state; }
-    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const AttachmentStatus& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(AttachmentStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline VpcAttachment& WithState(const AttachmentStatus& value) { SetState(value); return *this;}
-    inline VpcAttachment& WithState(AttachmentStatus&& value) { SetState(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
@@ -66,13 +54,25 @@ namespace Model
     inline VpcAttachment& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
     inline VpcAttachment& WithVpcId(const char* value) { SetVpcId(value); return *this;}
     ///@}
-  private:
 
-    AttachmentStatus m_state;
-    bool m_stateHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The current state of the attachment.</p>
+     */
+    inline const AttachmentStatus& GetState() const{ return m_state; }
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+    inline void SetState(const AttachmentStatus& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(AttachmentStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+    inline VpcAttachment& WithState(const AttachmentStatus& value) { SetState(value); return *this;}
+    inline VpcAttachment& WithState(AttachmentStatus&& value) { SetState(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
+
+    AttachmentStatus m_state;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

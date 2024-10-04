@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -38,6 +38,20 @@ namespace Model
     AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+
+    ///@{
+    /**
+     * <p>The tags to apply to the imported key pair.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+    inline ImportKeyPairRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+    inline ImportKeyPairRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+    inline ImportKeyPairRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+    inline ImportKeyPairRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    ///@}
 
     ///@{
     /**
@@ -78,21 +92,10 @@ namespace Model
     inline ImportKeyPairRequest& WithPublicKeyMaterial(const Aws::Utils::ByteBuffer& value) { SetPublicKeyMaterial(value); return *this;}
     inline ImportKeyPairRequest& WithPublicKeyMaterial(Aws::Utils::ByteBuffer&& value) { SetPublicKeyMaterial(std::move(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The tags to apply to the imported key pair.</p>
-     */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline ImportKeyPairRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline ImportKeyPairRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline ImportKeyPairRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline ImportKeyPairRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
-    ///@}
   private:
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
@@ -102,9 +105,6 @@ namespace Model
 
     Aws::Utils::ByteBuffer m_publicKeyMaterial;
     bool m_publicKeyMaterialHasBeenSet = false;
-
-    Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Subnet.h>
 #include <utility>
@@ -37,19 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the subnets.</p>
-     */
-    inline const Aws::Vector<Subnet>& GetSubnets() const{ return m_subnets; }
-    inline void SetSubnets(const Aws::Vector<Subnet>& value) { m_subnets = value; }
-    inline void SetSubnets(Aws::Vector<Subnet>&& value) { m_subnets = std::move(value); }
-    inline DescribeSubnetsResponse& WithSubnets(const Aws::Vector<Subnet>& value) { SetSubnets(value); return *this;}
-    inline DescribeSubnetsResponse& WithSubnets(Aws::Vector<Subnet>&& value) { SetSubnets(std::move(value)); return *this;}
-    inline DescribeSubnetsResponse& AddSubnets(const Subnet& value) { m_subnets.push_back(value); return *this; }
-    inline DescribeSubnetsResponse& AddSubnets(Subnet&& value) { m_subnets.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
@@ -63,6 +50,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Information about the subnets.</p>
+     */
+    inline const Aws::Vector<Subnet>& GetSubnets() const{ return m_subnets; }
+    inline void SetSubnets(const Aws::Vector<Subnet>& value) { m_subnets = value; }
+    inline void SetSubnets(Aws::Vector<Subnet>&& value) { m_subnets = std::move(value); }
+    inline DescribeSubnetsResponse& WithSubnets(const Aws::Vector<Subnet>& value) { SetSubnets(value); return *this;}
+    inline DescribeSubnetsResponse& WithSubnets(Aws::Vector<Subnet>&& value) { SetSubnets(std::move(value)); return *this;}
+    inline DescribeSubnetsResponse& AddSubnets(const Subnet& value) { m_subnets.push_back(value); return *this; }
+    inline DescribeSubnetsResponse& AddSubnets(Subnet&& value) { m_subnets.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -72,9 +72,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Subnet> m_subnets;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<Subnet> m_subnets;
 
     ResponseMetadata m_responseMetadata;
   };

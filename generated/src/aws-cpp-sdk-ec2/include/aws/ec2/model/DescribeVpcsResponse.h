@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Vpc.h>
 #include <utility>
@@ -37,19 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the VPCs.</p>
-     */
-    inline const Aws::Vector<Vpc>& GetVpcs() const{ return m_vpcs; }
-    inline void SetVpcs(const Aws::Vector<Vpc>& value) { m_vpcs = value; }
-    inline void SetVpcs(Aws::Vector<Vpc>&& value) { m_vpcs = std::move(value); }
-    inline DescribeVpcsResponse& WithVpcs(const Aws::Vector<Vpc>& value) { SetVpcs(value); return *this;}
-    inline DescribeVpcsResponse& WithVpcs(Aws::Vector<Vpc>&& value) { SetVpcs(std::move(value)); return *this;}
-    inline DescribeVpcsResponse& AddVpcs(const Vpc& value) { m_vpcs.push_back(value); return *this; }
-    inline DescribeVpcsResponse& AddVpcs(Vpc&& value) { m_vpcs.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
@@ -63,6 +50,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Information about the VPCs.</p>
+     */
+    inline const Aws::Vector<Vpc>& GetVpcs() const{ return m_vpcs; }
+    inline void SetVpcs(const Aws::Vector<Vpc>& value) { m_vpcs = value; }
+    inline void SetVpcs(Aws::Vector<Vpc>&& value) { m_vpcs = std::move(value); }
+    inline DescribeVpcsResponse& WithVpcs(const Aws::Vector<Vpc>& value) { SetVpcs(value); return *this;}
+    inline DescribeVpcsResponse& WithVpcs(Aws::Vector<Vpc>&& value) { SetVpcs(std::move(value)); return *this;}
+    inline DescribeVpcsResponse& AddVpcs(const Vpc& value) { m_vpcs.push_back(value); return *this; }
+    inline DescribeVpcsResponse& AddVpcs(Vpc&& value) { m_vpcs.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -72,9 +72,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Vpc> m_vpcs;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<Vpc> m_vpcs;
 
     ResponseMetadata m_responseMetadata;
   };

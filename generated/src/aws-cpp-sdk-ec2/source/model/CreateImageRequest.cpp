@@ -11,15 +11,15 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateImageRequest::CreateImageRequest() : 
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_noReboot(false),
     m_noRebootHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_blockDeviceMappingsHasBeenSet(false)
 {
 }
 
@@ -27,19 +27,14 @@ Aws::String CreateImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateImage&";
-  if(m_blockDeviceMappingsHasBeenSet)
+  if(m_tagSpecificationsHasBeenSet)
   {
-    unsigned blockDeviceMappingsCount = 1;
-    for(auto& item : m_blockDeviceMappings)
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
     {
-      item.OutputToStream(ss, "BlockDeviceMapping.", blockDeviceMappingsCount, "");
-      blockDeviceMappingsCount++;
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
     }
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)
@@ -57,18 +52,23 @@ Aws::String CreateImageRequest::SerializePayload() const
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
+  if(m_descriptionHasBeenSet)
+  {
+    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
   if(m_noRebootHasBeenSet)
   {
     ss << "NoReboot=" << std::boolalpha << m_noReboot << "&";
   }
 
-  if(m_tagSpecificationsHasBeenSet)
+  if(m_blockDeviceMappingsHasBeenSet)
   {
-    unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
+    unsigned blockDeviceMappingsCount = 1;
+    for(auto& item : m_blockDeviceMappings)
     {
-      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
-      tagSpecificationsCount++;
+      item.OutputToStream(ss, "BlockDeviceMapping.", blockDeviceMappingsCount, "");
+      blockDeviceMappingsCount++;
     }
   }
 

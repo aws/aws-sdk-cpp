@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Filter.h>
 #include <utility>
 
@@ -37,46 +37,6 @@ namespace Model
     AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-
-    ///@{
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>description</code> - A description of
-     * the snapshot.</p> </li> <li> <p> <code>encrypted</code> - Indicates whether the
-     * snapshot is encrypted (<code>true</code> | <code>false</code>)</p> </li> <li>
-     * <p> <code>owner-alias</code> - The owner alias, from an Amazon-maintained list
-     * (<code>amazon</code>). This is not the user-configured Amazon Web Services
-     * account alias set using the IAM console. We recommend that you use the related
-     * parameter instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The
-     * Amazon Web Services account ID of the owner. We recommend that you use the
-     * related parameter instead of this filter.</p> </li> <li> <p>
-     * <code>progress</code> - The progress of the snapshot, as a percentage (for
-     * example, 80%).</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot
-     * ID.</p> </li> <li> <p> <code>start-time</code> - The time stamp when the
-     * snapshot was initiated.</p> </li> <li> <p> <code>status</code> - The status of
-     * the snapshot (<code>pending</code> | <code>completed</code> |
-     * <code>error</code>).</p> </li> <li> <p> <code>storage-tier</code> - The storage
-     * tier of the snapshot (<code>archive</code> | <code>standard</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
-     * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
-     * </ul>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeSnapshotsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeSnapshotsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeSnapshotsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-    ///@}
 
     ///@{
     /**
@@ -167,10 +127,47 @@ namespace Model
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeSnapshotsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The filters.</p> <ul> <li> <p> <code>description</code> - A description of
+     * the snapshot.</p> </li> <li> <p> <code>encrypted</code> - Indicates whether the
+     * snapshot is encrypted (<code>true</code> | <code>false</code>)</p> </li> <li>
+     * <p> <code>owner-alias</code> - The owner alias, from an Amazon-maintained list
+     * (<code>amazon</code>). This is not the user-configured Amazon Web Services
+     * account alias set using the IAM console. We recommend that you use the related
+     * parameter instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The
+     * Amazon Web Services account ID of the owner. We recommend that you use the
+     * related parameter instead of this filter.</p> </li> <li> <p>
+     * <code>progress</code> - The progress of the snapshot, as a percentage (for
+     * example, 80%).</p> </li> <li> <p> <code>snapshot-id</code> - The snapshot
+     * ID.</p> </li> <li> <p> <code>start-time</code> - The time stamp when the
+     * snapshot was initiated.</p> </li> <li> <p> <code>status</code> - The status of
+     * the snapshot (<code>pending</code> | <code>completed</code> |
+     * <code>error</code>).</p> </li> <li> <p> <code>storage-tier</code> - The storage
+     * tier of the snapshot (<code>archive</code> | <code>standard</code>).</p> </li>
+     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>volume-id</code> - The ID of the volume the snapshot is for.</p> </li>
+     * <li> <p> <code>volume-size</code> - The size of the volume, in GiB.</p> </li>
+     * </ul>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+    inline DescribeSnapshotsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline DescribeSnapshotsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+    inline DescribeSnapshotsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeSnapshotsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
+  private:
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
@@ -189,6 +186,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

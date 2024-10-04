@@ -11,7 +11,6 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeSnapshotsRequest::DescribeSnapshotsRequest() : 
-    m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
@@ -19,7 +18,8 @@ DescribeSnapshotsRequest::DescribeSnapshotsRequest() :
     m_restorableByUserIdsHasBeenSet(false),
     m_snapshotIdsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -27,16 +27,6 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeSnapshots&";
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
-  }
-
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
@@ -83,6 +73,16 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

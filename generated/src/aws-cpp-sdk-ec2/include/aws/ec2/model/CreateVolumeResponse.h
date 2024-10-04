@@ -5,15 +5,15 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/ec2/model/VolumeState.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/ec2/model/SSEType.h>
+#include <aws/ec2/model/VolumeState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/ResponseMetadata.h>
-#include <aws/ec2/model/VolumeAttachment.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/VolumeAttachment.h>
 #include <utility>
 
 namespace Aws
@@ -47,67 +47,6 @@ namespace Model
 
     ///@{
     /**
-     *  <p>This parameter is not returned by CreateVolume.</p> 
-     * <p>Information about the volume attachments.</p>
-     */
-    inline const Aws::Vector<VolumeAttachment>& GetAttachments() const{ return m_attachments; }
-    inline void SetAttachments(const Aws::Vector<VolumeAttachment>& value) { m_attachments = value; }
-    inline void SetAttachments(Aws::Vector<VolumeAttachment>&& value) { m_attachments = std::move(value); }
-    inline CreateVolumeResponse& WithAttachments(const Aws::Vector<VolumeAttachment>& value) { SetAttachments(value); return *this;}
-    inline CreateVolumeResponse& WithAttachments(Aws::Vector<VolumeAttachment>&& value) { SetAttachments(std::move(value)); return *this;}
-    inline CreateVolumeResponse& AddAttachments(const VolumeAttachment& value) { m_attachments.push_back(value); return *this; }
-    inline CreateVolumeResponse& AddAttachments(VolumeAttachment&& value) { m_attachments.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Availability Zone for the volume.</p>
-     */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZone.assign(value); }
-    inline CreateVolumeResponse& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline CreateVolumeResponse& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline CreateVolumeResponse& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The time stamp when volume creation was initiated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-    inline CreateVolumeResponse& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline CreateVolumeResponse& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates whether the volume is encrypted.</p>
-     */
-    inline bool GetEncrypted() const{ return m_encrypted; }
-    inline void SetEncrypted(bool value) { m_encrypted = value; }
-    inline CreateVolumeResponse& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the
-     * volume encryption key for the volume.</p>
-     */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
-    inline CreateVolumeResponse& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateVolumeResponse& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateVolumeResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Name (ARN) of the Outpost.</p>
      */
     inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
@@ -117,52 +56,6 @@ namespace Model
     inline CreateVolumeResponse& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
     inline CreateVolumeResponse& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
     inline CreateVolumeResponse& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The size of the volume, in GiBs.</p>
-     */
-    inline int GetSize() const{ return m_size; }
-    inline void SetSize(int value) { m_size = value; }
-    inline CreateVolumeResponse& WithSize(int value) { SetSize(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The snapshot from which the volume was created, if applicable.</p>
-     */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotId.assign(value); }
-    inline CreateVolumeResponse& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline CreateVolumeResponse& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline CreateVolumeResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The volume state.</p>
-     */
-    inline const VolumeState& GetState() const{ return m_state; }
-    inline void SetState(const VolumeState& value) { m_state = value; }
-    inline void SetState(VolumeState&& value) { m_state = std::move(value); }
-    inline CreateVolumeResponse& WithState(const VolumeState& value) { SetState(value); return *this;}
-    inline CreateVolumeResponse& WithState(VolumeState&& value) { SetState(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
-    inline CreateVolumeResponse& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline CreateVolumeResponse& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline CreateVolumeResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
     ///@}
 
     ///@{
@@ -243,6 +136,113 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+    inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
+    inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
+    inline CreateVolumeResponse& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+    inline CreateVolumeResponse& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
+    inline CreateVolumeResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The size of the volume, in GiBs.</p>
+     */
+    inline int GetSize() const{ return m_size; }
+    inline void SetSize(int value) { m_size = value; }
+    inline CreateVolumeResponse& WithSize(int value) { SetSize(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The snapshot from which the volume was created, if applicable.</p>
+     */
+    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline void SetSnapshotId(const Aws::String& value) { m_snapshotId = value; }
+    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = std::move(value); }
+    inline void SetSnapshotId(const char* value) { m_snapshotId.assign(value); }
+    inline CreateVolumeResponse& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
+    inline CreateVolumeResponse& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
+    inline CreateVolumeResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Availability Zone for the volume.</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZone = std::move(value); }
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZone.assign(value); }
+    inline CreateVolumeResponse& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline CreateVolumeResponse& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+    inline CreateVolumeResponse& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The volume state.</p>
+     */
+    inline const VolumeState& GetState() const{ return m_state; }
+    inline void SetState(const VolumeState& value) { m_state = value; }
+    inline void SetState(VolumeState&& value) { m_state = std::move(value); }
+    inline CreateVolumeResponse& WithState(const VolumeState& value) { SetState(value); return *this;}
+    inline CreateVolumeResponse& WithState(VolumeState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time stamp when volume creation was initiated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
+    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
+    inline CreateVolumeResponse& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+    inline CreateVolumeResponse& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     *  <p>This parameter is not returned by CreateVolume.</p> 
+     * <p>Information about the volume attachments.</p>
+     */
+    inline const Aws::Vector<VolumeAttachment>& GetAttachments() const{ return m_attachments; }
+    inline void SetAttachments(const Aws::Vector<VolumeAttachment>& value) { m_attachments = value; }
+    inline void SetAttachments(Aws::Vector<VolumeAttachment>&& value) { m_attachments = std::move(value); }
+    inline CreateVolumeResponse& WithAttachments(const Aws::Vector<VolumeAttachment>& value) { SetAttachments(value); return *this;}
+    inline CreateVolumeResponse& WithAttachments(Aws::Vector<VolumeAttachment>&& value) { SetAttachments(std::move(value)); return *this;}
+    inline CreateVolumeResponse& AddAttachments(const VolumeAttachment& value) { m_attachments.push_back(value); return *this; }
+    inline CreateVolumeResponse& AddAttachments(VolumeAttachment&& value) { m_attachments.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the volume is encrypted.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline void SetEncrypted(bool value) { m_encrypted = value; }
+    inline CreateVolumeResponse& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the
+     * volume encryption key for the volume.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+    inline CreateVolumeResponse& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+    inline CreateVolumeResponse& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+    inline CreateVolumeResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -252,25 +252,7 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<VolumeAttachment> m_attachments;
-
-    Aws::String m_availabilityZone;
-
-    Aws::Utils::DateTime m_createTime;
-
-    bool m_encrypted;
-
-    Aws::String m_kmsKeyId;
-
     Aws::String m_outpostArn;
-
-    int m_size;
-
-    Aws::String m_snapshotId;
-
-    VolumeState m_state;
-
-    Aws::String m_volumeId;
 
     int m_iops;
 
@@ -285,6 +267,24 @@ namespace Model
     int m_throughput;
 
     SSEType m_sseType;
+
+    Aws::String m_volumeId;
+
+    int m_size;
+
+    Aws::String m_snapshotId;
+
+    Aws::String m_availabilityZone;
+
+    VolumeState m_state;
+
+    Aws::Utils::DateTime m_createTime;
+
+    Aws::Vector<VolumeAttachment> m_attachments;
+
+    bool m_encrypted;
+
+    Aws::String m_kmsKeyId;
 
     ResponseMetadata m_responseMetadata;
   };

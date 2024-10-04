@@ -49,6 +49,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time the data was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
+    inline GetPasswordDataResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+    inline GetPasswordDataResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The password of the instance. Returns an empty string if the password is not
      * available.</p>
      */
@@ -59,17 +70,6 @@ namespace Model
     inline GetPasswordDataResponse& WithPasswordData(const Aws::String& value) { SetPasswordData(value); return *this;}
     inline GetPasswordDataResponse& WithPasswordData(Aws::String&& value) { SetPasswordData(std::move(value)); return *this;}
     inline GetPasswordDataResponse& WithPasswordData(const char* value) { SetPasswordData(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The time the data was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
-    inline GetPasswordDataResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline GetPasswordDataResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,9 +84,9 @@ namespace Model
 
     Aws::String m_instanceId;
 
-    Aws::String m_passwordData;
-
     Aws::Utils::DateTime m_timestamp;
+
+    Aws::String m_passwordData;
 
     ResponseMetadata m_responseMetadata;
   };

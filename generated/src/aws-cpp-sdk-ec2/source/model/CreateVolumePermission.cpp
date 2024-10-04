@@ -21,9 +21,9 @@ namespace Model
 {
 
 CreateVolumePermission::CreateVolumePermission() : 
+    m_userIdHasBeenSet(false),
     m_group(PermissionGroup::NOT_SET),
-    m_groupHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_groupHasBeenSet(false)
 {
 }
 
@@ -39,17 +39,17 @@ CreateVolumePermission& CreateVolumePermission::operator =(const XmlNode& xmlNod
 
   if(!resultNode.IsNull())
   {
-    XmlNode groupNode = resultNode.FirstChild("group");
-    if(!groupNode.IsNull())
-    {
-      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText()).c_str()).c_str());
-      m_groupHasBeenSet = true;
-    }
     XmlNode userIdNode = resultNode.FirstChild("userId");
     if(!userIdNode.IsNull())
     {
       m_userId = Aws::Utils::Xml::DecodeEscapedXmlText(userIdNode.GetText());
       m_userIdHasBeenSet = true;
+    }
+    XmlNode groupNode = resultNode.FirstChild("group");
+    if(!groupNode.IsNull())
+    {
+      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText()).c_str()).c_str());
+      m_groupHasBeenSet = true;
     }
   }
 
@@ -58,27 +58,27 @@ CreateVolumePermission& CreateVolumePermission::operator =(const XmlNode& xmlNod
 
 void CreateVolumePermission::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_groupHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
-  }
-
   if(m_userIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
+  }
+
+  if(m_groupHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
   }
 
 }
 
 void CreateVolumePermission::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_groupHasBeenSet)
-  {
-      oStream << location << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
-  }
   if(m_userIdHasBeenSet)
   {
       oStream << location << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
+  }
+  if(m_groupHasBeenSet)
+  {
+      oStream << location << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
   }
 }
 

@@ -7,8 +7,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/Filter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/Filter.h>
 #include <utility>
 
 namespace Aws
@@ -40,25 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
-     * Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
-     * <p> <code>opt-in-status</code> - The opt-in status of the Region
-     * (<code>opt-in-not-required</code> | <code>opted-in</code> |
-     * <code>not-opted-in</code>).</p> </li> <li> <p> <code>region-name</code> - The
-     * name of the Region (for example, <code>us-east-1</code>).</p> </li> </ul>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeRegionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeRegionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeRegionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeRegionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The names of the Regions. You can specify any Regions, whether they are
      * enabled and disabled for your account.</p>
      */
@@ -71,6 +52,17 @@ namespace Model
     inline DescribeRegionsRequest& AddRegionNames(const Aws::String& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
     inline DescribeRegionsRequest& AddRegionNames(Aws::String&& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(std::move(value)); return *this; }
     inline DescribeRegionsRequest& AddRegionNames(const char* value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether to display all Regions, including Regions that are disabled
+     * for your account.</p>
+     */
+    inline bool GetAllRegions() const{ return m_allRegions; }
+    inline bool AllRegionsHasBeenSet() const { return m_allRegionsHasBeenSet; }
+    inline void SetAllRegions(bool value) { m_allRegionsHasBeenSet = true; m_allRegions = value; }
+    inline DescribeRegionsRequest& WithAllRegions(bool value) { SetAllRegions(value); return *this;}
     ///@}
 
     ///@{
@@ -88,27 +80,35 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether to display all Regions, including Regions that are disabled
-     * for your account.</p>
+     * <p>The filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint of the
+     * Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> <li>
+     * <p> <code>opt-in-status</code> - The opt-in status of the Region
+     * (<code>opt-in-not-required</code> | <code>opted-in</code> |
+     * <code>not-opted-in</code>).</p> </li> <li> <p> <code>region-name</code> - The
+     * name of the Region (for example, <code>us-east-1</code>).</p> </li> </ul>
      */
-    inline bool GetAllRegions() const{ return m_allRegions; }
-    inline bool AllRegionsHasBeenSet() const { return m_allRegionsHasBeenSet; }
-    inline void SetAllRegions(bool value) { m_allRegionsHasBeenSet = true; m_allRegions = value; }
-    inline DescribeRegionsRequest& WithAllRegions(bool value) { SetAllRegions(value); return *this;}
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+    inline DescribeRegionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline DescribeRegionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+    inline DescribeRegionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeRegionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
     ///@}
   private:
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regionNames;
     bool m_regionNamesHasBeenSet = false;
 
+    bool m_allRegions;
+    bool m_allRegionsHasBeenSet = false;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
-    bool m_allRegions;
-    bool m_allRegionsHasBeenSet = false;
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

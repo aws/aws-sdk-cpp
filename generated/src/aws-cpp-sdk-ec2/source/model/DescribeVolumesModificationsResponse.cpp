@@ -38,6 +38,11 @@ DescribeVolumesModificationsResponse& DescribeVolumesModificationsResponse::oper
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
     XmlNode volumesModificationsNode = resultNode.FirstChild("volumeModificationSet");
     if(!volumesModificationsNode.IsNull())
     {
@@ -48,11 +53,6 @@ DescribeVolumesModificationsResponse& DescribeVolumesModificationsResponse::oper
         volumesModificationsMember = volumesModificationsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

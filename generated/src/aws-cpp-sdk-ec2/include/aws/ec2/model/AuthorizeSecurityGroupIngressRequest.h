@@ -183,19 +183,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline AuthorizeSecurityGroupIngressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The tags applied to the security group rule.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
@@ -206,6 +193,19 @@ namespace Model
     inline AuthorizeSecurityGroupIngressRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
     inline AuthorizeSecurityGroupIngressRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
     inline AuthorizeSecurityGroupIngressRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline AuthorizeSecurityGroupIngressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
   private:
 
@@ -236,11 +236,11 @@ namespace Model
     int m_toPort;
     bool m_toPortHasBeenSet = false;
 
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

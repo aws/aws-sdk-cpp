@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/DhcpOptions.h>
 #include <utility>
@@ -37,19 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the DHCP options sets.</p>
-     */
-    inline const Aws::Vector<DhcpOptions>& GetDhcpOptions() const{ return m_dhcpOptions; }
-    inline void SetDhcpOptions(const Aws::Vector<DhcpOptions>& value) { m_dhcpOptions = value; }
-    inline void SetDhcpOptions(Aws::Vector<DhcpOptions>&& value) { m_dhcpOptions = std::move(value); }
-    inline DescribeDhcpOptionsResponse& WithDhcpOptions(const Aws::Vector<DhcpOptions>& value) { SetDhcpOptions(value); return *this;}
-    inline DescribeDhcpOptionsResponse& WithDhcpOptions(Aws::Vector<DhcpOptions>&& value) { SetDhcpOptions(std::move(value)); return *this;}
-    inline DescribeDhcpOptionsResponse& AddDhcpOptions(const DhcpOptions& value) { m_dhcpOptions.push_back(value); return *this; }
-    inline DescribeDhcpOptionsResponse& AddDhcpOptions(DhcpOptions&& value) { m_dhcpOptions.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
@@ -63,6 +50,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Information about the DHCP options sets.</p>
+     */
+    inline const Aws::Vector<DhcpOptions>& GetDhcpOptions() const{ return m_dhcpOptions; }
+    inline void SetDhcpOptions(const Aws::Vector<DhcpOptions>& value) { m_dhcpOptions = value; }
+    inline void SetDhcpOptions(Aws::Vector<DhcpOptions>&& value) { m_dhcpOptions = std::move(value); }
+    inline DescribeDhcpOptionsResponse& WithDhcpOptions(const Aws::Vector<DhcpOptions>& value) { SetDhcpOptions(value); return *this;}
+    inline DescribeDhcpOptionsResponse& WithDhcpOptions(Aws::Vector<DhcpOptions>&& value) { SetDhcpOptions(std::move(value)); return *this;}
+    inline DescribeDhcpOptionsResponse& AddDhcpOptions(const DhcpOptions& value) { m_dhcpOptions.push_back(value); return *this; }
+    inline DescribeDhcpOptionsResponse& AddDhcpOptions(DhcpOptions&& value) { m_dhcpOptions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -72,9 +72,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<DhcpOptions> m_dhcpOptions;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<DhcpOptions> m_dhcpOptions;
 
     ResponseMetadata m_responseMetadata;
   };

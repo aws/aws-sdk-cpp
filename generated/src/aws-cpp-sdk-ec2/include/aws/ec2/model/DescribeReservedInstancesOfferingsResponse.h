@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/ReservedInstancesOffering.h>
 #include <utility>
@@ -43,19 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of Reserved Instances offerings.</p>
-     */
-    inline const Aws::Vector<ReservedInstancesOffering>& GetReservedInstancesOfferings() const{ return m_reservedInstancesOfferings; }
-    inline void SetReservedInstancesOfferings(const Aws::Vector<ReservedInstancesOffering>& value) { m_reservedInstancesOfferings = value; }
-    inline void SetReservedInstancesOfferings(Aws::Vector<ReservedInstancesOffering>&& value) { m_reservedInstancesOfferings = std::move(value); }
-    inline DescribeReservedInstancesOfferingsResponse& WithReservedInstancesOfferings(const Aws::Vector<ReservedInstancesOffering>& value) { SetReservedInstancesOfferings(value); return *this;}
-    inline DescribeReservedInstancesOfferingsResponse& WithReservedInstancesOfferings(Aws::Vector<ReservedInstancesOffering>&& value) { SetReservedInstancesOfferings(std::move(value)); return *this;}
-    inline DescribeReservedInstancesOfferingsResponse& AddReservedInstancesOfferings(const ReservedInstancesOffering& value) { m_reservedInstancesOfferings.push_back(value); return *this; }
-    inline DescribeReservedInstancesOfferingsResponse& AddReservedInstancesOfferings(ReservedInstancesOffering&& value) { m_reservedInstancesOfferings.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
@@ -69,6 +56,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A list of Reserved Instances offerings.</p>
+     */
+    inline const Aws::Vector<ReservedInstancesOffering>& GetReservedInstancesOfferings() const{ return m_reservedInstancesOfferings; }
+    inline void SetReservedInstancesOfferings(const Aws::Vector<ReservedInstancesOffering>& value) { m_reservedInstancesOfferings = value; }
+    inline void SetReservedInstancesOfferings(Aws::Vector<ReservedInstancesOffering>&& value) { m_reservedInstancesOfferings = std::move(value); }
+    inline DescribeReservedInstancesOfferingsResponse& WithReservedInstancesOfferings(const Aws::Vector<ReservedInstancesOffering>& value) { SetReservedInstancesOfferings(value); return *this;}
+    inline DescribeReservedInstancesOfferingsResponse& WithReservedInstancesOfferings(Aws::Vector<ReservedInstancesOffering>&& value) { SetReservedInstancesOfferings(std::move(value)); return *this;}
+    inline DescribeReservedInstancesOfferingsResponse& AddReservedInstancesOfferings(const ReservedInstancesOffering& value) { m_reservedInstancesOfferings.push_back(value); return *this; }
+    inline DescribeReservedInstancesOfferingsResponse& AddReservedInstancesOfferings(ReservedInstancesOffering&& value) { m_reservedInstancesOfferings.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -78,9 +78,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<ReservedInstancesOffering> m_reservedInstancesOfferings;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<ReservedInstancesOffering> m_reservedInstancesOfferings;
 
     ResponseMetadata m_responseMetadata;
   };

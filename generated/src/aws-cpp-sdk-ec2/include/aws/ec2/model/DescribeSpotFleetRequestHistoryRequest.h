@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/ec2/model/EventType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/EventType.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -57,6 +57,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Spot Fleet request.</p>
+     */
+    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
+    inline bool SpotFleetRequestIdHasBeenSet() const { return m_spotFleetRequestIdHasBeenSet; }
+    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
+    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::move(value); }
+    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId.assign(value); }
+    inline DescribeSpotFleetRequestHistoryRequest& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
+    inline DescribeSpotFleetRequestHistoryRequest& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
+    inline DescribeSpotFleetRequestHistoryRequest& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The type of events to describe. By default, all events are described.</p>
      */
     inline const EventType& GetEventType() const{ return m_eventType; }
@@ -69,15 +83,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+     * <p>The starting date and time for the events, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeSpotFleetRequestHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
+    inline DescribeSpotFleetRequestHistoryRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+    inline DescribeSpotFleetRequestHistoryRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,49 +111,35 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Spot Fleet request.</p>
+     * <p>The maximum number of items to return for this request. To get the next page
+     * of items, make another request with the token returned in the output. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
-    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
-    inline bool SpotFleetRequestIdHasBeenSet() const { return m_spotFleetRequestIdHasBeenSet; }
-    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
-    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::move(value); }
-    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId.assign(value); }
-    inline DescribeSpotFleetRequestHistoryRequest& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
-    inline DescribeSpotFleetRequestHistoryRequest& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
-    inline DescribeSpotFleetRequestHistoryRequest& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The starting date and time for the events, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline DescribeSpotFleetRequestHistoryRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline DescribeSpotFleetRequestHistoryRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline DescribeSpotFleetRequestHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
+    Aws::String m_spotFleetRequestId;
+    bool m_spotFleetRequestIdHasBeenSet = false;
+
     EventType m_eventType;
     bool m_eventTypeHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_spotFleetRequestId;
-    bool m_spotFleetRequestIdHasBeenSet = false;
-
-    Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

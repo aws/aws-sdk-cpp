@@ -7,8 +7,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/Filter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/Filter.h>
 #include <utility>
 
 namespace Aws
@@ -40,32 +40,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
-     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
-     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>spread-level</code>
-     * - The spread level for the placement group (<code>host</code> |
-     * <code>rack</code>). </p> </li> <li> <p> <code>state</code> - The state of the
-     * placement group (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
-     * <code>strategy</code> - The strategy of the placement group
-     * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
-     * <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources that have a tag with a
-     * specific key, regardless of the tag value.</p> </li> </ul>
+     * <p>The IDs of the placement groups.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribePlacementGroupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribePlacementGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribePlacementGroupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribePlacementGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
+    inline bool GroupIdsHasBeenSet() const { return m_groupIdsHasBeenSet; }
+    inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
+    inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
+    inline DescribePlacementGroupsRequest& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
+    inline DescribePlacementGroupsRequest& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
+    inline DescribePlacementGroupsRequest& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
+    inline DescribePlacementGroupsRequest& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
+    inline DescribePlacementGroupsRequest& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -102,22 +87,37 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IDs of the placement groups.</p>
+     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - The name of the
+     * placement group.</p> </li> <li> <p> <code>group-arn</code> - The Amazon Resource
+     * Name (ARN) of the placement group.</p> </li> <li> <p> <code>spread-level</code>
+     * - The spread level for the placement group (<code>host</code> |
+     * <code>rack</code>). </p> </li> <li> <p> <code>state</code> - The state of the
+     * placement group (<code>pending</code> | <code>available</code> |
+     * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
+     * <code>strategy</code> - The strategy of the placement group
+     * (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p> </li>
+     * <li> <p> <code>tag:&lt;key&gt;</code> - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources that have a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
-    inline bool GroupIdsHasBeenSet() const { return m_groupIdsHasBeenSet; }
-    inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
-    inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
-    inline DescribePlacementGroupsRequest& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
-    inline DescribePlacementGroupsRequest& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
-    inline DescribePlacementGroupsRequest& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
-    inline DescribePlacementGroupsRequest& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
-    inline DescribePlacementGroupsRequest& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+    inline DescribePlacementGroupsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline DescribePlacementGroupsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+    inline DescribePlacementGroupsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribePlacementGroupsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
     ///@}
   private:
 
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
+    Aws::Vector<Aws::String> m_groupIds;
+    bool m_groupIdsHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
@@ -125,8 +125,8 @@ namespace Model
     Aws::Vector<Aws::String> m_groupNames;
     bool m_groupNamesHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_groupIds;
-    bool m_groupIdsHasBeenSet = false;
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

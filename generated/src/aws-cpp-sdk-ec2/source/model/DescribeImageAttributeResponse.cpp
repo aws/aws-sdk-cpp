@@ -38,44 +38,6 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
-    if(!blockDeviceMappingsNode.IsNull())
-    {
-      XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
-      while(!blockDeviceMappingsMember.IsNull())
-      {
-        m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
-        blockDeviceMappingsMember = blockDeviceMappingsMember.NextNode("item");
-      }
-
-    }
-    XmlNode imageIdNode = resultNode.FirstChild("imageId");
-    if(!imageIdNode.IsNull())
-    {
-      m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
-    }
-    XmlNode launchPermissionsNode = resultNode.FirstChild("launchPermission");
-    if(!launchPermissionsNode.IsNull())
-    {
-      XmlNode launchPermissionsMember = launchPermissionsNode.FirstChild("item");
-      while(!launchPermissionsMember.IsNull())
-      {
-        m_launchPermissions.push_back(launchPermissionsMember);
-        launchPermissionsMember = launchPermissionsMember.NextNode("item");
-      }
-
-    }
-    XmlNode productCodesNode = resultNode.FirstChild("productCodes");
-    if(!productCodesNode.IsNull())
-    {
-      XmlNode productCodesMember = productCodesNode.FirstChild("item");
-      while(!productCodesMember.IsNull())
-      {
-        m_productCodes.push_back(productCodesMember);
-        productCodesMember = productCodesMember.NextNode("item");
-      }
-
-    }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
@@ -125,6 +87,44 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
     if(!deregistrationProtectionNode.IsNull())
     {
       m_deregistrationProtection = deregistrationProtectionNode;
+    }
+    XmlNode imageIdNode = resultNode.FirstChild("imageId");
+    if(!imageIdNode.IsNull())
+    {
+      m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
+    }
+    XmlNode launchPermissionsNode = resultNode.FirstChild("launchPermission");
+    if(!launchPermissionsNode.IsNull())
+    {
+      XmlNode launchPermissionsMember = launchPermissionsNode.FirstChild("item");
+      while(!launchPermissionsMember.IsNull())
+      {
+        m_launchPermissions.push_back(launchPermissionsMember);
+        launchPermissionsMember = launchPermissionsMember.NextNode("item");
+      }
+
+    }
+    XmlNode productCodesNode = resultNode.FirstChild("productCodes");
+    if(!productCodesNode.IsNull())
+    {
+      XmlNode productCodesMember = productCodesNode.FirstChild("item");
+      while(!productCodesMember.IsNull())
+      {
+        m_productCodes.push_back(productCodesMember);
+        productCodesMember = productCodesMember.NextNode("item");
+      }
+
+    }
+    XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
+    if(!blockDeviceMappingsNode.IsNull())
+    {
+      XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
+      while(!blockDeviceMappingsMember.IsNull())
+      {
+        m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
+        blockDeviceMappingsMember = blockDeviceMappingsMember.NextNode("item");
+      }
+
     }
   }
 

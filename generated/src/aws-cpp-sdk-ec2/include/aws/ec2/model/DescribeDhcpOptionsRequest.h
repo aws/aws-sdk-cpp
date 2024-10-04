@@ -55,46 +55,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID of a
-     * DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of the
-     * options (for example, <code>domain-name</code>).</p> </li> <li> <p>
-     * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
-     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
-     * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
-     * key/value combination of a tag assigned to the resource. Use the tag key in the
-     * filter name and the tag value as the filter value. For example, to find all
-     * resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
-     * - The key of a tag assigned to the resource. Use this filter to find all
-     * resources assigned a tag with a specific key, regardless of the tag value.</p>
-     * </li> </ul>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeDhcpOptionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeDhcpOptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeDhcpOptionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeDhcpOptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline DescribeDhcpOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
@@ -120,22 +80,62 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeDhcpOptionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline DescribeDhcpOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The filters.</p> <ul> <li> <p> <code>dhcp-options-id</code> - The ID of a
+     * DHCP options set.</p> </li> <li> <p> <code>key</code> - The key for one of the
+     * options (for example, <code>domain-name</code>).</p> </li> <li> <p>
+     * <code>value</code> - The value for one of the options.</p> </li> <li> <p>
+     * <code>owner-id</code> - The ID of the Amazon Web Services account that owns the
+     * DHCP options set.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> </ul>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+    inline DescribeDhcpOptionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline DescribeDhcpOptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+    inline DescribeDhcpOptionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeDhcpOptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_dhcpOptionsIds;
     bool m_dhcpOptionsIdsHasBeenSet = false;
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
-
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

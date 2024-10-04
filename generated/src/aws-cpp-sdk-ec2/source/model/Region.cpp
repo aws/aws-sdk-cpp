@@ -21,9 +21,9 @@ namespace Model
 {
 
 Region::Region() : 
-    m_endpointHasBeenSet(false),
+    m_optInStatusHasBeenSet(false),
     m_regionNameHasBeenSet(false),
-    m_optInStatusHasBeenSet(false)
+    m_endpointHasBeenSet(false)
 {
 }
 
@@ -39,11 +39,11 @@ Region& Region::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode endpointNode = resultNode.FirstChild("regionEndpoint");
-    if(!endpointNode.IsNull())
+    XmlNode optInStatusNode = resultNode.FirstChild("optInStatus");
+    if(!optInStatusNode.IsNull())
     {
-      m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
-      m_endpointHasBeenSet = true;
+      m_optInStatus = Aws::Utils::Xml::DecodeEscapedXmlText(optInStatusNode.GetText());
+      m_optInStatusHasBeenSet = true;
     }
     XmlNode regionNameNode = resultNode.FirstChild("regionName");
     if(!regionNameNode.IsNull())
@@ -51,11 +51,11 @@ Region& Region::operator =(const XmlNode& xmlNode)
       m_regionName = Aws::Utils::Xml::DecodeEscapedXmlText(regionNameNode.GetText());
       m_regionNameHasBeenSet = true;
     }
-    XmlNode optInStatusNode = resultNode.FirstChild("optInStatus");
-    if(!optInStatusNode.IsNull())
+    XmlNode endpointNode = resultNode.FirstChild("regionEndpoint");
+    if(!endpointNode.IsNull())
     {
-      m_optInStatus = Aws::Utils::Xml::DecodeEscapedXmlText(optInStatusNode.GetText());
-      m_optInStatusHasBeenSet = true;
+      m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
+      m_endpointHasBeenSet = true;
     }
   }
 
@@ -64,9 +64,9 @@ Region& Region::operator =(const XmlNode& xmlNode)
 
 void Region::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_endpointHasBeenSet)
+  if(m_optInStatusHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
+      oStream << location << index << locationValue << ".OptInStatus=" << StringUtils::URLEncode(m_optInStatus.c_str()) << "&";
   }
 
   if(m_regionNameHasBeenSet)
@@ -74,26 +74,26 @@ void Region::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
   }
 
-  if(m_optInStatusHasBeenSet)
+  if(m_endpointHasBeenSet)
   {
-      oStream << location << index << locationValue << ".OptInStatus=" << StringUtils::URLEncode(m_optInStatus.c_str()) << "&";
+      oStream << location << index << locationValue << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
   }
 
 }
 
 void Region::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_endpointHasBeenSet)
+  if(m_optInStatusHasBeenSet)
   {
-      oStream << location << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
+      oStream << location << ".OptInStatus=" << StringUtils::URLEncode(m_optInStatus.c_str()) << "&";
   }
   if(m_regionNameHasBeenSet)
   {
       oStream << location << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
   }
-  if(m_optInStatusHasBeenSet)
+  if(m_endpointHasBeenSet)
   {
-      oStream << location << ".OptInStatus=" << StringUtils::URLEncode(m_optInStatus.c_str()) << "&";
+      oStream << location << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
   }
 }
 

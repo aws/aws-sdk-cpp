@@ -22,7 +22,6 @@ namespace Model
 
 LaunchSpecification::LaunchSpecification() : 
     m_userDataHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
     m_addressingTypeHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
     m_ebsOptimized(false),
@@ -37,6 +36,7 @@ LaunchSpecification::LaunchSpecification() :
     m_placementHasBeenSet(false),
     m_ramdiskIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false),
     m_monitoringHasBeenSet(false)
 {
 }
@@ -58,18 +58,6 @@ LaunchSpecification& LaunchSpecification::operator =(const XmlNode& xmlNode)
     {
       m_userData = Aws::Utils::Xml::DecodeEscapedXmlText(userDataNode.GetText());
       m_userDataHasBeenSet = true;
-    }
-    XmlNode securityGroupsNode = resultNode.FirstChild("groupSet");
-    if(!securityGroupsNode.IsNull())
-    {
-      XmlNode securityGroupsMember = securityGroupsNode.FirstChild("item");
-      while(!securityGroupsMember.IsNull())
-      {
-        m_securityGroups.push_back(securityGroupsMember);
-        securityGroupsMember = securityGroupsMember.NextNode("item");
-      }
-
-      m_securityGroupsHasBeenSet = true;
     }
     XmlNode addressingTypeNode = resultNode.FirstChild("addressingType");
     if(!addressingTypeNode.IsNull())
@@ -155,6 +143,18 @@ LaunchSpecification& LaunchSpecification::operator =(const XmlNode& xmlNode)
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
+    XmlNode securityGroupsNode = resultNode.FirstChild("groupSet");
+    if(!securityGroupsNode.IsNull())
+    {
+      XmlNode securityGroupsMember = securityGroupsNode.FirstChild("item");
+      while(!securityGroupsMember.IsNull())
+      {
+        m_securityGroups.push_back(securityGroupsMember);
+        securityGroupsMember = securityGroupsMember.NextNode("item");
+      }
+
+      m_securityGroupsHasBeenSet = true;
+    }
     XmlNode monitoringNode = resultNode.FirstChild("monitoring");
     if(!monitoringNode.IsNull())
     {
@@ -171,17 +171,6 @@ void LaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_userDataHasBeenSet)
   {
       oStream << location << index << locationValue << ".UserData=" << StringUtils::URLEncode(m_userData.c_str()) << "&";
-  }
-
-  if(m_securityGroupsHasBeenSet)
-  {
-      unsigned securityGroupsIdx = 1;
-      for(auto& item : m_securityGroups)
-      {
-        Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location << index << locationValue << ".GroupSet." << securityGroupsIdx++;
-        item.OutputToStream(oStream, securityGroupsSs.str().c_str());
-      }
   }
 
   if(m_addressingTypeHasBeenSet)
@@ -260,6 +249,17 @@ void LaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
+  if(m_securityGroupsHasBeenSet)
+  {
+      unsigned securityGroupsIdx = 1;
+      for(auto& item : m_securityGroups)
+      {
+        Aws::StringStream securityGroupsSs;
+        securityGroupsSs << location << index << locationValue << ".GroupSet." << securityGroupsIdx++;
+        item.OutputToStream(oStream, securityGroupsSs.str().c_str());
+      }
+  }
+
   if(m_monitoringHasBeenSet)
   {
       Aws::StringStream monitoringLocationAndMemberSs;
@@ -274,16 +274,6 @@ void LaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_userDataHasBeenSet)
   {
       oStream << location << ".UserData=" << StringUtils::URLEncode(m_userData.c_str()) << "&";
-  }
-  if(m_securityGroupsHasBeenSet)
-  {
-      unsigned securityGroupsIdx = 1;
-      for(auto& item : m_securityGroups)
-      {
-        Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location <<  ".GroupSet." << securityGroupsIdx++;
-        item.OutputToStream(oStream, securityGroupsSs.str().c_str());
-      }
   }
   if(m_addressingTypeHasBeenSet)
   {
@@ -348,6 +338,16 @@ void LaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+  if(m_securityGroupsHasBeenSet)
+  {
+      unsigned securityGroupsIdx = 1;
+      for(auto& item : m_securityGroups)
+      {
+        Aws::StringStream securityGroupsSs;
+        securityGroupsSs << location <<  ".GroupSet." << securityGroupsIdx++;
+        item.OutputToStream(oStream, securityGroupsSs.str().c_str());
+      }
   }
   if(m_monitoringHasBeenSet)
   {

@@ -42,6 +42,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline CreateSpotDatafeedSubscriptionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
      * feed. For more information about bucket names, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket
@@ -59,19 +72,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline CreateSpotDatafeedSubscriptionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The prefix for the data feed file names.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
@@ -85,11 +85,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_bucket;
-    bool m_bucketHasBeenSet = false;
-
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    Aws::String m_bucket;
+    bool m_bucketHasBeenSet = false;
 
     Aws::String m_prefix;
     bool m_prefixHasBeenSet = false;

@@ -55,6 +55,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline DescribeBundleTasksRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The filters.</p> <ul> <li> <p> <code>bundle-id</code> - The ID of the bundle
      * task.</p> </li> <li> <p> <code>error-code</code> - If the task failed, the error
      * code returned.</p> </li> <li> <p> <code>error-message</code> - If the task
@@ -80,29 +93,16 @@ namespace Model
     inline DescribeBundleTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
     inline DescribeBundleTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline DescribeBundleTasksRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
   private:
 
     Aws::Vector<Aws::String> m_bundleIds;
     bool m_bundleIdsHasBeenSet = false;
 
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
-
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

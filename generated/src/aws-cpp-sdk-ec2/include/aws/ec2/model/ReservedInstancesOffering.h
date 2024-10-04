@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/InstanceType.h>
-#include <aws/ec2/model/RIProductDescription.h>
 #include <aws/ec2/model/CurrencyCodeValues.h>
 #include <aws/ec2/model/Tenancy.h>
 #include <aws/ec2/model/OfferingClassType.h>
 #include <aws/ec2/model/OfferingTypeValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Scope.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/InstanceType.h>
+#include <aws/ec2/model/RIProductDescription.h>
 #include <aws/ec2/model/PricingDetail.h>
 #include <aws/ec2/model/RecurringCharge.h>
 #include <utility>
@@ -48,90 +48,6 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-
-    ///@{
-    /**
-     * <p>The Availability Zone in which the Reserved Instance can be used.</p>
-     */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline ReservedInstancesOffering& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline ReservedInstancesOffering& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline ReservedInstancesOffering& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The duration of the Reserved Instance, in seconds.</p>
-     */
-    inline long long GetDuration() const{ return m_duration; }
-    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-    inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
-    inline ReservedInstancesOffering& WithDuration(long long value) { SetDuration(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The purchase price of the Reserved Instance.</p>
-     */
-    inline double GetFixedPrice() const{ return m_fixedPrice; }
-    inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
-    inline void SetFixedPrice(double value) { m_fixedPriceHasBeenSet = true; m_fixedPrice = value; }
-    inline ReservedInstancesOffering& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The instance type on which the Reserved Instance can be used.</p>
-     */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
-    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline ReservedInstancesOffering& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-    inline ReservedInstancesOffering& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Reserved Instance product platform description.</p>
-     */
-    inline const RIProductDescription& GetProductDescription() const{ return m_productDescription; }
-    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
-    inline void SetProductDescription(const RIProductDescription& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
-    inline void SetProductDescription(RIProductDescription&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::move(value); }
-    inline ReservedInstancesOffering& WithProductDescription(const RIProductDescription& value) { SetProductDescription(value); return *this;}
-    inline ReservedInstancesOffering& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
-     * made.</p>
-     */
-    inline const Aws::String& GetReservedInstancesOfferingId() const{ return m_reservedInstancesOfferingId; }
-    inline bool ReservedInstancesOfferingIdHasBeenSet() const { return m_reservedInstancesOfferingIdHasBeenSet; }
-    inline void SetReservedInstancesOfferingId(const Aws::String& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = value; }
-    inline void SetReservedInstancesOfferingId(Aws::String&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = std::move(value); }
-    inline void SetReservedInstancesOfferingId(const char* value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId.assign(value); }
-    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(const Aws::String& value) { SetReservedInstancesOfferingId(value); return *this;}
-    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(Aws::String&& value) { SetReservedInstancesOfferingId(std::move(value)); return *this;}
-    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(const char* value) { SetReservedInstancesOfferingId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The usage price of the Reserved Instance, per hour.</p>
-     */
-    inline double GetUsagePrice() const{ return m_usagePrice; }
-    inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
-    inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
-    inline ReservedInstancesOffering& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -237,28 +153,91 @@ namespace Model
     inline ReservedInstancesOffering& WithScope(const Scope& value) { SetScope(value); return *this;}
     inline ReservedInstancesOffering& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be
+     * made.</p>
+     */
+    inline const Aws::String& GetReservedInstancesOfferingId() const{ return m_reservedInstancesOfferingId; }
+    inline bool ReservedInstancesOfferingIdHasBeenSet() const { return m_reservedInstancesOfferingIdHasBeenSet; }
+    inline void SetReservedInstancesOfferingId(const Aws::String& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = value; }
+    inline void SetReservedInstancesOfferingId(Aws::String&& value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId = std::move(value); }
+    inline void SetReservedInstancesOfferingId(const char* value) { m_reservedInstancesOfferingIdHasBeenSet = true; m_reservedInstancesOfferingId.assign(value); }
+    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(const Aws::String& value) { SetReservedInstancesOfferingId(value); return *this;}
+    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(Aws::String&& value) { SetReservedInstancesOfferingId(std::move(value)); return *this;}
+    inline ReservedInstancesOffering& WithReservedInstancesOfferingId(const char* value) { SetReservedInstancesOfferingId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The instance type on which the Reserved Instance can be used.</p>
+     */
+    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+    inline ReservedInstancesOffering& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
+    inline ReservedInstancesOffering& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Availability Zone in which the Reserved Instance can be used.</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+    inline ReservedInstancesOffering& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline ReservedInstancesOffering& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+    inline ReservedInstancesOffering& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The duration of the Reserved Instance, in seconds.</p>
+     */
+    inline long long GetDuration() const{ return m_duration; }
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+    inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline ReservedInstancesOffering& WithDuration(long long value) { SetDuration(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The usage price of the Reserved Instance, per hour.</p>
+     */
+    inline double GetUsagePrice() const{ return m_usagePrice; }
+    inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
+    inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
+    inline ReservedInstancesOffering& WithUsagePrice(double value) { SetUsagePrice(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The purchase price of the Reserved Instance.</p>
+     */
+    inline double GetFixedPrice() const{ return m_fixedPrice; }
+    inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
+    inline void SetFixedPrice(double value) { m_fixedPriceHasBeenSet = true; m_fixedPrice = value; }
+    inline ReservedInstancesOffering& WithFixedPrice(double value) { SetFixedPrice(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Reserved Instance product platform description.</p>
+     */
+    inline const RIProductDescription& GetProductDescription() const{ return m_productDescription; }
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
+    inline void SetProductDescription(const RIProductDescription& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
+    inline void SetProductDescription(RIProductDescription&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::move(value); }
+    inline ReservedInstancesOffering& WithProductDescription(const RIProductDescription& value) { SetProductDescription(value); return *this;}
+    inline ReservedInstancesOffering& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
+    ///@}
   private:
-
-    Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet = false;
-
-    long long m_duration;
-    bool m_durationHasBeenSet = false;
-
-    double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet = false;
-
-    InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet = false;
-
-    RIProductDescription m_productDescription;
-    bool m_productDescriptionHasBeenSet = false;
-
-    Aws::String m_reservedInstancesOfferingId;
-    bool m_reservedInstancesOfferingIdHasBeenSet = false;
-
-    double m_usagePrice;
-    bool m_usagePriceHasBeenSet = false;
 
     CurrencyCodeValues m_currencyCode;
     bool m_currencyCodeHasBeenSet = false;
@@ -283,6 +262,27 @@ namespace Model
 
     Scope m_scope;
     bool m_scopeHasBeenSet = false;
+
+    Aws::String m_reservedInstancesOfferingId;
+    bool m_reservedInstancesOfferingIdHasBeenSet = false;
+
+    InstanceType m_instanceType;
+    bool m_instanceTypeHasBeenSet = false;
+
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet = false;
+
+    long long m_duration;
+    bool m_durationHasBeenSet = false;
+
+    double m_usagePrice;
+    bool m_usagePriceHasBeenSet = false;
+
+    double m_fixedPrice;
+    bool m_fixedPriceHasBeenSet = false;
+
+    RIProductDescription m_productDescription;
+    bool m_productDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

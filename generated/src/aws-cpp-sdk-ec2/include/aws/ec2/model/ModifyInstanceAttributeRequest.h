@@ -7,9 +7,9 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceAttributeName.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeValue.h>
 #include <aws/ec2/model/BlobAttributeValue.h>
 #include <aws/ec2/model/InstanceBlockDeviceMappingSpecification.h>
@@ -61,6 +61,48 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates whether an instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
+     * stop protection for your instance</a>.</p> <p/>
+     */
+    inline const AttributeBooleanValue& GetDisableApiStop() const{ return m_disableApiStop; }
+    inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
+    inline void SetDisableApiStop(const AttributeBooleanValue& value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
+    inline void SetDisableApiStop(AttributeBooleanValue&& value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = std::move(value); }
+    inline ModifyInstanceAttributeRequest& WithDisableApiStop(const AttributeBooleanValue& value) { SetDisableApiStop(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithDisableApiStop(AttributeBooleanValue&& value) { SetDisableApiStop(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the operation, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline ModifyInstanceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+    inline ModifyInstanceAttributeRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+    inline ModifyInstanceAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the attribute to modify.</p>  <p>You can modify the
      * following attributes only: <code>disableApiTermination</code> |
      * <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> |
@@ -76,6 +118,22 @@ namespace Model
     inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
     inline ModifyInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
     inline ModifyInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A new value for the attribute. Use only with the <code>kernel</code>,
+     * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
+     * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
+     */
+    inline const Aws::String& GetValue() const{ return m_value; }
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
+    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
+    inline ModifyInstanceAttributeRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
+    inline ModifyInstanceAttributeRequest& WithValue(const char* value) { SetValue(value); return *this;}
     ///@}
 
     ///@{
@@ -114,93 +172,6 @@ namespace Model
     inline void SetDisableApiTermination(AttributeBooleanValue&& value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = std::move(value); }
     inline ModifyInstanceAttributeRequest& WithDisableApiTermination(const AttributeBooleanValue& value) { SetDisableApiTermination(value); return *this;}
     inline ModifyInstanceAttributeRequest& WithDisableApiTermination(AttributeBooleanValue&& value) { SetDisableApiTermination(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the operation, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline ModifyInstanceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether the instance is optimized for Amazon EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal EBS I/O performance. This optimization
-     * isn't available with all instance types. Additional usage charges apply when
-     * using an EBS Optimized instance.</p>
-     */
-    inline const AttributeBooleanValue& GetEbsOptimized() const{ return m_ebsOptimized; }
-    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
-    inline void SetEbsOptimized(const AttributeBooleanValue& value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
-    inline void SetEbsOptimized(AttributeBooleanValue&& value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithEbsOptimized(const AttributeBooleanValue& value) { SetEbsOptimized(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Set to <code>true</code> to enable enhanced networking with ENA for the
-     * instance.</p> <p>This option is supported only for HVM instances. Specifying
-     * this option with a PV instance can make it unreachable.</p>
-     */
-    inline const AttributeBooleanValue& GetEnaSupport() const{ return m_enaSupport; }
-    inline bool EnaSupportHasBeenSet() const { return m_enaSupportHasBeenSet; }
-    inline void SetEnaSupport(const AttributeBooleanValue& value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
-    inline void SetEnaSupport(AttributeBooleanValue&& value) { m_enaSupportHasBeenSet = true; m_enaSupport = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithEnaSupport(const AttributeBooleanValue& value) { SetEnaSupport(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Replaces the security groups of the instance with the specified security
-     * groups. You must specify the ID of at least one security group, even if it's
-     * just the default security group for the VPC.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
-    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-    inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
-    inline ModifyInstanceAttributeRequest& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    inline ModifyInstanceAttributeRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-    inline ModifyInstanceAttributeRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the instance.</p>
-     */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ModifyInstanceAttributeRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ModifyInstanceAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether an instance stops or terminates when you initiate shutdown
-     * from the instance (using the operating system command for system shutdown).</p>
-     */
-    inline const AttributeValue& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
-    inline bool InstanceInitiatedShutdownBehaviorHasBeenSet() const { return m_instanceInitiatedShutdownBehaviorHasBeenSet; }
-    inline void SetInstanceInitiatedShutdownBehavior(const AttributeValue& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
-    inline void SetInstanceInitiatedShutdownBehavior(AttributeValue&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithInstanceInitiatedShutdownBehavior(const AttributeValue& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithInstanceInitiatedShutdownBehavior(AttributeValue&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -249,22 +220,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
-     * Virtual Function interface for the instance.</p> <p>There is no way to disable
-     * enhanced networking with the Intel 82599 Virtual Function interface at this
-     * time.</p> <p>This option is supported only for HVM instances. Specifying this
-     * option with a PV instance can make it unreachable.</p>
-     */
-    inline const AttributeValue& GetSriovNetSupport() const{ return m_sriovNetSupport; }
-    inline bool SriovNetSupportHasBeenSet() const { return m_sriovNetSupportHasBeenSet; }
-    inline void SetSriovNetSupport(const AttributeValue& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
-    inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithSriovNetSupport(const AttributeValue& value) { SetSriovNetSupport(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Changes the instance's user data to the specified value. User data must be
      * base64-encoded. Depending on the tool or SDK that you're using, the
      * base64-encoding might be performed for you. For more information, see <a
@@ -281,65 +236,104 @@ namespace Model
 
     ///@{
     /**
-     * <p>A new value for the attribute. Use only with the <code>kernel</code>,
-     * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
-     * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
+     * <p>Specifies whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ModifyInstanceAttributeRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ModifyInstanceAttributeRequest& WithValue(const char* value) { SetValue(value); return *this;}
+    inline const AttributeValue& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
+    inline bool InstanceInitiatedShutdownBehaviorHasBeenSet() const { return m_instanceInitiatedShutdownBehaviorHasBeenSet; }
+    inline void SetInstanceInitiatedShutdownBehavior(const AttributeValue& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
+    inline void SetInstanceInitiatedShutdownBehavior(AttributeValue&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
+    inline ModifyInstanceAttributeRequest& WithInstanceInitiatedShutdownBehavior(const AttributeValue& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithInstanceInitiatedShutdownBehavior(AttributeValue&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>Indicates whether an instance is enabled for stop protection. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable
-     * stop protection for your instance</a>.</p> <p/>
+     * <p>Replaces the security groups of the instance with the specified security
+     * groups. You must specify the ID of at least one security group, even if it's
+     * just the default security group for the VPC.</p>
      */
-    inline const AttributeBooleanValue& GetDisableApiStop() const{ return m_disableApiStop; }
-    inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
-    inline void SetDisableApiStop(const AttributeBooleanValue& value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
-    inline void SetDisableApiStop(AttributeBooleanValue&& value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = std::move(value); }
-    inline ModifyInstanceAttributeRequest& WithDisableApiStop(const AttributeBooleanValue& value) { SetDisableApiStop(value); return *this;}
-    inline ModifyInstanceAttributeRequest& WithDisableApiStop(AttributeBooleanValue&& value) { SetDisableApiStop(std::move(value)); return *this;}
+    inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
+    inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
+    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
+    inline ModifyInstanceAttributeRequest& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
+    inline ModifyInstanceAttributeRequest& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    inline ModifyInstanceAttributeRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+    inline ModifyInstanceAttributeRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This optimization
+     * isn't available with all instance types. Additional usage charges apply when
+     * using an EBS Optimized instance.</p>
+     */
+    inline const AttributeBooleanValue& GetEbsOptimized() const{ return m_ebsOptimized; }
+    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
+    inline void SetEbsOptimized(const AttributeBooleanValue& value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
+    inline void SetEbsOptimized(AttributeBooleanValue&& value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = std::move(value); }
+    inline ModifyInstanceAttributeRequest& WithEbsOptimized(const AttributeBooleanValue& value) { SetEbsOptimized(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithEbsOptimized(AttributeBooleanValue&& value) { SetEbsOptimized(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the instance.</p> <p>There is no way to disable
+     * enhanced networking with the Intel 82599 Virtual Function interface at this
+     * time.</p> <p>This option is supported only for HVM instances. Specifying this
+     * option with a PV instance can make it unreachable.</p>
+     */
+    inline const AttributeValue& GetSriovNetSupport() const{ return m_sriovNetSupport; }
+    inline bool SriovNetSupportHasBeenSet() const { return m_sriovNetSupportHasBeenSet; }
+    inline void SetSriovNetSupport(const AttributeValue& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
+    inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = std::move(value); }
+    inline ModifyInstanceAttributeRequest& WithSriovNetSupport(const AttributeValue& value) { SetSriovNetSupport(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.</p> <p>This option is supported only for HVM instances. Specifying
+     * this option with a PV instance can make it unreachable.</p>
+     */
+    inline const AttributeBooleanValue& GetEnaSupport() const{ return m_enaSupport; }
+    inline bool EnaSupportHasBeenSet() const { return m_enaSupportHasBeenSet; }
+    inline void SetEnaSupport(const AttributeBooleanValue& value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
+    inline void SetEnaSupport(AttributeBooleanValue&& value) { m_enaSupportHasBeenSet = true; m_enaSupport = std::move(value); }
+    inline ModifyInstanceAttributeRequest& WithEnaSupport(const AttributeBooleanValue& value) { SetEnaSupport(value); return *this;}
+    inline ModifyInstanceAttributeRequest& WithEnaSupport(AttributeBooleanValue&& value) { SetEnaSupport(std::move(value)); return *this;}
     ///@}
   private:
 
     AttributeBooleanValue m_sourceDestCheck;
     bool m_sourceDestCheckHasBeenSet = false;
 
+    AttributeBooleanValue m_disableApiStop;
+    bool m_disableApiStopHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
+
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
+
     InstanceAttributeName m_attribute;
     bool m_attributeHasBeenSet = false;
+
+    Aws::String m_value;
+    bool m_valueHasBeenSet = false;
 
     Aws::Vector<InstanceBlockDeviceMappingSpecification> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet = false;
 
     AttributeBooleanValue m_disableApiTermination;
     bool m_disableApiTerminationHasBeenSet = false;
-
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
-    AttributeBooleanValue m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet = false;
-
-    AttributeBooleanValue m_enaSupport;
-    bool m_enaSupportHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet = false;
-
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet = false;
-
-    AttributeValue m_instanceInitiatedShutdownBehavior;
-    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
     AttributeValue m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
@@ -350,17 +344,23 @@ namespace Model
     AttributeValue m_ramdisk;
     bool m_ramdiskHasBeenSet = false;
 
-    AttributeValue m_sriovNetSupport;
-    bool m_sriovNetSupportHasBeenSet = false;
-
     BlobAttributeValue m_userData;
     bool m_userDataHasBeenSet = false;
 
-    Aws::String m_value;
-    bool m_valueHasBeenSet = false;
+    AttributeValue m_instanceInitiatedShutdownBehavior;
+    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
-    AttributeBooleanValue m_disableApiStop;
-    bool m_disableApiStopHasBeenSet = false;
+    Aws::Vector<Aws::String> m_groups;
+    bool m_groupsHasBeenSet = false;
+
+    AttributeBooleanValue m_ebsOptimized;
+    bool m_ebsOptimizedHasBeenSet = false;
+
+    AttributeValue m_sriovNetSupport;
+    bool m_sriovNetSupportHasBeenSet = false;
+
+    AttributeBooleanValue m_enaSupport;
+    bool m_enaSupportHasBeenSet = false;
   };
 
 } // namespace Model

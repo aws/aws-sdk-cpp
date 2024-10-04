@@ -34,6 +34,7 @@ IpamDiscoveredResourceCidr::IpamDiscoveredResourceCidr() :
     m_ipUsage(0.0),
     m_ipUsageHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
     m_networkInterfaceAttachmentStatus(IpamNetworkInterfaceAttachmentStatus::NOT_SET),
     m_networkInterfaceAttachmentStatusHasBeenSet(false),
     m_sampleTimeHasBeenSet(false),
@@ -119,6 +120,12 @@ IpamDiscoveredResourceCidr& IpamDiscoveredResourceCidr::operator =(const XmlNode
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
+    if(!subnetIdNode.IsNull())
+    {
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
+      m_subnetIdHasBeenSet = true;
+    }
     XmlNode networkInterfaceAttachmentStatusNode = resultNode.FirstChild("networkInterfaceAttachmentStatus");
     if(!networkInterfaceAttachmentStatusNode.IsNull())
     {
@@ -200,6 +207,11 @@ void IpamDiscoveredResourceCidr::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_subnetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
   if(m_networkInterfaceAttachmentStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".NetworkInterfaceAttachmentStatus=" << IpamNetworkInterfaceAttachmentStatusMapper::GetNameForIpamNetworkInterfaceAttachmentStatus(m_networkInterfaceAttachmentStatus) << "&";
@@ -264,6 +276,10 @@ void IpamDiscoveredResourceCidr::OutputToStream(Aws::OStream& oStream, const cha
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_subnetIdHasBeenSet)
+  {
+      oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
   if(m_networkInterfaceAttachmentStatusHasBeenSet)
   {

@@ -11,11 +11,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AssociateSubnetCidrBlockRequest::AssociateSubnetCidrBlockRequest() : 
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
     m_ipv6IpamPoolIdHasBeenSet(false),
     m_ipv6NetmaskLength(0),
-    m_ipv6NetmaskLengthHasBeenSet(false)
+    m_ipv6NetmaskLengthHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_ipv6CidrBlockHasBeenSet(false)
 {
 }
 
@@ -23,16 +23,6 @@ Aws::String AssociateSubnetCidrBlockRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AssociateSubnetCidrBlock&";
-  if(m_ipv6CidrBlockHasBeenSet)
-  {
-    ss << "Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
-  }
-
-  if(m_subnetIdHasBeenSet)
-  {
-    ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
-  }
-
   if(m_ipv6IpamPoolIdHasBeenSet)
   {
     ss << "Ipv6IpamPoolId=" << StringUtils::URLEncode(m_ipv6IpamPoolId.c_str()) << "&";
@@ -41,6 +31,16 @@ Aws::String AssociateSubnetCidrBlockRequest::SerializePayload() const
   if(m_ipv6NetmaskLengthHasBeenSet)
   {
     ss << "Ipv6NetmaskLength=" << m_ipv6NetmaskLength << "&";
+  }
+
+  if(m_subnetIdHasBeenSet)
+  {
+    ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
+  if(m_ipv6CidrBlockHasBeenSet)
+  {
+    ss << "Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -21,7 +21,6 @@ namespace Model
 {
 
 SpotFleetLaunchSpecification::SpotFleetLaunchSpecification() : 
-    m_securityGroupsHasBeenSet(false),
     m_addressingTypeHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
     m_ebsOptimized(false),
@@ -42,7 +41,8 @@ SpotFleetLaunchSpecification::SpotFleetLaunchSpecification() :
     m_weightedCapacity(0.0),
     m_weightedCapacityHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false)
+    m_instanceRequirementsHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false)
 {
 }
 
@@ -58,18 +58,6 @@ SpotFleetLaunchSpecification& SpotFleetLaunchSpecification::operator =(const Xml
 
   if(!resultNode.IsNull())
   {
-    XmlNode securityGroupsNode = resultNode.FirstChild("groupSet");
-    if(!securityGroupsNode.IsNull())
-    {
-      XmlNode securityGroupsMember = securityGroupsNode.FirstChild("item");
-      while(!securityGroupsMember.IsNull())
-      {
-        m_securityGroups.push_back(securityGroupsMember);
-        securityGroupsMember = securityGroupsMember.NextNode("item");
-      }
-
-      m_securityGroupsHasBeenSet = true;
-    }
     XmlNode addressingTypeNode = resultNode.FirstChild("addressingType");
     if(!addressingTypeNode.IsNull())
     {
@@ -196,6 +184,18 @@ SpotFleetLaunchSpecification& SpotFleetLaunchSpecification::operator =(const Xml
       m_instanceRequirements = instanceRequirementsNode;
       m_instanceRequirementsHasBeenSet = true;
     }
+    XmlNode securityGroupsNode = resultNode.FirstChild("groupSet");
+    if(!securityGroupsNode.IsNull())
+    {
+      XmlNode securityGroupsMember = securityGroupsNode.FirstChild("item");
+      while(!securityGroupsMember.IsNull())
+      {
+        m_securityGroups.push_back(securityGroupsMember);
+        securityGroupsMember = securityGroupsMember.NextNode("item");
+      }
+
+      m_securityGroupsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -203,17 +203,6 @@ SpotFleetLaunchSpecification& SpotFleetLaunchSpecification::operator =(const Xml
 
 void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_securityGroupsHasBeenSet)
-  {
-      unsigned securityGroupsIdx = 1;
-      for(auto& item : m_securityGroups)
-      {
-        Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location << index << locationValue << ".GroupSet." << securityGroupsIdx++;
-        item.OutputToStream(oStream, securityGroupsSs.str().c_str());
-      }
-  }
-
   if(m_addressingTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AddressingType=" << StringUtils::URLEncode(m_addressingType.c_str()) << "&";
@@ -330,20 +319,21 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
       m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
   }
 
-}
-
-void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
   if(m_securityGroupsHasBeenSet)
   {
       unsigned securityGroupsIdx = 1;
       for(auto& item : m_securityGroups)
       {
         Aws::StringStream securityGroupsSs;
-        securityGroupsSs << location <<  ".GroupSet." << securityGroupsIdx++;
+        securityGroupsSs << location << index << locationValue << ".GroupSet." << securityGroupsIdx++;
         item.OutputToStream(oStream, securityGroupsSs.str().c_str());
       }
   }
+
+}
+
+void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
   if(m_addressingTypeHasBeenSet)
   {
       oStream << location << ".AddressingType=" << StringUtils::URLEncode(m_addressingType.c_str()) << "&";
@@ -441,6 +431,16 @@ void SpotFleetLaunchSpecification::OutputToStream(Aws::OStream& oStream, const c
       Aws::String instanceRequirementsLocationAndMember(location);
       instanceRequirementsLocationAndMember += ".InstanceRequirements";
       m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
+  }
+  if(m_securityGroupsHasBeenSet)
+  {
+      unsigned securityGroupsIdx = 1;
+      for(auto& item : m_securityGroups)
+      {
+        Aws::StringStream securityGroupsSs;
+        securityGroupsSs << location <<  ".GroupSet." << securityGroupsIdx++;
+        item.OutputToStream(oStream, securityGroupsSs.str().c_str());
+      }
   }
 }
 

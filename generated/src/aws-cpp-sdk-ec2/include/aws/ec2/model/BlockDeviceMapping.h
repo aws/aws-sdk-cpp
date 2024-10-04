@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/EbsBlockDevice.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +40,35 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
+
+    ///@{
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
+    inline const EbsBlockDevice& GetEbs() const{ return m_ebs; }
+    inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
+    inline void SetEbs(const EbsBlockDevice& value) { m_ebsHasBeenSet = true; m_ebs = value; }
+    inline void SetEbs(EbsBlockDevice&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
+    inline BlockDeviceMapping& WithEbs(const EbsBlockDevice& value) { SetEbs(value); return *this;}
+    inline BlockDeviceMapping& WithEbs(EbsBlockDevice&& value) { SetEbs(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>To omit the device from the block device mapping, specify an empty string.
+     * When this property is specified, the device is removed from the block device
+     * mapping regardless of the assigned value.</p>
+     */
+    inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
+    inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
+    inline void SetNoDevice(const Aws::String& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
+    inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = std::move(value); }
+    inline void SetNoDevice(const char* value) { m_noDeviceHasBeenSet = true; m_noDevice.assign(value); }
+    inline BlockDeviceMapping& WithNoDevice(const Aws::String& value) { SetNoDevice(value); return *this;}
+    inline BlockDeviceMapping& WithNoDevice(Aws::String&& value) { SetNoDevice(std::move(value)); return *this;}
+    inline BlockDeviceMapping& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -79,48 +108,19 @@ namespace Model
     inline BlockDeviceMapping& WithVirtualName(Aws::String&& value) { SetVirtualName(std::move(value)); return *this;}
     inline BlockDeviceMapping& WithVirtualName(const char* value) { SetVirtualName(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Parameters used to automatically set up EBS volumes when the instance is
-     * launched.</p>
-     */
-    inline const EbsBlockDevice& GetEbs() const{ return m_ebs; }
-    inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
-    inline void SetEbs(const EbsBlockDevice& value) { m_ebsHasBeenSet = true; m_ebs = value; }
-    inline void SetEbs(EbsBlockDevice&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
-    inline BlockDeviceMapping& WithEbs(const EbsBlockDevice& value) { SetEbs(value); return *this;}
-    inline BlockDeviceMapping& WithEbs(EbsBlockDevice&& value) { SetEbs(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>To omit the device from the block device mapping, specify an empty string.
-     * When this property is specified, the device is removed from the block device
-     * mapping regardless of the assigned value.</p>
-     */
-    inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
-    inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
-    inline void SetNoDevice(const Aws::String& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
-    inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = std::move(value); }
-    inline void SetNoDevice(const char* value) { m_noDeviceHasBeenSet = true; m_noDevice.assign(value); }
-    inline BlockDeviceMapping& WithNoDevice(const Aws::String& value) { SetNoDevice(value); return *this;}
-    inline BlockDeviceMapping& WithNoDevice(Aws::String&& value) { SetNoDevice(std::move(value)); return *this;}
-    inline BlockDeviceMapping& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet = false;
-
-    Aws::String m_virtualName;
-    bool m_virtualNameHasBeenSet = false;
 
     EbsBlockDevice m_ebs;
     bool m_ebsHasBeenSet = false;
 
     Aws::String m_noDevice;
     bool m_noDeviceHasBeenSet = false;
+
+    Aws::String m_deviceName;
+    bool m_deviceNameHasBeenSet = false;
+
+    Aws::String m_virtualName;
+    bool m_virtualNameHasBeenSet = false;
   };
 
 } // namespace Model

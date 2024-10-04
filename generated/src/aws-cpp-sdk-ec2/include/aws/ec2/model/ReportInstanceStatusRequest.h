@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ReportStatusType.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ReportInstanceReasonCodes.h>
 #include <utility>
 
@@ -42,20 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Descriptive text about the health state of your instance.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ReportInstanceStatusRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ReportInstanceStatusRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ReportInstanceStatusRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Checks whether you have the required permissions for the operation, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -65,18 +51,6 @@ namespace Model
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ReportInstanceStatusRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The time at which the reported instance health state ended.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline ReportInstanceStatusRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ReportInstanceStatusRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,6 +66,42 @@ namespace Model
     inline ReportInstanceStatusRequest& AddInstances(const Aws::String& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
     inline ReportInstanceStatusRequest& AddInstances(Aws::String&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
     inline ReportInstanceStatusRequest& AddInstances(const char* value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of all instances listed.</p>
+     */
+    inline const ReportStatusType& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const ReportStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ReportStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline ReportInstanceStatusRequest& WithStatus(const ReportStatusType& value) { SetStatus(value); return *this;}
+    inline ReportInstanceStatusRequest& WithStatus(ReportStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time at which the reported instance health state began.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
+    inline ReportInstanceStatusRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+    inline ReportInstanceStatusRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time at which the reported instance health state ended.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
+    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
+    inline ReportInstanceStatusRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
+    inline ReportInstanceStatusRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,52 +131,25 @@ namespace Model
     inline ReportInstanceStatusRequest& AddReasonCodes(const ReportInstanceReasonCodes& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes.push_back(value); return *this; }
     inline ReportInstanceStatusRequest& AddReasonCodes(ReportInstanceReasonCodes&& value) { m_reasonCodesHasBeenSet = true; m_reasonCodes.push_back(std::move(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The time at which the reported instance health state began.</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ReportInstanceStatusRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ReportInstanceStatusRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The status of all instances listed.</p>
-     */
-    inline const ReportStatusType& GetStatus() const{ return m_status; }
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReportStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReportStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ReportInstanceStatusRequest& WithStatus(const ReportStatusType& value) { SetStatus(value); return *this;}
-    inline ReportInstanceStatusRequest& WithStatus(ReportStatusType&& value) { SetStatus(std::move(value)); return *this;}
-    ///@}
   private:
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_instances;
     bool m_instancesHasBeenSet = false;
 
-    Aws::Vector<ReportInstanceReasonCodes> m_reasonCodes;
-    bool m_reasonCodesHasBeenSet = false;
+    ReportStatusType m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet = false;
 
-    ReportStatusType m_status;
-    bool m_statusHasBeenSet = false;
+    Aws::Utils::DateTime m_endTime;
+    bool m_endTimeHasBeenSet = false;
+
+    Aws::Vector<ReportInstanceReasonCodes> m_reasonCodes;
+    bool m_reasonCodesHasBeenSet = false;
   };
 
 } // namespace Model

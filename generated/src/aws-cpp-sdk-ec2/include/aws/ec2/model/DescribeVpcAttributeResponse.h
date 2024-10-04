@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -33,19 +33,6 @@ namespace Model
     AWS_EC2_API DescribeVpcAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeVpcAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-
-    ///@{
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
-    inline DescribeVpcAttributeResponse& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline DescribeVpcAttributeResponse& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline DescribeVpcAttributeResponse& WithVpcId(const char* value) { SetVpcId(value); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -85,6 +72,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
+    inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
+    inline DescribeVpcAttributeResponse& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+    inline DescribeVpcAttributeResponse& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+    inline DescribeVpcAttributeResponse& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -94,13 +94,13 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_vpcId;
-
     AttributeBooleanValue m_enableDnsHostnames;
 
     AttributeBooleanValue m_enableDnsSupport;
 
     AttributeBooleanValue m_enableNetworkAddressUsageMetrics;
+
+    Aws::String m_vpcId;
 
     ResponseMetadata m_responseMetadata;
   };

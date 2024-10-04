@@ -21,8 +21,6 @@ namespace Model
 {
 
 Address::Address() : 
-    m_instanceIdHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
     m_allocationIdHasBeenSet(false),
     m_associationIdHasBeenSet(false),
     m_domain(DomainType::NOT_SET),
@@ -35,7 +33,9 @@ Address::Address() :
     m_networkBorderGroupHasBeenSet(false),
     m_customerOwnedIpHasBeenSet(false),
     m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_carrierIpHasBeenSet(false)
+    m_carrierIpHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_publicIpHasBeenSet(false)
 {
 }
 
@@ -51,18 +51,6 @@ Address& Address::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
-    if(!instanceIdNode.IsNull())
-    {
-      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
-      m_instanceIdHasBeenSet = true;
-    }
-    XmlNode publicIpNode = resultNode.FirstChild("publicIp");
-    if(!publicIpNode.IsNull())
-    {
-      m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
-      m_publicIpHasBeenSet = true;
-    }
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
@@ -141,6 +129,18 @@ Address& Address::operator =(const XmlNode& xmlNode)
       m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
       m_carrierIpHasBeenSet = true;
     }
+    XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
+    if(!instanceIdNode.IsNull())
+    {
+      m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
+      m_instanceIdHasBeenSet = true;
+    }
+    XmlNode publicIpNode = resultNode.FirstChild("publicIp");
+    if(!publicIpNode.IsNull())
+    {
+      m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
+      m_publicIpHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -148,16 +148,6 @@ Address& Address::operator =(const XmlNode& xmlNode)
 
 void Address::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-
-  if(m_publicIpHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
-  }
-
   if(m_allocationIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
@@ -224,18 +214,20 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
   }
 
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
+  if(m_publicIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
+  }
+
 }
 
 void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-  if(m_publicIpHasBeenSet)
-  {
-      oStream << location << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
-  }
   if(m_allocationIdHasBeenSet)
   {
       oStream << location << ".AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
@@ -289,6 +281,14 @@ void Address::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_carrierIpHasBeenSet)
   {
       oStream << location << ".CarrierIp=" << StringUtils::URLEncode(m_carrierIp.c_str()) << "&";
+  }
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if(m_publicIpHasBeenSet)
+  {
+      oStream << location << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
 }
 

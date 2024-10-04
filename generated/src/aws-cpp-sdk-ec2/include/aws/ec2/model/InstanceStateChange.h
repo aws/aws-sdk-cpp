@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/ec2/model/InstanceState.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/InstanceState.h>
 #include <utility>
 
 namespace Aws
@@ -42,18 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current state of the instance.</p>
-     */
-    inline const InstanceState& GetCurrentState() const{ return m_currentState; }
-    inline bool CurrentStateHasBeenSet() const { return m_currentStateHasBeenSet; }
-    inline void SetCurrentState(const InstanceState& value) { m_currentStateHasBeenSet = true; m_currentState = value; }
-    inline void SetCurrentState(InstanceState&& value) { m_currentStateHasBeenSet = true; m_currentState = std::move(value); }
-    inline InstanceStateChange& WithCurrentState(const InstanceState& value) { SetCurrentState(value); return *this;}
-    inline InstanceStateChange& WithCurrentState(InstanceState&& value) { SetCurrentState(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
@@ -64,6 +52,18 @@ namespace Model
     inline InstanceStateChange& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
     inline InstanceStateChange& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
     inline InstanceStateChange& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current state of the instance.</p>
+     */
+    inline const InstanceState& GetCurrentState() const{ return m_currentState; }
+    inline bool CurrentStateHasBeenSet() const { return m_currentStateHasBeenSet; }
+    inline void SetCurrentState(const InstanceState& value) { m_currentStateHasBeenSet = true; m_currentState = value; }
+    inline void SetCurrentState(InstanceState&& value) { m_currentStateHasBeenSet = true; m_currentState = std::move(value); }
+    inline InstanceStateChange& WithCurrentState(const InstanceState& value) { SetCurrentState(value); return *this;}
+    inline InstanceStateChange& WithCurrentState(InstanceState&& value) { SetCurrentState(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,11 +79,11 @@ namespace Model
     ///@}
   private:
 
-    InstanceState m_currentState;
-    bool m_currentStateHasBeenSet = false;
-
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
+
+    InstanceState m_currentState;
+    bool m_currentStateHasBeenSet = false;
 
     InstanceState m_previousState;
     bool m_previousStateHasBeenSet = false;

@@ -7,9 +7,9 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/VpcState.h>
 #include <aws/ec2/model/Tenancy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/VpcState.h>
 #include <aws/ec2/model/VpcIpv6CidrBlockAssociation.h>
 #include <aws/ec2/model/VpcCidrBlockAssociation.h>
 #include <aws/ec2/model/Tag.h>
@@ -44,60 +44,6 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-
-    ///@{
-    /**
-     * <p>The primary IPv4 CIDR block for the VPC.</p>
-     */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
-    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-    inline Vpc& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-    inline Vpc& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-    inline Vpc& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the set of DHCP options you've associated with the VPC.</p>
-     */
-    inline const Aws::String& GetDhcpOptionsId() const{ return m_dhcpOptionsId; }
-    inline bool DhcpOptionsIdHasBeenSet() const { return m_dhcpOptionsIdHasBeenSet; }
-    inline void SetDhcpOptionsId(const Aws::String& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = value; }
-    inline void SetDhcpOptionsId(Aws::String&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = std::move(value); }
-    inline void SetDhcpOptionsId(const char* value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId.assign(value); }
-    inline Vpc& WithDhcpOptionsId(const Aws::String& value) { SetDhcpOptionsId(value); return *this;}
-    inline Vpc& WithDhcpOptionsId(Aws::String&& value) { SetDhcpOptionsId(std::move(value)); return *this;}
-    inline Vpc& WithDhcpOptionsId(const char* value) { SetDhcpOptionsId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The current state of the VPC.</p>
-     */
-    inline const VpcState& GetState() const{ return m_state; }
-    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const VpcState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(VpcState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Vpc& WithState(const VpcState& value) { SetState(value); return *this;}
-    inline Vpc& WithState(VpcState&& value) { SetState(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline Vpc& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline Vpc& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline Vpc& WithVpcId(const char* value) { SetVpcId(value); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -176,19 +122,61 @@ namespace Model
     inline Vpc& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline Vpc& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+    inline Vpc& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+    inline Vpc& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+    inline Vpc& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current state of the VPC.</p>
+     */
+    inline const VpcState& GetState() const{ return m_state; }
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+    inline void SetState(const VpcState& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(VpcState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+    inline Vpc& WithState(const VpcState& value) { SetState(value); return *this;}
+    inline Vpc& WithState(VpcState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The primary IPv4 CIDR block for the VPC.</p>
+     */
+    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
+    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
+    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
+    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
+    inline Vpc& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
+    inline Vpc& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
+    inline Vpc& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the set of DHCP options you've associated with the VPC.</p>
+     */
+    inline const Aws::String& GetDhcpOptionsId() const{ return m_dhcpOptionsId; }
+    inline bool DhcpOptionsIdHasBeenSet() const { return m_dhcpOptionsIdHasBeenSet; }
+    inline void SetDhcpOptionsId(const Aws::String& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = value; }
+    inline void SetDhcpOptionsId(Aws::String&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = std::move(value); }
+    inline void SetDhcpOptionsId(const char* value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId.assign(value); }
+    inline Vpc& WithDhcpOptionsId(const Aws::String& value) { SetDhcpOptionsId(value); return *this;}
+    inline Vpc& WithDhcpOptionsId(Aws::String&& value) { SetDhcpOptionsId(std::move(value)); return *this;}
+    inline Vpc& WithDhcpOptionsId(const char* value) { SetDhcpOptionsId(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet = false;
-
-    Aws::String m_dhcpOptionsId;
-    bool m_dhcpOptionsIdHasBeenSet = false;
-
-    VpcState m_state;
-    bool m_stateHasBeenSet = false;
-
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet = false;
@@ -207,6 +195,18 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet = false;
+
+    VpcState m_state;
+    bool m_stateHasBeenSet = false;
+
+    Aws::String m_cidrBlock;
+    bool m_cidrBlockHasBeenSet = false;
+
+    Aws::String m_dhcpOptionsId;
+    bool m_dhcpOptionsIdHasBeenSet = false;
   };
 
 } // namespace Model

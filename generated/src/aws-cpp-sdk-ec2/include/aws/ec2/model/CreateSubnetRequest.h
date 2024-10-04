@@ -152,19 +152,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline CreateSubnetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Indicates whether to create an IPv6 only subnet.</p>
      */
     inline bool GetIpv6Native() const{ return m_ipv6Native; }
@@ -220,6 +207,19 @@ namespace Model
     inline void SetIpv6NetmaskLength(int value) { m_ipv6NetmaskLengthHasBeenSet = true; m_ipv6NetmaskLength = value; }
     inline CreateSubnetRequest& WithIpv6NetmaskLength(int value) { SetIpv6NetmaskLength(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline CreateSubnetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
@@ -243,9 +243,6 @@ namespace Model
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
 
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
     bool m_ipv6Native;
     bool m_ipv6NativeHasBeenSet = false;
 
@@ -260,6 +257,9 @@ namespace Model
 
     int m_ipv6NetmaskLength;
     bool m_ipv6NetmaskLengthHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

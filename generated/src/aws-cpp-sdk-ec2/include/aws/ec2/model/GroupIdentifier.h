@@ -41,20 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the security group.</p>
-     */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
-    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline GroupIdentifier& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline GroupIdentifier& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline GroupIdentifier& WithGroupName(const char* value) { SetGroupName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the security group.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
@@ -66,13 +52,27 @@ namespace Model
     inline GroupIdentifier& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
     inline GroupIdentifier& WithGroupId(const char* value) { SetGroupId(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_groupName;
-    bool m_groupNameHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The name of the security group.</p>
+     */
+    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+    inline GroupIdentifier& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+    inline GroupIdentifier& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
+    inline GroupIdentifier& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet = false;
+
+    Aws::String m_groupName;
+    bool m_groupNameHasBeenSet = false;
   };
 
 } // namespace Model

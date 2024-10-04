@@ -40,6 +40,35 @@ namespace Model
 
     ///@{
     /**
+     * <p>The volume IDs. If not specified, then all volumes are included in the
+     * response.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
+    inline bool VolumeIdsHasBeenSet() const { return m_volumeIdsHasBeenSet; }
+    inline void SetVolumeIds(const Aws::Vector<Aws::String>& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
+    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
+    inline DescribeVolumesRequest& WithVolumeIds(const Aws::Vector<Aws::String>& value) { SetVolumeIds(value); return *this;}
+    inline DescribeVolumesRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
+    inline DescribeVolumesRequest& AddVolumeIds(const Aws::String& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
+    inline DescribeVolumesRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
+    inline DescribeVolumesRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline DescribeVolumesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The filters.</p> <ul> <li> <p> <code>attachment.attach-time</code> - The time
      * stamp when the attachment initiated.</p> </li> <li> <p>
      * <code>attachment.delete-on-termination</code> - Whether the volume is deleted on
@@ -87,31 +116,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The volume IDs. If not specified, then all volumes are included in the
-     * response.</p>
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned by the previous request.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
-    inline bool VolumeIdsHasBeenSet() const { return m_volumeIdsHasBeenSet; }
-    inline void SetVolumeIds(const Aws::Vector<Aws::String>& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
-    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
-    inline DescribeVolumesRequest& WithVolumeIds(const Aws::Vector<Aws::String>& value) { SetVolumeIds(value); return *this;}
-    inline DescribeVolumesRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
-    inline DescribeVolumesRequest& AddVolumeIds(const Aws::String& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
-    inline DescribeVolumesRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
-    inline DescribeVolumesRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline DescribeVolumesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+    inline DescribeVolumesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeVolumesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline DescribeVolumesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
 
     ///@{
@@ -126,25 +141,7 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeVolumesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeVolumesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeVolumesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeVolumesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_volumeIds;
     bool m_volumeIdsHasBeenSet = false;
@@ -152,11 +149,14 @@ namespace Model
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

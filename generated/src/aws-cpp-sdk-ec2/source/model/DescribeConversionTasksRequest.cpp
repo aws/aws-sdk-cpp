@@ -11,9 +11,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeConversionTasksRequest::DescribeConversionTasksRequest() : 
-    m_conversionTaskIdsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_conversionTaskIdsHasBeenSet(false)
 {
 }
 
@@ -21,6 +21,11 @@ Aws::String DescribeConversionTasksRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeConversionTasks&";
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
   if(m_conversionTaskIdsHasBeenSet)
   {
     unsigned conversionTaskIdsCount = 1;
@@ -30,11 +35,6 @@ Aws::String DescribeConversionTasksRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       conversionTaskIdsCount++;
     }
-  }
-
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

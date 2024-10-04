@@ -11,12 +11,12 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeRegionsRequest::DescribeRegionsRequest() : 
-    m_filtersHasBeenSet(false),
     m_regionNamesHasBeenSet(false),
+    m_allRegions(false),
+    m_allRegionsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_allRegions(false),
-    m_allRegionsHasBeenSet(false)
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -24,16 +24,6 @@ Aws::String DescribeRegionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeRegions&";
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
-  }
-
   if(m_regionNamesHasBeenSet)
   {
     unsigned regionNamesCount = 1;
@@ -45,14 +35,24 @@ Aws::String DescribeRegionsRequest::SerializePayload() const
     }
   }
 
+  if(m_allRegionsHasBeenSet)
+  {
+    ss << "AllRegions=" << std::boolalpha << m_allRegions << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_allRegionsHasBeenSet)
+  if(m_filtersHasBeenSet)
   {
-    ss << "AllRegions=" << std::boolalpha << m_allRegions << "&";
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

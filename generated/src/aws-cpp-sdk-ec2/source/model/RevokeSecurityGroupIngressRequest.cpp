@@ -22,9 +22,9 @@ RevokeSecurityGroupIngressRequest::RevokeSecurityGroupIngressRequest() :
     m_sourceSecurityGroupOwnerIdHasBeenSet(false),
     m_toPort(0),
     m_toPortHasBeenSet(false),
+    m_securityGroupRuleIdsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_securityGroupRuleIdsHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -82,11 +82,6 @@ Aws::String RevokeSecurityGroupIngressRequest::SerializePayload() const
     ss << "ToPort=" << m_toPort << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_securityGroupRuleIdsHasBeenSet)
   {
     unsigned securityGroupRuleIdsCount = 1;
@@ -96,6 +91,11 @@ Aws::String RevokeSecurityGroupIngressRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       securityGroupRuleIdsCount++;
     }
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

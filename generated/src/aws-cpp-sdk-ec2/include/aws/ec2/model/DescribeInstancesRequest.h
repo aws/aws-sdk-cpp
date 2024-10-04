@@ -40,6 +40,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+    inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
+    inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
+    inline DescribeInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
+    inline DescribeInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
+    inline DescribeInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    inline DescribeInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
+    inline DescribeInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the operation, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline DescribeInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The filters.</p> <ul> <li> <p> <code>affinity</code> - The affinity setting
      * for an instance running on a Dedicated Host (<code>default</code> |
      * <code>host</code>).</p> </li> <li> <p> <code>architecture</code> - The instance
@@ -347,30 +375,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The instance IDs.</p> <p>Default: Describes all your instances.</p>
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned by the previous request.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
-    inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
-    inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
-    inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
-    inline DescribeInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
-    inline DescribeInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
-    inline DescribeInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-    inline DescribeInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
-    inline DescribeInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the operation, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline DescribeInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+    inline DescribeInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline DescribeInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
 
     ///@{
@@ -387,25 +402,7 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
   private:
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet = false;
@@ -413,11 +410,14 @@ namespace Model
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

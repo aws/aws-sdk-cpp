@@ -42,16 +42,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether the volume is deleted on instance termination.</p>
-     */
-    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
-    inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
-    inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
-    inline EbsInstanceBlockDeviceSpecification& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the EBS volume.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
@@ -63,13 +53,23 @@ namespace Model
     inline EbsInstanceBlockDeviceSpecification& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
     inline EbsInstanceBlockDeviceSpecification& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
     ///@}
-  private:
 
-    bool m_deleteOnTermination;
-    bool m_deleteOnTerminationHasBeenSet = false;
+    ///@{
+    /**
+     * <p>Indicates whether the volume is deleted on instance termination.</p>
+     */
+    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+    inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
+    inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
+    inline EbsInstanceBlockDeviceSpecification& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet = false;
+
+    bool m_deleteOnTermination;
+    bool m_deleteOnTerminationHasBeenSet = false;
   };
 
 } // namespace Model

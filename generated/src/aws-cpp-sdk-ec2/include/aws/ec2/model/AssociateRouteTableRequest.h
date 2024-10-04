@@ -38,6 +38,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+    inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
+    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
+    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
+    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
+    inline AssociateRouteTableRequest& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
+    inline AssociateRouteTableRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
+    inline AssociateRouteTableRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -47,20 +61,6 @@ namespace Model
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline AssociateRouteTableRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the route table.</p>
-     */
-    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
-    inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
-    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
-    inline AssociateRouteTableRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
-    inline AssociateRouteTableRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
-    inline AssociateRouteTableRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
     ///@}
 
     ///@{
@@ -79,30 +79,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     * <p>The ID of the route table.</p>
      */
-    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
-    inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-    inline AssociateRouteTableRequest& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-    inline AssociateRouteTableRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-    inline AssociateRouteTableRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
+    inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
+    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
+    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
+    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
+    inline AssociateRouteTableRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
+    inline AssociateRouteTableRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
+    inline AssociateRouteTableRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_gatewayId;
+    bool m_gatewayIdHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
-    Aws::String m_routeTableId;
-    bool m_routeTableIdHasBeenSet = false;
-
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;
 
-    Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet = false;
+    Aws::String m_routeTableId;
+    bool m_routeTableIdHasBeenSet = false;
   };
 
 } // namespace Model

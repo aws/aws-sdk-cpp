@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeValue.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
-#include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/LaunchPermission.h>
 #include <aws/ec2/model/ProductCode.h>
+#include <aws/ec2/model/BlockDeviceMapping.h>
 #include <utility>
 
 namespace Aws
@@ -42,58 +42,6 @@ namespace Model
     AWS_EC2_API DescribeImageAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeImageAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-
-    ///@{
-    /**
-     * <p>The block device mapping entries.</p>
-     */
-    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappings = std::move(value); }
-    inline DescribeImageAttributeResponse& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline DescribeImageAttributeResponse& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline DescribeImageAttributeResponse& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappings.push_back(value); return *this; }
-    inline DescribeImageAttributeResponse& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappings.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the AMI.</p>
-     */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
-    inline void SetImageId(const Aws::String& value) { m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageId.assign(value); }
-    inline DescribeImageAttributeResponse& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline DescribeImageAttributeResponse& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline DescribeImageAttributeResponse& WithImageId(const char* value) { SetImageId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The launch permissions.</p>
-     */
-    inline const Aws::Vector<LaunchPermission>& GetLaunchPermissions() const{ return m_launchPermissions; }
-    inline void SetLaunchPermissions(const Aws::Vector<LaunchPermission>& value) { m_launchPermissions = value; }
-    inline void SetLaunchPermissions(Aws::Vector<LaunchPermission>&& value) { m_launchPermissions = std::move(value); }
-    inline DescribeImageAttributeResponse& WithLaunchPermissions(const Aws::Vector<LaunchPermission>& value) { SetLaunchPermissions(value); return *this;}
-    inline DescribeImageAttributeResponse& WithLaunchPermissions(Aws::Vector<LaunchPermission>&& value) { SetLaunchPermissions(std::move(value)); return *this;}
-    inline DescribeImageAttributeResponse& AddLaunchPermissions(const LaunchPermission& value) { m_launchPermissions.push_back(value); return *this; }
-    inline DescribeImageAttributeResponse& AddLaunchPermissions(LaunchPermission&& value) { m_launchPermissions.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The product codes.</p>
-     */
-    inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
-    inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodes = value; }
-    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodes = std::move(value); }
-    inline DescribeImageAttributeResponse& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
-    inline DescribeImageAttributeResponse& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
-    inline DescribeImageAttributeResponse& AddProductCodes(const ProductCode& value) { m_productCodes.push_back(value); return *this; }
-    inline DescribeImageAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
-    ///@}
 
     ///@{
     /**
@@ -226,6 +174,58 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The ID of the AMI.</p>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline void SetImageId(const Aws::String& value) { m_imageId = value; }
+    inline void SetImageId(Aws::String&& value) { m_imageId = std::move(value); }
+    inline void SetImageId(const char* value) { m_imageId.assign(value); }
+    inline DescribeImageAttributeResponse& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+    inline DescribeImageAttributeResponse& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+    inline DescribeImageAttributeResponse& WithImageId(const char* value) { SetImageId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The launch permissions.</p>
+     */
+    inline const Aws::Vector<LaunchPermission>& GetLaunchPermissions() const{ return m_launchPermissions; }
+    inline void SetLaunchPermissions(const Aws::Vector<LaunchPermission>& value) { m_launchPermissions = value; }
+    inline void SetLaunchPermissions(Aws::Vector<LaunchPermission>&& value) { m_launchPermissions = std::move(value); }
+    inline DescribeImageAttributeResponse& WithLaunchPermissions(const Aws::Vector<LaunchPermission>& value) { SetLaunchPermissions(value); return *this;}
+    inline DescribeImageAttributeResponse& WithLaunchPermissions(Aws::Vector<LaunchPermission>&& value) { SetLaunchPermissions(std::move(value)); return *this;}
+    inline DescribeImageAttributeResponse& AddLaunchPermissions(const LaunchPermission& value) { m_launchPermissions.push_back(value); return *this; }
+    inline DescribeImageAttributeResponse& AddLaunchPermissions(LaunchPermission&& value) { m_launchPermissions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The product codes.</p>
+     */
+    inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
+    inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodes = value; }
+    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodes = std::move(value); }
+    inline DescribeImageAttributeResponse& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
+    inline DescribeImageAttributeResponse& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
+    inline DescribeImageAttributeResponse& AddProductCodes(const ProductCode& value) { m_productCodes.push_back(value); return *this; }
+    inline DescribeImageAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The block device mapping entries.</p>
+     */
+    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappings = value; }
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappings = std::move(value); }
+    inline DescribeImageAttributeResponse& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
+    inline DescribeImageAttributeResponse& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
+    inline DescribeImageAttributeResponse& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappings.push_back(value); return *this; }
+    inline DescribeImageAttributeResponse& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -234,14 +234,6 @@ namespace Model
     inline DescribeImageAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
     ///@}
   private:
-
-    Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-
-    Aws::String m_imageId;
-
-    Aws::Vector<LaunchPermission> m_launchPermissions;
-
-    Aws::Vector<ProductCode> m_productCodes;
 
     AttributeValue m_description;
 
@@ -262,6 +254,14 @@ namespace Model
     AttributeValue m_imdsSupport;
 
     AttributeValue m_deregistrationProtection;
+
+    Aws::String m_imageId;
+
+    Aws::Vector<LaunchPermission> m_launchPermissions;
+
+    Aws::Vector<ProductCode> m_productCodes;
+
+    Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
 
     ResponseMetadata m_responseMetadata;
   };

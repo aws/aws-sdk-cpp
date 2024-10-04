@@ -38,22 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
-     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
-     * roles, and the root user of the account.</p>
-     */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
-    inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
      * <code>customer-gateway</code> | <code>dhcp-options</code> |
      * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
@@ -89,16 +73,32 @@ namespace Model
     inline void SetUseLongIds(bool value) { m_useLongIdsHasBeenSet = true; m_useLongIds = value; }
     inline ModifyIdentityIdFormatRequest& WithUseLongIds(bool value) { SetUseLongIds(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
+     * user. Specify <code>all</code> to modify the ID format for all IAM users, IAM
+     * roles, and the root user of the account.</p>
+     */
+    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+    inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
+    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
+    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
+    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
+    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
+    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
+    inline ModifyIdentityIdFormatRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_resource;
     bool m_resourceHasBeenSet = false;
 
     bool m_useLongIds;
     bool m_useLongIdsHasBeenSet = false;
+
+    Aws::String m_principalArn;
+    bool m_principalArnHasBeenSet = false;
   };
 
 } // namespace Model

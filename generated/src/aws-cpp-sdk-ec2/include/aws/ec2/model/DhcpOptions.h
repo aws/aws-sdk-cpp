@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/DhcpConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/DhcpConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -44,34 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The DHCP options in the set.</p>
-     */
-    inline const Aws::Vector<DhcpConfiguration>& GetDhcpConfigurations() const{ return m_dhcpConfigurations; }
-    inline bool DhcpConfigurationsHasBeenSet() const { return m_dhcpConfigurationsHasBeenSet; }
-    inline void SetDhcpConfigurations(const Aws::Vector<DhcpConfiguration>& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = value; }
-    inline void SetDhcpConfigurations(Aws::Vector<DhcpConfiguration>&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = std::move(value); }
-    inline DhcpOptions& WithDhcpConfigurations(const Aws::Vector<DhcpConfiguration>& value) { SetDhcpConfigurations(value); return *this;}
-    inline DhcpOptions& WithDhcpConfigurations(Aws::Vector<DhcpConfiguration>&& value) { SetDhcpConfigurations(std::move(value)); return *this;}
-    inline DhcpOptions& AddDhcpConfigurations(const DhcpConfiguration& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(value); return *this; }
-    inline DhcpOptions& AddDhcpConfigurations(DhcpConfiguration&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the set of DHCP options.</p>
-     */
-    inline const Aws::String& GetDhcpOptionsId() const{ return m_dhcpOptionsId; }
-    inline bool DhcpOptionsIdHasBeenSet() const { return m_dhcpOptionsIdHasBeenSet; }
-    inline void SetDhcpOptionsId(const Aws::String& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = value; }
-    inline void SetDhcpOptionsId(Aws::String&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = std::move(value); }
-    inline void SetDhcpOptionsId(const char* value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId.assign(value); }
-    inline DhcpOptions& WithDhcpOptionsId(const Aws::String& value) { SetDhcpOptionsId(value); return *this;}
-    inline DhcpOptions& WithDhcpOptionsId(Aws::String&& value) { SetDhcpOptionsId(std::move(value)); return *this;}
-    inline DhcpOptions& WithDhcpOptionsId(const char* value) { SetDhcpOptionsId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
@@ -97,19 +69,47 @@ namespace Model
     inline DhcpOptions& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline DhcpOptions& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the set of DHCP options.</p>
+     */
+    inline const Aws::String& GetDhcpOptionsId() const{ return m_dhcpOptionsId; }
+    inline bool DhcpOptionsIdHasBeenSet() const { return m_dhcpOptionsIdHasBeenSet; }
+    inline void SetDhcpOptionsId(const Aws::String& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = value; }
+    inline void SetDhcpOptionsId(Aws::String&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = std::move(value); }
+    inline void SetDhcpOptionsId(const char* value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId.assign(value); }
+    inline DhcpOptions& WithDhcpOptionsId(const Aws::String& value) { SetDhcpOptionsId(value); return *this;}
+    inline DhcpOptions& WithDhcpOptionsId(Aws::String&& value) { SetDhcpOptionsId(std::move(value)); return *this;}
+    inline DhcpOptions& WithDhcpOptionsId(const char* value) { SetDhcpOptionsId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The DHCP options in the set.</p>
+     */
+    inline const Aws::Vector<DhcpConfiguration>& GetDhcpConfigurations() const{ return m_dhcpConfigurations; }
+    inline bool DhcpConfigurationsHasBeenSet() const { return m_dhcpConfigurationsHasBeenSet; }
+    inline void SetDhcpConfigurations(const Aws::Vector<DhcpConfiguration>& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = value; }
+    inline void SetDhcpConfigurations(Aws::Vector<DhcpConfiguration>&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = std::move(value); }
+    inline DhcpOptions& WithDhcpConfigurations(const Aws::Vector<DhcpConfiguration>& value) { SetDhcpConfigurations(value); return *this;}
+    inline DhcpOptions& WithDhcpConfigurations(Aws::Vector<DhcpConfiguration>&& value) { SetDhcpConfigurations(std::move(value)); return *this;}
+    inline DhcpOptions& AddDhcpConfigurations(const DhcpConfiguration& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(value); return *this; }
+    inline DhcpOptions& AddDhcpConfigurations(DhcpConfiguration&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
   private:
-
-    Aws::Vector<DhcpConfiguration> m_dhcpConfigurations;
-    bool m_dhcpConfigurationsHasBeenSet = false;
-
-    Aws::String m_dhcpOptionsId;
-    bool m_dhcpOptionsIdHasBeenSet = false;
 
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_dhcpOptionsId;
+    bool m_dhcpOptionsIdHasBeenSet = false;
+
+    Aws::Vector<DhcpConfiguration> m_dhcpConfigurations;
+    bool m_dhcpConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

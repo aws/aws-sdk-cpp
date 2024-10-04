@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/Instance.h>
@@ -45,28 +45,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Not supported.</p>
+     * <p>The ID of the reservation.</p>
      */
-    inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
-    inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groups = value; }
-    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = std::move(value); }
-    inline RunInstancesResponse& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
-    inline RunInstancesResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
-    inline RunInstancesResponse& AddGroups(const GroupIdentifier& value) { m_groups.push_back(value); return *this; }
-    inline RunInstancesResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The instances.</p>
-     */
-    inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
-    inline void SetInstances(const Aws::Vector<Instance>& value) { m_instances = value; }
-    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = std::move(value); }
-    inline RunInstancesResponse& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
-    inline RunInstancesResponse& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
-    inline RunInstancesResponse& AddInstances(const Instance& value) { m_instances.push_back(value); return *this; }
-    inline RunInstancesResponse& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
+    inline const Aws::String& GetReservationId() const{ return m_reservationId; }
+    inline void SetReservationId(const Aws::String& value) { m_reservationId = value; }
+    inline void SetReservationId(Aws::String&& value) { m_reservationId = std::move(value); }
+    inline void SetReservationId(const char* value) { m_reservationId.assign(value); }
+    inline RunInstancesResponse& WithReservationId(const Aws::String& value) { SetReservationId(value); return *this;}
+    inline RunInstancesResponse& WithReservationId(Aws::String&& value) { SetReservationId(std::move(value)); return *this;}
+    inline RunInstancesResponse& WithReservationId(const char* value) { SetReservationId(value); return *this;}
     ///@}
 
     ///@{
@@ -98,15 +85,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the reservation.</p>
+     * <p>Not supported.</p>
      */
-    inline const Aws::String& GetReservationId() const{ return m_reservationId; }
-    inline void SetReservationId(const Aws::String& value) { m_reservationId = value; }
-    inline void SetReservationId(Aws::String&& value) { m_reservationId = std::move(value); }
-    inline void SetReservationId(const char* value) { m_reservationId.assign(value); }
-    inline RunInstancesResponse& WithReservationId(const Aws::String& value) { SetReservationId(value); return *this;}
-    inline RunInstancesResponse& WithReservationId(Aws::String&& value) { SetReservationId(std::move(value)); return *this;}
-    inline RunInstancesResponse& WithReservationId(const char* value) { SetReservationId(value); return *this;}
+    inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
+    inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groups = value; }
+    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = std::move(value); }
+    inline RunInstancesResponse& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
+    inline RunInstancesResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
+    inline RunInstancesResponse& AddGroups(const GroupIdentifier& value) { m_groups.push_back(value); return *this; }
+    inline RunInstancesResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The instances.</p>
+     */
+    inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+    inline void SetInstances(const Aws::Vector<Instance>& value) { m_instances = value; }
+    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = std::move(value); }
+    inline RunInstancesResponse& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+    inline RunInstancesResponse& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
+    inline RunInstancesResponse& AddInstances(const Instance& value) { m_instances.push_back(value); return *this; }
+    inline RunInstancesResponse& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -119,15 +119,15 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<GroupIdentifier> m_groups;
-
-    Aws::Vector<Instance> m_instances;
+    Aws::String m_reservationId;
 
     Aws::String m_ownerId;
 
     Aws::String m_requesterId;
 
-    Aws::String m_reservationId;
+    Aws::Vector<GroupIdentifier> m_groups;
+
+    Aws::Vector<Instance> m_instances;
 
     ResponseMetadata m_responseMetadata;
   };

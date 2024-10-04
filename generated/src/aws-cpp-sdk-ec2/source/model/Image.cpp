@@ -21,25 +21,8 @@ namespace Model
 {
 
 Image::Image() : 
-    m_architecture(ArchitectureValues::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_imageLocationHasBeenSet(false),
-    m_imageType(ImageTypeValues::NOT_SET),
-    m_imageTypeHasBeenSet(false),
-    m_public(false),
-    m_publicHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false),
     m_platformDetailsHasBeenSet(false),
     m_usageOperationHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_state(ImageState::NOT_SET),
-    m_stateHasBeenSet(false),
     m_blockDeviceMappingsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_enaSupport(false),
@@ -65,7 +48,24 @@ Image::Image() :
     m_imdsSupportHasBeenSet(false),
     m_sourceInstanceIdHasBeenSet(false),
     m_deregistrationProtectionHasBeenSet(false),
-    m_lastLaunchedTimeHasBeenSet(false)
+    m_lastLaunchedTimeHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_imageLocationHasBeenSet(false),
+    m_state(ImageState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_creationDateHasBeenSet(false),
+    m_public(false),
+    m_publicHasBeenSet(false),
+    m_productCodesHasBeenSet(false),
+    m_architecture(ArchitectureValues::NOT_SET),
+    m_architectureHasBeenSet(false),
+    m_imageType(ImageTypeValues::NOT_SET),
+    m_imageTypeHasBeenSet(false),
+    m_kernelIdHasBeenSet(false),
+    m_ramdiskIdHasBeenSet(false),
+    m_platform(PlatformValues::NOT_SET),
+    m_platformHasBeenSet(false)
 {
 }
 
@@ -81,60 +81,6 @@ Image& Image::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode architectureNode = resultNode.FirstChild("architecture");
-    if(!architectureNode.IsNull())
-    {
-      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText()).c_str()).c_str());
-      m_architectureHasBeenSet = true;
-    }
-    XmlNode creationDateNode = resultNode.FirstChild("creationDate");
-    if(!creationDateNode.IsNull())
-    {
-      m_creationDate = Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText());
-      m_creationDateHasBeenSet = true;
-    }
-    XmlNode imageIdNode = resultNode.FirstChild("imageId");
-    if(!imageIdNode.IsNull())
-    {
-      m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
-      m_imageIdHasBeenSet = true;
-    }
-    XmlNode imageLocationNode = resultNode.FirstChild("imageLocation");
-    if(!imageLocationNode.IsNull())
-    {
-      m_imageLocation = Aws::Utils::Xml::DecodeEscapedXmlText(imageLocationNode.GetText());
-      m_imageLocationHasBeenSet = true;
-    }
-    XmlNode imageTypeNode = resultNode.FirstChild("imageType");
-    if(!imageTypeNode.IsNull())
-    {
-      m_imageType = ImageTypeValuesMapper::GetImageTypeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imageTypeNode.GetText()).c_str()).c_str());
-      m_imageTypeHasBeenSet = true;
-    }
-    XmlNode publicNode = resultNode.FirstChild("isPublic");
-    if(!publicNode.IsNull())
-    {
-      m_public = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publicNode.GetText()).c_str()).c_str());
-      m_publicHasBeenSet = true;
-    }
-    XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
-    if(!kernelIdNode.IsNull())
-    {
-      m_kernelId = Aws::Utils::Xml::DecodeEscapedXmlText(kernelIdNode.GetText());
-      m_kernelIdHasBeenSet = true;
-    }
-    XmlNode ownerIdNode = resultNode.FirstChild("imageOwnerId");
-    if(!ownerIdNode.IsNull())
-    {
-      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
-      m_ownerIdHasBeenSet = true;
-    }
-    XmlNode platformNode = resultNode.FirstChild("platform");
-    if(!platformNode.IsNull())
-    {
-      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()).c_str());
-      m_platformHasBeenSet = true;
-    }
     XmlNode platformDetailsNode = resultNode.FirstChild("platformDetails");
     if(!platformDetailsNode.IsNull())
     {
@@ -146,30 +92,6 @@ Image& Image::operator =(const XmlNode& xmlNode)
     {
       m_usageOperation = Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationNode.GetText());
       m_usageOperationHasBeenSet = true;
-    }
-    XmlNode productCodesNode = resultNode.FirstChild("productCodes");
-    if(!productCodesNode.IsNull())
-    {
-      XmlNode productCodesMember = productCodesNode.FirstChild("item");
-      while(!productCodesMember.IsNull())
-      {
-        m_productCodes.push_back(productCodesMember);
-        productCodesMember = productCodesMember.NextNode("item");
-      }
-
-      m_productCodesHasBeenSet = true;
-    }
-    XmlNode ramdiskIdNode = resultNode.FirstChild("ramdiskId");
-    if(!ramdiskIdNode.IsNull())
-    {
-      m_ramdiskId = Aws::Utils::Xml::DecodeEscapedXmlText(ramdiskIdNode.GetText());
-      m_ramdiskIdHasBeenSet = true;
-    }
-    XmlNode stateNode = resultNode.FirstChild("imageState");
-    if(!stateNode.IsNull())
-    {
-      m_state = ImageStateMapper::GetImageStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
-      m_stateHasBeenSet = true;
     }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
     if(!blockDeviceMappingsNode.IsNull())
@@ -297,6 +219,84 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_lastLaunchedTime = Aws::Utils::Xml::DecodeEscapedXmlText(lastLaunchedTimeNode.GetText());
       m_lastLaunchedTimeHasBeenSet = true;
     }
+    XmlNode imageIdNode = resultNode.FirstChild("imageId");
+    if(!imageIdNode.IsNull())
+    {
+      m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
+      m_imageIdHasBeenSet = true;
+    }
+    XmlNode imageLocationNode = resultNode.FirstChild("imageLocation");
+    if(!imageLocationNode.IsNull())
+    {
+      m_imageLocation = Aws::Utils::Xml::DecodeEscapedXmlText(imageLocationNode.GetText());
+      m_imageLocationHasBeenSet = true;
+    }
+    XmlNode stateNode = resultNode.FirstChild("imageState");
+    if(!stateNode.IsNull())
+    {
+      m_state = ImageStateMapper::GetImageStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_stateHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("imageOwnerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
+      m_ownerIdHasBeenSet = true;
+    }
+    XmlNode creationDateNode = resultNode.FirstChild("creationDate");
+    if(!creationDateNode.IsNull())
+    {
+      m_creationDate = Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText());
+      m_creationDateHasBeenSet = true;
+    }
+    XmlNode publicNode = resultNode.FirstChild("isPublic");
+    if(!publicNode.IsNull())
+    {
+      m_public = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publicNode.GetText()).c_str()).c_str());
+      m_publicHasBeenSet = true;
+    }
+    XmlNode productCodesNode = resultNode.FirstChild("productCodes");
+    if(!productCodesNode.IsNull())
+    {
+      XmlNode productCodesMember = productCodesNode.FirstChild("item");
+      while(!productCodesMember.IsNull())
+      {
+        m_productCodes.push_back(productCodesMember);
+        productCodesMember = productCodesMember.NextNode("item");
+      }
+
+      m_productCodesHasBeenSet = true;
+    }
+    XmlNode architectureNode = resultNode.FirstChild("architecture");
+    if(!architectureNode.IsNull())
+    {
+      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText()).c_str()).c_str());
+      m_architectureHasBeenSet = true;
+    }
+    XmlNode imageTypeNode = resultNode.FirstChild("imageType");
+    if(!imageTypeNode.IsNull())
+    {
+      m_imageType = ImageTypeValuesMapper::GetImageTypeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imageTypeNode.GetText()).c_str()).c_str());
+      m_imageTypeHasBeenSet = true;
+    }
+    XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
+    if(!kernelIdNode.IsNull())
+    {
+      m_kernelId = Aws::Utils::Xml::DecodeEscapedXmlText(kernelIdNode.GetText());
+      m_kernelIdHasBeenSet = true;
+    }
+    XmlNode ramdiskIdNode = resultNode.FirstChild("ramdiskId");
+    if(!ramdiskIdNode.IsNull())
+    {
+      m_ramdiskId = Aws::Utils::Xml::DecodeEscapedXmlText(ramdiskIdNode.GetText());
+      m_ramdiskIdHasBeenSet = true;
+    }
+    XmlNode platformNode = resultNode.FirstChild("platform");
+    if(!platformNode.IsNull())
+    {
+      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()).c_str());
+      m_platformHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -304,51 +304,6 @@ Image& Image::operator =(const XmlNode& xmlNode)
 
 void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_architectureHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
-  }
-
-  if(m_creationDateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.c_str()) << "&";
-  }
-
-  if(m_imageIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
-  }
-
-  if(m_imageLocationHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ImageLocation=" << StringUtils::URLEncode(m_imageLocation.c_str()) << "&";
-  }
-
-  if(m_imageTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ImageType=" << ImageTypeValuesMapper::GetNameForImageTypeValues(m_imageType) << "&";
-  }
-
-  if(m_publicHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Public=" << std::boolalpha << m_public << "&";
-  }
-
-  if(m_kernelIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
-  }
-
-  if(m_ownerIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
-  }
-
-  if(m_platformHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
-  }
-
   if(m_platformDetailsHasBeenSet)
   {
       oStream << location << index << locationValue << ".PlatformDetails=" << StringUtils::URLEncode(m_platformDetails.c_str()) << "&";
@@ -357,27 +312,6 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   if(m_usageOperationHasBeenSet)
   {
       oStream << location << index << locationValue << ".UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
-  }
-
-  if(m_productCodesHasBeenSet)
-  {
-      unsigned productCodesIdx = 1;
-      for(auto& item : m_productCodes)
-      {
-        Aws::StringStream productCodesSs;
-        productCodesSs << location << index << locationValue << ".ProductCodes." << productCodesIdx++;
-        item.OutputToStream(oStream, productCodesSs.str().c_str());
-      }
-  }
-
-  if(m_ramdiskIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
-  }
-
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << ImageStateMapper::GetNameForImageState(m_state) << "&";
   }
 
   if(m_blockDeviceMappingsHasBeenSet)
@@ -489,46 +423,76 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".LastLaunchedTime=" << StringUtils::URLEncode(m_lastLaunchedTime.c_str()) << "&";
   }
 
+  if(m_imageIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  }
+
+  if(m_imageLocationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImageLocation=" << StringUtils::URLEncode(m_imageLocation.c_str()) << "&";
+  }
+
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".State=" << ImageStateMapper::GetNameForImageState(m_state) << "&";
+  }
+
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
+  if(m_creationDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.c_str()) << "&";
+  }
+
+  if(m_publicHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Public=" << std::boolalpha << m_public << "&";
+  }
+
+  if(m_productCodesHasBeenSet)
+  {
+      unsigned productCodesIdx = 1;
+      for(auto& item : m_productCodes)
+      {
+        Aws::StringStream productCodesSs;
+        productCodesSs << location << index << locationValue << ".ProductCodes." << productCodesIdx++;
+        item.OutputToStream(oStream, productCodesSs.str().c_str());
+      }
+  }
+
+  if(m_architectureHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
+  }
+
+  if(m_imageTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImageType=" << ImageTypeValuesMapper::GetNameForImageTypeValues(m_imageType) << "&";
+  }
+
+  if(m_kernelIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
+  }
+
+  if(m_ramdiskIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
+  }
+
+  if(m_platformHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
+  }
+
 }
 
 void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_architectureHasBeenSet)
-  {
-      oStream << location << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
-  }
-  if(m_creationDateHasBeenSet)
-  {
-      oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.c_str()) << "&";
-  }
-  if(m_imageIdHasBeenSet)
-  {
-      oStream << location << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
-  }
-  if(m_imageLocationHasBeenSet)
-  {
-      oStream << location << ".ImageLocation=" << StringUtils::URLEncode(m_imageLocation.c_str()) << "&";
-  }
-  if(m_imageTypeHasBeenSet)
-  {
-      oStream << location << ".ImageType=" << ImageTypeValuesMapper::GetNameForImageTypeValues(m_imageType) << "&";
-  }
-  if(m_publicHasBeenSet)
-  {
-      oStream << location << ".Public=" << std::boolalpha << m_public << "&";
-  }
-  if(m_kernelIdHasBeenSet)
-  {
-      oStream << location << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
-  }
-  if(m_ownerIdHasBeenSet)
-  {
-      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
-  }
-  if(m_platformHasBeenSet)
-  {
-      oStream << location << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
-  }
   if(m_platformDetailsHasBeenSet)
   {
       oStream << location << ".PlatformDetails=" << StringUtils::URLEncode(m_platformDetails.c_str()) << "&";
@@ -536,24 +500,6 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_usageOperationHasBeenSet)
   {
       oStream << location << ".UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
-  }
-  if(m_productCodesHasBeenSet)
-  {
-      unsigned productCodesIdx = 1;
-      for(auto& item : m_productCodes)
-      {
-        Aws::StringStream productCodesSs;
-        productCodesSs << location <<  ".ProductCodes." << productCodesIdx++;
-        item.OutputToStream(oStream, productCodesSs.str().c_str());
-      }
-  }
-  if(m_ramdiskIdHasBeenSet)
-  {
-      oStream << location << ".RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
-  }
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << ImageStateMapper::GetNameForImageState(m_state) << "&";
   }
   if(m_blockDeviceMappingsHasBeenSet)
   {
@@ -644,6 +590,60 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_lastLaunchedTimeHasBeenSet)
   {
       oStream << location << ".LastLaunchedTime=" << StringUtils::URLEncode(m_lastLaunchedTime.c_str()) << "&";
+  }
+  if(m_imageIdHasBeenSet)
+  {
+      oStream << location << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  }
+  if(m_imageLocationHasBeenSet)
+  {
+      oStream << location << ".ImageLocation=" << StringUtils::URLEncode(m_imageLocation.c_str()) << "&";
+  }
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << ".State=" << ImageStateMapper::GetNameForImageState(m_state) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+  if(m_creationDateHasBeenSet)
+  {
+      oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.c_str()) << "&";
+  }
+  if(m_publicHasBeenSet)
+  {
+      oStream << location << ".Public=" << std::boolalpha << m_public << "&";
+  }
+  if(m_productCodesHasBeenSet)
+  {
+      unsigned productCodesIdx = 1;
+      for(auto& item : m_productCodes)
+      {
+        Aws::StringStream productCodesSs;
+        productCodesSs << location <<  ".ProductCodes." << productCodesIdx++;
+        item.OutputToStream(oStream, productCodesSs.str().c_str());
+      }
+  }
+  if(m_architectureHasBeenSet)
+  {
+      oStream << location << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
+  }
+  if(m_imageTypeHasBeenSet)
+  {
+      oStream << location << ".ImageType=" << ImageTypeValuesMapper::GetNameForImageTypeValues(m_imageType) << "&";
+  }
+  if(m_kernelIdHasBeenSet)
+  {
+      oStream << location << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
+  }
+  if(m_ramdiskIdHasBeenSet)
+  {
+      oStream << location << ".RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
+  }
+  if(m_platformHasBeenSet)
+  {
+      oStream << location << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
   }
 }
 

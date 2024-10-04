@@ -38,17 +38,6 @@ DescribeSnapshotAttributeResponse& DescribeSnapshotAttributeResponse::operator =
 
   if(!resultNode.IsNull())
   {
-    XmlNode createVolumePermissionsNode = resultNode.FirstChild("createVolumePermission");
-    if(!createVolumePermissionsNode.IsNull())
-    {
-      XmlNode createVolumePermissionsMember = createVolumePermissionsNode.FirstChild("item");
-      while(!createVolumePermissionsMember.IsNull())
-      {
-        m_createVolumePermissions.push_back(createVolumePermissionsMember);
-        createVolumePermissionsMember = createVolumePermissionsMember.NextNode("item");
-      }
-
-    }
     XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
@@ -64,6 +53,17 @@ DescribeSnapshotAttributeResponse& DescribeSnapshotAttributeResponse::operator =
     if(!snapshotIdNode.IsNull())
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
+    }
+    XmlNode createVolumePermissionsNode = resultNode.FirstChild("createVolumePermission");
+    if(!createVolumePermissionsNode.IsNull())
+    {
+      XmlNode createVolumePermissionsMember = createVolumePermissionsNode.FirstChild("item");
+      while(!createVolumePermissionsMember.IsNull())
+      {
+        m_createVolumePermissions.push_back(createVolumePermissionsMember);
+        createVolumePermissionsMember = createVolumePermissionsMember.NextNode("item");
+      }
+
     }
   }
 

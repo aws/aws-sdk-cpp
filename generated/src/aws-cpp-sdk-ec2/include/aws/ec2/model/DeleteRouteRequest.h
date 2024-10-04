@@ -38,36 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
-     * for the route exactly.</p>
-     */
-    inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
-    inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
-    inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
-    inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
-    inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
-    inline DeleteRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
-    inline DeleteRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
-    inline DeleteRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
-     * for the route exactly.</p>
-     */
-    inline const Aws::String& GetDestinationIpv6CidrBlock() const{ return m_destinationIpv6CidrBlock; }
-    inline bool DestinationIpv6CidrBlockHasBeenSet() const { return m_destinationIpv6CidrBlockHasBeenSet; }
-    inline void SetDestinationIpv6CidrBlock(const Aws::String& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = value; }
-    inline void SetDestinationIpv6CidrBlock(Aws::String&& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = std::move(value); }
-    inline void SetDestinationIpv6CidrBlock(const char* value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock.assign(value); }
-    inline DeleteRouteRequest& WithDestinationIpv6CidrBlock(const Aws::String& value) { SetDestinationIpv6CidrBlock(value); return *this;}
-    inline DeleteRouteRequest& WithDestinationIpv6CidrBlock(Aws::String&& value) { SetDestinationIpv6CidrBlock(std::move(value)); return *this;}
-    inline DeleteRouteRequest& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the prefix list for the route.</p>
      */
     inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
@@ -106,13 +76,37 @@ namespace Model
     inline DeleteRouteRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
     inline DeleteRouteRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IPv4 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
+     */
+    inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
+    inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
+    inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
+    inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
+    inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
+    inline DeleteRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
+    inline DeleteRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
+    inline DeleteRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IPv6 CIDR range for the route. The value you specify must match the CIDR
+     * for the route exactly.</p>
+     */
+    inline const Aws::String& GetDestinationIpv6CidrBlock() const{ return m_destinationIpv6CidrBlock; }
+    inline bool DestinationIpv6CidrBlockHasBeenSet() const { return m_destinationIpv6CidrBlockHasBeenSet; }
+    inline void SetDestinationIpv6CidrBlock(const Aws::String& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = value; }
+    inline void SetDestinationIpv6CidrBlock(Aws::String&& value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock = std::move(value); }
+    inline void SetDestinationIpv6CidrBlock(const char* value) { m_destinationIpv6CidrBlockHasBeenSet = true; m_destinationIpv6CidrBlock.assign(value); }
+    inline DeleteRouteRequest& WithDestinationIpv6CidrBlock(const Aws::String& value) { SetDestinationIpv6CidrBlock(value); return *this;}
+    inline DeleteRouteRequest& WithDestinationIpv6CidrBlock(Aws::String&& value) { SetDestinationIpv6CidrBlock(std::move(value)); return *this;}
+    inline DeleteRouteRequest& WithDestinationIpv6CidrBlock(const char* value) { SetDestinationIpv6CidrBlock(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet = false;
-
-    Aws::String m_destinationIpv6CidrBlock;
-    bool m_destinationIpv6CidrBlockHasBeenSet = false;
 
     Aws::String m_destinationPrefixListId;
     bool m_destinationPrefixListIdHasBeenSet = false;
@@ -122,6 +116,12 @@ namespace Model
 
     Aws::String m_routeTableId;
     bool m_routeTableIdHasBeenSet = false;
+
+    Aws::String m_destinationCidrBlock;
+    bool m_destinationCidrBlockHasBeenSet = false;
+
+    Aws::String m_destinationIpv6CidrBlock;
+    bool m_destinationIpv6CidrBlockHasBeenSet = false;
   };
 
 } // namespace Model

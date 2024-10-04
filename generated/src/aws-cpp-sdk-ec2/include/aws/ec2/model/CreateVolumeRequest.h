@@ -199,19 +199,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline CreateVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The tags to apply to the volume during creation.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
@@ -269,6 +256,19 @@ namespace Model
     inline CreateVolumeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
     inline CreateVolumeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline CreateVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_availabilityZone;
@@ -295,9 +295,6 @@ namespace Model
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet = false;
 
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
@@ -309,6 +306,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

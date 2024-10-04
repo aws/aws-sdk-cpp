@@ -38,6 +38,11 @@ DescribeSubnetsResponse& DescribeSubnetsResponse::operator =(const Aws::AmazonWe
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
     XmlNode subnetsNode = resultNode.FirstChild("subnetSet");
     if(!subnetsNode.IsNull())
     {
@@ -48,11 +53,6 @@ DescribeSubnetsResponse& DescribeSubnetsResponse::operator =(const Aws::AmazonWe
         subnetsMember = subnetsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

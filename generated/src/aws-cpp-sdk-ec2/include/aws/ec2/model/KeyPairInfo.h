@@ -59,44 +59,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
-     * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
-     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
-     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
-     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
-     * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
-     * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
-     * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
-     * <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
-     * digest, which is the default for OpenSSH, starting with <a
-     * href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> </ul>
-     */
-    inline const Aws::String& GetKeyFingerprint() const{ return m_keyFingerprint; }
-    inline bool KeyFingerprintHasBeenSet() const { return m_keyFingerprintHasBeenSet; }
-    inline void SetKeyFingerprint(const Aws::String& value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint = value; }
-    inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint = std::move(value); }
-    inline void SetKeyFingerprint(const char* value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint.assign(value); }
-    inline KeyPairInfo& WithKeyFingerprint(const Aws::String& value) { SetKeyFingerprint(value); return *this;}
-    inline KeyPairInfo& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(std::move(value)); return *this;}
-    inline KeyPairInfo& WithKeyFingerprint(const char* value) { SetKeyFingerprint(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name of the key pair.</p>
-     */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
-    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-    inline KeyPairInfo& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-    inline KeyPairInfo& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-    inline KeyPairInfo& WithKeyName(const char* value) { SetKeyName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The type of key pair.</p>
      */
     inline const KeyType& GetKeyType() const{ return m_keyType; }
@@ -152,16 +114,48 @@ namespace Model
     inline KeyPairInfo& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
     inline KeyPairInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of the key pair.</p>
+     */
+    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
+    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
+    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
+    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
+    inline KeyPairInfo& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
+    inline KeyPairInfo& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
+    inline KeyPairInfo& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If you used <a>CreateKeyPair</a> to create the key pair:</p> <ul> <li> <p>For
+     * RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded
+     * private key.</p> </li> <li> <p>For ED25519 key pairs, the key fingerprint is the
+     * base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with
+     * <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+     * </ul> <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the
+     * public key:</p> <ul> <li> <p>For RSA key pairs, the key fingerprint is the MD5
+     * public key fingerprint as specified in section 4 of RFC4716.</p> </li> <li>
+     * <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
+     * digest, which is the default for OpenSSH, starting with <a
+     * href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> </ul>
+     */
+    inline const Aws::String& GetKeyFingerprint() const{ return m_keyFingerprint; }
+    inline bool KeyFingerprintHasBeenSet() const { return m_keyFingerprintHasBeenSet; }
+    inline void SetKeyFingerprint(const Aws::String& value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint = value; }
+    inline void SetKeyFingerprint(Aws::String&& value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint = std::move(value); }
+    inline void SetKeyFingerprint(const char* value) { m_keyFingerprintHasBeenSet = true; m_keyFingerprint.assign(value); }
+    inline KeyPairInfo& WithKeyFingerprint(const Aws::String& value) { SetKeyFingerprint(value); return *this;}
+    inline KeyPairInfo& WithKeyFingerprint(Aws::String&& value) { SetKeyFingerprint(std::move(value)); return *this;}
+    inline KeyPairInfo& WithKeyFingerprint(const char* value) { SetKeyFingerprint(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_keyPairId;
     bool m_keyPairIdHasBeenSet = false;
-
-    Aws::String m_keyFingerprint;
-    bool m_keyFingerprintHasBeenSet = false;
-
-    Aws::String m_keyName;
-    bool m_keyNameHasBeenSet = false;
 
     KeyType m_keyType;
     bool m_keyTypeHasBeenSet = false;
@@ -174,6 +168,12 @@ namespace Model
 
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet = false;
+
+    Aws::String m_keyName;
+    bool m_keyNameHasBeenSet = false;
+
+    Aws::String m_keyFingerprint;
+    bool m_keyFingerprintHasBeenSet = false;
   };
 
 } // namespace Model

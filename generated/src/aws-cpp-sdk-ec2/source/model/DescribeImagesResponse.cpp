@@ -38,6 +38,11 @@ DescribeImagesResponse& DescribeImagesResponse::operator =(const Aws::AmazonWebS
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
     XmlNode imagesNode = resultNode.FirstChild("imagesSet");
     if(!imagesNode.IsNull())
     {
@@ -48,11 +53,6 @@ DescribeImagesResponse& DescribeImagesResponse::operator =(const Aws::AmazonWebS
         imagesMember = imagesMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Reservation.h>
 #include <utility>
@@ -37,19 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the reservations.</p>
-     */
-    inline const Aws::Vector<Reservation>& GetReservations() const{ return m_reservations; }
-    inline void SetReservations(const Aws::Vector<Reservation>& value) { m_reservations = value; }
-    inline void SetReservations(Aws::Vector<Reservation>&& value) { m_reservations = std::move(value); }
-    inline DescribeInstancesResponse& WithReservations(const Aws::Vector<Reservation>& value) { SetReservations(value); return *this;}
-    inline DescribeInstancesResponse& WithReservations(Aws::Vector<Reservation>&& value) { SetReservations(std::move(value)); return *this;}
-    inline DescribeInstancesResponse& AddReservations(const Reservation& value) { m_reservations.push_back(value); return *this; }
-    inline DescribeInstancesResponse& AddReservations(Reservation&& value) { m_reservations.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
@@ -63,6 +50,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Information about the reservations.</p>
+     */
+    inline const Aws::Vector<Reservation>& GetReservations() const{ return m_reservations; }
+    inline void SetReservations(const Aws::Vector<Reservation>& value) { m_reservations = value; }
+    inline void SetReservations(Aws::Vector<Reservation>&& value) { m_reservations = std::move(value); }
+    inline DescribeInstancesResponse& WithReservations(const Aws::Vector<Reservation>& value) { SetReservations(value); return *this;}
+    inline DescribeInstancesResponse& WithReservations(Aws::Vector<Reservation>&& value) { SetReservations(std::move(value)); return *this;}
+    inline DescribeInstancesResponse& AddReservations(const Reservation& value) { m_reservations.push_back(value); return *this; }
+    inline DescribeInstancesResponse& AddReservations(Reservation&& value) { m_reservations.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -72,9 +72,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Reservation> m_reservations;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<Reservation> m_reservations;
 
     ResponseMetadata m_responseMetadata;
   };

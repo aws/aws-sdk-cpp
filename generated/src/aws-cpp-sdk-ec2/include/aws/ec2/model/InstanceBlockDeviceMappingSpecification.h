@@ -70,20 +70,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>suppress the specified device included in the block device mapping.</p>
-     */
-    inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
-    inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
-    inline void SetNoDevice(const Aws::String& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
-    inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = std::move(value); }
-    inline void SetNoDevice(const char* value) { m_noDeviceHasBeenSet = true; m_noDevice.assign(value); }
-    inline InstanceBlockDeviceMappingSpecification& WithNoDevice(const Aws::String& value) { SetNoDevice(value); return *this;}
-    inline InstanceBlockDeviceMappingSpecification& WithNoDevice(Aws::String&& value) { SetNoDevice(std::move(value)); return *this;}
-    inline InstanceBlockDeviceMappingSpecification& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The virtual device name.</p>
      */
     inline const Aws::String& GetVirtualName() const{ return m_virtualName; }
@@ -95,6 +81,20 @@ namespace Model
     inline InstanceBlockDeviceMappingSpecification& WithVirtualName(Aws::String&& value) { SetVirtualName(std::move(value)); return *this;}
     inline InstanceBlockDeviceMappingSpecification& WithVirtualName(const char* value) { SetVirtualName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>suppress the specified device included in the block device mapping.</p>
+     */
+    inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
+    inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
+    inline void SetNoDevice(const Aws::String& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
+    inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = std::move(value); }
+    inline void SetNoDevice(const char* value) { m_noDeviceHasBeenSet = true; m_noDevice.assign(value); }
+    inline InstanceBlockDeviceMappingSpecification& WithNoDevice(const Aws::String& value) { SetNoDevice(value); return *this;}
+    inline InstanceBlockDeviceMappingSpecification& WithNoDevice(Aws::String&& value) { SetNoDevice(std::move(value)); return *this;}
+    inline InstanceBlockDeviceMappingSpecification& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_deviceName;
@@ -103,11 +103,11 @@ namespace Model
     EbsInstanceBlockDeviceSpecification m_ebs;
     bool m_ebsHasBeenSet = false;
 
-    Aws::String m_noDevice;
-    bool m_noDeviceHasBeenSet = false;
-
     Aws::String m_virtualName;
     bool m_virtualNameHasBeenSet = false;
+
+    Aws::String m_noDevice;
+    bool m_noDeviceHasBeenSet = false;
   };
 
 } // namespace Model

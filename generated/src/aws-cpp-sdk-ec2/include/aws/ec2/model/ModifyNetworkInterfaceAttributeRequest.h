@@ -6,13 +6,13 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/ec2/model/NetworkInterfaceAttachmentChanges.h>
-#include <aws/ec2/model/AttributeValue.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/AttributeBooleanValue.h>
 #include <aws/ec2/model/EnaSrdSpecification.h>
 #include <aws/ec2/model/ConnectionTrackingSpecificationRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/AttributeValue.h>
+#include <aws/ec2/model/AttributeBooleanValue.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/NetworkInterfaceAttachmentChanges.h>
 #include <utility>
 
 namespace Aws
@@ -45,94 +45,6 @@ namespace Model
     AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-
-    ///@{
-    /**
-     * <p>Information about the interface attachment. If modifying the <code>delete on
-     * termination</code> attribute, you must specify the ID of the interface
-     * attachment.</p>
-     */
-    inline const NetworkInterfaceAttachmentChanges& GetAttachment() const{ return m_attachment; }
-    inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
-    inline void SetAttachment(const NetworkInterfaceAttachmentChanges& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
-    inline void SetAttachment(NetworkInterfaceAttachmentChanges&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
-    inline ModifyNetworkInterfaceAttributeRequest& WithAttachment(const NetworkInterfaceAttachmentChanges& value) { SetAttachment(value); return *this;}
-    inline ModifyNetworkInterfaceAttributeRequest& WithAttachment(NetworkInterfaceAttachmentChanges&& value) { SetAttachment(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A description for the network interface.</p>
-     */
-    inline const AttributeValue& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const AttributeValue& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(AttributeValue&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline ModifyNetworkInterfaceAttributeRequest& WithDescription(const AttributeValue& value) { SetDescription(value); return *this;}
-    inline ModifyNetworkInterfaceAttributeRequest& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline ModifyNetworkInterfaceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Changes the security groups for the network interface. The new set of groups
-     * you specify replaces the current set. You must specify at least one group, even
-     * if it's just the default security group in the VPC. You must specify the ID of
-     * the security group, not the name.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
-    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-    inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-    inline ModifyNetworkInterfaceAttributeRequest& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
-    inline ModifyNetworkInterfaceAttributeRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
-    inline ModifyNetworkInterfaceAttributeRequest& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    inline ModifyNetworkInterfaceAttributeRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-    inline ModifyNetworkInterfaceAttributeRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the network interface.</p>
-     */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
-    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Enable or disable source/destination checks, which ensure that the instance
-     * is either the source or the destination of any traffic that it receives. If the
-     * value is <code>true</code>, source/destination checks are enabled; otherwise,
-     * they are disabled. The default value is <code>true</code>. You must disable
-     * source/destination checks if the instance runs services such as network address
-     * translation, routing, or firewalls.</p>
-     */
-    inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
-    inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
-    inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
-    inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = std::move(value); }
-    inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
-    inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -192,25 +104,95 @@ namespace Model
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
     inline ModifyNetworkInterfaceAttributeRequest& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline ModifyNetworkInterfaceAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
+    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
+    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
+    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
+    inline ModifyNetworkInterfaceAttributeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A description for the network interface.</p>
+     */
+    inline const AttributeValue& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const AttributeValue& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(AttributeValue&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline ModifyNetworkInterfaceAttributeRequest& WithDescription(const AttributeValue& value) { SetDescription(value); return *this;}
+    inline ModifyNetworkInterfaceAttributeRequest& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Enable or disable source/destination checks, which ensure that the instance
+     * is either the source or the destination of any traffic that it receives. If the
+     * value is <code>true</code>, source/destination checks are enabled; otherwise,
+     * they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address
+     * translation, routing, or firewalls.</p>
+     */
+    inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
+    inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
+    inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
+    inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = std::move(value); }
+    inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
+    inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Changes the security groups for the network interface. The new set of groups
+     * you specify replaces the current set. You must specify at least one group, even
+     * if it's just the default security group in the VPC. You must specify the ID of
+     * the security group, not the name.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
+    inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
+    inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
+    inline ModifyNetworkInterfaceAttributeRequest& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
+    inline ModifyNetworkInterfaceAttributeRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
+    inline ModifyNetworkInterfaceAttributeRequest& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    inline ModifyNetworkInterfaceAttributeRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+    inline ModifyNetworkInterfaceAttributeRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information about the interface attachment. If modifying the <code>delete on
+     * termination</code> attribute, you must specify the ID of the interface
+     * attachment.</p>
+     */
+    inline const NetworkInterfaceAttachmentChanges& GetAttachment() const{ return m_attachment; }
+    inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
+    inline void SetAttachment(const NetworkInterfaceAttachmentChanges& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
+    inline void SetAttachment(NetworkInterfaceAttachmentChanges&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
+    inline ModifyNetworkInterfaceAttributeRequest& WithAttachment(const NetworkInterfaceAttachmentChanges& value) { SetAttachment(value); return *this;}
+    inline ModifyNetworkInterfaceAttributeRequest& WithAttachment(NetworkInterfaceAttachmentChanges&& value) { SetAttachment(std::move(value)); return *this;}
+    ///@}
   private:
-
-    NetworkInterfaceAttachmentChanges m_attachment;
-    bool m_attachmentHasBeenSet = false;
-
-    AttributeValue m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_groups;
-    bool m_groupsHasBeenSet = false;
-
-    Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet = false;
-
-    AttributeBooleanValue m_sourceDestCheck;
-    bool m_sourceDestCheckHasBeenSet = false;
 
     EnaSrdSpecification m_enaSrdSpecification;
     bool m_enaSrdSpecificationHasBeenSet = false;
@@ -223,6 +205,24 @@ namespace Model
 
     bool m_associatePublicIpAddress;
     bool m_associatePublicIpAddressHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
+
+    Aws::String m_networkInterfaceId;
+    bool m_networkInterfaceIdHasBeenSet = false;
+
+    AttributeValue m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    AttributeBooleanValue m_sourceDestCheck;
+    bool m_sourceDestCheckHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_groups;
+    bool m_groupsHasBeenSet = false;
+
+    NetworkInterfaceAttachmentChanges m_attachment;
+    bool m_attachmentHasBeenSet = false;
   };
 
 } // namespace Model

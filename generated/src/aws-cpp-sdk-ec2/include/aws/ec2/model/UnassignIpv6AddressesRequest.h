@@ -39,21 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IPv6 addresses to unassign from the network interface.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
-    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
-    inline void SetIpv6Addresses(const Aws::Vector<Aws::String>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
-    inline void SetIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
-    inline UnassignIpv6AddressesRequest& WithIpv6Addresses(const Aws::Vector<Aws::String>& value) { SetIpv6Addresses(value); return *this;}
-    inline UnassignIpv6AddressesRequest& WithIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
-    inline UnassignIpv6AddressesRequest& AddIpv6Addresses(const Aws::String& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
-    inline UnassignIpv6AddressesRequest& AddIpv6Addresses(Aws::String&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
-    inline UnassignIpv6AddressesRequest& AddIpv6Addresses(const char* value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The IPv6 prefixes to unassign from the network interface.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }
@@ -80,16 +65,31 @@ namespace Model
     inline UnassignIpv6AddressesRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
     inline UnassignIpv6AddressesRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<Aws::String> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The IPv6 addresses to unassign from the network interface.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
+    inline void SetIpv6Addresses(const Aws::Vector<Aws::String>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+    inline void SetIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
+    inline UnassignIpv6AddressesRequest& WithIpv6Addresses(const Aws::Vector<Aws::String>& value) { SetIpv6Addresses(value); return *this;}
+    inline UnassignIpv6AddressesRequest& WithIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
+    inline UnassignIpv6AddressesRequest& AddIpv6Addresses(const Aws::String& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+    inline UnassignIpv6AddressesRequest& AddIpv6Addresses(Aws::String&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
+    inline UnassignIpv6AddressesRequest& AddIpv6Addresses(const char* value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+    ///@}
+  private:
 
     Aws::Vector<Aws::String> m_ipv6Prefixes;
     bool m_ipv6PrefixesHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet = false;
   };
 
 } // namespace Model

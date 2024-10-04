@@ -11,11 +11,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeAddressesRequest::DescribeAddressesRequest() : 
-    m_filtersHasBeenSet(false),
     m_publicIpsHasBeenSet(false),
-    m_allocationIdsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_allocationIdsHasBeenSet(false)
 {
 }
 
@@ -23,16 +23,6 @@ Aws::String DescribeAddressesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeAddresses&";
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
-  }
-
   if(m_publicIpsHasBeenSet)
   {
     unsigned publicIpsCount = 1;
@@ -41,6 +31,21 @@ Aws::String DescribeAddressesRequest::SerializePayload() const
       ss << "PublicIp." << publicIpsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       publicIpsCount++;
+    }
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
     }
   }
 
@@ -53,11 +58,6 @@ Aws::String DescribeAddressesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       allocationIdsCount++;
     }
-  }
-
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -38,6 +38,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline CancelConversionTaskRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the conversion task.</p>
      */
     inline const Aws::String& GetConversionTaskId() const{ return m_conversionTaskId; }
@@ -48,19 +61,6 @@ namespace Model
     inline CancelConversionTaskRequest& WithConversionTaskId(const Aws::String& value) { SetConversionTaskId(value); return *this;}
     inline CancelConversionTaskRequest& WithConversionTaskId(Aws::String&& value) { SetConversionTaskId(std::move(value)); return *this;}
     inline CancelConversionTaskRequest& WithConversionTaskId(const char* value) { SetConversionTaskId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline CancelConversionTaskRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
 
     ///@{
@@ -78,11 +78,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_conversionTaskId;
-    bool m_conversionTaskIdHasBeenSet = false;
-
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    Aws::String m_conversionTaskId;
+    bool m_conversionTaskIdHasBeenSet = false;
 
     Aws::String m_reasonMessage;
     bool m_reasonMessageHasBeenSet = false;

@@ -42,6 +42,45 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline const Aws::String& GetKeyPairId() const{ return m_keyPairId; }
+    inline void SetKeyPairId(const Aws::String& value) { m_keyPairId = value; }
+    inline void SetKeyPairId(Aws::String&& value) { m_keyPairId = std::move(value); }
+    inline void SetKeyPairId(const char* value) { m_keyPairId.assign(value); }
+    inline CreateKeyPairResponse& WithKeyPairId(const Aws::String& value) { SetKeyPairId(value); return *this;}
+    inline CreateKeyPairResponse& WithKeyPairId(Aws::String&& value) { SetKeyPairId(std::move(value)); return *this;}
+    inline CreateKeyPairResponse& WithKeyPairId(const char* value) { SetKeyPairId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+    inline CreateKeyPairResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline CreateKeyPairResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline CreateKeyPairResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+    inline CreateKeyPairResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the key pair.</p>
+     */
+    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+    inline void SetKeyName(const Aws::String& value) { m_keyName = value; }
+    inline void SetKeyName(Aws::String&& value) { m_keyName = std::move(value); }
+    inline void SetKeyName(const char* value) { m_keyName.assign(value); }
+    inline CreateKeyPairResponse& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
+    inline CreateKeyPairResponse& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
+    inline CreateKeyPairResponse& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <ul> <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the
      * DER encoded private key.</p> </li> <li> <p>For ED25519 key pairs, the key
      * fingerprint is the base64-encoded SHA-256 digest, which is the default for
@@ -70,45 +109,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The name of the key pair.</p>
-     */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
-    inline void SetKeyName(const Aws::String& value) { m_keyName = value; }
-    inline void SetKeyName(Aws::String&& value) { m_keyName = std::move(value); }
-    inline void SetKeyName(const char* value) { m_keyName.assign(value); }
-    inline CreateKeyPairResponse& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-    inline CreateKeyPairResponse& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-    inline CreateKeyPairResponse& WithKeyName(const char* value) { SetKeyName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the key pair.</p>
-     */
-    inline const Aws::String& GetKeyPairId() const{ return m_keyPairId; }
-    inline void SetKeyPairId(const Aws::String& value) { m_keyPairId = value; }
-    inline void SetKeyPairId(Aws::String&& value) { m_keyPairId = std::move(value); }
-    inline void SetKeyPairId(const char* value) { m_keyPairId.assign(value); }
-    inline CreateKeyPairResponse& WithKeyPairId(const Aws::String& value) { SetKeyPairId(value); return *this;}
-    inline CreateKeyPairResponse& WithKeyPairId(Aws::String&& value) { SetKeyPairId(std::move(value)); return *this;}
-    inline CreateKeyPairResponse& WithKeyPairId(const char* value) { SetKeyPairId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Any tags applied to the key pair.</p>
-     */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline CreateKeyPairResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateKeyPairResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateKeyPairResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline CreateKeyPairResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -118,15 +118,15 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_keyFingerprint;
-
-    Aws::String m_keyMaterial;
-
-    Aws::String m_keyName;
-
     Aws::String m_keyPairId;
 
     Aws::Vector<Tag> m_tags;
+
+    Aws::String m_keyName;
+
+    Aws::String m_keyFingerprint;
+
+    Aws::String m_keyMaterial;
 
     ResponseMetadata m_responseMetadata;
   };

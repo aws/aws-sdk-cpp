@@ -11,17 +11,17 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ModifyInstancePlacementRequest::ModifyInstancePlacementRequest() : 
-    m_affinity(Affinity::NOT_SET),
-    m_affinityHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_hostIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tenancy(HostTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
     m_partitionNumber(0),
     m_partitionNumberHasBeenSet(false),
     m_hostResourceGroupArnHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_tenancy(HostTenancy::NOT_SET),
+    m_tenancyHasBeenSet(false),
+    m_affinity(Affinity::NOT_SET),
+    m_affinityHasBeenSet(false),
+    m_hostIdHasBeenSet(false)
 {
 }
 
@@ -29,29 +29,9 @@ Aws::String ModifyInstancePlacementRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ModifyInstancePlacement&";
-  if(m_affinityHasBeenSet)
-  {
-    ss << "Affinity=" << AffinityMapper::GetNameForAffinity(m_affinity) << "&";
-  }
-
   if(m_groupNameHasBeenSet)
   {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
-  }
-
-  if(m_hostIdHasBeenSet)
-  {
-    ss << "HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
-  }
-
-  if(m_instanceIdHasBeenSet)
-  {
-    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
-  }
-
-  if(m_tenancyHasBeenSet)
-  {
-    ss << "Tenancy=" << HostTenancyMapper::GetNameForHostTenancy(m_tenancy) << "&";
   }
 
   if(m_partitionNumberHasBeenSet)
@@ -67,6 +47,26 @@ Aws::String ModifyInstancePlacementRequest::SerializePayload() const
   if(m_groupIdHasBeenSet)
   {
     ss << "GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+    ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
+  if(m_tenancyHasBeenSet)
+  {
+    ss << "Tenancy=" << HostTenancyMapper::GetNameForHostTenancy(m_tenancy) << "&";
+  }
+
+  if(m_affinityHasBeenSet)
+  {
+    ss << "Affinity=" << AffinityMapper::GetNameForAffinity(m_affinity) << "&";
+  }
+
+  if(m_hostIdHasBeenSet)
+  {
+    ss << "HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

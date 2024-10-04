@@ -7,8 +7,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/ReservedInstanceLimitPrice.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/ReservedInstanceLimitPrice.h>
 #include <utility>
 
 namespace Aws
@@ -68,6 +68,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time at which to purchase the Reserved Instance, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline const Aws::Utils::DateTime& GetPurchaseTime() const{ return m_purchaseTime; }
+    inline bool PurchaseTimeHasBeenSet() const { return m_purchaseTimeHasBeenSet; }
+    inline void SetPurchaseTime(const Aws::Utils::DateTime& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = value; }
+    inline void SetPurchaseTime(Aws::Utils::DateTime&& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = std::move(value); }
+    inline PurchaseReservedInstancesOfferingRequest& WithPurchaseTime(const Aws::Utils::DateTime& value) { SetPurchaseTime(value); return *this;}
+    inline PurchaseReservedInstancesOfferingRequest& WithPurchaseTime(Aws::Utils::DateTime&& value) { SetPurchaseTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -92,19 +105,6 @@ namespace Model
     inline PurchaseReservedInstancesOfferingRequest& WithLimitPrice(const ReservedInstanceLimitPrice& value) { SetLimitPrice(value); return *this;}
     inline PurchaseReservedInstancesOfferingRequest& WithLimitPrice(ReservedInstanceLimitPrice&& value) { SetLimitPrice(std::move(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The time at which to purchase the Reserved Instance, in UTC format (for
-     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-     */
-    inline const Aws::Utils::DateTime& GetPurchaseTime() const{ return m_purchaseTime; }
-    inline bool PurchaseTimeHasBeenSet() const { return m_purchaseTimeHasBeenSet; }
-    inline void SetPurchaseTime(const Aws::Utils::DateTime& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = value; }
-    inline void SetPurchaseTime(Aws::Utils::DateTime&& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = std::move(value); }
-    inline PurchaseReservedInstancesOfferingRequest& WithPurchaseTime(const Aws::Utils::DateTime& value) { SetPurchaseTime(value); return *this;}
-    inline PurchaseReservedInstancesOfferingRequest& WithPurchaseTime(Aws::Utils::DateTime&& value) { SetPurchaseTime(std::move(value)); return *this;}
-    ///@}
   private:
 
     int m_instanceCount;
@@ -113,14 +113,14 @@ namespace Model
     Aws::String m_reservedInstancesOfferingId;
     bool m_reservedInstancesOfferingIdHasBeenSet = false;
 
+    Aws::Utils::DateTime m_purchaseTime;
+    bool m_purchaseTimeHasBeenSet = false;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
     ReservedInstanceLimitPrice m_limitPrice;
     bool m_limitPriceHasBeenSet = false;
-
-    Aws::Utils::DateTime m_purchaseTime;
-    bool m_purchaseTimeHasBeenSet = false;
   };
 
 } // namespace Model

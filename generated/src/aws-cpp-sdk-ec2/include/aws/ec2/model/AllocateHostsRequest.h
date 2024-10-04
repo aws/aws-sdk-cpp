@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/ec2/model/AutoPlacement.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/HostRecovery.h>
 #include <aws/ec2/model/HostMaintenance.h>
+#include <aws/ec2/model/AutoPlacement.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -43,73 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether the host accepts any untargeted instance launches that
-     * match its instance type configuration, or if it only accepts Host tenancy
-     * instance launches that specify its unique host ID. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding">
-     * Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User
-     * Guide</i>.</p> <p>Default: <code>off</code> </p>
-     */
-    inline const AutoPlacement& GetAutoPlacement() const{ return m_autoPlacement; }
-    inline bool AutoPlacementHasBeenSet() const { return m_autoPlacementHasBeenSet; }
-    inline void SetAutoPlacement(const AutoPlacement& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
-    inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = std::move(value); }
-    inline AllocateHostsRequest& WithAutoPlacement(const AutoPlacement& value) { SetAutoPlacement(value); return *this;}
-    inline AllocateHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Availability Zone in which to allocate the Dedicated Host.</p>
-     */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline AllocateHostsRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline AllocateHostsRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline AllocateHostsRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline AllocateHostsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline AllocateHostsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline AllocateHostsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies the instance type to be supported by the Dedicated Hosts. If you
-     * specify an instance type, the Dedicated Hosts support instances of the specified
-     * instance type only.</p> <p>If you want the Dedicated Hosts to support multiple
-     * instance types in a specific instance family, omit this parameter and specify
-     * <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
-     * <b>InstanceFamily</b> in the same request.</p>
-     */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
-    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline AllocateHostsRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline AllocateHostsRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline AllocateHostsRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Specifies the instance family to be supported by the Dedicated Hosts. If you
      * specify an instance family, the Dedicated Hosts support multiple instance types
      * within that instance family.</p> <p>If you want the Dedicated Hosts to support a
@@ -125,21 +58,6 @@ namespace Model
     inline AllocateHostsRequest& WithInstanceFamily(const Aws::String& value) { SetInstanceFamily(value); return *this;}
     inline AllocateHostsRequest& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(std::move(value)); return *this;}
     inline AllocateHostsRequest& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of Dedicated Hosts to allocate to your account with these
-     * parameters. If you are allocating the Dedicated Hosts on an Outpost, and you
-     * specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2
-     * allocates a Dedicated Host on each specified hardware asset. If you specify both
-     * <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for
-     * <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
-     */
-    inline int GetQuantity() const{ return m_quantity; }
-    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-    inline AllocateHostsRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
     ///@}
 
     ///@{
@@ -226,25 +144,92 @@ namespace Model
     inline AllocateHostsRequest& AddAssetIds(Aws::String&& value) { m_assetIdsHasBeenSet = true; m_assetIds.push_back(std::move(value)); return *this; }
     inline AllocateHostsRequest& AddAssetIds(const char* value) { m_assetIdsHasBeenSet = true; m_assetIds.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the host accepts any untargeted instance launches that
+     * match its instance type configuration, or if it only accepts Host tenancy
+     * instance launches that specify its unique host ID. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding">
+     * Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p> <p>Default: <code>off</code> </p>
+     */
+    inline const AutoPlacement& GetAutoPlacement() const{ return m_autoPlacement; }
+    inline bool AutoPlacementHasBeenSet() const { return m_autoPlacementHasBeenSet; }
+    inline void SetAutoPlacement(const AutoPlacement& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
+    inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = std::move(value); }
+    inline AllocateHostsRequest& WithAutoPlacement(const AutoPlacement& value) { SetAutoPlacement(value); return *this;}
+    inline AllocateHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline AllocateHostsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline AllocateHostsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline AllocateHostsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the instance type to be supported by the Dedicated Hosts. If you
+     * specify an instance type, the Dedicated Hosts support instances of the specified
+     * instance type only.</p> <p>If you want the Dedicated Hosts to support multiple
+     * instance types in a specific instance family, omit this parameter and specify
+     * <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+    inline AllocateHostsRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+    inline AllocateHostsRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline AllocateHostsRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of Dedicated Hosts to allocate to your account with these
+     * parameters. If you are allocating the Dedicated Hosts on an Outpost, and you
+     * specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2
+     * allocates a Dedicated Host on each specified hardware asset. If you specify both
+     * <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for
+     * <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
+     */
+    inline int GetQuantity() const{ return m_quantity; }
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline AllocateHostsRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Availability Zone in which to allocate the Dedicated Host.</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+    inline AllocateHostsRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline AllocateHostsRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+    inline AllocateHostsRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    ///@}
   private:
-
-    AutoPlacement m_autoPlacement;
-    bool m_autoPlacementHasBeenSet = false;
-
-    Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet = false;
-
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_instanceFamily;
     bool m_instanceFamilyHasBeenSet = false;
-
-    int m_quantity;
-    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
@@ -260,6 +245,21 @@ namespace Model
 
     Aws::Vector<Aws::String> m_assetIds;
     bool m_assetIdsHasBeenSet = false;
+
+    AutoPlacement m_autoPlacement;
+    bool m_autoPlacementHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet = false;
+
+    int m_quantity;
+    bool m_quantityHasBeenSet = false;
+
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet = false;
   };
 
 } // namespace Model

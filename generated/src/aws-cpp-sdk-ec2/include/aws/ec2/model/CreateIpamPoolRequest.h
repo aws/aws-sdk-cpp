@@ -83,7 +83,7 @@ namespace Model
      * public scope.</p> </li> </ul> <p>If you do not choose a locale, resources in
      * Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
      * <p>Possible values: Any Amazon Web Services Region or supported Amazon Web
-     * Services Local Zone.</p>
+     * Services Local Zone. Default is <code>none</code> and means any locale.</p>
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }

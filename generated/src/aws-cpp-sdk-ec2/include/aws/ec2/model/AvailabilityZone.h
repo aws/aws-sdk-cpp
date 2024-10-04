@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/ec2/model/AvailabilityZoneState.h>
 #include <aws/ec2/model/AvailabilityZoneOptInStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/AvailabilityZoneState.h>
 #include <aws/ec2/model/AvailabilityZoneMessage.h>
 #include <utility>
 
@@ -43,19 +43,6 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-
-    ///@{
-    /**
-     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This
-     * value is always <code>available</code>.</p>
-     */
-    inline const AvailabilityZoneState& GetState() const{ return m_state; }
-    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const AvailabilityZoneState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(AvailabilityZoneState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline AvailabilityZone& WithState(const AvailabilityZoneState& value) { SetState(value); return *this;}
-    inline AvailabilityZone& WithState(AvailabilityZoneState&& value) { SetState(std::move(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -203,10 +190,20 @@ namespace Model
     inline AvailabilityZone& WithParentZoneId(Aws::String&& value) { SetParentZoneId(std::move(value)); return *this;}
     inline AvailabilityZone& WithParentZoneId(const char* value) { SetParentZoneId(value); return *this;}
     ///@}
-  private:
 
-    AvailabilityZoneState m_state;
-    bool m_stateHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This
+     * value is always <code>available</code>.</p>
+     */
+    inline const AvailabilityZoneState& GetState() const{ return m_state; }
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+    inline void SetState(const AvailabilityZoneState& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(AvailabilityZoneState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+    inline AvailabilityZone& WithState(const AvailabilityZoneState& value) { SetState(value); return *this;}
+    inline AvailabilityZone& WithState(AvailabilityZoneState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
+  private:
 
     AvailabilityZoneOptInStatus m_optInStatus;
     bool m_optInStatusHasBeenSet = false;
@@ -237,6 +234,9 @@ namespace Model
 
     Aws::String m_parentZoneId;
     bool m_parentZoneIdHasBeenSet = false;
+
+    AvailabilityZoneState m_state;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

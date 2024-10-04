@@ -7,8 +7,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/VpnConnectionOptionsSpecification.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/VpnConnectionOptionsSpecification.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -103,6 +103,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The tags to apply to the VPN connection.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+    inline CreateVpnConnectionRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+    inline CreateVpnConnectionRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+    inline CreateVpnConnectionRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+    inline CreateVpnConnectionRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -125,20 +139,6 @@ namespace Model
     inline CreateVpnConnectionRequest& WithOptions(const VpnConnectionOptionsSpecification& value) { SetOptions(value); return *this;}
     inline CreateVpnConnectionRequest& WithOptions(VpnConnectionOptionsSpecification&& value) { SetOptions(std::move(value)); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The tags to apply to the VPN connection.</p>
-     */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateVpnConnectionRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateVpnConnectionRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateVpnConnectionRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateVpnConnectionRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
-    ///@}
   private:
 
     Aws::String m_customerGatewayId;
@@ -153,14 +153,14 @@ namespace Model
     Aws::String m_transitGatewayId;
     bool m_transitGatewayIdHasBeenSet = false;
 
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet = false;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
     VpnConnectionOptionsSpecification m_options;
     bool m_optionsHasBeenSet = false;
-
-    Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

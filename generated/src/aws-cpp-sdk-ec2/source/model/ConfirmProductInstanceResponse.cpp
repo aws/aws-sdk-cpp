@@ -40,15 +40,15 @@ ConfirmProductInstanceResponse& ConfirmProductInstanceResponse::operator =(const
 
   if(!resultNode.IsNull())
   {
-    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
-    if(!ownerIdNode.IsNull())
-    {
-      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
-    }
     XmlNode returnNode = resultNode.FirstChild("return");
     if(!returnNode.IsNull())
     {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
     }
   }
 

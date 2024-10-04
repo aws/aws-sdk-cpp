@@ -38,6 +38,11 @@ DescribeVolumesResponse& DescribeVolumesResponse::operator =(const Aws::AmazonWe
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
     XmlNode volumesNode = resultNode.FirstChild("volumeSet");
     if(!volumesNode.IsNull())
     {
@@ -48,11 +53,6 @@ DescribeVolumesResponse& DescribeVolumesResponse::operator =(const Aws::AmazonWe
         volumesMember = volumesMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

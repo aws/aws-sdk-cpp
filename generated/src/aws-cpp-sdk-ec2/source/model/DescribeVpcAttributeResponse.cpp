@@ -38,11 +38,6 @@ DescribeVpcAttributeResponse& DescribeVpcAttributeResponse::operator =(const Aws
 
   if(!resultNode.IsNull())
   {
-    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
-    if(!vpcIdNode.IsNull())
-    {
-      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
-    }
     XmlNode enableDnsHostnamesNode = resultNode.FirstChild("enableDnsHostnames");
     if(!enableDnsHostnamesNode.IsNull())
     {
@@ -57,6 +52,11 @@ DescribeVpcAttributeResponse& DescribeVpcAttributeResponse::operator =(const Aws
     if(!enableNetworkAddressUsageMetricsNode.IsNull())
     {
       m_enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetricsNode;
+    }
+    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
     }
   }
 

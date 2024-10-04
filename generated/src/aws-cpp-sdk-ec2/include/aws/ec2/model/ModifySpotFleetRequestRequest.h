@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/ec2/model/ExcessCapacityTerminationPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/ExcessCapacityTerminationPolicy.h>
 #include <aws/ec2/model/LaunchTemplateConfig.h>
 #include <utility>
 
@@ -45,20 +45,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether running instances should be terminated if the target
-     * capacity of the Spot Fleet request is decreased below the current size of the
-     * Spot Fleet.</p> <p>Supported only for fleets of type <code>maintain</code>.</p>
-     */
-    inline const ExcessCapacityTerminationPolicy& GetExcessCapacityTerminationPolicy() const{ return m_excessCapacityTerminationPolicy; }
-    inline bool ExcessCapacityTerminationPolicyHasBeenSet() const { return m_excessCapacityTerminationPolicyHasBeenSet; }
-    inline void SetExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
-    inline void SetExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = std::move(value); }
-    inline ModifySpotFleetRequestRequest& WithExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { SetExcessCapacityTerminationPolicy(value); return *this;}
-    inline ModifySpotFleetRequestRequest& WithExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { SetExcessCapacityTerminationPolicy(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The launch template and overrides. You can only use this parameter if you
      * specified a launch template (<code>LaunchTemplateConfigs</code>) in your Spot
      * Fleet request. If you specified <code>LaunchSpecifications</code> in your Spot
@@ -72,6 +58,30 @@ namespace Model
     inline ModifySpotFleetRequestRequest& WithLaunchTemplateConfigs(Aws::Vector<LaunchTemplateConfig>&& value) { SetLaunchTemplateConfigs(std::move(value)); return *this;}
     inline ModifySpotFleetRequestRequest& AddLaunchTemplateConfigs(const LaunchTemplateConfig& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs.push_back(value); return *this; }
     inline ModifySpotFleetRequestRequest& AddLaunchTemplateConfigs(LaunchTemplateConfig&& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of On-Demand Instances in the fleet.</p>
+     */
+    inline int GetOnDemandTargetCapacity() const{ return m_onDemandTargetCapacity; }
+    inline bool OnDemandTargetCapacityHasBeenSet() const { return m_onDemandTargetCapacityHasBeenSet; }
+    inline void SetOnDemandTargetCapacity(int value) { m_onDemandTargetCapacityHasBeenSet = true; m_onDemandTargetCapacity = value; }
+    inline ModifySpotFleetRequestRequest& WithOnDemandTargetCapacity(int value) { SetOnDemandTargetCapacity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+    inline ModifySpotFleetRequestRequest& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+    inline ModifySpotFleetRequestRequest& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+    inline ModifySpotFleetRequestRequest& WithContext(const char* value) { SetContext(value); return *this;}
     ///@}
 
     ///@{
@@ -100,34 +110,27 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of On-Demand Instances in the fleet.</p>
+     * <p>Indicates whether running instances should be terminated if the target
+     * capacity of the Spot Fleet request is decreased below the current size of the
+     * Spot Fleet.</p> <p>Supported only for fleets of type <code>maintain</code>.</p>
      */
-    inline int GetOnDemandTargetCapacity() const{ return m_onDemandTargetCapacity; }
-    inline bool OnDemandTargetCapacityHasBeenSet() const { return m_onDemandTargetCapacityHasBeenSet; }
-    inline void SetOnDemandTargetCapacity(int value) { m_onDemandTargetCapacityHasBeenSet = true; m_onDemandTargetCapacity = value; }
-    inline ModifySpotFleetRequestRequest& WithOnDemandTargetCapacity(int value) { SetOnDemandTargetCapacity(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Reserved.</p>
-     */
-    inline const Aws::String& GetContext() const{ return m_context; }
-    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
-    inline ModifySpotFleetRequestRequest& WithContext(const Aws::String& value) { SetContext(value); return *this;}
-    inline ModifySpotFleetRequestRequest& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
-    inline ModifySpotFleetRequestRequest& WithContext(const char* value) { SetContext(value); return *this;}
+    inline const ExcessCapacityTerminationPolicy& GetExcessCapacityTerminationPolicy() const{ return m_excessCapacityTerminationPolicy; }
+    inline bool ExcessCapacityTerminationPolicyHasBeenSet() const { return m_excessCapacityTerminationPolicyHasBeenSet; }
+    inline void SetExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
+    inline void SetExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = std::move(value); }
+    inline ModifySpotFleetRequestRequest& WithExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { SetExcessCapacityTerminationPolicy(value); return *this;}
+    inline ModifySpotFleetRequestRequest& WithExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { SetExcessCapacityTerminationPolicy(std::move(value)); return *this;}
     ///@}
   private:
 
-    ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
-    bool m_excessCapacityTerminationPolicyHasBeenSet = false;
-
     Aws::Vector<LaunchTemplateConfig> m_launchTemplateConfigs;
     bool m_launchTemplateConfigsHasBeenSet = false;
+
+    int m_onDemandTargetCapacity;
+    bool m_onDemandTargetCapacityHasBeenSet = false;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet = false;
 
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet = false;
@@ -135,11 +138,8 @@ namespace Model
     int m_targetCapacity;
     bool m_targetCapacityHasBeenSet = false;
 
-    int m_onDemandTargetCapacity;
-    bool m_onDemandTargetCapacityHasBeenSet = false;
-
-    Aws::String m_context;
-    bool m_contextHasBeenSet = false;
+    ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
+    bool m_excessCapacityTerminationPolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -55,15 +55,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+     * <p>The ID of the Spot Fleet request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeSpotFleetInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
+    inline bool SpotFleetRequestIdHasBeenSet() const { return m_spotFleetRequestIdHasBeenSet; }
+    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
+    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::move(value); }
+    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId.assign(value); }
+    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
+    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
+    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
     ///@}
 
     ///@{
@@ -83,30 +84,29 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Spot Fleet request.</p>
+     * <p>The maximum number of items to return for this request. To get the next page
+     * of items, make another request with the token returned in the output. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
-    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
-    inline bool SpotFleetRequestIdHasBeenSet() const { return m_spotFleetRequestIdHasBeenSet; }
-    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
-    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::move(value); }
-    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId.assign(value); }
-    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
-    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
-    inline DescribeSpotFleetInstancesRequest& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline DescribeSpotFleetInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    Aws::String m_spotFleetRequestId;
+    bool m_spotFleetRequestIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_spotFleetRequestId;
-    bool m_spotFleetRequestIdHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

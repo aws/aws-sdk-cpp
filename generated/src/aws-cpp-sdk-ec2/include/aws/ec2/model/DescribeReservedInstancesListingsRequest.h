@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Filter.h>
 #include <utility>
 
@@ -44,26 +44,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
-     * The ID of the Reserved Instances.</p> </li> <li> <p>
-     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
-     * listing.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
-     * Instance listing (<code>pending</code> | <code>active</code> |
-     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
-     * <code>status-message</code> - The reason for the status.</p> </li> </ul>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeReservedInstancesListingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeReservedInstancesListingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeReservedInstancesListingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeReservedInstancesListingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>One or more Reserved Instance IDs.</p>
      */
     inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
@@ -89,16 +69,36 @@ namespace Model
     inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(std::move(value)); return *this;}
     inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
+    ///@{
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances.</p> </li> <li> <p>
+     * <code>reserved-instances-listing-id</code> - The ID of the Reserved Instances
+     * listing.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
+     * Instance listing (<code>pending</code> | <code>active</code> |
+     * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - The reason for the status.</p> </li> </ul>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+    inline DescribeReservedInstancesListingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline DescribeReservedInstancesListingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+    inline DescribeReservedInstancesListingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeReservedInstancesListingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
+  private:
 
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet = false;
 
     Aws::String m_reservedInstancesListingId;
     bool m_reservedInstancesListingIdHasBeenSet = false;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model
