@@ -51,6 +51,7 @@
 #endif //_WIN32
 
 #include <aws/core/http/standard/StandardHttpRequest.h>
+#include <aws/core/monitoring/DefaultMonitoring.h>
 
 using namespace Aws;
 using namespace Aws::Http::Standard;
@@ -1503,5 +1504,39 @@ namespace
                 ASSERT_TRUE(response.IsSuccess());
             }
         }
+    }
+
+
+
+    TEST_F(BucketAndObjectOperationTest, TestMonitor)
+    {
+        std::vector<Aws::Monitoring::MonitoringFactoryCreateFunction> monitoringFactoryCreateFunctions;
+
+        monitoringFactoryCreateFunctions.emplace_back(
+            [](){
+                return Aws::MakeUnique<Aws::Monitoring::DefaultMonitoringFactory>("monitor");
+            }
+        );
+        
+        Aws::Monitoring::InitMonitoring(monitoringFactoryCreateFunctions);
+        const Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
+        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
+        const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+        ASSERT_TRUE(!createBucketResult.GetLocation().empty());
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+        TagTestBucket(fullBucketName, Client);
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+        putObjectRequest.SetKey("sbiscigl_was_here");
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
+
     }
 }

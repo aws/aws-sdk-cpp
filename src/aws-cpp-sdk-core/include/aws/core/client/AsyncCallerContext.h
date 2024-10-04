@@ -7,6 +7,8 @@
 
 #include <aws/core/utils/memory/stl/AWSString.h>
 
+#include <aws/crt/http/HttpRequestResponse.h>
+
 namespace Aws
 {
     namespace Client
@@ -51,8 +53,18 @@ namespace Aws
              */
             inline void SetUUID(const char* value) { m_uuid.assign(value); }
 
+
+            inline void SetHttpRequest(std::shared_ptr<Aws::Http::HttpRequest> httpRequest){
+                httpRequest = httpRequest;
+            }
+
+            inline std::shared_ptr<Aws::Http::HttpRequest> GetHttpRequest(){
+                return httpRequest;
+            }
+
         private:
             Aws::String m_uuid;
+            std::shared_ptr< Aws::Http::HttpRequest> httpRequest;
         };
     }
 }

@@ -136,6 +136,9 @@
 #include <aws/http/request_response.h>
 #include <aws/common/string.h>
 
+#include <aws/core/monitoring/MonitoringManager.h>
+
+
 using namespace Aws::Utils;
 
 using namespace Aws;
@@ -933,6 +936,10 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   {
     return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Output stream in bad state", false)), handlerContext);
   }
+
+  auto contexts = Aws::Monitoring::OnRequestStarted("S3CrtClient", request.GetServiceRequestName(), userData->request);
+
+
   options.shutdown_callback = GetObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_GET_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
@@ -955,6 +962,16 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
   options.message= crtHttpRequest->GetUnderlyingMessage();
   userData->crtHttpRequest = crtHttpRequest;
+
+  /*
+    Aws::Monitoring::CoreMetricsCollection coreMetrics;
+    auto outcome =  GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false));
+    coreMetrics.httpClientMetrics = userData->request->GetRequestMetrics();
+
+    Aws::Monitoring::OnRequestFailed("S3CrtClient", request.GetServiceRequestName(), userData->request, outcome, coreMetrics, contexts);
+
+  
+  */
 
   if (aws_s3_client_make_meta_request(m_s3CrtClient, &options) == nullptr)
   {
@@ -1000,6 +1017,8 @@ static void PutObjectRequestShutdownCallback(void *user_data)
 void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
   AWS_ASYNC_OPERATION_GUARD(PutObject);
+
+
   if (!m_endpointProvider) {
     return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
   }
