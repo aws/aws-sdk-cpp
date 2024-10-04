@@ -11,9 +11,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 ReplaceRouteTableAssociationRequest::ReplaceRouteTableAssociationRequest() : 
-    m_associationIdHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_associationIdHasBeenSet(false),
     m_routeTableIdHasBeenSet(false)
 {
 }
@@ -22,14 +22,14 @@ Aws::String ReplaceRouteTableAssociationRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=ReplaceRouteTableAssociation&";
-  if(m_associationIdHasBeenSet)
-  {
-    ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
-  }
-
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_associationIdHasBeenSet)
+  {
+    ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 
   if(m_routeTableIdHasBeenSet)

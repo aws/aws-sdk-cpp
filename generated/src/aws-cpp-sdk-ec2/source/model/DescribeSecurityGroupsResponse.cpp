@@ -38,6 +38,11 @@ DescribeSecurityGroupsResponse& DescribeSecurityGroupsResponse::operator =(const
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
     XmlNode securityGroupsNode = resultNode.FirstChild("securityGroupInfo");
     if(!securityGroupsNode.IsNull())
     {
@@ -48,11 +53,6 @@ DescribeSecurityGroupsResponse& DescribeSecurityGroupsResponse::operator =(const
         securityGroupsMember = securityGroupsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

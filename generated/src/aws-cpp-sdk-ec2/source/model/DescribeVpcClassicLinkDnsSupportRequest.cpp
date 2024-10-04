@@ -11,10 +11,10 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeVpcClassicLinkDnsSupportRequest::DescribeVpcClassicLinkDnsSupportRequest() : 
+    m_vpcIdsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_vpcIdsHasBeenSet(false)
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -22,16 +22,6 @@ Aws::String DescribeVpcClassicLinkDnsSupportRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeVpcClassicLinkDnsSupport&";
-  if(m_maxResultsHasBeenSet)
-  {
-    ss << "MaxResults=" << m_maxResults << "&";
-  }
-
-  if(m_nextTokenHasBeenSet)
-  {
-    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
-  }
-
   if(m_vpcIdsHasBeenSet)
   {
     unsigned vpcIdsCount = 1;
@@ -41,6 +31,16 @@ Aws::String DescribeVpcClassicLinkDnsSupportRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       vpcIdsCount++;
     }
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+    ss << "MaxResults=" << m_maxResults << "&";
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

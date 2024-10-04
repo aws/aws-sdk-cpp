@@ -21,15 +21,15 @@ namespace Model
 {
 
 CustomerGateway::CustomerGateway() : 
-    m_bgpAsnHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_typeHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_bgpAsnExtendedHasBeenSet(false)
+    m_bgpAsnExtendedHasBeenSet(false),
+    m_customerGatewayIdHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_ipAddressHasBeenSet(false),
+    m_bgpAsnHasBeenSet(false)
 {
 }
 
@@ -45,41 +45,11 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode bgpAsnNode = resultNode.FirstChild("bgpAsn");
-    if(!bgpAsnNode.IsNull())
-    {
-      m_bgpAsn = Aws::Utils::Xml::DecodeEscapedXmlText(bgpAsnNode.GetText());
-      m_bgpAsnHasBeenSet = true;
-    }
-    XmlNode customerGatewayIdNode = resultNode.FirstChild("customerGatewayId");
-    if(!customerGatewayIdNode.IsNull())
-    {
-      m_customerGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(customerGatewayIdNode.GetText());
-      m_customerGatewayIdHasBeenSet = true;
-    }
-    XmlNode ipAddressNode = resultNode.FirstChild("ipAddress");
-    if(!ipAddressNode.IsNull())
-    {
-      m_ipAddress = Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressNode.GetText());
-      m_ipAddressHasBeenSet = true;
-    }
     XmlNode certificateArnNode = resultNode.FirstChild("certificateArn");
     if(!certificateArnNode.IsNull())
     {
       m_certificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(certificateArnNode.GetText());
       m_certificateArnHasBeenSet = true;
-    }
-    XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
-    {
-      m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
-      m_stateHasBeenSet = true;
-    }
-    XmlNode typeNode = resultNode.FirstChild("type");
-    if(!typeNode.IsNull())
-    {
-      m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
-      m_typeHasBeenSet = true;
     }
     XmlNode deviceNameNode = resultNode.FirstChild("deviceName");
     if(!deviceNameNode.IsNull())
@@ -105,6 +75,36 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
       m_bgpAsnExtended = Aws::Utils::Xml::DecodeEscapedXmlText(bgpAsnExtendedNode.GetText());
       m_bgpAsnExtendedHasBeenSet = true;
     }
+    XmlNode customerGatewayIdNode = resultNode.FirstChild("customerGatewayId");
+    if(!customerGatewayIdNode.IsNull())
+    {
+      m_customerGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(customerGatewayIdNode.GetText());
+      m_customerGatewayIdHasBeenSet = true;
+    }
+    XmlNode stateNode = resultNode.FirstChild("state");
+    if(!stateNode.IsNull())
+    {
+      m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
+      m_stateHasBeenSet = true;
+    }
+    XmlNode typeNode = resultNode.FirstChild("type");
+    if(!typeNode.IsNull())
+    {
+      m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
+      m_typeHasBeenSet = true;
+    }
+    XmlNode ipAddressNode = resultNode.FirstChild("ipAddress");
+    if(!ipAddressNode.IsNull())
+    {
+      m_ipAddress = Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressNode.GetText());
+      m_ipAddressHasBeenSet = true;
+    }
+    XmlNode bgpAsnNode = resultNode.FirstChild("bgpAsn");
+    if(!bgpAsnNode.IsNull())
+    {
+      m_bgpAsn = Aws::Utils::Xml::DecodeEscapedXmlText(bgpAsnNode.GetText());
+      m_bgpAsnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -112,34 +112,9 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
 
 void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_bgpAsnHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".BgpAsn=" << StringUtils::URLEncode(m_bgpAsn.c_str()) << "&";
-  }
-
-  if(m_customerGatewayIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
-  }
-
-  if(m_ipAddressHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
-  }
-
   if(m_certificateArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
-  }
-
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
-  }
-
-  if(m_typeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
   }
 
   if(m_deviceNameHasBeenSet)
@@ -163,33 +138,38 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".BgpAsnExtended=" << StringUtils::URLEncode(m_bgpAsnExtended.c_str()) << "&";
   }
 
+  if(m_customerGatewayIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
+  }
+
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
+  }
+
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
+  }
+
+  if(m_ipAddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
+  }
+
+  if(m_bgpAsnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BgpAsn=" << StringUtils::URLEncode(m_bgpAsn.c_str()) << "&";
+  }
+
 }
 
 void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_bgpAsnHasBeenSet)
-  {
-      oStream << location << ".BgpAsn=" << StringUtils::URLEncode(m_bgpAsn.c_str()) << "&";
-  }
-  if(m_customerGatewayIdHasBeenSet)
-  {
-      oStream << location << ".CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
-  }
-  if(m_ipAddressHasBeenSet)
-  {
-      oStream << location << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
-  }
   if(m_certificateArnHasBeenSet)
   {
       oStream << location << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
-  }
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
-  }
-  if(m_typeHasBeenSet)
-  {
-      oStream << location << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
   }
   if(m_deviceNameHasBeenSet)
   {
@@ -208,6 +188,26 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_bgpAsnExtendedHasBeenSet)
   {
       oStream << location << ".BgpAsnExtended=" << StringUtils::URLEncode(m_bgpAsnExtended.c_str()) << "&";
+  }
+  if(m_customerGatewayIdHasBeenSet)
+  {
+      oStream << location << ".CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
+  }
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
+  }
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
+  }
+  if(m_ipAddressHasBeenSet)
+  {
+      oStream << location << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
+  }
+  if(m_bgpAsnHasBeenSet)
+  {
+      oStream << location << ".BgpAsn=" << StringUtils::URLEncode(m_bgpAsn.c_str()) << "&";
   }
 }
 

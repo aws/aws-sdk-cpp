@@ -11,9 +11,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeReservedInstancesModificationsRequest::DescribeReservedInstancesModificationsRequest() : 
-    m_filtersHasBeenSet(false),
     m_reservedInstancesModificationIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -21,16 +21,6 @@ Aws::String DescribeReservedInstancesModificationsRequest::SerializePayload() co
 {
   Aws::StringStream ss;
   ss << "Action=DescribeReservedInstancesModifications&";
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
-  }
-
   if(m_reservedInstancesModificationIdsHasBeenSet)
   {
     unsigned reservedInstancesModificationIdsCount = 1;
@@ -45,6 +35,16 @@ Aws::String DescribeReservedInstancesModificationsRequest::SerializePayload() co
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

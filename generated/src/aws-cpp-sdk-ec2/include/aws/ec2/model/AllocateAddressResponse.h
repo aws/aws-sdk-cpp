@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Elastic IP address.</p>
-     */
-    inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
-    inline void SetPublicIp(const Aws::String& value) { m_publicIp = value; }
-    inline void SetPublicIp(Aws::String&& value) { m_publicIp = std::move(value); }
-    inline void SetPublicIp(const char* value) { m_publicIp.assign(value); }
-    inline AllocateAddressResponse& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
-    inline AllocateAddressResponse& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
-    inline AllocateAddressResponse& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID that represents the allocation of the Elastic IP address.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
@@ -139,6 +126,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Elastic IP address.</p>
+     */
+    inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+    inline void SetPublicIp(const Aws::String& value) { m_publicIp = value; }
+    inline void SetPublicIp(Aws::String&& value) { m_publicIp = std::move(value); }
+    inline void SetPublicIp(const char* value) { m_publicIp.assign(value); }
+    inline AllocateAddressResponse& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
+    inline AllocateAddressResponse& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
+    inline AllocateAddressResponse& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -147,8 +147,6 @@ namespace Model
     inline AllocateAddressResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
     ///@}
   private:
-
-    Aws::String m_publicIp;
 
     Aws::String m_allocationId;
 
@@ -163,6 +161,8 @@ namespace Model
     Aws::String m_customerOwnedIpv4Pool;
 
     Aws::String m_carrierIp;
+
+    Aws::String m_publicIp;
 
     ResponseMetadata m_responseMetadata;
   };

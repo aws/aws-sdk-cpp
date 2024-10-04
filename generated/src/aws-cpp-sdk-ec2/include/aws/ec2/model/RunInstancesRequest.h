@@ -11,8 +11,6 @@
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/RunInstancesMonitoringEnabled.h>
 #include <aws/ec2/model/Placement.h>
-#include <aws/ec2/model/IamInstanceProfileSpecification.h>
-#include <aws/ec2/model/ShutdownBehavior.h>
 #include <aws/ec2/model/LaunchTemplateSpecification.h>
 #include <aws/ec2/model/InstanceMarketOptionsRequest.h>
 #include <aws/ec2/model/CreditSpecificationRequest.h>
@@ -23,13 +21,15 @@
 #include <aws/ec2/model/EnclaveOptionsRequest.h>
 #include <aws/ec2/model/PrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/InstanceMaintenanceOptionsRequest.h>
+#include <aws/ec2/model/ShutdownBehavior.h>
+#include <aws/ec2/model/IamInstanceProfileSpecification.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
-#include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/ElasticGpuSpecification.h>
 #include <aws/ec2/model/ElasticInferenceAccelerator.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <aws/ec2/model/LicenseConfigurationRequest.h>
+#include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -325,142 +325,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved.</p>
-     */
-    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
-    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
-    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
-    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
-    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
-    inline RunInstancesRequest& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
-    inline RunInstancesRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. If you do not specify a client token, a randomly generated token is
-     * used for the request to ensure idempotency.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline RunInstancesRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline RunInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>If you set this parameter to <code>true</code>, you can't terminate the
-     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
-     * change this attribute after launch, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
-     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
-     * <code>terminate</code>, you can terminate the instance by running the shutdown
-     * command from the instance.</p> <p>Default: <code>false</code> </p>
-     */
-    inline bool GetDisableApiTermination() const{ return m_disableApiTermination; }
-    inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }
-    inline void SetDisableApiTermination(bool value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
-    inline RunInstancesRequest& WithDisableApiTermination(bool value) { SetDisableApiTermination(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the operation, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline RunInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates whether the instance is optimized for Amazon EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an optimized
-     * configuration stack to provide optimal Amazon EBS I/O performance. This
-     * optimization isn't available with all instance types. Additional usage charges
-     * apply when using an EBS-optimized instance.</p> <p>Default: <code>false</code>
-     * </p>
-     */
-    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
-    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
-    inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
-    inline RunInstancesRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
-     */
-    inline const IamInstanceProfileSpecification& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
-    inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
-    inline void SetIamInstanceProfile(const IamInstanceProfileSpecification& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
-    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
-    inline RunInstancesRequest& WithIamInstanceProfile(const IamInstanceProfileSpecification& value) { SetIamInstanceProfile(value); return *this;}
-    inline RunInstancesRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
-     * from the instance (using the operating system command for system shutdown).</p>
-     * <p>Default: <code>stop</code> </p>
-     */
-    inline const ShutdownBehavior& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
-    inline bool InstanceInitiatedShutdownBehaviorHasBeenSet() const { return m_instanceInitiatedShutdownBehaviorHasBeenSet; }
-    inline void SetInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
-    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
-    inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
-    inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The network interfaces to associate with the instance.</p>
-     */
-    inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
-    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
-    inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
-    inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
-    inline RunInstancesRequest& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
-    inline RunInstancesRequest& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
-    inline RunInstancesRequest& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
-    inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The primary IPv4 address. You must specify a value from the IPv4 address
-     * range of the subnet.</p> <p>Only one private IP address can be designated as
-     * primary. You can't specify this option if you've specified the option to
-     * designate a private IP address as the primary IP address in a network interface
-     * specification. You cannot specify this option if you're launching more than one
-     * instance in the request.</p> <p>You cannot specify this option and the network
-     * interfaces option in the same request.</p>
-     */
-    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
-    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
-    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
-    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
-    inline RunInstancesRequest& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
-    inline RunInstancesRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>An elastic GPU to associate with the instance.</p>  <p>Amazon Elastic
      * Graphics reached end of life on January 8, 2024.</p> 
      */
@@ -714,6 +578,142 @@ namespace Model
     inline void SetEnablePrimaryIpv6(bool value) { m_enablePrimaryIpv6HasBeenSet = true; m_enablePrimaryIpv6 = value; }
     inline RunInstancesRequest& WithEnablePrimaryIpv6(bool value) { SetEnablePrimaryIpv6(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the operation, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline RunInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If you set this parameter to <code>true</code>, you can't terminate the
+     * instance using the Amazon EC2 console, CLI, or API; otherwise, you can. To
+     * change this attribute after launch, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+     * Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to
+     * <code>terminate</code>, you can terminate the instance by running the shutdown
+     * command from the instance.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetDisableApiTermination() const{ return m_disableApiTermination; }
+    inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }
+    inline void SetDisableApiTermination(bool value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
+    inline RunInstancesRequest& WithDisableApiTermination(bool value) { SetDisableApiTermination(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     * <p>Default: <code>stop</code> </p>
+     */
+    inline const ShutdownBehavior& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
+    inline bool InstanceInitiatedShutdownBehaviorHasBeenSet() const { return m_instanceInitiatedShutdownBehaviorHasBeenSet; }
+    inline void SetInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
+    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
+    inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
+    inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The primary IPv4 address. You must specify a value from the IPv4 address
+     * range of the subnet.</p> <p>Only one private IP address can be designated as
+     * primary. You can't specify this option if you've specified the option to
+     * designate a private IP address as the primary IP address in a network interface
+     * specification. You cannot specify this option if you're launching more than one
+     * instance in the request.</p> <p>You cannot specify this option and the network
+     * interfaces option in the same request.</p>
+     */
+    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
+    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
+    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
+    inline RunInstancesRequest& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
+    inline RunInstancesRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
+    inline RunInstancesRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
+     * the request. If you do not specify a client token, a randomly generated token is
+     * used for the request to ensure idempotency.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline RunInstancesRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline RunInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline RunInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
+    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
+    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
+    inline RunInstancesRequest& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
+    inline RunInstancesRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
+    inline RunInstancesRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The network interfaces to associate with the instance.</p>
+     */
+    inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
+    inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+    inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
+    inline RunInstancesRequest& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
+    inline RunInstancesRequest& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
+    inline RunInstancesRequest& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+    inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
+     */
+    inline const IamInstanceProfileSpecification& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+    inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
+    inline void SetIamInstanceProfile(const IamInstanceProfileSpecification& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
+    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
+    inline RunInstancesRequest& WithIamInstanceProfile(const IamInstanceProfileSpecification& value) { SetIamInstanceProfile(value); return *this;}
+    inline RunInstancesRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal Amazon EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage charges
+     * apply when using an EBS-optimized instance.</p> <p>Default: <code>false</code>
+     * </p>
+     */
+    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
+    inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
+    inline RunInstancesRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
@@ -764,33 +764,6 @@ namespace Model
     Aws::String m_userData;
     bool m_userDataHasBeenSet = false;
 
-    Aws::String m_additionalInfo;
-    bool m_additionalInfoHasBeenSet = false;
-
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    bool m_disableApiTermination;
-    bool m_disableApiTerminationHasBeenSet = false;
-
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
-    bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet = false;
-
-    IamInstanceProfileSpecification m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet = false;
-
-    ShutdownBehavior m_instanceInitiatedShutdownBehavior;
-    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
-
-    Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet = false;
-
-    Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet = false;
-
     Aws::Vector<ElasticGpuSpecification> m_elasticGpuSpecification;
     bool m_elasticGpuSpecificationHasBeenSet = false;
 
@@ -838,6 +811,33 @@ namespace Model
 
     bool m_enablePrimaryIpv6;
     bool m_enablePrimaryIpv6HasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
+
+    bool m_disableApiTermination;
+    bool m_disableApiTerminationHasBeenSet = false;
+
+    ShutdownBehavior m_instanceInitiatedShutdownBehavior;
+    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
+
+    Aws::String m_privateIpAddress;
+    bool m_privateIpAddressHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_additionalInfo;
+    bool m_additionalInfoHasBeenSet = false;
+
+    Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
+    bool m_networkInterfacesHasBeenSet = false;
+
+    IamInstanceProfileSpecification m_iamInstanceProfile;
+    bool m_iamInstanceProfileHasBeenSet = false;
+
+    bool m_ebsOptimized;
+    bool m_ebsOptimizedHasBeenSet = false;
   };
 
 } // namespace Model

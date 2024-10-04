@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/VolumeModification.h>
 #include <utility>
@@ -37,19 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the volume modifications.</p>
-     */
-    inline const Aws::Vector<VolumeModification>& GetVolumesModifications() const{ return m_volumesModifications; }
-    inline void SetVolumesModifications(const Aws::Vector<VolumeModification>& value) { m_volumesModifications = value; }
-    inline void SetVolumesModifications(Aws::Vector<VolumeModification>&& value) { m_volumesModifications = std::move(value); }
-    inline DescribeVolumesModificationsResponse& WithVolumesModifications(const Aws::Vector<VolumeModification>& value) { SetVolumesModifications(value); return *this;}
-    inline DescribeVolumesModificationsResponse& WithVolumesModifications(Aws::Vector<VolumeModification>&& value) { SetVolumesModifications(std::move(value)); return *this;}
-    inline DescribeVolumesModificationsResponse& AddVolumesModifications(const VolumeModification& value) { m_volumesModifications.push_back(value); return *this; }
-    inline DescribeVolumesModificationsResponse& AddVolumesModifications(VolumeModification&& value) { m_volumesModifications.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
@@ -63,6 +50,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Information about the volume modifications.</p>
+     */
+    inline const Aws::Vector<VolumeModification>& GetVolumesModifications() const{ return m_volumesModifications; }
+    inline void SetVolumesModifications(const Aws::Vector<VolumeModification>& value) { m_volumesModifications = value; }
+    inline void SetVolumesModifications(Aws::Vector<VolumeModification>&& value) { m_volumesModifications = std::move(value); }
+    inline DescribeVolumesModificationsResponse& WithVolumesModifications(const Aws::Vector<VolumeModification>& value) { SetVolumesModifications(value); return *this;}
+    inline DescribeVolumesModificationsResponse& WithVolumesModifications(Aws::Vector<VolumeModification>&& value) { SetVolumesModifications(std::move(value)); return *this;}
+    inline DescribeVolumesModificationsResponse& AddVolumesModifications(const VolumeModification& value) { m_volumesModifications.push_back(value); return *this; }
+    inline DescribeVolumesModificationsResponse& AddVolumesModifications(VolumeModification&& value) { m_volumesModifications.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -72,9 +72,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<VolumeModification> m_volumesModifications;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<VolumeModification> m_volumesModifications;
 
     ResponseMetadata m_responseMetadata;
   };

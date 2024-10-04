@@ -11,11 +11,11 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeHostsRequest::DescribeHostsRequest() : 
-    m_filterHasBeenSet(false),
     m_hostIdsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_filterHasBeenSet(false)
 {
 }
 
@@ -23,16 +23,6 @@ Aws::String DescribeHostsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeHosts&";
-  if(m_filterHasBeenSet)
-  {
-    unsigned filterCount = 1;
-    for(auto& item : m_filter)
-    {
-      item.OutputToStream(ss, "Filter.", filterCount, "");
-      filterCount++;
-    }
-  }
-
   if(m_hostIdsHasBeenSet)
   {
     unsigned hostIdsCount = 1;
@@ -44,14 +34,24 @@ Aws::String DescribeHostsRequest::SerializePayload() const
     }
   }
 
+  if(m_nextTokenHasBeenSet)
+  {
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  if(m_nextTokenHasBeenSet)
+  if(m_filterHasBeenSet)
   {
-    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+    unsigned filterCount = 1;
+    for(auto& item : m_filter)
+    {
+      item.OutputToStream(ss, "Filter.", filterCount, "");
+      filterCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

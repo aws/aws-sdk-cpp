@@ -8,8 +8,8 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/TagSpecification.h>
+#include <aws/ec2/model/BlockDeviceMapping.h>
 #include <utility>
 
 namespace Aws
@@ -41,39 +41,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
-     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
-     * want a different volume size, you must first change the volume size of the
-     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
-     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
-     * have a different encryption status (for example, where the source volume and
-     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
-     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
-     * option that can be changed for existing mappings or snapshots is
-     * <code>DeleteOnTermination</code>.</p> </li> </ul>
+     * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
+     * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the snapshots that are created of the root volume and of other Amazon EBS
+     * volumes that are attached to the instance, the value for
+     * <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied
+     * to all of the snapshots that are created.</p> </li> </ul> <p>If you specify
+     * other values for <code>ResourceType</code>, the request fails.</p> <p>To tag an
+     * AMI or snapshot after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
      */
-    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
-    inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-    inline CreateImageRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline CreateImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline CreateImageRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-    inline CreateImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>A description for the new image.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateImageRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+    inline CreateImageRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+    inline CreateImageRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+    inline CreateImageRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+    inline CreateImageRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -121,6 +108,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A description for the new image.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline CreateImageRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline CreateImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline CreateImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates whether or not the instance should be automatically rebooted before
      * creating the image. Specify one of the following values:</p> <ul> <li> <p>
      * <code>true</code> - The instance is not rebooted before creating the image. This
@@ -140,34 +141,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI,
-     * the snapshots, or both.</p> <ul> <li> <p>To tag the AMI, the value for
-     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
-     * the snapshots that are created of the root volume and of other Amazon EBS
-     * volumes that are attached to the instance, the value for
-     * <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied
-     * to all of the snapshots that are created.</p> </li> </ul> <p>If you specify
-     * other values for <code>ResourceType</code>, the request fails.</p> <p>To tag an
-     * AMI or snapshot after it has been created, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
-     * </p>
+     * <p>The block device mappings.</p> <p>When using the CreateImage action:</p> <ul>
+     * <li> <p>You can't change the volume size using the VolumeSize parameter. If you
+     * want a different volume size, you must first change the volume size of the
+     * source instance.</p> </li> <li> <p>You can't modify the encryption status of
+     * existing volumes or snapshots. To create an AMI with volumes or snapshots that
+     * have a different encryption status (for example, where the source volume and
+     * snapshots are unencrypted, and you want to create an AMI with encrypted volumes
+     * or snapshots), use the <a>CopyImage</a> action.</p> </li> <li> <p>The only
+     * option that can be changed for existing mappings or snapshots is
+     * <code>DeleteOnTermination</code>.</p> </li> </ul>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateImageRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateImageRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateImageRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateImageRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
+    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
+    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
+    inline CreateImageRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
+    inline CreateImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
+    inline CreateImageRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
+    inline CreateImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
     ///@}
   private:
 
-    Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
@@ -178,11 +175,14 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
     bool m_noReboot;
     bool m_noRebootHasBeenSet = false;
 
-    Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet = false;
+    Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
+    bool m_blockDeviceMappingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -45,34 +45,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the instance that the address is associated with (if any).</p>
-     */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline Address& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline Address& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline Address& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Elastic IP address.</p>
-     */
-    inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
-    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
-    inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
-    inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
-    inline Address& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
-    inline Address& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
-    inline Address& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID representing the allocation of the address.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
@@ -240,13 +212,35 @@ namespace Model
     inline Address& WithCarrierIp(Aws::String&& value) { SetCarrierIp(std::move(value)); return *this;}
     inline Address& WithCarrierIp(const char* value) { SetCarrierIp(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the instance that the address is associated with (if any).</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+    inline Address& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline Address& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+    inline Address& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Elastic IP address.</p>
+     */
+    inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
+    inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
+    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
+    inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
+    inline Address& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
+    inline Address& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
+    inline Address& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
+    ///@}
   private:
-
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet = false;
-
-    Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet = false;
 
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet = false;
@@ -283,6 +277,12 @@ namespace Model
 
     Aws::String m_carrierIp;
     bool m_carrierIpHasBeenSet = false;
+
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
+
+    Aws::String m_publicIp;
+    bool m_publicIpHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/ec2/model/Affinity.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/HostTenancy.h>
+#include <aws/ec2/model/Affinity.h>
 #include <utility>
 
 namespace Aws
@@ -40,20 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The affinity setting for the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
-     * affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     */
-    inline const Affinity& GetAffinity() const{ return m_affinity; }
-    inline bool AffinityHasBeenSet() const { return m_affinityHasBeenSet; }
-    inline void SetAffinity(const Affinity& value) { m_affinityHasBeenSet = true; m_affinity = value; }
-    inline void SetAffinity(Affinity&& value) { m_affinityHasBeenSet = true; m_affinity = std::move(value); }
-    inline ModifyInstancePlacementRequest& WithAffinity(const Affinity& value) { SetAffinity(value); return *this;}
-    inline ModifyInstancePlacementRequest& WithAffinity(Affinity&& value) { SetAffinity(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the placement group in which to place the instance. For spread
      * placement groups, the instance must have a tenancy of <code>default</code>. For
      * cluster and partition placement groups, the instance must have a tenancy of
@@ -68,50 +54,6 @@ namespace Model
     inline ModifyInstancePlacementRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
     inline ModifyInstancePlacementRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
     inline ModifyInstancePlacementRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the Dedicated Host with which to associate the instance.</p>
-     */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline bool HostIdHasBeenSet() const { return m_hostIdHasBeenSet; }
-    inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostIdHasBeenSet = true; m_hostId.assign(value); }
-    inline ModifyInstancePlacementRequest& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline ModifyInstancePlacementRequest& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline ModifyInstancePlacementRequest& WithHostId(const char* value) { SetHostId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the instance that you are modifying.</p>
-     */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ModifyInstancePlacementRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ModifyInstancePlacementRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ModifyInstancePlacementRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you must launch
-     * the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
-     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or
-     * <code>default</code>. Attempting to make one of these unsupported tenancy
-     * changes results in an <code>InvalidRequest</code> error code.</p> 
-     */
-    inline const HostTenancy& GetTenancy() const{ return m_tenancy; }
-    inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
-    inline void SetTenancy(const HostTenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
-    inline void SetTenancy(HostTenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
-    inline ModifyInstancePlacementRequest& WithTenancy(const HostTenancy& value) { SetTenancy(value); return *this;}
-    inline ModifyInstancePlacementRequest& WithTenancy(HostTenancy&& value) { SetTenancy(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,22 +96,68 @@ namespace Model
     inline ModifyInstancePlacementRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
     inline ModifyInstancePlacementRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
     ///@}
-  private:
 
-    Affinity m_affinity;
-    bool m_affinityHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The ID of the instance that you are modifying.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+    inline ModifyInstancePlacementRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline ModifyInstancePlacementRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+    inline ModifyInstancePlacementRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you must launch
+     * the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or
+     * <code>default</code>. Attempting to make one of these unsupported tenancy
+     * changes results in an <code>InvalidRequest</code> error code.</p> 
+     */
+    inline const HostTenancy& GetTenancy() const{ return m_tenancy; }
+    inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
+    inline void SetTenancy(const HostTenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+    inline void SetTenancy(HostTenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
+    inline ModifyInstancePlacementRequest& WithTenancy(const HostTenancy& value) { SetTenancy(value); return *this;}
+    inline ModifyInstancePlacementRequest& WithTenancy(HostTenancy&& value) { SetTenancy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The affinity setting for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const Affinity& GetAffinity() const{ return m_affinity; }
+    inline bool AffinityHasBeenSet() const { return m_affinityHasBeenSet; }
+    inline void SetAffinity(const Affinity& value) { m_affinityHasBeenSet = true; m_affinity = value; }
+    inline void SetAffinity(Affinity&& value) { m_affinityHasBeenSet = true; m_affinity = std::move(value); }
+    inline ModifyInstancePlacementRequest& WithAffinity(const Affinity& value) { SetAffinity(value); return *this;}
+    inline ModifyInstancePlacementRequest& WithAffinity(Affinity&& value) { SetAffinity(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Dedicated Host with which to associate the instance.</p>
+     */
+    inline const Aws::String& GetHostId() const{ return m_hostId; }
+    inline bool HostIdHasBeenSet() const { return m_hostIdHasBeenSet; }
+    inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
+    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = std::move(value); }
+    inline void SetHostId(const char* value) { m_hostIdHasBeenSet = true; m_hostId.assign(value); }
+    inline ModifyInstancePlacementRequest& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
+    inline ModifyInstancePlacementRequest& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
+    inline ModifyInstancePlacementRequest& WithHostId(const char* value) { SetHostId(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet = false;
-
-    Aws::String m_hostId;
-    bool m_hostIdHasBeenSet = false;
-
-    Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet = false;
-
-    HostTenancy m_tenancy;
-    bool m_tenancyHasBeenSet = false;
 
     int m_partitionNumber;
     bool m_partitionNumberHasBeenSet = false;
@@ -179,6 +167,18 @@ namespace Model
 
     Aws::String m_groupId;
     bool m_groupIdHasBeenSet = false;
+
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
+
+    HostTenancy m_tenancy;
+    bool m_tenancyHasBeenSet = false;
+
+    Affinity m_affinity;
+    bool m_affinityHasBeenSet = false;
+
+    Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

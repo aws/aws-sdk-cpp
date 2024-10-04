@@ -23,15 +23,15 @@ CreateVolumeRequest::CreateVolumeRequest() :
     m_snapshotIdHasBeenSet(false),
     m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_multiAttachEnabled(false),
     m_multiAttachEnabledHasBeenSet(false),
     m_throughput(0),
     m_throughputHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -79,11 +79,6 @@ Aws::String CreateVolumeRequest::SerializePayload() const
     ss << "VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_tagSpecificationsHasBeenSet)
   {
     unsigned tagSpecificationsCount = 1;
@@ -107,6 +102,11 @@ Aws::String CreateVolumeRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

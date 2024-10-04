@@ -6,13 +6,13 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ArchitectureValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/ShutdownBehavior.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/UserData.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/Placement.h>
-#include <aws/ec2/model/UserData.h>
+#include <aws/ec2/model/ShutdownBehavior.h>
 #include <utility>
 
 namespace Aws
@@ -48,20 +48,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved.</p>
-     */
-    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
-    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
-    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
-    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
-    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
-    inline ImportInstanceLaunchSpecification& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
-    inline ImportInstanceLaunchSpecification& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
-    inline ImportInstanceLaunchSpecification& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The architecture of the instance.</p>
      */
     inline const ArchitectureValues& GetArchitecture() const{ return m_architecture; }
@@ -70,21 +56,6 @@ namespace Model
     inline void SetArchitecture(ArchitectureValues&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
     inline ImportInstanceLaunchSpecification& WithArchitecture(const ArchitectureValues& value) { SetArchitecture(value); return *this;}
     inline ImportInstanceLaunchSpecification& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The security group IDs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
-    inline bool GroupIdsHasBeenSet() const { return m_groupIdsHasBeenSet; }
-    inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
-    inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
-    inline ImportInstanceLaunchSpecification& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
-    inline ImportInstanceLaunchSpecification& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
-    inline ImportInstanceLaunchSpecification& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
-    inline ImportInstanceLaunchSpecification& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
-    inline ImportInstanceLaunchSpecification& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -104,15 +75,43 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
-     * from the instance (using the operating system command for system shutdown).</p>
+     * <p>The security group IDs.</p>
      */
-    inline const ShutdownBehavior& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
-    inline bool InstanceInitiatedShutdownBehaviorHasBeenSet() const { return m_instanceInitiatedShutdownBehaviorHasBeenSet; }
-    inline void SetInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
-    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
-    inline ImportInstanceLaunchSpecification& WithInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
-    inline ImportInstanceLaunchSpecification& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
+    inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
+    inline bool GroupIdsHasBeenSet() const { return m_groupIdsHasBeenSet; }
+    inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
+    inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
+    inline ImportInstanceLaunchSpecification& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
+    inline ImportInstanceLaunchSpecification& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
+    inline ImportInstanceLaunchSpecification& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
+    inline ImportInstanceLaunchSpecification& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
+    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
+    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
+    inline ImportInstanceLaunchSpecification& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
+    inline ImportInstanceLaunchSpecification& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Base64-encoded user data to make available to the instance.</p>
+     */
+    inline const UserData& GetUserData() const{ return m_userData; }
+    inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
+    inline void SetUserData(const UserData& value) { m_userDataHasBeenSet = true; m_userData = value; }
+    inline void SetUserData(UserData&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
+    inline ImportInstanceLaunchSpecification& WithUserData(const UserData& value) { SetUserData(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithUserData(UserData&& value) { SetUserData(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,16 +131,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether monitoring is enabled.</p>
-     */
-    inline bool GetMonitoring() const{ return m_monitoring; }
-    inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
-    inline void SetMonitoring(bool value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
-    inline ImportInstanceLaunchSpecification& WithMonitoring(bool value) { SetMonitoring(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The placement information for the instance.</p>
      */
     inline const Placement& GetPlacement() const{ return m_placement; }
@@ -154,17 +143,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>[EC2-VPC] An available IP address from the IP address range of the
-     * subnet.</p>
+     * <p>Indicates whether monitoring is enabled.</p>
      */
-    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
-    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
-    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
-    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
-    inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
-    inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
-    inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+    inline bool GetMonitoring() const{ return m_monitoring; }
+    inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
+    inline void SetMonitoring(bool value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
+    inline ImportInstanceLaunchSpecification& WithMonitoring(bool value) { SetMonitoring(value); return *this;}
     ///@}
 
     ///@{
@@ -183,49 +167,65 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Base64-encoded user data to make available to the instance.</p>
+     * <p>Indicates whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
      */
-    inline const UserData& GetUserData() const{ return m_userData; }
-    inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
-    inline void SetUserData(const UserData& value) { m_userDataHasBeenSet = true; m_userData = value; }
-    inline void SetUserData(UserData&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
-    inline ImportInstanceLaunchSpecification& WithUserData(const UserData& value) { SetUserData(value); return *this;}
-    inline ImportInstanceLaunchSpecification& WithUserData(UserData&& value) { SetUserData(std::move(value)); return *this;}
+    inline const ShutdownBehavior& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
+    inline bool InstanceInitiatedShutdownBehaviorHasBeenSet() const { return m_instanceInitiatedShutdownBehaviorHasBeenSet; }
+    inline void SetInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
+    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
+    inline ImportInstanceLaunchSpecification& WithInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>[EC2-VPC] An available IP address from the IP address range of the
+     * subnet.</p>
+     */
+    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
+    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
+    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
+    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
+    inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
+    inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
+    inline ImportInstanceLaunchSpecification& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
     ///@}
   private:
-
-    Aws::String m_additionalInfo;
-    bool m_additionalInfoHasBeenSet = false;
 
     ArchitectureValues m_architecture;
     bool m_architectureHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_groupIds;
-    bool m_groupIdsHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_groupNames;
     bool m_groupNamesHasBeenSet = false;
 
-    ShutdownBehavior m_instanceInitiatedShutdownBehavior;
-    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
+    Aws::Vector<Aws::String> m_groupIds;
+    bool m_groupIdsHasBeenSet = false;
+
+    Aws::String m_additionalInfo;
+    bool m_additionalInfoHasBeenSet = false;
+
+    UserData m_userData;
+    bool m_userDataHasBeenSet = false;
 
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    bool m_monitoring;
-    bool m_monitoringHasBeenSet = false;
-
     Placement m_placement;
     bool m_placementHasBeenSet = false;
 
-    Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet = false;
+    bool m_monitoring;
+    bool m_monitoringHasBeenSet = false;
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;
 
-    UserData m_userData;
-    bool m_userDataHasBeenSet = false;
+    ShutdownBehavior m_instanceInitiatedShutdownBehavior;
+    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
+
+    Aws::String m_privateIpAddress;
+    bool m_privateIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

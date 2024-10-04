@@ -58,16 +58,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the security group.</p>
+     * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
+     * group in another VPC, the account ID of the referenced security group is
+     * returned in the response. If the referenced security group is deleted, this
+     * value is not returned.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
-    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline UserIdGroupPair& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline UserIdGroupPair& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline UserIdGroupPair& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
+    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
+    inline UserIdGroupPair& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
+    inline UserIdGroupPair& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
+    inline UserIdGroupPair& WithUserId(const char* value) { SetUserId(value); return *this;}
     ///@}
 
     ///@{
@@ -89,33 +92,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of a VPC peering connection, if applicable.</p>
+     * <p>The ID of the security group.</p>
      */
-    inline const Aws::String& GetPeeringStatus() const{ return m_peeringStatus; }
-    inline bool PeeringStatusHasBeenSet() const { return m_peeringStatusHasBeenSet; }
-    inline void SetPeeringStatus(const Aws::String& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = value; }
-    inline void SetPeeringStatus(Aws::String&& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = std::move(value); }
-    inline void SetPeeringStatus(const char* value) { m_peeringStatusHasBeenSet = true; m_peeringStatus.assign(value); }
-    inline UserIdGroupPair& WithPeeringStatus(const Aws::String& value) { SetPeeringStatus(value); return *this;}
-    inline UserIdGroupPair& WithPeeringStatus(Aws::String&& value) { SetPeeringStatus(std::move(value)); return *this;}
-    inline UserIdGroupPair& WithPeeringStatus(const char* value) { SetPeeringStatus(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
-     * group in another VPC, the account ID of the referenced security group is
-     * returned in the response. If the referenced security group is deleted, this
-     * value is not returned.</p>
-     */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
-    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline UserIdGroupPair& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline UserIdGroupPair& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline UserIdGroupPair& WithUserId(const char* value) { SetUserId(value); return *this;}
+    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
+    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
+    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
+    inline UserIdGroupPair& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
+    inline UserIdGroupPair& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
+    inline UserIdGroupPair& WithGroupId(const char* value) { SetGroupId(value); return *this;}
     ///@}
 
     ///@{
@@ -145,28 +131,42 @@ namespace Model
     inline UserIdGroupPair& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
     inline UserIdGroupPair& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The status of a VPC peering connection, if applicable.</p>
+     */
+    inline const Aws::String& GetPeeringStatus() const{ return m_peeringStatus; }
+    inline bool PeeringStatusHasBeenSet() const { return m_peeringStatusHasBeenSet; }
+    inline void SetPeeringStatus(const Aws::String& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = value; }
+    inline void SetPeeringStatus(Aws::String&& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = std::move(value); }
+    inline void SetPeeringStatus(const char* value) { m_peeringStatusHasBeenSet = true; m_peeringStatus.assign(value); }
+    inline UserIdGroupPair& WithPeeringStatus(const Aws::String& value) { SetPeeringStatus(value); return *this;}
+    inline UserIdGroupPair& WithPeeringStatus(Aws::String&& value) { SetPeeringStatus(std::move(value)); return *this;}
+    inline UserIdGroupPair& WithPeeringStatus(const char* value) { SetPeeringStatus(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::String m_groupId;
-    bool m_groupIdHasBeenSet = false;
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet = false;
 
-    Aws::String m_peeringStatus;
-    bool m_peeringStatusHasBeenSet = false;
-
-    Aws::String m_userId;
-    bool m_userIdHasBeenSet = false;
+    Aws::String m_groupId;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
     bool m_vpcPeeringConnectionIdHasBeenSet = false;
+
+    Aws::String m_peeringStatus;
+    bool m_peeringStatusHasBeenSet = false;
   };
 
 } // namespace Model

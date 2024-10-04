@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/Image.h>
 #include <utility>
@@ -37,19 +37,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the images.</p>
-     */
-    inline const Aws::Vector<Image>& GetImages() const{ return m_images; }
-    inline void SetImages(const Aws::Vector<Image>& value) { m_images = value; }
-    inline void SetImages(Aws::Vector<Image>&& value) { m_images = std::move(value); }
-    inline DescribeImagesResponse& WithImages(const Aws::Vector<Image>& value) { SetImages(value); return *this;}
-    inline DescribeImagesResponse& WithImages(Aws::Vector<Image>&& value) { SetImages(std::move(value)); return *this;}
-    inline DescribeImagesResponse& AddImages(const Image& value) { m_images.push_back(value); return *this; }
-    inline DescribeImagesResponse& AddImages(Image&& value) { m_images.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
@@ -63,6 +50,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Information about the images.</p>
+     */
+    inline const Aws::Vector<Image>& GetImages() const{ return m_images; }
+    inline void SetImages(const Aws::Vector<Image>& value) { m_images = value; }
+    inline void SetImages(Aws::Vector<Image>&& value) { m_images = std::move(value); }
+    inline DescribeImagesResponse& WithImages(const Aws::Vector<Image>& value) { SetImages(value); return *this;}
+    inline DescribeImagesResponse& WithImages(Aws::Vector<Image>&& value) { SetImages(std::move(value)); return *this;}
+    inline DescribeImagesResponse& AddImages(const Image& value) { m_images.push_back(value); return *this; }
+    inline DescribeImagesResponse& AddImages(Image&& value) { m_images.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -72,9 +72,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<Image> m_images;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<Image> m_images;
 
     ResponseMetadata m_responseMetadata;
   };

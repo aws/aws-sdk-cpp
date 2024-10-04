@@ -196,6 +196,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The subnet ID.</p>
+     */
+    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
+    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
+    inline IpamDiscoveredResourceCidr& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
+    inline IpamDiscoveredResourceCidr& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
+    inline IpamDiscoveredResourceCidr& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>For elastic network interfaces, this is the status of whether or not the
      * elastic network interface is attached.</p>
      */
@@ -263,6 +277,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
+
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet = false;
 
     IpamNetworkInterfaceAttachmentStatus m_networkInterfaceAttachmentStatus;
     bool m_networkInterfaceAttachmentStatusHasBeenSet = false;

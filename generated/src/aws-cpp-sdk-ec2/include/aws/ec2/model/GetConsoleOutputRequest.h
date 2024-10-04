@@ -52,6 +52,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>When enabled, retrieves the latest console output for the instance.</p>
+     * <p>Default: disabled (<code>false</code>)</p>
+     */
+    inline bool GetLatest() const{ return m_latest; }
+    inline bool LatestHasBeenSet() const { return m_latestHasBeenSet; }
+    inline void SetLatest(bool value) { m_latestHasBeenSet = true; m_latest = value; }
+    inline GetConsoleOutputRequest& WithLatest(bool value) { SetLatest(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the operation, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -62,27 +73,16 @@ namespace Model
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline GetConsoleOutputRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>When enabled, retrieves the latest console output for the instance.</p>
-     * <p>Default: disabled (<code>false</code>)</p>
-     */
-    inline bool GetLatest() const{ return m_latest; }
-    inline bool LatestHasBeenSet() const { return m_latestHasBeenSet; }
-    inline void SetLatest(bool value) { m_latestHasBeenSet = true; m_latest = value; }
-    inline GetConsoleOutputRequest& WithLatest(bool value) { SetLatest(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
     bool m_latest;
     bool m_latestHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

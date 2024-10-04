@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -43,14 +43,30 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether to allow an IP address that is already assigned to another
-     * network interface or instance to be reassigned to the specified network
-     * interface.</p>
+     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
+     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
      */
-    inline bool GetAllowReassignment() const{ return m_allowReassignment; }
-    inline bool AllowReassignmentHasBeenSet() const { return m_allowReassignmentHasBeenSet; }
-    inline void SetAllowReassignment(bool value) { m_allowReassignmentHasBeenSet = true; m_allowReassignment = value; }
-    inline AssignPrivateIpAddressesRequest& WithAllowReassignment(bool value) { SetAllowReassignment(value); return *this;}
+    inline const Aws::Vector<Aws::String>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
+    inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
+    inline void SetIpv4Prefixes(const Aws::Vector<Aws::String>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
+    inline void SetIpv4Prefixes(Aws::Vector<Aws::String>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
+    inline AssignPrivateIpAddressesRequest& WithIpv4Prefixes(const Aws::Vector<Aws::String>& value) { SetIpv4Prefixes(value); return *this;}
+    inline AssignPrivateIpAddressesRequest& WithIpv4Prefixes(Aws::Vector<Aws::String>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
+    inline AssignPrivateIpAddressesRequest& AddIpv4Prefixes(const Aws::String& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
+    inline AssignPrivateIpAddressesRequest& AddIpv4Prefixes(Aws::String&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
+    inline AssignPrivateIpAddressesRequest& AddIpv4Prefixes(const char* value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to
+     * the network interface. You cannot use this option if you use the <code>Ipv4
+     * Prefixes</code> option.</p>
+     */
+    inline int GetIpv4PrefixCount() const{ return m_ipv4PrefixCount; }
+    inline bool Ipv4PrefixCountHasBeenSet() const { return m_ipv4PrefixCountHasBeenSet; }
+    inline void SetIpv4PrefixCount(int value) { m_ipv4PrefixCountHasBeenSet = true; m_ipv4PrefixCount = value; }
+    inline AssignPrivateIpAddressesRequest& WithIpv4PrefixCount(int value) { SetIpv4PrefixCount(value); return *this;}
     ///@}
 
     ///@{
@@ -98,35 +114,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>One or more IPv4 prefixes assigned to the network interface. You cannot use
-     * this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+     * <p>Indicates whether to allow an IP address that is already assigned to another
+     * network interface or instance to be reassigned to the specified network
+     * interface.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
-    inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
-    inline void SetIpv4Prefixes(const Aws::Vector<Aws::String>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
-    inline void SetIpv4Prefixes(Aws::Vector<Aws::String>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
-    inline AssignPrivateIpAddressesRequest& WithIpv4Prefixes(const Aws::Vector<Aws::String>& value) { SetIpv4Prefixes(value); return *this;}
-    inline AssignPrivateIpAddressesRequest& WithIpv4Prefixes(Aws::Vector<Aws::String>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
-    inline AssignPrivateIpAddressesRequest& AddIpv4Prefixes(const Aws::String& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
-    inline AssignPrivateIpAddressesRequest& AddIpv4Prefixes(Aws::String&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
-    inline AssignPrivateIpAddressesRequest& AddIpv4Prefixes(const char* value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to
-     * the network interface. You cannot use this option if you use the <code>Ipv4
-     * Prefixes</code> option.</p>
-     */
-    inline int GetIpv4PrefixCount() const{ return m_ipv4PrefixCount; }
-    inline bool Ipv4PrefixCountHasBeenSet() const { return m_ipv4PrefixCountHasBeenSet; }
-    inline void SetIpv4PrefixCount(int value) { m_ipv4PrefixCountHasBeenSet = true; m_ipv4PrefixCount = value; }
-    inline AssignPrivateIpAddressesRequest& WithIpv4PrefixCount(int value) { SetIpv4PrefixCount(value); return *this;}
+    inline bool GetAllowReassignment() const{ return m_allowReassignment; }
+    inline bool AllowReassignmentHasBeenSet() const { return m_allowReassignmentHasBeenSet; }
+    inline void SetAllowReassignment(bool value) { m_allowReassignmentHasBeenSet = true; m_allowReassignment = value; }
+    inline AssignPrivateIpAddressesRequest& WithAllowReassignment(bool value) { SetAllowReassignment(value); return *this;}
     ///@}
   private:
 
-    bool m_allowReassignment;
-    bool m_allowReassignmentHasBeenSet = false;
+    Aws::Vector<Aws::String> m_ipv4Prefixes;
+    bool m_ipv4PrefixesHasBeenSet = false;
+
+    int m_ipv4PrefixCount;
+    bool m_ipv4PrefixCountHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet = false;
@@ -137,11 +140,8 @@ namespace Model
     int m_secondaryPrivateIpAddressCount;
     bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_ipv4Prefixes;
-    bool m_ipv4PrefixesHasBeenSet = false;
-
-    int m_ipv4PrefixCount;
-    bool m_ipv4PrefixCountHasBeenSet = false;
+    bool m_allowReassignment;
+    bool m_allowReassignmentHasBeenSet = false;
   };
 
 } // namespace Model

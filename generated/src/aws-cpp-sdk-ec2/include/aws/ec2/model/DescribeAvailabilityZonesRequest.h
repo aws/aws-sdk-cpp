@@ -7,8 +7,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/Filter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/Filter.h>
 #include <utility>
 
 namespace Aws
@@ -37,44 +37,6 @@ namespace Model
     AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-
-    ///@{
-    /**
-     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - For Availability
-     * Zones, use the Region name. For Local Zones, use the name of the group
-     * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For
-     * Wavelength Zones, use the name of the group associated with the Wavelength Zone
-     * (for example, <code>us-east-1-wl1</code>).</p> </li> <li> <p>
-     * <code>message</code> - The Zone message.</p> </li> <li> <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
-     * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
-     * <p> <code>parent-zone-id</code> - The ID of the zone that handles some of the
-     * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
-     * </li> <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles
-     * some of the Local Zone and Wavelength Zone control plane operations, such as API
-     * calls.</p> </li> <li> <p> <code>region-name</code> - The name of the Region for
-     * the Zone (for example, <code>us-east-1</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the Availability Zone, the Local Zone, or the
-     * Wavelength Zone (<code>available</code>).</p> </li> <li> <p>
-     * <code>zone-id</code> - The ID of the Availability Zone (for example,
-     * <code>use1-az1</code>), the Local Zone (for example,
-     * <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example,
-     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-name</code>
-     * - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
-     * Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone
-     * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
-     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> |
-     * <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li> </ul>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeAvailabilityZonesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeAvailabilityZonesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeAvailabilityZonesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeAvailabilityZonesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-    ///@}
 
     ///@{
     /**
@@ -131,10 +93,45 @@ namespace Model
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeAvailabilityZonesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
-  private:
 
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The filters.</p> <ul> <li> <p> <code>group-name</code> - For Availability
+     * Zones, use the Region name. For Local Zones, use the name of the group
+     * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For
+     * Wavelength Zones, use the name of the group associated with the Wavelength Zone
+     * (for example, <code>us-east-1-wl1</code>).</p> </li> <li> <p>
+     * <code>message</code> - The Zone message.</p> </li> <li> <p>
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> |
+     * <code>not-opted-in</code> | <code>opt-in-not-required</code>).</p> </li> <li>
+     * <p> <code>parent-zone-id</code> - The ID of the zone that handles some of the
+     * Local Zone and Wavelength Zone control plane operations, such as API calls.</p>
+     * </li> <li> <p> <code>parent-zone-name</code> - The ID of the zone that handles
+     * some of the Local Zone and Wavelength Zone control plane operations, such as API
+     * calls.</p> </li> <li> <p> <code>region-name</code> - The name of the Region for
+     * the Zone (for example, <code>us-east-1</code>).</p> </li> <li> <p>
+     * <code>state</code> - The state of the Availability Zone, the Local Zone, or the
+     * Wavelength Zone (<code>available</code>).</p> </li> <li> <p>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example,
+     * <code>use1-az1</code>), the Local Zone (for example,
+     * <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example,
+     * <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p> <code>zone-name</code>
+     * - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
+     * Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone
+     * (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p> </li> <li> <p>
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> |
+     * <code>local-zone</code> | <code>wavelength-zone</code>).</p> </li> </ul>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+    inline DescribeAvailabilityZonesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline DescribeAvailabilityZonesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+    inline DescribeAvailabilityZonesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeAvailabilityZonesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
+  private:
 
     Aws::Vector<Aws::String> m_zoneNames;
     bool m_zoneNamesHasBeenSet = false;
@@ -147,6 +144,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,6 +38,21 @@ RunInstancesResponse& RunInstancesResponse::operator =(const Aws::AmazonWebServi
 
   if(!resultNode.IsNull())
   {
+    XmlNode reservationIdNode = resultNode.FirstChild("reservationId");
+    if(!reservationIdNode.IsNull())
+    {
+      m_reservationId = Aws::Utils::Xml::DecodeEscapedXmlText(reservationIdNode.GetText());
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
+    }
+    XmlNode requesterIdNode = resultNode.FirstChild("requesterId");
+    if(!requesterIdNode.IsNull())
+    {
+      m_requesterId = Aws::Utils::Xml::DecodeEscapedXmlText(requesterIdNode.GetText());
+    }
     XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
     {
@@ -59,21 +74,6 @@ RunInstancesResponse& RunInstancesResponse::operator =(const Aws::AmazonWebServi
         instancesMember = instancesMember.NextNode("item");
       }
 
-    }
-    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
-    if(!ownerIdNode.IsNull())
-    {
-      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
-    }
-    XmlNode requesterIdNode = resultNode.FirstChild("requesterId");
-    if(!requesterIdNode.IsNull())
-    {
-      m_requesterId = Aws::Utils::Xml::DecodeEscapedXmlText(requesterIdNode.GetText());
-    }
-    XmlNode reservationIdNode = resultNode.FirstChild("reservationId");
-    if(!reservationIdNode.IsNull())
-    {
-      m_reservationId = Aws::Utils::Xml::DecodeEscapedXmlText(reservationIdNode.GetText());
     }
   }
 

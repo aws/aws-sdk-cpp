@@ -11,13 +11,13 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeKeyPairsRequest::DescribeKeyPairsRequest() : 
-    m_filtersHasBeenSet(false),
     m_keyNamesHasBeenSet(false),
     m_keyPairIdsHasBeenSet(false),
+    m_includePublicKey(false),
+    m_includePublicKeyHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_includePublicKey(false),
-    m_includePublicKeyHasBeenSet(false)
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -25,16 +25,6 @@ Aws::String DescribeKeyPairsRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeKeyPairs&";
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
-  }
-
   if(m_keyNamesHasBeenSet)
   {
     unsigned keyNamesCount = 1;
@@ -57,14 +47,24 @@ Aws::String DescribeKeyPairsRequest::SerializePayload() const
     }
   }
 
+  if(m_includePublicKeyHasBeenSet)
+  {
+    ss << "IncludePublicKey=" << std::boolalpha << m_includePublicKey << "&";
+  }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
-  if(m_includePublicKeyHasBeenSet)
+  if(m_filtersHasBeenSet)
   {
-    ss << "IncludePublicKey=" << std::boolalpha << m_includePublicKey << "&";
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

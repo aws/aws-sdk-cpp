@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +39,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IDs of the VPCs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
+    inline bool VpcIdsHasBeenSet() const { return m_vpcIdsHasBeenSet; }
+    inline void SetVpcIds(const Aws::Vector<Aws::String>& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
+    inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
+    inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(const Aws::Vector<Aws::String>& value) { SetVpcIds(value); return *this;}
+    inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
+    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(const Aws::String& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
+    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
+    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(const char* value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of items to return for this request. To get the next page
      * of items, make another request with the token returned in the output. For more
      * information, see <a
@@ -64,31 +79,16 @@ namespace Model
     inline DescribeVpcClassicLinkDnsSupportRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline DescribeVpcClassicLinkDnsSupportRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>The IDs of the VPCs.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
-    inline bool VpcIdsHasBeenSet() const { return m_vpcIdsHasBeenSet; }
-    inline void SetVpcIds(const Aws::Vector<Aws::String>& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = value; }
-    inline void SetVpcIds(Aws::Vector<Aws::String>&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds = std::move(value); }
-    inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(const Aws::Vector<Aws::String>& value) { SetVpcIds(value); return *this;}
-    inline DescribeVpcClassicLinkDnsSupportRequest& WithVpcIds(Aws::Vector<Aws::String>&& value) { SetVpcIds(std::move(value)); return *this;}
-    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(const Aws::String& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
-    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(Aws::String&& value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(std::move(value)); return *this; }
-    inline DescribeVpcClassicLinkDnsSupportRequest& AddVpcIds(const char* value) { m_vpcIdsHasBeenSet = true; m_vpcIds.push_back(value); return *this; }
-    ///@}
   private:
+
+    Aws::Vector<Aws::String> m_vpcIds;
+    bool m_vpcIdsHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_vpcIds;
-    bool m_vpcIdsHasBeenSet = false;
   };
 
 } // namespace Model

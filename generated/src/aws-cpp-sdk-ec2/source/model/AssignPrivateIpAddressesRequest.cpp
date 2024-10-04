@@ -11,15 +11,15 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 AssignPrivateIpAddressesRequest::AssignPrivateIpAddressesRequest() : 
-    m_allowReassignment(false),
-    m_allowReassignmentHasBeenSet(false),
+    m_ipv4PrefixesHasBeenSet(false),
+    m_ipv4PrefixCount(0),
+    m_ipv4PrefixCountHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
     m_secondaryPrivateIpAddressCount(0),
     m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_ipv4PrefixesHasBeenSet(false),
-    m_ipv4PrefixCount(0),
-    m_ipv4PrefixCountHasBeenSet(false)
+    m_allowReassignment(false),
+    m_allowReassignmentHasBeenSet(false)
 {
 }
 
@@ -27,9 +27,20 @@ Aws::String AssignPrivateIpAddressesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=AssignPrivateIpAddresses&";
-  if(m_allowReassignmentHasBeenSet)
+  if(m_ipv4PrefixesHasBeenSet)
   {
-    ss << "AllowReassignment=" << std::boolalpha << m_allowReassignment << "&";
+    unsigned ipv4PrefixesCount = 1;
+    for(auto& item : m_ipv4Prefixes)
+    {
+      ss << "Ipv4Prefix." << ipv4PrefixesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      ipv4PrefixesCount++;
+    }
+  }
+
+  if(m_ipv4PrefixCountHasBeenSet)
+  {
+    ss << "Ipv4PrefixCount=" << m_ipv4PrefixCount << "&";
   }
 
   if(m_networkInterfaceIdHasBeenSet)
@@ -53,20 +64,9 @@ Aws::String AssignPrivateIpAddressesRequest::SerializePayload() const
     ss << "SecondaryPrivateIpAddressCount=" << m_secondaryPrivateIpAddressCount << "&";
   }
 
-  if(m_ipv4PrefixesHasBeenSet)
+  if(m_allowReassignmentHasBeenSet)
   {
-    unsigned ipv4PrefixesCount = 1;
-    for(auto& item : m_ipv4Prefixes)
-    {
-      ss << "Ipv4Prefix." << ipv4PrefixesCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      ipv4PrefixesCount++;
-    }
-  }
-
-  if(m_ipv4PrefixCountHasBeenSet)
-  {
-    ss << "Ipv4PrefixCount=" << m_ipv4PrefixCount << "&";
+    ss << "AllowReassignment=" << std::boolalpha << m_allowReassignment << "&";
   }
 
   ss << "Version=2016-11-15";

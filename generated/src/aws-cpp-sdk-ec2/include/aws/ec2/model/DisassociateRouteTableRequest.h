@@ -38,6 +38,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline DisassociateRouteTableRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The association ID representing the current association between the route
      * table and subnet or gateway.</p>
      */
@@ -50,26 +63,13 @@ namespace Model
     inline DisassociateRouteTableRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
     inline DisassociateRouteTableRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline DisassociateRouteTableRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
   private:
-
-    Aws::String m_associationId;
-    bool m_associationIdHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    Aws::String m_associationId;
+    bool m_associationIdHasBeenSet = false;
   };
 
 } // namespace Model

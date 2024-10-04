@@ -8,8 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
-#include <aws/ec2/model/CreateVolumePermission.h>
 #include <aws/ec2/model/ProductCode.h>
+#include <aws/ec2/model/CreateVolumePermission.h>
 #include <utility>
 
 namespace Aws
@@ -38,20 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The users and groups that have the permissions for creating volumes from the
-     * snapshot.</p>
-     */
-    inline const Aws::Vector<CreateVolumePermission>& GetCreateVolumePermissions() const{ return m_createVolumePermissions; }
-    inline void SetCreateVolumePermissions(const Aws::Vector<CreateVolumePermission>& value) { m_createVolumePermissions = value; }
-    inline void SetCreateVolumePermissions(Aws::Vector<CreateVolumePermission>&& value) { m_createVolumePermissions = std::move(value); }
-    inline DescribeSnapshotAttributeResponse& WithCreateVolumePermissions(const Aws::Vector<CreateVolumePermission>& value) { SetCreateVolumePermissions(value); return *this;}
-    inline DescribeSnapshotAttributeResponse& WithCreateVolumePermissions(Aws::Vector<CreateVolumePermission>&& value) { SetCreateVolumePermissions(std::move(value)); return *this;}
-    inline DescribeSnapshotAttributeResponse& AddCreateVolumePermissions(const CreateVolumePermission& value) { m_createVolumePermissions.push_back(value); return *this; }
-    inline DescribeSnapshotAttributeResponse& AddCreateVolumePermissions(CreateVolumePermission&& value) { m_createVolumePermissions.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The product codes.</p>
      */
     inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
@@ -77,6 +63,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The users and groups that have the permissions for creating volumes from the
+     * snapshot.</p>
+     */
+    inline const Aws::Vector<CreateVolumePermission>& GetCreateVolumePermissions() const{ return m_createVolumePermissions; }
+    inline void SetCreateVolumePermissions(const Aws::Vector<CreateVolumePermission>& value) { m_createVolumePermissions = value; }
+    inline void SetCreateVolumePermissions(Aws::Vector<CreateVolumePermission>&& value) { m_createVolumePermissions = std::move(value); }
+    inline DescribeSnapshotAttributeResponse& WithCreateVolumePermissions(const Aws::Vector<CreateVolumePermission>& value) { SetCreateVolumePermissions(value); return *this;}
+    inline DescribeSnapshotAttributeResponse& WithCreateVolumePermissions(Aws::Vector<CreateVolumePermission>&& value) { SetCreateVolumePermissions(std::move(value)); return *this;}
+    inline DescribeSnapshotAttributeResponse& AddCreateVolumePermissions(const CreateVolumePermission& value) { m_createVolumePermissions.push_back(value); return *this; }
+    inline DescribeSnapshotAttributeResponse& AddCreateVolumePermissions(CreateVolumePermission&& value) { m_createVolumePermissions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -86,11 +86,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<CreateVolumePermission> m_createVolumePermissions;
-
     Aws::Vector<ProductCode> m_productCodes;
 
     Aws::String m_snapshotId;
+
+    Aws::Vector<CreateVolumePermission> m_createVolumePermissions;
 
     ResponseMetadata m_responseMetadata;
   };

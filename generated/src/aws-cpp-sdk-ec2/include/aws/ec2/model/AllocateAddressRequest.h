@@ -117,19 +117,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline AllocateAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The tags to assign to the Elastic IP address.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
@@ -144,7 +131,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of an IPAM pool.</p>
+     * <p>The ID of an IPAM pool which has an Amazon-provided or BYOIP public IPv4 CIDR
+     * provisioned to it. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-eip-pool.html">Allocate
+     * sequential Elastic IP addresses from an IPAM pool</a> in the <i>Amazon VPC IPAM
+     * User Guide</i>.</p>
      */
     inline const Aws::String& GetIpamPoolId() const{ return m_ipamPoolId; }
     inline bool IpamPoolIdHasBeenSet() const { return m_ipamPoolIdHasBeenSet; }
@@ -154,6 +145,19 @@ namespace Model
     inline AllocateAddressRequest& WithIpamPoolId(const Aws::String& value) { SetIpamPoolId(value); return *this;}
     inline AllocateAddressRequest& WithIpamPoolId(Aws::String&& value) { SetIpamPoolId(std::move(value)); return *this;}
     inline AllocateAddressRequest& WithIpamPoolId(const char* value) { SetIpamPoolId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline AllocateAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
   private:
 
@@ -172,14 +176,14 @@ namespace Model
     Aws::String m_customerOwnedIpv4Pool;
     bool m_customerOwnedIpv4PoolHasBeenSet = false;
 
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::String m_ipamPoolId;
     bool m_ipamPoolIdHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

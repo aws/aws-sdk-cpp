@@ -11,12 +11,12 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeReservedInstancesRequest::DescribeReservedInstancesRequest() : 
-    m_filtersHasBeenSet(false),
     m_offeringClass(OfferingClassType::NOT_SET),
     m_offeringClassHasBeenSet(false),
     m_reservedInstancesIdsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_offeringType(OfferingTypeValues::NOT_SET),
     m_offeringTypeHasBeenSet(false)
 {
@@ -26,16 +26,6 @@ Aws::String DescribeReservedInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeReservedInstances&";
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
-  }
-
   if(m_offeringClassHasBeenSet)
   {
     ss << "OfferingClass=" << OfferingClassTypeMapper::GetNameForOfferingClassType(m_offeringClass) << "&";
@@ -55,6 +45,16 @@ Aws::String DescribeReservedInstancesRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   if(m_offeringTypeHasBeenSet)

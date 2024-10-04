@@ -55,19 +55,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicate whether the VPN connection uses static routes only. If you are
-     * creating a VPN connection for a device that does not support BGP, you must
-     * specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
-     * static route.</p> <p>Default: <code>false</code> </p>
-     */
-    inline bool GetStaticRoutesOnly() const{ return m_staticRoutesOnly; }
-    inline bool StaticRoutesOnlyHasBeenSet() const { return m_staticRoutesOnlyHasBeenSet; }
-    inline void SetStaticRoutesOnly(bool value) { m_staticRoutesOnlyHasBeenSet = true; m_staticRoutesOnly = value; }
-    inline VpnConnectionOptionsSpecification& WithStaticRoutesOnly(bool value) { SetStaticRoutesOnly(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
      * <p>Default: <code>ipv4</code> </p>
      */
@@ -183,13 +170,23 @@ namespace Model
     inline VpnConnectionOptionsSpecification& WithTransportTransitGatewayAttachmentId(Aws::String&& value) { SetTransportTransitGatewayAttachmentId(std::move(value)); return *this;}
     inline VpnConnectionOptionsSpecification& WithTransportTransitGatewayAttachmentId(const char* value) { SetTransportTransitGatewayAttachmentId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicate whether the VPN connection uses static routes only. If you are
+     * creating a VPN connection for a device that does not support BGP, you must
+     * specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
+     * static route.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool GetStaticRoutesOnly() const{ return m_staticRoutesOnly; }
+    inline bool StaticRoutesOnlyHasBeenSet() const { return m_staticRoutesOnlyHasBeenSet; }
+    inline void SetStaticRoutesOnly(bool value) { m_staticRoutesOnlyHasBeenSet = true; m_staticRoutesOnly = value; }
+    inline VpnConnectionOptionsSpecification& WithStaticRoutesOnly(bool value) { SetStaticRoutesOnly(value); return *this;}
+    ///@}
   private:
 
     bool m_enableAcceleration;
     bool m_enableAccelerationHasBeenSet = false;
-
-    bool m_staticRoutesOnly;
-    bool m_staticRoutesOnlyHasBeenSet = false;
 
     TunnelInsideIpVersion m_tunnelInsideIpVersion;
     bool m_tunnelInsideIpVersionHasBeenSet = false;
@@ -214,6 +211,9 @@ namespace Model
 
     Aws::String m_transportTransitGatewayAttachmentId;
     bool m_transportTransitGatewayAttachmentIdHasBeenSet = false;
+
+    bool m_staticRoutesOnly;
+    bool m_staticRoutesOnlyHasBeenSet = false;
   };
 
 } // namespace Model

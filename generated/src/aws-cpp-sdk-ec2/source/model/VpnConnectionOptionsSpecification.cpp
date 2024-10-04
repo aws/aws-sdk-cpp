@@ -23,8 +23,6 @@ namespace Model
 VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification() : 
     m_enableAcceleration(false),
     m_enableAccelerationHasBeenSet(false),
-    m_staticRoutesOnly(false),
-    m_staticRoutesOnlyHasBeenSet(false),
     m_tunnelInsideIpVersion(TunnelInsideIpVersion::NOT_SET),
     m_tunnelInsideIpVersionHasBeenSet(false),
     m_tunnelOptionsHasBeenSet(false),
@@ -33,7 +31,9 @@ VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification() :
     m_localIpv6NetworkCidrHasBeenSet(false),
     m_remoteIpv6NetworkCidrHasBeenSet(false),
     m_outsideIpAddressTypeHasBeenSet(false),
-    m_transportTransitGatewayAttachmentIdHasBeenSet(false)
+    m_transportTransitGatewayAttachmentIdHasBeenSet(false),
+    m_staticRoutesOnly(false),
+    m_staticRoutesOnlyHasBeenSet(false)
 {
 }
 
@@ -54,12 +54,6 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
     {
       m_enableAcceleration = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableAccelerationNode.GetText()).c_str()).c_str());
       m_enableAccelerationHasBeenSet = true;
-    }
-    XmlNode staticRoutesOnlyNode = resultNode.FirstChild("staticRoutesOnly");
-    if(!staticRoutesOnlyNode.IsNull())
-    {
-      m_staticRoutesOnly = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(staticRoutesOnlyNode.GetText()).c_str()).c_str());
-      m_staticRoutesOnlyHasBeenSet = true;
     }
     XmlNode tunnelInsideIpVersionNode = resultNode.FirstChild("TunnelInsideIpVersion");
     if(!tunnelInsideIpVersionNode.IsNull())
@@ -115,6 +109,12 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
       m_transportTransitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(transportTransitGatewayAttachmentIdNode.GetText());
       m_transportTransitGatewayAttachmentIdHasBeenSet = true;
     }
+    XmlNode staticRoutesOnlyNode = resultNode.FirstChild("staticRoutesOnly");
+    if(!staticRoutesOnlyNode.IsNull())
+    {
+      m_staticRoutesOnly = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(staticRoutesOnlyNode.GetText()).c_str()).c_str());
+      m_staticRoutesOnlyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -125,11 +125,6 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
   if(m_enableAccelerationHasBeenSet)
   {
       oStream << location << index << locationValue << ".EnableAcceleration=" << std::boolalpha << m_enableAcceleration << "&";
-  }
-
-  if(m_staticRoutesOnlyHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
   }
 
   if(m_tunnelInsideIpVersionHasBeenSet)
@@ -178,6 +173,11 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
       oStream << location << index << locationValue << ".TransportTransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transportTransitGatewayAttachmentId.c_str()) << "&";
   }
 
+  if(m_staticRoutesOnlyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
+  }
+
 }
 
 void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -185,10 +185,6 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
   if(m_enableAccelerationHasBeenSet)
   {
       oStream << location << ".EnableAcceleration=" << std::boolalpha << m_enableAcceleration << "&";
-  }
-  if(m_staticRoutesOnlyHasBeenSet)
-  {
-      oStream << location << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
   }
   if(m_tunnelInsideIpVersionHasBeenSet)
   {
@@ -227,6 +223,10 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
   if(m_transportTransitGatewayAttachmentIdHasBeenSet)
   {
       oStream << location << ".TransportTransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transportTransitGatewayAttachmentId.c_str()) << "&";
+  }
+  if(m_staticRoutesOnlyHasBeenSet)
+  {
+      oStream << location << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
   }
 }
 

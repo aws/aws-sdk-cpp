@@ -21,8 +21,6 @@ namespace Model
 {
 
 AvailabilityZone::AvailabilityZone() : 
-    m_state(AvailabilityZoneState::NOT_SET),
-    m_stateHasBeenSet(false),
     m_optInStatus(AvailabilityZoneOptInStatus::NOT_SET),
     m_optInStatusHasBeenSet(false),
     m_messagesHasBeenSet(false),
@@ -33,7 +31,9 @@ AvailabilityZone::AvailabilityZone() :
     m_networkBorderGroupHasBeenSet(false),
     m_zoneTypeHasBeenSet(false),
     m_parentZoneNameHasBeenSet(false),
-    m_parentZoneIdHasBeenSet(false)
+    m_parentZoneIdHasBeenSet(false),
+    m_state(AvailabilityZoneState::NOT_SET),
+    m_stateHasBeenSet(false)
 {
 }
 
@@ -49,12 +49,6 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode stateNode = resultNode.FirstChild("zoneState");
-    if(!stateNode.IsNull())
-    {
-      m_state = AvailabilityZoneStateMapper::GetAvailabilityZoneStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
-      m_stateHasBeenSet = true;
-    }
     XmlNode optInStatusNode = resultNode.FirstChild("optInStatus");
     if(!optInStatusNode.IsNull())
     {
@@ -121,6 +115,12 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
       m_parentZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(parentZoneIdNode.GetText());
       m_parentZoneIdHasBeenSet = true;
     }
+    XmlNode stateNode = resultNode.FirstChild("zoneState");
+    if(!stateNode.IsNull())
+    {
+      m_state = AvailabilityZoneStateMapper::GetAvailabilityZoneStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_stateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -128,11 +128,6 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state) << "&";
-  }
-
   if(m_optInStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".OptInStatus=" << AvailabilityZoneOptInStatusMapper::GetNameForAvailabilityZoneOptInStatus(m_optInStatus) << "&";
@@ -189,14 +184,15 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".ParentZoneId=" << StringUtils::URLEncode(m_parentZoneId.c_str()) << "&";
   }
 
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".State=" << AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state) << "&";
+  }
+
 }
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state) << "&";
-  }
   if(m_optInStatusHasBeenSet)
   {
       oStream << location << ".OptInStatus=" << AvailabilityZoneOptInStatusMapper::GetNameForAvailabilityZoneOptInStatus(m_optInStatus) << "&";
@@ -242,6 +238,10 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_parentZoneIdHasBeenSet)
   {
       oStream << location << ".ParentZoneId=" << StringUtils::URLEncode(m_parentZoneId.c_str()) << "&";
+  }
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << ".State=" << AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state) << "&";
   }
 }
 

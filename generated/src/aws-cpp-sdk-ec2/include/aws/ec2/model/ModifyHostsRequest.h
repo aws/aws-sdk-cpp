@@ -6,11 +6,11 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/ec2/model/AutoPlacement.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/HostRecovery.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/HostMaintenance.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/AutoPlacement.h>
 #include <utility>
 
 namespace Aws
@@ -39,33 +39,6 @@ namespace Model
     AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
-
-    ///@{
-    /**
-     * <p>Specify whether to enable or disable auto-placement.</p>
-     */
-    inline const AutoPlacement& GetAutoPlacement() const{ return m_autoPlacement; }
-    inline bool AutoPlacementHasBeenSet() const { return m_autoPlacementHasBeenSet; }
-    inline void SetAutoPlacement(const AutoPlacement& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
-    inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = std::move(value); }
-    inline ModifyHostsRequest& WithAutoPlacement(const AutoPlacement& value) { SetAutoPlacement(value); return *this;}
-    inline ModifyHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The IDs of the Dedicated Hosts to modify.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetHostIds() const{ return m_hostIds; }
-    inline bool HostIdsHasBeenSet() const { return m_hostIdsHasBeenSet; }
-    inline void SetHostIds(const Aws::Vector<Aws::String>& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
-    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = std::move(value); }
-    inline ModifyHostsRequest& WithHostIds(const Aws::Vector<Aws::String>& value) { SetHostIds(value); return *this;}
-    inline ModifyHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(std::move(value)); return *this;}
-    inline ModifyHostsRequest& AddHostIds(const Aws::String& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
-    inline ModifyHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(std::move(value)); return *this; }
-    inline ModifyHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
-    ///@}
 
     ///@{
     /**
@@ -134,13 +107,34 @@ namespace Model
     inline ModifyHostsRequest& WithHostMaintenance(const HostMaintenance& value) { SetHostMaintenance(value); return *this;}
     inline ModifyHostsRequest& WithHostMaintenance(HostMaintenance&& value) { SetHostMaintenance(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The IDs of the Dedicated Hosts to modify.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetHostIds() const{ return m_hostIds; }
+    inline bool HostIdsHasBeenSet() const { return m_hostIdsHasBeenSet; }
+    inline void SetHostIds(const Aws::Vector<Aws::String>& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
+    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = std::move(value); }
+    inline ModifyHostsRequest& WithHostIds(const Aws::Vector<Aws::String>& value) { SetHostIds(value); return *this;}
+    inline ModifyHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(std::move(value)); return *this;}
+    inline ModifyHostsRequest& AddHostIds(const Aws::String& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
+    inline ModifyHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(std::move(value)); return *this; }
+    inline ModifyHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specify whether to enable or disable auto-placement.</p>
+     */
+    inline const AutoPlacement& GetAutoPlacement() const{ return m_autoPlacement; }
+    inline bool AutoPlacementHasBeenSet() const { return m_autoPlacementHasBeenSet; }
+    inline void SetAutoPlacement(const AutoPlacement& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
+    inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = std::move(value); }
+    inline ModifyHostsRequest& WithAutoPlacement(const AutoPlacement& value) { SetAutoPlacement(value); return *this;}
+    inline ModifyHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
+    ///@}
   private:
-
-    AutoPlacement m_autoPlacement;
-    bool m_autoPlacementHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_hostIds;
-    bool m_hostIdsHasBeenSet = false;
 
     HostRecovery m_hostRecovery;
     bool m_hostRecoveryHasBeenSet = false;
@@ -153,6 +147,12 @@ namespace Model
 
     HostMaintenance m_hostMaintenance;
     bool m_hostMaintenanceHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_hostIds;
+    bool m_hostIdsHasBeenSet = false;
+
+    AutoPlacement m_autoPlacement;
+    bool m_autoPlacementHasBeenSet = false;
   };
 
 } // namespace Model

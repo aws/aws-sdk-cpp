@@ -49,6 +49,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time at which the output was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
+    inline GetConsoleOutputResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+    inline GetConsoleOutputResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The console output, base64-encoded. If you are using a command line tool, the
      * tool decodes the output for you.</p>
      */
@@ -59,17 +70,6 @@ namespace Model
     inline GetConsoleOutputResponse& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
     inline GetConsoleOutputResponse& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
     inline GetConsoleOutputResponse& WithOutput(const char* value) { SetOutput(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The time at which the output was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
-    inline GetConsoleOutputResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline GetConsoleOutputResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,9 +84,9 @@ namespace Model
 
     Aws::String m_instanceId;
 
-    Aws::String m_output;
-
     Aws::Utils::DateTime m_timestamp;
+
+    Aws::String m_output;
 
     ResponseMetadata m_responseMetadata;
   };

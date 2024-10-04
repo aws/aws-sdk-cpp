@@ -65,6 +65,105 @@ namespace Model
 
     ///@{
     /**
+     * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetImageIds() const{ return m_imageIds; }
+    inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
+    inline void SetImageIds(const Aws::Vector<Aws::String>& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
+    inline void SetImageIds(Aws::Vector<Aws::String>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::move(value); }
+    inline DescribeImagesRequest& WithImageIds(const Aws::Vector<Aws::String>& value) { SetImageIds(value); return *this;}
+    inline DescribeImagesRequest& WithImageIds(Aws::Vector<Aws::String>&& value) { SetImageIds(std::move(value)); return *this;}
+    inline DescribeImagesRequest& AddImageIds(const Aws::String& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
+    inline DescribeImagesRequest& AddImageIds(Aws::String&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
+    inline DescribeImagesRequest& AddImageIds(const char* value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Scopes the results to images with the specified owners. You can specify a
+     * combination of Amazon Web Services account IDs, <code>self</code>,
+     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
+     * parameter, the results include all images for which you have launch permissions,
+     * regardless of ownership.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
+    inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
+    inline void SetOwners(const Aws::Vector<Aws::String>& value) { m_ownersHasBeenSet = true; m_owners = value; }
+    inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
+    inline DescribeImagesRequest& WithOwners(const Aws::Vector<Aws::String>& value) { SetOwners(value); return *this;}
+    inline DescribeImagesRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
+    inline DescribeImagesRequest& AddOwners(const Aws::String& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
+    inline DescribeImagesRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
+    inline DescribeImagesRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to include deprecated AMIs.</p> <p>Default: No deprecated
+     * AMIs are included in the response.</p>  <p>If you are the AMI owner, all
+     * deprecated AMIs appear in the response regardless of what you specify for this
+     * parameter.</p> 
+     */
+    inline bool GetIncludeDeprecated() const{ return m_includeDeprecated; }
+    inline bool IncludeDeprecatedHasBeenSet() const { return m_includeDeprecatedHasBeenSet; }
+    inline void SetIncludeDeprecated(bool value) { m_includeDeprecatedHasBeenSet = true; m_includeDeprecated = value; }
+    inline DescribeImagesRequest& WithIncludeDeprecated(bool value) { SetIncludeDeprecated(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to include disabled AMIs.</p> <p>Default: No disabled AMIs
+     * are included in the response.</p>
+     */
+    inline bool GetIncludeDisabled() const{ return m_includeDisabled; }
+    inline bool IncludeDisabledHasBeenSet() const { return m_includeDisabledHasBeenSet; }
+    inline void SetIncludeDisabled(bool value) { m_includeDisabledHasBeenSet = true; m_includeDisabled = value; }
+    inline DescribeImagesRequest& WithIncludeDisabled(bool value) { SetIncludeDisabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of items to return for this request. To get the next page
+     * of items, make another request with the token returned in the output. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline DescribeImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The token returned from a previous paginated request. Pagination continues
+     * from the end of the items returned by the previous request.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+    inline DescribeImagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline DescribeImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline DescribeImagesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The filters.</p> <ul> <li> <p> <code>architecture</code> - The image
      * architecture (<code>i386</code> | <code>x86_64</code> | <code>arm64</code> |
      * <code>x86_64_mac</code> | <code>arm64_mac</code>).</p> </li> <li> <p>
@@ -144,112 +243,10 @@ namespace Model
     inline DescribeImagesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
     inline DescribeImagesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
     ///@}
-
-    ///@{
-    /**
-     * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetImageIds() const{ return m_imageIds; }
-    inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
-    inline void SetImageIds(const Aws::Vector<Aws::String>& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
-    inline void SetImageIds(Aws::Vector<Aws::String>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::move(value); }
-    inline DescribeImagesRequest& WithImageIds(const Aws::Vector<Aws::String>& value) { SetImageIds(value); return *this;}
-    inline DescribeImagesRequest& WithImageIds(Aws::Vector<Aws::String>&& value) { SetImageIds(std::move(value)); return *this;}
-    inline DescribeImagesRequest& AddImageIds(const Aws::String& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
-    inline DescribeImagesRequest& AddImageIds(Aws::String&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
-    inline DescribeImagesRequest& AddImageIds(const char* value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Scopes the results to images with the specified owners. You can specify a
-     * combination of Amazon Web Services account IDs, <code>self</code>,
-     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
-     * parameter, the results include all images for which you have launch permissions,
-     * regardless of ownership.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
-    inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
-    inline void SetOwners(const Aws::Vector<Aws::String>& value) { m_ownersHasBeenSet = true; m_owners = value; }
-    inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
-    inline DescribeImagesRequest& WithOwners(const Aws::Vector<Aws::String>& value) { SetOwners(value); return *this;}
-    inline DescribeImagesRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
-    inline DescribeImagesRequest& AddOwners(const Aws::String& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
-    inline DescribeImagesRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
-    inline DescribeImagesRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether to include deprecated AMIs.</p> <p>Default: No deprecated
-     * AMIs are included in the response.</p>  <p>If you are the AMI owner, all
-     * deprecated AMIs appear in the response regardless of what you specify for this
-     * parameter.</p> 
-     */
-    inline bool GetIncludeDeprecated() const{ return m_includeDeprecated; }
-    inline bool IncludeDeprecatedHasBeenSet() const { return m_includeDeprecatedHasBeenSet; }
-    inline void SetIncludeDeprecated(bool value) { m_includeDeprecatedHasBeenSet = true; m_includeDeprecated = value; }
-    inline DescribeImagesRequest& WithIncludeDeprecated(bool value) { SetIncludeDeprecated(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Specifies whether to include disabled AMIs.</p> <p>Default: No disabled AMIs
-     * are included in the response.</p>
-     */
-    inline bool GetIncludeDisabled() const{ return m_includeDisabled; }
-    inline bool IncludeDisabledHasBeenSet() const { return m_includeDisabledHasBeenSet; }
-    inline void SetIncludeDisabled(bool value) { m_includeDisabledHasBeenSet = true; m_includeDisabled = value; }
-    inline DescribeImagesRequest& WithIncludeDisabled(bool value) { SetIncludeDisabled(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline DescribeImagesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The maximum number of items to return for this request. To get the next page
-     * of items, make another request with the token returned in the output. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The token returned from a previous paginated request. Pagination continues
-     * from the end of the items returned by the previous request.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeImagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-    ///@}
   private:
 
     Aws::Vector<Aws::String> m_executableUsers;
     bool m_executableUsersHasBeenSet = false;
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_imageIds;
     bool m_imageIdsHasBeenSet = false;
@@ -263,14 +260,17 @@ namespace Model
     bool m_includeDisabled;
     bool m_includeDisabledHasBeenSet = false;
 
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
+
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

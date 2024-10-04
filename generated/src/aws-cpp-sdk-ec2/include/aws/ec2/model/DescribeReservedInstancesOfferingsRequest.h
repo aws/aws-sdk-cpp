@@ -7,10 +7,10 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/OfferingClassType.h>
 #include <aws/ec2/model/RIProductDescription.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/Tenancy.h>
 #include <aws/ec2/model/OfferingTypeValues.h>
 #include <aws/ec2/model/Filter.h>
@@ -59,43 +59,6 @@ namespace Model
     inline DescribeReservedInstancesOfferingsRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
     inline DescribeReservedInstancesOfferingsRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
     inline DescribeReservedInstancesOfferingsRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone where the Reserved Instance can be used.</p> </li> <li> <p>
-     * <code>duration</code> - The duration of the Reserved Instance (for example, one
-     * year or three years), in seconds (<code>31536000</code> |
-     * <code>94608000</code>).</p> </li> <li> <p> <code>fixed-price</code> - The
-     * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
-     * <p> <code>instance-type</code> - The instance type that is covered by the
-     * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
-     * <code>true</code> to show only Reserved Instance Marketplace offerings. When
-     * this filter is not used, which is the default behavior, all offerings from both
-     * Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
-     * <li> <p> <code>product-description</code> - The Reserved Instance product
-     * platform description (<code>Linux/UNIX</code> | <code>Linux with SQL Server
-     * Standard</code> | <code>Linux with SQL Server Web</code> | <code>Linux with SQL
-     * Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise
-     * Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
-     * <code>Windows</code> | <code>Windows with SQL Server Standard</code> |
-     * <code>Windows with SQL Server Web</code> | <code>Windows with SQL Server
-     * Enterprise</code>).</p> </li> <li> <p>
-     * <code>reserved-instances-offering-id</code> - The Reserved Instances offering
-     * ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved Instance
-     * (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li> <p>
-     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
-     * (for example, 0.84).</p> </li> </ul>
-     */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeReservedInstancesOfferingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeReservedInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -212,6 +175,43 @@ namespace Model
 
     ///@{
     /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone where the Reserved Instance can be used.</p> </li> <li> <p>
+     * <code>duration</code> - The duration of the Reserved Instance (for example, one
+     * year or three years), in seconds (<code>31536000</code> |
+     * <code>94608000</code>).</p> </li> <li> <p> <code>fixed-price</code> - The
+     * purchase price of the Reserved Instance (for example, 9800.0).</p> </li> <li>
+     * <p> <code>instance-type</code> - The instance type that is covered by the
+     * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
+     * <code>true</code> to show only Reserved Instance Marketplace offerings. When
+     * this filter is not used, which is the default behavior, all offerings from both
+     * Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
+     * <li> <p> <code>product-description</code> - The Reserved Instance product
+     * platform description (<code>Linux/UNIX</code> | <code>Linux with SQL Server
+     * Standard</code> | <code>Linux with SQL Server Web</code> | <code>Linux with SQL
+     * Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise
+     * Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
+     * <code>Windows</code> | <code>Windows with SQL Server Standard</code> |
+     * <code>Windows with SQL Server Web</code> | <code>Windows with SQL Server
+     * Enterprise</code>).</p> </li> <li> <p>
+     * <code>reserved-instances-offering-id</code> - The Reserved Instances offering
+     * ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved Instance
+     * (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
+     */
+    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+    inline DescribeReservedInstancesOfferingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+    inline DescribeReservedInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The tenancy of the instances covered by the reservation. A Reserved Instance
      * with a tenancy of <code>dedicated</code> is applied to instances that run in a
      * VPC on single-tenant hardware (i.e., Dedicated Instances).</p> <p>
@@ -229,15 +229,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results of the initial request can be seen by sending another request
-     * with the returned <code>NextToken</code> value. The maximum is 100.</p>
-     * <p>Default: 100</p>
+     * <p>The Reserved Instance offering type. If you are using tools that predate the
+     * 2011-11-01 API version, you only have access to the <code>Medium
+     * Utilization</code> Reserved Instance offering type. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline DescribeReservedInstancesOfferingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline const OfferingTypeValues& GetOfferingType() const{ return m_offeringType; }
+    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
+    inline void SetOfferingType(const OfferingTypeValues& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+    inline void SetOfferingType(OfferingTypeValues&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
+    inline DescribeReservedInstancesOfferingsRequest& WithOfferingType(const OfferingTypeValues& value) { SetOfferingType(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -256,24 +257,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Reserved Instance offering type. If you are using tools that predate the
-     * 2011-11-01 API version, you only have access to the <code>Medium
-     * Utilization</code> Reserved Instance offering type. </p>
+     * <p>The maximum number of results to return for the request in a single page. The
+     * remaining results of the initial request can be seen by sending another request
+     * with the returned <code>NextToken</code> value. The maximum is 100.</p>
+     * <p>Default: 100</p>
      */
-    inline const OfferingTypeValues& GetOfferingType() const{ return m_offeringType; }
-    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
-    inline void SetOfferingType(const OfferingTypeValues& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
-    inline void SetOfferingType(OfferingTypeValues&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
-    inline DescribeReservedInstancesOfferingsRequest& WithOfferingType(const OfferingTypeValues& value) { SetOfferingType(value); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline DescribeReservedInstancesOfferingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
-
-    Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet = false;
 
     bool m_includeMarketplace;
     bool m_includeMarketplaceHasBeenSet = false;
@@ -302,17 +299,20 @@ namespace Model
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
+    Aws::Vector<Filter> m_filters;
+    bool m_filtersHasBeenSet = false;
+
     Tenancy m_instanceTenancy;
     bool m_instanceTenancyHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    OfferingTypeValues m_offeringType;
+    bool m_offeringTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    OfferingTypeValues m_offeringType;
-    bool m_offeringTypeHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

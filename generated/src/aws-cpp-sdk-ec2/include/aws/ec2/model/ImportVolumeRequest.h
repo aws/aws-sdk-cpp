@@ -40,6 +40,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline ImportVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Availability Zone for the resulting EBS volume.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
@@ -50,6 +63,18 @@ namespace Model
     inline ImportVolumeRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
     inline ImportVolumeRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
     inline ImportVolumeRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The disk image.</p>
+     */
+    inline const DiskImageDetail& GetImage() const{ return m_image; }
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+    inline void SetImage(const DiskImageDetail& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(DiskImageDetail&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
+    inline ImportVolumeRequest& WithImage(const DiskImageDetail& value) { SetImage(value); return *this;}
+    inline ImportVolumeRequest& WithImage(DiskImageDetail&& value) { SetImage(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,31 +93,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline ImportVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The disk image.</p>
-     */
-    inline const DiskImageDetail& GetImage() const{ return m_image; }
-    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const DiskImageDetail& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(DiskImageDetail&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline ImportVolumeRequest& WithImage(const DiskImageDetail& value) { SetImage(value); return *this;}
-    inline ImportVolumeRequest& WithImage(DiskImageDetail&& value) { SetImage(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The volume size.</p>
      */
     inline const VolumeDetail& GetVolume() const{ return m_volume; }
@@ -104,17 +104,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet = false;
+
     DiskImageDetail m_image;
     bool m_imageHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     VolumeDetail m_volume;
     bool m_volumeHasBeenSet = false;

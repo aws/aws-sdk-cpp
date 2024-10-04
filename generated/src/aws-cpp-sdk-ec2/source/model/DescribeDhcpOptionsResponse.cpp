@@ -38,6 +38,11 @@ DescribeDhcpOptionsResponse& DescribeDhcpOptionsResponse::operator =(const Aws::
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
     XmlNode dhcpOptionsNode = resultNode.FirstChild("dhcpOptionsSet");
     if(!dhcpOptionsNode.IsNull())
     {
@@ -48,11 +53,6 @@ DescribeDhcpOptionsResponse& DescribeDhcpOptionsResponse::operator =(const Aws::
         dhcpOptionsMember = dhcpOptionsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

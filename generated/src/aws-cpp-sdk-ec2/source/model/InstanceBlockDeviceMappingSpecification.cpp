@@ -23,8 +23,8 @@ namespace Model
 InstanceBlockDeviceMappingSpecification::InstanceBlockDeviceMappingSpecification() : 
     m_deviceNameHasBeenSet(false),
     m_ebsHasBeenSet(false),
-    m_noDeviceHasBeenSet(false),
-    m_virtualNameHasBeenSet(false)
+    m_virtualNameHasBeenSet(false),
+    m_noDeviceHasBeenSet(false)
 {
 }
 
@@ -52,17 +52,17 @@ InstanceBlockDeviceMappingSpecification& InstanceBlockDeviceMappingSpecification
       m_ebs = ebsNode;
       m_ebsHasBeenSet = true;
     }
-    XmlNode noDeviceNode = resultNode.FirstChild("noDevice");
-    if(!noDeviceNode.IsNull())
-    {
-      m_noDevice = Aws::Utils::Xml::DecodeEscapedXmlText(noDeviceNode.GetText());
-      m_noDeviceHasBeenSet = true;
-    }
     XmlNode virtualNameNode = resultNode.FirstChild("virtualName");
     if(!virtualNameNode.IsNull())
     {
       m_virtualName = Aws::Utils::Xml::DecodeEscapedXmlText(virtualNameNode.GetText());
       m_virtualNameHasBeenSet = true;
+    }
+    XmlNode noDeviceNode = resultNode.FirstChild("noDevice");
+    if(!noDeviceNode.IsNull())
+    {
+      m_noDevice = Aws::Utils::Xml::DecodeEscapedXmlText(noDeviceNode.GetText());
+      m_noDeviceHasBeenSet = true;
     }
   }
 
@@ -83,14 +83,14 @@ void InstanceBlockDeviceMappingSpecification::OutputToStream(Aws::OStream& oStre
       m_ebs.OutputToStream(oStream, ebsLocationAndMemberSs.str().c_str());
   }
 
-  if(m_noDeviceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".NoDevice=" << StringUtils::URLEncode(m_noDevice.c_str()) << "&";
-  }
-
   if(m_virtualNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
+  }
+
+  if(m_noDeviceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NoDevice=" << StringUtils::URLEncode(m_noDevice.c_str()) << "&";
   }
 
 }
@@ -107,13 +107,13 @@ void InstanceBlockDeviceMappingSpecification::OutputToStream(Aws::OStream& oStre
       ebsLocationAndMember += ".Ebs";
       m_ebs.OutputToStream(oStream, ebsLocationAndMember.c_str());
   }
-  if(m_noDeviceHasBeenSet)
-  {
-      oStream << location << ".NoDevice=" << StringUtils::URLEncode(m_noDevice.c_str()) << "&";
-  }
   if(m_virtualNameHasBeenSet)
   {
       oStream << location << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
+  }
+  if(m_noDeviceHasBeenSet)
+  {
+      oStream << location << ".NoDevice=" << StringUtils::URLEncode(m_noDevice.c_str()) << "&";
   }
 }
 

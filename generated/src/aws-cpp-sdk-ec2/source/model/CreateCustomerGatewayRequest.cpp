@@ -20,10 +20,10 @@ CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() :
     m_tagSpecificationsHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
     m_bgpAsnExtended(0),
-    m_bgpAsnExtendedHasBeenSet(false)
+    m_bgpAsnExtendedHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -71,14 +71,14 @@ Aws::String CreateCustomerGatewayRequest::SerializePayload() const
     ss << "IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
   }
 
-  if(m_dryRunHasBeenSet)
-  {
-    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
   if(m_bgpAsnExtendedHasBeenSet)
   {
     ss << "BgpAsnExtended=" << m_bgpAsnExtended << "&";
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
   ss << "Version=2016-11-15";

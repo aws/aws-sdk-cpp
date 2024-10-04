@@ -176,19 +176,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline ModifyImageAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Amazon Resource Name (ARN) of an organization. This parameter can be used
      * only when the <code>Attribute</code> parameter is
      * <code>launchPermission</code>.</p>
@@ -242,6 +229,19 @@ namespace Model
     inline ModifyImageAttributeRequest& WithImdsSupport(const AttributeValue& value) { SetImdsSupport(value); return *this;}
     inline ModifyImageAttributeRequest& WithImdsSupport(AttributeValue&& value) { SetImdsSupport(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline ModifyImageAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_attribute;
@@ -271,9 +271,6 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
     Aws::Vector<Aws::String> m_organizationArns;
     bool m_organizationArnsHasBeenSet = false;
 
@@ -282,6 +279,9 @@ namespace Model
 
     AttributeValue m_imdsSupport;
     bool m_imdsSupportHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

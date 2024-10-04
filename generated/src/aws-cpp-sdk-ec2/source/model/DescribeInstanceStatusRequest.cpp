@@ -11,13 +11,13 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeInstanceStatusRequest::DescribeInstanceStatusRequest() : 
-    m_filtersHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_includeAllInstances(false),
     m_includeAllInstancesHasBeenSet(false)
 {
@@ -27,16 +27,6 @@ Aws::String DescribeInstanceStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeInstanceStatus&";
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
-  }
-
   if(m_instanceIdsHasBeenSet)
   {
     unsigned instanceIdsCount = 1;
@@ -61,6 +51,16 @@ Aws::String DescribeInstanceStatusRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   if(m_includeAllInstancesHasBeenSet)

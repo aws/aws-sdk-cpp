@@ -7,8 +7,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ImportInstanceLaunchSpecification.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/PlatformValues.h>
 #include <aws/ec2/model/DiskImage.h>
 #include <utility>
@@ -42,6 +42,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline ImportInstanceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A description for the instance being imported.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -52,6 +65,18 @@ namespace Model
     inline ImportInstanceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
     inline ImportInstanceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline ImportInstanceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The launch specification.</p>
+     */
+    inline const ImportInstanceLaunchSpecification& GetLaunchSpecification() const{ return m_launchSpecification; }
+    inline bool LaunchSpecificationHasBeenSet() const { return m_launchSpecificationHasBeenSet; }
+    inline void SetLaunchSpecification(const ImportInstanceLaunchSpecification& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
+    inline void SetLaunchSpecification(ImportInstanceLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = std::move(value); }
+    inline ImportInstanceRequest& WithLaunchSpecification(const ImportInstanceLaunchSpecification& value) { SetLaunchSpecification(value); return *this;}
+    inline ImportInstanceRequest& WithLaunchSpecification(ImportInstanceLaunchSpecification&& value) { SetLaunchSpecification(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,31 +95,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline ImportInstanceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The launch specification.</p>
-     */
-    inline const ImportInstanceLaunchSpecification& GetLaunchSpecification() const{ return m_launchSpecification; }
-    inline bool LaunchSpecificationHasBeenSet() const { return m_launchSpecificationHasBeenSet; }
-    inline void SetLaunchSpecification(const ImportInstanceLaunchSpecification& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
-    inline void SetLaunchSpecification(ImportInstanceLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = std::move(value); }
-    inline ImportInstanceRequest& WithLaunchSpecification(const ImportInstanceLaunchSpecification& value) { SetLaunchSpecification(value); return *this;}
-    inline ImportInstanceRequest& WithLaunchSpecification(ImportInstanceLaunchSpecification&& value) { SetLaunchSpecification(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The instance operating system.</p>
      */
     inline const PlatformValues& GetPlatform() const{ return m_platform; }
@@ -106,17 +106,17 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::Vector<DiskImage> m_diskImages;
-    bool m_diskImagesHasBeenSet = false;
-
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
     ImportInstanceLaunchSpecification m_launchSpecification;
     bool m_launchSpecificationHasBeenSet = false;
+
+    Aws::Vector<DiskImage> m_diskImages;
+    bool m_diskImagesHasBeenSet = false;
 
     PlatformValues m_platform;
     bool m_platformHasBeenSet = false;

@@ -41,22 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IPv4 address range. You can either specify a CIDR block or a source
-     * security group, not both. To specify a single IPv4 address, use the /32 prefix
-     * length.</p>
-     */
-    inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
-    inline bool CidrIpHasBeenSet() const { return m_cidrIpHasBeenSet; }
-    inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
-    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
-    inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
-    inline IpRange& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
-    inline IpRange& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
-    inline IpRange& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>A description for the security group rule that references this IPv4 address
      * range.</p> <p>Constraints: Up to 255 characters in length. Allowed characters
      * are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
@@ -70,13 +54,29 @@ namespace Model
     inline IpRange& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline IpRange& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
-  private:
 
-    Aws::String m_cidrIp;
-    bool m_cidrIpHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The IPv4 address range. You can either specify a CIDR block or a source
+     * security group, not both. To specify a single IPv4 address, use the /32 prefix
+     * length.</p>
+     */
+    inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
+    inline bool CidrIpHasBeenSet() const { return m_cidrIpHasBeenSet; }
+    inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
+    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
+    inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
+    inline IpRange& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
+    inline IpRange& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
+    inline IpRange& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_cidrIp;
+    bool m_cidrIpHasBeenSet = false;
   };
 
 } // namespace Model

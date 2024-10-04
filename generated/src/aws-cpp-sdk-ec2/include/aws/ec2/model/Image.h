@@ -6,12 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/ec2/model/ArchitectureValues.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ec2/model/ImageTypeValues.h>
-#include <aws/ec2/model/PlatformValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/ImageState.h>
 #include <aws/ec2/model/HypervisorType.h>
 #include <aws/ec2/model/DeviceType.h>
 #include <aws/ec2/model/StateReason.h>
@@ -19,9 +15,13 @@
 #include <aws/ec2/model/BootModeValues.h>
 #include <aws/ec2/model/TpmSupportValues.h>
 #include <aws/ec2/model/ImdsSupportValues.h>
-#include <aws/ec2/model/ProductCode.h>
+#include <aws/ec2/model/ImageState.h>
+#include <aws/ec2/model/ArchitectureValues.h>
+#include <aws/ec2/model/ImageTypeValues.h>
+#include <aws/ec2/model/PlatformValues.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/ProductCode.h>
 #include <utility>
 
 namespace Aws
@@ -53,126 +53,6 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
-
-    ///@{
-    /**
-     * <p>The architecture of the image.</p>
-     */
-    inline const ArchitectureValues& GetArchitecture() const{ return m_architecture; }
-    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    inline void SetArchitecture(const ArchitectureValues& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-    inline void SetArchitecture(ArchitectureValues&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-    inline Image& WithArchitecture(const ArchitectureValues& value) { SetArchitecture(value); return *this;}
-    inline Image& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The date and time the image was created.</p>
-     */
-    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
-    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
-    inline Image& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-    inline Image& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
-    inline Image& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the AMI.</p>
-     */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
-    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline Image& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline Image& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline Image& WithImageId(const char* value) { SetImageId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The location of the AMI.</p>
-     */
-    inline const Aws::String& GetImageLocation() const{ return m_imageLocation; }
-    inline bool ImageLocationHasBeenSet() const { return m_imageLocationHasBeenSet; }
-    inline void SetImageLocation(const Aws::String& value) { m_imageLocationHasBeenSet = true; m_imageLocation = value; }
-    inline void SetImageLocation(Aws::String&& value) { m_imageLocationHasBeenSet = true; m_imageLocation = std::move(value); }
-    inline void SetImageLocation(const char* value) { m_imageLocationHasBeenSet = true; m_imageLocation.assign(value); }
-    inline Image& WithImageLocation(const Aws::String& value) { SetImageLocation(value); return *this;}
-    inline Image& WithImageLocation(Aws::String&& value) { SetImageLocation(std::move(value)); return *this;}
-    inline Image& WithImageLocation(const char* value) { SetImageLocation(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The type of image.</p>
-     */
-    inline const ImageTypeValues& GetImageType() const{ return m_imageType; }
-    inline bool ImageTypeHasBeenSet() const { return m_imageTypeHasBeenSet; }
-    inline void SetImageType(const ImageTypeValues& value) { m_imageTypeHasBeenSet = true; m_imageType = value; }
-    inline void SetImageType(ImageTypeValues&& value) { m_imageTypeHasBeenSet = true; m_imageType = std::move(value); }
-    inline Image& WithImageType(const ImageTypeValues& value) { SetImageType(value); return *this;}
-    inline Image& WithImageType(ImageTypeValues&& value) { SetImageType(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates whether the image has public launch permissions. The value is
-     * <code>true</code> if this image has public launch permissions or
-     * <code>false</code> if it has only implicit and explicit launch permissions.</p>
-     */
-    inline bool GetPublic() const{ return m_public; }
-    inline bool PublicHasBeenSet() const { return m_publicHasBeenSet; }
-    inline void SetPublic(bool value) { m_publicHasBeenSet = true; m_public = value; }
-    inline Image& WithPublic(bool value) { SetPublic(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The kernel associated with the image, if any. Only applicable for machine
-     * images.</p>
-     */
-    inline const Aws::String& GetKernelId() const{ return m_kernelId; }
-    inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
-    inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
-    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
-    inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
-    inline Image& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
-    inline Image& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
-    inline Image& WithKernelId(const char* value) { SetKernelId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the Amazon Web Services account that owns the image.</p>
-     */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
-    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline Image& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline Image& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline Image& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>This value is set to <code>windows</code> for Windows AMIs; otherwise, it is
-     * blank.</p>
-     */
-    inline const PlatformValues& GetPlatform() const{ return m_platform; }
-    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const PlatformValues& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(PlatformValues&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline Image& WithPlatform(const PlatformValues& value) { SetPlatform(value); return *this;}
-    inline Image& WithPlatform(PlatformValues&& value) { SetPlatform(std::move(value)); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -214,48 +94,6 @@ namespace Model
     inline Image& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
     inline Image& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
     inline Image& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Any product codes associated with the AMI.</p>
-     */
-    inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
-    inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
-    inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
-    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
-    inline Image& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
-    inline Image& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
-    inline Image& AddProductCodes(const ProductCode& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
-    inline Image& AddProductCodes(ProductCode&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The RAM disk associated with the image, if any. Only applicable for machine
-     * images.</p>
-     */
-    inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
-    inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
-    inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
-    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
-    inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
-    inline Image& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
-    inline Image& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
-    inline Image& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The current state of the AMI. If the state is <code>available</code>, the
-     * image is successfully registered and can be used to launch an instance.</p>
-     */
-    inline const ImageState& GetState() const{ return m_state; }
-    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ImageState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ImageState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Image& WithState(const ImageState& value) { SetState(value); return *this;}
-    inline Image& WithState(ImageState&& value) { SetState(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -530,49 +368,175 @@ namespace Model
     inline Image& WithLastLaunchedTime(Aws::String&& value) { SetLastLaunchedTime(std::move(value)); return *this;}
     inline Image& WithLastLaunchedTime(const char* value) { SetLastLaunchedTime(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the AMI.</p>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
+    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
+    inline Image& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+    inline Image& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+    inline Image& WithImageId(const char* value) { SetImageId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The location of the AMI.</p>
+     */
+    inline const Aws::String& GetImageLocation() const{ return m_imageLocation; }
+    inline bool ImageLocationHasBeenSet() const { return m_imageLocationHasBeenSet; }
+    inline void SetImageLocation(const Aws::String& value) { m_imageLocationHasBeenSet = true; m_imageLocation = value; }
+    inline void SetImageLocation(Aws::String&& value) { m_imageLocationHasBeenSet = true; m_imageLocation = std::move(value); }
+    inline void SetImageLocation(const char* value) { m_imageLocationHasBeenSet = true; m_imageLocation.assign(value); }
+    inline Image& WithImageLocation(const Aws::String& value) { SetImageLocation(value); return *this;}
+    inline Image& WithImageLocation(Aws::String&& value) { SetImageLocation(std::move(value)); return *this;}
+    inline Image& WithImageLocation(const char* value) { SetImageLocation(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The current state of the AMI. If the state is <code>available</code>, the
+     * image is successfully registered and can be used to launch an instance.</p>
+     */
+    inline const ImageState& GetState() const{ return m_state; }
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+    inline void SetState(const ImageState& value) { m_stateHasBeenSet = true; m_state = value; }
+    inline void SetState(ImageState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+    inline Image& WithState(const ImageState& value) { SetState(value); return *this;}
+    inline Image& WithState(ImageState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the image.</p>
+     */
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+    inline Image& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+    inline Image& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+    inline Image& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The date and time the image was created.</p>
+     */
+    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
+    inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
+    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
+    inline Image& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
+    inline Image& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
+    inline Image& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether the image has public launch permissions. The value is
+     * <code>true</code> if this image has public launch permissions or
+     * <code>false</code> if it has only implicit and explicit launch permissions.</p>
+     */
+    inline bool GetPublic() const{ return m_public; }
+    inline bool PublicHasBeenSet() const { return m_publicHasBeenSet; }
+    inline void SetPublic(bool value) { m_publicHasBeenSet = true; m_public = value; }
+    inline Image& WithPublic(bool value) { SetPublic(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Any product codes associated with the AMI.</p>
+     */
+    inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
+    inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
+    inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
+    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
+    inline Image& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
+    inline Image& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
+    inline Image& AddProductCodes(const ProductCode& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
+    inline Image& AddProductCodes(ProductCode&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The architecture of the image.</p>
+     */
+    inline const ArchitectureValues& GetArchitecture() const{ return m_architecture; }
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+    inline void SetArchitecture(const ArchitectureValues& value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline void SetArchitecture(ArchitectureValues&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
+    inline Image& WithArchitecture(const ArchitectureValues& value) { SetArchitecture(value); return *this;}
+    inline Image& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of image.</p>
+     */
+    inline const ImageTypeValues& GetImageType() const{ return m_imageType; }
+    inline bool ImageTypeHasBeenSet() const { return m_imageTypeHasBeenSet; }
+    inline void SetImageType(const ImageTypeValues& value) { m_imageTypeHasBeenSet = true; m_imageType = value; }
+    inline void SetImageType(ImageTypeValues&& value) { m_imageTypeHasBeenSet = true; m_imageType = std::move(value); }
+    inline Image& WithImageType(const ImageTypeValues& value) { SetImageType(value); return *this;}
+    inline Image& WithImageType(ImageTypeValues&& value) { SetImageType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The kernel associated with the image, if any. Only applicable for machine
+     * images.</p>
+     */
+    inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+    inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
+    inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
+    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
+    inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
+    inline Image& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
+    inline Image& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
+    inline Image& WithKernelId(const char* value) { SetKernelId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The RAM disk associated with the image, if any. Only applicable for machine
+     * images.</p>
+     */
+    inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
+    inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
+    inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
+    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
+    inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
+    inline Image& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
+    inline Image& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
+    inline Image& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>This value is set to <code>windows</code> for Windows AMIs; otherwise, it is
+     * blank.</p>
+     */
+    inline const PlatformValues& GetPlatform() const{ return m_platform; }
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+    inline void SetPlatform(const PlatformValues& value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline void SetPlatform(PlatformValues&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
+    inline Image& WithPlatform(const PlatformValues& value) { SetPlatform(value); return *this;}
+    inline Image& WithPlatform(PlatformValues&& value) { SetPlatform(std::move(value)); return *this;}
+    ///@}
   private:
-
-    ArchitectureValues m_architecture;
-    bool m_architectureHasBeenSet = false;
-
-    Aws::String m_creationDate;
-    bool m_creationDateHasBeenSet = false;
-
-    Aws::String m_imageId;
-    bool m_imageIdHasBeenSet = false;
-
-    Aws::String m_imageLocation;
-    bool m_imageLocationHasBeenSet = false;
-
-    ImageTypeValues m_imageType;
-    bool m_imageTypeHasBeenSet = false;
-
-    bool m_public;
-    bool m_publicHasBeenSet = false;
-
-    Aws::String m_kernelId;
-    bool m_kernelIdHasBeenSet = false;
-
-    Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet = false;
-
-    PlatformValues m_platform;
-    bool m_platformHasBeenSet = false;
 
     Aws::String m_platformDetails;
     bool m_platformDetailsHasBeenSet = false;
 
     Aws::String m_usageOperation;
     bool m_usageOperationHasBeenSet = false;
-
-    Aws::Vector<ProductCode> m_productCodes;
-    bool m_productCodesHasBeenSet = false;
-
-    Aws::String m_ramdiskId;
-    bool m_ramdiskIdHasBeenSet = false;
-
-    ImageState m_state;
-    bool m_stateHasBeenSet = false;
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
     bool m_blockDeviceMappingsHasBeenSet = false;
@@ -630,6 +594,42 @@ namespace Model
 
     Aws::String m_lastLaunchedTime;
     bool m_lastLaunchedTimeHasBeenSet = false;
+
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet = false;
+
+    Aws::String m_imageLocation;
+    bool m_imageLocationHasBeenSet = false;
+
+    ImageState m_state;
+    bool m_stateHasBeenSet = false;
+
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet = false;
+
+    Aws::String m_creationDate;
+    bool m_creationDateHasBeenSet = false;
+
+    bool m_public;
+    bool m_publicHasBeenSet = false;
+
+    Aws::Vector<ProductCode> m_productCodes;
+    bool m_productCodesHasBeenSet = false;
+
+    ArchitectureValues m_architecture;
+    bool m_architectureHasBeenSet = false;
+
+    ImageTypeValues m_imageType;
+    bool m_imageTypeHasBeenSet = false;
+
+    Aws::String m_kernelId;
+    bool m_kernelIdHasBeenSet = false;
+
+    Aws::String m_ramdiskId;
+    bool m_ramdiskIdHasBeenSet = false;
+
+    PlatformValues m_platform;
+    bool m_platformHasBeenSet = false;
   };
 
 } // namespace Model

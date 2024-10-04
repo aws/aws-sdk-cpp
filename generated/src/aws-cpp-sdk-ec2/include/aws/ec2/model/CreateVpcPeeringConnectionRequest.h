@@ -40,64 +40,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline CreateVpcPeeringConnectionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
-     * <p>Default: Your Amazon Web Services account ID</p>
-     */
-    inline const Aws::String& GetPeerOwnerId() const{ return m_peerOwnerId; }
-    inline bool PeerOwnerIdHasBeenSet() const { return m_peerOwnerIdHasBeenSet; }
-    inline void SetPeerOwnerId(const Aws::String& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = value; }
-    inline void SetPeerOwnerId(Aws::String&& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = std::move(value); }
-    inline void SetPeerOwnerId(const char* value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId.assign(value); }
-    inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const Aws::String& value) { SetPeerOwnerId(value); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(Aws::String&& value) { SetPeerOwnerId(std::move(value)); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const char* value) { SetPeerOwnerId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the VPC with which you are creating the VPC peering connection. You
-     * must specify this parameter in the request.</p>
-     */
-    inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
-    inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
-    inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
-    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
-    inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the requester VPC. You must specify this parameter in the
-     * request.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline CreateVpcPeeringConnectionRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline CreateVpcPeeringConnectionRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The Region code for the accepter VPC, if the accepter VPC is located in a
      * Region other than the Region in which you make the request.</p> <p>Default: The
      * Region in which you make the request.</p>
@@ -125,25 +67,83 @@ namespace Model
     inline CreateVpcPeeringConnectionRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
     inline CreateVpcPeeringConnectionRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline CreateVpcPeeringConnectionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the requester VPC. You must specify this parameter in the
+     * request.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+    inline CreateVpcPeeringConnectionRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+    inline CreateVpcPeeringConnectionRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+    inline CreateVpcPeeringConnectionRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the VPC with which you are creating the VPC peering connection. You
+     * must specify this parameter in the request.</p>
+     */
+    inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
+    inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
+    inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
+    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
+    inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
+    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
+    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
+    inline CreateVpcPeeringConnectionRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
+     */
+    inline const Aws::String& GetPeerOwnerId() const{ return m_peerOwnerId; }
+    inline bool PeerOwnerIdHasBeenSet() const { return m_peerOwnerIdHasBeenSet; }
+    inline void SetPeerOwnerId(const Aws::String& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = value; }
+    inline void SetPeerOwnerId(Aws::String&& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = std::move(value); }
+    inline void SetPeerOwnerId(const char* value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId.assign(value); }
+    inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const Aws::String& value) { SetPeerOwnerId(value); return *this;}
+    inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(Aws::String&& value) { SetPeerOwnerId(std::move(value)); return *this;}
+    inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const char* value) { SetPeerOwnerId(value); return *this;}
+    ///@}
   private:
-
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
-    Aws::String m_peerOwnerId;
-    bool m_peerOwnerIdHasBeenSet = false;
-
-    Aws::String m_peerVpcId;
-    bool m_peerVpcIdHasBeenSet = false;
-
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_peerRegion;
     bool m_peerRegionHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
+
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet = false;
+
+    Aws::String m_peerVpcId;
+    bool m_peerVpcIdHasBeenSet = false;
+
+    Aws::String m_peerOwnerId;
+    bool m_peerOwnerIdHasBeenSet = false;
   };
 
 } // namespace Model

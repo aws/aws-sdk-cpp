@@ -38,6 +38,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline ReplaceNetworkAclAssociationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the current association between the original network ACL and the
      * subnet.</p>
      */
@@ -49,19 +62,6 @@ namespace Model
     inline ReplaceNetworkAclAssociationRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
     inline ReplaceNetworkAclAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
     inline ReplaceNetworkAclAssociationRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline ReplaceNetworkAclAssociationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
 
     ///@{
@@ -79,11 +79,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_associationId;
-    bool m_associationIdHasBeenSet = false;
-
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    Aws::String m_associationId;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet = false;

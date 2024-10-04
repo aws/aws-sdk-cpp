@@ -21,10 +21,10 @@ namespace Model
 {
 
 DhcpOptions::DhcpOptions() : 
-    m_dhcpConfigurationsHasBeenSet(false),
-    m_dhcpOptionsIdHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dhcpOptionsIdHasBeenSet(false),
+    m_dhcpConfigurationsHasBeenSet(false)
 {
 }
 
@@ -40,24 +40,6 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode dhcpConfigurationsNode = resultNode.FirstChild("dhcpConfigurationSet");
-    if(!dhcpConfigurationsNode.IsNull())
-    {
-      XmlNode dhcpConfigurationsMember = dhcpConfigurationsNode.FirstChild("item");
-      while(!dhcpConfigurationsMember.IsNull())
-      {
-        m_dhcpConfigurations.push_back(dhcpConfigurationsMember);
-        dhcpConfigurationsMember = dhcpConfigurationsMember.NextNode("item");
-      }
-
-      m_dhcpConfigurationsHasBeenSet = true;
-    }
-    XmlNode dhcpOptionsIdNode = resultNode.FirstChild("dhcpOptionsId");
-    if(!dhcpOptionsIdNode.IsNull())
-    {
-      m_dhcpOptionsId = Aws::Utils::Xml::DecodeEscapedXmlText(dhcpOptionsIdNode.GetText());
-      m_dhcpOptionsIdHasBeenSet = true;
-    }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
@@ -76,6 +58,24 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode dhcpOptionsIdNode = resultNode.FirstChild("dhcpOptionsId");
+    if(!dhcpOptionsIdNode.IsNull())
+    {
+      m_dhcpOptionsId = Aws::Utils::Xml::DecodeEscapedXmlText(dhcpOptionsIdNode.GetText());
+      m_dhcpOptionsIdHasBeenSet = true;
+    }
+    XmlNode dhcpConfigurationsNode = resultNode.FirstChild("dhcpConfigurationSet");
+    if(!dhcpConfigurationsNode.IsNull())
+    {
+      XmlNode dhcpConfigurationsMember = dhcpConfigurationsNode.FirstChild("item");
+      while(!dhcpConfigurationsMember.IsNull())
+      {
+        m_dhcpConfigurations.push_back(dhcpConfigurationsMember);
+        dhcpConfigurationsMember = dhcpConfigurationsMember.NextNode("item");
+      }
+
+      m_dhcpConfigurationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -83,22 +83,6 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
 
 void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_dhcpConfigurationsHasBeenSet)
-  {
-      unsigned dhcpConfigurationsIdx = 1;
-      for(auto& item : m_dhcpConfigurations)
-      {
-        Aws::StringStream dhcpConfigurationsSs;
-        dhcpConfigurationsSs << location << index << locationValue << ".DhcpConfigurationSet." << dhcpConfigurationsIdx++;
-        item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
-      }
-  }
-
-  if(m_dhcpOptionsIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
-  }
-
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
@@ -115,24 +99,26 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location, un
       }
   }
 
-}
+  if(m_dhcpOptionsIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
+  }
 
-void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
   if(m_dhcpConfigurationsHasBeenSet)
   {
       unsigned dhcpConfigurationsIdx = 1;
       for(auto& item : m_dhcpConfigurations)
       {
         Aws::StringStream dhcpConfigurationsSs;
-        dhcpConfigurationsSs << location <<  ".DhcpConfigurationSet." << dhcpConfigurationsIdx++;
+        dhcpConfigurationsSs << location << index << locationValue << ".DhcpConfigurationSet." << dhcpConfigurationsIdx++;
         item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
       }
   }
-  if(m_dhcpOptionsIdHasBeenSet)
-  {
-      oStream << location << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
-  }
+
+}
+
+void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
@@ -145,6 +131,20 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location) co
         Aws::StringStream tagsSs;
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+  if(m_dhcpOptionsIdHasBeenSet)
+  {
+      oStream << location << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
+  }
+  if(m_dhcpConfigurationsHasBeenSet)
+  {
+      unsigned dhcpConfigurationsIdx = 1;
+      for(auto& item : m_dhcpConfigurations)
+      {
+        Aws::StringStream dhcpConfigurationsSs;
+        dhcpConfigurationsSs << location <<  ".DhcpConfigurationSet." << dhcpConfigurationsIdx++;
+        item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
       }
   }
 }

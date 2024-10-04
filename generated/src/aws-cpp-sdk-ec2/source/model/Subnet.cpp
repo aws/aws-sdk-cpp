@@ -21,24 +21,12 @@ namespace Model
 {
 
 Subnet::Subnet() : 
-    m_availabilityZoneHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_availableIpAddressCount(0),
-    m_availableIpAddressCountHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_defaultForAz(false),
-    m_defaultForAzHasBeenSet(false),
     m_enableLniAtDeviceIndex(0),
     m_enableLniAtDeviceIndexHasBeenSet(false),
-    m_mapPublicIpOnLaunch(false),
-    m_mapPublicIpOnLaunchHasBeenSet(false),
     m_mapCustomerOwnedIpOnLaunch(false),
     m_mapCustomerOwnedIpOnLaunchHasBeenSet(false),
     m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_state(SubnetState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_assignIpv6AddressOnCreation(false),
     m_assignIpv6AddressOnCreationHasBeenSet(false),
@@ -50,7 +38,19 @@ Subnet::Subnet() :
     m_enableDns64HasBeenSet(false),
     m_ipv6Native(false),
     m_ipv6NativeHasBeenSet(false),
-    m_privateDnsNameOptionsOnLaunchHasBeenSet(false)
+    m_privateDnsNameOptionsOnLaunchHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_state(SubnetState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_cidrBlockHasBeenSet(false),
+    m_availableIpAddressCount(0),
+    m_availableIpAddressCountHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_defaultForAz(false),
+    m_defaultForAzHasBeenSet(false),
+    m_mapPublicIpOnLaunch(false),
+    m_mapPublicIpOnLaunchHasBeenSet(false)
 {
 }
 
@@ -66,47 +66,17 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
-    if(!availabilityZoneNode.IsNull())
-    {
-      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
-      m_availabilityZoneHasBeenSet = true;
-    }
     XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
     if(!availabilityZoneIdNode.IsNull())
     {
       m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
       m_availabilityZoneIdHasBeenSet = true;
     }
-    XmlNode availableIpAddressCountNode = resultNode.FirstChild("availableIpAddressCount");
-    if(!availableIpAddressCountNode.IsNull())
-    {
-      m_availableIpAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableIpAddressCountNode.GetText()).c_str()).c_str());
-      m_availableIpAddressCountHasBeenSet = true;
-    }
-    XmlNode cidrBlockNode = resultNode.FirstChild("cidrBlock");
-    if(!cidrBlockNode.IsNull())
-    {
-      m_cidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(cidrBlockNode.GetText());
-      m_cidrBlockHasBeenSet = true;
-    }
-    XmlNode defaultForAzNode = resultNode.FirstChild("defaultForAz");
-    if(!defaultForAzNode.IsNull())
-    {
-      m_defaultForAz = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultForAzNode.GetText()).c_str()).c_str());
-      m_defaultForAzHasBeenSet = true;
-    }
     XmlNode enableLniAtDeviceIndexNode = resultNode.FirstChild("enableLniAtDeviceIndex");
     if(!enableLniAtDeviceIndexNode.IsNull())
     {
       m_enableLniAtDeviceIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableLniAtDeviceIndexNode.GetText()).c_str()).c_str());
       m_enableLniAtDeviceIndexHasBeenSet = true;
-    }
-    XmlNode mapPublicIpOnLaunchNode = resultNode.FirstChild("mapPublicIpOnLaunch");
-    if(!mapPublicIpOnLaunchNode.IsNull())
-    {
-      m_mapPublicIpOnLaunch = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mapPublicIpOnLaunchNode.GetText()).c_str()).c_str());
-      m_mapPublicIpOnLaunchHasBeenSet = true;
     }
     XmlNode mapCustomerOwnedIpOnLaunchNode = resultNode.FirstChild("mapCustomerOwnedIpOnLaunch");
     if(!mapCustomerOwnedIpOnLaunchNode.IsNull())
@@ -119,24 +89,6 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     {
       m_customerOwnedIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpv4PoolNode.GetText());
       m_customerOwnedIpv4PoolHasBeenSet = true;
-    }
-    XmlNode stateNode = resultNode.FirstChild("state");
-    if(!stateNode.IsNull())
-    {
-      m_state = SubnetStateMapper::GetSubnetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
-      m_stateHasBeenSet = true;
-    }
-    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
-    if(!subnetIdNode.IsNull())
-    {
-      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
-      m_subnetIdHasBeenSet = true;
-    }
-    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
-    if(!vpcIdNode.IsNull())
-    {
-      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
-      m_vpcIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
@@ -204,6 +156,54 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
       m_privateDnsNameOptionsOnLaunch = privateDnsNameOptionsOnLaunchNode;
       m_privateDnsNameOptionsOnLaunchHasBeenSet = true;
     }
+    XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
+    if(!subnetIdNode.IsNull())
+    {
+      m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
+      m_subnetIdHasBeenSet = true;
+    }
+    XmlNode stateNode = resultNode.FirstChild("state");
+    if(!stateNode.IsNull())
+    {
+      m_state = SubnetStateMapper::GetSubnetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_stateHasBeenSet = true;
+    }
+    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
+      m_vpcIdHasBeenSet = true;
+    }
+    XmlNode cidrBlockNode = resultNode.FirstChild("cidrBlock");
+    if(!cidrBlockNode.IsNull())
+    {
+      m_cidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(cidrBlockNode.GetText());
+      m_cidrBlockHasBeenSet = true;
+    }
+    XmlNode availableIpAddressCountNode = resultNode.FirstChild("availableIpAddressCount");
+    if(!availableIpAddressCountNode.IsNull())
+    {
+      m_availableIpAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableIpAddressCountNode.GetText()).c_str()).c_str());
+      m_availableIpAddressCountHasBeenSet = true;
+    }
+    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
+    if(!availabilityZoneNode.IsNull())
+    {
+      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
+      m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode defaultForAzNode = resultNode.FirstChild("defaultForAz");
+    if(!defaultForAzNode.IsNull())
+    {
+      m_defaultForAz = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultForAzNode.GetText()).c_str()).c_str());
+      m_defaultForAzHasBeenSet = true;
+    }
+    XmlNode mapPublicIpOnLaunchNode = resultNode.FirstChild("mapPublicIpOnLaunch");
+    if(!mapPublicIpOnLaunchNode.IsNull())
+    {
+      m_mapPublicIpOnLaunch = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mapPublicIpOnLaunchNode.GetText()).c_str()).c_str());
+      m_mapPublicIpOnLaunchHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -211,39 +211,14 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
-
   if(m_availabilityZoneIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 
-  if(m_availableIpAddressCountHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AvailableIpAddressCount=" << m_availableIpAddressCount << "&";
-  }
-
-  if(m_cidrBlockHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
-  }
-
-  if(m_defaultForAzHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DefaultForAz=" << std::boolalpha << m_defaultForAz << "&";
-  }
-
   if(m_enableLniAtDeviceIndexHasBeenSet)
   {
       oStream << location << index << locationValue << ".EnableLniAtDeviceIndex=" << m_enableLniAtDeviceIndex << "&";
-  }
-
-  if(m_mapPublicIpOnLaunchHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".MapPublicIpOnLaunch=" << std::boolalpha << m_mapPublicIpOnLaunch << "&";
   }
 
   if(m_mapCustomerOwnedIpOnLaunchHasBeenSet)
@@ -254,21 +229,6 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   if(m_customerOwnedIpv4PoolHasBeenSet)
   {
       oStream << location << index << locationValue << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
-  }
-
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".State=" << SubnetStateMapper::GetNameForSubnetState(m_state) << "&";
-  }
-
-  if(m_subnetIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
-  }
-
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
   if(m_ownerIdHasBeenSet)
@@ -330,37 +290,57 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       m_privateDnsNameOptionsOnLaunch.OutputToStream(oStream, privateDnsNameOptionsOnLaunchLocationAndMemberSs.str().c_str());
   }
 
+  if(m_subnetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".State=" << SubnetStateMapper::GetNameForSubnetState(m_state) << "&";
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
+  if(m_cidrBlockHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
+  }
+
+  if(m_availableIpAddressCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailableIpAddressCount=" << m_availableIpAddressCount << "&";
+  }
+
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if(m_defaultForAzHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DefaultForAz=" << std::boolalpha << m_defaultForAz << "&";
+  }
+
+  if(m_mapPublicIpOnLaunchHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MapPublicIpOnLaunch=" << std::boolalpha << m_mapPublicIpOnLaunch << "&";
+  }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
   if(m_availabilityZoneIdHasBeenSet)
   {
       oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
-  if(m_availableIpAddressCountHasBeenSet)
-  {
-      oStream << location << ".AvailableIpAddressCount=" << m_availableIpAddressCount << "&";
-  }
-  if(m_cidrBlockHasBeenSet)
-  {
-      oStream << location << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
-  }
-  if(m_defaultForAzHasBeenSet)
-  {
-      oStream << location << ".DefaultForAz=" << std::boolalpha << m_defaultForAz << "&";
-  }
   if(m_enableLniAtDeviceIndexHasBeenSet)
   {
       oStream << location << ".EnableLniAtDeviceIndex=" << m_enableLniAtDeviceIndex << "&";
-  }
-  if(m_mapPublicIpOnLaunchHasBeenSet)
-  {
-      oStream << location << ".MapPublicIpOnLaunch=" << std::boolalpha << m_mapPublicIpOnLaunch << "&";
   }
   if(m_mapCustomerOwnedIpOnLaunchHasBeenSet)
   {
@@ -369,18 +349,6 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_customerOwnedIpv4PoolHasBeenSet)
   {
       oStream << location << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
-  }
-  if(m_stateHasBeenSet)
-  {
-      oStream << location << ".State=" << SubnetStateMapper::GetNameForSubnetState(m_state) << "&";
-  }
-  if(m_subnetIdHasBeenSet)
-  {
-      oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
-  }
-  if(m_vpcIdHasBeenSet)
-  {
-      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
   if(m_ownerIdHasBeenSet)
   {
@@ -431,6 +399,38 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String privateDnsNameOptionsOnLaunchLocationAndMember(location);
       privateDnsNameOptionsOnLaunchLocationAndMember += ".PrivateDnsNameOptionsOnLaunch";
       m_privateDnsNameOptionsOnLaunch.OutputToStream(oStream, privateDnsNameOptionsOnLaunchLocationAndMember.c_str());
+  }
+  if(m_subnetIdHasBeenSet)
+  {
+      oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+  if(m_stateHasBeenSet)
+  {
+      oStream << location << ".State=" << SubnetStateMapper::GetNameForSubnetState(m_state) << "&";
+  }
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_cidrBlockHasBeenSet)
+  {
+      oStream << location << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
+  }
+  if(m_availableIpAddressCountHasBeenSet)
+  {
+      oStream << location << ".AvailableIpAddressCount=" << m_availableIpAddressCount << "&";
+  }
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_defaultForAzHasBeenSet)
+  {
+      oStream << location << ".DefaultForAz=" << std::boolalpha << m_defaultForAz << "&";
+  }
+  if(m_mapPublicIpOnLaunchHasBeenSet)
+  {
+      oStream << location << ".MapPublicIpOnLaunch=" << std::boolalpha << m_mapPublicIpOnLaunch << "&";
   }
 }
 

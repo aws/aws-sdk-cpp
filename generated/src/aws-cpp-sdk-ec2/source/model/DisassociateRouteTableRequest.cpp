@@ -11,9 +11,9 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DisassociateRouteTableRequest::DisassociateRouteTableRequest() : 
-    m_associationIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_associationIdHasBeenSet(false)
 {
 }
 
@@ -21,14 +21,14 @@ Aws::String DisassociateRouteTableRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DisassociateRouteTable&";
-  if(m_associationIdHasBeenSet)
-  {
-    ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
-  }
-
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_associationIdHasBeenSet)
+  {
+    ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

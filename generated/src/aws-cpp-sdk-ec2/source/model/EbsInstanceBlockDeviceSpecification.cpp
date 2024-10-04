@@ -21,9 +21,9 @@ namespace Model
 {
 
 EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification() : 
+    m_volumeIdHasBeenSet(false),
     m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_volumeIdHasBeenSet(false)
+    m_deleteOnTerminationHasBeenSet(false)
 {
 }
 
@@ -39,17 +39,17 @@ EbsInstanceBlockDeviceSpecification& EbsInstanceBlockDeviceSpecification::operat
 
   if(!resultNode.IsNull())
   {
-    XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
-    if(!deleteOnTerminationNode.IsNull())
-    {
-      m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
-      m_deleteOnTerminationHasBeenSet = true;
-    }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
       m_volumeIdHasBeenSet = true;
+    }
+    XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
+    if(!deleteOnTerminationNode.IsNull())
+    {
+      m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
+      m_deleteOnTerminationHasBeenSet = true;
     }
   }
 
@@ -58,27 +58,27 @@ EbsInstanceBlockDeviceSpecification& EbsInstanceBlockDeviceSpecification::operat
 
 void EbsInstanceBlockDeviceSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_deleteOnTerminationHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
-  }
-
   if(m_volumeIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+
+  if(m_deleteOnTerminationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
 
 }
 
 void EbsInstanceBlockDeviceSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_deleteOnTerminationHasBeenSet)
-  {
-      oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
-  }
   if(m_volumeIdHasBeenSet)
   {
       oStream << location << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
+  }
+  if(m_deleteOnTerminationHasBeenSet)
+  {
+      oStream << location << ".DeleteOnTermination=" << std::boolalpha << m_deleteOnTermination << "&";
   }
 }
 

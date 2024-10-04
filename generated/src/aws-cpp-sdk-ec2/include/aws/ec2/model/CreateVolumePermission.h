@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/ec2/model/PermissionGroup.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/PermissionGroup.h>
 #include <utility>
 
 namespace Aws
@@ -43,18 +43,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
-     */
-    inline const PermissionGroup& GetGroup() const{ return m_group; }
-    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline CreateVolumePermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
-    inline CreateVolumePermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The ID of the Amazon Web Services account to be added or removed.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
@@ -66,13 +54,25 @@ namespace Model
     inline CreateVolumePermission& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
     inline CreateVolumePermission& WithUserId(const char* value) { SetUserId(value); return *this;}
     ///@}
-  private:
 
-    PermissionGroup m_group;
-    bool m_groupHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
+     */
+    inline const PermissionGroup& GetGroup() const{ return m_group; }
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+    inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
+    inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
+    inline CreateVolumePermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
+    inline CreateVolumePermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
+    ///@}
+  private:
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
+
+    PermissionGroup m_group;
+    bool m_groupHasBeenSet = false;
   };
 
 } // namespace Model

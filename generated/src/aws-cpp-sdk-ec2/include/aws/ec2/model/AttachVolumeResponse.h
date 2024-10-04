@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeAttachmentState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -39,69 +39,6 @@ namespace Model
     AWS_EC2_API AttachVolumeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AttachVolumeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-
-    ///@{
-    /**
-     * <p>The time stamp when the attachment initiated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetAttachTime() const{ return m_attachTime; }
-    inline void SetAttachTime(const Aws::Utils::DateTime& value) { m_attachTime = value; }
-    inline void SetAttachTime(Aws::Utils::DateTime&& value) { m_attachTime = std::move(value); }
-    inline AttachVolumeResponse& WithAttachTime(const Aws::Utils::DateTime& value) { SetAttachTime(value); return *this;}
-    inline AttachVolumeResponse& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The device name.</p> <p>If the volume is attached to a Fargate task, this
-     * parameter returns <code>null</code>.</p>
-     */
-    inline const Aws::String& GetDevice() const{ return m_device; }
-    inline void SetDevice(const Aws::String& value) { m_device = value; }
-    inline void SetDevice(Aws::String&& value) { m_device = std::move(value); }
-    inline void SetDevice(const char* value) { m_device.assign(value); }
-    inline AttachVolumeResponse& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
-    inline AttachVolumeResponse& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
-    inline AttachVolumeResponse& WithDevice(const char* value) { SetDevice(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task,
-     * this parameter returns <code>null</code>.</p>
-     */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
-    inline AttachVolumeResponse& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline AttachVolumeResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline AttachVolumeResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The attachment state of the volume.</p>
-     */
-    inline const VolumeAttachmentState& GetState() const{ return m_state; }
-    inline void SetState(const VolumeAttachmentState& value) { m_state = value; }
-    inline void SetState(VolumeAttachmentState&& value) { m_state = std::move(value); }
-    inline AttachVolumeResponse& WithState(const VolumeAttachmentState& value) { SetState(value); return *this;}
-    inline AttachVolumeResponse& WithState(VolumeAttachmentState&& value) { SetState(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the volume.</p>
-     */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
-    inline AttachVolumeResponse& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline AttachVolumeResponse& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline AttachVolumeResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -142,6 +79,69 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+    inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
+    inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
+    inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
+    inline AttachVolumeResponse& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
+    inline AttachVolumeResponse& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
+    inline AttachVolumeResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the instance.</p> <p>If the volume is attached to a Fargate task,
+     * this parameter returns <code>null</code>.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
+    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
+    inline AttachVolumeResponse& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline AttachVolumeResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+    inline AttachVolumeResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The device name.</p> <p>If the volume is attached to a Fargate task, this
+     * parameter returns <code>null</code>.</p>
+     */
+    inline const Aws::String& GetDevice() const{ return m_device; }
+    inline void SetDevice(const Aws::String& value) { m_device = value; }
+    inline void SetDevice(Aws::String&& value) { m_device = std::move(value); }
+    inline void SetDevice(const char* value) { m_device.assign(value); }
+    inline AttachVolumeResponse& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
+    inline AttachVolumeResponse& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
+    inline AttachVolumeResponse& WithDevice(const char* value) { SetDevice(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The attachment state of the volume.</p>
+     */
+    inline const VolumeAttachmentState& GetState() const{ return m_state; }
+    inline void SetState(const VolumeAttachmentState& value) { m_state = value; }
+    inline void SetState(VolumeAttachmentState&& value) { m_state = std::move(value); }
+    inline AttachVolumeResponse& WithState(const VolumeAttachmentState& value) { SetState(value); return *this;}
+    inline AttachVolumeResponse& WithState(VolumeAttachmentState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time stamp when the attachment initiated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAttachTime() const{ return m_attachTime; }
+    inline void SetAttachTime(const Aws::Utils::DateTime& value) { m_attachTime = value; }
+    inline void SetAttachTime(Aws::Utils::DateTime&& value) { m_attachTime = std::move(value); }
+    inline AttachVolumeResponse& WithAttachTime(const Aws::Utils::DateTime& value) { SetAttachTime(value); return *this;}
+    inline AttachVolumeResponse& WithAttachTime(Aws::Utils::DateTime&& value) { SetAttachTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -151,21 +151,21 @@ namespace Model
     ///@}
   private:
 
-    Aws::Utils::DateTime m_attachTime;
-
-    Aws::String m_device;
-
-    Aws::String m_instanceId;
-
-    VolumeAttachmentState m_state;
-
-    Aws::String m_volumeId;
-
     bool m_deleteOnTermination;
 
     Aws::String m_associatedResource;
 
     Aws::String m_instanceOwningService;
+
+    Aws::String m_volumeId;
+
+    Aws::String m_instanceId;
+
+    Aws::String m_device;
+
+    VolumeAttachmentState m_state;
+
+    Aws::Utils::DateTime m_attachTime;
 
     ResponseMetadata m_responseMetadata;
   };

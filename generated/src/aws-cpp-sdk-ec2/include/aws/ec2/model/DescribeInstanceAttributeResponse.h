@@ -11,9 +11,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeValue.h>
 #include <aws/ec2/model/ResponseMetadata.h>
-#include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ProductCode.h>
+#include <aws/ec2/model/GroupIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -44,19 +44,6 @@ namespace Model
     AWS_EC2_API DescribeInstanceAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeInstanceAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
-
-    ///@{
-    /**
-     * <p>The security groups associated with the instance.</p>
-     */
-    inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
-    inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groups = value; }
-    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = std::move(value); }
-    inline DescribeInstanceAttributeResponse& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
-    inline DescribeInstanceAttributeResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
-    inline DescribeInstanceAttributeResponse& AddGroups(const GroupIdentifier& value) { m_groups.push_back(value); return *this; }
-    inline DescribeInstanceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
-    ///@}
 
     ///@{
     /**
@@ -252,6 +239,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The security groups associated with the instance.</p>
+     */
+    inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
+    inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groups = value; }
+    inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = std::move(value); }
+    inline DescribeInstanceAttributeResponse& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
+    inline DescribeInstanceAttributeResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
+    inline DescribeInstanceAttributeResponse& AddGroups(const GroupIdentifier& value) { m_groups.push_back(value); return *this; }
+    inline DescribeInstanceAttributeResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -260,8 +260,6 @@ namespace Model
     inline DescribeInstanceAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
     ///@}
   private:
-
-    Aws::Vector<GroupIdentifier> m_groups;
 
     Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
 
@@ -294,6 +292,8 @@ namespace Model
     AttributeValue m_userData;
 
     AttributeBooleanValue m_disableApiStop;
+
+    Aws::Vector<GroupIdentifier> m_groups;
 
     ResponseMetadata m_responseMetadata;
   };

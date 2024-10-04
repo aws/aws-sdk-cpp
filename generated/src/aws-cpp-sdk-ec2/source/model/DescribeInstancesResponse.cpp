@@ -38,6 +38,11 @@ DescribeInstancesResponse& DescribeInstancesResponse::operator =(const Aws::Amaz
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
     XmlNode reservationsNode = resultNode.FirstChild("reservationSet");
     if(!reservationsNode.IsNull())
     {
@@ -48,11 +53,6 @@ DescribeInstancesResponse& DescribeInstancesResponse::operator =(const Aws::Amaz
         reservationsMember = reservationsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

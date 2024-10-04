@@ -38,6 +38,11 @@ DescribeReservedInstancesOfferingsResponse& DescribeReservedInstancesOfferingsRe
 
   if(!resultNode.IsNull())
   {
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
     XmlNode reservedInstancesOfferingsNode = resultNode.FirstChild("reservedInstancesOfferingsSet");
     if(!reservedInstancesOfferingsNode.IsNull())
     {
@@ -48,11 +53,6 @@ DescribeReservedInstancesOfferingsResponse& DescribeReservedInstancesOfferingsRe
         reservedInstancesOfferingsMember = reservedInstancesOfferingsMember.NextNode("item");
       }
 
-    }
-    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
-    if(!nextTokenNode.IsNull())
-    {
-      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
     }
   }
 

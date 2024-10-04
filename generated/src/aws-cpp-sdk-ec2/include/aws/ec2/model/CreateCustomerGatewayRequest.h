@@ -149,19 +149,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
-    inline bool GetDryRun() const{ return m_dryRun; }
-    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-    inline CreateCustomerGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>For customer gateway devices that support BGP, specify the device's ASN. You
      * must specify either <code>BgpAsn</code> or <code>BgpAsnExtended</code> when
      * creating the customer gateway. If the ASN is larger than
@@ -172,6 +159,19 @@ namespace Model
     inline bool BgpAsnExtendedHasBeenSet() const { return m_bgpAsnExtendedHasBeenSet; }
     inline void SetBgpAsnExtended(long long value) { m_bgpAsnExtendedHasBeenSet = true; m_bgpAsnExtended = value; }
     inline CreateCustomerGatewayRequest& WithBgpAsnExtended(long long value) { SetBgpAsnExtended(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline CreateCustomerGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
   private:
 
@@ -196,11 +196,11 @@ namespace Model
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet = false;
 
-    bool m_dryRun;
-    bool m_dryRunHasBeenSet = false;
-
     long long m_bgpAsnExtended;
     bool m_bgpAsnExtendedHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

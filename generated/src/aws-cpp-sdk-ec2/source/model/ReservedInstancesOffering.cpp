@@ -21,18 +21,6 @@ namespace Model
 {
 
 ReservedInstancesOffering::ReservedInstancesOffering() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_productDescription(RIProductDescription::NOT_SET),
-    m_productDescriptionHasBeenSet(false),
-    m_reservedInstancesOfferingIdHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
     m_currencyCode(CurrencyCodeValues::NOT_SET),
     m_currencyCodeHasBeenSet(false),
     m_instanceTenancy(Tenancy::NOT_SET),
@@ -46,7 +34,19 @@ ReservedInstancesOffering::ReservedInstancesOffering() :
     m_pricingDetailsHasBeenSet(false),
     m_recurringChargesHasBeenSet(false),
     m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_reservedInstancesOfferingIdHasBeenSet(false),
+    m_instanceType(InstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
+    m_duration(0),
+    m_durationHasBeenSet(false),
+    m_usagePrice(0.0),
+    m_usagePriceHasBeenSet(false),
+    m_fixedPrice(0.0),
+    m_fixedPriceHasBeenSet(false),
+    m_productDescription(RIProductDescription::NOT_SET),
+    m_productDescriptionHasBeenSet(false)
 {
 }
 
@@ -62,48 +62,6 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
 
   if(!resultNode.IsNull())
   {
-    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
-    if(!availabilityZoneNode.IsNull())
-    {
-      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
-      m_availabilityZoneHasBeenSet = true;
-    }
-    XmlNode durationNode = resultNode.FirstChild("duration");
-    if(!durationNode.IsNull())
-    {
-      m_duration = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
-      m_durationHasBeenSet = true;
-    }
-    XmlNode fixedPriceNode = resultNode.FirstChild("fixedPrice");
-    if(!fixedPriceNode.IsNull())
-    {
-      m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fixedPriceNode.GetText()).c_str()).c_str());
-      m_fixedPriceHasBeenSet = true;
-    }
-    XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
-    if(!instanceTypeNode.IsNull())
-    {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
-      m_instanceTypeHasBeenSet = true;
-    }
-    XmlNode productDescriptionNode = resultNode.FirstChild("productDescription");
-    if(!productDescriptionNode.IsNull())
-    {
-      m_productDescription = RIProductDescriptionMapper::GetRIProductDescriptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText()).c_str()).c_str());
-      m_productDescriptionHasBeenSet = true;
-    }
-    XmlNode reservedInstancesOfferingIdNode = resultNode.FirstChild("reservedInstancesOfferingId");
-    if(!reservedInstancesOfferingIdNode.IsNull())
-    {
-      m_reservedInstancesOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesOfferingIdNode.GetText());
-      m_reservedInstancesOfferingIdHasBeenSet = true;
-    }
-    XmlNode usagePriceNode = resultNode.FirstChild("usagePrice");
-    if(!usagePriceNode.IsNull())
-    {
-      m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usagePriceNode.GetText()).c_str()).c_str());
-      m_usagePriceHasBeenSet = true;
-    }
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
@@ -164,6 +122,48 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
       m_scope = ScopeMapper::GetScopeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText()).c_str()).c_str());
       m_scopeHasBeenSet = true;
     }
+    XmlNode reservedInstancesOfferingIdNode = resultNode.FirstChild("reservedInstancesOfferingId");
+    if(!reservedInstancesOfferingIdNode.IsNull())
+    {
+      m_reservedInstancesOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesOfferingIdNode.GetText());
+      m_reservedInstancesOfferingIdHasBeenSet = true;
+    }
+    XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
+    if(!instanceTypeNode.IsNull())
+    {
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceTypeHasBeenSet = true;
+    }
+    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
+    if(!availabilityZoneNode.IsNull())
+    {
+      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
+      m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode durationNode = resultNode.FirstChild("duration");
+    if(!durationNode.IsNull())
+    {
+      m_duration = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
+      m_durationHasBeenSet = true;
+    }
+    XmlNode usagePriceNode = resultNode.FirstChild("usagePrice");
+    if(!usagePriceNode.IsNull())
+    {
+      m_usagePrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usagePriceNode.GetText()).c_str()).c_str());
+      m_usagePriceHasBeenSet = true;
+    }
+    XmlNode fixedPriceNode = resultNode.FirstChild("fixedPrice");
+    if(!fixedPriceNode.IsNull())
+    {
+      m_fixedPrice = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fixedPriceNode.GetText()).c_str()).c_str());
+      m_fixedPriceHasBeenSet = true;
+    }
+    XmlNode productDescriptionNode = resultNode.FirstChild("productDescription");
+    if(!productDescriptionNode.IsNull())
+    {
+      m_productDescription = RIProductDescriptionMapper::GetRIProductDescriptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText()).c_str()).c_str());
+      m_productDescriptionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -171,41 +171,6 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
 
 void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
-
-  if(m_durationHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".Duration=" << m_duration << "&";
-  }
-
-  if(m_fixedPriceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".FixedPrice=" << m_fixedPrice << "&";
-  }
-
-  if(m_instanceTypeHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
-  }
-
-  if(m_productDescriptionHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
-  }
-
-  if(m_reservedInstancesOfferingIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ReservedInstancesOfferingId=" << StringUtils::URLEncode(m_reservedInstancesOfferingId.c_str()) << "&";
-  }
-
-  if(m_usagePriceHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".UsagePrice=" << m_usagePrice << "&";
-  }
-
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
@@ -258,38 +223,45 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".Scope=" << ScopeMapper::GetNameForScope(m_scope) << "&";
   }
 
+  if(m_reservedInstancesOfferingIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReservedInstancesOfferingId=" << StringUtils::URLEncode(m_reservedInstancesOfferingId.c_str()) << "&";
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+  }
+
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if(m_durationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Duration=" << m_duration << "&";
+  }
+
+  if(m_usagePriceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UsagePrice=" << m_usagePrice << "&";
+  }
+
+  if(m_fixedPriceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FixedPrice=" << m_fixedPrice << "&";
+  }
+
+  if(m_productDescriptionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
+  }
+
 }
 
 void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_availabilityZoneHasBeenSet)
-  {
-      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
-  }
-  if(m_durationHasBeenSet)
-  {
-      oStream << location << ".Duration=" << m_duration << "&";
-  }
-  if(m_fixedPriceHasBeenSet)
-  {
-      oStream << location << ".FixedPrice=" << m_fixedPrice << "&";
-  }
-  if(m_instanceTypeHasBeenSet)
-  {
-      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
-  }
-  if(m_productDescriptionHasBeenSet)
-  {
-      oStream << location << ".ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
-  }
-  if(m_reservedInstancesOfferingIdHasBeenSet)
-  {
-      oStream << location << ".ReservedInstancesOfferingId=" << StringUtils::URLEncode(m_reservedInstancesOfferingId.c_str()) << "&";
-  }
-  if(m_usagePriceHasBeenSet)
-  {
-      oStream << location << ".UsagePrice=" << m_usagePrice << "&";
-  }
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
@@ -333,6 +305,34 @@ void ReservedInstancesOffering::OutputToStream(Aws::OStream& oStream, const char
   if(m_scopeHasBeenSet)
   {
       oStream << location << ".Scope=" << ScopeMapper::GetNameForScope(m_scope) << "&";
+  }
+  if(m_reservedInstancesOfferingIdHasBeenSet)
+  {
+      oStream << location << ".ReservedInstancesOfferingId=" << StringUtils::URLEncode(m_reservedInstancesOfferingId.c_str()) << "&";
+  }
+  if(m_instanceTypeHasBeenSet)
+  {
+      oStream << location << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
+  }
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_durationHasBeenSet)
+  {
+      oStream << location << ".Duration=" << m_duration << "&";
+  }
+  if(m_usagePriceHasBeenSet)
+  {
+      oStream << location << ".UsagePrice=" << m_usagePrice << "&";
+  }
+  if(m_fixedPriceHasBeenSet)
+  {
+      oStream << location << ".FixedPrice=" << m_fixedPrice << "&";
+  }
+  if(m_productDescriptionHasBeenSet)
+  {
+      oStream << location << ".ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
   }
 }
 

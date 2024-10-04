@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
-#include <aws/ec2/model/InstanceAttributeName.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/InstanceAttributeName.h>
 #include <utility>
 
 namespace Aws
@@ -39,20 +39,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attribute to reset.</p>  <p>You can only reset the following
-     * attributes: <code>kernel</code> | <code>ramdisk</code> |
-     * <code>sourceDestCheck</code>.</p> 
-     */
-    inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
-    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline ResetInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
-    inline ResetInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Checks whether you have the required permissions for the operation, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -77,16 +63,30 @@ namespace Model
     inline ResetInstanceAttributeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
     inline ResetInstanceAttributeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
     ///@}
-  private:
 
-    InstanceAttributeName m_attribute;
-    bool m_attributeHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The attribute to reset.</p>  <p>You can only reset the following
+     * attributes: <code>kernel</code> | <code>ramdisk</code> |
+     * <code>sourceDestCheck</code>.</p> 
+     */
+    inline const InstanceAttributeName& GetAttribute() const{ return m_attribute; }
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+    inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline void SetAttribute(InstanceAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
+    inline ResetInstanceAttributeRequest& WithAttribute(const InstanceAttributeName& value) { SetAttribute(value); return *this;}
+    inline ResetInstanceAttributeRequest& WithAttribute(InstanceAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+    ///@}
+  private:
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
+
+    InstanceAttributeName m_attribute;
+    bool m_attributeHasBeenSet = false;
   };
 
 } // namespace Model

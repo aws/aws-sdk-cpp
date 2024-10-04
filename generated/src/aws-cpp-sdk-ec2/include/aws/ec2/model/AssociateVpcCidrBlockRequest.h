@@ -38,18 +38,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
-     * VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR
-     * block.</p>
-     */
-    inline bool GetAmazonProvidedIpv6CidrBlock() const{ return m_amazonProvidedIpv6CidrBlock; }
-    inline bool AmazonProvidedIpv6CidrBlockHasBeenSet() const { return m_amazonProvidedIpv6CidrBlockHasBeenSet; }
-    inline void SetAmazonProvidedIpv6CidrBlock(bool value) { m_amazonProvidedIpv6CidrBlockHasBeenSet = true; m_amazonProvidedIpv6CidrBlock = value; }
-    inline AssociateVpcCidrBlockRequest& WithAmazonProvidedIpv6CidrBlock(bool value) { SetAmazonProvidedIpv6CidrBlock(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>An IPv4 CIDR block to associate with the VPC.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
@@ -60,20 +48,6 @@ namespace Model
     inline AssociateVpcCidrBlockRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
     inline AssociateVpcCidrBlockRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
     inline AssociateVpcCidrBlockRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the VPC.</p>
-     */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline AssociateVpcCidrBlockRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline AssociateVpcCidrBlockRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline AssociateVpcCidrBlockRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
     ///@}
 
     ///@{
@@ -184,16 +158,36 @@ namespace Model
     inline void SetIpv6NetmaskLength(int value) { m_ipv6NetmaskLengthHasBeenSet = true; m_ipv6NetmaskLength = value; }
     inline AssociateVpcCidrBlockRequest& WithIpv6NetmaskLength(int value) { SetIpv6NetmaskLength(value); return *this;}
     ///@}
-  private:
 
-    bool m_amazonProvidedIpv6CidrBlock;
-    bool m_amazonProvidedIpv6CidrBlockHasBeenSet = false;
+    ///@{
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+    inline AssociateVpcCidrBlockRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+    inline AssociateVpcCidrBlockRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+    inline AssociateVpcCidrBlockRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
+     * VPC. You cannot specify the range of IPv6 addresses or the size of the CIDR
+     * block.</p>
+     */
+    inline bool GetAmazonProvidedIpv6CidrBlock() const{ return m_amazonProvidedIpv6CidrBlock; }
+    inline bool AmazonProvidedIpv6CidrBlockHasBeenSet() const { return m_amazonProvidedIpv6CidrBlockHasBeenSet; }
+    inline void SetAmazonProvidedIpv6CidrBlock(bool value) { m_amazonProvidedIpv6CidrBlockHasBeenSet = true; m_amazonProvidedIpv6CidrBlock = value; }
+    inline AssociateVpcCidrBlockRequest& WithAmazonProvidedIpv6CidrBlock(bool value) { SetAmazonProvidedIpv6CidrBlock(value); return *this;}
+    ///@}
+  private:
 
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet = false;
-
-    Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_ipv6CidrBlockNetworkBorderGroup;
     bool m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = false;
@@ -215,6 +209,12 @@ namespace Model
 
     int m_ipv6NetmaskLength;
     bool m_ipv6NetmaskLengthHasBeenSet = false;
+
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet = false;
+
+    bool m_amazonProvidedIpv6CidrBlock;
+    bool m_amazonProvidedIpv6CidrBlockHasBeenSet = false;
   };
 
 } // namespace Model

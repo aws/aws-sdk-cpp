@@ -12,9 +12,9 @@
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/SpotPlacement.h>
 #include <aws/ec2/model/RunInstancesMonitoringEnabled.h>
-#include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
+#include <aws/ec2/model/GroupIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -61,20 +61,6 @@ namespace Model
     inline LaunchSpecification& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
     inline LaunchSpecification& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
     inline LaunchSpecification& WithUserData(const char* value) { SetUserData(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The IDs of the security groups.</p>
-     */
-    inline const Aws::Vector<GroupIdentifier>& GetSecurityGroups() const{ return m_securityGroups; }
-    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-    inline void SetSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-    inline void SetSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-    inline LaunchSpecification& WithSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { SetSecurityGroups(value); return *this;}
-    inline LaunchSpecification& WithSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-    inline LaunchSpecification& AddSecurityGroups(const GroupIdentifier& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-    inline LaunchSpecification& AddSecurityGroups(GroupIdentifier&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -241,6 +227,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The IDs of the security groups.</p>
+     */
+    inline const Aws::Vector<GroupIdentifier>& GetSecurityGroups() const{ return m_securityGroups; }
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
+    inline void SetSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
+    inline void SetSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
+    inline LaunchSpecification& WithSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { SetSecurityGroups(value); return *this;}
+    inline LaunchSpecification& WithSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { SetSecurityGroups(std::move(value)); return *this;}
+    inline LaunchSpecification& AddSecurityGroups(const GroupIdentifier& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    inline LaunchSpecification& AddSecurityGroups(GroupIdentifier&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const RunInstancesMonitoringEnabled& GetMonitoring() const{ return m_monitoring; }
     inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
@@ -253,9 +253,6 @@ namespace Model
 
     Aws::String m_userData;
     bool m_userDataHasBeenSet = false;
-
-    Aws::Vector<GroupIdentifier> m_securityGroups;
-    bool m_securityGroupsHasBeenSet = false;
 
     Aws::String m_addressingType;
     bool m_addressingTypeHasBeenSet = false;
@@ -292,6 +289,9 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;
+
+    Aws::Vector<GroupIdentifier> m_securityGroups;
+    bool m_securityGroupsHasBeenSet = false;
 
     RunInstancesMonitoringEnabled m_monitoring;
     bool m_monitoringHasBeenSet = false;

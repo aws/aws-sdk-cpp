@@ -21,8 +21,8 @@ namespace Model
 {
 
 InstanceStateChange::InstanceStateChange() : 
-    m_currentStateHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_currentStateHasBeenSet(false),
     m_previousStateHasBeenSet(false)
 {
 }
@@ -39,17 +39,17 @@ InstanceStateChange& InstanceStateChange::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode currentStateNode = resultNode.FirstChild("currentState");
-    if(!currentStateNode.IsNull())
-    {
-      m_currentState = currentStateNode;
-      m_currentStateHasBeenSet = true;
-    }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+    }
+    XmlNode currentStateNode = resultNode.FirstChild("currentState");
+    if(!currentStateNode.IsNull())
+    {
+      m_currentState = currentStateNode;
+      m_currentStateHasBeenSet = true;
     }
     XmlNode previousStateNode = resultNode.FirstChild("previousState");
     if(!previousStateNode.IsNull())
@@ -64,16 +64,16 @@ InstanceStateChange& InstanceStateChange::operator =(const XmlNode& xmlNode)
 
 void InstanceStateChange::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+
   if(m_currentStateHasBeenSet)
   {
       Aws::StringStream currentStateLocationAndMemberSs;
       currentStateLocationAndMemberSs << location << index << locationValue << ".CurrentState";
       m_currentState.OutputToStream(oStream, currentStateLocationAndMemberSs.str().c_str());
-  }
-
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
   if(m_previousStateHasBeenSet)
@@ -87,15 +87,15 @@ void InstanceStateChange::OutputToStream(Aws::OStream& oStream, const char* loca
 
 void InstanceStateChange::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_instanceIdHasBeenSet)
+  {
+      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
   if(m_currentStateHasBeenSet)
   {
       Aws::String currentStateLocationAndMember(location);
       currentStateLocationAndMember += ".CurrentState";
       m_currentState.OutputToStream(oStream, currentStateLocationAndMember.c_str());
-  }
-  if(m_instanceIdHasBeenSet)
-  {
-      oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
   if(m_previousStateHasBeenSet)
   {

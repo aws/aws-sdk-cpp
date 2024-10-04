@@ -35,6 +35,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The return value of the request. Returns <code>true</code> if the specified
+     * product code is owned by the requester and associated with the specified
+     * instance.</p>
+     */
+    inline bool GetReturn() const{ return m_return; }
+    inline void SetReturn(bool value) { m_return = value; }
+    inline ConfirmProductInstanceResponse& WithReturn(bool value) { SetReturn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Web Services account ID of the instance owner. This is only
      * present if the product code is attached to the instance.</p>
      */
@@ -48,17 +59,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The return value of the request. Returns <code>true</code> if the specified
-     * product code is owned by the requester and associated with the specified
-     * instance.</p>
-     */
-    inline bool GetReturn() const{ return m_return; }
-    inline void SetReturn(bool value) { m_return = value; }
-    inline ConfirmProductInstanceResponse& WithReturn(bool value) { SetReturn(value); return *this;}
-    ///@}
-
-    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -68,9 +68,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_ownerId;
-
     bool m_return;
+
+    Aws::String m_ownerId;
 
     ResponseMetadata m_responseMetadata;
   };

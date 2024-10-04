@@ -38,11 +38,6 @@ CopySnapshotResponse& CopySnapshotResponse::operator =(const Aws::AmazonWebServi
 
   if(!resultNode.IsNull())
   {
-    XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
-    if(!snapshotIdNode.IsNull())
-    {
-      m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
-    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -53,6 +48,11 @@ CopySnapshotResponse& CopySnapshotResponse::operator =(const Aws::AmazonWebServi
         tagsMember = tagsMember.NextNode("item");
       }
 
+    }
+    XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
+    if(!snapshotIdNode.IsNull())
+    {
+      m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
     }
   }
 

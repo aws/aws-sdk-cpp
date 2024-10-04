@@ -7,9 +7,9 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/RuleAction.h>
 #include <aws/ec2/model/IcmpTypeCode.h>
 #include <aws/ec2/model/PortRange.h>
-#include <aws/ec2/model/RuleAction.h>
 #include <utility>
 
 namespace Aws
@@ -41,21 +41,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
-     * <code>172.16.0.0/24</code>).</p>
-     */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
-    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-    inline ReplaceNetworkAclEntryRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-    inline ReplaceNetworkAclEntryRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-    inline ReplaceNetworkAclEntryRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -65,45 +50,6 @@ namespace Model
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ReplaceNetworkAclEntryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Indicates whether to replace the egress rule.</p> <p>Default: If no value is
-     * specified, we replace the ingress rule.</p>
-     */
-    inline bool GetEgress() const{ return m_egress; }
-    inline bool EgressHasBeenSet() const { return m_egressHasBeenSet; }
-    inline void SetEgress(bool value) { m_egressHasBeenSet = true; m_egress = value; }
-    inline ReplaceNetworkAclEntryRequest& WithEgress(bool value) { SetEgress(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying
-     * protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-     */
-    inline const IcmpTypeCode& GetIcmpTypeCode() const{ return m_icmpTypeCode; }
-    inline bool IcmpTypeCodeHasBeenSet() const { return m_icmpTypeCodeHasBeenSet; }
-    inline void SetIcmpTypeCode(const IcmpTypeCode& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = value; }
-    inline void SetIcmpTypeCode(IcmpTypeCode&& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = std::move(value); }
-    inline ReplaceNetworkAclEntryRequest& WithIcmpTypeCode(const IcmpTypeCode& value) { SetIcmpTypeCode(value); return *this;}
-    inline ReplaceNetworkAclEntryRequest& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The IPv6 network range to allow or deny, in CIDR notation (for example
-     * <code>2001:bd8:1234:1a00::/64</code>).</p>
-     */
-    inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
-    inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
-    inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
-    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
-    inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
-    inline ReplaceNetworkAclEntryRequest& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
-    inline ReplaceNetworkAclEntryRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
-    inline ReplaceNetworkAclEntryRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
     ///@}
 
     ///@{
@@ -122,15 +68,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>TCP or UDP protocols: The range of ports the rule applies to. Required if
-     * specifying protocol 6 (TCP) or 17 (UDP).</p>
+     * <p>The rule number of the entry to replace.</p>
      */
-    inline const PortRange& GetPortRange() const{ return m_portRange; }
-    inline bool PortRangeHasBeenSet() const { return m_portRangeHasBeenSet; }
-    inline void SetPortRange(const PortRange& value) { m_portRangeHasBeenSet = true; m_portRange = value; }
-    inline void SetPortRange(PortRange&& value) { m_portRangeHasBeenSet = true; m_portRange = std::move(value); }
-    inline ReplaceNetworkAclEntryRequest& WithPortRange(const PortRange& value) { SetPortRange(value); return *this;}
-    inline ReplaceNetworkAclEntryRequest& WithPortRange(PortRange&& value) { SetPortRange(std::move(value)); return *this;}
+    inline int GetRuleNumber() const{ return m_ruleNumber; }
+    inline bool RuleNumberHasBeenSet() const { return m_ruleNumberHasBeenSet; }
+    inline void SetRuleNumber(int value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
+    inline ReplaceNetworkAclEntryRequest& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
     ///@}
 
     ///@{
@@ -167,35 +110,80 @@ namespace Model
 
     ///@{
     /**
-     * <p>The rule number of the entry to replace.</p>
+     * <p>Indicates whether to replace the egress rule.</p> <p>Default: If no value is
+     * specified, we replace the ingress rule.</p>
      */
-    inline int GetRuleNumber() const{ return m_ruleNumber; }
-    inline bool RuleNumberHasBeenSet() const { return m_ruleNumberHasBeenSet; }
-    inline void SetRuleNumber(int value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
-    inline ReplaceNetworkAclEntryRequest& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
+    inline bool GetEgress() const{ return m_egress; }
+    inline bool EgressHasBeenSet() const { return m_egressHasBeenSet; }
+    inline void SetEgress(bool value) { m_egressHasBeenSet = true; m_egress = value; }
+    inline ReplaceNetworkAclEntryRequest& WithEgress(bool value) { SetEgress(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IPv4 network range to allow or deny, in CIDR notation (for example
+     * <code>172.16.0.0/24</code>).</p>
+     */
+    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
+    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
+    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
+    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
+    inline ReplaceNetworkAclEntryRequest& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IPv6 network range to allow or deny, in CIDR notation (for example
+     * <code>2001:bd8:1234:1a00::/64</code>).</p>
+     */
+    inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
+    inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
+    inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
+    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
+    inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
+    inline ReplaceNetworkAclEntryRequest& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying
+     * protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
+     */
+    inline const IcmpTypeCode& GetIcmpTypeCode() const{ return m_icmpTypeCode; }
+    inline bool IcmpTypeCodeHasBeenSet() const { return m_icmpTypeCodeHasBeenSet; }
+    inline void SetIcmpTypeCode(const IcmpTypeCode& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = value; }
+    inline void SetIcmpTypeCode(IcmpTypeCode&& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = std::move(value); }
+    inline ReplaceNetworkAclEntryRequest& WithIcmpTypeCode(const IcmpTypeCode& value) { SetIcmpTypeCode(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>TCP or UDP protocols: The range of ports the rule applies to. Required if
+     * specifying protocol 6 (TCP) or 17 (UDP).</p>
+     */
+    inline const PortRange& GetPortRange() const{ return m_portRange; }
+    inline bool PortRangeHasBeenSet() const { return m_portRangeHasBeenSet; }
+    inline void SetPortRange(const PortRange& value) { m_portRangeHasBeenSet = true; m_portRange = value; }
+    inline void SetPortRange(PortRange&& value) { m_portRangeHasBeenSet = true; m_portRange = std::move(value); }
+    inline ReplaceNetworkAclEntryRequest& WithPortRange(const PortRange& value) { SetPortRange(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithPortRange(PortRange&& value) { SetPortRange(std::move(value)); return *this;}
     ///@}
   private:
-
-    Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
-    bool m_egress;
-    bool m_egressHasBeenSet = false;
-
-    IcmpTypeCode m_icmpTypeCode;
-    bool m_icmpTypeCodeHasBeenSet = false;
-
-    Aws::String m_ipv6CidrBlock;
-    bool m_ipv6CidrBlockHasBeenSet = false;
-
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet = false;
 
-    PortRange m_portRange;
-    bool m_portRangeHasBeenSet = false;
+    int m_ruleNumber;
+    bool m_ruleNumberHasBeenSet = false;
 
     Aws::String m_protocol;
     bool m_protocolHasBeenSet = false;
@@ -203,8 +191,20 @@ namespace Model
     RuleAction m_ruleAction;
     bool m_ruleActionHasBeenSet = false;
 
-    int m_ruleNumber;
-    bool m_ruleNumberHasBeenSet = false;
+    bool m_egress;
+    bool m_egressHasBeenSet = false;
+
+    Aws::String m_cidrBlock;
+    bool m_cidrBlockHasBeenSet = false;
+
+    Aws::String m_ipv6CidrBlock;
+    bool m_ipv6CidrBlockHasBeenSet = false;
+
+    IcmpTypeCode m_icmpTypeCode;
+    bool m_icmpTypeCodeHasBeenSet = false;
+
+    PortRange m_portRange;
+    bool m_portRangeHasBeenSet = false;
   };
 
 } // namespace Model

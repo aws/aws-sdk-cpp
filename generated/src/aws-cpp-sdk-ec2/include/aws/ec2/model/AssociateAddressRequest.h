@@ -82,17 +82,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reassociation is automatic, but you can specify false to ensure the operation
-     * fails if the Elastic IP address is already associated with another resource.</p>
-     */
-    inline bool GetAllowReassociation() const{ return m_allowReassociation; }
-    inline bool AllowReassociationHasBeenSet() const { return m_allowReassociationHasBeenSet; }
-    inline void SetAllowReassociation(bool value) { m_allowReassociationHasBeenSet = true; m_allowReassociation = value; }
-    inline AssociateAddressRequest& WithAllowReassociation(bool value) { SetAllowReassociation(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -135,6 +124,17 @@ namespace Model
     inline AssociateAddressRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
     inline AssociateAddressRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Reassociation is automatic, but you can specify false to ensure the operation
+     * fails if the Elastic IP address is already associated with another resource.</p>
+     */
+    inline bool GetAllowReassociation() const{ return m_allowReassociation; }
+    inline bool AllowReassociationHasBeenSet() const { return m_allowReassociationHasBeenSet; }
+    inline void SetAllowReassociation(bool value) { m_allowReassociationHasBeenSet = true; m_allowReassociation = value; }
+    inline AssociateAddressRequest& WithAllowReassociation(bool value) { SetAllowReassociation(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_allocationId;
@@ -146,9 +146,6 @@ namespace Model
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet = false;
 
-    bool m_allowReassociation;
-    bool m_allowReassociationHasBeenSet = false;
-
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
 
@@ -157,6 +154,9 @@ namespace Model
 
     Aws::String m_privateIpAddress;
     bool m_privateIpAddressHasBeenSet = false;
+
+    bool m_allowReassociation;
+    bool m_allowReassociationHasBeenSet = false;
   };
 
 } // namespace Model

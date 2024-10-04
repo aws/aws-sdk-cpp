@@ -40,11 +40,6 @@ AllocateAddressResponse& AllocateAddressResponse::operator =(const Aws::AmazonWe
 
   if(!resultNode.IsNull())
   {
-    XmlNode publicIpNode = resultNode.FirstChild("publicIp");
-    if(!publicIpNode.IsNull())
-    {
-      m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
-    }
     XmlNode allocationIdNode = resultNode.FirstChild("allocationId");
     if(!allocationIdNode.IsNull())
     {
@@ -79,6 +74,11 @@ AllocateAddressResponse& AllocateAddressResponse::operator =(const Aws::AmazonWe
     if(!carrierIpNode.IsNull())
     {
       m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
+    }
+    XmlNode publicIpNode = resultNode.FirstChild("publicIp");
+    if(!publicIpNode.IsNull())
+    {
+      m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
     }
   }
 

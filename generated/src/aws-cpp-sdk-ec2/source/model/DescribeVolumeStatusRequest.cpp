@@ -11,13 +11,13 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeVolumeStatusRequest::DescribeVolumeStatusRequest() : 
-    m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_volumeIdsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -25,16 +25,6 @@ Aws::String DescribeVolumeStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeVolumeStatus&";
-  if(m_filtersHasBeenSet)
-  {
-    unsigned filtersCount = 1;
-    for(auto& item : m_filters)
-    {
-      item.OutputToStream(ss, "Filter.", filtersCount, "");
-      filtersCount++;
-    }
-  }
-
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
@@ -59,6 +49,16 @@ Aws::String DescribeVolumeStatusRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   ss << "Version=2016-11-15";
