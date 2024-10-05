@@ -18,10 +18,8 @@ namespace Aws
         class AWS_CORE_API MonitorContext{
 
             private:
-            mutable std::shared_ptr< Aws::Http::HttpRequest> httpRequest_sp;
-            mutable Aws::Monitoring::CoreMetricsCollection coreMetrics;
-            mutable String clientName;
-            mutable String requestName;
+            mutable Aws::String clientName;
+            mutable Aws::String requestName;
             mutable Aws::Vector<void*> contexts;
 
             public:
@@ -32,70 +30,78 @@ namespace Aws
             MonitorContext& operator=(const MonitorContext&) = delete;
             MonitorContext& operator=(MonitorContext&&) = delete;
 
-            void StartMonitorContext(String client, String request, std::shared_ptr<Aws::Http::HttpRequest> httpRequest) const
+            void StartMonitorContext(const Aws::String& client, const Aws::String& request, std::shared_ptr<Aws::Http::HttpRequest>& httpRequest) const
             {
-                httpRequest_sp = httpRequest;
                 clientName = client;
                 requestName = request;
-                coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
-                contexts = Aws::Monitoring::OnRequestStarted(clientName, requestName, httpRequest_sp);
+                contexts = Aws::Monitoring::OnRequestStarted(clientName, requestName, httpRequest);
             }
 
-            inline void OnRequestFailed(const Aws::Client::HttpResponseOutcome& outcome) const
+            inline void OnRequestFailed(std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Aws::Client::HttpResponseOutcome& outcome) const
             {
-                if(!httpRequest_sp)
+                if(!httpRequest)
                 {
                     return;
                 }
+                Aws::Monitoring::CoreMetricsCollection coreMetrics;
+                coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
                 
                 Aws::Monitoring::OnRequestFailed(
                         clientName,
                         requestName, 
-                        httpRequest_sp ,
+                        httpRequest ,
                         outcome, 
                         coreMetrics, 
                         contexts);
                 
             }
 
-            inline void OnRequestSucceeded(const Aws::Client::HttpResponseOutcome& outcome) const
+            inline void OnRequestSucceeded(std::shared_ptr<Aws::Http::HttpRequest> httpRequest, const Aws::Client::HttpResponseOutcome& outcome) const
             {
-                if(!httpRequest_sp)
+
+                if(!httpRequest)
                 {
                     return;
                 }
+                
+                Aws::Monitoring::CoreMetricsCollection coreMetrics;
+                coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
+                
                 Aws::Monitoring::OnRequestSucceeded(
                         clientName,
                         requestName, 
-                        httpRequest_sp ,
+                        httpRequest ,
                         outcome, 
                         coreMetrics, 
                         contexts);
             }
 
-            inline void OnRetry() const
+            inline void OnRetry(std::shared_ptr<Aws::Http::HttpRequest> httpRequest) const
             {
-                if(!httpRequest_sp)
+                if(!httpRequest)
                 {
                     return;
                 }
+                Aws::Monitoring::CoreMetricsCollection coreMetrics;
+                coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
+                
                 Aws::Monitoring::OnRequestRetry(
                 clientName, 
                 requestName,
-                httpRequest_sp, 
+                httpRequest, 
                 contexts);
             }
 
-            inline void OnFinish() const
+            inline void OnFinish(std::shared_ptr<Aws::Http::HttpRequest> httpRequest) const
             {
-                if(!httpRequest_sp)
+                if(!httpRequest)
                 {
                     return;
                 }
                 Aws::Monitoring::OnFinish(
                         clientName,
                         requestName, 
-                        httpRequest_sp ,
+                        httpRequest ,
                         contexts);
             }
 
@@ -118,7 +124,7 @@ namespace Aws
             /**
              * Initializes object with UUID
              */
-            AsyncCallerContext(const Aws::String& uuid) : m_uuid(uuid) {}
+            AsyncCallerContext(const Aws::String& uuid) : m_uuid(uuid){}
 
             /**
             * Initializes object with UUID

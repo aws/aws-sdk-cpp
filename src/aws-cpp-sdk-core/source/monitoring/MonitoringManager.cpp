@@ -97,6 +97,27 @@ namespace Aws
             }
         }
 
+        void AddMonitoring(const std::vector<MonitoringFactoryCreateFunction>& monitoringFactoryCreateFunctions)
+        {
+            //allocate monitors only if there are valid factory functions
+            if(s_monitors && !monitoringFactoryCreateFunctions.empty())
+            {
+                for (const auto& function: monitoringFactoryCreateFunctions)
+                {
+                    auto factory = function();
+                    if (factory)
+                    {
+                        auto instance = factory->CreateMonitoringInstance();
+                        if (instance)
+                        {
+                            s_monitors->emplace_back(std::move(instance));
+                        }
+                    }
+                }
+            }
+        }
+
+
         void InitMonitoring(const std::vector<MonitoringFactoryCreateFunction>& monitoringFactoryCreateFunctions)
         {
             if (s_monitors)
@@ -104,19 +125,9 @@ namespace Aws
                 return;
             }
             assert(Aws::get_aws_allocator() != nullptr);
+
             s_monitors = Aws::New<Monitors>(MonitoringTag);
-            for (const auto& function: monitoringFactoryCreateFunctions)
-            {
-                auto factory = function();
-                if (factory)
-                {
-                    auto instance = factory->CreateMonitoringInstance();
-                    if (instance)
-                    {
-                        s_monitors->emplace_back(std::move(instance));
-                    }
-                }
-            }
+            AddMonitoring(monitoringFactoryCreateFunctions);
 
             auto defaultMonitoringFactory = Aws::MakeShared<DefaultMonitoringFactory>(MonitoringTag);
             auto instance = defaultMonitoringFactory->CreateMonitoringInstance();
@@ -128,8 +139,11 @@ namespace Aws
 
         void CleanupMonitoring()
         {
-            Aws::Delete(s_monitors);
-            s_monitors = nullptr;
+            if(s_monitors)
+            {
+                Aws::Delete(s_monitors);
+                s_monitors = nullptr;
+            }
         }
     } // namespace Monitoring
 

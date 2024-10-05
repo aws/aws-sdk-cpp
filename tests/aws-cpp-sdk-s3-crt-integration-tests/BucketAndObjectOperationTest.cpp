@@ -52,6 +52,7 @@
 
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/monitoring/DefaultMonitoring.h>
+#include <aws/core/monitoring/CoreMetrics.h>
 
 using namespace Aws;
 using namespace Aws::Http::Standard;
@@ -1506,19 +1507,108 @@ namespace
         }
     }
 
+    class AWS_CORE_API TestMonitoring: public Aws::Monitoring::MonitoringInterface
+    {
+        mutable std::shared_ptr<Aws::Vector<Aws::String>> m_sequence;
+        mutable std::mutex m_mutex; 
+
+        inline void logCommand(const Aws::String& log) const{
+            const std::lock_guard<std::mutex> lock(m_mutex);
+            if(m_sequence)
+            {
+                std::cout<<log<< std::endl;
+                m_sequence->emplace_back(log);
+            }
+        }
+
+    public:
+
+        explicit TestMonitoring( std::shared_ptr<Aws::Vector<Aws::String> >& sequence):m_sequence{sequence}{};
+
+        void* OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request) const override
+        {
+            AWS_UNREFERENCED_PARAM(serviceName);
+            AWS_UNREFERENCED_PARAM(requestName);
+            AWS_UNREFERENCED_PARAM(request);
+            logCommand("OnRequestStarted");
+            return &m_sequence;
+        }
+
+        void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+            const Aws::Client::HttpResponseOutcome& outcome, const Aws::Monitoring::CoreMetricsCollection& metricsFromCore, void* context) const override
+        {
+            AWS_UNREFERENCED_PARAM(serviceName);
+            AWS_UNREFERENCED_PARAM(requestName);
+            AWS_UNREFERENCED_PARAM(request);
+            AWS_UNREFERENCED_PARAM(outcome);
+            AWS_UNREFERENCED_PARAM(metricsFromCore);
+            AWS_UNREFERENCED_PARAM(context);
+            logCommand("OnRequestSucceeded");
+            
+        }
+
+
+        void OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+            const Aws::Client::HttpResponseOutcome& outcome, const Aws::Monitoring::CoreMetricsCollection& metricsFromCore, void* context) const override
+        {
+            AWS_UNREFERENCED_PARAM(serviceName);
+            AWS_UNREFERENCED_PARAM(requestName);
+            AWS_UNREFERENCED_PARAM(request);
+            AWS_UNREFERENCED_PARAM(outcome);
+            AWS_UNREFERENCED_PARAM(metricsFromCore);
+            AWS_UNREFERENCED_PARAM(context);
+            logCommand("OnRequestFailed");
+        }
+
+
+        void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName,
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override
+        {
+            AWS_UNREFERENCED_PARAM(serviceName);
+            AWS_UNREFERENCED_PARAM(requestName);
+            AWS_UNREFERENCED_PARAM(request);
+            AWS_UNREFERENCED_PARAM(context);
+            logCommand("OnRequestRetry");
+        }
+
+
+        void OnFinish(const Aws::String& serviceName, const Aws::String& requestName,
+            const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override
+        {
+            AWS_UNREFERENCED_PARAM(serviceName);
+            AWS_UNREFERENCED_PARAM(requestName);
+            AWS_UNREFERENCED_PARAM(request);
+            AWS_UNREFERENCED_PARAM(context);
+            logCommand("OnFinish");
+        }
+    };
+
+    class AWS_CORE_API TestMonitoringFactory : public Aws::Monitoring::MonitoringFactory
+    {
+    public:
+        mutable std::shared_ptr<Aws::Vector<Aws::String>> m_sequenceSp;
+        explicit TestMonitoringFactory(  std::shared_ptr<Aws::Vector<Aws::String>>& seq): m_sequenceSp{seq}
+        {
+
+        }
+        Aws::UniquePtr<Aws::Monitoring::MonitoringInterface> CreateMonitoringInstance() const override
+        {
+            return Aws::MakeUnique<TestMonitoring>("CreateMonitoringInstance",m_sequenceSp);
+        }
+    };
 
 
     TEST_F(BucketAndObjectOperationTest, TestMonitor)
     {
+        std::shared_ptr<Aws::Vector<Aws::String>> monitorCallSequenceSp = Aws::MakeShared<Aws::Vector<Aws::String>>("monitorSequence");
         std::vector<Aws::Monitoring::MonitoringFactoryCreateFunction> monitoringFactoryCreateFunctions;
 
         monitoringFactoryCreateFunctions.emplace_back(
-            [](){
-                return Aws::MakeUnique<Aws::Monitoring::DefaultMonitoringFactory>("monitor");
+            [&monitorCallSequenceSp](){
+                return Aws::MakeUnique<TestMonitoringFactory>("monitor",monitorCallSequenceSp);
             }
         );
-        
-        Aws::Monitoring::InitMonitoring(monitoringFactoryCreateFunctions);
+
         const Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
         SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
         CreateBucketRequest createBucketRequest;
@@ -1535,8 +1625,17 @@ namespace
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
         putObjectRequest.SetKey("sbiscigl_was_here");
+
+        //Note monitoring already has default monitoring interface ins InitApi()
+        //adding custom monitoring
+        Aws::Monitoring::AddMonitoring(monitoringFactoryCreateFunctions);
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
+        EXPECT_EQ(monitorCallSequenceSp->size(), 2u);
+        EXPECT_EQ( (*monitorCallSequenceSp)[0], "OnRequestStarted");
+        EXPECT_EQ( (*monitorCallSequenceSp)[1], "OnRequestSucceeded");
+
+        Aws::Monitoring::CleanupMonitoring();
     }
 }
