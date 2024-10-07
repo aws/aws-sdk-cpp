@@ -4,10 +4,10 @@
  */
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/Outcome.h>
+#include <aws/core/AmazonWebServiceRequest.h>
+#include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/HttpResponse.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 
 namespace smithy
@@ -17,78 +17,57 @@ namespace smithy
         class InterceptorContext
         {
         public:
-            InterceptorContext() = default;
+            explicit InterceptorContext(const Aws::AmazonWebServiceRequest& m_modeled_request)
+                : m_modeledRequest(m_modeled_request)
+            {
+            }
+
             virtual ~InterceptorContext() = default;
             InterceptorContext(const InterceptorContext& other) = delete;
-            InterceptorContext(InterceptorContext&& other) noexcept = default;
+            InterceptorContext(InterceptorContext&& other) noexcept = delete;
             InterceptorContext& operator=(const InterceptorContext& other) = delete;
-            InterceptorContext& operator=(InterceptorContext&& other) noexcept = default;
+            InterceptorContext& operator=(InterceptorContext&& other) noexcept = delete;
 
-            using GetRequestOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpRequest>, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
-            GetRequestOutcome GetRequest() const
+            const Aws::AmazonWebServiceRequest& GetModeledRequest() const
             {
-                if (!m_request)
-                {
-                    return Aws::Client::AWSError<Aws::Client::CoreErrors>{
-                        Aws::Client::CoreErrors::RESOURCE_NOT_FOUND,
-                        "ResourceNotFoundException",
-                        "Request is NULL",
-                        false
-                    };
-                }
-                return m_request;
+                return m_modeledRequest;
             }
 
-            void SetRequest(const std::shared_ptr<Aws::Http::HttpRequest>& request)
+            std::shared_ptr<Aws::Http::HttpRequest> GetTransmitRequest() const
             {
-                this->m_request = request;
+                return m_transmitRequest;
             }
 
-            using GetResponseOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
-            GetResponseOutcome GetResponse() const
+            void SetTransmitRequest(const std::shared_ptr<Aws::Http::HttpRequest>& transmitRequest)
             {
-                if (!m_response)
-                {
-                    return Aws::Client::AWSError<Aws::Client::CoreErrors>{
-                        Aws::Client::CoreErrors::RESOURCE_NOT_FOUND,
-                        "ResourceNotFoundException",
-                        "Response is NULL",
-                        false
-                    };
-                }
-                return m_response;
+                m_transmitRequest = transmitRequest;
             }
 
-            void SetResponse(const std::shared_ptr<Aws::Http::HttpResponse>& response)
+            std::shared_ptr<Aws::Http::HttpResponse> GetTransmitResponse() const
             {
-                this->m_response = response;
+                return m_transmitResponse;
             }
 
-            using GetAttributeOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
-            GetAttributeOutcome GetAttribute(const Aws::String& attribute)
+            void SetTransmitResponse(const std::shared_ptr<Aws::Http::HttpResponse>& transmitResponse)
             {
-                const auto attribute_iter = m_attributes.find(attribute);
-                if (attribute_iter == m_attributes.end())
-                {
-                    return Aws::Client::AWSError<Aws::Client::CoreErrors>{
-                        Aws::Client::CoreErrors::RESOURCE_NOT_FOUND,
-                        "ResourceNotFoundException",
-                        "Attribute not found",
-                        false
-                    };
-                }
-                return attribute_iter->second;
+                m_transmitResponse = transmitResponse;
             }
 
-            void SetAttribute(const Aws::String& attribute, const Aws::String& value)
+            Aws::String GetAttribute(const Aws::String& key) const
             {
-                m_attributes.emplace(attribute, value);
+                return m_attributes.at(key);
+            }
+
+            void SetAttribute(const Aws::String& key, const Aws::String& value)
+            {
+                m_attributes.insert({key, value});
             }
 
         private:
             Aws::Map<Aws::String, Aws::String> m_attributes{};
-            std::shared_ptr<Aws::Http::HttpRequest> m_request{nullptr};
-            std::shared_ptr<Aws::Http::HttpResponse> m_response{nullptr};
+            const Aws::AmazonWebServiceRequest& m_modeledRequest;
+            std::shared_ptr<Aws::Http::HttpRequest> m_transmitRequest{nullptr};
+            std::shared_ptr<Aws::Http::HttpResponse> m_transmitResponse{nullptr};
         };
     }
 }

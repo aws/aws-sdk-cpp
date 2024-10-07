@@ -16,6 +16,8 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Stream;
 using namespace Aws::Testing;
 
+const char* ALLOCATION_TAG = "SmithyInterceptorTest";
+
 class SmithyInterceptorTest : public AwsCppSdkGTestSuite
 {
 };
@@ -26,16 +28,16 @@ public:
     MockSuccessInterceptor() = default;
     ~MockSuccessInterceptor() override = default;
 
-    ModifyRequestOutcome ModifyRequest(InterceptorContext& context) override
+    ModifyRequestOutcome ModifyBeforeSigning(InterceptorContext& context) override
     {
         context.SetAttribute("MockInterceptorRequest", "Called");
-        return context.GetRequest();
+        return context.GetTransmitRequest();
     }
 
-    ModifyResponseOutcome ModifyResponse(InterceptorContext& context) override
+    ModifyResponseOutcome ModifyBeforeDeserialization(InterceptorContext& context) override
     {
         context.SetAttribute("MockInterceptorResponse", "Called");
-        return context.GetResponse();
+        return context.GetTransmitResponse();
     }
 };
 
@@ -45,7 +47,7 @@ public:
     MockRequestFailureInterceptor() = default;
     ~MockRequestFailureInterceptor() override = default;
 
-    ModifyRequestOutcome ModifyRequest(InterceptorContext& context) override
+    ModifyRequestOutcome ModifyBeforeSigning(InterceptorContext& context) override
     {
         context.SetAttribute("MockInterceptorRequest", "Called");
         return Aws::Client::AWSError<CoreErrors>{
@@ -56,10 +58,10 @@ public:
         };;
     }
 
-    ModifyResponseOutcome ModifyResponse(InterceptorContext& context) override
+    ModifyResponseOutcome ModifyBeforeDeserialization(InterceptorContext& context) override
     {
         context.SetAttribute("MockInterceptorResponse", "Called");
-        return context.GetResponse();
+        return context.GetTransmitResponse();
     }
 };
 
@@ -69,13 +71,13 @@ public:
     MockResponseFailureInterceptor() = default;
     ~MockResponseFailureInterceptor() override = default;
 
-    ModifyRequestOutcome ModifyRequest(InterceptorContext& context) override
+    ModifyRequestOutcome ModifyBeforeSigning(InterceptorContext& context) override
     {
         context.SetAttribute("MockInterceptorRequest", "Called");
-        return context.GetRequest();
+        return context.GetTransmitRequest();
     }
 
-    ModifyResponseOutcome ModifyResponse(InterceptorContext& context) override
+    ModifyResponseOutcome ModifyBeforeDeserialization(InterceptorContext& context) override
     {
         context.SetAttribute("MockInterceptorResponse", "Called");
         return Aws::Client::AWSError<CoreErrors>{
@@ -85,6 +87,35 @@ public:
             false
         };;
     }
+};
+
+class MockInterceptorRequest: public AmazonWebServiceRequest
+{
+public:
+    explicit MockInterceptorRequest(const Aws::String& m_response_body)
+        : m_responseBody(m_response_body)
+    {
+    }
+
+    ~MockInterceptorRequest() override = default;
+
+    std::shared_ptr<Aws::IOStream> GetBody() const override
+    {
+        return Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG, m_responseBody);
+    }
+
+    Aws::Http::HeaderValueCollection GetHeaders() const override
+    {
+        return {};
+    }
+
+    const char* GetServiceRequestName() const override
+    {
+        return "LeblancCafeService";
+    }
+
+private:
+    Aws::String m_responseBody;
 };
 
 class MockClient
@@ -104,28 +135,29 @@ public:
     }
 
     using RequestOutcome = Outcome<std::shared_ptr<HttpResponse>, AWSError<CoreErrors>>;
-    RequestOutcome MakeRequest(const std::shared_ptr<HttpRequest>& request, InterceptorContext& context) const
+    RequestOutcome MakeRequest(InterceptorContext& context,
+        const std::shared_ptr<HttpRequest>& request) const
     {
-        context.SetRequest(request);
+        context.SetTransmitRequest(request);
         for (const auto& interceptor: m_interceptors)
         {
-            const auto modifiedRequest = interceptor->ModifyRequest(context);
+            const auto modifiedRequest = interceptor->ModifyBeforeSigning(context);
             if (!modifiedRequest.IsSuccess())
             {
                 return modifiedRequest.GetError();
             }
         }
-        auto response = Aws::MakeShared<StandardHttpResponse>("SmithyInterceptorTest", request);
-        context.SetResponse(response);
+        auto response = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, request);
+        context.SetTransmitResponse(response);
         for (const auto& interceptor: m_interceptors)
         {
-            const auto modifiedResponse = interceptor->ModifyResponse(context);
+            const auto modifiedResponse = interceptor->ModifyBeforeDeserialization(context);
             if (!modifiedResponse.IsSuccess())
             {
                 return modifiedResponse.GetError();
             }
         }
-        return context.GetResponse();
+        return context.GetTransmitResponse();
     }
 
 private:
@@ -141,37 +173,39 @@ TEST_F(SmithyInterceptorTest, MockInterceptorShouldReturnSuccess)
 {
     const auto uri = "https://www.villagepsychic.net/";
     auto request = CreateHttpRequest(URI{uri}, HttpMethod::HTTP_GET, DefaultResponseStreamFactoryMethod);
-    auto interceptor = Aws::MakeUnique<MockSuccessInterceptor>("SmithyInterceptorTest");
+    auto interceptor = Aws::MakeUnique<MockSuccessInterceptor>(ALLOCATION_TAG);
     const auto client = MockClient::MakeClient(std::move(interceptor));
-    InterceptorContext context{};
-    const auto response = client.MakeRequest(request, context);
+    MockInterceptorRequest modeledRequest{"Take your time"};
+    InterceptorContext context{modeledRequest};
+    const auto response = client.MakeRequest(context, request);
     EXPECT_TRUE(response.IsSuccess());
-    EXPECT_TRUE(context.GetAttribute("MockInterceptorRequest").IsSuccess());
-    EXPECT_TRUE(context.GetAttribute("MockInterceptorResponse").IsSuccess());
+    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorRequest"));
+    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorResponse"));
 }
 
 TEST_F(SmithyInterceptorTest, MockInterceptorShouldReturnFailureRequset)
 {
     const auto uri = "https://www.villagepsychic.net/";
     auto request = CreateHttpRequest(URI{uri}, HttpMethod::HTTP_GET, DefaultResponseStreamFactoryMethod);
-    auto interceptor = Aws::MakeUnique<MockRequestFailureInterceptor>("SmithyInterceptorTest");
+    auto interceptor = Aws::MakeUnique<MockRequestFailureInterceptor>(ALLOCATION_TAG);
     const auto client = MockClient::MakeClient(std::move(interceptor));
-    InterceptorContext context{};
-    const auto response = client.MakeRequest(request, context);
+    MockInterceptorRequest modeledRequest{"Take your time"};
+    InterceptorContext context{modeledRequest};
+    const auto response = client.MakeRequest(context, request);
     EXPECT_FALSE(response.IsSuccess());
-    EXPECT_TRUE(context.GetAttribute("MockInterceptorRequest").IsSuccess());
-    EXPECT_FALSE(context.GetAttribute("MockInterceptorResponse").IsSuccess());
+    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorRequest"));
 }
 
 TEST_F(SmithyInterceptorTest, MockInterceptorShouldReturnFailureReseponse)
 {
     const auto uri = "https://www.villagepsychic.net/";
     auto request = CreateHttpRequest(URI{uri}, HttpMethod::HTTP_GET, DefaultResponseStreamFactoryMethod);
-    auto interceptor = Aws::MakeUnique<MockResponseFailureInterceptor>("SmithyInterceptorTest");
+    auto interceptor = Aws::MakeUnique<MockResponseFailureInterceptor>(ALLOCATION_TAG);
     const auto client = MockClient::MakeClient(std::move(interceptor));
-    InterceptorContext context{};
-    const auto response = client.MakeRequest(request, context);
+    MockInterceptorRequest modeledRequest{"Take your time"};
+    InterceptorContext context{modeledRequest};
+    const auto response = client.MakeRequest(context, request);
     EXPECT_FALSE(response.IsSuccess());
-    EXPECT_TRUE(context.GetAttribute("MockInterceptorRequest").IsSuccess());
-    EXPECT_TRUE(context.GetAttribute("MockInterceptorResponse").IsSuccess());
+    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorRequest"));
+    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorResponse"));
 }
