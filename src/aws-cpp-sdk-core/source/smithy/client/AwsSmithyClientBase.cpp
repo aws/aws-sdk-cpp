@@ -202,6 +202,21 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
         return;
     }
 
+    interceptor::InterceptorContext context{*pRequestCtx->m_pRequest};
+    context.SetTransmitRequest(pRequestCtx->m_httpRequest);
+    for (const auto& interceptor : m_interceptors)
+    {
+        auto modifiedRequest = interceptor->ModifyBeforeSigning(context);
+        if (!modifiedRequest.IsSuccess())
+        {
+            pExecutor->Submit([modifiedRequest, responseHandler]() mutable
+              {
+                  responseHandler(modifiedRequest.GetError());
+              });
+            return;
+        }
+    }
+
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
     pRequestCtx->m_monitoringContexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(),
                                                                           pRequestCtx->m_requestName,
@@ -282,6 +297,19 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
           httpResponseHandler(std::move(httpResponse));
       } );
 #endif
+    context.SetTransmitResponse(httpResponse);
+    for (const auto& interceptor : m_interceptors)
+    {
+        const auto modifiedResponse = interceptor->ModifyBeforeDeserialization(context);
+        if (!modifiedResponse.IsSuccess())
+        {
+            pExecutor->Submit([modifiedResponse, responseHandler]() mutable
+              {
+                  responseHandler(modifiedResponse.GetError());
+              });
+            return;
+        }
+    };
     return;
 }
 

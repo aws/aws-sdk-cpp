@@ -15,10 +15,10 @@ namespace smithy
             virtual ~Interceptor() = default;
 
             using ModifyRequestOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpRequest>, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
-            virtual ModifyRequestOutcome ModifyRequest(InterceptorContext& context) = 0;
+            virtual ModifyRequestOutcome ModifyBeforeSigning(InterceptorContext& context) = 0;
 
             using ModifyResponseOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
-            virtual ModifyResponseOutcome ModifyResponse(InterceptorContext& context) = 0;
+            virtual ModifyResponseOutcome ModifyBeforeDeserialization(InterceptorContext& context) = 0;
         };
     }
 }
