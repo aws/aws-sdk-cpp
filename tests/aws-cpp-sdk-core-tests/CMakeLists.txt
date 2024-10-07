@@ -26,8 +26,8 @@ file(GLOB MONITORING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/monitoring/*.cpp")
 file(GLOB SMITHY_TRACING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/smithy/tracing/*.cpp")
 file(GLOB SMITHY_CLIENT_SRC "${CMAKE_CURRENT_SOURCE_DIR}/smithy/client/*.cpp")
 file(GLOB SMITHY_CLIENT_SERIALIZER_SRC "${CMAKE_CURRENT_SOURCE_DIR}/smithy/client/serializer/*.cpp")
+file(GLOB SMITHY_CLIENT_FEATURE_SRC "${CMAKE_CURRENT_SOURCE_DIR}/smithy/client/feature/*.cpp")
 file(GLOB ENDPOINT_SRC "${CMAKE_CURRENT_SOURCE_DIR}/endpoint/*.cpp")
-file(GLOB SMITHY_INTERCEPTOR_SRC "${CMAKE_CURRENT_SOURCE_DIR}/smithy/interceptor/*.cpp")
 
 
 file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
@@ -54,6 +54,7 @@ file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   ${SMITHY_TRACING_SRC}
   ${SMITHY_CLIENT_SRC}
   ${SMITHY_CLIENT_SERIALIZER_SRC}
+  ${SMITHY_CLIENT_FEATURE_SRC}
   ${ENDPOINT_SRC}
   ${SMITHY_INTERCEPTOR_SRC}
 )
@@ -80,8 +81,8 @@ if(PLATFORM_WINDOWS)
     source_group("Source Files\\utils\\threading" FILES ${UTILS_THREADING_SRC})
     source_group("Source Files\\smithy\\tracing" FILES ${SMITHY_TRACING_SRC})
     source_group("Source Files\\smithy\\client" FILES ${SMITHY_CLIENT_SRC})
-    source_group("Source Files\\smithy\\client" FILES ${SMITHY_CLIENT_SERIALIZER_SRC})
-    source_group("Source Files\\smithy\\client" FILES ${SMITHY_INTERCEPTOR_SRC})
+    source_group("Source Files\\smithy\\client\\serializer" FILES ${SMITHY_CLIENT_SERIALIZER_SRC})
+    source_group("Source Files\\smithy\\client\\feature" FILES ${SMITHY_CLIENT_FEATURE_SRC})
   endif()
 endif()
 

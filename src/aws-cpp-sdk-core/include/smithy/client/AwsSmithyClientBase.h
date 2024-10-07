@@ -7,6 +7,8 @@
 #include <smithy/identity/auth/AuthSchemeOption.h>
 #include <smithy/identity/identity/AwsIdentity.h>
 #include <smithy/tracing/TelemetryProvider.h>
+#include <smithy/interceptor/Interceptor.h>
+#include <smithy/client/features/ChecksumInterceptor.h>
 
 #include <aws/crt/Variant.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -85,7 +87,8 @@ namespace client
           m_serviceName(std::move(serviceName)),
           m_userAgent(),
           m_httpClient(std::move(httpClient)),
-          m_errorMarshaller(std::move(errorMarshaller))
+          m_errorMarshaller(std::move(errorMarshaller)),
+          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")}
         {
             if (!m_clientConfig->retryStrategy)
             {
@@ -163,6 +166,7 @@ namespace client
 
         std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
         std::shared_ptr<Aws::Client::AWSErrorMarshaller> m_errorMarshaller;
+        Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors{};
     };
 } // namespace client
 } // namespace smithy

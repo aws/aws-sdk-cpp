@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include <smithy/interceptor/Interceptor.h>
+
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/HttpResponse.h>
@@ -26,7 +28,7 @@ namespace smithy
 
         static const char CHECKSUM_CONTENT_MD5_HEADER[] = "content-md5";
 
-        class Checksums
+        class ChecksumInterceptor: public smithy::interceptor::Interceptor
         {
         public:
             using HeaderValueCollection = Aws::Http::HeaderValueCollection;
@@ -38,6 +40,12 @@ namespace smithy
             using Sha1 = Aws::Utils::Crypto::Sha1;
             using PrecalculatedHash = Aws::Utils::Crypto::PrecalculatedHash;
 
+            ~ChecksumInterceptor() override = default;
+            ChecksumInterceptor() = default;
+            ChecksumInterceptor(const ChecksumInterceptor& other) = delete;
+            ChecksumInterceptor(ChecksumInterceptor&& other) noexcept = default;
+            ChecksumInterceptor& operator=(const ChecksumInterceptor& other) = delete;
+            ChecksumInterceptor& operator=(ChecksumInterceptor&& other) noexcept = default;
 
             static std::shared_ptr<Aws::IOStream> GetBodyStream(const Aws::AmazonWebServiceRequest& request)
             {
@@ -49,9 +57,17 @@ namespace smithy
                 return Aws::MakeShared<Aws::StringStream>(AWS_SMITHY_CLIENT_CHECKSUM, "");
             }
 
-            static void AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
-                                             const Aws::AmazonWebServiceRequest& request)
+            ModifyRequestOutcome ModifyBeforeSigning(interceptor::InterceptorContext& context) override
             {
+                const auto& httpRequest = context.GetTransmitRequest();
+                const auto& request = context.GetModeledRequest();
+                if (httpRequest == nullptr)
+                {
+                    return Aws::Client::AWSError<Aws::Client::CoreErrors>{Aws::Client::CoreErrors::VALIDATION,
+                        "ValidationErrorException",
+                        "Checksum request validation missing request",
+                        false};
+                }
                 Aws::String checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(
                     request.GetChecksumAlgorithmName().c_str());
                 if (request.GetServiceSpecificParameters())
@@ -176,7 +192,7 @@ namespace smithy
                         {
                             std::shared_ptr<CRC32> crc32 = Aws::MakeShared<
                                 CRC32>(AWS_SMITHY_CLIENT_CHECKSUM);
-                            httpRequest->AddResponseValidationHash("crc", crc32);
+                            httpRequest->AddResponseValidationHash("crc32", crc32);
                         }
                         else if (checksumAlgorithmName == "sha1")
                         {
@@ -198,17 +214,21 @@ namespace smithy
                         }
                     }
                 }
+                return httpRequest;
             }
 
-            using OptionalError = Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>>;
-
-            static OptionalError ValidateResponseChecksum(AwsSmithyClientAsyncRequestContext const* const pRequestCtx,
-                                                          Aws::Http::HttpResponse const* const httpResponse)
+            ModifyResponseOutcome ModifyBeforeDeserialization(interceptor::InterceptorContext& context) override
             {
-                assert(pRequestCtx);
-                assert(httpResponse);
-                assert(pRequestCtx->m_httpRequest);
-                for (const auto& hashIterator : pRequestCtx->m_httpRequest->GetResponseValidationHashes())
+                const auto httpRequest = context.GetTransmitRequest();
+                const auto httpResponse = context.GetTransmitResponse();
+                if (httpRequest == nullptr || httpResponse == nullptr)
+                {
+                    return Aws::Client::AWSError<Aws::Client::CoreErrors>{Aws::Client::CoreErrors::VALIDATION,
+                        "ValidationErrorException",
+                        "Checksum response validation missing request or response",
+                        false};
+                }
+                for (const auto& hashIterator : httpRequest->GetResponseValidationHashes())
                 {
                     Aws::String checksumHeaderKey = Aws::String("x-amz-checksum-") + hashIterator.first;
                     // TODO: If checksum ends with -#, then skip
@@ -218,24 +238,23 @@ namespace smithy
                         if (HashingUtils::Base64Encode(hashIterator.second->GetHash().GetResult()) !=
                             checksumHeaderValue)
                         {
-                            auto error = OptionalError(
-                                Aws::Client::AWSError<Aws::Client::CoreErrors>(
+                            auto error = Aws::Client::AWSError<Aws::Client::CoreErrors>{
                                     Aws::Client::CoreErrors::VALIDATION, "",
                                     "Response checksums mismatch",
-                                    false/*retryable*/));
-                            error->SetResponseHeaders(httpResponse->GetHeaders());
-                            error->SetResponseCode(httpResponse->GetResponseCode());
-                            error->SetRemoteHostIpAddress(
-                                httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
+                                    false/*retryable*/};
+                            error.SetResponseHeaders(httpResponse->GetHeaders());
+                            error.SetResponseCode(httpResponse->GetResponseCode());
+                            error.SetRemoteHostIpAddress(
+                            httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
 
-                            AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_CHECKSUM, *error);
-                            return error;
+                            AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_CHECKSUM, error);
+                            return {error};
                         }
                         // Validate only a single checksum returned in an HTTP response
                         break;
                     }
                 }
-                return {};
+                return httpResponse;
             }
         };
     }
