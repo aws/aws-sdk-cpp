@@ -78,6 +78,13 @@ public class CppBlockWriter {
         openCodeBlock(header);
     }
 
+
+    public CppBlockWriter(int level){
+        indentLevel = level;
+        blockStack = new Stack<>();
+        codeBlock = new String("");
+    }
+
     //opens a new block
     public CppBlockWriter openCodeBlock(String blockHead)
     {

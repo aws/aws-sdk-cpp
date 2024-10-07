@@ -12,7 +12,7 @@ import freemarker.cache.FileTemplateLoader;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.*;
-
+import java.util.List;
 public class SmithyCodegenPlugin implements SmithyBuildPlugin {
 
 @Override
@@ -26,10 +26,20 @@ public String getName() {
 @Override
     public void execute(PluginContext context){
         
-        System.out.println("Executing SmithyCodegenPlugin...");
+        System.out.println(String.format("Executing SmithyCodegenPlugin...", context.getFileManifest().getBaseDir().toString()));
 
-        SmokeTestsParser smoketestPrser = new SmokeTestsParser(context.getModel());
-        smoketestPrser.extractServiceSmokeTests();
+        SmokeTestsParser smoketestParser = new SmokeTestsParser(context.getModel());
+
+        Map<String, List<TestcaseParams> > smoketests =  smoketestParser.extractServiceSmokeTests();
+
+        smoketests.entrySet().stream().forEach(entry -> {
+                List<TestcaseParams> tests = entry.getValue();
+                CppSmokeTestsWriter writer = new CppSmokeTestsWriter("");
+                String code = writer.GetSmokeTestsCode(tests);
+                System.out.println("Code:\n"+code);
+            }
+        );
+
 
         /*CppBlockWriter blockWriter = new CppBlockWriter( String.format("void newFunction()"),0).
         addCode("vector<int> test =").

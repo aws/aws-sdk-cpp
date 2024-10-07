@@ -2,18 +2,21 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.utils.SimpleCodeWriter;
+import software.amazon.smithy.codegen.core.SymbolWriter;
 import java.util.List;
 
 import com.google.common.base.Optional;
 public final class CppSmokeTestsWriter extends SimpleCodeWriter{
+    private String namespace;
     //protected CppBlockWriter blockWriter;    
-    public CppSmokeTestsWriter() {
+    public CppSmokeTestsWriter(String namespace) {
         super();
+        this.namespace = namespace;
     }
 
     protected void useNamespaces()
     {
-        write("$L|","using namespace Aws::Auth;\n" + //
+        write("${L|}","using namespace Aws::Auth;\n" + //
                         "using namespace Aws::Http;\n" + //
                         "using namespace Aws::Client;\n" + //
                         "using namespace Aws::$client;\n" + //
@@ -23,7 +26,7 @@ public final class CppSmokeTestsWriter extends SimpleCodeWriter{
     //SimpleCodeWriter writer 
     protected void addHeaderBlock()
     {
-        write("$L|",
+        write("${L|}",
         
         "#include <aws/testing/AwsCppSdkGTestSuite.h>\n" + //
         "#include <aws/testing/AwsTestHelpers.h>\n" + //
@@ -45,12 +48,12 @@ public final class CppSmokeTestsWriter extends SimpleCodeWriter{
 
     protected void addClientHeader(TestcaseParams test)
     {
-        write("#include <aws/$L.toLowerCase()/$LClient.h>", test.getClientName(), test.getClientName() );
+        write("#include <aws/$L/$LClient.h>", test.getClientName().toLowerCase(), test.getClientName() );
     };
 
     protected void addRequestHeader(TestcaseParams test)
     {
-        write("#include <aws/$L.toLowerCase()/model/$LRequest.h>", test.getClientName(), test.getOperationName());
+        write("#include <aws/$L/model/$LRequest.h>", test.getClientName().toLowerCase(), test.getOperationName());
     };
 
     protected void defineTestFixture(TestcaseParams test)
@@ -82,7 +85,7 @@ public final class CppSmokeTestsWriter extends SimpleCodeWriter{
         test.getGetterCodeBlock().stream().forEach(getter -> {
             write("$L", getter);
         });
-        write("$L|", test.getFunctionBlock());
+        write("${L|}", test.getFunctionBlock());
         write("auto outcome = clientSp->$L(input);",test.getOperationName());
         if (test.isExpectSuccess())
         {
@@ -105,11 +108,11 @@ public final class CppSmokeTestsWriter extends SimpleCodeWriter{
         {
             addHeaderBlock();
             addClientHeader(firstTest);
-            write("namespace $LSmokeTest{", firstTest.getClientName());
-
+            
             tests.stream().forEach(test -> {
                 addRequestHeader(test);
             });
+            write("namespace $LSmokeTest{", firstTest.getClientName());
             useNamespaces();
 
             defineTestFixture(firstTest);
@@ -120,6 +123,17 @@ public final class CppSmokeTestsWriter extends SimpleCodeWriter{
         }
         return toString();
     }
+
+        /**
+        * The Factory class for creating CppWriters
+     */
+    /*public static final class CppSmokeTestsWriterFactory implements SymbolWriter.Factory<CppSmokeTestsWriter> {
+
+        @Override
+        public CppSmokeTestsWriter apply(String filename, String namespace) {
+            return new CppSmokeTestsWriter(namespace);
+        }
+    }*/
 
     
 }

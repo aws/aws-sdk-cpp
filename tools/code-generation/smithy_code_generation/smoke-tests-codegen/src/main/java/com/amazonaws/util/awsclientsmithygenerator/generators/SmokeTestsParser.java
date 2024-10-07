@@ -40,10 +40,9 @@ public class SmokeTestsParser {
     {
         this.model = model;
         codegenAdapter = new SmithyCodegenAdapter(model);
-
     }
 
-
+    //for given smoke test trait in an operation for a service, parse smoke tests
     private List<TestcaseParams> parseSmokeTests(
         SmokeTestsTrait smokeTestsTrait, 
         OperationShape operationShape,
@@ -56,7 +55,12 @@ public class SmokeTestsParser {
             //operation name
             TestcaseParams test = new TestcaseParams();
             String clientName = serviceShape.getId().getName();
-            test.setClientName(clientName.substring(0, clientName.indexOf('_')));
+            System.out.println("clientName="+clientName);
+
+            int underscoreIndex = clientName.indexOf('_');
+            // Check if underscore exists, otherwise return the whole string
+            clientName = underscoreIndex != -1 ? clientName.substring(0, underscoreIndex) : clientName;
+            test.setClientName(clientName);
             test.setOperationName(operationShape.getId().getName());
 
             String inputShapeName = operationShape.getInput()
@@ -86,6 +90,9 @@ public class SmokeTestsParser {
                     Map<String, Shape> fieldShapeMap = codegenAdapter.getMemberShapes(topLevelShape.get());
 
                     //declare top level variable
+                    CppBlockWriter blockWriter = new CppBlockWriter(0)
+                        .addCode(String.format("%sRequest %s;\n", test.getOperationName(), "input"));
+            
                     sb.append(String.format("%sRequest %s;\n", test.getOperationName(), "input"));
                     for (Map.Entry<String, Node> paramEntry : testcase.getParams().get().getStringMap().entrySet()) {
                         String key = paramEntry.getKey();
@@ -99,6 +106,17 @@ public class SmokeTestsParser {
                         }
 
                         try {
+                            blockWriter.addCode(String.format("input.Set%s(%s);\n", key,
+
+                                codegenAdapter.GenerateCppSetters(
+                                        test.getOperationName().toLowerCase() + "_elem",
+                                        value,
+                                        fieldShape, //useful for C++ return type object
+                                        1, //useful for depth
+                                        0, //useful for array elements at same depth
+                                        functionMap)
+                                ));
+
                             sb.append(String.format("input.Set%s(%s);\n", key,
 
                                     codegenAdapter.GenerateCppSetters(
@@ -113,8 +131,9 @@ public class SmokeTestsParser {
                             throw new RuntimeException(e);
                         }
                     }
-
+                    
                     test.setFunctionBlock(sb.toString());
+                    //test.setFunctionBlock(blockWriter.getCode());
 
                     List<String> lines = new ArrayList<>();
 
@@ -240,16 +259,22 @@ public class SmokeTestsParser {
 
             ServiceShape serviceShape = serviceShapeMap.get(serviceName);
 
-            System.out.println("OperationShape: " + operationShape.getName());
+            System.out.println("OperationShape: " + operationShape.getId().getName());
             System.out.println("serviceName: " + serviceName);
 
-
-            //parseSmokeTests(
-            //                SmokeTestsTrait smokeTestsTrait, 
-            //                OperationShape operationShape,
-            //                ServiceShape serviceShape )
-
-
+            List<TestcaseParams> tests = parseSmokeTests(
+                smokeTestsTrait, 
+                operationShape,
+                serviceShape );
+            //add to tests for the same service
+            if(serviceSmokeTestsMap.containsKey(serviceName))
+            {
+                serviceSmokeTestsMap.get(serviceName).addAll(tests);
+            }
+            else
+            {
+                serviceSmokeTestsMap.put(serviceName, tests);
+            }
 
         });
         
