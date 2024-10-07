@@ -1644,6 +1644,31 @@ namespace deadline
         }
 
         /**
+         * <p>Lists parameter definitions of a job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobParameterDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListJobParameterDefinitionsOutcome ListJobParameterDefinitions(const Model::ListJobParameterDefinitionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListJobParameterDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListJobParameterDefinitionsRequestT = Model::ListJobParameterDefinitionsRequest>
+        Model::ListJobParameterDefinitionsOutcomeCallable ListJobParameterDefinitionsCallable(const ListJobParameterDefinitionsRequestT& request) const
+        {
+            return SubmitCallable(&DeadlineClient::ListJobParameterDefinitions, request);
+        }
+
+        /**
+         * An Async wrapper for ListJobParameterDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListJobParameterDefinitionsRequestT = Model::ListJobParameterDefinitionsRequest>
+        void ListJobParameterDefinitionsAsync(const ListJobParameterDefinitionsRequestT& request, const ListJobParameterDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DeadlineClient::ListJobParameterDefinitions, request, handler, context);
+        }
+
+        /**
          * <p>Lists jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobs">AWS
          * API Reference</a></p>

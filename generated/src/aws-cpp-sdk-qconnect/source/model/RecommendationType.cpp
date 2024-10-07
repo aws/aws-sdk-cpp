@@ -23,6 +23,7 @@ namespace Aws
         static const int KNOWLEDGE_CONTENT_HASH = HashingUtils::HashString("KNOWLEDGE_CONTENT");
         static const int GENERATIVE_RESPONSE_HASH = HashingUtils::HashString("GENERATIVE_RESPONSE");
         static const int GENERATIVE_ANSWER_HASH = HashingUtils::HashString("GENERATIVE_ANSWER");
+        static const int DETECTED_INTENT_HASH = HashingUtils::HashString("DETECTED_INTENT");
 
 
         RecommendationType GetRecommendationTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == GENERATIVE_ANSWER_HASH)
           {
             return RecommendationType::GENERATIVE_ANSWER;
+          }
+          else if (hashCode == DETECTED_INTENT_HASH)
+          {
+            return RecommendationType::DETECTED_INTENT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "GENERATIVE_RESPONSE";
           case RecommendationType::GENERATIVE_ANSWER:
             return "GENERATIVE_ANSWER";
+          case RecommendationType::DETECTED_INTENT:
+            return "DETECTED_INTENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -162,6 +162,12 @@ GetJobResult& GetJobResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   }
 
+  if(jsonValue.ValueExists("sourceJobId"))
+  {
+    m_sourceJobId = jsonValue.GetString("sourceJobId");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

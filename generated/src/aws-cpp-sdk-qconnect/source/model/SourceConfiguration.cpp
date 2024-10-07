@@ -19,7 +19,8 @@ namespace Model
 {
 
 SourceConfiguration::SourceConfiguration() : 
-    m_appIntegrationsHasBeenSet(false)
+    m_appIntegrationsHasBeenSet(false),
+    m_managedSourceConfigurationHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ SourceConfiguration& SourceConfiguration::operator =(JsonView jsonValue)
     m_appIntegrationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("managedSourceConfiguration"))
+  {
+    m_managedSourceConfiguration = jsonValue.GetObject("managedSourceConfiguration");
+
+    m_managedSourceConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue SourceConfiguration::Jsonize() const
   if(m_appIntegrationsHasBeenSet)
   {
    payload.WithObject("appIntegrations", m_appIntegrations.Jsonize());
+
+  }
+
+  if(m_managedSourceConfigurationHasBeenSet)
+  {
+   payload.WithObject("managedSourceConfiguration", m_managedSourceConfiguration.Jsonize());
 
   }
 

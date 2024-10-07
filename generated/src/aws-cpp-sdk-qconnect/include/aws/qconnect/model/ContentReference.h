@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/model/ReferenceType.h>
 #include <utility>
 
 namespace Aws
@@ -93,6 +94,32 @@ namespace Model
     inline ContentReference& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
     inline ContentReference& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of reference content.</p>
+     */
+    inline const ReferenceType& GetReferenceType() const{ return m_referenceType; }
+    inline bool ReferenceTypeHasBeenSet() const { return m_referenceTypeHasBeenSet; }
+    inline void SetReferenceType(const ReferenceType& value) { m_referenceTypeHasBeenSet = true; m_referenceType = value; }
+    inline void SetReferenceType(ReferenceType&& value) { m_referenceTypeHasBeenSet = true; m_referenceType = std::move(value); }
+    inline ContentReference& WithReferenceType(const ReferenceType& value) { SetReferenceType(value); return *this;}
+    inline ContentReference& WithReferenceType(ReferenceType&& value) { SetReferenceType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The web URL of the source content.</p>
+     */
+    inline const Aws::String& GetSourceURL() const{ return m_sourceURL; }
+    inline bool SourceURLHasBeenSet() const { return m_sourceURLHasBeenSet; }
+    inline void SetSourceURL(const Aws::String& value) { m_sourceURLHasBeenSet = true; m_sourceURL = value; }
+    inline void SetSourceURL(Aws::String&& value) { m_sourceURLHasBeenSet = true; m_sourceURL = std::move(value); }
+    inline void SetSourceURL(const char* value) { m_sourceURLHasBeenSet = true; m_sourceURL.assign(value); }
+    inline ContentReference& WithSourceURL(const Aws::String& value) { SetSourceURL(value); return *this;}
+    inline ContentReference& WithSourceURL(Aws::String&& value) { SetSourceURL(std::move(value)); return *this;}
+    inline ContentReference& WithSourceURL(const char* value) { SetSourceURL(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_contentArn;
@@ -106,6 +133,12 @@ namespace Model
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
+
+    ReferenceType m_referenceType;
+    bool m_referenceTypeHasBeenSet = false;
+
+    Aws::String m_sourceURL;
+    bool m_sourceURLHasBeenSet = false;
   };
 
 } // namespace Model

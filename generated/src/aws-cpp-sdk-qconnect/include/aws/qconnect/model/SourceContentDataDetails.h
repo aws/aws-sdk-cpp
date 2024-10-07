@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/CitationSpan.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/RankingData.h>
 #include <aws/qconnect/model/TextData.h>
@@ -39,6 +40,19 @@ namespace Model
     AWS_QCONNECT_API SourceContentDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>Contains information about where the text with a citation begins and ends in
+     * the generated output.</p>
+     */
+    inline const CitationSpan& GetCitationSpan() const{ return m_citationSpan; }
+    inline bool CitationSpanHasBeenSet() const { return m_citationSpanHasBeenSet; }
+    inline void SetCitationSpan(const CitationSpan& value) { m_citationSpanHasBeenSet = true; m_citationSpan = value; }
+    inline void SetCitationSpan(CitationSpan&& value) { m_citationSpanHasBeenSet = true; m_citationSpan = std::move(value); }
+    inline SourceContentDataDetails& WithCitationSpan(const CitationSpan& value) { SetCitationSpan(value); return *this;}
+    inline SourceContentDataDetails& WithCitationSpan(CitationSpan&& value) { SetCitationSpan(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -90,6 +104,9 @@ namespace Model
     inline SourceContentDataDetails& WithType(SourceContentType&& value) { SetType(std::move(value)); return *this;}
     ///@}
   private:
+
+    CitationSpan m_citationSpan;
+    bool m_citationSpanHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;

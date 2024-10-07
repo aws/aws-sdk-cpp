@@ -20,6 +20,9 @@ namespace Model
 
 KnowledgeBaseData::KnowledgeBaseData() : 
     m_descriptionHasBeenSet(false),
+    m_ingestionFailureReasonsHasBeenSet(false),
+    m_ingestionStatus(SyncStatus::NOT_SET),
+    m_ingestionStatusHasBeenSet(false),
     m_knowledgeBaseArnHasBeenSet(false),
     m_knowledgeBaseIdHasBeenSet(false),
     m_knowledgeBaseType(KnowledgeBaseType::NOT_SET),
@@ -31,7 +34,8 @@ KnowledgeBaseData::KnowledgeBaseData() :
     m_sourceConfigurationHasBeenSet(false),
     m_status(KnowledgeBaseStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vectorIngestionConfigurationHasBeenSet(false)
 {
 }
 
@@ -48,6 +52,23 @@ KnowledgeBaseData& KnowledgeBaseData::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ingestionFailureReasons"))
+  {
+    Aws::Utils::Array<JsonView> ingestionFailureReasonsJsonList = jsonValue.GetArray("ingestionFailureReasons");
+    for(unsigned ingestionFailureReasonsIndex = 0; ingestionFailureReasonsIndex < ingestionFailureReasonsJsonList.GetLength(); ++ingestionFailureReasonsIndex)
+    {
+      m_ingestionFailureReasons.push_back(ingestionFailureReasonsJsonList[ingestionFailureReasonsIndex].AsString());
+    }
+    m_ingestionFailureReasonsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ingestionStatus"))
+  {
+    m_ingestionStatus = SyncStatusMapper::GetSyncStatusForName(jsonValue.GetString("ingestionStatus"));
+
+    m_ingestionStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("knowledgeBaseArn"))
@@ -123,6 +144,13 @@ KnowledgeBaseData& KnowledgeBaseData::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vectorIngestionConfiguration"))
+  {
+    m_vectorIngestionConfiguration = jsonValue.GetObject("vectorIngestionConfiguration");
+
+    m_vectorIngestionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +162,22 @@ JsonValue KnowledgeBaseData::Jsonize() const
   {
    payload.WithString("description", m_description);
 
+  }
+
+  if(m_ingestionFailureReasonsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> ingestionFailureReasonsJsonList(m_ingestionFailureReasons.size());
+   for(unsigned ingestionFailureReasonsIndex = 0; ingestionFailureReasonsIndex < ingestionFailureReasonsJsonList.GetLength(); ++ingestionFailureReasonsIndex)
+   {
+     ingestionFailureReasonsJsonList[ingestionFailureReasonsIndex].AsString(m_ingestionFailureReasons[ingestionFailureReasonsIndex]);
+   }
+   payload.WithArray("ingestionFailureReasons", std::move(ingestionFailureReasonsJsonList));
+
+  }
+
+  if(m_ingestionStatusHasBeenSet)
+  {
+   payload.WithString("ingestionStatus", SyncStatusMapper::GetNameForSyncStatus(m_ingestionStatus));
   }
 
   if(m_knowledgeBaseArnHasBeenSet)
@@ -195,6 +239,12 @@ JsonValue KnowledgeBaseData::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_vectorIngestionConfigurationHasBeenSet)
+  {
+   payload.WithObject("vectorIngestionConfiguration", m_vectorIngestionConfiguration.Jsonize());
 
   }
 

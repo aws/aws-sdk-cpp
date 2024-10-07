@@ -19,6 +19,7 @@ namespace Model
 {
 
 SessionData::SessionData() : 
+    m_aiAgentConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_integrationConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -37,6 +38,16 @@ SessionData::SessionData(JsonView jsonValue)
 
 SessionData& SessionData::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("aiAgentConfiguration"))
+  {
+    Aws::Map<Aws::String, JsonView> aiAgentConfigurationJsonMap = jsonValue.GetObject("aiAgentConfiguration").GetAllObjects();
+    for(auto& aiAgentConfigurationItem : aiAgentConfigurationJsonMap)
+    {
+      m_aiAgentConfiguration[AIAgentTypeMapper::GetAIAgentTypeForName(aiAgentConfigurationItem.first)] = aiAgentConfigurationItem.second.AsObject();
+    }
+    m_aiAgentConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -95,6 +106,17 @@ SessionData& SessionData::operator =(JsonView jsonValue)
 JsonValue SessionData::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_aiAgentConfigurationHasBeenSet)
+  {
+   JsonValue aiAgentConfigurationJsonMap;
+   for(auto& aiAgentConfigurationItem : m_aiAgentConfiguration)
+   {
+     aiAgentConfigurationJsonMap.WithObject(AIAgentTypeMapper::GetNameForAIAgentType(aiAgentConfigurationItem.first), aiAgentConfigurationItem.second.Jsonize());
+   }
+   payload.WithObject("aiAgentConfiguration", std::move(aiAgentConfigurationJsonMap));
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

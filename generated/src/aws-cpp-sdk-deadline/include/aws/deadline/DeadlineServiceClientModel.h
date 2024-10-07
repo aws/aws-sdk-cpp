@@ -79,6 +79,7 @@
 #include <aws/deadline/model/ListFleetMembersResult.h>
 #include <aws/deadline/model/ListFleetsResult.h>
 #include <aws/deadline/model/ListJobMembersResult.h>
+#include <aws/deadline/model/ListJobParameterDefinitionsResult.h>
 #include <aws/deadline/model/ListJobsResult.h>
 #include <aws/deadline/model/ListLicenseEndpointsResult.h>
 #include <aws/deadline/model/ListMeteredProductsResult.h>
@@ -225,6 +226,7 @@ namespace Aws
       class ListFleetMembersRequest;
       class ListFleetsRequest;
       class ListJobMembersRequest;
+      class ListJobParameterDefinitionsRequest;
       class ListJobsRequest;
       class ListLicenseEndpointsRequest;
       class ListMeteredProductsRequest;
@@ -330,6 +332,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListFleetMembersResult, DeadlineError> ListFleetMembersOutcome;
       typedef Aws::Utils::Outcome<ListFleetsResult, DeadlineError> ListFleetsOutcome;
       typedef Aws::Utils::Outcome<ListJobMembersResult, DeadlineError> ListJobMembersOutcome;
+      typedef Aws::Utils::Outcome<ListJobParameterDefinitionsResult, DeadlineError> ListJobParameterDefinitionsOutcome;
       typedef Aws::Utils::Outcome<ListJobsResult, DeadlineError> ListJobsOutcome;
       typedef Aws::Utils::Outcome<ListLicenseEndpointsResult, DeadlineError> ListLicenseEndpointsOutcome;
       typedef Aws::Utils::Outcome<ListMeteredProductsResult, DeadlineError> ListMeteredProductsOutcome;
@@ -435,6 +438,7 @@ namespace Aws
       typedef std::future<ListFleetMembersOutcome> ListFleetMembersOutcomeCallable;
       typedef std::future<ListFleetsOutcome> ListFleetsOutcomeCallable;
       typedef std::future<ListJobMembersOutcome> ListJobMembersOutcomeCallable;
+      typedef std::future<ListJobParameterDefinitionsOutcome> ListJobParameterDefinitionsOutcomeCallable;
       typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
       typedef std::future<ListLicenseEndpointsOutcome> ListLicenseEndpointsOutcomeCallable;
       typedef std::future<ListMeteredProductsOutcome> ListMeteredProductsOutcomeCallable;
@@ -543,6 +547,7 @@ namespace Aws
     typedef std::function<void(const DeadlineClient*, const Model::ListFleetMembersRequest&, const Model::ListFleetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetMembersResponseReceivedHandler;
     typedef std::function<void(const DeadlineClient*, const Model::ListFleetsRequest&, const Model::ListFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetsResponseReceivedHandler;
     typedef std::function<void(const DeadlineClient*, const Model::ListJobMembersRequest&, const Model::ListJobMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobMembersResponseReceivedHandler;
+    typedef std::function<void(const DeadlineClient*, const Model::ListJobParameterDefinitionsRequest&, const Model::ListJobParameterDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobParameterDefinitionsResponseReceivedHandler;
     typedef std::function<void(const DeadlineClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const DeadlineClient*, const Model::ListLicenseEndpointsRequest&, const Model::ListLicenseEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLicenseEndpointsResponseReceivedHandler;
     typedef std::function<void(const DeadlineClient*, const Model::ListMeteredProductsRequest&, const Model::ListMeteredProductsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMeteredProductsResponseReceivedHandler;

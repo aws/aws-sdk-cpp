@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateSessionRequest::CreateSessionRequest() : 
+    m_aiAgentConfigurationHasBeenSet(false),
     m_assistantIdHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
@@ -26,6 +27,17 @@ CreateSessionRequest::CreateSessionRequest() :
 Aws::String CreateSessionRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_aiAgentConfigurationHasBeenSet)
+  {
+   JsonValue aiAgentConfigurationJsonMap;
+   for(auto& aiAgentConfigurationItem : m_aiAgentConfiguration)
+   {
+     aiAgentConfigurationJsonMap.WithObject(AIAgentTypeMapper::GetNameForAIAgentType(aiAgentConfigurationItem.first), aiAgentConfigurationItem.second.Jsonize());
+   }
+   payload.WithObject("aiAgentConfiguration", std::move(aiAgentConfigurationJsonMap));
+
+  }
 
   if(m_clientTokenHasBeenSet)
   {

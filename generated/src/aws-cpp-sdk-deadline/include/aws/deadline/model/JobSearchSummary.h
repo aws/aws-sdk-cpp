@@ -257,6 +257,20 @@ namespace Model
     inline JobSearchSummary& AddJobParameters(const char* key, JobParameter&& value) { m_jobParametersHasBeenSet = true; m_jobParameters.emplace(key, std::move(value)); return *this; }
     inline JobSearchSummary& AddJobParameters(const char* key, const JobParameter& value) { m_jobParametersHasBeenSet = true; m_jobParameters.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The job ID for the source job.</p>
+     */
+    inline const Aws::String& GetSourceJobId() const{ return m_sourceJobId; }
+    inline bool SourceJobIdHasBeenSet() const { return m_sourceJobIdHasBeenSet; }
+    inline void SetSourceJobId(const Aws::String& value) { m_sourceJobIdHasBeenSet = true; m_sourceJobId = value; }
+    inline void SetSourceJobId(Aws::String&& value) { m_sourceJobIdHasBeenSet = true; m_sourceJobId = std::move(value); }
+    inline void SetSourceJobId(const char* value) { m_sourceJobIdHasBeenSet = true; m_sourceJobId.assign(value); }
+    inline JobSearchSummary& WithSourceJobId(const Aws::String& value) { SetSourceJobId(value); return *this;}
+    inline JobSearchSummary& WithSourceJobId(Aws::String&& value) { SetSourceJobId(std::move(value)); return *this;}
+    inline JobSearchSummary& WithSourceJobId(const char* value) { SetSourceJobId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_jobId;
@@ -306,6 +320,9 @@ namespace Model
 
     Aws::Map<Aws::String, JobParameter> m_jobParameters;
     bool m_jobParametersHasBeenSet = false;
+
+    Aws::String m_sourceJobId;
+    bool m_sourceJobIdHasBeenSet = false;
   };
 
 } // namespace Model

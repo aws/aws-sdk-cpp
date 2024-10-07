@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/ContentDataDetails.h>
+#include <aws/qconnect/model/IntentDetectedDataDetails.h>
 #include <aws/qconnect/model/SourceContentDataDetails.h>
 #include <utility>
 #include <memory>
@@ -66,6 +67,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Details about the intent data.</p>
+     */
+    inline const IntentDetectedDataDetails& GetIntentDetectedData() const{ return m_intentDetectedData; }
+    inline bool IntentDetectedDataHasBeenSet() const { return m_intentDetectedDataHasBeenSet; }
+    inline void SetIntentDetectedData(const IntentDetectedDataDetails& value) { m_intentDetectedDataHasBeenSet = true; m_intentDetectedData = value; }
+    inline void SetIntentDetectedData(IntentDetectedDataDetails&& value) { m_intentDetectedDataHasBeenSet = true; m_intentDetectedData = std::move(value); }
+    inline DataDetails& WithIntentDetectedData(const IntentDetectedDataDetails& value) { SetIntentDetectedData(value); return *this;}
+    inline DataDetails& WithIntentDetectedData(IntentDetectedDataDetails&& value) { SetIntentDetectedData(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Details about the content data.</p>
      */
     inline const SourceContentDataDetails& GetSourceContentData() const{ return m_sourceContentData; }
@@ -82,6 +95,9 @@ namespace Model
 
     std::shared_ptr<GenerativeDataDetails> m_generativeData;
     bool m_generativeDataHasBeenSet = false;
+
+    IntentDetectedDataDetails m_intentDetectedData;
+    bool m_intentDetectedDataHasBeenSet = false;
 
     SourceContentDataDetails m_sourceContentData;
     bool m_sourceContentDataHasBeenSet = false;
