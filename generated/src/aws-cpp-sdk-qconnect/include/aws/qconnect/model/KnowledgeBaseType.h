@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     EXTERNAL,
     CUSTOM,
-    QUICK_RESPONSES
+    QUICK_RESPONSES,
+    MESSAGE_TEMPLATES,
+    MANAGED
   };
 
 namespace KnowledgeBaseTypeMapper

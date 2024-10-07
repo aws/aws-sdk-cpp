@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     KNOWLEDGE_CONTENT,
     GENERATIVE_RESPONSE,
-    GENERATIVE_ANSWER
+    GENERATIVE_ANSWER,
+    DETECTED_INTENT
   };
 
 namespace RecommendationTypeMapper

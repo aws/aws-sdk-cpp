@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     KNOWLEDGE_CONTENT,
+    INTENT_ANSWER,
     GENERATIVE_ANSWER
   };
 

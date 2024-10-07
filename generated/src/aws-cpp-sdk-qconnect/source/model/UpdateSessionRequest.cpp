@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateSessionRequest::UpdateSessionRequest() : 
+    m_aiAgentConfigurationHasBeenSet(false),
     m_assistantIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -23,6 +24,17 @@ UpdateSessionRequest::UpdateSessionRequest() :
 Aws::String UpdateSessionRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_aiAgentConfigurationHasBeenSet)
+  {
+   JsonValue aiAgentConfigurationJsonMap;
+   for(auto& aiAgentConfigurationItem : m_aiAgentConfiguration)
+   {
+     aiAgentConfigurationJsonMap.WithObject(AIAgentTypeMapper::GetNameForAIAgentType(aiAgentConfigurationItem.first), aiAgentConfigurationItem.second.Jsonize());
+   }
+   payload.WithObject("aiAgentConfiguration", std::move(aiAgentConfigurationJsonMap));
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

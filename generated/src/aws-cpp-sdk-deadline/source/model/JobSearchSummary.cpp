@@ -40,7 +40,8 @@ JobSearchSummary::JobSearchSummary() :
     m_createdAtHasBeenSet(false),
     m_endedAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
-    m_jobParametersHasBeenSet(false)
+    m_jobParametersHasBeenSet(false),
+    m_sourceJobIdHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,13 @@ JobSearchSummary& JobSearchSummary::operator =(JsonView jsonValue)
     m_jobParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sourceJobId"))
+  {
+    m_sourceJobId = jsonValue.GetString("sourceJobId");
+
+    m_sourceJobIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -274,6 +282,12 @@ JsonValue JobSearchSummary::Jsonize() const
      jobParametersJsonMap.WithObject(jobParametersItem.first, jobParametersItem.second.Jsonize());
    }
    payload.WithObject("jobParameters", std::move(jobParametersJsonMap));
+
+  }
+
+  if(m_sourceJobIdHasBeenSet)
+  {
+   payload.WithString("sourceJobId", m_sourceJobId);
 
   }
 

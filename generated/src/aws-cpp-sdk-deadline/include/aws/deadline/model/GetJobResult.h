@@ -279,6 +279,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The job ID for the source job.</p>
+     */
+    inline const Aws::String& GetSourceJobId() const{ return m_sourceJobId; }
+    inline void SetSourceJobId(const Aws::String& value) { m_sourceJobId = value; }
+    inline void SetSourceJobId(Aws::String&& value) { m_sourceJobId = std::move(value); }
+    inline void SetSourceJobId(const char* value) { m_sourceJobId.assign(value); }
+    inline GetJobResult& WithSourceJobId(const Aws::String& value) { SetSourceJobId(value); return *this;}
+    inline GetJobResult& WithSourceJobId(Aws::String&& value) { SetSourceJobId(std::move(value)); return *this;}
+    inline GetJobResult& WithSourceJobId(const char* value) { SetSourceJobId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -329,6 +342,8 @@ namespace Model
     Attachments m_attachments;
 
     Aws::String m_description;
+
+    Aws::String m_sourceJobId;
 
     Aws::String m_requestId;
   };

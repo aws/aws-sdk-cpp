@@ -23,6 +23,8 @@ namespace Aws
         static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
         static const int QUICK_RESPONSES_HASH = HashingUtils::HashString("QUICK_RESPONSES");
+        static const int MESSAGE_TEMPLATES_HASH = HashingUtils::HashString("MESSAGE_TEMPLATES");
+        static const int MANAGED_HASH = HashingUtils::HashString("MANAGED");
 
 
         KnowledgeBaseType GetKnowledgeBaseTypeForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == QUICK_RESPONSES_HASH)
           {
             return KnowledgeBaseType::QUICK_RESPONSES;
+          }
+          else if (hashCode == MESSAGE_TEMPLATES_HASH)
+          {
+            return KnowledgeBaseType::MESSAGE_TEMPLATES;
+          }
+          else if (hashCode == MANAGED_HASH)
+          {
+            return KnowledgeBaseType::MANAGED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +72,10 @@ namespace Aws
             return "CUSTOM";
           case KnowledgeBaseType::QUICK_RESPONSES:
             return "QUICK_RESPONSES";
+          case KnowledgeBaseType::MESSAGE_TEMPLATES:
+            return "MESSAGE_TEMPLATES";
+          case KnowledgeBaseType::MANAGED:
+            return "MANAGED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

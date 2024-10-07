@@ -1,0 +1,74 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/qconnect/model/AIPromptVersionSummary.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace QConnect
+{
+namespace Model
+{
+
+AIPromptVersionSummary::AIPromptVersionSummary() : 
+    m_aiPromptSummaryHasBeenSet(false),
+    m_versionNumber(0),
+    m_versionNumberHasBeenSet(false)
+{
+}
+
+AIPromptVersionSummary::AIPromptVersionSummary(JsonView jsonValue)
+  : AIPromptVersionSummary()
+{
+  *this = jsonValue;
+}
+
+AIPromptVersionSummary& AIPromptVersionSummary::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("aiPromptSummary"))
+  {
+    m_aiPromptSummary = jsonValue.GetObject("aiPromptSummary");
+
+    m_aiPromptSummaryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("versionNumber"))
+  {
+    m_versionNumber = jsonValue.GetInt64("versionNumber");
+
+    m_versionNumberHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue AIPromptVersionSummary::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_aiPromptSummaryHasBeenSet)
+  {
+   payload.WithObject("aiPromptSummary", m_aiPromptSummary.Jsonize());
+
+  }
+
+  if(m_versionNumberHasBeenSet)
+  {
+   payload.WithInt64("versionNumber", m_versionNumber);
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace QConnect
+} // namespace Aws

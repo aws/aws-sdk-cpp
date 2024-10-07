@@ -22,6 +22,7 @@ namespace Model
 DataDetails::DataDetails() : 
     m_contentDataHasBeenSet(false),
     m_generativeDataHasBeenSet(false),
+    m_intentDetectedDataHasBeenSet(false),
     m_sourceContentDataHasBeenSet(false)
 {
 }
@@ -55,6 +56,13 @@ DataDetails& DataDetails::operator =(JsonView jsonValue)
     m_generativeDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("intentDetectedData"))
+  {
+    m_intentDetectedData = jsonValue.GetObject("intentDetectedData");
+
+    m_intentDetectedDataHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sourceContentData"))
   {
     m_sourceContentData = jsonValue.GetObject("sourceContentData");
@@ -78,6 +86,12 @@ JsonValue DataDetails::Jsonize() const
   if(m_generativeDataHasBeenSet)
   {
    payload.WithObject("generativeData", m_generativeData->Jsonize());
+
+  }
+
+  if(m_intentDetectedDataHasBeenSet)
+  {
+   payload.WithObject("intentDetectedData", m_intentDetectedData.Jsonize());
 
   }
 

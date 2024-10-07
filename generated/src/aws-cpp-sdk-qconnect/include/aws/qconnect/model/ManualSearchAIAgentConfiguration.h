@@ -1,0 +1,82 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qconnect/model/AssociationConfiguration.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace QConnect
+{
+namespace Model
+{
+
+  /**
+   * <p>The configuration for the <code>MANUAL_SEARCH</code> AI Agent
+   * type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ManualSearchAIAgentConfiguration">AWS
+   * API Reference</a></p>
+   */
+  class ManualSearchAIAgentConfiguration
+  {
+  public:
+    AWS_QCONNECT_API ManualSearchAIAgentConfiguration();
+    AWS_QCONNECT_API ManualSearchAIAgentConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QCONNECT_API ManualSearchAIAgentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p>The AI Prompt identifier for the Answer Generation prompt used by the
+     * MANUAL_SEARCH AI Agent.</p>
+     */
+    inline const Aws::String& GetAnswerGenerationAIPromptId() const{ return m_answerGenerationAIPromptId; }
+    inline bool AnswerGenerationAIPromptIdHasBeenSet() const { return m_answerGenerationAIPromptIdHasBeenSet; }
+    inline void SetAnswerGenerationAIPromptId(const Aws::String& value) { m_answerGenerationAIPromptIdHasBeenSet = true; m_answerGenerationAIPromptId = value; }
+    inline void SetAnswerGenerationAIPromptId(Aws::String&& value) { m_answerGenerationAIPromptIdHasBeenSet = true; m_answerGenerationAIPromptId = std::move(value); }
+    inline void SetAnswerGenerationAIPromptId(const char* value) { m_answerGenerationAIPromptIdHasBeenSet = true; m_answerGenerationAIPromptId.assign(value); }
+    inline ManualSearchAIAgentConfiguration& WithAnswerGenerationAIPromptId(const Aws::String& value) { SetAnswerGenerationAIPromptId(value); return *this;}
+    inline ManualSearchAIAgentConfiguration& WithAnswerGenerationAIPromptId(Aws::String&& value) { SetAnswerGenerationAIPromptId(std::move(value)); return *this;}
+    inline ManualSearchAIAgentConfiguration& WithAnswerGenerationAIPromptId(const char* value) { SetAnswerGenerationAIPromptId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The association configurations for overriding behavior on this AI Agent.</p>
+     */
+    inline const Aws::Vector<AssociationConfiguration>& GetAssociationConfigurations() const{ return m_associationConfigurations; }
+    inline bool AssociationConfigurationsHasBeenSet() const { return m_associationConfigurationsHasBeenSet; }
+    inline void SetAssociationConfigurations(const Aws::Vector<AssociationConfiguration>& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations = value; }
+    inline void SetAssociationConfigurations(Aws::Vector<AssociationConfiguration>&& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations = std::move(value); }
+    inline ManualSearchAIAgentConfiguration& WithAssociationConfigurations(const Aws::Vector<AssociationConfiguration>& value) { SetAssociationConfigurations(value); return *this;}
+    inline ManualSearchAIAgentConfiguration& WithAssociationConfigurations(Aws::Vector<AssociationConfiguration>&& value) { SetAssociationConfigurations(std::move(value)); return *this;}
+    inline ManualSearchAIAgentConfiguration& AddAssociationConfigurations(const AssociationConfiguration& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations.push_back(value); return *this; }
+    inline ManualSearchAIAgentConfiguration& AddAssociationConfigurations(AssociationConfiguration&& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
+  private:
+
+    Aws::String m_answerGenerationAIPromptId;
+    bool m_answerGenerationAIPromptIdHasBeenSet = false;
+
+    Aws::Vector<AssociationConfiguration> m_associationConfigurations;
+    bool m_associationConfigurationsHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace QConnect
+} // namespace Aws

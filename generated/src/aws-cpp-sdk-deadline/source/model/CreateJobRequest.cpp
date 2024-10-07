@@ -31,7 +31,8 @@ CreateJobRequest::CreateJobRequest() :
     m_maxFailedTasksCount(0),
     m_maxFailedTasksCountHasBeenSet(false),
     m_maxRetriesPerTask(0),
-    m_maxRetriesPerTaskHasBeenSet(false)
+    m_maxRetriesPerTaskHasBeenSet(false),
+    m_sourceJobIdHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_maxRetriesPerTaskHasBeenSet)
   {
    payload.WithInteger("maxRetriesPerTask", m_maxRetriesPerTask);
+
+  }
+
+  if(m_sourceJobIdHasBeenSet)
+  {
+   payload.WithString("sourceJobId", m_sourceJobId);
 
   }
 

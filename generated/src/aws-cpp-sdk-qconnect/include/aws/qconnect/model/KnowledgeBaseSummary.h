@@ -12,6 +12,7 @@
 #include <aws/qconnect/model/SourceConfiguration.h>
 #include <aws/qconnect/model/KnowledgeBaseStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/qconnect/model/VectorIngestionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -185,6 +186,18 @@ namespace Model
     inline KnowledgeBaseSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline KnowledgeBaseSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about how to ingest the documents in a data source.</p>
+     */
+    inline const VectorIngestionConfiguration& GetVectorIngestionConfiguration() const{ return m_vectorIngestionConfiguration; }
+    inline bool VectorIngestionConfigurationHasBeenSet() const { return m_vectorIngestionConfigurationHasBeenSet; }
+    inline void SetVectorIngestionConfiguration(const VectorIngestionConfiguration& value) { m_vectorIngestionConfigurationHasBeenSet = true; m_vectorIngestionConfiguration = value; }
+    inline void SetVectorIngestionConfiguration(VectorIngestionConfiguration&& value) { m_vectorIngestionConfigurationHasBeenSet = true; m_vectorIngestionConfiguration = std::move(value); }
+    inline KnowledgeBaseSummary& WithVectorIngestionConfiguration(const VectorIngestionConfiguration& value) { SetVectorIngestionConfiguration(value); return *this;}
+    inline KnowledgeBaseSummary& WithVectorIngestionConfiguration(VectorIngestionConfiguration&& value) { SetVectorIngestionConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
@@ -216,6 +229,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    VectorIngestionConfiguration m_vectorIngestionConfiguration;
+    bool m_vectorIngestionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

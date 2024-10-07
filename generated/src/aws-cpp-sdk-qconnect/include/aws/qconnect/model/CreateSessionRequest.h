@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/QConnectRequest.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/model/TagFilter.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/qconnect/model/AIAgentType.h>
+#include <aws/qconnect/model/AIAgentConfigurationData.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -34,6 +36,23 @@ namespace Model
 
     AWS_QCONNECT_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>The configuration of the AI Agents (mapped by AI Agent Type to AI Agent
+     * version) that should be used by Amazon Q in Connect for this Session.</p>
+     */
+    inline const Aws::Map<AIAgentType, AIAgentConfigurationData>& GetAiAgentConfiguration() const{ return m_aiAgentConfiguration; }
+    inline bool AiAgentConfigurationHasBeenSet() const { return m_aiAgentConfigurationHasBeenSet; }
+    inline void SetAiAgentConfiguration(const Aws::Map<AIAgentType, AIAgentConfigurationData>& value) { m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration = value; }
+    inline void SetAiAgentConfiguration(Aws::Map<AIAgentType, AIAgentConfigurationData>&& value) { m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration = std::move(value); }
+    inline CreateSessionRequest& WithAiAgentConfiguration(const Aws::Map<AIAgentType, AIAgentConfigurationData>& value) { SetAiAgentConfiguration(value); return *this;}
+    inline CreateSessionRequest& WithAiAgentConfiguration(Aws::Map<AIAgentType, AIAgentConfigurationData>&& value) { SetAiAgentConfiguration(std::move(value)); return *this;}
+    inline CreateSessionRequest& AddAiAgentConfiguration(const AIAgentType& key, const AIAgentConfigurationData& value) { m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration.emplace(key, value); return *this; }
+    inline CreateSessionRequest& AddAiAgentConfiguration(AIAgentType&& key, const AIAgentConfigurationData& value) { m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration.emplace(std::move(key), value); return *this; }
+    inline CreateSessionRequest& AddAiAgentConfiguration(const AIAgentType& key, AIAgentConfigurationData&& value) { m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration.emplace(key, std::move(value)); return *this; }
+    inline CreateSessionRequest& AddAiAgentConfiguration(AIAgentType&& key, AIAgentConfigurationData&& value) { m_aiAgentConfigurationHasBeenSet = true; m_aiAgentConfiguration.emplace(std::move(key), std::move(value)); return *this; }
+    ///@}
 
     ///@{
     /**
@@ -127,6 +146,9 @@ namespace Model
     inline CreateSessionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
   private:
+
+    Aws::Map<AIAgentType, AIAgentConfigurationData> m_aiAgentConfiguration;
+    bool m_aiAgentConfigurationHasBeenSet = false;
 
     Aws::String m_assistantId;
     bool m_assistantIdHasBeenSet = false;

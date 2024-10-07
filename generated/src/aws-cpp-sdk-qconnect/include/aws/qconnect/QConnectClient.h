@@ -16,7 +16,12 @@ namespace Aws
 namespace QConnect
 {
   /**
-   *  <p> <b>Powered by Amazon Bedrock</b>: Amazon Web Services implements <a
+   * <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Q_Connect.html">Amazon
+   * Q actions</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Q_Connect.html">Amazon
+   * Q data types</a> </p> </li> </ul>  <p> <b>Powered by Amazon Bedrock</b>:
+   * Amazon Web Services implements <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/abuse-detection.html">automated
    * abuse detection</a>. Because Amazon Q in Connect is built on Amazon Bedrock,
    * users can take full advantage of the controls implemented in Amazon Bedrock to
@@ -94,6 +99,108 @@ namespace QConnect
 
         /* End of legacy constructors due deprecation */
         virtual ~QConnectClient();
+
+        /**
+         * <p>Creates an Amazon Q in Connect AI Agent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIAgent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAIAgentOutcome CreateAIAgent(const Model::CreateAIAgentRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAIAgent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAIAgentRequestT = Model::CreateAIAgentRequest>
+        Model::CreateAIAgentOutcomeCallable CreateAIAgentCallable(const CreateAIAgentRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::CreateAIAgent, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAIAgent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAIAgentRequestT = Model::CreateAIAgentRequest>
+        void CreateAIAgentAsync(const CreateAIAgentRequestT& request, const CreateAIAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::CreateAIAgent, request, handler, context);
+        }
+
+        /**
+         * <p>Creates and Amazon Q in Connect AI Agent version.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIAgentVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAIAgentVersionOutcome CreateAIAgentVersion(const Model::CreateAIAgentVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAIAgentVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAIAgentVersionRequestT = Model::CreateAIAgentVersionRequest>
+        Model::CreateAIAgentVersionOutcomeCallable CreateAIAgentVersionCallable(const CreateAIAgentVersionRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::CreateAIAgentVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAIAgentVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAIAgentVersionRequestT = Model::CreateAIAgentVersionRequest>
+        void CreateAIAgentVersionAsync(const CreateAIAgentVersionRequestT& request, const CreateAIAgentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::CreateAIAgentVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an Amazon Q in Connect AI Prompt.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIPrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAIPromptOutcome CreateAIPrompt(const Model::CreateAIPromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAIPrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAIPromptRequestT = Model::CreateAIPromptRequest>
+        Model::CreateAIPromptOutcomeCallable CreateAIPromptCallable(const CreateAIPromptRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::CreateAIPrompt, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAIPrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAIPromptRequestT = Model::CreateAIPromptRequest>
+        void CreateAIPromptAsync(const CreateAIPromptRequestT& request, const CreateAIPromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::CreateAIPrompt, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an Amazon Q in Connect AI Prompt version.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateAIPromptVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAIPromptVersionOutcome CreateAIPromptVersion(const Model::CreateAIPromptVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAIPromptVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAIPromptVersionRequestT = Model::CreateAIPromptVersionRequest>
+        Model::CreateAIPromptVersionOutcomeCallable CreateAIPromptVersionCallable(const CreateAIPromptVersionRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::CreateAIPromptVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAIPromptVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAIPromptVersionRequestT = Model::CreateAIPromptVersionRequest>
+        void CreateAIPromptVersionAsync(const CreateAIPromptVersionRequestT& request, const CreateAIPromptVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::CreateAIPromptVersion, request, handler, context);
+        }
 
         /**
          * <p>Creates an Amazon Q in Connect assistant.</p><p><h3>See Also:</h3>   <a
@@ -307,6 +414,108 @@ namespace QConnect
         }
 
         /**
+         * <p>Deletes an Amazon Q in Connect AI Agent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIAgent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAIAgentOutcome DeleteAIAgent(const Model::DeleteAIAgentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAIAgent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAIAgentRequestT = Model::DeleteAIAgentRequest>
+        Model::DeleteAIAgentOutcomeCallable DeleteAIAgentCallable(const DeleteAIAgentRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::DeleteAIAgent, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAIAgent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAIAgentRequestT = Model::DeleteAIAgentRequest>
+        void DeleteAIAgentAsync(const DeleteAIAgentRequestT& request, const DeleteAIAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::DeleteAIAgent, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an Amazon Q in Connect AI Agent Version.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIAgentVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAIAgentVersionOutcome DeleteAIAgentVersion(const Model::DeleteAIAgentVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAIAgentVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAIAgentVersionRequestT = Model::DeleteAIAgentVersionRequest>
+        Model::DeleteAIAgentVersionOutcomeCallable DeleteAIAgentVersionCallable(const DeleteAIAgentVersionRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::DeleteAIAgentVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAIAgentVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAIAgentVersionRequestT = Model::DeleteAIAgentVersionRequest>
+        void DeleteAIAgentVersionAsync(const DeleteAIAgentVersionRequestT& request, const DeleteAIAgentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::DeleteAIAgentVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an Amazon Q in Connect AI Prompt.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIPrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAIPromptOutcome DeleteAIPrompt(const Model::DeleteAIPromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAIPrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAIPromptRequestT = Model::DeleteAIPromptRequest>
+        Model::DeleteAIPromptOutcomeCallable DeleteAIPromptCallable(const DeleteAIPromptRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::DeleteAIPrompt, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAIPrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAIPromptRequestT = Model::DeleteAIPromptRequest>
+        void DeleteAIPromptAsync(const DeleteAIPromptRequestT& request, const DeleteAIPromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::DeleteAIPrompt, request, handler, context);
+        }
+
+        /**
+         * <p>Delete and Amazon Q in Connect AI Prompt version.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAIPromptVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAIPromptVersionOutcome DeleteAIPromptVersion(const Model::DeleteAIPromptVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAIPromptVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAIPromptVersionRequestT = Model::DeleteAIPromptVersionRequest>
+        Model::DeleteAIPromptVersionOutcomeCallable DeleteAIPromptVersionCallable(const DeleteAIPromptVersionRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::DeleteAIPromptVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAIPromptVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAIPromptVersionRequestT = Model::DeleteAIPromptVersionRequest>
+        void DeleteAIPromptVersionAsync(const DeleteAIPromptVersionRequestT& request, const DeleteAIPromptVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::DeleteAIPromptVersion, request, handler, context);
+        }
+
+        /**
          * <p>Deletes an assistant.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteAssistant">AWS
          * API Reference</a></p>
@@ -494,6 +703,56 @@ namespace QConnect
         void DeleteQuickResponseAsync(const DeleteQuickResponseRequestT& request, const DeleteQuickResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QConnectClient::DeleteQuickResponse, request, handler, context);
+        }
+
+        /**
+         * <p>Gets an Amazon Q in Connect AI Agent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetAIAgent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAIAgentOutcome GetAIAgent(const Model::GetAIAgentRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAIAgent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAIAgentRequestT = Model::GetAIAgentRequest>
+        Model::GetAIAgentOutcomeCallable GetAIAgentCallable(const GetAIAgentRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::GetAIAgent, request);
+        }
+
+        /**
+         * An Async wrapper for GetAIAgent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAIAgentRequestT = Model::GetAIAgentRequest>
+        void GetAIAgentAsync(const GetAIAgentRequestT& request, const GetAIAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::GetAIAgent, request, handler, context);
+        }
+
+        /**
+         * <p>Gets and Amazon Q in Connect AI Prompt.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetAIPrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAIPromptOutcome GetAIPrompt(const Model::GetAIPromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAIPrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAIPromptRequestT = Model::GetAIPromptRequest>
+        Model::GetAIPromptOutcomeCallable GetAIPromptCallable(const GetAIPromptRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::GetAIPrompt, request);
+        }
+
+        /**
+         * An Async wrapper for GetAIPrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAIPromptRequestT = Model::GetAIPromptRequest>
+        void GetAIPromptAsync(const GetAIPromptRequestT& request, const GetAIPromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::GetAIPrompt, request, handler, context);
         }
 
         /**
@@ -726,6 +985,107 @@ namespace QConnect
         void GetSessionAsync(const GetSessionRequestT& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QConnectClient::GetSession, request, handler, context);
+        }
+
+        /**
+         * <p>List AI Agent versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIAgentVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAIAgentVersionsOutcome ListAIAgentVersions(const Model::ListAIAgentVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAIAgentVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAIAgentVersionsRequestT = Model::ListAIAgentVersionsRequest>
+        Model::ListAIAgentVersionsOutcomeCallable ListAIAgentVersionsCallable(const ListAIAgentVersionsRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::ListAIAgentVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListAIAgentVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAIAgentVersionsRequestT = Model::ListAIAgentVersionsRequest>
+        void ListAIAgentVersionsAsync(const ListAIAgentVersionsRequestT& request, const ListAIAgentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::ListAIAgentVersions, request, handler, context);
+        }
+
+        /**
+         * <p>Lists AI Agents.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIAgents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAIAgentsOutcome ListAIAgents(const Model::ListAIAgentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAIAgents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAIAgentsRequestT = Model::ListAIAgentsRequest>
+        Model::ListAIAgentsOutcomeCallable ListAIAgentsCallable(const ListAIAgentsRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::ListAIAgents, request);
+        }
+
+        /**
+         * An Async wrapper for ListAIAgents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAIAgentsRequestT = Model::ListAIAgentsRequest>
+        void ListAIAgentsAsync(const ListAIAgentsRequestT& request, const ListAIAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::ListAIAgents, request, handler, context);
+        }
+
+        /**
+         * <p>Lists AI Prompt versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIPromptVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAIPromptVersionsOutcome ListAIPromptVersions(const Model::ListAIPromptVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAIPromptVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAIPromptVersionsRequestT = Model::ListAIPromptVersionsRequest>
+        Model::ListAIPromptVersionsOutcomeCallable ListAIPromptVersionsCallable(const ListAIPromptVersionsRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::ListAIPromptVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListAIPromptVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAIPromptVersionsRequestT = Model::ListAIPromptVersionsRequest>
+        void ListAIPromptVersionsAsync(const ListAIPromptVersionsRequestT& request, const ListAIPromptVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::ListAIPromptVersions, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the AI Prompts available on the Amazon Q in Connect
+         * assistant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListAIPrompts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAIPromptsOutcome ListAIPrompts(const Model::ListAIPromptsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAIPrompts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAIPromptsRequestT = Model::ListAIPromptsRequest>
+        Model::ListAIPromptsOutcomeCallable ListAIPromptsCallable(const ListAIPromptsRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::ListAIPrompts, request);
+        }
+
+        /**
+         * An Async wrapper for ListAIPrompts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAIPromptsRequestT = Model::ListAIPromptsRequest>
+        void ListAIPromptsAsync(const ListAIPromptsRequestT& request, const ListAIPromptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::ListAIPrompts, request, handler, context);
         }
 
         /**
@@ -988,6 +1348,32 @@ namespace QConnect
         }
 
         /**
+         * <p>Removes the AI Agent that is set for use by defafult on an Amazon Q in
+         * Connect Assistant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RemoveAssistantAIAgent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveAssistantAIAgentOutcome RemoveAssistantAIAgent(const Model::RemoveAssistantAIAgentRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemoveAssistantAIAgent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RemoveAssistantAIAgentRequestT = Model::RemoveAssistantAIAgentRequest>
+        Model::RemoveAssistantAIAgentOutcomeCallable RemoveAssistantAIAgentCallable(const RemoveAssistantAIAgentRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::RemoveAssistantAIAgent, request);
+        }
+
+        /**
+         * An Async wrapper for RemoveAssistantAIAgent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RemoveAssistantAIAgentRequestT = Model::RemoveAssistantAIAgentRequest>
+        void RemoveAssistantAIAgentAsync(const RemoveAssistantAIAgentRequestT& request, const RemoveAssistantAIAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::RemoveAssistantAIAgent, request, handler, context);
+        }
+
+        /**
          * <p>Removes a URI template from a knowledge base.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RemoveKnowledgeBaseTemplateUri">AWS
          * API Reference</a></p>
@@ -1207,6 +1593,82 @@ namespace QConnect
         }
 
         /**
+         * <p>Updates an AI Agent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAIAgent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAIAgentOutcome UpdateAIAgent(const Model::UpdateAIAgentRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAIAgent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAIAgentRequestT = Model::UpdateAIAgentRequest>
+        Model::UpdateAIAgentOutcomeCallable UpdateAIAgentCallable(const UpdateAIAgentRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::UpdateAIAgent, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAIAgent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAIAgentRequestT = Model::UpdateAIAgentRequest>
+        void UpdateAIAgentAsync(const UpdateAIAgentRequestT& request, const UpdateAIAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::UpdateAIAgent, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an AI Prompt.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAIPrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAIPromptOutcome UpdateAIPrompt(const Model::UpdateAIPromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAIPrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAIPromptRequestT = Model::UpdateAIPromptRequest>
+        Model::UpdateAIPromptOutcomeCallable UpdateAIPromptCallable(const UpdateAIPromptRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::UpdateAIPrompt, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAIPrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAIPromptRequestT = Model::UpdateAIPromptRequest>
+        void UpdateAIPromptAsync(const UpdateAIPromptRequestT& request, const UpdateAIPromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::UpdateAIPrompt, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the AI Agent that is set for use by defafult on an Amazon Q in
+         * Connect Assistant.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateAssistantAIAgent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAssistantAIAgentOutcome UpdateAssistantAIAgent(const Model::UpdateAssistantAIAgentRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAssistantAIAgent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAssistantAIAgentRequestT = Model::UpdateAssistantAIAgentRequest>
+        Model::UpdateAssistantAIAgentOutcomeCallable UpdateAssistantAIAgentCallable(const UpdateAssistantAIAgentRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::UpdateAssistantAIAgent, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAssistantAIAgent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAssistantAIAgentRequestT = Model::UpdateAssistantAIAgentRequest>
+        void UpdateAssistantAIAgentAsync(const UpdateAssistantAIAgentRequestT& request, const UpdateAssistantAIAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::UpdateAssistantAIAgent, request, handler, context);
+        }
+
+        /**
          * <p>Updates information about the content.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateContent">AWS
          * API Reference</a></p>
@@ -1314,6 +1776,32 @@ namespace QConnect
         void UpdateSessionAsync(const UpdateSessionRequestT& request, const UpdateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QConnectClient::UpdateSession, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the data stored on an Amazon Q in Connect Session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateSessionData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSessionDataOutcome UpdateSessionData(const Model::UpdateSessionDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSessionData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSessionDataRequestT = Model::UpdateSessionDataRequest>
+        Model::UpdateSessionDataOutcomeCallable UpdateSessionDataCallable(const UpdateSessionDataRequestT& request) const
+        {
+            return SubmitCallable(&QConnectClient::UpdateSessionData, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSessionData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSessionDataRequestT = Model::UpdateSessionDataRequest>
+        void UpdateSessionDataAsync(const UpdateSessionDataRequestT& request, const UpdateSessionDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QConnectClient::UpdateSessionData, request, handler, context);
         }
 
 

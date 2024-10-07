@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qconnect/model/SyncStatus.h>
 #include <aws/qconnect/model/KnowledgeBaseType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/qconnect/model/RenderingConfiguration.h>
@@ -13,6 +15,7 @@
 #include <aws/qconnect/model/SourceConfiguration.h>
 #include <aws/qconnect/model/KnowledgeBaseStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/qconnect/model/VectorIngestionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -56,6 +59,33 @@ namespace Model
     inline KnowledgeBaseData& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
     inline KnowledgeBaseData& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline KnowledgeBaseData& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>List of failure reasons on ingestion per file.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIngestionFailureReasons() const{ return m_ingestionFailureReasons; }
+    inline bool IngestionFailureReasonsHasBeenSet() const { return m_ingestionFailureReasonsHasBeenSet; }
+    inline void SetIngestionFailureReasons(const Aws::Vector<Aws::String>& value) { m_ingestionFailureReasonsHasBeenSet = true; m_ingestionFailureReasons = value; }
+    inline void SetIngestionFailureReasons(Aws::Vector<Aws::String>&& value) { m_ingestionFailureReasonsHasBeenSet = true; m_ingestionFailureReasons = std::move(value); }
+    inline KnowledgeBaseData& WithIngestionFailureReasons(const Aws::Vector<Aws::String>& value) { SetIngestionFailureReasons(value); return *this;}
+    inline KnowledgeBaseData& WithIngestionFailureReasons(Aws::Vector<Aws::String>&& value) { SetIngestionFailureReasons(std::move(value)); return *this;}
+    inline KnowledgeBaseData& AddIngestionFailureReasons(const Aws::String& value) { m_ingestionFailureReasonsHasBeenSet = true; m_ingestionFailureReasons.push_back(value); return *this; }
+    inline KnowledgeBaseData& AddIngestionFailureReasons(Aws::String&& value) { m_ingestionFailureReasonsHasBeenSet = true; m_ingestionFailureReasons.push_back(std::move(value)); return *this; }
+    inline KnowledgeBaseData& AddIngestionFailureReasons(const char* value) { m_ingestionFailureReasonsHasBeenSet = true; m_ingestionFailureReasons.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Status of ingestion on data source.</p>
+     */
+    inline const SyncStatus& GetIngestionStatus() const{ return m_ingestionStatus; }
+    inline bool IngestionStatusHasBeenSet() const { return m_ingestionStatusHasBeenSet; }
+    inline void SetIngestionStatus(const SyncStatus& value) { m_ingestionStatusHasBeenSet = true; m_ingestionStatus = value; }
+    inline void SetIngestionStatus(SyncStatus&& value) { m_ingestionStatusHasBeenSet = true; m_ingestionStatus = std::move(value); }
+    inline KnowledgeBaseData& WithIngestionStatus(const SyncStatus& value) { SetIngestionStatus(value); return *this;}
+    inline KnowledgeBaseData& WithIngestionStatus(SyncStatus&& value) { SetIngestionStatus(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,10 +230,28 @@ namespace Model
     inline KnowledgeBaseData& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline KnowledgeBaseData& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about how to ingest the documents in a data source.</p>
+     */
+    inline const VectorIngestionConfiguration& GetVectorIngestionConfiguration() const{ return m_vectorIngestionConfiguration; }
+    inline bool VectorIngestionConfigurationHasBeenSet() const { return m_vectorIngestionConfigurationHasBeenSet; }
+    inline void SetVectorIngestionConfiguration(const VectorIngestionConfiguration& value) { m_vectorIngestionConfigurationHasBeenSet = true; m_vectorIngestionConfiguration = value; }
+    inline void SetVectorIngestionConfiguration(VectorIngestionConfiguration&& value) { m_vectorIngestionConfigurationHasBeenSet = true; m_vectorIngestionConfiguration = std::move(value); }
+    inline KnowledgeBaseData& WithVectorIngestionConfiguration(const VectorIngestionConfiguration& value) { SetVectorIngestionConfiguration(value); return *this;}
+    inline KnowledgeBaseData& WithVectorIngestionConfiguration(VectorIngestionConfiguration&& value) { SetVectorIngestionConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_ingestionFailureReasons;
+    bool m_ingestionFailureReasonsHasBeenSet = false;
+
+    SyncStatus m_ingestionStatus;
+    bool m_ingestionStatusHasBeenSet = false;
 
     Aws::String m_knowledgeBaseArn;
     bool m_knowledgeBaseArnHasBeenSet = false;
@@ -234,6 +282,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    VectorIngestionConfiguration m_vectorIngestionConfiguration;
+    bool m_vectorIngestionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

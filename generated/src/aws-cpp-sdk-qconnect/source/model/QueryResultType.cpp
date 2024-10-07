@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int KNOWLEDGE_CONTENT_HASH = HashingUtils::HashString("KNOWLEDGE_CONTENT");
+        static const int INTENT_ANSWER_HASH = HashingUtils::HashString("INTENT_ANSWER");
         static const int GENERATIVE_ANSWER_HASH = HashingUtils::HashString("GENERATIVE_ANSWER");
 
 
@@ -30,6 +31,10 @@ namespace Aws
           if (hashCode == KNOWLEDGE_CONTENT_HASH)
           {
             return QueryResultType::KNOWLEDGE_CONTENT;
+          }
+          else if (hashCode == INTENT_ANSWER_HASH)
+          {
+            return QueryResultType::INTENT_ANSWER;
           }
           else if (hashCode == GENERATIVE_ANSWER_HASH)
           {
@@ -53,6 +58,8 @@ namespace Aws
             return {};
           case QueryResultType::KNOWLEDGE_CONTENT:
             return "KNOWLEDGE_CONTENT";
+          case QueryResultType::INTENT_ANSWER:
+            return "INTENT_ANSWER";
           case QueryResultType::GENERATIVE_ANSWER:
             return "GENERATIVE_ANSWER";
           default:

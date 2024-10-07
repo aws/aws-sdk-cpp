@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AppIntegrationsConfiguration.h>
+#include <aws/qconnect/model/ManagedSourceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +51,25 @@ namespace Model
     inline SourceConfiguration& WithAppIntegrations(const AppIntegrationsConfiguration& value) { SetAppIntegrations(value); return *this;}
     inline SourceConfiguration& WithAppIntegrations(AppIntegrationsConfiguration&& value) { SetAppIntegrations(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Source configuration for managed resources.</p>
+     */
+    inline const ManagedSourceConfiguration& GetManagedSourceConfiguration() const{ return m_managedSourceConfiguration; }
+    inline bool ManagedSourceConfigurationHasBeenSet() const { return m_managedSourceConfigurationHasBeenSet; }
+    inline void SetManagedSourceConfiguration(const ManagedSourceConfiguration& value) { m_managedSourceConfigurationHasBeenSet = true; m_managedSourceConfiguration = value; }
+    inline void SetManagedSourceConfiguration(ManagedSourceConfiguration&& value) { m_managedSourceConfigurationHasBeenSet = true; m_managedSourceConfiguration = std::move(value); }
+    inline SourceConfiguration& WithManagedSourceConfiguration(const ManagedSourceConfiguration& value) { SetManagedSourceConfiguration(value); return *this;}
+    inline SourceConfiguration& WithManagedSourceConfiguration(ManagedSourceConfiguration&& value) { SetManagedSourceConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     AppIntegrationsConfiguration m_appIntegrations;
     bool m_appIntegrationsHasBeenSet = false;
+
+    ManagedSourceConfiguration m_managedSourceConfiguration;
+    bool m_managedSourceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

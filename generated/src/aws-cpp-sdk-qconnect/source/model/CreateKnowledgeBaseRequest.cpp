@@ -22,7 +22,8 @@ CreateKnowledgeBaseRequest::CreateKnowledgeBaseRequest() :
     m_renderingConfigurationHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_sourceConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vectorIngestionConfigurationHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String CreateKnowledgeBaseRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_vectorIngestionConfigurationHasBeenSet)
+  {
+   payload.WithObject("vectorIngestionConfiguration", m_vectorIngestionConfiguration.Jsonize());
 
   }
 
