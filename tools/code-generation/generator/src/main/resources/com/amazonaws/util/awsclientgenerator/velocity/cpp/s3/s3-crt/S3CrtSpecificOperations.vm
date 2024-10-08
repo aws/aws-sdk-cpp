@@ -512,7 +512,7 @@ ${operation.name}Outcome ${className}::${operation.name}() const
   AWS_OPERATION_GUARD(${operation.name});
   Aws::Utils::Threading::Semaphore sem(0, 1);
   ${operation.name}Outcome res;
-  auto handlerContext = Aws::MakeShared<AsyncCallerContext>("monitor");
+  auto handlerContext = Aws::MakeShared<AsyncCallerContext>(ALLOCATION_TAG);
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   auto handler = ${operation.name}ResponseReceivedHandler{[&](const S3CrtClient*, ${operation.name}Outcome outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
 #else
