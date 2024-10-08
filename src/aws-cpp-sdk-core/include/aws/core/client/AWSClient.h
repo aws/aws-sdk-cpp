@@ -192,7 +192,6 @@ namespace Aws
 
             void AppendToUserAgent(const Aws::String& valueToAppend);
 
-            static bool DoesResponseGenerateError(const std::shared_ptr<Aws::Http::HttpResponse>& response);
         protected:
             /**
              * Calls AttemptOneRequest until it either, succeeds, runs out of retries from the retry strategy,
@@ -330,6 +329,7 @@ namespace Aws
             static void AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRequest> ioRequest);
 
             static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode);
+            static bool DoesResponseGenerateError(const std::shared_ptr<Aws::Http::HttpResponse>& response);
             std::shared_ptr<smithy::components::tracing::TelemetryProvider> m_telemetryProvider;
             std::shared_ptr<Aws::Auth::AWSAuthSignerProvider> m_signerProvider;
         private:

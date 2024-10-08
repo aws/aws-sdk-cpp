@@ -713,9 +713,14 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
 
 static void CopyObjectRequestShutdownCallback(void *user_data)
 {
+  if(!user_data)
+  {
+    AWS_LOGSTREAM_ERROR("CopyObject", "user data passed is NULL ");
+    return;
+  }
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
   //log into monitor 
-  if(AWSClient::DoesResponseGenerateError(userData->response))
+  if(!HttpResponseOutcome(userData->response).IsSuccess())
   {
     userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
   }
@@ -862,7 +867,7 @@ CopyObjectOutcome S3CrtClient::CopyObject(const CopyObjectRequest& request) cons
     [&]()-> CopyObjectOutcome {
       Aws::Utils::Threading::Semaphore sem(0, 1);
       CopyObjectOutcome res;
-      auto handlerContext = Aws::MakeShared<AsyncCallerContext>("monitor");
+      auto handlerContext = Aws::MakeShared<AsyncCallerContext>(ALLOCATION_TAG);
       auto handler = CopyObjectResponseReceivedHandler{[&](const S3CrtClient*, const CopyObjectRequest&, const CopyObjectOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
         res = std::move(outcome);
         sem.ReleaseAll();
@@ -879,9 +884,14 @@ CopyObjectOutcome S3CrtClient::CopyObject(const CopyObjectRequest& request) cons
 
 static void GetObjectRequestShutdownCallback(void *user_data)
 {
+  if(!user_data)
+  {
+    AWS_LOGSTREAM_ERROR("GetObject", "user data passed is NULL ");
+    return;
+  }
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
   //log into monitor 
-  if(AWSClient::DoesResponseGenerateError(userData->response))
+  if(!HttpResponseOutcome(userData->response).IsSuccess())
   {
     userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
   }
@@ -992,7 +1002,7 @@ GetObjectOutcome S3CrtClient::GetObject(const GetObjectRequest& request) const
     [&]()-> GetObjectOutcome {
       Aws::Utils::Threading::Semaphore sem(0, 1);
       GetObjectOutcome res;
-      auto handlerContext = Aws::MakeShared<AsyncCallerContext>("monitor");
+      auto handlerContext = Aws::MakeShared<AsyncCallerContext>(ALLOCATION_TAG);
       auto handler = GetObjectResponseReceivedHandler{[&](const S3CrtClient*, const GetObjectRequest&, GetObjectOutcome outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
         res = std::move(outcome);
         sem.ReleaseAll();
@@ -1009,9 +1019,14 @@ GetObjectOutcome S3CrtClient::GetObject(const GetObjectRequest& request) const
 
 static void PutObjectRequestShutdownCallback(void *user_data)
 {
+  if(!user_data)
+  {
+    AWS_LOGSTREAM_ERROR("PutObject", "user data passed is NULL ");
+    return;
+  }
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
   //log into monitor 
-  if(AWSClient::DoesResponseGenerateError(userData->response))
+  if(!HttpResponseOutcome(userData->response).IsSuccess())
   {
     userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
   }
@@ -1157,7 +1172,7 @@ PutObjectOutcome S3CrtClient::PutObject(const PutObjectRequest& request) const
     [&]()-> PutObjectOutcome {
       Aws::Utils::Threading::Semaphore sem(0, 1);
       PutObjectOutcome res;
-      auto handlerContext = Aws::MakeShared<AsyncCallerContext>("monitor");
+      auto handlerContext = Aws::MakeShared<AsyncCallerContext>(ALLOCATION_TAG);
       auto handler = PutObjectResponseReceivedHandler{[&](const S3CrtClient*, const PutObjectRequest&, const PutObjectOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
         res = std::move(outcome);
         sem.ReleaseAll();
