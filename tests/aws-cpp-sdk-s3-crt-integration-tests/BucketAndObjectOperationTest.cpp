@@ -1507,7 +1507,7 @@ namespace
         }
     }
 
-    class AWS_CORE_API TestMonitoring: public Aws::Monitoring::MonitoringInterface
+    class TestMonitoring: public Aws::Monitoring::MonitoringInterface
     {
         mutable std::shared_ptr<Aws::Vector<Aws::String>> m_sequence;
         mutable std::mutex m_mutex; 
@@ -1583,7 +1583,7 @@ namespace
         }
     };
 
-    class AWS_CORE_API TestMonitoringFactory : public Aws::Monitoring::MonitoringFactory
+    class TestMonitoringFactory : public Aws::Monitoring::MonitoringFactory
     {
     public:
         mutable std::shared_ptr<Aws::Vector<Aws::String>> m_sequenceSp;
