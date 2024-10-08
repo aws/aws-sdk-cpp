@@ -53,8 +53,8 @@ namespace Model
     ///@{
     /**
      * <p>Name of the final snapshot to be taken before the serverless cache is
-     * deleted. Available for Redis OSS and Serverless Memcached only. Default: NULL,
-     * i.e. a final snapshot is not taken.</p>
+     * deleted. Available for Valkey, Redis OSS and Serverless Memcached only. Default:
+     * NULL, i.e. a final snapshot is not taken.</p>
      */
     inline const Aws::String& GetFinalSnapshotName() const{ return m_finalSnapshotName; }
     inline bool FinalSnapshotNameHasBeenSet() const { return m_finalSnapshotNameHasBeenSet; }

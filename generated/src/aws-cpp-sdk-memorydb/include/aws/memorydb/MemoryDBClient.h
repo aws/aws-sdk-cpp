@@ -16,13 +16,12 @@ namespace Aws
 namespace MemoryDB
 {
   /**
-   * <p>MemoryDB is a fully managed, Redis OSS-compatible, in-memory database that
-   * delivers ultra-fast performance and Multi-AZ durability for modern applications
-   * built using microservices architectures. MemoryDB stores the entire database
-   * in-memory, enabling low latency and high throughput data access. It is
-   * compatible with Redis OSS, a popular open source data store, enabling you to
-   * leverage Redis OSS’ flexible and friendly data structures, APIs, and
-   * commands.</p>
+   * <p>MemoryDB for Redis is a fully managed, Redis-compatible, in-memory database
+   * that delivers ultra-fast performance and Multi-AZ durability for modern
+   * applications built using microservices architectures. MemoryDB stores the entire
+   * database in-memory, enabling low latency and high throughput data access. It is
+   * compatible with Redis, a popular open source data store, enabling you to
+   * leverage Redis’ flexible and friendly data structures, APIs, and commands.</p>
    */
   class AWS_MEMORYDB_API MemoryDBClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MemoryDBClient>
   {
@@ -332,9 +331,7 @@ namespace MemoryDB
 
         /**
          * <p>Deletes a cluster. It also deletes all associated nodes and node
-         * endpoints</p>  <p> <code>CreateSnapshot</code> permission is required to
-         * create a final snapshot. Without this permission, the API call will fail with an
-         * <code>Access Denied</code> exception.</p> <p><h3>See Also:</h3>   <a
+         * endpoints</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteCluster">AWS
          * API Reference</a></p>
          */
@@ -517,8 +514,8 @@ namespace MemoryDB
         }
 
         /**
-         * <p>Returns a list of the available Redis OSS engine versions.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the available engine versions.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeEngineVersions">AWS
          * API Reference</a></p>
          */

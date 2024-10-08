@@ -167,12 +167,12 @@ namespace Model
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
      * <code>cache.r3.8xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Additional
      * node type info</b> </p> <ul> <li> <p>All current generation instance types are
-     * created in Amazon VPC by default.</p> </li> <li> <p>Redis OSS append-only files
-     * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis OSS
-     * Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
-     * <li> <p>Redis OSS configuration variables <code>appendonly</code> and
-     * <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and
-     * later.</p> </li> </ul>
+     * created in Amazon VPC by default.</p> </li> <li> <p>Valkey or Redis OSS
+     * append-only files (AOF) are not supported for T1 or T2 instances.</p> </li> <li>
+     * <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1
+     * instances.</p> </li> <li> <p>The configuration variables <code>appendonly</code>
+     * and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS
+     * version 2.8.22 and later.</p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
     inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
@@ -233,9 +233,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of cache nodes in the cluster.</p> <p>For clusters running Redis
-     * OSS, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 40.</p>
+     * <p>The number of cache nodes in the cluster.</p> <p>For clusters running Valkey
+     * or Redis OSS, this value must be 1. For clusters running Memcached, this value
+     * must be between 1 and 40.</p>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
     inline bool NumCacheNodesHasBeenSet() const { return m_numCacheNodesHasBeenSet; }
@@ -386,9 +386,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> If you are running Redis OSS engine version 6.0 or later, set this parameter
-     * to yes if you want to opt-in to the next auto minor version upgrade campaign.
-     * This parameter is disabled for previous versions.  </p>
+     * <p> If you are running Valkey or Redis OSS engine version 6.0 or later, set this
+     * parameter to yes if you want to opt-in to the next auto minor version upgrade
+     * campaign. This parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -458,7 +458,7 @@ namespace Model
     ///@{
     /**
      * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
-     * Redis OSS commands.</p> <p>Default: <code>false</code> </p>
+     * Valkey or Redis OSS commands.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAuthTokenEnabled() const{ return m_authTokenEnabled; }
     inline bool AuthTokenEnabledHasBeenSet() const { return m_authTokenEnabledHasBeenSet; }
@@ -549,9 +549,10 @@ namespace Model
     ///@{
     /**
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
-     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine
-     * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
-     * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and
+     * above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6
+     * and above on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline const NetworkType& GetNetworkType() const{ return m_networkType; }
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
@@ -564,9 +565,10 @@ namespace Model
     ///@{
     /**
      * <p>The network type associated with the cluster, either <code>ipv4</code> |
-     * <code>ipv6</code>. IPv6 is supported for workloads using Redis OSS engine
-     * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
-     * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above,
+     * Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and
+     * above on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
     inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }

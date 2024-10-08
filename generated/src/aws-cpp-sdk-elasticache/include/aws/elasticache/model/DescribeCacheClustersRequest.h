@@ -102,8 +102,8 @@ namespace Model
     /**
      * <p>An optional flag that can be included in the
      * <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters)
-     * that are not members of a replication group. In practice, this mean Memcached
-     * and single node Redis OSS clusters.</p>
+     * that are not members of a replication group. In practice, this means Memcached
+     * and single node Valkey or Redis OSS clusters.</p>
      */
     inline bool GetShowCacheClustersNotInReplicationGroups() const{ return m_showCacheClustersNotInReplicationGroups; }
     inline bool ShowCacheClustersNotInReplicationGroupsHasBeenSet() const { return m_showCacheClustersNotInReplicationGroupsHasBeenSet; }

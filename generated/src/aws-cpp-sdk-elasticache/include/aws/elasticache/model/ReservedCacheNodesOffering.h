@@ -124,12 +124,12 @@ namespace Model
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
      * <code>cache.r3.8xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Additional
      * node type info</b> </p> <ul> <li> <p>All current generation instance types are
-     * created in Amazon VPC by default.</p> </li> <li> <p>Redis OSS append-only files
-     * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis OSS
-     * Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
-     * <li> <p>Redis OSS configuration variables <code>appendonly</code> and
-     * <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and
-     * later.</p> </li> </ul>
+     * created in Amazon VPC by default.</p> </li> <li> <p>Valkey or Redis OSS
+     * append-only files (AOF) are not supported for T1 or T2 instances.</p> </li> <li>
+     * <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1
+     * instances.</p> </li> <li> <p>The configuration variables <code>appendonly</code>
+     * and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS
+     * version 2.8.22 and later.</p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
     inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }

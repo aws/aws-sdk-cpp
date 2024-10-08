@@ -82,8 +82,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the UserGroup to be removed from association with the Redis
-     * OSS serverless cache. Available for Redis OSS only. Default is NULL.</p>
+     * <p>The identifier of the UserGroup to be removed from association with the
+     * Valkey and Redis OSS serverless cache. Available for Valkey and Redis OSS only.
+     * Default is NULL.</p>
      */
     inline bool GetRemoveUserGroup() const{ return m_removeUserGroup; }
     inline bool RemoveUserGroupHasBeenSet() const { return m_removeUserGroupHasBeenSet; }
@@ -94,8 +95,8 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the UserGroup to be associated with the serverless cache.
-     * Available for Redis OSS only. Default is NULL - the existing UserGroup is not
-     * removed.</p>
+     * Available for Valkey and Redis OSS only. Default is NULL - the existing
+     * UserGroup is not removed.</p>
      */
     inline const Aws::String& GetUserGroupId() const{ return m_userGroupId; }
     inline bool UserGroupIdHasBeenSet() const { return m_userGroupIdHasBeenSet; }
@@ -129,9 +130,9 @@ namespace Model
     ///@{
     /**
      * <p>The number of days for which Elasticache retains automatic snapshots before
-     * deleting them. Available for Redis OSS and Serverless Memcached only. Default =
-     * NULL, i.e. the existing snapshot-retention-limit will not be removed or
-     * modified. The maximum value allowed is 35 days.</p>
+     * deleting them. Available for Valkey, Redis OSS and Serverless Memcached only.
+     * Default = NULL, i.e. the existing snapshot-retention-limit will not be removed
+     * or modified. The maximum value allowed is 35 days.</p>
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
     inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
@@ -142,9 +143,9 @@ namespace Model
     ///@{
     /**
      * <p>The daily time during which Elasticache begins taking a daily snapshot of the
-     * serverless cache. Available for Redis OSS and Serverless Memcached only. The
-     * default is NULL, i.e. the existing snapshot time configured for the cluster is
-     * not removed.</p>
+     * serverless cache. Available for Valkey, Redis OSS and Serverless Memcached only.
+     * The default is NULL, i.e. the existing snapshot time configured for the cluster
+     * is not removed.</p>
      */
     inline const Aws::String& GetDailySnapshotTime() const{ return m_dailySnapshotTime; }
     inline bool DailySnapshotTimeHasBeenSet() const { return m_dailySnapshotTimeHasBeenSet; }
@@ -154,6 +155,35 @@ namespace Model
     inline ModifyServerlessCacheRequest& WithDailySnapshotTime(const Aws::String& value) { SetDailySnapshotTime(value); return *this;}
     inline ModifyServerlessCacheRequest& WithDailySnapshotTime(Aws::String&& value) { SetDailySnapshotTime(std::move(value)); return *this;}
     inline ModifyServerlessCacheRequest& WithDailySnapshotTime(const char* value) { SetDailySnapshotTime(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Modifies the engine listed in a serverless cache request. The options are
+     * redis, memcached or valkey.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline ModifyServerlessCacheRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline ModifyServerlessCacheRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline ModifyServerlessCacheRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Modifies the engine vesion listed in a serverless cache request. </p>
+     */
+    inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
+    inline bool MajorEngineVersionHasBeenSet() const { return m_majorEngineVersionHasBeenSet; }
+    inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
+    inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = std::move(value); }
+    inline void SetMajorEngineVersion(const char* value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion.assign(value); }
+    inline ModifyServerlessCacheRequest& WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
+    inline ModifyServerlessCacheRequest& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(std::move(value)); return *this;}
+    inline ModifyServerlessCacheRequest& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
     ///@}
   private:
 
@@ -180,6 +210,12 @@ namespace Model
 
     Aws::String m_dailySnapshotTime;
     bool m_dailySnapshotTimeHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
+
+    Aws::String m_majorEngineVersion;
+    bool m_majorEngineVersionHasBeenSet = false;
   };
 
 } // namespace Model

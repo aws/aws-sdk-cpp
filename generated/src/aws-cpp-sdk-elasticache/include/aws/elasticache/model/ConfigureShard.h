@@ -44,9 +44,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The 4-digit id for the node group you are configuring. For Redis OSS (cluster
-     * mode disabled) replication groups, the node group id is always 0001. To find a
-     * Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a
+     * <p>The 4-digit id for the node group you are configuring. For Valkey or Redis
+     * OSS (cluster mode disabled) replication groups, the node group id is always
+     * 0001. To find a Valkey or Redis OSS (cluster mode enabled)'s node group's
+     * (shard's) id, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
      * a Shard's Id</a>.</p>
      */
@@ -64,12 +65,12 @@ namespace Model
     /**
      * <p>The number of replicas you want in this node group at the end of this
      * operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum
-     * value depends upon the type of Redis OSS replication group you are working
-     * with.</p> <p>The minimum number of replicas in a shard or replication group
-     * is:</p> <ul> <li> <p>Redis OSS (cluster mode disabled)</p> <ul> <li> <p>If
-     * Multi-AZ: 1</p> </li> <li> <p>If Multi-AZ: 0</p> </li> </ul> </li> <li> <p>Redis
-     * OSS (cluster mode enabled): 0 (though you will not be able to failover to a
-     * replica if your primary node fails)</p> </li> </ul>
+     * value depends upon the type of Valkey or Redis OSS replication group you are
+     * working with.</p> <p>The minimum number of replicas in a shard or replication
+     * group is:</p> <ul> <li> <p>Valkey or Redis OSS (cluster mode disabled)</p> <ul>
+     * <li> <p>If Multi-AZ: 1</p> </li> <li> <p>If Multi-AZ: 0</p> </li> </ul> </li>
+     * <li> <p>Valkey or Redis OSS (cluster mode enabled): 0 (though you will not be
+     * able to failover to a replica if your primary node fails)</p> </li> </ul>
      */
     inline int GetNewReplicaCount() const{ return m_newReplicaCount; }
     inline bool NewReplicaCountHasBeenSet() const { return m_newReplicaCountHasBeenSet; }
@@ -83,8 +84,8 @@ namespace Model
      * availability zones the replication group's nodes are to be in. The nummber of
      * <code>PreferredAvailabilityZone</code> values must equal the value of
      * <code>NewReplicaCount</code> plus 1 to account for the primary node. If this
-     * member of <code>ReplicaConfiguration</code> is omitted, ElastiCache (Redis OSS)
-     * selects the availability zone for each of the replicas.</p>
+     * member of <code>ReplicaConfiguration</code> is omitted, ElastiCache selects the
+     * availability zone for each of the replicas.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPreferredAvailabilityZones() const{ return m_preferredAvailabilityZones; }
     inline bool PreferredAvailabilityZonesHasBeenSet() const { return m_preferredAvailabilityZonesHasBeenSet; }

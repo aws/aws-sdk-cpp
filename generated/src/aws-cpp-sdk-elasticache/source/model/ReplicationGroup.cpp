@@ -64,7 +64,8 @@ ReplicationGroup::ReplicationGroup() :
     m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
     m_transitEncryptionModeHasBeenSet(false),
     m_clusterMode(ClusterMode::NOT_SET),
-    m_clusterModeHasBeenSet(false)
+    m_clusterModeHasBeenSet(false),
+    m_engineHasBeenSet(false)
 {
 }
 
@@ -296,6 +297,12 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       m_clusterMode = ClusterModeMapper::GetClusterModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterModeNode.GetText()).c_str()).c_str());
       m_clusterModeHasBeenSet = true;
     }
+    XmlNode engineNode = resultNode.FirstChild("Engine");
+    if(!engineNode.IsNull())
+    {
+      m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
+      m_engineHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -488,6 +495,11 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
   }
 
+  if(m_engineHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+
 }
 
 void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -645,6 +657,10 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_clusterModeHasBeenSet)
   {
       oStream << location << ".ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
+  }
+  if(m_engineHasBeenSet)
+  {
+      oStream << location << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 }
 

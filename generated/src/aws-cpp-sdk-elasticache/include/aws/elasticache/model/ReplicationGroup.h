@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains all of the attributes of a specific Redis OSS replication
+   * <p>Contains all of the attributes of a specific Valkey or Redis OSS replication
    * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReplicationGroup">AWS
    * API Reference</a></p>
@@ -142,10 +142,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of node groups in this replication group. For Redis OSS (cluster mode
-     * disabled) replication groups, this is a single-element list. For Redis OSS
-     * (cluster mode enabled) replication groups, the list contains an entry for each
-     * node group (shard).</p>
+     * <p>A list of node groups in this replication group. For Valkey or Redis OSS
+     * (cluster mode disabled) replication groups, this is a single-element list. For
+     * Valkey or Redis OSS (cluster mode enabled) replication groups, the list contains
+     * an entry for each node group (shard).</p>
      */
     inline const Aws::Vector<NodeGroup>& GetNodeGroups() const{ return m_nodeGroups; }
     inline bool NodeGroupsHasBeenSet() const { return m_nodeGroupsHasBeenSet; }
@@ -174,8 +174,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the status of automatic failover for this Redis OSS replication
-     * group.</p>
+     * <p>Indicates the status of automatic failover for this Valkey or Redis OSS
+     * replication group.</p>
      */
     inline const AutomaticFailoverStatus& GetAutomaticFailover() const{ return m_automaticFailover; }
     inline bool AutomaticFailoverHasBeenSet() const { return m_automaticFailoverHasBeenSet; }
@@ -276,7 +276,7 @@ namespace Model
     ///@{
     /**
      * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
-     * Redis OSS commands.</p> <p>Default: <code>false</code> </p>
+     * Valkey or Redis OSS commands.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAuthTokenEnabled() const{ return m_authTokenEnabled; }
     inline bool AuthTokenEnabledHasBeenSet() const { return m_authTokenEnabledHasBeenSet; }
@@ -427,9 +427,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>If you are running Redis OSS engine version 6.0 or later, set this parameter
-     * to yes if you want to opt-in to the next auto minor version upgrade campaign.
-     * This parameter is disabled for previous versions. </p>
+     * <p>If you are running Valkey 7.2 and above, or Redis OSS engine version 6.0 and
+     * above, set this parameter to yes if you want to opt-in to the next auto minor
+     * version upgrade campaign. This parameter is disabled for previous versions. </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -440,9 +440,10 @@ namespace Model
     ///@{
     /**
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
-     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine
-     * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
-     * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and
+     * above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6
+     * and above on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline const NetworkType& GetNetworkType() const{ return m_networkType; }
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
@@ -456,9 +457,9 @@ namespace Model
     /**
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
-     * Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
-     * system</a>.</p>
+     * Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine
+     * version 1.6.6 and above on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
     inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
@@ -484,11 +485,11 @@ namespace Model
     ///@{
     /**
      * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
-     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
-     * OSS clients to connect using both cluster mode enabled and cluster mode
-     * disabled. After you migrate all Redis OSS clients to use cluster mode enabled,
-     * you can then complete cluster mode configuration and set the cluster mode to
-     * Enabled.</p>
+     * must first set the cluster mode to Compatible. Compatible mode allows your
+     * Valkey or Redis OSS clients to connect using both cluster mode enabled and
+     * cluster mode disabled. After you migrate all Valkey or Redis OSS clients to use
+     * cluster mode enabled, you can then complete cluster mode configuration and set
+     * the cluster mode to Enabled.</p>
      */
     inline const ClusterMode& GetClusterMode() const{ return m_clusterMode; }
     inline bool ClusterModeHasBeenSet() const { return m_clusterModeHasBeenSet; }
@@ -496,6 +497,21 @@ namespace Model
     inline void SetClusterMode(ClusterMode&& value) { m_clusterModeHasBeenSet = true; m_clusterMode = std::move(value); }
     inline ReplicationGroup& WithClusterMode(const ClusterMode& value) { SetClusterMode(value); return *this;}
     inline ReplicationGroup& WithClusterMode(ClusterMode&& value) { SetClusterMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The engine used in a replication group. The options are redis, memcached or
+     * valkey.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline ReplicationGroup& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline ReplicationGroup& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline ReplicationGroup& WithEngine(const char* value) { SetEngine(value); return *this;}
     ///@}
   private:
 
@@ -591,6 +607,9 @@ namespace Model
 
     ClusterMode m_clusterMode;
     bool m_clusterModeHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
   };
 
 } // namespace Model

@@ -45,8 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the Redis OSS (cluster mode enabled) cluster (replication group)
-     * on which the shards are to be configured.</p>
+     * <p>The name of the Valkey or Redis OSS (cluster mode enabled) cluster
+     * (replication group) on which the shards are to be configured.</p>
      */
     inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
     inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
@@ -107,7 +107,7 @@ namespace Model
      * of node groups (shards), then either <code>NodeGroupsToRemove</code> or
      * <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRemove</code> is
      * a list of <code>NodeGroupId</code>s to remove from the cluster.</p>
-     * <p>ElastiCache (Redis OSS) will attempt to remove all node groups listed by
+     * <p>ElastiCache will attempt to remove all node groups listed by
      * <code>NodeGroupsToRemove</code> from the cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNodeGroupsToRemove() const{ return m_nodeGroupsToRemove; }
@@ -127,7 +127,7 @@ namespace Model
      * of node groups (shards), then either <code>NodeGroupsToRemove</code> or
      * <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is
      * a list of <code>NodeGroupId</code>s to retain in the cluster.</p> <p>ElastiCache
-     * (Redis OSS) will attempt to remove all node groups except those listed by
+     * will attempt to remove all node groups except those listed by
      * <code>NodeGroupsToRetain</code> from the cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNodeGroupsToRetain() const{ return m_nodeGroupsToRetain; }

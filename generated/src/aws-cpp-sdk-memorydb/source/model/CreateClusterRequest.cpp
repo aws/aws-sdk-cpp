@@ -37,6 +37,7 @@ CreateClusterRequest::CreateClusterRequest() :
     m_tagsHasBeenSet(false),
     m_snapshotWindowHasBeenSet(false),
     m_aCLNameHasBeenSet(false),
+    m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
     m_autoMinorVersionUpgradeHasBeenSet(false),
@@ -175,6 +176,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_aCLNameHasBeenSet)
   {
    payload.WithString("ACLName", m_aCLName);
+
+  }
+
+  if(m_engineHasBeenSet)
+  {
+   payload.WithString("Engine", m_engine);
 
   }
 

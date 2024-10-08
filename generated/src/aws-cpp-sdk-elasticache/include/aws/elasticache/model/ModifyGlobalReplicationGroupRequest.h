@@ -79,6 +79,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Modifies the engine listed in a global replication group message. The options
+     * are redis, memcached or valkey.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline ModifyGlobalReplicationGroupRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline ModifyGlobalReplicationGroupRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline ModifyGlobalReplicationGroupRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * Global datastore. </p>
      */
@@ -142,6 +157,9 @@ namespace Model
 
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;

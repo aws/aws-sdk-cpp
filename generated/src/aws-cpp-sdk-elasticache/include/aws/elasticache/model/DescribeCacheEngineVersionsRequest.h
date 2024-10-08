@@ -76,10 +76,10 @@ namespace Model
      * <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> |
      * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
      * <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> |
-     * <code>redis7</code> </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
-     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
-     * </li> </ul>
+     * <code>redis7</code> | <code>valkey7</code> </p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
+     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
     inline bool CacheParameterGroupFamilyHasBeenSet() const { return m_cacheParameterGroupFamilyHasBeenSet; }

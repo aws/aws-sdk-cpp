@@ -20,7 +20,9 @@ ModifyServerlessCacheRequest::ModifyServerlessCacheRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
-    m_dailySnapshotTimeHasBeenSet(false)
+    m_dailySnapshotTimeHasBeenSet(false),
+    m_engineHasBeenSet(false),
+    m_majorEngineVersionHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,16 @@ Aws::String ModifyServerlessCacheRequest::SerializePayload() const
   if(m_dailySnapshotTimeHasBeenSet)
   {
     ss << "DailySnapshotTime=" << StringUtils::URLEncode(m_dailySnapshotTime.c_str()) << "&";
+  }
+
+  if(m_engineHasBeenSet)
+  {
+    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+
+  if(m_majorEngineVersionHasBeenSet)
+  {
+    ss << "MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
   }
 
   ss << "Version=2015-02-02";

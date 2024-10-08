@@ -36,7 +36,21 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Redis OSS engine version</p>
+     * <p>The engine version to return. Valid values are either valkey or redis.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline DescribeEngineVersionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline DescribeEngineVersionsRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline DescribeEngineVersionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -103,6 +117,9 @@ namespace Model
     inline DescribeEngineVersionsRequest& WithDefaultOnly(bool value) { SetDefaultOnly(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;

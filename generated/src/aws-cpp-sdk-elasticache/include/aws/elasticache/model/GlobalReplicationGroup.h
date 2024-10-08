@@ -105,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Elasticache engine. For Redis OSS only.</p>
+     * <p>The ElastiCache engine. For Valkey or Redis OSS only.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -119,7 +119,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Elasticache (Redis OSS) engine version.</p>
+     * <p>The ElastiCache engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -173,7 +173,7 @@ namespace Model
     ///@{
     /**
      * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
-     * Redis OSS commands.</p> <p>Default: <code>false</code> </p>
+     * Valkey or Redis OSS commands.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAuthTokenEnabled() const{ return m_authTokenEnabled; }
     inline bool AuthTokenEnabledHasBeenSet() const { return m_authTokenEnabledHasBeenSet; }

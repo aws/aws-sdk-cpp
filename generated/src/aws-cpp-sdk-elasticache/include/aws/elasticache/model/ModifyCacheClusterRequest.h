@@ -69,7 +69,7 @@ namespace Model
      * nodes, any pending add or remove requests are canceled.</p> <p>If you are
      * removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code>
      * parameter to provide the IDs of the specific cache nodes to remove.</p> <p>For
-     * clusters running Redis OSS, this value must be 1. For clusters running
+     * clusters running Valkey or Redis OSS, this value must be 1. For clusters running
      * Memcached, this value must be between 1 and 40.</p>  <p>Adding or removing
      * Memcached cache nodes can be applied immediately or as a pending operation (see
      * <code>ApplyImmediately</code>).</p> <p>A pending operation to modify the number
@@ -316,6 +316,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>Modifies the engine listed in a cluster message. The options are redis,
+     * memcached or valkey.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline ModifyCacheClusterRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline ModifyCacheClusterRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline ModifyCacheClusterRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
      * <p> <b>Important:</b> You can upgrade to a newer engine version (see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
@@ -335,8 +350,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> If you are running Redis OSS engine version 6.0 or later, set this parameter
-     * to yes if you want to opt-in to the next auto minor version upgrade campaign.
+     * <p> If you are running Valkey 7.2 or Redis OSS engine version 6.0 or later, set
+     * this parameter to yes to opt-in to the next auto minor version upgrade campaign.
      * This parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
@@ -417,7 +432,7 @@ namespace Model
      * <p>SET - allowed only after ROTATE</p> </li> <li> <p>DELETE - allowed only when
      * transitioning to RBAC</p> </li> </ul> <p> For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
-     * Users with Redis OSS AUTH</a> </p>
+     * Users with AUTH</a> </p>
      */
     inline const AuthTokenUpdateStrategyType& GetAuthTokenUpdateStrategy() const{ return m_authTokenUpdateStrategy; }
     inline bool AuthTokenUpdateStrategyHasBeenSet() const { return m_authTokenUpdateStrategyHasBeenSet; }
@@ -445,9 +460,9 @@ namespace Model
     /**
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
-     * Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
-     * system</a>.</p>
+     * Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine
+     * version 1.6.6 and above on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
     inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
@@ -493,6 +508,9 @@ namespace Model
 
     bool m_applyImmediately;
     bool m_applyImmediatelyHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;

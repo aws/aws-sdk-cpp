@@ -32,8 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>The settings to be applied to the Redis OSS replication group, either
-   * immediately or during the next maintenance window.</p><p><h3>See Also:</h3>   <a
+   * <p>The settings to be applied to the Valkey or Redis OSS replication group,
+   * either immediately or during the next maintenance window.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReplicationGroupPendingModifiedValues">AWS
    * API Reference</a></p>
    */
@@ -66,8 +67,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the status of automatic failover for this Redis OSS replication
-     * group.</p>
+     * <p>Indicates the status of automatic failover for this Valkey or Redis OSS
+     * replication group.</p>
      */
     inline const PendingAutomaticFailoverStatus& GetAutomaticFailoverStatus() const{ return m_automaticFailoverStatus; }
     inline bool AutomaticFailoverStatusHasBeenSet() const { return m_automaticFailoverStatusHasBeenSet; }
@@ -153,11 +154,11 @@ namespace Model
     ///@{
     /**
      * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
-     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
-     * OSS clients to connect using both cluster mode enabled and cluster mode
-     * disabled. After you migrate all Redis OSS clients to use cluster mode enabled,
-     * you can then complete cluster mode configuration and set the cluster mode to
-     * Enabled.</p>
+     * must first set the cluster mode to Compatible. Compatible mode allows your
+     * Valkey or Redis OSS clients to connect using both cluster mode enabled and
+     * cluster mode disabled. After you migrate all Valkey or Redis OSS clients to use
+     * cluster mode enabled, you can then complete cluster mode configuration and set
+     * the cluster mode to Enabled.</p>
      */
     inline const ClusterMode& GetClusterMode() const{ return m_clusterMode; }
     inline bool ClusterModeHasBeenSet() const { return m_clusterModeHasBeenSet; }

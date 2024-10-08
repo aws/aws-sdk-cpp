@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>An update that you can apply to your Redis OSS clusters.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An update that you can apply to your Valkey or Redis OSS
+   * clusters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ServiceUpdate">AWS
    * API Reference</a></p>
    */
@@ -149,8 +149,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Elasticache engine to which the update applies. Either Redis OSS or
-     * Memcached.</p>
+     * <p>The Elasticache engine to which the update applies. Either Valkey, Redis OSS
+     * or Memcached.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -164,8 +164,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Elasticache engine version to which the update applies. Either Redis OSS
-     * or Memcached engine version.</p>
+     * <p>The Elasticache engine version to which the update applies. Either Valkey,
+     * Redis OSS or Memcached engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }

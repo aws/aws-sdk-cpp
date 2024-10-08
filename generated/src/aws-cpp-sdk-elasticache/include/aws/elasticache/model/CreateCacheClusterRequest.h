@@ -147,10 +147,10 @@ namespace Model
     ///@{
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
-     * running Redis OSS, this value must be 1. For clusters running Memcached, this
-     * value must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
-     * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
-     * at <a
+     * running Valkey or Redis OSS, this value must be 1. For clusters running
+     * Memcached, this value must be between 1 and 40.</p> <p>If you need more than 40
+     * nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
+     * Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
@@ -228,12 +228,12 @@ namespace Model
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
      * <code>cache.r3.8xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Additional
      * node type info</b> </p> <ul> <li> <p>All current generation instance types are
-     * created in Amazon VPC by default.</p> </li> <li> <p>Redis OSS append-only files
-     * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis OSS
-     * Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
-     * <li> <p>Redis OSS configuration variables <code>appendonly</code> and
-     * <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and
-     * later.</p> </li> </ul>
+     * created in Amazon VPC by default.</p> </li> <li> <p>Valkey or Redis OSS
+     * append-only files (AOF) are not supported for T1 or T2 instances.</p> </li> <li>
+     * <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1
+     * instances.</p> </li> <li> <p>The configuration variables <code>appendonly</code>
+     * and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS
+     * version 2.8.22 and later.</p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
     inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
@@ -370,11 +370,11 @@ namespace Model
     ///@{
     /**
      * <p>A single-element string list containing an Amazon Resource Name (ARN) that
-     * uniquely identifies a Redis OSS RDB snapshot file stored in Amazon S3. The
-     * snapshot file is used to populate the node group (shard). The Amazon S3 object
-     * name in the ARN cannot contain any commas.</p>  <p>This parameter is only
-     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
-     * <p>Example of an Amazon S3 ARN:
+     * uniquely identifies a Valkey or Redis OSS RDB snapshot file stored in Amazon S3.
+     * The snapshot file is used to populate the node group (shard). The Amazon S3
+     * object name in the ARN cannot contain any commas.</p>  <p>This parameter
+     * is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+     *  <p>Example of an Amazon S3 ARN:
      * <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetSnapshotArns() const{ return m_snapshotArns; }
@@ -390,10 +390,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of a Redis OSS snapshot from which to restore data into the new node
-     * group (shard). The snapshot status changes to <code>restoring</code> while the
-     * new node group (shard) is being created.</p>  <p>This parameter is only
-     * valid if the <code>Engine</code> parameter is <code>redis</code>.</p> 
+     * <p>The name of a Valkey or Redis OSS snapshot from which to restore data into
+     * the new node group (shard). The snapshot status changes to
+     * <code>restoring</code> while the new node group (shard) is being created.</p>
+     *  <p>This parameter is only valid if the <code>Engine</code> parameter is
+     * <code>redis</code>.</p> 
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
@@ -449,9 +450,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> If you are running Redis OSS engine version 6.0 or later, set this parameter
-     * to yes if you want to opt-in to the next auto minor version upgrade campaign.
-     * This parameter is disabled for previous versions.  </p>
+     * <p> If you are running Valkey 7.2 and above or Redis OSS engine version 6.0 and
+     * above, set this parameter to yes to opt-in to the next auto minor version
+     * upgrade campaign. This parameter is disabled for previous versions.  </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -582,9 +583,10 @@ namespace Model
     ///@{
     /**
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
-     * <code>dual_stack</code>. IPv6 is supported for workloads using Redis OSS engine
-     * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
-     * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>. </p>
+     * <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and
+     * above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6
+     * and above on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>. </p>
      */
     inline const NetworkType& GetNetworkType() const{ return m_networkType; }
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
@@ -598,9 +600,9 @@ namespace Model
     /**
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
-     * Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
-     * system</a>.</p>
+     * Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine
+     * version 1.6.6 and above on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
     inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }

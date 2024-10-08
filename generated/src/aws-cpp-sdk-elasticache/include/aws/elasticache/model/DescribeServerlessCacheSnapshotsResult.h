@@ -40,7 +40,7 @@ namespace Model
      * <p>An optional marker returned from a prior request to support pagination of
      * results from this operation. If this parameter is specified, the response
      * includes only records beyond the marker, up to the value specified by
-     * max-results. Available for Redis OSS and Serverless Memcached only.</p>
+     * max-results. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
@@ -54,7 +54,7 @@ namespace Model
     ///@{
     /**
      * <p>The serverless caches snapshots associated with a given description request.
-     * Available for Redis OSS and Serverless Memcached only.</p>
+     * Available for Valkey, Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::Vector<ServerlessCacheSnapshot>& GetServerlessCacheSnapshots() const{ return m_serverlessCacheSnapshots; }
     inline void SetServerlessCacheSnapshots(const Aws::Vector<ServerlessCacheSnapshot>& value) { m_serverlessCacheSnapshots = value; }
