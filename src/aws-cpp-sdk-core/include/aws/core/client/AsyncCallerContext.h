@@ -47,12 +47,12 @@ namespace Aws
                 coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
                 
                 Aws::Monitoring::OnRequestFailed(
-                        clientName,
-                        requestName, 
-                        httpRequest ,
-                        outcome, 
-                        coreMetrics, 
-                        contexts);
+                clientName,
+                requestName, 
+                httpRequest ,
+                outcome, 
+                coreMetrics, 
+                contexts);
                 
             }
 
@@ -68,12 +68,12 @@ namespace Aws
                 coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
                 
                 Aws::Monitoring::OnRequestSucceeded(
-                        clientName,
-                        requestName, 
-                        httpRequest ,
-                        outcome, 
-                        coreMetrics, 
-                        contexts);
+                clientName,
+                requestName, 
+                httpRequest ,
+                outcome, 
+                coreMetrics, 
+                contexts);
             }
 
             inline void OnRetry(std::shared_ptr<Aws::Http::HttpRequest> httpRequest) const
@@ -99,10 +99,10 @@ namespace Aws
                     return;
                 }
                 Aws::Monitoring::OnFinish(
-                        clientName,
-                        requestName, 
-                        httpRequest ,
-                        contexts);
+                clientName,
+                requestName, 
+                httpRequest ,
+                contexts);
             }
 
         };

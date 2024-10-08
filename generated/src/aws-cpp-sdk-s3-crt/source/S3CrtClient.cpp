@@ -719,8 +719,11 @@ static void CopyObjectRequestShutdownCallback(void *user_data)
     return;
   }
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+
+  // call user callback and release user_data
+  S3Crt::Model::CopyObjectOutcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
   //log into monitor 
-  if(!HttpResponseOutcome(userData->response).IsSuccess())
+  if(!outcome.IsSuccess())
   {
     userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
   }
@@ -728,8 +731,6 @@ static void CopyObjectRequestShutdownCallback(void *user_data)
   {
     userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
   }
-  // call user callback and release user_data
-  S3Crt::Model::CopyObjectOutcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
   userData->copyResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const CopyObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 
   Aws::Delete(userData);
@@ -890,8 +891,11 @@ static void GetObjectRequestShutdownCallback(void *user_data)
     return;
   }
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+
+  // call user callback and release user_data
+  S3Crt::Model::GetObjectOutcome outcome(userData->s3CrtClient->GenerateStreamOutcome(userData->response));
   //log into monitor 
-  if(!HttpResponseOutcome(userData->response).IsSuccess())
+  if(!outcome.IsSuccess())
   {
     userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
   }
@@ -899,8 +903,6 @@ static void GetObjectRequestShutdownCallback(void *user_data)
   {
     userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
   }
-  // call user callback and release user_data
-  S3Crt::Model::GetObjectOutcome outcome(userData->s3CrtClient->GenerateStreamOutcome(userData->response));
   userData->getResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const GetObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 
   Aws::Delete(userData);
@@ -1025,8 +1027,11 @@ static void PutObjectRequestShutdownCallback(void *user_data)
     return;
   }
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+
+  // call user callback and release user_data
+  S3Crt::Model::PutObjectOutcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
   //log into monitor 
-  if(!HttpResponseOutcome(userData->response).IsSuccess())
+  if(!outcome.IsSuccess())
   {
     userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
   }
@@ -1034,8 +1039,6 @@ static void PutObjectRequestShutdownCallback(void *user_data)
   {
     userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
   }
-  // call user callback and release user_data
-  S3Crt::Model::PutObjectOutcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
   userData->putResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const PutObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 
   Aws::Delete(userData);

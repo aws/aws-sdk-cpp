@@ -219,8 +219,15 @@ static void ${operation.name}RequestShutdownCallback(void *user_data)
     return;
   }
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+
+  // call user callback and release user_data
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+  S3Crt::Model::${operation.name}Outcome outcome(userData->s3CrtClient->GenerateStreamOutcome(userData->response));
+#else
+  S3Crt::Model::${operation.name}Outcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
+#end
   //log into monitor 
-  if(!HttpResponseOutcome(userData->response).IsSuccess())
+  if(!outcome.IsSuccess())
   {
     userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
   }
@@ -228,12 +235,6 @@ static void ${operation.name}RequestShutdownCallback(void *user_data)
   {
     userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
   }
-  // call user callback and release user_data
-#if($operation.result && $operation.result.shape.hasStreamMembers())
-  S3Crt::Model::${operation.name}Outcome outcome(userData->s3CrtClient->GenerateStreamOutcome(userData->response));
-#else
-  S3Crt::Model::${operation.name}Outcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
-#end
 #if($operation.request)
 #if($operation.name == "PutObject")
   userData->putResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
