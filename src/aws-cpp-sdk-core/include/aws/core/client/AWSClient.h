@@ -191,7 +191,6 @@ namespace Aws
             virtual void SetServiceClientName(const Aws::String& name);
 
             void AppendToUserAgent(const Aws::String& valueToAppend);
-
         protected:
             /**
              * Calls AttemptOneRequest until it either, succeeds, runs out of retries from the retry strategy,
