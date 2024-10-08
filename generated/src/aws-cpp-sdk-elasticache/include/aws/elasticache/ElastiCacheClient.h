@@ -243,7 +243,7 @@ namespace ElastiCache
 
         /**
          * <p>Creates a copy of an existing serverless cache’s snapshot. Available for
-         * Redis OSS and Serverless Memcached only.</p><p><h3>See Also:</h3>   <a
+         * Valkey, Redis OSS and Serverless Memcached only.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopyServerlessCacheSnapshot">AWS
          * API Reference</a></p>
          */
@@ -269,10 +269,10 @@ namespace ElastiCache
 
         /**
          * <p>Makes a copy of an existing snapshot.</p>  <p>This operation is valid
-         * for Redis OSS only.</p>   <p>Users or groups that have
-         * permissions to use the <code>CopySnapshot</code> operation can create their own
-         * Amazon S3 buckets and copy snapshots to it. To control access to your snapshots,
-         * use an IAM policy to control who has the ability to use the
+         * for Valkey or Redis OSS only.</p>   <p>Users or groups that
+         * have permissions to use the <code>CopySnapshot</code> operation can create their
+         * own Amazon S3 buckets and copy snapshots to it. To control access to your
+         * snapshots, use an IAM policy to control who has the ability to use the
          * <code>CopySnapshot</code> operation. For more information about using IAM to
          * control the use of ElastiCache operations, see <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
@@ -344,9 +344,9 @@ namespace ElastiCache
 
         /**
          * <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant
-         * cache engine software, either Memcached or Redis OSS.</p> <p>This operation is
-         * not supported for Redis OSS (cluster mode enabled) clusters.</p><p><h3>See
-         * Also:</h3>   <a
+         * cache engine software, either Memcached, Valkey or Redis OSS.</p> <p>This
+         * operation is not supported for Valkey or Redis OSS (cluster mode enabled)
+         * clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">AWS
          * API Reference</a></p>
          */
@@ -465,11 +465,10 @@ namespace ElastiCache
         }
 
         /**
-         * <p>Global Datastore for Redis OSS offers fully managed, fast, reliable and
-         * secure cross-region replication. Using Global Datastore for Redis OSS, you can
-         * create cross-region read replica clusters for ElastiCache (Redis OSS) to enable
-         * low-latency reads and disaster recovery across regions. For more information,
-         * see <a
+         * <p>Global Datastore offers fully managed, fast, reliable and secure cross-region
+         * replication. Using Global Datastore with Valkey or Redis OSS, you can create
+         * cross-region read replica clusters for ElastiCache to enable low-latency reads
+         * and disaster recovery across regions. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication
          * Across Regions Using Global Datastore</a>. </p> <ul> <li> <p>The
          * <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global datastore.</p>
@@ -500,37 +499,38 @@ namespace ElastiCache
         }
 
         /**
-         * <p>Creates a Redis OSS (cluster mode disabled) or a Redis OSS (cluster mode
-         * enabled) replication group.</p> <p>This API can be used to create a standalone
-         * regional replication group or a secondary replication group associated with a
-         * Global datastore.</p> <p>A Redis OSS (cluster mode disabled) replication group
-         * is a collection of nodes, where one of the nodes is a read/write primary and the
-         * others are read-only replicas. Writes to the primary are asynchronously
-         * propagated to the replicas.</p> <p>A Redis OSS cluster-mode enabled cluster is
-         * comprised of from 1 to 90 shards (API/CLI: node groups). Each shard has a
-         * primary node and up to 5 read-only replica nodes. The configuration can range
-         * from 90 shards and 0 replicas to 15 shards and 5 replicas, which is the maximum
-         * number or replicas allowed. </p> <p>The node or shard limit can be increased to
-         * a maximum of 500 per cluster if the Redis OSS engine version is 5.0.6 or higher.
-         * For example, you can choose to configure a 500 node cluster that ranges between
-         * 83 shards (one primary and 5 replicas per shard) and 500 shards (single primary
-         * and no replicas). Make sure there are enough available IP addresses to
-         * accommodate the increase. Common pitfalls include the subnets in the subnet
-         * group have too small a CIDR range or the subnets are shared and heavily used by
-         * other clusters. For more information, see <a
+         * <p>Creates a Valkey or Redis OSS (cluster mode disabled) or a Valkey or Redis
+         * OSS (cluster mode enabled) replication group.</p> <p>This API can be used to
+         * create a standalone regional replication group or a secondary replication group
+         * associated with a Global datastore.</p> <p>A Valkey or Redis OSS (cluster mode
+         * disabled) replication group is a collection of nodes, where one of the nodes is
+         * a read/write primary and the others are read-only replicas. Writes to the
+         * primary are asynchronously propagated to the replicas.</p> <p>A Valkey or Redis
+         * OSS cluster-mode enabled cluster is comprised of from 1 to 90 shards (API/CLI:
+         * node groups). Each shard has a primary node and up to 5 read-only replica nodes.
+         * The configuration can range from 90 shards and 0 replicas to 15 shards and 5
+         * replicas, which is the maximum number or replicas allowed. </p> <p>The node or
+         * shard limit can be increased to a maximum of 500 per cluster if the Valkey or
+         * Redis OSS engine version is 5.0.6 or higher. For example, you can choose to
+         * configure a 500 node cluster that ranges between 83 shards (one primary and 5
+         * replicas per shard) and 500 shards (single primary and no replicas). Make sure
+         * there are enough available IP addresses to accommodate the increase. Common
+         * pitfalls include the subnets in the subnet group have too small a CIDR range or
+         * the subnets are shared and heavily used by other clusters. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.Creating.html">Creating
          * a Subnet Group</a>. For versions below 5.0.6, the limit is 250 per cluster.</p>
          * <p>To request a limit increase, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
          * Service Limits</a> and choose the limit type <b>Nodes per cluster per instance
-         * type</b>. </p> <p>When a Redis OSS (cluster mode disabled) replication group has
-         * been successfully created, you can add one or more read replicas to it, up to a
-         * total of 5 read replicas. If you need to increase or decrease the number of node
-         * groups (console: shards), you can use ElastiCache (Redis OSS) scaling. For more
+         * type</b>. </p> <p>When a Valkey or Redis OSS (cluster mode disabled) replication
+         * group has been successfully created, you can add one or more read replicas to
+         * it, up to a total of 5 read replicas. If you need to increase or decrease the
+         * number of node groups (console: shards), you can use scaling. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
-         * ElastiCache (Redis OSS) Clusters</a> in the <i>ElastiCache User Guide</i>.</p>
-         *  <p>This operation is valid for Redis OSS only.</p> <p><h3>See
+         * self-designed clusters</a> in the <i>ElastiCache User Guide</i>.</p> 
+         * <p>This operation is valid for Valkey and Redis OSS only.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">AWS
          * API Reference</a></p>
@@ -582,8 +582,8 @@ namespace ElastiCache
 
         /**
          * <p>This API creates a copy of an entire ServerlessCache at a specific moment in
-         * time. Available for Redis OSS and Serverless Memcached only.</p><p><h3>See
-         * Also:</h3>   <a
+         * time. Available for Valkey, Redis OSS and Serverless Memcached
+         * only.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCacheSnapshot">AWS
          * API Reference</a></p>
          */
@@ -609,7 +609,7 @@ namespace ElastiCache
 
         /**
          * <p>Creates a copy of an entire cluster or replication group at a specific moment
-         * in time.</p>  <p>This operation is valid for Redis OSS only.</p>
+         * in time.</p>  <p>This operation is valid for Valkey or Redis OSS only.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">AWS
          * API Reference</a></p>
@@ -635,8 +635,8 @@ namespace ElastiCache
         }
 
         /**
-         * <p>For Redis OSS engine version 6.0 onwards: Creates a Redis OSS user. For more
-         * information, see <a
+         * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 and onwards: Creates
+         * a user. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">AWS
@@ -663,8 +663,8 @@ namespace ElastiCache
         }
 
         /**
-         * <p>For Redis OSS engine version 6.0 onwards: Creates a Redis OSS user group. For
-         * more information, see <a
+         * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a
+         * user group. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup">AWS
@@ -717,10 +717,11 @@ namespace ElastiCache
         }
 
         /**
-         * <p>Dynamically decreases the number of replicas in a Redis OSS (cluster mode
-         * disabled) replication group or the number of replica nodes in one or more node
-         * groups (shards) of a Redis OSS (cluster mode enabled) replication group. This
-         * operation is performed with no cluster down time.</p><p><h3>See Also:</h3>   <a
+         * <p>Dynamically decreases the number of replicas in a Valkey or Redis OSS
+         * (cluster mode disabled) replication group or the number of replica nodes in one
+         * or more node groups (shards) of a Valkey or Redis OSS (cluster mode enabled)
+         * replication group. This operation is performed with no cluster down
+         * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DecreaseReplicaCount">AWS
          * API Reference</a></p>
          */
@@ -749,14 +750,14 @@ namespace ElastiCache
          * deletes all associated cache nodes, node endpoints and the cluster itself. When
          * you receive a successful response from this operation, Amazon ElastiCache
          * immediately begins deleting the cluster; you cannot cancel or revert this
-         * operation.</p> <p>This operation is not valid for:</p> <ul> <li> <p>Redis OSS
-         * (cluster mode enabled) clusters</p> </li> <li> <p>Redis OSS (cluster mode
-         * disabled) clusters</p> </li> <li> <p>A cluster that is the last read replica of
-         * a replication group</p> </li> <li> <p>A cluster that is the primary node of a
-         * replication group</p> </li> <li> <p>A node group (shard) that has Multi-AZ mode
-         * enabled</p> </li> <li> <p>A cluster from a Redis OSS (cluster mode enabled)
-         * replication group</p> </li> <li> <p>A cluster that is not in the
-         * <code>available</code> state</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>This operation is not valid for:</p> <ul> <li> <p>Valkey or
+         * Redis OSS (cluster mode enabled) clusters</p> </li> <li> <p>Valkey or Redis OSS
+         * (cluster mode disabled) clusters</p> </li> <li> <p>A cluster that is the last
+         * read replica of a replication group</p> </li> <li> <p>A cluster that is the
+         * primary node of a replication group</p> </li> <li> <p>A node group (shard) that
+         * has Multi-AZ mode enabled</p> </li> <li> <p>A cluster from a Valkey or Redis OSS
+         * (cluster mode enabled) replication group</p> </li> <li> <p>A cluster that is not
+         * in the <code>available</code> state</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">AWS
          * API Reference</a></p>
          */
@@ -965,8 +966,8 @@ namespace ElastiCache
         }
 
         /**
-         * <p>Deletes an existing serverless cache snapshot. Available for Redis OSS and
-         * Serverless Memcached only.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing serverless cache snapshot. Available for Valkey, Redis
+         * OSS and Serverless Memcached only.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCacheSnapshot">AWS
          * API Reference</a></p>
          */
@@ -993,8 +994,8 @@ namespace ElastiCache
         /**
          * <p>Deletes an existing snapshot. When you receive a successful response from
          * this operation, ElastiCache immediately begins deleting the snapshot; you cannot
-         * cancel or revert this operation.</p>  <p>This operation is valid for Redis
-         * OSS only.</p> <p><h3>See Also:</h3>   <a
+         * cancel or revert this operation.</p>  <p>This operation is valid for
+         * Valkey or Redis OSS only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1019,9 +1020,9 @@ namespace ElastiCache
         }
 
         /**
-         * <p>For Redis OSS engine version 6.0 onwards: Deletes a user. The user will be
-         * removed from all user groups and in turn removed from all replication groups.
-         * For more information, see <a
+         * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Deletes a
+         * user. The user will be removed from all user groups and in turn removed from all
+         * replication groups. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser">AWS
@@ -1048,9 +1049,9 @@ namespace ElastiCache
         }
 
         /**
-         * <p>For Redis OSS engine version 6.0 onwards: Deletes a user group. The user
-         * group must first be disassociated from the replication group before it can be
-         * deleted. For more information, see <a
+         * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Deletes a
+         * user group. The user group must first be disassociated from the replication
+         * group before it can be deleted. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup">AWS
@@ -1336,8 +1337,8 @@ namespace ElastiCache
         /**
          * <p>Returns information about a particular replication group. If no identifier is
          * specified, <code>DescribeReplicationGroups</code> returns information about all
-         * replication groups.</p>  <p>This operation is valid for Redis OSS
-         * only.</p> <p><h3>See Also:</h3>   <a
+         * replication groups.</p>  <p>This operation is valid for Valkey or Redis
+         * OSS only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">AWS
          * API Reference</a></p>
          */
@@ -1416,7 +1417,7 @@ namespace ElastiCache
          * <p>Returns information about serverless cache snapshots. By default, this API
          * lists all of the customer’s serverless cache snapshots. It can also describe a
          * single serverless cache snapshot, or the snapshots associated with a particular
-         * serverless cache. Available for Redis OSS and Serverless Memcached
+         * serverless cache. Available for Valkey, Redis OSS and Serverless Memcached
          * only.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots">AWS
          * API Reference</a></p>
@@ -1497,8 +1498,8 @@ namespace ElastiCache
          * <p>Returns information about cluster or replication group snapshots. By default,
          * <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally
          * describe a single snapshot, or just the snapshots associated with a particular
-         * cache cluster.</p>  <p>This operation is valid for Redis OSS only.</p>
-         * <p><h3>See Also:</h3>   <a
+         * cache cluster.</p>  <p>This operation is valid for Valkey or Redis OSS
+         * only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">AWS
          * API Reference</a></p>
          */
@@ -1627,7 +1628,8 @@ namespace ElastiCache
 
         /**
          * <p>Provides the functionality to export the serverless cache snapshot data to
-         * Amazon S3. Available for Redis OSS only.</p><p><h3>See Also:</h3>   <a
+         * Amazon S3. Available for Valkey and Redis OSS only.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ExportServerlessCacheSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1705,10 +1707,11 @@ namespace ElastiCache
         }
 
         /**
-         * <p>Dynamically increases the number of replicas in a Redis OSS (cluster mode
-         * disabled) replication group or the number of replica nodes in one or more node
-         * groups (shards) of a Redis OSS (cluster mode enabled) replication group. This
-         * operation is performed with no cluster down time.</p><p><h3>See Also:</h3>   <a
+         * <p>Dynamically increases the number of replicas in a Valkey or Redis OSS
+         * (cluster mode disabled) replication group or the number of replica nodes in one
+         * or more node groups (shards) of a Valkey or Redis OSS (cluster mode enabled)
+         * replication group. This operation is performed with no cluster down
+         * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/IncreaseReplicaCount">AWS
          * API Reference</a></p>
          */
@@ -1733,7 +1736,7 @@ namespace ElastiCache
         }
 
         /**
-         * <p>Lists all available node types that you can scale your Redis OSS cluster's or
+         * <p>Lists all available node types that you can scale with your cluster's
          * replication group's current node type.</p> <p>When you use the
          * <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
          * operations to scale your cluster or replication group, the value of the
@@ -1900,14 +1903,14 @@ namespace ElastiCache
         }
 
         /**
-         * <p>Modifies the settings for a replication group. This is limited to Redis OSS 7
-         * and newer.</p> <ul> <li> <p> <a
+         * <p>Modifies the settings for a replication group. This is limited to Valkey and
+         * Redis OSS 7 and above.</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
-         * for Amazon ElastiCache (Redis OSS) (cluster mode enabled)</a> in the ElastiCache
-         * User Guide</p> </li> <li> <p> <a
+         * for Valkey or Redis OSS (cluster mode enabled)</a> in the ElastiCache User
+         * Guide</p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
          * in the ElastiCache API Reference</p> </li> </ul>  <p>This operation is
-         * valid for Redis OSS only.</p> <p><h3>See Also:</h3>   <a
+         * valid for Valkey or Redis OSS only.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">AWS
          * API Reference</a></p>
          */
@@ -2039,9 +2042,7 @@ namespace ElastiCache
          * <p>Allows you to purchase a reserved cache node offering. Reserved nodes are not
          * eligible for cancellation and are non-refundable. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html">Managing
-         * Costs with Reserved Nodes</a> for Redis OSS or <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/reserved-nodes.html">Managing
-         * Costs with Reserved Nodes</a> for Memcached.</p><p><h3>See Also:</h3>   <a
+         * Costs with Reserved Nodes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">AWS
          * API Reference</a></p>
          */
@@ -2098,11 +2099,11 @@ namespace ElastiCache
          * the cluster. During the reboot, the cluster status is set to REBOOTING.</p>
          * <p>The reboot causes the contents of the cache (for each cache node being
          * rebooted) to be lost.</p> <p>When the reboot is complete, a cluster event is
-         * created.</p> <p>Rebooting a cluster is currently supported on Memcached and
-         * Redis OSS (cluster mode disabled) clusters. Rebooting is not supported on Redis
-         * OSS (cluster mode enabled) clusters.</p> <p>If you make changes to parameters
-         * that require a Redis OSS (cluster mode enabled) cluster reboot for the changes
-         * to be applied, see <a
+         * created.</p> <p>Rebooting a cluster is currently supported on Memcached, Valkey
+         * and Redis OSS (cluster mode disabled) clusters. Rebooting is not supported on
+         * Valkey or Redis OSS (cluster mode enabled) clusters.</p> <p>If you make changes
+         * to parameters that require a Valkey or Redis OSS (cluster mode enabled) cluster
+         * reboot for the changes to be applied, see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes.rebooting.html">Rebooting
          * a Cluster</a> for an alternate process.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
@@ -2255,14 +2256,14 @@ namespace ElastiCache
          * <li> <p>If calling this operation on shards in different clusters (called
          * replication groups in the API and CLI), the calls can be made concurrently.</p>
          * <p> </p> </li> <li> <p>If calling this operation multiple times on different
-         * shards in the same Redis OSS (cluster mode enabled) replication group, the first
-         * node replacement must complete before a subsequent call can be made.</p> </li>
-         * <li> <p>To determine whether the node replacement is complete you can check
-         * Events using the Amazon ElastiCache console, the Amazon CLI, or the ElastiCache
-         * API. Look for the following automatic failover related events, listed here in
-         * order of occurrance:</p> <ol> <li> <p>Replication group message: <code>Test
-         * Failover API called for node group &lt;node-group-id&gt;</code> </p> </li> <li>
-         * <p>Cache cluster message: <code>Failover from primary node
+         * shards in the same Valkey or Redis OSS (cluster mode enabled) replication group,
+         * the first node replacement must complete before a subsequent call can be
+         * made.</p> </li> <li> <p>To determine whether the node replacement is complete
+         * you can check Events using the Amazon ElastiCache console, the Amazon CLI, or
+         * the ElastiCache API. Look for the following automatic failover related events,
+         * listed here in order of occurrance:</p> <ol> <li> <p>Replication group message:
+         * <code>Test Failover API called for node group &lt;node-group-id&gt;</code> </p>
+         * </li> <li> <p>Cache cluster message: <code>Failover from primary node
          * &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code> </p>
          * </li> <li> <p>Replication group message: <code>Failover from primary node
          * &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code> </p>

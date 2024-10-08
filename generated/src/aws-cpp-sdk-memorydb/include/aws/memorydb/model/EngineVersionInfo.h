@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details of the Redis OSS engine version</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Provides details of the engine version.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/EngineVersionInfo">AWS
    * API Reference</a></p>
    */
@@ -37,6 +36,20 @@ namespace Model
     AWS_MEMORYDB_API EngineVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The version of the Redis OSS or Valkey engine used by the cluster.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline EngineVersionInfo& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline EngineVersionInfo& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline EngineVersionInfo& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -81,6 +94,9 @@ namespace Model
     inline EngineVersionInfo& WithParameterGroupFamily(const char* value) { SetParameterGroupFamily(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;

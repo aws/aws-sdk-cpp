@@ -187,6 +187,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the engine to be used for the nodes in this cluster. The value
+     * must be set to either Redis or Valkey.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline UpdateClusterRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline UpdateClusterRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline UpdateClusterRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The upgraded version of the engine to be run on the nodes. You can upgrade to
      * a newer engine version, but you cannot downgrade to an earlier engine version.
      * If you want to use an earlier engine version, you must delete the existing
@@ -270,6 +285,9 @@ namespace Model
 
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;

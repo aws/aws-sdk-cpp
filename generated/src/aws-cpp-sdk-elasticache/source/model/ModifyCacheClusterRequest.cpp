@@ -26,6 +26,7 @@ ModifyCacheClusterRequest::ModifyCacheClusterRequest() :
     m_notificationTopicStatusHasBeenSet(false),
     m_applyImmediately(false),
     m_applyImmediatelyHasBeenSet(false),
+    m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
     m_autoMinorVersionUpgradeHasBeenSet(false),
@@ -156,6 +157,11 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
   if(m_applyImmediatelyHasBeenSet)
   {
     ss << "ApplyImmediately=" << std::boolalpha << m_applyImmediately << "&";
+  }
+
+  if(m_engineHasBeenSet)
+  {
+    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
   if(m_engineVersionHasBeenSet)

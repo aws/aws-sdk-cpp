@@ -28,7 +28,7 @@ namespace Model
   /**
    * <p>Represents an individual cache node within a cluster. Each cache node runs
    * its own instance of the cluster's protocol-compliant caching software - either
-   * Memcached or Redis OSS.</p> <p>The following node types are supported by
+   * Memcached, Valkey or Redis OSS.</p> <p>The following node types are supported by
    * ElastiCache. Generally speaking, the current generation types provide more
    * memory and computational power at lower cost when compared to their equivalent
    * previous generation counterparts.</p> <ul> <li> <p>General purpose:</p> <ul>
@@ -94,12 +94,12 @@ namespace Model
    * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
    * <code>cache.r3.8xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Additional
    * node type info</b> </p> <ul> <li> <p>All current generation instance types are
-   * created in Amazon VPC by default.</p> </li> <li> <p>Redis OSS append-only files
-   * (AOF) are not supported for T1 or T2 instances.</p> </li> <li> <p>Redis OSS
-   * Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>
-   * <li> <p>Redis OSS configuration variables <code>appendonly</code> and
-   * <code>appendfsync</code> are not supported on Redis OSS version 2.8.22 and
-   * later.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * created in Amazon VPC by default.</p> </li> <li> <p>Valkey or Redis OSS
+   * append-only files (AOF) are not supported for T1 or T2 instances.</p> </li> <li>
+   * <p>Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1
+   * instances.</p> </li> <li> <p>The configuration variables <code>appendonly</code>
+   * and <code>appendfsync</code> are not supported on Valkey, or on Redis OSS
+   * version 2.8.22 and later.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheNode">AWS
    * API Reference</a></p>
    */

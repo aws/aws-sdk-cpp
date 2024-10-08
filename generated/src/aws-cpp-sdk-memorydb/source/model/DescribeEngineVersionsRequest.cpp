@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeEngineVersionsRequest::DescribeEngineVersionsRequest() : 
+    m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_parameterGroupFamilyHasBeenSet(false),
     m_maxResults(0),
@@ -26,6 +27,12 @@ DescribeEngineVersionsRequest::DescribeEngineVersionsRequest() :
 Aws::String DescribeEngineVersionsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_engineHasBeenSet)
+  {
+   payload.WithString("Engine", m_engine);
+
+  }
 
   if(m_engineVersionHasBeenSet)
   {

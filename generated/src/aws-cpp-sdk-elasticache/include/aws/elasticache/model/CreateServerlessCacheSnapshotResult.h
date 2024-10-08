@@ -36,7 +36,7 @@ namespace Model
     ///@{
     /**
      * <p>The state of a serverless cache snapshot at a specific point in time, to the
-     * millisecond. Available for Redis OSS and Serverless Memcached only.</p>
+     * millisecond. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
      */
     inline const ServerlessCacheSnapshot& GetServerlessCacheSnapshot() const{ return m_serverlessCacheSnapshot; }
     inline void SetServerlessCacheSnapshot(const ServerlessCacheSnapshot& value) { m_serverlessCacheSnapshot = value; }

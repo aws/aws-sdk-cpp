@@ -139,7 +139,7 @@ namespace Model
     ///@{
     /**
      * <p>Indicates which serverless caches the specified user group is associated
-     * with. Available for Redis OSS and Serverless Memcached only.</p>
+     * with. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServerlessCaches() const{ return m_serverlessCaches; }
     inline bool ServerlessCachesHasBeenSet() const { return m_serverlessCachesHasBeenSet; }

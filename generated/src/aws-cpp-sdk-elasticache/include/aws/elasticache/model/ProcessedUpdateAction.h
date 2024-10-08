@@ -85,7 +85,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the update action on the Redis OSS cluster</p>
+     * <p>The status of the update action on the Valkey or Redis OSS cluster</p>
      */
     inline const UpdateActionStatus& GetUpdateActionStatus() const{ return m_updateActionStatus; }
     inline bool UpdateActionStatusHasBeenSet() const { return m_updateActionStatusHasBeenSet; }

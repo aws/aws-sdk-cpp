@@ -30,6 +30,7 @@ Cluster::Cluster() :
     m_availabilityModeHasBeenSet(false),
     m_clusterEndpointHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
+    m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_enginePatchVersionHasBeenSet(false),
     m_parameterGroupNameHasBeenSet(false),
@@ -126,6 +127,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_nodeType = jsonValue.GetString("NodeType");
 
     m_nodeTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Engine"))
+  {
+    m_engine = jsonValue.GetString("Engine");
+
+    m_engineHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EngineVersion"))
@@ -312,6 +320,12 @@ JsonValue Cluster::Jsonize() const
   if(m_nodeTypeHasBeenSet)
   {
    payload.WithString("NodeType", m_nodeType);
+
+  }
+
+  if(m_engineHasBeenSet)
+  {
+   payload.WithString("Engine", m_engine);
 
   }
 

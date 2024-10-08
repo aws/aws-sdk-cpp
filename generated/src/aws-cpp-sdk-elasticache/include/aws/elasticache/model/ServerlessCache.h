@@ -220,7 +220,7 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the user group associated with the serverless cache.
-     * Available for Redis OSS only. Default is NULL.</p>
+     * Available for Valkey and Redis OSS only. Default is NULL.</p>
      */
     inline const Aws::String& GetUserGroupId() const{ return m_userGroupId; }
     inline bool UserGroupIdHasBeenSet() const { return m_userGroupIdHasBeenSet; }
@@ -253,7 +253,7 @@ namespace Model
     ///@{
     /**
      * <p>The current setting for the number of serverless cache snapshots the system
-     * will retain. Available for Redis OSS and Serverless Memcached only.</p>
+     * will retain. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
     inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
@@ -265,7 +265,7 @@ namespace Model
     /**
      * <p>The daily time that a cache snapshot will be created. Default is NULL, i.e.
      * snapshots will not be created at a specific time on a daily basis. Available for
-     * Redis OSS and Serverless Memcached only.</p>
+     * Valkey, Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::String& GetDailySnapshotTime() const{ return m_dailySnapshotTime; }
     inline bool DailySnapshotTimeHasBeenSet() const { return m_dailySnapshotTimeHasBeenSet; }

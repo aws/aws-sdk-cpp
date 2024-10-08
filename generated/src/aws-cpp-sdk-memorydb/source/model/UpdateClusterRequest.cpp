@@ -24,6 +24,7 @@ UpdateClusterRequest::UpdateClusterRequest() :
     m_snapshotRetentionLimit(0),
     m_snapshotRetentionLimitHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
+    m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_replicaConfigurationHasBeenSet(false),
     m_shardConfigurationHasBeenSet(false),
@@ -97,6 +98,12 @@ Aws::String UpdateClusterRequest::SerializePayload() const
   if(m_nodeTypeHasBeenSet)
   {
    payload.WithString("NodeType", m_nodeType);
+
+  }
+
+  if(m_engineHasBeenSet)
+  {
+   payload.WithString("Engine", m_engine);
 
   }
 

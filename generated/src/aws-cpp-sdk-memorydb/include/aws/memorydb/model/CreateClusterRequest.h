@@ -307,7 +307,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version number of the Redis OSS engine to be used for the cluster.</p>
+     * <p>The name of the engine to be used for the nodes in this cluster. The value
+     * must be set to either Redis or Valkey.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline CreateClusterRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline CreateClusterRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline CreateClusterRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The version number of the engine to be used for the cluster.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -401,6 +416,9 @@ namespace Model
 
     Aws::String m_aCLName;
     bool m_aCLNameHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;

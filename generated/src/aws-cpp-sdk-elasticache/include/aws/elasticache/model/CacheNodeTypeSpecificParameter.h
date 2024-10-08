@@ -28,8 +28,8 @@ namespace Model
 
   /**
    * <p>A parameter that has a different value for each cache node type it is applied
-   * to. For example, in a Redis OSS cluster, a <code>cache.m1.large</code> cache
-   * node type would have a larger <code>maxmemory</code> value than a
+   * to. For example, in a Valkey or Redis OSS cluster, a <code>cache.m1.large</code>
+   * cache node type would have a larger <code>maxmemory</code> value than a
    * <code>cache.m1.small</code> type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheNodeTypeSpecificParameter">AWS
    * API Reference</a></p>

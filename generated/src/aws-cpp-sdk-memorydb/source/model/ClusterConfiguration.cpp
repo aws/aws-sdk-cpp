@@ -22,6 +22,7 @@ ClusterConfiguration::ClusterConfiguration() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
+    m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_maintenanceWindowHasBeenSet(false),
     m_topicArnHasBeenSet(false),
@@ -66,6 +67,13 @@ ClusterConfiguration& ClusterConfiguration::operator =(JsonView jsonValue)
     m_nodeType = jsonValue.GetString("NodeType");
 
     m_nodeTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Engine"))
+  {
+    m_engine = jsonValue.GetString("Engine");
+
+    m_engineHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EngineVersion"))
@@ -170,6 +178,12 @@ JsonValue ClusterConfiguration::Jsonize() const
   if(m_nodeTypeHasBeenSet)
   {
    payload.WithString("NodeType", m_nodeType);
+
+  }
+
+  if(m_engineHasBeenSet)
+  {
+   payload.WithString("Engine", m_engine);
 
   }
 

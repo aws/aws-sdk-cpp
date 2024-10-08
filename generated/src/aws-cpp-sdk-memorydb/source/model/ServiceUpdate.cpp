@@ -27,6 +27,7 @@ ServiceUpdate::ServiceUpdate() :
     m_statusHasBeenSet(false),
     m_type(ServiceUpdateType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_engineHasBeenSet(false),
     m_nodesUpdatedHasBeenSet(false),
     m_autoUpdateStartDateHasBeenSet(false)
 {
@@ -82,6 +83,13 @@ ServiceUpdate& ServiceUpdate::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Engine"))
+  {
+    m_engine = jsonValue.GetString("Engine");
+
+    m_engineHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("NodesUpdated"))
   {
     m_nodesUpdated = jsonValue.GetString("NodesUpdated");
@@ -134,6 +142,12 @@ JsonValue ServiceUpdate::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", ServiceUpdateTypeMapper::GetNameForServiceUpdateType(m_type));
+  }
+
+  if(m_engineHasBeenSet)
+  {
+   payload.WithString("Engine", m_engine);
+
   }
 
   if(m_nodesUpdatedHasBeenSet)

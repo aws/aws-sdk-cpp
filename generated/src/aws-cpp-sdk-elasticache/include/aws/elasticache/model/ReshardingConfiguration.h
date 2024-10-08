@@ -44,8 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Either the ElastiCache (Redis OSS) supplied 4-digit id or a user supplied id
-     * for the node group these configuration values apply to.</p>
+     * <p>Either the ElastiCache supplied 4-digit id or a user supplied id for the node
+     * group these configuration values apply to.</p>
      */
     inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
     inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }

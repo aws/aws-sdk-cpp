@@ -41,8 +41,8 @@ namespace Model
     ///@{
     /**
      * <p>The name for the snapshot being created. Must be unique for the customer
-     * account. Available for Redis OSS and Serverless Memcached only. Must be between
-     * 1 and 255 characters.</p>
+     * account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be
+     * between 1 and 255 characters.</p>
      */
     inline const Aws::String& GetServerlessCacheSnapshotName() const{ return m_serverlessCacheSnapshotName; }
     inline bool ServerlessCacheSnapshotNameHasBeenSet() const { return m_serverlessCacheSnapshotNameHasBeenSet; }
@@ -57,7 +57,7 @@ namespace Model
     ///@{
     /**
      * <p>The name of an existing serverless cache. The snapshot is created from this
-     * cache. Available for Redis OSS and Serverless Memcached only.</p>
+     * cache. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::String& GetServerlessCacheName() const{ return m_serverlessCacheName; }
     inline bool ServerlessCacheNameHasBeenSet() const { return m_serverlessCacheNameHasBeenSet; }
@@ -71,8 +71,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the KMS key used to encrypt the snapshot. Available for Redis OSS
-     * and Serverless Memcached only. Default: NULL</p>
+     * <p>The ID of the KMS key used to encrypt the snapshot. Available for Valkey,
+     * Redis OSS and Serverless Memcached only. Default: NULL</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
@@ -87,7 +87,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of tags to be added to the snapshot resource. A tag is a key-value
-     * pair. Available for Redis OSS and Serverless Memcached only.</p>
+     * pair. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

@@ -165,7 +165,21 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Redis OSS engine version used by the cluster</p>
+     * <p> The Redis OSS or Valkey engine used by the cluster.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline Cluster& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline Cluster& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline Cluster& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Redis engine version used by the cluster</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -179,7 +193,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Redis OSS engine patch version used by the cluster</p>
+     * <p>The engine patch version used by the cluster</p>
      */
     inline const Aws::String& GetEnginePatchVersion() const{ return m_enginePatchVersion; }
     inline bool EnginePatchVersionHasBeenSet() const { return m_enginePatchVersionHasBeenSet; }
@@ -426,6 +440,9 @@ namespace Model
 
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;

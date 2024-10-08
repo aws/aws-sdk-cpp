@@ -85,7 +85,7 @@ namespace Model
     /**
      * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
      * key must be accompanied by a tag value, although null is accepted. Available for
-     * Redis OSS only.</p>
+     * Valkey and Redis OSS only.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

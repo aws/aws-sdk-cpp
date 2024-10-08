@@ -121,6 +121,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The MemoryDB engine to which the update applies. The values are either Redis
+     * or Valkey.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline ServiceUpdate& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline ServiceUpdate& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline ServiceUpdate& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of nodes updated by the service update</p>
      */
     inline const Aws::String& GetNodesUpdated() const{ return m_nodesUpdated; }
@@ -163,6 +178,9 @@ namespace Model
 
     ServiceUpdateType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_nodesUpdated;
     bool m_nodesUpdatedHasBeenSet = false;

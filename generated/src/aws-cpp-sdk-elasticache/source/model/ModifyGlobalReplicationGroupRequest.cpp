@@ -15,6 +15,7 @@ ModifyGlobalReplicationGroupRequest::ModifyGlobalReplicationGroupRequest() :
     m_applyImmediately(false),
     m_applyImmediatelyHasBeenSet(false),
     m_cacheNodeTypeHasBeenSet(false),
+    m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_cacheParameterGroupNameHasBeenSet(false),
     m_globalReplicationGroupDescriptionHasBeenSet(false),
@@ -40,6 +41,11 @@ Aws::String ModifyGlobalReplicationGroupRequest::SerializePayload() const
   if(m_cacheNodeTypeHasBeenSet)
   {
     ss << "CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
+  }
+
+  if(m_engineHasBeenSet)
+  {
+    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
   if(m_engineVersionHasBeenSet)
