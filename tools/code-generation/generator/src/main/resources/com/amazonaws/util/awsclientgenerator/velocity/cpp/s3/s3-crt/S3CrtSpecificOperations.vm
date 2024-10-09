@@ -213,13 +213,28 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
 #if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
 static void ${operation.name}RequestShutdownCallback(void *user_data)
 {
+  if(!user_data)
+  {
+    AWS_LOGSTREAM_ERROR("${operation.name}", "user data passed is NULL ");
+    return;
+  }
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+
   // call user callback and release user_data
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   S3Crt::Model::${operation.name}Outcome outcome(userData->s3CrtClient->GenerateStreamOutcome(userData->response));
 #else
   S3Crt::Model::${operation.name}Outcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
 #end
+  //log into monitor 
+  if(!outcome.IsSuccess())
+  {
+    userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
+  }
+  else
+  {
+    userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
+  }
 #if($operation.request)
 #if($operation.name == "PutObject")
   userData->putResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
@@ -324,6 +339,7 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 #else
   InitCommonCrtRequestOption(userData, &options, &request, uri, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #end
+  handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"${className}"},request.GetServiceRequestName(), userData->request);
   options.shutdown_callback = ${operation.request.shape.name}ShutdownCallback;
 #if($operation.name == "PutObject")
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
@@ -415,7 +431,7 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
     [&]()-> ${operation.name}Outcome {
       Aws::Utils::Threading::Semaphore sem(0, 1);
       ${operation.name}Outcome res;
-
+      auto handlerContext = Aws::MakeShared<AsyncCallerContext>(ALLOCATION_TAG);
 #if($operation.result && $operation.result.shape.hasStreamMembers())
       auto handler = ${operation.name}ResponseReceivedHandler{[&](const S3CrtClient*, const ${operation.request.shape.name}&, ${operation.name}Outcome outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
 #else
@@ -425,7 +441,7 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
         sem.ReleaseAll();
       }};
 
-      ${className}::${operation.name}Async(request, handler, nullptr);
+      ${className}::${operation.name}Async(request, handler, handlerContext);
       sem.WaitOne();
       return res;
     },
@@ -460,6 +476,7 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
   userData->copyResponseHandler = handler;
 #end
   InitCommonCrtRequestOption(userData, &options, nullptr, ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
+  handlerContext->GetMonitorContext().StartMonitorContext(${className},request.GetServiceRequestName(), userData->request);
   options.shutdown_callback = ${operation.name}RequestShutdownCallback;
 #if($operation.name == "PutObject")
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
@@ -496,6 +513,7 @@ ${operation.name}Outcome ${className}::${operation.name}() const
   AWS_OPERATION_GUARD(${operation.name});
   Aws::Utils::Threading::Semaphore sem(0, 1);
   ${operation.name}Outcome res;
+  auto handlerContext = Aws::MakeShared<AsyncCallerContext>(ALLOCATION_TAG);
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   auto handler = ${operation.name}ResponseReceivedHandler{[&](const S3CrtClient*, ${operation.name}Outcome outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
 #else
@@ -505,7 +523,7 @@ ${operation.name}Outcome ${className}::${operation.name}() const
       sem.ReleaseAll();
   }};
 
-  ${className}::${operation.name}Async(handler, nullptr);
+  ${className}::${operation.name}Async(handler, handlerContext);
   sem.WaitOne();
   return res;
 }
