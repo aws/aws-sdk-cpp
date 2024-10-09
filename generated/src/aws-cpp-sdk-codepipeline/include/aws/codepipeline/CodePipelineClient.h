@@ -63,12 +63,12 @@ namespace CodePipeline
    * with actions when working with pipeline operations such as <a>CreatePipeline</a>
    * and <a>GetPipelineState</a>. Valid action categories are:</p> <ul> <li>
    * <p>Source</p> </li> <li> <p>Build</p> </li> <li> <p>Test</p> </li> <li>
-   * <p>Deploy</p> </li> <li> <p>Approval</p> </li> <li> <p>Invoke</p> </li> </ul>
-   * <p>Pipelines also include <i>transitions</i>, which allow the transition of
-   * artifacts from one stage to the next in a pipeline after the actions in one
-   * stage complete.</p> <p>You can work with transitions by calling:</p> <ul> <li>
-   * <p> <a>DisableStageTransition</a>, which prevents artifacts from transitioning
-   * to the next stage in a pipeline.</p> </li> <li> <p>
+   * <p>Deploy</p> </li> <li> <p>Approval</p> </li> <li> <p>Invoke</p> </li> <li>
+   * <p>Compute</p> </li> </ul> <p>Pipelines also include <i>transitions</i>, which
+   * allow the transition of artifacts from one stage to the next in a pipeline after
+   * the actions in one stage complete.</p> <p>You can work with transitions by
+   * calling:</p> <ul> <li> <p> <a>DisableStageTransition</a>, which prevents
+   * artifacts from transitioning to the next stage in a pipeline.</p> </li> <li> <p>
    * <a>EnableStageTransition</a>, which enables transition of artifacts between
    * stages in a pipeline. </p> </li> </ul> <p> <b>Using the API to integrate with
    * CodePipeline</b> </p> <p>For third-party integrators or developers who want to
