@@ -61,5 +61,11 @@ namespace Aws
          * testing whether the global Monitoring instance has been destructed.
          */
         AWS_CORE_API void CleanupMonitoring();
+
+        /**
+         * Add monitoring using supplied factories
+         */
+        AWS_CORE_API void AddMonitoring(const std::vector<MonitoringFactoryCreateFunction>& monitoringFactoryCreateFunctions);
+
     }
 }
