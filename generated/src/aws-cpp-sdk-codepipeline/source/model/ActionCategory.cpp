@@ -26,6 +26,7 @@ namespace Aws
         static const int Test_HASH = HashingUtils::HashString("Test");
         static const int Invoke_HASH = HashingUtils::HashString("Invoke");
         static const int Approval_HASH = HashingUtils::HashString("Approval");
+        static const int Compute_HASH = HashingUtils::HashString("Compute");
 
 
         ActionCategory GetActionCategoryForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ActionCategory::Approval;
           }
+          else if (hashCode == Compute_HASH)
+          {
+            return ActionCategory::Compute;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "Invoke";
           case ActionCategory::Approval:
             return "Approval";
+          case ActionCategory::Compute:
+            return "Compute";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

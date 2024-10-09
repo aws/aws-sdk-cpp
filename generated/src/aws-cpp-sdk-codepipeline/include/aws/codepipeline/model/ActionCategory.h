@@ -21,7 +21,8 @@ namespace Model
     Deploy,
     Test,
     Invoke,
-    Approval
+    Approval,
+    Compute
   };
 
 namespace ActionCategoryMapper
