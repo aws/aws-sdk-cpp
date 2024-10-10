@@ -550,7 +550,6 @@ namespace Aws
             putObjectRequest.SetChecksumAlgorithm(m_transferConfig.computeContentMD5
                                                   ? S3::Model::ChecksumAlgorithm::NOT_SET
                                                   : m_transferConfig.checksumAlgorithm);
-            putObjectRequest.SetChecksumAlgorithm(m_transferConfig.checksumAlgorithm);
             putObjectRequest.SetBucket(handle->GetBucketName());
             putObjectRequest.SetKey(handle->GetKey());
             putObjectRequest.SetContentLength(static_cast<long long>(handle->GetBytesTotalSize()));
