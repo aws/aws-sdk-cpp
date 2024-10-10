@@ -85,11 +85,9 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
     config.scheme = Aws::Http::Scheme::HTTPS;
 
     if (config.retryStrategy == nullptr) {
-        Aws::Vector<Aws::String> retryableErrors;
-        retryableErrors.push_back("IDPCommunicationError");
-        retryableErrors.push_back("InvalidIdentityToken");
+        Aws::Vector<Aws::String> retryableErrors{ "IDPCommunicationError", "InvalidIdentityToken" };
 
-        config.retryStrategy = Aws::MakeShared<SpecifiedRetryableErrorsRetryStrategy>(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, retryableErrors, 3/*maxRetries*/);
+        config.retryStrategy = Aws::MakeShared<SpecifiedRetryableErrorsRetryStrategy>(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, std::move(retryableErrors), 3/*maxRetries*/);
     }
 
     m_client = Aws::MakeUnique<Aws::Internal::STSCredentialsClient>(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, config);
