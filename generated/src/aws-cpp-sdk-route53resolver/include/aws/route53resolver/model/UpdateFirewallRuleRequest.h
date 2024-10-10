@@ -211,7 +211,9 @@ namespace Model
      * example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER
      * can be 1-65334, for example, TYPE28. For more information, see <a
      * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record
-     * types</a>.</p> </li> </ul>
+     * types</a>.</p>  <p>If you set up a firewall BLOCK rule with action
+     * NXDOMAIN on query type equals AAAA, this action will not be applied to synthetic
+     * IPv6 addresses generated when DNS64 is enabled. </p>  </li> </ul>
      */
     inline const Aws::String& GetQtype() const{ return m_qtype; }
     inline bool QtypeHasBeenSet() const { return m_qtypeHasBeenSet; }

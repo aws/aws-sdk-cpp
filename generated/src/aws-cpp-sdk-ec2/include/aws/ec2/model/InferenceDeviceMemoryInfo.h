@@ -22,6 +22,7 @@ namespace Model
 {
 
   /**
+   *  <p>Amazon Elastic Inference is no longer available.</p> 
    * <p>Describes the memory available to the inference accelerator.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InferenceDeviceMemoryInfo">AWS

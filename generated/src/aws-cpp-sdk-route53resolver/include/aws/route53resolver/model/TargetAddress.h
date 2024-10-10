@@ -98,6 +98,22 @@ namespace Model
     inline TargetAddress& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
     inline TargetAddress& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The Server Name Indication of the DoH server that you want to forward
+     * queries to. This is only used if the Protocol of the <code>TargetAddress</code>
+     * is <code>DoH</code>. </p>
+     */
+    inline const Aws::String& GetServerNameIndication() const{ return m_serverNameIndication; }
+    inline bool ServerNameIndicationHasBeenSet() const { return m_serverNameIndicationHasBeenSet; }
+    inline void SetServerNameIndication(const Aws::String& value) { m_serverNameIndicationHasBeenSet = true; m_serverNameIndication = value; }
+    inline void SetServerNameIndication(Aws::String&& value) { m_serverNameIndicationHasBeenSet = true; m_serverNameIndication = std::move(value); }
+    inline void SetServerNameIndication(const char* value) { m_serverNameIndicationHasBeenSet = true; m_serverNameIndication.assign(value); }
+    inline TargetAddress& WithServerNameIndication(const Aws::String& value) { SetServerNameIndication(value); return *this;}
+    inline TargetAddress& WithServerNameIndication(Aws::String&& value) { SetServerNameIndication(std::move(value)); return *this;}
+    inline TargetAddress& WithServerNameIndication(const char* value) { SetServerNameIndication(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_ip;
@@ -111,6 +127,9 @@ namespace Model
 
     Protocol m_protocol;
     bool m_protocolHasBeenSet = false;
+
+    Aws::String m_serverNameIndication;
+    bool m_serverNameIndicationHasBeenSet = false;
   };
 
 } // namespace Model

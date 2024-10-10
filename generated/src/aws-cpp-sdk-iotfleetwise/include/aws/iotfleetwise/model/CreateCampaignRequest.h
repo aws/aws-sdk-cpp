@@ -189,19 +189,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Optional) A number indicating the priority of one campaign over another
-     * campaign for a certain vehicle or fleet. A campaign with the lowest value is
-     * deployed to vehicles before any other campaigns. If it's not specified,
-     * <code>0</code> is used. </p> <p>Default: <code>0</code> </p>
-     */
-    inline int GetPriority() const{ return m_priority; }
-    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
-    inline CreateCampaignRequest& WithPriority(int value) { SetPriority(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>(Optional) A list of information about signals to collect. </p>
      */
     inline const Aws::Vector<SignalInformation>& GetSignalsToCollect() const{ return m_signalsToCollect; }
@@ -313,9 +300,6 @@ namespace Model
 
     Compression m_compression;
     bool m_compressionHasBeenSet = false;
-
-    int m_priority;
-    bool m_priorityHasBeenSet = false;
 
     Aws::Vector<SignalInformation> m_signalsToCollect;
     bool m_signalsToCollectHasBeenSet = false;

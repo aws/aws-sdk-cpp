@@ -24,6 +24,7 @@ namespace Model
     CANCELLED,
     PREPARING,
     IN_PROGRESS,
+    DELIVERED,
     COMPLETED,
     ERROR_
   };

@@ -48,6 +48,7 @@ static const int K_M_S_INVALID_STATE_FAULT_HASH = HashingUtils::HashString("KMSI
 static const int INVALID_RESOURCE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidResourceStateFault");
 static const int SUBNET_ALREADY_IN_USE_HASH = HashingUtils::HashString("SubnetAlreadyInUse");
 static const int S_N_S_INVALID_TOPIC_FAULT_HASH = HashingUtils::HashString("SNSInvalidTopicFault");
+static const int FAILED_DEPENDENCY_FAULT_HASH = HashingUtils::HashString("FailedDependencyFault");
 static const int INVALID_OPERATION_FAULT_HASH = HashingUtils::HashString("InvalidOperationFault");
 static const int K_M_S_THROTTLING_FAULT_HASH = HashingUtils::HashString("KMSThrottlingFault");
 static const int REPLICATION_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS_HASH = HashingUtils::HashString("ReplicationSubnetGroupDoesNotCoverEnoughAZs");
@@ -144,6 +145,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == S_N_S_INVALID_TOPIC_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::S_N_S_INVALID_TOPIC_FAULT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == FAILED_DEPENDENCY_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::FAILED_DEPENDENCY_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_OPERATION_FAULT_HASH)
   {

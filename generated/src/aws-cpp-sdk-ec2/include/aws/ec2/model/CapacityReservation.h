@@ -400,6 +400,21 @@ namespace Model
     inline CapacityReservation& WithReservationType(const CapacityReservationType& value) { SetReservationType(value); return *this;}
     inline CapacityReservation& WithReservationType(CapacityReservationType&& value) { SetReservationType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account to which billing of the unused
+     * capacity of the Capacity Reservation is assigned.</p>
+     */
+    inline const Aws::String& GetUnusedReservationBillingOwnerId() const{ return m_unusedReservationBillingOwnerId; }
+    inline bool UnusedReservationBillingOwnerIdHasBeenSet() const { return m_unusedReservationBillingOwnerIdHasBeenSet; }
+    inline void SetUnusedReservationBillingOwnerId(const Aws::String& value) { m_unusedReservationBillingOwnerIdHasBeenSet = true; m_unusedReservationBillingOwnerId = value; }
+    inline void SetUnusedReservationBillingOwnerId(Aws::String&& value) { m_unusedReservationBillingOwnerIdHasBeenSet = true; m_unusedReservationBillingOwnerId = std::move(value); }
+    inline void SetUnusedReservationBillingOwnerId(const char* value) { m_unusedReservationBillingOwnerIdHasBeenSet = true; m_unusedReservationBillingOwnerId.assign(value); }
+    inline CapacityReservation& WithUnusedReservationBillingOwnerId(const Aws::String& value) { SetUnusedReservationBillingOwnerId(value); return *this;}
+    inline CapacityReservation& WithUnusedReservationBillingOwnerId(Aws::String&& value) { SetUnusedReservationBillingOwnerId(std::move(value)); return *this;}
+    inline CapacityReservation& WithUnusedReservationBillingOwnerId(const char* value) { SetUnusedReservationBillingOwnerId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_capacityReservationId;
@@ -473,6 +488,9 @@ namespace Model
 
     CapacityReservationType m_reservationType;
     bool m_reservationTypeHasBeenSet = false;
+
+    Aws::String m_unusedReservationBillingOwnerId;
+    bool m_unusedReservationBillingOwnerIdHasBeenSet = false;
   };
 
 } // namespace Model

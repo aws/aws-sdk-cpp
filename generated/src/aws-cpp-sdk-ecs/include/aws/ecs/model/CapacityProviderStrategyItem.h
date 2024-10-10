@@ -47,10 +47,11 @@ namespace Model
    * rate that's discounted compared to the <code>FARGATE</code> price.
    * <code>FARGATE_SPOT</code> runs tasks on spare compute capacity. When Amazon Web
    * Services needs the capacity back, your tasks are interrupted with a two-minute
-   * warning. <code>FARGATE_SPOT</code> only supports Linux tasks with the X86_64
-   * architecture on platform version 1.3.0 or later.</p> <p>A capacity provider
-   * strategy may contain a maximum of 6 capacity providers.</p><p><h3>See Also:</h3>
-   * <a
+   * warning. <code>FARGATE_SPOT</code> supports Linux tasks with the X86_64
+   * architecture on platform version 1.3.0 or later. <code>FARGATE_SPOT</code>
+   * supports Linux tasks with the ARM64 architecture on platform version 1.4.0 or
+   * later.</p> <p>A capacity provider strategy may contain a maximum of 6 capacity
+   * providers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CapacityProviderStrategyItem">AWS
    * API Reference</a></p>
    */

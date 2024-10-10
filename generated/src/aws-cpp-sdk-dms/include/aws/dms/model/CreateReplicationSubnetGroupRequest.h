@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The name for the replication subnet group. This value is stored as a
      * lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+     * characters, periods, underscores, or hyphens. Must not be "default".</p>
      * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetReplicationSubnetGroupIdentifier() const{ return m_replicationSubnetGroupIdentifier; }

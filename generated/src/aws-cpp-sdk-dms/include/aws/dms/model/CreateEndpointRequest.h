@@ -99,8 +99,11 @@ namespace Model
      * <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>,
      * <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
      * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
-     * <code>"babelfish"</code>.</p>
+     * <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>,
+     * <code>"babelfish"</code>, <code>redshift-serverless</code>,
+     * <code>aurora-serverless</code>, <code>aurora-postgresql-serverless</code>,
+     * <code>gcp-mysql</code>, <code>azure-sql-managed-instance</code>,
+     * <code>redis</code>, <code>dms-transfer</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }

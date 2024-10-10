@@ -175,8 +175,7 @@ namespace Model
     ///@{
     /**
      * <p>Deprecated.</p>  <p>Amazon Elastic Graphics reached end of life on
-     * January 8, 2024. For workloads that require graphics acceleration, we recommend
-     * that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p> 
+     * January 8, 2024.</p> 
      */
     inline const Aws::Vector<ElasticGpuAssociation>& GetElasticGpuAssociations() const{ return m_elasticGpuAssociations; }
     inline bool ElasticGpuAssociationsHasBeenSet() const { return m_elasticGpuAssociationsHasBeenSet; }
@@ -190,7 +189,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The elastic inference accelerator associated with the instance.</p>
+     * <p>Deprecated</p>  <p>Amazon Elastic Inference is no longer available.</p>
+     * 
      */
     inline const Aws::Vector<ElasticInferenceAcceleratorAssociation>& GetElasticInferenceAcceleratorAssociations() const{ return m_elasticInferenceAcceleratorAssociations; }
     inline bool ElasticInferenceAcceleratorAssociationsHasBeenSet() const { return m_elasticInferenceAcceleratorAssociationsHasBeenSet; }

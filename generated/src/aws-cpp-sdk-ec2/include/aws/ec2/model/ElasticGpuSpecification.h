@@ -24,10 +24,9 @@ namespace Model
 {
 
   /**
-   *  <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For
-   * workloads that require graphics acceleration, we recommend that you use Amazon
-   * EC2 G4, G5, or G6 instances.</p>  <p>A specification for an Elastic
-   * Graphics accelerator.</p><p><h3>See Also:</h3>   <a
+   *  <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
+   *  <p>A specification for an Elastic Graphics accelerator.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticGpuSpecification">AWS
    * API Reference</a></p>
    */

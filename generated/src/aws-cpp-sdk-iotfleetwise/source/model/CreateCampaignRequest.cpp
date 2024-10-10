@@ -27,8 +27,6 @@ CreateCampaignRequest::CreateCampaignRequest() :
     m_spoolingModeHasBeenSet(false),
     m_compression(Compression::NOT_SET),
     m_compressionHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
     m_signalsToCollectHasBeenSet(false),
     m_collectionSchemeHasBeenSet(false),
     m_dataExtraDimensionsHasBeenSet(false),
@@ -94,12 +92,6 @@ Aws::String CreateCampaignRequest::SerializePayload() const
   if(m_compressionHasBeenSet)
   {
    payload.WithString("compression", CompressionMapper::GetNameForCompression(m_compression));
-  }
-
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("priority", m_priority);
-
   }
 
   if(m_signalsToCollectHasBeenSet)

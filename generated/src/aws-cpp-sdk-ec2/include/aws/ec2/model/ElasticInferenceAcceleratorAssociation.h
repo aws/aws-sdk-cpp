@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> Describes the association between an instance and an elastic inference
+   *  <p>Amazon Elastic Inference is no longer available.</p>  <p>
+   * Describes the association between an instance and an elastic inference
    * accelerator. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticInferenceAcceleratorAssociation">AWS
    * API Reference</a></p>
