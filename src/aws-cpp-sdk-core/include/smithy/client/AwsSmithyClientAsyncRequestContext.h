@@ -5,6 +5,7 @@
 #pragma once
 
 #include <smithy/Smithy_EXPORTS.h>
+#include <smithy/interceptor/InterceptorContext.h>
 
 #include <aws/core/endpoint/AWSEndpoint.h>
 #include <aws/core/http/HttpRequest.h>
@@ -70,6 +71,7 @@ namespace smithy
 
             ResponseHandlerFunc m_responseHandler;
             std::shared_ptr<Aws::Utils::Threading::Executor> m_pExecutor;
+            std::shared_ptr<interceptor::InterceptorContext> m_interceptorContext;
         };
     } // namespace client
 } // namespace smithy

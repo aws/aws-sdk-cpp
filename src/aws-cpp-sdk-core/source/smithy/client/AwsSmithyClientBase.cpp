@@ -5,7 +5,6 @@
 
 #include <smithy/client/AwsSmithyClientBase.h>
 #include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
-#include <smithy/client/features/Checksums.h>
 #include <smithy/client/features/RecursionDetection.h>
 #include <smithy/client/features/RequestPayloadCompression.h>
 
@@ -20,6 +19,7 @@
 #include "smithy/tracing/TracingUtils.h"
 
 using namespace smithy::client;
+using namespace smithy::interceptor;
 using namespace smithy::components::tracing;
 
 static const char AWS_SMITHY_CLIENT_LOG[] = "AwsSmithyClient";
@@ -81,7 +81,6 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
             }
         }
 
-        Checksums::AddChecksumToRequest(httpRequest, *pRequest);
         // Pass along handlers for processing data sent/received in bytes
         httpRequest->SetHeadersReceivedEventHandler(pRequest->GetHeadersReceivedEventHandler());
         httpRequest->SetDataReceivedEventHandler(pRequest->GetDataReceivedEventHandler());
@@ -167,6 +166,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     }
     pRequestCtx->m_requestInfo.attempt = 1;
     pRequestCtx->m_requestInfo.maxAttempts = 0;
+    pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
 
     AttemptOneRequestAsync(std::move(pRequestCtx));
 }
@@ -200,6 +200,20 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
               responseHandler(std::move(outcome));
           } );
         return;
+    }
+
+    pRequestCtx->m_interceptorContext->SetTransmitRequest(pRequestCtx->m_httpRequest);
+    for (const auto& interceptor : m_interceptors)
+    {
+        auto modifiedRequest = interceptor->ModifyBeforeSigning(*pRequestCtx->m_interceptorContext);
+        if (!modifiedRequest.IsSuccess())
+        {
+            pExecutor->Submit([modifiedRequest, responseHandler]() mutable
+              {
+                  responseHandler(modifiedRequest.GetError());
+              });
+            return;
+        }
     }
 
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
@@ -290,14 +304,15 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
 {
     assert(pRequestCtx && httpResponse);
 
-    if (pRequestCtx->m_pRequest && pRequestCtx->m_pRequest->ShouldValidateResponseChecksum())
+    pRequestCtx->m_interceptorContext->SetTransmitResponse(httpResponse);
+    for (const auto& interceptor : m_interceptors)
     {
-        auto checksumError = Checksums::ValidateResponseChecksum(pRequestCtx.get(), httpResponse.get());
-        if (checksumError)
+        const auto modifiedResponse = interceptor->ModifyBeforeDeserialization(*pRequestCtx->m_interceptorContext);
+        if (!modifiedResponse.IsSuccess())
         {
-            return pRequestCtx->m_responseHandler(HttpResponseOutcome(std::move(*checksumError)));
+            return pRequestCtx->m_responseHandler(HttpResponseOutcome(modifiedResponse.GetError()));
         }
-    }
+    };
 
     bool hasEmbeddedError = pRequestCtx->m_pRequest &&
                           pRequestCtx->m_pRequest->HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders());

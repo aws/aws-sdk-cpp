@@ -91,6 +91,7 @@ file(GLOB SMITHY_IDENTITY_RESOLVER_IMPL_HEADERS "include/smithy/identity/resolve
 file(GLOB SMITHY_IDENTITY_SIGNER_HEADERS "include/smithy/identity/signer/*.h")
 file(GLOB SMITHY_IDENTITY_SIGNER_BUILTIN_HEADERS "include/smithy/identity/signer/built-in/*.h")
 file(GLOB SMITHY_INTERCEPTOR_HEADERS "include/smithy/interceptor/*.h")
+file(GLOB SMITHY_INTERCEPTOR_IMPL_HEADERS "include/smithy/interceptor/impl/*.h")
 
 file(GLOB AWS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp")
 file(GLOB AWS_TINYXML2_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/external/tinyxml2/*.cpp")
@@ -363,6 +364,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${SMITHY_IDENTITY_RESOLVER_BUILTIN_HEADERS}
   ${OPTEL_HEADERS}
   ${SMITHY_INTERCEPTOR_HEADERS}
+  ${SMITHY_INTERCEPTOR_IMPL_HEADERS}
 )
 
 # misc platform-specific, not related to features (encryption/http clients)
@@ -495,6 +497,7 @@ if(MSVC)
     source_group("Header Files\\smithy\\identity\\signer" FILES ${SMITHY_IDENTITY_SIGNER_HEADERS})
     source_group("Header Files\\smithy\\identity\\signer\\built-in" FILES ${SMITHY_IDENTITY_SIGNER_BUILTIN_HEADERS})
     source_group("Header Files\\smithy\\interceptor" FILES ${SMITHY_INTERCEPTOR_HEADERS})
+    source_group("Header Files\\smithy\\interceptor" FILES ${SMITHY_INTERCEPTOR_IMPL_HEADERS})
 
     # http client conditional headers
     if(ENABLE_CURL_CLIENT)
@@ -774,6 +777,7 @@ install (FILES ${SMITHY_IDENTITY_RESOLVER_IMPL_HEADERS} DESTINATION ${INCLUDE_DI
 install (FILES ${SMITHY_IDENTITY_SIGNER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/signer)
 install (FILES ${SMITHY_IDENTITY_SIGNER_BUILTIN_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/identity/signer/built-in)
 install (FILES ${SMITHY_INTERCEPTOR_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/interceptor)
+install (FILES ${SMITHY_INTERCEPTOR_IMPL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/smithy/interceptor)
 
 # android logcat headers
 if(PLATFORM_ANDROID)
