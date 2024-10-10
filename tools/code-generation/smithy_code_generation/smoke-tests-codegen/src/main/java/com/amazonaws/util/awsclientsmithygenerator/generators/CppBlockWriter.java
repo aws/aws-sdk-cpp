@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import lombok.Data;
 
-//Helper class for c++ blocks
+//Helper class for C++ code blocks for scope management
 public class CppBlockWriter {
 
     public static String GetForLoopRangeInitializer(String variableName, String iterableExpr)
@@ -18,7 +18,7 @@ public class CppBlockWriter {
         return String.format("%s<%s> %s",containerType, containerTemplateParam,variableName );
     }
 
-    //args  will always be even number
+    //args  will always be even number Type followed by name
     public static String GetFunctionBlock(String returnType, String functionName, String... args)
     {   
         StringBuilder sb = new StringBuilder();
@@ -40,7 +40,6 @@ public class CppBlockWriter {
         public Block(String header, int indentLevel)
         {
             lines = new ArrayList<>();
-            String linePrefix = " ".repeat(indentLevel);  
             if (!header.isEmpty() )
             {
                 addCode(header + "\n{\n", indentLevel);
@@ -49,6 +48,13 @@ public class CppBlockWriter {
             {
                 addCode("{\n", indentLevel);
             }
+        }
+        
+        //Continue with current block
+        public Block(int indentLevel)
+        {
+            lines = new ArrayList<>();
+            addCode("\n", indentLevel);
         }
 
         public void addCode(String code, int indentLevel)
@@ -61,6 +67,7 @@ public class CppBlockWriter {
             }
         }
 
+
         public List<String> getCodeLines(){
             return lines;
         }
@@ -70,11 +77,13 @@ public class CppBlockWriter {
     private Stack<Block> blockStack;
     private int indentLevel;
     private String codeBlock;
+    private boolean isRootBlockNewScope;
     
     public CppBlockWriter(String header, int level){
         indentLevel = level;
         blockStack = new Stack<>();
         codeBlock = new String("");
+        isRootBlockNewScope =true;
         openCodeBlock(header);
     }
 
@@ -83,6 +92,8 @@ public class CppBlockWriter {
         indentLevel = level;
         blockStack = new Stack<>();
         codeBlock = new String("");
+        isRootBlockNewScope =false;
+        continueCodeBlock("");
     }
 
     //opens a new block
@@ -94,8 +105,25 @@ public class CppBlockWriter {
         blockStack.add(block);
         indentLevel++;
         return this;
-
     }
+
+    public CppBlockWriter continueCodeBlock(String code)
+    {
+        //add new block to stack
+        //use its string builder to add "{"
+        Block block = new Block(indentLevel);
+        if(blockStack.empty())
+        {
+            blockStack.add(block);
+        }
+        
+        //merge with last block
+        blockStack.peek().addCode(code, indentLevel);
+        
+        return this;
+    }
+
+
     //add code to current block
     public CppBlockWriter addCode(String code)
     {
@@ -110,29 +138,40 @@ public class CppBlockWriter {
     //closes current block
     public CppBlockWriter closeCodeBlock()
     {
-
+        List<String> codeLines = new ArrayList<String>();
+        //if root block is not a new scope and it is the root block, 
+        //need not close scope then
+        if(blockStack.size() == 1 && !isRootBlockNewScope)
+        {
+            Block top = blockStack.peek();
+            top.addCode("\n", indentLevel);
+            codeLines = top.getCodeLines();
+            blockStack.pop();
+        }
         //create string and close block with  "}"
         //pop block of stack
         //write to prior element
         //return the popped one if any
-        if (!blockStack.isEmpty())
+        else if (!blockStack.isEmpty())
         {
             Block top = blockStack.peek();
             indentLevel--;
             top.addCode("}\n", indentLevel);
-            List<String> codeLines = top.getCodeLines();
+            codeLines = top.getCodeLines();
             blockStack.pop();
-            
-            if(blockStack.isEmpty())
-            {
-                codeBlock = String.join("\n", codeLines);
-            }
-            else
-            {
-                top = blockStack.peek();
-                top.addCode(String.join("\n", codeLines), indentLevel);
-            }
         }
+
+        //after close merge with previous or update root code block
+        if(blockStack.isEmpty())
+        {
+            codeBlock = String.join("\n", codeLines);
+        }
+        else
+        {
+            Block top = blockStack.peek();
+            top.addCode(String.join("\n", codeLines), indentLevel);
+        }
+
         return this;
     }
 

@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.io.*;
 import java.util.List;
+import software.amazon.smithy.model.shapes.*;
 public class SmithyCodegenPlugin implements SmithyBuildPlugin {
 
 @Override
@@ -26,14 +27,14 @@ public String getName() {
 @Override
     public void execute(PluginContext context){
         
+        //todo: put in exception block
         System.out.println(String.format("Executing SmithyCodegenPlugin...", context.getFileManifest().getBaseDir().toString()));
 
         SmokeTestsParser smoketestParser = new SmokeTestsParser(context);
         
         smoketestParser.run();
 
-        //Map<String, List<TestcaseParams> > smoketests =  smoketestParser.extractServiceSmokeTests();
-//
+        //Map<ShapeId, List<TestcaseParams> > smoketests =  smoketestParser.extractServiceSmokeTests();
         //smoketests.entrySet().stream().forEach(entry -> {
         //        List<TestcaseParams> tests = entry.getValue();
         //        CppSmokeTestsWriter writer = new CppSmokeTestsWriter("");

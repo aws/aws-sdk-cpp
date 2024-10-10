@@ -243,7 +243,6 @@ public class SmokeTestsParser implements Runnable{
     public Map<ShapeId, List<TestcaseParams> > extractServiceSmokeTests()
     {
         Map<ShapeId, List<TestcaseParams> > serviceSmokeTestsMap = new HashMap<>();
-        List<TestcaseParams> testcases = new ArrayList<>();
 
         Map<ShapeId, String> operationToServiceMap = new HashMap<>();
         Map<String, ServiceShape> serviceShapeMap = new HashMap<>();
@@ -280,7 +279,7 @@ public class SmokeTestsParser implements Runnable{
                 operationShape,
                 serviceShape );
             //add to tests for the same service
-            if(serviceSmokeTestsMap.containsKey(serviceName))
+            if(serviceSmokeTestsMap.containsKey(serviceShape.getId()))
             {
                 serviceSmokeTestsMap.get(serviceShape.getId()).addAll(tests);
             }
@@ -305,10 +304,11 @@ public class SmokeTestsParser implements Runnable{
         
         //make service specific folder
         smoketests.entrySet().stream().forEach(entry -> {
-                Path relativePath = Paths.get( getServiceName(entry.getKey()) );
-                System.out.println(String.format("path=%s",relativePath.toString() + "/"+ getServiceName(entry.getKey()) + "SmokeTests.cpp"));
+                String serviceName = getServiceName(entry.getKey());
+                Path relativePath = Paths.get( serviceName );
+                System.out.println(String.format("path=%s",relativePath.toString() + "/"+ serviceName + "SmokeTests.cpp"));
                 
-                delegator.useFileWriter( relativePath.toString() + "/"+ getServiceName(entry.getKey()) + "SmokeTests.cpp", entry.getKey().getName(), writer -> {
+                delegator.useFileWriter( relativePath.toString() + "/"+ getServiceName(entry.getKey()) + "SmokeTests.cpp", serviceName, writer -> {
                     System.out.println("generating smoke test code");
                     writer.GetSmokeTestsCode(entry.getValue());              
             });

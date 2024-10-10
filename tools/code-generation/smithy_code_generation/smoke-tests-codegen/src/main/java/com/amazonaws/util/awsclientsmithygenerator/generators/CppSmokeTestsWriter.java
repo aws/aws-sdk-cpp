@@ -20,9 +20,9 @@ public final class CppSmokeTestsWriter extends SymbolWriter<CppSmokeTestsWriter,
     {
         write("${L|}","using namespace Aws::Auth;\n" + //
                         "using namespace Aws::Http;\n" + //
-                        "using namespace Aws::Client;\n" + //
-                        "using namespace Aws::$client;\n" + //
-                        "using namespace Aws::$client::Model;\n");
+                        "using namespace Aws::Client;\n").
+        write("using namespace Aws::$L;" ,namespace ).
+        write("using namespace Aws::$L::Model;", namespace);
     };
 
     //SimpleCodeWriter writer 
