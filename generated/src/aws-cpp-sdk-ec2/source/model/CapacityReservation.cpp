@@ -54,7 +54,8 @@ CapacityReservation::CapacityReservation() :
     m_placementGroupArnHasBeenSet(false),
     m_capacityAllocationsHasBeenSet(false),
     m_reservationType(CapacityReservationType::NOT_SET),
-    m_reservationTypeHasBeenSet(false)
+    m_reservationTypeHasBeenSet(false),
+    m_unusedReservationBillingOwnerIdHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,12 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
       m_reservationType = CapacityReservationTypeMapper::GetCapacityReservationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservationTypeNode.GetText()).c_str()).c_str());
       m_reservationTypeHasBeenSet = true;
     }
+    XmlNode unusedReservationBillingOwnerIdNode = resultNode.FirstChild("unusedReservationBillingOwnerId");
+    if(!unusedReservationBillingOwnerIdNode.IsNull())
+    {
+      m_unusedReservationBillingOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(unusedReservationBillingOwnerIdNode.GetText());
+      m_unusedReservationBillingOwnerIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -365,6 +372,11 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".ReservationType=" << CapacityReservationTypeMapper::GetNameForCapacityReservationType(m_reservationType) << "&";
   }
 
+  if(m_unusedReservationBillingOwnerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UnusedReservationBillingOwnerId=" << StringUtils::URLEncode(m_unusedReservationBillingOwnerId.c_str()) << "&";
+  }
+
 }
 
 void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -476,6 +488,10 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_reservationTypeHasBeenSet)
   {
       oStream << location << ".ReservationType=" << CapacityReservationTypeMapper::GetNameForCapacityReservationType(m_reservationType) << "&";
+  }
+  if(m_unusedReservationBillingOwnerIdHasBeenSet)
+  {
+      oStream << location << ".UnusedReservationBillingOwnerId=" << StringUtils::URLEncode(m_unusedReservationBillingOwnerId.c_str()) << "&";
   }
 }
 

@@ -203,6 +203,32 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Creates a data migration using the provided settings.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataMigration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataMigrationOutcome CreateDataMigration(const Model::CreateDataMigrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataMigration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataMigrationRequestT = Model::CreateDataMigrationRequest>
+        Model::CreateDataMigrationOutcomeCallable CreateDataMigrationCallable(const CreateDataMigrationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::CreateDataMigration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataMigration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataMigrationRequestT = Model::CreateDataMigrationRequest>
+        void CreateDataMigrationAsync(const CreateDataMigrationRequestT& request, const CreateDataMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::CreateDataMigration, request, handler, context);
+        }
+
+        /**
          * <p>Creates a data provider using the provided settings. A data provider stores a
          * data store type and location information about your database. </p><p><h3>See
          * Also:</h3>   <a
@@ -559,6 +585,31 @@ namespace DatabaseMigrationService
         void DeleteConnectionAsync(const DeleteConnectionRequestT& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::DeleteConnection, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified data migration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataMigration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDataMigrationOutcome DeleteDataMigration(const Model::DeleteDataMigrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDataMigration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDataMigrationRequestT = Model::DeleteDataMigrationRequest>
+        Model::DeleteDataMigrationOutcomeCallable DeleteDataMigrationCallable(const DeleteDataMigrationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DeleteDataMigration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDataMigration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDataMigrationRequestT = Model::DeleteDataMigrationRequest>
+        void DeleteDataMigrationAsync(const DeleteDataMigrationRequestT& request, const DeleteDataMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DeleteDataMigration, request, handler, context);
         }
 
         /**
@@ -1027,6 +1078,31 @@ namespace DatabaseMigrationService
         void DescribeConversionConfigurationAsync(const DescribeConversionConfigurationRequestT& request, const DescribeConversionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::DescribeConversionConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about data migrations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataMigrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDataMigrationsOutcome DescribeDataMigrations(const Model::DescribeDataMigrationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeDataMigrations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDataMigrationsRequestT = Model::DescribeDataMigrationsRequest>
+        Model::DescribeDataMigrationsOutcomeCallable DescribeDataMigrationsCallable(const DescribeDataMigrationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeDataMigrations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDataMigrations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDataMigrationsRequestT = Model::DescribeDataMigrationsRequest>
+        void DescribeDataMigrationsAsync(const DescribeDataMigrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeDataMigrationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeDataMigrations, request, handler, context);
         }
 
         /**
@@ -2152,6 +2228,31 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Modifies an existing DMS data migration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataMigration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyDataMigrationOutcome ModifyDataMigration(const Model::ModifyDataMigrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyDataMigration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyDataMigrationRequestT = Model::ModifyDataMigrationRequest>
+        Model::ModifyDataMigrationOutcomeCallable ModifyDataMigrationCallable(const ModifyDataMigrationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::ModifyDataMigration, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyDataMigration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyDataMigrationRequestT = Model::ModifyDataMigrationRequest>
+        void ModifyDataMigrationAsync(const ModifyDataMigrationRequestT& request, const ModifyDataMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::ModifyDataMigration, request, handler, context);
+        }
+
+        /**
          * <p>Modifies the specified data provider using the provided settings.</p> 
          * <p>You must remove the data provider from all migration projects before you can
          * modify it.</p> <p><h3>See Also:</h3>   <a
@@ -2601,6 +2702,31 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Starts the specified data migration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartDataMigration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDataMigrationOutcome StartDataMigration(const Model::StartDataMigrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartDataMigration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartDataMigrationRequestT = Model::StartDataMigrationRequest>
+        Model::StartDataMigrationOutcomeCallable StartDataMigrationCallable(const StartDataMigrationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StartDataMigration, request);
+        }
+
+        /**
+         * An Async wrapper for StartDataMigration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartDataMigrationRequestT = Model::StartDataMigrationRequest>
+        void StartDataMigrationAsync(const StartDataMigrationRequestT& request, const StartDataMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StartDataMigration, request, handler, context);
+        }
+
+        /**
          * <p>Applies the extension pack to your target database. An extension pack is an
          * add-on module that emulates functions present in a source database that are
          * required when converting objects to the target database. </p><p><h3>See
@@ -2914,6 +3040,31 @@ namespace DatabaseMigrationService
         void StartReplicationTaskAssessmentRunAsync(const StartReplicationTaskAssessmentRunRequestT& request, const StartReplicationTaskAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::StartReplicationTaskAssessmentRun, request, handler, context);
+        }
+
+        /**
+         * <p>Stops the specified data migration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopDataMigration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopDataMigrationOutcome StopDataMigration(const Model::StopDataMigrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopDataMigration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopDataMigrationRequestT = Model::StopDataMigrationRequest>
+        Model::StopDataMigrationOutcomeCallable StopDataMigrationCallable(const StopDataMigrationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StopDataMigration, request);
+        }
+
+        /**
+         * An Async wrapper for StopDataMigration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopDataMigrationRequestT = Model::StopDataMigrationRequest>
+        void StopDataMigrationAsync(const StopDataMigrationRequestT& request, const StopDataMigrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StopDataMigration, request, handler, context);
         }
 
         /**

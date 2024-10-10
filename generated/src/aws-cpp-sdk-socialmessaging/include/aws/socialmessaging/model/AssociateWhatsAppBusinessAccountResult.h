@@ -1,0 +1,77 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
+#include <aws/socialmessaging/model/WhatsAppSignupCallbackResult.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace SocialMessaging
+{
+namespace Model
+{
+  class AssociateWhatsAppBusinessAccountResult
+  {
+  public:
+    AWS_SOCIALMESSAGING_API AssociateWhatsAppBusinessAccountResult();
+    AWS_SOCIALMESSAGING_API AssociateWhatsAppBusinessAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SOCIALMESSAGING_API AssociateWhatsAppBusinessAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    ///@{
+    /**
+     * <p>Contains your WhatsApp registration status.</p>
+     */
+    inline const WhatsAppSignupCallbackResult& GetSignupCallbackResult() const{ return m_signupCallbackResult; }
+    inline void SetSignupCallbackResult(const WhatsAppSignupCallbackResult& value) { m_signupCallbackResult = value; }
+    inline void SetSignupCallbackResult(WhatsAppSignupCallbackResult&& value) { m_signupCallbackResult = std::move(value); }
+    inline AssociateWhatsAppBusinessAccountResult& WithSignupCallbackResult(const WhatsAppSignupCallbackResult& value) { SetSignupCallbackResult(value); return *this;}
+    inline AssociateWhatsAppBusinessAccountResult& WithSignupCallbackResult(WhatsAppSignupCallbackResult&& value) { SetSignupCallbackResult(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status code for the response.</p>
+     */
+    inline int GetStatusCode() const{ return m_statusCode; }
+    inline void SetStatusCode(int value) { m_statusCode = value; }
+    inline AssociateWhatsAppBusinessAccountResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+    inline AssociateWhatsAppBusinessAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline AssociateWhatsAppBusinessAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+    inline AssociateWhatsAppBusinessAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
+  private:
+
+    WhatsAppSignupCallbackResult m_signupCallbackResult;
+
+    int m_statusCode;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace SocialMessaging
+} // namespace Aws

@@ -56,9 +56,10 @@ namespace Model
      * <p>The ARN of the resource that you want Resolver to send query logs. You can
      * send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data
      * Firehose delivery stream. Examples of valid values include the following:</p>
-     * <ul> <li> <p> <b>S3 bucket</b>: </p> <p> <code>arn:aws:s3:::examplebucket</code>
-     * </p> <p>You can optionally append a file prefix to the end of the ARN.</p> <p>
-     * <code>arn:aws:s3:::examplebucket/development/</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <b>S3 bucket</b>: </p> <p>
+     * <code>arn:aws:s3:::amzn-s3-demo-bucket</code> </p> <p>You can optionally append
+     * a file prefix to the end of the ARN.</p> <p>
+     * <code>arn:aws:s3:::amzn-s3-demo-bucket/development/</code> </p> </li> <li> <p>
      * <b>CloudWatch Logs log group</b>: </p> <p>
      * <code>arn:aws:logs:us-west-1:123456789012:log-group:/mystack-testgroup-12ABC1AB12A1:*</code>
      * </p> </li> <li> <p> <b>Kinesis Data Firehose delivery stream</b>:</p> <p>

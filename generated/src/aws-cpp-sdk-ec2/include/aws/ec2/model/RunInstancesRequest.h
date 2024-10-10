@@ -341,10 +341,7 @@ namespace Model
     ///@{
     /**
      * <p>An elastic inference accelerator to associate with the instance.</p> 
-     * <p>Amazon Elastic Inference (EI) is no longer available to new customers. For
-     * more information, see <a
-     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon
-     * Elastic Inference FAQs</a>.</p> 
+     * <p>Amazon Elastic Inference is no longer available.</p> 
      */
     inline const Aws::Vector<ElasticInferenceAccelerator>& GetElasticInferenceAccelerators() const{ return m_elasticInferenceAccelerators; }
     inline bool ElasticInferenceAcceleratorsHasBeenSet() const { return m_elasticInferenceAcceleratorsHasBeenSet; }

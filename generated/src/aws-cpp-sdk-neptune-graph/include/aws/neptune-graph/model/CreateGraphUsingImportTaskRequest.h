@@ -217,9 +217,11 @@ namespace Model
      * <p>Specifies the format of S3 data to be imported. Valid values are
      * <code>CSV</code>, which identifies the <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
-     * CSV format</a> or <code>OPENCYPHER</code>, which identies the <a
+     * CSV format</a>, <code>OPEN_CYPHER</code>, which identifies the <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
-     * load format</a>.</p>
+     * load format</a>, or <code>ntriples</code>, which identifies the <a
+     * href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html">RDF
+     * n-triples</a> format.</p>
      */
     inline const Format& GetFormat() const{ return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }

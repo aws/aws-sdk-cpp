@@ -111,6 +111,35 @@ namespace EC2
         }
 
         /**
+         * <p>Accepts a request to assign billing of the available capacity of a shared
+         * Capacity Reservation to your account. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/assign-billing.html">
+         * Billing assignment for shared Amazon EC2 Capacity
+         * Reservations</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptCapacityReservationBillingOwnership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptCapacityReservationBillingOwnershipOutcome AcceptCapacityReservationBillingOwnership(const Model::AcceptCapacityReservationBillingOwnershipRequest& request) const;
+
+        /**
+         * A Callable wrapper for AcceptCapacityReservationBillingOwnership that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AcceptCapacityReservationBillingOwnershipRequestT = Model::AcceptCapacityReservationBillingOwnershipRequest>
+        Model::AcceptCapacityReservationBillingOwnershipOutcomeCallable AcceptCapacityReservationBillingOwnershipCallable(const AcceptCapacityReservationBillingOwnershipRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::AcceptCapacityReservationBillingOwnership, request);
+        }
+
+        /**
+         * An Async wrapper for AcceptCapacityReservationBillingOwnership that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AcceptCapacityReservationBillingOwnershipRequestT = Model::AcceptCapacityReservationBillingOwnershipRequest>
+        void AcceptCapacityReservationBillingOwnershipAsync(const AcceptCapacityReservationBillingOwnershipRequestT& request, const AcceptCapacityReservationBillingOwnershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::AcceptCapacityReservationBillingOwnership, request, handler, context);
+        }
+
+        /**
          * <p>Accepts the Convertible Reserved Instance exchange quote described in the
          * <a>GetReservedInstancesExchangeQuote</a> call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote">AWS
@@ -528,7 +557,7 @@ namespace EC2
         /**
          * <p>Assigns private IPv4 addresses to a private NAT gateway. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
          * with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress">AWS
@@ -593,6 +622,36 @@ namespace EC2
         void AssociateAddressAsync(const AssociateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const AssociateAddressRequestT& request = {}) const
         {
             return SubmitAsync(&EC2Client::AssociateAddress, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates a request to assign billing of the unused capacity of a shared
+         * Capacity Reservation to a consumer account that is consolidated under the same
+         * Amazon Web Services organizations payer account. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/assign-billing.html">Billing
+         * assignment for shared Amazon EC2 Capacity Reservations</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateCapacityReservationBillingOwner">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateCapacityReservationBillingOwnerOutcome AssociateCapacityReservationBillingOwner(const Model::AssociateCapacityReservationBillingOwnerRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateCapacityReservationBillingOwner that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateCapacityReservationBillingOwnerRequestT = Model::AssociateCapacityReservationBillingOwnerRequest>
+        Model::AssociateCapacityReservationBillingOwnerOutcomeCallable AssociateCapacityReservationBillingOwnerCallable(const AssociateCapacityReservationBillingOwnerRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::AssociateCapacityReservationBillingOwner, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateCapacityReservationBillingOwner that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateCapacityReservationBillingOwnerRequestT = Model::AssociateCapacityReservationBillingOwnerRequest>
+        void AssociateCapacityReservationBillingOwnerAsync(const AssociateCapacityReservationBillingOwnerRequestT& request, const AssociateCapacityReservationBillingOwnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::AssociateCapacityReservationBillingOwner, request, handler, context);
         }
 
         /**
@@ -827,7 +886,7 @@ namespace EC2
         /**
          * <p>Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a
          * public NAT gateway. For more information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
          * with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.</p> <p>By default,
          * you can associate up to 2 Elastic IP addresses per public NAT gateway. You can
          * increase the limit by requesting a quota adjustment. For more information, see
@@ -841,7 +900,7 @@ namespace EC2
          * subnet's AZ by viewing the details of the subnet. Similarly, you can view the
          * network border group of an EIP by viewing the details of the EIP address. For
          * more information about network border groups and EIPs, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithEIPs.html">Allocate
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
          * an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">AWS
@@ -2115,7 +2174,7 @@ namespace EC2
          * <p>Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the
          * specified Availability Zone in your default VPC. You can have only one default
          * subnet per Availability Zone. For more information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/work-with-default-vpc.html#create-default-subnet">Create
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create
          * a default subnet</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">AWS
@@ -2300,7 +2359,7 @@ namespace EC2
          * monitored network interface is recorded as flow log records, which are log
          * events consisting of fields that describe the traffic flow. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
          * log records</a> in the <i>Amazon VPC User Guide</i>.</p> <p>When publishing to
          * CloudWatch Logs, flow log records are published to a log group, and each network
          * interface has a unique log stream in the log group. When publishing to Amazon
@@ -2942,7 +3001,7 @@ namespace EC2
          * subnet's AZ by viewing the details of the subnet. Similarly, you can view the
          * network border group of an EIP by viewing the details of the EIP address. For
          * more information about network border groups and EIPs, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithEIPs.html">Allocate
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
          * an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
@@ -3641,8 +3700,8 @@ namespace EC2
          * <p>Creates a subnet CIDR reservation. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
          * CIDR reservations</a> in the <i>Amazon VPC User Guide</i> and <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-prefixes.html">Manage
-         * prefixes for your network interfaces</a> in the <i>Amazon EC2 User
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign
+         * prefixes to network interfaces</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnetCidrReservation">AWS
          * API Reference</a></p>
@@ -6404,10 +6463,8 @@ namespace EC2
          * example, you must terminate all instances running in the VPC, delete all
          * security groups associated with the VPC (except the default one), delete all
          * route tables associated with the VPC (except the default one), and so on. When
-         * you delete the VPC, it deletes the default security group, network ACL, and
-         * route table for the VPC.</p> <p>If you created a flow log for the VPC that you
-         * are deleting, note that flow logs for deleted VPCs are eventually automatically
-         * removed.</p><p><h3>See Also:</h3>   <a
+         * you delete the VPC, it deletes the VPC's default security group, network ACL,
+         * and route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">AWS API
          * Reference</a></p>
          */
@@ -7195,6 +7252,35 @@ namespace EC2
         }
 
         /**
+         * <p>Describes a request to assign the billing of the unused capacity of a
+         * Capacity Reservation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/transfer-billing.html">
+         * Billing assignment for shared Amazon EC2 Capacity
+         * Reservations</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationBillingRequests">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCapacityReservationBillingRequestsOutcome DescribeCapacityReservationBillingRequests(const Model::DescribeCapacityReservationBillingRequestsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCapacityReservationBillingRequests that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCapacityReservationBillingRequestsRequestT = Model::DescribeCapacityReservationBillingRequestsRequest>
+        Model::DescribeCapacityReservationBillingRequestsOutcomeCallable DescribeCapacityReservationBillingRequestsCallable(const DescribeCapacityReservationBillingRequestsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeCapacityReservationBillingRequests, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCapacityReservationBillingRequests that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCapacityReservationBillingRequestsRequestT = Model::DescribeCapacityReservationBillingRequestsRequest>
+        void DescribeCapacityReservationBillingRequestsAsync(const DescribeCapacityReservationBillingRequestsRequestT& request, const DescribeCapacityReservationBillingRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeCapacityReservationBillingRequests, request, handler, context);
+        }
+
+        /**
          * <p>Describes one or more Capacity Reservation Fleets.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationFleets">AWS
@@ -7578,10 +7664,9 @@ namespace EC2
         }
 
         /**
-         *  <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For
-         * workloads that require graphics acceleration, we recommend that you use Amazon
-         * EC2 G4, G5, or G6 instances.</p>  <p>Describes the Elastic Graphics
-         * accelerator associated with your instances.</p><p><h3>See Also:</h3>   <a
+         *  <p>Amazon Elastic Graphics reached end of life on January 8, 2024.</p>
+         *  <p>Describes the Elastic Graphics accelerator associated with your
+         * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">AWS
          * API Reference</a></p>
          */
@@ -12062,6 +12147,36 @@ namespace EC2
         }
 
         /**
+         * <p>Cancels a pending request to assign billing of the unused capacity of a
+         * Capacity Reservation to a consumer account, or revokes a request that has
+         * already been accepted. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/assign-billing.html">Billing
+         * assignment for shared Amazon EC2 Capacity Reservations</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateCapacityReservationBillingOwner">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateCapacityReservationBillingOwnerOutcome DisassociateCapacityReservationBillingOwner(const Model::DisassociateCapacityReservationBillingOwnerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateCapacityReservationBillingOwner that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateCapacityReservationBillingOwnerRequestT = Model::DisassociateCapacityReservationBillingOwnerRequest>
+        Model::DisassociateCapacityReservationBillingOwnerOutcomeCallable DisassociateCapacityReservationBillingOwnerCallable(const DisassociateCapacityReservationBillingOwnerRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisassociateCapacityReservationBillingOwner, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateCapacityReservationBillingOwner that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateCapacityReservationBillingOwnerRequestT = Model::DisassociateCapacityReservationBillingOwnerRequest>
+        void DisassociateCapacityReservationBillingOwnerAsync(const DisassociateCapacityReservationBillingOwnerRequestT& request, const DisassociateCapacityReservationBillingOwnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisassociateCapacityReservationBillingOwner, request, handler, context);
+        }
+
+        /**
          * <p>Disassociates a target network from the specified Client VPN endpoint. When
          * you disassociate the last target network from a Client VPN, the following
          * happens:</p> <ul> <li> <p>The route that was automatically added for the VPC is
@@ -12238,7 +12353,7 @@ namespace EC2
         /**
          * <p>Disassociates secondary Elastic IP addresses (EIPs) from a public NAT
          * gateway. You cannot disassociate your primary EIP. For more information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html#nat-gateway-edit-secondary">Edit
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
          * secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.</p>
          * <p>While disassociating is in progress, you cannot associate/disassociate
          * additional EIPs while the connections are being drained. You are, however,
@@ -15366,7 +15481,8 @@ namespace EC2
          * instance. When you configure the number of active vCPUs for the instance, it can
          * help you save on licensing costs and optimize performance. The base cost of the
          * instance remains unchanged.</p> <p>The number of active vCPUs equals the number
-         * of threads per CPU core multiplied by the number of cores.</p>  <p>Some
+         * of threads per CPU core multiplied by the number of cores. The instance must be
+         * in a <code>Stopped</code> state before you make changes.</p>  <p>Some
          * instance type options do not support this capability. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cpu-options-supported-instances-values.html">Supported
@@ -17485,6 +17601,35 @@ namespace EC2
         }
 
         /**
+         * <p>Rejects a request to assign billing of the available capacity of a shared
+         * Capacity Reservation to your account. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/assign-billing.html">
+         * Billing assignment for shared Amazon EC2 Capacity
+         * Reservations</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectCapacityReservationBillingOwnership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RejectCapacityReservationBillingOwnershipOutcome RejectCapacityReservationBillingOwnership(const Model::RejectCapacityReservationBillingOwnershipRequest& request) const;
+
+        /**
+         * A Callable wrapper for RejectCapacityReservationBillingOwnership that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RejectCapacityReservationBillingOwnershipRequestT = Model::RejectCapacityReservationBillingOwnershipRequest>
+        Model::RejectCapacityReservationBillingOwnershipOutcomeCallable RejectCapacityReservationBillingOwnershipCallable(const RejectCapacityReservationBillingOwnershipRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::RejectCapacityReservationBillingOwnership, request);
+        }
+
+        /**
+         * An Async wrapper for RejectCapacityReservationBillingOwnership that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RejectCapacityReservationBillingOwnershipRequestT = Model::RejectCapacityReservationBillingOwnershipRequest>
+        void RejectCapacityReservationBillingOwnershipAsync(const RejectCapacityReservationBillingOwnershipRequestT& request, const RejectCapacityReservationBillingOwnershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::RejectCapacityReservationBillingOwnership, request, handler, context);
+        }
+
+        /**
          * <p>Rejects a request to associate cross-account subnets with a transit gateway
          * multicast domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations">AWS
@@ -19038,7 +19183,7 @@ namespace EC2
         /**
          * <p>Unassigns secondary private IPv4 addresses from a private NAT gateway. You
          * cannot unassign your primary private IP. For more information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html#nat-gateway-edit-secondary">Edit
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
          * secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.</p>
          * <p>While unassigning is in progress, you cannot assign/unassign additional IP
          * addresses while the connections are being drained. You are, however, allowed to

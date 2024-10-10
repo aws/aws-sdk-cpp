@@ -211,7 +211,7 @@ namespace Model
      * which they should appear. If you omit this parameter, the flow log is created
      * using the default format. If you specify this parameter, you must include at
      * least one field. For more information about the available fields, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
      * log records</a> in the <i>Amazon VPC User Guide</i> or <a
      * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
      * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway

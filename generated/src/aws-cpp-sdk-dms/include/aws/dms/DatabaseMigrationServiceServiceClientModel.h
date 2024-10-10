@@ -22,6 +22,7 @@
 #include <aws/dms/model/ApplyPendingMaintenanceActionResult.h>
 #include <aws/dms/model/BatchStartRecommendationsResult.h>
 #include <aws/dms/model/CancelReplicationTaskAssessmentRunResult.h>
+#include <aws/dms/model/CreateDataMigrationResult.h>
 #include <aws/dms/model/CreateDataProviderResult.h>
 #include <aws/dms/model/CreateEndpointResult.h>
 #include <aws/dms/model/CreateEventSubscriptionResult.h>
@@ -34,6 +35,7 @@
 #include <aws/dms/model/CreateReplicationTaskResult.h>
 #include <aws/dms/model/DeleteCertificateResult.h>
 #include <aws/dms/model/DeleteConnectionResult.h>
+#include <aws/dms/model/DeleteDataMigrationResult.h>
 #include <aws/dms/model/DeleteDataProviderResult.h>
 #include <aws/dms/model/DeleteEndpointResult.h>
 #include <aws/dms/model/DeleteEventSubscriptionResult.h>
@@ -50,6 +52,7 @@
 #include <aws/dms/model/DescribeCertificatesResult.h>
 #include <aws/dms/model/DescribeConnectionsResult.h>
 #include <aws/dms/model/DescribeConversionConfigurationResult.h>
+#include <aws/dms/model/DescribeDataMigrationsResult.h>
 #include <aws/dms/model/DescribeDataProvidersResult.h>
 #include <aws/dms/model/DescribeEndpointSettingsResult.h>
 #include <aws/dms/model/DescribeEndpointTypesResult.h>
@@ -92,6 +95,7 @@
 #include <aws/dms/model/ImportCertificateResult.h>
 #include <aws/dms/model/ListTagsForResourceResult.h>
 #include <aws/dms/model/ModifyConversionConfigurationResult.h>
+#include <aws/dms/model/ModifyDataMigrationResult.h>
 #include <aws/dms/model/ModifyDataProviderResult.h>
 #include <aws/dms/model/ModifyEndpointResult.h>
 #include <aws/dms/model/ModifyEventSubscriptionResult.h>
@@ -108,6 +112,7 @@
 #include <aws/dms/model/ReloadTablesResult.h>
 #include <aws/dms/model/RemoveTagsFromResourceResult.h>
 #include <aws/dms/model/RunFleetAdvisorLsaAnalysisResult.h>
+#include <aws/dms/model/StartDataMigrationResult.h>
 #include <aws/dms/model/StartExtensionPackAssociationResult.h>
 #include <aws/dms/model/StartMetadataModelAssessmentResult.h>
 #include <aws/dms/model/StartMetadataModelConversionResult.h>
@@ -118,6 +123,7 @@
 #include <aws/dms/model/StartReplicationTaskResult.h>
 #include <aws/dms/model/StartReplicationTaskAssessmentResult.h>
 #include <aws/dms/model/StartReplicationTaskAssessmentRunResult.h>
+#include <aws/dms/model/StopDataMigrationResult.h>
 #include <aws/dms/model/StopReplicationResult.h>
 #include <aws/dms/model/StopReplicationTaskResult.h>
 #include <aws/dms/model/TestConnectionResult.h>
@@ -148,6 +154,7 @@
 #include <aws/dms/model/DescribeDataProvidersRequest.h>
 #include <aws/dms/model/BatchStartRecommendationsRequest.h>
 #include <aws/dms/model/DescribeReplicationsRequest.h>
+#include <aws/dms/model/DescribeDataMigrationsRequest.h>
 #include <aws/dms/model/DescribeEventsRequest.h>
 #include <aws/dms/model/DescribeFleetAdvisorSchemasRequest.h>
 #include <aws/dms/model/UpdateSubscriptionsToEventBridgeRequest.h>
@@ -202,6 +209,7 @@ namespace Aws
       class ApplyPendingMaintenanceActionRequest;
       class BatchStartRecommendationsRequest;
       class CancelReplicationTaskAssessmentRunRequest;
+      class CreateDataMigrationRequest;
       class CreateDataProviderRequest;
       class CreateEndpointRequest;
       class CreateEventSubscriptionRequest;
@@ -214,6 +222,7 @@ namespace Aws
       class CreateReplicationTaskRequest;
       class DeleteCertificateRequest;
       class DeleteConnectionRequest;
+      class DeleteDataMigrationRequest;
       class DeleteDataProviderRequest;
       class DeleteEndpointRequest;
       class DeleteEventSubscriptionRequest;
@@ -231,6 +240,7 @@ namespace Aws
       class DescribeCertificatesRequest;
       class DescribeConnectionsRequest;
       class DescribeConversionConfigurationRequest;
+      class DescribeDataMigrationsRequest;
       class DescribeDataProvidersRequest;
       class DescribeEndpointSettingsRequest;
       class DescribeEndpointTypesRequest;
@@ -273,6 +283,7 @@ namespace Aws
       class ImportCertificateRequest;
       class ListTagsForResourceRequest;
       class ModifyConversionConfigurationRequest;
+      class ModifyDataMigrationRequest;
       class ModifyDataProviderRequest;
       class ModifyEndpointRequest;
       class ModifyEventSubscriptionRequest;
@@ -289,6 +300,7 @@ namespace Aws
       class ReloadTablesRequest;
       class RemoveTagsFromResourceRequest;
       class RunFleetAdvisorLsaAnalysisRequest;
+      class StartDataMigrationRequest;
       class StartExtensionPackAssociationRequest;
       class StartMetadataModelAssessmentRequest;
       class StartMetadataModelConversionRequest;
@@ -300,6 +312,7 @@ namespace Aws
       class StartReplicationTaskRequest;
       class StartReplicationTaskAssessmentRequest;
       class StartReplicationTaskAssessmentRunRequest;
+      class StopDataMigrationRequest;
       class StopReplicationRequest;
       class StopReplicationTaskRequest;
       class TestConnectionRequest;
@@ -311,6 +324,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, DatabaseMigrationServiceError> ApplyPendingMaintenanceActionOutcome;
       typedef Aws::Utils::Outcome<BatchStartRecommendationsResult, DatabaseMigrationServiceError> BatchStartRecommendationsOutcome;
       typedef Aws::Utils::Outcome<CancelReplicationTaskAssessmentRunResult, DatabaseMigrationServiceError> CancelReplicationTaskAssessmentRunOutcome;
+      typedef Aws::Utils::Outcome<CreateDataMigrationResult, DatabaseMigrationServiceError> CreateDataMigrationOutcome;
       typedef Aws::Utils::Outcome<CreateDataProviderResult, DatabaseMigrationServiceError> CreateDataProviderOutcome;
       typedef Aws::Utils::Outcome<CreateEndpointResult, DatabaseMigrationServiceError> CreateEndpointOutcome;
       typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, DatabaseMigrationServiceError> CreateEventSubscriptionOutcome;
@@ -323,6 +337,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateReplicationTaskResult, DatabaseMigrationServiceError> CreateReplicationTaskOutcome;
       typedef Aws::Utils::Outcome<DeleteCertificateResult, DatabaseMigrationServiceError> DeleteCertificateOutcome;
       typedef Aws::Utils::Outcome<DeleteConnectionResult, DatabaseMigrationServiceError> DeleteConnectionOutcome;
+      typedef Aws::Utils::Outcome<DeleteDataMigrationResult, DatabaseMigrationServiceError> DeleteDataMigrationOutcome;
       typedef Aws::Utils::Outcome<DeleteDataProviderResult, DatabaseMigrationServiceError> DeleteDataProviderOutcome;
       typedef Aws::Utils::Outcome<DeleteEndpointResult, DatabaseMigrationServiceError> DeleteEndpointOutcome;
       typedef Aws::Utils::Outcome<DeleteEventSubscriptionResult, DatabaseMigrationServiceError> DeleteEventSubscriptionOutcome;
@@ -340,6 +355,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeCertificatesResult, DatabaseMigrationServiceError> DescribeCertificatesOutcome;
       typedef Aws::Utils::Outcome<DescribeConnectionsResult, DatabaseMigrationServiceError> DescribeConnectionsOutcome;
       typedef Aws::Utils::Outcome<DescribeConversionConfigurationResult, DatabaseMigrationServiceError> DescribeConversionConfigurationOutcome;
+      typedef Aws::Utils::Outcome<DescribeDataMigrationsResult, DatabaseMigrationServiceError> DescribeDataMigrationsOutcome;
       typedef Aws::Utils::Outcome<DescribeDataProvidersResult, DatabaseMigrationServiceError> DescribeDataProvidersOutcome;
       typedef Aws::Utils::Outcome<DescribeEndpointSettingsResult, DatabaseMigrationServiceError> DescribeEndpointSettingsOutcome;
       typedef Aws::Utils::Outcome<DescribeEndpointTypesResult, DatabaseMigrationServiceError> DescribeEndpointTypesOutcome;
@@ -382,6 +398,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ImportCertificateResult, DatabaseMigrationServiceError> ImportCertificateOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, DatabaseMigrationServiceError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ModifyConversionConfigurationResult, DatabaseMigrationServiceError> ModifyConversionConfigurationOutcome;
+      typedef Aws::Utils::Outcome<ModifyDataMigrationResult, DatabaseMigrationServiceError> ModifyDataMigrationOutcome;
       typedef Aws::Utils::Outcome<ModifyDataProviderResult, DatabaseMigrationServiceError> ModifyDataProviderOutcome;
       typedef Aws::Utils::Outcome<ModifyEndpointResult, DatabaseMigrationServiceError> ModifyEndpointOutcome;
       typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, DatabaseMigrationServiceError> ModifyEventSubscriptionOutcome;
@@ -398,6 +415,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ReloadTablesResult, DatabaseMigrationServiceError> ReloadTablesOutcome;
       typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, DatabaseMigrationServiceError> RemoveTagsFromResourceOutcome;
       typedef Aws::Utils::Outcome<RunFleetAdvisorLsaAnalysisResult, DatabaseMigrationServiceError> RunFleetAdvisorLsaAnalysisOutcome;
+      typedef Aws::Utils::Outcome<StartDataMigrationResult, DatabaseMigrationServiceError> StartDataMigrationOutcome;
       typedef Aws::Utils::Outcome<StartExtensionPackAssociationResult, DatabaseMigrationServiceError> StartExtensionPackAssociationOutcome;
       typedef Aws::Utils::Outcome<StartMetadataModelAssessmentResult, DatabaseMigrationServiceError> StartMetadataModelAssessmentOutcome;
       typedef Aws::Utils::Outcome<StartMetadataModelConversionResult, DatabaseMigrationServiceError> StartMetadataModelConversionOutcome;
@@ -409,6 +427,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartReplicationTaskResult, DatabaseMigrationServiceError> StartReplicationTaskOutcome;
       typedef Aws::Utils::Outcome<StartReplicationTaskAssessmentResult, DatabaseMigrationServiceError> StartReplicationTaskAssessmentOutcome;
       typedef Aws::Utils::Outcome<StartReplicationTaskAssessmentRunResult, DatabaseMigrationServiceError> StartReplicationTaskAssessmentRunOutcome;
+      typedef Aws::Utils::Outcome<StopDataMigrationResult, DatabaseMigrationServiceError> StopDataMigrationOutcome;
       typedef Aws::Utils::Outcome<StopReplicationResult, DatabaseMigrationServiceError> StopReplicationOutcome;
       typedef Aws::Utils::Outcome<StopReplicationTaskResult, DatabaseMigrationServiceError> StopReplicationTaskOutcome;
       typedef Aws::Utils::Outcome<TestConnectionResult, DatabaseMigrationServiceError> TestConnectionOutcome;
@@ -420,6 +439,7 @@ namespace Aws
       typedef std::future<ApplyPendingMaintenanceActionOutcome> ApplyPendingMaintenanceActionOutcomeCallable;
       typedef std::future<BatchStartRecommendationsOutcome> BatchStartRecommendationsOutcomeCallable;
       typedef std::future<CancelReplicationTaskAssessmentRunOutcome> CancelReplicationTaskAssessmentRunOutcomeCallable;
+      typedef std::future<CreateDataMigrationOutcome> CreateDataMigrationOutcomeCallable;
       typedef std::future<CreateDataProviderOutcome> CreateDataProviderOutcomeCallable;
       typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
       typedef std::future<CreateEventSubscriptionOutcome> CreateEventSubscriptionOutcomeCallable;
@@ -432,6 +452,7 @@ namespace Aws
       typedef std::future<CreateReplicationTaskOutcome> CreateReplicationTaskOutcomeCallable;
       typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
       typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
+      typedef std::future<DeleteDataMigrationOutcome> DeleteDataMigrationOutcomeCallable;
       typedef std::future<DeleteDataProviderOutcome> DeleteDataProviderOutcomeCallable;
       typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
       typedef std::future<DeleteEventSubscriptionOutcome> DeleteEventSubscriptionOutcomeCallable;
@@ -449,6 +470,7 @@ namespace Aws
       typedef std::future<DescribeCertificatesOutcome> DescribeCertificatesOutcomeCallable;
       typedef std::future<DescribeConnectionsOutcome> DescribeConnectionsOutcomeCallable;
       typedef std::future<DescribeConversionConfigurationOutcome> DescribeConversionConfigurationOutcomeCallable;
+      typedef std::future<DescribeDataMigrationsOutcome> DescribeDataMigrationsOutcomeCallable;
       typedef std::future<DescribeDataProvidersOutcome> DescribeDataProvidersOutcomeCallable;
       typedef std::future<DescribeEndpointSettingsOutcome> DescribeEndpointSettingsOutcomeCallable;
       typedef std::future<DescribeEndpointTypesOutcome> DescribeEndpointTypesOutcomeCallable;
@@ -491,6 +513,7 @@ namespace Aws
       typedef std::future<ImportCertificateOutcome> ImportCertificateOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ModifyConversionConfigurationOutcome> ModifyConversionConfigurationOutcomeCallable;
+      typedef std::future<ModifyDataMigrationOutcome> ModifyDataMigrationOutcomeCallable;
       typedef std::future<ModifyDataProviderOutcome> ModifyDataProviderOutcomeCallable;
       typedef std::future<ModifyEndpointOutcome> ModifyEndpointOutcomeCallable;
       typedef std::future<ModifyEventSubscriptionOutcome> ModifyEventSubscriptionOutcomeCallable;
@@ -507,6 +530,7 @@ namespace Aws
       typedef std::future<ReloadTablesOutcome> ReloadTablesOutcomeCallable;
       typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
       typedef std::future<RunFleetAdvisorLsaAnalysisOutcome> RunFleetAdvisorLsaAnalysisOutcomeCallable;
+      typedef std::future<StartDataMigrationOutcome> StartDataMigrationOutcomeCallable;
       typedef std::future<StartExtensionPackAssociationOutcome> StartExtensionPackAssociationOutcomeCallable;
       typedef std::future<StartMetadataModelAssessmentOutcome> StartMetadataModelAssessmentOutcomeCallable;
       typedef std::future<StartMetadataModelConversionOutcome> StartMetadataModelConversionOutcomeCallable;
@@ -518,6 +542,7 @@ namespace Aws
       typedef std::future<StartReplicationTaskOutcome> StartReplicationTaskOutcomeCallable;
       typedef std::future<StartReplicationTaskAssessmentOutcome> StartReplicationTaskAssessmentOutcomeCallable;
       typedef std::future<StartReplicationTaskAssessmentRunOutcome> StartReplicationTaskAssessmentRunOutcomeCallable;
+      typedef std::future<StopDataMigrationOutcome> StopDataMigrationOutcomeCallable;
       typedef std::future<StopReplicationOutcome> StopReplicationOutcomeCallable;
       typedef std::future<StopReplicationTaskOutcome> StopReplicationTaskOutcomeCallable;
       typedef std::future<TestConnectionOutcome> TestConnectionOutcomeCallable;
@@ -532,6 +557,7 @@ namespace Aws
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ApplyPendingMaintenanceActionRequest&, const Model::ApplyPendingMaintenanceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyPendingMaintenanceActionResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::BatchStartRecommendationsRequest&, const Model::BatchStartRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStartRecommendationsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CancelReplicationTaskAssessmentRunRequest&, const Model::CancelReplicationTaskAssessmentRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelReplicationTaskAssessmentRunResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateDataMigrationRequest&, const Model::CreateDataMigrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataMigrationResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateDataProviderRequest&, const Model::CreateDataProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataProviderResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateEndpointRequest&, const Model::CreateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateEventSubscriptionRequest&, const Model::CreateEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventSubscriptionResponseReceivedHandler;
@@ -544,6 +570,7 @@ namespace Aws
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateReplicationTaskRequest&, const Model::CreateReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteDataMigrationRequest&, const Model::DeleteDataMigrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataMigrationResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteDataProviderRequest&, const Model::DeleteDataProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataProviderResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteEventSubscriptionRequest&, const Model::DeleteEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSubscriptionResponseReceivedHandler;
@@ -561,6 +588,7 @@ namespace Aws
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeCertificatesRequest&, const Model::DescribeCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificatesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeConnectionsRequest&, const Model::DescribeConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectionsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeConversionConfigurationRequest&, const Model::DescribeConversionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConversionConfigurationResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeDataMigrationsRequest&, const Model::DescribeDataMigrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataMigrationsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeDataProvidersRequest&, const Model::DescribeDataProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataProvidersResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEndpointSettingsRequest&, const Model::DescribeEndpointSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointSettingsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEndpointTypesRequest&, const Model::DescribeEndpointTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointTypesResponseReceivedHandler;
@@ -603,6 +631,7 @@ namespace Aws
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ImportCertificateRequest&, const Model::ImportCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCertificateResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyConversionConfigurationRequest&, const Model::ModifyConversionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyConversionConfigurationResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyDataMigrationRequest&, const Model::ModifyDataMigrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDataMigrationResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyDataProviderRequest&, const Model::ModifyDataProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDataProviderResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyEndpointRequest&, const Model::ModifyEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEndpointResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ModifyEventSubscriptionRequest&, const Model::ModifyEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEventSubscriptionResponseReceivedHandler;
@@ -619,6 +648,7 @@ namespace Aws
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ReloadTablesRequest&, const Model::ReloadTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReloadTablesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RunFleetAdvisorLsaAnalysisRequest&, const Model::RunFleetAdvisorLsaAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunFleetAdvisorLsaAnalysisResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartDataMigrationRequest&, const Model::StartDataMigrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDataMigrationResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartExtensionPackAssociationRequest&, const Model::StartExtensionPackAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExtensionPackAssociationResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartMetadataModelAssessmentRequest&, const Model::StartMetadataModelAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMetadataModelAssessmentResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartMetadataModelConversionRequest&, const Model::StartMetadataModelConversionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMetadataModelConversionResponseReceivedHandler;
@@ -630,6 +660,7 @@ namespace Aws
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartReplicationTaskRequest&, const Model::StartReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartReplicationTaskAssessmentRequest&, const Model::StartReplicationTaskAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationTaskAssessmentResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartReplicationTaskAssessmentRunRequest&, const Model::StartReplicationTaskAssessmentRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationTaskAssessmentRunResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StopDataMigrationRequest&, const Model::StopDataMigrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDataMigrationResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StopReplicationRequest&, const Model::StopReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopReplicationResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StopReplicationTaskRequest&, const Model::StopReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::TestConnectionRequest&, const Model::TestConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestConnectionResponseReceivedHandler;

@@ -181,7 +181,7 @@ namespace Model
      * in response to running the <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
      * <code>StartReplicationTask</code> </a> operation.</p> </li> <li> <p>
-     * <code>"stopped"</code> �� The task has stopped in response to running the <a
+     * <code>"stopped"</code> – The task has stopped in response to running the <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
      * <code>StopReplicationTask</code> </a> operation.</p> </li> <li> <p>
      * <code>"stopping"</code> – The task is preparing to stop in response to running
