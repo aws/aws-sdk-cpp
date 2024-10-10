@@ -93,9 +93,6 @@ public class SmokeTestsParser implements Runnable{
             {
                 Map<String, String> functionMap = new HashMap<String, String>();
 
-                //build code to populate the input parameters
-                StringBuilder sb = new StringBuilder();
-
                 //get input shape
                 Optional<Shape> topLevelShape = model.getShape(operationShape.getInput().get());
 
@@ -106,7 +103,6 @@ public class SmokeTestsParser implements Runnable{
                     CppBlockWriter blockWriter = new CppBlockWriter(0)
                         .addCode(String.format("%sRequest %s;\n", test.getOperationName(), "input"));
             
-                    sb.append(String.format("%sRequest %s;\n", test.getOperationName(), "input"));
                     for (Map.Entry<String, Node> paramEntry : testcase.getParams().get().getStringMap().entrySet()) {
                         String key = paramEntry.getKey();
 
@@ -129,24 +125,14 @@ public class SmokeTestsParser implements Runnable{
                                         0, //useful for array elements at same depth
                                         functionMap)
                                 ));
-
-                            sb.append(String.format("input.Set%s(%s);\n", key,
-
-                                    codegenAdapter.GenerateCppSetters(
-                                            test.getOperationName().toLowerCase() + "_elem",
-                                            value,
-                                            fieldShape, //useful for C++ return type object
-                                            1, //useful for depth
-                                            0, //useful for array elements at same depth
-                                            functionMap)
-                            ));
                         } catch (Exception e) {
                             throw new RuntimeException(e);
                         }
                     }
                     
-                    test.setFunctionBlock(sb.toString());
-                    //test.setFunctionBlock(blockWriter.getCode());
+                    //test.setFunctionBlock(sb.toString());
+                    System.out.println(String.format("block Code:%s", blockWriter.getCode()));
+                    test.setFunctionBlock(blockWriter.getCode());
 
                     List<String> lines = new ArrayList<>();
 

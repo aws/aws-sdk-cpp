@@ -63,13 +63,15 @@ public final class CppSmokeTestsWriter extends SymbolWriter<CppSmokeTestsWriter,
         write("class $LSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {", test.getClientName()).
         indent().write("static const char ALLOCATION_TAG[];").
         dedent().write("}");
+
+        write("const char $LSmokeTestSuite::ALLOCATION_TAG[] = \"$LSmokeTest\"",namespace,namespace);
     }
 
     protected void defineTestCase(TestcaseParams test)
     {
         //declare test fixture
         write("TEST_F($LSmokeTestSuite, $L )",test.getClientName(), test.getTestcaseName()).write("{").indent().
-        write("Aws::$L::$LClientConfiguration& clientConfiguration;", test.getClientName(),test.getClientName());
+        write("Aws::$L::$LClientConfiguration clientConfiguration;", test.getClientName(),test.getClientName());
         if(!test.getConfig().getRegion().isEmpty())
         {
             write("clientConfiguration.region = $L;",test.getConfig().getRegion());

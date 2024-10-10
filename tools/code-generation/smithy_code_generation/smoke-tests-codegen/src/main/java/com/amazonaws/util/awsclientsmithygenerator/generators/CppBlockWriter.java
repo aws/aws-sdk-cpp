@@ -158,13 +158,13 @@ public class CppBlockWriter {
             indentLevel--;
             top.addCode("}\n", indentLevel);
             codeLines = top.getCodeLines();
-            blockStack.pop();
+            blockStack.pop();   
         }
 
         //after close merge with previous or update root code block
         if(blockStack.isEmpty())
         {
-            codeBlock = String.join("\n", codeLines);
+            codeBlock = codeBlock.concat(String.join("\n", codeLines));
         }
         else
         {
@@ -178,7 +178,7 @@ public class CppBlockWriter {
     //closes all nested blocks to generate the string block
     String getCode(){
         //if blocks not closed close first
-        while(blockStack.size() > 1)
+        while(!blockStack.isEmpty())
         {
             closeCodeBlock();
         }
