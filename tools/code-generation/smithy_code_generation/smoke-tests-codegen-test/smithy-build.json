@@ -1,11 +1,16 @@
 {
     "version": "1.0",
-        "plugins": {
-          "cpp-codegen-smoke-tests-plugin": {
-            "service": "com.amazonaws.dynamodb#DynamoDB_20120810",
-            "package": "AWSSDK.TestPackage",
-            "packageNamespace": "Amazon.CodegenTest",
-            "packageVersion": "0.0.1"
-          }
-        }
+    "sources": [
+                  "../../smithy/api-descriptions/"
+                ],
+    "outputDirectory": "build/output",
+    "plugins": {
+      "cpp-codegen-smoke-tests-plugin": {
+        "service": "com.amazonaws.dynamodb#DynamoDB_20120810",
+        "package": "AWSSDK.TestPackage",
+        "packageNamespace": "Amazon.CodegenTest",
+        "packageVersion": "0.0.1"
+      }
+    }
+        
   }

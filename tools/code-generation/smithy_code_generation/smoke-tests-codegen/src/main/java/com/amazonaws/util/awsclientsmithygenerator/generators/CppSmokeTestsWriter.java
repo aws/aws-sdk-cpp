@@ -3,14 +3,16 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.utils.SimpleCodeWriter;
 import software.amazon.smithy.codegen.core.SymbolWriter;
+import com.amazonaws.util.awsclientsmithygenerator.generators.common.CppImportContainer;
+
 import java.util.List;
 
 import com.google.common.base.Optional;
-public final class CppSmokeTestsWriter extends SimpleCodeWriter{
+public final class CppSmokeTestsWriter extends SymbolWriter<CppSmokeTestsWriter, CppImportContainer>{
     private String namespace;
     //protected CppBlockWriter blockWriter;    
     public CppSmokeTestsWriter(String namespace) {
-        super();
+        super(new CppImportContainer(namespace));
         this.namespace = namespace;
     }
 
@@ -124,16 +126,16 @@ public final class CppSmokeTestsWriter extends SimpleCodeWriter{
         return toString();
     }
 
-        /**
+    /**
         * The Factory class for creating CppWriters
      */
-    /*public static final class CppSmokeTestsWriterFactory implements SymbolWriter.Factory<CppSmokeTestsWriter> {
+    public static final class CppSmokeTestsWriterFactory implements SymbolWriter.Factory<CppSmokeTestsWriter> {
 
         @Override
         public CppSmokeTestsWriter apply(String filename, String namespace) {
             return new CppSmokeTestsWriter(namespace);
         }
-    }*/
+    }
 
     
 }

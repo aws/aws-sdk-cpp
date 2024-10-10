@@ -28,17 +28,19 @@ public String getName() {
         
         System.out.println(String.format("Executing SmithyCodegenPlugin...", context.getFileManifest().getBaseDir().toString()));
 
-        SmokeTestsParser smoketestParser = new SmokeTestsParser(context.getModel());
+        SmokeTestsParser smoketestParser = new SmokeTestsParser(context);
+        
+        smoketestParser.run();
 
-        Map<String, List<TestcaseParams> > smoketests =  smoketestParser.extractServiceSmokeTests();
-
-        smoketests.entrySet().stream().forEach(entry -> {
-                List<TestcaseParams> tests = entry.getValue();
-                CppSmokeTestsWriter writer = new CppSmokeTestsWriter("");
-                String code = writer.GetSmokeTestsCode(tests);
-                System.out.println("Code:\n"+code);
-            }
-        );
+        //Map<String, List<TestcaseParams> > smoketests =  smoketestParser.extractServiceSmokeTests();
+//
+        //smoketests.entrySet().stream().forEach(entry -> {
+        //        List<TestcaseParams> tests = entry.getValue();
+        //        CppSmokeTestsWriter writer = new CppSmokeTestsWriter("");
+        //        String code = writer.GetSmokeTestsCode(tests);
+        //        System.out.println("Code:\n"+code);
+        //    }
+        //);
 
 
         /*CppBlockWriter blockWriter = new CppBlockWriter( String.format("void newFunction()"),0).

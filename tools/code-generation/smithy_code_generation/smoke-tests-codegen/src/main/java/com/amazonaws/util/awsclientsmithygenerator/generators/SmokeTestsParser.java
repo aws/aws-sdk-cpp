@@ -31,15 +31,34 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class SmokeTestsParser {
-    private Model model;
-    private SmithyCodegenAdapter codegenAdapter;
+import software.amazon.smithy.build.PluginContext;
+import software.amazon.smithy.codegen.core.SymbolProvider;
 
-    
-    public SmokeTestsParser(Model model)
+//import com.amazonaws.util.awsclientsmithygenerator.generators.common.CppSymbolVisitor;
+
+public class SmokeTestsParser implements Runnable{
+    final private Model model;
+    final private SmithyCodegenAdapter codegenAdapter;
+    final private PluginContext context;
+    final private SymbolProvider symbolProvider;
+
+    public SmokeTestsParser(PluginContext context)
     {
-        this.model = model;
+        this.context = context;
+        this.model = context.getModel();
         codegenAdapter = new SmithyCodegenAdapter(model);
+        this.symbolProvider = new CppSymbolVisitor(model);
+    }
+
+    private String getServiceName(ShapeId serviceShapeId)
+    {
+        String clientName = serviceShapeId.getName();
+        System.out.println("clientName="+clientName);
+
+        int underscoreIndex = clientName.indexOf('_');
+        // Check if underscore exists, otherwise return the whole string
+        clientName = underscoreIndex != -1 ? clientName.substring(0, underscoreIndex) : clientName;
+        return clientName;
     }
 
     //for given smoke test trait in an operation for a service, parse smoke tests
@@ -54,13 +73,7 @@ public class SmokeTestsParser {
             //parse each test case
             //operation name
             TestcaseParams test = new TestcaseParams();
-            String clientName = serviceShape.getId().getName();
-            System.out.println("clientName="+clientName);
-
-            int underscoreIndex = clientName.indexOf('_');
-            // Check if underscore exists, otherwise return the whole string
-            clientName = underscoreIndex != -1 ? clientName.substring(0, underscoreIndex) : clientName;
-            test.setClientName(clientName);
+            test.setClientName(getServiceName(serviceShape.getId()));
             test.setOperationName(operationShape.getId().getName());
 
             String inputShapeName = operationShape.getInput()
@@ -227,9 +240,9 @@ public class SmokeTestsParser {
 
     //model contains information from all the smithy files
     //extract services to smoke tests
-    public Map<String, List<TestcaseParams> > extractServiceSmokeTests()
+    public Map<ShapeId, List<TestcaseParams> > extractServiceSmokeTests()
     {
-        Map<String, List<TestcaseParams> > serviceSmokeTestsMap = new HashMap<>();
+        Map<ShapeId, List<TestcaseParams> > serviceSmokeTestsMap = new HashMap<>();
         List<TestcaseParams> testcases = new ArrayList<>();
 
         Map<ShapeId, String> operationToServiceMap = new HashMap<>();
@@ -269,16 +282,41 @@ public class SmokeTestsParser {
             //add to tests for the same service
             if(serviceSmokeTestsMap.containsKey(serviceName))
             {
-                serviceSmokeTestsMap.get(serviceName).addAll(tests);
+                serviceSmokeTestsMap.get(serviceShape.getId()).addAll(tests);
             }
             else
             {
-                serviceSmokeTestsMap.put(serviceName, tests);
+                serviceSmokeTestsMap.put(serviceShape.getId(), tests);
             }
 
         });
         
         return serviceSmokeTestsMap;
     }
+
+    @Override
+    public void run(){
+
+        System.out.println("run smoke tests parser");
+
+        CppSmokeTestsDelegator delegator = new CppSmokeTestsDelegator(this.context.getFileManifest(), this.symbolProvider);
+
+        Map<ShapeId, List<TestcaseParams> > smoketests =  extractServiceSmokeTests();
+        
+        //make service specific folder
+        smoketests.entrySet().stream().forEach(entry -> {
+                Path relativePath = Paths.get( getServiceName(entry.getKey()) );
+                System.out.println(String.format("path=%s",relativePath.toString() + "/"+ getServiceName(entry.getKey()) + "SmokeTests.cpp"));
+                
+                delegator.useFileWriter( relativePath.toString() + "/"+ getServiceName(entry.getKey()) + "SmokeTests.cpp", entry.getKey().getName(), writer -> {
+                    System.out.println("generating smoke test code");
+                    writer.GetSmokeTestsCode(entry.getValue());              
+            });
+        });
+
+        delegator.flushWriters();
+        
+    }
+    
     
 }
