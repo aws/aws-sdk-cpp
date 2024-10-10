@@ -24,7 +24,7 @@ namespace smithy
 
             virtual ~InterceptorContext() = default;
             InterceptorContext(const InterceptorContext& other) = delete;
-            InterceptorContext(InterceptorContext&& other) noexcept = default;
+            InterceptorContext(InterceptorContext&& other) noexcept = delete;
             InterceptorContext& operator=(const InterceptorContext& other) = delete;
             InterceptorContext& operator=(InterceptorContext&& other) noexcept = delete;
 

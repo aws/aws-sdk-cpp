@@ -4,9 +4,10 @@
  */
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
-#include <smithy/interceptor/impl/ChecksumInterceptor.h>
+#include <smithy/client/features/CheckInterceptor.h>
 
 using namespace smithy::interceptor;
+using namespace smithy::client;
 using namespace Aws;
 using namespace Aws::Http;
 using namespace Aws::Http::Standard;

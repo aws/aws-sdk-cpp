@@ -45,7 +45,7 @@
 #include <aws/core/platform/OSVersionInfo.h>
 
 #include <smithy/tracing/TracingUtils.h>
-#include <smithy/interceptor/impl/ChecksumInterceptor.h>
+#include <smithy/client/features/CheckInterceptor.h>
 
 #include <cstring>
 #include <cassert>
@@ -139,7 +139,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_requestCompressionConfig(configuration.requestCompressionConfig),
-    m_interceptors{Aws::MakeShared<smithy::interceptor::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG)}
+    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG)}
 {
 }
 
@@ -166,7 +166,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_requestCompressionConfig(configuration.requestCompressionConfig)
 {
-    m_interceptors.emplace_back(Aws::MakeUnique<ChecksumInterceptor>(AWS_CLIENT_LOG_TAG));
+    m_interceptors.emplace_back(Aws::MakeUnique<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG));
 }
 
 void AWSClient::DisableRequestProcessing()
