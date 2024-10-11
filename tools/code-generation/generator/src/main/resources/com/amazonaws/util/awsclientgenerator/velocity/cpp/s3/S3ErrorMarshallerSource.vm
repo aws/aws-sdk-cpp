@@ -127,6 +127,7 @@ AWSError<Aws::Client::CoreErrors> ${metadata.classNamePrefix}ErrorMarshaller::Ma
   XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
   body.seekg(readPointer);
   Aws::String bodyError;
+  Aws::String requestId;
 
   if (doc.WasParseSuccessful() &&
       !doc.GetRootElement().IsNull() && 
@@ -134,20 +135,27 @@ AWSError<Aws::Client::CoreErrors> ${metadata.classNamePrefix}ErrorMarshaller::Ma
   {        
       //check if the first node fetched has no children
       auto messageNode = doc.GetRootElement().FirstChild("Message") ;
-      if(!messageNode.IsNull() && !messageNode.HasChildren())
+      if(!messageNode.IsNull())
       {
           message = messageNode.GetText();
       }
       auto codeNode = doc.GetRootElement().FirstChild("Code") ;
-      if(!codeNode.IsNull() && !codeNode.HasChildren())
+      if(!codeNode.IsNull())
       {
           bodyError = codeNode.GetText();
+      }
+
+      auto requestIdNode = doc.GetRootElement().FirstChild("RequestId") ;
+      if(!requestIdNode.IsNull())
+      {
+        requestId = requestIdNode.GetText();
       }
   }
 
   auto error = FindErrorByName(bodyError.c_str());
 
   error.SetMessage(message);
+  error.SetRequestId(requestId);
 
   return error;
 
