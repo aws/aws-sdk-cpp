@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentials.h>
+#include <aws/core/client/RetryStrategy.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/CopyObjectRequest.h>
@@ -10,6 +11,7 @@
 #include <memory>
 
 using namespace Aws;
+using namespace Aws::Client;
 using namespace Aws::Auth;
 using namespace Aws::Http;
 using namespace Aws::S3;
@@ -30,15 +32,28 @@ class S3TestClient : public S3Client
     S3TestClient() = default;
 
     friend class S3UnitTest_S3EmbeddedErrorTestNonOKResponse_Test;
-
-
 };
 
+class NoRetry: public RetryStrategy
+{
+public:
+  bool ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const override
+  {
+    AWS_UNREFERENCED_PARAM(error);
+    AWS_UNREFERENCED_PARAM(attemptedRetries);
+    return false;
+  };
 
+  long CalculateDelayBeforeNextRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const override
+  {
+    AWS_UNREFERENCED_PARAM(error);
+    AWS_UNREFERENCED_PARAM(attemptedRetries);
+    return 0;
+  };
+};
 
 class S3UnitTest : public testing::Test {
 protected:
-
 
   static void SetUpTestSuite() {
 #ifdef USE_AWS_MEMORY_MANAGEMENT
@@ -54,6 +69,7 @@ protected:
     const auto epProvider = Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG);
     S3ClientConfiguration s3Config;
     s3Config.region = "us-east-1";
+    s3Config.retryStrategy = Aws::MakeShared<NoRetry>(ALLOCATION_TAG);
     _s3Client = Aws::MakeShared<S3TestClient>("ALLOCATION_TAG", credentials, epProvider, s3Config);
   }
 
@@ -228,6 +244,10 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTest) {
   const auto response = _s3Client->CopyObject(request);
 
   EXPECT_FALSE(response.IsSuccess());
+  EXPECT_EQ(S3Errors::INTERNAL_FAILURE, response.GetError().GetErrorType());
+  EXPECT_TRUE(response.GetError().ShouldRetry());
+  EXPECT_EQ("We encountered an internal error. Please try again.", response.GetError().GetMessage());
+  EXPECT_EQ("656c76696e6727732072657175657374", response.GetError().GetRequestId());
 }
 
 
