@@ -218,6 +218,20 @@ namespace Model
     inline InstanceFleet& WithResizeSpecifications(const InstanceFleetResizingSpecifications& value) { SetResizeSpecifications(value); return *this;}
     inline InstanceFleet& WithResizeSpecifications(InstanceFleetResizingSpecifications&& value) { SetResizeSpecifications(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+    inline InstanceFleet& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+    inline InstanceFleet& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+    inline InstanceFleet& WithContext(const char* value) { SetContext(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -252,6 +266,9 @@ namespace Model
 
     InstanceFleetResizingSpecifications m_resizeSpecifications;
     bool m_resizeSpecificationsHasBeenSet = false;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

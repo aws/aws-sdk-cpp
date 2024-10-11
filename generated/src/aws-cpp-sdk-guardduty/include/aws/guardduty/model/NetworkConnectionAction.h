@@ -106,6 +106,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The EC2 instance's local elastic network interface utilized for the
+     * connection.</p>
+     */
+    inline const Aws::String& GetLocalNetworkInterface() const{ return m_localNetworkInterface; }
+    inline bool LocalNetworkInterfaceHasBeenSet() const { return m_localNetworkInterfaceHasBeenSet; }
+    inline void SetLocalNetworkInterface(const Aws::String& value) { m_localNetworkInterfaceHasBeenSet = true; m_localNetworkInterface = value; }
+    inline void SetLocalNetworkInterface(Aws::String&& value) { m_localNetworkInterfaceHasBeenSet = true; m_localNetworkInterface = std::move(value); }
+    inline void SetLocalNetworkInterface(const char* value) { m_localNetworkInterfaceHasBeenSet = true; m_localNetworkInterface.assign(value); }
+    inline NetworkConnectionAction& WithLocalNetworkInterface(const Aws::String& value) { SetLocalNetworkInterface(value); return *this;}
+    inline NetworkConnectionAction& WithLocalNetworkInterface(Aws::String&& value) { SetLocalNetworkInterface(std::move(value)); return *this;}
+    inline NetworkConnectionAction& WithLocalNetworkInterface(const char* value) { SetLocalNetworkInterface(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The remote IP information of the connection.</p>
      */
     inline const RemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
@@ -143,6 +158,9 @@ namespace Model
 
     LocalIpDetails m_localIpDetails;
     bool m_localIpDetailsHasBeenSet = false;
+
+    Aws::String m_localNetworkInterface;
+    bool m_localNetworkInterfaceHasBeenSet = false;
 
     RemoteIpDetails m_remoteIpDetails;
     bool m_remoteIpDetailsHasBeenSet = false;

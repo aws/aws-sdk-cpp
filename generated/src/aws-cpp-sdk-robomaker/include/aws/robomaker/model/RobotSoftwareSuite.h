@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about a robot software suite (ROS distribution).</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about a robot software suite.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RobotSoftwareSuite">AWS
    * API Reference</a></p>
    */
@@ -41,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the robot software suite (ROS distribution).</p>
+     * <p>The name of the robot software suite. <code>General</code> is the only
+     * supported value.</p>
      */
     inline const RobotSoftwareSuiteType& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -53,7 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the robot software suite (ROS distribution).</p>
+     * <p>The version of the robot software suite. Not applicable for General software
+     * suite.</p>
      */
     inline const RobotSoftwareSuiteVersionType& GetVersion() const{ return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }

@@ -81,8 +81,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The robot software suite (ROS distribution) used by the simulation
-     * application.</p>
+     * <p>The robot software suite used by the simulation application.</p>
      */
     inline const RobotSoftwareSuite& GetRobotSoftwareSuite() const{ return m_robotSoftwareSuite; }
     inline bool RobotSoftwareSuiteHasBeenSet() const { return m_robotSoftwareSuiteHasBeenSet; }

@@ -107,6 +107,20 @@ namespace Model
     inline InstanceFleetModifyConfig& AddInstanceTypeConfigs(const InstanceTypeConfig& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.push_back(value); return *this; }
     inline InstanceFleetModifyConfig& AddInstanceTypeConfigs(InstanceTypeConfig&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+    inline InstanceFleetModifyConfig& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+    inline InstanceFleetModifyConfig& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+    inline InstanceFleetModifyConfig& WithContext(const char* value) { SetContext(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceFleetId;
@@ -123,6 +137,9 @@ namespace Model
 
     Aws::Vector<InstanceTypeConfig> m_instanceTypeConfigs;
     bool m_instanceTypeConfigsHasBeenSet = false;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet = false;
   };
 
 } // namespace Model

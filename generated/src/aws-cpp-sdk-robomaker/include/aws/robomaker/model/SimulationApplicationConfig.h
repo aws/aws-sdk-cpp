@@ -99,7 +99,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of world configurations.</p>
+     * <p>A list of world configurations.</p>  <p>This API is no longer
+     * supported and will throw an error if used.</p> 
      */
     inline const Aws::Vector<WorldConfig>& GetWorldConfigs() const{ return m_worldConfigs; }
     inline bool WorldConfigsHasBeenSet() const { return m_worldConfigsHasBeenSet; }

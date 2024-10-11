@@ -25,6 +25,7 @@ NetworkConnectionAction::NetworkConnectionAction() :
     m_localPortDetailsHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_localIpDetailsHasBeenSet(false),
+    m_localNetworkInterfaceHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
     m_remotePortDetailsHasBeenSet(false)
 {
@@ -71,6 +72,13 @@ NetworkConnectionAction& NetworkConnectionAction::operator =(JsonView jsonValue)
     m_localIpDetails = jsonValue.GetObject("localIpDetails");
 
     m_localIpDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("localNetworkInterface"))
+  {
+    m_localNetworkInterface = jsonValue.GetString("localNetworkInterface");
+
+    m_localNetworkInterfaceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("remoteIpDetails"))
@@ -121,6 +129,12 @@ JsonValue NetworkConnectionAction::Jsonize() const
   if(m_localIpDetailsHasBeenSet)
   {
    payload.WithObject("localIpDetails", m_localIpDetails.Jsonize());
+
+  }
+
+  if(m_localNetworkInterfaceHasBeenSet)
+  {
+   payload.WithString("localNetworkInterface", m_localNetworkInterface);
 
   }
 

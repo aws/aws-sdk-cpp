@@ -25,7 +25,8 @@ InstanceFleetModifyConfig::InstanceFleetModifyConfig() :
     m_targetSpotCapacity(0),
     m_targetSpotCapacityHasBeenSet(false),
     m_resizeSpecificationsHasBeenSet(false),
-    m_instanceTypeConfigsHasBeenSet(false)
+    m_instanceTypeConfigsHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,13 @@ InstanceFleetModifyConfig& InstanceFleetModifyConfig::operator =(JsonView jsonVa
     m_instanceTypeConfigsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Context"))
+  {
+    m_context = jsonValue.GetString("Context");
+
+    m_contextHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -114,6 +122,12 @@ JsonValue InstanceFleetModifyConfig::Jsonize() const
      instanceTypeConfigsJsonList[instanceTypeConfigsIndex].AsObject(m_instanceTypeConfigs[instanceTypeConfigsIndex].Jsonize());
    }
    payload.WithArray("InstanceTypeConfigs", std::move(instanceTypeConfigsJsonList));
+
+  }
+
+  if(m_contextHasBeenSet)
+  {
+   payload.WithString("Context", m_context);
 
   }
 
