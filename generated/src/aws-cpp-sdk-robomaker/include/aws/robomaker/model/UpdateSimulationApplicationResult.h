@@ -104,7 +104,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the robot software suite (ROS distribution).</p>
+     * <p>Information about the robot software suite.</p>
      */
     inline const RobotSoftwareSuite& GetRobotSoftwareSuite() const{ return m_robotSoftwareSuite; }
     inline void SetRobotSoftwareSuite(const RobotSoftwareSuite& value) { m_robotSoftwareSuite = value; }

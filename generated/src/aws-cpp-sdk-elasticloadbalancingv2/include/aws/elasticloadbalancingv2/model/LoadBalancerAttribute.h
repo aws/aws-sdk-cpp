@@ -133,7 +133,9 @@ namespace Model
      * values are <code>availability_zone_affinity</code> with 100 percent zonal
      * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
      * affinity, and <code>any_availability_zone</code> with 0 percent zonal
-     * affinity.</p> </li> </ul>
+     * affinity.</p> </li> <li> <p> <code>zonal_shift.config.enabled</code> - Indicates
+     * whether zonal shift is enabled. The possible values are <code>true</code> and
+     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

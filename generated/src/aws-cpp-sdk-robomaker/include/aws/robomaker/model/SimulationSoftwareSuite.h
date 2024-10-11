@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the simulation software suite.</p>
+     * <p>The name of the simulation software suite. <code>SimulationRuntime</code> is
+     * the only supported value.</p>
      */
     inline const SimulationSoftwareSuiteType& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -52,7 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the simulation software suite.</p>
+     * <p>The version of the simulation software suite. Not applicable for
+     * <code>SimulationRuntime</code>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }

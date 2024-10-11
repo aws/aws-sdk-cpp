@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancingv2/model/TargetHealth.h>
 #include <aws/elasticloadbalancingv2/model/AnomalyDetection.h>
+#include <aws/elasticloadbalancingv2/model/AdministrativeOverride.h>
 #include <utility>
 
 namespace Aws
@@ -93,6 +94,18 @@ namespace Model
     inline TargetHealthDescription& WithAnomalyDetection(const AnomalyDetection& value) { SetAnomalyDetection(value); return *this;}
     inline TargetHealthDescription& WithAnomalyDetection(AnomalyDetection&& value) { SetAnomalyDetection(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The administrative override information for the target.</p>
+     */
+    inline const AdministrativeOverride& GetAdministrativeOverride() const{ return m_administrativeOverride; }
+    inline bool AdministrativeOverrideHasBeenSet() const { return m_administrativeOverrideHasBeenSet; }
+    inline void SetAdministrativeOverride(const AdministrativeOverride& value) { m_administrativeOverrideHasBeenSet = true; m_administrativeOverride = value; }
+    inline void SetAdministrativeOverride(AdministrativeOverride&& value) { m_administrativeOverrideHasBeenSet = true; m_administrativeOverride = std::move(value); }
+    inline TargetHealthDescription& WithAdministrativeOverride(const AdministrativeOverride& value) { SetAdministrativeOverride(value); return *this;}
+    inline TargetHealthDescription& WithAdministrativeOverride(AdministrativeOverride&& value) { SetAdministrativeOverride(std::move(value)); return *this;}
+    ///@}
   private:
 
     TargetDescription m_target;
@@ -106,6 +119,9 @@ namespace Model
 
     AnomalyDetection m_anomalyDetection;
     bool m_anomalyDetectionHasBeenSet = false;
+
+    AdministrativeOverride m_administrativeOverride;
+    bool m_administrativeOverrideHasBeenSet = false;
   };
 
 } // namespace Model

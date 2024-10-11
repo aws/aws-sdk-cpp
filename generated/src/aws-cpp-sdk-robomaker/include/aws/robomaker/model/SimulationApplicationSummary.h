@@ -98,7 +98,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about a robot software suite (ROS distribution).</p>
+     * <p>Information about a robot software suite.</p>
      */
     inline const RobotSoftwareSuite& GetRobotSoftwareSuite() const{ return m_robotSoftwareSuite; }
     inline bool RobotSoftwareSuiteHasBeenSet() const { return m_robotSoftwareSuiteHasBeenSet; }

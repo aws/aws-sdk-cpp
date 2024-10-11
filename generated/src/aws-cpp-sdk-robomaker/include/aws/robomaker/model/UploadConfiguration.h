@@ -43,10 +43,11 @@ namespace Model
     /**
      * <p>A prefix that specifies where files will be uploaded in Amazon S3. It is
      * appended to the simulation output location to determine the final path. </p> <p>
-     * For example, if your simulation output location is <code>s3://my-bucket</code>
-     * and your upload configuration name is <code>robot-test</code>, your files will
-     * be uploaded to
-     * <code>s3://my-bucket/&lt;simid&gt;/&lt;runid&gt;/robot-test</code>. </p>
+     * For example, if your simulation output location is
+     * <code>s3://amzn-s3-demo-bucket</code> and your upload configuration name is
+     * <code>robot-test</code>, your files will be uploaded to
+     * <code>s3://amzn-s3-demo-bucket/&lt;simid&gt;/&lt;runid&gt;/robot-test</code>.
+     * </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

@@ -56,7 +56,7 @@ namespace Model
     ///@{
     /**
      * <p>The time, in milliseconds since the epoch, when the simulation job batch was
-     * last updated.</p>
+     * last updated. </p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
