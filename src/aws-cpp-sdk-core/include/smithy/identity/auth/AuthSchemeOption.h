@@ -23,8 +23,8 @@ namespace smithy {
 
         const char* schemeId = nullptr;
 
-        PropertyBag virtual identityProperties() const { return {}; };
-        PropertyBag virtual signerProperties() const { return {}; };
-        EndpointParameters virtual endpointParameters() const { return {}; };
+        PropertyBag virtual identityProperties() const { return PropertyBag{}; };
+        PropertyBag virtual signerProperties() const { return PropertyBag{}; };
+        EndpointParameters virtual endpointParameters() const { return EndpointParameters{}; };
     };
 }
