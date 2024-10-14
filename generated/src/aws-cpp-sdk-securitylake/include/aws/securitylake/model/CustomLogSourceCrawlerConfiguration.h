@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for the Glue Crawler for the third-party custom
+   * <p>The configuration used for the Glue Crawler for a third-party custom
    * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CustomLogSourceCrawlerConfiguration">AWS
    * API Reference</a></p>

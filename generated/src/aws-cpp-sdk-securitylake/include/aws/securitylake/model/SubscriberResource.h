@@ -138,7 +138,7 @@ namespace Model
     ///@{
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services. For more information, see the <a
+     * Amazon Web Services services. For more information, see the <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/source-management.html">Amazon
      * Security Lake User Guide</a>.</p>
      */

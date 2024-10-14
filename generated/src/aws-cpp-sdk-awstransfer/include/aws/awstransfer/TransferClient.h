@@ -25,8 +25,8 @@ namespace Transfer
    * Transfer Family by integrating with existing authentication systems, and
    * providing DNS routing with Amazon Route 53 so nothing changes for your customers
    * and partners, or their applications. With your data in Amazon S3, you can use it
-   * with Amazon Web Services for processing, analytics, machine learning, and
-   * archiving. Getting started with Transfer Family is easy since there is no
+   * with Amazon Web Services services for processing, analytics, machine learning,
+   * and archiving. Getting started with Transfer Family is easy since there is no
    * infrastructure to buy and set up.</p>
    */
   class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>
@@ -1080,6 +1080,36 @@ namespace Transfer
         void ListExecutionsAsync(const ListExecutionsRequestT& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TransferClient::ListExecutions, request, handler, context);
+        }
+
+        /**
+         * <p> Returns real-time updates and detailed information on the status of each
+         * individual file being transferred in a specific file transfer operation. You
+         * specify the file transfer by providing its <code>ConnectorId</code> and its
+         * <code>TransferId</code>.</p>  <p>File transfer results are available up to
+         * 7 days after an operation has been requested.</p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListFileTransferResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFileTransferResultsOutcome ListFileTransferResults(const Model::ListFileTransferResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFileTransferResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFileTransferResultsRequestT = Model::ListFileTransferResultsRequest>
+        Model::ListFileTransferResultsOutcomeCallable ListFileTransferResultsCallable(const ListFileTransferResultsRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::ListFileTransferResults, request);
+        }
+
+        /**
+         * An Async wrapper for ListFileTransferResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFileTransferResultsRequestT = Model::ListFileTransferResultsRequest>
+        void ListFileTransferResultsAsync(const ListFileTransferResultsRequestT& request, const ListFileTransferResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::ListFileTransferResults, request, handler, context);
         }
 
         /**

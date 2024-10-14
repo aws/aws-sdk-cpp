@@ -34,7 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time-to-live (TTL) for the exception message to remain.</p>
+     * <p>The time-to-live (TTL) for the exception message to remain. It is the
+     * duration of time until which the exception message remains. </p>
      */
     inline long long GetExceptionTimeToLive() const{ return m_exceptionTimeToLive; }
     inline bool ExceptionTimeToLiveHasBeenSet() const { return m_exceptionTimeToLiveHasBeenSet; }

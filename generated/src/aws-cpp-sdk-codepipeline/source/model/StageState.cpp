@@ -27,7 +27,8 @@ StageState::StageState() :
     m_latestExecutionHasBeenSet(false),
     m_beforeEntryConditionStateHasBeenSet(false),
     m_onSuccessConditionStateHasBeenSet(false),
-    m_onFailureConditionStateHasBeenSet(false)
+    m_onFailureConditionStateHasBeenSet(false),
+    m_retryStageMetadataHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,13 @@ StageState& StageState::operator =(JsonView jsonValue)
     m_onFailureConditionStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("retryStageMetadata"))
+  {
+    m_retryStageMetadata = jsonValue.GetObject("retryStageMetadata");
+
+    m_retryStageMetadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -176,6 +184,12 @@ JsonValue StageState::Jsonize() const
   if(m_onFailureConditionStateHasBeenSet)
   {
    payload.WithObject("onFailureConditionState", m_onFailureConditionState.Jsonize());
+
+  }
+
+  if(m_retryStageMetadataHasBeenSet)
+  {
+   payload.WithObject("retryStageMetadata", m_retryStageMetadata.Jsonize());
 
   }
 

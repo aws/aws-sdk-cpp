@@ -45,8 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Retrieves the status of the configuration operation for an account in Amazon
-     * Security Lake.</p>
+     * <p>Retrieves the status of the <code>CreateDatalake</code> API call for an
+     * account in Amazon Security Lake.</p>
      */
     inline const DataLakeStatus& GetCreateStatus() const{ return m_createStatus; }
     inline bool CreateStatusHasBeenSet() const { return m_createStatusHasBeenSet; }

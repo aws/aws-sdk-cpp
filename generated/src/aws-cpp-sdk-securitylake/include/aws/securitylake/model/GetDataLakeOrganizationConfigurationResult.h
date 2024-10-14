@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for new accounts.</p>
+     * <p>The configuration used for new accounts in Security Lake.</p>
      */
     inline const Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>& GetAutoEnableNewAccount() const{ return m_autoEnableNewAccount; }
     inline void SetAutoEnableNewAccount(const Aws::Vector<DataLakeAutoEnableNewAccountConfiguration>& value) { m_autoEnableNewAccount = value; }

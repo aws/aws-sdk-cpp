@@ -93,6 +93,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Whether to include message metadata as JSON files in the export.</p>
+     */
+    inline bool GetIncludeMetadata() const{ return m_includeMetadata; }
+    inline bool IncludeMetadataHasBeenSet() const { return m_includeMetadataHasBeenSet; }
+    inline void SetIncludeMetadata(bool value) { m_includeMetadataHasBeenSet = true; m_includeMetadata = value; }
+    inline StartArchiveExportRequest& WithIncludeMetadata(bool value) { SetIncludeMetadata(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of email items to include in the export.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -125,6 +135,9 @@ namespace Model
 
     Aws::Utils::DateTime m_fromTimestamp;
     bool m_fromTimestampHasBeenSet = false;
+
+    bool m_includeMetadata;
+    bool m_includeMetadataHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;

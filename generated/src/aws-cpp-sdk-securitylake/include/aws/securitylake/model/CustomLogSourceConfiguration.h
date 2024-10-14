@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for the third-party custom source.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>The configuration used for the third-party custom source.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CustomLogSourceConfiguration">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for the Glue Crawler for the third-party custom source.</p>
+     * <p>The configuration used for the Glue Crawler for a third-party custom
+     * source.</p>
      */
     inline const CustomLogSourceCrawlerConfiguration& GetCrawlerConfiguration() const{ return m_crawlerConfiguration; }
     inline bool CrawlerConfigurationHasBeenSet() const { return m_crawlerConfigurationHasBeenSet; }

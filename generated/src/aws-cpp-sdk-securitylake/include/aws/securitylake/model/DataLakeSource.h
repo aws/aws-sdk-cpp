@@ -27,8 +27,8 @@ namespace Model
 
   /**
    * <p>Amazon Security Lake collects logs and events from supported Amazon Web
-   * Services and custom sources. For the list of supported Amazon Web Services, see
-   * the <a
+   * Services services and custom sources. For the list of supported Amazon Web
+   * Services services, see the <a
    * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
    * Security Lake User Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DataLakeSource">AWS
@@ -97,9 +97,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The supported Amazon Web Services from which logs and events are collected.
-     * Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services.</p>
+     * <p>The supported Amazon Web Services services from which logs and events are
+     * collected. Amazon Security Lake supports log and event collection for natively
+     * supported Amazon Web Services services.</p>
      */
     inline const Aws::String& GetSourceName() const{ return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }

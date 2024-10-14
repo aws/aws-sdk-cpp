@@ -22,13 +22,17 @@ Row::Row() :
     m_archivedMessageIdHasBeenSet(false),
     m_ccHasBeenSet(false),
     m_dateHasBeenSet(false),
+    m_envelopeHasBeenSet(false),
     m_fromHasBeenSet(false),
     m_hasAttachments(false),
     m_hasAttachmentsHasBeenSet(false),
     m_inReplyToHasBeenSet(false),
+    m_ingressPointIdHasBeenSet(false),
     m_messageIdHasBeenSet(false),
     m_receivedHeadersHasBeenSet(false),
     m_receivedTimestampHasBeenSet(false),
+    m_senderHostnameHasBeenSet(false),
+    m_senderIpAddressHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_toHasBeenSet(false),
     m_xMailerHasBeenSet(false),
@@ -66,6 +70,13 @@ Row& Row::operator =(JsonView jsonValue)
     m_dateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Envelope"))
+  {
+    m_envelope = jsonValue.GetObject("Envelope");
+
+    m_envelopeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetString("From");
@@ -85,6 +96,13 @@ Row& Row::operator =(JsonView jsonValue)
     m_inReplyTo = jsonValue.GetString("InReplyTo");
 
     m_inReplyToHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IngressPointId"))
+  {
+    m_ingressPointId = jsonValue.GetString("IngressPointId");
+
+    m_ingressPointIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MessageId"))
@@ -109,6 +127,20 @@ Row& Row::operator =(JsonView jsonValue)
     m_receivedTimestamp = jsonValue.GetDouble("ReceivedTimestamp");
 
     m_receivedTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SenderHostname"))
+  {
+    m_senderHostname = jsonValue.GetString("SenderHostname");
+
+    m_senderHostnameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SenderIpAddress"))
+  {
+    m_senderIpAddress = jsonValue.GetString("SenderIpAddress");
+
+    m_senderIpAddressHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Subject"))
@@ -171,6 +203,12 @@ JsonValue Row::Jsonize() const
 
   }
 
+  if(m_envelopeHasBeenSet)
+  {
+   payload.WithObject("Envelope", m_envelope.Jsonize());
+
+  }
+
   if(m_fromHasBeenSet)
   {
    payload.WithString("From", m_from);
@@ -186,6 +224,12 @@ JsonValue Row::Jsonize() const
   if(m_inReplyToHasBeenSet)
   {
    payload.WithString("InReplyTo", m_inReplyTo);
+
+  }
+
+  if(m_ingressPointIdHasBeenSet)
+  {
+   payload.WithString("IngressPointId", m_ingressPointId);
 
   }
 
@@ -209,6 +253,18 @@ JsonValue Row::Jsonize() const
   if(m_receivedTimestampHasBeenSet)
   {
    payload.WithDouble("ReceivedTimestamp", m_receivedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_senderHostnameHasBeenSet)
+  {
+   payload.WithString("SenderHostname", m_senderHostname);
+
+  }
+
+  if(m_senderIpAddressHasBeenSet)
+  {
+   payload.WithString("SenderIpAddress", m_senderIpAddress);
+
   }
 
   if(m_subjectHasBeenSet)

@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify the Region or Regions that will contribute data to the rollup
+     * <p>Specifies the Region or Regions that will contribute data to the rollup
      * region.</p>
      */
     inline const Aws::Vector<DataLakeConfiguration>& GetConfigurations() const{ return m_configurations; }

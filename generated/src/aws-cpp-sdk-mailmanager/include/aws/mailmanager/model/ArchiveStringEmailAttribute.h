@@ -19,7 +19,9 @@ namespace Model
     TO,
     FROM,
     CC,
-    SUBJECT
+    SUBJECT,
+    ENVELOPE_TO,
+    ENVELOPE_FROM
   };
 
 namespace ArchiveStringEmailAttributeMapper

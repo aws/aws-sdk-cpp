@@ -53,8 +53,8 @@ namespace Model
     /**
      * <p>One or more source paths for the Amazon S3 storage. Each string represents a
      * source file path for one outbound file transfer. For example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>  <p>Replace
-     * <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.</p>
+     * <i>amzn-s3-demo-bucket</i>/<i>myfile.txt</i> </code>.</p>  <p>Replace
+     * <code> <i>amzn-s3-demo-bucket</i> </code> with one of your actual buckets.</p>
      * 
      */
     inline const Aws::Vector<Aws::String>& GetSendFilePaths() const{ return m_sendFilePaths; }

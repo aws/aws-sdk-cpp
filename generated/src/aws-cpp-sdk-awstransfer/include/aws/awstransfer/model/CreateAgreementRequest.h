@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>The landing directory (folder) for files transferred by using the AS2
      * protocol.</p> <p>A <code>BaseDirectory</code> example is
-     * <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
+     * <code>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</code>.</p>
      */
     inline const Aws::String& GetBaseDirectory() const{ return m_baseDirectory; }
     inline bool BaseDirectoryHasBeenSet() const { return m_baseDirectoryHasBeenSet; }
