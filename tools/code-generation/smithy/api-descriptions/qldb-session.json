@@ -453,6 +453,7 @@
                                     ]
                                 }
                             ],
+                            "type": "tree",
                             "rules": [
                                 {
                                     "conditions": [
@@ -495,8 +496,7 @@
                                     },
                                     "type": "endpoint"
                                 }
-                            ],
-                            "type": "tree"
+                            ]
                         },
                         {
                             "conditions": [
@@ -509,6 +509,7 @@
                                     ]
                                 }
                             ],
+                            "type": "tree",
                             "rules": [
                                 {
                                     "conditions": [
@@ -522,6 +523,7 @@
                                             "assign": "PartitionResult"
                                         }
                                     ],
+                                    "type": "tree",
                                     "rules": [
                                         {
                                             "conditions": [
@@ -544,6 +546,7 @@
                                                     ]
                                                 }
                                             ],
+                                            "type": "tree",
                                             "rules": [
                                                 {
                                                     "conditions": [
@@ -578,6 +581,7 @@
                                                             ]
                                                         }
                                                     ],
+                                                    "type": "tree",
                                                     "rules": [
                                                         {
                                                             "conditions": [],
@@ -588,16 +592,14 @@
                                                             },
                                                             "type": "endpoint"
                                                         }
-                                                    ],
-                                                    "type": "tree"
+                                                    ]
                                                 },
                                                 {
                                                     "conditions": [],
                                                     "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
                                                     "type": "error"
                                                 }
-                                            ],
-                                            "type": "tree"
+                                            ]
                                         },
                                         {
                                             "conditions": [
@@ -611,12 +613,14 @@
                                                     ]
                                                 }
                                             ],
+                                            "type": "tree",
                                             "rules": [
                                                 {
                                                     "conditions": [
                                                         {
                                                             "fn": "booleanEquals",
                                                             "argv": [
+                                                                true,
                                                                 {
                                                                     "fn": "getAttr",
                                                                     "argv": [
@@ -625,11 +629,11 @@
                                                                         },
                                                                         "supportsFIPS"
                                                                     ]
-                                                                },
-                                                                true
+                                                                }
                                                             ]
                                                         }
                                                     ],
+                                                    "type": "tree",
                                                     "rules": [
                                                         {
                                                             "conditions": [],
@@ -640,16 +644,14 @@
                                                             },
                                                             "type": "endpoint"
                                                         }
-                                                    ],
-                                                    "type": "tree"
+                                                    ]
                                                 },
                                                 {
                                                     "conditions": [],
                                                     "error": "FIPS is enabled but this partition does not support FIPS",
                                                     "type": "error"
                                                 }
-                                            ],
-                                            "type": "tree"
+                                            ]
                                         },
                                         {
                                             "conditions": [
@@ -663,6 +665,7 @@
                                                     ]
                                                 }
                                             ],
+                                            "type": "tree",
                                             "rules": [
                                                 {
                                                     "conditions": [
@@ -682,6 +685,7 @@
                                                             ]
                                                         }
                                                     ],
+                                                    "type": "tree",
                                                     "rules": [
                                                         {
                                                             "conditions": [],
@@ -692,16 +696,14 @@
                                                             },
                                                             "type": "endpoint"
                                                         }
-                                                    ],
-                                                    "type": "tree"
+                                                    ]
                                                 },
                                                 {
                                                     "conditions": [],
                                                     "error": "DualStack is enabled but this partition does not support DualStack",
                                                     "type": "error"
                                                 }
-                                            ],
-                                            "type": "tree"
+                                            ]
                                         },
                                         {
                                             "conditions": [],
@@ -712,11 +714,9 @@
                                             },
                                             "type": "endpoint"
                                         }
-                                    ],
-                                    "type": "tree"
+                                    ]
                                 }
-                            ],
-                            "type": "tree"
+                            ]
                         },
                         {
                             "conditions": [],

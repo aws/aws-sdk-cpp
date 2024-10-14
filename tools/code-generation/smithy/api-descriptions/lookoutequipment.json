@@ -1655,13 +1655,13 @@
                 "smithy.api#documentation": "<p>Creates a retraining scheduler on the specified model. </p>",
                 "smithy.api#examples": [
                     {
-                        "title": "Creates a retraining scheduler with a specific start date",
+                        "title": "Creates a retraining scheduler with manual promote mode",
                         "documentation": "",
                         "input": {
                             "ModelName": "sample-model",
-                            "RetrainingStartDate": "2024-01-01T00:00:00Z",
                             "RetrainingFrequency": "P1M",
                             "LookbackWindow": "P360D",
+                            "PromoteMode": "MANUAL",
                             "ClientToken": "sample-client-token"
                         },
                         "output": {
@@ -1671,13 +1671,13 @@
                         }
                     },
                     {
-                        "title": "Creates a retraining scheduler with manual promote mode",
+                        "title": "Creates a retraining scheduler with a specific start date",
                         "documentation": "",
                         "input": {
                             "ModelName": "sample-model",
+                            "RetrainingStartDate": "2024-01-01T00:00:00Z",
                             "RetrainingFrequency": "P1M",
                             "LookbackWindow": "P360D",
-                            "PromoteMode": "MANUAL",
                             "ClientToken": "sample-client-token"
                         },
                         "output": {

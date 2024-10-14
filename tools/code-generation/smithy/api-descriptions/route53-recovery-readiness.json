@@ -2845,7 +2845,7 @@
                     "sdkId": "Route53 Recovery Readiness",
                     "arnNamespace": "route53-recovery-readiness",
                     "cloudFormationName": "Route53RecoveryReadiness",
-                    "cloudTrailEventSource": "route53-recovery-readiness.amazonaws.com",
+                    "cloudTrailEventSource": "route53recoveryreadiness.amazonaws.com",
                     "endpointPrefix": "route53-recovery-readiness"
                 },
                 "aws.auth#sigv4": {

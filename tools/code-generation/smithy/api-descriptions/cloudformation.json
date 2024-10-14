@@ -14771,30 +14771,6 @@
                 "smithy.api#documentation": "<p>Updates a generated template. This can be used to change the name, add and remove resources, refresh resources,\n   and change the <code>DeletionPolicy</code> and <code>UpdateReplacePolicy</code> settings. You can check the status of\n   the update to the generated template using the <code>DescribeGeneratedTemplate</code> API action.</p>",
                 "smithy.api#examples": [
                     {
-                        "title": "To add resources to a generated template",
-                        "documentation": "This example adds resources to a generated template",
-                        "input": {
-                            "GeneratedTemplateName": "JazzyTemplate",
-                            "AddResources": [
-                                {
-                                    "ResourceType": "AWS::S3::Bucket",
-                                    "ResourceIdentifier": {
-                                        "BucketName": "jazz-bucket"
-                                    }
-                                },
-                                {
-                                    "ResourceType": "AWS::EC2::DHCPOptions",
-                                    "ResourceIdentifier": {
-                                        "DhcpOptionsId": "random-id123"
-                                    }
-                                }
-                            ]
-                        },
-                        "output": {
-                            "GeneratedTemplateId": "arn:aws:cloudformation:us-east-1:123456789012:generatedtemplate/88f09db1-d211-4cb7-964b-434e2b8469ca"
-                        }
-                    },
-                    {
                         "title": "To update a generated template's name",
                         "documentation": "This example updates a generated template with a new name.",
                         "input": {
@@ -14813,6 +14789,30 @@
                             "RemoveResources": [
                                 "LogicalResourceId1",
                                 "LogicalResourceId2"
+                            ]
+                        },
+                        "output": {
+                            "GeneratedTemplateId": "arn:aws:cloudformation:us-east-1:123456789012:generatedtemplate/88f09db1-d211-4cb7-964b-434e2b8469ca"
+                        }
+                    },
+                    {
+                        "title": "To add resources to a generated template",
+                        "documentation": "This example adds resources to a generated template",
+                        "input": {
+                            "GeneratedTemplateName": "JazzyTemplate",
+                            "AddResources": [
+                                {
+                                    "ResourceType": "AWS::S3::Bucket",
+                                    "ResourceIdentifier": {
+                                        "BucketName": "jazz-bucket"
+                                    }
+                                },
+                                {
+                                    "ResourceType": "AWS::EC2::DHCPOptions",
+                                    "ResourceIdentifier": {
+                                        "DhcpOptionsId": "random-id123"
+                                    }
+                                }
                             ]
                         },
                         "output": {

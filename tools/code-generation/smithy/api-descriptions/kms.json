@@ -1460,6 +1460,19 @@
                 "smithy.api#documentation": "<p>Decrypts ciphertext that was encrypted by a KMS key using any of the following\n      operations:</p>\n         <ul>\n            <li>\n               <p>\n                  <a>Encrypt</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>GenerateDataKey</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>GenerateDataKeyPair</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>GenerateDataKeyWithoutPlaintext</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>GenerateDataKeyPairWithoutPlaintext</a>\n               </p>\n            </li>\n         </ul>\n         <p>You can use this operation to decrypt ciphertext that was encrypted under a symmetric\n      encryption KMS key or an asymmetric encryption KMS key. When the KMS key is asymmetric, you\n      must specify the KMS key and the encryption algorithm that was used to encrypt the ciphertext.\n      For information about asymmetric KMS keys, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html\">Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>\n         <p>The <code>Decrypt</code> operation also decrypts ciphertext that was encrypted outside of\n      KMS by the public key in an KMS asymmetric KMS key. However, it cannot decrypt symmetric\n      ciphertext produced by other libraries, such as the <a href=\"https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/\">Amazon Web Services Encryption SDK</a> or <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html\">Amazon S3 client-side encryption</a>.\n      These libraries return a ciphertext format that is incompatible with KMS.</p>\n         <p>If the ciphertext was encrypted under a symmetric encryption KMS key, the\n        <code>KeyId</code> parameter is optional. KMS can get this information from metadata that\n      it adds to the symmetric ciphertext blob. This feature adds durability to your implementation\n      by ensuring that authorized users can decrypt ciphertext decades after it was encrypted, even\n      if they've lost track of the key ID. However, specifying the KMS key is always recommended as\n      a best practice. When you use the <code>KeyId</code> parameter to specify a KMS key, KMS\n      only uses the KMS key you specify. If the ciphertext was encrypted under a different KMS key,\n      the <code>Decrypt</code> operation fails. This practice ensures that you use the KMS key that\n      you intend.</p>\n         <p>Whenever possible, use key policies to give users permission to call the\n        <code>Decrypt</code> operation on a particular KMS key, instead of using &IAM; policies.\n      Otherwise, you might create an &IAM; policy that gives the user <code>Decrypt</code>\n      permission on all KMS keys. This user could decrypt ciphertext that was encrypted by KMS keys\n      in other accounts if the key policy for the cross-account KMS key permits it. If you must use\n      an IAM policy for <code>Decrypt</code> permissions, limit the user to particular KMS keys or\n      particular trusted accounts. For details, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices\">Best practices for IAM\n        policies</a> in the <i>Key Management Service Developer Guide</i>.</p>\n         <p>\n            <code>Decrypt</code> also supports <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html\">Amazon Web Services Nitro Enclaves</a>, which provide an\n      isolated compute environment in Amazon EC2. To call <code>Decrypt</code> for a Nitro enclave, use\n      the <a href=\"https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk\">Amazon Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code> parameter to provide the\n      attestation document for the enclave. Instead of the plaintext data, the response includes the\n      plaintext data encrypted with the public key from the attestation document\n        (<code>CiphertextForRecipient</code>). For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html\">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>\n         <p>The KMS key that you use for this operation must be in a compatible key state. For\ndetails, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>\n         <p>\n            <b>Cross-account use</b>: Yes. If you use the <code>KeyId</code>\n      parameter to identify a KMS key in a different Amazon Web Services account, specify the key ARN or the alias\n      ARN of the KMS key.</p>\n         <p>\n            <b>Required permissions</b>: <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html\">kms:Decrypt</a> (key policy)</p>\n         <p>\n            <b>Related operations:</b>\n         </p>\n         <ul>\n            <li>\n               <p>\n                  <a>Encrypt</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>GenerateDataKey</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>GenerateDataKeyPair</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>ReEncrypt</a>\n               </p>\n            </li>\n         </ul>\n         <p>\n            <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. \n  For more information, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html\">KMS eventual consistency</a>.</p>",
                 "smithy.api#examples": [
                     {
+                        "title": "To decrypt data with a symmetric encryption KMS key",
+                        "documentation": "The following example decrypts data that was encrypted with a symmetric encryption KMS key. The KeyId is not required when decrypting with a symmetric encryption key, but it is a best practice.",
+                        "input": {
+                            "CiphertextBlob": "<binary data>",
+                            "KeyId": "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+                        },
+                        "output": {
+                            "KeyId": "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+                            "Plaintext": "<binary data>",
+                            "EncryptionAlgorithm": "SYMMETRIC_DEFAULT"
+                        }
+                    },
+                    {
                         "title": "To decrypt data with an asymmetric encryption KMS key",
                         "documentation": "The following example decrypts data that was encrypted with an asymmetric encryption KMS key. When the KMS encryption key is asymmetric, you must specify the KMS key ID and the encryption algorithm that was used to encrypt the data.",
                         "input": {
@@ -1471,19 +1484,6 @@
                             "KeyId": "arn:aws:kms:us-west-2:111122223333:key/0987dcba-09fe-87dc-65ba-ab0987654321",
                             "Plaintext": "<binary data>",
                             "EncryptionAlgorithm": "RSAES_OAEP_SHA_256"
-                        }
-                    },
-                    {
-                        "title": "To decrypt data with a symmetric encryption KMS key",
-                        "documentation": "The following example decrypts data that was encrypted with a symmetric encryption KMS key. The KeyId is not required when decrypting with a symmetric encryption key, but it is a best practice.",
-                        "input": {
-                            "CiphertextBlob": "<binary data>",
-                            "KeyId": "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
-                        },
-                        "output": {
-                            "KeyId": "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab",
-                            "Plaintext": "<binary data>",
-                            "EncryptionAlgorithm": "SYMMETRIC_DEFAULT"
                         }
                     }
                 ]
@@ -2019,62 +2019,34 @@
                 "smithy.api#documentation": "<p>Provides detailed information about a KMS key. You can run <code>DescribeKey</code> on a\n        <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk\">customer managed\n        key</a> or an <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk\">Amazon Web Services managed key</a>.</p>\n         <p>This detailed information includes the key ARN, creation date (and deletion date, if\n      applicable), the key state, and the origin and expiration date (if any) of the key material.\n      It includes fields, like <code>KeySpec</code>, that help you distinguish different types of\n      KMS keys. It also displays the key usage (encryption, signing, or generating and verifying\n      MACs) and the algorithms that the KMS key supports. </p>\n         <p>For <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html\">multi-Region keys</a>, <code>DescribeKey</code> displays the primary key and all\n      related replica keys. For KMS keys in <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html\">CloudHSM key stores</a>, it includes information\n      about the key store, such as the key store ID and the CloudHSM cluster ID. For KMS keys in <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html\">external key stores</a>,\n      it includes the custom key store ID and the ID of the external key.</p>\n         <p>\n            <code>DescribeKey</code> does not return the following information:</p>\n         <ul>\n            <li>\n               <p>Aliases associated with the KMS key. To get this information, use <a>ListAliases</a>.</p>\n            </li>\n            <li>\n               <p>Whether automatic key rotation is enabled on the KMS key. To get this information, use\n            <a>GetKeyRotationStatus</a>. Also, some key states prevent a KMS key from\n          being automatically rotated. For details, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works\">How Automatic Key Rotation\n            Works</a> in the <i>Key Management Service Developer Guide</i>.</p>\n            </li>\n            <li>\n               <p>Tags on the KMS key. To get this information, use <a>ListResourceTags</a>.</p>\n            </li>\n            <li>\n               <p>Key policies and grants on the KMS key. To get this information, use <a>GetKeyPolicy</a> and <a>ListGrants</a>.</p>\n            </li>\n         </ul>\n         <p>In general, <code>DescribeKey</code> is a non-mutating operation. It returns data about\n      KMS keys, but doesn't change them. However, Amazon Web Services services use <code>DescribeKey</code> to\n      create <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk\">Amazon Web Services\n        managed keys</a> from a <i>predefined Amazon Web Services alias</i> with no key\n      ID.</p>\n         <p>\n            <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different Amazon Web Services account, specify\n  the key ARN or alias ARN in the value of the <code>KeyId</code> parameter.</p>\n         <p>\n            <b>Required permissions</b>: <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html\">kms:DescribeKey</a> (key policy)</p>\n         <p>\n            <b>Related operations:</b>\n         </p>\n         <ul>\n            <li>\n               <p>\n                  <a>GetKeyPolicy</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>GetKeyRotationStatus</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>ListAliases</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>ListGrants</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>ListKeys</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>ListResourceTags</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>ListRetirableGrants</a>\n               </p>\n            </li>\n         </ul>\n         <p>\n            <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. \n  For more information, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html\">KMS eventual consistency</a>.</p>",
                 "smithy.api#examples": [
                     {
-                        "title": "To get details about a KMS key in an AWS CloudHSM key store",
-                        "documentation": "The following example gets the metadata of a KMS key in an AWS CloudHSM key store.",
+                        "title": "To get details about an RSA asymmetric KMS key",
+                        "documentation": "The following example gets metadata for an asymmetric RSA KMS key used for signing and verification.",
                         "input": {
-                            "KeyId": "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+                            "KeyId": "1234abcd-12ab-34cd-56ef-1234567890ab"
                         },
                         "output": {
                             "KeyMetadata": {
-                                "AWSAccountId": "123456789012",
+                                "AWSAccountId": "111122223333",
                                 "KeyId": "1234abcd-12ab-34cd-56ef-1234567890ab",
-                                "Arn": "arn:aws:kms:us-west-2:123456789012:key/1234abcd-12ab-34cd-56ef-1234567890ab",
-                                "CreationDate": 1.646160362664E9,
-                                "Description": "CloudHSM key store test key",
-                                "Enabled": true,
+                                "Arn": "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+                                "CreationDate": 1.571767572317E9,
+                                "CustomerMasterKeySpec": "RSA_2048",
+                                "Enabled": false,
+                                "Description": "",
+                                "KeyState": "Disabled",
+                                "Origin": "AWS_KMS",
                                 "MultiRegion": false,
                                 "KeyManager": "CUSTOMER",
-                                "KeyState": "Enabled",
-                                "KeyUsage": "ENCRYPT_DECRYPT",
-                                "Origin": "AWS_CLOUDHSM",
-                                "CloudHsmClusterId": "cluster-234abcdefABC",
-                                "CustomKeyStoreId": "cks-1234567890abcdef0",
-                                "KeySpec": "SYMMETRIC_DEFAULT",
-                                "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
-                                "EncryptionAlgorithms": [
-                                    "SYMMETRIC_DEFAULT"
+                                "KeySpec": "RSA_2048",
+                                "KeyUsage": "SIGN_VERIFY",
+                                "SigningAlgorithms": [
+                                    "RSASSA_PKCS1_V1_5_SHA_256",
+                                    "RSASSA_PKCS1_V1_5_SHA_384",
+                                    "RSASSA_PKCS1_V1_5_SHA_512",
+                                    "RSASSA_PSS_SHA_256",
+                                    "RSASSA_PSS_SHA_384",
+                                    "RSASSA_PSS_SHA_512"
                                 ]
-                            }
-                        }
-                    },
-                    {
-                        "title": "To get details about a KMS key in an external key store",
-                        "documentation": "The following example gets the metadata of a KMS key in an external key store.",
-                        "input": {
-                            "KeyId": "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
-                        },
-                        "output": {
-                            "KeyMetadata": {
-                                "Arn": "arn:aws:kms:us-west-2:123456789012:key/1234abcd-12ab-34cd-56ef-1234567890ab",
-                                "AWSAccountId": "123456789012",
-                                "CreationDate": 1.646160362664E9,
-                                "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
-                                "CustomKeyStoreId": "cks-1234567890abcdef0",
-                                "Description": "External key store test key",
-                                "Enabled": true,
-                                "EncryptionAlgorithms": [
-                                    "SYMMETRIC_DEFAULT"
-                                ],
-                                "KeyId": "1234abcd-12ab-34cd-56ef-1234567890ab",
-                                "KeyManager": "CUSTOMER",
-                                "KeySpec": "SYMMETRIC_DEFAULT",
-                                "KeyState": "Enabled",
-                                "KeyUsage": "ENCRYPT_DECRYPT",
-                                "MultiRegion": false,
-                                "Origin": "EXTERNAL_KEY_STORE",
-                                "XksKeyConfiguration": {
-                                    "Id": "bb8562717f809024"
-                                }
                             }
                         }
                     },
@@ -2152,34 +2124,62 @@
                         }
                     },
                     {
-                        "title": "To get details about an RSA asymmetric KMS key",
-                        "documentation": "The following example gets metadata for an asymmetric RSA KMS key used for signing and verification.",
+                        "title": "To get details about a KMS key in an AWS CloudHSM key store",
+                        "documentation": "The following example gets the metadata of a KMS key in an AWS CloudHSM key store.",
                         "input": {
-                            "KeyId": "1234abcd-12ab-34cd-56ef-1234567890ab"
+                            "KeyId": "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
                         },
                         "output": {
                             "KeyMetadata": {
-                                "AWSAccountId": "111122223333",
+                                "AWSAccountId": "123456789012",
                                 "KeyId": "1234abcd-12ab-34cd-56ef-1234567890ab",
-                                "Arn": "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab",
-                                "CreationDate": 1.571767572317E9,
-                                "CustomerMasterKeySpec": "RSA_2048",
-                                "Enabled": false,
-                                "Description": "",
-                                "KeyState": "Disabled",
-                                "Origin": "AWS_KMS",
+                                "Arn": "arn:aws:kms:us-west-2:123456789012:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+                                "CreationDate": 1.646160362664E9,
+                                "Description": "CloudHSM key store test key",
+                                "Enabled": true,
                                 "MultiRegion": false,
                                 "KeyManager": "CUSTOMER",
-                                "KeySpec": "RSA_2048",
-                                "KeyUsage": "SIGN_VERIFY",
-                                "SigningAlgorithms": [
-                                    "RSASSA_PKCS1_V1_5_SHA_256",
-                                    "RSASSA_PKCS1_V1_5_SHA_384",
-                                    "RSASSA_PKCS1_V1_5_SHA_512",
-                                    "RSASSA_PSS_SHA_256",
-                                    "RSASSA_PSS_SHA_384",
-                                    "RSASSA_PSS_SHA_512"
+                                "KeyState": "Enabled",
+                                "KeyUsage": "ENCRYPT_DECRYPT",
+                                "Origin": "AWS_CLOUDHSM",
+                                "CloudHsmClusterId": "cluster-234abcdefABC",
+                                "CustomKeyStoreId": "cks-1234567890abcdef0",
+                                "KeySpec": "SYMMETRIC_DEFAULT",
+                                "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+                                "EncryptionAlgorithms": [
+                                    "SYMMETRIC_DEFAULT"
                                 ]
+                            }
+                        }
+                    },
+                    {
+                        "title": "To get details about a KMS key in an external key store",
+                        "documentation": "The following example gets the metadata of a KMS key in an external key store.",
+                        "input": {
+                            "KeyId": "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+                        },
+                        "output": {
+                            "KeyMetadata": {
+                                "Arn": "arn:aws:kms:us-west-2:123456789012:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+                                "AWSAccountId": "123456789012",
+                                "CreationDate": 1.646160362664E9,
+                                "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+                                "CustomKeyStoreId": "cks-1234567890abcdef0",
+                                "Description": "External key store test key",
+                                "Enabled": true,
+                                "EncryptionAlgorithms": [
+                                    "SYMMETRIC_DEFAULT"
+                                ],
+                                "KeyId": "1234abcd-12ab-34cd-56ef-1234567890ab",
+                                "KeyManager": "CUSTOMER",
+                                "KeySpec": "SYMMETRIC_DEFAULT",
+                                "KeyState": "Enabled",
+                                "KeyUsage": "ENCRYPT_DECRYPT",
+                                "MultiRegion": false,
+                                "Origin": "EXTERNAL_KEY_STORE",
+                                "XksKeyConfiguration": {
+                                    "Id": "bb8562717f809024"
+                                }
                             }
                         }
                     }
@@ -6851,21 +6851,6 @@
                 "smithy.api#documentation": "<p>Creates a <a href=\"https://en.wikipedia.org/wiki/Digital_signature\">digital\n        signature</a> for a message or message digest by using the private key in an asymmetric\n      signing KMS key. To verify the signature, use the <a>Verify</a> operation, or use\n      the public key in the same asymmetric KMS key outside of KMS. For information about asymmetric KMS keys, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html\">Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>\n         <p>Digital signatures are generated and verified by using asymmetric key pair, such as an RSA\n      or ECC pair that is represented by an asymmetric KMS key. The key owner (or an authorized\n      user) uses their private key to sign a message. Anyone with the public key can verify that the\n      message was signed with that particular private key and that the message hasn't changed since\n      it was signed. </p>\n         <p>To use the <code>Sign</code> operation, provide the following information:</p>\n         <ul>\n            <li>\n               <p>Use the <code>KeyId</code> parameter to identify an asymmetric KMS key with a\n            <code>KeyUsage</code> value of <code>SIGN_VERIFY</code>. To get the\n            <code>KeyUsage</code> value of a KMS key, use the <a>DescribeKey</a>\n          operation. The caller must have <code>kms:Sign</code> permission on the KMS key.</p>\n            </li>\n            <li>\n               <p>Use the <code>Message</code> parameter to specify the message or message digest to\n          sign. You can submit messages of up to 4096 bytes. To sign a larger message, generate a\n          hash digest of the message, and then provide the hash digest in the <code>Message</code>\n          parameter. To indicate whether the message is a full message or a digest, use the\n            <code>MessageType</code> parameter.</p>\n            </li>\n            <li>\n               <p>Choose a signing algorithm that is compatible with the KMS key. </p>\n            </li>\n         </ul>\n         <important>\n            <p>When signing a message, be sure to record the KMS key and the signing algorithm. This\n        information is required to verify the signature.</p>\n         </important>\n         <note>\n            <p>Best practices recommend that you limit the time during which any signature is\n        effective. This deters an attack where the actor uses a signed message to establish validity\n        repeatedly or long after the message is superseded. Signatures do not include a timestamp,\n        but you can include a timestamp in the signed message to help you detect when its time to\n        refresh the signature. </p>\n         </note>\n         <p>To verify the signature that this operation generates, use the <a>Verify</a>\n      operation. Or use the <a>GetPublicKey</a> operation to download the public key and\n      then use the public key to verify the signature outside of KMS. </p>\n         <p>The KMS key that you use for this operation must be in a compatible key state. For\ndetails, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>\n         <p>\n            <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different Amazon Web Services account, specify\n  the key ARN or alias ARN in the value of the <code>KeyId</code> parameter.</p>\n         <p>\n            <b>Required permissions</b>: <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html\">kms:Sign</a> (key policy)</p>\n         <p>\n            <b>Related operations</b>: <a>Verify</a>\n         </p>\n         <p>\n            <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. \n  For more information, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html\">KMS eventual consistency</a>.</p>",
                 "smithy.api#examples": [
                     {
-                        "title": "To digitally sign a message digest with an asymmetric KMS key.",
-                        "documentation": "This operation uses the private key in an asymmetric RSA signing KMS key to generate a digital signature for a message digest. In this example, a large message was hashed and the resulting digest is provided in the Message parameter. To tell KMS not to hash the message again, the MessageType field is set to DIGEST",
-                        "input": {
-                            "KeyId": "alias/RSA_signing_key",
-                            "Message": "<message digest to be signed>",
-                            "MessageType": "DIGEST",
-                            "SigningAlgorithm": "RSASSA_PKCS1_V1_5_SHA_256"
-                        },
-                        "output": {
-                            "KeyId": "arn:aws:kms:us-east-2:111122223333:key/0987dcba-09fe-87dc-65ba-ab0987654321",
-                            "Signature": "<binary data>",
-                            "SigningAlgorithm": "RSASSA_PKCS1_V1_5_SHA_256"
-                        }
-                    },
-                    {
                         "title": "To digitally sign a message with an asymmetric KMS key.",
                         "documentation": "This operation uses the private key in an asymmetric elliptic curve (ECC) KMS key to generate a digital signature for a given message.",
                         "input": {
@@ -6878,6 +6863,21 @@
                             "KeyId": "arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab",
                             "Signature": "<binary data>",
                             "SigningAlgorithm": "ECDSA_SHA_384"
+                        }
+                    },
+                    {
+                        "title": "To digitally sign a message digest with an asymmetric KMS key.",
+                        "documentation": "This operation uses the private key in an asymmetric RSA signing KMS key to generate a digital signature for a message digest. In this example, a large message was hashed and the resulting digest is provided in the Message parameter. To tell KMS not to hash the message again, the MessageType field is set to DIGEST",
+                        "input": {
+                            "KeyId": "alias/RSA_signing_key",
+                            "Message": "<message digest to be signed>",
+                            "MessageType": "DIGEST",
+                            "SigningAlgorithm": "RSASSA_PKCS1_V1_5_SHA_256"
+                        },
+                        "output": {
+                            "KeyId": "arn:aws:kms:us-east-2:111122223333:key/0987dcba-09fe-87dc-65ba-ab0987654321",
+                            "Signature": "<binary data>",
+                            "SigningAlgorithm": "RSASSA_PKCS1_V1_5_SHA_256"
                         }
                     }
                 ]
@@ -8821,13 +8821,11 @@
                         "output": {}
                     },
                     {
-                        "title": "To update the proxy connectivity of an external key store to VPC_ENDPOINT_SERVICE",
-                        "documentation": "To change the external key store proxy connectivity option from public endpoint connectivity to VPC endpoint service connectivity, in addition to changing the <code>XksProxyConnectivity</code> value, you must change the <code>XksProxyUriEndpoint</code> value to reflect the private DNS name associated with the VPC endpoint service. You must also add an <code>XksProxyVpcEndpointServiceName</code> value.",
+                        "title": "To associate the custom key store with a different, but related, AWS CloudHSM cluster.",
+                        "documentation": "This example changes the AWS CloudHSM cluster that is associated with an AWS CloudHSM key store to a related cluster, such as a different backup of the same cluster. This operation does not return any data. To verify that the operation worked, use the DescribeCustomKeyStores operation.",
                         "input": {
                             "CustomKeyStoreId": "cks-1234567890abcdef0",
-                            "XksProxyConnectivity": "VPC_ENDPOINT_SERVICE",
-                            "XksProxyUriEndpoint": "https://myproxy-private.xks.example.com",
-                            "XksProxyVpcEndpointServiceName": "com.amazonaws.vpce.us-east-1.vpce-svc-example"
+                            "CloudHsmClusterId": "cluster-234abcdefABC"
                         },
                         "output": {}
                     },
@@ -8841,11 +8839,13 @@
                         "output": {}
                     },
                     {
-                        "title": "To associate the custom key store with a different, but related, AWS CloudHSM cluster.",
-                        "documentation": "This example changes the AWS CloudHSM cluster that is associated with an AWS CloudHSM key store to a related cluster, such as a different backup of the same cluster. This operation does not return any data. To verify that the operation worked, use the DescribeCustomKeyStores operation.",
+                        "title": "To update the proxy connectivity of an external key store to VPC_ENDPOINT_SERVICE",
+                        "documentation": "To change the external key store proxy connectivity option from public endpoint connectivity to VPC endpoint service connectivity, in addition to changing the <code>XksProxyConnectivity</code> value, you must change the <code>XksProxyUriEndpoint</code> value to reflect the private DNS name associated with the VPC endpoint service. You must also add an <code>XksProxyVpcEndpointServiceName</code> value.",
                         "input": {
                             "CustomKeyStoreId": "cks-1234567890abcdef0",
-                            "CloudHsmClusterId": "cluster-234abcdefABC"
+                            "XksProxyConnectivity": "VPC_ENDPOINT_SERVICE",
+                            "XksProxyUriEndpoint": "https://myproxy-private.xks.example.com",
+                            "XksProxyVpcEndpointServiceName": "com.amazonaws.vpce.us-east-1.vpce-svc-example"
                         },
                         "output": {}
                     }

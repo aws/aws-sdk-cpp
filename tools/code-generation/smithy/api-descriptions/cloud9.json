@@ -1507,6 +1507,29 @@
                 "smithy.api#documentation": "<p>Gets information about environment members for an Cloud9 development environment.</p>",
                 "smithy.api#examples": [
                     {
+                        "title": "DescribeEnvironmentMemberships1",
+                        "documentation": "The following example gets information about all of the environment members for the specified development environment.",
+                        "input": {
+                            "environmentId": "8d9967e2f0624182b74e7690ad69ebEX"
+                        },
+                        "output": {
+                            "memberships": [
+                                {
+                                    "environmentId": "8d9967e2f0624182b74e7690ad69ebEX",
+                                    "permissions": "read-write",
+                                    "userArn": "arn:aws:iam::123456789012:user/AnotherDemoUser",
+                                    "userId": "AIDAJ3BA6O2FMJWCWXHEX"
+                                },
+                                {
+                                    "environmentId": "8d9967e2f0624182b74e7690ad69ebEX",
+                                    "permissions": "owner",
+                                    "userArn": "arn:aws:iam::123456789012:user/MyDemoUser",
+                                    "userId": "AIDAJNUEDQAQWFELJDLEX"
+                                }
+                            ]
+                        }
+                    },
+                    {
                         "title": "DescribeEnvironmentMemberships2",
                         "documentation": "The following example gets information about the owner of the specified development environment.",
                         "input": {
@@ -1544,29 +1567,6 @@
                                 {
                                     "environmentId": "12bfc3cd537f41cb9776f8af5525c9EX",
                                     "lastAccess": "2018-01-19T11:39:19Z",
-                                    "permissions": "owner",
-                                    "userArn": "arn:aws:iam::123456789012:user/MyDemoUser",
-                                    "userId": "AIDAJNUEDQAQWFELJDLEX"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "title": "DescribeEnvironmentMemberships1",
-                        "documentation": "The following example gets information about all of the environment members for the specified development environment.",
-                        "input": {
-                            "environmentId": "8d9967e2f0624182b74e7690ad69ebEX"
-                        },
-                        "output": {
-                            "memberships": [
-                                {
-                                    "environmentId": "8d9967e2f0624182b74e7690ad69ebEX",
-                                    "permissions": "read-write",
-                                    "userArn": "arn:aws:iam::123456789012:user/AnotherDemoUser",
-                                    "userId": "AIDAJ3BA6O2FMJWCWXHEX"
-                                },
-                                {
-                                    "environmentId": "8d9967e2f0624182b74e7690ad69ebEX",
                                     "permissions": "owner",
                                     "userArn": "arn:aws:iam::123456789012:user/MyDemoUser",
                                     "userId": "AIDAJNUEDQAQWFELJDLEX"

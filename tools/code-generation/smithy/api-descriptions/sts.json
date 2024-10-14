@@ -2990,24 +2990,6 @@
                             "Account": "123456789012",
                             "Arn": "arn:aws:iam::123456789012:user/Alice"
                         }
-                    },
-                    {
-                        "title": "To get details about a calling user federated with AssumeRole",
-                        "documentation": "This example shows a request and response made with temporary credentials created by AssumeRole. The name of the assumed role is my-role-name, and the RoleSessionName is set to my-role-session-name.",
-                        "output": {
-                            "UserId": "AKIAI44QH8DHBEXAMPLE:my-role-session-name",
-                            "Account": "123456789012",
-                            "Arn": "arn:aws:sts::123456789012:assumed-role/my-role-name/my-role-session-name"
-                        }
-                    },
-                    {
-                        "title": "To get details about a calling user federated with GetFederationToken",
-                        "documentation": "This example shows a request and response made with temporary credentials created by using GetFederationToken. The Name parameter is set to my-federated-user-name.",
-                        "output": {
-                            "UserId": "123456789012:my-federated-user-name",
-                            "Account": "123456789012",
-                            "Arn": "arn:aws:sts::123456789012:federated-user/my-federated-user-name"
-                        }
                     }
                 ]
             }
