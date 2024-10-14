@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The AWS identity.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon Web Services identity.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/AwsIdentity">AWS
    * API Reference</a></p>
    */
@@ -39,8 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The external ID used to estalish trust relationship with the AWS
-     * identity.</p>
+     * <p>The external ID used to establish trust relationship with the Amazon Web
+     * Services identity.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS identity principal.</p>
+     * <p>The Amazon Web Services identity principal.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }

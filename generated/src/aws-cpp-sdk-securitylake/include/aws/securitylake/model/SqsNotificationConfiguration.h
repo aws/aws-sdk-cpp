@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>The configurations for SQS subscriber notification.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>The configurations used for EventBridge subscriber
+   * notification.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/SqsNotificationConfiguration">AWS
    * API Reference</a></p>
    */

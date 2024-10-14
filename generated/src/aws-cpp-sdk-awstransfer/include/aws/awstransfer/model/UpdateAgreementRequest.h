@@ -127,7 +127,7 @@ namespace Model
     /**
      * <p>To change the landing directory (folder) for files that are transferred,
      * provide the bucket folder that you want to use; for example,
-     * <code>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
+     * <code>/<i>amzn-s3-demo-bucket</i>/<i>home</i>/<i>mydirectory</i> </code>.</p>
      */
     inline const Aws::String& GetBaseDirectory() const{ return m_baseDirectory; }
     inline bool BaseDirectoryHasBeenSet() const { return m_baseDirectoryHasBeenSet; }

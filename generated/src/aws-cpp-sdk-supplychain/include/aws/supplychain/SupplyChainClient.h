@@ -166,6 +166,36 @@ namespace SupplyChain
         }
 
         /**
+         * <p>Create a new instance for AWS Supply Chain. This is an asynchronous
+         * operation. Upon receiving a CreateInstance request, AWS Supply Chain immediately
+         * returns the instance resource, with instance ID, and the initializing state
+         * while simultaneously creating all required Amazon Web Services resources for an
+         * instance creation. You can use GetInstance to check the status of the
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for CreateInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateInstanceRequestT = Model::CreateInstanceRequest>
+        Model::CreateInstanceOutcomeCallable CreateInstanceCallable(const CreateInstanceRequestT& request = {}) const
+        {
+            return SubmitCallable(&SupplyChainClient::CreateInstance, request);
+        }
+
+        /**
+         * An Async wrapper for CreateInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateInstanceRequestT = Model::CreateInstanceRequest>
+        void CreateInstanceAsync(const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateInstanceRequestT& request = {}) const
+        {
+            return SubmitAsync(&SupplyChainClient::CreateInstance, request, handler, context);
+        }
+
+        /**
          * <p>Delete the DataIntegrationFlow.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataIntegrationFlow">AWS
          * API Reference</a></p>
@@ -213,6 +243,35 @@ namespace SupplyChain
         void DeleteDataLakeDatasetAsync(const DeleteDataLakeDatasetRequestT& request, const DeleteDataLakeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SupplyChainClient::DeleteDataLakeDataset, request, handler, context);
+        }
+
+        /**
+         * <p>Delete the instance. This is an asynchronous operation. Upon receiving a
+         * DeleteInstance request, AWS Supply Chain immediately returns a response with the
+         * instance resource, delete state while cleaning up all Amazon Web Services
+         * resources created during the instance creation process. You can use the
+         * GetInstance action to check the instance status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteInstanceRequestT = Model::DeleteInstanceRequest>
+        Model::DeleteInstanceOutcomeCallable DeleteInstanceCallable(const DeleteInstanceRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::DeleteInstance, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteInstanceRequestT = Model::DeleteInstanceRequest>
+        void DeleteInstanceAsync(const DeleteInstanceRequestT& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::DeleteInstance, request, handler, context);
         }
 
         /**
@@ -292,6 +351,31 @@ namespace SupplyChain
         }
 
         /**
+         * <p>Get the AWS Supply Chain instance details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInstanceOutcome GetInstance(const Model::GetInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetInstanceRequestT = Model::GetInstanceRequest>
+        Model::GetInstanceOutcomeCallable GetInstanceCallable(const GetInstanceRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::GetInstance, request);
+        }
+
+        /**
+         * An Async wrapper for GetInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetInstanceRequestT = Model::GetInstanceRequest>
+        void GetInstanceAsync(const GetInstanceRequestT& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::GetInstance, request, handler, context);
+        }
+
+        /**
          * <p>Lists all the DataIntegrationFlows in a paginated way.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlows">AWS
@@ -341,6 +425,32 @@ namespace SupplyChain
         void ListDataLakeDatasetsAsync(const ListDataLakeDatasetsRequestT& request, const ListDataLakeDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SupplyChainClient::ListDataLakeDatasets, request, handler, context);
+        }
+
+        /**
+         * <p>List all the AWS Supply Chain instances in a paginated way.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListInstances that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListInstancesRequestT = Model::ListInstancesRequest>
+        Model::ListInstancesOutcomeCallable ListInstancesCallable(const ListInstancesRequestT& request = {}) const
+        {
+            return SubmitCallable(&SupplyChainClient::ListInstances, request);
+        }
+
+        /**
+         * An Async wrapper for ListInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListInstancesRequestT = Model::ListInstancesRequest>
+        void ListInstancesAsync(const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListInstancesRequestT& request = {}) const
+        {
+            return SubmitAsync(&SupplyChainClient::ListInstances, request, handler, context);
         }
 
         /**
@@ -498,6 +608,31 @@ namespace SupplyChain
         void UpdateDataLakeDatasetAsync(const UpdateDataLakeDatasetRequestT& request, const UpdateDataLakeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SupplyChainClient::UpdateDataLakeDataset, request, handler, context);
+        }
+
+        /**
+         * <p>Update the instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateInstanceOutcome UpdateInstance(const Model::UpdateInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateInstanceRequestT = Model::UpdateInstanceRequest>
+        Model::UpdateInstanceOutcomeCallable UpdateInstanceCallable(const UpdateInstanceRequestT& request) const
+        {
+            return SubmitCallable(&SupplyChainClient::UpdateInstance, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateInstanceRequestT = Model::UpdateInstanceRequest>
+        void UpdateInstanceAsync(const UpdateInstanceRequestT& request, const UpdateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupplyChainClient::UpdateInstance, request, handler, context);
         }
 
 

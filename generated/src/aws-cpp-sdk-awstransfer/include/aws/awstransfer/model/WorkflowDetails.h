@@ -46,7 +46,9 @@ namespace Model
      * is uploaded.</p> <p>To remove an associated workflow from a server, you can
      * provide an empty <code>OnUpload</code> object, as in the following example.</p>
      * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * --workflow-details '{"OnUpload":[]}'</code> </p>  <p>
+     * <code>OnUpload</code> can contain a maximum of one <code>WorkflowDetail</code>
+     * object.</p> 
      */
     inline const Aws::Vector<WorkflowDetail>& GetOnUpload() const{ return m_onUpload; }
     inline bool OnUploadHasBeenSet() const { return m_onUploadHasBeenSet; }
@@ -63,7 +65,8 @@ namespace Model
      * <p>A trigger that starts a workflow if a file is only partially uploaded. You
      * can attach a workflow to a server that executes whenever there is a partial
      * upload.</p> <p>A <i>partial upload</i> occurs when a file is open when the
-     * session disconnects.</p>
+     * session disconnects.</p>  <p> <code>OnPartialUpload</code> can contain a
+     * maximum of one <code>WorkflowDetail</code> object.</p> 
      */
     inline const Aws::Vector<WorkflowDetail>& GetOnPartialUpload() const{ return m_onPartialUpload; }
     inline bool OnPartialUploadHasBeenSet() const { return m_onPartialUploadHasBeenSet; }

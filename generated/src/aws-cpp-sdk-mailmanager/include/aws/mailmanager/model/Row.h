@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/model/Envelope.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -84,6 +85,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The SMTP envelope information of the email.</p>
+     */
+    inline const Envelope& GetEnvelope() const{ return m_envelope; }
+    inline bool EnvelopeHasBeenSet() const { return m_envelopeHasBeenSet; }
+    inline void SetEnvelope(const Envelope& value) { m_envelopeHasBeenSet = true; m_envelope = value; }
+    inline void SetEnvelope(Envelope&& value) { m_envelopeHasBeenSet = true; m_envelope = std::move(value); }
+    inline Row& WithEnvelope(const Envelope& value) { SetEnvelope(value); return *this;}
+    inline Row& WithEnvelope(Envelope&& value) { SetEnvelope(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The email address of the sender.</p>
      */
     inline const Aws::String& GetFrom() const{ return m_from; }
@@ -118,6 +131,20 @@ namespace Model
     inline Row& WithInReplyTo(const Aws::String& value) { SetInReplyTo(value); return *this;}
     inline Row& WithInReplyTo(Aws::String&& value) { SetInReplyTo(std::move(value)); return *this;}
     inline Row& WithInReplyTo(const char* value) { SetInReplyTo(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the ingress endpoint through which the email was received.</p>
+     */
+    inline const Aws::String& GetIngressPointId() const{ return m_ingressPointId; }
+    inline bool IngressPointIdHasBeenSet() const { return m_ingressPointIdHasBeenSet; }
+    inline void SetIngressPointId(const Aws::String& value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId = value; }
+    inline void SetIngressPointId(Aws::String&& value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId = std::move(value); }
+    inline void SetIngressPointId(const char* value) { m_ingressPointIdHasBeenSet = true; m_ingressPointId.assign(value); }
+    inline Row& WithIngressPointId(const Aws::String& value) { SetIngressPointId(value); return *this;}
+    inline Row& WithIngressPointId(Aws::String&& value) { SetIngressPointId(std::move(value)); return *this;}
+    inline Row& WithIngressPointId(const char* value) { SetIngressPointId(value); return *this;}
     ///@}
 
     ///@{
@@ -159,6 +186,34 @@ namespace Model
     inline void SetReceivedTimestamp(Aws::Utils::DateTime&& value) { m_receivedTimestampHasBeenSet = true; m_receivedTimestamp = std::move(value); }
     inline Row& WithReceivedTimestamp(const Aws::Utils::DateTime& value) { SetReceivedTimestamp(value); return *this;}
     inline Row& WithReceivedTimestamp(Aws::Utils::DateTime&& value) { SetReceivedTimestamp(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the host from which the email was received.</p>
+     */
+    inline const Aws::String& GetSenderHostname() const{ return m_senderHostname; }
+    inline bool SenderHostnameHasBeenSet() const { return m_senderHostnameHasBeenSet; }
+    inline void SetSenderHostname(const Aws::String& value) { m_senderHostnameHasBeenSet = true; m_senderHostname = value; }
+    inline void SetSenderHostname(Aws::String&& value) { m_senderHostnameHasBeenSet = true; m_senderHostname = std::move(value); }
+    inline void SetSenderHostname(const char* value) { m_senderHostnameHasBeenSet = true; m_senderHostname.assign(value); }
+    inline Row& WithSenderHostname(const Aws::String& value) { SetSenderHostname(value); return *this;}
+    inline Row& WithSenderHostname(Aws::String&& value) { SetSenderHostname(std::move(value)); return *this;}
+    inline Row& WithSenderHostname(const char* value) { SetSenderHostname(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The IP address of the host from which the email was received.</p>
+     */
+    inline const Aws::String& GetSenderIpAddress() const{ return m_senderIpAddress; }
+    inline bool SenderIpAddressHasBeenSet() const { return m_senderIpAddressHasBeenSet; }
+    inline void SetSenderIpAddress(const Aws::String& value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress = value; }
+    inline void SetSenderIpAddress(Aws::String&& value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress = std::move(value); }
+    inline void SetSenderIpAddress(const char* value) { m_senderIpAddressHasBeenSet = true; m_senderIpAddress.assign(value); }
+    inline Row& WithSenderIpAddress(const Aws::String& value) { SetSenderIpAddress(value); return *this;}
+    inline Row& WithSenderIpAddress(Aws::String&& value) { SetSenderIpAddress(std::move(value)); return *this;}
+    inline Row& WithSenderIpAddress(const char* value) { SetSenderIpAddress(value); return *this;}
     ///@}
 
     ///@{
@@ -241,6 +296,9 @@ namespace Model
     Aws::String m_date;
     bool m_dateHasBeenSet = false;
 
+    Envelope m_envelope;
+    bool m_envelopeHasBeenSet = false;
+
     Aws::String m_from;
     bool m_fromHasBeenSet = false;
 
@@ -250,6 +308,9 @@ namespace Model
     Aws::String m_inReplyTo;
     bool m_inReplyToHasBeenSet = false;
 
+    Aws::String m_ingressPointId;
+    bool m_ingressPointIdHasBeenSet = false;
+
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet = false;
 
@@ -258,6 +319,12 @@ namespace Model
 
     Aws::Utils::DateTime m_receivedTimestamp;
     bool m_receivedTimestampHasBeenSet = false;
+
+    Aws::String m_senderHostname;
+    bool m_senderHostnameHasBeenSet = false;
+
+    Aws::String m_senderIpAddress;
+    bool m_senderIpAddressHasBeenSet = false;
 
     Aws::String m_subject;
     bool m_subjectHasBeenSet = false;

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/TransitionState.h>
 #include <aws/codepipeline/model/StageConditionState.h>
+#include <aws/codepipeline/model/RetryStageMetadata.h>
 #include <aws/codepipeline/model/ActionState.h>
 #include <utility>
 
@@ -155,6 +156,19 @@ namespace Model
     inline StageState& WithOnFailureConditionState(const StageConditionState& value) { SetOnFailureConditionState(value); return *this;}
     inline StageState& WithOnFailureConditionState(StageConditionState&& value) { SetOnFailureConditionState(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>he details of a specific automatic retry on stage failure, including the
+     * attempt number and trigger.</p>
+     */
+    inline const RetryStageMetadata& GetRetryStageMetadata() const{ return m_retryStageMetadata; }
+    inline bool RetryStageMetadataHasBeenSet() const { return m_retryStageMetadataHasBeenSet; }
+    inline void SetRetryStageMetadata(const RetryStageMetadata& value) { m_retryStageMetadataHasBeenSet = true; m_retryStageMetadata = value; }
+    inline void SetRetryStageMetadata(RetryStageMetadata&& value) { m_retryStageMetadataHasBeenSet = true; m_retryStageMetadata = std::move(value); }
+    inline StageState& WithRetryStageMetadata(const RetryStageMetadata& value) { SetRetryStageMetadata(value); return *this;}
+    inline StageState& WithRetryStageMetadata(RetryStageMetadata&& value) { SetRetryStageMetadata(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_stageName;
@@ -183,6 +197,9 @@ namespace Model
 
     StageConditionState m_onFailureConditionState;
     bool m_onFailureConditionStateHasBeenSet = false;
+
+    RetryStageMetadata m_retryStageMetadata;
+    bool m_retryStageMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Lists the failures that cannot be retried in the current Region.</p>
+     * <p>Lists the failures that cannot be retried.</p>
      */
     inline const Aws::Vector<DataLakeException>& GetExceptions() const{ return m_exceptions; }
     inline void SetExceptions(const Aws::Vector<DataLakeException>& value) { m_exceptions = value; }
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will

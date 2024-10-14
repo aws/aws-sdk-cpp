@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>The supported source types from which logs and events are collected in Amazon
-   * Security Lake. For a list of supported Amazon Web Services, see the <a
+   * Security Lake. For a list of supported Amazon Web Services services, see the <a
    * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
    * Security Lake User Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/LogSourceResource">AWS
@@ -44,7 +44,7 @@ namespace Model
     ///@{
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services. For more information, see the <a
+     * Amazon Web Services services. For more information, see the <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
      * Security Lake User Guide</a>.</p>
      */

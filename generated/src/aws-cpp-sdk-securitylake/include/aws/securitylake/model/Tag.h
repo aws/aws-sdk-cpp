@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The value that��s associated with the specified tag key (<code>key</code>).
+     * <p>The value that’s associated with the specified tag key (<code>key</code>).
      * This value acts as a descriptor for the tag key. A tag value cannot be null, but
      * it can be an empty string.</p>
      */

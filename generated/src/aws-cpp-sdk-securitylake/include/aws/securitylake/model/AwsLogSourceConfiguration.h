@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The Security Lake logs source configuration file describes the information
-   * needed to generate Security Lake logs. </p><p><h3>See Also:</h3>   <a
+   * <p>To add a natively-supported Amazon Web Services service as a log source, use
+   * these parameters to specify the configuration settings for the log source.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/AwsLogSourceConfiguration">AWS
    * API Reference</a></p>
    */
@@ -73,8 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name for a Amazon Web Services source. This must be a Regionally unique
-     * value.</p>
+     * <p>The name for a Amazon Web Services source. </p>
      */
     inline const AwsLogSourceName& GetSourceName() const{ return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
@@ -86,8 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version for a Amazon Web Services source. This must be a Regionally
-     * unique value.</p>
+     * <p>The version for a Amazon Web Services source. </p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }

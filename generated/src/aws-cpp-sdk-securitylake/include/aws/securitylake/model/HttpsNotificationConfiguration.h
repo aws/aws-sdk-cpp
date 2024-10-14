@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The configurations for HTTPS subscriber notification.</p><p><h3>See
+   * <p>The configurations used for HTTPS subscriber notification.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/HttpsNotificationConfiguration">AWS
    * API Reference</a></p>

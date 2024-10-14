@@ -44,6 +44,7 @@
 #include <aws/awstransfer/model/ListCertificatesResult.h>
 #include <aws/awstransfer/model/ListConnectorsResult.h>
 #include <aws/awstransfer/model/ListExecutionsResult.h>
+#include <aws/awstransfer/model/ListFileTransferResultsResult.h>
 #include <aws/awstransfer/model/ListHostKeysResult.h>
 #include <aws/awstransfer/model/ListProfilesResult.h>
 #include <aws/awstransfer/model/ListSecurityPoliciesResult.h>
@@ -148,6 +149,7 @@ namespace Aws
       class ListCertificatesRequest;
       class ListConnectorsRequest;
       class ListExecutionsRequest;
+      class ListFileTransferResultsRequest;
       class ListHostKeysRequest;
       class ListProfilesRequest;
       class ListSecurityPoliciesRequest;
@@ -211,6 +213,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListCertificatesResult, TransferError> ListCertificatesOutcome;
       typedef Aws::Utils::Outcome<ListConnectorsResult, TransferError> ListConnectorsOutcome;
       typedef Aws::Utils::Outcome<ListExecutionsResult, TransferError> ListExecutionsOutcome;
+      typedef Aws::Utils::Outcome<ListFileTransferResultsResult, TransferError> ListFileTransferResultsOutcome;
       typedef Aws::Utils::Outcome<ListHostKeysResult, TransferError> ListHostKeysOutcome;
       typedef Aws::Utils::Outcome<ListProfilesResult, TransferError> ListProfilesOutcome;
       typedef Aws::Utils::Outcome<ListSecurityPoliciesResult, TransferError> ListSecurityPoliciesOutcome;
@@ -274,6 +277,7 @@ namespace Aws
       typedef std::future<ListCertificatesOutcome> ListCertificatesOutcomeCallable;
       typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
       typedef std::future<ListExecutionsOutcome> ListExecutionsOutcomeCallable;
+      typedef std::future<ListFileTransferResultsOutcome> ListFileTransferResultsOutcomeCallable;
       typedef std::future<ListHostKeysOutcome> ListHostKeysOutcomeCallable;
       typedef std::future<ListProfilesOutcome> ListProfilesOutcomeCallable;
       typedef std::future<ListSecurityPoliciesOutcome> ListSecurityPoliciesOutcomeCallable;
@@ -340,6 +344,7 @@ namespace Aws
     typedef std::function<void(const TransferClient*, const Model::ListCertificatesRequest&, const Model::ListCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificatesResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::ListConnectorsRequest&, const Model::ListConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectorsResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::ListExecutionsRequest&, const Model::ListExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExecutionsResponseReceivedHandler;
+    typedef std::function<void(const TransferClient*, const Model::ListFileTransferResultsRequest&, const Model::ListFileTransferResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFileTransferResultsResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::ListHostKeysRequest&, const Model::ListHostKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostKeysResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::ListProfilesRequest&, const Model::ListProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfilesResponseReceivedHandler;
     typedef std::function<void(const TransferClient*, const Model::ListSecurityPoliciesRequest&, const Model::ListSecurityPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityPoliciesResponseReceivedHandler;

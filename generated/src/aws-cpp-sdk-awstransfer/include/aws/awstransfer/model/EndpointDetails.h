@@ -31,14 +31,19 @@ namespace Model
    * incoming internet traffic, invoke the <code>UpdateServer</code> API and attach
    * an Elastic IP address to your server's endpoint.</p>  <p> After May 19,
    * 2021, you won't be able to create a server using
-   * <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if
+   * <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if
    * your account hasn't already done so before May 19, 2021. If you have already
    * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web
-   * Servicesaccount on or before May 19, 2021, you will not be affected. After this
+   * Services account on or before May 19, 2021, you will not be affected. After this
    * date, use <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more
    * information, see
    * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
-   * <p><h3>See Also:</h3>   <a
+   * <p>It is recommended that you use <code>VPC</code> as the
+   * <code>EndpointType</code>. With this endpoint type, you have the option to
+   * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
+   * your server's endpoint and use VPC security groups to restrict traffic by the
+   * client's public IP address. This is not possible with <code>EndpointType</code>
+   * set to <code>VPC_ENDPOINT</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EndpointDetails">AWS
    * API Reference</a></p>
    */

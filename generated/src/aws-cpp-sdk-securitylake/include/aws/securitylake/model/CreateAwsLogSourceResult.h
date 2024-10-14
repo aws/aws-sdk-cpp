@@ -35,9 +35,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Lists all accounts in which enabling a natively supported Amazon Web Service
-     * as a Security Lake source failed. The failure occurred as these accounts are not
-     * part of an organization.</p>
+     * <p>Lists all accounts in which enabling a natively supported Amazon Web Services
+     * service as a Security Lake source failed. The failure occurred as these accounts
+     * are not part of an organization.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFailed() const{ return m_failed; }
     inline void SetFailed(const Aws::Vector<Aws::String>& value) { m_failed = value; }

@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/mailmanager/MailManager_EXPORTS.h>
+#include <aws/mailmanager/model/Envelope.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mailmanager/model/Metadata.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +42,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The SMTP envelope information of the email.</p>
+     */
+    inline const Envelope& GetEnvelope() const{ return m_envelope; }
+    inline void SetEnvelope(const Envelope& value) { m_envelope = value; }
+    inline void SetEnvelope(Envelope&& value) { m_envelope = std::move(value); }
+    inline GetArchiveMessageResult& WithEnvelope(const Envelope& value) { SetEnvelope(value); return *this;}
+    inline GetArchiveMessageResult& WithEnvelope(Envelope&& value) { SetEnvelope(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A pre-signed URL to temporarily download the full message content.</p>
      */
     inline const Aws::String& GetMessageDownloadLink() const{ return m_messageDownloadLink; }
@@ -49,6 +62,17 @@ namespace Model
     inline GetArchiveMessageResult& WithMessageDownloadLink(const Aws::String& value) { SetMessageDownloadLink(value); return *this;}
     inline GetArchiveMessageResult& WithMessageDownloadLink(Aws::String&& value) { SetMessageDownloadLink(std::move(value)); return *this;}
     inline GetArchiveMessageResult& WithMessageDownloadLink(const char* value) { SetMessageDownloadLink(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The metadata about the email.</p>
+     */
+    inline const Metadata& GetMetadata() const{ return m_metadata; }
+    inline void SetMetadata(const Metadata& value) { m_metadata = value; }
+    inline void SetMetadata(Metadata&& value) { m_metadata = std::move(value); }
+    inline GetArchiveMessageResult& WithMetadata(const Metadata& value) { SetMetadata(value); return *this;}
+    inline GetArchiveMessageResult& WithMetadata(Metadata&& value) { SetMetadata(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +87,11 @@ namespace Model
     ///@}
   private:
 
+    Envelope m_envelope;
+
     Aws::String m_messageDownloadLink;
+
+    Metadata m_metadata;
 
     Aws::String m_requestId;
   };

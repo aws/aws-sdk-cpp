@@ -17,6 +17,8 @@ StartArchiveExportRequest::StartArchiveExportRequest() :
     m_exportDestinationConfigurationHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_fromTimestampHasBeenSet(false),
+    m_includeMetadata(false),
+    m_includeMetadataHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_toTimestampHasBeenSet(false)
@@ -48,6 +50,12 @@ Aws::String StartArchiveExportRequest::SerializePayload() const
   if(m_fromTimestampHasBeenSet)
   {
    payload.WithDouble("FromTimestamp", m_fromTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_includeMetadataHasBeenSet)
+  {
+   payload.WithBool("IncludeMetadata", m_includeMetadata);
+
   }
 
   if(m_maxResultsHasBeenSet)

@@ -53,9 +53,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The supported Amazon Web Services from which logs and events are collected.
-     * Security Lake supports log and event collection for natively supported Amazon
-     * Web Services.</p>
+     * <p>The supported Amazon Web Services services from which logs and events are
+     * collected. Security Lake supports log and event collection for natively
+     * supported Amazon Web Services services.</p>
      */
     inline const Aws::Vector<LogSourceResource>& GetSources() const{ return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }

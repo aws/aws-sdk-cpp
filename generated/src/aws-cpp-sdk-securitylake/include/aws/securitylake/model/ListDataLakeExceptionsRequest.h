@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>List the maximum number of failures in Security Lake.</p>
+     * <p>Lists the maximum number of failures in Security Lake.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -45,7 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>List if there are more results available. The value of nextToken is a unique
+     * <p>Lists if there are more results available. The value of nextToken is a unique
      * pagination token for each page. Repeat the call using the returned token to
      * retrieve the next page. Keep all other arguments unchanged.</p> <p>Each
      * pagination token expires after 24 hours. Using an expired pagination token will

@@ -21,7 +21,8 @@ namespace Model
     Failed,
     Stopped,
     Stopping,
-    Succeeded
+    Succeeded,
+    Skipped
   };
 
 namespace StageExecutionStatusMapper

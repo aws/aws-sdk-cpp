@@ -21,6 +21,7 @@ namespace Model
 FailureConditions::FailureConditions() : 
     m_result(Result::NOT_SET),
     m_resultHasBeenSet(false),
+    m_retryConfigurationHasBeenSet(false),
     m_conditionsHasBeenSet(false)
 {
 }
@@ -38,6 +39,13 @@ FailureConditions& FailureConditions::operator =(JsonView jsonValue)
     m_result = ResultMapper::GetResultForName(jsonValue.GetString("result"));
 
     m_resultHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("retryConfiguration"))
+  {
+    m_retryConfiguration = jsonValue.GetObject("retryConfiguration");
+
+    m_retryConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("conditions"))
@@ -60,6 +68,12 @@ JsonValue FailureConditions::Jsonize() const
   if(m_resultHasBeenSet)
   {
    payload.WithString("result", ResultMapper::GetNameForResult(m_result));
+  }
+
+  if(m_retryConfigurationHasBeenSet)
+  {
+   payload.WithObject("retryConfiguration", m_retryConfiguration.Jsonize());
+
   }
 
   if(m_conditionsHasBeenSet)
