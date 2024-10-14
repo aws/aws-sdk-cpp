@@ -29,9 +29,21 @@ GetArchiveMessageResult::GetArchiveMessageResult(const Aws::AmazonWebServiceResu
 GetArchiveMessageResult& GetArchiveMessageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Envelope"))
+  {
+    m_envelope = jsonValue.GetObject("Envelope");
+
+  }
+
   if(jsonValue.ValueExists("MessageDownloadLink"))
   {
     m_messageDownloadLink = jsonValue.GetString("MessageDownloadLink");
+
+  }
+
+  if(jsonValue.ValueExists("Metadata"))
+  {
+    m_metadata = jsonValue.GetObject("Metadata");
 
   }
 

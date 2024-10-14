@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the
-     * Security Lake object.</p>
+     * <p>The identifier of KMS encryption key used by Amazon Security Lake to encrypt
+     * the Security Lake object.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

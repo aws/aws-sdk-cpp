@@ -26,6 +26,7 @@ namespace Aws
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
         static const int Stopping_HASH = HashingUtils::HashString("Stopping");
         static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
+        static const int Skipped_HASH = HashingUtils::HashString("Skipped");
 
 
         StageExecutionStatus GetStageExecutionStatusForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return StageExecutionStatus::Succeeded;
           }
+          else if (hashCode == Skipped_HASH)
+          {
+            return StageExecutionStatus::Skipped;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "Stopping";
           case StageExecutionStatus::Succeeded:
             return "Succeeded";
+          case StageExecutionStatus::Skipped:
+            return "Skipped";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

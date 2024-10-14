@@ -37,8 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The supported Amazon Web Services from which logs and events are collected.
-     * For the list of supported Amazon Web Services, see the <a
+     * <p>The supported Amazon Web Services services from which logs and events are
+     * collected. For the list of supported Amazon Web Services services, see the <a
      * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
      * Security Lake User Guide</a>.</p>
      */
@@ -83,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS identity used to access your data.</p>
+     * <p>The Amazon Web Services identity used to access your data.</p>
      */
     inline const AwsIdentity& GetSubscriberIdentity() const{ return m_subscriberIdentity; }
     inline bool SubscriberIdentityHasBeenSet() const { return m_subscriberIdentityHasBeenSet; }

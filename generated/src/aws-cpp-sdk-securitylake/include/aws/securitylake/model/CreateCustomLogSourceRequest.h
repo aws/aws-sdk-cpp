@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for the third-party custom source.</p>
+     * <p>The configuration used for the third-party custom source.</p>
      */
     inline const CustomLogSourceConfiguration& GetConfiguration() const{ return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
@@ -87,7 +87,12 @@ namespace Model
     ///@{
     /**
      * <p>Specify the name for a third-party custom source. This must be a Regionally
-     * unique value.</p>
+     * unique value. The <code>sourceName</code> you enter here, is used in the
+     * <code>LogProviderRole</code> name which follows the convention
+     * <code>AmazonSecurityLake-Provider-{name of the custom source}-{region}</code>.
+     * You must use a <code>CustomLogSource</code> name that is shorter than or equal
+     * to 20 characters. This ensures that the <code>LogProviderRole</code> name is
+     * below the 64 character limit.</p>
      */
     inline const Aws::String& GetSourceName() const{ return m_sourceName; }
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }

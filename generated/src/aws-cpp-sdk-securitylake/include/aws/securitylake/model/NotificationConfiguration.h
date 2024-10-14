@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configurations for HTTPS subscriber notification.</p>
+     * <p>The configurations used for HTTPS subscriber notification.</p>
      */
     inline const HttpsNotificationConfiguration& GetHttpsNotificationConfiguration() const{ return m_httpsNotificationConfiguration; }
     inline bool HttpsNotificationConfigurationHasBeenSet() const { return m_httpsNotificationConfigurationHasBeenSet; }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/Result.h>
+#include <aws/codepipeline/model/RetryConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/Condition.h>
 #include <utility>
@@ -55,6 +56,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The retry configuration specifies automatic retry for a failed stage, along
+     * with the configured retry mode.</p>
+     */
+    inline const RetryConfiguration& GetRetryConfiguration() const{ return m_retryConfiguration; }
+    inline bool RetryConfigurationHasBeenSet() const { return m_retryConfigurationHasBeenSet; }
+    inline void SetRetryConfiguration(const RetryConfiguration& value) { m_retryConfigurationHasBeenSet = true; m_retryConfiguration = value; }
+    inline void SetRetryConfiguration(RetryConfiguration&& value) { m_retryConfigurationHasBeenSet = true; m_retryConfiguration = std::move(value); }
+    inline FailureConditions& WithRetryConfiguration(const RetryConfiguration& value) { SetRetryConfiguration(value); return *this;}
+    inline FailureConditions& WithRetryConfiguration(RetryConfiguration&& value) { SetRetryConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The conditions that are configured as failure conditions.</p>
      */
     inline const Aws::Vector<Condition>& GetConditions() const{ return m_conditions; }
@@ -70,6 +84,9 @@ namespace Model
 
     Result m_result;
     bool m_resultHasBeenSet = false;
+
+    RetryConfiguration m_retryConfiguration;
+    bool m_retryConfigurationHasBeenSet = false;
 
     Aws::Vector<Condition> m_conditions;
     bool m_conditionsHasBeenSet = false;

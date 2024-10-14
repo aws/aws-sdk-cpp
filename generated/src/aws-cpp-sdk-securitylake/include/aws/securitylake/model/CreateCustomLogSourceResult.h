@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The created third-party custom source.</p>
+     * <p>The third-party custom source that was created.</p>
      */
     inline const CustomLogSourceResource& GetSource() const{ return m_source; }
     inline void SetSource(const CustomLogSourceResource& value) { m_source = value; }

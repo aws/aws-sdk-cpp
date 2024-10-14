@@ -24,6 +24,8 @@ namespace Aws
         static const int FROM_HASH = HashingUtils::HashString("FROM");
         static const int CC_HASH = HashingUtils::HashString("CC");
         static const int SUBJECT_HASH = HashingUtils::HashString("SUBJECT");
+        static const int ENVELOPE_TO_HASH = HashingUtils::HashString("ENVELOPE_TO");
+        static const int ENVELOPE_FROM_HASH = HashingUtils::HashString("ENVELOPE_FROM");
 
 
         ArchiveStringEmailAttribute GetArchiveStringEmailAttributeForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == SUBJECT_HASH)
           {
             return ArchiveStringEmailAttribute::SUBJECT;
+          }
+          else if (hashCode == ENVELOPE_TO_HASH)
+          {
+            return ArchiveStringEmailAttribute::ENVELOPE_TO;
+          }
+          else if (hashCode == ENVELOPE_FROM_HASH)
+          {
+            return ArchiveStringEmailAttribute::ENVELOPE_FROM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +79,10 @@ namespace Aws
             return "CC";
           case ArchiveStringEmailAttribute::SUBJECT:
             return "SUBJECT";
+          case ArchiveStringEmailAttribute::ENVELOPE_TO:
+            return "ENVELOPE_TO";
+          case ArchiveStringEmailAttribute::ENVELOPE_FROM:
+            return "ENVELOPE_FROM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
