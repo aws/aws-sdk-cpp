@@ -2,14 +2,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.build.SmithyBuildPlugin;
-import software.amazon.smithy.model.Model;
-import software.amazon.smithy.model.transform.ModelTransformer;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.io.*;
-import java.util.List;
-import software.amazon.smithy.model.shapes.*;
 public class SmithyCodegenPlugin implements SmithyBuildPlugin {
 
 @Override
