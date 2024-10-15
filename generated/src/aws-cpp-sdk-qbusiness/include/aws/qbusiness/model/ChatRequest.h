@@ -98,7 +98,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The groups that a user associated with the chat input belongs to.</p>
+     * <p>The group names that a user associated with the chat input belongs to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserGroups() const{ return m_userGroups; }
     inline bool UserGroupsHasBeenSet() const { return m_userGroupsHasBeenSet; }

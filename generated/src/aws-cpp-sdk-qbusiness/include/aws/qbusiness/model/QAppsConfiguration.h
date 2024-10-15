@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information about Amazon Q Apps. (preview
-   * feature)</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration information about Amazon Q Apps.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/QAppsConfiguration">AWS
    * API Reference</a></p>
    */

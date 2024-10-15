@@ -66,11 +66,9 @@ namespace Model
     ///@{
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
-     * maximum length of 51,200 bytes. For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify either the <code>TemplateBody</code> or the
-     * <code>TemplateURL</code> parameter, but not both.</p>
+     * maximum length of 51,200 bytes.</p> <p>Conditional: You must specify either the
+     * <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not
+     * both.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
@@ -86,12 +84,10 @@ namespace Model
     /**
      * <p>Location of file containing the template body. The URL must point to a
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
-     * Systems Manager document. For more information, go to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
-     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
-     * specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-     * parameter, but not both.</p>
+     * Systems Manager document. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.</p> <p>Conditional: You must specify either the
+     * <code>TemplateBody</code> or the <code>TemplateURL</code> parameter, but not
+     * both.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
@@ -159,9 +155,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic ARNs to publish
-     * stack related events. You can find your Amazon SNS topic ARNs using the Amazon
-     * SNS console or your Command Line Interface (CLI).</p>
+     * <p>The Amazon SNS topic ARNs to publish stack related events. You can find your
+     * Amazon SNS topic ARNs using the Amazon SNS console or your Command Line
+     * Interface (CLI).</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
     inline bool NotificationARNsHasBeenSet() const { return m_notificationARNsHasBeenSet; }
@@ -181,34 +177,34 @@ namespace Model
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
      * resources that can affect permissions in your Amazon Web Services account; for
-     * example, by creating new Identity and Access Management (IAM) users. For those
-     * stacks, you must explicitly acknowledge this by specifying one of these
-     * capabilities.</p> <p>The following IAM resources require you to specify either
-     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
-     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
-     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
-     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
-     * don't specify either of these capabilities, CloudFormation returns an
+     * example, by creating new IAM users. For those stacks, you must explicitly
+     * acknowledge this by specifying one of these capabilities.</p> <p>The following
+     * IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
+     * resources, you can specify either capability.</p> </li> <li> <p>If you have IAM
+     * resources with custom names, you <i>must</i> specify
+     * <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you don't specify either
+     * of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html">AWS::IAM::AccessKey</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html">AWS::IAM::Group</a>
      * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>
      * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html">AWS::IAM::User</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging
+     * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
      * find-and-replace operations, all the way to extensive transformations of entire
@@ -230,9 +226,9 @@ namespace Model
      * processing stack templates. Be aware that the Lambda function owner can update
      * the function operation without CloudFormation being notified.</p> 
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform
+     * custom processing on CloudFormation templates with template macros</a>.</p>
+     * </li> </ul>  <p>Only one of the <code>Capabilities</code> and
      * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
@@ -258,11 +254,11 @@ namespace Model
      * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
      * specific Amazon Web Services resource).</p> <p>If the list of resource types
      * doesn't include a resource that you're creating, the stack creation fails. By
-     * default, CloudFormation grants permissions to all resource types. Identity and
-     * Access Management (IAM) uses this parameter for CloudFormation-specific
-     * condition keys in IAM policies. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * Access with Identity and Access Management</a>.</p>  <p>Only one of the
+     * default, CloudFormation grants permissions to all resource types. IAM uses this
+     * parameter for CloudFormation-specific condition keys in IAM policies. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Control
+     * access with Identity and Access Management</a>.</p>  <p>Only one of the
      * <code>Capabilities</code> and <code>ResourceType</code> parameters can be
      * specified.</p> 
      */
@@ -279,15 +275,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that CloudFormation assumes to create the stack. CloudFormation uses the
-     * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. Provided that users have permission
-     * to operate on the stack, CloudFormation uses this role even if the users don't
-     * have permission to pass it. Ensure that the role grants least privilege.</p>
-     * <p>If you don't specify a value, CloudFormation uses the role that was
-     * previously associated with the stack. If no role is available, CloudFormation
-     * uses a temporary session that's generated from your user credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to
+     * create the stack. CloudFormation uses the role's credentials to make calls on
+     * your behalf. CloudFormation always uses this role for all future operations on
+     * the stack. Provided that users have permission to operate on the stack,
+     * CloudFormation uses this role even if the users don't have permission to pass
+     * it. Ensure that the role grants least privilege.</p> <p>If you don't specify a
+     * value, CloudFormation uses the role that was previously associated with the
+     * stack. If no role is available, CloudFormation uses a temporary session that's
+     * generated from your user credentials.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
@@ -316,10 +312,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Structure containing the stack policy body. For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent Updates to Stack Resources</a> in the <i>CloudFormation User Guide</i>.
-     * You can specify either the <code>StackPolicyBody</code> or the
+     * <p>Structure containing the stack policy body. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent
+     * updates to stack resources</a> in the <i>CloudFormation User Guide</i>. You can
+     * specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetStackPolicyBody() const{ return m_stackPolicyBody; }
@@ -400,9 +396,10 @@ namespace Model
      * <p>Whether to enable termination protection on the specified stack. If a user
      * attempts to delete a stack with termination protection enabled, the operation
      * fails and the stack remains unchanged. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-     * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.
-     * Termination protection is deactivated on stacks by default.</p> <p>For <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect
+     * CloudFormation stacks from being deleted</a> in the <i>CloudFormation User
+     * Guide</i>. Termination protection is deactivated on stacks by default.</p>
+     * <p>For <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed
      * directly on the nested stack.</p>

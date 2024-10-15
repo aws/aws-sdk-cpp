@@ -83,8 +83,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing
      * Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>.</p> <p>Valid Values: <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code> </p>
+     * <code>dc2.8xlarge</code> | <code>ra3.large</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }

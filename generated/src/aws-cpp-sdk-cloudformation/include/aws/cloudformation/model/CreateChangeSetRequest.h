@@ -135,33 +135,33 @@ namespace Model
      * stack.</p> <ul> <li> <p> <code>CAPABILITY_IAM</code> and
      * <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some stack templates might include
      * resources that can affect permissions in your Amazon Web Services account; for
-     * example, by creating new Identity and Access Management (IAM) users. For those
-     * stacks, you must explicitly acknowledge this by specifying one of these
-     * capabilities.</p> <p>The following IAM resources require you to specify either
-     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
-     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
-     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
-     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
-     * don't specify either of these capabilities, CloudFormation returns an
+     * example, by creating new IAM users. For those stacks, you must explicitly
+     * acknowledge this by specifying one of these capabilities.</p> <p>The following
+     * IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
+     * resources, you can specify either capability.</p> </li> <li> <p>If you have IAM
+     * resources with custom names, you <i>must</i> specify
+     * <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you don't specify either
+     * of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html">
      * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html">
      * AWS::IAM::Group</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">
      * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html">
      * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
      * perform custom processing on templates; this can include simple actions like
@@ -182,9 +182,9 @@ namespace Model
      * update the stack directly from the template using the <a>CreateStack</a> or
      * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
      * more information about macros, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-     * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform
+     * custom processing on CloudFormation templates with template macros</a>.</p>
+     * </li> </ul>  <p>Only one of the <code>Capabilities</code> and
      * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
@@ -204,9 +204,9 @@ namespace Model
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>.</p> <p>If
      * the list of resource types doesn't include a resource type that you're updating,
      * the stack update fails. By default, CloudFormation grants permissions to all
-     * resource types. Identity and Access Management (IAM) uses this parameter for
-     * condition keys in IAM policies for CloudFormation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     * resource types. IAM uses this parameter for condition keys in IAM policies for
+     * CloudFormation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Control
      * access with Identity and Access Management</a> in the <i>CloudFormation User
      * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
      * <code>ResourceType</code> parameters can be specified.</p> 
@@ -224,16 +224,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that CloudFormation assumes when executing the change set. CloudFormation
-     * uses the role's credentials to make calls on your behalf. CloudFormation uses
-     * this role for all future operations on the stack. Provided that users have
-     * permission to operate on the stack, CloudFormation uses this role even if the
-     * users don't have permission to pass it. Ensure that the role grants least
-     * permission.</p> <p>If you don't specify a value, CloudFormation uses the role
-     * that was previously associated with the stack. If no role is available,
-     * CloudFormation uses a temporary session that is generated from your user
-     * credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes
+     * when executing the change set. CloudFormation uses the role's credentials to
+     * make calls on your behalf. CloudFormation uses this role for all future
+     * operations on the stack. Provided that users have permission to operate on the
+     * stack, CloudFormation uses this role even if the users don't have permission to
+     * pass it. Ensure that the role grants least permission.</p> <p>If you don't
+     * specify a value, CloudFormation uses the role that was previously associated
+     * with the stack. If no role is available, CloudFormation uses a temporary session
+     * that is generated from your user credentials.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
@@ -260,9 +259,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service
-     * (Amazon SNS) topics that CloudFormation associates with the stack. To remove all
-     * associated notification topics, specify an empty list.</p>
+     * <p>The Amazon Resource Names (ARNs) of Amazon SNS topics that CloudFormation
+     * associates with the stack. To remove all associated notification topics, specify
+     * an empty list.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
     inline bool NotificationARNsHasBeenSet() const { return m_notificationARNsHasBeenSet; }
@@ -346,12 +345,11 @@ namespace Model
      * specify <code>UPDATE</code>. To create a change set for an import operation,
      * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * CloudFormation creates a stack with a unique stack ID, but no template or
-     * resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a>
-     * state until you execute the change set.</p> <p>By default, CloudFormation
-     * specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
-     * create a change set for a new stack or the <code>CREATE</code> type to create a
-     * change set for an existing stack.</p>
+     * resources. The stack will be in the <code>REVIEW_IN_PROGRESS</code> state until
+     * you execute the change set.</p> <p>By default, CloudFormation specifies
+     * <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to create a
+     * change set for a new stack or the <code>CREATE</code> type to create a change
+     * set for an existing stack.</p>
      */
     inline const ChangeSetType& GetChangeSetType() const{ return m_changeSetType; }
     inline bool ChangeSetTypeHasBeenSet() const { return m_changeSetTypeHasBeenSet; }
@@ -426,9 +424,9 @@ namespace Model
      * type</a> in the <i>CloudFormation User Guide</i>. To import resources that do
      * not accept custom names, such as EC2 instances, use the resource import feature
      * instead. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
-     * existing resources into CloudFormation management</a> in the <i>CloudFormation
-     * User Guide</i>.</p> 
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Import
+     * Amazon Web Services resources into a CloudFormation stack with a resource
+     * import</a> in the <i>CloudFormation User Guide</i>.</p> 
      */
     inline bool GetImportExistingResources() const{ return m_importExistingResources; }
     inline bool ImportExistingResourcesHasBeenSet() const { return m_importExistingResourcesHasBeenSet; }

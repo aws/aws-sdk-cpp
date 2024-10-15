@@ -43,8 +43,10 @@ static const int SUBNET_ALREADY_IN_USE_HASH = HashingUtils::HashString("SubnetAl
 static const int CUSTOM_CNAME_ASSOCIATION_FAULT_HASH = HashingUtils::HashString("CustomCnameAssociationFault");
 static const int SNAPSHOT_SCHEDULE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleAlreadyExists");
 static const int CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterSubnetQuotaExceededFault");
+static const int INTEGRATION_CONFLICT_OPERATION_FAULT_HASH = HashingUtils::HashString("IntegrationConflictOperationFault");
 static const int CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterSecurityGroupNotFound");
 static const int INVALID_SCHEDULE_FAULT_HASH = HashingUtils::HashString("InvalidSchedule");
+static const int INTEGRATION_SOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("IntegrationSourceNotFoundFault");
 static const int ENDPOINT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("EndpointNotFound");
 static const int ENDPOINT_AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("EndpointAuthorizationAlreadyExists");
 static const int INVALID_CLUSTER_SNAPSHOT_SCHEDULE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSnapshotScheduleState");
@@ -89,6 +91,7 @@ static const int SNAPSHOT_SCHEDULE_NOT_FOUND_FAULT_HASH = HashingUtils::HashStri
 static const int USAGE_LIMIT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("UsageLimitAlreadyExists");
 static const int INVALID_TABLE_RESTORE_ARGUMENT_FAULT_HASH = HashingUtils::HashString("InvalidTableRestoreArgument");
 static const int PARTNER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("PartnerNotFound");
+static const int INTEGRATION_CONFLICT_STATE_FAULT_HASH = HashingUtils::HashString("IntegrationConflictStateFault");
 static const int ENDPOINT_AUTHORIZATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("EndpointAuthorizationNotFound");
 static const int ACCESS_TO_CLUSTER_DENIED_FAULT_HASH = HashingUtils::HashString("AccessToClusterDenied");
 static const int UNSUPPORTED_OPTION_FAULT_HASH = HashingUtils::HashString("UnsupportedOptionFault");
@@ -102,11 +105,13 @@ static const int INVALID_ENDPOINT_STATE_FAULT_HASH = HashingUtils::HashString("I
 static const int INVALID_HSM_CONFIGURATION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidHsmConfigurationStateFault");
 static const int INVALID_RETENTION_PERIOD_FAULT_HASH = HashingUtils::HashString("InvalidRetentionPeriodFault");
 static const int HSM_CONFIGURATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("HsmConfigurationNotFoundFault");
+static const int INTEGRATION_TARGET_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("IntegrationTargetNotFoundFault");
 static const int ENDPOINTS_PER_AUTHORIZATION_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EndpointsPerAuthorizationLimitExceeded");
 static const int SCHEDULED_ACTION_TYPE_UNSUPPORTED_FAULT_HASH = HashingUtils::HashString("ScheduledActionTypeUnsupported");
 static const int CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterQuotaExceeded");
 static const int CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterSnapshotAlreadyExists");
 static const int INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientClusterCapacity");
+static const int INTEGRATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("IntegrationQuotaExceededFault");
 static const int SNAPSHOT_SCHEDULE_UPDATE_IN_PROGRESS_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleUpdateInProgress");
 static const int EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EventSubscriptionQuotaExceeded");
 static const int INVALID_AUTHENTICATION_PROFILE_REQUEST_FAULT_HASH = HashingUtils::HashString("InvalidAuthenticationProfileRequestFault");
@@ -115,6 +120,7 @@ static const int CUSTOM_DOMAIN_ASSOCIATION_NOT_FOUND_FAULT_HASH = HashingUtils::
 static const int SCHEDULED_ACTION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ScheduledActionNotFound");
 static const int INVALID_CLUSTER_SUBNET_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSubnetStateFault");
 static const int INVALID_SUBSCRIPTION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidSubscriptionStateFault");
+static const int INTEGRATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("IntegrationAlreadyExistsFault");
 static const int INVALID_AUTHORIZATION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidAuthorizationState");
 static const int CLUSTER_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterParameterGroupAlreadyExists");
 static const int INVALID_RESERVED_NODE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidReservedNodeState");
@@ -289,6 +295,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
+  else if (hashCode == INTEGRATION_CONFLICT_OPERATION_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_CONFLICT_OPERATION_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
   else if (hashCode == CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
@@ -297,6 +308,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_SCHEDULE_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_SCHEDULE_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == INTEGRATION_SOURCE_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_SOURCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ENDPOINT_NOT_FOUND_FAULT_HASH)
@@ -519,6 +535,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::PARTNER_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
+  else if (hashCode == INTEGRATION_CONFLICT_STATE_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_CONFLICT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
   else if (hashCode == ENDPOINT_AUTHORIZATION_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINT_AUTHORIZATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
@@ -584,6 +605,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CONFIGURATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
+  else if (hashCode == INTEGRATION_TARGET_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_TARGET_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
   else if (hashCode == ENDPOINTS_PER_AUTHORIZATION_LIMIT_EXCEEDED_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::ENDPOINTS_PER_AUTHORIZATION_LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
@@ -607,6 +633,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INSUFFICIENT_CLUSTER_CAPACITY_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == INTEGRATION_QUOTA_EXCEEDED_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SNAPSHOT_SCHEDULE_UPDATE_IN_PROGRESS_FAULT_HASH)
@@ -647,6 +678,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == INVALID_SUBSCRIPTION_STATE_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_SUBSCRIPTION_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == INTEGRATION_ALREADY_EXISTS_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INTEGRATION_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_AUTHORIZATION_STATE_FAULT_HASH)
@@ -744,7 +780,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  else if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::S_N_S_NO_AUTHORIZATION_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
@@ -774,12 +815,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_S3_BUCKET_NAME_FAULT), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH)
+  else if (hashCode == NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
     return true;

@@ -165,7 +165,7 @@ namespace Model
      * Region, CloudFormation treats that alias as the extension's type name within the
      * account and Region, not the type name of the public extension. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetOriginalTypeName() const{ return m_originalTypeName; }
@@ -186,9 +186,8 @@ namespace Model
      * enabling the extension affects whether CloudFormation automatically updates the
      * extension in this account and Region when a new version is released. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
-     * CloudFormation to automatically use new versions of extensions</a> in the
-     * <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically
+     * use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetPublicVersionNumber() const{ return m_publicVersionNumber; }
     inline bool PublicVersionNumberHasBeenSet() const { return m_publicVersionNumberHasBeenSet; }
@@ -204,14 +203,13 @@ namespace Model
     /**
      * <p>For public extensions that have been activated for this account and Region,
      * the latest version of the public extension <i>that is available</i>. For any
-     * extensions other than activated third-arty extensions, CloudFormation returns
+     * extensions other than activated third-party extensions, CloudFormation returns
      * <code>null</code>.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
      * extension in this account and Region when a new version is released. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
-     * CloudFormation to automatically use new versions of extensions</a> in the
-     * <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically
+     * use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetLatestPublicVersion() const{ return m_latestPublicVersion; }
     inline bool LatestPublicVersionHasBeenSet() const { return m_latestPublicVersionHasBeenSet; }
@@ -227,9 +225,9 @@ namespace Model
     /**
      * <p>The service used to verify the publisher identity.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering
-     * your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User
-     * Guide for Extension Development</i>.</p>
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+     * extensions to make them available for public use</a> in the <i>CloudFormation
+     * Command Line Interface (CLI) User Guide</i>.</p>
      */
     inline const IdentityProvider& GetPublisherIdentity() const{ return m_publisherIdentity; }
     inline bool PublisherIdentityHasBeenSet() const { return m_publisherIdentityHasBeenSet; }

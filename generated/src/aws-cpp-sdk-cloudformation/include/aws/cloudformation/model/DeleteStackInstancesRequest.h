@@ -120,7 +120,7 @@ namespace Model
      * <p>Removes the stack instances from the specified stack set, but doesn't delete
      * the stacks. You can't reassociate a retained stack or add an existing, saved
      * stack to a new stack set.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
      * set operation options</a>.</p>
      */
     inline bool GetRetainStacks() const{ return m_retainStacks; }

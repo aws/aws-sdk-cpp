@@ -55,20 +55,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Playback-key-pair name. The value does not need to be unique.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PlaybackKeyPair& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PlaybackKeyPair& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PlaybackKeyPair& WithName(const char* value) { SetName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Key-pair identifier.</p>
      */
     inline const Aws::String& GetFingerprint() const{ return m_fingerprint; }
@@ -79,6 +65,20 @@ namespace Model
     inline PlaybackKeyPair& WithFingerprint(const Aws::String& value) { SetFingerprint(value); return *this;}
     inline PlaybackKeyPair& WithFingerprint(Aws::String&& value) { SetFingerprint(std::move(value)); return *this;}
     inline PlaybackKeyPair& WithFingerprint(const char* value) { SetFingerprint(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Playback-key-pair name. The value does not need to be unique.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline PlaybackKeyPair& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline PlaybackKeyPair& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline PlaybackKeyPair& WithName(const char* value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -110,11 +110,11 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
     Aws::String m_fingerprint;
     bool m_fingerprintHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

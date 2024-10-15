@@ -87,7 +87,7 @@ namespace Model
      * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
      * permissions] For automatic deployments that require a sequence of operations,
      * the operation is queued to be performed. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-status-codes">stack
      * set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p>
      * </li> <li> <p> <code>RUNNING</code>: The operation is currently being
      * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
@@ -165,7 +165,7 @@ namespace Model
      * <p>The user-specified preferences for how CloudFormation performs a stack set
      * operation.</p> <p>For more information about maximum concurrent accounts and
      * failure tolerance, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-ops-options">Stack
      * set operation options</a>.</p>
      */
     inline const StackSetOperationPreferences& GetOperationPreferences() const{ return m_operationPreferences; }

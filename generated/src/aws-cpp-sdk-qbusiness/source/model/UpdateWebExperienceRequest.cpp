@@ -21,7 +21,8 @@ UpdateWebExperienceRequest::UpdateWebExperienceRequest() :
     m_welcomeMessageHasBeenSet(false),
     m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET),
     m_samplePromptsControlModeHasBeenSet(false),
-    m_identityProviderConfigurationHasBeenSet(false)
+    m_identityProviderConfigurationHasBeenSet(false),
+    m_originsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,17 @@ Aws::String UpdateWebExperienceRequest::SerializePayload() const
   if(m_identityProviderConfigurationHasBeenSet)
   {
    payload.WithObject("identityProviderConfiguration", m_identityProviderConfiguration.Jsonize());
+
+  }
+
+  if(m_originsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> originsJsonList(m_origins.size());
+   for(unsigned originsIndex = 0; originsIndex < originsJsonList.GetLength(); ++originsIndex)
+   {
+     originsJsonList[originsIndex].AsString(m_origins[originsIndex]);
+   }
+   payload.WithArray("origins", std::move(originsJsonList));
 
   }
 

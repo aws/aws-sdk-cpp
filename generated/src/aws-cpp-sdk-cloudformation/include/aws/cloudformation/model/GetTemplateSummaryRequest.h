@@ -45,12 +45,9 @@ namespace Model
     ///@{
     /**
      * <p>Structure containing the template body with a minimum length of 1 byte and a
-     * maximum length of 51,200 bytes. For more information about templates, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify only one of the following parameters: <code>StackName</code>,
-     * <code>StackSetName</code>, <code>TemplateBody</code>, or
-     * <code>TemplateURL</code>.</p>
+     * maximum length of 51,200 bytes.</p> <p>Conditional: You must specify only one of
+     * the following parameters: <code>StackName</code>, <code>StackSetName</code>,
+     * <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
@@ -66,13 +63,10 @@ namespace Model
     /**
      * <p>Location of file containing the template body. The URL must point to a
      * template (max size: 460,800 bytes) that's located in an Amazon S3 bucket or a
-     * Systems Manager document. For more information about templates, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon
-     * S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You must
-     * specify only one of the following parameters: <code>StackName</code>,
-     * <code>StackSetName</code>, <code>TemplateBody</code>, or
-     * <code>TemplateURL</code>.</p>
+     * Systems Manager document. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.</p> <p>Conditional: You must specify only one of the
+     * following parameters: <code>StackName</code>, <code>StackSetName</code>,
+     * <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }

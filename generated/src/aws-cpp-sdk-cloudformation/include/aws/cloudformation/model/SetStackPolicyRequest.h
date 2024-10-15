@@ -55,10 +55,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Structure containing the stack policy body. For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-     * Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>.
-     * You can specify either the <code>StackPolicyBody</code> or the
+     * <p>Structure containing the stack policy body. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">Prevent
+     * updates to stack resources</a> in the <i>CloudFormation User Guide</i>. You can
+     * specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
     inline const Aws::String& GetStackPolicyBody() const{ return m_stackPolicyBody; }

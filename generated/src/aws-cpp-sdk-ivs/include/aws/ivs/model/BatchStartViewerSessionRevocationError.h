@@ -55,20 +55,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the viewer session to revoke.</p>
-     */
-    inline const Aws::String& GetViewerId() const{ return m_viewerId; }
-    inline bool ViewerIdHasBeenSet() const { return m_viewerIdHasBeenSet; }
-    inline void SetViewerId(const Aws::String& value) { m_viewerIdHasBeenSet = true; m_viewerId = value; }
-    inline void SetViewerId(Aws::String&& value) { m_viewerIdHasBeenSet = true; m_viewerId = std::move(value); }
-    inline void SetViewerId(const char* value) { m_viewerIdHasBeenSet = true; m_viewerId.assign(value); }
-    inline BatchStartViewerSessionRevocationError& WithViewerId(const Aws::String& value) { SetViewerId(value); return *this;}
-    inline BatchStartViewerSessionRevocationError& WithViewerId(Aws::String&& value) { SetViewerId(std::move(value)); return *this;}
-    inline BatchStartViewerSessionRevocationError& WithViewerId(const char* value) { SetViewerId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Error code.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
@@ -94,19 +80,33 @@ namespace Model
     inline BatchStartViewerSessionRevocationError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
     inline BatchStartViewerSessionRevocationError& WithMessage(const char* value) { SetMessage(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the viewer session to revoke.</p>
+     */
+    inline const Aws::String& GetViewerId() const{ return m_viewerId; }
+    inline bool ViewerIdHasBeenSet() const { return m_viewerIdHasBeenSet; }
+    inline void SetViewerId(const Aws::String& value) { m_viewerIdHasBeenSet = true; m_viewerId = value; }
+    inline void SetViewerId(Aws::String&& value) { m_viewerIdHasBeenSet = true; m_viewerId = std::move(value); }
+    inline void SetViewerId(const char* value) { m_viewerIdHasBeenSet = true; m_viewerId.assign(value); }
+    inline BatchStartViewerSessionRevocationError& WithViewerId(const Aws::String& value) { SetViewerId(value); return *this;}
+    inline BatchStartViewerSessionRevocationError& WithViewerId(Aws::String&& value) { SetViewerId(std::move(value)); return *this;}
+    inline BatchStartViewerSessionRevocationError& WithViewerId(const char* value) { SetViewerId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_channelArn;
     bool m_channelArnHasBeenSet = false;
-
-    Aws::String m_viewerId;
-    bool m_viewerIdHasBeenSet = false;
 
     Aws::String m_code;
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Aws::String m_viewerId;
+    bool m_viewerIdHasBeenSet = false;
   };
 
 } // namespace Model

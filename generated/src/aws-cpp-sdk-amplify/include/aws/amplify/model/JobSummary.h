@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/amplify/model/JobStatus.h>
 #include <aws/amplify/model/JobType.h>
+#include <aws/amplify/model/SourceUrlType.h>
 #include <utility>
 
 namespace Aws
@@ -148,10 +149,13 @@ namespace Model
     ///@{
     /**
      * <p> The type for the job. If the value is <code>RELEASE</code>, the job was
-     * manually released from its source by using the <code>StartJob</code> API. If the
-     * value is <code>RETRY</code>, the job was manually retried using the
+     * manually released from its source by using the <code>StartJob</code> API. This
+     * value is available only for apps that are connected to a repository.</p> <p>If
+     * the value is <code>RETRY</code>, the job was manually retried using the
      * <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was
-     * automatically triggered by webhooks. </p>
+     * automatically triggered by webhooks. If the value is <code>MANUAL</code>, the
+     * job is for a manually deployed app. Manually deployed apps are not connected to
+     * a Git repository.</p>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
@@ -159,6 +163,37 @@ namespace Model
     inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
     inline JobSummary& WithJobType(const JobType& value) { SetJobType(value); return *this;}
     inline JobSummary& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The source URL for the files to deploy. The source URL can be either an HTTP
+     * GET URL that is publicly accessible and downloads a single .zip file, or an
+     * Amazon S3 bucket and prefix.</p>
+     */
+    inline const Aws::String& GetSourceUrl() const{ return m_sourceUrl; }
+    inline bool SourceUrlHasBeenSet() const { return m_sourceUrlHasBeenSet; }
+    inline void SetSourceUrl(const Aws::String& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = value; }
+    inline void SetSourceUrl(Aws::String&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = std::move(value); }
+    inline void SetSourceUrl(const char* value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.assign(value); }
+    inline JobSummary& WithSourceUrl(const Aws::String& value) { SetSourceUrl(value); return *this;}
+    inline JobSummary& WithSourceUrl(Aws::String&& value) { SetSourceUrl(std::move(value)); return *this;}
+    inline JobSummary& WithSourceUrl(const char* value) { SetSourceUrl(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of source specified by the <code>sourceURL</code>. If the value is
+     * <code>ZIP</code>, the source is a .zip file. If the value is
+     * <code>BUCKET_PREFIX</code>, the source is an Amazon S3 bucket and prefix. If no
+     * value is specified, the default is <code>ZIP</code>.</p>
+     */
+    inline const SourceUrlType& GetSourceUrlType() const{ return m_sourceUrlType; }
+    inline bool SourceUrlTypeHasBeenSet() const { return m_sourceUrlTypeHasBeenSet; }
+    inline void SetSourceUrlType(const SourceUrlType& value) { m_sourceUrlTypeHasBeenSet = true; m_sourceUrlType = value; }
+    inline void SetSourceUrlType(SourceUrlType&& value) { m_sourceUrlTypeHasBeenSet = true; m_sourceUrlType = std::move(value); }
+    inline JobSummary& WithSourceUrlType(const SourceUrlType& value) { SetSourceUrlType(value); return *this;}
+    inline JobSummary& WithSourceUrlType(SourceUrlType&& value) { SetSourceUrlType(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -188,6 +223,12 @@ namespace Model
 
     JobType m_jobType;
     bool m_jobTypeHasBeenSet = false;
+
+    Aws::String m_sourceUrl;
+    bool m_sourceUrlHasBeenSet = false;
+
+    SourceUrlType m_sourceUrlType;
+    bool m_sourceUrlTypeHasBeenSet = false;
   };
 
 } // namespace Model

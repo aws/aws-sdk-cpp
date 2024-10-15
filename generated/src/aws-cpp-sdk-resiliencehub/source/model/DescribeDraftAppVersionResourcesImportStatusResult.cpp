@@ -43,6 +43,15 @@ DescribeDraftAppVersionResourcesImportStatusResult& DescribeDraftAppVersionResou
 
   }
 
+  if(jsonValue.ValueExists("errorDetails"))
+  {
+    Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("errorDetails");
+    for(unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex)
+    {
+      m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");

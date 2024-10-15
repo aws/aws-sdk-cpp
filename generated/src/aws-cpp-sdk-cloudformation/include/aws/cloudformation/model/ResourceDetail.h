@@ -48,9 +48,9 @@ namespace Model
     /**
      * <p>The type of the resource, such as <code>AWS::DynamoDB::Table</code>. For the
      * list of supported resources, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC
-     * generator supported resource types</a> In the <i>CloudFormation User Guide</i>
-     * </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+     * type support for imports and drift detection</a> In the <i>CloudFormation User
+     * Guide</i> </p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -87,8 +87,7 @@ namespace Model
      * <code>TableName</code> so the key-value pair could be <code>"TableName":
      * "MyDDBTable"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-primaryidentifier">primaryIdentifier</a>
-     * in the <i>CloudFormation Command Line Interface User guide for extension
-     * development</i>.</p>
+     * in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetResourceIdentifier() const{ return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
@@ -107,11 +106,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Status of the processing of a resource in a generated template.</p> <dl>
-     * <dt>InProgress</dt> <dd> <p>The resource processing is still in progress.</p>
-     * </dd> <dt>Complete</dt> <dd> <p>The resource processing is complete.</p> </dd>
-     * <dt>Pending</dt> <dd> <p>The resource processing is pending.</p> </dd>
-     * <dt>Failed</dt> <dd> <p>The resource processing has failed.</p> </dd> </dl>
+     * <p>Status of the processing of a resource in a generated template.</p> <dl> <dt>
+     * InProgress </dt> <dd> <p>The resource processing is still in progress.</p> </dd>
+     * <dt> Complete </dt> <dd> <p>The resource processing is complete.</p> </dd> <dt>
+     * Pending </dt> <dd> <p>The resource processing is pending.</p> </dd> <dt> Failed
+     * </dt> <dd> <p>The resource processing has failed.</p> </dd> </dl>
      */
     inline const GeneratedTemplateResourceStatus& GetResourceStatus() const{ return m_resourceStatus; }
     inline bool ResourceStatusHasBeenSet() const { return m_resourceStatusHasBeenSet; }

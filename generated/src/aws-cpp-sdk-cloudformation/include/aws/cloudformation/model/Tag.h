@@ -43,8 +43,8 @@ namespace Model
     ///@{
     /**
      * <p> <i>Required</i>. A string used to identify this tag. You can specify a
-     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services
-     * (Amazon Web Services) have the reserved prefix: <code>aws:</code>.</p>
+     * maximum of 128 characters for a tag key. Tags owned by Amazon Web Services have
+     * the reserved prefix: <code>aws:</code>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

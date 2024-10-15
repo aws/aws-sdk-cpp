@@ -127,11 +127,11 @@ namespace Model
      * published. For more information, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
      * extensions to make them available for public use</a> in the <i>CloudFormation
-     * Command Line Interface User Guide</i>.</p> </li> <li> <p> <code>FAILED</code>:
-     * The extension has failed one or more contract tests.</p> </li> <li> <p>
-     * <code>IN_PROGRESS</code>: Contract tests are currently being performed on the
-     * extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract tests haven't
-     * been performed on the extension.</p> </li> </ul>
+     * Command Line Interface (CLI) User Guide</i>.</p> </li> <li> <p>
+     * <code>FAILED</code>: The extension has failed one or more contract tests.</p>
+     * </li> <li> <p> <code>IN_PROGRESS</code>: Contract tests are currently being
+     * performed on the extension.</p> </li> <li> <p> <code>NOT_TESTED</code>: Contract
+     * tests haven't been performed on the extension.</p> </li> </ul>
      */
     inline const TypeTestsStatus& GetTypeTestsStatus() const{ return m_typeTestsStatus; }
     inline void SetTypeTestsStatus(const TypeTestsStatus& value) { m_typeTestsStatus = value; }
@@ -175,7 +175,8 @@ namespace Model
      * <p>The schema that defines the extension.</p> <p>For more information about
      * extension schemas, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
-     * Provider Schema</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+     * type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
     inline void SetSchema(const Aws::String& value) { m_schema = value; }
@@ -358,8 +359,9 @@ namespace Model
      * extension, use <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-     * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+     * configuration data for extensions in your account</a> in the <i>CloudFormation
+     * User Guide</i>.</p>
      */
     inline const Aws::String& GetConfigurationSchema() const{ return m_configurationSchema; }
     inline void SetConfigurationSchema(const Aws::String& value) { m_configurationSchema = value; }
@@ -393,7 +395,7 @@ namespace Model
      * Region, CloudFormation treats that alias as the extension's type name within the
      * account and Region, not the type name of the public extension. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetOriginalTypeName() const{ return m_originalTypeName; }
@@ -468,9 +470,8 @@ namespace Model
      * and Region when a new <i>minor</i> version is published by the extension
      * publisher. Major versions released by the publisher must be manually updated.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating
-     * public extensions for use in your account</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically
+     * use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline bool GetAutoUpdate() const{ return m_autoUpdate; }
     inline void SetAutoUpdate(bool value) { m_autoUpdate = value; }

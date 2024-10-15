@@ -152,8 +152,9 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed
+     * stacks within other stacks using nested stacks</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetParentId() const{ return m_parentId; }
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
@@ -170,8 +171,9 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed
+     * stacks within other stacks using nested stacks</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetRootId() const{ return m_rootId; }
     inline bool RootIdHasBeenSet() const { return m_rootIdHasBeenSet; }
@@ -189,8 +191,9 @@ namespace Model
      * or has <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-     * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+     * unmanaged configuration changes to stacks and resources with drift
+     * detection</a>.</p>
      */
     inline const StackDriftInformationSummary& GetDriftInformation() const{ return m_driftInformation; }
     inline bool DriftInformationHasBeenSet() const { return m_driftInformationHasBeenSet; }

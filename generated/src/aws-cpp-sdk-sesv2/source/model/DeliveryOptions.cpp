@@ -21,7 +21,9 @@ namespace Model
 DeliveryOptions::DeliveryOptions() : 
     m_tlsPolicy(TlsPolicy::NOT_SET),
     m_tlsPolicyHasBeenSet(false),
-    m_sendingPoolNameHasBeenSet(false)
+    m_sendingPoolNameHasBeenSet(false),
+    m_maxDeliverySeconds(0),
+    m_maxDeliverySecondsHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,13 @@ DeliveryOptions& DeliveryOptions::operator =(JsonView jsonValue)
     m_sendingPoolNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaxDeliverySeconds"))
+  {
+    m_maxDeliverySeconds = jsonValue.GetInt64("MaxDeliverySeconds");
+
+    m_maxDeliverySecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +71,12 @@ JsonValue DeliveryOptions::Jsonize() const
   if(m_sendingPoolNameHasBeenSet)
   {
    payload.WithString("SendingPoolName", m_sendingPoolName);
+
+  }
+
+  if(m_maxDeliverySecondsHasBeenSet)
+  {
+   payload.WithInt64("MaxDeliverySeconds", m_maxDeliverySeconds);
 
   }
 

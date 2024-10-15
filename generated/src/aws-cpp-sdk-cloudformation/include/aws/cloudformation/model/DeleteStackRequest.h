@@ -76,12 +76,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that CloudFormation assumes to delete the stack. CloudFormation uses the
-     * role's credentials to make calls on your behalf.</p> <p>If you don't specify a
-     * value, CloudFormation uses the role that was previously associated with the
-     * stack. If no role is available, CloudFormation uses a temporary session that's
-     * generated from your user credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to
+     * delete the stack. CloudFormation uses the role's credentials to make calls on
+     * your behalf.</p> <p>If you don't specify a value, CloudFormation uses the role
+     * that was previously associated with the stack. If no role is available,
+     * CloudFormation uses a temporary session that's generated from your user
+     * credentials.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
