@@ -1,0 +1,12 @@
+{
+    "version": "1.0",
+    "sources": [
+                  "../../api-descriptions/"
+                ],
+    "outputDirectory": "output",
+    "plugins": {
+      "cpp-codegen-smoke-tests-plugin": {
+      }
+    }
+        
+  }
