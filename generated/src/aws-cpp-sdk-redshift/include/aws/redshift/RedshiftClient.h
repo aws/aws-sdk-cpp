@@ -771,6 +771,32 @@ namespace Redshift
         }
 
         /**
+         * <p>Creates a zero-ETL integration with Amazon Redshift.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIntegrationOutcome CreateIntegration(const Model::CreateIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateIntegrationRequestT = Model::CreateIntegrationRequest>
+        Model::CreateIntegrationOutcomeCallable CreateIntegrationCallable(const CreateIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::CreateIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateIntegrationRequestT = Model::CreateIntegrationRequest>
+        void CreateIntegrationAsync(const CreateIntegrationRequestT& request, const CreateIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::CreateIntegration, request, handler, context);
+        }
+
+        /**
          * <p>Creates an Amazon Redshift application for use with IAM Identity
          * Center.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateRedshiftIdcApplication">AWS
@@ -1269,6 +1295,32 @@ namespace Redshift
         void DeleteHsmConfigurationAsync(const DeleteHsmConfigurationRequestT& request, const DeleteHsmConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftClient::DeleteHsmConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a zero-ETL integration with Amazon Redshift.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIntegrationOutcome DeleteIntegration(const Model::DeleteIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIntegrationRequestT = Model::DeleteIntegrationRequest>
+        Model::DeleteIntegrationOutcomeCallable DeleteIntegrationCallable(const DeleteIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::DeleteIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIntegrationRequestT = Model::DeleteIntegrationRequest>
+        void DeleteIntegrationAsync(const DeleteIntegrationRequestT& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::DeleteIntegration, request, handler, context);
         }
 
         /**
@@ -2206,6 +2258,32 @@ namespace Redshift
         void DescribeInboundIntegrationsAsync(const DescribeInboundIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeInboundIntegrationsRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftClient::DescribeInboundIntegrations, request, handler, context);
+        }
+
+        /**
+         * <p>Describes one or more zero-ETL integrations with Amazon
+         * Redshift.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeIntegrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIntegrationsOutcome DescribeIntegrations(const Model::DescribeIntegrationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeIntegrations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeIntegrationsRequestT = Model::DescribeIntegrationsRequest>
+        Model::DescribeIntegrationsOutcomeCallable DescribeIntegrationsCallable(const DescribeIntegrationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&RedshiftClient::DescribeIntegrations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeIntegrations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeIntegrationsRequestT = Model::DescribeIntegrationsRequest>
+        void DescribeIntegrationsAsync(const DescribeIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeIntegrationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&RedshiftClient::DescribeIntegrations, request, handler, context);
         }
 
         /**
@@ -3388,6 +3466,32 @@ namespace Redshift
         }
 
         /**
+         * <p>Modifies a zero-ETL integration with Amazon Redshift.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyIntegrationOutcome ModifyIntegration(const Model::ModifyIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyIntegrationRequestT = Model::ModifyIntegrationRequest>
+        Model::ModifyIntegrationOutcomeCallable ModifyIntegrationCallable(const ModifyIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::ModifyIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyIntegrationRequestT = Model::ModifyIntegrationRequest>
+        void ModifyIntegrationAsync(const ModifyIntegrationRequestT& request, const ModifyIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::ModifyIntegration, request, handler, context);
+        }
+
+        /**
          * <p>Changes an existing Amazon Redshift IAM Identity Center
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyRedshiftIdcApplication">AWS
@@ -3700,10 +3804,10 @@ namespace Redshift
          * operations more quickly than with the classic resize method. </p> <p>Elastic
          * resize operations have the following restrictions:</p> <ul> <li> <p>You can only
          * resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li>
-         * <li> <p>dc2.8xlarge</p> </li> <li> <p>ra3.xlplus</p> </li> <li>
-         * <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The
-         * type of nodes that you add must match the node type for the cluster.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <li> <p>dc2.8xlarge</p> </li> <li> <p>ra3.large</p> </li> <li> <p>ra3.xlplus</p>
+         * </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li>
+         * <li> <p>The type of nodes that you add must match the node type for the
+         * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          */

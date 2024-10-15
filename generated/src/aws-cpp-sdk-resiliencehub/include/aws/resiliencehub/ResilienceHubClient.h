@@ -848,7 +848,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>List of compliance drifts that were detected while running an
+         * <p>Indicates the list of compliance drifts that were detected while running an
          * assessment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts">AWS
          * API Reference</a></p>

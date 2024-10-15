@@ -68,8 +68,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining
-     * account-level configuration data for an extension</a> in the <i>CloudFormation
-     * CLI User Guide</i>.</p>
+     * the account-level configuration of an extension</a> in the <i>CloudFormation
+     * Command Line Interface (CLI) User Guide</i>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }

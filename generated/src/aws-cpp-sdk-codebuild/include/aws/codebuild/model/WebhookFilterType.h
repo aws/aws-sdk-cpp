@@ -24,7 +24,8 @@ namespace Model
     COMMIT_MESSAGE,
     WORKFLOW_NAME,
     TAG_NAME,
-    RELEASE_NAME
+    RELEASE_NAME,
+    REPOSITORY_NAME
   };
 
 namespace WebhookFilterTypeMapper

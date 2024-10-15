@@ -264,9 +264,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that's associated with the stack. During a stack operation, CloudFormation
-     * uses this role's credentials to make calls on your behalf.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that's associated with the
+     * stack. During a stack operation, CloudFormation uses this role's credentials to
+     * make calls on your behalf.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
@@ -298,8 +298,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
      * stacks</a>, termination protection is set on the root stack and can't be changed
      * directly on the nested stack. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-     * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect
+     * a CloudFormation stack from being deleted</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline bool GetEnableTerminationProtection() const{ return m_enableTerminationProtection; }
     inline bool EnableTerminationProtectionHasBeenSet() const { return m_enableTerminationProtectionHasBeenSet; }
@@ -312,8 +313,9 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the direct parent of this stack. For the first level of nested stacks, the
      * root stack is also the parent stack.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed
+     * stacks within other stacks using nested stacks</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetParentId() const{ return m_parentId; }
     inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
@@ -330,8 +332,9 @@ namespace Model
      * <p>For nested stacks--stacks created as resources for another stack--the stack
      * ID of the top-level stack to which the nested stack ultimately belongs.</p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-     * with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed
+     * stacks within other stacks using nested stacks</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetRootId() const{ return m_rootId; }
     inline bool RootIdHasBeenSet() const { return m_rootIdHasBeenSet; }
@@ -349,8 +352,9 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-     * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+     * unmanaged configuration changes to stacks and resources with drift
+     * detection</a>.</p>
      */
     inline const StackDriftInformation& GetDriftInformation() const{ return m_driftInformation; }
     inline bool DriftInformationHasBeenSet() const { return m_driftInformationHasBeenSet; }
@@ -396,8 +400,9 @@ namespace Model
      * configuration phase has completed and the stabilization of the resources is in
      * progress. The stack sets <code>CONFIGURATION_COMPLETE</code> when all of the
      * resources in the stack have reached that event. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
-     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
+     * CloudFormation stack creation events</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline const DetailedStatus& GetDetailedStatus() const{ return m_detailedStatus; }
     inline bool DetailedStatusHasBeenSet() const { return m_detailedStatusHasBeenSet; }

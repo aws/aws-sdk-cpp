@@ -141,14 +141,13 @@ namespace Model
     /**
      * <p>For public extensions that have been activated for this account and Region,
      * the version of the public extension to be used for CloudFormation operations in
-     * this account and Region. For any extensions other than activated third-arty
+     * this account and Region. For any extensions other than activated third-party
      * extensions, CloudFormation returns <code>null</code>.</p> <p>How you specified
      * <code>AutoUpdate</code> when enabling the extension affects whether
      * CloudFormation automatically updates the extension in this account and Region
      * when a new version is released. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
-     * CloudFormation to automatically use new versions of extensions</a> in the
-     * <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically
+     * use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetPublicVersionNumber() const{ return m_publicVersionNumber; }
     inline bool PublicVersionNumberHasBeenSet() const { return m_publicVersionNumberHasBeenSet; }

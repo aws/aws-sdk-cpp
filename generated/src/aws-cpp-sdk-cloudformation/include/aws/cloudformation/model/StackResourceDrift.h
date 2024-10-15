@@ -34,15 +34,15 @@ namespace Model
    * drift. This includes actual and expected property values for resources in which
    * CloudFormation has detected drift. Only resource properties explicitly defined
    * in the stack template are checked for drift. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-   * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Resources
-   * that don't currently support drift detection can't be checked. For a list of
-   * resources that support drift detection, see <a
-   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-   * that Support Drift Detection</a>.</p> <p>Use <a>DetectStackResourceDrift</a> to
-   * detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift
-   * on all resources in a given stack that support drift detection.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+   * unmanaged configuration changes to stacks and resources with drift
+   * detection</a>.</p> <p>Resources that don't currently support drift detection
+   * can't be checked. For a list of resources that support drift detection, see <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+   * type support for imports and drift detection</a>.</p> <p>Use
+   * <a>DetectStackResourceDrift</a> to detect drift on individual resources, or
+   * <a>DetectStackDrift</a> to detect drift on all resources in a given stack that
+   * support drift detection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackResourceDrift">AWS
    * API Reference</a></p>
    */

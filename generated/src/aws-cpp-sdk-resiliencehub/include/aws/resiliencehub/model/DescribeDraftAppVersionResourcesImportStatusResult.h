@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resiliencehub/model/ResourceImportStatusType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/resiliencehub/model/ErrorDetail.h>
 #include <utility>
 
 namespace Aws
@@ -68,7 +70,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>The returned error message for the request.</p>
+     * <p>List of errors that were encountered while importing resources.</p>
+     */
+    inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const{ return m_errorDetails; }
+    inline void SetErrorDetails(const Aws::Vector<ErrorDetail>& value) { m_errorDetails = value; }
+    inline void SetErrorDetails(Aws::Vector<ErrorDetail>&& value) { m_errorDetails = std::move(value); }
+    inline DescribeDraftAppVersionResourcesImportStatusResult& WithErrorDetails(const Aws::Vector<ErrorDetail>& value) { SetErrorDetails(value); return *this;}
+    inline DescribeDraftAppVersionResourcesImportStatusResult& WithErrorDetails(Aws::Vector<ErrorDetail>&& value) { SetErrorDetails(std::move(value)); return *this;}
+    inline DescribeDraftAppVersionResourcesImportStatusResult& AddErrorDetails(const ErrorDetail& value) { m_errorDetails.push_back(value); return *this; }
+    inline DescribeDraftAppVersionResourcesImportStatusResult& AddErrorDetails(ErrorDetail&& value) { m_errorDetails.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The error message returned for the resource request.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
@@ -116,6 +131,8 @@ namespace Model
     Aws::String m_appArn;
 
     Aws::String m_appVersion;
+
+    Aws::Vector<ErrorDetail> m_errorDetails;
 
     Aws::String m_errorMessage;
 

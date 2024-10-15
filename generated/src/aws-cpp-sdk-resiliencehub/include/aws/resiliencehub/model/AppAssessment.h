@@ -271,8 +271,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates a concise summary that provides an overview of the Resilience Hub
-     * assessment.</p>
+     * <p>Indicates the AI-generated summary for the Resilience Hub assessment,
+     * providing a concise overview that highlights the top risks and
+     * recommendations.</p>  <p>This property is available only in the US East
+     * (N. Virginia) Region.</p> 
      */
     inline const AssessmentSummary& GetSummary() const{ return m_summary; }
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }

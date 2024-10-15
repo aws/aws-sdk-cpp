@@ -76,6 +76,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with
+     * an AppRegistry application. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
+     */
+    inline const Aws::String& GetAwsApplicationArn() const{ return m_awsApplicationArn; }
+    inline bool AwsApplicationArnHasBeenSet() const { return m_awsApplicationArnHasBeenSet; }
+    inline void SetAwsApplicationArn(const Aws::String& value) { m_awsApplicationArnHasBeenSet = true; m_awsApplicationArn = value; }
+    inline void SetAwsApplicationArn(Aws::String&& value) { m_awsApplicationArnHasBeenSet = true; m_awsApplicationArn = std::move(value); }
+    inline void SetAwsApplicationArn(const char* value) { m_awsApplicationArnHasBeenSet = true; m_awsApplicationArn.assign(value); }
+    inline AppSummary& WithAwsApplicationArn(const Aws::String& value) { SetAwsApplicationArn(value); return *this;}
+    inline AppSummary& WithAwsApplicationArn(Aws::String&& value) { SetAwsApplicationArn(std::move(value)); return *this;}
+    inline AppSummary& WithAwsApplicationArn(const char* value) { SetAwsApplicationArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The current status of compliance for the resiliency policy.</p>
      */
     inline const AppComplianceStatusType& GetComplianceStatus() const{ return m_complianceStatus; }
@@ -199,6 +217,9 @@ namespace Model
 
     AppAssessmentScheduleType m_assessmentSchedule;
     bool m_assessmentScheduleHasBeenSet = false;
+
+    Aws::String m_awsApplicationArn;
+    bool m_awsApplicationArnHasBeenSet = false;
 
     AppComplianceStatusType m_complianceStatus;
     bool m_complianceStatusHasBeenSet = false;

@@ -45,8 +45,8 @@ namespace Model
      * included. Resources that do not currently support drift detection aren't
      * checked, and so not included. For a list of resources that support drift
      * detection, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-     * that Support Drift Detection</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+     * type support for imports and drift detection</a>.</p>
      */
     inline const Aws::Vector<StackResourceDrift>& GetStackResourceDrifts() const{ return m_stackResourceDrifts; }
     inline void SetStackResourceDrifts(const Aws::Vector<StackResourceDrift>& value) { m_stackResourceDrifts = value; }

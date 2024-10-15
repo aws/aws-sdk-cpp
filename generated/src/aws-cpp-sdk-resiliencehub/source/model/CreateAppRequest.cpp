@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 CreateAppRequest::CreateAppRequest() : 
     m_assessmentSchedule(AppAssessmentScheduleType::NOT_SET),
     m_assessmentScheduleHasBeenSet(false),
+    m_awsApplicationArnHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),
@@ -33,6 +34,12 @@ Aws::String CreateAppRequest::SerializePayload() const
   if(m_assessmentScheduleHasBeenSet)
   {
    payload.WithString("assessmentSchedule", AppAssessmentScheduleTypeMapper::GetNameForAppAssessmentScheduleType(m_assessmentSchedule));
+  }
+
+  if(m_awsApplicationArnHasBeenSet)
+  {
+   payload.WithString("awsApplicationArn", m_awsApplicationArn);
+
   }
 
   if(m_clientTokenHasBeenSet)

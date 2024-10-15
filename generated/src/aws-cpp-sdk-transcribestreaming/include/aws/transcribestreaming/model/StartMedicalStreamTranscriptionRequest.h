@@ -169,8 +169,7 @@ namespace Model
     /**
      * <p>Specify a name for your transcription session. If you don't include this
      * parameter in your request, Amazon Transcribe Medical generates an ID and returns
-     * it in the response.</p> <p>You can use a session ID to retry a streaming
-     * session.</p>
+     * it in the response.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
@@ -197,7 +196,9 @@ namespace Model
      * the output for each channel into one transcript.</p> <p>If you have
      * multi-channel audio and do not enable channel identification, your audio is
      * transcribed in a continuous manner and your transcript is not separated by
-     * channel.</p> <p>For more information, see <a
+     * channel.</p> <p>If you include <code>EnableChannelIdentification</code> in your
+     * request, you must also include <code>NumberOfChannels</code>.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.</p>
      */
@@ -209,8 +210,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify the number of channels in your audio stream. Up to two channels are
-     * supported.</p>
+     * <p>Specify the number of channels in your audio stream. This value must be
+     * <code>2</code>, as only two channels are supported. If your audio doesn't
+     * contain multiple channels, do not include this parameter in your request.</p>
+     * <p>If you include <code>NumberOfChannels</code> in your request, you must also
+     * include <code>EnableChannelIdentification</code>.</p>
      */
     inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
     inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }

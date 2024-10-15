@@ -13,6 +13,7 @@
 #include <aws/codebuild/model/ScalingConfigurationOutput.h>
 #include <aws/codebuild/model/FleetOverflowBehavior.h>
 #include <aws/codebuild/model/VpcConfig.h>
+#include <aws/codebuild/model/ProxyConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/Tag.h>
 #include <utility>
@@ -257,6 +258,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The proxy configuration of the compute fleet.</p>
+     */
+    inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
+    inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
+    inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
+    inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
+    inline Fleet& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
+    inline Fleet& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Machine Image (AMI) of the compute fleet.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
@@ -339,6 +352,9 @@ namespace Model
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
+
+    ProxyConfiguration m_proxyConfiguration;
+    bool m_proxyConfigurationHasBeenSet = false;
 
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet = false;

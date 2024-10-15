@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/ivs/model/Channel.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ivs/model/IngestConfiguration.h>
 #include <aws/ivs/model/RecordingConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivs/model/StreamEvent.h>
 #include <utility>
@@ -47,30 +47,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique identifier for a live or previously live stream in the specified
-     * channel.</p>
+     * <p>The properties of the channel at the time of going live.</p>
      */
-    inline const Aws::String& GetStreamId() const{ return m_streamId; }
-    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-    inline StreamSession& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-    inline StreamSession& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-    inline StreamSession& WithStreamId(const char* value) { SetStreamId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
-     * this is returned as a string</i>.</p>
-     */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline StreamSession& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline StreamSession& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Channel& GetChannel() const{ return m_channel; }
+    inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
+    inline void SetChannel(const Channel& value) { m_channelHasBeenSet = true; m_channel = value; }
+    inline void SetChannel(Channel&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
+    inline StreamSession& WithChannel(const Channel& value) { SetChannel(value); return *this;}
+    inline StreamSession& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,18 +69,6 @@ namespace Model
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
     inline StreamSession& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
     inline StreamSession& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The properties of the channel at the time of going live.</p>
-     */
-    inline const Channel& GetChannel() const{ return m_channel; }
-    inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-    inline void SetChannel(const Channel& value) { m_channelHasBeenSet = true; m_channel = value; }
-    inline void SetChannel(Channel&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-    inline StreamSession& WithChannel(const Channel& value) { SetChannel(value); return *this;}
-    inline StreamSession& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,6 +97,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
+    inline StreamSession& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+    inline StreamSession& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
+     */
+    inline const Aws::String& GetStreamId() const{ return m_streamId; }
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
+    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
+    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
+    inline StreamSession& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
+    inline StreamSession& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
+    inline StreamSession& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>List of Amazon IVS events that the stream encountered. The list is sorted by
      * most recent events and contains up to 500 events. For Amazon IVS events, see <a
      * href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using
@@ -141,23 +141,23 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_streamId;
-    bool m_streamIdHasBeenSet = false;
-
-    Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet = false;
+    Channel m_channel;
+    bool m_channelHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet = false;
-
-    Channel m_channel;
-    bool m_channelHasBeenSet = false;
 
     IngestConfiguration m_ingestConfiguration;
     bool m_ingestConfigurationHasBeenSet = false;
 
     RecordingConfiguration m_recordingConfiguration;
     bool m_recordingConfigurationHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet = false;
+
+    Aws::String m_streamId;
+    bool m_streamIdHasBeenSet = false;
 
     Aws::Vector<StreamEvent> m_truncatedEvents;
     bool m_truncatedEventsHasBeenSet = false;

@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ImportPlaybackKeyPairRequest::ImportPlaybackKeyPairRequest() : 
-    m_publicKeyMaterialHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_publicKeyMaterialHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -23,15 +23,15 @@ Aws::String ImportPlaybackKeyPairRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_publicKeyMaterialHasBeenSet)
-  {
-   payload.WithString("publicKeyMaterial", m_publicKeyMaterial);
-
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_publicKeyMaterialHasBeenSet)
+  {
+   payload.WithString("publicKeyMaterial", m_publicKeyMaterial);
 
   }
 

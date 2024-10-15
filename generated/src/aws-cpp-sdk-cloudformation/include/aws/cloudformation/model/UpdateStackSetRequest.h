@@ -78,10 +78,8 @@ namespace Model
     ///@{
     /**
      * <p>The structure that contains the template body, with a minimum length of 1
-     * byte and a maximum length of 51,200 bytes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify only one of the following parameters: <code>TemplateBody</code> or
+     * byte and a maximum length of 51,200 bytes.</p> <p>Conditional: You must specify
+     * only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
@@ -98,10 +96,8 @@ namespace Model
     /**
      * <p>The location of the file that contains the template body. The URL must point
      * to a template (maximum size: 460,800 bytes) that is located in an Amazon S3
-     * bucket or a Systems Manager document. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
-     * must specify only one of the following parameters: <code>TemplateBody</code> or
+     * bucket or a Systems Manager document.</p> <p>Conditional: You must specify only
+     * one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
@@ -148,35 +144,34 @@ namespace Model
      * set and its associated stack instances.</p> <ul> <li> <p>
      * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> </p> <p>Some
      * stack templates might include resources that can affect permissions in your
-     * Amazon Web Services account; for example, by creating new Identity and Access
-     * Management (IAM) users. For those stacks sets, you must explicitly acknowledge
-     * this by specifying one of these capabilities.</p> <p>The following IAM resources
-     * require you to specify either the <code>CAPABILITY_IAM</code> or
-     * <code>CAPABILITY_NAMED_IAM</code> capability.</p> <ul> <li> <p>If you have IAM
-     * resources, you can specify either capability.</p> </li> <li> <p>If you have IAM
-     * resources with custom names, you <i>must</i> specify
-     * <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you don't specify either
-     * of these capabilities, CloudFormation returns an
+     * Amazon Web Services account, for example, by creating new IAM users. For those
+     * stacks sets, you must explicitly acknowledge this by specifying one of these
+     * capabilities.</p> <p>The following IAM resources require you to specify either
+     * the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+     * capability.</p> <ul> <li> <p>If you have IAM resources, you can specify either
+     * capability.</p> </li> <li> <p>If you have IAM resources with custom names, you
+     * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
+     * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
      * template contains these resources, we recommend that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-accesskey.html">AWS::IAM::AccessKey</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-group.html">AWS::IAM::Group</a>
      * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>
      * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html">AWS::IAM::User</a>
      * </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-usertogroupaddition.html">AWS::IAM::UserToGroupAddition</a>
      * </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging
+     * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some templates reference macros. If
      * your stack set template references one or more macros, you must update the stack
      * set directly from the processed template, without first reviewing the resulting

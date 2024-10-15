@@ -42,6 +42,44 @@ namespace Model
 
     ///@{
     /**
+     * <p>Provides additional details about the stream event. There are several values;
+     * note that the long descriptions are provided in the IVS console but not
+     * delivered through the IVS API or EventBridge:</p> <ul> <li> <p>
+     * <code>StreamTakeoverMediaMismatch</code> — The broadcast client attempted to
+     * take over with different media properties (e.g., codec, resolution, or video
+     * track type) from the original stream.</p> </li> <li> <p>
+     * <code>StreamTakeoverInvalidPriority</code> — The broadcast client attempted a
+     * takeover with either a priority integer value equal to or lower than the
+     * original stream's value or a value outside the allowed range of 1 to
+     * 2,147,483,647.</p> </li> <li> <p> <code>StreamTakeoverLimitBreached</code> — The
+     * broadcast client reached the maximum allowed takeover attempts for this
+     * stream.</p> </li> </ul>
+     */
+    inline const Aws::String& GetCode() const{ return m_code; }
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
+    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
+    inline StreamEvent& WithCode(const Aws::String& value) { SetCode(value); return *this;}
+    inline StreamEvent& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
+    inline StreamEvent& WithCode(const char* value) { SetCode(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
+     * this is returned as a string</i>.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
+    inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
+    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
+    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
+    inline StreamEvent& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
+    inline StreamEvent& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Name that identifies the stream event within a <code>type</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -67,29 +105,19 @@ namespace Model
     inline StreamEvent& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
     inline StreamEvent& WithType(const char* value) { SetType(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
-     * this is returned as a string</i>.</p>
-     */
-    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
-    inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
-    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
-    inline StreamEvent& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
-    inline StreamEvent& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
-    ///@}
   private:
+
+    Aws::String m_code;
+    bool m_codeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_eventTime;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
-
-    Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet = false;
   };
 
 } // namespace Model

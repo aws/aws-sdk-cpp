@@ -13,20 +13,20 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateChannelRequest::CreateChannelRequest() : 
-    m_nameHasBeenSet(false),
-    m_latencyMode(ChannelLatencyMode::NOT_SET),
-    m_latencyModeHasBeenSet(false),
-    m_type(ChannelType::NOT_SET),
-    m_typeHasBeenSet(false),
     m_authorized(false),
     m_authorizedHasBeenSet(false),
-    m_recordingConfigurationArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_insecureIngest(false),
     m_insecureIngestHasBeenSet(false),
+    m_latencyMode(ChannelLatencyMode::NOT_SET),
+    m_latencyModeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_playbackRestrictionPolicyArnHasBeenSet(false),
     m_preset(TranscodePreset::NOT_SET),
     m_presetHasBeenSet(false),
-    m_playbackRestrictionPolicyArnHasBeenSet(false)
+    m_recordingConfigurationArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_type(ChannelType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -34,9 +34,15 @@ Aws::String CreateChannelRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_nameHasBeenSet)
+  if(m_authorizedHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithBool("authorized", m_authorized);
+
+  }
+
+  if(m_insecureIngestHasBeenSet)
+  {
+   payload.WithBool("insecureIngest", m_insecureIngest);
 
   }
 
@@ -45,15 +51,21 @@ Aws::String CreateChannelRequest::SerializePayload() const
    payload.WithString("latencyMode", ChannelLatencyModeMapper::GetNameForChannelLatencyMode(m_latencyMode));
   }
 
-  if(m_typeHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
+   payload.WithString("name", m_name);
+
   }
 
-  if(m_authorizedHasBeenSet)
+  if(m_playbackRestrictionPolicyArnHasBeenSet)
   {
-   payload.WithBool("authorized", m_authorized);
+   payload.WithString("playbackRestrictionPolicyArn", m_playbackRestrictionPolicyArn);
 
+  }
+
+  if(m_presetHasBeenSet)
+  {
+   payload.WithString("preset", TranscodePresetMapper::GetNameForTranscodePreset(m_preset));
   }
 
   if(m_recordingConfigurationArnHasBeenSet)
@@ -73,21 +85,9 @@ Aws::String CreateChannelRequest::SerializePayload() const
 
   }
 
-  if(m_insecureIngestHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithBool("insecureIngest", m_insecureIngest);
-
-  }
-
-  if(m_presetHasBeenSet)
-  {
-   payload.WithString("preset", TranscodePresetMapper::GetNameForTranscodePreset(m_preset));
-  }
-
-  if(m_playbackRestrictionPolicyArnHasBeenSet)
-  {
-   payload.WithString("playbackRestrictionPolicyArn", m_playbackRestrictionPolicyArn);
-
+   payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
   }
 
   return payload.View().WriteReadable();
