@@ -1,0 +1,146 @@
+
+package com.amazonaws.util.awsclientsmithygenerator.generators;
+
+import software.amazon.smithy.utils.SimpleCodeWriter;
+import software.amazon.smithy.codegen.core.SymbolWriter;
+import java.util.List;
+
+import com.google.common.base.Optional;
+public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceWriter, CppImportContainer>{
+    private String namespace;
+    //protected CppBlockWriter blockWriter;    
+    public SmokeTestsSourceWriter(String namespace) {
+        super(new CppImportContainer(namespace));
+        this.namespace = namespace;
+    }
+
+    protected void useNamespaces()
+    {
+        write("${L|}","using namespace Aws::Auth;\n" + //
+                        "using namespace Aws::Http;\n" + //
+                        "using namespace Aws::Client;\n").
+        write("using namespace Aws::$L;" ,namespace ).
+        write("using namespace Aws::$L::Model;", namespace);
+    };
+
+    //SimpleCodeWriter writer 
+    protected void addHeaderBlock()
+    {
+        write("${L|}",
+        
+        "#include <aws/testing/AwsCppSdkGTestSuite.h>\n" + //
+        "#include <aws/testing/AwsTestHelpers.h>\n" + //
+        "#include <aws/core/client/AsyncCallerContext.h>\n" + //
+        "#include <aws/core/client/ClientConfiguration.h>\n" + //
+        "#include <aws/core/client/CoreErrors.h>\n" + //
+        "#include <aws/core/auth/AWSCredentialsProviderChain.h>\n" + //
+        "#include <aws/core/http/HttpTypes.h>\n" + //
+        "#include <aws/core/utils/logging/LogMacros.h>\n" + //
+        "#include <aws/core/utils/memory/AWSMemory.h>\n" + //
+        "#include <aws/core/utils/UnreferencedParam.h>\n" + //
+        "#include <aws/core/utils/Outcome.h>\n" + //
+        "#include <aws/core/utils/memory/stl/AWSSet.h>\n" + //
+        "#include <aws/core/utils/memory/stl/AWSStringStream.h>\n" + //
+        "#include <utility>\n" +
+        "#include <algorithm>\n"
+        );
+    }
+
+    protected void addClientHeader()
+    {
+        write("#include <aws/$L/$LClient.h>", namespace.toLowerCase(), namespace );
+    };
+
+    protected void addRequestHeader(SmokeTestData test)
+    {
+        write("#include <aws/$L/model/$LRequest.h>", namespace.toLowerCase(), test.getOperationName());
+    };
+
+    protected void defineTestFixture()
+    {
+        write("class $LSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {", namespace).
+        indent().
+        write("public:").
+        write("static const char ALLOCATION_TAG[];").
+        dedent().
+        write("}");
+        write("const char $LSmokeTestSuite::ALLOCATION_TAG[] = \"$LSmokeTest\"",namespace,namespace);
+    }
+
+    protected void defineTestCase(SmokeTestData test)
+    {
+        //declare test fixture
+        write("TEST_F($LSmokeTestSuite, $L )",namespace, test.getTestcaseName()).write("{").indent().
+        write("Aws::$L::$LClientConfiguration clientConfiguration;", namespace,namespace);
+        if(test.getConfig().getAwsParams().isPresent())
+        {
+            if(!test.getConfig().getAwsParams().get().getRegion().isEmpty())
+            {
+                write("clientConfiguration.region = \"$L\";",test.getConfig().getAwsParams().get().getRegion());
+            }
+            write("clientConfiguration.useFIPS = $L;",test.getConfig().getAwsParams().get().useFips())
+            .write("clientConfiguration.useDualstack = $L;",test.getConfig().getAwsParams().get().useDualstack());
+        }
+        if(test.getAuth() == "sigv4" || test.getAuth() == "sigv4a")
+        {
+            write("auto clientSp = Aws::MakeShared<$LClient>(ALLOCATION_TAG, clientConfiguration);",namespace);
+        }
+        //comments
+        if( !test.getTestDataCodeBlock().isEmpty() )
+        {
+            write("//Prepare test data");
+        }
+        //write blocks
+        test.getTestDataCodeBlock().stream().forEach(getter -> {
+            write("$L", getter);
+        });
+        write("//populate input params").
+        write("${L|}", test.getRequestBlock());
+        write("auto outcome = clientSp->$L(input);",test.getOperationName());
+        if (test.isExpectSuccess())
+        {
+            write("EXPECT_TRUE( outcome.IsSuccess());");
+        }
+        else
+        {
+            write("EXPECT_FALSE( outcome.IsSuccess());");
+        }
+
+        dedent().write("}");
+    }
+
+
+    public String generate(List<SmokeTestData> tests)
+    {
+        //tests will belong to one client, so choose first one
+        addHeaderBlock();
+        addClientHeader();
+        
+        tests.stream().forEach(test -> {
+            addRequestHeader(test);
+        });
+        write("namespace $LSmokeTest{", namespace);
+        useNamespaces();
+
+        defineTestFixture();
+        tests.stream().forEach(test -> {
+            defineTestCase(test);
+        });
+        write("}");
+        
+        return toString();
+    }
+
+    /**
+        * The Factory class for creating CppWriters
+     */
+    public static final class SmokeTestsSourceWriterFactory implements SymbolWriter.Factory<SmokeTestsSourceWriter> {
+
+        @Override
+        public SmokeTestsSourceWriter apply(String filename, String namespace) {
+            return new SmokeTestsSourceWriter(namespace);
+        }
+    }
+
+    
+}
