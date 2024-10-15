@@ -52,6 +52,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with
+     * an AppRegistry application. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
+     */
+    inline const Aws::String& GetAwsApplicationArn() const{ return m_awsApplicationArn; }
+    inline bool AwsApplicationArnHasBeenSet() const { return m_awsApplicationArnHasBeenSet; }
+    inline void SetAwsApplicationArn(const Aws::String& value) { m_awsApplicationArnHasBeenSet = true; m_awsApplicationArn = value; }
+    inline void SetAwsApplicationArn(Aws::String&& value) { m_awsApplicationArnHasBeenSet = true; m_awsApplicationArn = std::move(value); }
+    inline void SetAwsApplicationArn(const char* value) { m_awsApplicationArnHasBeenSet = true; m_awsApplicationArn.assign(value); }
+    inline CreateAppRequest& WithAwsApplicationArn(const Aws::String& value) { SetAwsApplicationArn(value); return *this;}
+    inline CreateAppRequest& WithAwsApplicationArn(Aws::String&& value) { SetAwsApplicationArn(std::move(value)); return *this;}
+    inline CreateAppRequest& WithAwsApplicationArn(const char* value) { SetAwsApplicationArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Used for an idempotency token. A client token is a unique, case-sensitive
      * string of up to 64 ASCII characters. You should not reuse the same client token
      * for other API requests.</p>
@@ -167,6 +185,9 @@ namespace Model
 
     AppAssessmentScheduleType m_assessmentSchedule;
     bool m_assessmentScheduleHasBeenSet = false;
+
+    Aws::String m_awsApplicationArn;
+    bool m_awsApplicationArnHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;

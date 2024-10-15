@@ -187,8 +187,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that
-     * will be associated with the stack if you execute the change set.</p>
+     * <p>The ARNs of the Amazon SNS topics that will be associated with the stack if
+     * you execute the change set.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
     inline void SetNotificationARNs(const Aws::Vector<Aws::String>& value) { m_notificationARNs = value; }

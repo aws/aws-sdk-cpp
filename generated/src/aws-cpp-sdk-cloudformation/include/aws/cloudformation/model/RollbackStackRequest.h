@@ -52,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that
-     * CloudFormation assumes to rollback the stack.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to
+     * rollback the stack.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }

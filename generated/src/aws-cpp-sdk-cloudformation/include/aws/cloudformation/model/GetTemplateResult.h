@@ -42,10 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Structure containing the template body. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the <i>CloudFormation User Guide</i>.)</p> <p>CloudFormation
-     * returns the same template that was used when the stack was created.</p>
+     * <p>Structure containing the template body.</p> <p>CloudFormation returns the
+     * same template that was used when the stack was created.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
     inline void SetTemplateBody(const Aws::String& value) { m_templateBody = value; }

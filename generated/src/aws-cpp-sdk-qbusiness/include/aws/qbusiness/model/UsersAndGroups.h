@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about users and groups associated with a topic control
-   * rule.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about users and group names associated with a topic
+   * control rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UsersAndGroups">AWS
    * API Reference</a></p>
    */
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user groups associated with a topic control rule.</p>
+     * <p>The user group names associated with a topic control rule.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserGroups() const{ return m_userGroups; }
     inline bool UserGroupsHasBeenSet() const { return m_userGroupsHasBeenSet; }

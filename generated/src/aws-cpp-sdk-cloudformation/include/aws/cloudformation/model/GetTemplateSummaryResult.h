@@ -80,8 +80,8 @@ namespace Model
      * <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise,
      * those actions return an <code>InsufficientCapabilities</code> error.</p> <p>For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in CloudFormation Templates</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging
+     * IAM resources in CloudFormation templates</a>.</p>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilities = value; }

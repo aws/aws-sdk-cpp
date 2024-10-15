@@ -70,10 +70,8 @@ namespace Model
     ///@{
     /**
      * <p>Specify the language code that represents the language spoken in your
-     * audio.</p> <p>If you're unsure of the language spoken in your audio, consider
-     * using <code>IdentifyLanguage</code> to enable automatic language
-     * identification.</p> <p>For a list of languages supported with streaming Call
-     * Analytics, refer to the <a
+     * audio.</p> <p>For a list of languages supported with real-time Call Analytics,
+     * refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages</a> table.</p>
      */
@@ -139,8 +137,7 @@ namespace Model
     /**
      * <p>Specify a name for your Call Analytics transcription session. If you don't
      * include this parameter in your request, Amazon Transcribe generates an ID and
-     * returns it in the response.</p> <p>You can use a session ID to retry a streaming
-     * session.</p>
+     * returns it in the response.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
@@ -153,7 +150,12 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2
+     * or WebSocket data frames.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
+     * streaming audio</a>.</p>
+     */
     AWS_TRANSCRIBESTREAMINGSERVICE_API std::shared_ptr<AudioStream> GetAudioStream() const { return m_audioStream; }
     AWS_TRANSCRIBESTREAMINGSERVICE_API void SetAudioStream(const std::shared_ptr<AudioStream>& value) { m_audioStream = value; }
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartCallAnalyticsStreamTranscriptionRequest& WithAudioStream(const std::shared_ptr<AudioStream>& value) { SetAudioStream(value); return *this;}
@@ -252,10 +254,11 @@ namespace Model
      * <p>Labels all personally identifiable information (PII) identified in your
      * transcript.</p> <p>Content identification is performed at the segment level; PII
      * specified in <code>PiiEntityTypes</code> is flagged upon complete transcription
-     * of an audio segment.</p> <p>You can’t set <code>ContentIdentificationType</code>
-     * and <code>ContentRedactionType</code> in the same request. If you set both, your
-     * request returns a <code>BadRequestException</code>.</p> <p>For more information,
-     * see <a
+     * of an audio segment. If you don't include <code>PiiEntityTypes</code> in your
+     * request, all PII is identified.</p> <p>You can’t set
+     * <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting
      * or identifying personally identifiable information</a>.</p>
      */
@@ -272,10 +275,11 @@ namespace Model
      * <p>Redacts all personally identifiable information (PII) identified in your
      * transcript.</p> <p>Content redaction is performed at the segment level; PII
      * specified in <code>PiiEntityTypes</code> is redacted upon complete transcription
-     * of an audio segment.</p> <p>You can’t set <code>ContentRedactionType</code> and
-     * <code>ContentIdentificationType</code> in the same request. If you set both,
-     * your request returns a <code>BadRequestException</code>.</p> <p>For more
-     * information, see <a
+     * of an audio segment. If you don't include <code>PiiEntityTypes</code> in your
+     * request, all PII is redacted.</p> <p>You can’t set
+     * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting
      * or identifying personally identifiable information</a>.</p>
      */
@@ -291,15 +295,17 @@ namespace Model
     /**
      * <p>Specify which types of personally identifiable information (PII) you want to
      * redact in your transcript. You can include as many types as you'd like, or you
-     * can select <code>ALL</code>.</p> <p>To include <code>PiiEntityTypes</code> in
-     * your Call Analytics request, you must also include either
+     * can select <code>ALL</code>.</p> <p>Values must be comma-separated and can
+     * include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>,
+     * <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>,
+     * <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>,
+     * <code>SSN</code>, or <code>ALL</code>.</p> <p>Note that if you include
+     * <code>PiiEntityTypes</code> in your request, you must also include
      * <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-     * <p>Values must be comma-separated and can include:
-     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
-     * or <code>ALL</code>.</p>
+     * <p>If you include <code>ContentRedactionType</code> or
+     * <code>ContentIdentificationType</code> in your request, but do not include
+     * <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
      */
     inline const Aws::String& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
     inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }

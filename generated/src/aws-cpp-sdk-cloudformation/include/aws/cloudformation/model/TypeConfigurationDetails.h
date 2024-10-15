@@ -27,9 +27,9 @@ namespace Model
   /**
    * <p>Detailed information concerning the specification of a CloudFormation
    * extension in a given account and Region.</p> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-   * extensions at the account level</a> in the <i>CloudFormation User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+   * configuration data for extensions in your account</a> in the <i>CloudFormation
+   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TypeConfigurationDetails">AWS
    * API Reference</a></p>
    */

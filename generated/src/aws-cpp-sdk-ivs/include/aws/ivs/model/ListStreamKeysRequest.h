@@ -48,6 +48,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>Maximum number of streamKeys to return. Default: 1.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListStreamKeysRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The first stream key to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
@@ -60,26 +70,16 @@ namespace Model
     inline ListStreamKeysRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListStreamKeysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
-
-    ///@{
-    /**
-     * <p>Maximum number of streamKeys to return. Default: 1.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline ListStreamKeysRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-    ///@}
   private:
 
     Aws::String m_channelArn;
     bool m_channelArnHasBeenSet = false;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet = false;
-
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

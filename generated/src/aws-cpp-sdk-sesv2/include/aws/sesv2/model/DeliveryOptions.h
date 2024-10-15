@@ -69,6 +69,18 @@ namespace Model
     inline DeliveryOptions& WithSendingPoolName(Aws::String&& value) { SetSendingPoolName(std::move(value)); return *this;}
     inline DeliveryOptions& WithSendingPoolName(const char* value) { SetSendingPoolName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The maximum amount of time, in seconds, that Amazon SES API v2 will attempt
+     * delivery of email. If specified, the value must greater than or equal to 300
+     * seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes). </p>
+     */
+    inline long long GetMaxDeliverySeconds() const{ return m_maxDeliverySeconds; }
+    inline bool MaxDeliverySecondsHasBeenSet() const { return m_maxDeliverySecondsHasBeenSet; }
+    inline void SetMaxDeliverySeconds(long long value) { m_maxDeliverySecondsHasBeenSet = true; m_maxDeliverySeconds = value; }
+    inline DeliveryOptions& WithMaxDeliverySeconds(long long value) { SetMaxDeliverySeconds(value); return *this;}
+    ///@}
   private:
 
     TlsPolicy m_tlsPolicy;
@@ -76,6 +88,9 @@ namespace Model
 
     Aws::String m_sendingPoolName;
     bool m_sendingPoolNameHasBeenSet = false;
+
+    long long m_maxDeliverySeconds;
+    bool m_maxDeliverySecondsHasBeenSet = false;
   };
 
 } // namespace Model

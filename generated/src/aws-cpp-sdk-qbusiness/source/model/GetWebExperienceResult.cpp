@@ -98,6 +98,15 @@ GetWebExperienceResult& GetWebExperienceResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("origins"))
+  {
+    Aws::Utils::Array<JsonView> originsJsonList = jsonValue.GetArray("origins");
+    for(unsigned originsIndex = 0; originsIndex < originsJsonList.GetLength(); ++originsIndex)
+    {
+      m_origins.push_back(originsJsonList[originsIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");

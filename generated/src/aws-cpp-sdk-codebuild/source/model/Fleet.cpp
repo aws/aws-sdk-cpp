@@ -35,6 +35,7 @@ Fleet::Fleet() :
     m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
     m_overflowBehaviorHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_fleetServiceRoleHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -133,6 +134,13 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("proxyConfiguration"))
+  {
+    m_proxyConfiguration = jsonValue.GetObject("proxyConfiguration");
+
+    m_proxyConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("imageId"))
   {
     m_imageId = jsonValue.GetString("imageId");
@@ -228,6 +236,12 @@ JsonValue Fleet::Jsonize() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_proxyConfigurationHasBeenSet)
+  {
+   payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
 
   }
 

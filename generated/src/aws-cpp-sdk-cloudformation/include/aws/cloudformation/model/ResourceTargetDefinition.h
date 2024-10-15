@@ -79,9 +79,10 @@ namespace Model
      * whether a change to this property causes the resource to be recreated. The value
      * can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>.
      * To determine the conditions for a <code>Conditionally</code> recreation, see the
-     * update behavior for that <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the <i>CloudFormation User Guide</i>.</p>
+     * update behavior for that property in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>.</p>
      */
     inline const RequiresRecreation& GetRequiresRecreation() const{ return m_requiresRecreation; }
     inline bool RequiresRecreationHasBeenSet() const { return m_requiresRecreationHasBeenSet; }

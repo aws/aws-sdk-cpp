@@ -103,7 +103,7 @@ namespace Model
      * Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed permissions]
      * For automatic deployments that require a sequence of operations, the operation
      * is queued to be performed. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html#stackset-status-codes">stack
      * set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p>
      * </li> <li> <p> <code>RUNNING</code>: The operation is currently being
      * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
@@ -231,8 +231,8 @@ namespace Model
      * set.</p> <p>This information will only be present for stack set operations whose
      * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-     * Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detect
+     * stack set drift</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const StackSetDriftDetectionDetails& GetStackSetDriftDetectionDetails() const{ return m_stackSetDriftDetectionDetails; }
     inline bool StackSetDriftDetectionDetailsHasBeenSet() const { return m_stackSetDriftDetectionDetailsHasBeenSet; }

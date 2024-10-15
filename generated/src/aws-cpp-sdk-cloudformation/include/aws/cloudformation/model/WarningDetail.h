@@ -45,14 +45,14 @@ namespace Model
     ///@{
     /**
      * <p>The type of this warning. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">IaC
-     * generator and write-only properties</a> in the <i>CloudFormation User
-     * Guide</i>.</p> <ul> <li> <p> <code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The
-     * resource requires mutually-exclusive write-only properties. The IaC generator
-     * selects one set of mutually exclusive properties and converts the included
-     * properties into parameters. The parameter names have a suffix <code>OneOf</code>
-     * and the parameter descriptions indicate that the corresponding property can be
-     * replaced with other exclusive properties.</p> </li> <li> <p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-write-only-properties.html">Resolve
+     * write-only properties</a> in the <i>CloudFormation User Guide</i>.</p> <ul> <li>
+     * <p> <code>MUTUALLY_EXCLUSIVE_PROPERTIES</code> - The resource requires
+     * mutually-exclusive write-only properties. The IaC generator selects one set of
+     * mutually exclusive properties and converts the included properties into
+     * parameters. The parameter names have a suffix <code>OneOf</code> and the
+     * parameter descriptions indicate that the corresponding property can be replaced
+     * with other exclusive properties.</p> </li> <li> <p>
      * <code>UNSUPPORTED_PROPERTIES</code> - Unsupported properties are present in the
      * resource. One example of unsupported properties would be a required write-only
      * property that is an array, because a parameter cannot be an array. Another

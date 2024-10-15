@@ -108,10 +108,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Type of resource. For more information, go to <a
+     * <p>Type of resource. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
