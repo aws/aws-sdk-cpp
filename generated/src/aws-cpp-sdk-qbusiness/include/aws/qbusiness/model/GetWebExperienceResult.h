@@ -9,6 +9,7 @@
 #include <aws/qbusiness/model/WebExperienceStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/WebExperienceSamplePromptsControlMode.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/IdentityProviderConfiguration.h>
 #include <aws/qbusiness/model/ErrorDetail.h>
 #include <utility>
@@ -183,6 +184,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Gets the website domain origins that are allowed to embed the Amazon Q
+     * Business web experience. <pre><code> The &lt;i&gt;domain origin&lt;/i&gt; refers
+     * to the base URL for accessing a website including the protocol
+     * (&lt;code&gt;http/https&lt;/code&gt;), the domain name, and the port number (if
+     * specified). &lt;/p&gt; </code></pre>
+     */
+    inline const Aws::Vector<Aws::String>& GetOrigins() const{ return m_origins; }
+    inline void SetOrigins(const Aws::Vector<Aws::String>& value) { m_origins = value; }
+    inline void SetOrigins(Aws::Vector<Aws::String>&& value) { m_origins = std::move(value); }
+    inline GetWebExperienceResult& WithOrigins(const Aws::Vector<Aws::String>& value) { SetOrigins(value); return *this;}
+    inline GetWebExperienceResult& WithOrigins(Aws::Vector<Aws::String>&& value) { SetOrigins(std::move(value)); return *this;}
+    inline GetWebExperienceResult& AddOrigins(const Aws::String& value) { m_origins.push_back(value); return *this; }
+    inline GetWebExperienceResult& AddOrigins(Aws::String&& value) { m_origins.push_back(std::move(value)); return *this; }
+    inline GetWebExperienceResult& AddOrigins(const char* value) { m_origins.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p> The Amazon Resource Name (ARN) of the service role attached to your web
      * experience.</p>
      */
@@ -253,6 +272,8 @@ namespace Model
     Aws::String m_welcomeMessage;
 
     WebExperienceSamplePromptsControlMode m_samplePromptsControlMode;
+
+    Aws::Vector<Aws::String> m_origins;
 
     Aws::String m_roleArn;
 

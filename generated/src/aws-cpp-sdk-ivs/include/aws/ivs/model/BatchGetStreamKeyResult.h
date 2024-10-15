@@ -7,8 +7,8 @@
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ivs/model/StreamKey.h>
 #include <aws/ivs/model/BatchError.h>
+#include <aws/ivs/model/StreamKey.h>
 #include <utility>
 
 namespace Aws
@@ -39,19 +39,6 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::Vector<StreamKey>& GetStreamKeys() const{ return m_streamKeys; }
-    inline void SetStreamKeys(const Aws::Vector<StreamKey>& value) { m_streamKeys = value; }
-    inline void SetStreamKeys(Aws::Vector<StreamKey>&& value) { m_streamKeys = std::move(value); }
-    inline BatchGetStreamKeyResult& WithStreamKeys(const Aws::Vector<StreamKey>& value) { SetStreamKeys(value); return *this;}
-    inline BatchGetStreamKeyResult& WithStreamKeys(Aws::Vector<StreamKey>&& value) { SetStreamKeys(std::move(value)); return *this;}
-    inline BatchGetStreamKeyResult& AddStreamKeys(const StreamKey& value) { m_streamKeys.push_back(value); return *this; }
-    inline BatchGetStreamKeyResult& AddStreamKeys(StreamKey&& value) { m_streamKeys.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p/>
-     */
     inline const Aws::Vector<BatchError>& GetErrors() const{ return m_errors; }
     inline void SetErrors(const Aws::Vector<BatchError>& value) { m_errors = value; }
     inline void SetErrors(Aws::Vector<BatchError>&& value) { m_errors = std::move(value); }
@@ -59,6 +46,19 @@ namespace Model
     inline BatchGetStreamKeyResult& WithErrors(Aws::Vector<BatchError>&& value) { SetErrors(std::move(value)); return *this;}
     inline BatchGetStreamKeyResult& AddErrors(const BatchError& value) { m_errors.push_back(value); return *this; }
     inline BatchGetStreamKeyResult& AddErrors(BatchError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::Vector<StreamKey>& GetStreamKeys() const{ return m_streamKeys; }
+    inline void SetStreamKeys(const Aws::Vector<StreamKey>& value) { m_streamKeys = value; }
+    inline void SetStreamKeys(Aws::Vector<StreamKey>&& value) { m_streamKeys = std::move(value); }
+    inline BatchGetStreamKeyResult& WithStreamKeys(const Aws::Vector<StreamKey>& value) { SetStreamKeys(value); return *this;}
+    inline BatchGetStreamKeyResult& WithStreamKeys(Aws::Vector<StreamKey>&& value) { SetStreamKeys(std::move(value)); return *this;}
+    inline BatchGetStreamKeyResult& AddStreamKeys(const StreamKey& value) { m_streamKeys.push_back(value); return *this; }
+    inline BatchGetStreamKeyResult& AddStreamKeys(StreamKey&& value) { m_streamKeys.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<StreamKey> m_streamKeys;
-
     Aws::Vector<BatchError> m_errors;
+
+    Aws::Vector<StreamKey> m_streamKeys;
 
     Aws::String m_requestId;
   };

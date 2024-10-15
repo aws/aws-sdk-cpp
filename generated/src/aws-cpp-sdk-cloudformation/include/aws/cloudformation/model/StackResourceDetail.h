@@ -103,10 +103,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Type of resource. For more information, go to <a
+     * <p>Type of resource. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -175,7 +175,7 @@ namespace Model
      * <p>The content of the <code>Metadata</code> attribute declared for the resource.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-     * Attribute</a> in the <i>CloudFormation User Guide</i>.</p>
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetMetadata() const{ return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
@@ -193,8 +193,9 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-     * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+     * unmanaged configuration changes to stacks and resources with drift
+     * detection</a>.</p>
      */
     inline const StackResourceDriftInformation& GetDriftInformation() const{ return m_driftInformation; }
     inline bool DriftInformationHasBeenSet() const { return m_driftInformationHasBeenSet; }

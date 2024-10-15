@@ -19,6 +19,7 @@ CreateWebExperienceRequest::CreateWebExperienceRequest() :
     m_welcomeMessageHasBeenSet(false),
     m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET),
     m_samplePromptsControlModeHasBeenSet(false),
+    m_originsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
@@ -52,6 +53,17 @@ Aws::String CreateWebExperienceRequest::SerializePayload() const
   if(m_samplePromptsControlModeHasBeenSet)
   {
    payload.WithString("samplePromptsControlMode", WebExperienceSamplePromptsControlModeMapper::GetNameForWebExperienceSamplePromptsControlMode(m_samplePromptsControlMode));
+  }
+
+  if(m_originsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> originsJsonList(m_origins.size());
+   for(unsigned originsIndex = 0; originsIndex < originsJsonList.GetLength(); ++originsIndex)
+   {
+     originsJsonList[originsIndex].AsString(m_origins[originsIndex]);
+   }
+   payload.WithArray("origins", std::move(originsJsonList));
+
   }
 
   if(m_roleArnHasBeenSet)

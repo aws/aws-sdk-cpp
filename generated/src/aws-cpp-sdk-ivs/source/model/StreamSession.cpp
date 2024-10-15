@@ -19,12 +19,12 @@ namespace Model
 {
 
 StreamSession::StreamSession() : 
-    m_streamIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
     m_channelHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_ingestConfigurationHasBeenSet(false),
     m_recordingConfigurationHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_streamIdHasBeenSet(false),
     m_truncatedEventsHasBeenSet(false)
 {
 }
@@ -37,18 +37,11 @@ StreamSession::StreamSession(JsonView jsonValue)
 
 StreamSession& StreamSession::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("streamId"))
+  if(jsonValue.ValueExists("channel"))
   {
-    m_streamId = jsonValue.GetString("streamId");
+    m_channel = jsonValue.GetObject("channel");
 
-    m_streamIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetString("startTime");
-
-    m_startTimeHasBeenSet = true;
+    m_channelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("endTime"))
@@ -56,13 +49,6 @@ StreamSession& StreamSession::operator =(JsonView jsonValue)
     m_endTime = jsonValue.GetString("endTime");
 
     m_endTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("channel"))
-  {
-    m_channel = jsonValue.GetObject("channel");
-
-    m_channelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ingestConfiguration"))
@@ -77,6 +63,20 @@ StreamSession& StreamSession::operator =(JsonView jsonValue)
     m_recordingConfiguration = jsonValue.GetObject("recordingConfiguration");
 
     m_recordingConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetString("startTime");
+
+    m_startTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("streamId"))
+  {
+    m_streamId = jsonValue.GetString("streamId");
+
+    m_streamIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("truncatedEvents"))
@@ -96,26 +96,15 @@ JsonValue StreamSession::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_streamIdHasBeenSet)
+  if(m_channelHasBeenSet)
   {
-   payload.WithString("streamId", m_streamId);
+   payload.WithObject("channel", m_channel.Jsonize());
 
-  }
-
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_endTimeHasBeenSet)
   {
    payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_channelHasBeenSet)
-  {
-   payload.WithObject("channel", m_channel.Jsonize());
-
   }
 
   if(m_ingestConfigurationHasBeenSet)
@@ -127,6 +116,17 @@ JsonValue StreamSession::Jsonize() const
   if(m_recordingConfigurationHasBeenSet)
   {
    payload.WithObject("recordingConfiguration", m_recordingConfiguration.Jsonize());
+
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_streamIdHasBeenSet)
+  {
+   payload.WithString("streamId", m_streamId);
 
   }
 

@@ -108,8 +108,8 @@ namespace Model
      * <code>GetObject</code> </p> </li> <li> <p> <code>PutObject</code> </p> </li>
      * </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions,
-     * Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services
-     * Identity and Access Management User Guide</i>.</p>
+     * Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access
+     * Management User Guide</i>.</p>
      */
     inline const Aws::String& GetLogDeliveryBucket() const{ return m_logDeliveryBucket; }
     inline bool LogDeliveryBucketHasBeenSet() const { return m_logDeliveryBucketHasBeenSet; }

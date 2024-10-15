@@ -20,23 +20,23 @@ namespace Model
 
 Channel::Channel() : 
     m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_latencyMode(ChannelLatencyMode::NOT_SET),
-    m_latencyModeHasBeenSet(false),
-    m_type(ChannelType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_recordingConfigurationArnHasBeenSet(false),
-    m_ingestEndpointHasBeenSet(false),
-    m_playbackUrlHasBeenSet(false),
     m_authorized(false),
     m_authorizedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
+    m_ingestEndpointHasBeenSet(false),
     m_insecureIngest(false),
     m_insecureIngestHasBeenSet(false),
+    m_latencyMode(ChannelLatencyMode::NOT_SET),
+    m_latencyModeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_playbackRestrictionPolicyArnHasBeenSet(false),
+    m_playbackUrlHasBeenSet(false),
     m_preset(TranscodePreset::NOT_SET),
     m_presetHasBeenSet(false),
+    m_recordingConfigurationArnHasBeenSet(false),
     m_srtHasBeenSet(false),
-    m_playbackRestrictionPolicyArnHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_type(ChannelType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -55,32 +55,11 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("authorized"))
   {
-    m_name = jsonValue.GetString("name");
+    m_authorized = jsonValue.GetBool("authorized");
 
-    m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("latencyMode"))
-  {
-    m_latencyMode = ChannelLatencyModeMapper::GetChannelLatencyModeForName(jsonValue.GetString("latencyMode"));
-
-    m_latencyModeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("type"));
-
-    m_typeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("recordingConfigurationArn"))
-  {
-    m_recordingConfigurationArn = jsonValue.GetString("recordingConfigurationArn");
-
-    m_recordingConfigurationArnHasBeenSet = true;
+    m_authorizedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ingestEndpoint"))
@@ -90,6 +69,34 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_ingestEndpointHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("insecureIngest"))
+  {
+    m_insecureIngest = jsonValue.GetBool("insecureIngest");
+
+    m_insecureIngestHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("latencyMode"))
+  {
+    m_latencyMode = ChannelLatencyModeMapper::GetChannelLatencyModeForName(jsonValue.GetString("latencyMode"));
+
+    m_latencyModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("playbackRestrictionPolicyArn"))
+  {
+    m_playbackRestrictionPolicyArn = jsonValue.GetString("playbackRestrictionPolicyArn");
+
+    m_playbackRestrictionPolicyArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("playbackUrl"))
   {
     m_playbackUrl = jsonValue.GetString("playbackUrl");
@@ -97,11 +104,25 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_playbackUrlHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("authorized"))
+  if(jsonValue.ValueExists("preset"))
   {
-    m_authorized = jsonValue.GetBool("authorized");
+    m_preset = TranscodePresetMapper::GetTranscodePresetForName(jsonValue.GetString("preset"));
 
-    m_authorizedHasBeenSet = true;
+    m_presetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recordingConfigurationArn"))
+  {
+    m_recordingConfigurationArn = jsonValue.GetString("recordingConfigurationArn");
+
+    m_recordingConfigurationArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("srt"))
+  {
+    m_srt = jsonValue.GetObject("srt");
+
+    m_srtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -114,32 +135,11 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("insecureIngest"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_insecureIngest = jsonValue.GetBool("insecureIngest");
+    m_type = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("type"));
 
-    m_insecureIngestHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("preset"))
-  {
-    m_preset = TranscodePresetMapper::GetTranscodePresetForName(jsonValue.GetString("preset"));
-
-    m_presetHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("srt"))
-  {
-    m_srt = jsonValue.GetObject("srt");
-
-    m_srtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("playbackRestrictionPolicyArn"))
-  {
-    m_playbackRestrictionPolicyArn = jsonValue.GetString("playbackRestrictionPolicyArn");
-
-    m_playbackRestrictionPolicyArnHasBeenSet = true;
+    m_typeHasBeenSet = true;
   }
 
   return *this;
@@ -155,25 +155,9 @@ JsonValue Channel::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_authorizedHasBeenSet)
   {
-   payload.WithString("name", m_name);
-
-  }
-
-  if(m_latencyModeHasBeenSet)
-  {
-   payload.WithString("latencyMode", ChannelLatencyModeMapper::GetNameForChannelLatencyMode(m_latencyMode));
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
-  }
-
-  if(m_recordingConfigurationArnHasBeenSet)
-  {
-   payload.WithString("recordingConfigurationArn", m_recordingConfigurationArn);
+   payload.WithBool("authorized", m_authorized);
 
   }
 
@@ -183,15 +167,49 @@ JsonValue Channel::Jsonize() const
 
   }
 
+  if(m_insecureIngestHasBeenSet)
+  {
+   payload.WithBool("insecureIngest", m_insecureIngest);
+
+  }
+
+  if(m_latencyModeHasBeenSet)
+  {
+   payload.WithString("latencyMode", ChannelLatencyModeMapper::GetNameForChannelLatencyMode(m_latencyMode));
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_playbackRestrictionPolicyArnHasBeenSet)
+  {
+   payload.WithString("playbackRestrictionPolicyArn", m_playbackRestrictionPolicyArn);
+
+  }
+
   if(m_playbackUrlHasBeenSet)
   {
    payload.WithString("playbackUrl", m_playbackUrl);
 
   }
 
-  if(m_authorizedHasBeenSet)
+  if(m_presetHasBeenSet)
   {
-   payload.WithBool("authorized", m_authorized);
+   payload.WithString("preset", TranscodePresetMapper::GetNameForTranscodePreset(m_preset));
+  }
+
+  if(m_recordingConfigurationArnHasBeenSet)
+  {
+   payload.WithString("recordingConfigurationArn", m_recordingConfigurationArn);
+
+  }
+
+  if(m_srtHasBeenSet)
+  {
+   payload.WithObject("srt", m_srt.Jsonize());
 
   }
 
@@ -206,27 +224,9 @@ JsonValue Channel::Jsonize() const
 
   }
 
-  if(m_insecureIngestHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithBool("insecureIngest", m_insecureIngest);
-
-  }
-
-  if(m_presetHasBeenSet)
-  {
-   payload.WithString("preset", TranscodePresetMapper::GetNameForTranscodePreset(m_preset));
-  }
-
-  if(m_srtHasBeenSet)
-  {
-   payload.WithObject("srt", m_srt.Jsonize());
-
-  }
-
-  if(m_playbackRestrictionPolicyArnHasBeenSet)
-  {
-   payload.WithString("playbackRestrictionPolicyArn", m_playbackRestrictionPolicyArn);
-
+   payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
   }
 
   return payload;

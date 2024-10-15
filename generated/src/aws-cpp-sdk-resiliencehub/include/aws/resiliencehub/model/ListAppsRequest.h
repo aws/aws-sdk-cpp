@@ -61,6 +61,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Amazon Resource Name (ARN) of Resource Groups group that is integrated with
+     * an AppRegistry application. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
+     */
+    inline const Aws::String& GetAwsApplicationArn() const{ return m_awsApplicationArn; }
+    inline bool AwsApplicationArnHasBeenSet() const { return m_awsApplicationArnHasBeenSet; }
+    inline void SetAwsApplicationArn(const Aws::String& value) { m_awsApplicationArnHasBeenSet = true; m_awsApplicationArn = value; }
+    inline void SetAwsApplicationArn(Aws::String&& value) { m_awsApplicationArnHasBeenSet = true; m_awsApplicationArn = std::move(value); }
+    inline void SetAwsApplicationArn(const char* value) { m_awsApplicationArnHasBeenSet = true; m_awsApplicationArn.assign(value); }
+    inline ListAppsRequest& WithAwsApplicationArn(const Aws::String& value) { SetAwsApplicationArn(value); return *this;}
+    inline ListAppsRequest& WithAwsApplicationArn(Aws::String&& value) { SetAwsApplicationArn(std::move(value)); return *this;}
+    inline ListAppsRequest& WithAwsApplicationArn(const char* value) { SetAwsApplicationArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates the lower limit of the range that is used to filter applications
      * based on their last assessment times.</p>
      */
@@ -141,6 +159,9 @@ namespace Model
 
     Aws::String m_appArn;
     bool m_appArnHasBeenSet = false;
+
+    Aws::String m_awsApplicationArn;
+    bool m_awsApplicationArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_fromLastAssessmentTime;
     bool m_fromLastAssessmentTimeHasBeenSet = false;

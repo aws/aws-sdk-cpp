@@ -20,15 +20,15 @@ namespace Model
 
 RecordingConfiguration::RecordingConfiguration() : 
     m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_destinationConfigurationHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_recordingReconnectWindowSeconds(0),
+    m_recordingReconnectWindowSecondsHasBeenSet(false),
+    m_renditionConfigurationHasBeenSet(false),
     m_state(RecordingConfigurationState::NOT_SET),
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_thumbnailConfigurationHasBeenSet(false),
-    m_recordingReconnectWindowSeconds(0),
-    m_recordingReconnectWindowSecondsHasBeenSet(false),
-    m_renditionConfigurationHasBeenSet(false)
+    m_thumbnailConfigurationHasBeenSet(false)
 {
 }
 
@@ -47,6 +47,13 @@ RecordingConfiguration& RecordingConfiguration::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("destinationConfiguration"))
+  {
+    m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
+
+    m_destinationConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -54,11 +61,18 @@ RecordingConfiguration& RecordingConfiguration::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("destinationConfiguration"))
+  if(jsonValue.ValueExists("recordingReconnectWindowSeconds"))
   {
-    m_destinationConfiguration = jsonValue.GetObject("destinationConfiguration");
+    m_recordingReconnectWindowSeconds = jsonValue.GetInteger("recordingReconnectWindowSeconds");
 
-    m_destinationConfigurationHasBeenSet = true;
+    m_recordingReconnectWindowSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("renditionConfiguration"))
+  {
+    m_renditionConfiguration = jsonValue.GetObject("renditionConfiguration");
+
+    m_renditionConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -85,20 +99,6 @@ RecordingConfiguration& RecordingConfiguration::operator =(JsonView jsonValue)
     m_thumbnailConfigurationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("recordingReconnectWindowSeconds"))
-  {
-    m_recordingReconnectWindowSeconds = jsonValue.GetInteger("recordingReconnectWindowSeconds");
-
-    m_recordingReconnectWindowSecondsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("renditionConfiguration"))
-  {
-    m_renditionConfiguration = jsonValue.GetObject("renditionConfiguration");
-
-    m_renditionConfigurationHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -112,15 +112,27 @@ JsonValue RecordingConfiguration::Jsonize() const
 
   }
 
+  if(m_destinationConfigurationHasBeenSet)
+  {
+   payload.WithObject("destinationConfiguration", m_destinationConfiguration.Jsonize());
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
 
   }
 
-  if(m_destinationConfigurationHasBeenSet)
+  if(m_recordingReconnectWindowSecondsHasBeenSet)
   {
-   payload.WithObject("destinationConfiguration", m_destinationConfiguration.Jsonize());
+   payload.WithInteger("recordingReconnectWindowSeconds", m_recordingReconnectWindowSeconds);
+
+  }
+
+  if(m_renditionConfigurationHasBeenSet)
+  {
+   payload.WithObject("renditionConfiguration", m_renditionConfiguration.Jsonize());
 
   }
 
@@ -143,18 +155,6 @@ JsonValue RecordingConfiguration::Jsonize() const
   if(m_thumbnailConfigurationHasBeenSet)
   {
    payload.WithObject("thumbnailConfiguration", m_thumbnailConfiguration.Jsonize());
-
-  }
-
-  if(m_recordingReconnectWindowSecondsHasBeenSet)
-  {
-   payload.WithInteger("recordingReconnectWindowSeconds", m_recordingReconnectWindowSeconds);
-
-  }
-
-  if(m_renditionConfigurationHasBeenSet)
-  {
-   payload.WithObject("renditionConfiguration", m_renditionConfiguration.Jsonize());
 
   }
 

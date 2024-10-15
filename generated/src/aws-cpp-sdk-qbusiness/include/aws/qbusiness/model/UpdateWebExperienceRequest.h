@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qbusiness/model/WebExperienceSamplePromptsControlMode.h>
 #include <aws/qbusiness/model/IdentityProviderConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -146,6 +147,30 @@ namespace Model
     inline UpdateWebExperienceRequest& WithIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { SetIdentityProviderConfiguration(value); return *this;}
     inline UpdateWebExperienceRequest& WithIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { SetIdentityProviderConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Updates the website domain origins that are allowed to embed the Amazon Q
+     * Business web experience. <pre><code> The &lt;i&gt;domain origin&lt;/i&gt; refers
+     * to the &lt;i&gt;base URL&lt;/i&gt; for accessing a website including the
+     * protocol (&lt;code&gt;http/https&lt;/code&gt;), the domain name, and the port
+     * number (if specified).&lt;/p&gt; &lt;note&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;Any
+     * values except &lt;code&gt;null&lt;/code&gt; submitted as part of this update
+     * will replace all previous values.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You
+     * must only submit a &lt;i&gt;base URL&lt;/i&gt; and not a full path. For example,
+     * &lt;code&gt;https://docs.aws.amazon.com&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt;
+     * &lt;/ul&gt; &lt;/note&gt; </code></pre>
+     */
+    inline const Aws::Vector<Aws::String>& GetOrigins() const{ return m_origins; }
+    inline bool OriginsHasBeenSet() const { return m_originsHasBeenSet; }
+    inline void SetOrigins(const Aws::Vector<Aws::String>& value) { m_originsHasBeenSet = true; m_origins = value; }
+    inline void SetOrigins(Aws::Vector<Aws::String>&& value) { m_originsHasBeenSet = true; m_origins = std::move(value); }
+    inline UpdateWebExperienceRequest& WithOrigins(const Aws::Vector<Aws::String>& value) { SetOrigins(value); return *this;}
+    inline UpdateWebExperienceRequest& WithOrigins(Aws::Vector<Aws::String>&& value) { SetOrigins(std::move(value)); return *this;}
+    inline UpdateWebExperienceRequest& AddOrigins(const Aws::String& value) { m_originsHasBeenSet = true; m_origins.push_back(value); return *this; }
+    inline UpdateWebExperienceRequest& AddOrigins(Aws::String&& value) { m_originsHasBeenSet = true; m_origins.push_back(std::move(value)); return *this; }
+    inline UpdateWebExperienceRequest& AddOrigins(const char* value) { m_originsHasBeenSet = true; m_origins.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -171,6 +196,9 @@ namespace Model
 
     IdentityProviderConfiguration m_identityProviderConfiguration;
     bool m_identityProviderConfigurationHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_origins;
+    bool m_originsHasBeenSet = false;
   };
 
 } // namespace Model

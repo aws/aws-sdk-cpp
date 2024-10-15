@@ -29,6 +29,12 @@ ListRecordingConfigurationsResult::ListRecordingConfigurationsResult(const Aws::
 ListRecordingConfigurationsResult& ListRecordingConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("recordingConfigurations"))
   {
     Aws::Utils::Array<JsonView> recordingConfigurationsJsonList = jsonValue.GetArray("recordingConfigurations");
@@ -36,12 +42,6 @@ ListRecordingConfigurationsResult& ListRecordingConfigurationsResult::operator =
     {
       m_recordingConfigurations.push_back(recordingConfigurationsJsonList[recordingConfigurationsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

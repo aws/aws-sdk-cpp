@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivs/model/StreamSessionSummary.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of stream sessions.</p>
-     */
-    inline const Aws::Vector<StreamSessionSummary>& GetStreamSessions() const{ return m_streamSessions; }
-    inline void SetStreamSessions(const Aws::Vector<StreamSessionSummary>& value) { m_streamSessions = value; }
-    inline void SetStreamSessions(Aws::Vector<StreamSessionSummary>&& value) { m_streamSessions = std::move(value); }
-    inline ListStreamSessionsResult& WithStreamSessions(const Aws::Vector<StreamSessionSummary>& value) { SetStreamSessions(value); return *this;}
-    inline ListStreamSessionsResult& WithStreamSessions(Aws::Vector<StreamSessionSummary>&& value) { SetStreamSessions(std::move(value)); return *this;}
-    inline ListStreamSessionsResult& AddStreamSessions(const StreamSessionSummary& value) { m_streamSessions.push_back(value); return *this; }
-    inline ListStreamSessionsResult& AddStreamSessions(StreamSessionSummary&& value) { m_streamSessions.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>If there are more streams than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
@@ -59,6 +46,19 @@ namespace Model
     inline ListStreamSessionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListStreamSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListStreamSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>List of stream sessions.</p>
+     */
+    inline const Aws::Vector<StreamSessionSummary>& GetStreamSessions() const{ return m_streamSessions; }
+    inline void SetStreamSessions(const Aws::Vector<StreamSessionSummary>& value) { m_streamSessions = value; }
+    inline void SetStreamSessions(Aws::Vector<StreamSessionSummary>&& value) { m_streamSessions = std::move(value); }
+    inline ListStreamSessionsResult& WithStreamSessions(const Aws::Vector<StreamSessionSummary>& value) { SetStreamSessions(value); return *this;}
+    inline ListStreamSessionsResult& WithStreamSessions(Aws::Vector<StreamSessionSummary>&& value) { SetStreamSessions(std::move(value)); return *this;}
+    inline ListStreamSessionsResult& AddStreamSessions(const StreamSessionSummary& value) { m_streamSessions.push_back(value); return *this; }
+    inline ListStreamSessionsResult& AddStreamSessions(StreamSessionSummary&& value) { m_streamSessions.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<StreamSessionSummary> m_streamSessions;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<StreamSessionSummary> m_streamSessions;
 
     Aws::String m_requestId;
   };

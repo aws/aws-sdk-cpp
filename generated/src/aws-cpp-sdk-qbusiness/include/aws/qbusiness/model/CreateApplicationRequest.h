@@ -57,7 +57,10 @@ namespace Model
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of an IAM role with permissions to access
-     * your Amazon CloudWatch logs and metrics.</p>
+     * your Amazon CloudWatch logs and metrics. If this property is not specified,
+     * Amazon Q Business will create a <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles.html#slr-permissions">service
+     * linked role (SLR)</a> and use it as the application's role.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

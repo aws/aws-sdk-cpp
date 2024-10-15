@@ -17,6 +17,7 @@ using namespace Aws::Http;
 
 ListAppsRequest::ListAppsRequest() : 
     m_appArnHasBeenSet(false),
+    m_awsApplicationArnHasBeenSet(false),
     m_fromLastAssessmentTimeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
@@ -40,6 +41,13 @@ void ListAppsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_appArn;
       uri.AddQueryStringParameter("appArn", ss.str());
+      ss.str("");
+    }
+
+    if(m_awsApplicationArnHasBeenSet)
+    {
+      ss << m_awsApplicationArn;
+      uri.AddQueryStringParameter("awsApplicationArn", ss.str());
       ss.str("");
     }
 

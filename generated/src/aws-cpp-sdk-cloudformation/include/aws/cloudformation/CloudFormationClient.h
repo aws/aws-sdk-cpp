@@ -21,14 +21,14 @@ namespace CloudFormation
    * manage Amazon Web Services infrastructure deployments predictably and
    * repeatedly. You can use CloudFormation to leverage Amazon Web Services products,
    * such as Amazon Elastic Compute Cloud, Amazon Elastic Block Store, Amazon Simple
-   * Notification Service, Elastic Load Balancing, and Auto Scaling to build highly
-   * reliable, highly scalable, cost-effective applications without creating or
-   * configuring the underlying Amazon Web Services infrastructure.</p> <p>With
-   * CloudFormation, you declare all your resources and dependencies in a template
-   * file. The template defines a collection of resources as a single unit called a
-   * stack. CloudFormation creates and deletes all member resources of the stack
-   * together and manages all dependencies between the resources for you.</p> <p>For
-   * more information about CloudFormation, see the <a
+   * Notification Service, Elastic Load Balancing, and Amazon EC2 Auto Scaling to
+   * build highly reliable, highly scalable, cost-effective applications without
+   * creating or configuring the underlying Amazon Web Services infrastructure.</p>
+   * <p>With CloudFormation, you declare all your resources and dependencies in a
+   * template file. The template defines a collection of resources as a single unit
+   * called a stack. CloudFormation creates and deletes all member resources of the
+   * stack together and manages all dependencies between the resources for you.</p>
+   * <p>For more information about CloudFormation, see the <a
    * href="http://aws.amazon.com/cloudformation/">CloudFormation product
    * page</a>.</p> <p>CloudFormation makes use of other Amazon Web Services products.
    * If you need additional technical information about a specific Amazon Web
@@ -129,16 +129,14 @@ namespace CloudFormation
 
         /**
          * <p>Activates a public third-party extension, making it available for use in
-         * stack templates. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
-         * public extensions</a> in the <i>CloudFormation User Guide</i>.</p> <p>Once you
-         * have activated a public third-party extension in your account and Region, use <a
+         * stack templates. Once you have activated a public third-party extension in your
+         * account and Region, use <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
          * to specify configuration properties for the extension. For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-         * extensions at the account level</a> in the <i>CloudFormation User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
+         * public extensions</a> in the <i>CloudFormation User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType">AWS
          * API Reference</a></p>
          */
@@ -166,9 +164,9 @@ namespace CloudFormation
          * <p>Returns configuration data for the specified CloudFormation extensions, from
          * the CloudFormation registry for the account and Region.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-         * extensions at the account level</a> in the <i>CloudFormation User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+         * configuration data for extensions in your account</a> in the <i>CloudFormation
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations">AWS
          * API Reference</a></p>
          */
@@ -224,8 +222,8 @@ namespace CloudFormation
          * <p>For a specified stack that's in the <code>UPDATE_ROLLBACK_FAILED</code>
          * state, continues rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code>
          * state. Depending on the cause of the failure, you can manually <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
-         * fix the error</a> and continue the rollback. By continuing the rollback, you can
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">fix
+         * the error</a> and continue the rollback. By continuing the rollback, you can
          * return your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code>
          * state), and then try to update the stack again.</p> <p>A stack goes into the
          * <code>UPDATE_ROLLBACK_FAILED</code> state when CloudFormation can't roll back
@@ -333,7 +331,11 @@ namespace CloudFormation
         /**
          * <p>Creates a stack as specified in the template. After the call completes
          * successfully, the stack creation starts. You can check the status of the stack
-         * through the <a>DescribeStacks</a> operation.</p><p><h3>See Also:</h3>   <a
+         * through the <a>DescribeStacks</a> operation.</p> <p>For more information about
+         * creating a stack and monitoring stack progress, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Managing
+         * Amazon Web Services resources as a single unit with CloudFormation stacks</a> in
+         * the <i>CloudFormation User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">AWS
          * API Reference</a></p>
          */
@@ -529,8 +531,11 @@ namespace CloudFormation
         /**
          * <p>Deletes a specified stack. Once the call completes successfully, stack
          * deletion starts. Deleted stacks don't show up in the <a>DescribeStacks</a>
-         * operation if the deletion has been completed successfully.</p><p><h3>See
-         * Also:</h3>   <a
+         * operation if the deletion has been completed successfully.</p> <p>For more
+         * information about deleting a stack, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html">Delete
+         * a stack from the CloudFormation console</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">AWS
          * API Reference</a></p>
          */
@@ -648,9 +653,9 @@ namespace CloudFormation
          * <p>Retrieves your account's CloudFormation limits, such as the maximum number of
          * stacks that you can create in your account. For more information about account
          * limits, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
-         * Quotas</a> in the <i>CloudFormation User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Understand
+         * CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">AWS
          * API Reference</a></p>
          */
@@ -678,8 +683,8 @@ namespace CloudFormation
          * <p>Returns the inputs for the change set and a list of changes that
          * CloudFormation will make if you execute the change set. For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
-         * Stacks Using Change Sets</a> in the <i>CloudFormation User
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Update
+         * CloudFormation stacks using change sets</a> in the <i>CloudFormation User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">AWS
          * API Reference</a></p>
@@ -799,7 +804,8 @@ namespace CloudFormation
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
          * extensions to make them available for public use</a> in the <i>CloudFormation
-         * CLI User Guide</i> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Command Line Interface (CLI) User Guide</i> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher">AWS
          * API Reference</a></p>
          */
@@ -855,14 +861,15 @@ namespace CloudFormation
          * template and any values specified as template parameters. A stack is considered
          * to have drifted if one or more of its resources have drifted. For more
          * information about stack and resource drift, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
-         * <a>DetectStackDrift</a> to initiate a stack drift detection operation.
-         * <code>DetectStackDrift</code> returns a <code>StackDriftDetectionId</code> you
-         * can use to monitor the progress of the operation using
-         * <code>DescribeStackDriftDetectionStatus</code>. Once the drift detection
-         * operation has completed, use <a>DescribeStackResourceDrifts</a> to return drift
-         * information about the stack and its resources.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+         * unmanaged configuration changes to stacks and resources with drift
+         * detection</a>.</p> <p>Use <a>DetectStackDrift</a> to initiate a stack drift
+         * detection operation. <code>DetectStackDrift</code> returns a
+         * <code>StackDriftDetectionId</code> you can use to monitor the progress of the
+         * operation using <code>DescribeStackDriftDetectionStatus</code>. Once the drift
+         * detection operation has completed, use <a>DescribeStackResourceDrifts</a> to
+         * return drift information about the stack and its resources.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackDriftDetectionStatus">AWS
          * API Reference</a></p>
          */
@@ -889,11 +896,11 @@ namespace CloudFormation
         /**
          * <p>Returns all stack related events for a specified stack in reverse
          * chronological order. For more information about a stack's event history, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
-         * stack creation events</a> in the <i>CloudFormation User Guide</i>.</p> 
-         * <p>You can list events for stacks that have failed to create or have been
-         * deleted by specifying the unique stack identifier (stack ID).</p>
-         * <p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
+         * CloudFormation stack creation events</a> in the <i>CloudFormation User
+         * Guide</i>.</p>  <p>You can list events for stacks that have failed to
+         * create or have been deleted by specifying the unique stack identifier (stack
+         * ID).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
          * API Reference</a></p>
          */
@@ -981,10 +988,11 @@ namespace CloudFormation
          * checked for drift aren't included. Resources that don't currently support drift
          * detection aren't checked, and so not included. For a list of resources that
          * support drift detection, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-         * that Support Drift Detection</a>.</p> <p>Use <a>DetectStackResourceDrift</a> to
-         * detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift
-         * on all supported resources for a given stack.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+         * type support for imports and drift detection</a>.</p> <p>Use
+         * <a>DetectStackResourceDrift</a> to detect drift on individual resources, or
+         * <a>DetectStackDrift</a> to detect drift on all supported resources for a given
+         * stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceDrifts">AWS
          * API Reference</a></p>
          */
@@ -1021,7 +1029,7 @@ namespace CloudFormation
          * <code>StackName</code> or <code>PhysicalResourceId</code>, but not both. In
          * addition, you can specify <code>LogicalResourceId</code> to filter the returned
          * result. For more information about resources, the <code>LogicalResourceId</code>
-         * and <code>PhysicalResourceId</code>, go to the <a
+         * and <code>PhysicalResourceId</code>, see the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">CloudFormation
          * User Guide</a>.</p>  <p>A <code>ValidationError</code> is returned if you
          * specify both <code>StackName</code> and <code>PhysicalResourceId</code> in the
@@ -1105,10 +1113,10 @@ namespace CloudFormation
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created. For more
          * information about a stack's event history, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
-         * stack creation events</a> in the <i>CloudFormation User Guide</i>.</p> 
-         * <p>If the stack doesn't exist, a <code>ValidationError</code> is returned.</p>
-         * <p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
+         * CloudFormation stack creation events</a> in the <i>CloudFormation User
+         * Guide</i>.</p>  <p>If the stack doesn't exist, a
+         * <code>ValidationError</code> is returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
          */
@@ -1200,19 +1208,20 @@ namespace CloudFormation
          * resource properties explicitly defined in the stack template are checked for
          * drift. A stack is considered to have drifted if one or more of its resources
          * differ from their expected template configurations. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
-         * <code>DetectStackDrift</code> to detect drift on all supported resources for a
-         * given stack, or <a>DetectStackResourceDrift</a> to detect drift on individual
-         * resources.</p> <p>For a list of stack resources that currently support drift
-         * detection, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-         * that Support Drift Detection</a>.</p> <p> <code>DetectStackDrift</code> can take
-         * up to several minutes, depending on the number of resources contained within the
-         * stack. Use <a>DescribeStackDriftDetectionStatus</a> to monitor the progress of a
-         * detect stack drift operation. Once the drift detection operation has completed,
-         * use <a>DescribeStackResourceDrifts</a> to return drift information about the
-         * stack and its resources.</p> <p>When detecting drift on a stack, CloudFormation
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+         * unmanaged configuration changes to stacks and resources with drift
+         * detection</a>.</p> <p>Use <code>DetectStackDrift</code> to detect drift on all
+         * supported resources for a given stack, or <a>DetectStackResourceDrift</a> to
+         * detect drift on individual resources.</p> <p>For a list of stack resources that
+         * currently support drift detection, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+         * type support for imports and drift detection</a>.</p> <p>
+         * <code>DetectStackDrift</code> can take up to several minutes, depending on the
+         * number of resources contained within the stack. Use
+         * <a>DescribeStackDriftDetectionStatus</a> to monitor the progress of a detect
+         * stack drift operation. Once the drift detection operation has completed, use
+         * <a>DescribeStackResourceDrifts</a> to return drift information about the stack
+         * and its resources.</p> <p>When detecting drift on a stack, CloudFormation
          * doesn't detect drift on any nested stacks belonging to that stack. Perform
          * <code>DetectStackDrift</code> directly on the nested stack itself.</p><p><h3>See
          * Also:</h3>   <a
@@ -1247,15 +1256,15 @@ namespace CloudFormation
          * CloudFormation detects drift. Only resource properties explicitly defined in the
          * stack template are checked for drift. For more information about stack and
          * resource drift, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
-         * <code>DetectStackResourceDrift</code> to detect drift on individual resources,
-         * or <a>DetectStackDrift</a> to detect drift on all resources in a given stack
-         * that support drift detection.</p> <p>Resources that don't currently support
-         * drift detection can't be checked. For a list of resources that support drift
-         * detection, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-         * that Support Drift Detection</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+         * unmanaged configuration changes to stacks and resources with drift
+         * detection</a>.</p> <p>Use <code>DetectStackResourceDrift</code> to detect drift
+         * on individual resources, or <a>DetectStackDrift</a> to detect drift on all
+         * resources in a given stack that support drift detection.</p> <p>Resources that
+         * don't currently support drift detection can't be checked. For a list of
+         * resources that support drift detection, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+         * type support for imports and drift detection</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackResourceDrift">AWS
          * API Reference</a></p>
          */
@@ -1573,8 +1582,9 @@ namespace CloudFormation
          * import into other stacks. To import values, use the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
          * Fn::ImportValue</a> function.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
-         * CloudFormation export stack output values</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">Get
+         * exported outputs from a deployed CloudFormation stack</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">AWS
          * API Reference</a></p>
          */
@@ -2046,8 +2056,9 @@ namespace CloudFormation
          * CloudFormation users. For more information about publishing extensions, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
          * extensions to make them available for public use</a> in the <i>CloudFormation
-         * CLI User Guide</i>.</p> <p>To publish an extension, you must be registered as a
-         * publisher with CloudFormation. For more information, see <a
+         * Command Line Interface (CLI) User Guide</i>.</p> <p>To publish an extension, you
+         * must be registered as a publisher with CloudFormation. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType">AWS
@@ -2107,9 +2118,10 @@ namespace CloudFormation
          * CloudFormation users. This publisher ID applies to your account in all Amazon
          * Web Services Regions.</p> <p>For information about requirements for registering
          * as a public extension publisher, see <a
-         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
-         * your account to publish CloudFormation extensions</a> in the <i>CloudFormation
-         * CLI User Guide</i>.</p> <p/><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Prerequisite:
+         * Registering your account to publish CloudFormation extensions</a> in the
+         * <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
+         * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher">AWS
          * API Reference</a></p>
          */
@@ -2142,9 +2154,10 @@ namespace CloudFormation
          * for use in your account.</p> </li> </ul> <p>For more information about how to
          * develop extensions and ready them for registration, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
-         * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>You
-         * can have a maximum of 50 resource extension versions registered at a time. This
-         * maximum is per account and per Region. Use <a
+         * resource types using the CloudFormation CLI</a> in the <i>CloudFormation Command
+         * Line Interface (CLI) User Guide</i>.</p> <p>You can have a maximum of 50
+         * resource extension versions registered at a time. This maximum is per account
+         * and per Region. Use <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
          * to deregister specific extension versions if necessary.</p> <p>Once you have
          * initiated a registration request using <a>RegisterType</a>, you can use
@@ -2154,9 +2167,9 @@ namespace CloudFormation
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
          * to specify configuration properties for the extension. For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-         * extensions at the account level</a> in the <i>CloudFormation User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+         * configuration data for extensions in your account</a> in the <i>CloudFormation
+         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">AWS
          * API Reference</a></p>
          */
@@ -2248,14 +2261,14 @@ namespace CloudFormation
          * for an extension, refer to the <code>ConfigurationSchema</code> element of <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
          * For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-         * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
-         *  <p>It's strongly recommended that you use dynamic references to
-         * restrict sensitive configuration definitions, such as third-party credentials.
-         * For more details on dynamic references, see <a
-         * href="https://docs.aws.amazon.com/">Using dynamic references to specify template
-         * values</a> in the <i>CloudFormation User Guide</i>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+         * configuration data for extensions in your account</a> in the <i>CloudFormation
+         * User Guide</i>.</p>  <p>It's strongly recommended that you use
+         * dynamic references to restrict sensitive configuration definitions, such as
+         * third-party credentials. For more details on dynamic references, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html">Specify
+         * values stored in other services using dynamic references</a> in the
+         * <i>CloudFormation User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration">AWS
          * API Reference</a></p>
          */
@@ -2399,11 +2412,12 @@ namespace CloudFormation
          * model meets all necessary requirements.</p> </li> </ul> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing
-         * your public extension prior to publishing</a> in the <i>CloudFormation CLI User
-         * Guide</i>.</p> <p>If you don't specify a version, CloudFormation uses the
-         * default version of the extension in your account and Region for testing.</p>
-         * <p>To perform testing, CloudFormation assumes the execution role specified when
-         * the type was registered. For more information, see <a
+         * your public extension before publishing</a> in the <i>CloudFormation Command
+         * Line Interface (CLI) User Guide</i>.</p> <p>If you don't specify a version,
+         * CloudFormation uses the default version of the extension in your account and
+         * Region for testing.</p> <p>To perform testing, CloudFormation assumes the
+         * execution role specified when the type was registered. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
          * <p>Once you've initiated testing on an extension using <code>TestType</code>,
          * you can pass the returned <code>TypeVersionArn</code> into <a
@@ -2413,7 +2427,7 @@ namespace CloudFormation
          * before it can be published. For more information, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
          * extensions to make them available for public use</a> in the <i>CloudFormation
-         * CLI User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Command Line Interface (CLI) User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType">AWS
          * API Reference</a></p>
          */
@@ -2471,10 +2485,11 @@ namespace CloudFormation
          * successfully, the stack update starts. You can check the status of the stack
          * through the <a>DescribeStacks</a> action.</p> <p>To get a copy of the template
          * for an existing stack, you can use the <a>GetTemplate</a> action.</p> <p>For
-         * more information about creating an update template, updating a stack, and
-         * monitoring the progress of the update, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
-         * a Stack</a>.</p><p><h3>See Also:</h3>   <a
+         * more information about updating a stack and monitoring the progress of the
+         * update, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Managing
+         * Amazon Web Services resources as a single unit with CloudFormation stacks</a> in
+         * the <i>CloudFormation User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">AWS
          * API Reference</a></p>
          */
@@ -2575,9 +2590,9 @@ namespace CloudFormation
          * <p>Updates termination protection for the specified stack. If a user attempts to
          * delete a stack with termination protection enabled, the operation fails and the
          * stack remains unchanged. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-         * a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>
-         * <p>For <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect
+         * a CloudFormation stack from being deleted</a> in the <i>CloudFormation User
+         * Guide</i>.</p> <p>For <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
          * stacks</a>, termination protection is set on the root stack and can't be changed
          * directly on the nested stack.</p><p><h3>See Also:</h3>   <a

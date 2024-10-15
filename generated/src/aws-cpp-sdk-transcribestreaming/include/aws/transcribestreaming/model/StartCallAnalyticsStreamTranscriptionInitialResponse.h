@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Provides the identifier for your Call Analytics streaming request.</p>
+     * <p>Provides the identifier for your real-time Call Analytics request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }

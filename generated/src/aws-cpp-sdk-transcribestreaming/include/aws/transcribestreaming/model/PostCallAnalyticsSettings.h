@@ -25,12 +25,15 @@ namespace Model
 {
 
   /**
-   * <p>Allows you to specify additional settings for your streaming Call Analytics
-   * post-call request, including output locations for your redacted and unredacted
-   * transcript, which IAM role to use, and, optionally, which encryption key to
-   * use.</p> <p> <code>ContentRedactionOutput</code>,
-   * <code>DataAccessRoleArn</code>, and <code>OutputLocation</code> are required
-   * fields.</p><p><h3>See Also:</h3>   <a
+   * <p>Allows you to specify additional settings for your Call Analytics post-call
+   * request, including output locations for your redacted transcript, which IAM role
+   * to use, and which encryption key to use.</p> <p> <code>DataAccessRoleArn</code>
+   * and <code>OutputLocation</code> are required fields.</p> <p>
+   * <code>PostCallAnalyticsSettings</code> provides you with the same insights as a
+   * Call Analytics post-call transcription. Refer to <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call
+   * analytics</a> for more information on this feature.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/PostCallAnalyticsSettings">AWS
    * API Reference</a></p>
    */
@@ -118,7 +121,7 @@ namespace Model
      * <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Use the ARN for the KMS key alias. For example,
      * <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.</p> </li> </ol>
-     * <p>Note that the user making the request must have permission to use the
+     * <p>Note that the role making the request must have permission to use the
      * specified KMS key.</p>
      */
     inline const Aws::String& GetOutputEncryptionKMSKeyId() const{ return m_outputEncryptionKMSKeyId; }

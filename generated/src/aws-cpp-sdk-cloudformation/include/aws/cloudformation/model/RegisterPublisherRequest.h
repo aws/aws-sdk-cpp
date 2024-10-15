@@ -56,9 +56,9 @@ namespace Model
      * <p>If you are using a Bitbucket or GitHub account for identity verification, the
      * Amazon Resource Name (ARN) for your connection to that account.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
-     * your account to publish CloudFormation extensions</a> in the <i>CloudFormation
-     * CLI User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Prerequisite:
+     * Registering your account to publish CloudFormation extensions</a> in the
+     * <i>CloudFormation Command Line Interface (CLI) User Guide</i>.</p>
      */
     inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
     inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }

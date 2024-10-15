@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivs/model/StreamSummary.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of streams.</p>
-     */
-    inline const Aws::Vector<StreamSummary>& GetStreams() const{ return m_streams; }
-    inline void SetStreams(const Aws::Vector<StreamSummary>& value) { m_streams = value; }
-    inline void SetStreams(Aws::Vector<StreamSummary>&& value) { m_streams = std::move(value); }
-    inline ListStreamsResult& WithStreams(const Aws::Vector<StreamSummary>& value) { SetStreams(value); return *this;}
-    inline ListStreamsResult& WithStreams(Aws::Vector<StreamSummary>&& value) { SetStreams(std::move(value)); return *this;}
-    inline ListStreamsResult& AddStreams(const StreamSummary& value) { m_streams.push_back(value); return *this; }
-    inline ListStreamsResult& AddStreams(StreamSummary&& value) { m_streams.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>If there are more streams than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
@@ -59,6 +46,19 @@ namespace Model
     inline ListStreamsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListStreamsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListStreamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>List of streams.</p>
+     */
+    inline const Aws::Vector<StreamSummary>& GetStreams() const{ return m_streams; }
+    inline void SetStreams(const Aws::Vector<StreamSummary>& value) { m_streams = value; }
+    inline void SetStreams(Aws::Vector<StreamSummary>&& value) { m_streams = std::move(value); }
+    inline ListStreamsResult& WithStreams(const Aws::Vector<StreamSummary>& value) { SetStreams(value); return *this;}
+    inline ListStreamsResult& WithStreams(Aws::Vector<StreamSummary>&& value) { SetStreams(std::move(value)); return *this;}
+    inline ListStreamsResult& AddStreams(const StreamSummary& value) { m_streams.push_back(value); return *this; }
+    inline ListStreamsResult& AddStreams(StreamSummary&& value) { m_streams.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<StreamSummary> m_streams;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<StreamSummary> m_streams;
 
     Aws::String m_requestId;
   };

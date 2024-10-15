@@ -144,7 +144,7 @@ namespace Model
     /**
      * <p>Specify a name for your transcription session. If you don't include this
      * parameter in your request, Amazon Transcribe generates an ID and returns it in
-     * the response.</p> <p>You can use a session ID to retry a streaming session.</p>
+     * the response.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
@@ -230,7 +230,9 @@ namespace Model
      * the output for each channel into one transcript.</p> <p>If you have
      * multi-channel audio and do not enable channel identification, your audio is
      * transcribed in a continuous manner and your transcript is not separated by
-     * channel.</p> <p>For more information, see <a
+     * channel.</p> <p>If you include <code>EnableChannelIdentification</code> in your
+     * request, you must also include <code>NumberOfChannels</code>.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.</p>
      */
@@ -242,8 +244,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify the number of channels in your audio stream. Up to two channels are
-     * supported.</p>
+     * <p>Specify the number of channels in your audio stream. This value must be
+     * <code>2</code>, as only two channels are supported. If your audio doesn't
+     * contain multiple channels, do not include this parameter in your request.</p>
+     * <p>If you include <code>NumberOfChannels</code> in your request, you must also
+     * include <code>EnableChannelIdentification</code>.</p>
      */
     inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
     inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
@@ -287,10 +292,11 @@ namespace Model
      * <p>Labels all personally identifiable information (PII) identified in your
      * transcript.</p> <p>Content identification is performed at the segment level; PII
      * specified in <code>PiiEntityTypes</code> is flagged upon complete transcription
-     * of an audio segment.</p> <p>You can’t set <code>ContentIdentificationType</code>
-     * and <code>ContentRedactionType</code> in the same request. If you set both, your
-     * request returns a <code>BadRequestException</code>.</p> <p>For more information,
-     * see <a
+     * of an audio segment. If you don't include <code>PiiEntityTypes</code> in your
+     * request, all PII is identified.</p> <p>You can’t set
+     * <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting
      * or identifying personally identifiable information</a>.</p>
      */
@@ -307,10 +313,11 @@ namespace Model
      * <p>Redacts all personally identifiable information (PII) identified in your
      * transcript.</p> <p>Content redaction is performed at the segment level; PII
      * specified in <code>PiiEntityTypes</code> is redacted upon complete transcription
-     * of an audio segment.</p> <p>You can’t set <code>ContentRedactionType</code> and
-     * <code>ContentIdentificationType</code> in the same request. If you set both,
-     * your request returns a <code>BadRequestException</code>.</p> <p>For more
-     * information, see <a
+     * of an audio segment. If you don't include <code>PiiEntityTypes</code> in your
+     * request, all PII is redacted.</p> <p>You can’t set
+     * <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in
+     * the same request. If you set both, your request returns a
+     * <code>BadRequestException</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting
      * or identifying personally identifiable information</a>.</p>
      */
@@ -326,15 +333,17 @@ namespace Model
     /**
      * <p>Specify which types of personally identifiable information (PII) you want to
      * redact in your transcript. You can include as many types as you'd like, or you
-     * can select <code>ALL</code>.</p> <p>To include <code>PiiEntityTypes</code> in
-     * your request, you must also include either
+     * can select <code>ALL</code>.</p> <p>Values must be comma-separated and can
+     * include: <code>ADDRESS</code>, <code>BANK_ACCOUNT_NUMBER</code>,
+     * <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_CVV</code>,
+     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>CREDIT_DEBIT_NUMBER</code>,
+     * <code>EMAIL</code>, <code>NAME</code>, <code>PHONE</code>, <code>PIN</code>,
+     * <code>SSN</code>, or <code>ALL</code>.</p> <p>Note that if you include
+     * <code>PiiEntityTypes</code> in your request, you must also include
      * <code>ContentIdentificationType</code> or <code>ContentRedactionType</code>.</p>
-     * <p>Values must be comma-separated and can include:
-     * <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-     * <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-     * <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-     * <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>,
-     * or <code>ALL</code>.</p>
+     * <p>If you include <code>ContentRedactionType</code> or
+     * <code>ContentIdentificationType</code> in your request, but do not include
+     * <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
      */
     inline const Aws::String& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
     inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
@@ -370,10 +379,9 @@ namespace Model
     ///@{
     /**
      * <p>Enables automatic language identification for your transcription.</p> <p>If
-     * you include <code>IdentifyLanguage</code>, you can optionally include a list of
-     * language codes, using <code>LanguageOptions</code>, that you think may be
-     * present in your audio stream. Including language options can improve
-     * transcription accuracy.</p> <p>You can also include a preferred language using
+     * you include <code>IdentifyLanguage</code>, you must include a list of language
+     * codes, using <code>LanguageOptions</code>, that you think may be present in your
+     * audio stream. </p> <p>You can also include a preferred language using
      * <code>PreferredLanguage</code>. Adding a preferred language can help Amazon
      * Transcribe identify the language faster than if you omit this parameter.</p>
      * <p>If you have multi-channel audio that contains different languages on each
@@ -394,12 +402,12 @@ namespace Model
     ///@{
     /**
      * <p>Specify two or more language codes that represent the languages you think may
-     * be present in your media; including more than five is not recommended. If you're
-     * unsure what languages are present, do not include this parameter.</p>
+     * be present in your media; including more than five is not recommended.</p>
      * <p>Including language options can improve the accuracy of language
      * identification.</p> <p>If you include <code>LanguageOptions</code> in your
-     * request, you must also include <code>IdentifyLanguage</code>.</p> <p>For a list
-     * of languages supported with Amazon Transcribe streaming, refer to the <a
+     * request, you must also include <code>IdentifyLanguage</code> or
+     * <code>IdentifyMultipleLanguages</code>.</p> <p>For a list of languages supported
+     * with Amazon Transcribe streaming, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages</a> table.</p>  <p>You can only include one language
      * dialect per language per stream. For example, you cannot include
@@ -435,13 +443,11 @@ namespace Model
      * <p>Enables automatic multi-language identification in your transcription job
      * request. Use this parameter if your stream contains more than one language. If
      * your stream contains only one language, use IdentifyLanguage instead.</p> <p>If
-     * you include <code>IdentifyMultipleLanguages</code>, you can optionally include a
-     * list of language codes, using <code>LanguageOptions</code>, that you think may
-     * be present in your stream. Including <code>LanguageOptions</code> restricts
-     * <code>IdentifyMultipleLanguages</code> to only the language options that you
-     * specify, which can improve transcription accuracy.</p> <p>If you want to apply a
-     * custom vocabulary or a custom vocabulary filter to your automatic multiple
-     * language identification request, include <code>VocabularyNames</code> or
+     * you include <code>IdentifyMultipleLanguages</code>, you must include a list of
+     * language codes, using <code>LanguageOptions</code>, that you think may be
+     * present in your stream.</p> <p>If you want to apply a custom vocabulary or a
+     * custom vocabulary filter to your automatic multiple language identification
+     * request, include <code>VocabularyNames</code> or
      * <code>VocabularyFilterNames</code>.</p> <p>Note that you must include one of
      * <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
      * <code>IdentifyMultipleLanguages</code> in your request. If you include more than

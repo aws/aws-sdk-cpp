@@ -16,7 +16,9 @@ PutConfigurationSetDeliveryOptionsRequest::PutConfigurationSetDeliveryOptionsReq
     m_configurationSetNameHasBeenSet(false),
     m_tlsPolicy(TlsPolicy::NOT_SET),
     m_tlsPolicyHasBeenSet(false),
-    m_sendingPoolNameHasBeenSet(false)
+    m_sendingPoolNameHasBeenSet(false),
+    m_maxDeliverySeconds(0),
+    m_maxDeliverySecondsHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,12 @@ Aws::String PutConfigurationSetDeliveryOptionsRequest::SerializePayload() const
   if(m_sendingPoolNameHasBeenSet)
   {
    payload.WithString("SendingPoolName", m_sendingPoolName);
+
+  }
+
+  if(m_maxDeliverySecondsHasBeenSet)
+  {
+   payload.WithInt64("MaxDeliverySeconds", m_maxDeliverySeconds);
 
   }
 

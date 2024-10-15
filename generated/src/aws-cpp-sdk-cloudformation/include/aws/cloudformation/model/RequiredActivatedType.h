@@ -28,8 +28,8 @@ namespace Model
    * <p>For extensions that are modules, a public third-party extension that must be
    * activated in your account in order for the module itself to be activated.</p>
    * <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-enabling">Activating
-   * public modules for use in your account</a> in the <i>CloudFormation User
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/module-versioning.html#requirements-for-modules">Requirements
+   * for activating third-party public modules</a> in the <i>CloudFormation User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RequiredActivatedType">AWS
    * API Reference</a></p>
@@ -70,7 +70,7 @@ namespace Model
      * Region, CloudFormation treats that alias as the extension's type name within the
      * account and Region, not the type name of the public extension. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const Aws::String& GetOriginalTypeName() const{ return m_originalTypeName; }

@@ -55,11 +55,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Status of the resource scan.</p> <dl> <dt>INPROGRESS</dt> <dd> <p>The
-     * resource scan is still in progress.</p> </dd> <dt>COMPLETE</dt> <dd> <p>The
-     * resource scan is complete.</p> </dd> <dt>EXPIRED</dt> <dd> <p>The resource scan
-     * has expired.</p> </dd> <dt>FAILED</dt> <dd> <p>The resource scan has failed.</p>
-     * </dd> </dl>
+     * <p>Status of the resource scan.</p> <dl> <dt> INPROGRESS </dt> <dd> <p>The
+     * resource scan is still in progress.</p> </dd> <dt> COMPLETE </dt> <dd> <p>The
+     * resource scan is complete.</p> </dd> <dt> EXPIRED </dt> <dd> <p>The resource
+     * scan has expired.</p> </dd> <dt> FAILED </dt> <dd> <p>The resource scan has
+     * failed.</p> </dd> </dl>
      */
     inline const ResourceScanStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const ResourceScanStatus& value) { m_status = value; }

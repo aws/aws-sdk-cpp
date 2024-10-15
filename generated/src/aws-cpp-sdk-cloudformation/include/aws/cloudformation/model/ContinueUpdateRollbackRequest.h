@@ -61,15 +61,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
-     * role that CloudFormation assumes to roll back the stack. CloudFormation uses the
-     * role's credentials to make calls on your behalf. CloudFormation always uses this
-     * role for all future operations on the stack. Provided that users have permission
-     * to operate on the stack, CloudFormation uses this role even if the users don't
-     * have permission to pass it. Ensure that the role grants least permission.</p>
-     * <p>If you don't specify a value, CloudFormation uses the role that was
-     * previously associated with the stack. If no role is available, CloudFormation
-     * uses a temporary session that's generated from your user credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to
+     * roll back the stack. CloudFormation uses the role's credentials to make calls on
+     * your behalf. CloudFormation always uses this role for all future operations on
+     * the stack. Provided that users have permission to operate on the stack,
+     * CloudFormation uses this role even if the users don't have permission to pass
+     * it. Ensure that the role grants least permission.</p> <p>If you don't specify a
+     * value, CloudFormation uses the role that was previously associated with the
+     * stack. If no role is available, CloudFormation uses a temporary session that's
+     * generated from your user credentials.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
@@ -112,8 +112,8 @@ namespace Model
      * <code>DELETE_FAILED</code>.</p>  <p>Don't confuse a child stack's name
      * with its corresponding logical ID defined in the parent stack. For an example of
      * a continue update rollback operation with nested stacks, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-     * ResourcesToSkip to recover a nested stacks hierarchy</a>.</p> 
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Continue
+     * rolling back from failed nested stack updates</a>.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetResourcesToSkip() const{ return m_resourcesToSkip; }
     inline bool ResourcesToSkipHasBeenSet() const { return m_resourcesToSkipHasBeenSet; }

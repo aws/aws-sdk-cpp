@@ -138,12 +138,12 @@ namespace Model
      * <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code>
      * is <code>True</code>. If the <code>RequiresRecreation</code> field is
      * <code>Always</code> and the <code>Evaluation</code> field is
-     * <code>Dynamic</code>, <code>Replacement</code> is
-     * <code>Conditionally</code>.</p> <p>If you have multiple changes with different
-     * <code>RequiresRecreation</code> values, the <code>Replacement</code> value
-     * depends on the change with the most impact. A <code>RequiresRecreation</code>
-     * value of <code>Always</code> has the most impact, followed by
-     * <code>Conditionally</code>, and then <code>Never</code>.</p>
+     * <code>Dynamic</code>, <code>Replacement</code> is <code>Conditional</code>.</p>
+     * <p>If you have multiple changes with different <code>RequiresRecreation</code>
+     * values, the <code>Replacement</code> value depends on the change with the most
+     * impact. A <code>RequiresRecreation</code> value of <code>Always</code> has the
+     * most impact, followed by <code>Conditional</code>, and then
+     * <code>Never</code>.</p>
      */
     inline const Replacement& GetReplacement() const{ return m_replacement; }
     inline bool ReplacementHasBeenSet() const { return m_replacementHasBeenSet; }

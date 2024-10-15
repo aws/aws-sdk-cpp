@@ -109,6 +109,28 @@ namespace Model
 
     ///@{
     /**
+     * <p>Sets the website domain origins that are allowed to embed the Amazon Q
+     * Business web experience. <pre><code> The &lt;i&gt;domain origin&lt;/i&gt; refers
+     * to the base URL for accessing a website including the protocol
+     * (&lt;code&gt;http/https&lt;/code&gt;), the domain name, and the port number (if
+     * specified). &lt;/p&gt; &lt;note&gt; &lt;p&gt;You must only submit a
+     * &lt;i&gt;base URL&lt;/i&gt; and not a full path. For example,
+     * &lt;code&gt;https://docs.aws.amazon.com&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt;
+     * </code></pre>
+     */
+    inline const Aws::Vector<Aws::String>& GetOrigins() const{ return m_origins; }
+    inline bool OriginsHasBeenSet() const { return m_originsHasBeenSet; }
+    inline void SetOrigins(const Aws::Vector<Aws::String>& value) { m_originsHasBeenSet = true; m_origins = value; }
+    inline void SetOrigins(Aws::Vector<Aws::String>&& value) { m_originsHasBeenSet = true; m_origins = std::move(value); }
+    inline CreateWebExperienceRequest& WithOrigins(const Aws::Vector<Aws::String>& value) { SetOrigins(value); return *this;}
+    inline CreateWebExperienceRequest& WithOrigins(Aws::Vector<Aws::String>&& value) { SetOrigins(std::move(value)); return *this;}
+    inline CreateWebExperienceRequest& AddOrigins(const Aws::String& value) { m_originsHasBeenSet = true; m_origins.push_back(value); return *this; }
+    inline CreateWebExperienceRequest& AddOrigins(Aws::String&& value) { m_originsHasBeenSet = true; m_origins.push_back(std::move(value)); return *this; }
+    inline CreateWebExperienceRequest& AddOrigins(const char* value) { m_originsHasBeenSet = true; m_origins.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the service role attached to your web
      * experience.</p>  <p>You must provide this value if you're using IAM
      * Identity Center to manage end user access to your application. If you're using
@@ -185,6 +207,9 @@ namespace Model
 
     WebExperienceSamplePromptsControlMode m_samplePromptsControlMode;
     bool m_samplePromptsControlModeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_origins;
+    bool m_originsHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

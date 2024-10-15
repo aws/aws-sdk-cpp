@@ -118,10 +118,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Type of resource. (For more information, go to <a
+     * <p>Type of resource. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a> in the <i>CloudFormation User
-     * Guide</i>.)</p>
+     * Web Services resource and property types reference</a> in the <i>CloudFormation
+     * User Guide</i>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -283,10 +283,10 @@ namespace Model
      * <p>An optional field containing information about the detailed status of the
      * stack event.</p> <ul> <li> <p> <code>CONFIGURATION_COMPLETE</code> - all of the
      * resources in the stack have reached that event. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
-     * stack deployment</a> in the <i>CloudFormation User Guide</i>.</p> </li> </ul>
-     * <ul> <li> <p> <code>VALIDATION_FAILED</code> - template validation failed
-     * because of invalid properties in the template. The
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
+     * CloudFormation stack creation events</a> in the <i>CloudFormation User
+     * Guide</i>.</p> </li> </ul> <ul> <li> <p> <code>VALIDATION_FAILED</code> -
+     * template validation failed because of invalid properties in the template. The
      * <code>ResourceStatusReason</code> field shows what properties are defined
      * incorrectly.</p> </li> </ul>
      */

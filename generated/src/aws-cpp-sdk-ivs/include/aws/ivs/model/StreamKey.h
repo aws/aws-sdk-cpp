@@ -54,20 +54,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Stream-key value.</p>
-     */
-    inline const Aws::String& GetValue() const{ return m_value; }
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline StreamKey& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline StreamKey& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline StreamKey& WithValue(const char* value) { SetValue(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Channel ARN for the stream.</p>
      */
     inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
@@ -104,19 +90,33 @@ namespace Model
     inline StreamKey& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline StreamKey& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Stream-key value.</p>
+     */
+    inline const Aws::String& GetValue() const{ return m_value; }
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
+    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
+    inline StreamKey& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+    inline StreamKey& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
+    inline StreamKey& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
-
-    Aws::String m_value;
-    bool m_valueHasBeenSet = false;
 
     Aws::String m_channelArn;
     bool m_channelArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_value;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

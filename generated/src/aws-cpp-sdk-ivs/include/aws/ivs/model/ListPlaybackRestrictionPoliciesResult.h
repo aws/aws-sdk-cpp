@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivs/model/PlaybackRestrictionPolicySummary.h>
 #include <utility>
 
@@ -36,19 +36,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of the matching policies.</p>
-     */
-    inline const Aws::Vector<PlaybackRestrictionPolicySummary>& GetPlaybackRestrictionPolicies() const{ return m_playbackRestrictionPolicies; }
-    inline void SetPlaybackRestrictionPolicies(const Aws::Vector<PlaybackRestrictionPolicySummary>& value) { m_playbackRestrictionPolicies = value; }
-    inline void SetPlaybackRestrictionPolicies(Aws::Vector<PlaybackRestrictionPolicySummary>&& value) { m_playbackRestrictionPolicies = std::move(value); }
-    inline ListPlaybackRestrictionPoliciesResult& WithPlaybackRestrictionPolicies(const Aws::Vector<PlaybackRestrictionPolicySummary>& value) { SetPlaybackRestrictionPolicies(value); return *this;}
-    inline ListPlaybackRestrictionPoliciesResult& WithPlaybackRestrictionPolicies(Aws::Vector<PlaybackRestrictionPolicySummary>&& value) { SetPlaybackRestrictionPolicies(std::move(value)); return *this;}
-    inline ListPlaybackRestrictionPoliciesResult& AddPlaybackRestrictionPolicies(const PlaybackRestrictionPolicySummary& value) { m_playbackRestrictionPolicies.push_back(value); return *this; }
-    inline ListPlaybackRestrictionPoliciesResult& AddPlaybackRestrictionPolicies(PlaybackRestrictionPolicySummary&& value) { m_playbackRestrictionPolicies.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>If there are more channels than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
@@ -59,6 +46,19 @@ namespace Model
     inline ListPlaybackRestrictionPoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
     inline ListPlaybackRestrictionPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListPlaybackRestrictionPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>List of the matching policies.</p>
+     */
+    inline const Aws::Vector<PlaybackRestrictionPolicySummary>& GetPlaybackRestrictionPolicies() const{ return m_playbackRestrictionPolicies; }
+    inline void SetPlaybackRestrictionPolicies(const Aws::Vector<PlaybackRestrictionPolicySummary>& value) { m_playbackRestrictionPolicies = value; }
+    inline void SetPlaybackRestrictionPolicies(Aws::Vector<PlaybackRestrictionPolicySummary>&& value) { m_playbackRestrictionPolicies = std::move(value); }
+    inline ListPlaybackRestrictionPoliciesResult& WithPlaybackRestrictionPolicies(const Aws::Vector<PlaybackRestrictionPolicySummary>& value) { SetPlaybackRestrictionPolicies(value); return *this;}
+    inline ListPlaybackRestrictionPoliciesResult& WithPlaybackRestrictionPolicies(Aws::Vector<PlaybackRestrictionPolicySummary>&& value) { SetPlaybackRestrictionPolicies(std::move(value)); return *this;}
+    inline ListPlaybackRestrictionPoliciesResult& AddPlaybackRestrictionPolicies(const PlaybackRestrictionPolicySummary& value) { m_playbackRestrictionPolicies.push_back(value); return *this; }
+    inline ListPlaybackRestrictionPoliciesResult& AddPlaybackRestrictionPolicies(PlaybackRestrictionPolicySummary&& value) { m_playbackRestrictionPolicies.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,9 +73,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Vector<PlaybackRestrictionPolicySummary> m_playbackRestrictionPolicies;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<PlaybackRestrictionPolicySummary> m_playbackRestrictionPolicies;
 
     Aws::String m_requestId;
   };

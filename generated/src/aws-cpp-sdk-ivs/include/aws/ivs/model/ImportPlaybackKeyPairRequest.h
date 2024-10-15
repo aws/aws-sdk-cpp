@@ -35,20 +35,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The public portion of a customer-generated key pair.</p>
-     */
-    inline const Aws::String& GetPublicKeyMaterial() const{ return m_publicKeyMaterial; }
-    inline bool PublicKeyMaterialHasBeenSet() const { return m_publicKeyMaterialHasBeenSet; }
-    inline void SetPublicKeyMaterial(const Aws::String& value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial = value; }
-    inline void SetPublicKeyMaterial(Aws::String&& value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial = std::move(value); }
-    inline void SetPublicKeyMaterial(const char* value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial.assign(value); }
-    inline ImportPlaybackKeyPairRequest& WithPublicKeyMaterial(const Aws::String& value) { SetPublicKeyMaterial(value); return *this;}
-    inline ImportPlaybackKeyPairRequest& WithPublicKeyMaterial(Aws::String&& value) { SetPublicKeyMaterial(std::move(value)); return *this;}
-    inline ImportPlaybackKeyPairRequest& WithPublicKeyMaterial(const char* value) { SetPublicKeyMaterial(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Playback-key-pair name. The value does not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -59,6 +45,20 @@ namespace Model
     inline ImportPlaybackKeyPairRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
     inline ImportPlaybackKeyPairRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline ImportPlaybackKeyPairRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The public portion of a customer-generated key pair.</p>
+     */
+    inline const Aws::String& GetPublicKeyMaterial() const{ return m_publicKeyMaterial; }
+    inline bool PublicKeyMaterialHasBeenSet() const { return m_publicKeyMaterialHasBeenSet; }
+    inline void SetPublicKeyMaterial(const Aws::String& value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial = value; }
+    inline void SetPublicKeyMaterial(Aws::String&& value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial = std::move(value); }
+    inline void SetPublicKeyMaterial(const char* value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial.assign(value); }
+    inline ImportPlaybackKeyPairRequest& WithPublicKeyMaterial(const Aws::String& value) { SetPublicKeyMaterial(value); return *this;}
+    inline ImportPlaybackKeyPairRequest& WithPublicKeyMaterial(Aws::String&& value) { SetPublicKeyMaterial(std::move(value)); return *this;}
+    inline ImportPlaybackKeyPairRequest& WithPublicKeyMaterial(const char* value) { SetPublicKeyMaterial(value); return *this;}
     ///@}
 
     ///@{
@@ -87,11 +87,11 @@ namespace Model
     ///@}
   private:
 
-    Aws::String m_publicKeyMaterial;
-    bool m_publicKeyMaterialHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_publicKeyMaterial;
+    bool m_publicKeyMaterialHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

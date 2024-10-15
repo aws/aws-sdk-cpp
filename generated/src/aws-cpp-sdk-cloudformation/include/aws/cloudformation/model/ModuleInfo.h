@@ -27,9 +27,10 @@ namespace Model
    * <p>Contains information about the module from which the resource was created, if
    * the resource was created from a module included in the stack template.</p>
    * <p>For more information about modules, see <a
-   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html">Using
-   * modules to encapsulate and reuse resource configurations</a> in the
-   * <i>CloudFormation User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html">Create
+   * reusable resource configurations that can be included across templates with
+   * CloudFormation modules</a> in the <i>CloudFormation User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ModuleInfo">AWS
    * API Reference</a></p>
    */
@@ -72,8 +73,9 @@ namespace Model
      * created from a module, <code>moduleA</code>, that's nested inside a parent
      * module, <code>moduleB</code>.</p> <p> <code>moduleA/moduleB</code> </p> <p>For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
-     * resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/module-ref-resources.html">Reference
+     * module resources in CloudFormation templates</a> in the <i>CloudFormation User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetLogicalIdHierarchy() const{ return m_logicalIdHierarchy; }
     inline bool LogicalIdHierarchyHasBeenSet() const { return m_logicalIdHierarchyHasBeenSet; }

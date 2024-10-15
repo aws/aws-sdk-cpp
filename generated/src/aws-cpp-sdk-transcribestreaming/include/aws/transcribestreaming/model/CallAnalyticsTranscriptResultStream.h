@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains detailed information about your Call Analytics streaming session.
+   * <p>Contains detailed information about your real-time Call Analytics session.
    * These details are provided in the <code>UtteranceEvent</code> and
    * <code>CategoryEvent</code> objects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/CallAnalyticsTranscriptResultStream">AWS
