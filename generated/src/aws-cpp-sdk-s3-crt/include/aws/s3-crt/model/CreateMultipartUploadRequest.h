@@ -572,14 +572,18 @@ namespace Model
      * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the
      * Amazon Web Services managed key (<code>aws/s3</code>) to protect the data.</p>
      * <p> <b>Directory buckets</b> - If you specify
-     * <code>x-amz-server-side-encryption</code> with <code>aws:kms</code>, you must
-     * specify the <code> x-amz-server-side-encryption-aws-kms-key-id</code> header
-     * with the ID (Key ID or Key ARN) of the KMS symmetric encryption customer managed
-     * key to use. Otherwise, you get an HTTP <code>400 Bad Request</code> error. Only
-     * use the key ID or key ARN. The key alias format of the KMS key isn't supported.
-     * Your SSE-KMS configuration can only support 1 <a
+     * <code>x-amz-server-side-encryption</code> with <code>aws:kms</code>, the <code>
+     * x-amz-server-side-encryption-aws-kms-key-id</code> header is implicitly assigned
+     * the ID of the KMS symmetric encryption customer managed key that's configured
+     * for your directory bucket's default encryption setting. If you want to specify
+     * the <code> x-amz-server-side-encryption-aws-kms-key-id</code> header explicitly,
+     * you can only specify it with the ID (Key ID or Key ARN) of the KMS customer
+     * managed key that's configured for your directory bucket's default encryption
+     * setting. Otherwise, you get an HTTP <code>400 Bad Request</code> error. Only use
+     * the key ID or key ARN. The key alias format of the KMS key isn't supported. Your
+     * SSE-KMS configuration can only support 1 <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-     * managed key</a> per directory bucket for the lifetime of the bucket. <a
+     * managed key</a> per directory bucket for the lifetime of the bucket. The <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a> (<code>aws/s3</code>) isn't supported. </p>
      */

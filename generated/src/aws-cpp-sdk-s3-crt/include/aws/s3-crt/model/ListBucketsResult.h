@@ -77,6 +77,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>If <code>Prefix</code> was sent with the request, it is included in the
+     * response.</p> <p>All bucket names in the response begin with the specified
+     * bucket name prefix.</p>
+     */
+    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefix = std::move(value); }
+    inline void SetPrefix(const char* value) { m_prefix.assign(value); }
+    inline ListBucketsResult& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+    inline ListBucketsResult& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
+    inline ListBucketsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -93,6 +108,8 @@ namespace Model
     Owner m_owner;
 
     Aws::String m_continuationToken;
+
+    Aws::String m_prefix;
 
     Aws::String m_requestId;
   };

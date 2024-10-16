@@ -65,6 +65,22 @@ namespace Model
     inline Bucket& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
     inline Bucket& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> <code>BucketRegion</code> indicates the Amazon Web Services region where the
+     * bucket is located. If the request contains at least one valid parameter, it is
+     * included in the response.</p>
+     */
+    inline const Aws::String& GetBucketRegion() const{ return m_bucketRegion; }
+    inline bool BucketRegionHasBeenSet() const { return m_bucketRegionHasBeenSet; }
+    inline void SetBucketRegion(const Aws::String& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = value; }
+    inline void SetBucketRegion(Aws::String&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::move(value); }
+    inline void SetBucketRegion(const char* value) { m_bucketRegionHasBeenSet = true; m_bucketRegion.assign(value); }
+    inline Bucket& WithBucketRegion(const Aws::String& value) { SetBucketRegion(value); return *this;}
+    inline Bucket& WithBucketRegion(Aws::String&& value) { SetBucketRegion(std::move(value)); return *this;}
+    inline Bucket& WithBucketRegion(const char* value) { SetBucketRegion(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -72,6 +88,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet = false;
+
+    Aws::String m_bucketRegion;
+    bool m_bucketRegionHasBeenSet = false;
   };
 
 } // namespace Model

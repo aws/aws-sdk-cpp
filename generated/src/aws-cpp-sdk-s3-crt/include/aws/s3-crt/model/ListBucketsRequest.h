@@ -72,6 +72,45 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Limits the response to bucket names that begin with the specified bucket name
+     * prefix.</p>
+     */
+    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
+    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
+    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
+    inline ListBucketsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
+    inline ListBucketsRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
+    inline ListBucketsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Limits the response to buckets that are located in the specified Amazon Web
+     * Services Region. The Amazon Web Services Region must be expressed according to
+     * the Amazon Web Services Region code, such as <code>us-west-2</code> for the US
+     * West (Oregon) Region. For a list of the valid values for all of the Amazon Web
+     * Services Regions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+     * and Endpoints</a>.</p>  <p>Requests made to a Regional endpoint that is
+     * different from the <code>bucket-region</code> parameter are not supported. For
+     * example, if you want to limit the response to your buckets in Region
+     * <code>us-west-2</code>, the request must be made to an endpoint in Region
+     * <code>us-west-2</code>.</p> 
+     */
+    inline const Aws::String& GetBucketRegion() const{ return m_bucketRegion; }
+    inline bool BucketRegionHasBeenSet() const { return m_bucketRegionHasBeenSet; }
+    inline void SetBucketRegion(const Aws::String& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = value; }
+    inline void SetBucketRegion(Aws::String&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::move(value); }
+    inline void SetBucketRegion(const char* value) { m_bucketRegionHasBeenSet = true; m_bucketRegion.assign(value); }
+    inline ListBucketsRequest& WithBucketRegion(const Aws::String& value) { SetBucketRegion(value); return *this;}
+    inline ListBucketsRequest& WithBucketRegion(Aws::String&& value) { SetBucketRegion(std::move(value)); return *this;}
+    inline ListBucketsRequest& WithBucketRegion(const char* value) { SetBucketRegion(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
@@ -94,6 +133,12 @@ namespace Model
 
     Aws::String m_continuationToken;
     bool m_continuationTokenHasBeenSet = false;
+
+    Aws::String m_prefix;
+    bool m_prefixHasBeenSet = false;
+
+    Aws::String m_bucketRegion;
+    bool m_bucketRegionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet = false;

@@ -921,7 +921,7 @@ namespace Aws
          * and S3 Bucket Keys during the session.</p>  <p> Only 1 <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
          * managed key</a> is supported per directory bucket for the lifetime of the
-         * bucket. <a
+         * bucket. The <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
          * Web Services managed key</a> (<code>aws/s3</code>) isn't supported. After you
          * specify SSE-KMS as your bucket's default encryption configuration with a
@@ -1589,82 +1589,51 @@ namespace Aws
 
         /**
          * <p>Removes an object from a bucket. The behavior depends on the bucket's
-         * versioning state: </p> <ul> <li> <p>If bucket versioning is not enabled, the
-         * operation permanently deletes the object.</p> </li> <li> <p>If bucket versioning
-         * is enabled, the operation inserts a delete marker, which becomes the current
-         * version of the object. To permanently delete an object in a versioned bucket,
-         * you must include the object’s <code>versionId</code> in the request. For more
-         * information about versioning-enabled buckets, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
-         * object versions from a versioning-enabled bucket</a>.</p> </li> <li> <p>If
-         * bucket versioning is suspended, the operation removes the object that has a null
-         * <code>versionId</code>, if there is one, and inserts a delete marker that
-         * becomes the current version of the object. If there isn't an object with a null
-         * <code>versionId</code>, and all versions of the object have a
-         * <code>versionId</code>, Amazon S3 does not remove the object and only inserts a
-         * delete marker. To permanently delete an object that has a
-         * <code>versionId</code>, you must include the object’s <code>versionId</code> in
-         * the request. For more information about versioning-suspended buckets, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
-         * objects from versioning-suspended buckets</a>.</p> </li> </ul>  <ul> <li>
-         * <p> <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for
-         * directory buckets. For this API operation, only the <code>null</code> value of
-         * the version ID is supported by directory buckets. You can only specify
-         * <code>null</code> to the <code>versionId</code> query parameter in the
-         * request.</p> </li> <li> <p> <b>Directory buckets</b> - For directory buckets,
-         * you must make requests for this API operation to the Zonal endpoint. These
-         * endpoints support virtual-hosted-style requests in the format
+         * versioning state. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjects.html#DeletingObjects-best-practices">Best
+         * practices to consider before deleting an object</a>.</p> <p>To remove a specific
+         * version, you must use the <code>versionId</code> query parameter. Using this
+         * query parameter permanently deletes the version. If the object deleted is a
+         * delete marker, Amazon S3 sets the response header
+         * <code>x-amz-delete-marker</code> to true. If the object you want to delete is in
+         * a bucket where the bucket versioning configuration is MFA delete enabled, you
+         * must include the <code>x-amz-mfa</code> request header in the DELETE
+         * <code>versionId</code> request. Requests that include <code>x-amz-mfa</code>
+         * must use HTTPS. For more information about MFA delete and to see example
+         * requests, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
+         * MFA delete</a> and <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
+         * request</a> in the <i>Amazon S3 User Guide</i>.</p>  <ul> <li> <p>S3
+         * Versioning isn't enabled and supported for directory buckets. For this API
+         * operation, only the <code>null</code> value of the version ID is supported by
+         * directory buckets. You can only specify <code>null</code> to the
+         * <code>versionId</code> query parameter in the request.</p> </li> <li> <p>For
+         * directory buckets, you must make requests for this API operation to the Zonal
+         * endpoint. These endpoints support virtual-hosted-style requests in the format
          * <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
          * </code>. Path-style requests are not supported. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul>
-         *  <p>To remove a specific version, you must use the <code>versionId</code>
-         * query parameter. Using this query parameter permanently deletes the version. If
-         * the object deleted is a delete marker, Amazon S3 sets the response header
-         * <code>x-amz-delete-marker</code> to true. </p> <p>If the object you want to
-         * delete is in a bucket where the bucket versioning configuration is MFA Delete
-         * enabled, you must include the <code>x-amz-mfa</code> request header in the
-         * DELETE <code>versionId</code> request. Requests that include
-         * <code>x-amz-mfa</code> must use HTTPS. For more information about MFA Delete,
-         * see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
-         * MFA Delete</a> in the <i>Amazon S3 User Guide</i>. To see sample requests that
-         * use versioning, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
-         * Request</a>. </p>  <p> <b>Directory buckets</b> - MFA delete is not
-         * supported by directory buckets.</p>  <p>You can delete objects by
-         * explicitly calling DELETE Object or calling (<a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
-         * to enable Amazon S3 to remove them for you. If you want to block users or
-         * accounts from removing or deleting objects from your bucket, you must deny them
-         * the <code>s3:DeleteObject</code>, <code>s3:DeleteObjectVersion</code>, and
-         * <code>s3:PutLifeCycleConfiguration</code> actions. </p>  <p> <b>Directory
-         * buckets</b> - S3 Lifecycle is not supported by directory buckets.</p> 
+         * and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.</p> </li> <li>
+         * <p>MFA delete is not supported by directory buckets.</p> </li> </ul> 
          * <dl> <dt>Permissions</dt> <dd> <ul> <li> <p> <b>General purpose bucket
          * permissions</b> - The following permissions are required in your policies when
          * your <code>DeleteObjects</code> request includes specific headers.</p> <ul> <li>
          * <p> <b> <code>s3:DeleteObject</code> </b> - To delete an object from a bucket,
-         * you must always have the <code>s3:DeleteObject</code> permission.</p> </li> <li>
-         * <p> <b> <code>s3:DeleteObjectVersion</code> </b> - To delete a specific version
-         * of an object from a versioning-enabled bucket, you must have the
-         * <code>s3:DeleteObjectVersion</code> permission.</p> </li> </ul> </li> <li> <p>
-         * <b>Directory bucket permissions</b> - To grant access to this API operation on a
-         * directory bucket, we recommend that you use the <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-         * <code>CreateSession</code> </a> API operation for session-based authorization.
-         * Specifically, you grant the <code>s3express:CreateSession</code> permission to
-         * the directory bucket in a bucket policy or an IAM identity-based policy. Then,
-         * you make the <code>CreateSession</code> API call on the bucket to obtain a
-         * session token. With the session token in your request header, you can make API
-         * requests to this operation. After the session token expires, you make another
-         * <code>CreateSession</code> API call to generate a new session token for use.
-         * Amazon Web Services CLI or SDKs create session and refresh the session token
-         * automatically to avoid service interruptions when a session expires. For more
-         * information about authorization, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-         * <code>CreateSession</code> </a>.</p> </li> </ul> </dd> <dt>HTTP Host header
-         * syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is
-         * <code>
+         * you must always have the <code>s3:DeleteObject</code> permission.</p> 
+         * <p>You can also use <a>PutBucketLifecycle</a> to delete objects in Amazon
+         * S3.</p>  </li> <li> <p> <b> <code>s3:DeleteObjectVersion</code> </b> - To
+         * delete a specific version of an object from a versioning-enabled bucket, you
+         * must have the <code>s3:DeleteObjectVersion</code> permission.</p> </li> <li>
+         * <p>If you want to block users or accounts from removing or deleting objects from
+         * your bucket, you must deny them the <code>s3:DeleteObject</code>,
+         * <code>s3:DeleteObjectVersion</code>, and
+         * <code>s3:PutLifeCycleConfiguration</code> permissions.</p> </li> </ul> </li>
+         * <li> <p> <b>Directory buckets permissions</b> - To grant access to this API
+         * operation on a directory bucket, we recommend that you use the
+         * <a>CreateSession</a> API operation for session-based authorization.</p> </li>
+         * </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets </b>
+         * - The HTTP Host header syntax is <code>
          * <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.</p>
          * </dd> </dl> <p>The following action is related to <code>DeleteObject</code>:</p>
          * <ul> <li> <p> <a
@@ -4556,7 +4525,7 @@ namespace Aws
          * server-side encryption with KMS for new object uploads</a>.</p> </li> <li>
          * <p>Your SSE-KMS configuration can only support 1 <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-         * managed key</a> per directory bucket for the lifetime of the bucket. <a
+         * managed key</a> per directory bucket for the lifetime of the bucket. The <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
          * Web Services managed key</a> (<code>aws/s3</code>) isn't supported. </p> </li>
          * <li> <p>S3 Bucket Keys are always enabled for <code>GET</code> and
@@ -5899,16 +5868,12 @@ namespace Aws
 
         /**
          *  <p>This operation is not supported by directory buckets.</p> 
-         *  <p>The <code>SELECT</code> job type for the RestoreObject operation
-         * is no longer available to new customers. Existing customers of Amazon S3 Select
-         * can continue to use the feature as usual. <a
-         * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
-         * more</a> </p>  <p>Restores an archived copy of an object back into
-         * Amazon S3</p> <p>This functionality is not supported for Amazon S3 on
-         * Outposts.</p> <p>This action performs the following types of requests: </p> <ul>
-         * <li> <p> <code>restore an archive</code> - Restore an archived object</p> </li>
-         * </ul> <p>For more information about the <code>S3</code> structure in the request
-         * body, see the following:</p> <ul> <li> <p> <a
+         * <p>Restores an archived copy of an object back into Amazon S3</p> <p>This
+         * functionality is not supported for Amazon S3 on Outposts.</p> <p>This action
+         * performs the following types of requests: </p> <ul> <li> <p> <code>restore an
+         * archive</code> - Restore an archived object</p> </li> </ul> <p>For more
+         * information about the <code>S3</code> structure in the request body, see the
+         * following:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Managing
@@ -6042,19 +6007,14 @@ namespace Aws
 
         /**
          *  <p>This operation is not supported by directory buckets.</p> 
-         *  <p>The SelectObjectContent operation is no longer available to new
-         * customers. Existing customers of Amazon S3 Select can continue to use the
-         * operation as usual. <a
-         * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
-         * more</a> </p>  <p>This action filters the contents of an Amazon S3
-         * object based on a simple structured query language (SQL) statement. In the
-         * request, along with the SQL expression, you must also specify a data
-         * serialization format (JSON, CSV, or Apache Parquet) of the object. Amazon S3
-         * uses this format to parse object data into records, and returns only records
-         * that match the specified SQL expression. You must also specify the data
-         * serialization format for the response.</p> <p>This functionality is not
-         * supported for Amazon S3 on Outposts.</p> <p>For more information about Amazon S3
-         * Select, see <a
+         * <p>This action filters the contents of an Amazon S3 object based on a simple
+         * structured query language (SQL) statement. In the request, along with the SQL
+         * expression, you must also specify a data serialization format (JSON, CSV, or
+         * Apache Parquet) of the object. Amazon S3 uses this format to parse object data
+         * into records, and returns only records that match the specified SQL expression.
+         * You must also specify the data serialization format for the response.</p>
+         * <p>This functionality is not supported for Amazon S3 on Outposts.</p> <p>For
+         * more information about Amazon S3 Select, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
          * Content from Objects</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html">SELECT

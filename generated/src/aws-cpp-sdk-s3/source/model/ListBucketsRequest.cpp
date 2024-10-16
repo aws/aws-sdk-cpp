@@ -21,6 +21,8 @@ ListBucketsRequest::ListBucketsRequest() :
     m_maxBuckets(0),
     m_maxBucketsHasBeenSet(false),
     m_continuationTokenHasBeenSet(false),
+    m_prefixHasBeenSet(false),
+    m_bucketRegionHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -63,6 +65,20 @@ void ListBucketsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_continuationToken;
       uri.AddQueryStringParameter("continuation-token", ss.str());
+      ss.str("");
+    }
+
+    if(m_prefixHasBeenSet)
+    {
+      ss << m_prefix;
+      uri.AddQueryStringParameter("prefix", ss.str());
+      ss.str("");
+    }
+
+    if(m_bucketRegionHasBeenSet)
+    {
+      ss << m_bucketRegion;
+      uri.AddQueryStringParameter("bucket-region", ss.str());
       ss.str("");
     }
 

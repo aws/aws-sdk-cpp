@@ -218,13 +218,14 @@ namespace Model
      * optional, we recommend using the Content-MD5 mechanism as an end-to-end
      * integrity check. For more information about REST request authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
-     * Authentication</a>.</p>  <p>The <code>Content-MD5</code> header is
-     * required for any request to upload an object with a retention period configured
-     * using Amazon S3 Object Lock. For more information about Amazon S3 Object Lock,
-     * see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html">Amazon
-     * S3 Object Lock Overview</a> in the <i>Amazon S3 User Guide</i>. </p> 
-     *  <p>This functionality is not supported for directory buckets.</p> 
+     * Authentication</a>.</p>  <p>The <code>Content-MD5</code> or
+     * <code>x-amz-sdk-checksum-algorithm</code> header is required for any request to
+     * upload an object with a retention period configured using Amazon S3 Object Lock.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-put-object">Uploading
+     * objects to an Object Lock enabled bucket </a> in the <i>Amazon S3 User
+     * Guide</i>.</p>   <p>This functionality is not supported for
+     * directory buckets.</p> 
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
@@ -256,9 +257,15 @@ namespace Model
      * algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3
      * ignores any provided <code>ChecksumAlgorithm</code> parameter and uses the
      * checksum algorithm that matches the provided value in
-     * <code>x-amz-checksum-<i>algorithm</i> </code>.</p>  <p>For directory
-     * buckets, when you use Amazon Web Services SDKs, <code>CRC32</code> is the
-     * default checksum algorithm that's used for performance.</p> 
+     * <code>x-amz-checksum-<i>algorithm</i> </code>.</p>  <p>The
+     * <code>Content-MD5</code> or <code>x-amz-sdk-checksum-algorithm</code> header is
+     * required for any request to upload an object with a retention period configured
+     * using Amazon S3 Object Lock. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-put-object">Uploading
+     * objects to an Object Lock enabled bucket </a> in the <i>Amazon S3 User
+     * Guide</i>.</p>  <p>For directory buckets, when you use Amazon Web
+     * Services SDKs, <code>CRC32</code> is the default checksum algorithm that's used
+     * for performance.</p>
      */
     inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
@@ -661,14 +668,18 @@ namespace Model
      * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the
      * Amazon Web Services managed key (<code>aws/s3</code>) to protect the data.</p>
      * <p> <b>Directory buckets</b> - If you specify
-     * <code>x-amz-server-side-encryption</code> with <code>aws:kms</code>, you must
-     * specify the <code> x-amz-server-side-encryption-aws-kms-key-id</code> header
-     * with the ID (Key ID or Key ARN) of the KMS symmetric encryption customer managed
-     * key to use. Otherwise, you get an HTTP <code>400 Bad Request</code> error. Only
-     * use the key ID or key ARN. The key alias format of the KMS key isn't supported.
-     * Your SSE-KMS configuration can only support 1 <a
+     * <code>x-amz-server-side-encryption</code> with <code>aws:kms</code>, the <code>
+     * x-amz-server-side-encryption-aws-kms-key-id</code> header is implicitly assigned
+     * the ID of the KMS symmetric encryption customer managed key that's configured
+     * for your directory bucket's default encryption setting. If you want to specify
+     * the <code> x-amz-server-side-encryption-aws-kms-key-id</code> header explicitly,
+     * you can only specify it with the ID (Key ID or Key ARN) of the KMS customer
+     * managed key that's configured for your directory bucket's default encryption
+     * setting. Otherwise, you get an HTTP <code>400 Bad Request</code> error. Only use
+     * the key ID or key ARN. The key alias format of the KMS key isn't supported. Your
+     * SSE-KMS configuration can only support 1 <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-     * managed key</a> per directory bucket for the lifetime of the bucket. <a
+     * managed key</a> per directory bucket for the lifetime of the bucket. The <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a> (<code>aws/s3</code>) isn't supported. </p>
      */
