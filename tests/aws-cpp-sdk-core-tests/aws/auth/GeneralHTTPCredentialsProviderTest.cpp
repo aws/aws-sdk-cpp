@@ -256,10 +256,10 @@ std::shared_ptr<GeneralHTTPCredentialsProvider> CreateGeneralProvider()
 {
     const auto relativeUri = Aws::Environment::GetEnv(GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_RELATIVE_URI);
     const auto absoluteUri = Aws::Environment::GetEnv(GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_FULL_URI);
-    const auto token = Aws::Environment::GetEnv(GeneralHTTPCredentialsProvider::AWS_CONTAINER_AUTHORIZATION_TOKEN);
     const auto tokenPath = Aws::Environment::GetEnv(GeneralHTTPCredentialsProvider::AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE);
+    const auto token = Aws::Environment::GetEnv(GeneralHTTPCredentialsProvider::AWS_CONTAINER_AUTHORIZATION_TOKEN);
 
-    return Aws::MakeShared<GeneralHTTPCredentialsProvider>(ALLOCATION_TAG, relativeUri, absoluteUri, token, tokenPath);
+    return Aws::MakeShared<GeneralHTTPCredentialsProvider>(ALLOCATION_TAG, relativeUri, absoluteUri, tokenPath, token);
 }
 
 std::shared_ptr<Aws::Http::Standard::StandardHttpResponse> buildDummyHttpReply(const Aws::String& payloadToReply)
