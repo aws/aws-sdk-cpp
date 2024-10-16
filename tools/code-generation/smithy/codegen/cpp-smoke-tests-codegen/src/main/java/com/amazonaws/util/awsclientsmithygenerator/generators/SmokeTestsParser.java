@@ -51,23 +51,51 @@ public class SmokeTestsParser implements Runnable{
     final private SmithyCodegenAdapter codegenAdapter;
     final private PluginContext context;
     final private SymbolProvider symbolProvider;
+    final private Map<ShapeId, String> operationToServiceMap;
+    final private Map<String, ServiceShape> serviceShapeMap;
 
     public SmokeTestsParser(PluginContext context)
     {
         this.context = context;
         this.model = context.getModel();
-        codegenAdapter = new SmithyCodegenAdapter(model);
+        this.codegenAdapter = new SmithyCodegenAdapter(model);
         this.symbolProvider = new CppSymbolVisitor(model);
+
+
+        operationToServiceMap = new HashMap<>();
+        serviceShapeMap = new HashMap<>();
+        
+        // Iterate over all Service shapes in the model and create map of operation to 
+        model.getServiceShapes().stream().forEach(serviceShape -> {
+            String serviceName = serviceShape.getId().getName();
+            serviceShape.getAllOperations().stream().forEach(operation -> {
+                this.operationToServiceMap.put( operation, serviceName);
+                this.serviceShapeMap.put(serviceName,serviceShape );
+            });
+        });
     }
 
-    private String getServiceName(ShapeId serviceShapeId)
+    public static String removeSpaces(String input)
     {
-        String clientName = serviceShapeId.getName();
-        System.out.println("clientName="+clientName);
+        return input.replace(" ", "");
+    }
 
-        int underscoreIndex = clientName.indexOf('_');
-        // Check if underscore exists, otherwise return the whole string
-        clientName = underscoreIndex != -1 ? clientName.substring(0, underscoreIndex) : clientName;
+    public static String toKebabCase(String input) {
+        // Remove leading and trailing spaces, replace spaces with hyphens, and convert to lowercase
+        return input.trim().toLowerCase().replace(" ", "-");
+    }
+
+    private String getServiceName(ServiceShape serviceShape) throws Exception
+    {   
+        if(!serviceShape.getTrait(ServiceTrait.class).isPresent())
+        {
+            //System.err.println(String.format("No service trait detected in service shape with name=%s",serviceShape.getId().getName()));
+            throw new Exception(String.format("No service trait detected in service shape with name=%s",serviceShape.getId().getName()));
+        }
+
+        //this.model.getShape(serviceShapeId)
+        String clientName = serviceShape.getTrait(ServiceTrait.class).get().getSdkId();
+
         return clientName;
     }
 
@@ -213,22 +241,9 @@ public class SmokeTestsParser implements Runnable{
 
     //model contains information from all the smithy files
     //extract services to smoke tests
-    public Map<ShapeId, List<SmokeTestData> > extractServiceSmokeTests()
+    public Map<ServiceShape, List<SmokeTestData> > extractServiceSmokeTests()
     {
-        Map<ShapeId, List<SmokeTestData> > serviceSmokeTestsMap = new HashMap<>();
-
-        Map<ShapeId, String> operationToServiceMap = new HashMap<>();
-        Map<String, ServiceShape> serviceShapeMap = new HashMap<>();
-        
-        // Iterate over all Service shapes in the model and create map of operation to 
-        model.getServiceShapes().stream().forEach(serviceShape -> {
-            String serviceName = serviceShape.getId().getName();
-            serviceShape.getAllOperations().stream().forEach(operation -> {
-                operationToServiceMap.put( operation, serviceName);
-                serviceShapeMap.put(serviceName,serviceShape );
-            });
-        });
-
+        Map<ServiceShape, List<SmokeTestData> > serviceSmokeTestsMap = new HashMap<>();
      
         //first filter operations that have smoke test trait
         //on those operation shapes, find service trait
@@ -241,9 +256,7 @@ public class SmokeTestsParser implements Runnable{
             SmokeTestsTrait smokeTestsTrait = operationShape.getTrait(SmokeTestsTrait.class).get();
             //get serviceShape
             String serviceName = operationToServiceMap.get(operationShape.getId());
-
             ServiceShape serviceShape = serviceShapeMap.get(serviceName);
-
             System.out.println("OperationShape: " + operationShape.getId().getName());
             System.out.println("serviceName: " + serviceName);
 
@@ -252,13 +265,13 @@ public class SmokeTestsParser implements Runnable{
                 operationShape,
                 serviceShape );
             //add to tests for the same service
-            if(serviceSmokeTestsMap.containsKey(serviceShape.getId()))
+            if(serviceSmokeTestsMap.containsKey(serviceShape))
             {
-                serviceSmokeTestsMap.get(serviceShape.getId()).addAll(tests);
+                serviceSmokeTestsMap.get(serviceShape).addAll(tests);
             }
             else
             {
-                serviceSmokeTestsMap.put(serviceShape.getId(), tests);
+                serviceSmokeTestsMap.put(serviceShape, tests);
             }
 
         });
@@ -274,23 +287,31 @@ public class SmokeTestsParser implements Runnable{
         SmokeTestsSourceDelegator delegator = new SmokeTestsSourceDelegator(this.context.getFileManifest(), this.symbolProvider);
         SmokeTestsCMakeDelegator cmakedelegator = new SmokeTestsCMakeDelegator(this.context.getFileManifest(), this.symbolProvider);
 
-        Map<ShapeId, List<SmokeTestData> > smoketests =  extractServiceSmokeTests();
+        Map<ServiceShape, List<SmokeTestData> > smoketests =  extractServiceSmokeTests();
         
         //make service specific folder
         smoketests.entrySet().stream().forEach(entry -> {
-                String serviceName = getServiceName(entry.getKey());
-                Path relativePath = Paths.get( serviceName );
-                System.out.println(String.format("path=%s",relativePath.toString() + "/"+ serviceName + "SmokeTests.cpp"));
-                
-                delegator.useFileWriter( relativePath.toString() + "/"+ getServiceName(entry.getKey()) + "SmokeTests.cpp", serviceName, writer -> {
-                    System.out.println("generating smoke test source code");
-                    writer.generate(entry.getValue());              
-                });
+                ServiceShape serviceShape = entry.getKey();
 
-                cmakedelegator.useFileWriter( relativePath.toString() + "/"+ "CMakeLists.txt", serviceName, writer -> {
-                    System.out.println("generating smoke test cmake code");
-                    writer.generate();
-                });
+                try{
+                    String client = getServiceName(serviceShape);
+                    
+                    Path relativePath = Paths.get( toKebabCase(client) );
+                    System.out.println(String.format("path=%s",relativePath.toString() + "/"+ removeSpaces(client) + "SmokeTests.cpp"));
+                    
+                    delegator.useFileWriter( relativePath.toString() + "/"+ removeSpaces(client) + "SmokeTests.cpp", client, writer -> {
+                        System.out.println("generating smoke test source code");
+                        writer.generate(entry.getValue());              
+                    });
+
+                    cmakedelegator.useFileWriter( relativePath.toString() + "/"+ "CMakeLists.txt", client, writer -> {
+                        System.out.println("generating smoke test cmake code");
+                        writer.generate();
+                    });
+                }
+                catch (Exception e) {
+                    System.err.println("Exception detected=" + e.toString());
+                }
         });
 
         delegator.flushWriters();

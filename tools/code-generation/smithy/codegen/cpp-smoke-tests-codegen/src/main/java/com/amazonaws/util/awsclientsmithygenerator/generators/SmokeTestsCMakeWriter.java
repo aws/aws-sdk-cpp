@@ -60,8 +60,11 @@ public final class SmokeTestsCMakeWriter extends SymbolWriter<SmokeTestsCMakeWri
             set_compiler_flags($${PROJECT_NAME})
             set_compiler_warnings($${PROJECT_NAME})
 
+            target_include_directories($${PROJECT_NAME} PUBLIC
+                $${CMAKE_CURRENT_SOURCE_DIR}/../../src/aws-cpp-sdk-$L/include)
+
             target_link_libraries($${PROJECT_NAME} $${PROJECT_LIBS})
-            """, awsTestSrc, awsTestSrc);
+            """, awsTestSrc, awsTestSrc,folderNamespace);
 
         write(""" 
             if (AUTORUN_UNIT_TESTS)

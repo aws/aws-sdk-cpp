@@ -67,8 +67,8 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         write("public:").
         write("static const char ALLOCATION_TAG[];").
         dedent().
-        write("}");
-        write("const char $LSmokeTestSuite::ALLOCATION_TAG[] = \"$LSmokeTest\"",clientNamespace,clientNamespace);
+        write("};");
+        write("const char $LSmokeTestSuite::ALLOCATION_TAG[] = \"$LSmokeTest\";",clientNamespace,clientNamespace);
     }
 
     protected void defineTestCase(SmokeTestData test)
