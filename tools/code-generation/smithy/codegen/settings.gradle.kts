@@ -20,6 +20,8 @@ dependencyResolutionManagement {
             library("codegen-core", "software.amazon.smithy", "smithy-codegen-core").versionRef("smithy")
             library("smoke-test-traits", "software.amazon.smithy", "smithy-smoke-test-traits").versionRef("smithy")
             library("aws-iam-traits", "software.amazon.smithy", "smithy-aws-iam-traits").versionRef("smithy")
+            library("aws-cloudformation-traits", "software.amazon.smithy", "smithy-aws-cloudformation-traits").versionRef("smithy")
+
 
             
             library("waiters", "software.amazon.smithy", "smithy-waiters").versionRef("smithy")
