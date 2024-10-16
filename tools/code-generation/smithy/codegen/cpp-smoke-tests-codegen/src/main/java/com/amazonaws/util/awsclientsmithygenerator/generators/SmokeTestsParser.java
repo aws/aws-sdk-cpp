@@ -132,6 +132,8 @@ public class SmokeTestsParser implements Runnable{
             {
                 Map<String, String> functionMap = new HashMap<String, String>();
 
+                List<String> functionOrder = new ArrayList<>();
+
                 //get input shape
                 Optional<Shape> topLevelShape = model.getShape(operationShape.getInput().get());
 
@@ -159,7 +161,8 @@ public class SmokeTestsParser implements Runnable{
                                         fieldShape, //useful for C++ return type object
                                         0, //useful for depth
                                         0, //useful for array elements at same depth
-                                        functionMap)
+                                        functionMap,
+                                        functionOrder)
                                 ));
                         } catch (Exception e) {
                             throw new RuntimeException(e);
@@ -173,12 +176,18 @@ public class SmokeTestsParser implements Runnable{
                     List<String> lines = new ArrayList<>();
 
                     // Iterate through each value in the map
-                    for (String value : functionMap.values()) {
-                        // Split the value by newline (\n)
-                        String[] splitLines = value.split("\n");
+                    for (String functionName : functionOrder) 
+                    {
+                        String value = functionMap.get(functionName);
+                        
+                        if(value != null)
+                        {
+                            // Split the value by newline (\n)
+                            String[] splitLines = value.split("\n");
 
-                        // Add each line to the vector
-                        lines.addAll(Arrays.asList(splitLines));
+                            // Add each line to the vector
+                            lines.addAll(Arrays.asList(splitLines));
+                        }
                     }
 
                     test.setTestDataCodeBlock(lines);

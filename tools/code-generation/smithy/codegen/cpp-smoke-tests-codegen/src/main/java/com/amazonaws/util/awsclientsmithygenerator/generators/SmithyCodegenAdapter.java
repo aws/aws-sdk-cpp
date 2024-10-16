@@ -136,6 +136,12 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
     }
 
     @Override
+    public boolean isEnumShape( Shape s)
+    {
+        return s.getType() == ShapeType.ENUM;
+    }
+
+    @Override
     public List<Node> getList(Node d)
     {
         return d.asArrayNode().get().getElements();

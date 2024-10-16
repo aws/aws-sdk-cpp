@@ -32,6 +32,22 @@ public class CppBlockWriter {
         }
         return String.format("%s %s(%s)", returnType, functionName, sb.toString());
     }
+    
+
+    public static String GetLambdaBlock(String returnType, String functionName, String... args)
+    {   
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < args.length - 1; i += 2)
+        {
+            sb.append(String.format("%s %s",args[i],args[i+1] ));
+            if(i + 2 < args.length )
+            {
+                sb.append(", ");
+            }
+        }
+        //functionName
+        return String.format("auto %s = [&](%s) -> %s", functionName, sb.toString(), returnType);
+    }
 
     @Data
     public static class Block {
@@ -156,7 +172,7 @@ public class CppBlockWriter {
         {
             Block top = blockStack.peek();
             indentLevel--;
-            top.addCode("}\n", indentLevel);
+            top.addCode("};\n", indentLevel);
             codeLines = top.getCodeLines();
             blockStack.pop();   
         }

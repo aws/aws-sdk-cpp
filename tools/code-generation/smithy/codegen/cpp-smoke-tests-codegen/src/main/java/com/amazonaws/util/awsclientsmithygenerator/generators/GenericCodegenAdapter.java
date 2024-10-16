@@ -3,12 +3,15 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Stack;
 
 public interface GenericCodegenAdapter<SHAPE, DATA> {
 
     public Map<String, SHAPE> getMemberShapes(SHAPE shape);
 
     public SHAPE getShapeFromOperation(String OperationName);
+
+    //public boolean isEnum(DATA d);
 
     public boolean isFloat(DATA d);
 
@@ -33,6 +36,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
     public boolean isMapShape(SHAPE s);
 
     public boolean isListShape( SHAPE s);
+
+    public boolean isEnumShape( SHAPE s);
 
     public List<DATA> getList(DATA d);
 
@@ -73,7 +78,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
             SHAPE shape, //useful for C++ return type object
             int level, //useful for depth
             int count, //useful for array elements at same depth
-            Map<String, String> functionMap
+            Map<String, String> functionMap,
+            List<String> functionOrder
     ) throws Exception
     {
         if(shape == null)
@@ -106,15 +112,15 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         else if (isMap(value) && isMapShape(shape))
         {
             
-            functionName = String.format("Get%s()", functionNameSuffix);
+            functionName = String.format("Get%s", functionNameSuffix);
             String shapeName = getShapeName(shape);
             //get all immediate map member shapes
             Map<String, SHAPE> fieldShapeMap = getMemberShapes(shape);
             //define function body and declare variable
             CppBlockWriter blockWriter = new CppBlockWriter( 
-                CppBlockWriter.GetFunctionBlock(shapeName,functionName)
-                , 0)
-                .addCode(String.format("%s %s ;\n",shapeName,varName));
+                                                CppBlockWriter.GetLambdaBlock(shapeName,functionName)
+                                                , 0)
+            .addCode(String.format("%s %s ;\n",shapeName,varName));
             
             //iterate over map keys
             Map<String, DATA> map =  getMap(value);
@@ -131,7 +137,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
                                 fieldShape,
                                 level + 1,
                                 0,
-                                functionMap
+                                functionMap,
+                                functionOrder
                         )
                 ));
             }
@@ -141,24 +148,27 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
             blockWriter.addCode(String.format("return %s;\n",varName))
                 .closeCodeBlock();
             functionMap.put(functionName, blockWriter.getCode() );
+            functionOrder.add(functionName);
+            functionName = functionName.concat("()");
         }
         else if (isList(value) && isListShape(shape))
         {
-            functionName = String.format("Get%s()",functionNameSuffix);
+            functionName = String.format("Get%s",functionNameSuffix);
 
             //assume objects will be same type
             List<DATA> list = getList(value);
 
-            String listType = getShapeName(shape);
-
-            //open function body and use vector setter
-            CppBlockWriter blockWriter = new CppBlockWriter
-                (CppBlockWriter.GetContainerDeclaration("Aws::Vector", listType, functionName), 0).
-                addCode(String.format("Aws::Vector<%s> %s = ",listType, varName))
-                .openCodeBlock("");
-
             //list is assumed to have homogenous type,
             SHAPE listMemberShape = getListMemberShape(shape);
+
+            String listType = getShapeName(listMemberShape);
+            String returnType = "Aws::Vector<"+listType+">";
+            //open function body and use vector setter
+            CppBlockWriter blockWriter = new CppBlockWriter
+            (
+            CppBlockWriter.GetLambdaBlock(returnType, functionName), 0).
+            addCode(String.format("Aws::Vector<%s> %s = ",listType, varName))
+            .openCodeBlock("");
 
             for (int i = 0; i < list.size(); i++)
             {
@@ -171,7 +181,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
                                         listMemberShape,
                                         level + 1,
                                         i,
-                                        functionMap
+                                        functionMap,
+                                        functionOrder
                                 )
                         )
                 );
@@ -183,6 +194,17 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
             blockWriter.closeCodeBlock().addCode(String.format("return %s;\n",varName)).closeCodeBlock();
 
             functionMap.put(functionName, blockWriter.getCode());
+            functionOrder.add(functionName);
+            functionName = functionName.concat("()");
+        }
+        else if (isString(value) && isEnumShape(shape))
+        {
+            String shapeName = getShapeName(shape);
+            functionName = String.format("{%s::%s}",shapeName,value);
+        }
+        else
+        {
+            System.err.println(String.format("shape not supported:%s",shape));
         }
 
         return functionName;

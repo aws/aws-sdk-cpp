@@ -83,7 +83,7 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
                 write("clientConfiguration.region = \"$L\";",test.getConfig().getAwsParams().get().getRegion());
             }
             write("clientConfiguration.useFIPS = $L;",test.getConfig().getAwsParams().get().useFips())
-            .write("clientConfiguration.useDualstack = $L;",test.getConfig().getAwsParams().get().useDualstack());
+            .write("clientConfiguration.useDualStack = $L;",test.getConfig().getAwsParams().get().useDualstack());
         }
         if(test.getAuth() == "sigv4" || test.getAuth() == "sigv4a")
         {
