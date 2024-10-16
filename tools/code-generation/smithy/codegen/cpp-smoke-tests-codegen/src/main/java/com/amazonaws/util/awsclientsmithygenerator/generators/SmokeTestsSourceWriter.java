@@ -8,10 +8,14 @@ import java.util.List;
 import com.google.common.base.Optional;
 public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceWriter, CppImportContainer>{
     private String namespace;
+    private String clientNamespace;
+    private String folderNamespace;
     //protected CppBlockWriter blockWriter;    
     public SmokeTestsSourceWriter(String namespace) {
         super(new CppImportContainer(namespace));
         this.namespace = namespace;
+        this.clientNamespace = SmokeTestsParser.removeSpaces(namespace);
+        this.folderNamespace = SmokeTestsParser.toKebabCase(namespace);
     }
 
     protected void useNamespaces()
@@ -19,8 +23,8 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         write("${L|}","using namespace Aws::Auth;\n" + //
                         "using namespace Aws::Http;\n" + //
                         "using namespace Aws::Client;\n").
-        write("using namespace Aws::$L;" ,namespace ).
-        write("using namespace Aws::$L::Model;", namespace);
+        write("using namespace Aws::$L;" ,clientNamespace ).
+        write("using namespace Aws::$L::Model;", clientNamespace);
     };
 
     //SimpleCodeWriter writer 
@@ -48,30 +52,30 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
 
     protected void addClientHeader()
     {
-        write("#include <aws/$L/$LClient.h>", namespace.toLowerCase(), namespace );
+        write("#include <aws/$L/$LClient.h>", folderNamespace, clientNamespace );
     };
 
     protected void addRequestHeader(SmokeTestData test)
     {
-        write("#include <aws/$L/model/$LRequest.h>", namespace.toLowerCase(), test.getOperationName());
+        write("#include <aws/$L/model/$LRequest.h>", folderNamespace, test.getOperationName());
     };
 
     protected void defineTestFixture()
     {
-        write("class $LSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {", namespace).
+        write("class $LSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {", clientNamespace).
         indent().
         write("public:").
         write("static const char ALLOCATION_TAG[];").
         dedent().
         write("}");
-        write("const char $LSmokeTestSuite::ALLOCATION_TAG[] = \"$LSmokeTest\"",namespace,namespace);
+        write("const char $LSmokeTestSuite::ALLOCATION_TAG[] = \"$LSmokeTest\"",clientNamespace,clientNamespace);
     }
 
     protected void defineTestCase(SmokeTestData test)
     {
         //declare test fixture
-        write("TEST_F($LSmokeTestSuite, $L )",namespace, test.getTestcaseName()).write("{").indent().
-        write("Aws::$L::$LClientConfiguration clientConfiguration;", namespace,namespace);
+        write("TEST_F($LSmokeTestSuite, $L )",clientNamespace, test.getTestcaseName()).write("{").indent().
+        write("Aws::$L::$LClientConfiguration clientConfiguration;", clientNamespace,clientNamespace);
         if(test.getConfig().getAwsParams().isPresent())
         {
             if(!test.getConfig().getAwsParams().get().getRegion().isEmpty())
@@ -83,7 +87,7 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         }
         if(test.getAuth() == "sigv4" || test.getAuth() == "sigv4a")
         {
-            write("auto clientSp = Aws::MakeShared<$LClient>(ALLOCATION_TAG, clientConfiguration);",namespace);
+            write("auto clientSp = Aws::MakeShared<$LClient>(ALLOCATION_TAG, clientConfiguration);",clientNamespace);
         }
         //comments
         if( !test.getTestDataCodeBlock().isEmpty() )
@@ -119,7 +123,7 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         tests.stream().forEach(test -> {
             addRequestHeader(test);
         });
-        write("namespace $LSmokeTest{", namespace);
+        write("namespace $LSmokeTest{", clientNamespace);
         useNamespaces();
 
         defineTestFixture();
