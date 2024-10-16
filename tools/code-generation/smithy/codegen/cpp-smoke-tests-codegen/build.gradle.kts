@@ -16,7 +16,7 @@ dependencies {
     api(codegen.rules.engine)
     implementation(codegen.aws.smoke.test.model)
     api(codegen.aws.endpoints)
-
+    api(codegen.aws.iam.traits)
     api(codegen.guava)
     implementation(codegen.lombok)
     annotationProcessor(codegen.lombok)
