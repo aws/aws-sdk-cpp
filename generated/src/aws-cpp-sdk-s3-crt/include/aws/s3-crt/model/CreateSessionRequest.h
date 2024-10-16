@@ -112,7 +112,7 @@ namespace Model
      * full Key ARN not the Key ID. </p> <p>Your SSE-KMS configuration can only support
      * 1 <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-     * managed key</a> per directory bucket for the lifetime of the bucket. <a
+     * managed key</a> per directory bucket for the lifetime of the bucket. The <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed key</a> (<code>aws/s3</code>) isn't supported. </p>
      */

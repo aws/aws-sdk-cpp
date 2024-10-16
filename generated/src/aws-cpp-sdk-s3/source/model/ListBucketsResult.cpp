@@ -53,6 +53,11 @@ ListBucketsResult& ListBucketsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_continuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(continuationTokenNode.GetText());
     }
+    XmlNode prefixNode = resultNode.FirstChild("Prefix");
+    if(!prefixNode.IsNull())
+    {
+      m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();
