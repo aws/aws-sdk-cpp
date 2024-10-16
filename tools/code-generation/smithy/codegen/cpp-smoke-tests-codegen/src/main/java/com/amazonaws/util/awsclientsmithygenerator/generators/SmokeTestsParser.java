@@ -30,9 +30,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -54,25 +56,119 @@ public class SmokeTestsParser implements Runnable{
     final private Map<ShapeId, String> operationToServiceMap;
     final private Map<String, ServiceShape> serviceShapeMap;
 
+    // Static member to store the flipped map
+    private static final Map<String, String> SMITHY_C2J_SERVICE_NAME_MAP;
+    private final Set<String> serviceFilter;
+
+    // Static block to initialize the flipped map
+    static {
+        SMITHY_C2J_SERVICE_NAME_MAP = new HashMap<>();
+        SMITHY_C2J_SERVICE_NAME_MAP.put("api-gateway", "apigateway");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("application-auto-scaling", "application-autoscaling");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("app-mesh", "appmesh");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("auto-scaling", "autoscaling");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("auto-scaling-plans", "autoscaling-plans");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("cloudhsm-v2", "cloudhsmv2");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("cloudsearch-domain", "cloudsearchdomain");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("config-service", "config");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("cost-and-usage-report-service", "cur");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("data-pipeline", "datapipeline");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("device-farm", "devicefarm");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("direct-connect", "directconnect");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("dynamodb-streams", "streams.dynamodb");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("elastic-beanstalk", "elasticbeanstalk");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("elastic-load-balancing", "elasticloadbalancing");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("elastic-load-balancing-v2", "elasticloadbalancingv2");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("elastic-transcoder", "elastictranscoder");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("global-accelerator", "globalaccelerator");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("iot-1click-devices-service", "iot1click-devices");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("iot-1click-projects", "iot1click-projects");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("iot-data-plane", "iot-data");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("iot-events-data", "iotevents-data");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("iot-events", "iotevents");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("iot-jobs-data-plane", "iot-jobs-data");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("iot-wireless", "iot-wireless");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("kinesis-analytics", "kinesisanalytics");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("kinesis-analytics-v2", "kinesisanalyticsv2");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("kinesis-video", "kinesisvideo");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("lex-models-v2", "models.lex.v2");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("lex-runtime-service", "suntime.lex");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("lex-runtime-v2", "runtime.lex.v2");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("machine-learning", "machinelearning");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("marketplace-commerce-analytics", "marketplacecommerceanalytics");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("marketplace-entitlement-service", "entitlement.marketplace");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("marketplace-metering", "meteringmarketplace");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("migration-hub", "awsmigrationhub");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("mturk", "mturk-requester");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("pinpoint-sms-voice", "sms-voice");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("resource-groups-tagging-api", "resourcegroupstaggingapi");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("route-53-domains", "route53domains");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("route-53", "route53");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("s3-control", "s3control");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("sagemaker-runtime", "runtime.sagemaker");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("secrets-manager", "secretsmanager");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("serverlessapplicationrepository", "serverlessrepo");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("service-catalog-appregistry", "servicecatalog-appregistry");
+        SMITHY_C2J_SERVICE_NAME_MAP.put("service-catalog", "servicecatalog");
+    }
+
+
     public SmokeTestsParser(PluginContext context)
     {
         this.context = context;
         this.model = context.getModel();
         this.codegenAdapter = new SmithyCodegenAdapter(model);
         this.symbolProvider = new CppSymbolVisitor(model);
-
-
-        operationToServiceMap = new HashMap<>();
-        serviceShapeMap = new HashMap<>();
+        this.operationToServiceMap = new HashMap<>();
+        this.serviceShapeMap = new HashMap<>();
+        this.serviceFilter = new HashSet<>();
+        //parse the filter
+        Map<String, Node> settings = context.getSettings().getStringMap();
+        if(settings.containsKey("serviceFilter"))
+        {
+            Node value = settings.get("serviceFilter");
+            if(value.isArrayNode())
+            {
+                for(Node element : value.asArrayNode().get() )
+                {
+                    if(element.isStringNode())
+                    {
+                        serviceFilter.add(element.asStringNode().get().getValue());
+                    }
+                }
+            }
+        }
         
-        // Iterate over all Service shapes in the model and create map of operation to 
-        model.getServiceShapes().stream().forEach(serviceShape -> {
+        // Iterate over all Service shapes in the model which has at least one operation that has smoke test
+        // create a reverse map of operations to service shapes 
+        model.getServiceShapes().stream()
+        .filter(serviceShape -> {
+            try {
+                return serviceFilter.isEmpty() || serviceFilter.contains(toKebabCase(getServiceName(serviceShape)));
+            } catch (Exception e) {
+                // Log the exception and exclude this serviceShape from the result
+                System.err.println("Error getting service name: " + e.getMessage());
+                return false; // Skip this serviceShape if exception occurs
+            }}
+        )
+        .filter(serviceShape -> 
+            serviceShape.getAllOperations().stream()
+                .anyMatch(operationShapeId ->  model.getShape(operationShapeId).isPresent() && 
+                                               model.getShape(operationShapeId).get().getTrait(SmokeTestsTrait.class).isPresent())
+        )
+        .forEach(serviceShape -> {
             String serviceName = serviceShape.getId().getName();
-            serviceShape.getAllOperations().stream().forEach(operation -> {
-                this.operationToServiceMap.put( operation, serviceName);
-                this.serviceShapeMap.put(serviceName,serviceShape );
-            });
+
+            // Iterate over operations with the SmokeTestsTrait
+            serviceShape.getAllOperations().stream()
+                .forEach(operation -> {
+                    // Populate the maps with only those services with smoke test operations
+                    this.operationToServiceMap.put(operation, serviceName);
+                    this.serviceShapeMap.put(serviceName, serviceShape);
+                });
         });
+
+        System.out.println(String.format("Number of services with smoke tests detected=%d",serviceShapeMap.size()));
     }
 
     public static String removeSpaces(String input)
@@ -85,7 +181,7 @@ public class SmokeTestsParser implements Runnable{
         return input.trim().toLowerCase().replace(" ", "-");
     }
 
-    private String getServiceName(ServiceShape serviceShape) throws Exception
+    static private String getServiceName(ServiceShape serviceShape) throws Exception
     {   
         if(!serviceShape.getTrait(ServiceTrait.class).isPresent())
         {
@@ -97,6 +193,15 @@ public class SmokeTestsParser implements Runnable{
         String clientName = serviceShape.getTrait(ServiceTrait.class).get().getSdkId();
 
         return clientName;
+    }
+
+    public static String getC2JServiceName(String smithyServiceName)
+    {
+        if(SMITHY_C2J_SERVICE_NAME_MAP.containsKey(smithyServiceName))
+        {
+            return SMITHY_C2J_SERVICE_NAME_MAP.get(smithyServiceName);
+        }
+        return smithyServiceName;
     }
 
     //for given smoke test trait in an operation for a service, parse smoke tests
@@ -304,8 +409,9 @@ public class SmokeTestsParser implements Runnable{
 
                 try{
                     String client = getServiceName(serviceShape);
+                    String c2jClientname = getC2JServiceName(toKebabCase(client));
                     
-                    Path relativePath = Paths.get( toKebabCase(client) );
+                    Path relativePath = Paths.get( c2jClientname );
                     System.out.println(String.format("path=%s",relativePath.toString() + "/"+ removeSpaces(client) + "SmokeTests.cpp"));
                     
                     delegator.useFileWriter( relativePath.toString() + "/"+ removeSpaces(client) + "SmokeTests.cpp", client, writer -> {

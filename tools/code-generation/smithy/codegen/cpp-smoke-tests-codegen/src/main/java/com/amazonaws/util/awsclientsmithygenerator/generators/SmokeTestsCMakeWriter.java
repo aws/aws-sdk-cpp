@@ -33,6 +33,7 @@ public final class SmokeTestsCMakeWriter extends SymbolWriter<SmokeTestsCMakeWri
 
         write(""" 
             file(GLOB AWS_$L_GENERATED_SMOKE_TEST_SRC
+                \"$${CMAKE_CURRENT_SOURCE_DIR}/../RunTests.cpp\"
                 \"$${CMAKE_CURRENT_SOURCE_DIR}/*.cpp\"
             )
             if(MSVC AND BUILD_SHARED_LIBS)
@@ -63,15 +64,18 @@ public final class SmokeTestsCMakeWriter extends SymbolWriter<SmokeTestsCMakeWri
             target_include_directories($${PROJECT_NAME} PUBLIC
                 $${CMAKE_CURRENT_SOURCE_DIR}/../../src/aws-cpp-sdk-$L/include)
 
-            target_link_libraries($${PROJECT_NAME} $${PROJECT_LIBS})
+            target_link_libraries($${PROJECT_NAME}
+                $${PROJECT_LIBS})
             """, awsTestSrc, awsTestSrc,folderNamespace);
-
-        write(""" 
+        /*
             if (AUTORUN_UNIT_TESTS)
                 ADD_CUSTOM_COMMAND( TARGET $${PROJECT_NAME} POST_BUILD
                     COMMAND $${CMAKE_COMMAND} -E env LD_LIBRARY_PATH=$${AWS_AUTORUN_LD_LIBRARY_PATH}:$$ENV{LD_LIBRARY_PATH} $$<TARGET_FILE:$${PROJECT_NAME}>
                     ARGS \"--gtest_brief=1\")
             endif()
+         */
+
+        write(""" 
             if(NOT CMAKE_CROSSCOMPILING)
                 SET_TARGET_PROPERTIES($${PROJECT_NAME} PROPERTIES OUTPUT_NAME $${PROJECT_NAME})
             endif()

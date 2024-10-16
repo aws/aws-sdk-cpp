@@ -6,6 +6,7 @@
     "outputDirectory": "output",
     "plugins": {
       "cpp-codegen-smoke-tests-plugin": {
+        "serviceFilter": []
       }
     }
         
