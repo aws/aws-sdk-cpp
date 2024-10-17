@@ -22,8 +22,9 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
         operationShapeMap = new HashMap<>();
 
         operationShapeMap = model.getOperationShapes().stream().collect(Collectors.toMap(
-                operationShape -> operationShape.getId().getName(),
-                operationShape -> operationShape
+            operationShape -> operationShape.getId().getName(),
+            operationShape -> operationShape,
+            (existing, replacement) -> existing // Keep the first occurrence
         ));
     }
 

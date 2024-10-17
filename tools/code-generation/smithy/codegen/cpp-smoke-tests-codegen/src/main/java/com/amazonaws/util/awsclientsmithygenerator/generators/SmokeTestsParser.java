@@ -363,6 +363,7 @@ public class SmokeTestsParser implements Runnable{
         //on those operation shapes, find service trait
 
         model.getOperationShapes().stream().
+        filter(operationShape -> operationShape.getInput().isPresent()).
         filter(operationShape -> operationShape.getTrait(SmokeTestsTrait.class).isPresent() ).
         filter(operationShape ->  operationToServiceMap.containsKey(operationShape.getId()) ).
         forEach(operationShape -> {

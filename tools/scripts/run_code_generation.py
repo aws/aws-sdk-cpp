@@ -25,6 +25,9 @@ DEFAULTS_FILE_LOCATION = "../defaults/sdk-default-configuration.json"  # Relativ
 DEFAULT_GENERATOR_LOCATION = "code-generation/generator/"
 GENERATOR_TARGET_DIR = "target"
 GENERATOR_JAR = GENERATOR_TARGET_DIR + "/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar"
+SMITHY_GENERATOR_LOCATION = "code-generation/smithy/codegen"
+SMITHY_OUTPUT_LOCATION = "code-generation/smithy/codegen_output"
+
 
 # Regexp to parse C2J model filename to extract service name and date version
 SERVICE_MODEL_FILENAME_PATTERN = re.compile(
@@ -375,6 +378,10 @@ def parse_arguments() -> dict:
                         help="Code generator raw argument to be passed through to "
                              "mark operation functions in service client as virtual functions. Always on by default",
                         action="store_true")
+    
+    parser.add_argument("--generate-smoke-tests",
+                    help="Run smithy code generator for smoke tests",
+                    action="store_true")
 
     args = vars(parser.parse_args())
     arg_map = {}
@@ -446,7 +453,53 @@ def parse_arguments() -> dict:
 
     return arg_map
 
+def copy_cpp_codegen_contents(top_level_dir: str, plugin_name: str, target_dir: str):
+    # check if the target directory exists, create it if it doesn't
+    os.makedirs(target_dir, exist_ok=True)
 
+    # Walk through the top-level directory and find all "cpp-codegen-smoke-tests-plugin" directories
+    for root, dirs, files in os.walk(top_level_dir):
+        if plugin_name in dirs:
+            source_dir = os.path.join(root, plugin_name)
+            print(f"Found plugin: {source_dir}")
+            # recursively copy all contents from the source to the target folder
+            for item in os.listdir(source_dir):
+                source_item = os.path.join(source_dir, item)
+                target_item = os.path.join(target_dir, item)
+
+                # Recursively copy directories and files
+                if os.path.isdir(source_item):
+                    shutil.copytree(source_item, target_item, dirs_exist_ok=True)
+                else:
+                    shutil.copy2(source_item, target_item)
+
+            print(f"Copied contents from '{source_dir}' to '{target_dir}'.")
+            
+def generate_smoke_tests():
+    
+    smithy_codegen_command = [ "./"+SMITHY_GENERATOR_LOCATION+"/gradlew", "build", "-DoutputDirectory=\""+SMITHY_OUTPUT_LOCATION+"\""]
+
+    try:
+        # Run the command
+        process = subprocess.run(
+            smithy_codegen_command, 
+            timeout=6*60, 
+            check=True, 
+            capture_output=True, 
+            text=True  # Ensures stdout/stderr are strings, not bytes
+        )
+        process.check_returncode()
+
+        # If successful, print the command output
+        print("Smithy codegen command executed successfully!\n", process.stdout)
+        return True
+
+    except subprocess.CalledProcessError as e:
+        # Handle the error, print details
+        print(f"Command failed with return code {e.returncode}")
+        print(f"Error Output:\n{e.stderr}")
+        return False
+            
 def main():
     """Main entrypoint for this script that wraps AWS-SDK-CPP code generation
 
@@ -526,7 +579,14 @@ def main():
 
         new_done, _ = wait(pending, return_when=ALL_COMPLETED)
         done.update(new_done)
-
+        
+        #generate code using smithy for all discoverable clients
+        if (args["raw_generator_arguments"].get("generate-smoke-tests")):
+            print(f"Running code generator for smoke-tests")
+            if generate_smoke_tests() :
+                #move the output to 
+                copy_cpp_codegen_contents(SMITHY_OUTPUT_LOCATION, "cpp-codegen-smoke-tests-plugin", "/generated/smoke-tests")
+                
         failures = set()
         for result in done:
             try:
