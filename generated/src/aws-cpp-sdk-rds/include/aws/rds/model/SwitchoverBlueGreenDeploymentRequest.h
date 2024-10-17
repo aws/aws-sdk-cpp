@@ -38,8 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the blue/green deployment.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
+     * <p>The resource ID of the blue/green deployment.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must match an existing blue/green deployment resource ID.</p> </li>
      * </ul>
      */
     inline const Aws::String& GetBlueGreenDeploymentIdentifier() const{ return m_blueGreenDeploymentIdentifier; }

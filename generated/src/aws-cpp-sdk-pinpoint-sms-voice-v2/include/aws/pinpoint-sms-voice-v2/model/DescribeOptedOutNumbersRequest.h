@@ -56,7 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of phone numbers to search for in the OptOutList.</p>
+     * <p>An array of phone numbers to search for in the OptOutList.</p> <p>If you
+     * specify an opted out number that isn't valid, an exception is returned.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOptedOutNumbers() const{ return m_optedOutNumbers; }
     inline bool OptedOutNumbersHasBeenSet() const { return m_optedOutNumbersHasBeenSet; }

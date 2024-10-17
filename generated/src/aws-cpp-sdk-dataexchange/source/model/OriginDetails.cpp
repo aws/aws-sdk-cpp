@@ -19,7 +19,8 @@ namespace Model
 {
 
 OriginDetails::OriginDetails() : 
-    m_productIdHasBeenSet(false)
+    m_productIdHasBeenSet(false),
+    m_dataGrantIdHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ OriginDetails& OriginDetails::operator =(JsonView jsonValue)
     m_productIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataGrantId"))
+  {
+    m_dataGrantId = jsonValue.GetString("DataGrantId");
+
+    m_dataGrantIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue OriginDetails::Jsonize() const
   if(m_productIdHasBeenSet)
   {
    payload.WithString("ProductId", m_productId);
+
+  }
+
+  if(m_dataGrantIdHasBeenSet)
+  {
+   payload.WithString("DataGrantId", m_dataGrantId);
 
   }
 

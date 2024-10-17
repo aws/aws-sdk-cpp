@@ -43,6 +43,15 @@ RestoreAnalysisResult& RestoreAnalysisResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("RestorationFailedFolderArns"))
+  {
+    Aws::Utils::Array<JsonView> restorationFailedFolderArnsJsonList = jsonValue.GetArray("RestorationFailedFolderArns");
+    for(unsigned restorationFailedFolderArnsIndex = 0; restorationFailedFolderArnsIndex < restorationFailedFolderArnsJsonList.GetLength(); ++restorationFailedFolderArnsIndex)
+    {
+      m_restorationFailedFolderArns.push_back(restorationFailedFolderArnsJsonList[restorationFailedFolderArnsIndex].AsString());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

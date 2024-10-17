@@ -245,8 +245,11 @@ namespace Model
      * Access Management (IAM) accounts to database accounts. By default, mapping isn't
      * enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
-     * <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">IAM
+     * database authentication for MariaDB, MySQL, and PostgreSQL</a> in the <i>Amazon
+     * RDS User Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters and
+     * Multi-AZ DB clusters</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
@@ -613,7 +616,7 @@ namespace Model
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">
      * Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>Valid for Cluster Type: Multi-AZ DB clusters only</p>
+     * <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }

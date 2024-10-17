@@ -23,6 +23,7 @@ namespace Aws
         static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
         static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
         static const int REVIEWING_HASH = HashingUtils::HashString("REVIEWING");
+        static const int REQUIRES_AUTHENTICATION_HASH = HashingUtils::HashString("REQUIRES_AUTHENTICATION");
         static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
         static const int DISCARDED_HASH = HashingUtils::HashString("DISCARDED");
         static const int DENIED_HASH = HashingUtils::HashString("DENIED");
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == REVIEWING_HASH)
           {
             return RegistrationVersionStatus::REVIEWING;
+          }
+          else if (hashCode == REQUIRES_AUTHENTICATION_HASH)
+          {
+            return RegistrationVersionStatus::REQUIRES_AUTHENTICATION;
           }
           else if (hashCode == APPROVED_HASH)
           {
@@ -87,6 +92,8 @@ namespace Aws
             return "SUBMITTED";
           case RegistrationVersionStatus::REVIEWING:
             return "REVIEWING";
+          case RegistrationVersionStatus::REQUIRES_AUTHENTICATION:
+            return "REQUIRES_AUTHENTICATION";
           case RegistrationVersionStatus::APPROVED:
             return "APPROVED";
           case RegistrationVersionStatus::DISCARDED:

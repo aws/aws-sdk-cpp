@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -77,6 +78,20 @@ namespace Model
     inline RestoreAnalysisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
     inline RestoreAnalysisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of folder arns thatthe analysis failed to be restored to.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRestorationFailedFolderArns() const{ return m_restorationFailedFolderArns; }
+    inline void SetRestorationFailedFolderArns(const Aws::Vector<Aws::String>& value) { m_restorationFailedFolderArns = value; }
+    inline void SetRestorationFailedFolderArns(Aws::Vector<Aws::String>&& value) { m_restorationFailedFolderArns = std::move(value); }
+    inline RestoreAnalysisResult& WithRestorationFailedFolderArns(const Aws::Vector<Aws::String>& value) { SetRestorationFailedFolderArns(value); return *this;}
+    inline RestoreAnalysisResult& WithRestorationFailedFolderArns(Aws::Vector<Aws::String>&& value) { SetRestorationFailedFolderArns(std::move(value)); return *this;}
+    inline RestoreAnalysisResult& AddRestorationFailedFolderArns(const Aws::String& value) { m_restorationFailedFolderArns.push_back(value); return *this; }
+    inline RestoreAnalysisResult& AddRestorationFailedFolderArns(Aws::String&& value) { m_restorationFailedFolderArns.push_back(std::move(value)); return *this; }
+    inline RestoreAnalysisResult& AddRestorationFailedFolderArns(const char* value) { m_restorationFailedFolderArns.push_back(value); return *this; }
+    ///@}
   private:
 
     int m_status;
@@ -86,6 +101,8 @@ namespace Model
     Aws::String m_analysisId;
 
     Aws::String m_requestId;
+
+    Aws::Vector<Aws::String> m_restorationFailedFolderArns;
   };
 
 } // namespace Model

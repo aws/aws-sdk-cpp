@@ -40,11 +40,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user-supplied DB shard group identifier or the Amazon Resource Name (ARN)
-     * of the DB shard group. If this parameter is specified, information for only the
-     * specific DB shard group is returned. This parameter isn't case-sensitive.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing DB shard
-     * group identifier.</p> </li> </ul>
+     * <p>The user-supplied DB shard group identifier. If this parameter is specified,
+     * information for only the specific DB shard group is returned. This parameter
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match an existing DB shard group identifier.</p> </li> </ul>
      */
     inline const Aws::String& GetDBShardGroupIdentifier() const{ return m_dBShardGroupIdentifier; }
     inline bool DBShardGroupIdentifierHasBeenSet() const { return m_dBShardGroupIdentifierHasBeenSet; }

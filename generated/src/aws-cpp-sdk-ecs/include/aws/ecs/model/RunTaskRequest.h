@@ -273,8 +273,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The reference ID to use for the task. The reference ID can have a maximum
-     * length of 1024 characters.</p>
+     * <p>This parameter is only used by Amazon ECS. It is not intended for use by
+     * customers.</p>
      */
     inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }

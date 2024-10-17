@@ -50,10 +50,27 @@ namespace Model
     inline OriginDetails& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
     inline OriginDetails& WithProductId(const char* value) { SetProductId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the data grant.</p>
+     */
+    inline const Aws::String& GetDataGrantId() const{ return m_dataGrantId; }
+    inline bool DataGrantIdHasBeenSet() const { return m_dataGrantIdHasBeenSet; }
+    inline void SetDataGrantId(const Aws::String& value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId = value; }
+    inline void SetDataGrantId(Aws::String&& value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId = std::move(value); }
+    inline void SetDataGrantId(const char* value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId.assign(value); }
+    inline OriginDetails& WithDataGrantId(const Aws::String& value) { SetDataGrantId(value); return *this;}
+    inline OriginDetails& WithDataGrantId(Aws::String&& value) { SetDataGrantId(std::move(value)); return *this;}
+    inline OriginDetails& WithDataGrantId(const char* value) { SetDataGrantId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_productId;
     bool m_productIdHasBeenSet = false;
+
+    Aws::String m_dataGrantId;
+    bool m_dataGrantIdHasBeenSet = false;
   };
 
 } // namespace Model

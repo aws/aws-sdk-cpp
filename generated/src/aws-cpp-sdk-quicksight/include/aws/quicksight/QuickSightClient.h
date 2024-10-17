@@ -4095,6 +4095,39 @@ namespace QuickSight
         }
 
         /**
+         * <p>Starts an asynchronous job that runs an existing dashboard schedule and sends
+         * the dashboard snapshot through email. </p> <p>Only one job can run
+         * simultaneously in a given schedule. Repeated requests are skipped with a
+         * <code>202</code> HTTP status code.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/sending-reports.html">Scheduling
+         * and sending Amazon QuickSight reports by email</a> and <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/email-reports-from-dashboard.html">Configuring
+         * email report settings for a Amazon QuickSight dashboard</a> in the <i>Amazon
+         * QuickSight User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJobSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDashboardSnapshotJobScheduleOutcome StartDashboardSnapshotJobSchedule(const Model::StartDashboardSnapshotJobScheduleRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartDashboardSnapshotJobSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartDashboardSnapshotJobScheduleRequestT = Model::StartDashboardSnapshotJobScheduleRequest>
+        Model::StartDashboardSnapshotJobScheduleOutcomeCallable StartDashboardSnapshotJobScheduleCallable(const StartDashboardSnapshotJobScheduleRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::StartDashboardSnapshotJobSchedule, request);
+        }
+
+        /**
+         * An Async wrapper for StartDashboardSnapshotJobSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartDashboardSnapshotJobScheduleRequestT = Model::StartDashboardSnapshotJobScheduleRequest>
+        void StartDashboardSnapshotJobScheduleAsync(const StartDashboardSnapshotJobScheduleRequestT& request, const StartDashboardSnapshotJobScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::StartDashboardSnapshotJobSchedule, request, handler, context);
+        }
+
+        /**
          * <p>Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight
          * resource. </p> <p>Tags can help you organize and categorize your resources. You
          * can also use them to scope user permissions, by granting a user permission to

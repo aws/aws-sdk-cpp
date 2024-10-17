@@ -58,6 +58,7 @@ namespace Aws
         static const int REGISTRATION_FIELD_CANNOT_BE_DELETED_HASH = HashingUtils::HashString("REGISTRATION_FIELD_CANNOT_BE_DELETED");
         static const int VERIFICATION_CODE_MISMATCH_HASH = HashingUtils::HashString("VERIFICATION_CODE_MISMATCH");
         static const int VOICE_CAPABILITY_NOT_AVAILABLE_HASH = HashingUtils::HashString("VOICE_CAPABILITY_NOT_AVAILABLE");
+        static const int UNSPECIFIED_PARAMETER_NOT_SUPPORTED_HASH = HashingUtils::HashString("UNSPECIFIED_PARAMETER_NOT_SUPPORTED");
         static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 
 
@@ -216,6 +217,10 @@ namespace Aws
           {
             return ValidationExceptionReason::VOICE_CAPABILITY_NOT_AVAILABLE;
           }
+          else if (hashCode == UNSPECIFIED_PARAMETER_NOT_SUPPORTED_HASH)
+          {
+            return ValidationExceptionReason::UNSPECIFIED_PARAMETER_NOT_SUPPORTED;
+          }
           else if (hashCode == OTHER_HASH)
           {
             return ValidationExceptionReason::OTHER;
@@ -312,6 +317,8 @@ namespace Aws
             return "VERIFICATION_CODE_MISMATCH";
           case ValidationExceptionReason::VOICE_CAPABILITY_NOT_AVAILABLE:
             return "VOICE_CAPABILITY_NOT_AVAILABLE";
+          case ValidationExceptionReason::UNSPECIFIED_PARAMETER_NOT_SUPPORTED:
+            return "UNSPECIFIED_PARAMETER_NOT_SUPPORTED";
           case ValidationExceptionReason::OTHER:
             return "OTHER";
           default:

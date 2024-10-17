@@ -161,6 +161,7 @@
 #include <aws/quicksight/model/StartAssetBundleExportJobResult.h>
 #include <aws/quicksight/model/StartAssetBundleImportJobResult.h>
 #include <aws/quicksight/model/StartDashboardSnapshotJobResult.h>
+#include <aws/quicksight/model/StartDashboardSnapshotJobScheduleResult.h>
 #include <aws/quicksight/model/TagResourceResult.h>
 #include <aws/quicksight/model/UntagResourceResult.h>
 #include <aws/quicksight/model/UpdateAccountCustomizationResult.h>
@@ -381,6 +382,7 @@ namespace Aws
       class StartAssetBundleExportJobRequest;
       class StartAssetBundleImportJobRequest;
       class StartDashboardSnapshotJobRequest;
+      class StartDashboardSnapshotJobScheduleRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateAccountCustomizationRequest;
@@ -564,6 +566,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartAssetBundleExportJobResult, QuickSightError> StartAssetBundleExportJobOutcome;
       typedef Aws::Utils::Outcome<StartAssetBundleImportJobResult, QuickSightError> StartAssetBundleImportJobOutcome;
       typedef Aws::Utils::Outcome<StartDashboardSnapshotJobResult, QuickSightError> StartDashboardSnapshotJobOutcome;
+      typedef Aws::Utils::Outcome<StartDashboardSnapshotJobScheduleResult, QuickSightError> StartDashboardSnapshotJobScheduleOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, QuickSightError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, QuickSightError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAccountCustomizationResult, QuickSightError> UpdateAccountCustomizationOutcome;
@@ -747,6 +750,7 @@ namespace Aws
       typedef std::future<StartAssetBundleExportJobOutcome> StartAssetBundleExportJobOutcomeCallable;
       typedef std::future<StartAssetBundleImportJobOutcome> StartAssetBundleImportJobOutcomeCallable;
       typedef std::future<StartDashboardSnapshotJobOutcome> StartDashboardSnapshotJobOutcomeCallable;
+      typedef std::future<StartDashboardSnapshotJobScheduleOutcome> StartDashboardSnapshotJobScheduleOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAccountCustomizationOutcome> UpdateAccountCustomizationOutcomeCallable;
@@ -933,6 +937,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::StartAssetBundleExportJobRequest&, const Model::StartAssetBundleExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAssetBundleExportJobResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::StartAssetBundleImportJobRequest&, const Model::StartAssetBundleImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAssetBundleImportJobResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::StartDashboardSnapshotJobRequest&, const Model::StartDashboardSnapshotJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDashboardSnapshotJobResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::StartDashboardSnapshotJobScheduleRequest&, const Model::StartDashboardSnapshotJobScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDashboardSnapshotJobScheduleResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateAccountCustomizationRequest&, const Model::UpdateAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountCustomizationResponseReceivedHandler;

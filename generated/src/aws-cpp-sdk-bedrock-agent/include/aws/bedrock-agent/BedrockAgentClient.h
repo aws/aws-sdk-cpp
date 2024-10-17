@@ -978,7 +978,7 @@ namespace BedrockAgent
 
         /**
          * <p>Gets information about a data ingestion job. Data sources are ingested into
-         * your knowledge base so that Large Lanaguage Models (LLMs) can use your
+         * your knowledge base so that Large Language Models (LLMs) can use your
          * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetIngestionJob">AWS
          * API Reference</a></p>

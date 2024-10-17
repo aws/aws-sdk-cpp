@@ -23,6 +23,7 @@ namespace Aws
         static const int CREATED_HASH = HashingUtils::HashString("CREATED");
         static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
         static const int REVIEWING_HASH = HashingUtils::HashString("REVIEWING");
+        static const int REQUIRES_AUTHENTICATION_HASH = HashingUtils::HashString("REQUIRES_AUTHENTICATION");
         static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
         static const int COMPLETE_HASH = HashingUtils::HashString("COMPLETE");
         static const int REQUIRES_UPDATES_HASH = HashingUtils::HashString("REQUIRES_UPDATES");
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == REVIEWING_HASH)
           {
             return RegistrationStatus::REVIEWING;
+          }
+          else if (hashCode == REQUIRES_AUTHENTICATION_HASH)
+          {
+            return RegistrationStatus::REQUIRES_AUTHENTICATION;
           }
           else if (hashCode == PROVISIONING_HASH)
           {
@@ -87,6 +92,8 @@ namespace Aws
             return "SUBMITTED";
           case RegistrationStatus::REVIEWING:
             return "REVIEWING";
+          case RegistrationStatus::REQUIRES_AUTHENTICATION:
+            return "REQUIRES_AUTHENTICATION";
           case RegistrationStatus::PROVISIONING:
             return "PROVISIONING";
           case RegistrationStatus::COMPLETE:

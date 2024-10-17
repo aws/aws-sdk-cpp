@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Streams only) The position in a stream from which to start reading.</p>
+     * <p>The position in a stream from which to start reading.</p>
      */
     inline const SelfManagedKafkaStartPosition& GetStartingPosition() const{ return m_startingPosition; }
     inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
