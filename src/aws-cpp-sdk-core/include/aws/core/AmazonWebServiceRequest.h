@@ -19,6 +19,8 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/endpoint/internal/AWSEndpointAttribute.h>
 
+#include "client/Checksum.h"
+
 namespace Aws
 {
     namespace Http
@@ -190,6 +192,8 @@ namespace Aws
         inline virtual Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const { return {}; }
 
         inline virtual Aws::String GetChecksumAlgorithmName() const { return {}; }
+
+        inline virtual Aws::Crt::Optional<Client::Checksum::ChecksumInfo> GetChecksumInfo() const { return {}; }
 
         virtual const char* GetServiceRequestName() const = 0;
 

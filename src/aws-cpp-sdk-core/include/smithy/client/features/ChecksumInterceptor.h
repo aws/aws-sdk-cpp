@@ -68,15 +68,22 @@ namespace smithy
                         "Checksum request validation missing request",
                         false};
                 }
-                Aws::String checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(
-                    request.GetChecksumAlgorithmName().c_str());
+
+                //TODO: remove this once overriding checksum and checksum disable are no longer needed
+                Aws::String overridden = Aws::Utils::StringUtils::ToLower(request.GetChecksumAlgorithmName().c_str());
                 if (request.GetServiceSpecificParameters())
                 {
-                    auto requestChecksumOverride = request.GetServiceSpecificParameters()->parameterMap.find(
-                        "overrideChecksum");
+                    auto requestChecksumOverride = request.GetServiceSpecificParameters()->parameterMap.find("overrideChecksum");
                     if (requestChecksumOverride != request.GetServiceSpecificParameters()->parameterMap.end())
                     {
-                        checksumAlgorithmName = requestChecksumOverride->second;
+                        if (request.IsStreaming())
+                        {
+                            httpRequest->SetRequestHash(requestChecksumOverride->second, Aws::Client::Checksum::ChecksumInfo::HashFactoryForAlgorithmName(requestChecksumOverride->second)());
+                        }
+                        else
+                        {
+                            httpRequest->SetHeaderValue("x-amz-checksum-" + requestChecksumOverride->second, HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(GetBodyStream(request)))));
+                        }
                     }
                 }
 
@@ -84,94 +91,28 @@ namespace smithy
                     request.GetServiceSpecificParameters()->parameterMap.find("overrideChecksumDisable") !=
                     request.GetServiceSpecificParameters()->parameterMap.end();
 
-                //Check if user has provided the checksum algorithm
-                if (!checksumAlgorithmName.empty() && !shouldSkipChecksum)
+                const auto checksumInfo = request.GetChecksumInfo();
+                const HeaderValueCollection& headers = request.GetHeaders();
+                // If the request has checksum context and does not have any checksum headers
+                // we need to run checksum operations
+                if (!shouldSkipChecksum && checksumInfo.has_value() && checksumInfo.value().GetChecksumHeaders().empty())
                 {
-                    // Check if user has provided a checksum value for the specified algorithm
-                    const Aws::String checksumType = "x-amz-checksum-" + checksumAlgorithmName;
-                    const HeaderValueCollection& headers = request.GetHeaders();
-                    const auto checksumHeader = headers.find(checksumType);
-                    bool checksumValueAndAlgorithmProvided = checksumHeader != headers.end();
-
-                    // For non-streaming payload, the resolved checksum location is always header.
-                    // For streaming payload, the resolved checksum location depends on whether it is an unsigned payload, we let AwsAuthSigner decide it.
-                    if (request.IsStreaming() && checksumValueAndAlgorithmProvided)
+                    // Default to MD5 if nothing has been set
+                    if (checksumInfo.value().GetChecksumAlgorithm() == Aws::Client::Checksum::ChecksumAlgorithm::NOT_SET &&
+                        headers.find(CHECKSUM_CONTENT_MD5_HEADER) == headers.end())
                     {
-                        const auto hash = Aws::MakeShared<PrecalculatedHash>(
-                            AWS_SMITHY_CLIENT_CHECKSUM, checksumHeader->second);
-                        httpRequest->SetRequestHash(checksumAlgorithmName, hash);
-                    }
-                    else if (checksumValueAndAlgorithmProvided)
-                    {
-                        httpRequest->SetHeaderValue(checksumType, checksumHeader->second);
-                    }
-                    else if (checksumAlgorithmName == "crc32")
-                    {
-                        if (request.IsStreaming())
-                        {
-                            httpRequest->SetRequestHash(checksumAlgorithmName,
-                                                        Aws::MakeShared<CRC32>(AWS_SMITHY_CLIENT_CHECKSUM));
-                        }
-                        else
-                        {
-                            httpRequest->SetHeaderValue(checksumType,
-                                                        HashingUtils::Base64Encode(
-                                                            HashingUtils::CalculateCRC32(*(GetBodyStream(request)))));
-                        }
-                    }
-                    else if (checksumAlgorithmName == "crc32c")
-                    {
-                        if (request.IsStreaming())
-                        {
-                            httpRequest->SetRequestHash(checksumAlgorithmName,
-                                                        Aws::MakeShared<CRC32C>(AWS_SMITHY_CLIENT_CHECKSUM));
-                        }
-                        else
-                        {
-                            httpRequest->SetHeaderValue(checksumType,
-                                                        HashingUtils::Base64Encode(
-                                                            HashingUtils::CalculateCRC32C(*(GetBodyStream(request)))));
-                        }
-                    }
-                    else if (checksumAlgorithmName == "sha256")
-                    {
-                        if (request.IsStreaming())
-                        {
-                            httpRequest->SetRequestHash(checksumAlgorithmName,
-                                                        Aws::MakeShared<Sha256>(AWS_SMITHY_CLIENT_CHECKSUM));
-                        }
-                        else
-                        {
-                            httpRequest->SetHeaderValue(checksumType,
-                                                        HashingUtils::Base64Encode(
-                                                            HashingUtils::CalculateSHA256(*(GetBodyStream(request)))));
-                        }
-                    }
-                    else if (checksumAlgorithmName == "sha1")
-                    {
-                        if (request.IsStreaming())
-                        {
-                            httpRequest->SetRequestHash(checksumAlgorithmName,
-                                                        Aws::MakeShared<Sha1>(AWS_SMITHY_CLIENT_CHECKSUM));
-                        }
-                        else
-                        {
-                            httpRequest->SetHeaderValue(checksumType,
-                                                        HashingUtils::Base64Encode(
-                                                            HashingUtils::CalculateSHA1(*(GetBodyStream(request)))));
-                        }
-                    }
-                    else if (checksumAlgorithmName == "md5" && headers.find(CHECKSUM_CONTENT_MD5_HEADER) == headers.end())
-                    {
-                        httpRequest->SetHeaderValue(CHECKSUM_CONTENT_MD5_HEADER,
-                                                    HashingUtils::Base64Encode(
-                                                        HashingUtils::CalculateMD5(*(GetBodyStream(request)))));
+                        httpRequest->SetHeaderValue(CHECKSUM_CONTENT_MD5_HEADER, HashingUtils::Base64Encode( HashingUtils::CalculateMD5(*(GetBodyStream(request)))));
                     }
                     else
                     {
-                        AWS_LOGSTREAM_WARN(AWS_SMITHY_CLIENT_CHECKSUM,
-                                           "Checksum algorithm: " << checksumAlgorithmName <<
-                                           "is not supported by SDK.");
+                        if (request.IsStreaming())
+                        {
+                            httpRequest->SetRequestHash(checksumInfo.value().GetChecksumAlgorithmName(), checksumInfo.value().GetChecksumHash());
+                        }
+                        else
+                        {
+                            httpRequest->SetHeaderValue("x-amz-checksum-" + checksumInfo.value().GetChecksumAlgorithmName(), HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(GetBodyStream(request)))));
+                        }
                     }
                 }
 
@@ -180,27 +121,27 @@ namespace smithy
                 {
                     for (const Aws::String& responseChecksumAlgorithmName : request.GetResponseChecksumAlgorithmNames())
                     {
-                        checksumAlgorithmName = Aws::Utils::StringUtils::ToLower(responseChecksumAlgorithmName.c_str());
+                        const auto responseChecksum = Aws::Utils::StringUtils::ToLower(responseChecksumAlgorithmName.c_str());
 
-                        if (checksumAlgorithmName == "crc32c")
+                        if (responseChecksum == "crc32c")
                         {
                             std::shared_ptr<CRC32C> crc32c = Aws::MakeShared<
                                 CRC32C>(AWS_SMITHY_CLIENT_CHECKSUM);
                             httpRequest->AddResponseValidationHash("crc32c", crc32c);
                         }
-                        else if (checksumAlgorithmName == "crc32")
+                        else if (responseChecksum == "crc32")
                         {
                             std::shared_ptr<CRC32> crc32 = Aws::MakeShared<
                                 CRC32>(AWS_SMITHY_CLIENT_CHECKSUM);
                             httpRequest->AddResponseValidationHash("crc32", crc32);
                         }
-                        else if (checksumAlgorithmName == "sha1")
+                        else if (responseChecksum == "sha1")
                         {
                             std::shared_ptr<Sha1> sha1 = Aws::MakeShared<Sha1>(
                                 AWS_SMITHY_CLIENT_CHECKSUM);
                             httpRequest->AddResponseValidationHash("sha1", sha1);
                         }
-                        else if (checksumAlgorithmName == "sha256")
+                        else if (responseChecksum == "sha256")
                         {
                             std::shared_ptr<Sha256> sha256 = Aws::MakeShared<
                                 Sha256>(AWS_SMITHY_CLIENT_CHECKSUM);
@@ -209,7 +150,7 @@ namespace smithy
                         else
                         {
                             AWS_LOGSTREAM_WARN(AWS_SMITHY_CLIENT_CHECKSUM,
-                                               "Checksum algorithm: " << checksumAlgorithmName <<
+                                               "Checksum algorithm: " << responseChecksum <<
                                                " is not supported in validating response body yet.");
                         }
                     }

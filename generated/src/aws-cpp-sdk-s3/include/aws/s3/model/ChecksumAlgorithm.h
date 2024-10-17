@@ -13,14 +13,7 @@ namespace S3
 {
 namespace Model
 {
-  enum class ChecksumAlgorithm
-  {
-    NOT_SET,
-    CRC32,
-    CRC32C,
-    SHA1,
-    SHA256
-  };
+  using ChecksumAlgorithm = Aws::Client::Checksum::ChecksumAlgorithm;
 
 namespace ChecksumAlgorithmMapper
 {
