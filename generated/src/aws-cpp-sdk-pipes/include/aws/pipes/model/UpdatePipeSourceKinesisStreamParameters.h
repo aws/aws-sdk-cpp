@@ -63,9 +63,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Streams only) Define how to handle item process failures.
-     * <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all
-     * the records are processed or there is one failed message left in the batch.</p>
+     * <p>Define how to handle item process failures. <code>AUTOMATIC_BISECT</code>
+     * halves each batch and retry each half until all the records are processed or
+     * there is one failed message left in the batch.</p>
      */
     inline const OnPartialBatchItemFailureStreams& GetOnPartialBatchItemFailure() const{ return m_onPartialBatchItemFailure; }
     inline bool OnPartialBatchItemFailureHasBeenSet() const { return m_onPartialBatchItemFailureHasBeenSet; }
@@ -87,9 +87,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Streams only) Discard records older than the specified age. The default
-     * value is -1, which sets the maximum age to infinite. When the value is set to
-     * infinite, EventBridge never discards old records. </p>
+     * <p>Discard records older than the specified age. The default value is -1, which
+     * sets the maximum age to infinite. When the value is set to infinite, EventBridge
+     * never discards old records. </p>
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
     inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
@@ -99,8 +99,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is -1, which sets the maximum number of retries to infinite. When
+     * <p>Discard records after the specified number of retries. The default value is
+     * -1, which sets the maximum number of retries to infinite. When
      * MaximumRetryAttempts is infinite, EventBridge retries failed records until the
      * record expires in the event source.</p>
      */
@@ -112,8 +112,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Streams only) The number of batches to process concurrently from each shard.
-     * The default value is 1.</p>
+     * <p>The number of batches to process concurrently from each shard. The default
+     * value is 1.</p>
      */
     inline int GetParallelizationFactor() const{ return m_parallelizationFactor; }
     inline bool ParallelizationFactorHasBeenSet() const { return m_parallelizationFactorHasBeenSet; }

@@ -19,6 +19,7 @@ namespace Model
     DRAFT,
     SUBMITTED,
     REVIEWING,
+    REQUIRES_AUTHENTICATION,
     APPROVED,
     DISCARDED,
     DENIED,

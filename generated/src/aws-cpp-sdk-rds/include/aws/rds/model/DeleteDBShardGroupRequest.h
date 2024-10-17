@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Teh name of the DB shard group to delete.</p>
+     * <p>The name of the DB shard group to delete.</p>
      */
     inline const Aws::String& GetDBShardGroupIdentifier() const{ return m_dBShardGroupIdentifier; }
     inline bool DBShardGroupIdentifierHasBeenSet() const { return m_dBShardGroupIdentifierHasBeenSet; }

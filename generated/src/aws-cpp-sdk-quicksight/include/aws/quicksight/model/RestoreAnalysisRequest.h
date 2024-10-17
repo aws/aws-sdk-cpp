@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace QuickSight
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "RestoreAnalysis"; }
 
     AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
+
+    AWS_QUICKSIGHT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     ///@{
@@ -59,6 +65,21 @@ namespace Model
     inline RestoreAnalysisRequest& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
     inline RestoreAnalysisRequest& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A boolean value that determines if the analysis will be restored to folders
+     * that it previously resided in. A <code>True</code> value restores analysis back
+     * to all folders that it previously resided in. A <code>False</code> value
+     * restores the analysis but does not restore the analysis back to all previously
+     * resided folders. Restoring a restricted analysis requires this parameter to be
+     * set to <code>True</code>.</p>
+     */
+    inline bool GetRestoreToFolders() const{ return m_restoreToFolders; }
+    inline bool RestoreToFoldersHasBeenSet() const { return m_restoreToFoldersHasBeenSet; }
+    inline void SetRestoreToFolders(bool value) { m_restoreToFoldersHasBeenSet = true; m_restoreToFolders = value; }
+    inline RestoreAnalysisRequest& WithRestoreToFolders(bool value) { SetRestoreToFolders(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_awsAccountId;
@@ -66,6 +87,9 @@ namespace Model
 
     Aws::String m_analysisId;
     bool m_analysisIdHasBeenSet = false;
+
+    bool m_restoreToFolders;
+    bool m_restoreToFoldersHasBeenSet = false;
   };
 
 } // namespace Model
