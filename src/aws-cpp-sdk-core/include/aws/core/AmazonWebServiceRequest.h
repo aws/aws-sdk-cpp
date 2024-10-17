@@ -18,8 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/endpoint/internal/AWSEndpointAttribute.h>
-
-#include "client/Checksum.h"
+#include <aws/core/client/Checksum.h>
 
 namespace Aws
 {
