@@ -18,19 +18,25 @@
 /* End of generic header includes */
 
 /* Service model headers required in DataExchangeClient header */
+#include <aws/dataexchange/model/AcceptDataGrantResult.h>
+#include <aws/dataexchange/model/CreateDataGrantResult.h>
 #include <aws/dataexchange/model/CreateDataSetResult.h>
 #include <aws/dataexchange/model/CreateEventActionResult.h>
 #include <aws/dataexchange/model/CreateJobResult.h>
 #include <aws/dataexchange/model/CreateRevisionResult.h>
 #include <aws/dataexchange/model/GetAssetResult.h>
+#include <aws/dataexchange/model/GetDataGrantResult.h>
 #include <aws/dataexchange/model/GetDataSetResult.h>
 #include <aws/dataexchange/model/GetEventActionResult.h>
 #include <aws/dataexchange/model/GetJobResult.h>
+#include <aws/dataexchange/model/GetReceivedDataGrantResult.h>
 #include <aws/dataexchange/model/GetRevisionResult.h>
+#include <aws/dataexchange/model/ListDataGrantsResult.h>
 #include <aws/dataexchange/model/ListDataSetRevisionsResult.h>
 #include <aws/dataexchange/model/ListDataSetsResult.h>
 #include <aws/dataexchange/model/ListEventActionsResult.h>
 #include <aws/dataexchange/model/ListJobsResult.h>
+#include <aws/dataexchange/model/ListReceivedDataGrantsResult.h>
 #include <aws/dataexchange/model/ListRevisionAssetsResult.h>
 #include <aws/dataexchange/model/ListTagsForResourceResult.h>
 #include <aws/dataexchange/model/RevokeRevisionResult.h>
@@ -41,7 +47,9 @@
 #include <aws/dataexchange/model/UpdateDataSetResult.h>
 #include <aws/dataexchange/model/UpdateEventActionResult.h>
 #include <aws/dataexchange/model/UpdateRevisionResult.h>
+#include <aws/dataexchange/model/ListDataGrantsRequest.h>
 #include <aws/dataexchange/model/ListEventActionsRequest.h>
+#include <aws/dataexchange/model/ListReceivedDataGrantsRequest.h>
 #include <aws/dataexchange/model/ListDataSetsRequest.h>
 #include <aws/dataexchange/model/ListJobsRequest.h>
 #include <aws/core/NoResult.h>
@@ -85,24 +93,31 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in DataExchangeClient header */
+      class AcceptDataGrantRequest;
       class CancelJobRequest;
+      class CreateDataGrantRequest;
       class CreateDataSetRequest;
       class CreateEventActionRequest;
       class CreateJobRequest;
       class CreateRevisionRequest;
       class DeleteAssetRequest;
+      class DeleteDataGrantRequest;
       class DeleteDataSetRequest;
       class DeleteEventActionRequest;
       class DeleteRevisionRequest;
       class GetAssetRequest;
+      class GetDataGrantRequest;
       class GetDataSetRequest;
       class GetEventActionRequest;
       class GetJobRequest;
+      class GetReceivedDataGrantRequest;
       class GetRevisionRequest;
+      class ListDataGrantsRequest;
       class ListDataSetRevisionsRequest;
       class ListDataSetsRequest;
       class ListEventActionsRequest;
       class ListJobsRequest;
+      class ListReceivedDataGrantsRequest;
       class ListRevisionAssetsRequest;
       class ListTagsForResourceRequest;
       class RevokeRevisionRequest;
@@ -118,24 +133,31 @@ namespace Aws
       /* End of service model forward declarations required in DataExchangeClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<AcceptDataGrantResult, DataExchangeError> AcceptDataGrantOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> CancelJobOutcome;
+      typedef Aws::Utils::Outcome<CreateDataGrantResult, DataExchangeError> CreateDataGrantOutcome;
       typedef Aws::Utils::Outcome<CreateDataSetResult, DataExchangeError> CreateDataSetOutcome;
       typedef Aws::Utils::Outcome<CreateEventActionResult, DataExchangeError> CreateEventActionOutcome;
       typedef Aws::Utils::Outcome<CreateJobResult, DataExchangeError> CreateJobOutcome;
       typedef Aws::Utils::Outcome<CreateRevisionResult, DataExchangeError> CreateRevisionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteAssetOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteDataGrantOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteDataSetOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteEventActionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> DeleteRevisionOutcome;
       typedef Aws::Utils::Outcome<GetAssetResult, DataExchangeError> GetAssetOutcome;
+      typedef Aws::Utils::Outcome<GetDataGrantResult, DataExchangeError> GetDataGrantOutcome;
       typedef Aws::Utils::Outcome<GetDataSetResult, DataExchangeError> GetDataSetOutcome;
       typedef Aws::Utils::Outcome<GetEventActionResult, DataExchangeError> GetEventActionOutcome;
       typedef Aws::Utils::Outcome<GetJobResult, DataExchangeError> GetJobOutcome;
+      typedef Aws::Utils::Outcome<GetReceivedDataGrantResult, DataExchangeError> GetReceivedDataGrantOutcome;
       typedef Aws::Utils::Outcome<GetRevisionResult, DataExchangeError> GetRevisionOutcome;
+      typedef Aws::Utils::Outcome<ListDataGrantsResult, DataExchangeError> ListDataGrantsOutcome;
       typedef Aws::Utils::Outcome<ListDataSetRevisionsResult, DataExchangeError> ListDataSetRevisionsOutcome;
       typedef Aws::Utils::Outcome<ListDataSetsResult, DataExchangeError> ListDataSetsOutcome;
       typedef Aws::Utils::Outcome<ListEventActionsResult, DataExchangeError> ListEventActionsOutcome;
       typedef Aws::Utils::Outcome<ListJobsResult, DataExchangeError> ListJobsOutcome;
+      typedef Aws::Utils::Outcome<ListReceivedDataGrantsResult, DataExchangeError> ListReceivedDataGrantsOutcome;
       typedef Aws::Utils::Outcome<ListRevisionAssetsResult, DataExchangeError> ListRevisionAssetsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, DataExchangeError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<RevokeRevisionResult, DataExchangeError> RevokeRevisionOutcome;
@@ -151,24 +173,31 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<AcceptDataGrantOutcome> AcceptDataGrantOutcomeCallable;
       typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
+      typedef std::future<CreateDataGrantOutcome> CreateDataGrantOutcomeCallable;
       typedef std::future<CreateDataSetOutcome> CreateDataSetOutcomeCallable;
       typedef std::future<CreateEventActionOutcome> CreateEventActionOutcomeCallable;
       typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
       typedef std::future<CreateRevisionOutcome> CreateRevisionOutcomeCallable;
       typedef std::future<DeleteAssetOutcome> DeleteAssetOutcomeCallable;
+      typedef std::future<DeleteDataGrantOutcome> DeleteDataGrantOutcomeCallable;
       typedef std::future<DeleteDataSetOutcome> DeleteDataSetOutcomeCallable;
       typedef std::future<DeleteEventActionOutcome> DeleteEventActionOutcomeCallable;
       typedef std::future<DeleteRevisionOutcome> DeleteRevisionOutcomeCallable;
       typedef std::future<GetAssetOutcome> GetAssetOutcomeCallable;
+      typedef std::future<GetDataGrantOutcome> GetDataGrantOutcomeCallable;
       typedef std::future<GetDataSetOutcome> GetDataSetOutcomeCallable;
       typedef std::future<GetEventActionOutcome> GetEventActionOutcomeCallable;
       typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
+      typedef std::future<GetReceivedDataGrantOutcome> GetReceivedDataGrantOutcomeCallable;
       typedef std::future<GetRevisionOutcome> GetRevisionOutcomeCallable;
+      typedef std::future<ListDataGrantsOutcome> ListDataGrantsOutcomeCallable;
       typedef std::future<ListDataSetRevisionsOutcome> ListDataSetRevisionsOutcomeCallable;
       typedef std::future<ListDataSetsOutcome> ListDataSetsOutcomeCallable;
       typedef std::future<ListEventActionsOutcome> ListEventActionsOutcomeCallable;
       typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+      typedef std::future<ListReceivedDataGrantsOutcome> ListReceivedDataGrantsOutcomeCallable;
       typedef std::future<ListRevisionAssetsOutcome> ListRevisionAssetsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<RevokeRevisionOutcome> RevokeRevisionOutcomeCallable;
@@ -187,24 +216,31 @@ namespace Aws
     class DataExchangeClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const DataExchangeClient*, const Model::AcceptDataGrantRequest&, const Model::AcceptDataGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptDataGrantResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::CreateDataGrantRequest&, const Model::CreateDataGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataGrantResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::CreateDataSetRequest&, const Model::CreateDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSetResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::CreateEventActionRequest&, const Model::CreateEventActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventActionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::CreateRevisionRequest&, const Model::CreateRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRevisionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::DeleteAssetRequest&, const Model::DeleteAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAssetResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::DeleteDataGrantRequest&, const Model::DeleteDataGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataGrantResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::DeleteDataSetRequest&, const Model::DeleteDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSetResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::DeleteEventActionRequest&, const Model::DeleteEventActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventActionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::DeleteRevisionRequest&, const Model::DeleteRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRevisionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::GetAssetRequest&, const Model::GetAssetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::GetDataGrantRequest&, const Model::GetDataGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataGrantResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::GetDataSetRequest&, const Model::GetDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSetResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::GetEventActionRequest&, const Model::GetEventActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventActionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::GetReceivedDataGrantRequest&, const Model::GetReceivedDataGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReceivedDataGrantResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::GetRevisionRequest&, const Model::GetRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRevisionResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::ListDataGrantsRequest&, const Model::ListDataGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataGrantsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListDataSetRevisionsRequest&, const Model::ListDataSetRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSetRevisionsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListDataSetsRequest&, const Model::ListDataSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSetsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListEventActionsRequest&, const Model::ListEventActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventActionsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::ListReceivedDataGrantsRequest&, const Model::ListReceivedDataGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReceivedDataGrantsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListRevisionAssetsRequest&, const Model::ListRevisionAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRevisionAssetsResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::RevokeRevisionRequest&, const Model::RevokeRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeRevisionResponseReceivedHandler;

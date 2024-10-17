@@ -24,8 +24,6 @@ PromptModelInferenceConfiguration::PromptModelInferenceConfiguration() :
     m_stopSequencesHasBeenSet(false),
     m_temperature(0.0),
     m_temperatureHasBeenSet(false),
-    m_topK(0),
-    m_topKHasBeenSet(false),
     m_topP(0.0),
     m_topPHasBeenSet(false)
 {
@@ -63,13 +61,6 @@ PromptModelInferenceConfiguration& PromptModelInferenceConfiguration::operator =
     m_temperatureHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("topK"))
-  {
-    m_topK = jsonValue.GetInteger("topK");
-
-    m_topKHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("topP"))
   {
     m_topP = jsonValue.GetDouble("topP");
@@ -104,12 +95,6 @@ JsonValue PromptModelInferenceConfiguration::Jsonize() const
   if(m_temperatureHasBeenSet)
   {
    payload.WithDouble("temperature", m_temperature);
-
-  }
-
-  if(m_topKHasBeenSet)
-  {
-   payload.WithInteger("topK", m_topK);
 
   }
 

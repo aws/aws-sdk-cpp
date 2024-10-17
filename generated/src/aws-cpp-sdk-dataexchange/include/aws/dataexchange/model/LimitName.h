@@ -43,7 +43,9 @@ namespace Model
     Revisions_per_AWS_Lake_Formation_data_permission_data_set,
     Revisions_per_Amazon_S3_data_access_data_set,
     Amazon_S3_data_access_assets_per_revision,
-    Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets
+    Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets,
+    Active_and_pending_data_grants,
+    Pending_data_grants_per_consumer
   };
 
 namespace LimitNameMapper

@@ -48,6 +48,8 @@ namespace Aws
         static const int Revisions_per_Amazon_S3_data_access_data_set_HASH = HashingUtils::HashString("Revisions per Amazon S3 data access data set");
         static const int Amazon_S3_data_access_assets_per_revision_HASH = HashingUtils::HashString("Amazon S3 data access assets per revision");
         static const int Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets_HASH = HashingUtils::HashString("Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets");
+        static const int Active_and_pending_data_grants_HASH = HashingUtils::HashString("Active and pending data grants");
+        static const int Pending_data_grants_per_consumer_HASH = HashingUtils::HashString("Pending data grants per consumer");
 
 
         LimitName GetLimitNameForName(const Aws::String& name)
@@ -165,6 +167,14 @@ namespace Aws
           {
             return LimitName::Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets;
           }
+          else if (hashCode == Active_and_pending_data_grants_HASH)
+          {
+            return LimitName::Active_and_pending_data_grants;
+          }
+          else if (hashCode == Pending_data_grants_per_consumer_HASH)
+          {
+            return LimitName::Pending_data_grants_per_consumer;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -237,6 +247,10 @@ namespace Aws
             return "Amazon S3 data access assets per revision";
           case LimitName::Concurrent_in_progress_jobs_to_create_Amazon_S3_data_access_assets_from_S3_buckets:
             return "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets";
+          case LimitName::Active_and_pending_data_grants:
+            return "Active and pending data grants";
+          case LimitName::Pending_data_grants_per_consumer:
+            return "Pending data grants per consumer";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
