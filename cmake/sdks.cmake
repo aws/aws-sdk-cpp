@@ -162,7 +162,6 @@ if(BUILD_ONLY)
         else()
             set(SDK_DIR "generated/src/aws-cpp-sdk-${SDK}")
         endif()
-
         if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
             message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
         endif()
@@ -178,7 +177,7 @@ if(BUILD_ONLY)
             if (${_index} GREATER -1) # old cmake search in a list syntax
                 set(SDK_DIR "src/aws-cpp-sdk-${SDK}")
             else()
-                set(SDK_DIR "generated/src/aws-cpp-sdk-${SDK}")
+                set(SDK_DIR "generated/src/aws-cpp-sdk-${SDK}") 
             endif()
             if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
                 message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
@@ -214,8 +213,28 @@ function(add_sdks)
         endif()
 
         add_subdirectory("${SDK_DIR}")
+        message(STATUS "exporting ${SDK_TARGET}")
         LIST(APPEND EXPORTS "${SDK_TARGET}")
         unset(SDK_TARGET)
+    endforeach()
+
+    file(GLOB subdirs LIST_DIRECTORIES true "${CMAKE_SOURCE_DIR}/generated/smoke-tests/*")
+    foreach(subdir ${subdirs})
+        get_filename_component(folder_name ${subdir} NAME)
+        message(STATUS "smoke test component: ${folder_name}")
+        list(FIND SDK_BUILD_LIST ${folder_name} index)
+
+        # Check if the item was found (index >= 0)
+        if(${index} GREATER -1)
+            message(STATUS "${subdir} is in SDK_BUILD_LIST at index ${index}")
+        
+            if(EXISTS "${subdir}/CMakeLists.txt")
+                add_subdirectory(${subdir})
+            endif()
+        else()
+            message(STATUS "${subdir} is NOT in SDK_BUILD_LIST")
+        endif()
+
     endforeach()
 
     #testing

@@ -16,5 +16,8 @@ public String getName() {
         //todo: put in exception block
         System.out.println(String.format("Executing SmithyCodegenPlugin...", context.getFileManifest().getBaseDir().toString()));
         //code placeholder
+        SmokeTestsParser smoketestParser = new SmokeTestsParser(context);
+        smoketestParser.run();
+
     }   
 }
