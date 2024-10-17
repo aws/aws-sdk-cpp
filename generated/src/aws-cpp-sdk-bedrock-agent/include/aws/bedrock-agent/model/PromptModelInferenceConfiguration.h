@@ -80,17 +80,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of most-likely candidates that the model considers for the next
-     * token during generation.</p>
-     */
-    inline int GetTopK() const{ return m_topK; }
-    inline bool TopKHasBeenSet() const { return m_topKHasBeenSet; }
-    inline void SetTopK(int value) { m_topKHasBeenSet = true; m_topK = value; }
-    inline PromptModelInferenceConfiguration& WithTopK(int value) { SetTopK(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The percentage of most-likely candidates that the model considers for the
      * next token.</p>
      */
@@ -109,9 +98,6 @@ namespace Model
 
     double m_temperature;
     bool m_temperatureHasBeenSet = false;
-
-    int m_topK;
-    bool m_topKHasBeenSet = false;
 
     double m_topP;
     bool m_topPHasBeenSet = false;

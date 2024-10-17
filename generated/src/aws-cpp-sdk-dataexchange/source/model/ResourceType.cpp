@@ -25,6 +25,7 @@ namespace Aws
         static const int ASSET_HASH = HashingUtils::HashString("ASSET");
         static const int JOB_HASH = HashingUtils::HashString("JOB");
         static const int EVENT_ACTION_HASH = HashingUtils::HashString("EVENT_ACTION");
+        static const int DATA_GRANT_HASH = HashingUtils::HashString("DATA_GRANT");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == EVENT_ACTION_HASH)
           {
             return ResourceType::EVENT_ACTION;
+          }
+          else if (hashCode == DATA_GRANT_HASH)
+          {
+            return ResourceType::DATA_GRANT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "JOB";
           case ResourceType::EVENT_ACTION:
             return "EVENT_ACTION";
+          case ResourceType::DATA_GRANT:
+            return "DATA_GRANT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

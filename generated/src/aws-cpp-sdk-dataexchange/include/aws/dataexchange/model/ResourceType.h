@@ -20,7 +20,8 @@ namespace Model
     REVISION,
     ASSET,
     JOB,
-    EVENT_ACTION
+    EVENT_ACTION,
+    DATA_GRANT
   };
 
 namespace ResourceTypeMapper

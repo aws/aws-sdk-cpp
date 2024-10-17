@@ -88,7 +88,7 @@ namespace Model
     ///@{
     /**
      * <p>How to format the timestamps. For example,
-     * <code>YYYY-MM-DDThh:mm:ss.sssTZD</code>.</p> <p>Required if
+     * <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code>.</p> <p>Required if
      * <code>TimeFieldType</code> is specified as <code>TIMESTAMP_FORMAT</code>.</p>
      */
     inline const Aws::String& GetTimestampFormat() const{ return m_timestampFormat; }

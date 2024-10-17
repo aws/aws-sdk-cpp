@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The registration file to upload. The maximum file size is 1MiB and valid file
-     * extensions are PDF, JPEG and PNG.</p>
+     * <p>The registration file to upload. The maximum file size is 500KB and valid
+     * file extensions are PDF, JPEG and PNG.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetAttachmentBody() const{ return m_attachmentBody; }
     inline bool AttachmentBodyHasBeenSet() const { return m_attachmentBodyHasBeenSet; }
@@ -53,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A URL to the required registration file. For example, you can provide the S3
-     * object URL.</p>
+     * <p>Registration files have to be stored in an Amazon S3 bucket. The URI to use
+     * when sending is in the format <code>s3://BucketName/FileName</code>.</p>
      */
     inline const Aws::String& GetAttachmentUrl() const{ return m_attachmentUrl; }
     inline bool AttachmentUrlHasBeenSet() const { return m_attachmentUrlHasBeenSet; }

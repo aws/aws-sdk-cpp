@@ -384,9 +384,12 @@ namespace PinpointSMSVoiceV2
 
         /**
          * <p>Create a new registration attachment to use for uploading a file or a URL to
-         * a file. The maximum file size is 1MiB and valid file extensions are PDF, JPEG
+         * a file. The maximum file size is 500KB and valid file extensions are PDF, JPEG
          * and PNG. For example, many sender ID registrations require a signed “letter of
-         * authorization” (LOA) to be submitted.</p><p><h3>See Also:</h3>   <a
+         * authorization” (LOA) to be submitted.</p> <p>Use either
+         * <code>AttachmentUrl</code> or <code>AttachmentBody</code> to upload your
+         * attachment. If both are specified then an exception is returned.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAttachment">AWS
          * API Reference</a></p>
          */
@@ -1145,7 +1148,7 @@ namespace PinpointSMSVoiceV2
          * numbers that meet the filter criteria. If you don't specify opted out numbers or
          * filters, the output includes information for all opted out destination numbers
          * in your opt-out list.</p> <p>If you specify an opted out number that isn't
-         * valid, an error is returned.</p><p><h3>See Also:</h3>   <a
+         * valid, an exception is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeOptedOutNumbers">AWS
          * API Reference</a></p>
          */
