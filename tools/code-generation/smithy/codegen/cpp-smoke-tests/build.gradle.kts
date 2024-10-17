@@ -2,7 +2,7 @@ import software.amazon.smithy.model.Model
 import software.amazon.smithy.model.node.Node
 import software.amazon.smithy.model.shapes.ServiceShape
 import software.amazon.smithy.aws.traits.ServiceTrait
-import software.amazon.smithy.smoketests.traits.SmokeTestsTrait
+//import software.amazon.smithy.smoketests.traits.SmokeTestsTrait
 import software.amazon.smithy.model.shapes.OperationShape
 plugins {
     id("java-library")
@@ -73,9 +73,6 @@ tasks.register("generate-smithy-build") {
             }
  
             val serviceTrait = service.getTrait(ServiceTrait::class.javaObjectType).get();
-
-            val test = service.getTrait(SmokeTestTrait::class.javaObjectType);
-
  
             val sdkId = serviceTrait.sdkId
                     .replace("-", "")
