@@ -135,6 +135,15 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Specifies if the imported model supports fine tuning.</p>
+     */
+    inline bool GetInstructSupported() const{ return m_instructSupported; }
+    inline void SetInstructSupported(bool value) { m_instructSupported = value; }
+    inline GetImportedModelResult& WithInstructSupported(bool value) { SetInstructSupported(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -161,6 +170,8 @@ namespace Model
     Aws::String m_modelArchitecture;
 
     Aws::String m_modelKmsKeyArn;
+
+    bool m_instructSupported;
 
     Aws::String m_requestId;
   };

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about tne imported model.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the imported model.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ImportedModelSummary">AWS
    * API Reference</a></p>
    */
@@ -77,6 +77,30 @@ namespace Model
     inline ImportedModelSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
     inline ImportedModelSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies if the imported model supports fine tuning.</p>
+     */
+    inline bool GetInstructSupported() const{ return m_instructSupported; }
+    inline bool InstructSupportedHasBeenSet() const { return m_instructSupportedHasBeenSet; }
+    inline void SetInstructSupported(bool value) { m_instructSupportedHasBeenSet = true; m_instructSupported = value; }
+    inline ImportedModelSummary& WithInstructSupported(bool value) { SetInstructSupported(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The architecture of the imported model.</p>
+     */
+    inline const Aws::String& GetModelArchitecture() const{ return m_modelArchitecture; }
+    inline bool ModelArchitectureHasBeenSet() const { return m_modelArchitectureHasBeenSet; }
+    inline void SetModelArchitecture(const Aws::String& value) { m_modelArchitectureHasBeenSet = true; m_modelArchitecture = value; }
+    inline void SetModelArchitecture(Aws::String&& value) { m_modelArchitectureHasBeenSet = true; m_modelArchitecture = std::move(value); }
+    inline void SetModelArchitecture(const char* value) { m_modelArchitectureHasBeenSet = true; m_modelArchitecture.assign(value); }
+    inline ImportedModelSummary& WithModelArchitecture(const Aws::String& value) { SetModelArchitecture(value); return *this;}
+    inline ImportedModelSummary& WithModelArchitecture(Aws::String&& value) { SetModelArchitecture(std::move(value)); return *this;}
+    inline ImportedModelSummary& WithModelArchitecture(const char* value) { SetModelArchitecture(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_modelArn;
@@ -87,6 +111,12 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet = false;
+
+    bool m_instructSupported;
+    bool m_instructSupportedHasBeenSet = false;
+
+    Aws::String m_modelArchitecture;
+    bool m_modelArchitectureHasBeenSet = false;
   };
 
 } // namespace Model

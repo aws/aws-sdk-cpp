@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     OWNER,
-    CONTRIBUTOR
+    CONTRIBUTOR,
+    PROJECT_CATALOG_STEWARD
   };
 
 namespace ProjectDesignationMapper

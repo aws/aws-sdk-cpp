@@ -21,7 +21,10 @@ namespace Model
 ImportedModelSummary::ImportedModelSummary() : 
     m_modelArnHasBeenSet(false),
     m_modelNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_instructSupported(false),
+    m_instructSupportedHasBeenSet(false),
+    m_modelArchitectureHasBeenSet(false)
 {
 }
 
@@ -54,6 +57,20 @@ ImportedModelSummary& ImportedModelSummary::operator =(JsonView jsonValue)
     m_creationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instructSupported"))
+  {
+    m_instructSupported = jsonValue.GetBool("instructSupported");
+
+    m_instructSupportedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("modelArchitecture"))
+  {
+    m_modelArchitecture = jsonValue.GetString("modelArchitecture");
+
+    m_modelArchitectureHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +93,18 @@ JsonValue ImportedModelSummary::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_instructSupportedHasBeenSet)
+  {
+   payload.WithBool("instructSupported", m_instructSupported);
+
+  }
+
+  if(m_modelArchitectureHasBeenSet)
+  {
+   payload.WithString("modelArchitecture", m_modelArchitecture);
+
   }
 
   return payload;
