@@ -15,6 +15,8 @@ import sys
 import zipfile
 from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_COMPLETED
 from pathlib import Path
+import json
+from typing import List
 
 
 # Default configuration variables
@@ -27,7 +29,7 @@ GENERATOR_TARGET_DIR = "target"
 GENERATOR_JAR = GENERATOR_TARGET_DIR + "/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar"
 SMITHY_GENERATOR_LOCATION = "tools/code-generation/smithy/codegen"
 SMITHY_OUTPUT_DIR = "codegen_output"
-
+SMITHY_TO_C2J_MAP_FILE = "tools/code-generation/smithy/codegen/smithy2c2j_service_map.json"
 
 # Regexp to parse C2J model filename to extract service name and date version
 SERVICE_MODEL_FILENAME_PATTERN = re.compile(
@@ -480,13 +482,14 @@ def copy_cpp_codegen_contents(top_level_dir: str, plugin_name: str, target_dir: 
                     shutil.copy2(source_item, target_item)
             print(f"Copied contents from '{source_dir}' to '{target_dir}'.")
             
-def generate_smoke_tests():
+def generate_smoke_tests(smithy_services: List[str], smithy_c2j_data: str):
     smithy_codegen_command = [
         "./gradlew", 
         "build", 
-        "-PoutputDirectory=" + SMITHY_OUTPUT_DIR
+        "-PoutputDirectory=" + SMITHY_OUTPUT_DIR,
+        "-services=" + ",".join(smithy_services),
+        "-Pc2jMap=" + smithy_c2j_data 
     ]
-
     original_dir = os.getcwd()
     try:
         # Change to the Smithy generator location
@@ -572,6 +575,18 @@ def main():
                                        None,
                                        args["raw_generator_arguments"])
                 pending.add(task)
+        #build reverse map
+        # Open a file using 'with' and read its contents
+        smithy_c2j_data = {}
+        c2j_smithy_data = {}
+        smithy_services = []
+        with open(SMITHY_TO_C2J_MAP_FILE, 'r') as file:
+            smithy_c2j_data = json.load(file)
+            # Reverse the key-value pairs
+            c2j_smithy_data = {value: key for key, value in smithy_c2j_data.items()}
+            
+        
+        #get smithy names
 
         for service in clients_to_build:
             model_files = available_models[service]
@@ -579,6 +594,8 @@ def main():
             while len(pending) >= max_workers:
                 new_done, pending = wait(pending, return_when=FIRST_COMPLETED)
                 done.update(new_done)
+            
+            smithy_services.append(c2j_smithy_data[service] if service in c2j_smithy_data else service )
 
             task = executor.submit(generate_single_client,
                                    service,
@@ -617,10 +634,9 @@ def main():
         print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults and partitions
 
     #generate code using smithy for all discoverable clients
-    print(args["generate-smoke-tests"])
-    if (args["generate-smoke-tests"]):
+    if (args["generate-smoke-tests"] and smithy_services):
         print(f"Running code generator for smoke-tests")
-        if generate_smoke_tests() :
+        if generate_smoke_tests(smithy_services, json.dumps(smithy_c2j_data)) :
             #move the output to 
             copy_cpp_codegen_contents(os.path.abspath("tools/code-generation/smithy/codegen"), "cpp-codegen-smoke-tests-plugin", os.path.abspath( "generated/smoke-tests"))
 

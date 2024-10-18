@@ -48,7 +48,15 @@ tasks.register("generate-smithy-build") {
         val projectionsBuilder = Node.objectNodeBuilder()
         val modelsDirProp: String by project
         val models = project.file("../../api-descriptions");
- 
+
+        val filteredServices: String = project.findProperty("servicesFilter")?.toString() ?: ""
+        val filteredServiceList = filteredServices.split(",")
+            .map { it.trim() }     
+            .filter { it.isNotEmpty() }  
+        println("filteredServiceList: $filteredServiceList")
+
+        val c2jMapStr: String = project.findProperty("c2jMap")?.toString() ?: ""
+
         fileTree(models).filter { it.isFile }.files.forEach eachFile@{ file ->
             val model = Model.assembler()
                     .addImport(file.absolutePath)
@@ -63,26 +71,32 @@ tasks.register("generate-smithy-build") {
             }
             val service = services[0]
  
-            var filteredServices: String = System.getenv("SMITHY_GO_BUILD_API")?: ""
-            if (filteredServices.isNotEmpty()) {
-                for (filteredService in filteredServices.split(",")) {
-                    if (!service.id.toString().startsWith(filteredService)) {
-                        return@eachFile
-                    }
-                }
-            }
- 
             val serviceTrait = service.getTrait(ServiceTrait::class.javaObjectType).get();
  
             val sdkId = serviceTrait.sdkId
-                    .replace("-", "")
-                    .replace(" ", "")
-                    .lowercase();
+                        .replace(" ", "-")   
+                        .replace("_", "-")   
+                        .lowercase()
+            
+            //println("evaluating filter: $sdkId")
+            
+            //service names must be match
+            if (filteredServiceList.isNotEmpty()) 
+            {
+                if(sdkId.toString() !in filteredServiceList)
+                {
+                    return@eachFile
+                }
+            }
+
+            //println("matched filter: $sdkId")
+
             val projectionContents = Node.objectNodeBuilder()
                     .withMember("imports", Node.fromStrings("${models.absolutePath}${File.separator}${file.name}"))
                     .withMember("plugins", Node.objectNode()
                             .withMember("cpp-codegen-smoke-tests-plugin", Node.objectNodeBuilder()
                                     .withMember("serviceFilter", Node.arrayNode())
+                                    .withMember("c2jMap", Node.from(c2jMapStr))
                                     .build()))
                     .build()
             projectionsBuilder.withMember(sdkId + "." + service.version.lowercase(), projectionContents)

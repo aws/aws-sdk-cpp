@@ -263,6 +263,16 @@ if (LEGACY_BUILD)
 
     include(utilities)
 
+
+    # Automatically find all subdirectories with CMakeLists.txt and add them
+    file(GLOB subdirs LIST_DIRECTORIES true "${CMAKE_SOURCE_DIR}/generated")
+
+    foreach(subdir ${subdirs})
+        if(EXISTS "${subdir}/CMakeLists.txt")
+            add_subdirectory(${subdir})
+        endif()
+    endforeach()
+
     if (ENABLE_OPENSSL_ENCRYPTION)
         set(CRYPTO_LIBS ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES})
         set(CRYPTO_LIBS_ABSTRACT_NAME crypto ssl z)

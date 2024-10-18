@@ -27,6 +27,8 @@ dependencies {
     testImplementation(test.junit.jupiter.api)
     testRuntimeOnly(test.junit.jupiter.engine)
     implementation("ch.qos.logback:logback-classic:1.4.7") // Adding Logback for SLF4J
+    implementation("com.google.code.gson:gson:2.10.1")// Use the latest version
+
 
 }
 
