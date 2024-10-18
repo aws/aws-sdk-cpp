@@ -224,11 +224,19 @@ bool GetObjectRequest::ShouldValidateResponseChecksum() const
 
 Aws::Vector<Aws::String> GetObjectRequest::GetResponseChecksumAlgorithmNames() const
 {
-  Aws::Vector<Aws::String> responseChecksumAlgorithmNames;
-  responseChecksumAlgorithmNames.push_back("CRC32");
-  responseChecksumAlgorithmNames.push_back("CRC32C");
-  responseChecksumAlgorithmNames.push_back("SHA256");
-  responseChecksumAlgorithmNames.push_back("SHA1");
-  return responseChecksumAlgorithmNames;
+  auto checksumInfo = GetChecksumInfo();
+  if (checksumInfo.has_value())
+  {
+    checksumInfo.value().AddResponseChecksum(ChecksumAlgorithm::CRC32);
+    checksumInfo.value().AddResponseChecksum(ChecksumAlgorithm::CRC32C);
+    checksumInfo.value().AddResponseChecksum(ChecksumAlgorithm::SHA1);
+    checksumInfo.value().AddResponseChecksum(ChecksumAlgorithm::SHA256);
+  }
+  return {"CRC32","CRC32C", "SHA256","SHA1"};
+}
+
+Aws::Crt::Optional<Client::Checksum::ChecksumInfo> GetObjectRequest::GetChecksumInfo() const
+{
+  return m_checksumInfo;
 }
 

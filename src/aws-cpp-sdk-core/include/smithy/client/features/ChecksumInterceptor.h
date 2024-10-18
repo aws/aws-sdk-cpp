@@ -117,43 +117,15 @@ namespace smithy
                 }
 
                 // Response checksums
-                if (request.ShouldValidateResponseChecksum())
+                if (request.ShouldValidateResponseChecksum() && checksumInfo.has_value())
                 {
-                    for (const Aws::String& responseChecksumAlgorithmName : request.GetResponseChecksumAlgorithmNames())
-                    {
-                        const auto responseChecksum = Aws::Utils::StringUtils::ToLower(responseChecksumAlgorithmName.c_str());
-
-                        if (responseChecksum == "crc32c")
+                    const auto responseChecksum = checksumInfo.value().GetResponseChecksums();
+                    std::for_each(responseChecksum.begin(),
+                        responseChecksum.end(),
+                        [&httpRequest](const Aws::Client::Checksum::ChecksumInfo::ResponseChecksumEntry& entry) -> void
                         {
-                            std::shared_ptr<CRC32C> crc32c = Aws::MakeShared<
-                                CRC32C>(AWS_SMITHY_CLIENT_CHECKSUM);
-                            httpRequest->AddResponseValidationHash("crc32c", crc32c);
-                        }
-                        else if (responseChecksum == "crc32")
-                        {
-                            std::shared_ptr<CRC32> crc32 = Aws::MakeShared<
-                                CRC32>(AWS_SMITHY_CLIENT_CHECKSUM);
-                            httpRequest->AddResponseValidationHash("crc32", crc32);
-                        }
-                        else if (responseChecksum == "sha1")
-                        {
-                            std::shared_ptr<Sha1> sha1 = Aws::MakeShared<Sha1>(
-                                AWS_SMITHY_CLIENT_CHECKSUM);
-                            httpRequest->AddResponseValidationHash("sha1", sha1);
-                        }
-                        else if (responseChecksum == "sha256")
-                        {
-                            std::shared_ptr<Sha256> sha256 = Aws::MakeShared<
-                                Sha256>(AWS_SMITHY_CLIENT_CHECKSUM);
-                            httpRequest->AddResponseValidationHash("sha256", sha256);
-                        }
-                        else
-                        {
-                            AWS_LOGSTREAM_WARN(AWS_SMITHY_CLIENT_CHECKSUM,
-                                               "Checksum algorithm: " << responseChecksum <<
-                                               " is not supported in validating response body yet.");
-                        }
-                    }
+                            httpRequest->AddResponseValidationHash(Aws::Client::Checksum::ChecksumInfo::NameForAlgorithm(entry.first), entry.second);
+                        });
                 }
                 return httpRequest;
             }

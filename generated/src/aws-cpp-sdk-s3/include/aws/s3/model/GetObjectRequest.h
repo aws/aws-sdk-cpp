@@ -47,6 +47,8 @@ namespace Model
 
     AWS_S3_API Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const override;
 
+    AWS_S3_API Aws::Crt::Optional<Client::Checksum::ChecksumInfo> GetChecksumInfo() const override;
+
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
@@ -546,6 +548,8 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet = false;
+
+    Client::Checksum::ChecksumInfo m_checksumInfo{};
   };
 
 } // namespace Model

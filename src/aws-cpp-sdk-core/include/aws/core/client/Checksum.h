@@ -59,6 +59,18 @@ namespace Aws
                     return m_checksumHeaders;
                 }
 
+                void AddResponseChecksum(ChecksumAlgorithm algorithm)
+                {
+                    m_responseChecksums.emplace_back(algorithm, HashFactoryForAlgorithm(algorithm)());
+                }
+
+                using ResponseChecksumEntry = std::pair<ChecksumAlgorithm, std::shared_ptr<Aws::Utils::Crypto::Hash>>;
+                using ResponseChecksums = Aws::Vector<ResponseChecksumEntry>;
+                ResponseChecksums GetResponseChecksums() const
+                {
+                    return m_responseChecksums;
+                }
+
                 void SetChecksumAlgorithm(ChecksumAlgorithm algorithm)
                 {
                     m_checksumAlgorithm = algorithm;
@@ -81,7 +93,8 @@ namespace Aws
                 }
 
             private:
-                Map<Aws::String, Aws::String> m_checksumHeaders{};
+                Aws::Map<Aws::String, Aws::String> m_checksumHeaders{};
+                ResponseChecksums m_responseChecksums{};
                 ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
                 std::shared_ptr<Aws::Utils::Crypto::Hash> m_checksumHash{};
             };
