@@ -313,7 +313,7 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleWithoutRoleARN)
 
     STSProfileCredentialsProvider credsProvider("default", roleSessionDuration, [](const AWSCredentials&) {
             ADD_FAILURE() << "STS Service client should not be used in this scenario.";
-            return nullptr;
+            return (STSClient*)nullptr;
     });
 
     auto actualCredentials = credsProvider.GetAWSCredentials();
@@ -383,7 +383,7 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleWithoutSourceProfile)
 
     STSProfileCredentialsProvider credsProvider("default", roleSessionDuration, [](const AWSCredentials&) {
             ADD_FAILURE() << "STS Service client should not be used in this scenario.";
-            return nullptr;
+            return (STSClient*)nullptr;
     });
 
     auto actualCredentials = credsProvider.GetAWSCredentials();
@@ -409,7 +409,7 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleWithNonExistentSourceProfile
 
     STSProfileCredentialsProvider credsProvider("default", roleSessionDuration, [](const AWSCredentials&) {
             ADD_FAILURE() << "STS Service client should not be used in this scenario.";
-            return nullptr;
+            return (STSClient*)nullptr;
     });
 
     auto actualCredentials = credsProvider.GetAWSCredentials();
@@ -556,7 +556,7 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleSelfReferencingSourceProfile
 
     Model::AssumeRoleResult mockResult;
     mockResult.SetCredentials(stsCredentials);
-    Aws::UniquePtr<MockSTSClient> stsClient;
+    std::shared_ptr<MockSTSClient> stsClient;
 
     int stsCallCounter = 0;
 
@@ -572,9 +572,9 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleSelfReferencingSourceProfile
                     EXPECT_STREQ(ACCESS_KEY_ID_2, creds.GetAWSAccessKeyId().c_str());
                     EXPECT_STREQ(SECRET_ACCESS_KEY_ID_2, creds.GetAWSSecretKey().c_str());
                 }
-                stsClient = Aws::MakeUnique<MockSTSClient>(CLASS_TAG, creds);
+                stsClient = Aws::MakeShared<MockSTSClient>(CLASS_TAG, creds);
                 stsClient->MockAssumeRole(mockResult);
-                return stsClient.get();
+                return stsClient;
             });
 
     auto actualCredentials = credsProvider.GetAWSCredentials();
@@ -614,7 +614,7 @@ TEST_F(STSProfileCredentialsProviderTest, AssumeRoleRecursivelyCircularReference
 
     STSProfileCredentialsProvider credsProvider("default", roleSessionDuration, [](const AWSCredentials&) {
             ADD_FAILURE() << "STS Service client should not be used in this scenario.";
-            return nullptr;
+            return (STSClient*)nullptr;
     });
 
     auto actualCredentials = credsProvider.GetAWSCredentials();
