@@ -17,7 +17,6 @@
 
  import software.amazon.smithy.codegen.core.*;
  import software.amazon.smithy.model.Model;
- import software.amazon.smithy.model.knowledge.OperationIndex;
  import software.amazon.smithy.model.shapes.*;
  import software.amazon.smithy.utils.StringUtils;
  

@@ -480,6 +480,7 @@ def copy_cpp_codegen_contents(top_level_dir: str, plugin_name: str, target_dir: 
 def generate_smoke_tests(smithy_services: List[str], smithy_c2j_data: str):
     smithy_codegen_command = [
         "./gradlew", 
+        "clean",
         "build", 
         "-PoutputDirectory=" + SMITHY_OUTPUT_DIR,
         "-PservicesFilter=" + ",".join(smithy_services),

@@ -18,16 +18,9 @@
  import software.amazon.smithy.codegen.core.ImportContainer;
  import software.amazon.smithy.codegen.core.Symbol;
  
- import java.util.List;
- import java.util.Arrays;
- import java.util.TreeMap;
- import java.util.Map;
- 
  public final class CppImportContainer implements ImportContainer {
-    private final String localNamespace;
 
     public CppImportContainer(String namespace) {
-        this.localNamespace = namespace;
     }
     
     @Override

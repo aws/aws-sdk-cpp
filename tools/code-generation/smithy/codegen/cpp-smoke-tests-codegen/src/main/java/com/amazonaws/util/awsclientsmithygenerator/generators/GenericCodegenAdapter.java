@@ -2,8 +2,6 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
-import java.util.Stack;
 
 public interface GenericCodegenAdapter<SHAPE, DATA> {
 
@@ -90,10 +88,6 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         // functionMap
         //if object is a simple type, then return will just be the value.
         String functionName = new String();
-        
-        //Everything at this level will have the same indentation
-        String indentPrefix = " ".repeat(level);
-
         String varName = key.toLowerCase();
         String functionNameSuffix = convertSnakeToPascal(varName + "_lvl" + level + "_idx" + count);
 
@@ -103,11 +97,11 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
                 (isBoolean(value) && isBooleanShape(shape))
         )
         {
-            functionName = String.format("{%s}",value);
+            functionName = String.format("%s",value);
         }
         else if (isString(value) && isStringShape(shape))
         {
-            functionName = String.format("{\"%s\"}",value);
+            functionName = String.format("\"%s\"",value);
         }
         else if (isMap(value) && isMapShape(shape))
         {

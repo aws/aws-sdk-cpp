@@ -2,7 +2,6 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 import java.util.ArrayList;
 import java.util.Stack;
 import java.util.List;
-import java.util.Optional;
 import lombok.Data;
 
 //Helper class for C++ code blocks for scope management

@@ -1,9 +1,11 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 import software.amazon.smithy.model.node.Node;
-import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.Shape;
+import software.amazon.smithy.model.shapes.ShapeType;
+import software.amazon.smithy.model.shapes.MemberShape;
+import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.Model;
-import software.amazon.smithy.smoketests.traits.SmokeTestsTrait;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

@@ -1,31 +1,18 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
-import lombok.Data;
-
-import org.slf4j.helpers.NOPLoggerFactory;
-
 import software.amazon.smithy.aws.traits.ServiceTrait;
 import software.amazon.smithy.aws.traits.auth.SigV4ATrait;
 import software.amazon.smithy.aws.traits.auth.SigV4Trait;
 import software.amazon.smithy.model.Model;
-import software.amazon.smithy.model.loader.ModelAssembler;
 import software.amazon.smithy.model.node.Node;
-import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.shapes.OperationShape;
+import software.amazon.smithy.model.shapes.ServiceShape;
+import software.amazon.smithy.model.shapes.Shape;
+import software.amazon.smithy.model.shapes.ShapeId;
 import software.amazon.smithy.model.traits.HttpBearerAuthTrait;
 import software.amazon.smithy.smoketests.traits.SmokeTestsTrait;
 import java.nio.file.Path;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.InputStream;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.attribute.PosixFilePermission;
-import java.nio.file.attribute.PosixFilePermissions;
 import java.util.List;
 import java.util.Optional;
 import java.util.Map;
@@ -33,10 +20,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.codegen.core.SymbolProvider;
@@ -129,7 +113,7 @@ public class SmokeTestsParser implements Runnable{
                 });
         });
 
-        System.out.println(String.format("Number of services with smoke tests detected=%d",serviceShapeMap.size()));
+        //System.out.println(String.format("Number of services with smoke tests detected=%d",serviceShapeMap.size()));
     }
 
     public static String removeSpaces(String input)
@@ -236,7 +220,6 @@ public class SmokeTestsParser implements Runnable{
                     }
                     
                     //test.setRequestBlock(sb.toString());
-                    System.out.println(String.format("block Code:%s", blockWriter.getCode()));
                     test.setRequestBlock(blockWriter.getCode());
 
                     List<String> lines = new ArrayList<>();
@@ -332,8 +315,8 @@ public class SmokeTestsParser implements Runnable{
             //get serviceShape
             String serviceName = operationToServiceMap.get(operationShape.getId());
             ServiceShape serviceShape = serviceShapeMap.get(serviceName);
-            System.out.println("OperationShape: " + operationShape.getId().getName());
-            System.out.println("serviceName: " + serviceName);
+            //System.out.println("OperationShape: " + operationShape.getId().getName());
+            //System.out.println("serviceName: " + serviceName);
 
             List<SmokeTestData> tests = parseSmokeTests(
                 smokeTestsTrait, 
@@ -356,7 +339,7 @@ public class SmokeTestsParser implements Runnable{
 
     @Override
     public void run(){
-        System.out.println("run smoke tests parser");
+        //System.out.println("run smoke tests parser");
         SmokeTestsSourceDelegator delegator = new SmokeTestsSourceDelegator(this.context.getFileManifest(), this.symbolProvider);
         SmokeTestsCMakeDelegator cmakedelegator = new SmokeTestsCMakeDelegator(this.context.getFileManifest(), this.symbolProvider);
         Map<ServiceShape, List<SmokeTestData> > smoketests =  extractServiceSmokeTests();
@@ -368,15 +351,14 @@ public class SmokeTestsParser implements Runnable{
                     String c2jClientname = getC2JServiceName(toKebabCase(client));
                     
                     Path relativePath = Paths.get( c2jClientname );
-                    System.out.println(String.format("path=%s",relativePath.toString() + "/"+ removeSpaces(client) + "SmokeTests.cpp"));
                     
                     delegator.useFileWriter( relativePath.toString() + "/"+ removeSpaces(client) + "SmokeTests.cpp", client, writer -> {
-                        System.out.println("generating smoke test source code");
+                        System.out.println(String.format("generating smoke test source code=%s",relativePath.toString() + "/"+ removeSpaces(client) + "SmokeTests.cpp"));
                         writer.generate(entry.getValue());              
                     });
 
                     cmakedelegator.useFileWriter( relativePath.toString() + "/"+ "CMakeLists.txt", client, writer -> {
-                        System.out.println("generating smoke test cmake code");
+                        System.out.println(String.format("generating smoke test source code=%s",relativePath.toString() + "/"+ "CMakeLists.txt"));
                         writer.generate();
                     });
                 }

@@ -1,20 +1,13 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
-
-import software.amazon.smithy.utils.SimpleCodeWriter;
 import software.amazon.smithy.codegen.core.SymbolWriter;
-import java.util.List;
 
-import com.google.common.base.Optional;
 public final class SmokeTestsCMakeWriter extends SymbolWriter<SmokeTestsCMakeWriter, CppImportContainer>{
-    private String namespace;
     private String folderNamespace;
     //protected CppBlockWriter blockWriter;    
     public SmokeTestsCMakeWriter(String namespace) {
         super(new CppImportContainer(namespace));
-        this.namespace = namespace;
         this.folderNamespace = SmokeTestsParser.toKebabCase(namespace);
     }
-
 
     public String generate()
     {

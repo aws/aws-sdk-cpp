@@ -13,11 +13,13 @@ public String getName() {
 @Override
     public void execute(PluginContext context){
         
-        //todo: put in exception block
-        System.out.println(String.format("Executing SmithyCodegenPlugin...", context.getFileManifest().getBaseDir().toString()));
-        //code placeholder
-        SmokeTestsParser smoketestParser = new SmokeTestsParser(context);
-        smoketestParser.run();
-
+        try {
+            SmokeTestsParser smoketestParser = new SmokeTestsParser(context);
+            smoketestParser.run();
+        } catch (Exception e) {
+            // Handle the exception
+            System.err.println("An error occurred while running the smoke tests: " + e.getMessage());
+            e.printStackTrace();
+        }
     }   
 }
