@@ -22,6 +22,7 @@ namespace Aws
 
         static const int OWNER_HASH = HashingUtils::HashString("OWNER");
         static const int CONTRIBUTOR_HASH = HashingUtils::HashString("CONTRIBUTOR");
+        static const int PROJECT_CATALOG_STEWARD_HASH = HashingUtils::HashString("PROJECT_CATALOG_STEWARD");
 
 
         ProjectDesignation GetProjectDesignationForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == CONTRIBUTOR_HASH)
           {
             return ProjectDesignation::CONTRIBUTOR;
+          }
+          else if (hashCode == PROJECT_CATALOG_STEWARD_HASH)
+          {
+            return ProjectDesignation::PROJECT_CATALOG_STEWARD;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "OWNER";
           case ProjectDesignation::CONTRIBUTOR:
             return "CONTRIBUTOR";
+          case ProjectDesignation::PROJECT_CATALOG_STEWARD:
+            return "PROJECT_CATALOG_STEWARD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
