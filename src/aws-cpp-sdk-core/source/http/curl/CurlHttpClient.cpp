@@ -306,11 +306,6 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
         size_t amountRead = 0;
         if (isStreaming)
         {
-            if (ioStream->bad())
-            {
-                AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Input stream has a bad bit set, can't continue");;
-                return CURL_READFUNC_ABORT;
-            }
             if (!ioStream->eof() && ioStream->peek() != EOF)
             {
                 amountRead = (size_t) ioStream->readsome(ptr, amountToRead);
@@ -438,6 +433,7 @@ int CurlHttpClient::CurlProgressCallback(void *userdata, double, double, double,
     const std::shared_ptr<Aws::IOStream>& ioStream = context->m_request->GetContentBody();
     if (ioStream->eof())
     {
+        curl_easy_pause(context->m_curlHandle, CURLPAUSE_CONT);
         return 0;
     }
 
@@ -457,7 +453,7 @@ int CurlHttpClient::CurlProgressCallback(void *userdata, double, double, double,
     else
     {
         char output[1];
-        if (!ioStream->bad() && ioStream->readsome(output, 1) > 0)
+        if (ioStream->readsome(output, 1) > 0)
         {
             ioStream->unget();
             if (!ioStream->good())
