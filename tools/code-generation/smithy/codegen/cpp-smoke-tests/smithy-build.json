@@ -1,0 +1,50 @@
+{
+    "version": "1.0",
+    "projections": {
+        "acm.2015-12-08": {
+            "imports": [
+                "/Volumes/workplace/aws-sdk-cpp/tools/code-generation/smithy/api-descriptions/acm.json"
+            ],
+            "plugins": {
+                "cpp-codegen-smoke-tests-plugin": {
+                    "serviceFilter": [],
+                    "c2jMap": "{\"api-gateway\": \"apigateway\", \"application-auto-scaling\": \"application-autoscaling\", \"app-mesh\": \"appmesh\", \"auto-scaling\": \"autoscaling\", \"auto-scaling-plans\": \"autoscaling-plans\", \"cloudhsm-v2\": \"cloudhsmv2\", \"cloudsearch-domain\": \"cloudsearchdomain\", \"config-service\": \"config\", \"cost-and-usage-report-service\": \"cur\", \"data-pipeline\": \"datapipeline\", \"device-farm\": \"devicefarm\", \"direct-connect\": \"directconnect\", \"dynamodb-streams\": \"dynamodbstreams\", \"elastic-beanstalk\": \"elasticbeanstalk\", \"elastic-load-balancing\": \"elasticloadbalancing\", \"elastic-load-balancing-v2\": \"elasticloadbalancingv2\", \"elastic-transcoder\": \"elastictranscoder\", \"global-accelerator\": \"globalaccelerator\", \"iot-1click-devices-service\": \"iot1click-devices\", \"iot-1click-projects\": \"iot1click-projects\", \"iot-data-plane\": \"iot-data\", \"iot-events-data\": \"iotevents-data\", \"iot-events\": \"iotevents\", \"iot-jobs-data-plane\": \"iot-jobs-data\", \"iot-wireless\": \"iot-wireless\", \"kinesis-analytics\": \"kinesisanalytics\", \"kinesis-analytics-v2\": \"kinesisanalyticsv2\", \"kinesis-video\": \"kinesisvideo\", \"lex-models-v2\": \"lexv2-models\", \"lex-runtime-service\": \"lex\", \"lex-runtime-v2\": \"lexv2-runtime\", \"machine-learning\": \"machinelearning\", \"marketplace-commerce-analytics\": \"marketplacecommerceanalytics\", \"marketplace-entitlement-service\": \"marketplace-entitlement\", \"marketplace-metering\": \"meteringmarketplace\", \"migration-hub\": \"awsmigrationhub\", \"mturk\": \"mturk-requester\", \"pinpoint-sms-voice\": \"sms-voice\", \"resource-groups-tagging-api\": \"resourcegroupstaggingapi\", \"route-53-domains\": \"route53domains\", \"route-53\": \"route53\", \"s3-control\": \"s3control\", \"sagemaker-runtime\": \"sagemaker-runtime\", \"secrets-manager\": \"secretsmanager\", \"serverlessapplicationrepository\": \"serverlessrepo\", \"service-catalog-appregistry\": \"servicecatalog-appregistry\", \"service-catalog\": \"servicecatalog\", \"transfer\": \"awstransfer\"}"
+                }
+            }
+        },
+        "s3.2006-03-01": {
+            "imports": [
+                "/Volumes/workplace/aws-sdk-cpp/tools/code-generation/smithy/api-descriptions/s3.json"
+            ],
+            "plugins": {
+                "cpp-codegen-smoke-tests-plugin": {
+                    "serviceFilter": [],
+                    "c2jMap": "{\"api-gateway\": \"apigateway\", \"application-auto-scaling\": \"application-autoscaling\", \"app-mesh\": \"appmesh\", \"auto-scaling\": \"autoscaling\", \"auto-scaling-plans\": \"autoscaling-plans\", \"cloudhsm-v2\": \"cloudhsmv2\", \"cloudsearch-domain\": \"cloudsearchdomain\", \"config-service\": \"config\", \"cost-and-usage-report-service\": \"cur\", \"data-pipeline\": \"datapipeline\", \"device-farm\": \"devicefarm\", \"direct-connect\": \"directconnect\", \"dynamodb-streams\": \"dynamodbstreams\", \"elastic-beanstalk\": \"elasticbeanstalk\", \"elastic-load-balancing\": \"elasticloadbalancing\", \"elastic-load-balancing-v2\": \"elasticloadbalancingv2\", \"elastic-transcoder\": \"elastictranscoder\", \"global-accelerator\": \"globalaccelerator\", \"iot-1click-devices-service\": \"iot1click-devices\", \"iot-1click-projects\": \"iot1click-projects\", \"iot-data-plane\": \"iot-data\", \"iot-events-data\": \"iotevents-data\", \"iot-events\": \"iotevents\", \"iot-jobs-data-plane\": \"iot-jobs-data\", \"iot-wireless\": \"iot-wireless\", \"kinesis-analytics\": \"kinesisanalytics\", \"kinesis-analytics-v2\": \"kinesisanalyticsv2\", \"kinesis-video\": \"kinesisvideo\", \"lex-models-v2\": \"lexv2-models\", \"lex-runtime-service\": \"lex\", \"lex-runtime-v2\": \"lexv2-runtime\", \"machine-learning\": \"machinelearning\", \"marketplace-commerce-analytics\": \"marketplacecommerceanalytics\", \"marketplace-entitlement-service\": \"marketplace-entitlement\", \"marketplace-metering\": \"meteringmarketplace\", \"migration-hub\": \"awsmigrationhub\", \"mturk\": \"mturk-requester\", \"pinpoint-sms-voice\": \"sms-voice\", \"resource-groups-tagging-api\": \"resourcegroupstaggingapi\", \"route-53-domains\": \"route53domains\", \"route-53\": \"route53\", \"s3-control\": \"s3control\", \"sagemaker-runtime\": \"sagemaker-runtime\", \"secrets-manager\": \"secretsmanager\", \"serverlessapplicationrepository\": \"serverlessrepo\", \"service-catalog-appregistry\": \"servicecatalog-appregistry\", \"service-catalog\": \"servicecatalog\", \"transfer\": \"awstransfer\"}"
+                }
+            }
+        },
+        "lambda.2015-03-31": {
+            "imports": [
+                "/Volumes/workplace/aws-sdk-cpp/tools/code-generation/smithy/api-descriptions/lambda.json"
+            ],
+            "plugins": {
+                "cpp-codegen-smoke-tests-plugin": {
+                    "serviceFilter": [],
+                    "c2jMap": "{\"api-gateway\": \"apigateway\", \"application-auto-scaling\": \"application-autoscaling\", \"app-mesh\": \"appmesh\", \"auto-scaling\": \"autoscaling\", \"auto-scaling-plans\": \"autoscaling-plans\", \"cloudhsm-v2\": \"cloudhsmv2\", \"cloudsearch-domain\": \"cloudsearchdomain\", \"config-service\": \"config\", \"cost-and-usage-report-service\": \"cur\", \"data-pipeline\": \"datapipeline\", \"device-farm\": \"devicefarm\", \"direct-connect\": \"directconnect\", \"dynamodb-streams\": \"dynamodbstreams\", \"elastic-beanstalk\": \"elasticbeanstalk\", \"elastic-load-balancing\": \"elasticloadbalancing\", \"elastic-load-balancing-v2\": \"elasticloadbalancingv2\", \"elastic-transcoder\": \"elastictranscoder\", \"global-accelerator\": \"globalaccelerator\", \"iot-1click-devices-service\": \"iot1click-devices\", \"iot-1click-projects\": \"iot1click-projects\", \"iot-data-plane\": \"iot-data\", \"iot-events-data\": \"iotevents-data\", \"iot-events\": \"iotevents\", \"iot-jobs-data-plane\": \"iot-jobs-data\", \"iot-wireless\": \"iot-wireless\", \"kinesis-analytics\": \"kinesisanalytics\", \"kinesis-analytics-v2\": \"kinesisanalyticsv2\", \"kinesis-video\": \"kinesisvideo\", \"lex-models-v2\": \"lexv2-models\", \"lex-runtime-service\": \"lex\", \"lex-runtime-v2\": \"lexv2-runtime\", \"machine-learning\": \"machinelearning\", \"marketplace-commerce-analytics\": \"marketplacecommerceanalytics\", \"marketplace-entitlement-service\": \"marketplace-entitlement\", \"marketplace-metering\": \"meteringmarketplace\", \"migration-hub\": \"awsmigrationhub\", \"mturk\": \"mturk-requester\", \"pinpoint-sms-voice\": \"sms-voice\", \"resource-groups-tagging-api\": \"resourcegroupstaggingapi\", \"route-53-domains\": \"route53domains\", \"route-53\": \"route53\", \"s3-control\": \"s3control\", \"sagemaker-runtime\": \"sagemaker-runtime\", \"secrets-manager\": \"secretsmanager\", \"serverlessapplicationrepository\": \"serverlessrepo\", \"service-catalog-appregistry\": \"servicecatalog-appregistry\", \"service-catalog\": \"servicecatalog\", \"transfer\": \"awstransfer\"}"
+                }
+            }
+        },
+        "dynamodb.2012-08-10": {
+            "imports": [
+                "/Volumes/workplace/aws-sdk-cpp/tools/code-generation/smithy/api-descriptions/dynamodb.json"
+            ],
+            "plugins": {
+                "cpp-codegen-smoke-tests-plugin": {
+                    "serviceFilter": [],
+                    "c2jMap": "{\"api-gateway\": \"apigateway\", \"application-auto-scaling\": \"application-autoscaling\", \"app-mesh\": \"appmesh\", \"auto-scaling\": \"autoscaling\", \"auto-scaling-plans\": \"autoscaling-plans\", \"cloudhsm-v2\": \"cloudhsmv2\", \"cloudsearch-domain\": \"cloudsearchdomain\", \"config-service\": \"config\", \"cost-and-usage-report-service\": \"cur\", \"data-pipeline\": \"datapipeline\", \"device-farm\": \"devicefarm\", \"direct-connect\": \"directconnect\", \"dynamodb-streams\": \"dynamodbstreams\", \"elastic-beanstalk\": \"elasticbeanstalk\", \"elastic-load-balancing\": \"elasticloadbalancing\", \"elastic-load-balancing-v2\": \"elasticloadbalancingv2\", \"elastic-transcoder\": \"elastictranscoder\", \"global-accelerator\": \"globalaccelerator\", \"iot-1click-devices-service\": \"iot1click-devices\", \"iot-1click-projects\": \"iot1click-projects\", \"iot-data-plane\": \"iot-data\", \"iot-events-data\": \"iotevents-data\", \"iot-events\": \"iotevents\", \"iot-jobs-data-plane\": \"iot-jobs-data\", \"iot-wireless\": \"iot-wireless\", \"kinesis-analytics\": \"kinesisanalytics\", \"kinesis-analytics-v2\": \"kinesisanalyticsv2\", \"kinesis-video\": \"kinesisvideo\", \"lex-models-v2\": \"lexv2-models\", \"lex-runtime-service\": \"lex\", \"lex-runtime-v2\": \"lexv2-runtime\", \"machine-learning\": \"machinelearning\", \"marketplace-commerce-analytics\": \"marketplacecommerceanalytics\", \"marketplace-entitlement-service\": \"marketplace-entitlement\", \"marketplace-metering\": \"meteringmarketplace\", \"migration-hub\": \"awsmigrationhub\", \"mturk\": \"mturk-requester\", \"pinpoint-sms-voice\": \"sms-voice\", \"resource-groups-tagging-api\": \"resourcegroupstaggingapi\", \"route-53-domains\": \"route53domains\", \"route-53\": \"route53\", \"s3-control\": \"s3control\", \"sagemaker-runtime\": \"sagemaker-runtime\", \"secrets-manager\": \"secretsmanager\", \"serverlessapplicationrepository\": \"serverlessrepo\", \"service-catalog-appregistry\": \"servicecatalog-appregistry\", \"service-catalog\": \"servicecatalog\", \"transfer\": \"awstransfer\"}"
+                }
+            }
+        }
+    },
+    "outputDirectory": "codegen_output"
+}

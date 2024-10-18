@@ -381,13 +381,12 @@ def parse_arguments() -> dict:
                              "mark operation functions in service client as virtual functions. Always on by default",
                         action="store_true")
     
-    parser.add_argument("--generate-smoke-tests",
+    parser.add_argument("--generate_smoke_tests",
                     help="Run smithy code generator for smoke tests",
                     action="store_true")
 
     args = vars(parser.parse_args())
     arg_map = {}
-
     if args.get("debug", None):
         global DEBUG
         DEBUG = True
@@ -452,11 +451,7 @@ def parse_arguments() -> dict:
         if args.get(raw_argument):
             raw_generator_arguments[raw_argument] = args[raw_argument]
     arg_map["raw_generator_arguments"] = raw_generator_arguments
-    if args.get("generate-smoke-tests", None):
-        arg_map["generate-smoke-tests"] = False
-    else:
-        arg_map["generate-smoke-tests"] = True
-        
+    arg_map["generate_smoke_tests"] = args.get("generate_smoke_tests", None)
     print("args=",arg_map)
     return arg_map
 
@@ -487,7 +482,7 @@ def generate_smoke_tests(smithy_services: List[str], smithy_c2j_data: str):
         "./gradlew", 
         "build", 
         "-PoutputDirectory=" + SMITHY_OUTPUT_DIR,
-        "-services=" + ",".join(smithy_services),
+        "-PservicesFilter=" + ",".join(smithy_services),
         "-Pc2jMap=" + smithy_c2j_data 
     ]
     original_dir = os.getcwd()
@@ -575,18 +570,6 @@ def main():
                                        None,
                                        args["raw_generator_arguments"])
                 pending.add(task)
-        #build reverse map
-        # Open a file using 'with' and read its contents
-        smithy_c2j_data = {}
-        c2j_smithy_data = {}
-        smithy_services = []
-        with open(SMITHY_TO_C2J_MAP_FILE, 'r') as file:
-            smithy_c2j_data = json.load(file)
-            # Reverse the key-value pairs
-            c2j_smithy_data = {value: key for key, value in smithy_c2j_data.items()}
-            
-        
-        #get smithy names
 
         for service in clients_to_build:
             model_files = available_models[service]
@@ -595,8 +578,6 @@ def main():
                 new_done, pending = wait(pending, return_when=FIRST_COMPLETED)
                 done.update(new_done)
             
-            smithy_services.append(c2j_smithy_data[service] if service in c2j_smithy_data else service )
-
             task = executor.submit(generate_single_client,
                                    service,
                                    model_files,
@@ -611,7 +592,6 @@ def main():
         new_done, _ = wait(pending, return_when=ALL_COMPLETED)
         done.update(new_done)
         
-                   
         failures = set()
         for result in done:
             try:
@@ -632,12 +612,22 @@ def main():
             return -1
 
         print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults and partitions
-
+    
     #generate code using smithy for all discoverable clients
-    if (args["generate-smoke-tests"] and smithy_services):
-        print(f"Running code generator for smoke-tests")
+    if (args["generate_smoke_tests"] and clients_to_build):
+        #build reverse map
+        # Open a file using 'with' and read its contents
+        smithy_c2j_data = {}
+        c2j_smithy_data = {}        
+        with open(os.path.abspath(SMITHY_TO_C2J_MAP_FILE), 'r') as file:
+            smithy_c2j_data = json.load(file)
+            # Reverse the key-value pairs
+            c2j_smithy_data = {value: key for key, value in smithy_c2j_data.items()}
+        #get smithy names
+        smithy_services = [c2j_smithy_data[service] if service in c2j_smithy_data else service for service in clients_to_build]
+        print(f"Running code generator for smoke-tests for services:"+",".join(smithy_services))
         if generate_smoke_tests(smithy_services, json.dumps(smithy_c2j_data)) :
-            #move the output to 
+            #move the output to generated folder
             copy_cpp_codegen_contents(os.path.abspath("tools/code-generation/smithy/codegen"), "cpp-codegen-smoke-tests-plugin", os.path.abspath( "generated/smoke-tests"))
 
     return 0
