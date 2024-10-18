@@ -35,8 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code>
-     * statement. </p>
+     * <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code>,
+     * <code>INSERT INTO</code>, or <code>UPDATE</code> statement. </p>
      */
     inline long long GetUpdateCount() const{ return m_updateCount; }
     inline void SetUpdateCount(long long value) { m_updateCount = value; }

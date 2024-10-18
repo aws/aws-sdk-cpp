@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetImportedModelResult::GetImportedModelResult()
+GetImportedModelResult::GetImportedModelResult() : 
+    m_instructSupported(false)
 {
 }
 
 GetImportedModelResult::GetImportedModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetImportedModelResult()
 {
   *this = result;
 }
@@ -74,6 +76,12 @@ GetImportedModelResult& GetImportedModelResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("modelKmsKeyArn"))
   {
     m_modelKmsKeyArn = jsonValue.GetString("modelKmsKeyArn");
+
+  }
+
+  if(jsonValue.ValueExists("instructSupported"))
+  {
+    m_instructSupported = jsonValue.GetBool("instructSupported");
 
   }
 

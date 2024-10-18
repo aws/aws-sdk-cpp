@@ -58,10 +58,8 @@ namespace Model
     ///@{
     /**
      * <p>The type of data catalog to create: <code>LAMBDA</code> for a federated
-     * catalog, <code>GLUE</code> for an Glue Data Catalog, and <code>HIVE</code> for
-     * an external Apache Hive metastore. <code>FEDERATED</code> is a federated catalog
-     * for which Athena creates the connection and the Lambda function for you based on
-     * the parameters that you pass.</p>
+     * catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code>
+     * for an Glue Data Catalog.</p>
      */
     inline const DataCatalogType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -108,20 +106,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> </ul> </li> <li> <p>The
-     * <code>FEDERATED</code> data catalog type uses one of the following parameters,
-     * but not both. Use <code>connection-arn</code> for an existing Glue connection.
-     * Use <code>connection-type</code> and <code>connection-properties</code> to
-     * specify the configuration setting for a new connection.</p> <ul> <li> <p>
-     * <code>connection-arn:<i>&lt;glue_connection_arn_to_reuse&gt;</i> </code> </p>
-     * </li> <li> <p> <code>lambda-role-arn</code> (optional): The execution role to
-     * use for the Lambda function. If not provided, one is created.</p> </li> <li> <p>
-     * <code>connection-type:MYSQL|REDSHIFT|....,
-     * connection-properties:"<i>&lt;json_string&gt;</i>"</code> </p> <p>For <i>
-     * <code>&lt;json_string&gt;</code> </i>, use escaped JSON text, as in the
-     * following example.</p> <p>
-     * <code>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</code>
-     * </p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }

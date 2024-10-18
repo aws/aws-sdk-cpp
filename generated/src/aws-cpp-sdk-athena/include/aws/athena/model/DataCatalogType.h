@@ -18,8 +18,7 @@ namespace Model
     NOT_SET,
     LAMBDA,
     GLUE,
-    HIVE,
-    FEDERATED
+    HIVE
   };
 
 namespace DataCatalogTypeMapper
