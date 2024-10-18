@@ -571,6 +571,18 @@ def main():
                                        None,
                                        args["raw_generator_arguments"])
                 pending.add(task)
+        #build reverse map
+        # Open a file using 'with' and read its contents
+        smithy_c2j_data = {}
+        c2j_smithy_data = {}
+        smithy_services = []
+        with open(SMITHY_TO_C2J_MAP_FILE, 'r') as file:
+            smithy_c2j_data = json.load(file)
+            # Reverse the key-value pairs
+            c2j_smithy_data = {value: key for key, value in smithy_c2j_data.items()}
+            
+        
+        #get smithy names
 
         for service in clients_to_build:
             model_files = available_models[service]
@@ -579,6 +591,8 @@ def main():
                 new_done, pending = wait(pending, return_when=FIRST_COMPLETED)
                 done.update(new_done)
             
+            smithy_services.append(c2j_smithy_data[service] if service in c2j_smithy_data else service )
+
             task = executor.submit(generate_single_client,
                                    service,
                                    model_files,

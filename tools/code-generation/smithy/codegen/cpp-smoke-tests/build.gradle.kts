@@ -89,7 +89,7 @@ tasks.register("generate-smithy-build") {
                 }
             }
 
-            println("matched filter: $sdkId")
+            //println("matched filter: $sdkId")
 
             val projectionContents = Node.objectNodeBuilder()
                     .withMember("imports", Node.fromStrings("${models.absolutePath}${File.separator}${file.name}"))
