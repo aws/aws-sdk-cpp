@@ -22,6 +22,9 @@ namespace Aws
 
         static const int PROJECT_OWNER_HASH = HashingUtils::HashString("PROJECT_OWNER");
         static const int PROJECT_CONTRIBUTOR_HASH = HashingUtils::HashString("PROJECT_CONTRIBUTOR");
+        static const int PROJECT_CATALOG_VIEWER_HASH = HashingUtils::HashString("PROJECT_CATALOG_VIEWER");
+        static const int PROJECT_CATALOG_CONSUMER_HASH = HashingUtils::HashString("PROJECT_CATALOG_CONSUMER");
+        static const int PROJECT_CATALOG_STEWARD_HASH = HashingUtils::HashString("PROJECT_CATALOG_STEWARD");
 
 
         UserDesignation GetUserDesignationForName(const Aws::String& name)
@@ -34,6 +37,18 @@ namespace Aws
           else if (hashCode == PROJECT_CONTRIBUTOR_HASH)
           {
             return UserDesignation::PROJECT_CONTRIBUTOR;
+          }
+          else if (hashCode == PROJECT_CATALOG_VIEWER_HASH)
+          {
+            return UserDesignation::PROJECT_CATALOG_VIEWER;
+          }
+          else if (hashCode == PROJECT_CATALOG_CONSUMER_HASH)
+          {
+            return UserDesignation::PROJECT_CATALOG_CONSUMER;
+          }
+          else if (hashCode == PROJECT_CATALOG_STEWARD_HASH)
+          {
+            return UserDesignation::PROJECT_CATALOG_STEWARD;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +70,12 @@ namespace Aws
             return "PROJECT_OWNER";
           case UserDesignation::PROJECT_CONTRIBUTOR:
             return "PROJECT_CONTRIBUTOR";
+          case UserDesignation::PROJECT_CATALOG_VIEWER:
+            return "PROJECT_CATALOG_VIEWER";
+          case UserDesignation::PROJECT_CATALOG_CONSUMER:
+            return "PROJECT_CATALOG_CONSUMER";
+          case UserDesignation::PROJECT_CATALOG_STEWARD:
+            return "PROJECT_CATALOG_STEWARD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

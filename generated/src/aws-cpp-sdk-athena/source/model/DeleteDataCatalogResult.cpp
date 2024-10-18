@@ -28,13 +28,7 @@ DeleteDataCatalogResult::DeleteDataCatalogResult(const Aws::AmazonWebServiceResu
 
 DeleteDataCatalogResult& DeleteDataCatalogResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("DataCatalog"))
-  {
-    m_dataCatalog = jsonValue.GetObject("DataCatalog");
-
-  }
-
+  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
