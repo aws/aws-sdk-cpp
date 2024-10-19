@@ -149,8 +149,8 @@ bool GeneralHTTPCredentialsProvider::ShouldCreateGeneralHTTPProvider(const Aws::
 
 GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(const Aws::String& relativeUri,
                                                                const Aws::String& absoluteUri,
-                                                               const Aws::String& authToken,
                                                                const Aws::String& authTokenFilePath,
+                                                               const Aws::String& authToken,
                                                                long refreshRateMs,
                                                                ShouldCreateFunc shouldCreateFunc) :
     m_authTokenFilePath(authTokenFilePath),
