@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int efa_HASH = HashingUtils::HashString("efa");
+        static const int efa_only_HASH = HashingUtils::HashString("efa-only");
         static const int branch_HASH = HashingUtils::HashString("branch");
         static const int trunk_HASH = HashingUtils::HashString("trunk");
 
@@ -31,6 +32,10 @@ namespace Aws
           if (hashCode == efa_HASH)
           {
             return NetworkInterfaceCreationType::efa;
+          }
+          else if (hashCode == efa_only_HASH)
+          {
+            return NetworkInterfaceCreationType::efa_only;
           }
           else if (hashCode == branch_HASH)
           {
@@ -58,6 +63,8 @@ namespace Aws
             return {};
           case NetworkInterfaceCreationType::efa:
             return "efa";
+          case NetworkInterfaceCreationType::efa_only:
+            return "efa-only";
           case NetworkInterfaceCreationType::branch:
             return "branch";
           case NetworkInterfaceCreationType::trunk:

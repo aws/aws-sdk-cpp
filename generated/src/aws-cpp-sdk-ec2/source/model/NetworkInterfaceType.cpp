@@ -23,6 +23,7 @@ namespace Aws
         static const int interface_HASH = HashingUtils::HashString("interface");
         static const int natGateway_HASH = HashingUtils::HashString("natGateway");
         static const int efa_HASH = HashingUtils::HashString("efa");
+        static const int efa_only_HASH = HashingUtils::HashString("efa-only");
         static const int trunk_HASH = HashingUtils::HashString("trunk");
         static const int load_balancer_HASH = HashingUtils::HashString("load_balancer");
         static const int network_load_balancer_HASH = HashingUtils::HashString("network_load_balancer");
@@ -53,6 +54,10 @@ namespace Aws
           else if (hashCode == efa_HASH)
           {
             return NetworkInterfaceType::efa;
+          }
+          else if (hashCode == efa_only_HASH)
+          {
+            return NetworkInterfaceType::efa_only;
           }
           else if (hashCode == trunk_HASH)
           {
@@ -132,6 +137,8 @@ namespace Aws
             return "natGateway";
           case NetworkInterfaceType::efa:
             return "efa";
+          case NetworkInterfaceType::efa_only:
+            return "efa-only";
           case NetworkInterfaceType::trunk:
             return "trunk";
           case NetworkInterfaceType::load_balancer:

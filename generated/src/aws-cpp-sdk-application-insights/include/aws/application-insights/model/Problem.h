@@ -76,6 +76,20 @@ namespace Model
 
     ///@{
     /**
+     * <p> The short name of the problem associated with the SNS notification. </p>
+     */
+    inline const Aws::String& GetShortName() const{ return m_shortName; }
+    inline bool ShortNameHasBeenSet() const { return m_shortNameHasBeenSet; }
+    inline void SetShortName(const Aws::String& value) { m_shortNameHasBeenSet = true; m_shortName = value; }
+    inline void SetShortName(Aws::String&& value) { m_shortNameHasBeenSet = true; m_shortName = std::move(value); }
+    inline void SetShortName(const char* value) { m_shortNameHasBeenSet = true; m_shortName.assign(value); }
+    inline Problem& WithShortName(const Aws::String& value) { SetShortName(value); return *this;}
+    inline Problem& WithShortName(Aws::String&& value) { SetShortName(std::move(value)); return *this;}
+    inline Problem& WithShortName(const char* value) { SetShortName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A detailed analysis of the problem using machine learning.</p>
      */
     inline const Aws::String& GetInsights() const{ return m_insights; }
@@ -152,8 +166,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS account ID for the owner of the resource group affected by the
-     * problem.</p>
+     * <p>The Amazon Web Services account ID for the owner of the resource group
+     * affected by the problem.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -252,6 +266,9 @@ namespace Model
 
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
+
+    Aws::String m_shortName;
+    bool m_shortNameHasBeenSet = false;
 
     Aws::String m_insights;
     bool m_insightsHasBeenSet = false;

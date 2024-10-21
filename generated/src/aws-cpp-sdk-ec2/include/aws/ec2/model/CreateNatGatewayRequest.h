@@ -146,7 +146,7 @@ namespace Model
     ///@{
     /**
      * <p>Secondary EIP allocation IDs. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
      * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecondaryAllocationIds() const{ return m_secondaryAllocationIds; }
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>Secondary private IPv4 addresses. For more information about secondary
      * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
      * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecondaryPrivateIpAddresses() const{ return m_secondaryPrivateIpAddresses; }
@@ -183,7 +183,7 @@ namespace Model
      * <p>[Private NAT gateway only] The number of secondary private IPv4 addresses you
      * want to assign to the NAT gateway. For more information about secondary
      * addresses, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
      * a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }

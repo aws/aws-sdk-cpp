@@ -23,10 +23,9 @@ namespace WAFV2
    * recommend migrating your resources to this version, because it has a number of
    * significant improvements.</p> <p>If you used WAF prior to this release, you
    * can't use this WAFV2 API to access any WAF resources that you created before.
-   * You can access your old rules, web ACLs, and other WAF resources only through
-   * the WAF Classic APIs. The WAF Classic APIs have retained the prior names,
-   * endpoints, and namespaces. </p> <p>For information, including how to migrate
-   * your WAF resources to this version, see the <a
+   * WAF Classic support will end on September 30, 2025. </p> <p>For information
+   * about WAF, including how to migrate your WAF Classic resources to this version,
+   * see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
    * Developer Guide</a>. </p>  <p>WAF is a web application firewall that lets
    * you monitor the HTTP and HTTPS requests that are forwarded to an Amazon
@@ -53,19 +52,7 @@ namespace WAFV2
    * </li> </ul> <p>Alternatively, you can use one of the Amazon Web Services SDKs to
    * access an API that's tailored to the programming language or platform that
    * you're using. For more information, see <a
-   * href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.</p> <p>We
-   * currently provide two versions of the WAF API: this API and the prior versions,
-   * the classic WAF APIs. This new API provides the same functionality as the older
-   * versions, with the following major improvements:</p> <ul> <li> <p>You use one
-   * API for both global and regional applications. Where you need to distinguish the
-   * scope, you specify a <code>Scope</code> parameter and set it to
-   * <code>CLOUDFRONT</code> or <code>REGIONAL</code>. </p> </li> <li> <p>You can
-   * define a web ACL or rule group with a single call, and update it with a single
-   * call. You define all rule specifications in JSON format, and pass them to your
-   * rule group or web ACL calls.</p> </li> <li> <p>The limits WAF places on the use
-   * of rules more closely reflects the cost of running each type of rule. Rule
-   * groups include capacity settings, so you know the maximum cost of a rule group
-   * when you use it.</p> </li> </ul>
+   * href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.</p>
    */
   class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WAFV2Client>
   {
@@ -397,9 +384,10 @@ namespace WAFV2
         }
 
         /**
-         * <p>Deletes all rule groups that are managed by Firewall Manager for the
-         * specified web ACL. </p> <p>You can only use this if
-         * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+         * <p>Deletes all rule groups that are managed by Firewall Manager from the
+         * specified <a>WebACL</a>. </p> <p>You can only use this if
+         * <code>ManagedByFirewallManager</code> and
+         * <code>RetrofittedByFirewallManager</code> are both false in the web ACL.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteFirewallManagerRuleGroups">AWS
          * API Reference</a></p>
@@ -554,13 +542,13 @@ namespace WAFV2
 
         /**
          * <p>Deletes the specified <a>WebACL</a>. </p> <p>You can only use this if
-         * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
-         * </p>  <p>Before deleting any web ACL, first disassociate it from all
-         * resources.</p> <ul> <li> <p>To retrieve a list of the resources that are
-         * associated with a web ACL, use the following calls:</p> <ul> <li> <p>For
-         * regional resources, call <a>ListResourcesForWebACL</a>.</p> </li> <li> <p>For
-         * Amazon CloudFront distributions, use the CloudFront call
-         * <code>ListDistributionsByWebACLId</code>. For information, see <a
+         * <code>ManagedByFirewallManager</code> is false in the web ACL. </p> 
+         * <p>Before deleting any web ACL, first disassociate it from all resources.</p>
+         * <ul> <li> <p>To retrieve a list of the resources that are associated with a web
+         * ACL, use the following calls:</p> <ul> <li> <p>For regional resources, call
+         * <a>ListResourcesForWebACL</a>.</p> </li> <li> <p>For Amazon CloudFront
+         * distributions, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
+         * For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
          * in the <i>Amazon CloudFront API Reference</i>. </p> </li> </ul> </li> <li> <p>To
          * disassociate a resource from a web ACL, use the following calls:</p> <ul> <li>

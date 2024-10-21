@@ -23,6 +23,7 @@ namespace Model
     interface,
     natGateway,
     efa,
+    efa_only,
     trunk,
     load_balancer,
     network_load_balancer,

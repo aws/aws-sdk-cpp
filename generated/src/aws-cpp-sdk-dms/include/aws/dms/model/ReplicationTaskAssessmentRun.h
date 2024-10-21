@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/dms/model/ReplicationTaskAssessmentRunProgress.h>
+#include <aws/dms/model/ReplicationTaskAssessmentRunResultStatistic.h>
 #include <utility>
 
 namespace Aws
@@ -230,6 +231,31 @@ namespace Model
     inline ReplicationTaskAssessmentRun& WithAssessmentRunName(Aws::String&& value) { SetAssessmentRunName(std::move(value)); return *this;}
     inline ReplicationTaskAssessmentRun& WithAssessmentRunName(const char* value) { SetAssessmentRunName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates that the following PreflightAssessmentRun is the latest for the
+     * ReplicationTask. The status is either true or false.</p>
+     */
+    inline bool GetIsLatestTaskAssessmentRun() const{ return m_isLatestTaskAssessmentRun; }
+    inline bool IsLatestTaskAssessmentRunHasBeenSet() const { return m_isLatestTaskAssessmentRunHasBeenSet; }
+    inline void SetIsLatestTaskAssessmentRun(bool value) { m_isLatestTaskAssessmentRunHasBeenSet = true; m_isLatestTaskAssessmentRun = value; }
+    inline ReplicationTaskAssessmentRun& WithIsLatestTaskAssessmentRun(bool value) { SetIsLatestTaskAssessmentRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Result statistics for a completed assessment run, showing aggregated
+     * statistics of IndividualAssessments for how many assessments were passed,
+     * failed, or encountered issues such as errors or warnings. </p>
+     */
+    inline const ReplicationTaskAssessmentRunResultStatistic& GetResultStatistic() const{ return m_resultStatistic; }
+    inline bool ResultStatisticHasBeenSet() const { return m_resultStatisticHasBeenSet; }
+    inline void SetResultStatistic(const ReplicationTaskAssessmentRunResultStatistic& value) { m_resultStatisticHasBeenSet = true; m_resultStatistic = value; }
+    inline void SetResultStatistic(ReplicationTaskAssessmentRunResultStatistic&& value) { m_resultStatisticHasBeenSet = true; m_resultStatistic = std::move(value); }
+    inline ReplicationTaskAssessmentRun& WithResultStatistic(const ReplicationTaskAssessmentRunResultStatistic& value) { SetResultStatistic(value); return *this;}
+    inline ReplicationTaskAssessmentRun& WithResultStatistic(ReplicationTaskAssessmentRunResultStatistic&& value) { SetResultStatistic(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_replicationTaskAssessmentRunArn;
@@ -267,6 +293,12 @@ namespace Model
 
     Aws::String m_assessmentRunName;
     bool m_assessmentRunNameHasBeenSet = false;
+
+    bool m_isLatestTaskAssessmentRun;
+    bool m_isLatestTaskAssessmentRunHasBeenSet = false;
+
+    ReplicationTaskAssessmentRunResultStatistic m_resultStatistic;
+    bool m_resultStatisticHasBeenSet = false;
   };
 
 } // namespace Model

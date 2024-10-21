@@ -78,7 +78,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the workload.</p>
+     * <p>The name of the workload. The name of the workload is required when the tier
+     * of the application component is <code>SAP_ASE_SINGLE_NODE</code> or
+     * <code>SAP_ASE_HIGH_AVAILABILITY</code>.</p>
      */
     inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }

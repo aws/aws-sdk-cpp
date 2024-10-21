@@ -208,7 +208,9 @@ namespace Model
     ///@{
     /**
      * <p>The name of an existing placement group into which to launch your instances.
-     * For more information, see <a
+     * To remove the placement group setting, pass an empty string for
+     * <code>placement-group</code>. For more information about placement groups, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> 
      * <p>A <i>cluster</i> placement group is a logical grouping of instances within a

@@ -5,7 +5,12 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/bedrock-agent-runtime/model/InferenceConfig.h>
+#include <aws/bedrock-agent-runtime/model/PromptTemplate.h>
 #include <aws/bedrock-agent-runtime/model/QueryTransformationConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Document.h>
 #include <utility>
 
 namespace Aws
@@ -40,6 +45,52 @@ namespace Model
 
     ///@{
     /**
+     * <p> Additional model parameters and corresponding values not included in the
+     * textInferenceConfig structure for a knowledge base. This allows users to provide
+     * custom model parameters specific to the language model being used. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetAdditionalModelRequestFields() const{ return m_additionalModelRequestFields; }
+    inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
+    inline void SetAdditionalModelRequestFields(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = value; }
+    inline void SetAdditionalModelRequestFields(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::move(value); }
+    inline OrchestrationConfiguration& WithAdditionalModelRequestFields(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { SetAdditionalModelRequestFields(value); return *this;}
+    inline OrchestrationConfiguration& WithAdditionalModelRequestFields(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { SetAdditionalModelRequestFields(std::move(value)); return *this;}
+    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(const Aws::String& key, const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, value); return *this; }
+    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(Aws::String&& key, const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(std::move(key), value); return *this; }
+    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(const Aws::String& key, Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, std::move(value)); return *this; }
+    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(Aws::String&& key, Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(std::move(key), std::move(value)); return *this; }
+    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(const char* key, Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, std::move(value)); return *this; }
+    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(const char* key, const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p> Configuration settings for inference when using RetrieveAndGenerate to
+     * generate responses while using a knowledge base as a source. </p>
+     */
+    inline const InferenceConfig& GetInferenceConfig() const{ return m_inferenceConfig; }
+    inline bool InferenceConfigHasBeenSet() const { return m_inferenceConfigHasBeenSet; }
+    inline void SetInferenceConfig(const InferenceConfig& value) { m_inferenceConfigHasBeenSet = true; m_inferenceConfig = value; }
+    inline void SetInferenceConfig(InferenceConfig&& value) { m_inferenceConfigHasBeenSet = true; m_inferenceConfig = std::move(value); }
+    inline OrchestrationConfiguration& WithInferenceConfig(const InferenceConfig& value) { SetInferenceConfig(value); return *this;}
+    inline OrchestrationConfiguration& WithInferenceConfig(InferenceConfig&& value) { SetInferenceConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains the template for the prompt that's sent to the model for response
+     * generation.</p>
+     */
+    inline const PromptTemplate& GetPromptTemplate() const{ return m_promptTemplate; }
+    inline bool PromptTemplateHasBeenSet() const { return m_promptTemplateHasBeenSet; }
+    inline void SetPromptTemplate(const PromptTemplate& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = value; }
+    inline void SetPromptTemplate(PromptTemplate&& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = std::move(value); }
+    inline OrchestrationConfiguration& WithPromptTemplate(const PromptTemplate& value) { SetPromptTemplate(value); return *this;}
+    inline OrchestrationConfiguration& WithPromptTemplate(PromptTemplate&& value) { SetPromptTemplate(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>To split up the prompt and retrieve multiple sources, set the transformation
      * type to <code>QUERY_DECOMPOSITION</code>.</p>
      */
@@ -51,6 +102,15 @@ namespace Model
     inline OrchestrationConfiguration& WithQueryTransformationConfiguration(QueryTransformationConfiguration&& value) { SetQueryTransformationConfiguration(std::move(value)); return *this;}
     ///@}
   private:
+
+    Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
+    bool m_additionalModelRequestFieldsHasBeenSet = false;
+
+    InferenceConfig m_inferenceConfig;
+    bool m_inferenceConfigHasBeenSet = false;
+
+    PromptTemplate m_promptTemplate;
+    bool m_promptTemplateHasBeenSet = false;
 
     QueryTransformationConfiguration m_queryTransformationConfiguration;
     bool m_queryTransformationConfigurationHasBeenSet = false;

@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS account ID for the resource group owner.</p>
+     * <p>The Amazon Web Services account ID for the resource group owner.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
     inline void SetAccountId(const Aws::String& value) { m_accountId = value; }

@@ -37,10 +37,10 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the Firewall Manager policy that you want the details for. You can
-     * get violation details for the following policy types:</p> <ul> <li> <p>DNS
-     * Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li> <li> <p>Network
-     * Firewall</p> </li> <li> <p>Security group content audit</p> </li> <li>
-     * <p>Network ACL</p> </li> <li> <p>Third-party firewall</p> </li> </ul>
+     * get violation details for the following policy types:</p> <ul> <li> <p>WAF</p>
+     * </li> <li> <p>DNS Firewall</p> </li> <li> <p>Imported Network Firewall</p> </li>
+     * <li> <p>Network Firewall</p> </li> <li> <p>Security group content audit</p>
+     * </li> <li> <p>Network ACL</p> </li> <li> <p>Third-party firewall</p> </li> </ul>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
@@ -85,8 +85,8 @@ namespace Model
      * <p>The resource type. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
      * Web Services Resource Types Reference</a>. Supported resource types are:
-     * <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>,
-     * <code>AWS::EC2::SecurityGroup</code>,
+     * <code>AWS::WAFv2::WebACL</code>, <code>AWS::EC2::Instance</code>,
+     * <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>,
      * <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
      * <code>AWS::EC2::Subnet</code>. </p>
      */

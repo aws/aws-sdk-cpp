@@ -21,6 +21,7 @@ namespace Model
 Problem::Problem() : 
     m_idHasBeenSet(false),
     m_titleHasBeenSet(false),
+    m_shortNameHasBeenSet(false),
     m_insightsHasBeenSet(false),
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
@@ -62,6 +63,13 @@ Problem& Problem::operator =(JsonView jsonValue)
     m_title = jsonValue.GetString("Title");
 
     m_titleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ShortName"))
+  {
+    m_shortName = jsonValue.GetString("ShortName");
+
+    m_shortNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Insights"))
@@ -174,6 +182,12 @@ JsonValue Problem::Jsonize() const
   if(m_titleHasBeenSet)
   {
    payload.WithString("Title", m_title);
+
+  }
+
+  if(m_shortNameHasBeenSet)
+  {
+   payload.WithString("ShortName", m_shortName);
 
   }
 

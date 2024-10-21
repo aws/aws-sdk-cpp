@@ -11,6 +11,7 @@
 #include <aws/eks/model/Logging.h>
 #include <aws/eks/model/UpdateAccessConfigRequest.h>
 #include <aws/eks/model/UpgradePolicyRequest.h>
+#include <aws/eks/model/ZonalShiftConfigRequest.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -121,6 +122,33 @@ namespace Model
     inline UpdateClusterConfigRequest& WithUpgradePolicy(const UpgradePolicyRequest& value) { SetUpgradePolicy(value); return *this;}
     inline UpdateClusterConfigRequest& WithUpgradePolicy(UpgradePolicyRequest&& value) { SetUpgradePolicy(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Enable or disable ARC zonal shift for the cluster. If zonal shift is enabled,
+     * Amazon Web Services configures zonal autoshift for the cluster.</p> <p>Zonal
+     * shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal
+     * shift is designed to be a temporary measure that allows you to move traffic for
+     * a resource away from an impaired AZ until the zonal shift expires or you cancel
+     * it. You can extend the zonal shift if necessary.</p> <p>You can start a zonal
+     * shift for an EKS cluster, or you can allow Amazon Web Services to do it for you
+     * by enabling <i>zonal autoshift</i>. This shift updates the flow of east-to-west
+     * network traffic in your cluster to only consider network endpoints for Pods
+     * running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling
+     * ingress traffic for applications in your EKS cluster will automatically route
+     * traffic to targets in the healthy AZs. For more information about zonal shift in
+     * EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn
+     * about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a>
+     * in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     */
+    inline const ZonalShiftConfigRequest& GetZonalShiftConfig() const{ return m_zonalShiftConfig; }
+    inline bool ZonalShiftConfigHasBeenSet() const { return m_zonalShiftConfigHasBeenSet; }
+    inline void SetZonalShiftConfig(const ZonalShiftConfigRequest& value) { m_zonalShiftConfigHasBeenSet = true; m_zonalShiftConfig = value; }
+    inline void SetZonalShiftConfig(ZonalShiftConfigRequest&& value) { m_zonalShiftConfigHasBeenSet = true; m_zonalShiftConfig = std::move(value); }
+    inline UpdateClusterConfigRequest& WithZonalShiftConfig(const ZonalShiftConfigRequest& value) { SetZonalShiftConfig(value); return *this;}
+    inline UpdateClusterConfigRequest& WithZonalShiftConfig(ZonalShiftConfigRequest&& value) { SetZonalShiftConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -140,6 +168,9 @@ namespace Model
 
     UpgradePolicyRequest m_upgradePolicy;
     bool m_upgradePolicyHasBeenSet = false;
+
+    ZonalShiftConfigRequest m_zonalShiftConfig;
+    bool m_zonalShiftConfigHasBeenSet = false;
   };
 
 } // namespace Model

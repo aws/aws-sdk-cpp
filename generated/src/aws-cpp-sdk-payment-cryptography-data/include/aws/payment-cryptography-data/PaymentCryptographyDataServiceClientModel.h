@@ -22,6 +22,7 @@
 #include <aws/payment-cryptography-data/model/EncryptDataResult.h>
 #include <aws/payment-cryptography-data/model/GenerateCardValidationDataResult.h>
 #include <aws/payment-cryptography-data/model/GenerateMacResult.h>
+#include <aws/payment-cryptography-data/model/GenerateMacEmvPinChangeResult.h>
 #include <aws/payment-cryptography-data/model/GeneratePinDataResult.h>
 #include <aws/payment-cryptography-data/model/ReEncryptDataResult.h>
 #include <aws/payment-cryptography-data/model/TranslatePinDataResult.h>
@@ -73,6 +74,7 @@ namespace Aws
       class EncryptDataRequest;
       class GenerateCardValidationDataRequest;
       class GenerateMacRequest;
+      class GenerateMacEmvPinChangeRequest;
       class GeneratePinDataRequest;
       class ReEncryptDataRequest;
       class TranslatePinDataRequest;
@@ -87,6 +89,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<EncryptDataResult, PaymentCryptographyDataError> EncryptDataOutcome;
       typedef Aws::Utils::Outcome<GenerateCardValidationDataResult, PaymentCryptographyDataError> GenerateCardValidationDataOutcome;
       typedef Aws::Utils::Outcome<GenerateMacResult, PaymentCryptographyDataError> GenerateMacOutcome;
+      typedef Aws::Utils::Outcome<GenerateMacEmvPinChangeResult, PaymentCryptographyDataError> GenerateMacEmvPinChangeOutcome;
       typedef Aws::Utils::Outcome<GeneratePinDataResult, PaymentCryptographyDataError> GeneratePinDataOutcome;
       typedef Aws::Utils::Outcome<ReEncryptDataResult, PaymentCryptographyDataError> ReEncryptDataOutcome;
       typedef Aws::Utils::Outcome<TranslatePinDataResult, PaymentCryptographyDataError> TranslatePinDataOutcome;
@@ -101,6 +104,7 @@ namespace Aws
       typedef std::future<EncryptDataOutcome> EncryptDataOutcomeCallable;
       typedef std::future<GenerateCardValidationDataOutcome> GenerateCardValidationDataOutcomeCallable;
       typedef std::future<GenerateMacOutcome> GenerateMacOutcomeCallable;
+      typedef std::future<GenerateMacEmvPinChangeOutcome> GenerateMacEmvPinChangeOutcomeCallable;
       typedef std::future<GeneratePinDataOutcome> GeneratePinDataOutcomeCallable;
       typedef std::future<ReEncryptDataOutcome> ReEncryptDataOutcomeCallable;
       typedef std::future<TranslatePinDataOutcome> TranslatePinDataOutcomeCallable;
@@ -118,6 +122,7 @@ namespace Aws
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::EncryptDataRequest&, const Model::EncryptDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EncryptDataResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::GenerateCardValidationDataRequest&, const Model::GenerateCardValidationDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateCardValidationDataResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::GenerateMacRequest&, const Model::GenerateMacOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateMacResponseReceivedHandler;
+    typedef std::function<void(const PaymentCryptographyDataClient*, const Model::GenerateMacEmvPinChangeRequest&, const Model::GenerateMacEmvPinChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateMacEmvPinChangeResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::GeneratePinDataRequest&, const Model::GeneratePinDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GeneratePinDataResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::ReEncryptDataRequest&, const Model::ReEncryptDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReEncryptDataResponseReceivedHandler;
     typedef std::function<void(const PaymentCryptographyDataClient*, const Model::TranslatePinDataRequest&, const Model::TranslatePinDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TranslatePinDataResponseReceivedHandler;

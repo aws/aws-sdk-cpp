@@ -57,8 +57,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS account ID for the owner of the application to which the
-     * configuration event belongs.</p>
+     * <p>The Amazon Web Services account ID for the owner of the application to which
+     * the configuration event belongs.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }

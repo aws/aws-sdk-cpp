@@ -122,13 +122,12 @@ namespace Model
     /**
      * <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in
      * this subnet should return synthetic IPv6 addresses for IPv4-only
-     * destinations.</p>  <p>You must first configure a NAT gateway in a public
-     * subnet (separate from the subnet containing the IPv6-only workloads). For
-     * example, the subnet containing the NAT gateway should have a
-     * <code>0.0.0.0/0</code> route pointing to the internet gateway. For more
-     * information, see <a
+     * destinations.</p> <p>You must first configure a NAT gateway in a public subnet
+     * (separate from the subnet containing the IPv6-only workloads). For example, the
+     * subnet containing the NAT gateway should have a <code>0.0.0.0/0</code> route
+     * pointing to the internet gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-nat64-dns64.html#nat-gateway-nat64-dns64-walkthrough">Configure
-     * DNS64 and NAT64</a> in the <i>Amazon VPC User Guide</i>.</p> 
+     * DNS64 and NAT64</a> in the <i>Amazon VPC User Guide</i>.</p>
      */
     inline const AttributeBooleanValue& GetEnableDns64() const{ return m_enableDns64; }
     inline bool EnableDns64HasBeenSet() const { return m_enableDns64HasBeenSet; }

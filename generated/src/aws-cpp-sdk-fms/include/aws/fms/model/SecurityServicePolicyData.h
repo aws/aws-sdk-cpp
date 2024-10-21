@@ -115,10 +115,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a>
      * to <code>NULL</code>. </p> </li> <li> <p>Example:
      * <code>SECURITY_GROUPS_COMMON</code> </p> <p>
-     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"revertManualSecurityGroupChanges\":false,\"exclusiveResourceSecurityGroupManagement\":false,
-     * \"applyToAllEC2InstanceENIs\":false,\"securityGroups\":[{\"id\":\"
-     * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example:
-     * <code>SECURITY_GROUPS_COMMON</code> - Security group tag distribution </p> <p>
+     * <code>"{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":[{\"id\":\"sg-03b1f67d69ed00197\"}],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":true,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"enableSecurityGroupReferencesDistribution\":true}"</code>
+     * </p> </li> <li> <p>Example: <code>SECURITY_GROUPS_COMMON</code> - Security group
+     * tag distribution </p> <p>
      * <code>""{\"type\":\"SECURITY_GROUPS_COMMON\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"revertManualSecurityGroupChanges\":true,\"exclusiveResourceSecurityGroupManagement\":false,\"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":false,\"enableTagDistribution\":true}""</code>
      * </p> <p> Firewall Manager automatically distributes tags from the primary group
      * to the security groups created by this policy. To use security group tag
@@ -135,14 +134,14 @@ namespace Model
      * \"applyToAllEC2InstanceENIs\":false,\"includeSharedVPC\":true,\"securityGroups\":[{\"id\":\"
      * sg-000e55995d61a06bd\"}]}"</code> </p> </li> <li> <p>Example:
      * <code>SECURITY_GROUPS_CONTENT_AUDIT</code> </p> <p>
-     * <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"securityGroups\":[{\"id\":\"sg-000e55995d61a06bd\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code>
+     * <code>"{\"type\":\"SECURITY_GROUPS_CONTENT_AUDIT\",\"preManagedOptions\":[{\"denyProtocolAllValue\":true},{\"auditSgDirection\":{\"type\":\"ALL\"}}],\"securityGroups\":[{\"id\":\"sg-049b2393a25468971\"}],\"securityGroupAction\":{\"type\":\"ALLOW\"}}"</code>
      * </p> <p>The security group action for content audit can be <code>ALLOW</code> or
      * <code>DENY</code>. For <code>ALLOW</code>, all in-scope security group rules
      * must be within the allowed range of the policy's security group rules. For
      * <code>DENY</code>, all in-scope security group rules must not contain a value or
      * a range that matches a rule value or range in the policy security group.</p>
      * </li> <li> <p>Example: <code>SECURITY_GROUPS_USAGE_AUDIT</code> </p> <p>
-     * <code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true}"</code>
+     * <code>"{\"type\":\"SECURITY_GROUPS_USAGE_AUDIT\",\"deleteUnusedSecurityGroups\":true,\"coalesceRedundantSecurityGroups\":true,\"optionalDelayForUnusedInMinutes\":60}"</code>
      * </p> </li> <li> <p>Example: <code>SHIELD_ADVANCED</code> with web ACL
      * management</p> <p>
      * <code>"{\"type\":\"SHIELD_ADVANCED\",\"optimizeUnassociatedWebACL\":true}"</code>
@@ -245,7 +244,7 @@ namespace Model
      * in the <i>WAF API Reference</i>.</p> </li> </ul> </li> <li> <p>Example:
      * <code>WAFV2</code> - Firewall Manager support for WAF managed rule group
      * versioning </p> <p>
-     * <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":true,\"version\":\"Version_2.0\",\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesCommonRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
+     * <code>"{\"preProcessRuleGroups\":[{\"ruleGroupType\":\"ManagedRuleGroup\",\"overrideAction\":{\"type\":\"NONE\"},\"sampledRequestsEnabled\":true,\"managedRuleGroupIdentifier\":{\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\",\"vendorName\":\"AWS\",\"managedRuleGroupConfigs\":null}}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"customRequestHandling\":null,\"tokenDomains\":null,\"customResponse\":null,\"type\":\"WAFV2\",\"overrideCustomerWebACLAssociation\":false,\"sampledRequestsEnabledForDefaultActions\":true,\"optimizeUnassociatedWebACL\":true,\"webACLSource\":\"RETROFIT_EXISTING\"}"</code>
      * </p> <p> To use a specific version of a WAF managed rule group in your Firewall
      * Manager policy, you must set <code>versionEnabled</code> to <code>true</code>,
      * and set <code>version</code> to the version you'd like to use. If you don't set
@@ -279,10 +278,9 @@ namespace Model
      * <code>redactedFields</code>. The <code>RedactedFieldType</code> must be one of
      * <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or
      * <code>METHOD</code>.</p> </li> <li> <p>Example: <code>WAF Classic</code> </p>
-     * <p> <code>"{\"type\": \"WAF\", \"ruleGroups\":
-     * [{\"id\":\"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" :
-     * {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}"</code> </p>
-     * </li> </ul>
+     * <p>
+     * <code>"{\"ruleGroups\":[{\"id\":\"78cb36c0-1b5e-4d7d-82b2-cf48d3ad9659\",\"overrideAction\":{\"type\":\"NONE\"}}],\"overrideCustomerWebACLAssociation\":true,\"defaultAction\":{\"type\":\"ALLOW\"},\"type\":\"WAF\"}"</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetManagedServiceData() const{ return m_managedServiceData; }
     inline bool ManagedServiceDataHasBeenSet() const { return m_managedServiceDataHasBeenSet; }

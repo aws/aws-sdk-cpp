@@ -49,6 +49,7 @@ namespace Aws
         static const int ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT_HASH = HashingUtils::HashString("ROUTE_HAS_OUT_OF_SCOPE_ENDPOINT");
         static const int FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT_HASH = HashingUtils::HashString("FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT");
         static const int INVALID_NETWORK_ACL_ENTRY_HASH = HashingUtils::HashString("INVALID_NETWORK_ACL_ENTRY");
+        static const int WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE_HASH = HashingUtils::HashString("WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE");
 
 
         ViolationReason GetViolationReasonForName(const Aws::String& name)
@@ -170,6 +171,10 @@ namespace Aws
           {
             return ViolationReason::INVALID_NETWORK_ACL_ENTRY;
           }
+          else if (hashCode == WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE_HASH)
+          {
+            return ViolationReason::WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -244,6 +249,8 @@ namespace Aws
             return "FIREWALL_SUBNET_MISSING_VPCE_ENDPOINT";
           case ViolationReason::INVALID_NETWORK_ACL_ENTRY:
             return "INVALID_NETWORK_ACL_ENTRY";
+          case ViolationReason::WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE:
+            return "WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

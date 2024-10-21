@@ -256,8 +256,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) of the AWS Health Event-based
-     * observation.</p>
+     * <p> The Amazon Resource Name (ARN) of the Health Event-based observation.</p>
      */
     inline const Aws::String& GetHealthEventArn() const{ return m_healthEventArn; }
     inline bool HealthEventArnHasBeenSet() const { return m_healthEventArnHasBeenSet; }
@@ -271,7 +270,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The service to which the AWS Health Event belongs, such as EC2. </p>
+     * <p> The service to which the Health Event belongs, such as EC2. </p>
      */
     inline const Aws::String& GetHealthService() const{ return m_healthService; }
     inline bool HealthServiceHasBeenSet() const { return m_healthServiceHasBeenSet; }
@@ -285,7 +284,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The type of the AWS Health event, for example,
+     * <p> The type of the Health event, for example,
      * <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
      */
     inline const Aws::String& GetHealthEventTypeCode() const{ return m_healthEventTypeCode; }
@@ -300,7 +299,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The category of the AWS Health event, such as <code>issue</code>. </p>
+     * <p> The category of the Health event, such as <code>issue</code>. </p>
      */
     inline const Aws::String& GetHealthEventTypeCategory() const{ return m_healthEventTypeCategory; }
     inline bool HealthEventTypeCategoryHasBeenSet() const { return m_healthEventTypeCategoryHasBeenSet; }
@@ -314,8 +313,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The description of the AWS Health event provided by the service, such as
-     * Amazon EC2. </p>
+     * <p> The description of the Health event provided by the service, such as Amazon
+     * EC2. </p>
      */
     inline const Aws::String& GetHealthEventDescription() const{ return m_healthEventDescription; }
     inline bool HealthEventDescriptionHasBeenSet() const { return m_healthEventDescriptionHasBeenSet; }

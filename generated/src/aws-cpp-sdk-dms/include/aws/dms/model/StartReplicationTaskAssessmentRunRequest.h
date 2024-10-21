@@ -8,6 +8,7 @@
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/dms/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -194,6 +195,21 @@ namespace Model
     inline StartReplicationTaskAssessmentRunRequest& AddExclude(Aws::String&& value) { m_excludeHasBeenSet = true; m_exclude.push_back(std::move(value)); return *this; }
     inline StartReplicationTaskAssessmentRunRequest& AddExclude(const char* value) { m_excludeHasBeenSet = true; m_exclude.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>One or more tags to be assigned to the premigration assessment run that you
+     * want to start.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline StartReplicationTaskAssessmentRunRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline StartReplicationTaskAssessmentRunRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline StartReplicationTaskAssessmentRunRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline StartReplicationTaskAssessmentRunRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_replicationTaskArn;
@@ -222,6 +238,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_exclude;
     bool m_excludeHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

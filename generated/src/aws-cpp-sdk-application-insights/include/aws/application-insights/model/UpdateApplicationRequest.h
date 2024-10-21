@@ -89,6 +89,21 @@ namespace Model
 
     ///@{
     /**
+     * <p> The SNS topic ARN. Allows you to receive SNS notifications for updates and
+     * issues with an application. </p>
+     */
+    inline const Aws::String& GetSNSNotificationArn() const{ return m_sNSNotificationArn; }
+    inline bool SNSNotificationArnHasBeenSet() const { return m_sNSNotificationArnHasBeenSet; }
+    inline void SetSNSNotificationArn(const Aws::String& value) { m_sNSNotificationArnHasBeenSet = true; m_sNSNotificationArn = value; }
+    inline void SetSNSNotificationArn(Aws::String&& value) { m_sNSNotificationArnHasBeenSet = true; m_sNSNotificationArn = std::move(value); }
+    inline void SetSNSNotificationArn(const char* value) { m_sNSNotificationArnHasBeenSet = true; m_sNSNotificationArn.assign(value); }
+    inline UpdateApplicationRequest& WithSNSNotificationArn(const Aws::String& value) { SetSNSNotificationArn(value); return *this;}
+    inline UpdateApplicationRequest& WithSNSNotificationArn(Aws::String&& value) { SetSNSNotificationArn(std::move(value)); return *this;}
+    inline UpdateApplicationRequest& WithSNSNotificationArn(const char* value) { SetSNSNotificationArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> Disassociates the SNS topic from the opsItem created for detected
      * problems.</p>
      */
@@ -131,6 +146,9 @@ namespace Model
 
     Aws::String m_opsItemSNSTopicArn;
     bool m_opsItemSNSTopicArnHasBeenSet = false;
+
+    Aws::String m_sNSNotificationArn;
+    bool m_sNSNotificationArnHasBeenSet = false;
 
     bool m_removeSNSTopic;
     bool m_removeSNSTopicHasBeenSet = false;

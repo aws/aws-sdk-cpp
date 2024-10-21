@@ -42,7 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains information about the foundation model output.</p>
+     * <p>Contains information about the foundation model output from the orchestration
+     * step.</p>
      */
     inline const Metadata& GetMetadata() const{ return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }

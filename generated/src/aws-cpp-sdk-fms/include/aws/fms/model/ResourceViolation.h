@@ -29,6 +29,8 @@
 #include <aws/fms/model/FirewallSubnetMissingVPCEndpointViolation.h>
 #include <aws/fms/model/InvalidNetworkAclEntriesViolation.h>
 #include <aws/fms/model/PossibleRemediationActions.h>
+#include <aws/fms/model/WebACLHasIncompatibleConfigurationViolation.h>
+#include <aws/fms/model/WebACLHasOutOfScopeResourcesViolation.h>
 #include <utility>
 
 namespace Aws
@@ -365,6 +367,32 @@ namespace Model
     inline ResourceViolation& WithPossibleRemediationActions(const PossibleRemediationActions& value) { SetPossibleRemediationActions(value); return *this;}
     inline ResourceViolation& WithPossibleRemediationActions(PossibleRemediationActions&& value) { SetPossibleRemediationActions(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The violation details for a web ACL whose configuration is incompatible with
+     * the Firewall Manager policy. </p>
+     */
+    inline const WebACLHasIncompatibleConfigurationViolation& GetWebACLHasIncompatibleConfigurationViolation() const{ return m_webACLHasIncompatibleConfigurationViolation; }
+    inline bool WebACLHasIncompatibleConfigurationViolationHasBeenSet() const { return m_webACLHasIncompatibleConfigurationViolationHasBeenSet; }
+    inline void SetWebACLHasIncompatibleConfigurationViolation(const WebACLHasIncompatibleConfigurationViolation& value) { m_webACLHasIncompatibleConfigurationViolationHasBeenSet = true; m_webACLHasIncompatibleConfigurationViolation = value; }
+    inline void SetWebACLHasIncompatibleConfigurationViolation(WebACLHasIncompatibleConfigurationViolation&& value) { m_webACLHasIncompatibleConfigurationViolationHasBeenSet = true; m_webACLHasIncompatibleConfigurationViolation = std::move(value); }
+    inline ResourceViolation& WithWebACLHasIncompatibleConfigurationViolation(const WebACLHasIncompatibleConfigurationViolation& value) { SetWebACLHasIncompatibleConfigurationViolation(value); return *this;}
+    inline ResourceViolation& WithWebACLHasIncompatibleConfigurationViolation(WebACLHasIncompatibleConfigurationViolation&& value) { SetWebACLHasIncompatibleConfigurationViolation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The violation details for a web ACL that's associated with at least one
+     * resource that's out of scope of the Firewall Manager policy. </p>
+     */
+    inline const WebACLHasOutOfScopeResourcesViolation& GetWebACLHasOutOfScopeResourcesViolation() const{ return m_webACLHasOutOfScopeResourcesViolation; }
+    inline bool WebACLHasOutOfScopeResourcesViolationHasBeenSet() const { return m_webACLHasOutOfScopeResourcesViolationHasBeenSet; }
+    inline void SetWebACLHasOutOfScopeResourcesViolation(const WebACLHasOutOfScopeResourcesViolation& value) { m_webACLHasOutOfScopeResourcesViolationHasBeenSet = true; m_webACLHasOutOfScopeResourcesViolation = value; }
+    inline void SetWebACLHasOutOfScopeResourcesViolation(WebACLHasOutOfScopeResourcesViolation&& value) { m_webACLHasOutOfScopeResourcesViolationHasBeenSet = true; m_webACLHasOutOfScopeResourcesViolation = std::move(value); }
+    inline ResourceViolation& WithWebACLHasOutOfScopeResourcesViolation(const WebACLHasOutOfScopeResourcesViolation& value) { SetWebACLHasOutOfScopeResourcesViolation(value); return *this;}
+    inline ResourceViolation& WithWebACLHasOutOfScopeResourcesViolation(WebACLHasOutOfScopeResourcesViolation&& value) { SetWebACLHasOutOfScopeResourcesViolation(std::move(value)); return *this;}
+    ///@}
   private:
 
     AwsVPCSecurityGroupViolation m_awsVPCSecurityGroupViolation;
@@ -438,6 +466,12 @@ namespace Model
 
     PossibleRemediationActions m_possibleRemediationActions;
     bool m_possibleRemediationActionsHasBeenSet = false;
+
+    WebACLHasIncompatibleConfigurationViolation m_webACLHasIncompatibleConfigurationViolation;
+    bool m_webACLHasIncompatibleConfigurationViolationHasBeenSet = false;
+
+    WebACLHasOutOfScopeResourcesViolation m_webACLHasOutOfScopeResourcesViolation;
+    bool m_webACLHasOutOfScopeResourcesViolationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,6 +35,12 @@ DescribeProblemResult& DescribeProblemResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("SNSNotificationArn"))
+  {
+    m_sNSNotificationArn = jsonValue.GetString("SNSNotificationArn");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -33,6 +33,7 @@ DataMigration::DataMigration() :
     m_dataMigrationStatisticsHasBeenSet(false),
     m_dataMigrationStatusHasBeenSet(false),
     m_publicIpAddressesHasBeenSet(false),
+    m_dataMigrationCidrBlocksHasBeenSet(false),
     m_lastFailureMessageHasBeenSet(false),
     m_stopReasonHasBeenSet(false)
 {
@@ -143,6 +144,16 @@ DataMigration& DataMigration::operator =(JsonView jsonValue)
     m_publicIpAddressesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataMigrationCidrBlocks"))
+  {
+    Aws::Utils::Array<JsonView> dataMigrationCidrBlocksJsonList = jsonValue.GetArray("DataMigrationCidrBlocks");
+    for(unsigned dataMigrationCidrBlocksIndex = 0; dataMigrationCidrBlocksIndex < dataMigrationCidrBlocksJsonList.GetLength(); ++dataMigrationCidrBlocksIndex)
+    {
+      m_dataMigrationCidrBlocks.push_back(dataMigrationCidrBlocksJsonList[dataMigrationCidrBlocksIndex].AsString());
+    }
+    m_dataMigrationCidrBlocksHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LastFailureMessage"))
   {
     m_lastFailureMessage = jsonValue.GetString("LastFailureMessage");
@@ -245,6 +256,17 @@ JsonValue DataMigration::Jsonize() const
      publicIpAddressesJsonList[publicIpAddressesIndex].AsString(m_publicIpAddresses[publicIpAddressesIndex]);
    }
    payload.WithArray("PublicIpAddresses", std::move(publicIpAddressesJsonList));
+
+  }
+
+  if(m_dataMigrationCidrBlocksHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dataMigrationCidrBlocksJsonList(m_dataMigrationCidrBlocks.size());
+   for(unsigned dataMigrationCidrBlocksIndex = 0; dataMigrationCidrBlocksIndex < dataMigrationCidrBlocksJsonList.GetLength(); ++dataMigrationCidrBlocksIndex)
+   {
+     dataMigrationCidrBlocksJsonList[dataMigrationCidrBlocksIndex].AsString(m_dataMigrationCidrBlocks[dataMigrationCidrBlocksIndex]);
+   }
+   payload.WithArray("DataMigrationCidrBlocks", std::move(dataMigrationCidrBlocksJsonList));
 
   }
 

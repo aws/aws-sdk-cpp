@@ -222,9 +222,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether this web ACL is managed by Firewall Manager. If true, then
-     * only Firewall Manager can delete the web ACL or any Firewall Manager rule groups
-     * in the web ACL. </p>
+     * <p>Indicates whether this web ACL was created by Firewall Manager and is being
+     * managed by Firewall Manager. If true, then only Firewall Manager can delete the
+     * web ACL or any Firewall Manager rule groups in the web ACL. See also the
+     * properties <code>RetrofittedByFirewallManager</code>,
+     * <code>PreProcessFirewallManagerRuleGroups</code>, and
+     * <code>PostProcessFirewallManagerRuleGroups</code>. </p>
      */
     inline bool GetManagedByFirewallManager() const{ return m_managedByFirewallManager; }
     inline bool ManagedByFirewallManagerHasBeenSet() const { return m_managedByFirewallManagerHasBeenSet; }
@@ -351,6 +354,22 @@ namespace Model
     inline WebACL& WithAssociationConfig(const AssociationConfig& value) { SetAssociationConfig(value); return *this;}
     inline WebACL& WithAssociationConfig(AssociationConfig&& value) { SetAssociationConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether this web ACL was created by a customer account and then
+     * retrofitted by Firewall Manager. If true, then the web ACL is currently being
+     * managed by a Firewall Manager WAF policy, and only Firewall Manager can manage
+     * any Firewall Manager rule groups in the web ACL. See also the properties
+     * <code>ManagedByFirewallManager</code>,
+     * <code>PreProcessFirewallManagerRuleGroups</code>, and
+     * <code>PostProcessFirewallManagerRuleGroups</code>. </p>
+     */
+    inline bool GetRetrofittedByFirewallManager() const{ return m_retrofittedByFirewallManager; }
+    inline bool RetrofittedByFirewallManagerHasBeenSet() const { return m_retrofittedByFirewallManagerHasBeenSet; }
+    inline void SetRetrofittedByFirewallManager(bool value) { m_retrofittedByFirewallManagerHasBeenSet = true; m_retrofittedByFirewallManager = value; }
+    inline WebACL& WithRetrofittedByFirewallManager(bool value) { SetRetrofittedByFirewallManager(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -403,6 +422,9 @@ namespace Model
 
     AssociationConfig m_associationConfig;
     bool m_associationConfigHasBeenSet = false;
+
+    bool m_retrofittedByFirewallManager;
+    bool m_retrofittedByFirewallManagerHasBeenSet = false;
   };
 
 } // namespace Model

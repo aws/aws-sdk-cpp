@@ -19,6 +19,9 @@ namespace Model
 {
 
 OrchestrationConfiguration::OrchestrationConfiguration() : 
+    m_additionalModelRequestFieldsHasBeenSet(false),
+    m_inferenceConfigHasBeenSet(false),
+    m_promptTemplateHasBeenSet(false),
     m_queryTransformationConfigurationHasBeenSet(false)
 {
 }
@@ -31,6 +34,30 @@ OrchestrationConfiguration::OrchestrationConfiguration(JsonView jsonValue)
 
 OrchestrationConfiguration& OrchestrationConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("additionalModelRequestFields"))
+  {
+    Aws::Map<Aws::String, JsonView> additionalModelRequestFieldsJsonMap = jsonValue.GetObject("additionalModelRequestFields").GetAllObjects();
+    for(auto& additionalModelRequestFieldsItem : additionalModelRequestFieldsJsonMap)
+    {
+      m_additionalModelRequestFields[additionalModelRequestFieldsItem.first] = additionalModelRequestFieldsItem.second.AsObject();
+    }
+    m_additionalModelRequestFieldsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inferenceConfig"))
+  {
+    m_inferenceConfig = jsonValue.GetObject("inferenceConfig");
+
+    m_inferenceConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("promptTemplate"))
+  {
+    m_promptTemplate = jsonValue.GetObject("promptTemplate");
+
+    m_promptTemplateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("queryTransformationConfiguration"))
   {
     m_queryTransformationConfiguration = jsonValue.GetObject("queryTransformationConfiguration");
@@ -44,6 +71,29 @@ OrchestrationConfiguration& OrchestrationConfiguration::operator =(JsonView json
 JsonValue OrchestrationConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_additionalModelRequestFieldsHasBeenSet)
+  {
+   JsonValue additionalModelRequestFieldsJsonMap;
+   for(auto& additionalModelRequestFieldsItem : m_additionalModelRequestFields)
+   {
+     additionalModelRequestFieldsJsonMap.WithObject(additionalModelRequestFieldsItem.first, additionalModelRequestFieldsItem.second.View());
+   }
+   payload.WithObject("additionalModelRequestFields", std::move(additionalModelRequestFieldsJsonMap));
+
+  }
+
+  if(m_inferenceConfigHasBeenSet)
+  {
+   payload.WithObject("inferenceConfig", m_inferenceConfig.Jsonize());
+
+  }
+
+  if(m_promptTemplateHasBeenSet)
+  {
+   payload.WithObject("promptTemplate", m_promptTemplate.Jsonize());
+
+  }
 
   if(m_queryTransformationConfigurationHasBeenSet)
   {

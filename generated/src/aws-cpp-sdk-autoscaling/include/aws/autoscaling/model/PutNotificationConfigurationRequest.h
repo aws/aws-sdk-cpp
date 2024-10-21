@@ -68,8 +68,9 @@ namespace Model
     ///@{
     /**
      * <p>The type of event that causes the notification to be sent. To query the
-     * notification types supported by Amazon EC2 Auto Scaling, call the
-     * <a>DescribeAutoScalingNotificationTypes</a> API.</p>
+     * notification types supported by Amazon EC2 Auto Scaling, call the <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingNotificationTypes.html">DescribeAutoScalingNotificationTypes</a>
+     * API.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationTypes() const{ return m_notificationTypes; }
     inline bool NotificationTypesHasBeenSet() const { return m_notificationTypesHasBeenSet; }

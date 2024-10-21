@@ -41,7 +41,8 @@ Cluster::Cluster() :
     m_healthHasBeenSet(false),
     m_outpostConfigHasBeenSet(false),
     m_accessConfigHasBeenSet(false),
-    m_upgradePolicyHasBeenSet(false)
+    m_upgradePolicyHasBeenSet(false),
+    m_zonalShiftConfigHasBeenSet(false)
 {
 }
 
@@ -213,6 +214,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_upgradePolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("zonalShiftConfig"))
+  {
+    m_zonalShiftConfig = jsonValue.GetObject("zonalShiftConfig");
+
+    m_zonalShiftConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -357,6 +365,12 @@ JsonValue Cluster::Jsonize() const
   if(m_upgradePolicyHasBeenSet)
   {
    payload.WithObject("upgradePolicy", m_upgradePolicy.Jsonize());
+
+  }
+
+  if(m_zonalShiftConfigHasBeenSet)
+  {
+   payload.WithObject("zonalShiftConfig", m_zonalShiftConfig.Jsonize());
 
   }
 

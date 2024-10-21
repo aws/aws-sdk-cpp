@@ -92,6 +92,20 @@ namespace Model
 
     ///@{
     /**
+     * <p> The SNS notification topic ARN. </p>
+     */
+    inline const Aws::String& GetSNSNotificationArn() const{ return m_sNSNotificationArn; }
+    inline bool SNSNotificationArnHasBeenSet() const { return m_sNSNotificationArnHasBeenSet; }
+    inline void SetSNSNotificationArn(const Aws::String& value) { m_sNSNotificationArnHasBeenSet = true; m_sNSNotificationArn = value; }
+    inline void SetSNSNotificationArn(Aws::String&& value) { m_sNSNotificationArnHasBeenSet = true; m_sNSNotificationArn = std::move(value); }
+    inline void SetSNSNotificationArn(const char* value) { m_sNSNotificationArnHasBeenSet = true; m_sNSNotificationArn.assign(value); }
+    inline CreateApplicationRequest& WithSNSNotificationArn(const Aws::String& value) { SetSNSNotificationArn(value); return *this;}
+    inline CreateApplicationRequest& WithSNSNotificationArn(Aws::String&& value) { SetSNSNotificationArn(std::move(value)); return *this;}
+    inline CreateApplicationRequest& WithSNSNotificationArn(const char* value) { SetSNSNotificationArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>List of tags to add to the application. tag key (<code>Key</code>) and an
      * associated tag value (<code>Value</code>). The maximum length of a tag key is
      * 128 characters. The maximum length of a tag value is 256 characters.</p>
@@ -165,6 +179,9 @@ namespace Model
 
     Aws::String m_opsItemSNSTopicArn;
     bool m_opsItemSNSTopicArnHasBeenSet = false;
+
+    Aws::String m_sNSNotificationArn;
+    bool m_sNSNotificationArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

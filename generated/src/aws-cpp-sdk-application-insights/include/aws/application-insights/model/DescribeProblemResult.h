@@ -45,6 +45,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> The SNS notification topic ARN of the problem. </p>
+     */
+    inline const Aws::String& GetSNSNotificationArn() const{ return m_sNSNotificationArn; }
+    inline void SetSNSNotificationArn(const Aws::String& value) { m_sNSNotificationArn = value; }
+    inline void SetSNSNotificationArn(Aws::String&& value) { m_sNSNotificationArn = std::move(value); }
+    inline void SetSNSNotificationArn(const char* value) { m_sNSNotificationArn.assign(value); }
+    inline DescribeProblemResult& WithSNSNotificationArn(const Aws::String& value) { SetSNSNotificationArn(value); return *this;}
+    inline DescribeProblemResult& WithSNSNotificationArn(Aws::String&& value) { SetSNSNotificationArn(std::move(value)); return *this;}
+    inline DescribeProblemResult& WithSNSNotificationArn(const char* value) { SetSNSNotificationArn(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -57,6 +70,8 @@ namespace Model
   private:
 
     Problem m_problem;
+
+    Aws::String m_sNSNotificationArn;
 
     Aws::String m_requestId;
   };
