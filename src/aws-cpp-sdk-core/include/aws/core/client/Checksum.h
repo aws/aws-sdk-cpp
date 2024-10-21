@@ -5,12 +5,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-
-
-namespace Aws::Utils::Crypto
-{
-    class Hash;
-}
+#include <aws/core/utils/crypto/Hash.h>
 
 namespace Aws
 {
@@ -43,13 +38,13 @@ namespace Aws
                     m_checksumHeaders.emplace("x-amz-checksum" + NameForAlgorithm(algorithm), value);
                 }
 
-                Aws::String GetChecksumHeader(ChecksumAlgorithm algorithm) const
+                const Aws::String& GetChecksumHeader(ChecksumAlgorithm algorithm) const
                 {
                     const auto header = m_checksumHeaders.find("x-amz-checksum" + NameForAlgorithm(algorithm));
                     if(header == m_checksumHeaders.end())
                     {
                         AWS_LOGSTREAM_DEBUG("ChecksumInfo","could not find header for checksum algorithm, returning empty string");
-                        return {};
+                        return m_emptyString;
                     }
                     return header->second;
                 }
@@ -77,7 +72,7 @@ namespace Aws
                     m_checksumHash = HashFactoryForAlgorithm(algorithm)();
                 }
 
-                ChecksumAlgorithm GetChecksumAlgorithm() const
+                const ChecksumAlgorithm& GetChecksumAlgorithm() const
                 {
                     return m_checksumAlgorithm;
                 }
@@ -97,6 +92,10 @@ namespace Aws
                 ResponseChecksums m_responseChecksums{};
                 ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
                 std::shared_ptr<Aws::Utils::Crypto::Hash> m_checksumHash{};
+                // we need to return a ref to a string for checksum values for
+                // backwards compatibility reasons. So we need to return a
+                // non-static string when the header is not found.
+                Aws::String m_emptyString{};
             };
         }
     }

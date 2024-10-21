@@ -224,15 +224,20 @@ bool GetObjectRequest::ShouldValidateResponseChecksum() const
 
 Aws::Vector<Aws::String> GetObjectRequest::GetResponseChecksumAlgorithmNames() const
 {
+  Aws::Vector<Aws::String> responseChecksumAlgorithmNames;
   auto checksumInfo = GetChecksumInfo();
   if (checksumInfo.has_value())
   {
     checksumInfo.value().AddResponseChecksum(ChecksumAlgorithm::CRC32);
+    responseChecksumAlgorithmNames.push_back(Aws::Utils::StringUtils::ToUpper(Client::Checksum::ChecksumInfo::NameForAlgorithm(ChecksumAlgorithm::CRC32).c_str()));
     checksumInfo.value().AddResponseChecksum(ChecksumAlgorithm::CRC32C);
+    responseChecksumAlgorithmNames.push_back(Aws::Utils::StringUtils::ToUpper(Client::Checksum::ChecksumInfo::NameForAlgorithm(ChecksumAlgorithm::CRC32C).c_str()));
     checksumInfo.value().AddResponseChecksum(ChecksumAlgorithm::SHA1);
+    responseChecksumAlgorithmNames.push_back(Aws::Utils::StringUtils::ToUpper(Client::Checksum::ChecksumInfo::NameForAlgorithm(ChecksumAlgorithm::SHA1).c_str()));
     checksumInfo.value().AddResponseChecksum(ChecksumAlgorithm::SHA256);
+    responseChecksumAlgorithmNames.push_back(Aws::Utils::StringUtils::ToUpper(Client::Checksum::ChecksumInfo::NameForAlgorithm(ChecksumAlgorithm::SHA256).c_str()));
   }
-  return {"CRC32","CRC32C", "SHA256","SHA1"};
+  return responseChecksumAlgorithmNames;
 }
 
 Aws::Crt::Optional<Client::Checksum::ChecksumInfo> GetObjectRequest::GetChecksumInfo() const
