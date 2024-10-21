@@ -5,13 +5,15 @@ import software.amazon.smithy.codegen.core.SymbolWriter;
 import java.util.List;
 
 public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceWriter, CppImportContainer>{
-    private String clientNamespace;
-    private String folderNamespace;
+    private final String clientNamespace;
+    private final String folderNamespace;
+    private final String c2jNamespace;
     //protected CppBlockWriter blockWriter;    
     public SmokeTestsSourceWriter(String namespace) {
         super(new CppImportContainer(namespace));
         this.clientNamespace = SmokeTestsParser.removeSpaces(namespace);
         this.folderNamespace = SmokeTestsParser.toKebabCase(namespace);
+        this.c2jNamespace = SmithyC2JNamespaceMap.getC2JServiceName(this.folderNamespace);
     }
 
     protected void useNamespaces()
@@ -48,12 +50,12 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
 
     protected void addClientHeader()
     {
-        write("#include <aws/$L/$LClient.h>", folderNamespace, clientNamespace );
+        write("#include <aws/$L/$LClient.h>", c2jNamespace, clientNamespace );
     };
 
     protected void addRequestHeader(SmokeTestData test)
     {
-        write("#include <aws/$L/model/$LRequest.h>", folderNamespace, test.getOperationName());
+        write("#include <aws/$L/model/$LRequest.h>", c2jNamespace, test.getOperationName());
     };
 
     protected void defineTestFixture()

@@ -6,7 +6,7 @@ public final class SmokeTestsCMakeWriter extends SymbolWriter<SmokeTestsCMakeWri
     //protected CppBlockWriter blockWriter;    
     public SmokeTestsCMakeWriter(String namespace) {
         super(new CppImportContainer(namespace));
-        this.folderNamespace = SmokeTestsParser.toKebabCase(namespace);
+        this.folderNamespace = namespace;
     }
 
     public String generate()

@@ -28,9 +28,6 @@ import software.amazon.smithy.codegen.core.SymbolProvider;
 import software.amazon.smithy.aws.smoketests.model.AwsVendorParams;
 import software.amazon.smithy.aws.smoketests.model.S3VendorParams;
 import software.amazon.smithy.aws.smoketests.model.AwsSmokeTestModel;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import java.lang.reflect.Type;
 
 
 //import com.amazonaws.util.awsclientsmithygenerator.generators.common.CppSymbolVisitor;
@@ -43,7 +40,6 @@ public class SmokeTestsParser implements Runnable{
     final private Map<ShapeId, String> operationToServiceMap;
     final private Map<String, ServiceShape> serviceShapeMap;
     // Static member to store the flipped map
-    private  Map<String, String> SMITHY_C2J_SERVICE_NAME_MAP;
     final private  Set<String> serviceFilter;
 
     public SmokeTestsParser(PluginContext context)
@@ -55,7 +51,6 @@ public class SmokeTestsParser implements Runnable{
         this.operationToServiceMap = new HashMap<>();
         this.serviceShapeMap = new HashMap<>();
         this.serviceFilter = new HashSet<>();
-        this.SMITHY_C2J_SERVICE_NAME_MAP = new HashMap<>();
         //parse the filter
         Map<String, Node> settings = context.getSettings().getStringMap();
         if(settings.containsKey("serviceFilter"))
@@ -73,14 +68,12 @@ public class SmokeTestsParser implements Runnable{
             }
         }
         //parse mapping and store
-        Type mapType = new TypeToken<Map<String, String>>(){}.getType();
         if(settings.containsKey("c2jMap"))
         {
             Node value = settings.get("c2jMap");
             if(value.isStringNode())
             {
-                Gson gson = new Gson();
-                SMITHY_C2J_SERVICE_NAME_MAP = gson.fromJson(value.asStringNode().get().getValue(), mapType);
+                SmithyC2JNamespaceMap.getInstance(value.asStringNode().get().getValue());
             }
         }
 
@@ -140,15 +133,6 @@ public class SmokeTestsParser implements Runnable{
         return clientName;
     }
 
-    public String getC2JServiceName(String smithyServiceName)
-    {
-        if(SMITHY_C2J_SERVICE_NAME_MAP.containsKey(smithyServiceName))
-        {
-            return SMITHY_C2J_SERVICE_NAME_MAP.get(smithyServiceName);
-        }
-        return smithyServiceName;
-    }
-
     //for given smoke test trait in an operation for a service, parse smoke tests
     private List<SmokeTestData> parseSmokeTests(
         SmokeTestsTrait smokeTestsTrait, 
@@ -203,7 +187,7 @@ public class SmokeTestsParser implements Runnable{
                         
                         Node value = paramEntry.getValue();
                         try {
-                            blockWriter.addCode(String.format("input.Set%s(%s);\n", key,
+                            blockWriter.addCode(String.format("input.Set%s(%s);\n", GenericCodegenAdapter.convertSnakeToPascal(key),
 
                                 codegenAdapter.GenerateCppSetters(
                                         test.getOperationName().toLowerCase() + "_elem",
@@ -343,22 +327,24 @@ public class SmokeTestsParser implements Runnable{
         SmokeTestsSourceDelegator delegator = new SmokeTestsSourceDelegator(this.context.getFileManifest(), this.symbolProvider);
         SmokeTestsCMakeDelegator cmakedelegator = new SmokeTestsCMakeDelegator(this.context.getFileManifest(), this.symbolProvider);
         Map<ServiceShape, List<SmokeTestData> > smoketests =  extractServiceSmokeTests();
+
         //make service specific folder
         smoketests.entrySet().stream().forEach(entry -> {
                 ServiceShape serviceShape = entry.getKey();
                 try{
                     String client = getServiceName(serviceShape);
-                    String c2jClientname = getC2JServiceName(toKebabCase(client));
+                    String c2jClientname = SmithyC2JNamespaceMap.getC2JServiceName(toKebabCase(client));
                     
                     Path relativePath = Paths.get( c2jClientname );
+                    System.out.println(toKebabCase(client) + " mapped to " + c2jClientname);
                     
                     delegator.useFileWriter( relativePath.toString() + "/"+ removeSpaces(client) + "SmokeTests.cpp", client, writer -> {
                         System.out.println(String.format("generating smoke test source code=%s",relativePath.toString() + "/"+ removeSpaces(client) + "SmokeTests.cpp"));
                         writer.generate(entry.getValue());              
                     });
 
-                    cmakedelegator.useFileWriter( relativePath.toString() + "/"+ "CMakeLists.txt", client, writer -> {
-                        System.out.println(String.format("generating smoke test source code=%s",relativePath.toString() + "/"+ "CMakeLists.txt"));
+                    cmakedelegator.useFileWriter( relativePath.toString() + "/"+ "CMakeLists.txt", c2jClientname, writer -> {
+                        System.out.println(String.format("generating smoke test cmake code=%s",relativePath.toString() + "/"+ "CMakeLists.txt"));
                         writer.generate();
                     });
                 }

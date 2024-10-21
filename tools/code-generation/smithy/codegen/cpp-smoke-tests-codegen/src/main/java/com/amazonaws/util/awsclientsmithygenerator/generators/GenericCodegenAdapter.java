@@ -123,9 +123,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
                 String mapKey = entry.getKey();
                 DATA mapValue = entry.getValue();
                 SHAPE fieldShape = fieldShapeMap.get(mapKey);
-
                 //set elements of the variable
-                blockWriter.addCode(String.format("%s.Set%s( %s );\n", varName, mapKey,
+                blockWriter.addCode(String.format("%s.Set%s( %s );\n", varName, convertSnakeToPascal(mapKey),
                         GenerateCppSetters(mapKey,
                                 mapValue,
                                 fieldShape,
