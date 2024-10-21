@@ -187,7 +187,7 @@ public class SmokeTestsParser implements Runnable{
                         
                         Node value = paramEntry.getValue();
                         try {
-                            blockWriter.addCode(String.format("input.Set%s(%s);\n", GenericCodegenAdapter.convertSnakeToPascal(key),
+                            blockWriter.addCode(String.format("input.Set%s(%s);\n", GenericCodegenAdapter.capitalizeFirstLetter(key),
 
                                 codegenAdapter.GenerateCppSetters(
                                         test.getOperationName().toLowerCase() + "_elem",

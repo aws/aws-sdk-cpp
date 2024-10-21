@@ -70,6 +70,14 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         return result.toString();
     }
 
+    public static String capitalizeFirstLetter(String input) {
+        StringBuilder result = new StringBuilder();
+        result.append(input.substring(0, 1).toUpperCase())
+                    .append(input.substring(1));
+
+        return result.toString();
+    }
+
     default public String GenerateCppSetters(
             String key,
             DATA value,
@@ -105,7 +113,6 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         }
         else if (isMap(value) && isMapShape(shape))
         {
-            
             functionName = String.format("Get%s", functionNameSuffix);
             String shapeName = getShapeName(shape);
             //get all immediate map member shapes
@@ -124,7 +131,7 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
                 DATA mapValue = entry.getValue();
                 SHAPE fieldShape = fieldShapeMap.get(mapKey);
                 //set elements of the variable
-                blockWriter.addCode(String.format("%s.Set%s( %s );\n", varName, convertSnakeToPascal(mapKey),
+                blockWriter.addCode(String.format("%s.Set%s( %s );\n", varName, capitalizeFirstLetter(mapKey),
                         GenerateCppSetters(mapKey,
                                 mapValue,
                                 fieldShape,
@@ -155,6 +162,7 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
             SHAPE listMemberShape = getListMemberShape(shape);
 
             String listType = getShapeName(listMemberShape);
+
             String returnType = "Aws::Vector<"+listType+">";
             //open function body and use vector setter
             CppBlockWriter blockWriter = new CppBlockWriter

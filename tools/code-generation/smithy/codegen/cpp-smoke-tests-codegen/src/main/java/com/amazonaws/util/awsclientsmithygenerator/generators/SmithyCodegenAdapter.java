@@ -183,6 +183,21 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
     @Override
     public String getShapeName(Shape s)
     {
+        //check if list member is a primitive type, then primitive type needs to be returned
+        //this is the type what the c2j codegen generates
+        if(isStringShape(s))
+        {
+            return "Aws::String";
+        }
+        else if (isFloatShape(s))
+        {
+            return "float";
+        }
+        else if(isIntegerShape(s))
+        {
+            return "int";
+        }
+
         String input = String.valueOf(s.getId());
         // Find the index of the '#' character
         int index = input.indexOf('#');

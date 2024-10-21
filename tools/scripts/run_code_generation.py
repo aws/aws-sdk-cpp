@@ -465,7 +465,6 @@ def copy_cpp_codegen_contents(top_level_dir: str, plugin_name: str, target_dir: 
     for root, dirs, files in os.walk(top_level_dir):
         if plugin_name in dirs:
             source_dir = os.path.join(root, plugin_name)
-            print(f"Found plugin in: {source_dir}")
             # recursively copy all contents from the source to the target folder
             for item in os.listdir(source_dir):
                 source_item = os.path.join(source_dir, item)
