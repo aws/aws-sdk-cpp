@@ -457,12 +457,12 @@ namespace Model
      * and encrypted with an Key Management Service (KMS) key, you must have permission
      * to use the <code>kms:Decrypt</code> action to retrieve the checksum.</p>
      */
-    inline const ChecksumMode& GetChecksumMode() const{ return m_checksumMode; }
-    inline bool ChecksumModeHasBeenSet() const { return m_checksumModeHasBeenSet; }
-    inline void SetChecksumMode(const ChecksumMode& value) { m_checksumModeHasBeenSet = true; m_checksumMode = value; }
-    inline void SetChecksumMode(ChecksumMode&& value) { m_checksumModeHasBeenSet = true; m_checksumMode = std::move(value); }
+    inline const ChecksumMode& GetChecksumMode() const{ return m_checksumInfo.GetShouldValidateResponse(); }
+    inline bool ChecksumModeHasBeenSet() const { return m_checksumInfo.GetShouldValidateResponse() != ChecksumMode::NOT_SET; }
+    inline void SetChecksumMode(const ChecksumMode& value) { m_checksumInfo.SetShouldValidateResponse(value); }
+    inline void SetChecksumMode(ChecksumMode&& value) { m_checksumInfo.SetShouldValidateResponse(value); }
     inline GetObjectRequest& WithChecksumMode(const ChecksumMode& value) { SetChecksumMode(value); return *this;}
-    inline GetObjectRequest& WithChecksumMode(ChecksumMode&& value) { SetChecksumMode(std::move(value)); return *this;}
+    inline GetObjectRequest& WithChecksumMode(ChecksumMode&& value) { SetChecksumMode(value); return *this;}
     ///@}
 
     ///@{
@@ -542,9 +542,6 @@ namespace Model
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet = false;
-
-    ChecksumMode m_checksumMode;
-    bool m_checksumModeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet = false;

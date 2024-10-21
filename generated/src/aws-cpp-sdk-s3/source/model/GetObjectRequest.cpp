@@ -40,8 +40,6 @@ GetObjectRequest::GetObjectRequest() :
     m_partNumber(0),
     m_partNumberHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
-    m_checksumMode(ChecksumMode::NOT_SET),
-    m_checksumModeHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -197,9 +195,9 @@ Aws::Http::HeaderValueCollection GetObjectRequest::GetRequestSpecificHeaders() c
     ss.str("");
   }
 
-  if(m_checksumModeHasBeenSet && m_checksumMode != ChecksumMode::NOT_SET)
+  if(GetChecksumInfo().has_value() && GetChecksumInfo().value().GetShouldValidateResponse() != ChecksumMode::NOT_SET)
   {
-    headers.emplace("x-amz-checksum-mode", ChecksumModeMapper::GetNameForChecksumMode(m_checksumMode));
+    headers.emplace("x-amz-checksum-mode", ChecksumModeMapper::GetNameForChecksumMode(GetChecksumInfo().value().GetShouldValidateResponse()));
   }
 
   return headers;
@@ -219,7 +217,11 @@ GetObjectRequest::EndpointParameters GetObjectRequest::GetEndpointContextParams(
 }
 bool GetObjectRequest::ShouldValidateResponseChecksum() const
 {
-  return m_checksumMode == ChecksumMode::ENABLED;
+  if (GetChecksumInfo().has_value())
+  {
+    return GetChecksumInfo().value().GetShouldValidateResponse() == ChecksumMode::ENABLED;
+  }
+  return true;
 }
 
 Aws::Vector<Aws::String> GetObjectRequest::GetResponseChecksumAlgorithmNames() const

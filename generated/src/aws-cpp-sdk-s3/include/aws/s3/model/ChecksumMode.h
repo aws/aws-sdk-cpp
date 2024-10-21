@@ -13,11 +13,7 @@ namespace S3
 {
 namespace Model
 {
-  enum class ChecksumMode
-  {
-    NOT_SET,
-    ENABLED
-  };
+  using ChecksumMode = Aws::Client::Checksum::ChecksumMode;
 
 namespace ChecksumModeMapper
 {

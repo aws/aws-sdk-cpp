@@ -22,6 +22,12 @@ namespace Aws
                 SHA256,
             };
 
+            enum class ChecksumMode
+            {
+                NOT_SET,
+                ENABLED,
+            };
+
             class ChecksumInfo
             {
             public:
@@ -54,18 +60,6 @@ namespace Aws
                     return m_checksumHeaders;
                 }
 
-                void AddResponseChecksum(ChecksumAlgorithm algorithm)
-                {
-                    m_responseChecksums.emplace_back(algorithm, HashFactoryForAlgorithm(algorithm)());
-                }
-
-                using ResponseChecksumEntry = std::pair<ChecksumAlgorithm, std::shared_ptr<Aws::Utils::Crypto::Hash>>;
-                using ResponseChecksums = Aws::Vector<ResponseChecksumEntry>;
-                ResponseChecksums GetResponseChecksums() const
-                {
-                    return m_responseChecksums;
-                }
-
                 void SetChecksumAlgorithm(ChecksumAlgorithm algorithm)
                 {
                     m_checksumAlgorithm = algorithm;
@@ -87,11 +81,34 @@ namespace Aws
                     return m_checksumHash;
                 }
 
+                void AddResponseChecksum(ChecksumAlgorithm algorithm)
+                {
+                    m_responseChecksums.emplace_back(algorithm, HashFactoryForAlgorithm(algorithm)());
+                }
+
+                using ResponseChecksumEntry = std::pair<ChecksumAlgorithm, std::shared_ptr<Aws::Utils::Crypto::Hash>>;
+                using ResponseChecksums = Aws::Vector<ResponseChecksumEntry>;
+                ResponseChecksums GetResponseChecksums() const
+                {
+                    return m_responseChecksums;
+                }
+
+                const ChecksumMode& GetShouldValidateResponse() const
+                {
+                    return m_shouldValidateResponse;
+                }
+
+                void SetShouldValidateResponse(ChecksumMode mode)
+                {
+                    m_shouldValidateResponse = mode;
+                }
+
             private:
                 Aws::Map<Aws::String, Aws::String> m_checksumHeaders{};
-                ResponseChecksums m_responseChecksums{};
                 ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
                 std::shared_ptr<Aws::Utils::Crypto::Hash> m_checksumHash{};
+                ChecksumMode m_shouldValidateResponse{ChecksumMode::NOT_SET};
+                ResponseChecksums m_responseChecksums{};
                 // we need to return a ref to a string for checksum values for
                 // backwards compatibility reasons. So we need to return a
                 // non-static string when the header is not found.

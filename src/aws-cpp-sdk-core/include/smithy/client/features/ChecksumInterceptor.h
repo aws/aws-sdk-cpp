@@ -117,7 +117,7 @@ namespace smithy
                 }
 
                 // Response checksums
-                if (request.ShouldValidateResponseChecksum() && checksumInfo.has_value())
+                if (checksumInfo.has_value() && checksumInfo.value().GetShouldValidateResponse() == Aws::Client::Checksum::ChecksumMode::ENABLED)
                 {
                     const auto responseChecksum = checksumInfo.value().GetResponseChecksums();
                     std::for_each(responseChecksum.begin(),
