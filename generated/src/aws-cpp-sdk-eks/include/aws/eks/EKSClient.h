@@ -1583,11 +1583,13 @@ namespace EKS
          * from, the subnets must be in the same VPC as the subnets that the cluster was
          * created with. For more information about the VPC requirements, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html</a>
-         * in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <p>Cluster updates are
-         * asynchronous, and they should finish within a few minutes. During an update, the
-         * cluster status moves to <code>UPDATING</code> (this status transition is
-         * eventually consistent). When the update is complete (either <code>Failed</code>
-         * or <code>Successful</code>), the cluster status moves to
+         * in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <p>You can also use this API
+         * operation to enable or disable ARC zonal shift. If zonal shift is enabled,
+         * Amazon Web Services configures zonal autoshift for the cluster.</p> <p>Cluster
+         * updates are asynchronous, and they should finish within a few minutes. During an
+         * update, the cluster status moves to <code>UPDATING</code> (this status
+         * transition is eventually consistent). When the update is complete (either
+         * <code>Failed</code> or <code>Successful</code>), the cluster status moves to
          * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">AWS
          * API Reference</a></p>

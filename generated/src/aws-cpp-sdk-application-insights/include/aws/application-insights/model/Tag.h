@@ -37,9 +37,9 @@ namespace Model
    * apply to tags:</p> <ul> <li> <p>Tag keys and values are case sensitive.</p>
    * </li> <li> <p>For each associated resource, each tag key must be unique and it
    * can have only one value.</p> </li> <li> <p>The <code>aws:</code> prefix is
-   * reserved for use by AWS; you can’t use it in any tag keys or values that you
-   * define. In addition, you can't edit or remove tag keys or values that use this
-   * prefix. </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * reserved for use by Amazon Web Services; you can’t use it in any tag keys or
+   * values that you define. In addition, you can't edit or remove tag keys or values
+   * that use this prefix. </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/Tag">AWS
    * API Reference</a></p>
    */

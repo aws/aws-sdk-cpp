@@ -71,7 +71,8 @@ namespace Model
     ///@{
     /**
      * <p>A number that identifies and differentiates payment cards with the same
-     * Primary Account Number (PAN).</p>
+     * Primary Account Number (PAN). Typically 00 is used, if no value is provided by
+     * the terminal.</p>
      */
     inline const Aws::String& GetPanSequenceNumber() const{ return m_panSequenceNumber; }
     inline bool PanSequenceNumberHasBeenSet() const { return m_panSequenceNumberHasBeenSet; }

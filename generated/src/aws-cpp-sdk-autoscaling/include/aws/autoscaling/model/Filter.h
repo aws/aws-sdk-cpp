@@ -50,9 +50,11 @@ namespace Model
     ///@{
     /**
      * <p>The name of the filter.</p> <p>The valid values for <code>Name</code> depend
-     * on which API operation you're using with the filter
-     * (<a>DescribeAutoScalingGroups</a> or <a>DescribeTags</a>).</p> <p>
-     * <b>DescribeAutoScalingGroups</b> </p> <p>Valid values for <code>Name</code>
+     * on which API operation you're using with the filter (<a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).</p>
+     * <p> <b>DescribeAutoScalingGroups</b> </p> <p>Valid values for <code>Name</code>
      * include the following: </p> <ul> <li> <p> <code>tag-key</code> - Accepts tag
      * keys. The results only include information about the Auto Scaling groups
      * associated with these tag keys. </p> </li> <li> <p> <code>tag-value</code> -

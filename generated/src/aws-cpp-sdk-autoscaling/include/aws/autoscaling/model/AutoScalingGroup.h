@@ -322,7 +322,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current state of the group when the <a>DeleteAutoScalingGroup</a>
+     * <p>The current state of the group when the <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteAutoScalingGroup.html">DeleteAutoScalingGroup</a>
      * operation is in progress.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }

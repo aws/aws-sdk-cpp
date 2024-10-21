@@ -49,6 +49,7 @@ namespace Aws
         static const int AuthenticationMode_HASH = HashingUtils::HashString("AuthenticationMode");
         static const int PodIdentityAssociations_HASH = HashingUtils::HashString("PodIdentityAssociations");
         static const int UpgradePolicy_HASH = HashingUtils::HashString("UpgradePolicy");
+        static const int ZonalShiftConfig_HASH = HashingUtils::HashString("ZonalShiftConfig");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -170,6 +171,10 @@ namespace Aws
           {
             return UpdateParamType::UpgradePolicy;
           }
+          else if (hashCode == ZonalShiftConfig_HASH)
+          {
+            return UpdateParamType::ZonalShiftConfig;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -244,6 +249,8 @@ namespace Aws
             return "PodIdentityAssociations";
           case UpdateParamType::UpgradePolicy:
             return "UpgradePolicy";
+          case UpdateParamType::ZonalShiftConfig:
+            return "ZonalShiftConfig";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

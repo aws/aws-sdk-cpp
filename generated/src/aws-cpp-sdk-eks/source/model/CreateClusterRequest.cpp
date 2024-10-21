@@ -27,7 +27,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_accessConfigHasBeenSet(false),
     m_bootstrapSelfManagedAddons(false),
     m_bootstrapSelfManagedAddonsHasBeenSet(false),
-    m_upgradePolicyHasBeenSet(false)
+    m_upgradePolicyHasBeenSet(false),
+    m_zonalShiftConfigHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_upgradePolicyHasBeenSet)
   {
    payload.WithObject("upgradePolicy", m_upgradePolicy.Jsonize());
+
+  }
+
+  if(m_zonalShiftConfigHasBeenSet)
+  {
+   payload.WithObject("zonalShiftConfig", m_zonalShiftConfig.Jsonize());
 
   }
 

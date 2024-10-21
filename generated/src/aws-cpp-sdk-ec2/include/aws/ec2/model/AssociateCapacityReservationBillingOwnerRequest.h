@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the consumer account to which assign billing.</p>
+     * <p>The ID of the consumer account to which to assign billing.</p>
      */
     inline const Aws::String& GetUnusedReservationBillingOwnerId() const{ return m_unusedReservationBillingOwnerId; }
     inline bool UnusedReservationBillingOwnerIdHasBeenSet() const { return m_unusedReservationBillingOwnerIdHasBeenSet; }

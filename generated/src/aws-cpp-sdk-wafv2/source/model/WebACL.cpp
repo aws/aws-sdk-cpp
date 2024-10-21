@@ -37,7 +37,9 @@ WebACL::WebACL() :
     m_captchaConfigHasBeenSet(false),
     m_challengeConfigHasBeenSet(false),
     m_tokenDomainsHasBeenSet(false),
-    m_associationConfigHasBeenSet(false)
+    m_associationConfigHasBeenSet(false),
+    m_retrofittedByFirewallManager(false),
+    m_retrofittedByFirewallManagerHasBeenSet(false)
 {
 }
 
@@ -183,6 +185,13 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     m_associationConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RetrofittedByFirewallManager"))
+  {
+    m_retrofittedByFirewallManager = jsonValue.GetBool("RetrofittedByFirewallManager");
+
+    m_retrofittedByFirewallManagerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -314,6 +323,12 @@ JsonValue WebACL::Jsonize() const
   if(m_associationConfigHasBeenSet)
   {
    payload.WithObject("AssociationConfig", m_associationConfig.Jsonize());
+
+  }
+
+  if(m_retrofittedByFirewallManagerHasBeenSet)
+  {
+   payload.WithBool("RetrofittedByFirewallManager", m_retrofittedByFirewallManager);
 
   }
 

@@ -44,7 +44,8 @@ namespace Model
     Subnets,
     AuthenticationMode,
     PodIdentityAssociations,
-    UpgradePolicy
+    UpgradePolicy,
+    ZonalShiftConfig
   };
 
 namespace UpdateParamTypeMapper

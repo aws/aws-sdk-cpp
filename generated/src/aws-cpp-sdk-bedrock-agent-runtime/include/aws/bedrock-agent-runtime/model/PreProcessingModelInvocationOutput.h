@@ -42,7 +42,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p> Contains information about the foundation model output from the
+     * pre-processing step. </p>
+     */
     inline const Metadata& GetMetadata() const{ return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
     inline void SetMetadata(const Metadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
@@ -65,7 +68,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p> Details of the raw response from the foundation model output. </p>
+     */
     inline const RawResponse& GetRawResponse() const{ return m_rawResponse; }
     inline bool RawResponseHasBeenSet() const { return m_rawResponseHasBeenSet; }
     inline void SetRawResponse(const RawResponse& value) { m_rawResponseHasBeenSet = true; m_rawResponse = value; }

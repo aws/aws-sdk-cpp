@@ -21,7 +21,8 @@ StartReplicationTaskAssessmentRunRequest::StartReplicationTaskAssessmentRunReque
     m_resultKmsKeyArnHasBeenSet(false),
     m_assessmentRunNameHasBeenSet(false),
     m_includeOnlyHasBeenSet(false),
-    m_excludeHasBeenSet(false)
+    m_excludeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,17 @@ Aws::String StartReplicationTaskAssessmentRunRequest::SerializePayload() const
      excludeJsonList[excludeIndex].AsString(m_exclude[excludeIndex]);
    }
    payload.WithArray("Exclude", std::move(excludeJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

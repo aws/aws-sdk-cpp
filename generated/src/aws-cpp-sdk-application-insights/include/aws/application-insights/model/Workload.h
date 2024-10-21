@@ -106,6 +106,17 @@ namespace Model
     inline Workload& WithWorkloadRemarks(Aws::String&& value) { SetWorkloadRemarks(std::move(value)); return *this;}
     inline Workload& WithWorkloadRemarks(const char* value) { SetWorkloadRemarks(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether all of the component configurations required to monitor a
+     * workload were provided.</p>
+     */
+    inline bool GetMissingWorkloadConfig() const{ return m_missingWorkloadConfig; }
+    inline bool MissingWorkloadConfigHasBeenSet() const { return m_missingWorkloadConfigHasBeenSet; }
+    inline void SetMissingWorkloadConfig(bool value) { m_missingWorkloadConfigHasBeenSet = true; m_missingWorkloadConfig = value; }
+    inline Workload& WithMissingWorkloadConfig(bool value) { SetMissingWorkloadConfig(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_workloadId;
@@ -122,6 +133,9 @@ namespace Model
 
     Aws::String m_workloadRemarks;
     bool m_workloadRemarksHasBeenSet = false;
+
+    bool m_missingWorkloadConfig;
+    bool m_missingWorkloadConfigHasBeenSet = false;
   };
 
 } // namespace Model
