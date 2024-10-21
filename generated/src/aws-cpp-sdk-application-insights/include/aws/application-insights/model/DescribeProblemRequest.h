@@ -50,8 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS account ID for the owner of the resource group affected by the
-     * problem.</p>
+     * <p>The Amazon Web Services account ID for the owner of the resource group
+     * affected by the problem.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }

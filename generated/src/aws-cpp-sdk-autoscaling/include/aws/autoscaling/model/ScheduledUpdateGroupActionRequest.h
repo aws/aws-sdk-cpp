@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>Describes information used for one or more scheduled scaling action updates
-   * in a <a>BatchPutScheduledUpdateGroupAction</a> operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * in a <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_BatchPutScheduledUpdateGroupAction.html">BatchPutScheduledUpdateGroupAction</a>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScheduledUpdateGroupActionRequest">AWS
    * API Reference</a></p>
    */

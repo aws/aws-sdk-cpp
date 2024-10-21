@@ -23,8 +23,9 @@ namespace Model
 
   /**
    * <p>Specifies the minimum and maximum for the <code>AcceleratorCount</code>
-   * object when you specify <a>InstanceRequirements</a> for an Auto Scaling
-   * group.</p><p><h3>See Also:</h3>   <a
+   * object when you specify <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>
+   * for an Auto Scaling group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AcceleratorCountRequest">AWS
    * API Reference</a></p>
    */

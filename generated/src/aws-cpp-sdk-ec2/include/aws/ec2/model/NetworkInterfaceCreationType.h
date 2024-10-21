@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     efa,
+    efa_only,
     branch,
     trunk
   };

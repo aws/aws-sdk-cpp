@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS account ID for the owner of the application.</p>
+     * <p>The Amazon Web Services account ID for the owner of the application.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -93,6 +93,21 @@ namespace Model
     inline ApplicationInfo& WithOpsItemSNSTopicArn(const Aws::String& value) { SetOpsItemSNSTopicArn(value); return *this;}
     inline ApplicationInfo& WithOpsItemSNSTopicArn(Aws::String&& value) { SetOpsItemSNSTopicArn(std::move(value)); return *this;}
     inline ApplicationInfo& WithOpsItemSNSTopicArn(const char* value) { SetOpsItemSNSTopicArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The SNS topic ARN that is associated with SNS notifications for updates or
+     * issues. </p>
+     */
+    inline const Aws::String& GetSNSNotificationArn() const{ return m_sNSNotificationArn; }
+    inline bool SNSNotificationArnHasBeenSet() const { return m_sNSNotificationArnHasBeenSet; }
+    inline void SetSNSNotificationArn(const Aws::String& value) { m_sNSNotificationArnHasBeenSet = true; m_sNSNotificationArn = value; }
+    inline void SetSNSNotificationArn(Aws::String&& value) { m_sNSNotificationArnHasBeenSet = true; m_sNSNotificationArn = std::move(value); }
+    inline void SetSNSNotificationArn(const char* value) { m_sNSNotificationArnHasBeenSet = true; m_sNSNotificationArn.assign(value); }
+    inline ApplicationInfo& WithSNSNotificationArn(const Aws::String& value) { SetSNSNotificationArn(value); return *this;}
+    inline ApplicationInfo& WithSNSNotificationArn(Aws::String&& value) { SetSNSNotificationArn(std::move(value)); return *this;}
+    inline ApplicationInfo& WithSNSNotificationArn(const char* value) { SetSNSNotificationArn(value); return *this;}
     ///@}
 
     ///@{
@@ -180,6 +195,9 @@ namespace Model
 
     Aws::String m_opsItemSNSTopicArn;
     bool m_opsItemSNSTopicArnHasBeenSet = false;
+
+    Aws::String m_sNSNotificationArn;
+    bool m_sNSNotificationArnHasBeenSet = false;
 
     bool m_opsCenterEnabled;
     bool m_opsCenterEnabledHasBeenSet = false;

@@ -19,7 +19,8 @@ UpdateClusterConfigRequest::UpdateClusterConfigRequest() :
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_accessConfigHasBeenSet(false),
-    m_upgradePolicyHasBeenSet(false)
+    m_upgradePolicyHasBeenSet(false),
+    m_zonalShiftConfigHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,12 @@ Aws::String UpdateClusterConfigRequest::SerializePayload() const
   if(m_upgradePolicyHasBeenSet)
   {
    payload.WithObject("upgradePolicy", m_upgradePolicy.Jsonize());
+
+  }
+
+  if(m_zonalShiftConfigHasBeenSet)
+  {
+   payload.WithObject("zonalShiftConfig", m_zonalShiftConfig.Jsonize());
 
   }
 

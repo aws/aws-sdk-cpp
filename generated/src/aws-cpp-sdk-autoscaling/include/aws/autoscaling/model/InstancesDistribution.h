@@ -49,15 +49,17 @@ namespace Model
      * <dl> <dt>lowest-price</dt> <dd> <p>Uses price to determine which instance types
      * are the highest priority, launching the lowest priced instance types within an
      * Availability Zone first. This is the default value for Auto Scaling groups that
-     * specify <a>InstanceRequirements</a>. </p> </dd> <dt>prioritized</dt> <dd> <p>You
-     * set the order of instance types for the launch template overrides from highest
-     * to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling
-     * launches your highest priority instance types first. If all your On-Demand
-     * capacity cannot be fulfilled using your highest priority instance type, then
-     * Amazon EC2 Auto Scaling launches the remaining capacity using the second
-     * priority instance type, and so on. This is the default value for Auto Scaling
-     * groups that don't specify <a>InstanceRequirements</a> and cannot be used for
-     * groups that do.</p> </dd> </dl>
+     * specify <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>.
+     * </p> </dd> <dt>prioritized</dt> <dd> <p>You set the order of instance types for
+     * the launch template overrides from highest to lowest priority (from first to
+     * last in the list). Amazon EC2 Auto Scaling launches your highest priority
+     * instance types first. If all your On-Demand capacity cannot be fulfilled using
+     * your highest priority instance type, then Amazon EC2 Auto Scaling launches the
+     * remaining capacity using the second priority instance type, and so on. This is
+     * the default value for Auto Scaling groups that don't specify <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>
+     * and cannot be used for groups that do.</p> </dd> </dl>
      */
     inline const Aws::String& GetOnDemandAllocationStrategy() const{ return m_onDemandAllocationStrategy; }
     inline bool OnDemandAllocationStrategyHasBeenSet() const { return m_onDemandAllocationStrategyHasBeenSet; }
@@ -114,18 +116,18 @@ namespace Model
      * type priorities on a best effort basis but optimizes for capacity first. Note
      * that if the On-Demand allocation strategy is set to <code>prioritized</code>,
      * the same priority is applied when fulfilling On-Demand capacity. This is not a
-     * valid value for Auto Scaling groups that specify
-     * <a>InstanceRequirements</a>.</p> </dd> <dt>lowest-price</dt> <dd> <p>Requests
-     * Spot Instances using the lowest priced pools within an Availability Zone, across
-     * the number of Spot pools that you specify for the <code>SpotInstancePools</code>
-     * property. To ensure that your desired capacity is met, you might receive Spot
-     * Instances from several pools. This is the default value, but it might lead to
-     * high interruption rates because this strategy only considers instance price and
-     * not available capacity.</p> </dd> <dt>price-capacity-optimized
-     * (recommended)</dt> <dd> <p>The price and capacity optimized allocation strategy
-     * looks at both price and capacity to select the Spot Instance pools that are the
-     * least likely to be interrupted and have the lowest possible price.</p> </dd>
-     * </dl>
+     * valid value for Auto Scaling groups that specify <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>.</p>
+     * </dd> <dt>lowest-price</dt> <dd> <p>Requests Spot Instances using the lowest
+     * priced pools within an Availability Zone, across the number of Spot pools that
+     * you specify for the <code>SpotInstancePools</code> property. To ensure that your
+     * desired capacity is met, you might receive Spot Instances from several pools.
+     * This is the default value, but it might lead to high interruption rates because
+     * this strategy only considers instance price and not available capacity.</p>
+     * </dd> <dt>price-capacity-optimized (recommended)</dt> <dd> <p>The price and
+     * capacity optimized allocation strategy looks at both price and capacity to
+     * select the Spot Instance pools that are the least likely to be interrupted and
+     * have the lowest possible price.</p> </dd> </dl>
      */
     inline const Aws::String& GetSpotAllocationStrategy() const{ return m_spotAllocationStrategy; }
     inline bool SpotAllocationStrategyHasBeenSet() const { return m_spotAllocationStrategyHasBeenSet; }

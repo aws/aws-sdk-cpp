@@ -124,9 +124,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed
-     * CMK under which the EBS volume is encrypted.</p> <p>This parameter is only
-     * supported on <code>BlockDeviceMapping</code> objects called by <a
+     * <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed
+     * KMS key to use for EBS encryption.</p> <p>This parameter is only supported on
+     * <code>BlockDeviceMapping</code> objects called by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,

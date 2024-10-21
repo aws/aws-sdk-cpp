@@ -20,6 +20,7 @@
 #include <aws/eks/model/OutpostConfigResponse.h>
 #include <aws/eks/model/AccessConfigResponse.h>
 #include <aws/eks/model/UpgradePolicyResponse.h>
+#include <aws/eks/model/ZonalShiftConfigResponse.h>
 #include <aws/eks/model/EncryptionConfig.h>
 #include <utility>
 
@@ -365,6 +366,18 @@ namespace Model
     inline Cluster& WithUpgradePolicy(const UpgradePolicyResponse& value) { SetUpgradePolicy(value); return *this;}
     inline Cluster& WithUpgradePolicy(UpgradePolicyResponse&& value) { SetUpgradePolicy(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for zonal shift for the cluster.</p>
+     */
+    inline const ZonalShiftConfigResponse& GetZonalShiftConfig() const{ return m_zonalShiftConfig; }
+    inline bool ZonalShiftConfigHasBeenSet() const { return m_zonalShiftConfigHasBeenSet; }
+    inline void SetZonalShiftConfig(const ZonalShiftConfigResponse& value) { m_zonalShiftConfigHasBeenSet = true; m_zonalShiftConfig = value; }
+    inline void SetZonalShiftConfig(ZonalShiftConfigResponse&& value) { m_zonalShiftConfigHasBeenSet = true; m_zonalShiftConfig = std::move(value); }
+    inline Cluster& WithZonalShiftConfig(const ZonalShiftConfigResponse& value) { SetZonalShiftConfig(value); return *this;}
+    inline Cluster& WithZonalShiftConfig(ZonalShiftConfigResponse&& value) { SetZonalShiftConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -432,6 +445,9 @@ namespace Model
 
     UpgradePolicyResponse m_upgradePolicy;
     bool m_upgradePolicyHasBeenSet = false;
+
+    ZonalShiftConfigResponse m_zonalShiftConfig;
+    bool m_zonalShiftConfigHasBeenSet = false;
   };
 
 } // namespace Model

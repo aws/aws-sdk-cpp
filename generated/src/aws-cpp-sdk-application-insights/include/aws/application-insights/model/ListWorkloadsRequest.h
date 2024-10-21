@@ -90,7 +90,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The AWS account ID of the owner of the workload.</p>
+     * <p>The Amazon Web Services account ID of the owner of the workload.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }

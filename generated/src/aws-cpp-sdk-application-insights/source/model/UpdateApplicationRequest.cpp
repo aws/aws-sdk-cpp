@@ -19,6 +19,7 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_cWEMonitorEnabled(false),
     m_cWEMonitorEnabledHasBeenSet(false),
     m_opsItemSNSTopicArnHasBeenSet(false),
+    m_sNSNotificationArnHasBeenSet(false),
     m_removeSNSTopic(false),
     m_removeSNSTopicHasBeenSet(false),
     m_autoConfigEnabled(false),
@@ -53,6 +54,12 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
   if(m_opsItemSNSTopicArnHasBeenSet)
   {
    payload.WithString("OpsItemSNSTopicArn", m_opsItemSNSTopicArn);
+
+  }
+
+  if(m_sNSNotificationArnHasBeenSet)
+  {
+   payload.WithString("SNSNotificationArn", m_sNSNotificationArn);
 
   }
 

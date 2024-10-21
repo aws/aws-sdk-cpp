@@ -35,6 +35,8 @@ namespace Aws
         static const int SAP_HANA_MULTI_NODE_HASH = HashingUtils::HashString("SAP_HANA_MULTI_NODE");
         static const int SAP_HANA_SINGLE_NODE_HASH = HashingUtils::HashString("SAP_HANA_SINGLE_NODE");
         static const int SAP_HANA_HIGH_AVAILABILITY_HASH = HashingUtils::HashString("SAP_HANA_HIGH_AVAILABILITY");
+        static const int SAP_ASE_SINGLE_NODE_HASH = HashingUtils::HashString("SAP_ASE_SINGLE_NODE");
+        static const int SAP_ASE_HIGH_AVAILABILITY_HASH = HashingUtils::HashString("SAP_ASE_HIGH_AVAILABILITY");
         static const int SQL_SERVER_FAILOVER_CLUSTER_INSTANCE_HASH = HashingUtils::HashString("SQL_SERVER_FAILOVER_CLUSTER_INSTANCE");
         static const int SHAREPOINT_HASH = HashingUtils::HashString("SHAREPOINT");
         static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ACTIVE_DIRECTORY");
@@ -106,6 +108,14 @@ namespace Aws
           {
             return Tier::SAP_HANA_HIGH_AVAILABILITY;
           }
+          else if (hashCode == SAP_ASE_SINGLE_NODE_HASH)
+          {
+            return Tier::SAP_ASE_SINGLE_NODE;
+          }
+          else if (hashCode == SAP_ASE_HIGH_AVAILABILITY_HASH)
+          {
+            return Tier::SAP_ASE_HIGH_AVAILABILITY;
+          }
           else if (hashCode == SQL_SERVER_FAILOVER_CLUSTER_INSTANCE_HASH)
           {
             return Tier::SQL_SERVER_FAILOVER_CLUSTER_INSTANCE;
@@ -176,6 +186,10 @@ namespace Aws
             return "SAP_HANA_SINGLE_NODE";
           case Tier::SAP_HANA_HIGH_AVAILABILITY:
             return "SAP_HANA_HIGH_AVAILABILITY";
+          case Tier::SAP_ASE_SINGLE_NODE:
+            return "SAP_ASE_SINGLE_NODE";
+          case Tier::SAP_ASE_HIGH_AVAILABILITY:
+            return "SAP_ASE_HIGH_AVAILABILITY";
           case Tier::SQL_SERVER_FAILOVER_CLUSTER_INSTANCE:
             return "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE";
           case Tier::SHAREPOINT:

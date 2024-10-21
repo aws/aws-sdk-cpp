@@ -24,7 +24,9 @@ Workload::Workload() :
     m_workloadNameHasBeenSet(false),
     m_tier(Tier::NOT_SET),
     m_tierHasBeenSet(false),
-    m_workloadRemarksHasBeenSet(false)
+    m_workloadRemarksHasBeenSet(false),
+    m_missingWorkloadConfig(false),
+    m_missingWorkloadConfigHasBeenSet(false)
 {
 }
 
@@ -71,6 +73,13 @@ Workload& Workload::operator =(JsonView jsonValue)
     m_workloadRemarksHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MissingWorkloadConfig"))
+  {
+    m_missingWorkloadConfig = jsonValue.GetBool("MissingWorkloadConfig");
+
+    m_missingWorkloadConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +113,12 @@ JsonValue Workload::Jsonize() const
   if(m_workloadRemarksHasBeenSet)
   {
    payload.WithString("WorkloadRemarks", m_workloadRemarks);
+
+  }
+
+  if(m_missingWorkloadConfigHasBeenSet)
+  {
+   payload.WithBool("MissingWorkloadConfig", m_missingWorkloadConfig);
 
   }
 

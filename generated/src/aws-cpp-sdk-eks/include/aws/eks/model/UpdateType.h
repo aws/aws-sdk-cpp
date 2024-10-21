@@ -26,7 +26,8 @@ namespace Model
     AddonUpdate,
     VpcConfigUpdate,
     AccessConfigUpdate,
-    UpgradePolicyUpdate
+    UpgradePolicyUpdate,
+    ZonalShiftConfigUpdate
   };
 
 namespace UpdateTypeMapper

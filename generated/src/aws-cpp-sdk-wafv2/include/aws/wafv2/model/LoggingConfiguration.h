@@ -128,7 +128,14 @@ namespace Model
     /**
      * <p>Indicates whether the logging configuration was created by Firewall Manager,
      * as part of an WAF policy configuration. If true, only Firewall Manager can
-     * modify or delete the configuration. </p>
+     * modify or delete the configuration. </p> <p>The logging configuration can be
+     * created by Firewall Manager for use with any web ACL that Firewall Manager is
+     * using for an WAF policy. Web ACLs that Firewall Manager creates and uses have
+     * their <code>ManagedByFirewallManager</code> property set to true. Web ACLs that
+     * were created by a customer account and then retrofitted by Firewall Manager for
+     * use by a policy have their <code>RetrofittedByFirewallManager</code> property
+     * set to true. For either case, any corresponding logging configuration will
+     * indicate <code>ManagedByFirewallManager</code>.</p>
      */
     inline bool GetManagedByFirewallManager() const{ return m_managedByFirewallManager; }
     inline bool ManagedByFirewallManagerHasBeenSet() const { return m_managedByFirewallManagerHasBeenSet; }

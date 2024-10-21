@@ -221,6 +221,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The CIDR blocks of the endpoints for the data migration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDataMigrationCidrBlocks() const{ return m_dataMigrationCidrBlocks; }
+    inline bool DataMigrationCidrBlocksHasBeenSet() const { return m_dataMigrationCidrBlocksHasBeenSet; }
+    inline void SetDataMigrationCidrBlocks(const Aws::Vector<Aws::String>& value) { m_dataMigrationCidrBlocksHasBeenSet = true; m_dataMigrationCidrBlocks = value; }
+    inline void SetDataMigrationCidrBlocks(Aws::Vector<Aws::String>&& value) { m_dataMigrationCidrBlocksHasBeenSet = true; m_dataMigrationCidrBlocks = std::move(value); }
+    inline DataMigration& WithDataMigrationCidrBlocks(const Aws::Vector<Aws::String>& value) { SetDataMigrationCidrBlocks(value); return *this;}
+    inline DataMigration& WithDataMigrationCidrBlocks(Aws::Vector<Aws::String>&& value) { SetDataMigrationCidrBlocks(std::move(value)); return *this;}
+    inline DataMigration& AddDataMigrationCidrBlocks(const Aws::String& value) { m_dataMigrationCidrBlocksHasBeenSet = true; m_dataMigrationCidrBlocks.push_back(value); return *this; }
+    inline DataMigration& AddDataMigrationCidrBlocks(Aws::String&& value) { m_dataMigrationCidrBlocksHasBeenSet = true; m_dataMigrationCidrBlocks.push_back(std::move(value)); return *this; }
+    inline DataMigration& AddDataMigrationCidrBlocks(const char* value) { m_dataMigrationCidrBlocksHasBeenSet = true; m_dataMigrationCidrBlocks.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Information about the data migration's most recent error or failure.</p>
      */
     inline const Aws::String& GetLastFailureMessage() const{ return m_lastFailureMessage; }
@@ -286,6 +301,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_publicIpAddresses;
     bool m_publicIpAddressesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_dataMigrationCidrBlocks;
+    bool m_dataMigrationCidrBlocksHasBeenSet = false;
 
     Aws::String m_lastFailureMessage;
     bool m_lastFailureMessageHasBeenSet = false;

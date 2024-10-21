@@ -42,7 +42,9 @@ ResourceViolation::ResourceViolation() :
     m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet(false),
     m_firewallSubnetMissingVPCEndpointViolationHasBeenSet(false),
     m_invalidNetworkAclEntriesViolationHasBeenSet(false),
-    m_possibleRemediationActionsHasBeenSet(false)
+    m_possibleRemediationActionsHasBeenSet(false),
+    m_webACLHasIncompatibleConfigurationViolationHasBeenSet(false),
+    m_webACLHasOutOfScopeResourcesViolationHasBeenSet(false)
 {
 }
 
@@ -222,6 +224,20 @@ ResourceViolation& ResourceViolation::operator =(JsonView jsonValue)
     m_possibleRemediationActionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WebACLHasIncompatibleConfigurationViolation"))
+  {
+    m_webACLHasIncompatibleConfigurationViolation = jsonValue.GetObject("WebACLHasIncompatibleConfigurationViolation");
+
+    m_webACLHasIncompatibleConfigurationViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WebACLHasOutOfScopeResourcesViolation"))
+  {
+    m_webACLHasOutOfScopeResourcesViolation = jsonValue.GetObject("WebACLHasOutOfScopeResourcesViolation");
+
+    m_webACLHasOutOfScopeResourcesViolationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -370,6 +386,18 @@ JsonValue ResourceViolation::Jsonize() const
   if(m_possibleRemediationActionsHasBeenSet)
   {
    payload.WithObject("PossibleRemediationActions", m_possibleRemediationActions.Jsonize());
+
+  }
+
+  if(m_webACLHasIncompatibleConfigurationViolationHasBeenSet)
+  {
+   payload.WithObject("WebACLHasIncompatibleConfigurationViolation", m_webACLHasIncompatibleConfigurationViolation.Jsonize());
+
+  }
+
+  if(m_webACLHasOutOfScopeResourcesViolationHasBeenSet)
+  {
+   payload.WithObject("WebACLHasOutOfScopeResourcesViolation", m_webACLHasOutOfScopeResourcesViolation.Jsonize());
 
   }
 

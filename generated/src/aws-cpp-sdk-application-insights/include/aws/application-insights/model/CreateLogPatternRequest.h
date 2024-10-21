@@ -102,8 +102,8 @@ namespace Model
      * a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates
      * to a <code>500,000</code> rank. And a <code>High</code> severity pattern
      * translates to a <code>250,000</code> rank. Rank values less than <code>1</code>
-     * or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
-     * </p>
+     * or greater than <code>1,000,000</code> are reserved for Amazon Web Services
+     * provided patterns. </p>
      */
     inline int GetRank() const{ return m_rank; }
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
