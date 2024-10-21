@@ -16,6 +16,7 @@
 #end
 #set($index = 1)
 #foreach($entry in $shape.members.entrySet())
+#if(!$entry.value.isChecksumMember() && $operation.requestAlgorithmMember != $entry.key && $operation.requestValidationModeMember != $entry.key)
 #set($memberShape = $entry.value.shape)
 #if($memberShape.primitive || $memberShape.enum || $entry.value.idempotencyToken)
 #if($memberShape.primitive)
@@ -41,6 +42,7 @@
 #set($initializers = "${initializers},")
 #end
 #set($index = $index + 1)
+#end
 #end
 #end
 #if($shape.request && $operation.result.shape.hasEventStreamMembers())
