@@ -198,6 +198,21 @@ namespace Model
 
     ///@{
     /**
+     * <p> The writer endpoint for the new global database cluster. This endpoint
+     * always points to the writer DB instance in the current primary cluster. </p>
+     */
+    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
+    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
+    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
+    inline GlobalCluster& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
+    inline GlobalCluster& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
+    inline GlobalCluster& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A data object containing all properties for the current state of an
      * in-process or pending switchover or failover process for this global cluster
      * (Aurora global database). This object is empty unless the
@@ -257,6 +272,9 @@ namespace Model
 
     Aws::Vector<GlobalClusterMember> m_globalClusterMembers;
     bool m_globalClusterMembersHasBeenSet = false;
+
+    Aws::String m_endpoint;
+    bool m_endpointHasBeenSet = false;
 
     FailoverState m_failoverState;
     bool m_failoverStateHasBeenSet = false;

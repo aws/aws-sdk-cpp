@@ -14,13 +14,22 @@ using namespace Aws::Utils;
 
 CancelBatchJobExecutionRequest::CancelBatchJobExecutionRequest() : 
     m_applicationIdHasBeenSet(false),
+    m_authSecretsManagerArnHasBeenSet(false),
     m_executionIdHasBeenSet(false)
 {
 }
 
 Aws::String CancelBatchJobExecutionRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_authSecretsManagerArnHasBeenSet)
+  {
+   payload.WithString("authSecretsManagerArn", m_authSecretsManagerArn);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

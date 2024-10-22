@@ -8,9 +8,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/repostspace/model/ConfigurationStatus.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/repostspace/model/TierLevel.h>
 #include <aws/repostspace/model/VanityDomainStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/repostspace/model/Role.h>
 #include <utility>
 
 namespace Aws
@@ -134,20 +136,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of groups that are administrators of the private re:Post.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetGroupAdmins() const{ return m_groupAdmins; }
-    inline void SetGroupAdmins(const Aws::Vector<Aws::String>& value) { m_groupAdmins = value; }
-    inline void SetGroupAdmins(Aws::Vector<Aws::String>&& value) { m_groupAdmins = std::move(value); }
-    inline GetSpaceResult& WithGroupAdmins(const Aws::Vector<Aws::String>& value) { SetGroupAdmins(value); return *this;}
-    inline GetSpaceResult& WithGroupAdmins(Aws::Vector<Aws::String>&& value) { SetGroupAdmins(std::move(value)); return *this;}
-    inline GetSpaceResult& AddGroupAdmins(const Aws::String& value) { m_groupAdmins.push_back(value); return *this; }
-    inline GetSpaceResult& AddGroupAdmins(Aws::String&& value) { m_groupAdmins.push_back(std::move(value)); return *this; }
-    inline GetSpaceResult& AddGroupAdmins(const char* value) { m_groupAdmins.push_back(value); return *this; }
-    ///@}
-
-    ///@{
-    /**
      * <p>The name of the private re:Post.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -170,6 +158,23 @@ namespace Model
     inline GetSpaceResult& WithRandomDomain(const Aws::String& value) { SetRandomDomain(value); return *this;}
     inline GetSpaceResult& WithRandomDomain(Aws::String&& value) { SetRandomDomain(std::move(value)); return *this;}
     inline GetSpaceResult& WithRandomDomain(const char* value) { SetRandomDomain(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A map of accessor identifiers and their roles.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<Role>>& GetRoles() const{ return m_roles; }
+    inline void SetRoles(const Aws::Map<Aws::String, Aws::Vector<Role>>& value) { m_roles = value; }
+    inline void SetRoles(Aws::Map<Aws::String, Aws::Vector<Role>>&& value) { m_roles = std::move(value); }
+    inline GetSpaceResult& WithRoles(const Aws::Map<Aws::String, Aws::Vector<Role>>& value) { SetRoles(value); return *this;}
+    inline GetSpaceResult& WithRoles(Aws::Map<Aws::String, Aws::Vector<Role>>&& value) { SetRoles(std::move(value)); return *this;}
+    inline GetSpaceResult& AddRoles(const Aws::String& key, const Aws::Vector<Role>& value) { m_roles.emplace(key, value); return *this; }
+    inline GetSpaceResult& AddRoles(Aws::String&& key, const Aws::Vector<Role>& value) { m_roles.emplace(std::move(key), value); return *this; }
+    inline GetSpaceResult& AddRoles(const Aws::String& key, Aws::Vector<Role>&& value) { m_roles.emplace(key, std::move(value)); return *this; }
+    inline GetSpaceResult& AddRoles(Aws::String&& key, Aws::Vector<Role>&& value) { m_roles.emplace(std::move(key), std::move(value)); return *this; }
+    inline GetSpaceResult& AddRoles(const char* key, Aws::Vector<Role>&& value) { m_roles.emplace(key, std::move(value)); return *this; }
+    inline GetSpaceResult& AddRoles(const char* key, const Aws::Vector<Role>& value) { m_roles.emplace(key, value); return *this; }
     ///@}
 
     ///@{
@@ -216,20 +221,6 @@ namespace Model
     inline void SetTier(TierLevel&& value) { m_tier = std::move(value); }
     inline GetSpaceResult& WithTier(const TierLevel& value) { SetTier(value); return *this;}
     inline GetSpaceResult& WithTier(TierLevel&& value) { SetTier(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The list of users that are administrators of the private re:Post.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetUserAdmins() const{ return m_userAdmins; }
-    inline void SetUserAdmins(const Aws::Vector<Aws::String>& value) { m_userAdmins = value; }
-    inline void SetUserAdmins(Aws::Vector<Aws::String>&& value) { m_userAdmins = std::move(value); }
-    inline GetSpaceResult& WithUserAdmins(const Aws::Vector<Aws::String>& value) { SetUserAdmins(value); return *this;}
-    inline GetSpaceResult& WithUserAdmins(Aws::Vector<Aws::String>&& value) { SetUserAdmins(std::move(value)); return *this;}
-    inline GetSpaceResult& AddUserAdmins(const Aws::String& value) { m_userAdmins.push_back(value); return *this; }
-    inline GetSpaceResult& AddUserAdmins(Aws::String&& value) { m_userAdmins.push_back(std::move(value)); return *this; }
-    inline GetSpaceResult& AddUserAdmins(const char* value) { m_userAdmins.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -307,11 +298,11 @@ namespace Model
 
     Aws::String m_description;
 
-    Aws::Vector<Aws::String> m_groupAdmins;
-
     Aws::String m_name;
 
     Aws::String m_randomDomain;
+
+    Aws::Map<Aws::String, Aws::Vector<Role>> m_roles;
 
     Aws::String m_spaceId;
 
@@ -320,8 +311,6 @@ namespace Model
     long long m_storageLimit;
 
     TierLevel m_tier;
-
-    Aws::Vector<Aws::String> m_userAdmins;
 
     int m_userCount;
 

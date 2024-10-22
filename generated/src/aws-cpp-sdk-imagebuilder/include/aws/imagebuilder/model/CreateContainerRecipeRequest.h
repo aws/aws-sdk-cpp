@@ -249,7 +249,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Identifies which KMS key is used to encrypt the container image.</p>
+     * <p>Identifies which KMS key is used to encrypt the Dockerfile template.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

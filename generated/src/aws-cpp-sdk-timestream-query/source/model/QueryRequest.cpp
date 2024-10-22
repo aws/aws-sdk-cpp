@@ -18,7 +18,8 @@ QueryRequest::QueryRequest() :
     m_clientTokenHasBeenSet(true),
     m_nextTokenHasBeenSet(false),
     m_maxRows(0),
-    m_maxRowsHasBeenSet(false)
+    m_maxRowsHasBeenSet(false),
+    m_queryInsightsHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,12 @@ Aws::String QueryRequest::SerializePayload() const
   if(m_maxRowsHasBeenSet)
   {
    payload.WithInteger("MaxRows", m_maxRows);
+
+  }
+
+  if(m_queryInsightsHasBeenSet)
+  {
+   payload.WithObject("QueryInsights", m_queryInsights.Jsonize());
 
   }
 

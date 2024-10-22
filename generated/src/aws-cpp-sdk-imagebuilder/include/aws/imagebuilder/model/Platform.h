@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Windows,
-    Linux
+    Linux,
+    macOS
   };
 
 namespace PlatformMapper

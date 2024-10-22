@@ -34,6 +34,7 @@ GlobalCluster::GlobalCluster() :
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_globalClusterMembersHasBeenSet(false),
+    m_endpointHasBeenSet(false),
     m_failoverStateHasBeenSet(false),
     m_tagListHasBeenSet(false)
 {
@@ -123,6 +124,12 @@ GlobalCluster& GlobalCluster::operator =(const XmlNode& xmlNode)
 
       m_globalClusterMembersHasBeenSet = true;
     }
+    XmlNode endpointNode = resultNode.FirstChild("Endpoint");
+    if(!endpointNode.IsNull())
+    {
+      m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
+      m_endpointHasBeenSet = true;
+    }
     XmlNode failoverStateNode = resultNode.FirstChild("FailoverState");
     if(!failoverStateNode.IsNull())
     {
@@ -209,6 +216,11 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location, 
       }
   }
 
+  if(m_endpointHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
+  }
+
   if(m_failoverStateHasBeenSet)
   {
       Aws::StringStream failoverStateLocationAndMemberSs;
@@ -280,6 +292,10 @@ void GlobalCluster::OutputToStream(Aws::OStream& oStream, const char* location) 
         globalClusterMembersSs << location <<  ".GlobalClusterMember." << globalClusterMembersIdx++;
         item.OutputToStream(oStream, globalClusterMembersSs.str().c_str());
       }
+  }
+  if(m_endpointHasBeenSet)
+  {
+      oStream << location << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
   }
   if(m_failoverStateHasBeenSet)
   {

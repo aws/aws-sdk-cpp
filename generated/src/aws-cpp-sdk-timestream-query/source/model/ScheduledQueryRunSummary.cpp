@@ -24,6 +24,7 @@ ScheduledQueryRunSummary::ScheduledQueryRunSummary() :
     m_runStatus(ScheduledQueryRunStatus::NOT_SET),
     m_runStatusHasBeenSet(false),
     m_executionStatsHasBeenSet(false),
+    m_queryInsightsResponseHasBeenSet(false),
     m_errorReportLocationHasBeenSet(false),
     m_failureReasonHasBeenSet(false)
 {
@@ -65,6 +66,13 @@ ScheduledQueryRunSummary& ScheduledQueryRunSummary::operator =(JsonView jsonValu
     m_executionStatsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QueryInsightsResponse"))
+  {
+    m_queryInsightsResponse = jsonValue.GetObject("QueryInsightsResponse");
+
+    m_queryInsightsResponseHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ErrorReportLocation"))
   {
     m_errorReportLocation = jsonValue.GetObject("ErrorReportLocation");
@@ -104,6 +112,12 @@ JsonValue ScheduledQueryRunSummary::Jsonize() const
   if(m_executionStatsHasBeenSet)
   {
    payload.WithObject("ExecutionStats", m_executionStats.Jsonize());
+
+  }
+
+  if(m_queryInsightsResponseHasBeenSet)
+  {
+   payload.WithObject("QueryInsightsResponse", m_queryInsightsResponse.Jsonize());
 
   }
 
