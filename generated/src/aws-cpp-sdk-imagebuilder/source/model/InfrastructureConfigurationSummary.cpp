@@ -27,7 +27,8 @@ InfrastructureConfigurationSummary::InfrastructureConfigurationSummary() :
     m_resourceTagsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false)
+    m_instanceProfileNameHasBeenSet(false),
+    m_placementHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,13 @@ InfrastructureConfigurationSummary& InfrastructureConfigurationSummary::operator
     m_instanceProfileNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("placement"))
+  {
+    m_placement = jsonValue.GetObject("placement");
+
+    m_placementHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -184,6 +192,12 @@ JsonValue InfrastructureConfigurationSummary::Jsonize() const
   if(m_instanceProfileNameHasBeenSet)
   {
    payload.WithString("instanceProfileName", m_instanceProfileName);
+
+  }
+
+  if(m_placementHasBeenSet)
+  {
+   payload.WithObject("placement", m_placement.Jsonize());
 
   }
 

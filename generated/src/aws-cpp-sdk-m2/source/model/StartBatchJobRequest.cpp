@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 StartBatchJobRequest::StartBatchJobRequest() : 
     m_applicationIdHasBeenSet(false),
+    m_authSecretsManagerArnHasBeenSet(false),
     m_batchJobIdentifierHasBeenSet(false),
     m_jobParamsHasBeenSet(false)
 {
@@ -22,6 +23,12 @@ StartBatchJobRequest::StartBatchJobRequest() :
 Aws::String StartBatchJobRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_authSecretsManagerArnHasBeenSet)
+  {
+   payload.WithString("authSecretsManagerArn", m_authSecretsManagerArn);
+
+  }
 
   if(m_batchJobIdentifierHasBeenSet)
   {

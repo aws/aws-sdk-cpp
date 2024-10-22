@@ -27,6 +27,7 @@ CreateInfrastructureConfigurationRequest::CreateInfrastructureConfigurationReque
     m_resourceTagsHasBeenSet(false),
     m_instanceMetadataOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_placementHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
@@ -131,6 +132,12 @@ Aws::String CreateInfrastructureConfigurationRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_placementHasBeenSet)
+  {
+   payload.WithObject("placement", m_placement.Jsonize());
 
   }
 

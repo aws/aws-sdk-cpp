@@ -607,7 +607,7 @@ namespace MainframeModernization
         }
 
         /**
-         * <p>Lists all the job steps for JCL files to restart a batch job. This is only
+         * <p>Lists all the job steps for a JCL file to restart a batch job. This is only
          * applicable for Micro Focus engine with versions 8.0.6 and above.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ListBatchJobRestartPoints">AWS

@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/timestream-query/model/ScheduledQueryRunStatus.h>
 #include <aws/timestream-query/model/ExecutionStats.h>
+#include <aws/timestream-query/model/ScheduledQueryInsightsResponse.h>
 #include <aws/timestream-query/model/ErrorReportLocation.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -93,6 +94,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Provides various insights and metrics related to the run summary of the
+     * scheduled query.</p>
+     */
+    inline const ScheduledQueryInsightsResponse& GetQueryInsightsResponse() const{ return m_queryInsightsResponse; }
+    inline bool QueryInsightsResponseHasBeenSet() const { return m_queryInsightsResponseHasBeenSet; }
+    inline void SetQueryInsightsResponse(const ScheduledQueryInsightsResponse& value) { m_queryInsightsResponseHasBeenSet = true; m_queryInsightsResponse = value; }
+    inline void SetQueryInsightsResponse(ScheduledQueryInsightsResponse&& value) { m_queryInsightsResponseHasBeenSet = true; m_queryInsightsResponse = std::move(value); }
+    inline ScheduledQueryRunSummary& WithQueryInsightsResponse(const ScheduledQueryInsightsResponse& value) { SetQueryInsightsResponse(value); return *this;}
+    inline ScheduledQueryRunSummary& WithQueryInsightsResponse(ScheduledQueryInsightsResponse&& value) { SetQueryInsightsResponse(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>S3 location for error report.</p>
      */
     inline const ErrorReportLocation& GetErrorReportLocation() const{ return m_errorReportLocation; }
@@ -130,6 +144,9 @@ namespace Model
 
     ExecutionStats m_executionStats;
     bool m_executionStatsHasBeenSet = false;
+
+    ScheduledQueryInsightsResponse m_queryInsightsResponse;
+    bool m_queryInsightsResponseHasBeenSet = false;
 
     ErrorReportLocation m_errorReportLocation;
     bool m_errorReportLocationHasBeenSet = false;

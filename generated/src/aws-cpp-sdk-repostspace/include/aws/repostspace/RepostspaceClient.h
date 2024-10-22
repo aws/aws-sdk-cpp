@@ -86,6 +86,58 @@ namespace repostspace
         virtual ~RepostspaceClient();
 
         /**
+         * <p>Add role to multiple users or groups in a private re:Post.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchAddRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchAddRoleOutcome BatchAddRole(const Model::BatchAddRoleRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchAddRole that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchAddRoleRequestT = Model::BatchAddRoleRequest>
+        Model::BatchAddRoleOutcomeCallable BatchAddRoleCallable(const BatchAddRoleRequestT& request) const
+        {
+            return SubmitCallable(&RepostspaceClient::BatchAddRole, request);
+        }
+
+        /**
+         * An Async wrapper for BatchAddRole that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchAddRoleRequestT = Model::BatchAddRoleRequest>
+        void BatchAddRoleAsync(const BatchAddRoleRequestT& request, const BatchAddRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RepostspaceClient::BatchAddRole, request, handler, context);
+        }
+
+        /**
+         * <p>Remove role from multiple users or groups in a private re:Post.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchRemoveRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchRemoveRoleOutcome BatchRemoveRole(const Model::BatchRemoveRoleRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchRemoveRole that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchRemoveRoleRequestT = Model::BatchRemoveRoleRequest>
+        Model::BatchRemoveRoleOutcomeCallable BatchRemoveRoleCallable(const BatchRemoveRoleRequestT& request) const
+        {
+            return SubmitCallable(&RepostspaceClient::BatchRemoveRole, request);
+        }
+
+        /**
+         * An Async wrapper for BatchRemoveRole that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchRemoveRoleRequestT = Model::BatchRemoveRoleRequest>
+        void BatchRemoveRoleAsync(const BatchRemoveRoleRequestT& request, const BatchRemoveRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RepostspaceClient::BatchRemoveRole, request, handler, context);
+        }
+
+        /**
          * <p>Creates an AWS re:Post Private private re:Post.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/CreateSpace">AWS
          * API Reference</a></p>

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-query/model/QueryStatus.h>
+#include <aws/timestream-query/model/QueryInsightsResponse.h>
 #include <aws/timestream-query/model/Row.h>
 #include <aws/timestream-query/model/ColumnInfo.h>
 #include <utility>
@@ -102,6 +103,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Encapsulates <code>QueryInsights</code> containing insights and metrics
+     * related to the query that you executed.</p>
+     */
+    inline const QueryInsightsResponse& GetQueryInsightsResponse() const{ return m_queryInsightsResponse; }
+    inline void SetQueryInsightsResponse(const QueryInsightsResponse& value) { m_queryInsightsResponse = value; }
+    inline void SetQueryInsightsResponse(QueryInsightsResponse&& value) { m_queryInsightsResponse = std::move(value); }
+    inline QueryResult& WithQueryInsightsResponse(const QueryInsightsResponse& value) { SetQueryInsightsResponse(value); return *this;}
+    inline QueryResult& WithQueryInsightsResponse(QueryInsightsResponse&& value) { SetQueryInsightsResponse(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -122,6 +135,8 @@ namespace Model
     Aws::Vector<ColumnInfo> m_columnInfo;
 
     QueryStatus m_queryStatus;
+
+    QueryInsightsResponse m_queryInsightsResponse;
 
     Aws::String m_requestId;
   };

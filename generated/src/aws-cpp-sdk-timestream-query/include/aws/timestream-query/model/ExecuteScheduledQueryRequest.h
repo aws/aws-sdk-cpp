@@ -8,6 +8,7 @@
 #include <aws/timestream-query/TimestreamQueryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/timestream-query/model/ScheduledQueryInsights.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -76,6 +77,21 @@ namespace Model
     inline ExecuteScheduledQueryRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
     inline ExecuteScheduledQueryRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+     * <p>Enabling <code>QueryInsights</code> returns insights and metrics as a part of
+     * the Amazon SNS notification for the query that you executed. You can use
+     * <code>QueryInsights</code> to tune your query performance and cost.</p>
+     */
+    inline const ScheduledQueryInsights& GetQueryInsights() const{ return m_queryInsights; }
+    inline bool QueryInsightsHasBeenSet() const { return m_queryInsightsHasBeenSet; }
+    inline void SetQueryInsights(const ScheduledQueryInsights& value) { m_queryInsightsHasBeenSet = true; m_queryInsights = value; }
+    inline void SetQueryInsights(ScheduledQueryInsights&& value) { m_queryInsightsHasBeenSet = true; m_queryInsights = std::move(value); }
+    inline ExecuteScheduledQueryRequest& WithQueryInsights(const ScheduledQueryInsights& value) { SetQueryInsights(value); return *this;}
+    inline ExecuteScheduledQueryRequest& WithQueryInsights(ScheduledQueryInsights&& value) { SetQueryInsights(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_scheduledQueryArn;
@@ -86,6 +102,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    ScheduledQueryInsights m_queryInsights;
+    bool m_queryInsightsHasBeenSet = false;
   };
 
 } // namespace Model

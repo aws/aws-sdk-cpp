@@ -65,6 +65,12 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
 
   }
 
+  if(jsonValue.ValueExists("QueryInsightsResponse"))
+  {
+    m_queryInsightsResponse = jsonValue.GetObject("QueryInsightsResponse");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

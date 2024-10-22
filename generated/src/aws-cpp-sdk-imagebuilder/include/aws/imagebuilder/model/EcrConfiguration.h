@@ -61,8 +61,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Tags for Image Builder to apply to the output container image that &amp;INS;
-     * scans. Tags can help you identify and manage your scanned images.</p>
+     * <p>Tags for Image Builder to apply to the output container image that Amazon
+     * Inspector scans. Tags can help you identify and manage your scanned images.</p>
      */
     inline const Aws::Vector<Aws::String>& GetContainerTags() const{ return m_containerTags; }
     inline bool ContainerTagsHasBeenSet() const { return m_containerTagsHasBeenSet; }

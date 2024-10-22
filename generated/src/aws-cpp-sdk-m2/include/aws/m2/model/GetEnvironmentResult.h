@@ -242,7 +242,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the runtime environment.</p>
+     * <p>The status of the runtime environment. If the Amazon Web Services Mainframe
+     * Modernization environment is missing a connection to the customer owned
+     * dependent resource, the status will be <code>Unhealthy</code>.</p>
      */
     inline const EnvironmentLifecycle& GetStatus() const{ return m_status; }
     inline void SetStatus(const EnvironmentLifecycle& value) { m_status = value; }

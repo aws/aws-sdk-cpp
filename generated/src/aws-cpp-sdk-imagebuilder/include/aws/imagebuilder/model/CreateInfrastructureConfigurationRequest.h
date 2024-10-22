@@ -11,6 +11,7 @@
 #include <aws/imagebuilder/model/Logging.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/InstanceMetadataOptions.h>
+#include <aws/imagebuilder/model/Placement.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -188,7 +189,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tags attached to the resource created by Image Builder.</p>
+     * <p>The metadata tags to assign to the Amazon EC2 instance that Image Builder
+     * launches during the build process. Tags are formatted as key value pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetResourceTags() const{ return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
@@ -220,7 +222,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tags of the infrastructure configuration.</p>
+     * <p>The metadata tags to assign to the infrastructure configuration resource that
+     * Image Builder creates as output. Tags are formatted as key value pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -235,6 +238,19 @@ namespace Model
     inline CreateInfrastructureConfigurationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
     inline CreateInfrastructureConfigurationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline CreateInfrastructureConfigurationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The instance placement settings that define where the instances that are
+     * launched from your image will run.</p>
+     */
+    inline const Placement& GetPlacement() const{ return m_placement; }
+    inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
+    inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
+    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
+    inline CreateInfrastructureConfigurationRequest& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
+    inline CreateInfrastructureConfigurationRequest& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -293,6 +309,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Placement m_placement;
+    bool m_placementHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;

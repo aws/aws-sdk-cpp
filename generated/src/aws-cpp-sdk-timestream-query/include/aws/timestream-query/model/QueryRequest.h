@@ -7,6 +7,7 @@
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/timestream-query/TimestreamQueryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-query/model/QueryInsights.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -135,6 +136,21 @@ namespace Model
     inline void SetMaxRows(int value) { m_maxRowsHasBeenSet = true; m_maxRows = value; }
     inline QueryRequest& WithMaxRows(int value) { SetMaxRows(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Encapsulates settings for enabling <code>QueryInsights</code>.</p>
+     * <p>Enabling <code>QueryInsights</code> returns insights and metrics in addition
+     * to query results for the query that you executed. You can use
+     * <code>QueryInsights</code> to tune your query performance.</p>
+     */
+    inline const QueryInsights& GetQueryInsights() const{ return m_queryInsights; }
+    inline bool QueryInsightsHasBeenSet() const { return m_queryInsightsHasBeenSet; }
+    inline void SetQueryInsights(const QueryInsights& value) { m_queryInsightsHasBeenSet = true; m_queryInsights = value; }
+    inline void SetQueryInsights(QueryInsights&& value) { m_queryInsightsHasBeenSet = true; m_queryInsights = std::move(value); }
+    inline QueryRequest& WithQueryInsights(const QueryInsights& value) { SetQueryInsights(value); return *this;}
+    inline QueryRequest& WithQueryInsights(QueryInsights&& value) { SetQueryInsights(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_queryString;
@@ -148,6 +164,9 @@ namespace Model
 
     int m_maxRows;
     bool m_maxRowsHasBeenSet = false;
+
+    QueryInsights m_queryInsights;
+    bool m_queryInsightsHasBeenSet = false;
   };
 
 } // namespace Model

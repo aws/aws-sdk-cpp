@@ -20,7 +20,8 @@ namespace Model
     Available,
     Updating,
     Deleting,
-    Failed
+    Failed,
+    UnHealthy
   };
 
 namespace EnvironmentLifecycleMapper

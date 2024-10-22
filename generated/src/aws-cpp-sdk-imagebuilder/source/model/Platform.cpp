@@ -22,6 +22,7 @@ namespace Aws
 
         static const int Windows_HASH = HashingUtils::HashString("Windows");
         static const int Linux_HASH = HashingUtils::HashString("Linux");
+        static const int macOS_HASH = HashingUtils::HashString("macOS");
 
 
         Platform GetPlatformForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == Linux_HASH)
           {
             return Platform::Linux;
+          }
+          else if (hashCode == macOS_HASH)
+          {
+            return Platform::macOS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "Windows";
           case Platform::Linux:
             return "Linux";
+          case Platform::macOS:
+            return "macOS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

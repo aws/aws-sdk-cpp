@@ -50,6 +50,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Web Services Secrets Manager containing user's credentials for
+     * authentication and authorization for Start Batch Job execution operation.</p>
+     */
+    inline const Aws::String& GetAuthSecretsManagerArn() const{ return m_authSecretsManagerArn; }
+    inline bool AuthSecretsManagerArnHasBeenSet() const { return m_authSecretsManagerArnHasBeenSet; }
+    inline void SetAuthSecretsManagerArn(const Aws::String& value) { m_authSecretsManagerArnHasBeenSet = true; m_authSecretsManagerArn = value; }
+    inline void SetAuthSecretsManagerArn(Aws::String&& value) { m_authSecretsManagerArnHasBeenSet = true; m_authSecretsManagerArn = std::move(value); }
+    inline void SetAuthSecretsManagerArn(const char* value) { m_authSecretsManagerArnHasBeenSet = true; m_authSecretsManagerArn.assign(value); }
+    inline StartBatchJobRequest& WithAuthSecretsManagerArn(const Aws::String& value) { SetAuthSecretsManagerArn(value); return *this;}
+    inline StartBatchJobRequest& WithAuthSecretsManagerArn(Aws::String&& value) { SetAuthSecretsManagerArn(std::move(value)); return *this;}
+    inline StartBatchJobRequest& WithAuthSecretsManagerArn(const char* value) { SetAuthSecretsManagerArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the batch job.</p>
      */
     inline const BatchJobIdentifier& GetBatchJobIdentifier() const{ return m_batchJobIdentifier; }
@@ -85,6 +100,9 @@ namespace Model
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
+
+    Aws::String m_authSecretsManagerArn;
+    bool m_authSecretsManagerArnHasBeenSet = false;
 
     BatchJobIdentifier m_batchJobIdentifier;
     bool m_batchJobIdentifierHasBeenSet = false;

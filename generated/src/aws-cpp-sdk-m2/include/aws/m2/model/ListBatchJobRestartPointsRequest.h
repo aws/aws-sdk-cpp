@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace MainframeModernization
 {
 namespace Model
@@ -31,6 +35,8 @@ namespace Model
 
     AWS_MAINFRAMEMODERNIZATION_API Aws::String SerializePayload() const override;
 
+    AWS_MAINFRAMEMODERNIZATION_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
 
     ///@{
     /**
@@ -48,7 +54,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of each batch job execution.</p>
+     * <p>The Amazon Web Services Secrets Manager containing user's credentials for
+     * authentication and authorization for List Batch Job Restart Points
+     * operation.</p>
+     */
+    inline const Aws::String& GetAuthSecretsManagerArn() const{ return m_authSecretsManagerArn; }
+    inline bool AuthSecretsManagerArnHasBeenSet() const { return m_authSecretsManagerArnHasBeenSet; }
+    inline void SetAuthSecretsManagerArn(const Aws::String& value) { m_authSecretsManagerArnHasBeenSet = true; m_authSecretsManagerArn = value; }
+    inline void SetAuthSecretsManagerArn(Aws::String&& value) { m_authSecretsManagerArnHasBeenSet = true; m_authSecretsManagerArn = std::move(value); }
+    inline void SetAuthSecretsManagerArn(const char* value) { m_authSecretsManagerArnHasBeenSet = true; m_authSecretsManagerArn.assign(value); }
+    inline ListBatchJobRestartPointsRequest& WithAuthSecretsManagerArn(const Aws::String& value) { SetAuthSecretsManagerArn(value); return *this;}
+    inline ListBatchJobRestartPointsRequest& WithAuthSecretsManagerArn(Aws::String&& value) { SetAuthSecretsManagerArn(std::move(value)); return *this;}
+    inline ListBatchJobRestartPointsRequest& WithAuthSecretsManagerArn(const char* value) { SetAuthSecretsManagerArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the batch job execution.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
@@ -63,6 +85,9 @@ namespace Model
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
+
+    Aws::String m_authSecretsManagerArn;
+    bool m_authSecretsManagerArnHasBeenSet = false;
 
     Aws::String m_executionId;
     bool m_executionIdHasBeenSet = false;

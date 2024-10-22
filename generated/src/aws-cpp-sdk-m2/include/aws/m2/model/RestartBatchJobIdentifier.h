@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>An identifier for the StartBatchJob API to show that it is a restart
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * <p>An identifier for the <code>StartBatchJob</code> API to show that it is a
+   * restart operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/RestartBatchJobIdentifier">AWS
    * API Reference</a></p>
    */
@@ -41,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The executionId from the StartBatchJob response when the job ran for the
-     * first time.</p>
+     * <p>The <code>executionId</code> from the <code>StartBatchJob</code> response
+     * when the job ran for the first time.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The restart step information for the most recent restart operation.</p>
+     * <p>The step/procedure step information for a restart batch job operation.</p>
      */
     inline const JobStepRestartMarker& GetJobStepRestartMarker() const{ return m_jobStepRestartMarker; }
     inline bool JobStepRestartMarkerHasBeenSet() const { return m_jobStepRestartMarkerHasBeenSet; }

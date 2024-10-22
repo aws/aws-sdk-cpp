@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides restart step information for the most recent restart
+   * <p>Provides step/procedure step information for a restart batch job
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/JobStepRestartMarker">AWS
    * API Reference</a></p>
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The procedure step name that a job was restarted from.</p>
+     * <p>The procedure step name that a batch job was restarted from.</p>
      */
     inline const Aws::String& GetFromProcStep() const{ return m_fromProcStep; }
     inline bool FromProcStepHasBeenSet() const { return m_fromProcStepHasBeenSet; }
@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The step name that a batch job restart was from.</p>
+     * <p>The step name that a batch job was restarted from.</p>
      */
     inline const Aws::String& GetFromStep() const{ return m_fromStep; }
     inline bool FromStepHasBeenSet() const { return m_fromStepHasBeenSet; }
@@ -82,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The step name that a job was restarted to.</p>
+     * <p>The step name that a batch job was restarted to.</p>
      */
     inline const Aws::String& GetToStep() const{ return m_toStep; }
     inline bool ToStepHasBeenSet() const { return m_toStepHasBeenSet; }

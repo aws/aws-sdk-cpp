@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/Placement.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +177,19 @@ namespace Model
     inline InfrastructureConfigurationSummary& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(std::move(value)); return *this;}
     inline InfrastructureConfigurationSummary& WithInstanceProfileName(const char* value) { SetInstanceProfileName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The instance placement settings that define where the instances that are
+     * launched from your image will run.</p>
+     */
+    inline const Placement& GetPlacement() const{ return m_placement; }
+    inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
+    inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
+    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
+    inline InfrastructureConfigurationSummary& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
+    inline InfrastructureConfigurationSummary& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -204,6 +218,9 @@ namespace Model
 
     Aws::String m_instanceProfileName;
     bool m_instanceProfileNameHasBeenSet = false;
+
+    Placement m_placement;
+    bool m_placementHasBeenSet = false;
   };
 
 } // namespace Model

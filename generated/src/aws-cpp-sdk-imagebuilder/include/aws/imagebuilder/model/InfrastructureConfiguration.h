@@ -10,6 +10,7 @@
 #include <aws/imagebuilder/model/Logging.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/InstanceMetadataOptions.h>
+#include <aws/imagebuilder/model/Placement.h>
 #include <utility>
 
 namespace Aws
@@ -274,6 +275,19 @@ namespace Model
     inline InfrastructureConfiguration& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline InfrastructureConfiguration& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The instance placement settings that define where the instances that are
+     * launched from your image will run.</p>
+     */
+    inline const Placement& GetPlacement() const{ return m_placement; }
+    inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
+    inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
+    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
+    inline InfrastructureConfiguration& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
+    inline InfrastructureConfiguration& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -323,6 +337,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Placement m_placement;
+    bool m_placementHasBeenSet = false;
   };
 
 } // namespace Model

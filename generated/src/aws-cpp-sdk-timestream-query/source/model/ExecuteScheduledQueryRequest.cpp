@@ -16,7 +16,8 @@ ExecuteScheduledQueryRequest::ExecuteScheduledQueryRequest() :
     m_scheduledQueryArnHasBeenSet(false),
     m_invocationTimeHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_queryInsightsHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String ExecuteScheduledQueryRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_queryInsightsHasBeenSet)
+  {
+   payload.WithObject("QueryInsights", m_queryInsights.Jsonize());
 
   }
 

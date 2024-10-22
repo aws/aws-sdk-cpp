@@ -113,7 +113,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The restart steps information for the most recent restart operation.</p>
+     * <p>The step/procedure step information for the restart batch job operation.</p>
      */
     inline const JobStepRestartMarker& GetJobStepRestartMarker() const{ return m_jobStepRestartMarker; }
     inline void SetJobStepRestartMarker(const JobStepRestartMarker& value) { m_jobStepRestartMarker = value; }

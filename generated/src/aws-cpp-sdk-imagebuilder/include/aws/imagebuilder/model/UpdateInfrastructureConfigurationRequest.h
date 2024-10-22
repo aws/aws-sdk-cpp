@@ -11,6 +11,7 @@
 #include <aws/imagebuilder/model/Logging.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/InstanceMetadataOptions.h>
+#include <aws/imagebuilder/model/Placement.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -189,23 +190,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateInfrastructureConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateInfrastructureConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateInfrastructureConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The tags attached to the resource created by Image Builder.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetResourceTags() const{ return m_resourceTags; }
@@ -243,6 +227,36 @@ namespace Model
     inline UpdateInfrastructureConfigurationRequest& WithInstanceMetadataOptions(const InstanceMetadataOptions& value) { SetInstanceMetadataOptions(value); return *this;}
     inline UpdateInfrastructureConfigurationRequest& WithInstanceMetadataOptions(InstanceMetadataOptions&& value) { SetInstanceMetadataOptions(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The instance placement settings that define where the instances that are
+     * launched from your image will run.</p>
+     */
+    inline const Placement& GetPlacement() const{ return m_placement; }
+    inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
+    inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
+    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
+    inline UpdateInfrastructureConfigurationRequest& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
+    inline UpdateInfrastructureConfigurationRequest& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline UpdateInfrastructureConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline UpdateInfrastructureConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline UpdateInfrastructureConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_infrastructureConfigurationArn;
@@ -275,14 +289,17 @@ namespace Model
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
     Aws::Map<Aws::String, Aws::String> m_resourceTags;
     bool m_resourceTagsHasBeenSet = false;
 
     InstanceMetadataOptions m_instanceMetadataOptions;
     bool m_instanceMetadataOptionsHasBeenSet = false;
+
+    Placement m_placement;
+    bool m_placementHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model
