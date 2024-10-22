@@ -46,6 +46,21 @@
     "serverlessapplicationrepository": "serverlessrepo",
     "service-catalog-appregistry": "servicecatalog-appregistry",
     "service-catalog": "servicecatalog",
-    "transfer": "awstransfer"
+    "transfer": "awstransfer",
+    "cloudwatch": "monitoring",
+    "cloudwatch-events": "events",
+    "storage-gateway":"storagegateway",
+    "efs":"elasticfilesystem",
+    "emr":"elasticmapreduce",
+    "ses":"email",
+    "cognito-identity-provider":"cognito-idp",
+    "cost-explorer":"ce",
+    "application-discovery-service":"discovery",
+    "database-migration-service":"dms",
+    "sfn":" states ",
+    "lex-model-building-service":"lex-models",
+    "cloudwatch-logs":"logs",
+    "directory-service":"ds",
+    "elasticsearch-service ":"es"
   }
   

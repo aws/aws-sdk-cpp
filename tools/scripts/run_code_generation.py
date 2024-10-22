@@ -17,7 +17,7 @@ from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_C
 from pathlib import Path
 import json
 from typing import List
-
+from typing import Set
 
 # Default configuration variables
 CLIENT_MODEL_FILE_LOCATION = "./code-generation/api-descriptions/"
@@ -91,7 +91,7 @@ def _build_service_model_with_endpoints(models_dir: str, endpoint_rules_dir: str
                             endpoint_tests=endpoint_tests_filename)
 
 
-def collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
+def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_mapped_services: Set[str]) -> dict:
     """Return a dict of <service_name, model_file_name> with all available c2j models in a models_dir
 
     :param models_dir: path to the directory with c2j models
@@ -100,6 +100,7 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
     """
     model_files = os.listdir(models_dir)
     service_name_to_model_filename_date = dict()
+    print("legacy_mapped_services:",legacy_mapped_services)
 
     for filename in model_files:
         if not os.path.isfile("/".join([models_dir, filename])):
@@ -125,7 +126,20 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
             key = "-".join(reversed(key.split(".")))  # just replicating existing legacy behavior
         if ";" in key:
             key = key.replace(";", "-")  # just in case... just replicating existing legacy behavior
-
+        
+        # determine if new service/service indifferent to name mapping
+        if key not in legacy_mapped_services:
+            with open(models_dir + "/" + model_file_date[0], 'r') as json_file:
+                model = json.load(json_file)
+                #get service id. It has to exist, else continue
+                if ("metadata" in model and "serviceId" in model["metadata"]):
+                    key = model["metadata"]["serviceId"] 
+                    #convert into smithy case convention
+                    key = key.lower().replace(' ', '-')
+                else:
+                    print("service Id not found in model file:", model_file_date[0], " Skipping.")
+                    continue
+        
         # fetch endpoint-rules filename which is based on ServiceId in c2j models:
         try:
             service_name_to_model_filename[key] = _build_service_model_with_endpoints(models_dir,
@@ -521,6 +535,15 @@ def main():
 
     highly_refined_percent_of_cores_to_take = 0.9
     max_workers = max(1, int(highly_refined_percent_of_cores_to_take * os.cpu_count()))
+    
+    #build reverse map
+    # Open a file using 'with' and read its contents
+    smithy_c2j_data = {}
+    c2j_smithy_data = {}        
+    with open(os.path.abspath(SMITHY_TO_C2J_MAP_FILE), 'r') as file:
+        smithy_c2j_data = json.load(file)
+        # Reverse the key-value pairs
+        c2j_smithy_data = {value: key for key, value in smithy_c2j_data.items()}
 
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         build_generator_future = None
@@ -532,7 +555,8 @@ def main():
             return 0
 
         available_models = collect_available_models(args["path_to_api_definitions"],
-                                                    args["path_to_endpoint_rules"])
+                                                    args["path_to_endpoint_rules"],
+                                                    set(c2j_smithy_data.keys()))
         if args.get("list_all"):
             model_list = available_models.keys()
             print(model_list)
@@ -570,18 +594,6 @@ def main():
                                        None,
                                        args["raw_generator_arguments"])
                 pending.add(task)
-        #build reverse map
-        # Open a file using 'with' and read its contents
-        smithy_c2j_data = {}
-        c2j_smithy_data = {}
-        smithy_services = []
-        with open(SMITHY_TO_C2J_MAP_FILE, 'r') as file:
-            smithy_c2j_data = json.load(file)
-            # Reverse the key-value pairs
-            c2j_smithy_data = {value: key for key, value in smithy_c2j_data.items()}
-            
-        
-        #get smithy names
 
         for service in clients_to_build:
             model_files = available_models[service]
@@ -589,8 +601,6 @@ def main():
             while len(pending) >= max_workers:
                 new_done, pending = wait(pending, return_when=FIRST_COMPLETED)
                 done.update(new_done)
-            
-            smithy_services.append(c2j_smithy_data[service] if service in c2j_smithy_data else service )
 
             task = executor.submit(generate_single_client,
                                    service,
@@ -629,14 +639,7 @@ def main():
     
     #generate code using smithy for all discoverable clients
     if (args["generate_smoke_tests"] and clients_to_build):
-        #build reverse map
-        # Open a file using 'with' and read its contents
-        smithy_c2j_data = {}
-        c2j_smithy_data = {}        
-        with open(os.path.abspath(SMITHY_TO_C2J_MAP_FILE), 'r') as file:
-            smithy_c2j_data = json.load(file)
-            # Reverse the key-value pairs
-            c2j_smithy_data = {value: key for key, value in smithy_c2j_data.items()}
+
         #get smithy names
         smithy_services = [c2j_smithy_data[service] if service in c2j_smithy_data else service for service in clients_to_build]
         print(f"Running code generator for smoke-tests for services:"+",".join(smithy_services))
