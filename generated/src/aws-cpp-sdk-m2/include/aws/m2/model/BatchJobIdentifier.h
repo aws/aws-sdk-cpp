@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the required information for restart, including execution ID and
-     * jobsteprestartmarker.</p>
+     * <p>Specifies the required information for restart, including
+     * <code>executionId</code> and <code>JobStepRestartMarker</code>.</p>
      */
     inline const RestartBatchJobIdentifier& GetRestartBatchJobIdentifier() const{ return m_restartBatchJobIdentifier; }
     inline bool RestartBatchJobIdentifierHasBeenSet() const { return m_restartBatchJobIdentifierHasBeenSet; }

@@ -7,8 +7,8 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/repostspace/RepostspaceErrors.h>
 #include <aws/repostspace/model/ConflictException.h>
-#include <aws/repostspace/model/ServiceQuotaExceededException.h>
 #include <aws/repostspace/model/ThrottlingException.h>
+#include <aws/repostspace/model/ServiceQuotaExceededException.h>
 #include <aws/repostspace/model/ResourceNotFoundException.h>
 #include <aws/repostspace/model/InternalServerException.h>
 #include <aws/repostspace/model/ValidationException.h>
@@ -28,16 +28,16 @@ template<> AWS_REPOSTSPACE_API ConflictException RepostspaceError::GetModeledErr
   return ConflictException(this->GetJsonPayload().View());
 }
 
-template<> AWS_REPOSTSPACE_API ServiceQuotaExceededException RepostspaceError::GetModeledError()
-{
-  assert(this->GetErrorType() == RepostspaceErrors::SERVICE_QUOTA_EXCEEDED);
-  return ServiceQuotaExceededException(this->GetJsonPayload().View());
-}
-
 template<> AWS_REPOSTSPACE_API ThrottlingException RepostspaceError::GetModeledError()
 {
   assert(this->GetErrorType() == RepostspaceErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_REPOSTSPACE_API ServiceQuotaExceededException RepostspaceError::GetModeledError()
+{
+  assert(this->GetErrorType() == RepostspaceErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
 template<> AWS_REPOSTSPACE_API ResourceNotFoundException RepostspaceError::GetModeledError()
