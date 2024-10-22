@@ -13,13 +13,85 @@ using namespace Aws::Client::Checksum;
 const static char* LOG_TAG = "Checksum";
 const static char* NOT_SUPPORTED_NAME = "not-supported";
 
-using MappingEntry = std::pair<ChecksumAlgorithm, String>;
-static const MappingEntry AWS_CHECKSUM_ALGORITHM_MAP[] = {
+using AlgorithmMappingEntry = std::pair<ChecksumAlgorithm, String>;
+static const AlgorithmMappingEntry ALGORITHM_TO_NAME_MAPPING[] = {
     {ChecksumAlgorithm::CRC32, "crc32"},
     {ChecksumAlgorithm::CRC32C, "crc32c"},
     {ChecksumAlgorithm::SHA1, "sha1"},
     {ChecksumAlgorithm::SHA256, "sha256"},
 };
+
+using NameMappingEntry = std::pair<String, ChecksumAlgorithm>;
+static const NameMappingEntry NAME_TO_ALGORITHM_MAPPING[] = {
+    {"crc32", ChecksumAlgorithm::CRC32},
+    {"crc32c", ChecksumAlgorithm::CRC32C},
+    {"sha1", ChecksumAlgorithm::SHA1},
+    {"sha1", ChecksumAlgorithm::SHA256},
+};
+
+Aws::String Checksum::NameForAlgorithm(ChecksumAlgorithm algorithm)
+{
+    const auto mapping = std::find_if(std::begin(ALGORITHM_TO_NAME_MAPPING),
+            std::end(ALGORITHM_TO_NAME_MAPPING),
+            [&algorithm](const AlgorithmMappingEntry& entry) -> bool {return entry.first == algorithm;});
+    if(mapping == std::end(ALGORITHM_TO_NAME_MAPPING))
+    {
+        AWS_LOGSTREAM_ERROR(LOG_TAG, "unsupported algorithm");
+        return NOT_SUPPORTED_NAME;
+    }
+    return mapping->second;
+}
+
+ChecksumAlgorithm Checksum::AlgorithmForName(const Aws::String& name)
+{
+    const auto mapping = std::find_if(std::begin(NAME_TO_ALGORITHM_MAPPING),
+            std::end(NAME_TO_ALGORITHM_MAPPING),
+            [&name](const NameMappingEntry& entry) -> bool {return entry.first == name;});
+    if(mapping == std::end(NAME_TO_ALGORITHM_MAPPING))
+    {
+        AWS_LOGSTREAM_ERROR(LOG_TAG, "unsupported algorithm name");
+        return ChecksumAlgorithm::NOT_SET;
+    }
+    return mapping->second;
+}
+
+using ModeToNameMappingEntry = std::pair<ChecksumMode, String>;
+static const ModeToNameMappingEntry MODE_TO_NAME_MAPPING[] = {
+    {ChecksumMode::NOT_SET, "NOT_SET"},
+    {ChecksumMode::ENABLED, "ENABLED"},
+};
+
+using NameToModeMappingEntry = std::pair<String, ChecksumMode>;
+static const NameToModeMappingEntry NAME_TO_MODE_MAPPING[] = {
+    {"NOT_SET", ChecksumMode::NOT_SET},
+    {"ENABLED", ChecksumMode::ENABLED},
+};
+
+Aws::String Checksum::NameForMode(ChecksumMode mode)
+{
+    const auto mapping = std::find_if(std::begin(MODE_TO_NAME_MAPPING),
+            std::end(MODE_TO_NAME_MAPPING),
+            [&mode](const ModeToNameMappingEntry& entry) -> bool {return entry.first == mode;});
+    if(mapping == std::end(MODE_TO_NAME_MAPPING))
+    {
+        AWS_LOGSTREAM_ERROR(LOG_TAG, "unsupported mode");
+        return NOT_SUPPORTED_NAME;
+    }
+    return mapping->second;
+}
+
+ChecksumMode Checksum::ModeForName(const Aws::String& name)
+{
+    const auto mapping = std::find_if(std::begin(NAME_TO_MODE_MAPPING),
+            std::end(NAME_TO_MODE_MAPPING),
+            [&name](const NameToModeMappingEntry& entry) -> bool {return entry.first == name;});
+    if(mapping == std::end(NAME_TO_MODE_MAPPING))
+    {
+        AWS_LOGSTREAM_ERROR(LOG_TAG, "unsupported algorithm name");
+        return ChecksumMode::NOT_SET;
+    }
+    return mapping->second;
+}
 
 using FactoryEntry = std::pair<ChecksumAlgorithm, std::function<std::shared_ptr<Aws::Utils::Crypto::Hash>()>>;
 static const FactoryEntry HASH_FACTORY_MAPPING[] = {
@@ -29,18 +101,6 @@ static const FactoryEntry HASH_FACTORY_MAPPING[] = {
     {ChecksumAlgorithm::SHA256, []() -> std::shared_ptr<Aws::Utils::Crypto::Hash> { return Aws::MakeShared<Crypto::Sha256>(LOG_TAG); }},
 };
 
-Aws::String ChecksumInfo::NameForAlgorithm(ChecksumAlgorithm algorithm)
-{
-    const auto mapping = std::find_if(std::begin(AWS_CHECKSUM_ALGORITHM_MAP),
-            std::end(AWS_CHECKSUM_ALGORITHM_MAP),
-            [&algorithm](const MappingEntry& entry) -> bool {return entry.first == algorithm;});
-    if(mapping == std::end(AWS_CHECKSUM_ALGORITHM_MAP))
-    {
-        AWS_LOGSTREAM_ERROR(LOG_TAG, "checksum algorithm has a unsupported header");
-        return NOT_SUPPORTED_NAME;
-    }
-    return mapping->second;
-}
 
 ChecksumInfo::HashFactory ChecksumInfo::HashFactoryForAlgorithm(ChecksumAlgorithm algorithm)
 {
@@ -57,11 +117,11 @@ ChecksumInfo::HashFactory ChecksumInfo::HashFactoryForAlgorithm(ChecksumAlgorith
 
 ChecksumInfo::HashFactory ChecksumInfo::HashFactoryForAlgorithmName(const Aws::String& algorithmName)
 {
-    const auto mapping = std::find_if(std::begin(AWS_CHECKSUM_ALGORITHM_MAP),
-            std::end(AWS_CHECKSUM_ALGORITHM_MAP),
-            [&algorithmName](const MappingEntry& entry) -> bool {return entry.second == algorithmName;});
+    const auto mapping = std::find_if(std::begin(ALGORITHM_TO_NAME_MAPPING),
+            std::end(ALGORITHM_TO_NAME_MAPPING),
+            [&algorithmName](const AlgorithmMappingEntry& entry) -> bool {return entry.second == algorithmName;});
 
-    if(mapping == std::end(AWS_CHECKSUM_ALGORITHM_MAP))
+    if(mapping == std::end(ALGORITHM_TO_NAME_MAPPING))
     {
         AWS_LOGSTREAM_ERROR(LOG_TAG, "checksum algorithm has a unsupported header");
     }

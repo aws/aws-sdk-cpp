@@ -28,11 +28,15 @@ namespace Aws
                 ENABLED,
             };
 
+            AWS_CORE_API Aws::String NameForAlgorithm(ChecksumAlgorithm algorithm);
+            AWS_CORE_API ChecksumAlgorithm AlgorithmForName(const Aws::String& name);
+
+            AWS_CORE_API Aws::String NameForMode(ChecksumMode mode);
+            AWS_CORE_API ChecksumMode ModeForName(const Aws::String& name);
+
             class ChecksumInfo
             {
             public:
-                static Aws::String NameForAlgorithm(ChecksumAlgorithm algorithm);
-
                 using HashFactory = std::function<std::shared_ptr<Aws::Utils::Crypto::Hash>()>;
                 static HashFactory HashFactoryForAlgorithm(ChecksumAlgorithm algorithm);
                 static HashFactory HashFactoryForAlgorithmName(const Aws::String& algorithmName);
@@ -44,13 +48,13 @@ namespace Aws
                     m_checksumHeaders.emplace("x-amz-checksum" + NameForAlgorithm(algorithm), value);
                 }
 
-                const Aws::String& GetChecksumHeader(ChecksumAlgorithm algorithm) const
+                Aws::String GetChecksumHeader(ChecksumAlgorithm algorithm) const
                 {
                     const auto header = m_checksumHeaders.find("x-amz-checksum" + NameForAlgorithm(algorithm));
                     if(header == m_checksumHeaders.end())
                     {
                         AWS_LOGSTREAM_DEBUG("ChecksumInfo","could not find header for checksum algorithm, returning empty string");
-                        return m_emptyString;
+                        return {};
                     }
                     return header->second;
                 }
@@ -66,7 +70,7 @@ namespace Aws
                     m_checksumHash = HashFactoryForAlgorithm(algorithm)();
                 }
 
-                const ChecksumAlgorithm& GetChecksumAlgorithm() const
+                ChecksumAlgorithm GetChecksumAlgorithm() const
                 {
                     return m_checksumAlgorithm;
                 }
@@ -93,7 +97,7 @@ namespace Aws
                     return m_responseChecksums;
                 }
 
-                const ChecksumMode& GetShouldValidateResponse() const
+                ChecksumMode GetShouldValidateResponse() const
                 {
                     return m_shouldValidateResponse;
                 }
@@ -109,10 +113,6 @@ namespace Aws
                 std::shared_ptr<Aws::Utils::Crypto::Hash> m_checksumHash{};
                 ChecksumMode m_shouldValidateResponse{ChecksumMode::NOT_SET};
                 ResponseChecksums m_responseChecksums{};
-                // we need to return a ref to a string for checksum values for
-                // backwards compatibility reasons. So we need to return a
-                // non-static string when the header is not found.
-                Aws::String m_emptyString{};
             };
         }
     }

@@ -124,7 +124,7 @@ namespace smithy
                         responseChecksum.end(),
                         [&httpRequest](const Aws::Client::Checksum::ChecksumInfo::ResponseChecksumEntry& entry) -> void
                         {
-                            httpRequest->AddResponseValidationHash(Aws::Client::Checksum::ChecksumInfo::NameForAlgorithm(entry.first), entry.second);
+                            httpRequest->AddResponseValidationHash(Aws::Client::Checksum::NameForAlgorithm(entry.first), entry.second);
                         });
                 }
                 return httpRequest;

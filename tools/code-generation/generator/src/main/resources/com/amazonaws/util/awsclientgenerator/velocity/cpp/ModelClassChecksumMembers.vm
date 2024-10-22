@@ -18,7 +18,7 @@ bool ${typeInfo.className}::ShouldValidateResponseChecksum() const
 {
   if (GetChecksumInfo().has_value())
   {
-    return GetChecksumInfo().value().GetShouldValidateResponse() == ChecksumMode::ENABLED;
+    return ChecksumModeMapper::GetChecksumModeForName(Client::Checksum::NameForMode(GetChecksumInfo().value().GetShouldValidateResponse())) == ChecksumMode::ENABLED;
   }
   return false;
 }
@@ -32,8 +32,8 @@ Aws::Vector<Aws::String> ${typeInfo.className}::GetResponseChecksumAlgorithmName
   if (checksumInfo.has_value())
   {
 #foreach($responseAlgorithm in $operation.responseAlgorithms)
-    checksumInfo.value().AddResponseChecksum(ChecksumAlgorithm::${responseAlgorithm});
-    responseChecksumAlgorithmNames.push_back(Aws::Utils::StringUtils::ToUpper(Client::Checksum::ChecksumInfo::NameForAlgorithm(ChecksumAlgorithm::${responseAlgorithm}).c_str()));
+    checksumInfo.value().AddResponseChecksum(Client::Checksum::AlgorithmForName(Aws::Utils::StringUtils::ToLower(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(ChecksumAlgorithm::${responseAlgorithm}).c_str())));
+    responseChecksumAlgorithmNames.push_back(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(ChecksumAlgorithm::${responseAlgorithm}).c_str());
 #end
   }
   return responseChecksumAlgorithmNames;

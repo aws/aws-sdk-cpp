@@ -74,8 +74,8 @@
   }
 #end
 #if($operation.requestValidationModeMember)
-  if(GetChecksumInfo().has_value() && GetChecksumInfo().value().GetShouldValidateResponse() != ChecksumMode::NOT_SET)
+  if(GetChecksumInfo().has_value() && ChecksumModeMapper::GetChecksumModeForName(Client::Checksum::NameForMode(GetChecksumInfo().value().GetShouldValidateResponse())) != ChecksumMode::NOT_SET)
   {
-    headers.emplace("x-amz-checksum-mode", ChecksumModeMapper::GetNameForChecksumMode(GetChecksumInfo().value().GetShouldValidateResponse()));
+    headers.emplace("x-amz-checksum-mode", Client::Checksum::NameForMode(GetChecksumInfo().value().GetShouldValidateResponse()));
   }
 #end
