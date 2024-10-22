@@ -2,6 +2,7 @@
 #set($initializers = "")
 #set($initializerCount = 0)
 #foreach($entry in $shape.members.entrySet())
+#if(!$entry.value.isChecksumMember() && $operation.requestAlgorithmMember != $entry.key && $operation.requestValidationModeMember != $entry.key)
 #set($memberShape = $entry.value.shape)
 #if($memberShape.primitive || $memberShape.enum || $entry.value.idempotencyToken)
 #set($initializerCount = $initializerCount + 1)
@@ -9,6 +10,7 @@
 #set($isStreamingMember = ($shape.payload && ($shape.payload == $entry.key && !$entry.value.shape.structure)))
 #if(!$entry.value.required && $useRequiredField && !$isStreamingMember && !$memberShape.isEventStream())
 #set($initializerCount = $initializerCount + 1)
+#end
 #end
 #end
 #if($initializerCount > 0)

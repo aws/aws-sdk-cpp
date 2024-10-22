@@ -20,7 +20,7 @@ bool ${typeInfo.className}::ShouldValidateResponseChecksum() const
   {
     return GetChecksumInfo().value().GetShouldValidateResponse() == ChecksumMode::ENABLED;
   }
-  return false
+  return false;
 }
 
 #end
