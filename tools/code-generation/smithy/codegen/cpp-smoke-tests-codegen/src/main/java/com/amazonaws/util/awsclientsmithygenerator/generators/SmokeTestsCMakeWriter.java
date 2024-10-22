@@ -1,3 +1,7 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 import software.amazon.smithy.codegen.core.SymbolWriter;
 
@@ -60,13 +64,6 @@ public final class SmokeTestsCMakeWriter extends SymbolWriter<SmokeTestsCMakeWri
             target_link_libraries($${PROJECT_NAME}
                 $${PROJECT_LIBS})
             """, awsTestSrc, awsTestSrc,folderNamespace);
-        /*
-            if (AUTORUN_UNIT_TESTS)
-                ADD_CUSTOM_COMMAND( TARGET $${PROJECT_NAME} POST_BUILD
-                    COMMAND $${CMAKE_COMMAND} -E env LD_LIBRARY_PATH=$${AWS_AUTORUN_LD_LIBRARY_PATH}:$$ENV{LD_LIBRARY_PATH} $$<TARGET_FILE:$${PROJECT_NAME}>
-                    ARGS \"--gtest_brief=1\")
-            endif()
-         */
 
         write(""" 
             if(NOT CMAKE_CROSSCOMPILING)
@@ -76,9 +73,9 @@ public final class SmokeTestsCMakeWriter extends SymbolWriter<SmokeTestsCMakeWri
         return toString();
     }
 
-        /**
+    /**
         * The Factory class for creating CppWriters
-     */
+    */
     public static final class SmokeTestsCMakeWriterFactory implements SymbolWriter.Factory<SmokeTestsCMakeWriter> {
 
         @Override

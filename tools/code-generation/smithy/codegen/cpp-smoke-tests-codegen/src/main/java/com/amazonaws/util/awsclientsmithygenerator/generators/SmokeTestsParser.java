@@ -1,3 +1,7 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.aws.traits.ServiceTrait;
@@ -243,22 +247,19 @@ public class SmokeTestsParser implements Runnable{
             }
 
             //get configuration properties
-            ClientConfiguration config = new ClientConfiguration();
-            
             if(AwsSmokeTestModel.hasAwsVendorParams(testcase))
             {
-                AwsVendorParams params = AwsSmokeTestModel.getAwsVendorParams(testcase).get();
-                config.setAwsParams(Optional.of(params));
+                ClientConfiguration config = new ClientConfiguration(AwsSmokeTestModel.getAwsVendorParams(testcase).get());
+                test.setConfig(config);
             }
             else if (serviceShape.getId().getName().equalsIgnoreCase("s3") && 
                 AwsSmokeTestModel.hasS3VendorParams(testcase))
             {
-                
-                S3VendorParams s3params = AwsSmokeTestModel.getS3VendorParams(testcase).get();
-                config.setS3Params(Optional.of(s3params));                
+                ClientConfiguration config = new ClientConfiguration(AwsSmokeTestModel.getS3VendorParams(testcase).get());
+                test.setConfig(config);               
             }
 
-            test.setConfig(config);
+            
 
             test.setTestcaseName(testcase.getId());
 

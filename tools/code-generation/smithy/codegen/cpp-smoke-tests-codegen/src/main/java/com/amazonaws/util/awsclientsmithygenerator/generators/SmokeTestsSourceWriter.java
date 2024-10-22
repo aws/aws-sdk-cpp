@@ -1,4 +1,8 @@
 
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.codegen.core.SymbolWriter;
@@ -74,14 +78,14 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         //declare test fixture
         write("TEST_F($LSmokeTestSuite, $L )",clientNamespace, test.getTestcaseName()).write("{").indent().
         write("Aws::$L::$LClientConfiguration clientConfiguration;", clientNamespace,clientNamespace);
-        if(test.getConfig().getAwsParams().isPresent())
+        if(test.getConfig().hasAwsParams())
         {
-            if(!test.getConfig().getAwsParams().get().getRegion().isEmpty())
+            if(!test.getConfig().getAwsParams().getRegion().isEmpty())
             {
-                write("clientConfiguration.region = \"$L\";",test.getConfig().getAwsParams().get().getRegion());
+                write("clientConfiguration.region = \"$L\";",test.getConfig().getAwsParams().getRegion());
             }
-            write("clientConfiguration.useFIPS = $L;",test.getConfig().getAwsParams().get().useFips())
-            .write("clientConfiguration.useDualStack = $L;",test.getConfig().getAwsParams().get().useDualstack());
+            write("clientConfiguration.useFIPS = $L;",test.getConfig().getAwsParams().useFips())
+            .write("clientConfiguration.useDualStack = $L;",test.getConfig().getAwsParams().useDualstack());
         }
         if(test.getAuth() == "sigv4" || test.getAuth() == "sigv4a")
         {
