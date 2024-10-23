@@ -44,13 +44,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The key to use for filtering data. </p> <p>Valid metric filter keys:
-     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the
-     * same values as the <code>InitiationMethod</code> and
-     * <code>DisconnectReason</code> in the contact record. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-     * in the <i>Amazon Connect Administrator Guide</i>. </p>
+     * <p>The key to use for filtering data. </p> <p>Valid metric filter keys: </p>
+     * <ul> <li> <p>ANSWERING_MACHINE_DETECTION_STATUS</p> </li> <li>
+     * <p>CASE_STATUS</p> </li> <li> <p>DISCONNECT_REASON</p> </li> <li>
+     * <p>FLOWS_ACTION_IDENTIFIER</p> </li> <li> <p>FLOWS_NEXT_ACTION_IDENTIFIER</p>
+     * </li> <li> <p>FLOWS_OUTCOME_TYPE</p> </li> <li> <p>FLOWS_RESOURCE_TYPE</p> </li>
+     * <li> <p>INITIATION_METHOD</p> </li> </ul>
      */
     inline const Aws::String& GetMetricFilterKey() const{ return m_metricFilterKey; }
     inline bool MetricFilterKeyHasBeenSet() const { return m_metricFilterKeyHasBeenSet; }
@@ -64,16 +63,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The values to use for filtering data. </p> <p>Valid metric filter values for
-     * <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code> |
-     * <code>TRANSFER</code> | <code>QUEUE_TRANSFER</code> | <code>CALLBACK</code> |
-     * <code>API</code> | <code>WEBRTC_API</code> | <code>MONITOR</code> |
-     * <code>DISCONNECT</code> | <code>EXTERNAL_OUTBOUND</code> </p> <p>Valid metric
-     * filter values for <code>DISCONNECT_REASON</code>:
-     * <code>CUSTOMER_DISCONNECT</code> | <code>AGENT_DISCONNECT</code> |
-     * <code>THIRD_PARTY_DISCONNECT</code> | <code>TELECOM_PROBLEM</code> |
-     * <code>BARGED</code> | <code>CONTACT_FLOW_DISCONNECT</code> | <code>OTHER</code>
-     * | <code>EXPIRED</code> | <code>API</code> </p>
+     * <p>The values to use for filtering data. Values for metric-level filters can be
+     * either a fixed set of values or a customized list, depending on the use
+     * case.</p> <p>For valid values of metric-level filters
+     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>, and
+     * <code>ANSWERING_MACHINE_DETECTION_STATUS</code>, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+     * in the <i>Amazon Connect Administrator Guide</i>. </p> <p>For valid values of
+     * the metric-level filter <code>FLOWS_OUTCOME_TYPE</code>, see the description for
+     * the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow
+     * outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricFilterValues() const{ return m_metricFilterValues; }
     inline bool MetricFilterValuesHasBeenSet() const { return m_metricFilterValuesHasBeenSet; }
@@ -88,9 +88,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The flag to use to filter on requested metric filter values or to not filter
-     * on requested metric filter values. By default the negate is <code>false</code>,
-     * which indicates to filter on the requested metric filter. </p>
+     * <p>If set to <code>true</code>, the API response contains results that filter
+     * out the results matched by the metric-level filters condition. By default,
+     * <code>Negate</code> is set to <code>false</code>. </p>
      */
     inline bool GetNegate() const{ return m_negate; }
     inline bool NegateHasBeenSet() const { return m_negateHasBeenSet; }

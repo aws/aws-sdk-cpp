@@ -47,7 +47,9 @@ enum class MWAAErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
+  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  REST_API_CLIENT,
+  REST_API_SERVER
 };
 
 class AWS_MWAA_API MWAAError : public Aws::Client::AWSError<MWAAErrors>

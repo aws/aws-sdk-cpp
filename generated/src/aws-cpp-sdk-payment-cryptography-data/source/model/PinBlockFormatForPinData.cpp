@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ISO_FORMAT_0_HASH = HashingUtils::HashString("ISO_FORMAT_0");
         static const int ISO_FORMAT_3_HASH = HashingUtils::HashString("ISO_FORMAT_3");
+        static const int ISO_FORMAT_4_HASH = HashingUtils::HashString("ISO_FORMAT_4");
 
 
         PinBlockFormatForPinData GetPinBlockFormatForPinDataForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ISO_FORMAT_3_HASH)
           {
             return PinBlockFormatForPinData::ISO_FORMAT_3;
+          }
+          else if (hashCode == ISO_FORMAT_4_HASH)
+          {
+            return PinBlockFormatForPinData::ISO_FORMAT_4;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "ISO_FORMAT_0";
           case PinBlockFormatForPinData::ISO_FORMAT_3:
             return "ISO_FORMAT_3";
+          case PinBlockFormatForPinData::ISO_FORMAT_4:
+            return "ISO_FORMAT_4";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

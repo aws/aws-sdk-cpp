@@ -10,6 +10,7 @@
 #include <aws/payment-cryptography-data/model/PinVerificationAttributes.h>
 #include <aws/payment-cryptography-data/model/PinBlockFormatForPinData.h>
 #include <aws/payment-cryptography-data/model/DukptAttributes.h>
+#include <aws/payment-cryptography-data/model/WrappedKey.h>
 #include <utility>
 
 namespace Aws
@@ -146,6 +147,16 @@ namespace Model
     inline VerifyPinDataRequest& WithDukptAttributes(const DukptAttributes& value) { SetDukptAttributes(value); return *this;}
     inline VerifyPinDataRequest& WithDukptAttributes(DukptAttributes&& value) { SetDukptAttributes(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const WrappedKey& GetEncryptionWrappedKey() const{ return m_encryptionWrappedKey; }
+    inline bool EncryptionWrappedKeyHasBeenSet() const { return m_encryptionWrappedKeyHasBeenSet; }
+    inline void SetEncryptionWrappedKey(const WrappedKey& value) { m_encryptionWrappedKeyHasBeenSet = true; m_encryptionWrappedKey = value; }
+    inline void SetEncryptionWrappedKey(WrappedKey&& value) { m_encryptionWrappedKeyHasBeenSet = true; m_encryptionWrappedKey = std::move(value); }
+    inline VerifyPinDataRequest& WithEncryptionWrappedKey(const WrappedKey& value) { SetEncryptionWrappedKey(value); return *this;}
+    inline VerifyPinDataRequest& WithEncryptionWrappedKey(WrappedKey&& value) { SetEncryptionWrappedKey(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_verificationKeyIdentifier;
@@ -171,6 +182,9 @@ namespace Model
 
     DukptAttributes m_dukptAttributes;
     bool m_dukptAttributesHasBeenSet = false;
+
+    WrappedKey m_encryptionWrappedKey;
+    bool m_encryptionWrappedKeyHasBeenSet = false;
   };
 
 } // namespace Model

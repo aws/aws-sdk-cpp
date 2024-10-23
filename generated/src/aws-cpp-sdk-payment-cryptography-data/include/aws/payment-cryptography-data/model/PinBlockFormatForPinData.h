@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ISO_FORMAT_0,
-    ISO_FORMAT_3
+    ISO_FORMAT_3,
+    ISO_FORMAT_4
   };
 
 namespace PinBlockFormatForPinDataMapper

@@ -22,7 +22,8 @@ VerifyPinDataRequest::VerifyPinDataRequest() :
     m_pinBlockFormatHasBeenSet(false),
     m_pinDataLength(0),
     m_pinDataLengthHasBeenSet(false),
-    m_dukptAttributesHasBeenSet(false)
+    m_dukptAttributesHasBeenSet(false),
+    m_encryptionWrappedKeyHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,12 @@ Aws::String VerifyPinDataRequest::SerializePayload() const
   if(m_dukptAttributesHasBeenSet)
   {
    payload.WithObject("DukptAttributes", m_dukptAttributes.Jsonize());
+
+  }
+
+  if(m_encryptionWrappedKeyHasBeenSet)
+  {
+   payload.WithObject("EncryptionWrappedKey", m_encryptionWrappedKey.Jsonize());
 
   }
 
