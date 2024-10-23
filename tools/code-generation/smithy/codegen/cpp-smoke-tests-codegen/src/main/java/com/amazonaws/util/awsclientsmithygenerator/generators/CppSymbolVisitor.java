@@ -46,7 +46,7 @@
  
      @Override
      public Symbol blobShape(BlobShape blobShape) {
-         return createSymbolBuilder(blobShape, "stringstream").build();
+         return createSymbolBuilder(blobShape, "Aws::Utils::ByteBuffer").build();
      }
  
      @Override
@@ -58,7 +58,7 @@
      public Symbol listShape(ListShape listShape) {
          var targetShape = model.expectShape(listShape.getMember().getTarget());
          var targetSymbol = targetShape.accept(this);
-         return createSymbolBuilder(listShape, "Vector<" + targetSymbol + ">")
+         return createSymbolBuilder(listShape, "Aws::Vector<" + targetSymbol + ">")
                  .addReference(targetSymbol)
                  .build();
      }
@@ -68,9 +68,11 @@
       */
      @Override
      public Symbol mapShape(MapShape mapShape) {
+         var keyShape = model.expectShape(mapShape.getKey().getTarget());
+         var keyType = keyShape.accept(this);
          var valueShape = model.expectShape(mapShape.getValue().getTarget());
          var valueType = valueShape.accept(this);
-         return createSymbolBuilder(mapShape, "Map<string, " + valueType + ">")
+         return createSymbolBuilder(mapShape, "Aws::Map<"+keyType +"," + valueType + ">")
                  .addReference(valueType)
                  .build();
      }
@@ -107,7 +109,7 @@
  
      @Override
      public Symbol documentShape(DocumentShape documentShape) {
-        throw new CodegenException("DocumentShape shape is not supported by the C++ code generator.");
+        return createSymbolBuilder(documentShape, "double").build();
     }
  
      @Override
@@ -152,6 +154,7 @@
  
      @Override
      public Symbol structureShape(StructureShape structureShape) {
+
          String modeledName = getModeledShapeName(structureShape);
          return createSymbolBuilder(structureShape, modeledName).build();
      }
@@ -171,7 +174,7 @@
  
      @Override
      public Symbol timestampShape(TimestampShape timestampShape) {
-         return createSymbolBuilder(timestampShape, "DateTime").build();
+         return createSymbolBuilder(timestampShape, "Aws::Utils::DateTime").build();
      }
  
      private String getModeledShapeName(Shape shape) {

@@ -57,6 +57,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
 
     public String getShapeName(SHAPE s);
 
+    public void recordContainerForImport(SHAPE s);
+
     public static String convertSnakeToPascal(String snakeCase) {
         StringBuilder result = new StringBuilder();
         String[] words = snakeCase.split("_");
@@ -102,6 +104,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         String functionName = new String();
         String varName = key.toLowerCase();
         String functionNameSuffix = convertSnakeToPascal(varName + "_lvl" + level + "_idx" + count);
+
+        recordContainerForImport(shape);
 
         //for simple types, use initializer list for narrow types
         if ( (isFloat(value) && isFloatShape(shape)) ||

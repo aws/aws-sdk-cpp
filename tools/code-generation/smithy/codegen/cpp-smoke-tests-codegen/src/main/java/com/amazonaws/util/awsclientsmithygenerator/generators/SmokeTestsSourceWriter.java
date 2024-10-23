@@ -5,17 +5,20 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
+import software.amazon.smithy.codegen.core.Symbol;
 import software.amazon.smithy.codegen.core.SymbolWriter;
 import software.amazon.smithy.model.shapes.ServiceShape;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceWriter, CppImportContainer>{
     private final String clientNamespace;
     private final String folderNamespace;
     private final String c2jNamespace;
     private final List<SmokeTestData> smoketests;
+
     //protected CppBlockWriter blockWriter;    
     public SmokeTestsSourceWriter(String namespace,List<SmokeTestData> smoketests) {
         super(new CppImportContainer(namespace));
@@ -123,11 +126,23 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
 
     public String generate()
     {
-        //tests will belong to one client, so choose first one
-        addHeaderBlock();
-        addClientHeader();
+        write("${L|}",
+        "/**\n" + //
+        " * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\n" + //
+        " * SPDX-License-Identifier: Apache-2.0.\n" + //
+        " */"
+        );
         
-        smoketests.forEach(this::addRequestHeader);
+        //tests will belong to one client, so choose first one
+        smoketests.forEach(
+            test -> {
+                test.getSymbols().forEach(sym -> this.getImportContainer().importSymbol(sym));
+                this.getImportContainer().importOperationInput(test.operationName);
+            }    
+        );
+
+        write("${L|}",this.getImportContainer().toString());
+
         write("namespace $LSmokeTest{", clientNamespace);
         useNamespaces();
 

@@ -27,10 +27,6 @@ import java.util.Arrays;
 import java.util.Set;
 
 import software.amazon.smithy.build.PluginContext;
-import software.amazon.smithy.codegen.core.SymbolProvider;
-
-import software.amazon.smithy.aws.smoketests.model.AwsVendorParams;
-import software.amazon.smithy.aws.smoketests.model.S3VendorParams;
 import software.amazon.smithy.aws.smoketests.model.AwsSmokeTestModel;
 
 
@@ -40,7 +36,7 @@ public class SmokeTestsParser implements Runnable{
     final private Model model;
     final private SmithyCodegenAdapter codegenAdapter;
     final private PluginContext context;
-    final private SymbolProvider symbolProvider;
+    final private CppSymbolVisitor symbolProvider;
     final private Map<ShapeId, String> operationToServiceMap;
     final private Map<String, ServiceShape> serviceShapeMap;
     // Static member to store the flipped map
@@ -50,8 +46,8 @@ public class SmokeTestsParser implements Runnable{
     {
         this.context = context;
         this.model = context.getModel();
-        this.codegenAdapter = new SmithyCodegenAdapter(model);
         this.symbolProvider = new CppSymbolVisitor(model);
+        this.codegenAdapter = new SmithyCodegenAdapter(model,this.symbolProvider);
         this.operationToServiceMap = new HashMap<>();
         this.serviceShapeMap = new HashMap<>();
         this.serviceFilter = new HashSet<>();
@@ -151,6 +147,8 @@ public class SmokeTestsParser implements Runnable{
 
         smokeTestsTrait.getTestCases().stream().forEach(testcase -> {
 
+            codegenAdapter.clearSymbols();
+
             //parse each test case
             //operation name
             SmokeTestData test = new SmokeTestData();
@@ -180,6 +178,8 @@ public class SmokeTestsParser implements Runnable{
                 Optional<Shape> topLevelShape = model.getShape(operationShape.getInput().get());
 
                 if(topLevelShape.isPresent()) {
+
+                    codegenAdapter.recordContainerForImport(topLevelShape.get());
                     Map<String, Shape> fieldShapeMap = codegenAdapter.getMemberShapes(topLevelShape.get());
 
                     //declare top level variable
@@ -262,9 +262,6 @@ public class SmokeTestsParser implements Runnable{
                 ClientConfiguration config = new ClientConfiguration(AwsSmokeTestModel.getS3VendorParams(testcase).get());
                 test.setConfig(config);               
             }
-
-            
-
             test.setTestcaseName(testcase.getId());
 
             //check which auth trait is present
@@ -280,6 +277,7 @@ public class SmokeTestsParser implements Runnable{
             {
                 test.setAuth("bearer");
             }
+            test.setSymbols(codegenAdapter.getSymbols());
 
             testcases.add(test);
         });
@@ -307,19 +305,16 @@ public class SmokeTestsParser implements Runnable{
             //System.out.println("OperationShape: " + operationShape.getId().getName());
             //System.out.println("serviceName: " + serviceName);
 
-            List<SmokeTestData> tests = parseSmokeTests(
+            //for one service, we have one smoke test file
+            //So, we for a given service we import dependencies (symbol types and their respective headers)
+            List<SmokeTestData> tests = serviceSmokeTestsMap.getOrDefault(serviceShape, new ArrayList<>());
+
+            tests.addAll(parseSmokeTests(
                 smokeTestsTrait, 
                 operationShape,
-                serviceShape );
-            //add to tests for the same service
-            if(serviceSmokeTestsMap.containsKey(serviceShape))
-            {
-                serviceSmokeTestsMap.get(serviceShape).addAll(tests);
-            }
-            else
-            {
-                serviceSmokeTestsMap.put(serviceShape, tests);
-            }
+                serviceShape ));
+            
+            serviceSmokeTestsMap.put(serviceShape, tests);
 
         });
         

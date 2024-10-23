@@ -6,6 +6,8 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 import lombok.Data;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import software.amazon.smithy.codegen.core.Symbol;
 @Data
 public final class SmokeTestData {
     public String testcaseName;
@@ -19,4 +21,5 @@ public final class SmokeTestData {
     Optional<String> errorShapeId;
     //capture auth scheme as that decides the client constructor
     String auth;
+    public Set<Symbol> symbols;
 };

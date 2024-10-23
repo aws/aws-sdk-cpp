@@ -9,10 +9,13 @@ import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.ShapeType;
 import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.ShapeId;
+import software.amazon.smithy.codegen.core.Symbol;
 import software.amazon.smithy.model.Model;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -22,9 +25,18 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
 
     protected Map<String, OperationShape> operationShapeMap;
 
-    public SmithyCodegenAdapter(Model model) {
-        this.model = model;
+    private final CppSymbolVisitor symbolVisitor;
 
+    private Set<Symbol> symbols;
+
+    //private final CppImportContainer importContainer;
+
+    public SmithyCodegenAdapter(Model model, CppSymbolVisitor symbolVisitor) {
+        this.model = model;
+        this.symbolVisitor = symbolVisitor;
+        this.symbols = new HashSet<>();
+        //this.importContainer = importContainer;
+        
         operationShapeMap = new HashMap<>();
 
         operationShapeMap = model.getOperationShapes().stream().collect(Collectors.toMap(
@@ -32,6 +44,16 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
             operationShape -> operationShape,
             (existing, replacement) -> existing // Keep the first occurrence
         ));
+    }
+
+    public void clearSymbols()
+    {
+        symbols.clear();
+    }
+
+    public Set<Symbol> getSymbols()
+    {
+        return symbols;
     }
 
     @Override
@@ -187,32 +209,13 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
     @Override
     public String getShapeName(Shape s)
     {
-        //check if list member is a primitive type, then primitive type needs to be returned
-        //this is the type what the c2j codegen generates
-        if(isStringShape(s))
-        {
-            return "Aws::String";
-        }
-        else if (isFloatShape(s))
-        {
-            return "float";
-        }
-        else if(isIntegerShape(s))
-        {
-            return "int";
-        }
+        return symbolVisitor.toSymbol(s).getName();
+    }
 
-        String input = String.valueOf(s.getId());
-        // Find the index of the '#' character
-        int index = input.indexOf('#');
-
-        if (index != -1) {
-            // If '#' is found, return the substring after it
-            return input.substring(index + 1);
-        } else {
-            // If no '#' is found, return the entire string
-            return input;
-        }
+    @Override
+    public void recordContainerForImport(Shape s)
+    {
+        symbols.add(symbolVisitor.toSymbol(s));
     }
 
     @Override
