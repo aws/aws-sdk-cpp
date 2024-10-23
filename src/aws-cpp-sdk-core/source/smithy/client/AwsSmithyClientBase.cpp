@@ -314,20 +314,20 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
         }
     };
 
-    bool hasEmbeddedError = pRequestCtx->m_pRequest &&
-                          pRequestCtx->m_pRequest->HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders());
-
-    if (Utils::DoesResponseGenerateError(httpResponse) || hasEmbeddedError)
+    Aws::Client::HttpResponseOutcome outcome = [&]()
     {
-        AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Request returned error. Attempting to generate appropriate error codes from response");
-        assert(m_errorMarshaller);
-        auto error = m_errorMarshaller->BuildAWSError(httpResponse);
-        return pRequestCtx->m_responseHandler(HttpResponseOutcome(std::move(error)));
-    }
-
-    AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Request returned successful response.");
-
-    Aws::Client::HttpResponseOutcome outcome = HttpResponseOutcome(std::move(httpResponse));
+        bool hasEmbeddedError = pRequestCtx->m_pRequest &&
+                      pRequestCtx->m_pRequest->HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders());
+        if (Utils::DoesResponseGenerateError(httpResponse) || hasEmbeddedError)
+        {
+            AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Request returned error. Attempting to generate appropriate error codes from response");
+            assert(m_errorMarshaller);
+            auto error = m_errorMarshaller->BuildAWSError(httpResponse);
+            return HttpResponseOutcome(std::move(error));
+        }
+        AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Request returned successful response.");
+        return HttpResponseOutcome(std::move(httpResponse));
+    } ();
 
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
 
@@ -388,8 +388,15 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
             {
               assert(m_errorMarshaller);
               const Aws::String regionFromResponse = m_errorMarshaller->ExtractRegion(outcome.GetError());
-              const Aws::String& signerRegion = pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion() ?
-                                                pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion().value() : "";
+              const Aws::String signerRegion = [&]() {
+                  if (!regionFromResponse.empty() &&
+                      pRequestCtx->m_endpoint.GetAttributes() &&
+                      pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion())
+                  {
+                      return pRequestCtx->m_endpoint.GetAttributes()->authScheme.GetSigningRegion().value();
+                  }
+                  return Aws::String("");
+              } ();
               if (m_clientConfig->region == Aws::Region::AWS_GLOBAL && !regionFromResponse.empty() &&
                   regionFromResponse != signerRegion) {
                 pRequestCtx->m_endpoint.AccessAttributes()->authScheme.SetSigningRegion(regionFromResponse);
