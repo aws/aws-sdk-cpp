@@ -4,14 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
-
-import software.amazon.smithy.codegen.core.Symbol;
 import software.amazon.smithy.codegen.core.SymbolWriter;
-import software.amazon.smithy.model.shapes.ServiceShape;
-
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceWriter, CppImportContainer>{
     private final String clientNamespace;
@@ -132,7 +126,7 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         " * SPDX-License-Identifier: Apache-2.0.\n" + //
         " */"
         );
-        
+
         //tests will belong to one client, so choose first one
         smoketests.forEach(
             test -> {

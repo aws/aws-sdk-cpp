@@ -144,12 +144,16 @@
  
      @Override
      public Symbol stringShape(StringShape stringShape) {
-         return createSymbolBuilder(stringShape, "string").build();
+         return createSymbolBuilder(stringShape, "Aws::String").build();
      }
  
      @Override
      public Symbol enumShape(EnumShape shape) {
-         return ShapeVisitor.super.enumShape(shape);
+        
+        // return ShapeVisitor.super.enumShape(shape);
+        return createSymbolBuilder(shape, shape.getId().getName()).build();
+
+        
      }
  
      @Override
