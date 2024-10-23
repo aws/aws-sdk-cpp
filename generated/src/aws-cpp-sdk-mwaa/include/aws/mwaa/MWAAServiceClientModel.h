@@ -23,6 +23,7 @@
 #include <aws/mwaa/model/CreateWebLoginTokenResult.h>
 #include <aws/mwaa/model/DeleteEnvironmentResult.h>
 #include <aws/mwaa/model/GetEnvironmentResult.h>
+#include <aws/mwaa/model/InvokeRestApiResult.h>
 #include <aws/mwaa/model/ListEnvironmentsResult.h>
 #include <aws/mwaa/model/ListTagsForResourceResult.h>
 #include <aws/mwaa/model/TagResourceResult.h>
@@ -74,6 +75,7 @@ namespace Aws
       class CreateWebLoginTokenRequest;
       class DeleteEnvironmentRequest;
       class GetEnvironmentRequest;
+      class InvokeRestApiRequest;
       class ListEnvironmentsRequest;
       class ListTagsForResourceRequest;
       class TagResourceRequest;
@@ -87,6 +89,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateWebLoginTokenResult, MWAAError> CreateWebLoginTokenOutcome;
       typedef Aws::Utils::Outcome<DeleteEnvironmentResult, MWAAError> DeleteEnvironmentOutcome;
       typedef Aws::Utils::Outcome<GetEnvironmentResult, MWAAError> GetEnvironmentOutcome;
+      typedef Aws::Utils::Outcome<InvokeRestApiResult, MWAAError> InvokeRestApiOutcome;
       typedef Aws::Utils::Outcome<ListEnvironmentsResult, MWAAError> ListEnvironmentsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, MWAAError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, MWAAError> TagResourceOutcome;
@@ -100,6 +103,7 @@ namespace Aws
       typedef std::future<CreateWebLoginTokenOutcome> CreateWebLoginTokenOutcomeCallable;
       typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
       typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
+      typedef std::future<InvokeRestApiOutcome> InvokeRestApiOutcomeCallable;
       typedef std::future<ListEnvironmentsOutcome> ListEnvironmentsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -116,6 +120,7 @@ namespace Aws
     typedef std::function<void(const MWAAClient*, const Model::CreateWebLoginTokenRequest&, const Model::CreateWebLoginTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebLoginTokenResponseReceivedHandler;
     typedef std::function<void(const MWAAClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
     typedef std::function<void(const MWAAClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentResponseReceivedHandler;
+    typedef std::function<void(const MWAAClient*, const Model::InvokeRestApiRequest&, const Model::InvokeRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeRestApiResponseReceivedHandler;
     typedef std::function<void(const MWAAClient*, const Model::ListEnvironmentsRequest&, const Model::ListEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentsResponseReceivedHandler;
     typedef std::function<void(const MWAAClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MWAAClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

@@ -136,7 +136,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies if the imported model supports fine tuning.</p>
+     * <p>Specifies if the imported model supports converse.</p>
      */
     inline bool GetInstructSupported() const{ return m_instructSupported; }
     inline void SetInstructSupported(bool value) { m_instructSupported = value; }

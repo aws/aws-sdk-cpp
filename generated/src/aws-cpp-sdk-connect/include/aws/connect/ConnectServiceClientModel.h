@@ -179,6 +179,7 @@
 #include <aws/connect/model/StartContactStreamingResult.h>
 #include <aws/connect/model/StartOutboundChatContactResult.h>
 #include <aws/connect/model/StartOutboundVoiceContactResult.h>
+#include <aws/connect/model/StartScreenSharingResult.h>
 #include <aws/connect/model/StartTaskContactResult.h>
 #include <aws/connect/model/StartWebRTCContactResult.h>
 #include <aws/connect/model/StopContactResult.h>
@@ -448,6 +449,7 @@ namespace Aws
       class StartContactStreamingRequest;
       class StartOutboundChatContactRequest;
       class StartOutboundVoiceContactRequest;
+      class StartScreenSharingRequest;
       class StartTaskContactRequest;
       class StartWebRTCContactRequest;
       class StopContactRequest;
@@ -707,6 +709,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartContactStreamingResult, ConnectError> StartContactStreamingOutcome;
       typedef Aws::Utils::Outcome<StartOutboundChatContactResult, ConnectError> StartOutboundChatContactOutcome;
       typedef Aws::Utils::Outcome<StartOutboundVoiceContactResult, ConnectError> StartOutboundVoiceContactOutcome;
+      typedef Aws::Utils::Outcome<StartScreenSharingResult, ConnectError> StartScreenSharingOutcome;
       typedef Aws::Utils::Outcome<StartTaskContactResult, ConnectError> StartTaskContactOutcome;
       typedef Aws::Utils::Outcome<StartWebRTCContactResult, ConnectError> StartWebRTCContactOutcome;
       typedef Aws::Utils::Outcome<StopContactResult, ConnectError> StopContactOutcome;
@@ -966,6 +969,7 @@ namespace Aws
       typedef std::future<StartContactStreamingOutcome> StartContactStreamingOutcomeCallable;
       typedef std::future<StartOutboundChatContactOutcome> StartOutboundChatContactOutcomeCallable;
       typedef std::future<StartOutboundVoiceContactOutcome> StartOutboundVoiceContactOutcomeCallable;
+      typedef std::future<StartScreenSharingOutcome> StartScreenSharingOutcomeCallable;
       typedef std::future<StartTaskContactOutcome> StartTaskContactOutcomeCallable;
       typedef std::future<StartWebRTCContactOutcome> StartWebRTCContactOutcomeCallable;
       typedef std::future<StopContactOutcome> StopContactOutcomeCallable;
@@ -1228,6 +1232,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::StartContactStreamingRequest&, const Model::StartContactStreamingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContactStreamingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartOutboundChatContactRequest&, const Model::StartOutboundChatContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartOutboundChatContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartOutboundVoiceContactRequest&, const Model::StartOutboundVoiceContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartOutboundVoiceContactResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::StartScreenSharingRequest&, const Model::StartScreenSharingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartScreenSharingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartTaskContactRequest&, const Model::StartTaskContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTaskContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartWebRTCContactRequest&, const Model::StartWebRTCContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWebRTCContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StopContactRequest&, const Model::StopContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactResponseReceivedHandler;

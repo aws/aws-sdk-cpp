@@ -293,7 +293,7 @@ namespace Model
      * Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#htm-avg-agent-api-connecting-time">Average
      * agent API connecting time</a> </p>  <p>The <code>Negate</code> key in
-     * Metric Level Filters is not applicable for this metric.</p>  </dd>
+     * metric-level filters is not applicable for this metric.</p>  </dd>
      * <dt>AVG_AGENT_PAUSE_TIME</dt> <dd> <p>Unit: Seconds</p> <p>Valid groupings and
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in
      * Connect</p> <p>UI name: <a
@@ -506,7 +506,7 @@ namespace Model
      * removed from queue in X seconds</a> </p> </dd> <dt>CONTACTS_RESOLVED_IN_X</dt>
      * <dd> <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
      * Profile, contact/segmentAttributes/connect:Subtype, Q in Connect</p>
-     * <p>Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to
+     * <p>Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to
      * 604800 (inclusive), in seconds. For <code>Comparison</code>, you can use
      * <code>LT</code> (for "Less than") or <code>LTE</code> (for "Less than
      * equal").</p> <p>UI name: <a
@@ -653,8 +653,8 @@ namespace Model
      * <code>CALLBACK</code> | <code>API</code> </p> <p>Valid groupings and filters:
      * Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#htm-agent-api-connecting-time">Agent
-     * API connecting time</a> </p>  <p>The <code>Negate</code> key in Metric
-     * Level Filters is not applicable for this metric.</p>  </dd>
+     * API connecting time</a> </p>  <p>The <code>Negate</code> key in
+     * metric-level filters is not applicable for this metric.</p>  </dd>
      * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: Count</p> <p>Metric filter: </p> <ul>
      * <li> <p>Valid values: <code>API</code>| <code>Incoming</code> |
      * <code>Outbound</code> | <code>Transfer</code> | <code>Callback</code> |

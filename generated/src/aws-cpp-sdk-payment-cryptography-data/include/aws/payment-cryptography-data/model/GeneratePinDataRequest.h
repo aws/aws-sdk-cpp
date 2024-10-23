@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography-data/model/PinGenerationAttributes.h>
 #include <aws/payment-cryptography-data/model/PinBlockFormatForPinData.h>
+#include <aws/payment-cryptography-data/model/WrappedKey.h>
 #include <utility>
 
 namespace Aws
@@ -52,7 +53,8 @@ namespace Model
     ///@{
     /**
      * <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment
-     * Cryptography uses to encrypt the PIN Block.</p>
+     * Cryptography uses to encrypt the PIN Block. For ECDH, it is the
+     * <code>keyARN</code> of the asymmetric ECC key.</p>
      */
     inline const Aws::String& GetEncryptionKeyIdentifier() const{ return m_encryptionKeyIdentifier; }
     inline bool EncryptionKeyIdentifierHasBeenSet() const { return m_encryptionKeyIdentifierHasBeenSet; }
@@ -119,6 +121,16 @@ namespace Model
     inline GeneratePinDataRequest& WithPinBlockFormat(const PinBlockFormatForPinData& value) { SetPinBlockFormat(value); return *this;}
     inline GeneratePinDataRequest& WithPinBlockFormat(PinBlockFormatForPinData&& value) { SetPinBlockFormat(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const WrappedKey& GetEncryptionWrappedKey() const{ return m_encryptionWrappedKey; }
+    inline bool EncryptionWrappedKeyHasBeenSet() const { return m_encryptionWrappedKeyHasBeenSet; }
+    inline void SetEncryptionWrappedKey(const WrappedKey& value) { m_encryptionWrappedKeyHasBeenSet = true; m_encryptionWrappedKey = value; }
+    inline void SetEncryptionWrappedKey(WrappedKey&& value) { m_encryptionWrappedKeyHasBeenSet = true; m_encryptionWrappedKey = std::move(value); }
+    inline GeneratePinDataRequest& WithEncryptionWrappedKey(const WrappedKey& value) { SetEncryptionWrappedKey(value); return *this;}
+    inline GeneratePinDataRequest& WithEncryptionWrappedKey(WrappedKey&& value) { SetEncryptionWrappedKey(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_generationKeyIdentifier;
@@ -138,6 +150,9 @@ namespace Model
 
     PinBlockFormatForPinData m_pinBlockFormat;
     bool m_pinBlockFormatHasBeenSet = false;
+
+    WrappedKey m_encryptionWrappedKey;
+    bool m_encryptionWrappedKeyHasBeenSet = false;
   };
 
 } // namespace Model

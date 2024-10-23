@@ -38,10 +38,9 @@ namespace Model
     ///@{
     /**
      * <p>The <code>keyARN</code> of the encryption key under which incoming PIN block
-     * data is encrypted. This key type can be PEK or BDK.</p> <p>When a
-     * WrappedKeyBlock is provided, this value will be the identifier to the key
-     * wrapping key for PIN block. Otherwise, it is the key identifier used to perform
-     * the operation.</p>
+     * data is encrypted. This key type can be PEK or BDK.</p> <p>For dynamic keys, it
+     * is the <code>keyARN</code> of KEK of the TR-31 wrapped PEK. For ECDH, it is the
+     * <code>keyARN</code> of the asymmetric ECC key.</p>
      */
     inline const Aws::String& GetIncomingKeyIdentifier() const{ return m_incomingKeyIdentifier; }
     inline bool IncomingKeyIdentifierHasBeenSet() const { return m_incomingKeyIdentifierHasBeenSet; }
@@ -56,7 +55,8 @@ namespace Model
     ///@{
     /**
      * <p>The <code>keyARN</code> of the encryption key for encrypting outgoing PIN
-     * block data. This key type can be PEK or BDK.</p>
+     * block data. This key type can be PEK or BDK.</p> <p>For ECDH, it is the
+     * <code>keyARN</code> of the asymmetric ECC key.</p>
      */
     inline const Aws::String& GetOutgoingKeyIdentifier() const{ return m_outgoingKeyIdentifier; }
     inline bool OutgoingKeyIdentifierHasBeenSet() const { return m_outgoingKeyIdentifierHasBeenSet; }

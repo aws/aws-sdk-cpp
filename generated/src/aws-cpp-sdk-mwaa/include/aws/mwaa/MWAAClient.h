@@ -43,6 +43,8 @@ namespace MWAA
    * href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateCliToken.html
    * ">CreateCliToken</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html">CreateWebLoginToken</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/mwaa/latest/API/API_InvokeRestApi.html">InvokeRestApi</a>
    * </p> </li> </ul> </li> </ul> <p> <b>Regions</b> </p> <p>For a list of supported
    * regions, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/mwaa.html">Amazon MWAA
@@ -135,7 +137,7 @@ namespace MWAA
         }
 
         /**
-         * <p>Creates an Amazon Managed Workflows for Apache Airflow (MWAA)
+         * <p>Creates an Amazon Managed Workflows for Apache Airflow (Amazon MWAA)
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateEnvironment">AWS
          * API Reference</a></p>
@@ -188,7 +190,7 @@ namespace MWAA
         }
 
         /**
-         * <p>Deletes an Amazon Managed Workflows for Apache Airflow (MWAA)
+         * <p>Deletes an Amazon Managed Workflows for Apache Airflow (Amazon MWAA)
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/DeleteEnvironment">AWS
          * API Reference</a></p>
@@ -237,6 +239,34 @@ namespace MWAA
         void GetEnvironmentAsync(const GetEnvironmentRequestT& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MWAAClient::GetEnvironment, request, handler, context);
+        }
+
+        /**
+         * <p>Invokes the Apache Airflow REST API on the webserver with the specified
+         * inputs. To learn more, see <a
+         * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-mwaa-apache-airflow-rest-api.html">Using
+         * the Apache Airflow REST API</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/InvokeRestApi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::InvokeRestApiOutcome InvokeRestApi(const Model::InvokeRestApiRequest& request) const;
+
+        /**
+         * A Callable wrapper for InvokeRestApi that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename InvokeRestApiRequestT = Model::InvokeRestApiRequest>
+        Model::InvokeRestApiOutcomeCallable InvokeRestApiCallable(const InvokeRestApiRequestT& request) const
+        {
+            return SubmitCallable(&MWAAClient::InvokeRestApi, request);
+        }
+
+        /**
+         * An Async wrapper for InvokeRestApi that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename InvokeRestApiRequestT = Model::InvokeRestApiRequest>
+        void InvokeRestApiAsync(const InvokeRestApiRequestT& request, const InvokeRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MWAAClient::InvokeRestApi, request, handler, context);
         }
 
         /**

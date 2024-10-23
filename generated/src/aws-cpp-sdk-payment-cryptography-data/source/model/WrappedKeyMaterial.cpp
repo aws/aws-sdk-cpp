@@ -19,7 +19,8 @@ namespace Model
 {
 
 WrappedKeyMaterial::WrappedKeyMaterial() : 
-    m_tr31KeyBlockHasBeenSet(false)
+    m_tr31KeyBlockHasBeenSet(false),
+    m_diffieHellmanSymmetricKeyHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ WrappedKeyMaterial& WrappedKeyMaterial::operator =(JsonView jsonValue)
     m_tr31KeyBlockHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DiffieHellmanSymmetricKey"))
+  {
+    m_diffieHellmanSymmetricKey = jsonValue.GetObject("DiffieHellmanSymmetricKey");
+
+    m_diffieHellmanSymmetricKeyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue WrappedKeyMaterial::Jsonize() const
   if(m_tr31KeyBlockHasBeenSet)
   {
    payload.WithString("Tr31KeyBlock", m_tr31KeyBlock);
+
+  }
+
+  if(m_diffieHellmanSymmetricKeyHasBeenSet)
+  {
+   payload.WithObject("DiffieHellmanSymmetricKey", m_diffieHellmanSymmetricKey.Jsonize());
 
   }
 
