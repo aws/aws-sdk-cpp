@@ -80,6 +80,10 @@ public class SmokeTestsParser implements Runnable{
                 SmithyC2JNamespaceMap.getInstance(value.asStringNode().get().getValue());
             }
         }
+        else
+        {
+            SmithyC2JNamespaceMap.getInstance("");
+        }
 
         // Iterate over all Service shapes in the model which has at least one operation that has smoke test
         // create a reverse map of operations to service shapes 
@@ -325,38 +329,38 @@ public class SmokeTestsParser implements Runnable{
     @Override
     public void run(){
         //System.out.println("run smoke tests parser");
-        SmokeTestsSourceDelegator delegator = new SmokeTestsSourceDelegator(this.context.getFileManifest(), this.symbolProvider);
-        SmokeTestsCMakeDelegator cmakedelegator = new SmokeTestsCMakeDelegator(this.context.getFileManifest(), this.symbolProvider);
+
         Map<ServiceShape, List<SmokeTestData> > smoketests =  extractServiceSmokeTests();
 
         //make service specific folder
-        smoketests.entrySet().stream().forEach(entry -> {
-                ServiceShape serviceShape = entry.getKey();
-                try{
-                    String client = getServiceName(serviceShape);
-                    String c2jClientname = SmithyC2JNamespaceMap.getC2JServiceName(toKebabCase(client));
-                    
-                    Path relativePath = Paths.get( c2jClientname );
-                    System.out.println(toKebabCase(client) + " mapped to " + c2jClientname);
-                    
-                    delegator.useFileWriter( relativePath.toString() + "/"+ removeSpaces(client) + "SmokeTests.cpp", client, writer -> {
-                        System.out.println(String.format("generating smoke test source code=%s",relativePath.toString() + "/"+ removeSpaces(client) + "SmokeTests.cpp"));
-                        writer.generate(entry.getValue());              
-                    });
+        smoketests.forEach((serviceShape, value) -> {
+            try {
+                SmokeTestsSourceDelegator delegator = new SmokeTestsSourceDelegator(this.context.getFileManifest(), this.symbolProvider, value);
+                SmokeTestsCMakeDelegator cmakedelegator = new SmokeTestsCMakeDelegator(this.context.getFileManifest(), this.symbolProvider);
 
-                    cmakedelegator.useFileWriter( relativePath.toString() + "/"+ "CMakeLists.txt", c2jClientname, writer -> {
-                        System.out.println(String.format("generating smoke test cmake code=%s",relativePath.toString() + "/"+ "CMakeLists.txt"));
-                        writer.generate();
-                    });
-                }
-                catch (Exception e) {
-                    System.err.println("Exception detected=" + e.toString());
-                }
+                String client = getServiceName(serviceShape);
+                String c2jClientname = SmithyC2JNamespaceMap.getC2JServiceName(toKebabCase(client));
+
+                Path relativePath = Paths.get(c2jClientname);
+                System.out.println(toKebabCase(client) + " mapped to " + c2jClientname);
+
+                delegator.useFileWriter(relativePath.toString() + "/" + removeSpaces(client) + "SmokeTests.cpp", client, writer -> {
+                    System.out.println(String.format("generating smoke test source code=%s", relativePath.toString() + "/" + removeSpaces(client) + "SmokeTests.cpp"));
+                    writer.generate();
+                });
+
+                cmakedelegator.useFileWriter(relativePath.toString() + "/" + "CMakeLists.txt", c2jClientname, writer -> {
+                    System.out.println(String.format("generating smoke test cmake code=%s", relativePath.toString() + "/" + "CMakeLists.txt"));
+                    writer.generate();
+                });
+
+                delegator.flushWriters();
+                cmakedelegator.flushWriters();
+            } catch (Exception e) {
+                System.err.println("Exception detected=" + e.toString());
+            }
         });
 
-        delegator.flushWriters();
-        cmakedelegator.flushWriters();
-        
     }
     
     

@@ -6,18 +6,23 @@
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import software.amazon.smithy.codegen.core.SymbolWriter;
+import software.amazon.smithy.model.shapes.ServiceShape;
+
 import java.util.List;
+import java.util.Map;
 
 public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceWriter, CppImportContainer>{
     private final String clientNamespace;
     private final String folderNamespace;
     private final String c2jNamespace;
+    private final List<SmokeTestData> smoketests;
     //protected CppBlockWriter blockWriter;    
-    public SmokeTestsSourceWriter(String namespace) {
+    public SmokeTestsSourceWriter(String namespace,List<SmokeTestData> smoketests) {
         super(new CppImportContainer(namespace));
         this.clientNamespace = SmokeTestsParser.removeSpaces(namespace);
         this.folderNamespace = SmokeTestsParser.toKebabCase(namespace);
         this.c2jNamespace = SmithyC2JNamespaceMap.getC2JServiceName(this.folderNamespace);
+        this.smoketests = smoketests;
     }
 
     protected void useNamespaces()
@@ -116,22 +121,18 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
     }
 
 
-    public String generate(List<SmokeTestData> tests)
+    public String generate()
     {
         //tests will belong to one client, so choose first one
         addHeaderBlock();
         addClientHeader();
         
-        tests.stream().forEach(test -> {
-            addRequestHeader(test);
-        });
+        smoketests.forEach(this::addRequestHeader);
         write("namespace $LSmokeTest{", clientNamespace);
         useNamespaces();
 
         defineTestFixture();
-        tests.stream().forEach(test -> {
-            defineTestCase(test);
-        });
+        smoketests.forEach(this::defineTestCase);
         write("}");
         
         return toString();
@@ -141,12 +142,16 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         * The Factory class for creating CppWriters
      */
     public static final class SmokeTestsSourceWriterFactory implements SymbolWriter.Factory<SmokeTestsSourceWriter> {
+        private final List<SmokeTestData> smoketests;
+
+        public SmokeTestsSourceWriterFactory(List<SmokeTestData> smoketests){
+            this.smoketests = smoketests;
+        }
 
         @Override
         public SmokeTestsSourceWriter apply(String filename, String namespace) {
-            return new SmokeTestsSourceWriter(namespace);
+            return new SmokeTestsSourceWriter(namespace, this.smoketests);
         }
     }
-
     
 }

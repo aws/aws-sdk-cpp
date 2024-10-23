@@ -10,7 +10,10 @@
  
  public final class CppImportContainer implements ImportContainer {
 
-    public CppImportContainer(String namespace) {
+     private final String localNamespace;
+
+     public CppImportContainer(String namespace) {
+         this.localNamespace = namespace;
     }
     
     @Override
