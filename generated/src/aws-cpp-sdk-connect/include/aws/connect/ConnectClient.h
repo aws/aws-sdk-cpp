@@ -457,8 +457,9 @@ namespace Connect
         }
 
         /**
-         * <p>Associates an agent with a traffic distribution group.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates an agent with a traffic distribution group. This API can be called
+         * only in the Region where the traffic distribution group is
+         * created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateTrafficDistributionGroupUser">AWS
          * API Reference</a></p>
          */
@@ -1227,8 +1228,8 @@ namespace Connect
 
         /**
          * <p>Creates a traffic distribution group given an Amazon Connect instance that
-         * has been replicated. </p>  <p>The <code>SignInConfig</code> distribution
-         * is available only on a default <code>TrafficDistributionGroup</code> (see the
+         * has been replicated.</p>  <p>The <code>SignInConfig</code> distribution is
+         * available only on a default <code>TrafficDistributionGroup</code> (see the
          * <code>IsDefault</code> parameter in the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
          * data type). If you call <code>UpdateTrafficDistribution</code> with a modified
@@ -3100,8 +3101,9 @@ namespace Connect
         }
 
         /**
-         * <p>Disassociates an agent from a traffic distribution group.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Disassociates an agent from a traffic distribution group. This API can be
+         * called only in the Region where the traffic distribution group is
+         * created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateTrafficDistributionGroupUser">AWS
          * API Reference</a></p>
          */
@@ -3395,9 +3397,9 @@ namespace Connect
          * the previous version of this API. It has new metrics, offers filtering at a
          * metric level, and offers the ability to filter and group data by channels,
          * queues, routing profiles, agents, and agent hierarchy levels. It can retrieve
-         * historical data for the last 3 months, at varying intervals. </p> <p>For a
-         * description of the historical metrics that are supported by
-         * <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a
+         * historical data for the last 3 months, at varying intervals. It does not support
+         * agent queues.</p> <p>For a description of the historical metrics that are
+         * supported by <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
          * metrics definitions</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -5748,6 +5750,35 @@ namespace Connect
         void StartOutboundVoiceContactAsync(const StartOutboundVoiceContactRequestT& request, const StartOutboundVoiceContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::StartOutboundVoiceContact, request, handler, context);
+        }
+
+        /**
+         * <p>Starts screen sharing for a contact. For more information about screen
+         * sharing, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set
+         * up in-app, web, video calling, and screen sharing capabilities</a> in the
+         * <i>Amazon Connect Administrator Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartScreenSharing">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartScreenSharingOutcome StartScreenSharing(const Model::StartScreenSharingRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartScreenSharing that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartScreenSharingRequestT = Model::StartScreenSharingRequest>
+        Model::StartScreenSharingOutcomeCallable StartScreenSharingCallable(const StartScreenSharingRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::StartScreenSharing, request);
+        }
+
+        /**
+         * An Async wrapper for StartScreenSharing that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartScreenSharingRequestT = Model::StartScreenSharingRequest>
+        void StartScreenSharingAsync(const StartScreenSharingRequestT& request, const StartScreenSharingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::StartScreenSharing, request, handler, context);
         }
 
         /**

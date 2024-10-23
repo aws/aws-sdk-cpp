@@ -20,7 +20,8 @@ GeneratePinDataRequest::GeneratePinDataRequest() :
     m_pinDataLengthHasBeenSet(false),
     m_primaryAccountNumberHasBeenSet(false),
     m_pinBlockFormat(PinBlockFormatForPinData::NOT_SET),
-    m_pinBlockFormatHasBeenSet(false)
+    m_pinBlockFormatHasBeenSet(false),
+    m_encryptionWrappedKeyHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,12 @@ Aws::String GeneratePinDataRequest::SerializePayload() const
   if(m_pinBlockFormatHasBeenSet)
   {
    payload.WithString("PinBlockFormat", PinBlockFormatForPinDataMapper::GetNameForPinBlockFormatForPinData(m_pinBlockFormat));
+  }
+
+  if(m_encryptionWrappedKeyHasBeenSet)
+  {
+   payload.WithObject("EncryptionWrappedKey", m_encryptionWrappedKey.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

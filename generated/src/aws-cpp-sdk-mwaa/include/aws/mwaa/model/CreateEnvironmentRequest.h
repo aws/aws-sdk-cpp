@@ -22,9 +22,10 @@ namespace Model
 {
 
   /**
-   * <p>This section contains the Amazon Managed Workflows for Apache Airflow (MWAA)
-   * API reference documentation to create an environment. For more information, see
-   * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/get-started.html">Get
+   * <p>This section contains the Amazon Managed Workflows for Apache Airflow (Amazon
+   * MWAA) API reference documentation to create an environment. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/mwaa/latest/userguide/get-started.html">Get
    * started with Amazon Managed Workflows for Apache Airflow</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateEnvironmentInput">AWS
@@ -326,10 +327,11 @@ namespace Model
      * <p>The Apache Airflow version for your environment. If no value is specified, it
      * defaults to the latest version. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
-     * Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.</p>
-     * <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
-     * <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>
-     * <code>2.8.1</code> </p>
+     * Airflow versions on Amazon Managed Workflows for Apache Airflow (Amazon
+     * MWAA)</a>.</p> <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
+     * <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>,
+     * <code>2.7.2</code>, <code>2.8.1</code>, <code>2.9.2</code>, and
+     * <code>2.10.1</code>.</p>
      */
     inline const Aws::String& GetAirflowVersion() const{ return m_airflowVersion; }
     inline bool AirflowVersionHasBeenSet() const { return m_airflowVersionHasBeenSet; }

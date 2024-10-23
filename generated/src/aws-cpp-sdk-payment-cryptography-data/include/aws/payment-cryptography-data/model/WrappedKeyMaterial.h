@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography-data/model/EcdhDerivationAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -51,10 +52,25 @@ namespace Model
     inline WrappedKeyMaterial& WithTr31KeyBlock(Aws::String&& value) { SetTr31KeyBlock(std::move(value)); return *this;}
     inline WrappedKeyMaterial& WithTr31KeyBlock(const char* value) { SetTr31KeyBlock(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The parameter information for deriving a ECDH shared key.</p>
+     */
+    inline const EcdhDerivationAttributes& GetDiffieHellmanSymmetricKey() const{ return m_diffieHellmanSymmetricKey; }
+    inline bool DiffieHellmanSymmetricKeyHasBeenSet() const { return m_diffieHellmanSymmetricKeyHasBeenSet; }
+    inline void SetDiffieHellmanSymmetricKey(const EcdhDerivationAttributes& value) { m_diffieHellmanSymmetricKeyHasBeenSet = true; m_diffieHellmanSymmetricKey = value; }
+    inline void SetDiffieHellmanSymmetricKey(EcdhDerivationAttributes&& value) { m_diffieHellmanSymmetricKeyHasBeenSet = true; m_diffieHellmanSymmetricKey = std::move(value); }
+    inline WrappedKeyMaterial& WithDiffieHellmanSymmetricKey(const EcdhDerivationAttributes& value) { SetDiffieHellmanSymmetricKey(value); return *this;}
+    inline WrappedKeyMaterial& WithDiffieHellmanSymmetricKey(EcdhDerivationAttributes&& value) { SetDiffieHellmanSymmetricKey(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_tr31KeyBlock;
     bool m_tr31KeyBlockHasBeenSet = false;
+
+    EcdhDerivationAttributes m_diffieHellmanSymmetricKey;
+    bool m_diffieHellmanSymmetricKeyHasBeenSet = false;
   };
 
 } // namespace Model

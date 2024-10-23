@@ -66,7 +66,8 @@ namespace Model
     ///@{
     /**
      * <p>The <code>keyARN</code> of the PEK that Amazon Web Services Payment
-     * Cryptography uses for encrypted pin block generation.</p>
+     * Cryptography uses for encrypted pin block generation. For ECDH, it is the
+     * <code>keyARN</code> of the asymmetric ECC key.</p>
      */
     inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
     inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArn = value; }

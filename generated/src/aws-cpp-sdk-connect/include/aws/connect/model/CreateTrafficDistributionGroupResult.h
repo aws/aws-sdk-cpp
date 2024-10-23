@@ -35,9 +35,7 @@ namespace Model
     ///@{
     /**
      * <p>The identifier of the traffic distribution group. This can be the ID or the
-     * ARN if the API is being called in the Region where the traffic distribution
-     * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * ARN of the traffic distribution group.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline void SetId(const Aws::String& value) { m_id = value; }

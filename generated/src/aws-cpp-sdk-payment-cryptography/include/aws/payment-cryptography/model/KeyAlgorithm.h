@@ -23,7 +23,9 @@ namespace Model
     AES_256,
     RSA_2048,
     RSA_3072,
-    RSA_4096
+    RSA_4096,
+    ECC_NIST_P256,
+    ECC_NIST_P384
   };
 
 namespace KeyAlgorithmMapper
