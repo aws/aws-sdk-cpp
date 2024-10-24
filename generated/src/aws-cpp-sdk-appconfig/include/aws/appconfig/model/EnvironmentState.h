@@ -19,7 +19,8 @@ namespace Model
     READY_FOR_DEPLOYMENT,
     DEPLOYING,
     ROLLING_BACK,
-    ROLLED_BACK
+    ROLLED_BACK,
+    REVERTED
   };
 
 namespace EnvironmentStateMapper

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    *  <p>Amazon Elastic Inference is no longer available.</p>  <p>
-   * Describes an elastic inference accelerator.</p><p><h3>See Also:</h3>   <a
+   * Describes an elastic inference accelerator. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateElasticInferenceAccelerator">AWS
    * API Reference</a></p>
    */

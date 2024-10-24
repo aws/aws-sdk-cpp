@@ -8465,6 +8465,48 @@ namespace EC2
         }
 
         /**
+         * <p>Describes the AMI that was used to launch an instance, even if the AMI is
+         * deprecated, deregistered, or made private (no longer public or shared with your
+         * account).</p> <p>If you specify instance IDs, the output includes information
+         * for only the specified instances. If you specify filters, the output includes
+         * information for only those instances that meet the filter criteria. If you do
+         * not specify instance IDs or filters, the output includes information for all
+         * instances, which can affect performance.</p> <p>If you specify an instance ID
+         * that is not valid, an instance that doesn't exist, or an instance that you do
+         * not own, an error (<code>InvalidInstanceID.NotFound</code>) is returned.</p>
+         * <p>Recently terminated instances might appear in the returned results. This
+         * interval is usually less than one hour.</p> <p>In the rare case where an
+         * Availability Zone is experiencing a service disruption and you specify instance
+         * IDs that are in the affected Availability Zone, or do not specify any instance
+         * IDs at all, the call fails. If you specify only instance IDs that are in an
+         * unaffected Availability Zone, the call works normally.</p>  <p>The order
+         * of the elements in the response, including those within nested structures, might
+         * vary. Applications should not assume the elements appear in a particular
+         * order.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceImageMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceImageMetadataOutcome DescribeInstanceImageMetadata(const Model::DescribeInstanceImageMetadataRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeInstanceImageMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeInstanceImageMetadataRequestT = Model::DescribeInstanceImageMetadataRequest>
+        Model::DescribeInstanceImageMetadataOutcomeCallable DescribeInstanceImageMetadataCallable(const DescribeInstanceImageMetadataRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeInstanceImageMetadata, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeInstanceImageMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeInstanceImageMetadataRequestT = Model::DescribeInstanceImageMetadataRequest>
+        void DescribeInstanceImageMetadataAsync(const DescribeInstanceImageMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeInstanceImageMetadataRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeInstanceImageMetadata, request, handler, context);
+        }
+
+        /**
          * <p>Describes the status of the specified instances or all of your instances. By
          * default, only running instances are described, unless you specifically indicate
          * to return the status of all instances.</p> <p>Instance status includes the

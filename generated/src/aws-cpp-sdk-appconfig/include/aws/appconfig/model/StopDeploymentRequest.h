@@ -31,6 +31,8 @@ namespace Model
 
     AWS_APPCONFIG_API Aws::String SerializePayload() const override;
 
+    AWS_APPCONFIG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
 
     ///@{
     /**
@@ -69,6 +71,18 @@ namespace Model
     inline void SetDeploymentNumber(int value) { m_deploymentNumberHasBeenSet = true; m_deploymentNumber = value; }
     inline StopDeploymentRequest& WithDeploymentNumber(int value) { SetDeploymentNumber(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A Boolean that enables AppConfig to rollback a <code>COMPLETED</code>
+     * deployment to the previous configuration version. This action moves the
+     * deployment to a status of <code>REVERTED</code>.</p>
+     */
+    inline bool GetAllowRevert() const{ return m_allowRevert; }
+    inline bool AllowRevertHasBeenSet() const { return m_allowRevertHasBeenSet; }
+    inline void SetAllowRevert(bool value) { m_allowRevertHasBeenSet = true; m_allowRevert = value; }
+    inline StopDeploymentRequest& WithAllowRevert(bool value) { SetAllowRevert(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -79,6 +93,9 @@ namespace Model
 
     int m_deploymentNumber;
     bool m_deploymentNumberHasBeenSet = false;
+
+    bool m_allowRevert;
+    bool m_allowRevertHasBeenSet = false;
   };
 
 } // namespace Model
