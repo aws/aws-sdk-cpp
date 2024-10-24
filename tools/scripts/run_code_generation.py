@@ -536,13 +536,11 @@ def main():
     highly_refined_percent_of_cores_to_take = 0.9
     max_workers = max(1, int(highly_refined_percent_of_cores_to_take * os.cpu_count()))
     
-    #build reverse map
-    # Open a file using 'with' and read its contents
+    #build reverse map of c2j to smithy since in this script we use c2j names for legacy services
     smithy_c2j_data = {}
     c2j_smithy_data = {}        
     with open(os.path.abspath(SMITHY_TO_C2J_MAP_FILE), 'r') as file:
         smithy_c2j_data = json.load(file)
-        # Reverse the key-value pairs
         c2j_smithy_data = {value: key for key, value in smithy_c2j_data.items()}
 
     with ProcessPoolExecutor(max_workers=max_workers) as executor:

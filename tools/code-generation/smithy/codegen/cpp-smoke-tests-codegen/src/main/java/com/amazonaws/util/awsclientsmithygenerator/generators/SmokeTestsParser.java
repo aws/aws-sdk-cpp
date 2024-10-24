@@ -39,7 +39,6 @@ public class SmokeTestsParser implements Runnable{
     final private CppSymbolVisitor symbolProvider;
     final private Map<ShapeId, String> operationToServiceMap;
     final private Map<String, ServiceShape> serviceShapeMap;
-    // Static member to store the flipped map
     final private  Set<String> serviceFilter;
 
     public SmokeTestsParser(PluginContext context)
@@ -109,8 +108,6 @@ public class SmokeTestsParser implements Runnable{
                     this.serviceShapeMap.put(serviceName, serviceShape);
                 });
         });
-
-        //System.out.println(String.format("Number of services with smoke tests detected=%d",serviceShapeMap.size()));
     }
 
     public static String removeSpaces(String input)
@@ -127,7 +124,6 @@ public class SmokeTestsParser implements Runnable{
     {   
         if(!serviceShape.getTrait(ServiceTrait.class).isPresent())
         {
-            //System.err.println(String.format("No service trait detected in service shape with name=%s",serviceShape.getId().getName()));
             throw new Exception(String.format("No service trait detected in service shape with name=%s",serviceShape.getId().getName()));
         }
 
@@ -302,9 +298,6 @@ public class SmokeTestsParser implements Runnable{
             //get serviceShape
             String serviceName = operationToServiceMap.get(operationShape.getId());
             ServiceShape serviceShape = serviceShapeMap.get(serviceName);
-            //System.out.println("OperationShape: " + operationShape.getId().getName());
-            //System.out.println("serviceName: " + serviceName);
-
             //for one service, we have one smoke test file
             //So, we for a given service we import dependencies (symbol types and their respective headers)
             List<SmokeTestData> tests = serviceSmokeTestsMap.getOrDefault(serviceShape, new ArrayList<>());
@@ -323,7 +316,6 @@ public class SmokeTestsParser implements Runnable{
 
     @Override
     public void run(){
-        //System.out.println("run smoke tests parser");
 
         Map<ServiceShape, List<SmokeTestData> > smoketests =  extractServiceSmokeTests();
 
@@ -334,7 +326,7 @@ public class SmokeTestsParser implements Runnable{
                 SmokeTestsCMakeDelegator cmakedelegator = new SmokeTestsCMakeDelegator(this.context.getFileManifest(), this.symbolProvider);
 
                 String client = getServiceName(serviceShape);
-                String c2jClientname = SmithyC2JNamespaceMap.getC2JServiceName(toKebabCase(client));
+                String c2jClientname = SmithyC2JNamespaceMap.getInstance().getC2JServiceName(toKebabCase(client));
 
                 Path relativePath = Paths.get(c2jClientname);
                 System.out.println(toKebabCase(client) + " mapped to " + c2jClientname);

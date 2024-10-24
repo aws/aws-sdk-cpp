@@ -2,7 +2,6 @@ import software.amazon.smithy.model.Model
 import software.amazon.smithy.model.node.Node
 import software.amazon.smithy.model.shapes.ServiceShape
 import software.amazon.smithy.aws.traits.ServiceTrait
-//import software.amazon.smithy.smoketests.traits.SmokeTestsTrait
 import software.amazon.smithy.model.shapes.OperationShape
 plugins {
     id("java-library")
@@ -19,7 +18,6 @@ buildscript {
         classpath(codegen.model)
         classpath(codegen.aws.traits)
         classpath(codegen.aws.smoke.test.model)
-        //classpath(codegen.velocity.engine.core)
     }
 }
 dependencies {
@@ -77,9 +75,7 @@ tasks.register("generate-smithy-build") {
                         .replace(" ", "-")   
                         .replace("_", "-")   
                         .lowercase()
-            
-            //println("evaluating filter: $sdkId")
-            
+                    
             //service names must be match
             if (filteredServiceList.isNotEmpty()) 
             {
@@ -88,8 +84,6 @@ tasks.register("generate-smithy-build") {
                     return@eachFile
                 }
             }
-
-            //println("matched filter: $sdkId")
 
             val projectionContents = Node.objectNodeBuilder()
                     .withMember("imports", Node.fromStrings("${models.absolutePath}${File.separator}${file.name}"))

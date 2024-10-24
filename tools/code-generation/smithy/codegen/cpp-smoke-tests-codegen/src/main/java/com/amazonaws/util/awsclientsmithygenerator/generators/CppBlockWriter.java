@@ -8,22 +8,34 @@ import java.util.Stack;
 import java.util.List;
 import lombok.Data;
 
-//Helper class for C++ code blocks for scope management
+/*
+    Generic Helper class for C++ code blocks for scope management
+    C++ code has blocks, for example function, loops, empty blocks.
+
+    Variables defined in those blocks have their scope defined in them. 
+    Blocks can be deeply nested.
+    This class manages blocks, scope of variables in such blocks 
+    along with indentation of code defined in those blocks. 
+
+    One of the use cases:
+    Code writer keeps adding blocks to say 5 levels, at the fifth level 
+    if the writer wants to extract the code, all the nested blocks will be
+    automaticallty closed in order of the stack making top level writer not
+    worry about it.
+*/
 public class CppBlockWriter {
 
-    public static String GetForLoopRangeInitializer(String variableName, String iterableExpr)
-    {
+    //preset logic for some types of blocks
+    public static String GetForLoopRangeInitializer(String variableName, String iterableExpr){
         return String.format("for (auto %s in %s)", variableName, iterableExpr);
     }
 
-    public static String GetContainerDeclaration(String containerType, String containerTemplateParam, String variableName)
-    {
+    public static String GetContainerDeclaration(String containerType, String containerTemplateParam, String variableName){
         return String.format("%s<%s> %s",containerType, containerTemplateParam,variableName );
     }
 
     //args  will always be even number Type followed by name
-    public static String GetFunctionBlock(String returnType, String functionName, String... args)
-    {   
+    public static String GetFunctionBlock(String returnType, String functionName, String... args){   
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < args.length - 1; i += 2)
         {
@@ -37,8 +49,7 @@ public class CppBlockWriter {
     }
     
 
-    public static String GetLambdaBlock(String returnType, String functionName, String... args)
-    {   
+    public static String GetLambdaBlock(String returnType, String functionName, String... args){   
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < args.length - 1; i += 2)
         {
@@ -116,8 +127,7 @@ public class CppBlockWriter {
     }
 
     //opens a new block
-    public CppBlockWriter openCodeBlock(String blockHead)
-    {
+    public CppBlockWriter openCodeBlock(String blockHead){
         //add new block to stack
         //use its string builder to add "{"
         Block block = new Block(blockHead, indentLevel);
@@ -126,8 +136,7 @@ public class CppBlockWriter {
         return this;
     }
 
-    public CppBlockWriter continueCodeBlock(String code)
-    {
+    public CppBlockWriter continueCodeBlock(String code){
         //add new block to stack
         //use its string builder to add "{"
         Block block = new Block(indentLevel);
@@ -144,8 +153,7 @@ public class CppBlockWriter {
 
 
     //add code to current block
-    public CppBlockWriter addCode(String code)
-    {
+    public CppBlockWriter addCode(String code){
         if (!blockStack.isEmpty()) {
 
             Block top = blockStack.peek();
@@ -155,8 +163,7 @@ public class CppBlockWriter {
     }
 
     //closes current block
-    public CppBlockWriter closeCodeBlock()
-    {
+    public CppBlockWriter closeCodeBlock(){
         List<String> codeLines = new ArrayList<String>();
         //if root block is not a new scope and it is the root block, 
         //need not close scope then

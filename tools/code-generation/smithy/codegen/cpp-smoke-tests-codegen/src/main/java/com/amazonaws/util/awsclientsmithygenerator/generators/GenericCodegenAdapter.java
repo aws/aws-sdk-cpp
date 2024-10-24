@@ -13,8 +13,6 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
 
     public SHAPE getShapeFromOperation(String OperationName);
 
-    //public boolean isEnum(DATA d);
-
     public boolean isFloat(DATA d);
 
     public boolean isBoolean(DATA d);
@@ -153,8 +151,7 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
 
             //prepare function code and save it for the variable name
             //return only the function name
-            blockWriter.addCode(String.format("return %s;\n",varName))
-                .closeCodeBlock();
+            blockWriter.addCode(String.format("return %s;\n",varName)).closeCodeBlock();
             functionMap.put(functionName, blockWriter.getCode() );
             functionOrder.add(functionName);
             functionName = functionName.concat("()");
@@ -173,11 +170,9 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
 
             String returnType = "Aws::Vector<"+listType+">";
             //open function body and use vector setter
-            CppBlockWriter blockWriter = new CppBlockWriter
-            (
-            CppBlockWriter.GetLambdaBlock(returnType, functionName), 0).
-            addCode(String.format("Aws::Vector<%s> %s = ",listType, varName))
-            .openCodeBlock("");
+            CppBlockWriter blockWriter = new CppBlockWriter(CppBlockWriter.GetLambdaBlock(returnType, functionName), 0)
+                        .addCode(String.format("Aws::Vector<%s> %s = ",listType, varName))
+                        .openCodeBlock("");
 
             for (int i = 0; i < list.size(); i++)
             {
@@ -213,7 +208,7 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         }
         else
         {
-            System.err.println(String.format("shape not supported:%s",shape));
+            throw new Exception(String.format("shape not supported:%s",shape));
         }
 
         return functionName;

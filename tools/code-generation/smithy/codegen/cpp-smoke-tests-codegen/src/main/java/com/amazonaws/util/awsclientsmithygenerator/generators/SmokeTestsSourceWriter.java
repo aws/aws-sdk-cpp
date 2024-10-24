@@ -13,12 +13,11 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
     private final String c2jNamespace;
     private final List<SmokeTestData> smoketests;
 
-    //protected CppBlockWriter blockWriter;    
     public SmokeTestsSourceWriter(String namespace,List<SmokeTestData> smoketests) {
         super(new CppImportContainer(namespace));
         this.clientNamespace = SmokeTestsParser.removeSpaces(namespace);
         this.folderNamespace = SmokeTestsParser.toKebabCase(namespace);
-        this.c2jNamespace = SmithyC2JNamespaceMap.getC2JServiceName(this.folderNamespace);
+        this.c2jNamespace = SmithyC2JNamespaceMap.getInstance().getC2JServiceName(this.folderNamespace);
         this.smoketests = smoketests;
     }
 
@@ -148,7 +147,7 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
     }
 
     /**
-        * The Factory class for creating CppWriters
+     * The Factory class for creating CppWriters
      */
     public static final class SmokeTestsSourceWriterFactory implements SymbolWriter.Factory<SmokeTestsSourceWriter> {
         private final List<SmokeTestData> smoketests;

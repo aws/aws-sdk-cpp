@@ -25,7 +25,7 @@
      public CppImportContainer(String namespace) {
         this.clientNamespace = SmokeTestsParser.removeSpaces(namespace);
         this.folderNamespace = SmokeTestsParser.toKebabCase(namespace);
-        this.c2jNamespace = SmithyC2JNamespaceMap.getC2JServiceName(this.folderNamespace);
+        this.c2jNamespace = SmithyC2JNamespaceMap.getInstance().getC2JServiceName(this.folderNamespace);
         this.coreHeaders = new HashSet<>();
         this.dynamicHeaders = new HashSet<>();
         Collections.addAll(coreHeaders, 
