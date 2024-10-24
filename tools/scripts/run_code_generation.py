@@ -15,7 +15,9 @@ import sys
 import zipfile
 from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_COMPLETED
 from pathlib import Path
-
+import json
+from typing import List
+from typing import Set
 
 # Default configuration variables
 CLIENT_MODEL_FILE_LOCATION = "./code-generation/api-descriptions/"
@@ -25,6 +27,9 @@ DEFAULTS_FILE_LOCATION = "../defaults/sdk-default-configuration.json"  # Relativ
 DEFAULT_GENERATOR_LOCATION = "code-generation/generator/"
 GENERATOR_TARGET_DIR = "target"
 GENERATOR_JAR = GENERATOR_TARGET_DIR + "/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar"
+SMITHY_GENERATOR_LOCATION = "tools/code-generation/smithy/codegen"
+SMITHY_OUTPUT_DIR = "codegen_output"
+SMITHY_TO_C2J_MAP_FILE = "tools/code-generation/smithy/codegen/smithy2c2j_service_map.json"
 
 # Regexp to parse C2J model filename to extract service name and date version
 SERVICE_MODEL_FILENAME_PATTERN = re.compile(
@@ -86,7 +91,7 @@ def _build_service_model_with_endpoints(models_dir: str, endpoint_rules_dir: str
                             endpoint_tests=endpoint_tests_filename)
 
 
-def collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
+def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_mapped_services: Set[str]) -> dict:
     """Return a dict of <service_name, model_file_name> with all available c2j models in a models_dir
 
     :param models_dir: path to the directory with c2j models
@@ -95,6 +100,7 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
     """
     model_files = os.listdir(models_dir)
     service_name_to_model_filename_date = dict()
+    print("legacy_mapped_services:",legacy_mapped_services)
 
     for filename in model_files:
         if not os.path.isfile("/".join([models_dir, filename])):
@@ -120,7 +126,20 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
             key = "-".join(reversed(key.split(".")))  # just replicating existing legacy behavior
         if ";" in key:
             key = key.replace(";", "-")  # just in case... just replicating existing legacy behavior
-
+        
+        # determine if new service/service indifferent to name mapping
+        if key not in legacy_mapped_services:
+            with open(models_dir + "/" + model_file_date[0], 'r') as json_file:
+                model = json.load(json_file)
+                #get service id. It has to exist, else continue
+                if ("metadata" in model and "serviceId" in model["metadata"]):
+                    key = model["metadata"]["serviceId"] 
+                    #convert into smithy case convention
+                    key = key.lower().replace(' ', '-')
+                else:
+                    print("service Id not found in model file:", model_file_date[0], " Skipping.")
+                    continue
+        
         # fetch endpoint-rules filename which is based on ServiceId in c2j models:
         try:
             service_name_to_model_filename[key] = _build_service_model_with_endpoints(models_dir,
@@ -375,10 +394,13 @@ def parse_arguments() -> dict:
                         help="Code generator raw argument to be passed through to "
                              "mark operation functions in service client as virtual functions. Always on by default",
                         action="store_true")
+    
+    parser.add_argument("--generate_smoke_tests",
+                    help="Run smithy code generator for smoke tests",
+                    action="store_true")
 
     args = vars(parser.parse_args())
     arg_map = {}
-
     if args.get("debug", None):
         global DEBUG
         DEBUG = True
@@ -443,10 +465,67 @@ def parse_arguments() -> dict:
         if args.get(raw_argument):
             raw_generator_arguments[raw_argument] = args[raw_argument]
     arg_map["raw_generator_arguments"] = raw_generator_arguments
-
+    arg_map["generate_smoke_tests"] = args.get("generate_smoke_tests", None)
+    print("args=",arg_map)
     return arg_map
 
+def copy_cpp_codegen_contents(top_level_dir: str, plugin_name: str, target_dir: str):
+    
+    # check if the target directory exists, create it if it doesn't
+    os.makedirs(target_dir, exist_ok=True)
+    print(f"copy_cpp_codegen_contents: {target_dir}")
 
+    # Walk through the top-level directory and find all "cpp-codegen-smoke-tests-plugin" directories
+    for root, dirs, files in os.walk(top_level_dir):
+        if plugin_name in dirs:
+            source_dir = os.path.join(root, plugin_name)
+            # recursively copy all contents from the source to the target folder
+            for item in os.listdir(source_dir):
+                source_item = os.path.join(source_dir, item)
+                target_item = os.path.join(target_dir, item)
+                # Recursively copy directories and files
+                if os.path.isdir(source_item):
+                    shutil.copytree(source_item, target_item, dirs_exist_ok=True)
+                else:
+                    shutil.copy2(source_item, target_item)
+            print(f"Copied contents from '{source_dir}' to '{target_dir}'.")
+            
+def generate_smoke_tests(smithy_services: List[str], smithy_c2j_data: str):
+    smithy_codegen_command = [
+        "./gradlew", 
+        "clean",
+        "build", 
+        "-PoutputDirectory=" + SMITHY_OUTPUT_DIR,
+        "-PservicesFilter=" + ",".join(smithy_services),
+        "-Pc2jMap=" + smithy_c2j_data 
+    ]
+    original_dir = os.getcwd()
+    try:
+        # Change to the Smithy generator location
+        os.chdir(SMITHY_GENERATOR_LOCATION)
+        # Run the Gradle command
+        process = subprocess.run(
+            smithy_codegen_command, 
+            timeout=6*60,  # Timeout after 6 minutes
+            check=True, 
+            capture_output=True, 
+            text=True   
+        )
+        # If successful, print the command output
+        print("Smithy codegen command executed successfully!\n", process.stdout)
+        return True
+
+    except subprocess.CalledProcessError as e:
+        # Handle command failure and print error details
+        print(f"Command failed with return code {e.returncode}")
+        print(f"Error Output:\n{e.stderr}")
+        return False
+
+    finally:
+        # Always return to the original directory, even if an error occurs
+        os.chdir(original_dir)
+        print(f"Returned to original directory: {original_dir}")
+            
 def main():
     """Main entrypoint for this script that wraps AWS-SDK-CPP code generation
 
@@ -456,6 +535,13 @@ def main():
 
     highly_refined_percent_of_cores_to_take = 0.9
     max_workers = max(1, int(highly_refined_percent_of_cores_to_take * os.cpu_count()))
+    
+    #build reverse map of c2j to smithy since in this script we use c2j names for legacy services
+    smithy_c2j_data = {}
+    c2j_smithy_data = {}        
+    with open(os.path.abspath(SMITHY_TO_C2J_MAP_FILE), 'r') as file:
+        smithy_c2j_data = json.load(file)
+        c2j_smithy_data = {value: key for key, value in smithy_c2j_data.items()}
 
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         build_generator_future = None
@@ -467,7 +553,8 @@ def main():
             return 0
 
         available_models = collect_available_models(args["path_to_api_definitions"],
-                                                    args["path_to_endpoint_rules"])
+                                                    args["path_to_endpoint_rules"],
+                                                    set(c2j_smithy_data.keys()))
         if args.get("list_all"):
             model_list = available_models.keys()
             print(model_list)
@@ -526,7 +613,7 @@ def main():
 
         new_done, _ = wait(pending, return_when=ALL_COMPLETED)
         done.update(new_done)
-
+        
         failures = set()
         for result in done:
             try:
@@ -547,6 +634,16 @@ def main():
             return -1
 
         print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults and partitions
+    
+    #generate code using smithy for all discoverable clients
+    if (args["generate_smoke_tests"] and clients_to_build):
+
+        #get smithy names
+        smithy_services = [c2j_smithy_data[service] if service in c2j_smithy_data else service for service in clients_to_build]
+        print(f"Running code generator for smoke-tests for services:"+",".join(smithy_services))
+        if generate_smoke_tests(smithy_services, json.dumps(smithy_c2j_data)) :
+            #move the output to generated folder
+            copy_cpp_codegen_contents(os.path.abspath("tools/code-generation/smithy/codegen"), "cpp-codegen-smoke-tests-plugin", os.path.abspath( "generated/smoke-tests"))
 
     return 0
 
