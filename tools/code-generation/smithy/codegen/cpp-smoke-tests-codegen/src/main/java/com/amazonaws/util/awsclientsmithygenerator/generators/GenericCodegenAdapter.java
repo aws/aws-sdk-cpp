@@ -7,6 +7,8 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 import java.util.List;
 import java.util.Map;
 
+import com.google.common.base.CaseFormat;
+
 public interface GenericCodegenAdapter<SHAPE, DATA> {
 
     public Map<String, SHAPE> getMemberShapes(SHAPE shape);
@@ -100,8 +102,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         // functionMap
         //if object is a simple type, then return will just be the value.
         String functionName = new String();
-        String varName = key.toLowerCase();
-        String functionNameSuffix = convertSnakeToPascal(varName + "_lvl" + level + "_idx" + count);
+        String varName =  CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, key);//key.toLowerCase();
+        String functionNameSuffix = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, varName + "_lvl" + level + "_idx" + count );
 
         recordContainerForImport(shape);
 
