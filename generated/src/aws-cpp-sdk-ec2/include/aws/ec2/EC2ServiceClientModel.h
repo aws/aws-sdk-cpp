@@ -266,6 +266,7 @@
 #include <aws/ec2/model/DescribeInstanceCreditSpecificationsResponse.h>
 #include <aws/ec2/model/DescribeInstanceEventNotificationAttributesResponse.h>
 #include <aws/ec2/model/DescribeInstanceEventWindowsResponse.h>
+#include <aws/ec2/model/DescribeInstanceImageMetadataResponse.h>
 #include <aws/ec2/model/DescribeInstanceStatusResponse.h>
 #include <aws/ec2/model/DescribeInstanceTopologyResponse.h>
 #include <aws/ec2/model/DescribeInstanceTypeOfferingsResponse.h>
@@ -702,6 +703,7 @@
 #include <aws/ec2/model/DescribeFleetsRequest.h>
 #include <aws/ec2/model/DescribeVpcEndpointsRequest.h>
 #include <aws/ec2/model/DescribeVpcClassicLinkDnsSupportRequest.h>
+#include <aws/ec2/model/DescribeInstanceImageMetadataRequest.h>
 #include <aws/ec2/model/DescribeVpcEndpointServiceConfigurationsRequest.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesRequest.h>
@@ -1099,6 +1101,7 @@ namespace Aws
       class DescribeInstanceCreditSpecificationsRequest;
       class DescribeInstanceEventNotificationAttributesRequest;
       class DescribeInstanceEventWindowsRequest;
+      class DescribeInstanceImageMetadataRequest;
       class DescribeInstanceStatusRequest;
       class DescribeInstanceTopologyRequest;
       class DescribeInstanceTypeOfferingsRequest;
@@ -1735,6 +1738,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeInstanceCreditSpecificationsResponse, EC2Error> DescribeInstanceCreditSpecificationsOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceEventNotificationAttributesResponse, EC2Error> DescribeInstanceEventNotificationAttributesOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceEventWindowsResponse, EC2Error> DescribeInstanceEventWindowsOutcome;
+      typedef Aws::Utils::Outcome<DescribeInstanceImageMetadataResponse, EC2Error> DescribeInstanceImageMetadataOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceStatusResponse, EC2Error> DescribeInstanceStatusOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceTopologyResponse, EC2Error> DescribeInstanceTopologyOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceTypeOfferingsResponse, EC2Error> DescribeInstanceTypeOfferingsOutcome;
@@ -2371,6 +2375,7 @@ namespace Aws
       typedef std::future<DescribeInstanceCreditSpecificationsOutcome> DescribeInstanceCreditSpecificationsOutcomeCallable;
       typedef std::future<DescribeInstanceEventNotificationAttributesOutcome> DescribeInstanceEventNotificationAttributesOutcomeCallable;
       typedef std::future<DescribeInstanceEventWindowsOutcome> DescribeInstanceEventWindowsOutcomeCallable;
+      typedef std::future<DescribeInstanceImageMetadataOutcome> DescribeInstanceImageMetadataOutcomeCallable;
       typedef std::future<DescribeInstanceStatusOutcome> DescribeInstanceStatusOutcomeCallable;
       typedef std::future<DescribeInstanceTopologyOutcome> DescribeInstanceTopologyOutcomeCallable;
       typedef std::future<DescribeInstanceTypeOfferingsOutcome> DescribeInstanceTypeOfferingsOutcomeCallable;
@@ -3010,6 +3015,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceCreditSpecificationsRequest&, const Model::DescribeInstanceCreditSpecificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceCreditSpecificationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceEventNotificationAttributesRequest&, const Model::DescribeInstanceEventNotificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceEventNotificationAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceEventWindowsRequest&, const Model::DescribeInstanceEventWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceEventWindowsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeInstanceImageMetadataRequest&, const Model::DescribeInstanceImageMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceImageMetadataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceStatusRequest&, const Model::DescribeInstanceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTopologyRequest&, const Model::DescribeInstanceTopologyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTopologyResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTypeOfferingsRequest&, const Model::DescribeInstanceTypeOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypeOfferingsResponseReceivedHandler;

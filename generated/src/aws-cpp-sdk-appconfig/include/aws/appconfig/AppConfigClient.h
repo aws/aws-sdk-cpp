@@ -1101,8 +1101,11 @@ namespace AppConfig
 
         /**
          * <p>Stops a deployment. This API action works only on deployments that have a
-         * status of <code>DEPLOYING</code>. This action moves the deployment to a status
-         * of <code>ROLLED_BACK</code>.</p><p><h3>See Also:</h3>   <a
+         * status of <code>DEPLOYING</code>, unless an <code>AllowRevert</code> parameter
+         * is supplied. If the <code>AllowRevert</code> parameter is supplied, the status
+         * of an in-progress deployment will be <code>ROLLED_BACK</code>. The status of a
+         * completed deployment will be <code>REVERTED</code>. AppConfig only allows a
+         * revert within 72 hours of deployment completion.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/StopDeployment">AWS
          * API Reference</a></p>
          */

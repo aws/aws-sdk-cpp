@@ -29,9 +29,13 @@ namespace Model
   /**
    * <p>The configuration for the Amazon EBS volume that Amazon ECS creates and
    * manages on your behalf. These settings are used to create each Amazon EBS
-   * volume, with one volume created for each task in the service.</p> <p>Many of
-   * these parameters map 1:1 with the Amazon EBS <code>CreateVolume</code> API
-   * request parameters.</p><p><h3>See Also:</h3>   <a
+   * volume, with one volume created for each task in the service. For information
+   * about the supported launch types and operating systems, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volumes-configuration">Supported
+   * operating systems and launch types</a> in the<i> Amazon Elastic Container
+   * Service Developer Guide</i>.</p> <p>Many of these parameters map 1:1 with the
+   * Amazon EBS <code>CreateVolume</code> API request parameters.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ServiceManagedEBSVolumeConfiguration">AWS
    * API Reference</a></p>
    */
@@ -225,12 +229,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Linux filesystem type for the volume. For volumes created from a
-     * snapshot, you must specify the same filesystem type that the volume was using
-     * when the snapshot was created. If there is a filesystem type mismatch, the task
-     * will fail to start.</p> <p>The available filesystem types are&#x2028;
+     * <p>The filesystem type for the volume. For volumes created from a snapshot, you
+     * must specify the same filesystem type that the volume was using when the
+     * snapshot was created. If there is a filesystem type mismatch, the task will fail
+     * to start.</p> <p>The available Linux filesystem types are&#x2028;
      * <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is
-     * specified, the <code>xfs</code> filesystem type is used by default.</p>
+     * specified, the <code>xfs</code> filesystem type is used by default.</p> <p>The
+     * available Windows filesystem types are <code>NTFS</code>.</p>
      */
     inline const TaskFilesystemType& GetFilesystemType() const{ return m_filesystemType; }
     inline bool FilesystemTypeHasBeenSet() const { return m_filesystemTypeHasBeenSet; }

@@ -23,6 +23,7 @@ namespace Aws
         static const int ext3_HASH = HashingUtils::HashString("ext3");
         static const int ext4_HASH = HashingUtils::HashString("ext4");
         static const int xfs_HASH = HashingUtils::HashString("xfs");
+        static const int ntfs_HASH = HashingUtils::HashString("ntfs");
 
 
         TaskFilesystemType GetTaskFilesystemTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == xfs_HASH)
           {
             return TaskFilesystemType::xfs;
+          }
+          else if (hashCode == ntfs_HASH)
+          {
+            return TaskFilesystemType::ntfs;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "ext4";
           case TaskFilesystemType::xfs:
             return "xfs";
+          case TaskFilesystemType::ntfs:
+            return "ntfs";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

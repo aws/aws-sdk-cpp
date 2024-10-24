@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     ext3,
     ext4,
-    xfs
+    xfs,
+    ntfs
   };
 
 namespace TaskFilesystemTypeMapper

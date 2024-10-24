@@ -72,7 +72,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
+     * <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed
+     * KMS key to use for EBS encryption.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

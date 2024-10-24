@@ -28,6 +28,7 @@ ActionReviewPayloadField::ActionReviewPayloadField() :
     m_valueHasBeenSet(false),
     m_allowedValuesHasBeenSet(false),
     m_allowedFormatHasBeenSet(false),
+    m_arrayItemJsonSchemaHasBeenSet(false),
     m_required(false),
     m_requiredHasBeenSet(false)
 {
@@ -93,6 +94,13 @@ ActionReviewPayloadField& ActionReviewPayloadField::operator =(JsonView jsonValu
     m_allowedFormatHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("arrayItemJsonSchema"))
+  {
+    m_arrayItemJsonSchema = jsonValue.GetObject("arrayItemJsonSchema");
+
+    m_arrayItemJsonSchemaHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetBool("required");
@@ -153,6 +161,14 @@ JsonValue ActionReviewPayloadField::Jsonize() const
   {
    payload.WithString("allowedFormat", m_allowedFormat);
 
+  }
+
+  if(m_arrayItemJsonSchemaHasBeenSet)
+  {
+    if(!m_arrayItemJsonSchema.View().IsNull())
+    {
+       payload.WithObject("arrayItemJsonSchema", JsonValue(m_arrayItemJsonSchema.View()));
+    }
   }
 
   if(m_requiredHasBeenSet)

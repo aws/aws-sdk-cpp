@@ -21,7 +21,8 @@ namespace Model
     ROLLBACK_COMPLETED,
     BAKE_TIME_STARTED,
     DEPLOYMENT_STARTED,
-    DEPLOYMENT_COMPLETED
+    DEPLOYMENT_COMPLETED,
+    REVERT_COMPLETED
   };
 
 namespace DeploymentEventTypeMapper
