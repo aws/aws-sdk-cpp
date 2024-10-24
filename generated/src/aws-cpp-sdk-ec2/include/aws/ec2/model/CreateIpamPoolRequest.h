@@ -80,10 +80,9 @@ namespace Model
      * allocations (<a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#byoip-zone-avail">supported
      * Local Zones</a>). This option is only available for IPAM IPv4 pools in the
-     * public scope.</p> </li> </ul> <p>If you do not choose a locale, resources in
-     * Regions others than the IPAM's home region cannot use CIDRs from this pool.</p>
-     * <p>Possible values: Any Amazon Web Services Region or supported Amazon Web
-     * Services Local Zone. Default is <code>none</code> and means any locale.</p>
+     * public scope.</p> </li> </ul> <p>Possible values: Any Amazon Web Services Region
+     * or supported Amazon Web Services Local Zone. Default is <code>none</code> and
+     * means any locale.</p>
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
@@ -159,8 +158,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Determines if the pool is publicly advertisable. This option is not available
-     * for pools with AddressFamily set to <code>ipv4</code>.</p>
+     * <p>Determines if the pool is publicly advertisable. The request can only contain
+     * <code>PubliclyAdvertisable</code> if <code>AddressFamily</code> is
+     * <code>ipv6</code> and <code>PublicIpSource</code> is <code>byoip</code>.</p>
      */
     inline bool GetPubliclyAdvertisable() const{ return m_publiclyAdvertisable; }
     inline bool PubliclyAdvertisableHasBeenSet() const { return m_publiclyAdvertisableHasBeenSet; }

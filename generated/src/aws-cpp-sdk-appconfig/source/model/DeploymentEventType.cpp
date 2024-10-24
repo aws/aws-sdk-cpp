@@ -26,6 +26,7 @@ namespace Aws
         static const int BAKE_TIME_STARTED_HASH = HashingUtils::HashString("BAKE_TIME_STARTED");
         static const int DEPLOYMENT_STARTED_HASH = HashingUtils::HashString("DEPLOYMENT_STARTED");
         static const int DEPLOYMENT_COMPLETED_HASH = HashingUtils::HashString("DEPLOYMENT_COMPLETED");
+        static const int REVERT_COMPLETED_HASH = HashingUtils::HashString("REVERT_COMPLETED");
 
 
         DeploymentEventType GetDeploymentEventTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return DeploymentEventType::DEPLOYMENT_COMPLETED;
           }
+          else if (hashCode == REVERT_COMPLETED_HASH)
+          {
+            return DeploymentEventType::REVERT_COMPLETED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "DEPLOYMENT_STARTED";
           case DeploymentEventType::DEPLOYMENT_COMPLETED:
             return "DEPLOYMENT_COMPLETED";
+          case DeploymentEventType::REVERT_COMPLETED:
+            return "REVERT_COMPLETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

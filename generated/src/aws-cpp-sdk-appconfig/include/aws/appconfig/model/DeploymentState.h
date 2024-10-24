@@ -21,7 +21,8 @@ namespace Model
     DEPLOYING,
     COMPLETE,
     ROLLING_BACK,
-    ROLLED_BACK
+    ROLLED_BACK,
+    REVERTED
   };
 
 namespace DeploymentStateMapper

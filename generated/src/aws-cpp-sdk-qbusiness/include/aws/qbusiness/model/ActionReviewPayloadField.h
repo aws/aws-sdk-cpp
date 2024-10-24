@@ -141,6 +141,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Use to create a custom form with array fields (fields with nested objects
+     * inside an array). </p>
+     */
+    inline Aws::Utils::DocumentView GetArrayItemJsonSchema() const{ return m_arrayItemJsonSchema; }
+    inline bool ArrayItemJsonSchemaHasBeenSet() const { return m_arrayItemJsonSchemaHasBeenSet; }
+    inline void SetArrayItemJsonSchema(const Aws::Utils::Document& value) { m_arrayItemJsonSchemaHasBeenSet = true; m_arrayItemJsonSchema = value; }
+    inline void SetArrayItemJsonSchema(Aws::Utils::Document&& value) { m_arrayItemJsonSchemaHasBeenSet = true; m_arrayItemJsonSchema = std::move(value); }
+    inline ActionReviewPayloadField& WithArrayItemJsonSchema(const Aws::Utils::Document& value) { SetArrayItemJsonSchema(value); return *this;}
+    inline ActionReviewPayloadField& WithArrayItemJsonSchema(Aws::Utils::Document&& value) { SetArrayItemJsonSchema(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Information about whether the field is required.</p>
      */
     inline bool GetRequired() const{ return m_required; }
@@ -170,6 +183,9 @@ namespace Model
 
     Aws::String m_allowedFormat;
     bool m_allowedFormatHasBeenSet = false;
+
+    Aws::Utils::Document m_arrayItemJsonSchema;
+    bool m_arrayItemJsonSchemaHasBeenSet = false;
 
     bool m_required;
     bool m_requiredHasBeenSet = false;

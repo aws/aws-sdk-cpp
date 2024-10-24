@@ -24,6 +24,7 @@ namespace Aws
         static const int DEPLOYING_HASH = HashingUtils::HashString("DEPLOYING");
         static const int ROLLING_BACK_HASH = HashingUtils::HashString("ROLLING_BACK");
         static const int ROLLED_BACK_HASH = HashingUtils::HashString("ROLLED_BACK");
+        static const int REVERTED_HASH = HashingUtils::HashString("REVERTED");
 
 
         EnvironmentState GetEnvironmentStateForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == ROLLED_BACK_HASH)
           {
             return EnvironmentState::ROLLED_BACK;
+          }
+          else if (hashCode == REVERTED_HASH)
+          {
+            return EnvironmentState::REVERTED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "ROLLING_BACK";
           case EnvironmentState::ROLLED_BACK:
             return "ROLLED_BACK";
+          case EnvironmentState::REVERTED:
+            return "REVERTED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

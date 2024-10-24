@@ -42,7 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time before an idle node is scaled down.</p>
+     * <p>The time (in seconds) before an idle node is scaled down.</p> <p>Default:
+     * <code>600</code> </p>
      */
     inline int GetScaleDownIdleTimeInSeconds() const{ return m_scaleDownIdleTimeInSeconds; }
     inline bool ScaleDownIdleTimeInSecondsHasBeenSet() const { return m_scaleDownIdleTimeInSecondsHasBeenSet; }
