@@ -59,23 +59,6 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
 
     public void recordContainerForImport(SHAPE s);
 
-    public static String convertSnakeToPascal(String snakeCase) {
-        StringBuilder result = new StringBuilder();
-        String[] words = snakeCase.split("_");
-
-        // Capitalize the first word
-        result.append(words[0].substring(0, 1).toUpperCase())
-                .append(words[0].substring(1).toLowerCase());
-
-        // Capitalize the first letter of each remaining word and append
-        for (int i = 1; i < words.length; i++) {
-            result.append(words[i].substring(0, 1).toUpperCase())
-                    .append(words[i].substring(1).toLowerCase());
-        }
-
-        return result.toString();
-    }
-
     public static String capitalizeFirstLetter(String input) {
         StringBuilder result = new StringBuilder();
         result.append(input.substring(0, 1).toUpperCase())
