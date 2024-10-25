@@ -29,25 +29,24 @@
         this.coreHeaders = new HashSet<>();
         this.dynamicHeaders = new HashSet<>();
         Collections.addAll(coreHeaders, 
-        "aws/core/client/AsyncCallerContext.h",
-        "aws/core/client/AsyncCallerContext.h",
-        "aws/core/client/ClientConfiguration.h",
-        "aws/core/client/CoreErrors.h",
-        "aws/core/auth/AWSCredentialsProviderChain.h",
-        "aws/core/http/HttpTypes.h",
-        "aws/core/utils/logging/LogMacros.h",
-        "aws/core/utils/memory/AWSMemory.h",
-        "aws/core/utils/UnreferencedParam.h",
-        "aws/core/utils/Outcome.h",
-        "utility",
-        "algorithm"
-        );
+            "aws/core/client/AsyncCallerContext.h",
+            "aws/core/client/AsyncCallerContext.h",
+            "aws/core/client/ClientConfiguration.h",
+            "aws/core/client/CoreErrors.h",
+            "aws/core/auth/AWSCredentialsProviderChain.h",
+            "aws/core/http/HttpTypes.h",
+            "aws/core/utils/logging/LogMacros.h",
+            "aws/core/utils/memory/AWSMemory.h",
+            "aws/core/utils/UnreferencedParam.h",
+            "aws/core/utils/Outcome.h",
+            "utility",
+            "algorithm"
+            );
 
-        this.unitTestHeaders = new HashSet<>();
-        Collections.addAll(unitTestHeaders, 
-        "aws/testing/AwsCppSdkGTestSuite.h",
-        "aws/testing/AwsTestHelpers.h"
-        );
+        this.unitTestHeaders = Set.of(
+            "aws/testing/AwsCppSdkGTestSuite.h",
+            "aws/testing/AwsTestHelpers.h"
+            );
 
         //this will be added to based upon datastructures found
         containerHeaderMap = Map.ofEntries(

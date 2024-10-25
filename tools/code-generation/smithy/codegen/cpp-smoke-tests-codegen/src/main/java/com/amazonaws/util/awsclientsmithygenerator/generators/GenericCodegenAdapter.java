@@ -79,7 +79,7 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
     {
         if(shape == null)
         {
-            throw new Exception("Invalid shape found");
+            throw new RuntimeException("Invalid shape found");
         }
         //if object is a structure, then return will be a function call and the function definition will be in
         // functionMap
@@ -193,7 +193,7 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         }
         else
         {
-            throw new Exception(String.format("shape not supported:%s",shape));
+            throw new RuntimeException(String.format("shape not supported:%s",shape));
         }
 
         return functionName;

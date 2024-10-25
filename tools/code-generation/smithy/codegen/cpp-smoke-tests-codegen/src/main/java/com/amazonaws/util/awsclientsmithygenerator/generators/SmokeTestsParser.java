@@ -124,7 +124,6 @@ public class SmokeTestsParser implements Runnable{
             throw new Exception(String.format("No service trait detected in service shape with name=%s",serviceShape.getId().getName()));
         }
 
-        //this.model.getShape(serviceShapeId)
         String clientName = serviceShape.getTrait(ServiceTrait.class).get().getSdkId();
 
         return clientName;

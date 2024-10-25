@@ -162,7 +162,7 @@ if(BUILD_ONLY)
         else()
             set(SDK_DIR "generated/src/aws-cpp-sdk-${SDK}")
         endif()
-        
+
         if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
             message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
         endif()

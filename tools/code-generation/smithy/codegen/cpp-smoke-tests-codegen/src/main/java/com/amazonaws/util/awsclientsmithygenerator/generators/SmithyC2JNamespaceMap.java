@@ -12,15 +12,14 @@ import com.google.gson.reflect.TypeToken;
 
 public class SmithyC2JNamespaceMap {
     private static SmithyC2JNamespaceMap instance = null;
-    private  static Map<String, String> SMITHY_C2J_SERVICE_NAME_MAP;
+    private Map<String, String> SMITHY_C2J_SERVICE_NAME_MAP;
     private static boolean isInitialized = false;
-
 
     private SmithyC2JNamespaceMap(String jsonString){
 
         Type mapType = new TypeToken<Map<String, String>>(){}.getType();
         Gson gson = new Gson();
-        SMITHY_C2J_SERVICE_NAME_MAP = gson.fromJson(jsonString, mapType);
+        this.SMITHY_C2J_SERVICE_NAME_MAP = gson.fromJson(jsonString, mapType);
     }
 
     //This method must be called once to construct an internal mapping of smithy to c2j namespace
@@ -48,7 +47,7 @@ public class SmithyC2JNamespaceMap {
         return instance;
     }
 
-    public static String getC2JServiceName(String smithyServiceName)
+    public String getC2JServiceName(String smithyServiceName)
     {
         if(SMITHY_C2J_SERVICE_NAME_MAP.containsKey(smithyServiceName))
         {

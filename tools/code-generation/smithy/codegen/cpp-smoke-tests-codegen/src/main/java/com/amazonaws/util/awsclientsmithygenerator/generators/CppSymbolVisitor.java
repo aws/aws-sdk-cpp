@@ -177,11 +177,7 @@
  
      @Override
      public Symbol enumShape(EnumShape shape) {
-        
-        // return ShapeVisitor.super.enumShape(shape);
-        return createSymbolBuilder(shape, shape.getId().getName()).build();
-
-        
+        return createSymbolBuilder(shape, shape.getId().getName()).build();        
      }
  
      @Override

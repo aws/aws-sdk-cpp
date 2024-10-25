@@ -5,6 +5,7 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
 import software.amazon.smithy.codegen.core.SymbolWriter;
+import software.amazon.smithy.aws.smoketests.model.AwsVendorParams;
 import java.util.List;
 
 public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceWriter, CppImportContainer>{
@@ -30,38 +31,6 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         write("using namespace Aws::$L::Model;", clientNamespace);
     };
 
-    //SimpleCodeWriter writer 
-    protected void addHeaderBlock()
-    {
-        write("${L|}",
-        
-        "#include <aws/testing/AwsCppSdkGTestSuite.h>\n" + //
-        "#include <aws/testing/AwsTestHelpers.h>\n" + //
-        "#include <aws/core/client/AsyncCallerContext.h>\n" + //
-        "#include <aws/core/client/ClientConfiguration.h>\n" + //
-        "#include <aws/core/client/CoreErrors.h>\n" + //
-        "#include <aws/core/auth/AWSCredentialsProviderChain.h>\n" + //
-        "#include <aws/core/http/HttpTypes.h>\n" + //
-        "#include <aws/core/utils/logging/LogMacros.h>\n" + //
-        "#include <aws/core/utils/memory/AWSMemory.h>\n" + //
-        "#include <aws/core/utils/UnreferencedParam.h>\n" + //
-        "#include <aws/core/utils/Outcome.h>\n" + //
-        "#include <aws/core/utils/memory/stl/AWSSet.h>\n" + //
-        "#include <aws/core/utils/memory/stl/AWSStringStream.h>\n" + //
-        "#include <utility>\n" +
-        "#include <algorithm>\n"
-        );
-    }
-
-    protected void addClientHeader()
-    {
-        write("#include <aws/$L/$LClient.h>", c2jNamespace, clientNamespace );
-    };
-
-    protected void addRequestHeader(SmokeTestData test)
-    {
-        write("#include <aws/$L/model/$LRequest.h>", c2jNamespace, test.getOperationName());
-    };
 
     protected void defineTestFixture()
     {
@@ -79,15 +48,19 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         //declare test fixture
         write("TEST_F($LSmokeTestSuite, $L )",clientNamespace, test.getTestcaseName()).write("{").indent().
         write("Aws::$L::$LClientConfiguration clientConfiguration;", clientNamespace,clientNamespace);
-        if(test.getConfig().hasAwsParams())
+        if(test.getConfig().getParams() instanceof AwsVendorParams)
         {
-            if(!test.getConfig().getAwsParams().getRegion().isEmpty())
+            final AwsVendorParams configParams = (AwsVendorParams)test.getConfig().getParams();
+
+            if(!configParams.getRegion().isEmpty())
             {
-                write("clientConfiguration.region = \"$L\";",test.getConfig().getAwsParams().getRegion());
+                write("clientConfiguration.region = \"$L\";",configParams.getRegion());
             }
-            write("clientConfiguration.useFIPS = $L;",test.getConfig().getAwsParams().useFips())
-            .write("clientConfiguration.useDualStack = $L;",test.getConfig().getAwsParams().useDualstack());
+            write("clientConfiguration.useFIPS = $L;",configParams.useFips())
+            .write("clientConfiguration.useDualStack = $L;",configParams.useDualstack());
         }
+        //for s3, needs to be handled when client code is ready to use the parameters passed in client configuration
+
         if(test.getAuth() == "sigv4" || test.getAuth() == "sigv4a")
         {
             write("auto clientSp = Aws::MakeShared<$LClient>(ALLOCATION_TAG, clientConfiguration);",clientNamespace);
