@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
+
 import software.amazon.smithy.model.node.Node;
 import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.Shape;
@@ -33,7 +34,7 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
         this.model = model;
         this.symbolVisitor = symbolVisitor;
         this.symbols = new HashSet<>();
-                
+
         operationShapeMap = new HashMap<>();
 
         operationShapeMap = model.getOperationShapes().stream().collect(Collectors.toMap(

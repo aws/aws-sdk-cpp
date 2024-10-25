@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
+
 import software.amazon.smithy.codegen.core.SymbolWriter;
 import software.amazon.smithy.aws.smoketests.model.AwsVendorParams;
 import java.util.List;

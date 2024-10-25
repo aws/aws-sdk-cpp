@@ -75,7 +75,7 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
             int count, //useful for array elements at same depth
             Map<String, String> functionMap,
             List<String> functionOrder
-    ) throws Exception
+    ) throws RuntimeException
     {
         if(shape == null)
         {

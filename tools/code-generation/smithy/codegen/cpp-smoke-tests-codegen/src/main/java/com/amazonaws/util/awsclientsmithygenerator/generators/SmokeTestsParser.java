@@ -83,7 +83,7 @@ public class SmokeTestsParser implements Runnable{
         .filter(serviceShape -> {
             try {
                 return serviceFilter.isEmpty() || serviceFilter.contains(toKebabCase(getServiceName(serviceShape)));
-            } catch (Exception e) {
+            } catch (RuntimeException e) {
                 // Log the exception and exclude this serviceShape from the result
                 System.err.println("Error getting service name: " + e.getMessage());
                 return false; // Skip this serviceShape if exception occurs
@@ -117,7 +117,7 @@ public class SmokeTestsParser implements Runnable{
         return input.trim().toLowerCase().replace(" ", "-");
     }
 
-    private String getServiceName(ServiceShape serviceShape) throws Exception
+    private String getServiceName(ServiceShape serviceShape) throws RuntimeException
     {   
         if(serviceShape.getTrait(ServiceTrait.class).isEmpty())
         {
@@ -196,7 +196,7 @@ public class SmokeTestsParser implements Runnable{
                                         functionMap,
                                         functionOrder)
                                 ));
-                        } catch (Exception e) {
+                        } catch (RuntimeException e) {
                             throw new RuntimeException(e);
                         }
                     }

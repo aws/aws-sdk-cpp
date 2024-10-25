@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
+
 import lombok.Data;
 import java.util.List;
 import java.util.Optional;
