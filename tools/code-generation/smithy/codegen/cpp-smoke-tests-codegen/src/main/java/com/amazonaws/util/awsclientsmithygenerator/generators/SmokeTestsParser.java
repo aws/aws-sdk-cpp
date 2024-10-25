@@ -184,21 +184,19 @@ public class SmokeTestsParser implements Runnable{
                         }
                         
                         Node value = paramEntry.getValue();
-                        try {
+                        
                             blockWriter.addCode(String.format("input.Set%s(%s);\n", GenericCodegenAdapter.capitalizeFirstLetter(key),
 
-                                codegenAdapter.GenerateCppSetters(
-                                        test.getOperationName().toLowerCase() + "_elem",
-                                        value,
-                                        fieldShape, //useful for C++ return type object
-                                        0, //useful for depth
-                                        0, //useful for array elements at same depth
-                                        functionMap,
-                                        functionOrder)
-                                ));
-                        } catch (RuntimeException e) {
-                            throw new RuntimeException(e);
-                        }
+                            codegenAdapter.GenerateCppSetters(
+                                    test.getOperationName().toLowerCase() + "_elem",
+                                    value,
+                                    fieldShape, //useful for C++ return type object
+                                    0, //useful for depth
+                                    0, //useful for array elements at same depth
+                                    functionMap,
+                                    functionOrder)
+                            ));
+                        
                     }
                     
                     //test.setRequestBlock(sb.toString());
@@ -315,7 +313,6 @@ public class SmokeTestsParser implements Runnable{
 
         //make service specific folder
         smoketests.forEach((serviceShape, value) -> {
-            try {
                 SmokeTestsSourceDelegator delegator = new SmokeTestsSourceDelegator(this.context.getFileManifest(), this.symbolProvider, value);
                 SmokeTestsCMakeDelegator cmakedelegator = new SmokeTestsCMakeDelegator(this.context.getFileManifest(), this.symbolProvider);
 
@@ -337,9 +334,6 @@ public class SmokeTestsParser implements Runnable{
 
                 delegator.flushWriters();
                 cmakedelegator.flushWriters();
-            } catch (Exception e) {
-                System.err.println("Exception detected=" + e.toString());
-            }
         });
 
     }
