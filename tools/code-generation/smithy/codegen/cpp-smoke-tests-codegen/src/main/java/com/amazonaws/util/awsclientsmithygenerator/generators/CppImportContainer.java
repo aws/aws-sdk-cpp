@@ -14,8 +14,6 @@
 
  public final class CppImportContainer implements ImportContainer {
 
-     private final String clientNamespace;
-     private final String folderNamespace;
      private final String c2jNamespace;
      private final Set<String> coreHeaders;
      private final Set<String> unitTestHeaders;
@@ -23,9 +21,9 @@
      private Set<String> dynamicHeaders;
 
      public CppImportContainer(String namespace) {
-        this.clientNamespace = SmokeTestsParser.removeSpaces(namespace);
-        this.folderNamespace = SmokeTestsParser.toKebabCase(namespace);
-        this.c2jNamespace = SmithyC2JNamespaceMap.getInstance().getC2JServiceName(this.folderNamespace);
+         String clientNamespace = SmokeTestsParser.removeSpaces(namespace);
+         String folderNamespace = SmokeTestsParser.toKebabCase(namespace);
+        this.c2jNamespace = SmithyC2JNamespaceMap.getInstance().getC2JServiceName(folderNamespace);
         this.coreHeaders = new HashSet<>();
         this.dynamicHeaders = new HashSet<>();
         Collections.addAll(coreHeaders, 
@@ -57,17 +55,16 @@
             Map.entry("Aws::Utils::ByteBuffer","aws/core/utils/Array.h")
         );
         
-        dynamicHeaders.add(String.format("aws/%s/%sClient.h", c2jNamespace, clientNamespace ));
+        dynamicHeaders.add(String.format("aws/%s/%sClient.h", c2jNamespace, clientNamespace));
         
     }
 
-
-    protected void importOperationInput(String operationName)
+    void importOperationInput(String operationName)
     {
         dynamicHeaders.add(String.format("aws/%s/model/%sRequest.h", c2jNamespace, operationName));
     };
 
-    protected void importModelStructure(String shapeName)
+    private void importModelStructure(String shapeName)
     {
         dynamicHeaders.add (String.format("aws/%s/model/%s.h", c2jNamespace, shapeName));
     };

@@ -3,8 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators;
+import lombok.Getter;
 import software.amazon.smithy.aws.smoketests.model.BaseAwsVendorParams;
 
+@Getter
 public final class ClientConfiguration {
     
     private final BaseAwsVendorParams params;
@@ -13,7 +15,4 @@ public final class ClientConfiguration {
         this.params = params;
     }
 
-    public BaseAwsVendorParams getParams() {
-        return params; 
-    }
 }

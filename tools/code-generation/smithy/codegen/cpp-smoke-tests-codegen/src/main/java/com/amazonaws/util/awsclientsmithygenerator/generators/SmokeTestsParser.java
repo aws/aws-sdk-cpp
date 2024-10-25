@@ -52,11 +52,11 @@ public class SmokeTestsParser implements Runnable{
         if(settings.containsKey("serviceFilter"))
         {
             Node value = settings.get("serviceFilter");
-            if(value.isArrayNode())
+            if(value.isArrayNode() && value.asArrayNode().isPresent())
             {
                 for(Node element : value.asArrayNode().get() )
                 {
-                    if(element.isStringNode())
+                    if(element.isStringNode() && element.asStringNode().isPresent())
                     {
                         serviceFilter.add(element.asStringNode().get().getValue());
                     }
@@ -119,14 +119,12 @@ public class SmokeTestsParser implements Runnable{
 
     private String getServiceName(ServiceShape serviceShape) throws Exception
     {   
-        if(!serviceShape.getTrait(ServiceTrait.class).isPresent())
+        if(serviceShape.getTrait(ServiceTrait.class).isEmpty())
         {
             throw new Exception(String.format("No service trait detected in service shape with name=%s",serviceShape.getId().getName()));
         }
 
-        String clientName = serviceShape.getTrait(ServiceTrait.class).get().getSdkId();
-
-        return clientName;
+        return serviceShape.getTrait(ServiceTrait.class).get().getSdkId();
     }
 
     //for given smoke test trait in an operation for a service, parse smoke tests
@@ -328,12 +326,12 @@ public class SmokeTestsParser implements Runnable{
                 System.out.println(toKebabCase(client) + " mapped to " + c2jClientname);
 
                 delegator.useFileWriter(relativePath.toString() + "/" + removeSpaces(client) + "SmokeTests.cpp", client, writer -> {
-                    System.out.println(String.format("generating smoke test source code=%s", relativePath.toString() + "/" + removeSpaces(client) + "SmokeTests.cpp"));
+                    System.out.printf("generating smoke test source code=%s%n", relativePath.toString() + "/" + removeSpaces(client) + "SmokeTests.cpp");
                     writer.generate();
                 });
 
                 cmakedelegator.useFileWriter(relativePath.toString() + "/" + "CMakeLists.txt", c2jClientname, writer -> {
-                    System.out.println(String.format("generating smoke test cmake code=%s", relativePath.toString() + "/" + "CMakeLists.txt"));
+                    System.out.printf("generating smoke test cmake code=%s%n", relativePath.toString() + "/" + "CMakeLists.txt");
                     writer.generate();
                 });
 

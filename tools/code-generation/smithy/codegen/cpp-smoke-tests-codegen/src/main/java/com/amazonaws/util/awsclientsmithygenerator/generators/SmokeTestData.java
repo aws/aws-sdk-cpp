@@ -17,8 +17,8 @@ public final class SmokeTestData {
     public String outputShapeName;
     public List<String> testDataCodeBlock;
     public String requestBlock;
-    boolean expectSuccess;
-    Optional<String> errorShapeId;
+    public boolean expectSuccess;
+    public Optional<String> errorShapeId;
     //capture auth scheme as that decides the client constructor
     String auth;
     public Set<Symbol> symbols;

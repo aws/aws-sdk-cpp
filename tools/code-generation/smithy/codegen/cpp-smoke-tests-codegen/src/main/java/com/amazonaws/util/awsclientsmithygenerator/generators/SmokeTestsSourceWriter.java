@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 import software.amazon.smithy.codegen.core.SymbolWriter;
 import software.amazon.smithy.aws.smoketests.model.AwsVendorParams;
 import java.util.List;
+import java.util.Objects;
 
 public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceWriter, CppImportContainer>{
     private final String clientNamespace;
@@ -44,10 +45,8 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         //declare test fixture
         write("TEST_F($LSmokeTestSuite, $L )",clientNamespace, test.getTestcaseName()).write("{").indent().
         write("Aws::$L::$LClientConfiguration clientConfiguration;", clientNamespace,clientNamespace);
-        if(test.getConfig().getParams() instanceof AwsVendorParams)
+        if(test.getConfig().getParams() instanceof AwsVendorParams configParams)
         {
-            final AwsVendorParams configParams = (AwsVendorParams)test.getConfig().getParams();
-
             if(!configParams.getRegion().isEmpty())
             {
                 write("clientConfiguration.region = \"$L\";",configParams.getRegion());
@@ -57,7 +56,7 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         }
         //for s3, needs to be handled when client code is ready to use the parameters passed in client configuration
 
-        if(test.getAuth() == "sigv4" || test.getAuth() == "sigv4a")
+        if(Objects.equals(test.getAuth(), "sigv4") || Objects.equals(test.getAuth(), "sigv4a"))
         {
             write("auto clientSp = Aws::MakeShared<$LClient>(ALLOCATION_TAG, clientConfiguration);",clientNamespace);
         }
@@ -67,7 +66,7 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
             write("//Prepare test data");
         }
         //write blocks
-        test.getTestDataCodeBlock().stream().forEach(getter -> {
+        test.getTestDataCodeBlock().forEach(getter -> {
             write("$L", getter);
         });
         write("//populate input params").
