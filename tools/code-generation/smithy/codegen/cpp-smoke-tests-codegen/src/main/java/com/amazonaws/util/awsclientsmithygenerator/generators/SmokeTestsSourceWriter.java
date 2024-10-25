@@ -10,15 +10,11 @@ import java.util.List;
 
 public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceWriter, CppImportContainer>{
     private final String clientNamespace;
-    private final String folderNamespace;
-    private final String c2jNamespace;
     private final List<SmokeTestData> smoketests;
 
     public SmokeTestsSourceWriter(String namespace,List<SmokeTestData> smoketests) {
         super(new CppImportContainer(namespace));
         this.clientNamespace = SmokeTestsParser.removeSpaces(namespace);
-        this.folderNamespace = SmokeTestsParser.toKebabCase(namespace);
-        this.c2jNamespace = SmithyC2JNamespaceMap.getInstance().getC2JServiceName(this.folderNamespace);
         this.smoketests = smoketests;
     }
 
