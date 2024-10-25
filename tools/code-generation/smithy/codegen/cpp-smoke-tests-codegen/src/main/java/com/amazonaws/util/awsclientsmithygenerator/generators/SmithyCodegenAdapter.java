@@ -29,14 +29,11 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
 
     private Set<Symbol> symbols;
 
-    //private final CppImportContainer importContainer;
-
     public SmithyCodegenAdapter(Model model, CppSymbolVisitor symbolVisitor) {
         this.model = model;
         this.symbolVisitor = symbolVisitor;
         this.symbols = new HashSet<>();
-        //this.importContainer = importContainer;
-        
+                
         operationShapeMap = new HashMap<>();
 
         operationShapeMap = model.getOperationShapes().stream().collect(Collectors.toMap(

@@ -29,9 +29,6 @@ import java.util.Set;
 import software.amazon.smithy.build.PluginContext;
 import software.amazon.smithy.aws.smoketests.model.AwsSmokeTestModel;
 
-
-//import com.amazonaws.util.awsclientsmithygenerator.generators.common.CppSymbolVisitor;
-
 public class SmokeTestsParser implements Runnable{
     final private Model model;
     final private SmithyCodegenAdapter codegenAdapter;
