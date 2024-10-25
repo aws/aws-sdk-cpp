@@ -55,7 +55,8 @@ Build::Build() :
     m_reportArnsHasBeenSet(false),
     m_fileSystemLocationsHasBeenSet(false),
     m_debugSessionHasBeenSet(false),
-    m_buildBatchArnHasBeenSet(false)
+    m_buildBatchArnHasBeenSet(false),
+    m_autoRetryConfigHasBeenSet(false)
 {
 }
 
@@ -312,6 +313,13 @@ Build& Build::operator =(JsonView jsonValue)
     m_buildBatchArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("autoRetryConfig"))
+  {
+    m_autoRetryConfig = jsonValue.GetObject("autoRetryConfig");
+
+    m_autoRetryConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -540,6 +548,12 @@ JsonValue Build::Jsonize() const
   if(m_buildBatchArnHasBeenSet)
   {
    payload.WithString("buildBatchArn", m_buildBatchArn);
+
+  }
+
+  if(m_autoRetryConfigHasBeenSet)
+  {
+   payload.WithObject("autoRetryConfig", m_autoRetryConfig.Jsonize());
 
   }
 

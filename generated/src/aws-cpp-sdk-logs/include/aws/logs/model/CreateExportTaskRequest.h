@@ -120,7 +120,10 @@ namespace Model
     ///@{
     /**
      * <p>The prefix used as the start of the key for every object exported. If you
-     * don't specify a value, the default is <code>exportedlogs</code>.</p>
+     * don't specify a value, the default is <code>exportedlogs</code>.</p> <p>The
+     * length of this parameter must comply with the S3 object key name length limits.
+     * The object key name is a sequence of Unicode characters with UTF-8 encoding, and
+     * can be up to 1,024 bytes.</p>
      */
     inline const Aws::String& GetDestinationPrefix() const{ return m_destinationPrefix; }
     inline bool DestinationPrefixHasBeenSet() const { return m_destinationPrefixHasBeenSet; }

@@ -115,8 +115,11 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Create DataIntegrationFlow to map one or more different sources to one target
-         * using the SQL transformation query.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically create a data pipeline to ingest data from
+         * source systems such as Amazon S3 buckets, to a predefined Amazon Web Services
+         * Supply Chain dataset (product, inbound_order) or a temporary dataset along with
+         * the data transformation query provided with the API.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataIntegrationFlow">AWS
          * API Reference</a></p>
          */
@@ -141,7 +144,10 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Create a data lake dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically create an Amazon Web Services Supply Chain
+         * data lake dataset. Developers can create the datasets using their pre-defined or
+         * custom schema for a given instance ID, namespace, and dataset
+         * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeDataset">AWS
          * API Reference</a></p>
          */
@@ -166,12 +172,17 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Create a new instance for AWS Supply Chain. This is an asynchronous
-         * operation. Upon receiving a CreateInstance request, AWS Supply Chain immediately
-         * returns the instance resource, with instance ID, and the initializing state
-         * while simultaneously creating all required Amazon Web Services resources for an
-         * instance creation. You can use GetInstance to check the status of the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically create an Amazon Web Services Supply Chain
+         * instance by applying KMS keys and relevant information associated with the API
+         * without using the Amazon Web Services console.</p> <p>This is an asynchronous
+         * operation. Upon receiving a CreateInstance request, Amazon Web Services Supply
+         * Chain immediately returns the instance resource, instance ID, and the
+         * initializing state while simultaneously creating all required Amazon Web
+         * Services resources for an instance creation. You can use GetInstance to check
+         * the status of the instance. If the instance results in an unhealthy state, you
+         * need to check the error message, delete the current instance, and recreate a new
+         * one based on the mitigation from the error message.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateInstance">AWS
          * API Reference</a></p>
          */
@@ -196,7 +207,9 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Delete the DataIntegrationFlow.</p><p><h3>See Also:</h3>   <a
+         * <p>Enable you to programmatically delete an existing data pipeline for the
+         * provided Amazon Web Services Supply Chain instance and DataIntegrationFlow
+         * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataIntegrationFlow">AWS
          * API Reference</a></p>
          */
@@ -221,7 +234,9 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Delete a data lake dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically delete an Amazon Web Services Supply Chain
+         * data lake dataset. Developers can delete the existing datasets for a given
+         * instance ID, namespace, and instance name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeDataset">AWS
          * API Reference</a></p>
          */
@@ -246,11 +261,14 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Delete the instance. This is an asynchronous operation. Upon receiving a
-         * DeleteInstance request, AWS Supply Chain immediately returns a response with the
-         * instance resource, delete state while cleaning up all Amazon Web Services
-         * resources created during the instance creation process. You can use the
-         * GetInstance action to check the instance status.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically delete an Amazon Web Services Supply Chain
+         * instance by deleting the KMS keys and relevant information associated with the
+         * API without using the Amazon Web Services console.</p> <p>This is an
+         * asynchronous operation. Upon receiving a DeleteInstance request, Amazon Web
+         * Services Supply Chain immediately returns a response with the instance resource,
+         * delete state while cleaning up all Amazon Web Services resources created during
+         * the instance creation process. You can use the GetInstance action to check the
+         * instance status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteInstance">AWS
          * API Reference</a></p>
          */
@@ -301,7 +319,9 @@ namespace SupplyChain
         }
 
         /**
-         * <p>View the DataIntegrationFlow details.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically view a specific data pipeline for the
+         * provided Amazon Web Services Supply Chain instance and DataIntegrationFlow
+         * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlow">AWS
          * API Reference</a></p>
          */
@@ -326,7 +346,10 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Get a data lake dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically view an Amazon Web Services Supply Chain data
+         * lake dataset. Developers can view the data lake dataset information such as
+         * namespace, schema, and so on for a given instance ID, namespace, and dataset
+         * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeDataset">AWS
          * API Reference</a></p>
          */
@@ -351,7 +374,8 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Get the AWS Supply Chain instance details.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically retrieve the information related to an Amazon
+         * Web Services Supply Chain instance ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetInstance">AWS
          * API Reference</a></p>
          */
@@ -376,8 +400,8 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Lists all the DataIntegrationFlows in a paginated way.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Enables you to programmatically list all data pipelines for the provided
+         * Amazon Web Services Supply Chain instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlows">AWS
          * API Reference</a></p>
          */
@@ -402,8 +426,10 @@ namespace SupplyChain
         }
 
         /**
-         * <p>List the data lake datasets for a specific instance and name
-         * space.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically view the list of Amazon Web Services Supply
+         * Chain data lake datasets. Developers can view the datasets and the corresponding
+         * information such as namespace, schema, and so on for a given instance ID and
+         * namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeDatasets">AWS
          * API Reference</a></p>
          */
@@ -428,8 +454,10 @@ namespace SupplyChain
         }
 
         /**
-         * <p>List all the AWS Supply Chain instances in a paginated way.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>List all Amazon Web Services Supply Chain instances for a specific account.
+         * Enables you to programmatically list all Amazon Web Services Supply Chain
+         * instances based on their account ID, instance name, and state of the instance
+         * (active or delete).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListInstances">AWS
          * API Reference</a></p>
          */
@@ -454,8 +482,10 @@ namespace SupplyChain
         }
 
         /**
-         * <p>List all the tags for an Amazon Web ServicesSupply Chain
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>List all the tags for an Amazon Web ServicesSupply Chain resource. You can
+         * list all the tags added to a resource. By listing the tags, developers can view
+         * the tag level information on a resource and perform actions such as, deleting a
+         * resource associated with a particular tag.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -509,8 +539,12 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Create tags for an Amazon Web Services Supply chain resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>You can create tags during or after creating a resource such as instance,
+         * data flow, or dataset in AWS Supply chain. During the data ingestion process,
+         * you can add tags such as dev, test, or prod to data flows created during the
+         * data ingestion process in the AWS Supply Chain datasets. You can use these tags
+         * to identify a group of resources or a single resource used by the
+         * developer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/TagResource">AWS
          * API Reference</a></p>
          */
@@ -535,8 +569,11 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Delete tags for an Amazon Web Services Supply chain resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>You can delete tags for an Amazon Web Services Supply chain resource such as
+         * instance, data flow, or dataset in AWS Supply Chain. During the data ingestion
+         * process, you can delete tags such as dev, test, or prod to data flows created
+         * during the data ingestion process in the AWS Supply Chain datasets.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -561,7 +598,11 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Update the DataIntegrationFlow.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically update an existing data pipeline to ingest
+         * data from the source systems such as, Amazon S3 buckets, to a predefined Amazon
+         * Web Services Supply Chain dataset (product, inbound_order) or a temporary
+         * dataset along with the data transformation query provided with the
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataIntegrationFlow">AWS
          * API Reference</a></p>
          */
@@ -586,7 +627,10 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Update a data lake dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically update an Amazon Web Services Supply Chain
+         * data lake dataset. Developers can update the description of a data lake dataset
+         * for a given instance ID, namespace, and dataset name.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeDataset">AWS
          * API Reference</a></p>
          */
@@ -611,7 +655,10 @@ namespace SupplyChain
         }
 
         /**
-         * <p>Update the instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables you to programmatically update an Amazon Web Services Supply Chain
+         * instance description by providing all the relevant information such as account
+         * ID, instance ID and so on without using the AWS console.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateInstance">AWS
          * API Reference</a></p>
          */

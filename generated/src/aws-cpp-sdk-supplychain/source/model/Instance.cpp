@@ -23,6 +23,7 @@ Instance::Instance() :
     m_awsAccountIdHasBeenSet(false),
     m_state(InstanceState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
     m_webAppDnsDomainHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
@@ -61,6 +62,13 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_state = InstanceStateMapper::GetInstanceStateForName(jsonValue.GetString("state"));
 
     m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("errorMessage"))
+  {
+    m_errorMessage = jsonValue.GetString("errorMessage");
+
+    m_errorMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("webAppDnsDomain"))
@@ -134,6 +142,12 @@ JsonValue Instance::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", InstanceStateMapper::GetNameForInstanceState(m_state));
+  }
+
+  if(m_errorMessageHasBeenSet)
+  {
+   payload.WithString("errorMessage", m_errorMessage);
+
   }
 
   if(m_webAppDnsDomainHasBeenSet)

@@ -110,7 +110,7 @@ namespace Model
     ///@{
     /**
      * <p>A mapping that displays the default value of each property within a
-     * delivery’s configuration, if it is not specified in the request.</p>
+     * delivery's configuration, if it is not specified in the request.</p>
      */
     inline const ConfigurationTemplateDeliveryConfigValues& GetDefaultDeliveryConfigValues() const{ return m_defaultDeliveryConfigValues; }
     inline bool DefaultDeliveryConfigValuesHasBeenSet() const { return m_defaultDeliveryConfigValuesHasBeenSet; }

@@ -451,6 +451,19 @@ namespace Model
     inline Project& WithResourceAccessRole(Aws::String&& value) { SetResourceAccessRole(std::move(value)); return *this;}
     inline Project& WithResourceAccessRole(const char* value) { SetResourceAccessRole(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of additional automatic retries after a failed build. For
+     * example, if the auto-retry limit is set to 2, CodeBuild will call the
+     * <code>RetryBuild</code> API to automatically retry your build for up to 2
+     * additional times.</p>
+     */
+    inline int GetAutoRetryLimit() const{ return m_autoRetryLimit; }
+    inline bool AutoRetryLimitHasBeenSet() const { return m_autoRetryLimitHasBeenSet; }
+    inline void SetAutoRetryLimit(int value) { m_autoRetryLimitHasBeenSet = true; m_autoRetryLimit = value; }
+    inline Project& WithAutoRetryLimit(int value) { SetAutoRetryLimit(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -536,6 +549,9 @@ namespace Model
 
     Aws::String m_resourceAccessRole;
     bool m_resourceAccessRoleHasBeenSet = false;
+
+    int m_autoRetryLimit;
+    bool m_autoRetryLimitHasBeenSet = false;
   };
 
 } // namespace Model

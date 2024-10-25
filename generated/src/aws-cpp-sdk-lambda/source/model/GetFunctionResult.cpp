@@ -50,6 +50,12 @@ GetFunctionResult& GetFunctionResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("TagsError"))
+  {
+    m_tagsError = jsonValue.GetObject("TagsError");
+
+  }
+
   if(jsonValue.ValueExists("Concurrency"))
   {
     m_concurrency = jsonValue.GetObject("Concurrency");

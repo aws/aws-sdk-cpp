@@ -353,6 +353,19 @@ namespace Model
     inline void SetConcurrentBuildLimit(int value) { m_concurrentBuildLimitHasBeenSet = true; m_concurrentBuildLimit = value; }
     inline CreateProjectRequest& WithConcurrentBuildLimit(int value) { SetConcurrentBuildLimit(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of additional automatic retries after a failed build. For
+     * example, if the auto-retry limit is set to 2, CodeBuild will call the
+     * <code>RetryBuild</code> API to automatically retry your build for up to 2
+     * additional times.</p>
+     */
+    inline int GetAutoRetryLimit() const{ return m_autoRetryLimit; }
+    inline bool AutoRetryLimitHasBeenSet() const { return m_autoRetryLimitHasBeenSet; }
+    inline void SetAutoRetryLimit(int value) { m_autoRetryLimitHasBeenSet = true; m_autoRetryLimit = value; }
+    inline CreateProjectRequest& WithAutoRetryLimit(int value) { SetAutoRetryLimit(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -417,6 +430,9 @@ namespace Model
 
     int m_concurrentBuildLimit;
     bool m_concurrentBuildLimitHasBeenSet = false;
+
+    int m_autoRetryLimit;
+    bool m_autoRetryLimitHasBeenSet = false;
   };
 
 } // namespace Model

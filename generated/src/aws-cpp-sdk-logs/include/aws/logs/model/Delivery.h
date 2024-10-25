@@ -33,8 +33,9 @@ namespace Model
    * source</i> and a logical <i>delivery destination</i>.</p> <p>For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.</p>
-   * <p>You can't update an existing delivery. You can only create and delete
-   * deliveries.</p><p><h3>See Also:</h3>   <a
+   * <p>To update an existing delivery configuration, use <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html">UpdateDeliveryConfiguration</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/Delivery">AWS API
    * Reference</a></p>
    */
