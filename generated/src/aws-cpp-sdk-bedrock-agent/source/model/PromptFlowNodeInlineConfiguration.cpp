@@ -19,6 +19,7 @@ namespace Model
 {
 
 PromptFlowNodeInlineConfiguration::PromptFlowNodeInlineConfiguration() : 
+    m_additionalModelRequestFieldsHasBeenSet(false),
     m_inferenceConfigurationHasBeenSet(false),
     m_modelIdHasBeenSet(false),
     m_templateConfigurationHasBeenSet(false),
@@ -35,6 +36,13 @@ PromptFlowNodeInlineConfiguration::PromptFlowNodeInlineConfiguration(JsonView js
 
 PromptFlowNodeInlineConfiguration& PromptFlowNodeInlineConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("additionalModelRequestFields"))
+  {
+    m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
+
+    m_additionalModelRequestFieldsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inferenceConfiguration"))
   {
     m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
@@ -69,6 +77,14 @@ PromptFlowNodeInlineConfiguration& PromptFlowNodeInlineConfiguration::operator =
 JsonValue PromptFlowNodeInlineConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_additionalModelRequestFieldsHasBeenSet)
+  {
+    if(!m_additionalModelRequestFields.View().IsNull())
+    {
+       payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
+    }
+  }
 
   if(m_inferenceConfigurationHasBeenSet)
   {

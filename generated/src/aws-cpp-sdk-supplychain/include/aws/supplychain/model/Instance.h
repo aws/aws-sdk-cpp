@@ -81,6 +81,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Web Services Supply Chain instance error message. If the instance
+     * results in an unhealthy state, customers need to check the error message, delete
+     * the current instance, and recreate a new one based on the mitigation from the
+     * error message.</p>
+     */
+    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
+    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
+    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
+    inline Instance& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
+    inline Instance& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
+    inline Instance& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The WebApp DNS domain name of the instance.</p>
      */
     inline const Aws::String& GetWebAppDnsDomain() const{ return m_webAppDnsDomain; }
@@ -181,6 +198,9 @@ namespace Model
 
     InstanceState m_state;
     bool m_stateHasBeenSet = false;
+
+    Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_webAppDnsDomain;
     bool m_webAppDnsDomainHasBeenSet = false;

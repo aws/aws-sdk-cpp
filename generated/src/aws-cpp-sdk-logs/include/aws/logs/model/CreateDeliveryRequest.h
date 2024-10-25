@@ -68,7 +68,7 @@ namespace Model
     ///@{
     /**
      * <p>The list of record fields to be delivered to the destination, in order. If
-     * the delivery’s log source has mandatory fields, they must be included in this
+     * the delivery's log source has mandatory fields, they must be included in this
      * list.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRecordFields() const{ return m_recordFields; }
@@ -100,7 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This structure contains parameters that are valid only when the delivery’s
+     * <p>This structure contains parameters that are valid only when the delivery's
      * delivery destination is an S3 bucket.</p>
      */
     inline const S3DeliveryConfiguration& GetS3DeliveryConfiguration() const{ return m_s3DeliveryConfiguration; }

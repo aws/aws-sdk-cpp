@@ -94,6 +94,28 @@ namespace Model
     inline PatternToken& AddEnumerations(Aws::String&& key, long long value) { m_enumerationsHasBeenSet = true; m_enumerations.emplace(std::move(key), value); return *this; }
     inline PatternToken& AddEnumerations(const char* key, long long value) { m_enumerationsHasBeenSet = true; m_enumerations.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A name that CloudWatch Logs assigned to this dynamic token to make the
+     * pattern more readable. The string part of the <code>inferredTokenName</code>
+     * gives you a clearer idea of the content of this token. The number part of the
+     * <code>inferredTokenName</code> shows where in the pattern this token appears,
+     * compared to other dynamic tokens. CloudWatch Logs assigns the string part of the
+     * name based on analyzing the content of the log events that contain it.</p>
+     * <p>For example, an inferred token name of <code>IPAddress-3</code> means that
+     * the token represents an IP address, and this token is the third dynamic token in
+     * the pattern.</p>
+     */
+    inline const Aws::String& GetInferredTokenName() const{ return m_inferredTokenName; }
+    inline bool InferredTokenNameHasBeenSet() const { return m_inferredTokenNameHasBeenSet; }
+    inline void SetInferredTokenName(const Aws::String& value) { m_inferredTokenNameHasBeenSet = true; m_inferredTokenName = value; }
+    inline void SetInferredTokenName(Aws::String&& value) { m_inferredTokenNameHasBeenSet = true; m_inferredTokenName = std::move(value); }
+    inline void SetInferredTokenName(const char* value) { m_inferredTokenNameHasBeenSet = true; m_inferredTokenName.assign(value); }
+    inline PatternToken& WithInferredTokenName(const Aws::String& value) { SetInferredTokenName(value); return *this;}
+    inline PatternToken& WithInferredTokenName(Aws::String&& value) { SetInferredTokenName(std::move(value)); return *this;}
+    inline PatternToken& WithInferredTokenName(const char* value) { SetInferredTokenName(value); return *this;}
+    ///@}
   private:
 
     int m_dynamicTokenPosition;
@@ -107,6 +129,9 @@ namespace Model
 
     Aws::Map<Aws::String, long long> m_enumerations;
     bool m_enumerationsHasBeenSet = false;
+
+    Aws::String m_inferredTokenName;
+    bool m_inferredTokenNameHasBeenSet = false;
   };
 
 } // namespace Model

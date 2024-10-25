@@ -50,7 +50,9 @@ Project::Project() :
     m_projectVisibility(ProjectVisibilityType::NOT_SET),
     m_projectVisibilityHasBeenSet(false),
     m_publicProjectAliasHasBeenSet(false),
-    m_resourceAccessRoleHasBeenSet(false)
+    m_resourceAccessRoleHasBeenSet(false),
+    m_autoRetryLimit(0),
+    m_autoRetryLimitHasBeenSet(false)
 {
 }
 
@@ -273,6 +275,13 @@ Project& Project::operator =(JsonView jsonValue)
     m_resourceAccessRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("autoRetryLimit"))
+  {
+    m_autoRetryLimit = jsonValue.GetInteger("autoRetryLimit");
+
+    m_autoRetryLimitHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -467,6 +476,12 @@ JsonValue Project::Jsonize() const
   if(m_resourceAccessRoleHasBeenSet)
   {
    payload.WithString("resourceAccessRole", m_resourceAccessRole);
+
+  }
+
+  if(m_autoRetryLimitHasBeenSet)
+  {
+   payload.WithInteger("autoRetryLimit", m_autoRetryLimit);
 
   }
 
