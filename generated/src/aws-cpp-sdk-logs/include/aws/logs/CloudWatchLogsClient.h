@@ -218,8 +218,9 @@ namespace CloudWatchLogs
          * configure a single delivery source to send logs to multiple destinations by
          * creating multiple deliveries. You can also create multiple deliveries to
          * configure multiple delivery sources to send logs to the same delivery
-         * destination.</p> <p>You can't update an existing delivery. You can only create
-         * and delete deliveries.</p><p><h3>See Also:</h3>   <a
+         * destination.</p> <p>To update an existing delivery configuration, use <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html">UpdateDeliveryConfiguration</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateDelivery">AWS
          * API Reference</a></p>
          */
@@ -1037,7 +1038,7 @@ namespace CloudWatchLogs
         /**
          * <p>Lists the specified log groups. You can list all your log groups or filter
          * the results by prefix. The results are ASCII-sorted by log group name.</p>
-         * <p>CloudWatch Logs doesn’t support IAM policies that control access to the
+         * <p>CloudWatch Logs doesn't support IAM policies that control access to the
          * <code>DescribeLogGroups</code> action by using the
          * <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other CloudWatch
          * Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i>
@@ -2264,12 +2265,12 @@ namespace CloudWatchLogs
         /**
          * <p>Sets the retention of the specified log group. With a retention policy, you
          * can configure the number of days for which to retain log events in the specified
-         * log group.</p>  <p>CloudWatch Logs doesn’t immediately delete log events
+         * log group.</p>  <p>CloudWatch Logs doesn't immediately delete log events
          * when they reach their retention setting. It typically takes up to 72 hours after
          * that before log events are deleted, but in rare situations might take
          * longer.</p> <p>To illustrate, imagine that you change a log group to have a
          * longer retention setting when it contains log events that are past the
-         * expiration date, but haven’t been deleted. Those log events will take up to 72
+         * expiration date, but haven't been deleted. Those log events will take up to 72
          * hours to be deleted after the new retention date is reached. To make sure that
          * log data is deleted permanently, keep a log group at its lower retention setting
          * until 72 hours after the previous retention period ends. Alternatively, wait to
@@ -2584,9 +2585,9 @@ namespace CloudWatchLogs
 
         /**
          * <p>Use this operation to <i>suppress</i> anomaly detection for a specified
-         * anomaly or pattern. If you suppress an anomaly, CloudWatch Logs won’t report new
+         * anomaly or pattern. If you suppress an anomaly, CloudWatch Logs won't report new
          * occurrences of that anomaly and won't update that anomaly with new data. If you
-         * suppress a pattern, CloudWatch Logs won’t report any anomalies related to that
+         * suppress a pattern, CloudWatch Logs won't report any anomalies related to that
          * pattern.</p> <p>You must specify either <code>anomalyId</code> or
          * <code>patternId</code>, but you can't specify both parameters in the same
          * operation.</p> <p>If you have previously used this operation to suppress

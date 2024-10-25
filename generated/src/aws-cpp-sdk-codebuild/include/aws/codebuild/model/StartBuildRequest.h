@@ -537,6 +537,19 @@ namespace Model
     inline StartBuildRequest& WithFleetOverride(const ProjectFleet& value) { SetFleetOverride(value); return *this;}
     inline StartBuildRequest& WithFleetOverride(ProjectFleet&& value) { SetFleetOverride(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of additional automatic retries after a failed build. For
+     * example, if the auto-retry limit is set to 2, CodeBuild will call the
+     * <code>RetryBuild</code> API to automatically retry your build for up to 2
+     * additional times.</p>
+     */
+    inline int GetAutoRetryLimitOverride() const{ return m_autoRetryLimitOverride; }
+    inline bool AutoRetryLimitOverrideHasBeenSet() const { return m_autoRetryLimitOverrideHasBeenSet; }
+    inline void SetAutoRetryLimitOverride(int value) { m_autoRetryLimitOverrideHasBeenSet = true; m_autoRetryLimitOverride = value; }
+    inline StartBuildRequest& WithAutoRetryLimitOverride(int value) { SetAutoRetryLimitOverride(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_projectName;
@@ -634,6 +647,9 @@ namespace Model
 
     ProjectFleet m_fleetOverride;
     bool m_fleetOverrideHasBeenSet = false;
+
+    int m_autoRetryLimitOverride;
+    bool m_autoRetryLimitOverrideHasBeenSet = false;
   };
 
 } // namespace Model

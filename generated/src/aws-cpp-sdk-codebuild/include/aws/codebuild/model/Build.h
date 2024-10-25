@@ -17,6 +17,7 @@
 #include <aws/codebuild/model/VpcConfig.h>
 #include <aws/codebuild/model/NetworkInterface.h>
 #include <aws/codebuild/model/DebugSession.h>
+#include <aws/codebuild/model/AutoRetryConfig.h>
 #include <aws/codebuild/model/BuildPhase.h>
 #include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/ExportedEnvironmentVariable.h>
@@ -517,6 +518,18 @@ namespace Model
     inline Build& WithBuildBatchArn(Aws::String&& value) { SetBuildBatchArn(std::move(value)); return *this;}
     inline Build& WithBuildBatchArn(const char* value) { SetBuildBatchArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about the auto-retry configuration for the build.</p>
+     */
+    inline const AutoRetryConfig& GetAutoRetryConfig() const{ return m_autoRetryConfig; }
+    inline bool AutoRetryConfigHasBeenSet() const { return m_autoRetryConfigHasBeenSet; }
+    inline void SetAutoRetryConfig(const AutoRetryConfig& value) { m_autoRetryConfigHasBeenSet = true; m_autoRetryConfig = value; }
+    inline void SetAutoRetryConfig(AutoRetryConfig&& value) { m_autoRetryConfigHasBeenSet = true; m_autoRetryConfig = std::move(value); }
+    inline Build& WithAutoRetryConfig(const AutoRetryConfig& value) { SetAutoRetryConfig(value); return *this;}
+    inline Build& WithAutoRetryConfig(AutoRetryConfig&& value) { SetAutoRetryConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -614,6 +627,9 @@ namespace Model
 
     Aws::String m_buildBatchArn;
     bool m_buildBatchArnHasBeenSet = false;
+
+    AutoRetryConfig m_autoRetryConfig;
+    bool m_autoRetryConfigHasBeenSet = false;
   };
 
 } // namespace Model

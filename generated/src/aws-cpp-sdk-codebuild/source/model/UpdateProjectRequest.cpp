@@ -37,7 +37,9 @@ UpdateProjectRequest::UpdateProjectRequest() :
     m_fileSystemLocationsHasBeenSet(false),
     m_buildBatchConfigHasBeenSet(false),
     m_concurrentBuildLimit(0),
-    m_concurrentBuildLimitHasBeenSet(false)
+    m_concurrentBuildLimitHasBeenSet(false),
+    m_autoRetryLimit(0),
+    m_autoRetryLimitHasBeenSet(false)
 {
 }
 
@@ -193,6 +195,12 @@ Aws::String UpdateProjectRequest::SerializePayload() const
   if(m_concurrentBuildLimitHasBeenSet)
   {
    payload.WithInteger("concurrentBuildLimit", m_concurrentBuildLimit);
+
+  }
+
+  if(m_autoRetryLimitHasBeenSet)
+  {
+   payload.WithInteger("autoRetryLimit", m_autoRetryLimit);
 
   }
 

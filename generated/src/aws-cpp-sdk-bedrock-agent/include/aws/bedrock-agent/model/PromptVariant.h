@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/core/utils/Document.h>
 #include <aws/bedrock-agent/model/PromptInferenceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -41,6 +42,22 @@ namespace Model
     AWS_BEDROCKAGENT_API PromptVariant& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>Contains model-specific inference configurations that aren't in the
+     * <code>inferenceConfiguration</code> field. To see model-specific inference
+     * parameters, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+     * request parameters and response fields for foundation models</a>.</p>
+     */
+    inline Aws::Utils::DocumentView GetAdditionalModelRequestFields() const{ return m_additionalModelRequestFields; }
+    inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
+    inline void SetAdditionalModelRequestFields(const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = value; }
+    inline void SetAdditionalModelRequestFields(Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::move(value); }
+    inline PromptVariant& WithAdditionalModelRequestFields(const Aws::Utils::Document& value) { SetAdditionalModelRequestFields(value); return *this;}
+    inline PromptVariant& WithAdditionalModelRequestFields(Aws::Utils::Document&& value) { SetAdditionalModelRequestFields(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -125,6 +142,9 @@ namespace Model
     inline PromptVariant& WithTemplateType(PromptTemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
     ///@}
   private:
+
+    Aws::Utils::Document m_additionalModelRequestFields;
+    bool m_additionalModelRequestFieldsHasBeenSet = false;
 
     PromptInferenceConfiguration m_inferenceConfiguration;
     bool m_inferenceConfigurationHasBeenSet = false;

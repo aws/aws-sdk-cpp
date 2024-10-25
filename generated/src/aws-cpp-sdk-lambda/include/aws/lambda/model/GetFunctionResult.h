@@ -8,6 +8,7 @@
 #include <aws/lambda/model/FunctionConfiguration.h>
 #include <aws/lambda/model/FunctionCodeLocation.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/lambda/model/TagsError.h>
 #include <aws/lambda/model/Concurrency.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -61,7 +62,9 @@ namespace Model
     ///@{
     /**
      * <p>The function's <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
+     * Lambda returns tag data only if you have explicit allow permissions for <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
@@ -75,6 +78,18 @@ namespace Model
     inline GetFunctionResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
     inline GetFunctionResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
     inline GetFunctionResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains details about an error related to retrieving
+     * tags.</p>
+     */
+    inline const TagsError& GetTagsError() const{ return m_tagsError; }
+    inline void SetTagsError(const TagsError& value) { m_tagsError = value; }
+    inline void SetTagsError(TagsError&& value) { m_tagsError = std::move(value); }
+    inline GetFunctionResult& WithTagsError(const TagsError& value) { SetTagsError(value); return *this;}
+    inline GetFunctionResult& WithTagsError(TagsError&& value) { SetTagsError(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,6 +122,8 @@ namespace Model
     FunctionCodeLocation m_code;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    TagsError m_tagsError;
 
     Concurrency m_concurrency;
 
