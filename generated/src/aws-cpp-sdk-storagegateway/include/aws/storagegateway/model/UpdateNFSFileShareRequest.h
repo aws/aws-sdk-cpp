@@ -221,7 +221,10 @@ namespace Model
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
      * <code>LocationARN</code>, or if an access point or access point alias is
-     * used.</p> 
+     * used.</p> <p>A valid NFS file share name can only contain the following
+     * characters: <code>a</code>-<code>z</code>, <code>A</code>-<code>Z</code>,
+     * <code>0</code>-<code>9</code>, <code>-</code>, <code>.</code>, and
+     * <code>_</code>.</p> 
      */
     inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
     inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }

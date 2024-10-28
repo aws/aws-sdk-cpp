@@ -40,7 +40,8 @@ ClusterConfig::ClusterConfig() :
     m_warmCountHasBeenSet(false),
     m_coldStorageOptionsHasBeenSet(false),
     m_multiAZWithStandbyEnabled(false),
-    m_multiAZWithStandbyEnabledHasBeenSet(false)
+    m_multiAZWithStandbyEnabledHasBeenSet(false),
+    m_nodeOptionsHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,16 @@ ClusterConfig& ClusterConfig::operator =(JsonView jsonValue)
     m_multiAZWithStandbyEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NodeOptions"))
+  {
+    Aws::Utils::Array<JsonView> nodeOptionsJsonList = jsonValue.GetArray("NodeOptions");
+    for(unsigned nodeOptionsIndex = 0; nodeOptionsIndex < nodeOptionsJsonList.GetLength(); ++nodeOptionsIndex)
+    {
+      m_nodeOptions.push_back(nodeOptionsJsonList[nodeOptionsIndex].AsObject());
+    }
+    m_nodeOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -209,6 +220,17 @@ JsonValue ClusterConfig::Jsonize() const
   if(m_multiAZWithStandbyEnabledHasBeenSet)
   {
    payload.WithBool("MultiAZWithStandbyEnabled", m_multiAZWithStandbyEnabled);
+
+  }
+
+  if(m_nodeOptionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> nodeOptionsJsonList(m_nodeOptions.size());
+   for(unsigned nodeOptionsIndex = 0; nodeOptionsIndex < nodeOptionsJsonList.GetLength(); ++nodeOptionsIndex)
+   {
+     nodeOptionsJsonList[nodeOptionsIndex].AsObject(m_nodeOptions[nodeOptionsIndex].Jsonize());
+   }
+   payload.WithArray("NodeOptions", std::move(nodeOptionsJsonList));
 
   }
 
