@@ -839,7 +839,9 @@ namespace Model
     /**
      * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
      * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
-     * clusters only</p>
+     * clusters only</p>  <p>This setting is no longer used. Instead use the
+     * <code>ClusterScalabilityType</code> setting when you create your Aurora
+     * Limitless Database DB cluster.</p> 
      */
     inline bool GetEnableLimitlessDatabase() const{ return m_enableLimitlessDatabase; }
     inline bool EnableLimitlessDatabaseHasBeenSet() const { return m_enableLimitlessDatabaseHasBeenSet; }

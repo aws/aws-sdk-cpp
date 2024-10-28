@@ -145,8 +145,9 @@ namespace Model
      * It includes a resource ARN with an optional prefix concatenation. The prefix
      * must end with a forward slash (/).</p>  <p>You can specify LocationARN as
      * a bucket ARN, access point ARN or access point alias, as shown in the following
-     * examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code>
-     * </p> <p>Access point ARN:</p> <p>
+     * examples.</p> <p>Bucket ARN:</p> <p>
+     * <code>arn:aws:s3:::amzn-s3-demo-bucket/prefix/</code> </p> <p>Access point
+     * ARN:</p> <p>
      * <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
      * </p> <p>If you specify an access point, the bucket policy must be configured to
      * delegate access control to the access point. For information, see <a
@@ -297,7 +298,10 @@ namespace Model
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
      * <code>LocationARN</code>, or if an access point or access point alias is
-     * used.</p> 
+     * used.</p> <p>A valid NFS file share name can only contain the following
+     * characters: <code>a</code>-<code>z</code>, <code>A</code>-<code>Z</code>,
+     * <code>0</code>-<code>9</code>, <code>-</code>, <code>.</code>, and
+     * <code>_</code>.</p> 
      */
     inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
     inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }

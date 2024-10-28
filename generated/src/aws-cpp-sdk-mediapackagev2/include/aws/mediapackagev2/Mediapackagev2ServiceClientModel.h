@@ -18,8 +18,10 @@
 /* End of generic header includes */
 
 /* Service model headers required in Mediapackagev2Client header */
+#include <aws/mediapackagev2/model/CancelHarvestJobResult.h>
 #include <aws/mediapackagev2/model/CreateChannelResult.h>
 #include <aws/mediapackagev2/model/CreateChannelGroupResult.h>
+#include <aws/mediapackagev2/model/CreateHarvestJobResult.h>
 #include <aws/mediapackagev2/model/CreateOriginEndpointResult.h>
 #include <aws/mediapackagev2/model/DeleteChannelResult.h>
 #include <aws/mediapackagev2/model/DeleteChannelGroupResult.h>
@@ -29,10 +31,12 @@
 #include <aws/mediapackagev2/model/GetChannelResult.h>
 #include <aws/mediapackagev2/model/GetChannelGroupResult.h>
 #include <aws/mediapackagev2/model/GetChannelPolicyResult.h>
+#include <aws/mediapackagev2/model/GetHarvestJobResult.h>
 #include <aws/mediapackagev2/model/GetOriginEndpointResult.h>
 #include <aws/mediapackagev2/model/GetOriginEndpointPolicyResult.h>
 #include <aws/mediapackagev2/model/ListChannelGroupsResult.h>
 #include <aws/mediapackagev2/model/ListChannelsResult.h>
+#include <aws/mediapackagev2/model/ListHarvestJobsResult.h>
 #include <aws/mediapackagev2/model/ListOriginEndpointsResult.h>
 #include <aws/mediapackagev2/model/ListTagsForResourceResult.h>
 #include <aws/mediapackagev2/model/PutChannelPolicyResult.h>
@@ -82,8 +86,10 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in Mediapackagev2Client header */
+      class CancelHarvestJobRequest;
       class CreateChannelRequest;
       class CreateChannelGroupRequest;
+      class CreateHarvestJobRequest;
       class CreateOriginEndpointRequest;
       class DeleteChannelRequest;
       class DeleteChannelGroupRequest;
@@ -93,10 +99,12 @@ namespace Aws
       class GetChannelRequest;
       class GetChannelGroupRequest;
       class GetChannelPolicyRequest;
+      class GetHarvestJobRequest;
       class GetOriginEndpointRequest;
       class GetOriginEndpointPolicyRequest;
       class ListChannelGroupsRequest;
       class ListChannelsRequest;
+      class ListHarvestJobsRequest;
       class ListOriginEndpointsRequest;
       class ListTagsForResourceRequest;
       class PutChannelPolicyRequest;
@@ -109,8 +117,10 @@ namespace Aws
       /* End of service model forward declarations required in Mediapackagev2Client header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<CancelHarvestJobResult, Mediapackagev2Error> CancelHarvestJobOutcome;
       typedef Aws::Utils::Outcome<CreateChannelResult, Mediapackagev2Error> CreateChannelOutcome;
       typedef Aws::Utils::Outcome<CreateChannelGroupResult, Mediapackagev2Error> CreateChannelGroupOutcome;
+      typedef Aws::Utils::Outcome<CreateHarvestJobResult, Mediapackagev2Error> CreateHarvestJobOutcome;
       typedef Aws::Utils::Outcome<CreateOriginEndpointResult, Mediapackagev2Error> CreateOriginEndpointOutcome;
       typedef Aws::Utils::Outcome<DeleteChannelResult, Mediapackagev2Error> DeleteChannelOutcome;
       typedef Aws::Utils::Outcome<DeleteChannelGroupResult, Mediapackagev2Error> DeleteChannelGroupOutcome;
@@ -120,10 +130,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetChannelResult, Mediapackagev2Error> GetChannelOutcome;
       typedef Aws::Utils::Outcome<GetChannelGroupResult, Mediapackagev2Error> GetChannelGroupOutcome;
       typedef Aws::Utils::Outcome<GetChannelPolicyResult, Mediapackagev2Error> GetChannelPolicyOutcome;
+      typedef Aws::Utils::Outcome<GetHarvestJobResult, Mediapackagev2Error> GetHarvestJobOutcome;
       typedef Aws::Utils::Outcome<GetOriginEndpointResult, Mediapackagev2Error> GetOriginEndpointOutcome;
       typedef Aws::Utils::Outcome<GetOriginEndpointPolicyResult, Mediapackagev2Error> GetOriginEndpointPolicyOutcome;
       typedef Aws::Utils::Outcome<ListChannelGroupsResult, Mediapackagev2Error> ListChannelGroupsOutcome;
       typedef Aws::Utils::Outcome<ListChannelsResult, Mediapackagev2Error> ListChannelsOutcome;
+      typedef Aws::Utils::Outcome<ListHarvestJobsResult, Mediapackagev2Error> ListHarvestJobsOutcome;
       typedef Aws::Utils::Outcome<ListOriginEndpointsResult, Mediapackagev2Error> ListOriginEndpointsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, Mediapackagev2Error> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutChannelPolicyResult, Mediapackagev2Error> PutChannelPolicyOutcome;
@@ -136,8 +148,10 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<CancelHarvestJobOutcome> CancelHarvestJobOutcomeCallable;
       typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
       typedef std::future<CreateChannelGroupOutcome> CreateChannelGroupOutcomeCallable;
+      typedef std::future<CreateHarvestJobOutcome> CreateHarvestJobOutcomeCallable;
       typedef std::future<CreateOriginEndpointOutcome> CreateOriginEndpointOutcomeCallable;
       typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
       typedef std::future<DeleteChannelGroupOutcome> DeleteChannelGroupOutcomeCallable;
@@ -147,10 +161,12 @@ namespace Aws
       typedef std::future<GetChannelOutcome> GetChannelOutcomeCallable;
       typedef std::future<GetChannelGroupOutcome> GetChannelGroupOutcomeCallable;
       typedef std::future<GetChannelPolicyOutcome> GetChannelPolicyOutcomeCallable;
+      typedef std::future<GetHarvestJobOutcome> GetHarvestJobOutcomeCallable;
       typedef std::future<GetOriginEndpointOutcome> GetOriginEndpointOutcomeCallable;
       typedef std::future<GetOriginEndpointPolicyOutcome> GetOriginEndpointPolicyOutcomeCallable;
       typedef std::future<ListChannelGroupsOutcome> ListChannelGroupsOutcomeCallable;
       typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
+      typedef std::future<ListHarvestJobsOutcome> ListHarvestJobsOutcomeCallable;
       typedef std::future<ListOriginEndpointsOutcome> ListOriginEndpointsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutChannelPolicyOutcome> PutChannelPolicyOutcomeCallable;
@@ -166,8 +182,10 @@ namespace Aws
     class Mediapackagev2Client;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const Mediapackagev2Client*, const Model::CancelHarvestJobRequest&, const Model::CancelHarvestJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelHarvestJobResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::CreateChannelGroupRequest&, const Model::CreateChannelGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelGroupResponseReceivedHandler;
+    typedef std::function<void(const Mediapackagev2Client*, const Model::CreateHarvestJobRequest&, const Model::CreateHarvestJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHarvestJobResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::CreateOriginEndpointRequest&, const Model::CreateOriginEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOriginEndpointResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::DeleteChannelGroupRequest&, const Model::DeleteChannelGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelGroupResponseReceivedHandler;
@@ -177,10 +195,12 @@ namespace Aws
     typedef std::function<void(const Mediapackagev2Client*, const Model::GetChannelRequest&, const Model::GetChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::GetChannelGroupRequest&, const Model::GetChannelGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelGroupResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::GetChannelPolicyRequest&, const Model::GetChannelPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelPolicyResponseReceivedHandler;
+    typedef std::function<void(const Mediapackagev2Client*, const Model::GetHarvestJobRequest&, const Model::GetHarvestJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHarvestJobResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::GetOriginEndpointRequest&, const Model::GetOriginEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOriginEndpointResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::GetOriginEndpointPolicyRequest&, const Model::GetOriginEndpointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOriginEndpointPolicyResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::ListChannelGroupsRequest&, const Model::ListChannelGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelGroupsResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
+    typedef std::function<void(const Mediapackagev2Client*, const Model::ListHarvestJobsRequest&, const Model::ListHarvestJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHarvestJobsResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::ListOriginEndpointsRequest&, const Model::ListOriginEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOriginEndpointsResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const Mediapackagev2Client*, const Model::PutChannelPolicyRequest&, const Model::PutChannelPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutChannelPolicyResponseReceivedHandler;

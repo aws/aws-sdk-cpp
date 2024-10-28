@@ -288,7 +288,10 @@ namespace Model
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
      * <code>LocationARN</code>, or if an access point or access point alias is
-     * used.</p> 
+     * used.</p> <p>A valid SMB file share name cannot contain the following
+     * characters:
+     * <code>[</code>,<code>]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>,
+     * or ASCII control characters <code>1-31</code>.</p> 
      */
     inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
     inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
