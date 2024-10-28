@@ -130,9 +130,14 @@ namespace Model
     /**
      * <p>A value that defines the type of gateway to activate. The type specified is
      * critical to all later functions of the gateway and cannot be changed after
-     * activation. The default value is <code>CACHED</code>.</p> <p>Valid Values:
-     * <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+     * activation. The default value is <code>CACHED</code>.</p>  <p>Amazon
+     * FSx File Gateway is no longer available to new customers. Existing customers of
+     * FSx File Gateway can continue to use the service normally. For capabilities
+     * similar to FSx File Gateway, visit <a
+     * href="https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/">this
+     * blog post</a>.</p>  <p>Valid Values: <code>STORED</code> |
+     * <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     * <code>FILE_FSX_SMB</code> </p>
      */
     inline const Aws::String& GetGatewayType() const{ return m_gatewayType; }
     inline bool GatewayTypeHasBeenSet() const { return m_gatewayTypeHasBeenSet; }

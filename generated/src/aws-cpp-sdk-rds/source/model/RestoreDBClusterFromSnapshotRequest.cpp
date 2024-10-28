@@ -47,6 +47,14 @@ RestoreDBClusterFromSnapshotRequest::RestoreDBClusterFromSnapshotRequest() :
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_rdsCustomClusterConfigurationHasBeenSet(false),
+    m_monitoringInterval(0),
+    m_monitoringIntervalHasBeenSet(false),
+    m_monitoringRoleArnHasBeenSet(false),
+    m_enablePerformanceInsights(false),
+    m_enablePerformanceInsightsHasBeenSet(false),
+    m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_performanceInsightsRetentionPeriod(0),
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
     m_engineLifecycleSupportHasBeenSet(false)
 {
 }
@@ -249,6 +257,31 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
   if(m_rdsCustomClusterConfigurationHasBeenSet)
   {
     m_rdsCustomClusterConfiguration.OutputToStream(ss, "RdsCustomClusterConfiguration");
+  }
+
+  if(m_monitoringIntervalHasBeenSet)
+  {
+    ss << "MonitoringInterval=" << m_monitoringInterval << "&";
+  }
+
+  if(m_monitoringRoleArnHasBeenSet)
+  {
+    ss << "MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
+  }
+
+  if(m_enablePerformanceInsightsHasBeenSet)
+  {
+    ss << "EnablePerformanceInsights=" << std::boolalpha << m_enablePerformanceInsights << "&";
+  }
+
+  if(m_performanceInsightsKMSKeyIdHasBeenSet)
+  {
+    ss << "PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+
+  if(m_performanceInsightsRetentionPeriodHasBeenSet)
+  {
+    ss << "PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
   }
 
   if(m_engineLifecycleSupportHasBeenSet)

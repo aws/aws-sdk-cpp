@@ -579,6 +579,85 @@ namespace Model
 
     ///@{
     /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB cluster. To turn off collecting Enhanced Monitoring
+     * metrics, specify <code>0</code>.</p> <p>If <code>MonitoringRoleArn</code> is
+     * specified, also set <code>MonitoringInterval</code> to a value other than
+     * <code>0</code>.</p> <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code>
+     * </p> <p>Default: <code>0</code> </p>
+     */
+    inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
+    inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
+    inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
+    inline RestoreDBClusterFromSnapshotRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send
+     * Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>.</p> <p>If
+     * <code>MonitoringInterval</code> is set to a value other than <code>0</code>,
+     * supply a <code>MonitoringRoleArn</code> value.</p>
+     */
+    inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
+    inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
+    inline void SetMonitoringRoleArn(const Aws::String& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
+    inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
+    inline void SetMonitoringRoleArn(const char* value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn.assign(value); }
+    inline RestoreDBClusterFromSnapshotRequest& WithMonitoringRoleArn(const Aws::String& value) { SetMonitoringRoleArn(value); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
+     */
+    inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
+    inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
+    inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
+    inline RestoreDBClusterFromSnapshotRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the KMS key.</p> <p>If you don't specify a
+     * value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
+     * default KMS key. There is a default KMS key for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default KMS key for
+     * each Amazon Web Services Region.</p>
+     */
+    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+    inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
+    inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
+    inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
+    inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
+    inline RestoreDBClusterFromSnapshotRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of days to retain Performance Insights data.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>7</code> </p> </li> <li> <p> <i>month</i> * 31,
+     * where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3
+     * months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months *
+     * 31)</p> </li> <li> <p> <code>731</code> </p> </li> </ul> <p>Default:
+     * <code>7</code> days</p> <p>If you specify a retention period that isn't valid,
+     * such as <code>94</code>, Amazon RDS issues an error.</p>
+     */
+    inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
+    inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
+    inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
+    inline RestoreDBClusterFromSnapshotRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The life cycle type for this DB cluster.</p>  <p>By default, this value
      * is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
      * cluster into Amazon RDS Extended Support. At the end of standard support, you
@@ -698,6 +777,21 @@ namespace Model
 
     RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
     bool m_rdsCustomClusterConfigurationHasBeenSet = false;
+
+    int m_monitoringInterval;
+    bool m_monitoringIntervalHasBeenSet = false;
+
+    Aws::String m_monitoringRoleArn;
+    bool m_monitoringRoleArnHasBeenSet = false;
+
+    bool m_enablePerformanceInsights;
+    bool m_enablePerformanceInsightsHasBeenSet = false;
+
+    Aws::String m_performanceInsightsKMSKeyId;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
+
+    int m_performanceInsightsRetentionPeriod;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
     Aws::String m_engineLifecycleSupport;
     bool m_engineLifecycleSupportHasBeenSet = false;

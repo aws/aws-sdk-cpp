@@ -24,11 +24,12 @@ namespace Model
 {
 
   /**
-   * <p> Describes a bandwidth rate limit interval for a gateway. A bandwidth rate
+   * <p>Describes a bandwidth rate limit interval for a gateway. A bandwidth rate
    * limit schedule consists of one or more bandwidth rate limit intervals. A
    * bandwidth rate limit interval defines a period of time on one or more days of
    * the week, during which bandwidth rate limits are specified for uploading,
-   * downloading, or both. </p><p><h3>See Also:</h3>   <a
+   * downloading, or both.</p>  <p>FSx File Gateway does not support this
+   * feature.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/BandwidthRateLimitInterval">AWS
    * API Reference</a></p>
    */
@@ -106,8 +107,9 @@ namespace Model
      * <p> The average upload rate limit component of the bandwidth rate limit
      * interval, in bits per second. This field does not appear in the response if the
      * upload rate limit is not set. </p>  <p>For Tape Gateway and Volume
-     * Gateway, the minimum value is <code>51200</code>.</p> <p>For S3 File Gateway and
-     * FSx File Gateway, the minimum value is <code>104857600</code>.</p> 
+     * Gateway, the minimum value is <code>51200</code>.</p> <p>This field is required
+     * for S3 File Gateway, and the minimum value is <code>104857600</code>.</p>
+     * 
      */
     inline long long GetAverageUploadRateLimitInBitsPerSec() const{ return m_averageUploadRateLimitInBitsPerSec; }
     inline bool AverageUploadRateLimitInBitsPerSecHasBeenSet() const { return m_averageUploadRateLimitInBitsPerSecHasBeenSet; }
@@ -119,7 +121,8 @@ namespace Model
     /**
      * <p> The average download rate limit component of the bandwidth rate limit
      * interval, in bits per second. This field does not appear in the response if the
-     * download rate limit is not set. </p>
+     * download rate limit is not set. </p>  <p>S3 File Gateway does not support
+     * this feature.</p> 
      */
     inline long long GetAverageDownloadRateLimitInBitsPerSec() const{ return m_averageDownloadRateLimitInBitsPerSec; }
     inline bool AverageDownloadRateLimitInBitsPerSecHasBeenSet() const { return m_averageDownloadRateLimitInBitsPerSecHasBeenSet; }

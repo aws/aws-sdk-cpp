@@ -9,6 +9,8 @@
 #include <aws/opensearch/model/ZoneAwarenessConfig.h>
 #include <aws/opensearch/model/OpenSearchWarmPartitionInstanceType.h>
 #include <aws/opensearch/model/ColdStorageOptions.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/opensearch/model/NodeOption.h>
 #include <utility>
 
 namespace Aws
@@ -185,6 +187,20 @@ namespace Model
     inline void SetMultiAZWithStandbyEnabled(bool value) { m_multiAZWithStandbyEnabledHasBeenSet = true; m_multiAZWithStandbyEnabled = value; }
     inline ClusterConfig& WithMultiAZWithStandbyEnabled(bool value) { SetMultiAZWithStandbyEnabled(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>List of node options for the domain.</p>
+     */
+    inline const Aws::Vector<NodeOption>& GetNodeOptions() const{ return m_nodeOptions; }
+    inline bool NodeOptionsHasBeenSet() const { return m_nodeOptionsHasBeenSet; }
+    inline void SetNodeOptions(const Aws::Vector<NodeOption>& value) { m_nodeOptionsHasBeenSet = true; m_nodeOptions = value; }
+    inline void SetNodeOptions(Aws::Vector<NodeOption>&& value) { m_nodeOptionsHasBeenSet = true; m_nodeOptions = std::move(value); }
+    inline ClusterConfig& WithNodeOptions(const Aws::Vector<NodeOption>& value) { SetNodeOptions(value); return *this;}
+    inline ClusterConfig& WithNodeOptions(Aws::Vector<NodeOption>&& value) { SetNodeOptions(std::move(value)); return *this;}
+    inline ClusterConfig& AddNodeOptions(const NodeOption& value) { m_nodeOptionsHasBeenSet = true; m_nodeOptions.push_back(value); return *this; }
+    inline ClusterConfig& AddNodeOptions(NodeOption&& value) { m_nodeOptionsHasBeenSet = true; m_nodeOptions.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     OpenSearchPartitionInstanceType m_instanceType;
@@ -222,6 +238,9 @@ namespace Model
 
     bool m_multiAZWithStandbyEnabled;
     bool m_multiAZWithStandbyEnabledHasBeenSet = false;
+
+    Aws::Vector<NodeOption> m_nodeOptions;
+    bool m_nodeOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -95,6 +95,31 @@ namespace mediapackagev2
         virtual ~Mediapackagev2Client();
 
         /**
+         * <p>Cancels an in-progress harvest job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CancelHarvestJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelHarvestJobOutcome CancelHarvestJob(const Model::CancelHarvestJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelHarvestJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelHarvestJobRequestT = Model::CancelHarvestJobRequest>
+        Model::CancelHarvestJobOutcomeCallable CancelHarvestJobCallable(const CancelHarvestJobRequestT& request) const
+        {
+            return SubmitCallable(&Mediapackagev2Client::CancelHarvestJob, request);
+        }
+
+        /**
+         * An Async wrapper for CancelHarvestJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelHarvestJobRequestT = Model::CancelHarvestJobRequest>
+        void CancelHarvestJobAsync(const CancelHarvestJobRequestT& request, const CancelHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Mediapackagev2Client::CancelHarvestJob, request, handler, context);
+        }
+
+        /**
          * <p>Create a channel to start receiving content streams. The channel represents
          * the input to MediaPackage for incoming live content from an encoder such as AWS
          * Elemental MediaLive. The channel receives content, and after packaging it,
@@ -154,6 +179,32 @@ namespace mediapackagev2
         void CreateChannelGroupAsync(const CreateChannelGroupRequestT& request, const CreateChannelGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Mediapackagev2Client::CreateChannelGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new harvest job to export content from a MediaPackage v2 channel to
+         * an S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateHarvestJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateHarvestJobOutcome CreateHarvestJob(const Model::CreateHarvestJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateHarvestJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateHarvestJobRequestT = Model::CreateHarvestJobRequest>
+        Model::CreateHarvestJobOutcomeCallable CreateHarvestJobCallable(const CreateHarvestJobRequestT& request) const
+        {
+            return SubmitCallable(&Mediapackagev2Client::CreateHarvestJob, request);
+        }
+
+        /**
+         * An Async wrapper for CreateHarvestJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateHarvestJobRequestT = Model::CreateHarvestJobRequest>
+        void CreateHarvestJobAsync(const CreateHarvestJobRequestT& request, const CreateHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Mediapackagev2Client::CreateHarvestJob, request, handler, context);
         }
 
         /**
@@ -401,6 +452,32 @@ namespace mediapackagev2
         }
 
         /**
+         * <p>Retrieves the details of a specific harvest job.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetHarvestJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetHarvestJobOutcome GetHarvestJob(const Model::GetHarvestJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetHarvestJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetHarvestJobRequestT = Model::GetHarvestJobRequest>
+        Model::GetHarvestJobOutcomeCallable GetHarvestJobCallable(const GetHarvestJobRequestT& request) const
+        {
+            return SubmitCallable(&Mediapackagev2Client::GetHarvestJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetHarvestJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetHarvestJobRequestT = Model::GetHarvestJobRequest>
+        void GetHarvestJobAsync(const GetHarvestJobRequestT& request, const GetHarvestJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Mediapackagev2Client::GetHarvestJob, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the specified origin endpoint that's configured in AWS Elemental
          * MediaPackage to obtain its playback URL and to view the packaging settings that
          * it's currently using.</p><p><h3>See Also:</h3>   <a
@@ -505,6 +582,32 @@ namespace mediapackagev2
         void ListChannelsAsync(const ListChannelsRequestT& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Mediapackagev2Client::ListChannels, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of harvest jobs that match the specified
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListHarvestJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHarvestJobsOutcome ListHarvestJobs(const Model::ListHarvestJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListHarvestJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListHarvestJobsRequestT = Model::ListHarvestJobsRequest>
+        Model::ListHarvestJobsOutcomeCallable ListHarvestJobsCallable(const ListHarvestJobsRequestT& request) const
+        {
+            return SubmitCallable(&Mediapackagev2Client::ListHarvestJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListHarvestJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListHarvestJobsRequestT = Model::ListHarvestJobsRequest>
+        void ListHarvestJobsAsync(const ListHarvestJobsRequestT& request, const ListHarvestJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Mediapackagev2Client::ListHarvestJobs, request, handler, context);
         }
 
         /**

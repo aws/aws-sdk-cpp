@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     CHANNEL_GROUP,
     CHANNEL,
-    ORIGIN_ENDPOINT
+    ORIGIN_ENDPOINT,
+    HARVEST_JOB
   };
 
 namespace ResourceTypeNotFoundMapper

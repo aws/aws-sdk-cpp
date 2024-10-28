@@ -67,6 +67,14 @@ namespace Aws
         static const int DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS_HASH = HashingUtils::HashString("DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS");
         static const int ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION");
         static const int SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY_HASH = HashingUtils::HashString("SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY");
+        static const int HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION_HASH = HashingUtils::HashString("HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION");
+        static const int HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT_HASH = HashingUtils::HashString("HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT");
+        static const int TOO_MANY_IN_PROGRESS_HARVEST_JOBS_HASH = HashingUtils::HashString("TOO_MANY_IN_PROGRESS_HARVEST_JOBS");
+        static const int HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION_HASH = HashingUtils::HashString("HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION");
+        static const int INVALID_HARVEST_JOB_DURATION_HASH = HashingUtils::HashString("INVALID_HARVEST_JOB_DURATION");
+        static const int HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE_HASH = HashingUtils::HashString("HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE");
+        static const int HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION_HASH = HashingUtils::HashString("HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION");
+        static const int HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED_HASH = HashingUtils::HashString("HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED");
         static const int CLIP_START_TIME_WITH_START_OR_END_HASH = HashingUtils::HashString("CLIP_START_TIME_WITH_START_OR_END");
         static const int START_TAG_TIME_OFFSET_INVALID_HASH = HashingUtils::HashString("START_TAG_TIME_OFFSET_INVALID");
 
@@ -262,6 +270,38 @@ namespace Aws
           {
             return ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY;
           }
+          else if (hashCode == HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION_HASH)
+          {
+            return ValidationExceptionType::HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION;
+          }
+          else if (hashCode == HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT_HASH)
+          {
+            return ValidationExceptionType::HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT;
+          }
+          else if (hashCode == TOO_MANY_IN_PROGRESS_HARVEST_JOBS_HASH)
+          {
+            return ValidationExceptionType::TOO_MANY_IN_PROGRESS_HARVEST_JOBS;
+          }
+          else if (hashCode == HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION_HASH)
+          {
+            return ValidationExceptionType::HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION;
+          }
+          else if (hashCode == INVALID_HARVEST_JOB_DURATION_HASH)
+          {
+            return ValidationExceptionType::INVALID_HARVEST_JOB_DURATION;
+          }
+          else if (hashCode == HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE_HASH)
+          {
+            return ValidationExceptionType::HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE;
+          }
+          else if (hashCode == HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION_HASH)
+          {
+            return ValidationExceptionType::HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION;
+          }
+          else if (hashCode == HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED_HASH)
+          {
+            return ValidationExceptionType::HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED;
+          }
           else if (hashCode == CLIP_START_TIME_WITH_START_OR_END_HASH)
           {
             return ValidationExceptionType::CLIP_START_TIME_WITH_START_OR_END;
@@ -380,6 +420,22 @@ namespace Aws
             return "ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION";
           case ValidationExceptionType::SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY:
             return "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY";
+          case ValidationExceptionType::HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION:
+            return "HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION";
+          case ValidationExceptionType::HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT:
+            return "HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT";
+          case ValidationExceptionType::TOO_MANY_IN_PROGRESS_HARVEST_JOBS:
+            return "TOO_MANY_IN_PROGRESS_HARVEST_JOBS";
+          case ValidationExceptionType::HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION:
+            return "HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION";
+          case ValidationExceptionType::INVALID_HARVEST_JOB_DURATION:
+            return "INVALID_HARVEST_JOB_DURATION";
+          case ValidationExceptionType::HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE:
+            return "HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE";
+          case ValidationExceptionType::HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION:
+            return "HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION";
+          case ValidationExceptionType::HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED:
+            return "HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED";
           case ValidationExceptionType::CLIP_START_TIME_WITH_START_OR_END:
             return "CLIP_START_TIME_WITH_START_OR_END";
           case ValidationExceptionType::START_TAG_TIME_OFFSET_INVALID:

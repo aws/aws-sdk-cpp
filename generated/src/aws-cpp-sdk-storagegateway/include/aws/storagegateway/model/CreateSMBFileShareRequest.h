@@ -132,8 +132,9 @@ namespace Model
      * It includes a resource ARN with an optional prefix concatenation. The prefix
      * must end with a forward slash (/).</p>  <p>You can specify LocationARN as
      * a bucket ARN, access point ARN or access point alias, as shown in the following
-     * examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code>
-     * </p> <p>Access point ARN:</p> <p>
+     * examples.</p> <p>Bucket ARN:</p> <p>
+     * <code>arn:aws:s3:::amzn-s3-demo-bucket/prefix/</code> </p> <p>Access point
+     * ARN:</p> <p>
      * <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code>
      * </p> <p>If you specify an access point, the bucket policy must be configured to
      * delegate access control to the access point. For information, see <a
@@ -380,7 +381,10 @@ namespace Model
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
      * <code>LocationARN</code>, or if an access point or access point alias is
-     * used.</p> 
+     * used.</p> <p>A valid SMB file share name cannot contain the following
+     * characters:
+     * <code>[</code>,<code>]</code>,<code>#</code>,<code>;</code>,<code>&lt;</code>,<code>&gt;</code>,<code>:</code>,<code>"</code>,<code>\</code>,<code>/</code>,<code>|</code>,<code>?</code>,<code>*</code>,<code>+</code>,
+     * or ASCII control characters <code>1-31</code>.</p> 
      */
     inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
     inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
