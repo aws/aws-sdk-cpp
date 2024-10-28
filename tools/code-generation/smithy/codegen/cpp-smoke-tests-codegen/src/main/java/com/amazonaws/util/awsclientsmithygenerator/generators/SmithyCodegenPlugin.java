@@ -16,13 +16,7 @@ public class SmithyCodegenPlugin implements SmithyBuildPlugin {
 
     @Override
     public void execute(PluginContext context){
-        try {
-            SmokeTestsParser smoketestParser = new SmokeTestsParser(context);
-            smoketestParser.run();
-        } catch (Exception e) {
-            // Handle the exception
-            e.printStackTrace();
-            throw new RuntimeException("An error occurred while running the smoke tests: " + e.getMessage());
-        }
+        SmokeTestsParser smoketestParser = new SmokeTestsParser(context);
+        smoketestParser.run();
     }   
 }
