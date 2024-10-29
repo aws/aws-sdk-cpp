@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift-data/model/ResultFormatString.h>
 #include <aws/redshift-data/model/StatusString.h>
 #include <aws/redshift-data/model/SqlParameter.h>
 #include <aws/redshift-data/model/SubStatementData.h>
@@ -183,6 +184,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The data format of the result of the SQL statement.</p>
+     */
+    inline const ResultFormatString& GetResultFormat() const{ return m_resultFormat; }
+    inline void SetResultFormat(const ResultFormatString& value) { m_resultFormat = value; }
+    inline void SetResultFormat(ResultFormatString&& value) { m_resultFormat = std::move(value); }
+    inline DescribeStatementResult& WithResultFormat(const ResultFormatString& value) { SetResultFormat(value); return *this;}
+    inline DescribeStatementResult& WithResultFormat(ResultFormatString&& value) { SetResultFormat(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Either the number of rows returned from the SQL statement or the number of
      * rows affected. If result size is greater than zero, the result rows can be the
      * number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY,
@@ -321,6 +333,8 @@ namespace Model
     long long m_redshiftPid;
 
     long long m_redshiftQueryId;
+
+    ResultFormatString m_resultFormat;
 
     long long m_resultRows;
 

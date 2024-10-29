@@ -20,11 +20,11 @@ namespace Model
 
 InferenceProfileSummary::InferenceProfileSummary() : 
     m_inferenceProfileNameHasBeenSet(false),
-    m_modelsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_inferenceProfileArnHasBeenSet(false),
+    m_modelsHasBeenSet(false),
     m_inferenceProfileIdHasBeenSet(false),
     m_status(InferenceProfileStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -46,16 +46,6 @@ InferenceProfileSummary& InferenceProfileSummary::operator =(JsonView jsonValue)
     m_inferenceProfileName = jsonValue.GetString("inferenceProfileName");
 
     m_inferenceProfileNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("models"))
-  {
-    Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("models");
-    for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
-    {
-      m_models.push_back(modelsJsonList[modelsIndex].AsObject());
-    }
-    m_modelsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -84,6 +74,16 @@ InferenceProfileSummary& InferenceProfileSummary::operator =(JsonView jsonValue)
     m_inferenceProfileArn = jsonValue.GetString("inferenceProfileArn");
 
     m_inferenceProfileArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("models"))
+  {
+    Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("models");
+    for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
+    {
+      m_models.push_back(modelsJsonList[modelsIndex].AsObject());
+    }
+    m_modelsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inferenceProfileId"))
@@ -120,17 +120,6 @@ JsonValue InferenceProfileSummary::Jsonize() const
 
   }
 
-  if(m_modelsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> modelsJsonList(m_models.size());
-   for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
-   {
-     modelsJsonList[modelsIndex].AsObject(m_models[modelsIndex].Jsonize());
-   }
-   payload.WithArray("models", std::move(modelsJsonList));
-
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
@@ -150,6 +139,17 @@ JsonValue InferenceProfileSummary::Jsonize() const
   if(m_inferenceProfileArnHasBeenSet)
   {
    payload.WithString("inferenceProfileArn", m_inferenceProfileArn);
+
+  }
+
+  if(m_modelsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> modelsJsonList(m_models.size());
+   for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
+   {
+     modelsJsonList[modelsIndex].AsObject(m_models[modelsIndex].Jsonize());
+   }
+   payload.WithArray("models", std::move(modelsJsonList));
 
   }
 

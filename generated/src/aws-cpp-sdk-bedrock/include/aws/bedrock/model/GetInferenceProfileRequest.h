@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the inference profile.</p>
+     * <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
      */
     inline const Aws::String& GetInferenceProfileIdentifier() const{ return m_inferenceProfileIdentifier; }
     inline bool InferenceProfileIdentifierHasBeenSet() const { return m_inferenceProfileIdentifierHasBeenSet; }
