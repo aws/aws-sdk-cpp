@@ -81,13 +81,8 @@ public class SmokeTestsParser implements Runnable{
         // create a reverse map of operations to service shapes 
         model.getServiceShapes().stream()
         .filter(serviceShape -> {
-            try {
                 return serviceFilter.isEmpty() || serviceFilter.contains(toKebabCase(getServiceName(serviceShape)));
-            } catch (RuntimeException e) {
-                // Log the exception and exclude this serviceShape from the result
-                System.err.println("Error getting service name: " + e.getMessage());
-                return false; // Skip this serviceShape if exception occurs
-            }}
+            }
         )
         .filter(serviceShape -> 
             serviceShape.getAllOperations().stream()
@@ -117,7 +112,7 @@ public class SmokeTestsParser implements Runnable{
         return input.trim().toLowerCase().replace(" ", "-");
     }
 
-    private String getServiceName(ServiceShape serviceShape) throws RuntimeException
+    private String getServiceName(ServiceShape serviceShape)
     {   
         if(serviceShape.getTrait(ServiceTrait.class).isEmpty())
         {
