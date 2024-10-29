@@ -98,8 +98,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the protected query. Value values are `SUBMITTED`, `STARTED`,
-     * `CANCELLED`, `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.</p>
+     * <p>The status of the protected query.</p>
      */
     inline const ProtectedQueryStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

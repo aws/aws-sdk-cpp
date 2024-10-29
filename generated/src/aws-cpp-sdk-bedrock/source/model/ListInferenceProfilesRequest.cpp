@@ -18,7 +18,9 @@ using namespace Aws::Http;
 ListInferenceProfilesRequest::ListInferenceProfilesRequest() : 
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_typeEquals(InferenceProfileType::NOT_SET),
+    m_typeEqualsHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,13 @@ void ListInferenceProfilesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_typeEqualsHasBeenSet)
+    {
+      ss << InferenceProfileTypeMapper::GetNameForInferenceProfileType(m_typeEquals);
+      uri.AddQueryStringParameter("type", ss.str());
       ss.str("");
     }
 

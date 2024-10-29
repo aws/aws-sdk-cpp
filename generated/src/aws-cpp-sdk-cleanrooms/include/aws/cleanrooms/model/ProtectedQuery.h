@@ -14,6 +14,7 @@
 #include <aws/cleanrooms/model/ProtectedQueryResult.h>
 #include <aws/cleanrooms/model/ProtectedQueryError.h>
 #include <aws/cleanrooms/model/DifferentialPrivacyParameters.h>
+#include <aws/cleanrooms/model/ComputeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -184,6 +185,18 @@ namespace Model
     inline ProtectedQuery& WithDifferentialPrivacy(const DifferentialPrivacyParameters& value) { SetDifferentialPrivacy(value); return *this;}
     inline ProtectedQuery& WithDifferentialPrivacy(DifferentialPrivacyParameters&& value) { SetDifferentialPrivacy(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The compute configuration for the protected query.</p>
+     */
+    inline const ComputeConfiguration& GetComputeConfiguration() const{ return m_computeConfiguration; }
+    inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
+    inline void SetComputeConfiguration(const ComputeConfiguration& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = value; }
+    inline void SetComputeConfiguration(ComputeConfiguration&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::move(value); }
+    inline ProtectedQuery& WithComputeConfiguration(const ComputeConfiguration& value) { SetComputeConfiguration(value); return *this;}
+    inline ProtectedQuery& WithComputeConfiguration(ComputeConfiguration&& value) { SetComputeConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -218,6 +231,9 @@ namespace Model
 
     DifferentialPrivacyParameters m_differentialPrivacy;
     bool m_differentialPrivacyHasBeenSet = false;
+
+    ComputeConfiguration m_computeConfiguration;
+    bool m_computeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

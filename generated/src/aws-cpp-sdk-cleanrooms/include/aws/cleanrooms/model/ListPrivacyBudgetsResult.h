@@ -51,8 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
+     * <p>The pagination token that's used to fetch the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

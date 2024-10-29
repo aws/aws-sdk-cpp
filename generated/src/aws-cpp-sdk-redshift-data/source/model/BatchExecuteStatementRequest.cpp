@@ -18,6 +18,8 @@ BatchExecuteStatementRequest::BatchExecuteStatementRequest() :
     m_clusterIdentifierHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_dbUserHasBeenSet(false),
+    m_resultFormat(ResultFormatString::NOT_SET),
+    m_resultFormatHasBeenSet(false),
     m_secretArnHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionKeepAliveSeconds(0),
@@ -56,6 +58,11 @@ Aws::String BatchExecuteStatementRequest::SerializePayload() const
   {
    payload.WithString("DbUser", m_dbUser);
 
+  }
+
+  if(m_resultFormatHasBeenSet)
+  {
+   payload.WithString("ResultFormat", ResultFormatStringMapper::GetNameForResultFormatString(m_resultFormat));
   }
 
   if(m_secretArnHasBeenSet)

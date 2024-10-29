@@ -22,6 +22,7 @@
 #include <aws/bedrock/model/CreateEvaluationJobResult.h>
 #include <aws/bedrock/model/CreateGuardrailResult.h>
 #include <aws/bedrock/model/CreateGuardrailVersionResult.h>
+#include <aws/bedrock/model/CreateInferenceProfileResult.h>
 #include <aws/bedrock/model/CreateModelCopyJobResult.h>
 #include <aws/bedrock/model/CreateModelCustomizationJobResult.h>
 #include <aws/bedrock/model/CreateModelImportJobResult.h>
@@ -30,6 +31,7 @@
 #include <aws/bedrock/model/DeleteCustomModelResult.h>
 #include <aws/bedrock/model/DeleteGuardrailResult.h>
 #include <aws/bedrock/model/DeleteImportedModelResult.h>
+#include <aws/bedrock/model/DeleteInferenceProfileResult.h>
 #include <aws/bedrock/model/DeleteModelInvocationLoggingConfigurationResult.h>
 #include <aws/bedrock/model/DeleteProvisionedModelThroughputResult.h>
 #include <aws/bedrock/model/GetCustomModelResult.h>
@@ -121,6 +123,7 @@ namespace Aws
       class CreateEvaluationJobRequest;
       class CreateGuardrailRequest;
       class CreateGuardrailVersionRequest;
+      class CreateInferenceProfileRequest;
       class CreateModelCopyJobRequest;
       class CreateModelCustomizationJobRequest;
       class CreateModelImportJobRequest;
@@ -129,6 +132,7 @@ namespace Aws
       class DeleteCustomModelRequest;
       class DeleteGuardrailRequest;
       class DeleteImportedModelRequest;
+      class DeleteInferenceProfileRequest;
       class DeleteModelInvocationLoggingConfigurationRequest;
       class DeleteProvisionedModelThroughputRequest;
       class GetCustomModelRequest;
@@ -170,6 +174,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateEvaluationJobResult, BedrockError> CreateEvaluationJobOutcome;
       typedef Aws::Utils::Outcome<CreateGuardrailResult, BedrockError> CreateGuardrailOutcome;
       typedef Aws::Utils::Outcome<CreateGuardrailVersionResult, BedrockError> CreateGuardrailVersionOutcome;
+      typedef Aws::Utils::Outcome<CreateInferenceProfileResult, BedrockError> CreateInferenceProfileOutcome;
       typedef Aws::Utils::Outcome<CreateModelCopyJobResult, BedrockError> CreateModelCopyJobOutcome;
       typedef Aws::Utils::Outcome<CreateModelCustomizationJobResult, BedrockError> CreateModelCustomizationJobOutcome;
       typedef Aws::Utils::Outcome<CreateModelImportJobResult, BedrockError> CreateModelImportJobOutcome;
@@ -178,6 +183,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteCustomModelResult, BedrockError> DeleteCustomModelOutcome;
       typedef Aws::Utils::Outcome<DeleteGuardrailResult, BedrockError> DeleteGuardrailOutcome;
       typedef Aws::Utils::Outcome<DeleteImportedModelResult, BedrockError> DeleteImportedModelOutcome;
+      typedef Aws::Utils::Outcome<DeleteInferenceProfileResult, BedrockError> DeleteInferenceProfileOutcome;
       typedef Aws::Utils::Outcome<DeleteModelInvocationLoggingConfigurationResult, BedrockError> DeleteModelInvocationLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteProvisionedModelThroughputResult, BedrockError> DeleteProvisionedModelThroughputOutcome;
       typedef Aws::Utils::Outcome<GetCustomModelResult, BedrockError> GetCustomModelOutcome;
@@ -219,6 +225,7 @@ namespace Aws
       typedef std::future<CreateEvaluationJobOutcome> CreateEvaluationJobOutcomeCallable;
       typedef std::future<CreateGuardrailOutcome> CreateGuardrailOutcomeCallable;
       typedef std::future<CreateGuardrailVersionOutcome> CreateGuardrailVersionOutcomeCallable;
+      typedef std::future<CreateInferenceProfileOutcome> CreateInferenceProfileOutcomeCallable;
       typedef std::future<CreateModelCopyJobOutcome> CreateModelCopyJobOutcomeCallable;
       typedef std::future<CreateModelCustomizationJobOutcome> CreateModelCustomizationJobOutcomeCallable;
       typedef std::future<CreateModelImportJobOutcome> CreateModelImportJobOutcomeCallable;
@@ -227,6 +234,7 @@ namespace Aws
       typedef std::future<DeleteCustomModelOutcome> DeleteCustomModelOutcomeCallable;
       typedef std::future<DeleteGuardrailOutcome> DeleteGuardrailOutcomeCallable;
       typedef std::future<DeleteImportedModelOutcome> DeleteImportedModelOutcomeCallable;
+      typedef std::future<DeleteInferenceProfileOutcome> DeleteInferenceProfileOutcomeCallable;
       typedef std::future<DeleteModelInvocationLoggingConfigurationOutcome> DeleteModelInvocationLoggingConfigurationOutcomeCallable;
       typedef std::future<DeleteProvisionedModelThroughputOutcome> DeleteProvisionedModelThroughputOutcomeCallable;
       typedef std::future<GetCustomModelOutcome> GetCustomModelOutcomeCallable;
@@ -271,6 +279,7 @@ namespace Aws
     typedef std::function<void(const BedrockClient*, const Model::CreateEvaluationJobRequest&, const Model::CreateEvaluationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEvaluationJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::CreateGuardrailRequest&, const Model::CreateGuardrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGuardrailResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::CreateGuardrailVersionRequest&, const Model::CreateGuardrailVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGuardrailVersionResponseReceivedHandler;
+    typedef std::function<void(const BedrockClient*, const Model::CreateInferenceProfileRequest&, const Model::CreateInferenceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInferenceProfileResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::CreateModelCopyJobRequest&, const Model::CreateModelCopyJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelCopyJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::CreateModelCustomizationJobRequest&, const Model::CreateModelCustomizationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelCustomizationJobResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::CreateModelImportJobRequest&, const Model::CreateModelImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelImportJobResponseReceivedHandler;
@@ -279,6 +288,7 @@ namespace Aws
     typedef std::function<void(const BedrockClient*, const Model::DeleteCustomModelRequest&, const Model::DeleteCustomModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomModelResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::DeleteGuardrailRequest&, const Model::DeleteGuardrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGuardrailResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::DeleteImportedModelRequest&, const Model::DeleteImportedModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImportedModelResponseReceivedHandler;
+    typedef std::function<void(const BedrockClient*, const Model::DeleteInferenceProfileRequest&, const Model::DeleteInferenceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInferenceProfileResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::DeleteModelInvocationLoggingConfigurationRequest&, const Model::DeleteModelInvocationLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelInvocationLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::DeleteProvisionedModelThroughputRequest&, const Model::DeleteProvisionedModelThroughputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProvisionedModelThroughputResponseReceivedHandler;
     typedef std::function<void(const BedrockClient*, const Model::GetCustomModelRequest&, const Model::GetCustomModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomModelResponseReceivedHandler;
