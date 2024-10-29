@@ -1,6 +1,14 @@
 package com.amazonaws.util.awsclientgenerator.transform;
 
-import software.amazon.smithy.utils.Pair;
+import java.text.MessageFormat;
+import java.util.Optional;
+
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
+
+import software.amazon.smithy.build.SmithyBuildException;
+import software.amazon.smithy.jmespath.ExpressionVisitor;
 import software.amazon.smithy.jmespath.ast.AndExpression;
 import software.amazon.smithy.jmespath.ast.ComparatorExpression;
 import software.amazon.smithy.jmespath.ast.CurrentExpression;
@@ -16,18 +24,10 @@ import software.amazon.smithy.jmespath.ast.MultiSelectListExpression;
 import software.amazon.smithy.jmespath.ast.NotExpression;
 import software.amazon.smithy.jmespath.ast.ObjectProjectionExpression;
 import software.amazon.smithy.jmespath.ast.OrExpression;
-import software.amazon.smithy.build.SmithyBuildException;
 import software.amazon.smithy.jmespath.ast.ProjectionExpression;
 import software.amazon.smithy.jmespath.ast.SliceExpression;
 import software.amazon.smithy.jmespath.ast.Subexpression;
-
-import software.amazon.smithy.jmespath.ExpressionVisitor;
-import java.text.MessageFormat;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
-
-import java.util.*;
+import software.amazon.smithy.utils.Pair;
 
 class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shape>> {
     final OperationContextCppCodeGenerator context;
