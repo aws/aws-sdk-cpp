@@ -31,8 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>A collection of settings that apply to spaces created in the
-   * domain.</p><p><h3>See Also:</h3>   <a
+   * <p>The default settings for shared spaces that users create in the domain.</p>
+   * <p>SageMaker applies these settings only to shared spaces. It doesn't apply them
+   * to private spaces.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DefaultSpaceSettings">AWS
    * API Reference</a></p>
    */

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanrooms/model/ProtectedQuerySQLParameters.h>
 #include <aws/cleanrooms/model/ProtectedQueryResultConfiguration.h>
+#include <aws/cleanrooms/model/ComputeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -85,6 +86,18 @@ namespace Model
     inline StartProtectedQueryRequest& WithResultConfiguration(const ProtectedQueryResultConfiguration& value) { SetResultConfiguration(value); return *this;}
     inline StartProtectedQueryRequest& WithResultConfiguration(ProtectedQueryResultConfiguration&& value) { SetResultConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The compute configuration for the protected query.</p>
+     */
+    inline const ComputeConfiguration& GetComputeConfiguration() const{ return m_computeConfiguration; }
+    inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
+    inline void SetComputeConfiguration(const ComputeConfiguration& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = value; }
+    inline void SetComputeConfiguration(ComputeConfiguration&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::move(value); }
+    inline StartProtectedQueryRequest& WithComputeConfiguration(const ComputeConfiguration& value) { SetComputeConfiguration(value); return *this;}
+    inline StartProtectedQueryRequest& WithComputeConfiguration(ComputeConfiguration&& value) { SetComputeConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     ProtectedQueryType m_type;
@@ -98,6 +111,9 @@ namespace Model
 
     ProtectedQueryResultConfiguration m_resultConfiguration;
     bool m_resultConfigurationHasBeenSet = false;
+
+    ComputeConfiguration m_computeConfiguration;
+    bool m_computeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

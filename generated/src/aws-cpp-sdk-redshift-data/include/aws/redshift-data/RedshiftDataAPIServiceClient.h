@@ -308,9 +308,12 @@ namespace RedshiftDataAPIService
         }
 
         /**
-         * <p>Fetches the temporarily cached result of an SQL statement. A token is
-         * returned to page through the statement results. </p> <p>For more information
-         * about the Amazon Redshift Data API and CLI usage examples, see <a
+         * <p>Fetches the temporarily cached result of an SQL statement in JSON format. The
+         * <code>ExecuteStatement</code> or <code>BatchExecuteStatement</code> operation
+         * that ran the SQL statement must have specified <code>ResultFormat</code> as
+         * <code>JSON</code> , or let the format default to JSON. A token is returned to
+         * page through the statement results.</p> <p>For more information about the Amazon
+         * Redshift Data API and CLI usage examples, see <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
          * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -335,6 +338,39 @@ namespace RedshiftDataAPIService
         void GetStatementResultAsync(const GetStatementResultRequestT& request, const GetStatementResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftDataAPIServiceClient::GetStatementResult, request, handler, context);
+        }
+
+        /**
+         * <p>Fetches the temporarily cached result of an SQL statement in CSV format. The
+         * <code>ExecuteStatement</code> or <code>BatchExecuteStatement</code> operation
+         * that ran the SQL statement must have specified <code>ResultFormat</code> as
+         * <code>CSV</code>. A token is returned to page through the statement results.</p>
+         * <p>For more information about the Amazon Redshift Data API and CLI usage
+         * examples, see <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+         * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResultV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetStatementResultV2Outcome GetStatementResultV2(const Model::GetStatementResultV2Request& request) const;
+
+        /**
+         * A Callable wrapper for GetStatementResultV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetStatementResultV2RequestT = Model::GetStatementResultV2Request>
+        Model::GetStatementResultV2OutcomeCallable GetStatementResultV2Callable(const GetStatementResultV2RequestT& request) const
+        {
+            return SubmitCallable(&RedshiftDataAPIServiceClient::GetStatementResultV2, request);
+        }
+
+        /**
+         * An Async wrapper for GetStatementResultV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetStatementResultV2RequestT = Model::GetStatementResultV2Request>
+        void GetStatementResultV2Async(const GetStatementResultV2RequestT& request, const GetStatementResultV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftDataAPIServiceClient::GetStatementResultV2, request, handler, context);
         }
 
         /**

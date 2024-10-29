@@ -22,7 +22,9 @@ ProtectedQueryS3OutputConfiguration::ProtectedQueryS3OutputConfiguration() :
     m_resultFormat(ResultFormat::NOT_SET),
     m_resultFormatHasBeenSet(false),
     m_bucketHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false)
+    m_keyPrefixHasBeenSet(false),
+    m_singleFileOutput(false),
+    m_singleFileOutputHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,13 @@ ProtectedQueryS3OutputConfiguration& ProtectedQueryS3OutputConfiguration::operat
     m_keyPrefixHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("singleFileOutput"))
+  {
+    m_singleFileOutput = jsonValue.GetBool("singleFileOutput");
+
+    m_singleFileOutputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +85,12 @@ JsonValue ProtectedQueryS3OutputConfiguration::Jsonize() const
   if(m_keyPrefixHasBeenSet)
   {
    payload.WithString("keyPrefix", m_keyPrefix);
+
+  }
+
+  if(m_singleFileOutputHasBeenSet)
+  {
+   payload.WithBool("singleFileOutput", m_singleFileOutput);
 
   }
 

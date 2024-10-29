@@ -59,8 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of schema object. The only valid schema type is currently
-     * `TABLE`.</p>
+     * <p>The type of schema object.</p>
      */
     inline const SchemaType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

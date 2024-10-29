@@ -175,11 +175,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of the Elastic Inference (EI) instance types to associate with this
-     * notebook instance. Currently only one EI instance type can be associated with a
-     * notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
-     * Inference in Amazon SageMaker</a>.</p>
+     * <p>This parameter is no longer supported. Elastic Inference (EI) is no longer
+     * available.</p> <p>This parameter was used to specify a list of the EI instance
+     * types to associate with this notebook instance.</p>
      */
     inline const Aws::Vector<NotebookInstanceAcceleratorType>& GetAcceleratorTypes() const{ return m_acceleratorTypes; }
     inline bool AcceleratorTypesHasBeenSet() const { return m_acceleratorTypesHasBeenSet; }
@@ -193,10 +191,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of the Elastic Inference (EI) instance types to remove from this
-     * notebook instance. This operation is idempotent. If you specify an accelerator
-     * type that is not associated with the notebook instance when you call this
-     * method, it does not throw an error.</p>
+     * <p>This parameter is no longer supported. Elastic Inference (EI) is no longer
+     * available.</p> <p>This parameter was used to specify a list of the EI instance
+     * types to remove from this notebook instance.</p>
      */
     inline bool GetDisassociateAcceleratorTypes() const{ return m_disassociateAcceleratorTypes; }
     inline bool DisassociateAcceleratorTypesHasBeenSet() const { return m_disassociateAcceleratorTypesHasBeenSet; }

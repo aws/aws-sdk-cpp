@@ -22,6 +22,7 @@ DescribeStatementResult::DescribeStatementResult() :
     m_hasResultSet(false),
     m_redshiftPid(0),
     m_redshiftQueryId(0),
+    m_resultFormat(ResultFormatString::NOT_SET),
     m_resultRows(0),
     m_resultSize(0),
     m_status(StatusString::NOT_SET)
@@ -109,6 +110,12 @@ DescribeStatementResult& DescribeStatementResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("RedshiftQueryId"))
   {
     m_redshiftQueryId = jsonValue.GetInt64("RedshiftQueryId");
+
+  }
+
+  if(jsonValue.ValueExists("ResultFormat"))
+  {
+    m_resultFormat = ResultFormatStringMapper::GetResultFormatStringForName(jsonValue.GetString("ResultFormat"));
 
   }
 

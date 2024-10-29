@@ -16,7 +16,8 @@ namespace Model
   enum class InferenceProfileType
   {
     NOT_SET,
-    SYSTEM_DEFINED
+    SYSTEM_DEFINED,
+    APPLICATION
   };
 
 namespace InferenceProfileTypeMapper

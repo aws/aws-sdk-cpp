@@ -38,15 +38,6 @@ GetInferenceProfileResult& GetInferenceProfileResult::operator =(const Aws::Amaz
 
   }
 
-  if(jsonValue.ValueExists("models"))
-  {
-    Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("models");
-    for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
-    {
-      m_models.push_back(modelsJsonList[modelsIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -69,6 +60,15 @@ GetInferenceProfileResult& GetInferenceProfileResult::operator =(const Aws::Amaz
   {
     m_inferenceProfileArn = jsonValue.GetString("inferenceProfileArn");
 
+  }
+
+  if(jsonValue.ValueExists("models"))
+  {
+    Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("models");
+    for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
+    {
+      m_models.push_back(modelsJsonList[modelsIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("inferenceProfileId"))

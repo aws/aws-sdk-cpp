@@ -26,6 +26,8 @@ StatementData::StatementData() :
     m_queryParametersHasBeenSet(false),
     m_queryStringHasBeenSet(false),
     m_queryStringsHasBeenSet(false),
+    m_resultFormat(ResultFormatString::NOT_SET),
+    m_resultFormatHasBeenSet(false),
     m_secretArnHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_statementNameHasBeenSet(false),
@@ -89,6 +91,13 @@ StatementData& StatementData::operator =(JsonView jsonValue)
       m_queryStrings.push_back(queryStringsJsonList[queryStringsIndex].AsString());
     }
     m_queryStringsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResultFormat"))
+  {
+    m_resultFormat = ResultFormatStringMapper::GetResultFormatStringForName(jsonValue.GetString("ResultFormat"));
+
+    m_resultFormatHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SecretArn"))
@@ -176,6 +185,11 @@ JsonValue StatementData::Jsonize() const
    }
    payload.WithArray("QueryStrings", std::move(queryStringsJsonList));
 
+  }
+
+  if(m_resultFormatHasBeenSet)
+  {
+   payload.WithString("ResultFormat", ResultFormatStringMapper::GetNameForResultFormatString(m_resultFormat));
   }
 
   if(m_secretArnHasBeenSet)

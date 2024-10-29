@@ -29,7 +29,9 @@ CollaborationSummary::CollaborationSummary() :
     m_memberStatus(MemberStatus::NOT_SET),
     m_memberStatusHasBeenSet(false),
     m_membershipIdHasBeenSet(false),
-    m_membershipArnHasBeenSet(false)
+    m_membershipArnHasBeenSet(false),
+    m_analyticsEngine(AnalyticsEngine::NOT_SET),
+    m_analyticsEngineHasBeenSet(false)
 {
 }
 
@@ -111,6 +113,13 @@ CollaborationSummary& CollaborationSummary::operator =(JsonView jsonValue)
     m_membershipArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("analyticsEngine"))
+  {
+    m_analyticsEngine = AnalyticsEngineMapper::GetAnalyticsEngineForName(jsonValue.GetString("analyticsEngine"));
+
+    m_analyticsEngineHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -173,6 +182,11 @@ JsonValue CollaborationSummary::Jsonize() const
   {
    payload.WithString("membershipArn", m_membershipArn);
 
+  }
+
+  if(m_analyticsEngineHasBeenSet)
+  {
+   payload.WithString("analyticsEngine", AnalyticsEngineMapper::GetNameForAnalyticsEngine(m_analyticsEngine));
   }
 
   return payload;

@@ -78,6 +78,18 @@ namespace Model
     inline ProtectedQueryS3OutputConfiguration& WithKeyPrefix(Aws::String&& value) { SetKeyPrefix(std::move(value)); return *this;}
     inline ProtectedQueryS3OutputConfiguration& WithKeyPrefix(const char* value) { SetKeyPrefix(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether files should be output as a single file (<code>TRUE</code>)
+     * or output as multiple files (<code>FALSE</code>). This parameter is only
+     * supported for analyses with the Spark analytics engine.</p>
+     */
+    inline bool GetSingleFileOutput() const{ return m_singleFileOutput; }
+    inline bool SingleFileOutputHasBeenSet() const { return m_singleFileOutputHasBeenSet; }
+    inline void SetSingleFileOutput(bool value) { m_singleFileOutputHasBeenSet = true; m_singleFileOutput = value; }
+    inline ProtectedQueryS3OutputConfiguration& WithSingleFileOutput(bool value) { SetSingleFileOutput(value); return *this;}
+    ///@}
   private:
 
     ResultFormat m_resultFormat;
@@ -88,6 +100,9 @@ namespace Model
 
     Aws::String m_keyPrefix;
     bool m_keyPrefixHasBeenSet = false;
+
+    bool m_singleFileOutput;
+    bool m_singleFileOutputHasBeenSet = false;
   };
 
 } // namespace Model

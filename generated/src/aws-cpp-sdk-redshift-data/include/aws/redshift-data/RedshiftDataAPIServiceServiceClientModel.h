@@ -24,6 +24,7 @@
 #include <aws/redshift-data/model/DescribeTableResult.h>
 #include <aws/redshift-data/model/ExecuteStatementResult.h>
 #include <aws/redshift-data/model/GetStatementResultResult.h>
+#include <aws/redshift-data/model/GetStatementResultV2Result.h>
 #include <aws/redshift-data/model/ListDatabasesResult.h>
 #include <aws/redshift-data/model/ListSchemasResult.h>
 #include <aws/redshift-data/model/ListStatementsResult.h>
@@ -75,6 +76,7 @@ namespace Aws
       class DescribeTableRequest;
       class ExecuteStatementRequest;
       class GetStatementResultRequest;
+      class GetStatementResultV2Request;
       class ListDatabasesRequest;
       class ListSchemasRequest;
       class ListStatementsRequest;
@@ -88,6 +90,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeTableResult, RedshiftDataAPIServiceError> DescribeTableOutcome;
       typedef Aws::Utils::Outcome<ExecuteStatementResult, RedshiftDataAPIServiceError> ExecuteStatementOutcome;
       typedef Aws::Utils::Outcome<GetStatementResultResult, RedshiftDataAPIServiceError> GetStatementResultOutcome;
+      typedef Aws::Utils::Outcome<GetStatementResultV2Result, RedshiftDataAPIServiceError> GetStatementResultV2Outcome;
       typedef Aws::Utils::Outcome<ListDatabasesResult, RedshiftDataAPIServiceError> ListDatabasesOutcome;
       typedef Aws::Utils::Outcome<ListSchemasResult, RedshiftDataAPIServiceError> ListSchemasOutcome;
       typedef Aws::Utils::Outcome<ListStatementsResult, RedshiftDataAPIServiceError> ListStatementsOutcome;
@@ -101,6 +104,7 @@ namespace Aws
       typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
       typedef std::future<ExecuteStatementOutcome> ExecuteStatementOutcomeCallable;
       typedef std::future<GetStatementResultOutcome> GetStatementResultOutcomeCallable;
+      typedef std::future<GetStatementResultV2Outcome> GetStatementResultV2OutcomeCallable;
       typedef std::future<ListDatabasesOutcome> ListDatabasesOutcomeCallable;
       typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
       typedef std::future<ListStatementsOutcome> ListStatementsOutcomeCallable;
@@ -117,6 +121,7 @@ namespace Aws
     typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::DescribeTableRequest&, const Model::DescribeTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableResponseReceivedHandler;
     typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::ExecuteStatementRequest&, const Model::ExecuteStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteStatementResponseReceivedHandler;
     typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::GetStatementResultRequest&, const Model::GetStatementResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStatementResultResponseReceivedHandler;
+    typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::GetStatementResultV2Request&, const Model::GetStatementResultV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStatementResultV2ResponseReceivedHandler;
     typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::ListDatabasesRequest&, const Model::ListDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatabasesResponseReceivedHandler;
     typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemasResponseReceivedHandler;
     typedef std::function<void(const RedshiftDataAPIServiceClient*, const Model::ListStatementsRequest&, const Model::ListStatementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStatementsResponseReceivedHandler;

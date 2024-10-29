@@ -12,6 +12,7 @@
 #include <aws/cleanrooms/model/CollaborationQueryLogStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cleanrooms/model/PaymentConfiguration.h>
+#include <aws/cleanrooms/model/AnalyticsEngine.h>
 #include <aws/cleanrooms/model/MemberSpecification.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
 #include <utility>
@@ -172,6 +173,18 @@ namespace Model
     inline CreateCollaborationRequest& WithCreatorPaymentConfiguration(const PaymentConfiguration& value) { SetCreatorPaymentConfiguration(value); return *this;}
     inline CreateCollaborationRequest& WithCreatorPaymentConfiguration(PaymentConfiguration&& value) { SetCreatorPaymentConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The analytics engine.</p>
+     */
+    inline const AnalyticsEngine& GetAnalyticsEngine() const{ return m_analyticsEngine; }
+    inline bool AnalyticsEngineHasBeenSet() const { return m_analyticsEngineHasBeenSet; }
+    inline void SetAnalyticsEngine(const AnalyticsEngine& value) { m_analyticsEngineHasBeenSet = true; m_analyticsEngine = value; }
+    inline void SetAnalyticsEngine(AnalyticsEngine&& value) { m_analyticsEngineHasBeenSet = true; m_analyticsEngine = std::move(value); }
+    inline CreateCollaborationRequest& WithAnalyticsEngine(const AnalyticsEngine& value) { SetAnalyticsEngine(value); return *this;}
+    inline CreateCollaborationRequest& WithAnalyticsEngine(AnalyticsEngine&& value) { SetAnalyticsEngine(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<MemberSpecification> m_members;
@@ -200,6 +213,9 @@ namespace Model
 
     PaymentConfiguration m_creatorPaymentConfiguration;
     bool m_creatorPaymentConfigurationHasBeenSet = false;
+
+    AnalyticsEngine m_analyticsEngine;
+    bool m_analyticsEngineHasBeenSet = false;
   };
 
 } // namespace Model

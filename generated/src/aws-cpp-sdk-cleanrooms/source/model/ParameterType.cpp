@@ -35,6 +35,19 @@ namespace Aws
         static const int TIME_HASH = HashingUtils::HashString("TIME");
         static const int TIMETZ_HASH = HashingUtils::HashString("TIMETZ");
         static const int VARBYTE_HASH = HashingUtils::HashString("VARBYTE");
+        static const int BINARY_HASH = HashingUtils::HashString("BINARY");
+        static const int BYTE_HASH = HashingUtils::HashString("BYTE");
+        static const int CHARACTER_HASH = HashingUtils::HashString("CHARACTER");
+        static const int DOUBLE_HASH = HashingUtils::HashString("DOUBLE");
+        static const int FLOAT_HASH = HashingUtils::HashString("FLOAT");
+        static const int INT_HASH = HashingUtils::HashString("INT");
+        static const int LONG_HASH = HashingUtils::HashString("LONG");
+        static const int NUMERIC_HASH = HashingUtils::HashString("NUMERIC");
+        static const int SHORT_HASH = HashingUtils::HashString("SHORT");
+        static const int STRING_HASH = HashingUtils::HashString("STRING");
+        static const int TIMESTAMP_LTZ_HASH = HashingUtils::HashString("TIMESTAMP_LTZ");
+        static const int TIMESTAMP_NTZ_HASH = HashingUtils::HashString("TIMESTAMP_NTZ");
+        static const int TINYINT_HASH = HashingUtils::HashString("TINYINT");
 
 
         ParameterType GetParameterTypeForName(const Aws::String& name)
@@ -100,6 +113,58 @@ namespace Aws
           {
             return ParameterType::VARBYTE;
           }
+          else if (hashCode == BINARY_HASH)
+          {
+            return ParameterType::BINARY;
+          }
+          else if (hashCode == BYTE_HASH)
+          {
+            return ParameterType::BYTE;
+          }
+          else if (hashCode == CHARACTER_HASH)
+          {
+            return ParameterType::CHARACTER;
+          }
+          else if (hashCode == DOUBLE_HASH)
+          {
+            return ParameterType::DOUBLE;
+          }
+          else if (hashCode == FLOAT_HASH)
+          {
+            return ParameterType::FLOAT;
+          }
+          else if (hashCode == INT_HASH)
+          {
+            return ParameterType::INT;
+          }
+          else if (hashCode == LONG_HASH)
+          {
+            return ParameterType::LONG;
+          }
+          else if (hashCode == NUMERIC_HASH)
+          {
+            return ParameterType::NUMERIC;
+          }
+          else if (hashCode == SHORT_HASH)
+          {
+            return ParameterType::SHORT;
+          }
+          else if (hashCode == STRING_HASH)
+          {
+            return ParameterType::STRING;
+          }
+          else if (hashCode == TIMESTAMP_LTZ_HASH)
+          {
+            return ParameterType::TIMESTAMP_LTZ;
+          }
+          else if (hashCode == TIMESTAMP_NTZ_HASH)
+          {
+            return ParameterType::TIMESTAMP_NTZ;
+          }
+          else if (hashCode == TINYINT_HASH)
+          {
+            return ParameterType::TINYINT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -146,6 +211,32 @@ namespace Aws
             return "TIMETZ";
           case ParameterType::VARBYTE:
             return "VARBYTE";
+          case ParameterType::BINARY:
+            return "BINARY";
+          case ParameterType::BYTE:
+            return "BYTE";
+          case ParameterType::CHARACTER:
+            return "CHARACTER";
+          case ParameterType::DOUBLE:
+            return "DOUBLE";
+          case ParameterType::FLOAT:
+            return "FLOAT";
+          case ParameterType::INT:
+            return "INT";
+          case ParameterType::LONG:
+            return "LONG";
+          case ParameterType::NUMERIC:
+            return "NUMERIC";
+          case ParameterType::SHORT:
+            return "SHORT";
+          case ParameterType::STRING:
+            return "STRING";
+          case ParameterType::TIMESTAMP_LTZ:
+            return "TIMESTAMP_LTZ";
+          case ParameterType::TIMESTAMP_NTZ:
+            return "TIMESTAMP_NTZ";
+          case ParameterType::TINYINT:
+            return "TINYINT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SYSTEM_DEFINED_HASH = HashingUtils::HashString("SYSTEM_DEFINED");
+        static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
 
 
         InferenceProfileType GetInferenceProfileTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SYSTEM_DEFINED_HASH)
           {
             return InferenceProfileType::SYSTEM_DEFINED;
+          }
+          else if (hashCode == APPLICATION_HASH)
+          {
+            return InferenceProfileType::APPLICATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case InferenceProfileType::SYSTEM_DEFINED:
             return "SYSTEM_DEFINED";
+          case InferenceProfileType::APPLICATION:
+            return "APPLICATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

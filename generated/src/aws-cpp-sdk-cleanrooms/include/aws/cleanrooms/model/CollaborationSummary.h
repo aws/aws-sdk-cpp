@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cleanrooms/model/MemberStatus.h>
+#include <aws/cleanrooms/model/AnalyticsEngine.h>
 #include <utility>
 
 namespace Aws
@@ -174,6 +175,18 @@ namespace Model
     inline CollaborationSummary& WithMembershipArn(Aws::String&& value) { SetMembershipArn(std::move(value)); return *this;}
     inline CollaborationSummary& WithMembershipArn(const char* value) { SetMembershipArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The analytics engine.</p>
+     */
+    inline const AnalyticsEngine& GetAnalyticsEngine() const{ return m_analyticsEngine; }
+    inline bool AnalyticsEngineHasBeenSet() const { return m_analyticsEngineHasBeenSet; }
+    inline void SetAnalyticsEngine(const AnalyticsEngine& value) { m_analyticsEngineHasBeenSet = true; m_analyticsEngine = value; }
+    inline void SetAnalyticsEngine(AnalyticsEngine&& value) { m_analyticsEngineHasBeenSet = true; m_analyticsEngine = std::move(value); }
+    inline CollaborationSummary& WithAnalyticsEngine(const AnalyticsEngine& value) { SetAnalyticsEngine(value); return *this;}
+    inline CollaborationSummary& WithAnalyticsEngine(AnalyticsEngine&& value) { SetAnalyticsEngine(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -205,6 +218,9 @@ namespace Model
 
     Aws::String m_membershipArn;
     bool m_membershipArnHasBeenSet = false;
+
+    AnalyticsEngine m_analyticsEngine;
+    bool m_analyticsEngineHasBeenSet = false;
   };
 
 } // namespace Model

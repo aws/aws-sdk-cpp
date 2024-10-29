@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/InferenceProfileStatus.h>
 #include <aws/bedrock/model/InferenceProfileType.h>
 #include <aws/bedrock/model/InferenceProfileModel.h>
@@ -55,20 +55,6 @@ namespace Model
     inline InferenceProfileSummary& WithInferenceProfileName(const Aws::String& value) { SetInferenceProfileName(value); return *this;}
     inline InferenceProfileSummary& WithInferenceProfileName(Aws::String&& value) { SetInferenceProfileName(std::move(value)); return *this;}
     inline InferenceProfileSummary& WithInferenceProfileName(const char* value) { SetInferenceProfileName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A list of information about each model in the inference profile.</p>
-     */
-    inline const Aws::Vector<InferenceProfileModel>& GetModels() const{ return m_models; }
-    inline bool ModelsHasBeenSet() const { return m_modelsHasBeenSet; }
-    inline void SetModels(const Aws::Vector<InferenceProfileModel>& value) { m_modelsHasBeenSet = true; m_models = value; }
-    inline void SetModels(Aws::Vector<InferenceProfileModel>&& value) { m_modelsHasBeenSet = true; m_models = std::move(value); }
-    inline InferenceProfileSummary& WithModels(const Aws::Vector<InferenceProfileModel>& value) { SetModels(value); return *this;}
-    inline InferenceProfileSummary& WithModels(Aws::Vector<InferenceProfileModel>&& value) { SetModels(std::move(value)); return *this;}
-    inline InferenceProfileSummary& AddModels(const InferenceProfileModel& value) { m_modelsHasBeenSet = true; m_models.push_back(value); return *this; }
-    inline InferenceProfileSummary& AddModels(InferenceProfileModel&& value) { m_modelsHasBeenSet = true; m_models.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -125,6 +111,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of information about each model in the inference profile.</p>
+     */
+    inline const Aws::Vector<InferenceProfileModel>& GetModels() const{ return m_models; }
+    inline bool ModelsHasBeenSet() const { return m_modelsHasBeenSet; }
+    inline void SetModels(const Aws::Vector<InferenceProfileModel>& value) { m_modelsHasBeenSet = true; m_models = value; }
+    inline void SetModels(Aws::Vector<InferenceProfileModel>&& value) { m_modelsHasBeenSet = true; m_models = std::move(value); }
+    inline InferenceProfileSummary& WithModels(const Aws::Vector<InferenceProfileModel>& value) { SetModels(value); return *this;}
+    inline InferenceProfileSummary& WithModels(Aws::Vector<InferenceProfileModel>&& value) { SetModels(std::move(value)); return *this;}
+    inline InferenceProfileSummary& AddModels(const InferenceProfileModel& value) { m_modelsHasBeenSet = true; m_models.push_back(value); return *this; }
+    inline InferenceProfileSummary& AddModels(InferenceProfileModel&& value) { m_modelsHasBeenSet = true; m_models.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the inference profile.</p>
      */
     inline const Aws::String& GetInferenceProfileId() const{ return m_inferenceProfileId; }
@@ -140,7 +140,7 @@ namespace Model
     ///@{
     /**
      * <p>The status of the inference profile. <code>ACTIVE</code> means that the
-     * inference profile is available to use.</p>
+     * inference profile is ready to be used.</p>
      */
     inline const InferenceProfileStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -152,8 +152,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of the inference profile. <code>SYSTEM_DEFINED</code> means that the
-     * inference profile is defined by Amazon Bedrock.</p>
+     * <p>The type of the inference profile. The following types are possible:</p> <ul>
+     * <li> <p> <code>SYSTEM_DEFINED</code> – The inference profile is defined by
+     * Amazon Bedrock. You can route inference requests across regions with these
+     * inference profiles.</p> </li> <li> <p> <code>APPLICATION</code> – The inference
+     * profile was created by a user. This type of inference profile can track metrics
+     * and costs when invoking the model in it. The inference profile may route
+     * requests to one or multiple regions.</p> </li> </ul>
      */
     inline const InferenceProfileType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -167,9 +172,6 @@ namespace Model
     Aws::String m_inferenceProfileName;
     bool m_inferenceProfileNameHasBeenSet = false;
 
-    Aws::Vector<InferenceProfileModel> m_models;
-    bool m_modelsHasBeenSet = false;
-
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
@@ -181,6 +183,9 @@ namespace Model
 
     Aws::String m_inferenceProfileArn;
     bool m_inferenceProfileArnHasBeenSet = false;
+
+    Aws::Vector<InferenceProfileModel> m_models;
+    bool m_modelsHasBeenSet = false;
 
     Aws::String m_inferenceProfileId;
     bool m_inferenceProfileIdHasBeenSet = false;

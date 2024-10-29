@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/BilledResourceUtilization.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,10 +48,25 @@ namespace Model
     inline void SetTotalDurationInMillis(long long value) { m_totalDurationInMillisHasBeenSet = true; m_totalDurationInMillis = value; }
     inline ProtectedQueryStatistics& WithTotalDurationInMillis(long long value) { SetTotalDurationInMillis(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The billed resource utilization.</p>
+     */
+    inline const BilledResourceUtilization& GetBilledResourceUtilization() const{ return m_billedResourceUtilization; }
+    inline bool BilledResourceUtilizationHasBeenSet() const { return m_billedResourceUtilizationHasBeenSet; }
+    inline void SetBilledResourceUtilization(const BilledResourceUtilization& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = value; }
+    inline void SetBilledResourceUtilization(BilledResourceUtilization&& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = std::move(value); }
+    inline ProtectedQueryStatistics& WithBilledResourceUtilization(const BilledResourceUtilization& value) { SetBilledResourceUtilization(value); return *this;}
+    inline ProtectedQueryStatistics& WithBilledResourceUtilization(BilledResourceUtilization&& value) { SetBilledResourceUtilization(std::move(value)); return *this;}
+    ///@}
   private:
 
     long long m_totalDurationInMillis;
     bool m_totalDurationInMillisHasBeenSet = false;
+
+    BilledResourceUtilization m_billedResourceUtilization;
+    bool m_billedResourceUtilizationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -61,7 +61,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The execution role for the user.</p>
+     * <p>The execution role for the user.</p> <p>SageMaker applies this setting only
+     * to private spaces that the user creates in the domain. SageMaker doesn't apply
+     * this setting to shared spaces.</p>
      */
     inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
@@ -84,7 +86,9 @@ namespace Model
      * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
      * security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
      * number of security groups that you can specify is one less than the maximum
-     * number shown.</p>
+     * number shown.</p> <p>SageMaker applies these settings only to private spaces
+     * that the user creates in the domain. SageMaker doesn't apply these settings to
+     * shared spaces.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
@@ -173,7 +177,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Canvas app settings.</p>
+     * <p>The Canvas app settings.</p> <p>SageMaker applies these settings only to
+     * private spaces that SageMaker creates for the Canvas app.</p>
      */
     inline const CanvasAppSettings& GetCanvasAppSettings() const{ return m_canvasAppSettings; }
     inline bool CanvasAppSettingsHasBeenSet() const { return m_canvasAppSettingsHasBeenSet; }
@@ -185,7 +190,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Code Editor application settings.</p>
+     * <p>The Code Editor application settings.</p> <p>SageMaker applies these settings
+     * only to private spaces that the user creates in the domain. SageMaker doesn't
+     * apply these settings to shared spaces.</p>
      */
     inline const CodeEditorAppSettings& GetCodeEditorAppSettings() const{ return m_codeEditorAppSettings; }
     inline bool CodeEditorAppSettingsHasBeenSet() const { return m_codeEditorAppSettingsHasBeenSet; }
@@ -197,7 +204,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The settings for the JupyterLab application.</p>
+     * <p>The settings for the JupyterLab application.</p> <p>SageMaker applies these
+     * settings only to private spaces that the user creates in the domain. SageMaker
+     * doesn't apply these settings to shared spaces.</p>
      */
     inline const JupyterLabAppSettings& GetJupyterLabAppSettings() const{ return m_jupyterLabAppSettings; }
     inline bool JupyterLabAppSettingsHasBeenSet() const { return m_jupyterLabAppSettingsHasBeenSet; }
@@ -209,7 +218,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The storage settings for a space.</p>
+     * <p>The storage settings for a space.</p> <p>SageMaker applies these settings
+     * only to private spaces that the user creates in the domain. SageMaker doesn't
+     * apply these settings to shared spaces.</p>
      */
     inline const DefaultSpaceStorageSettings& GetSpaceStorageSettings() const{ return m_spaceStorageSettings; }
     inline bool SpaceStorageSettingsHasBeenSet() const { return m_spaceStorageSettingsHasBeenSet; }
@@ -255,6 +266,8 @@ namespace Model
     ///@{
     /**
      * <p>Details about the POSIX identity that is used for file system operations.</p>
+     * <p>SageMaker applies these settings only to private spaces that the user creates
+     * in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
      */
     inline const CustomPosixUserConfig& GetCustomPosixUserConfig() const{ return m_customPosixUserConfig; }
     inline bool CustomPosixUserConfigHasBeenSet() const { return m_customPosixUserConfigHasBeenSet; }
@@ -267,7 +280,9 @@ namespace Model
     ///@{
     /**
      * <p>The settings for assigning a custom file system to a user profile. Permitted
-     * users can access this file system in Amazon SageMaker Studio.</p>
+     * users can access this file system in Amazon SageMaker Studio.</p> <p>SageMaker
+     * applies these settings only to private spaces that the user creates in the
+     * domain. SageMaker doesn't apply these settings to shared spaces.</p>
      */
     inline const Aws::Vector<CustomFileSystemConfig>& GetCustomFileSystemConfigs() const{ return m_customFileSystemConfigs; }
     inline bool CustomFileSystemConfigsHasBeenSet() const { return m_customFileSystemConfigsHasBeenSet; }
@@ -297,7 +312,9 @@ namespace Model
      * <p>Indicates whether auto-mounting of an EFS volume is supported for the user
      * profile. The <code>DefaultAsDomain</code> value is only supported for user
      * profiles. Do not use the <code>DefaultAsDomain</code> value when setting this
-     * parameter for a domain.</p>
+     * parameter for a domain.</p> <p>SageMaker applies this setting only to private
+     * spaces that the user creates in the domain. SageMaker doesn't apply this setting
+     * to shared spaces.</p>
      */
     inline const AutoMountHomeEFS& GetAutoMountHomeEFS() const{ return m_autoMountHomeEFS; }
     inline bool AutoMountHomeEFSHasBeenSet() const { return m_autoMountHomeEFSHasBeenSet; }

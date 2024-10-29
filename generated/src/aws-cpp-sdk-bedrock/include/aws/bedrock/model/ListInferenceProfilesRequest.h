@@ -7,6 +7,7 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/BedrockRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock/model/InferenceProfileType.h>
 #include <utility>
 
 namespace Aws
@@ -67,6 +68,24 @@ namespace Model
     inline ListInferenceProfilesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListInferenceProfilesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Filters for inference profiles that match the type you specify.</p> <ul> <li>
+     * <p> <code>SYSTEM_DEFINED</code> – The inference profile is defined by Amazon
+     * Bedrock. You can route inference requests across regions with these inference
+     * profiles.</p> </li> <li> <p> <code>APPLICATION</code> – The inference profile
+     * was created by a user. This type of inference profile can track metrics and
+     * costs when invoking the model in it. The inference profile may route requests to
+     * one or multiple regions.</p> </li> </ul>
+     */
+    inline const InferenceProfileType& GetTypeEquals() const{ return m_typeEquals; }
+    inline bool TypeEqualsHasBeenSet() const { return m_typeEqualsHasBeenSet; }
+    inline void SetTypeEquals(const InferenceProfileType& value) { m_typeEqualsHasBeenSet = true; m_typeEquals = value; }
+    inline void SetTypeEquals(InferenceProfileType&& value) { m_typeEqualsHasBeenSet = true; m_typeEquals = std::move(value); }
+    inline ListInferenceProfilesRequest& WithTypeEquals(const InferenceProfileType& value) { SetTypeEquals(value); return *this;}
+    inline ListInferenceProfilesRequest& WithTypeEquals(InferenceProfileType&& value) { SetTypeEquals(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_maxResults;
@@ -74,6 +93,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    InferenceProfileType m_typeEquals;
+    bool m_typeEqualsHasBeenSet = false;
   };
 
 } // namespace Model

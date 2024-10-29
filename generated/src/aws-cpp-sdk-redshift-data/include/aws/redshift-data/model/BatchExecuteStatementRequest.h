@@ -7,6 +7,7 @@
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift-data/model/ResultFormatString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -95,6 +96,19 @@ namespace Model
     inline BatchExecuteStatementRequest& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
     inline BatchExecuteStatementRequest& WithDbUser(Aws::String&& value) { SetDbUser(std::move(value)); return *this;}
     inline BatchExecuteStatementRequest& WithDbUser(const char* value) { SetDbUser(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The data format of the result of the SQL statement. If no format is
+     * specified, the default is JSON.</p>
+     */
+    inline const ResultFormatString& GetResultFormat() const{ return m_resultFormat; }
+    inline bool ResultFormatHasBeenSet() const { return m_resultFormatHasBeenSet; }
+    inline void SetResultFormat(const ResultFormatString& value) { m_resultFormatHasBeenSet = true; m_resultFormat = value; }
+    inline void SetResultFormat(ResultFormatString&& value) { m_resultFormatHasBeenSet = true; m_resultFormat = std::move(value); }
+    inline BatchExecuteStatementRequest& WithResultFormat(const ResultFormatString& value) { SetResultFormat(value); return *this;}
+    inline BatchExecuteStatementRequest& WithResultFormat(ResultFormatString&& value) { SetResultFormat(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -211,6 +225,9 @@ namespace Model
 
     Aws::String m_dbUser;
     bool m_dbUserHasBeenSet = false;
+
+    ResultFormatString m_resultFormat;
+    bool m_resultFormatHasBeenSet = false;
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet = false;

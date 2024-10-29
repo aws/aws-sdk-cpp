@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The results of the SQL statement.</p>
+     * <p>The results of the SQL statement in JSON format.</p>
      */
     inline const Aws::Vector<Aws::Vector<Field>>& GetRecords() const{ return m_records; }
     inline void SetRecords(const Aws::Vector<Aws::Vector<Field>>& value) { m_records = value; }

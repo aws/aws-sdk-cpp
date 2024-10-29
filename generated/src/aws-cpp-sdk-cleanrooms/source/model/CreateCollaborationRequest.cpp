@@ -22,7 +22,9 @@ CreateCollaborationRequest::CreateCollaborationRequest() :
     m_queryLogStatus(CollaborationQueryLogStatus::NOT_SET),
     m_queryLogStatusHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_creatorPaymentConfigurationHasBeenSet(false)
+    m_creatorPaymentConfigurationHasBeenSet(false),
+    m_analyticsEngine(AnalyticsEngine::NOT_SET),
+    m_analyticsEngineHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,11 @@ Aws::String CreateCollaborationRequest::SerializePayload() const
   {
    payload.WithObject("creatorPaymentConfiguration", m_creatorPaymentConfiguration.Jsonize());
 
+  }
+
+  if(m_analyticsEngineHasBeenSet)
+  {
+   payload.WithString("analyticsEngine", AnalyticsEngineMapper::GetNameForAnalyticsEngine(m_analyticsEngine));
   }
 
   return payload.View().WriteReadable();

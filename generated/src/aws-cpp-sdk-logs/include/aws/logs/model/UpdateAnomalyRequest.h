@@ -111,6 +111,20 @@ namespace Model
     inline UpdateAnomalyRequest& WithSuppressionPeriod(const SuppressionPeriod& value) { SetSuppressionPeriod(value); return *this;}
     inline UpdateAnomalyRequest& WithSuppressionPeriod(SuppressionPeriod&& value) { SetSuppressionPeriod(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Set this to <code>true</code> to prevent CloudWatch Logs from displaying this
+     * behavior as an anomaly in the future. The behavior is then treated as baseline
+     * behavior. However, if similar but more severe occurrences of this behavior occur
+     * in the future, those will still be reported as anomalies. </p> <p>The default is
+     * <code>false</code> </p>
+     */
+    inline bool GetBaseline() const{ return m_baseline; }
+    inline bool BaselineHasBeenSet() const { return m_baselineHasBeenSet; }
+    inline void SetBaseline(bool value) { m_baselineHasBeenSet = true; m_baseline = value; }
+    inline UpdateAnomalyRequest& WithBaseline(bool value) { SetBaseline(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_anomalyId;
@@ -127,6 +141,9 @@ namespace Model
 
     SuppressionPeriod m_suppressionPeriod;
     bool m_suppressionPeriodHasBeenSet = false;
+
+    bool m_baseline;
+    bool m_baselineHasBeenSet = false;
   };
 
 } // namespace Model

@@ -206,6 +206,39 @@ namespace Bedrock
         }
 
         /**
+         * <p>Creates an application inference profile to track metrics and costs when
+         * invoking a model. To create an application inference profile for a foundation
+         * model in one region, specify the ARN of the model in that region. To create an
+         * application inference profile for a foundation model across multiple regions,
+         * specify the ARN of the system-defined inference profile that contains the
+         * regions that you want to route requests to. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+         * throughput and resilience with cross-region inference in Amazon Bedrock</a>. in
+         * the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateInferenceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateInferenceProfileOutcome CreateInferenceProfile(const Model::CreateInferenceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateInferenceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateInferenceProfileRequestT = Model::CreateInferenceProfileRequest>
+        Model::CreateInferenceProfileOutcomeCallable CreateInferenceProfileCallable(const CreateInferenceProfileRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::CreateInferenceProfile, request);
+        }
+
+        /**
+         * An Async wrapper for CreateInferenceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateInferenceProfileRequestT = Model::CreateInferenceProfileRequest>
+        void CreateInferenceProfileAsync(const CreateInferenceProfileRequestT& request, const CreateInferenceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::CreateInferenceProfile, request, handler, context);
+        }
+
+        /**
          * <p>Copies a model to another region so that it can be used there. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html">Copy
@@ -457,6 +490,34 @@ namespace Bedrock
         }
 
         /**
+         * <p>Deletes an application inference profile. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+         * throughput and resilience with cross-region inference in Amazon Bedrock</a>. in
+         * the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteInferenceProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteInferenceProfileOutcome DeleteInferenceProfile(const Model::DeleteInferenceProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteInferenceProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteInferenceProfileRequestT = Model::DeleteInferenceProfileRequest>
+        Model::DeleteInferenceProfileOutcomeCallable DeleteInferenceProfileCallable(const DeleteInferenceProfileRequestT& request) const
+        {
+            return SubmitCallable(&BedrockClient::DeleteInferenceProfile, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteInferenceProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteInferenceProfileRequestT = Model::DeleteInferenceProfileRequest>
+        void DeleteInferenceProfileAsync(const DeleteInferenceProfileRequestT& request, const DeleteInferenceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockClient::DeleteInferenceProfile, request, handler, context);
+        }
+
+        /**
          * <p>Delete the invocation logging. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteModelInvocationLoggingConfiguration">AWS
          * API Reference</a></p>
@@ -649,8 +710,10 @@ namespace Bedrock
         }
 
         /**
-         * <p>Gets information about an inference profile. For more information, see the
-         * Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about an inference profile. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+         * throughput and resilience with cross-region inference in Amazon Bedrock</a>. in
+         * the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetInferenceProfile">AWS
          * API Reference</a></p>
          */
@@ -995,8 +1058,11 @@ namespace Bedrock
         }
 
         /**
-         * <p>Returns a list of inference profiles that you can use.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of inference profiles that you can use. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+         * throughput and resilience with cross-region inference in Amazon Bedrock</a>. in
+         * the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListInferenceProfiles">AWS
          * API Reference</a></p>
          */
@@ -1171,7 +1237,7 @@ namespace Bedrock
         /**
          * <p>List the tags associated with the specified resource.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
          * resources</a> in the <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
          * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
@@ -1308,7 +1374,7 @@ namespace Bedrock
 
         /**
          * <p>Associate tags with a resource. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
          * resources</a> in the <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
          * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
@@ -1337,7 +1403,7 @@ namespace Bedrock
 
         /**
          * <p>Remove one or more tags from a resource. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
          * resources</a> in the <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
          * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a

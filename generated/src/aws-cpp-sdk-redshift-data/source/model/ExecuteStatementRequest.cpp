@@ -19,6 +19,8 @@ ExecuteStatementRequest::ExecuteStatementRequest() :
     m_databaseHasBeenSet(false),
     m_dbUserHasBeenSet(false),
     m_parametersHasBeenSet(false),
+    m_resultFormat(ResultFormatString::NOT_SET),
+    m_resultFormatHasBeenSet(false),
     m_secretArnHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionKeepAliveSeconds(0),
@@ -68,6 +70,11 @@ Aws::String ExecuteStatementRequest::SerializePayload() const
    }
    payload.WithArray("Parameters", std::move(parametersJsonList));
 
+  }
+
+  if(m_resultFormatHasBeenSet)
+  {
+   payload.WithString("ResultFormat", ResultFormatStringMapper::GetNameForResultFormatString(m_resultFormat));
   }
 
   if(m_secretArnHasBeenSet)
