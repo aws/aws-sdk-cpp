@@ -48,6 +48,7 @@ namespace DynamoDB
     public:
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "DynamoDB"; }
 
       typedef DynamoDBClientConfiguration ClientConfigurationType;
       typedef DynamoDBEndpointProvider EndpointProviderType;
