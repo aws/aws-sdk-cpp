@@ -16,6 +16,7 @@ CreateSecurityConfigRequest::CreateSecurityConfigRequest() :
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),
+    m_iamIdentityCenterOptionsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_samlOptionsHasBeenSet(false),
     m_type(SecurityConfigType::NOT_SET),
@@ -36,6 +37,12 @@ Aws::String CreateSecurityConfigRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_iamIdentityCenterOptionsHasBeenSet)
+  {
+   payload.WithObject("iamIdentityCenterOptions", m_iamIdentityCenterOptions.Jsonize());
 
   }
 

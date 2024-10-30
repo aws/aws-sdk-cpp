@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The operation tried to access a keyspace or table that doesn't exist. The
-   * resource might not be specified correctly, or its status might not be
+   * <p>The operation tried to access a keyspace, table, or type that doesn't exist.
+   * The resource might not be specified correctly, or its status might not be
    * <code>ACTIVE</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ResourceNotFoundException">AWS
    * API Reference</a></p>
@@ -55,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier in the format of Amazon Resource Name (ARN), for the
-     * resource not found.</p>
+     * <p>The unique identifier in the format of Amazon Resource Name (ARN) for the
+     * resource could't be found.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

@@ -97,7 +97,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether the instance type is offered for spot or On-Demand.</p>
+     * <p>Indicates whether the instance type is offered for spot, On-Demand, or
+     * Capacity Blocks.</p>
      */
     inline const Aws::Vector<UsageClassType>& GetSupportedUsageClasses() const{ return m_supportedUsageClasses; }
     inline bool SupportedUsageClassesHasBeenSet() const { return m_supportedUsageClassesHasBeenSet; }

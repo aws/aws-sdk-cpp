@@ -7,6 +7,7 @@
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/model/UpdateIamIdentityCenterConfigOptions.h>
 #include <aws/opensearchserverless/model/SamlConfigOptions.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -82,6 +83,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Describes IAM Identity Center options in the form of a key-value map.</p>
+     */
+    inline const UpdateIamIdentityCenterConfigOptions& GetIamIdentityCenterOptionsUpdates() const{ return m_iamIdentityCenterOptionsUpdates; }
+    inline bool IamIdentityCenterOptionsUpdatesHasBeenSet() const { return m_iamIdentityCenterOptionsUpdatesHasBeenSet; }
+    inline void SetIamIdentityCenterOptionsUpdates(const UpdateIamIdentityCenterConfigOptions& value) { m_iamIdentityCenterOptionsUpdatesHasBeenSet = true; m_iamIdentityCenterOptionsUpdates = value; }
+    inline void SetIamIdentityCenterOptionsUpdates(UpdateIamIdentityCenterConfigOptions&& value) { m_iamIdentityCenterOptionsUpdatesHasBeenSet = true; m_iamIdentityCenterOptionsUpdates = std::move(value); }
+    inline UpdateSecurityConfigRequest& WithIamIdentityCenterOptionsUpdates(const UpdateIamIdentityCenterConfigOptions& value) { SetIamIdentityCenterOptionsUpdates(value); return *this;}
+    inline UpdateSecurityConfigRequest& WithIamIdentityCenterOptionsUpdates(UpdateIamIdentityCenterConfigOptions&& value) { SetIamIdentityCenterOptionsUpdates(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The security configuration identifier. For SAML the ID will be
      * <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example,
      * <code>saml/123456789123/OKTADev</code>.</p>
@@ -117,6 +130,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    UpdateIamIdentityCenterConfigOptions m_iamIdentityCenterOptionsUpdates;
+    bool m_iamIdentityCenterOptionsUpdatesHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;

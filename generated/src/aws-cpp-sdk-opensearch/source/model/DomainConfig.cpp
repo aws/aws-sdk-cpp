@@ -33,6 +33,7 @@ DomainConfig::DomainConfig() :
     m_logPublishingOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
     m_advancedSecurityOptionsHasBeenSet(false),
+    m_identityCenterOptionsHasBeenSet(false),
     m_autoTuneOptionsHasBeenSet(false),
     m_changeProgressDetailsHasBeenSet(false),
     m_offPeakWindowOptionsHasBeenSet(false),
@@ -146,6 +147,13 @@ DomainConfig& DomainConfig::operator =(JsonView jsonValue)
     m_advancedSecurityOptions = jsonValue.GetObject("AdvancedSecurityOptions");
 
     m_advancedSecurityOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdentityCenterOptions"))
+  {
+    m_identityCenterOptions = jsonValue.GetObject("IdentityCenterOptions");
+
+    m_identityCenterOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AutoTuneOptions"))
@@ -281,6 +289,12 @@ JsonValue DomainConfig::Jsonize() const
   if(m_advancedSecurityOptionsHasBeenSet)
   {
    payload.WithObject("AdvancedSecurityOptions", m_advancedSecurityOptions.Jsonize());
+
+  }
+
+  if(m_identityCenterOptionsHasBeenSet)
+  {
+   payload.WithObject("IdentityCenterOptions", m_identityCenterOptions.Jsonize());
 
   }
 

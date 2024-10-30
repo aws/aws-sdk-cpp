@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Specifies your DataSync agent's activation key. If you don't have an
      * activation key, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activate
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">Activating
      * your agent</a>.</p>
      */
     inline const Aws::String& GetActivationKey() const{ return m_activationKey; }
@@ -58,8 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies a name for your agent. You can see this name in the DataSync
-     * console.</p>
+     * <p>Specifies a name for your agent. We recommend specifying a name that you can
+     * remember.</p>
      */
     inline const Aws::String& GetAgentName() const{ return m_agentName; }
     inline bool AgentNameHasBeenSet() const { return m_agentNameHasBeenSet; }
@@ -89,10 +89,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the ID of the VPC endpoint that you want your agent to connect to.
-     * For example, a VPC endpoint ID looks like
-     * <code>vpce-01234d5aff67890e1</code>.</p>  <p>The VPC endpoint you use
-     * must include the DataSync service name (for example,
+     * <p>Specifies the ID of the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#datasync-in-vpc">VPC
+     * service endpoint</a> that you're using. For example, a VPC endpoint ID looks
+     * like <code>vpce-01234d5aff67890e1</code>.</p>  <p>The VPC service
+     * endpoint you use must include the DataSync service name (for example,
      * <code>com.amazonaws.us-east-2.datasync</code>).</p> 
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
@@ -107,11 +108,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the ARN of the subnet where you want to run your DataSync task when
-     * using a VPC endpoint. This is the subnet where DataSync creates and manages the
-     * <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
-     * interfaces</a> for your transfer. You can only specify one ARN.</p>
+     * <p>Specifies the ARN of the subnet where your VPC service endpoint is located.
+     * You can only specify one ARN.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetArns() const{ return m_subnetArns; }
     inline bool SubnetArnsHasBeenSet() const { return m_subnetArnsHasBeenSet; }
@@ -126,12 +124,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the security group that protects
-     * your task's <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
-     * interfaces</a> when <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc">using
-     * a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the security group that allows
+     * traffic between your agent and VPC service endpoint. You can only specify one
+     * ARN.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
     inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }

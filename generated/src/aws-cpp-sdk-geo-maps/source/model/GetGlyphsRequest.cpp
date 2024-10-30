@@ -1,0 +1,28 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/geo-maps/model/GetGlyphsRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::GeoMaps::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+GetGlyphsRequest::GetGlyphsRequest() : 
+    m_fontStackHasBeenSet(false),
+    m_fontUnicodeRangeHasBeenSet(false)
+{
+}
+
+Aws::String GetGlyphsRequest::SerializePayload() const
+{
+  return {};
+}
+
+
+
+

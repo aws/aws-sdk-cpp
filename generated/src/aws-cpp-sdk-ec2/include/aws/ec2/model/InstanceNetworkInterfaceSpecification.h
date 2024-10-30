@@ -249,8 +249,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of network interface.</p> <p>Valid values: <code>interface</code> |
-     * <code>efa</code> </p>
+     * <p>The type of network interface.</p> <p>If you specify <code>efa-only</code>,
+     * do not assign any IP addresses to the network interface. EFA-only network
+     * interfaces do not support IP addresses.</p> <p>Valid values:
+     * <code>interface</code> | <code>efa</code> | <code>efa-only</code> </p>
      */
     inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }

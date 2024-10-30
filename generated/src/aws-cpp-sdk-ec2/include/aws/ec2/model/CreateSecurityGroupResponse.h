@@ -62,6 +62,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The security group ARN.</p>
+     */
+    inline const Aws::String& GetSecurityGroupArn() const{ return m_securityGroupArn; }
+    inline void SetSecurityGroupArn(const Aws::String& value) { m_securityGroupArn = value; }
+    inline void SetSecurityGroupArn(Aws::String&& value) { m_securityGroupArn = std::move(value); }
+    inline void SetSecurityGroupArn(const char* value) { m_securityGroupArn.assign(value); }
+    inline CreateSecurityGroupResponse& WithSecurityGroupArn(const Aws::String& value) { SetSecurityGroupArn(value); return *this;}
+    inline CreateSecurityGroupResponse& WithSecurityGroupArn(Aws::String&& value) { SetSecurityGroupArn(std::move(value)); return *this;}
+    inline CreateSecurityGroupResponse& WithSecurityGroupArn(const char* value) { SetSecurityGroupArn(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -74,6 +87,8 @@ namespace Model
     Aws::String m_groupId;
 
     Aws::Vector<Tag> m_tags;
+
+    Aws::String m_securityGroupArn;
 
     ResponseMetadata m_responseMetadata;
   };

@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
+#include <aws/geo-routes/model/RouteNumber.h>
+#include <aws/geo-routes/model/LocalizedString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace GeoRoutes
+{
+namespace Model
+{
+
+  /**
+   * <p>Labels presented on the sign post.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteSignpostLabel">AWS
+   * API Reference</a></p>
+   */
+  class RouteSignpostLabel
+  {
+  public:
+    AWS_GEOROUTES_API RouteSignpostLabel();
+    AWS_GEOROUTES_API RouteSignpostLabel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GEOROUTES_API RouteSignpostLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p>Route number of the road.</p>
+     */
+    inline const RouteNumber& GetRouteNumber() const{ return m_routeNumber; }
+    inline bool RouteNumberHasBeenSet() const { return m_routeNumberHasBeenSet; }
+    inline void SetRouteNumber(const RouteNumber& value) { m_routeNumberHasBeenSet = true; m_routeNumber = value; }
+    inline void SetRouteNumber(RouteNumber&& value) { m_routeNumberHasBeenSet = true; m_routeNumber = std::move(value); }
+    inline RouteSignpostLabel& WithRouteNumber(const RouteNumber& value) { SetRouteNumber(value); return *this;}
+    inline RouteSignpostLabel& WithRouteNumber(RouteNumber&& value) { SetRouteNumber(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Signpost text.</p>
+     */
+    inline const LocalizedString& GetText() const{ return m_text; }
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+    inline void SetText(const LocalizedString& value) { m_textHasBeenSet = true; m_text = value; }
+    inline void SetText(LocalizedString&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
+    inline RouteSignpostLabel& WithText(const LocalizedString& value) { SetText(value); return *this;}
+    inline RouteSignpostLabel& WithText(LocalizedString&& value) { SetText(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    RouteNumber m_routeNumber;
+    bool m_routeNumberHasBeenSet = false;
+
+    LocalizedString m_text;
+    bool m_textHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace GeoRoutes
+} // namespace Aws

@@ -111,9 +111,9 @@ namespace Model
      * tries to establish a TCP connection. If successful, Route 53 submits an HTTPS
      * request and waits for an HTTP status code of 200 or greater and less than
      * 400.</p>  <p>If you specify <code>HTTPS</code> for the value of
-     * <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> 
-     * </li> <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP
-     * connection. If successful, Route 53 submits an HTTP request and searches the
+     * <code>Type</code>, the endpoint must support TLS v1.0, v1.1, or v1.2.</p>
+     *  </li> <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a
+     * TCP connection. If successful, Route 53 submits an HTTP request and searches the
      * first 5,120 bytes of the response body for the string that you specify in
      * <code>SearchString</code>.</p> </li> <li> <p> <b>HTTPS_STR_MATCH</b>: Route 53
      * tries to establish a TCP connection. If successful, Route 53 submits an

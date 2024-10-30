@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/model/IamIdentityCenterConfigOptions.h>
 #include <aws/opensearchserverless/model/SamlConfigOptions.h>
 #include <aws/opensearchserverless/model/SecurityConfigType.h>
 #include <utility>
@@ -80,6 +81,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Describes IAM Identity Center options in the form of a key-value map.</p>
+     */
+    inline const IamIdentityCenterConfigOptions& GetIamIdentityCenterOptions() const{ return m_iamIdentityCenterOptions; }
+    inline bool IamIdentityCenterOptionsHasBeenSet() const { return m_iamIdentityCenterOptionsHasBeenSet; }
+    inline void SetIamIdentityCenterOptions(const IamIdentityCenterConfigOptions& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = value; }
+    inline void SetIamIdentityCenterOptions(IamIdentityCenterConfigOptions&& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = std::move(value); }
+    inline SecurityConfigDetail& WithIamIdentityCenterOptions(const IamIdentityCenterConfigOptions& value) { SetIamIdentityCenterOptions(value); return *this;}
+    inline SecurityConfigDetail& WithIamIdentityCenterOptions(IamIdentityCenterConfigOptions&& value) { SetIamIdentityCenterOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the security configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -136,6 +149,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    IamIdentityCenterConfigOptions m_iamIdentityCenterOptions;
+    bool m_iamIdentityCenterOptionsHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;

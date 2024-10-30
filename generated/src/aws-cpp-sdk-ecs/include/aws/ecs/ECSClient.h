@@ -125,13 +125,11 @@ namespace ECS
          * <p>Creates a new Amazon ECS cluster. By default, your account receives a
          * <code>default</code> cluster when you launch your first container instance.
          * However, you can create your own cluster with a unique name.</p>  <p>When
-         * you call the <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html">CreateCluster</a>
-         * API operation, Amazon ECS attempts to create the Amazon ECS service-linked role
-         * for your account. This is so that it can manage required resources in other
-         * Amazon Web Services services on your behalf. However, if the user that makes the
-         * call doesn't have permissions to create the service-linked role, it isn't
-         * created. For more information, see <a
+         * you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
+         * the Amazon ECS service-linked role for your account. This is so that it can
+         * manage required resources in other Amazon Web Services services on your behalf.
+         * However, if the user that makes the call doesn't have permissions to create the
+         * service-linked role, it isn't created. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
          * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -162,16 +160,15 @@ namespace ECS
          * <p>Runs and maintains your desired number of tasks from a specified task
          * definition. If the number of tasks running in a service drops below the
          * <code>desiredCount</code>, Amazon ECS runs another copy of the task in the
-         * specified cluster. To update an existing service, use <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
-         *  <p>On March 21, 2024, a change was made to resolve the task definition
-         * revision before authorization. When a task definition revision is not specified,
-         * authorization will occur using the latest revision of a task definition.</p>
-         *   <p>Amazon Elastic Inference (EI) is no longer available to
-         * customers.</p>  <p>In addition to maintaining the desired count of tasks
-         * in your service, you can optionally run your service behind one or more load
-         * balancers. The load balancers distribute traffic across the tasks that are
-         * associated with the service. For more information, see <a
+         * specified cluster. To update an existing service, see the <a>UpdateService</a>
+         * action.</p>  <p>On March 21, 2024, a change was made to resolve the task
+         * definition revision before authorization. When a task definition revision is not
+         * specified, authorization will occur using the latest revision of a task
+         * definition.</p>   <p>Amazon Elastic Inference (EI) is no longer
+         * available to customers.</p>  <p>In addition to maintaining the desired
+         * count of tasks in your service, you can optionally run your service behind one
+         * or more load balancers. The load balancers distribute traffic across the tasks
+         * that are associated with the service. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * load balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can attach Amazon EBS volumes to Amazon ECS tasks by
@@ -727,6 +724,66 @@ namespace ECS
         }
 
         /**
+         * <p>Describes one or more of your service deployments.</p> <p>A service
+         * deployment happens when you release a software update for the service. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployments.html">Amazon
+         * ECS service deployments</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceDeployments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeServiceDeploymentsOutcome DescribeServiceDeployments(const Model::DescribeServiceDeploymentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeServiceDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeServiceDeploymentsRequestT = Model::DescribeServiceDeploymentsRequest>
+        Model::DescribeServiceDeploymentsOutcomeCallable DescribeServiceDeploymentsCallable(const DescribeServiceDeploymentsRequestT& request) const
+        {
+            return SubmitCallable(&ECSClient::DescribeServiceDeployments, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeServiceDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeServiceDeploymentsRequestT = Model::DescribeServiceDeploymentsRequest>
+        void DescribeServiceDeploymentsAsync(const DescribeServiceDeploymentsRequestT& request, const DescribeServiceDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECSClient::DescribeServiceDeployments, request, handler, context);
+        }
+
+        /**
+         * <p>Describes one or more service revisions.</p> <p>A service revision is a
+         * version of the service that includes the values for the Amazon ECS resources
+         * (for example, task definition) and the environment resources (for example, load
+         * balancers, subnets, and security groups). For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-revision.html">Amazon
+         * ECS service revisions</a>.</p> <p>You can't describe a service revision that was
+         * created before October 25, 2024.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceRevisions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeServiceRevisionsOutcome DescribeServiceRevisions(const Model::DescribeServiceRevisionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeServiceRevisions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeServiceRevisionsRequestT = Model::DescribeServiceRevisionsRequest>
+        Model::DescribeServiceRevisionsOutcomeCallable DescribeServiceRevisionsCallable(const DescribeServiceRevisionsRequestT& request) const
+        {
+            return SubmitCallable(&ECSClient::DescribeServiceRevisions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeServiceRevisions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeServiceRevisionsRequestT = Model::DescribeServiceRevisionsRequest>
+        void DescribeServiceRevisionsAsync(const DescribeServiceRevisionsRequestT& request, const DescribeServiceRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECSClient::DescribeServiceRevisions, request, handler, context);
+        }
+
+        /**
          * <p>Describes the specified services running in your cluster.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">AWS
@@ -1039,6 +1096,37 @@ namespace ECS
         void ListContainerInstancesAsync(const ListContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListContainerInstancesRequestT& request = {}) const
         {
             return SubmitAsync(&ECSClient::ListContainerInstances, request, handler, context);
+        }
+
+        /**
+         * <p>This operation lists all the service deployments that meet the specified
+         * filter criteria.</p> <p>A service deployment happens when you release a softwre
+         * update for the service. You route traffic from the running service revisions to
+         * the new service revison and control the number of running tasks. </p> <p>This
+         * API returns the values that you use for the request parameters in <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceRevisions.html">DescribeServiceRevisions</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServiceDeployments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListServiceDeploymentsOutcome ListServiceDeployments(const Model::ListServiceDeploymentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListServiceDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListServiceDeploymentsRequestT = Model::ListServiceDeploymentsRequest>
+        Model::ListServiceDeploymentsOutcomeCallable ListServiceDeploymentsCallable(const ListServiceDeploymentsRequestT& request) const
+        {
+            return SubmitCallable(&ECSClient::ListServiceDeployments, request);
+        }
+
+        /**
+         * An Async wrapper for ListServiceDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListServiceDeploymentsRequestT = Model::ListServiceDeploymentsRequest>
+        void ListServiceDeploymentsAsync(const ListServiceDeploymentsRequestT& request, const ListServiceDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ECSClient::ListServiceDeployments, request, handler, context);
         }
 
         /**

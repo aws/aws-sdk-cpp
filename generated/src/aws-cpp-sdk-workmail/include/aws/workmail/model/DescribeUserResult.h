@@ -327,6 +327,36 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>User ID from the IAM Identity Center. If this parameter is empty it will be
+     * updated automatically when the user logs in for the first time to the mailbox
+     * associated with WorkMail.</p>
+     */
+    inline const Aws::String& GetIdentityProviderUserId() const{ return m_identityProviderUserId; }
+    inline void SetIdentityProviderUserId(const Aws::String& value) { m_identityProviderUserId = value; }
+    inline void SetIdentityProviderUserId(Aws::String&& value) { m_identityProviderUserId = std::move(value); }
+    inline void SetIdentityProviderUserId(const char* value) { m_identityProviderUserId.assign(value); }
+    inline DescribeUserResult& WithIdentityProviderUserId(const Aws::String& value) { SetIdentityProviderUserId(value); return *this;}
+    inline DescribeUserResult& WithIdentityProviderUserId(Aws::String&& value) { SetIdentityProviderUserId(std::move(value)); return *this;}
+    inline DescribeUserResult& WithIdentityProviderUserId(const char* value) { SetIdentityProviderUserId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Identity Store ID from the IAM Identity Center. If this parameter is empty
+     * it will be updated automatically when the user logs in for the first time to the
+     * mailbox associated with WorkMail. </p>
+     */
+    inline const Aws::String& GetIdentityProviderIdentityStoreId() const{ return m_identityProviderIdentityStoreId; }
+    inline void SetIdentityProviderIdentityStoreId(const Aws::String& value) { m_identityProviderIdentityStoreId = value; }
+    inline void SetIdentityProviderIdentityStoreId(Aws::String&& value) { m_identityProviderIdentityStoreId = std::move(value); }
+    inline void SetIdentityProviderIdentityStoreId(const char* value) { m_identityProviderIdentityStoreId.assign(value); }
+    inline DescribeUserResult& WithIdentityProviderIdentityStoreId(const Aws::String& value) { SetIdentityProviderIdentityStoreId(value); return *this;}
+    inline DescribeUserResult& WithIdentityProviderIdentityStoreId(Aws::String&& value) { SetIdentityProviderIdentityStoreId(std::move(value)); return *this;}
+    inline DescribeUserResult& WithIdentityProviderIdentityStoreId(const char* value) { SetIdentityProviderIdentityStoreId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -383,6 +413,10 @@ namespace Model
     Aws::String m_country;
 
     Aws::String m_office;
+
+    Aws::String m_identityProviderUserId;
+
+    Aws::String m_identityProviderIdentityStoreId;
 
     Aws::String m_requestId;
   };

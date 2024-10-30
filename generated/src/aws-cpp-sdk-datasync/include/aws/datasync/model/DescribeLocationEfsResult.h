@@ -89,7 +89,9 @@ namespace Model
     ///@{
     /**
      * <p>The ARN of the access point that DataSync uses to access the Amazon EFS file
-     * system.</p>
+     * system.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing
+     * restricted file systems</a>.</p>
      */
     inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
     inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArn = value; }
@@ -102,8 +104,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Identity and Access Management (IAM) role that DataSync assumes when
-     * mounting the Amazon EFS file system.</p>
+     * <p>The Identity and Access Management (IAM) role that allows DataSync to access
+     * your Amazon EFS file system.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating
+     * a DataSync IAM role for file system access</a>.</p>
      */
     inline const Aws::String& GetFileSystemAccessRoleArn() const{ return m_fileSystemAccessRoleArn; }
     inline void SetFileSystemAccessRoleArn(const Aws::String& value) { m_fileSystemAccessRoleArn = value; }
@@ -116,8 +120,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption
-     * when copying data to or from the Amazon EFS file system.</p>
+     * <p>Indicates whether DataSync uses Transport Layer Security (TLS) encryption
+     * when transferring data to or from the Amazon EFS file system.</p>
      */
     inline const EfsInTransitEncryption& GetInTransitEncryption() const{ return m_inTransitEncryption; }
     inline void SetInTransitEncryption(const EfsInTransitEncryption& value) { m_inTransitEncryption = value; }

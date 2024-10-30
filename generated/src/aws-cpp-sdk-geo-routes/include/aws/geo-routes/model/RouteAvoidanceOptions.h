@@ -1,0 +1,221 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/geo-routes/model/RouteAvoidanceArea.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/geo-routes/model/RouteAvoidanceZoneCategory.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace GeoRoutes
+{
+namespace Model
+{
+
+  /**
+   * <p>Options related to areas to be avoided.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteAvoidanceOptions">AWS
+   * API Reference</a></p>
+   */
+  class RouteAvoidanceOptions
+  {
+  public:
+    AWS_GEOROUTES_API RouteAvoidanceOptions();
+    AWS_GEOROUTES_API RouteAvoidanceOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GEOROUTES_API RouteAvoidanceOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p>Areas to be avoided.</p>
+     */
+    inline const Aws::Vector<RouteAvoidanceArea>& GetAreas() const{ return m_areas; }
+    inline bool AreasHasBeenSet() const { return m_areasHasBeenSet; }
+    inline void SetAreas(const Aws::Vector<RouteAvoidanceArea>& value) { m_areasHasBeenSet = true; m_areas = value; }
+    inline void SetAreas(Aws::Vector<RouteAvoidanceArea>&& value) { m_areasHasBeenSet = true; m_areas = std::move(value); }
+    inline RouteAvoidanceOptions& WithAreas(const Aws::Vector<RouteAvoidanceArea>& value) { SetAreas(value); return *this;}
+    inline RouteAvoidanceOptions& WithAreas(Aws::Vector<RouteAvoidanceArea>&& value) { SetAreas(std::move(value)); return *this;}
+    inline RouteAvoidanceOptions& AddAreas(const RouteAvoidanceArea& value) { m_areasHasBeenSet = true; m_areas.push_back(value); return *this; }
+    inline RouteAvoidanceOptions& AddAreas(RouteAvoidanceArea&& value) { m_areasHasBeenSet = true; m_areas.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Avoid car-shuttle-trains while calculating the route.</p>
+     */
+    inline bool GetCarShuttleTrains() const{ return m_carShuttleTrains; }
+    inline bool CarShuttleTrainsHasBeenSet() const { return m_carShuttleTrainsHasBeenSet; }
+    inline void SetCarShuttleTrains(bool value) { m_carShuttleTrainsHasBeenSet = true; m_carShuttleTrains = value; }
+    inline RouteAvoidanceOptions& WithCarShuttleTrains(bool value) { SetCarShuttleTrains(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Avoid controlled access highways while calculating the route.</p>
+     */
+    inline bool GetControlledAccessHighways() const{ return m_controlledAccessHighways; }
+    inline bool ControlledAccessHighwaysHasBeenSet() const { return m_controlledAccessHighwaysHasBeenSet; }
+    inline void SetControlledAccessHighways(bool value) { m_controlledAccessHighwaysHasBeenSet = true; m_controlledAccessHighways = value; }
+    inline RouteAvoidanceOptions& WithControlledAccessHighways(bool value) { SetControlledAccessHighways(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Avoid dirt roads while calculating the route.</p>
+     */
+    inline bool GetDirtRoads() const{ return m_dirtRoads; }
+    inline bool DirtRoadsHasBeenSet() const { return m_dirtRoadsHasBeenSet; }
+    inline void SetDirtRoads(bool value) { m_dirtRoadsHasBeenSet = true; m_dirtRoads = value; }
+    inline RouteAvoidanceOptions& WithDirtRoads(bool value) { SetDirtRoads(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Avoid ferries while calculating the route.</p>
+     */
+    inline bool GetFerries() const{ return m_ferries; }
+    inline bool FerriesHasBeenSet() const { return m_ferriesHasBeenSet; }
+    inline void SetFerries(bool value) { m_ferriesHasBeenSet = true; m_ferries = value; }
+    inline RouteAvoidanceOptions& WithFerries(bool value) { SetFerries(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Avoid roads that have seasonal closure while calculating the route.</p>
+     */
+    inline bool GetSeasonalClosure() const{ return m_seasonalClosure; }
+    inline bool SeasonalClosureHasBeenSet() const { return m_seasonalClosureHasBeenSet; }
+    inline void SetSeasonalClosure(bool value) { m_seasonalClosureHasBeenSet = true; m_seasonalClosure = value; }
+    inline RouteAvoidanceOptions& WithSeasonalClosure(bool value) { SetSeasonalClosure(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Avoids roads where the specified toll transponders are the only mode of
+     * payment.</p>
+     */
+    inline bool GetTollRoads() const{ return m_tollRoads; }
+    inline bool TollRoadsHasBeenSet() const { return m_tollRoadsHasBeenSet; }
+    inline void SetTollRoads(bool value) { m_tollRoadsHasBeenSet = true; m_tollRoads = value; }
+    inline RouteAvoidanceOptions& WithTollRoads(bool value) { SetTollRoads(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Avoids roads where the specified toll transponders are the only mode of
+     * payment.</p>
+     */
+    inline bool GetTollTransponders() const{ return m_tollTransponders; }
+    inline bool TollTranspondersHasBeenSet() const { return m_tollTranspondersHasBeenSet; }
+    inline void SetTollTransponders(bool value) { m_tollTranspondersHasBeenSet = true; m_tollTransponders = value; }
+    inline RouteAvoidanceOptions& WithTollTransponders(bool value) { SetTollTransponders(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply
+     * only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p>
+     *  <p>There are currently no other supported values as of 26th April
+     * 2024.</p> 
+     */
+    inline const Aws::Vector<Aws::String>& GetTruckRoadTypes() const{ return m_truckRoadTypes; }
+    inline bool TruckRoadTypesHasBeenSet() const { return m_truckRoadTypesHasBeenSet; }
+    inline void SetTruckRoadTypes(const Aws::Vector<Aws::String>& value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes = value; }
+    inline void SetTruckRoadTypes(Aws::Vector<Aws::String>&& value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes = std::move(value); }
+    inline RouteAvoidanceOptions& WithTruckRoadTypes(const Aws::Vector<Aws::String>& value) { SetTruckRoadTypes(value); return *this;}
+    inline RouteAvoidanceOptions& WithTruckRoadTypes(Aws::Vector<Aws::String>&& value) { SetTruckRoadTypes(std::move(value)); return *this;}
+    inline RouteAvoidanceOptions& AddTruckRoadTypes(const Aws::String& value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes.push_back(value); return *this; }
+    inline RouteAvoidanceOptions& AddTruckRoadTypes(Aws::String&& value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes.push_back(std::move(value)); return *this; }
+    inline RouteAvoidanceOptions& AddTruckRoadTypes(const char* value) { m_truckRoadTypesHasBeenSet = true; m_truckRoadTypes.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Avoid tunnels while calculating the route.</p>
+     */
+    inline bool GetTunnels() const{ return m_tunnels; }
+    inline bool TunnelsHasBeenSet() const { return m_tunnelsHasBeenSet; }
+    inline void SetTunnels(bool value) { m_tunnelsHasBeenSet = true; m_tunnels = value; }
+    inline RouteAvoidanceOptions& WithTunnels(bool value) { SetTunnels(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Avoid U-turns for calculation on highways and motorways.</p>
+     */
+    inline bool GetUTurns() const{ return m_uTurns; }
+    inline bool UTurnsHasBeenSet() const { return m_uTurnsHasBeenSet; }
+    inline void SetUTurns(bool value) { m_uTurnsHasBeenSet = true; m_uTurns = value; }
+    inline RouteAvoidanceOptions& WithUTurns(bool value) { SetUTurns(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Zone categories to be avoided.</p>
+     */
+    inline const Aws::Vector<RouteAvoidanceZoneCategory>& GetZoneCategories() const{ return m_zoneCategories; }
+    inline bool ZoneCategoriesHasBeenSet() const { return m_zoneCategoriesHasBeenSet; }
+    inline void SetZoneCategories(const Aws::Vector<RouteAvoidanceZoneCategory>& value) { m_zoneCategoriesHasBeenSet = true; m_zoneCategories = value; }
+    inline void SetZoneCategories(Aws::Vector<RouteAvoidanceZoneCategory>&& value) { m_zoneCategoriesHasBeenSet = true; m_zoneCategories = std::move(value); }
+    inline RouteAvoidanceOptions& WithZoneCategories(const Aws::Vector<RouteAvoidanceZoneCategory>& value) { SetZoneCategories(value); return *this;}
+    inline RouteAvoidanceOptions& WithZoneCategories(Aws::Vector<RouteAvoidanceZoneCategory>&& value) { SetZoneCategories(std::move(value)); return *this;}
+    inline RouteAvoidanceOptions& AddZoneCategories(const RouteAvoidanceZoneCategory& value) { m_zoneCategoriesHasBeenSet = true; m_zoneCategories.push_back(value); return *this; }
+    inline RouteAvoidanceOptions& AddZoneCategories(RouteAvoidanceZoneCategory&& value) { m_zoneCategoriesHasBeenSet = true; m_zoneCategories.push_back(std::move(value)); return *this; }
+    ///@}
+  private:
+
+    Aws::Vector<RouteAvoidanceArea> m_areas;
+    bool m_areasHasBeenSet = false;
+
+    bool m_carShuttleTrains;
+    bool m_carShuttleTrainsHasBeenSet = false;
+
+    bool m_controlledAccessHighways;
+    bool m_controlledAccessHighwaysHasBeenSet = false;
+
+    bool m_dirtRoads;
+    bool m_dirtRoadsHasBeenSet = false;
+
+    bool m_ferries;
+    bool m_ferriesHasBeenSet = false;
+
+    bool m_seasonalClosure;
+    bool m_seasonalClosureHasBeenSet = false;
+
+    bool m_tollRoads;
+    bool m_tollRoadsHasBeenSet = false;
+
+    bool m_tollTransponders;
+    bool m_tollTranspondersHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_truckRoadTypes;
+    bool m_truckRoadTypesHasBeenSet = false;
+
+    bool m_tunnels;
+    bool m_tunnelsHasBeenSet = false;
+
+    bool m_uTurns;
+    bool m_uTurnsHasBeenSet = false;
+
+    Aws::Vector<RouteAvoidanceZoneCategory> m_zoneCategories;
+    bool m_zoneCategoriesHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace GeoRoutes
+} // namespace Aws

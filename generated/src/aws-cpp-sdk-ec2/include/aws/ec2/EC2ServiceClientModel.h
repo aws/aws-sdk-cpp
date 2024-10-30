@@ -44,6 +44,7 @@
 #include <aws/ec2/model/AssociateIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/AssociateNatGatewayAddressResponse.h>
 #include <aws/ec2/model/AssociateRouteTableResponse.h>
+#include <aws/ec2/model/AssociateSecurityGroupVpcResponse.h>
 #include <aws/ec2/model/AssociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/AssociateTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/AssociateTransitGatewayPolicyTableResponse.h>
@@ -318,6 +319,7 @@
 #include <aws/ec2/model/DescribeScheduledInstancesResponse.h>
 #include <aws/ec2/model/DescribeSecurityGroupReferencesResponse.h>
 #include <aws/ec2/model/DescribeSecurityGroupRulesResponse.h>
+#include <aws/ec2/model/DescribeSecurityGroupVpcAssociationsResponse.h>
 #include <aws/ec2/model/DescribeSecurityGroupsResponse.h>
 #include <aws/ec2/model/DescribeSnapshotAttributeResponse.h>
 #include <aws/ec2/model/DescribeSnapshotTierStatusResponse.h>
@@ -395,6 +397,7 @@
 #include <aws/ec2/model/DisassociateIpamByoasnResponse.h>
 #include <aws/ec2/model/DisassociateIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/DisassociateNatGatewayAddressResponse.h>
+#include <aws/ec2/model/DisassociateSecurityGroupVpcResponse.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockResponse.h>
 #include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/DisassociateTransitGatewayPolicyTableResponse.h>
@@ -676,6 +679,7 @@
 #include <aws/ec2/model/DescribeInstanceConnectEndpointsRequest.h>
 #include <aws/ec2/model/DescribeInstanceStatusRequest.h>
 #include <aws/ec2/model/DescribeNatGatewaysRequest.h>
+#include <aws/ec2/model/DescribeSecurityGroupVpcAssociationsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayConnectsRequest.h>
 #include <aws/ec2/model/DescribeSecurityGroupsRequest.h>
 #include <aws/ec2/model/DescribeVolumesRequest.h>
@@ -853,6 +857,7 @@ namespace Aws
       class AssociateIpamResourceDiscoveryRequest;
       class AssociateNatGatewayAddressRequest;
       class AssociateRouteTableRequest;
+      class AssociateSecurityGroupVpcRequest;
       class AssociateSubnetCidrBlockRequest;
       class AssociateTransitGatewayMulticastDomainRequest;
       class AssociateTransitGatewayPolicyTableRequest;
@@ -1153,6 +1158,7 @@ namespace Aws
       class DescribeScheduledInstancesRequest;
       class DescribeSecurityGroupReferencesRequest;
       class DescribeSecurityGroupRulesRequest;
+      class DescribeSecurityGroupVpcAssociationsRequest;
       class DescribeSecurityGroupsRequest;
       class DescribeSnapshotAttributeRequest;
       class DescribeSnapshotTierStatusRequest;
@@ -1236,6 +1242,7 @@ namespace Aws
       class DisassociateIpamResourceDiscoveryRequest;
       class DisassociateNatGatewayAddressRequest;
       class DisassociateRouteTableRequest;
+      class DisassociateSecurityGroupVpcRequest;
       class DisassociateSubnetCidrBlockRequest;
       class DisassociateTransitGatewayMulticastDomainRequest;
       class DisassociateTransitGatewayPolicyTableRequest;
@@ -1490,6 +1497,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssociateIpamResourceDiscoveryResponse, EC2Error> AssociateIpamResourceDiscoveryOutcome;
       typedef Aws::Utils::Outcome<AssociateNatGatewayAddressResponse, EC2Error> AssociateNatGatewayAddressOutcome;
       typedef Aws::Utils::Outcome<AssociateRouteTableResponse, EC2Error> AssociateRouteTableOutcome;
+      typedef Aws::Utils::Outcome<AssociateSecurityGroupVpcResponse, EC2Error> AssociateSecurityGroupVpcOutcome;
       typedef Aws::Utils::Outcome<AssociateSubnetCidrBlockResponse, EC2Error> AssociateSubnetCidrBlockOutcome;
       typedef Aws::Utils::Outcome<AssociateTransitGatewayMulticastDomainResponse, EC2Error> AssociateTransitGatewayMulticastDomainOutcome;
       typedef Aws::Utils::Outcome<AssociateTransitGatewayPolicyTableResponse, EC2Error> AssociateTransitGatewayPolicyTableOutcome;
@@ -1790,6 +1798,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeScheduledInstancesResponse, EC2Error> DescribeScheduledInstancesOutcome;
       typedef Aws::Utils::Outcome<DescribeSecurityGroupReferencesResponse, EC2Error> DescribeSecurityGroupReferencesOutcome;
       typedef Aws::Utils::Outcome<DescribeSecurityGroupRulesResponse, EC2Error> DescribeSecurityGroupRulesOutcome;
+      typedef Aws::Utils::Outcome<DescribeSecurityGroupVpcAssociationsResponse, EC2Error> DescribeSecurityGroupVpcAssociationsOutcome;
       typedef Aws::Utils::Outcome<DescribeSecurityGroupsResponse, EC2Error> DescribeSecurityGroupsOutcome;
       typedef Aws::Utils::Outcome<DescribeSnapshotAttributeResponse, EC2Error> DescribeSnapshotAttributeOutcome;
       typedef Aws::Utils::Outcome<DescribeSnapshotTierStatusResponse, EC2Error> DescribeSnapshotTierStatusOutcome;
@@ -1873,6 +1882,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateIpamResourceDiscoveryResponse, EC2Error> DisassociateIpamResourceDiscoveryOutcome;
       typedef Aws::Utils::Outcome<DisassociateNatGatewayAddressResponse, EC2Error> DisassociateNatGatewayAddressOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DisassociateRouteTableOutcome;
+      typedef Aws::Utils::Outcome<DisassociateSecurityGroupVpcResponse, EC2Error> DisassociateSecurityGroupVpcOutcome;
       typedef Aws::Utils::Outcome<DisassociateSubnetCidrBlockResponse, EC2Error> DisassociateSubnetCidrBlockOutcome;
       typedef Aws::Utils::Outcome<DisassociateTransitGatewayMulticastDomainResponse, EC2Error> DisassociateTransitGatewayMulticastDomainOutcome;
       typedef Aws::Utils::Outcome<DisassociateTransitGatewayPolicyTableResponse, EC2Error> DisassociateTransitGatewayPolicyTableOutcome;
@@ -2127,6 +2137,7 @@ namespace Aws
       typedef std::future<AssociateIpamResourceDiscoveryOutcome> AssociateIpamResourceDiscoveryOutcomeCallable;
       typedef std::future<AssociateNatGatewayAddressOutcome> AssociateNatGatewayAddressOutcomeCallable;
       typedef std::future<AssociateRouteTableOutcome> AssociateRouteTableOutcomeCallable;
+      typedef std::future<AssociateSecurityGroupVpcOutcome> AssociateSecurityGroupVpcOutcomeCallable;
       typedef std::future<AssociateSubnetCidrBlockOutcome> AssociateSubnetCidrBlockOutcomeCallable;
       typedef std::future<AssociateTransitGatewayMulticastDomainOutcome> AssociateTransitGatewayMulticastDomainOutcomeCallable;
       typedef std::future<AssociateTransitGatewayPolicyTableOutcome> AssociateTransitGatewayPolicyTableOutcomeCallable;
@@ -2427,6 +2438,7 @@ namespace Aws
       typedef std::future<DescribeScheduledInstancesOutcome> DescribeScheduledInstancesOutcomeCallable;
       typedef std::future<DescribeSecurityGroupReferencesOutcome> DescribeSecurityGroupReferencesOutcomeCallable;
       typedef std::future<DescribeSecurityGroupRulesOutcome> DescribeSecurityGroupRulesOutcomeCallable;
+      typedef std::future<DescribeSecurityGroupVpcAssociationsOutcome> DescribeSecurityGroupVpcAssociationsOutcomeCallable;
       typedef std::future<DescribeSecurityGroupsOutcome> DescribeSecurityGroupsOutcomeCallable;
       typedef std::future<DescribeSnapshotAttributeOutcome> DescribeSnapshotAttributeOutcomeCallable;
       typedef std::future<DescribeSnapshotTierStatusOutcome> DescribeSnapshotTierStatusOutcomeCallable;
@@ -2510,6 +2522,7 @@ namespace Aws
       typedef std::future<DisassociateIpamResourceDiscoveryOutcome> DisassociateIpamResourceDiscoveryOutcomeCallable;
       typedef std::future<DisassociateNatGatewayAddressOutcome> DisassociateNatGatewayAddressOutcomeCallable;
       typedef std::future<DisassociateRouteTableOutcome> DisassociateRouteTableOutcomeCallable;
+      typedef std::future<DisassociateSecurityGroupVpcOutcome> DisassociateSecurityGroupVpcOutcomeCallable;
       typedef std::future<DisassociateSubnetCidrBlockOutcome> DisassociateSubnetCidrBlockOutcomeCallable;
       typedef std::future<DisassociateTransitGatewayMulticastDomainOutcome> DisassociateTransitGatewayMulticastDomainOutcomeCallable;
       typedef std::future<DisassociateTransitGatewayPolicyTableOutcome> DisassociateTransitGatewayPolicyTableOutcomeCallable;
@@ -2767,6 +2780,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::AssociateIpamResourceDiscoveryRequest&, const Model::AssociateIpamResourceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIpamResourceDiscoveryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateNatGatewayAddressRequest&, const Model::AssociateNatGatewayAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateNatGatewayAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateRouteTableRequest&, const Model::AssociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRouteTableResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AssociateSecurityGroupVpcRequest&, const Model::AssociateSecurityGroupVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSecurityGroupVpcResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateSubnetCidrBlockRequest&, const Model::AssociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSubnetCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateTransitGatewayMulticastDomainRequest&, const Model::AssociateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTransitGatewayMulticastDomainResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateTransitGatewayPolicyTableRequest&, const Model::AssociateTransitGatewayPolicyTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTransitGatewayPolicyTableResponseReceivedHandler;
@@ -3067,6 +3081,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeScheduledInstancesRequest&, const Model::DescribeScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduledInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSecurityGroupReferencesRequest&, const Model::DescribeSecurityGroupReferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityGroupReferencesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSecurityGroupRulesRequest&, const Model::DescribeSecurityGroupRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityGroupRulesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeSecurityGroupVpcAssociationsRequest&, const Model::DescribeSecurityGroupVpcAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityGroupVpcAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSecurityGroupsRequest&, const Model::DescribeSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSnapshotAttributeRequest&, const Model::DescribeSnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSnapshotTierStatusRequest&, const Model::DescribeSnapshotTierStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotTierStatusResponseReceivedHandler;
@@ -3150,6 +3165,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DisassociateIpamResourceDiscoveryRequest&, const Model::DisassociateIpamResourceDiscoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIpamResourceDiscoveryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateNatGatewayAddressRequest&, const Model::DisassociateNatGatewayAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateNatGatewayAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateRouteTableRequest&, const Model::DisassociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRouteTableResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisassociateSecurityGroupVpcRequest&, const Model::DisassociateSecurityGroupVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSecurityGroupVpcResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateSubnetCidrBlockRequest&, const Model::DisassociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSubnetCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayMulticastDomainRequest&, const Model::DisassociateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayMulticastDomainResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayPolicyTableRequest&, const Model::DisassociateTransitGatewayPolicyTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayPolicyTableResponseReceivedHandler;

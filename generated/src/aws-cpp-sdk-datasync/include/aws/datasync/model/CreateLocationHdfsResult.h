@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the source HDFS cluster location that's created. </p>
+     * <p>The ARN of the source HDFS cluster location that you create.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
     inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }

@@ -56,8 +56,8 @@ namespace Model
     ///@{
     /**
      * <p>A boolean flag that determines whether SDL should be generated for
-     * introspected types or not. If set to <code>true</code>, each model will contain
-     * an <code>sdl</code> property that contains the SDL for that type. The SDL only
+     * introspected types. If set to <code>true</code>, each model will contain an
+     * <code>sdl</code> property that contains the SDL for that type. The SDL only
      * contains the type data and no additional metadata or directives. </p>
      */
     inline bool GetIncludeModelsSDL() const{ return m_includeModelsSDL; }

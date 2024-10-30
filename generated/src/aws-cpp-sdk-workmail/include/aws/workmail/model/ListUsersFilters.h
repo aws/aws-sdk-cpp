@@ -92,6 +92,20 @@ namespace Model
     inline ListUsersFilters& WithState(const EntityState& value) { SetState(value); return *this;}
     inline ListUsersFilters& WithState(EntityState&& value) { SetState(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Filters only users with the ID from the IAM Identity Center.</p>
+     */
+    inline const Aws::String& GetIdentityProviderUserIdPrefix() const{ return m_identityProviderUserIdPrefix; }
+    inline bool IdentityProviderUserIdPrefixHasBeenSet() const { return m_identityProviderUserIdPrefixHasBeenSet; }
+    inline void SetIdentityProviderUserIdPrefix(const Aws::String& value) { m_identityProviderUserIdPrefixHasBeenSet = true; m_identityProviderUserIdPrefix = value; }
+    inline void SetIdentityProviderUserIdPrefix(Aws::String&& value) { m_identityProviderUserIdPrefixHasBeenSet = true; m_identityProviderUserIdPrefix = std::move(value); }
+    inline void SetIdentityProviderUserIdPrefix(const char* value) { m_identityProviderUserIdPrefixHasBeenSet = true; m_identityProviderUserIdPrefix.assign(value); }
+    inline ListUsersFilters& WithIdentityProviderUserIdPrefix(const Aws::String& value) { SetIdentityProviderUserIdPrefix(value); return *this;}
+    inline ListUsersFilters& WithIdentityProviderUserIdPrefix(Aws::String&& value) { SetIdentityProviderUserIdPrefix(std::move(value)); return *this;}
+    inline ListUsersFilters& WithIdentityProviderUserIdPrefix(const char* value) { SetIdentityProviderUserIdPrefix(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_usernamePrefix;
@@ -105,6 +119,9 @@ namespace Model
 
     EntityState m_state;
     bool m_stateHasBeenSet = false;
+
+    Aws::String m_identityProviderUserIdPrefix;
+    bool m_identityProviderUserIdPrefixHasBeenSet = false;
   };
 
 } // namespace Model

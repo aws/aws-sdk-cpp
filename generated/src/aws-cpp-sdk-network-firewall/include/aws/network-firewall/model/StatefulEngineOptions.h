@@ -7,6 +7,7 @@
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/RuleOrder.h>
 #include <aws/network-firewall/model/StreamExceptionPolicy.h>
+#include <aws/network-firewall/model/FlowTimeouts.h>
 #include <utility>
 
 namespace Aws
@@ -91,6 +92,19 @@ namespace Model
     inline StatefulEngineOptions& WithStreamExceptionPolicy(const StreamExceptionPolicy& value) { SetStreamExceptionPolicy(value); return *this;}
     inline StatefulEngineOptions& WithStreamExceptionPolicy(StreamExceptionPolicy&& value) { SetStreamExceptionPolicy(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Configures the amount of time that can pass without any traffic sent through
+     * the firewall before the firewall determines that the connection is idle. </p>
+     */
+    inline const FlowTimeouts& GetFlowTimeouts() const{ return m_flowTimeouts; }
+    inline bool FlowTimeoutsHasBeenSet() const { return m_flowTimeoutsHasBeenSet; }
+    inline void SetFlowTimeouts(const FlowTimeouts& value) { m_flowTimeoutsHasBeenSet = true; m_flowTimeouts = value; }
+    inline void SetFlowTimeouts(FlowTimeouts&& value) { m_flowTimeoutsHasBeenSet = true; m_flowTimeouts = std::move(value); }
+    inline StatefulEngineOptions& WithFlowTimeouts(const FlowTimeouts& value) { SetFlowTimeouts(value); return *this;}
+    inline StatefulEngineOptions& WithFlowTimeouts(FlowTimeouts&& value) { SetFlowTimeouts(std::move(value)); return *this;}
+    ///@}
   private:
 
     RuleOrder m_ruleOrder;
@@ -98,6 +112,9 @@ namespace Model
 
     StreamExceptionPolicy m_streamExceptionPolicy;
     bool m_streamExceptionPolicyHasBeenSet = false;
+
+    FlowTimeouts m_flowTimeouts;
+    bool m_flowTimeoutsHasBeenSet = false;
   };
 
 } // namespace Model

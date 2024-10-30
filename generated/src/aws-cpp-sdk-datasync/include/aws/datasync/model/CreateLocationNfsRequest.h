@@ -77,11 +77,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to
+     * <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can
      * connect to your NFS file server.</p> <p>You can specify more than one agent. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
-     * multiple agents for transfers</a>.</p>
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#multiple-agents">Using
+     * multiple DataSync agents</a>.</p>
      */
     inline const OnPremConfig& GetOnPremConfig() const{ return m_onPremConfig; }
     inline bool OnPremConfigHasBeenSet() const { return m_onPremConfigHasBeenSet; }

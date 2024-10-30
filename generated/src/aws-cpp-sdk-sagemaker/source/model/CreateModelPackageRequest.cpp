@@ -38,7 +38,8 @@ CreateModelPackageRequest::CreateModelPackageRequest() :
     m_skipModelValidationHasBeenSet(false),
     m_sourceUriHasBeenSet(false),
     m_securityConfigHasBeenSet(false),
-    m_modelCardHasBeenSet(false)
+    m_modelCardHasBeenSet(false),
+    m_modelLifeCycleHasBeenSet(false)
 {
 }
 
@@ -188,6 +189,12 @@ Aws::String CreateModelPackageRequest::SerializePayload() const
   if(m_modelCardHasBeenSet)
   {
    payload.WithObject("ModelCard", m_modelCard.Jsonize());
+
+  }
+
+  if(m_modelLifeCycleHasBeenSet)
+  {
+   payload.WithObject("ModelLifeCycle", m_modelLifeCycle.Jsonize());
 
   }
 

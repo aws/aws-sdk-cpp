@@ -22,7 +22,8 @@ CreateUserRequest::CreateUserRequest() :
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
     m_hiddenFromGlobalAddressList(false),
-    m_hiddenFromGlobalAddressListHasBeenSet(false)
+    m_hiddenFromGlobalAddressListHasBeenSet(false),
+    m_identityProviderUserIdHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,12 @@ Aws::String CreateUserRequest::SerializePayload() const
   if(m_hiddenFromGlobalAddressListHasBeenSet)
   {
    payload.WithBool("HiddenFromGlobalAddressList", m_hiddenFromGlobalAddressList);
+
+  }
+
+  if(m_identityProviderUserIdHasBeenSet)
+  {
+   payload.WithString("IdentityProviderUserId", m_identityProviderUserId);
 
   }
 

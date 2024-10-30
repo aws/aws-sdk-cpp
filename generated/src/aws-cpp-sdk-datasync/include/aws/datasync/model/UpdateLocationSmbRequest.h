@@ -129,9 +129,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the DataSync agent (or agents) which you want to connect to your
-     * SMB file server. You specify an agent by using its Amazon Resource Name
-     * (ARN).</p>
+     * <p>Specifies the DataSync agent (or agents) that can connect to your SMB file
+     * server. You specify an agent by using its Amazon Resource Name (ARN).</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }

@@ -218,7 +218,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Updates the user's zipcode.</p>
+     * <p>Updates the user's zip code.</p>
      */
     inline const Aws::String& GetZipCode() const{ return m_zipCode; }
     inline bool ZipCodeHasBeenSet() const { return m_zipCodeHasBeenSet; }
@@ -270,6 +270,22 @@ namespace Model
     inline UpdateUserRequest& WithOffice(const Aws::String& value) { SetOffice(value); return *this;}
     inline UpdateUserRequest& WithOffice(Aws::String&& value) { SetOffice(std::move(value)); return *this;}
     inline UpdateUserRequest& WithOffice(const char* value) { SetOffice(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>User ID from the IAM Identity Center. If this parameter is empty it will be
+     * updated automatically when the user logs in for the first time to the mailbox
+     * associated with WorkMail.</p>
+     */
+    inline const Aws::String& GetIdentityProviderUserId() const{ return m_identityProviderUserId; }
+    inline bool IdentityProviderUserIdHasBeenSet() const { return m_identityProviderUserIdHasBeenSet; }
+    inline void SetIdentityProviderUserId(const Aws::String& value) { m_identityProviderUserIdHasBeenSet = true; m_identityProviderUserId = value; }
+    inline void SetIdentityProviderUserId(Aws::String&& value) { m_identityProviderUserIdHasBeenSet = true; m_identityProviderUserId = std::move(value); }
+    inline void SetIdentityProviderUserId(const char* value) { m_identityProviderUserIdHasBeenSet = true; m_identityProviderUserId.assign(value); }
+    inline UpdateUserRequest& WithIdentityProviderUserId(const Aws::String& value) { SetIdentityProviderUserId(value); return *this;}
+    inline UpdateUserRequest& WithIdentityProviderUserId(Aws::String&& value) { SetIdentityProviderUserId(std::move(value)); return *this;}
+    inline UpdateUserRequest& WithIdentityProviderUserId(const char* value) { SetIdentityProviderUserId(value); return *this;}
     ///@}
   private:
 
@@ -323,6 +339,9 @@ namespace Model
 
     Aws::String m_office;
     bool m_officeHasBeenSet = false;
+
+    Aws::String m_identityProviderUserId;
+    bool m_identityProviderUserIdHasBeenSet = false;
   };
 
 } // namespace Model

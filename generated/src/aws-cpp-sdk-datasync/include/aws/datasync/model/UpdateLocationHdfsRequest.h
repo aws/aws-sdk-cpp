@@ -207,7 +207,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+     * <p>The Amazon Resource Names (ARNs) of the DataSync agents that can connect to
+     * your HDFS cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }

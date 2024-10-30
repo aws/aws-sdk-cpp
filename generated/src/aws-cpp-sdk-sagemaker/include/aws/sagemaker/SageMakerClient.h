@@ -1846,11 +1846,14 @@ namespace SageMaker
          * that you specify. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
          * to Amazon SageMaker Studio Through an Interface VPC Endpoint</a> .</p> 
-         * <p>The URL that you get from a call to <code>CreatePresignedDomainUrl</code> has
-         * a default timeout of 5 minutes. You can configure this value using
-         * <code>ExpiresInSeconds</code>. If you try to use the URL after the timeout limit
-         * expires, you are directed to the Amazon Web Services console sign-in page.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>The URL that you get from a call to
+         * <code>CreatePresignedDomainUrl</code> has a default timeout of 5 minutes. You
+         * can configure this value using <code>ExpiresInSeconds</code>. If you try to use
+         * the URL after the timeout limit expires, you are directed to the Amazon Web
+         * Services console sign-in page.</p> </li> <li> <p>The JupyterLab session default
+         * expiration time is 12 hours. You can configure this value using
+         * SessionExpirationDurationInSeconds.</p> </li> </ul> <p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
          * API Reference</a></p>
          */

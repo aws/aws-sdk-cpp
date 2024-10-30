@@ -25,8 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The subnet and security groups that DataSync uses to access your Amazon EFS
-   * file system.</p><p><h3>See Also:</h3>   <a
+   * <p>The subnet and security groups that DataSync uses to connect to one of your
+   * Amazon EFS file system's <a
+   * href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount
+   * targets</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/Ec2Config">AWS
    * API Reference</a></p>
    */

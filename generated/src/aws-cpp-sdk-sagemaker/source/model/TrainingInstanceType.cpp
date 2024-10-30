@@ -52,7 +52,6 @@ namespace Aws
         static const int ml_p4de_24xlarge_HASH = HashingUtils::HashString("ml.p4de.24xlarge");
         static const int ml_p5_48xlarge_HASH = HashingUtils::HashString("ml.p5.48xlarge");
         static const int ml_p5e_48xlarge_HASH = HashingUtils::HashString("ml.p5e.48xlarge");
-        static const int ml_p5en_48xlarge_HASH = HashingUtils::HashString("ml.p5en.48xlarge");
         static const int ml_c5_xlarge_HASH = HashingUtils::HashString("ml.c5.xlarge");
         static const int ml_c5_2xlarge_HASH = HashingUtils::HashString("ml.c5.2xlarge");
         static const int ml_c5_4xlarge_HASH = HashingUtils::HashString("ml.c5.4xlarge");
@@ -74,7 +73,6 @@ namespace Aws
         static const int ml_trn1_2xlarge_HASH = HashingUtils::HashString("ml.trn1.2xlarge");
         static const int ml_trn1_32xlarge_HASH = HashingUtils::HashString("ml.trn1.32xlarge");
         static const int ml_trn1n_32xlarge_HASH = HashingUtils::HashString("ml.trn1n.32xlarge");
-        static const int ml_trn2_48xlarge_HASH = HashingUtils::HashString("ml.trn2.48xlarge");
         static const int ml_m6i_large_HASH = HashingUtils::HashString("ml.m6i.large");
         static const int ml_m6i_xlarge_HASH = HashingUtils::HashString("ml.m6i.xlarge");
         static const int ml_m6i_2xlarge_HASH = HashingUtils::HashString("ml.m6i.2xlarge");
@@ -245,10 +243,6 @@ namespace Aws
           {
             return TrainingInstanceType::ml_p5e_48xlarge;
           }
-          else if (hashCode == ml_p5en_48xlarge_HASH)
-          {
-            return TrainingInstanceType::ml_p5en_48xlarge;
-          }
           else if (hashCode == ml_c5_xlarge_HASH)
           {
             return TrainingInstanceType::ml_c5_xlarge;
@@ -332,10 +326,6 @@ namespace Aws
           else if (hashCode == ml_trn1n_32xlarge_HASH)
           {
             return TrainingInstanceType::ml_trn1n_32xlarge;
-          }
-          else if (hashCode == ml_trn2_48xlarge_HASH)
-          {
-            return TrainingInstanceType::ml_trn2_48xlarge;
           }
           else if (hashCode == ml_m6i_large_HASH)
           {
@@ -565,8 +555,6 @@ namespace Aws
             return "ml.p5.48xlarge";
           case TrainingInstanceType::ml_p5e_48xlarge:
             return "ml.p5e.48xlarge";
-          case TrainingInstanceType::ml_p5en_48xlarge:
-            return "ml.p5en.48xlarge";
           case TrainingInstanceType::ml_c5_xlarge:
             return "ml.c5.xlarge";
           case TrainingInstanceType::ml_c5_2xlarge:
@@ -609,8 +597,6 @@ namespace Aws
             return "ml.trn1.32xlarge";
           case TrainingInstanceType::ml_trn1n_32xlarge:
             return "ml.trn1n.32xlarge";
-          case TrainingInstanceType::ml_trn2_48xlarge:
-            return "ml.trn2.48xlarge";
           case TrainingInstanceType::ml_m6i_large:
             return "ml.m6i.large";
           case TrainingInstanceType::ml_m6i_xlarge:

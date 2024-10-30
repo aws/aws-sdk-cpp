@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
+     * <p>Specify a Amazon Web Services Key Management Service key ID to encrypt the
+     * managed storage.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

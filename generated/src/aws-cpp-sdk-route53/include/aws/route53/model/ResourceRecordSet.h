@@ -93,23 +93,27 @@ namespace Model
      * <p>Valid values for basic resource record sets: <code>A</code> |
      * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code>
      * |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> |
-     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
-     * <p>Values for weighted, latency, geolocation, and failover resource record sets:
-     * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
+     * <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>|
+     * <code>TLSA</code>| <code>SSHFP</code>| <code>SVCB</code>| <code>HTTPS</code>
+     * </p> <p>Values for weighted, latency, geolocation, and failover resource record
+     * sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code>
+     * | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code>| <code>TLSA</code>| <code>SSHFP</code>|
+     * <code>SVCB</code>| <code>HTTPS</code>. When creating a group of weighted,
+     * latency, geolocation, or failover resource record sets, specify the same value
+     * for all of the resource record sets in the group.</p> <p>Valid values for
+     * multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
      * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
-     * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
-     * geolocation, or failover resource record sets, specify the same value for all of
-     * the resource record sets in the group.</p> <p>Valid values for multivalue answer
-     * resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
-     * <code>TXT</code> </p>  <p>SPF records were formerly used to verify the
-     * identity of the sender of email messages. However, we no longer recommend that
-     * you create resource record sets for which the value of <code>Type</code> is
-     * <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use
-     * of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence
-     * and mechanism defined in [RFC4408] have led to some interoperability issues.
-     * Accordingly, its use is no longer appropriate for SPF version 1; implementations
-     * are not to use it." In RFC 7208, see section 14.1, <a
+     * <code>SRV</code> | <code>TXT</code>| <code>CAA</code>| <code>TLSA</code>|
+     * <code>SSHFP</code>| <code>SVCB</code>| <code>HTTPS</code> </p>  <p>SPF
+     * records were formerly used to verify the identity of the sender of email
+     * messages. However, we no longer recommend that you create resource record sets
+     * for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208,
+     * <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email,
+     * Version 1</i>, has been updated to say, "...[I]ts existence and mechanism
+     * defined in [RFC4408] have led to some interoperability issues. Accordingly, its
+     * use is no longer appropriate for SPF version 1; implementations are not to use
+     * it." In RFC 7208, see section 14.1, <a
      * href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record
      * Type</a>.</p>  <p>Values for alias resource record sets:</p> <ul> <li>
      * <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b>

@@ -24,6 +24,7 @@ CreateWorkgroupRequest::CreateWorkgroupRequest() :
     m_namespaceNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_pricePerformanceTargetHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -81,6 +82,12 @@ Aws::String CreateWorkgroupRequest::SerializePayload() const
   if(m_portHasBeenSet)
   {
    payload.WithInteger("port", m_port);
+
+  }
+
+  if(m_pricePerformanceTargetHasBeenSet)
+  {
+   payload.WithObject("pricePerformanceTarget", m_pricePerformanceTarget.Jsonize());
 
   }
 

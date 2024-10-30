@@ -7,6 +7,7 @@
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/TaskStatus.h>
+#include <aws/datasync/model/TaskMode.h>
 #include <utility>
 
 namespace Aws
@@ -81,6 +82,20 @@ namespace Model
     inline TaskListEntry& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline TaskListEntry& WithName(const char* value) { SetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The task mode that you're using. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing
+     * a task mode for your data transfer</a>.</p>
+     */
+    inline const TaskMode& GetTaskMode() const{ return m_taskMode; }
+    inline bool TaskModeHasBeenSet() const { return m_taskModeHasBeenSet; }
+    inline void SetTaskMode(const TaskMode& value) { m_taskModeHasBeenSet = true; m_taskMode = value; }
+    inline void SetTaskMode(TaskMode&& value) { m_taskModeHasBeenSet = true; m_taskMode = std::move(value); }
+    inline TaskListEntry& WithTaskMode(const TaskMode& value) { SetTaskMode(value); return *this;}
+    inline TaskListEntry& WithTaskMode(TaskMode&& value) { SetTaskMode(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_taskArn;
@@ -91,6 +106,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    TaskMode m_taskMode;
+    bool m_taskModeHasBeenSet = false;
   };
 
 } // namespace Model

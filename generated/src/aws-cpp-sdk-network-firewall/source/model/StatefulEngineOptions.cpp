@@ -22,7 +22,8 @@ StatefulEngineOptions::StatefulEngineOptions() :
     m_ruleOrder(RuleOrder::NOT_SET),
     m_ruleOrderHasBeenSet(false),
     m_streamExceptionPolicy(StreamExceptionPolicy::NOT_SET),
-    m_streamExceptionPolicyHasBeenSet(false)
+    m_streamExceptionPolicyHasBeenSet(false),
+    m_flowTimeoutsHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,13 @@ StatefulEngineOptions& StatefulEngineOptions::operator =(JsonView jsonValue)
     m_streamExceptionPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FlowTimeouts"))
+  {
+    m_flowTimeouts = jsonValue.GetObject("FlowTimeouts");
+
+    m_flowTimeoutsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +71,12 @@ JsonValue StatefulEngineOptions::Jsonize() const
   if(m_streamExceptionPolicyHasBeenSet)
   {
    payload.WithString("StreamExceptionPolicy", StreamExceptionPolicyMapper::GetNameForStreamExceptionPolicy(m_streamExceptionPolicy));
+  }
+
+  if(m_flowTimeoutsHasBeenSet)
+  {
+   payload.WithObject("FlowTimeouts", m_flowTimeouts.Jsonize());
+
   }
 
   return payload;

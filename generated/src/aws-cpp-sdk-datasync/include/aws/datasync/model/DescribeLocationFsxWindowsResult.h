@@ -63,8 +63,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARNs of the security groups that are configured for the FSx for Windows
-     * File Server file system.</p>
+     * <p>The ARNs of the Amazon EC2 security groups that provide access to your file
+     * system's preferred subnet.</p> <p>For information about configuring security
+     * groups for file system access, see the <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html">
+     * <i>Amazon FSx for Windows File Server User Guide</i> </a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
     inline void SetSecurityGroupArns(const Aws::Vector<Aws::String>& value) { m_securityGroupArns = value; }

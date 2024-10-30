@@ -29,6 +29,7 @@ CreateDomainRequest::CreateDomainRequest() :
     m_logPublishingOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
     m_advancedSecurityOptionsHasBeenSet(false),
+    m_identityCenterOptionsHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_autoTuneOptionsHasBeenSet(false),
     m_offPeakWindowOptionsHasBeenSet(false),
@@ -137,6 +138,12 @@ Aws::String CreateDomainRequest::SerializePayload() const
   if(m_advancedSecurityOptionsHasBeenSet)
   {
    payload.WithObject("AdvancedSecurityOptions", m_advancedSecurityOptions.Jsonize());
+
+  }
+
+  if(m_identityCenterOptionsHasBeenSet)
+  {
+   payload.WithObject("IdentityCenterOptions", m_identityCenterOptions.Jsonize());
 
   }
 

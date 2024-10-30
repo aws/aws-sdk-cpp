@@ -14,8 +14,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appsync/model/LambdaAuthorizerConfig.h>
-#include <aws/appsync/model/GraphQLApiVisibility.h>
 #include <aws/appsync/model/GraphQLApiType.h>
+#include <aws/appsync/model/GraphQLApiVisibility.h>
 #include <aws/appsync/model/GraphQLApiIntrospectionConfig.h>
 #include <aws/appsync/model/EnhancedMetricsConfig.h>
 #include <aws/appsync/model/AdditionalAuthenticationProvider.h>
@@ -166,21 +166,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
-     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
-     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
-     * been created.</p>
-     */
-    inline const GraphQLApiVisibility& GetVisibility() const{ return m_visibility; }
-    inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const GraphQLApiVisibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(GraphQLApiVisibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline CreateGraphqlApiRequest& WithVisibility(const GraphQLApiVisibility& value) { SetVisibility(value); return *this;}
-    inline CreateGraphqlApiRequest& WithVisibility(GraphQLApiVisibility&& value) { SetVisibility(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The value that indicates whether the GraphQL API is a standard API
      * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
      */
@@ -207,6 +192,21 @@ namespace Model
     inline CreateGraphqlApiRequest& WithMergedApiExecutionRoleArn(const Aws::String& value) { SetMergedApiExecutionRoleArn(value); return *this;}
     inline CreateGraphqlApiRequest& WithMergedApiExecutionRoleArn(Aws::String&& value) { SetMergedApiExecutionRoleArn(std::move(value)); return *this;}
     inline CreateGraphqlApiRequest& WithMergedApiExecutionRoleArn(const char* value) { SetMergedApiExecutionRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline const GraphQLApiVisibility& GetVisibility() const{ return m_visibility; }
+    inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
+    inline void SetVisibility(const GraphQLApiVisibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline void SetVisibility(GraphQLApiVisibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
+    inline CreateGraphqlApiRequest& WithVisibility(const GraphQLApiVisibility& value) { SetVisibility(value); return *this;}
+    inline CreateGraphqlApiRequest& WithVisibility(GraphQLApiVisibility&& value) { SetVisibility(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -313,14 +313,14 @@ namespace Model
     LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
     bool m_lambdaAuthorizerConfigHasBeenSet = false;
 
-    GraphQLApiVisibility m_visibility;
-    bool m_visibilityHasBeenSet = false;
-
     GraphQLApiType m_apiType;
     bool m_apiTypeHasBeenSet = false;
 
     Aws::String m_mergedApiExecutionRoleArn;
     bool m_mergedApiExecutionRoleArnHasBeenSet = false;
+
+    GraphQLApiVisibility m_visibility;
+    bool m_visibilityHasBeenSet = false;
 
     Aws::String m_ownerContact;
     bool m_ownerContactHasBeenSet = false;

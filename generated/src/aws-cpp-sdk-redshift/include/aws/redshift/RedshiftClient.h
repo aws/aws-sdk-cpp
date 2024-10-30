@@ -771,8 +771,8 @@ namespace Redshift
         }
 
         /**
-         * <p>Creates a zero-ETL integration with Amazon Redshift.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Creates a zero-ETL integration or S3 event integration with Amazon
+         * Redshift.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateIntegration">AWS
          * API Reference</a></p>
          */
@@ -1298,8 +1298,8 @@ namespace Redshift
         }
 
         /**
-         * <p>Deletes a zero-ETL integration with Amazon Redshift.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Deletes a zero-ETL integration or S3 event integration with Amazon
+         * Redshift.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteIntegration">AWS
          * API Reference</a></p>
          */
@@ -2261,7 +2261,7 @@ namespace Redshift
         }
 
         /**
-         * <p>Describes one or more zero-ETL integrations with Amazon
+         * <p>Describes one or more zero-ETL or S3 event integrations with Amazon
          * Redshift.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeIntegrations">AWS
          * API Reference</a></p>
@@ -3466,8 +3466,8 @@ namespace Redshift
         }
 
         /**
-         * <p>Modifies a zero-ETL integration with Amazon Redshift.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Modifies a zero-ETL integration or S3 event integration with Amazon
+         * Redshift.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyIntegration">AWS
          * API Reference</a></p>
          */

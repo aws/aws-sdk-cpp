@@ -1,0 +1,88 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/opensearch/model/IamIdentityCenterOptionsInput.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace OpenSearchService
+{
+namespace Model
+{
+
+IamIdentityCenterOptionsInput::IamIdentityCenterOptionsInput() : 
+    m_enabled(false),
+    m_enabledHasBeenSet(false),
+    m_iamIdentityCenterInstanceArnHasBeenSet(false),
+    m_iamRoleForIdentityCenterApplicationArnHasBeenSet(false)
+{
+}
+
+IamIdentityCenterOptionsInput::IamIdentityCenterOptionsInput(JsonView jsonValue)
+  : IamIdentityCenterOptionsInput()
+{
+  *this = jsonValue;
+}
+
+IamIdentityCenterOptionsInput& IamIdentityCenterOptionsInput::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("enabled"))
+  {
+    m_enabled = jsonValue.GetBool("enabled");
+
+    m_enabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("iamIdentityCenterInstanceArn"))
+  {
+    m_iamIdentityCenterInstanceArn = jsonValue.GetString("iamIdentityCenterInstanceArn");
+
+    m_iamIdentityCenterInstanceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("iamRoleForIdentityCenterApplicationArn"))
+  {
+    m_iamRoleForIdentityCenterApplicationArn = jsonValue.GetString("iamRoleForIdentityCenterApplicationArn");
+
+    m_iamRoleForIdentityCenterApplicationArnHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue IamIdentityCenterOptionsInput::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_enabledHasBeenSet)
+  {
+   payload.WithBool("enabled", m_enabled);
+
+  }
+
+  if(m_iamIdentityCenterInstanceArnHasBeenSet)
+  {
+   payload.WithString("iamIdentityCenterInstanceArn", m_iamIdentityCenterInstanceArn);
+
+  }
+
+  if(m_iamRoleForIdentityCenterApplicationArnHasBeenSet)
+  {
+   payload.WithString("iamRoleForIdentityCenterApplicationArn", m_iamRoleForIdentityCenterApplicationArn);
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace OpenSearchService
+} // namespace Aws
