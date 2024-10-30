@@ -3,6 +3,9 @@ name: issue-regression-label
 on:
   issues:
     types: [opened, edited]
+
+  workflow_dispatch:  # Allows manual triggering of the workflow
+
 jobs:
   add-regression-label:
     runs-on: ubuntu-latest
