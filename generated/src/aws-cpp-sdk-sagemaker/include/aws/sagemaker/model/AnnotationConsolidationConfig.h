@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Configures how labels are consolidated across human workers and processes
-   * output data. </p><p><h3>See Also:</h3>   <a
+   * output data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AnnotationConsolidationConfig">AWS
    * API Reference</a></p>
    */
@@ -43,14 +43,13 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for
      * <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation
-     * consolidation</a> and to process output data.</p> <p>This parameter is required
-     * for all labeling jobs. For <a
+     * consolidation</a> and to process output data.</p> <p>For <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
      * task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda
      * function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom
      * labeling workflows, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation
-     * Lambda</a>. </p> <p> <b>Bounding box</b> - Finds the most similar boxes from
+     * Lambda</a>.</p> <p> <b>Bounding box</b> - Finds the most similar boxes from
      * different workers based on the Jaccard index of the boxes.</p> <ul> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code> </p>
      * </li> <li> <p>

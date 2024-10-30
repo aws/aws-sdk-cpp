@@ -48,6 +48,7 @@ namespace ${serviceNamespace}
     public:
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "${metadata.serviceId}"; }
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConfigTypeDeclarations.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")

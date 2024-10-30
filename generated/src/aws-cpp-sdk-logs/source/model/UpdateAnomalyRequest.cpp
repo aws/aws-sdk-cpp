@@ -18,7 +18,9 @@ UpdateAnomalyRequest::UpdateAnomalyRequest() :
     m_anomalyDetectorArnHasBeenSet(false),
     m_suppressionType(SuppressionType::NOT_SET),
     m_suppressionTypeHasBeenSet(false),
-    m_suppressionPeriodHasBeenSet(false)
+    m_suppressionPeriodHasBeenSet(false),
+    m_baseline(false),
+    m_baselineHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,12 @@ Aws::String UpdateAnomalyRequest::SerializePayload() const
   if(m_suppressionPeriodHasBeenSet)
   {
    payload.WithObject("suppressionPeriod", m_suppressionPeriod.Jsonize());
+
+  }
+
+  if(m_baselineHasBeenSet)
+  {
+   payload.WithBool("baseline", m_baseline);
 
   }
 

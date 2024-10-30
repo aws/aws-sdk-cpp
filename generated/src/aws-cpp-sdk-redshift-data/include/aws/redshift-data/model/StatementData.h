@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift-data/model/ResultFormatString.h>
 #include <aws/redshift-data/model/StatusString.h>
 #include <aws/redshift-data/model/SqlParameter.h>
 #include <utility>
@@ -124,6 +125,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The data format of the result of the SQL statement.</p>
+     */
+    inline const ResultFormatString& GetResultFormat() const{ return m_resultFormat; }
+    inline bool ResultFormatHasBeenSet() const { return m_resultFormatHasBeenSet; }
+    inline void SetResultFormat(const ResultFormatString& value) { m_resultFormatHasBeenSet = true; m_resultFormat = value; }
+    inline void SetResultFormat(ResultFormatString&& value) { m_resultFormatHasBeenSet = true; m_resultFormat = std::move(value); }
+    inline StatementData& WithResultFormat(const ResultFormatString& value) { SetResultFormat(value); return *this;}
+    inline StatementData& WithResultFormat(ResultFormatString&& value) { SetResultFormat(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name or Amazon Resource Name (ARN) of the secret that enables access to
      * the database. </p>
      */
@@ -208,6 +221,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_queryStrings;
     bool m_queryStringsHasBeenSet = false;
+
+    ResultFormatString m_resultFormat;
+    bool m_resultFormatHasBeenSet = false;
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet = false;

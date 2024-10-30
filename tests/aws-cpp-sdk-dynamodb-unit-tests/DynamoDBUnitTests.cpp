@@ -7,6 +7,8 @@
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/monitoring/MonitoringInterface.h>
+#include <aws/core/monitoring/MonitoringFactory.h>
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/DynamoDBEndpointProvider.h>
 #include <aws/dynamodb/DynamoDBClientConfiguration.h>
@@ -19,11 +21,130 @@ using namespace Aws;
 using namespace Aws::Client;
 using namespace Aws::Auth;
 using namespace Aws::DynamoDB;
+using namespace Aws::Monitoring;
 using namespace Aws::Http;
 using namespace Aws::Http::Standard;
 
 const char* LOG_TAG = "DynamoDBUnitTest";
 const int MAX_RETRIES = 2;
+
+class  MonitoringContext
+{
+public:
+  void Reset()
+  {
+    started = 0;
+    succeeded = 0;
+    failed = 0;
+    retryCount = 0;
+    finished = 0;
+  }
+
+  int started{0};
+  int succeeded{0};
+  int failed{0};
+  int retryCount{0};
+  int finished{0};
+};
+
+class DynamoUnitTestMonitorMock : public MonitoringInterface
+{
+public:
+  ~DynamoUnitTestMonitorMock() override = default;
+
+  explicit DynamoUnitTestMonitorMock(const std::shared_ptr<MonitoringContext>& monitoring_context)
+    : monitoring_context_(monitoring_context)
+  {
+  }
+
+  void* OnRequestStarted(const String& serviceName,
+                         const String& requestName,
+                         const std::shared_ptr<const HttpRequest>& request) const override
+  {
+    AWS_UNREFERENCED_PARAM(serviceName);
+    AWS_UNREFERENCED_PARAM(requestName);
+    AWS_UNREFERENCED_PARAM(request);
+    monitoring_context_->started++;
+    return &monitoring_context_;
+  }
+
+  void OnRequestSucceeded(const String& serviceName,
+    const String& requestName,
+    const std::shared_ptr<const HttpRequest>& request,
+    const HttpResponseOutcome& outcome,
+    const CoreMetricsCollection& metricsFromCore,
+    void* context) const override
+  {
+    AWS_UNREFERENCED_PARAM(serviceName);
+    AWS_UNREFERENCED_PARAM(requestName);
+    AWS_UNREFERENCED_PARAM(request);
+    AWS_UNREFERENCED_PARAM(outcome);
+    AWS_UNREFERENCED_PARAM(metricsFromCore);
+    AWS_UNREFERENCED_PARAM(context);
+    monitoring_context_->succeeded++;
+  }
+
+  void OnRequestFailed(const String& serviceName,
+    const String& requestName,
+    const std::shared_ptr<const HttpRequest>& request,
+    const HttpResponseOutcome& outcome,
+    const CoreMetricsCollection& metricsFromCore,
+    void* context) const override
+  {
+    AWS_UNREFERENCED_PARAM(serviceName);
+    AWS_UNREFERENCED_PARAM(requestName);
+    AWS_UNREFERENCED_PARAM(request);
+    AWS_UNREFERENCED_PARAM(outcome);
+    AWS_UNREFERENCED_PARAM(metricsFromCore);
+    AWS_UNREFERENCED_PARAM(context);
+    monitoring_context_->failed++;
+  }
+
+  void OnRequestRetry(const String& serviceName,
+    const String& requestName,
+    const std::shared_ptr<const HttpRequest>& request,
+    void* context) const override
+  {
+    AWS_UNREFERENCED_PARAM(serviceName);
+    AWS_UNREFERENCED_PARAM(requestName);
+    AWS_UNREFERENCED_PARAM(request);
+    AWS_UNREFERENCED_PARAM(context);
+    monitoring_context_->retryCount++;
+  }
+
+  void OnFinish(const String& serviceName,
+    const String& requestName,
+    const std::shared_ptr<const HttpRequest>& request,
+    void* context) const override
+  {
+    AWS_UNREFERENCED_PARAM(serviceName);
+    AWS_UNREFERENCED_PARAM(requestName);
+    AWS_UNREFERENCED_PARAM(request);
+    AWS_UNREFERENCED_PARAM(context);
+    monitoring_context_->finished++;
+  }
+
+private:
+  mutable std::shared_ptr<MonitoringContext> monitoring_context_{};
+};
+
+class DynamoUnitTestMonitorFactoryMock: public  MonitoringFactory
+{
+public:
+  explicit DynamoUnitTestMonitorFactoryMock(const std::shared_ptr<MonitoringContext>& monitoring_context)
+    : monitoring_context_(monitoring_context)
+  {
+  }
+
+  ~DynamoUnitTestMonitorFactoryMock() override = default;
+
+  UniquePtr<MonitoringInterface> CreateMonitoringInstance() const override
+  {
+    return Aws::MakeUnique<DynamoUnitTestMonitorMock>(LOG_TAG, monitoring_context_);
+  };
+private:
+  mutable std::shared_ptr<MonitoringContext> monitoring_context_{};
+};
 
 class DynamoDBUnitTest : public testing::Test {
 protected:
@@ -33,6 +154,12 @@ protected:
     test_memory_system.reset(new ExactTestMemorySystem(1024, 128));
     options_.memoryManagementOptions.memoryManager = test_memory_system.get();
 #endif
+    monitoring_context_ = Aws::MakeShared<MonitoringContext>(LOG_TAG);
+    options_.monitoringOptions.customizedMonitoringFactory_create_fn = {
+      []() -> UniquePtr<MonitoringFactory> {
+        return Aws::MakeUnique<DynamoUnitTestMonitorFactoryMock>(LOG_TAG, monitoring_context_);
+      }
+    };
     InitAPI(options_);
     mock_client_factory_ = Aws::MakeShared<MockHttpClientFactory>(LOG_TAG);
     mock_http_client_ = Aws::MakeShared<MockHttpClient>(LOG_TAG);
@@ -45,6 +172,11 @@ protected:
     configuration.region = "us-east-1";
     client_ = Aws::MakeShared<DynamoDBClient>("ALLOCATION_TAG", credentials, epProvider, configuration);
   }
+
+  void SetUp() override
+  {
+    monitoring_context_->Reset();
+  };
 
   static void TearDownTestSuite() {
     mock_client_factory_.reset();
@@ -69,6 +201,7 @@ protected:
   static std::shared_ptr<MockHttpClient> mock_http_client_;
   static std::shared_ptr<MockHttpClientFactory> mock_client_factory_;
   static std::shared_ptr<DynamoDB::DynamoDBClient> client_;
+  static std::shared_ptr<MonitoringContext> monitoring_context_;
 #ifdef USE_AWS_MEMORY_MANAGEMENT
   static std::unique_ptr<ExactTestMemorySystem> test_memory_system;
 #endif
@@ -78,6 +211,7 @@ SDKOptions DynamoDBUnitTest::options_;
 std::shared_ptr<MockHttpClient> DynamoDBUnitTest::mock_http_client_ = nullptr;
 std::shared_ptr<MockHttpClientFactory> DynamoDBUnitTest::mock_client_factory_ = nullptr;
 std::shared_ptr<DynamoDBClient> DynamoDBUnitTest::client_ = nullptr;
+std::shared_ptr<MonitoringContext> DynamoDBUnitTest::monitoring_context_= nullptr;
 #ifdef USE_AWS_MEMORY_MANAGEMENT
   std::unique_ptr<ExactTestMemorySystem> DynamoDBUnitTest::test_memory_system = nullptr;
 #endif
@@ -108,6 +242,11 @@ TEST_F(DynamoDBUnitTest, RetryShouldWork)
 
   const auto list_tables_outcome = client_->ListTables();
   EXPECT_TRUE(list_tables_outcome.IsSuccess());
+  EXPECT_EQ(2, monitoring_context_->started);
+  EXPECT_EQ(1, monitoring_context_->finished);
+  EXPECT_EQ(1, monitoring_context_->succeeded);
+  EXPECT_EQ(1, monitoring_context_->failed);
+  EXPECT_EQ(1, monitoring_context_->retryCount);
 }
 
 TEST_F(DynamoDBUnitTest, DefaultRetryStrategyShouldFailWhenRetriesFail)
@@ -137,4 +276,9 @@ TEST_F(DynamoDBUnitTest, DefaultRetryStrategyShouldFailWhenRetriesFail)
 
   const auto list_tables_outcome = client_->ListTables();
   EXPECT_FALSE(list_tables_outcome.IsSuccess());
+  EXPECT_EQ(2, monitoring_context_->started);
+  EXPECT_EQ(1, monitoring_context_->finished);
+  EXPECT_EQ(2, monitoring_context_->failed);
+  EXPECT_EQ(0, monitoring_context_->succeeded);
+  EXPECT_EQ(1, monitoring_context_->retryCount);
 }

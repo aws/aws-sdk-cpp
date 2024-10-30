@@ -143,7 +143,7 @@ namespace Model
     ///@{
     /**
      * <p>The identifier used to reference members of the collaboration. Only supports
-     * AWS account ID.</p>
+     * Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetCreatorAccountId() const{ return m_creatorAccountId; }
     inline bool CreatorAccountIdHasBeenSet() const { return m_creatorAccountIdHasBeenSet; }

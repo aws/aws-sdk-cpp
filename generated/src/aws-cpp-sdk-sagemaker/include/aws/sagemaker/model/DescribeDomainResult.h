@@ -314,7 +314,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The default settings used to create a space.</p>
+     * <p>The default settings for shared spaces that users create in the domain.</p>
      */
     inline const DefaultSpaceSettings& GetDefaultSpaceSettings() const{ return m_defaultSpaceSettings; }
     inline void SetDefaultSpaceSettings(const DefaultSpaceSettings& value) { m_defaultSpaceSettings = value; }

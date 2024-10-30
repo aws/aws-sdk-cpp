@@ -10,6 +10,7 @@
 #include <aws/cleanrooms/model/MemberStatus.h>
 #include <aws/cleanrooms/model/DataEncryptionMetadata.h>
 #include <aws/cleanrooms/model/CollaborationQueryLogStatus.h>
+#include <aws/cleanrooms/model/AnalyticsEngine.h>
 #include <utility>
 
 namespace Aws
@@ -216,6 +217,18 @@ namespace Model
     inline Collaboration& WithQueryLogStatus(const CollaborationQueryLogStatus& value) { SetQueryLogStatus(value); return *this;}
     inline Collaboration& WithQueryLogStatus(CollaborationQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The analytics engine for the collaboration.</p>
+     */
+    inline const AnalyticsEngine& GetAnalyticsEngine() const{ return m_analyticsEngine; }
+    inline bool AnalyticsEngineHasBeenSet() const { return m_analyticsEngineHasBeenSet; }
+    inline void SetAnalyticsEngine(const AnalyticsEngine& value) { m_analyticsEngineHasBeenSet = true; m_analyticsEngine = value; }
+    inline void SetAnalyticsEngine(AnalyticsEngine&& value) { m_analyticsEngineHasBeenSet = true; m_analyticsEngine = std::move(value); }
+    inline Collaboration& WithAnalyticsEngine(const AnalyticsEngine& value) { SetAnalyticsEngine(value); return *this;}
+    inline Collaboration& WithAnalyticsEngine(AnalyticsEngine&& value) { SetAnalyticsEngine(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -256,6 +269,9 @@ namespace Model
 
     CollaborationQueryLogStatus m_queryLogStatus;
     bool m_queryLogStatusHasBeenSet = false;
+
+    AnalyticsEngine m_analyticsEngine;
+    bool m_analyticsEngineHasBeenSet = false;
   };
 
 } // namespace Model

@@ -157,18 +157,7 @@ namespace Model
      * <p> <code>class_labels</code>: Specifies the classification labels file name
      * inside input tar.gz file. For example, <code>{"class_labels":
      * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
-     * separated by newlines.</p> </li> </ul> </li> <li> <p> <code>EIA</code>:
-     * Compilation for the Elastic Inference Accelerator supports the following
-     * compiler options:</p> <ul> <li> <p> <code>precision_mode</code>: Specifies the
-     * precision of compiled artifacts. Supported values are <code>"FP16"</code> and
-     * <code>"FP32"</code>. Default is <code>"FP32"</code>.</p> </li> <li> <p>
-     * <code>signature_def_key</code>: Specifies the signature to use for models in
-     * SavedModel format. Defaults is TensorFlow's default signature def key.</p> </li>
-     * <li> <p> <code>output_names</code>: Specifies a list of output tensor names for
-     * models in FrozenGraph format. Set at most one API field, either:
-     * <code>signature_def_key</code> or <code>output_names</code>.</p> </li> </ul>
-     * <p>For example: <code>{"precision_mode": "FP32", "output_names":
-     * ["output:0"]}</code> </p> </li> </ul>
+     * separated by newlines.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::String& GetCompilerOptions() const{ return m_compilerOptions; }
     inline bool CompilerOptionsHasBeenSet() const { return m_compilerOptionsHasBeenSet; }
