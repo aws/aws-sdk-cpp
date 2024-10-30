@@ -38,16 +38,6 @@
             "required": false,
             "documentation": "The AccountId Endpoint Mode.",
             "type": "String"
-        },
-        "ResourceArn": {
-            "required": false,
-            "documentation": "ResourceArn containing arn of resource",
-            "type": "String"
-        },
-        "ResourceArnList": {
-            "required": false,
-            "documentation": "ResourceArnList containing list of resource arns",
-            "type": "stringArray"
         }
     },
     "rules": [
@@ -180,9 +170,9 @@
                                         "properties": {
                                             "authSchemes": [
                                                 {
-                                                    "signingRegion": "us-east-1",
                                                     "name": "sigv4",
-                                                    "signingName": "dynamodb"
+                                                    "signingName": "dynamodb",
+                                                    "signingRegion": "us-east-1"
                                                 }
                                             ]
                                         },
@@ -192,6 +182,113 @@
                                 }
                             ],
                             "type": "tree"
+                        },
+                        {
+                            "conditions": [
+                                {
+                                    "fn": "isSet",
+                                    "argv": [
+                                        {
+                                            "ref": "AccountIdEndpointMode"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "fn": "stringEquals",
+                                    "argv": [
+                                        {
+                                            "ref": "AccountIdEndpointMode"
+                                        },
+                                        "required"
+                                    ]
+                                },
+                                {
+                                    "fn": "not",
+                                    "argv": [
+                                        {
+                                            "fn": "isSet",
+                                            "argv": [
+                                                {
+                                                    "ref": "AccountId"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "error": "AccountIdEndpointMode is required but no AccountID was provided or able to be loaded.",
+                            "type": "error"
+                        },
+                        {
+                            "conditions": [
+                                {
+                                    "fn": "isSet",
+                                    "argv": [
+                                        {
+                                            "ref": "AccountId"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "fn": "stringEquals",
+                                    "argv": [
+                                        {
+                                            "fn": "getAttr",
+                                            "argv": [
+                                                {
+                                                    "ref": "PartitionResult"
+                                                },
+                                                "name"
+                                            ]
+                                        },
+                                        "aws"
+                                    ]
+                                },
+                                {
+                                    "fn": "not",
+                                    "argv": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseFIPS"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "fn": "not",
+                                    "argv": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "fn": "not",
+                                    "argv": [
+                                        {
+                                            "fn": "isValidHostLabel",
+                                            "argv": [
+                                                {
+                                                    "ref": "AccountId"
+                                                },
+                                                false
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "error": "Credentials-sourced account ID parameter is invalid",
+                            "type": "error"
                         },
                         {
                             "conditions": [
@@ -265,18 +362,16 @@
                                                         {
                                                             "ref": "AccountIdEndpointMode"
                                                         },
-                                                        "required"
+                                                        "disabled"
                                                     ]
                                                 }
                                             ],
-                                            "rules": [
-                                                {
-                                                    "conditions": [],
-                                                    "error": "Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported",
-                                                    "type": "error"
-                                                }
-                                            ],
-                                            "type": "tree"
+                                            "endpoint": {
+                                                "url": "https://dynamodb-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
                                         },
                                         {
                                             "conditions": [],
@@ -365,18 +460,16 @@
                                                                 {
                                                                     "ref": "AccountIdEndpointMode"
                                                                 },
-                                                                "required"
+                                                                "disabled"
                                                             ]
                                                         }
                                                     ],
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported",
-                                                            "type": "error"
-                                                        }
-                                                    ],
-                                                    "type": "tree"
+                                                    "endpoint": {
+                                                        "url": "https://dynamodb.{Region}.{PartitionResult#dnsSuffix}",
+                                                        "properties": {},
+                                                        "headers": {}
+                                                    },
+                                                    "type": "endpoint"
                                                 },
                                                 {
                                                     "conditions": [],
@@ -406,18 +499,16 @@
                                                         {
                                                             "ref": "AccountIdEndpointMode"
                                                         },
-                                                        "required"
+                                                        "disabled"
                                                     ]
                                                 }
                                             ],
-                                            "rules": [
-                                                {
-                                                    "conditions": [],
-                                                    "error": "Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported",
-                                                    "type": "error"
-                                                }
-                                            ],
-                                            "type": "tree"
+                                            "endpoint": {
+                                                "url": "https://dynamodb-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
                                         },
                                         {
                                             "conditions": [],
@@ -487,44 +578,16 @@
                                                         {
                                                             "ref": "AccountIdEndpointMode"
                                                         },
-                                                        "required"
+                                                        "disabled"
                                                     ]
                                                 }
                                             ],
-                                            "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "not",
-                                                            "argv": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        {
-                                                                            "ref": "UseFIPS"
-                                                                        },
-                                                                        true
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported",
-                                                            "type": "error"
-                                                        }
-                                                    ],
-                                                    "type": "tree"
-                                                },
-                                                {
-                                                    "conditions": [],
-                                                    "error": "Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported",
-                                                    "type": "error"
-                                                }
-                                            ],
-                                            "type": "tree"
+                                            "endpoint": {
+                                                "url": "https://dynamodb.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                "properties": {},
+                                                "headers": {}
+                                            },
+                                            "type": "endpoint"
                                         },
                                         {
                                             "conditions": [],
@@ -557,142 +620,17 @@
                                     ]
                                 },
                                 {
-                                    "fn": "not",
-                                    "argv": [
-                                        {
-                                            "fn": "stringEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "AccountIdEndpointMode"
-                                                },
-                                                "disabled"
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
                                     "fn": "stringEquals",
                                     "argv": [
                                         {
-                                            "fn": "getAttr",
-                                            "argv": [
-                                                {
-                                                    "ref": "PartitionResult"
-                                                },
-                                                "name"
-                                            ]
+                                            "ref": "AccountIdEndpointMode"
                                         },
-                                        "aws"
-                                    ]
-                                },
-                                {
-                                    "fn": "not",
-                                    "argv": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseFIPS"
-                                                },
-                                                true
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "fn": "not",
-                                    "argv": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseDualStack"
-                                                },
-                                                true
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "fn": "isSet",
-                                    "argv": [
-                                        {
-                                            "ref": "ResourceArn"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "fn": "aws.parseArn",
-                                    "argv": [
-                                        {
-                                            "ref": "ResourceArn"
-                                        }
-                                    ],
-                                    "assign": "ParsedArn"
-                                },
-                                {
-                                    "fn": "stringEquals",
-                                    "argv": [
-                                        {
-                                            "fn": "getAttr",
-                                            "argv": [
-                                                {
-                                                    "ref": "ParsedArn"
-                                                },
-                                                "service"
-                                            ]
-                                        },
-                                        "dynamodb"
-                                    ]
-                                },
-                                {
-                                    "fn": "isValidHostLabel",
-                                    "argv": [
-                                        {
-                                            "fn": "getAttr",
-                                            "argv": [
-                                                {
-                                                    "ref": "ParsedArn"
-                                                },
-                                                "region"
-                                            ]
-                                        },
-                                        false
-                                    ]
-                                },
-                                {
-                                    "fn": "stringEquals",
-                                    "argv": [
-                                        {
-                                            "fn": "getAttr",
-                                            "argv": [
-                                                {
-                                                    "ref": "ParsedArn"
-                                                },
-                                                "region"
-                                            ]
-                                        },
-                                        "{Region}"
-                                    ]
-                                },
-                                {
-                                    "fn": "isValidHostLabel",
-                                    "argv": [
-                                        {
-                                            "fn": "getAttr",
-                                            "argv": [
-                                                {
-                                                    "ref": "ParsedArn"
-                                                },
-                                                "accountId"
-                                            ]
-                                        },
-                                        false
+                                        "disabled"
                                     ]
                                 }
                             ],
                             "endpoint": {
-                                "url": "https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dnsSuffix}",
+                                "url": "https://dynamodb.{Region}.{PartitionResult#dnsSuffix}",
                                 "properties": {},
                                 "headers": {}
                             },
@@ -700,233 +638,6 @@
                         },
                         {
                             "conditions": [
-                                {
-                                    "fn": "isSet",
-                                    "argv": [
-                                        {
-                                            "ref": "AccountIdEndpointMode"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "fn": "not",
-                                    "argv": [
-                                        {
-                                            "fn": "stringEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "AccountIdEndpointMode"
-                                                },
-                                                "disabled"
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "fn": "stringEquals",
-                                    "argv": [
-                                        {
-                                            "fn": "getAttr",
-                                            "argv": [
-                                                {
-                                                    "ref": "PartitionResult"
-                                                },
-                                                "name"
-                                            ]
-                                        },
-                                        "aws"
-                                    ]
-                                },
-                                {
-                                    "fn": "not",
-                                    "argv": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseFIPS"
-                                                },
-                                                true
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "fn": "not",
-                                    "argv": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseDualStack"
-                                                },
-                                                true
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "fn": "isSet",
-                                    "argv": [
-                                        {
-                                            "ref": "ResourceArnList"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "fn": "getAttr",
-                                    "argv": [
-                                        {
-                                            "ref": "ResourceArnList"
-                                        },
-                                        "[0]"
-                                    ],
-                                    "assign": "FirstArn"
-                                },
-                                {
-                                    "fn": "aws.parseArn",
-                                    "argv": [
-                                        {
-                                            "ref": "FirstArn"
-                                        }
-                                    ],
-                                    "assign": "ParsedArn"
-                                },
-                                {
-                                    "fn": "stringEquals",
-                                    "argv": [
-                                        {
-                                            "fn": "getAttr",
-                                            "argv": [
-                                                {
-                                                    "ref": "ParsedArn"
-                                                },
-                                                "service"
-                                            ]
-                                        },
-                                        "dynamodb"
-                                    ]
-                                },
-                                {
-                                    "fn": "isValidHostLabel",
-                                    "argv": [
-                                        {
-                                            "fn": "getAttr",
-                                            "argv": [
-                                                {
-                                                    "ref": "ParsedArn"
-                                                },
-                                                "region"
-                                            ]
-                                        },
-                                        false
-                                    ]
-                                },
-                                {
-                                    "fn": "stringEquals",
-                                    "argv": [
-                                        {
-                                            "fn": "getAttr",
-                                            "argv": [
-                                                {
-                                                    "ref": "ParsedArn"
-                                                },
-                                                "region"
-                                            ]
-                                        },
-                                        "{Region}"
-                                    ]
-                                },
-                                {
-                                    "fn": "isValidHostLabel",
-                                    "argv": [
-                                        {
-                                            "fn": "getAttr",
-                                            "argv": [
-                                                {
-                                                    "ref": "ParsedArn"
-                                                },
-                                                "accountId"
-                                            ]
-                                        },
-                                        false
-                                    ]
-                                }
-                            ],
-                            "endpoint": {
-                                "url": "https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dnsSuffix}",
-                                "properties": {},
-                                "headers": {}
-                            },
-                            "type": "endpoint"
-                        },
-                        {
-                            "conditions": [
-                                {
-                                    "fn": "isSet",
-                                    "argv": [
-                                        {
-                                            "ref": "AccountIdEndpointMode"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "fn": "not",
-                                    "argv": [
-                                        {
-                                            "fn": "stringEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "AccountIdEndpointMode"
-                                                },
-                                                "disabled"
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "fn": "stringEquals",
-                                    "argv": [
-                                        {
-                                            "fn": "getAttr",
-                                            "argv": [
-                                                {
-                                                    "ref": "PartitionResult"
-                                                },
-                                                "name"
-                                            ]
-                                        },
-                                        "aws"
-                                    ]
-                                },
-                                {
-                                    "fn": "not",
-                                    "argv": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseFIPS"
-                                                },
-                                                true
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "fn": "not",
-                                    "argv": [
-                                        {
-                                            "fn": "booleanEquals",
-                                            "argv": [
-                                                {
-                                                    "ref": "UseDualStack"
-                                                },
-                                                true
-                                            ]
-                                        }
-                                    ]
-                                },
                                 {
                                     "fn": "isSet",
                                     "argv": [
@@ -934,149 +645,57 @@
                                             "ref": "AccountId"
                                         }
                                     ]
-                                }
-                            ],
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "isValidHostLabel",
-                                            "argv": [
-                                                {
-                                                    "ref": "AccountId"
-                                                },
-                                                false
-                                            ]
-                                        }
-                                    ],
-                                    "rules": [
-                                        {
-                                            "conditions": [],
-                                            "endpoint": {
-                                                "url": "https://{AccountId}.ddb.{Region}.{PartitionResult#dnsSuffix}",
-                                                "properties": {},
-                                                "headers": {}
-                                            },
-                                            "type": "endpoint"
-                                        }
-                                    ],
-                                    "type": "tree"
-                                },
-                                {
-                                    "conditions": [],
-                                    "error": "Credentials-sourced account ID parameter is invalid",
-                                    "type": "error"
-                                }
-                            ],
-                            "type": "tree"
-                        },
-                        {
-                            "conditions": [
-                                {
-                                    "fn": "isSet",
-                                    "argv": [
-                                        {
-                                            "ref": "AccountIdEndpointMode"
-                                        }
-                                    ]
                                 },
                                 {
                                     "fn": "stringEquals",
                                     "argv": [
                                         {
-                                            "ref": "AccountIdEndpointMode"
+                                            "fn": "getAttr",
+                                            "argv": [
+                                                {
+                                                    "ref": "PartitionResult"
+                                                },
+                                                "name"
+                                            ]
                                         },
-                                        "required"
+                                        "aws"
+                                    ]
+                                },
+                                {
+                                    "fn": "not",
+                                    "argv": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseFIPS"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "fn": "not",
+                                    "argv": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
                                     ]
                                 }
                             ],
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "not",
-                                            "argv": [
-                                                {
-                                                    "fn": "booleanEquals",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "UseFIPS"
-                                                        },
-                                                        true
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "not",
-                                                    "argv": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "stringEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "fn": "getAttr",
-                                                                    "argv": [
-                                                                        {
-                                                                            "ref": "PartitionResult"
-                                                                        },
-                                                                        "name"
-                                                                    ]
-                                                                },
-                                                                "aws"
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "AccountIdEndpointMode is required but no AccountID was provided or able to be loaded",
-                                                            "type": "error"
-                                                        }
-                                                    ],
-                                                    "type": "tree"
-                                                },
-                                                {
-                                                    "conditions": [],
-                                                    "error": "Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition",
-                                                    "type": "error"
-                                                }
-                                            ],
-                                            "type": "tree"
-                                        },
-                                        {
-                                            "conditions": [],
-                                            "error": "Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported",
-                                            "type": "error"
-                                        }
-                                    ],
-                                    "type": "tree"
-                                },
-                                {
-                                    "conditions": [],
-                                    "error": "Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported",
-                                    "type": "error"
-                                }
-                            ],
-                            "type": "tree"
+                            "endpoint": {
+                                "url": "https://{AccountId}.ddb.{Region}.{PartitionResult#dnsSuffix}",
+                                "properties": {},
+                                "headers": {}
+                            },
+                            "type": "endpoint"
                         },
                         {
                             "conditions": [],
