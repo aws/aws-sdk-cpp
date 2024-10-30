@@ -87,3 +87,6 @@ src/aws-cpp-sdk-core/include/aws/core/SDKConfig.h
 
 #nuget
 *.nupkg
+
+#temp codegen files
+tools/code-generation/smithy/codegen/cpp-smoke-tests/codegen_output/
