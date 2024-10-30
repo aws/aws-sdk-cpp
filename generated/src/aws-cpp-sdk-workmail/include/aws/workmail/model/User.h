@@ -143,6 +143,38 @@ namespace Model
     inline User& WithDisabledDate(const Aws::Utils::DateTime& value) { SetDisabledDate(value); return *this;}
     inline User& WithDisabledDate(Aws::Utils::DateTime&& value) { SetDisabledDate(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>User ID from the IAM Identity Center. If this parameter is empty it will be
+     * updated automatically when the user logs in for the first time to the mailbox
+     * associated with WorkMail.</p>
+     */
+    inline const Aws::String& GetIdentityProviderUserId() const{ return m_identityProviderUserId; }
+    inline bool IdentityProviderUserIdHasBeenSet() const { return m_identityProviderUserIdHasBeenSet; }
+    inline void SetIdentityProviderUserId(const Aws::String& value) { m_identityProviderUserIdHasBeenSet = true; m_identityProviderUserId = value; }
+    inline void SetIdentityProviderUserId(Aws::String&& value) { m_identityProviderUserIdHasBeenSet = true; m_identityProviderUserId = std::move(value); }
+    inline void SetIdentityProviderUserId(const char* value) { m_identityProviderUserIdHasBeenSet = true; m_identityProviderUserId.assign(value); }
+    inline User& WithIdentityProviderUserId(const Aws::String& value) { SetIdentityProviderUserId(value); return *this;}
+    inline User& WithIdentityProviderUserId(Aws::String&& value) { SetIdentityProviderUserId(std::move(value)); return *this;}
+    inline User& WithIdentityProviderUserId(const char* value) { SetIdentityProviderUserId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Identity store ID from the IAM Identity Center. If this parameter is empty it
+     * will be updated automatically when the user logs in for the first time to the
+     * mailbox associated with WorkMail.</p>
+     */
+    inline const Aws::String& GetIdentityProviderIdentityStoreId() const{ return m_identityProviderIdentityStoreId; }
+    inline bool IdentityProviderIdentityStoreIdHasBeenSet() const { return m_identityProviderIdentityStoreIdHasBeenSet; }
+    inline void SetIdentityProviderIdentityStoreId(const Aws::String& value) { m_identityProviderIdentityStoreIdHasBeenSet = true; m_identityProviderIdentityStoreId = value; }
+    inline void SetIdentityProviderIdentityStoreId(Aws::String&& value) { m_identityProviderIdentityStoreIdHasBeenSet = true; m_identityProviderIdentityStoreId = std::move(value); }
+    inline void SetIdentityProviderIdentityStoreId(const char* value) { m_identityProviderIdentityStoreIdHasBeenSet = true; m_identityProviderIdentityStoreId.assign(value); }
+    inline User& WithIdentityProviderIdentityStoreId(const Aws::String& value) { SetIdentityProviderIdentityStoreId(value); return *this;}
+    inline User& WithIdentityProviderIdentityStoreId(Aws::String&& value) { SetIdentityProviderIdentityStoreId(std::move(value)); return *this;}
+    inline User& WithIdentityProviderIdentityStoreId(const char* value) { SetIdentityProviderIdentityStoreId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -168,6 +200,12 @@ namespace Model
 
     Aws::Utils::DateTime m_disabledDate;
     bool m_disabledDateHasBeenSet = false;
+
+    Aws::String m_identityProviderUserId;
+    bool m_identityProviderUserIdHasBeenSet = false;
+
+    Aws::String m_identityProviderIdentityStoreId;
+    bool m_identityProviderIdentityStoreIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,6 +22,7 @@
 #include <aws/sagemaker/model/SkipModelValidation.h>
 #include <aws/sagemaker/model/ModelPackageSecurityConfig.h>
 #include <aws/sagemaker/model/ModelPackageModelCard.h>
+#include <aws/sagemaker/model/ModelLifeCycle.h>
 #include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <utility>
 
@@ -416,6 +417,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> A structure describing the current state of the model in its life cycle.
+     * </p>
+     */
+    inline const ModelLifeCycle& GetModelLifeCycle() const{ return m_modelLifeCycle; }
+    inline void SetModelLifeCycle(const ModelLifeCycle& value) { m_modelLifeCycle = value; }
+    inline void SetModelLifeCycle(ModelLifeCycle&& value) { m_modelLifeCycle = std::move(value); }
+    inline DescribeModelPackageResult& WithModelLifeCycle(const ModelLifeCycle& value) { SetModelLifeCycle(value); return *this;}
+    inline DescribeModelPackageResult& WithModelLifeCycle(ModelLifeCycle&& value) { SetModelLifeCycle(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -484,6 +497,8 @@ namespace Model
     ModelPackageSecurityConfig m_securityConfig;
 
     ModelPackageModelCard m_modelCard;
+
+    ModelLifeCycle m_modelLifeCycle;
 
     Aws::String m_requestId;
   };

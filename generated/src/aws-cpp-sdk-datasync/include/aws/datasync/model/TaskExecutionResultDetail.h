@@ -25,9 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the detailed result of a <code>TaskExecution</code> operation. This
-   * result includes the time in milliseconds spent in each phase, the status of the
-   * task execution, and the errors encountered.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides detailed information about the result of your DataSync task
+   * execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TaskExecutionResultDetail">AWS
    * API Reference</a></p>
    */
@@ -42,8 +41,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total time in milliseconds that DataSync spent in the PREPARING phase.
-     * </p>
+     * <p>The time in milliseconds that your task execution was in the
+     * <code>PREPARING</code> step. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p> <p>For Enhanced mode tasks, the value is always
+     * <code>0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-transfer-works.html#how-datasync-prepares">How
+     * DataSync prepares your data transfer</a>.</p>
      */
     inline long long GetPrepareDuration() const{ return m_prepareDuration; }
     inline bool PrepareDurationHasBeenSet() const { return m_prepareDurationHasBeenSet; }
@@ -53,7 +57,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the PREPARING phase.</p>
+     * <p>The status of the <code>PREPARING</code> step for your task execution. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p>
      */
     inline const PhaseStatus& GetPrepareStatus() const{ return m_prepareStatus; }
     inline bool PrepareStatusHasBeenSet() const { return m_prepareStatusHasBeenSet; }
@@ -65,8 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total time in milliseconds that DataSync took to transfer the file from
-     * the source to the destination location.</p>
+     * <p>The time in milliseconds that your task execution ran.</p>
      */
     inline long long GetTotalDuration() const{ return m_totalDuration; }
     inline bool TotalDurationHasBeenSet() const { return m_totalDurationHasBeenSet; }
@@ -76,8 +82,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total time in milliseconds that DataSync spent in the TRANSFERRING
-     * phase.</p>
+     * <p>The time in milliseconds that your task execution was in the
+     * <code>TRANSFERRING</code> step. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p> <p>For Enhanced mode tasks, the value is always
+     * <code>0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-transfer-works.html#how-datasync-transfers">How
+     * DataSync transfers your data</a>.</p>
      */
     inline long long GetTransferDuration() const{ return m_transferDuration; }
     inline bool TransferDurationHasBeenSet() const { return m_transferDurationHasBeenSet; }
@@ -87,7 +98,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the TRANSFERRING phase.</p>
+     * <p>The status of the <code>TRANSFERRING</code> step for your task execution. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p>
      */
     inline const PhaseStatus& GetTransferStatus() const{ return m_transferStatus; }
     inline bool TransferStatusHasBeenSet() const { return m_transferStatusHasBeenSet; }
@@ -99,8 +113,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total time in milliseconds that DataSync spent in the VERIFYING
-     * phase.</p>
+     * <p>The time in milliseconds that your task execution was in the
+     * <code>VERIFYING</code> step. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p> <p>For Enhanced mode tasks, the value is always
+     * <code>0</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/how-datasync-transfer-works.html#how-verifying-works">How
+     * DataSync verifies your data's integrity</a>.</p>
      */
     inline long long GetVerifyDuration() const{ return m_verifyDuration; }
     inline bool VerifyDurationHasBeenSet() const { return m_verifyDurationHasBeenSet; }
@@ -110,7 +129,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the VERIFYING phase.</p>
+     * <p>The status of the <code>VERIFYING</code> step for your task execution. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">Task
+     * execution statuses</a>.</p>
      */
     inline const PhaseStatus& GetVerifyStatus() const{ return m_verifyStatus; }
     inline bool VerifyStatusHasBeenSet() const { return m_verifyStatusHasBeenSet; }
@@ -122,8 +144,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Errors that DataSync encountered during execution of the task. You can use
-     * this error code to help troubleshoot issues.</p>
+     * <p>An error that DataSync encountered during your task execution. You can use
+     * this information to help <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">troubleshoot
+     * issues</a>.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
@@ -137,8 +161,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Detailed description of an error that was encountered during the task
-     * execution. You can use this information to help troubleshoot issues. </p>
+     * <p>The detailed description of an error that DataSync encountered during your
+     * task execution. You can use this information to help <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">troubleshoot
+     * issues</a>. </p>
      */
     inline const Aws::String& GetErrorDetail() const{ return m_errorDetail; }
     inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }

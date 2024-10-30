@@ -14,6 +14,7 @@
 #include <aws/datasync/model/ManifestConfig.h>
 #include <aws/datasync/model/TaskReportConfig.h>
 #include <aws/datasync/model/TaskScheduleDetails.h>
+#include <aws/datasync/model/TaskMode.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <utility>
 
@@ -128,8 +129,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for
      * monitoring your task.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring
-     * DataSync with Amazon CloudWatch</a>.</p>
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring
+     * data transfers with CloudWatch Logs</a>.</p>
      */
     inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
     inline void SetCloudWatchLogGroupArn(const Aws::String& value) { m_cloudWatchLogGroupArn = value; }
@@ -317,6 +318,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The task mode that you're using. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing
+     * a task mode for your data transfer</a>.</p>
+     */
+    inline const TaskMode& GetTaskMode() const{ return m_taskMode; }
+    inline void SetTaskMode(const TaskMode& value) { m_taskMode = value; }
+    inline void SetTaskMode(TaskMode&& value) { m_taskMode = std::move(value); }
+    inline DescribeTaskResult& WithTaskMode(const TaskMode& value) { SetTaskMode(value); return *this;}
+    inline DescribeTaskResult& WithTaskMode(TaskMode&& value) { SetTaskMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -365,6 +379,8 @@ namespace Model
     TaskReportConfig m_taskReportConfig;
 
     TaskScheduleDetails m_scheduleDetails;
+
+    TaskMode m_taskMode;
 
     Aws::String m_requestId;
   };

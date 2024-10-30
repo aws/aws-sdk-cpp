@@ -1,0 +1,64 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/workmail/model/PutIdentityProviderConfigurationRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::WorkMail::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+PutIdentityProviderConfigurationRequest::PutIdentityProviderConfigurationRequest() : 
+    m_organizationIdHasBeenSet(false),
+    m_authenticationMode(IdentityProviderAuthenticationMode::NOT_SET),
+    m_authenticationModeHasBeenSet(false),
+    m_identityCenterConfigurationHasBeenSet(false),
+    m_personalAccessTokenConfigurationHasBeenSet(false)
+{
+}
+
+Aws::String PutIdentityProviderConfigurationRequest::SerializePayload() const
+{
+  JsonValue payload;
+
+  if(m_organizationIdHasBeenSet)
+  {
+   payload.WithString("OrganizationId", m_organizationId);
+
+  }
+
+  if(m_authenticationModeHasBeenSet)
+  {
+   payload.WithString("AuthenticationMode", IdentityProviderAuthenticationModeMapper::GetNameForIdentityProviderAuthenticationMode(m_authenticationMode));
+  }
+
+  if(m_identityCenterConfigurationHasBeenSet)
+  {
+   payload.WithObject("IdentityCenterConfiguration", m_identityCenterConfiguration.Jsonize());
+
+  }
+
+  if(m_personalAccessTokenConfigurationHasBeenSet)
+  {
+   payload.WithObject("PersonalAccessTokenConfiguration", m_personalAccessTokenConfiguration.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection PutIdentityProviderConfigurationRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkMailService.PutIdentityProviderConfiguration"));
+  return headers;
+
+}
+
+
+
+

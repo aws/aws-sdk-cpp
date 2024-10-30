@@ -18,6 +18,7 @@
 #include <aws/opensearch/model/DomainEndpointOptions.h>
 #include <aws/opensearch/model/NodeToNodeEncryptionOptions.h>
 #include <aws/opensearch/model/AdvancedSecurityOptionsInput.h>
+#include <aws/opensearch/model/IdentityCenterOptionsInput.h>
 #include <aws/opensearch/model/AutoTuneOptions.h>
 #include <aws/opensearch/model/DryRunMode.h>
 #include <aws/opensearch/model/OffPeakWindowOptions.h>
@@ -265,6 +266,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const IdentityCenterOptionsInput& GetIdentityCenterOptions() const{ return m_identityCenterOptions; }
+    inline bool IdentityCenterOptionsHasBeenSet() const { return m_identityCenterOptionsHasBeenSet; }
+    inline void SetIdentityCenterOptions(const IdentityCenterOptionsInput& value) { m_identityCenterOptionsHasBeenSet = true; m_identityCenterOptions = value; }
+    inline void SetIdentityCenterOptions(IdentityCenterOptionsInput&& value) { m_identityCenterOptionsHasBeenSet = true; m_identityCenterOptions = std::move(value); }
+    inline UpdateDomainConfigRequest& WithIdentityCenterOptions(const IdentityCenterOptionsInput& value) { SetIdentityCenterOptions(value); return *this;}
+    inline UpdateDomainConfigRequest& WithIdentityCenterOptions(IdentityCenterOptionsInput&& value) { SetIdentityCenterOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Options for Auto-Tune.</p>
      */
@@ -384,6 +395,9 @@ namespace Model
 
     AdvancedSecurityOptionsInput m_advancedSecurityOptions;
     bool m_advancedSecurityOptionsHasBeenSet = false;
+
+    IdentityCenterOptionsInput m_identityCenterOptions;
+    bool m_identityCenterOptionsHasBeenSet = false;
 
     AutoTuneOptions m_autoTuneOptions;
     bool m_autoTuneOptionsHasBeenSet = false;

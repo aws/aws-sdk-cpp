@@ -37,8 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The token to include in another request to get the next page of items. If
-     * there are no additional items to return, the string is empty.</p>
+     * <p>The token to include in another request to get the next page of items. This
+     * value is <code>null</code> when there are no more items to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

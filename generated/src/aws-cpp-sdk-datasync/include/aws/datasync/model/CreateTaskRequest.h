@@ -12,6 +12,7 @@
 #include <aws/datasync/model/TaskSchedule.h>
 #include <aws/datasync/model/ManifestConfig.h>
 #include <aws/datasync/model/TaskReportConfig.h>
+#include <aws/datasync/model/TaskMode.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <aws/datasync/model/TagListEntry.h>
 #include <utility>
@@ -75,7 +76,9 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group
-     * for monitoring your task.</p>
+     * for monitoring your task.</p> <p>For Enhanced mode tasks, you don't need to
+     * specify anything. DataSync automatically sends logs to a CloudWatch log group
+     * named <code>/aws/datasync</code>.</p>
      */
     inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
     inline bool CloudWatchLogGroupArnHasBeenSet() const { return m_cloudWatchLogGroupArnHasBeenSet; }
@@ -165,7 +168,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies include filters define the files, objects, and folders in your
+     * <p>Specifies include filters that define the files, objects, and folders in your
      * source location that you want DataSync to transfer. For more information and
      * examples, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
@@ -218,6 +221,30 @@ namespace Model
     inline CreateTaskRequest& WithTaskReportConfig(const TaskReportConfig& value) { SetTaskReportConfig(value); return *this;}
     inline CreateTaskRequest& WithTaskReportConfig(TaskReportConfig&& value) { SetTaskReportConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies one of the following task modes for your data transfer:</p> <ul>
+     * <li> <p> <code>ENHANCED</code> - Transfer virtually unlimited numbers of objects
+     * with enhanced metrics, more detailed logs, and higher performance than Basic
+     * mode. Currently available for transfers between Amazon S3 locations.</p> 
+     * <p>To create an Enhanced mode task, the IAM role that you use to call the
+     * <code>CreateTask</code> operation must have the
+     * <code>iam:CreateServiceLinkedRole</code> permission.</p>  </li> <li> <p>
+     * <code>BASIC</code> (default) - Transfer files or objects between Amazon Web
+     * Services storage and on-premises, edge, or other cloud storage. DataSync <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a>
+     * apply.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding
+     * task mode differences</a>.</p>
+     */
+    inline const TaskMode& GetTaskMode() const{ return m_taskMode; }
+    inline bool TaskModeHasBeenSet() const { return m_taskModeHasBeenSet; }
+    inline void SetTaskMode(const TaskMode& value) { m_taskModeHasBeenSet = true; m_taskMode = value; }
+    inline void SetTaskMode(TaskMode&& value) { m_taskModeHasBeenSet = true; m_taskMode = std::move(value); }
+    inline CreateTaskRequest& WithTaskMode(const TaskMode& value) { SetTaskMode(value); return *this;}
+    inline CreateTaskRequest& WithTaskMode(TaskMode&& value) { SetTaskMode(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_sourceLocationArn;
@@ -252,6 +279,9 @@ namespace Model
 
     TaskReportConfig m_taskReportConfig;
     bool m_taskReportConfigHasBeenSet = false;
+
+    TaskMode m_taskMode;
+    bool m_taskModeHasBeenSet = false;
   };
 
 } // namespace Model

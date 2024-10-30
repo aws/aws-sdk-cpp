@@ -61,27 +61,33 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies how and when DataSync checks the integrity of your data during a
-     * transfer.</p> <ul> <li> <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended) -
-     * DataSync calculates the checksum of transferred files and metadata at the source
-     * location. At the end of the transfer, DataSync then compares this checksum to
-     * the checksum calculated on those files at the destination.</p> <p>We recommend
-     * this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier
-     * Deep Archive storage classes. For more information, see <a
+     * <p>Specifies if and how DataSync checks the integrity of your data at the end of
+     * your transfer.</p> <ul> <li> <p> <code>ONLY_FILES_TRANSFERRED</code>
+     * (recommended) - DataSync calculates the checksum of transferred data (including
+     * metadata) at the source location. At the end of the transfer, DataSync then
+     * compares this checksum to the checksum calculated on that data at the
+     * destination.</p>  <p>This is the default option for <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+     * mode tasks</a>.</p>  <p>We recommend this option when transferring to S3
+     * Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage
      * class considerations with Amazon S3 locations</a>.</p> </li> <li> <p>
-     * <code>POINT_IN_TIME_CONSISTENT</code> (default) - At the end of the transfer,
-     * DataSync scans the entire source and destination to verify that both locations
-     * are fully synchronized.</p> <p>If you use a <a
+     * <code>POINT_IN_TIME_CONSISTENT</code> - At the end of the transfer, DataSync
+     * checks the entire source and destination to verify that both locations are fully
+     * synchronized.</p>  <p>The is the default option for <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Basic
+     * mode tasks</a> and isn't currently supported with Enhanced mode tasks.</p>
+     *  <p>If you use a <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">manifest</a>,
      * DataSync only scans and verifies what's listed in the manifest.</p> <p>You can't
      * use this option when transferring to S3 Glacier Flexible Retrieval or S3 Glacier
      * Deep Archive storage classes. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage
      * class considerations with Amazon S3 locations</a>.</p> </li> <li> <p>
-     * <code>NONE</code> - DataSync doesn't run additional verification at the end of
-     * the transfer. All data transmissions are still integrity-checked with checksum
-     * verification during the transfer.</p> </li> </ul>
+     * <code>NONE</code> - DataSync performs data integrity checks only during your
+     * transfer. Unlike other options, there's no additional verification at the end of
+     * your transfer.</p> </li> </ul>
      */
     inline const VerifyMode& GetVerifyMode() const{ return m_verifyMode; }
     inline bool VerifyModeHasBeenSet() const { return m_verifyModeHasBeenSet; }
@@ -120,7 +126,7 @@ namespace Model
      * standard across platforms, so DataSync can only do this on a best-effort
      * basis.</p>  <ul> <li> <p> <code>BEST_EFFORT</code> (default) - DataSync
      * attempts to preserve the original <code>Atime</code> attribute on all source
-     * files (that is, the version before the <code>PREPARING</code> phase of the task
+     * files (that is, the version before the <code>PREPARING</code> steps of the task
      * execution). This option is recommended.</p> </li> <li> <p> <code>NONE</code> -
      * Ignores <code>Atime</code>.</p> </li> </ul>  <p>If <code>Atime</code> is
      * set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to
@@ -139,7 +145,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether to preserve metadata indicating the last time that a file
-     * was written to before the <code>PREPARING</code> phase of your task execution.
+     * was written to before the <code>PREPARING</code> step of your task execution.
      * This option is required when you need to run the a task more than once.</p> <ul>
      * <li> <p> <code>PRESERVE</code> (default) - Preserves original
      * <code>Mtime</code>, which is recommended.</p> </li> <li> <p> <code>NONE</code> -
@@ -180,8 +186,8 @@ namespace Model
      * <code>INT_VALUE</code> (default) - Preserves the integer value of user ID (UID)
      * and GID, which is recommended.</p> </li> <li> <p> <code>NONE</code> - Ignores
      * UID and GID.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * copied by DataSync</a>.</p>
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding
+     * how DataSync handles file and object metadata</a>.</p>
      */
     inline const Gid& GetGid() const{ return m_gid; }
     inline bool GidHasBeenSet() const { return m_gidHasBeenSet; }
@@ -239,11 +245,12 @@ namespace Model
      * <p>Specifies which users or groups can access a file for a specific purpose such
      * as reading, writing, or execution of the file.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * copied by DataSync</a>.</p> <ul> <li> <p> <code>PRESERVE</code> (default) -
-     * Preserves POSIX-style permissions, which is recommended.</p> </li> <li> <p>
-     * <code>NONE</code> - Ignores POSIX-style permissions. </p> </li> </ul> 
-     * <p>DataSync can preserve extant permissions of a source location.</p> 
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding
+     * how DataSync handles file and object metadata</a>.</p> <ul> <li> <p>
+     * <code>PRESERVE</code> (default) - Preserves POSIX-style permissions, which is
+     * recommended.</p> </li> <li> <p> <code>NONE</code> - Ignores POSIX-style
+     * permissions. </p> </li> </ul>  <p>DataSync can preserve extant permissions
+     * of a source location.</p> 
      */
     inline const PosixPermissions& GetPosixPermissions() const{ return m_posixPermissions; }
     inline bool PosixPermissionsHasBeenSet() const { return m_posixPermissionsHasBeenSet; }
@@ -257,7 +264,9 @@ namespace Model
     /**
      * <p>Limits the bandwidth used by a DataSync task. For example, if you want
      * DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
-     * (<code>=1024*1024</code>).</p>
+     * (<code>=1024*1024</code>).</p>  <p>Not applicable to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+     * mode tasks</a>.</p> 
      */
     inline long long GetBytesPerSecond() const{ return m_bytesPerSecond; }
     inline bool BytesPerSecondHasBeenSet() const { return m_bytesPerSecondHasBeenSet; }
@@ -301,14 +310,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Determines whether DataSync transfers only the data and metadata that differ
-     * between the source and the destination location or transfers all the content
-     * from the source (without comparing what's in the destination).</p> <ul> <li> <p>
-     * <code>CHANGED</code> (default) - DataSync copies only data or metadata that is
-     * new or different content from the source location to the destination
-     * location.</p> </li> <li> <p> <code>ALL</code> - DataSync copies everything in
-     * the source to the destination without comparing differences between the
-     * locations.</p> </li> </ul>
+     * <p>Specifies whether DataSync transfers only the data (including metadata) that
+     * differs between locations following an initial copy or transfers all data every
+     * time you run the task. If you're planning on recurring transfers, you might only
+     * want to transfer what's changed since your previous task execution.</p> <ul>
+     * <li> <p> <code>CHANGED</code> (default) - After your initial full transfer,
+     * DataSync copies only the data and metadata that differs between the source and
+     * destination location.</p> </li> <li> <p> <code>ALL</code> - DataSync copies
+     * everything in the source to the destination without comparing differences
+     * between the locations.</p> </li> </ul>
      */
     inline const TransferMode& GetTransferMode() const{ return m_transferMode; }
     inline bool TransferModeHasBeenSet() const { return m_transferModeHasBeenSet; }
@@ -324,20 +334,21 @@ namespace Model
      * source to destination objects. </p> <p>This value is only used for transfers
      * between SMB and Amazon FSx for Windows File Server locations or between two FSx
      * for Windows File Server locations. For more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">how
-     * DataSync handles metadata</a>.</p> <ul> <li> <p> <code>OWNER_DACL</code>
-     * (default) - For each copied object, DataSync copies the following metadata:</p>
-     * <ul> <li> <p>The object owner.</p> </li> <li> <p>NTFS discretionary access
-     * control lists (DACLs), which determine whether to grant access to an object.</p>
-     * <p>DataSync won't copy NTFS system access control lists (SACLs) with this
-     * option.</p> </li> </ul> </li> <li> <p> <code>OWNER_DACL_SACL</code> - For each
-     * copied object, DataSync copies the following metadata:</p> <ul> <li> <p>The
-     * object owner.</p> </li> <li> <p>NTFS discretionary access control lists (DACLs),
-     * which determine whether to grant access to an object.</p> </li> <li> <p>SACLs,
-     * which are used by administrators to log attempts to access a secured object.</p>
-     * <p>Copying SACLs requires granting additional permissions to the Windows user
-     * that DataSync uses to access your SMB location. For information about choosing a
-     * user with the right permissions, see required permissions for <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding
+     * how DataSync handles file and object metadata</a>.</p> <ul> <li> <p>
+     * <code>OWNER_DACL</code> (default) - For each copied object, DataSync copies the
+     * following metadata:</p> <ul> <li> <p>The object owner.</p> </li> <li> <p>NTFS
+     * discretionary access control lists (DACLs), which determine whether to grant
+     * access to an object.</p> <p>DataSync won't copy NTFS system access control lists
+     * (SACLs) with this option.</p> </li> </ul> </li> <li> <p>
+     * <code>OWNER_DACL_SACL</code> - For each copied object, DataSync copies the
+     * following metadata:</p> <ul> <li> <p>The object owner.</p> </li> <li> <p>NTFS
+     * discretionary access control lists (DACLs), which determine whether to grant
+     * access to an object.</p> </li> <li> <p>SACLs, which are used by administrators
+     * to log attempts to access a secured object.</p> <p>Copying SACLs requires
+     * granting additional permissions to the Windows user that DataSync uses to access
+     * your SMB location. For information about choosing a user with the right
+     * permissions, see required permissions for <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">SMB</a>,
      * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">FSx

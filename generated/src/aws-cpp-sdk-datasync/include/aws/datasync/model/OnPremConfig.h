@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The DataSync agents that are connecting to a Network File System (NFS)
-   * location.</p><p><h3>See Also:</h3>   <a
+   * <p>The DataSync agents that can connect to your Network File System (NFS) file
+   * server.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/OnPremConfig">AWS
    * API Reference</a></p>
    */
@@ -41,8 +41,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Names (ARNs) of the agents connecting to a transfer
-     * location.</p>
+     * <p>The Amazon Resource Names (ARNs) of the DataSync agents that can connect to
+     * your NFS file server.</p> <p>You can specify more than one agent. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#multiple-agents">Using
+     * multiple DataSync agents</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }

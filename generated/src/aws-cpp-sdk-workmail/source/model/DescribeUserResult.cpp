@@ -171,6 +171,18 @@ DescribeUserResult& DescribeUserResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("IdentityProviderUserId"))
+  {
+    m_identityProviderUserId = jsonValue.GetString("IdentityProviderUserId");
+
+  }
+
+  if(jsonValue.ValueExists("IdentityProviderIdentityStoreId"))
+  {
+    m_identityProviderIdentityStoreId = jsonValue.GetString("IdentityProviderIdentityStoreId");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

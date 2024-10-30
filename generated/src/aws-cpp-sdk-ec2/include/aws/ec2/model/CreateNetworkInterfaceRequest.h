@@ -107,8 +107,10 @@ namespace Model
     ///@{
     /**
      * <p>The type of network interface. The default is <code>interface</code>.</p>
-     * <p>The only supported values are <code>interface</code>, <code>efa</code>, and
-     * <code>trunk</code>.</p>
+     * <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the
+     * network interface. EFA-only network interfaces do not support IP addresses.</p>
+     * <p>The only supported values are <code>interface</code>, <code>efa</code>,
+     * <code>efa-only</code>, and <code>trunk</code>.</p>
      */
     inline const NetworkInterfaceCreationType& GetInterfaceType() const{ return m_interfaceType; }
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }

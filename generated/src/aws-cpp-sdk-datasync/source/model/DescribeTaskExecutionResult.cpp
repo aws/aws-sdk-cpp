@@ -28,7 +28,9 @@ DescribeTaskExecutionResult::DescribeTaskExecutionResult() :
     m_filesDeleted(0),
     m_filesSkipped(0),
     m_filesVerified(0),
-    m_estimatedFilesToDelete(0)
+    m_estimatedFilesToDelete(0),
+    m_taskMode(TaskMode::NOT_SET),
+    m_filesPrepared(0)
 {
 }
 
@@ -164,6 +166,30 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator =(const Aws::
   if(jsonValue.ValueExists("EstimatedFilesToDelete"))
   {
     m_estimatedFilesToDelete = jsonValue.GetInt64("EstimatedFilesToDelete");
+
+  }
+
+  if(jsonValue.ValueExists("TaskMode"))
+  {
+    m_taskMode = TaskModeMapper::GetTaskModeForName(jsonValue.GetString("TaskMode"));
+
+  }
+
+  if(jsonValue.ValueExists("FilesPrepared"))
+  {
+    m_filesPrepared = jsonValue.GetInt64("FilesPrepared");
+
+  }
+
+  if(jsonValue.ValueExists("FilesListed"))
+  {
+    m_filesListed = jsonValue.GetObject("FilesListed");
+
+  }
+
+  if(jsonValue.ValueExists("FilesFailed"))
+  {
+    m_filesFailed = jsonValue.GetObject("FilesFailed");
 
   }
 

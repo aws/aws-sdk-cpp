@@ -100,6 +100,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the security group.</p>
+     */
+    inline const Aws::String& GetSecurityGroupArn() const{ return m_securityGroupArn; }
+    inline bool SecurityGroupArnHasBeenSet() const { return m_securityGroupArnHasBeenSet; }
+    inline void SetSecurityGroupArn(const Aws::String& value) { m_securityGroupArnHasBeenSet = true; m_securityGroupArn = value; }
+    inline void SetSecurityGroupArn(Aws::String&& value) { m_securityGroupArnHasBeenSet = true; m_securityGroupArn = std::move(value); }
+    inline void SetSecurityGroupArn(const char* value) { m_securityGroupArnHasBeenSet = true; m_securityGroupArn.assign(value); }
+    inline SecurityGroup& WithSecurityGroupArn(const Aws::String& value) { SetSecurityGroupArn(value); return *this;}
+    inline SecurityGroup& WithSecurityGroupArn(Aws::String&& value) { SetSecurityGroupArn(std::move(value)); return *this;}
+    inline SecurityGroup& WithSecurityGroupArn(const char* value) { SetSecurityGroupArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Web Services account ID of the owner of the security group.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
@@ -166,6 +180,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
+
+    Aws::String m_securityGroupArn;
+    bool m_securityGroupArnHasBeenSet = false;
 
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet = false;

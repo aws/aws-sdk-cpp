@@ -311,7 +311,7 @@ namespace Model
     ///@{
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the ordering of stopping and starting tasks.</p>
+     * deployment and the failure detection methods.</p>
      */
     inline const DeploymentConfiguration& GetDeploymentConfiguration() const{ return m_deploymentConfiguration; }
     inline bool DeploymentConfigurationHasBeenSet() const { return m_deploymentConfigurationHasBeenSet; }

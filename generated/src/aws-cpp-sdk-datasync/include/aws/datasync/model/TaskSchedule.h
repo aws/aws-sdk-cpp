@@ -42,9 +42,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies your task schedule by using a cron expression in UTC time. For
-     * information about cron expression syntax, see the <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">
+     * <p>Specifies your task schedule by using a cron or rate expression.</p> <p>Use
+     * cron expressions for task schedules that run on a specific time and day. For
+     * example, the following cron expression creates a task schedule that runs at 8 AM
+     * on the first Wednesday of every month:</p> <p> <code>cron(0 8 * * 3#1)</code>
+     * </p> <p>Use rate expressions for task schedules that run on a regular interval.
+     * For example, the following rate expression creates a task schedule that runs
+     * every 12 hours:</p> <p> <code>rate(12 hours)</code> </p> <p>For information
+     * about cron and rate expression syntax, see the <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-scheduled-rule-pattern.html">
      * <i>Amazon EventBridge User Guide</i> </a>.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }

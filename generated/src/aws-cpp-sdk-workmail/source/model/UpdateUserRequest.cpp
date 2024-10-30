@@ -31,7 +31,8 @@ UpdateUserRequest::UpdateUserRequest() :
     m_zipCodeHasBeenSet(false),
     m_departmentHasBeenSet(false),
     m_countryHasBeenSet(false),
-    m_officeHasBeenSet(false)
+    m_officeHasBeenSet(false),
+    m_identityProviderUserIdHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,12 @@ Aws::String UpdateUserRequest::SerializePayload() const
   if(m_officeHasBeenSet)
   {
    payload.WithString("Office", m_office);
+
+  }
+
+  if(m_identityProviderUserIdHasBeenSet)
+  {
+   payload.WithString("IdentityProviderUserId", m_identityProviderUserId);
 
   }
 

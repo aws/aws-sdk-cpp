@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/redshift-serverless/model/Endpoint.h>
+#include <aws/redshift-serverless/model/PerformanceTarget.h>
 #include <aws/redshift-serverless/model/WorkgroupStatus.h>
 #include <aws/redshift-serverless/model/ConfigParameter.h>
 #include <utility>
@@ -239,6 +240,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>An object that represents the price performance target settings for the
+     * workgroup.</p>
+     */
+    inline const PerformanceTarget& GetPricePerformanceTarget() const{ return m_pricePerformanceTarget; }
+    inline bool PricePerformanceTargetHasBeenSet() const { return m_pricePerformanceTargetHasBeenSet; }
+    inline void SetPricePerformanceTarget(const PerformanceTarget& value) { m_pricePerformanceTargetHasBeenSet = true; m_pricePerformanceTarget = value; }
+    inline void SetPricePerformanceTarget(PerformanceTarget&& value) { m_pricePerformanceTargetHasBeenSet = true; m_pricePerformanceTarget = std::move(value); }
+    inline Workgroup& WithPricePerformanceTarget(const PerformanceTarget& value) { SetPricePerformanceTarget(value); return *this;}
+    inline Workgroup& WithPricePerformanceTarget(PerformanceTarget&& value) { SetPricePerformanceTarget(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A value that specifies whether the workgroup can be accessible from a public
      * network.</p>
      */
@@ -391,6 +405,9 @@ namespace Model
 
     int m_port;
     bool m_portHasBeenSet = false;
+
+    PerformanceTarget m_pricePerformanceTarget;
+    bool m_pricePerformanceTargetHasBeenSet = false;
 
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet = false;

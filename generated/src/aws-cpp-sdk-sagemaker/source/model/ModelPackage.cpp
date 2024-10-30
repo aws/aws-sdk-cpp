@@ -49,6 +49,7 @@ ModelPackage::ModelPackage() :
     m_sourceUriHasBeenSet(false),
     m_securityConfigHasBeenSet(false),
     m_modelCardHasBeenSet(false),
+    m_modelLifeCycleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_customerMetadataPropertiesHasBeenSet(false),
     m_driftCheckBaselinesHasBeenSet(false),
@@ -250,6 +251,13 @@ ModelPackage& ModelPackage::operator =(JsonView jsonValue)
     m_modelCardHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelLifeCycle"))
+  {
+    m_modelLifeCycle = jsonValue.GetObject("ModelLifeCycle");
+
+    m_modelLifeCycleHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -445,6 +453,12 @@ JsonValue ModelPackage::Jsonize() const
   if(m_modelCardHasBeenSet)
   {
    payload.WithObject("ModelCard", m_modelCard.Jsonize());
+
+  }
+
+  if(m_modelLifeCycleHasBeenSet)
+  {
+   payload.WithObject("ModelLifeCycle", m_modelLifeCycle.Jsonize());
 
   }
 

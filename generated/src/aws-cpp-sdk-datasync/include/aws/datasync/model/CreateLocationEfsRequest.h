@@ -45,9 +45,12 @@ namespace Model
     /**
      * <p>Specifies a mount path for your Amazon EFS file system. This is where
      * DataSync reads or writes data (depending on if this is a source or destination
-     * location). By default, DataSync uses the root directory, but you can also
-     * include subdirectories.</p>  <p>You must specify a value with forward
-     * slashes (for example, <code>/path/to/folder</code>).</p> 
+     * location) on your file system.</p> <p>By default, DataSync uses the root
+     * directory (or <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">access
+     * point</a> if you provide one by using <code>AccessPointArn</code>). You can also
+     * include subdirectories using forward slashes (for example,
+     * <code>/path/to/folder</code>).</p>
      */
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
@@ -61,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the ARN for the Amazon EFS file system.</p>
+     * <p>Specifies the ARN for your Amazon EFS file system.</p>
      */
     inline const Aws::String& GetEfsFilesystemArn() const{ return m_efsFilesystemArn; }
     inline bool EfsFilesystemArnHasBeenSet() const { return m_efsFilesystemArnHasBeenSet; }
@@ -75,8 +78,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the subnet and security groups DataSync uses to access your Amazon
-     * EFS file system.</p>
+     * <p>Specifies the subnet and security groups DataSync uses to connect to one of
+     * your Amazon EFS file system's <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount
+     * targets</a>.</p>
      */
     inline const Ec2Config& GetEc2Config() const{ return m_ec2Config; }
     inline bool Ec2ConfigHasBeenSet() const { return m_ec2ConfigHasBeenSet; }
@@ -106,7 +111,9 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync
-     * uses to access the Amazon EFS file system.</p>
+     * uses to mount your Amazon EFS file system.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing
+     * restricted file systems</a>.</p>
      */
     inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
     inline bool AccessPointArnHasBeenSet() const { return m_accessPointArnHasBeenSet; }
@@ -120,8 +127,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes
-     * when mounting the Amazon EFS file system.</p>
+     * <p>Specifies an Identity and Access Management (IAM) role that allows DataSync
+     * to access your Amazon EFS file system.</p> <p>For information on creating this
+     * role, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating
+     * a DataSync IAM role for file system access</a>.</p>
      */
     inline const Aws::String& GetFileSystemAccessRoleArn() const{ return m_fileSystemAccessRoleArn; }
     inline bool FileSystemAccessRoleArnHasBeenSet() const { return m_fileSystemAccessRoleArnHasBeenSet; }
@@ -136,9 +146,9 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2
-     * encryption when it copies data to or from the Amazon EFS file system.</p> <p>If
-     * you specify an access point using <code>AccessPointArn</code> or an IAM role
-     * using <code>FileSystemAccessRoleArn</code>, you must set this parameter to
+     * encryption when it transfers data to or from your Amazon EFS file system.</p>
+     * <p>If you specify an access point using <code>AccessPointArn</code> or an IAM
+     * role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to
      * <code>TLS1_2</code>.</p>
      */
     inline const EfsInTransitEncryption& GetInTransitEncryption() const{ return m_inTransitEncryption; }

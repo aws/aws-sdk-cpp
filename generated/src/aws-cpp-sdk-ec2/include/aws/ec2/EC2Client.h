@@ -959,6 +959,39 @@ namespace EC2
         }
 
         /**
+         * <p>Associates a security group with another VPC in the same Region. This enables
+         * you to use the same security group with network interfaces and instances in the
+         * specified VPC.</p>  <ul> <li> <p>The VPC you want to associate the
+         * security group with must be in the same Region.</p> </li> <li> <p>You can
+         * associate the security group with another VPC if your account owns the VPC or if
+         * the VPC was shared with you.</p> </li> <li> <p>You must own the security group
+         * and the VPC that it was created in.</p> </li> <li> <p>You cannot use this
+         * feature with default security groups.</p> </li> <li> <p>You cannot use this
+         * feature with the default VPC.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSecurityGroupVpc">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateSecurityGroupVpcOutcome AssociateSecurityGroupVpc(const Model::AssociateSecurityGroupVpcRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateSecurityGroupVpc that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateSecurityGroupVpcRequestT = Model::AssociateSecurityGroupVpcRequest>
+        Model::AssociateSecurityGroupVpcOutcomeCallable AssociateSecurityGroupVpcCallable(const AssociateSecurityGroupVpcRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::AssociateSecurityGroupVpc, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateSecurityGroupVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateSecurityGroupVpcRequestT = Model::AssociateSecurityGroupVpcRequest>
+        void AssociateSecurityGroupVpcAsync(const AssociateSecurityGroupVpcRequestT& request, const AssociateSecurityGroupVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::AssociateSecurityGroupVpc, request, handler, context);
+        }
+
+        /**
          * <p>Associates a CIDR block with your subnet. You can only associate a single
          * IPv6 CIDR block with your subnet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">AWS
@@ -3829,7 +3862,7 @@ namespace EC2
          * Traffic Mirror target (monitoring appliances) can be in the same VPC, or in a
          * different VPC connected via VPC peering or a transit gateway. </p> <p>By
          * default, no traffic is mirrored. Use <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm">CreateTrafficMirrorFilter</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.html">CreateTrafficMirrorFilter</a>
          * to create filter rules that specify the traffic to mirror.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTrafficMirrorSession">AWS
@@ -5765,9 +5798,9 @@ namespace EC2
 
         /**
          * <p>Deletes a security group.</p> <p>If you attempt to delete a security group
-         * that is associated with an instance or network interface or is referenced by
-         * another security group in the same VPC, the operation fails with
-         * <code>DependencyViolation</code>.</p><p><h3>See Also:</h3>   <a
+         * that is associated with an instance or network interface, is referenced by
+         * another security group in the same VPC, or has a VPC association, the operation
+         * fails with <code>DependencyViolation</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup">AWS
          * API Reference</a></p>
          */
@@ -9955,9 +9988,9 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the VPCs on the other side of a VPC peering connection that are
-         * referencing the security groups you've specified in this request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the VPCs on the other side of a VPC peering or Transit Gateway
+         * connection that are referencing the security groups you've specified in this
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">AWS
          * API Reference</a></p>
          */
@@ -10005,6 +10038,33 @@ namespace EC2
         void DescribeSecurityGroupRulesAsync(const DescribeSecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSecurityGroupRulesRequestT& request = {}) const
         {
             return SubmitAsync(&EC2Client::DescribeSecurityGroupRules, request, handler, context);
+        }
+
+        /**
+         * <p>Describes security group VPC associations made with <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateSecurityGroupVpc.html">AssociateSecurityGroupVpc</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupVpcAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSecurityGroupVpcAssociationsOutcome DescribeSecurityGroupVpcAssociations(const Model::DescribeSecurityGroupVpcAssociationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeSecurityGroupVpcAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeSecurityGroupVpcAssociationsRequestT = Model::DescribeSecurityGroupVpcAssociationsRequest>
+        Model::DescribeSecurityGroupVpcAssociationsOutcomeCallable DescribeSecurityGroupVpcAssociationsCallable(const DescribeSecurityGroupVpcAssociationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeSecurityGroupVpcAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeSecurityGroupVpcAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeSecurityGroupVpcAssociationsRequestT = Model::DescribeSecurityGroupVpcAssociationsRequest>
+        void DescribeSecurityGroupVpcAssociationsAsync(const DescribeSecurityGroupVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeSecurityGroupVpcAssociationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeSecurityGroupVpcAssociations, request, handler, context);
         }
 
         /**
@@ -10337,11 +10397,16 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the stale security group rules for security groups in a specified
-         * VPC. Rules are stale when they reference a deleted security group in a peered
-         * VPC. Rules can also be stale if they reference a security group in a peer VPC
-         * for which the VPC peering connection has been deleted.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Describes the stale security group rules for security groups referenced
+         * across a VPC peering connection, transit gateway connection, or with a security
+         * group VPC association. Rules are stale when they reference a deleted security
+         * group. Rules can also be stale if they reference a security group in a peer VPC
+         * for which the VPC peering connection has been deleted, across a transit gateway
+         * where the transit gateway has been deleted (or <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#vpc-attachment-security">the
+         * transit gateway security group referencing feature</a> has been disabled), or if
+         * a security group VPC association has been disassociated.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">AWS
          * API Reference</a></p>
          */
@@ -12458,6 +12523,36 @@ namespace EC2
         void DisassociateRouteTableAsync(const DisassociateRouteTableRequestT& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DisassociateRouteTable, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates a security group from a VPC. You cannot disassociate the
+         * security group if any Elastic network interfaces in the associated VPC are still
+         * associated with the security group. Note that the disassociation is asynchronous
+         * and you can check the status of the request with <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroupVpcAssociations.html">DescribeSecurityGroupVpcAssociations</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSecurityGroupVpc">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateSecurityGroupVpcOutcome DisassociateSecurityGroupVpc(const Model::DisassociateSecurityGroupVpcRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateSecurityGroupVpc that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateSecurityGroupVpcRequestT = Model::DisassociateSecurityGroupVpcRequest>
+        Model::DisassociateSecurityGroupVpcOutcomeCallable DisassociateSecurityGroupVpcCallable(const DisassociateSecurityGroupVpcRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DisassociateSecurityGroupVpc, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateSecurityGroupVpc that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateSecurityGroupVpcRequestT = Model::DisassociateSecurityGroupVpcRequest>
+        void DisassociateSecurityGroupVpcAsync(const DisassociateSecurityGroupVpcRequestT& request, const DisassociateSecurityGroupVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DisassociateSecurityGroupVpc, request, handler, context);
         }
 
         /**

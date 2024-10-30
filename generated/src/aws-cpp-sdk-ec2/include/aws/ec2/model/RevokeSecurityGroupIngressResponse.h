@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/IpPermission.h>
+#include <aws/ec2/model/RevokedSecurityGroupRule.h>
 #include <utility>
 
 namespace Aws
@@ -60,6 +61,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Details about the revoked security group rules.</p>
+     */
+    inline const Aws::Vector<RevokedSecurityGroupRule>& GetRevokedSecurityGroupRules() const{ return m_revokedSecurityGroupRules; }
+    inline void SetRevokedSecurityGroupRules(const Aws::Vector<RevokedSecurityGroupRule>& value) { m_revokedSecurityGroupRules = value; }
+    inline void SetRevokedSecurityGroupRules(Aws::Vector<RevokedSecurityGroupRule>&& value) { m_revokedSecurityGroupRules = std::move(value); }
+    inline RevokeSecurityGroupIngressResponse& WithRevokedSecurityGroupRules(const Aws::Vector<RevokedSecurityGroupRule>& value) { SetRevokedSecurityGroupRules(value); return *this;}
+    inline RevokeSecurityGroupIngressResponse& WithRevokedSecurityGroupRules(Aws::Vector<RevokedSecurityGroupRule>&& value) { SetRevokedSecurityGroupRules(std::move(value)); return *this;}
+    inline RevokeSecurityGroupIngressResponse& AddRevokedSecurityGroupRules(const RevokedSecurityGroupRule& value) { m_revokedSecurityGroupRules.push_back(value); return *this; }
+    inline RevokeSecurityGroupIngressResponse& AddRevokedSecurityGroupRules(RevokedSecurityGroupRule&& value) { m_revokedSecurityGroupRules.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -72,6 +86,8 @@ namespace Model
     bool m_return;
 
     Aws::Vector<IpPermission> m_unknownIpPermissions;
+
+    Aws::Vector<RevokedSecurityGroupRule> m_revokedSecurityGroupRules;
 
     ResponseMetadata m_responseMetadata;
   };

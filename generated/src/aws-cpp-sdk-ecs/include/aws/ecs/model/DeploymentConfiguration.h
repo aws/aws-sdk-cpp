@@ -25,9 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Optional deployment parameters that control how many tasks run during a
-   * deployment and the ordering of stopping and starting tasks.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Optional deployment parameters that control how many tasks run during the
+   * deployment and the failure detection methods.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeploymentConfiguration">AWS
    * API Reference</a></p>
    */

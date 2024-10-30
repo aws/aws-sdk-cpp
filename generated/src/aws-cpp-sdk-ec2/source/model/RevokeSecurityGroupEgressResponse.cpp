@@ -56,6 +56,17 @@ RevokeSecurityGroupEgressResponse& RevokeSecurityGroupEgressResponse::operator =
       }
 
     }
+    XmlNode revokedSecurityGroupRulesNode = resultNode.FirstChild("revokedSecurityGroupRuleSet");
+    if(!revokedSecurityGroupRulesNode.IsNull())
+    {
+      XmlNode revokedSecurityGroupRulesMember = revokedSecurityGroupRulesNode.FirstChild("item");
+      while(!revokedSecurityGroupRulesMember.IsNull())
+      {
+        m_revokedSecurityGroupRules.push_back(revokedSecurityGroupRulesMember);
+        revokedSecurityGroupRulesMember = revokedSecurityGroupRulesMember.NextNode("item");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

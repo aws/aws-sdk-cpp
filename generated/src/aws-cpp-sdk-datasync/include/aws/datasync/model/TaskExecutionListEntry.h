@@ -7,6 +7,7 @@
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/TaskExecutionStatus.h>
+#include <aws/datasync/model/TaskMode.h>
 #include <utility>
 
 namespace Aws
@@ -68,6 +69,20 @@ namespace Model
     inline TaskExecutionListEntry& WithStatus(const TaskExecutionStatus& value) { SetStatus(value); return *this;}
     inline TaskExecutionListEntry& WithStatus(TaskExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The task mode that you're using. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing
+     * a task mode for your data transfer</a>.</p>
+     */
+    inline const TaskMode& GetTaskMode() const{ return m_taskMode; }
+    inline bool TaskModeHasBeenSet() const { return m_taskModeHasBeenSet; }
+    inline void SetTaskMode(const TaskMode& value) { m_taskModeHasBeenSet = true; m_taskMode = value; }
+    inline void SetTaskMode(TaskMode&& value) { m_taskModeHasBeenSet = true; m_taskMode = std::move(value); }
+    inline TaskExecutionListEntry& WithTaskMode(const TaskMode& value) { SetTaskMode(value); return *this;}
+    inline TaskExecutionListEntry& WithTaskMode(TaskMode&& value) { SetTaskMode(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_taskExecutionArn;
@@ -75,6 +90,9 @@ namespace Model
 
     TaskExecutionStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    TaskMode m_taskMode;
+    bool m_taskModeHasBeenSet = false;
   };
 
 } // namespace Model

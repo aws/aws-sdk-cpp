@@ -215,6 +215,12 @@ DescribeModelPackageResult& DescribeModelPackageResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("ModelLifeCycle"))
+  {
+    m_modelLifeCycle = jsonValue.GetObject("ModelLifeCycle");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

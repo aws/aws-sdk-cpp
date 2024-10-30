@@ -117,7 +117,12 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group
-     * for monitoring your task.</p>
+     * for monitoring your task.</p> <p>For Enhanced mode tasks, you must use
+     * <code>/aws/datasync</code> as your log group name. For example:</p> <p>
+     * <code>arn:aws:logs:us-east-1:111222333444:log-group:/aws/datasync:*</code> </p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring
+     * data transfers with CloudWatch Logs</a>.</p>
      */
     inline const Aws::String& GetCloudWatchLogGroupArn() const{ return m_cloudWatchLogGroupArn; }
     inline bool CloudWatchLogGroupArnHasBeenSet() const { return m_cloudWatchLogGroupArnHasBeenSet; }

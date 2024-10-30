@@ -7,6 +7,7 @@
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/model/CreateIamIdentityCenterConfigOptions.h>
 #include <aws/opensearchserverless/model/SamlConfigOptions.h>
 #include <aws/opensearchserverless/model/SecurityConfigType.h>
 #include <utility>
@@ -67,6 +68,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Describes IAM Identity Center options in the form of a key-value map. This
+     * field is required if you specify iamidentitycenter for the type parameter.</p>
+     */
+    inline const CreateIamIdentityCenterConfigOptions& GetIamIdentityCenterOptions() const{ return m_iamIdentityCenterOptions; }
+    inline bool IamIdentityCenterOptionsHasBeenSet() const { return m_iamIdentityCenterOptionsHasBeenSet; }
+    inline void SetIamIdentityCenterOptions(const CreateIamIdentityCenterConfigOptions& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = value; }
+    inline void SetIamIdentityCenterOptions(CreateIamIdentityCenterConfigOptions&& value) { m_iamIdentityCenterOptionsHasBeenSet = true; m_iamIdentityCenterOptions = std::move(value); }
+    inline CreateSecurityConfigRequest& WithIamIdentityCenterOptions(const CreateIamIdentityCenterConfigOptions& value) { SetIamIdentityCenterOptions(value); return *this;}
+    inline CreateSecurityConfigRequest& WithIamIdentityCenterOptions(CreateIamIdentityCenterConfigOptions&& value) { SetIamIdentityCenterOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the security configuration.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -111,6 +125,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    CreateIamIdentityCenterConfigOptions m_iamIdentityCenterOptions;
+    bool m_iamIdentityCenterOptionsHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

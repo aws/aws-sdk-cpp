@@ -23,7 +23,9 @@ CreateTaskRequest::CreateTaskRequest() :
     m_tagsHasBeenSet(false),
     m_includesHasBeenSet(false),
     m_manifestConfigHasBeenSet(false),
-    m_taskReportConfigHasBeenSet(false)
+    m_taskReportConfigHasBeenSet(false),
+    m_taskMode(TaskMode::NOT_SET),
+    m_taskModeHasBeenSet(false)
 {
 }
 
@@ -110,6 +112,11 @@ Aws::String CreateTaskRequest::SerializePayload() const
   {
    payload.WithObject("TaskReportConfig", m_taskReportConfig.Jsonize());
 
+  }
+
+  if(m_taskModeHasBeenSet)
+  {
+   payload.WithString("TaskMode", TaskModeMapper::GetNameForTaskMode(m_taskMode));
   }
 
   return payload.View().WriteReadable();

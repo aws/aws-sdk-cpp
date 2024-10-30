@@ -37,6 +37,7 @@ Workgroup::Workgroup() :
     m_patchVersionHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_pricePerformanceTargetHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -160,6 +161,13 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     m_port = jsonValue.GetInteger("port");
 
     m_portHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("pricePerformanceTarget"))
+  {
+    m_pricePerformanceTarget = jsonValue.GetObject("pricePerformanceTarget");
+
+    m_pricePerformanceTargetHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("publiclyAccessible"))
@@ -320,6 +328,12 @@ JsonValue Workgroup::Jsonize() const
   if(m_portHasBeenSet)
   {
    payload.WithInteger("port", m_port);
+
+  }
+
+  if(m_pricePerformanceTargetHasBeenSet)
+  {
+   payload.WithObject("pricePerformanceTarget", m_pricePerformanceTarget.Jsonize());
 
   }
 

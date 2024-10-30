@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/ModelPackageSecurityConfig.h>
 #include <aws/sagemaker/model/ModelPackageModelCard.h>
+#include <aws/sagemaker/model/ModelLifeCycle.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/DriftCheckBaselines.h>
 #include <aws/sagemaker/model/SkipModelValidation.h>
@@ -404,6 +405,19 @@ namespace Model
 
     ///@{
     /**
+     * <p> A structure describing the current state of the model in its life cycle.
+     * </p>
+     */
+    inline const ModelLifeCycle& GetModelLifeCycle() const{ return m_modelLifeCycle; }
+    inline bool ModelLifeCycleHasBeenSet() const { return m_modelLifeCycleHasBeenSet; }
+    inline void SetModelLifeCycle(const ModelLifeCycle& value) { m_modelLifeCycleHasBeenSet = true; m_modelLifeCycle = value; }
+    inline void SetModelLifeCycle(ModelLifeCycle&& value) { m_modelLifeCycleHasBeenSet = true; m_modelLifeCycle = std::move(value); }
+    inline ModelPackage& WithModelLifeCycle(const ModelLifeCycle& value) { SetModelLifeCycle(value); return *this;}
+    inline ModelPackage& WithModelLifeCycle(ModelLifeCycle&& value) { SetModelLifeCycle(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A list of the tags associated with the model package. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
@@ -542,6 +556,9 @@ namespace Model
 
     ModelPackageModelCard m_modelCard;
     bool m_modelCardHasBeenSet = false;
+
+    ModelLifeCycle m_modelLifeCycle;
+    bool m_modelLifeCycleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

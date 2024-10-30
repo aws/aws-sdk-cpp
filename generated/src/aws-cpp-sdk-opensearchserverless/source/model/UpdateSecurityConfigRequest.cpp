@@ -17,6 +17,7 @@ UpdateSecurityConfigRequest::UpdateSecurityConfigRequest() :
     m_clientTokenHasBeenSet(true),
     m_configVersionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_iamIdentityCenterOptionsUpdatesHasBeenSet(false),
     m_idHasBeenSet(false),
     m_samlOptionsHasBeenSet(false)
 {
@@ -41,6 +42,12 @@ Aws::String UpdateSecurityConfigRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_iamIdentityCenterOptionsUpdatesHasBeenSet)
+  {
+   payload.WithObject("iamIdentityCenterOptionsUpdates", m_iamIdentityCenterOptionsUpdates.Jsonize());
 
   }
 

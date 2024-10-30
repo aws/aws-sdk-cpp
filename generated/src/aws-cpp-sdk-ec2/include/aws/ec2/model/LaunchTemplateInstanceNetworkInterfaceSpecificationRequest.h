@@ -132,11 +132,14 @@ namespace Model
     ///@{
     /**
      * <p>The type of network interface. To create an Elastic Fabric Adapter (EFA),
-     * specify <code>efa</code>. For more information, see <a
+     * specify <code>efa</code> or <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>If you are not
      * creating an EFA, specify <code>interface</code> or omit this parameter.</p>
-     * <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the
+     * network interface. EFA-only network interfaces do not support IP addresses.</p>
+     * <p>Valid values: <code>interface</code> | <code>efa</code> |
+     * <code>efa-only</code> </p>
      */
     inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }

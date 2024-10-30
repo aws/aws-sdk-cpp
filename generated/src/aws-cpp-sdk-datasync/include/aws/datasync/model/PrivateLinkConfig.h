@@ -58,7 +58,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the VPC endpoint provided by <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon
+     * href="https://docs.aws.amazon.com/vpc/latest/privatelink/privatelink-share-your-services.html">Amazon
      * Web Services PrivateLink</a> that your agent connects to.</p>
      */
     inline const Aws::String& GetPrivateLinkEndpoint() const{ return m_privateLinkEndpoint; }

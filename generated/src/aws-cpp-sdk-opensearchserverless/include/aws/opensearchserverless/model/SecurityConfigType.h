@@ -16,7 +16,8 @@ namespace Model
   enum class SecurityConfigType
   {
     NOT_SET,
-    saml
+    saml,
+    iamidentitycenter
   };
 
 namespace SecurityConfigTypeMapper

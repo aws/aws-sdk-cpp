@@ -505,9 +505,10 @@ namespace Route53
          * resource policy for all the log groups that you create for query logging.</p>
          * </li> </ul> </li> <li> <p>Create a CloudWatch Logs resource policy, and give it
          * the permissions that Route 53 needs to create log streams and to send query logs
-         * to log streams. For the value of <code>Resource</code>, specify the ARN for the
-         * log group that you created in the previous step. To use the same resource policy
-         * for all the CloudWatch Logs log groups that you created for query logging
+         * to log streams. You must create the CloudWatch Logs resource policy in the
+         * us-east-1 region. For the value of <code>Resource</code>, specify the ARN for
+         * the log group that you created in the previous step. To use the same resource
+         * policy for all the CloudWatch Logs log groups that you created for query logging
          * configurations, replace the hosted zone name with <code>*</code>, for
          * example:</p> <p>
          * <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/ *</code> </p>
@@ -1491,7 +1492,11 @@ namespace Route53
 
         /**
          * <p>Gets information about a specified hosted zone including the four name
-         * servers assigned to the hosted zone.</p><p><h3>See Also:</h3>   <a
+         * servers assigned to the hosted zone.</p> <p> <code/> returns the VPCs associated
+         * with the specified hosted zone and does not reflect the VPC associations by
+         * Route 53 Profiles. To get the associations to a Profile, call the <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfileAssociations.html">ListProfileAssociations</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone">AWS
          * API Reference</a></p>
          */
@@ -1988,13 +1993,17 @@ namespace Route53
          * Amazon Web Services service that created and owns the hosted zone. For example,
          * if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the
          * value of <code>Owner</code> is <code>efs.amazonaws.com</code>. </p> </li> </ul>
-         *  <p>When listing private hosted zones, the hosted zone and the Amazon VPC
-         * must belong to the same partition where the hosted zones were created. A
-         * partition is a group of Amazon Web Services Regions. Each Amazon Web Services
-         * account is scoped to one partition.</p> <p>The following are the supported
-         * partitions:</p> <ul> <li> <p> <code>aws</code> - Amazon Web Services Regions</p>
-         * </li> <li> <p> <code>aws-cn</code> - China Regions</p> </li> <li> <p>
-         * <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
+         * <p> <code>ListHostedZonesByVPC</code> returns the hosted zones associated with
+         * the specified VPC and does not reflect the hosted zone associations to VPCs via
+         * Route 53 Profiles. To get the associations to a Profile, call the <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_ListProfileResourceAssociations.html">ListProfileResourceAssociations</a>
+         * API.</p>  <p>When listing private hosted zones, the hosted zone and the
+         * Amazon VPC must belong to the same partition where the hosted zones were
+         * created. A partition is a group of Amazon Web Services Regions. Each Amazon Web
+         * Services account is scoped to one partition.</p> <p>The following are the
+         * supported partitions:</p> <ul> <li> <p> <code>aws</code> - Amazon Web Services
+         * Regions</p> </li> <li> <p> <code>aws-cn</code> - China Regions</p> </li> <li>
+         * <p> <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region</p> </li>
          * </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Access
          * Management</a> in the <i>Amazon Web Services General Reference</i>.</p>

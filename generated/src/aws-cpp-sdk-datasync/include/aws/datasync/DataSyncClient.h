@@ -143,16 +143,11 @@ namespace DataSync
         }
 
         /**
-         * <p>Activates an DataSync agent that you've deployed in your storage environment.
-         * The activation process associates the agent with your Amazon Web Services
-         * account.</p> <p>If you haven't deployed an agent yet, see the following topics
-         * to learn more:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/agent-requirements.html">Agent
-         * requirements</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-agent.html">Create
-         * an agent</a> </p> </li> </ul>  <p>If you're transferring between Amazon
-         * Web Services storage services, you don't need a DataSync agent. </p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Activates an DataSync agent that you deploy in your storage environment. The
+         * activation process associates the agent with your Amazon Web Services
+         * account.</p> <p>If you haven't deployed an agent yet, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html">Do
+         * I need a DataSync agent?</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateAgent">AWS
          * API Reference</a></p>
          */
@@ -1083,8 +1078,14 @@ namespace DataSync
 
         /**
          * <p>Provides information about an execution of your DataSync task. You can use
-         * this operation to help monitor the progress of an ongoing transfer or check the
-         * results of the transfer.</p><p><h3>See Also:</h3>   <a
+         * this operation to help monitor the progress of an ongoing data transfer or check
+         * the results of the transfer.</p>  <p>Some
+         * <code>DescribeTaskExecution</code> response elements are only relevant to a
+         * specific task mode. For information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding
+         * task mode differences</a> and <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/transfer-performance-metrics.html">Understanding
+         * data transfer performance metrics</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecution">AWS
          * API Reference</a></p>
          */
@@ -1397,7 +1398,7 @@ namespace DataSync
 
         /**
          * <p>Starts an DataSync transfer task. For each task, you can only run one task
-         * execution at a time.</p> <p>There are several phases to a task execution. For
+         * execution at a time.</p> <p>There are several steps to a task execution. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task
          * execution statuses</a>.</p>  <p>If you're planning to transfer data

@@ -47,7 +47,7 @@ namespace Model
      * <p>The CPU architecture.</p> <p>You can run your Linux tasks on an ARM-based
      * platform by setting the value to <code>ARM64</code>. This option is available
      * for tasks that run on Linux Amazon EC2 instance or Linux containers on
-     * Fargate.</p>
+     * Fargate.</p> <p>The default is <code>X86_64</code>.</p>
      */
     inline const CPUArchitecture& GetCpuArchitecture() const{ return m_cpuArchitecture; }
     inline bool CpuArchitectureHasBeenSet() const { return m_cpuArchitectureHasBeenSet; }
@@ -59,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The operating system.</p>
+     * <p>The operating system.</p> <p>The default is <code>Linux</code>.</p>
      */
     inline const OSFamily& GetOperatingSystemFamily() const{ return m_operatingSystemFamily; }
     inline bool OperatingSystemFamilyHasBeenSet() const { return m_operatingSystemFamilyHasBeenSet; }

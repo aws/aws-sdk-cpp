@@ -1,0 +1,104 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
+#include <aws/geo-routes/model/IsolineMatchingOptions.h>
+#include <aws/geo-routes/model/IsolineSideOfStreetOptions.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace GeoRoutes
+{
+namespace Model
+{
+
+  /**
+   * <p>Destination related options.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/IsolineDestinationOptions">AWS
+   * API Reference</a></p>
+   */
+  class IsolineDestinationOptions
+  {
+  public:
+    AWS_GEOROUTES_API IsolineDestinationOptions();
+    AWS_GEOROUTES_API IsolineDestinationOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GEOROUTES_API IsolineDestinationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p>Avoids actions for the provided distance. This is typically to consider for
+     * users in moving vehicles who may not have sufficient time to make an action at
+     * an origin or a destination.</p>
+     */
+    inline long long GetAvoidActionsForDistance() const{ return m_avoidActionsForDistance; }
+    inline bool AvoidActionsForDistanceHasBeenSet() const { return m_avoidActionsForDistanceHasBeenSet; }
+    inline void SetAvoidActionsForDistance(long long value) { m_avoidActionsForDistanceHasBeenSet = true; m_avoidActionsForDistance = value; }
+    inline IsolineDestinationOptions& WithAvoidActionsForDistance(long long value) { SetAvoidActionsForDistance(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>GPS Heading at the position.</p>
+     */
+    inline double GetHeading() const{ return m_heading; }
+    inline bool HeadingHasBeenSet() const { return m_headingHasBeenSet; }
+    inline void SetHeading(double value) { m_headingHasBeenSet = true; m_heading = value; }
+    inline IsolineDestinationOptions& WithHeading(double value) { SetHeading(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Options to configure matching the provided position to the road network.</p>
+     */
+    inline const IsolineMatchingOptions& GetMatching() const{ return m_matching; }
+    inline bool MatchingHasBeenSet() const { return m_matchingHasBeenSet; }
+    inline void SetMatching(const IsolineMatchingOptions& value) { m_matchingHasBeenSet = true; m_matching = value; }
+    inline void SetMatching(IsolineMatchingOptions&& value) { m_matchingHasBeenSet = true; m_matching = std::move(value); }
+    inline IsolineDestinationOptions& WithMatching(const IsolineMatchingOptions& value) { SetMatching(value); return *this;}
+    inline IsolineDestinationOptions& WithMatching(IsolineMatchingOptions&& value) { SetMatching(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Options to configure matching the provided position to a side of the
+     * street.</p>
+     */
+    inline const IsolineSideOfStreetOptions& GetSideOfStreet() const{ return m_sideOfStreet; }
+    inline bool SideOfStreetHasBeenSet() const { return m_sideOfStreetHasBeenSet; }
+    inline void SetSideOfStreet(const IsolineSideOfStreetOptions& value) { m_sideOfStreetHasBeenSet = true; m_sideOfStreet = value; }
+    inline void SetSideOfStreet(IsolineSideOfStreetOptions&& value) { m_sideOfStreetHasBeenSet = true; m_sideOfStreet = std::move(value); }
+    inline IsolineDestinationOptions& WithSideOfStreet(const IsolineSideOfStreetOptions& value) { SetSideOfStreet(value); return *this;}
+    inline IsolineDestinationOptions& WithSideOfStreet(IsolineSideOfStreetOptions&& value) { SetSideOfStreet(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    long long m_avoidActionsForDistance;
+    bool m_avoidActionsForDistanceHasBeenSet = false;
+
+    double m_heading;
+    bool m_headingHasBeenSet = false;
+
+    IsolineMatchingOptions m_matching;
+    bool m_matchingHasBeenSet = false;
+
+    IsolineSideOfStreetOptions m_sideOfStreet;
+    bool m_sideOfStreetHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace GeoRoutes
+} // namespace Aws

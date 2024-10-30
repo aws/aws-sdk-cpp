@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/opensearch/model/DomainEndpointOptions.h>
 #include <aws/opensearch/model/AdvancedSecurityOptionsInput.h>
+#include <aws/opensearch/model/IdentityCenterOptionsInput.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearch/model/AutoTuneOptionsInput.h>
 #include <aws/opensearch/model/OffPeakWindowOptions.h>
@@ -290,6 +291,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Options for IAM Identity Center Option control for the domain.</p>
+     */
+    inline const IdentityCenterOptionsInput& GetIdentityCenterOptions() const{ return m_identityCenterOptions; }
+    inline bool IdentityCenterOptionsHasBeenSet() const { return m_identityCenterOptionsHasBeenSet; }
+    inline void SetIdentityCenterOptions(const IdentityCenterOptionsInput& value) { m_identityCenterOptionsHasBeenSet = true; m_identityCenterOptions = value; }
+    inline void SetIdentityCenterOptions(IdentityCenterOptionsInput&& value) { m_identityCenterOptionsHasBeenSet = true; m_identityCenterOptions = std::move(value); }
+    inline CreateDomainRequest& WithIdentityCenterOptions(const IdentityCenterOptionsInput& value) { SetIdentityCenterOptions(value); return *this;}
+    inline CreateDomainRequest& WithIdentityCenterOptions(IdentityCenterOptionsInput&& value) { SetIdentityCenterOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>List of tags to add to the domain upon creation.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
@@ -399,6 +412,9 @@ namespace Model
 
     AdvancedSecurityOptionsInput m_advancedSecurityOptions;
     bool m_advancedSecurityOptionsHasBeenSet = false;
+
+    IdentityCenterOptionsInput m_identityCenterOptions;
+    bool m_identityCenterOptionsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;

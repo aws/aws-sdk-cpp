@@ -65,17 +65,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Determines whether to use the CloudWatch alarm option in the service
-     * deployment process.</p>
-     */
-    inline bool GetEnable() const{ return m_enable; }
-    inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
-    inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
-    inline DeploymentAlarms& WithEnable(bool value) { SetEnable(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Determines whether to configure Amazon ECS to roll back the service if a
      * service deployment fails. If rollback is used, when a service deployment fails,
      * the service is rolled back to the last deployment that completed
@@ -86,16 +75,27 @@ namespace Model
     inline void SetRollback(bool value) { m_rollbackHasBeenSet = true; m_rollback = value; }
     inline DeploymentAlarms& WithRollback(bool value) { SetRollback(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Determines whether to use the CloudWatch alarm option in the service
+     * deployment process.</p>
+     */
+    inline bool GetEnable() const{ return m_enable; }
+    inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
+    inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
+    inline DeploymentAlarms& WithEnable(bool value) { SetEnable(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_alarmNames;
     bool m_alarmNamesHasBeenSet = false;
 
-    bool m_enable;
-    bool m_enableHasBeenSet = false;
-
     bool m_rollback;
     bool m_rollbackHasBeenSet = false;
+
+    bool m_enable;
+    bool m_enableHasBeenSet = false;
   };
 
 } // namespace Model

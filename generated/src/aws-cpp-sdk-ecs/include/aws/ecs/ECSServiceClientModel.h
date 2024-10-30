@@ -34,6 +34,8 @@
 #include <aws/ecs/model/DescribeCapacityProvidersResult.h>
 #include <aws/ecs/model/DescribeClustersResult.h>
 #include <aws/ecs/model/DescribeContainerInstancesResult.h>
+#include <aws/ecs/model/DescribeServiceDeploymentsResult.h>
+#include <aws/ecs/model/DescribeServiceRevisionsResult.h>
 #include <aws/ecs/model/DescribeServicesResult.h>
 #include <aws/ecs/model/DescribeTaskDefinitionResult.h>
 #include <aws/ecs/model/DescribeTaskSetsResult.h>
@@ -45,6 +47,7 @@
 #include <aws/ecs/model/ListAttributesResult.h>
 #include <aws/ecs/model/ListClustersResult.h>
 #include <aws/ecs/model/ListContainerInstancesResult.h>
+#include <aws/ecs/model/ListServiceDeploymentsResult.h>
 #include <aws/ecs/model/ListServicesResult.h>
 #include <aws/ecs/model/ListServicesByNamespaceResult.h>
 #include <aws/ecs/model/ListTagsForResourceResult.h>
@@ -144,6 +147,8 @@ namespace Aws
       class DescribeCapacityProvidersRequest;
       class DescribeClustersRequest;
       class DescribeContainerInstancesRequest;
+      class DescribeServiceDeploymentsRequest;
+      class DescribeServiceRevisionsRequest;
       class DescribeServicesRequest;
       class DescribeTaskDefinitionRequest;
       class DescribeTaskSetsRequest;
@@ -155,6 +160,7 @@ namespace Aws
       class ListAttributesRequest;
       class ListClustersRequest;
       class ListContainerInstancesRequest;
+      class ListServiceDeploymentsRequest;
       class ListServicesRequest;
       class ListServicesByNamespaceRequest;
       class ListTagsForResourceRequest;
@@ -203,6 +209,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeCapacityProvidersResult, ECSError> DescribeCapacityProvidersOutcome;
       typedef Aws::Utils::Outcome<DescribeClustersResult, ECSError> DescribeClustersOutcome;
       typedef Aws::Utils::Outcome<DescribeContainerInstancesResult, ECSError> DescribeContainerInstancesOutcome;
+      typedef Aws::Utils::Outcome<DescribeServiceDeploymentsResult, ECSError> DescribeServiceDeploymentsOutcome;
+      typedef Aws::Utils::Outcome<DescribeServiceRevisionsResult, ECSError> DescribeServiceRevisionsOutcome;
       typedef Aws::Utils::Outcome<DescribeServicesResult, ECSError> DescribeServicesOutcome;
       typedef Aws::Utils::Outcome<DescribeTaskDefinitionResult, ECSError> DescribeTaskDefinitionOutcome;
       typedef Aws::Utils::Outcome<DescribeTaskSetsResult, ECSError> DescribeTaskSetsOutcome;
@@ -214,6 +222,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAttributesResult, ECSError> ListAttributesOutcome;
       typedef Aws::Utils::Outcome<ListClustersResult, ECSError> ListClustersOutcome;
       typedef Aws::Utils::Outcome<ListContainerInstancesResult, ECSError> ListContainerInstancesOutcome;
+      typedef Aws::Utils::Outcome<ListServiceDeploymentsResult, ECSError> ListServiceDeploymentsOutcome;
       typedef Aws::Utils::Outcome<ListServicesResult, ECSError> ListServicesOutcome;
       typedef Aws::Utils::Outcome<ListServicesByNamespaceResult, ECSError> ListServicesByNamespaceOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ECSError> ListTagsForResourceOutcome;
@@ -262,6 +271,8 @@ namespace Aws
       typedef std::future<DescribeCapacityProvidersOutcome> DescribeCapacityProvidersOutcomeCallable;
       typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
       typedef std::future<DescribeContainerInstancesOutcome> DescribeContainerInstancesOutcomeCallable;
+      typedef std::future<DescribeServiceDeploymentsOutcome> DescribeServiceDeploymentsOutcomeCallable;
+      typedef std::future<DescribeServiceRevisionsOutcome> DescribeServiceRevisionsOutcomeCallable;
       typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
       typedef std::future<DescribeTaskDefinitionOutcome> DescribeTaskDefinitionOutcomeCallable;
       typedef std::future<DescribeTaskSetsOutcome> DescribeTaskSetsOutcomeCallable;
@@ -273,6 +284,7 @@ namespace Aws
       typedef std::future<ListAttributesOutcome> ListAttributesOutcomeCallable;
       typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
       typedef std::future<ListContainerInstancesOutcome> ListContainerInstancesOutcomeCallable;
+      typedef std::future<ListServiceDeploymentsOutcome> ListServiceDeploymentsOutcomeCallable;
       typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
       typedef std::future<ListServicesByNamespaceOutcome> ListServicesByNamespaceOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -324,6 +336,8 @@ namespace Aws
     typedef std::function<void(const ECSClient*, const Model::DescribeCapacityProvidersRequest&, const Model::DescribeCapacityProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityProvidersResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DescribeClustersRequest&, const Model::DescribeClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClustersResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DescribeContainerInstancesRequest&, const Model::DescribeContainerInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContainerInstancesResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::DescribeServiceDeploymentsRequest&, const Model::DescribeServiceDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceDeploymentsResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::DescribeServiceRevisionsRequest&, const Model::DescribeServiceRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceRevisionsResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DescribeServicesRequest&, const Model::DescribeServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServicesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DescribeTaskDefinitionRequest&, const Model::DescribeTaskDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTaskDefinitionResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DescribeTaskSetsRequest&, const Model::DescribeTaskSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTaskSetsResponseReceivedHandler;
@@ -335,6 +349,7 @@ namespace Aws
     typedef std::function<void(const ECSClient*, const Model::ListAttributesRequest&, const Model::ListAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttributesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListContainerInstancesRequest&, const Model::ListContainerInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainerInstancesResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::ListServiceDeploymentsRequest&, const Model::ListServiceDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceDeploymentsResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListServicesRequest&, const Model::ListServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListServicesByNamespaceRequest&, const Model::ListServicesByNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesByNamespaceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;

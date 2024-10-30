@@ -14,6 +14,9 @@
 #include <aws/datasync/model/TaskExecutionResultDetail.h>
 #include <aws/datasync/model/TaskReportConfig.h>
 #include <aws/datasync/model/ReportResult.h>
+#include <aws/datasync/model/TaskMode.h>
+#include <aws/datasync/model/TaskExecutionFilesListedDetail.h>
+#include <aws/datasync/model/TaskExecutionFilesFailedDetail.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <utility>
 
@@ -145,11 +148,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The expected number of files, objects, and directories that DataSync will
+     * <p>The number of files, objects, and directories that DataSync expects to
      * transfer over the network. This value is calculated during the task execution's
-     * <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The
-     * calculation is based on comparing the content of the source and destination
-     * locations and finding the difference that needs to be transferred. </p>
+     * <code>PREPARING</code> <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">step</a>
+     * before the <code>TRANSFERRING</code> step.</p> <p>How this gets calculated
+     * depends primarily on your task’s <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-TransferMode">transfer
+     * mode</a> configuration:</p> <ul> <li> <p>If <code>TranserMode</code> is set to
+     * <code>CHANGED</code> - The calculation is based on comparing the content of the
+     * source and destination locations and determining the difference that needs to be
+     * transferred. The difference can include:</p> <ul> <li> <p>Anything that's added
+     * or modified at the source location.</p> </li> <li> <p>Anything that's in both
+     * locations and modified at the destination after an initial transfer (unless <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-OverwriteMode">OverwriteMode</a>
+     * is set to <code>NEVER</code>).</p> </li> <li> <p> <b>(Basic task mode only)</b>
+     * The number of items that DataSync expects to delete (if <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-PreserveDeletedFiles">PreserveDeletedFiles</a>
+     * is set to <code>REMOVE</code>).</p> </li> </ul> </li> <li> <p>If
+     * <code>TranserMode</code> is set to <code>ALL</code> - The calculation is based
+     * only on the items that DataSync finds at the source location.</p> </li> </ul>
      */
     inline long long GetEstimatedFilesToTransfer() const{ return m_estimatedFilesToTransfer; }
     inline void SetEstimatedFilesToTransfer(long long value) { m_estimatedFilesToTransfer = value; }
@@ -158,8 +176,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The estimated physical number of bytes that will transfer over the
-     * network.</p>
+     * <p>The number of logical bytes that DataSync expects to write to the destination
+     * location.</p>
      */
     inline long long GetEstimatedBytesToTransfer() const{ return m_estimatedBytesToTransfer; }
     inline void SetEstimatedBytesToTransfer(long long value) { m_estimatedBytesToTransfer = value; }
@@ -168,15 +186,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The actual number of files, objects, and directories that DataSync
-     * transferred over the network. This value is updated periodically during the task
-     * execution's <code>TRANSFERRING</code> phase when something is read from the
-     * source and sent over the network.</p> <p>If DataSync fails to transfer
-     * something, this value can be less than <code>EstimatedFilesToTransfer</code>. In
-     * some cases, this value can also be greater than
-     * <code>EstimatedFilesToTransfer</code>. This element is implementation-specific
-     * for some location types, so don't use it as an exact indication of what
-     * transferred or to monitor your task execution.</p>
+     * <p>The number of files, objects, and directories that DataSync actually
+     * transfers over the network. This value is updated periodically during the task
+     * execution's <code>TRANSFERRING</code> <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">step</a>
+     * when something is read from the source and sent over the network.</p> <p>If
+     * DataSync fails to transfer something, this value can be less than
+     * <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be
+     * greater than <code>EstimatedFilesToTransfer</code>. This element is
+     * implementation-specific for some location types, so don't use it as an exact
+     * indication of what's transferring or to monitor your task execution.</p>
      */
     inline long long GetFilesTransferred() const{ return m_filesTransferred; }
     inline void SetFilesTransferred(long long value) { m_filesTransferred = value; }
@@ -185,7 +204,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of logical bytes written to the destination location.</p>
+     * <p>The number of logical bytes that DataSync actually writes to the destination
+     * location.</p>
      */
     inline long long GetBytesWritten() const{ return m_bytesWritten; }
     inline void SetBytesWritten(long long value) { m_bytesWritten = value; }
@@ -194,8 +214,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total number of bytes that are involved in the transfer. For the number
-     * of bytes sent over the network, see <code>BytesCompressed</code>. </p>
+     * <p>The number of bytes that DataSync sends to the network before compression (if
+     * compression is possible). For the number of bytes transferred over the network,
+     * see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-BytesCompressed">BytesCompressed</a>.
+     * </p>
      */
     inline long long GetBytesTransferred() const{ return m_bytesTransferred; }
     inline void SetBytesTransferred(long long value) { m_bytesTransferred = value; }
@@ -204,9 +227,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The physical number of bytes transferred over the network after compression
-     * was applied. In most cases, this number is less than
-     * <code>BytesTransferred</code> unless the data isn't compressible.</p>
+     * <p>The number of physical bytes that DataSync transfers over the network after
+     * compression (if compression is possible). This number is typically less than <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-BytesTransferred">BytesTransferred</a>
+     * unless the data isn't compressible.</p>  <p>Not currently supported with
+     * <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+     * mode tasks</a>.</p> 
      */
     inline long long GetBytesCompressed() const{ return m_bytesCompressed; }
     inline void SetBytesCompressed(long long value) { m_bytesCompressed = value; }
@@ -240,8 +267,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of files, objects, and directories that DataSync deleted in your
-     * destination location. If you don't <a
+     * <p>The number of files, objects, and directories that DataSync actually deletes
+     * in your destination location. If you don't <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
      * your task</a> to delete data in the destination that isn't in the source, the
      * value is always <code>0</code>.</p>
@@ -253,8 +280,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of files, objects, and directories that DataSync skipped during
-     * your transfer.</p>
+     * <p>The number of files, objects, and directories that DataSync skips during your
+     * transfer.</p>
      */
     inline long long GetFilesSkipped() const{ return m_filesSkipped; }
     inline void SetFilesSkipped(long long value) { m_filesSkipped = value; }
@@ -263,7 +290,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of files, objects, and directories that DataSync verified during
+     * <p>The number of files, objects, and directories that DataSync verifies during
      * your transfer.</p>  <p>When you configure your task to <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify
      * only the data that's transferred</a>, DataSync doesn't verify directories in
@@ -289,8 +316,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The expected number of files, objects, and directories that DataSync will
-     * delete in your destination location. If you don't <a
+     * <p>The number of files, objects, and directories that DataSync expects to delete
+     * in your destination location. If you don't <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
      * your task</a> to delete data in the destination that isn't in the source, the
      * value is always <code>0</code>.</p>
@@ -298,6 +325,63 @@ namespace Model
     inline long long GetEstimatedFilesToDelete() const{ return m_estimatedFilesToDelete; }
     inline void SetEstimatedFilesToDelete(long long value) { m_estimatedFilesToDelete = value; }
     inline DescribeTaskExecutionResult& WithEstimatedFilesToDelete(long long value) { SetEstimatedFilesToDelete(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The task mode that you're using. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing
+     * a task mode for your data transfer</a>.</p>
+     */
+    inline const TaskMode& GetTaskMode() const{ return m_taskMode; }
+    inline void SetTaskMode(const TaskMode& value) { m_taskMode = value; }
+    inline void SetTaskMode(TaskMode&& value) { m_taskMode = std::move(value); }
+    inline DescribeTaskExecutionResult& WithTaskMode(const TaskMode& value) { SetTaskMode(value); return *this;}
+    inline DescribeTaskExecutionResult& WithTaskMode(TaskMode&& value) { SetTaskMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of objects that DataSync will attempt to transfer after comparing
+     * your source and destination locations.</p>  <p>Applies only to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+     * mode tasks</a>.</p>  <p>This metric isn't applicable if you configure
+     * your task to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-transfer-mode">transfer
+     * all data</a>. In that scenario, DataSync copies everything from the source to
+     * the destination without comparing differences between the locations.</p>
+     */
+    inline long long GetFilesPrepared() const{ return m_filesPrepared; }
+    inline void SetFilesPrepared(long long value) { m_filesPrepared = value; }
+    inline DescribeTaskExecutionResult& WithFilesPrepared(long long value) { SetFilesPrepared(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of objects that DataSync finds at your locations.</p> 
+     * <p>Applies only to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+     * mode tasks</a>.</p> 
+     */
+    inline const TaskExecutionFilesListedDetail& GetFilesListed() const{ return m_filesListed; }
+    inline void SetFilesListed(const TaskExecutionFilesListedDetail& value) { m_filesListed = value; }
+    inline void SetFilesListed(TaskExecutionFilesListedDetail&& value) { m_filesListed = std::move(value); }
+    inline DescribeTaskExecutionResult& WithFilesListed(const TaskExecutionFilesListedDetail& value) { SetFilesListed(value); return *this;}
+    inline DescribeTaskExecutionResult& WithFilesListed(TaskExecutionFilesListedDetail&& value) { SetFilesListed(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of objects that DataSync fails to prepare, transfer, verify, and
+     * delete during your task execution.</p>  <p>Applies only to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+     * mode tasks</a>.</p> 
+     */
+    inline const TaskExecutionFilesFailedDetail& GetFilesFailed() const{ return m_filesFailed; }
+    inline void SetFilesFailed(const TaskExecutionFilesFailedDetail& value) { m_filesFailed = value; }
+    inline void SetFilesFailed(TaskExecutionFilesFailedDetail&& value) { m_filesFailed = std::move(value); }
+    inline DescribeTaskExecutionResult& WithFilesFailed(const TaskExecutionFilesFailedDetail& value) { SetFilesFailed(value); return *this;}
+    inline DescribeTaskExecutionResult& WithFilesFailed(TaskExecutionFilesFailedDetail&& value) { SetFilesFailed(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -351,6 +435,14 @@ namespace Model
     ReportResult m_reportResult;
 
     long long m_estimatedFilesToDelete;
+
+    TaskMode m_taskMode;
+
+    long long m_filesPrepared;
+
+    TaskExecutionFilesListedDetail m_filesListed;
+
+    TaskExecutionFilesFailedDetail m_filesFailed;
 
     Aws::String m_requestId;
   };

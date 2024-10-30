@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 AuthorizeVpcEndpointAccessRequest::AuthorizeVpcEndpointAccessRequest() : 
     m_domainNameHasBeenSet(false),
-    m_accountHasBeenSet(false)
+    m_accountHasBeenSet(false),
+    m_service(AWSServicePrincipal::NOT_SET),
+    m_serviceHasBeenSet(false)
 {
 }
 
@@ -26,6 +28,11 @@ Aws::String AuthorizeVpcEndpointAccessRequest::SerializePayload() const
   {
    payload.WithString("Account", m_account);
 
+  }
+
+  if(m_serviceHasBeenSet)
+  {
+   payload.WithString("Service", AWSServicePrincipalMapper::GetNameForAWSServicePrincipal(m_service));
   }
 
   return payload.View().WriteReadable();

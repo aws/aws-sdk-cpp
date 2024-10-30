@@ -216,6 +216,20 @@ namespace Model
     inline SecurityGroupRule& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline SecurityGroupRule& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the security group rule.</p>
+     */
+    inline const Aws::String& GetSecurityGroupRuleArn() const{ return m_securityGroupRuleArn; }
+    inline bool SecurityGroupRuleArnHasBeenSet() const { return m_securityGroupRuleArnHasBeenSet; }
+    inline void SetSecurityGroupRuleArn(const Aws::String& value) { m_securityGroupRuleArnHasBeenSet = true; m_securityGroupRuleArn = value; }
+    inline void SetSecurityGroupRuleArn(Aws::String&& value) { m_securityGroupRuleArnHasBeenSet = true; m_securityGroupRuleArn = std::move(value); }
+    inline void SetSecurityGroupRuleArn(const char* value) { m_securityGroupRuleArnHasBeenSet = true; m_securityGroupRuleArn.assign(value); }
+    inline SecurityGroupRule& WithSecurityGroupRuleArn(const Aws::String& value) { SetSecurityGroupRuleArn(value); return *this;}
+    inline SecurityGroupRule& WithSecurityGroupRuleArn(Aws::String&& value) { SetSecurityGroupRuleArn(std::move(value)); return *this;}
+    inline SecurityGroupRule& WithSecurityGroupRuleArn(const char* value) { SetSecurityGroupRuleArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_securityGroupRuleId;
@@ -256,6 +270,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_securityGroupRuleArn;
+    bool m_securityGroupRuleArnHasBeenSet = false;
   };
 
 } // namespace Model

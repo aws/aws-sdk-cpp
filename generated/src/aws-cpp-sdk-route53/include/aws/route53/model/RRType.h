@@ -28,7 +28,11 @@ namespace Model
     SPF,
     AAAA,
     CAA,
-    DS
+    DS,
+    TLSA,
+    SSHFP,
+    SVCB,
+    HTTPS
   };
 
 namespace RRTypeMapper

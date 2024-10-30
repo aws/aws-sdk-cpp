@@ -84,6 +84,17 @@ namespace Model
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
     inline DeleteOrganizationRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Deletes IAM Identity Center application for WorkMail. This action does not
+     * affect authentication settings for any organization.</p>
+     */
+    inline bool GetDeleteIdentityCenterApplication() const{ return m_deleteIdentityCenterApplication; }
+    inline bool DeleteIdentityCenterApplicationHasBeenSet() const { return m_deleteIdentityCenterApplicationHasBeenSet; }
+    inline void SetDeleteIdentityCenterApplication(bool value) { m_deleteIdentityCenterApplicationHasBeenSet = true; m_deleteIdentityCenterApplication = value; }
+    inline DeleteOrganizationRequest& WithDeleteIdentityCenterApplication(bool value) { SetDeleteIdentityCenterApplication(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientToken;
@@ -97,6 +108,9 @@ namespace Model
 
     bool m_forceDelete;
     bool m_forceDeleteHasBeenSet = false;
+
+    bool m_deleteIdentityCenterApplication;
+    bool m_deleteIdentityCenterApplicationHasBeenSet = false;
   };
 
 } // namespace Model

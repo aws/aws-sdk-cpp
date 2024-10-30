@@ -19,6 +19,7 @@
 #include <aws/opensearch/model/LogPublishingOptionsStatus.h>
 #include <aws/opensearch/model/DomainEndpointOptionsStatus.h>
 #include <aws/opensearch/model/AdvancedSecurityOptionsStatus.h>
+#include <aws/opensearch/model/IdentityCenterOptionsStatus.h>
 #include <aws/opensearch/model/AutoTuneOptionsStatus.h>
 #include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <aws/opensearch/model/OffPeakWindowOptionsStatus.h>
@@ -237,6 +238,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Container for IAM Identity Center Option control for the domain.</p>
+     */
+    inline const IdentityCenterOptionsStatus& GetIdentityCenterOptions() const{ return m_identityCenterOptions; }
+    inline bool IdentityCenterOptionsHasBeenSet() const { return m_identityCenterOptionsHasBeenSet; }
+    inline void SetIdentityCenterOptions(const IdentityCenterOptionsStatus& value) { m_identityCenterOptionsHasBeenSet = true; m_identityCenterOptions = value; }
+    inline void SetIdentityCenterOptions(IdentityCenterOptionsStatus&& value) { m_identityCenterOptionsHasBeenSet = true; m_identityCenterOptions = std::move(value); }
+    inline DomainConfig& WithIdentityCenterOptions(const IdentityCenterOptionsStatus& value) { SetIdentityCenterOptions(value); return *this;}
+    inline DomainConfig& WithIdentityCenterOptions(IdentityCenterOptionsStatus&& value) { SetIdentityCenterOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Container for Auto-Tune settings for the domain.</p>
      */
     inline const AutoTuneOptionsStatus& GetAutoTuneOptions() const{ return m_autoTuneOptions; }
@@ -354,6 +367,9 @@ namespace Model
 
     AdvancedSecurityOptionsStatus m_advancedSecurityOptions;
     bool m_advancedSecurityOptionsHasBeenSet = false;
+
+    IdentityCenterOptionsStatus m_identityCenterOptions;
+    bool m_identityCenterOptionsHasBeenSet = false;
 
     AutoTuneOptionsStatus m_autoTuneOptions;
     bool m_autoTuneOptionsHasBeenSet = false;

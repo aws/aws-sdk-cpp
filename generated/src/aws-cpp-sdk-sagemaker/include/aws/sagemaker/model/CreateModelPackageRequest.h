@@ -19,6 +19,7 @@
 #include <aws/sagemaker/model/SkipModelValidation.h>
 #include <aws/sagemaker/model/ModelPackageSecurityConfig.h>
 #include <aws/sagemaker/model/ModelPackageModelCard.h>
+#include <aws/sagemaker/model/ModelLifeCycle.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <utility>
@@ -394,6 +395,19 @@ namespace Model
     inline CreateModelPackageRequest& WithModelCard(const ModelPackageModelCard& value) { SetModelCard(value); return *this;}
     inline CreateModelPackageRequest& WithModelCard(ModelPackageModelCard&& value) { SetModelCard(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> A structure describing the current state of the model in its life cycle.
+     * </p>
+     */
+    inline const ModelLifeCycle& GetModelLifeCycle() const{ return m_modelLifeCycle; }
+    inline bool ModelLifeCycleHasBeenSet() const { return m_modelLifeCycleHasBeenSet; }
+    inline void SetModelLifeCycle(const ModelLifeCycle& value) { m_modelLifeCycleHasBeenSet = true; m_modelLifeCycle = value; }
+    inline void SetModelLifeCycle(ModelLifeCycle&& value) { m_modelLifeCycleHasBeenSet = true; m_modelLifeCycle = std::move(value); }
+    inline CreateModelPackageRequest& WithModelLifeCycle(const ModelLifeCycle& value) { SetModelLifeCycle(value); return *this;}
+    inline CreateModelPackageRequest& WithModelLifeCycle(ModelLifeCycle&& value) { SetModelLifeCycle(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_modelPackageName;
@@ -461,6 +475,9 @@ namespace Model
 
     ModelPackageModelCard m_modelCard;
     bool m_modelCardHasBeenSet = false;
+
+    ModelLifeCycle m_modelLifeCycle;
+    bool m_modelLifeCycleHasBeenSet = false;
   };
 
 } // namespace Model

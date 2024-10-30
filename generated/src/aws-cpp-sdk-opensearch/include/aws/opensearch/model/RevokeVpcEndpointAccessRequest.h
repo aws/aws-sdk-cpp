@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/OpenSearchServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/model/AWSServicePrincipal.h>
 #include <utility>
 
 namespace Aws
@@ -59,6 +60,18 @@ namespace Model
     inline RevokeVpcEndpointAccessRequest& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
     inline RevokeVpcEndpointAccessRequest& WithAccount(const char* value) { SetAccount(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The service SP to revoke access from.</p>
+     */
+    inline const AWSServicePrincipal& GetService() const{ return m_service; }
+    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
+    inline void SetService(const AWSServicePrincipal& value) { m_serviceHasBeenSet = true; m_service = value; }
+    inline void SetService(AWSServicePrincipal&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
+    inline RevokeVpcEndpointAccessRequest& WithService(const AWSServicePrincipal& value) { SetService(value); return *this;}
+    inline RevokeVpcEndpointAccessRequest& WithService(AWSServicePrincipal&& value) { SetService(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_domainName;
@@ -66,6 +79,9 @@ namespace Model
 
     Aws::String m_account;
     bool m_accountHasBeenSet = false;
+
+    AWSServicePrincipal m_service;
+    bool m_serviceHasBeenSet = false;
   };
 
 } // namespace Model

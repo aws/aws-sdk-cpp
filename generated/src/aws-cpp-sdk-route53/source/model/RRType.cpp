@@ -33,6 +33,10 @@ namespace Aws
         static const int AAAA_HASH = HashingUtils::HashString("AAAA");
         static const int CAA_HASH = HashingUtils::HashString("CAA");
         static const int DS_HASH = HashingUtils::HashString("DS");
+        static const int TLSA_HASH = HashingUtils::HashString("TLSA");
+        static const int SSHFP_HASH = HashingUtils::HashString("SSHFP");
+        static const int SVCB_HASH = HashingUtils::HashString("SVCB");
+        static const int HTTPS_HASH = HashingUtils::HashString("HTTPS");
 
 
         RRType GetRRTypeForName(const Aws::String& name)
@@ -90,6 +94,22 @@ namespace Aws
           {
             return RRType::DS;
           }
+          else if (hashCode == TLSA_HASH)
+          {
+            return RRType::TLSA;
+          }
+          else if (hashCode == SSHFP_HASH)
+          {
+            return RRType::SSHFP;
+          }
+          else if (hashCode == SVCB_HASH)
+          {
+            return RRType::SVCB;
+          }
+          else if (hashCode == HTTPS_HASH)
+          {
+            return RRType::HTTPS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -132,6 +152,14 @@ namespace Aws
             return "CAA";
           case RRType::DS:
             return "DS";
+          case RRType::TLSA:
+            return "TLSA";
+          case RRType::SSHFP:
+            return "SSHFP";
+          case RRType::SVCB:
+            return "SVCB";
+          case RRType::HTTPS:
+            return "HTTPS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

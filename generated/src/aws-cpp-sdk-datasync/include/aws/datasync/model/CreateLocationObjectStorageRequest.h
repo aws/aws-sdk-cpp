@@ -144,7 +144,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
-     * securely connect with your location.</p>
+     * connect with your object storage system.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }

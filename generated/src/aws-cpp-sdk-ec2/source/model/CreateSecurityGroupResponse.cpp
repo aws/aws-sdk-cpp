@@ -54,6 +54,11 @@ CreateSecurityGroupResponse& CreateSecurityGroupResponse::operator =(const Aws::
       }
 
     }
+    XmlNode securityGroupArnNode = resultNode.FirstChild("securityGroupArn");
+    if(!securityGroupArnNode.IsNull())
+    {
+      m_securityGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupArnNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

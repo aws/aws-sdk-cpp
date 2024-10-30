@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/InferenceSpecification.h>
 #include <aws/sagemaker/model/ModelPackageModelCard.h>
+#include <aws/sagemaker/model/ModelLifeCycle.h>
 #include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <utility>
 
@@ -189,6 +190,33 @@ namespace Model
     inline UpdateModelPackageRequest& WithModelCard(const ModelPackageModelCard& value) { SetModelCard(value); return *this;}
     inline UpdateModelPackageRequest& WithModelCard(ModelPackageModelCard&& value) { SetModelCard(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> A structure describing the current state of the model in its life cycle.
+     * </p>
+     */
+    inline const ModelLifeCycle& GetModelLifeCycle() const{ return m_modelLifeCycle; }
+    inline bool ModelLifeCycleHasBeenSet() const { return m_modelLifeCycleHasBeenSet; }
+    inline void SetModelLifeCycle(const ModelLifeCycle& value) { m_modelLifeCycleHasBeenSet = true; m_modelLifeCycle = value; }
+    inline void SetModelLifeCycle(ModelLifeCycle&& value) { m_modelLifeCycleHasBeenSet = true; m_modelLifeCycle = std::move(value); }
+    inline UpdateModelPackageRequest& WithModelLifeCycle(const ModelLifeCycle& value) { SetModelLifeCycle(value); return *this;}
+    inline UpdateModelPackageRequest& WithModelLifeCycle(ModelLifeCycle&& value) { SetModelLifeCycle(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> A unique token that guarantees that the call to this API is idempotent. </p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline UpdateModelPackageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline UpdateModelPackageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline UpdateModelPackageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_modelPackageArn;
@@ -217,6 +245,12 @@ namespace Model
 
     ModelPackageModelCard m_modelCard;
     bool m_modelCardHasBeenSet = false;
+
+    ModelLifeCycle m_modelLifeCycle;
+    bool m_modelLifeCycleHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

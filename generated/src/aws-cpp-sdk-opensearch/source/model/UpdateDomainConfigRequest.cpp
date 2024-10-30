@@ -28,6 +28,7 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_domainEndpointOptionsHasBeenSet(false),
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_advancedSecurityOptionsHasBeenSet(false),
+    m_identityCenterOptionsHasBeenSet(false),
     m_autoTuneOptionsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
@@ -127,6 +128,12 @@ Aws::String UpdateDomainConfigRequest::SerializePayload() const
   if(m_advancedSecurityOptionsHasBeenSet)
   {
    payload.WithObject("AdvancedSecurityOptions", m_advancedSecurityOptions.Jsonize());
+
+  }
+
+  if(m_identityCenterOptionsHasBeenSet)
+  {
+   payload.WithObject("IdentityCenterOptions", m_identityCenterOptions.Jsonize());
 
   }
 
