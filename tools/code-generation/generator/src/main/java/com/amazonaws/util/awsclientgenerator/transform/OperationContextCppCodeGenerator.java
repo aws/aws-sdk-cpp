@@ -1,8 +1,9 @@
 package com.amazonaws.util.awsclientgenerator.transform;
-import lombok.Data;
 import java.text.MessageFormat;
-import java.util.Stack;
 import java.util.Optional;
+import java.util.Stack;
+
+import lombok.Data;
 import software.amazon.smithy.utils.Pair;
 
 @Data
@@ -39,7 +40,22 @@ public final class OperationContextCppCodeGenerator{
         {
             this.getCppCode().append(MessageFormat.format("{0}auto& {1} = (*this)", this.getIndentationPrefix(),var));
         }
-        this.varName.push(Pair.of(var, false));
+        this.varName.push(Pair.of(var, false));   
+    }
+
+    public void cleanupVariablesCurrentScope()
+    {
+        while(!this.getVarName().isEmpty())
+        {
+            if(!this.getVarName().peek().right)
+            {
+                this.getVarName().pop();
+            }
+            else
+            {
+                break;
+            }
+        }
     }
  
     public void rangeBasedForLoop(String varName)
@@ -79,10 +95,7 @@ public final class OperationContextCppCodeGenerator{
     }
 
     public boolean isStartOfNewScope(){
-        return (
-                this.getCppCode().length() > 2 &&
-                this.getCppCode().substring(this.getCppCode().length() - 2).equals("{\n")
-            );
+        return (!this.getVarName().isEmpty())  && this.getVarName().peek().right;
     }
 
     public void addInScopeVariableToResult(Optional<String> accessorSuffix)

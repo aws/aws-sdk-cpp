@@ -58,7 +58,9 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
                         elem.left,
                         right.right);
                 }
-            ).orElseThrow(() -> new SmithyBuildException("Unsupported JMESPath expression"));
+            ).orElseThrow(() -> 
+            new SmithyBuildException("Unsupported JMESPath expression")
+            );
     }
 
     @Override
@@ -101,9 +103,10 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
         String varName = expression.getName() + "Elem";
         // if a new scope started, declare variable accessed
         if (context.isStartOfNewScope() ||
-                context.getVarName().isEmpty()) {
+                context.getVarName().isEmpty() ) {
             context.addVariableInScope(varName);
         }
+
         // chain accessors
         context.getCppCode()
                 .append(MessageFormat.format(".Get{0}()", CppViewHelper.convertToUpperCamel(expression.getName())));
@@ -112,6 +115,10 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
             // if leaf element, push to result
             if (member.getShape().isString()) {
                 context.addInScopeVariableToResult(Optional.empty());
+
+                //this is where we can refer to the original scope variable again
+                context.cleanupVariablesCurrentScope();
+
             }
         }
         return Pair.of(
@@ -146,7 +153,11 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
 
     @Override
     public Pair<String, Shape> visitFlatten(FlattenExpression expression) {
-        throw new SmithyBuildException("Unsupported JMESPath expression");
+        if (expression.getExpression() instanceof ProjectionExpression) {
+            return visitProjection((ProjectionExpression) expression.getExpression());
+        }
+        // If it's not a ProjectionExpression, proceed with handling FlattenExpression
+        return expression.accept(this);
     }
 
     @Override
@@ -161,9 +172,13 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
 
     @Override
     public Pair<String, Shape> visitMultiSelectList(MultiSelectListExpression expression) {
-        throw new SmithyBuildException("Unsupported JMESPath expression");
+        expression.getExpressions().forEach(expr -> {
+            expr.accept(this);
+        });
+        return Pair.of(
+            "",
+            this.input);
     }
-
     @Override
     public Pair<String, Shape> visitMultiSelectHash(MultiSelectHashExpression expression) {
         throw new SmithyBuildException("Unsupported JMESPath expression");
