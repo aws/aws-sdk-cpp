@@ -22,7 +22,10 @@ jobs:
           path: new-ref
           fetch-depth: 0
       - name: Get Diff
-        run: git --git-dir ./new-ref/.git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }}| xargs > fileList.txt
+        env:
+            BASE_COMMIT: ${{ github.event.pull_request.base.sha }}
+            COMMIT: ${{ github.sha }}
+        run: git --git-dir ./new-ref/.git diff --name-only --diff-filter=ACMRT "$BASE_COMMIT" "$COMMIT"| xargs > fileList.txt
       - name: Checkout scancode
         uses: actions/checkout@v2
         with:
