@@ -56,14 +56,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The overrides for the conatainers defined in the Amazon EKS pod. These
-     * containers run before application containers, always runs to completion, and
-     * must complete successfully before the next container starts. These containers
-     * are registered with the Amazon EKS Connector agent and persists the registration
-     * information in the Kubernetes backend data store. For more information, see <a
+     * <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS
+     * pod. These containers run before application containers, always runs to
+     * completion, and must complete successfully before the next container starts.
+     * These containers are registered with the Amazon EKS Connector agent and persists
+     * the registration information in the Kubernetes backend data store. For more
+     * information, see <a
      * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
-     * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
-     * is limited to 10 elements</p> 
+     * Containers</a> in the <i>Kubernetes documentation</i>.</p>
      */
     inline const Aws::Vector<EksContainerOverride>& GetInitContainers() const{ return m_initContainers; }
     inline bool InitContainersHasBeenSet() const { return m_initContainersHasBeenSet; }

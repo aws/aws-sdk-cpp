@@ -53,8 +53,9 @@ namespace Model
     ///@{
     /**
      * <p>A message to attach to the job that explains the reason for canceling it.
-     * This message is returned by future <a>DescribeJobs</a> operations on the job.
-     * This message is also recorded in the Batch activity logs.</p>
+     * This message is returned by future <a>DescribeJobs</a> operations on the job. It
+     * is also recorded in the Batch activity logs.</p> <p>This parameter has as limit
+     * of 1024 characters.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }

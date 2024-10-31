@@ -192,6 +192,45 @@ namespace SageMaker
         }
 
         /**
+         * <p>Deletes specific nodes within a SageMaker HyperPod cluster.
+         * <code>BatchDeleteClusterNodes</code> accepts a cluster name and a list of node
+         * IDs.</p>  <ul> <li> <p>To safeguard your work, back up your data to
+         * Amazon S3 or an FSx for Lustre file system before invoking the API on a worker
+         * node group. This will help prevent any potential data loss from the instance
+         * root volume. For more information about backup, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software-backup">Use
+         * the backup script provided by SageMaker HyperPod</a>. </p> </li> <li> <p>If you
+         * want to invoke this API on an existing cluster, you'll first need to patch the
+         * cluster by running the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterSoftware.html">UpdateClusterSoftware
+         * API</a>. For more information about patching a cluster, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+         * the SageMaker HyperPod platform software of a cluster</a>.</p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDeleteClusterNodes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteClusterNodesOutcome BatchDeleteClusterNodes(const Model::BatchDeleteClusterNodesRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteClusterNodes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDeleteClusterNodesRequestT = Model::BatchDeleteClusterNodesRequest>
+        Model::BatchDeleteClusterNodesOutcomeCallable BatchDeleteClusterNodesCallable(const BatchDeleteClusterNodesRequestT& request) const
+        {
+            return SubmitCallable(&SageMakerClient::BatchDeleteClusterNodes, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDeleteClusterNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDeleteClusterNodesRequestT = Model::BatchDeleteClusterNodesRequest>
+        void BatchDeleteClusterNodesAsync(const BatchDeleteClusterNodesRequestT& request, const BatchDeleteClusterNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SageMakerClient::BatchDeleteClusterNodes, request, handler, context);
+        }
+
+        /**
          * <p>This action batch describes a list of versioned model packages</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackage">AWS
@@ -8660,8 +8699,10 @@ namespace SageMaker
          * <p>Updates the platform software of a SageMaker HyperPod cluster for security
          * patching. To learn how to use this API, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
-         * the SageMaker HyperPod platform software of a cluster</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * the SageMaker HyperPod platform software of a cluster</a>.</p> 
+         * <p>The <code>UpgradeClusterSoftware</code> API call may impact your SageMaker
+         * HyperPod cluster uptime and availability. Plan accordingly to mitigate potential
+         * disruptions to your workloads.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSoftware">AWS
          * API Reference</a></p>
          */

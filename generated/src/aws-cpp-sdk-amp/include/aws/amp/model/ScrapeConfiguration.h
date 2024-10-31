@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>A scrape configuration for a scraper, base 64 encoded. For more information,
    * see <a
-   * href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
+   * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
    * configuration</a> in the <i>Amazon Managed Service for Prometheus User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ScrapeConfiguration">AWS

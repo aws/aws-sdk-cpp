@@ -267,9 +267,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of IP address used for this target group. The possible values are
-     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
-     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     * <p>The IP address type. The default value is <code>ipv4</code>.</p>
      */
     inline const TargetGroupIpAddressTypeEnum& GetIpAddressType() const{ return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }

@@ -55,7 +55,7 @@ namespace Model
     ///@{
     /**
      * <p>The ARN of the CloudWatch log group to which the vended log data will be
-     * published. This log group must exist prior to calling this API.</p>
+     * published. This log group must exist prior to calling this operation.</p>
      */
     inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
     inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }

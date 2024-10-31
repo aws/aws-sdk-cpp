@@ -52,7 +52,7 @@ namespace Model
     ///@{
     /**
      * <p>The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect
-     * HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to
+     * HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You can't redirect HTTPS to
      * HTTP.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }

@@ -24,7 +24,8 @@ namespace Model
     Cancelled,
     RollbackInProgress,
     RollbackFailed,
-    RollbackSuccessful
+    RollbackSuccessful,
+    Baking
   };
 
 namespace InstanceRefreshStatusMapper

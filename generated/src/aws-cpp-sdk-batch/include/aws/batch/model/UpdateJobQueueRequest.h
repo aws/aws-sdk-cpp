@@ -133,7 +133,9 @@ namespace Model
     /**
      * <p>The set of actions that Batch perform on jobs that remain at the head of the
      * job queue in the specified state longer than specified times. Batch will perform
-     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     * each action after <code>maxTimeSeconds</code> has passed. (<b>Note</b>: The
+     * minimum value for maxTimeSeconds is 600 (10 minutes) and its maximum value is
+     * 86,400 (24 hours).)</p>
      */
     inline const Aws::Vector<JobStateTimeLimitAction>& GetJobStateTimeLimitActions() const{ return m_jobStateTimeLimitActions; }
     inline bool JobStateTimeLimitActionsHasBeenSet() const { return m_jobStateTimeLimitActionsHasBeenSet; }

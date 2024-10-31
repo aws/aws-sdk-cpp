@@ -43,7 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the rule groups namespace.</p>
+     * <p>The ARN of the rule groups namespace. For example,
+     * <code>arn:aws:aps:&lt;region&gt;:123456789012:rulegroupsnamespace/ws-example1-1234-abcd-5678-ef90abcd1234/rulesfile1</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

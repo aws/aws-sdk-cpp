@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/model/EmailTemplateContent.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/model/MessageHeader.h>
 #include <utility>
@@ -29,7 +30,9 @@ namespace Model
    * <p>An object that defines the email template to use for an email message, and
    * the values to use for any message variables in that template. An <i>email
    * template</i> is a type of message template that contains content that you want
-   * to define, save, and reuse in email messages that you send.</p><p><h3>See
+   * to reuse in email messages that you send. You can specifiy the email template by
+   * providing the name or ARN of an <i>email template</i> previously saved in your
+   * Amazon SES account or by providing the full template content.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/Template">AWS API
    * Reference</a></p>
@@ -75,6 +78,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The content of the template.</p>  <p>Amazon SES supports only simple
+     * substitions when you send email using the <code>SendEmail</code> or
+     * <code>SendBulkEmail</code> operations and you provide the full template content
+     * in the request.</p> 
+     */
+    inline const EmailTemplateContent& GetTemplateContent() const{ return m_templateContent; }
+    inline bool TemplateContentHasBeenSet() const { return m_templateContentHasBeenSet; }
+    inline void SetTemplateContent(const EmailTemplateContent& value) { m_templateContentHasBeenSet = true; m_templateContent = value; }
+    inline void SetTemplateContent(EmailTemplateContent&& value) { m_templateContentHasBeenSet = true; m_templateContent = std::move(value); }
+    inline Template& WithTemplateContent(const EmailTemplateContent& value) { SetTemplateContent(value); return *this;}
+    inline Template& WithTemplateContent(EmailTemplateContent&& value) { SetTemplateContent(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An object that defines the values to use for message variables in the
      * template. This object is a set of key-value pairs. Each key defines a message
      * variable in the template. The corresponding value defines the value to use for
@@ -110,6 +128,9 @@ namespace Model
 
     Aws::String m_templateArn;
     bool m_templateArnHasBeenSet = false;
+
+    EmailTemplateContent m_templateContent;
+    bool m_templateContentHasBeenSet = false;
 
     Aws::String m_templateData;
     bool m_templateDataHasBeenSet = false;

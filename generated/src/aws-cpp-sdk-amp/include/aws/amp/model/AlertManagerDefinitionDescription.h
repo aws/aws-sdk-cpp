@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The details of an alert manager definition. </p><p><h3>See Also:</h3>   <a
+   * <p>The details of an alert manager definition. It is the configuration for the
+   * alert manager, including information about receivers for routing
+   * alerts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/AlertManagerDefinitionDescription">AWS
    * API Reference</a></p>
    */

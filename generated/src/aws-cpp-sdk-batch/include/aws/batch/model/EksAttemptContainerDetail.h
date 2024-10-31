@@ -54,6 +54,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID for the container.</p>
+     */
+    inline const Aws::String& GetContainerID() const{ return m_containerID; }
+    inline bool ContainerIDHasBeenSet() const { return m_containerIDHasBeenSet; }
+    inline void SetContainerID(const Aws::String& value) { m_containerIDHasBeenSet = true; m_containerID = value; }
+    inline void SetContainerID(Aws::String&& value) { m_containerIDHasBeenSet = true; m_containerID = std::move(value); }
+    inline void SetContainerID(const char* value) { m_containerIDHasBeenSet = true; m_containerID.assign(value); }
+    inline EksAttemptContainerDetail& WithContainerID(const Aws::String& value) { SetContainerID(value); return *this;}
+    inline EksAttemptContainerDetail& WithContainerID(Aws::String&& value) { SetContainerID(std::move(value)); return *this;}
+    inline EksAttemptContainerDetail& WithContainerID(const char* value) { SetContainerID(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The exit code returned for the job attempt. A non-zero exit code is
      * considered failed.</p>
      */
@@ -81,6 +95,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_containerID;
+    bool m_containerIDHasBeenSet = false;
 
     int m_exitCode;
     bool m_exitCodeHasBeenSet = false;

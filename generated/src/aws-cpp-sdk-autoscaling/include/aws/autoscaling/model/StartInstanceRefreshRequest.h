@@ -96,7 +96,7 @@ namespace Model
      * from scale in are found. You can also choose to enable additional features, such
      * as the following:</p> <ul> <li> <p>Auto rollback</p> </li> <li>
      * <p>Checkpoints</p> </li> <li> <p>CloudWatch alarms</p> </li> <li> <p>Skip
-     * matching</p> </li> </ul>
+     * matching</p> </li> <li> <p>Bake time</p> </li> </ul>
      */
     inline const RefreshPreferences& GetPreferences() const{ return m_preferences; }
     inline bool PreferencesHasBeenSet() const { return m_preferencesHasBeenSet; }

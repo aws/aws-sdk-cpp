@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Managed Service for Prometheusworkspace to send metrics to.</p>
+     * <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
      */
     inline const AmpConfiguration& GetAmpConfiguration() const{ return m_ampConfiguration; }
     inline bool AmpConfigurationHasBeenSet() const { return m_ampConfigurationHasBeenSet; }

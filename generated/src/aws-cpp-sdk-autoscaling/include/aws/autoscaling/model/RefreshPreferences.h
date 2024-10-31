@@ -222,6 +222,17 @@ namespace Model
     inline void SetMaxHealthyPercentage(int value) { m_maxHealthyPercentageHasBeenSet = true; m_maxHealthyPercentage = value; }
     inline RefreshPreferences& WithMaxHealthyPercentage(int value) { SetMaxHealthyPercentage(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The amount of time, in seconds, to wait at the end of an instance refresh
+     * before the instance refresh is considered complete. </p>
+     */
+    inline int GetBakeTime() const{ return m_bakeTime; }
+    inline bool BakeTimeHasBeenSet() const { return m_bakeTimeHasBeenSet; }
+    inline void SetBakeTime(int value) { m_bakeTimeHasBeenSet = true; m_bakeTime = value; }
+    inline RefreshPreferences& WithBakeTime(int value) { SetBakeTime(value); return *this;}
+    ///@}
   private:
 
     int m_minHealthyPercentage;
@@ -253,6 +264,9 @@ namespace Model
 
     int m_maxHealthyPercentage;
     bool m_maxHealthyPercentageHasBeenSet = false;
+
+    int m_bakeTime;
+    bool m_bakeTimeHasBeenSet = false;
   };
 
 } // namespace Model

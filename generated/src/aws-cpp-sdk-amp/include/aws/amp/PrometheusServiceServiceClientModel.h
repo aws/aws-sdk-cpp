@@ -39,6 +39,7 @@
 #include <aws/amp/model/TagResourceResult.h>
 #include <aws/amp/model/UntagResourceResult.h>
 #include <aws/amp/model/UpdateLoggingConfigurationResult.h>
+#include <aws/amp/model/UpdateScraperResult.h>
 #include <aws/amp/model/ListWorkspacesRequest.h>
 #include <aws/amp/model/GetDefaultScraperConfigurationRequest.h>
 #include <aws/amp/model/ListScrapersRequest.h>
@@ -109,6 +110,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateLoggingConfigurationRequest;
+      class UpdateScraperRequest;
       class UpdateWorkspaceAliasRequest;
       /* End of service model forward declarations required in PrometheusServiceClient header */
 
@@ -138,6 +140,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, PrometheusServiceError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, PrometheusServiceError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateLoggingConfigurationResult, PrometheusServiceError> UpdateLoggingConfigurationOutcome;
+      typedef Aws::Utils::Outcome<UpdateScraperResult, PrometheusServiceError> UpdateScraperOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, PrometheusServiceError> UpdateWorkspaceAliasOutcome;
       /* End of service model Outcome class definitions */
 
@@ -167,6 +170,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateLoggingConfigurationOutcome> UpdateLoggingConfigurationOutcomeCallable;
+      typedef std::future<UpdateScraperOutcome> UpdateScraperOutcomeCallable;
       typedef std::future<UpdateWorkspaceAliasOutcome> UpdateWorkspaceAliasOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -199,6 +203,7 @@ namespace Aws
     typedef std::function<void(const PrometheusServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::UpdateLoggingConfigurationRequest&, const Model::UpdateLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const PrometheusServiceClient*, const Model::UpdateScraperRequest&, const Model::UpdateScraperOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateScraperResponseReceivedHandler;
     typedef std::function<void(const PrometheusServiceClient*, const Model::UpdateWorkspaceAliasRequest&, const Model::UpdateWorkspaceAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceAliasResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace PrometheusService

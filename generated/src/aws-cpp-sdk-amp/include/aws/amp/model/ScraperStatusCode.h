@@ -17,9 +17,11 @@ namespace Model
   {
     NOT_SET,
     CREATING,
+    UPDATING,
     ACTIVE,
     DELETING,
     CREATION_FAILED,
+    UPDATE_FAILED,
     DELETION_FAILED
   };
 

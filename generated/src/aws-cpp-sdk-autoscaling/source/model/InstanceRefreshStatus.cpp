@@ -29,6 +29,7 @@ namespace Aws
         static const int RollbackInProgress_HASH = HashingUtils::HashString("RollbackInProgress");
         static const int RollbackFailed_HASH = HashingUtils::HashString("RollbackFailed");
         static const int RollbackSuccessful_HASH = HashingUtils::HashString("RollbackSuccessful");
+        static const int Baking_HASH = HashingUtils::HashString("Baking");
 
 
         InstanceRefreshStatus GetInstanceRefreshStatusForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return InstanceRefreshStatus::RollbackSuccessful;
           }
+          else if (hashCode == Baking_HASH)
+          {
+            return InstanceRefreshStatus::Baking;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -104,6 +109,8 @@ namespace Aws
             return "RollbackFailed";
           case InstanceRefreshStatus::RollbackSuccessful:
             return "RollbackSuccessful";
+          case InstanceRefreshStatus::Baking:
+            return "Baking";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

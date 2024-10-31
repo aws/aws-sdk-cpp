@@ -123,7 +123,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The properties of the container that's used on the Amazon EKS pod.</p>
+     * <p>The properties of the container that's used on the Amazon EKS pod.</p> 
+     * <p>This object is limited to 10 elements.</p> 
      */
     inline const Aws::Vector<EksContainer>& GetContainers() const{ return m_containers; }
     inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
@@ -144,7 +145,7 @@ namespace Model
      * information, see <a
      * href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init
      * Containers</a> in the <i>Kubernetes documentation</i>.</p>  <p>This object
-     * is limited to 10 elements</p> 
+     * is limited to 10 elements.</p> 
      */
     inline const Aws::Vector<EksContainer>& GetInitContainers() const{ return m_initContainers; }
     inline bool InitContainersHasBeenSet() const { return m_initContainersHasBeenSet; }

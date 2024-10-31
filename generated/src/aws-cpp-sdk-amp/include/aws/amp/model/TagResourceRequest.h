@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the workspace or rule groups namespace to apply tags to.</p>
+     * <p>The ARN of the resource to apply tags to.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
     ///@{
     /**
      * <p>The list of tag keys and values to associate with the resource.</p> <p>Keys
-     * may not begin with <code>aws:</code>.</p>
+     * must not begin with <code>aws:</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

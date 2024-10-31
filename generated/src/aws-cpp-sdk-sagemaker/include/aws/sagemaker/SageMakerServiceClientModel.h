@@ -21,6 +21,7 @@
 #include <aws/sagemaker/model/AddAssociationResult.h>
 #include <aws/sagemaker/model/AddTagsResult.h>
 #include <aws/sagemaker/model/AssociateTrialComponentResult.h>
+#include <aws/sagemaker/model/BatchDeleteClusterNodesResult.h>
 #include <aws/sagemaker/model/BatchDescribeModelPackageResult.h>
 #include <aws/sagemaker/model/CreateActionResult.h>
 #include <aws/sagemaker/model/CreateAlgorithmResult.h>
@@ -406,6 +407,7 @@ namespace Aws
       class AddAssociationRequest;
       class AddTagsRequest;
       class AssociateTrialComponentRequest;
+      class BatchDeleteClusterNodesRequest;
       class BatchDescribeModelPackageRequest;
       class CreateActionRequest;
       class CreateAlgorithmRequest;
@@ -744,6 +746,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AddAssociationResult, SageMakerError> AddAssociationOutcome;
       typedef Aws::Utils::Outcome<AddTagsResult, SageMakerError> AddTagsOutcome;
       typedef Aws::Utils::Outcome<AssociateTrialComponentResult, SageMakerError> AssociateTrialComponentOutcome;
+      typedef Aws::Utils::Outcome<BatchDeleteClusterNodesResult, SageMakerError> BatchDeleteClusterNodesOutcome;
       typedef Aws::Utils::Outcome<BatchDescribeModelPackageResult, SageMakerError> BatchDescribeModelPackageOutcome;
       typedef Aws::Utils::Outcome<CreateActionResult, SageMakerError> CreateActionOutcome;
       typedef Aws::Utils::Outcome<CreateAlgorithmResult, SageMakerError> CreateAlgorithmOutcome;
@@ -1082,6 +1085,7 @@ namespace Aws
       typedef std::future<AddAssociationOutcome> AddAssociationOutcomeCallable;
       typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
       typedef std::future<AssociateTrialComponentOutcome> AssociateTrialComponentOutcomeCallable;
+      typedef std::future<BatchDeleteClusterNodesOutcome> BatchDeleteClusterNodesOutcomeCallable;
       typedef std::future<BatchDescribeModelPackageOutcome> BatchDescribeModelPackageOutcomeCallable;
       typedef std::future<CreateActionOutcome> CreateActionOutcomeCallable;
       typedef std::future<CreateAlgorithmOutcome> CreateAlgorithmOutcomeCallable;
@@ -1423,6 +1427,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::AddAssociationRequest&, const Model::AddAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddAssociationResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::AssociateTrialComponentRequest&, const Model::AssociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTrialComponentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::BatchDeleteClusterNodesRequest&, const Model::BatchDeleteClusterNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteClusterNodesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::BatchDescribeModelPackageRequest&, const Model::BatchDescribeModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateActionRequest&, const Model::CreateActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateActionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateAlgorithmRequest&, const Model::CreateAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAlgorithmResponseReceivedHandler;

@@ -99,6 +99,24 @@ namespace Model
     inline AvailabilityZone& AddLoadBalancerAddresses(const LoadBalancerAddress& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses.push_back(value); return *this; }
     inline AvailabilityZone& AddLoadBalancerAddresses(LoadBalancerAddress&& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>[Network Load Balancers with UDP listeners] The IPv6 prefixes to use for
+     * source NAT. For each subnet, specify an IPv6 prefix (/80 netmask) from the
+     * subnet CIDR block or <code>auto_assigned</code> to use an IPv6 prefix selected
+     * at random from the subnet CIDR block.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSourceNatIpv6Prefixes() const{ return m_sourceNatIpv6Prefixes; }
+    inline bool SourceNatIpv6PrefixesHasBeenSet() const { return m_sourceNatIpv6PrefixesHasBeenSet; }
+    inline void SetSourceNatIpv6Prefixes(const Aws::Vector<Aws::String>& value) { m_sourceNatIpv6PrefixesHasBeenSet = true; m_sourceNatIpv6Prefixes = value; }
+    inline void SetSourceNatIpv6Prefixes(Aws::Vector<Aws::String>&& value) { m_sourceNatIpv6PrefixesHasBeenSet = true; m_sourceNatIpv6Prefixes = std::move(value); }
+    inline AvailabilityZone& WithSourceNatIpv6Prefixes(const Aws::Vector<Aws::String>& value) { SetSourceNatIpv6Prefixes(value); return *this;}
+    inline AvailabilityZone& WithSourceNatIpv6Prefixes(Aws::Vector<Aws::String>&& value) { SetSourceNatIpv6Prefixes(std::move(value)); return *this;}
+    inline AvailabilityZone& AddSourceNatIpv6Prefixes(const Aws::String& value) { m_sourceNatIpv6PrefixesHasBeenSet = true; m_sourceNatIpv6Prefixes.push_back(value); return *this; }
+    inline AvailabilityZone& AddSourceNatIpv6Prefixes(Aws::String&& value) { m_sourceNatIpv6PrefixesHasBeenSet = true; m_sourceNatIpv6Prefixes.push_back(std::move(value)); return *this; }
+    inline AvailabilityZone& AddSourceNatIpv6Prefixes(const char* value) { m_sourceNatIpv6PrefixesHasBeenSet = true; m_sourceNatIpv6Prefixes.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_zoneName;
@@ -112,6 +130,9 @@ namespace Model
 
     Aws::Vector<LoadBalancerAddress> m_loadBalancerAddresses;
     bool m_loadBalancerAddressesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_sourceNatIpv6Prefixes;
+    bool m_sourceNatIpv6PrefixesHasBeenSet = false;
   };
 
 } // namespace Model

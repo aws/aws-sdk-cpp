@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/TrainingJobStatus.h>
+#include <aws/sagemaker/model/SecondaryStatus.h>
 #include <aws/sagemaker/model/WarmPoolStatus.h>
 #include <utility>
 
@@ -121,6 +122,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The secondary status of the training job.</p>
+     */
+    inline const SecondaryStatus& GetSecondaryStatus() const{ return m_secondaryStatus; }
+    inline bool SecondaryStatusHasBeenSet() const { return m_secondaryStatusHasBeenSet; }
+    inline void SetSecondaryStatus(const SecondaryStatus& value) { m_secondaryStatusHasBeenSet = true; m_secondaryStatus = value; }
+    inline void SetSecondaryStatus(SecondaryStatus&& value) { m_secondaryStatusHasBeenSet = true; m_secondaryStatus = std::move(value); }
+    inline TrainingJobSummary& WithSecondaryStatus(const SecondaryStatus& value) { SetSecondaryStatus(value); return *this;}
+    inline TrainingJobSummary& WithSecondaryStatus(SecondaryStatus&& value) { SetSecondaryStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the warm pool associated with the training job.</p>
      */
     inline const WarmPoolStatus& GetWarmPoolStatus() const{ return m_warmPoolStatus; }
@@ -149,6 +162,9 @@ namespace Model
 
     TrainingJobStatus m_trainingJobStatus;
     bool m_trainingJobStatusHasBeenSet = false;
+
+    SecondaryStatus m_secondaryStatus;
+    bool m_secondaryStatusHasBeenSet = false;
 
     WarmPoolStatus m_warmPoolStatus;
     bool m_warmPoolStatusHasBeenSet = false;

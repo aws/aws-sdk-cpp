@@ -7,6 +7,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/ComputationType.h>
 #include <aws/glue/model/ColumnStatisticsState.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -196,6 +197,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of column statistics computation.</p>
+     */
+    inline const ComputationType& GetComputationType() const{ return m_computationType; }
+    inline bool ComputationTypeHasBeenSet() const { return m_computationTypeHasBeenSet; }
+    inline void SetComputationType(const ComputationType& value) { m_computationTypeHasBeenSet = true; m_computationType = value; }
+    inline void SetComputationType(ComputationType&& value) { m_computationTypeHasBeenSet = true; m_computationType = std::move(value); }
+    inline ColumnStatisticsTaskRun& WithComputationType(const ComputationType& value) { SetComputationType(value); return *this;}
+    inline ColumnStatisticsTaskRun& WithComputationType(ComputationType&& value) { SetComputationType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the task run.</p>
      */
     inline const ColumnStatisticsState& GetStatus() const{ return m_status; }
@@ -311,6 +324,9 @@ namespace Model
 
     Aws::String m_workerType;
     bool m_workerTypeHasBeenSet = false;
+
+    ComputationType m_computationType;
+    bool m_computationTypeHasBeenSet = false;
 
     ColumnStatisticsState m_status;
     bool m_statusHasBeenSet = false;

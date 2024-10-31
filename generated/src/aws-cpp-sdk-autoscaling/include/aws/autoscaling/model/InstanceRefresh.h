@@ -89,7 +89,9 @@ namespace Model
      * </li> <li> <p> <code>RollbackFailed</code> - The rollback failed to complete.
      * You can troubleshoot using the status reason and the scaling activities.</p>
      * </li> <li> <p> <code>RollbackSuccessful</code> - The rollback completed
-     * successfully.</p> </li> </ul>
+     * successfully.</p> </li> <li> <p> <code>Baking</code> - Waiting the specified
+     * bake time after an instance refresh has finished updating instances.</p> </li>
+     * </ul>
      */
     inline const InstanceRefreshStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

@@ -43,8 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The alias that is assigned to this workspace to help identify it. It may not
-     * be unique.</p>
+     * <p>The alias that is assigned to this workspace to help identify it. It does not
+     * need to be unique.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
@@ -58,7 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the workspace.</p>
+     * <p>The ARN of the workspace. For example,
+     * <code>arn:aws:aps:&lt;region&gt;:123456789012:workspace/ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -99,7 +100,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Prometheus endpoint available for this workspace. </p>
+     * <p>The Prometheus endpoint available for this workspace. For example,
+     * <code>https://aps-workspaces.&lt;region&gt;.amazonaws.com/workspaces/ws-example1-1234-abcd-5678-ef90abcd1234/api/v1/</code>.</p>
      */
     inline const Aws::String& GetPrometheusEndpoint() const{ return m_prometheusEndpoint; }
     inline bool PrometheusEndpointHasBeenSet() const { return m_prometheusEndpointHasBeenSet; }
@@ -144,7 +146,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID for the workspace.</p>
+     * <p>The unique ID for the workspace. For example,
+     * <code>ws-example1-1234-abcd-5678-ef90abcd1234</code>.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }

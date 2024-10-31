@@ -24,7 +24,8 @@ SubnetMapping::SubnetMapping() :
     m_subnetIdHasBeenSet(false),
     m_allocationIdHasBeenSet(false),
     m_privateIPv4AddressHasBeenSet(false),
-    m_iPv6AddressHasBeenSet(false)
+    m_iPv6AddressHasBeenSet(false),
+    m_sourceNatIpv6PrefixHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,12 @@ SubnetMapping& SubnetMapping::operator =(const XmlNode& xmlNode)
       m_iPv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(iPv6AddressNode.GetText());
       m_iPv6AddressHasBeenSet = true;
     }
+    XmlNode sourceNatIpv6PrefixNode = resultNode.FirstChild("SourceNatIpv6Prefix");
+    if(!sourceNatIpv6PrefixNode.IsNull())
+    {
+      m_sourceNatIpv6Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(sourceNatIpv6PrefixNode.GetText());
+      m_sourceNatIpv6PrefixHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -91,6 +98,11 @@ void SubnetMapping::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".IPv6Address=" << StringUtils::URLEncode(m_iPv6Address.c_str()) << "&";
   }
 
+  if(m_sourceNatIpv6PrefixHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceNatIpv6Prefix=" << StringUtils::URLEncode(m_sourceNatIpv6Prefix.c_str()) << "&";
+  }
+
 }
 
 void SubnetMapping::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -110,6 +122,10 @@ void SubnetMapping::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_iPv6AddressHasBeenSet)
   {
       oStream << location << ".IPv6Address=" << StringUtils::URLEncode(m_iPv6Address.c_str()) << "&";
+  }
+  if(m_sourceNatIpv6PrefixHasBeenSet)
+  {
+      oStream << location << ".SourceNatIpv6Prefix=" << StringUtils::URLEncode(m_sourceNatIpv6Prefix.c_str()) << "&";
   }
 }
 
