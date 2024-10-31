@@ -35,7 +35,7 @@ jobs:
         id: diffstep
         run: |
           if ! git diff --exit-code; then
-            echo "Formatting issues found!. Formetted changes:"
+            echo "Formatting issues found!. Formatted changes:"
             git diff
             exit 1
           fi
