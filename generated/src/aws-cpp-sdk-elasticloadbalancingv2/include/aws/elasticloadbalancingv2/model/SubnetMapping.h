@@ -96,6 +96,23 @@ namespace Model
     inline SubnetMapping& WithIPv6Address(Aws::String&& value) { SetIPv6Address(std::move(value)); return *this;}
     inline SubnetMapping& WithIPv6Address(const char* value) { SetIPv6Address(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>[Network Load Balancers with UDP listeners] The IPv6 prefix to use for source
+     * NAT. Specify an IPv6 prefix (/80 netmask) from the subnet CIDR block or
+     * <code>auto_assigned</code> to use an IPv6 prefix selected at random from the
+     * subnet CIDR block.</p>
+     */
+    inline const Aws::String& GetSourceNatIpv6Prefix() const{ return m_sourceNatIpv6Prefix; }
+    inline bool SourceNatIpv6PrefixHasBeenSet() const { return m_sourceNatIpv6PrefixHasBeenSet; }
+    inline void SetSourceNatIpv6Prefix(const Aws::String& value) { m_sourceNatIpv6PrefixHasBeenSet = true; m_sourceNatIpv6Prefix = value; }
+    inline void SetSourceNatIpv6Prefix(Aws::String&& value) { m_sourceNatIpv6PrefixHasBeenSet = true; m_sourceNatIpv6Prefix = std::move(value); }
+    inline void SetSourceNatIpv6Prefix(const char* value) { m_sourceNatIpv6PrefixHasBeenSet = true; m_sourceNatIpv6Prefix.assign(value); }
+    inline SubnetMapping& WithSourceNatIpv6Prefix(const Aws::String& value) { SetSourceNatIpv6Prefix(value); return *this;}
+    inline SubnetMapping& WithSourceNatIpv6Prefix(Aws::String&& value) { SetSourceNatIpv6Prefix(std::move(value)); return *this;}
+    inline SubnetMapping& WithSourceNatIpv6Prefix(const char* value) { SetSourceNatIpv6Prefix(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_subnetId;
@@ -109,6 +126,9 @@ namespace Model
 
     Aws::String m_iPv6Address;
     bool m_iPv6AddressHasBeenSet = false;
+
+    Aws::String m_sourceNatIpv6Prefix;
+    bool m_sourceNatIpv6PrefixHasBeenSet = false;
   };
 
 } // namespace Model

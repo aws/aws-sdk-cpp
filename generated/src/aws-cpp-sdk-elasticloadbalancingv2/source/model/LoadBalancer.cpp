@@ -37,7 +37,9 @@ LoadBalancer::LoadBalancer() :
     m_ipAddressType(IpAddressType::NOT_SET),
     m_ipAddressTypeHasBeenSet(false),
     m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet(false)
+    m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet(false),
+    m_enablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum::NOT_SET),
+    m_enablePrefixForIpv6SourceNatHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,12 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
       m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = Aws::Utils::Xml::DecodeEscapedXmlText(enforceSecurityGroupInboundRulesOnPrivateLinkTrafficNode.GetText());
       m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = true;
     }
+    XmlNode enablePrefixForIpv6SourceNatNode = resultNode.FirstChild("EnablePrefixForIpv6SourceNat");
+    if(!enablePrefixForIpv6SourceNatNode.IsNull())
+    {
+      m_enablePrefixForIpv6SourceNat = EnablePrefixForIpv6SourceNatEnumMapper::GetEnablePrefixForIpv6SourceNatEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enablePrefixForIpv6SourceNatNode.GetText()).c_str()).c_str());
+      m_enablePrefixForIpv6SourceNatHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -238,6 +246,11 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic=" << StringUtils::URLEncode(m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic.c_str()) << "&";
   }
 
+  if(m_enablePrefixForIpv6SourceNatHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnablePrefixForIpv6SourceNat=" << EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat) << "&";
+  }
+
 }
 
 void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -309,6 +322,10 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet)
   {
       oStream << location << ".EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic=" << StringUtils::URLEncode(m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic.c_str()) << "&";
+  }
+  if(m_enablePrefixForIpv6SourceNatHasBeenSet)
+  {
+      oStream << location << ".EnablePrefixForIpv6SourceNat=" << EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat) << "&";
   }
 }
 

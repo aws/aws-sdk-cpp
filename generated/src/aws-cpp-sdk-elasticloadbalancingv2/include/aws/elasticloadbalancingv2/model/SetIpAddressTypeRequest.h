@@ -53,21 +53,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>Note: Internal load balancers must use the <code>ipv4</code> IP address
-     * type.</p> <p>[Application Load Balancers] The IP address type. The possible
-     * values are <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code>
-     * (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
-     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).</p>
-     * <p>Note: Application Load Balancer authentication only supports IPv4 addresses
-     * when connecting to an Identity Provider (IdP) or Amazon Cognito endpoint.
-     * Without a public IPv4 address the load balancer cannot complete the
-     * authentication process, resulting in HTTP 500 errors.</p> <p>[Network Load
-     * Balancers] The IP address type. The possible values are <code>ipv4</code> (for
-     * only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
-     * You can’t specify <code>dualstack</code> for a load balancer with a UDP or
-     * TCP_UDP listener.</p> <p>[Gateway Load Balancers] The IP address type. The
-     * possible values are <code>ipv4</code> (for only IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     * <p>The IP address type. Internal load balancers must use <code>ipv4</code>.</p>
+     * <p>[Application Load Balancers] The possible values are <code>ipv4</code> (IPv4
+     * addresses), <code>dualstack</code> (IPv4 and IPv6 addresses), and
+     * <code>dualstack-without-public-ipv4</code> (public IPv6 addresses and private
+     * IPv4 and IPv6 addresses).</p> <p>Application Load Balancer authentication
+     * supports IPv4 addresses only when connecting to an Identity Provider (IdP) or
+     * Amazon Cognito endpoint. Without a public IPv4 address the load balancer can't
+     * complete the authentication process, resulting in HTTP 500 errors.</p>
+     * <p>[Network Load Balancers and Gateway Load Balancers] The possible values are
+     * <code>ipv4</code> (IPv4 addresses) and <code>dualstack</code> (IPv4 and IPv6
+     * addresses).</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }

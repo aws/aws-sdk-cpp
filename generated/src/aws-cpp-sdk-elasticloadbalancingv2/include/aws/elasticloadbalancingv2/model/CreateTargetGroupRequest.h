@@ -161,7 +161,7 @@ namespace Model
      * <p>Indicates whether health checks are enabled. If the target type is
      * <code>lambda</code>, health checks are disabled by default but can be enabled.
      * If the target type is <code>instance</code>, <code>ip</code>, or
-     * <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+     * <code>alb</code>, health checks are always enabled and can't be disabled.</p>
      */
     inline bool GetHealthCheckEnabled() const{ return m_healthCheckEnabled; }
     inline bool HealthCheckEnabledHasBeenSet() const { return m_healthCheckEnabledHasBeenSet; }
@@ -298,9 +298,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of IP address used for this target group. The possible values are
-     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
-     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     * <p>The IP address type. The default value is <code>ipv4</code>.</p>
      */
     inline const TargetGroupIpAddressTypeEnum& GetIpAddressType() const{ return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }

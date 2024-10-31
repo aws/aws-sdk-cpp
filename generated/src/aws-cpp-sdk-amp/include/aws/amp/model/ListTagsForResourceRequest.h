@@ -34,8 +34,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the resource to list tages for. Must be a workspace or rule groups
-     * namespace resource.</p>
+     * <p>The ARN of the resource to list tages for. Must be a workspace, scraper, or
+     * rule groups namespace resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

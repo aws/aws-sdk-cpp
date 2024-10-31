@@ -132,10 +132,10 @@ namespace Model
      * preservation is enabled. The value is <code>true</code> or <code>false</code>.
      * The default is disabled if the target group type is IP address and the target
      * group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP
-     * preservation cannot be disabled for UDP and TCP_UDP target groups.</p> </li>
-     * <li> <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy
-     * Protocol version 2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>. </p> </li> <li> <p>
+     * preservation can't be disabled for UDP and TCP_UDP target groups.</p> </li> <li>
+     * <p> <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol
+     * version 2 is enabled. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>. </p> </li> <li> <p>
      * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
      * Indicates whether the load balancer terminates connections to unhealthy targets.
      * The value is <code>true</code> or <code>false</code>. The default is
@@ -160,8 +160,8 @@ namespace Model
      * are <code>rebalance</code> and <code>no_rebalance</code>. The default is
      * <code>no_rebalance</code>. The two attributes
      * (<code>target_failover.on_deregistration</code> and
-     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The
-     * value you set for both attributes must be the same. </p> </li> </ul>
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value
+     * you set for both attributes must be the same. </p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

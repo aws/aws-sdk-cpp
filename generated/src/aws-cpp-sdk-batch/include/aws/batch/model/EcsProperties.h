@@ -42,8 +42,8 @@ namespace Model
     ///@{
     /**
      * <p>An object that contains the properties for the Amazon ECS task definition of
-     * a job.</p>  <p>This object is currently limited to one element.</p>
-     * 
+     * a job.</p>  <p>This object is currently limited to one task element.
+     * However, the task element can run up to 10 containers.</p> 
      */
     inline const Aws::Vector<EcsTaskProperties>& GetTaskProperties() const{ return m_taskProperties; }
     inline bool TaskPropertiesHasBeenSet() const { return m_taskPropertiesHasBeenSet; }

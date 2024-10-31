@@ -53,7 +53,26 @@ namespace Model
     ml_t3_medium,
     ml_t3_large,
     ml_t3_xlarge,
-    ml_t3_2xlarge
+    ml_t3_2xlarge,
+    ml_g6_xlarge,
+    ml_g6_2xlarge,
+    ml_g6_4xlarge,
+    ml_g6_8xlarge,
+    ml_g6_16xlarge,
+    ml_g6_12xlarge,
+    ml_g6_24xlarge,
+    ml_g6_48xlarge,
+    ml_gr6_4xlarge,
+    ml_gr6_8xlarge,
+    ml_g6e_xlarge,
+    ml_g6e_2xlarge,
+    ml_g6e_4xlarge,
+    ml_g6e_8xlarge,
+    ml_g6e_16xlarge,
+    ml_g6e_12xlarge,
+    ml_g6e_24xlarge,
+    ml_g6e_48xlarge,
+    ml_p5e_48xlarge
   };
 
 namespace ClusterInstanceTypeMapper

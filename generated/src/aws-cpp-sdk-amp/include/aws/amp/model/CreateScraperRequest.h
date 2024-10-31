@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>(optional) a name to associate with the scraper. This is for your use, and
+     * <p>(optional) An alias to associate with the scraper. This is for your use, and
      * does not need to be unique.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>The configuration file to use in the new scraper. For more information, see
      * <a
-     * href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
+     * href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
      * configuration</a> in the <i>Amazon Managed Service for Prometheus User
      * Guide</i>.</p>
      */

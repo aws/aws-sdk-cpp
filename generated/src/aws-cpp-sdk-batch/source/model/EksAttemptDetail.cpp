@@ -23,6 +23,7 @@ EksAttemptDetail::EksAttemptDetail() :
     m_initContainersHasBeenSet(false),
     m_eksClusterArnHasBeenSet(false),
     m_podNameHasBeenSet(false),
+    m_podNamespaceHasBeenSet(false),
     m_nodeNameHasBeenSet(false),
     m_startedAt(0),
     m_startedAtHasBeenSet(false),
@@ -72,6 +73,13 @@ EksAttemptDetail& EksAttemptDetail::operator =(JsonView jsonValue)
     m_podName = jsonValue.GetString("podName");
 
     m_podNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("podNamespace"))
+  {
+    m_podNamespace = jsonValue.GetString("podNamespace");
+
+    m_podNamespaceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("nodeName"))
@@ -140,6 +148,12 @@ JsonValue EksAttemptDetail::Jsonize() const
   if(m_podNameHasBeenSet)
   {
    payload.WithString("podName", m_podName);
+
+  }
+
+  if(m_podNamespaceHasBeenSet)
+  {
+   payload.WithString("podNamespace", m_podNamespace);
 
   }
 

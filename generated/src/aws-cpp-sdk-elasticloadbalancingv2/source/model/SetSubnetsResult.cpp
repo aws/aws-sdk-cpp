@@ -18,7 +18,8 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 SetSubnetsResult::SetSubnetsResult() : 
-    m_ipAddressType(IpAddressType::NOT_SET)
+    m_ipAddressType(IpAddressType::NOT_SET),
+    m_enablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum::NOT_SET)
 {
 }
 
@@ -55,6 +56,11 @@ SetSubnetsResult& SetSubnetsResult::operator =(const Aws::AmazonWebServiceResult
     if(!ipAddressTypeNode.IsNull())
     {
       m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+    }
+    XmlNode enablePrefixForIpv6SourceNatNode = resultNode.FirstChild("EnablePrefixForIpv6SourceNat");
+    if(!enablePrefixForIpv6SourceNatNode.IsNull())
+    {
+      m_enablePrefixForIpv6SourceNat = EnablePrefixForIpv6SourceNatEnumMapper::GetEnablePrefixForIpv6SourceNatEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enablePrefixForIpv6SourceNatNode.GetText()).c_str()).c_str());
     }
   }
 

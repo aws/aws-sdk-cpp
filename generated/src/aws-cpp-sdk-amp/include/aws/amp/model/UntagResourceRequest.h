@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the workspace or rule groups namespace.</p>
+     * <p>The ARN of the resource from which to remove a tag.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

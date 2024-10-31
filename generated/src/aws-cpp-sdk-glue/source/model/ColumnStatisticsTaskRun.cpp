@@ -32,6 +32,8 @@ ColumnStatisticsTaskRun::ColumnStatisticsTaskRun() :
     m_numberOfWorkers(0),
     m_numberOfWorkersHasBeenSet(false),
     m_workerTypeHasBeenSet(false),
+    m_computationType(ComputationType::NOT_SET),
+    m_computationTypeHasBeenSet(false),
     m_status(ColumnStatisticsState::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -130,6 +132,13 @@ ColumnStatisticsTaskRun& ColumnStatisticsTaskRun::operator =(JsonView jsonValue)
     m_workerType = jsonValue.GetString("WorkerType");
 
     m_workerTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ComputationType"))
+  {
+    m_computationType = ComputationTypeMapper::GetComputationTypeForName(jsonValue.GetString("ComputationType"));
+
+    m_computationTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -257,6 +266,11 @@ JsonValue ColumnStatisticsTaskRun::Jsonize() const
   {
    payload.WithString("WorkerType", m_workerType);
 
+  }
+
+  if(m_computationTypeHasBeenSet)
+  {
+   payload.WithString("ComputationType", ComputationTypeMapper::GetNameForComputationType(m_computationType));
   }
 
   if(m_statusHasBeenSet)

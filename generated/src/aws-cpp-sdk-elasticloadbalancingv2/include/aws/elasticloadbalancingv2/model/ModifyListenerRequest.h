@@ -57,8 +57,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The port for connections from clients to the load balancer. You cannot
-     * specify a port for a Gateway Load Balancer.</p>
+     * <p>The port for connections from clients to the load balancer. You can't specify
+     * a port for a Gateway Load Balancer.</p>
      */
     inline int GetPort() const{ return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
@@ -71,7 +71,7 @@ namespace Model
      * <p>The protocol for connections from clients to the load balancer. Application
      * Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers
      * support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol
-     * to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol
+     * to UDP or TCP_UDP if dual-stack mode is enabled. You can't specify a protocol
      * for a Gateway Load Balancer.</p>
      */
     inline const ProtocolEnum& GetProtocol() const{ return m_protocol; }

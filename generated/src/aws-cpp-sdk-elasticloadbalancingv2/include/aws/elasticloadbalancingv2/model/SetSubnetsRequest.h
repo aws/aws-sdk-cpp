@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/IpAddressType.h>
+#include <aws/elasticloadbalancingv2/model/EnablePrefixForIpv6SourceNatEnum.h>
 #include <aws/elasticloadbalancingv2/model/SubnetMapping.h>
 #include <utility>
 
@@ -61,8 +62,7 @@ namespace Model
      * Availability Zones.</p> <p>[Application Load Balancers on Outposts] You must
      * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
      * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
-     * Balancers] You can specify subnets from one or more Availability Zones.</p>
-     * <p>[Gateway Load Balancers] You can specify subnets from one or more
+     * Balancers and Gateway Load Balancers] You can specify subnets from one or more
      * Availability Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
@@ -81,17 +81,16 @@ namespace Model
      * <p>The IDs of the public subnets. You can specify only one subnet per
      * Availability Zone. You must specify either subnets or subnet mappings.</p>
      * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones. You cannot specify Elastic IP addresses for your
-     * subnets.</p> <p>[Application Load Balancers on Outposts] You must specify one
-     * Outpost subnet.</p> <p>[Application Load Balancers on Local Zones] You can
-     * specify subnets from one or more Local Zones.</p> <p>[Network Load Balancers]
-     * You can specify subnets from one or more Availability Zones. You can specify one
-     * Elastic IP address per subnet if you need static IP addresses for your
-     * internet-facing load balancer. For internal load balancers, you can specify one
-     * private IP address per subnet from the IPv4 range of the subnet. For
-     * internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
-     * <p>[Gateway Load Balancers] You can specify subnets from one or more
-     * Availability Zones.</p>
+     * Availability Zones. You can't specify Elastic IP addresses for your subnets.</p>
+     * <p>[Application Load Balancers on Outposts] You must specify one Outpost
+     * subnet.</p> <p>[Application Load Balancers on Local Zones] You can specify
+     * subnets from one or more Local Zones.</p> <p>[Network Load Balancers] You can
+     * specify subnets from one or more Availability Zones. You can specify one Elastic
+     * IP address per subnet if you need static IP addresses for your internet-facing
+     * load balancer. For internal load balancers, you can specify one private IP
+     * address per subnet from the IPv4 range of the subnet. For internet-facing load
+     * balancer, you can specify one IPv6 address per subnet.</p> <p>[Gateway Load
+     * Balancers] You can specify subnets from one or more Availability Zones.</p>
      */
     inline const Aws::Vector<SubnetMapping>& GetSubnetMappings() const{ return m_subnetMappings; }
     inline bool SubnetMappingsHasBeenSet() const { return m_subnetMappingsHasBeenSet; }
@@ -105,17 +104,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>[Application Load Balancers] The IP address type. The possible values are
-     * <code>ipv4</code> (for only IPv4 addresses), <code>dualstack</code> (for IPv4
-     * and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6
-     * only public addresses, with private IPv4 and IPv6 addresses).</p> <p>[Network
-     * Load Balancers] The type of IP addresses used by the subnets for your load
-     * balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
-     * <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
-     * <p>[Gateway Load Balancers] The type of IP addresses used by the subnets for
-     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     * <p>The IP address type.</p> <p>[Application Load Balancers] The possible values
+     * are <code>ipv4</code> (IPv4 addresses), <code>dualstack</code> (IPv4 and IPv6
+     * addresses), and <code>dualstack-without-public-ipv4</code> (public IPv6
+     * addresses and private IPv4 and IPv6 addresses).</p> <p>[Network Load Balancers
+     * and Gateway Load Balancers] The possible values are <code>ipv4</code> (IPv4
+     * addresses) and <code>dualstack</code> (IPv4 and IPv6 addresses).</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
@@ -123,6 +117,20 @@ namespace Model
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
     inline SetSubnetsRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
     inline SetSubnetsRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>[Network Load Balancers with UDP listeners] Indicates whether to use an IPv6
+     * prefix from each subnet for source NAT. The IP address type must be
+     * <code>dualstack</code>. The default value is <code>off</code>.</p>
+     */
+    inline const EnablePrefixForIpv6SourceNatEnum& GetEnablePrefixForIpv6SourceNat() const{ return m_enablePrefixForIpv6SourceNat; }
+    inline bool EnablePrefixForIpv6SourceNatHasBeenSet() const { return m_enablePrefixForIpv6SourceNatHasBeenSet; }
+    inline void SetEnablePrefixForIpv6SourceNat(const EnablePrefixForIpv6SourceNatEnum& value) { m_enablePrefixForIpv6SourceNatHasBeenSet = true; m_enablePrefixForIpv6SourceNat = value; }
+    inline void SetEnablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum&& value) { m_enablePrefixForIpv6SourceNatHasBeenSet = true; m_enablePrefixForIpv6SourceNat = std::move(value); }
+    inline SetSubnetsRequest& WithEnablePrefixForIpv6SourceNat(const EnablePrefixForIpv6SourceNatEnum& value) { SetEnablePrefixForIpv6SourceNat(value); return *this;}
+    inline SetSubnetsRequest& WithEnablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum&& value) { SetEnablePrefixForIpv6SourceNat(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -137,6 +145,9 @@ namespace Model
 
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet = false;
+
+    EnablePrefixForIpv6SourceNatEnum m_enablePrefixForIpv6SourceNat;
+    bool m_enablePrefixForIpv6SourceNatHasBeenSet = false;
   };
 
 } // namespace Model

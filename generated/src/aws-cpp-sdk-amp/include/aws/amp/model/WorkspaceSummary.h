@@ -43,8 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The alias that is assigned to this workspace to help identify it. It may not
-     * be unique.</p>
+     * <p>The alias that is assigned to this workspace to help identify it. It does not
+     * need to be unique.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }

@@ -21,9 +21,11 @@ namespace Aws
       {
 
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
+        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
         static const int DELETION_FAILED_HASH = HashingUtils::HashString("DELETION_FAILED");
 
 
@@ -33,6 +35,10 @@ namespace Aws
           if (hashCode == CREATING_HASH)
           {
             return ScraperStatusCode::CREATING;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return ScraperStatusCode::UPDATING;
           }
           else if (hashCode == ACTIVE_HASH)
           {
@@ -45,6 +51,10 @@ namespace Aws
           else if (hashCode == CREATION_FAILED_HASH)
           {
             return ScraperStatusCode::CREATION_FAILED;
+          }
+          else if (hashCode == UPDATE_FAILED_HASH)
+          {
+            return ScraperStatusCode::UPDATE_FAILED;
           }
           else if (hashCode == DELETION_FAILED_HASH)
           {
@@ -68,12 +78,16 @@ namespace Aws
             return {};
           case ScraperStatusCode::CREATING:
             return "CREATING";
+          case ScraperStatusCode::UPDATING:
+            return "UPDATING";
           case ScraperStatusCode::ACTIVE:
             return "ACTIVE";
           case ScraperStatusCode::DELETING:
             return "DELETING";
           case ScraperStatusCode::CREATION_FAILED:
             return "CREATION_FAILED";
+          case ScraperStatusCode::UPDATE_FAILED:
+            return "UPDATE_FAILED";
           case ScraperStatusCode::DELETION_FAILED:
             return "DELETION_FAILED";
           default:

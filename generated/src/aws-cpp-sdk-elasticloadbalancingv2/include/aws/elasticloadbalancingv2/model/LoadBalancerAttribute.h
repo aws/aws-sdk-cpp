@@ -49,7 +49,7 @@ namespace Model
      * load balancing is enabled. The possible values are <code>true</code> and
      * <code>false</code>. The default for Network Load Balancers and Gateway Load
      * Balancers is <code>false</code>. The default for Application Load Balancers is
-     * <code>true</code>, and cannot be changed.</p> </li> </ul> <p>The following
+     * <code>true</code>, and can't be changed.</p> </li> </ul> <p>The following
      * attributes are supported by both Application Load Balancers and Network Load
      * Balancers:</p> <ul> <li> <p> <code>access_logs.s3.enabled</code> - Indicates
      * whether access logs are enabled. The value is <code>true</code> or

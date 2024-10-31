@@ -41,7 +41,7 @@ namespace Model
     ///@{
     /**
      * <p>The name of the trust store.</p> <p>This name must be unique per region and
-     * cannot be changed after creation.</p>
+     * can't be changed after creation.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

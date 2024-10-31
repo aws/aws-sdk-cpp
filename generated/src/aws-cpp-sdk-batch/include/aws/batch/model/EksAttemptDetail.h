@@ -98,6 +98,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The namespace of the Amazon EKS cluster that the pod exists in.</p>
+     */
+    inline const Aws::String& GetPodNamespace() const{ return m_podNamespace; }
+    inline bool PodNamespaceHasBeenSet() const { return m_podNamespaceHasBeenSet; }
+    inline void SetPodNamespace(const Aws::String& value) { m_podNamespaceHasBeenSet = true; m_podNamespace = value; }
+    inline void SetPodNamespace(Aws::String&& value) { m_podNamespaceHasBeenSet = true; m_podNamespace = std::move(value); }
+    inline void SetPodNamespace(const char* value) { m_podNamespaceHasBeenSet = true; m_podNamespace.assign(value); }
+    inline EksAttemptDetail& WithPodNamespace(const Aws::String& value) { SetPodNamespace(value); return *this;}
+    inline EksAttemptDetail& WithPodNamespace(Aws::String&& value) { SetPodNamespace(std::move(value)); return *this;}
+    inline EksAttemptDetail& WithPodNamespace(const char* value) { SetPodNamespace(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the node for this job attempt.</p>
      */
     inline const Aws::String& GetNodeName() const{ return m_nodeName; }
@@ -161,6 +175,9 @@ namespace Model
 
     Aws::String m_podName;
     bool m_podNameHasBeenSet = false;
+
+    Aws::String m_podNamespace;
+    bool m_podNamespaceHasBeenSet = false;
 
     Aws::String m_nodeName;
     bool m_nodeNameHasBeenSet = false;

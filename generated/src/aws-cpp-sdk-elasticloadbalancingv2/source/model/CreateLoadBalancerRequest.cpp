@@ -22,7 +22,9 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_typeHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
     m_ipAddressTypeHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false)
+    m_customerOwnedIpv4PoolHasBeenSet(false),
+    m_enablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum::NOT_SET),
+    m_enablePrefixForIpv6SourceNatHasBeenSet(false)
 {
 }
 
@@ -123,6 +125,11 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
   if(m_customerOwnedIpv4PoolHasBeenSet)
   {
     ss << "CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
+  }
+
+  if(m_enablePrefixForIpv6SourceNatHasBeenSet)
+  {
+    ss << "EnablePrefixForIpv6SourceNat=" << EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat) << "&";
   }
 
   ss << "Version=2015-12-01";

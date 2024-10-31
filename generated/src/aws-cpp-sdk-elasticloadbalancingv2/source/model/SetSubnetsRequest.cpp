@@ -15,7 +15,9 @@ SetSubnetsRequest::SetSubnetsRequest() :
     m_subnetsHasBeenSet(false),
     m_subnetMappingsHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
+    m_ipAddressTypeHasBeenSet(false),
+    m_enablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum::NOT_SET),
+    m_enablePrefixForIpv6SourceNatHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,11 @@ Aws::String SetSubnetsRequest::SerializePayload() const
   if(m_ipAddressTypeHasBeenSet)
   {
     ss << "IpAddressType=" << IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType) << "&";
+  }
+
+  if(m_enablePrefixForIpv6SourceNatHasBeenSet)
+  {
+    ss << "EnablePrefixForIpv6SourceNat=" << EnablePrefixForIpv6SourceNatEnumMapper::GetNameForEnablePrefixForIpv6SourceNatEnum(m_enablePrefixForIpv6SourceNat) << "&";
   }
 
   ss << "Version=2015-12-01";

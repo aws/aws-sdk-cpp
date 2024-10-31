@@ -755,6 +755,31 @@ namespace Glue
         }
 
         /**
+         * <p>Creates settings for a column statistics task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateColumnStatisticsTaskSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateColumnStatisticsTaskSettingsOutcome CreateColumnStatisticsTaskSettings(const Model::CreateColumnStatisticsTaskSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateColumnStatisticsTaskSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateColumnStatisticsTaskSettingsRequestT = Model::CreateColumnStatisticsTaskSettingsRequest>
+        Model::CreateColumnStatisticsTaskSettingsOutcomeCallable CreateColumnStatisticsTaskSettingsCallable(const CreateColumnStatisticsTaskSettingsRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::CreateColumnStatisticsTaskSettings, request);
+        }
+
+        /**
+         * An Async wrapper for CreateColumnStatisticsTaskSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateColumnStatisticsTaskSettingsRequestT = Model::CreateColumnStatisticsTaskSettingsRequest>
+        void CreateColumnStatisticsTaskSettingsAsync(const CreateColumnStatisticsTaskSettingsRequestT& request, const CreateColumnStatisticsTaskSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::CreateColumnStatisticsTaskSettings, request, handler, context);
+        }
+
+        /**
          * <p>Creates a connection definition in the Data Catalog.</p> <p>Connections used
          * for creating federated resources require the IAM
          * <code>glue:PassConnection</code> permission.</p><p><h3>See Also:</h3>   <a
@@ -1426,6 +1451,31 @@ namespace Glue
         void DeleteColumnStatisticsForTableAsync(const DeleteColumnStatisticsForTableRequestT& request, const DeleteColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::DeleteColumnStatisticsForTable, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes settings for a column statistics task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsTaskSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteColumnStatisticsTaskSettingsOutcome DeleteColumnStatisticsTaskSettings(const Model::DeleteColumnStatisticsTaskSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteColumnStatisticsTaskSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteColumnStatisticsTaskSettingsRequestT = Model::DeleteColumnStatisticsTaskSettingsRequest>
+        Model::DeleteColumnStatisticsTaskSettingsOutcomeCallable DeleteColumnStatisticsTaskSettingsCallable(const DeleteColumnStatisticsTaskSettingsRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::DeleteColumnStatisticsTaskSettings, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteColumnStatisticsTaskSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteColumnStatisticsTaskSettingsRequestT = Model::DeleteColumnStatisticsTaskSettingsRequest>
+        void DeleteColumnStatisticsTaskSettingsAsync(const DeleteColumnStatisticsTaskSettingsRequestT& request, const DeleteColumnStatisticsTaskSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::DeleteColumnStatisticsTaskSettings, request, handler, context);
         }
 
         /**
@@ -2315,6 +2365,31 @@ namespace Glue
         void GetColumnStatisticsTaskRunsAsync(const GetColumnStatisticsTaskRunsRequestT& request, const GetColumnStatisticsTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::GetColumnStatisticsTaskRuns, request, handler, context);
+        }
+
+        /**
+         * <p>Gets settings for a column statistics task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetColumnStatisticsTaskSettingsOutcome GetColumnStatisticsTaskSettings(const Model::GetColumnStatisticsTaskSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetColumnStatisticsTaskSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetColumnStatisticsTaskSettingsRequestT = Model::GetColumnStatisticsTaskSettingsRequest>
+        Model::GetColumnStatisticsTaskSettingsOutcomeCallable GetColumnStatisticsTaskSettingsCallable(const GetColumnStatisticsTaskSettingsRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::GetColumnStatisticsTaskSettings, request);
+        }
+
+        /**
+         * An Async wrapper for GetColumnStatisticsTaskSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetColumnStatisticsTaskSettingsRequestT = Model::GetColumnStatisticsTaskSettingsRequest>
+        void GetColumnStatisticsTaskSettingsAsync(const GetColumnStatisticsTaskSettingsRequestT& request, const GetColumnStatisticsTaskSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::GetColumnStatisticsTaskSettings, request, handler, context);
         }
 
         /**
@@ -4975,6 +5050,31 @@ namespace Glue
         }
 
         /**
+         * <p>Starts a column statistics task run schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRunSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartColumnStatisticsTaskRunScheduleOutcome StartColumnStatisticsTaskRunSchedule(const Model::StartColumnStatisticsTaskRunScheduleRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartColumnStatisticsTaskRunSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartColumnStatisticsTaskRunScheduleRequestT = Model::StartColumnStatisticsTaskRunScheduleRequest>
+        Model::StartColumnStatisticsTaskRunScheduleOutcomeCallable StartColumnStatisticsTaskRunScheduleCallable(const StartColumnStatisticsTaskRunScheduleRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::StartColumnStatisticsTaskRunSchedule, request);
+        }
+
+        /**
+         * An Async wrapper for StartColumnStatisticsTaskRunSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartColumnStatisticsTaskRunScheduleRequestT = Model::StartColumnStatisticsTaskRunScheduleRequest>
+        void StartColumnStatisticsTaskRunScheduleAsync(const StartColumnStatisticsTaskRunScheduleRequestT& request, const StartColumnStatisticsTaskRunScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::StartColumnStatisticsTaskRunSchedule, request, handler, context);
+        }
+
+        /**
          * <p>Starts a crawl using the specified crawler, regardless of what is scheduled.
          * If the crawler is already running, returns a <a
          * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p><p><h3>See
@@ -5339,6 +5439,31 @@ namespace Glue
         }
 
         /**
+         * <p>Stops a column statistics task run schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRunSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopColumnStatisticsTaskRunScheduleOutcome StopColumnStatisticsTaskRunSchedule(const Model::StopColumnStatisticsTaskRunScheduleRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopColumnStatisticsTaskRunSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopColumnStatisticsTaskRunScheduleRequestT = Model::StopColumnStatisticsTaskRunScheduleRequest>
+        Model::StopColumnStatisticsTaskRunScheduleOutcomeCallable StopColumnStatisticsTaskRunScheduleCallable(const StopColumnStatisticsTaskRunScheduleRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::StopColumnStatisticsTaskRunSchedule, request);
+        }
+
+        /**
+         * An Async wrapper for StopColumnStatisticsTaskRunSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopColumnStatisticsTaskRunScheduleRequestT = Model::StopColumnStatisticsTaskRunScheduleRequest>
+        void StopColumnStatisticsTaskRunScheduleAsync(const StopColumnStatisticsTaskRunScheduleRequestT& request, const StopColumnStatisticsTaskRunScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::StopColumnStatisticsTaskRunSchedule, request, handler, context);
+        }
+
+        /**
          * <p>If the specified crawler is running, stops the crawl.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawler">AWS
@@ -5656,6 +5781,31 @@ namespace Glue
         void UpdateColumnStatisticsForTableAsync(const UpdateColumnStatisticsForTableRequestT& request, const UpdateColumnStatisticsForTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GlueClient::UpdateColumnStatisticsForTable, request, handler, context);
+        }
+
+        /**
+         * <p>Updates settings for a column statistics task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsTaskSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateColumnStatisticsTaskSettingsOutcome UpdateColumnStatisticsTaskSettings(const Model::UpdateColumnStatisticsTaskSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateColumnStatisticsTaskSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateColumnStatisticsTaskSettingsRequestT = Model::UpdateColumnStatisticsTaskSettingsRequest>
+        Model::UpdateColumnStatisticsTaskSettingsOutcomeCallable UpdateColumnStatisticsTaskSettingsCallable(const UpdateColumnStatisticsTaskSettingsRequestT& request) const
+        {
+            return SubmitCallable(&GlueClient::UpdateColumnStatisticsTaskSettings, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateColumnStatisticsTaskSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateColumnStatisticsTaskSettingsRequestT = Model::UpdateColumnStatisticsTaskSettingsRequest>
+        void UpdateColumnStatisticsTaskSettingsAsync(const UpdateColumnStatisticsTaskSettingsRequestT& request, const UpdateColumnStatisticsTaskSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GlueClient::UpdateColumnStatisticsTaskSettings, request, handler, context);
         }
 
         /**

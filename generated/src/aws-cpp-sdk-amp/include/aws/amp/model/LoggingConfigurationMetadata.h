@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the logging configuration. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about the logging configuration for the
+   * workspace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/LoggingConfigurationMetadata">AWS
    * API Reference</a></p>
    */

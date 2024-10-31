@@ -7,6 +7,7 @@
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/IpAddressType.h>
+#include <aws/elasticloadbalancingv2/model/EnablePrefixForIpv6SourceNatEnum.h>
 #include <aws/elasticloadbalancingv2/model/ResponseMetadata.h>
 #include <aws/elasticloadbalancingv2/model/AvailabilityZone.h>
 #include <utility>
@@ -50,15 +51,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>[Application Load Balancers] The IP address type.</p> <p>[Network Load
-     * Balancers] The IP address type.</p> <p>[Gateway Load Balancers] The IP address
-     * type.</p>
+     * <p>The IP address type.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressType = value; }
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressType = std::move(value); }
     inline SetSubnetsResult& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
     inline SetSubnetsResult& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>[Network Load Balancers] Indicates whether to use an IPv6 prefix from each
+     * subnet for source NAT.</p>
+     */
+    inline const EnablePrefixForIpv6SourceNatEnum& GetEnablePrefixForIpv6SourceNat() const{ return m_enablePrefixForIpv6SourceNat; }
+    inline void SetEnablePrefixForIpv6SourceNat(const EnablePrefixForIpv6SourceNatEnum& value) { m_enablePrefixForIpv6SourceNat = value; }
+    inline void SetEnablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum&& value) { m_enablePrefixForIpv6SourceNat = std::move(value); }
+    inline SetSubnetsResult& WithEnablePrefixForIpv6SourceNat(const EnablePrefixForIpv6SourceNatEnum& value) { SetEnablePrefixForIpv6SourceNat(value); return *this;}
+    inline SetSubnetsResult& WithEnablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum&& value) { SetEnablePrefixForIpv6SourceNat(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,6 +85,8 @@ namespace Model
     Aws::Vector<AvailabilityZone> m_availabilityZones;
 
     IpAddressType m_ipAddressType;
+
+    EnablePrefixForIpv6SourceNatEnum m_enablePrefixForIpv6SourceNat;
 
     ResponseMetadata m_responseMetadata;
   };

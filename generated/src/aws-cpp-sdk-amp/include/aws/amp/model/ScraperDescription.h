@@ -60,7 +60,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the scraper.</p>
+     * <p>The Amazon Resource Name (ARN) of the scraper. For example,
+     * <code>arn:aws:aps:&lt;region&gt;:123456798012:scraper/s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -112,7 +113,8 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
-     * the scraper to discover and collect metrics on your behalf.</p>
+     * the scraper to discover and collect metrics on your behalf.</p> <p>For example,
+     * <code>arn:aws:iam::123456789012:role/service-role/AmazonGrafanaServiceRole-12example</code>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -126,7 +128,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration file in use by the scraper.</p>
+     * <p>The configuration in use by the scraper.</p>
      */
     inline const ScrapeConfiguration& GetScrapeConfiguration() const{ return m_scrapeConfiguration; }
     inline bool ScrapeConfigurationHasBeenSet() const { return m_scrapeConfigurationHasBeenSet; }
@@ -138,7 +140,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the scraper.</p>
+     * <p>The ID of the scraper. For example,
+     * <code>s-example1-1234-abcd-5678-ef9012abcd34</code>.</p>
      */
     inline const Aws::String& GetScraperId() const{ return m_scraperId; }
     inline bool ScraperIdHasBeenSet() const { return m_scraperIdHasBeenSet; }

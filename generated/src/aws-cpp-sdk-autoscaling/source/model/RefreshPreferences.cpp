@@ -38,7 +38,9 @@ RefreshPreferences::RefreshPreferences() :
     m_standbyInstancesHasBeenSet(false),
     m_alarmSpecificationHasBeenSet(false),
     m_maxHealthyPercentage(0),
-    m_maxHealthyPercentageHasBeenSet(false)
+    m_maxHealthyPercentageHasBeenSet(false),
+    m_bakeTime(0),
+    m_bakeTimeHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,12 @@ RefreshPreferences& RefreshPreferences::operator =(const XmlNode& xmlNode)
       m_maxHealthyPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxHealthyPercentageNode.GetText()).c_str()).c_str());
       m_maxHealthyPercentageHasBeenSet = true;
     }
+    XmlNode bakeTimeNode = resultNode.FirstChild("BakeTime");
+    if(!bakeTimeNode.IsNull())
+    {
+      m_bakeTime = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bakeTimeNode.GetText()).c_str()).c_str());
+      m_bakeTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -183,6 +191,11 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".MaxHealthyPercentage=" << m_maxHealthyPercentage << "&";
   }
 
+  if(m_bakeTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BakeTime=" << m_bakeTime << "&";
+  }
+
 }
 
 void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -232,6 +245,10 @@ void RefreshPreferences::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_maxHealthyPercentageHasBeenSet)
   {
       oStream << location << ".MaxHealthyPercentage=" << m_maxHealthyPercentage << "&";
+  }
+  if(m_bakeTimeHasBeenSet)
+  {
+      oStream << location << ".BakeTime=" << m_bakeTime << "&";
   }
 }
 
