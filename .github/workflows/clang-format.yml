@@ -1,0 +1,41 @@
+name: clang-format-check
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install clang-format
+        run: sudo apt-get install -y clang-format
+
+      - name: Download clang-format-diff.py
+        run: |
+          wget https://raw.githubusercontent.com/llvm/llvm-project/main/clang/tools/clang-format/clang-format-diff.py
+          chmod +x clang-format-diff.py
+
+      #run formatter inline
+      - name: Format changed lines
+        id: formatstep
+        run: |
+          # Format only the changed lines using clang-format-diff.py
+          git diff -U0 --no-color HEAD | python3 clang-format-diff.py -p1 -i
+
+      # check if differences found after formatting
+      - name: Check formatting needed
+        id: diffstep
+        run: |
+          if ! git diff --exit-code; then
+            echo "Formatting issues found!. Formetted changes:"
+            git diff
+            exit 1
+          fi
