@@ -34,7 +34,9 @@ namespace Model
     COPYING,
     STARTING,
     STOPPING,
-    STOPPED
+    STOPPED,
+    MAINTENANCE,
+    INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE
   };
 
 namespace StatusMapper

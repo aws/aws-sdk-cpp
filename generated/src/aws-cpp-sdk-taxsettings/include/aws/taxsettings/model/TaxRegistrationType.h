@@ -20,7 +20,9 @@ namespace Model
     GST,
     CPF,
     CNPJ,
-    SST
+    SST,
+    TIN,
+    NRIC
   };
 
 namespace TaxRegistrationTypeMapper

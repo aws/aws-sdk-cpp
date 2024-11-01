@@ -56,9 +56,10 @@ namespace Model
     ///@{
     /**
      * <p> Manitoba Retail Sales Tax ID number. Customers purchasing Amazon Web
-     * Services for resale in Manitoba must provide a valid Retail Sales Tax ID number
-     * for Manitoba. Leave this blank if you do not have a Retail Sales Tax ID number
-     * in Manitoba or are not purchasing Amazon Web Services for resale. </p>
+     * Services services for resale in Manitoba must provide a valid Retail Sales Tax
+     * ID number for Manitoba. Leave this blank if you do not have a Retail Sales Tax
+     * ID number in Manitoba or are not purchasing Amazon Web Services services for
+     * resale. </p>
      */
     inline const Aws::String& GetCanadaRetailSalesTaxNumber() const{ return m_canadaRetailSalesTaxNumber; }
     inline bool CanadaRetailSalesTaxNumberHasBeenSet() const { return m_canadaRetailSalesTaxNumberHasBeenSet; }

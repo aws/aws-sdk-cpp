@@ -137,30 +137,39 @@ namespace TaxSettings
          * tax registration certificate document in the
          * <code>taxRegistrationDocuments</code> field of the
          * <code>VerificationDetails</code> object.</p> </li> </ul> <p> <b>Malaysia</b>
-         * </p> <ul> <li> <p>If you use this operation to set a tax registration number
-         * (TRN) in Malaysia, only resellers with a valid sales and service tax (SST)
-         * number are required to provide tax registration information.</p> </li> <li>
-         * <p>By using this API operation to set a TRN in Malaysia, Amazon Web Services
-         * will regard you as self-declaring that you're an authorized business reseller
-         * registered with the Royal Malaysia Customs Department (RMCD) and have a valid
-         * SST number.</p> </li> <li> <p>Amazon Web Services reserves the right to seek
+         * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
+         * <code>Individual</code>.</p> </li> <li> <p> <code>RegistrationType</code> valid
+         * values are <code>NRIC</code> for individual, and TIN and sales and service tax
+         * (SST) for Business.</p> </li> <li> <p>For individual, you can specify the
+         * <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with
+         * NRIC type, and a valid <code>MyKad</code> or NRIC number.</p> </li> <li> <p>For
+         * business, you must specify a <code>businessRegistrationNumber</code> in
+         * <code>MalaysiaAdditionalInfo</code> with a TIN type and tax identification
+         * number.</p> </li> <li> <p>For business resellers, you must specify a
+         * <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in
+         * <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and
+         * a valid SST number.</p> </li> <li> <p>For business resellers with service codes,
+         * you must specify <code>businessRegistrationNumber</code>,
+         * <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in
+         * <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service
+         * tax (SST) number. By using this API operation, Amazon Web Services registers
+         * your self-declaration that you’re an authorized business reseller registered
+         * with the Royal Malaysia Customs Department (RMCD), and have a valid SST
+         * number.</p> </li> <li> <p>Amazon Web Services reserves the right to seek
          * additional information and/or take other actions to support your
-         * self-declaration as appropriate.</p> </li> <li> <p>If you're not a reseller of
-         * Amazon Web Services, we don't recommend that you use this operation to set the
-         * TRN in Malaysia.</p> </li> <li> <p>Only use this API operation to upload the
-         * TRNs for accounts through which you're reselling Amazon Web Services.</p> </li>
-         * <li> <p>Amazon Web Services is currently registered under the following service
-         * tax codes. You must include at least one of the service tax codes in the service
-         * tax code strings to declare yourself as an authorized registered business
-         * reseller.</p> <p>Taxable service and service tax codes:</p> <p>Consultancy -
-         * 9907061674</p> <p>Training or coaching service - 9907071685</p> <p>IT service -
-         * 9907101676</p> <p>Digital services and electronic medium - 9907121690</p> </li>
-         * </ul> <p> <b>Nepal</b> </p> <ul> <li> <p>The sector valid values are
-         * <code>Business</code> and <code>Individual</code>.</p> </li> </ul> <p> <b>Saudi
-         * Arabia</b> </p> <ul> <li> <p>For <code>address</code>, you must specify
-         * <code>addressLine3</code>.</p> </li> </ul> <p> <b>South Korea</b> </p> <ul> <li>
-         * <p>You must specify the <code>certifiedEmailId</code> and <code>legalName</code>
-         * in the <code>TaxRegistrationEntry</code> object. Use Korean characters for
+         * self-declaration as appropriate.</p> </li> <li> <p>Amazon Web Services is
+         * currently registered under the following service tax codes. You must include at
+         * least one of the service tax codes in the service tax code strings to declare
+         * yourself as an authorized registered business reseller.</p> <p>Taxable service
+         * and service tax codes:</p> <p>Consultancy - 9907061674</p> <p>Training or
+         * coaching service - 9907071685</p> <p>IT service - 9907101676</p> <p>Digital
+         * services and electronic medium - 9907121690</p> </li> </ul> <p> <b>Nepal</b>
+         * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
+         * <code>Individual</code>.</p> </li> </ul> <p> <b>Saudi Arabia</b> </p> <ul> <li>
+         * <p>For <code>address</code>, you must specify <code>addressLine3</code>.</p>
+         * </li> </ul> <p> <b>South Korea</b> </p> <ul> <li> <p>You must specify the
+         * <code>certifiedEmailId</code> and <code>legalName</code> in the
+         * <code>TaxRegistrationEntry</code> object. Use Korean characters for
          * <code>legalName</code>.</p> </li> <li> <p>You must specify the
          * <code>businessRepresentativeName</code>, <code>itemOfBusiness</code>, and
          * <code>lineOfBusiness</code> in the <code>southKoreaAdditionalInfo</code> field
@@ -213,6 +222,32 @@ namespace TaxSettings
         void BatchPutTaxRegistrationAsync(const BatchPutTaxRegistrationRequestT& request, const BatchPutTaxRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TaxSettingsClient::BatchPutTaxRegistration, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes a supplemental tax registration for a single account. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/DeleteSupplementalTaxRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSupplementalTaxRegistrationOutcome DeleteSupplementalTaxRegistration(const Model::DeleteSupplementalTaxRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSupplementalTaxRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteSupplementalTaxRegistrationRequestT = Model::DeleteSupplementalTaxRegistrationRequest>
+        Model::DeleteSupplementalTaxRegistrationOutcomeCallable DeleteSupplementalTaxRegistrationCallable(const DeleteSupplementalTaxRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&TaxSettingsClient::DeleteSupplementalTaxRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteSupplementalTaxRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteSupplementalTaxRegistrationRequestT = Model::DeleteSupplementalTaxRegistrationRequest>
+        void DeleteSupplementalTaxRegistrationAsync(const DeleteSupplementalTaxRegistrationRequestT& request, const DeleteSupplementalTaxRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TaxSettingsClient::DeleteSupplementalTaxRegistration, request, handler, context);
         }
 
         /**
@@ -297,6 +332,32 @@ namespace TaxSettings
         }
 
         /**
+         * <p> Retrieves supplemental tax registrations for a single account.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListSupplementalTaxRegistrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSupplementalTaxRegistrationsOutcome ListSupplementalTaxRegistrations(const Model::ListSupplementalTaxRegistrationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListSupplementalTaxRegistrations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSupplementalTaxRegistrationsRequestT = Model::ListSupplementalTaxRegistrationsRequest>
+        Model::ListSupplementalTaxRegistrationsOutcomeCallable ListSupplementalTaxRegistrationsCallable(const ListSupplementalTaxRegistrationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&TaxSettingsClient::ListSupplementalTaxRegistrations, request);
+        }
+
+        /**
+         * An Async wrapper for ListSupplementalTaxRegistrations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSupplementalTaxRegistrationsRequestT = Model::ListSupplementalTaxRegistrationsRequest>
+        void ListSupplementalTaxRegistrationsAsync(const ListSupplementalTaxRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListSupplementalTaxRegistrationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&TaxSettingsClient::ListSupplementalTaxRegistrations, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the tax registration of accounts listed in a consolidated billing
          * family. This can be used to retrieve up to 100 accounts' tax registrations in
          * one call (default 50). </p><p><h3>See Also:</h3>   <a
@@ -324,6 +385,32 @@ namespace TaxSettings
         }
 
         /**
+         * <p> Stores supplemental tax registration for a single account. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutSupplementalTaxRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutSupplementalTaxRegistrationOutcome PutSupplementalTaxRegistration(const Model::PutSupplementalTaxRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutSupplementalTaxRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutSupplementalTaxRegistrationRequestT = Model::PutSupplementalTaxRegistrationRequest>
+        Model::PutSupplementalTaxRegistrationOutcomeCallable PutSupplementalTaxRegistrationCallable(const PutSupplementalTaxRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&TaxSettingsClient::PutSupplementalTaxRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for PutSupplementalTaxRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutSupplementalTaxRegistrationRequestT = Model::PutSupplementalTaxRegistrationRequest>
+        void PutSupplementalTaxRegistrationAsync(const PutSupplementalTaxRegistrationRequestT& request, const PutSupplementalTaxRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TaxSettingsClient::PutSupplementalTaxRegistration, request, handler, context);
+        }
+
+        /**
          * <p>Adds or updates tax registration for a single account. You can't set a TRN if
          * there's a pending TRN. You'll need to delete the pending TRN first.</p> <p>To
          * call this API operation for specific countries, see the following
@@ -346,30 +433,39 @@ namespace TaxSettings
          * tax registration certificate document in the
          * <code>taxRegistrationDocuments</code> field of the
          * <code>VerificationDetails</code> object.</p> </li> </ul> <p> <b>Malaysia</b>
-         * </p> <ul> <li> <p>If you use this operation to set a tax registration number
-         * (TRN) in Malaysia, only resellers with a valid sales and service tax (SST)
-         * number are required to provide tax registration information.</p> </li> <li>
-         * <p>By using this API operation to set a TRN in Malaysia, Amazon Web Services
-         * will regard you as self-declaring that you're an authorized business reseller
-         * registered with the Royal Malaysia Customs Department (RMCD) and have a valid
-         * SST number.</p> </li> <li> <p>Amazon Web Services reserves the right to seek
+         * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
+         * <code>Individual</code>.</p> </li> <li> <p> <code>RegistrationType</code> valid
+         * values are <code>NRIC</code> for individual, and TIN and sales and service tax
+         * (SST) for Business.</p> </li> <li> <p>For individual, you can specify the
+         * <code>taxInformationNumber</code> in <code>MalaysiaAdditionalInfo</code> with
+         * NRIC type, and a valid <code>MyKad</code> or NRIC number.</p> </li> <li> <p>For
+         * business, you must specify a <code>businessRegistrationNumber</code> in
+         * <code>MalaysiaAdditionalInfo</code> with a TIN type and tax identification
+         * number.</p> </li> <li> <p>For business resellers, you must specify a
+         * <code>businessRegistrationNumber</code> and <code>taxInformationNumber</code> in
+         * <code>MalaysiaAdditionalInfo</code> with a sales and service tax (SST) type and
+         * a valid SST number.</p> </li> <li> <p>For business resellers with service codes,
+         * you must specify <code>businessRegistrationNumber</code>,
+         * <code>taxInformationNumber</code>, and distinct <code>serviceTaxCodes</code> in
+         * <code>MalaysiaAdditionalInfo</code> with a SST type and valid sales and service
+         * tax (SST) number. By using this API operation, Amazon Web Services registers
+         * your self-declaration that you’re an authorized business reseller registered
+         * with the Royal Malaysia Customs Department (RMCD), and have a valid SST
+         * number.</p> </li> <li> <p>Amazon Web Services reserves the right to seek
          * additional information and/or take other actions to support your
-         * self-declaration as appropriate.</p> </li> <li> <p>If you're not a reseller of
-         * Amazon Web Services, we don't recommend that you use this operation to set the
-         * TRN in Malaysia.</p> </li> <li> <p>Only use this API operation to upload the
-         * TRNs for accounts through which you're reselling Amazon Web Services.</p> </li>
-         * <li> <p>Amazon Web Services is currently registered under the following service
-         * tax codes. You must include at least one of the service tax codes in the service
-         * tax code strings to declare yourself as an authorized registered business
-         * reseller.</p> <p>Taxable service and service tax codes:</p> <p>Consultancy -
-         * 9907061674</p> <p>Training or coaching service - 9907071685</p> <p>IT service -
-         * 9907101676</p> <p>Digital services and electronic medium - 9907121690</p> </li>
-         * </ul> <p> <b>Nepal</b> </p> <ul> <li> <p>The sector valid values are
-         * <code>Business</code> and <code>Individual</code>.</p> </li> </ul> <p> <b>Saudi
-         * Arabia</b> </p> <ul> <li> <p>For <code>address</code>, you must specify
-         * <code>addressLine3</code>.</p> </li> </ul> <p> <b>South Korea</b> </p> <ul> <li>
-         * <p>You must specify the <code>certifiedEmailId</code> and <code>legalName</code>
-         * in the <code>TaxRegistrationEntry</code> object. Use Korean characters for
+         * self-declaration as appropriate.</p> </li> <li> <p>Amazon Web Services is
+         * currently registered under the following service tax codes. You must include at
+         * least one of the service tax codes in the service tax code strings to declare
+         * yourself as an authorized registered business reseller.</p> <p>Taxable service
+         * and service tax codes:</p> <p>Consultancy - 9907061674</p> <p>Training or
+         * coaching service - 9907071685</p> <p>IT service - 9907101676</p> <p>Digital
+         * services and electronic medium - 9907121690</p> </li> </ul> <p> <b>Nepal</b>
+         * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
+         * <code>Individual</code>.</p> </li> </ul> <p> <b>Saudi Arabia</b> </p> <ul> <li>
+         * <p>For <code>address</code>, you must specify <code>addressLine3</code>.</p>
+         * </li> </ul> <p> <b>South Korea</b> </p> <ul> <li> <p>You must specify the
+         * <code>certifiedEmailId</code> and <code>legalName</code> in the
+         * <code>TaxRegistrationEntry</code> object. Use Korean characters for
          * <code>legalName</code>.</p> </li> <li> <p>You must specify the
          * <code>businessRepresentativeName</code>, <code>itemOfBusiness</code>, and
          * <code>lineOfBusiness</code> in the <code>southKoreaAdditionalInfo</code> field

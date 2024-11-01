@@ -19,7 +19,9 @@ namespace Model
 {
 
 MalaysiaAdditionalInfo::MalaysiaAdditionalInfo() : 
-    m_serviceTaxCodesHasBeenSet(false)
+    m_businessRegistrationNumberHasBeenSet(false),
+    m_serviceTaxCodesHasBeenSet(false),
+    m_taxInformationNumberHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,13 @@ MalaysiaAdditionalInfo::MalaysiaAdditionalInfo(JsonView jsonValue)
 
 MalaysiaAdditionalInfo& MalaysiaAdditionalInfo::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("businessRegistrationNumber"))
+  {
+    m_businessRegistrationNumber = jsonValue.GetString("businessRegistrationNumber");
+
+    m_businessRegistrationNumberHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("serviceTaxCodes"))
   {
     Aws::Utils::Array<JsonView> serviceTaxCodesJsonList = jsonValue.GetArray("serviceTaxCodes");
@@ -41,12 +50,25 @@ MalaysiaAdditionalInfo& MalaysiaAdditionalInfo::operator =(JsonView jsonValue)
     m_serviceTaxCodesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("taxInformationNumber"))
+  {
+    m_taxInformationNumber = jsonValue.GetString("taxInformationNumber");
+
+    m_taxInformationNumberHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue MalaysiaAdditionalInfo::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_businessRegistrationNumberHasBeenSet)
+  {
+   payload.WithString("businessRegistrationNumber", m_businessRegistrationNumber);
+
+  }
 
   if(m_serviceTaxCodesHasBeenSet)
   {
@@ -56,6 +78,12 @@ JsonValue MalaysiaAdditionalInfo::Jsonize() const
      serviceTaxCodesJsonList[serviceTaxCodesIndex].AsString(MalaysiaServiceTaxCodeMapper::GetNameForMalaysiaServiceTaxCode(m_serviceTaxCodes[serviceTaxCodesIndex]));
    }
    payload.WithArray("serviceTaxCodes", std::move(serviceTaxCodesJsonList));
+
+  }
+
+  if(m_taxInformationNumberHasBeenSet)
+  {
+   payload.WithString("taxInformationNumber", m_taxInformationNumber);
 
   }
 
