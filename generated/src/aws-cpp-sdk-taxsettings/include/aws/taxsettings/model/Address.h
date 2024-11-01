@@ -145,9 +145,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The state, region, or province that the address is located.</p> <p>If this is
-     * required for tax settings, use the same name as shown on the <b>Tax Settings</b>
-     * page.</p>
+     * <p>The state, region, or province that the address is located. This field is
+     * only required for Canada, India, United Arab Emirates, Romania, and Brazil
+     * (CPF). It is optional for all other countries.</p> <p>If this is required for
+     * tax settings, use the same name as shown on the <b>Tax Settings</b> page.</p>
      */
     inline const Aws::String& GetStateOrRegion() const{ return m_stateOrRegion; }
     inline bool StateOrRegionHasBeenSet() const { return m_stateOrRegionHasBeenSet; }

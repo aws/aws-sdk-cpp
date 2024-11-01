@@ -25,6 +25,8 @@ namespace Aws
         static const int CPF_HASH = HashingUtils::HashString("CPF");
         static const int CNPJ_HASH = HashingUtils::HashString("CNPJ");
         static const int SST_HASH = HashingUtils::HashString("SST");
+        static const int TIN_HASH = HashingUtils::HashString("TIN");
+        static const int NRIC_HASH = HashingUtils::HashString("NRIC");
 
 
         TaxRegistrationType GetTaxRegistrationTypeForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == SST_HASH)
           {
             return TaxRegistrationType::SST;
+          }
+          else if (hashCode == TIN_HASH)
+          {
+            return TaxRegistrationType::TIN;
+          }
+          else if (hashCode == NRIC_HASH)
+          {
+            return TaxRegistrationType::NRIC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +86,10 @@ namespace Aws
             return "CNPJ";
           case TaxRegistrationType::SST:
             return "SST";
+          case TaxRegistrationType::TIN:
+            return "TIN";
+          case TaxRegistrationType::NRIC:
+            return "NRIC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

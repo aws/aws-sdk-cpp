@@ -87,6 +87,32 @@ namespace DocDBElastic
         virtual ~DocDBElasticClient();
 
         /**
+         * <p>The type of pending maintenance action to be applied to the
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ApplyPendingMaintenanceAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ApplyPendingMaintenanceActionOutcome ApplyPendingMaintenanceAction(const Model::ApplyPendingMaintenanceActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ApplyPendingMaintenanceAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ApplyPendingMaintenanceActionRequestT = Model::ApplyPendingMaintenanceActionRequest>
+        Model::ApplyPendingMaintenanceActionOutcomeCallable ApplyPendingMaintenanceActionCallable(const ApplyPendingMaintenanceActionRequestT& request) const
+        {
+            return SubmitCallable(&DocDBElasticClient::ApplyPendingMaintenanceAction, request);
+        }
+
+        /**
+         * An Async wrapper for ApplyPendingMaintenanceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ApplyPendingMaintenanceActionRequestT = Model::ApplyPendingMaintenanceActionRequest>
+        void ApplyPendingMaintenanceActionAsync(const ApplyPendingMaintenanceActionRequestT& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DocDBElasticClient::ApplyPendingMaintenanceAction, request, handler, context);
+        }
+
+        /**
          * <p>Copies a snapshot of an elastic cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/CopyClusterSnapshot">AWS
          * API Reference</a></p>
@@ -265,6 +291,32 @@ namespace DocDBElastic
         }
 
         /**
+         * <p>Retrieves all maintenance actions that are pending.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/GetPendingMaintenanceAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPendingMaintenanceActionOutcome GetPendingMaintenanceAction(const Model::GetPendingMaintenanceActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPendingMaintenanceAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPendingMaintenanceActionRequestT = Model::GetPendingMaintenanceActionRequest>
+        Model::GetPendingMaintenanceActionOutcomeCallable GetPendingMaintenanceActionCallable(const GetPendingMaintenanceActionRequestT& request) const
+        {
+            return SubmitCallable(&DocDBElasticClient::GetPendingMaintenanceAction, request);
+        }
+
+        /**
+         * An Async wrapper for GetPendingMaintenanceAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPendingMaintenanceActionRequestT = Model::GetPendingMaintenanceActionRequest>
+        void GetPendingMaintenanceActionAsync(const GetPendingMaintenanceActionRequestT& request, const GetPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DocDBElasticClient::GetPendingMaintenanceAction, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about snapshots for a specified elastic
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListClusterSnapshots">AWS
@@ -314,6 +366,32 @@ namespace DocDBElastic
         void ListClustersAsync(const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListClustersRequestT& request = {}) const
         {
             return SubmitAsync(&DocDBElasticClient::ListClusters, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of all maintenance actions that are pending.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListPendingMaintenanceActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPendingMaintenanceActionsOutcome ListPendingMaintenanceActions(const Model::ListPendingMaintenanceActionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListPendingMaintenanceActions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPendingMaintenanceActionsRequestT = Model::ListPendingMaintenanceActionsRequest>
+        Model::ListPendingMaintenanceActionsOutcomeCallable ListPendingMaintenanceActionsCallable(const ListPendingMaintenanceActionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&DocDBElasticClient::ListPendingMaintenanceActions, request);
+        }
+
+        /**
+         * An Async wrapper for ListPendingMaintenanceActions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPendingMaintenanceActionsRequestT = Model::ListPendingMaintenanceActionsRequest>
+        void ListPendingMaintenanceActionsAsync(const ListPendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListPendingMaintenanceActionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&DocDBElasticClient::ListPendingMaintenanceActions, request, handler, context);
         }
 
         /**

@@ -39,6 +39,8 @@ namespace Aws
         static const int STARTING_HASH = HashingUtils::HashString("STARTING");
         static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
         static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
+        static const int INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE_HASH = HashingUtils::HashString("INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE");
 
 
         Status GetStatusForName(const Aws::String& name)
@@ -120,6 +122,14 @@ namespace Aws
           {
             return Status::STOPPED;
           }
+          else if (hashCode == MAINTENANCE_HASH)
+          {
+            return Status::MAINTENANCE;
+          }
+          else if (hashCode == INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE_HASH)
+          {
+            return Status::INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -174,6 +184,10 @@ namespace Aws
             return "STOPPING";
           case Status::STOPPED:
             return "STOPPED";
+          case Status::MAINTENANCE:
+            return "MAINTENANCE";
+          case Status::INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE:
+            return "INACCESSIBLE_ENCRYPTION_CREDENTIALS_RECOVERABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
