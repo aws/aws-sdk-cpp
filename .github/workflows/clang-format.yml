@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all commits of the pull request branch
 
       - name: Install clang-format
         run: sudo apt-get install -y clang-format
@@ -23,19 +25,54 @@ jobs:
           wget https://raw.githubusercontent.com/llvm/llvm-project/main/clang/tools/clang-format/clang-format-diff.py
           chmod +x clang-format-diff.py
 
-      #run formatter inline
-      - name: Format changed lines
-        id: formatstep
+      # get names of the base and pr branches
+      - name: Get the base and head branches
+        id: fetchstep
+        run: |
+          echo "BASE_BRANCH=${{ github.event.pull_request.base.ref }}" >> $GITHUB_ENV
+          echo "HEAD_BRANCH=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
+          echo "Base branch: $BASE_BRANCH"
+          echo "Head branch: $HEAD_BRANCH"
+          git fetch origin ${{ env.BASE_BRANCH }}
+          git fetch origin ${{ env.HEAD_BRANCH }}
+
+      #get differences on the PR branch
+      - name: git diff
+        id: diffstep
+        env:
+          ACTIONS_RUNNER_DEBUG: true
         run: |
           # Format only the changed lines using clang-format-diff.py
-          git diff -U0 --no-color HEAD | python3 clang-format-diff.py -p1 -i
-
-      # check if differences found after formatting
-      - name: Check formatting needed
-        id: diffstep
+          set -e
+          git diff -U0 --no-color origin/${{ env.BASE_BRANCH }}...origin/${{ env.HEAD_BRANCH }} > diff_output.patch
+          cat diff_output.patch
+          
+      # run formatter on the differences if any
+      - name: format diff
+        id: formatstep
+        env:
+          ACTIONS_RUNNER_DEBUG: true
         run: |
-          if ! git diff --exit-code; then
+          if [ -s diff_output.patch ]; then
+            python3 clang-format-diff.py -p1 < diff_output.patch > formatted_differences.patch 2> error.log || true
+            if [ -s error.log ]; then
+              echo "Errors from clang-format-diff.py:"
+              cat error.log
+            else
+              echo "No Errors from clang-format-diff.py"
+            fi
+            rm diff_output.patch
+          fi
+
+      # check if differences found after formatting, then exit 
+      - name: Check formatting needed
+        id: validatestep
+        env:
+          ACTIONS_RUNNER_DEBUG: true
+        run: |
+          if [ -s formatted_differences.patch ]; then
             echo "Formatting issues found!. Formatted changes:"
-            git diff
+            cat formatted_differences.patch
+            rm formatted_differences.patch
             exit 1
           fi
