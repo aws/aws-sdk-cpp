@@ -17,6 +17,7 @@ jobs:
         with:
           fetch-depth: 0  # Fetch all commits of the pull request branch
 
+
       - name: Install clang-format
         run: sudo apt-get install -y clang-format
 
@@ -36,7 +37,7 @@ jobs:
           git fetch origin ${{ env.BASE_BRANCH }}
           git fetch origin ${{ env.HEAD_BRANCH }}
 
-      #get differences on the PR branch
+      #get differences on the PR branch excluding generated folder in the root
       - name: git diff
         id: diffstep
         env:
@@ -44,7 +45,7 @@ jobs:
         run: |
           # Format only the changed lines using clang-format-diff.py
           set -e
-          git diff -U0 --no-color origin/${{ env.BASE_BRANCH }}...origin/${{ env.HEAD_BRANCH }} > diff_output.patch
+          git diff -U0 --no-color origin/${{ env.BASE_BRANCH }}...origin/${{ env.HEAD_BRANCH }} -- . ':!generated/' > diff_output.patch
           cat diff_output.patch
           
       # run formatter on the differences if any
