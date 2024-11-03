@@ -58,9 +58,7 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
                         elem.left,
                         right.right);
                 }
-            ).orElseThrow(() -> 
-            new SmithyBuildException("Unsupported JMESPath expression")
-            );
+            ).orElse( Pair.of("", this.input));
     }
 
     @Override
