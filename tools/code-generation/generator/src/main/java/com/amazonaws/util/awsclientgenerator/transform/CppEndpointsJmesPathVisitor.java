@@ -1,12 +1,10 @@
 package com.amazonaws.util.awsclientgenerator.transform;
 
-import java.text.MessageFormat;
-import java.util.Optional;
-
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
-
+import java.text.MessageFormat;
+import java.util.Optional;
 import software.amazon.smithy.build.SmithyBuildException;
 import software.amazon.smithy.jmespath.ExpressionVisitor;
 import software.amazon.smithy.jmespath.ast.AndExpression;
@@ -45,20 +43,19 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
 
     @Override
     public Pair<String, Shape> visitProjection(ProjectionExpression expression) {
-        return Optional.of(
-            expression.getLeft().accept(this)).filter( elem -> elem.right.isList()).map(
-                elem -> {
-                    String varName = elem.left + "Elem";
-                    context.rangeBasedForLoop(varName);
-                    context.openVariableScope(varName);
-                    Pair<String, Shape> right = expression.getRight().accept(
-                            new CppEndpointsJmesPathVisitor(context, elem.right.getListMember().getShape()));
-                    context.closeVariableScope();
-                    return Pair.of(
-                        elem.left,
-                        right.right);
-                }
-            ).orElse( Pair.of("", this.input));
+      return Optional.of(expression.getLeft().accept(this))
+          .filter(elem -> elem.right.isList())
+          .map(elem -> {
+            String varName = elem.left + "Elem";
+            context.rangeBasedForLoop(varName);
+            context.openVariableScope(varName);
+            Pair<String, Shape> right =
+                expression.getRight().accept(new CppEndpointsJmesPathVisitor(
+                    context, elem.right.getListMember().getShape()));
+            context.closeVariableScope();
+            return Pair.of(elem.left, right.right);
+          })
+          .orElse(Pair.of("", this.input));
     }
 
     @Override
@@ -100,9 +97,8 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
         // at the start of each code block
         String varName = expression.getName() + "Elem";
         // if a new scope started, declare variable accessed
-        if (context.isStartOfNewScope() ||
-                context.getVarName().isEmpty() ) {
-            context.addVariableInScope(varName);
+        if (context.isStartOfNewScope() || context.getVarName().isEmpty()) {
+          context.addVariableInScope(varName);
         }
 
         // chain accessors
@@ -114,9 +110,9 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
             if (member.getShape().isString()) {
                 context.addInScopeVariableToResult(Optional.empty());
 
-                //this is where we can refer to the original scope variable again
+                // this is where we can refer to the original scope variable
+                // again
                 context.cleanupVariablesCurrentScope();
-
             }
         }
         return Pair.of(
@@ -151,11 +147,13 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
 
     @Override
     public Pair<String, Shape> visitFlatten(FlattenExpression expression) {
-        if (expression.getExpression() instanceof ProjectionExpression) {
-            return visitProjection((ProjectionExpression) expression.getExpression());
-        }
-        // If it's not a ProjectionExpression, proceed with handling FlattenExpression
-        return expression.accept(this);
+      if (expression.getExpression() instanceof ProjectionExpression) {
+        return visitProjection(
+            (ProjectionExpression)expression.getExpression());
+      }
+      // If it's not a ProjectionExpression, proceed with handling
+      // FlattenExpression
+      return expression.accept(this);
     }
 
     @Override
@@ -170,12 +168,8 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
 
     @Override
     public Pair<String, Shape> visitMultiSelectList(MultiSelectListExpression expression) {
-        expression.getExpressions().forEach(expr -> {
-            expr.accept(this);
-        });
-        return Pair.of(
-            "",
-            this.input);
+      expression.getExpressions().forEach(expr -> { expr.accept(this); });
+      return Pair.of("", this.input);
     }
     @Override
     public Pair<String, Shape> visitMultiSelectHash(MultiSelectHashExpression expression) {
