@@ -22,7 +22,9 @@
 
 #include <aws/core/Core_EXPORTS.h>
 
+#include <aws/core/utils/crypto/CRC.h>
 #include <aws/core/utils/crypto/Hash.h>
+#include <aws/crt/checksum/CRC.h>
 
 namespace Aws
 {
@@ -103,44 +105,13 @@ namespace Aws
                 std::shared_ptr< Hash > m_hashImpl;
             };
 
-            class AWS_CORE_API CRC32Impl : public Hash
-            {
-            public:
+            using CRC32Impl =
+                CRCChecksum<uint32_t, Aws::Crt::Checksum::ComputeCRC32,
+                            ConvertToBuffer<uint32_t>>;
 
-                CRC32Impl();
-                virtual ~CRC32Impl() {}
-
-                virtual HashResult Calculate(const Aws::String& str) override;
-
-                virtual HashResult Calculate(Aws::IStream& stream) override;
-
-                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
-
-                virtual HashResult GetHash() override;
-
-            private:
-                int m_runningCrc32;
-            };
-
-            class AWS_CORE_API CRC32CImpl : public Hash
-            {
-            public:
-
-                CRC32CImpl();
-                virtual ~CRC32CImpl() {}
-
-                virtual HashResult Calculate(const Aws::String& str) override;
-
-                virtual HashResult Calculate(Aws::IStream& stream) override;
-
-                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
-
-                virtual HashResult GetHash() override;
-
-            private:
-                int m_runningCrc32c;
-            };
-
+            using CRC32CImpl =
+                CRCChecksum<uint32_t, Aws::Crt::Checksum::ComputeCRC32C,
+                            ConvertToBuffer<uint32_t>>;
         } // namespace Crypto
     } // namespace Utils
 } // namespace Aws
