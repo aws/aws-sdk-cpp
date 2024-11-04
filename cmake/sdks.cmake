@@ -4,6 +4,8 @@ set(SDK_DEPENDENCY_BUILD_LIST "")
 
 set(NON_GENERATED_CLIENT_LIST access-management text-to-speech core queues s3-encryption identity-management transfer)  ## Manually generated code with a name mimicking client name
 
+option(ENABLE_SMOKE_TESTS "Enable smoke tests" OFF)
+
 if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     message(STATUS "Checking for SDK generation requirements")
     include(FindJava)
