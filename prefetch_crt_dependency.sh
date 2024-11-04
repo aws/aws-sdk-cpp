@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0.
 
 CRT_URI_PREFIX=https://codeload.github.com/awslabs
-CRT_URI=${CRT_URI_PREFIX}/aws-crt-cpp/zip/e14c814728dc438a0b7dc694bd83418addc5a6a1  # v0.28.2
+CRT_URI=${CRT_URI_PREFIX}/aws-crt-cpp/zip/83aacf7ae3a79c1cd1d2e1fe901a8ac9c427a199  # v0.28.3
 
 AWS_C_AUTH_URI=${CRT_URI_PREFIX}/aws-c-auth/zip/877c029fc4e93d205f9c6855188c3c51f6b497b4  # v0.7.26
 AWS_C_CAL_URI=${CRT_URI_PREFIX}/aws-c-cal/zip/2cb1d2eac925e2dbc45025eb89af82bd790c23a0  # v0.7.4
@@ -15,7 +15,7 @@ AWS_C_IO_URI=${CRT_URI_PREFIX}/aws-c-io/zip/c345d77274db83c0c2e30331814093e7c84c
 AWS_C_MQTT_URI=${CRT_URI_PREFIX}/aws-c-mqtt/zip/ed7bbd68c03d7022c915a2924740ab7992ad2311  # v0.10.4
 AWS_C_S3_URI=${CRT_URI_PREFIX}/aws-c-s3/zip/0ab4d58ef0bd97970d43828cb6b57a3de5747343  # v0.6.4
 AWS_C_SDKUTILS_URI=${CRT_URI_PREFIX}/aws-c-sdkutils/zip/4658412a61ad5749db92a8d1e0717cb5e76ada1c  # v0.1.19
-AWS_CHECKSUMS_URI=${CRT_URI_PREFIX}/aws-checksums/zip/aac442a2dbbb5e72d0a3eca8313cf65e7e1cac2f  # v0.1.18
+AWS_CHECKSUMS_URI=${CRT_URI_PREFIX}/aws-checksums/zip/ce04ab00b3ecc41912f478bfedca39f8e1919d6b  # v0.1.20
 AWS_LC_URI=${CRT_URI_PREFIX}/aws-lc/zip/2f1879759b2e0fc70592665bdf10087b64f44b7d  # v1.34.2
 S2N_URI=${CRT_URI_PREFIX}/s2n/zip/87f4a0585dc3056433f193b9305f587cff239be3  # v1.5.1
 
