@@ -2,7 +2,6 @@ package com.amazonaws.util.awsclientgenerator.transform;
 import java.text.MessageFormat;
 import java.util.Optional;
 import java.util.Stack;
-
 import lombok.Data;
 import software.amazon.smithy.utils.Pair;
 
