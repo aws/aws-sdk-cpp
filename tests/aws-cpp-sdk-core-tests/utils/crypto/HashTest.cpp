@@ -6,11 +6,12 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/core/utils/crypto/Sha256.h>
-#include <aws/core/utils/crypto/Sha1.h>
-#include <aws/core/utils/crypto/MD5.h>
-#include <aws/core/utils/crypto/CRC32.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/crypto/CRC32.h>
+#include <aws/core/utils/crypto/CRC64.h>
+#include <aws/core/utils/crypto/MD5.h>
+#include <aws/core/utils/crypto/Sha1.h>
+#include <aws/core/utils/crypto/Sha256.h>
 
 #include <algorithm>
 
@@ -117,4 +118,25 @@ TEST_F(HashUpdateTest, TestCRC32CUpdate)
 
     Aws::String hexHash = HashingUtils::HexEncode(digest);
     ASSERT_STREQ("fb5b991d", hexHash.c_str());
+}
+
+TEST_F(HashUpdateTest, TestCRC64Update) {
+  Crypto::CRC64 hash;
+
+  unsigned char buffer[Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE] = {};
+  memset(buffer, 0, Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE);
+
+  for (long int remainingBufferSize = 26214400; remainingBufferSize > 0;) {
+    size_t bufferSize = (std::min)(
+        remainingBufferSize,
+        static_cast<long>(Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE));
+    hash.Update(buffer, bufferSize);
+    remainingBufferSize -= static_cast<long>(bufferSize);
+  }
+
+  ByteBuffer digest = hash.GetHash().GetResult();
+  ASSERT_EQ(8uL, digest.GetLength());
+
+  Aws::String hexHash = HashingUtils::HexEncode(digest);
+  ASSERT_STREQ("5b6f5045463ca45e", hexHash.c_str());
 }
