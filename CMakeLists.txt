@@ -66,6 +66,8 @@ if (LEGACY_BUILD)
     option(BUILD_OPTEL_OTLP_BENCHMARKS "Enables building the benchmark tests with open telemetry OTLP clients" OFF)
     option(USE_TLS_V1_2 "Set http client to enforce TLS 1.2" ON)
     option(USE_TLS_V1_3 "Set http client to enforce TLS 1.3" OFF)
+    option(ENABLE_SMOKE_TESTS "Enable smoke tests" OFF)
+
 
     set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")
     set(AWS_TEST_REGION "US_EAST_1" CACHE STRING "Region to target integration tests against")
