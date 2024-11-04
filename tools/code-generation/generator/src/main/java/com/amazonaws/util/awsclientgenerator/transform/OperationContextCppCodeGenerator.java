@@ -2,6 +2,7 @@ package com.amazonaws.util.awsclientgenerator.transform;
 import java.text.MessageFormat;
 import java.util.Optional;
 import java.util.Stack;
+
 import lombok.Data;
 import software.amazon.smithy.utils.Pair;
 
@@ -43,12 +44,8 @@ public final class OperationContextCppCodeGenerator{
     }
 
     public void cleanupVariablesCurrentScope() {
-      while (!this.getVarName().isEmpty()) {
-        if (!this.getVarName().peek().right) {
-          this.getVarName().pop();
-        } else {
-          break;
-        }
+      while (!this.getVarName().isEmpty() && !this.getVarName().peek().right) {
+        this.getVarName().pop();
       }
     }
 
