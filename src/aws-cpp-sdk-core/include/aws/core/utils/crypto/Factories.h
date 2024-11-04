@@ -52,6 +52,10 @@ namespace Aws
              */
             AWS_CORE_API std::shared_ptr<Hash> CreateCRC32CImplementation();
             /**
+             * Create a CRC32 Hash provider
+             */
+            AWS_CORE_API std::shared_ptr<Hash> CreateCRC64Implementation();
+            /**
              * Create a Sha1 Hash provider
              */
             AWS_CORE_API std::shared_ptr<Hash> CreateSha1Implementation();
@@ -129,6 +133,11 @@ namespace Aws
              * Set the global factory for CRC32 Hash providers
              */
             AWS_CORE_API void SetCRC32Factory(const std::shared_ptr<HashFactory>& factory);
+            /**
+             * Set the global factory for CRC32 Hash providers
+             */
+            AWS_CORE_API void
+            SetCRC64Factory(const std::shared_ptr<HashFactory> &factory);
             /**
              * Set the global factory for CRC32C Hash providers
              */

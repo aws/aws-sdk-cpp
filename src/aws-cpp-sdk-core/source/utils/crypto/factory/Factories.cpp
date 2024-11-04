@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
-#include <aws/core/utils/crypto/Factories.h>
-#include <aws/core/utils/crypto/Hash.h>
-#include <aws/core/utils/crypto/HMAC.h>
 #include <aws/core/utils/crypto/CRC32.h>
+#include <aws/core/utils/crypto/CRC64.h>
+#include <aws/core/utils/crypto/Factories.h>
+#include <aws/core/utils/crypto/HMAC.h>
+#include <aws/core/utils/crypto/Hash.h>
 #ifndef NO_ENCRYPTION
 #include <aws/core/utils/crypto/crt/CRTSymmetricCipher.h>
 #include <aws/core/utils/crypto/crt/CRTHash.h>
@@ -45,10 +45,14 @@ static std::shared_ptr<HashFactory>& GetCRC32CFactory()
     return s_CRC32CFactory;
 }
 
-static std::shared_ptr<HashFactory>& GetSha1Factory()
-{
-    static std::shared_ptr<HashFactory> s_Sha1Factory(nullptr);
-    return s_Sha1Factory;
+static std::shared_ptr<HashFactory> &GetCRC64Factory() {
+  static std::shared_ptr<HashFactory> s_CRC64Factory(nullptr);
+  return s_CRC64Factory;
+}
+
+static std::shared_ptr<HashFactory> &GetSha1Factory() {
+  static std::shared_ptr<HashFactory> s_Sha1Factory(nullptr);
+  return s_Sha1Factory;
 }
 
 static std::shared_ptr<HashFactory>& GetSha256Factory()
@@ -150,17 +154,22 @@ public:
     }
 };
 
-class DefaultSHA1Factory : public HashFactory
-{
+class DefaultCRC64Factory : public HashFactory {
 public:
-    std::shared_ptr<Hash> CreateImplementation() const override
-    {
+  std::shared_ptr<Hash> CreateImplementation() const override {
+    return Aws::MakeShared<CRC64Impl>(s_allocationTag);
+  }
+};
+
+class DefaultSHA1Factory : public HashFactory {
+public:
+  std::shared_ptr<Hash> CreateImplementation() const override {
 #ifndef NO_ENCRYPTION
         return Aws::MakeShared<CRTHash>(s_allocationTag, Aws::Crt::Crypto::Hash::CreateSHA1());
 #else
         return nullptr;
 #endif
-    }
+  }
 
     /**
      * Opportunity to make any static initialization calls you need to make.
@@ -556,14 +565,15 @@ void Aws::Utils::Crypto::InitCrypto()
         GetCRC32CFactory() = Aws::MakeShared<DefaultCRC32CFactory>(s_allocationTag);
     }
 
-    if(GetSha1Factory())
-    {
-        GetSha1Factory()->InitStaticState();
+    if (!GetCRC64Factory()) {
+      GetCRC64Factory() = Aws::MakeShared<DefaultCRC64Factory>(s_allocationTag);
     }
-    else
-    {
-        GetSha1Factory() = Aws::MakeShared<DefaultSHA1Factory>(s_allocationTag);
-        GetSha1Factory()->InitStaticState();
+
+    if (GetSha1Factory()) {
+      GetSha1Factory()->InitStaticState();
+    } else {
+      GetSha1Factory() = Aws::MakeShared<DefaultSHA1Factory>(s_allocationTag);
+      GetSha1Factory()->InitStaticState();
     }
 
     if(GetSha256Factory())
@@ -653,10 +663,13 @@ void Aws::Utils::Crypto::CleanupCrypto()
         GetCRC32CFactory() = nullptr;
     }
 
-    if(GetSha1Factory())
-    {
-        GetSha1Factory()->CleanupStaticState();
-        GetSha1Factory() = nullptr;
+    if (GetCRC64Factory()) {
+      GetCRC64Factory() = nullptr;
+    }
+
+    if (GetSha1Factory()) {
+      GetSha1Factory()->CleanupStaticState();
+      GetSha1Factory() = nullptr;
     }
 
     if(GetSha256Factory())
@@ -713,14 +726,19 @@ void Aws::Utils::Crypto::SetCRC32Factory(const std::shared_ptr<HashFactory>& fac
     GetCRC32Factory() = factory;
 }
 
-void Aws::Utils::Crypto::SetCRC32CFactory(const std::shared_ptr<HashFactory>& factory)
-{
-    GetCRC32CFactory() = factory;
+void Aws::Utils::Crypto::SetCRC64Factory(
+    const std::shared_ptr<HashFactory> &factory) {
+  GetCRC64Factory() = factory;
 }
 
-void Aws::Utils::Crypto::SetSha1Factory(const std::shared_ptr<HashFactory>& factory)
-{
-    GetSha1Factory() = factory;
+void Aws::Utils::Crypto::SetCRC32CFactory(
+    const std::shared_ptr<HashFactory> &factory) {
+  GetCRC32CFactory() = factory;
+}
+
+void Aws::Utils::Crypto::SetSha1Factory(
+    const std::shared_ptr<HashFactory> &factory) {
+  GetSha1Factory() = factory;
 }
 
 void Aws::Utils::Crypto::SetSha256Factory(const std::shared_ptr<HashFactory>& factory)
@@ -773,13 +791,17 @@ std::shared_ptr<Hash> Aws::Utils::Crypto::CreateCRC32CImplementation()
     return GetCRC32CFactory()->CreateImplementation();
 }
 
+std::shared_ptr<Hash> Aws::Utils::Crypto::CreateCRC64Implementation() {
+  return GetCRC64Factory()->CreateImplementation();
+}
+
 std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha1Implementation()
 {
-    return GetSha1Factory()->CreateImplementation();
+  return GetSha1Factory()->CreateImplementation();
 }
 
 std::shared_ptr<Hash> Aws::Utils::Crypto::CreateSha256Implementation() {
-    return GetSha256Factory()->CreateImplementation();
+  return GetSha256Factory()->CreateImplementation();
 }
 
 std::shared_ptr<Aws::Utils::Crypto::HMAC> Aws::Utils::Crypto::CreateSha256HMACImplementation()
