@@ -1,6 +1,12 @@
 package com.amazonaws.util.awsclientgenerator.transform;
 
-import software.amazon.smithy.utils.Pair;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
+import java.text.MessageFormat;
+import java.util.Optional;
+import software.amazon.smithy.build.SmithyBuildException;
+import software.amazon.smithy.jmespath.ExpressionVisitor;
 import software.amazon.smithy.jmespath.ast.AndExpression;
 import software.amazon.smithy.jmespath.ast.ComparatorExpression;
 import software.amazon.smithy.jmespath.ast.CurrentExpression;
@@ -16,18 +22,10 @@ import software.amazon.smithy.jmespath.ast.MultiSelectListExpression;
 import software.amazon.smithy.jmespath.ast.NotExpression;
 import software.amazon.smithy.jmespath.ast.ObjectProjectionExpression;
 import software.amazon.smithy.jmespath.ast.OrExpression;
-import software.amazon.smithy.build.SmithyBuildException;
 import software.amazon.smithy.jmespath.ast.ProjectionExpression;
 import software.amazon.smithy.jmespath.ast.SliceExpression;
 import software.amazon.smithy.jmespath.ast.Subexpression;
-
-import software.amazon.smithy.jmespath.ExpressionVisitor;
-import java.text.MessageFormat;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
-
-import java.util.*;
+import software.amazon.smithy.utils.Pair;
 
 class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shape>> {
     final OperationContextCppCodeGenerator context;
@@ -45,20 +43,19 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
 
     @Override
     public Pair<String, Shape> visitProjection(ProjectionExpression expression) {
-        return Optional.of(
-            expression.getLeft().accept(this)).filter( elem -> elem.right.isList()).map(
-                elem -> {
-                    String varName = elem.left + "Elem";
-                    context.rangeBasedForLoop(varName);
-                    context.openVariableScope(varName);
-                    Pair<String, Shape> right = expression.getRight().accept(
-                            new CppEndpointsJmesPathVisitor(context, elem.right.getListMember().getShape()));
-                    context.closeVariableScope();
-                    return Pair.of(
-                        elem.left,
-                        right.right);
-                }
-            ).orElseThrow(() -> new SmithyBuildException("Unsupported JMESPath expression"));
+      return Optional.of(expression.getLeft().accept(this))
+          .filter(elem -> elem.right.isList())
+          .map(elem -> {
+            String varName = elem.left + "Elem";
+            context.rangeBasedForLoop(varName);
+            context.openVariableScope(varName);
+            Pair<String, Shape> right =
+                expression.getRight().accept(new CppEndpointsJmesPathVisitor(
+                    context, elem.right.getListMember().getShape()));
+            context.closeVariableScope();
+            return Pair.of(elem.left, right.right);
+          })
+          .orElse(Pair.of("", this.input));
     }
 
     @Override
@@ -100,10 +97,10 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
         // at the start of each code block
         String varName = expression.getName() + "Elem";
         // if a new scope started, declare variable accessed
-        if (context.isStartOfNewScope() ||
-                context.getVarName().isEmpty()) {
-            context.addVariableInScope(varName);
+        if (context.isStartOfNewScope() || context.getVarName().isEmpty()) {
+          context.addVariableInScope(varName);
         }
+
         // chain accessors
         context.getCppCode()
                 .append(MessageFormat.format(".Get{0}()", CppViewHelper.convertToUpperCamel(expression.getName())));
@@ -112,6 +109,10 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
             // if leaf element, push to result
             if (member.getShape().isString()) {
                 context.addInScopeVariableToResult(Optional.empty());
+
+                // this is where we can refer to the original scope variable
+                // again
+                context.cleanupVariablesCurrentScope();
             }
         }
         return Pair.of(
@@ -146,7 +147,13 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
 
     @Override
     public Pair<String, Shape> visitFlatten(FlattenExpression expression) {
-        throw new SmithyBuildException("Unsupported JMESPath expression");
+      if (expression.getExpression() instanceof ProjectionExpression) {
+        return visitProjection(
+            (ProjectionExpression)expression.getExpression());
+      }
+      // If it's not a ProjectionExpression, proceed with handling
+      // FlattenExpression
+      return expression.accept(this);
     }
 
     @Override
@@ -161,9 +168,9 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
 
     @Override
     public Pair<String, Shape> visitMultiSelectList(MultiSelectListExpression expression) {
-        throw new SmithyBuildException("Unsupported JMESPath expression");
+      expression.getExpressions().forEach(expr -> { expr.accept(this); });
+      return Pair.of("", this.input);
     }
-
     @Override
     public Pair<String, Shape> visitMultiSelectHash(MultiSelectHashExpression expression) {
         throw new SmithyBuildException("Unsupported JMESPath expression");
