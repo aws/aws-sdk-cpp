@@ -54,8 +54,9 @@ jobs:
         env:
           ACTIONS_RUNNER_DEBUG: true
         run: |
+          clang-format --version
           if [ -s diff_output.patch ]; then
-            python3 clang-format-diff.py -p1 < diff_output.patch > formatted_differences.patch 2> error.log || true
+            python3 clang-format-diff.py -p1 -style=file:.github/workflows/.clang-format < diff_output.patch > formatted_differences.patch 2> error.log || true
             if [ -s error.log ]; then
               echo "Errors from clang-format-diff.py:"
               cat error.log
