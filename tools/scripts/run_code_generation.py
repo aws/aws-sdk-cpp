@@ -100,7 +100,8 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_ma
     """
     model_files = os.listdir(models_dir)
     service_name_to_model_filename_date = dict()
-    print("legacy_mapped_services:",legacy_mapped_services)
+    if DEBUG:
+        print("legacy_mapped_services:",legacy_mapped_services)
 
     for filename in model_files:
         if not os.path.isfile("/".join([models_dir, filename])):
@@ -466,14 +467,16 @@ def parse_arguments() -> dict:
             raw_generator_arguments[raw_argument] = args[raw_argument]
     arg_map["raw_generator_arguments"] = raw_generator_arguments
     arg_map["generate_smoke_tests"] = args.get("generate_smoke_tests", None)
-    print("args=",arg_map)
+    if DEBUG:
+        print("args=",arg_map)
     return arg_map
 
 def copy_cpp_codegen_contents(top_level_dir: str, plugin_name: str, target_dir: str):
     
     # check if the target directory exists, create it if it doesn't
     os.makedirs(target_dir, exist_ok=True)
-    print(f"copy_cpp_codegen_contents: {target_dir}")
+    if DEBUG:
+        print(f"copy_cpp_codegen_contents: {target_dir}")
 
     # Walk through the top-level directory and find all "cpp-codegen-smoke-tests-plugin" directories
     for root, dirs, files in os.walk(top_level_dir):
@@ -501,15 +504,17 @@ def generate_smoke_tests(smithy_services: List[str], smithy_c2j_data: str):
     ]
     original_dir = os.getcwd()
     try:
-        # Change to the Smithy generator location
-        os.chdir(SMITHY_GENERATOR_LOCATION)
-        # Run the Gradle command
+        if DEBUG:
+            run_command_str = " ".join("%s" % item for item in smithy_codegen_command)
+            print(f"RUNNING COMMAND\n{run_command_str}\nfrom directory:\n{SMITHY_GENERATOR_LOCATION}")
+
         process = subprocess.run(
             smithy_codegen_command, 
             timeout=6*60,  # Timeout after 6 minutes
             check=True, 
             capture_output=True, 
-            text=True   
+            text=True,
+            cwd=SMITHY_GENERATOR_LOCATION
         )
         # If successful, print the command output
         print("Smithy codegen command executed successfully!\n", process.stdout)
@@ -521,11 +526,6 @@ def generate_smoke_tests(smithy_services: List[str], smithy_c2j_data: str):
         print(f"Error Output:\n{e.stderr}")
         return False
 
-    finally:
-        # Always return to the original directory, even if an error occurs
-        os.chdir(original_dir)
-        print(f"Returned to original directory: {original_dir}")
-            
 def main():
     """Main entrypoint for this script that wraps AWS-SDK-CPP code generation
 
