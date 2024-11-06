@@ -24,6 +24,7 @@
 #include <aws/qapps/model/GetQAppResult.h>
 #include <aws/qapps/model/GetQAppSessionResult.h>
 #include <aws/qapps/model/ImportDocumentResult.h>
+#include <aws/qapps/model/ListCategoriesResult.h>
 #include <aws/qapps/model/ListLibraryItemsResult.h>
 #include <aws/qapps/model/ListQAppsResult.h>
 #include <aws/qapps/model/ListTagsForResourceResult.h>
@@ -77,6 +78,9 @@ namespace Aws
       /* Service model forward declarations required in QAppsClient header */
       class AssociateLibraryItemReviewRequest;
       class AssociateQAppWithUserRequest;
+      class BatchCreateCategoryRequest;
+      class BatchDeleteCategoryRequest;
+      class BatchUpdateCategoryRequest;
       class CreateLibraryItemRequest;
       class CreateQAppRequest;
       class DeleteLibraryItemRequest;
@@ -87,6 +91,7 @@ namespace Aws
       class GetQAppRequest;
       class GetQAppSessionRequest;
       class ImportDocumentRequest;
+      class ListCategoriesRequest;
       class ListLibraryItemsRequest;
       class ListQAppsRequest;
       class ListTagsForResourceRequest;
@@ -104,6 +109,9 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<Aws::NoResult, QAppsError> AssociateLibraryItemReviewOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, QAppsError> AssociateQAppWithUserOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, QAppsError> BatchCreateCategoryOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, QAppsError> BatchDeleteCategoryOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, QAppsError> BatchUpdateCategoryOutcome;
       typedef Aws::Utils::Outcome<CreateLibraryItemResult, QAppsError> CreateLibraryItemOutcome;
       typedef Aws::Utils::Outcome<CreateQAppResult, QAppsError> CreateQAppOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, QAppsError> DeleteLibraryItemOutcome;
@@ -114,6 +122,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetQAppResult, QAppsError> GetQAppOutcome;
       typedef Aws::Utils::Outcome<GetQAppSessionResult, QAppsError> GetQAppSessionOutcome;
       typedef Aws::Utils::Outcome<ImportDocumentResult, QAppsError> ImportDocumentOutcome;
+      typedef Aws::Utils::Outcome<ListCategoriesResult, QAppsError> ListCategoriesOutcome;
       typedef Aws::Utils::Outcome<ListLibraryItemsResult, QAppsError> ListLibraryItemsOutcome;
       typedef Aws::Utils::Outcome<ListQAppsResult, QAppsError> ListQAppsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, QAppsError> ListTagsForResourceOutcome;
@@ -131,6 +140,9 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<AssociateLibraryItemReviewOutcome> AssociateLibraryItemReviewOutcomeCallable;
       typedef std::future<AssociateQAppWithUserOutcome> AssociateQAppWithUserOutcomeCallable;
+      typedef std::future<BatchCreateCategoryOutcome> BatchCreateCategoryOutcomeCallable;
+      typedef std::future<BatchDeleteCategoryOutcome> BatchDeleteCategoryOutcomeCallable;
+      typedef std::future<BatchUpdateCategoryOutcome> BatchUpdateCategoryOutcomeCallable;
       typedef std::future<CreateLibraryItemOutcome> CreateLibraryItemOutcomeCallable;
       typedef std::future<CreateQAppOutcome> CreateQAppOutcomeCallable;
       typedef std::future<DeleteLibraryItemOutcome> DeleteLibraryItemOutcomeCallable;
@@ -141,6 +153,7 @@ namespace Aws
       typedef std::future<GetQAppOutcome> GetQAppOutcomeCallable;
       typedef std::future<GetQAppSessionOutcome> GetQAppSessionOutcomeCallable;
       typedef std::future<ImportDocumentOutcome> ImportDocumentOutcomeCallable;
+      typedef std::future<ListCategoriesOutcome> ListCategoriesOutcomeCallable;
       typedef std::future<ListLibraryItemsOutcome> ListLibraryItemsOutcomeCallable;
       typedef std::future<ListQAppsOutcome> ListQAppsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -161,6 +174,9 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const QAppsClient*, const Model::AssociateLibraryItemReviewRequest&, const Model::AssociateLibraryItemReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLibraryItemReviewResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::AssociateQAppWithUserRequest&, const Model::AssociateQAppWithUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateQAppWithUserResponseReceivedHandler;
+    typedef std::function<void(const QAppsClient*, const Model::BatchCreateCategoryRequest&, const Model::BatchCreateCategoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateCategoryResponseReceivedHandler;
+    typedef std::function<void(const QAppsClient*, const Model::BatchDeleteCategoryRequest&, const Model::BatchDeleteCategoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteCategoryResponseReceivedHandler;
+    typedef std::function<void(const QAppsClient*, const Model::BatchUpdateCategoryRequest&, const Model::BatchUpdateCategoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateCategoryResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::CreateLibraryItemRequest&, const Model::CreateLibraryItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLibraryItemResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::CreateQAppRequest&, const Model::CreateQAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQAppResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::DeleteLibraryItemRequest&, const Model::DeleteLibraryItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLibraryItemResponseReceivedHandler;
@@ -171,6 +187,7 @@ namespace Aws
     typedef std::function<void(const QAppsClient*, const Model::GetQAppRequest&, const Model::GetQAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQAppResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::GetQAppSessionRequest&, const Model::GetQAppSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQAppSessionResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::ImportDocumentRequest&, const Model::ImportDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportDocumentResponseReceivedHandler;
+    typedef std::function<void(const QAppsClient*, const Model::ListCategoriesRequest&, const Model::ListCategoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCategoriesResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::ListLibraryItemsRequest&, const Model::ListLibraryItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLibraryItemsResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::ListQAppsRequest&, const Model::ListQAppsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQAppsResponseReceivedHandler;
     typedef std::function<void(const QAppsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;

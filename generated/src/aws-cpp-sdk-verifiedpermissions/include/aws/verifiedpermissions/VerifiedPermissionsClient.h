@@ -124,6 +124,35 @@ namespace VerifiedPermissions
         virtual ~VerifiedPermissionsClient();
 
         /**
+         * <p>Retrieves information about a group (batch) of policies.</p>  <p>The
+         * <code>BatchGetPolicy</code> operation doesn't have its own IAM permission. To
+         * authorize this operation for Amazon Web Services principals, include the
+         * permission <code>verifiedpermissions:GetPolicy</code> in their IAM policies.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchGetPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetPolicyOutcome BatchGetPolicy(const Model::BatchGetPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetPolicyRequestT = Model::BatchGetPolicyRequest>
+        Model::BatchGetPolicyOutcomeCallable BatchGetPolicyCallable(const BatchGetPolicyRequestT& request) const
+        {
+            return SubmitCallable(&VerifiedPermissionsClient::BatchGetPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetPolicyRequestT = Model::BatchGetPolicyRequest>
+        void BatchGetPolicyAsync(const BatchGetPolicyRequestT& request, const BatchGetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VerifiedPermissionsClient::BatchGetPolicy, request, handler, context);
+        }
+
+        /**
          * <p>Makes a series of decisions about multiple authorization requests for one
          * principal or resource. Each request contains the equivalent content of an
          * <code>IsAuthorized</code> request: principal, action, resource, and context.

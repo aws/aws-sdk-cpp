@@ -65,6 +65,30 @@ namespace Model
     inline Category& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
     inline Category& WithTitle(const char* value) { SetTitle(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The color of the category</p>
+     */
+    inline const Aws::String& GetColor() const{ return m_color; }
+    inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
+    inline void SetColor(const Aws::String& value) { m_colorHasBeenSet = true; m_color = value; }
+    inline void SetColor(Aws::String&& value) { m_colorHasBeenSet = true; m_color = std::move(value); }
+    inline void SetColor(const char* value) { m_colorHasBeenSet = true; m_color.assign(value); }
+    inline Category& WithColor(const Aws::String& value) { SetColor(value); return *this;}
+    inline Category& WithColor(Aws::String&& value) { SetColor(std::move(value)); return *this;}
+    inline Category& WithColor(const char* value) { SetColor(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of published Amazon Q Apps associated with a category</p>
+     */
+    inline int GetAppCount() const{ return m_appCount; }
+    inline bool AppCountHasBeenSet() const { return m_appCountHasBeenSet; }
+    inline void SetAppCount(int value) { m_appCountHasBeenSet = true; m_appCount = value; }
+    inline Category& WithAppCount(int value) { SetAppCount(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -72,6 +96,12 @@ namespace Model
 
     Aws::String m_title;
     bool m_titleHasBeenSet = false;
+
+    Aws::String m_color;
+    bool m_colorHasBeenSet = false;
+
+    int m_appCount;
+    bool m_appCountHasBeenSet = false;
   };
 
 } // namespace Model

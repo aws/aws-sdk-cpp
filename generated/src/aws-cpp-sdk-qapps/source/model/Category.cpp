@@ -20,7 +20,10 @@ namespace Model
 
 Category::Category() : 
     m_idHasBeenSet(false),
-    m_titleHasBeenSet(false)
+    m_titleHasBeenSet(false),
+    m_colorHasBeenSet(false),
+    m_appCount(0),
+    m_appCountHasBeenSet(false)
 {
 }
 
@@ -46,6 +49,20 @@ Category& Category::operator =(JsonView jsonValue)
     m_titleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("color"))
+  {
+    m_color = jsonValue.GetString("color");
+
+    m_colorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("appCount"))
+  {
+    m_appCount = jsonValue.GetInteger("appCount");
+
+    m_appCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +79,18 @@ JsonValue Category::Jsonize() const
   if(m_titleHasBeenSet)
   {
    payload.WithString("title", m_title);
+
+  }
+
+  if(m_colorHasBeenSet)
+  {
+   payload.WithString("color", m_color);
+
+  }
+
+  if(m_appCountHasBeenSet)
+  {
+   payload.WithInteger("appCount", m_appCount);
 
   }
 

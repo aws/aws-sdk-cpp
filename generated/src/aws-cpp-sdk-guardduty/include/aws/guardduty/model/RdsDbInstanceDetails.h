@@ -115,7 +115,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Instance tag key-value pairs associated with the database instance ID.</p>
+     * <p>Information about the tag key-value pairs.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

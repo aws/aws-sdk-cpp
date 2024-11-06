@@ -78,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of the table for which to enable the storage optimizer.</p>
+     * <p>Name of the configuration for the storage optimizer.</p>
      */
     inline const Aws::Map<OptimizerType, Aws::Map<Aws::String, Aws::String>>& GetStorageOptimizerConfig() const{ return m_storageOptimizerConfig; }
     inline bool StorageOptimizerConfigHasBeenSet() const { return m_storageOptimizerConfigHasBeenSet; }

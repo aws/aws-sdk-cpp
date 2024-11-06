@@ -49,8 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the PolicyStore where the policy you want information about
-     * is stored.</p>
+     * <p>The identifier of the policy store where the policy you want information
+     * about is stored.</p>
      */
     inline const Aws::String& GetPolicyStoreId() const{ return m_policyStoreId; }
     inline bool PolicyStoreIdHasBeenSet() const { return m_policyStoreIdHasBeenSet; }

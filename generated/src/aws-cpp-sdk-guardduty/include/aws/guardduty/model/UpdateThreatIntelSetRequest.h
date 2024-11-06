@@ -35,7 +35,10 @@ namespace Model
     ///@{
     /**
      * <p>The detectorID that specifies the GuardDuty service whose ThreatIntelSet you
-     * want to update.</p>
+     * want to update.</p> <p>To find the <code>detectorId</code> in the current
+     * Region, see the Settings page in the GuardDuty console, or run the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
+     * API.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }

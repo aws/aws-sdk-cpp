@@ -148,6 +148,93 @@ namespace QApps
         }
 
         /**
+         * <p>Creates Categories for the Amazon Q Business application environment
+         * instance. Web experience users use Categories to tag and filter library items.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+         * labels for Amazon Q Apps</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchCreateCategory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchCreateCategoryOutcome BatchCreateCategory(const Model::BatchCreateCategoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchCreateCategory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchCreateCategoryRequestT = Model::BatchCreateCategoryRequest>
+        Model::BatchCreateCategoryOutcomeCallable BatchCreateCategoryCallable(const BatchCreateCategoryRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::BatchCreateCategory, request);
+        }
+
+        /**
+         * An Async wrapper for BatchCreateCategory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchCreateCategoryRequestT = Model::BatchCreateCategoryRequest>
+        void BatchCreateCategoryAsync(const BatchCreateCategoryRequestT& request, const BatchCreateCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::BatchCreateCategory, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes Categories for the Amazon Q Business application environment
+         * instance. Web experience users use Categories to tag and filter library items.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+         * labels for Amazon Q Apps</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchDeleteCategory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteCategoryOutcome BatchDeleteCategory(const Model::BatchDeleteCategoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteCategory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDeleteCategoryRequestT = Model::BatchDeleteCategoryRequest>
+        Model::BatchDeleteCategoryOutcomeCallable BatchDeleteCategoryCallable(const BatchDeleteCategoryRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::BatchDeleteCategory, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDeleteCategory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDeleteCategoryRequestT = Model::BatchDeleteCategoryRequest>
+        void BatchDeleteCategoryAsync(const BatchDeleteCategoryRequestT& request, const BatchDeleteCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::BatchDeleteCategory, request, handler, context);
+        }
+
+        /**
+         * <p>Updates Categories for the Amazon Q Business application environment
+         * instance. Web experience users use Categories to tag and filter library items.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+         * labels for Amazon Q Apps</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchUpdateCategory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateCategoryOutcome BatchUpdateCategory(const Model::BatchUpdateCategoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateCategory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchUpdateCategoryRequestT = Model::BatchUpdateCategoryRequest>
+        Model::BatchUpdateCategoryOutcomeCallable BatchUpdateCategoryCallable(const BatchUpdateCategoryRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::BatchUpdateCategory, request);
+        }
+
+        /**
+         * An Async wrapper for BatchUpdateCategory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchUpdateCategoryRequestT = Model::BatchUpdateCategoryRequest>
+        void BatchUpdateCategoryAsync(const BatchUpdateCategoryRequestT& request, const BatchUpdateCategoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::BatchUpdateCategory, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new library item for an Amazon Q App, allowing it to be discovered
          * and used by other allowed users. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreateLibraryItem">AWS
@@ -413,6 +500,34 @@ namespace QApps
         void ImportDocumentAsync(const ImportDocumentRequestT& request, const ImportDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QAppsClient::ImportDocument, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the categories of a Amazon Q Business application environment instance.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+         * labels for Amazon Q Apps</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListCategories">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCategoriesOutcome ListCategories(const Model::ListCategoriesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCategories that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCategoriesRequestT = Model::ListCategoriesRequest>
+        Model::ListCategoriesOutcomeCallable ListCategoriesCallable(const ListCategoriesRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::ListCategories, request);
+        }
+
+        /**
+         * An Async wrapper for ListCategories that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCategoriesRequestT = Model::ListCategoriesRequest>
+        void ListCategoriesAsync(const ListCategoriesRequestT& request, const ListCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::ListCategories, request, handler, context);
         }
 
         /**

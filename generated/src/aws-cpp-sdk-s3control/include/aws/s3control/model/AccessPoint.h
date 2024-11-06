@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>The virtual private cloud (VPC) configuration for this access point, if one
      * exists.</p>  <p>This element is empty if this access point is an Amazon S3
-     * on Outposts access point that is used by other Amazon Web Servicesservices.</p>
+     * on Outposts access point that is used by other Amazon Web Services services.</p>
      * 
      */
     inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }

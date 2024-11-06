@@ -27,8 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>A structure containing a list of LF-tag conditions that apply to a resource's
-   * LF-tag policy.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure containing a list of LF-tag conditions or saved LF-Tag
+   * expressions that apply to a resource's LF-tag policy.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/LFTagPolicyResource">AWS
    * API Reference</a></p>
    */
@@ -72,7 +73,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
+     * <p>A list of LF-tag conditions or a saved expression that apply to the
+     * resource's LF-tag policy.</p>
      */
     inline const Aws::Vector<LFTag>& GetExpression() const{ return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
@@ -82,6 +84,22 @@ namespace Model
     inline LFTagPolicyResource& WithExpression(Aws::Vector<LFTag>&& value) { SetExpression(std::move(value)); return *this;}
     inline LFTagPolicyResource& AddExpression(const LFTag& value) { m_expressionHasBeenSet = true; m_expression.push_back(value); return *this; }
     inline LFTagPolicyResource& AddExpression(LFTag&& value) { m_expressionHasBeenSet = true; m_expression.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>If provided, permissions are granted to the Data Catalog resources whose
+     * assigned LF-Tags match the expression body of the saved expression under the
+     * provided <code>ExpressionName</code>.</p>
+     */
+    inline const Aws::String& GetExpressionName() const{ return m_expressionName; }
+    inline bool ExpressionNameHasBeenSet() const { return m_expressionNameHasBeenSet; }
+    inline void SetExpressionName(const Aws::String& value) { m_expressionNameHasBeenSet = true; m_expressionName = value; }
+    inline void SetExpressionName(Aws::String&& value) { m_expressionNameHasBeenSet = true; m_expressionName = std::move(value); }
+    inline void SetExpressionName(const char* value) { m_expressionNameHasBeenSet = true; m_expressionName.assign(value); }
+    inline LFTagPolicyResource& WithExpressionName(const Aws::String& value) { SetExpressionName(value); return *this;}
+    inline LFTagPolicyResource& WithExpressionName(Aws::String&& value) { SetExpressionName(std::move(value)); return *this;}
+    inline LFTagPolicyResource& WithExpressionName(const char* value) { SetExpressionName(value); return *this;}
     ///@}
   private:
 
@@ -93,6 +111,9 @@ namespace Model
 
     Aws::Vector<LFTag> m_expression;
     bool m_expressionHasBeenSet = false;
+
+    Aws::String m_expressionName;
+    bool m_expressionNameHasBeenSet = false;
   };
 
 } // namespace Model

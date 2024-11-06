@@ -37,7 +37,8 @@ namespace Model
     ///@{
     /**
      * <p>A series of <code>Allow</code> or <code>Deny</code> decisions for each
-     * request, and the policies that produced them.</p>
+     * request, and the policies that produced them. These results are returned in the
+     * order they were requested.</p>
      */
     inline const Aws::Vector<BatchIsAuthorizedOutputItem>& GetResults() const{ return m_results; }
     inline void SetResults(const Aws::Vector<BatchIsAuthorizedOutputItem>& value) { m_results = value; }

@@ -140,6 +140,38 @@ namespace Model
     inline AttributeValue& AddRecord(const char* key, AttributeValue&& value) { m_recordHasBeenSet = true; m_record.emplace(key, std::move(value)); return *this; }
     inline AttributeValue& AddRecord(const char* key, const AttributeValue& value) { m_recordHasBeenSet = true; m_record.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>An attribute value of <a
+     * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-ipaddr">ipaddr</a>
+     * type.</p> <p>Example: <code>{"ip": "192.168.1.100"}</code> </p>
+     */
+    inline const Aws::String& GetIpaddr() const{ return m_ipaddr; }
+    inline bool IpaddrHasBeenSet() const { return m_ipaddrHasBeenSet; }
+    inline void SetIpaddr(const Aws::String& value) { m_ipaddrHasBeenSet = true; m_ipaddr = value; }
+    inline void SetIpaddr(Aws::String&& value) { m_ipaddrHasBeenSet = true; m_ipaddr = std::move(value); }
+    inline void SetIpaddr(const char* value) { m_ipaddrHasBeenSet = true; m_ipaddr.assign(value); }
+    inline AttributeValue& WithIpaddr(const Aws::String& value) { SetIpaddr(value); return *this;}
+    inline AttributeValue& WithIpaddr(Aws::String&& value) { SetIpaddr(std::move(value)); return *this;}
+    inline AttributeValue& WithIpaddr(const char* value) { SetIpaddr(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An attribute value of <a
+     * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-decimal">decimal</a>
+     * type.</p> <p>Example: <code>{"decimal": "1.1"}</code> </p>
+     */
+    inline const Aws::String& GetDecimal() const{ return m_decimal; }
+    inline bool DecimalHasBeenSet() const { return m_decimalHasBeenSet; }
+    inline void SetDecimal(const Aws::String& value) { m_decimalHasBeenSet = true; m_decimal = value; }
+    inline void SetDecimal(Aws::String&& value) { m_decimalHasBeenSet = true; m_decimal = std::move(value); }
+    inline void SetDecimal(const char* value) { m_decimalHasBeenSet = true; m_decimal.assign(value); }
+    inline AttributeValue& WithDecimal(const Aws::String& value) { SetDecimal(value); return *this;}
+    inline AttributeValue& WithDecimal(Aws::String&& value) { SetDecimal(std::move(value)); return *this;}
+    inline AttributeValue& WithDecimal(const char* value) { SetDecimal(value); return *this;}
+    ///@}
   private:
 
     bool m_boolean;
@@ -159,6 +191,12 @@ namespace Model
 
     Aws::Map<Aws::String, AttributeValue> m_record;
     bool m_recordHasBeenSet = false;
+
+    Aws::String m_ipaddr;
+    bool m_ipaddrHasBeenSet = false;
+
+    Aws::String m_decimal;
+    bool m_decimalHasBeenSet = false;
   };
 
 } // namespace Model
