@@ -4,6 +4,7 @@
  */
 
 #include <aws/s3-crt/model/GetObjectRequest.h>
+#include <aws/s3-crt/model/ChecksumAlgorithm.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/UnreferencedParam.h>
@@ -40,8 +41,6 @@ GetObjectRequest::GetObjectRequest() :
     m_partNumber(0),
     m_partNumberHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
-    m_checksumMode(ChecksumMode::NOT_SET),
-    m_checksumModeHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -197,11 +196,10 @@ Aws::Http::HeaderValueCollection GetObjectRequest::GetRequestSpecificHeaders() c
     ss.str("");
   }
 
-  if(m_checksumModeHasBeenSet && m_checksumMode != ChecksumMode::NOT_SET)
+  if(m_checksumInfo.GetShouldValidateResponse() != Client::Checksum::ChecksumMode::NOT_SET)
   {
-    headers.emplace("x-amz-checksum-mode", ChecksumModeMapper::GetNameForChecksumMode(m_checksumMode));
+    headers.emplace("x-amz-checksum-mode", Client::Checksum::NameForMode(GetChecksumInfo().value().GetShouldValidateResponse()));
   }
-
   return headers;
 }
 
@@ -219,16 +217,25 @@ GetObjectRequest::EndpointParameters GetObjectRequest::GetEndpointContextParams(
 }
 bool GetObjectRequest::ShouldValidateResponseChecksum() const
 {
-  return m_checksumMode == ChecksumMode::ENABLED;
+  if (GetChecksumInfo().has_value())
+  {
+    return ChecksumModeMapper::GetChecksumModeForName(Client::Checksum::NameForMode(m_checksumInfo.GetShouldValidateResponse())) == ChecksumMode::ENABLED;
+  }
+  return true;
 }
 
 Aws::Vector<Aws::String> GetObjectRequest::GetResponseChecksumAlgorithmNames() const
 {
   Aws::Vector<Aws::String> responseChecksumAlgorithmNames;
-  responseChecksumAlgorithmNames.push_back("CRC32");
-  responseChecksumAlgorithmNames.push_back("CRC32C");
-  responseChecksumAlgorithmNames.push_back("SHA256");
-  responseChecksumAlgorithmNames.push_back("SHA1");
+  responseChecksumAlgorithmNames.push_back(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(ChecksumAlgorithm::CRC32).c_str());
+  responseChecksumAlgorithmNames.push_back(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(ChecksumAlgorithm::CRC32C).c_str());
+  responseChecksumAlgorithmNames.push_back(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(ChecksumAlgorithm::SHA256).c_str());
+  responseChecksumAlgorithmNames.push_back(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(ChecksumAlgorithm::SHA1).c_str());
   return responseChecksumAlgorithmNames;
+}
+
+Aws::Crt::Optional<Aws::Client::Checksum::ChecksumInfo> GetObjectRequest::GetChecksumInfo() const
+{
+  return m_checksumInfo;
 }
 

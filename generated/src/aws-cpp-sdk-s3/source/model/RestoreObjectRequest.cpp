@@ -24,8 +24,6 @@ RestoreObjectRequest::RestoreObjectRequest() :
     m_restoreRequestHasBeenSet(false),
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
@@ -104,11 +102,6 @@ Aws::Http::HeaderValueCollection RestoreObjectRequest::GetRequestSpecificHeaders
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
 
-  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
-  {
-    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
-  }
-
   if(m_expectedBucketOwnerHasBeenSet)
   {
     ss << m_expectedBucketOwner;
@@ -116,6 +109,10 @@ Aws::Http::HeaderValueCollection RestoreObjectRequest::GetRequestSpecificHeaders
     ss.str("");
   }
 
+  for (const auto& entry: m_checksumInfo.GetChecksumHeaders())
+  {
+    headers.emplace(entry.first, entry.second);
+  }
   return headers;
 }
 
@@ -131,13 +128,15 @@ RestoreObjectRequest::EndpointParameters RestoreObjectRequest::GetEndpointContex
 
 Aws::String RestoreObjectRequest::GetChecksumAlgorithmName() const
 {
-  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  if (m_checksumInfo.GetChecksumAlgorithm() != Client::Checksum::ChecksumAlgorithm::NOT_SET)
   {
-    return "md5";
+    return m_checksumInfo.GetChecksumAlgorithmName();
   }
-  else
-  {
-    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
-  }
+  return "md5";
+}
+
+Aws::Crt::Optional<Aws::Client::Checksum::ChecksumInfo> RestoreObjectRequest::GetChecksumInfo() const
+{
+  return m_checksumInfo;
 }
 

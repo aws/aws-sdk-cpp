@@ -45,6 +45,8 @@ namespace Model
     AWS_S3_API bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
     AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
 
+    AWS_S3_API Aws::Crt::Optional<Aws::Client::Checksum::ChecksumInfo> GetChecksumInfo() const override;
+
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
@@ -94,10 +96,10 @@ namespace Model
      * an individual checksum, Amazon S3 ignores any provided
      * <code>ChecksumAlgorithm</code> parameter.</p>
      */
-    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
-    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
-    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
-    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
+    inline ChecksumAlgorithm GetChecksumAlgorithm() const{ return ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(Aws::Utils::StringUtils::ToUpper(Client::Checksum::NameForAlgorithm(m_checksumInfo.GetChecksumAlgorithm()).c_str())); }
+    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumInfo.GetChecksumAlgorithm() != Client::Checksum::ChecksumAlgorithm::NOT_SET; }
+    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumInfo.SetChecksumAlgorithm(Client::Checksum::AlgorithmForName(Aws::Utils::StringUtils::ToLower(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(value).c_str()))); }
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumInfo.SetChecksumAlgorithm(Client::Checksum::AlgorithmForName(Aws::Utils::StringUtils::ToLower(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(value).c_str()))); }
     inline PutPublicAccessBlockRequest& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
     inline PutPublicAccessBlockRequest& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
     ///@}
@@ -159,9 +161,6 @@ namespace Model
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet = false;
 
-    ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet = false;
-
     PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
     bool m_publicAccessBlockConfigurationHasBeenSet = false;
 
@@ -170,6 +169,7 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet = false;
+    Aws::Client::Checksum::ChecksumInfo m_checksumInfo{};
   };
 
 } // namespace Model

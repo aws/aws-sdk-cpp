@@ -21,8 +21,6 @@ PutBucketAccelerateConfigurationRequest::PutBucketAccelerateConfigurationRequest
     m_bucketHasBeenSet(false),
     m_accelerateConfigurationHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -95,11 +93,10 @@ Aws::Http::HeaderValueCollection PutBucketAccelerateConfigurationRequest::GetReq
     ss.str("");
   }
 
-  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
+  for (const auto& entry: m_checksumInfo.GetChecksumHeaders())
   {
-    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
+    headers.emplace(entry.first, entry.second);
   }
-
   return headers;
 }
 
@@ -117,13 +114,15 @@ PutBucketAccelerateConfigurationRequest::EndpointParameters PutBucketAccelerateC
 
 Aws::String PutBucketAccelerateConfigurationRequest::GetChecksumAlgorithmName() const
 {
-  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  if (m_checksumInfo.GetChecksumAlgorithm() != Client::Checksum::ChecksumAlgorithm::NOT_SET)
   {
-    return "md5";
+    return m_checksumInfo.GetChecksumAlgorithmName();
   }
-  else
-  {
-    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
-  }
+  return "md5";
+}
+
+Aws::Crt::Optional<Aws::Client::Checksum::ChecksumInfo> PutBucketAccelerateConfigurationRequest::GetChecksumInfo() const
+{
+  return m_checksumInfo;
 }
 

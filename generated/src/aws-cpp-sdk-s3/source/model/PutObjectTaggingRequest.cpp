@@ -22,8 +22,6 @@ PutObjectTaggingRequest::PutObjectTaggingRequest() :
     m_keyHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
     m_taggingHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
     m_requestPayer(RequestPayer::NOT_SET),
@@ -107,11 +105,6 @@ Aws::Http::HeaderValueCollection PutObjectTaggingRequest::GetRequestSpecificHead
     ss.str("");
   }
 
-  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
-  {
-    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
-  }
-
   if(m_expectedBucketOwnerHasBeenSet)
   {
     ss << m_expectedBucketOwner;
@@ -124,6 +117,10 @@ Aws::Http::HeaderValueCollection PutObjectTaggingRequest::GetRequestSpecificHead
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
 
+  for (const auto& entry: m_checksumInfo.GetChecksumHeaders())
+  {
+    headers.emplace(entry.first, entry.second);
+  }
   return headers;
 }
 
@@ -139,13 +136,15 @@ PutObjectTaggingRequest::EndpointParameters PutObjectTaggingRequest::GetEndpoint
 
 Aws::String PutObjectTaggingRequest::GetChecksumAlgorithmName() const
 {
-  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  if (m_checksumInfo.GetChecksumAlgorithm() != Client::Checksum::ChecksumAlgorithm::NOT_SET)
   {
-    return "md5";
+    return m_checksumInfo.GetChecksumAlgorithmName();
   }
-  else
-  {
-    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
-  }
+  return "md5";
+}
+
+Aws::Crt::Optional<Aws::Client::Checksum::ChecksumInfo> PutObjectTaggingRequest::GetChecksumInfo() const
+{
+  return m_checksumInfo;
 }
 

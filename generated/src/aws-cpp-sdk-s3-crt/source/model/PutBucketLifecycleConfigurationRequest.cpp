@@ -19,8 +19,6 @@ using namespace Aws::Http;
 
 PutBucketLifecycleConfigurationRequest::PutBucketLifecycleConfigurationRequest() : 
     m_bucketHasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
     m_lifecycleConfigurationHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
     m_transitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize::NOT_SET),
@@ -90,11 +88,6 @@ Aws::Http::HeaderValueCollection PutBucketLifecycleConfigurationRequest::GetRequ
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
-  {
-    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
-  }
-
   if(m_expectedBucketOwnerHasBeenSet)
   {
     ss << m_expectedBucketOwner;
@@ -107,6 +100,10 @@ Aws::Http::HeaderValueCollection PutBucketLifecycleConfigurationRequest::GetRequ
     headers.emplace("x-amz-transition-default-minimum-object-size", TransitionDefaultMinimumObjectSizeMapper::GetNameForTransitionDefaultMinimumObjectSize(m_transitionDefaultMinimumObjectSize));
   }
 
+  for (const auto& entry: m_checksumInfo.GetChecksumHeaders())
+  {
+    headers.emplace(entry.first, entry.second);
+  }
   return headers;
 }
 
@@ -124,13 +121,15 @@ PutBucketLifecycleConfigurationRequest::EndpointParameters PutBucketLifecycleCon
 
 Aws::String PutBucketLifecycleConfigurationRequest::GetChecksumAlgorithmName() const
 {
-  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  if (m_checksumInfo.GetChecksumAlgorithm() != Client::Checksum::ChecksumAlgorithm::NOT_SET)
   {
-    return "md5";
+    return m_checksumInfo.GetChecksumAlgorithmName();
   }
-  else
-  {
-    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
-  }
+  return "md5";
+}
+
+Aws::Crt::Optional<Aws::Client::Checksum::ChecksumInfo> PutBucketLifecycleConfigurationRequest::GetChecksumInfo() const
+{
+  return m_checksumInfo;
 }
 

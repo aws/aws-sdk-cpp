@@ -44,6 +44,8 @@ namespace Model
     AWS_S3_API bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
     AWS_S3_API Aws::String GetChecksumAlgorithmName() const override;
 
+    AWS_S3_API Aws::Crt::Optional<Aws::Client::Checksum::ChecksumInfo> GetChecksumInfo() const override;
+
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
@@ -136,10 +138,10 @@ namespace Model
      * the same for all parts and it match the checksum value supplied in the
      * <code>CreateMultipartUpload</code> request.</p>
      */
-    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
-    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
-    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
-    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
+    inline ChecksumAlgorithm GetChecksumAlgorithm() const{ return ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(Aws::Utils::StringUtils::ToUpper(Client::Checksum::NameForAlgorithm(m_checksumInfo.GetChecksumAlgorithm()).c_str())); }
+    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumInfo.GetChecksumAlgorithm() != Client::Checksum::ChecksumAlgorithm::NOT_SET; }
+    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumInfo.SetChecksumAlgorithm(Client::Checksum::AlgorithmForName(Aws::Utils::StringUtils::ToLower(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(value).c_str()))); }
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumInfo.SetChecksumAlgorithm(Client::Checksum::AlgorithmForName(Aws::Utils::StringUtils::ToLower(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(value).c_str()))); }
     inline UploadPartRequest& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
     inline UploadPartRequest& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
     ///@}
@@ -153,11 +155,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC32() const{ return m_checksumCRC32; }
-    inline bool ChecksumCRC32HasBeenSet() const { return m_checksumCRC32HasBeenSet; }
-    inline void SetChecksumCRC32(const Aws::String& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = value; SetChecksumAlgorithm(ChecksumAlgorithm::CRC32); }
-    inline void SetChecksumCRC32(Aws::String&& value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32 = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::CRC32); }
-    inline void SetChecksumCRC32(const char* value) { m_checksumCRC32HasBeenSet = true; m_checksumCRC32.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::CRC32); }
+    inline Aws::String GetChecksumCRC32() const{ return m_checksumInfo.GetChecksumHeader(Client::Checksum::ChecksumAlgorithm::CRC32); }
+    inline bool ChecksumCRC32HasBeenSet() const { return !m_checksumInfo.GetChecksumHeader(Client::Checksum::ChecksumAlgorithm::CRC32).empty(); }
+    inline void SetChecksumCRC32(const Aws::String& value) { m_checksumInfo.SetChecksumAlgorithm(Aws::Client::Checksum::ChecksumAlgorithm::CRC32); m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::CRC32, value); }
+    inline void SetChecksumCRC32(Aws::String&& value) { m_checksumInfo.SetChecksumAlgorithm(Aws::Client::Checksum::ChecksumAlgorithm::CRC32); m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::CRC32, value); }
+    inline void SetChecksumCRC32(const char* value) { m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::CRC32, value); }
     inline UploadPartRequest& WithChecksumCRC32(const Aws::String& value) { SetChecksumCRC32(value); return *this;}
     inline UploadPartRequest& WithChecksumCRC32(Aws::String&& value) { SetChecksumCRC32(std::move(value)); return *this;}
     inline UploadPartRequest& WithChecksumCRC32(const char* value) { SetChecksumCRC32(value); return *this;}
@@ -172,11 +174,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumCRC32C() const{ return m_checksumCRC32C; }
-    inline bool ChecksumCRC32CHasBeenSet() const { return m_checksumCRC32CHasBeenSet; }
-    inline void SetChecksumCRC32C(const Aws::String& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = value; SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C); }
-    inline void SetChecksumCRC32C(Aws::String&& value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C); }
-    inline void SetChecksumCRC32C(const char* value) { m_checksumCRC32CHasBeenSet = true; m_checksumCRC32C.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::CRC32C); }
+    inline Aws::String GetChecksumCRC32C() const{ return m_checksumInfo.GetChecksumHeader(Client::Checksum::ChecksumAlgorithm::CRC32C); }
+    inline bool ChecksumCRC32CHasBeenSet() const { return !m_checksumInfo.GetChecksumHeader(Client::Checksum::ChecksumAlgorithm::CRC32C).empty(); }
+    inline void SetChecksumCRC32C(const Aws::String& value) { m_checksumInfo.SetChecksumAlgorithm(Aws::Client::Checksum::ChecksumAlgorithm::CRC32C); m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::CRC32C, value); }
+    inline void SetChecksumCRC32C(Aws::String&& value) { m_checksumInfo.SetChecksumAlgorithm(Aws::Client::Checksum::ChecksumAlgorithm::CRC32C); m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::CRC32C, value); }
+    inline void SetChecksumCRC32C(const char* value) { m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::CRC32C, value); }
     inline UploadPartRequest& WithChecksumCRC32C(const Aws::String& value) { SetChecksumCRC32C(value); return *this;}
     inline UploadPartRequest& WithChecksumCRC32C(Aws::String&& value) { SetChecksumCRC32C(std::move(value)); return *this;}
     inline UploadPartRequest& WithChecksumCRC32C(const char* value) { SetChecksumCRC32C(value); return *this;}
@@ -190,11 +192,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumSHA1() const{ return m_checksumSHA1; }
-    inline bool ChecksumSHA1HasBeenSet() const { return m_checksumSHA1HasBeenSet; }
-    inline void SetChecksumSHA1(const Aws::String& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = value; SetChecksumAlgorithm(ChecksumAlgorithm::SHA1); }
-    inline void SetChecksumSHA1(Aws::String&& value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1 = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::SHA1); }
-    inline void SetChecksumSHA1(const char* value) { m_checksumSHA1HasBeenSet = true; m_checksumSHA1.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::SHA1); }
+    inline Aws::String GetChecksumSHA1() const{ return m_checksumInfo.GetChecksumHeader(Client::Checksum::ChecksumAlgorithm::SHA1); }
+    inline bool ChecksumSHA1HasBeenSet() const { return !m_checksumInfo.GetChecksumHeader(Client::Checksum::ChecksumAlgorithm::SHA1).empty(); }
+    inline void SetChecksumSHA1(const Aws::String& value) { m_checksumInfo.SetChecksumAlgorithm(Aws::Client::Checksum::ChecksumAlgorithm::SHA1); m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::SHA1, value); }
+    inline void SetChecksumSHA1(Aws::String&& value) { m_checksumInfo.SetChecksumAlgorithm(Aws::Client::Checksum::ChecksumAlgorithm::SHA1); m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::SHA1, value); }
+    inline void SetChecksumSHA1(const char* value) { m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::SHA1, value); }
     inline UploadPartRequest& WithChecksumSHA1(const Aws::String& value) { SetChecksumSHA1(value); return *this;}
     inline UploadPartRequest& WithChecksumSHA1(Aws::String&& value) { SetChecksumSHA1(std::move(value)); return *this;}
     inline UploadPartRequest& WithChecksumSHA1(const char* value) { SetChecksumSHA1(value); return *this;}
@@ -209,11 +211,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
      * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Aws::String& GetChecksumSHA256() const{ return m_checksumSHA256; }
-    inline bool ChecksumSHA256HasBeenSet() const { return m_checksumSHA256HasBeenSet; }
-    inline void SetChecksumSHA256(const Aws::String& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = value; SetChecksumAlgorithm(ChecksumAlgorithm::SHA256); }
-    inline void SetChecksumSHA256(Aws::String&& value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256 = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::SHA256); }
-    inline void SetChecksumSHA256(const char* value) { m_checksumSHA256HasBeenSet = true; m_checksumSHA256.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::SHA256); }
+    inline Aws::String GetChecksumSHA256() const{ return m_checksumInfo.GetChecksumHeader(Client::Checksum::ChecksumAlgorithm::SHA256); }
+    inline bool ChecksumSHA256HasBeenSet() const { return !m_checksumInfo.GetChecksumHeader(Client::Checksum::ChecksumAlgorithm::SHA256).empty(); }
+    inline void SetChecksumSHA256(const Aws::String& value) { m_checksumInfo.SetChecksumAlgorithm(Aws::Client::Checksum::ChecksumAlgorithm::SHA256); m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::SHA256, value); }
+    inline void SetChecksumSHA256(Aws::String&& value) { m_checksumInfo.SetChecksumAlgorithm(Aws::Client::Checksum::ChecksumAlgorithm::SHA256); m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::SHA256, value); }
+    inline void SetChecksumSHA256(const char* value) { m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::SHA256, value); }
     inline UploadPartRequest& WithChecksumSHA256(const Aws::String& value) { SetChecksumSHA256(value); return *this;}
     inline UploadPartRequest& WithChecksumSHA256(Aws::String&& value) { SetChecksumSHA256(std::move(value)); return *this;}
     inline UploadPartRequest& WithChecksumSHA256(const char* value) { SetChecksumSHA256(value); return *this;}
@@ -366,21 +368,6 @@ namespace Model
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet = false;
 
-    ChecksumAlgorithm m_checksumAlgorithm;
-    bool m_checksumAlgorithmHasBeenSet = false;
-
-    Aws::String m_checksumCRC32;
-    bool m_checksumCRC32HasBeenSet = false;
-
-    Aws::String m_checksumCRC32C;
-    bool m_checksumCRC32CHasBeenSet = false;
-
-    Aws::String m_checksumSHA1;
-    bool m_checksumSHA1HasBeenSet = false;
-
-    Aws::String m_checksumSHA256;
-    bool m_checksumSHA256HasBeenSet = false;
-
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
@@ -407,6 +394,7 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet = false;
+    Aws::Client::Checksum::ChecksumInfo m_checksumInfo{};
   };
 
 } // namespace Model

@@ -21,8 +21,6 @@ PutBucketCorsRequest::PutBucketCorsRequest() :
     m_bucketHasBeenSet(false),
     m_cORSConfigurationHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
@@ -96,11 +94,6 @@ Aws::Http::HeaderValueCollection PutBucketCorsRequest::GetRequestSpecificHeaders
     ss.str("");
   }
 
-  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
-  {
-    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
-  }
-
   if(m_expectedBucketOwnerHasBeenSet)
   {
     ss << m_expectedBucketOwner;
@@ -108,6 +101,10 @@ Aws::Http::HeaderValueCollection PutBucketCorsRequest::GetRequestSpecificHeaders
     ss.str("");
   }
 
+  for (const auto& entry: m_checksumInfo.GetChecksumHeaders())
+  {
+    headers.emplace(entry.first, entry.second);
+  }
   return headers;
 }
 
@@ -125,13 +122,15 @@ PutBucketCorsRequest::EndpointParameters PutBucketCorsRequest::GetEndpointContex
 
 Aws::String PutBucketCorsRequest::GetChecksumAlgorithmName() const
 {
-  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  if (m_checksumInfo.GetChecksumAlgorithm() != Client::Checksum::ChecksumAlgorithm::NOT_SET)
   {
-    return "md5";
+    return m_checksumInfo.GetChecksumAlgorithmName();
   }
-  else
-  {
-    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
-  }
+  return "md5";
+}
+
+Aws::Crt::Optional<Aws::Client::Checksum::ChecksumInfo> PutBucketCorsRequest::GetChecksumInfo() const
+{
+  return m_checksumInfo;
 }
 

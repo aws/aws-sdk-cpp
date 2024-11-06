@@ -19,8 +19,6 @@ using namespace Aws;
 PutBucketPolicyRequest::PutBucketPolicyRequest() : 
     m_bucketHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
     m_confirmRemoveSelfBucketAccess(false),
     m_confirmRemoveSelfBucketAccessHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
@@ -62,11 +60,6 @@ Aws::Http::HeaderValueCollection PutBucketPolicyRequest::GetRequestSpecificHeade
     ss.str("");
   }
 
-  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
-  {
-    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
-  }
-
   if(m_confirmRemoveSelfBucketAccessHasBeenSet)
   {
     ss << std::boolalpha << m_confirmRemoveSelfBucketAccess;
@@ -81,6 +74,10 @@ Aws::Http::HeaderValueCollection PutBucketPolicyRequest::GetRequestSpecificHeade
     ss.str("");
   }
 
+  for (const auto& entry: m_checksumInfo.GetChecksumHeaders())
+  {
+    headers.emplace(entry.first, entry.second);
+  }
   return headers;
 
 }
@@ -120,13 +117,15 @@ PutBucketPolicyRequest::EndpointParameters PutBucketPolicyRequest::GetEndpointCo
 
 Aws::String PutBucketPolicyRequest::GetChecksumAlgorithmName() const
 {
-  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  if (m_checksumInfo.GetChecksumAlgorithm() != Client::Checksum::ChecksumAlgorithm::NOT_SET)
   {
-    return "md5";
+    return m_checksumInfo.GetChecksumAlgorithmName();
   }
-  else
-  {
-    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
-  }
+  return "md5";
+}
+
+Aws::Crt::Optional<Aws::Client::Checksum::ChecksumInfo> PutBucketPolicyRequest::GetChecksumInfo() const
+{
+  return m_checksumInfo;
 }
 

@@ -28,12 +28,6 @@ PutObjectRequest::PutObjectRequest() :
     m_contentLength(0),
     m_contentLengthHasBeenSet(false),
     m_contentMD5HasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_checksumCRC32HasBeenSet(false),
-    m_checksumCRC32CHasBeenSet(false),
-    m_checksumSHA1HasBeenSet(false),
-    m_checksumSHA256HasBeenSet(false),
     m_expiresHasBeenSet(false),
     m_ifNoneMatchHasBeenSet(false),
     m_grantFullControlHasBeenSet(false),
@@ -138,39 +132,6 @@ Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() c
   {
     ss << m_contentMD5;
     headers.emplace("content-md5",  ss.str());
-    ss.str("");
-  }
-
-  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
-  {
-    headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
-  }
-
-  if(m_checksumCRC32HasBeenSet)
-  {
-    ss << m_checksumCRC32;
-    headers.emplace("x-amz-checksum-crc32",  ss.str());
-    ss.str("");
-  }
-
-  if(m_checksumCRC32CHasBeenSet)
-  {
-    ss << m_checksumCRC32C;
-    headers.emplace("x-amz-checksum-crc32c",  ss.str());
-    ss.str("");
-  }
-
-  if(m_checksumSHA1HasBeenSet)
-  {
-    ss << m_checksumSHA1;
-    headers.emplace("x-amz-checksum-sha1",  ss.str());
-    ss.str("");
-  }
-
-  if(m_checksumSHA256HasBeenSet)
-  {
-    ss << m_checksumSHA256;
-    headers.emplace("x-amz-checksum-sha256",  ss.str());
     ss.str("");
   }
 
@@ -317,6 +278,10 @@ Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() c
     ss.str("");
   }
 
+  for (const auto& entry: m_checksumInfo.GetChecksumHeaders())
+  {
+    headers.emplace(entry.first, entry.second);
+  }
   return headers;
 
 }
@@ -357,13 +322,15 @@ PutObjectRequest::EndpointParameters PutObjectRequest::GetEndpointContextParams(
 
 Aws::String PutObjectRequest::GetChecksumAlgorithmName() const
 {
-  if (m_checksumAlgorithm == ChecksumAlgorithm::NOT_SET)
+  if (m_checksumInfo.GetChecksumAlgorithm() != Client::Checksum::ChecksumAlgorithm::NOT_SET)
   {
-    return "md5";
+    return m_checksumInfo.GetChecksumAlgorithmName();
   }
-  else
-  {
-    return ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm);
-  }
+  return "md5";
+}
+
+Aws::Crt::Optional<Aws::Client::Checksum::ChecksumInfo> PutObjectRequest::GetChecksumInfo() const
+{
+  return m_checksumInfo;
 }
 
