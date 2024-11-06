@@ -77,6 +77,8 @@
   ${template.currentSpaces}  ${template.containerVar}.push_back(${enumName}Mapper::Get${enumName}ForName(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].AsString()));
 #elseif($template.currentShape.listMember.shape.blob)
   ${template.currentSpaces}  ${template.containerVar}.push_back(HashingUtils::Base64Decode(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}()));
+#elseif($template.currentShape.listMember.shape.timeStamp && $template.currentShape.listMember.shape.timestampFormat == "iso8601")
+  ${template.currentSpaces}  ${template.containerVar}.push_back(Aws::Utils::DateTime{${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($template.currentShape.listMember.shape)});
 #else
   ${template.currentSpaces}  ${template.containerVar}.push_back(${template.lowerCaseVarName}JsonList[${template.lowerCaseVarName}Index].As${CppViewHelper.computeJsonCppType($template.currentShape.listMember.shape)}());
 #end
