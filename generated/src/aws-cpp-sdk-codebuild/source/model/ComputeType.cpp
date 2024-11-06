@@ -30,6 +30,7 @@ namespace Aws
         static const int BUILD_LAMBDA_4GB_HASH = HashingUtils::HashString("BUILD_LAMBDA_4GB");
         static const int BUILD_LAMBDA_8GB_HASH = HashingUtils::HashString("BUILD_LAMBDA_8GB");
         static const int BUILD_LAMBDA_10GB_HASH = HashingUtils::HashString("BUILD_LAMBDA_10GB");
+        static const int ATTRIBUTE_BASED_COMPUTE_HASH = HashingUtils::HashString("ATTRIBUTE_BASED_COMPUTE");
 
 
         ComputeType GetComputeTypeForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return ComputeType::BUILD_LAMBDA_10GB;
           }
+          else if (hashCode == ATTRIBUTE_BASED_COMPUTE_HASH)
+          {
+            return ComputeType::ATTRIBUTE_BASED_COMPUTE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -111,6 +116,8 @@ namespace Aws
             return "BUILD_LAMBDA_8GB";
           case ComputeType::BUILD_LAMBDA_10GB:
             return "BUILD_LAMBDA_10GB";
+          case ComputeType::ATTRIBUTE_BASED_COMPUTE:
+            return "ATTRIBUTE_BASED_COMPUTE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

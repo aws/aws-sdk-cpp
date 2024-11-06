@@ -33,6 +33,7 @@ namespace Aws
         static const int CREATE_LF_TAG_HASH = HashingUtils::HashString("CREATE_LF_TAG");
         static const int ASSOCIATE_HASH = HashingUtils::HashString("ASSOCIATE");
         static const int GRANT_WITH_LF_TAG_EXPRESSION_HASH = HashingUtils::HashString("GRANT_WITH_LF_TAG_EXPRESSION");
+        static const int CREATE_LF_TAG_EXPRESSION_HASH = HashingUtils::HashString("CREATE_LF_TAG_EXPRESSION");
 
 
         Permission GetPermissionForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return Permission::GRANT_WITH_LF_TAG_EXPRESSION;
           }
+          else if (hashCode == CREATE_LF_TAG_EXPRESSION_HASH)
+          {
+            return Permission::CREATE_LF_TAG_EXPRESSION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -132,6 +137,8 @@ namespace Aws
             return "ASSOCIATE";
           case Permission::GRANT_WITH_LF_TAG_EXPRESSION:
             return "GRANT_WITH_LF_TAG_EXPRESSION";
+          case Permission::CREATE_LF_TAG_EXPRESSION:
+            return "CREATE_LF_TAG_EXPRESSION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

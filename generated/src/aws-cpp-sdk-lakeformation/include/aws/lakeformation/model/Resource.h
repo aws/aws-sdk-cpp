@@ -13,6 +13,7 @@
 #include <aws/lakeformation/model/DataCellsFilterResource.h>
 #include <aws/lakeformation/model/LFTagKeyResource.h>
 #include <aws/lakeformation/model/LFTagPolicyResource.h>
+#include <aws/lakeformation/model/LFTagExpressionResource.h>
 #include <utility>
 
 namespace Aws
@@ -139,7 +140,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of LF-tag conditions that define a resource's LF-tag policy.</p>
+     * <p>A list of LF-tag conditions or saved LF-Tag expressions that define a
+     * resource's LF-tag policy.</p>
      */
     inline const LFTagPolicyResource& GetLFTagPolicy() const{ return m_lFTagPolicy; }
     inline bool LFTagPolicyHasBeenSet() const { return m_lFTagPolicyHasBeenSet; }
@@ -147,6 +149,19 @@ namespace Model
     inline void SetLFTagPolicy(LFTagPolicyResource&& value) { m_lFTagPolicyHasBeenSet = true; m_lFTagPolicy = std::move(value); }
     inline Resource& WithLFTagPolicy(const LFTagPolicyResource& value) { SetLFTagPolicy(value); return *this;}
     inline Resource& WithLFTagPolicy(LFTagPolicyResource&& value) { SetLFTagPolicy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>LF-Tag expression resource. A logical expression composed of one or more
+     * LF-Tag key:value pairs.</p>
+     */
+    inline const LFTagExpressionResource& GetLFTagExpression() const{ return m_lFTagExpression; }
+    inline bool LFTagExpressionHasBeenSet() const { return m_lFTagExpressionHasBeenSet; }
+    inline void SetLFTagExpression(const LFTagExpressionResource& value) { m_lFTagExpressionHasBeenSet = true; m_lFTagExpression = value; }
+    inline void SetLFTagExpression(LFTagExpressionResource&& value) { m_lFTagExpressionHasBeenSet = true; m_lFTagExpression = std::move(value); }
+    inline Resource& WithLFTagExpression(const LFTagExpressionResource& value) { SetLFTagExpression(value); return *this;}
+    inline Resource& WithLFTagExpression(LFTagExpressionResource&& value) { SetLFTagExpression(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -173,6 +188,9 @@ namespace Model
 
     LFTagPolicyResource m_lFTagPolicy;
     bool m_lFTagPolicyHasBeenSet = false;
+
+    LFTagExpressionResource m_lFTagExpression;
+    bool m_lFTagExpressionHasBeenSet = false;
   };
 
 } // namespace Model

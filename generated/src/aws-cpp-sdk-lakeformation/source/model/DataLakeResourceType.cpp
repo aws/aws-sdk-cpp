@@ -28,6 +28,7 @@ namespace Aws
         static const int LF_TAG_POLICY_HASH = HashingUtils::HashString("LF_TAG_POLICY");
         static const int LF_TAG_POLICY_DATABASE_HASH = HashingUtils::HashString("LF_TAG_POLICY_DATABASE");
         static const int LF_TAG_POLICY_TABLE_HASH = HashingUtils::HashString("LF_TAG_POLICY_TABLE");
+        static const int LF_NAMED_TAG_EXPRESSION_HASH = HashingUtils::HashString("LF_NAMED_TAG_EXPRESSION");
 
 
         DataLakeResourceType GetDataLakeResourceTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return DataLakeResourceType::LF_TAG_POLICY_TABLE;
           }
+          else if (hashCode == LF_NAMED_TAG_EXPRESSION_HASH)
+          {
+            return DataLakeResourceType::LF_NAMED_TAG_EXPRESSION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +102,8 @@ namespace Aws
             return "LF_TAG_POLICY_DATABASE";
           case DataLakeResourceType::LF_TAG_POLICY_TABLE:
             return "LF_TAG_POLICY_TABLE";
+          case DataLakeResourceType::LF_NAMED_TAG_EXPRESSION:
+            return "LF_NAMED_TAG_EXPRESSION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

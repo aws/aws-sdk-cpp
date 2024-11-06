@@ -23,7 +23,8 @@ namespace Model
     LF_TAG,
     LF_TAG_POLICY,
     LF_TAG_POLICY_DATABASE,
-    LF_TAG_POLICY_TABLE
+    LF_TAG_POLICY_TABLE,
+    LF_NAMED_TAG_EXPRESSION
   };
 
 namespace DataLakeResourceTypeMapper

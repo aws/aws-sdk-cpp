@@ -299,6 +299,38 @@ namespace LakeFormation
         }
 
         /**
+         * <p>Creates a new LF-Tag expression with the provided name, description, catalog
+         * ID, and expression body. This call fails if a LF-Tag expression with the same
+         * name already exists in the caller’s account or if the underlying LF-Tags don't
+         * exist. To call this API operation, caller needs the following Lake Formation
+         * permissions:</p> <p> <code>CREATE_LF_TAG_EXPRESSION</code> on the root catalog
+         * resource.</p> <p> <code>GRANT_WITH_LF_TAG_EXPRESSION</code> on all underlying
+         * LF-Tag key:value pairs included in the expression. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTagExpression">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLFTagExpressionOutcome CreateLFTagExpression(const Model::CreateLFTagExpressionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLFTagExpression that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLFTagExpressionRequestT = Model::CreateLFTagExpressionRequest>
+        Model::CreateLFTagExpressionOutcomeCallable CreateLFTagExpressionCallable(const CreateLFTagExpressionRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::CreateLFTagExpression, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLFTagExpression that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLFTagExpressionRequestT = Model::CreateLFTagExpressionRequest>
+        void CreateLFTagExpressionAsync(const CreateLFTagExpressionRequestT& request, const CreateLFTagExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::CreateLFTagExpression, request, handler, context);
+        }
+
+        /**
          * <p>Creates an IAM Identity Center connection with Lake Formation to allow IAM
          * Identity Center users and groups to access Data Catalog resources.</p><p><h3>See
          * Also:</h3>   <a
@@ -404,6 +436,34 @@ namespace LakeFormation
         void DeleteLFTagAsync(const DeleteLFTagRequestT& request, const DeleteLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LakeFormationClient::DeleteLFTag, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the LF-Tag expression. The caller must be a data lake admin or have
+         * <code>DROP</code> permissions on the LF-Tag expression. Deleting a LF-Tag
+         * expression will also delete all <code>LFTagPolicy</code> permissions referencing
+         * the LF-Tag expression.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTagExpression">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLFTagExpressionOutcome DeleteLFTagExpression(const Model::DeleteLFTagExpressionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLFTagExpression that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLFTagExpressionRequestT = Model::DeleteLFTagExpressionRequest>
+        Model::DeleteLFTagExpressionOutcomeCallable DeleteLFTagExpressionCallable(const DeleteLFTagExpressionRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::DeleteLFTagExpression, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLFTagExpression that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLFTagExpressionRequestT = Model::DeleteLFTagExpressionRequest>
+        void DeleteLFTagExpressionAsync(const DeleteLFTagExpressionRequestT& request, const DeleteLFTagExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::DeleteLFTagExpression, request, handler, context);
         }
 
         /**
@@ -753,6 +813,33 @@ namespace LakeFormation
         }
 
         /**
+         * <p>Returns the details about the LF-Tag expression. The caller must be a data
+         * lake admin or must have <code>DESCRIBE</code> permission on the LF-Tag
+         * expression resource. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTagExpression">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLFTagExpressionOutcome GetLFTagExpression(const Model::GetLFTagExpressionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLFTagExpression that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetLFTagExpressionRequestT = Model::GetLFTagExpressionRequest>
+        Model::GetLFTagExpressionOutcomeCallable GetLFTagExpressionCallable(const GetLFTagExpressionRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::GetLFTagExpression, request);
+        }
+
+        /**
+         * An Async wrapper for GetLFTagExpression that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetLFTagExpressionRequestT = Model::GetLFTagExpressionRequest>
+        void GetLFTagExpressionAsync(const GetLFTagExpressionRequestT& request, const GetLFTagExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::GetLFTagExpression, request, handler, context);
+        }
+
+        /**
          * <p>Returns the state of a query previously submitted. Clients are expected to
          * poll <code>GetQueryState</code> to monitor the current state of the planning
          * before retrieving the work units. A query state is only visible to the principal
@@ -892,8 +979,10 @@ namespace LakeFormation
          * <p>Allows a caller in a secure environment to assume a role with permission to
          * access Amazon S3. In order to vend such credentials, Lake Formation assumes the
          * role associated with a registered location, for example an Amazon S3 bucket,
-         * with a scope down policy which restricts the access to a single
-         * prefix.</p><p><h3>See Also:</h3>   <a
+         * with a scope down policy which restricts the access to a single prefix.</p>
+         * <p>To call this API, the role that the service assumes must have
+         * <code>lakeformation:GetDataAccess</code> permission on the
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">AWS
          * API Reference</a></p>
          */
@@ -1021,6 +1110,34 @@ namespace LakeFormation
         void ListDataCellsFilterAsync(const ListDataCellsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataCellsFilterRequestT& request = {}) const
         {
             return SubmitAsync(&LakeFormationClient::ListDataCellsFilter, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the LF-Tag expressions in caller’s account filtered based on caller's
+         * permissions. Data Lake and read only admins implicitly can see all tag
+         * expressions in their account, else caller needs DESCRIBE permissions on tag
+         * expression.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTagExpressions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLFTagExpressionsOutcome ListLFTagExpressions(const Model::ListLFTagExpressionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListLFTagExpressions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListLFTagExpressionsRequestT = Model::ListLFTagExpressionsRequest>
+        Model::ListLFTagExpressionsOutcomeCallable ListLFTagExpressionsCallable(const ListLFTagExpressionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&LakeFormationClient::ListLFTagExpressions, request);
+        }
+
+        /**
+         * An Async wrapper for ListLFTagExpressions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListLFTagExpressionsRequestT = Model::ListLFTagExpressionsRequest>
+        void ListLFTagExpressionsAsync(const ListLFTagExpressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListLFTagExpressionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&LakeFormationClient::ListLFTagExpressions, request, handler, context);
         }
 
         /**
@@ -1230,7 +1347,7 @@ namespace LakeFormation
          * Lake Formation adds the path to the existing policy.</p> <p>The following
          * request registers a new location and gives Lake Formation permission to use the
          * service-linked role to access that location.</p> <p> <code>ResourceArn =
-         * arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code> </p> <p>If
+         * arn:aws:s3:::my-bucket/ UseServiceLinkedRole = true</code> </p> <p>If
          * <code>UseServiceLinkedRole</code> is not set to true, you must provide or set
          * the <code>RoleArn</code>:</p> <p>
          * <code>arn:aws:iam::12345:role/my-data-access-role</code> </p><p><h3>See
@@ -1481,6 +1598,34 @@ namespace LakeFormation
         void UpdateLFTagAsync(const UpdateLFTagRequestT& request, const UpdateLFTagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&LakeFormationClient::UpdateLFTag, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the name of the LF-Tag expression to the new description and
+         * expression body provided. Updating a LF-Tag expression immediately changes the
+         * permission boundaries of all existing <code>LFTagPolicy</code> permission grants
+         * that reference the given LF-Tag expression.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTagExpression">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLFTagExpressionOutcome UpdateLFTagExpression(const Model::UpdateLFTagExpressionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLFTagExpression that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateLFTagExpressionRequestT = Model::UpdateLFTagExpressionRequest>
+        Model::UpdateLFTagExpressionOutcomeCallable UpdateLFTagExpressionCallable(const UpdateLFTagExpressionRequestT& request) const
+        {
+            return SubmitCallable(&LakeFormationClient::UpdateLFTagExpression, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateLFTagExpression that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateLFTagExpressionRequestT = Model::UpdateLFTagExpressionRequest>
+        void UpdateLFTagExpressionAsync(const UpdateLFTagExpressionRequestT& request, const UpdateLFTagExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LakeFormationClient::UpdateLFTagExpression, request, handler, context);
         }
 
         /**

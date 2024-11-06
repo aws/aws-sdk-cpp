@@ -15,6 +15,7 @@
 #include <aws/guardduty/model/EcsClusterDetails.h>
 #include <aws/guardduty/model/Container.h>
 #include <aws/guardduty/model/RdsDbInstanceDetails.h>
+#include <aws/guardduty/model/RdsLimitlessDbDetails.h>
 #include <aws/guardduty/model/RdsDbUserDetails.h>
 #include <aws/guardduty/model/LambdaDetails.h>
 #include <aws/guardduty/model/S3BucketDetail.h>
@@ -179,6 +180,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains information about the RDS Limitless database that was involved in a
+     * GuardDuty finding.</p>
+     */
+    inline const RdsLimitlessDbDetails& GetRdsLimitlessDbDetails() const{ return m_rdsLimitlessDbDetails; }
+    inline bool RdsLimitlessDbDetailsHasBeenSet() const { return m_rdsLimitlessDbDetailsHasBeenSet; }
+    inline void SetRdsLimitlessDbDetails(const RdsLimitlessDbDetails& value) { m_rdsLimitlessDbDetailsHasBeenSet = true; m_rdsLimitlessDbDetails = value; }
+    inline void SetRdsLimitlessDbDetails(RdsLimitlessDbDetails&& value) { m_rdsLimitlessDbDetailsHasBeenSet = true; m_rdsLimitlessDbDetails = std::move(value); }
+    inline Resource& WithRdsLimitlessDbDetails(const RdsLimitlessDbDetails& value) { SetRdsLimitlessDbDetails(value); return *this;}
+    inline Resource& WithRdsLimitlessDbDetails(RdsLimitlessDbDetails&& value) { SetRdsLimitlessDbDetails(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains information about the user details through which anomalous login
      * attempt was made.</p>
      */
@@ -233,6 +247,9 @@ namespace Model
 
     RdsDbInstanceDetails m_rdsDbInstanceDetails;
     bool m_rdsDbInstanceDetailsHasBeenSet = false;
+
+    RdsLimitlessDbDetails m_rdsLimitlessDbDetails;
+    bool m_rdsLimitlessDbDetailsHasBeenSet = false;
 
     RdsDbUserDetails m_rdsDbUserDetails;
     bool m_rdsDbUserDetailsHasBeenSet = false;

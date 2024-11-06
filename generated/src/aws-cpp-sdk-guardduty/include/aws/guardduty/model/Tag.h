@@ -24,10 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a tag associated with the EC2
-   * instance.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Tag">AWS API
-   * Reference</a></p>
+   * <p>Contains information about a tag key-value pair.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Tag">AWS
+   * API Reference</a></p>
    */
   class Tag
   {
@@ -40,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The EC2 instance tag key.</p>
+     * <p>Describes the key associated with the tag.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
@@ -54,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The EC2 instance tag value.</p>
+     * <p>Describes the value associated with the tag key.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }

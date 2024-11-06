@@ -10,6 +10,7 @@
 #include <aws/codebuild/model/FleetStatus.h>
 #include <aws/codebuild/model/EnvironmentType.h>
 #include <aws/codebuild/model/ComputeType.h>
+#include <aws/codebuild/model/ComputeConfiguration.h>
 #include <aws/codebuild/model/ScalingConfigurationOutput.h>
 #include <aws/codebuild/model/FleetOverflowBehavior.h>
 #include <aws/codebuild/model/VpcConfig.h>
@@ -178,32 +179,53 @@ namespace Model
     ///@{
     /**
      * <p>Information about the compute resources the compute fleet uses. Available
-     * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
-     * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
-     * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
-     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB
-     * memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
-     * <li> <p> <code>BUILD_GENERAL1_XLARGE</code>: Use up to 70 GB memory and 36 vCPUs
-     * for builds, depending on your environment type.</p> </li> <li> <p>
-     * <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and 824
+     * values include:</p> <ul> <li> <p> <code>ATTRIBUTE_BASED_COMPUTE</code>: Specify
+     * the amount of vCPUs, memory, disk space, and the type of machine.</p>  <p>
+     * If you use <code>ATTRIBUTE_BASED_COMPUTE</code>, you must define your attributes
+     * by using <code>computeConfiguration</code>. CodeBuild will select the cheapest
+     * instance that satisfies your specified attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types">Reserved
+     * capacity environment types</a> in the <i>CodeBuild User Guide</i>.</p> 
+     * </li> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 4 GiB memory and 2
+     * vCPUs for builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM</code>: Use up
+     * to 8 GiB memory and 4 vCPUs for builds.</p> </li> <li> <p>
+     * <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GiB memory and 8 vCPUs for
+     * builds, depending on your environment type.</p> </li> <li> <p>
+     * <code>BUILD_GENERAL1_XLARGE</code>: Use up to 72 GiB memory and 36 vCPUs for
+     * builds, depending on your environment type.</p> </li> <li> <p>
+     * <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 144 GiB memory, 72 vCPUs, and 824
      * GB of SSD storage for builds. This compute type supports Docker images up to 100
-     * GB uncompressed.</p> </li> </ul> <p> If you use
+     * GB uncompressed.</p> </li> <li> <p> <code>BUILD_LAMBDA_1GB</code>: Use up to 1
+     * GiB memory for builds. Only available for environment type
+     * <code>LINUX_LAMBDA_CONTAINER</code> and <code>ARM_LAMBDA_CONTAINER</code>.</p>
+     * </li> <li> <p> <code>BUILD_LAMBDA_2GB</code>: Use up to 2 GiB memory for builds.
+     * Only available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and
+     * <code>ARM_LAMBDA_CONTAINER</code>.</p> </li> <li> <p>
+     * <code>BUILD_LAMBDA_4GB</code>: Use up to 4 GiB memory for builds. Only available
+     * for environment type <code>LINUX_LAMBDA_CONTAINER</code> and
+     * <code>ARM_LAMBDA_CONTAINER</code>.</p> </li> <li> <p>
+     * <code>BUILD_LAMBDA_8GB</code>: Use up to 8 GiB memory for builds. Only available
+     * for environment type <code>LINUX_LAMBDA_CONTAINER</code> and
+     * <code>ARM_LAMBDA_CONTAINER</code>.</p> </li> <li> <p>
+     * <code>BUILD_LAMBDA_10GB</code>: Use up to 10 GiB memory for builds. Only
+     * available for environment type <code>LINUX_LAMBDA_CONTAINER</code> and
+     * <code>ARM_LAMBDA_CONTAINER</code>.</p> </li> </ul> <p> If you use
      * <code>BUILD_GENERAL1_SMALL</code>: </p> <ul> <li> <p> For environment type
-     * <code>LINUX_CONTAINER</code>, you can use up to 3 GB memory and 2 vCPUs for
+     * <code>LINUX_CONTAINER</code>, you can use up to 4 GiB memory and 2 vCPUs for
      * builds. </p> </li> <li> <p> For environment type
-     * <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GB memory, 4 vCPUs, and 1
-     * NVIDIA A10G Tensor Core GPU for builds.</p> </li> <li> <p> For environment type
-     * <code>ARM_CONTAINER</code>, you can use up to 4 GB memory and 2 vCPUs on
+     * <code>LINUX_GPU_CONTAINER</code>, you can use up to 16 GiB memory, 4 vCPUs, and
+     * 1 NVIDIA A10G Tensor Core GPU for builds.</p> </li> <li> <p> For environment
+     * type <code>ARM_CONTAINER</code>, you can use up to 4 GiB memory and 2 vCPUs on
      * ARM-based processors for builds.</p> </li> </ul> <p> If you use
      * <code>BUILD_GENERAL1_LARGE</code>: </p> <ul> <li> <p> For environment type
-     * <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for
+     * <code>LINUX_CONTAINER</code>, you can use up to 16 GiB memory and 8 vCPUs for
      * builds. </p> </li> <li> <p> For environment type
-     * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
-     * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
-     * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
+     * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GiB memory, 32 vCPUs,
+     * and 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
+     * <code>ARM_CONTAINER</code>, you can use up to 16 GiB memory and 8 vCPUs on
      * ARM-based processors for builds.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-     * environment compute types</a> in the <i>CodeBuild User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment.types">On-demand
+     * environment types</a> in the <i>CodeBuild User Guide.</i> </p>
      */
     inline const ComputeType& GetComputeType() const{ return m_computeType; }
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
@@ -211,6 +233,19 @@ namespace Model
     inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
     inline Fleet& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
     inline Fleet& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The compute configuration of the compute fleet. This is only required if
+     * <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code>.</p>
+     */
+    inline const ComputeConfiguration& GetComputeConfiguration() const{ return m_computeConfiguration; }
+    inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
+    inline void SetComputeConfiguration(const ComputeConfiguration& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = value; }
+    inline void SetComputeConfiguration(ComputeConfiguration&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::move(value); }
+    inline Fleet& WithComputeConfiguration(const ComputeConfiguration& value) { SetComputeConfiguration(value); return *this;}
+    inline Fleet& WithComputeConfiguration(ComputeConfiguration&& value) { SetComputeConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -343,6 +378,9 @@ namespace Model
 
     ComputeType m_computeType;
     bool m_computeTypeHasBeenSet = false;
+
+    ComputeConfiguration m_computeConfiguration;
+    bool m_computeConfigurationHasBeenSet = false;
 
     ScalingConfigurationOutput m_scalingConfiguration;
     bool m_scalingConfigurationHasBeenSet = false;

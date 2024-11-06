@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in VerifiedPermissionsClient header */
+#include <aws/verifiedpermissions/model/BatchGetPolicyResult.h>
 #include <aws/verifiedpermissions/model/BatchIsAuthorizedResult.h>
 #include <aws/verifiedpermissions/model/BatchIsAuthorizedWithTokenResult.h>
 #include <aws/verifiedpermissions/model/CreateIdentitySourceResult.h>
@@ -85,6 +86,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in VerifiedPermissionsClient header */
+      class BatchGetPolicyRequest;
       class BatchIsAuthorizedRequest;
       class BatchIsAuthorizedWithTokenRequest;
       class CreateIdentitySourceRequest;
@@ -114,6 +116,7 @@ namespace Aws
       /* End of service model forward declarations required in VerifiedPermissionsClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<BatchGetPolicyResult, VerifiedPermissionsError> BatchGetPolicyOutcome;
       typedef Aws::Utils::Outcome<BatchIsAuthorizedResult, VerifiedPermissionsError> BatchIsAuthorizedOutcome;
       typedef Aws::Utils::Outcome<BatchIsAuthorizedWithTokenResult, VerifiedPermissionsError> BatchIsAuthorizedWithTokenOutcome;
       typedef Aws::Utils::Outcome<CreateIdentitySourceResult, VerifiedPermissionsError> CreateIdentitySourceOutcome;
@@ -143,6 +146,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<BatchGetPolicyOutcome> BatchGetPolicyOutcomeCallable;
       typedef std::future<BatchIsAuthorizedOutcome> BatchIsAuthorizedOutcomeCallable;
       typedef std::future<BatchIsAuthorizedWithTokenOutcome> BatchIsAuthorizedWithTokenOutcomeCallable;
       typedef std::future<CreateIdentitySourceOutcome> CreateIdentitySourceOutcomeCallable;
@@ -175,6 +179,7 @@ namespace Aws
     class VerifiedPermissionsClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const VerifiedPermissionsClient*, const Model::BatchGetPolicyRequest&, const Model::BatchGetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetPolicyResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::BatchIsAuthorizedRequest&, const Model::BatchIsAuthorizedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchIsAuthorizedResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::BatchIsAuthorizedWithTokenRequest&, const Model::BatchIsAuthorizedWithTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchIsAuthorizedWithTokenResponseReceivedHandler;
     typedef std::function<void(const VerifiedPermissionsClient*, const Model::CreateIdentitySourceRequest&, const Model::CreateIdentitySourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIdentitySourceResponseReceivedHandler;
