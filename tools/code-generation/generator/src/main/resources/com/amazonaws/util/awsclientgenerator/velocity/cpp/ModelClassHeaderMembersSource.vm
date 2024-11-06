@@ -1,5 +1,6 @@
 #set($first = 0)
 #foreach($entry in $shape.members.entrySet())
+#if(!$entry.value.isChecksumMember() && $operation.requestAlgorithmMember != $entry.key && $operation.requestValidationModeMember != $entry.key)
 #if($entry.value.usedForHeader)
 #if($first == 0)
   Aws::StringStream ss;
@@ -65,27 +66,16 @@
 #end
 #end
 #end
-#if(!$serviceModel.endpointRules)
-## Extra headers from ARN: 1. x-amz-account-id for s3control 2. x-amz-outpost-id for s3control.
-
-#if($operation.hasAccountIdInArn || $operation.hasOutpostIdInArn)
-  ${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}ARN arn($CppViewHelper.computeMemberVariableName($operation.arnEndpointMemberName));
-  if (arn && arn.Validate().IsSuccess())
-  {
-#if($operation.hasAccountIdInArn)
-    ss << arn.GetAccountId();
-    headers.emplace("x-amz-account-id", ss.str());
-    ss.str("");
 #end
-#if($operation.hasOutpostIdInArn)
-    if (arn.GetResourceType() == ${rootNamespace}::${serviceNamespace}::ARNResourceType::OUTPOST)
-    {
-      ss << arn.GetResourceId();
-      headers.emplace("x-amz-outpost-id",  ss.str());
-      ss.str("");
-    }
+#if($operation.requestAlgorithmMember)
+  for (const auto& entry: m_checksumInfo.GetChecksumHeaders())
+  {
+    headers.emplace(entry.first, entry.second);
   }
 #end
-#end##-#if(!$serviceModel.endpointRules)
-
+#if($operation.requestValidationModeMember)
+  if(m_checksumInfo.GetShouldValidateResponse() != Client::Checksum::ChecksumMode::NOT_SET)
+  {
+    headers.emplace("x-amz-checksum-mode", Client::Checksum::NameForMode(GetChecksumInfo().value().GetShouldValidateResponse()));
+  }
 #end

@@ -101,6 +101,10 @@ namespace Model
     ${exportMacro} Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const override;
 
 #end
+#if ($operation.requestAlgorithmMember || $operation.requestValidationModeMember)
+    ${exportMacro} Aws::Crt::Optional<Aws::Client::Checksum::ChecksumInfo> GetChecksumInfo() const override;
+
+#end
 #if($shape.computeContentMd5)
     ${exportMacro} inline bool ShouldComputeContentMd5() const override { return true; }
 
@@ -164,6 +168,9 @@ namespace Model
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDeclaration.vm")
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
+#if ($operation.requestAlgorithmMember || $operation.requestValidationModeMember)
+    Aws::Client::Checksum::ChecksumInfo m_checksumInfo{};
+#end
   };
 
 } // namespace Model

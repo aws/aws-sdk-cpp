@@ -6,18 +6,18 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-
-#include <aws/core/client/RequestCompression.h>
 #include <aws/core/auth/AWSAuthSigner.h>
+#include <aws/core/client/Checksum.h>
 #include <aws/core/client/CoreErrors.h>
+#include <aws/core/client/RequestCompression.h>
 #include <aws/core/endpoint/EndpointParameter.h>
+#include <aws/core/endpoint/internal/AWSEndpointAttribute.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/HttpTypes.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
-#include <aws/core/endpoint/internal/AWSEndpointAttribute.h>
 
 namespace Aws
 {
@@ -190,6 +190,8 @@ namespace Aws
         inline virtual Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const { return {}; }
 
         inline virtual Aws::String GetChecksumAlgorithmName() const { return {}; }
+
+        inline virtual Aws::Crt::Optional<Client::Checksum::ChecksumInfo> GetChecksumInfo() const { return {}; }
 
         virtual const char* GetServiceRequestName() const = 0;
 

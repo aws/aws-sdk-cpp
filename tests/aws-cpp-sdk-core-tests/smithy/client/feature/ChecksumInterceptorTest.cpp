@@ -24,18 +24,24 @@ protected:
 class MockChecksumRequest: public AmazonWebServiceRequest
 {
 public:
-    explicit MockChecksumRequest(const Aws::String& m_response_body,
-        const Aws::String& checksumAlgorithmName = "",
-        const bool shouldAwsChunk = false,
-        const bool shouldValidateResponseChecksum = false,
-        const Aws::Vector<Aws::String>& responseValidationChecksums = {})
-        : m_responseBody(m_response_body),
-          m_checksumAlgorithmName{checksumAlgorithmName},
-          m_shouldAwsChunk{shouldAwsChunk},
-          m_shouldValidateResponseChecksum{shouldValidateResponseChecksum},
-          m_responseChecksumsToValidate{responseValidationChecksums}
-    {
-    }
+ explicit MockChecksumRequest(const Aws::String& m_response_body, const Aws::String& checksumAlgorithmName = "",
+                              const bool shouldAwsChunk = false, const bool shouldValidateResponseChecksum = false,
+                              const Aws::Vector<Aws::String>& responseValidationChecksums = {})
+     : m_responseBody(m_response_body),
+       m_checksumAlgorithmName{checksumAlgorithmName},
+       m_shouldAwsChunk{shouldAwsChunk},
+       m_shouldValidateResponseChecksum{shouldValidateResponseChecksum},
+       m_responseChecksumsToValidate{responseValidationChecksums},
+       m_responseChecksumInfo{} {
+   std::for_each(responseValidationChecksums.begin(), responseValidationChecksums.end(), [this](const Aws::String& name) -> void {
+     m_responseChecksumInfo.AddResponseChecksum(Client::Checksum::AlgorithmForName(name));
+   });
+   if (!checksumAlgorithmName.empty()) {
+     m_responseChecksumInfo.SetChecksumAlgorithm(Client::Checksum::AlgorithmForName(checksumAlgorithmName));
+   }
+   m_responseChecksumInfo.SetShouldValidateResponse(shouldValidateResponseChecksum ? Client::Checksum::ChecksumMode::ENABLED
+                                                                                   : Client::Checksum::ChecksumMode::NOT_SET);
+ }
 
     ~MockChecksumRequest() override = default;
 
@@ -74,12 +80,15 @@ public:
         return m_responseChecksumsToValidate;
     }
 
-private:
+    inline Aws::Crt::Optional<Client::Checksum::ChecksumInfo> GetChecksumInfo() const override { return m_responseChecksumInfo; };
+
+   private:
     Aws::String m_responseBody;
     Aws::String m_checksumAlgorithmName{};
     bool m_shouldAwsChunk{false};
     bool m_shouldValidateResponseChecksum{false};
     Aws::Vector<Aws::String> m_responseChecksumsToValidate{};
+    Client::Checksum::ChecksumInfo m_responseChecksumInfo{};
 };
 
 TEST_F(ChecksumInterceptorTest, MissingRequestInContextShouldReturnError)

@@ -60,9 +60,24 @@
 #set($adderWithMove = ";")
 #set($inline = "$exportMacro ")
 #elseif($member.value.isChecksumMember())
-#set($getterBody = "{ return ${memberVariableName}; }")
-#set($setterWithCopy = " { ${required}${memberVariableName} = value; SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
-#set($setterWithMove = " { ${required}${memberVariableName} = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
+#set($returnType = $rawCppType)
+#set($getterBody = "{ return m_checksumInfo.GetChecksumHeader(Client::Checksum::ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
+#set($hasBeenSetBody = " { return !m_checksumInfo.GetChecksumHeader(Client::Checksum::ChecksumAlgorithm::${member.value.getChecksumEnumMember()}).empty(); }")
+#set($setterWithCopy = " { m_checksumInfo.SetChecksumAlgorithm(Aws::Client::Checksum::ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::${member.value.getChecksumEnumMember()}, value); }")
+#set($setterWithMove = " { m_checksumInfo.SetChecksumAlgorithm(Aws::Client::Checksum::ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::${member.value.getChecksumEnumMember()}, value); }")
+#elseif($operation.requestAlgorithmMember == $member.key)
+#set($returnType = $rawCppType)
+#set($getterBody = "{ return ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(Aws::Utils::StringUtils::ToUpper(Client::Checksum::NameForAlgorithm(m_checksumInfo.GetChecksumAlgorithm()).c_str())); }")
+#set($hasBeenSetBody = " { return m_checksumInfo.GetChecksumAlgorithm() != Client::Checksum::ChecksumAlgorithm::NOT_SET; }")
+#set($setterWithCopy = " { m_checksumInfo.SetChecksumAlgorithm(Client::Checksum::AlgorithmForName(Aws::Utils::StringUtils::ToLower(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(value).c_str()))); }")
+#set($setterWithMove = " { m_checksumInfo.SetChecksumAlgorithm(Client::Checksum::AlgorithmForName(Aws::Utils::StringUtils::ToLower(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(value).c_str()))); }")
+#elseif($operation.requestValidationModeMember == $member.key)
+#set($returnType = $rawCppType)
+#set($getterBody = "{ return ChecksumModeMapper::GetChecksumModeForName(Client::Checksum::NameForMode(m_checksumInfo.GetShouldValidateResponse())); }")
+#set($hasBeenSetBody = " { return m_checksumInfo.GetShouldValidateResponse() != Client::Checksum::ChecksumMode::NOT_SET; }")
+#set($setterWithCopy = " { m_checksumInfo.SetShouldValidateResponse(Client::Checksum::ModeForName(ChecksumModeMapper::GetNameForChecksumMode(value))); }")
+#set($setterWithMove = " { m_checksumInfo.SetShouldValidateResponse(Client::Checksum::ModeForName(ChecksumModeMapper::GetNameForChecksumMode(value))); }")
+#set($witherWithMove = " { SetChecksumMode(value); return *this;}")
 #else
 #set($getterBody = "{ return ${memberVariableName}; }")
 #set($setterWithCopy = " { ${required}${memberVariableName} = value; }")
@@ -104,7 +119,7 @@
 #if($member.value.shape.string && !$member.value.isChecksumMember())
     ${inline}void Set${memberKeyWithFirstLetterCapitalized}(const char* value) { ${required}${memberVariableName}.assign(value); }
 #elseif($member.value.shape.string && $member.value.isChecksumMember())
-    ${inline}void Set${memberKeyWithFirstLetterCapitalized}(const char* value) { ${required}${memberVariableName}.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }
+    ${inline}void Set${memberKeyWithFirstLetterCapitalized}(const char* value) { m_checksumInfo.AddChecksumHeader(Aws::Client::Checksum::ChecksumAlgorithm::${member.value.getChecksumEnumMember()}, value); }
 #end
     ${inline}${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${cppType} value)${witherWithCopy}
 #if(!$subShape.primitive)
@@ -177,6 +192,7 @@
 #if($shape.members.size() > 0)##next contains private only
   private:
 #foreach($member in $shape.members.entrySet())
+#if(!$member.value.isChecksumMember() && $operation.requestAlgorithmMember != $member.key && $operation.requestValidationModeMember != $member.key)
 
 #if ($shape.request && $member.value.shape.isEventStream())
 #set($isEventStreamInput = true)
@@ -198,6 +214,7 @@
 #end
 #if(!$member.value.required && $useRequiredField && !$isEventStreamInput)
     bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = false;
+#end
 #end
 #end
 #end

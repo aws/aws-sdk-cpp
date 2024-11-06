@@ -4,6 +4,9 @@
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
+#if($operation.responseAlgorithms)
+\#include <aws/${metadata.projectName}/model/ChecksumAlgorithm.h>
+#end
 #if(!$serviceModel.endpointRules)
 #if($operation.hasAccountIdInArn || $operation.hasOutpostIdInArn)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ARN.h>

@@ -282,6 +282,15 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
     AppendRecursionDetectionHeader(httpRequest);
 
+    InterceptorContext context{request};
+    context.SetTransmitRequest(httpRequest);
+    for (const auto& interceptor : m_interceptors) {
+      const auto modifiedRequest = interceptor->ModifyBeforeSigning(context);
+      if (!modifiedRequest.IsSuccess()) {
+        return modifiedRequest.GetError();
+      }
+    }
+
     for (long retries = 0;; retries++)
     {
         if(!m_retryStrategy->HasSendToken())
@@ -394,6 +403,18 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
         Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, contexts);
     }
+
+    if (outcome.IsSuccess()) {
+      context.SetTransmitResponse(outcome.GetResult());
+      for (const auto& interceptor : m_interceptors) {
+        const auto modifiedResult = interceptor->ModifyBeforeDeserialization(context);
+        if (!modifiedResult.IsSuccess()) {
+          outcome = modifiedResult.GetError();
+          break;
+        }
+      }
+    }
+
     auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
     auto counter = meter->CreateCounter(TracingUtils::SMITHY_CLIENT_SERVICE_ATTEMPTS_METRIC, TracingUtils::COUNT_METRIC_TYPE, "");
     counter->add(requestInfo.attempt, {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
@@ -547,17 +568,6 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
         {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
-    InterceptorContext context{request};
-    context.SetTransmitRequest(httpRequest);
-    for (const auto& interceptor : m_interceptors)
-    {
-        const auto modifiedRequest = interceptor->ModifyBeforeSigning(context);
-        if (!modifiedRequest.IsSuccess())
-        {
-            return modifiedRequest.GetError();
-        }
-    }
-
     auto signer = GetSignerByName(signerName);
     auto signedRequest = TracingUtils::MakeCallWithTiming<bool>([&]() -> bool {
             return signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, true);
@@ -584,16 +594,6 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
         TracingUtils::SMITHY_CLIENT_SERVICE_CALL_METRIC,
         *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
         {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-
-    context.SetTransmitResponse(httpResponse);
-    for (const auto& interceptor : m_interceptors)
-    {
-        const auto modifiedRequest = interceptor->ModifyBeforeDeserialization(context);
-        if (!modifiedRequest.IsSuccess())
-        {
-            return modifiedRequest.GetError();
-        }
-    }
 
     if (DoesResponseGenerateError(httpResponse) )
     {
