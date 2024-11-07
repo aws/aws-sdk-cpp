@@ -20,6 +20,7 @@ ConverseStreamRequest::ConverseStreamRequest() :
     m_toolConfigHasBeenSet(false),
     m_guardrailConfigHasBeenSet(false),
     m_additionalModelRequestFieldsHasBeenSet(false),
+    m_promptVariablesHasBeenSet(false),
     m_additionalModelResponseFieldPathsHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
@@ -75,6 +76,17 @@ Aws::String ConverseStreamRequest::SerializePayload() const
     {
        payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
     }
+  }
+
+  if(m_promptVariablesHasBeenSet)
+  {
+   JsonValue promptVariablesJsonMap;
+   for(auto& promptVariablesItem : m_promptVariables)
+   {
+     promptVariablesJsonMap.WithObject(promptVariablesItem.first, promptVariablesItem.second.Jsonize());
+   }
+   payload.WithObject("promptVariables", std::move(promptVariablesJsonMap));
+
   }
 
   if(m_additionalModelResponseFieldPathsHasBeenSet)

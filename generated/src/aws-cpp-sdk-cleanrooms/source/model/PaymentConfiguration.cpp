@@ -19,7 +19,8 @@ namespace Model
 {
 
 PaymentConfiguration::PaymentConfiguration() : 
-    m_queryComputeHasBeenSet(false)
+    m_queryComputeHasBeenSet(false),
+    m_machineLearningHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ PaymentConfiguration& PaymentConfiguration::operator =(JsonView jsonValue)
     m_queryComputeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("machineLearning"))
+  {
+    m_machineLearning = jsonValue.GetObject("machineLearning");
+
+    m_machineLearningHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue PaymentConfiguration::Jsonize() const
   if(m_queryComputeHasBeenSet)
   {
    payload.WithObject("queryCompute", m_queryCompute.Jsonize());
+
+  }
+
+  if(m_machineLearningHasBeenSet)
+  {
+   payload.WithObject("machineLearning", m_machineLearning.Jsonize());
 
   }
 

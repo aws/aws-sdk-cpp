@@ -47,7 +47,8 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_defaultInstanceWarmup(0),
     m_defaultInstanceWarmupHasBeenSet(false),
     m_trafficSourcesHasBeenSet(false),
-    m_instanceMaintenancePolicyHasBeenSet(false)
+    m_instanceMaintenancePolicyHasBeenSet(false),
+    m_availabilityZoneDistributionHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,11 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
   if(m_instanceMaintenancePolicyHasBeenSet)
   {
     m_instanceMaintenancePolicy.OutputToStream(ss, "InstanceMaintenancePolicy");
+  }
+
+  if(m_availabilityZoneDistributionHasBeenSet)
+  {
+    m_availabilityZoneDistribution.OutputToStream(ss, "AvailabilityZoneDistribution");
   }
 
   ss << "Version=2011-01-01";

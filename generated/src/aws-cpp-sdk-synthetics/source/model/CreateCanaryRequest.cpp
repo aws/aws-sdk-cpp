@@ -26,6 +26,8 @@ CreateCanaryRequest::CreateCanaryRequest() :
     m_runtimeVersionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_resourcesToReplicateTagsHasBeenSet(false),
+    m_provisionedResourceCleanup(ProvisionedResourceCleanupSetting::NOT_SET),
+    m_provisionedResourceCleanupHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_artifactConfigHasBeenSet(false)
 {
@@ -104,6 +106,11 @@ Aws::String CreateCanaryRequest::SerializePayload() const
    }
    payload.WithArray("ResourcesToReplicateTags", std::move(resourcesToReplicateTagsJsonList));
 
+  }
+
+  if(m_provisionedResourceCleanupHasBeenSet)
+  {
+   payload.WithString("ProvisionedResourceCleanup", ProvisionedResourceCleanupSettingMapper::GetNameForProvisionedResourceCleanupSetting(m_provisionedResourceCleanup));
   }
 
   if(m_tagsHasBeenSet)

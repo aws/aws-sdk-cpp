@@ -90,6 +90,58 @@ namespace CleanRoomsML
         virtual ~CleanRoomsMLClient();
 
         /**
+         * <p>Submits a request to cancel the trained model job.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelTrainedModelOutcome CancelTrainedModel(const Model::CancelTrainedModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelTrainedModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelTrainedModelRequestT = Model::CancelTrainedModelRequest>
+        Model::CancelTrainedModelOutcomeCallable CancelTrainedModelCallable(const CancelTrainedModelRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::CancelTrainedModel, request);
+        }
+
+        /**
+         * An Async wrapper for CancelTrainedModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelTrainedModelRequestT = Model::CancelTrainedModelRequest>
+        void CancelTrainedModelAsync(const CancelTrainedModelRequestT& request, const CancelTrainedModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::CancelTrainedModel, request, handler, context);
+        }
+
+        /**
+         * <p>Submits a request to cancel a trained model inference job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModelInferenceJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelTrainedModelInferenceJobOutcome CancelTrainedModelInferenceJob(const Model::CancelTrainedModelInferenceJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelTrainedModelInferenceJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelTrainedModelInferenceJobRequestT = Model::CancelTrainedModelInferenceJobRequest>
+        Model::CancelTrainedModelInferenceJobOutcomeCallable CancelTrainedModelInferenceJobCallable(const CancelTrainedModelInferenceJobRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::CancelTrainedModelInferenceJob, request);
+        }
+
+        /**
+         * An Async wrapper for CancelTrainedModelInferenceJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelTrainedModelInferenceJobRequestT = Model::CancelTrainedModelInferenceJobRequest>
+        void CancelTrainedModelInferenceJobAsync(const CancelTrainedModelInferenceJobRequestT& request, const CancelTrainedModelInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::CancelTrainedModelInferenceJob, request, handler, context);
+        }
+
+        /**
          * <p>Defines the information necessary to create an audience model. An audience
          * model is a machine learning model that Clean Rooms ML trains to measure
          * similarity between users. Clean Rooms ML manages training and storing the
@@ -142,6 +194,111 @@ namespace CleanRoomsML
         void CreateConfiguredAudienceModelAsync(const CreateConfiguredAudienceModelRequestT& request, const CreateConfiguredAudienceModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsMLClient::CreateConfiguredAudienceModel, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a configured model algorithm using a container image stored in an ECR
+         * repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateConfiguredModelAlgorithmOutcome CreateConfiguredModelAlgorithm(const Model::CreateConfiguredModelAlgorithmRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateConfiguredModelAlgorithm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateConfiguredModelAlgorithmRequestT = Model::CreateConfiguredModelAlgorithmRequest>
+        Model::CreateConfiguredModelAlgorithmOutcomeCallable CreateConfiguredModelAlgorithmCallable(const CreateConfiguredModelAlgorithmRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::CreateConfiguredModelAlgorithm, request);
+        }
+
+        /**
+         * An Async wrapper for CreateConfiguredModelAlgorithm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateConfiguredModelAlgorithmRequestT = Model::CreateConfiguredModelAlgorithmRequest>
+        void CreateConfiguredModelAlgorithmAsync(const CreateConfiguredModelAlgorithmRequestT& request, const CreateConfiguredModelAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::CreateConfiguredModelAlgorithm, request, handler, context);
+        }
+
+        /**
+         * <p>Associates a configured model algorithm to a collaboration for use by any
+         * member of the collaboration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithmAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateConfiguredModelAlgorithmAssociationOutcome CreateConfiguredModelAlgorithmAssociation(const Model::CreateConfiguredModelAlgorithmAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateConfiguredModelAlgorithmAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateConfiguredModelAlgorithmAssociationRequestT = Model::CreateConfiguredModelAlgorithmAssociationRequest>
+        Model::CreateConfiguredModelAlgorithmAssociationOutcomeCallable CreateConfiguredModelAlgorithmAssociationCallable(const CreateConfiguredModelAlgorithmAssociationRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::CreateConfiguredModelAlgorithmAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateConfiguredModelAlgorithmAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateConfiguredModelAlgorithmAssociationRequestT = Model::CreateConfiguredModelAlgorithmAssociationRequest>
+        void CreateConfiguredModelAlgorithmAssociationAsync(const CreateConfiguredModelAlgorithmAssociationRequestT& request, const CreateConfiguredModelAlgorithmAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::CreateConfiguredModelAlgorithmAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Provides the information to create an ML input channel. An ML input channel
+         * is the result of a query that can be used for ML modeling.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateMLInputChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMLInputChannelOutcome CreateMLInputChannel(const Model::CreateMLInputChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMLInputChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMLInputChannelRequestT = Model::CreateMLInputChannelRequest>
+        Model::CreateMLInputChannelOutcomeCallable CreateMLInputChannelCallable(const CreateMLInputChannelRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::CreateMLInputChannel, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMLInputChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMLInputChannelRequestT = Model::CreateMLInputChannelRequest>
+        void CreateMLInputChannelAsync(const CreateMLInputChannelRequestT& request, const CreateMLInputChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::CreateMLInputChannel, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a trained model from an associated configured model algorithm using
+         * data from any member of the collaboration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateTrainedModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTrainedModelOutcome CreateTrainedModel(const Model::CreateTrainedModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTrainedModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTrainedModelRequestT = Model::CreateTrainedModelRequest>
+        Model::CreateTrainedModelOutcomeCallable CreateTrainedModelCallable(const CreateTrainedModelRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::CreateTrainedModel, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTrainedModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTrainedModelRequestT = Model::CreateTrainedModelRequest>
+        void CreateTrainedModelAsync(const CreateTrainedModelRequestT& request, const CreateTrainedModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::CreateTrainedModel, request, handler, context);
         }
 
         /**
@@ -281,6 +438,133 @@ namespace CleanRoomsML
         }
 
         /**
+         * <p>Deletes a configured model algorithm.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConfiguredModelAlgorithmOutcome DeleteConfiguredModelAlgorithm(const Model::DeleteConfiguredModelAlgorithmRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteConfiguredModelAlgorithm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteConfiguredModelAlgorithmRequestT = Model::DeleteConfiguredModelAlgorithmRequest>
+        Model::DeleteConfiguredModelAlgorithmOutcomeCallable DeleteConfiguredModelAlgorithmCallable(const DeleteConfiguredModelAlgorithmRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::DeleteConfiguredModelAlgorithm, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteConfiguredModelAlgorithm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteConfiguredModelAlgorithmRequestT = Model::DeleteConfiguredModelAlgorithmRequest>
+        void DeleteConfiguredModelAlgorithmAsync(const DeleteConfiguredModelAlgorithmRequestT& request, const DeleteConfiguredModelAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::DeleteConfiguredModelAlgorithm, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a configured model algorithm association.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithmAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConfiguredModelAlgorithmAssociationOutcome DeleteConfiguredModelAlgorithmAssociation(const Model::DeleteConfiguredModelAlgorithmAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteConfiguredModelAlgorithmAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteConfiguredModelAlgorithmAssociationRequestT = Model::DeleteConfiguredModelAlgorithmAssociationRequest>
+        Model::DeleteConfiguredModelAlgorithmAssociationOutcomeCallable DeleteConfiguredModelAlgorithmAssociationCallable(const DeleteConfiguredModelAlgorithmAssociationRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::DeleteConfiguredModelAlgorithmAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteConfiguredModelAlgorithmAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteConfiguredModelAlgorithmAssociationRequestT = Model::DeleteConfiguredModelAlgorithmAssociationRequest>
+        void DeleteConfiguredModelAlgorithmAssociationAsync(const DeleteConfiguredModelAlgorithmAssociationRequestT& request, const DeleteConfiguredModelAlgorithmAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::DeleteConfiguredModelAlgorithmAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a ML modeling configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMLConfigurationOutcome DeleteMLConfiguration(const Model::DeleteMLConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMLConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMLConfigurationRequestT = Model::DeleteMLConfigurationRequest>
+        Model::DeleteMLConfigurationOutcomeCallable DeleteMLConfigurationCallable(const DeleteMLConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::DeleteMLConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMLConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMLConfigurationRequestT = Model::DeleteMLConfigurationRequest>
+        void DeleteMLConfigurationAsync(const DeleteMLConfigurationRequestT& request, const DeleteMLConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::DeleteMLConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Provides the information necessary to delete an ML input
+         * channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLInputChannelData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMLInputChannelDataOutcome DeleteMLInputChannelData(const Model::DeleteMLInputChannelDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMLInputChannelData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMLInputChannelDataRequestT = Model::DeleteMLInputChannelDataRequest>
+        Model::DeleteMLInputChannelDataOutcomeCallable DeleteMLInputChannelDataCallable(const DeleteMLInputChannelDataRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::DeleteMLInputChannelData, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMLInputChannelData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMLInputChannelDataRequestT = Model::DeleteMLInputChannelDataRequest>
+        void DeleteMLInputChannelDataAsync(const DeleteMLInputChannelDataRequestT& request, const DeleteMLInputChannelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::DeleteMLInputChannelData, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the output of a trained model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteTrainedModelOutput">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTrainedModelOutputOutcome DeleteTrainedModelOutput(const Model::DeleteTrainedModelOutputRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTrainedModelOutput that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTrainedModelOutputRequestT = Model::DeleteTrainedModelOutputRequest>
+        Model::DeleteTrainedModelOutputOutcomeCallable DeleteTrainedModelOutputCallable(const DeleteTrainedModelOutputRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::DeleteTrainedModelOutput, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTrainedModelOutput that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTrainedModelOutputRequestT = Model::DeleteTrainedModelOutputRequest>
+        void DeleteTrainedModelOutputAsync(const DeleteTrainedModelOutputRequestT& request, const DeleteTrainedModelOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::DeleteTrainedModelOutput, request, handler, context);
+        }
+
+        /**
          * <p>Specifies a training dataset that you want to delete. You can't delete a
          * training dataset if there are any audience models that depend on the training
          * dataset. In Clean Rooms ML, the <code>TrainingDataset</code> is metadata that
@@ -361,6 +645,84 @@ namespace CleanRoomsML
         }
 
         /**
+         * <p>Returns information about the configured model algorithm association in a
+         * collaboration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationConfiguredModelAlgorithmAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCollaborationConfiguredModelAlgorithmAssociationOutcome GetCollaborationConfiguredModelAlgorithmAssociation(const Model::GetCollaborationConfiguredModelAlgorithmAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCollaborationConfiguredModelAlgorithmAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCollaborationConfiguredModelAlgorithmAssociationRequestT = Model::GetCollaborationConfiguredModelAlgorithmAssociationRequest>
+        Model::GetCollaborationConfiguredModelAlgorithmAssociationOutcomeCallable GetCollaborationConfiguredModelAlgorithmAssociationCallable(const GetCollaborationConfiguredModelAlgorithmAssociationRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::GetCollaborationConfiguredModelAlgorithmAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for GetCollaborationConfiguredModelAlgorithmAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCollaborationConfiguredModelAlgorithmAssociationRequestT = Model::GetCollaborationConfiguredModelAlgorithmAssociationRequest>
+        void GetCollaborationConfiguredModelAlgorithmAssociationAsync(const GetCollaborationConfiguredModelAlgorithmAssociationRequestT& request, const GetCollaborationConfiguredModelAlgorithmAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::GetCollaborationConfiguredModelAlgorithmAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a specific ML input channel in a
+         * collaboration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationMLInputChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCollaborationMLInputChannelOutcome GetCollaborationMLInputChannel(const Model::GetCollaborationMLInputChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCollaborationMLInputChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCollaborationMLInputChannelRequestT = Model::GetCollaborationMLInputChannelRequest>
+        Model::GetCollaborationMLInputChannelOutcomeCallable GetCollaborationMLInputChannelCallable(const GetCollaborationMLInputChannelRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::GetCollaborationMLInputChannel, request);
+        }
+
+        /**
+         * An Async wrapper for GetCollaborationMLInputChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCollaborationMLInputChannelRequestT = Model::GetCollaborationMLInputChannelRequest>
+        void GetCollaborationMLInputChannelAsync(const GetCollaborationMLInputChannelRequestT& request, const GetCollaborationMLInputChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::GetCollaborationMLInputChannel, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a trained model in a collaboration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationTrainedModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCollaborationTrainedModelOutcome GetCollaborationTrainedModel(const Model::GetCollaborationTrainedModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCollaborationTrainedModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCollaborationTrainedModelRequestT = Model::GetCollaborationTrainedModelRequest>
+        Model::GetCollaborationTrainedModelOutcomeCallable GetCollaborationTrainedModelCallable(const GetCollaborationTrainedModelRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::GetCollaborationTrainedModel, request);
+        }
+
+        /**
+         * An Async wrapper for GetCollaborationTrainedModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCollaborationTrainedModelRequestT = Model::GetCollaborationTrainedModelRequest>
+        void GetCollaborationTrainedModelAsync(const GetCollaborationTrainedModelRequestT& request, const GetCollaborationTrainedModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::GetCollaborationTrainedModel, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about a specified configured audience
          * model.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredAudienceModel">AWS
@@ -410,6 +772,160 @@ namespace CleanRoomsML
         void GetConfiguredAudienceModelPolicyAsync(const GetConfiguredAudienceModelPolicyRequestT& request, const GetConfiguredAudienceModelPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsMLClient::GetConfiguredAudienceModelPolicy, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a configured model algorithm.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConfiguredModelAlgorithmOutcome GetConfiguredModelAlgorithm(const Model::GetConfiguredModelAlgorithmRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetConfiguredModelAlgorithm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConfiguredModelAlgorithmRequestT = Model::GetConfiguredModelAlgorithmRequest>
+        Model::GetConfiguredModelAlgorithmOutcomeCallable GetConfiguredModelAlgorithmCallable(const GetConfiguredModelAlgorithmRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::GetConfiguredModelAlgorithm, request);
+        }
+
+        /**
+         * An Async wrapper for GetConfiguredModelAlgorithm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConfiguredModelAlgorithmRequestT = Model::GetConfiguredModelAlgorithmRequest>
+        void GetConfiguredModelAlgorithmAsync(const GetConfiguredModelAlgorithmRequestT& request, const GetConfiguredModelAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::GetConfiguredModelAlgorithm, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a configured model algorithm
+         * association.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithmAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConfiguredModelAlgorithmAssociationOutcome GetConfiguredModelAlgorithmAssociation(const Model::GetConfiguredModelAlgorithmAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetConfiguredModelAlgorithmAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConfiguredModelAlgorithmAssociationRequestT = Model::GetConfiguredModelAlgorithmAssociationRequest>
+        Model::GetConfiguredModelAlgorithmAssociationOutcomeCallable GetConfiguredModelAlgorithmAssociationCallable(const GetConfiguredModelAlgorithmAssociationRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::GetConfiguredModelAlgorithmAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for GetConfiguredModelAlgorithmAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConfiguredModelAlgorithmAssociationRequestT = Model::GetConfiguredModelAlgorithmAssociationRequest>
+        void GetConfiguredModelAlgorithmAssociationAsync(const GetConfiguredModelAlgorithmAssociationRequestT& request, const GetConfiguredModelAlgorithmAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::GetConfiguredModelAlgorithmAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a specific ML configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMLConfigurationOutcome GetMLConfiguration(const Model::GetMLConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMLConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMLConfigurationRequestT = Model::GetMLConfigurationRequest>
+        Model::GetMLConfigurationOutcomeCallable GetMLConfigurationCallable(const GetMLConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::GetMLConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetMLConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMLConfigurationRequestT = Model::GetMLConfigurationRequest>
+        void GetMLConfigurationAsync(const GetMLConfigurationRequestT& request, const GetMLConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::GetMLConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about an ML input channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLInputChannel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMLInputChannelOutcome GetMLInputChannel(const Model::GetMLInputChannelRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMLInputChannel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMLInputChannelRequestT = Model::GetMLInputChannelRequest>
+        Model::GetMLInputChannelOutcomeCallable GetMLInputChannelCallable(const GetMLInputChannelRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::GetMLInputChannel, request);
+        }
+
+        /**
+         * An Async wrapper for GetMLInputChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMLInputChannelRequestT = Model::GetMLInputChannelRequest>
+        void GetMLInputChannelAsync(const GetMLInputChannelRequestT& request, const GetMLInputChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::GetMLInputChannel, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a trained model.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTrainedModelOutcome GetTrainedModel(const Model::GetTrainedModelRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTrainedModel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTrainedModelRequestT = Model::GetTrainedModelRequest>
+        Model::GetTrainedModelOutcomeCallable GetTrainedModelCallable(const GetTrainedModelRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::GetTrainedModel, request);
+        }
+
+        /**
+         * An Async wrapper for GetTrainedModel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTrainedModelRequestT = Model::GetTrainedModelRequest>
+        void GetTrainedModelAsync(const GetTrainedModelRequestT& request, const GetTrainedModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::GetTrainedModel, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a trained model inference job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModelInferenceJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTrainedModelInferenceJobOutcome GetTrainedModelInferenceJob(const Model::GetTrainedModelInferenceJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTrainedModelInferenceJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTrainedModelInferenceJobRequestT = Model::GetTrainedModelInferenceJobRequest>
+        Model::GetTrainedModelInferenceJobOutcomeCallable GetTrainedModelInferenceJobCallable(const GetTrainedModelInferenceJobRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::GetTrainedModelInferenceJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetTrainedModelInferenceJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTrainedModelInferenceJobRequestT = Model::GetTrainedModelInferenceJobRequest>
+        void GetTrainedModelInferenceJobAsync(const GetTrainedModelInferenceJobRequestT& request, const GetTrainedModelInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::GetTrainedModelInferenceJob, request, handler, context);
         }
 
         /**
@@ -513,6 +1029,136 @@ namespace CleanRoomsML
         }
 
         /**
+         * <p>Returns a list of the configured model algorithm associations in a
+         * collaboration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationConfiguredModelAlgorithmAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCollaborationConfiguredModelAlgorithmAssociationsOutcome ListCollaborationConfiguredModelAlgorithmAssociations(const Model::ListCollaborationConfiguredModelAlgorithmAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCollaborationConfiguredModelAlgorithmAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCollaborationConfiguredModelAlgorithmAssociationsRequestT = Model::ListCollaborationConfiguredModelAlgorithmAssociationsRequest>
+        Model::ListCollaborationConfiguredModelAlgorithmAssociationsOutcomeCallable ListCollaborationConfiguredModelAlgorithmAssociationsCallable(const ListCollaborationConfiguredModelAlgorithmAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::ListCollaborationConfiguredModelAlgorithmAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListCollaborationConfiguredModelAlgorithmAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCollaborationConfiguredModelAlgorithmAssociationsRequestT = Model::ListCollaborationConfiguredModelAlgorithmAssociationsRequest>
+        void ListCollaborationConfiguredModelAlgorithmAssociationsAsync(const ListCollaborationConfiguredModelAlgorithmAssociationsRequestT& request, const ListCollaborationConfiguredModelAlgorithmAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::ListCollaborationConfiguredModelAlgorithmAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of the ML input channels in a collaboration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationMLInputChannels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCollaborationMLInputChannelsOutcome ListCollaborationMLInputChannels(const Model::ListCollaborationMLInputChannelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCollaborationMLInputChannels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCollaborationMLInputChannelsRequestT = Model::ListCollaborationMLInputChannelsRequest>
+        Model::ListCollaborationMLInputChannelsOutcomeCallable ListCollaborationMLInputChannelsCallable(const ListCollaborationMLInputChannelsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::ListCollaborationMLInputChannels, request);
+        }
+
+        /**
+         * An Async wrapper for ListCollaborationMLInputChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCollaborationMLInputChannelsRequestT = Model::ListCollaborationMLInputChannelsRequest>
+        void ListCollaborationMLInputChannelsAsync(const ListCollaborationMLInputChannelsRequestT& request, const ListCollaborationMLInputChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::ListCollaborationMLInputChannels, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of the export jobs for a trained model in a
+         * collaboration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelExportJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCollaborationTrainedModelExportJobsOutcome ListCollaborationTrainedModelExportJobs(const Model::ListCollaborationTrainedModelExportJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCollaborationTrainedModelExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCollaborationTrainedModelExportJobsRequestT = Model::ListCollaborationTrainedModelExportJobsRequest>
+        Model::ListCollaborationTrainedModelExportJobsOutcomeCallable ListCollaborationTrainedModelExportJobsCallable(const ListCollaborationTrainedModelExportJobsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::ListCollaborationTrainedModelExportJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListCollaborationTrainedModelExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCollaborationTrainedModelExportJobsRequestT = Model::ListCollaborationTrainedModelExportJobsRequest>
+        void ListCollaborationTrainedModelExportJobsAsync(const ListCollaborationTrainedModelExportJobsRequestT& request, const ListCollaborationTrainedModelExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::ListCollaborationTrainedModelExportJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of trained model inference jobs in a specified
+         * collaboration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelInferenceJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCollaborationTrainedModelInferenceJobsOutcome ListCollaborationTrainedModelInferenceJobs(const Model::ListCollaborationTrainedModelInferenceJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCollaborationTrainedModelInferenceJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCollaborationTrainedModelInferenceJobsRequestT = Model::ListCollaborationTrainedModelInferenceJobsRequest>
+        Model::ListCollaborationTrainedModelInferenceJobsOutcomeCallable ListCollaborationTrainedModelInferenceJobsCallable(const ListCollaborationTrainedModelInferenceJobsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::ListCollaborationTrainedModelInferenceJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListCollaborationTrainedModelInferenceJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCollaborationTrainedModelInferenceJobsRequestT = Model::ListCollaborationTrainedModelInferenceJobsRequest>
+        void ListCollaborationTrainedModelInferenceJobsAsync(const ListCollaborationTrainedModelInferenceJobsRequestT& request, const ListCollaborationTrainedModelInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::ListCollaborationTrainedModelInferenceJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of the trained models in a collaboration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCollaborationTrainedModelsOutcome ListCollaborationTrainedModels(const Model::ListCollaborationTrainedModelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCollaborationTrainedModels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCollaborationTrainedModelsRequestT = Model::ListCollaborationTrainedModelsRequest>
+        Model::ListCollaborationTrainedModelsOutcomeCallable ListCollaborationTrainedModelsCallable(const ListCollaborationTrainedModelsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::ListCollaborationTrainedModels, request);
+        }
+
+        /**
+         * An Async wrapper for ListCollaborationTrainedModels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCollaborationTrainedModelsRequestT = Model::ListCollaborationTrainedModelsRequest>
+        void ListCollaborationTrainedModelsAsync(const ListCollaborationTrainedModelsRequestT& request, const ListCollaborationTrainedModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::ListCollaborationTrainedModels, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of the configured audience models.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredAudienceModels">AWS
@@ -539,6 +1185,82 @@ namespace CleanRoomsML
         }
 
         /**
+         * <p>Returns a list of configured model algorithm associations.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithmAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConfiguredModelAlgorithmAssociationsOutcome ListConfiguredModelAlgorithmAssociations(const Model::ListConfiguredModelAlgorithmAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListConfiguredModelAlgorithmAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConfiguredModelAlgorithmAssociationsRequestT = Model::ListConfiguredModelAlgorithmAssociationsRequest>
+        Model::ListConfiguredModelAlgorithmAssociationsOutcomeCallable ListConfiguredModelAlgorithmAssociationsCallable(const ListConfiguredModelAlgorithmAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::ListConfiguredModelAlgorithmAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListConfiguredModelAlgorithmAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConfiguredModelAlgorithmAssociationsRequestT = Model::ListConfiguredModelAlgorithmAssociationsRequest>
+        void ListConfiguredModelAlgorithmAssociationsAsync(const ListConfiguredModelAlgorithmAssociationsRequestT& request, const ListConfiguredModelAlgorithmAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::ListConfiguredModelAlgorithmAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of configured model algorithms.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConfiguredModelAlgorithmsOutcome ListConfiguredModelAlgorithms(const Model::ListConfiguredModelAlgorithmsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListConfiguredModelAlgorithms that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConfiguredModelAlgorithmsRequestT = Model::ListConfiguredModelAlgorithmsRequest>
+        Model::ListConfiguredModelAlgorithmsOutcomeCallable ListConfiguredModelAlgorithmsCallable(const ListConfiguredModelAlgorithmsRequestT& request = {}) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::ListConfiguredModelAlgorithms, request);
+        }
+
+        /**
+         * An Async wrapper for ListConfiguredModelAlgorithms that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConfiguredModelAlgorithmsRequestT = Model::ListConfiguredModelAlgorithmsRequest>
+        void ListConfiguredModelAlgorithmsAsync(const ListConfiguredModelAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConfiguredModelAlgorithmsRequestT& request = {}) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::ListConfiguredModelAlgorithms, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of ML input channels.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListMLInputChannels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMLInputChannelsOutcome ListMLInputChannels(const Model::ListMLInputChannelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMLInputChannels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMLInputChannelsRequestT = Model::ListMLInputChannelsRequest>
+        Model::ListMLInputChannelsOutcomeCallable ListMLInputChannelsCallable(const ListMLInputChannelsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::ListMLInputChannels, request);
+        }
+
+        /**
+         * An Async wrapper for ListMLInputChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMLInputChannelsRequestT = Model::ListMLInputChannelsRequest>
+        void ListMLInputChannelsAsync(const ListMLInputChannelsRequestT& request, const ListMLInputChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::ListMLInputChannels, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of tags for a provided resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -561,6 +1283,57 @@ namespace CleanRoomsML
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsMLClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of trained model inference jobs that match the request
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelInferenceJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrainedModelInferenceJobsOutcome ListTrainedModelInferenceJobs(const Model::ListTrainedModelInferenceJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTrainedModelInferenceJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTrainedModelInferenceJobsRequestT = Model::ListTrainedModelInferenceJobsRequest>
+        Model::ListTrainedModelInferenceJobsOutcomeCallable ListTrainedModelInferenceJobsCallable(const ListTrainedModelInferenceJobsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::ListTrainedModelInferenceJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListTrainedModelInferenceJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTrainedModelInferenceJobsRequestT = Model::ListTrainedModelInferenceJobsRequest>
+        void ListTrainedModelInferenceJobsAsync(const ListTrainedModelInferenceJobsRequestT& request, const ListTrainedModelInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::ListTrainedModelInferenceJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of trained models.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrainedModelsOutcome ListTrainedModels(const Model::ListTrainedModelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTrainedModels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTrainedModelsRequestT = Model::ListTrainedModelsRequest>
+        Model::ListTrainedModelsOutcomeCallable ListTrainedModelsCallable(const ListTrainedModelsRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::ListTrainedModels, request);
+        }
+
+        /**
+         * An Async wrapper for ListTrainedModels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTrainedModelsRequestT = Model::ListTrainedModelsRequest>
+        void ListTrainedModelsAsync(const ListTrainedModelsRequestT& request, const ListTrainedModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::ListTrainedModels, request, handler, context);
         }
 
         /**
@@ -615,6 +1388,31 @@ namespace CleanRoomsML
         }
 
         /**
+         * <p>Assigns information about an ML configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/PutMLConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutMLConfigurationOutcome PutMLConfiguration(const Model::PutMLConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutMLConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutMLConfigurationRequestT = Model::PutMLConfigurationRequest>
+        Model::PutMLConfigurationOutcomeCallable PutMLConfigurationCallable(const PutMLConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::PutMLConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for PutMLConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutMLConfigurationRequestT = Model::PutMLConfigurationRequest>
+        void PutMLConfigurationAsync(const PutMLConfigurationRequestT& request, const PutMLConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::PutMLConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Export an audience of a specified size after you have generated an
          * audience.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartAudienceExportJob">AWS
@@ -664,6 +1462,58 @@ namespace CleanRoomsML
         void StartAudienceGenerationJobAsync(const StartAudienceGenerationJobRequestT& request, const StartAudienceGenerationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CleanRoomsMLClient::StartAudienceGenerationJob, request, handler, context);
+        }
+
+        /**
+         * <p>Provides the information necessary to start a trained model export
+         * job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartTrainedModelExportJobOutcome StartTrainedModelExportJob(const Model::StartTrainedModelExportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartTrainedModelExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartTrainedModelExportJobRequestT = Model::StartTrainedModelExportJobRequest>
+        Model::StartTrainedModelExportJobOutcomeCallable StartTrainedModelExportJobCallable(const StartTrainedModelExportJobRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::StartTrainedModelExportJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartTrainedModelExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartTrainedModelExportJobRequestT = Model::StartTrainedModelExportJobRequest>
+        void StartTrainedModelExportJobAsync(const StartTrainedModelExportJobRequestT& request, const StartTrainedModelExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::StartTrainedModelExportJob, request, handler, context);
+        }
+
+        /**
+         * <p>Defines the information necessary to begin a trained model inference
+         * job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelInferenceJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartTrainedModelInferenceJobOutcome StartTrainedModelInferenceJob(const Model::StartTrainedModelInferenceJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartTrainedModelInferenceJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartTrainedModelInferenceJobRequestT = Model::StartTrainedModelInferenceJobRequest>
+        Model::StartTrainedModelInferenceJobOutcomeCallable StartTrainedModelInferenceJobCallable(const StartTrainedModelInferenceJobRequestT& request) const
+        {
+            return SubmitCallable(&CleanRoomsMLClient::StartTrainedModelInferenceJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartTrainedModelInferenceJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartTrainedModelInferenceJobRequestT = Model::StartTrainedModelInferenceJobRequest>
+        void StartTrainedModelInferenceJobAsync(const StartTrainedModelInferenceJobRequestT& request, const StartTrainedModelInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CleanRoomsMLClient::StartTrainedModelInferenceJob, request, handler, context);
         }
 
         /**

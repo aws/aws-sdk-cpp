@@ -13,6 +13,7 @@
 #include <aws/synthetics/model/VpcConfigInput.h>
 #include <aws/synthetics/model/VisualReferenceInput.h>
 #include <aws/synthetics/model/ArtifactConfigInput.h>
+#include <aws/synthetics/model/ProvisionedResourceCleanupSetting.h>
 #include <utility>
 
 namespace Aws
@@ -222,6 +223,24 @@ namespace Model
     inline UpdateCanaryRequest& WithArtifactConfig(const ArtifactConfigInput& value) { SetArtifactConfig(value); return *this;}
     inline UpdateCanaryRequest& WithArtifactConfig(ArtifactConfigInput&& value) { SetArtifactConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to also delete the Lambda functions and layers used by this
+     * canary when the canary is deleted.</p> <p>If the value of this parameter is
+     * <code>OFF</code>, then the value of the <code>DeleteLambda</code> parameter of
+     * the <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a>
+     * operation determines whether the Lambda functions and layers will be
+     * deleted.</p>
+     */
+    inline const ProvisionedResourceCleanupSetting& GetProvisionedResourceCleanup() const{ return m_provisionedResourceCleanup; }
+    inline bool ProvisionedResourceCleanupHasBeenSet() const { return m_provisionedResourceCleanupHasBeenSet; }
+    inline void SetProvisionedResourceCleanup(const ProvisionedResourceCleanupSetting& value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = value; }
+    inline void SetProvisionedResourceCleanup(ProvisionedResourceCleanupSetting&& value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = std::move(value); }
+    inline UpdateCanaryRequest& WithProvisionedResourceCleanup(const ProvisionedResourceCleanupSetting& value) { SetProvisionedResourceCleanup(value); return *this;}
+    inline UpdateCanaryRequest& WithProvisionedResourceCleanup(ProvisionedResourceCleanupSetting&& value) { SetProvisionedResourceCleanup(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -259,6 +278,9 @@ namespace Model
 
     ArtifactConfigInput m_artifactConfig;
     bool m_artifactConfigHasBeenSet = false;
+
+    ProvisionedResourceCleanupSetting m_provisionedResourceCleanup;
+    bool m_provisionedResourceCleanupHasBeenSet = false;
   };
 
 } // namespace Model

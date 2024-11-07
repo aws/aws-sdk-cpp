@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent/model/PromptFlowNodeSourceConfiguration.h>
 #include <utility>
 
@@ -46,6 +47,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains configurations for a guardrail to apply to the prompt in this node
+     * and the response generated from it.</p>
+     */
+    inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+    inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
+    inline void SetGuardrailConfiguration(const GuardrailConfiguration& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
+    inline void SetGuardrailConfiguration(GuardrailConfiguration&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
+    inline PromptFlowNodeConfiguration& WithGuardrailConfiguration(const GuardrailConfiguration& value) { SetGuardrailConfiguration(value); return *this;}
+    inline PromptFlowNodeConfiguration& WithGuardrailConfiguration(GuardrailConfiguration&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies whether the prompt is from Prompt management or defined inline.</p>
      */
     inline const PromptFlowNodeSourceConfiguration& GetSourceConfiguration() const{ return m_sourceConfiguration; }
@@ -56,6 +70,9 @@ namespace Model
     inline PromptFlowNodeConfiguration& WithSourceConfiguration(PromptFlowNodeSourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
     ///@}
   private:
+
+    GuardrailConfiguration m_guardrailConfiguration;
+    bool m_guardrailConfigurationHasBeenSet = false;
 
     PromptFlowNodeSourceConfiguration m_sourceConfiguration;
     bool m_sourceConfigurationHasBeenSet = false;

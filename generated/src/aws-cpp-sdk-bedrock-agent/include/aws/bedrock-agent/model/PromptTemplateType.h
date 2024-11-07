@@ -16,7 +16,8 @@ namespace Model
   enum class PromptTemplateType
   {
     NOT_SET,
-    TEXT
+    TEXT,
+    CHAT
   };
 
 namespace PromptTemplateTypeMapper

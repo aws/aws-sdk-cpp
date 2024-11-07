@@ -20,6 +20,7 @@ namespace Model
 
 PromptVariant::PromptVariant() : 
     m_additionalModelRequestFieldsHasBeenSet(false),
+    m_genAiResourceHasBeenSet(false),
     m_inferenceConfigurationHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_modelIdHasBeenSet(false),
@@ -43,6 +44,13 @@ PromptVariant& PromptVariant::operator =(JsonView jsonValue)
     m_additionalModelRequestFields = jsonValue.GetObject("additionalModelRequestFields");
 
     m_additionalModelRequestFieldsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("genAiResource"))
+  {
+    m_genAiResource = jsonValue.GetObject("genAiResource");
+
+    m_genAiResourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inferenceConfiguration"))
@@ -103,6 +111,12 @@ JsonValue PromptVariant::Jsonize() const
     {
        payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
     }
+  }
+
+  if(m_genAiResourceHasBeenSet)
+  {
+   payload.WithObject("genAiResource", m_genAiResource.Jsonize());
+
   }
 
   if(m_inferenceConfigurationHasBeenSet)

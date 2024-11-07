@@ -80,6 +80,7 @@
 #include <aws/bedrock-agent/model/UpdateFlowAliasResult.h>
 #include <aws/bedrock-agent/model/UpdateKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/UpdatePromptResult.h>
+#include <aws/bedrock-agent/model/ValidateFlowDefinitionResult.h>
 #include <aws/bedrock-agent/model/ListAgentsRequest.h>
 #include <aws/bedrock-agent/model/ListKnowledgeBasesRequest.h>
 #include <aws/bedrock-agent/model/ListPromptsRequest.h>
@@ -186,6 +187,7 @@ namespace Aws
       class UpdateFlowAliasRequest;
       class UpdateKnowledgeBaseRequest;
       class UpdatePromptRequest;
+      class ValidateFlowDefinitionRequest;
       /* End of service model forward declarations required in BedrockAgentClient header */
 
       /* Service model Outcome class definitions */
@@ -251,6 +253,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateFlowAliasResult, BedrockAgentError> UpdateFlowAliasOutcome;
       typedef Aws::Utils::Outcome<UpdateKnowledgeBaseResult, BedrockAgentError> UpdateKnowledgeBaseOutcome;
       typedef Aws::Utils::Outcome<UpdatePromptResult, BedrockAgentError> UpdatePromptOutcome;
+      typedef Aws::Utils::Outcome<ValidateFlowDefinitionResult, BedrockAgentError> ValidateFlowDefinitionOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -316,6 +319,7 @@ namespace Aws
       typedef std::future<UpdateFlowAliasOutcome> UpdateFlowAliasOutcomeCallable;
       typedef std::future<UpdateKnowledgeBaseOutcome> UpdateKnowledgeBaseOutcomeCallable;
       typedef std::future<UpdatePromptOutcome> UpdatePromptOutcomeCallable;
+      typedef std::future<ValidateFlowDefinitionOutcome> ValidateFlowDefinitionOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -384,6 +388,7 @@ namespace Aws
     typedef std::function<void(const BedrockAgentClient*, const Model::UpdateFlowAliasRequest&, const Model::UpdateFlowAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFlowAliasResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentClient*, const Model::UpdateKnowledgeBaseRequest&, const Model::UpdateKnowledgeBaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKnowledgeBaseResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentClient*, const Model::UpdatePromptRequest&, const Model::UpdatePromptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePromptResponseReceivedHandler;
+    typedef std::function<void(const BedrockAgentClient*, const Model::ValidateFlowDefinitionRequest&, const Model::ValidateFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateFlowDefinitionResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace BedrockAgent
 } // namespace Aws

@@ -26,7 +26,9 @@ UpdateCanaryRequest::UpdateCanaryRequest() :
     m_vpcConfigHasBeenSet(false),
     m_visualReferenceHasBeenSet(false),
     m_artifactS3LocationHasBeenSet(false),
-    m_artifactConfigHasBeenSet(false)
+    m_artifactConfigHasBeenSet(false),
+    m_provisionedResourceCleanup(ProvisionedResourceCleanupSetting::NOT_SET),
+    m_provisionedResourceCleanupHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,11 @@ Aws::String UpdateCanaryRequest::SerializePayload() const
   {
    payload.WithObject("ArtifactConfig", m_artifactConfig.Jsonize());
 
+  }
+
+  if(m_provisionedResourceCleanupHasBeenSet)
+  {
+   payload.WithString("ProvisionedResourceCleanup", ProvisionedResourceCleanupSettingMapper::GetNameForProvisionedResourceCleanupSetting(m_provisionedResourceCleanup));
   }
 
   return payload.View().WriteReadable();

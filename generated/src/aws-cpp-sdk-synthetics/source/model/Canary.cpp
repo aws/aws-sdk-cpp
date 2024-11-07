@@ -36,6 +36,8 @@ Canary::Canary() :
     m_runtimeVersionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_visualReferenceHasBeenSet(false),
+    m_provisionedResourceCleanup(ProvisionedResourceCleanupSetting::NOT_SET),
+    m_provisionedResourceCleanupHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_artifactConfigHasBeenSet(false)
 {
@@ -154,6 +156,13 @@ Canary& Canary::operator =(JsonView jsonValue)
     m_visualReferenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProvisionedResourceCleanup"))
+  {
+    m_provisionedResourceCleanup = ProvisionedResourceCleanupSettingMapper::GetProvisionedResourceCleanupSettingForName(jsonValue.GetString("ProvisionedResourceCleanup"));
+
+    m_provisionedResourceCleanupHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -266,6 +275,11 @@ JsonValue Canary::Jsonize() const
   {
    payload.WithObject("VisualReference", m_visualReference.Jsonize());
 
+  }
+
+  if(m_provisionedResourceCleanupHasBeenSet)
+  {
+   payload.WithString("ProvisionedResourceCleanup", ProvisionedResourceCleanupSettingMapper::GetNameForProvisionedResourceCleanupSetting(m_provisionedResourceCleanup));
   }
 
   if(m_tagsHasBeenSet)

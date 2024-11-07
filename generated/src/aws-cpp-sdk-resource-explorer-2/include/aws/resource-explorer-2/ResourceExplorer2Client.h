@@ -441,6 +441,33 @@ namespace ResourceExplorer2
         }
 
         /**
+         * <p>Retrieves details of the specified <a
+         * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html">Amazon
+         * Web Services-managed view</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetManagedView">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetManagedViewOutcome GetManagedView(const Model::GetManagedViewRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetManagedView that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetManagedViewRequestT = Model::GetManagedViewRequest>
+        Model::GetManagedViewOutcomeCallable GetManagedViewCallable(const GetManagedViewRequestT& request) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::GetManagedView, request);
+        }
+
+        /**
+         * An Async wrapper for GetManagedView that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetManagedViewRequestT = Model::GetManagedViewRequest>
+        void GetManagedViewAsync(const GetManagedViewRequestT& request, const GetManagedViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::GetManagedView, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves details of the specified view.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetView">AWS
          * API Reference</a></p>
@@ -518,6 +545,34 @@ namespace ResourceExplorer2
         void ListIndexesForMembersAsync(const ListIndexesForMembersRequestT& request, const ListIndexesForMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ResourceExplorer2Client::ListIndexesForMembers, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the Amazon resource names (ARNs) of the <a
+         * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html">Amazon
+         * Web Services-managed views</a> available in the Amazon Web Services Region in
+         * which you call this operation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListManagedViews">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedViewsOutcome ListManagedViews(const Model::ListManagedViewsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListManagedViews that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListManagedViewsRequestT = Model::ListManagedViewsRequest>
+        Model::ListManagedViewsOutcomeCallable ListManagedViewsCallable(const ListManagedViewsRequestT& request = {}) const
+        {
+            return SubmitCallable(&ResourceExplorer2Client::ListManagedViews, request);
+        }
+
+        /**
+         * An Async wrapper for ListManagedViews that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListManagedViewsRequestT = Model::ListManagedViewsRequest>
+        void ListManagedViewsAsync(const ListManagedViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListManagedViewsRequestT& request = {}) const
+        {
+            return SubmitAsync(&ResourceExplorer2Client::ListManagedViews, request, handler, context);
         }
 
         /**

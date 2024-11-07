@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int TEXT_HASH = HashingUtils::HashString("TEXT");
+        static const int CHAT_HASH = HashingUtils::HashString("CHAT");
 
 
         PromptTemplateType GetPromptTemplateTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == TEXT_HASH)
           {
             return PromptTemplateType::TEXT;
+          }
+          else if (hashCode == CHAT_HASH)
+          {
+            return PromptTemplateType::CHAT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case PromptTemplateType::TEXT:
             return "TEXT";
+          case PromptTemplateType::CHAT:
+            return "CHAT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

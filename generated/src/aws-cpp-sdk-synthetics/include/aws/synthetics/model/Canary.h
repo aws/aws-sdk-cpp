@@ -13,6 +13,7 @@
 #include <aws/synthetics/model/CanaryTimeline.h>
 #include <aws/synthetics/model/VpcConfigOutput.h>
 #include <aws/synthetics/model/VisualReferenceOutput.h>
+#include <aws/synthetics/model/ProvisionedResourceCleanupSetting.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/synthetics/model/ArtifactConfigOutput.h>
 #include <utility>
@@ -244,6 +245,25 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether to also delete the Lambda functions and layers used by this
+     * canary when the canary is deleted. If it is <code>AUTOMATIC</code>, the Lambda
+     * functions and layers will be deleted when the canary is deleted.</p> <p>If the
+     * value of this parameter is <code>OFF</code>, then the value of the
+     * <code>DeleteLambda</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a>
+     * operation determines whether the Lambda functions and layers will be
+     * deleted.</p>
+     */
+    inline const ProvisionedResourceCleanupSetting& GetProvisionedResourceCleanup() const{ return m_provisionedResourceCleanup; }
+    inline bool ProvisionedResourceCleanupHasBeenSet() const { return m_provisionedResourceCleanupHasBeenSet; }
+    inline void SetProvisionedResourceCleanup(const ProvisionedResourceCleanupSetting& value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = value; }
+    inline void SetProvisionedResourceCleanup(ProvisionedResourceCleanupSetting&& value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = std::move(value); }
+    inline Canary& WithProvisionedResourceCleanup(const ProvisionedResourceCleanupSetting& value) { SetProvisionedResourceCleanup(value); return *this;}
+    inline Canary& WithProvisionedResourceCleanup(ProvisionedResourceCleanupSetting&& value) { SetProvisionedResourceCleanup(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The list of key-value pairs that are associated with the canary.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -320,6 +340,9 @@ namespace Model
 
     VisualReferenceOutput m_visualReference;
     bool m_visualReferenceHasBeenSet = false;
+
+    ProvisionedResourceCleanupSetting m_provisionedResourceCleanup;
+    bool m_provisionedResourceCleanupHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

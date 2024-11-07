@@ -66,7 +66,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_defaultInstanceWarmup(0),
     m_defaultInstanceWarmupHasBeenSet(false),
     m_trafficSourcesHasBeenSet(false),
-    m_instanceMaintenancePolicyHasBeenSet(false)
+    m_instanceMaintenancePolicyHasBeenSet(false),
+    m_availabilityZoneDistributionHasBeenSet(false)
 {
 }
 
@@ -346,6 +347,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_instanceMaintenancePolicy = instanceMaintenancePolicyNode;
       m_instanceMaintenancePolicyHasBeenSet = true;
     }
+    XmlNode availabilityZoneDistributionNode = resultNode.FirstChild("AvailabilityZoneDistribution");
+    if(!availabilityZoneDistributionNode.IsNull())
+    {
+      m_availabilityZoneDistribution = availabilityZoneDistributionNode;
+      m_availabilityZoneDistributionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -582,6 +589,13 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       m_instanceMaintenancePolicy.OutputToStream(oStream, instanceMaintenancePolicyLocationAndMemberSs.str().c_str());
   }
 
+  if(m_availabilityZoneDistributionHasBeenSet)
+  {
+      Aws::StringStream availabilityZoneDistributionLocationAndMemberSs;
+      availabilityZoneDistributionLocationAndMemberSs << location << index << locationValue << ".AvailabilityZoneDistribution";
+      m_availabilityZoneDistribution.OutputToStream(oStream, availabilityZoneDistributionLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -779,6 +793,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       Aws::String instanceMaintenancePolicyLocationAndMember(location);
       instanceMaintenancePolicyLocationAndMember += ".InstanceMaintenancePolicy";
       m_instanceMaintenancePolicy.OutputToStream(oStream, instanceMaintenancePolicyLocationAndMember.c_str());
+  }
+  if(m_availabilityZoneDistributionHasBeenSet)
+  {
+      Aws::String availabilityZoneDistributionLocationAndMember(location);
+      availabilityZoneDistributionLocationAndMember += ".AvailabilityZoneDistribution";
+      m_availabilityZoneDistribution.OutputToStream(oStream, availabilityZoneDistributionLocationAndMember.c_str());
   }
 }
 

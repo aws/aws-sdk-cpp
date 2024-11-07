@@ -31,6 +31,7 @@ Membership::Membership() :
     m_status(MembershipStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_memberAbilitiesHasBeenSet(false),
+    m_mlMemberAbilitiesHasBeenSet(false),
     m_queryLogStatus(MembershipQueryLogStatus::NOT_SET),
     m_queryLogStatusHasBeenSet(false),
     m_defaultResultConfigurationHasBeenSet(false),
@@ -126,6 +127,13 @@ Membership& Membership::operator =(JsonView jsonValue)
     m_memberAbilitiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mlMemberAbilities"))
+  {
+    m_mlMemberAbilities = jsonValue.GetObject("mlMemberAbilities");
+
+    m_mlMemberAbilitiesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("queryLogStatus"))
   {
     m_queryLogStatus = MembershipQueryLogStatusMapper::GetMembershipQueryLogStatusForName(jsonValue.GetString("queryLogStatus"));
@@ -219,6 +227,12 @@ JsonValue Membership::Jsonize() const
      memberAbilitiesJsonList[memberAbilitiesIndex].AsString(MemberAbilityMapper::GetNameForMemberAbility(m_memberAbilities[memberAbilitiesIndex]));
    }
    payload.WithArray("memberAbilities", std::move(memberAbilitiesJsonList));
+
+  }
+
+  if(m_mlMemberAbilitiesHasBeenSet)
+  {
+   payload.WithObject("mlMemberAbilities", m_mlMemberAbilities.Jsonize());
 
   }
 

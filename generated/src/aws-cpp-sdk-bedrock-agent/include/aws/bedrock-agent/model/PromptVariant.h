@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/Document.h>
+#include <aws/bedrock-agent/model/PromptGenAiResource.h>
 #include <aws/bedrock-agent/model/PromptInferenceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -61,6 +62,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies a generative AI resource with which to use the prompt.</p>
+     */
+    inline const PromptGenAiResource& GetGenAiResource() const{ return m_genAiResource; }
+    inline bool GenAiResourceHasBeenSet() const { return m_genAiResourceHasBeenSet; }
+    inline void SetGenAiResource(const PromptGenAiResource& value) { m_genAiResourceHasBeenSet = true; m_genAiResource = value; }
+    inline void SetGenAiResource(PromptGenAiResource&& value) { m_genAiResourceHasBeenSet = true; m_genAiResource = std::move(value); }
+    inline PromptVariant& WithGenAiResource(const PromptGenAiResource& value) { SetGenAiResource(value); return *this;}
+    inline PromptVariant& WithGenAiResource(PromptGenAiResource&& value) { SetGenAiResource(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains inference configurations for the prompt variant.</p>
      */
     inline const PromptInferenceConfiguration& GetInferenceConfiguration() const{ return m_inferenceConfiguration; }
@@ -74,9 +87,7 @@ namespace Model
     ///@{
     /**
      * <p>An array of objects, each containing a key-value pair that defines a metadata
-     * tag and value to attach to a prompt variant. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create
-     * a prompt using Prompt management</a>.</p>
+     * tag and value to attach to a prompt variant.</p>
      */
     inline const Aws::Vector<PromptMetadataEntry>& GetMetadata() const{ return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
@@ -145,6 +156,9 @@ namespace Model
 
     Aws::Utils::Document m_additionalModelRequestFields;
     bool m_additionalModelRequestFieldsHasBeenSet = false;
+
+    PromptGenAiResource m_genAiResource;
+    bool m_genAiResourceHasBeenSet = false;
 
     PromptInferenceConfiguration m_inferenceConfiguration;
     bool m_inferenceConfigurationHasBeenSet = false;
