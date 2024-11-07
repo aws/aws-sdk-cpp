@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/FlowValidationDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/FlowValidationSeverity.h>
+#include <aws/bedrock-agent/model/FlowValidationType.h>
 #include <utility>
 
 namespace Aws
@@ -45,6 +47,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specific details about the validation issue encountered in the flow.</p>
+     */
+    inline const FlowValidationDetails& GetDetails() const{ return m_details; }
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+    inline void SetDetails(const FlowValidationDetails& value) { m_detailsHasBeenSet = true; m_details = value; }
+    inline void SetDetails(FlowValidationDetails&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
+    inline FlowValidation& WithDetails(const FlowValidationDetails& value) { SetDetails(value); return *this;}
+    inline FlowValidation& WithDetails(FlowValidationDetails&& value) { SetDetails(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A message describing the validation error.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
@@ -68,13 +82,31 @@ namespace Model
     inline FlowValidation& WithSeverity(const FlowValidationSeverity& value) { SetSeverity(value); return *this;}
     inline FlowValidation& WithSeverity(FlowValidationSeverity&& value) { SetSeverity(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of validation issue encountered in the flow.</p>
+     */
+    inline const FlowValidationType& GetType() const{ return m_type; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline void SetType(const FlowValidationType& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(FlowValidationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline FlowValidation& WithType(const FlowValidationType& value) { SetType(value); return *this;}
+    inline FlowValidation& WithType(FlowValidationType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
   private:
+
+    FlowValidationDetails m_details;
+    bool m_detailsHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
     FlowValidationSeverity m_severity;
     bool m_severityHasBeenSet = false;
+
+    FlowValidationType m_type;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

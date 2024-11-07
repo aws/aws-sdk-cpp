@@ -44,11 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains model-specific inference configurations that aren't in the
-     * <code>inferenceConfiguration</code> field. To see model-specific inference
-     * parameters, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
-     * request parameters and response fields for foundation models</a>.</p>
+     * <p>Additional fields to be included in the model request for the Prompt
+     * node.</p>
      */
     inline Aws::Utils::DocumentView GetAdditionalModelRequestFields() const{ return m_additionalModelRequestFields; }
     inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }

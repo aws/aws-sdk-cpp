@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanrooms/model/MemberStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/MLMemberAbilities.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cleanrooms/model/PaymentConfiguration.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
@@ -99,6 +100,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>Provides a summary of the ML abilities for the collaboration member.</p>
+     * <p>Custom ML modeling is in beta release and is subject to change. For beta
+     * terms and conditions, see <i>Betas and Previews</i> in the <a
+     * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a>.</p>
+     */
+    inline const MLMemberAbilities& GetMlAbilities() const{ return m_mlAbilities; }
+    inline bool MlAbilitiesHasBeenSet() const { return m_mlAbilitiesHasBeenSet; }
+    inline void SetMlAbilities(const MLMemberAbilities& value) { m_mlAbilitiesHasBeenSet = true; m_mlAbilities = value; }
+    inline void SetMlAbilities(MLMemberAbilities&& value) { m_mlAbilitiesHasBeenSet = true; m_mlAbilities = std::move(value); }
+    inline MemberSummary& WithMlAbilities(const MLMemberAbilities& value) { SetMlAbilities(value); return *this;}
+    inline MemberSummary& WithMlAbilities(MLMemberAbilities&& value) { SetMlAbilities(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The time when the member was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
@@ -174,6 +191,9 @@ namespace Model
 
     Aws::Vector<MemberAbility> m_abilities;
     bool m_abilitiesHasBeenSet = false;
+
+    MLMemberAbilities m_mlAbilities;
+    bool m_mlAbilitiesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
     bool m_createTimeHasBeenSet = false;

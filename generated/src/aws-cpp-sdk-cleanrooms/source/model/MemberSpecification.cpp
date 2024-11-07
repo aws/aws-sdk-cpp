@@ -21,6 +21,7 @@ namespace Model
 MemberSpecification::MemberSpecification() : 
     m_accountIdHasBeenSet(false),
     m_memberAbilitiesHasBeenSet(false),
+    m_mlMemberAbilitiesHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_paymentConfigurationHasBeenSet(false)
 {
@@ -49,6 +50,13 @@ MemberSpecification& MemberSpecification::operator =(JsonView jsonValue)
       m_memberAbilities.push_back(MemberAbilityMapper::GetMemberAbilityForName(memberAbilitiesJsonList[memberAbilitiesIndex].AsString()));
     }
     m_memberAbilitiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mlMemberAbilities"))
+  {
+    m_mlMemberAbilities = jsonValue.GetObject("mlMemberAbilities");
+
+    m_mlMemberAbilitiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("displayName"))
@@ -86,6 +94,12 @@ JsonValue MemberSpecification::Jsonize() const
      memberAbilitiesJsonList[memberAbilitiesIndex].AsString(MemberAbilityMapper::GetNameForMemberAbility(m_memberAbilities[memberAbilitiesIndex]));
    }
    payload.WithArray("memberAbilities", std::move(memberAbilitiesJsonList));
+
+  }
+
+  if(m_mlMemberAbilitiesHasBeenSet)
+  {
+   payload.WithObject("mlMemberAbilities", m_mlMemberAbilities.Jsonize());
 
   }
 

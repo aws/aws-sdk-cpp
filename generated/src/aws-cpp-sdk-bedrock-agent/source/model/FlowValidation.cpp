@@ -19,9 +19,12 @@ namespace Model
 {
 
 FlowValidation::FlowValidation() : 
+    m_detailsHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_severity(FlowValidationSeverity::NOT_SET),
-    m_severityHasBeenSet(false)
+    m_severityHasBeenSet(false),
+    m_type(FlowValidationType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,13 @@ FlowValidation::FlowValidation(JsonView jsonValue)
 
 FlowValidation& FlowValidation::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("details"))
+  {
+    m_details = jsonValue.GetObject("details");
+
+    m_detailsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
@@ -47,12 +57,25 @@ FlowValidation& FlowValidation::operator =(JsonView jsonValue)
     m_severityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = FlowValidationTypeMapper::GetFlowValidationTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue FlowValidation::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_detailsHasBeenSet)
+  {
+   payload.WithObject("details", m_details.Jsonize());
+
+  }
 
   if(m_messageHasBeenSet)
   {
@@ -63,6 +86,11 @@ JsonValue FlowValidation::Jsonize() const
   if(m_severityHasBeenSet)
   {
    payload.WithString("severity", FlowValidationSeverityMapper::GetNameForFlowValidationSeverity(m_severity));
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", FlowValidationTypeMapper::GetNameForFlowValidationType(m_type));
   }
 
   return payload;

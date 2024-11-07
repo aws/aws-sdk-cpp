@@ -19,6 +19,7 @@ namespace Model
 {
 
 PromptFlowNodeConfiguration::PromptFlowNodeConfiguration() : 
+    m_guardrailConfigurationHasBeenSet(false),
     m_sourceConfigurationHasBeenSet(false)
 {
 }
@@ -31,6 +32,13 @@ PromptFlowNodeConfiguration::PromptFlowNodeConfiguration(JsonView jsonValue)
 
 PromptFlowNodeConfiguration& PromptFlowNodeConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("guardrailConfiguration"))
+  {
+    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
+
+    m_guardrailConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sourceConfiguration"))
   {
     m_sourceConfiguration = jsonValue.GetObject("sourceConfiguration");
@@ -44,6 +52,12 @@ PromptFlowNodeConfiguration& PromptFlowNodeConfiguration::operator =(JsonView js
 JsonValue PromptFlowNodeConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_guardrailConfigurationHasBeenSet)
+  {
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
+
+  }
 
   if(m_sourceConfigurationHasBeenSet)
   {

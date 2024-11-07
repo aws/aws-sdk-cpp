@@ -57,7 +57,11 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether to also delete the Lambda functions and layers used by this
-     * canary. The default is false.</p> <p>Type: Boolean</p>
+     * canary. The default is <code>false</code>.</p> <p>Your setting for this
+     * parameter is used only if the canary doesn't have <code>AUTOMATIC</code> for its
+     * <code>ProvisionedResourceCleanup</code> field. If that field is set to
+     * <code>AUTOMATIC</code>, then the Lambda functions and layers will be deleted
+     * when this canary is deleted. </p> <p>Type: Boolean</p>
      */
     inline bool GetDeleteLambda() const{ return m_deleteLambda; }
     inline bool DeleteLambdaHasBeenSet() const { return m_deleteLambdaHasBeenSet; }

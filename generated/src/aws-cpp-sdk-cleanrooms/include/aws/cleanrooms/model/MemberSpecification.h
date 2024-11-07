@@ -7,6 +7,7 @@
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cleanrooms/model/MLMemberAbilities.h>
 #include <aws/cleanrooms/model/PaymentConfiguration.h>
 #include <aws/cleanrooms/model/MemberAbility.h>
 #include <utility>
@@ -71,6 +72,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ML abilities granted to the collaboration member.</p> <p>Custom ML
+     * modeling is in beta release and is subject to change. For beta terms and
+     * conditions, see <i>Betas and Previews</i> in the <a
+     * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a>.</p>
+     */
+    inline const MLMemberAbilities& GetMlMemberAbilities() const{ return m_mlMemberAbilities; }
+    inline bool MlMemberAbilitiesHasBeenSet() const { return m_mlMemberAbilitiesHasBeenSet; }
+    inline void SetMlMemberAbilities(const MLMemberAbilities& value) { m_mlMemberAbilitiesHasBeenSet = true; m_mlMemberAbilities = value; }
+    inline void SetMlMemberAbilities(MLMemberAbilities&& value) { m_mlMemberAbilitiesHasBeenSet = true; m_mlMemberAbilities = std::move(value); }
+    inline MemberSpecification& WithMlMemberAbilities(const MLMemberAbilities& value) { SetMlMemberAbilities(value); return *this;}
+    inline MemberSpecification& WithMlMemberAbilities(MLMemberAbilities&& value) { SetMlMemberAbilities(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The member's display name.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
@@ -104,6 +121,9 @@ namespace Model
 
     Aws::Vector<MemberAbility> m_memberAbilities;
     bool m_memberAbilitiesHasBeenSet = false;
+
+    MLMemberAbilities m_mlMemberAbilities;
+    bool m_mlMemberAbilitiesHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;

@@ -8,6 +8,7 @@
 #include <aws/cleanrooms/CleanRoomsRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cleanrooms/model/MLMemberAbilities.h>
 #include <aws/cleanrooms/model/DataEncryptionMetadata.h>
 #include <aws/cleanrooms/model/CollaborationQueryLogStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -95,6 +96,22 @@ namespace Model
     inline CreateCollaborationRequest& WithCreatorMemberAbilities(Aws::Vector<MemberAbility>&& value) { SetCreatorMemberAbilities(std::move(value)); return *this;}
     inline CreateCollaborationRequest& AddCreatorMemberAbilities(const MemberAbility& value) { m_creatorMemberAbilitiesHasBeenSet = true; m_creatorMemberAbilities.push_back(value); return *this; }
     inline CreateCollaborationRequest& AddCreatorMemberAbilities(MemberAbility&& value) { m_creatorMemberAbilitiesHasBeenSet = true; m_creatorMemberAbilities.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ML abilities granted to the collaboration creator.</p> <p>Custom ML
+     * modeling is in beta release and is subject to change. For beta terms and
+     * conditions, see <i>Betas and Previews</i> in the <a
+     * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a>.</p>
+     */
+    inline const MLMemberAbilities& GetCreatorMLMemberAbilities() const{ return m_creatorMLMemberAbilities; }
+    inline bool CreatorMLMemberAbilitiesHasBeenSet() const { return m_creatorMLMemberAbilitiesHasBeenSet; }
+    inline void SetCreatorMLMemberAbilities(const MLMemberAbilities& value) { m_creatorMLMemberAbilitiesHasBeenSet = true; m_creatorMLMemberAbilities = value; }
+    inline void SetCreatorMLMemberAbilities(MLMemberAbilities&& value) { m_creatorMLMemberAbilitiesHasBeenSet = true; m_creatorMLMemberAbilities = std::move(value); }
+    inline CreateCollaborationRequest& WithCreatorMLMemberAbilities(const MLMemberAbilities& value) { SetCreatorMLMemberAbilities(value); return *this;}
+    inline CreateCollaborationRequest& WithCreatorMLMemberAbilities(MLMemberAbilities&& value) { SetCreatorMLMemberAbilities(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,6 +215,9 @@ namespace Model
 
     Aws::Vector<MemberAbility> m_creatorMemberAbilities;
     bool m_creatorMemberAbilitiesHasBeenSet = false;
+
+    MLMemberAbilities m_creatorMLMemberAbilities;
+    bool m_creatorMLMemberAbilitiesHasBeenSet = false;
 
     Aws::String m_creatorDisplayName;
     bool m_creatorDisplayNameHasBeenSet = false;

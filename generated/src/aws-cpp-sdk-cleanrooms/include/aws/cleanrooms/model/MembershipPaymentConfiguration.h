@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/MembershipQueryComputePaymentConfig.h>
+#include <aws/cleanrooms/model/MembershipMLPaymentConfig.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +51,26 @@ namespace Model
     inline MembershipPaymentConfiguration& WithQueryCompute(const MembershipQueryComputePaymentConfig& value) { SetQueryCompute(value); return *this;}
     inline MembershipPaymentConfiguration& WithQueryCompute(MembershipQueryComputePaymentConfig&& value) { SetQueryCompute(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The payment responsibilities accepted by the collaboration member for machine
+     * learning costs.</p>
+     */
+    inline const MembershipMLPaymentConfig& GetMachineLearning() const{ return m_machineLearning; }
+    inline bool MachineLearningHasBeenSet() const { return m_machineLearningHasBeenSet; }
+    inline void SetMachineLearning(const MembershipMLPaymentConfig& value) { m_machineLearningHasBeenSet = true; m_machineLearning = value; }
+    inline void SetMachineLearning(MembershipMLPaymentConfig&& value) { m_machineLearningHasBeenSet = true; m_machineLearning = std::move(value); }
+    inline MembershipPaymentConfiguration& WithMachineLearning(const MembershipMLPaymentConfig& value) { SetMachineLearning(value); return *this;}
+    inline MembershipPaymentConfiguration& WithMachineLearning(MembershipMLPaymentConfig&& value) { SetMachineLearning(std::move(value)); return *this;}
+    ///@}
   private:
 
     MembershipQueryComputePaymentConfig m_queryCompute;
     bool m_queryComputeHasBeenSet = false;
+
+    MembershipMLPaymentConfig m_machineLearning;
+    bool m_machineLearningHasBeenSet = false;
   };
 
 } // namespace Model

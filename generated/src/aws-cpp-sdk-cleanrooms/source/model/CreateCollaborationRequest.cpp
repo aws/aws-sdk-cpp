@@ -17,6 +17,7 @@ CreateCollaborationRequest::CreateCollaborationRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creatorMemberAbilitiesHasBeenSet(false),
+    m_creatorMLMemberAbilitiesHasBeenSet(false),
     m_creatorDisplayNameHasBeenSet(false),
     m_dataEncryptionMetadataHasBeenSet(false),
     m_queryLogStatus(CollaborationQueryLogStatus::NOT_SET),
@@ -63,6 +64,12 @@ Aws::String CreateCollaborationRequest::SerializePayload() const
      creatorMemberAbilitiesJsonList[creatorMemberAbilitiesIndex].AsString(MemberAbilityMapper::GetNameForMemberAbility(m_creatorMemberAbilities[creatorMemberAbilitiesIndex]));
    }
    payload.WithArray("creatorMemberAbilities", std::move(creatorMemberAbilitiesJsonList));
+
+  }
+
+  if(m_creatorMLMemberAbilitiesHasBeenSet)
+  {
+   payload.WithObject("creatorMLMemberAbilities", m_creatorMLMemberAbilities.Jsonize());
 
   }
 

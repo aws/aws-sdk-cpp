@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about the guardrail associated with an agent.</p><p><h3>See
+   * <p>Details about a guardrail associated with a resource.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GuardrailConfiguration">AWS
    * API Reference</a></p>

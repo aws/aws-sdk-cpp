@@ -24,7 +24,11 @@ StarburstParameters::StarburstParameters() :
     m_portHasBeenSet(false),
     m_catalogHasBeenSet(false),
     m_productType(StarburstProductType::NOT_SET),
-    m_productTypeHasBeenSet(false)
+    m_productTypeHasBeenSet(false),
+    m_databaseAccessControlRoleHasBeenSet(false),
+    m_authenticationType(AuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false),
+    m_oAuthParametersHasBeenSet(false)
 {
 }
 
@@ -64,6 +68,27 @@ StarburstParameters& StarburstParameters::operator =(JsonView jsonValue)
     m_productTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DatabaseAccessControlRole"))
+  {
+    m_databaseAccessControlRole = jsonValue.GetString("DatabaseAccessControlRole");
+
+    m_databaseAccessControlRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AuthenticationType"))
+  {
+    m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
+
+    m_authenticationTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OAuthParameters"))
+  {
+    m_oAuthParameters = jsonValue.GetObject("OAuthParameters");
+
+    m_oAuthParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +117,23 @@ JsonValue StarburstParameters::Jsonize() const
   if(m_productTypeHasBeenSet)
   {
    payload.WithString("ProductType", StarburstProductTypeMapper::GetNameForStarburstProductType(m_productType));
+  }
+
+  if(m_databaseAccessControlRoleHasBeenSet)
+  {
+   payload.WithString("DatabaseAccessControlRole", m_databaseAccessControlRole);
+
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("AuthenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
+  }
+
+  if(m_oAuthParametersHasBeenSet)
+  {
+   payload.WithObject("OAuthParameters", m_oAuthParameters.Jsonize());
+
   }
 
   return payload;

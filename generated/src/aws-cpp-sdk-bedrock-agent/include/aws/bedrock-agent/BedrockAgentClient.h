@@ -1823,6 +1823,31 @@ namespace BedrockAgent
             return SubmitAsync(&BedrockAgentClient::UpdatePrompt, request, handler, context);
         }
 
+        /**
+         * <p>Validates the definition of a flow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ValidateFlowDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ValidateFlowDefinitionOutcome ValidateFlowDefinition(const Model::ValidateFlowDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ValidateFlowDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ValidateFlowDefinitionRequestT = Model::ValidateFlowDefinitionRequest>
+        Model::ValidateFlowDefinitionOutcomeCallable ValidateFlowDefinitionCallable(const ValidateFlowDefinitionRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentClient::ValidateFlowDefinition, request);
+        }
+
+        /**
+         * An Async wrapper for ValidateFlowDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ValidateFlowDefinitionRequestT = Model::ValidateFlowDefinitionRequest>
+        void ValidateFlowDefinitionAsync(const ValidateFlowDefinitionRequestT& request, const ValidateFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentClient::ValidateFlowDefinition, request, handler, context);
+        }
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<BedrockAgentEndpointProviderBase>& accessEndpointProvider();

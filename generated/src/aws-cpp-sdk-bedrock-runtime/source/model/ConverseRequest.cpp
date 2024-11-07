@@ -20,6 +20,7 @@ ConverseRequest::ConverseRequest() :
     m_toolConfigHasBeenSet(false),
     m_guardrailConfigHasBeenSet(false),
     m_additionalModelRequestFieldsHasBeenSet(false),
+    m_promptVariablesHasBeenSet(false),
     m_additionalModelResponseFieldPathsHasBeenSet(false)
 {
 }
@@ -74,6 +75,17 @@ Aws::String ConverseRequest::SerializePayload() const
     {
        payload.WithObject("additionalModelRequestFields", JsonValue(m_additionalModelRequestFields.View()));
     }
+  }
+
+  if(m_promptVariablesHasBeenSet)
+  {
+   JsonValue promptVariablesJsonMap;
+   for(auto& promptVariablesItem : m_promptVariables)
+   {
+     promptVariablesJsonMap.WithObject(promptVariablesItem.first, promptVariablesItem.second.Jsonize());
+   }
+   payload.WithObject("promptVariables", std::move(promptVariablesJsonMap));
+
   }
 
   if(m_additionalModelResponseFieldPathsHasBeenSet)

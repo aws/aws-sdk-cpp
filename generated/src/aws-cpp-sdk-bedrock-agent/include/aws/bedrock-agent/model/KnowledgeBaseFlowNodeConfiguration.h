@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -45,6 +46,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains configurations for a guardrail to apply during query and response
+     * generation for the knowledge base in this configuration.</p>
+     */
+    inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+    inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
+    inline void SetGuardrailConfiguration(const GuardrailConfiguration& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
+    inline void SetGuardrailConfiguration(GuardrailConfiguration&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
+    inline KnowledgeBaseFlowNodeConfiguration& WithGuardrailConfiguration(const GuardrailConfiguration& value) { SetGuardrailConfiguration(value); return *this;}
+    inline KnowledgeBaseFlowNodeConfiguration& WithGuardrailConfiguration(GuardrailConfiguration&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the knowledge base to query.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
@@ -74,6 +88,9 @@ namespace Model
     inline KnowledgeBaseFlowNodeConfiguration& WithModelId(const char* value) { SetModelId(value); return *this;}
     ///@}
   private:
+
+    GuardrailConfiguration m_guardrailConfiguration;
+    bool m_guardrailConfigurationHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;

@@ -11,6 +11,7 @@
 #include <aws/autoscaling/model/MixedInstancesPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
+#include <aws/autoscaling/model/AvailabilityZoneDistribution.h>
 #include <aws/autoscaling/model/LifecycleHookSpecification.h>
 #include <aws/autoscaling/model/Tag.h>
 #include <aws/autoscaling/model/TrafficSourceIdentifier.h>
@@ -545,6 +546,18 @@ namespace Model
     inline CreateAutoScalingGroupRequest& WithInstanceMaintenancePolicy(const InstanceMaintenancePolicy& value) { SetInstanceMaintenancePolicy(value); return *this;}
     inline CreateAutoScalingGroupRequest& WithInstanceMaintenancePolicy(InstanceMaintenancePolicy&& value) { SetInstanceMaintenancePolicy(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The instance capacity distribution across Availability Zones.</p>
+     */
+    inline const AvailabilityZoneDistribution& GetAvailabilityZoneDistribution() const{ return m_availabilityZoneDistribution; }
+    inline bool AvailabilityZoneDistributionHasBeenSet() const { return m_availabilityZoneDistributionHasBeenSet; }
+    inline void SetAvailabilityZoneDistribution(const AvailabilityZoneDistribution& value) { m_availabilityZoneDistributionHasBeenSet = true; m_availabilityZoneDistribution = value; }
+    inline void SetAvailabilityZoneDistribution(AvailabilityZoneDistribution&& value) { m_availabilityZoneDistributionHasBeenSet = true; m_availabilityZoneDistribution = std::move(value); }
+    inline CreateAutoScalingGroupRequest& WithAvailabilityZoneDistribution(const AvailabilityZoneDistribution& value) { SetAvailabilityZoneDistribution(value); return *this;}
+    inline CreateAutoScalingGroupRequest& WithAvailabilityZoneDistribution(AvailabilityZoneDistribution&& value) { SetAvailabilityZoneDistribution(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -630,6 +643,9 @@ namespace Model
 
     InstanceMaintenancePolicy m_instanceMaintenancePolicy;
     bool m_instanceMaintenancePolicyHasBeenSet = false;
+
+    AvailabilityZoneDistribution m_availabilityZoneDistribution;
+    bool m_availabilityZoneDistributionHasBeenSet = false;
   };
 
 } // namespace Model

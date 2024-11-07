@@ -19,6 +19,7 @@ namespace Model
 {
 
 PromptTemplateConfiguration::PromptTemplateConfiguration() : 
+    m_chatHasBeenSet(false),
     m_textHasBeenSet(false)
 {
 }
@@ -31,6 +32,13 @@ PromptTemplateConfiguration::PromptTemplateConfiguration(JsonView jsonValue)
 
 PromptTemplateConfiguration& PromptTemplateConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("chat"))
+  {
+    m_chat = jsonValue.GetObject("chat");
+
+    m_chatHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetObject("text");
@@ -44,6 +52,12 @@ PromptTemplateConfiguration& PromptTemplateConfiguration::operator =(JsonView js
 JsonValue PromptTemplateConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_chatHasBeenSet)
+  {
+   payload.WithObject("chat", m_chat.Jsonize());
+
+  }
 
   if(m_textHasBeenSet)
   {

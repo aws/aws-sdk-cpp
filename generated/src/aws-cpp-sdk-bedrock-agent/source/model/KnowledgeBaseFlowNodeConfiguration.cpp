@@ -19,6 +19,7 @@ namespace Model
 {
 
 KnowledgeBaseFlowNodeConfiguration::KnowledgeBaseFlowNodeConfiguration() : 
+    m_guardrailConfigurationHasBeenSet(false),
     m_knowledgeBaseIdHasBeenSet(false),
     m_modelIdHasBeenSet(false)
 {
@@ -32,6 +33,13 @@ KnowledgeBaseFlowNodeConfiguration::KnowledgeBaseFlowNodeConfiguration(JsonView 
 
 KnowledgeBaseFlowNodeConfiguration& KnowledgeBaseFlowNodeConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("guardrailConfiguration"))
+  {
+    m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
+
+    m_guardrailConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
@@ -52,6 +60,12 @@ KnowledgeBaseFlowNodeConfiguration& KnowledgeBaseFlowNodeConfiguration::operator
 JsonValue KnowledgeBaseFlowNodeConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_guardrailConfigurationHasBeenSet)
+  {
+   payload.WithObject("guardrailConfiguration", m_guardrailConfiguration.Jsonize());
+
+  }
 
   if(m_knowledgeBaseIdHasBeenSet)
   {

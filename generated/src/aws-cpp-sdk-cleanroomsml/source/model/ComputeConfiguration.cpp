@@ -1,0 +1,59 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/cleanroomsml/model/ComputeConfiguration.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace CleanRoomsML
+{
+namespace Model
+{
+
+ComputeConfiguration::ComputeConfiguration() : 
+    m_workerHasBeenSet(false)
+{
+}
+
+ComputeConfiguration::ComputeConfiguration(JsonView jsonValue)
+  : ComputeConfiguration()
+{
+  *this = jsonValue;
+}
+
+ComputeConfiguration& ComputeConfiguration::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("worker"))
+  {
+    m_worker = jsonValue.GetObject("worker");
+
+    m_workerHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue ComputeConfiguration::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_workerHasBeenSet)
+  {
+   payload.WithObject("worker", m_worker.Jsonize());
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace CleanRoomsML
+} // namespace Aws

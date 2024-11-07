@@ -12,8 +12,10 @@
 #include <aws/bedrock-runtime/model/ToolConfiguration.h>
 #include <aws/bedrock-runtime/model/GuardrailConfiguration.h>
 #include <aws/core/utils/Document.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-runtime/model/Message.h>
 #include <aws/bedrock-runtime/model/SystemContentBlock.h>
+#include <aws/bedrock-runtime/model/PromptVariableValues.h>
 #include <utility>
 
 namespace Aws
@@ -41,10 +43,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the model that you want to call.</p> <p>The
-     * <code>modelId</code> to provide depends on the type of model or throughput that
-     * you use:</p> <ul> <li> <p>If you use a base model, specify the model ID or its
-     * ARN. For a list of model IDs for base models, see <a
+     * <p>Specifies the model or throughput with which to run inference, or the prompt
+     * resource to use in inference. The value depends on the resource that you
+     * use:</p> <ul> <li> <p>If you use a base model, specify the model ID or its ARN.
+     * For a list of model IDs for base models, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon
      * Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User
      * Guide.</p> </li> <li> <p>If you use an inference profile, specify the inference
@@ -60,7 +62,9 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use
      * a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p> </li>
-     * </ul> <p>The Converse API doesn't support <a
+     * <li> <p>To include a prompt that was defined in Prompt management, specify the
+     * ARN of the prompt version to use.</p> </li> </ul> <p>The Converse API doesn't
+     * support <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported
      * models</a>.</p>
      */
@@ -90,7 +94,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A system prompt to pass to the model.</p>
+     * <p>A prompt that provides instructions or context to the model about the task it
+     * should perform, or the persona it should adopt during the conversation.</p>
      */
     inline const Aws::Vector<SystemContentBlock>& GetSystem() const{ return m_system; }
     inline bool SystemHasBeenSet() const { return m_systemHasBeenSet; }
@@ -104,10 +109,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Inference parameters to pass to the model. <code>Converse</code> supports a
-     * base set of inference parameters. If you need to pass additional parameters that
-     * the model supports, use the <code>additionalModelRequestFields</code> request
-     * field.</p>
+     * <p>Inference parameters to pass to the model. <code>Converse</code> and
+     * <code>ConverseStream</code> support a base set of inference parameters. If you
+     * need to pass additional parameters that the model supports, use the
+     * <code>additionalModelRequestFields</code> request field.</p>
      */
     inline const InferenceConfiguration& GetInferenceConfig() const{ return m_inferenceConfig; }
     inline bool InferenceConfigHasBeenSet() const { return m_inferenceConfigHasBeenSet; }
@@ -135,7 +140,11 @@ namespace Model
     ///@{
     /**
      * <p>Configuration information for a guardrail that you want to use in the
-     * request. </p>
+     * request. If you include <code>guardContent</code> blocks in the
+     * <code>content</code> field in the <code>messages</code> field, the guardrail
+     * operates only on those messages. If you include no <code>guardContent</code>
+     * blocks, the guardrail operates on all messages in the request body and in any
+     * included prompt resource.</p>
      */
     inline const GuardrailConfiguration& GetGuardrailConfig() const{ return m_guardrailConfig; }
     inline bool GuardrailConfigHasBeenSet() const { return m_guardrailConfigHasBeenSet; }
@@ -148,8 +157,9 @@ namespace Model
     ///@{
     /**
      * <p>Additional inference parameters that the model supports, beyond the base set
-     * of inference parameters that <code>Converse</code> supports in the
-     * <code>inferenceConfig</code> field. For more information, see <a
+     * of inference parameters that <code>Converse</code> and
+     * <code>ConverseStream</code> support in the <code>inferenceConfig</code> field.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model
      * parameters</a>.</p>
      */
@@ -163,16 +173,39 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains a map of variables in a prompt from Prompt management to objects
+     * containing the values to fill in for them when running model invocation. This
+     * field is ignored if you don't specify a prompt resource in the
+     * <code>modelId</code> field.</p>
+     */
+    inline const Aws::Map<Aws::String, PromptVariableValues>& GetPromptVariables() const{ return m_promptVariables; }
+    inline bool PromptVariablesHasBeenSet() const { return m_promptVariablesHasBeenSet; }
+    inline void SetPromptVariables(const Aws::Map<Aws::String, PromptVariableValues>& value) { m_promptVariablesHasBeenSet = true; m_promptVariables = value; }
+    inline void SetPromptVariables(Aws::Map<Aws::String, PromptVariableValues>&& value) { m_promptVariablesHasBeenSet = true; m_promptVariables = std::move(value); }
+    inline ConverseRequest& WithPromptVariables(const Aws::Map<Aws::String, PromptVariableValues>& value) { SetPromptVariables(value); return *this;}
+    inline ConverseRequest& WithPromptVariables(Aws::Map<Aws::String, PromptVariableValues>&& value) { SetPromptVariables(std::move(value)); return *this;}
+    inline ConverseRequest& AddPromptVariables(const Aws::String& key, const PromptVariableValues& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(key, value); return *this; }
+    inline ConverseRequest& AddPromptVariables(Aws::String&& key, const PromptVariableValues& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(std::move(key), value); return *this; }
+    inline ConverseRequest& AddPromptVariables(const Aws::String& key, PromptVariableValues&& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(key, std::move(value)); return *this; }
+    inline ConverseRequest& AddPromptVariables(Aws::String&& key, PromptVariableValues&& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(std::move(key), std::move(value)); return *this; }
+    inline ConverseRequest& AddPromptVariables(const char* key, PromptVariableValues&& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(key, std::move(value)); return *this; }
+    inline ConverseRequest& AddPromptVariables(const char* key, const PromptVariableValues& value) { m_promptVariablesHasBeenSet = true; m_promptVariables.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Additional model parameters field paths to return in the response.
-     * <code>Converse</code> returns the requested fields as a JSON Pointer object in
-     * the <code>additionalModelResponseFields</code> field. The following is example
-     * JSON for <code>additionalModelResponseFieldPaths</code>.</p> <p> <code>[
+     * <code>Converse</code> and <code>ConverseStream</code> return the requested
+     * fields as a JSON Pointer object in the
+     * <code>additionalModelResponseFields</code> field. The following is example JSON
+     * for <code>additionalModelResponseFieldPaths</code>.</p> <p> <code>[
      * "/stop_sequence" ]</code> </p> <p>For information about the JSON Pointer syntax,
      * see the <a href="https://datatracker.ietf.org/doc/html/rfc6901">Internet
      * Engineering Task Force (IETF)</a> documentation.</p> <p> <code>Converse</code>
-     * rejects an empty JSON Pointer or incorrectly structured JSON Pointer with a
-     * <code>400</code> error code. if the JSON Pointer is valid, but the requested
-     * field is not in the model response, it is ignored by <code>Converse</code>.</p>
+     * and <code>ConverseStream</code> reject an empty JSON Pointer or incorrectly
+     * structured JSON Pointer with a <code>400</code> error code. if the JSON Pointer
+     * is valid, but the requested field is not in the model response, it is ignored by
+     * <code>Converse</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalModelResponseFieldPaths() const{ return m_additionalModelResponseFieldPaths; }
     inline bool AdditionalModelResponseFieldPathsHasBeenSet() const { return m_additionalModelResponseFieldPathsHasBeenSet; }
@@ -206,6 +239,9 @@ namespace Model
 
     Aws::Utils::Document m_additionalModelRequestFields;
     bool m_additionalModelRequestFieldsHasBeenSet = false;
+
+    Aws::Map<Aws::String, PromptVariableValues> m_promptVariables;
+    bool m_promptVariablesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_additionalModelResponseFieldPaths;
     bool m_additionalModelResponseFieldPathsHasBeenSet = false;

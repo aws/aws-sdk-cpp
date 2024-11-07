@@ -109,14 +109,27 @@ namespace BedrockRuntime
          * If a model has unique inference parameters, you can also pass those unique
          * parameters to the model.</p> <p>Amazon Bedrock doesn't store any text, images,
          * or documents that you provide as content. The data is only used to generate the
-         * response.</p> <p>For information about the Converse API, see <i>Use the Converse
-         * API</i> in the <i>Amazon Bedrock User Guide</i>. To use a guardrail, see <i>Use
-         * a guardrail with the Converse API</i> in the <i>Amazon Bedrock User Guide</i>.
-         * To use a tool with a model, see <i>Tool use (Function calling)</i> in the
-         * <i>Amazon Bedrock User Guide</i> </p> <p>For example code, see <i>Converse API
-         * examples</i> in the <i>Amazon Bedrock User Guide</i>. </p> <p>This operation
-         * requires permission for the <code>bedrock:InvokeModel</code> action.
-         * </p><p><h3>See Also:</h3>   <a
+         * response.</p> <p>You can submit a prompt by including it in the
+         * <code>messages</code> field, specifying the <code>modelId</code> of a foundation
+         * model or inference profile to run inference on it, and including any other
+         * fields that are relevant to your use case.</p> <p>You can also submit a prompt
+         * from Prompt management by specifying the ARN of the prompt version and including
+         * a map of variables to values in the <code>promptVariables</code> field. You can
+         * append more messages to the prompt by using the <code>messages</code> field. If
+         * you use a prompt from Prompt management, you can't include the following fields
+         * in the request: <code>additionalModelRequestFields</code>,
+         * <code>inferenceConfig</code>, <code>system</code>, or <code>toolConfig</code>.
+         * Instead, these fields must be defined through Prompt management. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-use.html">Use
+         * a prompt from Prompt management</a>.</p> <p>For information about the Converse
+         * API, see <i>Use the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To
+         * use a guardrail, see <i>Use a guardrail with the Converse API</i> in the
+         * <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool use
+         * (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> </p> <p>For
+         * example code, see <i>Converse API examples</i> in the <i>Amazon Bedrock User
+         * Guide</i>. </p> <p>This operation requires permission for the
+         * <code>bedrock:InvokeModel</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">AWS
          * API Reference</a></p>
          */
@@ -152,7 +165,20 @@ namespace BedrockRuntime
          *  <p>The CLI doesn't support streaming operations in Amazon Bedrock,
          * including <code>ConverseStream</code>.</p>  <p>Amazon Bedrock doesn't
          * store any text, images, or documents that you provide as content. The data is
-         * only used to generate the response.</p> <p>For information about the Converse
+         * only used to generate the response.</p> <p>You can submit a prompt by including
+         * it in the <code>messages</code> field, specifying the <code>modelId</code> of a
+         * foundation model or inference profile to run inference on it, and including any
+         * other fields that are relevant to your use case.</p> <p>You can also submit a
+         * prompt from Prompt management by specifying the ARN of the prompt version and
+         * including a map of variables to values in the <code>promptVariables</code>
+         * field. You can append more messages to the prompt by using the
+         * <code>messages</code> field. If you use a prompt from Prompt management, you
+         * can't include the following fields in the request:
+         * <code>additionalModelRequestFields</code>, <code>inferenceConfig</code>,
+         * <code>system</code>, or <code>toolConfig</code>. Instead, these fields must be
+         * defined through Prompt management. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-use.html">Use
+         * a prompt from Prompt management</a>.</p> <p>For information about the Converse
          * API, see <i>Use the Converse API</i> in the <i>Amazon Bedrock User Guide</i>. To
          * use a guardrail, see <i>Use a guardrail with the Converse API</i> in the
          * <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool use
