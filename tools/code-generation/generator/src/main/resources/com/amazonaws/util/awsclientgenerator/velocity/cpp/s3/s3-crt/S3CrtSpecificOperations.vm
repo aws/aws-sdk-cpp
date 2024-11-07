@@ -227,13 +227,16 @@ static void ${operation.name}RequestShutdownCallback(void *user_data)
   S3Crt::Model::${operation.name}Outcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
 #end
   //log into monitor 
-  if(!outcome.IsSuccess())
+  if (userData->asyncCallerContext)
   {
-    userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
-  }
-  else
-  {
-    userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
+    if(!outcome.IsSuccess())
+    {
+      userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
+    }
+    else
+    {
+      userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
+    }
   }
 #if($operation.request)
 #if($operation.name == "PutObject")
@@ -320,7 +323,10 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 #elseif($operation.name == "CopyObject")
   userData->copyResponseHandler = handler;
 #end
-  userData->asyncCallerContext = handlerContext;
+  if(handlerContext)
+  {
+    userData->asyncCallerContext = handlerContext;
+  }
 #if($serviceModel.endpointRules)
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
   if (userData != nullptr &&
@@ -339,7 +345,10 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 #else
   InitCommonCrtRequestOption(userData, &options, &request, uri, Aws::Http::HttpMethod::HTTP_${operation.http.method});
 #end
-  handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"${className}"},request.GetServiceRequestName(), userData->request);
+  if(handlerContext)
+  {
+    handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"${className}"},request.GetServiceRequestName(), userData->request);
+  }
   options.shutdown_callback = ${operation.request.shape.name}ShutdownCallback;
 #if($operation.name == "PutObject")
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
