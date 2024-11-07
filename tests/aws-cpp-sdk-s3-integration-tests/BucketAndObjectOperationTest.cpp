@@ -2518,4 +2518,38 @@ namespace
             }
         }
     }
+
+    TEST_F(BucketAndObjectOperationTest, PutObjectChecksumWithGuarunteedChunkedObject) {
+      struct ChecksumTestCase {
+        std::function<PutObjectRequest(PutObjectRequest)> chucksumRequestMutator;
+        String body;
+      };
+
+      const String fullBucketName = CalculateBucketName(BASE_CHECKSUMS_BUCKET_NAME.c_str());
+      SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+      CreateBucketRequest createBucketRequest;
+      createBucketRequest.SetBucket(fullBucketName);
+      createBucketRequest.SetACL(BucketCannedACL::private_);
+      CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
+      AWS_ASSERT_SUCCESS(createBucketOutcome);
+
+      Vector<ChecksumTestCase> testCases{
+          {[](PutObjectRequest request) -> PutObjectRequest { return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32); },
+           Aws::String(1024 * 1024, 'e')},
+          {[](PutObjectRequest request) -> PutObjectRequest { return request.WithChecksumAlgorithm(ChecksumAlgorithm::CRC32C); },
+           Aws::String(1024 * 1024, 'l')},
+          {[](PutObjectRequest request) -> PutObjectRequest { return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA1); },
+           Aws::String(1024 * 1024, 'd')},
+          {[](PutObjectRequest request) -> PutObjectRequest { return request.WithChecksumAlgorithm(ChecksumAlgorithm::SHA256); },
+           Aws::String(1024 * 1024, 'a')}};
+
+      for (const auto& testCase : testCases) {
+        auto request = testCase.chucksumRequestMutator(PutObjectRequest().WithBucket(fullBucketName).WithKey("Metaphor"));
+        std::shared_ptr<IOStream> body =
+            Aws::MakeShared<StringStream>(ALLOCATION_TAG, testCase.body, std::ios_base::in | std::ios_base::binary);
+        request.SetBody(body);
+        const auto response = Client->PutObject(request);
+        EXPECT_TRUE(response.IsSuccess());
+      }
+    }
 }
