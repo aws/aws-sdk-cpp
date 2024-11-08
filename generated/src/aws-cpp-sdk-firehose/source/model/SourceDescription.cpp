@@ -20,7 +20,8 @@ namespace Model
 
 SourceDescription::SourceDescription() : 
     m_kinesisStreamSourceDescriptionHasBeenSet(false),
-    m_mSKSourceDescriptionHasBeenSet(false)
+    m_mSKSourceDescriptionHasBeenSet(false),
+    m_databaseSourceDescriptionHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ SourceDescription& SourceDescription::operator =(JsonView jsonValue)
     m_mSKSourceDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DatabaseSourceDescription"))
+  {
+    m_databaseSourceDescription = jsonValue.GetObject("DatabaseSourceDescription");
+
+    m_databaseSourceDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue SourceDescription::Jsonize() const
   if(m_mSKSourceDescriptionHasBeenSet)
   {
    payload.WithObject("MSKSourceDescription", m_mSKSourceDescription.Jsonize());
+
+  }
+
+  if(m_databaseSourceDescriptionHasBeenSet)
+  {
+   payload.WithObject("DatabaseSourceDescription", m_databaseSourceDescription.Jsonize());
 
   }
 

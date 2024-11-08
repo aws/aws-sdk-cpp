@@ -119,9 +119,9 @@ namespace Model
      * <p>The Elasticsearch type name. For Elasticsearch 6.x, there can be only one
      * type per index. If you try to specify a new type for an existing index that
      * already has another type, Firehose returns an error during runtime.</p> <p>If
-     * you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
+     * you upgrade Elasticsearch from 6.x to 7.x and don’t update your Firehose stream,
      * Firehose still delivers data to Elasticsearch with the old index name and type
-     * name. If you want to update your delivery stream with a new index name, provide
+     * name. If you want to update your Firehose stream with a new index name, provide
      * an empty string for <code>TypeName</code>. </p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
@@ -203,7 +203,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The CloudWatch logging options for your Firehose stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }

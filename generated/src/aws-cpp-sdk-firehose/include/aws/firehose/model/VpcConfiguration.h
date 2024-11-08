@@ -51,7 +51,7 @@ namespace Model
      * based on throughput. To enable Firehose to scale up the number of ENIs to match
      * throughput, ensure that you have sufficient quota. To help you calculate the
      * quota you need, assume that Firehose can create up to three ENIs for this
-     * delivery stream for each of the subnets specified here. For more information
+     * Firehose stream for each of the subnets specified here. For more information
      * about ENI quota, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network
      * Interfaces </a> in the Amazon VPC Quotas topic.</p>
@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the IAM role that you want the delivery stream to use to create
+     * <p>The ARN of the IAM role that you want the Firehose stream to use to create
      * endpoints in the destination VPC. You can use your existing Firehose delivery
      * role or you can specify a new role. In either case, make sure that the role
      * trusts the Firehose service principal and that it grants the following

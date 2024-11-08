@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the delivery stream to which you want to add the tags.</p>
+     * <p>The name of the Firehose stream to which you want to add the tags.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }

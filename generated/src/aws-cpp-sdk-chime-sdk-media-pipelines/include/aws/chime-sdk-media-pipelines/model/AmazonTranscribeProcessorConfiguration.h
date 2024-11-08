@@ -263,7 +263,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Turns language identification on or off for multiple languages.</p>
+     * <p>Turns language identification on or off for multiple languages.</p> 
+     * <p>Calls to this API must include a <code>LanguageCode</code>,
+     * <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code>
+     * parameter. If you include more than one of those parameters, your transcription
+     * job fails.</p> 
      */
     inline bool GetIdentifyMultipleLanguages() const{ return m_identifyMultipleLanguages; }
     inline bool IdentifyMultipleLanguagesHasBeenSet() const { return m_identifyMultipleLanguagesHasBeenSet; }

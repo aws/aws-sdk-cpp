@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p> The retry behavior in case Firehose is unable to deliver data to an Amazon
-   * S3 prefix.</p><p><h3>See Also:</h3>   <a
+   * <p> The retry behavior in case Firehose is unable to deliver data to a
+   * destination.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RetryOptions">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
     ///@{
     /**
      * <p>The period of time during which Firehose retries to deliver data to the
-     * specified Amazon S3 prefix.</p>
+     * specified destination.</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }

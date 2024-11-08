@@ -24,7 +24,8 @@ FunctionCode::FunctionCode() :
     m_s3BucketHasBeenSet(false),
     m_s3KeyHasBeenSet(false),
     m_s3ObjectVersionHasBeenSet(false),
-    m_imageUriHasBeenSet(false)
+    m_imageUriHasBeenSet(false),
+    m_sourceKMSKeyArnHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,13 @@ FunctionCode& FunctionCode::operator =(JsonView jsonValue)
     m_imageUriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceKMSKeyArn"))
+  {
+    m_sourceKMSKeyArn = jsonValue.GetString("SourceKMSKeyArn");
+
+    m_sourceKMSKeyArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +111,12 @@ JsonValue FunctionCode::Jsonize() const
   if(m_imageUriHasBeenSet)
   {
    payload.WithString("ImageUri", m_imageUri);
+
+  }
+
+  if(m_sourceKMSKeyArnHasBeenSet)
+  {
+   payload.WithString("SourceKMSKeyArn", m_sourceKMSKeyArn);
 
   }
 

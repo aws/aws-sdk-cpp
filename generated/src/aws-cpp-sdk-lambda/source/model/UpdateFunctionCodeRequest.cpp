@@ -25,7 +25,8 @@ UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_revisionIdHasBeenSet(false),
-    m_architecturesHasBeenSet(false)
+    m_architecturesHasBeenSet(false),
+    m_sourceKMSKeyArnHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,12 @@ Aws::String UpdateFunctionCodeRequest::SerializePayload() const
      architecturesJsonList[architecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_architectures[architecturesIndex]));
    }
    payload.WithArray("Architectures", std::move(architecturesJsonList));
+
+  }
+
+  if(m_sourceKMSKeyArnHasBeenSet)
+  {
+   payload.WithString("SourceKMSKeyArn", m_sourceKMSKeyArn);
 
   }
 

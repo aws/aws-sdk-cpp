@@ -46,6 +46,11 @@ namespace Model
             AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowOutputEvent received.");
         };
 
+        m_onFlowTraceEvent = [&](const FlowTraceEvent&)
+        {
+            AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "FlowTraceEvent received.");
+        };
+
         m_onError = [&](const AWSError<BedrockAgentRuntimeErrors>& error)
         {
             AWS_LOGSTREAM_TRACE(INVOKEFLOW_HANDLER_CLASS_TAG, "BedrockAgentRuntime Errors received, " << error);
@@ -130,6 +135,18 @@ namespace Model
             }
 
             m_onFlowOutputEvent(FlowOutputEvent{json.View()});
+            break;
+        }
+        case InvokeFlowEventType::FLOWTRACEEVENT:
+        {
+            JsonValue json(GetEventPayloadAsString());
+            if (!json.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(INVOKEFLOW_HANDLER_CLASS_TAG, "Unable to generate a proper FlowTraceEvent object from the response in JSON format.");
+                break;
+            }
+
+            m_onFlowTraceEvent(FlowTraceEvent{json.View()});
             break;
         }
         default:
@@ -227,6 +244,7 @@ namespace InvokeFlowEventMapper
     static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
     static const int FLOWCOMPLETIONEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowCompletionEvent");
     static const int FLOWOUTPUTEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowOutputEvent");
+    static const int FLOWTRACEEVENT_HASH = Aws::Utils::HashingUtils::HashString("flowTraceEvent");
 
     InvokeFlowEventType GetInvokeFlowEventTypeForName(const Aws::String& name)
     {
@@ -244,6 +262,10 @@ namespace InvokeFlowEventMapper
         {
             return InvokeFlowEventType::FLOWOUTPUTEVENT;
         }
+        else if (hashCode == FLOWTRACEEVENT_HASH)
+        {
+            return InvokeFlowEventType::FLOWTRACEEVENT;
+        }
         return InvokeFlowEventType::UNKNOWN;
     }
 
@@ -257,6 +279,8 @@ namespace InvokeFlowEventMapper
             return "flowCompletionEvent";
         case InvokeFlowEventType::FLOWOUTPUTEVENT:
             return "flowOutputEvent";
+        case InvokeFlowEventType::FLOWTRACEEVENT:
+            return "flowTraceEvent";
         default:
             return "Unknown";
         }

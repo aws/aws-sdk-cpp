@@ -82,30 +82,29 @@ namespace Firehose
         virtual ~FirehoseClient();
 
         /**
-         * <p>Creates a Firehose delivery stream.</p> <p>By default, you can create up to
-         * 50 delivery streams per Amazon Web Services Region.</p> <p>This is an
-         * asynchronous operation that immediately returns. The initial status of the
-         * delivery stream is <code>CREATING</code>. After the delivery stream is created,
-         * its status is <code>ACTIVE</code> and it now accepts data. If the delivery
-         * stream creation fails, the status transitions to <code>CREATING_FAILED</code>.
-         * Attempts to send data to a delivery stream that is not in the
-         * <code>ACTIVE</code> state cause an exception. To check the state of a delivery
-         * stream, use <a>DescribeDeliveryStream</a>.</p> <p>If the status of a delivery
-         * stream is <code>CREATING_FAILED</code>, this status doesn't change, and you
-         * can't invoke <code>CreateDeliveryStream</code> again on it. However, you can
-         * invoke the <a>DeleteDeliveryStream</a> operation to delete it.</p> <p>A Firehose
-         * delivery stream can be configured to receive records directly from providers
-         * using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it can be configured to use
-         * an existing Kinesis stream as its source. To specify a Kinesis data stream as
-         * input, set the <code>DeliveryStreamType</code> parameter to
-         * <code>KinesisStreamAsSource</code>, and provide the Kinesis stream Amazon
-         * Resource Name (ARN) and role ARN in the
+         * <p>Creates a Firehose stream.</p> <p>By default, you can create up to 50
+         * Firehose streams per Amazon Web Services Region.</p> <p>This is an asynchronous
+         * operation that immediately returns. The initial status of the Firehose stream is
+         * <code>CREATING</code>. After the Firehose stream is created, its status is
+         * <code>ACTIVE</code> and it now accepts data. If the Firehose stream creation
+         * fails, the status transitions to <code>CREATING_FAILED</code>. Attempts to send
+         * data to a delivery stream that is not in the <code>ACTIVE</code> state cause an
+         * exception. To check the state of a Firehose stream, use
+         * <a>DescribeDeliveryStream</a>.</p> <p>If the status of a Firehose stream is
+         * <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke
+         * <code>CreateDeliveryStream</code> again on it. However, you can invoke the
+         * <a>DeleteDeliveryStream</a> operation to delete it.</p> <p>A Firehose stream can
+         * be configured to receive records directly from providers using <a>PutRecord</a>
+         * or <a>PutRecordBatch</a>, or it can be configured to use an existing Kinesis
+         * stream as its source. To specify a Kinesis data stream as input, set the
+         * <code>DeliveryStreamType</code> parameter to <code>KinesisStreamAsSource</code>,
+         * and provide the Kinesis stream Amazon Resource Name (ARN) and role ARN in the
          * <code>KinesisStreamSourceConfiguration</code> parameter.</p> <p>To create a
-         * delivery stream with server-side encryption (SSE) enabled, include
+         * Firehose stream with server-side encryption (SSE) enabled, include
          * <a>DeliveryStreamEncryptionConfigurationInput</a> in your request. This is
          * optional. You can also invoke <a>StartDeliveryStreamEncryption</a> to turn on
-         * SSE for an existing delivery stream that doesn't have SSE enabled.</p> <p>A
-         * delivery stream is configured with a single destination, such as Amazon Simple
+         * SSE for an existing Firehose stream that doesn't have SSE enabled.</p> <p>A
+         * Firehose stream is configured with a single destination, such as Amazon Simple
          * Storage Service (Amazon S3), Amazon Redshift, Amazon OpenSearch Service, Amazon
          * OpenSearch Serverless, Splunk, and any custom HTTP endpoint or HTTP endpoints
          * owned by or supported by third-party service providers, including Datadog,
@@ -168,19 +167,19 @@ namespace Firehose
         }
 
         /**
-         * <p>Deletes a delivery stream and its data.</p> <p>You can delete a delivery
+         * <p>Deletes a Firehose stream and its data.</p> <p>You can delete a Firehose
          * stream only if it is in one of the following states: <code>ACTIVE</code>,
          * <code>DELETING</code>, <code>CREATING_FAILED</code>, or
-         * <code>DELETING_FAILED</code>. You can't delete a delivery stream that is in the
-         * <code>CREATING</code> state. To check the state of a delivery stream, use
+         * <code>DELETING_FAILED</code>. You can't delete a Firehose stream that is in the
+         * <code>CREATING</code> state. To check the state of a Firehose stream, use
          * <a>DescribeDeliveryStream</a>. </p> <p>DeleteDeliveryStream is an asynchronous
-         * API. When an API request to DeleteDeliveryStream succeeds, the delivery stream
+         * API. When an API request to DeleteDeliveryStream succeeds, the Firehose stream
          * is marked for deletion, and it goes into the <code>DELETING</code> state.While
-         * the delivery stream is in the <code>DELETING</code> state, the service might
+         * the Firehose stream is in the <code>DELETING</code> state, the service might
          * continue to accept records, but it doesn't make any guarantees with respect to
          * delivering the data. Therefore, as a best practice, first stop any applications
-         * that are sending records before you delete a delivery stream.</p> <p>Removal of
-         * a delivery stream that is in the <code>DELETING</code> state is a low priority
+         * that are sending records before you delete a Firehose stream.</p> <p>Removal of
+         * a Firehose stream that is in the <code>DELETING</code> state is a low priority
          * operation for the service. A stream may remain in the <code>DELETING</code>
          * state for several minutes. Therefore, as a best practice, applications should
          * not wait for streams in the <code>DELETING</code> state to be removed.
@@ -209,10 +208,10 @@ namespace Firehose
         }
 
         /**
-         * <p>Describes the specified delivery stream and its status. For example, after
-         * your delivery stream is created, call <code>DescribeDeliveryStream</code> to see
-         * whether the delivery stream is <code>ACTIVE</code> and therefore ready for data
-         * to be sent to it. </p> <p>If the status of a delivery stream is
+         * <p>Describes the specified Firehose stream and its status. For example, after
+         * your Firehose stream is created, call <code>DescribeDeliveryStream</code> to see
+         * whether the Firehose stream is <code>ACTIVE</code> and therefore ready for data
+         * to be sent to it. </p> <p>If the status of a Firehose stream is
          * <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke
          * <a>CreateDeliveryStream</a> again on it. However, you can invoke the
          * <a>DeleteDeliveryStream</a> operation to delete it. If the status is
@@ -244,15 +243,15 @@ namespace Firehose
         }
 
         /**
-         * <p>Lists your delivery streams in alphabetical order of their names.</p> <p>The
-         * number of delivery streams might be too large to return using a single call to
-         * <code>ListDeliveryStreams</code>. You can limit the number of delivery streams
+         * <p>Lists your Firehose streams in alphabetical order of their names.</p> <p>The
+         * number of Firehose streams might be too large to return using a single call to
+         * <code>ListDeliveryStreams</code>. You can limit the number of Firehose streams
          * returned, using the <code>Limit</code> parameter. To determine whether there are
          * more delivery streams to list, check the value of
-         * <code>HasMoreDeliveryStreams</code> in the output. If there are more delivery
+         * <code>HasMoreDeliveryStreams</code> in the output. If there are more Firehose
          * streams to list, you can request them by calling this operation again and
          * setting the <code>ExclusiveStartDeliveryStreamName</code> parameter to the name
-         * of the last delivery stream returned in the last call.</p><p><h3>See Also:</h3> 
+         * of the last Firehose stream returned in the last call.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">AWS
          * API Reference</a></p>
@@ -278,7 +277,7 @@ namespace Firehose
         }
 
         /**
-         * <p>Lists the tags for the specified delivery stream. This operation has a limit
+         * <p>Lists the tags for the specified Firehose stream. This operation has a limit
          * of five transactions per second per account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListTagsForDeliveryStream">AWS
          * API Reference</a></p>
@@ -304,44 +303,49 @@ namespace Firehose
         }
 
         /**
-         * <p>Writes a single data record into an Amazon Firehose delivery stream. To write
-         * multiple data records into a delivery stream, use <a>PutRecordBatch</a>.
-         * Applications using these operations are referred to as producers.</p> <p>By
-         * default, each delivery stream can take in up to 2,000 transactions per second,
-         * 5,000 records per second, or 5 MB per second. If you use <a>PutRecord</a> and
+         * <p>Writes a single data record into an Firehose stream. To write multiple data
+         * records into a Firehose stream, use <a>PutRecordBatch</a>. Applications using
+         * these operations are referred to as producers.</p> <p>By default, each Firehose
+         * stream can take in up to 2,000 transactions per second, 5,000 records per
+         * second, or 5 MB per second. If you use <a>PutRecord</a> and
          * <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
-         * for each delivery stream. For more information about limits and how to request
+         * for each Firehose stream. For more information about limits and how to request
          * an increase, see <a
          * href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
          * Firehose Limits</a>. </p> <p>Firehose accumulates and publishes a particular
          * metric for a customer account in one minute intervals. It is possible that the
-         * bursts of incoming bytes/records ingested to a delivery stream last only for a
+         * bursts of incoming bytes/records ingested to a Firehose stream last only for a
          * few seconds. Due to this, the actual spikes in the traffic might not be fully
          * visible in the customer's 1 minute CloudWatch metrics.</p> <p>You must specify
-         * the name of the delivery stream and the data record when using <a>PutRecord</a>.
+         * the name of the Firehose stream and the data record when using <a>PutRecord</a>.
          * The data record consists of a data blob that can be up to 1,000 KiB in size, and
          * any kind of data. For example, it can be a segment from a log file, geographic
-         * location data, website clickstream data, and so on.</p> <p>Firehose buffers
-         * records before delivering them to the destination. To disambiguate the data
-         * blobs at the destination, a common solution is to use delimiters in the data,
-         * such as a newline (<code>\n</code>) or some other character unique within the
-         * data. This allows the consumer application to parse individual data items when
-         * reading the data from the destination.</p> <p>The <code>PutRecord</code>
-         * operation returns a <code>RecordId</code>, which is a unique string assigned to
-         * each record. Producer applications can use this ID for purposes such as
-         * auditability and investigation.</p> <p>If the <code>PutRecord</code> operation
-         * throws a <code>ServiceUnavailableException</code>, the API is automatically
-         * reinvoked (retried) 3 times. If the exception persists, it is possible that the
-         * throughput limits have been exceeded for the delivery stream. </p>
-         * <p>Re-invoking the Put API operations (for example, PutRecord and
-         * PutRecordBatch) can result in data duplicates. For larger data assets, allow for
-         * a longer time out before retrying Put API operations.</p> <p>Data records sent
-         * to Firehose are stored for 24 hours from the time they are added to a delivery
-         * stream as it tries to send the records to the destination. If the destination is
-         * unreachable for more than 24 hours, the data is no longer available.</p>
-         *  <p>Don't concatenate two or more base64 strings to form the data
-         * fields of your records. Instead, concatenate the raw data, then perform base64
-         * encoding.</p> <p><h3>See Also:</h3>   <a
+         * location data, website clickstream data, and so on.</p> <p>For multi record
+         * de-aggregation, you can not put more than 500 records even if the data blob
+         * length is less than 1000 KiB. If you include more than 500 records, the request
+         * succeeds but the record de-aggregation doesn't work as expected and
+         * transformation lambda is invoked with the complete base64 encoded data blob
+         * instead of de-aggregated base64 decoded records.</p> <p>Firehose buffers records
+         * before delivering them to the destination. To disambiguate the data blobs at the
+         * destination, a common solution is to use delimiters in the data, such as a
+         * newline (<code>\n</code>) or some other character unique within the data. This
+         * allows the consumer application to parse individual data items when reading the
+         * data from the destination.</p> <p>The <code>PutRecord</code> operation returns a
+         * <code>RecordId</code>, which is a unique string assigned to each record.
+         * Producer applications can use this ID for purposes such as auditability and
+         * investigation.</p> <p>If the <code>PutRecord</code> operation throws a
+         * <code>ServiceUnavailableException</code>, the API is automatically reinvoked
+         * (retried) 3 times. If the exception persists, it is possible that the throughput
+         * limits have been exceeded for the Firehose stream. </p> <p>Re-invoking the Put
+         * API operations (for example, PutRecord and PutRecordBatch) can result in data
+         * duplicates. For larger data assets, allow for a longer time out before retrying
+         * Put API operations.</p> <p>Data records sent to Firehose are stored for 24 hours
+         * from the time they are added to a Firehose stream as it tries to send the
+         * records to the destination. If the destination is unreachable for more than 24
+         * hours, the data is no longer available.</p>  <p>Don't concatenate two
+         * or more base64 strings to form the data fields of your records. Instead,
+         * concatenate the raw data, then perform base64 encoding.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
          * API Reference</a></p>
          */
@@ -366,13 +370,13 @@ namespace Firehose
         }
 
         /**
-         * <p>Writes multiple data records into a delivery stream in a single call, which
+         * <p>Writes multiple data records into a Firehose stream in a single call, which
          * can achieve higher throughput per producer than when writing single records. To
-         * write single data records into a delivery stream, use <a>PutRecord</a>.
+         * write single data records into a Firehose stream, use <a>PutRecord</a>.
          * Applications using these operations are referred to as producers.</p>
          * <p>Firehose accumulates and publishes a particular metric for a customer account
          * in one minute intervals. It is possible that the bursts of incoming
-         * bytes/records ingested to a delivery stream last only for a few seconds. Due to
+         * bytes/records ingested to a Firehose stream last only for a few seconds. Due to
          * this, the actual spikes in the traffic might not be fully visible in the
          * customer's 1 minute CloudWatch metrics.</p> <p>For information about service
          * quota, see <a
@@ -380,17 +384,22 @@ namespace Firehose
          * Firehose Quota</a>.</p> <p>Each <a>PutRecordBatch</a> request supports up to 500
          * records. Each record in the request can be as large as 1,000 KB (before base64
          * encoding), up to a limit of 4 MB for the entire request. These limits cannot be
-         * changed.</p> <p>You must specify the name of the delivery stream and the data
+         * changed.</p> <p>You must specify the name of the Firehose stream and the data
          * record when using <a>PutRecord</a>. The data record consists of a data blob that
          * can be up to 1,000 KB in size, and any kind of data. For example, it could be a
          * segment from a log file, geographic location data, website clickstream data, and
-         * so on.</p> <p>Firehose buffers records before delivering them to the
-         * destination. To disambiguate the data blobs at the destination, a common
-         * solution is to use delimiters in the data, such as a newline (<code>\n</code>)
-         * or some other character unique within the data. This allows the consumer
-         * application to parse individual data items when reading the data from the
-         * destination.</p> <p>The <a>PutRecordBatch</a> response includes a count of
-         * failed records, <code>FailedPutCount</code>, and an array of responses,
+         * so on.</p> <p>For multi record de-aggregation, you can not put more than 500
+         * records even if the data blob length is less than 1000 KiB. If you include more
+         * than 500 records, the request succeeds but the record de-aggregation doesn't
+         * work as expected and transformation lambda is invoked with the complete base64
+         * encoded data blob instead of de-aggregated base64 decoded records.</p>
+         * <p>Firehose buffers records before delivering them to the destination. To
+         * disambiguate the data blobs at the destination, a common solution is to use
+         * delimiters in the data, such as a newline (<code>\n</code>) or some other
+         * character unique within the data. This allows the consumer application to parse
+         * individual data items when reading the data from the destination.</p> <p>The
+         * <a>PutRecordBatch</a> response includes a count of failed records,
+         * <code>FailedPutCount</code>, and an array of responses,
          * <code>RequestResponses</code>. Even if the <a>PutRecordBatch</a> call succeeds,
          * the value of <code>FailedPutCount</code> may be greater than 0, indicating that
          * there are records for which the operation didn't succeed. Each entry in the
@@ -416,11 +425,11 @@ namespace Firehose
          * handle any duplicates at the destination.</p> <p>If <a>PutRecordBatch</a> throws
          * <code>ServiceUnavailableException</code>, the API is automatically reinvoked
          * (retried) 3 times. If the exception persists, it is possible that the throughput
-         * limits have been exceeded for the delivery stream.</p> <p>Re-invoking the Put
+         * limits have been exceeded for the Firehose stream.</p> <p>Re-invoking the Put
          * API operations (for example, PutRecord and PutRecordBatch) can result in data
          * duplicates. For larger data assets, allow for a longer time out before retrying
          * Put API operations.</p> <p>Data records sent to Firehose are stored for 24 hours
-         * from the time they are added to a delivery stream as it attempts to send the
+         * from the time they are added to a Firehose stream as it attempts to send the
          * records to the destination. If the destination is unreachable for more than 24
          * hours, the data is no longer available.</p>  <p>Don't concatenate two
          * or more base64 strings to form the data fields of your records. Instead,
@@ -450,21 +459,21 @@ namespace Firehose
         }
 
         /**
-         * <p>Enables server-side encryption (SSE) for the delivery stream. </p> <p>This
+         * <p>Enables server-side encryption (SSE) for the Firehose stream. </p> <p>This
          * operation is asynchronous. It returns immediately. When you invoke it, Firehose
          * first sets the encryption status of the stream to <code>ENABLING</code>, and
-         * then to <code>ENABLED</code>. The encryption status of a delivery stream is the
+         * then to <code>ENABLED</code>. The encryption status of a Firehose stream is the
          * <code>Status</code> property in <a>DeliveryStreamEncryptionConfiguration</a>. If
          * the operation fails, the encryption status changes to
          * <code>ENABLING_FAILED</code>. You can continue to read and write data to your
-         * delivery stream while the encryption status is <code>ENABLING</code>, but the
+         * Firehose stream while the encryption status is <code>ENABLING</code>, but the
          * data is not encrypted. It can take up to 5 seconds after the encryption status
-         * changes to <code>ENABLED</code> before all records written to the delivery
+         * changes to <code>ENABLED</code> before all records written to the Firehose
          * stream are encrypted. To find out whether a record or a batch of records was
          * encrypted, check the response elements <a>PutRecordOutput$Encrypted</a> and
          * <a>PutRecordBatchOutput$Encrypted</a>, respectively.</p> <p>To check the
-         * encryption status of a delivery stream, use <a>DescribeDeliveryStream</a>.</p>
-         * <p>Even if encryption is currently enabled for a delivery stream, you can still
+         * encryption status of a Firehose stream, use <a>DescribeDeliveryStream</a>.</p>
+         * <p>Even if encryption is currently enabled for a Firehose stream, you can still
          * invoke this operation on it to change the ARN of the CMK or both its type and
          * ARN. If you invoke this method to change the CMK, and the old CMK is of type
          * <code>CUSTOMER_MANAGED_CMK</code>, Firehose schedules the grant it had on the
@@ -474,21 +483,21 @@ namespace Firehose
          * the KMS grant creation to be successful, the Firehose API operations
          * <code>StartDeliveryStreamEncryption</code> and <code>CreateDeliveryStream</code>
          * should not be called with session credentials that are more than 6 hours
-         * old.</p> <p>If a delivery stream already has encryption enabled and then you
+         * old.</p> <p>If a Firehose stream already has encryption enabled and then you
          * invoke this operation to change the ARN of the CMK or both its type and ARN and
          * you get <code>ENABLING_FAILED</code>, this only means that the attempt to change
          * the CMK failed. In this case, encryption remains enabled with the old CMK.</p>
-         * <p>If the encryption status of your delivery stream is
+         * <p>If the encryption status of your Firehose stream is
          * <code>ENABLING_FAILED</code>, you can invoke this operation again with a valid
          * CMK. The CMK must be enabled and the key policy mustn't explicitly deny the
          * permission for Firehose to invoke KMS encrypt and decrypt operations.</p> <p>You
-         * can enable SSE for a delivery stream only if it's a delivery stream that uses
+         * can enable SSE for a Firehose stream only if it's a Firehose stream that uses
          * <code>DirectPut</code> as its source. </p> <p>The
          * <code>StartDeliveryStreamEncryption</code> and
          * <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25
-         * calls per delivery stream per 24 hours. For example, you reach the limit if you
+         * calls per Firehose stream per 24 hours. For example, you reach the limit if you
          * call <code>StartDeliveryStreamEncryption</code> 13 times and
-         * <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream
+         * <code>StopDeliveryStreamEncryption</code> 12 times for the same Firehose stream
          * in a 24-hour period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StartDeliveryStreamEncryption">AWS
          * API Reference</a></p>
@@ -514,26 +523,26 @@ namespace Firehose
         }
 
         /**
-         * <p>Disables server-side encryption (SSE) for the delivery stream. </p> <p>This
+         * <p>Disables server-side encryption (SSE) for the Firehose stream. </p> <p>This
          * operation is asynchronous. It returns immediately. When you invoke it, Firehose
          * first sets the encryption status of the stream to <code>DISABLING</code>, and
          * then to <code>DISABLED</code>. You can continue to read and write data to your
          * stream while its status is <code>DISABLING</code>. It can take up to 5 seconds
          * after the encryption status changes to <code>DISABLED</code> before all records
-         * written to the delivery stream are no longer subject to encryption. To find out
+         * written to the Firehose stream are no longer subject to encryption. To find out
          * whether a record or a batch of records was encrypted, check the response
          * elements <a>PutRecordOutput$Encrypted</a> and
          * <a>PutRecordBatchOutput$Encrypted</a>, respectively.</p> <p>To check the
-         * encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>. </p>
+         * encryption state of a Firehose stream, use <a>DescribeDeliveryStream</a>. </p>
          * <p>If SSE is enabled using a customer managed CMK and then you invoke
          * <code>StopDeliveryStreamEncryption</code>, Firehose schedules the related KMS
          * grant for retirement and then retires it after it ensures that it is finished
          * delivering records to the destination.</p> <p>The
          * <code>StartDeliveryStreamEncryption</code> and
          * <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25
-         * calls per delivery stream per 24 hours. For example, you reach the limit if you
+         * calls per Firehose stream per 24 hours. For example, you reach the limit if you
          * call <code>StartDeliveryStreamEncryption</code> 13 times and
-         * <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream
+         * <code>StopDeliveryStreamEncryption</code> 12 times for the same Firehose stream
          * in a 24-hour period.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StopDeliveryStreamEncryption">AWS
          * API Reference</a></p>
@@ -559,15 +568,15 @@ namespace Firehose
         }
 
         /**
-         * <p>Adds or updates tags for the specified delivery stream. A tag is a key-value
+         * <p>Adds or updates tags for the specified Firehose stream. A tag is a key-value
          * pair that you can define and assign to Amazon Web Services resources. If you
          * specify a tag that already exists, the tag value is replaced with the value that
          * you specify in the request. Tags are metadata. For example, you can add friendly
          * names and descriptions or other types of information that can help you
-         * distinguish the delivery stream. For more information about tags, see <a
+         * distinguish the Firehose stream. For more information about tags, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
-         * Management User Guide</i>. </p> <p>Each delivery stream can have up to 50 tags.
+         * Management User Guide</i>. </p> <p>Each Firehose stream can have up to 50 tags.
          * </p> <p>This operation has a limit of five transactions per second per account.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/TagDeliveryStream">AWS
@@ -594,7 +603,7 @@ namespace Firehose
         }
 
         /**
-         * <p>Removes tags from the specified delivery stream. Removed tags are deleted,
+         * <p>Removes tags from the specified Firehose stream. Removed tags are deleted,
          * and you can't recover them after this operation successfully completes.</p>
          * <p>If you specify a tag that doesn't exist, the operation ignores it.</p>
          * <p>This operation has a limit of five transactions per second per account.
@@ -623,13 +632,13 @@ namespace Firehose
         }
 
         /**
-         * <p>Updates the specified destination of the specified delivery stream.</p>
+         * <p>Updates the specified destination of the specified Firehose stream.</p>
          * <p>Use this operation to change the destination type (for example, to replace
          * the Amazon S3 destination with Amazon Redshift) or change the parameters
          * associated with a destination (for example, to change the bucket name of the
          * Amazon S3 destination). The update might not occur immediately. The target
-         * delivery stream remains active while the configurations are updated, so data
-         * writes to the delivery stream can continue during this process. The updated
+         * Firehose stream remains active while the configurations are updated, so data
+         * writes to the Firehose stream can continue during this process. The updated
          * configurations are usually effective within a few minutes.</p> <p>Switching
          * between Amazon OpenSearch Service and other services is not supported. For an
          * Amazon OpenSearch Service destination, you can only update to another Amazon

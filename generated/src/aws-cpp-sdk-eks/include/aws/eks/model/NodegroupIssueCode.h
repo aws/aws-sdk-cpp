@@ -50,7 +50,8 @@ namespace Model
     Unknown,
     AutoScalingGroupInstanceRefreshActive,
     KubernetesLabelInvalid,
-    Ec2LaunchTemplateVersionMaxLimitExceeded
+    Ec2LaunchTemplateVersionMaxLimitExceeded,
+    Ec2InstanceTypeDoesNotExist
   };
 
 namespace NodegroupIssueCodeMapper

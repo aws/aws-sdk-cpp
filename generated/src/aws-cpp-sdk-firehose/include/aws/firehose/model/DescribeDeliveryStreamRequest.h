@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the Firehose stream.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
@@ -51,7 +51,7 @@ namespace Model
     ///@{
     /**
      * <p>The limit on the number of destinations to return. You can have one
-     * destination per delivery stream.</p>
+     * destination per Firehose stream.</p>
      */
     inline int GetLimit() const{ return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
@@ -62,7 +62,7 @@ namespace Model
     ///@{
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Firehose supports one destination per delivery stream.</p>
+     * Firehose supports one destination per Firehose stream.</p>
      */
     inline const Aws::String& GetExclusiveStartDestinationId() const{ return m_exclusiveStartDestinationId; }
     inline bool ExclusiveStartDestinationIdHasBeenSet() const { return m_exclusiveStartDestinationIdHasBeenSet; }

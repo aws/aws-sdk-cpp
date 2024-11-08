@@ -19,7 +19,8 @@ namespace Model
 {
 
 CatalogConfiguration::CatalogConfiguration() : 
-    m_catalogARNHasBeenSet(false)
+    m_catalogARNHasBeenSet(false),
+    m_warehouseLocationHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ CatalogConfiguration& CatalogConfiguration::operator =(JsonView jsonValue)
     m_catalogARNHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WarehouseLocation"))
+  {
+    m_warehouseLocation = jsonValue.GetString("WarehouseLocation");
+
+    m_warehouseLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue CatalogConfiguration::Jsonize() const
   if(m_catalogARNHasBeenSet)
   {
    payload.WithString("CatalogARN", m_catalogARN);
+
+  }
+
+  if(m_warehouseLocationHasBeenSet)
+  {
+   payload.WithString("WarehouseLocation", m_warehouseLocation);
 
   }
 

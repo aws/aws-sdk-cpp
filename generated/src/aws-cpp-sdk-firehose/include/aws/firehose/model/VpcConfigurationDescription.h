@@ -50,7 +50,7 @@ namespace Model
      * the subnets specified here scales up and down automatically based on throughput.
      * To enable Firehose to scale up the number of ENIs to match throughput, ensure
      * that you have sufficient quota. To help you calculate the quota you need, assume
-     * that Firehose can create up to three ENIs for this delivery stream for each of
+     * that Firehose can create up to three ENIs for this Firehose stream for each of
      * the subnets specified here. For more information about ENI quota, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-enis">Network
      * Interfaces </a> in the Amazon VPC Quotas topic.</p>
@@ -68,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the IAM role that the delivery stream uses to create endpoints in
+     * <p>The ARN of the IAM role that the Firehose stream uses to create endpoints in
      * the destination VPC. You can use your existing Firehose delivery role or you can
      * specify a new role. In either case, make sure that the role trusts the Firehose
      * service principal and that it grants the following permissions:</p> <ul> <li>
@@ -80,7 +80,7 @@ namespace Model
      * <code>ec2:CreateNetworkInterface</code> </p> </li> <li> <p>
      * <code>ec2:CreateNetworkInterfacePermission</code> </p> </li> <li> <p>
      * <code>ec2:DeleteNetworkInterface</code> </p> </li> </ul> <p>If you revoke these
-     * permissions after you create the delivery stream, Firehose can't scale out by
+     * permissions after you create the Firehose stream, Firehose can't scale out by
      * creating more ENIs when necessary. You might therefore see a degradation in
      * performance.</p>
      */
@@ -102,7 +102,7 @@ namespace Model
      * groups, ensure that they allow outbound HTTPS traffic to the Amazon ES domain's
      * security group. Also ensure that the Amazon ES domain's security group allows
      * HTTPS traffic from the security groups specified here. If you use the same
-     * security group for both your delivery stream and the Amazon ES domain, make sure
+     * security group for both your Firehose stream and the Amazon ES domain, make sure
      * the security group inbound rule allows HTTPS traffic. For more information about
      * security group rules, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security

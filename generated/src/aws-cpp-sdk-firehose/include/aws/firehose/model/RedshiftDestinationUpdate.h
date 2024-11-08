@@ -159,8 +159,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>You can update a delivery stream to enable Amazon S3 backup if it is
-     * disabled. If backup is enabled, you can't update the delivery stream to disable
+     * <p>You can update a Firehose stream to enable Amazon S3 backup if it is
+     * disabled. If backup is enabled, you can't update the Firehose stream to disable
      * it. </p>
      */
     inline const RedshiftS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
@@ -185,7 +185,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }

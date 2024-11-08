@@ -80,7 +80,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This is the server-side encryption (SSE) status for the delivery stream. For
+     * <p>This is the server-side encryption (SSE) status for the Firehose stream. For
      * a full description of the different values of this status, see
      * <a>StartDeliveryStreamEncryption</a> and <a>StopDeliveryStreamEncryption</a>. If
      * this status is <code>ENABLING_FAILED</code> or <code>DISABLING_FAILED</code>, it

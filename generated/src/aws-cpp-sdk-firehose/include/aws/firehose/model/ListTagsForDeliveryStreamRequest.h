@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the delivery stream whose tags you want to list.</p>
+     * <p>The name of the Firehose stream whose tags you want to list.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
@@ -67,7 +67,7 @@ namespace Model
     ///@{
     /**
      * <p>The number of tags to return. If this number is less than the total number of
-     * tags associated with the delivery stream, <code>HasMoreTags</code> is set to
+     * tags associated with the Firehose stream, <code>HasMoreTags</code> is set to
      * <code>true</code> in the response. To list additional tags, set
      * <code>ExclusiveStartTagKey</code> to the last key in the response. </p>
      */

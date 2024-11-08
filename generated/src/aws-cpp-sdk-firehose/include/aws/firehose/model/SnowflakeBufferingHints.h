@@ -39,8 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Buffer incoming data to the specified size, in MBs, before delivering it to
-     * the destination. The default value is 1. </p>
+     * <p>Buffer incoming data to the specified size, in MBs, before delivering it to
+     * the destination. The default value is 128. </p>
      */
     inline int GetSizeInMBs() const{ return m_sizeInMBs; }
     inline bool SizeInMBsHasBeenSet() const { return m_sizeInMBsHasBeenSet; }

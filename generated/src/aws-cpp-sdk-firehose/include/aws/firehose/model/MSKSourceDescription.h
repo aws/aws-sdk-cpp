@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>Details about the Amazon MSK cluster used as the source for a Firehose
-   * delivery stream.</p><p><h3>See Also:</h3>   <a
+   * Firehose stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/MSKSourceDescription">AWS
    * API Reference</a></p>
    */

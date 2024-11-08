@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime-sdk-media-pipelines/model/MediaPipelineSinkType.h>
 #include <aws/chime-sdk-media-pipelines/model/ChimeSdkMeetingConfiguration.h>
+#include <aws/chime-sdk-media-pipelines/model/SseAwsKeyManagementParams.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/chime-sdk-media-pipelines/model/Tag.h>
 #include <utility>
@@ -122,6 +123,44 @@ namespace Model
 
     ///@{
     /**
+     * <p>An object that contains server side encryption parameters to be used by media
+     * capture pipeline. The parameters can also be used by media concatenation
+     * pipeline taking media capture pipeline as a media source.</p>
+     */
+    inline const SseAwsKeyManagementParams& GetSseAwsKeyManagementParams() const{ return m_sseAwsKeyManagementParams; }
+    inline bool SseAwsKeyManagementParamsHasBeenSet() const { return m_sseAwsKeyManagementParamsHasBeenSet; }
+    inline void SetSseAwsKeyManagementParams(const SseAwsKeyManagementParams& value) { m_sseAwsKeyManagementParamsHasBeenSet = true; m_sseAwsKeyManagementParams = value; }
+    inline void SetSseAwsKeyManagementParams(SseAwsKeyManagementParams&& value) { m_sseAwsKeyManagementParamsHasBeenSet = true; m_sseAwsKeyManagementParams = std::move(value); }
+    inline CreateMediaCapturePipelineRequest& WithSseAwsKeyManagementParams(const SseAwsKeyManagementParams& value) { SetSseAwsKeyManagementParams(value); return *this;}
+    inline CreateMediaCapturePipelineRequest& WithSseAwsKeyManagementParams(SseAwsKeyManagementParams&& value) { SetSseAwsKeyManagementParams(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the sink role to be used with
+     * <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. Can only
+     * interact with <code>S3Bucket</code> sink type. The role must belong to the
+     * caller’s account and be able to act on behalf of the caller during the API call.
+     * All minimum policy permissions requirements for the caller to perform
+     * sink-related actions are the same for <code>SinkIamRoleArn</code>.</p>
+     * <p>Additionally, the role must have permission to
+     * <code>kms:GenerateDataKey</code> using KMS key supplied as
+     * <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>. If media
+     * concatenation will be required later, the role must also have permission to
+     * <code>kms:Decrypt</code> for the same KMS key.</p>
+     */
+    inline const Aws::String& GetSinkIamRoleArn() const{ return m_sinkIamRoleArn; }
+    inline bool SinkIamRoleArnHasBeenSet() const { return m_sinkIamRoleArnHasBeenSet; }
+    inline void SetSinkIamRoleArn(const Aws::String& value) { m_sinkIamRoleArnHasBeenSet = true; m_sinkIamRoleArn = value; }
+    inline void SetSinkIamRoleArn(Aws::String&& value) { m_sinkIamRoleArnHasBeenSet = true; m_sinkIamRoleArn = std::move(value); }
+    inline void SetSinkIamRoleArn(const char* value) { m_sinkIamRoleArnHasBeenSet = true; m_sinkIamRoleArn.assign(value); }
+    inline CreateMediaCapturePipelineRequest& WithSinkIamRoleArn(const Aws::String& value) { SetSinkIamRoleArn(value); return *this;}
+    inline CreateMediaCapturePipelineRequest& WithSinkIamRoleArn(Aws::String&& value) { SetSinkIamRoleArn(std::move(value)); return *this;}
+    inline CreateMediaCapturePipelineRequest& WithSinkIamRoleArn(const char* value) { SetSinkIamRoleArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tag key-value pairs.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -152,6 +191,12 @@ namespace Model
 
     ChimeSdkMeetingConfiguration m_chimeSdkMeetingConfiguration;
     bool m_chimeSdkMeetingConfigurationHasBeenSet = false;
+
+    SseAwsKeyManagementParams m_sseAwsKeyManagementParams;
+    bool m_sseAwsKeyManagementParamsHasBeenSet = false;
+
+    Aws::String m_sinkIamRoleArn;
+    bool m_sinkIamRoleArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

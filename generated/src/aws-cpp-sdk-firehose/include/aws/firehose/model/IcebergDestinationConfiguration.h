@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/firehose/model/SchemaEvolutionConfiguration.h>
+#include <aws/firehose/model/TableCreationConfiguration.h>
 #include <aws/firehose/model/BufferingHints.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
 #include <aws/firehose/model/ProcessingConfiguration.h>
@@ -33,9 +35,8 @@ namespace Model
 {
 
   /**
-   * <p> Specifies the destination configure settings for Apache Iceberg Table. </p>
-   * <p>Amazon Data Firehose is in preview release and is subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * <p> Specifies the destination configure settings for Apache Iceberg Table.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/IcebergDestinationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -51,8 +52,8 @@ namespace Model
     ///@{
     /**
      * <p> Provides a list of <code>DestinationTableConfigurations</code> which
-     * Firehose uses to deliver data to Apache Iceberg tables. </p> <p>Amazon Data
-     * Firehose is in preview release and is subject to change.</p>
+     * Firehose uses to deliver data to Apache Iceberg Tables. Firehose will write data
+     * with insert if table specific configuration is not provided here.</p>
      */
     inline const Aws::Vector<DestinationTableConfiguration>& GetDestinationTableConfigurationList() const{ return m_destinationTableConfigurationList; }
     inline bool DestinationTableConfigurationListHasBeenSet() const { return m_destinationTableConfigurationListHasBeenSet; }
@@ -62,6 +63,32 @@ namespace Model
     inline IcebergDestinationConfiguration& WithDestinationTableConfigurationList(Aws::Vector<DestinationTableConfiguration>&& value) { SetDestinationTableConfigurationList(std::move(value)); return *this;}
     inline IcebergDestinationConfiguration& AddDestinationTableConfigurationList(const DestinationTableConfiguration& value) { m_destinationTableConfigurationListHasBeenSet = true; m_destinationTableConfigurationList.push_back(value); return *this; }
     inline IcebergDestinationConfiguration& AddDestinationTableConfigurationList(DestinationTableConfiguration&& value) { m_destinationTableConfigurationListHasBeenSet = true; m_destinationTableConfigurationList.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * change.</p>
+     */
+    inline const SchemaEvolutionConfiguration& GetSchemaEvolutionConfiguration() const{ return m_schemaEvolutionConfiguration; }
+    inline bool SchemaEvolutionConfigurationHasBeenSet() const { return m_schemaEvolutionConfigurationHasBeenSet; }
+    inline void SetSchemaEvolutionConfiguration(const SchemaEvolutionConfiguration& value) { m_schemaEvolutionConfigurationHasBeenSet = true; m_schemaEvolutionConfiguration = value; }
+    inline void SetSchemaEvolutionConfiguration(SchemaEvolutionConfiguration&& value) { m_schemaEvolutionConfigurationHasBeenSet = true; m_schemaEvolutionConfiguration = std::move(value); }
+    inline IcebergDestinationConfiguration& WithSchemaEvolutionConfiguration(const SchemaEvolutionConfiguration& value) { SetSchemaEvolutionConfiguration(value); return *this;}
+    inline IcebergDestinationConfiguration& WithSchemaEvolutionConfiguration(SchemaEvolutionConfiguration&& value) { SetSchemaEvolutionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * change.</p>
+     */
+    inline const TableCreationConfiguration& GetTableCreationConfiguration() const{ return m_tableCreationConfiguration; }
+    inline bool TableCreationConfigurationHasBeenSet() const { return m_tableCreationConfigurationHasBeenSet; }
+    inline void SetTableCreationConfiguration(const TableCreationConfiguration& value) { m_tableCreationConfigurationHasBeenSet = true; m_tableCreationConfiguration = value; }
+    inline void SetTableCreationConfiguration(TableCreationConfiguration&& value) { m_tableCreationConfigurationHasBeenSet = true; m_tableCreationConfiguration = std::move(value); }
+    inline IcebergDestinationConfiguration& WithTableCreationConfiguration(const TableCreationConfiguration& value) { SetTableCreationConfiguration(value); return *this;}
+    inline IcebergDestinationConfiguration& WithTableCreationConfiguration(TableCreationConfiguration&& value) { SetTableCreationConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,9 +123,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Describes how Firehose will backup records. Currently,Firehose only supports
-     * <code>FailedDataOnly</code> for preview. </p> <p>Amazon Data Firehose is in
-     * preview release and is subject to change.</p>
+     * <p> Describes how Firehose will backup records. Currently,S3 backup only
+     * supports <code>FailedDataOnly</code>. </p>
      */
     inline const IcebergS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
@@ -120,8 +146,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) of the Apache Iceberg tables role. </p>
-     * <p>Amazon Data Firehose is in preview release and is subject to change.</p>
+     * <p> The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling Apache Iceberg Tables. </p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
@@ -136,8 +162,7 @@ namespace Model
     ///@{
     /**
      * <p> Configuration describing where the destination Apache Iceberg Tables are
-     * persisted. </p> <p>Amazon Data Firehose is in preview release and is subject to
-     * change.</p>
+     * persisted. </p>
      */
     inline const CatalogConfiguration& GetCatalogConfiguration() const{ return m_catalogConfiguration; }
     inline bool CatalogConfigurationHasBeenSet() const { return m_catalogConfigurationHasBeenSet; }
@@ -160,6 +185,12 @@ namespace Model
 
     Aws::Vector<DestinationTableConfiguration> m_destinationTableConfigurationList;
     bool m_destinationTableConfigurationListHasBeenSet = false;
+
+    SchemaEvolutionConfiguration m_schemaEvolutionConfiguration;
+    bool m_schemaEvolutionConfigurationHasBeenSet = false;
+
+    TableCreationConfiguration m_tableCreationConfiguration;
+    bool m_tableCreationConfigurationHasBeenSet = false;
 
     BufferingHints m_bufferingHints;
     bool m_bufferingHintsHasBeenSet = false;

@@ -92,6 +92,24 @@ namespace Model
     inline FunctionCodeLocation& WithResolvedImageUri(Aws::String&& value) { SetResolvedImageUri(std::move(value)); return *this;}
     inline FunctionCodeLocation& WithResolvedImageUri(const char* value) { SetResolvedImageUri(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
+     * to encrypt your function's .zip deployment package. If you don't provide a
+     * customer managed key, Lambda uses an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+     * Web Services owned key</a>.</p>
+     */
+    inline const Aws::String& GetSourceKMSKeyArn() const{ return m_sourceKMSKeyArn; }
+    inline bool SourceKMSKeyArnHasBeenSet() const { return m_sourceKMSKeyArnHasBeenSet; }
+    inline void SetSourceKMSKeyArn(const Aws::String& value) { m_sourceKMSKeyArnHasBeenSet = true; m_sourceKMSKeyArn = value; }
+    inline void SetSourceKMSKeyArn(Aws::String&& value) { m_sourceKMSKeyArnHasBeenSet = true; m_sourceKMSKeyArn = std::move(value); }
+    inline void SetSourceKMSKeyArn(const char* value) { m_sourceKMSKeyArnHasBeenSet = true; m_sourceKMSKeyArn.assign(value); }
+    inline FunctionCodeLocation& WithSourceKMSKeyArn(const Aws::String& value) { SetSourceKMSKeyArn(value); return *this;}
+    inline FunctionCodeLocation& WithSourceKMSKeyArn(Aws::String&& value) { SetSourceKMSKeyArn(std::move(value)); return *this;}
+    inline FunctionCodeLocation& WithSourceKMSKeyArn(const char* value) { SetSourceKMSKeyArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_repositoryType;
@@ -105,6 +123,9 @@ namespace Model
 
     Aws::String m_resolvedImageUri;
     bool m_resolvedImageUriHasBeenSet = false;
+
+    Aws::String m_sourceKMSKeyArn;
+    bool m_sourceKMSKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

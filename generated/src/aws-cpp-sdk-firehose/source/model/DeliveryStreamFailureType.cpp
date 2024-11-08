@@ -20,6 +20,8 @@ namespace Aws
       namespace DeliveryStreamFailureTypeMapper
       {
 
+        static const int VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND_HASH = HashingUtils::HashString("VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND");
+        static const int VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED_HASH = HashingUtils::HashString("VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED");
         static const int RETIRE_KMS_GRANT_FAILED_HASH = HashingUtils::HashString("RETIRE_KMS_GRANT_FAILED");
         static const int CREATE_KMS_GRANT_FAILED_HASH = HashingUtils::HashString("CREATE_KMS_GRANT_FAILED");
         static const int KMS_ACCESS_DENIED_HASH = HashingUtils::HashString("KMS_ACCESS_DENIED");
@@ -40,7 +42,15 @@ namespace Aws
         DeliveryStreamFailureType GetDeliveryStreamFailureTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == RETIRE_KMS_GRANT_FAILED_HASH)
+          if (hashCode == VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND_HASH)
+          {
+            return DeliveryStreamFailureType::VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND;
+          }
+          else if (hashCode == VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED_HASH)
+          {
+            return DeliveryStreamFailureType::VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED;
+          }
+          else if (hashCode == RETIRE_KMS_GRANT_FAILED_HASH)
           {
             return DeliveryStreamFailureType::RETIRE_KMS_GRANT_FAILED;
           }
@@ -116,6 +126,10 @@ namespace Aws
           {
           case DeliveryStreamFailureType::NOT_SET:
             return {};
+          case DeliveryStreamFailureType::VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND:
+            return "VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND";
+          case DeliveryStreamFailureType::VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED:
+            return "VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED";
           case DeliveryStreamFailureType::RETIRE_KMS_GRANT_FAILED:
             return "RETIRE_KMS_GRANT_FAILED";
           case DeliveryStreamFailureType::CREATE_KMS_GRANT_FAILED:

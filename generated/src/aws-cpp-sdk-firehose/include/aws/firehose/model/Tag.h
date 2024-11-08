@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Metadata that you can assign to a delivery stream, consisting of a key-value
+   * <p>Metadata that you can assign to a Firehose stream, consisting of a key-value
    * pair.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/Tag">AWS API
    * Reference</a></p>

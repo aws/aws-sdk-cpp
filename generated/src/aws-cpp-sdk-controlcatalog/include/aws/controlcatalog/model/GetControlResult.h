@@ -8,6 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/controlcatalog/model/ControlBehavior.h>
 #include <aws/controlcatalog/model/RegionConfiguration.h>
+#include <aws/controlcatalog/model/ImplementationDetails.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/controlcatalog/model/ControlParameter.h>
 #include <utility>
 
 namespace Aws
@@ -76,7 +79,7 @@ namespace Model
     ///@{
     /**
      * <p>A term that identifies the control's functional behavior. One of
-     * <code>Preventive</code>, <code>Deteictive</code>, <code>Proactive</code> </p>
+     * <code>Preventive</code>, <code>Detective</code>, <code>Proactive</code> </p>
      */
     inline const ControlBehavior& GetBehavior() const{ return m_behavior; }
     inline void SetBehavior(const ControlBehavior& value) { m_behavior = value; }
@@ -92,6 +95,34 @@ namespace Model
     inline void SetRegionConfiguration(RegionConfiguration&& value) { m_regionConfiguration = std::move(value); }
     inline GetControlResult& WithRegionConfiguration(const RegionConfiguration& value) { SetRegionConfiguration(value); return *this;}
     inline GetControlResult& WithRegionConfiguration(RegionConfiguration&& value) { SetRegionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Returns information about the control, as an
+     * <code>ImplementationDetails</code> object that shows the underlying
+     * implementation type for a control.</p>
+     */
+    inline const ImplementationDetails& GetImplementation() const{ return m_implementation; }
+    inline void SetImplementation(const ImplementationDetails& value) { m_implementation = value; }
+    inline void SetImplementation(ImplementationDetails&& value) { m_implementation = std::move(value); }
+    inline GetControlResult& WithImplementation(const ImplementationDetails& value) { SetImplementation(value); return *this;}
+    inline GetControlResult& WithImplementation(ImplementationDetails&& value) { SetImplementation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Returns an array of <code>ControlParameter</code> objects that specify the
+     * parameters a control supports. An empty list is returned for controls that don’t
+     * support parameters. </p>
+     */
+    inline const Aws::Vector<ControlParameter>& GetParameters() const{ return m_parameters; }
+    inline void SetParameters(const Aws::Vector<ControlParameter>& value) { m_parameters = value; }
+    inline void SetParameters(Aws::Vector<ControlParameter>&& value) { m_parameters = std::move(value); }
+    inline GetControlResult& WithParameters(const Aws::Vector<ControlParameter>& value) { SetParameters(value); return *this;}
+    inline GetControlResult& WithParameters(Aws::Vector<ControlParameter>&& value) { SetParameters(std::move(value)); return *this;}
+    inline GetControlResult& AddParameters(const ControlParameter& value) { m_parameters.push_back(value); return *this; }
+    inline GetControlResult& AddParameters(ControlParameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -115,6 +146,10 @@ namespace Model
     ControlBehavior m_behavior;
 
     RegionConfiguration m_regionConfiguration;
+
+    ImplementationDetails m_implementation;
+
+    Aws::Vector<ControlParameter> m_parameters;
 
     Aws::String m_requestId;
   };

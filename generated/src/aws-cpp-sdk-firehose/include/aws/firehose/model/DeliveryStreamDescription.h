@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a delivery stream.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a Firehose stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeliveryStreamDescription">AWS
    * API Reference</a></p>
    */
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the Firehose stream.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
@@ -61,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the delivery stream. For more information,
+     * <p>The Amazon Resource Name (ARN) of the Firehose stream. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
@@ -78,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the delivery stream. If the status of a delivery stream is
+     * <p>The status of the Firehose stream. If the status of a Firehose stream is
      * <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke
      * <code>CreateDeliveryStream</code> again on it. However, you can invoke the
      * <a>DeleteDeliveryStream</a> operation to delete it.</p>
@@ -107,7 +107,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the server-side encryption (SSE) status for the delivery
+     * <p>Indicates the server-side encryption (SSE) status for the Firehose
      * stream.</p>
      */
     inline const DeliveryStreamEncryptionConfiguration& GetDeliveryStreamEncryptionConfiguration() const{ return m_deliveryStreamEncryptionConfiguration; }
@@ -120,10 +120,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
-     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * <p>The Firehose stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the Firehose
      * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
-     * delivery stream uses a Kinesis data stream as a source.</p> </li> </ul>
+     * Firehose stream uses a Kinesis data stream as a source.</p> </li> </ul>
      */
     inline const DeliveryStreamType& GetDeliveryStreamType() const{ return m_deliveryStreamType; }
     inline bool DeliveryStreamTypeHasBeenSet() const { return m_deliveryStreamTypeHasBeenSet; }
@@ -135,7 +135,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Each time the destination is updated for a delivery stream, the version ID is
+     * <p>Each time the destination is updated for a Firehose stream, the version ID is
      * changed, and the current version ID is required when updating the destination.
      * This is so that the service knows it is applying the changes to the correct
      * version of the delivery stream.</p>
@@ -152,7 +152,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the delivery stream was created.</p>
+     * <p>The date and time that the Firehose stream was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
     inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
@@ -164,7 +164,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the delivery stream was last updated.</p>
+     * <p>The date and time that the Firehose stream was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const{ return m_lastUpdateTimestamp; }
     inline bool LastUpdateTimestampHasBeenSet() const { return m_lastUpdateTimestampHasBeenSet; }

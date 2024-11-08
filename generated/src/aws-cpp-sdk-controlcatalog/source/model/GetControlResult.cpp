@@ -61,6 +61,21 @@ GetControlResult& GetControlResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("Implementation"))
+  {
+    m_implementation = jsonValue.GetObject("Implementation");
+
+  }
+
+  if(jsonValue.ValueExists("Parameters"))
+  {
+    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
+    for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
+    {
+      m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

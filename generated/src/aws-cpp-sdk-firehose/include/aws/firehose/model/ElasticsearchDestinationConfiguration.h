@@ -189,7 +189,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon
      * S3 Backup for the Amazon ES Destination</a>. Default value is
      * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
-     * you create the delivery stream. </p>
+     * you create the Firehose stream. </p>
      */
     inline const ElasticsearchS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
@@ -225,7 +225,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }

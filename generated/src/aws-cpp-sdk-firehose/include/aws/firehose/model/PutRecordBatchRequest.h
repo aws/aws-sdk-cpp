@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the Firehose stream.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }

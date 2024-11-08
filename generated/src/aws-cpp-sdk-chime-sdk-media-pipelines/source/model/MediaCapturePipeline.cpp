@@ -31,7 +31,9 @@ MediaCapturePipeline::MediaCapturePipeline() :
     m_sinkArnHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
     m_updatedTimestampHasBeenSet(false),
-    m_chimeSdkMeetingConfigurationHasBeenSet(false)
+    m_chimeSdkMeetingConfigurationHasBeenSet(false),
+    m_sseAwsKeyManagementParamsHasBeenSet(false),
+    m_sinkIamRoleArnHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,20 @@ MediaCapturePipeline& MediaCapturePipeline::operator =(JsonView jsonValue)
     m_chimeSdkMeetingConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SseAwsKeyManagementParams"))
+  {
+    m_sseAwsKeyManagementParams = jsonValue.GetObject("SseAwsKeyManagementParams");
+
+    m_sseAwsKeyManagementParamsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SinkIamRoleArn"))
+  {
+    m_sinkIamRoleArn = jsonValue.GetString("SinkIamRoleArn");
+
+    m_sinkIamRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -172,6 +188,18 @@ JsonValue MediaCapturePipeline::Jsonize() const
   if(m_chimeSdkMeetingConfigurationHasBeenSet)
   {
    payload.WithObject("ChimeSdkMeetingConfiguration", m_chimeSdkMeetingConfiguration.Jsonize());
+
+  }
+
+  if(m_sseAwsKeyManagementParamsHasBeenSet)
+  {
+   payload.WithObject("SseAwsKeyManagementParams", m_sseAwsKeyManagementParams.Jsonize());
+
+  }
+
+  if(m_sinkIamRoleArnHasBeenSet)
+  {
+   payload.WithString("SinkIamRoleArn", m_sinkIamRoleArn);
 
   }
 
