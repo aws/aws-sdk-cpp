@@ -40,6 +40,8 @@ foreach(TEST IN LISTS TEST_LIST)
         add_executable(${PROJECT_NAME} ${AWS_S3_CRT_INTEGRATION_TESTS_SRC})
     endif()
 
+    configure_file(${CMAKE_CURRENT_LIST_DIR}/testFile.txt ${CMAKE_BINARY_DIR}/testFile.txt COPYONLY)
+
     set_compiler_flags(${PROJECT_NAME})
     set_compiler_warnings(${PROJECT_NAME})
 
