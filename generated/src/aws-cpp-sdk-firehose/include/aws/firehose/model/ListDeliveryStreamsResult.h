@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The names of the delivery streams.</p>
+     * <p>The names of the Firehose streams.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeliveryStreamNames() const{ return m_deliveryStreamNames; }
     inline void SetDeliveryStreamNames(const Aws::Vector<Aws::String>& value) { m_deliveryStreamNames = value; }
@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether there are more delivery streams available to list.</p>
+     * <p>Indicates whether there are more Firehose streams available to list.</p>
      */
     inline bool GetHasMoreDeliveryStreams() const{ return m_hasMoreDeliveryStreams; }
     inline void SetHasMoreDeliveryStreams(bool value) { m_hasMoreDeliveryStreams = value; }

@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of delivery streams to list. The default value is 10.</p>
+     * <p>The maximum number of Firehose streams to list. The default value is 10.</p>
      */
     inline int GetLimit() const{ return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
@@ -47,11 +47,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The delivery stream type. This can be one of the following values:</p> <ul>
-     * <li> <p> <code>DirectPut</code>: Provider applications access the delivery
+     * <p>The Firehose stream type. This can be one of the following values:</p> <ul>
+     * <li> <p> <code>DirectPut</code>: Provider applications access the Firehose
      * stream directly.</p> </li> <li> <p> <code>KinesisStreamAsSource</code>: The
-     * delivery stream uses a Kinesis data stream as a source.</p> </li> </ul> <p>This
-     * parameter is optional. If this parameter is omitted, delivery streams of all
+     * Firehose stream uses a Kinesis data stream as a source.</p> </li> </ul> <p>This
+     * parameter is optional. If this parameter is omitted, Firehose streams of all
      * types are returned.</p>
      */
     inline const DeliveryStreamType& GetDeliveryStreamType() const{ return m_deliveryStreamType; }
@@ -64,8 +64,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of delivery streams returned by this call to
-     * <code>ListDeliveryStreams</code> will start with the delivery stream whose name
+     * <p>The list of Firehose streams returned by this call to
+     * <code>ListDeliveryStreams</code> will start with the Firehose stream whose name
      * comes alphabetically immediately after the name you specify in
      * <code>ExclusiveStartDeliveryStreamName</code>.</p>
      */

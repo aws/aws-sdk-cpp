@@ -25,8 +25,7 @@ namespace Model
 
   /**
    * <p> Describes the containers where the destination Apache Iceberg Tables are
-   * persisted. </p> <p>Amazon Data Firehose is in preview release and is subject to
-   * change.</p><p><h3>See Also:</h3>   <a
+   * persisted. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CatalogConfiguration">AWS
    * API Reference</a></p>
    */
@@ -41,10 +40,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the Glue catalog ARN indentifier of the destination Apache Iceberg
+     * <p> Specifies the Glue catalog ARN identifier of the destination Apache Iceberg
      * Tables. You must specify the ARN in the format
-     * <code>arn:aws:glue:region:account-id:catalog</code>. </p> <p>Amazon Data
-     * Firehose is in preview release and is subject to change.</p>
+     * <code>arn:aws:glue:region:account-id:catalog</code>. </p>
      */
     inline const Aws::String& GetCatalogARN() const{ return m_catalogARN; }
     inline bool CatalogARNHasBeenSet() const { return m_catalogARNHasBeenSet; }
@@ -55,10 +53,28 @@ namespace Model
     inline CatalogConfiguration& WithCatalogARN(Aws::String&& value) { SetCatalogARN(std::move(value)); return *this;}
     inline CatalogConfiguration& WithCatalogARN(const char* value) { SetCatalogARN(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * change.</p>
+     */
+    inline const Aws::String& GetWarehouseLocation() const{ return m_warehouseLocation; }
+    inline bool WarehouseLocationHasBeenSet() const { return m_warehouseLocationHasBeenSet; }
+    inline void SetWarehouseLocation(const Aws::String& value) { m_warehouseLocationHasBeenSet = true; m_warehouseLocation = value; }
+    inline void SetWarehouseLocation(Aws::String&& value) { m_warehouseLocationHasBeenSet = true; m_warehouseLocation = std::move(value); }
+    inline void SetWarehouseLocation(const char* value) { m_warehouseLocationHasBeenSet = true; m_warehouseLocation.assign(value); }
+    inline CatalogConfiguration& WithWarehouseLocation(const Aws::String& value) { SetWarehouseLocation(value); return *this;}
+    inline CatalogConfiguration& WithWarehouseLocation(Aws::String&& value) { SetWarehouseLocation(std::move(value)); return *this;}
+    inline CatalogConfiguration& WithWarehouseLocation(const char* value) { SetWarehouseLocation(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_catalogARN;
     bool m_catalogARNHasBeenSet = false;
+
+    Aws::String m_warehouseLocation;
+    bool m_warehouseLocationHasBeenSet = false;
   };
 
 } // namespace Model

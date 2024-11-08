@@ -121,6 +121,23 @@ namespace Model
     inline PutGroupRequest& WithGroupMembers(const GroupMembers& value) { SetGroupMembers(value); return *this;}
     inline PutGroupRequest& WithGroupMembers(GroupMembers&& value) { SetGroupMembers(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file
+     * that contains your list of users that belong to a group.The Amazon Resource Name
+     * (ARN) of an IAM role that has access to the S3 file that contains your list of
+     * users that belong to a group.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+    inline PutGroupRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+    inline PutGroupRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+    inline PutGroupRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -140,6 +157,9 @@ namespace Model
 
     GroupMembers m_groupMembers;
     bool m_groupMembersHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

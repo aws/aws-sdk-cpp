@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the delivery stream.</p>
+     * <p>Information about the Firehose stream.</p>
      */
     inline const DeliveryStreamDescription& GetDeliveryStreamDescription() const{ return m_deliveryStreamDescription; }
     inline void SetDeliveryStreamDescription(const DeliveryStreamDescription& value) { m_deliveryStreamDescription = value; }

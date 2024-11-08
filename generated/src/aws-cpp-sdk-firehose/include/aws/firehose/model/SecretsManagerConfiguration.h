@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The ARN of the secret that stores your credentials. It must be in the same
      * region as the Firehose stream and the role. The secret ARN can reside in a
-     * different account than the delivery stream and role as Firehose supports
+     * different account than the Firehose stream and role as Firehose supports
      * cross-account secret access. This parameter is required when <b>Enabled</b> is
      * set to <code>True</code>.</p>
      */
@@ -75,8 +75,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether you want to use the the secrets manager feature. When set
-     * as <code>True</code> the secrets manager configuration overwrites the existing
+     * <p>Specifies whether you want to use the secrets manager feature. When set as
+     * <code>True</code> the secrets manager configuration overwrites the existing
      * secrets in the destination configuration. When it's set to <code>False</code>
      * Firehose falls back to the credentials in the destination configuration.</p>
      */

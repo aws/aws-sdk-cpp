@@ -273,7 +273,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Choose an S3 backup mode</p>
+     * <p>Choose an S3 backup mode. Once you set the mode as <code>AllData</code>, you
+     * can not change it to <code>FailedDataOnly</code>.</p>
      */
     inline const SnowflakeS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }

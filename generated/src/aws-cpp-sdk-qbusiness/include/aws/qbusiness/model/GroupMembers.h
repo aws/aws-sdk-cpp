@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/S3.h>
 #include <aws/qbusiness/model/MemberGroup.h>
 #include <aws/qbusiness/model/MemberUser.h>
 #include <utility>
@@ -71,6 +72,16 @@ namespace Model
     inline GroupMembers& AddMemberUsers(const MemberUser& value) { m_memberUsersHasBeenSet = true; m_memberUsers.push_back(value); return *this; }
     inline GroupMembers& AddMemberUsers(MemberUser&& value) { m_memberUsersHasBeenSet = true; m_memberUsers.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    
+    inline const S3& GetS3PathForGroupMembers() const{ return m_s3PathForGroupMembers; }
+    inline bool S3PathForGroupMembersHasBeenSet() const { return m_s3PathForGroupMembersHasBeenSet; }
+    inline void SetS3PathForGroupMembers(const S3& value) { m_s3PathForGroupMembersHasBeenSet = true; m_s3PathForGroupMembers = value; }
+    inline void SetS3PathForGroupMembers(S3&& value) { m_s3PathForGroupMembersHasBeenSet = true; m_s3PathForGroupMembers = std::move(value); }
+    inline GroupMembers& WithS3PathForGroupMembers(const S3& value) { SetS3PathForGroupMembers(value); return *this;}
+    inline GroupMembers& WithS3PathForGroupMembers(S3&& value) { SetS3PathForGroupMembers(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<MemberGroup> m_memberGroups;
@@ -78,6 +89,9 @@ namespace Model
 
     Aws::Vector<MemberUser> m_memberUsers;
     bool m_memberUsersHasBeenSet = false;
+
+    S3 m_s3PathForGroupMembers;
+    bool m_s3PathForGroupMembersHasBeenSet = false;
   };
 
 } // namespace Model

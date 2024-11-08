@@ -69,12 +69,12 @@ namespace Model
      * to create a grant that allows the Firehose service to use the customer managed
      * CMK to perform encryption and decryption. Firehose manages that grant. </p>
      * <p>When you invoke <a>StartDeliveryStreamEncryption</a> to change the CMK for a
-     * delivery stream that is encrypted with a customer managed CMK, Firehose
+     * Firehose stream that is encrypted with a customer managed CMK, Firehose
      * schedules the grant it had on the old CMK for retirement.</p> <p>You can use a
-     * CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams. If a
+     * CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 Firehose streams. If a
      * <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation
      * exceeds this limit, Firehose throws a <code>LimitExceededException</code>. </p>
-     *  <p>To encrypt your delivery stream, use symmetric CMKs. Firehose
+     *  <p>To encrypt your Firehose stream, use symmetric CMKs. Firehose
      * doesn't support asymmetric CMKs. For information about symmetric and asymmetric
      * CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About

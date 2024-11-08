@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies that the dynamic partitioning is enabled for this Firehose delivery
+     * <p>Specifies that the dynamic partitioning is enabled for this Firehose Firehose
      * stream.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }

@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the delivery stream.</p>
+     * <p>The ARN of the Firehose stream.</p>
      */
     inline const Aws::String& GetDeliveryStreamARN() const{ return m_deliveryStreamARN; }
     inline void SetDeliveryStreamARN(const Aws::String& value) { m_deliveryStreamARN = value; }

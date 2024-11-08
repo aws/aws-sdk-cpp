@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 InvokeFlowRequest::InvokeFlowRequest() : 
+    m_enableTrace(false),
+    m_enableTraceHasBeenSet(false),
     m_flowAliasIdentifierHasBeenSet(false),
     m_flowIdentifierHasBeenSet(false),
     m_inputsHasBeenSet(false),
@@ -23,6 +25,12 @@ InvokeFlowRequest::InvokeFlowRequest() :
 Aws::String InvokeFlowRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_enableTraceHasBeenSet)
+  {
+   payload.WithBool("enableTrace", m_enableTrace);
+
+  }
 
   if(m_inputsHasBeenSet)
   {

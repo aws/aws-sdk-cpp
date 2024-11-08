@@ -19,7 +19,8 @@ PutGroupRequest::PutGroupRequest() :
     m_dataSourceIdHasBeenSet(false),
     m_type(MembershipType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_groupMembersHasBeenSet(false)
+    m_groupMembersHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,12 @@ Aws::String PutGroupRequest::SerializePayload() const
   if(m_groupMembersHasBeenSet)
   {
    payload.WithObject("groupMembers", m_groupMembers.Jsonize());
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 

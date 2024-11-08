@@ -45,7 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the Firehose stream.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
@@ -190,7 +190,6 @@ namespace Model
     ///@{
     /**
      * <p> Describes an update for a destination in Apache Iceberg Tables. </p>
-     * <p>Amazon Data Firehose is in preview release and is subject to change.</p>
      */
     inline const IcebergDestinationUpdate& GetIcebergDestinationUpdate() const{ return m_icebergDestinationUpdate; }
     inline bool IcebergDestinationUpdateHasBeenSet() const { return m_icebergDestinationUpdateHasBeenSet; }

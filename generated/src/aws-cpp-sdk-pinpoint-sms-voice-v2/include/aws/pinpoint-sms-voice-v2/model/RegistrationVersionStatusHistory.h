@@ -79,6 +79,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The time when the registration was in the requires authentication state, in
+     * <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRequiresAuthenticationTimestamp() const{ return m_requiresAuthenticationTimestamp; }
+    inline bool RequiresAuthenticationTimestampHasBeenSet() const { return m_requiresAuthenticationTimestampHasBeenSet; }
+    inline void SetRequiresAuthenticationTimestamp(const Aws::Utils::DateTime& value) { m_requiresAuthenticationTimestampHasBeenSet = true; m_requiresAuthenticationTimestamp = value; }
+    inline void SetRequiresAuthenticationTimestamp(Aws::Utils::DateTime&& value) { m_requiresAuthenticationTimestampHasBeenSet = true; m_requiresAuthenticationTimestamp = std::move(value); }
+    inline RegistrationVersionStatusHistory& WithRequiresAuthenticationTimestamp(const Aws::Utils::DateTime& value) { SetRequiresAuthenticationTimestamp(value); return *this;}
+    inline RegistrationVersionStatusHistory& WithRequiresAuthenticationTimestamp(Aws::Utils::DateTime&& value) { SetRequiresAuthenticationTimestamp(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The time when the registration was in the approved state, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
@@ -151,6 +164,9 @@ namespace Model
 
     Aws::Utils::DateTime m_reviewingTimestamp;
     bool m_reviewingTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_requiresAuthenticationTimestamp;
+    bool m_requiresAuthenticationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_approvedTimestamp;
     bool m_approvedTimestampHasBeenSet = false;

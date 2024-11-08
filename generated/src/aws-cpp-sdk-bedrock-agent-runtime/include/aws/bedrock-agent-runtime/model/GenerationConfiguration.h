@@ -94,7 +94,10 @@ namespace Model
     ///@{
     /**
      * <p>Contains the template for the prompt that's sent to the model for response
-     * generation.</p>
+     * generation. Generation prompts must include the <code>$search_results$</code>
+     * variable. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use
+     * placeholder variables</a> in the user guide.</p>
      */
     inline const PromptTemplate& GetPromptTemplate() const{ return m_promptTemplate; }
     inline bool PromptTemplateHasBeenSet() const { return m_promptTemplateHasBeenSet; }

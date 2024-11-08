@@ -184,6 +184,22 @@ namespace Model
     inline UpdateFunctionCodeRequest& AddArchitectures(const Architecture& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
     inline UpdateFunctionCodeRequest& AddArchitectures(Architecture&& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the Key Management Service (KMS) customer managed key that's used
+     * to encrypt your function's .zip deployment package. If you don't provide a
+     * customer managed key, Lambda uses an Amazon Web Services managed key.</p>
+     */
+    inline const Aws::String& GetSourceKMSKeyArn() const{ return m_sourceKMSKeyArn; }
+    inline bool SourceKMSKeyArnHasBeenSet() const { return m_sourceKMSKeyArnHasBeenSet; }
+    inline void SetSourceKMSKeyArn(const Aws::String& value) { m_sourceKMSKeyArnHasBeenSet = true; m_sourceKMSKeyArn = value; }
+    inline void SetSourceKMSKeyArn(Aws::String&& value) { m_sourceKMSKeyArnHasBeenSet = true; m_sourceKMSKeyArn = std::move(value); }
+    inline void SetSourceKMSKeyArn(const char* value) { m_sourceKMSKeyArnHasBeenSet = true; m_sourceKMSKeyArn.assign(value); }
+    inline UpdateFunctionCodeRequest& WithSourceKMSKeyArn(const Aws::String& value) { SetSourceKMSKeyArn(value); return *this;}
+    inline UpdateFunctionCodeRequest& WithSourceKMSKeyArn(Aws::String&& value) { SetSourceKMSKeyArn(std::move(value)); return *this;}
+    inline UpdateFunctionCodeRequest& WithSourceKMSKeyArn(const char* value) { SetSourceKMSKeyArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_functionName;
@@ -215,6 +231,9 @@ namespace Model
 
     Aws::Vector<Architecture> m_architectures;
     bool m_architecturesHasBeenSet = false;
+
+    Aws::String m_sourceKMSKeyArn;
+    bool m_sourceKMSKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

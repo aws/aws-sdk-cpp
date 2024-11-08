@@ -11,6 +11,7 @@
 #include <aws/bedrock-agent-runtime/model/DependencyFailedException.h>
 #include <aws/bedrock-agent-runtime/model/FlowCompletionEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowOutputEvent.h>
+#include <aws/bedrock-agent-runtime/model/FlowTraceEvent.h>
 #include <aws/bedrock-agent-runtime/model/InternalServerException.h>
 #include <aws/bedrock-agent-runtime/model/ResourceNotFoundException.h>
 #include <aws/bedrock-agent-runtime/model/ServiceQuotaExceededException.h>
@@ -34,10 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>The output of the flow.</p> <p>This data type is used in the following API
-   * operations:</p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeFlow.html#API_agent_InvokeFlow_ResponseSyntax">InvokeFlow
-   * response</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>The output of the flow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/FlowResponseStream">AWS
    * API Reference</a></p>
    */
@@ -128,6 +126,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains information about a trace, which tracks an input or output for a
+     * node in the flow.</p>
+     */
+    inline const FlowTraceEvent& GetFlowTraceEvent() const{ return m_flowTraceEvent; }
+    inline bool FlowTraceEventHasBeenSet() const { return m_flowTraceEventHasBeenSet; }
+    inline void SetFlowTraceEvent(const FlowTraceEvent& value) { m_flowTraceEventHasBeenSet = true; m_flowTraceEvent = value; }
+    inline void SetFlowTraceEvent(FlowTraceEvent&& value) { m_flowTraceEventHasBeenSet = true; m_flowTraceEvent = std::move(value); }
+    inline FlowResponseStream& WithFlowTraceEvent(const FlowTraceEvent& value) { SetFlowTraceEvent(value); return *this;}
+    inline FlowResponseStream& WithFlowTraceEvent(FlowTraceEvent&& value) { SetFlowTraceEvent(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An internal server error occurred. Retry your request.</p>
      */
     inline const InternalServerException& GetInternalServerException() const{ return m_internalServerException; }
@@ -207,6 +218,9 @@ namespace Model
 
     FlowOutputEvent m_flowOutputEvent;
     bool m_flowOutputEventHasBeenSet = false;
+
+    FlowTraceEvent m_flowTraceEvent;
+    bool m_flowTraceEventHasBeenSet = false;
 
     InternalServerException m_internalServerException;
     bool m_internalServerExceptionHasBeenSet = false;

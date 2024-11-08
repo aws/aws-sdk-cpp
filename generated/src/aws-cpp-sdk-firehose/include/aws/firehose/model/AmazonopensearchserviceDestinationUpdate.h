@@ -111,9 +111,9 @@ namespace Model
      * <p>The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be
      * only one type per index. If you try to specify a new type for an existing index
      * that already has another type, Firehose returns an error during runtime. </p>
-     * <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery
+     * <p>If you upgrade Elasticsearch from 6.x to 7.x and don’t update your Firehose
      * stream, Firehose still delivers data to Elasticsearch with the old index name
-     * and type name. If you want to update your delivery stream with a new index name,
+     * and type name. If you want to update your Firehose stream with a new index name,
      * provide an empty string for TypeName. </p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }

@@ -21,7 +21,8 @@ namespace Model
 LaunchTemplateSpecification::LaunchTemplateSpecification() : 
     m_launchTemplateIdHasBeenSet(false),
     m_launchTemplateNameHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_overridesHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ LaunchTemplateSpecification& LaunchTemplateSpecification::operator =(JsonView js
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("overrides"))
+  {
+    Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
+    for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
+    {
+      m_overrides.push_back(overridesJsonList[overridesIndex].AsObject());
+    }
+    m_overridesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +87,17 @@ JsonValue LaunchTemplateSpecification::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithString("version", m_version);
+
+  }
+
+  if(m_overridesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
+   for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
+   {
+     overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());
+   }
+   payload.WithArray("overrides", std::move(overridesJsonList));
 
   }
 

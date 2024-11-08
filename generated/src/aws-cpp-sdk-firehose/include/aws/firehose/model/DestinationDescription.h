@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the destination for a delivery stream.</p><p><h3>See Also:</h3>  
+   * <p>Describes the destination for a Firehose stream.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DestinationDescription">AWS
    * API Reference</a></p>
@@ -172,8 +172,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Describes a destination in Apache Iceberg Tables. </p> <p>Amazon Data
-     * Firehose is in preview release and is subject to change.</p>
+     * <p> Describes a destination in Apache Iceberg Tables. </p>
      */
     inline const IcebergDestinationDescription& GetIcebergDestinationDescription() const{ return m_icebergDestinationDescription; }
     inline bool IcebergDestinationDescriptionHasBeenSet() const { return m_icebergDestinationDescriptionHasBeenSet; }

@@ -11,6 +11,7 @@
 #include <aws/chime-sdk-media-pipelines/model/MediaPipelineSinkType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/chime-sdk-media-pipelines/model/ChimeSdkMeetingConfiguration.h>
+#include <aws/chime-sdk-media-pipelines/model/SseAwsKeyManagementParams.h>
 #include <utility>
 
 namespace Aws
@@ -173,6 +174,35 @@ namespace Model
     inline MediaCapturePipeline& WithChimeSdkMeetingConfiguration(const ChimeSdkMeetingConfiguration& value) { SetChimeSdkMeetingConfiguration(value); return *this;}
     inline MediaCapturePipeline& WithChimeSdkMeetingConfiguration(ChimeSdkMeetingConfiguration&& value) { SetChimeSdkMeetingConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An object that contains server side encryption parameters to be used by media
+     * capture pipeline. The parameters can also be used by media concatenation
+     * pipeline taking media capture pipeline as a media source.</p>
+     */
+    inline const SseAwsKeyManagementParams& GetSseAwsKeyManagementParams() const{ return m_sseAwsKeyManagementParams; }
+    inline bool SseAwsKeyManagementParamsHasBeenSet() const { return m_sseAwsKeyManagementParamsHasBeenSet; }
+    inline void SetSseAwsKeyManagementParams(const SseAwsKeyManagementParams& value) { m_sseAwsKeyManagementParamsHasBeenSet = true; m_sseAwsKeyManagementParams = value; }
+    inline void SetSseAwsKeyManagementParams(SseAwsKeyManagementParams&& value) { m_sseAwsKeyManagementParamsHasBeenSet = true; m_sseAwsKeyManagementParams = std::move(value); }
+    inline MediaCapturePipeline& WithSseAwsKeyManagementParams(const SseAwsKeyManagementParams& value) { SetSseAwsKeyManagementParams(value); return *this;}
+    inline MediaCapturePipeline& WithSseAwsKeyManagementParams(SseAwsKeyManagementParams&& value) { SetSseAwsKeyManagementParams(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the sink role to be used with
+     * <code>AwsKmsKeyId</code> in <code>SseAwsKeyManagementParams</code>.</p>
+     */
+    inline const Aws::String& GetSinkIamRoleArn() const{ return m_sinkIamRoleArn; }
+    inline bool SinkIamRoleArnHasBeenSet() const { return m_sinkIamRoleArnHasBeenSet; }
+    inline void SetSinkIamRoleArn(const Aws::String& value) { m_sinkIamRoleArnHasBeenSet = true; m_sinkIamRoleArn = value; }
+    inline void SetSinkIamRoleArn(Aws::String&& value) { m_sinkIamRoleArnHasBeenSet = true; m_sinkIamRoleArn = std::move(value); }
+    inline void SetSinkIamRoleArn(const char* value) { m_sinkIamRoleArnHasBeenSet = true; m_sinkIamRoleArn.assign(value); }
+    inline MediaCapturePipeline& WithSinkIamRoleArn(const Aws::String& value) { SetSinkIamRoleArn(value); return *this;}
+    inline MediaCapturePipeline& WithSinkIamRoleArn(Aws::String&& value) { SetSinkIamRoleArn(std::move(value)); return *this;}
+    inline MediaCapturePipeline& WithSinkIamRoleArn(const char* value) { SetSinkIamRoleArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_mediaPipelineId;
@@ -204,6 +234,12 @@ namespace Model
 
     ChimeSdkMeetingConfiguration m_chimeSdkMeetingConfiguration;
     bool m_chimeSdkMeetingConfigurationHasBeenSet = false;
+
+    SseAwsKeyManagementParams m_sseAwsKeyManagementParams;
+    bool m_sseAwsKeyManagementParamsHasBeenSet = false;
+
+    Aws::String m_sinkIamRoleArn;
+    bool m_sinkIamRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

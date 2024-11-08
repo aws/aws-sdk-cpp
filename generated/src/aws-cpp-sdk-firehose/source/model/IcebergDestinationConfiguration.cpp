@@ -20,6 +20,8 @@ namespace Model
 
 IcebergDestinationConfiguration::IcebergDestinationConfiguration() : 
     m_destinationTableConfigurationListHasBeenSet(false),
+    m_schemaEvolutionConfigurationHasBeenSet(false),
+    m_tableCreationConfigurationHasBeenSet(false),
     m_bufferingHintsHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
@@ -48,6 +50,20 @@ IcebergDestinationConfiguration& IcebergDestinationConfiguration::operator =(Jso
       m_destinationTableConfigurationList.push_back(destinationTableConfigurationListJsonList[destinationTableConfigurationListIndex].AsObject());
     }
     m_destinationTableConfigurationListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SchemaEvolutionConfiguration"))
+  {
+    m_schemaEvolutionConfiguration = jsonValue.GetObject("SchemaEvolutionConfiguration");
+
+    m_schemaEvolutionConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TableCreationConfiguration"))
+  {
+    m_tableCreationConfiguration = jsonValue.GetObject("TableCreationConfiguration");
+
+    m_tableCreationConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("BufferingHints"))
@@ -121,6 +137,18 @@ JsonValue IcebergDestinationConfiguration::Jsonize() const
      destinationTableConfigurationListJsonList[destinationTableConfigurationListIndex].AsObject(m_destinationTableConfigurationList[destinationTableConfigurationListIndex].Jsonize());
    }
    payload.WithArray("DestinationTableConfigurationList", std::move(destinationTableConfigurationListJsonList));
+
+  }
+
+  if(m_schemaEvolutionConfigurationHasBeenSet)
+  {
+   payload.WithObject("SchemaEvolutionConfiguration", m_schemaEvolutionConfiguration.Jsonize());
+
+  }
+
+  if(m_tableCreationConfigurationHasBeenSet)
+  {
+   payload.WithObject("TableCreationConfiguration", m_tableCreationConfiguration.Jsonize());
 
   }
 

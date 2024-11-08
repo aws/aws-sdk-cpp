@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the delivery stream.</p>
+     * <p>The name of the Firehose stream.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
     inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Set this to true if you want to delete the delivery stream even if Firehose
+     * <p>Set this to true if you want to delete the Firehose stream even if Firehose
      * is unable to retire the grant for the CMK. Firehose might be unable to retire
      * the grant due to a customer error, such as when the CMK or the grant are in an
      * invalid state. If you force deletion, you can then use the <a

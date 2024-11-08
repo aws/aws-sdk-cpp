@@ -159,7 +159,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }

@@ -22,6 +22,7 @@ DestinationTableConfiguration::DestinationTableConfiguration() :
     m_destinationTableNameHasBeenSet(false),
     m_destinationDatabaseNameHasBeenSet(false),
     m_uniqueKeysHasBeenSet(false),
+    m_partitionSpecHasBeenSet(false),
     m_s3ErrorOutputPrefixHasBeenSet(false)
 {
 }
@@ -58,6 +59,13 @@ DestinationTableConfiguration& DestinationTableConfiguration::operator =(JsonVie
     m_uniqueKeysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PartitionSpec"))
+  {
+    m_partitionSpec = jsonValue.GetObject("PartitionSpec");
+
+    m_partitionSpecHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("S3ErrorOutputPrefix"))
   {
     m_s3ErrorOutputPrefix = jsonValue.GetString("S3ErrorOutputPrefix");
@@ -92,6 +100,12 @@ JsonValue DestinationTableConfiguration::Jsonize() const
      uniqueKeysJsonList[uniqueKeysIndex].AsString(m_uniqueKeys[uniqueKeysIndex]);
    }
    payload.WithArray("UniqueKeys", std::move(uniqueKeysJsonList));
+
+  }
+
+  if(m_partitionSpecHasBeenSet)
+  {
+   payload.WithObject("PartitionSpec", m_partitionSpec.Jsonize());
 
   }
 

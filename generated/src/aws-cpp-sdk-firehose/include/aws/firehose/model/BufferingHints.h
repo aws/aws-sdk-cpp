@@ -47,7 +47,7 @@ namespace Model
      * specify a value for it, you must also specify a value for
      * <code>IntervalInSeconds</code>, and vice versa.</p> <p>We recommend setting this
      * parameter to a value greater than the amount of data you typically ingest into
-     * the delivery stream in 10 seconds. For example, if you typically ingest data at
+     * the Firehose stream in 10 seconds. For example, if you typically ingest data at
      * 1 MiB/sec, the value should be 10 MiB or higher.</p>
      */
     inline int GetSizeInMBs() const{ return m_sizeInMBs; }

@@ -21,6 +21,7 @@
 #include <aws/firehose/model/MSKSourceConfiguration.h>
 #include <aws/firehose/model/SnowflakeDestinationConfiguration.h>
 #include <aws/firehose/model/IcebergDestinationConfiguration.h>
+#include <aws/firehose/model/DatabaseSourceConfiguration.h>
 #include <aws/firehose/model/Tag.h>
 #include <utility>
 
@@ -51,9 +52,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the delivery stream. This name must be unique per Amazon Web
-     * Services account in the same Amazon Web Services Region. If the delivery streams
-     * are in different accounts or different Regions, you can have multiple delivery
+     * <p>The name of the Firehose stream. This name must be unique per Amazon Web
+     * Services account in the same Amazon Web Services Region. If the Firehose streams
+     * are in different accounts or different Regions, you can have multiple Firehose
      * streams with the same name.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
@@ -68,10 +69,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The delivery stream type. This parameter can be one of the following
+     * <p>The Firehose stream type. This parameter can be one of the following
      * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
-     * the delivery stream directly.</p> </li> <li> <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
+     * the Firehose stream directly.</p> </li> <li> <p>
+     * <code>KinesisStreamAsSource</code>: The Firehose stream uses a Kinesis data
      * stream as a source.</p> </li> </ul>
      */
     inline const DeliveryStreamType& GetDeliveryStreamType() const{ return m_deliveryStreamType; }
@@ -84,7 +85,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>When a Kinesis data stream is used as the source for the delivery stream, a
+     * <p>When a Kinesis data stream is used as the source for the Firehose stream, a
      * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream
      * Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
      */
@@ -185,19 +186,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>A set of tags to assign to the delivery stream. A tag is a key-value pair
+     * <p>A set of tags to assign to the Firehose stream. A tag is a key-value pair
      * that you can define and assign to Amazon Web Services resources. Tags are
      * metadata. For example, you can add friendly names and descriptions or other
-     * types of information that can help you distinguish the delivery stream. For more
+     * types of information that can help you distinguish the Firehose stream. For more
      * information about tags, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
      * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
-     * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
+     * User Guide.</p> <p>You can specify up to 50 tags when creating a Firehose
      * stream.</p> <p>If you specify tags in the <code>CreateDeliveryStream</code>
      * action, Amazon Data Firehose performs an additional authorization on the
      * <code>firehose:TagDeliveryStream</code> action to verify if users have
      * permissions to create tags. If you do not provide this permission, requests to
-     * create new Firehose delivery streams with IAM resource tags will fail with an
+     * create new Firehose Firehose streams with IAM resource tags will fail with an
      * <code>AccessDeniedException</code> such as following.</p> <p>
      * <b>AccessDeniedException</b> </p> <p>User: arn:aws:sts::x:assumed-role/x/x is
      * not authorized to perform: firehose:TagDeliveryStream on resource:
@@ -253,8 +254,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> Configure Apache Iceberg Tables destination. </p> <p>Amazon Data Firehose is
-     * in preview release and is subject to change.</p>
+     * <p> Configure Apache Iceberg Tables destination. </p>
      */
     inline const IcebergDestinationConfiguration& GetIcebergDestinationConfiguration() const{ return m_icebergDestinationConfiguration; }
     inline bool IcebergDestinationConfigurationHasBeenSet() const { return m_icebergDestinationConfigurationHasBeenSet; }
@@ -262,6 +262,19 @@ namespace Model
     inline void SetIcebergDestinationConfiguration(IcebergDestinationConfiguration&& value) { m_icebergDestinationConfigurationHasBeenSet = true; m_icebergDestinationConfiguration = std::move(value); }
     inline CreateDeliveryStreamRequest& WithIcebergDestinationConfiguration(const IcebergDestinationConfiguration& value) { SetIcebergDestinationConfiguration(value); return *this;}
     inline CreateDeliveryStreamRequest& WithIcebergDestinationConfiguration(IcebergDestinationConfiguration&& value) { SetIcebergDestinationConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * change.</p>
+     */
+    inline const DatabaseSourceConfiguration& GetDatabaseSourceConfiguration() const{ return m_databaseSourceConfiguration; }
+    inline bool DatabaseSourceConfigurationHasBeenSet() const { return m_databaseSourceConfigurationHasBeenSet; }
+    inline void SetDatabaseSourceConfiguration(const DatabaseSourceConfiguration& value) { m_databaseSourceConfigurationHasBeenSet = true; m_databaseSourceConfiguration = value; }
+    inline void SetDatabaseSourceConfiguration(DatabaseSourceConfiguration&& value) { m_databaseSourceConfigurationHasBeenSet = true; m_databaseSourceConfiguration = std::move(value); }
+    inline CreateDeliveryStreamRequest& WithDatabaseSourceConfiguration(const DatabaseSourceConfiguration& value) { SetDatabaseSourceConfiguration(value); return *this;}
+    inline CreateDeliveryStreamRequest& WithDatabaseSourceConfiguration(DatabaseSourceConfiguration&& value) { SetDatabaseSourceConfiguration(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -309,6 +322,9 @@ namespace Model
 
     IcebergDestinationConfiguration m_icebergDestinationConfiguration;
     bool m_icebergDestinationConfigurationHasBeenSet = false;
+
+    DatabaseSourceConfiguration m_databaseSourceConfiguration;
+    bool m_databaseSourceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

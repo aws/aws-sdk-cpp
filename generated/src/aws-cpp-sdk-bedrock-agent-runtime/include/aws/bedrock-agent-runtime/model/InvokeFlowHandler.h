@@ -13,6 +13,7 @@
 #include <aws/bedrock-agent-runtime/model/InvokeFlowInitialResponse.h>
 #include <aws/bedrock-agent-runtime/model/FlowCompletionEvent.h>
 #include <aws/bedrock-agent-runtime/model/FlowOutputEvent.h>
+#include <aws/bedrock-agent-runtime/model/FlowTraceEvent.h>
 
 namespace Aws
 {
@@ -25,6 +26,7 @@ namespace Model
         INITIAL_RESPONSE,
         FLOWCOMPLETIONEVENT,
         FLOWOUTPUTEVENT,
+        FLOWTRACEEVENT,
         UNKNOWN
     };
 
@@ -34,6 +36,7 @@ namespace Model
         typedef std::function<void(const InvokeFlowInitialResponse&, const Utils::Event::InitialResponseType)> InvokeFlowInitialResponseCallbackEx;
         typedef std::function<void(const FlowCompletionEvent&)> FlowCompletionEventCallback;
         typedef std::function<void(const FlowOutputEvent&)> FlowOutputEventCallback;
+        typedef std::function<void(const FlowTraceEvent&)> FlowTraceEventCallback;
         typedef std::function<void(const Aws::Client::AWSError<BedrockAgentRuntimeErrors>& error)> ErrorCallback;
 
     public:
@@ -60,6 +63,7 @@ namespace Model
         ///@}
         inline void SetFlowCompletionEventCallback(const FlowCompletionEventCallback& callback) { m_onFlowCompletionEvent = callback; }
         inline void SetFlowOutputEventCallback(const FlowOutputEventCallback& callback) { m_onFlowOutputEvent = callback; }
+        inline void SetFlowTraceEventCallback(const FlowTraceEventCallback& callback) { m_onFlowTraceEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
         inline InvokeFlowInitialResponseCallbackEx& GetInitialResponseCallbackEx() { return m_onInitialResponse; }
@@ -72,6 +76,7 @@ namespace Model
         InvokeFlowInitialResponseCallbackEx m_onInitialResponse;
         FlowCompletionEventCallback m_onFlowCompletionEvent;
         FlowOutputEventCallback m_onFlowOutputEvent;
+        FlowTraceEventCallback m_onFlowTraceEvent;
         ErrorCallback m_onError;
     };
 

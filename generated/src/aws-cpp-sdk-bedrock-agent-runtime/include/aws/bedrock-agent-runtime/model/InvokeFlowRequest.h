@@ -58,6 +58,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether to return the trace for the flow or not. Traces track
+     * inputs and outputs for nodes in the flow. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
+     * each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+     */
+    inline bool GetEnableTrace() const{ return m_enableTrace; }
+    inline bool EnableTraceHasBeenSet() const { return m_enableTraceHasBeenSet; }
+    inline void SetEnableTrace(bool value) { m_enableTraceHasBeenSet = true; m_enableTrace = value; }
+    inline InvokeFlowRequest& WithEnableTrace(bool value) { SetEnableTrace(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the flow alias.</p>
      */
     inline const Aws::String& GetFlowAliasIdentifier() const{ return m_flowAliasIdentifier; }
@@ -99,6 +112,9 @@ namespace Model
     inline InvokeFlowRequest& AddInputs(FlowInput&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
     ///@}
   private:
+
+    bool m_enableTrace;
+    bool m_enableTraceHasBeenSet = false;
 
     Aws::String m_flowAliasIdentifier;
     bool m_flowAliasIdentifierHasBeenSet = false;

@@ -64,7 +64,7 @@ namespace Model
      * <p>The function's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
      * Lambda returns tag data only if you have explicit allow permissions for <a
-     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }

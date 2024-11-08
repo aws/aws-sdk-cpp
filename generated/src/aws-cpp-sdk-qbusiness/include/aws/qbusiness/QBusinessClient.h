@@ -207,7 +207,12 @@ namespace QBusiness
          * Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a
          * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers">Amazon
          * Q Business tiers</a>. You must use the Amazon Q Business console to assign
-         * subscription tiers to users.</p> <p><h3>See Also:</h3>   <a
+         * subscription tiers to users. </p> <p> A Amazon Q Apps service linked role will
+         * be created if it's absent in the Amazon Web Services account when the
+         * QAppsConfiguration is enabled in the request. For more information, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
+         * Using service-linked roles for Q Apps </a> </p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateApplication">AWS
          * API Reference</a></p>
          */
@@ -1366,7 +1371,12 @@ namespace QBusiness
         }
 
         /**
-         * <p>Updates an existing Amazon Q Business application.</p><p><h3>See Also:</h3>  
+         * <p>Updates an existing Amazon Q Business application.</p>  <p> A Amazon Q
+         * Apps service-linked role will be created if it's absent in the Amazon Web
+         * Services account when the QAppsConfiguration is enabled in the request. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
+         * Using service-linked roles for Q Apps </a> </p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateApplication">AWS
          * API Reference</a></p>

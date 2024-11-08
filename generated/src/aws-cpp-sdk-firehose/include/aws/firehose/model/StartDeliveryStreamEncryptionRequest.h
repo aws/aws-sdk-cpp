@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the delivery stream for which you want to enable server-side
+     * <p>The name of the Firehose stream for which you want to enable server-side
      * encryption (SSE).</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }

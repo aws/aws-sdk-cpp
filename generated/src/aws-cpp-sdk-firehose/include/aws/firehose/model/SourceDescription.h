@@ -7,6 +7,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/firehose/model/KinesisStreamSourceDescription.h>
 #include <aws/firehose/model/MSKSourceDescription.h>
+#include <aws/firehose/model/DatabaseSourceDescription.h>
 #include <utility>
 
 namespace Aws
@@ -26,7 +27,7 @@ namespace Model
 
   /**
    * <p>Details about a Kinesis data stream used as the source for a Firehose
-   * delivery stream.</p><p><h3>See Also:</h3>   <a
+   * Firehose stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SourceDescription">AWS
    * API Reference</a></p>
    */
@@ -64,6 +65,19 @@ namespace Model
     inline SourceDescription& WithMSKSourceDescription(const MSKSourceDescription& value) { SetMSKSourceDescription(value); return *this;}
     inline SourceDescription& WithMSKSourceDescription(MSKSourceDescription&& value) { SetMSKSourceDescription(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> </p> <p>Amazon Data Firehose is in preview release and is subject to
+     * change.</p>
+     */
+    inline const DatabaseSourceDescription& GetDatabaseSourceDescription() const{ return m_databaseSourceDescription; }
+    inline bool DatabaseSourceDescriptionHasBeenSet() const { return m_databaseSourceDescriptionHasBeenSet; }
+    inline void SetDatabaseSourceDescription(const DatabaseSourceDescription& value) { m_databaseSourceDescriptionHasBeenSet = true; m_databaseSourceDescription = value; }
+    inline void SetDatabaseSourceDescription(DatabaseSourceDescription&& value) { m_databaseSourceDescriptionHasBeenSet = true; m_databaseSourceDescription = std::move(value); }
+    inline SourceDescription& WithDatabaseSourceDescription(const DatabaseSourceDescription& value) { SetDatabaseSourceDescription(value); return *this;}
+    inline SourceDescription& WithDatabaseSourceDescription(DatabaseSourceDescription&& value) { SetDatabaseSourceDescription(std::move(value)); return *this;}
+    ///@}
   private:
 
     KinesisStreamSourceDescription m_kinesisStreamSourceDescription;
@@ -71,6 +85,9 @@ namespace Model
 
     MSKSourceDescription m_mSKSourceDescription;
     bool m_mSKSourceDescriptionHasBeenSet = false;
+
+    DatabaseSourceDescription m_databaseSourceDescription;
+    bool m_databaseSourceDescriptionHasBeenSet = false;
   };
 
 } // namespace Model
