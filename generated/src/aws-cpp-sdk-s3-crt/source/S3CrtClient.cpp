@@ -723,13 +723,16 @@ static void CopyObjectRequestShutdownCallback(void *user_data)
   // call user callback and release user_data
   S3Crt::Model::CopyObjectOutcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
   //log into monitor 
-  if(!outcome.IsSuccess())
+  if (userData->asyncCallerContext)
   {
-    userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
-  }
-  else
-  {
-    userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
+    if(!outcome.IsSuccess())
+    {
+      userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
+    }
+    else
+    {
+      userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
+    }
   }
   userData->copyResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const CopyObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 
@@ -788,7 +791,10 @@ void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyOb
   std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { &endpoint, &aws_uri_clean_up };
 
   userData->copyResponseHandler = handler;
-  userData->asyncCallerContext = handlerContext;
+  if(handlerContext)
+  {
+    userData->asyncCallerContext = handlerContext;
+  }
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
   if (userData != nullptr &&
     userData->request != nullptr &&
@@ -797,7 +803,10 @@ void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyOb
   {
     return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
   }
-  handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"S3CrtClient"},request.GetServiceRequestName(), userData->request);
+  if(handlerContext)
+  {
+    handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"S3CrtClient"},request.GetServiceRequestName(), userData->request);
+  }
   options.shutdown_callback = CopyObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_COPY_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
@@ -895,13 +904,16 @@ static void GetObjectRequestShutdownCallback(void *user_data)
   // call user callback and release user_data
   S3Crt::Model::GetObjectOutcome outcome(userData->s3CrtClient->GenerateStreamOutcome(userData->response));
   //log into monitor 
-  if(!outcome.IsSuccess())
+  if (userData->asyncCallerContext)
   {
-    userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
-  }
-  else
-  {
-    userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
+    if(!outcome.IsSuccess())
+    {
+      userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
+    }
+    else
+    {
+      userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
+    }
   }
   userData->getResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const GetObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 
@@ -955,7 +967,10 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { &endpoint, &aws_uri_clean_up };
 
   userData->getResponseHandler = handler;
-  userData->asyncCallerContext = handlerContext;
+  if(handlerContext)
+  {
+    userData->asyncCallerContext = handlerContext;
+  }
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET);
   if (userData != nullptr &&
     userData->request != nullptr &&
@@ -964,7 +979,10 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   {
     return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Output stream in bad state", false)), handlerContext);
   }
-  handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"S3CrtClient"},request.GetServiceRequestName(), userData->request);
+  if(handlerContext)
+  {
+    handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"S3CrtClient"},request.GetServiceRequestName(), userData->request);
+  }
   options.shutdown_callback = GetObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_GET_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
@@ -1031,13 +1049,16 @@ static void PutObjectRequestShutdownCallback(void *user_data)
   // call user callback and release user_data
   S3Crt::Model::PutObjectOutcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
   //log into monitor 
-  if(!outcome.IsSuccess())
+  if (userData->asyncCallerContext)
   {
-    userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
-  }
-  else
-  {
-    userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
+    if(!outcome.IsSuccess())
+    {
+      userData->asyncCallerContext->GetMonitorContext().OnRequestFailed(userData->request,userData->response);
+    }
+    else
+    {
+      userData->asyncCallerContext->GetMonitorContext().OnRequestSucceeded(userData->request, userData->response);
+    }
   }
   userData->putResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const PutObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 
@@ -1095,7 +1116,10 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { &endpoint, &aws_uri_clean_up };
 
   userData->putResponseHandler = handler;
-  userData->asyncCallerContext = handlerContext;
+  if(handlerContext)
+  {
+    userData->asyncCallerContext = handlerContext;
+  }
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
   if (userData != nullptr &&
     userData->request != nullptr &&
@@ -1104,7 +1128,10 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   {
     return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Input stream in bad state", false)), handlerContext);
   }
-  handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"S3CrtClient"},request.GetServiceRequestName(), userData->request);
+  if(handlerContext)
+  {
+    handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"S3CrtClient"},request.GetServiceRequestName(), userData->request);
+  }
   options.shutdown_callback = PutObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
