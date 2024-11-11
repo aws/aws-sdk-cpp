@@ -16,7 +16,11 @@ namespace Model
   enum class CapacityTaskFailureType
   {
     NOT_SET,
-    UNSUPPORTED_CAPACITY_CONFIGURATION
+    UNSUPPORTED_CAPACITY_CONFIGURATION,
+    UNEXPECTED_ASSET_STATE,
+    BLOCKING_INSTANCES_NOT_EVACUATED,
+    INTERNAL_SERVER_ERROR,
+    RESOURCE_NOT_FOUND
   };
 
 namespace CapacityTaskFailureTypeMapper

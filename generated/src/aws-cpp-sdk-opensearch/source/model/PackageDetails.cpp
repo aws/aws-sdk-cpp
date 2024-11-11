@@ -31,7 +31,12 @@ PackageDetails::PackageDetails() :
     m_availablePackageVersionHasBeenSet(false),
     m_errorDetailsHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_availablePluginPropertiesHasBeenSet(false)
+    m_availablePluginPropertiesHasBeenSet(false),
+    m_availablePackageConfigurationHasBeenSet(false),
+    m_allowListedUserListHasBeenSet(false),
+    m_packageOwnerHasBeenSet(false),
+    m_packageVendingOptionsHasBeenSet(false),
+    m_packageEncryptionOptionsHasBeenSet(false)
 {
 }
 
@@ -120,6 +125,44 @@ PackageDetails& PackageDetails::operator =(JsonView jsonValue)
     m_availablePluginPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AvailablePackageConfiguration"))
+  {
+    m_availablePackageConfiguration = jsonValue.GetObject("AvailablePackageConfiguration");
+
+    m_availablePackageConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AllowListedUserList"))
+  {
+    Aws::Utils::Array<JsonView> allowListedUserListJsonList = jsonValue.GetArray("AllowListedUserList");
+    for(unsigned allowListedUserListIndex = 0; allowListedUserListIndex < allowListedUserListJsonList.GetLength(); ++allowListedUserListIndex)
+    {
+      m_allowListedUserList.push_back(allowListedUserListJsonList[allowListedUserListIndex].AsString());
+    }
+    m_allowListedUserListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackageOwner"))
+  {
+    m_packageOwner = jsonValue.GetString("PackageOwner");
+
+    m_packageOwnerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackageVendingOptions"))
+  {
+    m_packageVendingOptions = jsonValue.GetObject("PackageVendingOptions");
+
+    m_packageVendingOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackageEncryptionOptions"))
+  {
+    m_packageEncryptionOptions = jsonValue.GetObject("PackageEncryptionOptions");
+
+    m_packageEncryptionOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -186,6 +229,41 @@ JsonValue PackageDetails::Jsonize() const
   if(m_availablePluginPropertiesHasBeenSet)
   {
    payload.WithObject("AvailablePluginProperties", m_availablePluginProperties.Jsonize());
+
+  }
+
+  if(m_availablePackageConfigurationHasBeenSet)
+  {
+   payload.WithObject("AvailablePackageConfiguration", m_availablePackageConfiguration.Jsonize());
+
+  }
+
+  if(m_allowListedUserListHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowListedUserListJsonList(m_allowListedUserList.size());
+   for(unsigned allowListedUserListIndex = 0; allowListedUserListIndex < allowListedUserListJsonList.GetLength(); ++allowListedUserListIndex)
+   {
+     allowListedUserListJsonList[allowListedUserListIndex].AsString(m_allowListedUserList[allowListedUserListIndex]);
+   }
+   payload.WithArray("AllowListedUserList", std::move(allowListedUserListJsonList));
+
+  }
+
+  if(m_packageOwnerHasBeenSet)
+  {
+   payload.WithString("PackageOwner", m_packageOwner);
+
+  }
+
+  if(m_packageVendingOptionsHasBeenSet)
+  {
+   payload.WithObject("PackageVendingOptions", m_packageVendingOptions.Jsonize());
+
+  }
+
+  if(m_packageEncryptionOptionsHasBeenSet)
+  {
+   payload.WithObject("PackageEncryptionOptions", m_packageEncryptionOptions.Jsonize());
 
   }
 

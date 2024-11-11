@@ -98,7 +98,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Contains details of the Amazon S3 bucket and KMS key used to export
+     * findings</p>
+     */
     inline const Destination& GetS3Destination() const{ return m_s3Destination; }
     inline void SetS3Destination(const Destination& value) { m_s3Destination = value; }
     inline void SetS3Destination(Destination&& value) { m_s3Destination = std::move(value); }

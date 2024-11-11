@@ -17,7 +17,11 @@ CreatePackageRequest::CreatePackageRequest() :
     m_packageType(PackageType::NOT_SET),
     m_packageTypeHasBeenSet(false),
     m_packageDescriptionHasBeenSet(false),
-    m_packageSourceHasBeenSet(false)
+    m_packageSourceHasBeenSet(false),
+    m_packageConfigurationHasBeenSet(false),
+    m_engineVersionHasBeenSet(false),
+    m_packageVendingOptionsHasBeenSet(false),
+    m_packageEncryptionOptionsHasBeenSet(false)
 {
 }
 
@@ -45,6 +49,30 @@ Aws::String CreatePackageRequest::SerializePayload() const
   if(m_packageSourceHasBeenSet)
   {
    payload.WithObject("PackageSource", m_packageSource.Jsonize());
+
+  }
+
+  if(m_packageConfigurationHasBeenSet)
+  {
+   payload.WithObject("PackageConfiguration", m_packageConfiguration.Jsonize());
+
+  }
+
+  if(m_engineVersionHasBeenSet)
+  {
+   payload.WithString("EngineVersion", m_engineVersion);
+
+  }
+
+  if(m_packageVendingOptionsHasBeenSet)
+  {
+   payload.WithObject("PackageVendingOptions", m_packageVendingOptions.Jsonize());
+
+  }
+
+  if(m_packageEncryptionOptionsHasBeenSet)
+  {
+   payload.WithObject("PackageEncryptionOptions", m_packageEncryptionOptions.Jsonize());
 
   }
 

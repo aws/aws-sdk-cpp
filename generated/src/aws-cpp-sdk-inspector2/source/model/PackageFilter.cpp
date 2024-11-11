@@ -21,6 +21,7 @@ namespace Model
 PackageFilter::PackageFilter() : 
     m_architectureHasBeenSet(false),
     m_epochHasBeenSet(false),
+    m_filePathHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_releaseHasBeenSet(false),
     m_sourceLambdaLayerArnHasBeenSet(false),
@@ -49,6 +50,13 @@ PackageFilter& PackageFilter::operator =(JsonView jsonValue)
     m_epoch = jsonValue.GetObject("epoch");
 
     m_epochHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("filePath"))
+  {
+    m_filePath = jsonValue.GetObject("filePath");
+
+    m_filePathHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -102,6 +110,12 @@ JsonValue PackageFilter::Jsonize() const
   if(m_epochHasBeenSet)
   {
    payload.WithObject("epoch", m_epoch.Jsonize());
+
+  }
+
+  if(m_filePathHasBeenSet)
+  {
+   payload.WithObject("filePath", m_filePath.Jsonize());
 
   }
 

@@ -7,6 +7,8 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/OpenSearchServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/opensearch/model/PackageAssociationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -64,6 +66,35 @@ namespace Model
     inline AssociatePackageRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
     inline AssociatePackageRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of package IDs that must be associated with the domain before the
+     * package specified in the request can be associated.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPrerequisitePackageIDList() const{ return m_prerequisitePackageIDList; }
+    inline bool PrerequisitePackageIDListHasBeenSet() const { return m_prerequisitePackageIDListHasBeenSet; }
+    inline void SetPrerequisitePackageIDList(const Aws::Vector<Aws::String>& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList = value; }
+    inline void SetPrerequisitePackageIDList(Aws::Vector<Aws::String>&& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList = std::move(value); }
+    inline AssociatePackageRequest& WithPrerequisitePackageIDList(const Aws::Vector<Aws::String>& value) { SetPrerequisitePackageIDList(value); return *this;}
+    inline AssociatePackageRequest& WithPrerequisitePackageIDList(Aws::Vector<Aws::String>&& value) { SetPrerequisitePackageIDList(std::move(value)); return *this;}
+    inline AssociatePackageRequest& AddPrerequisitePackageIDList(const Aws::String& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList.push_back(value); return *this; }
+    inline AssociatePackageRequest& AddPrerequisitePackageIDList(Aws::String&& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList.push_back(std::move(value)); return *this; }
+    inline AssociatePackageRequest& AddPrerequisitePackageIDList(const char* value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for associating a package with an Amazon OpenSearch Service
+     * domain.</p>
+     */
+    inline const PackageAssociationConfiguration& GetAssociationConfiguration() const{ return m_associationConfiguration; }
+    inline bool AssociationConfigurationHasBeenSet() const { return m_associationConfigurationHasBeenSet; }
+    inline void SetAssociationConfiguration(const PackageAssociationConfiguration& value) { m_associationConfigurationHasBeenSet = true; m_associationConfiguration = value; }
+    inline void SetAssociationConfiguration(PackageAssociationConfiguration&& value) { m_associationConfigurationHasBeenSet = true; m_associationConfiguration = std::move(value); }
+    inline AssociatePackageRequest& WithAssociationConfiguration(const PackageAssociationConfiguration& value) { SetAssociationConfiguration(value); return *this;}
+    inline AssociatePackageRequest& WithAssociationConfiguration(PackageAssociationConfiguration&& value) { SetAssociationConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_packageID;
@@ -71,6 +102,12 @@ namespace Model
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_prerequisitePackageIDList;
+    bool m_prerequisitePackageIDListHasBeenSet = false;
+
+    PackageAssociationConfiguration m_associationConfiguration;
+    bool m_associationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,7 +37,9 @@
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesRequest.h>
 #include <aws/outposts/model/GetSiteRequest.h>
 #include <aws/outposts/model/GetSiteAddressRequest.h>
+#include <aws/outposts/model/ListAssetInstancesRequest.h>
 #include <aws/outposts/model/ListAssetsRequest.h>
+#include <aws/outposts/model/ListBlockingInstancesForCapacityTaskRequest.h>
 #include <aws/outposts/model/ListCapacityTasksRequest.h>
 #include <aws/outposts/model/ListCatalogItemsRequest.h>
 #include <aws/outposts/model/ListOrdersRequest.h>
@@ -631,11 +633,6 @@ GetOutpostSupportedInstanceTypesOutcome OutpostsClient::GetOutpostSupportedInsta
     AWS_LOGSTREAM_ERROR("GetOutpostSupportedInstanceTypes", "Required field: OutpostIdentifier, is not set");
     return GetOutpostSupportedInstanceTypesOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostIdentifier]", false));
   }
-  if (!request.OrderIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("GetOutpostSupportedInstanceTypes", "Required field: OrderId, is not set");
-    return GetOutpostSupportedInstanceTypesOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OrderId]", false));
-  }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetOutpostSupportedInstanceTypes, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
@@ -733,6 +730,40 @@ GetSiteAddressOutcome OutpostsClient::GetSiteAddress(const GetSiteAddressRequest
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListAssetInstancesOutcome OutpostsClient::ListAssetInstances(const ListAssetInstancesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListAssetInstances);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssetInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.OutpostIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAssetInstances", "Required field: OutpostIdentifier, is not set");
+    return ListAssetInstancesOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAssetInstances, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListAssetInstances, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAssetInstances",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListAssetInstancesOutcome>(
+    [&]()-> ListAssetInstancesOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssetInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/outposts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/assetInstances");
+      return ListAssetInstancesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListAssetsOutcome OutpostsClient::ListAssets(const ListAssetsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListAssets);
@@ -761,6 +792,47 @@ ListAssetsOutcome OutpostsClient::ListAssets(const ListAssetsRequest& request) c
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostIdentifier());
       endpointResolutionOutcome.GetResult().AddPathSegments("/assets");
       return ListAssetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListBlockingInstancesForCapacityTaskOutcome OutpostsClient::ListBlockingInstancesForCapacityTask(const ListBlockingInstancesForCapacityTaskRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListBlockingInstancesForCapacityTask);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBlockingInstancesForCapacityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.OutpostIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBlockingInstancesForCapacityTask", "Required field: OutpostIdentifier, is not set");
+    return ListBlockingInstancesForCapacityTaskOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostIdentifier]", false));
+  }
+  if (!request.CapacityTaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBlockingInstancesForCapacityTask", "Required field: CapacityTaskId, is not set");
+    return ListBlockingInstancesForCapacityTaskOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CapacityTaskId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBlockingInstancesForCapacityTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListBlockingInstancesForCapacityTask, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBlockingInstancesForCapacityTask",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListBlockingInstancesForCapacityTaskOutcome>(
+    [&]()-> ListBlockingInstancesForCapacityTaskOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBlockingInstancesForCapacityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/outposts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOutpostIdentifier());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/capacity/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCapacityTaskId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/blockingInstances");
+      return ListBlockingInstancesForCapacityTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

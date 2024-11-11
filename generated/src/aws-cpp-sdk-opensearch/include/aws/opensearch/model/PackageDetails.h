@@ -11,6 +11,10 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/opensearch/model/ErrorDetails.h>
 #include <aws/opensearch/model/PluginProperties.h>
+#include <aws/opensearch/model/PackageConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/opensearch/model/PackageVendingOptions.h>
+#include <aws/opensearch/model/PackageEncryptionOptions.h>
 #include <utility>
 
 namespace Aws
@@ -189,6 +193,73 @@ namespace Model
     inline PackageDetails& WithAvailablePluginProperties(const PluginProperties& value) { SetAvailablePluginProperties(value); return *this;}
     inline PackageDetails& WithAvailablePluginProperties(PluginProperties&& value) { SetAvailablePluginProperties(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This represents the available configuration parameters for the package.</p>
+     */
+    inline const PackageConfiguration& GetAvailablePackageConfiguration() const{ return m_availablePackageConfiguration; }
+    inline bool AvailablePackageConfigurationHasBeenSet() const { return m_availablePackageConfigurationHasBeenSet; }
+    inline void SetAvailablePackageConfiguration(const PackageConfiguration& value) { m_availablePackageConfigurationHasBeenSet = true; m_availablePackageConfiguration = value; }
+    inline void SetAvailablePackageConfiguration(PackageConfiguration&& value) { m_availablePackageConfigurationHasBeenSet = true; m_availablePackageConfiguration = std::move(value); }
+    inline PackageDetails& WithAvailablePackageConfiguration(const PackageConfiguration& value) { SetAvailablePackageConfiguration(value); return *this;}
+    inline PackageDetails& WithAvailablePackageConfiguration(PackageConfiguration&& value) { SetAvailablePackageConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> A list of users who are allowed to view and associate the package. This
+     * field is only visible to the owner of a package.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowListedUserList() const{ return m_allowListedUserList; }
+    inline bool AllowListedUserListHasBeenSet() const { return m_allowListedUserListHasBeenSet; }
+    inline void SetAllowListedUserList(const Aws::Vector<Aws::String>& value) { m_allowListedUserListHasBeenSet = true; m_allowListedUserList = value; }
+    inline void SetAllowListedUserList(Aws::Vector<Aws::String>&& value) { m_allowListedUserListHasBeenSet = true; m_allowListedUserList = std::move(value); }
+    inline PackageDetails& WithAllowListedUserList(const Aws::Vector<Aws::String>& value) { SetAllowListedUserList(value); return *this;}
+    inline PackageDetails& WithAllowListedUserList(Aws::Vector<Aws::String>&& value) { SetAllowListedUserList(std::move(value)); return *this;}
+    inline PackageDetails& AddAllowListedUserList(const Aws::String& value) { m_allowListedUserListHasBeenSet = true; m_allowListedUserList.push_back(value); return *this; }
+    inline PackageDetails& AddAllowListedUserList(Aws::String&& value) { m_allowListedUserListHasBeenSet = true; m_allowListedUserList.push_back(std::move(value)); return *this; }
+    inline PackageDetails& AddAllowListedUserList(const char* value) { m_allowListedUserListHasBeenSet = true; m_allowListedUserList.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The owner of the package who is allowed to create/update a package and add
+     * users to the package scope.</p>
+     */
+    inline const Aws::String& GetPackageOwner() const{ return m_packageOwner; }
+    inline bool PackageOwnerHasBeenSet() const { return m_packageOwnerHasBeenSet; }
+    inline void SetPackageOwner(const Aws::String& value) { m_packageOwnerHasBeenSet = true; m_packageOwner = value; }
+    inline void SetPackageOwner(Aws::String&& value) { m_packageOwnerHasBeenSet = true; m_packageOwner = std::move(value); }
+    inline void SetPackageOwner(const char* value) { m_packageOwnerHasBeenSet = true; m_packageOwner.assign(value); }
+    inline PackageDetails& WithPackageOwner(const Aws::String& value) { SetPackageOwner(value); return *this;}
+    inline PackageDetails& WithPackageOwner(Aws::String&& value) { SetPackageOwner(std::move(value)); return *this;}
+    inline PackageDetails& WithPackageOwner(const char* value) { SetPackageOwner(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Package Vending Options for a package.</p>
+     */
+    inline const PackageVendingOptions& GetPackageVendingOptions() const{ return m_packageVendingOptions; }
+    inline bool PackageVendingOptionsHasBeenSet() const { return m_packageVendingOptionsHasBeenSet; }
+    inline void SetPackageVendingOptions(const PackageVendingOptions& value) { m_packageVendingOptionsHasBeenSet = true; m_packageVendingOptions = value; }
+    inline void SetPackageVendingOptions(PackageVendingOptions&& value) { m_packageVendingOptionsHasBeenSet = true; m_packageVendingOptions = std::move(value); }
+    inline PackageDetails& WithPackageVendingOptions(const PackageVendingOptions& value) { SetPackageVendingOptions(value); return *this;}
+    inline PackageDetails& WithPackageVendingOptions(PackageVendingOptions&& value) { SetPackageVendingOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Package Encryption Options for a package.</p>
+     */
+    inline const PackageEncryptionOptions& GetPackageEncryptionOptions() const{ return m_packageEncryptionOptions; }
+    inline bool PackageEncryptionOptionsHasBeenSet() const { return m_packageEncryptionOptionsHasBeenSet; }
+    inline void SetPackageEncryptionOptions(const PackageEncryptionOptions& value) { m_packageEncryptionOptionsHasBeenSet = true; m_packageEncryptionOptions = value; }
+    inline void SetPackageEncryptionOptions(PackageEncryptionOptions&& value) { m_packageEncryptionOptionsHasBeenSet = true; m_packageEncryptionOptions = std::move(value); }
+    inline PackageDetails& WithPackageEncryptionOptions(const PackageEncryptionOptions& value) { SetPackageEncryptionOptions(value); return *this;}
+    inline PackageDetails& WithPackageEncryptionOptions(PackageEncryptionOptions&& value) { SetPackageEncryptionOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_packageID;
@@ -223,6 +294,21 @@ namespace Model
 
     PluginProperties m_availablePluginProperties;
     bool m_availablePluginPropertiesHasBeenSet = false;
+
+    PackageConfiguration m_availablePackageConfiguration;
+    bool m_availablePackageConfigurationHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_allowListedUserList;
+    bool m_allowListedUserListHasBeenSet = false;
+
+    Aws::String m_packageOwner;
+    bool m_packageOwnerHasBeenSet = false;
+
+    PackageVendingOptions m_packageVendingOptions;
+    bool m_packageVendingOptionsHasBeenSet = false;
+
+    PackageEncryptionOptions m_packageEncryptionOptions;
+    bool m_packageEncryptionOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,9 @@
 #include <aws/outposts/model/GetOutpostSupportedInstanceTypesResult.h>
 #include <aws/outposts/model/GetSiteResult.h>
 #include <aws/outposts/model/GetSiteAddressResult.h>
+#include <aws/outposts/model/ListAssetInstancesResult.h>
 #include <aws/outposts/model/ListAssetsResult.h>
+#include <aws/outposts/model/ListBlockingInstancesForCapacityTaskResult.h>
 #include <aws/outposts/model/ListCapacityTasksResult.h>
 #include <aws/outposts/model/ListCatalogItemsResult.h>
 #include <aws/outposts/model/ListOrdersResult.h>
@@ -110,7 +112,9 @@ namespace Aws
       class GetOutpostSupportedInstanceTypesRequest;
       class GetSiteRequest;
       class GetSiteAddressRequest;
+      class ListAssetInstancesRequest;
       class ListAssetsRequest;
+      class ListBlockingInstancesForCapacityTaskRequest;
       class ListCapacityTasksRequest;
       class ListCatalogItemsRequest;
       class ListOrdersRequest;
@@ -144,7 +148,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetOutpostSupportedInstanceTypesResult, OutpostsError> GetOutpostSupportedInstanceTypesOutcome;
       typedef Aws::Utils::Outcome<GetSiteResult, OutpostsError> GetSiteOutcome;
       typedef Aws::Utils::Outcome<GetSiteAddressResult, OutpostsError> GetSiteAddressOutcome;
+      typedef Aws::Utils::Outcome<ListAssetInstancesResult, OutpostsError> ListAssetInstancesOutcome;
       typedef Aws::Utils::Outcome<ListAssetsResult, OutpostsError> ListAssetsOutcome;
+      typedef Aws::Utils::Outcome<ListBlockingInstancesForCapacityTaskResult, OutpostsError> ListBlockingInstancesForCapacityTaskOutcome;
       typedef Aws::Utils::Outcome<ListCapacityTasksResult, OutpostsError> ListCapacityTasksOutcome;
       typedef Aws::Utils::Outcome<ListCatalogItemsResult, OutpostsError> ListCatalogItemsOutcome;
       typedef Aws::Utils::Outcome<ListOrdersResult, OutpostsError> ListOrdersOutcome;
@@ -178,7 +184,9 @@ namespace Aws
       typedef std::future<GetOutpostSupportedInstanceTypesOutcome> GetOutpostSupportedInstanceTypesOutcomeCallable;
       typedef std::future<GetSiteOutcome> GetSiteOutcomeCallable;
       typedef std::future<GetSiteAddressOutcome> GetSiteAddressOutcomeCallable;
+      typedef std::future<ListAssetInstancesOutcome> ListAssetInstancesOutcomeCallable;
       typedef std::future<ListAssetsOutcome> ListAssetsOutcomeCallable;
+      typedef std::future<ListBlockingInstancesForCapacityTaskOutcome> ListBlockingInstancesForCapacityTaskOutcomeCallable;
       typedef std::future<ListCapacityTasksOutcome> ListCapacityTasksOutcomeCallable;
       typedef std::future<ListCatalogItemsOutcome> ListCatalogItemsOutcomeCallable;
       typedef std::future<ListOrdersOutcome> ListOrdersOutcomeCallable;
@@ -215,7 +223,9 @@ namespace Aws
     typedef std::function<void(const OutpostsClient*, const Model::GetOutpostSupportedInstanceTypesRequest&, const Model::GetOutpostSupportedInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutpostSupportedInstanceTypesResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::GetSiteRequest&, const Model::GetSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSiteResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::GetSiteAddressRequest&, const Model::GetSiteAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSiteAddressResponseReceivedHandler;
+    typedef std::function<void(const OutpostsClient*, const Model::ListAssetInstancesRequest&, const Model::ListAssetInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetInstancesResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::ListAssetsRequest&, const Model::ListAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetsResponseReceivedHandler;
+    typedef std::function<void(const OutpostsClient*, const Model::ListBlockingInstancesForCapacityTaskRequest&, const Model::ListBlockingInstancesForCapacityTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBlockingInstancesForCapacityTaskResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::ListCapacityTasksRequest&, const Model::ListCapacityTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCapacityTasksResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::ListCatalogItemsRequest&, const Model::ListCatalogItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCatalogItemsResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::ListOrdersRequest&, const Model::ListOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrdersResponseReceivedHandler;

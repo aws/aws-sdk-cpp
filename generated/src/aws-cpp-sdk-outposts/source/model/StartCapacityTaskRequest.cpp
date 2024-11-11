@@ -16,8 +16,11 @@ StartCapacityTaskRequest::StartCapacityTaskRequest() :
     m_outpostIdentifierHasBeenSet(false),
     m_orderIdHasBeenSet(false),
     m_instancePoolsHasBeenSet(false),
+    m_instancesToExcludeHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_taskActionOnBlockingInstances(TaskActionOnBlockingInstances::NOT_SET),
+    m_taskActionOnBlockingInstancesHasBeenSet(false)
 {
 }
 
@@ -42,10 +45,21 @@ Aws::String StartCapacityTaskRequest::SerializePayload() const
 
   }
 
+  if(m_instancesToExcludeHasBeenSet)
+  {
+   payload.WithObject("InstancesToExclude", m_instancesToExclude.Jsonize());
+
+  }
+
   if(m_dryRunHasBeenSet)
   {
    payload.WithBool("DryRun", m_dryRun);
 
+  }
+
+  if(m_taskActionOnBlockingInstancesHasBeenSet)
+  {
+   payload.WithString("TaskActionOnBlockingInstances", TaskActionOnBlockingInstancesMapper::GetNameForTaskActionOnBlockingInstances(m_taskActionOnBlockingInstances));
   }
 
   return payload.View().WriteReadable();

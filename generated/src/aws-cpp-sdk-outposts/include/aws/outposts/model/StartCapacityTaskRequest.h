@@ -8,6 +8,8 @@
 #include <aws/outposts/OutpostsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/outposts/model/InstancesToExclude.h>
+#include <aws/outposts/model/TaskActionOnBlockingInstances.h>
 #include <aws/outposts/model/InstanceTypeCapacity.h>
 #include <utility>
 
@@ -80,6 +82,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>List of user-specified running instances that must not be stopped in order to
+     * free up the capacity needed to run the capacity task.</p>
+     */
+    inline const InstancesToExclude& GetInstancesToExclude() const{ return m_instancesToExclude; }
+    inline bool InstancesToExcludeHasBeenSet() const { return m_instancesToExcludeHasBeenSet; }
+    inline void SetInstancesToExclude(const InstancesToExclude& value) { m_instancesToExcludeHasBeenSet = true; m_instancesToExclude = value; }
+    inline void SetInstancesToExclude(InstancesToExclude&& value) { m_instancesToExcludeHasBeenSet = true; m_instancesToExclude = std::move(value); }
+    inline StartCapacityTaskRequest& WithInstancesToExclude(const InstancesToExclude& value) { SetInstancesToExclude(value); return *this;}
+    inline StartCapacityTaskRequest& WithInstancesToExclude(InstancesToExclude&& value) { SetInstancesToExclude(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>You can request a dry run to determine if the instance type and instance size
      * changes is above or below available instance capacity. Requesting a dry run does
      * not make any changes to your plan.</p>
@@ -88,6 +103,22 @@ namespace Model
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline StartCapacityTaskRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specify one of the following options in case an instance is blocking the
+     * capacity task from running.</p> <ul> <li> <p> <code>WAIT_FOR_EVACUATION</code> -
+     * Checks every 10 minutes over 48 hours to determine if instances have stopped and
+     * capacity is available to complete the task.</p> </li> <li> <p>
+     * <code>FAIL_TASK</code> - The capacity task fails.</p> </li> </ul>
+     */
+    inline const TaskActionOnBlockingInstances& GetTaskActionOnBlockingInstances() const{ return m_taskActionOnBlockingInstances; }
+    inline bool TaskActionOnBlockingInstancesHasBeenSet() const { return m_taskActionOnBlockingInstancesHasBeenSet; }
+    inline void SetTaskActionOnBlockingInstances(const TaskActionOnBlockingInstances& value) { m_taskActionOnBlockingInstancesHasBeenSet = true; m_taskActionOnBlockingInstances = value; }
+    inline void SetTaskActionOnBlockingInstances(TaskActionOnBlockingInstances&& value) { m_taskActionOnBlockingInstancesHasBeenSet = true; m_taskActionOnBlockingInstances = std::move(value); }
+    inline StartCapacityTaskRequest& WithTaskActionOnBlockingInstances(const TaskActionOnBlockingInstances& value) { SetTaskActionOnBlockingInstances(value); return *this;}
+    inline StartCapacityTaskRequest& WithTaskActionOnBlockingInstances(TaskActionOnBlockingInstances&& value) { SetTaskActionOnBlockingInstances(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -100,8 +131,14 @@ namespace Model
     Aws::Vector<InstanceTypeCapacity> m_instancePools;
     bool m_instancePoolsHasBeenSet = false;
 
+    InstancesToExclude m_instancesToExclude;
+    bool m_instancesToExcludeHasBeenSet = false;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    TaskActionOnBlockingInstances m_taskActionOnBlockingInstances;
+    bool m_taskActionOnBlockingInstancesHasBeenSet = false;
   };
 
 } // namespace Model

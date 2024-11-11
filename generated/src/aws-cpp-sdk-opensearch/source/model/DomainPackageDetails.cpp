@@ -28,8 +28,10 @@ DomainPackageDetails::DomainPackageDetails() :
     m_domainPackageStatus(DomainPackageStatus::NOT_SET),
     m_domainPackageStatusHasBeenSet(false),
     m_packageVersionHasBeenSet(false),
+    m_prerequisitePackageIDListHasBeenSet(false),
     m_referencePathHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
+    m_errorDetailsHasBeenSet(false),
+    m_associationConfigurationHasBeenSet(false)
 {
 }
 
@@ -90,6 +92,16 @@ DomainPackageDetails& DomainPackageDetails::operator =(JsonView jsonValue)
     m_packageVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PrerequisitePackageIDList"))
+  {
+    Aws::Utils::Array<JsonView> prerequisitePackageIDListJsonList = jsonValue.GetArray("PrerequisitePackageIDList");
+    for(unsigned prerequisitePackageIDListIndex = 0; prerequisitePackageIDListIndex < prerequisitePackageIDListJsonList.GetLength(); ++prerequisitePackageIDListIndex)
+    {
+      m_prerequisitePackageIDList.push_back(prerequisitePackageIDListJsonList[prerequisitePackageIDListIndex].AsString());
+    }
+    m_prerequisitePackageIDListHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ReferencePath"))
   {
     m_referencePath = jsonValue.GetString("ReferencePath");
@@ -102,6 +114,13 @@ DomainPackageDetails& DomainPackageDetails::operator =(JsonView jsonValue)
     m_errorDetails = jsonValue.GetObject("ErrorDetails");
 
     m_errorDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AssociationConfiguration"))
+  {
+    m_associationConfiguration = jsonValue.GetObject("AssociationConfiguration");
+
+    m_associationConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -150,6 +169,17 @@ JsonValue DomainPackageDetails::Jsonize() const
 
   }
 
+  if(m_prerequisitePackageIDListHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> prerequisitePackageIDListJsonList(m_prerequisitePackageIDList.size());
+   for(unsigned prerequisitePackageIDListIndex = 0; prerequisitePackageIDListIndex < prerequisitePackageIDListJsonList.GetLength(); ++prerequisitePackageIDListIndex)
+   {
+     prerequisitePackageIDListJsonList[prerequisitePackageIDListIndex].AsString(m_prerequisitePackageIDList[prerequisitePackageIDListIndex]);
+   }
+   payload.WithArray("PrerequisitePackageIDList", std::move(prerequisitePackageIDListJsonList));
+
+  }
+
   if(m_referencePathHasBeenSet)
   {
    payload.WithString("ReferencePath", m_referencePath);
@@ -159,6 +189,12 @@ JsonValue DomainPackageDetails::Jsonize() const
   if(m_errorDetailsHasBeenSet)
   {
    payload.WithObject("ErrorDetails", m_errorDetails.Jsonize());
+
+  }
+
+  if(m_associationConfigurationHasBeenSet)
+  {
+   payload.WithObject("AssociationConfiguration", m_associationConfiguration.Jsonize());
 
   }
 

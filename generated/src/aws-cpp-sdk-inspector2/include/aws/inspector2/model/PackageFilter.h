@@ -66,6 +66,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>An object that contains details on the package file path to filter on.</p>
+     */
+    inline const StringFilter& GetFilePath() const{ return m_filePath; }
+    inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
+    inline void SetFilePath(const StringFilter& value) { m_filePathHasBeenSet = true; m_filePath = value; }
+    inline void SetFilePath(StringFilter&& value) { m_filePathHasBeenSet = true; m_filePath = std::move(value); }
+    inline PackageFilter& WithFilePath(const StringFilter& value) { SetFilePath(value); return *this;}
+    inline PackageFilter& WithFilePath(StringFilter&& value) { SetFilePath(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An object that contains details on the name of the package to filter on.</p>
      */
     inline const StringFilter& GetName() const{ return m_name; }
@@ -89,7 +101,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>An object that describes the details of a string filter.</p>
+     */
     inline const StringFilter& GetSourceLambdaLayerArn() const{ return m_sourceLambdaLayerArn; }
     inline bool SourceLambdaLayerArnHasBeenSet() const { return m_sourceLambdaLayerArnHasBeenSet; }
     inline void SetSourceLambdaLayerArn(const StringFilter& value) { m_sourceLambdaLayerArnHasBeenSet = true; m_sourceLambdaLayerArn = value; }
@@ -128,6 +142,9 @@ namespace Model
 
     NumberFilter m_epoch;
     bool m_epochHasBeenSet = false;
+
+    StringFilter m_filePath;
+    bool m_filePathHasBeenSet = false;
 
     StringFilter m_name;
     bool m_nameHasBeenSet = false;

@@ -9,7 +9,9 @@
 #include <aws/opensearch/model/PackageType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/opensearch/model/DomainPackageStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearch/model/ErrorDetails.h>
+#include <aws/opensearch/model/PackageAssociationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -138,6 +140,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of package IDs that must be associated with the domain before or with
+     * the package can be associated.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPrerequisitePackageIDList() const{ return m_prerequisitePackageIDList; }
+    inline bool PrerequisitePackageIDListHasBeenSet() const { return m_prerequisitePackageIDListHasBeenSet; }
+    inline void SetPrerequisitePackageIDList(const Aws::Vector<Aws::String>& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList = value; }
+    inline void SetPrerequisitePackageIDList(Aws::Vector<Aws::String>&& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList = std::move(value); }
+    inline DomainPackageDetails& WithPrerequisitePackageIDList(const Aws::Vector<Aws::String>& value) { SetPrerequisitePackageIDList(value); return *this;}
+    inline DomainPackageDetails& WithPrerequisitePackageIDList(Aws::Vector<Aws::String>&& value) { SetPrerequisitePackageIDList(std::move(value)); return *this;}
+    inline DomainPackageDetails& AddPrerequisitePackageIDList(const Aws::String& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList.push_back(value); return *this; }
+    inline DomainPackageDetails& AddPrerequisitePackageIDList(Aws::String&& value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList.push_back(std::move(value)); return *this; }
+    inline DomainPackageDetails& AddPrerequisitePackageIDList(const char* value) { m_prerequisitePackageIDListHasBeenSet = true; m_prerequisitePackageIDList.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The relative path of the package on the OpenSearch Service cluster nodes.
      * This is <code>synonym_path</code> when the package is for synonym files.</p>
      */
@@ -163,6 +181,19 @@ namespace Model
     inline DomainPackageDetails& WithErrorDetails(const ErrorDetails& value) { SetErrorDetails(value); return *this;}
     inline DomainPackageDetails& WithErrorDetails(ErrorDetails&& value) { SetErrorDetails(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for associating a package with an Amazon OpenSearch Service
+     * domain.</p>
+     */
+    inline const PackageAssociationConfiguration& GetAssociationConfiguration() const{ return m_associationConfiguration; }
+    inline bool AssociationConfigurationHasBeenSet() const { return m_associationConfigurationHasBeenSet; }
+    inline void SetAssociationConfiguration(const PackageAssociationConfiguration& value) { m_associationConfigurationHasBeenSet = true; m_associationConfiguration = value; }
+    inline void SetAssociationConfiguration(PackageAssociationConfiguration&& value) { m_associationConfigurationHasBeenSet = true; m_associationConfiguration = std::move(value); }
+    inline DomainPackageDetails& WithAssociationConfiguration(const PackageAssociationConfiguration& value) { SetAssociationConfiguration(value); return *this;}
+    inline DomainPackageDetails& WithAssociationConfiguration(PackageAssociationConfiguration&& value) { SetAssociationConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_packageID;
@@ -186,11 +217,17 @@ namespace Model
     Aws::String m_packageVersion;
     bool m_packageVersionHasBeenSet = false;
 
+    Aws::Vector<Aws::String> m_prerequisitePackageIDList;
+    bool m_prerequisitePackageIDListHasBeenSet = false;
+
     Aws::String m_referencePath;
     bool m_referencePathHasBeenSet = false;
 
     ErrorDetails m_errorDetails;
     bool m_errorDetailsHasBeenSet = false;
+
+    PackageAssociationConfiguration m_associationConfiguration;
+    bool m_associationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

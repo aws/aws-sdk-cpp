@@ -20,7 +20,8 @@ namespace Model
     PackageName,
     PackageStatus,
     PackageType,
-    EngineVersion
+    EngineVersion,
+    PackageOwner
   };
 
 namespace DescribePackagesFilterNameMapper

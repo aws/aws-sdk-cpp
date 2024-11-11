@@ -14,13 +14,34 @@ using namespace Aws::Utils;
 
 AssociatePackageRequest::AssociatePackageRequest() : 
     m_packageIDHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
+    m_domainNameHasBeenSet(false),
+    m_prerequisitePackageIDListHasBeenSet(false),
+    m_associationConfigurationHasBeenSet(false)
 {
 }
 
 Aws::String AssociatePackageRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_prerequisitePackageIDListHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> prerequisitePackageIDListJsonList(m_prerequisitePackageIDList.size());
+   for(unsigned prerequisitePackageIDListIndex = 0; prerequisitePackageIDListIndex < prerequisitePackageIDListJsonList.GetLength(); ++prerequisitePackageIDListIndex)
+   {
+     prerequisitePackageIDListJsonList[prerequisitePackageIDListIndex].AsString(m_prerequisitePackageIDList[prerequisitePackageIDListIndex]);
+   }
+   payload.WithArray("PrerequisitePackageIDList", std::move(prerequisitePackageIDListJsonList));
+
+  }
+
+  if(m_associationConfigurationHasBeenSet)
+  {
+   payload.WithObject("AssociationConfiguration", m_associationConfiguration.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 
