@@ -498,6 +498,33 @@ namespace Outposts
         }
 
         /**
+         * <p>A list of Amazon EC2 instances, belonging to all accounts, running on the
+         * specified Outpost. Does not include Amazon EBS or Amazon S3
+         * instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssetInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssetInstancesOutcome ListAssetInstances(const Model::ListAssetInstancesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAssetInstances that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAssetInstancesRequestT = Model::ListAssetInstancesRequest>
+        Model::ListAssetInstancesOutcomeCallable ListAssetInstancesCallable(const ListAssetInstancesRequestT& request) const
+        {
+            return SubmitCallable(&OutpostsClient::ListAssetInstances, request);
+        }
+
+        /**
+         * An Async wrapper for ListAssetInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAssetInstancesRequestT = Model::ListAssetInstancesRequest>
+        void ListAssetInstancesAsync(const ListAssetInstancesRequestT& request, const ListAssetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OutpostsClient::ListAssetInstances, request, handler, context);
+        }
+
+        /**
          * <p>Lists the hardware assets for the specified Outpost.</p> <p>Use filters to
          * return specific results. If you specify multiple filters, the results include
          * only the resources that match all of the specified filters. For a filter where
@@ -524,6 +551,34 @@ namespace Outposts
         void ListAssetsAsync(const ListAssetsRequestT& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OutpostsClient::ListAssets, request, handler, context);
+        }
+
+        /**
+         * <p>A list of Amazon EC2 instances running on the Outpost and belonging to the
+         * account that initiated the capacity task. Use this list to specify the instances
+         * you cannot stop to free up capacity to run the capacity task.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListBlockingInstancesForCapacityTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBlockingInstancesForCapacityTaskOutcome ListBlockingInstancesForCapacityTask(const Model::ListBlockingInstancesForCapacityTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBlockingInstancesForCapacityTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListBlockingInstancesForCapacityTaskRequestT = Model::ListBlockingInstancesForCapacityTaskRequest>
+        Model::ListBlockingInstancesForCapacityTaskOutcomeCallable ListBlockingInstancesForCapacityTaskCallable(const ListBlockingInstancesForCapacityTaskRequestT& request) const
+        {
+            return SubmitCallable(&OutpostsClient::ListBlockingInstancesForCapacityTask, request);
+        }
+
+        /**
+         * An Async wrapper for ListBlockingInstancesForCapacityTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListBlockingInstancesForCapacityTaskRequestT = Model::ListBlockingInstancesForCapacityTaskRequest>
+        void ListBlockingInstancesForCapacityTaskAsync(const ListBlockingInstancesForCapacityTaskRequestT& request, const ListBlockingInstancesForCapacityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OutpostsClient::ListBlockingInstancesForCapacityTask, request, handler, context);
         }
 
         /**
@@ -695,8 +750,8 @@ namespace Outposts
         }
 
         /**
-         * <p>Starts the specified capacity task. You can have one active capacity task for
-         * an order.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the specified capacity task. You can have one active capacity task per
+         * order or Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartCapacityTask">AWS
          * API Reference</a></p>
          */

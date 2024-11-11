@@ -65,7 +65,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>An object that described the state of Amazon Inspector scans for an
+     * account.</p>
+     */
     inline const State& GetLambda() const{ return m_lambda; }
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
     inline void SetLambda(const State& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
@@ -75,7 +78,10 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>An object that described the state of Amazon Inspector scans for an
+     * account.</p>
+     */
     inline const State& GetLambdaCode() const{ return m_lambdaCode; }
     inline bool LambdaCodeHasBeenSet() const { return m_lambdaCodeHasBeenSet; }
     inline void SetLambdaCode(const State& value) { m_lambdaCodeHasBeenSet = true; m_lambdaCode = value; }

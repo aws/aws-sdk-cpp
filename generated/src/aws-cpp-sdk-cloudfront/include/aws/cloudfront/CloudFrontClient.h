@@ -17,12 +17,12 @@ namespace Aws
 namespace CloudFront
 {
   /**
-   * <fullname>Amazon CloudFront</fullname> <p>This is the <i>Amazon CloudFront API
-   * Reference</i>. This guide is for developers who need detailed information about
-   * CloudFront API actions, data types, and errors. For detailed information about
-   * CloudFront features, see the <a
+   * <p><fullname>Amazon CloudFront</fullname> <p>This is the <i>Amazon CloudFront
+   * API Reference</i>. This guide is for developers who need detailed information
+   * about CloudFront API actions, data types, and errors. For detailed information
+   * about CloudFront features, see the <a
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html">Amazon
-   * CloudFront Developer Guide</a>.</p>
+   * CloudFront Developer Guide</a>.</p></p>
    */
   class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>
   {
@@ -2580,13 +2580,17 @@ namespace CloudFront
         }
 
         /**
-         * <p>Gets the list of CloudFront origin access controls in this Amazon Web
+         * <p>Gets the list of CloudFront origin access controls (OACs) in this Amazon Web
          * Services account.</p> <p>You can optionally specify the maximum number of items
          * to receive in the response. If the total number of items in the list exceeds the
          * maximum that you specify, or the default maximum, the response is paginated. To
          * get the next page of items, send another request that specifies the
          * <code>NextMarker</code> value from the current response as the
-         * <code>Marker</code> value in the next request.</p><p><h3>See Also:</h3>   <a
+         * <code>Marker</code> value in the next request.</p>  <p>If you're not using
+         * origin access controls for your Amazon Web Services account, the
+         * <code>ListOriginAccessControls</code> operation doesn't return the
+         * <code>Items</code> element in the response.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls2020_05_31">AWS
          * API Reference</a></p>
          */
@@ -3016,12 +3020,12 @@ namespace CloudFront
          * get the current configuration, including the version identifier
          * (<code>ETag</code>).</p> </li> <li> <p>Update the distribution configuration
          * that was returned in the response. Note the following important requirements and
-         * restrictions:</p> <ul> <li> <p>You must rename the <code>ETag</code> field to
-         * <code>IfMatch</code>, leaving the value unchanged. (Set the value of
-         * <code>IfMatch</code> to the value of <code>ETag</code>, then remove the
-         * <code>ETag</code> field.)</p> </li> <li> <p>You can't change the value of
+         * restrictions:</p> <ul> <li> <p>You must copy the <code>ETag</code> field value
+         * from the response. (You'll use it for the <code>IfMatch</code> parameter in your
+         * request.) Then, remove the <code>ETag</code> field from the distribution
+         * configuration.</p> </li> <li> <p>You can't change the value of
          * <code>CallerReference</code>.</p> </li> </ul> </li> <li> <p>Submit an
-         * <code>UpdateDistribution</code> request, providing the distribution
+         * <code>UpdateDistribution</code> request, providing the updated distribution
          * configuration. The new configuration replaces the existing configuration. The
          * values that you specify in an <code>UpdateDistribution</code> request are not
          * merged into your existing configuration. Make sure to include all fields: the

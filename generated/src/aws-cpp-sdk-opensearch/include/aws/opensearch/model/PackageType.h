@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     TXT_DICTIONARY,
-    ZIP_PLUGIN
+    ZIP_PLUGIN,
+    PACKAGE_LICENSE,
+    PACKAGE_CONFIG
   };
 
 namespace PackageTypeMapper

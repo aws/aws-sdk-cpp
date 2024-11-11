@@ -22,6 +22,8 @@ namespace Aws
 
         static const int TXT_DICTIONARY_HASH = HashingUtils::HashString("TXT-DICTIONARY");
         static const int ZIP_PLUGIN_HASH = HashingUtils::HashString("ZIP-PLUGIN");
+        static const int PACKAGE_LICENSE_HASH = HashingUtils::HashString("PACKAGE-LICENSE");
+        static const int PACKAGE_CONFIG_HASH = HashingUtils::HashString("PACKAGE-CONFIG");
 
 
         PackageType GetPackageTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == ZIP_PLUGIN_HASH)
           {
             return PackageType::ZIP_PLUGIN;
+          }
+          else if (hashCode == PACKAGE_LICENSE_HASH)
+          {
+            return PackageType::PACKAGE_LICENSE;
+          }
+          else if (hashCode == PACKAGE_CONFIG_HASH)
+          {
+            return PackageType::PACKAGE_CONFIG;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "TXT-DICTIONARY";
           case PackageType::ZIP_PLUGIN:
             return "ZIP-PLUGIN";
+          case PackageType::PACKAGE_LICENSE:
+            return "PACKAGE-LICENSE";
+          case PackageType::PACKAGE_CONFIG:
+            return "PACKAGE-CONFIG";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

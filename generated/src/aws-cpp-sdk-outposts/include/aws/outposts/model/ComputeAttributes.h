@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/outposts/model/ComputeAssetState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/outposts/model/AssetInstanceTypeCapacity.h>
 #include <utility>
 
 namespace Aws
@@ -86,6 +87,31 @@ namespace Model
     inline ComputeAttributes& AddInstanceFamilies(Aws::String&& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.push_back(std::move(value)); return *this; }
     inline ComputeAttributes& AddInstanceFamilies(const char* value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The instance type capacities configured for this asset. This can be changed
+     * through a capacity task.</p>
+     */
+    inline const Aws::Vector<AssetInstanceTypeCapacity>& GetInstanceTypeCapacities() const{ return m_instanceTypeCapacities; }
+    inline bool InstanceTypeCapacitiesHasBeenSet() const { return m_instanceTypeCapacitiesHasBeenSet; }
+    inline void SetInstanceTypeCapacities(const Aws::Vector<AssetInstanceTypeCapacity>& value) { m_instanceTypeCapacitiesHasBeenSet = true; m_instanceTypeCapacities = value; }
+    inline void SetInstanceTypeCapacities(Aws::Vector<AssetInstanceTypeCapacity>&& value) { m_instanceTypeCapacitiesHasBeenSet = true; m_instanceTypeCapacities = std::move(value); }
+    inline ComputeAttributes& WithInstanceTypeCapacities(const Aws::Vector<AssetInstanceTypeCapacity>& value) { SetInstanceTypeCapacities(value); return *this;}
+    inline ComputeAttributes& WithInstanceTypeCapacities(Aws::Vector<AssetInstanceTypeCapacity>&& value) { SetInstanceTypeCapacities(std::move(value)); return *this;}
+    inline ComputeAttributes& AddInstanceTypeCapacities(const AssetInstanceTypeCapacity& value) { m_instanceTypeCapacitiesHasBeenSet = true; m_instanceTypeCapacities.push_back(value); return *this; }
+    inline ComputeAttributes& AddInstanceTypeCapacities(AssetInstanceTypeCapacity&& value) { m_instanceTypeCapacitiesHasBeenSet = true; m_instanceTypeCapacities.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The maximum number of vCPUs possible for the specified asset.</p>
+     */
+    inline int GetMaxVcpus() const{ return m_maxVcpus; }
+    inline bool MaxVcpusHasBeenSet() const { return m_maxVcpusHasBeenSet; }
+    inline void SetMaxVcpus(int value) { m_maxVcpusHasBeenSet = true; m_maxVcpus = value; }
+    inline ComputeAttributes& WithMaxVcpus(int value) { SetMaxVcpus(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_hostId;
@@ -96,6 +122,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_instanceFamilies;
     bool m_instanceFamiliesHasBeenSet = false;
+
+    Aws::Vector<AssetInstanceTypeCapacity> m_instanceTypeCapacities;
+    bool m_instanceTypeCapacitiesHasBeenSet = false;
+
+    int m_maxVcpus;
+    bool m_maxVcpusHasBeenSet = false;
   };
 
 } // namespace Model

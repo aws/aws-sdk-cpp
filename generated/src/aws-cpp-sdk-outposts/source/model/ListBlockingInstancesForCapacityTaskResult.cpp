@@ -1,0 +1,57 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/outposts/model/ListBlockingInstancesForCapacityTaskResult.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::Outposts::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListBlockingInstancesForCapacityTaskResult::ListBlockingInstancesForCapacityTaskResult()
+{
+}
+
+ListBlockingInstancesForCapacityTaskResult::ListBlockingInstancesForCapacityTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  *this = result;
+}
+
+ListBlockingInstancesForCapacityTaskResult& ListBlockingInstancesForCapacityTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("BlockingInstances"))
+  {
+    Aws::Utils::Array<JsonView> blockingInstancesJsonList = jsonValue.GetArray("BlockingInstances");
+    for(unsigned blockingInstancesIndex = 0; blockingInstancesIndex < blockingInstancesJsonList.GetLength(); ++blockingInstancesIndex)
+    {
+      m_blockingInstances.push_back(blockingInstancesJsonList[blockingInstancesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
+
+  return *this;
+}

@@ -990,7 +990,7 @@ namespace Inspector2
         }
 
         /**
-         * <p>Lists coverage details for you environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists coverage details for your environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCoverage">AWS
          * API Reference</a></p>
          */
@@ -1358,7 +1358,7 @@ namespace Inspector2
         /**
          * <p> Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to
          * communicate with the Amazon Inspector service. The Amazon Inspector SSM plugin
-         * calls this API to start a CIS scan session for the scan ID supplied by the
+         * calls this API to stop a CIS scan session for the scan ID supplied by the
          * service. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StopCisSession">AWS
          * API Reference</a></p>

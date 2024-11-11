@@ -8,6 +8,8 @@
 #include <aws/opensearch/OpenSearchServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/model/PackageSource.h>
+#include <aws/opensearch/model/PackageConfiguration.h>
+#include <aws/opensearch/model/PackageEncryptionOptions.h>
 #include <utility>
 
 namespace Aws
@@ -91,6 +93,30 @@ namespace Model
     inline UpdatePackageRequest& WithCommitMessage(Aws::String&& value) { SetCommitMessage(std::move(value)); return *this;}
     inline UpdatePackageRequest& WithCommitMessage(const char* value) { SetCommitMessage(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The updated configuration details for a package.</p>
+     */
+    inline const PackageConfiguration& GetPackageConfiguration() const{ return m_packageConfiguration; }
+    inline bool PackageConfigurationHasBeenSet() const { return m_packageConfigurationHasBeenSet; }
+    inline void SetPackageConfiguration(const PackageConfiguration& value) { m_packageConfigurationHasBeenSet = true; m_packageConfiguration = value; }
+    inline void SetPackageConfiguration(PackageConfiguration&& value) { m_packageConfigurationHasBeenSet = true; m_packageConfiguration = std::move(value); }
+    inline UpdatePackageRequest& WithPackageConfiguration(const PackageConfiguration& value) { SetPackageConfiguration(value); return *this;}
+    inline UpdatePackageRequest& WithPackageConfiguration(PackageConfiguration&& value) { SetPackageConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Encryption options for a package.</p>
+     */
+    inline const PackageEncryptionOptions& GetPackageEncryptionOptions() const{ return m_packageEncryptionOptions; }
+    inline bool PackageEncryptionOptionsHasBeenSet() const { return m_packageEncryptionOptionsHasBeenSet; }
+    inline void SetPackageEncryptionOptions(const PackageEncryptionOptions& value) { m_packageEncryptionOptionsHasBeenSet = true; m_packageEncryptionOptions = value; }
+    inline void SetPackageEncryptionOptions(PackageEncryptionOptions&& value) { m_packageEncryptionOptionsHasBeenSet = true; m_packageEncryptionOptions = std::move(value); }
+    inline UpdatePackageRequest& WithPackageEncryptionOptions(const PackageEncryptionOptions& value) { SetPackageEncryptionOptions(value); return *this;}
+    inline UpdatePackageRequest& WithPackageEncryptionOptions(PackageEncryptionOptions&& value) { SetPackageEncryptionOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_packageID;
@@ -104,6 +130,12 @@ namespace Model
 
     Aws::String m_commitMessage;
     bool m_commitMessageHasBeenSet = false;
+
+    PackageConfiguration m_packageConfiguration;
+    bool m_packageConfigurationHasBeenSet = false;
+
+    PackageEncryptionOptions m_packageEncryptionOptions;
+    bool m_packageEncryptionOptionsHasBeenSet = false;
   };
 
 } // namespace Model

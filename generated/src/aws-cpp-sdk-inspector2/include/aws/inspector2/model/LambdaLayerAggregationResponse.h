@@ -98,7 +98,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>An object that contains the counts of aggregated finding per severity.</p>
+     */
     inline const SeverityCounts& GetSeverityCounts() const{ return m_severityCounts; }
     inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
     inline void SetSeverityCounts(const SeverityCounts& value) { m_severityCountsHasBeenSet = true; m_severityCounts = value; }

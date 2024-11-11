@@ -197,6 +197,32 @@ namespace OpenSearchService
         }
 
         /**
+         * <p>Operation in the Amazon OpenSearch Service API for associating multiple
+         * packages with a domain simultaneously.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AssociatePackages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociatePackagesOutcome AssociatePackages(const Model::AssociatePackagesRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociatePackages that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociatePackagesRequestT = Model::AssociatePackagesRequest>
+        Model::AssociatePackagesOutcomeCallable AssociatePackagesCallable(const AssociatePackagesRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::AssociatePackages, request);
+        }
+
+        /**
+         * An Async wrapper for AssociatePackages that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociatePackagesRequestT = Model::AssociatePackagesRequest>
+        void AssociatePackagesAsync(const AssociatePackagesRequestT& request, const AssociatePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::AssociatePackages, request, handler, context);
+        }
+
+        /**
          * <p>Provides access to an Amazon OpenSearch Service domain through the use of an
          * interface VPC endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AuthorizeVpcEndpointAccess">AWS
@@ -1044,6 +1070,32 @@ namespace OpenSearchService
         }
 
         /**
+         * <p>Dissociates multiple packages from a domain simulatneously.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DissociatePackagesOutcome DissociatePackages(const Model::DissociatePackagesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DissociatePackages that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DissociatePackagesRequestT = Model::DissociatePackagesRequest>
+        Model::DissociatePackagesOutcomeCallable DissociatePackagesCallable(const DissociatePackagesRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::DissociatePackages, request);
+        }
+
+        /**
+         * An Async wrapper for DissociatePackages that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DissociatePackagesRequestT = Model::DissociatePackagesRequest>
+        void DissociatePackagesAsync(const DissociatePackagesRequestT& request, const DissociatePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::DissociatePackages, request, handler, context);
+        }
+
+        /**
          * <p>Check the configuration and status of an existing OpenSearch
          * Application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetApplication">AWS
@@ -1845,6 +1897,32 @@ namespace OpenSearchService
         void UpdatePackageAsync(const UpdatePackageRequestT& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OpenSearchServiceClient::UpdatePackage, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the scope of a package. Scope of the package defines users who can
+         * view and associate a package.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdatePackageScope">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePackageScopeOutcome UpdatePackageScope(const Model::UpdatePackageScopeRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePackageScope that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePackageScopeRequestT = Model::UpdatePackageScopeRequest>
+        Model::UpdatePackageScopeOutcomeCallable UpdatePackageScopeCallable(const UpdatePackageScopeRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::UpdatePackageScope, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePackageScope that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePackageScopeRequestT = Model::UpdatePackageScopeRequest>
+        void UpdatePackageScopeAsync(const UpdatePackageScopeRequestT& request, const UpdatePackageScopeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::UpdatePackageScope, request, handler, context);
         }
 
         /**

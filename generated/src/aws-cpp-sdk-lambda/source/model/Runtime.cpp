@@ -58,6 +58,7 @@ namespace Aws
         static const int provided_al2023_HASH = HashingUtils::HashString("provided.al2023");
         static const int python3_12_HASH = HashingUtils::HashString("python3.12");
         static const int java21_HASH = HashingUtils::HashString("java21");
+        static const int python3_13_HASH = HashingUtils::HashString("python3.13");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -215,6 +216,10 @@ namespace Aws
           {
             return Runtime::java21;
           }
+          else if (hashCode == python3_13_HASH)
+          {
+            return Runtime::python3_13;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -307,6 +312,8 @@ namespace Aws
             return "python3.12";
           case Runtime::java21:
             return "java21";
+          case Runtime::python3_13:
+            return "python3.13";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/opensearch/model/PluginProperties.h>
+#include <aws/opensearch/model/PackageConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -91,6 +92,18 @@ namespace Model
     inline PackageVersionHistory& WithPluginProperties(const PluginProperties& value) { SetPluginProperties(value); return *this;}
     inline PackageVersionHistory& WithPluginProperties(PluginProperties&& value) { SetPluginProperties(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration details for a specific version of a package.</p>
+     */
+    inline const PackageConfiguration& GetPackageConfiguration() const{ return m_packageConfiguration; }
+    inline bool PackageConfigurationHasBeenSet() const { return m_packageConfigurationHasBeenSet; }
+    inline void SetPackageConfiguration(const PackageConfiguration& value) { m_packageConfigurationHasBeenSet = true; m_packageConfiguration = value; }
+    inline void SetPackageConfiguration(PackageConfiguration&& value) { m_packageConfigurationHasBeenSet = true; m_packageConfiguration = std::move(value); }
+    inline PackageVersionHistory& WithPackageConfiguration(const PackageConfiguration& value) { SetPackageConfiguration(value); return *this;}
+    inline PackageVersionHistory& WithPackageConfiguration(PackageConfiguration&& value) { SetPackageConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_packageVersion;
@@ -104,6 +117,9 @@ namespace Model
 
     PluginProperties m_pluginProperties;
     bool m_pluginPropertiesHasBeenSet = false;
+
+    PackageConfiguration m_packageConfiguration;
+    bool m_packageConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,6 +25,7 @@ namespace Aws
         static const int PackageStatus_HASH = HashingUtils::HashString("PackageStatus");
         static const int PackageType_HASH = HashingUtils::HashString("PackageType");
         static const int EngineVersion_HASH = HashingUtils::HashString("EngineVersion");
+        static const int PackageOwner_HASH = HashingUtils::HashString("PackageOwner");
 
 
         DescribePackagesFilterName GetDescribePackagesFilterNameForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == EngineVersion_HASH)
           {
             return DescribePackagesFilterName::EngineVersion;
+          }
+          else if (hashCode == PackageOwner_HASH)
+          {
+            return DescribePackagesFilterName::PackageOwner;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "PackageType";
           case DescribePackagesFilterName::EngineVersion:
             return "EngineVersion";
+          case DescribePackagesFilterName::PackageOwner:
+            return "PackageOwner";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

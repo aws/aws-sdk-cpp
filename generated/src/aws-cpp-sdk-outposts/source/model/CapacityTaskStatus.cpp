@@ -24,6 +24,8 @@ namespace Aws
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static const int WAITING_FOR_EVACUATION_HASH = HashingUtils::HashString("WAITING_FOR_EVACUATION");
+        static const int CANCELLATION_IN_PROGRESS_HASH = HashingUtils::HashString("CANCELLATION_IN_PROGRESS");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
 
 
@@ -45,6 +47,14 @@ namespace Aws
           else if (hashCode == COMPLETED_HASH)
           {
             return CapacityTaskStatus::COMPLETED;
+          }
+          else if (hashCode == WAITING_FOR_EVACUATION_HASH)
+          {
+            return CapacityTaskStatus::WAITING_FOR_EVACUATION;
+          }
+          else if (hashCode == CANCELLATION_IN_PROGRESS_HASH)
+          {
+            return CapacityTaskStatus::CANCELLATION_IN_PROGRESS;
           }
           else if (hashCode == CANCELLED_HASH)
           {
@@ -74,6 +84,10 @@ namespace Aws
             return "FAILED";
           case CapacityTaskStatus::COMPLETED:
             return "COMPLETED";
+          case CapacityTaskStatus::WAITING_FOR_EVACUATION:
+            return "WAITING_FOR_EVACUATION";
+          case CapacityTaskStatus::CANCELLATION_IN_PROGRESS:
+            return "CANCELLATION_IN_PROGRESS";
           case CapacityTaskStatus::CANCELLED:
             return "CANCELLED";
           default:

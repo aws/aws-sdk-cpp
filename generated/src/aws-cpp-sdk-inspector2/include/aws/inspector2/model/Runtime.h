@@ -30,7 +30,13 @@ namespace Model
     NODEJS_18_X,
     GO_1_X,
     JAVA_17,
-    PYTHON_3_10
+    PYTHON_3_10,
+    PYTHON_3_11,
+    DOTNETCORE_3_1,
+    DOTNET_6,
+    DOTNET_7,
+    RUBY_2_7,
+    RUBY_3_2
   };
 
 namespace RuntimeMapper

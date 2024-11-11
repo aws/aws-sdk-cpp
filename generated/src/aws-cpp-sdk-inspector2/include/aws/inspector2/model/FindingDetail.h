@@ -43,7 +43,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The Cybersecurity and Infrastructure Security Agency (CISA) details for a
+     * specific vulnerability.</p>
+     */
     inline const CisaData& GetCisaData() const{ return m_cisaData; }
     inline bool CisaDataHasBeenSet() const { return m_cisaDataHasBeenSet; }
     inline void SetCisaData(const CisaData& value) { m_cisaDataHasBeenSet = true; m_cisaData = value; }
@@ -93,7 +96,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Contains information on when this exploit was observed.</p>
+     */
     inline const ExploitObserved& GetExploitObserved() const{ return m_exploitObserved; }
     inline bool ExploitObservedHasBeenSet() const { return m_exploitObservedHasBeenSet; }
     inline void SetExploitObserved(const ExploitObserved& value) { m_exploitObservedHasBeenSet = true; m_exploitObserved = value; }

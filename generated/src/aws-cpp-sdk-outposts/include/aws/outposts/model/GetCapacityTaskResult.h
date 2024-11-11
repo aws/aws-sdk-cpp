@@ -7,9 +7,11 @@
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/outposts/model/InstancesToExclude.h>
 #include <aws/outposts/model/CapacityTaskStatus.h>
 #include <aws/outposts/model/CapacityTaskFailure.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/outposts/model/TaskActionOnBlockingInstances.h>
 #include <aws/outposts/model/InstanceTypeCapacity.h>
 #include <utility>
 
@@ -92,6 +94,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Instances that the user specified they cannot stop in order to free up the
+     * capacity needed to run the capacity task.</p>
+     */
+    inline const InstancesToExclude& GetInstancesToExclude() const{ return m_instancesToExclude; }
+    inline void SetInstancesToExclude(const InstancesToExclude& value) { m_instancesToExclude = value; }
+    inline void SetInstancesToExclude(InstancesToExclude&& value) { m_instancesToExclude = std::move(value); }
+    inline GetCapacityTaskResult& WithInstancesToExclude(const InstancesToExclude& value) { SetInstancesToExclude(value); return *this;}
+    inline GetCapacityTaskResult& WithInstancesToExclude(InstancesToExclude&& value) { SetInstancesToExclude(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Performs a dry run to determine if you are above or below instance
      * capacity.</p>
      */
@@ -162,6 +176,22 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>User-specified option in case an instance is blocking the capacity task from
+     * running. Shows one of the following options:</p> <ul> <li> <p>
+     * <code>WAIT_FOR_EVACUATION</code> - Checks every 10 minutes over 48 hours to
+     * determine if instances have stopped and capacity is available to complete the
+     * task.</p> </li> <li> <p> <code>FAIL_TASK</code> - The capacity task fails.</p>
+     * </li> </ul>
+     */
+    inline const TaskActionOnBlockingInstances& GetTaskActionOnBlockingInstances() const{ return m_taskActionOnBlockingInstances; }
+    inline void SetTaskActionOnBlockingInstances(const TaskActionOnBlockingInstances& value) { m_taskActionOnBlockingInstances = value; }
+    inline void SetTaskActionOnBlockingInstances(TaskActionOnBlockingInstances&& value) { m_taskActionOnBlockingInstances = std::move(value); }
+    inline GetCapacityTaskResult& WithTaskActionOnBlockingInstances(const TaskActionOnBlockingInstances& value) { SetTaskActionOnBlockingInstances(value); return *this;}
+    inline GetCapacityTaskResult& WithTaskActionOnBlockingInstances(TaskActionOnBlockingInstances&& value) { SetTaskActionOnBlockingInstances(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -181,6 +211,8 @@ namespace Model
 
     Aws::Vector<InstanceTypeCapacity> m_requestedInstancePools;
 
+    InstancesToExclude m_instancesToExclude;
+
     bool m_dryRun;
 
     CapacityTaskStatus m_capacityTaskStatus;
@@ -192,6 +224,8 @@ namespace Model
     Aws::Utils::DateTime m_completionDate;
 
     Aws::Utils::DateTime m_lastModifiedDate;
+
+    TaskActionOnBlockingInstances m_taskActionOnBlockingInstances;
 
     Aws::String m_requestId;
   };
