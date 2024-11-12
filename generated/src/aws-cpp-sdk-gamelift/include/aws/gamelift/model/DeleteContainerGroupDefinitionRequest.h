@@ -48,10 +48,37 @@ namespace Model
     inline DeleteContainerGroupDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline DeleteContainerGroupDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The specific version to delete.</p>
+     */
+    inline int GetVersionNumber() const{ return m_versionNumber; }
+    inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
+    inline void SetVersionNumber(int value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
+    inline DeleteContainerGroupDefinitionRequest& WithVersionNumber(int value) { SetVersionNumber(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of most recent versions to keep while deleting all older
+     * versions.</p>
+     */
+    inline int GetVersionCountToRetain() const{ return m_versionCountToRetain; }
+    inline bool VersionCountToRetainHasBeenSet() const { return m_versionCountToRetainHasBeenSet; }
+    inline void SetVersionCountToRetain(int value) { m_versionCountToRetainHasBeenSet = true; m_versionCountToRetain = value; }
+    inline DeleteContainerGroupDefinitionRequest& WithVersionCountToRetain(int value) { SetVersionCountToRetain(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    int m_versionNumber;
+    bool m_versionNumberHasBeenSet = false;
+
+    int m_versionCountToRetain;
+    bool m_versionCountToRetainHasBeenSet = false;
   };
 
 } // namespace Model

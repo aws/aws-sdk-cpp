@@ -24,10 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the Amazon GameLift containers feature, which
-   * is currently in public preview.</b> </p> <p>A set of one or more port numbers
-   * that can be opened on the container. </p> <p> <b>Part of:</b>
-   * <a>ContainerPortConfiguration</a> </p><p><h3>See Also:</h3>   <a
+   * <p>A set of one or more port numbers that can be opened on the container. </p>
+   * <p> <b>Part of:</b> <a>ContainerPortConfiguration</a> </p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerPortRange">AWS
    * API Reference</a></p>
    */

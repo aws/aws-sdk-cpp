@@ -773,8 +773,8 @@ namespace PaymentCryptography
 
         /**
          * <p>Lists the aliases for all keys in the caller's Amazon Web Services account
-         * and Amazon Web Services Region. You can filter the list of aliases. For more
-         * information, see <a
+         * and Amazon Web Services Region. You can filter the aliases by
+         * <code>keyARN</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html">Using
          * aliases</a> in the <i>Amazon Web Services Payment Cryptography User
          * Guide</i>.</p> <p>This is a paginated operation, which means that each response

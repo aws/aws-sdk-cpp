@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the Amazon GameLift containers feature, which
-   * is currently in public preview.</b> </p> <p>An environment variable to set
-   * inside a container, in the form of a key-value pair. </p> <p> <b>Related data
-   * type: </b> <a>ContainerDefinition$Environment</a> </p><p><h3>See Also:</h3>   <a
+   * <p>An environment variable to set inside a container, in the form of a key-value
+   * pair. </p> <p> <b>Part of:</b> <a>GameServerContainerDefinition</a>,
+   * <a>GameServerContainerDefinitionInput</a>, <a>SupportContainerDefinition</a>,
+   * <a>SupportContainerDefinitionInput</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerEnvironment">AWS
    * API Reference</a></p>
    */

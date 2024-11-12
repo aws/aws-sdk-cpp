@@ -36,6 +36,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The <code>keyARN</code> for which you want to list all aliases.</p>
+     */
+    inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
+    inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
+    inline void SetKeyArn(const Aws::String& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
+    inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
+    inline void SetKeyArn(const char* value) { m_keyArnHasBeenSet = true; m_keyArn.assign(value); }
+    inline ListAliasesRequest& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
+    inline ListAliasesRequest& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
+    inline ListAliasesRequest& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Use this parameter in a subsequent request after you receive a response with
      * truncated results. Set it to the value of <code>NextToken</code> from the
      * truncated response you just received.</p>
@@ -64,6 +78,9 @@ namespace Model
     inline ListAliasesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_keyArn;
+    bool m_keyArnHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

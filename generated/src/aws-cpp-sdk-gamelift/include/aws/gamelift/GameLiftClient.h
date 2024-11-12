@@ -253,32 +253,35 @@ namespace GameLift
         }
 
         /**
-         * <p>Creates a new Amazon GameLift build resource for your game server binary
-         * files. Combine game server binaries into a zip file for use with Amazon
-         * GameLift. </p>  <p>When setting up a new game build for Amazon
-         * GameLift, we recommend using the CLI command <b> <a
+         * <p>Creates an Amazon GameLift build resource for your game server software and
+         * stores the software for deployment to hosting resources. Combine game server
+         * binaries and dependencies into a single .zip file </p>  <p>Use the
+         * CLI command <b> <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
-         * </b>. This helper command combines two tasks: (1) it uploads your build files
-         * from a file directory to an Amazon GameLift Amazon S3 location, and (2) it
-         * creates a new build resource.</p>  <p>You can use the
-         * <code>CreateBuild</code> operation in the following scenarios:</p> <ul> <li>
-         * <p>Create a new game build with build files that are in an Amazon S3 location
-         * under an Amazon Web Services account that you control. To use this option, you
-         * give Amazon GameLift access to the Amazon S3 bucket. With permissions in place,
-         * specify a build name, operating system, and the Amazon S3 storage location of
-         * your game build.</p> </li> <li> <p>Upload your build files to a Amazon GameLift
-         * Amazon S3 location. To use this option, specify a build name and operating
-         * system. This operation creates a new build resource and also returns an Amazon
-         * S3 location with temporary access credentials. Use the credentials to manually
-         * upload your build files to the specified Amazon S3 location. For more
-         * information, see <a
+         * </b> to quickly and simply create a new build and upload your game build .zip
+         * file to Amazon GameLift Amazon S3. This helper command eliminates the need to
+         * explicitly manage access permissions.</p>  <p>Alternatively, use the
+         * <code>CreateBuild</code> action for the following scenarios:</p> <ul> <li>
+         * <p>You want to create a build and upload a game build zip file from in an Amazon
+         * S3 location that you control. In this scenario, you need to give Amazon GameLift
+         * permission to access to the Amazon S3 bucket. With permission in place, call
+         * <code>CreateBuild</code> and specify a build name, the build's runtime operating
+         * system, and the Amazon S3 storage location where the build file is stored.</p>
+         * </li> <li> <p>You want to create a build and upload a local game build zip file
+         * to an Amazon S3 location that's controlled by Amazon GameLift. (See the
+         * <code>upload-build</code> CLI command for this scenario.) In this scenario, you
+         * need to request temporary access credentials to the Amazon GameLift Amazon S3
+         * location. Specify a build name and the build's runtime operating system. The
+         * response provides an Amazon S3 location and a set of temporary access
+         * credentials. Use the credentials to upload your build files to the specified
+         * Amazon S3 location (see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
-         * Objects</a> in the <i>Amazon S3 Developer Guide</i>. After you upload build
-         * files to the Amazon GameLift Amazon S3 location, you can't update them. </p>
-         * </li> </ul> <p>If successful, this operation creates a new build resource with a
-         * unique build ID and places it in <code>INITIALIZED</code> status. A build must
-         * be in <code>READY</code> status before you can create fleets with it.</p> <p>
-         * <b>Learn more</b> </p> <p> <a
+         * Objects</a> in the <i>Amazon S3 Developer Guide</i>). You can't update build
+         * files after uploading them to Amazon GameLift Amazon S3.</p> </li> </ul> <p>If
+         * successful, this action creates a new build resource with a unique build ID and
+         * places it in <code>INITIALIZED</code> status. When the build reaches
+         * <code>READY</code> status, you can create fleets with it.</p> <p> <b>Learn
+         * more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
          * Your Game</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
@@ -309,43 +312,134 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation is used with the Amazon GameLift containers feature, which
-         * is currently in public preview. </b> </p> <p>Creates a
-         * <code>ContainerGroupDefinition</code> resource that describes a set of
-         * containers for hosting your game server with Amazon GameLift managed EC2
-         * hosting. An Amazon GameLift container group is similar to a container "task" and
-         * "pod". Each container group can have one or more containers. </p> <p>Use
-         * container group definitions when you create a container fleet. Container group
-         * definitions determine how Amazon GameLift deploys your containers to each
-         * instance in a container fleet. </p> <p>You can create two types of container
-         * groups, based on scheduling strategy:</p> <ul> <li> <p>A <b>replica container
-         * group</b> manages the containers that run your game server application and
-         * supporting software. Replica container groups might be replicated multiple times
-         * on each fleet instance, depending on instance resources. </p> </li> <li> <p>A
-         * <b>daemon container group</b> manages containers that run other software, such
-         * as background services, logging, or test processes. You might use a daemon
-         * container group for processes that need to run only once per fleet instance, or
-         * processes that need to persist independently of the replica container group.
-         * </p> </li> </ul> <p>To create a container group definition, specify a group
-         * name, a list of container definitions, and maximum total CPU and memory
-         * requirements for the container group. Specify an operating system and scheduling
-         * strategy or use the default values. When using the Amazon Web Services CLI tool,
-         * you can pass in your container definitions as a JSON file.</p>  <p>This
-         * operation requires Identity and Access Management (IAM) permissions to access
-         * container images in Amazon ECR repositories. See <a
+         * <p>Creates a managed fleet of Amazon Elastic Compute Cloud (Amazon EC2)
+         * instances to host your containerized game servers. Use this operation to define
+         * how to deploy a container architecture onto each fleet instance and configure
+         * fleet settings. You can create a container fleet in any Amazon Web Services
+         * Regions that Amazon GameLift supports for multi-location fleets. A container
+         * fleet can be deployed to a single location or multiple locations. Container
+         * fleets are deployed with Amazon Linux 2023 as the instance operating system.</p>
+         * <p>Define the fleet's container architecture using container group definitions.
+         * Each fleet can have one of the following container group types:</p> <ul> <li>
+         * <p>The game server container group runs your game server build and dependent
+         * software. Amazon GameLift deploys one or more replicas of this container group
+         * to each fleet instance. The number of replicas depends on the computing
+         * capabilities of the fleet instance in use. </p> </li> <li> <p>An optional
+         * per-instance container group might be used to run other software that only needs
+         * to run once per instance, such as background services, logging, or test
+         * processes. One per-instance container group is deployed to each fleet instance.
+         * </p> </li> </ul> <p>Each container group can include the definition for one or
+         * more containers. A container definition specifies a container image that is
+         * stored in an Amazon Elastic Container Registry (Amazon ECR) public or private
+         * repository.</p> <p> <b>Request options</b> </p> <p>Use this operation to make
+         * the following types of requests. Most fleet settings have default values, so you
+         * can create a working fleet with a minimal configuration and default values,
+         * which you can customize later.</p> <ul> <li> <p>Create a fleet with no container
+         * groups. You can configure a container fleet and then add container group
+         * definitions later. In this scenario, no fleet instances are deployed, and the
+         * fleet can't host game sessions until you add a game server container group
+         * definition. Provide the following required parameter values:</p> <ul> <li> <p>
+         * <code>FleetRoleArn</code> </p> </li> </ul> </li> <li> <p>Create a fleet with a
+         * game server container group. Provide the following required parameter
+         * values:</p> <ul> <li> <p> <code>FleetRoleArn</code> </p> </li> <li> <p>
+         * <code>GameServerContainerGroupDefinitionName</code> </p> </li> </ul> </li> <li>
+         * <p>Create a fleet with a game server container group and a per-instance
+         * container group. Provide the following required parameter values:</p> <ul> <li>
+         * <p> <code>FleetRoleArn</code> </p> </li> <li> <p>
+         * <code>GameServerContainerGroupDefinitionName</code> </p> </li> <li> <p>
+         * <code>PerInstanceContainerGroupDefinitionName</code> </p> </li> </ul> </li>
+         * </ul> <p> <b>Results</b> </p> <p>If successful, this operation creates a new
+         * container fleet resource, places it in <code>PENDING</code> status, and
+         * initiates the <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
+         * creation workflow</a>. For fleets with container groups, this workflow starts a
+         * fleet deployment and transitions the status to <code>ACTIVE</code>. Fleets
+         * without a container group are placed in <code>CREATED</code> status.</p> <p>You
+         * can update most of the properties of a fleet, including container group
+         * definitions, and deploy the update across all fleet instances. Use a fleet
+         * update to deploy a new game server version update across the container fleet.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateContainerFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContainerFleetOutcome CreateContainerFleet(const Model::CreateContainerFleetRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateContainerFleet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateContainerFleetRequestT = Model::CreateContainerFleetRequest>
+        Model::CreateContainerFleetOutcomeCallable CreateContainerFleetCallable(const CreateContainerFleetRequestT& request) const
+        {
+            return SubmitCallable(&GameLiftClient::CreateContainerFleet, request);
+        }
+
+        /**
+         * An Async wrapper for CreateContainerFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateContainerFleetRequestT = Model::CreateContainerFleetRequest>
+        void CreateContainerFleetAsync(const CreateContainerFleetRequestT& request, const CreateContainerFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GameLiftClient::CreateContainerFleet, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a <code>ContainerGroupDefinition</code> that describes a set of
+         * containers for hosting your game server with Amazon GameLift managed containers
+         * hosting. An Amazon GameLift container group is similar to a container task or
+         * pod. Use container group definitions when you create a container fleet with
+         * <a>CreateContainerFleet</a>. </p> <p>A container group definition determines how
+         * Amazon GameLift deploys your containers to each instance in a container fleet.
+         * You can maintain multiple versions of a container group definition.</p> <p>There
+         * are two types of container groups:</p> <ul> <li> <p>A <b>game server container
+         * group</b> has the containers that run your game server application and
+         * supporting software. A game server container group can have these container
+         * types:</p> <ul> <li> <p>Game server container. This container runs your game
+         * server. You can define one game server container in a game server container
+         * group.</p> </li> <li> <p>Support container. This container runs software in
+         * parallel with your game server. You can define up to 8 support containers in a
+         * game server group.</p> </li> </ul> <p>When building a game server container
+         * group definition, you can choose to bundle your game server executable and all
+         * dependent software into a single game server container. Alternatively, you can
+         * separate the software into one game server container and one or more support
+         * containers.</p> <p>On a container fleet instance, a game server container group
+         * can be deployed multiple times (depending on the compute resources of the
+         * instance). This means that all containers in the container group are replicated
+         * together.</p> </li> <li> <p>A <b>per-instance container group</b> has containers
+         * for processes that aren't replicated on a container fleet instance. This might
+         * include background services, logging, test processes, or processes that need to
+         * persist independently of the game server container group. When building a
+         * per-instance container group, you can define up to 10 support containers.</p>
+         * </li> </ul>  <p>This operation requires Identity and Access Management
+         * (IAM) permissions to access container images in Amazon ECR repositories. See <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">
          * IAM permissions for Amazon GameLift</a> for help setting the appropriate
-         * permissions.</p>  <p>If successful, this operation creates a new
-         * <code>ContainerGroupDefinition</code> resource with an ARN value assigned. You
-         * can't change the properties of a container group definition. Instead, create a
-         * new one. </p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Create
-         * a container group definition</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet.html">Container
-         * fleet design guide</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-definitions.html#containers-definitions-create">Create
-         * a container definition as a JSON file</a> </p> </li> </ul><p><h3>See Also:</h3> 
-         * <a
+         * permissions.</p>  <p> <b>Request options</b> </p> <p>Use this operation
+         * to make the following types of requests. You can specify values for the minimum
+         * required parameters and customize optional values later.</p> <ul> <li> <p>Create
+         * a game server container group definition. Provide the following required
+         * parameter values:</p> <ul> <li> <p> <code>Name</code> </p> </li> <li> <p>
+         * <code>ContainerGroupType</code> (<code>GAME_SERVER</code>)</p> </li> <li> <p>
+         * <code>OperatingSystem</code> (omit to use default value)</p> </li> <li> <p>
+         * <code>TotalMemoryLimitMebibytes</code> (omit to use default value)</p> </li>
+         * <li> <p> <code>TotalVcpuLimit </code>(omit to use default value)</p> </li> <li>
+         * <p>At least one <code>GameServerContainerDefinition</code> </p> <ul> <li> <p>
+         * <code>ContainerName</code> </p> </li> <li> <p> <code>ImageUrl</code> </p> </li>
+         * <li> <p> <code>PortConfiguration</code> </p> </li> <li> <p>
+         * <code>ServerSdkVersion</code> (omit to use default value)</p> </li> </ul> </li>
+         * </ul> </li> <li> <p>Create a per-instance container group definition. Provide
+         * the following required parameter values:</p> <ul> <li> <p> <code>Name</code>
+         * </p> </li> <li> <p> <code>ContainerGroupType</code>
+         * (<code>PER_INSTANCE</code>)</p> </li> <li> <p> <code>OperatingSystem</code>
+         * (omit to use default value)</p> </li> <li> <p>
+         * <code>TotalMemoryLimitMebibytes</code> (omit to use default value)</p> </li>
+         * <li> <p> <code>TotalVcpuLimit </code>(omit to use default value)</p> </li> <li>
+         * <p>At least one <code>SupportContainerDefinition</code> </p> <ul> <li> <p>
+         * <code>ContainerName</code> </p> </li> <li> <p> <code>ImageUrl</code> </p> </li>
+         * </ul> </li> </ul> </li> </ul> <p> <b>Results</b> </p> <p>If successful, this
+         * request creates a <code>ContainerGroupDefinition</code> resource and assigns a
+         * unique ARN value. You can update most properties of a container group definition
+         * by calling <a>UpdateContainerGroupDefinition</a>, and optionally save the update
+         * as a new version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateContainerGroupDefinition">AWS
          * API Reference</a></p>
          */
@@ -370,17 +464,15 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation has been expanded to use with the Amazon GameLift
-         * containers feature, which is currently in public preview.</b> </p> <p>Creates a
-         * fleet of compute resources to host your game servers. Use this operation to set
-         * up the following types of fleets based on compute type: </p> <p> <b>Managed EC2
-         * fleet</b> </p> <p>An EC2 fleet is a set of Amazon Elastic Compute Cloud (Amazon
-         * EC2) instances. Your game server build is deployed to each fleet instance.
-         * Amazon GameLift manages the fleet's instances and controls the lifecycle of game
-         * server processes, which host game sessions for players. EC2 fleets can have
-         * instances in multiple locations. Each instance in the fleet is designated a
-         * <code>Compute</code>.</p> <p>To create an EC2 fleet, provide these required
-         * parameters:</p> <ul> <li> <p>Either <code>BuildId</code> or
+         * <p>Creates a fleet of compute resources to host your game servers. Use this
+         * operation to set up the following types of fleets based on compute type: </p>
+         * <p> <b>Managed EC2 fleet</b> </p> <p>An EC2 fleet is a set of Amazon Elastic
+         * Compute Cloud (Amazon EC2) instances. Your game server build is deployed to each
+         * fleet instance. Amazon GameLift manages the fleet's instances and controls the
+         * lifecycle of game server processes, which host game sessions for players. EC2
+         * fleets can have instances in multiple locations. Each instance in the fleet is
+         * designated a <code>Compute</code>.</p> <p>To create an EC2 fleet, provide these
+         * required parameters:</p> <ul> <li> <p>Either <code>BuildId</code> or
          * <code>ScriptId</code> </p> </li> <li> <p> <code>ComputeType</code> set to
          * <code>EC2</code> (the default value)</p> </li> <li> <p>
          * <code>EC2InboundPermissions</code> </p> </li> <li> <p>
@@ -396,42 +488,19 @@ namespace GameLift
          * open. As a best practice, we recommend opening ports for remote access only when
          * you need them and closing them when you're finished. </p> <p>When the fleet
          * status is ACTIVE, you can adjust capacity settings and turn autoscaling on/off
-         * for each location.</p> <p> <b>Managed container fleet</b> </p> <p>A container
-         * fleet is a set of Amazon Elastic Compute Cloud (Amazon EC2) instances. Your
-         * container architecture is deployed to each fleet instance based on the fleet
-         * configuration. Amazon GameLift manages the containers on each fleet instance and
-         * controls the lifecycle of game server processes, which host game sessions for
-         * players. Container fleets can have instances in multiple locations. Each
-         * container on an instance that runs game server processes is registered as a
-         * <code>Compute</code>.</p> <p>To create a container fleet, provide these required
+         * for each location.</p> <p> <b>Anywhere fleet</b> </p> <p>An Anywhere fleet
+         * represents compute resources that are not owned or managed by Amazon GameLift.
+         * You might create an Anywhere fleet with your local machine for testing, or use
+         * one to host game servers with on-premises hardware or other game hosting
+         * solutions. </p> <p>To create an Anywhere fleet, provide these required
          * parameters:</p> <ul> <li> <p> <code>ComputeType</code> set to
-         * <code>CONTAINER</code> </p> </li> <li> <p>
-         * <code>ContainerGroupsConfiguration</code> </p> </li> <li> <p>
-         * <code>EC2InboundPermissions</code> </p> </li> <li> <p>
-         * <code>EC2InstanceType</code> </p> </li> <li> <p> <code>FleetType</code> set to
-         * <code>ON_DEMAND</code> </p> </li> <li> <p> <code>Name</code> </p> </li> <li> <p>
-         * <code>RuntimeConfiguration</code> with at least one <code>ServerProcesses</code>
-         * configuration</p> </li> </ul> <p>If successful, this operation creates a new
-         * fleet resource and places it in <code>NEW</code> status while Amazon GameLift
-         * initiates the <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
-         * creation workflow</a>. </p> <p>When the fleet status is ACTIVE, you can adjust
-         * capacity settings and turn autoscaling on/off for each location.</p> <p>
-         * <b>Anywhere fleet</b> </p> <p>An Anywhere fleet represents compute resources
-         * that are not owned or managed by Amazon GameLift. You might create an Anywhere
-         * fleet with your local machine for testing, or use one to host game servers with
-         * on-premises hardware or other game hosting solutions. </p> <p>To create an
-         * Anywhere fleet, provide these required parameters:</p> <ul> <li> <p>
-         * <code>ComputeType</code> set to <code>ANYWHERE</code> </p> </li> <li> <p>
-         * <code>Locations</code> specifying a custom location</p> </li> <li> <p>
-         * <code>Name</code> </p> </li> </ul> <p>If successful, this operation creates a
-         * new fleet resource and places it in <code>ACTIVE</code> status. You can register
-         * computes with a fleet in <code>ACTIVE</code> status. </p> <p> <b>Learn more</b>
-         * </p> <p> <a
+         * <code>ANYWHERE</code> </p> </li> <li> <p> <code>Locations</code> specifying a
+         * custom location</p> </li> <li> <p> <code>Name</code> </p> </li> </ul> <p>If
+         * successful, this operation creates a new fleet resource and places it in
+         * <code>ACTIVE</code> status. You can register computes with a fleet in
+         * <code>ACTIVE</code> status. </p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up fleets</a> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-build-fleet.html">Setting
-         * up a container fleet</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug
          * fleet creation issues</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location
@@ -460,19 +529,17 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation has been expanded to use with the Amazon GameLift
-         * containers feature, which is currently in public preview.</b> </p> <p>Adds
-         * remote locations to an EC2 or container fleet and begins populating the new
-         * locations with instances. The new instances conform to the fleet's instance
-         * type, auto-scaling, and other configuration settings.</p>  <p>You can't
-         * add remote locations to a fleet that resides in an Amazon Web Services Region
-         * that doesn't support multiple locations. Fleets created prior to March 2021
-         * can't support multiple locations.</p>  <p>To add fleet locations, specify
-         * the fleet to be updated and provide a list of one or more locations. </p> <p>If
-         * successful, this operation returns the list of added locations with their status
-         * set to <code>NEW</code>. Amazon GameLift initiates the process of starting an
-         * instance in each added location. You can track the status of each new location
-         * by monitoring location creation events using <a
+         * <p>Adds remote locations to a managed EC2 fleet or managed container fleet and
+         * begins populating the new locations with instances. The new instances conform to
+         * the fleet's instance type, auto-scaling, and other configuration settings.</p>
+         *  <p>You can't add remote locations to a fleet that resides in an Amazon
+         * Web Services Region that doesn't support multiple locations. Fleets created
+         * prior to March 2021 can't support multiple locations.</p>  <p>To add
+         * fleet locations, specify the fleet to be updated and provide a list of one or
+         * more locations. </p> <p>If successful, this operation returns the list of added
+         * locations with their status set to <code>NEW</code>. Amazon GameLift initiates
+         * the process of starting an instance in each added location. You can track the
+         * status of each new location by monitoring location creation events using <a
          * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.</p>
          * <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
@@ -878,24 +945,22 @@ namespace GameLift
         }
 
         /**
-         * <p>Creates a new script record for your Realtime Servers script. Realtime
-         * scripts are JavaScript that provide configuration settings and optional custom
-         * game logic for your game. The script is deployed when you create a Realtime
-         * Servers fleet to host your game sessions. Script logic is executed during an
-         * active game session. </p> <p>To create a new script record, specify a script
-         * name and provide the script file(s). The script files and all dependencies must
-         * be zipped into a single file. You can pull the zip file from either of these
-         * locations: </p> <ul> <li> <p>A locally available directory. Use the
-         * <i>ZipFile</i> parameter for this option.</p> </li> <li> <p>An Amazon Simple
-         * Storage Service (Amazon S3) bucket under your Amazon Web Services account. Use
-         * the <i>StorageLocation</i> parameter for this option. You'll need to have an
-         * Identity Access Management (IAM) role that allows the Amazon GameLift service to
-         * access your S3 bucket. </p> </li> </ul> <p>If the call is successful, a new
-         * script record is created with a unique script ID. If the script file is provided
-         * as a local file, the file is uploaded to an Amazon GameLift-owned S3 bucket and
-         * the script record's storage location reflects this location. If the script file
-         * is provided as an S3 bucket, Amazon GameLift accesses the file at this storage
-         * location as needed for deployment.</p> <p> <b>Learn more</b> </p> <p> <a
+         * <p>Creates a script resource for your Realtime Servers script. Realtime scripts
+         * are JavaScript files that provide configuration settings and optional custom
+         * game logic for your game. Script logic is executed during an active game
+         * session. To deploy Realtime Servers for hosting, create an Amazon GameLift
+         * managed fleet with the script.</p> <p>To create a script resource, specify a
+         * script name and provide the script file(s). The script files and all
+         * dependencies must be combined into a single .zip file. You can upload the .zip
+         * file from either of these locations: </p> <ul> <li> <p>A locally available
+         * directory. Use the <i>ZipFile</i> parameter for this option.</p> </li> <li>
+         * <p>An Amazon Simple Storage Service (Amazon S3) bucket under your Amazon Web
+         * Services account. Use the <i>StorageLocation</i> parameter for this option.
+         * You'll need to have an Identity Access Management (IAM) role that allows the
+         * Amazon GameLift service to access your S3 bucket. </p> </li> </ul> <p>If the
+         * call is successful, Amazon GameLift creates a new script resource with a unique
+         * script ID. The script is uploaded to an Amazon S3 bucket that is owned by Amazon
+         * GameLift.</p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/realtime-intro.html">Amazon
          * GameLift Realtime Servers</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set
@@ -1094,11 +1159,49 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation is used with the Amazon GameLift containers feature, which
-         * is currently in public preview. </b> </p> <p>Deletes a container group
-         * definition resource. You can delete a container group definition if there are no
-         * fleets using the definition. </p> <p>To delete a container group definition,
-         * identify the resource to delete.</p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * <p>Deletes all resources and information related to a container fleet and shuts
+         * down currently running fleet instances, including those in remote locations. The
+         * container fleet must be in <code>ACTIVE</code> status to be deleted.</p> <p>To
+         * delete a fleet, specify the fleet ID to be terminated. During the deletion
+         * process, the fleet status is changed to <code>DELETING</code>. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up Amazon GameLift Fleets</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteContainerFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContainerFleetOutcome DeleteContainerFleet(const Model::DeleteContainerFleetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteContainerFleet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteContainerFleetRequestT = Model::DeleteContainerFleetRequest>
+        Model::DeleteContainerFleetOutcomeCallable DeleteContainerFleetCallable(const DeleteContainerFleetRequestT& request) const
+        {
+            return SubmitCallable(&GameLiftClient::DeleteContainerFleet, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteContainerFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteContainerFleetRequestT = Model::DeleteContainerFleetRequest>
+        void DeleteContainerFleetAsync(const DeleteContainerFleetRequestT& request, const DeleteContainerFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GameLiftClient::DeleteContainerFleet, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a container group definition. You can delete a container group
+         * definition if there are no fleets using the definition. </p> <p> <b>Request
+         * options:</b> </p> <ul> <li> <p>Delete an entire container group definition,
+         * including all versions. Specify the container group definition name, or use an
+         * ARN value without the version number.</p> </li> <li> <p>Delete a particular
+         * version. Specify the container group definition name and a version number, or
+         * use an ARN value that includes the version number.</p> </li> <li> <p>Keep the
+         * newest versions and delete all older versions. Specify the container group
+         * definition name and the number of versions to retain. For example, set
+         * <code>VersionCountToRetain</code> to 5 to delete all but the five most recent
+         * versions.</p> </li> </ul> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Manage
          * a container group definition</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteContainerGroupDefinition">AWS
@@ -1482,16 +1585,14 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation has been expanded to use with the Amazon GameLift
-         * containers feature, which is currently in public preview.</b> </p> <p>Removes a
-         * compute resource from an Amazon GameLift Anywhere fleet or container fleet.
+         * <p>Removes a compute resource from an Amazon GameLift Anywhere fleet.
          * Deregistered computes can no longer host game sessions through Amazon
-         * GameLift.</p> <p>For an Anywhere fleet or a container fleet that's running the
-         * Amazon GameLift Agent, the Agent handles all compute registry tasks for you. For
-         * an Anywhere fleet that doesn't use the Agent, call this operation to deregister
-         * fleet computes. </p> <p>To deregister a compute, call this operation from the
-         * compute that's being deregistered and specify the compute name and the fleet ID.
-         * </p><p><h3>See Also:</h3>   <a
+         * GameLift.</p> <p>For an Anywhere fleet that's running the Amazon GameLift Agent,
+         * the Agent handles all compute registry tasks for you. For an Anywhere fleet that
+         * doesn't use the Agent, call this operation to deregister fleet computes. </p>
+         * <p>To deregister a compute, call this operation from the compute that's being
+         * deregistered and specify the compute name and the fleet ID. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeregisterCompute">AWS
          * API Reference</a></p>
          */
@@ -1611,20 +1712,15 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation has been expanded to use with the Amazon GameLift
-         * containers feature, which is currently in public preview.</b> </p> <p>Retrieves
-         * properties for a compute resource in an Amazon GameLift fleet. To get a list of
-         * all computes in a fleet, call <a>ListCompute</a>. </p> <p>To request information
-         * on a specific compute, provide the fleet ID and compute name.</p> <p>If
-         * successful, this operation returns details for the requested compute resource.
-         * Depending on the fleet's compute type, the result includes the following
-         * information: </p> <ul> <li> <p>For <code>EC2</code> fleets, this operation
-         * returns information about the EC2 instance.</p> </li> <li> <p>For
-         * <code>ANYWHERE</code> fleets, this operation returns information about the
-         * registered compute.</p> </li> <li> <p>For <code>CONTAINER</code> fleets, this
-         * operation returns information about the container that's registered as a
-         * compute, and the instance it's running on. The compute name is the container
-         * name.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Retrieves properties for a compute resource in an Amazon GameLift fleet. To
+         * get a list of all computes in a fleet, call <a>ListCompute</a>. </p> <p>To
+         * request information on a specific compute, provide the fleet ID and compute
+         * name.</p> <p>If successful, this operation returns details for the requested
+         * compute resource. Depending on the fleet's compute type, the result includes the
+         * following information: </p> <ul> <li> <p>For managed EC2 fleets, this operation
+         * returns information about the EC2 instance.</p> </li> <li> <p>For Anywhere
+         * fleets, this operation returns information about the registered compute.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeCompute">AWS
          * API Reference</a></p>
          */
@@ -1649,12 +1745,50 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation is used with the Amazon GameLift containers feature, which
-         * is currently in public preview. </b> </p> <p>Retrieves the properties of a
-         * container group definition, including all container definitions in the group.
-         * </p> <p>To retrieve a container group definition, provide a resource identifier.
-         * If successful, this operation returns the complete properties of the container
-         * group definition.</p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * <p>Retrieves the properties for a container fleet. When requesting attributes
+         * for multiple fleets, use the pagination parameters to retrieve results as a set
+         * of sequential pages. </p> <p> <b>Request options</b> </p> <ul> <li> <p>Get
+         * container fleet properties for a single fleet. Provide either the fleet ID or
+         * ARN value. </p> </li> </ul> <p> <b>Results</b> </p> <p>If successful, a
+         * <code>ContainerFleet</code> object is returned. This object includes the fleet
+         * properties, including information about the most recent deployment.</p> 
+         * <p>Some API operations limit the number of fleet IDs that allowed in one
+         * request. If a request exceeds this limit, the request fails and the error
+         * message contains the maximum allowed number.</p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeContainerFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeContainerFleetOutcome DescribeContainerFleet(const Model::DescribeContainerFleetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeContainerFleet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeContainerFleetRequestT = Model::DescribeContainerFleetRequest>
+        Model::DescribeContainerFleetOutcomeCallable DescribeContainerFleetCallable(const DescribeContainerFleetRequestT& request) const
+        {
+            return SubmitCallable(&GameLiftClient::DescribeContainerFleet, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeContainerFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeContainerFleetRequestT = Model::DescribeContainerFleetRequest>
+        void DescribeContainerFleetAsync(const DescribeContainerFleetRequestT& request, const DescribeContainerFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GameLiftClient::DescribeContainerFleet, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the properties of a container group definition, including all
+         * container definitions in the group. </p> <p> <b>Request options:</b> </p> <ul>
+         * <li> <p>Retrieve the latest version of a container group definition. Specify the
+         * container group definition name only, or use an ARN value without a version
+         * number.</p> </li> <li> <p>Retrieve a particular version. Specify the container
+         * group definition name and a version number, or use an ARN value that includes
+         * the version number.</p> </li> </ul> <p> <b>Results:</b> </p> <p>If successful,
+         * this operation returns the complete properties of a container group definition
+         * version.</p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Manage
          * a container group definition</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeContainerGroupDefinition">AWS
@@ -1745,21 +1879,19 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation has been expanded to use with the Amazon GameLift
-         * containers feature, which is currently in public preview.</b> </p> <p>Retrieves
-         * core fleet-wide properties for fleets in an Amazon Web Services Region.
-         * Properties include the computing hardware and deployment configuration for
-         * instances in the fleet.</p> <p>You can use this operation in the following ways:
-         * </p> <ul> <li> <p>To get attributes for specific fleets, provide a list of fleet
-         * IDs or fleet ARNs.</p> </li> <li> <p>To get attributes for all fleets, do not
-         * provide a fleet identifier.</p> </li> </ul> <p>When requesting attributes for
-         * multiple fleets, use the pagination parameters to retrieve results as a set of
-         * sequential pages. </p> <p>If successful, a <code>FleetAttributes</code> object
-         * is returned for each fleet requested, unless the fleet identifier is not found.
-         * </p>  <p>Some API operations limit the number of fleet IDs that allowed in
-         * one request. If a request exceeds this limit, the request fails and the error
-         * message contains the maximum allowed number.</p>  <p> <b>Learn more</b>
-         * </p> <p> <a
+         * <p>Retrieves core fleet-wide properties for fleets in an Amazon Web Services
+         * Region. Properties include the computing hardware and deployment configuration
+         * for instances in the fleet.</p> <p>You can use this operation in the following
+         * ways: </p> <ul> <li> <p>To get attributes for specific fleets, provide a list of
+         * fleet IDs or fleet ARNs.</p> </li> <li> <p>To get attributes for all fleets, do
+         * not provide a fleet identifier.</p> </li> </ul> <p>When requesting attributes
+         * for multiple fleets, use the pagination parameters to retrieve results as a set
+         * of sequential pages. </p> <p>If successful, a <code>FleetAttributes</code>
+         * object is returned for each fleet requested, unless the fleet identifier is not
+         * found. </p>  <p>Some API operations limit the number of fleet IDs that
+         * allowed in one request. If a request exceeds this limit, the request fails and
+         * the error message contains the maximum allowed number.</p>  <p> <b>Learn
+         * more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up Amazon GameLift fleets</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
@@ -1786,12 +1918,10 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation has been expanded to use with the Amazon GameLift
-         * containers feature, which is currently in public preview.</b> </p> <p>Retrieves
-         * the resource capacity settings for one or more fleets. For a container fleet,
-         * this operation also returns counts for replica container groups.</p> <p>With
-         * multi-location fleets, this operation retrieves data for the fleet's home Region
-         * only. To retrieve capacity for remote locations, see
+         * <p>Retrieves the resource capacity settings for one or more fleets. For a
+         * container fleet, this operation also returns counts for game server container
+         * groups.</p> <p>With multi-location fleets, this operation retrieves data for the
+         * fleet's home Region only. To retrieve capacity for remote locations, see
          * <a>DescribeFleetLocationCapacity</a>.</p> <p>This operation can be used in the
          * following ways: </p> <ul> <li> <p>To get capacity data for one or more specific
          * fleets, provide a list of fleet IDs or fleet ARNs. </p> </li> <li> <p>To get
@@ -1830,6 +1960,36 @@ namespace GameLift
         void DescribeFleetCapacityAsync(const DescribeFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeFleetCapacityRequestT& request = {}) const
         {
             return SubmitAsync(&GameLiftClient::DescribeFleetCapacity, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a managed container fleet deployment. </p> <p>
+         * <b>Request options</b> </p> <ul> <li> <p>Get information about the latest
+         * deployment for a specific fleet. Provide the fleet ID or ARN.</p> </li> <li> <p>
+         * Get information about a specific deployment. Provide the fleet ID or ARN and the
+         * deployment ID.</p> </li> </ul> <p> <b>Results</b> </p> <p>If successful, a
+         * <code>FleetDeployment</code> object is returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFleetDeploymentOutcome DescribeFleetDeployment(const Model::DescribeFleetDeploymentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFleetDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeFleetDeploymentRequestT = Model::DescribeFleetDeploymentRequest>
+        Model::DescribeFleetDeploymentOutcomeCallable DescribeFleetDeploymentCallable(const DescribeFleetDeploymentRequestT& request) const
+        {
+            return SubmitCallable(&GameLiftClient::DescribeFleetDeployment, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeFleetDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeFleetDeploymentRequestT = Model::DescribeFleetDeploymentRequest>
+        void DescribeFleetDeploymentAsync(const DescribeFleetDeploymentRequestT& request, const DescribeFleetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GameLiftClient::DescribeFleetDeployment, request, handler, context);
         }
 
         /**
@@ -1911,10 +2071,10 @@ namespace GameLift
         /**
          * <p>Retrieves the resource capacity settings for a fleet location. The data
          * returned includes the current capacity (number of EC2 instances) and some
-         * scaling settings for the requested fleet location. For a container fleet, this
-         * operation also returns counts for replica container groups.</p> <p>Use this
-         * operation to retrieve capacity information for a fleet's remote location or home
-         * Region (you can also retrieve home Region capacity by calling
+         * scaling settings for the requested fleet location. For a managed container
+         * fleet, this operation also returns counts for game server container groups.</p>
+         * <p>Use this operation to retrieve capacity information for a fleet's remote
+         * location or home Region (you can also retrieve home Region capacity by calling
          * <code>DescribeFleetCapacity</code>).</p> <p>To retrieve capacity data, identify
          * a fleet and location. </p> <p>If successful, a <code>FleetCapacity</code> object
          * is returned for the requested fleet location. </p> <p> <b>Learn more</b> </p>
@@ -1987,20 +2147,20 @@ namespace GameLift
         }
 
         /**
-         * <p>Retrieves a fleet's inbound connection permissions. Connection permissions
+         * <p>Retrieves a fleet's inbound connection permissions. Inbound permissions
          * specify IP addresses and port settings that incoming traffic can use to access
          * server processes in the fleet. Game server processes that are running in the
          * fleet must use a port that falls within this range. To connect to game server
-         * processes on a container fleet, the port settings should include one or more of
-         * the fleet's connection ports. </p> <p>Use this operation in the following ways:
-         * </p> <ul> <li> <p>To retrieve the port settings for a fleet, identify the
-         * fleet's unique identifier. </p> </li> <li> <p>To check the status of recent
-         * updates to a fleet remote location, specify the fleet ID and a location. Port
-         * setting updates can take time to propagate across all locations. </p> </li>
-         * </ul> <p>If successful, a set of <code>IpPermission</code> objects is returned
-         * for the requested fleet ID. When specifying a location, this operation returns a
-         * pending status. If the requested fleet has been deleted, the result set is
-         * empty.</p> <p> <b>Learn more</b> </p> <p> <a
+         * processes on a managed container fleet, the port settings should include one or
+         * more of the container fleet's connection ports. </p> <p>Use this operation in
+         * the following ways: </p> <ul> <li> <p>To retrieve the port settings for a fleet,
+         * identify the fleet's unique identifier. </p> </li> <li> <p>To check the status
+         * of recent updates to a fleet remote location, specify the fleet ID and a
+         * location. Port setting updates can take time to propagate across all locations.
+         * </p> </li> </ul> <p>If successful, a set of <code>IpPermission</code> objects is
+         * returned for the requested fleet ID. When specifying a location, this operation
+         * returns a pending status. If the requested fleet has been deleted, the result
+         * set is empty.</p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up Amazon GameLift fleets</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">AWS
@@ -2526,11 +2686,9 @@ namespace GameLift
 
         /**
          * <p>Retrieves a fleet's runtime configuration settings. The runtime configuration
-         * determines which server processes run, and how, on computes in the fleet. For
-         * managed EC2 fleets, the runtime configuration describes server processes that
-         * run on each fleet instance. For container fleets, the runtime configuration
-         * describes server processes that run in each replica container group. You can
-         * update a fleet's runtime configuration at any time using
+         * determines which server processes run, and how they run, and how many run
+         * concurrently on computes in managed EC2 and Anywhere fleets. You can update a
+         * fleet's runtime configuration at any time using
          * <a>UpdateRuntimeConfiguration</a>.</p> <p>To get the current runtime
          * configuration for a fleet, provide the fleet ID. </p> <p>If successful, a
          * <code>RuntimeConfiguration</code> object is returned for the requested fleet. If
@@ -2691,27 +2849,18 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation has been expanded to use with the Amazon GameLift
-         * containers feature, which is currently in public preview.</b> </p> <p>Requests
-         * authorization to remotely connect to a hosting resource in a Amazon GameLift
-         * managed fleet. This operation is not used with Amazon GameLift Anywhere
-         * fleets</p> <p>To request access, specify the compute name and the fleet ID. If
+         * <p>Requests authorization to remotely connect to a hosting resource in a Amazon
+         * GameLift managed fleet. This operation is not used with Amazon GameLift Anywhere
+         * fleets.</p> <p> <b>Request options</b> </p> <p>To request access to a compute,
+         * specify the compute name and the fleet ID.</p> <p> <b>Results</b> </p> <p>If
          * successful, this operation returns a set of temporary Amazon Web Services
-         * credentials, including a two-part access key and a session token.</p> <p> <b>EC2
-         * fleets</b> </p> <p>With an EC2 fleet (where compute type is <code>EC2</code>),
-         * use these credentials with Amazon EC2 Systems Manager (SSM) to start a session
-         * with the compute. For more details, see <a
+         * credentials, including a two-part access key and a session token.</p> <ul> <li>
+         * <p>With a managed EC2 fleet (where compute type is <code>EC2</code>), use these
+         * credentials with Amazon EC2 Systems Manager (SSM) to start a session with the
+         * compute. For more details, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-sessions-start.html#sessions-start-cli">
          * Starting a session (CLI)</a> in the <i>Amazon EC2 Systems Manager User
-         * Guide</i>.</p> <p> <b>Container fleets</b> </p> <p>With a container fleet (where
-         * compute type is <code>CONTAINER</code>), use these credentials and the target
-         * value with SSM to connect to the fleet instance where the container is running.
-         * After you're connected to the instance, use Docker commands to interact with the
-         * container.</p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
-         * connect to fleet instances</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
-         * fleet issues</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetComputeAccess">AWS
          * API Reference</a></p>
          */
@@ -2737,21 +2886,19 @@ namespace GameLift
 
         /**
          * <p>Requests an authentication token from Amazon GameLift for a compute resource
-         * in an Amazon GameLift Anywhere fleet or container fleet. Game servers that are
-         * running on the compute use this token to communicate with the Amazon GameLift
-         * service, such as when calling the Amazon GameLift server SDK action
-         * <code>InitSDK()</code>. Authentication tokens are valid for a limited time span,
-         * so you need to request a fresh token before the current token expires.</p>
-         * <p>Use this operation based on the fleet compute type:</p> <ul> <li> <p>For
-         * <code>EC2</code> fleets, auth token retrieval and refresh is handled
-         * automatically. All game servers that are running on all fleet instances have
-         * access to a valid auth token.</p> </li> <li> <p>For <code>ANYWHERE</code> and
-         * <code>CONTAINER</code> fleets, if you're using the Amazon GameLift Agent, auth
-         * token retrieval and refresh is handled automatically for any container or
-         * Anywhere compute where the Agent is running. If you're not using the Agent,
-         * create a mechanism to retrieve and refresh auth tokens for computes that are
-         * running game server processes. </p> </li> </ul> <p> <b>Learn more</b> </p> <ul>
-         * <li> <p> <a
+         * in an Amazon GameLift fleet. Game servers that are running on the compute use
+         * this token to communicate with the Amazon GameLift service, such as when calling
+         * the Amazon GameLift server SDK action <code>InitSDK()</code>. Authentication
+         * tokens are valid for a limited time span, so you need to request a fresh token
+         * before the current token expires.</p> <p> <b>Request options</b> </p> <ul> <li>
+         * <p>For managed EC2 fleets (compute type <code>EC2</code>), auth token retrieval
+         * and refresh is handled automatically. All game servers that are running on all
+         * fleet instances have access to a valid auth token.</p> </li> <li> <p>For
+         * Anywhere fleets (compute type <code>ANYWHERE</code>), if you're using the Amazon
+         * GameLift Agent, auth token retrieval and refresh is handled automatically for
+         * any compute where the Agent is running. If you're not using the Agent, create a
+         * mechanism to retrieve and refresh auth tokens for computes that are running game
+         * server processes.</p> </li> </ul> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html">Create
          * an Anywhere fleet</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing.html">Test
@@ -2930,23 +3077,21 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation has been expanded to use with the Amazon GameLift
-         * containers feature, which is currently in public preview.</b> </p> <p>Retrieves
-         * information on the compute resources in an Amazon GameLift fleet. </p> <p>To
-         * request a list of computes, specify the fleet ID. Use the pagination parameters
-         * to retrieve results in a set of sequential pages.</p> <p>You can filter the
-         * result set by location. </p> <p>If successful, this operation returns
-         * information on all computes in the requested fleet. Depending on the fleet's
-         * compute type, the result includes the following information: </p> <ul> <li>
-         * <p>For <code>EC2</code> fleets, this operation returns information about the EC2
-         * instance. Compute names are instance IDs.</p> </li> <li> <p>For
-         * <code>ANYWHERE</code> fleets, this operation returns the compute names and
-         * details provided when the compute was registered with
-         * <code>RegisterCompute</code>. The <code>GameLiftServiceSdkEndpoint</code> or
-         * <code>GameLiftAgentEndpoint</code> is included.</p> </li> <li> <p>For
-         * <code>CONTAINER</code> fleets, this operation returns information about
-         * containers that are registered as computes, and the instances they're running
-         * on. Compute names are container names.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information on the compute resources in an Amazon GameLift fleet.
+         * Use the pagination parameters to retrieve results in a set of sequential
+         * pages.</p> <p> <b>Request options:</b> </p> <ul> <li> <p>Retrieve a list of all
+         * computes in a fleet. Specify a fleet ID. </p> </li> <li> <p>Retrieve a list of
+         * all computes in a specific fleet location. Specify a fleet ID and location.</p>
+         * </li> </ul> <p> <b>Results:</b> </p> <p>If successful, this operation returns
+         * information on a set of computes. Depending on the type of fleet, the result
+         * includes the following information: </p> <ul> <li> <p>For managed EC2 fleets
+         * (compute type <code>EC2</code>), this operation returns information about the
+         * EC2 instance. Compute names are EC2 instance IDs.</p> </li> <li> <p>For Anywhere
+         * fleets (compute type <code>ANYWHERE</code>), this operation returns compute
+         * names and details as provided when the compute was registered with
+         * <code>RegisterCompute</code>. This includes
+         * <code>GameLiftServiceSdkEndpoint</code> or
+         * <code>GameLiftAgentEndpoint</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListCompute">AWS
          * API Reference</a></p>
          */
@@ -2971,13 +3116,91 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation is used with the Amazon GameLift containers feature, which
-         * is currently in public preview. </b> </p> <p>Retrieves all container group
-         * definitions for the Amazon Web Services account and Amazon Web Services Region
-         * that are currently in use. You can filter the result set by the container
-         * groups' scheduling strategy. Use the pagination parameters to retrieve results
-         * in a set of sequential pages.</p>  <p>This operation returns the list of
-         * container group definitions in no particular order. </p>  <p> <b>Learn
+         * <p>Retrieves a collection of container fleet resources in an Amazon Web Services
+         * Region. For fleets that have multiple locations, this operation retrieves fleets
+         * based on their home Region only.</p> <p> <b>Request options</b> </p> <ul> <li>
+         * <p>Get a list of all fleets. Call this operation without specifying a container
+         * group definition. </p> </li> <li> <p>Get a list of fleets filtered by container
+         * group definition. Provide the container group definition name or ARN value.</p>
+         * </li> <li> <p>To get a list of all Realtime Servers fleets with a specific
+         * configuration script, provide the script ID. </p> </li> </ul> <p>Use the
+         * pagination parameters to retrieve results as a set of sequential pages. </p>
+         * <p>If successful, this operation returns a collection of container fleets that
+         * match the request parameters. A NextToken value is also returned if there are
+         * more result pages to retrieve.</p>  <p>Fleet IDs are returned in no
+         * particular order.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerFleets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListContainerFleetsOutcome ListContainerFleets(const Model::ListContainerFleetsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListContainerFleets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListContainerFleetsRequestT = Model::ListContainerFleetsRequest>
+        Model::ListContainerFleetsOutcomeCallable ListContainerFleetsCallable(const ListContainerFleetsRequestT& request = {}) const
+        {
+            return SubmitCallable(&GameLiftClient::ListContainerFleets, request);
+        }
+
+        /**
+         * An Async wrapper for ListContainerFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListContainerFleetsRequestT = Model::ListContainerFleetsRequest>
+        void ListContainerFleetsAsync(const ListContainerFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListContainerFleetsRequestT& request = {}) const
+        {
+            return SubmitAsync(&GameLiftClient::ListContainerFleets, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves all versions of a container group definition. Use the pagination
+         * parameters to retrieve results in a set of sequential pages.</p> <p> <b>Request
+         * options:</b> </p> <ul> <li> <p>Get all versions of a specified container group
+         * definition. Specify the container group definition name or ARN value. (If the
+         * ARN value has a version number, it's ignored.)</p> </li> </ul> <p>
+         * <b>Results:</b> </p> <p>If successful, this operation returns the complete
+         * properties of a set of container group definition versions that match the
+         * request.</p>  <p>This operation returns the list of container group
+         * definitions in descending version order (latest first). </p>  <p>
+         * <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Manage
+         * a container group definition</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListContainerGroupDefinitionVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListContainerGroupDefinitionVersionsOutcome ListContainerGroupDefinitionVersions(const Model::ListContainerGroupDefinitionVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListContainerGroupDefinitionVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListContainerGroupDefinitionVersionsRequestT = Model::ListContainerGroupDefinitionVersionsRequest>
+        Model::ListContainerGroupDefinitionVersionsOutcomeCallable ListContainerGroupDefinitionVersionsCallable(const ListContainerGroupDefinitionVersionsRequestT& request) const
+        {
+            return SubmitCallable(&GameLiftClient::ListContainerGroupDefinitionVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListContainerGroupDefinitionVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListContainerGroupDefinitionVersionsRequestT = Model::ListContainerGroupDefinitionVersionsRequest>
+        void ListContainerGroupDefinitionVersionsAsync(const ListContainerGroupDefinitionVersionsRequestT& request, const ListContainerGroupDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GameLiftClient::ListContainerGroupDefinitionVersions, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves container group definitions for the Amazon Web Services account and
+         * Amazon Web Services Region. Use the pagination parameters to retrieve results in
+         * a set of sequential pages.</p> <p>This operation returns only the latest version
+         * of each definition. To retrieve all versions of a container group definition,
+         * use <a>ListContainerGroupDefinitionVersions</a>.</p> <p> <b>Request options:</b>
+         * </p> <ul> <li> <p>Retrieve the most recent versions of all container group
+         * definitions. </p> </li> <li> <p>Retrieve the most recent versions of all
+         * container group definitions, filtered by type. Specify the container group type
+         * to filter on. </p> </li> </ul> <p> <b>Results:</b> </p> <p>If successful, this
+         * operation returns the complete properties of a set of container group definition
+         * versions that match the request.</p>  <p>This operation returns the list
+         * of container group definitions in no particular order. </p>  <p> <b>Learn
          * more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Manage
          * a container group definition</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -3005,24 +3228,55 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation has been expanded to use with the Amazon GameLift
-         * containers feature, which is currently in public preview.</b> </p> <p>Retrieves
-         * a collection of fleet resources in an Amazon Web Services Region. You can filter
-         * the result set to find only those fleets that are deployed with a specific build
-         * or script. For fleets that have multiple locations, this operation retrieves
-         * fleets based on their home Region only.</p> <p>You can use operation in the
-         * following ways: </p> <ul> <li> <p>To get a list of all fleets in a Region, don't
-         * provide a build or script identifier.</p> </li> <li> <p>To get a list of all
-         * fleets where a specific game build is deployed, provide the build ID.</p> </li>
-         * <li> <p>To get a list of all Realtime Servers fleets with a specific
-         * configuration script, provide the script ID. </p> </li> <li> <p> To get a list
-         * of all fleets with a specific container group definition, provide the
-         * <code>ContainerGroupDefinition</code> ID. </p> </li> </ul> <p>Use the pagination
-         * parameters to retrieve results as a set of sequential pages. </p> <p>If
-         * successful, this operation returns a list of fleet IDs that match the request
-         * parameters. A NextToken value is also returned if there are more result pages to
-         * retrieve.</p>  <p>Fleet IDs are returned in no particular order.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p>Retrieves a collection of container fleet deployments in an Amazon Web
+         * Services Region. </p> <p> <b>Request options</b> </p> <ul> <li> <p>Get a list of
+         * all deployments. Call this operation without specifying a fleet ID. </p> </li>
+         * <li> <p>Get a list of all deployments for a fleet. Specify the container fleet
+         * ID or ARN value.</p> </li> <li> <p>To get a list of all Realtime Servers fleets
+         * with a specific configuration script, provide the script ID. </p> </li> </ul>
+         * <p>Use the pagination parameters to retrieve results as a set of sequential
+         * pages. </p> <p> <b>Results</b> </p> <p>If successful, this operation returns a
+         * list of deployments that match the request parameters. A NextToken value is also
+         * returned if there are more result pages to retrieve.</p>  <p>Fleet IDs are
+         * returned in no particular order.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleetDeployments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFleetDeploymentsOutcome ListFleetDeployments(const Model::ListFleetDeploymentsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListFleetDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFleetDeploymentsRequestT = Model::ListFleetDeploymentsRequest>
+        Model::ListFleetDeploymentsOutcomeCallable ListFleetDeploymentsCallable(const ListFleetDeploymentsRequestT& request = {}) const
+        {
+            return SubmitCallable(&GameLiftClient::ListFleetDeployments, request);
+        }
+
+        /**
+         * An Async wrapper for ListFleetDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFleetDeploymentsRequestT = Model::ListFleetDeploymentsRequest>
+        void ListFleetDeploymentsAsync(const ListFleetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListFleetDeploymentsRequestT& request = {}) const
+        {
+            return SubmitAsync(&GameLiftClient::ListFleetDeployments, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a collection of fleet resources in an Amazon Web Services Region.
+         * You can filter the result set to find only those fleets that are deployed with a
+         * specific build or script. For fleets that have multiple locations, this
+         * operation retrieves fleets based on their home Region only.</p> <p>You can use
+         * operation in the following ways: </p> <ul> <li> <p>To get a list of all fleets
+         * in a Region, don't provide a build or script identifier.</p> </li> <li> <p>To
+         * get a list of all fleets where a specific game build is deployed, provide the
+         * build ID.</p> </li> <li> <p>To get a list of all Realtime Servers fleets with a
+         * specific configuration script, provide the script ID. </p> </li> </ul> <p>Use
+         * the pagination parameters to retrieve results as a set of sequential pages. </p>
+         * <p>If successful, this operation returns a list of fleet IDs that match the
+         * request parameters. A NextToken value is also returned if there are more result
+         * pages to retrieve.</p>  <p>Fleet IDs are returned in no particular
+         * order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">AWS
          * API Reference</a></p>
          */
@@ -3275,22 +3529,20 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation has been expanded to use with the Amazon GameLift
-         * containers feature, which is currently in public preview.</b> </p> <p>Registers
-         * a compute resource in an Amazon GameLift fleet. Register computes with an Amazon
-         * GameLift Anywhere fleet or a container fleet. </p> <p>For an Anywhere fleet or a
-         * container fleet that's running the Amazon GameLift Agent, the Agent handles all
-         * compute registry tasks for you. For an Anywhere fleet that doesn't use the
-         * Agent, call this operation to register fleet computes.</p> <p>To register a
-         * compute, give the compute a name (must be unique within the fleet) and specify
-         * the compute resource's DNS name or IP address. Provide a fleet ID and a fleet
-         * location to associate with the compute being registered. You can optionally
-         * include the path to a TLS certificate on the compute resource.</p> <p>If
-         * successful, this operation returns compute details, including an Amazon GameLift
-         * SDK endpoint or Agent endpoint. Game server processes running on the compute can
-         * use this endpoint to communicate with the Amazon GameLift service. Each server
-         * process includes the SDK endpoint in its call to the Amazon GameLift server SDK
-         * action <code>InitSDK()</code>. </p> <p>To view compute details, call <a
+         * <p>Registers a compute resource in an Amazon GameLift Anywhere fleet. </p>
+         * <p>For an Anywhere fleet that's running the Amazon GameLift Agent, the Agent
+         * handles all compute registry tasks for you. For an Anywhere fleet that doesn't
+         * use the Agent, call this operation to register fleet computes.</p> <p>To
+         * register a compute, give the compute a name (must be unique within the fleet)
+         * and specify the compute resource's DNS name or IP address. Provide a fleet ID
+         * and a fleet location to associate with the compute being registered. You can
+         * optionally include the path to a TLS certificate on the compute resource.</p>
+         * <p>If successful, this operation returns compute details, including an Amazon
+         * GameLift SDK endpoint or Agent endpoint. Game server processes running on the
+         * compute can use this endpoint to communicate with the Amazon GameLift service.
+         * Each server process includes the SDK endpoint in its call to the Amazon GameLift
+         * server SDK action <code>InitSDK()</code>. </p> <p>To view compute details, call
+         * <a
          * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute.html">DescribeCompute</a>
          * with the compute name. </p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-anywhere.html">Create
@@ -3618,8 +3870,8 @@ namespace GameLift
          * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a>
          * and check the request's status. If the status is <code>FULFILLED</code>, a new
          * game session has been created and a game session ARN and Region are referenced.
-         * If the placement request times out, you can resubmit the request or retry it
-         * with a different queue. </p><p><h3>See Also:</h3>   <a
+         * If the placement request times out, submit a new request to the same queue or a
+         * different queue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">AWS
          * API Reference</a></p>
          */
@@ -4038,6 +4290,105 @@ namespace GameLift
         }
 
         /**
+         * <p>Updates the properties of a managed container fleet. Depending on the
+         * properties being updated, this operation might initiate a fleet deployment. You
+         * can track deployments for a fleet using <a>DescribeFleetDeployment</a>.</p> <p>
+         * <b>Request options</b> </p> <p>As with CreateContainerFleet, many fleet
+         * properties use common defaults or are calculated based on the fleet's container
+         * group definitions. </p> <ul> <li> <p>Update fleet properties that result in a
+         * fleet deployment. Include only those properties that you want to change. Specify
+         * deployment configuration settings.</p> </li> <li> <p>Update fleet properties
+         * that don't result in a fleet deployment. Include only those properties that you
+         * want to change.</p> </li> </ul> <p>Changes to the following properties initiate
+         * a fleet deployment: </p> <ul> <li> <p>
+         * <code>GameServerContainerGroupDefinition</code> </p> </li> <li> <p>
+         * <code>PerInstanceContainerGroupDefinition</code> </p> </li> <li> <p>
+         * <code>GameServerContainerGroupsPerInstance</code> </p> </li> <li> <p>
+         * <code>InstanceInboundPermissions</code> </p> </li> <li> <p>
+         * <code>InstanceConnectionPortRange</code> </p> </li> <li> <p>
+         * <code>LogConfiguration</code> </p> </li> </ul> <p> <b>Results</b> </p> <p>If
+         * successful, this operation updates the container fleet resource, and might
+         * initiate a new deployment of fleet resources using the deployment configuration
+         * provided. A deployment replaces existing fleet instances with new instances that
+         * are deployed with the updated fleet properties. The fleet is placed in
+         * <code>UPDATING</code> status until the deployment is complete, then return to
+         * <code>ACTIVE</code>. </p> <p>You can have only one update deployment active at a
+         * time for a fleet. If a second update request initiates a deployment while
+         * another deployment is in progress, the first deployment is
+         * cancelled.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContainerFleetOutcome UpdateContainerFleet(const Model::UpdateContainerFleetRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateContainerFleet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateContainerFleetRequestT = Model::UpdateContainerFleetRequest>
+        Model::UpdateContainerFleetOutcomeCallable UpdateContainerFleetCallable(const UpdateContainerFleetRequestT& request) const
+        {
+            return SubmitCallable(&GameLiftClient::UpdateContainerFleet, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateContainerFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateContainerFleetRequestT = Model::UpdateContainerFleetRequest>
+        void UpdateContainerFleetAsync(const UpdateContainerFleetRequestT& request, const UpdateContainerFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GameLiftClient::UpdateContainerFleet, request, handler, context);
+        }
+
+        /**
+         * <p>Updates properties in an existing container group definition. This operation
+         * doesn't replace the definition. Instead, it creates a new version of the
+         * definition and saves it separately. You can access all versions that you choose
+         * to retain.</p> <p>The only property you can't update is the container group
+         * type.</p> <p> <b>Request options:</b> </p> <ul> <li> <p>Update based on the
+         * latest version of the container group definition. Specify the container group
+         * definition name only, or use an ARN value without a version number. Provide
+         * updated values for the properties that you want to change only. All other values
+         * remain the same as the latest version.</p> </li> <li> <p>Update based on a
+         * specific version of the container group definition. Specify the container group
+         * definition name and a source version number, or use an ARN value with a version
+         * number. Provide updated values for the properties that you want to change only.
+         * All other values remain the same as the source version.</p> </li> <li> <p>Change
+         * a game server container definition. Provide the updated container
+         * definition.</p> </li> <li> <p>Add or change a support container definition.
+         * Provide a complete set of container definitions, including the updated
+         * definition.</p> </li> <li> <p>Remove a support container definition. Provide a
+         * complete set of container definitions, excluding the definition to remove. If
+         * the container group has only one support container definition, provide an empty
+         * set.</p> </li> </ul> <p> <b>Results:</b> </p> <p>If successful, this operation
+         * returns the complete properties of the new container group definition
+         * version.</p> <p>If the container group definition version is used in an active
+         * fleets, the update automatically initiates a new fleet deployment of the new
+         * version. You can track a fleet's deployments using
+         * <a>ListFleetDeployments</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateContainerGroupDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContainerGroupDefinitionOutcome UpdateContainerGroupDefinition(const Model::UpdateContainerGroupDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateContainerGroupDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateContainerGroupDefinitionRequestT = Model::UpdateContainerGroupDefinitionRequest>
+        Model::UpdateContainerGroupDefinitionOutcomeCallable UpdateContainerGroupDefinitionCallable(const UpdateContainerGroupDefinitionRequestT& request) const
+        {
+            return SubmitCallable(&GameLiftClient::UpdateContainerGroupDefinition, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateContainerGroupDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateContainerGroupDefinitionRequestT = Model::UpdateContainerGroupDefinitionRequest>
+        void UpdateContainerGroupDefinitionAsync(const UpdateContainerGroupDefinitionRequestT& request, const UpdateContainerGroupDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GameLiftClient::UpdateContainerGroupDefinition, request, handler, context);
+        }
+
+        /**
          * <p>Updates a fleet's mutable attributes, such as game session protection and
          * resource creation limits.</p> <p>To update fleet attributes, specify the fleet
          * ID and the property values that you want to change. If successful, Amazon
@@ -4069,21 +4420,19 @@ namespace GameLift
         }
 
         /**
-         * <p> <b>This operation has been expanded to use with the Amazon GameLift
-         * containers feature, which is currently in public preview.</b> </p> <p>Updates
-         * capacity settings for a managed EC2 fleet or container fleet. For these fleets,
-         * you adjust capacity by changing the number of instances in the fleet. Fleet
-         * capacity determines the number of game sessions and players that the fleet can
-         * host based on its configuration. For fleets with multiple locations, use this
-         * operation to manage capacity settings in each location individually.</p> <p>Use
-         * this operation to set these fleet capacity properties: </p> <ul> <li>
-         * <p>Minimum/maximum size: Set hard limits on the number of Amazon EC2 instances
-         * allowed. If Amazon GameLift receives a request--either through manual update or
-         * automatic scaling--it won't change the capacity to a value outside of this
-         * range.</p> </li> <li> <p>Desired capacity: As an alternative to automatic
-         * scaling, manually set the number of Amazon EC2 instances to be maintained.
-         * Before changing a fleet's desired capacity, check the maximum capacity of the
-         * fleet's Amazon EC2 instance type by calling <a
+         * <p>Updates capacity settings for a managed EC2 fleet or managed container fleet.
+         * For these fleets, you adjust capacity by changing the number of instances in the
+         * fleet. Fleet capacity determines the number of game sessions and players that
+         * the fleet can host based on its configuration. For fleets with multiple
+         * locations, use this operation to manage capacity settings in each location
+         * individually.</p> <p>Use this operation to set these fleet capacity properties:
+         * </p> <ul> <li> <p>Minimum/maximum size: Set hard limits on the number of Amazon
+         * EC2 instances allowed. If Amazon GameLift receives a request--either through
+         * manual update or automatic scaling--it won't change the capacity to a value
+         * outside of this range.</p> </li> <li> <p>Desired capacity: As an alternative to
+         * automatic scaling, manually set the number of Amazon EC2 instances to be
+         * maintained. Before changing a fleet's desired capacity, check the maximum
+         * capacity of the fleet's Amazon EC2 instance type by calling <a
          * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeEC2InstanceLimits.html">DescribeEC2InstanceLimits</a>.</p>
          * </li> </ul> <p>To update capacity for a fleet's home Region, or if the fleet has
          * no remote locations, omit the <code>Location</code> parameter. The fleet must be
@@ -4340,9 +4689,7 @@ namespace GameLift
         /**
          * <p>Updates the runtime configuration for the specified fleet. The runtime
          * configuration tells Amazon GameLift how to launch server processes on computes
-         * in the fleet. For managed EC2 fleets, it determines what server processes to run
-         * on each fleet instance. For container fleets, it describes what server processes
-         * to run in each replica container group. You can update a fleet's runtime
+         * in managed EC2 and Anywhere fleets. You can update a fleet's runtime
          * configuration at any time after the fleet is created; it does not need to be in
          * <code>ACTIVE</code> status.</p> <p>To update runtime configuration, specify the
          * fleet ID and provide a <code>RuntimeConfiguration</code> with an updated set of

@@ -283,9 +283,9 @@ namespace Model
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process with a request to start a new game
-     * session (see <a
+     * session. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * a game session</a>.</p>
      */
     inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
     inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }

@@ -17,7 +17,6 @@
 #include <aws/gamelift/model/ComputeType.h>
 #include <aws/gamelift/model/AnywhereConfiguration.h>
 #include <aws/gamelift/model/InstanceRoleCredentialsProvider.h>
-#include <aws/gamelift/model/ContainerGroupsConfiguration.h>
 #include <aws/gamelift/model/IpPermission.h>
 #include <aws/gamelift/model/LocationConfiguration.h>
 #include <aws/gamelift/model/Tag.h>
@@ -165,9 +164,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon GameLift-supported Amazon EC2 instance type to use with EC2 and
-     * container fleets. Instance type determines the computing resources that will be
-     * used to host your game servers, including CPU, memory, storage, and networking
+     * <p>The Amazon GameLift-supported Amazon EC2 instance type to use with managed
+     * EC2 fleets. Instance type determines the computing resources that will be used
+     * to host your game servers, including CPU, memory, storage, and networking
      * capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic
      * Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2
      * instance types.</p>
@@ -184,15 +183,12 @@ namespace Model
     /**
      * <p>The IP address ranges and port settings that allow inbound traffic to access
      * game server processes and other processes on this fleet. Set this parameter for
-     * EC2 and container fleets. You can leave this parameter empty when creating the
-     * fleet, but you must call <a>UpdateFleetPortSettings</a> to set it before players
-     * can connect to game sessions. As a best practice, we recommend opening ports for
+     * managed EC2 fleets. You can leave this parameter empty when creating the fleet,
+     * but you must call <a>UpdateFleetPortSettings</a> to set it before players can
+     * connect to game sessions. As a best practice, we recommend opening ports for
      * remote access only when you need them and closing them when you're finished. For
      * Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP
-     * ranges.</p> <p>To manage inbound access for a container fleet, set this
-     * parameter to the same port numbers that you set for the fleet's connection port
-     * range. During the life of the fleet, update this parameter to control which
-     * connection ports are open to inbound traffic.</p>
+     * ranges.</p>
      */
     inline const Aws::Vector<IpPermission>& GetEC2InboundPermissions() const{ return m_eC2InboundPermissions; }
     inline bool EC2InboundPermissionsHasBeenSet() const { return m_eC2InboundPermissionsHasBeenSet; }
@@ -226,12 +222,12 @@ namespace Model
     ///@{
     /**
      * <p>Instructions for how to launch and run server processes on the fleet. Set
-     * runtime configuration for EC2 fleets and container fleets. For an Anywhere
-     * fleets, set this parameter only if the fleet is running the Amazon GameLift
-     * Agent. The runtime configuration defines one or more server process
-     * configurations. Each server process identifies a game executable or Realtime
-     * script file and the number of processes to run concurrently. </p>  <p>This
-     * parameter replaces the parameters <code>ServerLaunchPath</code> and
+     * runtime configuration for managed EC2 fleets. For an Anywhere fleets, set this
+     * parameter only if the fleet is running the Amazon GameLift Agent. The runtime
+     * configuration defines one or more server process configurations. Each server
+     * process identifies a game executable or Realtime script file and the number of
+     * processes to run concurrently. </p>  <p>This parameter replaces the
+     * parameters <code>ServerLaunchPath</code> and
      * <code>ServerLaunchParameters</code>, which are still supported for backward
      * compatibility.</p> 
      */
@@ -330,15 +326,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique identifier for an IAM role with access permissions to other Amazon
-     * Web Services services. Any application that runs on an instance in the
-     * fleet--including install scripts, server processes, and other processes--can use
-     * these permissions to interact with Amazon Web Services resources that you own or
-     * have access to. For more information about using the role with your game server
-     * builds, see <a
+     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
+     * Services services. With an instance role ARN set, any application that runs on
+     * an instance in this fleet can assume the role, including install scripts, server
+     * processes, and daemons (background processes). Create a role or look up a role's
+     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
+     * in the Amazon Web Services Management Console. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Communicate with other Amazon Web Services resources from your fleets</a>. This
-     * fleet property can't be changed after the fleet is created.</p>
+     * Access external resources from a game server</a>. This fleet property can't be
+     * changed after the fleet is created.</p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
@@ -423,14 +420,10 @@ namespace Model
      * <p>The type of compute resource used to host your game servers. </p> <ul> <li>
      * <p> <code>EC2</code> – The game server build is deployed to Amazon EC2 instances
      * for cloud hosting. This is the default setting.</p> </li> <li> <p>
-     * <code>CONTAINER</code> – Container images with your game server build and
-     * supporting software are deployed to Amazon EC2 instances for cloud hosting. With
-     * this compute type, you must specify the
-     * <code>ContainerGroupsConfiguration</code> parameter.</p> </li> <li> <p>
-     * <code>ANYWHERE</code> – Game servers or container images with your game server
-     * and supporting software are deployed to compute resources that are provided and
-     * managed by you. With this compute type, you can also set the
-     * <code>AnywhereConfiguration</code> parameter.</p> </li> </ul>
+     * <code>ANYWHERE</code> – Your game server and supporting software is deployed to
+     * compute resources that are provided and managed by you. With this compute type,
+     * you can also set the <code>AnywhereConfiguration</code> parameter.</p> </li>
+     * </ul>
      */
     inline const ComputeType& GetComputeType() const{ return m_computeType; }
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
@@ -469,23 +462,6 @@ namespace Model
     inline void SetInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider&& value) { m_instanceRoleCredentialsProviderHasBeenSet = true; m_instanceRoleCredentialsProvider = std::move(value); }
     inline CreateFleetRequest& WithInstanceRoleCredentialsProvider(const InstanceRoleCredentialsProvider& value) { SetInstanceRoleCredentialsProvider(value); return *this;}
     inline CreateFleetRequest& WithInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider&& value) { SetInstanceRoleCredentialsProvider(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The container groups to deploy to instances in the container fleet and other
-     * fleet-level configuration settings. Use the
-     * <a>CreateContainerGroupDefinition</a> action to create container groups. A
-     * container fleet must have exactly one replica container group, and can
-     * optionally have one daemon container group. You can't change this property after
-     * you create the fleet.</p>
-     */
-    inline const ContainerGroupsConfiguration& GetContainerGroupsConfiguration() const{ return m_containerGroupsConfiguration; }
-    inline bool ContainerGroupsConfigurationHasBeenSet() const { return m_containerGroupsConfigurationHasBeenSet; }
-    inline void SetContainerGroupsConfiguration(const ContainerGroupsConfiguration& value) { m_containerGroupsConfigurationHasBeenSet = true; m_containerGroupsConfiguration = value; }
-    inline void SetContainerGroupsConfiguration(ContainerGroupsConfiguration&& value) { m_containerGroupsConfigurationHasBeenSet = true; m_containerGroupsConfiguration = std::move(value); }
-    inline CreateFleetRequest& WithContainerGroupsConfiguration(const ContainerGroupsConfiguration& value) { SetContainerGroupsConfiguration(value); return *this;}
-    inline CreateFleetRequest& WithContainerGroupsConfiguration(ContainerGroupsConfiguration&& value) { SetContainerGroupsConfiguration(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -557,9 +533,6 @@ namespace Model
 
     InstanceRoleCredentialsProvider m_instanceRoleCredentialsProvider;
     bool m_instanceRoleCredentialsProviderHasBeenSet = false;
-
-    ContainerGroupsConfiguration m_containerGroupsConfiguration;
-    bool m_containerGroupsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

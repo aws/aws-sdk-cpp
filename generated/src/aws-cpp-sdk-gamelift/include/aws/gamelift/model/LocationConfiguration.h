@@ -24,10 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type has been expanded to use with the Amazon GameLift
-   * containers feature, which is currently in public preview.</b> </p> <p>A remote
-   * location where a multi-location fleet can deploy game servers for game hosting.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>A remote location where a multi-location fleet can deploy game servers for
+   * game hosting. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LocationConfiguration">AWS
    * API Reference</a></p>
    */

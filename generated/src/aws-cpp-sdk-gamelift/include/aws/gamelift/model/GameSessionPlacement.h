@@ -89,7 +89,7 @@ namespace Model
      * -- A new game session has been successfully placed. Game session properties are
      * now final.</p> </li> <li> <p> <b>CANCELLED</b> -- The placement request was
      * canceled.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new game session was not
-     * successfully created before the time limit expired. You can resubmit the
+     * successfully created before the time limit expired. You can resubmit as a new
      * placement request as needed.</p> </li> <li> <p> <b>FAILED</b> -- Amazon GameLift
      * is not able to complete the process of placing the game session. Common reasons
      * are the game session terminated before the placement process was completed, or
@@ -194,8 +194,7 @@ namespace Model
     ///@{
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to Amazon Web Services
-     * Regions.</p>
+     * latency that a player experiences when connected to @aws; Regions.</p>
      */
     inline const Aws::Vector<PlayerLatency>& GetPlayerLatencies() const{ return m_playerLatencies; }
     inline bool PlayerLatenciesHasBeenSet() const { return m_playerLatenciesHasBeenSet; }
@@ -306,10 +305,10 @@ namespace Model
     ///@{
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <code>GameSession</code>
-     * object with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * a game session</a>.</p>
      */
     inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
     inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }

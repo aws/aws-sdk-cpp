@@ -25,15 +25,17 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the Amazon GameLift containers feature, which
-   * is currently in public preview.</b> </p> <p>A container's dependency on another
-   * container in the same container group. The dependency impacts how the dependent
-   * container is able to start or shut down based the status of the other
-   * container.</p> <p>For example, ContainerA is configured with the following
-   * dependency: a <code>START</code> dependency on ContainerB. This means that
-   * ContainerA can't start until ContainerB has started. It also means that
-   * ContainerA must shut down before ContainerB.</p> <p> <b>Part of:</b>
-   * <a>ContainerDefinition</a> </p><p><h3>See Also:</h3>   <a
+   * <p>A container's dependency on another container in the same container group.
+   * The dependency impacts how the dependent container is able to start or shut down
+   * based the status of the other container.</p> <p>For example, <i>ContainerA</i>
+   * is configured with the following dependency: a <code>START</code> dependency on
+   * <i>ContainerB</i>. This means that <i>ContainerA</i> can't start until
+   * <i>ContainerB</i> has started. It also means that <i>ContainerA</i> must shut
+   * down before <i>ContainerB</i>.</p>
+   * <p>eiifcbfhgrdurhnucnufkgbnbnnerrvbtjvljdetkehc<b>Part of:</b>
+   * <a>GameServerContainerDefinition</a>, <a>GameServerContainerDefinitionInput</a>,
+   * <a>SupportContainerDefinition</a>, <a>SupportContainerDefinitionInput</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerDependency">AWS
    * API Reference</a></p>
    */

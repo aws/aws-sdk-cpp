@@ -60,8 +60,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift build resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
@@ -77,8 +77,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A descriptive label associated with a build. Build names don't need to be
-     * unique. It can be set using <a
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. It can be set using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
      * or <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
@@ -95,8 +95,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Version information associated with a build or script. Version strings don't
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }

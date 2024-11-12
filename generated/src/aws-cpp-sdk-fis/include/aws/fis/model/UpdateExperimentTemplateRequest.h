@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/fis/model/UpdateExperimentTemplateLogConfigurationInput.h>
 #include <aws/fis/model/UpdateExperimentTemplateExperimentOptionsInput.h>
+#include <aws/fis/model/UpdateExperimentTemplateReportConfigurationInput.h>
 #include <aws/fis/model/UpdateExperimentTemplateStopConditionInput.h>
 #include <aws/fis/model/UpdateExperimentTemplateTargetInput.h>
 #include <aws/fis/model/UpdateExperimentTemplateActionInputItem.h>
@@ -155,6 +156,18 @@ namespace Model
     inline UpdateExperimentTemplateRequest& WithExperimentOptions(const UpdateExperimentTemplateExperimentOptionsInput& value) { SetExperimentOptions(value); return *this;}
     inline UpdateExperimentTemplateRequest& WithExperimentOptions(UpdateExperimentTemplateExperimentOptionsInput&& value) { SetExperimentOptions(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The experiment report configuration for the experiment template.</p>
+     */
+    inline const UpdateExperimentTemplateReportConfigurationInput& GetExperimentReportConfiguration() const{ return m_experimentReportConfiguration; }
+    inline bool ExperimentReportConfigurationHasBeenSet() const { return m_experimentReportConfigurationHasBeenSet; }
+    inline void SetExperimentReportConfiguration(const UpdateExperimentTemplateReportConfigurationInput& value) { m_experimentReportConfigurationHasBeenSet = true; m_experimentReportConfiguration = value; }
+    inline void SetExperimentReportConfiguration(UpdateExperimentTemplateReportConfigurationInput&& value) { m_experimentReportConfigurationHasBeenSet = true; m_experimentReportConfiguration = std::move(value); }
+    inline UpdateExperimentTemplateRequest& WithExperimentReportConfiguration(const UpdateExperimentTemplateReportConfigurationInput& value) { SetExperimentReportConfiguration(value); return *this;}
+    inline UpdateExperimentTemplateRequest& WithExperimentReportConfiguration(UpdateExperimentTemplateReportConfigurationInput&& value) { SetExperimentReportConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -180,6 +193,9 @@ namespace Model
 
     UpdateExperimentTemplateExperimentOptionsInput m_experimentOptions;
     bool m_experimentOptionsHasBeenSet = false;
+
+    UpdateExperimentTemplateReportConfigurationInput m_experimentReportConfiguration;
+    bool m_experimentReportConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

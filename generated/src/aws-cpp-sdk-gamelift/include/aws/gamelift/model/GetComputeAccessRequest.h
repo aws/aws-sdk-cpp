@@ -52,10 +52,8 @@ namespace Model
     ///@{
     /**
      * <p>A unique identifier for the compute resource that you want to connect to. For
-     * an EC2 fleet compute, use the instance ID. For a container fleet, use the
-     * compute name (for example,
-     * <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>)
-     * or the compute ARN. </p>
+     * an EC2 fleet compute, use the instance ID. Use <a>ListCompute</a> to retrieve
+     * compute identifiers.</p>
      */
     inline const Aws::String& GetComputeName() const{ return m_computeName; }
     inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }

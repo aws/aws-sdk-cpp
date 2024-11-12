@@ -68,22 +68,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The container group definition name to request fleets for. Use this parameter
-     * to return only fleets that are deployed with the specified container group
-     * definition.</p>
-     */
-    inline const Aws::String& GetContainerGroupDefinitionName() const{ return m_containerGroupDefinitionName; }
-    inline bool ContainerGroupDefinitionNameHasBeenSet() const { return m_containerGroupDefinitionNameHasBeenSet; }
-    inline void SetContainerGroupDefinitionName(const Aws::String& value) { m_containerGroupDefinitionNameHasBeenSet = true; m_containerGroupDefinitionName = value; }
-    inline void SetContainerGroupDefinitionName(Aws::String&& value) { m_containerGroupDefinitionNameHasBeenSet = true; m_containerGroupDefinitionName = std::move(value); }
-    inline void SetContainerGroupDefinitionName(const char* value) { m_containerGroupDefinitionNameHasBeenSet = true; m_containerGroupDefinitionName.assign(value); }
-    inline ListFleetsRequest& WithContainerGroupDefinitionName(const Aws::String& value) { SetContainerGroupDefinitionName(value); return *this;}
-    inline ListFleetsRequest& WithContainerGroupDefinitionName(Aws::String&& value) { SetContainerGroupDefinitionName(std::move(value)); return *this;}
-    inline ListFleetsRequest& WithContainerGroupDefinitionName(const char* value) { SetContainerGroupDefinitionName(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
@@ -115,9 +99,6 @@ namespace Model
 
     Aws::String m_scriptId;
     bool m_scriptIdHasBeenSet = false;
-
-    Aws::String m_containerGroupDefinitionName;
-    bool m_containerGroupDefinitionNameHasBeenSet = false;
 
     int m_limit;
     bool m_limitHasBeenSet = false;

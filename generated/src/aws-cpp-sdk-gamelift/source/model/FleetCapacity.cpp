@@ -25,7 +25,7 @@ FleetCapacity::FleetCapacity() :
     m_instanceTypeHasBeenSet(false),
     m_instanceCountsHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_replicaContainerGroupCountsHasBeenSet(false)
+    m_gameServerContainerGroupCountsHasBeenSet(false)
 {
 }
 
@@ -72,11 +72,11 @@ FleetCapacity& FleetCapacity::operator =(JsonView jsonValue)
     m_locationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ReplicaContainerGroupCounts"))
+  if(jsonValue.ValueExists("GameServerContainerGroupCounts"))
   {
-    m_replicaContainerGroupCounts = jsonValue.GetObject("ReplicaContainerGroupCounts");
+    m_gameServerContainerGroupCounts = jsonValue.GetObject("GameServerContainerGroupCounts");
 
-    m_replicaContainerGroupCountsHasBeenSet = true;
+    m_gameServerContainerGroupCountsHasBeenSet = true;
   }
 
   return *this;
@@ -115,9 +115,9 @@ JsonValue FleetCapacity::Jsonize() const
 
   }
 
-  if(m_replicaContainerGroupCountsHasBeenSet)
+  if(m_gameServerContainerGroupCountsHasBeenSet)
   {
-   payload.WithObject("ReplicaContainerGroupCounts", m_replicaContainerGroupCounts.Jsonize());
+   payload.WithObject("GameServerContainerGroupCounts", m_gameServerContainerGroupCounts.Jsonize());
 
   }
 

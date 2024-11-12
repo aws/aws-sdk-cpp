@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListAliasesRequest::ListAliasesRequest() : 
+    m_keyArnHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -22,6 +23,12 @@ ListAliasesRequest::ListAliasesRequest() :
 Aws::String ListAliasesRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_keyArnHasBeenSet)
+  {
+   payload.WithString("KeyArn", m_keyArn);
+
+  }
 
   if(m_nextTokenHasBeenSet)
   {

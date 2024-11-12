@@ -13,7 +13,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteContainerGroupDefinitionRequest::DeleteContainerGroupDefinitionRequest() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_versionNumber(0),
+    m_versionNumberHasBeenSet(false),
+    m_versionCountToRetain(0),
+    m_versionCountToRetainHasBeenSet(false)
 {
 }
 
@@ -24,6 +28,18 @@ Aws::String DeleteContainerGroupDefinitionRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_versionNumberHasBeenSet)
+  {
+   payload.WithInteger("VersionNumber", m_versionNumber);
+
+  }
+
+  if(m_versionCountToRetainHasBeenSet)
+  {
+   payload.WithInteger("VersionCountToRetain", m_versionCountToRetain);
 
   }
 

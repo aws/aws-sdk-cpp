@@ -14,15 +14,17 @@ using namespace Aws::Utils;
 
 CreateContainerGroupDefinitionRequest::CreateContainerGroupDefinitionRequest() : 
     m_nameHasBeenSet(false),
-    m_schedulingStrategy(ContainerSchedulingStrategy::NOT_SET),
-    m_schedulingStrategyHasBeenSet(false),
-    m_totalMemoryLimit(0),
-    m_totalMemoryLimitHasBeenSet(false),
-    m_totalCpuLimit(0),
-    m_totalCpuLimitHasBeenSet(false),
-    m_containerDefinitionsHasBeenSet(false),
+    m_containerGroupType(ContainerGroupType::NOT_SET),
+    m_containerGroupTypeHasBeenSet(false),
+    m_totalMemoryLimitMebibytes(0),
+    m_totalMemoryLimitMebibytesHasBeenSet(false),
+    m_totalVcpuLimit(0.0),
+    m_totalVcpuLimitHasBeenSet(false),
+    m_gameServerContainerDefinitionHasBeenSet(false),
+    m_supportContainerDefinitionsHasBeenSet(false),
     m_operatingSystem(ContainerOperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
+    m_versionDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -37,37 +39,49 @@ Aws::String CreateContainerGroupDefinitionRequest::SerializePayload() const
 
   }
 
-  if(m_schedulingStrategyHasBeenSet)
+  if(m_containerGroupTypeHasBeenSet)
   {
-   payload.WithString("SchedulingStrategy", ContainerSchedulingStrategyMapper::GetNameForContainerSchedulingStrategy(m_schedulingStrategy));
+   payload.WithString("ContainerGroupType", ContainerGroupTypeMapper::GetNameForContainerGroupType(m_containerGroupType));
   }
 
-  if(m_totalMemoryLimitHasBeenSet)
+  if(m_totalMemoryLimitMebibytesHasBeenSet)
   {
-   payload.WithInteger("TotalMemoryLimit", m_totalMemoryLimit);
-
-  }
-
-  if(m_totalCpuLimitHasBeenSet)
-  {
-   payload.WithInteger("TotalCpuLimit", m_totalCpuLimit);
+   payload.WithInteger("TotalMemoryLimitMebibytes", m_totalMemoryLimitMebibytes);
 
   }
 
-  if(m_containerDefinitionsHasBeenSet)
+  if(m_totalVcpuLimitHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> containerDefinitionsJsonList(m_containerDefinitions.size());
-   for(unsigned containerDefinitionsIndex = 0; containerDefinitionsIndex < containerDefinitionsJsonList.GetLength(); ++containerDefinitionsIndex)
+   payload.WithDouble("TotalVcpuLimit", m_totalVcpuLimit);
+
+  }
+
+  if(m_gameServerContainerDefinitionHasBeenSet)
+  {
+   payload.WithObject("GameServerContainerDefinition", m_gameServerContainerDefinition.Jsonize());
+
+  }
+
+  if(m_supportContainerDefinitionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> supportContainerDefinitionsJsonList(m_supportContainerDefinitions.size());
+   for(unsigned supportContainerDefinitionsIndex = 0; supportContainerDefinitionsIndex < supportContainerDefinitionsJsonList.GetLength(); ++supportContainerDefinitionsIndex)
    {
-     containerDefinitionsJsonList[containerDefinitionsIndex].AsObject(m_containerDefinitions[containerDefinitionsIndex].Jsonize());
+     supportContainerDefinitionsJsonList[supportContainerDefinitionsIndex].AsObject(m_supportContainerDefinitions[supportContainerDefinitionsIndex].Jsonize());
    }
-   payload.WithArray("ContainerDefinitions", std::move(containerDefinitionsJsonList));
+   payload.WithArray("SupportContainerDefinitions", std::move(supportContainerDefinitionsJsonList));
 
   }
 
   if(m_operatingSystemHasBeenSet)
   {
    payload.WithString("OperatingSystem", ContainerOperatingSystemMapper::GetNameForContainerOperatingSystem(m_operatingSystem));
+  }
+
+  if(m_versionDescriptionHasBeenSet)
+  {
+   payload.WithString("VersionDescription", m_versionDescription);
+
   }
 
   if(m_tagsHasBeenSet)

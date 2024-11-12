@@ -113,9 +113,9 @@ namespace Model
     ///@{
     /**
      * <p>A set of values, expressed in milliseconds, that indicates the amount of
-     * latency that a player experiences when connected to Amazon Web Services Regions.
-     * This information is used to try to place the new game session where it can offer
-     * the best possible gameplay experience for the players. </p>
+     * latency that a player experiences when connected to @aws; Regions. This
+     * information is used to try to place the new game session where it can offer the
+     * best possible gameplay experience for the players. </p>
      */
     inline const Aws::Vector<PlayerLatency>& GetPlayerLatencies() const{ return m_playerLatencies; }
     inline bool PlayerLatenciesHasBeenSet() const { return m_playerLatenciesHasBeenSet; }
@@ -144,10 +144,10 @@ namespace Model
     ///@{
     /**
      * <p>A set of custom game session properties, formatted as a single string value.
-     * This data is passed to a game server process in the <code>GameSession</code>
-     * object with a request to start a new game session (see <a
+     * This data is passed to a game server process with a request to start a new game
+     * session. For more information, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-     * a Game Session</a>).</p>
+     * a game session</a>.</p>
      */
     inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
     inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }

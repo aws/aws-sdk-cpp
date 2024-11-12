@@ -18,7 +18,6 @@
 #include <aws/gamelift/model/ComputeType.h>
 #include <aws/gamelift/model/AnywhereConfiguration.h>
 #include <aws/gamelift/model/InstanceRoleCredentialsProvider.h>
-#include <aws/gamelift/model/ContainerGroupsAttributes.h>
 #include <aws/gamelift/model/FleetAction.h>
 #include <utility>
 
@@ -38,19 +37,16 @@ namespace Model
 {
 
   /**
-   * <p> <b>This operation has been expanded to use with the Amazon GameLift
-   * containers feature, which is currently in public preview.</b> </p> <p>Describes
-   * an Amazon GameLift fleet of game hosting resources. Attributes differ based on
-   * the fleet's compute type, as follows:</p> <ul> <li> <p>EC2 fleet attributes
-   * identify a <code>Build</code> resource (for fleets with customer game server
-   * builds) or a <code>Script</code> resource (for Realtime Servers fleets).</p>
-   * </li> <li> <p>Container fleets have <code>ContainerGroupsAttributes</code>,
-   * which identify the fleet's <code>ContainerGroupDefinition</code> resources.</p>
-   * </li> <li> <p>Amazon GameLift Anywhere fleets have an abbreviated set of
-   * attributes, because most fleet configurations are set directly on the fleet's
-   * computes. Attributes include fleet identifiers and descriptive properties,
-   * creation/termination time, and fleet status.</p> </li> </ul> <p> <b>Returned
-   * by:</b> <a>DescribeFleetAttributes</a> </p><p><h3>See Also:</h3>   <a
+   * <p>Describes an Amazon GameLift fleet of game hosting resources. Attributes
+   * differ based on the fleet's compute type, as follows:</p> <ul> <li> <p>EC2 fleet
+   * attributes identify a <code>Build</code> resource (for fleets with customer game
+   * server builds) or a <code>Script</code> resource (for Realtime Servers
+   * fleets).</p> </li> <li> <p>Amazon GameLift Anywhere fleets have an abbreviated
+   * set of attributes, because most fleet configurations are set directly on the
+   * fleet's computes. Attributes include fleet identifiers and descriptive
+   * properties, creation/termination time, and fleet status.</p> </li> </ul> <p>
+   * <b>Returned by:</b> <a>DescribeFleetAttributes</a> </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes">AWS
    * API Reference</a></p>
    */
@@ -120,7 +116,7 @@ namespace Model
      * storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
      * Instance Types</a> for detailed descriptions. This attribute is used with fleets
-     * where <code>ComputeType</code> is "EC2" or "Container".</p>
+     * where <code>ComputeType</code> is "EC2".</p>
      */
     inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -336,11 +332,10 @@ namespace Model
     /**
      * <p>The type of game session protection to set on all new instances that are
      * started in the fleet. This attribute is used with fleets where
-     * <code>ComputeType</code> is "EC2" or "Container".</p> <ul> <li> <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
-     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</p> </li> </ul>
+     * <code>ComputeType</code> is "EC2".</p> <ul> <li> <p> <b>NoProtection</b> -- The
+     * game session can be terminated during a scale-down event.</p> </li> <li> <p>
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code>
+     * status, it cannot be terminated during a scale-down event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
     inline bool NewGameSessionProtectionPolicyHasBeenSet() const { return m_newGameSessionProtectionPolicyHasBeenSet; }
@@ -355,10 +350,10 @@ namespace Model
      * <p>The operating system of the fleet's computing resources. A fleet's operating
      * system is determined by the OS of the build or script that is deployed on this
      * fleet. This attribute is used with fleets where <code>ComputeType</code> is
-     * "EC2" or "Container".</p>  <p>Amazon Linux 2 (AL2) will reach end of
-     * support on 6/30/2025. See more details in the <a
+     * "EC2".</p>  <p>Amazon Linux 2 (AL2) will reach end of support on
+     * 6/30/2025. See more details in the <a
      * href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-     * game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x.,
+     * game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x,
      * first update the game server build to server SDK 5.x, and then deploy to AL2023
      * instances. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
@@ -387,8 +382,7 @@ namespace Model
      * <p>Name of a metric group that metrics for this fleet are added to. In Amazon
      * CloudWatch, you can view aggregated metrics for fleets that are in a metric
      * group. A fleet can be included in only one metric group at a time. This
-     * attribute is used with fleets where <code>ComputeType</code> is "EC2" or
-     * "Container".</p>
+     * attribute is used with fleets where <code>ComputeType</code> is "EC2".</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
     inline bool MetricGroupsHasBeenSet() const { return m_metricGroupsHasBeenSet; }
@@ -406,7 +400,7 @@ namespace Model
      * <p>A list of fleet activity that has been suspended using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
      * This includes fleet auto-scaling. This attribute is used with fleets where
-     * <code>ComputeType</code> is "EC2" or "Container".</p>
+     * <code>ComputeType</code> is "EC2".</p>
      */
     inline const Aws::Vector<FleetAction>& GetStoppedActions() const{ return m_stoppedActions; }
     inline bool StoppedActionsHasBeenSet() const { return m_stoppedActionsHasBeenSet; }
@@ -420,16 +414,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique identifier for an IAM role with access permissions to other Amazon
-     * Web Services services. Any application that runs on an instance in the
-     * fleet--including install scripts, server processes, and other processes--can use
-     * these permissions to interact with Amazon Web Services resources that you own or
-     * have access to. For more information about using the role with your game server
-     * builds, see <a
+     * <p>A unique identifier for an IAM role that manages access to your Amazon Web
+     * Services services. With an instance role ARN set, any application that runs on
+     * an instance in this fleet can assume the role, including install scripts, server
+     * processes, and daemons (background processes). Create a role or look up a role's
+     * ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a>
+     * in the Amazon Web Services Management Console. Learn more about using on-box
+     * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-     * Communicate with other Amazon Web Services resources from your fleets</a>. This
-     * attribute is used with fleets where <code>ComputeType</code> is "EC2" or
-     * "Container".</p>
+     * Access external resources from a game server</a>. This attribute is used with
+     * fleets where <code>ComputeType</code> is "EC2".</p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
@@ -471,11 +465,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> <b>This property is used with the Amazon GameLift containers feature, which
-     * is currently in public preview.</b> A set of attributes that describe the
-     * container groups that are deployed on the fleet. These attributes are included
-     * for fleets with compute type <code>CONTAINER</code> only. This attribute is used
-     * with fleets where <code>ComputeType</code> is "Container".</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline const AnywhereConfiguration& GetAnywhereConfiguration() const{ return m_anywhereConfiguration; }
     inline bool AnywhereConfigurationHasBeenSet() const { return m_anywhereConfigurationHasBeenSet; }
@@ -495,8 +485,7 @@ namespace Model
      * about using shared credentials, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Communicate with other Amazon Web Services resources from your fleets</a>. This
-     * attribute is used with fleets where <code>ComputeType</code> is "EC2" or
-     * "Container".</p>
+     * attribute is used with fleets where <code>ComputeType</code> is "EC2".</p>
      */
     inline const InstanceRoleCredentialsProvider& GetInstanceRoleCredentialsProvider() const{ return m_instanceRoleCredentialsProvider; }
     inline bool InstanceRoleCredentialsProviderHasBeenSet() const { return m_instanceRoleCredentialsProviderHasBeenSet; }
@@ -504,20 +493,6 @@ namespace Model
     inline void SetInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider&& value) { m_instanceRoleCredentialsProviderHasBeenSet = true; m_instanceRoleCredentialsProvider = std::move(value); }
     inline FleetAttributes& WithInstanceRoleCredentialsProvider(const InstanceRoleCredentialsProvider& value) { SetInstanceRoleCredentialsProvider(value); return *this;}
     inline FleetAttributes& WithInstanceRoleCredentialsProvider(InstanceRoleCredentialsProvider&& value) { SetInstanceRoleCredentialsProvider(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>A set of properties that describe the container groups that are deployed to
-     * the fleet. These attributes are included for fleets with compute type
-     * <code>CONTAINER</code>.</p>
-     */
-    inline const ContainerGroupsAttributes& GetContainerGroupsAttributes() const{ return m_containerGroupsAttributes; }
-    inline bool ContainerGroupsAttributesHasBeenSet() const { return m_containerGroupsAttributesHasBeenSet; }
-    inline void SetContainerGroupsAttributes(const ContainerGroupsAttributes& value) { m_containerGroupsAttributesHasBeenSet = true; m_containerGroupsAttributes = value; }
-    inline void SetContainerGroupsAttributes(ContainerGroupsAttributes&& value) { m_containerGroupsAttributesHasBeenSet = true; m_containerGroupsAttributes = std::move(value); }
-    inline FleetAttributes& WithContainerGroupsAttributes(const ContainerGroupsAttributes& value) { SetContainerGroupsAttributes(value); return *this;}
-    inline FleetAttributes& WithContainerGroupsAttributes(ContainerGroupsAttributes&& value) { SetContainerGroupsAttributes(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -598,9 +573,6 @@ namespace Model
 
     InstanceRoleCredentialsProvider m_instanceRoleCredentialsProvider;
     bool m_instanceRoleCredentialsProviderHasBeenSet = false;
-
-    ContainerGroupsAttributes m_containerGroupsAttributes;
-    bool m_containerGroupsAttributesHasBeenSet = false;
   };
 
 } // namespace Model

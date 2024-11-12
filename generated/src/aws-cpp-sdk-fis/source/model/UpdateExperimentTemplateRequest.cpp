@@ -20,7 +20,8 @@ UpdateExperimentTemplateRequest::UpdateExperimentTemplateRequest() :
     m_actionsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
-    m_experimentOptionsHasBeenSet(false)
+    m_experimentOptionsHasBeenSet(false),
+    m_experimentReportConfigurationHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,12 @@ Aws::String UpdateExperimentTemplateRequest::SerializePayload() const
   if(m_experimentOptionsHasBeenSet)
   {
    payload.WithObject("experimentOptions", m_experimentOptions.Jsonize());
+
+  }
+
+  if(m_experimentReportConfigurationHasBeenSet)
+  {
+   payload.WithObject("experimentReportConfiguration", m_experimentReportConfiguration.Jsonize());
 
   }
 

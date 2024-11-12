@@ -7,6 +7,8 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/AwsCredentials.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/ContainerIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -108,8 +110,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>(For container fleets only) The instance ID where the compute resource is
-     * running.</p>
+     * <p>The instance ID where the compute resource is running.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
     inline void SetTarget(const Aws::String& value) { m_target = value; }
@@ -118,6 +119,21 @@ namespace Model
     inline GetComputeAccessResult& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
     inline GetComputeAccessResult& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
     inline GetComputeAccessResult& WithTarget(const char* value) { SetTarget(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>For a managed container fleet, a list of containers on the compute. Use the
+     * container runtime ID with Docker commands to connect to a specific container.
+     * </p>
+     */
+    inline const Aws::Vector<ContainerIdentifier>& GetContainerIdentifiers() const{ return m_containerIdentifiers; }
+    inline void SetContainerIdentifiers(const Aws::Vector<ContainerIdentifier>& value) { m_containerIdentifiers = value; }
+    inline void SetContainerIdentifiers(Aws::Vector<ContainerIdentifier>&& value) { m_containerIdentifiers = std::move(value); }
+    inline GetComputeAccessResult& WithContainerIdentifiers(const Aws::Vector<ContainerIdentifier>& value) { SetContainerIdentifiers(value); return *this;}
+    inline GetComputeAccessResult& WithContainerIdentifiers(Aws::Vector<ContainerIdentifier>&& value) { SetContainerIdentifiers(std::move(value)); return *this;}
+    inline GetComputeAccessResult& AddContainerIdentifiers(const ContainerIdentifier& value) { m_containerIdentifiers.push_back(value); return *this; }
+    inline GetComputeAccessResult& AddContainerIdentifiers(ContainerIdentifier&& value) { m_containerIdentifiers.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -143,6 +159,8 @@ namespace Model
     AwsCredentials m_credentials;
 
     Aws::String m_target;
+
+    Aws::Vector<ContainerIdentifier> m_containerIdentifiers;
 
     Aws::String m_requestId;
   };

@@ -10,7 +10,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/gamelift/model/OperatingSystem.h>
 #include <aws/gamelift/model/EC2InstanceType.h>
-#include <aws/gamelift/model/ContainerAttributes.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/ContainerAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -29,15 +30,12 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type has been expanded to use with the Amazon GameLift
-   * containers feature, which is currently in public preview.</b> </p> <p>An Amazon
-   * GameLift compute resource for hosting your game servers. Computes in an Amazon
-   * GameLift fleet differs depending on the fleet's compute type property as
-   * follows: </p> <ul> <li> <p>For <code>EC2</code> fleets, a compute is an EC2
-   * instance.</p> </li> <li> <p>For <code>ANYWHERE</code> fleets, a compute is a
-   * computing resource that you provide and is registered to the fleet.</p> </li>
-   * <li> <p>For <code>CONTAINER</code> fleets, a compute is a container that's
-   * registered to the fleet. </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <p>An Amazon GameLift compute resource for hosting your game servers. Computes
+   * in an Amazon GameLift fleet differs depending on the fleet's compute type
+   * property as follows: </p> <ul> <li> <p>For managed EC2 fleets, a compute is an
+   * EC2 instance.</p> </li> <li> <p>For Anywhere fleets, a compute is a computing
+   * resource that you provide and is registered to the fleet.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Compute">AWS
    * API Reference</a></p>
    */
@@ -245,8 +243,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The <code>InstanceID</code> of the <code>Instance</code> hosting the compute
-     * for Container and Managed EC2 fleets. </p>
+     * <p> The <code>InstanceID</code> of the EC2 instance that is hosting the compute.
+     * </p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -260,14 +258,30 @@ namespace Model
 
     ///@{
     /**
-     * <p> Some attributes of a container. </p>
+     * <p>A set of attributes for each container in the compute. </p>
      */
-    inline const ContainerAttributes& GetContainerAttributes() const{ return m_containerAttributes; }
+    inline const Aws::Vector<ContainerAttribute>& GetContainerAttributes() const{ return m_containerAttributes; }
     inline bool ContainerAttributesHasBeenSet() const { return m_containerAttributesHasBeenSet; }
-    inline void SetContainerAttributes(const ContainerAttributes& value) { m_containerAttributesHasBeenSet = true; m_containerAttributes = value; }
-    inline void SetContainerAttributes(ContainerAttributes&& value) { m_containerAttributesHasBeenSet = true; m_containerAttributes = std::move(value); }
-    inline Compute& WithContainerAttributes(const ContainerAttributes& value) { SetContainerAttributes(value); return *this;}
-    inline Compute& WithContainerAttributes(ContainerAttributes&& value) { SetContainerAttributes(std::move(value)); return *this;}
+    inline void SetContainerAttributes(const Aws::Vector<ContainerAttribute>& value) { m_containerAttributesHasBeenSet = true; m_containerAttributes = value; }
+    inline void SetContainerAttributes(Aws::Vector<ContainerAttribute>&& value) { m_containerAttributesHasBeenSet = true; m_containerAttributes = std::move(value); }
+    inline Compute& WithContainerAttributes(const Aws::Vector<ContainerAttribute>& value) { SetContainerAttributes(value); return *this;}
+    inline Compute& WithContainerAttributes(Aws::Vector<ContainerAttribute>&& value) { SetContainerAttributes(std::move(value)); return *this;}
+    inline Compute& AddContainerAttributes(const ContainerAttribute& value) { m_containerAttributesHasBeenSet = true; m_containerAttributes.push_back(value); return *this; }
+    inline Compute& AddContainerAttributes(ContainerAttribute&& value) { m_containerAttributesHasBeenSet = true; m_containerAttributes.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The game server container group definition for the compute.</p>
+     */
+    inline const Aws::String& GetGameServerContainerGroupDefinitionArn() const{ return m_gameServerContainerGroupDefinitionArn; }
+    inline bool GameServerContainerGroupDefinitionArnHasBeenSet() const { return m_gameServerContainerGroupDefinitionArnHasBeenSet; }
+    inline void SetGameServerContainerGroupDefinitionArn(const Aws::String& value) { m_gameServerContainerGroupDefinitionArnHasBeenSet = true; m_gameServerContainerGroupDefinitionArn = value; }
+    inline void SetGameServerContainerGroupDefinitionArn(Aws::String&& value) { m_gameServerContainerGroupDefinitionArnHasBeenSet = true; m_gameServerContainerGroupDefinitionArn = std::move(value); }
+    inline void SetGameServerContainerGroupDefinitionArn(const char* value) { m_gameServerContainerGroupDefinitionArnHasBeenSet = true; m_gameServerContainerGroupDefinitionArn.assign(value); }
+    inline Compute& WithGameServerContainerGroupDefinitionArn(const Aws::String& value) { SetGameServerContainerGroupDefinitionArn(value); return *this;}
+    inline Compute& WithGameServerContainerGroupDefinitionArn(Aws::String&& value) { SetGameServerContainerGroupDefinitionArn(std::move(value)); return *this;}
+    inline Compute& WithGameServerContainerGroupDefinitionArn(const char* value) { SetGameServerContainerGroupDefinitionArn(value); return *this;}
     ///@}
   private:
 
@@ -313,8 +327,11 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    ContainerAttributes m_containerAttributes;
+    Aws::Vector<ContainerAttribute> m_containerAttributes;
     bool m_containerAttributesHasBeenSet = false;
+
+    Aws::String m_gameServerContainerGroupDefinitionArn;
+    bool m_gameServerContainerGroupDefinitionArnHasBeenSet = false;
   };
 
 } // namespace Model
