@@ -90,7 +90,7 @@ public class CppBlockWriter {
 
         public void addCode(String code, int indentLevel)
         {
-            String linePrefix = " ".repeat(indentLevel);
+            String linePrefix = new String(new char[indentLevel]).replace('\0', ' ');
             //split by line and add indent. make sure to skip escaped newlines
             String[] splitCode = code.split("(?<!\\\\)\\n");
             for (String line : splitCode) {

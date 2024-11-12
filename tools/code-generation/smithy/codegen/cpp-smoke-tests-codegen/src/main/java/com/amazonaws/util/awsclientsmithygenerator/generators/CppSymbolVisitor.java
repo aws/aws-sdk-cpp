@@ -5,6 +5,7 @@
 
  package com.amazonaws.util.awsclientsmithygenerator.generators;
 
+ import lombok.val;
  import software.amazon.smithy.codegen.core.Symbol;
  import software.amazon.smithy.codegen.core.SymbolProvider;
  import software.amazon.smithy.codegen.core.CodegenException;
@@ -84,8 +85,8 @@
  
      @Override
      public Symbol listShape(ListShape listShape) {
-         var targetShape = model.expectShape(listShape.getMember().getTarget());
-         var targetSymbol = targetShape.accept(this);
+         val targetShape = model.expectShape(listShape.getMember().getTarget());
+         val targetSymbol = targetShape.accept(this);
          return createSymbolBuilder(listShape, "Aws::Vector<" + targetSymbol + ">")
                  .addReference(targetSymbol)
                  .build();
@@ -96,10 +97,10 @@
       */
      @Override
      public Symbol mapShape(MapShape mapShape) {
-         var keyShape = model.expectShape(mapShape.getKey().getTarget());
-         var keyType = keyShape.accept(this);
-         var valueShape = model.expectShape(mapShape.getValue().getTarget());
-         var valueType = valueShape.accept(this);
+         val keyShape = model.expectShape(mapShape.getKey().getTarget());
+         val keyType = keyShape.accept(this);
+         val valueShape = model.expectShape(mapShape.getValue().getTarget());
+         val valueType = valueShape.accept(this);
          return createSymbolBuilder(mapShape, "Aws::Map<"+keyType +"," + valueType + ">")
                  .addReference(valueType)
                  .build();

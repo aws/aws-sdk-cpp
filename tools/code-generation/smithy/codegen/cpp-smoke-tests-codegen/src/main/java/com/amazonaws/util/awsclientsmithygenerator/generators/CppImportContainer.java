@@ -7,12 +7,14 @@
 
  import software.amazon.smithy.codegen.core.ImportContainer;
  import software.amazon.smithy.codegen.core.Symbol;
+
  import java.util.Collections;
  import java.util.HashSet;
  import java.util.Set;
  import java.util.Map;
+ import java.util.HashMap;
 
- public final class CppImportContainer implements ImportContainer {
+public final class CppImportContainer implements ImportContainer {
 
      private final String c2jNamespace;
      private final Set<String> coreHeaders;
@@ -41,21 +43,19 @@
             "algorithm"
             );
 
-        this.unitTestHeaders = Set.of(
-            "aws/testing/AwsCppSdkGTestSuite.h",
-            "aws/testing/AwsTestHelpers.h"
-            );
+        this.unitTestHeaders = new HashSet<>();
+         this.unitTestHeaders.add("aws/testing/AwsCppSdkGTestSuite.h");
+         this.unitTestHeaders.add("aws/testing/AwsTestHelpers.h");
 
-        //this will be added to based upon datastructures found
-        containerHeaderMap = Map.ofEntries(
-            Map.entry("Aws::String", "aws/core/utils/memory/stl/AWSString.h"),
-            Map.entry("Aws::Map", "aws/core/utils/memory/stl/AWSMap.h"),
-            Map.entry("Aws::Utils::DateTime", "aws/core/utils/DateTime.h"),
-            Map.entry("Aws::Utils::Document","aws/core/utils/Document.h"),
-            Map.entry("Aws::Utils::ByteBuffer","aws/core/utils/Array.h")
-        );
-        
-        dynamicHeaders.add(String.format("aws/%s/%sClient.h", c2jNamespace, clientNamespace));
+         //this will be added to based upon datastructures found
+        containerHeaderMap = new HashMap<>();
+         containerHeaderMap.put("Aws::String", "aws/core/utils/memory/stl/AWSString.h");
+         containerHeaderMap.put("Aws::Map", "aws/core/utils/memory/stl/AWSMap.h");
+         containerHeaderMap.put("Aws::Utils::DateTime", "aws/core/utils/DateTime.h");
+         containerHeaderMap.put("Aws::Utils::Document", "aws/core/utils/Document.h");
+         containerHeaderMap.put("Aws::Utils::ByteBuffer", "aws/core/utils/Array.h");
+
+         dynamicHeaders.add(String.format("aws/%s/%sClient.h", c2jNamespace, clientNamespace));
         
     }
 
