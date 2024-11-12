@@ -32,7 +32,8 @@ ExperimentTemplate::ExperimentTemplate() :
     m_logConfigurationHasBeenSet(false),
     m_experimentOptionsHasBeenSet(false),
     m_targetAccountConfigurationsCount(0),
-    m_targetAccountConfigurationsCountHasBeenSet(false)
+    m_targetAccountConfigurationsCountHasBeenSet(false),
+    m_experimentReportConfigurationHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,13 @@ ExperimentTemplate& ExperimentTemplate::operator =(JsonView jsonValue)
     m_targetAccountConfigurationsCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("experimentReportConfiguration"))
+  {
+    m_experimentReportConfiguration = jsonValue.GetObject("experimentReportConfiguration");
+
+    m_experimentReportConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -247,6 +255,12 @@ JsonValue ExperimentTemplate::Jsonize() const
   if(m_targetAccountConfigurationsCountHasBeenSet)
   {
    payload.WithInt64("targetAccountConfigurationsCount", m_targetAccountConfigurationsCount);
+
+  }
+
+  if(m_experimentReportConfigurationHasBeenSet)
+  {
+   payload.WithObject("experimentReportConfiguration", m_experimentReportConfiguration.Jsonize());
 
   }
 

@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A descriptive label that is associated with a script. Script names don't need
-     * to be unique. You can use <a
+     * <p>A descriptive label that is associated with a script. Script names do not
+     * need to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
      */
@@ -57,8 +57,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Version information associated with a build or script. Version strings don't
-     * need to be unique. You can use <a
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
      */

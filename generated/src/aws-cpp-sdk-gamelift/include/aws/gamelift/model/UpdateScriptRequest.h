@@ -53,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A descriptive label that is associated with a script. Script names don't need
-     * to be unique.</p>
+     * <p>A descriptive label that is associated with a script. Script names do not
+     * need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -68,8 +68,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Version information associated with a build or script. Version strings don't
-     * need to be unique.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }

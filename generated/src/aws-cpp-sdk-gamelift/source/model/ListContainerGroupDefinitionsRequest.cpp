@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListContainerGroupDefinitionsRequest::ListContainerGroupDefinitionsRequest() : 
-    m_schedulingStrategy(ContainerSchedulingStrategy::NOT_SET),
-    m_schedulingStrategyHasBeenSet(false),
+    m_containerGroupType(ContainerGroupType::NOT_SET),
+    m_containerGroupTypeHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -25,9 +25,9 @@ Aws::String ListContainerGroupDefinitionsRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_schedulingStrategyHasBeenSet)
+  if(m_containerGroupTypeHasBeenSet)
   {
-   payload.WithString("SchedulingStrategy", ContainerSchedulingStrategyMapper::GetNameForContainerSchedulingStrategy(m_schedulingStrategy));
+   payload.WithString("ContainerGroupType", ContainerGroupTypeMapper::GetNameForContainerGroupType(m_containerGroupType));
   }
 
   if(m_limitHasBeenSet)

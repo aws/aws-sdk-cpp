@@ -8,10 +8,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/gamelift/model/ContainerOperatingSystem.h>
-#include <aws/gamelift/model/ContainerSchedulingStrategy.h>
+#include <aws/gamelift/model/ContainerGroupType.h>
+#include <aws/gamelift/model/GameServerContainerDefinition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/ContainerGroupDefinitionStatus.h>
-#include <aws/gamelift/model/ContainerDefinition.h>
+#include <aws/gamelift/model/SupportContainerDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -30,13 +31,12 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the Amazon GameLift containers feature, which
-   * is currently in public preview.</b> </p> <p>The properties that describe a
-   * container group resource. Container group definition properties can't be
-   * updated. To change a property, create a new container group definition.</p> <p>
-   * <b>Used with:</b> <a>CreateContainerGroupDefinition</a> </p> <p> <b>Returned
-   * by:</b> <a>DescribeContainerGroupDefinition</a>,
-   * <a>ListContainerGroupDefinitions</a> </p><p><h3>See Also:</h3>   <a
+   * <p>The properties that describe a container group resource. You can update all
+   * properties of a container group definition properties. Updates to a container
+   * group definition are saved as new versions. </p> <p> <b>Used with:</b>
+   * <a>CreateContainerGroupDefinition</a> </p> <p> <b>Returned by:</b>
+   * <a>DescribeContainerGroupDefinition</a>, <a>ListContainerGroupDefinitions</a>,
+   * <a>UpdateContainerGroupDefinition</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerGroupDefinition">AWS
    * API Reference</a></p>
    */
@@ -56,8 +56,8 @@ namespace Model
      * that is assigned to an Amazon GameLift <code>ContainerGroupDefinition</code>
      * resource. It uniquely identifies the resource across all Amazon Web Services
      * Regions. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;::containergroupdefinition/[container group
-     * definition name]</code>.</p>
+     * <code>arn:aws:gamelift:[region]::containergroupdefinition/[container group
+     * definition name]:[version]</code>.</p>
      */
     inline const Aws::String& GetContainerGroupDefinitionArn() const{ return m_containerGroupDefinitionArn; }
     inline bool ContainerGroupDefinitionArnHasBeenSet() const { return m_containerGroupDefinitionArnHasBeenSet; }
@@ -85,11 +85,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The platform required for all containers in the container group
-     * definition.</p>  <p>Amazon Linux 2 (AL2) will reach end of support on
-     * 6/30/2025. See more details in the <a
+     * <p>The platform that all containers in the container group definition run
+     * on.</p>  <p>Amazon Linux 2 (AL2) will reach end of support on 6/30/2025.
+     * See more details in the <a
      * href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-     * game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x.,
+     * game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x,
      * first update the game server build to server SDK 5.x, and then deploy to AL2023
      * instances. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
@@ -120,68 +120,102 @@ namespace Model
 
     ///@{
     /**
-     * <p>The method for deploying the container group across fleet instances. A
-     * replica container group might have multiple copies on each fleet instance. A
-     * daemon container group maintains only one copy per fleet instance.</p>
+     * <p>The type of container group. Container group type determines how Amazon
+     * GameLift deploys the container group on each fleet instance.</p>
      */
-    inline const ContainerSchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
-    inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
-    inline void SetSchedulingStrategy(const ContainerSchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
-    inline void SetSchedulingStrategy(ContainerSchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
-    inline ContainerGroupDefinition& WithSchedulingStrategy(const ContainerSchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
-    inline ContainerGroupDefinition& WithSchedulingStrategy(ContainerSchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
+    inline const ContainerGroupType& GetContainerGroupType() const{ return m_containerGroupType; }
+    inline bool ContainerGroupTypeHasBeenSet() const { return m_containerGroupTypeHasBeenSet; }
+    inline void SetContainerGroupType(const ContainerGroupType& value) { m_containerGroupTypeHasBeenSet = true; m_containerGroupType = value; }
+    inline void SetContainerGroupType(ContainerGroupType&& value) { m_containerGroupTypeHasBeenSet = true; m_containerGroupType = std::move(value); }
+    inline ContainerGroupDefinition& WithContainerGroupType(const ContainerGroupType& value) { SetContainerGroupType(value); return *this;}
+    inline ContainerGroupDefinition& WithContainerGroupType(ContainerGroupType&& value) { SetContainerGroupType(std::move(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of memory (in MiB) on a fleet instance to allocate for the
      * container group. All containers in the group share these resources. </p> <p>You
-     * can set additional limits for each <a>ContainerDefinition</a> in the group. If
-     * individual containers have limits, this value must meet the following
-     * requirements: </p> <ul> <li> <p>Equal to or greater than the sum of all
-     * container-specific soft memory limits in the group.</p> </li> <li> <p>Equal to
-     * or greater than any container-specific hard limits in the group.</p> </li> </ul>
-     * <p>For more details on memory allocation, see the <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet">Container
-     * fleet design guide</a>.</p>
+     * can set a limit for each container definition in the group. If individual
+     * containers have limits, this total value must be greater than any individual
+     * container's memory limit.</p>
      */
-    inline int GetTotalMemoryLimit() const{ return m_totalMemoryLimit; }
-    inline bool TotalMemoryLimitHasBeenSet() const { return m_totalMemoryLimitHasBeenSet; }
-    inline void SetTotalMemoryLimit(int value) { m_totalMemoryLimitHasBeenSet = true; m_totalMemoryLimit = value; }
-    inline ContainerGroupDefinition& WithTotalMemoryLimit(int value) { SetTotalMemoryLimit(value); return *this;}
+    inline int GetTotalMemoryLimitMebibytes() const{ return m_totalMemoryLimitMebibytes; }
+    inline bool TotalMemoryLimitMebibytesHasBeenSet() const { return m_totalMemoryLimitMebibytesHasBeenSet; }
+    inline void SetTotalMemoryLimitMebibytes(int value) { m_totalMemoryLimitMebibytesHasBeenSet = true; m_totalMemoryLimitMebibytes = value; }
+    inline ContainerGroupDefinition& WithTotalMemoryLimitMebibytes(int value) { SetTotalMemoryLimitMebibytes(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p>The amount of CPU units on a fleet instance to allocate for the container
-     * group. All containers in the group share these resources. This property is an
-     * integer value in CPU units (1 vCPU is equal to 1024 CPU units). </p> <p>You can
-     * set additional limits for each <a>ContainerDefinition</a> in the group. If
-     * individual containers have limits, this value must be equal to or greater than
-     * the sum of all container-specific CPU limits in the group.</p> <p>For more
-     * details on memory allocation, see the <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet">Container
-     * fleet design guide</a>.</p>
+     * <p>The amount of vCPU units on a fleet instance to allocate for the container
+     * group (1 vCPU is equal to 1024 CPU units). All containers in the group share
+     * these resources. You can set a limit for each container definition in the group.
+     * If individual containers have limits, this total value must be equal to or
+     * greater than the sum of the limits for each container in the group.</p>
      */
-    inline int GetTotalCpuLimit() const{ return m_totalCpuLimit; }
-    inline bool TotalCpuLimitHasBeenSet() const { return m_totalCpuLimitHasBeenSet; }
-    inline void SetTotalCpuLimit(int value) { m_totalCpuLimitHasBeenSet = true; m_totalCpuLimit = value; }
-    inline ContainerGroupDefinition& WithTotalCpuLimit(int value) { SetTotalCpuLimit(value); return *this;}
+    inline double GetTotalVcpuLimit() const{ return m_totalVcpuLimit; }
+    inline bool TotalVcpuLimitHasBeenSet() const { return m_totalVcpuLimitHasBeenSet; }
+    inline void SetTotalVcpuLimit(double value) { m_totalVcpuLimitHasBeenSet = true; m_totalVcpuLimit = value; }
+    inline ContainerGroupDefinition& WithTotalVcpuLimit(double value) { SetTotalVcpuLimit(value); return *this;}
     ///@}
 
     ///@{
     /**
-     * <p> The set of container definitions that are included in the container group.
+     * <p>The definition for the game server container in this group. This property is
+     * used only when the container group type is <code>GAME_SERVER</code>. This
+     * container definition specifies a container image with the game server build.
      * </p>
      */
-    inline const Aws::Vector<ContainerDefinition>& GetContainerDefinitions() const{ return m_containerDefinitions; }
-    inline bool ContainerDefinitionsHasBeenSet() const { return m_containerDefinitionsHasBeenSet; }
-    inline void SetContainerDefinitions(const Aws::Vector<ContainerDefinition>& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions = value; }
-    inline void SetContainerDefinitions(Aws::Vector<ContainerDefinition>&& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions = std::move(value); }
-    inline ContainerGroupDefinition& WithContainerDefinitions(const Aws::Vector<ContainerDefinition>& value) { SetContainerDefinitions(value); return *this;}
-    inline ContainerGroupDefinition& WithContainerDefinitions(Aws::Vector<ContainerDefinition>&& value) { SetContainerDefinitions(std::move(value)); return *this;}
-    inline ContainerGroupDefinition& AddContainerDefinitions(const ContainerDefinition& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions.push_back(value); return *this; }
-    inline ContainerGroupDefinition& AddContainerDefinitions(ContainerDefinition&& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions.push_back(std::move(value)); return *this; }
+    inline const GameServerContainerDefinition& GetGameServerContainerDefinition() const{ return m_gameServerContainerDefinition; }
+    inline bool GameServerContainerDefinitionHasBeenSet() const { return m_gameServerContainerDefinitionHasBeenSet; }
+    inline void SetGameServerContainerDefinition(const GameServerContainerDefinition& value) { m_gameServerContainerDefinitionHasBeenSet = true; m_gameServerContainerDefinition = value; }
+    inline void SetGameServerContainerDefinition(GameServerContainerDefinition&& value) { m_gameServerContainerDefinitionHasBeenSet = true; m_gameServerContainerDefinition = std::move(value); }
+    inline ContainerGroupDefinition& WithGameServerContainerDefinition(const GameServerContainerDefinition& value) { SetGameServerContainerDefinition(value); return *this;}
+    inline ContainerGroupDefinition& WithGameServerContainerDefinition(GameServerContainerDefinition&& value) { SetGameServerContainerDefinition(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The set of definitions for support containers in this group. A container
+     * group definition might have zero support container definitions. Support
+     * container can be used in any type of container group.</p>
+     */
+    inline const Aws::Vector<SupportContainerDefinition>& GetSupportContainerDefinitions() const{ return m_supportContainerDefinitions; }
+    inline bool SupportContainerDefinitionsHasBeenSet() const { return m_supportContainerDefinitionsHasBeenSet; }
+    inline void SetSupportContainerDefinitions(const Aws::Vector<SupportContainerDefinition>& value) { m_supportContainerDefinitionsHasBeenSet = true; m_supportContainerDefinitions = value; }
+    inline void SetSupportContainerDefinitions(Aws::Vector<SupportContainerDefinition>&& value) { m_supportContainerDefinitionsHasBeenSet = true; m_supportContainerDefinitions = std::move(value); }
+    inline ContainerGroupDefinition& WithSupportContainerDefinitions(const Aws::Vector<SupportContainerDefinition>& value) { SetSupportContainerDefinitions(value); return *this;}
+    inline ContainerGroupDefinition& WithSupportContainerDefinitions(Aws::Vector<SupportContainerDefinition>&& value) { SetSupportContainerDefinitions(std::move(value)); return *this;}
+    inline ContainerGroupDefinition& AddSupportContainerDefinitions(const SupportContainerDefinition& value) { m_supportContainerDefinitionsHasBeenSet = true; m_supportContainerDefinitions.push_back(value); return *this; }
+    inline ContainerGroupDefinition& AddSupportContainerDefinitions(SupportContainerDefinition&& value) { m_supportContainerDefinitionsHasBeenSet = true; m_supportContainerDefinitions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates the version of a particular container group definition. This number
+     * is incremented automatically when you update a container group definition. You
+     * can view, update, or delete individual versions or the entire container group
+     * definition.</p>
+     */
+    inline int GetVersionNumber() const{ return m_versionNumber; }
+    inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
+    inline void SetVersionNumber(int value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
+    inline ContainerGroupDefinition& WithVersionNumber(int value) { SetVersionNumber(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>An optional description that was provided for a container group definition
+     * update. Each version can have a unique description.</p>
+     */
+    inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
+    inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
+    inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
+    inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
+    inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
+    inline ContainerGroupDefinition& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
+    inline ContainerGroupDefinition& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
+    inline ContainerGroupDefinition& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
     ///@}
 
     ///@{
@@ -250,17 +284,26 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ContainerSchedulingStrategy m_schedulingStrategy;
-    bool m_schedulingStrategyHasBeenSet = false;
+    ContainerGroupType m_containerGroupType;
+    bool m_containerGroupTypeHasBeenSet = false;
 
-    int m_totalMemoryLimit;
-    bool m_totalMemoryLimitHasBeenSet = false;
+    int m_totalMemoryLimitMebibytes;
+    bool m_totalMemoryLimitMebibytesHasBeenSet = false;
 
-    int m_totalCpuLimit;
-    bool m_totalCpuLimitHasBeenSet = false;
+    double m_totalVcpuLimit;
+    bool m_totalVcpuLimitHasBeenSet = false;
 
-    Aws::Vector<ContainerDefinition> m_containerDefinitions;
-    bool m_containerDefinitionsHasBeenSet = false;
+    GameServerContainerDefinition m_gameServerContainerDefinition;
+    bool m_gameServerContainerDefinitionHasBeenSet = false;
+
+    Aws::Vector<SupportContainerDefinition> m_supportContainerDefinitions;
+    bool m_supportContainerDefinitionsHasBeenSet = false;
+
+    int m_versionNumber;
+    bool m_versionNumberHasBeenSet = false;
+
+    Aws::String m_versionDescription;
+    bool m_versionDescriptionHasBeenSet = false;
 
     ContainerGroupDefinitionStatus m_status;
     bool m_statusHasBeenSet = false;

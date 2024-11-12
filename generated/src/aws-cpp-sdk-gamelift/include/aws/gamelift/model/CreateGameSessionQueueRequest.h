@@ -59,8 +59,7 @@ namespace Model
     /**
      * <p>The maximum time, in seconds, that a new game session placement request
      * remains in the queue. When a request exceeds this time, the game session
-     * placement changes to a <code>TIMED_OUT</code> status. By default, this property
-     * is set to <code>600</code>.</p>
+     * placement changes to a <code>TIMED_OUT</code> status.</p>
      */
     inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
@@ -70,12 +69,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A set of policies that act as a sliding cap on player latency. FleetIQ works
-     * to deliver low latency for most players in a game session. These policies ensure
-     * that no individual player can be placed into a game with unreasonably high
-     * latency. Use multiple policies to gradually relax latency requirements a step at
-     * a time. Multiple policies are applied based on their maximum allowed latency,
-     * starting with the lowest value.</p>
+     * <p>A set of policies that enforce a sliding cap on player latency when
+     * processing game sessions placement requests. Use multiple policies to gradually
+     * relax the cap over time if Amazon GameLift can't make a placement. Policies are
+     * evaluated in order starting with the lowest maximum latency value.</p>
      */
     inline const Aws::Vector<PlayerLatencyPolicy>& GetPlayerLatencyPolicies() const{ return m_playerLatencyPolicies; }
     inline bool PlayerLatencyPoliciesHasBeenSet() const { return m_playerLatencyPoliciesHasBeenSet; }

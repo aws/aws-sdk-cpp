@@ -112,9 +112,9 @@ namespace Model
      * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
      * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-     * Elastic Compute Cloud Instance IP Addressing</a>.)</p> </li> </ul> <p>When
-     * connecting to a game session that is running on a TLS-enabled fleet, you must
-     * use the DNS name, not the IP address.</p>
+     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
+     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     * the IP address.</p>
      */
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }

@@ -35,8 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The properties of the newly created container group definition resource. You
-     * use this resource to create a container fleet.</p>
+     * <p>The properties of the new container group definition resource. You can use
+     * this resource to create a container fleet.</p>
      */
     inline const ContainerGroupDefinition& GetContainerGroupDefinition() const{ return m_containerGroupDefinition; }
     inline void SetContainerGroupDefinition(const ContainerGroupDefinition& value) { m_containerGroupDefinition = value; }

@@ -12,6 +12,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/fis/model/ExperimentLogConfiguration.h>
 #include <aws/fis/model/ExperimentOptions.h>
+#include <aws/fis/model/ExperimentReportConfiguration.h>
+#include <aws/fis/model/ExperimentReport.h>
 #include <aws/fis/model/ExperimentTarget.h>
 #include <aws/fis/model/ExperimentAction.h>
 #include <aws/fis/model/ExperimentStopCondition.h>
@@ -253,6 +255,30 @@ namespace Model
     inline void SetTargetAccountConfigurationsCount(long long value) { m_targetAccountConfigurationsCountHasBeenSet = true; m_targetAccountConfigurationsCount = value; }
     inline Experiment& WithTargetAccountConfigurationsCount(long long value) { SetTargetAccountConfigurationsCount(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The experiment report configuration for the experiment.</p>
+     */
+    inline const ExperimentReportConfiguration& GetExperimentReportConfiguration() const{ return m_experimentReportConfiguration; }
+    inline bool ExperimentReportConfigurationHasBeenSet() const { return m_experimentReportConfigurationHasBeenSet; }
+    inline void SetExperimentReportConfiguration(const ExperimentReportConfiguration& value) { m_experimentReportConfigurationHasBeenSet = true; m_experimentReportConfiguration = value; }
+    inline void SetExperimentReportConfiguration(ExperimentReportConfiguration&& value) { m_experimentReportConfigurationHasBeenSet = true; m_experimentReportConfiguration = std::move(value); }
+    inline Experiment& WithExperimentReportConfiguration(const ExperimentReportConfiguration& value) { SetExperimentReportConfiguration(value); return *this;}
+    inline Experiment& WithExperimentReportConfiguration(ExperimentReportConfiguration&& value) { SetExperimentReportConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The experiment report for the experiment.</p>
+     */
+    inline const ExperimentReport& GetExperimentReport() const{ return m_experimentReport; }
+    inline bool ExperimentReportHasBeenSet() const { return m_experimentReportHasBeenSet; }
+    inline void SetExperimentReport(const ExperimentReport& value) { m_experimentReportHasBeenSet = true; m_experimentReport = value; }
+    inline void SetExperimentReport(ExperimentReport&& value) { m_experimentReportHasBeenSet = true; m_experimentReport = std::move(value); }
+    inline Experiment& WithExperimentReport(const ExperimentReport& value) { SetExperimentReport(value); return *this;}
+    inline Experiment& WithExperimentReport(ExperimentReport&& value) { SetExperimentReport(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -299,6 +325,12 @@ namespace Model
 
     long long m_targetAccountConfigurationsCount;
     bool m_targetAccountConfigurationsCountHasBeenSet = false;
+
+    ExperimentReportConfiguration m_experimentReportConfiguration;
+    bool m_experimentReportConfigurationHasBeenSet = false;
+
+    ExperimentReport m_experimentReport;
+    bool m_experimentReportHasBeenSet = false;
   };
 
 } // namespace Model

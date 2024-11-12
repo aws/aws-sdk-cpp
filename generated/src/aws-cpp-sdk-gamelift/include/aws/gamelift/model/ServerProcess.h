@@ -81,7 +81,7 @@ namespace Model
     ///@{
     /**
      * <p>The number of server processes using this configuration that run concurrently
-     * on each instance or container..</p>
+     * on each instance or compute.</p>
      */
     inline int GetConcurrentExecutions() const{ return m_concurrentExecutions; }
     inline bool ConcurrentExecutionsHasBeenSet() const { return m_concurrentExecutionsHasBeenSet; }

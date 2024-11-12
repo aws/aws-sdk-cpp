@@ -25,9 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>Defines ranges of ports that server processes can connect to. </p> <p>
-   * <b>Part of:</b> <a>ContainerDefinition$PortConfiguration</a> </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A set of port ranges that can be opened on the container. A process that's
+   * running in the container can bind to a port number, making it accessible to
+   * inbound traffic. Container ports map to a container fleet's connection ports.
+   * </p> <p> <b>Part of:</b> <a>GameServerContainerDefinition</a>,
+   * <a>GameServerContainerDefinitionInput</a>, <a>SupportContainerDefinition</a>,
+   * <a>SupportContainerDefinitionInput</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerPortConfiguration">AWS
    * API Reference</a></p>
    */
@@ -42,8 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies one or more ranges of ports on a container. These ranges must not
-     * overlap. </p>
+     * <p>A set of one or more container port number ranges. The ranges can't overlap.
+     * </p>
      */
     inline const Aws::Vector<ContainerPortRange>& GetContainerPortRanges() const{ return m_containerPortRanges; }
     inline bool ContainerPortRangesHasBeenSet() const { return m_containerPortRangesHasBeenSet; }

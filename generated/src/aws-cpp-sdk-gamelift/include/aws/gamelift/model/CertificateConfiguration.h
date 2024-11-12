@@ -24,11 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type has been expanded to use with the Amazon GameLift
-   * containers feature, which is currently in public preview.</b> </p> <p>Determines
-   * whether a TLS/SSL certificate is generated for a fleet. This feature must be
-   * enabled when creating the fleet. All instances in a fleet share the same
-   * certificate. The certificate can be retrieved by calling the <a
+   * <p>Determines whether a TLS/SSL certificate is generated for a fleet. This
+   * feature must be enabled when creating the fleet. All instances in a fleet share
+   * the same certificate. The certificate can be retrieved by calling the <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon
    * GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>.
    * </p><p><h3>See Also:</h3>   <a
@@ -47,8 +45,8 @@ namespace Model
     ///@{
     /**
      * <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
-     * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> - Generate a
-     * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
+     * <p>Valid values include: </p> <ul> <li> <p> <b>GENERATED</b> -- Generate a
+     * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> --
      * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
      */
     inline const CertificateType& GetCertificateType() const{ return m_certificateType; }

@@ -25,20 +25,21 @@ namespace Model
 {
 
   /**
-   * <p>Instructions on when and how to check the health of a container in a
-   * container fleet. When health check properties are set in a container definition,
-   * they override any Docker health checks in the container image. For more
-   * information on container health checks, see <a
+   * <p>Instructions on when and how to check the health of a support container in a
+   * container fleet. These properties override any Docker health checks that are set
+   * in the container image. For more information on container health checks, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html#ECS-Type-HealthCheck-command">HealthCheck
-   * command</a> in the <i>Amazon Elastic Container Service API</i>.</p> <p>The
-   * following example instructions tell the container to wait 100 seconds after
-   * launch before counting failed health checks, then initiate the health check
-   * command every 60 seconds. After issuing the health check command, wait 10
-   * seconds for it to succeed. If it fails, retry the command 3 times before
-   * considering the container to be unhealthy.</p> <p> <code>{"Command": [
-   * "CMD-SHELL", "ps cax | grep "processmanager" || exit 1" ], "Interval": 300,
-   * "Timeout": 30, "Retries": 5, "StartPeriod": 100 }</code> </p> <p> <b>Part
-   * of:</b> <a>ContainerDefinition$HealthCheck</a> </p><p><h3>See Also:</h3>   <a
+   * command</a> in the <i>Amazon Elastic Container Service API</i>. Game server
+   * containers don't have a health check parameter; Amazon GameLift automatically
+   * handles health checks for these containers.</p> <p>The following example
+   * instructs the container to initiate a health check command every 60 seconds and
+   * wait 10 seconds for it to succeed. If it fails, retry the command 3 times before
+   * flagging the container as unhealthy. It also tells the container to wait 100
+   * seconds after launch before counting failed health checks.</p> <p>
+   * <code>{"Command": [ "CMD-SHELL", "ps cax | grep "processmanager" || exit 1" ],
+   * "Interval": 60, "Timeout": 10, "Retries": 3, "StartPeriod": 100 }</code> </p>
+   * <p> <b>Part of:</b> <a>SupportContainerDefinition</a>,
+   * <a>SupportContainerDefinitionInput</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerHealthCheck">AWS
    * API Reference</a></p>
    */
@@ -79,20 +80,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time period (in seconds) to wait for a health check to succeed before a
-     * failed health check is counted. </p>
-     */
-    inline int GetTimeout() const{ return m_timeout; }
-    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
-    inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
-    inline ContainerHealthCheck& WithTimeout(int value) { SetTimeout(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The number of times to retry a failed health check before the container is
-     * considered unhealthy. The first run of the command does not count as a
-     * retry.</p>
+     * <p>The number of times to retry a failed health check before flagging the
+     * container unhealthy. The first run of the command does not count as a retry.</p>
      */
     inline int GetRetries() const{ return m_retries; }
     inline bool RetriesHasBeenSet() const { return m_retriesHasBeenSet; }
@@ -110,6 +99,17 @@ namespace Model
     inline void SetStartPeriod(int value) { m_startPeriodHasBeenSet = true; m_startPeriod = value; }
     inline ContainerHealthCheck& WithStartPeriod(int value) { SetStartPeriod(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The time period (in seconds) to wait for a health check to succeed before
+     * counting a failed health check. </p>
+     */
+    inline int GetTimeout() const{ return m_timeout; }
+    inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+    inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+    inline ContainerHealthCheck& WithTimeout(int value) { SetTimeout(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_command;
@@ -118,14 +118,14 @@ namespace Model
     int m_interval;
     bool m_intervalHasBeenSet = false;
 
-    int m_timeout;
-    bool m_timeoutHasBeenSet = false;
-
     int m_retries;
     bool m_retriesHasBeenSet = false;
 
     int m_startPeriod;
     bool m_startPeriodHasBeenSet = false;
+
+    int m_timeout;
+    bool m_timeoutHasBeenSet = false;
   };
 
 } // namespace Model

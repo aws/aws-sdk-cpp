@@ -865,6 +865,31 @@ namespace ControlTower
         }
 
         /**
+         * <p>Resets an enabled control.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ResetEnabledControl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetEnabledControlOutcome ResetEnabledControl(const Model::ResetEnabledControlRequest& request) const;
+
+        /**
+         * A Callable wrapper for ResetEnabledControl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ResetEnabledControlRequestT = Model::ResetEnabledControlRequest>
+        Model::ResetEnabledControlOutcomeCallable ResetEnabledControlCallable(const ResetEnabledControlRequestT& request) const
+        {
+            return SubmitCallable(&ControlTowerClient::ResetEnabledControl, request);
+        }
+
+        /**
+         * An Async wrapper for ResetEnabledControl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ResetEnabledControlRequestT = Model::ResetEnabledControlRequest>
+        void ResetEnabledControlAsync(const ResetEnabledControlRequestT& request, const ResetEnabledControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ControlTowerClient::ResetEnabledControl, request, handler, context);
+        }
+
+        /**
          * <p>This API call resets a landing zone. It starts an asynchronous operation that
          * resets the landing zone to the parameters specified in the original
          * configuration, which you specified in the manifest file. Nothing in the manifest
@@ -985,10 +1010,11 @@ namespace ControlTower
          * <p>If the enabled control shows an <code>EnablementStatus</code> of FAILED,
          * Amazon Web Services Control Tower updates the control to match any valid
          * parameters that you supply.</p> <p>If the <code>DriftSummary</code> status for
-         * the control shows as DRIFTED, you cannot call this API. Instead, you can update
-         * the control by calling <code>DisableControl</code> and again calling
-         * <code>EnableControl</code>, or you can run an extending governance operation.
-         * For usage examples, see the <a
+         * the control shows as <code>DRIFTED</code>, you cannot call this API. Instead,
+         * you can update the control by calling the <code>ResetEnabledControl</code> API.
+         * Alternatively, you can call <code>DisableControl</code> and then call
+         * <code>EnableControl</code> again. Also, you can run an extending governance
+         * operation to repair drift. For usage examples, see the <a
          * href="https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html">
          * <i>Controls Reference Guide</i> </a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UpdateEnabledControl">AWS

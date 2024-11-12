@@ -49,10 +49,23 @@ namespace Model
     inline DescribeContainerGroupDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline DescribeContainerGroupDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The specific version to retrieve.</p>
+     */
+    inline int GetVersionNumber() const{ return m_versionNumber; }
+    inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
+    inline void SetVersionNumber(int value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
+    inline DescribeContainerGroupDefinitionRequest& WithVersionNumber(int value) { SetVersionNumber(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    int m_versionNumber;
+    bool m_versionNumberHasBeenSet = false;
   };
 
 } // namespace Model

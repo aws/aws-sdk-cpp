@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeContainerGroupDefinitionRequest::DescribeContainerGroupDefinitionRequest() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_versionNumber(0),
+    m_versionNumberHasBeenSet(false)
 {
 }
 
@@ -24,6 +26,12 @@ Aws::String DescribeContainerGroupDefinitionRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_versionNumberHasBeenSet)
+  {
+   payload.WithInteger("VersionNumber", m_versionNumber);
 
   }
 

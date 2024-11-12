@@ -30,6 +30,10 @@ namespace Aws
         static const int FLEET_STATE_ACTIVATING_HASH = HashingUtils::HashString("FLEET_STATE_ACTIVATING");
         static const int FLEET_STATE_ACTIVE_HASH = HashingUtils::HashString("FLEET_STATE_ACTIVE");
         static const int FLEET_STATE_ERROR_HASH = HashingUtils::HashString("FLEET_STATE_ERROR");
+        static const int FLEET_STATE_PENDING_HASH = HashingUtils::HashString("FLEET_STATE_PENDING");
+        static const int FLEET_STATE_CREATING_HASH = HashingUtils::HashString("FLEET_STATE_CREATING");
+        static const int FLEET_STATE_CREATED_HASH = HashingUtils::HashString("FLEET_STATE_CREATED");
+        static const int FLEET_STATE_UPDATING_HASH = HashingUtils::HashString("FLEET_STATE_UPDATING");
         static const int FLEET_INITIALIZATION_FAILED_HASH = HashingUtils::HashString("FLEET_INITIALIZATION_FAILED");
         static const int FLEET_BINARY_DOWNLOAD_FAILED_HASH = HashingUtils::HashString("FLEET_BINARY_DOWNLOAD_FAILED");
         static const int FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND_HASH = HashingUtils::HashString("FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND");
@@ -45,6 +49,8 @@ namespace Aws
         static const int SERVER_PROCESS_TERMINATED_UNHEALTHY_HASH = HashingUtils::HashString("SERVER_PROCESS_TERMINATED_UNHEALTHY");
         static const int SERVER_PROCESS_FORCE_TERMINATED_HASH = HashingUtils::HashString("SERVER_PROCESS_FORCE_TERMINATED");
         static const int SERVER_PROCESS_PROCESS_EXIT_TIMEOUT_HASH = HashingUtils::HashString("SERVER_PROCESS_PROCESS_EXIT_TIMEOUT");
+        static const int SERVER_PROCESS_SDK_INITIALIZATION_FAILED_HASH = HashingUtils::HashString("SERVER_PROCESS_SDK_INITIALIZATION_FAILED");
+        static const int SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT_HASH = HashingUtils::HashString("SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT");
         static const int GAME_SESSION_ACTIVATION_TIMEOUT_HASH = HashingUtils::HashString("GAME_SESSION_ACTIVATION_TIMEOUT");
         static const int FLEET_CREATION_EXTRACTING_BUILD_HASH = HashingUtils::HashString("FLEET_CREATION_EXTRACTING_BUILD");
         static const int FLEET_CREATION_RUNNING_INSTALLER_HASH = HashingUtils::HashString("FLEET_CREATION_RUNNING_INSTALLER");
@@ -54,8 +60,22 @@ namespace Aws
         static const int FLEET_VPC_PEERING_DELETED_HASH = HashingUtils::HashString("FLEET_VPC_PEERING_DELETED");
         static const int INSTANCE_INTERRUPTED_HASH = HashingUtils::HashString("INSTANCE_INTERRUPTED");
         static const int INSTANCE_RECYCLED_HASH = HashingUtils::HashString("INSTANCE_RECYCLED");
+        static const int INSTANCE_REPLACED_UNHEALTHY_HASH = HashingUtils::HashString("INSTANCE_REPLACED_UNHEALTHY");
         static const int FLEET_CREATION_COMPLETED_INSTALLER_HASH = HashingUtils::HashString("FLEET_CREATION_COMPLETED_INSTALLER");
         static const int FLEET_CREATION_FAILED_INSTALLER_HASH = HashingUtils::HashString("FLEET_CREATION_FAILED_INSTALLER");
+        static const int COMPUTE_LOG_UPLOAD_FAILED_HASH = HashingUtils::HashString("COMPUTE_LOG_UPLOAD_FAILED");
+        static const int GAME_SERVER_CONTAINER_GROUP_CRASHED_HASH = HashingUtils::HashString("GAME_SERVER_CONTAINER_GROUP_CRASHED");
+        static const int PER_INSTANCE_CONTAINER_GROUP_CRASHED_HASH = HashingUtils::HashString("PER_INSTANCE_CONTAINER_GROUP_CRASHED");
+        static const int GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY_HASH = HashingUtils::HashString("GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY");
+        static const int LOCATION_STATE_PENDING_HASH = HashingUtils::HashString("LOCATION_STATE_PENDING");
+        static const int LOCATION_STATE_CREATING_HASH = HashingUtils::HashString("LOCATION_STATE_CREATING");
+        static const int LOCATION_STATE_CREATED_HASH = HashingUtils::HashString("LOCATION_STATE_CREATED");
+        static const int LOCATION_STATE_ACTIVATING_HASH = HashingUtils::HashString("LOCATION_STATE_ACTIVATING");
+        static const int LOCATION_STATE_ACTIVE_HASH = HashingUtils::HashString("LOCATION_STATE_ACTIVE");
+        static const int LOCATION_STATE_UPDATING_HASH = HashingUtils::HashString("LOCATION_STATE_UPDATING");
+        static const int LOCATION_STATE_ERROR_HASH = HashingUtils::HashString("LOCATION_STATE_ERROR");
+        static const int LOCATION_STATE_DELETING_HASH = HashingUtils::HashString("LOCATION_STATE_DELETING");
+        static const int LOCATION_STATE_DELETED_HASH = HashingUtils::HashString("LOCATION_STATE_DELETED");
 
 
         EventCode GetEventCodeForName(const Aws::String& name)
@@ -100,6 +120,22 @@ namespace Aws
           else if (hashCode == FLEET_STATE_ERROR_HASH)
           {
             return EventCode::FLEET_STATE_ERROR;
+          }
+          else if (hashCode == FLEET_STATE_PENDING_HASH)
+          {
+            return EventCode::FLEET_STATE_PENDING;
+          }
+          else if (hashCode == FLEET_STATE_CREATING_HASH)
+          {
+            return EventCode::FLEET_STATE_CREATING;
+          }
+          else if (hashCode == FLEET_STATE_CREATED_HASH)
+          {
+            return EventCode::FLEET_STATE_CREATED;
+          }
+          else if (hashCode == FLEET_STATE_UPDATING_HASH)
+          {
+            return EventCode::FLEET_STATE_UPDATING;
           }
           else if (hashCode == FLEET_INITIALIZATION_FAILED_HASH)
           {
@@ -161,6 +197,14 @@ namespace Aws
           {
             return EventCode::SERVER_PROCESS_PROCESS_EXIT_TIMEOUT;
           }
+          else if (hashCode == SERVER_PROCESS_SDK_INITIALIZATION_FAILED_HASH)
+          {
+            return EventCode::SERVER_PROCESS_SDK_INITIALIZATION_FAILED;
+          }
+          else if (hashCode == SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT_HASH)
+          {
+            return EventCode::SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT;
+          }
           else if (hashCode == GAME_SESSION_ACTIVATION_TIMEOUT_HASH)
           {
             return EventCode::GAME_SESSION_ACTIVATION_TIMEOUT;
@@ -197,6 +241,10 @@ namespace Aws
           {
             return EventCode::INSTANCE_RECYCLED;
           }
+          else if (hashCode == INSTANCE_REPLACED_UNHEALTHY_HASH)
+          {
+            return EventCode::INSTANCE_REPLACED_UNHEALTHY;
+          }
           else if (hashCode == FLEET_CREATION_COMPLETED_INSTALLER_HASH)
           {
             return EventCode::FLEET_CREATION_COMPLETED_INSTALLER;
@@ -204,6 +252,58 @@ namespace Aws
           else if (hashCode == FLEET_CREATION_FAILED_INSTALLER_HASH)
           {
             return EventCode::FLEET_CREATION_FAILED_INSTALLER;
+          }
+          else if (hashCode == COMPUTE_LOG_UPLOAD_FAILED_HASH)
+          {
+            return EventCode::COMPUTE_LOG_UPLOAD_FAILED;
+          }
+          else if (hashCode == GAME_SERVER_CONTAINER_GROUP_CRASHED_HASH)
+          {
+            return EventCode::GAME_SERVER_CONTAINER_GROUP_CRASHED;
+          }
+          else if (hashCode == PER_INSTANCE_CONTAINER_GROUP_CRASHED_HASH)
+          {
+            return EventCode::PER_INSTANCE_CONTAINER_GROUP_CRASHED;
+          }
+          else if (hashCode == GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY_HASH)
+          {
+            return EventCode::GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY;
+          }
+          else if (hashCode == LOCATION_STATE_PENDING_HASH)
+          {
+            return EventCode::LOCATION_STATE_PENDING;
+          }
+          else if (hashCode == LOCATION_STATE_CREATING_HASH)
+          {
+            return EventCode::LOCATION_STATE_CREATING;
+          }
+          else if (hashCode == LOCATION_STATE_CREATED_HASH)
+          {
+            return EventCode::LOCATION_STATE_CREATED;
+          }
+          else if (hashCode == LOCATION_STATE_ACTIVATING_HASH)
+          {
+            return EventCode::LOCATION_STATE_ACTIVATING;
+          }
+          else if (hashCode == LOCATION_STATE_ACTIVE_HASH)
+          {
+            return EventCode::LOCATION_STATE_ACTIVE;
+          }
+          else if (hashCode == LOCATION_STATE_UPDATING_HASH)
+          {
+            return EventCode::LOCATION_STATE_UPDATING;
+          }
+          else if (hashCode == LOCATION_STATE_ERROR_HASH)
+          {
+            return EventCode::LOCATION_STATE_ERROR;
+          }
+          else if (hashCode == LOCATION_STATE_DELETING_HASH)
+          {
+            return EventCode::LOCATION_STATE_DELETING;
+          }
+          else if (hashCode == LOCATION_STATE_DELETED_HASH)
+          {
+            return EventCode::LOCATION_STATE_DELETED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -241,6 +341,14 @@ namespace Aws
             return "FLEET_STATE_ACTIVE";
           case EventCode::FLEET_STATE_ERROR:
             return "FLEET_STATE_ERROR";
+          case EventCode::FLEET_STATE_PENDING:
+            return "FLEET_STATE_PENDING";
+          case EventCode::FLEET_STATE_CREATING:
+            return "FLEET_STATE_CREATING";
+          case EventCode::FLEET_STATE_CREATED:
+            return "FLEET_STATE_CREATED";
+          case EventCode::FLEET_STATE_UPDATING:
+            return "FLEET_STATE_UPDATING";
           case EventCode::FLEET_INITIALIZATION_FAILED:
             return "FLEET_INITIALIZATION_FAILED";
           case EventCode::FLEET_BINARY_DOWNLOAD_FAILED:
@@ -271,6 +379,10 @@ namespace Aws
             return "SERVER_PROCESS_FORCE_TERMINATED";
           case EventCode::SERVER_PROCESS_PROCESS_EXIT_TIMEOUT:
             return "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT";
+          case EventCode::SERVER_PROCESS_SDK_INITIALIZATION_FAILED:
+            return "SERVER_PROCESS_SDK_INITIALIZATION_FAILED";
+          case EventCode::SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT:
+            return "SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT";
           case EventCode::GAME_SESSION_ACTIVATION_TIMEOUT:
             return "GAME_SESSION_ACTIVATION_TIMEOUT";
           case EventCode::FLEET_CREATION_EXTRACTING_BUILD:
@@ -289,10 +401,38 @@ namespace Aws
             return "INSTANCE_INTERRUPTED";
           case EventCode::INSTANCE_RECYCLED:
             return "INSTANCE_RECYCLED";
+          case EventCode::INSTANCE_REPLACED_UNHEALTHY:
+            return "INSTANCE_REPLACED_UNHEALTHY";
           case EventCode::FLEET_CREATION_COMPLETED_INSTALLER:
             return "FLEET_CREATION_COMPLETED_INSTALLER";
           case EventCode::FLEET_CREATION_FAILED_INSTALLER:
             return "FLEET_CREATION_FAILED_INSTALLER";
+          case EventCode::COMPUTE_LOG_UPLOAD_FAILED:
+            return "COMPUTE_LOG_UPLOAD_FAILED";
+          case EventCode::GAME_SERVER_CONTAINER_GROUP_CRASHED:
+            return "GAME_SERVER_CONTAINER_GROUP_CRASHED";
+          case EventCode::PER_INSTANCE_CONTAINER_GROUP_CRASHED:
+            return "PER_INSTANCE_CONTAINER_GROUP_CRASHED";
+          case EventCode::GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY:
+            return "GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY";
+          case EventCode::LOCATION_STATE_PENDING:
+            return "LOCATION_STATE_PENDING";
+          case EventCode::LOCATION_STATE_CREATING:
+            return "LOCATION_STATE_CREATING";
+          case EventCode::LOCATION_STATE_CREATED:
+            return "LOCATION_STATE_CREATED";
+          case EventCode::LOCATION_STATE_ACTIVATING:
+            return "LOCATION_STATE_ACTIVATING";
+          case EventCode::LOCATION_STATE_ACTIVE:
+            return "LOCATION_STATE_ACTIVE";
+          case EventCode::LOCATION_STATE_UPDATING:
+            return "LOCATION_STATE_UPDATING";
+          case EventCode::LOCATION_STATE_ERROR:
+            return "LOCATION_STATE_ERROR";
+          case EventCode::LOCATION_STATE_DELETING:
+            return "LOCATION_STATE_DELETING";
+          case EventCode::LOCATION_STATE_DELETED:
+            return "LOCATION_STATE_DELETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

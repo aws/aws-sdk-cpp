@@ -147,19 +147,23 @@ namespace Model
      * VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
-     * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
-     * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
-     * with a two-minute notification.</p> </li> <li> <p>INSTANCE_RECYCLED -- A spot
-     * instance was determined to have a high risk of interruption and is scheduled to
-     * be recycled once it has no active game sessions.</p> </li> </ul> <p> <b>Server
-     * process events:</b> </p> <ul> <li> <p>SERVER_PROCESS_INVALID_PATH -- The game
-     * server executable or script could not be found based on the Fleet runtime
-     * configuration. Check that the launch path is correct based on the operating
-     * system of the Fleet.</p> </li> <li> <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT
-     * -- The server process did not call <code>InitSDK()</code> within the time
-     * expected (5 minutes). Check your game session log to see why
-     * <code>InitSDK()</code> was not called in time.</p> </li> <li>
-     * <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
+     * been successfully deleted.</p> </li> </ul> <p> <b>Container group events:</b>
+     * </p> <ul> <li> <p>CONTAINER_GROUP_REGISTRATION_FAILED – A game server container
+     * group started, but timed out before calling <code>RegisterCompute</code>. </p>
+     * </li> <li> <p>CONTAINER_GROUP_CRASHED A game server container group started and
+     * terminated without calling <code>RegisterCompute</code>.</p> </li> </ul> <p>
+     * <b>Spot instance events:</b> </p> <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot
+     * instance was interrupted by EC2 with a two-minute notification.</p> </li> <li>
+     * <p>INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of
+     * interruption and is scheduled to be recycled once it has no active game
+     * sessions.</p> </li> </ul> <p> <b>Server process events:</b> </p> <ul> <li>
+     * <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not
+     * be found based on the Fleet runtime configuration. Check that the launch path is
+     * correct based on the operating system of the Fleet.</p> </li> <li>
+     * <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call
+     * <code>InitSDK()</code> within the time expected (5 minutes). Check your game
+     * session log to see why <code>InitSDK()</code> was not called in time.</p> </li>
+     * <li> <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call
      * <code>ProcessReady()</code> within the time expected (5 minutes) after calling
      * <code>InitSDK()</code>. Check your game session log to see why
      * <code>ProcessReady()</code> was not called in time.</p> </li> <li>

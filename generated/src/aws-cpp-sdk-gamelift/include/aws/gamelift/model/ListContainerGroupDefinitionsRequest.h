@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
-#include <aws/gamelift/model/ContainerSchedulingStrategy.h>
+#include <aws/gamelift/model/ContainerGroupType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -37,19 +37,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of container group definitions to retrieve.</p> <ul> <li> <p>
-     * <code>DAEMON</code> -- Daemon container groups run background processes and are
-     * deployed once per fleet instance.</p> </li> <li> <p> <code>REPLICA</code> --
-     * Replica container groups run your game server application and supporting
-     * software. Replica groups might be deployed multiple times per fleet
-     * instance.</p> </li> </ul>
+     * <p>The type of container group to retrieve. Container group type determines how
+     * Amazon GameLift deploys the container group on each fleet instance.</p>
      */
-    inline const ContainerSchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
-    inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
-    inline void SetSchedulingStrategy(const ContainerSchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
-    inline void SetSchedulingStrategy(ContainerSchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
-    inline ListContainerGroupDefinitionsRequest& WithSchedulingStrategy(const ContainerSchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
-    inline ListContainerGroupDefinitionsRequest& WithSchedulingStrategy(ContainerSchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
+    inline const ContainerGroupType& GetContainerGroupType() const{ return m_containerGroupType; }
+    inline bool ContainerGroupTypeHasBeenSet() const { return m_containerGroupTypeHasBeenSet; }
+    inline void SetContainerGroupType(const ContainerGroupType& value) { m_containerGroupTypeHasBeenSet = true; m_containerGroupType = value; }
+    inline void SetContainerGroupType(ContainerGroupType&& value) { m_containerGroupTypeHasBeenSet = true; m_containerGroupType = std::move(value); }
+    inline ListContainerGroupDefinitionsRequest& WithContainerGroupType(const ContainerGroupType& value) { SetContainerGroupType(value); return *this;}
+    inline ListContainerGroupDefinitionsRequest& WithContainerGroupType(ContainerGroupType&& value) { SetContainerGroupType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,8 +76,8 @@ namespace Model
     ///@}
   private:
 
-    ContainerSchedulingStrategy m_schedulingStrategy;
-    bool m_schedulingStrategyHasBeenSet = false;
+    ContainerGroupType m_containerGroupType;
+    bool m_containerGroupTypeHasBeenSet = false;
 
     int m_limit;
     bool m_limitHasBeenSet = false;

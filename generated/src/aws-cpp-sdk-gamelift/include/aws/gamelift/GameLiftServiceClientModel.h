@@ -22,6 +22,7 @@
 #include <aws/gamelift/model/ClaimGameServerResult.h>
 #include <aws/gamelift/model/CreateAliasResult.h>
 #include <aws/gamelift/model/CreateBuildResult.h>
+#include <aws/gamelift/model/CreateContainerFleetResult.h>
 #include <aws/gamelift/model/CreateContainerGroupDefinitionResult.h>
 #include <aws/gamelift/model/CreateFleetResult.h>
 #include <aws/gamelift/model/CreateFleetLocationsResult.h>
@@ -36,6 +37,8 @@
 #include <aws/gamelift/model/CreateScriptResult.h>
 #include <aws/gamelift/model/CreateVpcPeeringAuthorizationResult.h>
 #include <aws/gamelift/model/CreateVpcPeeringConnectionResult.h>
+#include <aws/gamelift/model/DeleteContainerFleetResult.h>
+#include <aws/gamelift/model/DeleteContainerGroupDefinitionResult.h>
 #include <aws/gamelift/model/DeleteFleetLocationsResult.h>
 #include <aws/gamelift/model/DeleteGameServerGroupResult.h>
 #include <aws/gamelift/model/DeleteGameSessionQueueResult.h>
@@ -48,10 +51,12 @@
 #include <aws/gamelift/model/DescribeAliasResult.h>
 #include <aws/gamelift/model/DescribeBuildResult.h>
 #include <aws/gamelift/model/DescribeComputeResult.h>
+#include <aws/gamelift/model/DescribeContainerFleetResult.h>
 #include <aws/gamelift/model/DescribeContainerGroupDefinitionResult.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsResult.h>
 #include <aws/gamelift/model/DescribeFleetAttributesResult.h>
 #include <aws/gamelift/model/DescribeFleetCapacityResult.h>
+#include <aws/gamelift/model/DescribeFleetDeploymentResult.h>
 #include <aws/gamelift/model/DescribeFleetEventsResult.h>
 #include <aws/gamelift/model/DescribeFleetLocationAttributesResult.h>
 #include <aws/gamelift/model/DescribeFleetLocationCapacityResult.h>
@@ -82,7 +87,10 @@
 #include <aws/gamelift/model/ListAliasesResult.h>
 #include <aws/gamelift/model/ListBuildsResult.h>
 #include <aws/gamelift/model/ListComputeResult.h>
+#include <aws/gamelift/model/ListContainerFleetsResult.h>
+#include <aws/gamelift/model/ListContainerGroupDefinitionVersionsResult.h>
 #include <aws/gamelift/model/ListContainerGroupDefinitionsResult.h>
+#include <aws/gamelift/model/ListFleetDeploymentsResult.h>
 #include <aws/gamelift/model/ListFleetsResult.h>
 #include <aws/gamelift/model/ListGameServerGroupsResult.h>
 #include <aws/gamelift/model/ListGameServersResult.h>
@@ -108,6 +116,8 @@
 #include <aws/gamelift/model/UntagResourceResult.h>
 #include <aws/gamelift/model/UpdateAliasResult.h>
 #include <aws/gamelift/model/UpdateBuildResult.h>
+#include <aws/gamelift/model/UpdateContainerFleetResult.h>
+#include <aws/gamelift/model/UpdateContainerGroupDefinitionResult.h>
 #include <aws/gamelift/model/UpdateFleetAttributesResult.h>
 #include <aws/gamelift/model/UpdateFleetCapacityResult.h>
 #include <aws/gamelift/model/UpdateFleetPortSettingsResult.h>
@@ -127,6 +137,7 @@
 #include <aws/gamelift/model/DescribeFleetUtilizationRequest.h>
 #include <aws/gamelift/model/DescribeFleetAttributesRequest.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsRequest.h>
+#include <aws/gamelift/model/ListFleetDeploymentsRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionDetailsRequest.h>
 #include <aws/gamelift/model/DescribeMatchmakingConfigurationsRequest.h>
 #include <aws/gamelift/model/ListFleetsRequest.h>
@@ -139,6 +150,7 @@
 #include <aws/gamelift/model/DescribeGameSessionsRequest.h>
 #include <aws/gamelift/model/DescribeVpcPeeringConnectionsRequest.h>
 #include <aws/gamelift/model/ListLocationsRequest.h>
+#include <aws/gamelift/model/ListContainerFleetsRequest.h>
 #include <aws/gamelift/model/ListScriptsRequest.h>
 #include <aws/gamelift/model/ListGameServerGroupsRequest.h>
 #include <aws/core/NoResult.h>
@@ -186,6 +198,7 @@ namespace Aws
       class ClaimGameServerRequest;
       class CreateAliasRequest;
       class CreateBuildRequest;
+      class CreateContainerFleetRequest;
       class CreateContainerGroupDefinitionRequest;
       class CreateFleetRequest;
       class CreateFleetLocationsRequest;
@@ -202,6 +215,7 @@ namespace Aws
       class CreateVpcPeeringConnectionRequest;
       class DeleteAliasRequest;
       class DeleteBuildRequest;
+      class DeleteContainerFleetRequest;
       class DeleteContainerGroupDefinitionRequest;
       class DeleteFleetRequest;
       class DeleteFleetLocationsRequest;
@@ -219,10 +233,12 @@ namespace Aws
       class DescribeAliasRequest;
       class DescribeBuildRequest;
       class DescribeComputeRequest;
+      class DescribeContainerFleetRequest;
       class DescribeContainerGroupDefinitionRequest;
       class DescribeEC2InstanceLimitsRequest;
       class DescribeFleetAttributesRequest;
       class DescribeFleetCapacityRequest;
+      class DescribeFleetDeploymentRequest;
       class DescribeFleetEventsRequest;
       class DescribeFleetLocationAttributesRequest;
       class DescribeFleetLocationCapacityRequest;
@@ -253,7 +269,10 @@ namespace Aws
       class ListAliasesRequest;
       class ListBuildsRequest;
       class ListComputeRequest;
+      class ListContainerFleetsRequest;
+      class ListContainerGroupDefinitionVersionsRequest;
       class ListContainerGroupDefinitionsRequest;
+      class ListFleetDeploymentsRequest;
       class ListFleetsRequest;
       class ListGameServerGroupsRequest;
       class ListGameServersRequest;
@@ -279,6 +298,8 @@ namespace Aws
       class UntagResourceRequest;
       class UpdateAliasRequest;
       class UpdateBuildRequest;
+      class UpdateContainerFleetRequest;
+      class UpdateContainerGroupDefinitionRequest;
       class UpdateFleetAttributesRequest;
       class UpdateFleetCapacityRequest;
       class UpdateFleetPortSettingsRequest;
@@ -297,6 +318,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ClaimGameServerResult, GameLiftError> ClaimGameServerOutcome;
       typedef Aws::Utils::Outcome<CreateAliasResult, GameLiftError> CreateAliasOutcome;
       typedef Aws::Utils::Outcome<CreateBuildResult, GameLiftError> CreateBuildOutcome;
+      typedef Aws::Utils::Outcome<CreateContainerFleetResult, GameLiftError> CreateContainerFleetOutcome;
       typedef Aws::Utils::Outcome<CreateContainerGroupDefinitionResult, GameLiftError> CreateContainerGroupDefinitionOutcome;
       typedef Aws::Utils::Outcome<CreateFleetResult, GameLiftError> CreateFleetOutcome;
       typedef Aws::Utils::Outcome<CreateFleetLocationsResult, GameLiftError> CreateFleetLocationsOutcome;
@@ -313,7 +335,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateVpcPeeringConnectionResult, GameLiftError> CreateVpcPeeringConnectionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftError> DeleteAliasOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftError> DeleteBuildOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftError> DeleteContainerGroupDefinitionOutcome;
+      typedef Aws::Utils::Outcome<DeleteContainerFleetResult, GameLiftError> DeleteContainerFleetOutcome;
+      typedef Aws::Utils::Outcome<DeleteContainerGroupDefinitionResult, GameLiftError> DeleteContainerGroupDefinitionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftError> DeleteFleetOutcome;
       typedef Aws::Utils::Outcome<DeleteFleetLocationsResult, GameLiftError> DeleteFleetLocationsOutcome;
       typedef Aws::Utils::Outcome<DeleteGameServerGroupResult, GameLiftError> DeleteGameServerGroupOutcome;
@@ -330,10 +353,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAliasResult, GameLiftError> DescribeAliasOutcome;
       typedef Aws::Utils::Outcome<DescribeBuildResult, GameLiftError> DescribeBuildOutcome;
       typedef Aws::Utils::Outcome<DescribeComputeResult, GameLiftError> DescribeComputeOutcome;
+      typedef Aws::Utils::Outcome<DescribeContainerFleetResult, GameLiftError> DescribeContainerFleetOutcome;
       typedef Aws::Utils::Outcome<DescribeContainerGroupDefinitionResult, GameLiftError> DescribeContainerGroupDefinitionOutcome;
       typedef Aws::Utils::Outcome<DescribeEC2InstanceLimitsResult, GameLiftError> DescribeEC2InstanceLimitsOutcome;
       typedef Aws::Utils::Outcome<DescribeFleetAttributesResult, GameLiftError> DescribeFleetAttributesOutcome;
       typedef Aws::Utils::Outcome<DescribeFleetCapacityResult, GameLiftError> DescribeFleetCapacityOutcome;
+      typedef Aws::Utils::Outcome<DescribeFleetDeploymentResult, GameLiftError> DescribeFleetDeploymentOutcome;
       typedef Aws::Utils::Outcome<DescribeFleetEventsResult, GameLiftError> DescribeFleetEventsOutcome;
       typedef Aws::Utils::Outcome<DescribeFleetLocationAttributesResult, GameLiftError> DescribeFleetLocationAttributesOutcome;
       typedef Aws::Utils::Outcome<DescribeFleetLocationCapacityResult, GameLiftError> DescribeFleetLocationCapacityOutcome;
@@ -364,7 +389,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAliasesResult, GameLiftError> ListAliasesOutcome;
       typedef Aws::Utils::Outcome<ListBuildsResult, GameLiftError> ListBuildsOutcome;
       typedef Aws::Utils::Outcome<ListComputeResult, GameLiftError> ListComputeOutcome;
+      typedef Aws::Utils::Outcome<ListContainerFleetsResult, GameLiftError> ListContainerFleetsOutcome;
+      typedef Aws::Utils::Outcome<ListContainerGroupDefinitionVersionsResult, GameLiftError> ListContainerGroupDefinitionVersionsOutcome;
       typedef Aws::Utils::Outcome<ListContainerGroupDefinitionsResult, GameLiftError> ListContainerGroupDefinitionsOutcome;
+      typedef Aws::Utils::Outcome<ListFleetDeploymentsResult, GameLiftError> ListFleetDeploymentsOutcome;
       typedef Aws::Utils::Outcome<ListFleetsResult, GameLiftError> ListFleetsOutcome;
       typedef Aws::Utils::Outcome<ListGameServerGroupsResult, GameLiftError> ListGameServerGroupsOutcome;
       typedef Aws::Utils::Outcome<ListGameServersResult, GameLiftError> ListGameServersOutcome;
@@ -390,6 +418,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<UntagResourceResult, GameLiftError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAliasResult, GameLiftError> UpdateAliasOutcome;
       typedef Aws::Utils::Outcome<UpdateBuildResult, GameLiftError> UpdateBuildOutcome;
+      typedef Aws::Utils::Outcome<UpdateContainerFleetResult, GameLiftError> UpdateContainerFleetOutcome;
+      typedef Aws::Utils::Outcome<UpdateContainerGroupDefinitionResult, GameLiftError> UpdateContainerGroupDefinitionOutcome;
       typedef Aws::Utils::Outcome<UpdateFleetAttributesResult, GameLiftError> UpdateFleetAttributesOutcome;
       typedef Aws::Utils::Outcome<UpdateFleetCapacityResult, GameLiftError> UpdateFleetCapacityOutcome;
       typedef Aws::Utils::Outcome<UpdateFleetPortSettingsResult, GameLiftError> UpdateFleetPortSettingsOutcome;
@@ -408,6 +438,7 @@ namespace Aws
       typedef std::future<ClaimGameServerOutcome> ClaimGameServerOutcomeCallable;
       typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
       typedef std::future<CreateBuildOutcome> CreateBuildOutcomeCallable;
+      typedef std::future<CreateContainerFleetOutcome> CreateContainerFleetOutcomeCallable;
       typedef std::future<CreateContainerGroupDefinitionOutcome> CreateContainerGroupDefinitionOutcomeCallable;
       typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
       typedef std::future<CreateFleetLocationsOutcome> CreateFleetLocationsOutcomeCallable;
@@ -424,6 +455,7 @@ namespace Aws
       typedef std::future<CreateVpcPeeringConnectionOutcome> CreateVpcPeeringConnectionOutcomeCallable;
       typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
       typedef std::future<DeleteBuildOutcome> DeleteBuildOutcomeCallable;
+      typedef std::future<DeleteContainerFleetOutcome> DeleteContainerFleetOutcomeCallable;
       typedef std::future<DeleteContainerGroupDefinitionOutcome> DeleteContainerGroupDefinitionOutcomeCallable;
       typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
       typedef std::future<DeleteFleetLocationsOutcome> DeleteFleetLocationsOutcomeCallable;
@@ -441,10 +473,12 @@ namespace Aws
       typedef std::future<DescribeAliasOutcome> DescribeAliasOutcomeCallable;
       typedef std::future<DescribeBuildOutcome> DescribeBuildOutcomeCallable;
       typedef std::future<DescribeComputeOutcome> DescribeComputeOutcomeCallable;
+      typedef std::future<DescribeContainerFleetOutcome> DescribeContainerFleetOutcomeCallable;
       typedef std::future<DescribeContainerGroupDefinitionOutcome> DescribeContainerGroupDefinitionOutcomeCallable;
       typedef std::future<DescribeEC2InstanceLimitsOutcome> DescribeEC2InstanceLimitsOutcomeCallable;
       typedef std::future<DescribeFleetAttributesOutcome> DescribeFleetAttributesOutcomeCallable;
       typedef std::future<DescribeFleetCapacityOutcome> DescribeFleetCapacityOutcomeCallable;
+      typedef std::future<DescribeFleetDeploymentOutcome> DescribeFleetDeploymentOutcomeCallable;
       typedef std::future<DescribeFleetEventsOutcome> DescribeFleetEventsOutcomeCallable;
       typedef std::future<DescribeFleetLocationAttributesOutcome> DescribeFleetLocationAttributesOutcomeCallable;
       typedef std::future<DescribeFleetLocationCapacityOutcome> DescribeFleetLocationCapacityOutcomeCallable;
@@ -475,7 +509,10 @@ namespace Aws
       typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
       typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
       typedef std::future<ListComputeOutcome> ListComputeOutcomeCallable;
+      typedef std::future<ListContainerFleetsOutcome> ListContainerFleetsOutcomeCallable;
+      typedef std::future<ListContainerGroupDefinitionVersionsOutcome> ListContainerGroupDefinitionVersionsOutcomeCallable;
       typedef std::future<ListContainerGroupDefinitionsOutcome> ListContainerGroupDefinitionsOutcomeCallable;
+      typedef std::future<ListFleetDeploymentsOutcome> ListFleetDeploymentsOutcomeCallable;
       typedef std::future<ListFleetsOutcome> ListFleetsOutcomeCallable;
       typedef std::future<ListGameServerGroupsOutcome> ListGameServerGroupsOutcomeCallable;
       typedef std::future<ListGameServersOutcome> ListGameServersOutcomeCallable;
@@ -501,6 +538,8 @@ namespace Aws
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
       typedef std::future<UpdateBuildOutcome> UpdateBuildOutcomeCallable;
+      typedef std::future<UpdateContainerFleetOutcome> UpdateContainerFleetOutcomeCallable;
+      typedef std::future<UpdateContainerGroupDefinitionOutcome> UpdateContainerGroupDefinitionOutcomeCallable;
       typedef std::future<UpdateFleetAttributesOutcome> UpdateFleetAttributesOutcomeCallable;
       typedef std::future<UpdateFleetCapacityOutcome> UpdateFleetCapacityOutcomeCallable;
       typedef std::future<UpdateFleetPortSettingsOutcome> UpdateFleetPortSettingsOutcomeCallable;
@@ -522,6 +561,7 @@ namespace Aws
     typedef std::function<void(const GameLiftClient*, const Model::ClaimGameServerRequest&, const Model::ClaimGameServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClaimGameServerResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateBuildRequest&, const Model::CreateBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBuildResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::CreateContainerFleetRequest&, const Model::CreateContainerFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContainerFleetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateContainerGroupDefinitionRequest&, const Model::CreateContainerGroupDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContainerGroupDefinitionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateFleetLocationsRequest&, const Model::CreateFleetLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetLocationsResponseReceivedHandler;
@@ -538,6 +578,7 @@ namespace Aws
     typedef std::function<void(const GameLiftClient*, const Model::CreateVpcPeeringConnectionRequest&, const Model::CreateVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVpcPeeringConnectionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteAliasRequest&, const Model::DeleteAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteBuildRequest&, const Model::DeleteBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBuildResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DeleteContainerFleetRequest&, const Model::DeleteContainerFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerFleetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteContainerGroupDefinitionRequest&, const Model::DeleteContainerGroupDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerGroupDefinitionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteFleetRequest&, const Model::DeleteFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteFleetLocationsRequest&, const Model::DeleteFleetLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetLocationsResponseReceivedHandler;
@@ -555,10 +596,12 @@ namespace Aws
     typedef std::function<void(const GameLiftClient*, const Model::DescribeAliasRequest&, const Model::DescribeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeBuildRequest&, const Model::DescribeBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBuildResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeComputeRequest&, const Model::DescribeComputeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComputeResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DescribeContainerFleetRequest&, const Model::DescribeContainerFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContainerFleetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeContainerGroupDefinitionRequest&, const Model::DescribeContainerGroupDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContainerGroupDefinitionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeEC2InstanceLimitsRequest&, const Model::DescribeEC2InstanceLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEC2InstanceLimitsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetAttributesRequest&, const Model::DescribeFleetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetAttributesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetCapacityRequest&, const Model::DescribeFleetCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetCapacityResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetDeploymentRequest&, const Model::DescribeFleetDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetDeploymentResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetEventsRequest&, const Model::DescribeFleetEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetEventsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetLocationAttributesRequest&, const Model::DescribeFleetLocationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetLocationAttributesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetLocationCapacityRequest&, const Model::DescribeFleetLocationCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetLocationCapacityResponseReceivedHandler;
@@ -589,7 +632,10 @@ namespace Aws
     typedef std::function<void(const GameLiftClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListBuildsRequest&, const Model::ListBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListComputeRequest&, const Model::ListComputeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComputeResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::ListContainerFleetsRequest&, const Model::ListContainerFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainerFleetsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::ListContainerGroupDefinitionVersionsRequest&, const Model::ListContainerGroupDefinitionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainerGroupDefinitionVersionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListContainerGroupDefinitionsRequest&, const Model::ListContainerGroupDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainerGroupDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::ListFleetDeploymentsRequest&, const Model::ListFleetDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetDeploymentsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListFleetsRequest&, const Model::ListFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListGameServerGroupsRequest&, const Model::ListGameServerGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGameServerGroupsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListGameServersRequest&, const Model::ListGameServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGameServersResponseReceivedHandler;
@@ -615,6 +661,8 @@ namespace Aws
     typedef std::function<void(const GameLiftClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateAliasRequest&, const Model::UpdateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateBuildRequest&, const Model::UpdateBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBuildResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::UpdateContainerFleetRequest&, const Model::UpdateContainerFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerFleetResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::UpdateContainerGroupDefinitionRequest&, const Model::UpdateContainerGroupDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerGroupDefinitionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateFleetAttributesRequest&, const Model::UpdateFleetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetAttributesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateFleetCapacityRequest&, const Model::UpdateFleetCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetCapacityResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateFleetPortSettingsRequest&, const Model::UpdateFleetPortSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetPortSettingsResponseReceivedHandler;

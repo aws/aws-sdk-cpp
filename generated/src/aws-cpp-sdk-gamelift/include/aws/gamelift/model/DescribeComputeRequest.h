@@ -53,10 +53,7 @@ namespace Model
     /**
      * <p>The unique identifier of the compute resource to retrieve properties for. For
      * an Anywhere fleet compute, use the registered compute name. For an EC2 fleet
-     * instance, use the instance ID. For a container fleet, use the compute name (for
-     * example,
-     * <code>a123b456c789012d3e4567f8a901b23c/1a234b56-7cd8-9e0f-a1b2-c34d567ef8a9</code>)
-     * or the compute ARN.</p>
+     * instance, use the instance ID. </p>
      */
     inline const Aws::String& GetComputeName() const{ return m_computeName; }
     inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }

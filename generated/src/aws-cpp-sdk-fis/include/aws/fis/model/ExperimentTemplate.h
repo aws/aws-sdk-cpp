@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/fis/model/ExperimentTemplateLogConfiguration.h>
 #include <aws/fis/model/ExperimentTemplateExperimentOptions.h>
+#include <aws/fis/model/ExperimentTemplateReportConfiguration.h>
 #include <aws/fis/model/ExperimentTemplateTarget.h>
 #include <aws/fis/model/ExperimentTemplateAction.h>
 #include <aws/fis/model/ExperimentTemplateStopCondition.h>
@@ -227,6 +228,18 @@ namespace Model
     inline void SetTargetAccountConfigurationsCount(long long value) { m_targetAccountConfigurationsCountHasBeenSet = true; m_targetAccountConfigurationsCount = value; }
     inline ExperimentTemplate& WithTargetAccountConfigurationsCount(long long value) { SetTargetAccountConfigurationsCount(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Describes the report configuration for the experiment template.</p>
+     */
+    inline const ExperimentTemplateReportConfiguration& GetExperimentReportConfiguration() const{ return m_experimentReportConfiguration; }
+    inline bool ExperimentReportConfigurationHasBeenSet() const { return m_experimentReportConfigurationHasBeenSet; }
+    inline void SetExperimentReportConfiguration(const ExperimentTemplateReportConfiguration& value) { m_experimentReportConfigurationHasBeenSet = true; m_experimentReportConfiguration = value; }
+    inline void SetExperimentReportConfiguration(ExperimentTemplateReportConfiguration&& value) { m_experimentReportConfigurationHasBeenSet = true; m_experimentReportConfiguration = std::move(value); }
+    inline ExperimentTemplate& WithExperimentReportConfiguration(const ExperimentTemplateReportConfiguration& value) { SetExperimentReportConfiguration(value); return *this;}
+    inline ExperimentTemplate& WithExperimentReportConfiguration(ExperimentTemplateReportConfiguration&& value) { SetExperimentReportConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -267,6 +280,9 @@ namespace Model
 
     long long m_targetAccountConfigurationsCount;
     bool m_targetAccountConfigurationsCountHasBeenSet = false;
+
+    ExperimentTemplateReportConfiguration m_experimentReportConfiguration;
+    bool m_experimentReportConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

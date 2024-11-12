@@ -65,6 +65,15 @@ GetComputeAccessResult& GetComputeAccessResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("ContainerIdentifiers"))
+  {
+    Aws::Utils::Array<JsonView> containerIdentifiersJsonList = jsonValue.GetArray("ContainerIdentifiers");
+    for(unsigned containerIdentifiersIndex = 0; containerIdentifiersIndex < containerIdentifiersJsonList.GetLength(); ++containerIdentifiersIndex)
+    {
+      m_containerIdentifiers.push_back(containerIdentifiersJsonList[containerIdentifiersIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

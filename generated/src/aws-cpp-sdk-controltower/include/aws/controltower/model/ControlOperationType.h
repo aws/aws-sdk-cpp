@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     ENABLE_CONTROL,
     DISABLE_CONTROL,
-    UPDATE_ENABLED_CONTROL
+    UPDATE_ENABLED_CONTROL,
+    RESET_ENABLED_CONTROL
   };
 
 namespace ControlOperationTypeMapper

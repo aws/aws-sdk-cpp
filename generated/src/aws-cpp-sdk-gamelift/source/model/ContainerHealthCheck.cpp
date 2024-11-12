@@ -22,12 +22,12 @@ ContainerHealthCheck::ContainerHealthCheck() :
     m_commandHasBeenSet(false),
     m_interval(0),
     m_intervalHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
     m_retries(0),
     m_retriesHasBeenSet(false),
     m_startPeriod(0),
-    m_startPeriodHasBeenSet(false)
+    m_startPeriodHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false)
 {
 }
 
@@ -56,13 +56,6 @@ ContainerHealthCheck& ContainerHealthCheck::operator =(JsonView jsonValue)
     m_intervalHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Timeout"))
-  {
-    m_timeout = jsonValue.GetInteger("Timeout");
-
-    m_timeoutHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Retries"))
   {
     m_retries = jsonValue.GetInteger("Retries");
@@ -75,6 +68,13 @@ ContainerHealthCheck& ContainerHealthCheck::operator =(JsonView jsonValue)
     m_startPeriod = jsonValue.GetInteger("StartPeriod");
 
     m_startPeriodHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Timeout"))
+  {
+    m_timeout = jsonValue.GetInteger("Timeout");
+
+    m_timeoutHasBeenSet = true;
   }
 
   return *this;
@@ -101,12 +101,6 @@ JsonValue ContainerHealthCheck::Jsonize() const
 
   }
 
-  if(m_timeoutHasBeenSet)
-  {
-   payload.WithInteger("Timeout", m_timeout);
-
-  }
-
   if(m_retriesHasBeenSet)
   {
    payload.WithInteger("Retries", m_retries);
@@ -116,6 +110,12 @@ JsonValue ContainerHealthCheck::Jsonize() const
   if(m_startPeriodHasBeenSet)
   {
    payload.WithInteger("StartPeriod", m_startPeriod);
+
+  }
+
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithInteger("Timeout", m_timeout);
 
   }
 

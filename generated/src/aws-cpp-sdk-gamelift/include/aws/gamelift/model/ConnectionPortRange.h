@@ -22,12 +22,9 @@ namespace Model
 {
 
   /**
-   * <p> <b>This operation has been expanded to use with the Amazon GameLift
-   * containers feature, which is currently in public preview.</b> </p> <p>The set of
-   * port numbers to open on each instance in a container fleet. Connection ports are
-   * used by inbound traffic to connect with processes that are running in containers
-   * on the fleet.</p> <p> <b>Part of:</b> <a>ContainerGroupsConfiguration</a>,
-   * <a>ContainerGroupsAttributes</a> </p><p><h3>See Also:</h3>   <a
+   * <p>The set of port numbers to open on each instance in a container fleet.
+   * Connection ports are used by inbound traffic to connect with processes that are
+   * running in containers on the fleet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ConnectionPortRange">AWS
    * API Reference</a></p>
    */

@@ -24,13 +24,17 @@ ContainerGroupDefinition::ContainerGroupDefinition() :
     m_operatingSystem(ContainerOperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_schedulingStrategy(ContainerSchedulingStrategy::NOT_SET),
-    m_schedulingStrategyHasBeenSet(false),
-    m_totalMemoryLimit(0),
-    m_totalMemoryLimitHasBeenSet(false),
-    m_totalCpuLimit(0),
-    m_totalCpuLimitHasBeenSet(false),
-    m_containerDefinitionsHasBeenSet(false),
+    m_containerGroupType(ContainerGroupType::NOT_SET),
+    m_containerGroupTypeHasBeenSet(false),
+    m_totalMemoryLimitMebibytes(0),
+    m_totalMemoryLimitMebibytesHasBeenSet(false),
+    m_totalVcpuLimit(0.0),
+    m_totalVcpuLimitHasBeenSet(false),
+    m_gameServerContainerDefinitionHasBeenSet(false),
+    m_supportContainerDefinitionsHasBeenSet(false),
+    m_versionNumber(0),
+    m_versionNumberHasBeenSet(false),
+    m_versionDescriptionHasBeenSet(false),
     m_status(ContainerGroupDefinitionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false)
@@ -73,35 +77,56 @@ ContainerGroupDefinition& ContainerGroupDefinition::operator =(JsonView jsonValu
     m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("SchedulingStrategy"))
+  if(jsonValue.ValueExists("ContainerGroupType"))
   {
-    m_schedulingStrategy = ContainerSchedulingStrategyMapper::GetContainerSchedulingStrategyForName(jsonValue.GetString("SchedulingStrategy"));
+    m_containerGroupType = ContainerGroupTypeMapper::GetContainerGroupTypeForName(jsonValue.GetString("ContainerGroupType"));
 
-    m_schedulingStrategyHasBeenSet = true;
+    m_containerGroupTypeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("TotalMemoryLimit"))
+  if(jsonValue.ValueExists("TotalMemoryLimitMebibytes"))
   {
-    m_totalMemoryLimit = jsonValue.GetInteger("TotalMemoryLimit");
+    m_totalMemoryLimitMebibytes = jsonValue.GetInteger("TotalMemoryLimitMebibytes");
 
-    m_totalMemoryLimitHasBeenSet = true;
+    m_totalMemoryLimitMebibytesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("TotalCpuLimit"))
+  if(jsonValue.ValueExists("TotalVcpuLimit"))
   {
-    m_totalCpuLimit = jsonValue.GetInteger("TotalCpuLimit");
+    m_totalVcpuLimit = jsonValue.GetDouble("TotalVcpuLimit");
 
-    m_totalCpuLimitHasBeenSet = true;
+    m_totalVcpuLimitHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ContainerDefinitions"))
+  if(jsonValue.ValueExists("GameServerContainerDefinition"))
   {
-    Aws::Utils::Array<JsonView> containerDefinitionsJsonList = jsonValue.GetArray("ContainerDefinitions");
-    for(unsigned containerDefinitionsIndex = 0; containerDefinitionsIndex < containerDefinitionsJsonList.GetLength(); ++containerDefinitionsIndex)
+    m_gameServerContainerDefinition = jsonValue.GetObject("GameServerContainerDefinition");
+
+    m_gameServerContainerDefinitionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SupportContainerDefinitions"))
+  {
+    Aws::Utils::Array<JsonView> supportContainerDefinitionsJsonList = jsonValue.GetArray("SupportContainerDefinitions");
+    for(unsigned supportContainerDefinitionsIndex = 0; supportContainerDefinitionsIndex < supportContainerDefinitionsJsonList.GetLength(); ++supportContainerDefinitionsIndex)
     {
-      m_containerDefinitions.push_back(containerDefinitionsJsonList[containerDefinitionsIndex].AsObject());
+      m_supportContainerDefinitions.push_back(supportContainerDefinitionsJsonList[supportContainerDefinitionsIndex].AsObject());
     }
-    m_containerDefinitionsHasBeenSet = true;
+    m_supportContainerDefinitionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VersionNumber"))
+  {
+    m_versionNumber = jsonValue.GetInteger("VersionNumber");
+
+    m_versionNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VersionDescription"))
+  {
+    m_versionDescription = jsonValue.GetString("VersionDescription");
+
+    m_versionDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -147,31 +172,49 @@ JsonValue ContainerGroupDefinition::Jsonize() const
 
   }
 
-  if(m_schedulingStrategyHasBeenSet)
+  if(m_containerGroupTypeHasBeenSet)
   {
-   payload.WithString("SchedulingStrategy", ContainerSchedulingStrategyMapper::GetNameForContainerSchedulingStrategy(m_schedulingStrategy));
+   payload.WithString("ContainerGroupType", ContainerGroupTypeMapper::GetNameForContainerGroupType(m_containerGroupType));
   }
 
-  if(m_totalMemoryLimitHasBeenSet)
+  if(m_totalMemoryLimitMebibytesHasBeenSet)
   {
-   payload.WithInteger("TotalMemoryLimit", m_totalMemoryLimit);
-
-  }
-
-  if(m_totalCpuLimitHasBeenSet)
-  {
-   payload.WithInteger("TotalCpuLimit", m_totalCpuLimit);
+   payload.WithInteger("TotalMemoryLimitMebibytes", m_totalMemoryLimitMebibytes);
 
   }
 
-  if(m_containerDefinitionsHasBeenSet)
+  if(m_totalVcpuLimitHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> containerDefinitionsJsonList(m_containerDefinitions.size());
-   for(unsigned containerDefinitionsIndex = 0; containerDefinitionsIndex < containerDefinitionsJsonList.GetLength(); ++containerDefinitionsIndex)
+   payload.WithDouble("TotalVcpuLimit", m_totalVcpuLimit);
+
+  }
+
+  if(m_gameServerContainerDefinitionHasBeenSet)
+  {
+   payload.WithObject("GameServerContainerDefinition", m_gameServerContainerDefinition.Jsonize());
+
+  }
+
+  if(m_supportContainerDefinitionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> supportContainerDefinitionsJsonList(m_supportContainerDefinitions.size());
+   for(unsigned supportContainerDefinitionsIndex = 0; supportContainerDefinitionsIndex < supportContainerDefinitionsJsonList.GetLength(); ++supportContainerDefinitionsIndex)
    {
-     containerDefinitionsJsonList[containerDefinitionsIndex].AsObject(m_containerDefinitions[containerDefinitionsIndex].Jsonize());
+     supportContainerDefinitionsJsonList[supportContainerDefinitionsIndex].AsObject(m_supportContainerDefinitions[supportContainerDefinitionsIndex].Jsonize());
    }
-   payload.WithArray("ContainerDefinitions", std::move(containerDefinitionsJsonList));
+   payload.WithArray("SupportContainerDefinitions", std::move(supportContainerDefinitionsJsonList));
+
+  }
+
+  if(m_versionNumberHasBeenSet)
+  {
+   payload.WithInteger("VersionNumber", m_versionNumber);
+
+  }
+
+  if(m_versionDescriptionHasBeenSet)
+  {
+   payload.WithString("VersionDescription", m_versionDescription);
 
   }
 

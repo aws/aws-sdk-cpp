@@ -39,6 +39,7 @@
 #include <aws/controltower/model/ListLandingZonesResult.h>
 #include <aws/controltower/model/ListTagsForResourceResult.h>
 #include <aws/controltower/model/ResetEnabledBaselineResult.h>
+#include <aws/controltower/model/ResetEnabledControlResult.h>
 #include <aws/controltower/model/ResetLandingZoneResult.h>
 #include <aws/controltower/model/TagResourceResult.h>
 #include <aws/controltower/model/UntagResourceResult.h>
@@ -112,6 +113,7 @@ namespace Aws
       class ListLandingZonesRequest;
       class ListTagsForResourceRequest;
       class ResetEnabledBaselineRequest;
+      class ResetEnabledControlRequest;
       class ResetLandingZoneRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -142,6 +144,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListLandingZonesResult, ControlTowerError> ListLandingZonesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ControlTowerError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ResetEnabledBaselineResult, ControlTowerError> ResetEnabledBaselineOutcome;
+      typedef Aws::Utils::Outcome<ResetEnabledControlResult, ControlTowerError> ResetEnabledControlOutcome;
       typedef Aws::Utils::Outcome<ResetLandingZoneResult, ControlTowerError> ResetLandingZoneOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, ControlTowerError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, ControlTowerError> UntagResourceOutcome;
@@ -172,6 +175,7 @@ namespace Aws
       typedef std::future<ListLandingZonesOutcome> ListLandingZonesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ResetEnabledBaselineOutcome> ResetEnabledBaselineOutcomeCallable;
+      typedef std::future<ResetEnabledControlOutcome> ResetEnabledControlOutcomeCallable;
       typedef std::future<ResetLandingZoneOutcome> ResetLandingZoneOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -205,6 +209,7 @@ namespace Aws
     typedef std::function<void(const ControlTowerClient*, const Model::ListLandingZonesRequest&, const Model::ListLandingZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLandingZonesResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::ResetEnabledBaselineRequest&, const Model::ResetEnabledBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetEnabledBaselineResponseReceivedHandler;
+    typedef std::function<void(const ControlTowerClient*, const Model::ResetEnabledControlRequest&, const Model::ResetEnabledControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetEnabledControlResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::ResetLandingZoneRequest&, const Model::ResetLandingZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetLandingZoneResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ControlTowerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

@@ -36,7 +36,8 @@ Compute::Compute() :
     m_gameLiftServiceSdkEndpointHasBeenSet(false),
     m_gameLiftAgentEndpointHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_containerAttributesHasBeenSet(false)
+    m_containerAttributesHasBeenSet(false),
+    m_gameServerContainerGroupDefinitionArnHasBeenSet(false)
 {
 }
 
@@ -148,9 +149,19 @@ Compute& Compute::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ContainerAttributes"))
   {
-    m_containerAttributes = jsonValue.GetObject("ContainerAttributes");
-
+    Aws::Utils::Array<JsonView> containerAttributesJsonList = jsonValue.GetArray("ContainerAttributes");
+    for(unsigned containerAttributesIndex = 0; containerAttributesIndex < containerAttributesJsonList.GetLength(); ++containerAttributesIndex)
+    {
+      m_containerAttributes.push_back(containerAttributesJsonList[containerAttributesIndex].AsObject());
+    }
     m_containerAttributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GameServerContainerGroupDefinitionArn"))
+  {
+    m_gameServerContainerGroupDefinitionArn = jsonValue.GetString("GameServerContainerGroupDefinitionArn");
+
+    m_gameServerContainerGroupDefinitionArnHasBeenSet = true;
   }
 
   return *this;
@@ -242,7 +253,18 @@ JsonValue Compute::Jsonize() const
 
   if(m_containerAttributesHasBeenSet)
   {
-   payload.WithObject("ContainerAttributes", m_containerAttributes.Jsonize());
+   Aws::Utils::Array<JsonValue> containerAttributesJsonList(m_containerAttributes.size());
+   for(unsigned containerAttributesIndex = 0; containerAttributesIndex < containerAttributesJsonList.GetLength(); ++containerAttributesIndex)
+   {
+     containerAttributesJsonList[containerAttributesIndex].AsObject(m_containerAttributes[containerAttributesIndex].Jsonize());
+   }
+   payload.WithArray("ContainerAttributes", std::move(containerAttributesJsonList));
+
+  }
+
+  if(m_gameServerContainerGroupDefinitionArnHasBeenSet)
+  {
+   payload.WithString("GameServerContainerGroupDefinitionArn", m_gameServerContainerGroupDefinitionArn);
 
   }
 

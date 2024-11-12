@@ -8,7 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/EC2InstanceType.h>
 #include <aws/gamelift/model/EC2InstanceCounts.h>
-#include <aws/gamelift/model/ReplicaContainerGroupCounts.h>
+#include <aws/gamelift/model/GameServerContainerGroupCounts.h>
 #include <utility>
 
 namespace Aws
@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Current resource capacity settings for managed EC2 fleets and container
-   * fleets. For multi-location fleets, location values might refer to a fleet's
-   * remote location or its home Region. </p> <p> <b>Returned by:</b> <a
+   * <p>Current resource capacity settings for managed EC2 fleets and managed
+   * container fleets. For multi-location fleets, location values might refer to a
+   * fleet's remote location or its home Region. </p> <p> <b>Returned by:</b> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>,
    * <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>,
@@ -128,16 +128,15 @@ namespace Model
 
     ///@{
     /**
-     * <p> <b>This property is used with the Amazon GameLift containers feature, which
-     * is currently in public preview.</b> The number and status of replica container
-     * groups in a container fleet.</p>
+     * <p>The number and status of game server container groups deployed in a container
+     * fleet. </p>
      */
-    inline const ReplicaContainerGroupCounts& GetReplicaContainerGroupCounts() const{ return m_replicaContainerGroupCounts; }
-    inline bool ReplicaContainerGroupCountsHasBeenSet() const { return m_replicaContainerGroupCountsHasBeenSet; }
-    inline void SetReplicaContainerGroupCounts(const ReplicaContainerGroupCounts& value) { m_replicaContainerGroupCountsHasBeenSet = true; m_replicaContainerGroupCounts = value; }
-    inline void SetReplicaContainerGroupCounts(ReplicaContainerGroupCounts&& value) { m_replicaContainerGroupCountsHasBeenSet = true; m_replicaContainerGroupCounts = std::move(value); }
-    inline FleetCapacity& WithReplicaContainerGroupCounts(const ReplicaContainerGroupCounts& value) { SetReplicaContainerGroupCounts(value); return *this;}
-    inline FleetCapacity& WithReplicaContainerGroupCounts(ReplicaContainerGroupCounts&& value) { SetReplicaContainerGroupCounts(std::move(value)); return *this;}
+    inline const GameServerContainerGroupCounts& GetGameServerContainerGroupCounts() const{ return m_gameServerContainerGroupCounts; }
+    inline bool GameServerContainerGroupCountsHasBeenSet() const { return m_gameServerContainerGroupCountsHasBeenSet; }
+    inline void SetGameServerContainerGroupCounts(const GameServerContainerGroupCounts& value) { m_gameServerContainerGroupCountsHasBeenSet = true; m_gameServerContainerGroupCounts = value; }
+    inline void SetGameServerContainerGroupCounts(GameServerContainerGroupCounts&& value) { m_gameServerContainerGroupCountsHasBeenSet = true; m_gameServerContainerGroupCounts = std::move(value); }
+    inline FleetCapacity& WithGameServerContainerGroupCounts(const GameServerContainerGroupCounts& value) { SetGameServerContainerGroupCounts(value); return *this;}
+    inline FleetCapacity& WithGameServerContainerGroupCounts(GameServerContainerGroupCounts&& value) { SetGameServerContainerGroupCounts(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -156,8 +155,8 @@ namespace Model
     Aws::String m_location;
     bool m_locationHasBeenSet = false;
 
-    ReplicaContainerGroupCounts m_replicaContainerGroupCounts;
-    bool m_replicaContainerGroupCountsHasBeenSet = false;
+    GameServerContainerGroupCounts m_gameServerContainerGroupCounts;
+    bool m_gameServerContainerGroupCountsHasBeenSet = false;
   };
 
 } // namespace Model
