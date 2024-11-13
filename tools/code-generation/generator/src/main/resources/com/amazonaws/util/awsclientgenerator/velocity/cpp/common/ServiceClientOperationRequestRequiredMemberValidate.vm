@@ -1,4 +1,3 @@
-#if($serviceModel.endpointRules)
 #if(!$operation.request.shape.hasEventStreamMembers())
 #if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
 #if($operation.request)
@@ -19,7 +18,6 @@
     return;
   }
 #end##-#if(!$operation.request.shape.hasEventStreamMembers())
-#end
 #foreach($memberEntry in $operation.request.shape.members.entrySet())
 #if($memberEntry.value.validationNeeded && !$memberEntry.value.streaming && !$memberEntry.value.usedForPayload && !($operation.arnEndpointAllowed && $memberEntry.value.shape.name.equals($operation.accountIdMemberName)))
 #set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($memberEntry.key))
@@ -43,37 +41,3 @@
   }
 #end
 #end
-#if($operation.arnEndpointAllowed && $operation.hasAccountIdMember && !$serviceModel.endpointRules)
-#set($accountIdMemberWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($operation.accountIdMemberName))
-  ${metadata.classNamePrefix}ARN arn(request.Get${CppViewHelper.capitalizeFirstChar($operation.arnEndpointMemberName)}());
-  if (!arn && request.Get${accountIdMemberWithFirstLetterCapitalized}().empty())
-  {
-#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
-#if($operation.request)
-      return handlder(this, request, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
-          "Account ID should be specified via either accountId field or an ARN", false)), handlerContext);
-#else
-      return handlder(this, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
-          "Account ID should be specified via either accountId field or an ARN", false)), handlerContext);
-#end
-#else
-      return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
-          "Account ID should be specified via either accountId field or an ARN", false));
-#end
-  }
-  if (arn && !request.Get${accountIdMemberWithFirstLetterCapitalized}().empty() && request.Get${accountIdMemberWithFirstLetterCapitalized}() != arn.GetAccountId())
-  {
-#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
-#if($operation.request)
-      return handler(this, request, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false)), handlerContext);
-#else
-      return handler(this, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
-          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false)), handlerContext);
-#end
-#else
-      return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
-          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
-#end
-  }
-#end##-#if($operation.arnEndpointAllowed && $operation.hasAccountIdMember && !$serviceModel.endpointRules)

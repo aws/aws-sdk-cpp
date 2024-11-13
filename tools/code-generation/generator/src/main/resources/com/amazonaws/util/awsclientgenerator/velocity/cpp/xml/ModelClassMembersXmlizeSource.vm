@@ -60,31 +60,7 @@
   ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName});
 #else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
-#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("body") && $operation.arnEndpointMemberName.equals($memberName) && !$serviceModel.endpointRules))
-  ${spaces}${metadata.classNamePrefix}ARN arn($CppViewHelper.computeMemberVariableName($operation.arnEndpointMemberName));
-  ${spaces}if (arn && arn.Validate().IsSuccess())
-  ${spaces}{
-  ${spaces}  if (arn.GetResourceType() == ARNResourceType::BUCKET)
-  ${spaces}  {
-  ${spaces}    ${lowerCaseVarName}Node.SetText(arn.GetResourceId());
-  ${spaces}  }
-  ${spaces}  else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
-  ${spaces}  {
-  ${spaces}    ${lowerCaseVarName}Node.SetText(arn.GetSubResourceId());
-  ${spaces}  }
-  ${spaces}  else
-  ${spaces}  {
-  ${spaces}    // It's a valid ARN, but has incorrect resource type.
-  ${spaces}    assert(false);
-  ${spaces}  }
-  ${spaces}}
-  ${spaces}else
-  ${spaces}{
-  ${spaces}  ${lowerCaseVarName}Node.SetText(${memberVarName});
-  ${spaces}}
-#else
   ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName});
-#end
 #end
 #elseif($member.shape.timeStamp)
 #if($member.xmlAttribute)
