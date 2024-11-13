@@ -273,6 +273,8 @@ namespace
             createAccessPointRequest.SetBucket(bucketName);
             auto createAccessPointOutcome = m_client.CreateAccessPoint(createAccessPointRequest);
             AWS_ASSERT_SUCCESS(createAccessPointOutcome);
+            EXPECT_FALSE(createAccessPointOutcome.GetResult().GetRequestId().empty());
+            EXPECT_FALSE(createAccessPointOutcome.GetResult().GetHostId().empty());
         }
 
         void CleanUpAccessPointTest(const Aws::String& bucketName, const Aws::String& accessPointName)

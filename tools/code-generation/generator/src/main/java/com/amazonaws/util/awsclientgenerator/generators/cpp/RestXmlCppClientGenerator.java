@@ -6,11 +6,12 @@
 package com.amazonaws.util.awsclientgenerator.generators.cpp;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
+import com.google.common.collect.ImmutableMap;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
@@ -161,5 +162,38 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
             return makeFile(template, context, fileName, true);
         }
         return null;
+    }
+
+    /**
+     * Adds a new shape member to all results shapes.
+     * Currently used by S3 and S3 Control to add a unmodeled Request-id metadata.
+     * @param serviceModel
+     * @param key
+     * @param shapeMemberName
+     * @param headerName
+     * @param doc
+     */
+    protected void addToAllResultsShape(final ServiceModel serviceModel,
+                                      String key,
+                                      String shapeMemberName,
+                                      String headerName,
+                                      String doc) {
+
+        serviceModel.getShapes().values().stream()
+                .filter(Shape::isResult)
+                .filter(shape -> !shape.getMembers().containsKey(key))
+                .forEach(shape -> {
+                    Shape newShape = new Shape();
+                    newShape.setName(shapeMemberName);
+                    newShape.setType("string");
+                    newShape.setMembers(ImmutableMap.of());
+
+                    ShapeMember newShapeMember = new ShapeMember();
+                    newShapeMember.setShape(newShape);
+                    newShapeMember.setLocation("header");
+                    newShapeMember.setLocationName(headerName);
+                    newShapeMember.setDocumentation(doc);
+                    shape.getMembers().put(shapeMemberName, newShapeMember);
+                });
     }
 }

@@ -7,9 +7,6 @@ package com.amazonaws.util.awsclientgenerator.generators.cpp.s3control;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
 import org.apache.velocity.Template;
@@ -18,9 +15,7 @@ import org.apache.velocity.VelocityContext;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class S3ControlRestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
@@ -171,6 +166,12 @@ public class S3ControlRestXmlCppClientGenerator  extends RestXmlCppClientGenerat
         String fileName = String.format("source/%sARN.cpp", serviceModel.getMetadata().getClassNamePrefix());
 
         return makeFile(template, context, fileName, true);
+    }
+
+    @Override
+    protected void addRequestIdToResults(final ServiceModel serviceModel) {
+        addToAllResultsShape(serviceModel, "requestId", "RequestId", "x-amz-request-id", "AWS Request Id value");
+        addToAllResultsShape(serviceModel, "hostId", "HostId", "x-amz-id-2", "x-amz-id-2 header value, also known as Host Id");
     }
 }
 

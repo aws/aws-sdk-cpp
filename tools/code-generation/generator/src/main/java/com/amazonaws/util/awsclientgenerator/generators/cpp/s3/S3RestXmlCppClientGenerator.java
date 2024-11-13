@@ -639,22 +639,6 @@ public class S3RestXmlCppClientGenerator extends RestXmlCppClientGenerator {
 
     @Override
     protected void addRequestIdToResults(final ServiceModel serviceModel) {
-        serviceModel.getShapes().values().stream()
-                .filter(Shape::isResult)
-                .filter(shape -> !shape.getMembers().containsKey("requestId"))
-                .forEach(shape -> {
-                    Shape requestId = new Shape();
-                    requestId.setName("RequestId");
-                    requestId.setType("string");
-                    requestId.hasHeaderMembers();
-                    requestId.setMembers(ImmutableMap.of());
-
-                    ShapeMember requestIdMember = new ShapeMember();
-                    requestIdMember.setShape(requestId);
-                    requestIdMember.setLocation("header");
-                    //S3 uses a different header location than other services.
-                    requestIdMember.setLocationName("x-amz-request-id");
-                    shape.getMembers().put("RequestId", requestIdMember);
-                });
+        addToAllResultsShape(serviceModel, "requestId", "RequestId", "x-amz-request-id", "");
     }
 }
