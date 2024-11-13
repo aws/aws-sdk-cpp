@@ -84,8 +84,8 @@
  
      @Override
      public Symbol listShape(ListShape listShape) {
-         var targetShape = model.expectShape(listShape.getMember().getTarget());
-         var targetSymbol = targetShape.accept(this);
+         Shape targetShape = model.expectShape(listShape.getMember().getTarget());
+         Symbol targetSymbol = targetShape.accept(this);
          return createSymbolBuilder(listShape, "Aws::Vector<" + targetSymbol + ">")
                  .addReference(targetSymbol)
                  .build();
@@ -96,10 +96,10 @@
       */
      @Override
      public Symbol mapShape(MapShape mapShape) {
-         var keyShape = model.expectShape(mapShape.getKey().getTarget());
-         var keyType = keyShape.accept(this);
-         var valueShape = model.expectShape(mapShape.getValue().getTarget());
-         var valueType = valueShape.accept(this);
+         Shape keyShape = model.expectShape(mapShape.getKey().getTarget());
+         Symbol keyType = keyShape.accept(this);
+         Shape valueShape = model.expectShape(mapShape.getValue().getTarget());
+         Symbol valueType = valueShape.accept(this);
          return createSymbolBuilder(mapShape, "Aws::Map<"+keyType +"," + valueType + ">")
                  .addReference(valueType)
                  .build();
