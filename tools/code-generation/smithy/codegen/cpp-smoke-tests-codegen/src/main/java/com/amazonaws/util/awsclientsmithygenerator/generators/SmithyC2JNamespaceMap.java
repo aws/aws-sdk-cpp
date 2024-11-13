@@ -6,7 +6,7 @@ package com.amazonaws.util.awsclientsmithygenerator.generators;
 
 import java.lang.reflect.Type;
 import java.util.Map;
-
+import java.util.HashMap;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -17,9 +17,16 @@ public class SmithyC2JNamespaceMap {
 
     private SmithyC2JNamespaceMap(String jsonString){
 
-        Type mapType = new TypeToken<Map<String, String>>(){}.getType();
-        Gson gson = new Gson();
-        this.SMITHY_C2J_SERVICE_NAME_MAP = gson.fromJson(jsonString, mapType);
+        if(jsonString.isEmpty())
+        {
+            this.SMITHY_C2J_SERVICE_NAME_MAP = new HashMap<>();
+        }
+        else {
+            Type mapType = new TypeToken<Map<String, String>>() {
+            }.getType();
+            Gson gson = new Gson();
+            this.SMITHY_C2J_SERVICE_NAME_MAP = gson.fromJson(jsonString, mapType);
+        }
     }
 
     //This method must be called once to construct an internal mapping of smithy to c2j namespace

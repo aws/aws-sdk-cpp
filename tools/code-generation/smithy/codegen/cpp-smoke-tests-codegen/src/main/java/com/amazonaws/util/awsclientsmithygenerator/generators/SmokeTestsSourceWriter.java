@@ -46,8 +46,9 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         //declare test fixture
         write("TEST_F($LSmokeTestSuite, $L )",clientNamespace, test.getTestcaseName()).write("{").indent().
         write("Aws::$L::$LClientConfiguration clientConfiguration;", clientNamespace,clientNamespace);
-        if(test.getConfig().getParams() instanceof AwsVendorParams configParams)
+        if(test.getConfig().getParams() instanceof AwsVendorParams)
         {
+            AwsVendorParams configParams = (AwsVendorParams) test.getConfig().getParams();
             if(!configParams.getRegion().isEmpty())
             {
                 write("clientConfiguration.region = \"$L\";",configParams.getRegion());
