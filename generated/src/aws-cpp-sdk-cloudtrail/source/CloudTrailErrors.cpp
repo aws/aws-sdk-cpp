@@ -62,6 +62,7 @@ static const int CHANNEL_A_R_N_INVALID_HASH = HashingUtils::HashString("ChannelA
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidTokenException");
 static const int INSUFFICIENT_DEPENDENCY_SERVICE_ACCESS_PERMISSION_HASH = HashingUtils::HashString("InsufficientDependencyServiceAccessPermissionException");
 static const int EVENT_DATA_STORE_TERMINATION_PROTECTED_HASH = HashingUtils::HashString("EventDataStoreTerminationProtectedException");
+static const int GENERATE_RESPONSE_HASH = HashingUtils::HashString("GenerateResponseException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int EVENT_DATA_STORE_MAX_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("EventDataStoreMaxLimitExceededException");
 static const int INSUFFICIENT_SNS_TOPIC_POLICY_HASH = HashingUtils::HashString("InsufficientSnsTopicPolicyException");
@@ -278,6 +279,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == EVENT_DATA_STORE_TERMINATION_PROTECTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_TERMINATION_PROTECTED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == GENERATE_RESPONSE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::GENERATE_RESPONSE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {

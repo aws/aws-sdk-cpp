@@ -82,9 +82,9 @@ namespace Model
     /**
      * <p>Scopes the results to images with the specified owners. You can specify a
      * combination of Amazon Web Services account IDs, <code>self</code>,
-     * <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this
-     * parameter, the results include all images for which you have launch permissions,
-     * regardless of ownership.</p>
+     * <code>amazon</code>, <code>aws-backup-vault</code>, and
+     * <code>aws-marketplace</code>. If you omit this parameter, the results include
+     * all images for which you have launch permissions, regardless of ownership.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
     inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
@@ -198,10 +198,11 @@ namespace Model
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
-     * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
-     * are defined in an Amazon-maintained list. This is not the Amazon Web Services
-     * account alias that can be set using the IAM console. We recommend that you use
-     * the <b>Owner</b> request parameter instead of this filter.</p> </li> <li> <p>
+     * alias (<code>amazon</code> | <code>aws-backup-vault</code> |
+     * <code>aws-marketplace</code>). The valid aliases are defined in an
+     * Amazon-maintained list. This is not the Amazon Web Services account alias that
+     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
+     * request parameter instead of this filter.</p> </li> <li> <p>
      * <code>owner-id</code> - The Amazon Web Services account ID of the owner. We
      * recommend that you use the <b>Owner</b> request parameter instead of this
      * filter.</p> </li> <li> <p> <code>platform</code> - The platform. The only

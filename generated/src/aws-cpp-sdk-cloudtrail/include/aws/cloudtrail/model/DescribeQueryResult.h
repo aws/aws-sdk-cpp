@@ -126,6 +126,23 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> The prompt used for a generated query. For information about generated
+     * queries, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create
+     * CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail
+     * </i> user guide. </p>
+     */
+    inline const Aws::String& GetPrompt() const{ return m_prompt; }
+    inline void SetPrompt(const Aws::String& value) { m_prompt = value; }
+    inline void SetPrompt(Aws::String&& value) { m_prompt = std::move(value); }
+    inline void SetPrompt(const char* value) { m_prompt.assign(value); }
+    inline DescribeQueryResult& WithPrompt(const Aws::String& value) { SetPrompt(value); return *this;}
+    inline DescribeQueryResult& WithPrompt(Aws::String&& value) { SetPrompt(std::move(value)); return *this;}
+    inline DescribeQueryResult& WithPrompt(const char* value) { SetPrompt(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -150,6 +167,8 @@ namespace Model
     Aws::String m_deliveryS3Uri;
 
     DeliveryStatus m_deliveryStatus;
+
+    Aws::String m_prompt;
 
     Aws::String m_requestId;
   };

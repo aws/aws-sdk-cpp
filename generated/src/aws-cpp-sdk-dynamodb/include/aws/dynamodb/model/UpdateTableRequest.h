@@ -14,6 +14,7 @@
 #include <aws/dynamodb/model/SSESpecification.h>
 #include <aws/dynamodb/model/TableClass.h>
 #include <aws/dynamodb/model/OnDemandThroughput.h>
+#include <aws/dynamodb/model/WarmThroughput.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexUpdate.h>
 #include <aws/dynamodb/model/ReplicationGroupUpdate.h>
@@ -220,6 +221,19 @@ namespace Model
     inline UpdateTableRequest& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
     inline UpdateTableRequest& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Represents the warm throughput (in read units per second and write units per
+     * second) for updating a table.</p>
+     */
+    inline const WarmThroughput& GetWarmThroughput() const{ return m_warmThroughput; }
+    inline bool WarmThroughputHasBeenSet() const { return m_warmThroughputHasBeenSet; }
+    inline void SetWarmThroughput(const WarmThroughput& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = value; }
+    inline void SetWarmThroughput(WarmThroughput&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::move(value); }
+    inline UpdateTableRequest& WithWarmThroughput(const WarmThroughput& value) { SetWarmThroughput(value); return *this;}
+    inline UpdateTableRequest& WithWarmThroughput(WarmThroughput&& value) { SetWarmThroughput(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -254,6 +268,9 @@ namespace Model
 
     OnDemandThroughput m_onDemandThroughput;
     bool m_onDemandThroughputHasBeenSet = false;
+
+    WarmThroughput m_warmThroughput;
+    bool m_warmThroughputHasBeenSet = false;
   };
 
 } // namespace Model

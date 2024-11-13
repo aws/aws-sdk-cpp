@@ -206,8 +206,8 @@ namespace Model
      * watermarks in your output audio. In addition to specifying these values, you
      * also need to set up your cloud TIC server. These settings apply to every output
      * in your job. The MediaConvert implementation is currently with the following
-     * Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark
-     * Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     * Nielsen versions: Nielsen Watermark SDK Version 6.0.13 Nielsen NLM Watermark
+     * Engine Version 1.3.3 Nielsen Watermark Authenticator [SID_TIC] Version [7.0.0]
      */
     inline const NielsenNonLinearWatermarkSettings& GetNielsenNonLinearWatermark() const{ return m_nielsenNonLinearWatermark; }
     inline bool NielsenNonLinearWatermarkHasBeenSet() const { return m_nielsenNonLinearWatermarkHasBeenSet; }

@@ -1971,11 +1971,11 @@ namespace EC2
         }
 
         /**
-         * <p> Create a new Capacity Reservation by splitting the available capacity of the
-         * source Capacity Reservation. The new Capacity Reservation will have the same
-         * attributes as the source Capacity Reservation except for tags. The source
-         * Capacity Reservation must be <code>active</code> and owned by your Amazon Web
-         * Services account. </p><p><h3>See Also:</h3>   <a
+         * <p> Create a new Capacity Reservation by splitting the capacity of the source
+         * Capacity Reservation. The new Capacity Reservation will have the same attributes
+         * as the source Capacity Reservation except for tags. The source Capacity
+         * Reservation must be <code>active</code> and owned by your Amazon Web Services
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationBySplitting">AWS
          * API Reference</a></p>
          */
@@ -2774,18 +2774,18 @@ namespace EC2
 
         /**
          * <p>Creates an ED25519 or 2048-bit RSA key pair with the specified name and in
-         * the specified PEM or PPK format. Amazon EC2 stores the public key and displays
-         * the private key for you to save to a file. The private key is returned as an
-         * unencrypted PEM encoded PKCS#1 private key or an unencrypted PPK formatted
-         * private key for use with PuTTY. If a key with the specified name already exists,
-         * Amazon EC2 returns an error.</p> <p>The key pair returned to you is available
-         * only in the Amazon Web Services Region in which you create it. If you prefer,
-         * you can create your own key pair using a third-party tool and upload it to any
-         * Region using <a>ImportKeyPair</a>.</p> <p>You can have up to 5,000 key pairs per
-         * Amazon Web Services Region.</p> <p>For more information, see <a
+         * the specified format. Amazon EC2 stores the public key and displays the private
+         * key for you to save to a file. The private key is returned as an unencrypted PEM
+         * encoded PKCS#1 private key or an unencrypted PPK formatted private key for use
+         * with PuTTY. If a key with the specified name already exists, Amazon EC2 returns
+         * an error.</p> <p>The key pair returned to you is available only in the Amazon
+         * Web Services Region in which you create it. If you prefer, you can create your
+         * own key pair using a third-party tool and upload it to any Region using
+         * <a>ImportKeyPair</a>.</p> <p>You can have up to 5,000 key pairs per Amazon Web
+         * Services Region.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-         * EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * EC2 key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">AWS
          * API Reference</a></p>
          */
@@ -3493,17 +3493,16 @@ namespace EC2
          * for your instance to control inbound and outbound traffic. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-         * EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
-         * and <a
+         * EC2 security groups</a> in the <i>Amazon EC2 User Guide</i> and <a
          * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-         * groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p> <p>When you create a security group, you specify a friendly name
-         * of your choice. You can't have two security groups for the same VPC with the
-         * same name.</p> <p>You have a default security group for use in your VPC. If you
-         * don't specify a security group when you launch an instance, the instance is
-         * launched into the appropriate default security group. A default security group
-         * includes a default rule that grants instances unrestricted network access to
-         * each other.</p> <p>You can add or remove rules from your security groups using
+         * groups for your VPC</a> in the <i>Amazon VPC User Guide</i>.</p> <p>When you
+         * create a security group, you specify a friendly name of your choice. You can't
+         * have two security groups for the same VPC with the same name.</p> <p>You have a
+         * default security group for use in your VPC. If you don't specify a security
+         * group when you launch an instance, the instance is launched into the appropriate
+         * default security group. A default security group includes a default rule that
+         * grants instances unrestricted network access to each other.</p> <p>You can add
+         * or remove rules from your security groups using
          * <a>AuthorizeSecurityGroupIngress</a>, <a>AuthorizeSecurityGroupEgress</a>,
          * <a>RevokeSecurityGroupIngress</a>, and <a>RevokeSecurityGroupEgress</a>.</p>
          * <p>For more information about VPC security group limits, see <a
@@ -8974,8 +8973,8 @@ namespace EC2
          * <p>Describes the specified key pairs or all of your key pairs.</p> <p>For more
          * information about key pairs, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-         * EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * EC2 key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">AWS
          * API Reference</a></p>
          */
@@ -14906,15 +14905,12 @@ namespace EC2
         }
 
         /**
-         * <p>Imports the public key from an RSA or ED25519 key pair that you created with
-         * a third-party tool. Compare this with <a>CreateKeyPair</a>, in which Amazon Web
-         * Services creates the key pair and gives the keys to you (Amazon Web Services
-         * keeps a copy of the public key). With ImportKeyPair, you create the key pair and
-         * give Amazon Web Services just the public key. The private key is never
-         * transferred between you and Amazon Web Services.</p> <p>For more information
-         * about key pairs, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-         * EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User
+         * <p>Imports the public key from an RSA or ED25519 key pair that you created using
+         * a third-party tool. You give Amazon Web Services only the public key. The
+         * private key is never transferred between you and Amazon Web Services.</p> <p>For
+         * more information about the requirements for importing a key pair, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Create
+         * a key pair and import the public key to Amazon EC2</a> in the <i>Amazon EC2 User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">AWS
          * API Reference</a></p>

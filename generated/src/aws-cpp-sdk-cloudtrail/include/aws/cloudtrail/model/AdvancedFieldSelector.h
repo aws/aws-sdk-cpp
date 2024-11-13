@@ -47,10 +47,16 @@ namespace Model
      * field is used only for selecting events as filtering is not supported.</p>
      * <p>For CloudTrail management events, supported fields include
      * <code>eventCategory</code> (required), <code>eventSource</code>, and
-     * <code>readOnly</code>.</p> <p>For CloudTrail data events, supported fields
-     * include <code>eventCategory</code> (required), <code>resources.type</code>
-     * (required), <code>eventName</code>, <code>readOnly</code>, and
-     * <code>resources.ARN</code>.</p> <p>For CloudTrail network activity events,
+     * <code>readOnly</code>. The following additional fields are available for event
+     * data stores: <code>eventName</code>, <code>eventType</code>,
+     * <code>sessionCredentialFromConsole</code>, and
+     * <code>userIdentity.arn</code>.</p> <p>For CloudTrail data events, supported
+     * fields include <code>eventCategory</code> (required),
+     * <code>resources.type</code> (required), <code>eventName</code>,
+     * <code>readOnly</code>, and <code>resources.ARN</code>. The following additional
+     * fields are available for event data stores: <code>eventSource</code>,
+     * <code>eventType</code>, <code>sessionCredentialFromConsole</code>, and
+     * <code>userIdentity.arn</code>.</p> <p>For CloudTrail network activity events,
      * supported fields include <code>eventCategory</code> (required),
      * <code>eventSource</code> (required), <code>eventName</code>,
      * <code>errorCode</code>, and <code>vpcEndpointId</code>.</p> <p> For event data
@@ -63,26 +69,29 @@ namespace Model
      * CloudTrail logs both <code>read</code> and <code>write</code> events. A value of
      * <code>true</code> logs only <code>read</code> events. A value of
      * <code>false</code> logs only <code>write</code> events.</p> </li> <li> <p> <b>
-     * <code>eventSource</code> </b> - This field is only used for management events
-     * and network activity events.</p> <p>For management events, this is an optional
-     * field that can be set to <code>NotEquals</code> <code>kms.amazonaws.com</code>
-     * to exclude KMS management events, or <code>NotEquals</code>
-     * <code>rdsdata.amazonaws.com</code> to exclude RDS management events.</p> <p>For
-     * network activity events, this is a required field that only uses the
-     * <code>Equals</code> operator. Set this field to the event source for which you
-     * want to log network activity events. If you want to log network activity events
-     * for multiple event sources, you must create a separate field selector for each
-     * event source.</p> <p>The following are valid values for network activity
-     * events:</p> <ul> <li> <p> <code>cloudtrail.amazonaws.com</code> </p> </li> <li>
-     * <p> <code>ec2.amazonaws.com</code> </p> </li> <li> <p>
+     * <code>eventSource</code> </b> - This field is only used for management events,
+     * data events (for event data stores only), and network activity events.</p>
+     * <p>For management events for trails, this is an optional field that can be set
+     * to <code>NotEquals</code> <code>kms.amazonaws.com</code> to exclude KMS
+     * management events, or <code>NotEquals</code> <code>rdsdata.amazonaws.com</code>
+     * to exclude RDS management events.</p> <p>For management and data events for
+     * event data stores, you can use it to include or exclude any event source and can
+     * use any operator.</p> <p>For network activity events, this is a required field
+     * that only uses the <code>Equals</code> operator. Set this field to the event
+     * source for which you want to log network activity events. If you want to log
+     * network activity events for multiple event sources, you must create a separate
+     * field selector for each event source.</p> <p>The following are valid values for
+     * network activity events:</p> <ul> <li> <p> <code>cloudtrail.amazonaws.com</code>
+     * </p> </li> <li> <p> <code>ec2.amazonaws.com</code> </p> </li> <li> <p>
      * <code>kms.amazonaws.com</code> </p> </li> <li> <p>
      * <code>secretsmanager.amazonaws.com</code> </p> </li> </ul> </li> <li> <p> <b>
      * <code>eventName</code> </b> - This is an optional field that is only used for
-     * data events and network activity events. You can use any operator with
-     * <code>eventName</code>. You can use it to ﬁlter in or ﬁlter out specific events.
-     * You can have multiple values for this ﬁeld, separated by commas.</p> </li> <li>
-     * <p> <b> <code>eventCategory</code> </b> - This field is required and must be set
-     * to <code>Equals</code>. </p> <ul> <li> <p> For CloudTrail management events, the
+     * data events, management events (for event data stores only), and network
+     * activity events. You can use any operator with <code>eventName</code>. You can
+     * use it to ﬁlter in or ﬁlter out specific events. You can have multiple values
+     * for this ﬁeld, separated by commas.</p> </li> <li> <p> <b>
+     * <code>eventCategory</code> </b> - This field is required and must be set to
+     * <code>Equals</code>. </p> <ul> <li> <p> For CloudTrail management events, the
      * value must be <code>Management</code>. </p> </li> <li> <p> For CloudTrail data
      * events, the value must be <code>Data</code>. </p> </li> <li> <p> For CloudTrail
      * network activity events, the value must be <code>NetworkActivity</code>. </p>
@@ -90,89 +99,29 @@ namespace Model
      * <p> For CloudTrail Insights events, the value must be <code>Insight</code>. </p>
      * </li> <li> <p> For Config configuration items, the value must be
      * <code>ConfigurationItem</code>. </p> </li> <li> <p> For Audit Manager evidence,
-     * the value must be <code>Evidence</code>. </p> </li> <li> <p> For non-Amazon Web
-     * Services events, the value must be <code>ActivityAuditLog</code>. </p> </li>
-     * </ul> </li> <li> <p> <b> <code>errorCode</code> </b> - This ﬁeld is only used to
-     * filter CloudTrail network activity events and is optional. This is the error
-     * code to filter on. Currently, the only valid <code>errorCode</code> is
+     * the value must be <code>Evidence</code>. </p> </li> <li> <p> For events outside
+     * of Amazon Web Services, the value must be <code>ActivityAuditLog</code>. </p>
+     * </li> </ul> </li> <li> <p> <b> <code>eventType</code> </b> - This is an optional
+     * field available only for event data stores, which is used to filter management
+     * and data events on the event type. For information about available event types,
+     * see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html#ct-event-type">CloudTrail
+     * record contents</a> in the <i>CloudTrail user guide</i>.</p> </li> <li> <p> <b>
+     * <code>errorCode</code> </b> - This ﬁeld is only used to filter CloudTrail
+     * network activity events and is optional. This is the error code to filter on.
+     * Currently, the only valid <code>errorCode</code> is
      * <code>VpceAccessDenied</code>. <code>errorCode</code> can only use the
-     * <code>Equals</code> operator.</p> </li> <li> <p> <b> <code>resources.type</code>
-     * </b> - This ﬁeld is required for CloudTrail data events.
-     * <code>resources.type</code> can only use the <code>Equals</code> operator.</p>
-     * <p>The value can be one of the following:</p> <ul> <li> <p>
-     * <code>AWS::AppConfig::Configuration</code> </p> </li> <li> <p>
-     * <code>AWS::B2BI::Transformer</code> </p> </li> <li> <p>
-     * <code>AWS::Bedrock::AgentAlias</code> </p> </li> <li> <p>
-     * <code>AWS::Bedrock::FlowAlias</code> </p> </li> <li> <p>
-     * <code>AWS::Bedrock::Guardrail</code> </p> </li> <li> <p>
-     * <code>AWS::Bedrock::KnowledgeBase</code> </p> </li> <li> <p>
-     * <code>AWS::Cassandra::Table</code> </p> </li> <li> <p>
-     * <code>AWS::CloudFront::KeyValueStore</code> </p> </li> <li> <p>
-     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::CloudWatch::Metric</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Customization</code> </p> </li> <li> <p>
-     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
-     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
-     * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
-     * <code>AWS::GreengrassV2::ComponentVersion</code> </p> </li> <li> <p>
-     * <code>AWS::GreengrassV2::Deployment</code> </p> </li> <li> <p>
-     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
-     * <code>AWS::IoT::Certificate</code> </p> </li> <li> <p>
-     * <code>AWS::IoT::Thing</code> </p> </li> <li> <p>
-     * <code>AWS::IoTSiteWise::Asset</code> </p> </li> <li> <p>
-     * <code>AWS::IoTSiteWise::TimeSeries</code> </p> </li> <li> <p>
-     * <code>AWS::IoTTwinMaker::Entity</code> </p> </li> <li> <p>
-     * <code>AWS::IoTTwinMaker::Workspace</code> </p> </li> <li> <p>
-     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
-     * <code>AWS::Kinesis::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Kinesis::StreamConsumer</code> </p> </li> <li> <p>
-     * <code>AWS::KinesisVideo::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::MachineLearning::MlModel</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Network</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::MedicalImaging::Datastore</code> </p> </li> <li> <p>
-     * <code>AWS::NeptuneGraph::Graph</code> </p> </li> <li> <p>
-     * <code>AWS::One::UKey</code> </p> </li> <li> <p> <code>AWS::One::User</code> </p>
-     * </li> <li> <p> <code>AWS::PaymentCryptography::Alias</code> </p> </li> <li> <p>
-     * <code>AWS::PaymentCryptography::Key</code> </p> </li> <li> <p>
-     * <code>AWS::PCAConnectorAD::Connector</code> </p> </li> <li> <p>
-     * <code>AWS::PCAConnectorSCEP::Connector</code> </p> </li> <li> <p>
-     * <code>AWS::QApps:QApp</code> </p> </li> <li> <p>
-     * <code>AWS::QBusiness::Application</code> </p> </li> <li> <p>
-     * <code>AWS::QBusiness::DataSource</code> </p> </li> <li> <p>
-     * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
-     * <code>AWS::QBusiness::WebExperience</code> </p> </li> <li> <p>
-     * <code>AWS::RDS::DBCluster</code> </p> </li> <li> <p>
-     * <code>AWS::RUM::AppMonitor</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
-     * <code>AWS::S3Express::Object</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
-     * <code>AWS::ServiceDiscovery::Namespace </code> </p> </li> <li> <p>
-     * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
-     * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
-     * </p> </li> <li> <p> <code>AWS::SSM::ManagedNode</code> </p> </li> <li> <p>
-     * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
-     * <code>AWS::StepFunctions::StateMachine</code> </p> </li> <li> <p>
-     * <code>AWS::SWF::Domain</code> </p> </li> <li> <p>
-     * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
-     * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Database</code> </p> </li> <li> <p>
-     * <code>AWS::Timestream::Table</code> </p> </li> <li> <p>
-     * <code>AWS::VerifiedPermissions::PolicyStore</code> </p> </li> <li> <p>
-     * <code>AWS::XRay::Trace</code> </p> </li> </ul> <p> You can have only one
+     * <code>Equals</code> operator.</p> </li> <li> <p> <b>
+     * <code>sessionCredentialFromConsole</code> </b> - This is an optional field
+     * available only for event data stores, which is used to filter management and
+     * data events based on whether the events originated from an Amazon Web Services
+     * Management Console session. <code>sessionCredentialFromConsole</code> can only
+     * use the <code>Equals</code> and <code>NotEquals</code> operators.</p> </li> <li>
+     * <p> <b> <code>resources.type</code> </b> - This ﬁeld is required for CloudTrail
+     * data events. <code>resources.type</code> can only use the <code>Equals</code>
+     * operator.</p> <p>For a list of available resource types for data events, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#logging-data-events">Data
+     * events</a> in the <i>CloudTrail User Guide</i>.</p> <p> You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log events on more than one
      * resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - The <code>resources.ARN</code> is an optional
@@ -186,11 +135,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/filtering-data-events.html#filtering-data-events-resourcearn">Filtering
      * data events by resources.ARN</a> in the <i>CloudTrail User Guide</i>.</p> 
      * <p>You can't use the <code>resources.ARN</code> field to filter resource types
-     * that do not have ARNs.</p>  </li> <li> <p> <b> <code>vpcEndpointId</code>
-     * </b> - This ﬁeld is only used to filter CloudTrail network activity events and
-     * is optional. This field identifies the VPC endpoint that the request passed
-     * through. You can use any operator with <code>vpcEndpointId</code>.</p> </li>
-     * </ul>
+     * that do not have ARNs.</p>  </li> <li> <p> <b>
+     * <code>userIdentity.arn</code> </b> - This is an optional field available only
+     * for event data stores, which is used to filter management and data events on the
+     * userIdentity ARN. You can use any operator with <code>userIdentity.arn</code>.
+     * For more information on the userIdentity element, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html">CloudTrail
+     * userIdentity element</a> in the <i>CloudTrail User Guide</i>.</p> </li> <li> <p>
+     * <b> <code>vpcEndpointId</code> </b> - This ﬁeld is only used to filter
+     * CloudTrail network activity events and is optional. This field identifies the
+     * VPC endpoint that the request passed through. You can use any operator with
+     * <code>vpcEndpointId</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetField() const{ return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }

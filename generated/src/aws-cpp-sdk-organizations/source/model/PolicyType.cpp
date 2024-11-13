@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SERVICE_CONTROL_POLICY_HASH = HashingUtils::HashString("SERVICE_CONTROL_POLICY");
+        static const int RESOURCE_CONTROL_POLICY_HASH = HashingUtils::HashString("RESOURCE_CONTROL_POLICY");
         static const int TAG_POLICY_HASH = HashingUtils::HashString("TAG_POLICY");
         static const int BACKUP_POLICY_HASH = HashingUtils::HashString("BACKUP_POLICY");
         static const int AISERVICES_OPT_OUT_POLICY_HASH = HashingUtils::HashString("AISERVICES_OPT_OUT_POLICY");
@@ -33,6 +34,10 @@ namespace Aws
           if (hashCode == SERVICE_CONTROL_POLICY_HASH)
           {
             return PolicyType::SERVICE_CONTROL_POLICY;
+          }
+          else if (hashCode == RESOURCE_CONTROL_POLICY_HASH)
+          {
+            return PolicyType::RESOURCE_CONTROL_POLICY;
           }
           else if (hashCode == TAG_POLICY_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return {};
           case PolicyType::SERVICE_CONTROL_POLICY:
             return "SERVICE_CONTROL_POLICY";
+          case PolicyType::RESOURCE_CONTROL_POLICY:
+            return "RESOURCE_CONTROL_POLICY";
           case PolicyType::TAG_POLICY:
             return "TAG_POLICY";
           case PolicyType::BACKUP_POLICY:

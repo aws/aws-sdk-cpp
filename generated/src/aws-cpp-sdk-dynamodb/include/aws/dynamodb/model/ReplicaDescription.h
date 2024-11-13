@@ -9,6 +9,7 @@
 #include <aws/dynamodb/model/ReplicaStatus.h>
 #include <aws/dynamodb/model/ProvisionedThroughputOverride.h>
 #include <aws/dynamodb/model/OnDemandThroughputOverride.h>
+#include <aws/dynamodb/model/TableWarmThroughputDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/dynamodb/model/TableClassSummary.h>
@@ -154,6 +155,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Represents the warm throughput value for this replica.</p>
+     */
+    inline const TableWarmThroughputDescription& GetWarmThroughput() const{ return m_warmThroughput; }
+    inline bool WarmThroughputHasBeenSet() const { return m_warmThroughputHasBeenSet; }
+    inline void SetWarmThroughput(const TableWarmThroughputDescription& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = value; }
+    inline void SetWarmThroughput(TableWarmThroughputDescription&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::move(value); }
+    inline ReplicaDescription& WithWarmThroughput(const TableWarmThroughputDescription& value) { SetWarmThroughput(value); return *this;}
+    inline ReplicaDescription& WithWarmThroughput(TableWarmThroughputDescription&& value) { SetWarmThroughput(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Replica-specific global secondary index settings.</p>
      */
     inline const Aws::Vector<ReplicaGlobalSecondaryIndexDescription>& GetGlobalSecondaryIndexes() const{ return m_globalSecondaryIndexes; }
@@ -211,6 +224,9 @@ namespace Model
 
     OnDemandThroughputOverride m_onDemandThroughputOverride;
     bool m_onDemandThroughputOverrideHasBeenSet = false;
+
+    TableWarmThroughputDescription m_warmThroughput;
+    bool m_warmThroughputHasBeenSet = false;
 
     Aws::Vector<ReplicaGlobalSecondaryIndexDescription> m_globalSecondaryIndexes;
     bool m_globalSecondaryIndexesHasBeenSet = false;

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ProvisionedThroughputOverride.h>
 #include <aws/dynamodb/model/OnDemandThroughputOverride.h>
+#include <aws/dynamodb/model/GlobalSecondaryIndexWarmThroughputDescription.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +79,19 @@ namespace Model
     inline ReplicaGlobalSecondaryIndexDescription& WithOnDemandThroughputOverride(const OnDemandThroughputOverride& value) { SetOnDemandThroughputOverride(value); return *this;}
     inline ReplicaGlobalSecondaryIndexDescription& WithOnDemandThroughputOverride(OnDemandThroughputOverride&& value) { SetOnDemandThroughputOverride(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Represents the warm throughput of the global secondary index for this
+     * replica.</p>
+     */
+    inline const GlobalSecondaryIndexWarmThroughputDescription& GetWarmThroughput() const{ return m_warmThroughput; }
+    inline bool WarmThroughputHasBeenSet() const { return m_warmThroughputHasBeenSet; }
+    inline void SetWarmThroughput(const GlobalSecondaryIndexWarmThroughputDescription& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = value; }
+    inline void SetWarmThroughput(GlobalSecondaryIndexWarmThroughputDescription&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::move(value); }
+    inline ReplicaGlobalSecondaryIndexDescription& WithWarmThroughput(const GlobalSecondaryIndexWarmThroughputDescription& value) { SetWarmThroughput(value); return *this;}
+    inline ReplicaGlobalSecondaryIndexDescription& WithWarmThroughput(GlobalSecondaryIndexWarmThroughputDescription&& value) { SetWarmThroughput(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_indexName;
@@ -88,6 +102,9 @@ namespace Model
 
     OnDemandThroughputOverride m_onDemandThroughputOverride;
     bool m_onDemandThroughputOverrideHasBeenSet = false;
+
+    GlobalSecondaryIndexWarmThroughputDescription m_warmThroughput;
+    bool m_warmThroughputHasBeenSet = false;
   };
 
 } // namespace Model

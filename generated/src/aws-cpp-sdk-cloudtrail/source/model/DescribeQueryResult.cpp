@@ -74,6 +74,12 @@ DescribeQueryResult& DescribeQueryResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("Prompt"))
+  {
+    m_prompt = jsonValue.GetString("Prompt");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

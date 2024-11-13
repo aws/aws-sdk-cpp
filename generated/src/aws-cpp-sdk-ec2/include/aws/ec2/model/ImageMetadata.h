@@ -98,7 +98,7 @@ namespace Model
     ///@{
     /**
      * <p>The alias of the AMI owner.</p> <p>Valid values: <code>amazon</code> |
-     * <code>aws-marketplace</code> </p>
+     * <code>aws-backup-vault</code> | <code>aws-marketplace</code> </p>
      */
     inline const Aws::String& GetImageOwnerAlias() const{ return m_imageOwnerAlias; }
     inline bool ImageOwnerAliasHasBeenSet() const { return m_imageOwnerAliasHasBeenSet; }

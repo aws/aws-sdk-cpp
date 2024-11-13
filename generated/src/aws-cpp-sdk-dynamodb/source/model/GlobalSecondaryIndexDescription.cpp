@@ -32,7 +32,8 @@ GlobalSecondaryIndexDescription::GlobalSecondaryIndexDescription() :
     m_itemCount(0),
     m_itemCountHasBeenSet(false),
     m_indexArnHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false)
+    m_onDemandThroughputHasBeenSet(false),
+    m_warmThroughputHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,13 @@ GlobalSecondaryIndexDescription& GlobalSecondaryIndexDescription::operator =(Jso
     m_onDemandThroughputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WarmThroughput"))
+  {
+    m_warmThroughput = jsonValue.GetObject("WarmThroughput");
+
+    m_warmThroughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -185,6 +193,12 @@ JsonValue GlobalSecondaryIndexDescription::Jsonize() const
   if(m_onDemandThroughputHasBeenSet)
   {
    payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
+
+  }
+
+  if(m_warmThroughputHasBeenSet)
+  {
+   payload.WithObject("WarmThroughput", m_warmThroughput.Jsonize());
 
   }
 

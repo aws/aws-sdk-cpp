@@ -49,6 +49,8 @@ Image::Image() :
     m_sourceInstanceIdHasBeenSet(false),
     m_deregistrationProtectionHasBeenSet(false),
     m_lastLaunchedTimeHasBeenSet(false),
+    m_sourceImageIdHasBeenSet(false),
+    m_sourceImageRegionHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_imageLocationHasBeenSet(false),
     m_state(ImageState::NOT_SET),
@@ -218,6 +220,18 @@ Image& Image::operator =(const XmlNode& xmlNode)
     {
       m_lastLaunchedTime = Aws::Utils::Xml::DecodeEscapedXmlText(lastLaunchedTimeNode.GetText());
       m_lastLaunchedTimeHasBeenSet = true;
+    }
+    XmlNode sourceImageIdNode = resultNode.FirstChild("sourceImageId");
+    if(!sourceImageIdNode.IsNull())
+    {
+      m_sourceImageId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceImageIdNode.GetText());
+      m_sourceImageIdHasBeenSet = true;
+    }
+    XmlNode sourceImageRegionNode = resultNode.FirstChild("sourceImageRegion");
+    if(!sourceImageRegionNode.IsNull())
+    {
+      m_sourceImageRegion = Aws::Utils::Xml::DecodeEscapedXmlText(sourceImageRegionNode.GetText());
+      m_sourceImageRegionHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
@@ -423,6 +437,16 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".LastLaunchedTime=" << StringUtils::URLEncode(m_lastLaunchedTime.c_str()) << "&";
   }
 
+  if(m_sourceImageIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceImageId=" << StringUtils::URLEncode(m_sourceImageId.c_str()) << "&";
+  }
+
+  if(m_sourceImageRegionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceImageRegion=" << StringUtils::URLEncode(m_sourceImageRegion.c_str()) << "&";
+  }
+
   if(m_imageIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
@@ -590,6 +614,14 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_lastLaunchedTimeHasBeenSet)
   {
       oStream << location << ".LastLaunchedTime=" << StringUtils::URLEncode(m_lastLaunchedTime.c_str()) << "&";
+  }
+  if(m_sourceImageIdHasBeenSet)
+  {
+      oStream << location << ".SourceImageId=" << StringUtils::URLEncode(m_sourceImageId.c_str()) << "&";
+  }
+  if(m_sourceImageRegionHasBeenSet)
+  {
+      oStream << location << ".SourceImageRegion=" << StringUtils::URLEncode(m_sourceImageRegion.c_str()) << "&";
   }
   if(m_imageIdHasBeenSet)
   {

@@ -17,7 +17,8 @@ UpdateServiceLevelObjectiveRequest::UpdateServiceLevelObjectiveRequest() :
     m_descriptionHasBeenSet(false),
     m_sliConfigHasBeenSet(false),
     m_requestBasedSliConfigHasBeenSet(false),
-    m_goalHasBeenSet(false)
+    m_goalHasBeenSet(false),
+    m_burnRateConfigurationsHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String UpdateServiceLevelObjectiveRequest::SerializePayload() const
   if(m_goalHasBeenSet)
   {
    payload.WithObject("Goal", m_goal.Jsonize());
+
+  }
+
+  if(m_burnRateConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> burnRateConfigurationsJsonList(m_burnRateConfigurations.size());
+   for(unsigned burnRateConfigurationsIndex = 0; burnRateConfigurationsIndex < burnRateConfigurationsJsonList.GetLength(); ++burnRateConfigurationsIndex)
+   {
+     burnRateConfigurationsJsonList[burnRateConfigurationsIndex].AsObject(m_burnRateConfigurations[burnRateConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("BurnRateConfigurations", std::move(burnRateConfigurationsJsonList));
 
   }
 

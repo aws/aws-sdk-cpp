@@ -717,7 +717,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time the instance was launched.</p>
+     * <p>The time that the instance was last launched. To determine the time that
+     * instance was first launched, see the attachment time for the primary network
+     * interface.</p>
      */
     inline const Aws::Utils::DateTime& GetLaunchTime() const{ return m_launchTime; }
     inline bool LaunchTimeHasBeenSet() const { return m_launchTimeHasBeenSet; }

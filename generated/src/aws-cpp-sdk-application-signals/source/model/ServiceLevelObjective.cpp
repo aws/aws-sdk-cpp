@@ -28,7 +28,8 @@ ServiceLevelObjective::ServiceLevelObjective() :
     m_requestBasedSliHasBeenSet(false),
     m_evaluationType(EvaluationType::NOT_SET),
     m_evaluationTypeHasBeenSet(false),
-    m_goalHasBeenSet(false)
+    m_goalHasBeenSet(false),
+    m_burnRateConfigurationsHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,16 @@ ServiceLevelObjective& ServiceLevelObjective::operator =(JsonView jsonValue)
     m_goalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BurnRateConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> burnRateConfigurationsJsonList = jsonValue.GetArray("BurnRateConfigurations");
+    for(unsigned burnRateConfigurationsIndex = 0; burnRateConfigurationsIndex < burnRateConfigurationsJsonList.GetLength(); ++burnRateConfigurationsIndex)
+    {
+      m_burnRateConfigurations.push_back(burnRateConfigurationsJsonList[burnRateConfigurationsIndex].AsObject());
+    }
+    m_burnRateConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -158,6 +169,17 @@ JsonValue ServiceLevelObjective::Jsonize() const
   if(m_goalHasBeenSet)
   {
    payload.WithObject("Goal", m_goal.Jsonize());
+
+  }
+
+  if(m_burnRateConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> burnRateConfigurationsJsonList(m_burnRateConfigurations.size());
+   for(unsigned burnRateConfigurationsIndex = 0; burnRateConfigurationsIndex < burnRateConfigurationsJsonList.GetLength(); ++burnRateConfigurationsIndex)
+   {
+     burnRateConfigurationsJsonList[burnRateConfigurationsIndex].AsObject(m_burnRateConfigurations[burnRateConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("BurnRateConfigurations", std::move(burnRateConfigurationsJsonList));
 
   }
 

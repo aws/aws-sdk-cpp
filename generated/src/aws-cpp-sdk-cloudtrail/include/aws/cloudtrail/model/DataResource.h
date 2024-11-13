@@ -87,9 +87,8 @@ namespace Model
      * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> </ul> <p>Additional resource types are
-     * available through <i>advanced</i> event selectors. For more information about
-     * these additional resource types, see <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.</p>
+     * available through <i>advanced</i> event selectors. For more information, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

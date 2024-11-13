@@ -70,8 +70,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the transformer's status. You can update the state of the
-     * transformer, from <code>active</code> to <code>inactive</code>, or
-     * <code>inactive</code> to <code>active</code>.</p>
+     * transformer from <code>inactive</code> to <code>active</code>.</p>
      */
     inline const TransformerStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

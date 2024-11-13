@@ -359,6 +359,38 @@ namespace B2BI
         }
 
         /**
+         * <p>Takes sample input and output documents and uses Amazon Bedrock to generate a
+         * mapping automatically. Depending on the accuracy and other factors, you can then
+         * edit the mapping for your needs.</p>  <p>Before you can use the
+         * AI-assisted feature for Amazon Web Services B2B Data Interchange you must enable
+         * models in Amazon Bedrock. For details, see <a
+         * href="https://docs.aws.amazon.com/b2bi/latest/userguide/ai-assisted-mapping.html#ai-assist-prereq">AI-assisted
+         * template mapping prerequisites</a> in the <i>Amazon Web Services B2B Data
+         * Interchange User guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GenerateMapping">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GenerateMappingOutcome GenerateMapping(const Model::GenerateMappingRequest& request) const;
+
+        /**
+         * A Callable wrapper for GenerateMapping that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GenerateMappingRequestT = Model::GenerateMappingRequest>
+        Model::GenerateMappingOutcomeCallable GenerateMappingCallable(const GenerateMappingRequestT& request) const
+        {
+            return SubmitCallable(&B2BIClient::GenerateMapping, request);
+        }
+
+        /**
+         * An Async wrapper for GenerateMapping that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GenerateMappingRequestT = Model::GenerateMappingRequest>
+        void GenerateMappingAsync(const GenerateMappingRequestT& request, const GenerateMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&B2BIClient::GenerateMapping, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the details for the specified capability. A trading capability
          * contains the information required to transform incoming EDI documents into JSON
          * or XML outputs.</p><p><h3>See Also:</h3>   <a

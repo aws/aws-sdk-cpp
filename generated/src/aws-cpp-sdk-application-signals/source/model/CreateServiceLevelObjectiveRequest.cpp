@@ -18,7 +18,8 @@ CreateServiceLevelObjectiveRequest::CreateServiceLevelObjectiveRequest() :
     m_sliConfigHasBeenSet(false),
     m_requestBasedSliConfigHasBeenSet(false),
     m_goalHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_burnRateConfigurationsHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,17 @@ Aws::String CreateServiceLevelObjectiveRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_burnRateConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> burnRateConfigurationsJsonList(m_burnRateConfigurations.size());
+   for(unsigned burnRateConfigurationsIndex = 0; burnRateConfigurationsIndex < burnRateConfigurationsJsonList.GetLength(); ++burnRateConfigurationsIndex)
+   {
+     burnRateConfigurationsJsonList[burnRateConfigurationsIndex].AsObject(m_burnRateConfigurations[burnRateConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("BurnRateConfigurations", std::move(burnRateConfigurationsJsonList));
 
   }
 

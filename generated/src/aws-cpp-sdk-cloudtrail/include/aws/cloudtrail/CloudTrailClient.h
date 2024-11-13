@@ -510,6 +510,43 @@ namespace CloudTrail
         }
 
         /**
+         * <p> Generates a query from a natural language prompt. This operation uses
+         * generative artificial intelligence (generative AI) to produce a ready-to-use SQL
+         * query from the prompt. </p> <p>The prompt can be a question or a statement about
+         * the event data in your event data store. For example, you can enter prompts like
+         * "What are my top errors in the past month?" and “Give me a list of users that
+         * used SNS.”</p> <p>The prompt must be in English. For information about
+         * limitations, permissions, and supported Regions, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create
+         * CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail
+         * </i> user guide.</p>  <p>Do not include any personally identifying,
+         * confidential, or sensitive information in your prompts.</p> <p>This feature uses
+         * generative AI large language models (LLMs); we recommend double-checking the LLM
+         * response.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GenerateQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GenerateQueryOutcome GenerateQuery(const Model::GenerateQueryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GenerateQuery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GenerateQueryRequestT = Model::GenerateQueryRequest>
+        Model::GenerateQueryOutcomeCallable GenerateQueryCallable(const GenerateQueryRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::GenerateQuery, request);
+        }
+
+        /**
+         * An Async wrapper for GenerateQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GenerateQueryRequestT = Model::GenerateQueryRequest>
+        void GenerateQueryAsync(const GenerateQueryRequestT& request, const GenerateQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::GenerateQuery, request, handler, context);
+        }
+
+        /**
          * <p> Returns information about a specific channel. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">AWS
          * API Reference</a></p>

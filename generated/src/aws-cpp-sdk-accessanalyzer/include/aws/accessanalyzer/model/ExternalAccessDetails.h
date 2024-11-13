@@ -7,6 +7,7 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/accessanalyzer/model/ResourceControlPolicyRestriction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/accessanalyzer/model/FindingSource.h>
 #include <utility>
@@ -122,6 +123,19 @@ namespace Model
     inline ExternalAccessDetails& AddSources(const FindingSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
     inline ExternalAccessDetails& AddSources(FindingSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of restriction applied to the finding by the resource owner with an
+     * Organizations resource control policy (RCP).</p>
+     */
+    inline const ResourceControlPolicyRestriction& GetResourceControlPolicyRestriction() const{ return m_resourceControlPolicyRestriction; }
+    inline bool ResourceControlPolicyRestrictionHasBeenSet() const { return m_resourceControlPolicyRestrictionHasBeenSet; }
+    inline void SetResourceControlPolicyRestriction(const ResourceControlPolicyRestriction& value) { m_resourceControlPolicyRestrictionHasBeenSet = true; m_resourceControlPolicyRestriction = value; }
+    inline void SetResourceControlPolicyRestriction(ResourceControlPolicyRestriction&& value) { m_resourceControlPolicyRestrictionHasBeenSet = true; m_resourceControlPolicyRestriction = std::move(value); }
+    inline ExternalAccessDetails& WithResourceControlPolicyRestriction(const ResourceControlPolicyRestriction& value) { SetResourceControlPolicyRestriction(value); return *this;}
+    inline ExternalAccessDetails& WithResourceControlPolicyRestriction(ResourceControlPolicyRestriction&& value) { SetResourceControlPolicyRestriction(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_action;
@@ -138,6 +152,9 @@ namespace Model
 
     Aws::Vector<FindingSource> m_sources;
     bool m_sourcesHasBeenSet = false;
+
+    ResourceControlPolicyRestriction m_resourceControlPolicyRestriction;
+    bool m_resourceControlPolicyRestrictionHasBeenSet = false;
   };
 
 } // namespace Model

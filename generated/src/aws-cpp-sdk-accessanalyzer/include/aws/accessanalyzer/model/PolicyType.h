@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     IDENTITY_POLICY,
     RESOURCE_POLICY,
-    SERVICE_CONTROL_POLICY
+    SERVICE_CONTROL_POLICY,
+    RESOURCE_CONTROL_POLICY
   };
 
 namespace PolicyTypeMapper

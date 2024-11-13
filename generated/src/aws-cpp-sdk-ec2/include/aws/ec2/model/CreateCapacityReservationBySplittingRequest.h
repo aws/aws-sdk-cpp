@@ -72,7 +72,7 @@ namespace Model
     ///@{
     /**
      * <p> The ID of the Capacity Reservation from which you want to split the
-     * available capacity. </p>
+     * capacity. </p>
      */
     inline const Aws::String& GetSourceCapacityReservationId() const{ return m_sourceCapacityReservationId; }
     inline bool SourceCapacityReservationIdHasBeenSet() const { return m_sourceCapacityReservationIdHasBeenSet; }

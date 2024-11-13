@@ -24,7 +24,9 @@ ExternalAccessDetails::ExternalAccessDetails() :
     m_isPublic(false),
     m_isPublicHasBeenSet(false),
     m_principalHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
+    m_sourcesHasBeenSet(false),
+    m_resourceControlPolicyRestriction(ResourceControlPolicyRestriction::NOT_SET),
+    m_resourceControlPolicyRestrictionHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,13 @@ ExternalAccessDetails& ExternalAccessDetails::operator =(JsonView jsonValue)
     m_sourcesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resourceControlPolicyRestriction"))
+  {
+    m_resourceControlPolicyRestriction = ResourceControlPolicyRestrictionMapper::GetResourceControlPolicyRestrictionForName(jsonValue.GetString("resourceControlPolicyRestriction"));
+
+    m_resourceControlPolicyRestrictionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,11 @@ JsonValue ExternalAccessDetails::Jsonize() const
    }
    payload.WithArray("sources", std::move(sourcesJsonList));
 
+  }
+
+  if(m_resourceControlPolicyRestrictionHasBeenSet)
+  {
+   payload.WithString("resourceControlPolicyRestriction", ResourceControlPolicyRestrictionMapper::GetNameForResourceControlPolicyRestriction(m_resourceControlPolicyRestriction));
   }
 
   return payload;
