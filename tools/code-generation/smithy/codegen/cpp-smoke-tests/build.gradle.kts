@@ -69,8 +69,8 @@ tasks.register("generate-smithy-build") {
             val services = model.shapes(ServiceShape::class.java).sorted().toList();
 
             if (services.size != 1) {
-                println("Unexpected number of service shapes detected: ${services.size} while processing file: ${file.name}. ")
-                return@eachFile
+                throw Exception("There must be exactly one service in each aws model file, but found " +
+                        "${services.size} in ${file.name}");
             }
 
             val service = services[0]
