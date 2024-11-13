@@ -310,9 +310,7 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
             return CURL_READFUNC_PAUSE;
           }
         } else if (isAwsChunked && context->m_chunkedStream != nullptr) {
-          AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Called with size: " << amountToRead);
           amountRead = context->m_chunkedStream->BufferedRead(ptr, amountToRead);
-          AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "read: " << amountRead);
         } else {
           ioStream->read(ptr, amountToRead);
           amountRead = static_cast<size_t>(ioStream->gcount());
