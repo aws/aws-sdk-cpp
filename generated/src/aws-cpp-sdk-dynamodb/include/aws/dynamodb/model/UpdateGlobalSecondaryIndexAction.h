@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/OnDemandThroughput.h>
+#include <aws/dynamodb/model/WarmThroughput.h>
 #include <utility>
 
 namespace Aws
@@ -84,6 +85,19 @@ namespace Model
     inline UpdateGlobalSecondaryIndexAction& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
     inline UpdateGlobalSecondaryIndexAction& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Represents the warm throughput value of the new provisioned throughput
+     * settings to be applied to a global secondary index.</p>
+     */
+    inline const WarmThroughput& GetWarmThroughput() const{ return m_warmThroughput; }
+    inline bool WarmThroughputHasBeenSet() const { return m_warmThroughputHasBeenSet; }
+    inline void SetWarmThroughput(const WarmThroughput& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = value; }
+    inline void SetWarmThroughput(WarmThroughput&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::move(value); }
+    inline UpdateGlobalSecondaryIndexAction& WithWarmThroughput(const WarmThroughput& value) { SetWarmThroughput(value); return *this;}
+    inline UpdateGlobalSecondaryIndexAction& WithWarmThroughput(WarmThroughput&& value) { SetWarmThroughput(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_indexName;
@@ -94,6 +108,9 @@ namespace Model
 
     OnDemandThroughput m_onDemandThroughput;
     bool m_onDemandThroughputHasBeenSet = false;
+
+    WarmThroughput m_warmThroughput;
+    bool m_warmThroughputHasBeenSet = false;
   };
 
 } // namespace Model

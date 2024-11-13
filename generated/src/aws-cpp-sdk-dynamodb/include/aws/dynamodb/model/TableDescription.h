@@ -17,6 +17,7 @@
 #include <aws/dynamodb/model/ArchivalSummary.h>
 #include <aws/dynamodb/model/TableClassSummary.h>
 #include <aws/dynamodb/model/OnDemandThroughput.h>
+#include <aws/dynamodb/model/TableWarmThroughputDescription.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexDescription.h>
@@ -482,6 +483,18 @@ namespace Model
     inline TableDescription& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
     inline TableDescription& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Describes the warm throughput value of the base table.</p>
+     */
+    inline const TableWarmThroughputDescription& GetWarmThroughput() const{ return m_warmThroughput; }
+    inline bool WarmThroughputHasBeenSet() const { return m_warmThroughputHasBeenSet; }
+    inline void SetWarmThroughput(const TableWarmThroughputDescription& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = value; }
+    inline void SetWarmThroughput(TableWarmThroughputDescription&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::move(value); }
+    inline TableDescription& WithWarmThroughput(const TableWarmThroughputDescription& value) { SetWarmThroughput(value); return *this;}
+    inline TableDescription& WithWarmThroughput(TableWarmThroughputDescription&& value) { SetWarmThroughput(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -555,6 +568,9 @@ namespace Model
 
     OnDemandThroughput m_onDemandThroughput;
     bool m_onDemandThroughputHasBeenSet = false;
+
+    TableWarmThroughputDescription m_warmThroughput;
+    bool m_warmThroughputHasBeenSet = false;
   };
 
 } // namespace Model

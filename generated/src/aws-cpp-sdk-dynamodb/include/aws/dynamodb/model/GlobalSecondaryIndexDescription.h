@@ -11,6 +11,7 @@
 #include <aws/dynamodb/model/IndexStatus.h>
 #include <aws/dynamodb/model/ProvisionedThroughputDescription.h>
 #include <aws/dynamodb/model/OnDemandThroughput.h>
+#include <aws/dynamodb/model/GlobalSecondaryIndexWarmThroughputDescription.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <utility>
 
@@ -201,6 +202,19 @@ namespace Model
     inline GlobalSecondaryIndexDescription& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
     inline GlobalSecondaryIndexDescription& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Represents the warm throughput value (in read units per second and write
+     * units per second) for the specified secondary index.</p>
+     */
+    inline const GlobalSecondaryIndexWarmThroughputDescription& GetWarmThroughput() const{ return m_warmThroughput; }
+    inline bool WarmThroughputHasBeenSet() const { return m_warmThroughputHasBeenSet; }
+    inline void SetWarmThroughput(const GlobalSecondaryIndexWarmThroughputDescription& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = value; }
+    inline void SetWarmThroughput(GlobalSecondaryIndexWarmThroughputDescription&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::move(value); }
+    inline GlobalSecondaryIndexDescription& WithWarmThroughput(const GlobalSecondaryIndexWarmThroughputDescription& value) { SetWarmThroughput(value); return *this;}
+    inline GlobalSecondaryIndexDescription& WithWarmThroughput(GlobalSecondaryIndexWarmThroughputDescription&& value) { SetWarmThroughput(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_indexName;
@@ -232,6 +246,9 @@ namespace Model
 
     OnDemandThroughput m_onDemandThroughput;
     bool m_onDemandThroughputHasBeenSet = false;
+
+    GlobalSecondaryIndexWarmThroughputDescription m_warmThroughput;
+    bool m_warmThroughputHasBeenSet = false;
   };
 
 } // namespace Model

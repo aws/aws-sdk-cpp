@@ -23,6 +23,7 @@
 #include <aws/b2bi/model/CreateProfileResult.h>
 #include <aws/b2bi/model/CreateStarterMappingTemplateResult.h>
 #include <aws/b2bi/model/CreateTransformerResult.h>
+#include <aws/b2bi/model/GenerateMappingResult.h>
 #include <aws/b2bi/model/GetCapabilityResult.h>
 #include <aws/b2bi/model/GetPartnershipResult.h>
 #include <aws/b2bi/model/GetProfileResult.h>
@@ -95,6 +96,7 @@ namespace Aws
       class DeletePartnershipRequest;
       class DeleteProfileRequest;
       class DeleteTransformerRequest;
+      class GenerateMappingRequest;
       class GetCapabilityRequest;
       class GetPartnershipRequest;
       class GetProfileRequest;
@@ -127,6 +129,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, B2BIError> DeletePartnershipOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, B2BIError> DeleteProfileOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, B2BIError> DeleteTransformerOutcome;
+      typedef Aws::Utils::Outcome<GenerateMappingResult, B2BIError> GenerateMappingOutcome;
       typedef Aws::Utils::Outcome<GetCapabilityResult, B2BIError> GetCapabilityOutcome;
       typedef Aws::Utils::Outcome<GetPartnershipResult, B2BIError> GetPartnershipOutcome;
       typedef Aws::Utils::Outcome<GetProfileResult, B2BIError> GetProfileOutcome;
@@ -159,6 +162,7 @@ namespace Aws
       typedef std::future<DeletePartnershipOutcome> DeletePartnershipOutcomeCallable;
       typedef std::future<DeleteProfileOutcome> DeleteProfileOutcomeCallable;
       typedef std::future<DeleteTransformerOutcome> DeleteTransformerOutcomeCallable;
+      typedef std::future<GenerateMappingOutcome> GenerateMappingOutcomeCallable;
       typedef std::future<GetCapabilityOutcome> GetCapabilityOutcomeCallable;
       typedef std::future<GetPartnershipOutcome> GetPartnershipOutcomeCallable;
       typedef std::future<GetProfileOutcome> GetProfileOutcomeCallable;
@@ -194,6 +198,7 @@ namespace Aws
     typedef std::function<void(const B2BIClient*, const Model::DeletePartnershipRequest&, const Model::DeletePartnershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePartnershipResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::DeleteProfileRequest&, const Model::DeleteProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::DeleteTransformerRequest&, const Model::DeleteTransformerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransformerResponseReceivedHandler;
+    typedef std::function<void(const B2BIClient*, const Model::GenerateMappingRequest&, const Model::GenerateMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateMappingResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::GetCapabilityRequest&, const Model::GetCapabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCapabilityResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::GetPartnershipRequest&, const Model::GetPartnershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPartnershipResponseReceivedHandler;
     typedef std::function<void(const B2BIClient*, const Model::GetProfileRequest&, const Model::GetProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileResponseReceivedHandler;

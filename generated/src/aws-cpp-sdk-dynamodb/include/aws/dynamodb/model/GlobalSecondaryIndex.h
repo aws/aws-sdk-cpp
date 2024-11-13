@@ -10,6 +10,7 @@
 #include <aws/dynamodb/model/Projection.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/OnDemandThroughput.h>
+#include <aws/dynamodb/model/WarmThroughput.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <utility>
 
@@ -125,6 +126,21 @@ namespace Model
     inline GlobalSecondaryIndex& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
     inline GlobalSecondaryIndex& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Represents the warm throughput value (in read units per second and write
+     * units per second) for the specified secondary index. If you use this parameter,
+     * you must specify <code>ReadUnitsPerSecond</code>,
+     * <code>WriteUnitsPerSecond</code>, or both.</p>
+     */
+    inline const WarmThroughput& GetWarmThroughput() const{ return m_warmThroughput; }
+    inline bool WarmThroughputHasBeenSet() const { return m_warmThroughputHasBeenSet; }
+    inline void SetWarmThroughput(const WarmThroughput& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = value; }
+    inline void SetWarmThroughput(WarmThroughput&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::move(value); }
+    inline GlobalSecondaryIndex& WithWarmThroughput(const WarmThroughput& value) { SetWarmThroughput(value); return *this;}
+    inline GlobalSecondaryIndex& WithWarmThroughput(WarmThroughput&& value) { SetWarmThroughput(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_indexName;
@@ -141,6 +157,9 @@ namespace Model
 
     OnDemandThroughput m_onDemandThroughput;
     bool m_onDemandThroughputHasBeenSet = false;
+
+    WarmThroughput m_warmThroughput;
+    bool m_warmThroughputHasBeenSet = false;
   };
 
 } // namespace Model

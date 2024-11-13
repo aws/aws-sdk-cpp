@@ -25,6 +25,7 @@ namespace Aws
         static const int TOP_LOCATION_DETAILS_HASH = HashingUtils::HashString("TOP_LOCATION_DETAILS");
         static const int OVERALL_TRAFFIC_SUGGESTIONS_HASH = HashingUtils::HashString("OVERALL_TRAFFIC_SUGGESTIONS");
         static const int OVERALL_TRAFFIC_SUGGESTIONS_DETAILS_HASH = HashingUtils::HashString("OVERALL_TRAFFIC_SUGGESTIONS_DETAILS");
+        static const int ROUTING_SUGGESTIONS_HASH = HashingUtils::HashString("ROUTING_SUGGESTIONS");
 
 
         QueryType GetQueryTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == OVERALL_TRAFFIC_SUGGESTIONS_DETAILS_HASH)
           {
             return QueryType::OVERALL_TRAFFIC_SUGGESTIONS_DETAILS;
+          }
+          else if (hashCode == ROUTING_SUGGESTIONS_HASH)
+          {
+            return QueryType::ROUTING_SUGGESTIONS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "OVERALL_TRAFFIC_SUGGESTIONS";
           case QueryType::OVERALL_TRAFFIC_SUGGESTIONS_DETAILS:
             return "OVERALL_TRAFFIC_SUGGESTIONS_DETAILS";
+          case QueryType::ROUTING_SUGGESTIONS:
+            return "ROUTING_SUGGESTIONS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

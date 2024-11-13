@@ -58,8 +58,9 @@ namespace Model
     ///@{
     /**
      * <p>A list of resources for the access permissions. Any strings that can be used
-     * as a resource in an IAM policy can be used in the list of resources to
-     * check.</p>
+     * as an Amazon Resource Name (ARN) in an IAM policy can be used in the list of
+     * resources to check. You can only use a wildcard in the portion of the ARN that
+     * specifies the resource ID.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }

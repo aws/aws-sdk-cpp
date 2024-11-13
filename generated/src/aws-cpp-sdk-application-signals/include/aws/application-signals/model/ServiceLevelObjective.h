@@ -11,6 +11,8 @@
 #include <aws/application-signals/model/RequestBasedServiceLevelIndicator.h>
 #include <aws/application-signals/model/EvaluationType.h>
 #include <aws/application-signals/model/Goal.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/application-signals/model/BurnRateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -166,6 +168,23 @@ namespace Model
     inline ServiceLevelObjective& WithGoal(const Goal& value) { SetGoal(value); return *this;}
     inline ServiceLevelObjective& WithGoal(Goal&& value) { SetGoal(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Each object in this array defines the length of the look-back window used to
+     * calculate one burn rate metric for this SLO. The burn rate measures how fast the
+     * service is consuming the error budget, relative to the attainment goal of the
+     * SLO.</p>
+     */
+    inline const Aws::Vector<BurnRateConfiguration>& GetBurnRateConfigurations() const{ return m_burnRateConfigurations; }
+    inline bool BurnRateConfigurationsHasBeenSet() const { return m_burnRateConfigurationsHasBeenSet; }
+    inline void SetBurnRateConfigurations(const Aws::Vector<BurnRateConfiguration>& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations = value; }
+    inline void SetBurnRateConfigurations(Aws::Vector<BurnRateConfiguration>&& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations = std::move(value); }
+    inline ServiceLevelObjective& WithBurnRateConfigurations(const Aws::Vector<BurnRateConfiguration>& value) { SetBurnRateConfigurations(value); return *this;}
+    inline ServiceLevelObjective& WithBurnRateConfigurations(Aws::Vector<BurnRateConfiguration>&& value) { SetBurnRateConfigurations(std::move(value)); return *this;}
+    inline ServiceLevelObjective& AddBurnRateConfigurations(const BurnRateConfiguration& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations.push_back(value); return *this; }
+    inline ServiceLevelObjective& AddBurnRateConfigurations(BurnRateConfiguration&& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -194,6 +213,9 @@ namespace Model
 
     Goal m_goal;
     bool m_goalHasBeenSet = false;
+
+    Aws::Vector<BurnRateConfiguration> m_burnRateConfigurations;
+    bool m_burnRateConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,6 +32,7 @@
 #include <aws/cloudtrail/model/DescribeTrailsResult.h>
 #include <aws/cloudtrail/model/DisableFederationResult.h>
 #include <aws/cloudtrail/model/EnableFederationResult.h>
+#include <aws/cloudtrail/model/GenerateQueryResult.h>
 #include <aws/cloudtrail/model/GetChannelResult.h>
 #include <aws/cloudtrail/model/GetEventDataStoreResult.h>
 #include <aws/cloudtrail/model/GetEventSelectorsResult.h>
@@ -132,6 +133,7 @@ namespace Aws
       class DescribeTrailsRequest;
       class DisableFederationRequest;
       class EnableFederationRequest;
+      class GenerateQueryRequest;
       class GetChannelRequest;
       class GetEventDataStoreRequest;
       class GetEventSelectorsRequest;
@@ -184,6 +186,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeTrailsResult, CloudTrailError> DescribeTrailsOutcome;
       typedef Aws::Utils::Outcome<DisableFederationResult, CloudTrailError> DisableFederationOutcome;
       typedef Aws::Utils::Outcome<EnableFederationResult, CloudTrailError> EnableFederationOutcome;
+      typedef Aws::Utils::Outcome<GenerateQueryResult, CloudTrailError> GenerateQueryOutcome;
       typedef Aws::Utils::Outcome<GetChannelResult, CloudTrailError> GetChannelOutcome;
       typedef Aws::Utils::Outcome<GetEventDataStoreResult, CloudTrailError> GetEventDataStoreOutcome;
       typedef Aws::Utils::Outcome<GetEventSelectorsResult, CloudTrailError> GetEventSelectorsOutcome;
@@ -236,6 +239,7 @@ namespace Aws
       typedef std::future<DescribeTrailsOutcome> DescribeTrailsOutcomeCallable;
       typedef std::future<DisableFederationOutcome> DisableFederationOutcomeCallable;
       typedef std::future<EnableFederationOutcome> EnableFederationOutcomeCallable;
+      typedef std::future<GenerateQueryOutcome> GenerateQueryOutcomeCallable;
       typedef std::future<GetChannelOutcome> GetChannelOutcomeCallable;
       typedef std::future<GetEventDataStoreOutcome> GetEventDataStoreOutcomeCallable;
       typedef std::future<GetEventSelectorsOutcome> GetEventSelectorsOutcomeCallable;
@@ -291,6 +295,7 @@ namespace Aws
     typedef std::function<void(const CloudTrailClient*, const Model::DescribeTrailsRequest&, const Model::DescribeTrailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrailsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::DisableFederationRequest&, const Model::DisableFederationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableFederationResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::EnableFederationRequest&, const Model::EnableFederationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableFederationResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::GenerateQueryRequest&, const Model::GenerateQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateQueryResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetChannelRequest&, const Model::GetChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetEventDataStoreRequest&, const Model::GetEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventDataStoreResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetEventSelectorsRequest&, const Model::GetEventSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventSelectorsResponseReceivedHandler;

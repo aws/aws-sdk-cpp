@@ -82,8 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The public key. For API calls, the text must be base64-encoded. For command
-     * line tools, base64 encoding is performed for you.</p>
+     * <p>The public key.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPublicKeyMaterial() const{ return m_publicKeyMaterial; }
     inline bool PublicKeyMaterialHasBeenSet() const { return m_publicKeyMaterialHasBeenSet; }

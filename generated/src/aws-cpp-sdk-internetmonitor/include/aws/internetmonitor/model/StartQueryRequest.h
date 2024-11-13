@@ -92,9 +92,12 @@ namespace Model
      * Services location that is monitored.</p> </li> <li> <p>
      * <code>OVERALL_TRAFFIC_SUGGESTIONS_DETAILS</code>: Provides TTFB, using a 30-day
      * weighted average, for each top location, for a proposed Amazon Web Services
-     * location. Must provide a Amazon Web Services location to search.</p> </li> </ul>
-     * <p>For lists of the fields returned with each query type and more information
-     * about how each type of query is performed, see <a
+     * location. Must provide an Amazon Web Services location to search.</p> </li> <li>
+     * <p> <code>ROUTING_SUGGESTIONS</code>: Provides the predicted average round-trip
+     * time (RTT) from an IP prefix toward an Amazon Web Services location for a DNS
+     * resolver. The RTT is calculated at one hour intervals, over a one hour
+     * period.</p> </li> </ul> <p>For lists of the fields returned with each query type
+     * and more information about how each type of query is performed, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-view-cw-tools-cwim-query.html">
      * Using the Amazon CloudWatch Internet Monitor query interface</a> in the Amazon
      * CloudWatch Internet Monitor User Guide.</p>

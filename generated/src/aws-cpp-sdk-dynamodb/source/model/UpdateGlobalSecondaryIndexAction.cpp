@@ -21,7 +21,8 @@ namespace Model
 UpdateGlobalSecondaryIndexAction::UpdateGlobalSecondaryIndexAction() : 
     m_indexNameHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false)
+    m_onDemandThroughputHasBeenSet(false),
+    m_warmThroughputHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,13 @@ UpdateGlobalSecondaryIndexAction& UpdateGlobalSecondaryIndexAction::operator =(J
     m_onDemandThroughputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WarmThroughput"))
+  {
+    m_warmThroughput = jsonValue.GetObject("WarmThroughput");
+
+    m_warmThroughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +84,12 @@ JsonValue UpdateGlobalSecondaryIndexAction::Jsonize() const
   if(m_onDemandThroughputHasBeenSet)
   {
    payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
+
+  }
+
+  if(m_warmThroughputHasBeenSet)
+  {
+   payload.WithObject("WarmThroughput", m_warmThroughput.Jsonize());
 
   }
 

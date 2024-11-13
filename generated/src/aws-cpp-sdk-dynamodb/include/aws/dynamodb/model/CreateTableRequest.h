@@ -13,6 +13,7 @@
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/SSESpecification.h>
 #include <aws/dynamodb/model/TableClass.h>
+#include <aws/dynamodb/model/WarmThroughput.h>
 #include <aws/dynamodb/model/OnDemandThroughput.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
@@ -308,6 +309,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Represents the warm throughput (in read units per second and write units per
+     * second) for creating a table.</p>
+     */
+    inline const WarmThroughput& GetWarmThroughput() const{ return m_warmThroughput; }
+    inline bool WarmThroughputHasBeenSet() const { return m_warmThroughputHasBeenSet; }
+    inline void SetWarmThroughput(const WarmThroughput& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = value; }
+    inline void SetWarmThroughput(WarmThroughput&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::move(value); }
+    inline CreateTableRequest& WithWarmThroughput(const WarmThroughput& value) { SetWarmThroughput(value); return *this;}
+    inline CreateTableRequest& WithWarmThroughput(WarmThroughput&& value) { SetWarmThroughput(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An Amazon Web Services resource-based policy document in JSON format that
      * will be attached to the table.</p> <p>When you attach a resource-based policy
      * while creating a table, the policy application is <i>strongly
@@ -381,6 +395,9 @@ namespace Model
 
     bool m_deletionProtectionEnabled;
     bool m_deletionProtectionEnabledHasBeenSet = false;
+
+    WarmThroughput m_warmThroughput;
+    bool m_warmThroughputHasBeenSet = false;
 
     Aws::String m_resourcePolicy;
     bool m_resourcePolicyHasBeenSet = false;

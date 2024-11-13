@@ -149,7 +149,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
+     * <p>The owner alias (<code>amazon</code> | <code>aws-backup-vault</code> |
+     * <code>aws-marketplace</code>).</p>
      */
     inline const Aws::String& GetImageOwnerAlias() const{ return m_imageOwnerAlias; }
     inline bool ImageOwnerAliasHasBeenSet() const { return m_imageOwnerAliasHasBeenSet; }
@@ -367,6 +368,48 @@ namespace Model
     inline Image& WithLastLaunchedTime(const Aws::String& value) { SetLastLaunchedTime(value); return *this;}
     inline Image& WithLastLaunchedTime(Aws::String&& value) { SetLastLaunchedTime(std::move(value)); return *this;}
     inline Image& WithLastLaunchedTime(const char* value) { SetLastLaunchedTime(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the source AMI from which the AMI was created.</p> <p>The ID only
+     * appears if the AMI was created using <a>CreateImage</a>, <a>CopyImage</a>, or
+     * <a>CreateRestoreImageTask</a>. The ID does not appear if the AMI was created
+     * using any other API. For some older AMIs, the ID might not be available. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify
+     * the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetSourceImageId() const{ return m_sourceImageId; }
+    inline bool SourceImageIdHasBeenSet() const { return m_sourceImageIdHasBeenSet; }
+    inline void SetSourceImageId(const Aws::String& value) { m_sourceImageIdHasBeenSet = true; m_sourceImageId = value; }
+    inline void SetSourceImageId(Aws::String&& value) { m_sourceImageIdHasBeenSet = true; m_sourceImageId = std::move(value); }
+    inline void SetSourceImageId(const char* value) { m_sourceImageIdHasBeenSet = true; m_sourceImageId.assign(value); }
+    inline Image& WithSourceImageId(const Aws::String& value) { SetSourceImageId(value); return *this;}
+    inline Image& WithSourceImageId(Aws::String&& value) { SetSourceImageId(std::move(value)); return *this;}
+    inline Image& WithSourceImageId(const char* value) { SetSourceImageId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Region of the source AMI. </p> <p>The Region only appears if the AMI was
+     * created using <a>CreateImage</a>, <a>CopyImage</a>, or
+     * <a>CreateRestoreImageTask</a>. The Region does not appear if the AMI was created
+     * using any other API. For some older AMIs, the Region might not be available. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify
+     * the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetSourceImageRegion() const{ return m_sourceImageRegion; }
+    inline bool SourceImageRegionHasBeenSet() const { return m_sourceImageRegionHasBeenSet; }
+    inline void SetSourceImageRegion(const Aws::String& value) { m_sourceImageRegionHasBeenSet = true; m_sourceImageRegion = value; }
+    inline void SetSourceImageRegion(Aws::String&& value) { m_sourceImageRegionHasBeenSet = true; m_sourceImageRegion = std::move(value); }
+    inline void SetSourceImageRegion(const char* value) { m_sourceImageRegionHasBeenSet = true; m_sourceImageRegion.assign(value); }
+    inline Image& WithSourceImageRegion(const Aws::String& value) { SetSourceImageRegion(value); return *this;}
+    inline Image& WithSourceImageRegion(Aws::String&& value) { SetSourceImageRegion(std::move(value)); return *this;}
+    inline Image& WithSourceImageRegion(const char* value) { SetSourceImageRegion(value); return *this;}
     ///@}
 
     ///@{
@@ -594,6 +637,12 @@ namespace Model
 
     Aws::String m_lastLaunchedTime;
     bool m_lastLaunchedTimeHasBeenSet = false;
+
+    Aws::String m_sourceImageId;
+    bool m_sourceImageIdHasBeenSet = false;
+
+    Aws::String m_sourceImageRegion;
+    bool m_sourceImageRegionHasBeenSet = false;
 
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet = false;

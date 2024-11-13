@@ -12,6 +12,7 @@
 #include <aws/accessanalyzer/model/ResourceType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/accessanalyzer/model/FindingChangeType.h>
+#include <aws/accessanalyzer/model/ResourceControlPolicyRestriction.h>
 #include <aws/accessanalyzer/model/FindingSource.h>
 #include <utility>
 
@@ -275,6 +276,19 @@ namespace Model
     inline AccessPreviewFinding& AddSources(const FindingSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
     inline AccessPreviewFinding& AddSources(FindingSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of restriction applied to the finding by the resource owner with an
+     * Organizations resource control policy (RCP).</p>
+     */
+    inline const ResourceControlPolicyRestriction& GetResourceControlPolicyRestriction() const{ return m_resourceControlPolicyRestriction; }
+    inline bool ResourceControlPolicyRestrictionHasBeenSet() const { return m_resourceControlPolicyRestrictionHasBeenSet; }
+    inline void SetResourceControlPolicyRestriction(const ResourceControlPolicyRestriction& value) { m_resourceControlPolicyRestrictionHasBeenSet = true; m_resourceControlPolicyRestriction = value; }
+    inline void SetResourceControlPolicyRestriction(ResourceControlPolicyRestriction&& value) { m_resourceControlPolicyRestrictionHasBeenSet = true; m_resourceControlPolicyRestriction = std::move(value); }
+    inline AccessPreviewFinding& WithResourceControlPolicyRestriction(const ResourceControlPolicyRestriction& value) { SetResourceControlPolicyRestriction(value); return *this;}
+    inline AccessPreviewFinding& WithResourceControlPolicyRestriction(ResourceControlPolicyRestriction&& value) { SetResourceControlPolicyRestriction(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -321,6 +335,9 @@ namespace Model
 
     Aws::Vector<FindingSource> m_sources;
     bool m_sourcesHasBeenSet = false;
+
+    ResourceControlPolicyRestriction m_resourceControlPolicyRestriction;
+    bool m_resourceControlPolicyRestrictionHasBeenSet = false;
   };
 
 } // namespace Model
