@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.common.base.CaseFormat;
+import software.amazon.smithy.model.node.Node;
+import software.amazon.smithy.model.shapes.Shape;
 
 public interface GenericCodegenAdapter<SHAPE, DATA> {
 
@@ -27,6 +29,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
 
     public boolean isList(DATA d);
 
+    public boolean isDouble(DATA d);
+
     public boolean isFloatShape( SHAPE s);
 
     public boolean isBooleanShape(SHAPE s);
@@ -41,6 +45,10 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
 
     public boolean isEnumShape( SHAPE s);
 
+    public boolean isTimestampShape(SHAPE s);
+
+    public boolean isDoubleShape( Shape s);
+
     public List<DATA> getList(DATA d);
 
     public Map<String, DATA> getMap(DATA d);
@@ -54,6 +62,8 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
     public Float getFloat(DATA d);
 
     public Integer getInteger(DATA d);
+
+    public Double getDouble(DATA d);
 
     public String getShapeName(SHAPE s);
 
@@ -190,6 +200,21 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
         {
             String shapeName = getShapeName(shape);
             functionName = String.format("{%s::%s}",shapeName,value);
+        }
+        else if(isTimestampShape(shape))
+        {
+            if(isString(value))
+            {
+                functionName = String.format("\"%s\"",value);
+            }
+            else if(isDouble(value))
+            {
+                functionName = String.format("{(double)%s}",value);
+            }
+            else
+            {
+                throw new RuntimeException("unsupported timestamp shape format");
+            }
         }
         else
         {
