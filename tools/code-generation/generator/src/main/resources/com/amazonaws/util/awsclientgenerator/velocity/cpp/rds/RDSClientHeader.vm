@@ -52,47 +52,16 @@ namespace ${rootNamespace}
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
         void OverrideEndpoint(const Aws::String& endpoint);
-#if($serviceModel.endpointRules)
         std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
-#end
     private:
         friend class Aws::Client::ClientWithAsyncTemplateMethods<${className}>;
-#if(!$serviceModel.endpointRules)
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-#else
         void init(const ${metadata.classNamePrefix}ClientConfiguration& clientConfiguration);
-#end
-#if($metadata.hasEndpointDiscoveryTrait && !$serviceModel.endpointRules)
-        void Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration);
-#end
 
-#if(!$serviceModel.endpointRules)
-#if($metadata.hasEndpointTrait)
-        Aws::String m_baseUri;
-        Aws::String m_scheme;
-        bool m_enableHostPrefixInjection = false;
-#else
-        Aws::String m_uri;
-#end
-#end
 #if($metadata.hasEndpointDiscoveryTrait)
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
-#if(!$serviceModel.endpointRules)
-        bool m_enableEndpointDiscovery = false;
 #end
-#end
-#if(!$serviceModel.endpointRules)
-        Aws::String m_configScheme;
-#if($metadata.hasPreSignedUrl)
-        bool m_useDualStack = false;
-#end
-#end
-#if($serviceModel.endpointRules)
         ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
-#end
-#if($serviceModel.endpointRules)
         std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
-#end
     };
   } // namespace ${metadata.namespace}
 } // namespace ${rootNamespace}

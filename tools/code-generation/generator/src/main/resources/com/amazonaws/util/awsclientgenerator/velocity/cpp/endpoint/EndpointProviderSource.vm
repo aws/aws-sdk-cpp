@@ -32,7 +32,6 @@ namespace ${serviceNamespace}
 {
 namespace Endpoint
 {
-#if ($serviceModel.endpointRules)
 #if ($serviceModel.clientContextParams)
 #foreach($memberEntry in $serviceModel.clientContextParams.entrySet())
 #if(${memberEntry.value.type} == "boolean")
@@ -104,7 +103,6 @@ namespace Endpoint
     }
 #end
   }
-#end
 #end
 } // namespace Endpoint
 } // namespace ${serviceNamespace}

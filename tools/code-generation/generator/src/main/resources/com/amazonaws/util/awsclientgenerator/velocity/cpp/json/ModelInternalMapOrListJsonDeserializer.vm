@@ -57,7 +57,7 @@
 #end
   ${template.currentSpaces}}
 #elseif($template.currentShape.list)
-#if($serviceModel.endpointRules)#set($AwsArray = "Aws::Utils::Array")#else#set($AwsArray = "Array")#end
+#set($AwsArray = "Aws::Utils::Array")
 #if($template.recursionDepth > 1 || $memberIsWholePayload)
   ${template.currentSpaces}${AwsArray}<JsonView> ${template.lowerCaseVarName}JsonList = ${template.jsonValue}.AsArray();
 #else

@@ -6,9 +6,7 @@
 #set($exportMacro = "${CppViewHelper.computeExportValue($metadata.classNamePrefix)}")
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
-#if($serviceModel.endpointRules)
 \#include <aws/core/endpoint/AWSEndpoint.h>
-#end
 \#include <aws/core/AmazonSerializableWebServiceRequest.h>
 \#include <aws/core/utils/UnreferencedParam.h>
 \#include <aws/core/http/HttpRequest.h>

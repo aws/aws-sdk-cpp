@@ -55,7 +55,7 @@
 #end
   ${template.currentSpaces}}
 #elseif($template.currentShape.list)
-#if($serviceModel.endpointRules)#set($AwsArray = "Aws::Utils::Array")#else#set($AwsArray = "Array")#end
+#set($AwsArray = "Aws::Utils::Array")
   ${template.currentSpaces}${AwsArray}<JsonValue> ${template.lowerCaseVarName}JsonList(${template.containerVar}.size());
   ${template.currentSpaces}for(unsigned ${template.lowerCaseVarName}Index = 0; ${template.lowerCaseVarName}Index < ${template.lowerCaseVarName}JsonList.GetLength(); ++${template.lowerCaseVarName}Index)
   ${template.currentSpaces}{
