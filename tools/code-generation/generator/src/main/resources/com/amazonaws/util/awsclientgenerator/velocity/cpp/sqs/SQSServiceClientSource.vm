@@ -18,9 +18,7 @@
 \#include <aws/core/utils/threading/Executor.h>
 \#include <aws/core/utils/DNS.h>
 \#include <aws/core/utils/logging/LogMacros.h>
-#if($serviceModel.endpointRules)
 \#include <aws/core/utils/logging/ErrorMacros.h>
-#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
 
 using namespace Aws;
@@ -31,9 +29,7 @@ using namespace Aws::${metadata.namespace}::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
-#if($serviceModel.endpointRules)
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
-#end
 
 
 #if(!$onlyGeneratedOperations)

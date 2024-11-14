@@ -11,7 +11,6 @@ namespace ${rootNamespace}
 {
 namespace ${serviceNamespace}
 {
-#if ($serviceModel.endpointRules)
 class ${metadata.classNamePrefix}EndpointRules
 {
 public:
@@ -22,6 +21,5 @@ public:
 ##C++ compilers are required to support maximum length 65536 of string literal, therefore, using raw C array
     static const char* GetRulesBlob();
 };
-#end
 } // namespace ${serviceNamespace}
 } // namespace ${rootNamespace}

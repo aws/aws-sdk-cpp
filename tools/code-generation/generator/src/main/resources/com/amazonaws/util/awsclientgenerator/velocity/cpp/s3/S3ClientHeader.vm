@@ -53,22 +53,6 @@ namespace ${rootNamespace}
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY[] = "x-amz-server-side-encryption-customer-key";
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5[] = "x-amz-server-side-encryption-customer-key-MD5";
     } // SS3Headers
-#if(!$serviceModel.endpointRules)
-
-    // Get endpoint, signer region and signer service name after computing the endpoint.
-    struct ComputeEndpointResult
-    {
-      ComputeEndpointResult(const Aws::String& endpointName = {}, const Aws::String& region = {}, const Aws::String& serviceName = {}, const Aws::String signer = Aws::Auth::SIGV4_SIGNER) :
-        endpoint(endpointName), signerRegion(region), signerServiceName(serviceName), signerName(signer) {}
-
-      Aws::String endpoint;
-      Aws::String signerRegion;
-      Aws::String signerServiceName;
-      Aws::String signerName;
-    };
-
-    typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ComputeEndpointOutcome;
-#end
 
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
@@ -81,14 +65,6 @@ namespace ${rootNamespace}
     /**
      * ${serviceModel.documentation}
      */
-#end
-#if(!$serviceModel.endpointRules)
-    enum class US_EAST_1_REGIONAL_ENDPOINT_OPTION
-    {
-      NOT_SET,
-      LEGACY,   //stands for using global endpoint for us-east-1,
-      REGIONAL //stands for using regional endpoint for us-east-1
-    };
 #end
 #set($finalClass = " final")
 #if($serviceModel.enableVirtualOperations)
@@ -190,9 +166,7 @@ namespace ${rootNamespace}
         virtual bool MultipartUploadSupported() const;
 
         void OverrideEndpoint(const Aws::String& endpoint);
-#if($serviceModel.endpointRules)
         std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
-#end
 
 #if($serviceNamespace == "S3Crt")
 
@@ -241,29 +215,12 @@ namespace ${rootNamespace}
                                         const Aws::AmazonWebServiceRequest *request,
                                         const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
 #else
-#if(!$serviceModel.endpointRules)
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-#else
         void init(const ${metadata.classNamePrefix}ClientConfiguration& clientConfiguration);
 #end
-#end
-#if(!$serviceModel.endpointRules)
-        void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
-        ComputeEndpointOutcome ComputeEndpointString(const Aws::String& bucket) const;
-        ComputeEndpointOutcome ComputeEndpointString() const;
-        ComputeEndpointOutcome ComputeEndpointStringWithServiceName(const Aws::String& serviceNameOverride = "") const;
-
-        Aws::String m_baseUri;
-        Aws::String m_scheme;
-        bool m_enableHostPrefixInjection = false;
-        Aws::String m_configScheme;
-#end##-#if(!$serviceModel.endpointRules)
-#if($serviceModel.endpointRules)
 #if($serviceNamespace == "S3Crt")
         ${metadata.classNamePrefix}::ClientConfiguration m_clientConfiguration;
 #else
         ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
-#end
 #end
 #if($serviceNamespace == "S3Crt")
         struct aws_s3_client* m_s3CrtClient = {};
@@ -273,25 +230,10 @@ namespace ${rootNamespace}
         std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_credProvider;
         std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_crtCredProvider;
 #end
-#if(!$serviceModel.endpointRules)
-        bool m_useVirtualAddressing = false;
-        bool m_useDualStack = false;
-        bool m_useArnRegion = false;
-        bool m_disableMultiRegionAccessPoints = false;
-        bool m_useCustomEndpoint = false;
-#end##-#if(!$serviceModel.endpointRules)
 #if($metadata.hasEndpointDiscoveryTrait)
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
-#if(!$serviceModel.endpointRules)
-        bool m_enableEndpointDiscovery = false;
 #end
-#end
-#if($serviceModel.endpointRules)
         std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
-#end
-#if(!$serviceModel.endpointRules)
-        ${rootNamespace}::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption = ${rootNamespace}::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET;
-#end
 #if($serviceNamespace == "S3Crt")
         std::shared_ptr<S3ExpressIdentityProvider> m_identityProvider;
         S3CrtIdentityProviderUserData m_identityProviderUserData{m_identityProvider};

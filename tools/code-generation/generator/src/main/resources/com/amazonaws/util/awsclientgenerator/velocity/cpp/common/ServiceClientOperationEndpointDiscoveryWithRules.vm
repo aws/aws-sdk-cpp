@@ -1,4 +1,3 @@
-#if($serviceModel.endpointRules)
 #if($operation.hasEndpointDiscoveryTrait)
       ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
       const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
@@ -85,4 +84,3 @@
       }
 #end
 #end
-#end##-#if(!$serviceModel.endpointRules)
