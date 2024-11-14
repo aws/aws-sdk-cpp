@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.common.base.CaseFormat;
-import software.amazon.smithy.model.node.Node;
-import software.amazon.smithy.model.shapes.Shape;
 
 public interface GenericCodegenAdapter<SHAPE, DATA> {
 
@@ -47,7 +45,7 @@ public interface GenericCodegenAdapter<SHAPE, DATA> {
 
     public boolean isTimestampShape(SHAPE s);
 
-    public boolean isDoubleShape( Shape s);
+    public boolean isDoubleShape( SHAPE s);
 
     public List<DATA> getList(DATA d);
 
