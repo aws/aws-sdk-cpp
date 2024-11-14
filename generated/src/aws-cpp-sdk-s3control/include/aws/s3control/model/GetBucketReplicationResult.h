@@ -47,7 +47,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * AWS Request Id value
+     */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
@@ -56,11 +58,26 @@ namespace Model
     inline GetBucketReplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
     inline GetBucketReplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * x-amz-id-2 header value, also known as Host Id
+     */
+    inline const Aws::String& GetHostId() const{ return m_hostId; }
+    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
+    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
+    inline void SetHostId(const char* value) { m_hostId.assign(value); }
+    inline GetBucketReplicationResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
+    inline GetBucketReplicationResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
+    inline GetBucketReplicationResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    ///@}
   private:
 
     ReplicationConfiguration m_replicationConfiguration;
 
     Aws::String m_requestId;
+
+    Aws::String m_hostId;
   };
 
 } // namespace Model
