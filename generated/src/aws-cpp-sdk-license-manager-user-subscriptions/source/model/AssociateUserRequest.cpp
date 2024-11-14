@@ -16,6 +16,7 @@ AssociateUserRequest::AssociateUserRequest() :
     m_domainHasBeenSet(false),
     m_identityProviderHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_usernameHasBeenSet(false)
 {
 }
@@ -39,6 +40,17 @@ Aws::String AssociateUserRequest::SerializePayload() const
   if(m_instanceIdHasBeenSet)
   {
    payload.WithString("InstanceId", m_instanceId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

@@ -24,7 +24,8 @@ UpdateFuotaTaskRequest::UpdateFuotaTaskRequest() :
     m_fragmentSizeBytes(0),
     m_fragmentSizeBytesHasBeenSet(false),
     m_fragmentIntervalMS(0),
-    m_fragmentIntervalMSHasBeenSet(false)
+    m_fragmentIntervalMSHasBeenSet(false),
+    m_descriptorHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,12 @@ Aws::String UpdateFuotaTaskRequest::SerializePayload() const
   if(m_fragmentIntervalMSHasBeenSet)
   {
    payload.WithInteger("FragmentIntervalMS", m_fragmentIntervalMS);
+
+  }
+
+  if(m_descriptorHasBeenSet)
+  {
+   payload.WithString("Descriptor", m_descriptor);
 
   }
 

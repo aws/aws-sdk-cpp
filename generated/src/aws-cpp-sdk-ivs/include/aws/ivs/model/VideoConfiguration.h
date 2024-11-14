@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>Object specifying a stream’s video configuration, as set up by the
    * broadcaster (usually in an encoder). This is part of the
-   * <a>IngestConfiguration</a> object and used for monitoring stream
-   * health.</p><p><h3>See Also:</h3>   <a
+   * <a>IngestConfigurations</a> object and the deprecated <a>IngestConfiguration</a>
+   * object. It is used for monitoring stream health. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/VideoConfiguration">AWS
    * API Reference</a></p>
    */
@@ -101,6 +101,37 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates the degree of required decoder performance for a profile. Normally
+     * this is set automatically by the encoder. When an AVC codec is used, this field
+     * has the same value as <code>avcLevel</code>.</p>
+     */
+    inline const Aws::String& GetLevel() const{ return m_level; }
+    inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
+    inline void SetLevel(const Aws::String& value) { m_levelHasBeenSet = true; m_level = value; }
+    inline void SetLevel(Aws::String&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
+    inline void SetLevel(const char* value) { m_levelHasBeenSet = true; m_level.assign(value); }
+    inline VideoConfiguration& WithLevel(const Aws::String& value) { SetLevel(value); return *this;}
+    inline VideoConfiguration& WithLevel(Aws::String&& value) { SetLevel(std::move(value)); return *this;}
+    inline VideoConfiguration& WithLevel(const char* value) { SetLevel(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates to the decoder the requirements for decoding the stream. When an
+     * AVC codec is used, this field has the same value as <code>avcProfile</code>.</p>
+     */
+    inline const Aws::String& GetProfile() const{ return m_profile; }
+    inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
+    inline void SetProfile(const Aws::String& value) { m_profileHasBeenSet = true; m_profile = value; }
+    inline void SetProfile(Aws::String&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
+    inline void SetProfile(const char* value) { m_profileHasBeenSet = true; m_profile.assign(value); }
+    inline VideoConfiguration& WithProfile(const Aws::String& value) { SetProfile(value); return *this;}
+    inline VideoConfiguration& WithProfile(Aws::String&& value) { SetProfile(std::move(value)); return *this;}
+    inline VideoConfiguration& WithProfile(const char* value) { SetProfile(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The expected ingest bitrate (bits per second). This is configured in the
      * encoder.</p>
      */
@@ -118,6 +149,21 @@ namespace Model
     inline bool TargetFramerateHasBeenSet() const { return m_targetFramerateHasBeenSet; }
     inline void SetTargetFramerate(long long value) { m_targetFramerateHasBeenSet = true; m_targetFramerate = value; }
     inline VideoConfiguration& WithTargetFramerate(long long value) { SetTargetFramerate(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Name of the video track. If multitrack is not enabled, this is track0 (the
+     * sole track).</p>
+     */
+    inline const Aws::String& GetTrack() const{ return m_track; }
+    inline bool TrackHasBeenSet() const { return m_trackHasBeenSet; }
+    inline void SetTrack(const Aws::String& value) { m_trackHasBeenSet = true; m_track = value; }
+    inline void SetTrack(Aws::String&& value) { m_trackHasBeenSet = true; m_track = std::move(value); }
+    inline void SetTrack(const char* value) { m_trackHasBeenSet = true; m_track.assign(value); }
+    inline VideoConfiguration& WithTrack(const Aws::String& value) { SetTrack(value); return *this;}
+    inline VideoConfiguration& WithTrack(Aws::String&& value) { SetTrack(std::move(value)); return *this;}
+    inline VideoConfiguration& WithTrack(const char* value) { SetTrack(value); return *this;}
     ///@}
 
     ///@{
@@ -153,11 +199,20 @@ namespace Model
     Aws::String m_encoder;
     bool m_encoderHasBeenSet = false;
 
+    Aws::String m_level;
+    bool m_levelHasBeenSet = false;
+
+    Aws::String m_profile;
+    bool m_profileHasBeenSet = false;
+
     long long m_targetBitrate;
     bool m_targetBitrateHasBeenSet = false;
 
     long long m_targetFramerate;
     bool m_targetFramerateHasBeenSet = false;
+
+    Aws::String m_track;
+    bool m_trackHasBeenSet = false;
 
     long long m_videoHeight;
     bool m_videoHeightHasBeenSet = false;

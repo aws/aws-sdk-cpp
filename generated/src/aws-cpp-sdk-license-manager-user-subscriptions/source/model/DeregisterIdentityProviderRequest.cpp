@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 DeregisterIdentityProviderRequest::DeregisterIdentityProviderRequest() : 
     m_identityProviderHasBeenSet(false),
+    m_identityProviderArnHasBeenSet(false),
     m_productHasBeenSet(false)
 {
 }
@@ -25,6 +26,12 @@ Aws::String DeregisterIdentityProviderRequest::SerializePayload() const
   if(m_identityProviderHasBeenSet)
   {
    payload.WithObject("IdentityProvider", m_identityProvider.Jsonize());
+
+  }
+
+  if(m_identityProviderArnHasBeenSet)
+  {
+   payload.WithString("IdentityProviderArn", m_identityProviderArn);
 
   }
 

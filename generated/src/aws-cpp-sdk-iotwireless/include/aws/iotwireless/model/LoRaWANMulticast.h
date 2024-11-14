@@ -7,6 +7,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/SupportedRfRegion.h>
 #include <aws/iotwireless/model/DlClass.h>
+#include <aws/iotwireless/model/ParticipatingGatewaysMulticast.h>
 #include <utility>
 
 namespace Aws
@@ -58,6 +59,16 @@ namespace Model
     inline LoRaWANMulticast& WithDlClass(const DlClass& value) { SetDlClass(value); return *this;}
     inline LoRaWANMulticast& WithDlClass(DlClass&& value) { SetDlClass(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const ParticipatingGatewaysMulticast& GetParticipatingGateways() const{ return m_participatingGateways; }
+    inline bool ParticipatingGatewaysHasBeenSet() const { return m_participatingGatewaysHasBeenSet; }
+    inline void SetParticipatingGateways(const ParticipatingGatewaysMulticast& value) { m_participatingGatewaysHasBeenSet = true; m_participatingGateways = value; }
+    inline void SetParticipatingGateways(ParticipatingGatewaysMulticast&& value) { m_participatingGatewaysHasBeenSet = true; m_participatingGateways = std::move(value); }
+    inline LoRaWANMulticast& WithParticipatingGateways(const ParticipatingGatewaysMulticast& value) { SetParticipatingGateways(value); return *this;}
+    inline LoRaWANMulticast& WithParticipatingGateways(ParticipatingGatewaysMulticast&& value) { SetParticipatingGateways(std::move(value)); return *this;}
+    ///@}
   private:
 
     SupportedRfRegion m_rfRegion;
@@ -65,6 +76,9 @@ namespace Model
 
     DlClass m_dlClass;
     bool m_dlClassHasBeenSet = false;
+
+    ParticipatingGatewaysMulticast m_participatingGateways;
+    bool m_participatingGatewaysHasBeenSet = false;
   };
 
 } // namespace Model

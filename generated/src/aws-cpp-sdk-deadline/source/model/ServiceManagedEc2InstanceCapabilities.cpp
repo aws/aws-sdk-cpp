@@ -26,6 +26,7 @@ ServiceManagedEc2InstanceCapabilities::ServiceManagedEc2InstanceCapabilities() :
     m_cpuArchitectureType(CpuArchitectureType::NOT_SET),
     m_cpuArchitectureTypeHasBeenSet(false),
     m_rootEbsVolumeHasBeenSet(false),
+    m_acceleratorCapabilitiesHasBeenSet(false),
     m_allowedInstanceTypesHasBeenSet(false),
     m_excludedInstanceTypesHasBeenSet(false),
     m_customAmountsHasBeenSet(false),
@@ -74,6 +75,13 @@ ServiceManagedEc2InstanceCapabilities& ServiceManagedEc2InstanceCapabilities::op
     m_rootEbsVolume = jsonValue.GetObject("rootEbsVolume");
 
     m_rootEbsVolumeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("acceleratorCapabilities"))
+  {
+    m_acceleratorCapabilities = jsonValue.GetObject("acceleratorCapabilities");
+
+    m_acceleratorCapabilitiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("allowedInstanceTypes"))
@@ -148,6 +156,12 @@ JsonValue ServiceManagedEc2InstanceCapabilities::Jsonize() const
   if(m_rootEbsVolumeHasBeenSet)
   {
    payload.WithObject("rootEbsVolume", m_rootEbsVolume.Jsonize());
+
+  }
+
+  if(m_acceleratorCapabilitiesHasBeenSet)
+  {
+   payload.WithObject("acceleratorCapabilities", m_acceleratorCapabilities.Jsonize());
 
   }
 

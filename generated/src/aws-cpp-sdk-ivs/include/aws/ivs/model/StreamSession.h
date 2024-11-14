@@ -8,6 +8,7 @@
 #include <aws/ivs/model/Channel.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ivs/model/IngestConfiguration.h>
+#include <aws/ivs/model/IngestConfigurations.h>
 #include <aws/ivs/model/RecordingConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -73,7 +74,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The properties of the incoming RTMP stream for the stream.</p>
+     * <p>The properties of the incoming RTMP stream.</p> <p> <b>Note:</b>
+     * <code>ingestConfiguration</code> is deprecated in favor of
+     * <code>ingestConfigurations</code> but retained to ensure backward compatibility.
+     * If multitrack is not enabled, <code>ingestConfiguration</code> and
+     * <code>ingestConfigurations</code> contain the same data, namely information
+     * about track0 (the sole track). If multitrack is enabled,
+     * <code>ingestConfiguration</code> contains data for only the first track (track0)
+     * and <code>ingestConfigurations</code> contains data for all tracks.</p>
      */
     inline const IngestConfiguration& GetIngestConfiguration() const{ return m_ingestConfiguration; }
     inline bool IngestConfigurationHasBeenSet() const { return m_ingestConfigurationHasBeenSet; }
@@ -81,6 +89,20 @@ namespace Model
     inline void SetIngestConfiguration(IngestConfiguration&& value) { m_ingestConfigurationHasBeenSet = true; m_ingestConfiguration = std::move(value); }
     inline StreamSession& WithIngestConfiguration(const IngestConfiguration& value) { SetIngestConfiguration(value); return *this;}
     inline StreamSession& WithIngestConfiguration(IngestConfiguration&& value) { SetIngestConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The properties of the incoming RTMP stream. If multitrack is enabled,
+     * <code>ingestConfigurations</code> contains data for all tracks; otherwise, it
+     * contains data only for track0 (the sole track).</p>
+     */
+    inline const IngestConfigurations& GetIngestConfigurations() const{ return m_ingestConfigurations; }
+    inline bool IngestConfigurationsHasBeenSet() const { return m_ingestConfigurationsHasBeenSet; }
+    inline void SetIngestConfigurations(const IngestConfigurations& value) { m_ingestConfigurationsHasBeenSet = true; m_ingestConfigurations = value; }
+    inline void SetIngestConfigurations(IngestConfigurations&& value) { m_ingestConfigurationsHasBeenSet = true; m_ingestConfigurations = std::move(value); }
+    inline StreamSession& WithIngestConfigurations(const IngestConfigurations& value) { SetIngestConfigurations(value); return *this;}
+    inline StreamSession& WithIngestConfigurations(IngestConfigurations&& value) { SetIngestConfigurations(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,6 +171,9 @@ namespace Model
 
     IngestConfiguration m_ingestConfiguration;
     bool m_ingestConfigurationHasBeenSet = false;
+
+    IngestConfigurations m_ingestConfigurations;
+    bool m_ingestConfigurationsHasBeenSet = false;
 
     RecordingConfiguration m_recordingConfiguration;
     bool m_recordingConfigurationHasBeenSet = false;

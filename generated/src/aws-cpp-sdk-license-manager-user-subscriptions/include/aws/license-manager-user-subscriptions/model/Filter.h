@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>A filter name and value pair that is used to return more specific results
-   * from a describe operation. Filters can be used to match a set of resources by
-   * specific criteria, such as tags, attributes, or IDs.</p><p><h3>See Also:</h3>  
-   * <a
+   * from a describe or list operation. You can use filters can be used to match a
+   * set of resources by specific criteria, such as tags, attributes, or
+   * IDs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/Filter">AWS
    * API Reference</a></p>
    */

@@ -22,6 +22,7 @@ StreamSession::StreamSession() :
     m_channelHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_ingestConfigurationHasBeenSet(false),
+    m_ingestConfigurationsHasBeenSet(false),
     m_recordingConfigurationHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_streamIdHasBeenSet(false),
@@ -56,6 +57,13 @@ StreamSession& StreamSession::operator =(JsonView jsonValue)
     m_ingestConfiguration = jsonValue.GetObject("ingestConfiguration");
 
     m_ingestConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ingestConfigurations"))
+  {
+    m_ingestConfigurations = jsonValue.GetObject("ingestConfigurations");
+
+    m_ingestConfigurationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("recordingConfiguration"))
@@ -110,6 +118,12 @@ JsonValue StreamSession::Jsonize() const
   if(m_ingestConfigurationHasBeenSet)
   {
    payload.WithObject("ingestConfiguration", m_ingestConfiguration.Jsonize());
+
+  }
+
+  if(m_ingestConfigurationsHasBeenSet)
+  {
+   payload.WithObject("ingestConfigurations", m_ingestConfigurations.Jsonize());
 
   }
 

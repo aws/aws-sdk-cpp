@@ -93,6 +93,13 @@ namespace Aws
         static const int ml_inf1_2xlarge_HASH = HashingUtils::HashString("ml.inf1.2xlarge");
         static const int ml_inf1_6xlarge_HASH = HashingUtils::HashString("ml.inf1.6xlarge");
         static const int ml_inf1_24xlarge_HASH = HashingUtils::HashString("ml.inf1.24xlarge");
+        static const int ml_trn1_2xlarge_HASH = HashingUtils::HashString("ml.trn1.2xlarge");
+        static const int ml_trn1_32xlarge_HASH = HashingUtils::HashString("ml.trn1.32xlarge");
+        static const int ml_trn1n_32xlarge_HASH = HashingUtils::HashString("ml.trn1n.32xlarge");
+        static const int ml_inf2_xlarge_HASH = HashingUtils::HashString("ml.inf2.xlarge");
+        static const int ml_inf2_8xlarge_HASH = HashingUtils::HashString("ml.inf2.8xlarge");
+        static const int ml_inf2_24xlarge_HASH = HashingUtils::HashString("ml.inf2.24xlarge");
+        static const int ml_inf2_48xlarge_HASH = HashingUtils::HashString("ml.inf2.48xlarge");
         static const int ml_p4d_24xlarge_HASH = HashingUtils::HashString("ml.p4d.24xlarge");
         static const int ml_p4de_24xlarge_HASH = HashingUtils::HashString("ml.p4de.24xlarge");
         static const int ml_p5_48xlarge_HASH = HashingUtils::HashString("ml.p5.48xlarge");
@@ -558,6 +565,41 @@ namespace Aws
             enumValue = InstanceType::ml_inf1_24xlarge;
             return true;
           }
+          else if (hashCode == ml_trn1_2xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_trn1_2xlarge;
+            return true;
+          }
+          else if (hashCode == ml_trn1_32xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_trn1_32xlarge;
+            return true;
+          }
+          else if (hashCode == ml_trn1n_32xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_trn1n_32xlarge;
+            return true;
+          }
+          else if (hashCode == ml_inf2_xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_inf2_xlarge;
+            return true;
+          }
+          else if (hashCode == ml_inf2_8xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_inf2_8xlarge;
+            return true;
+          }
+          else if (hashCode == ml_inf2_24xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_inf2_24xlarge;
+            return true;
+          }
+          else if (hashCode == ml_inf2_48xlarge_HASH)
+          {
+            enumValue = InstanceType::ml_inf2_48xlarge;
+            return true;
+          }
           else if (hashCode == ml_p4d_24xlarge_HASH)
           {
             enumValue = InstanceType::ml_p4d_24xlarge;
@@ -768,7 +810,11 @@ namespace Aws
             enumValue = InstanceType::ml_r6i_2xlarge;
             return true;
           }
-          else if (hashCode == ml_r6i_4xlarge_HASH)
+          return false;
+        }
+        static bool GetEnumForNameHelper1(int hashCode, InstanceType& enumValue)
+        {
+          if (hashCode == ml_r6i_4xlarge_HASH)
           {
             enumValue = InstanceType::ml_r6i_4xlarge;
             return true;
@@ -803,11 +849,7 @@ namespace Aws
             enumValue = InstanceType::ml_r7i_large;
             return true;
           }
-          return false;
-        }
-        static bool GetEnumForNameHelper1(int hashCode, InstanceType& enumValue)
-        {
-          if (hashCode == ml_r7i_xlarge_HASH)
+          else if (hashCode == ml_r7i_xlarge_HASH)
           {
             enumValue = InstanceType::ml_r7i_xlarge;
             return true;
@@ -1248,6 +1290,27 @@ namespace Aws
           case InstanceType::ml_inf1_24xlarge:
             value = "ml.inf1.24xlarge";
             return true;
+          case InstanceType::ml_trn1_2xlarge:
+            value = "ml.trn1.2xlarge";
+            return true;
+          case InstanceType::ml_trn1_32xlarge:
+            value = "ml.trn1.32xlarge";
+            return true;
+          case InstanceType::ml_trn1n_32xlarge:
+            value = "ml.trn1n.32xlarge";
+            return true;
+          case InstanceType::ml_inf2_xlarge:
+            value = "ml.inf2.xlarge";
+            return true;
+          case InstanceType::ml_inf2_8xlarge:
+            value = "ml.inf2.8xlarge";
+            return true;
+          case InstanceType::ml_inf2_24xlarge:
+            value = "ml.inf2.24xlarge";
+            return true;
+          case InstanceType::ml_inf2_48xlarge:
+            value = "ml.inf2.48xlarge";
+            return true;
           case InstanceType::ml_p4d_24xlarge:
             value = "ml.p4d.24xlarge";
             return true;
@@ -1374,6 +1437,14 @@ namespace Aws
           case InstanceType::ml_r6i_2xlarge:
             value = "ml.r6i.2xlarge";
             return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper1(InstanceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
           case InstanceType::ml_r6i_4xlarge:
             value = "ml.r6i.4xlarge";
             return true;
@@ -1395,14 +1466,6 @@ namespace Aws
           case InstanceType::ml_r7i_large:
             value = "ml.r7i.large";
             return true;
-          default:
-            return false;
-          }
-        }
-        static bool GetNameForEnumHelper1(InstanceType enumValue, Aws::String& value)
-        {
-          switch(enumValue)
-          {
           case InstanceType::ml_r7i_xlarge:
             value = "ml.r7i.xlarge";
             return true;

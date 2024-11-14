@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListIdentityProvidersRequest::ListIdentityProvidersRequest() : 
+    m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -22,6 +23,17 @@ ListIdentityProvidersRequest::ListIdentityProvidersRequest() :
 Aws::String ListIdentityProvidersRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_filtersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
+   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
+   {
+     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+   }
+   payload.WithArray("Filters", std::move(filtersJsonList));
+
+  }
 
   if(m_maxResultsHasBeenSet)
   {

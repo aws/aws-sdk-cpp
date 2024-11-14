@@ -59,7 +59,11 @@ namespace Model
      * obfuscated and is not a real key. You can use this
      * <code>ContinuationToken</code> for pagination of the list results. </p>
      * <p>Length Constraints: Minimum length of 0. Maximum length of 1024.</p>
-     * <p>Required: No.</p>
+     * <p>Required: No.</p>  <p>If you specify the <code>bucket-region</code>,
+     * <code>prefix</code>, or <code>continuation-token</code> query parameters without
+     * using <code>max-buckets</code> to set the maximum number of buckets returned in
+     * the response, Amazon S3 applies a default page size of 10,000 and provides a
+     * continuation token if there are more buckets.</p> 
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }

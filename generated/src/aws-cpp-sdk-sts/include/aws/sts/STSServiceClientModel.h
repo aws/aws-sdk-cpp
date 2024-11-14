@@ -21,6 +21,7 @@
 #include <aws/sts/model/AssumeRoleResult.h>
 #include <aws/sts/model/AssumeRoleWithSAMLResult.h>
 #include <aws/sts/model/AssumeRoleWithWebIdentityResult.h>
+#include <aws/sts/model/AssumeRootResult.h>
 #include <aws/sts/model/DecodeAuthorizationMessageResult.h>
 #include <aws/sts/model/GetAccessKeyInfoResult.h>
 #include <aws/sts/model/GetCallerIdentityResult.h>
@@ -71,6 +72,7 @@ namespace Aws
       class AssumeRoleRequest;
       class AssumeRoleWithSAMLRequest;
       class AssumeRoleWithWebIdentityRequest;
+      class AssumeRootRequest;
       class DecodeAuthorizationMessageRequest;
       class GetAccessKeyInfoRequest;
       class GetCallerIdentityRequest;
@@ -82,6 +84,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssumeRoleResult, STSError> AssumeRoleOutcome;
       typedef Aws::Utils::Outcome<AssumeRoleWithSAMLResult, STSError> AssumeRoleWithSAMLOutcome;
       typedef Aws::Utils::Outcome<AssumeRoleWithWebIdentityResult, STSError> AssumeRoleWithWebIdentityOutcome;
+      typedef Aws::Utils::Outcome<AssumeRootResult, STSError> AssumeRootOutcome;
       typedef Aws::Utils::Outcome<DecodeAuthorizationMessageResult, STSError> DecodeAuthorizationMessageOutcome;
       typedef Aws::Utils::Outcome<GetAccessKeyInfoResult, STSError> GetAccessKeyInfoOutcome;
       typedef Aws::Utils::Outcome<GetCallerIdentityResult, STSError> GetCallerIdentityOutcome;
@@ -93,6 +96,7 @@ namespace Aws
       typedef std::future<AssumeRoleOutcome> AssumeRoleOutcomeCallable;
       typedef std::future<AssumeRoleWithSAMLOutcome> AssumeRoleWithSAMLOutcomeCallable;
       typedef std::future<AssumeRoleWithWebIdentityOutcome> AssumeRoleWithWebIdentityOutcomeCallable;
+      typedef std::future<AssumeRootOutcome> AssumeRootOutcomeCallable;
       typedef std::future<DecodeAuthorizationMessageOutcome> DecodeAuthorizationMessageOutcomeCallable;
       typedef std::future<GetAccessKeyInfoOutcome> GetAccessKeyInfoOutcomeCallable;
       typedef std::future<GetCallerIdentityOutcome> GetCallerIdentityOutcomeCallable;
@@ -107,6 +111,7 @@ namespace Aws
     typedef std::function<void(const STSClient*, const Model::AssumeRoleRequest&, const Model::AssumeRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssumeRoleResponseReceivedHandler;
     typedef std::function<void(const STSClient*, const Model::AssumeRoleWithSAMLRequest&, const Model::AssumeRoleWithSAMLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssumeRoleWithSAMLResponseReceivedHandler;
     typedef std::function<void(const STSClient*, const Model::AssumeRoleWithWebIdentityRequest&, const Model::AssumeRoleWithWebIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssumeRoleWithWebIdentityResponseReceivedHandler;
+    typedef std::function<void(const STSClient*, const Model::AssumeRootRequest&, const Model::AssumeRootOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssumeRootResponseReceivedHandler;
     typedef std::function<void(const STSClient*, const Model::DecodeAuthorizationMessageRequest&, const Model::DecodeAuthorizationMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DecodeAuthorizationMessageResponseReceivedHandler;
     typedef std::function<void(const STSClient*, const Model::GetAccessKeyInfoRequest&, const Model::GetAccessKeyInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessKeyInfoResponseReceivedHandler;
     typedef std::function<void(const STSClient*, const Model::GetCallerIdentityRequest&, const Model::GetCallerIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCallerIdentityResponseReceivedHandler;

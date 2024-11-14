@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/model/WirelessGatewayLogOption.h>
 #include <aws/iotwireless/model/WirelessDeviceLogOption.h>
+#include <aws/iotwireless/model/FuotaTaskLogOption.h>
 #include <utility>
 
 namespace Aws
@@ -69,6 +70,17 @@ namespace Model
 
     ///@{
     
+    inline const Aws::Vector<FuotaTaskLogOption>& GetFuotaTaskLogOptions() const{ return m_fuotaTaskLogOptions; }
+    inline void SetFuotaTaskLogOptions(const Aws::Vector<FuotaTaskLogOption>& value) { m_fuotaTaskLogOptions = value; }
+    inline void SetFuotaTaskLogOptions(Aws::Vector<FuotaTaskLogOption>&& value) { m_fuotaTaskLogOptions = std::move(value); }
+    inline GetLogLevelsByResourceTypesResult& WithFuotaTaskLogOptions(const Aws::Vector<FuotaTaskLogOption>& value) { SetFuotaTaskLogOptions(value); return *this;}
+    inline GetLogLevelsByResourceTypesResult& WithFuotaTaskLogOptions(Aws::Vector<FuotaTaskLogOption>&& value) { SetFuotaTaskLogOptions(std::move(value)); return *this;}
+    inline GetLogLevelsByResourceTypesResult& AddFuotaTaskLogOptions(const FuotaTaskLogOption& value) { m_fuotaTaskLogOptions.push_back(value); return *this; }
+    inline GetLogLevelsByResourceTypesResult& AddFuotaTaskLogOptions(FuotaTaskLogOption&& value) { m_fuotaTaskLogOptions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
@@ -84,6 +96,8 @@ namespace Model
     Aws::Vector<WirelessGatewayLogOption> m_wirelessGatewayLogOptions;
 
     Aws::Vector<WirelessDeviceLogOption> m_wirelessDeviceLogOptions;
+
+    Aws::Vector<FuotaTaskLogOption> m_fuotaTaskLogOptions;
 
     Aws::String m_requestId;
   };

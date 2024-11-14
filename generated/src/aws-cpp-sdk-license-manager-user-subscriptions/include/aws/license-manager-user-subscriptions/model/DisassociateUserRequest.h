@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The domain name of the user.</p>
+     * <p>The domain name of the Active Directory that contains information for the
+     * user to disassociate.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
@@ -49,7 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that specifies details for the identity provider.</p>
+     * <p>An object that specifies details for the Active Directory identity
+     * provider.</p>
      */
     inline const IdentityProvider& GetIdentityProvider() const{ return m_identityProvider; }
     inline bool IdentityProviderHasBeenSet() const { return m_identityProviderHasBeenSet; }
@@ -61,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+     * <p>The ID of the EC2 instance which provides user-based subscriptions.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -75,7 +77,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user name from the identity provider for the user.</p>
+     * <p>The Amazon Resource Name (ARN) of the user to disassociate from the EC2
+     * instance.</p>
+     */
+    inline const Aws::String& GetInstanceUserArn() const{ return m_instanceUserArn; }
+    inline bool InstanceUserArnHasBeenSet() const { return m_instanceUserArnHasBeenSet; }
+    inline void SetInstanceUserArn(const Aws::String& value) { m_instanceUserArnHasBeenSet = true; m_instanceUserArn = value; }
+    inline void SetInstanceUserArn(Aws::String&& value) { m_instanceUserArnHasBeenSet = true; m_instanceUserArn = std::move(value); }
+    inline void SetInstanceUserArn(const char* value) { m_instanceUserArnHasBeenSet = true; m_instanceUserArn.assign(value); }
+    inline DisassociateUserRequest& WithInstanceUserArn(const Aws::String& value) { SetInstanceUserArn(value); return *this;}
+    inline DisassociateUserRequest& WithInstanceUserArn(Aws::String&& value) { SetInstanceUserArn(std::move(value)); return *this;}
+    inline DisassociateUserRequest& WithInstanceUserArn(const char* value) { SetInstanceUserArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user name from the Active Directory identity provider for the user.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
@@ -96,6 +113,9 @@ namespace Model
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
+
+    Aws::String m_instanceUserArn;
+    bool m_instanceUserArnHasBeenSet = false;
 
     Aws::String m_username;
     bool m_usernameHasBeenSet = false;

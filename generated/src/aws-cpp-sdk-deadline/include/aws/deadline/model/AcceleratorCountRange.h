@@ -37,7 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The minimum GPU for the accelerator.</p>
+     * <p>The minimum number of GPUs for the accelerator. If you set the value to 0, a
+     * worker will still have 1 GPU.</p>
      */
     inline int GetMin() const{ return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
@@ -47,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum GPU for the accelerator.</p>
+     * <p>The maximum number of GPUs for the accelerator.</p>
      */
     inline int GetMax() const{ return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }

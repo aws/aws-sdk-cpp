@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 UpdateIdentityProviderSettingsRequest::UpdateIdentityProviderSettingsRequest() : 
     m_identityProviderHasBeenSet(false),
+    m_identityProviderArnHasBeenSet(false),
     m_productHasBeenSet(false),
     m_updateSettingsHasBeenSet(false)
 {
@@ -26,6 +27,12 @@ Aws::String UpdateIdentityProviderSettingsRequest::SerializePayload() const
   if(m_identityProviderHasBeenSet)
   {
    payload.WithObject("IdentityProvider", m_identityProvider.Jsonize());
+
+  }
+
+  if(m_identityProviderArnHasBeenSet)
+  {
+   payload.WithString("IdentityProviderArn", m_identityProviderArn);
 
   }
 

@@ -31,6 +31,7 @@ namespace Model
     MFADevicesInUse,
     AccountMFAEnabled,
     AccountAccessKeysPresent,
+    AccountPasswordPresent,
     AccountSigningCertificatesPresent,
     AttachedPoliciesPerGroupQuota,
     AttachedPoliciesPerRoleQuota,

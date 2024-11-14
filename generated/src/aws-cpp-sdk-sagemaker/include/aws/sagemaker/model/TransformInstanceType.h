@@ -109,7 +109,11 @@ namespace Model
     ml_g5_12xlarge,
     ml_g5_16xlarge,
     ml_g5_24xlarge,
-    ml_g5_48xlarge
+    ml_g5_48xlarge,
+    ml_inf2_xlarge,
+    ml_inf2_8xlarge,
+    ml_inf2_24xlarge,
+    ml_inf2_48xlarge
   };
 
 namespace TransformInstanceTypeMapper

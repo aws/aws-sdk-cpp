@@ -151,6 +151,17 @@ namespace Model
 
     ///@{
     
+    inline const Aws::String& GetDescriptor() const{ return m_descriptor; }
+    inline void SetDescriptor(const Aws::String& value) { m_descriptor = value; }
+    inline void SetDescriptor(Aws::String&& value) { m_descriptor = std::move(value); }
+    inline void SetDescriptor(const char* value) { m_descriptor.assign(value); }
+    inline GetFuotaTaskResult& WithDescriptor(const Aws::String& value) { SetDescriptor(value); return *this;}
+    inline GetFuotaTaskResult& WithDescriptor(Aws::String&& value) { SetDescriptor(std::move(value)); return *this;}
+    inline GetFuotaTaskResult& WithDescriptor(const char* value) { SetDescriptor(value); return *this;}
+    ///@}
+
+    ///@{
+    
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
@@ -184,6 +195,8 @@ namespace Model
     int m_fragmentSizeBytes;
 
     int m_fragmentIntervalMS;
+
+    Aws::String m_descriptor;
 
     Aws::String m_requestId;
   };

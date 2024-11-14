@@ -36,7 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Metadata that describes the list instances operation.</p>
+     * <p>An array of <code>InstanceSummary</code> resources that contain details about
+     * the instances that provide user-based subscriptions and also meet the request
+     * criteria.</p>
      */
     inline const Aws::Vector<InstanceSummary>& GetInstanceSummaries() const{ return m_instanceSummaries; }
     inline void SetInstanceSummaries(const Aws::Vector<InstanceSummary>& value) { m_instanceSummaries = value; }
@@ -49,7 +51,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Token for the next set of results.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service hasn't included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

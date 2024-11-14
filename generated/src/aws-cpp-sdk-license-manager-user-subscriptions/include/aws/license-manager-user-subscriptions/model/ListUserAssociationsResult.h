@@ -49,7 +49,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Token for the next set of results.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service hasn't included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

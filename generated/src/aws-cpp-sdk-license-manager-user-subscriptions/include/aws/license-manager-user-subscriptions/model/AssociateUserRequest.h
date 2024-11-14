@@ -8,6 +8,7 @@
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager-user-subscriptions/model/IdentityProvider.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The domain name of the user.</p>
+     * <p>The domain name of the Active Directory that contains information for the
+     * user to associate.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
@@ -49,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identity provider of the user.</p>
+     * <p>The identity provider for the user.</p>
      */
     inline const IdentityProvider& GetIdentityProvider() const{ return m_identityProvider; }
     inline bool IdentityProviderHasBeenSet() const { return m_identityProviderHasBeenSet; }
@@ -61,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+     * <p>The ID of the EC2 instance that provides the user-based subscription.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -75,7 +77,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user name from the identity provider for the user.</p>
+     * <p>The tags that apply for the user association.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline AssociateUserRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+    inline AssociateUserRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+    inline AssociateUserRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    inline AssociateUserRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+    inline AssociateUserRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+    inline AssociateUserRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+    inline AssociateUserRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+    inline AssociateUserRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+    inline AssociateUserRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user name from the identity provider.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
@@ -96,6 +117,9 @@ namespace Model
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_username;
     bool m_usernameHasBeenSet = false;

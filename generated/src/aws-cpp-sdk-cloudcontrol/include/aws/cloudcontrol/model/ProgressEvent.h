@@ -94,6 +94,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The unique token representing the Hooks operation for the request.</p>
+     */
+    inline const Aws::String& GetHooksRequestToken() const{ return m_hooksRequestToken; }
+    inline bool HooksRequestTokenHasBeenSet() const { return m_hooksRequestTokenHasBeenSet; }
+    inline void SetHooksRequestToken(const Aws::String& value) { m_hooksRequestTokenHasBeenSet = true; m_hooksRequestToken = value; }
+    inline void SetHooksRequestToken(Aws::String&& value) { m_hooksRequestTokenHasBeenSet = true; m_hooksRequestToken = std::move(value); }
+    inline void SetHooksRequestToken(const char* value) { m_hooksRequestTokenHasBeenSet = true; m_hooksRequestToken.assign(value); }
+    inline ProgressEvent& WithHooksRequestToken(const Aws::String& value) { SetHooksRequestToken(value); return *this;}
+    inline ProgressEvent& WithHooksRequestToken(Aws::String&& value) { SetHooksRequestToken(std::move(value)); return *this;}
+    inline ProgressEvent& WithHooksRequestToken(const char* value) { SetHooksRequestToken(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The resource operation type.</p>
      */
     inline const Operation& GetOperation() const{ return m_operation; }
@@ -203,6 +217,9 @@ namespace Model
 
     Aws::String m_requestToken;
     bool m_requestTokenHasBeenSet = false;
+
+    Aws::String m_hooksRequestToken;
+    bool m_hooksRequestTokenHasBeenSet = false;
 
     Operation m_operation;
     bool m_operationHasBeenSet = false;

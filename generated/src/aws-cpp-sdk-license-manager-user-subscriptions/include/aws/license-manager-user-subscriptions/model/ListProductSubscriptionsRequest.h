@@ -37,8 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of structures that you can use to filter the results to those that
-     * match one or more sets of key-value pairs that you specify.</p>
+     * <p>You can use the following filters to streamline results:</p> <ul> <li>
+     * <p>Status</p> </li> <li> <p>Username</p> </li> <li> <p>Domain</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Maximum number of results to return in a single call.</p>
+     * <p>The maximum number of results to return from a single request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -74,7 +74,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Token for the next set of results.</p>
+     * <p>A token to specify where to start paginating. This is the nextToken from a
+     * previously truncated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -88,7 +89,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the user-based subscription product.</p>
+     * <p>The name of the user-based subscription product.</p> <p>Valid values:
+     * <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code>
+     * | <code>OFFICE_PROFESSIONAL_PLUS</code> </p>
      */
     inline const Aws::String& GetProduct() const{ return m_product; }
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }

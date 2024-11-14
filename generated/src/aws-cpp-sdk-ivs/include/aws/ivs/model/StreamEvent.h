@@ -43,17 +43,37 @@ namespace Model
     ///@{
     /**
      * <p>Provides additional details about the stream event. There are several values;
-     * note that the long descriptions are provided in the IVS console but not
-     * delivered through the IVS API or EventBridge:</p> <ul> <li> <p>
+     * the long descriptions are provided in the IVS console but not delivered through
+     * the IVS API or EventBridge. Multitrack-related codes are used only for certain
+     * Session Ended events.</p> <ul> <li> <p> <code>MultitrackInputNotAllowed</code> —
+     * The broadcast client attempted to connect with multitrack input, but multitrack
+     * input was not enabled on the channel. Check your broadcast software settings or
+     * set <code>MultitrackInputConfiguration.Policy</code> to <code>ALLOW</code> or
+     * <code>REQUIRE</code>.</p> </li> <li> <p> <code>MultitrackInputRequired</code> —
+     * The broadcast client attempted to connect with single-track video, but
+     * multitrack input is required on this channel. Enable multitrack video in your
+     * broadcast software or configure the channel’s
+     * <code>MultitrackInputConfiguration.Policy</code> to <code>ALLOW</code>.</p>
+     * </li> <li> <p> <code>InvalidGetClientConfigurationStreamKey</code> — The
+     * broadcast client attempted to connect with an invalid, expired, or corrupt
+     * stream key.</p> </li> <li> <p>
+     * <code>GetClientConfigurationStreamKeyRequired</code> — The broadcast client
+     * attempted to stream multitrack video without providing an authenticated stream
+     * key from GetClientConfiguration.</p> </li> <li> <p>
+     * <code>InvalidMultitrackInputTrackCount</code> — The multitrack input stream
+     * contained an invalid number of tracks.</p> </li> <li> <p>
+     * <code>InvalidMultitrackInputVideoTrackMediaProperties</code> — The multitrack
+     * input stream contained one or more tracks with an invalid codec, resolution,
+     * bitrate, or framerate.</p> </li> <li> <p>
      * <code>StreamTakeoverMediaMismatch</code> — The broadcast client attempted to
      * take over with different media properties (e.g., codec, resolution, or video
      * track type) from the original stream.</p> </li> <li> <p>
      * <code>StreamTakeoverInvalidPriority</code> — The broadcast client attempted a
      * takeover with either a priority integer value equal to or lower than the
      * original stream's value or a value outside the allowed range of 1 to
-     * 2,147,483,647.</p> </li> <li> <p> <code>StreamTakeoverLimitBreached</code> — The
-     * broadcast client reached the maximum allowed takeover attempts for this
-     * stream.</p> </li> </ul>
+     * 2,147,483,647.</p> <p> <code>StreamTakeoverLimitBreached</code> — The broadcast
+     * client reached the maximum allowed takeover attempts for this stream.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }

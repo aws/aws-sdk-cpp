@@ -36,7 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Metadata that describes the list identity providers operation.</p>
+     * <p>An array of <code>IdentityProviderSummary</code> resources that contain
+     * details about the Active Directory identity providers that meet the request
+     * criteria.</p>
      */
     inline const Aws::Vector<IdentityProviderSummary>& GetIdentityProviderSummaries() const{ return m_identityProviderSummaries; }
     inline void SetIdentityProviderSummaries(const Aws::Vector<IdentityProviderSummary>& value) { m_identityProviderSummaries = value; }
@@ -49,7 +51,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Token for the next set of results.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service hasn't included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

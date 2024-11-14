@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/LakeFormationScopeUnion.h>
+#include <aws/redshift/model/S3AccessGrantsScopeUnion.h>
 #include <utility>
 
 namespace Aws
@@ -53,10 +54,27 @@ namespace Model
     inline ServiceIntegrationsUnion& AddLakeFormation(const LakeFormationScopeUnion& value) { m_lakeFormationHasBeenSet = true; m_lakeFormation.push_back(value); return *this; }
     inline ServiceIntegrationsUnion& AddLakeFormation(LakeFormationScopeUnion&& value) { m_lakeFormationHasBeenSet = true; m_lakeFormation.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of scopes set up for S3 Access Grants integration.</p>
+     */
+    inline const Aws::Vector<S3AccessGrantsScopeUnion>& GetS3AccessGrants() const{ return m_s3AccessGrants; }
+    inline bool S3AccessGrantsHasBeenSet() const { return m_s3AccessGrantsHasBeenSet; }
+    inline void SetS3AccessGrants(const Aws::Vector<S3AccessGrantsScopeUnion>& value) { m_s3AccessGrantsHasBeenSet = true; m_s3AccessGrants = value; }
+    inline void SetS3AccessGrants(Aws::Vector<S3AccessGrantsScopeUnion>&& value) { m_s3AccessGrantsHasBeenSet = true; m_s3AccessGrants = std::move(value); }
+    inline ServiceIntegrationsUnion& WithS3AccessGrants(const Aws::Vector<S3AccessGrantsScopeUnion>& value) { SetS3AccessGrants(value); return *this;}
+    inline ServiceIntegrationsUnion& WithS3AccessGrants(Aws::Vector<S3AccessGrantsScopeUnion>&& value) { SetS3AccessGrants(std::move(value)); return *this;}
+    inline ServiceIntegrationsUnion& AddS3AccessGrants(const S3AccessGrantsScopeUnion& value) { m_s3AccessGrantsHasBeenSet = true; m_s3AccessGrants.push_back(value); return *this; }
+    inline ServiceIntegrationsUnion& AddS3AccessGrants(S3AccessGrantsScopeUnion&& value) { m_s3AccessGrantsHasBeenSet = true; m_s3AccessGrants.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<LakeFormationScopeUnion> m_lakeFormation;
     bool m_lakeFormationHasBeenSet = false;
+
+    Aws::Vector<S3AccessGrantsScopeUnion> m_s3AccessGrants;
+    bool m_s3AccessGrantsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -668,8 +668,7 @@ namespace AccessAnalyzer
 
         /**
          * <p>Retrieves a list of resources of the specified type that have been analyzed
-         * by the specified external access analyzer. This action is not supported for
-         * unused access analyzers.</p><p><h3>See Also:</h3>   <a
+         * by the specified analyzer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAnalyzedResources">AWS
          * API Reference</a></p>
          */
@@ -961,6 +960,32 @@ namespace AccessAnalyzer
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AccessAnalyzerClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the configuration of an existing analyzer.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateAnalyzer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAnalyzerOutcome UpdateAnalyzer(const Model::UpdateAnalyzerRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAnalyzer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAnalyzerRequestT = Model::UpdateAnalyzerRequest>
+        Model::UpdateAnalyzerOutcomeCallable UpdateAnalyzerCallable(const UpdateAnalyzerRequestT& request) const
+        {
+            return SubmitCallable(&AccessAnalyzerClient::UpdateAnalyzer, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAnalyzer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAnalyzerRequestT = Model::UpdateAnalyzerRequest>
+        void UpdateAnalyzerAsync(const UpdateAnalyzerRequestT& request, const UpdateAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AccessAnalyzerClient::UpdateAnalyzer, request, handler, context);
         }
 
         /**

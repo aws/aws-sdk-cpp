@@ -22,11 +22,14 @@ Channel::Channel() :
     m_arnHasBeenSet(false),
     m_authorized(false),
     m_authorizedHasBeenSet(false),
+    m_containerFormat(ContainerFormat::NOT_SET),
+    m_containerFormatHasBeenSet(false),
     m_ingestEndpointHasBeenSet(false),
     m_insecureIngest(false),
     m_insecureIngestHasBeenSet(false),
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
+    m_multitrackInputConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_playbackRestrictionPolicyArnHasBeenSet(false),
     m_playbackUrlHasBeenSet(false),
@@ -62,6 +65,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_authorizedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("containerFormat"))
+  {
+    m_containerFormat = ContainerFormatMapper::GetContainerFormatForName(jsonValue.GetString("containerFormat"));
+
+    m_containerFormatHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ingestEndpoint"))
   {
     m_ingestEndpoint = jsonValue.GetString("ingestEndpoint");
@@ -81,6 +91,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_latencyMode = ChannelLatencyModeMapper::GetChannelLatencyModeForName(jsonValue.GetString("latencyMode"));
 
     m_latencyModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("multitrackInputConfiguration"))
+  {
+    m_multitrackInputConfiguration = jsonValue.GetObject("multitrackInputConfiguration");
+
+    m_multitrackInputConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -161,6 +178,11 @@ JsonValue Channel::Jsonize() const
 
   }
 
+  if(m_containerFormatHasBeenSet)
+  {
+   payload.WithString("containerFormat", ContainerFormatMapper::GetNameForContainerFormat(m_containerFormat));
+  }
+
   if(m_ingestEndpointHasBeenSet)
   {
    payload.WithString("ingestEndpoint", m_ingestEndpoint);
@@ -176,6 +198,12 @@ JsonValue Channel::Jsonize() const
   if(m_latencyModeHasBeenSet)
   {
    payload.WithString("latencyMode", ChannelLatencyModeMapper::GetNameForChannelLatencyMode(m_latencyMode));
+  }
+
+  if(m_multitrackInputConfigurationHasBeenSet)
+  {
+   payload.WithObject("multitrackInputConfiguration", m_multitrackInputConfiguration.Jsonize());
+
   }
 
   if(m_nameHasBeenSet)

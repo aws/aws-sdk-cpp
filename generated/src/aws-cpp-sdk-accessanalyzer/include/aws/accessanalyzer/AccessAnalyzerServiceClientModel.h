@@ -44,6 +44,7 @@
 #include <aws/accessanalyzer/model/StartPolicyGenerationResult.h>
 #include <aws/accessanalyzer/model/TagResourceResult.h>
 #include <aws/accessanalyzer/model/UntagResourceResult.h>
+#include <aws/accessanalyzer/model/UpdateAnalyzerResult.h>
 #include <aws/accessanalyzer/model/ValidatePolicyResult.h>
 #include <aws/accessanalyzer/model/ListAnalyzersRequest.h>
 #include <aws/accessanalyzer/model/ListPolicyGenerationsRequest.h>
@@ -120,6 +121,7 @@ namespace Aws
       class StartResourceScanRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdateAnalyzerRequest;
       class UpdateArchiveRuleRequest;
       class UpdateFindingsRequest;
       class ValidatePolicyRequest;
@@ -158,6 +160,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> StartResourceScanOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, AccessAnalyzerError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, AccessAnalyzerError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateAnalyzerResult, AccessAnalyzerError> UpdateAnalyzerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> UpdateArchiveRuleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, AccessAnalyzerError> UpdateFindingsOutcome;
       typedef Aws::Utils::Outcome<ValidatePolicyResult, AccessAnalyzerError> ValidatePolicyOutcome;
@@ -196,6 +199,7 @@ namespace Aws
       typedef std::future<StartResourceScanOutcome> StartResourceScanOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateAnalyzerOutcome> UpdateAnalyzerOutcomeCallable;
       typedef std::future<UpdateArchiveRuleOutcome> UpdateArchiveRuleOutcomeCallable;
       typedef std::future<UpdateFindingsOutcome> UpdateFindingsOutcomeCallable;
       typedef std::future<ValidatePolicyOutcome> ValidatePolicyOutcomeCallable;
@@ -237,6 +241,7 @@ namespace Aws
     typedef std::function<void(const AccessAnalyzerClient*, const Model::StartResourceScanRequest&, const Model::StartResourceScanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartResourceScanResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const AccessAnalyzerClient*, const Model::UpdateAnalyzerRequest&, const Model::UpdateAnalyzerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnalyzerResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::UpdateArchiveRuleRequest&, const Model::UpdateArchiveRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateArchiveRuleResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::UpdateFindingsRequest&, const Model::UpdateFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsResponseReceivedHandler;
     typedef std::function<void(const AccessAnalyzerClient*, const Model::ValidatePolicyRequest&, const Model::ValidatePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidatePolicyResponseReceivedHandler;

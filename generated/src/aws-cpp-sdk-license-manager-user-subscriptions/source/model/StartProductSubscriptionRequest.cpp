@@ -16,6 +16,7 @@ StartProductSubscriptionRequest::StartProductSubscriptionRequest() :
     m_domainHasBeenSet(false),
     m_identityProviderHasBeenSet(false),
     m_productHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_usernameHasBeenSet(false)
 {
 }
@@ -39,6 +40,17 @@ Aws::String StartProductSubscriptionRequest::SerializePayload() const
   if(m_productHasBeenSet)
   {
    payload.WithString("Product", m_product);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

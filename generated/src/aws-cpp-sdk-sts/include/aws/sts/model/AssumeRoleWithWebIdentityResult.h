@@ -144,7 +144,7 @@ namespace Model
      * actions that are taken with the role are associated with that user. After the
      * source identity is set, the value cannot be changed. It is present in the
      * request for all actions that are taken by the role and persists across <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#id_roles_terms-and-concepts">chained
      * role</a> sessions. You can configure your identity provider to use an attribute
      * associated with your users, like user name or email, as the source identity when
      * calling <code>AssumeRoleWithWebIdentity</code>. You do this by adding a claim to

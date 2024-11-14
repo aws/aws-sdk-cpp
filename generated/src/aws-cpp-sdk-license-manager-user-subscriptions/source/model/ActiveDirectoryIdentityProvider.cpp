@@ -19,6 +19,9 @@ namespace Model
 {
 
 ActiveDirectoryIdentityProvider::ActiveDirectoryIdentityProvider() : 
+    m_activeDirectorySettingsHasBeenSet(false),
+    m_activeDirectoryType(ActiveDirectoryType::NOT_SET),
+    m_activeDirectoryTypeHasBeenSet(false),
     m_directoryIdHasBeenSet(false)
 {
 }
@@ -31,6 +34,20 @@ ActiveDirectoryIdentityProvider::ActiveDirectoryIdentityProvider(JsonView jsonVa
 
 ActiveDirectoryIdentityProvider& ActiveDirectoryIdentityProvider::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ActiveDirectorySettings"))
+  {
+    m_activeDirectorySettings = jsonValue.GetObject("ActiveDirectorySettings");
+
+    m_activeDirectorySettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ActiveDirectoryType"))
+  {
+    m_activeDirectoryType = ActiveDirectoryTypeMapper::GetActiveDirectoryTypeForName(jsonValue.GetString("ActiveDirectoryType"));
+
+    m_activeDirectoryTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
@@ -44,6 +61,17 @@ ActiveDirectoryIdentityProvider& ActiveDirectoryIdentityProvider::operator =(Jso
 JsonValue ActiveDirectoryIdentityProvider::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_activeDirectorySettingsHasBeenSet)
+  {
+   payload.WithObject("ActiveDirectorySettings", m_activeDirectorySettings.Jsonize());
+
+  }
+
+  if(m_activeDirectoryTypeHasBeenSet)
+  {
+   payload.WithString("ActiveDirectoryType", ActiveDirectoryTypeMapper::GetNameForActiveDirectoryType(m_activeDirectoryType));
+  }
 
   if(m_directoryIdHasBeenSet)
   {

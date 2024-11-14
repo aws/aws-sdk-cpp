@@ -9,6 +9,7 @@
 #include <aws/license-manager-user-subscriptions/model/IdentityProvider.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager-user-subscriptions/model/Settings.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that specifies details for the identity provider.</p>
+     * <p>An object that specifies details for the identity provider to register.</p>
      */
     inline const IdentityProvider& GetIdentityProvider() const{ return m_identityProvider; }
     inline bool IdentityProviderHasBeenSet() const { return m_identityProviderHasBeenSet; }
@@ -48,7 +49,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the user-based subscription product.</p>
+     * <p>The name of the user-based subscription product.</p> <p>Valid values:
+     * <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code>
+     * | <code>OFFICE_PROFESSIONAL_PLUS</code> </p>
      */
     inline const Aws::String& GetProduct() const{ return m_product; }
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
@@ -72,6 +75,25 @@ namespace Model
     inline RegisterIdentityProviderRequest& WithSettings(const Settings& value) { SetSettings(value); return *this;}
     inline RegisterIdentityProviderRequest& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The tags that apply to the identity provider's registration.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline RegisterIdentityProviderRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+    inline RegisterIdentityProviderRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+    inline RegisterIdentityProviderRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    inline RegisterIdentityProviderRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+    inline RegisterIdentityProviderRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+    inline RegisterIdentityProviderRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+    inline RegisterIdentityProviderRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+    inline RegisterIdentityProviderRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+    inline RegisterIdentityProviderRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
   private:
 
     IdentityProvider m_identityProvider;
@@ -82,6 +104,9 @@ namespace Model
 
     Settings m_settings;
     bool m_settingsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,6 +22,7 @@ ProductUserSummary::ProductUserSummary() :
     m_domainHasBeenSet(false),
     m_identityProviderHasBeenSet(false),
     m_productHasBeenSet(false),
+    m_productUserArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_subscriptionEndDateHasBeenSet(false),
@@ -57,6 +58,13 @@ ProductUserSummary& ProductUserSummary::operator =(JsonView jsonValue)
     m_product = jsonValue.GetString("Product");
 
     m_productHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProductUserArn"))
+  {
+    m_productUserArn = jsonValue.GetString("ProductUserArn");
+
+    m_productUserArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -116,6 +124,12 @@ JsonValue ProductUserSummary::Jsonize() const
   if(m_productHasBeenSet)
   {
    payload.WithString("Product", m_product);
+
+  }
+
+  if(m_productUserArnHasBeenSet)
+  {
+   payload.WithString("ProductUserArn", m_productUserArn);
 
   }
 

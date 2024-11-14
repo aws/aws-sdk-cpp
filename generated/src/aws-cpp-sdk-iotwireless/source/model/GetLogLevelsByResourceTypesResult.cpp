@@ -55,6 +55,15 @@ GetLogLevelsByResourceTypesResult& GetLogLevelsByResourceTypesResult::operator =
     }
   }
 
+  if(jsonValue.ValueExists("FuotaTaskLogOptions"))
+  {
+    Aws::Utils::Array<JsonView> fuotaTaskLogOptionsJsonList = jsonValue.GetArray("FuotaTaskLogOptions");
+    for(unsigned fuotaTaskLogOptionsIndex = 0; fuotaTaskLogOptionsIndex < fuotaTaskLogOptionsJsonList.GetLength(); ++fuotaTaskLogOptionsIndex)
+    {
+      m_fuotaTaskLogOptions.push_back(fuotaTaskLogOptionsJsonList[fuotaTaskLogOptionsIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 RegisterIdentityProviderRequest::RegisterIdentityProviderRequest() : 
     m_identityProviderHasBeenSet(false),
     m_productHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+    m_settingsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,17 @@ Aws::String RegisterIdentityProviderRequest::SerializePayload() const
   if(m_settingsHasBeenSet)
   {
    payload.WithObject("Settings", m_settings.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

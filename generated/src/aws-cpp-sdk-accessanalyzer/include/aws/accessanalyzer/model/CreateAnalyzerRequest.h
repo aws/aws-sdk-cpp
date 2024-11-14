@@ -89,7 +89,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of key-value pairs to apply to the analyzer.</p>
+     * <p>An array of key-value pairs to apply to the analyzer. You can use the set of
+     * Unicode letters, digits, whitespace, <code>_</code>, <code>.</code>,
+     * <code>/</code>, <code>=</code>, <code>+</code>, and <code>-</code>.</p> <p>For
+     * the tag key, you can specify a value that is 1 to 128 characters in length and
+     * cannot be prefixed with <code>aws:</code>.</p> <p>For the tag value, you can
+     * specify a value that is 0 to 256 characters in length.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -124,8 +129,7 @@ namespace Model
     /**
      * <p>Specifies the configuration of the analyzer. If the analyzer is an unused
      * access analyzer, the specified scope of unused access is used for the
-     * configuration. If the analyzer is an external access analyzer, this field is not
-     * used.</p>
+     * configuration.</p>
      */
     inline const AnalyzerConfiguration& GetConfiguration() const{ return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }

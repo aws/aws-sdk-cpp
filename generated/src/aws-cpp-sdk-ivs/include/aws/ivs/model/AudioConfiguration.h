@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>Object specifying a stream’s audio configuration, as set up by the
    * broadcaster (usually in an encoder). This is part of the
-   * <a>IngestConfiguration</a> object and used for monitoring stream
-   * health.</p><p><h3>See Also:</h3>   <a
+   * <a>IngestConfigurations</a> object and the deprecated <a>IngestConfiguration</a>
+   * object. It is used for monitoring stream health.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/AudioConfiguration">AWS
    * API Reference</a></p>
    */
@@ -84,6 +84,21 @@ namespace Model
     inline void SetTargetBitrate(long long value) { m_targetBitrateHasBeenSet = true; m_targetBitrate = value; }
     inline AudioConfiguration& WithTargetBitrate(long long value) { SetTargetBitrate(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Name of the audio track (if the stream has an audio track). If multitrack is
+     * not enabled, this is track0 (the sole track).</p>
+     */
+    inline const Aws::String& GetTrack() const{ return m_track; }
+    inline bool TrackHasBeenSet() const { return m_trackHasBeenSet; }
+    inline void SetTrack(const Aws::String& value) { m_trackHasBeenSet = true; m_track = value; }
+    inline void SetTrack(Aws::String&& value) { m_trackHasBeenSet = true; m_track = std::move(value); }
+    inline void SetTrack(const char* value) { m_trackHasBeenSet = true; m_track.assign(value); }
+    inline AudioConfiguration& WithTrack(const Aws::String& value) { SetTrack(value); return *this;}
+    inline AudioConfiguration& WithTrack(Aws::String&& value) { SetTrack(std::move(value)); return *this;}
+    inline AudioConfiguration& WithTrack(const char* value) { SetTrack(value); return *this;}
+    ///@}
   private:
 
     long long m_channels;
@@ -97,6 +112,9 @@ namespace Model
 
     long long m_targetBitrate;
     bool m_targetBitrateHasBeenSet = false;
+
+    Aws::String m_track;
+    bool m_trackHasBeenSet = false;
   };
 
 } // namespace Model

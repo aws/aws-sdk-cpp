@@ -55,7 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that specifies details for the identity provider.</p>
+     * <p>The <code>IdentityProvider</code> resource contains information about an
+     * identity provider.</p>
      */
     inline const IdentityProvider& GetIdentityProvider() const{ return m_identityProvider; }
     inline bool IdentityProviderHasBeenSet() const { return m_identityProviderHasBeenSet; }
@@ -63,6 +64,20 @@ namespace Model
     inline void SetIdentityProvider(IdentityProvider&& value) { m_identityProviderHasBeenSet = true; m_identityProvider = std::move(value); }
     inline IdentityProviderSummary& WithIdentityProvider(const IdentityProvider& value) { SetIdentityProvider(value); return *this;}
     inline IdentityProviderSummary& WithIdentityProvider(IdentityProvider&& value) { SetIdentityProvider(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the identity provider.</p>
+     */
+    inline const Aws::String& GetIdentityProviderArn() const{ return m_identityProviderArn; }
+    inline bool IdentityProviderArnHasBeenSet() const { return m_identityProviderArnHasBeenSet; }
+    inline void SetIdentityProviderArn(const Aws::String& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = value; }
+    inline void SetIdentityProviderArn(Aws::String&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::move(value); }
+    inline void SetIdentityProviderArn(const char* value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn.assign(value); }
+    inline IdentityProviderSummary& WithIdentityProviderArn(const Aws::String& value) { SetIdentityProviderArn(value); return *this;}
+    inline IdentityProviderSummary& WithIdentityProviderArn(Aws::String&& value) { SetIdentityProviderArn(std::move(value)); return *this;}
+    inline IdentityProviderSummary& WithIdentityProviderArn(const char* value) { SetIdentityProviderArn(value); return *this;}
     ///@}
 
     ///@{
@@ -81,8 +96,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that details the registered identity provider’s product related
-     * configuration settings such as the subnets to provision VPC endpoints.</p>
+     * <p>The <code>Settings</code> resource contains details about the registered
+     * identity provider’s product related configuration settings, such as the subnets
+     * to provision VPC endpoints.</p>
      */
     inline const Settings& GetSettings() const{ return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
@@ -94,7 +110,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of an identity provider.</p>
+     * <p>The status of the identity provider.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -112,6 +128,9 @@ namespace Model
 
     IdentityProvider m_identityProvider;
     bool m_identityProviderHasBeenSet = false;
+
+    Aws::String m_identityProviderArn;
+    bool m_identityProviderArnHasBeenSet = false;
 
     Aws::String m_product;
     bool m_productHasBeenSet = false;

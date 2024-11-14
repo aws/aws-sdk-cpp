@@ -27,7 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an archive rule.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about an archive rule. Archive rules automatically
+   * archive new findings that meet the criteria you define when you create the
+   * rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ArchiveRuleSummary">AWS
    * API Reference</a></p>
    */

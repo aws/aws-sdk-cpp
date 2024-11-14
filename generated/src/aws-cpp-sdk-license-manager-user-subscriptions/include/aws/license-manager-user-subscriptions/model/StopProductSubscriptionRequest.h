@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The domain name of the user.</p>
+     * <p>The domain name of the Active Directory that contains the user for whom to
+     * stop the product subscription.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
@@ -61,7 +62,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the user-based subscription product.</p>
+     * <p>The name of the user-based subscription product.</p> <p>Valid values:
+     * <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code>
+     * | <code>OFFICE_PROFESSIONAL_PLUS</code> </p>
      */
     inline const Aws::String& GetProduct() const{ return m_product; }
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
@@ -71,6 +74,20 @@ namespace Model
     inline StopProductSubscriptionRequest& WithProduct(const Aws::String& value) { SetProduct(value); return *this;}
     inline StopProductSubscriptionRequest& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
     inline StopProductSubscriptionRequest& WithProduct(const char* value) { SetProduct(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the product user.</p>
+     */
+    inline const Aws::String& GetProductUserArn() const{ return m_productUserArn; }
+    inline bool ProductUserArnHasBeenSet() const { return m_productUserArnHasBeenSet; }
+    inline void SetProductUserArn(const Aws::String& value) { m_productUserArnHasBeenSet = true; m_productUserArn = value; }
+    inline void SetProductUserArn(Aws::String&& value) { m_productUserArnHasBeenSet = true; m_productUserArn = std::move(value); }
+    inline void SetProductUserArn(const char* value) { m_productUserArnHasBeenSet = true; m_productUserArn.assign(value); }
+    inline StopProductSubscriptionRequest& WithProductUserArn(const Aws::String& value) { SetProductUserArn(value); return *this;}
+    inline StopProductSubscriptionRequest& WithProductUserArn(Aws::String&& value) { SetProductUserArn(std::move(value)); return *this;}
+    inline StopProductSubscriptionRequest& WithProductUserArn(const char* value) { SetProductUserArn(value); return *this;}
     ///@}
 
     ///@{
@@ -96,6 +113,9 @@ namespace Model
 
     Aws::String m_product;
     bool m_productHasBeenSet = false;
+
+    Aws::String m_productUserArn;
+    bool m_productUserArnHasBeenSet = false;
 
     Aws::String m_username;
     bool m_usernameHasBeenSet = false;
