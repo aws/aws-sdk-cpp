@@ -164,13 +164,15 @@ namespace Model
     ///@{
     /**
      * <p>The value in the <code>SourceIdentity</code> attribute in the SAML assertion.
-     * </p> <p>You can require users to set a source identity value when they assume a
-     * role. You do this by using the <code>sts:SourceIdentity</code> condition key in
-     * a role trust policy. That way, actions that are taken with the role are
-     * associated with that user. After the source identity is set, the value cannot be
-     * changed. It is present in the request for all actions that are taken by the role
-     * and persists across <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained
+     * The source identity value persists across <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#iam-term-role-chaining">chained
+     * role</a> sessions.</p> <p>You can require users to set a source identity value
+     * when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. That way,
+     * actions that are taken with the role are associated with that user. After the
+     * source identity is set, the value cannot be changed. It is present in the
+     * request for all actions that are taken by the role and persists across <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#id_roles_terms-and-concepts">chained
      * role</a> sessions. You can configure your SAML identity provider to use an
      * attribute associated with your users, like user name or email, as the source
      * identity when calling <code>AssumeRoleWithSAML</code>. You do this by adding an

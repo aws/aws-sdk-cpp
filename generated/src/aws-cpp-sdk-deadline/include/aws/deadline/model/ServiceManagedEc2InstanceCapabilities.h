@@ -10,6 +10,7 @@
 #include <aws/deadline/model/ServiceManagedFleetOperatingSystemFamily.h>
 #include <aws/deadline/model/CpuArchitectureType.h>
 #include <aws/deadline/model/Ec2EbsVolume.h>
+#include <aws/deadline/model/AcceleratorCapabilities.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/deadline/model/FleetAmountCapability.h>
@@ -107,6 +108,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The GPU accelerator capabilities required for the Amazon EC2 instances. If
+     * you include the <code>acceleratorCapabilities</code> property in the <a
+     * href="https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities">ServiceManagedEc2InstanceCapabilities</a>
+     * object, all of the Amazon EC2 instances will have at least one accelerator. </p>
+     */
+    inline const AcceleratorCapabilities& GetAcceleratorCapabilities() const{ return m_acceleratorCapabilities; }
+    inline bool AcceleratorCapabilitiesHasBeenSet() const { return m_acceleratorCapabilitiesHasBeenSet; }
+    inline void SetAcceleratorCapabilities(const AcceleratorCapabilities& value) { m_acceleratorCapabilitiesHasBeenSet = true; m_acceleratorCapabilities = value; }
+    inline void SetAcceleratorCapabilities(AcceleratorCapabilities&& value) { m_acceleratorCapabilitiesHasBeenSet = true; m_acceleratorCapabilities = std::move(value); }
+    inline ServiceManagedEc2InstanceCapabilities& WithAcceleratorCapabilities(const AcceleratorCapabilities& value) { SetAcceleratorCapabilities(value); return *this;}
+    inline ServiceManagedEc2InstanceCapabilities& WithAcceleratorCapabilities(AcceleratorCapabilities&& value) { SetAcceleratorCapabilities(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The allowable Amazon EC2 instance types.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedInstanceTypes() const{ return m_allowedInstanceTypes; }
@@ -178,6 +194,9 @@ namespace Model
 
     Ec2EbsVolume m_rootEbsVolume;
     bool m_rootEbsVolumeHasBeenSet = false;
+
+    AcceleratorCapabilities m_acceleratorCapabilities;
+    bool m_acceleratorCapabilitiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedInstanceTypes;
     bool m_allowedInstanceTypesHasBeenSet = false;

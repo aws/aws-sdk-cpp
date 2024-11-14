@@ -7,6 +7,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/SupportedRfRegion.h>
 #include <aws/iotwireless/model/DlClass.h>
+#include <aws/iotwireless/model/ParticipatingGatewaysMulticast.h>
 #include <utility>
 
 namespace Aws
@@ -74,6 +75,16 @@ namespace Model
     inline void SetNumberOfDevicesInGroup(int value) { m_numberOfDevicesInGroupHasBeenSet = true; m_numberOfDevicesInGroup = value; }
     inline LoRaWANMulticastGet& WithNumberOfDevicesInGroup(int value) { SetNumberOfDevicesInGroup(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const ParticipatingGatewaysMulticast& GetParticipatingGateways() const{ return m_participatingGateways; }
+    inline bool ParticipatingGatewaysHasBeenSet() const { return m_participatingGatewaysHasBeenSet; }
+    inline void SetParticipatingGateways(const ParticipatingGatewaysMulticast& value) { m_participatingGatewaysHasBeenSet = true; m_participatingGateways = value; }
+    inline void SetParticipatingGateways(ParticipatingGatewaysMulticast&& value) { m_participatingGatewaysHasBeenSet = true; m_participatingGateways = std::move(value); }
+    inline LoRaWANMulticastGet& WithParticipatingGateways(const ParticipatingGatewaysMulticast& value) { SetParticipatingGateways(value); return *this;}
+    inline LoRaWANMulticastGet& WithParticipatingGateways(ParticipatingGatewaysMulticast&& value) { SetParticipatingGateways(std::move(value)); return *this;}
+    ///@}
   private:
 
     SupportedRfRegion m_rfRegion;
@@ -87,6 +98,9 @@ namespace Model
 
     int m_numberOfDevicesInGroup;
     bool m_numberOfDevicesInGroupHasBeenSet = false;
+
+    ParticipatingGatewaysMulticast m_participatingGateways;
+    bool m_participatingGatewaysHasBeenSet = false;
   };
 
 } // namespace Model

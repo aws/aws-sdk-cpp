@@ -281,6 +281,56 @@ namespace QuickSight
         }
 
         /**
+         * <p>Creates an Amazon QuickSight brand.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateBrand">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBrandOutcome CreateBrand(const Model::CreateBrandRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateBrand that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateBrandRequestT = Model::CreateBrandRequest>
+        Model::CreateBrandOutcomeCallable CreateBrandCallable(const CreateBrandRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::CreateBrand, request);
+        }
+
+        /**
+         * An Async wrapper for CreateBrand that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateBrandRequestT = Model::CreateBrandRequest>
+        void CreateBrandAsync(const CreateBrandRequestT& request, const CreateBrandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::CreateBrand, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a custom permissions profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateCustomPermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCustomPermissionsOutcome CreateCustomPermissions(const Model::CreateCustomPermissionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCustomPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCustomPermissionsRequestT = Model::CreateCustomPermissionsRequest>
+        Model::CreateCustomPermissionsOutcomeCallable CreateCustomPermissionsCallable(const CreateCustomPermissionsRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::CreateCustomPermissions, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCustomPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCustomPermissionsRequestT = Model::CreateCustomPermissionsRequest>
+        void CreateCustomPermissionsAsync(const CreateCustomPermissionsRequestT& request, const CreateCustomPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::CreateCustomPermissions, request, handler, context);
+        }
+
+        /**
          * <p>Creates a dashboard from either a template or directly with a
          * <code>DashboardDefinition</code>. To first create a template, see the <code> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
@@ -907,6 +957,81 @@ namespace QuickSight
         }
 
         /**
+         * <p>Deletes an Amazon QuickSight brand.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteBrand">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBrandOutcome DeleteBrand(const Model::DeleteBrandRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteBrand that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteBrandRequestT = Model::DeleteBrandRequest>
+        Model::DeleteBrandOutcomeCallable DeleteBrandCallable(const DeleteBrandRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DeleteBrand, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteBrand that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteBrandRequestT = Model::DeleteBrandRequest>
+        void DeleteBrandAsync(const DeleteBrandRequestT& request, const DeleteBrandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DeleteBrand, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a brand assignment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteBrandAssignment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBrandAssignmentOutcome DeleteBrandAssignment(const Model::DeleteBrandAssignmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteBrandAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteBrandAssignmentRequestT = Model::DeleteBrandAssignmentRequest>
+        Model::DeleteBrandAssignmentOutcomeCallable DeleteBrandAssignmentCallable(const DeleteBrandAssignmentRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DeleteBrandAssignment, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteBrandAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteBrandAssignmentRequestT = Model::DeleteBrandAssignmentRequest>
+        void DeleteBrandAssignmentAsync(const DeleteBrandAssignmentRequestT& request, const DeleteBrandAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DeleteBrandAssignment, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a custom permissions profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteCustomPermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCustomPermissionsOutcome DeleteCustomPermissions(const Model::DeleteCustomPermissionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCustomPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCustomPermissionsRequestT = Model::DeleteCustomPermissionsRequest>
+        Model::DeleteCustomPermissionsOutcomeCallable DeleteCustomPermissionsCallable(const DeleteCustomPermissionsRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DeleteCustomPermissions, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCustomPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCustomPermissionsRequestT = Model::DeleteCustomPermissionsRequest>
+        void DeleteCustomPermissionsAsync(const DeleteCustomPermissionsRequestT& request, const DeleteCustomPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DeleteCustomPermissions, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDashboard">AWS
          * API Reference</a></p>
@@ -1473,6 +1598,32 @@ namespace QuickSight
         }
 
         /**
+         * <p>Deletes a custom permissions profile from a user.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserCustomPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUserCustomPermissionOutcome DeleteUserCustomPermission(const Model::DeleteUserCustomPermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteUserCustomPermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteUserCustomPermissionRequestT = Model::DeleteUserCustomPermissionRequest>
+        Model::DeleteUserCustomPermissionOutcomeCallable DeleteUserCustomPermissionCallable(const DeleteUserCustomPermissionRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DeleteUserCustomPermission, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteUserCustomPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteUserCustomPermissionRequestT = Model::DeleteUserCustomPermissionRequest>
+        void DeleteUserCustomPermissionAsync(const DeleteUserCustomPermissionRequestT& request, const DeleteUserCustomPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DeleteUserCustomPermission, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a VPC connection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteVPCConnection">AWS
          * API Reference</a></p>
@@ -1758,6 +1909,106 @@ namespace QuickSight
         void DescribeAssetBundleImportJobAsync(const DescribeAssetBundleImportJobRequestT& request, const DescribeAssetBundleImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::DescribeAssetBundleImportJob, request, handler, context);
+        }
+
+        /**
+         * <p>Describes a brand.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeBrand">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBrandOutcome DescribeBrand(const Model::DescribeBrandRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeBrand that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeBrandRequestT = Model::DescribeBrandRequest>
+        Model::DescribeBrandOutcomeCallable DescribeBrandCallable(const DescribeBrandRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeBrand, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeBrand that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeBrandRequestT = Model::DescribeBrandRequest>
+        void DescribeBrandAsync(const DescribeBrandRequestT& request, const DescribeBrandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeBrand, request, handler, context);
+        }
+
+        /**
+         * <p>Describes a brand assignment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeBrandAssignment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBrandAssignmentOutcome DescribeBrandAssignment(const Model::DescribeBrandAssignmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeBrandAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeBrandAssignmentRequestT = Model::DescribeBrandAssignmentRequest>
+        Model::DescribeBrandAssignmentOutcomeCallable DescribeBrandAssignmentCallable(const DescribeBrandAssignmentRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeBrandAssignment, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeBrandAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeBrandAssignmentRequestT = Model::DescribeBrandAssignmentRequest>
+        void DescribeBrandAssignmentAsync(const DescribeBrandAssignmentRequestT& request, const DescribeBrandAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeBrandAssignment, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the published version of the brand.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeBrandPublishedVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBrandPublishedVersionOutcome DescribeBrandPublishedVersion(const Model::DescribeBrandPublishedVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeBrandPublishedVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeBrandPublishedVersionRequestT = Model::DescribeBrandPublishedVersionRequest>
+        Model::DescribeBrandPublishedVersionOutcomeCallable DescribeBrandPublishedVersionCallable(const DescribeBrandPublishedVersionRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeBrandPublishedVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeBrandPublishedVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeBrandPublishedVersionRequestT = Model::DescribeBrandPublishedVersionRequest>
+        void DescribeBrandPublishedVersionAsync(const DescribeBrandPublishedVersionRequestT& request, const DescribeBrandPublishedVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeBrandPublishedVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Describes a custom permissions profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeCustomPermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCustomPermissionsOutcome DescribeCustomPermissions(const Model::DescribeCustomPermissionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCustomPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCustomPermissionsRequestT = Model::DescribeCustomPermissionsRequest>
+        Model::DescribeCustomPermissionsOutcomeCallable DescribeCustomPermissionsCallable(const DescribeCustomPermissionsRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeCustomPermissions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCustomPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCustomPermissionsRequestT = Model::DescribeCustomPermissionsRequest>
+        void DescribeCustomPermissionsAsync(const DescribeCustomPermissionsRequestT& request, const DescribeCustomPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeCustomPermissions, request, handler, context);
         }
 
         /**
@@ -2952,6 +3203,58 @@ namespace QuickSight
         void ListAssetBundleImportJobsAsync(const ListAssetBundleImportJobsRequestT& request, const ListAssetBundleImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::ListAssetBundleImportJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all brands in an Amazon QuickSight account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListBrands">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBrandsOutcome ListBrands(const Model::ListBrandsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBrands that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListBrandsRequestT = Model::ListBrandsRequest>
+        Model::ListBrandsOutcomeCallable ListBrandsCallable(const ListBrandsRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::ListBrands, request);
+        }
+
+        /**
+         * An Async wrapper for ListBrands that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListBrandsRequestT = Model::ListBrandsRequest>
+        void ListBrandsAsync(const ListBrandsRequestT& request, const ListBrandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::ListBrands, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of all the custom permissions profiles.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListCustomPermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCustomPermissionsOutcome ListCustomPermissions(const Model::ListCustomPermissionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCustomPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCustomPermissionsRequestT = Model::ListCustomPermissionsRequest>
+        Model::ListCustomPermissionsOutcomeCallable ListCustomPermissionsCallable(const ListCustomPermissionsRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::ListCustomPermissions, request);
+        }
+
+        /**
+         * An Async wrapper for ListCustomPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCustomPermissionsRequestT = Model::ListCustomPermissionsRequest>
+        void ListCustomPermissionsAsync(const ListCustomPermissionsRequestT& request, const ListCustomPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::ListCustomPermissions, request, handler, context);
         }
 
         /**
@@ -4304,6 +4607,106 @@ namespace QuickSight
         }
 
         /**
+         * <p>Updates a brand.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateBrand">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBrandOutcome UpdateBrand(const Model::UpdateBrandRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateBrand that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateBrandRequestT = Model::UpdateBrandRequest>
+        Model::UpdateBrandOutcomeCallable UpdateBrandCallable(const UpdateBrandRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateBrand, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateBrand that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateBrandRequestT = Model::UpdateBrandRequest>
+        void UpdateBrandAsync(const UpdateBrandRequestT& request, const UpdateBrandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateBrand, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a brand assignment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateBrandAssignment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBrandAssignmentOutcome UpdateBrandAssignment(const Model::UpdateBrandAssignmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateBrandAssignment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateBrandAssignmentRequestT = Model::UpdateBrandAssignmentRequest>
+        Model::UpdateBrandAssignmentOutcomeCallable UpdateBrandAssignmentCallable(const UpdateBrandAssignmentRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateBrandAssignment, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateBrandAssignment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateBrandAssignmentRequestT = Model::UpdateBrandAssignmentRequest>
+        void UpdateBrandAssignmentAsync(const UpdateBrandAssignmentRequestT& request, const UpdateBrandAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateBrandAssignment, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the published version of a brand.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateBrandPublishedVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBrandPublishedVersionOutcome UpdateBrandPublishedVersion(const Model::UpdateBrandPublishedVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateBrandPublishedVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateBrandPublishedVersionRequestT = Model::UpdateBrandPublishedVersionRequest>
+        Model::UpdateBrandPublishedVersionOutcomeCallable UpdateBrandPublishedVersionCallable(const UpdateBrandPublishedVersionRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateBrandPublishedVersion, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateBrandPublishedVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateBrandPublishedVersionRequestT = Model::UpdateBrandPublishedVersionRequest>
+        void UpdateBrandPublishedVersionAsync(const UpdateBrandPublishedVersionRequestT& request, const UpdateBrandPublishedVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateBrandPublishedVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a custom permissions profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateCustomPermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCustomPermissionsOutcome UpdateCustomPermissions(const Model::UpdateCustomPermissionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCustomPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCustomPermissionsRequestT = Model::UpdateCustomPermissionsRequest>
+        Model::UpdateCustomPermissionsOutcomeCallable UpdateCustomPermissionsCallable(const UpdateCustomPermissionsRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateCustomPermissions, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCustomPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCustomPermissionsRequestT = Model::UpdateCustomPermissionsRequest>
+        void UpdateCustomPermissionsAsync(const UpdateCustomPermissionsRequestT& request, const UpdateCustomPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateCustomPermissions, request, handler, context);
+        }
+
+        /**
          * <p>Updates a dashboard in an Amazon Web Services account.</p>  <p>Updating
          * a Dashboard creates a new dashboard version but does not immediately publish the
          * new version. You can update the published version of a dashboard by using the
@@ -5107,6 +5510,32 @@ namespace QuickSight
         void UpdateUserAsync(const UpdateUserRequestT& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::UpdateUser, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a custom permissions profile for a user.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateUserCustomPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateUserCustomPermissionOutcome UpdateUserCustomPermission(const Model::UpdateUserCustomPermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateUserCustomPermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateUserCustomPermissionRequestT = Model::UpdateUserCustomPermissionRequest>
+        Model::UpdateUserCustomPermissionOutcomeCallable UpdateUserCustomPermissionCallable(const UpdateUserCustomPermissionRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateUserCustomPermission, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateUserCustomPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateUserCustomPermissionRequestT = Model::UpdateUserCustomPermissionRequest>
+        void UpdateUserCustomPermissionAsync(const UpdateUserCustomPermissionRequestT& request, const UpdateUserCustomPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateUserCustomPermission, request, handler, context);
         }
 
         /**

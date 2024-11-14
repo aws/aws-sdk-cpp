@@ -480,13 +480,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateLoginProfileOutcome CreateLoginProfile(const Model::CreateLoginProfileRequest& request) const;
+        virtual Model::CreateLoginProfileOutcome CreateLoginProfile(const Model::CreateLoginProfileRequest& request = {}) const;
 
         /**
          * A Callable wrapper for CreateLoginProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename CreateLoginProfileRequestT = Model::CreateLoginProfileRequest>
-        Model::CreateLoginProfileOutcomeCallable CreateLoginProfileCallable(const CreateLoginProfileRequestT& request) const
+        Model::CreateLoginProfileOutcomeCallable CreateLoginProfileCallable(const CreateLoginProfileRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::CreateLoginProfile, request);
         }
@@ -495,7 +495,7 @@ namespace IAM
          * An Async wrapper for CreateLoginProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename CreateLoginProfileRequestT = Model::CreateLoginProfileRequest>
-        void CreateLoginProfileAsync(const CreateLoginProfileRequestT& request, const CreateLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void CreateLoginProfileAsync(const CreateLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateLoginProfileRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::CreateLoginProfile, request, handler, context);
         }
@@ -1060,13 +1060,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteLoginProfileOutcome DeleteLoginProfile(const Model::DeleteLoginProfileRequest& request) const;
+        virtual Model::DeleteLoginProfileOutcome DeleteLoginProfile(const Model::DeleteLoginProfileRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteLoginProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename DeleteLoginProfileRequestT = Model::DeleteLoginProfileRequest>
-        Model::DeleteLoginProfileOutcomeCallable DeleteLoginProfileCallable(const DeleteLoginProfileRequestT& request) const
+        Model::DeleteLoginProfileOutcomeCallable DeleteLoginProfileCallable(const DeleteLoginProfileRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::DeleteLoginProfile, request);
         }
@@ -1075,7 +1075,7 @@ namespace IAM
          * An Async wrapper for DeleteLoginProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename DeleteLoginProfileRequestT = Model::DeleteLoginProfileRequest>
-        void DeleteLoginProfileAsync(const DeleteLoginProfileRequestT& request, const DeleteLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void DeleteLoginProfileAsync(const DeleteLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteLoginProfileRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::DeleteLoginProfile, request, handler, context);
         }
@@ -1705,6 +1705,63 @@ namespace IAM
         }
 
         /**
+         * <p>Disables the management of privileged root user credentials across member
+         * accounts in your organization. When you disable this feature, the management
+         * account and the delegated admininstrator for IAM can no longer manage root user
+         * credentials for member accounts in your organization.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOrganizationsRootCredentialsManagement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableOrganizationsRootCredentialsManagementOutcome DisableOrganizationsRootCredentialsManagement(const Model::DisableOrganizationsRootCredentialsManagementRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DisableOrganizationsRootCredentialsManagement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableOrganizationsRootCredentialsManagementRequestT = Model::DisableOrganizationsRootCredentialsManagementRequest>
+        Model::DisableOrganizationsRootCredentialsManagementOutcomeCallable DisableOrganizationsRootCredentialsManagementCallable(const DisableOrganizationsRootCredentialsManagementRequestT& request = {}) const
+        {
+            return SubmitCallable(&IAMClient::DisableOrganizationsRootCredentialsManagement, request);
+        }
+
+        /**
+         * An Async wrapper for DisableOrganizationsRootCredentialsManagement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableOrganizationsRootCredentialsManagementRequestT = Model::DisableOrganizationsRootCredentialsManagementRequest>
+        void DisableOrganizationsRootCredentialsManagementAsync(const DisableOrganizationsRootCredentialsManagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableOrganizationsRootCredentialsManagementRequestT& request = {}) const
+        {
+            return SubmitAsync(&IAMClient::DisableOrganizationsRootCredentialsManagement, request, handler, context);
+        }
+
+        /**
+         * <p>Disables root user sessions for privileged tasks across member accounts in
+         * your organization. When you disable this feature, the management account and the
+         * delegated admininstrator for IAM can no longer perform privileged tasks on
+         * member accounts in your organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOrganizationsRootSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableOrganizationsRootSessionsOutcome DisableOrganizationsRootSessions(const Model::DisableOrganizationsRootSessionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DisableOrganizationsRootSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisableOrganizationsRootSessionsRequestT = Model::DisableOrganizationsRootSessionsRequest>
+        Model::DisableOrganizationsRootSessionsOutcomeCallable DisableOrganizationsRootSessionsCallable(const DisableOrganizationsRootSessionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&IAMClient::DisableOrganizationsRootSessions, request);
+        }
+
+        /**
+         * An Async wrapper for DisableOrganizationsRootSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisableOrganizationsRootSessionsRequestT = Model::DisableOrganizationsRootSessionsRequest>
+        void DisableOrganizationsRootSessionsAsync(const DisableOrganizationsRootSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DisableOrganizationsRootSessionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&IAMClient::DisableOrganizationsRootSessions, request, handler, context);
+        }
+
+        /**
          * <p>Enables the specified MFA device and associates it with the specified IAM
          * user. When enabled, the MFA device is required for every subsequent login by the
          * IAM user associated with the device.</p><p><h3>See Also:</h3>   <a
@@ -1729,6 +1786,83 @@ namespace IAM
         void EnableMFADeviceAsync(const EnableMFADeviceRequestT& request, const EnableMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IAMClient::EnableMFADevice, request, handler, context);
+        }
+
+        /**
+         * <p>Enables the management of privileged root user credentials across member
+         * accounts in your organization. When you enable root credentials management for
+         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+         * root access</a>, the management account and the delegated admininstrator for IAM
+         * can manage root user credentials for member accounts in your organization.</p>
+         * <p>Before you enable centralized root access, you must have an account
+         * configured with the following settings:</p> <ul> <li> <p>You must manage your
+         * Amazon Web Services accounts in <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">Organizations</a>.</p>
+         * </li> <li> <p>Enable trusted access for Identity and Access Management in
+         * Organizations. For details, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ra.html">IAM
+         * and Organizations</a> in the <i>Organizations User Guide</i>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOrganizationsRootCredentialsManagement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableOrganizationsRootCredentialsManagementOutcome EnableOrganizationsRootCredentialsManagement(const Model::EnableOrganizationsRootCredentialsManagementRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for EnableOrganizationsRootCredentialsManagement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableOrganizationsRootCredentialsManagementRequestT = Model::EnableOrganizationsRootCredentialsManagementRequest>
+        Model::EnableOrganizationsRootCredentialsManagementOutcomeCallable EnableOrganizationsRootCredentialsManagementCallable(const EnableOrganizationsRootCredentialsManagementRequestT& request = {}) const
+        {
+            return SubmitCallable(&IAMClient::EnableOrganizationsRootCredentialsManagement, request);
+        }
+
+        /**
+         * An Async wrapper for EnableOrganizationsRootCredentialsManagement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableOrganizationsRootCredentialsManagementRequestT = Model::EnableOrganizationsRootCredentialsManagementRequest>
+        void EnableOrganizationsRootCredentialsManagementAsync(const EnableOrganizationsRootCredentialsManagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableOrganizationsRootCredentialsManagementRequestT& request = {}) const
+        {
+            return SubmitAsync(&IAMClient::EnableOrganizationsRootCredentialsManagement, request, handler, context);
+        }
+
+        /**
+         * <p>Allows the management account or delegated administrator to perform
+         * privileged tasks on member accounts in your organization. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">Centrally
+         * manage root access for member accounts</a> in the <i>Identity and Access
+         * Management User Guide</i>.</p> <p>Before you enable this feature, you must have
+         * an account configured with the following settings:</p> <ul> <li> <p>You must
+         * manage your Amazon Web Services accounts in <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">Organizations</a>.</p>
+         * </li> <li> <p>Enable trusted access for Identity and Access Management in
+         * Organizations. For details, see <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ra.html">IAM
+         * and Organizations</a> in the <i>Organizations User Guide</i>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOrganizationsRootSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableOrganizationsRootSessionsOutcome EnableOrganizationsRootSessions(const Model::EnableOrganizationsRootSessionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for EnableOrganizationsRootSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename EnableOrganizationsRootSessionsRequestT = Model::EnableOrganizationsRootSessionsRequest>
+        Model::EnableOrganizationsRootSessionsOutcomeCallable EnableOrganizationsRootSessionsCallable(const EnableOrganizationsRootSessionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&IAMClient::EnableOrganizationsRootSessions, request);
+        }
+
+        /**
+         * An Async wrapper for EnableOrganizationsRootSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename EnableOrganizationsRootSessionsRequestT = Model::EnableOrganizationsRootSessionsRequest>
+        void EnableOrganizationsRootSessionsAsync(const EnableOrganizationsRootSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const EnableOrganizationsRootSessionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&IAMClient::EnableOrganizationsRootSessions, request, handler, context);
         }
 
         /**
@@ -2293,13 +2427,13 @@ namespace IAM
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetLoginProfileOutcome GetLoginProfile(const Model::GetLoginProfileRequest& request) const;
+        virtual Model::GetLoginProfileOutcome GetLoginProfile(const Model::GetLoginProfileRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetLoginProfile that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         template<typename GetLoginProfileRequestT = Model::GetLoginProfileRequest>
-        Model::GetLoginProfileOutcomeCallable GetLoginProfileCallable(const GetLoginProfileRequestT& request) const
+        Model::GetLoginProfileOutcomeCallable GetLoginProfileCallable(const GetLoginProfileRequestT& request = {}) const
         {
             return SubmitCallable(&IAMClient::GetLoginProfile, request);
         }
@@ -2308,7 +2442,7 @@ namespace IAM
          * An Async wrapper for GetLoginProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         template<typename GetLoginProfileRequestT = Model::GetLoginProfileRequest>
-        void GetLoginProfileAsync(const GetLoginProfileRequestT& request, const GetLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        void GetLoginProfileAsync(const GetLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetLoginProfileRequestT& request = {}) const
         {
             return SubmitAsync(&IAMClient::GetLoginProfile, request, handler, context);
         }
@@ -2896,9 +3030,9 @@ namespace IAM
          * <p>Lists the account alias associated with the Amazon Web Services account
          * (Note: you can have only one). For information about using an Amazon Web
          * Services account alias, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
-         * deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+         * deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon
+         * Web Services Sign-In User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">AWS
          * API Reference</a></p>
          */
@@ -3363,6 +3497,34 @@ namespace IAM
         }
 
         /**
+         * <p>Lists the centralized root access features enabled for your organization. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">Centrally
+         * manage root access for member accounts</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOrganizationsFeatures">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOrganizationsFeaturesOutcome ListOrganizationsFeatures(const Model::ListOrganizationsFeaturesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListOrganizationsFeatures that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListOrganizationsFeaturesRequestT = Model::ListOrganizationsFeaturesRequest>
+        Model::ListOrganizationsFeaturesOutcomeCallable ListOrganizationsFeaturesCallable(const ListOrganizationsFeaturesRequestT& request = {}) const
+        {
+            return SubmitCallable(&IAMClient::ListOrganizationsFeatures, request);
+        }
+
+        /**
+         * An Async wrapper for ListOrganizationsFeatures that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListOrganizationsFeaturesRequestT = Model::ListOrganizationsFeaturesRequest>
+        void ListOrganizationsFeaturesAsync(const ListOrganizationsFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListOrganizationsFeaturesRequestT& request = {}) const
+        {
+            return SubmitAsync(&IAMClient::ListOrganizationsFeatures, request, handler, context);
+        }
+
+        /**
          * <p>Lists all the managed policies that are available in your Amazon Web Services
          * account, including your own customer-defined managed policies and all Amazon Web
          * Services managed policies.</p> <p>You can filter the list of policies that is
@@ -3413,7 +3575,7 @@ namespace IAM
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
          * policies</a> in the <i>IAM User Guide</i>.</p>  <p>The list of policies
          * returned by the operation depends on the ARN of the identity that you
-         * provide.</p> <ul> <li> <p> <b>User</b> – The list of policies includes the
+         * provide.</p> <ul> <li> <p> <b>User</b> ��� The list of policies includes the
          * managed and inline policies that are attached to the user directly. The list
          * also includes any additional managed and inline policies that are attached to
          * the group to which the user belongs. </p> </li> <li> <p> <b>Group</b> – The list

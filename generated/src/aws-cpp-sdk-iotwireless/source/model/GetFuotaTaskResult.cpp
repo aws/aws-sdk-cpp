@@ -106,6 +106,12 @@ GetFuotaTaskResult& GetFuotaTaskResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("Descriptor"))
+  {
+    m_descriptor = jsonValue.GetString("Descriptor");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

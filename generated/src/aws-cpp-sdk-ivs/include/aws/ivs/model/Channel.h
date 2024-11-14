@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivs/model/ContainerFormat.h>
 #include <aws/ivs/model/ChannelLatencyMode.h>
+#include <aws/ivs/model/MultitrackInputConfiguration.h>
 #include <aws/ivs/model/TranscodePreset.h>
 #include <aws/ivs/model/Srt.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -69,6 +71,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates which content-packaging format is used (MPEG-TS or fMP4). If
+     * <code>multitrackInputConfiguration</code> is specified and <code>enabled</code>
+     * is <code>true</code>, then <code>containerFormat</code> is required and must be
+     * set to <code>FRAGMENTED_MP4</code>. Otherwise, <code>containerFormat</code> may
+     * be set to <code>TS</code> or <code>FRAGMENTED_MP4</code>. Default:
+     * <code>TS</code>.</p>
+     */
+    inline const ContainerFormat& GetContainerFormat() const{ return m_containerFormat; }
+    inline bool ContainerFormatHasBeenSet() const { return m_containerFormatHasBeenSet; }
+    inline void SetContainerFormat(const ContainerFormat& value) { m_containerFormatHasBeenSet = true; m_containerFormat = value; }
+    inline void SetContainerFormat(ContainerFormat&& value) { m_containerFormatHasBeenSet = true; m_containerFormat = std::move(value); }
+    inline Channel& WithContainerFormat(const ContainerFormat& value) { SetContainerFormat(value); return *this;}
+    inline Channel& WithContainerFormat(ContainerFormat&& value) { SetContainerFormat(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Channel ingest endpoint, part of the definition of an ingest server, used
      * when you set up streaming software.</p>
      */
@@ -105,6 +124,19 @@ namespace Model
     inline void SetLatencyMode(ChannelLatencyMode&& value) { m_latencyModeHasBeenSet = true; m_latencyMode = std::move(value); }
     inline Channel& WithLatencyMode(const ChannelLatencyMode& value) { SetLatencyMode(value); return *this;}
     inline Channel& WithLatencyMode(ChannelLatencyMode&& value) { SetLatencyMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Object specifying multitrack input configuration. Default: no multitrack
+     * input configuration is specified.</p>
+     */
+    inline const MultitrackInputConfiguration& GetMultitrackInputConfiguration() const{ return m_multitrackInputConfiguration; }
+    inline bool MultitrackInputConfigurationHasBeenSet() const { return m_multitrackInputConfigurationHasBeenSet; }
+    inline void SetMultitrackInputConfiguration(const MultitrackInputConfiguration& value) { m_multitrackInputConfigurationHasBeenSet = true; m_multitrackInputConfiguration = value; }
+    inline void SetMultitrackInputConfiguration(MultitrackInputConfiguration&& value) { m_multitrackInputConfigurationHasBeenSet = true; m_multitrackInputConfiguration = std::move(value); }
+    inline Channel& WithMultitrackInputConfiguration(const MultitrackInputConfiguration& value) { SetMultitrackInputConfiguration(value); return *this;}
+    inline Channel& WithMultitrackInputConfiguration(MultitrackInputConfiguration&& value) { SetMultitrackInputConfiguration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -244,6 +276,9 @@ namespace Model
     bool m_authorized;
     bool m_authorizedHasBeenSet = false;
 
+    ContainerFormat m_containerFormat;
+    bool m_containerFormatHasBeenSet = false;
+
     Aws::String m_ingestEndpoint;
     bool m_ingestEndpointHasBeenSet = false;
 
@@ -252,6 +287,9 @@ namespace Model
 
     ChannelLatencyMode m_latencyMode;
     bool m_latencyModeHasBeenSet = false;
+
+    MultitrackInputConfiguration m_multitrackInputConfiguration;
+    bool m_multitrackInputConfigurationHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

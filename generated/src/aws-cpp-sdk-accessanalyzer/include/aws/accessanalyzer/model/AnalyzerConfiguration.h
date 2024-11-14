@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the configuration of an unused access analyzer for
-   * an Amazon Web Services organization or account.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the configuration of an analyzer for an Amazon Web
+   * Services organization or account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/AnalyzerConfiguration">AWS
    * API Reference</a></p>
    */
@@ -41,8 +41,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the configuration of an unused access analyzer for an Amazon Web
-     * Services organization or account. External access analyzers do not support any
-     * configuration.</p>
+     * Services organization or account.</p>
      */
     inline const UnusedAccessConfiguration& GetUnusedAccess() const{ return m_unusedAccess; }
     inline bool UnusedAccessHasBeenSet() const { return m_unusedAccessHasBeenSet; }

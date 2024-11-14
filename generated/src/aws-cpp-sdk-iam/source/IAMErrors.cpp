@@ -32,10 +32,14 @@ static const int DUPLICATE_S_S_H_PUBLIC_KEY_HASH = HashingUtils::HashString("Dup
 static const int INVALID_CERTIFICATE_HASH = HashingUtils::HashString("InvalidCertificate");
 static const int INVALID_PUBLIC_KEY_HASH = HashingUtils::HashString("InvalidPublicKey");
 static const int POLICY_NOT_ATTACHABLE_HASH = HashingUtils::HashString("PolicyNotAttachable");
+static const int ACCOUNT_NOT_MANAGEMENT_OR_DELEGATED_ADMINISTRATOR_HASH = HashingUtils::HashString("AccountNotManagementOrDelegatedAdministratorException");
 static const int DUPLICATE_CERTIFICATE_HASH = HashingUtils::HashString("DuplicateCertificate");
 static const int PASSWORD_POLICY_VIOLATION_HASH = HashingUtils::HashString("PasswordPolicyViolation");
 static const int UNRECOGNIZED_PUBLIC_KEY_ENCODING_HASH = HashingUtils::HashString("UnrecognizedPublicKeyEncoding");
+static const int ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = HashingUtils::HashString("OrganizationNotInAllFeaturesModeException");
+static const int ORGANIZATION_NOT_FOUND_HASH = HashingUtils::HashString("OrganizationNotFoundException");
 static const int OPEN_ID_IDP_COMMUNICATION_ERROR_HASH = HashingUtils::HashString("OpenIdIdpCommunicationError");
+static const int SERVICE_ACCESS_NOT_ENABLED_HASH = HashingUtils::HashString("ServiceAccessNotEnabledException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
 static const int CREDENTIAL_REPORT_NOT_READY_HASH = HashingUtils::HashString("ReportInProgress");
 static const int CREDENTIAL_REPORT_NOT_PRESENT_HASH = HashingUtils::HashString("ReportNotPresent");
@@ -46,6 +50,7 @@ static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailure
 static const int POLICY_EVALUATION_HASH = HashingUtils::HashString("PolicyEvaluation");
 static const int ENTITY_TEMPORARILY_UNMODIFIABLE_HASH = HashingUtils::HashString("EntityTemporarilyUnmodifiable");
 static const int REPORT_GENERATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ReportGenerationLimitExceeded");
+static const int CALLER_IS_NOT_MANAGEMENT_ACCOUNT_HASH = HashingUtils::HashString("CallerIsNotManagementAccountException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -108,6 +113,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::POLICY_NOT_ATTACHABLE), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == ACCOUNT_NOT_MANAGEMENT_OR_DELEGATED_ADMINISTRATOR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::ACCOUNT_NOT_MANAGEMENT_OR_DELEGATED_ADMINISTRATOR), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == DUPLICATE_CERTIFICATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::DUPLICATE_CERTIFICATE), RetryableType::NOT_RETRYABLE);
@@ -120,9 +129,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::UNRECOGNIZED_PUBLIC_KEY_ENCODING), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == ORGANIZATION_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::ORGANIZATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == OPEN_ID_IDP_COMMUNICATION_ERROR_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::OPEN_ID_IDP_COMMUNICATION_ERROR), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == SERVICE_ACCESS_NOT_ENABLED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::SERVICE_ACCESS_NOT_ENABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_INPUT_HASH)
   {
@@ -163,6 +184,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REPORT_GENERATION_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::REPORT_GENERATION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CALLER_IS_NOT_MANAGEMENT_ACCOUNT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::CALLER_IS_NOT_MANAGEMENT_ACCOUNT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

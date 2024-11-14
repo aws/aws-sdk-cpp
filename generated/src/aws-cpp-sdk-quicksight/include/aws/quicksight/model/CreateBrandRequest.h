@@ -1,0 +1,108 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/QuickSightRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/BrandDefinition.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/Tag.h>
+#include <utility>
+
+namespace Aws
+{
+namespace QuickSight
+{
+namespace Model
+{
+
+  /**
+   */
+  class CreateBrandRequest : public QuickSightRequest
+  {
+  public:
+    AWS_QUICKSIGHT_API CreateBrandRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "CreateBrand"; }
+
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
+
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the brand.</p>
+     */
+    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
+    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
+    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
+    inline CreateBrandRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
+    inline CreateBrandRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
+    inline CreateBrandRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the Amazon QuickSight brand.</p>
+     */
+    inline const Aws::String& GetBrandId() const{ return m_brandId; }
+    inline bool BrandIdHasBeenSet() const { return m_brandIdHasBeenSet; }
+    inline void SetBrandId(const Aws::String& value) { m_brandIdHasBeenSet = true; m_brandId = value; }
+    inline void SetBrandId(Aws::String&& value) { m_brandIdHasBeenSet = true; m_brandId = std::move(value); }
+    inline void SetBrandId(const char* value) { m_brandIdHasBeenSet = true; m_brandId.assign(value); }
+    inline CreateBrandRequest& WithBrandId(const Aws::String& value) { SetBrandId(value); return *this;}
+    inline CreateBrandRequest& WithBrandId(Aws::String&& value) { SetBrandId(std::move(value)); return *this;}
+    inline CreateBrandRequest& WithBrandId(const char* value) { SetBrandId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The definition of the brand.</p>
+     */
+    inline const BrandDefinition& GetBrandDefinition() const{ return m_brandDefinition; }
+    inline bool BrandDefinitionHasBeenSet() const { return m_brandDefinitionHasBeenSet; }
+    inline void SetBrandDefinition(const BrandDefinition& value) { m_brandDefinitionHasBeenSet = true; m_brandDefinition = value; }
+    inline void SetBrandDefinition(BrandDefinition&& value) { m_brandDefinitionHasBeenSet = true; m_brandDefinition = std::move(value); }
+    inline CreateBrandRequest& WithBrandDefinition(const BrandDefinition& value) { SetBrandDefinition(value); return *this;}
+    inline CreateBrandRequest& WithBrandDefinition(BrandDefinition&& value) { SetBrandDefinition(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A map of the key-value pairs that are assigned to the brand.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+    inline CreateBrandRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline CreateBrandRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline CreateBrandRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+    inline CreateBrandRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
+  private:
+
+    Aws::String m_awsAccountId;
+    bool m_awsAccountIdHasBeenSet = false;
+
+    Aws::String m_brandId;
+    bool m_brandIdHasBeenSet = false;
+
+    BrandDefinition m_brandDefinition;
+    bool m_brandDefinitionHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace QuickSight
+} // namespace Aws

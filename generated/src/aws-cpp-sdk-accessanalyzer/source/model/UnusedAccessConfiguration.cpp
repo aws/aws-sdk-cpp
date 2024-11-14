@@ -20,7 +20,8 @@ namespace Model
 
 UnusedAccessConfiguration::UnusedAccessConfiguration() : 
     m_unusedAccessAge(0),
-    m_unusedAccessAgeHasBeenSet(false)
+    m_unusedAccessAgeHasBeenSet(false),
+    m_analysisRuleHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,13 @@ UnusedAccessConfiguration& UnusedAccessConfiguration::operator =(JsonView jsonVa
     m_unusedAccessAgeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("analysisRule"))
+  {
+    m_analysisRule = jsonValue.GetObject("analysisRule");
+
+    m_analysisRuleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +57,12 @@ JsonValue UnusedAccessConfiguration::Jsonize() const
   if(m_unusedAccessAgeHasBeenSet)
   {
    payload.WithInteger("unusedAccessAge", m_unusedAccessAge);
+
+  }
+
+  if(m_analysisRuleHasBeenSet)
+  {
+   payload.WithObject("analysisRule", m_analysisRule.Jsonize());
 
   }
 

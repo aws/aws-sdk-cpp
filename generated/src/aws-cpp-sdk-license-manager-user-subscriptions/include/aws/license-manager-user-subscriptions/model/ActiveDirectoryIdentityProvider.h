@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
+#include <aws/license-manager-user-subscriptions/model/ActiveDirectorySettings.h>
+#include <aws/license-manager-user-subscriptions/model/ActiveDirectoryType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -40,6 +42,33 @@ namespace Model
 
     ///@{
     /**
+     * <p>The <code>ActiveDirectorySettings</code> resource contains details about the
+     * Active Directory, including network access details such as domain name and IP
+     * addresses, and the credential provider for user administration.</p>
+     */
+    inline const ActiveDirectorySettings& GetActiveDirectorySettings() const{ return m_activeDirectorySettings; }
+    inline bool ActiveDirectorySettingsHasBeenSet() const { return m_activeDirectorySettingsHasBeenSet; }
+    inline void SetActiveDirectorySettings(const ActiveDirectorySettings& value) { m_activeDirectorySettingsHasBeenSet = true; m_activeDirectorySettings = value; }
+    inline void SetActiveDirectorySettings(ActiveDirectorySettings&& value) { m_activeDirectorySettingsHasBeenSet = true; m_activeDirectorySettings = std::move(value); }
+    inline ActiveDirectoryIdentityProvider& WithActiveDirectorySettings(const ActiveDirectorySettings& value) { SetActiveDirectorySettings(value); return *this;}
+    inline ActiveDirectoryIdentityProvider& WithActiveDirectorySettings(ActiveDirectorySettings&& value) { SetActiveDirectorySettings(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of Active Directory – either a self-managed Active Directory or an
+     * Amazon Web Services Managed Active Directory.</p>
+     */
+    inline const ActiveDirectoryType& GetActiveDirectoryType() const{ return m_activeDirectoryType; }
+    inline bool ActiveDirectoryTypeHasBeenSet() const { return m_activeDirectoryTypeHasBeenSet; }
+    inline void SetActiveDirectoryType(const ActiveDirectoryType& value) { m_activeDirectoryTypeHasBeenSet = true; m_activeDirectoryType = value; }
+    inline void SetActiveDirectoryType(ActiveDirectoryType&& value) { m_activeDirectoryTypeHasBeenSet = true; m_activeDirectoryType = std::move(value); }
+    inline ActiveDirectoryIdentityProvider& WithActiveDirectoryType(const ActiveDirectoryType& value) { SetActiveDirectoryType(value); return *this;}
+    inline ActiveDirectoryIdentityProvider& WithActiveDirectoryType(ActiveDirectoryType&& value) { SetActiveDirectoryType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The directory ID for an Active Directory identity provider.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
@@ -52,6 +81,12 @@ namespace Model
     inline ActiveDirectoryIdentityProvider& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
     ///@}
   private:
+
+    ActiveDirectorySettings m_activeDirectorySettings;
+    bool m_activeDirectorySettingsHasBeenSet = false;
+
+    ActiveDirectoryType m_activeDirectoryType;
+    bool m_activeDirectoryTypeHasBeenSet = false;
 
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet = false;

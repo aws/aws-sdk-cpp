@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about an identity provider.</p><p><h3>See Also:</h3>   <a
+   * <p>Refers to an identity provider.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/IdentityProvider">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that details an Active Directory identity provider.</p>
+     * <p>The <code>ActiveDirectoryIdentityProvider</code> resource contains settings
+     * and other details about a specific Active Directory identity provider.</p>
      */
     inline const ActiveDirectoryIdentityProvider& GetActiveDirectoryIdentityProvider() const{ return m_activeDirectoryIdentityProvider; }
     inline bool ActiveDirectoryIdentityProviderHasBeenSet() const { return m_activeDirectoryIdentityProviderHasBeenSet; }

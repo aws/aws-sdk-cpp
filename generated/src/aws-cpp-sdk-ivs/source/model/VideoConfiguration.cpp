@@ -23,10 +23,13 @@ VideoConfiguration::VideoConfiguration() :
     m_avcProfileHasBeenSet(false),
     m_codecHasBeenSet(false),
     m_encoderHasBeenSet(false),
+    m_levelHasBeenSet(false),
+    m_profileHasBeenSet(false),
     m_targetBitrate(0),
     m_targetBitrateHasBeenSet(false),
     m_targetFramerate(0),
     m_targetFramerateHasBeenSet(false),
+    m_trackHasBeenSet(false),
     m_videoHeight(0),
     m_videoHeightHasBeenSet(false),
     m_videoWidth(0),
@@ -70,6 +73,20 @@ VideoConfiguration& VideoConfiguration::operator =(JsonView jsonValue)
     m_encoderHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("level"))
+  {
+    m_level = jsonValue.GetString("level");
+
+    m_levelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("profile"))
+  {
+    m_profile = jsonValue.GetString("profile");
+
+    m_profileHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("targetBitrate"))
   {
     m_targetBitrate = jsonValue.GetInt64("targetBitrate");
@@ -82,6 +99,13 @@ VideoConfiguration& VideoConfiguration::operator =(JsonView jsonValue)
     m_targetFramerate = jsonValue.GetInt64("targetFramerate");
 
     m_targetFramerateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("track"))
+  {
+    m_track = jsonValue.GetString("track");
+
+    m_trackHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("videoHeight"))
@@ -129,6 +153,18 @@ JsonValue VideoConfiguration::Jsonize() const
 
   }
 
+  if(m_levelHasBeenSet)
+  {
+   payload.WithString("level", m_level);
+
+  }
+
+  if(m_profileHasBeenSet)
+  {
+   payload.WithString("profile", m_profile);
+
+  }
+
   if(m_targetBitrateHasBeenSet)
   {
    payload.WithInt64("targetBitrate", m_targetBitrate);
@@ -138,6 +174,12 @@ JsonValue VideoConfiguration::Jsonize() const
   if(m_targetFramerateHasBeenSet)
   {
    payload.WithInt64("targetFramerate", m_targetFramerate);
+
+  }
+
+  if(m_trackHasBeenSet)
+  {
+   payload.WithString("track", m_track);
 
   }
 

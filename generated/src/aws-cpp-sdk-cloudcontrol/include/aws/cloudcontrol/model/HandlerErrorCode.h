@@ -19,6 +19,7 @@ namespace Model
     NotUpdatable,
     InvalidRequest,
     AccessDenied,
+    UnauthorizedTaggingOperation,
     InvalidCredentials,
     AlreadyExists,
     NotFound,

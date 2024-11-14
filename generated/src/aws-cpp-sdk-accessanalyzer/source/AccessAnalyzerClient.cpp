@@ -53,6 +53,7 @@
 #include <aws/accessanalyzer/model/StartResourceScanRequest.h>
 #include <aws/accessanalyzer/model/TagResourceRequest.h>
 #include <aws/accessanalyzer/model/UntagResourceRequest.h>
+#include <aws/accessanalyzer/model/UpdateAnalyzerRequest.h>
 #include <aws/accessanalyzer/model/UpdateArchiveRuleRequest.h>
 #include <aws/accessanalyzer/model/UpdateFindingsRequest.h>
 #include <aws/accessanalyzer/model/ValidatePolicyRequest.h>
@@ -1220,6 +1221,39 @@ UntagResourceOutcome AccessAnalyzerClient::UntagResource(const UntagResourceRequ
       endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
       return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateAnalyzerOutcome AccessAnalyzerClient::UpdateAnalyzer(const UpdateAnalyzerRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateAnalyzer);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAnalyzer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AnalyzerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAnalyzer", "Required field: AnalyzerName, is not set");
+    return UpdateAnalyzerOutcome(Aws::Client::AWSError<AccessAnalyzerErrors>(AccessAnalyzerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalyzerName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateAnalyzer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateAnalyzer, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateAnalyzer",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateAnalyzerOutcome>(
+    [&]()-> UpdateAnalyzerOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAnalyzer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/analyzer/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalyzerName());
+      return UpdateAnalyzerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

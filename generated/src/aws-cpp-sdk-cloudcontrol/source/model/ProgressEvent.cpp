@@ -22,6 +22,7 @@ ProgressEvent::ProgressEvent() :
     m_typeNameHasBeenSet(false),
     m_identifierHasBeenSet(false),
     m_requestTokenHasBeenSet(false),
+    m_hooksRequestTokenHasBeenSet(false),
     m_operation(Operation::NOT_SET),
     m_operationHasBeenSet(false),
     m_operationStatus(OperationStatus::NOT_SET),
@@ -62,6 +63,13 @@ ProgressEvent& ProgressEvent::operator =(JsonView jsonValue)
     m_requestToken = jsonValue.GetString("RequestToken");
 
     m_requestTokenHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HooksRequestToken"))
+  {
+    m_hooksRequestToken = jsonValue.GetString("HooksRequestToken");
+
+    m_hooksRequestTokenHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Operation"))
@@ -135,6 +143,12 @@ JsonValue ProgressEvent::Jsonize() const
   if(m_requestTokenHasBeenSet)
   {
    payload.WithString("RequestToken", m_requestToken);
+
+  }
+
+  if(m_hooksRequestTokenHasBeenSet)
+  {
+   payload.WithString("HooksRequestToken", m_hooksRequestToken);
 
   }
 

@@ -98,25 +98,24 @@ namespace STS
          * temporary credentials, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>
-         * <p> <b>Permissions</b> </p> <p>The temporary security credentials created by
-         * <code>AssumeRole</code> can be used to make API calls to any Amazon Web Services
-         * service with the following exception: You cannot call the Amazon Web Services
-         * STS <code>GetFederationToken</code> or <code>GetSessionToken</code> API
-         * operations.</p> <p>(Optional) You can pass inline or managed <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
-         * policies</a> to this operation. You can pass a single JSON policy document to
-         * use as an inline session policy. You can also specify up to 10 managed policy
-         * Amazon Resource Names (ARNs) to use as managed session policies. The plaintext
-         * that you use for both inline and managed session policies can't exceed 2,048
-         * characters. Passing policies to this operation returns new temporary
-         * credentials. The resulting session's permissions are the intersection of the
-         * role's identity-based policy and the session policies. You can use the role's
-         * temporary credentials in subsequent Amazon Web Services API calls to access
-         * resources in the account that owns the role. You cannot use session policies to
-         * grant more permissions than those allowed by the identity-based policy of the
-         * role that is being assumed. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+         * STS credentials</a> in the <i>IAM User Guide</i>.</p> <p> <b>Permissions</b>
+         * </p> <p>The temporary security credentials created by <code>AssumeRole</code>
+         * can be used to make API calls to any Amazon Web Services service with the
+         * following exception: You cannot call the Amazon Web Services STS
+         * <code>GetFederationToken</code> or <code>GetSessionToken</code> API
+         * operations.</p> <p>(Optional) You can pass inline or managed session policies to
+         * this operation. You can pass a single JSON policy document to use as an inline
+         * session policy. You can also specify up to 10 managed policy Amazon Resource
+         * Names (ARNs) to use as managed session policies. The plaintext that you use for
+         * both inline and managed session policies can't exceed 2,048 characters. Passing
+         * policies to this operation returns new temporary credentials. The resulting
+         * session's permissions are the intersection of the role's identity-based policy
+         * and the session policies. You can use the role's temporary credentials in
+         * subsequent Amazon Web Services API calls to access resources in the account that
+         * owns the role. You cannot use session policies to grant more permissions than
+         * those allowed by the identity-based policy of the role that is being assumed.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
          * Policies</a> in the <i>IAM User Guide</i>.</p> <p>When you create a role, you
          * create two policies: a role trust policy that specifies <i>who</i> can assume
@@ -203,21 +202,21 @@ namespace STS
          * operations that produce temporary credentials, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>
-         * <p>The temporary security credentials returned by this operation consist of an
-         * access key ID, a secret access key, and a security token. Applications can use
-         * these temporary security credentials to sign calls to Amazon Web Services
-         * services.</p> <p> <b>Session Duration</b> </p> <p>By default, the temporary
-         * security credentials created by <code>AssumeRoleWithSAML</code> last for one
-         * hour. However, you can use the optional <code>DurationSeconds</code> parameter
-         * to specify the duration of your session. Your role session lasts for the
-         * duration that you specify, or until the time specified in the SAML
-         * authentication response's <code>SessionNotOnOrAfter</code> value, whichever is
-         * shorter. You can provide a <code>DurationSeconds</code> value from 900 seconds
-         * (15 minutes) up to the maximum session duration setting for the role. This
-         * setting can have a value from 1 hour to 12 hours. To learn how to view the
-         * maximum value for your role, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+         * STS credentials</a> in the <i>IAM User Guide</i>.</p> <p>The temporary security
+         * credentials returned by this operation consist of an access key ID, a secret
+         * access key, and a security token. Applications can use these temporary security
+         * credentials to sign calls to Amazon Web Services services.</p> <p> <b>Session
+         * Duration</b> </p> <p>By default, the temporary security credentials created by
+         * <code>AssumeRoleWithSAML</code> last for one hour. However, you can use the
+         * optional <code>DurationSeconds</code> parameter to specify the duration of your
+         * session. Your role session lasts for the duration that you specify, or until the
+         * time specified in the SAML authentication response's
+         * <code>SessionNotOnOrAfter</code> value, whichever is shorter. You can provide a
+         * <code>DurationSeconds</code> value from 900 seconds (15 minutes) up to the
+         * maximum session duration setting for the role. This setting can have a value
+         * from 1 hour to 12 hours. To learn how to view the maximum value for your role,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
          * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
          * Guide</i>. The maximum session duration limit applies when you use the
@@ -361,24 +360,24 @@ namespace STS
          * produce temporary credentials, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>
-         * <p>The temporary security credentials returned by this API consist of an access
-         * key ID, a secret access key, and a security token. Applications can use these
-         * temporary security credentials to sign calls to Amazon Web Services service API
-         * operations.</p> <p> <b>Session Duration</b> </p> <p>By default, the temporary
-         * security credentials created by <code>AssumeRoleWithWebIdentity</code> last for
-         * one hour. However, you can use the optional <code>DurationSeconds</code>
-         * parameter to specify the duration of your session. You can provide a value from
-         * 900 seconds (15 minutes) up to the maximum session duration setting for the
-         * role. This setting can have a value from 1 hour to 12 hours. To learn how to
-         * view the maximum value for your role, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
-         * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
-         * Guide</i>. The maximum session duration limit applies when you use the
-         * <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
-         * commands. However the limit does not apply when you use those operations to
-         * create a console URL. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+         * STS credentials</a> in the <i>IAM User Guide</i>.</p> <p>The temporary security
+         * credentials returned by this API consist of an access key ID, a secret access
+         * key, and a security token. Applications can use these temporary security
+         * credentials to sign calls to Amazon Web Services service API operations.</p> <p>
+         * <b>Session Duration</b> </p> <p>By default, the temporary security credentials
+         * created by <code>AssumeRoleWithWebIdentity</code> last for one hour. However,
+         * you can use the optional <code>DurationSeconds</code> parameter to specify the
+         * duration of your session. You can provide a value from 900 seconds (15 minutes)
+         * up to the maximum session duration setting for the role. This setting can have a
+         * value from 1 hour to 12 hours. To learn how to view the maximum value for your
+         * role, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_update-role-settings.html#id_roles_update-session-duration">Update
+         * the maximum session duration for a role </a> in the <i>IAM User Guide</i>. The
+         * maximum session duration limit applies when you use the <code>AssumeRole*</code>
+         * API operations or the <code>assume-role*</code> CLI commands. However the limit
+         * does not apply when you use those operations to create a console URL. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
          * IAM Roles</a> in the <i>IAM User Guide</i>. </p> <p> <b>Permissions</b> </p>
          * <p>The temporary security credentials created by
@@ -440,29 +439,18 @@ namespace STS
          * instead use a GUID or a pairwise identifier, as <a
          * href="http://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes">suggested
          * in the OIDC specification</a>.</p>  <p>For more information about
-         * how to use web identity federation and the
-         * <code>AssumeRoleWithWebIdentity</code> API, see the following resources: </p>
-         * <ul> <li> <p> <a
+         * how to use OIDC federation and the <code>AssumeRoleWithWebIdentity</code> API,
+         * see the following resources: </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html">Using
          * Web Identity Federation API Operations for Mobile Apps</a> and <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
          * Through a Web-based Identity Provider</a>. </p> </li> <li> <p> <a
-         * href="https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/">
-         * Web Identity Federation Playground</a>. Walk through the process of
-         * authenticating through Login with Amazon, Facebook, or Google, getting temporary
-         * security credentials, and then using those credentials to make a request to
-         * Amazon Web Services. </p> </li> <li> <p> <a
          * href="http://aws.amazon.com/sdkforios/">Amazon Web Services SDK for iOS
          * Developer Guide</a> and <a href="http://aws.amazon.com/sdkforandroid/">Amazon
          * Web Services SDK for Android Developer Guide</a>. These toolkits contain sample
          * apps that show how to invoke the identity providers. The toolkits then show how
          * to use the information from these providers to get and use temporary security
-         * credentials. </p> </li> <li> <p> <a
-         * href="http://aws.amazon.com/articles/web-identity-federation-with-mobile-applications">Web
-         * Identity Federation with Mobile Applications</a>. This article discusses web
-         * identity federation and shows an example of how to use web identity federation
-         * to get access to content in Amazon S3. </p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * credentials. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">AWS
          * API Reference</a></p>
          */
@@ -484,6 +472,44 @@ namespace STS
         void AssumeRoleWithWebIdentityAsync(const AssumeRoleWithWebIdentityRequestT& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&STSClient::AssumeRoleWithWebIdentity, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a set of short term credentials you can use to perform privileged
+         * tasks in a member account.</p> <p>Before you can launch a privileged session,
+         * you must have enabled centralized root access in your organization. For steps to
+         * enable this feature, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-enable-root-access.html">Centralize
+         * root access for member accounts</a> in the <i>IAM User Guide</i>.</p> 
+         * <p>The global endpoint is not supported for AssumeRoot. You must send this
+         * request to a Regional STS endpoint. For more information, see <a
+         * href="https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html#sts-endpoints">Endpoints</a>.</p>
+         *  <p>You can track AssumeRoot in CloudTrail logs to determine what actions
+         * were performed in a session. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-track-privileged-tasks.html">Track
+         * privileged tasks in CloudTrail</a> in the <i>IAM User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoot">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::AssumeRootOutcome AssumeRoot(const Model::AssumeRootRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssumeRoot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssumeRootRequestT = Model::AssumeRootRequest>
+        Model::AssumeRootOutcomeCallable AssumeRootCallable(const AssumeRootRequestT& request) const
+        {
+            return SubmitCallable(&STSClient::AssumeRoot, request);
+        }
+
+        /**
+         * An Async wrapper for AssumeRoot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssumeRootRequestT = Model::AssumeRootRequest>
+        void AssumeRootAsync(const AssumeRootRequestT& request, const AssumeRootResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&STSClient::AssumeRoot, request, handler, context);
         }
 
         /**
@@ -630,12 +656,12 @@ namespace STS
          * API operations that produce temporary credentials, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>
-         * <p>Although it is possible to call <code>GetFederationToken</code> using the
-         * security credentials of an Amazon Web Services account root user rather than an
-         * IAM user that you create for the purpose of a proxy application, we do not
-         * recommend it. For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+         * STS credentials</a> in the <i>IAM User Guide</i>.</p> <p>Although it is possible
+         * to call <code>GetFederationToken</code> using the security credentials of an
+         * Amazon Web Services account root user rather than an IAM user that you create
+         * for the purpose of a proxy application, we do not recommend it. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard
          * your root user credentials and don't use them for everyday tasks</a> in the
          * <i>IAM User Guide</i>. </p>  <p>You can create a mobile-based or
@@ -742,12 +768,12 @@ namespace STS
          * the other API operations that produce temporary credentials, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
          * Temporary Security Credentials</a> and <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-         * the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>
-         *  <p>No permissions are required for users to perform this operation. The
-         * purpose of the <code>sts:GetSessionToken</code> operation is to authenticate the
-         * user using MFA. You cannot use policies to control authentication operations.
-         * For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+         * STS credentials</a> in the <i>IAM User Guide</i>.</p>  <p>No permissions
+         * are required for users to perform this operation. The purpose of the
+         * <code>sts:GetSessionToken</code> operation is to authenticate the user using
+         * MFA. You cannot use policies to control authentication operations. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getsessiontoken.html">Permissions
          * for GetSessionToken</a> in the <i>IAM User Guide</i>.</p>  <p> <b>Session
          * Duration</b> </p> <p>The <code>GetSessionToken</code> operation must be called

@@ -1,0 +1,49 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/quicksight/model/CreateBrandRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::QuickSight::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+CreateBrandRequest::CreateBrandRequest() : 
+    m_awsAccountIdHasBeenSet(false),
+    m_brandIdHasBeenSet(false),
+    m_brandDefinitionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
+{
+}
+
+Aws::String CreateBrandRequest::SerializePayload() const
+{
+  JsonValue payload;
+
+  if(m_brandDefinitionHasBeenSet)
+  {
+   payload.WithObject("BrandDefinition", m_brandDefinition.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  return payload.View().WriteReadable();
+}
+
+
+
+

@@ -1407,8 +1407,8 @@ namespace IoTWireless
 
         /**
          * <p>Fetches the log-level override, if any, for a given resource-ID and
-         * resource-type. It can be used for a wireless device or a wireless
-         * gateway.</p><p><h3>See Also:</h3>   <a
+         * resource-type. It can be used for a wireless device, wireless gateway or fuota
+         * task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">AWS
          * API Reference</a></p>
          */
@@ -2185,8 +2185,8 @@ namespace IoTWireless
         }
 
         /**
-         * <p>Removes the log-level overrides for all resources; both wireless devices and
-         * wireless gateways.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the log-level overrides for all resources; wireless devices, wireless
+         * gateways, and fuota tasks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">AWS
          * API Reference</a></p>
          */
@@ -2212,8 +2212,8 @@ namespace IoTWireless
 
         /**
          * <p>Removes the log-level override, if any, for a specific resource-ID and
-         * resource-type. It can be used for a wireless device or a wireless
-         * gateway.</p><p><h3>See Also:</h3>   <a
+         * resource-type. It can be used for a wireless device, a wireless gateway, or a
+         * fuota task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">AWS
          * API Reference</a></p>
          */

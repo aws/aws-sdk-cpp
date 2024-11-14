@@ -16,6 +16,7 @@ StopProductSubscriptionRequest::StopProductSubscriptionRequest() :
     m_domainHasBeenSet(false),
     m_identityProviderHasBeenSet(false),
     m_productHasBeenSet(false),
+    m_productUserArnHasBeenSet(false),
     m_usernameHasBeenSet(false)
 {
 }
@@ -39,6 +40,12 @@ Aws::String StopProductSubscriptionRequest::SerializePayload() const
   if(m_productHasBeenSet)
   {
    payload.WithString("Product", m_product);
+
+  }
+
+  if(m_productUserArnHasBeenSet)
+  {
+   payload.WithString("ProductUserArn", m_productUserArn);
 
   }
 

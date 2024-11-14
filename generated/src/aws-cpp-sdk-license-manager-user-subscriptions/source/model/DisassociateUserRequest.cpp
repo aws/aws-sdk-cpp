@@ -16,6 +16,7 @@ DisassociateUserRequest::DisassociateUserRequest() :
     m_domainHasBeenSet(false),
     m_identityProviderHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_instanceUserArnHasBeenSet(false),
     m_usernameHasBeenSet(false)
 {
 }
@@ -39,6 +40,12 @@ Aws::String DisassociateUserRequest::SerializePayload() const
   if(m_instanceIdHasBeenSet)
   {
    payload.WithString("InstanceId", m_instanceId);
+
+  }
+
+  if(m_instanceUserArnHasBeenSet)
+  {
+   payload.WithString("InstanceUserArn", m_instanceUserArn);
 
   }
 

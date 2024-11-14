@@ -141,6 +141,18 @@ namespace Model
     inline void SetFragmentIntervalMS(int value) { m_fragmentIntervalMSHasBeenSet = true; m_fragmentIntervalMS = value; }
     inline CreateFuotaTaskRequest& WithFragmentIntervalMS(int value) { SetFragmentIntervalMS(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const Aws::String& GetDescriptor() const{ return m_descriptor; }
+    inline bool DescriptorHasBeenSet() const { return m_descriptorHasBeenSet; }
+    inline void SetDescriptor(const Aws::String& value) { m_descriptorHasBeenSet = true; m_descriptor = value; }
+    inline void SetDescriptor(Aws::String&& value) { m_descriptorHasBeenSet = true; m_descriptor = std::move(value); }
+    inline void SetDescriptor(const char* value) { m_descriptorHasBeenSet = true; m_descriptor.assign(value); }
+    inline CreateFuotaTaskRequest& WithDescriptor(const Aws::String& value) { SetDescriptor(value); return *this;}
+    inline CreateFuotaTaskRequest& WithDescriptor(Aws::String&& value) { SetDescriptor(std::move(value)); return *this;}
+    inline CreateFuotaTaskRequest& WithDescriptor(const char* value) { SetDescriptor(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -172,6 +184,9 @@ namespace Model
 
     int m_fragmentIntervalMS;
     bool m_fragmentIntervalMSHasBeenSet = false;
+
+    Aws::String m_descriptor;
+    bool m_descriptorHasBeenSet = false;
   };
 
 } // namespace Model

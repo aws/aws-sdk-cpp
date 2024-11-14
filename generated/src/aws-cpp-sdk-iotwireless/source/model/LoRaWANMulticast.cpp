@@ -22,7 +22,8 @@ LoRaWANMulticast::LoRaWANMulticast() :
     m_rfRegion(SupportedRfRegion::NOT_SET),
     m_rfRegionHasBeenSet(false),
     m_dlClass(DlClass::NOT_SET),
-    m_dlClassHasBeenSet(false)
+    m_dlClassHasBeenSet(false),
+    m_participatingGatewaysHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,13 @@ LoRaWANMulticast& LoRaWANMulticast::operator =(JsonView jsonValue)
     m_dlClassHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ParticipatingGateways"))
+  {
+    m_participatingGateways = jsonValue.GetObject("ParticipatingGateways");
+
+    m_participatingGatewaysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +71,12 @@ JsonValue LoRaWANMulticast::Jsonize() const
   if(m_dlClassHasBeenSet)
   {
    payload.WithString("DlClass", DlClassMapper::GetNameForDlClass(m_dlClass));
+  }
+
+  if(m_participatingGatewaysHasBeenSet)
+  {
+   payload.WithObject("ParticipatingGateways", m_participatingGateways.Jsonize());
+
   }
 
   return payload;

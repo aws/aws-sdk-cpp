@@ -31,7 +31,8 @@ namespace Model
     AWS_SNS_Topic,
     AWS_S3Express_DirectoryBucket,
     AWS_DynamoDB_Table,
-    AWS_DynamoDB_Stream
+    AWS_DynamoDB_Stream,
+    AWS_IAM_User
   };
 
 namespace ResourceTypeMapper

@@ -24,8 +24,8 @@
 #include <aws/quicksight/model/AccessDeniedException.h>
 #include <aws/quicksight/model/PreconditionNotMetException.h>
 #include <aws/quicksight/model/ResourceUnavailableException.h>
-#include <aws/quicksight/model/ConcurrentUpdatingException.h>
 #include <aws/quicksight/model/InvalidRequestException.h>
+#include <aws/quicksight/model/ConcurrentUpdatingException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -144,16 +144,16 @@ template<> AWS_QUICKSIGHT_API ResourceUnavailableException QuickSightError::GetM
   return ResourceUnavailableException(this->GetJsonPayload().View());
 }
 
-template<> AWS_QUICKSIGHT_API ConcurrentUpdatingException QuickSightError::GetModeledError()
-{
-  assert(this->GetErrorType() == QuickSightErrors::CONCURRENT_UPDATING);
-  return ConcurrentUpdatingException(this->GetJsonPayload().View());
-}
-
 template<> AWS_QUICKSIGHT_API InvalidRequestException QuickSightError::GetModeledError()
 {
   assert(this->GetErrorType() == QuickSightErrors::INVALID_REQUEST);
   return InvalidRequestException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API ConcurrentUpdatingException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::CONCURRENT_UPDATING);
+  return ConcurrentUpdatingException(this->GetJsonPayload().View());
 }
 
 namespace QuickSightErrorMapper
@@ -161,6 +161,7 @@ namespace QuickSightErrorMapper
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
+static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int QUICK_SIGHT_USER_NOT_FOUND_HASH = HashingUtils::HashString("QuickSightUserNotFoundException");
 static const int IDENTITY_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("IdentityTypeNotSupportedException");
@@ -172,8 +173,8 @@ static const int UNSUPPORTED_USER_EDITION_HASH = HashingUtils::HashString("Unsup
 static const int SESSION_LIFETIME_IN_MINUTES_INVALID_HASH = HashingUtils::HashString("SessionLifetimeInMinutesInvalidException");
 static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
 static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
-static const int CONCURRENT_UPDATING_HASH = HashingUtils::HashString("ConcurrentUpdatingException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static const int CONCURRENT_UPDATING_HASH = HashingUtils::HashString("ConcurrentUpdatingException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -187,6 +188,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_EXISTS), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INTERNAL_SERVER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
@@ -232,13 +237,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
-  else if (hashCode == CONCURRENT_UPDATING_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CONCURRENT_UPDATING), RetryableType::NOT_RETRYABLE);
-  }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CONCURRENT_UPDATING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CONCURRENT_UPDATING), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -69,7 +69,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The domain name of the user.</p>
+     * <p>The domain name of the Active Directory that contains the user information
+     * for the product subscription.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
@@ -83,7 +84,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that specifies details for the identity provider.</p>
+     * <p>The <code>IdentityProvider</code> resource specifies details about the
+     * identity provider.</p>
      */
     inline const IdentityProvider& GetIdentityProvider() const{ return m_identityProvider; }
     inline bool IdentityProviderHasBeenSet() const { return m_identityProviderHasBeenSet; }
@@ -95,7 +97,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
+     * <p>The ID of the EC2 instance that provides user-based subscriptions.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -105,6 +107,20 @@ namespace Model
     inline InstanceUserSummary& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
     inline InstanceUserSummary& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
     inline InstanceUserSummary& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the instance user.</p>
+     */
+    inline const Aws::String& GetInstanceUserArn() const{ return m_instanceUserArn; }
+    inline bool InstanceUserArnHasBeenSet() const { return m_instanceUserArnHasBeenSet; }
+    inline void SetInstanceUserArn(const Aws::String& value) { m_instanceUserArnHasBeenSet = true; m_instanceUserArn = value; }
+    inline void SetInstanceUserArn(Aws::String&& value) { m_instanceUserArnHasBeenSet = true; m_instanceUserArn = std::move(value); }
+    inline void SetInstanceUserArn(const char* value) { m_instanceUserArnHasBeenSet = true; m_instanceUserArn.assign(value); }
+    inline InstanceUserSummary& WithInstanceUserArn(const Aws::String& value) { SetInstanceUserArn(value); return *this;}
+    inline InstanceUserSummary& WithInstanceUserArn(Aws::String&& value) { SetInstanceUserArn(std::move(value)); return *this;}
+    inline InstanceUserSummary& WithInstanceUserArn(const char* value) { SetInstanceUserArn(value); return *this;}
     ///@}
 
     ///@{
@@ -164,6 +180,9 @@ namespace Model
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
+
+    Aws::String m_instanceUserArn;
+    bool m_instanceUserArnHasBeenSet = false;
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;

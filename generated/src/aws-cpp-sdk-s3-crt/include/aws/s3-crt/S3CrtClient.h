@@ -140,7 +140,7 @@ namespace Aws
          * progress, you can't delete the bucket until all the in-progress multipart
          * uploads are aborted or completed. To delete these in-progress multipart uploads,
          * use the <code>ListMultipartUploads</code> operation to list the in-progress
-         * multipart uploads in the bucket and use the <code>AbortMultupartUpload</code>
+         * multipart uploads in the bucket and use the <code>AbortMultipartUpload</code>
          * operation to abort all the in-progress multipart uploads. </p> </li> <li> <p>
          * <b>Directory buckets</b> - For directory buckets, you must make requests for
          * this API operation to the Zonal endpoint. These endpoints support
@@ -3738,9 +3738,16 @@ namespace Aws
          * <code>s3:ListAllMyBuckets</code> permission. </p> <p>For information about
          * Amazon S3 buckets, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
-         * configuring, and working with Amazon S3 buckets</a>.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">AWS
-         * API Reference</a></p>
+         * configuring, and working with Amazon S3 buckets</a>.</p>  <p>We
+         * strongly recommend using only paginated requests. Unpaginated requests are only
+         * supported for Amazon Web Services accounts set to the default general purpose
+         * bucket quota of 10,000. If you have an approved general purpose bucket quota
+         * above 10,000, you must send paginated requests to list your account’s buckets.
+         * All unpaginated ListBuckets requests will be rejected for Amazon Web Services
+         * accounts with a general purpose bucket quota greater than 10,000. </p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">AWS API
+         * Reference</a></p>
          */
         virtual Model::ListBucketsOutcome ListBuckets(const Model::ListBucketsRequest& request = {}) const;
 
@@ -3785,8 +3792,10 @@ namespace Aws
          * Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in
          * the <i>Amazon S3 User Guide</i>.</p> </dd> <dt>HTTP Host header syntax</dt> <dd>
          * <p> <b>Directory buckets </b> - The HTTP Host header syntax is
-         * <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> </dd>
-         * </dl><p><h3>See Also:</h3>   <a
+         * <code>s3express-control.<i>region</i>.amazonaws.com</code>.</p> </dd> </dl>
+         *  <p> The <code>BucketRegion</code> response element is not part of the
+         * <code>ListDirectoryBuckets</code> Response Syntax.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListDirectoryBuckets">AWS
          * API Reference</a></p>
          */
@@ -3819,7 +3828,7 @@ namespace Aws
          * in-progress multipart uploads are aborted or completed. To delete these
          * in-progress multipart uploads, use the <code>ListMultipartUploads</code>
          * operation to list the in-progress multipart uploads in the bucket and use the
-         * <code>AbortMultupartUpload</code> operation to abort all the in-progress
+         * <code>AbortMultipartUpload</code> operation to abort all the in-progress
          * multipart uploads. </p>  <p>The <code>ListMultipartUploads</code>
          * operation returns a maximum of 1,000 multipart uploads in the response. The
          * limit of 1,000 multipart uploads is also the default value. You can further

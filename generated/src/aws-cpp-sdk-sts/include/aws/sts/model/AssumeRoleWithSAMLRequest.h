@@ -137,7 +137,9 @@ namespace Model
      * JSON policy characters can be any ASCII character from the space character to
      * the end of the valid character list (\u0020 through \u00FF). It can also include
      * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p>  <p>An Amazon Web Services conversion compresses the
+     * characters.</p> <p>For more information about role session permissions, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * policies</a>.</p>  <p>An Amazon Web Services conversion compresses the
      * passed inline session policy, managed policy ARNs, and session tags into a
      * packed binary format that has a separate limit. Your request can fail for this
      * limit even if your plaintext meets the other requirements. The

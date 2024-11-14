@@ -114,6 +114,10 @@ namespace Aws
         static const int ml_g5_16xlarge_HASH = HashingUtils::HashString("ml.g5.16xlarge");
         static const int ml_g5_24xlarge_HASH = HashingUtils::HashString("ml.g5.24xlarge");
         static const int ml_g5_48xlarge_HASH = HashingUtils::HashString("ml.g5.48xlarge");
+        static const int ml_inf2_xlarge_HASH = HashingUtils::HashString("ml.inf2.xlarge");
+        static const int ml_inf2_8xlarge_HASH = HashingUtils::HashString("ml.inf2.8xlarge");
+        static const int ml_inf2_24xlarge_HASH = HashingUtils::HashString("ml.inf2.24xlarge");
+        static const int ml_inf2_48xlarge_HASH = HashingUtils::HashString("ml.inf2.48xlarge");
 
 
         TransformInstanceType GetTransformInstanceTypeForName(const Aws::String& name)
@@ -495,6 +499,22 @@ namespace Aws
           {
             return TransformInstanceType::ml_g5_48xlarge;
           }
+          else if (hashCode == ml_inf2_xlarge_HASH)
+          {
+            return TransformInstanceType::ml_inf2_xlarge;
+          }
+          else if (hashCode == ml_inf2_8xlarge_HASH)
+          {
+            return TransformInstanceType::ml_inf2_8xlarge;
+          }
+          else if (hashCode == ml_inf2_24xlarge_HASH)
+          {
+            return TransformInstanceType::ml_inf2_24xlarge;
+          }
+          else if (hashCode == ml_inf2_48xlarge_HASH)
+          {
+            return TransformInstanceType::ml_inf2_48xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -699,6 +719,14 @@ namespace Aws
             return "ml.g5.24xlarge";
           case TransformInstanceType::ml_g5_48xlarge:
             return "ml.g5.48xlarge";
+          case TransformInstanceType::ml_inf2_xlarge:
+            return "ml.inf2.xlarge";
+          case TransformInstanceType::ml_inf2_8xlarge:
+            return "ml.inf2.8xlarge";
+          case TransformInstanceType::ml_inf2_24xlarge:
+            return "ml.inf2.24xlarge";
+          case TransformInstanceType::ml_inf2_48xlarge:
+            return "ml.inf2.48xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

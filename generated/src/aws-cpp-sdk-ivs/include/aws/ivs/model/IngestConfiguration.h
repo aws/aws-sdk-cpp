@@ -26,7 +26,13 @@ namespace Model
 
   /**
    * <p>Object specifying the ingest configuration set up by the broadcaster, usually
-   * in an encoder.</p><p><h3>See Also:</h3>   <a
+   * in an encoder.</p> <p> <b>Note:</b> IngestConfiguration is deprecated in favor
+   * of <a>IngestConfigurations</a> but retained to ensure backward compatibility. If
+   * multitrack is not enabled, IngestConfiguration and IngestConfigurations contain
+   * the same data, namely information about track0 (the sole track). If multitrack
+   * is enabled, IngestConfiguration contains data for only the first track (track0)
+   * and IngestConfigurations contains data for all tracks.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/IngestConfiguration">AWS
    * API Reference</a></p>
    */

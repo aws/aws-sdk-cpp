@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The summary of the user-based subscription products for a user.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A summary of the user-based subscription products for a specific
+   * user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ProductUserSummary">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The domain name of the user.</p>
+     * <p>The domain name of the Active Directory that contains the user information
+     * for the product subscription.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
@@ -81,7 +82,21 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of a product for a user.</p>
+     * <p>The Amazon Resource Name (ARN) for this product user.</p>
+     */
+    inline const Aws::String& GetProductUserArn() const{ return m_productUserArn; }
+    inline bool ProductUserArnHasBeenSet() const { return m_productUserArnHasBeenSet; }
+    inline void SetProductUserArn(const Aws::String& value) { m_productUserArnHasBeenSet = true; m_productUserArn = value; }
+    inline void SetProductUserArn(Aws::String&& value) { m_productUserArnHasBeenSet = true; m_productUserArn = std::move(value); }
+    inline void SetProductUserArn(const char* value) { m_productUserArnHasBeenSet = true; m_productUserArn.assign(value); }
+    inline ProductUserSummary& WithProductUserArn(const Aws::String& value) { SetProductUserArn(value); return *this;}
+    inline ProductUserSummary& WithProductUserArn(Aws::String&& value) { SetProductUserArn(std::move(value)); return *this;}
+    inline ProductUserSummary& WithProductUserArn(const char* value) { SetProductUserArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of a product for this user.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -95,7 +110,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status message for a product for a user.</p>
+     * <p>The status message for a product for this user.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
@@ -137,7 +152,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user name from the identity provider of the user.</p>
+     * <p>The user name from the identity provider for this product user.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
@@ -158,6 +173,9 @@ namespace Model
 
     Aws::String m_product;
     bool m_productHasBeenSet = false;
+
+    Aws::String m_productUserArn;
+    bool m_productUserArnHasBeenSet = false;
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;

@@ -27,6 +27,8 @@
 #include <aws/quicksight/model/CreateAccountCustomizationRequest.h>
 #include <aws/quicksight/model/CreateAccountSubscriptionRequest.h>
 #include <aws/quicksight/model/CreateAnalysisRequest.h>
+#include <aws/quicksight/model/CreateBrandRequest.h>
+#include <aws/quicksight/model/CreateCustomPermissionsRequest.h>
 #include <aws/quicksight/model/CreateDashboardRequest.h>
 #include <aws/quicksight/model/CreateDataSetRequest.h>
 #include <aws/quicksight/model/CreateDataSourceRequest.h>
@@ -49,6 +51,9 @@
 #include <aws/quicksight/model/DeleteAccountCustomizationRequest.h>
 #include <aws/quicksight/model/DeleteAccountSubscriptionRequest.h>
 #include <aws/quicksight/model/DeleteAnalysisRequest.h>
+#include <aws/quicksight/model/DeleteBrandRequest.h>
+#include <aws/quicksight/model/DeleteBrandAssignmentRequest.h>
+#include <aws/quicksight/model/DeleteCustomPermissionsRequest.h>
 #include <aws/quicksight/model/DeleteDashboardRequest.h>
 #include <aws/quicksight/model/DeleteDataSetRequest.h>
 #include <aws/quicksight/model/DeleteDataSetRefreshPropertiesRequest.h>
@@ -71,6 +76,7 @@
 #include <aws/quicksight/model/DeleteTopicRefreshScheduleRequest.h>
 #include <aws/quicksight/model/DeleteUserRequest.h>
 #include <aws/quicksight/model/DeleteUserByPrincipalIdRequest.h>
+#include <aws/quicksight/model/DeleteUserCustomPermissionRequest.h>
 #include <aws/quicksight/model/DeleteVPCConnectionRequest.h>
 #include <aws/quicksight/model/DescribeAccountCustomizationRequest.h>
 #include <aws/quicksight/model/DescribeAccountSettingsRequest.h>
@@ -80,6 +86,10 @@
 #include <aws/quicksight/model/DescribeAnalysisPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeAssetBundleExportJobRequest.h>
 #include <aws/quicksight/model/DescribeAssetBundleImportJobRequest.h>
+#include <aws/quicksight/model/DescribeBrandRequest.h>
+#include <aws/quicksight/model/DescribeBrandAssignmentRequest.h>
+#include <aws/quicksight/model/DescribeBrandPublishedVersionRequest.h>
+#include <aws/quicksight/model/DescribeCustomPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDashboardRequest.h>
 #include <aws/quicksight/model/DescribeDashboardDefinitionRequest.h>
 #include <aws/quicksight/model/DescribeDashboardPermissionsRequest.h>
@@ -123,6 +133,8 @@
 #include <aws/quicksight/model/ListAnalysesRequest.h>
 #include <aws/quicksight/model/ListAssetBundleExportJobsRequest.h>
 #include <aws/quicksight/model/ListAssetBundleImportJobsRequest.h>
+#include <aws/quicksight/model/ListBrandsRequest.h>
+#include <aws/quicksight/model/ListCustomPermissionsRequest.h>
 #include <aws/quicksight/model/ListDashboardVersionsRequest.h>
 #include <aws/quicksight/model/ListDashboardsRequest.h>
 #include <aws/quicksight/model/ListDataSetsRequest.h>
@@ -171,6 +183,10 @@
 #include <aws/quicksight/model/UpdateAccountSettingsRequest.h>
 #include <aws/quicksight/model/UpdateAnalysisRequest.h>
 #include <aws/quicksight/model/UpdateAnalysisPermissionsRequest.h>
+#include <aws/quicksight/model/UpdateBrandRequest.h>
+#include <aws/quicksight/model/UpdateBrandAssignmentRequest.h>
+#include <aws/quicksight/model/UpdateBrandPublishedVersionRequest.h>
+#include <aws/quicksight/model/UpdateCustomPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateDashboardRequest.h>
 #include <aws/quicksight/model/UpdateDashboardLinksRequest.h>
 #include <aws/quicksight/model/UpdateDashboardPermissionsRequest.h>
@@ -201,6 +217,7 @@
 #include <aws/quicksight/model/UpdateTopicPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateTopicRefreshScheduleRequest.h>
 #include <aws/quicksight/model/UpdateUserRequest.h>
+#include <aws/quicksight/model/UpdateUserCustomPermissionRequest.h>
 #include <aws/quicksight/model/UpdateVPCConnectionRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
@@ -575,6 +592,80 @@ CreateAnalysisOutcome QuickSightClient::CreateAnalysis(const CreateAnalysisReque
       endpointResolutionOutcome.GetResult().AddPathSegments("/analyses/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisId());
       return CreateAnalysisOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateBrandOutcome QuickSightClient::CreateBrand(const CreateBrandRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateBrand);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBrand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBrand", "Required field: AwsAccountId, is not set");
+    return CreateBrandOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.BrandIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBrand", "Required field: BrandId, is not set");
+    return CreateBrandOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrandId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateBrand, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateBrand, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateBrand",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateBrandOutcome>(
+    [&]()-> CreateBrandOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBrand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/brands/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrandId());
+      return CreateBrandOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateCustomPermissionsOutcome QuickSightClient::CreateCustomPermissions(const CreateCustomPermissionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateCustomPermissions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCustomPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateCustomPermissions", "Required field: AwsAccountId, is not set");
+    return CreateCustomPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateCustomPermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateCustomPermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateCustomPermissions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateCustomPermissionsOutcome>(
+    [&]()-> CreateCustomPermissionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCustomPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permissions");
+      return CreateCustomPermissionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1477,6 +1568,120 @@ DeleteAnalysisOutcome QuickSightClient::DeleteAnalysis(const DeleteAnalysisReque
       endpointResolutionOutcome.GetResult().AddPathSegments("/analyses/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAnalysisId());
       return DeleteAnalysisOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteBrandOutcome QuickSightClient::DeleteBrand(const DeleteBrandRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteBrand);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBrand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBrand", "Required field: AwsAccountId, is not set");
+    return DeleteBrandOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.BrandIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBrand", "Required field: BrandId, is not set");
+    return DeleteBrandOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrandId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBrand, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteBrand, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteBrand",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteBrandOutcome>(
+    [&]()-> DeleteBrandOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBrand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/brands/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrandId());
+      return DeleteBrandOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteBrandAssignmentOutcome QuickSightClient::DeleteBrandAssignment(const DeleteBrandAssignmentRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteBrandAssignment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBrandAssignment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBrandAssignment", "Required field: AwsAccountId, is not set");
+    return DeleteBrandAssignmentOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBrandAssignment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteBrandAssignment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteBrandAssignment",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteBrandAssignmentOutcome>(
+    [&]()-> DeleteBrandAssignmentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBrandAssignment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/brandassignments");
+      return DeleteBrandAssignmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteCustomPermissionsOutcome QuickSightClient::DeleteCustomPermissions(const DeleteCustomPermissionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteCustomPermissions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCustomPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCustomPermissions", "Required field: AwsAccountId, is not set");
+    return DeleteCustomPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.CustomPermissionsNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCustomPermissions", "Required field: CustomPermissionsName, is not set");
+    return DeleteCustomPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CustomPermissionsName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteCustomPermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteCustomPermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteCustomPermissions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteCustomPermissionsOutcome>(
+    [&]()-> DeleteCustomPermissionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCustomPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permissions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomPermissionsName());
+      return DeleteCustomPermissionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2469,6 +2674,54 @@ DeleteUserByPrincipalIdOutcome QuickSightClient::DeleteUserByPrincipalId(const D
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteUserCustomPermissionOutcome QuickSightClient::DeleteUserCustomPermission(const DeleteUserCustomPermissionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteUserCustomPermission);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUserCustomPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.UserNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUserCustomPermission", "Required field: UserName, is not set");
+    return DeleteUserCustomPermissionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUserCustomPermission", "Required field: AwsAccountId, is not set");
+    return DeleteUserCustomPermissionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUserCustomPermission", "Required field: Namespace, is not set");
+    return DeleteUserCustomPermissionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteUserCustomPermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteUserCustomPermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteUserCustomPermission",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteUserCustomPermissionOutcome>(
+    [&]()-> DeleteUserCustomPermissionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteUserCustomPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/namespaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permission");
+      return DeleteUserCustomPermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteVPCConnectionOutcome QuickSightClient::DeleteVPCConnection(const DeleteVPCConnectionRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteVPCConnection);
@@ -2806,6 +3059,161 @@ DescribeAssetBundleImportJobOutcome QuickSightClient::DescribeAssetBundleImportJ
       endpointResolutionOutcome.GetResult().AddPathSegments("/asset-bundle-import-jobs/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssetBundleImportJobId());
       return DescribeAssetBundleImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeBrandOutcome QuickSightClient::DescribeBrand(const DescribeBrandRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeBrand);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBrand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBrand", "Required field: AwsAccountId, is not set");
+    return DescribeBrandOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.BrandIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBrand", "Required field: BrandId, is not set");
+    return DescribeBrandOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrandId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeBrand, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeBrand, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeBrand",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeBrandOutcome>(
+    [&]()-> DescribeBrandOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBrand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/brands/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrandId());
+      return DescribeBrandOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeBrandAssignmentOutcome QuickSightClient::DescribeBrandAssignment(const DescribeBrandAssignmentRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeBrandAssignment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBrandAssignment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBrandAssignment", "Required field: AwsAccountId, is not set");
+    return DescribeBrandAssignmentOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeBrandAssignment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeBrandAssignment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeBrandAssignment",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeBrandAssignmentOutcome>(
+    [&]()-> DescribeBrandAssignmentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBrandAssignment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/brandassignments");
+      return DescribeBrandAssignmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeBrandPublishedVersionOutcome QuickSightClient::DescribeBrandPublishedVersion(const DescribeBrandPublishedVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeBrandPublishedVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBrandPublishedVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBrandPublishedVersion", "Required field: AwsAccountId, is not set");
+    return DescribeBrandPublishedVersionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.BrandIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBrandPublishedVersion", "Required field: BrandId, is not set");
+    return DescribeBrandPublishedVersionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrandId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeBrandPublishedVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeBrandPublishedVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeBrandPublishedVersion",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeBrandPublishedVersionOutcome>(
+    [&]()-> DescribeBrandPublishedVersionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBrandPublishedVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/brands/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrandId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/publishedversion");
+      return DescribeBrandPublishedVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeCustomPermissionsOutcome QuickSightClient::DescribeCustomPermissions(const DescribeCustomPermissionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeCustomPermissions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCustomPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeCustomPermissions", "Required field: AwsAccountId, is not set");
+    return DescribeCustomPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.CustomPermissionsNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeCustomPermissions", "Required field: CustomPermissionsName, is not set");
+    return DescribeCustomPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CustomPermissionsName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeCustomPermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeCustomPermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeCustomPermissions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeCustomPermissionsOutcome>(
+    [&]()-> DescribeCustomPermissionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeCustomPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permissions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomPermissionsName());
+      return DescribeCustomPermissionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -4589,6 +4997,74 @@ ListAssetBundleImportJobsOutcome QuickSightClient::ListAssetBundleImportJobs(con
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/asset-bundle-import-jobs");
       return ListAssetBundleImportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListBrandsOutcome QuickSightClient::ListBrands(const ListBrandsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListBrands);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBrands, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBrands", "Required field: AwsAccountId, is not set");
+    return ListBrandsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBrands, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListBrands, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBrands",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListBrandsOutcome>(
+    [&]()-> ListBrandsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBrands, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/brands");
+      return ListBrandsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListCustomPermissionsOutcome QuickSightClient::ListCustomPermissions(const ListCustomPermissionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListCustomPermissions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCustomPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCustomPermissions", "Required field: AwsAccountId, is not set");
+    return ListCustomPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCustomPermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCustomPermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCustomPermissions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCustomPermissionsOutcome>(
+    [&]()-> ListCustomPermissionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCustomPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permissions");
+      return ListCustomPermissionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -6446,6 +6922,161 @@ UpdateAnalysisPermissionsOutcome QuickSightClient::UpdateAnalysisPermissions(con
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+UpdateBrandOutcome QuickSightClient::UpdateBrand(const UpdateBrandRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateBrand);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBrand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBrand", "Required field: AwsAccountId, is not set");
+    return UpdateBrandOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.BrandIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBrand", "Required field: BrandId, is not set");
+    return UpdateBrandOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrandId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateBrand, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateBrand, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateBrand",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateBrandOutcome>(
+    [&]()-> UpdateBrandOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBrand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/brands/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrandId());
+      return UpdateBrandOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateBrandAssignmentOutcome QuickSightClient::UpdateBrandAssignment(const UpdateBrandAssignmentRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateBrandAssignment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBrandAssignment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBrandAssignment", "Required field: AwsAccountId, is not set");
+    return UpdateBrandAssignmentOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateBrandAssignment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateBrandAssignment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateBrandAssignment",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateBrandAssignmentOutcome>(
+    [&]()-> UpdateBrandAssignmentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBrandAssignment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/brandassignments");
+      return UpdateBrandAssignmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateBrandPublishedVersionOutcome QuickSightClient::UpdateBrandPublishedVersion(const UpdateBrandPublishedVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateBrandPublishedVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBrandPublishedVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBrandPublishedVersion", "Required field: AwsAccountId, is not set");
+    return UpdateBrandPublishedVersionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.BrandIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBrandPublishedVersion", "Required field: BrandId, is not set");
+    return UpdateBrandPublishedVersionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrandId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateBrandPublishedVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateBrandPublishedVersion, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateBrandPublishedVersion",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateBrandPublishedVersionOutcome>(
+    [&]()-> UpdateBrandPublishedVersionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBrandPublishedVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/brands/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrandId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/publishedversion");
+      return UpdateBrandPublishedVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateCustomPermissionsOutcome QuickSightClient::UpdateCustomPermissions(const UpdateCustomPermissionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateCustomPermissions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCustomPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCustomPermissions", "Required field: AwsAccountId, is not set");
+    return UpdateCustomPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.CustomPermissionsNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCustomPermissions", "Required field: CustomPermissionsName, is not set");
+    return UpdateCustomPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CustomPermissionsName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateCustomPermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateCustomPermissions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateCustomPermissions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateCustomPermissionsOutcome>(
+    [&]()-> UpdateCustomPermissionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateCustomPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permissions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCustomPermissionsName());
+      return UpdateCustomPermissionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 UpdateDashboardOutcome QuickSightClient::UpdateDashboard(const UpdateDashboardRequest& request) const
 {
   AWS_OPERATION_GUARD(UpdateDashboard);
@@ -7676,6 +8307,54 @@ UpdateUserOutcome QuickSightClient::UpdateUser(const UpdateUserRequest& request)
       endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserName());
       return UpdateUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateUserCustomPermissionOutcome QuickSightClient::UpdateUserCustomPermission(const UpdateUserCustomPermissionRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateUserCustomPermission);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUserCustomPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.UserNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateUserCustomPermission", "Required field: UserName, is not set");
+    return UpdateUserCustomPermissionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateUserCustomPermission", "Required field: AwsAccountId, is not set");
+    return UpdateUserCustomPermissionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateUserCustomPermission", "Required field: Namespace, is not set");
+    return UpdateUserCustomPermissionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateUserCustomPermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateUserCustomPermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateUserCustomPermission",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateUserCustomPermissionOutcome>(
+    [&]()-> UpdateUserCustomPermissionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateUserCustomPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/namespaces/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/custom-permission");
+      return UpdateUserCustomPermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

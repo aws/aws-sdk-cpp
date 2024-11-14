@@ -35,6 +35,15 @@ GetResourceRequestStatusResult& GetResourceRequestStatusResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("HooksProgressEvent"))
+  {
+    Aws::Utils::Array<JsonView> hooksProgressEventJsonList = jsonValue.GetArray("HooksProgressEvent");
+    for(unsigned hooksProgressEventIndex = 0; hooksProgressEventIndex < hooksProgressEventJsonList.GetLength(); ++hooksProgressEventIndex)
+    {
+      m_hooksProgressEvent.push_back(hooksProgressEventJsonList[hooksProgressEventIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
+#include <aws/accessanalyzer/model/AnalysisRule.h>
+#include <utility>
 
 namespace Aws
 {
@@ -42,17 +44,30 @@ namespace Model
      * access. For example, if you specify 90 days, the analyzer will generate findings
      * for IAM entities within the accounts of the selected organization for any access
      * that hasn't been used in 90 or more days since the analyzer's last scan. You can
-     * choose a value between 1 and 180 days.</p>
+     * choose a value between 1 and 365 days.</p>
      */
     inline int GetUnusedAccessAge() const{ return m_unusedAccessAge; }
     inline bool UnusedAccessAgeHasBeenSet() const { return m_unusedAccessAgeHasBeenSet; }
     inline void SetUnusedAccessAge(int value) { m_unusedAccessAgeHasBeenSet = true; m_unusedAccessAge = value; }
     inline UnusedAccessConfiguration& WithUnusedAccessAge(int value) { SetUnusedAccessAge(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const AnalysisRule& GetAnalysisRule() const{ return m_analysisRule; }
+    inline bool AnalysisRuleHasBeenSet() const { return m_analysisRuleHasBeenSet; }
+    inline void SetAnalysisRule(const AnalysisRule& value) { m_analysisRuleHasBeenSet = true; m_analysisRule = value; }
+    inline void SetAnalysisRule(AnalysisRule&& value) { m_analysisRuleHasBeenSet = true; m_analysisRule = std::move(value); }
+    inline UnusedAccessConfiguration& WithAnalysisRule(const AnalysisRule& value) { SetAnalysisRule(value); return *this;}
+    inline UnusedAccessConfiguration& WithAnalysisRule(AnalysisRule&& value) { SetAnalysisRule(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_unusedAccessAge;
     bool m_unusedAccessAgeHasBeenSet = false;
+
+    AnalysisRule m_analysisRule;
+    bool m_analysisRuleHasBeenSet = false;
   };
 
 } // namespace Model

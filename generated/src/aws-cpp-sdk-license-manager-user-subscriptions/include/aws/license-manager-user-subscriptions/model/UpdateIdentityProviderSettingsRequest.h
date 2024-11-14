@@ -46,7 +46,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the user-based subscription product.</p>
+     * <p>The Amazon Resource Name (ARN) of the identity provider to update.</p>
+     */
+    inline const Aws::String& GetIdentityProviderArn() const{ return m_identityProviderArn; }
+    inline bool IdentityProviderArnHasBeenSet() const { return m_identityProviderArnHasBeenSet; }
+    inline void SetIdentityProviderArn(const Aws::String& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = value; }
+    inline void SetIdentityProviderArn(Aws::String&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::move(value); }
+    inline void SetIdentityProviderArn(const char* value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn.assign(value); }
+    inline UpdateIdentityProviderSettingsRequest& WithIdentityProviderArn(const Aws::String& value) { SetIdentityProviderArn(value); return *this;}
+    inline UpdateIdentityProviderSettingsRequest& WithIdentityProviderArn(Aws::String&& value) { SetIdentityProviderArn(std::move(value)); return *this;}
+    inline UpdateIdentityProviderSettingsRequest& WithIdentityProviderArn(const char* value) { SetIdentityProviderArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the user-based subscription product.</p> <p>Valid values:
+     * <code>VISUAL_STUDIO_ENTERPRISE</code> | <code>VISUAL_STUDIO_PROFESSIONAL</code>
+     * | <code>OFFICE_PROFESSIONAL_PLUS</code> </p>
      */
     inline const Aws::String& GetProduct() const{ return m_product; }
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
@@ -78,6 +94,9 @@ namespace Model
 
     IdentityProvider m_identityProvider;
     bool m_identityProviderHasBeenSet = false;
+
+    Aws::String m_identityProviderArn;
+    bool m_identityProviderArnHasBeenSet = false;
 
     Aws::String m_product;
     bool m_productHasBeenSet = false;

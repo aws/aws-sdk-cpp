@@ -21,6 +21,7 @@ namespace Model
 IdentityProviderSummary::IdentityProviderSummary() : 
     m_failureMessageHasBeenSet(false),
     m_identityProviderHasBeenSet(false),
+    m_identityProviderArnHasBeenSet(false),
     m_productHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_statusHasBeenSet(false)
@@ -47,6 +48,13 @@ IdentityProviderSummary& IdentityProviderSummary::operator =(JsonView jsonValue)
     m_identityProvider = jsonValue.GetObject("IdentityProvider");
 
     m_identityProviderHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IdentityProviderArn"))
+  {
+    m_identityProviderArn = jsonValue.GetString("IdentityProviderArn");
+
+    m_identityProviderArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Product"))
@@ -86,6 +94,12 @@ JsonValue IdentityProviderSummary::Jsonize() const
   if(m_identityProviderHasBeenSet)
   {
    payload.WithObject("IdentityProvider", m_identityProvider.Jsonize());
+
+  }
+
+  if(m_identityProviderArnHasBeenSet)
+  {
+   payload.WithString("IdentityProviderArn", m_identityProviderArn);
 
   }
 
