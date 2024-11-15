@@ -28,10 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides a summarized view of the Engagement Invitation, including key
-   * details like the identifier, status, and sender information. This summary helps
-   * partners track and manage AWS-originated opportunities.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Provides a summarized view of the Engagement Invitation, including details
+   * like the identifier, status, and sender. This summary helps partners track and
+   * manage AWS originated opportunities.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/EngagementInvitationSummary">AWS
    * API Reference</a></p>
    */
@@ -95,8 +94,8 @@ namespace Model
     ///@{
     /**
      * <p>Indicates the date and time when the Engagement Invitation will expire. After
-     * this date, the invitation can no longer be accepted, and the opportunity will no
-     * longer be available for the partner to engage.</p>
+     * this date, the invitation can no longer be accepted, and the opportunity will be
+     * unavailable to the partner.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
     inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }

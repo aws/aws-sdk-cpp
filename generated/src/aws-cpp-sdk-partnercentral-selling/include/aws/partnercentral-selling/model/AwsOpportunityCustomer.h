@@ -43,8 +43,8 @@ namespace Model
     ///@{
     /**
      * <p>Provides a list of customer contacts involved in the opportunity. These
-     * contacts may include decision-makers, influencers, and other key stakeholders
-     * within the customer's organization.</p>
+     * contacts may include decision makers, influencers, and other stakeholders within
+     * the customer's organization.</p>
      */
     inline const Aws::Vector<Contact>& GetContacts() const{ return m_contacts; }
     inline bool ContactsHasBeenSet() const { return m_contactsHasBeenSet; }

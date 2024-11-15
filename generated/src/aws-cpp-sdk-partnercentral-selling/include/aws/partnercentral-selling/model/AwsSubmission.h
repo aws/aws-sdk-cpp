@@ -26,9 +26,8 @@ namespace Model
 
   /**
    * <p>Indicates the level of AWS involvement in the opportunity. This field helps
-   * track AWS's role and participation throughout the engagement, such as providing
-   * technical support, deal assistance, or sales support.</p><p><h3>See Also:</h3>  
-   * <a
+   * track AWS participation throughout the engagement, such as providing technical
+   * support, deal assistance, and sales support.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AwsSubmission">AWS
    * API Reference</a></p>
    */
@@ -43,9 +42,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the type of AWS involvement in the opportunity, such as co-selling,
-     * deal support, or technical consultation. This helps categorize the nature of
-     * AWS's participation.</p>
+     * <p>Specifies the type of AWS involvement in the opportunity, such as coselling,
+     * deal support, or technical consultation. This helps categorize the nature of AWS
+     * participation.</p>
      */
     inline const SalesInvolvementType& GetInvolvementType() const{ return m_involvementType; }
     inline bool InvolvementTypeHasBeenSet() const { return m_involvementTypeHasBeenSet; }
@@ -57,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Determines who can view AWS's involvement in the opportunity. Typically, this
+     * <p>Determines who can view AWS involvement in the opportunity. Typically, this
      * field is set to <code>Full</code> for most cases, but it may be restricted based
      * on special program requirements or confidentiality needs.</p>
      */

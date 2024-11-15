@@ -25,9 +25,8 @@ namespace Model
 
   /**
    * <p>Represents the contact details of the individual assigned to manage the
-   * opportunity within the partner organization. This ensures that there is a clear
-   * point of contact for the opportunity's progress and updates.</p><p><h3>See
-   * Also:</h3>   <a
+   * opportunity within the partner organization. This helps to ensure that there is
+   * a point of contact for the opportunity's progress.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssigneeContact">AWS
    * API Reference</a></p>
    */
@@ -44,7 +43,8 @@ namespace Model
     /**
      * <p>Specifies the business title of the assignee managing the opportunity. This
      * helps clarify the individual's role and responsibilities within the
-     * organization.</p>
+     * organization. Use the value <code>PartnerAccountManager</code> to update details
+     * of the opportunity owner.</p>
      */
     inline const Aws::String& GetBusinessTitle() const{ return m_businessTitle; }
     inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
@@ -73,7 +73,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the first name of the assignee managing the opportunity.</p>
+     * <p>Specifies the first name of the assignee managing the opportunity. The system
+     * automatically retrieves this value from the user profile by referencing the
+     * associated email address.</p>
      */
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
@@ -87,7 +89,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the last name of the assignee managing the opportunity.</p>
+     * <p>Specifies the last name of the assignee managing the opportunity. The system
+     * automatically retrieves this value from the user profile by referencing the
+     * associated email address.</p>
      */
     inline const Aws::String& GetLastName() const{ return m_lastName; }
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }

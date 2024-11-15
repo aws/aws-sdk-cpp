@@ -45,8 +45,8 @@ namespace Model
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
      * catalog determines which environment the opportunities are listed in. Use
      * <code>AWS</code> for listing real opportunities in the Amazon Web Services
-     * catalog, and <code>Sandbox</code> for to test in a secure and isolated
-     * environment. </p>
+     * catalog, and <code>Sandbox</code> for testing in secure, isolated environments.
+     * </p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -143,8 +143,8 @@ namespace Model
     ///@{
     /**
      * <p> Specifies the maximum number of results to return in a single call. This
-     * limits the number of opportunities returned in the response to avoid overloading
-     * with too many results at once. </p> <p> Default: 20 </p>
+     * limits the number of opportunities returned in the response to avoid providing
+     * too many results at once. </p> <p> Default: 20 </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

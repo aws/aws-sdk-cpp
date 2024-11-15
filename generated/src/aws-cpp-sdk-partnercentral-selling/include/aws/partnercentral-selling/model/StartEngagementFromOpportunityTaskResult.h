@@ -65,12 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the reason for task failure using an enumerated code. Possible
-     * values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>,
-     * <code>GET_ENGAGEMENT_INVITATION_FAILED</code>,
-     * <code>CREATE_OPPORTUNITY_FAILED</code>,
-     * <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>,
-     * <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+     * <p>Indicates the reason for task failure using an enumerated code.</p>
      */
     inline const ReasonCode& GetReasonCode() const{ return m_reasonCode; }
     inline void SetReasonCode(const ReasonCode& value) { m_reasonCode = value; }

@@ -25,7 +25,8 @@ namespace Model
     EngagementInvitationConflict,
     InternalError,
     OpportunityValidationFailed,
-    OpportunityConflict
+    OpportunityConflict,
+    ResourceSnapshotAccessDenied
   };
 
 namespace ReasonCodeMapper

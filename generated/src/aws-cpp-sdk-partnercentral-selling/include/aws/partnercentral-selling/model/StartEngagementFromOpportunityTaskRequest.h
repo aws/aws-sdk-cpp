@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique token provided by the client to ensure the idempotency of the
+     * <p>A unique token provided by the client to help ensure the idempotency of the
      * request. It helps prevent the same task from being performed multiple times.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -80,7 +80,8 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier of the opportunity from which the engagement task is to
-     * be initiated. This ensures the task is applied to the correct opportunity.</p>
+     * be initiated. This helps ensure that the task is applied to the correct
+     * opportunity.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

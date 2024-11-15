@@ -54,8 +54,7 @@ namespace Model
     ///@{
     /**
      * <p> The unique identifier for the related partner opportunity. Use this field to
-     * correlate an AWS opportunity with its corresponding partner opportunity in your
-     * CRM system. </p>
+     * correlate an AWS opportunity with its corresponding partner opportunity. </p>
      */
     inline const Aws::String& GetRelatedOpportunityIdentifier() const{ return m_relatedOpportunityIdentifier; }
     inline bool RelatedOpportunityIdentifierHasBeenSet() const { return m_relatedOpportunityIdentifierHasBeenSet; }

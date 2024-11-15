@@ -134,10 +134,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Filters the solutions based on their status. This filter helps retrieve
-     * solutions with statuses such as <code>Active</code>, <code>Inactive</code>, or
-     * <code>Pending Approval</code>, allowing partners to manage their solution
-     * portfolios effectively.</p>
+     * <p>Filters solutions based on their status. This filter helps partners manage
+     * their solution portfolios effectively.</p>
      */
     inline const Aws::Vector<SolutionStatus>& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

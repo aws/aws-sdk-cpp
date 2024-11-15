@@ -52,9 +52,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A unique, case-sensitive identifier provided by the client to ensure the
-     * idempotency of the request. Can be a random or meaningful string, but must be
-     * unique for each request.</p>
+     * <p>A unique, case-sensitive identifier provided by the client that helps to
+     * ensure the idempotency of the request. This can be a random or meaningful string
+     * but must be unique for each request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -69,8 +69,8 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to
-     * be accepted. Providing the correct identifier ensures the right engagement
-     * invitation is processed.</p>
+     * be accepted. Providing the correct identifier helps ensure that the correct
+     * engagement is processed.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

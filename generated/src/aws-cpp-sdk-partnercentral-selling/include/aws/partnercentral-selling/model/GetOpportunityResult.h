@@ -171,10 +171,10 @@ namespace Model
      * opportunity with a potential customer that's not previously engaged with your
      * solutions or services. </p> </li> <li> <p> Renewal opportunity: Represents an
      * opportunity to renew an existing contract or subscription with a current
-     * customer, ensuring continuity of service. </p> </li> <li> <p> Expansion
-     * opportunity: Represents an opportunity to expand the scope of an existing
-     * contract or subscription, either by adding new services or increasing the volume
-     * of existing services for a current customer. </p> </li> </ul>
+     * customer, which helps to ensure service continuity. </p> </li> <li> <p>
+     * Expansion opportunity: Represents an opportunity to expand the scope of a
+     * customer's contract or subscription, either by adding new services or increasing
+     * the volume of existing services. </p> </li> </ul>
      */
     inline const OpportunityType& GetOpportunityType() const{ return m_opportunityType; }
     inline void SetOpportunityType(const OpportunityType& value) { m_opportunityType = value; }
@@ -201,31 +201,31 @@ namespace Model
     ///@{
     /**
      * <p> Identifies the type of support the partner needs from Amazon Web Services.
-     * </p> <p> Valid values: </p> <ul> <li> <p> Co-Sell - Architectural Validation:
+     * </p> <p> Valid values: </p> <ul> <li> <p> Cosell—Architectural Validation:
      * Confirmation from Amazon Web Services that the partner's proposed solution
      * architecture is aligned with Amazon Web Services best practices and poses
-     * minimal architectural risks. </p> </li> <li> <p> Co-Sell - Business
-     * Presentation: Request Amazon Web Services seller's participation in a joint
-     * customer presentation. </p> </li> <li> <p> Co-Sell - Competitive Information:
-     * Access to Amazon Web Services competitive resources and support for the
-     * partner's proposed solution. </p> </li> <li> <p> Co-Sell - Pricing Assistance:
-     * Connect with an Amazon Web Services seller for support situations where a
-     * partner may be receiving an upfront discount on a service (for example: EDP
-     * deals). </p> </li> <li> <p> Co-Sell - Technical Consultation: Connect with an
-     * Amazon Web Services Solutions Architect to address the partner's questions about
-     * the proposed solution. </p> </li> <li> <p> Co-Sell - Total Cost of Ownership
-     * Evaluation: Assistance with quoting different cost savings of proposed solutions
-     * on Amazon Web Services versus on-premises or a traditional hosting environment.
-     * </p> </li> <li> <p> Co-Sell - Deal Support: Request Amazon Web Services seller's
-     * support to progress the opportunity (for example: joint customer call, strategic
-     * positioning). </p> </li> <li> <p> Co-Sell - Support for Public Tender / RFx:
-     * Opportunity related to the public sector where the partner needs Amazon Web
-     * Services RFx support. </p> </li> <li> <p> Do Not Need Support from Amazon Web
-     * Services Sales Rep: Indicates that a partner doesn't need support from an Amazon
-     * Web Services sales representative, and the partner solely manages the
-     * opportunity. It's possible to request co-selling support on these opportunities
-     * at any stage during their lifecycle. Also known as, for-visibility-only (FVO)
-     * opportunity. </p> </li> </ul>
+     * minimal architectural risks. </p> </li> <li> <p> Cosell—Business Presentation:
+     * Request Amazon Web Services seller's participation in a joint customer
+     * presentation. </p> </li> <li> <p> Cosell—Competitive Information: Access to
+     * Amazon Web Services competitive resources and support for the partner's proposed
+     * solution. </p> </li> <li> <p> Cosell—Pricing Assistance: Connect with an Amazon
+     * Web Services seller for support situations where a partner may be receiving an
+     * upfront discount on a service (for example: EDP deals). </p> </li> <li> <p>
+     * Cosell—Technical Consultation: Connect with an Amazon Web Services Solutions
+     * Architect to address the partner's questions about the proposed solution. </p>
+     * </li> <li> <p> Cosell—Total Cost of Ownership Evaluation: Assistance with
+     * quoting different cost savings of proposed solutions on Amazon Web Services
+     * versus on-premises or a traditional hosting environment. </p> </li> <li> <p>
+     * Cosell—Deal Support: Request Amazon Web Services seller's support to progress
+     * the opportunity (for example: joint customer call, strategic positioning). </p>
+     * </li> <li> <p> Cosell—Support for Public Tender/RFx: Opportunity related to the
+     * public sector where the partner needs Amazon Web Services RFx support. </p>
+     * </li> <li> <p> Do Not Need Support from Amazon Web Services Sales Rep: Indicates
+     * that a partner doesn't need support from an Amazon Web Services sales
+     * representative, and the partner solely manages the opportunity. It's possible to
+     * request coselling support on these opportunities at any stage during their
+     * lifecycle. Also known as, for-visibility-only (FVO) opportunity. </p> </li>
+     * </ul>
      */
     inline const Aws::Vector<PrimaryNeedFromAws>& GetPrimaryNeedsFromAws() const{ return m_primaryNeedsFromAws; }
     inline void SetPrimaryNeedsFromAws(const Aws::Vector<PrimaryNeedFromAws>& value) { m_primaryNeedsFromAws = value; }

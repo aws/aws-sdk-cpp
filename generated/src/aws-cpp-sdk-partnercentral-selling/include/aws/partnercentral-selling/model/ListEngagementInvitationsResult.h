@@ -37,7 +37,7 @@ namespace Model
     ///@{
     /**
      * <p>An array containing summaries of engagement invitations. Each summary
-     * includes key information such as the invitation title, invitation date, and the
+     * includes information such as the invitation title, invitation date, and the
      * current status of the invitation.</p>
      */
     inline const Aws::Vector<EngagementInvitationSummary>& GetEngagementInvitationSummaries() const{ return m_engagementInvitationSummaries; }

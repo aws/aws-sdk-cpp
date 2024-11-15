@@ -39,9 +39,9 @@ namespace Model
     /**
      * <p> Specifies the catalog associated with the request. This field takes a string
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
-     * catalog determines whichenvironment the opportunity association is made in. Use
+     * catalog determines which environment the opportunity association is made in. Use
      * <code>AWS</code> to associate opportunities in the Amazon Web Services catalog,
-     * and <code>Sandbox</code> to test in a secure and isolated environment. </p>
+     * and <code>Sandbox</code> for testing in secure, isolated environments. </p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -89,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the type of the related entity you're associating with the <code>
+     * <p>Specifies the entity type that you're associating with the <code>
      * Opportunity</code>. This helps to categorize and properly process the
      * association. </p>
      */
