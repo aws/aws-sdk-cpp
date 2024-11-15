@@ -27,7 +27,9 @@ SendVoiceMessageRequest::SendVoiceMessageRequest() :
     m_contextHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_protectConfigurationIdHasBeenSet(false)
+    m_protectConfigurationIdHasBeenSet(false),
+    m_messageFeedbackEnabled(false),
+    m_messageFeedbackEnabledHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,12 @@ Aws::String SendVoiceMessageRequest::SerializePayload() const
   if(m_protectConfigurationIdHasBeenSet)
   {
    payload.WithString("ProtectConfigurationId", m_protectConfigurationId);
+
+  }
+
+  if(m_messageFeedbackEnabledHasBeenSet)
+  {
+   payload.WithBool("MessageFeedbackEnabled", m_messageFeedbackEnabled);
 
   }
 

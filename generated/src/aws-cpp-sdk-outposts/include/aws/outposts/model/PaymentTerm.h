@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     THREE_YEARS,
-    ONE_YEAR
+    ONE_YEAR,
+    FIVE_YEARS
   };
 
 namespace PaymentTermMapper

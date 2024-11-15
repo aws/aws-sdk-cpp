@@ -512,6 +512,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+     * <p>To use this field to set tags for an alarm when you create it, you must be
+     * signed on with both the <code>cloudwatch:PutMetricAlarm</code> and
+     * <code>cloudwatch:TagResource</code> permissions.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

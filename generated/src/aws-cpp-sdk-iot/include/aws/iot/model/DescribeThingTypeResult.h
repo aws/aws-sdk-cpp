@@ -81,7 +81,8 @@ namespace Model
     ///@{
     /**
      * <p>The ThingTypeProperties contains information about the thing type including
-     * description, and a list of searchable thing attribute names.</p>
+     * description, a list of searchable thing attribute names, and MQTT5
+     * configuration.</p>
      */
     inline const ThingTypeProperties& GetThingTypeProperties() const{ return m_thingTypeProperties; }
     inline void SetThingTypeProperties(const ThingTypeProperties& value) { m_thingTypeProperties = value; }

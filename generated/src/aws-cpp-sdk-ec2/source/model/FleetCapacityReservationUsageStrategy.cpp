@@ -21,8 +21,6 @@ namespace Aws
       {
 
         static const int use_capacity_reservations_first_HASH = HashingUtils::HashString("use-capacity-reservations-first");
-        static const int use_capacity_reservations_only_HASH = HashingUtils::HashString("use-capacity-reservations-only");
-        static const int none_HASH = HashingUtils::HashString("none");
 
 
         FleetCapacityReservationUsageStrategy GetFleetCapacityReservationUsageStrategyForName(const Aws::String& name)
@@ -31,14 +29,6 @@ namespace Aws
           if (hashCode == use_capacity_reservations_first_HASH)
           {
             return FleetCapacityReservationUsageStrategy::use_capacity_reservations_first;
-          }
-          else if (hashCode == use_capacity_reservations_only_HASH)
-          {
-            return FleetCapacityReservationUsageStrategy::use_capacity_reservations_only;
-          }
-          else if (hashCode == none_HASH)
-          {
-            return FleetCapacityReservationUsageStrategy::none;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -58,10 +48,6 @@ namespace Aws
             return {};
           case FleetCapacityReservationUsageStrategy::use_capacity_reservations_first:
             return "use-capacity-reservations-first";
-          case FleetCapacityReservationUsageStrategy::use_capacity_reservations_only:
-            return "use-capacity-reservations-only";
-          case FleetCapacityReservationUsageStrategy::none:
-            return "none";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

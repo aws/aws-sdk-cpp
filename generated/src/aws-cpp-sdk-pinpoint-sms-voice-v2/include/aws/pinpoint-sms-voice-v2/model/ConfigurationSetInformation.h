@@ -115,6 +115,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>True if message feedback is enabled.</p>
+     */
+    inline bool GetDefaultMessageFeedbackEnabled() const{ return m_defaultMessageFeedbackEnabled; }
+    inline bool DefaultMessageFeedbackEnabledHasBeenSet() const { return m_defaultMessageFeedbackEnabledHasBeenSet; }
+    inline void SetDefaultMessageFeedbackEnabled(bool value) { m_defaultMessageFeedbackEnabledHasBeenSet = true; m_defaultMessageFeedbackEnabled = value; }
+    inline ConfigurationSetInformation& WithDefaultMessageFeedbackEnabled(bool value) { SetDefaultMessageFeedbackEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The time when the ConfigurationSet was created, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
@@ -155,6 +165,9 @@ namespace Model
 
     Aws::String m_defaultSenderId;
     bool m_defaultSenderIdHasBeenSet = false;
+
+    bool m_defaultMessageFeedbackEnabled;
+    bool m_defaultMessageFeedbackEnabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet = false;

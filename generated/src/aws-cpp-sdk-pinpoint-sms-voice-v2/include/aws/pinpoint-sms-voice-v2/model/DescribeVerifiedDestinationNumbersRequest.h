@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of VerifiedDestinationNumberid to retreive.</p>
+     * <p>An array of VerifiedDestinationNumberid to retrieve.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVerifiedDestinationNumberIds() const{ return m_verifiedDestinationNumberIds; }
     inline bool VerifiedDestinationNumberIdsHasBeenSet() const { return m_verifiedDestinationNumberIdsHasBeenSet; }

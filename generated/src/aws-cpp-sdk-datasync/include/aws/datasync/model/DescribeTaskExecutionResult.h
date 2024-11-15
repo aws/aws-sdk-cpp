@@ -149,11 +149,10 @@ namespace Model
     ///@{
     /**
      * <p>The number of files, objects, and directories that DataSync expects to
-     * transfer over the network. This value is calculated during the task execution's
-     * <code>PREPARING</code> <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">step</a>
-     * before the <code>TRANSFERRING</code> step.</p> <p>How this gets calculated
-     * depends primarily on your task’s <a
+     * transfer over the network. This value is calculated while DataSync <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">prepares</a>
+     * the transfer.</p> <p>How this gets calculated depends primarily on your task’s
+     * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-TransferMode">transfer
      * mode</a> configuration:</p> <ul> <li> <p>If <code>TranserMode</code> is set to
      * <code>CHANGED</code> - The calculation is based on comparing the content of the
@@ -187,11 +186,9 @@ namespace Model
     ///@{
     /**
      * <p>The number of files, objects, and directories that DataSync actually
-     * transfers over the network. This value is updated periodically during the task
-     * execution's <code>TRANSFERRING</code> <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">step</a>
-     * when something is read from the source and sent over the network.</p> <p>If
-     * DataSync fails to transfer something, this value can be less than
+     * transfers over the network. This value is updated periodically during your task
+     * execution when something is read from the source and sent over the network.</p>
+     * <p>If DataSync fails to transfer something, this value can be less than
      * <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be
      * greater than <code>EstimatedFilesToTransfer</code>. This element is
      * implementation-specific for some location types, so don't use it as an exact
@@ -230,10 +227,7 @@ namespace Model
      * <p>The number of physical bytes that DataSync transfers over the network after
      * compression (if compression is possible). This number is typically less than <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-BytesTransferred">BytesTransferred</a>
-     * unless the data isn't compressible.</p>  <p>Not currently supported with
-     * <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
-     * mode tasks</a>.</p> 
+     * unless the data isn't compressible.</p>
      */
     inline long long GetBytesCompressed() const{ return m_bytesCompressed; }
     inline void SetBytesCompressed(long long value) { m_bytesCompressed = value; }
@@ -268,10 +262,10 @@ namespace Model
     ///@{
     /**
      * <p>The number of files, objects, and directories that DataSync actually deletes
-     * in your destination location. If you don't <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
-     * your task</a> to delete data in the destination that isn't in the source, the
-     * value is always <code>0</code>.</p>
+     * in your destination location. If you don't configure your task to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
+     * data in the destination that isn't in the source</a>, the value is always
+     * <code>0</code>.</p>
      */
     inline long long GetFilesDeleted() const{ return m_filesDeleted; }
     inline void SetFilesDeleted(long long value) { m_filesDeleted = value; }
@@ -317,10 +311,10 @@ namespace Model
     ///@{
     /**
      * <p>The number of files, objects, and directories that DataSync expects to delete
-     * in your destination location. If you don't <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
-     * your task</a> to delete data in the destination that isn't in the source, the
-     * value is always <code>0</code>.</p>
+     * in your destination location. If you don't configure your task to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
+     * data in the destination that isn't in the source</a>, the value is always
+     * <code>0</code>.</p>
      */
     inline long long GetEstimatedFilesToDelete() const{ return m_estimatedFilesToDelete; }
     inline void SetEstimatedFilesToDelete(long long value) { m_estimatedFilesToDelete = value; }
@@ -345,7 +339,7 @@ namespace Model
      * <p>The number of objects that DataSync will attempt to transfer after comparing
      * your source and destination locations.</p>  <p>Applies only to <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
-     * mode tasks</a>.</p>  <p>This metric isn't applicable if you configure
+     * mode tasks</a>.</p>  <p>This counter isn't applicable if you configure
      * your task to <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-transfer-mode">transfer
      * all data</a>. In that scenario, DataSync copies everything from the source to

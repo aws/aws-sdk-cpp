@@ -81,15 +81,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound
-     * endpoints only. </p> <p>For an inbound endpoint you can apply the protocols as
-     * follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li> <li> <p>Do53
-     * and DoH-FIPS in combination.</p> </li> <li> <p>Do53 alone.</p> </li> <li> <p>DoH
-     * alone.</p> </li> <li> <p>DoH-FIPS alone.</p> </li> <li> <p>None, which is
-     * treated as Do53.</p> </li> </ul> <p>For an outbound endpoint you can apply the
-     * protocols as follows:</p> <ul> <li> <p> Do53 and DoH in combination.</p> </li>
-     * <li> <p>Do53 alone.</p> </li> <li> <p>DoH alone.</p> </li> <li> <p>None, which
-     * is treated as Do53.</p> </li> </ul>
+     * <p> The protocols for the target address. The protocol you choose needs to be
+     * supported by the outbound endpoint of the Resolver rule.</p>
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }

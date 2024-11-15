@@ -1,0 +1,57 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/connectcampaignsv2/ConnectCampaignsV2_EXPORTS.h>
+#include <aws/connectcampaignsv2/model/AgentlessConfig.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace ConnectCampaignsV2
+{
+namespace Model
+{
+
+  /**
+   * <p>SMS Outbound Mode</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/SmsOutboundMode">AWS
+   * API Reference</a></p>
+   */
+  class SmsOutboundMode
+  {
+  public:
+    AWS_CONNECTCAMPAIGNSV2_API SmsOutboundMode();
+    AWS_CONNECTCAMPAIGNSV2_API SmsOutboundMode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNSV2_API SmsOutboundMode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    
+    inline const AgentlessConfig& GetAgentless() const{ return m_agentless; }
+    inline bool AgentlessHasBeenSet() const { return m_agentlessHasBeenSet; }
+    inline void SetAgentless(const AgentlessConfig& value) { m_agentlessHasBeenSet = true; m_agentless = value; }
+    inline void SetAgentless(AgentlessConfig&& value) { m_agentlessHasBeenSet = true; m_agentless = std::move(value); }
+    inline SmsOutboundMode& WithAgentless(const AgentlessConfig& value) { SetAgentless(value); return *this;}
+    inline SmsOutboundMode& WithAgentless(AgentlessConfig&& value) { SetAgentless(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    AgentlessConfig m_agentless;
+    bool m_agentlessHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace ConnectCampaignsV2
+} // namespace Aws

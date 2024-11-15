@@ -78,7 +78,7 @@ namespace Model
      * most use cases, and all actions using an Amazon Web Services SDK, you should use
      * <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
      * content-type set to <code>image/png</code>, and the body of the response is a
-     * PNG image. </p>
+     * PNG image.</p>
      */
     inline const Aws::String& GetOutputFormat() const{ return m_outputFormat; }
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }

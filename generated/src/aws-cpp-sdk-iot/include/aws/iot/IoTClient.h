@@ -5108,6 +5108,35 @@ namespace IoT
         }
 
         /**
+         * <p>Lists the things associated with the specified principal. A principal can be
+         * an X.509 certificate or an Amazon Cognito ID.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalThings</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThingsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPrincipalThingsV2Outcome ListPrincipalThingsV2(const Model::ListPrincipalThingsV2Request& request) const;
+
+        /**
+         * A Callable wrapper for ListPrincipalThingsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPrincipalThingsV2RequestT = Model::ListPrincipalThingsV2Request>
+        Model::ListPrincipalThingsV2OutcomeCallable ListPrincipalThingsV2Callable(const ListPrincipalThingsV2RequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::ListPrincipalThingsV2, request);
+        }
+
+        /**
+         * An Async wrapper for ListPrincipalThingsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPrincipalThingsV2RequestT = Model::ListPrincipalThingsV2Request>
+        void ListPrincipalThingsV2Async(const ListPrincipalThingsV2RequestT& request, const ListPrincipalThingsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::ListPrincipalThingsV2, request, handler, context);
+        }
+
+        /**
          * <p>A list of provisioning template versions.</p> <p>Requires permission to
          * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplateVersions</a>
@@ -5538,6 +5567,35 @@ namespace IoT
         void ListThingPrincipalsAsync(const ListThingPrincipalsRequestT& request, const ListThingPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTClient::ListThingPrincipals, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the principals associated with the specified thing. A principal can be
+         * an X.509 certificate or an Amazon Cognito ID.</p> <p>Requires permission to
+         * access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingPrincipals</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipalsV2">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListThingPrincipalsV2Outcome ListThingPrincipalsV2(const Model::ListThingPrincipalsV2Request& request) const;
+
+        /**
+         * A Callable wrapper for ListThingPrincipalsV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListThingPrincipalsV2RequestT = Model::ListThingPrincipalsV2Request>
+        Model::ListThingPrincipalsV2OutcomeCallable ListThingPrincipalsV2Callable(const ListThingPrincipalsV2RequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::ListThingPrincipalsV2, request);
+        }
+
+        /**
+         * An Async wrapper for ListThingPrincipalsV2 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListThingPrincipalsV2RequestT = Model::ListThingPrincipalsV2Request>
+        void ListThingPrincipalsV2Async(const ListThingPrincipalsV2RequestT& request, const ListThingPrincipalsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::ListThingPrincipalsV2, request, handler, context);
         }
 
         /**
@@ -7323,6 +7381,31 @@ namespace IoT
         void UpdateThingGroupsForThingAsync(const UpdateThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateThingGroupsForThingRequestT& request = {}) const
         {
             return SubmitAsync(&IoTClient::UpdateThingGroupsForThing, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a thing type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateThingTypeOutcome UpdateThingType(const Model::UpdateThingTypeRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateThingType that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateThingTypeRequestT = Model::UpdateThingTypeRequest>
+        Model::UpdateThingTypeOutcomeCallable UpdateThingTypeCallable(const UpdateThingTypeRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::UpdateThingType, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateThingType that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateThingTypeRequestT = Model::UpdateThingTypeRequest>
+        void UpdateThingTypeAsync(const UpdateThingTypeRequestT& request, const UpdateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::UpdateThingType, request, handler, context);
         }
 
         /**

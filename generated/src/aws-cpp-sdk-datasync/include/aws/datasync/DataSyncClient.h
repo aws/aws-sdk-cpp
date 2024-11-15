@@ -1084,8 +1084,8 @@ namespace DataSync
          * specific task mode. For information, see <a
          * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding
          * task mode differences</a> and <a
-         * href="https://docs.aws.amazon.com/datasync/latest/userguide/transfer-performance-metrics.html">Understanding
-         * data transfer performance metrics</a>.</p> <p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/transfer-performance-counters.html">Understanding
+         * data transfer performance counters</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeTaskExecution">AWS
          * API Reference</a></p>
          */

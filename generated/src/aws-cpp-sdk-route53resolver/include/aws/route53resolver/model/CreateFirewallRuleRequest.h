@@ -11,6 +11,8 @@
 #include <aws/route53resolver/model/BlockResponse.h>
 #include <aws/route53resolver/model/BlockOverrideDnsType.h>
 #include <aws/route53resolver/model/FirewallDomainRedirectionAction.h>
+#include <aws/route53resolver/model/DnsThreatProtection.h>
+#include <aws/route53resolver/model/ConfidenceThreshold.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -73,7 +75,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the domain list that you want to use in the rule. </p>
+     * <p>The ID of the domain list that you want to use in the rule. Can't be used
+     * together with <code>DnsThreatProtecton</code>.</p>
      */
     inline const Aws::String& GetFirewallDomainListId() const{ return m_firewallDomainListId; }
     inline bool FirewallDomainListIdHasBeenSet() const { return m_firewallDomainListIdHasBeenSet; }
@@ -103,11 +106,13 @@ namespace Model
     ///@{
     /**
      * <p>The action that DNS Firewall should take on a DNS query when it matches one
-     * of the domains in the rule's domain list:</p> <ul> <li> <p> <code>ALLOW</code> -
-     * Permit the request to go through.</p> </li> <li> <p> <code>ALERT</code> - Permit
-     * the request and send metrics and logs to Cloud Watch.</p> </li> <li> <p>
-     * <code>BLOCK</code> - Disallow the request. This option requires additional
-     * details in the rule's <code>BlockResponse</code>. </p> </li> </ul>
+     * of the domains in the rule's domain list, or a threat in a DNS Firewall Advanced
+     * rule:</p> <ul> <li> <p> <code>ALLOW</code> - Permit the request to go through.
+     * Not available for DNS Firewall Advanced rules.</p> </li> <li> <p>
+     * <code>ALERT</code> - Permit the request and send metrics and logs to Cloud
+     * Watch.</p> </li> <li> <p> <code>BLOCK</code> - Disallow the request. This option
+     * requires additional details in the rule's <code>BlockResponse</code>. </p> </li>
+     * </ul>
      */
     inline const Action& GetAction() const{ return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
@@ -201,10 +206,10 @@ namespace Model
     ///@{
     /**
      * <p> How you want the the rule to evaluate DNS redirection in the DNS redirection
-     * chain, such as CNAME or DNAME. </p> <p> <code>Inspect_Redirection_Domain
-     * </code>(Default) inspects all domains in the redirection chain. The individual
-     * domains in the redirection chain must be added to the domain list.</p> <p>
-     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the
+     * chain, such as CNAME or DNAME. </p> <p> <code>INSPECT_REDIRECTION_DOMAIN</code>:
+     * (Default) inspects all domains in the redirection chain. The individual domains
+     * in the redirection chain must be added to the domain list.</p> <p>
+     * <code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the
      * redirection chain. You don't need to add the subsequent domains in the domain in
      * the redirection list to the domain list.</p>
      */
@@ -245,6 +250,36 @@ namespace Model
     inline CreateFirewallRuleRequest& WithQtype(Aws::String&& value) { SetQtype(std::move(value)); return *this;}
     inline CreateFirewallRuleRequest& WithQtype(const char* value) { SetQtype(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Use to create a DNS Firewall Advanced rule. </p>
+     */
+    inline const DnsThreatProtection& GetDnsThreatProtection() const{ return m_dnsThreatProtection; }
+    inline bool DnsThreatProtectionHasBeenSet() const { return m_dnsThreatProtectionHasBeenSet; }
+    inline void SetDnsThreatProtection(const DnsThreatProtection& value) { m_dnsThreatProtectionHasBeenSet = true; m_dnsThreatProtection = value; }
+    inline void SetDnsThreatProtection(DnsThreatProtection&& value) { m_dnsThreatProtectionHasBeenSet = true; m_dnsThreatProtection = std::move(value); }
+    inline CreateFirewallRuleRequest& WithDnsThreatProtection(const DnsThreatProtection& value) { SetDnsThreatProtection(value); return *this;}
+    inline CreateFirewallRuleRequest& WithDnsThreatProtection(DnsThreatProtection&& value) { SetDnsThreatProtection(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The confidence threshold for DNS Firewall Advanced. You must provide this
+     * value when you create a DNS Firewall Advanced rule. The confidence level values
+     * mean: </p> <ul> <li> <p> <code>LOW</code>: Provides the highest detection rate
+     * for threats, but also increases false positives.</p> </li> <li> <p>
+     * <code>MEDIUM</code>: Provides a balance between detecting threats and false
+     * positives.</p> </li> <li> <p> <code>HIGH</code>: Detects only the most well
+     * corroborated threats with a low rate of false positives. </p> </li> </ul>
+     */
+    inline const ConfidenceThreshold& GetConfidenceThreshold() const{ return m_confidenceThreshold; }
+    inline bool ConfidenceThresholdHasBeenSet() const { return m_confidenceThresholdHasBeenSet; }
+    inline void SetConfidenceThreshold(const ConfidenceThreshold& value) { m_confidenceThresholdHasBeenSet = true; m_confidenceThreshold = value; }
+    inline void SetConfidenceThreshold(ConfidenceThreshold&& value) { m_confidenceThresholdHasBeenSet = true; m_confidenceThreshold = std::move(value); }
+    inline CreateFirewallRuleRequest& WithConfidenceThreshold(const ConfidenceThreshold& value) { SetConfidenceThreshold(value); return *this;}
+    inline CreateFirewallRuleRequest& WithConfidenceThreshold(ConfidenceThreshold&& value) { SetConfidenceThreshold(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_creatorRequestId;
@@ -282,6 +317,12 @@ namespace Model
 
     Aws::String m_qtype;
     bool m_qtypeHasBeenSet = false;
+
+    DnsThreatProtection m_dnsThreatProtection;
+    bool m_dnsThreatProtectionHasBeenSet = false;
+
+    ConfidenceThreshold m_confidenceThreshold;
+    bool m_confidenceThresholdHasBeenSet = false;
   };
 
 } // namespace Model

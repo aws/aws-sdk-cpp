@@ -5,6 +5,7 @@
 
 #include <aws/iot/model/AttachThingPrincipalRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -12,10 +13,13 @@
 using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 AttachThingPrincipalRequest::AttachThingPrincipalRequest() : 
     m_thingNameHasBeenSet(false),
-    m_principalHasBeenSet(false)
+    m_principalHasBeenSet(false),
+    m_thingPrincipalType(ThingPrincipalType::NOT_SET),
+    m_thingPrincipalTypeHasBeenSet(false)
 {
 }
 
@@ -39,6 +43,17 @@ Aws::Http::HeaderValueCollection AttachThingPrincipalRequest::GetRequestSpecific
 
 }
 
+void AttachThingPrincipalRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_thingPrincipalTypeHasBeenSet)
+    {
+      ss << ThingPrincipalTypeMapper::GetNameForThingPrincipalType(m_thingPrincipalType);
+      uri.AddQueryStringParameter("thingPrincipalType", ss.str());
+      ss.str("");
+    }
+
+}
 
 
 

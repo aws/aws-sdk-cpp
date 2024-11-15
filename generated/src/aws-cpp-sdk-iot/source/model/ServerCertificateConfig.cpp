@@ -20,7 +20,9 @@ namespace Model
 
 ServerCertificateConfig::ServerCertificateConfig() : 
     m_enableOCSPCheck(false),
-    m_enableOCSPCheckHasBeenSet(false)
+    m_enableOCSPCheckHasBeenSet(false),
+    m_ocspLambdaArnHasBeenSet(false),
+    m_ocspAuthorizedResponderArnHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,20 @@ ServerCertificateConfig& ServerCertificateConfig::operator =(JsonView jsonValue)
     m_enableOCSPCheckHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ocspLambdaArn"))
+  {
+    m_ocspLambdaArn = jsonValue.GetString("ocspLambdaArn");
+
+    m_ocspLambdaArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ocspAuthorizedResponderArn"))
+  {
+    m_ocspAuthorizedResponderArn = jsonValue.GetString("ocspAuthorizedResponderArn");
+
+    m_ocspAuthorizedResponderArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +65,18 @@ JsonValue ServerCertificateConfig::Jsonize() const
   if(m_enableOCSPCheckHasBeenSet)
   {
    payload.WithBool("enableOCSPCheck", m_enableOCSPCheck);
+
+  }
+
+  if(m_ocspLambdaArnHasBeenSet)
+  {
+   payload.WithString("ocspLambdaArn", m_ocspLambdaArn);
+
+  }
+
+  if(m_ocspAuthorizedResponderArnHasBeenSet)
+  {
+   payload.WithString("ocspAuthorizedResponderArn", m_ocspAuthorizedResponderArn);
 
   }
 

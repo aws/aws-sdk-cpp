@@ -176,6 +176,7 @@
 #include <aws/iot/model/ListPoliciesResult.h>
 #include <aws/iot/model/ListPolicyVersionsResult.h>
 #include <aws/iot/model/ListPrincipalThingsResult.h>
+#include <aws/iot/model/ListPrincipalThingsV2Result.h>
 #include <aws/iot/model/ListProvisioningTemplateVersionsResult.h>
 #include <aws/iot/model/ListProvisioningTemplatesResult.h>
 #include <aws/iot/model/ListRelatedResourcesForAuditFindingResult.h>
@@ -191,6 +192,7 @@
 #include <aws/iot/model/ListThingGroupsResult.h>
 #include <aws/iot/model/ListThingGroupsForThingResult.h>
 #include <aws/iot/model/ListThingPrincipalsResult.h>
+#include <aws/iot/model/ListThingPrincipalsV2Result.h>
 #include <aws/iot/model/ListThingRegistrationTaskReportsResult.h>
 #include <aws/iot/model/ListThingRegistrationTasksResult.h>
 #include <aws/iot/model/ListThingTypesResult.h>
@@ -243,6 +245,7 @@
 #include <aws/iot/model/UpdateThingResult.h>
 #include <aws/iot/model/UpdateThingGroupResult.h>
 #include <aws/iot/model/UpdateThingGroupsForThingResult.h>
+#include <aws/iot/model/UpdateThingTypeResult.h>
 #include <aws/iot/model/UpdateTopicRuleDestinationResult.h>
 #include <aws/iot/model/ValidateSecurityProfileBehaviorsResult.h>
 #include <aws/iot/model/ListStreamsRequest.h>
@@ -520,6 +523,7 @@ namespace Aws
       class ListPoliciesRequest;
       class ListPolicyVersionsRequest;
       class ListPrincipalThingsRequest;
+      class ListPrincipalThingsV2Request;
       class ListProvisioningTemplateVersionsRequest;
       class ListProvisioningTemplatesRequest;
       class ListRelatedResourcesForAuditFindingRequest;
@@ -535,6 +539,7 @@ namespace Aws
       class ListThingGroupsRequest;
       class ListThingGroupsForThingRequest;
       class ListThingPrincipalsRequest;
+      class ListThingPrincipalsV2Request;
       class ListThingRegistrationTaskReportsRequest;
       class ListThingRegistrationTasksRequest;
       class ListThingTypesRequest;
@@ -597,6 +602,7 @@ namespace Aws
       class UpdateThingRequest;
       class UpdateThingGroupRequest;
       class UpdateThingGroupsForThingRequest;
+      class UpdateThingTypeRequest;
       class UpdateTopicRuleDestinationRequest;
       class ValidateSecurityProfileBehaviorsRequest;
       /* End of service model forward declarations required in IoTClient header */
@@ -777,6 +783,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListPoliciesResult, IoTError> ListPoliciesOutcome;
       typedef Aws::Utils::Outcome<ListPolicyVersionsResult, IoTError> ListPolicyVersionsOutcome;
       typedef Aws::Utils::Outcome<ListPrincipalThingsResult, IoTError> ListPrincipalThingsOutcome;
+      typedef Aws::Utils::Outcome<ListPrincipalThingsV2Result, IoTError> ListPrincipalThingsV2Outcome;
       typedef Aws::Utils::Outcome<ListProvisioningTemplateVersionsResult, IoTError> ListProvisioningTemplateVersionsOutcome;
       typedef Aws::Utils::Outcome<ListProvisioningTemplatesResult, IoTError> ListProvisioningTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListRelatedResourcesForAuditFindingResult, IoTError> ListRelatedResourcesForAuditFindingOutcome;
@@ -792,6 +799,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListThingGroupsResult, IoTError> ListThingGroupsOutcome;
       typedef Aws::Utils::Outcome<ListThingGroupsForThingResult, IoTError> ListThingGroupsForThingOutcome;
       typedef Aws::Utils::Outcome<ListThingPrincipalsResult, IoTError> ListThingPrincipalsOutcome;
+      typedef Aws::Utils::Outcome<ListThingPrincipalsV2Result, IoTError> ListThingPrincipalsV2Outcome;
       typedef Aws::Utils::Outcome<ListThingRegistrationTaskReportsResult, IoTError> ListThingRegistrationTaskReportsOutcome;
       typedef Aws::Utils::Outcome<ListThingRegistrationTasksResult, IoTError> ListThingRegistrationTasksOutcome;
       typedef Aws::Utils::Outcome<ListThingTypesResult, IoTError> ListThingTypesOutcome;
@@ -854,6 +862,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateThingResult, IoTError> UpdateThingOutcome;
       typedef Aws::Utils::Outcome<UpdateThingGroupResult, IoTError> UpdateThingGroupOutcome;
       typedef Aws::Utils::Outcome<UpdateThingGroupsForThingResult, IoTError> UpdateThingGroupsForThingOutcome;
+      typedef Aws::Utils::Outcome<UpdateThingTypeResult, IoTError> UpdateThingTypeOutcome;
       typedef Aws::Utils::Outcome<UpdateTopicRuleDestinationResult, IoTError> UpdateTopicRuleDestinationOutcome;
       typedef Aws::Utils::Outcome<ValidateSecurityProfileBehaviorsResult, IoTError> ValidateSecurityProfileBehaviorsOutcome;
       /* End of service model Outcome class definitions */
@@ -1034,6 +1043,7 @@ namespace Aws
       typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
       typedef std::future<ListPolicyVersionsOutcome> ListPolicyVersionsOutcomeCallable;
       typedef std::future<ListPrincipalThingsOutcome> ListPrincipalThingsOutcomeCallable;
+      typedef std::future<ListPrincipalThingsV2Outcome> ListPrincipalThingsV2OutcomeCallable;
       typedef std::future<ListProvisioningTemplateVersionsOutcome> ListProvisioningTemplateVersionsOutcomeCallable;
       typedef std::future<ListProvisioningTemplatesOutcome> ListProvisioningTemplatesOutcomeCallable;
       typedef std::future<ListRelatedResourcesForAuditFindingOutcome> ListRelatedResourcesForAuditFindingOutcomeCallable;
@@ -1049,6 +1059,7 @@ namespace Aws
       typedef std::future<ListThingGroupsOutcome> ListThingGroupsOutcomeCallable;
       typedef std::future<ListThingGroupsForThingOutcome> ListThingGroupsForThingOutcomeCallable;
       typedef std::future<ListThingPrincipalsOutcome> ListThingPrincipalsOutcomeCallable;
+      typedef std::future<ListThingPrincipalsV2Outcome> ListThingPrincipalsV2OutcomeCallable;
       typedef std::future<ListThingRegistrationTaskReportsOutcome> ListThingRegistrationTaskReportsOutcomeCallable;
       typedef std::future<ListThingRegistrationTasksOutcome> ListThingRegistrationTasksOutcomeCallable;
       typedef std::future<ListThingTypesOutcome> ListThingTypesOutcomeCallable;
@@ -1111,6 +1122,7 @@ namespace Aws
       typedef std::future<UpdateThingOutcome> UpdateThingOutcomeCallable;
       typedef std::future<UpdateThingGroupOutcome> UpdateThingGroupOutcomeCallable;
       typedef std::future<UpdateThingGroupsForThingOutcome> UpdateThingGroupsForThingOutcomeCallable;
+      typedef std::future<UpdateThingTypeOutcome> UpdateThingTypeOutcomeCallable;
       typedef std::future<UpdateTopicRuleDestinationOutcome> UpdateTopicRuleDestinationOutcomeCallable;
       typedef std::future<ValidateSecurityProfileBehaviorsOutcome> ValidateSecurityProfileBehaviorsOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -1294,6 +1306,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPoliciesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListPolicyVersionsRequest&, const Model::ListPolicyVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPolicyVersionsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListPrincipalThingsRequest&, const Model::ListPrincipalThingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPrincipalThingsResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::ListPrincipalThingsV2Request&, const Model::ListPrincipalThingsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPrincipalThingsV2ResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListProvisioningTemplateVersionsRequest&, const Model::ListProvisioningTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProvisioningTemplateVersionsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListProvisioningTemplatesRequest&, const Model::ListProvisioningTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProvisioningTemplatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListRelatedResourcesForAuditFindingRequest&, const Model::ListRelatedResourcesForAuditFindingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRelatedResourcesForAuditFindingResponseReceivedHandler;
@@ -1309,6 +1322,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::ListThingGroupsRequest&, const Model::ListThingGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThingGroupsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListThingGroupsForThingRequest&, const Model::ListThingGroupsForThingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThingGroupsForThingResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListThingPrincipalsRequest&, const Model::ListThingPrincipalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThingPrincipalsResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::ListThingPrincipalsV2Request&, const Model::ListThingPrincipalsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThingPrincipalsV2ResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListThingRegistrationTaskReportsRequest&, const Model::ListThingRegistrationTaskReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThingRegistrationTaskReportsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListThingRegistrationTasksRequest&, const Model::ListThingRegistrationTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThingRegistrationTasksResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListThingTypesRequest&, const Model::ListThingTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThingTypesResponseReceivedHandler;
@@ -1371,6 +1385,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::UpdateThingRequest&, const Model::UpdateThingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThingResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateThingGroupRequest&, const Model::UpdateThingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThingGroupResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateThingGroupsForThingRequest&, const Model::UpdateThingGroupsForThingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThingGroupsForThingResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::UpdateThingTypeRequest&, const Model::UpdateThingTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThingTypeResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateTopicRuleDestinationRequest&, const Model::UpdateTopicRuleDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTopicRuleDestinationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ValidateSecurityProfileBehaviorsRequest&, const Model::ValidateSecurityProfileBehaviorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateSecurityProfileBehaviorsResponseReceivedHandler;
     /* End of service model async handlers definitions */

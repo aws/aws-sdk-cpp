@@ -18,7 +18,8 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DeleteConfigurationSetResult::DeleteConfigurationSetResult() : 
-    m_defaultMessageType(MessageType::NOT_SET)
+    m_defaultMessageType(MessageType::NOT_SET),
+    m_defaultMessageFeedbackEnabled(false)
 {
 }
 
@@ -61,6 +62,12 @@ DeleteConfigurationSetResult& DeleteConfigurationSetResult::operator =(const Aws
   if(jsonValue.ValueExists("DefaultSenderId"))
   {
     m_defaultSenderId = jsonValue.GetString("DefaultSenderId");
+
+  }
+
+  if(jsonValue.ValueExists("DefaultMessageFeedbackEnabled"))
+  {
+    m_defaultMessageFeedbackEnabled = jsonValue.GetBool("DefaultMessageFeedbackEnabled");
 
   }
 

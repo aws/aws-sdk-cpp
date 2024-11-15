@@ -65,6 +65,20 @@ namespace Model
 
     ///@{
     /**
+     * <p> The ID that is created for a DNS Firewall Advanced rule. </p>
+     */
+    inline const Aws::String& GetFirewallThreatProtectionId() const{ return m_firewallThreatProtectionId; }
+    inline bool FirewallThreatProtectionIdHasBeenSet() const { return m_firewallThreatProtectionIdHasBeenSet; }
+    inline void SetFirewallThreatProtectionId(const Aws::String& value) { m_firewallThreatProtectionIdHasBeenSet = true; m_firewallThreatProtectionId = value; }
+    inline void SetFirewallThreatProtectionId(Aws::String&& value) { m_firewallThreatProtectionIdHasBeenSet = true; m_firewallThreatProtectionId = std::move(value); }
+    inline void SetFirewallThreatProtectionId(const char* value) { m_firewallThreatProtectionIdHasBeenSet = true; m_firewallThreatProtectionId.assign(value); }
+    inline DeleteFirewallRuleRequest& WithFirewallThreatProtectionId(const Aws::String& value) { SetFirewallThreatProtectionId(value); return *this;}
+    inline DeleteFirewallRuleRequest& WithFirewallThreatProtectionId(Aws::String&& value) { SetFirewallThreatProtectionId(std::move(value)); return *this;}
+    inline DeleteFirewallRuleRequest& WithFirewallThreatProtectionId(const char* value) { SetFirewallThreatProtectionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The DNS query type that the rule you are deleting evaluates. Allowed values
      * are; </p> <ul> <li> <p> A: Returns an IPv4 address.</p> </li> <li> <p>AAAA:
      * Returns an Ipv6 address.</p> </li> <li> <p>CAA: Restricts CAs that can create
@@ -99,6 +113,9 @@ namespace Model
 
     Aws::String m_firewallDomainListId;
     bool m_firewallDomainListIdHasBeenSet = false;
+
+    Aws::String m_firewallThreatProtectionId;
+    bool m_firewallThreatProtectionIdHasBeenSet = false;
 
     Aws::String m_qtype;
     bool m_qtypeHasBeenSet = false;

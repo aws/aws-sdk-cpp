@@ -25,6 +25,8 @@ ConfigurationSetInformation::ConfigurationSetInformation() :
     m_defaultMessageType(MessageType::NOT_SET),
     m_defaultMessageTypeHasBeenSet(false),
     m_defaultSenderIdHasBeenSet(false),
+    m_defaultMessageFeedbackEnabled(false),
+    m_defaultMessageFeedbackEnabledHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
     m_protectConfigurationIdHasBeenSet(false)
 {
@@ -74,6 +76,13 @@ ConfigurationSetInformation& ConfigurationSetInformation::operator =(JsonView js
     m_defaultSenderId = jsonValue.GetString("DefaultSenderId");
 
     m_defaultSenderIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DefaultMessageFeedbackEnabled"))
+  {
+    m_defaultMessageFeedbackEnabled = jsonValue.GetBool("DefaultMessageFeedbackEnabled");
+
+    m_defaultMessageFeedbackEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedTimestamp"))
@@ -128,6 +137,12 @@ JsonValue ConfigurationSetInformation::Jsonize() const
   if(m_defaultSenderIdHasBeenSet)
   {
    payload.WithString("DefaultSenderId", m_defaultSenderId);
+
+  }
+
+  if(m_defaultMessageFeedbackEnabledHasBeenSet)
+  {
+   payload.WithBool("DefaultMessageFeedbackEnabled", m_defaultMessageFeedbackEnabled);
 
   }
 
