@@ -97,7 +97,7 @@ namespace Model
      * <p>The status of the specified query logging association. Valid values include
      * the following:</p> <ul> <li> <p> <code>CREATING</code>: Resolver is creating an
      * association between an Amazon VPC and a query logging configuration.</p> </li>
-     * <li> <p> <code>CREATED</code>: The association between an Amazon VPC and a query
+     * <li> <p> <code>ACTIVE</code>: The association between an Amazon VPC and a query
      * logging configuration was successfully created. Resolver is logging queries that
      * originate in the specified VPC.</p> </li> <li> <p> <code>DELETING</code>:
      * Resolver is deleting this query logging association.</p> </li> <li> <p>

@@ -31,7 +31,11 @@ CreateFirewallRuleRequest::CreateFirewallRuleRequest() :
     m_nameHasBeenSet(false),
     m_firewallDomainRedirectionAction(FirewallDomainRedirectionAction::NOT_SET),
     m_firewallDomainRedirectionActionHasBeenSet(false),
-    m_qtypeHasBeenSet(false)
+    m_qtypeHasBeenSet(false),
+    m_dnsThreatProtection(DnsThreatProtection::NOT_SET),
+    m_dnsThreatProtectionHasBeenSet(false),
+    m_confidenceThreshold(ConfidenceThreshold::NOT_SET),
+    m_confidenceThresholdHasBeenSet(false)
 {
 }
 
@@ -105,6 +109,16 @@ Aws::String CreateFirewallRuleRequest::SerializePayload() const
   {
    payload.WithString("Qtype", m_qtype);
 
+  }
+
+  if(m_dnsThreatProtectionHasBeenSet)
+  {
+   payload.WithString("DnsThreatProtection", DnsThreatProtectionMapper::GetNameForDnsThreatProtection(m_dnsThreatProtection));
+  }
+
+  if(m_confidenceThresholdHasBeenSet)
+  {
+   payload.WithString("ConfidenceThreshold", ConfidenceThresholdMapper::GetNameForConfidenceThreshold(m_confidenceThreshold));
   }
 
   return payload.View().WriteReadable();

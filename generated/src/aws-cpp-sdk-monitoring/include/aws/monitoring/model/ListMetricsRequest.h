@@ -106,7 +106,7 @@ namespace Model
      * <code>PT3H</code>. This is the only valid value for this parameter.</p> <p>The
      * results that are returned are an approximation of the value you specify. There
      * is a low probability that the returned results include metrics with last
-     * published data as much as 40 minutes more than the specified time interval.</p>
+     * published data as much as 50 minutes more than the specified time interval.</p>
      */
     inline const RecentlyActive& GetRecentlyActive() const{ return m_recentlyActive; }
     inline bool RecentlyActiveHasBeenSet() const { return m_recentlyActiveHasBeenSet; }

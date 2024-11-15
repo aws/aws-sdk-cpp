@@ -102,6 +102,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>True if the configuration set has message feedback enabled. By default this
+     * is set to false. </p>
+     */
+    inline bool GetDefaultMessageFeedbackEnabled() const{ return m_defaultMessageFeedbackEnabled; }
+    inline void SetDefaultMessageFeedbackEnabled(bool value) { m_defaultMessageFeedbackEnabled = value; }
+    inline DeleteConfigurationSetResult& WithDefaultMessageFeedbackEnabled(bool value) { SetDefaultMessageFeedbackEnabled(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The time that the deleted configuration set was created in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
@@ -133,6 +143,8 @@ namespace Model
     MessageType m_defaultMessageType;
 
     Aws::String m_defaultSenderId;
+
+    bool m_defaultMessageFeedbackEnabled;
 
     Aws::Utils::DateTime m_createdTimestamp;
 

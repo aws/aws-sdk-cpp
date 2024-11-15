@@ -235,6 +235,18 @@ namespace Model
     inline SendTextMessageRequest& WithProtectConfigurationId(Aws::String&& value) { SetProtectConfigurationId(std::move(value)); return *this;}
     inline SendTextMessageRequest& WithProtectConfigurationId(const char* value) { SetProtectConfigurationId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Set to true to enable message feedback for the message. When a user receives
+     * the message you need to update the message status using
+     * <a>PutMessageFeedback</a>.</p>
+     */
+    inline bool GetMessageFeedbackEnabled() const{ return m_messageFeedbackEnabled; }
+    inline bool MessageFeedbackEnabledHasBeenSet() const { return m_messageFeedbackEnabledHasBeenSet; }
+    inline void SetMessageFeedbackEnabled(bool value) { m_messageFeedbackEnabledHasBeenSet = true; m_messageFeedbackEnabled = value; }
+    inline SendTextMessageRequest& WithMessageFeedbackEnabled(bool value) { SetMessageFeedbackEnabled(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_destinationPhoneNumber;
@@ -272,6 +284,9 @@ namespace Model
 
     Aws::String m_protectConfigurationId;
     bool m_protectConfigurationIdHasBeenSet = false;
+
+    bool m_messageFeedbackEnabled;
+    bool m_messageFeedbackEnabledHasBeenSet = false;
   };
 
 } // namespace Model

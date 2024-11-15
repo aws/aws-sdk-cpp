@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -40,19 +42,67 @@ namespace Model
      * <p>A Boolean value that indicates whether Online Certificate Status Protocol
      * (OCSP) server certificate check is enabled or not.</p> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">Configuring
-     * OCSP server-certificate stapling in domain configuration</a> from Amazon Web
-     * Services IoT Core Developer Guide.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">
+     * Server certificate configuration for OCSP stapling</a> from Amazon Web Services
+     * IoT Core Developer Guide.</p>
      */
     inline bool GetEnableOCSPCheck() const{ return m_enableOCSPCheck; }
     inline bool EnableOCSPCheckHasBeenSet() const { return m_enableOCSPCheckHasBeenSet; }
     inline void SetEnableOCSPCheck(bool value) { m_enableOCSPCheckHasBeenSet = true; m_enableOCSPCheck = value; }
     inline ServerCertificateConfig& WithEnableOCSPCheck(bool value) { SetEnableOCSPCheck(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) for a Lambda function that acts as a Request
+     * for Comments (RFC) 6960-compliant Online Certificate Status Protocol (OCSP)
+     * responder, supporting basic OCSP responses. The Lambda function accepts a JSON
+     * string that's Base64-encoded. Therefore, you must convert your OCSP response,
+     * which is typically in the Distinguished Encoding Rules (DER) format, into a JSON
+     * string that's Base64-encoded. The Lambda function's response is also a
+     * Base64-encoded JSON string and the response payload must not exceed 8 kilobytes
+     * (KiB) in size. The Lambda function must be in the same Amazon Web Services
+     * region and account as the domain configuration.</p>
+     */
+    inline const Aws::String& GetOcspLambdaArn() const{ return m_ocspLambdaArn; }
+    inline bool OcspLambdaArnHasBeenSet() const { return m_ocspLambdaArnHasBeenSet; }
+    inline void SetOcspLambdaArn(const Aws::String& value) { m_ocspLambdaArnHasBeenSet = true; m_ocspLambdaArn = value; }
+    inline void SetOcspLambdaArn(Aws::String&& value) { m_ocspLambdaArnHasBeenSet = true; m_ocspLambdaArn = std::move(value); }
+    inline void SetOcspLambdaArn(const char* value) { m_ocspLambdaArnHasBeenSet = true; m_ocspLambdaArn.assign(value); }
+    inline ServerCertificateConfig& WithOcspLambdaArn(const Aws::String& value) { SetOcspLambdaArn(value); return *this;}
+    inline ServerCertificateConfig& WithOcspLambdaArn(Aws::String&& value) { SetOcspLambdaArn(std::move(value)); return *this;}
+    inline ServerCertificateConfig& WithOcspLambdaArn(const char* value) { SetOcspLambdaArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) for an X.509 certificate stored in Amazon Web
+     * Services Certificate Manager (ACM). If provided, Amazon Web Services IoT Core
+     * will use this certificate to validate the signature of the received OCSP
+     * response. The OCSP responder must sign responses using either this authorized
+     * responder certificate or the issuing certificate, depending on whether the ARN
+     * is provided or not. The certificate must be in the same Amazon Web Services
+     * region and account as the domain configuration. </p>
+     */
+    inline const Aws::String& GetOcspAuthorizedResponderArn() const{ return m_ocspAuthorizedResponderArn; }
+    inline bool OcspAuthorizedResponderArnHasBeenSet() const { return m_ocspAuthorizedResponderArnHasBeenSet; }
+    inline void SetOcspAuthorizedResponderArn(const Aws::String& value) { m_ocspAuthorizedResponderArnHasBeenSet = true; m_ocspAuthorizedResponderArn = value; }
+    inline void SetOcspAuthorizedResponderArn(Aws::String&& value) { m_ocspAuthorizedResponderArnHasBeenSet = true; m_ocspAuthorizedResponderArn = std::move(value); }
+    inline void SetOcspAuthorizedResponderArn(const char* value) { m_ocspAuthorizedResponderArnHasBeenSet = true; m_ocspAuthorizedResponderArn.assign(value); }
+    inline ServerCertificateConfig& WithOcspAuthorizedResponderArn(const Aws::String& value) { SetOcspAuthorizedResponderArn(value); return *this;}
+    inline ServerCertificateConfig& WithOcspAuthorizedResponderArn(Aws::String&& value) { SetOcspAuthorizedResponderArn(std::move(value)); return *this;}
+    inline ServerCertificateConfig& WithOcspAuthorizedResponderArn(const char* value) { SetOcspAuthorizedResponderArn(value); return *this;}
+    ///@}
   private:
 
     bool m_enableOCSPCheck;
     bool m_enableOCSPCheckHasBeenSet = false;
+
+    Aws::String m_ocspLambdaArn;
+    bool m_ocspLambdaArnHasBeenSet = false;
+
+    Aws::String m_ocspAuthorizedResponderArn;
+    bool m_ocspAuthorizedResponderArnHasBeenSet = false;
   };
 
 } // namespace Model

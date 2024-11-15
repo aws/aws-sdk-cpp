@@ -1,0 +1,43 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/connectcampaignsv2/model/DeleteConnectInstanceConfigRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::ConnectCampaignsV2::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws::Http;
+
+DeleteConnectInstanceConfigRequest::DeleteConnectInstanceConfigRequest() : 
+    m_connectInstanceIdHasBeenSet(false),
+    m_campaignDeletionPolicy(CampaignDeletionPolicy::NOT_SET),
+    m_campaignDeletionPolicyHasBeenSet(false)
+{
+}
+
+Aws::String DeleteConnectInstanceConfigRequest::SerializePayload() const
+{
+  return {};
+}
+
+void DeleteConnectInstanceConfigRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_campaignDeletionPolicyHasBeenSet)
+    {
+      ss << CampaignDeletionPolicyMapper::GetNameForCampaignDeletionPolicy(m_campaignDeletionPolicy);
+      uri.AddQueryStringParameter("campaignDeletionPolicy", ss.str());
+      ss.str("");
+    }
+
+}
+
+
+

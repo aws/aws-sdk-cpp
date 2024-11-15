@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/monitoring/model/MetricDatum.h>
+#include <aws/monitoring/model/EntityMetricData.h>
 #include <utility>
 
 namespace Aws
@@ -62,8 +63,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data for the metric. The array can include no more than 1000 metrics per
-     * call.</p>
+     * <p>The data for the metrics. Use this parameter if your metrics do not contain
+     * associated entities. The array can include no more than 1000 metrics per
+     * call.</p> <p>The limit of metrics allowed, 1000, is the sum of both
+     * <code>EntityMetricData</code> and <code>MetricData</code> metrics.</p>
      */
     inline const Aws::Vector<MetricDatum>& GetMetricData() const{ return m_metricData; }
     inline bool MetricDataHasBeenSet() const { return m_metricDataHasBeenSet; }
@@ -74,6 +77,59 @@ namespace Model
     inline PutMetricDataRequest& AddMetricData(const MetricDatum& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(value); return *this; }
     inline PutMetricDataRequest& AddMetricData(MetricDatum&& value) { m_metricDataHasBeenSet = true; m_metricData.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Data for metrics that contain associated entity information. You can include
+     * up to two <code>EntityMetricData</code> objects, each of which can contain a
+     * single <code>Entity</code> and associated metrics.</p> <p>The limit of metrics
+     * allowed, 1000, is the sum of both <code>EntityMetricData</code> and
+     * <code>MetricData</code> metrics.</p>
+     */
+    inline const Aws::Vector<EntityMetricData>& GetEntityMetricData() const{ return m_entityMetricData; }
+    inline bool EntityMetricDataHasBeenSet() const { return m_entityMetricDataHasBeenSet; }
+    inline void SetEntityMetricData(const Aws::Vector<EntityMetricData>& value) { m_entityMetricDataHasBeenSet = true; m_entityMetricData = value; }
+    inline void SetEntityMetricData(Aws::Vector<EntityMetricData>&& value) { m_entityMetricDataHasBeenSet = true; m_entityMetricData = std::move(value); }
+    inline PutMetricDataRequest& WithEntityMetricData(const Aws::Vector<EntityMetricData>& value) { SetEntityMetricData(value); return *this;}
+    inline PutMetricDataRequest& WithEntityMetricData(Aws::Vector<EntityMetricData>&& value) { SetEntityMetricData(std::move(value)); return *this;}
+    inline PutMetricDataRequest& AddEntityMetricData(const EntityMetricData& value) { m_entityMetricDataHasBeenSet = true; m_entityMetricData.push_back(value); return *this; }
+    inline PutMetricDataRequest& AddEntityMetricData(EntityMetricData&& value) { m_entityMetricDataHasBeenSet = true; m_entityMetricData.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Whether to accept valid metric data when an invalid entity is sent.</p> <ul>
+     * <li> <p>When set to <code>true</code>: Any validation error (for entity or
+     * metric data) will fail the entire request, and no data will be ingested. The
+     * failed operation will return a 400 result with the error.</p> </li> <li> <p>When
+     * set to <code>false</code>: Validation errors in the entity will not associate
+     * the metric with the entity, but the metric data will still be accepted and
+     * ingested. Validation errors in the metric data will fail the entire request, and
+     * no data will be ingested.</p> <p>In the case of an invalid entity, the operation
+     * will return a <code>200</code> status, but an additional response header will
+     * contain information about the validation errors. The new header,
+     * <code>X-Amzn-Failure-Message</code> is an enumeration of the following
+     * values:</p> <ul> <li> <p> <code>InvalidEntity</code> - The provided entity is
+     * invalid.</p> </li> <li> <p> <code>InvalidKeyAttributes</code> - The provided
+     * <code>KeyAttributes</code> of an entity is invalid.</p> </li> <li> <p>
+     * <code>InvalidAttributes</code> - The provided <code>Attributes</code> of an
+     * entity is invalid.</p> </li> <li> <p> <code>InvalidTypeValue</code> - The
+     * provided <code>Type</code> in the <code>KeyAttributes</code> of an entity is
+     * invalid.</p> </li> <li> <p> <code>EntitySizeTooLarge</code> - The number of
+     * <code>EntityMetricData</code> objects allowed is 2.</p> </li> <li> <p>
+     * <code>MissingRequiredFields</code> - There are missing required fields in the
+     * <code>KeyAttributes</code> for the provided <code>Type</code>.</p> </li> </ul>
+     * <p>For details of the requirements for specifying an entity, see <a
+     * href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How to
+     * add related information to telemetry</a> in the <i>CloudWatch User
+     * Guide</i>.</p> </li> </ul> <p>This parameter is <i>required</i> when
+     * <code>EntityMetricData</code> is included.</p>
+     */
+    inline bool GetStrictEntityValidation() const{ return m_strictEntityValidation; }
+    inline bool StrictEntityValidationHasBeenSet() const { return m_strictEntityValidationHasBeenSet; }
+    inline void SetStrictEntityValidation(bool value) { m_strictEntityValidationHasBeenSet = true; m_strictEntityValidation = value; }
+    inline PutMetricDataRequest& WithStrictEntityValidation(bool value) { SetStrictEntityValidation(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_namespace;
@@ -81,6 +137,12 @@ namespace Model
 
     Aws::Vector<MetricDatum> m_metricData;
     bool m_metricDataHasBeenSet = false;
+
+    Aws::Vector<EntityMetricData> m_entityMetricData;
+    bool m_entityMetricDataHasBeenSet = false;
+
+    bool m_strictEntityValidation;
+    bool m_strictEntityValidationHasBeenSet = false;
   };
 
 } // namespace Model

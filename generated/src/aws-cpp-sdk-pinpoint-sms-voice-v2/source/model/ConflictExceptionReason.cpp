@@ -55,6 +55,7 @@ namespace Aws
         static const int PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET_HASH = HashingUtils::HashString("PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET");
         static const int PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET_HASH = HashingUtils::HashString("PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET");
         static const int DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION_HASH = HashingUtils::HashString("DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION");
+        static const int DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE_HASH = HashingUtils::HashString("DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE");
 
 
         ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name)
@@ -200,6 +201,10 @@ namespace Aws
           {
             return ConflictExceptionReason::DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION;
           }
+          else if (hashCode == DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE_HASH)
+          {
+            return ConflictExceptionReason::DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -286,6 +291,8 @@ namespace Aws
             return "PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET";
           case ConflictExceptionReason::DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION:
             return "DESTINATION_COUNTRY_BLOCKED_BY_PROTECT_CONFIGURATION";
+          case ConflictExceptionReason::DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE:
+            return "DESTINATION_PHONE_NUMBER_BLOCKED_BY_PROTECT_NUMBER_OVERRIDE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

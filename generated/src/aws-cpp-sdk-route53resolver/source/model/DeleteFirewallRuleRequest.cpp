@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 DeleteFirewallRuleRequest::DeleteFirewallRuleRequest() : 
     m_firewallRuleGroupIdHasBeenSet(false),
     m_firewallDomainListIdHasBeenSet(false),
+    m_firewallThreatProtectionIdHasBeenSet(false),
     m_qtypeHasBeenSet(false)
 {
 }
@@ -32,6 +33,12 @@ Aws::String DeleteFirewallRuleRequest::SerializePayload() const
   if(m_firewallDomainListIdHasBeenSet)
   {
    payload.WithString("FirewallDomainListId", m_firewallDomainListId);
+
+  }
+
+  if(m_firewallThreatProtectionIdHasBeenSet)
+  {
+   payload.WithString("FirewallThreatProtectionId", m_firewallThreatProtectionId);
 
   }
 

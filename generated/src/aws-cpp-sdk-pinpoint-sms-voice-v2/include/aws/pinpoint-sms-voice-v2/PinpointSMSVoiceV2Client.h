@@ -790,6 +790,32 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
+         * <p>Permanently delete the protect configuration rule set number
+         * override.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteProtectConfigurationRuleSetNumberOverride">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteProtectConfigurationRuleSetNumberOverrideOutcome DeleteProtectConfigurationRuleSetNumberOverride(const Model::DeleteProtectConfigurationRuleSetNumberOverrideRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteProtectConfigurationRuleSetNumberOverride that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteProtectConfigurationRuleSetNumberOverrideRequestT = Model::DeleteProtectConfigurationRuleSetNumberOverrideRequest>
+        Model::DeleteProtectConfigurationRuleSetNumberOverrideOutcomeCallable DeleteProtectConfigurationRuleSetNumberOverrideCallable(const DeleteProtectConfigurationRuleSetNumberOverrideRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::DeleteProtectConfigurationRuleSetNumberOverride, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteProtectConfigurationRuleSetNumberOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteProtectConfigurationRuleSetNumberOverrideRequestT = Model::DeleteProtectConfigurationRuleSetNumberOverrideRequest>
+        void DeleteProtectConfigurationRuleSetNumberOverrideAsync(const DeleteProtectConfigurationRuleSetNumberOverrideRequestT& request, const DeleteProtectConfigurationRuleSetNumberOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::DeleteProtectConfigurationRuleSetNumberOverride, request, handler, context);
+        }
+
+        /**
          * <p>Permanently delete an existing registration from your account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistration">AWS
@@ -1513,8 +1539,8 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
-         * <p>Retrieves the specified verified destiona numbers.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves the specified verified destination numbers.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeVerifiedDestinationNumbers">AWS
          * API Reference</a></p>
          */
@@ -1698,7 +1724,33 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
-         * <p>Retreive all of the origination identies that are associated with a
+         * <p>Retrieve all of the protect configuration rule set number overrides that
+         * match the filters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListProtectConfigurationRuleSetNumberOverrides">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListProtectConfigurationRuleSetNumberOverridesOutcome ListProtectConfigurationRuleSetNumberOverrides(const Model::ListProtectConfigurationRuleSetNumberOverridesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListProtectConfigurationRuleSetNumberOverrides that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListProtectConfigurationRuleSetNumberOverridesRequestT = Model::ListProtectConfigurationRuleSetNumberOverridesRequest>
+        Model::ListProtectConfigurationRuleSetNumberOverridesOutcomeCallable ListProtectConfigurationRuleSetNumberOverridesCallable(const ListProtectConfigurationRuleSetNumberOverridesRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::ListProtectConfigurationRuleSetNumberOverrides, request);
+        }
+
+        /**
+         * An Async wrapper for ListProtectConfigurationRuleSetNumberOverrides that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListProtectConfigurationRuleSetNumberOverridesRequestT = Model::ListProtectConfigurationRuleSetNumberOverridesRequest>
+        void ListProtectConfigurationRuleSetNumberOverridesAsync(const ListProtectConfigurationRuleSetNumberOverridesRequestT& request, const ListProtectConfigurationRuleSetNumberOverridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::ListProtectConfigurationRuleSetNumberOverrides, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieve all of the origination identities that are associated with a
          * registration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListRegistrationAssociations">AWS
          * API Reference</a></p>
@@ -1781,6 +1833,37 @@ namespace PinpointSMSVoiceV2
         }
 
         /**
+         * <p>Set the MessageFeedbackStatus as <code>RECEIVED</code> or <code>FAILED</code>
+         * for the passed in MessageId. </p> <p>If you use message feedback then you must
+         * update message feedback record. When you receive a signal that a user has
+         * received the message you must use <code>PutMessageFeedback</code> to set the
+         * message feedback record as <code>RECEIVED</code>; Otherwise, an hour after the
+         * message feedback record is set to <code>FAILED</code>.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutMessageFeedback">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutMessageFeedbackOutcome PutMessageFeedback(const Model::PutMessageFeedbackRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutMessageFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutMessageFeedbackRequestT = Model::PutMessageFeedbackRequest>
+        Model::PutMessageFeedbackOutcomeCallable PutMessageFeedbackCallable(const PutMessageFeedbackRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::PutMessageFeedback, request);
+        }
+
+        /**
+         * An Async wrapper for PutMessageFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutMessageFeedbackRequestT = Model::PutMessageFeedbackRequest>
+        void PutMessageFeedbackAsync(const PutMessageFeedbackRequestT& request, const PutMessageFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::PutMessageFeedback, request, handler, context);
+        }
+
+        /**
          * <p>Creates an opted out destination phone number in the opt-out list.</p> <p>If
          * the destination phone number isn't valid or if the specified opt-out list
          * doesn't exist, an error is returned.</p><p><h3>See Also:</h3>   <a
@@ -1805,6 +1888,32 @@ namespace PinpointSMSVoiceV2
         void PutOptedOutNumberAsync(const PutOptedOutNumberRequestT& request, const PutOptedOutNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::PutOptedOutNumber, request, handler, context);
+        }
+
+        /**
+         * <p>Create or update a RuleSetNumberOverride and associate it with a protect
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutProtectConfigurationRuleSetNumberOverride">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutProtectConfigurationRuleSetNumberOverrideOutcome PutProtectConfigurationRuleSetNumberOverride(const Model::PutProtectConfigurationRuleSetNumberOverrideRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutProtectConfigurationRuleSetNumberOverride that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutProtectConfigurationRuleSetNumberOverrideRequestT = Model::PutProtectConfigurationRuleSetNumberOverrideRequest>
+        Model::PutProtectConfigurationRuleSetNumberOverrideOutcomeCallable PutProtectConfigurationRuleSetNumberOverrideCallable(const PutProtectConfigurationRuleSetNumberOverrideRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::PutProtectConfigurationRuleSetNumberOverride, request);
+        }
+
+        /**
+         * An Async wrapper for PutProtectConfigurationRuleSetNumberOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutProtectConfigurationRuleSetNumberOverrideRequestT = Model::PutProtectConfigurationRuleSetNumberOverrideRequest>
+        void PutProtectConfigurationRuleSetNumberOverrideAsync(const PutProtectConfigurationRuleSetNumberOverrideRequestT& request, const PutProtectConfigurationRuleSetNumberOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::PutProtectConfigurationRuleSetNumberOverride, request, handler, context);
         }
 
         /**
@@ -2114,6 +2223,32 @@ namespace PinpointSMSVoiceV2
         void SetAccountDefaultProtectConfigurationAsync(const SetAccountDefaultProtectConfigurationRequestT& request, const SetAccountDefaultProtectConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&PinpointSMSVoiceV2Client::SetAccountDefaultProtectConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Sets a configuration set's default for message feedback. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetDefaultMessageFeedbackEnabled">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetDefaultMessageFeedbackEnabledOutcome SetDefaultMessageFeedbackEnabled(const Model::SetDefaultMessageFeedbackEnabledRequest& request) const;
+
+        /**
+         * A Callable wrapper for SetDefaultMessageFeedbackEnabled that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SetDefaultMessageFeedbackEnabledRequestT = Model::SetDefaultMessageFeedbackEnabledRequest>
+        Model::SetDefaultMessageFeedbackEnabledOutcomeCallable SetDefaultMessageFeedbackEnabledCallable(const SetDefaultMessageFeedbackEnabledRequestT& request) const
+        {
+            return SubmitCallable(&PinpointSMSVoiceV2Client::SetDefaultMessageFeedbackEnabled, request);
+        }
+
+        /**
+         * An Async wrapper for SetDefaultMessageFeedbackEnabled that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SetDefaultMessageFeedbackEnabledRequestT = Model::SetDefaultMessageFeedbackEnabledRequest>
+        void SetDefaultMessageFeedbackEnabledAsync(const SetDefaultMessageFeedbackEnabledRequestT& request, const SetDefaultMessageFeedbackEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointSMSVoiceV2Client::SetDefaultMessageFeedbackEnabled, request, handler, context);
         }
 
         /**

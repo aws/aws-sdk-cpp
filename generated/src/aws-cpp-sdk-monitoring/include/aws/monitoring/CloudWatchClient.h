@@ -1204,27 +1204,35 @@ namespace CloudWatch
         }
 
         /**
-         * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-         * data points with the specified metric. If the specified metric does not exist,
-         * CloudWatch creates the metric. When CloudWatch creates a metric, it can take up
-         * to fifteen minutes for the metric to appear in calls to <a
+         * <p>Publishes metric data to Amazon CloudWatch. CloudWatch associates the data
+         * with the specified metric. If the specified metric does not exist, CloudWatch
+         * creates the metric. When CloudWatch creates a metric, it can take up to fifteen
+         * minutes for the metric to appear in calls to <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
-         * <p>You can publish either individual data points in the <code>Value</code>
-         * field, or arrays of values and the number of times each value occurred during
-         * the period by using the <code>Values</code> and <code>Counts</code> fields in
-         * the <code>MetricData</code> structure. Using the <code>Values</code> and
+         * <p>You can publish metrics with associated entity data (so that related
+         * telemetry can be found and viewed together), or publish metric data by itself.
+         * To send entity data with your metrics, use the <code>EntityMetricData</code>
+         * parameter. To send metrics without entity data, use the <code>MetricData</code>
+         * parameter. The <code>EntityMetricData</code> structure includes
+         * <code>MetricData</code> structures for the metric data.</p> <p>You can publish
+         * either individual values in the <code>Value</code> field, or arrays of values
+         * and the number of times each value occurred during the period by using the
+         * <code>Values</code> and <code>Counts</code> fields in the
+         * <code>MetricData</code> structure. Using the <code>Values</code> and
          * <code>Counts</code> method enables you to publish up to 150 values per metric
          * with one <code>PutMetricData</code> request, and supports retrieving percentile
          * statistics on this data.</p> <p>Each <code>PutMetricData</code> request is
          * limited to 1 MB in size for HTTP POST requests. You can send a payload
          * compressed by gzip. Each request is also limited to no more than 1000 different
-         * metrics.</p> <p>Although the <code>Value</code> parameter accepts numbers of
-         * type <code>Double</code>, CloudWatch rejects values that are either too small or
-         * too large. Values must be in the range of -2^360 to 2^360. In addition, special
-         * values (for example, NaN, +Infinity, -Infinity) are not supported.</p> <p>You
-         * can use up to 30 dimensions per metric to further clarify what data the metric
-         * collects. Each dimension consists of a Name and Value pair. For more information
-         * about specifying dimensions, see <a
+         * metrics (across both the <code>MetricData</code> and
+         * <code>EntityMetricData</code> properties).</p> <p>Although the
+         * <code>Value</code> parameter accepts numbers of type <code>Double</code>,
+         * CloudWatch rejects values that are either too small or too large. Values must be
+         * in the range of -2^360 to 2^360. In addition, special values (for example, NaN,
+         * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 30 dimensions
+         * per metric to further clarify what data the metric collects. Each dimension
+         * consists of a Name and Value pair. For more information about specifying
+         * dimensions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>You specify the
          * time stamp to be associated with each data point. You can specify time stamps
@@ -1235,7 +1243,7 @@ namespace CloudWatch
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
          * from the time they are submitted. Data points with time stamps between 3 and 24
-         * hours ago can take as much as 2 hours to become available for for <a
+         * hours ago can take as much as 2 hours to become available for <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
          * or <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>

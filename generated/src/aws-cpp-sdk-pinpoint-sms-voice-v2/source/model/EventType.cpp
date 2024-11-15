@@ -36,6 +36,7 @@ namespace Aws
         static const int TEXT_SPAM_HASH = HashingUtils::HashString("TEXT_SPAM");
         static const int TEXT_UNKNOWN_HASH = HashingUtils::HashString("TEXT_UNKNOWN");
         static const int TEXT_TTL_EXPIRED_HASH = HashingUtils::HashString("TEXT_TTL_EXPIRED");
+        static const int TEXT_PROTECT_BLOCKED_HASH = HashingUtils::HashString("TEXT_PROTECT_BLOCKED");
         static const int VOICE_ALL_HASH = HashingUtils::HashString("VOICE_ALL");
         static const int VOICE_INITIATED_HASH = HashingUtils::HashString("VOICE_INITIATED");
         static const int VOICE_RINGING_HASH = HashingUtils::HashString("VOICE_RINGING");
@@ -130,6 +131,10 @@ namespace Aws
           else if (hashCode == TEXT_TTL_EXPIRED_HASH)
           {
             return EventType::TEXT_TTL_EXPIRED;
+          }
+          else if (hashCode == TEXT_PROTECT_BLOCKED_HASH)
+          {
+            return EventType::TEXT_PROTECT_BLOCKED;
           }
           else if (hashCode == VOICE_ALL_HASH)
           {
@@ -283,6 +288,8 @@ namespace Aws
             return "TEXT_UNKNOWN";
           case EventType::TEXT_TTL_EXPIRED:
             return "TEXT_TTL_EXPIRED";
+          case EventType::TEXT_PROTECT_BLOCKED:
+            return "TEXT_PROTECT_BLOCKED";
           case EventType::VOICE_ALL:
             return "VOICE_ALL";
           case EventType::VOICE_INITIATED:
