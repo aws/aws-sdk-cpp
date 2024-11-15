@@ -150,17 +150,14 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_ma
             if key == "s3":
                 service_name_to_model_filename["s3-crt"] = service_name_to_model_filename["s3"]
         except Exception as exc:
-            # TODO: re-enable with endpoints introduction
-            # print(f"C2J model does not have a corresponding endpoints ruleset: {exc}")
+            print(f"ERROR: C2J model does not have a corresponding endpoints ruleset: {exc}")
             missing.add(model_file_date[0])
             service_name_to_model_filename[key] = ServiceModel(service_id=key,
                                                                c2j_model=model_file_date[0],
                                                                endpoint_rule_set=None,
                                                                endpoint_tests=None)
     if missing:
-        # TODO: re-enable with endpoints introduction
-        # print(f"Missing endpoints for services: {missing}")
-        pass
+        raise RuntimeError(f"Missing endpoints for services: {missing}")
 
     if service_name_to_model_filename.get("s3") and "s3-crt" not in service_name_to_model_filename:
         service_name_to_model_filename["s3-crt"] = service_name_to_model_filename["s3"]
