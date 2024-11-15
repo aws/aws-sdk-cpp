@@ -102,33 +102,22 @@ public abstract class CppClientGenerator implements ClientGenerator {
         }
 
         fileList.addAll(generateClientSourceFile(serviceModels));
-        if (serviceModel.getEndpointRules() == null) {
-            fileList.add(generateARNHeaderFile(serviceModel));
-            fileList.add(generateARNSourceFile(serviceModel));
-        }
         fileList.add(generateClientConfigurationFile(serviceModel));
-        if (serviceModel.getEndpointRules() != null) {
-            fileList.add(generateEndpointRulesHeaderFile(serviceModel));
-            fileList.add(generateEndpointRulesSourceFile(serviceModel));
-            fileList.add(generateEndpointProviderHeaderFile(serviceModel));
-            fileList.add(generateEndpointProviderSourceFile(serviceModel));
+        fileList.add(generateEndpointRulesHeaderFile(serviceModel));
+        fileList.add(generateEndpointRulesSourceFile(serviceModel));
+        fileList.add(generateEndpointProviderHeaderFile(serviceModel));
+        fileList.add(generateEndpointProviderSourceFile(serviceModel));
 
-            if (serviceModel.hasServiceSpecificClientConfig()) {
-                fileList.add(generateServiceClientConfigurationHeaderFile(serviceModel));
-                fileList.add(generateServiceClientConfigurationSourceFile(serviceModel));
-            }
-        } else {
-            fileList.add(generateRegionHeaderFile(serviceModel));
-            fileList.add(generateRegionSourceFile(serviceModel));
+        if (serviceModel.hasServiceSpecificClientConfig()) {
+            fileList.add(generateServiceClientConfigurationHeaderFile(serviceModel));
+            fileList.add(generateServiceClientConfigurationSourceFile(serviceModel));
         }
         fileList.add(generateErrorsHeaderFile(serviceModel));
         fileList.add(generateErrorMarshallerHeaderFile(serviceModel));
         fileList.add(generateErrorSourceFile(serviceModel));
         fileList.add(generateErrorMarshallingSourceFile(serviceModel));
         fileList.add(generateServiceRequestHeader(serviceModel));
-        if (serviceModel.getEndpointRules() != null) {
-            fileList.add(generateServiceRequestSource(serviceModel));
-        }
+        fileList.add(generateServiceRequestSource(serviceModel));
         fileList.add(generateExportHeader(serviceModel));
         fileList.add(generateCmakeFile(serviceModel));
 
@@ -462,16 +451,6 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, fileName, true);
     }
 
-    protected SdkFileEntry generateARNHeaderFile(final ServiceModel serviceModel) throws Exception {
-        // no-op for services other than S3.
-        return null;
-    }
-
-    protected SdkFileEntry generateARNSourceFile(final ServiceModel serviceModel) throws Exception {
-        // no-op for services other than S3.
-        return null;
-    }
-
     protected SdkFileEntry generateClientConfigurationFile(final ServiceModel serviceModel) throws Exception {
         // no-op for services other than S3Crt.
         return null;
@@ -499,30 +478,6 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         String fileName = String.format("source/%sRequest.cpp", serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName, true);
-    }
-
-    protected SdkFileEntry generateRegionHeaderFile(ServiceModel serviceModel) throws Exception {
-
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EndpointEnumHeader.vm", StandardCharsets.UTF_8.name());
-
-        VelocityContext context = createContext(serviceModel);
-        context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
-
-        String fileName = String.format("include/aws/%s/%sEndpoint.h", serviceModel.getMetadata().getProjectName(),
-                serviceModel.getMetadata().getClassNamePrefix());
-
-        return makeFile(template, context, fileName, true);
-    }
-
-    protected SdkFileEntry generateRegionSourceFile(ServiceModel serviceModel) throws Exception {
-
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EndpointEnumSource.vm", StandardCharsets.UTF_8.name());
-
-        VelocityContext context = createContext(serviceModel);
-        context.put("endpointMapping", computeEndpointMappingForService(serviceModel));
-
-        String fileName = String.format("source/%sEndpoint.cpp", serviceModel.getMetadata().getClassNamePrefix());
         return makeFile(template, context, fileName, true);
     }
 
