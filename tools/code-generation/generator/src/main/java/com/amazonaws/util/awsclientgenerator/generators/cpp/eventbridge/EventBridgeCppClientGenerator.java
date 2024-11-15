@@ -40,26 +40,10 @@ public class EventBridgeCppClientGenerator  extends JsonCppClientGenerator {
             VelocityContext context = createContext(serviceModels.get(i));
             context.put("CppViewHelper", CppViewHelper.class);
 
-            if (serviceModels.get(i).getEndpointRules() != null) {
-                // Store the flag of endpoint being overwritten in the config
-                context.put("customEndpointUsed", true);
-                // Instruct code gen to use DefaultAuthSignerProvider with SigV4A instead of default AWSAuthV4Signer
-                context.put("multiRegionAccessPointSupported", true);
-            } else {
-                if (serviceModels.get(i).getOperations().get("PutEvents").getRequest().getShape().getMembers().containsKey("EndpointId")) {
-                    // Override PutEvents function body
-                    Map<String, String> templateOverride = new HashMap<>();
-                    String putEventsTemplateKey = new StringBuilder(serviceModels.get(i).getServiceName()).append("_PutEvents_OperationOutcome").toString();
-                    String putEventsTemplateVal = "com/amazonaws/util/awsclientgenerator/velocity/cpp/eventbridge/PutEvents_OperationOutcome.vm";
-                    templateOverride.put(putEventsTemplateKey, putEventsTemplateVal);
-                    context.put("TemplateOverride", templateOverride);
-
-                    // Store the flag of endpoint being overwritten in the config
-                    context.put("customEndpointUsed", true);
-                    // Instruct code gen to use DefaultAuthSignerProvider with SigV4A instead of default AWSAuthV4Signer
-                    context.put("multiRegionAccessPointSupported", true);
-                }
-            }
+            // Store the flag of endpoint being overwritten in the config
+            context.put("customEndpointUsed", true);
+            // Instruct code gen to use DefaultAuthSignerProvider with SigV4A instead of default AWSAuthV4Signer
+            context.put("multiRegionAccessPointSupported", true);
 
             final String fileName;
             if (i == 0) {
@@ -92,32 +76,6 @@ public class EventBridgeCppClientGenerator  extends JsonCppClientGenerator {
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName, true);
-    }
-
-    @Override
-    protected SdkFileEntry generateRegionHeaderFile(ServiceModel serviceModel) throws Exception {
-
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/eventbridge/EndpointEnumHeader.vm", StandardCharsets.UTF_8.name());
-
-        VelocityContext context = createContext(serviceModel);
-        context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
-
-        String fileName = String.format("include/aws/%s/%sEndpoint.h", serviceModel.getMetadata().getProjectName(),
-                serviceModel.getMetadata().getClassNamePrefix());
-
-        return makeFile(template, context, fileName, true);
-    }
-
-    @Override
-    protected SdkFileEntry generateRegionSourceFile(ServiceModel serviceModel) throws Exception {
-
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/eventbridge/EndpointEnumSource.vm", StandardCharsets.UTF_8.name());
-
-        VelocityContext context = createContext(serviceModel);
-        context.put("endpointMapping", computeEndpointMappingForService(serviceModel));
-
-        String fileName = String.format("source/%sEndpoint.cpp", serviceModel.getMetadata().getClassNamePrefix());
         return makeFile(template, context, fileName, true);
     }
 }
