@@ -40,8 +40,8 @@ namespace Model
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
      * catalog determines which environment the opportunity is fetched from. Use
      * <code>AWS</code> to retrieve opportunities in the Amazon Web Services catalog,
-     * and <code>Sandbox</code> to retrieve opportunities in a secure and isolated
-     * testing environment. </p>
+     * and <code>Sandbox</code> to retrieve opportunities in a secure, isolated testing
+     * environment. </p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }

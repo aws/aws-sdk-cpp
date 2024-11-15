@@ -27,8 +27,8 @@ namespace Model
 
   /**
    * <p>Contains details about the customer associated with the Engagement
-   * Invitation, including key company information and industry.</p><p><h3>See
-   * Also:</h3>   <a
+   * Invitation, including company information and industry.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/EngagementCustomer">AWS
    * API Reference</a></p>
    */

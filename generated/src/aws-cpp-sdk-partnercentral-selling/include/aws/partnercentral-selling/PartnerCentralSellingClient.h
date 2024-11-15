@@ -17,45 +17,39 @@ namespace PartnerCentralSelling
 {
   /**
    * <p><fullname>AWS Partner Central API for Selling</fullname> <p> <b>AWS Partner
-   * Central API for Selling Reference Guide</b> </p> <p> Amazon Web Services (AWS)
-   * Partner Central API reference guide is designed to help <a
-   * href="https://docs.aws.amazon.com/partners/programs/">AWS Partners</a>
-   * programmatically integrate their Customer Relationship Management (CRM) systems
-   * with AWS Partner Central. Through the Partner Central APIs, partners can
-   * automate and streamline their interactions with AWS Partner Central, ensuring a
-   * more efficient and effective engagement in joint business activities. </p> <p>
-   * The AWS Partner Central API service provides standard AWS API functionality. You
-   * can directly use the API <a
-   * href="https://docs.aws.amazon.com/partner-central/latest/selling-api/API_Operations.html">Actions</a>,
-   * or you can use an AWS SDK to access an API that's tailored to the programming
-   * language or platform that you're using. For more information about AWS
-   * application development, see <a
-   * href="https://docs.aws.amazon.com/getting-started">Getting Started with AWS</a>.
-   * For more information about using AWS SDKs, see <a
-   * href="https://docs.aws.amazon.com/aws-sdk">AWS SDKs</a>. </p> <p class="title">
-   * <b>Features offered by AWS Partner Central API</b> </p> <ol> <li> <p>
-   * <b>Opportunity management:</b> Facilitates the management of co-selling
-   * opportunities with AWS using API actions such as <code>CreateOpportunity</code>,
-   * <code>UpdateOpportunity</code>, <code>ListOpportunities</code>,
-   * <code>GetOpportunity</code>, and <code>AssignOpportunity</code>.</p> </li> <li>
-   * <p> <b>AWS referral management:</b> Facilitates receiving referrals shared by
-   * AWS using actions like <code>ListEngagementInvitations</code>,
-   * <code>GetEngagementInvitation</code>,
+   * Central API for Selling Reference Guide</b> </p> <p>This Amazon Web Services
+   * (AWS) Partner Central API reference is designed to help <a
+   * href="http://aws.amazon.com/partners/programs/">AWS Partners</a> integrate
+   * Customer Relationship Management (CRM) systems with AWS Partner Central.
+   * Partners can automate interactions with AWS Partner Central, which helps to
+   * ensure effective engagements in joint business activities.</p> <p>The API
+   * provides standard AWS API functionality. Access it by either using API <a
+   * href="https://docs.aws.amazon.com/partner-central/latest/selling-api/API_Operations.html">Actions</a>
+   * or by using an AWS SDK that's tailored to your programming language or platform.
+   * For more information, see <a
+   * href="http://aws.amazon.com/getting-started">Getting Started with AWS</a> and <a
+   * href="http://aws.amazon.com/developer/tools/">Tools to Build on AWS</a>.</p> <p
+   * class="title"> <b>Features offered by AWS Partner Central API</b> </p> <ol> <li>
+   * <p> <b>Opportunity management:</b> Manages coselling opportunities through API
+   * actions such as <code>CreateOpportunity</code>, <code>UpdateOpportunity</code>,
+   * <code>ListOpportunities</code>, <code>GetOpportunity</code>, and
+   * <code>AssignOpportunity</code>.</p> </li> <li> <p> <b>AWS referral
+   * management:</b> Manages referrals shared by AWS using actions such as
+   * <code>ListEngagementInvitations</code>, <code>GetEngagementInvitation</code>,
    * <code>StartEngagementByAcceptingInvitation</code>, and
    * <code>RejectEngagementInvitation</code>.</p> </li> <li> <p> <b>Entity
-   * association:</b> Associate related entities such as <i>AWS Products</i>,
+   * association:</b> Associates related entities such as <i>AWS Products</i>,
    * <i>Partner Solutions</i>, and <i>AWS Marketplace Private Offers</i> with
-   * opportunities using the actions <code>AssociateOpportunity</code> and
+   * opportunities using the actions <code>AssociateOpportunity</code>, and
    * <code>DisassociateOpportunity</code>.</p> </li> <li> <p> <b>View AWS opportunity
-   * details:</b> Use the <code>GetAWSOpportunitySummary</code> action to retrieve
-   * real-time summaries of AWS opportunities that are linked to your
-   * opportunities.</p> </li> <li> <p> <b>List solutions:</b> Provides list APIs for
-   * listing solutions partners offer using <code>ListSolutions</code>.</p> </li>
-   * <li> <p> <b>Event subscription:</b> Partners can subscribe to real-time updates
-   * on opportunities by listening to events such as <i>Opportunity Created</i>,
-   * <i>Opportunity Updated</i>, <i>Engagement Invitation Accepted</i>, <i>Engagement
-   * Invitation Rejected</i> and <i>Engagement Invitation Created</i> using AWS
-   * EventBridge.</p> </li> </ol></p>
+   * details:</b> Retrieves real-time summaries of AWS opportunities using the
+   * <code>GetAWSOpportunitySummary</code> action.</p> </li> <li> <p> <b>List
+   * solutions:</b> Provides list APIs for listing partner offers using
+   * <code>ListSolutions</code>.</p> </li> <li> <p> <b>Event subscription:</b>
+   * Subscribe to real-time opportunity updates through AWS EventBridge by using
+   * actions such as <i>Opportunity Created</i>, <i>Opportunity Updated</i>,
+   * <i>Engagement Invitation Accepted</i>, <i>Engagement Invitation Rejected</i>,
+   * and <i>Engagement Invitation Created</i>.</p> </li> </ol></p>
    */
   class AWS_PARTNERCENTRALSELLING_API PartnerCentralSellingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralSellingClient>
   {
@@ -151,34 +145,34 @@ namespace PartnerCentralSelling
         /**
          * <p> Enables you to create a formal association between an
          * <code>Opportunity</code> and various related entities, enriching the context and
-         * details of the opportunity for better collaboration and decision-making. You can
-         * associate an opportunity with the following types of entities: </p> <ul> <li>
-         * <p> Partner Solution: A software product or consulting practice created and
-         * delivered by Partners. Partner Solutions help customers address specific
-         * business challenges or achieve particular goals using Amazon Web Services
-         * services. </p> </li> <li> <p> Amazon Web Services Product: Amazon Web Services
-         * offers a wide range of products and services designed to provide scalable,
-         * reliable, and cost-effective infrastructure solutions. For the latest list of
-         * Amazon Web Services products, refer to <a
+         * details of the opportunity for better collaboration and decision making. You can
+         * associate an opportunity with the following entity types: </p> <ul> <li> <p>
+         * Partner Solution: A software product or consulting practice created and
+         * delivered by Partners. Partner Solutions help customers address business
+         * challenges using Amazon Web Services services. </p> </li> <li> <p> Amazon Web
+         * Services Products: Amazon Web Services offers many products and services that
+         * provide scalable, reliable, and cost-effective infrastructure solutions. For the
+         * latest list of Amazon Web Services products, see <a
          * href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">Amazon
          * Web Services products</a>. </p> </li> <li> <p> Amazon Web Services Marketplace
          * private offer: Allows Amazon Web Services Marketplace sellers to extend custom
          * pricing and terms to individual Amazon Web Services customers. Sellers can
          * negotiate custom prices, payment schedules, and end user license terms through
          * private offers, enabling Amazon Web Services customers to acquire software
-         * solutions tailored to their specific needs. For more information, refer to <a
+         * solutions tailored to their specific needs. For more information, see <a
          * href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-private-offers.html">Private
          * offers in Amazon Web Services Marketplace</a>. </p> </li> </ul> <p>To obtain
          * identifiers for these entities, use the following methods:</p> <ul> <li>
          * <p>Solution: Use the <code>ListSolutions</code> operation.</p> </li> <li> <p>
-         * AWS products: For the latest list of Amazon Web Services products, refer to the
-         * Amazon Web Services products list.</p> </li> <li> <p> Amazon Web Services
-         * Marketplace private offer: Use the <a
-         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html">AWS
-         * Marketplace Catalog API</a> to list entities. Specifically, use the
-         * <code>ListEntities</code> operation to retrieve a list of private offers. The
-         * request to the <code>ListEntities</code> API returns the details of the private
-         * offers available to you. For more information, refer to <a
+         * AWS Products: For the latest list of Amazon Web Services products, see <a
+         * href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">Amazon
+         * Web Services products</a>. </p> </li> <li> <p> Amazon Web Services Marketplace
+         * private offer: Use the <a
+         * href="https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html">Using
+         * the Amazon Web Services Marketplace Catalog API</a> to list entities.
+         * Specifically, use the <code>ListEntities</code> operation to retrieve a list of
+         * private offers. The request returns the details of available private offers. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a>.
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AssociateOpportunity">AWS
@@ -206,20 +200,19 @@ namespace PartnerCentralSelling
 
         /**
          * <p> Creates an <code>Opportunity</code> record in Partner Central. Use this
-         * operation to create a potential business opportunity intended to be submitted to
-         * Amazon Web Services. Creating an opportunity sets its
-         * <code>Lifecycle.ReviewStatus</code> to <code>Pending Submission</code>. </p> <p>
-         * To fully submit an opportunity, follow these steps: </p> <ol> <li> <p>To create
-         * the opportunity, use <code>CreateOpportunity</code>.</p> </li> <li> <p>To
-         * associate a solution with the opportunity, use
-         * <code>AssociateOpportunity</code>.</p> </li> <li> <p>To submit the opportunity,
-         * use <code>SubmitOpportunity</code>.</p> </li> </ol> <p> After submission, you
-         * can't edit the opportunity until the review is complete. However, opportunities
-         * in the <code>Pending Submission</code> state still need all details completed.
-         * You can update the opportunity while it's in the <code>Pending Submission</code>
-         * state. </p> <p> There's a set of mandatory fields required to create
-         * opportunities, but consider providing optional fields to enrich the opportunity
-         * record. </p><p><h3>See Also:</h3>   <a
+         * operation to create a potential business opportunity for submission to Amazon
+         * Web Services. Creating an opportunity sets <code>Lifecycle.ReviewStatus</code>
+         * to <code>Pending Submission</code>. </p> <p> To submit an opportunity, follow
+         * these steps: </p> <ol> <li> <p>To create the opportunity, use
+         * <code>CreateOpportunity</code>.</p> </li> <li> <p>To associate a solution with
+         * the opportunity, use <code>AssociateOpportunity</code>.</p> </li> <li> <p>To
+         * submit the opportunity, use <code>StartEngagementFromOpportunityTask</code>.</p>
+         * </li> </ol> <p> After submission, you can't edit the opportunity until the
+         * review is complete. But opportunities in the <code>Pending Submission</code>
+         * state must have complete details. You can update the opportunity while it's in
+         * the <code>Pending Submission</code> state. </p> <p> There's a set of mandatory
+         * fields to create opportunities, but consider providing optional fields to enrich
+         * the opportunity record. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateOpportunity">AWS
          * API Reference</a></p>
          */
@@ -245,8 +238,8 @@ namespace PartnerCentralSelling
 
         /**
          * <p> Allows you to remove an existing association between an
-         * <code>Opportunity</code> and related entities such as a Partner Solution, Amazon
-         * Web Services product, or an Amazon Web Services Marketplace offer. This
+         * <code>Opportunity</code> and related entities, such as a Partner Solution,
+         * Amazon Web Services product, or an Amazon Web Services Marketplace offer. This
          * operation is the counterpart to <code>AssociateOpportunity</code>, and it
          * provides flexibility to manage associations as business needs change. </p> <p>
          * Use this operation to update the associations of an <code>Opportunity</code> due
@@ -254,7 +247,7 @@ namespace PartnerCentralSelling
          * Ensuring accurate associations helps maintain clarity and accuracy to track and
          * manage business opportunities. When you replace an entity, first attach the new
          * entity and then disassociate the one to be removed, especially if it's the last
-         * remaining related entity that's required. </p><p><h3>See Also:</h3>   <a
+         * remaining entity that's required. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/DisassociateOpportunity">AWS
          * API Reference</a></p>
          */
@@ -309,9 +302,10 @@ namespace PartnerCentralSelling
 
         /**
          * <p>Retrieves the details of an engagement invitation shared by AWS with a
-         * partner. The information includes key aspects such as the customer, project
-         * details, and lifecycle information related to the engagement.</p><p><h3>See
-         * Also:</h3>   <a
+         * partner. The information includes aspects such as customer, project details, and
+         * lifecycle information. To connect an engagement invitation with an opportunity,
+         * match the invitation’s <code>Payload.Project.Title</code> with opportunity
+         * <code>Project.Title</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetEngagementInvitation">AWS
          * API Reference</a></p>
          */
@@ -391,22 +385,22 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p>This request accepts a list of filters to use to retrieve a specific subset
-         * of opportunities, as well as sort options. This feature is available to partners
-         * from <a href="https://partnercentral.awspartner.com/">Partner Central</a> using
-         * the <code>ListOpportunities</code> API action. </p> <p>To synchronize your
-         * system with Amazon Web Services, only list the opportunities that were newly
-         * created or updated. We recommend you rely on events emitted by the service into
-         * your Amazon Web Services account’s Amazon EventBridge default event bus, you can
-         * also use the <code>ListOpportunities</code> action. </p> <p>We recommend the
-         * following approach:</p> <ol> <li> <p>Find the latest
-         * <code>LastModifiedDate</code> that you stored, and only use the values that came
-         * from Amazon Web Services. Don’t use values generated by your system. </p> </li>
-         * <li> <p>When you send a <code>ListOpportunities</code> request, submit the date
-         * in ISO 8601 format in the <code>AfterLastModifiedDate</code> filter. </p> </li>
-         * <li> <p>Amazon Web Services only returns opportunities created or updated on or
-         * after that date and time. Use <code>NextToken</code> to iterate over all pages.
-         * </p> </li> </ol><p><h3>See Also:</h3>   <a
+         * <p>This request accepts a list of filters that retrieve opportunity subsets as
+         * well as sort options. This feature is available to partners from <a
+         * href="https://partnercentral.awspartner.com/">Partner Central</a> using the
+         * <code>ListOpportunities</code> API action. </p> <p>To synchronize your system
+         * with Amazon Web Services, only list the opportunities that were newly created or
+         * updated. We recommend you rely on events emitted by the service into your Amazon
+         * Web Services account’s Amazon EventBridge default event bus, you can also use
+         * the <code>ListOpportunities</code> action. </p> <p>We recommend the following
+         * approach:</p> <ol> <li> <p>Find the latest <code>LastModifiedDate</code> that
+         * you stored, and only use the values that came from Amazon Web Services. Don’t
+         * use values generated by your system. </p> </li> <li> <p>When you send a
+         * <code>ListOpportunities</code> request, submit the date in ISO 8601 format in
+         * the <code>AfterLastModifiedDate</code> filter. </p> </li> <li> <p>Amazon Web
+         * Services only returns opportunities created or updated on or after that date and
+         * time. Use <code>NextToken</code> to iterate over all pages. </p> </li>
+         * </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunities">AWS
          * API Reference</a></p>
          */
@@ -458,10 +452,10 @@ namespace PartnerCentralSelling
         }
 
         /**
-         * <p>Use this action to reject an <code>EngagementInvitation</code> that has been
-         * shared by AWS. Rejecting the engagement invitation indicates that the partner
-         * does not wish to pursue the opportunity, and all related data will be
-         * inaccessible after the rejection.</p><p><h3>See Also:</h3>   <a
+         * <p>This action rejects an <code>EngagementInvitation</code> that AWS shared.
+         * Rejecting an invitation indicates that the partner doesn't want to pursue the
+         * opportunity, and all related data will become inaccessible
+         * thereafter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/RejectEngagementInvitation">AWS
          * API Reference</a></p>
          */
@@ -487,10 +481,10 @@ namespace PartnerCentralSelling
 
         /**
          * <p>This action starts the engagement by accepting an
-         * <code>EngagementInvitation</code>. The task is asynchronous and involves several
-         * steps: accepting the invitation, creating an opportunity in the partner’s
-         * account from the AWS Opportunity, and copying over key details for tracking.
-         * Once completed, an <code>Opportunity Created</code> event is generated,
+         * <code>EngagementInvitation</code>. The task is asynchronous and involves the
+         * following steps: accepting the invitation, creating an opportunity in the
+         * partner’s account from the AWS opportunity, and copying details for tracking.
+         * When completed, an <code>Opportunity Created</code> event is generated,
          * indicating that the opportunity has been successfully created in the partner's
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartEngagementByAcceptingInvitationTask">AWS

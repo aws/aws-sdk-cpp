@@ -100,7 +100,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the industry the end <code>Customer</code> belongs to that's
-     * associated with the <code>Opportunity</code> . It refers to the category or
+     * associated with the <code>Opportunity</code>. It refers to the category or
      * sector where the customer's business operates. This is a required field. </p>
      */
     inline const Industry& GetIndustry() const{ return m_industry; }

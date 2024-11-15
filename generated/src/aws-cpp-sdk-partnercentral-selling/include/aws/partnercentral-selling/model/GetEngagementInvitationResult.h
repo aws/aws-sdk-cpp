@@ -39,8 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) that uniquely identifies the engagement
-     * invitation.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the engagement invitation.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }
@@ -68,8 +67,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The title of the engagement invitation, summarizing the purpose or key
-     * objectives of the opportunity shared by AWS.</p>
+     * <p>The title of the engagement invitation, summarizing the purpose or objectives
+     * of the opportunity shared by AWS.</p>
      */
     inline const Aws::String& GetEngagementTitle() const{ return m_engagementTitle; }
     inline void SetEngagementTitle(const Aws::String& value) { m_engagementTitle = value; }
@@ -197,8 +196,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The current status of the engagement invitation (e.g., <code>Accepted</code>,
-     * <code>Pending</code>, or <code>Rejected</code>).</p>
+     * <p>The current status of the engagement invitation.</p>
      */
     inline const InvitationStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const InvitationStatus& value) { m_status = value; }

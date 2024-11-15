@@ -61,8 +61,8 @@ namespace Model
     ///@{
     /**
      * <p> Provides details about the customer associated with the AWS Opportunity,
-     * including account information, industry, and other key customer data. These
-     * details help partners understand the business context of the opportunity. </p>
+     * including account information, industry, and other customer data. These details
+     * help partners understand the business context of the opportunity. </p>
      */
     inline const AwsOpportunityCustomer& GetCustomer() const{ return m_customer; }
     inline void SetCustomer(const AwsOpportunityCustomer& value) { m_customer = value; }
@@ -86,8 +86,8 @@ namespace Model
     ///@{
     /**
      * <p> Specifies the type of involvement AWS has in the opportunity, such as direct
-     * co-sell or advisory support. This field helps partners understand the role AWS
-     * will play in advancing the opportunity. </p>
+     * cosell or advisory support. This field helps partners understand the role AWS
+     * plays in advancing the opportunity. </p>
      */
     inline const SalesInvolvementType& GetInvolvementType() const{ return m_involvementType; }
     inline void SetInvolvementType(const SalesInvolvementType& value) { m_involvementType = value; }
@@ -125,9 +125,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Details the AWS Opportunity team, including key members involved in the
-     * opportunity. This information helps partners know who from AWS is engaged and
-     * their roles in the opportunity. </p>
+     * <p> Details the AWS opportunity team, including members involved. This
+     * information helps partners know who from AWS is engaged and what their role is.
+     * </p>
      */
     inline const Aws::Vector<AwsTeamMember>& GetOpportunityTeam() const{ return m_opportunityTeam; }
     inline void SetOpportunityTeam(const Aws::Vector<AwsTeamMember>& value) { m_opportunityTeam = value; }

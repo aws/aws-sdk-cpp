@@ -41,7 +41,7 @@ namespace Model
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
      * catalog determines which environment the opportunity disassociation is made in.
      * Use <code>AWS</code> to disassociate opportunities in the Amazon Web Services
-     * catalog, and <code>Sandbox</code> to test in a secure and isolated environment.
+     * catalog, and <code>Sandbox</code> for testing in secure, isolated environments.
      * </p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
@@ -57,11 +57,10 @@ namespace Model
     ///@{
     /**
      * <p>The opportunity's unique identifier for when you want to disassociate it from
-     * related entities. This identifier is crucial to ensure the correct opportunity
-     * is updated, especially in environments with numerous opportunities. </p>
-     * <p>Validation: Ensure that the identifier provided corresponds to an existing
-     * opportunity in the Amazon Web Services system because incorrect identifiers
-     * result in an error and no changes are made. </p>
+     * related entities. This identifier helps to ensure that the correct opportunity
+     * is updated. </p> <p>Validation: Ensure that the provided identifier corresponds
+     * to an existing opportunity in the Amazon Web Services system because incorrect
+     * identifiers result in an error and no changes are made. </p>
      */
     inline const Aws::String& GetOpportunityIdentifier() const{ return m_opportunityIdentifier; }
     inline bool OpportunityIdentifierHasBeenSet() const { return m_opportunityIdentifierHasBeenSet; }
@@ -80,11 +79,12 @@ namespace Model
      * or an Amazon Resource Name (ARN) for entities managed through Amazon Web
      * Services Marketplace. </p> <p>For Amazon Web Services Marketplace entities, use
      * the Amazon Web Services Marketplace API to obtain the necessary ARNs. For
-     * guidance on retrieving these ARNs, refer to <a
+     * guidance on retrieving these ARNs, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html">
-     * Amazon Web Services Marketplace Catalog API</a> . </p> <p>Validation: Ensure the
-     * identifier or ARN is valid and corresponds to an existing related entity. An
-     * incorrect or invalid identifier results in an error. </p>
+     * Amazon Web Services MarketplaceUsing the Amazon Web Services Marketplace Catalog
+     * API</a>. </p> <p>Validation: Ensure the identifier or ARN is valid and
+     * corresponds to an existing entity. An incorrect or invalid identifier results in
+     * an error. </p>
      */
     inline const Aws::String& GetRelatedEntityIdentifier() const{ return m_relatedEntityIdentifier; }
     inline bool RelatedEntityIdentifierHasBeenSet() const { return m_relatedEntityIdentifierHasBeenSet; }
@@ -100,12 +100,12 @@ namespace Model
     /**
      * <p>The type of the entity that you're disassociating from the opportunity. When
      * you specify the entity type, it helps the system correctly process the
-     * disassociation request and ensures that the right connections are removed. </p>
+     * disassociation request to ensure that the right connections are removed. </p>
      * <p>Examples of entity types include Partner Solution, Amazon Web Services
-     * product, and Amazon Web Services Marketplace offer. Ensure that the value
-     * matches one of the expected entity types. </p> <p>Validation: Provide a valid
-     * entity type to ensure successful disassociation. Invalid or incorrect entity
-     * types result in an error. </p>
+     * product, and Amazon Web Services Marketplaceoffer. Ensure that the value matches
+     * one of the expected entity types. </p> <p>Validation: Provide a valid entity
+     * type to help ensure successful disassociation. An invalid or incorrect entity
+     * type results in an error. </p>
      */
     inline const RelatedEntityType& GetRelatedEntityType() const{ return m_relatedEntityType; }
     inline bool RelatedEntityTypeHasBeenSet() const { return m_relatedEntityTypeHasBeenSet; }

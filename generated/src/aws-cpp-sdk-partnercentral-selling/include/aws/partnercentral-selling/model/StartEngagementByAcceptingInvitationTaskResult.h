@@ -79,12 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the reason for task failure using an enumerated code. Possible
-     * values are: <code>ACCEPT_ENGAGEMENT_INVITATION_FAILED</code>,
-     * <code>GET_ENGAGEMENT_INVITATION_FAILED</code>,
-     * <code>CREATE_OPPORTUNITY_FAILED</code>,
-     * <code>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</code>,
-     * <code>SUBMIT_OPPORTUNITY_FAILED</code>.</p>
+     * <p>Indicates the reason for task failure using an enumerated code.</p>
      */
     inline const ReasonCode& GetReasonCode() const{ return m_reasonCode; }
     inline void SetReasonCode(const ReasonCode& value) { m_reasonCode = value; }
@@ -121,8 +116,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the task, used to track the task’s progress. This
-     * value follows a specific pattern: <code>^oit-[0-9a-z]{13}$</code>.</p>
+     * <p>The unique identifier of the task, used to track the task’s progress.</p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
     inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
@@ -135,8 +129,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the current status of the task. Valid values include
-     * <code>IN_PROGRESS</code>, <code>COMPLETE</code>, and <code>FAILED</code>.</p>
+     * <p>Indicates the current status of the task.</p>
      */
     inline const TaskStatus& GetTaskStatus() const{ return m_taskStatus; }
     inline void SetTaskStatus(const TaskStatus& value) { m_taskStatus = value; }

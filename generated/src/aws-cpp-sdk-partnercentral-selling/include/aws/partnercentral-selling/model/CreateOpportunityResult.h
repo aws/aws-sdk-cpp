@@ -37,9 +37,8 @@ namespace Model
     /**
      * <p> Read-only, system-generated <code>Opportunity</code> unique identifier.
      * Amazon Web Services creates this identifier, and it's used for all subsequent
-     * actions on the opportunity, such as updates, associations, and submissions. It
-     * ensures that each opportunity can be accurately tracked and managed within the
-     * system. </p>
+     * opportunity actions, such as updates, associations, and submissions. It helps to
+     * ensure that each opportunity is accurately tracked and managed. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline void SetId(const Aws::String& value) { m_id = value; }
@@ -53,8 +52,7 @@ namespace Model
     ///@{
     /**
      * <p> <code>DateTime</code> when the opportunity was last modified. When the
-     * <code>Opportunity</code> is created, its value is equal to
-     * <code>CreatedDate</code>. </p>
+     * <code>Opportunity</code> is created, its value is <code>CreatedDate</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }

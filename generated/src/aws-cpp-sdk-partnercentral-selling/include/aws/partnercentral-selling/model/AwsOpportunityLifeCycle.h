@@ -60,7 +60,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the immediate next steps required to progress the opportunity.
-     * These steps are based on AWS's guidance and the current stage of the
+     * These steps are based on AWS guidance and the current stage of the
      * opportunity.</p>
      */
     inline const Aws::String& GetNextSteps() const{ return m_nextSteps; }

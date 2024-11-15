@@ -97,13 +97,13 @@ namespace Model
     ///@{
     /**
      * <p>Describes the problem the end customer has, and how the partner is helping.
-     * Utilize this field to provide a clear and concise narrative that outlines the
-     * specific business challenge or issue the customer has. Elaborate on how the
-     * partner's solution or offerings align to resolve the customer's business
-     * problem. Include relevant information about the partner's value proposition,
-     * unique selling points, and expertise to tackle the issue. Offer insights on how
-     * the proposed solution meets the customer's needs and provides value. Use concise
-     * language and precise descriptions to convey the context and significance of the
+     * Utilize this field to provide a concise narrative that outlines the customer's
+     * business challenge or issue. Elaborate on how the partner's solution or
+     * offerings align to resolve the customer's business problem. Include relevant
+     * information about the partner's value proposition, unique selling points, and
+     * expertise to tackle the issue. Offer insights on how the proposed solution meets
+     * the customer's needs and provides value. Use concise language and precise
+     * descriptions to convey the context and significance of the
      * <code>Opportunity</code>. The content in this field helps Amazon Web Services
      * understand the nature of the <code>Opportunity</code> and the strategic fit of
      * the partner's solution. </p>
@@ -124,18 +124,18 @@ namespace Model
      * Opportunity. This field captures the primary use case or objective of the
      * proposed solution, and provides context and clarity to the addressed workload.
      * </p> <p> Valid values: <code>AI Machine Learning and Analytics | Archiving | Big
-     * Data: Data Warehouse / Data Integration / ETL / Data Lake / BI | Blockchain |
-     * Business Applications: Mainframe Modernization | Business Applications &amp;
-     * Contact Center | Business Applications &amp; SAP Production | Centralized
-     * Operations Management | Cloud Management Tools | Cloud Management Tools &amp;
-     * DevOps with Continuous Integration &amp; Continuous Delivery (CICD) |
-     * Configuration, Compliance &amp; Auditing | Connected Services | Containers &amp;
-     * Serverless | Content Delivery &amp; Edge Services | Database | Edge Computing /
-     * End User Computing | Energy | Enterprise Governance &amp; Controls | Enterprise
-     * Resource Planning | Financial Services | Healthcare and Life Sciences | High
-     * Performance Computing | Hybrid Application Platform | Industrial Software | IOT
-     * | Manufacturing, Supply Chain and Operations | Media &amp; High performance
-     * computing (HPC) | Migration / Database Migration | Monitoring, logging and
+     * Data: Data Warehouse/Data Integration/ETL/Data Lake/BI | Blockchain | Business
+     * Applications: Mainframe Modernization | Business Applications &amp; Contact
+     * Center | Business Applications &amp; SAP Production | Centralized Operations
+     * Management | Cloud Management Tools | Cloud Management Tools &amp; DevOps with
+     * Continuous Integration &amp; Continuous Delivery (CICD) | Configuration,
+     * Compliance &amp; Auditing | Connected Services | Containers &amp; Serverless |
+     * Content Delivery &amp; Edge Services | Database | Edge Computing/End User
+     * Computing | Energy | Enterprise Governance &amp; Controls | Enterprise Resource
+     * Planning | Financial Services | Healthcare and Life Sciences | High Performance
+     * Computing | Hybrid Application Platform | Industrial Software | IOT |
+     * Manufacturing, Supply Chain and Operations | Media &amp; High performance
+     * computing (HPC) | Migration/Database Migration | Monitoring, logging and
      * performance | Monitoring &amp; Observability | Networking | Outpost | SAP |
      * Security &amp; Compliance | Storage &amp; Backup | Training | VMC | VMWare | Web
      * development &amp; DevOps</code> </p>
@@ -247,9 +247,9 @@ namespace Model
      * customer: Initial conversations with the customer to understand their needs and
      * introduce your solution. </p> </li> <li> <p> Customer has shown interest in
      * solution: After initial discussions, the customer is interested in your
-     * solution. </p> </li> <li> <p> Conducted POC / Demo: You conducted a proof of
+     * solution. </p> </li> <li> <p> Conducted POC/demo: You conducted a proof of
      * concept (POC) or demonstration of the solution for the customer. </p> </li> <li>
-     * <p> In evaluation / planning stage: The customer is evaluating the solution and
+     * <p> In evaluation/planning stage: The customer is evaluating the solution and
      * planning potential implementation. </p> </li> <li> <p> Agreed on solution to
      * Business Problem: Both parties agree on how the solution addresses the
      * customer's business problem. </p> </li> <li> <p> Completed Action Plan: A

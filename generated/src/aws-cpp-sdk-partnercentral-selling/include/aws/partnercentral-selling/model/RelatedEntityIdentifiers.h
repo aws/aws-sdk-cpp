@@ -92,11 +92,11 @@ namespace Model
      * obtain with the <code>ListSolutions</code> operation. </p> <p> If the specific
      * solution identifier is not available, you can use the value <code>Other</code>
      * and provide details about the solution in the <code>otherSolutionOffered</code>
-     * field. However, once the opportunity reaches the <code>Committed</code> stage or
+     * field. But when the opportunity reaches the <code>Committed</code> stage or
      * beyond, the <code>Other</code> value cannot be used, and a valid solution
      * identifier must be provided. </p> <p> By associating the relevant solutions with
-     * the opportunity, you can clearly communicate the offerings that are being
-     * considered or implemented to address the customer's business problem. </p>
+     * the opportunity, you can communicate the offerings that are being considered or
+     * implemented to address the customer's business problem. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSolutions() const{ return m_solutions; }
     inline bool SolutionsHasBeenSet() const { return m_solutionsHasBeenSet; }

@@ -52,13 +52,13 @@ namespace Model
      * <p>Customer Deficiency: The customer lacked necessary resources or
      * capabilities.</p> </li> <li> <p>Delay/Cancellation of Project: The project was
      * delayed or canceled.</p> </li> <li> <p>Legal/Tax/Regulatory: Legal, tax, or
-     * regulatory issues prevented progress.</p> </li> <li> <p>Lost to Competitor -
-     * Google: The opportunity was lost to Google.</p> </li> <li> <p>Lost to Competitor
-     * - Microsoft: The opportunity was lost to Microsoft.</p> </li> <li> <p>Lost to
-     * Competitor - SoftLayer: The opportunity was lost to SoftLayer.</p> </li> <li>
-     * <p>Lost to Competitor - VMWare: The opportunity was lost to VMWare.</p> </li>
-     * <li> <p>Lost to Competitor - Other: The opportunity was lost to a competitor not
-     * listed above.</p> </li> <li> <p>No Opportunity: There was no opportunity to
+     * regulatory issues prevented progress.</p> </li> <li> <p>Lost to
+     * Competitor—Google: The opportunity was lost to Google.</p> </li> <li> <p>Lost to
+     * Competitor—Microsoft: The opportunity was lost to Microsoft.</p> </li> <li>
+     * <p>Lost to Competitor—SoftLayer: The opportunity was lost to SoftLayer.</p>
+     * </li> <li> <p>Lost to Competitor—VMWare: The opportunity was lost to VMWare.</p>
+     * </li> <li> <p>Lost to Competitor—Other: The opportunity was lost to a competitor
+     * not listed above.</p> </li> <li> <p>No Opportunity: There was no opportunity to
      * pursue.</p> </li> <li> <p>On Premises Deployment: The customer chose an
      * on-premises solution.</p> </li> <li> <p>Partner Gap: The partner lacked
      * necessary resources or capabilities.</p> </li> <li> <p>Price: The price was not
@@ -83,8 +83,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>.
-     * This field is utilized to communicate to Amazon Web Services the next actions
+     * <p>Specifies the upcoming actions or tasks for the <code>Opportunity</code>. Use
+     * this field to communicate with Amazon Web Services about the next actions
      * required for the <code>Opportunity</code>. </p>
      */
     inline const Aws::String& GetNextSteps() const{ return m_nextSteps; }
@@ -114,7 +114,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates why an opportuntiy was sent back for further details. Partners must
+     * <p>Indicates why an opportunity was sent back for further details. Partners must
      * take corrective action based on the <code>ReviewComments</code>.</p>
      */
     inline const Aws::String& GetReviewComments() const{ return m_reviewComments; }
@@ -137,9 +137,10 @@ namespace Model
      * Amazon Web Services is validating (read-only). </p> </li> <li> <p> Action
      * Required: Issues that Amazon Web Services highlights need to be addressed.
      * Partners should use the <code>UpdateOpportunity</code> API action to update the
-     * opportunity, and ensure all required changes are made. Only these fields are
-     * editable when the <code>Lifecycle.ReviewStatus</code> is <code>Action
-     * Required</code>: </p> <ul> <li> <p>Customer.Account.Address.City</p> </li> <li>
+     * opportunity and helps to ensure that all required changes are made. Only the
+     * following fields are editable when the <code>Lifecycle.ReviewStatus</code> is
+     * <code>Action Required</code>: </p> <ul> <li>
+     * <p>Customer.Account.Address.City</p> </li> <li>
      * <p>Customer.Account.Address.CountryCode</p> </li> <li>
      * <p>Customer.Account.Address.PostalCode</p> </li> <li>
      * <p>Customer.Account.Address.StateOrRegion</p> </li> <li>
@@ -194,17 +195,16 @@ namespace Model
      * Prospect: Amazon Web Services identifies the opportunity. It can be active
      * (Comes directly from the end customer through a lead) or latent (Your account
      * team believes it exists based on research, account plans, sales plays). </p>
-     * </li> <li> <p> Qualified: Your account team engaged with the prospect/end
-     * customer to discuss viability and understand requirements. The prospect/end
-     * customer agreed that the opportunity is real, of interest, and may solve key
-     * business/technical needs. </p> </li> <li> <p> Technical Validation: All parties
-     * understand the implementation plan. </p> </li> <li> <p> Business Validation:
-     * Pricing was proposed, and all parties agree to the steps to close. </p> </li>
-     * <li> <p> Committed: The customer signed the contract, but Amazon Web Services
-     * hasn't started billing. </p> </li> <li> <p> Launched: The workload is complete,
-     * and Amazon Web Services has started billing. </p> </li> <li> <p> Closed Lost:
-     * The opportunity is lost, and there are no steps to move forward. </p> </li>
-     * </ul>
+     * </li> <li> <p> Qualified: Your account team engaged with the customer to discuss
+     * viability and requirements. The customer agreed that the opportunity is real, of
+     * interest, and may solve business/technical needs. </p> </li> <li> <p> Technical
+     * Validation: All parties understand the implementation plan. </p> </li> <li> <p>
+     * Business Validation: Pricing was proposed, and all parties agree to the steps to
+     * close. </p> </li> <li> <p> Committed: The customer signed the contract, but
+     * Amazon Web Services hasn't started billing. </p> </li> <li> <p> Launched: The
+     * workload is complete, and Amazon Web Services has started billing. </p> </li>
+     * <li> <p> Closed Lost: The opportunity is lost, and there are no steps to move
+     * forward. </p> </li> </ul>
      */
     inline const Stage& GetStage() const{ return m_stage; }
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }

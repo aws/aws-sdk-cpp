@@ -88,8 +88,7 @@ namespace Model
     ///@{
     /**
      * <p>Represents the contact details of the AWS representatives involved in sending
-     * the Engagement Invitation. These contacts are key stakeholders for the
-     * opportunity.</p>
+     * the Engagement Invitation. These contacts are opportunity stakeholders.</p>
      */
     inline const Aws::Vector<SenderContact>& GetSenderContacts() const{ return m_senderContacts; }
     inline bool SenderContactsHasBeenSet() const { return m_senderContactsHasBeenSet; }

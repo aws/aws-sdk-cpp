@@ -52,7 +52,7 @@ namespace Model
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
      * catalog determines which environment the opportunity is created in. Use
      * <code>AWS</code> to create opportunities in the Amazon Web Services catalog, and
-     * <code>Sandbox</code> to test in a secure and isolated environment. </p>
+     * <code>Sandbox</code> for testing in secure, isolated environments. </p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -68,11 +68,11 @@ namespace Model
     /**
      * <p> Required to be unique, and should be unchanging, it can be randomly
      * generated or a meaningful string. </p> <p> Default: None </p> <p> Best practice:
-     * To ensure uniqueness and avoid collisions, we recommend you use a UUID
-     * (Universally Unique Identifier) as the <code>ClientToken</code>. You can use
-     * standard libraries available in most programming languages to generated this. If
-     * you use the same client token, the API throws this error: "Conflicting client
-     * token submitted for a new request body". </p>
+     * To help ensure uniqueness and avoid conflicts, use a Universally Unique
+     * Identifier (UUID) as the <code>ClientToken</code>. You can use standard
+     * libraries from most programming languages to generate this. If you use the same
+     * client token, the API returns the following error: "Conflicting client token
+     * submitted for a new request body." </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -140,9 +140,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Represents the internal team handling the opportunity. Specify the members
-     * involved in collaborating on this opportunity within the partner's
-     * organization.</p>
+     * <p>Represents the internal team handling the opportunity. Specify collaborating
+     * members of this opportunity who are within the partner's organization.</p>
      */
     inline const Aws::Vector<Contact>& GetOpportunityTeam() const{ return m_opportunityTeam; }
     inline bool OpportunityTeamHasBeenSet() const { return m_opportunityTeamHasBeenSet; }
@@ -196,10 +195,10 @@ namespace Model
     /**
      * <p> Specifies the opportunity's unique identifier in the partner's CRM system.
      * This value is essential to track and reconcile because it's included in the
-     * outbound payload sent back to the partner. </p> <p> This field allows partners
-     * to link an opportunity to their CRM, to ensure seamless integration and accurate
-     * synchronization between the Partner Central API and the partner's internal
-     * systems. </p>
+     * outbound payload to the partner. </p> <p> This field allows partners to link an
+     * opportunity to their CRM, which helps to ensure seamless integration and
+     * accurate synchronization between the Partner Central API and the partner's
+     * internal systems. </p>
      */
     inline const Aws::String& GetPartnerOpportunityIdentifier() const{ return m_partnerOpportunityIdentifier; }
     inline bool PartnerOpportunityIdentifierHasBeenSet() const { return m_partnerOpportunityIdentifierHasBeenSet; }
@@ -214,31 +213,30 @@ namespace Model
     ///@{
     /**
      * <p> Identifies the type of support the partner needs from Amazon Web Services.
-     * </p> <p> Valid values: </p> <ul> <li> <p> Co-Sell - Architectural Validation:
+     * </p> <p> Valid values: </p> <ul> <li> <p> Cosell—Architectural Validation:
      * Confirmation from Amazon Web Services that the partner's proposed solution
      * architecture is aligned with Amazon Web Services best practices and poses
-     * minimal architectural risks. </p> </li> <li> <p> Co-Sell - Business
-     * Presentation: Request Amazon Web Services seller's participation in a joint
-     * customer presentation. </p> </li> <li> <p> Co-Sell - Competitive Information:
-     * Access to Amazon Web Services competitive resources and support for the
-     * partner's proposed solution. </p> </li> <li> <p> Co-Sell - Pricing Assistance:
-     * Connect with an Amazon Web Services seller for support situations where a
-     * partner may be receiving an upfront discount on a service (for example: EDP
-     * deals). </p> </li> <li> <p> Co-Sell - Technical Consultation: Connect with an
-     * Amazon Web Services Solutions Architect to address the partner's questions about
-     * the proposed solution. </p> </li> <li> <p> Co-Sell - Total Cost of Ownership
-     * Evaluation: Assistance with quoting different cost savings of proposed solutions
-     * on Amazon Web Services versus on-premises or a traditional hosting environment.
-     * </p> </li> <li> <p> Co-Sell - Deal Support: Request Amazon Web Services seller's
-     * support to progress the opportunity (for example: joint customer call, strategic
-     * positioning). </p> </li> <li> <p> Co-Sell - Support for Public Tender / RFx:
-     * Opportunity related to the public sector where the partner needs Amazon Web
-     * Services RFx support. </p> </li> <li> <p> Do Not Need Support from AWS Sales
-     * Rep: Indicates that a partner doesn't need support from an Amazon Web Services
-     * sales representative, and the partner solely manages the opportunity. It's
-     * possible to request co-selling support on these opportunities at any stage
-     * during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.
-     * </p> </li> </ul>
+     * minimal architectural risks. </p> </li> <li> <p> Cosell—Business Presentation:
+     * Request Amazon Web Services seller's participation in a joint customer
+     * presentation. </p> </li> <li> <p> Cosell—Competitive Information: Access to
+     * Amazon Web Services competitive resources and support for the partner's proposed
+     * solution. </p> </li> <li> <p> Cosell—Pricing Assistance: Connect with an Amazon
+     * Web Services seller for support situations where a partner may be receiving an
+     * upfront discount on a service (for example: EDP deals). </p> </li> <li> <p>
+     * Cosell—Technical Consultation: Connect with an Amazon Web Services Solutions
+     * Architect to address the partner's questions about the proposed solution. </p>
+     * </li> <li> <p> Cosell—Total Cost of Ownership Evaluation: Assistance with
+     * quoting different cost savings of proposed solutions on Amazon Web Services
+     * versus on-premises or a traditional hosting environment. </p> </li> <li> <p>
+     * Cosell—Deal Support: Request Amazon Web Services seller's support to progress
+     * the opportunity (for example: joint customer call, strategic positioning). </p>
+     * </li> <li> <p> Cosell—Support for Public Tender/RFx: Opportunity related to the
+     * public sector where the partner needs Amazon Web Services RFx support. </p>
+     * </li> <li> <p> Do Not Need Support from AWS Sales Rep: Indicates that a partner
+     * doesn't need support from an Amazon Web Services sales representative, and the
+     * partner solely manages the opportunity. It's possible to request coselling
+     * support on these opportunities at any stage during their lifecycles. This is
+     * also known as a for-visibility-only (FVO) opportunity. </p> </li> </ul>
      */
     inline const Aws::Vector<PrimaryNeedFromAws>& GetPrimaryNeedsFromAws() const{ return m_primaryNeedsFromAws; }
     inline bool PrimaryNeedsFromAwsHasBeenSet() const { return m_primaryNeedsFromAwsHasBeenSet; }
@@ -265,8 +263,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies details of a customer's procurement terms. Required only for
-     * partners in eligible programs.</p>
+     * <p>Specifies details of a customer's procurement terms. This is required only
+     * for partners in eligible programs.</p>
      */
     inline const SoftwareRevenue& GetSoftwareRevenue() const{ return m_softwareRevenue; }
     inline bool SoftwareRevenueHasBeenSet() const { return m_softwareRevenueHasBeenSet; }

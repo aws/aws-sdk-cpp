@@ -71,7 +71,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies which industry the end <code>Customer</code> belongs to associated
-     * with the <code>Opportunity</code> . It refers to the category or sector that the
+     * with the <code>Opportunity</code>. It refers to the category or sector that the
      * customer's business operates in. </p> <p>To submit a value outside the picklist,
      * use <code>Other</code>. </p> <p>Conditionally mandatory if <code>Other</code> is
      * selected for Industry Vertical in LOVs. </p>

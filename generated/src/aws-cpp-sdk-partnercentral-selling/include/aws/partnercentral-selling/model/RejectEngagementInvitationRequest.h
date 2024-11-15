@@ -36,9 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the catalog related to the engagement invitation. Accepted values
-     * are <code>AWS</code> and <code>Sandbox</code>, which determine the environment
-     * in which the opportunity is managed.</p>
+     * <p>This is the catalog that's associated with the engagement invitation.
+     * Acceptable values are <code>AWS</code> or <code>Sandbox</code>, and these values
+     * determine the environment in which the opportunity is managed.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -52,9 +52,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the unique identifier of the <code>EngagementInvitation</code> to
-     * be rejected. Providing the correct identifier ensures that the intended
-     * invitation is rejected.</p>
+     * <p>This is the unique identifier of the rejected
+     * <code>EngagementInvitation</code>. Providing the correct identifier helps to
+     * ensure that the intended invitation is rejected.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
@@ -68,17 +68,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the reason for rejecting the engagement invitation. Providing a
-     * reason helps document the rationale behind the rejection and assists AWS in
-     * tracking patterns or issues. Possible values include:</p> <ul> <li> <p>
-     * <i>Customer problem unclear:</i> The customer's problem is not clearly
-     * defined.</p> </li> <li> <p> <i>Next steps unclear:</i> The next steps required
-     * to proceed are not clear.</p> </li> <li> <p> <i>Unable to support:</i> The
-     * partner is unable to provide support due to resource or capability
-     * constraints.</p> </li> <li> <p> <i>Duplicate of Partner Referral:</i> The
-     * opportunity is a duplicate of an existing referral.</p> </li> <li> <p>
-     * <i>Other:</i> Any other reason not covered by the specified values.</p> </li>
-     * </ul>
+     * <p>This describes the reason for rejecting the engagement invitation, which
+     * helps AWS track usage patterns. Acceptable values include the following:</p>
+     * <ul> <li> <p> <i>Customer problem unclear:</i> The customer's problem isn't
+     * understood.</p> </li> <li> <p> <i>Next steps unclear:</i> The next steps
+     * required to proceed aren't understood.</p> </li> <li> <p> <i>Unable to
+     * support:</i> The partner is unable to provide support due to resource or
+     * capability constraints.</p> </li> <li> <p> <i>Duplicate of partner referral:</i>
+     * The opportunity is a duplicate of an existing referral.</p> </li> <li> <p>
+     * <i>Other:</i> Any reason not covered by other values.</p> </li> </ul>
      */
     inline const Aws::String& GetRejectionReason() const{ return m_rejectionReason; }
     inline bool RejectionReasonHasBeenSet() const { return m_rejectionReasonHasBeenSet; }

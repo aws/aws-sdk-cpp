@@ -74,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates why an opportuntiy was sent back for further details. Partners must
+     * <p>Indicates why an opportunity was sent back for further details. Partners must
      * take corrective action based on the <code>ReviewComments</code>.</p>
      */
     inline const Aws::String& GetReviewComments() const{ return m_reviewComments; }
@@ -154,17 +154,16 @@ namespace Model
      * Prospect: Amazon Web Services identifies the opportunity. It can be active
      * (Comes directly from the end customer through a lead) or latent (Your account
      * team believes it exists based on research, account plans, sales plays). </p>
-     * </li> <li> <p> Qualified: Your account team engaged with the prospect/end
-     * customer to discuss viability and understand requirements. The prospect/end
-     * customer agreed that the opportunity is real, of interest, and may solve key
-     * business/technical needs. </p> </li> <li> <p> Technical Validation: All parties
-     * understand the implementation plan. </p> </li> <li> <p> Business Validation:
-     * Pricing has been proposed, Pricing was proposed, and all parties agree to the
-     * steps to close. </p> </li> <li> <p> Committed: The customer signed the contract,
-     * but Amazon Web Services hasn't started billing. </p> </li> <li> <p> Launched:
-     * The workload is complete, and Amazon Web Services has started billing. </p>
-     * </li> <li> <p> Closed Lost: The opportunity is lost, and there are no steps to
-     * move forward. </p> </li> </ul>
+     * </li> <li> <p> Qualified: Your account team engaged with the customer to discuss
+     * viability and understand requirements. The customer agreed that the opportunity
+     * is real, of interest, and may solve business/technical needs. </p> </li> <li>
+     * <p> Technical Validation: All parties understand the implementation plan. </p>
+     * </li> <li> <p> Business Validation: Pricing was proposed, and all parties agree
+     * to the steps to close. </p> </li> <li> <p> Committed: The customer signed the
+     * contract, but Amazon Web Services hasn't started billing. </p> </li> <li> <p>
+     * Launched: The workload is complete, and Amazon Web Services has started billing.
+     * </p> </li> <li> <p> Closed Lost: The opportunity is lost, and there are no steps
+     * to move forward. </p> </li> </ul>
      */
     inline const Stage& GetStage() const{ return m_stage; }
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }

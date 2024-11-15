@@ -41,7 +41,8 @@ namespace Model
     ///@{
     /**
      * <p>The partner contact's title (job title or role) associated with the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>. <code>BusinessTitle</code> supports either
+     * <code>PartnerAccountManager</code> or <code>OpportunityOwner</code>. </p>
      */
     inline const Aws::String& GetBusinessTitle() const{ return m_businessTitle; }
     inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }

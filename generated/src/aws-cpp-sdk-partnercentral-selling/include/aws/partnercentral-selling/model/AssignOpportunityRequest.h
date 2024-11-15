@@ -56,7 +56,7 @@ namespace Model
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
      * catalog determines which environment the opportunity is assigned in. Use
      * <code>AWS</code> to assign real opportunities in the Amazon Web Services
-     * catalog, and <code>Sandbox</code> to test in a secure and isolated environment.
+     * catalog, and <code>Sandbox</code> for testing in secure, isolated environments.
      * </p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }

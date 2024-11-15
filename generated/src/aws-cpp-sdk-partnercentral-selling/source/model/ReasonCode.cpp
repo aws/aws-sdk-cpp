@@ -30,6 +30,7 @@ namespace Aws
         static const int InternalError_HASH = HashingUtils::HashString("InternalError");
         static const int OpportunityValidationFailed_HASH = HashingUtils::HashString("OpportunityValidationFailed");
         static const int OpportunityConflict_HASH = HashingUtils::HashString("OpportunityConflict");
+        static const int ResourceSnapshotAccessDenied_HASH = HashingUtils::HashString("ResourceSnapshotAccessDenied");
 
 
         ReasonCode GetReasonCodeForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return ReasonCode::OpportunityConflict;
           }
+          else if (hashCode == ResourceSnapshotAccessDenied_HASH)
+          {
+            return ReasonCode::ResourceSnapshotAccessDenied;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -111,6 +116,8 @@ namespace Aws
             return "OpportunityValidationFailed";
           case ReasonCode::OpportunityConflict:
             return "OpportunityConflict";
+          case ReasonCode::ResourceSnapshotAccessDenied:
+            return "ResourceSnapshotAccessDenied";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

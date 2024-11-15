@@ -52,8 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the unique identifier for the engagement invitation being
-     * retrieved.</p>
+     * <p>Specifies the unique identifier for the retrieved engagement invitation.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
