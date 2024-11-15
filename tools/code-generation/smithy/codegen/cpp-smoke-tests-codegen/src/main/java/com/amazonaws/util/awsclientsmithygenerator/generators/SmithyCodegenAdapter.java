@@ -127,9 +127,26 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
     }
 
     @Override
+    public boolean isDouble(Node d)
+    {
+        if(d.isNumberNode())
+        {
+            double v = d.asNumberNode().get().asBigDecimal().get().doubleValue();
+            return  Double.isFinite(v) && !Double.isNaN(v) ;
+        }
+        return false;
+    }
+
+    @Override
     public boolean isFloatShape( Shape s)
     {
         return s.getType() == ShapeType.FLOAT;
+    }
+
+    @Override
+    public boolean isDoubleShape( Shape s)
+    {
+        return s.getType() == ShapeType.DOUBLE;
     }
 
     @Override
@@ -169,6 +186,12 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
     }
 
     @Override
+    public boolean isTimestampShape(Shape s)
+    {
+        return s.getType() == ShapeType.TIMESTAMP;
+    }
+
+    @Override
     public List<Node> getList(Node d)
     {
         return d.asArrayNode().get().getElements();
@@ -196,6 +219,12 @@ public class SmithyCodegenAdapter implements GenericCodegenAdapter<Shape, Node>{
     public Float getFloat(Node d)
     {
         return d.asNumberNode().get().asBigDecimal().get().floatValue();
+    }
+
+    @Override
+    public Double getDouble(Node d)
+    {
+        return d.asNumberNode().get().asBigDecimal().get().doubleValue();
     }
 
     @Override
