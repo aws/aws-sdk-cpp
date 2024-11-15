@@ -25,18 +25,17 @@ namespace Aws
      */
     struct LoggingOptions
     {
-        LoggingOptions() : logLevel(Aws::Utils::Logging::LogLevel::Off), defaultLogPrefix(DEFAULT_LOG_PREFIX)
-        { }
+        LoggingOptions() = default;
 
         /**
          * Defaults to Off, if this is set to something else, then logging will be turned on and logLevel will be passed to the logger
          */
-        Aws::Utils::Logging::LogLevel logLevel;
+        Aws::Utils::Logging::LogLevel logLevel = Aws::Utils::Logging::LogLevel::Off;
 
         /**
          * Defaults to aws_sdk_. This will only be used if the default logger is used.
          */
-        const char* defaultLogPrefix;
+        const char* defaultLogPrefix = DEFAULT_LOG_PREFIX;
 
         /**
          * Defaults to empty, if logLevel has been set and this field is empty, then the default log system will be used.
@@ -56,15 +55,14 @@ namespace Aws
      */
     struct MemoryManagementOptions
     {
-        MemoryManagementOptions() : memoryManager(nullptr)
-        { }
+        MemoryManagementOptions() = default;
 
         /**
          * Defaults to nullptr. If custom memory management is being used and this hasn't been set then the default memory
          * manager will be used. If this has been set and custom memory management has been turned on, then this will be installed
          * at startup time.
          */
-        Aws::Utils::Memory::MemorySystemInterface* memoryManager;
+        Aws::Utils::Memory::MemorySystemInterface* memoryManager = nullptr;
     };
 
     /**
@@ -81,8 +79,7 @@ namespace Aws
      */
     struct HttpOptions
     {
-        HttpOptions() : initAndCleanupCurl(true), installSigPipeHandler(false), compliantRfc3986Encoding(false)
-        { }
+        HttpOptions() = default;
 
         /**
          * Defaults to empty, if this is set, then the result of your closure will be installed and used instead of the system defaults
@@ -92,7 +89,7 @@ namespace Aws
         * libCurl infects everything with its global state. If it is being used then we automatically initialize and clean it up.
         * If this is a problem for you, set this to false. If you manually initialize libcurl please add the option CURL_GLOBAL_ALL to your init call.
         */
-        bool initAndCleanupCurl;
+        bool initAndCleanupCurl = true;
         /**
          * Installs a global SIGPIPE handler that logs the error and prevents it from terminating the current process.
          * This can be used on operating systems on which CURL is being used. In some situations CURL cannot avoid
@@ -100,11 +97,11 @@ namespace Aws
          * For more information see: https://curl.haxx.se/libcurl/c/CURLOPT_NOSIGNAL.html
          * NOTE: CURLOPT_NOSIGNAL is already being set.
          */
-        bool installSigPipeHandler;
+        bool installSigPipeHandler = false;
         /**
          * Disable legacy URL encoding that leaves `$&,:@=` unescaped for legacy purposes.
          */
-        bool compliantRfc3986Encoding;
+        bool compliantRfc3986Encoding = false;
         /**
          * When constructing Path segments in a URI preserve path separators instead of collapsing
          * slashes. This is useful for aligning with other SDKs and tools on key path for S3 objects
@@ -120,8 +117,7 @@ namespace Aws
      */
     struct CryptoOptions
     {
-        CryptoOptions() : initAndCleanupOpenSSL(true)
-        { }
+        CryptoOptions() = default;
 
         /**
          * If set, this closure will be used to create and install the factory.
@@ -164,7 +160,7 @@ namespace Aws
          * If this is a problem for you, set this to false. Be aware that if you don't use our init and cleanup and you are using
          * crypto functionality, you are responsible for installing thread locking, and loading strings and error messages.
          */
-        bool initAndCleanupOpenSSL;
+        bool initAndCleanupOpenSSL = true;
     };
 
     /**
@@ -224,40 +220,41 @@ namespace Aws
      */
     struct SDKOptions
     {
+        SDKOptions() = default;
         /**
          * SDK wide options for I/O: client bootstrap and TLS connection options
          */
-        IoOptions ioOptions;
+        IoOptions ioOptions = {};
         /**
          * SDK wide options for logging
          */
-        LoggingOptions loggingOptions;
+        LoggingOptions loggingOptions = {};
         /**
          * SDK wide options for memory management
          */
-        MemoryManagementOptions memoryManagementOptions;
+        MemoryManagementOptions memoryManagementOptions = {};
         /**
          * SDK wide options for http
          */
-        HttpOptions httpOptions;
+        HttpOptions httpOptions = {};
         /**
          * SDK wide options for crypto
          */
-        CryptoOptions cryptoOptions;
+        CryptoOptions cryptoOptions = {};
 
         /**
          * Options used to set up customized monitoring implementations
          * Put your monitoring factory in a closure (a create factory function) and put all closures in a vector.
          * Basic usage can be found in aws-cpp-sdk-core-tests/monitoring/MonitoringTest.cpp
          */
-        MonitoringOptions monitoringOptions;
+        MonitoringOptions monitoringOptions = {};
 
         struct SDKVersion
         {
             unsigned char major = AWS_SDK_VERSION_MAJOR;
             unsigned char minor = AWS_SDK_VERSION_MINOR;
             unsigned short patch = AWS_SDK_VERSION_PATCH;
-        } sdkVersion;
+        } sdkVersion = {};
     };
 
     /*
