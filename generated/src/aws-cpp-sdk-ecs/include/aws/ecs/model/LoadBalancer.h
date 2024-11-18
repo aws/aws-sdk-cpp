@@ -79,9 +79,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the load balancer to associate with the service or task set.</p>
-     * <p>If you are using an Application Load Balancer or a Network Load Balancer the
-     * load balancer name parameter should be omitted.</p>
+     * <p>The name of the load balancer to associate with the Amazon ECS service or
+     * task set.</p> <p>If you are using an Application Load Balancer or a Network Load
+     * Balancer the load balancer name parameter should be omitted.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }

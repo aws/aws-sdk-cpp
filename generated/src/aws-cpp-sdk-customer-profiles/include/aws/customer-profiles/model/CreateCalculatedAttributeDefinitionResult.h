@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/model/AttributeDetails.h>
 #include <aws/customer-profiles/model/Conditions.h>
+#include <aws/customer-profiles/model/Filter.h>
 #include <aws/customer-profiles/model/Statistic.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -102,6 +103,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The filter that was used as part of the request.</p>
+     */
+    inline const Filter& GetFilter() const{ return m_filter; }
+    inline void SetFilter(const Filter& value) { m_filter = value; }
+    inline void SetFilter(Filter&& value) { m_filter = std::move(value); }
+    inline CreateCalculatedAttributeDefinitionResult& WithFilter(const Filter& value) { SetFilter(value); return *this;}
+    inline CreateCalculatedAttributeDefinitionResult& WithFilter(Filter&& value) { SetFilter(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The aggregation operation to perform for the calculated attribute.</p>
      */
     inline const Statistic& GetStatistic() const{ return m_statistic; }
@@ -173,6 +185,8 @@ namespace Model
     AttributeDetails m_attributeDetails;
 
     Conditions m_conditions;
+
+    Filter m_filter;
 
     Statistic m_statistic;
 

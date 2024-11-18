@@ -25,6 +25,7 @@
 #include <aws/ec2/model/PrivateDnsNameOptionsResponse.h>
 #include <aws/ec2/model/InstanceMaintenanceOptions.h>
 #include <aws/ec2/model/InstanceBootModeValues.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/InstanceState.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/Placement.h>
@@ -574,6 +575,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The entity that manages the instance.</p>
+     */
+    inline const OperatorResponse& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorResponse& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorResponse&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline Instance& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
+    inline Instance& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
@@ -963,6 +976,9 @@ namespace Model
 
     InstanceBootModeValues m_currentInstanceBootMode;
     bool m_currentInstanceBootModeHasBeenSet = false;
+
+    OperatorResponse m_operator;
+    bool m_operatorHasBeenSet = false;
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;

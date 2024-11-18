@@ -67,6 +67,12 @@ GetCalculatedAttributeDefinitionResult& GetCalculatedAttributeDefinitionResult::
 
   }
 
+  if(jsonValue.ValueExists("Filter"))
+  {
+    m_filter = jsonValue.GetObject("Filter");
+
+  }
+
   if(jsonValue.ValueExists("Conditions"))
   {
     m_conditions = jsonValue.GetObject("Conditions");

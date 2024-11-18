@@ -26,6 +26,7 @@ namespace Aws
         static const int WISDOM_ASSISTANT_HASH = HashingUtils::HashString("WISDOM_ASSISTANT");
         static const int WISDOM_KNOWLEDGE_BASE_HASH = HashingUtils::HashString("WISDOM_KNOWLEDGE_BASE");
         static const int WISDOM_QUICK_RESPONSES_HASH = HashingUtils::HashString("WISDOM_QUICK_RESPONSES");
+        static const int Q_MESSAGE_TEMPLATES_HASH = HashingUtils::HashString("Q_MESSAGE_TEMPLATES");
         static const int CASES_DOMAIN_HASH = HashingUtils::HashString("CASES_DOMAIN");
         static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
         static const int FILE_SCANNER_HASH = HashingUtils::HashString("FILE_SCANNER");
@@ -57,6 +58,10 @@ namespace Aws
           else if (hashCode == WISDOM_QUICK_RESPONSES_HASH)
           {
             return IntegrationType::WISDOM_QUICK_RESPONSES;
+          }
+          else if (hashCode == Q_MESSAGE_TEMPLATES_HASH)
+          {
+            return IntegrationType::Q_MESSAGE_TEMPLATES;
           }
           else if (hashCode == CASES_DOMAIN_HASH)
           {
@@ -98,6 +103,8 @@ namespace Aws
             return "WISDOM_KNOWLEDGE_BASE";
           case IntegrationType::WISDOM_QUICK_RESPONSES:
             return "WISDOM_QUICK_RESPONSES";
+          case IntegrationType::Q_MESSAGE_TEMPLATES:
+            return "Q_MESSAGE_TEMPLATES";
           case IntegrationType::CASES_DOMAIN:
             return "CASES_DOMAIN";
           case IntegrationType::APPLICATION:

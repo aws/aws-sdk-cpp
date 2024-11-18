@@ -22,6 +22,7 @@ namespace Aws
 
         static const int PRE_CREATE_HOSTED_CONFIGURATION_VERSION_HASH = HashingUtils::HashString("PRE_CREATE_HOSTED_CONFIGURATION_VERSION");
         static const int PRE_START_DEPLOYMENT_HASH = HashingUtils::HashString("PRE_START_DEPLOYMENT");
+        static const int AT_DEPLOYMENT_TICK_HASH = HashingUtils::HashString("AT_DEPLOYMENT_TICK");
         static const int ON_DEPLOYMENT_START_HASH = HashingUtils::HashString("ON_DEPLOYMENT_START");
         static const int ON_DEPLOYMENT_STEP_HASH = HashingUtils::HashString("ON_DEPLOYMENT_STEP");
         static const int ON_DEPLOYMENT_BAKING_HASH = HashingUtils::HashString("ON_DEPLOYMENT_BAKING");
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == PRE_START_DEPLOYMENT_HASH)
           {
             return ActionPoint::PRE_START_DEPLOYMENT;
+          }
+          else if (hashCode == AT_DEPLOYMENT_TICK_HASH)
+          {
+            return ActionPoint::AT_DEPLOYMENT_TICK;
           }
           else if (hashCode == ON_DEPLOYMENT_START_HASH)
           {
@@ -80,6 +85,8 @@ namespace Aws
             return "PRE_CREATE_HOSTED_CONFIGURATION_VERSION";
           case ActionPoint::PRE_START_DEPLOYMENT:
             return "PRE_START_DEPLOYMENT";
+          case ActionPoint::AT_DEPLOYMENT_TICK:
+            return "AT_DEPLOYMENT_TICK";
           case ActionPoint::ON_DEPLOYMENT_START:
             return "ON_DEPLOYMENT_START";
           case ActionPoint::ON_DEPLOYMENT_STEP:

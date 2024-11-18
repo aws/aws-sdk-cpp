@@ -125,11 +125,13 @@ namespace ECS
          * <p>Creates a new Amazon ECS cluster. By default, your account receives a
          * <code>default</code> cluster when you launch your first container instance.
          * However, you can create your own cluster with a unique name.</p>  <p>When
-         * you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
-         * the Amazon ECS service-linked role for your account. This is so that it can
-         * manage required resources in other Amazon Web Services services on your behalf.
-         * However, if the user that makes the call doesn't have permissions to create the
-         * service-linked role, it isn't created. For more information, see <a
+         * you call the <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html">CreateCluster</a>
+         * API operation, Amazon ECS attempts to create the Amazon ECS service-linked role
+         * for your account. This is so that it can manage required resources in other
+         * Amazon Web Services services on your behalf. However, if the user that makes the
+         * call doesn't have permissions to create the service-linked role, it isn't
+         * created. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
          * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -160,15 +162,16 @@ namespace ECS
          * <p>Runs and maintains your desired number of tasks from a specified task
          * definition. If the number of tasks running in a service drops below the
          * <code>desiredCount</code>, Amazon ECS runs another copy of the task in the
-         * specified cluster. To update an existing service, see the <a>UpdateService</a>
-         * action.</p>  <p>On March 21, 2024, a change was made to resolve the task
-         * definition revision before authorization. When a task definition revision is not
-         * specified, authorization will occur using the latest revision of a task
-         * definition.</p>   <p>Amazon Elastic Inference (EI) is no longer
-         * available to customers.</p>  <p>In addition to maintaining the desired
-         * count of tasks in your service, you can optionally run your service behind one
-         * or more load balancers. The load balancers distribute traffic across the tasks
-         * that are associated with the service. For more information, see <a
+         * specified cluster. To update an existing service, use <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.</p>
+         *  <p>On March 21, 2024, a change was made to resolve the task definition
+         * revision before authorization. When a task definition revision is not specified,
+         * authorization will occur using the latest revision of a task definition.</p>
+         *   <p>Amazon Elastic Inference (EI) is no longer available to
+         * customers.</p>  <p>In addition to maintaining the desired count of tasks
+         * in your service, you can optionally run your service behind one or more load
+         * balancers. The load balancers distribute traffic across the tasks that are
+         * associated with the service. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * load balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can attach Amazon EBS volumes to Amazon ECS tasks by

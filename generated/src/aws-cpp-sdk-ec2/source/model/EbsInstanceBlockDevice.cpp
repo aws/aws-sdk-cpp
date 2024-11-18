@@ -28,7 +28,8 @@ EbsInstanceBlockDevice::EbsInstanceBlockDevice() :
     m_statusHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_associatedResourceHasBeenSet(false),
-    m_volumeOwnerIdHasBeenSet(false)
+    m_volumeOwnerIdHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,12 @@ EbsInstanceBlockDevice& EbsInstanceBlockDevice::operator =(const XmlNode& xmlNod
       m_volumeOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeOwnerIdNode.GetText());
       m_volumeOwnerIdHasBeenSet = true;
     }
+    XmlNode operatorNode = resultNode.FirstChild("operator");
+    if(!operatorNode.IsNull())
+    {
+      m_operator = operatorNode;
+      m_operatorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -117,6 +124,13 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << index << locationValue << ".VolumeOwnerId=" << StringUtils::URLEncode(m_volumeOwnerId.c_str()) << "&";
   }
 
+  if(m_operatorHasBeenSet)
+  {
+      Aws::StringStream operatorLocationAndMemberSs;
+      operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -144,6 +158,12 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
   if(m_volumeOwnerIdHasBeenSet)
   {
       oStream << location << ".VolumeOwnerId=" << StringUtils::URLEncode(m_volumeOwnerId.c_str()) << "&";
+  }
+  if(m_operatorHasBeenSet)
+  {
+      Aws::String operatorLocationAndMember(location);
+      operatorLocationAndMember += ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
   }
 }
 

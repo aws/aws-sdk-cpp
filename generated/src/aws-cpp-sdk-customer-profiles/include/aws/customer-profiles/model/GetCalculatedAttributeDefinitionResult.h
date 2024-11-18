@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/customer-profiles/model/Statistic.h>
+#include <aws/customer-profiles/model/Filter.h>
 #include <aws/customer-profiles/model/Conditions.h>
 #include <aws/customer-profiles/model/AttributeDetails.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -112,6 +113,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The filter assigned to this calculated attribute definition.</p>
+     */
+    inline const Filter& GetFilter() const{ return m_filter; }
+    inline void SetFilter(const Filter& value) { m_filter = value; }
+    inline void SetFilter(Filter&& value) { m_filter = std::move(value); }
+    inline GetCalculatedAttributeDefinitionResult& WithFilter(const Filter& value) { SetFilter(value); return *this;}
+    inline GetCalculatedAttributeDefinitionResult& WithFilter(Filter&& value) { SetFilter(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The conditions including range, object count, and threshold for the
      * calculated attribute.</p>
      */
@@ -175,6 +187,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedAt;
 
     Statistic m_statistic;
+
+    Filter m_filter;
 
     Conditions m_conditions;
 

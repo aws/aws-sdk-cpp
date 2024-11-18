@@ -26,20 +26,19 @@ namespace Model
 {
 
   /**
-   * <p>Port mappings expose your container's network ports to the outside world.
-   * this allows clients to access your application. It's also used for
-   * inter-container communication within the same task.</p> <p>For task definitions
-   * (both the Fargate and EC2 launch type) that use the <code>awsvpc</code> network
-   * mode, only specify the <code>containerPort</code>. The <code>hostPort</code> is
-   * always ignored, and the container port is automatically mapped to a random
-   * high-numbered port on the host.</p> <p>Most fields of this parameter
-   * (<code>containerPort</code>, <code>hostPort</code>, <code>protocol</code>) maps
-   * to <code>PortBindings</code> in the docker container create command and the
-   * <code>--publish</code> option to <code>docker run</code>. If the network mode of
-   * a task definition is set to <code>host</code>, host ports must either be
-   * undefined or match the container port in the port mapping.</p>  <p>You
-   * can't expose the same container port for multiple protocols. If you attempt
-   * this, an error is returned.</p>  <p>After a task reaches the
+   * <p>Port mappings allow containers to access ports on the host container instance
+   * to send or receive traffic. Port mappings are specified as part of the container
+   * definition.</p> <p>If you use containers in a task with the <code>awsvpc</code>
+   * or <code>host</code> network mode, specify the exposed ports using
+   * <code>containerPort</code>. The <code>hostPort</code> can be left blank or it
+   * must be the same value as the <code>containerPort</code>.</p> <p>Most fields of
+   * this parameter (<code>containerPort</code>, <code>hostPort</code>,
+   * <code>protocol</code>) maps to <code>PortBindings</code> in the docker container
+   * create command and the <code>--publish</code> option to <code>docker run</code>.
+   * If the network mode of a task definition is set to <code>host</code>, host ports
+   * must either be undefined or match the container port in the port mapping.</p>
+   *  <p>You can't expose the same container port for multiple protocols. If
+   * you attempt this, an error is returned.</p>  <p>After a task reaches the
    * <code>RUNNING</code> status, manual and automatic host and container port
    * assignments are visible in the <code>networkBindings</code> section of <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>
@@ -59,16 +58,14 @@ namespace Model
     ///@{
     /**
      * <p>The port number on the container that's bound to the user-specified or
-     * automatically assigned host port.</p> <p>For tasks that use the Fargate launch
-     * type or EC2 tasks that use the <code>awsvpc</code> network mode, you use
-     * <code>containerPort</code> to specify the exposed ports.</p> <p>For Windows
-     * containers on Fargate, you can't use port 3150 for the
-     * <code>containerPort</code>. This is because it's reserved.</p> <p>Suppose that
-     * you're using containers in a task with the EC2 launch type and you specify a
-     * container port and not a host port. Then, your container automatically receives
-     * a host port in the ephemeral port range. For more information, see
-     * <code>hostPort</code>. Port mappings that are automatically assigned in this way
-     * don't count toward the 100 reserved ports quota of a container instance.</p>
+     * automatically assigned host port.</p> <p>If you use containers in a task with
+     * the <code>awsvpc</code> or <code>host</code> network mode, specify the exposed
+     * ports using <code>containerPort</code>.</p> <p>If you use containers in a task
+     * with the <code>bridge</code> network mode and you specify a container port and
+     * not a host port, your container automatically receives a host port in the
+     * ephemeral port range. For more information, see <code>hostPort</code>. Port
+     * mappings that are automatically assigned in this way do not count toward the 100
+     * reserved ports limit of a container instance.</p>
      */
     inline int GetContainerPort() const{ return m_containerPort; }
     inline bool ContainerPortHasBeenSet() const { return m_containerPortHasBeenSet; }
@@ -135,14 +132,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name that's used for the port mapping. This parameter only applies to
-     * Service Connect. This parameter is the name that you use in the
-     * <code>serviceConnectConfiguration</code> of a service. The name can include up
-     * to 64 characters. The characters can include lowercase letters, numbers,
-     * underscores (_), and hyphens (-). The name can't start with a hyphen.</p> <p>For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-     * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     * <p>The name that's used for the port mapping. This parameter is the name that
+     * you use in the <code>serviceConnectConfiguration</code> and the
+     * <code>vpcLatticeConfigurations</code> of a service. The name can include up to
+     * 64 characters. The characters can include lowercase letters, numbers,
+     * underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

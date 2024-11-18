@@ -56,7 +56,8 @@ RequestLaunchTemplateData::RequestLaunchTemplateData() :
     m_privateDnsNameOptionsHasBeenSet(false),
     m_maintenanceOptionsHasBeenSet(false),
     m_disableApiStop(false),
-    m_disableApiStopHasBeenSet(false)
+    m_disableApiStopHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -306,6 +307,12 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
       m_disableApiStop = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disableApiStopNode.GetText()).c_str()).c_str());
       m_disableApiStopHasBeenSet = true;
     }
+    XmlNode operatorNode = resultNode.FirstChild("Operator");
+    if(!operatorNode.IsNull())
+    {
+      m_operator = operatorNode;
+      m_operatorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -538,6 +545,13 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".DisableApiStop=" << std::boolalpha << m_disableApiStop << "&";
   }
 
+  if(m_operatorHasBeenSet)
+  {
+      Aws::StringStream operatorLocationAndMemberSs;
+      operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -735,6 +749,12 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
   if(m_disableApiStopHasBeenSet)
   {
       oStream << location << ".DisableApiStop=" << std::boolalpha << m_disableApiStop << "&";
+  }
+  if(m_operatorHasBeenSet)
+  {
+      Aws::String operatorLocationAndMember(location);
+      operatorLocationAndMember += ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
   }
 }
 

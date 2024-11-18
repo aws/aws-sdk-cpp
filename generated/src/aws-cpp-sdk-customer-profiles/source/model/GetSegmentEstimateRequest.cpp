@@ -1,0 +1,28 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/customer-profiles/model/GetSegmentEstimateRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::CustomerProfiles::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+GetSegmentEstimateRequest::GetSegmentEstimateRequest() : 
+    m_domainNameHasBeenSet(false),
+    m_estimateIdHasBeenSet(false)
+{
+}
+
+Aws::String GetSegmentEstimateRequest::SerializePayload() const
+{
+  return {};
+}
+
+
+
+

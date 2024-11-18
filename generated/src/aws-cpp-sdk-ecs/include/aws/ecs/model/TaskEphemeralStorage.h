@@ -52,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify an Amazon Web Services Key Management Service key ID to encrypt the
-     * ephemeral storage for the task.</p>
+     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
+     * the task.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }

@@ -61,6 +61,12 @@ CreateCalculatedAttributeDefinitionResult& CreateCalculatedAttributeDefinitionRe
 
   }
 
+  if(jsonValue.ValueExists("Filter"))
+  {
+    m_filter = jsonValue.GetObject("Filter");
+
+  }
+
   if(jsonValue.ValueExists("Statistic"))
   {
     m_statistic = StatisticMapper::GetStatisticForName(jsonValue.GetString("Statistic"));

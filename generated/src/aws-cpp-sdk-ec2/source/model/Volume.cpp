@@ -35,6 +35,7 @@ Volume::Volume() :
     m_throughputHasBeenSet(false),
     m_sseType(SSEType::NOT_SET),
     m_sseTypeHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
@@ -115,6 +116,12 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     {
       m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
       m_sseTypeHasBeenSet = true;
+    }
+    XmlNode operatorNode = resultNode.FirstChild("operator");
+    if(!operatorNode.IsNull())
+    {
+      m_operator = operatorNode;
+      m_operatorHasBeenSet = true;
     }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
@@ -229,6 +236,13 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
   }
 
+  if(m_operatorHasBeenSet)
+  {
+      Aws::StringStream operatorLocationAndMemberSs;
+      operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
+  }
+
   if(m_volumeIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
@@ -324,6 +338,12 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_sseTypeHasBeenSet)
   {
       oStream << location << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+  }
+  if(m_operatorHasBeenSet)
+  {
+      Aws::String operatorLocationAndMember(location);
+      operatorLocationAndMember += ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
   }
   if(m_volumeIdHasBeenSet)
   {

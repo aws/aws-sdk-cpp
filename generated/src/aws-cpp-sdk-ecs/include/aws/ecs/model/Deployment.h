@@ -16,6 +16,7 @@
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
 #include <aws/ecs/model/ServiceConnectServiceResource.h>
 #include <aws/ecs/model/ServiceVolumeConfiguration.h>
+#include <aws/ecs/model/VpcLatticeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -356,6 +357,20 @@ namespace Model
     inline Deployment& WithFargateEphemeralStorage(const DeploymentEphemeralStorage& value) { SetFargateEphemeralStorage(value); return *this;}
     inline Deployment& WithFargateEphemeralStorage(DeploymentEphemeralStorage&& value) { SetFargateEphemeralStorage(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The VPC Lattice configuration for the service deployment.</p>
+     */
+    inline const Aws::Vector<VpcLatticeConfiguration>& GetVpcLatticeConfigurations() const{ return m_vpcLatticeConfigurations; }
+    inline bool VpcLatticeConfigurationsHasBeenSet() const { return m_vpcLatticeConfigurationsHasBeenSet; }
+    inline void SetVpcLatticeConfigurations(const Aws::Vector<VpcLatticeConfiguration>& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations = value; }
+    inline void SetVpcLatticeConfigurations(Aws::Vector<VpcLatticeConfiguration>&& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations = std::move(value); }
+    inline Deployment& WithVpcLatticeConfigurations(const Aws::Vector<VpcLatticeConfiguration>& value) { SetVpcLatticeConfigurations(value); return *this;}
+    inline Deployment& WithVpcLatticeConfigurations(Aws::Vector<VpcLatticeConfiguration>&& value) { SetVpcLatticeConfigurations(std::move(value)); return *this;}
+    inline Deployment& AddVpcLatticeConfigurations(const VpcLatticeConfiguration& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations.push_back(value); return *this; }
+    inline Deployment& AddVpcLatticeConfigurations(VpcLatticeConfiguration&& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -417,6 +432,9 @@ namespace Model
 
     DeploymentEphemeralStorage m_fargateEphemeralStorage;
     bool m_fargateEphemeralStorageHasBeenSet = false;
+
+    Aws::Vector<VpcLatticeConfiguration> m_vpcLatticeConfigurations;
+    bool m_vpcLatticeConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

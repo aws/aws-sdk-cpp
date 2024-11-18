@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/model/AttributeDetails.h>
 #include <aws/customer-profiles/model/Conditions.h>
+#include <aws/customer-profiles/model/Filter.h>
 #include <aws/customer-profiles/model/Statistic.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -120,6 +121,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Defines how to filter incoming objects to include part of the Calculated
+     * Attribute.</p>
+     */
+    inline const Filter& GetFilter() const{ return m_filter; }
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+    inline void SetFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+    inline CreateCalculatedAttributeDefinitionRequest& WithFilter(const Filter& value) { SetFilter(value); return *this;}
+    inline CreateCalculatedAttributeDefinitionRequest& WithFilter(Filter&& value) { SetFilter(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The aggregation operation to perform for the calculated attribute.</p>
      */
     inline const Statistic& GetStatistic() const{ return m_statistic; }
@@ -167,6 +181,9 @@ namespace Model
 
     Conditions m_conditions;
     bool m_conditionsHasBeenSet = false;
+
+    Filter m_filter;
+    bool m_filterHasBeenSet = false;
 
     Statistic m_statistic;
     bool m_statisticHasBeenSet = false;

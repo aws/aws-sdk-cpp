@@ -59,6 +59,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Indicates the checksum value of the flow content.</p>
+     */
+    inline const Aws::String& GetFlowContentSha256() const{ return m_flowContentSha256; }
+    inline void SetFlowContentSha256(const Aws::String& value) { m_flowContentSha256 = value; }
+    inline void SetFlowContentSha256(Aws::String&& value) { m_flowContentSha256 = std::move(value); }
+    inline void SetFlowContentSha256(const char* value) { m_flowContentSha256.assign(value); }
+    inline CreateContactFlowResult& WithFlowContentSha256(const Aws::String& value) { SetFlowContentSha256(value); return *this;}
+    inline CreateContactFlowResult& WithFlowContentSha256(Aws::String&& value) { SetFlowContentSha256(std::move(value)); return *this;}
+    inline CreateContactFlowResult& WithFlowContentSha256(const char* value) { SetFlowContentSha256(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -73,6 +86,8 @@ namespace Model
     Aws::String m_contactFlowId;
 
     Aws::String m_contactFlowArn;
+
+    Aws::String m_flowContentSha256;
 
     Aws::String m_requestId;
   };

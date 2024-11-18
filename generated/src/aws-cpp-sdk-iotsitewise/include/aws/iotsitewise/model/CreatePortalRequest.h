@@ -11,6 +11,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iotsitewise/model/AuthMode.h>
 #include <aws/iotsitewise/model/Alarms.h>
+#include <aws/iotsitewise/model/PortalType.h>
+#include <aws/iotsitewise/model/PortalTypeEntry.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -208,6 +210,40 @@ namespace Model
     inline CreatePortalRequest& WithAlarms(const Alarms& value) { SetAlarms(value); return *this;}
     inline CreatePortalRequest& WithAlarms(Alarms&& value) { SetAlarms(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is
+     * <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware)
+     * is <code>SITEWISE_PORTAL_V2</code>.</p>
+     */
+    inline const PortalType& GetPortalType() const{ return m_portalType; }
+    inline bool PortalTypeHasBeenSet() const { return m_portalTypeHasBeenSet; }
+    inline void SetPortalType(const PortalType& value) { m_portalTypeHasBeenSet = true; m_portalType = value; }
+    inline void SetPortalType(PortalType&& value) { m_portalTypeHasBeenSet = true; m_portalType = std::move(value); }
+    inline CreatePortalRequest& WithPortalType(const PortalType& value) { SetPortalType(value); return *this;}
+    inline CreatePortalRequest& WithPortalType(PortalType&& value) { SetPortalType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration entry associated with the specific portal type. The value
+     * for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value
+     * for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, PortalTypeEntry>& GetPortalTypeConfiguration() const{ return m_portalTypeConfiguration; }
+    inline bool PortalTypeConfigurationHasBeenSet() const { return m_portalTypeConfigurationHasBeenSet; }
+    inline void SetPortalTypeConfiguration(const Aws::Map<Aws::String, PortalTypeEntry>& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration = value; }
+    inline void SetPortalTypeConfiguration(Aws::Map<Aws::String, PortalTypeEntry>&& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration = std::move(value); }
+    inline CreatePortalRequest& WithPortalTypeConfiguration(const Aws::Map<Aws::String, PortalTypeEntry>& value) { SetPortalTypeConfiguration(value); return *this;}
+    inline CreatePortalRequest& WithPortalTypeConfiguration(Aws::Map<Aws::String, PortalTypeEntry>&& value) { SetPortalTypeConfiguration(std::move(value)); return *this;}
+    inline CreatePortalRequest& AddPortalTypeConfiguration(const Aws::String& key, const PortalTypeEntry& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(key, value); return *this; }
+    inline CreatePortalRequest& AddPortalTypeConfiguration(Aws::String&& key, const PortalTypeEntry& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(std::move(key), value); return *this; }
+    inline CreatePortalRequest& AddPortalTypeConfiguration(const Aws::String& key, PortalTypeEntry&& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(key, std::move(value)); return *this; }
+    inline CreatePortalRequest& AddPortalTypeConfiguration(Aws::String&& key, PortalTypeEntry&& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(std::move(key), std::move(value)); return *this; }
+    inline CreatePortalRequest& AddPortalTypeConfiguration(const char* key, PortalTypeEntry&& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(key, std::move(value)); return *this; }
+    inline CreatePortalRequest& AddPortalTypeConfiguration(const char* key, const PortalTypeEntry& value) { m_portalTypeConfigurationHasBeenSet = true; m_portalTypeConfiguration.emplace(key, value); return *this; }
+    ///@}
   private:
 
     Aws::String m_portalName;
@@ -239,6 +275,12 @@ namespace Model
 
     Alarms m_alarms;
     bool m_alarmsHasBeenSet = false;
+
+    PortalType m_portalType;
+    bool m_portalTypeHasBeenSet = false;
+
+    Aws::Map<Aws::String, PortalTypeEntry> m_portalTypeConfiguration;
+    bool m_portalTypeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

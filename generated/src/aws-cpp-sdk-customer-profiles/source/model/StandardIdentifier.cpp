@@ -23,11 +23,12 @@ namespace Aws
         static const int PROFILE_HASH = HashingUtils::HashString("PROFILE");
         static const int ASSET_HASH = HashingUtils::HashString("ASSET");
         static const int CASE_HASH = HashingUtils::HashString("CASE");
+        static const int ORDER_HASH = HashingUtils::HashString("ORDER");
+        static const int COMMUNICATION_RECORD_HASH = HashingUtils::HashString("COMMUNICATION_RECORD");
         static const int UNIQUE_HASH = HashingUtils::HashString("UNIQUE");
         static const int SECONDARY_HASH = HashingUtils::HashString("SECONDARY");
         static const int LOOKUP_ONLY_HASH = HashingUtils::HashString("LOOKUP_ONLY");
         static const int NEW_ONLY_HASH = HashingUtils::HashString("NEW_ONLY");
-        static const int ORDER_HASH = HashingUtils::HashString("ORDER");
 
 
         StandardIdentifier GetStandardIdentifierForName(const Aws::String& name)
@@ -45,6 +46,14 @@ namespace Aws
           {
             return StandardIdentifier::CASE;
           }
+          else if (hashCode == ORDER_HASH)
+          {
+            return StandardIdentifier::ORDER;
+          }
+          else if (hashCode == COMMUNICATION_RECORD_HASH)
+          {
+            return StandardIdentifier::COMMUNICATION_RECORD;
+          }
           else if (hashCode == UNIQUE_HASH)
           {
             return StandardIdentifier::UNIQUE;
@@ -60,10 +69,6 @@ namespace Aws
           else if (hashCode == NEW_ONLY_HASH)
           {
             return StandardIdentifier::NEW_ONLY;
-          }
-          else if (hashCode == ORDER_HASH)
-          {
-            return StandardIdentifier::ORDER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -87,6 +92,10 @@ namespace Aws
             return "ASSET";
           case StandardIdentifier::CASE:
             return "CASE";
+          case StandardIdentifier::ORDER:
+            return "ORDER";
+          case StandardIdentifier::COMMUNICATION_RECORD:
+            return "COMMUNICATION_RECORD";
           case StandardIdentifier::UNIQUE:
             return "UNIQUE";
           case StandardIdentifier::SECONDARY:
@@ -95,8 +104,6 @@ namespace Aws
             return "LOOKUP_ONLY";
           case StandardIdentifier::NEW_ONLY:
             return "NEW_ONLY";
-          case StandardIdentifier::ORDER:
-            return "ORDER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

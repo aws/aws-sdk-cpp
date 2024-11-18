@@ -25,6 +25,7 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
     m_enablePrimaryIpv6(false),
     m_enablePrimaryIpv6HasBeenSet(false),
     m_connectionTrackingSpecificationHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
@@ -102,6 +103,11 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
   if(m_connectionTrackingSpecificationHasBeenSet)
   {
     m_connectionTrackingSpecification.OutputToStream(ss, "ConnectionTrackingSpecification");
+  }
+
+  if(m_operatorHasBeenSet)
+  {
+    m_operator.OutputToStream(ss, "Operator");
   }
 
   if(m_subnetIdHasBeenSet)

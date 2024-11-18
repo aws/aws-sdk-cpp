@@ -78,10 +78,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The dashboard definition specified in a JSON literal. For detailed
-     * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     * <p>The dashboard definition specified in a JSON literal.</p> <ul> <li> <p>IoT
+     * SiteWise Monitor (Classic) see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Create
+     * dashboards (CLI)</a> </p> </li> <li> <p>IoT SiteWise Monitor (AI-aware) see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-ai-dashboard-cli.html">Create
+     * dashboards (CLI)</a> </p> </li> </ul> <p>in the <i>IoT SiteWise User Guide</i>
+     * </p>
      */
     inline const Aws::String& GetDashboardDefinition() const{ return m_dashboardDefinition; }
     inline bool DashboardDefinitionHasBeenSet() const { return m_dashboardDefinitionHasBeenSet; }

@@ -17,6 +17,7 @@
 #include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/ContainerImage.h>
 #include <aws/ecs/model/ServiceVolumeConfiguration.h>
+#include <aws/ecs/model/VpcLatticeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -275,6 +276,20 @@ namespace Model
     inline ServiceRevision& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
     inline ServiceRevision& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The VPC Lattice configuration for the service revision.</p>
+     */
+    inline const Aws::Vector<VpcLatticeConfiguration>& GetVpcLatticeConfigurations() const{ return m_vpcLatticeConfigurations; }
+    inline bool VpcLatticeConfigurationsHasBeenSet() const { return m_vpcLatticeConfigurationsHasBeenSet; }
+    inline void SetVpcLatticeConfigurations(const Aws::Vector<VpcLatticeConfiguration>& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations = value; }
+    inline void SetVpcLatticeConfigurations(Aws::Vector<VpcLatticeConfiguration>&& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations = std::move(value); }
+    inline ServiceRevision& WithVpcLatticeConfigurations(const Aws::Vector<VpcLatticeConfiguration>& value) { SetVpcLatticeConfigurations(value); return *this;}
+    inline ServiceRevision& WithVpcLatticeConfigurations(Aws::Vector<VpcLatticeConfiguration>&& value) { SetVpcLatticeConfigurations(std::move(value)); return *this;}
+    inline ServiceRevision& AddVpcLatticeConfigurations(const VpcLatticeConfiguration& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations.push_back(value); return *this; }
+    inline ServiceRevision& AddVpcLatticeConfigurations(VpcLatticeConfiguration&& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_serviceRevisionArn;
@@ -327,6 +342,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
+
+    Aws::Vector<VpcLatticeConfiguration> m_vpcLatticeConfigurations;
+    bool m_vpcLatticeConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -14,6 +14,7 @@
 #include <aws/autoscaling/model/WarmPoolConfiguration.h>
 #include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/AvailabilityZoneDistribution.h>
+#include <aws/autoscaling/model/AvailabilityZoneImpairmentPolicy.h>
 #include <aws/autoscaling/model/Instance.h>
 #include <aws/autoscaling/model/SuspendedProcess.h>
 #include <aws/autoscaling/model/EnabledMetric.h>
@@ -512,6 +513,18 @@ namespace Model
     inline AutoScalingGroup& WithAvailabilityZoneDistribution(const AvailabilityZoneDistribution& value) { SetAvailabilityZoneDistribution(value); return *this;}
     inline AutoScalingGroup& WithAvailabilityZoneDistribution(AvailabilityZoneDistribution&& value) { SetAvailabilityZoneDistribution(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The Availability Zone impairment policy. </p>
+     */
+    inline const AvailabilityZoneImpairmentPolicy& GetAvailabilityZoneImpairmentPolicy() const{ return m_availabilityZoneImpairmentPolicy; }
+    inline bool AvailabilityZoneImpairmentPolicyHasBeenSet() const { return m_availabilityZoneImpairmentPolicyHasBeenSet; }
+    inline void SetAvailabilityZoneImpairmentPolicy(const AvailabilityZoneImpairmentPolicy& value) { m_availabilityZoneImpairmentPolicyHasBeenSet = true; m_availabilityZoneImpairmentPolicy = value; }
+    inline void SetAvailabilityZoneImpairmentPolicy(AvailabilityZoneImpairmentPolicy&& value) { m_availabilityZoneImpairmentPolicyHasBeenSet = true; m_availabilityZoneImpairmentPolicy = std::move(value); }
+    inline AutoScalingGroup& WithAvailabilityZoneImpairmentPolicy(const AvailabilityZoneImpairmentPolicy& value) { SetAvailabilityZoneImpairmentPolicy(value); return *this;}
+    inline AutoScalingGroup& WithAvailabilityZoneImpairmentPolicy(AvailabilityZoneImpairmentPolicy&& value) { SetAvailabilityZoneImpairmentPolicy(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -621,6 +634,9 @@ namespace Model
 
     AvailabilityZoneDistribution m_availabilityZoneDistribution;
     bool m_availabilityZoneDistributionHasBeenSet = false;
+
+    AvailabilityZoneImpairmentPolicy m_availabilityZoneImpairmentPolicy;
+    bool m_availabilityZoneImpairmentPolicyHasBeenSet = false;
   };
 
 } // namespace Model

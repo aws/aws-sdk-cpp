@@ -90,8 +90,8 @@ namespace Model
      * format: <code>secretsmanager</code>://&lt;secret name&gt;.</p> </li> <li> <p>For
      * an Amazon S3 object, specify the URI in the following format:
      * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
-     * <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p> </li> <li>
-     * <p>For an SSM document, specify either the document name in the format
+     * <code>s3://amzn-s3-demo-bucket/my-app/us-east-1/my-config.json</code> </p> </li>
+     * <li> <p>For an SSM document, specify either the document name in the format
      * <code>ssm-document://&lt;document name&gt;</code> or the Amazon Resource Name
      * (ARN).</p> </li> </ul>
      */

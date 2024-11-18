@@ -44,7 +44,8 @@ Deployment::Deployment() :
     m_serviceConnectConfigurationHasBeenSet(false),
     m_serviceConnectResourcesHasBeenSet(false),
     m_volumeConfigurationsHasBeenSet(false),
-    m_fargateEphemeralStorageHasBeenSet(false)
+    m_fargateEphemeralStorageHasBeenSet(false),
+    m_vpcLatticeConfigurationsHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     m_fargateEphemeralStorageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcLatticeConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> vpcLatticeConfigurationsJsonList = jsonValue.GetArray("vpcLatticeConfigurations");
+    for(unsigned vpcLatticeConfigurationsIndex = 0; vpcLatticeConfigurationsIndex < vpcLatticeConfigurationsJsonList.GetLength(); ++vpcLatticeConfigurationsIndex)
+    {
+      m_vpcLatticeConfigurations.push_back(vpcLatticeConfigurationsJsonList[vpcLatticeConfigurationsIndex].AsObject());
+    }
+    m_vpcLatticeConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -340,6 +351,17 @@ JsonValue Deployment::Jsonize() const
   if(m_fargateEphemeralStorageHasBeenSet)
   {
    payload.WithObject("fargateEphemeralStorage", m_fargateEphemeralStorage.Jsonize());
+
+  }
+
+  if(m_vpcLatticeConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> vpcLatticeConfigurationsJsonList(m_vpcLatticeConfigurations.size());
+   for(unsigned vpcLatticeConfigurationsIndex = 0; vpcLatticeConfigurationsIndex < vpcLatticeConfigurationsJsonList.GetLength(); ++vpcLatticeConfigurationsIndex)
+   {
+     vpcLatticeConfigurationsJsonList[vpcLatticeConfigurationsIndex].AsObject(m_vpcLatticeConfigurations[vpcLatticeConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("vpcLatticeConfigurations", std::move(vpcLatticeConfigurationsJsonList));
 
   }
 

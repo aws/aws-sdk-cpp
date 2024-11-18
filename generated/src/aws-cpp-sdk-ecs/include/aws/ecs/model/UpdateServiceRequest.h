@@ -18,6 +18,7 @@
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/ServiceVolumeConfiguration.h>
+#include <aws/ecs/model/VpcLatticeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -145,7 +146,7 @@ namespace Model
     ///@{
     /**
      * <p>Optional deployment parameters that control how many tasks run during the
-     * deployment and the failure detection methods.</p>
+     * deployment and the ordering of stopping and starting tasks.</p>
      */
     inline const DeploymentConfiguration& GetDeploymentConfiguration() const{ return m_deploymentConfiguration; }
     inline bool DeploymentConfigurationHasBeenSet() const { return m_deploymentConfigurationHasBeenSet; }
@@ -244,14 +245,16 @@ namespace Model
     ///@{
     /**
      * <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores
-     * unhealthy Elastic Load Balancing target health checks after a task has first
-     * started. This is only valid if your service is configured to use a load
-     * balancer. If your service's tasks take a while to start and respond to Elastic
-     * Load Balancing health checks, you can specify a health check grace period of up
-     * to 2,147,483,647 seconds. During that time, the Amazon ECS service scheduler
-     * ignores the Elastic Load Balancing health check status. This grace period can
-     * prevent the ECS service scheduler from marking tasks as unhealthy and stopping
-     * them before they have time to come up.</p>
+     * unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after
+     * a task has first started. If you don't specify a health check grace period
+     * value, the default value of <code>0</code> is used. If you don't use any of the
+     * health checks, then <code>healthCheckGracePeriodSeconds</code> is unused.</p>
+     * <p>If your service's tasks take a while to start and respond to health checks,
+     * you can specify a health check grace period of up to 2,147,483,647 seconds
+     * (about 69 years). During that time, the Amazon ECS service scheduler ignores
+     * health check status. This grace period can prevent the service scheduler from
+     * marking tasks as unhealthy and stopping them before they have time to come
+     * up.</p>
      */
     inline int GetHealthCheckGracePeriodSeconds() const{ return m_healthCheckGracePeriodSeconds; }
     inline bool HealthCheckGracePeriodSecondsHasBeenSet() const { return m_healthCheckGracePeriodSecondsHasBeenSet; }
@@ -403,6 +406,21 @@ namespace Model
     inline UpdateServiceRequest& AddVolumeConfigurations(const ServiceVolumeConfiguration& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(value); return *this; }
     inline UpdateServiceRequest& AddVolumeConfigurations(ServiceVolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>An object representing the VPC Lattice configuration for the service being
+     * updated.</p>
+     */
+    inline const Aws::Vector<VpcLatticeConfiguration>& GetVpcLatticeConfigurations() const{ return m_vpcLatticeConfigurations; }
+    inline bool VpcLatticeConfigurationsHasBeenSet() const { return m_vpcLatticeConfigurationsHasBeenSet; }
+    inline void SetVpcLatticeConfigurations(const Aws::Vector<VpcLatticeConfiguration>& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations = value; }
+    inline void SetVpcLatticeConfigurations(Aws::Vector<VpcLatticeConfiguration>&& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations = std::move(value); }
+    inline UpdateServiceRequest& WithVpcLatticeConfigurations(const Aws::Vector<VpcLatticeConfiguration>& value) { SetVpcLatticeConfigurations(value); return *this;}
+    inline UpdateServiceRequest& WithVpcLatticeConfigurations(Aws::Vector<VpcLatticeConfiguration>&& value) { SetVpcLatticeConfigurations(std::move(value)); return *this;}
+    inline UpdateServiceRequest& AddVpcLatticeConfigurations(const VpcLatticeConfiguration& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations.push_back(value); return *this; }
+    inline UpdateServiceRequest& AddVpcLatticeConfigurations(VpcLatticeConfiguration&& value) { m_vpcLatticeConfigurationsHasBeenSet = true; m_vpcLatticeConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_cluster;
@@ -461,6 +479,9 @@ namespace Model
 
     Aws::Vector<ServiceVolumeConfiguration> m_volumeConfigurations;
     bool m_volumeConfigurationsHasBeenSet = false;
+
+    Aws::Vector<VpcLatticeConfiguration> m_vpcLatticeConfigurations;
+    bool m_vpcLatticeConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

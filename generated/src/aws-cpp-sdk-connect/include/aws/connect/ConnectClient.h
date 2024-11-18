@@ -809,6 +809,37 @@ namespace Connect
         }
 
         /**
+         * <p>Publishes a new version of the flow provided. Versions are immutable and
+         * monotonically increasing. If a version of the same flow content already exists,
+         * no new version is created and instead the existing version number is returned.
+         * If the <code>FlowContentSha256</code> provided is different from the
+         * <code>FlowContentSha256</code> of the <code>$LATEST</code> published flow
+         * content, then an error is returned. This API only supports creating versions for
+         * flows of type <code>Campaign</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContactFlowVersionOutcome CreateContactFlowVersion(const Model::CreateContactFlowVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateContactFlowVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateContactFlowVersionRequestT = Model::CreateContactFlowVersionRequest>
+        Model::CreateContactFlowVersionOutcomeCallable CreateContactFlowVersionCallable(const CreateContactFlowVersionRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CreateContactFlowVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateContactFlowVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateContactFlowVersionRequestT = Model::CreateContactFlowVersionRequest>
+        void CreateContactFlowVersionAsync(const CreateContactFlowVersionRequestT& request, const CreateContactFlowVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CreateContactFlowVersion, request, handler, context);
+        }
+
+        /**
          * <p>Creates an evaluation form in the specified Amazon Connect instance. The form
          * can be used to define questions related to agent performance, and create
          * sections to organize such questions. Question and section identifiers cannot be
@@ -3732,6 +3763,32 @@ namespace Connect
         void ListContactFlowModulesAsync(const ListContactFlowModulesRequestT& request, const ListContactFlowModulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ListContactFlowModules, request, handler, context);
+        }
+
+        /**
+         * <p>Returns all the available versions for the specified Amazon Connect instance
+         * and flow identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListContactFlowVersionsOutcome ListContactFlowVersions(const Model::ListContactFlowVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListContactFlowVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListContactFlowVersionsRequestT = Model::ListContactFlowVersionsRequest>
+        Model::ListContactFlowVersionsOutcomeCallable ListContactFlowVersionsCallable(const ListContactFlowVersionsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListContactFlowVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListContactFlowVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListContactFlowVersionsRequestT = Model::ListContactFlowVersionsRequest>
+        void ListContactFlowVersionsAsync(const ListContactFlowVersionsRequestT& request, const ListContactFlowVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListContactFlowVersions, request, handler, context);
         }
 
         /**

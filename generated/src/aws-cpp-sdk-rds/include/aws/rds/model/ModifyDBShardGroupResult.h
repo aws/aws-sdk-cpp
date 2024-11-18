@@ -27,6 +27,12 @@ namespace RDS
 {
 namespace Model
 {
+  /**
+   * <p>Contains the details for an Amazon RDS DB shard group.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBShardGroup">AWS
+   * API Reference</a></p>
+   */
   class ModifyDBShardGroupResult
   {
   public:

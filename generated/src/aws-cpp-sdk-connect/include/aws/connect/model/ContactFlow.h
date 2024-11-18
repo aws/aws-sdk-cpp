@@ -10,6 +10,7 @@
 #include <aws/connect/model/ContactFlowState.h>
 #include <aws/connect/model/ContactFlowStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -172,6 +173,81 @@ namespace Model
     inline ContactFlow& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline ContactFlow& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Amazon Connect includes a set of default flows that have already been
+     * published. It uses them to power your contact center.</p>
+     */
+    inline bool GetIsDefault() const{ return m_isDefault; }
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
+    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
+    inline ContactFlow& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates the checksum value of the flow content.</p>
+     */
+    inline const Aws::String& GetFlowContentSha256() const{ return m_flowContentSha256; }
+    inline bool FlowContentSha256HasBeenSet() const { return m_flowContentSha256HasBeenSet; }
+    inline void SetFlowContentSha256(const Aws::String& value) { m_flowContentSha256HasBeenSet = true; m_flowContentSha256 = value; }
+    inline void SetFlowContentSha256(Aws::String&& value) { m_flowContentSha256HasBeenSet = true; m_flowContentSha256 = std::move(value); }
+    inline void SetFlowContentSha256(const char* value) { m_flowContentSha256HasBeenSet = true; m_flowContentSha256.assign(value); }
+    inline ContactFlow& WithFlowContentSha256(const Aws::String& value) { SetFlowContentSha256(value); return *this;}
+    inline ContactFlow& WithFlowContentSha256(Aws::String&& value) { SetFlowContentSha256(std::move(value)); return *this;}
+    inline ContactFlow& WithFlowContentSha256(const char* value) { SetFlowContentSha256(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the flow version.</p>
+     */
+    inline long long GetVersion() const{ return m_version; }
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+    inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
+    inline ContactFlow& WithVersion(long long value) { SetVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The description of the flow version.</p>
+     */
+    inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
+    inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
+    inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
+    inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
+    inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
+    inline ContactFlow& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
+    inline ContactFlow& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
+    inline ContactFlow& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The time at which the contact flow was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
+    inline ContactFlow& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+    inline ContactFlow& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The region in which the contact flow was last modified</p>
+     */
+    inline const Aws::String& GetLastModifiedRegion() const{ return m_lastModifiedRegion; }
+    inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+    inline void SetLastModifiedRegion(const Aws::String& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = value; }
+    inline void SetLastModifiedRegion(Aws::String&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::move(value); }
+    inline void SetLastModifiedRegion(const char* value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion.assign(value); }
+    inline ContactFlow& WithLastModifiedRegion(const Aws::String& value) { SetLastModifiedRegion(value); return *this;}
+    inline ContactFlow& WithLastModifiedRegion(Aws::String&& value) { SetLastModifiedRegion(std::move(value)); return *this;}
+    inline ContactFlow& WithLastModifiedRegion(const char* value) { SetLastModifiedRegion(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -200,6 +276,24 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    bool m_isDefault;
+    bool m_isDefaultHasBeenSet = false;
+
+    Aws::String m_flowContentSha256;
+    bool m_flowContentSha256HasBeenSet = false;
+
+    long long m_version;
+    bool m_versionHasBeenSet = false;
+
+    Aws::String m_versionDescription;
+    bool m_versionDescriptionHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet = false;
+
+    Aws::String m_lastModifiedRegion;
+    bool m_lastModifiedRegionHasBeenSet = false;
   };
 
 } // namespace Model

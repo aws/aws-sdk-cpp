@@ -17,6 +17,7 @@ CreateLaunchTemplateRequest::CreateLaunchTemplateRequest() :
     m_launchTemplateNameHasBeenSet(false),
     m_versionDescriptionHasBeenSet(false),
     m_launchTemplateDataHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false)
 {
 }
@@ -48,6 +49,11 @@ Aws::String CreateLaunchTemplateRequest::SerializePayload() const
   if(m_launchTemplateDataHasBeenSet)
   {
     m_launchTemplateData.OutputToStream(ss, "LaunchTemplateData");
+  }
+
+  if(m_operatorHasBeenSet)
+  {
+    m_operator.OutputToStream(ss, "Operator");
   }
 
   if(m_tagSpecificationsHasBeenSet)

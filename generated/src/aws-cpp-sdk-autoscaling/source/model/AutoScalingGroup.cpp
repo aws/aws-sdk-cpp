@@ -67,7 +67,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_defaultInstanceWarmupHasBeenSet(false),
     m_trafficSourcesHasBeenSet(false),
     m_instanceMaintenancePolicyHasBeenSet(false),
-    m_availabilityZoneDistributionHasBeenSet(false)
+    m_availabilityZoneDistributionHasBeenSet(false),
+    m_availabilityZoneImpairmentPolicyHasBeenSet(false)
 {
 }
 
@@ -353,6 +354,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_availabilityZoneDistribution = availabilityZoneDistributionNode;
       m_availabilityZoneDistributionHasBeenSet = true;
     }
+    XmlNode availabilityZoneImpairmentPolicyNode = resultNode.FirstChild("AvailabilityZoneImpairmentPolicy");
+    if(!availabilityZoneImpairmentPolicyNode.IsNull())
+    {
+      m_availabilityZoneImpairmentPolicy = availabilityZoneImpairmentPolicyNode;
+      m_availabilityZoneImpairmentPolicyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -596,6 +603,13 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       m_availabilityZoneDistribution.OutputToStream(oStream, availabilityZoneDistributionLocationAndMemberSs.str().c_str());
   }
 
+  if(m_availabilityZoneImpairmentPolicyHasBeenSet)
+  {
+      Aws::StringStream availabilityZoneImpairmentPolicyLocationAndMemberSs;
+      availabilityZoneImpairmentPolicyLocationAndMemberSs << location << index << locationValue << ".AvailabilityZoneImpairmentPolicy";
+      m_availabilityZoneImpairmentPolicy.OutputToStream(oStream, availabilityZoneImpairmentPolicyLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -799,6 +813,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       Aws::String availabilityZoneDistributionLocationAndMember(location);
       availabilityZoneDistributionLocationAndMember += ".AvailabilityZoneDistribution";
       m_availabilityZoneDistribution.OutputToStream(oStream, availabilityZoneDistributionLocationAndMember.c_str());
+  }
+  if(m_availabilityZoneImpairmentPolicyHasBeenSet)
+  {
+      Aws::String availabilityZoneImpairmentPolicyLocationAndMember(location);
+      availabilityZoneImpairmentPolicyLocationAndMember += ".AvailabilityZoneImpairmentPolicy";
+      m_availabilityZoneImpairmentPolicy.OutputToStream(oStream, availabilityZoneImpairmentPolicyLocationAndMember.c_str());
   }
 }
 

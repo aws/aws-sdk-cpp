@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     CREATING,
+    PENDING,
     UPDATING,
     DELETING,
     ACTIVE,

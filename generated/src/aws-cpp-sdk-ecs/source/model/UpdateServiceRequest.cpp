@@ -37,7 +37,8 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_propagateTagsHasBeenSet(false),
     m_serviceRegistriesHasBeenSet(false),
     m_serviceConnectConfigurationHasBeenSet(false),
-    m_volumeConfigurationsHasBeenSet(false)
+    m_volumeConfigurationsHasBeenSet(false),
+    m_vpcLatticeConfigurationsHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,17 @@ Aws::String UpdateServiceRequest::SerializePayload() const
      volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject(m_volumeConfigurations[volumeConfigurationsIndex].Jsonize());
    }
    payload.WithArray("volumeConfigurations", std::move(volumeConfigurationsJsonList));
+
+  }
+
+  if(m_vpcLatticeConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> vpcLatticeConfigurationsJsonList(m_vpcLatticeConfigurations.size());
+   for(unsigned vpcLatticeConfigurationsIndex = 0; vpcLatticeConfigurationsIndex < vpcLatticeConfigurationsJsonList.GetLength(); ++vpcLatticeConfigurationsIndex)
+   {
+     vpcLatticeConfigurationsJsonList[vpcLatticeConfigurationsIndex].AsObject(m_vpcLatticeConfigurations[vpcLatticeConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("vpcLatticeConfigurations", std::move(vpcLatticeConfigurationsJsonList));
 
   }
 

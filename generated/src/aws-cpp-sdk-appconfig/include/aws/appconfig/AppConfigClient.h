@@ -1024,7 +1024,7 @@ namespace AppConfig
 
         /**
          * <p>Lists configurations stored in the AppConfig hosted configuration store by
-         * version.</p><p><h3>See Also:</h3>   <a
+         * version. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions">AWS
          * API Reference</a></p>
          */

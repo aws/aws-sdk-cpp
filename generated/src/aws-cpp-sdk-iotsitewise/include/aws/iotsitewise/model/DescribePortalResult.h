@@ -11,6 +11,9 @@
 #include <aws/iotsitewise/model/ImageLocation.h>
 #include <aws/iotsitewise/model/AuthMode.h>
 #include <aws/iotsitewise/model/Alarms.h>
+#include <aws/iotsitewise/model/PortalType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iotsitewise/model/PortalTypeEntry.h>
 #include <utility>
 
 namespace Aws
@@ -239,6 +242,38 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is
+     * <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware)
+     * is <code>SITEWISE_PORTAL_V2</code>.</p>
+     */
+    inline const PortalType& GetPortalType() const{ return m_portalType; }
+    inline void SetPortalType(const PortalType& value) { m_portalType = value; }
+    inline void SetPortalType(PortalType&& value) { m_portalType = std::move(value); }
+    inline DescribePortalResult& WithPortalType(const PortalType& value) { SetPortalType(value); return *this;}
+    inline DescribePortalResult& WithPortalType(PortalType&& value) { SetPortalType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration entry associated with the specific portal type. The value
+     * for IoT SiteWise Monitor (Classic) is <code>SITEWISE_PORTAL_V1</code>. The value
+     * for IoT SiteWise Monitor (AI-aware) is <code>SITEWISE_PORTAL_V2</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, PortalTypeEntry>& GetPortalTypeConfiguration() const{ return m_portalTypeConfiguration; }
+    inline void SetPortalTypeConfiguration(const Aws::Map<Aws::String, PortalTypeEntry>& value) { m_portalTypeConfiguration = value; }
+    inline void SetPortalTypeConfiguration(Aws::Map<Aws::String, PortalTypeEntry>&& value) { m_portalTypeConfiguration = std::move(value); }
+    inline DescribePortalResult& WithPortalTypeConfiguration(const Aws::Map<Aws::String, PortalTypeEntry>& value) { SetPortalTypeConfiguration(value); return *this;}
+    inline DescribePortalResult& WithPortalTypeConfiguration(Aws::Map<Aws::String, PortalTypeEntry>&& value) { SetPortalTypeConfiguration(std::move(value)); return *this;}
+    inline DescribePortalResult& AddPortalTypeConfiguration(const Aws::String& key, const PortalTypeEntry& value) { m_portalTypeConfiguration.emplace(key, value); return *this; }
+    inline DescribePortalResult& AddPortalTypeConfiguration(Aws::String&& key, const PortalTypeEntry& value) { m_portalTypeConfiguration.emplace(std::move(key), value); return *this; }
+    inline DescribePortalResult& AddPortalTypeConfiguration(const Aws::String& key, PortalTypeEntry&& value) { m_portalTypeConfiguration.emplace(key, std::move(value)); return *this; }
+    inline DescribePortalResult& AddPortalTypeConfiguration(Aws::String&& key, PortalTypeEntry&& value) { m_portalTypeConfiguration.emplace(std::move(key), std::move(value)); return *this; }
+    inline DescribePortalResult& AddPortalTypeConfiguration(const char* key, PortalTypeEntry&& value) { m_portalTypeConfiguration.emplace(key, std::move(value)); return *this; }
+    inline DescribePortalResult& AddPortalTypeConfiguration(const char* key, const PortalTypeEntry& value) { m_portalTypeConfiguration.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -279,6 +314,10 @@ namespace Model
     Aws::String m_notificationSenderEmail;
 
     Alarms m_alarms;
+
+    PortalType m_portalType;
+
+    Aws::Map<Aws::String, PortalTypeEntry> m_portalTypeConfiguration;
 
     Aws::String m_requestId;
   };

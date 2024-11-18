@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/AvailabilityZoneDistribution.h>
+#include <aws/autoscaling/model/AvailabilityZoneImpairmentPolicy.h>
 #include <aws/autoscaling/model/LifecycleHookSpecification.h>
 #include <aws/autoscaling/model/Tag.h>
 #include <aws/autoscaling/model/TrafficSourceIdentifier.h>
@@ -558,6 +559,33 @@ namespace Model
     inline CreateAutoScalingGroupRequest& WithAvailabilityZoneDistribution(const AvailabilityZoneDistribution& value) { SetAvailabilityZoneDistribution(value); return *this;}
     inline CreateAutoScalingGroupRequest& WithAvailabilityZoneDistribution(AvailabilityZoneDistribution&& value) { SetAvailabilityZoneDistribution(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The policy for Availability Zone impairment. </p>
+     */
+    inline const AvailabilityZoneImpairmentPolicy& GetAvailabilityZoneImpairmentPolicy() const{ return m_availabilityZoneImpairmentPolicy; }
+    inline bool AvailabilityZoneImpairmentPolicyHasBeenSet() const { return m_availabilityZoneImpairmentPolicyHasBeenSet; }
+    inline void SetAvailabilityZoneImpairmentPolicy(const AvailabilityZoneImpairmentPolicy& value) { m_availabilityZoneImpairmentPolicyHasBeenSet = true; m_availabilityZoneImpairmentPolicy = value; }
+    inline void SetAvailabilityZoneImpairmentPolicy(AvailabilityZoneImpairmentPolicy&& value) { m_availabilityZoneImpairmentPolicyHasBeenSet = true; m_availabilityZoneImpairmentPolicy = std::move(value); }
+    inline CreateAutoScalingGroupRequest& WithAvailabilityZoneImpairmentPolicy(const AvailabilityZoneImpairmentPolicy& value) { SetAvailabilityZoneImpairmentPolicy(value); return *this;}
+    inline CreateAutoScalingGroupRequest& WithAvailabilityZoneImpairmentPolicy(AvailabilityZoneImpairmentPolicy&& value) { SetAvailabilityZoneImpairmentPolicy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> If you enable zonal shift with cross-zone disabled load balancers, capacity
+     * could become imbalanced across Availability Zones. To skip the validation,
+     * specify <code>true</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto
+     * Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     */
+    inline bool GetSkipZonalShiftValidation() const{ return m_skipZonalShiftValidation; }
+    inline bool SkipZonalShiftValidationHasBeenSet() const { return m_skipZonalShiftValidationHasBeenSet; }
+    inline void SetSkipZonalShiftValidation(bool value) { m_skipZonalShiftValidationHasBeenSet = true; m_skipZonalShiftValidation = value; }
+    inline CreateAutoScalingGroupRequest& WithSkipZonalShiftValidation(bool value) { SetSkipZonalShiftValidation(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -646,6 +674,12 @@ namespace Model
 
     AvailabilityZoneDistribution m_availabilityZoneDistribution;
     bool m_availabilityZoneDistributionHasBeenSet = false;
+
+    AvailabilityZoneImpairmentPolicy m_availabilityZoneImpairmentPolicy;
+    bool m_availabilityZoneImpairmentPolicyHasBeenSet = false;
+
+    bool m_skipZonalShiftValidation;
+    bool m_skipZonalShiftValidationHasBeenSet = false;
   };
 
 } // namespace Model

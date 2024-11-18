@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NetworkInterfaceStatus.h>
 #include <aws/ec2/model/ConnectionTrackingSpecificationResponse.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstancePrivateIpAddress.h>
@@ -309,6 +310,18 @@ namespace Model
     inline InstanceNetworkInterface& WithConnectionTrackingConfiguration(const ConnectionTrackingSpecificationResponse& value) { SetConnectionTrackingConfiguration(value); return *this;}
     inline InstanceNetworkInterface& WithConnectionTrackingConfiguration(ConnectionTrackingSpecificationResponse&& value) { SetConnectionTrackingConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The entity that manages the network interface.</p>
+     */
+    inline const OperatorResponse& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorResponse& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorResponse&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline InstanceNetworkInterface& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
+    inline InstanceNetworkInterface& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
   private:
 
     InstanceNetworkInterfaceAssociation m_association;
@@ -367,6 +380,9 @@ namespace Model
 
     ConnectionTrackingSpecificationResponse m_connectionTrackingConfiguration;
     bool m_connectionTrackingConfigurationHasBeenSet = false;
+
+    OperatorResponse m_operator;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

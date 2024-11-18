@@ -170,7 +170,10 @@ namespace Model
     ///@{
     /**
      * <p>The language code value for the language in which the quick response is
-     * written.</p>
+     * written. The supported language codes include <code>de_DE</code>,
+     * <code>en_US</code>, <code>es_ES</code>, <code>fr_FR</code>, <code>id_ID</code>,
+     * <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>, <code>pt_BR</code>,
+     * <code>zh_CN</code>, <code>zh_TW</code> </p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }

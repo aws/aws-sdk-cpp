@@ -35,6 +35,7 @@
 #include <aws/connect/model/CreateAgentStatusResult.h>
 #include <aws/connect/model/CreateContactFlowResult.h>
 #include <aws/connect/model/CreateContactFlowModuleResult.h>
+#include <aws/connect/model/CreateContactFlowVersionResult.h>
 #include <aws/connect/model/CreateEvaluationFormResult.h>
 #include <aws/connect/model/CreateHoursOfOperationResult.h>
 #include <aws/connect/model/CreateInstanceResult.h>
@@ -111,6 +112,7 @@
 #include <aws/connect/model/ListBotsResult.h>
 #include <aws/connect/model/ListContactEvaluationsResult.h>
 #include <aws/connect/model/ListContactFlowModulesResult.h>
+#include <aws/connect/model/ListContactFlowVersionsResult.h>
 #include <aws/connect/model/ListContactFlowsResult.h>
 #include <aws/connect/model/ListContactReferencesResult.h>
 #include <aws/connect/model/ListDefaultVocabulariesResult.h>
@@ -277,6 +279,7 @@ namespace Aws
       class CreateAgentStatusRequest;
       class CreateContactFlowRequest;
       class CreateContactFlowModuleRequest;
+      class CreateContactFlowVersionRequest;
       class CreateEvaluationFormRequest;
       class CreateHoursOfOperationRequest;
       class CreateInstanceRequest;
@@ -380,6 +383,7 @@ namespace Aws
       class ListBotsRequest;
       class ListContactEvaluationsRequest;
       class ListContactFlowModulesRequest;
+      class ListContactFlowVersionsRequest;
       class ListContactFlowsRequest;
       class ListContactReferencesRequest;
       class ListDefaultVocabulariesRequest;
@@ -537,6 +541,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateAgentStatusResult, ConnectError> CreateAgentStatusOutcome;
       typedef Aws::Utils::Outcome<CreateContactFlowResult, ConnectError> CreateContactFlowOutcome;
       typedef Aws::Utils::Outcome<CreateContactFlowModuleResult, ConnectError> CreateContactFlowModuleOutcome;
+      typedef Aws::Utils::Outcome<CreateContactFlowVersionResult, ConnectError> CreateContactFlowVersionOutcome;
       typedef Aws::Utils::Outcome<CreateEvaluationFormResult, ConnectError> CreateEvaluationFormOutcome;
       typedef Aws::Utils::Outcome<CreateHoursOfOperationResult, ConnectError> CreateHoursOfOperationOutcome;
       typedef Aws::Utils::Outcome<CreateInstanceResult, ConnectError> CreateInstanceOutcome;
@@ -640,6 +645,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListBotsResult, ConnectError> ListBotsOutcome;
       typedef Aws::Utils::Outcome<ListContactEvaluationsResult, ConnectError> ListContactEvaluationsOutcome;
       typedef Aws::Utils::Outcome<ListContactFlowModulesResult, ConnectError> ListContactFlowModulesOutcome;
+      typedef Aws::Utils::Outcome<ListContactFlowVersionsResult, ConnectError> ListContactFlowVersionsOutcome;
       typedef Aws::Utils::Outcome<ListContactFlowsResult, ConnectError> ListContactFlowsOutcome;
       typedef Aws::Utils::Outcome<ListContactReferencesResult, ConnectError> ListContactReferencesOutcome;
       typedef Aws::Utils::Outcome<ListDefaultVocabulariesResult, ConnectError> ListDefaultVocabulariesOutcome;
@@ -797,6 +803,7 @@ namespace Aws
       typedef std::future<CreateAgentStatusOutcome> CreateAgentStatusOutcomeCallable;
       typedef std::future<CreateContactFlowOutcome> CreateContactFlowOutcomeCallable;
       typedef std::future<CreateContactFlowModuleOutcome> CreateContactFlowModuleOutcomeCallable;
+      typedef std::future<CreateContactFlowVersionOutcome> CreateContactFlowVersionOutcomeCallable;
       typedef std::future<CreateEvaluationFormOutcome> CreateEvaluationFormOutcomeCallable;
       typedef std::future<CreateHoursOfOperationOutcome> CreateHoursOfOperationOutcomeCallable;
       typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
@@ -900,6 +907,7 @@ namespace Aws
       typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
       typedef std::future<ListContactEvaluationsOutcome> ListContactEvaluationsOutcomeCallable;
       typedef std::future<ListContactFlowModulesOutcome> ListContactFlowModulesOutcomeCallable;
+      typedef std::future<ListContactFlowVersionsOutcome> ListContactFlowVersionsOutcomeCallable;
       typedef std::future<ListContactFlowsOutcome> ListContactFlowsOutcomeCallable;
       typedef std::future<ListContactReferencesOutcome> ListContactReferencesOutcomeCallable;
       typedef std::future<ListDefaultVocabulariesOutcome> ListDefaultVocabulariesOutcomeCallable;
@@ -1060,6 +1068,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::CreateAgentStatusRequest&, const Model::CreateAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAgentStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowRequest&, const Model::CreateContactFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowModuleRequest&, const Model::CreateContactFlowModuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowModuleResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CreateContactFlowVersionRequest&, const Model::CreateContactFlowVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactFlowVersionResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateEvaluationFormRequest&, const Model::CreateEvaluationFormOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEvaluationFormResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateHoursOfOperationRequest&, const Model::CreateHoursOfOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHoursOfOperationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateInstanceRequest&, const Model::CreateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceResponseReceivedHandler;
@@ -1163,6 +1172,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListContactEvaluationsRequest&, const Model::ListContactEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactEvaluationsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListContactFlowModulesRequest&, const Model::ListContactFlowModulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactFlowModulesResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListContactFlowVersionsRequest&, const Model::ListContactFlowVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactFlowVersionsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListContactFlowsRequest&, const Model::ListContactFlowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactFlowsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListContactReferencesRequest&, const Model::ListContactReferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContactReferencesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListDefaultVocabulariesRequest&, const Model::ListDefaultVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDefaultVocabulariesResponseReceivedHandler;
