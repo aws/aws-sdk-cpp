@@ -488,6 +488,18 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config,
   s3CrtConfig.factory_user_data = static_cast<void *>(&m_identityProviderUserData);
   s3CrtConfig.s3express_provider_override_factory = S3CrtIdentityProviderAdapter::ProviderFactory;
 
+  UniqueArrayPtr<aws_byte_cursor> interfacesNameCRTArr;
+  if (!config.networkInterfaceNames.empty())
+  {
+    interfacesNameCRTArr = Aws::MakeUniqueArray<aws_byte_cursor>(config.networkInterfaceNames.size(), ALLOCATION_TAG);
+    for(size_t i = 0; i < config.networkInterfaceNames.size(); ++i)
+    {
+      interfacesNameCRTArr.get()[i] = Crt::ByteCursorFromCString(config.networkInterfaceNames[i].c_str());
+    }
+    s3CrtConfig.network_interface_names_array = interfacesNameCRTArr.get();
+    s3CrtConfig.num_network_interface_names = config.networkInterfaceNames.size();
+  }
+
   m_s3CrtClient = aws_s3_client_new(Aws::get_aws_allocator(), &s3CrtConfig);
   if (!m_s3CrtClient)
   {
