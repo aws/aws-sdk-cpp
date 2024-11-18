@@ -10,6 +10,7 @@
 #include <aws/rds/model/CustomDBEngineVersionAMI.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/rds/model/ServerlessV2FeaturesSupport.h>
 #include <aws/rds/model/ResponseMetadata.h>
 #include <aws/rds/model/UpgradeTarget.h>
 #include <aws/rds/model/Timezone.h>
@@ -495,6 +496,22 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Specifies any Aurora Serverless v2 properties or limits that differ between
+     * Aurora engine versions. You can test the values of this attribute when deciding
+     * which Aurora version to use in a new or upgraded DB cluster. You can also
+     * retrieve the version of an existing DB cluster and check whether that version
+     * supports certain Aurora Serverless v2 features before you attempt to use those
+     * features. </p>
+     */
+    inline const ServerlessV2FeaturesSupport& GetServerlessV2FeaturesSupport() const{ return m_serverlessV2FeaturesSupport; }
+    inline void SetServerlessV2FeaturesSupport(const ServerlessV2FeaturesSupport& value) { m_serverlessV2FeaturesSupport = value; }
+    inline void SetServerlessV2FeaturesSupport(ServerlessV2FeaturesSupport&& value) { m_serverlessV2FeaturesSupport = std::move(value); }
+    inline ModifyCustomDBEngineVersionResult& WithServerlessV2FeaturesSupport(const ServerlessV2FeaturesSupport& value) { SetServerlessV2FeaturesSupport(value); return *this;}
+    inline ModifyCustomDBEngineVersionResult& WithServerlessV2FeaturesSupport(ServerlessV2FeaturesSupport&& value) { SetServerlessV2FeaturesSupport(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -571,6 +588,8 @@ namespace Model
     bool m_supportsLocalWriteForwarding;
 
     bool m_supportsIntegrations;
+
+    ServerlessV2FeaturesSupport m_serverlessV2FeaturesSupport;
 
     ResponseMetadata m_responseMetadata;
   };

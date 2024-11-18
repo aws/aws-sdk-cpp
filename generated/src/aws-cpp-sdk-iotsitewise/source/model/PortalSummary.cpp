@@ -26,7 +26,9 @@ PortalSummary::PortalSummary() :
     m_creationDateHasBeenSet(false),
     m_lastUpdateDateHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_portalType(PortalType::NOT_SET),
+    m_portalTypeHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,13 @@ PortalSummary& PortalSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("portalType"))
+  {
+    m_portalType = PortalTypeMapper::GetPortalTypeForName(jsonValue.GetString("portalType"));
+
+    m_portalTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -145,6 +154,11 @@ JsonValue PortalSummary::Jsonize() const
   {
    payload.WithObject("status", m_status.Jsonize());
 
+  }
+
+  if(m_portalTypeHasBeenSet)
+  {
+   payload.WithString("portalType", PortalTypeMapper::GetNameForPortalType(m_portalType));
   }
 
   return payload;

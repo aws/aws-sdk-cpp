@@ -74,7 +74,7 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If not provided, the Amazon Web Services SDK
      * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }

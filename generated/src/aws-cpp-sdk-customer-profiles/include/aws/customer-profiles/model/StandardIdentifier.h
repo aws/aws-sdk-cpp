@@ -19,11 +19,12 @@ namespace Model
     PROFILE,
     ASSET,
     CASE,
+    ORDER,
+    COMMUNICATION_RECORD,
     UNIQUE,
     SECONDARY,
     LOOKUP_ONLY,
-    NEW_ONLY,
-    ORDER
+    NEW_ONLY
   };
 
 namespace StandardIdentifierMapper

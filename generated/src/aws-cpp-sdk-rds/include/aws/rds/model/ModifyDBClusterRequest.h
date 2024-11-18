@@ -82,8 +82,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether the modifications in this request and any pending
-     * modifications are asynchronously applied as soon as possible, regardless of the
+     * <p>Specifies whether the modifications in this request are asynchronously
+     * applied as soon as possible, regardless of the
      * <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this
      * parameter is disabled, changes to the DB cluster are applied during the next
      * maintenance window.</p> <p>Most modifications can be applied immediately or

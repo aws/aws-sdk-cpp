@@ -108,7 +108,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The data type of the asset model property.</p>
+     * <p>The data type of the asset model property.</p> <p>If you specify
+     * <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify
+     * the type of the structure for this property.</p>
      */
     inline const PropertyDataType& GetDataType() const{ return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }

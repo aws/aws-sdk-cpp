@@ -21,6 +21,7 @@ namespace CloudFormationErrorMapper
 static const int STACK_SET_NOT_FOUND_HASH = HashingUtils::HashString("StackSetNotFoundException");
 static const int C_F_N_REGISTRY_HASH = HashingUtils::HashString("CFNRegistryException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int HOOK_RESULT_NOT_FOUND_HASH = HashingUtils::HashString("HookResultNotFound");
 static const int OPERATION_NOT_FOUND_HASH = HashingUtils::HashString("OperationNotFoundException");
 static const int RESOURCE_SCAN_NOT_FOUND_HASH = HashingUtils::HashString("ResourceScanNotFound");
 static const int INSUFFICIENT_CAPABILITIES_HASH = HashingUtils::HashString("InsufficientCapabilitiesException");
@@ -62,6 +63,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
+  }
+  else if (hashCode == HOOK_RESULT_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::HOOK_RESULT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPERATION_NOT_FOUND_HASH)
   {

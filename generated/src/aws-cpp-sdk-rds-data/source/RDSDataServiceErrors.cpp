@@ -26,6 +26,7 @@ template<> AWS_RDSDATASERVICE_API StatementTimeoutException RDSDataServiceError:
 namespace RDSDataServiceErrorMapper
 {
 
+static const int DATABASE_RESUMING_HASH = HashingUtils::HashString("DatabaseResumingException");
 static const int HTTP_ENDPOINT_NOT_ENABLED_HASH = HashingUtils::HashString("HttpEndpointNotEnabledException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
 static const int INVALID_SECRET_HASH = HashingUtils::HashString("InvalidSecretException");
@@ -45,7 +46,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == HTTP_ENDPOINT_NOT_ENABLED_HASH)
+  if (hashCode == DATABASE_RESUMING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSDataServiceErrors::DATABASE_RESUMING), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == HTTP_ENDPOINT_NOT_ENABLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSDataServiceErrors::HTTP_ENDPOINT_NOT_ENABLED), RetryableType::NOT_RETRYABLE);
   }

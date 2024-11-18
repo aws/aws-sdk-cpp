@@ -18,7 +18,8 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribePortalResult::DescribePortalResult() : 
-    m_portalAuthMode(AuthMode::NOT_SET)
+    m_portalAuthMode(AuthMode::NOT_SET),
+    m_portalType(PortalType::NOT_SET)
 {
 }
 
@@ -119,6 +120,21 @@ DescribePortalResult& DescribePortalResult::operator =(const Aws::AmazonWebServi
   {
     m_alarms = jsonValue.GetObject("alarms");
 
+  }
+
+  if(jsonValue.ValueExists("portalType"))
+  {
+    m_portalType = PortalTypeMapper::GetPortalTypeForName(jsonValue.GetString("portalType"));
+
+  }
+
+  if(jsonValue.ValueExists("portalTypeConfiguration"))
+  {
+    Aws::Map<Aws::String, JsonView> portalTypeConfigurationJsonMap = jsonValue.GetObject("portalTypeConfiguration").GetAllObjects();
+    for(auto& portalTypeConfigurationItem : portalTypeConfigurationJsonMap)
+    {
+      m_portalTypeConfiguration[portalTypeConfigurationItem.first] = portalTypeConfigurationItem.second.AsObject();
+    }
   }
 
 

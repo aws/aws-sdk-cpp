@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iotsitewise/model/PortalStatus.h>
+#include <aws/iotsitewise/model/PortalType.h>
 #include <utility>
 
 namespace Aws
@@ -151,6 +152,20 @@ namespace Model
     inline PortalSummary& WithStatus(const PortalStatus& value) { SetStatus(value); return *this;}
     inline PortalSummary& WithStatus(PortalStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Define the type of portal. The value for IoT SiteWise Monitor (Classic) is
+     * <code>SITEWISE_PORTAL_V1</code>. The value for IoT SiteWise Monitor (AI-aware)
+     * is <code>SITEWISE_PORTAL_V2</code>.</p>
+     */
+    inline const PortalType& GetPortalType() const{ return m_portalType; }
+    inline bool PortalTypeHasBeenSet() const { return m_portalTypeHasBeenSet; }
+    inline void SetPortalType(const PortalType& value) { m_portalTypeHasBeenSet = true; m_portalType = value; }
+    inline void SetPortalType(PortalType&& value) { m_portalTypeHasBeenSet = true; m_portalType = std::move(value); }
+    inline PortalSummary& WithPortalType(const PortalType& value) { SetPortalType(value); return *this;}
+    inline PortalSummary& WithPortalType(PortalType&& value) { SetPortalType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -176,6 +191,9 @@ namespace Model
 
     PortalStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    PortalType m_portalType;
+    bool m_portalTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,7 +24,10 @@ CreatePortalRequest::CreatePortalRequest() :
     m_portalAuthMode(AuthMode::NOT_SET),
     m_portalAuthModeHasBeenSet(false),
     m_notificationSenderEmailHasBeenSet(false),
-    m_alarmsHasBeenSet(false)
+    m_alarmsHasBeenSet(false),
+    m_portalType(PortalType::NOT_SET),
+    m_portalTypeHasBeenSet(false),
+    m_portalTypeConfigurationHasBeenSet(false)
 {
 }
 
@@ -93,6 +96,22 @@ Aws::String CreatePortalRequest::SerializePayload() const
   if(m_alarmsHasBeenSet)
   {
    payload.WithObject("alarms", m_alarms.Jsonize());
+
+  }
+
+  if(m_portalTypeHasBeenSet)
+  {
+   payload.WithString("portalType", PortalTypeMapper::GetNameForPortalType(m_portalType));
+  }
+
+  if(m_portalTypeConfigurationHasBeenSet)
+  {
+   JsonValue portalTypeConfigurationJsonMap;
+   for(auto& portalTypeConfigurationItem : m_portalTypeConfiguration)
+   {
+     portalTypeConfigurationJsonMap.WithObject(portalTypeConfigurationItem.first, portalTypeConfigurationItem.second.Jsonize());
+   }
+   payload.WithObject("portalTypeConfiguration", std::move(portalTypeConfigurationJsonMap));
 
   }
 

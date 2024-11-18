@@ -41,6 +41,12 @@ CreateContactFlowResult& CreateContactFlowResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("FlowContentSha256"))
+  {
+    m_flowContentSha256 = jsonValue.GetString("FlowContentSha256");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

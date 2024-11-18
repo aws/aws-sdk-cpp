@@ -12,7 +12,9 @@ using namespace Aws::Utils;
 
 AttachTrafficSourcesRequest::AttachTrafficSourcesRequest() : 
     m_autoScalingGroupNameHasBeenSet(false),
-    m_trafficSourcesHasBeenSet(false)
+    m_trafficSourcesHasBeenSet(false),
+    m_skipZonalShiftValidation(false),
+    m_skipZonalShiftValidationHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,11 @@ Aws::String AttachTrafficSourcesRequest::SerializePayload() const
         trafficSourcesCount++;
       }
     }
+  }
+
+  if(m_skipZonalShiftValidationHasBeenSet)
+  {
+    ss << "SkipZonalShiftValidation=" << std::boolalpha << m_skipZonalShiftValidation << "&";
   }
 
   ss << "Version=2011-01-01";

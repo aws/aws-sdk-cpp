@@ -203,9 +203,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The capacity provider strategy the service uses. When using
-     * <code>DescribeServices</code>, this field is omitted if the service was created
-     * using a launch type.</p>
+     * <p>The capacity provider strategy the service uses. When using the
+     * DescribeServices API, this field is omitted if the service was created using a
+     * launch type.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
@@ -452,7 +452,7 @@ namespace Model
     ///@{
     /**
      * <p>The metadata that you apply to the service to help you categorize and
-     * organize them. Each tag consists of a key and an optional value. You define both
+     * organize them. Each tag consists of a key and an optional value. You define bot
      * the key and value.</p> <p>The following basic restrictions apply to tags:</p>
      * <ul> <li> <p>Maximum number of tags per resource - 50</p> </li> <li> <p>For each
      * resource, each tag key must be unique, and each tag key can have only one

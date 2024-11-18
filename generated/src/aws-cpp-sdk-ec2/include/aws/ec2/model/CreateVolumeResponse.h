@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/ec2/model/SSEType.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/VolumeState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/ResponseMetadata.h>
@@ -133,6 +134,17 @@ namespace Model
     inline void SetSseType(SSEType&& value) { m_sseType = std::move(value); }
     inline CreateVolumeResponse& WithSseType(const SSEType& value) { SetSseType(value); return *this;}
     inline CreateVolumeResponse& WithSseType(SSEType&& value) { SetSseType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The entity that manages the volume.</p>
+     */
+    inline const OperatorResponse& GetOperator() const{ return m_operator; }
+    inline void SetOperator(const OperatorResponse& value) { m_operator = value; }
+    inline void SetOperator(OperatorResponse&& value) { m_operator = std::move(value); }
+    inline CreateVolumeResponse& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
+    inline CreateVolumeResponse& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,6 +279,8 @@ namespace Model
     int m_throughput;
 
     SSEType m_sseType;
+
+    OperatorResponse m_operator;
 
     Aws::String m_volumeId;
 

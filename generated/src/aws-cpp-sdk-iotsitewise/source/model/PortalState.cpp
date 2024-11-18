@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
@@ -33,6 +34,10 @@ namespace Aws
           if (hashCode == CREATING_HASH)
           {
             return PortalState::CREATING;
+          }
+          else if (hashCode == PENDING_HASH)
+          {
+            return PortalState::PENDING;
           }
           else if (hashCode == UPDATING_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return {};
           case PortalState::CREATING:
             return "CREATING";
+          case PortalState::PENDING:
+            return "PENDING";
           case PortalState::UPDATING:
             return "UPDATING";
           case PortalState::DELETING:

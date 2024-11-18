@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VolumeType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/OperatorRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -259,6 +260,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline const OperatorRequest& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorRequest& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorRequest&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline CreateVolumeRequest& WithOperator(const OperatorRequest& value) { SetOperator(value); return *this;}
+    inline CreateVolumeRequest& WithOperator(OperatorRequest&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -306,6 +319,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    OperatorRequest m_operator;
+    bool m_operatorHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;

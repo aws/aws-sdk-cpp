@@ -68,6 +68,7 @@ Instance::Instance() :
     m_maintenanceOptionsHasBeenSet(false),
     m_currentInstanceBootMode(InstanceBootModeValues::NOT_SET),
     m_currentInstanceBootModeHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_stateHasBeenSet(false),
@@ -369,6 +370,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     {
       m_currentInstanceBootMode = InstanceBootModeValuesMapper::GetInstanceBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentInstanceBootModeNode.GetText()).c_str()).c_str());
       m_currentInstanceBootModeHasBeenSet = true;
+    }
+    XmlNode operatorNode = resultNode.FirstChild("operator");
+    if(!operatorNode.IsNull())
+    {
+      m_operator = operatorNode;
+      m_operatorHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
@@ -748,6 +755,13 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".CurrentInstanceBootMode=" << InstanceBootModeValuesMapper::GetNameForInstanceBootModeValues(m_currentInstanceBootMode) << "&";
   }
 
+  if(m_operatorHasBeenSet)
+  {
+      Aws::StringStream operatorLocationAndMemberSs;
+      operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
+  }
+
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
@@ -1071,6 +1085,12 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_currentInstanceBootModeHasBeenSet)
   {
       oStream << location << ".CurrentInstanceBootMode=" << InstanceBootModeValuesMapper::GetNameForInstanceBootModeValues(m_currentInstanceBootMode) << "&";
+  }
+  if(m_operatorHasBeenSet)
+  {
+      Aws::String operatorLocationAndMember(location);
+      operatorLocationAndMember += ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
   }
   if(m_instanceIdHasBeenSet)
   {

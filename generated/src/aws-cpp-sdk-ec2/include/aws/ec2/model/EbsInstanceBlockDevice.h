@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/AttachmentStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <utility>
 
 namespace Aws
@@ -119,6 +120,18 @@ namespace Model
     inline EbsInstanceBlockDevice& WithVolumeOwnerId(Aws::String&& value) { SetVolumeOwnerId(std::move(value)); return *this;}
     inline EbsInstanceBlockDevice& WithVolumeOwnerId(const char* value) { SetVolumeOwnerId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The entity that manages the EBS volume.</p>
+     */
+    inline const OperatorResponse& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorResponse& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorResponse&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline EbsInstanceBlockDevice& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
+    inline EbsInstanceBlockDevice& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_attachTime;
@@ -138,6 +151,9 @@ namespace Model
 
     Aws::String m_volumeOwnerId;
     bool m_volumeOwnerIdHasBeenSet = false;
+
+    OperatorResponse m_operator;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

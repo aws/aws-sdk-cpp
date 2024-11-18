@@ -19,6 +19,7 @@ CreateCalculatedAttributeDefinitionRequest::CreateCalculatedAttributeDefinitionR
     m_descriptionHasBeenSet(false),
     m_attributeDetailsHasBeenSet(false),
     m_conditionsHasBeenSet(false),
+    m_filterHasBeenSet(false),
     m_statistic(Statistic::NOT_SET),
     m_statisticHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -50,6 +51,12 @@ Aws::String CreateCalculatedAttributeDefinitionRequest::SerializePayload() const
   if(m_conditionsHasBeenSet)
   {
    payload.WithObject("Conditions", m_conditions.Jsonize());
+
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("Filter", m_filter.Jsonize());
 
   }
 

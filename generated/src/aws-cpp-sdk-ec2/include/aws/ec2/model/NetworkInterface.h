@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NetworkInterfaceType.h>
 #include <aws/ec2/model/NetworkInterfaceStatus.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/NetworkInterfaceIpv6Address.h>
 #include <aws/ec2/model/NetworkInterfacePrivateIpAddress.h>
@@ -414,6 +415,18 @@ namespace Model
     inline NetworkInterface& WithIpv6Address(Aws::String&& value) { SetIpv6Address(std::move(value)); return *this;}
     inline NetworkInterface& WithIpv6Address(const char* value) { SetIpv6Address(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The entity that manages the network interface.</p>
+     */
+    inline const OperatorResponse& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorResponse& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorResponse&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline NetworkInterface& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
+    inline NetworkInterface& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
   private:
 
     NetworkInterfaceAssociation m_association;
@@ -496,6 +509,9 @@ namespace Model
 
     Aws::String m_ipv6Address;
     bool m_ipv6AddressHasBeenSet = false;
+
+    OperatorResponse m_operator;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -523,6 +523,32 @@ namespace IoTSiteWise
         }
 
         /**
+         * <p>Creates a dataset to connect an external datasource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDatasetOutcome CreateDataset(const Model::CreateDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDatasetRequestT = Model::CreateDatasetRequest>
+        Model::CreateDatasetOutcomeCallable CreateDatasetCallable(const CreateDatasetRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::CreateDataset, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDatasetRequestT = Model::CreateDatasetRequest>
+        void CreateDatasetAsync(const CreateDatasetRequestT& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::CreateDataset, request, handler, context);
+        }
+
+        /**
          * <p>Creates a gateway, which is a virtual or edge device that delivers industrial
          * data streams from local servers to IoT SiteWise. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting
@@ -754,6 +780,31 @@ namespace IoTSiteWise
         void DeleteDashboardAsync(const DeleteDashboardRequestT& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTSiteWiseClient::DeleteDashboard, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a dataset. This cannot be undone.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDatasetRequestT = Model::DeleteDatasetRequest>
+        Model::DeleteDatasetOutcomeCallable DeleteDatasetCallable(const DeleteDatasetRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::DeleteDataset, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDatasetRequestT = Model::DeleteDatasetRequest>
+        void DeleteDatasetAsync(const DeleteDatasetRequestT& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::DeleteDataset, request, handler, context);
         }
 
         /**
@@ -1111,6 +1162,31 @@ namespace IoTSiteWise
         void DescribeDashboardAsync(const DescribeDashboardRequestT& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTSiteWiseClient::DescribeDashboard, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about a dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDatasetOutcome DescribeDataset(const Model::DescribeDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDatasetRequestT = Model::DescribeDatasetRequest>
+        Model::DescribeDatasetOutcomeCallable DescribeDatasetCallable(const DescribeDatasetRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::DescribeDataset, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDatasetRequestT = Model::DescribeDatasetRequest>
+        void DescribeDatasetAsync(const DescribeDatasetRequestT& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::DescribeDataset, request, handler, context);
         }
 
         /**
@@ -1578,6 +1654,32 @@ namespace IoTSiteWise
         }
 
         /**
+         * <p>Invokes SiteWise Assistant to start or continue a conversation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/InvokeAssistant">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::InvokeAssistantOutcome InvokeAssistant(Model::InvokeAssistantRequest& request) const;
+
+        /**
+         * A Callable wrapper for InvokeAssistant that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename InvokeAssistantRequestT = Model::InvokeAssistantRequest>
+        Model::InvokeAssistantOutcomeCallable InvokeAssistantCallable(InvokeAssistantRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::InvokeAssistant, request);
+        }
+
+        /**
+         * An Async wrapper for InvokeAssistant that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename InvokeAssistantRequestT = Model::InvokeAssistantRequest>
+        void InvokeAssistantAsync(InvokeAssistantRequestT& request, const InvokeAssistantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::InvokeAssistant, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a paginated list of access policies for an identity (an IAM
          * Identity Center user, an IAM Identity Center group, or an IAM user) or an IoT
          * SiteWise Monitor resource (a portal or project).</p><p><h3>See Also:</h3>   <a
@@ -1902,6 +2004,32 @@ namespace IoTSiteWise
         void ListDashboardsAsync(const ListDashboardsRequestT& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTSiteWiseClient::ListDashboards, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a paginated list of datasets for a specific target
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListDatasets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDatasetsOutcome ListDatasets(const Model::ListDatasetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDatasets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
+        Model::ListDatasetsOutcomeCallable ListDatasetsCallable(const ListDatasetsRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::ListDatasets, request);
+        }
+
+        /**
+         * An Async wrapper for ListDatasets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDatasetsRequestT = Model::ListDatasetsRequest>
+        void ListDatasetsAsync(const ListDatasetsRequestT& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::ListDatasets, request, handler, context);
         }
 
         /**
@@ -2374,6 +2502,31 @@ namespace IoTSiteWise
         void UpdateDashboardAsync(const UpdateDashboardRequestT& request, const UpdateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTSiteWiseClient::UpdateDashboard, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDatasetOutcome UpdateDataset(const Model::UpdateDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDatasetRequestT = Model::UpdateDatasetRequest>
+        Model::UpdateDatasetOutcomeCallable UpdateDatasetCallable(const UpdateDatasetRequestT& request) const
+        {
+            return SubmitCallable(&IoTSiteWiseClient::UpdateDataset, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDatasetRequestT = Model::UpdateDatasetRequest>
+        void UpdateDatasetAsync(const UpdateDatasetRequestT& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTSiteWiseClient::UpdateDataset, request, handler, context);
         }
 
         /**

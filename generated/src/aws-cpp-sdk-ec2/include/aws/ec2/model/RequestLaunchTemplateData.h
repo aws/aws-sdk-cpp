@@ -23,6 +23,7 @@
 #include <aws/ec2/model/InstanceRequirementsRequest.h>
 #include <aws/ec2/model/LaunchTemplatePrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMaintenanceOptionsRequest.h>
+#include <aws/ec2/model/OperatorRequest.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMappingRequest.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecificationRequest.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecificationRequest.h>
@@ -583,6 +584,18 @@ namespace Model
     inline void SetDisableApiStop(bool value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
     inline RequestLaunchTemplateData& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The entity that manages the launch template.</p>
+     */
+    inline const OperatorRequest& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorRequest& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorRequest&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline RequestLaunchTemplateData& WithOperator(const OperatorRequest& value) { SetOperator(value); return *this;}
+    inline RequestLaunchTemplateData& WithOperator(OperatorRequest&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_kernelId;
@@ -677,6 +690,9 @@ namespace Model
 
     bool m_disableApiStop;
     bool m_disableApiStopHasBeenSet = false;
+
+    OperatorRequest m_operator;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

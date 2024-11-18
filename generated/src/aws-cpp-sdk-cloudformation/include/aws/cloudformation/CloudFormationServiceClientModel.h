@@ -64,6 +64,7 @@
 #include <aws/cloudformation/model/ListChangeSetsResult.h>
 #include <aws/cloudformation/model/ListExportsResult.h>
 #include <aws/cloudformation/model/ListGeneratedTemplatesResult.h>
+#include <aws/cloudformation/model/ListHookResultsResult.h>
 #include <aws/cloudformation/model/ListImportsResult.h>
 #include <aws/cloudformation/model/ListResourceScanRelatedResourcesResult.h>
 #include <aws/cloudformation/model/ListResourceScanResourcesResult.h>
@@ -214,6 +215,7 @@ namespace Aws
       class ListChangeSetsRequest;
       class ListExportsRequest;
       class ListGeneratedTemplatesRequest;
+      class ListHookResultsRequest;
       class ListImportsRequest;
       class ListResourceScanRelatedResourcesRequest;
       class ListResourceScanResourcesRequest;
@@ -299,6 +301,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListChangeSetsResult, CloudFormationError> ListChangeSetsOutcome;
       typedef Aws::Utils::Outcome<ListExportsResult, CloudFormationError> ListExportsOutcome;
       typedef Aws::Utils::Outcome<ListGeneratedTemplatesResult, CloudFormationError> ListGeneratedTemplatesOutcome;
+      typedef Aws::Utils::Outcome<ListHookResultsResult, CloudFormationError> ListHookResultsOutcome;
       typedef Aws::Utils::Outcome<ListImportsResult, CloudFormationError> ListImportsOutcome;
       typedef Aws::Utils::Outcome<ListResourceScanRelatedResourcesResult, CloudFormationError> ListResourceScanRelatedResourcesOutcome;
       typedef Aws::Utils::Outcome<ListResourceScanResourcesResult, CloudFormationError> ListResourceScanResourcesOutcome;
@@ -384,6 +387,7 @@ namespace Aws
       typedef std::future<ListChangeSetsOutcome> ListChangeSetsOutcomeCallable;
       typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
       typedef std::future<ListGeneratedTemplatesOutcome> ListGeneratedTemplatesOutcomeCallable;
+      typedef std::future<ListHookResultsOutcome> ListHookResultsOutcomeCallable;
       typedef std::future<ListImportsOutcome> ListImportsOutcomeCallable;
       typedef std::future<ListResourceScanRelatedResourcesOutcome> ListResourceScanRelatedResourcesOutcomeCallable;
       typedef std::future<ListResourceScanResourcesOutcome> ListResourceScanResourcesOutcomeCallable;
@@ -472,6 +476,7 @@ namespace Aws
     typedef std::function<void(const CloudFormationClient*, const Model::ListChangeSetsRequest&, const Model::ListChangeSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChangeSetsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListExportsRequest&, const Model::ListExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExportsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListGeneratedTemplatesRequest&, const Model::ListGeneratedTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGeneratedTemplatesResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListHookResultsRequest&, const Model::ListHookResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHookResultsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListImportsRequest&, const Model::ListImportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListResourceScanRelatedResourcesRequest&, const Model::ListResourceScanRelatedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceScanRelatedResourcesResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListResourceScanResourcesRequest&, const Model::ListResourceScanResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceScanResourcesResponseReceivedHandler;

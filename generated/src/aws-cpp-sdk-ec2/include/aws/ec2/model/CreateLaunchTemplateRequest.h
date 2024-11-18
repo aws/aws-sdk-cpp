@@ -8,6 +8,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/RequestLaunchTemplateData.h>
+#include <aws/ec2/model/OperatorRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
@@ -111,6 +112,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline const OperatorRequest& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorRequest& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorRequest&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline CreateLaunchTemplateRequest& WithOperator(const OperatorRequest& value) { SetOperator(value); return *this;}
+    inline CreateLaunchTemplateRequest& WithOperator(OperatorRequest&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags to apply to the launch template on creation. To tag the launch
      * template, the resource type must be <code>launch-template</code>.</p> <p>To
      * specify the tags for the resources that are created when an instance is
@@ -143,6 +156,9 @@ namespace Model
 
     RequestLaunchTemplateData m_launchTemplateData;
     bool m_launchTemplateDataHasBeenSet = false;
+
+    OperatorRequest m_operator;
+    bool m_operatorHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;

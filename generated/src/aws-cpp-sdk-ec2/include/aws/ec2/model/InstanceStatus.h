@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/InstanceState.h>
 #include <aws/ec2/model/InstanceStatusSummary.h>
@@ -70,6 +71,18 @@ namespace Model
     inline InstanceStatus& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
     inline InstanceStatus& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
     inline InstanceStatus& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The entity that manages the instance.</p>
+     */
+    inline const OperatorResponse& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorResponse& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorResponse&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline InstanceStatus& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
+    inline InstanceStatus& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,6 +172,9 @@ namespace Model
 
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet = false;
+
+    OperatorResponse m_operator;
+    bool m_operatorHasBeenSet = false;
 
     Aws::Vector<InstanceStatusEvent> m_events;
     bool m_eventsHasBeenSet = false;

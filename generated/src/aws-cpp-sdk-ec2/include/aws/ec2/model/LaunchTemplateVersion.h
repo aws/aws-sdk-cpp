@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/ResponseLaunchTemplateData.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <utility>
 
 namespace Aws
@@ -140,6 +141,18 @@ namespace Model
     inline LaunchTemplateVersion& WithLaunchTemplateData(const ResponseLaunchTemplateData& value) { SetLaunchTemplateData(value); return *this;}
     inline LaunchTemplateVersion& WithLaunchTemplateData(ResponseLaunchTemplateData&& value) { SetLaunchTemplateData(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The entity that manages the launch template.</p>
+     */
+    inline const OperatorResponse& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorResponse& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorResponse&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline LaunchTemplateVersion& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
+    inline LaunchTemplateVersion& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_launchTemplateId;
@@ -165,6 +178,9 @@ namespace Model
 
     ResponseLaunchTemplateData m_launchTemplateData;
     bool m_launchTemplateDataHasBeenSet = false;
+
+    OperatorResponse m_operator;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

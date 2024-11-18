@@ -12,6 +12,7 @@
 #include <aws/ec2/model/InstanceState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ImageMetadata.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -163,6 +164,18 @@ namespace Model
     inline InstanceImageMetadata& WithImageMetadata(const ImageMetadata& value) { SetImageMetadata(value); return *this;}
     inline InstanceImageMetadata& WithImageMetadata(ImageMetadata&& value) { SetImageMetadata(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The entity that manages the instance.</p>
+     */
+    inline const OperatorResponse& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorResponse& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorResponse&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline InstanceImageMetadata& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
+    inline InstanceImageMetadata& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -191,6 +204,9 @@ namespace Model
 
     ImageMetadata m_imageMetadata;
     bool m_imageMetadataHasBeenSet = false;
+
+    OperatorResponse m_operator;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

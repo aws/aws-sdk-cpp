@@ -1634,6 +1634,32 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Returns summaries of invoked Hooks when a change set or Cloud Control API
+         * operation target is provided.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListHookResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHookResultsOutcome ListHookResults(const Model::ListHookResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListHookResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListHookResultsRequestT = Model::ListHookResultsRequest>
+        Model::ListHookResultsOutcomeCallable ListHookResultsCallable(const ListHookResultsRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListHookResults, request);
+        }
+
+        /**
+         * An Async wrapper for ListHookResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListHookResultsRequestT = Model::ListHookResultsRequest>
+        void ListHookResultsAsync(const ListHookResultsRequestT& request, const ListHookResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListHookResults, request, handler, context);
+        }
+
+        /**
          * <p>Lists all stacks that are importing an exported output value. To modify or
          * remove an exported output value, first use this action to see which stacks are
          * using it. To see the exported output values in your account, see

@@ -30,7 +30,8 @@ InstanceImageMetadata::InstanceImageMetadata() :
     m_stateHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_imageMetadataHasBeenSet(false)
+    m_imageMetadataHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,12 @@ InstanceImageMetadata& InstanceImageMetadata::operator =(const XmlNode& xmlNode)
       m_imageMetadata = imageMetadataNode;
       m_imageMetadataHasBeenSet = true;
     }
+    XmlNode operatorNode = resultNode.FirstChild("operator");
+    if(!operatorNode.IsNull())
+    {
+      m_operator = operatorNode;
+      m_operatorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -168,6 +175,13 @@ void InstanceImageMetadata::OutputToStream(Aws::OStream& oStream, const char* lo
       m_imageMetadata.OutputToStream(oStream, imageMetadataLocationAndMemberSs.str().c_str());
   }
 
+  if(m_operatorHasBeenSet)
+  {
+      Aws::StringStream operatorLocationAndMemberSs;
+      operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceImageMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -217,6 +231,12 @@ void InstanceImageMetadata::OutputToStream(Aws::OStream& oStream, const char* lo
       Aws::String imageMetadataLocationAndMember(location);
       imageMetadataLocationAndMember += ".ImageMetadata";
       m_imageMetadata.OutputToStream(oStream, imageMetadataLocationAndMember.c_str());
+  }
+  if(m_operatorHasBeenSet)
+  {
+      Aws::String operatorLocationAndMember(location);
+      operatorLocationAndMember += ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
   }
 }
 

@@ -21,6 +21,7 @@
 #include <aws/ec2/model/EnclaveOptionsRequest.h>
 #include <aws/ec2/model/PrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/InstanceMaintenanceOptionsRequest.h>
+#include <aws/ec2/model/OperatorRequest.h>
 #include <aws/ec2/model/ShutdownBehavior.h>
 #include <aws/ec2/model/IamInstanceProfileSpecification.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
@@ -578,6 +579,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline const OperatorRequest& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorRequest& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorRequest&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline RunInstancesRequest& WithOperator(const OperatorRequest& value) { SetOperator(value); return *this;}
+    inline RunInstancesRequest& WithOperator(OperatorRequest&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Checks whether you have the required permissions for the operation, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -808,6 +821,9 @@ namespace Model
 
     bool m_enablePrimaryIpv6;
     bool m_enablePrimaryIpv6HasBeenSet = false;
+
+    OperatorRequest m_operator;
+    bool m_operatorHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;

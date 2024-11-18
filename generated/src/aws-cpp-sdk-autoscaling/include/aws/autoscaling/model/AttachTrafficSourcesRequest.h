@@ -66,6 +66,21 @@ namespace Model
     inline AttachTrafficSourcesRequest& AddTrafficSources(const TrafficSourceIdentifier& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(value); return *this; }
     inline AttachTrafficSourcesRequest& AddTrafficSources(TrafficSourceIdentifier&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> If you enable zonal shift with cross-zone disabled load balancers, capacity
+     * could become imbalanced across Availability Zones. To skip the validation,
+     * specify <code>true</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto
+     * Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     */
+    inline bool GetSkipZonalShiftValidation() const{ return m_skipZonalShiftValidation; }
+    inline bool SkipZonalShiftValidationHasBeenSet() const { return m_skipZonalShiftValidationHasBeenSet; }
+    inline void SetSkipZonalShiftValidation(bool value) { m_skipZonalShiftValidationHasBeenSet = true; m_skipZonalShiftValidation = value; }
+    inline AttachTrafficSourcesRequest& WithSkipZonalShiftValidation(bool value) { SetSkipZonalShiftValidation(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -73,6 +88,9 @@ namespace Model
 
     Aws::Vector<TrafficSourceIdentifier> m_trafficSources;
     bool m_trafficSourcesHasBeenSet = false;
+
+    bool m_skipZonalShiftValidation;
+    bool m_skipZonalShiftValidationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -68,9 +68,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of items to return for this call. The call also returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
+     * <p>The maximum number of items to return for this call. If
+     * <code>MaxResults</code> is not provided in the call, AppConfig returns the
+     * maximum of 50. The call also returns a token that you can specify in a
+     * subsequent call to get the next set of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

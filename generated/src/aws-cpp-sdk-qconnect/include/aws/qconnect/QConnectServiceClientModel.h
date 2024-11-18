@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in QConnectClient header */
+#include <aws/qconnect/model/ActivateMessageTemplateResult.h>
 #include <aws/qconnect/model/CreateAIAgentResult.h>
 #include <aws/qconnect/model/CreateAIAgentVersionResult.h>
 #include <aws/qconnect/model/CreateAIPromptResult.h>
@@ -27,8 +28,12 @@
 #include <aws/qconnect/model/CreateContentResult.h>
 #include <aws/qconnect/model/CreateContentAssociationResult.h>
 #include <aws/qconnect/model/CreateKnowledgeBaseResult.h>
+#include <aws/qconnect/model/CreateMessageTemplateResult.h>
+#include <aws/qconnect/model/CreateMessageTemplateAttachmentResult.h>
+#include <aws/qconnect/model/CreateMessageTemplateVersionResult.h>
 #include <aws/qconnect/model/CreateQuickResponseResult.h>
 #include <aws/qconnect/model/CreateSessionResult.h>
+#include <aws/qconnect/model/DeactivateMessageTemplateResult.h>
 #include <aws/qconnect/model/DeleteAIAgentResult.h>
 #include <aws/qconnect/model/DeleteAIAgentVersionResult.h>
 #include <aws/qconnect/model/DeleteAIPromptResult.h>
@@ -39,6 +44,8 @@
 #include <aws/qconnect/model/DeleteContentAssociationResult.h>
 #include <aws/qconnect/model/DeleteImportJobResult.h>
 #include <aws/qconnect/model/DeleteKnowledgeBaseResult.h>
+#include <aws/qconnect/model/DeleteMessageTemplateResult.h>
+#include <aws/qconnect/model/DeleteMessageTemplateAttachmentResult.h>
 #include <aws/qconnect/model/DeleteQuickResponseResult.h>
 #include <aws/qconnect/model/GetAIAgentResult.h>
 #include <aws/qconnect/model/GetAIPromptResult.h>
@@ -49,6 +56,7 @@
 #include <aws/qconnect/model/GetContentSummaryResult.h>
 #include <aws/qconnect/model/GetImportJobResult.h>
 #include <aws/qconnect/model/GetKnowledgeBaseResult.h>
+#include <aws/qconnect/model/GetMessageTemplateResult.h>
 #include <aws/qconnect/model/GetQuickResponseResult.h>
 #include <aws/qconnect/model/GetSessionResult.h>
 #include <aws/qconnect/model/ListAIAgentVersionsResult.h>
@@ -61,13 +69,17 @@
 #include <aws/qconnect/model/ListContentsResult.h>
 #include <aws/qconnect/model/ListImportJobsResult.h>
 #include <aws/qconnect/model/ListKnowledgeBasesResult.h>
+#include <aws/qconnect/model/ListMessageTemplateVersionsResult.h>
+#include <aws/qconnect/model/ListMessageTemplatesResult.h>
 #include <aws/qconnect/model/ListQuickResponsesResult.h>
 #include <aws/qconnect/model/ListTagsForResourceResult.h>
 #include <aws/qconnect/model/NotifyRecommendationsReceivedResult.h>
 #include <aws/qconnect/model/PutFeedbackResult.h>
 #include <aws/qconnect/model/RemoveAssistantAIAgentResult.h>
 #include <aws/qconnect/model/RemoveKnowledgeBaseTemplateUriResult.h>
+#include <aws/qconnect/model/RenderMessageTemplateResult.h>
 #include <aws/qconnect/model/SearchContentResult.h>
+#include <aws/qconnect/model/SearchMessageTemplatesResult.h>
 #include <aws/qconnect/model/SearchQuickResponsesResult.h>
 #include <aws/qconnect/model/SearchSessionsResult.h>
 #include <aws/qconnect/model/StartContentUploadResult.h>
@@ -79,6 +91,8 @@
 #include <aws/qconnect/model/UpdateAssistantAIAgentResult.h>
 #include <aws/qconnect/model/UpdateContentResult.h>
 #include <aws/qconnect/model/UpdateKnowledgeBaseTemplateUriResult.h>
+#include <aws/qconnect/model/UpdateMessageTemplateResult.h>
+#include <aws/qconnect/model/UpdateMessageTemplateMetadataResult.h>
 #include <aws/qconnect/model/UpdateQuickResponseResult.h>
 #include <aws/qconnect/model/UpdateSessionResult.h>
 #include <aws/qconnect/model/UpdateSessionDataResult.h>
@@ -124,6 +138,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in QConnectClient header */
+      class ActivateMessageTemplateRequest;
       class CreateAIAgentRequest;
       class CreateAIAgentVersionRequest;
       class CreateAIPromptRequest;
@@ -133,8 +148,12 @@ namespace Aws
       class CreateContentRequest;
       class CreateContentAssociationRequest;
       class CreateKnowledgeBaseRequest;
+      class CreateMessageTemplateRequest;
+      class CreateMessageTemplateAttachmentRequest;
+      class CreateMessageTemplateVersionRequest;
       class CreateQuickResponseRequest;
       class CreateSessionRequest;
+      class DeactivateMessageTemplateRequest;
       class DeleteAIAgentRequest;
       class DeleteAIAgentVersionRequest;
       class DeleteAIPromptRequest;
@@ -145,6 +164,8 @@ namespace Aws
       class DeleteContentAssociationRequest;
       class DeleteImportJobRequest;
       class DeleteKnowledgeBaseRequest;
+      class DeleteMessageTemplateRequest;
+      class DeleteMessageTemplateAttachmentRequest;
       class DeleteQuickResponseRequest;
       class GetAIAgentRequest;
       class GetAIPromptRequest;
@@ -155,6 +176,7 @@ namespace Aws
       class GetContentSummaryRequest;
       class GetImportJobRequest;
       class GetKnowledgeBaseRequest;
+      class GetMessageTemplateRequest;
       class GetQuickResponseRequest;
       class GetSessionRequest;
       class ListAIAgentVersionsRequest;
@@ -167,13 +189,17 @@ namespace Aws
       class ListContentsRequest;
       class ListImportJobsRequest;
       class ListKnowledgeBasesRequest;
+      class ListMessageTemplateVersionsRequest;
+      class ListMessageTemplatesRequest;
       class ListQuickResponsesRequest;
       class ListTagsForResourceRequest;
       class NotifyRecommendationsReceivedRequest;
       class PutFeedbackRequest;
       class RemoveAssistantAIAgentRequest;
       class RemoveKnowledgeBaseTemplateUriRequest;
+      class RenderMessageTemplateRequest;
       class SearchContentRequest;
+      class SearchMessageTemplatesRequest;
       class SearchQuickResponsesRequest;
       class SearchSessionsRequest;
       class StartContentUploadRequest;
@@ -185,12 +211,15 @@ namespace Aws
       class UpdateAssistantAIAgentRequest;
       class UpdateContentRequest;
       class UpdateKnowledgeBaseTemplateUriRequest;
+      class UpdateMessageTemplateRequest;
+      class UpdateMessageTemplateMetadataRequest;
       class UpdateQuickResponseRequest;
       class UpdateSessionRequest;
       class UpdateSessionDataRequest;
       /* End of service model forward declarations required in QConnectClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<ActivateMessageTemplateResult, QConnectError> ActivateMessageTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateAIAgentResult, QConnectError> CreateAIAgentOutcome;
       typedef Aws::Utils::Outcome<CreateAIAgentVersionResult, QConnectError> CreateAIAgentVersionOutcome;
       typedef Aws::Utils::Outcome<CreateAIPromptResult, QConnectError> CreateAIPromptOutcome;
@@ -200,8 +229,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateContentResult, QConnectError> CreateContentOutcome;
       typedef Aws::Utils::Outcome<CreateContentAssociationResult, QConnectError> CreateContentAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateKnowledgeBaseResult, QConnectError> CreateKnowledgeBaseOutcome;
+      typedef Aws::Utils::Outcome<CreateMessageTemplateResult, QConnectError> CreateMessageTemplateOutcome;
+      typedef Aws::Utils::Outcome<CreateMessageTemplateAttachmentResult, QConnectError> CreateMessageTemplateAttachmentOutcome;
+      typedef Aws::Utils::Outcome<CreateMessageTemplateVersionResult, QConnectError> CreateMessageTemplateVersionOutcome;
       typedef Aws::Utils::Outcome<CreateQuickResponseResult, QConnectError> CreateQuickResponseOutcome;
       typedef Aws::Utils::Outcome<CreateSessionResult, QConnectError> CreateSessionOutcome;
+      typedef Aws::Utils::Outcome<DeactivateMessageTemplateResult, QConnectError> DeactivateMessageTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteAIAgentResult, QConnectError> DeleteAIAgentOutcome;
       typedef Aws::Utils::Outcome<DeleteAIAgentVersionResult, QConnectError> DeleteAIAgentVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteAIPromptResult, QConnectError> DeleteAIPromptOutcome;
@@ -212,6 +245,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteContentAssociationResult, QConnectError> DeleteContentAssociationOutcome;
       typedef Aws::Utils::Outcome<DeleteImportJobResult, QConnectError> DeleteImportJobOutcome;
       typedef Aws::Utils::Outcome<DeleteKnowledgeBaseResult, QConnectError> DeleteKnowledgeBaseOutcome;
+      typedef Aws::Utils::Outcome<DeleteMessageTemplateResult, QConnectError> DeleteMessageTemplateOutcome;
+      typedef Aws::Utils::Outcome<DeleteMessageTemplateAttachmentResult, QConnectError> DeleteMessageTemplateAttachmentOutcome;
       typedef Aws::Utils::Outcome<DeleteQuickResponseResult, QConnectError> DeleteQuickResponseOutcome;
       typedef Aws::Utils::Outcome<GetAIAgentResult, QConnectError> GetAIAgentOutcome;
       typedef Aws::Utils::Outcome<GetAIPromptResult, QConnectError> GetAIPromptOutcome;
@@ -222,6 +257,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetContentSummaryResult, QConnectError> GetContentSummaryOutcome;
       typedef Aws::Utils::Outcome<GetImportJobResult, QConnectError> GetImportJobOutcome;
       typedef Aws::Utils::Outcome<GetKnowledgeBaseResult, QConnectError> GetKnowledgeBaseOutcome;
+      typedef Aws::Utils::Outcome<GetMessageTemplateResult, QConnectError> GetMessageTemplateOutcome;
       typedef Aws::Utils::Outcome<GetQuickResponseResult, QConnectError> GetQuickResponseOutcome;
       typedef Aws::Utils::Outcome<GetSessionResult, QConnectError> GetSessionOutcome;
       typedef Aws::Utils::Outcome<ListAIAgentVersionsResult, QConnectError> ListAIAgentVersionsOutcome;
@@ -234,13 +270,17 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListContentsResult, QConnectError> ListContentsOutcome;
       typedef Aws::Utils::Outcome<ListImportJobsResult, QConnectError> ListImportJobsOutcome;
       typedef Aws::Utils::Outcome<ListKnowledgeBasesResult, QConnectError> ListKnowledgeBasesOutcome;
+      typedef Aws::Utils::Outcome<ListMessageTemplateVersionsResult, QConnectError> ListMessageTemplateVersionsOutcome;
+      typedef Aws::Utils::Outcome<ListMessageTemplatesResult, QConnectError> ListMessageTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListQuickResponsesResult, QConnectError> ListQuickResponsesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, QConnectError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<NotifyRecommendationsReceivedResult, QConnectError> NotifyRecommendationsReceivedOutcome;
       typedef Aws::Utils::Outcome<PutFeedbackResult, QConnectError> PutFeedbackOutcome;
       typedef Aws::Utils::Outcome<RemoveAssistantAIAgentResult, QConnectError> RemoveAssistantAIAgentOutcome;
       typedef Aws::Utils::Outcome<RemoveKnowledgeBaseTemplateUriResult, QConnectError> RemoveKnowledgeBaseTemplateUriOutcome;
+      typedef Aws::Utils::Outcome<RenderMessageTemplateResult, QConnectError> RenderMessageTemplateOutcome;
       typedef Aws::Utils::Outcome<SearchContentResult, QConnectError> SearchContentOutcome;
+      typedef Aws::Utils::Outcome<SearchMessageTemplatesResult, QConnectError> SearchMessageTemplatesOutcome;
       typedef Aws::Utils::Outcome<SearchQuickResponsesResult, QConnectError> SearchQuickResponsesOutcome;
       typedef Aws::Utils::Outcome<SearchSessionsResult, QConnectError> SearchSessionsOutcome;
       typedef Aws::Utils::Outcome<StartContentUploadResult, QConnectError> StartContentUploadOutcome;
@@ -252,12 +292,15 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateAssistantAIAgentResult, QConnectError> UpdateAssistantAIAgentOutcome;
       typedef Aws::Utils::Outcome<UpdateContentResult, QConnectError> UpdateContentOutcome;
       typedef Aws::Utils::Outcome<UpdateKnowledgeBaseTemplateUriResult, QConnectError> UpdateKnowledgeBaseTemplateUriOutcome;
+      typedef Aws::Utils::Outcome<UpdateMessageTemplateResult, QConnectError> UpdateMessageTemplateOutcome;
+      typedef Aws::Utils::Outcome<UpdateMessageTemplateMetadataResult, QConnectError> UpdateMessageTemplateMetadataOutcome;
       typedef Aws::Utils::Outcome<UpdateQuickResponseResult, QConnectError> UpdateQuickResponseOutcome;
       typedef Aws::Utils::Outcome<UpdateSessionResult, QConnectError> UpdateSessionOutcome;
       typedef Aws::Utils::Outcome<UpdateSessionDataResult, QConnectError> UpdateSessionDataOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<ActivateMessageTemplateOutcome> ActivateMessageTemplateOutcomeCallable;
       typedef std::future<CreateAIAgentOutcome> CreateAIAgentOutcomeCallable;
       typedef std::future<CreateAIAgentVersionOutcome> CreateAIAgentVersionOutcomeCallable;
       typedef std::future<CreateAIPromptOutcome> CreateAIPromptOutcomeCallable;
@@ -267,8 +310,12 @@ namespace Aws
       typedef std::future<CreateContentOutcome> CreateContentOutcomeCallable;
       typedef std::future<CreateContentAssociationOutcome> CreateContentAssociationOutcomeCallable;
       typedef std::future<CreateKnowledgeBaseOutcome> CreateKnowledgeBaseOutcomeCallable;
+      typedef std::future<CreateMessageTemplateOutcome> CreateMessageTemplateOutcomeCallable;
+      typedef std::future<CreateMessageTemplateAttachmentOutcome> CreateMessageTemplateAttachmentOutcomeCallable;
+      typedef std::future<CreateMessageTemplateVersionOutcome> CreateMessageTemplateVersionOutcomeCallable;
       typedef std::future<CreateQuickResponseOutcome> CreateQuickResponseOutcomeCallable;
       typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
+      typedef std::future<DeactivateMessageTemplateOutcome> DeactivateMessageTemplateOutcomeCallable;
       typedef std::future<DeleteAIAgentOutcome> DeleteAIAgentOutcomeCallable;
       typedef std::future<DeleteAIAgentVersionOutcome> DeleteAIAgentVersionOutcomeCallable;
       typedef std::future<DeleteAIPromptOutcome> DeleteAIPromptOutcomeCallable;
@@ -279,6 +326,8 @@ namespace Aws
       typedef std::future<DeleteContentAssociationOutcome> DeleteContentAssociationOutcomeCallable;
       typedef std::future<DeleteImportJobOutcome> DeleteImportJobOutcomeCallable;
       typedef std::future<DeleteKnowledgeBaseOutcome> DeleteKnowledgeBaseOutcomeCallable;
+      typedef std::future<DeleteMessageTemplateOutcome> DeleteMessageTemplateOutcomeCallable;
+      typedef std::future<DeleteMessageTemplateAttachmentOutcome> DeleteMessageTemplateAttachmentOutcomeCallable;
       typedef std::future<DeleteQuickResponseOutcome> DeleteQuickResponseOutcomeCallable;
       typedef std::future<GetAIAgentOutcome> GetAIAgentOutcomeCallable;
       typedef std::future<GetAIPromptOutcome> GetAIPromptOutcomeCallable;
@@ -289,6 +338,7 @@ namespace Aws
       typedef std::future<GetContentSummaryOutcome> GetContentSummaryOutcomeCallable;
       typedef std::future<GetImportJobOutcome> GetImportJobOutcomeCallable;
       typedef std::future<GetKnowledgeBaseOutcome> GetKnowledgeBaseOutcomeCallable;
+      typedef std::future<GetMessageTemplateOutcome> GetMessageTemplateOutcomeCallable;
       typedef std::future<GetQuickResponseOutcome> GetQuickResponseOutcomeCallable;
       typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
       typedef std::future<ListAIAgentVersionsOutcome> ListAIAgentVersionsOutcomeCallable;
@@ -301,13 +351,17 @@ namespace Aws
       typedef std::future<ListContentsOutcome> ListContentsOutcomeCallable;
       typedef std::future<ListImportJobsOutcome> ListImportJobsOutcomeCallable;
       typedef std::future<ListKnowledgeBasesOutcome> ListKnowledgeBasesOutcomeCallable;
+      typedef std::future<ListMessageTemplateVersionsOutcome> ListMessageTemplateVersionsOutcomeCallable;
+      typedef std::future<ListMessageTemplatesOutcome> ListMessageTemplatesOutcomeCallable;
       typedef std::future<ListQuickResponsesOutcome> ListQuickResponsesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<NotifyRecommendationsReceivedOutcome> NotifyRecommendationsReceivedOutcomeCallable;
       typedef std::future<PutFeedbackOutcome> PutFeedbackOutcomeCallable;
       typedef std::future<RemoveAssistantAIAgentOutcome> RemoveAssistantAIAgentOutcomeCallable;
       typedef std::future<RemoveKnowledgeBaseTemplateUriOutcome> RemoveKnowledgeBaseTemplateUriOutcomeCallable;
+      typedef std::future<RenderMessageTemplateOutcome> RenderMessageTemplateOutcomeCallable;
       typedef std::future<SearchContentOutcome> SearchContentOutcomeCallable;
+      typedef std::future<SearchMessageTemplatesOutcome> SearchMessageTemplatesOutcomeCallable;
       typedef std::future<SearchQuickResponsesOutcome> SearchQuickResponsesOutcomeCallable;
       typedef std::future<SearchSessionsOutcome> SearchSessionsOutcomeCallable;
       typedef std::future<StartContentUploadOutcome> StartContentUploadOutcomeCallable;
@@ -319,6 +373,8 @@ namespace Aws
       typedef std::future<UpdateAssistantAIAgentOutcome> UpdateAssistantAIAgentOutcomeCallable;
       typedef std::future<UpdateContentOutcome> UpdateContentOutcomeCallable;
       typedef std::future<UpdateKnowledgeBaseTemplateUriOutcome> UpdateKnowledgeBaseTemplateUriOutcomeCallable;
+      typedef std::future<UpdateMessageTemplateOutcome> UpdateMessageTemplateOutcomeCallable;
+      typedef std::future<UpdateMessageTemplateMetadataOutcome> UpdateMessageTemplateMetadataOutcomeCallable;
       typedef std::future<UpdateQuickResponseOutcome> UpdateQuickResponseOutcomeCallable;
       typedef std::future<UpdateSessionOutcome> UpdateSessionOutcomeCallable;
       typedef std::future<UpdateSessionDataOutcome> UpdateSessionDataOutcomeCallable;
@@ -328,6 +384,7 @@ namespace Aws
     class QConnectClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const QConnectClient*, const Model::ActivateMessageTemplateRequest&, const Model::ActivateMessageTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateMessageTemplateResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateAIAgentRequest&, const Model::CreateAIAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAIAgentResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateAIAgentVersionRequest&, const Model::CreateAIAgentVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAIAgentVersionResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateAIPromptRequest&, const Model::CreateAIPromptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAIPromptResponseReceivedHandler;
@@ -337,8 +394,12 @@ namespace Aws
     typedef std::function<void(const QConnectClient*, const Model::CreateContentRequest&, const Model::CreateContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContentResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateContentAssociationRequest&, const Model::CreateContentAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContentAssociationResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateKnowledgeBaseRequest&, const Model::CreateKnowledgeBaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKnowledgeBaseResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::CreateMessageTemplateRequest&, const Model::CreateMessageTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMessageTemplateResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::CreateMessageTemplateAttachmentRequest&, const Model::CreateMessageTemplateAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMessageTemplateAttachmentResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::CreateMessageTemplateVersionRequest&, const Model::CreateMessageTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMessageTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateQuickResponseRequest&, const Model::CreateQuickResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuickResponseResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::CreateSessionRequest&, const Model::CreateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSessionResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::DeactivateMessageTemplateRequest&, const Model::DeactivateMessageTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateMessageTemplateResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteAIAgentRequest&, const Model::DeleteAIAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAIAgentResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteAIAgentVersionRequest&, const Model::DeleteAIAgentVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAIAgentVersionResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteAIPromptRequest&, const Model::DeleteAIPromptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAIPromptResponseReceivedHandler;
@@ -349,6 +410,8 @@ namespace Aws
     typedef std::function<void(const QConnectClient*, const Model::DeleteContentAssociationRequest&, const Model::DeleteContentAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContentAssociationResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteImportJobRequest&, const Model::DeleteImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImportJobResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteKnowledgeBaseRequest&, const Model::DeleteKnowledgeBaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKnowledgeBaseResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::DeleteMessageTemplateRequest&, const Model::DeleteMessageTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMessageTemplateResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::DeleteMessageTemplateAttachmentRequest&, const Model::DeleteMessageTemplateAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMessageTemplateAttachmentResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::DeleteQuickResponseRequest&, const Model::DeleteQuickResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQuickResponseResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetAIAgentRequest&, const Model::GetAIAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAIAgentResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetAIPromptRequest&, const Model::GetAIPromptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAIPromptResponseReceivedHandler;
@@ -359,6 +422,7 @@ namespace Aws
     typedef std::function<void(const QConnectClient*, const Model::GetContentSummaryRequest&, const Model::GetContentSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContentSummaryResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetImportJobRequest&, const Model::GetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportJobResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetKnowledgeBaseRequest&, const Model::GetKnowledgeBaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKnowledgeBaseResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::GetMessageTemplateRequest&, const Model::GetMessageTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMessageTemplateResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetQuickResponseRequest&, const Model::GetQuickResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQuickResponseResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::ListAIAgentVersionsRequest&, const Model::ListAIAgentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAIAgentVersionsResponseReceivedHandler;
@@ -371,13 +435,17 @@ namespace Aws
     typedef std::function<void(const QConnectClient*, const Model::ListContentsRequest&, const Model::ListContentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContentsResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::ListImportJobsRequest&, const Model::ListImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportJobsResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::ListKnowledgeBasesRequest&, const Model::ListKnowledgeBasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKnowledgeBasesResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::ListMessageTemplateVersionsRequest&, const Model::ListMessageTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMessageTemplateVersionsResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::ListMessageTemplatesRequest&, const Model::ListMessageTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMessageTemplatesResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::ListQuickResponsesRequest&, const Model::ListQuickResponsesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQuickResponsesResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::NotifyRecommendationsReceivedRequest&, const Model::NotifyRecommendationsReceivedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > NotifyRecommendationsReceivedResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::PutFeedbackRequest&, const Model::PutFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFeedbackResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::RemoveAssistantAIAgentRequest&, const Model::RemoveAssistantAIAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAssistantAIAgentResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::RemoveKnowledgeBaseTemplateUriRequest&, const Model::RemoveKnowledgeBaseTemplateUriOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveKnowledgeBaseTemplateUriResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::RenderMessageTemplateRequest&, const Model::RenderMessageTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenderMessageTemplateResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::SearchContentRequest&, const Model::SearchContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchContentResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::SearchMessageTemplatesRequest&, const Model::SearchMessageTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchMessageTemplatesResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::SearchQuickResponsesRequest&, const Model::SearchQuickResponsesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchQuickResponsesResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::SearchSessionsRequest&, const Model::SearchSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchSessionsResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::StartContentUploadRequest&, const Model::StartContentUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContentUploadResponseReceivedHandler;
@@ -389,6 +457,8 @@ namespace Aws
     typedef std::function<void(const QConnectClient*, const Model::UpdateAssistantAIAgentRequest&, const Model::UpdateAssistantAIAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssistantAIAgentResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::UpdateContentRequest&, const Model::UpdateContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContentResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::UpdateKnowledgeBaseTemplateUriRequest&, const Model::UpdateKnowledgeBaseTemplateUriOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKnowledgeBaseTemplateUriResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::UpdateMessageTemplateRequest&, const Model::UpdateMessageTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMessageTemplateResponseReceivedHandler;
+    typedef std::function<void(const QConnectClient*, const Model::UpdateMessageTemplateMetadataRequest&, const Model::UpdateMessageTemplateMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMessageTemplateMetadataResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::UpdateQuickResponseRequest&, const Model::UpdateQuickResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuickResponseResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::UpdateSessionRequest&, const Model::UpdateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSessionResponseReceivedHandler;
     typedef std::function<void(const QConnectClient*, const Model::UpdateSessionDataRequest&, const Model::UpdateSessionDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSessionDataResponseReceivedHandler;

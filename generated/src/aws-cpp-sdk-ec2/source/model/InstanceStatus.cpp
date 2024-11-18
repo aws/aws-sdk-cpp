@@ -23,6 +23,7 @@ namespace Model
 InstanceStatus::InstanceStatus() : 
     m_availabilityZoneHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_eventsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
@@ -55,6 +56,12 @@ InstanceStatus& InstanceStatus::operator =(const XmlNode& xmlNode)
     {
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
+    }
+    XmlNode operatorNode = resultNode.FirstChild("operator");
+    if(!operatorNode.IsNull())
+    {
+      m_operator = operatorNode;
+      m_operatorHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("eventsSet");
     if(!eventsNode.IsNull())
@@ -115,6 +122,13 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
+  if(m_operatorHasBeenSet)
+  {
+      Aws::StringStream operatorLocationAndMemberSs;
+      operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
+  }
+
   if(m_eventsHasBeenSet)
   {
       unsigned eventsIdx = 1;
@@ -170,6 +184,12 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_outpostArnHasBeenSet)
   {
       oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+  if(m_operatorHasBeenSet)
+  {
+      Aws::String operatorLocationAndMember(location);
+      operatorLocationAndMember += ".Operator";
+      m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
   }
   if(m_eventsHasBeenSet)
   {

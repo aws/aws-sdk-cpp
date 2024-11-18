@@ -44,7 +44,7 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If not provided, the Amazon Web Services SDK
      * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -134,7 +134,7 @@ namespace Model
     ///@{
     /**
      * <p>The source of the knowledge base content. Only set this argument for EXTERNAL
-     * knowledge bases.</p>
+     * or Managed knowledge bases.</p>
      */
     inline const SourceConfiguration& GetSourceConfiguration() const{ return m_sourceConfiguration; }
     inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }

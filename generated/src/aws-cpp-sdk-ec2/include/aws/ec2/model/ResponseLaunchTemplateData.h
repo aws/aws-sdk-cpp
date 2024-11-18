@@ -23,6 +23,7 @@
 #include <aws/ec2/model/InstanceRequirements.h>
 #include <aws/ec2/model/LaunchTemplatePrivateDnsNameOptions.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMaintenanceOptions.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMapping.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecification.h>
@@ -497,6 +498,18 @@ namespace Model
     inline void SetDisableApiStop(bool value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
     inline ResponseLaunchTemplateData& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The entity that manages the launch template.</p>
+     */
+    inline const OperatorResponse& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorResponse& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorResponse&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline ResponseLaunchTemplateData& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
+    inline ResponseLaunchTemplateData& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_kernelId;
@@ -591,6 +604,9 @@ namespace Model
 
     bool m_disableApiStop;
     bool m_disableApiStopHasBeenSet = false;
+
+    OperatorResponse m_operator;
+    bool m_operatorHasBeenSet = false;
   };
 
 } // namespace Model

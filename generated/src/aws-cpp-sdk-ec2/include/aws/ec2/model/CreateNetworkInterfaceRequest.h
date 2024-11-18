@@ -10,6 +10,7 @@
 #include <aws/ec2/model/NetworkInterfaceCreationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ConnectionTrackingSpecificationRequest.h>
+#include <aws/ec2/model/OperatorRequest.h>
 #include <aws/ec2/model/Ipv4PrefixSpecificationRequest.h>
 #include <aws/ec2/model/Ipv6PrefixSpecificationRequest.h>
 #include <aws/ec2/model/TagSpecification.h>
@@ -187,6 +188,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Reserved for internal use.</p>
+     */
+    inline const OperatorRequest& GetOperator() const{ return m_operator; }
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+    inline void SetOperator(const OperatorRequest& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(OperatorRequest&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline CreateNetworkInterfaceRequest& WithOperator(const OperatorRequest& value) { SetOperator(value); return *this;}
+    inline CreateNetworkInterfaceRequest& WithOperator(OperatorRequest&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the subnet to associate with the network interface.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
@@ -351,6 +364,9 @@ namespace Model
 
     ConnectionTrackingSpecificationRequest m_connectionTrackingSpecification;
     bool m_connectionTrackingSpecificationHasBeenSet = false;
+
+    OperatorRequest m_operator;
+    bool m_operatorHasBeenSet = false;
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;
