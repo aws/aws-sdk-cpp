@@ -22,6 +22,7 @@ TableOptimizerConfiguration::TableOptimizerConfiguration() :
     m_roleArnHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
+    m_vpcConfigurationHasBeenSet(false),
     m_retentionConfigurationHasBeenSet(false),
     m_orphanFileDeletionConfigurationHasBeenSet(false)
 {
@@ -47,6 +48,13 @@ TableOptimizerConfiguration& TableOptimizerConfiguration::operator =(JsonView js
     m_enabled = jsonValue.GetBool("enabled");
 
     m_enabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vpcConfiguration"))
+  {
+    m_vpcConfiguration = jsonValue.GetObject("vpcConfiguration");
+
+    m_vpcConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("retentionConfiguration"))
@@ -79,6 +87,12 @@ JsonValue TableOptimizerConfiguration::Jsonize() const
   if(m_enabledHasBeenSet)
   {
    payload.WithBool("enabled", m_enabled);
+
+  }
+
+  if(m_vpcConfigurationHasBeenSet)
+  {
+   payload.WithObject("vpcConfiguration", m_vpcConfiguration.Jsonize());
 
   }
 

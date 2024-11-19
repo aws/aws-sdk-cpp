@@ -114,6 +114,32 @@ namespace TaxSettings
         }
 
         /**
+         * <p>Get the active tax exemptions for a given list of accounts. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchGetTaxExemptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetTaxExemptionsOutcome BatchGetTaxExemptions(const Model::BatchGetTaxExemptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetTaxExemptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetTaxExemptionsRequestT = Model::BatchGetTaxExemptionsRequest>
+        Model::BatchGetTaxExemptionsOutcomeCallable BatchGetTaxExemptionsCallable(const BatchGetTaxExemptionsRequestT& request) const
+        {
+            return SubmitCallable(&TaxSettingsClient::BatchGetTaxExemptions, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetTaxExemptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetTaxExemptionsRequestT = Model::BatchGetTaxExemptionsRequest>
+        void BatchGetTaxExemptionsAsync(const BatchGetTaxExemptionsRequestT& request, const BatchGetTaxExemptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TaxSettingsClient::BatchGetTaxExemptions, request, handler, context);
+        }
+
+        /**
          * <p>Adds or updates tax registration for multiple accounts in batch. This can be
          * used to add or update tax registrations for up to five accounts in one batch.
          * You can't set a TRN if there's a pending TRN. You'll need to delete the pending
@@ -280,6 +306,56 @@ namespace TaxSettings
         }
 
         /**
+         * <p>Get supported tax exemption types. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxExemptionTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTaxExemptionTypesOutcome GetTaxExemptionTypes(const Model::GetTaxExemptionTypesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetTaxExemptionTypes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTaxExemptionTypesRequestT = Model::GetTaxExemptionTypesRequest>
+        Model::GetTaxExemptionTypesOutcomeCallable GetTaxExemptionTypesCallable(const GetTaxExemptionTypesRequestT& request = {}) const
+        {
+            return SubmitCallable(&TaxSettingsClient::GetTaxExemptionTypes, request);
+        }
+
+        /**
+         * An Async wrapper for GetTaxExemptionTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTaxExemptionTypesRequestT = Model::GetTaxExemptionTypesRequest>
+        void GetTaxExemptionTypesAsync(const GetTaxExemptionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetTaxExemptionTypesRequestT& request = {}) const
+        {
+            return SubmitAsync(&TaxSettingsClient::GetTaxExemptionTypes, request, handler, context);
+        }
+
+        /**
+         * <p>The get account tax inheritance status. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxInheritance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTaxInheritanceOutcome GetTaxInheritance(const Model::GetTaxInheritanceRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetTaxInheritance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetTaxInheritanceRequestT = Model::GetTaxInheritanceRequest>
+        Model::GetTaxInheritanceOutcomeCallable GetTaxInheritanceCallable(const GetTaxInheritanceRequestT& request = {}) const
+        {
+            return SubmitCallable(&TaxSettingsClient::GetTaxInheritance, request);
+        }
+
+        /**
+         * An Async wrapper for GetTaxInheritance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetTaxInheritanceRequestT = Model::GetTaxInheritanceRequest>
+        void GetTaxInheritanceAsync(const GetTaxInheritanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetTaxInheritanceRequestT& request = {}) const
+        {
+            return SubmitAsync(&TaxSettingsClient::GetTaxInheritance, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves tax registration for a single account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxRegistration">AWS
@@ -358,6 +434,32 @@ namespace TaxSettings
         }
 
         /**
+         * <p>Retrieves the tax exemption of accounts listed in a consolidated billing
+         * family. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxExemptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTaxExemptionsOutcome ListTaxExemptions(const Model::ListTaxExemptionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListTaxExemptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTaxExemptionsRequestT = Model::ListTaxExemptionsRequest>
+        Model::ListTaxExemptionsOutcomeCallable ListTaxExemptionsCallable(const ListTaxExemptionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&TaxSettingsClient::ListTaxExemptions, request);
+        }
+
+        /**
+         * An Async wrapper for ListTaxExemptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTaxExemptionsRequestT = Model::ListTaxExemptionsRequest>
+        void ListTaxExemptionsAsync(const ListTaxExemptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListTaxExemptionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&TaxSettingsClient::ListTaxExemptions, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the tax registration of accounts listed in a consolidated billing
          * family. This can be used to retrieve up to 100 accounts' tax registrations in
          * one call (default 50). </p><p><h3>See Also:</h3>   <a
@@ -408,6 +510,57 @@ namespace TaxSettings
         void PutSupplementalTaxRegistrationAsync(const PutSupplementalTaxRegistrationRequestT& request, const PutSupplementalTaxRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TaxSettingsClient::PutSupplementalTaxRegistration, request, handler, context);
+        }
+
+        /**
+         * <p>Adds the tax exemption for a single account or all accounts listed in a
+         * consolidated billing family. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxExemption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutTaxExemptionOutcome PutTaxExemption(const Model::PutTaxExemptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutTaxExemption that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutTaxExemptionRequestT = Model::PutTaxExemptionRequest>
+        Model::PutTaxExemptionOutcomeCallable PutTaxExemptionCallable(const PutTaxExemptionRequestT& request) const
+        {
+            return SubmitCallable(&TaxSettingsClient::PutTaxExemption, request);
+        }
+
+        /**
+         * An Async wrapper for PutTaxExemption that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutTaxExemptionRequestT = Model::PutTaxExemptionRequest>
+        void PutTaxExemptionAsync(const PutTaxExemptionRequestT& request, const PutTaxExemptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TaxSettingsClient::PutTaxExemption, request, handler, context);
+        }
+
+        /**
+         * <p>The updated tax inheritance status. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxInheritance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutTaxInheritanceOutcome PutTaxInheritance(const Model::PutTaxInheritanceRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for PutTaxInheritance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutTaxInheritanceRequestT = Model::PutTaxInheritanceRequest>
+        Model::PutTaxInheritanceOutcomeCallable PutTaxInheritanceCallable(const PutTaxInheritanceRequestT& request = {}) const
+        {
+            return SubmitCallable(&TaxSettingsClient::PutTaxInheritance, request);
+        }
+
+        /**
+         * An Async wrapper for PutTaxInheritance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutTaxInheritanceRequestT = Model::PutTaxInheritanceRequest>
+        void PutTaxInheritanceAsync(const PutTaxInheritanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const PutTaxInheritanceRequestT& request = {}) const
+        {
+            return SubmitAsync(&TaxSettingsClient::PutTaxInheritance, request, handler, context);
         }
 
         /**

@@ -44,7 +44,23 @@ namespace Model
     UEFINotSupported,
     UnknownError,
     AppXPackagesInstalled,
-    ReservedStorageInUse
+    ReservedStorageInUse,
+    AdditionalDrivesPresent,
+    WindowsUpdatesRequired,
+    SysPrepFileMissing,
+    UserProfileMissing,
+    InsufficientDiskSpace,
+    EnvironmentVariablesPathMissingEntries,
+    DomainAccountServicesFound,
+    InvalidIp,
+    RemoteDesktopServicesDisabled,
+    WindowsModulesInstallerDisabled,
+    AmazonSsmAgentEnabled,
+    UnsupportedSecurityProtocol,
+    MultipleUserProfiles,
+    StagedAppxPackage,
+    UnsupportedOsUpgrade,
+    InsufficientRearmCount
   };
 
 namespace WorkspaceImageErrorDetailCodeMapper

@@ -4433,6 +4433,39 @@ namespace EC2
         }
 
         /**
+         * <p>Create a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a
+         * mode that can be applied to a single VPC or subnet that exempts it from the
+         * account’s BPA mode and will allow bidirectional or egress-only access. You can
+         * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
+         * account to ensure that there is no traffic disruption to the exclusions when VPC
+         * BPA is turned on. To learn more about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcBlockPublicAccessExclusion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVpcBlockPublicAccessExclusionOutcome CreateVpcBlockPublicAccessExclusion(const Model::CreateVpcBlockPublicAccessExclusionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateVpcBlockPublicAccessExclusion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateVpcBlockPublicAccessExclusionRequestT = Model::CreateVpcBlockPublicAccessExclusionRequest>
+        Model::CreateVpcBlockPublicAccessExclusionOutcomeCallable CreateVpcBlockPublicAccessExclusionCallable(const CreateVpcBlockPublicAccessExclusionRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateVpcBlockPublicAccessExclusion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateVpcBlockPublicAccessExclusion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateVpcBlockPublicAccessExclusionRequestT = Model::CreateVpcBlockPublicAccessExclusionRequest>
+        void CreateVpcBlockPublicAccessExclusionAsync(const CreateVpcBlockPublicAccessExclusionRequestT& request, const CreateVpcBlockPublicAccessExclusionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateVpcBlockPublicAccessExclusion, request, handler, context);
+        }
+
+        /**
          * <p>Creates a VPC endpoint. A VPC endpoint provides a private connection between
          * the specified VPC and the specified endpoint service. You can use an endpoint
          * service provided by Amazon Web Services, an Amazon Web Services Marketplace
@@ -6520,6 +6553,39 @@ namespace EC2
         void DeleteVpcAsync(const DeleteVpcRequestT& request, const DeleteVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DeleteVpc, request, handler, context);
+        }
+
+        /**
+         * <p>Delete a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a
+         * mode that can be applied to a single VPC or subnet that exempts it from the
+         * account’s BPA mode and will allow bidirectional or egress-only access. You can
+         * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
+         * account to ensure that there is no traffic disruption to the exclusions when VPC
+         * BPA is turned on. To learn more about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcBlockPublicAccessExclusion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVpcBlockPublicAccessExclusionOutcome DeleteVpcBlockPublicAccessExclusion(const Model::DeleteVpcBlockPublicAccessExclusionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteVpcBlockPublicAccessExclusion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteVpcBlockPublicAccessExclusionRequestT = Model::DeleteVpcBlockPublicAccessExclusionRequest>
+        Model::DeleteVpcBlockPublicAccessExclusionOutcomeCallable DeleteVpcBlockPublicAccessExclusionCallable(const DeleteVpcBlockPublicAccessExclusionRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeleteVpcBlockPublicAccessExclusion, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteVpcBlockPublicAccessExclusion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteVpcBlockPublicAccessExclusionRequestT = Model::DeleteVpcBlockPublicAccessExclusionRequest>
+        void DeleteVpcBlockPublicAccessExclusionAsync(const DeleteVpcBlockPublicAccessExclusionRequestT& request, const DeleteVpcBlockPublicAccessExclusionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeleteVpcBlockPublicAccessExclusion, request, handler, context);
         }
 
         /**
@@ -11232,6 +11298,70 @@ namespace EC2
         void DescribeVpcAttributeAsync(const DescribeVpcAttributeRequestT& request, const DescribeVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DescribeVpcAttribute, request, handler, context);
+        }
+
+        /**
+         * <p>Describe VPC Block Public Access (BPA) exclusions. A VPC BPA exclusion is a
+         * mode that can be applied to a single VPC or subnet that exempts it from the
+         * account’s BPA mode and will allow bidirectional or egress-only access. You can
+         * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
+         * account to ensure that there is no traffic disruption to the exclusions when VPC
+         * BPA is turned on. To learn more about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessExclusions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcBlockPublicAccessExclusionsOutcome DescribeVpcBlockPublicAccessExclusions(const Model::DescribeVpcBlockPublicAccessExclusionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeVpcBlockPublicAccessExclusions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeVpcBlockPublicAccessExclusionsRequestT = Model::DescribeVpcBlockPublicAccessExclusionsRequest>
+        Model::DescribeVpcBlockPublicAccessExclusionsOutcomeCallable DescribeVpcBlockPublicAccessExclusionsCallable(const DescribeVpcBlockPublicAccessExclusionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeVpcBlockPublicAccessExclusions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeVpcBlockPublicAccessExclusions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeVpcBlockPublicAccessExclusionsRequestT = Model::DescribeVpcBlockPublicAccessExclusionsRequest>
+        void DescribeVpcBlockPublicAccessExclusionsAsync(const DescribeVpcBlockPublicAccessExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVpcBlockPublicAccessExclusionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeVpcBlockPublicAccessExclusions, request, handler, context);
+        }
+
+        /**
+         * <p>Describe VPC Block Public Access (BPA) options. VPC Block public Access (BPA)
+         * enables you to block resources in VPCs and subnets that you own in a Region from
+         * reaching or being reached from the internet through internet gateways and
+         * egress-only internet gateways. To learn more about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcBlockPublicAccessOptionsOutcome DescribeVpcBlockPublicAccessOptions(const Model::DescribeVpcBlockPublicAccessOptionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeVpcBlockPublicAccessOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeVpcBlockPublicAccessOptionsRequestT = Model::DescribeVpcBlockPublicAccessOptionsRequest>
+        Model::DescribeVpcBlockPublicAccessOptionsOutcomeCallable DescribeVpcBlockPublicAccessOptionsCallable(const DescribeVpcBlockPublicAccessOptionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeVpcBlockPublicAccessOptions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeVpcBlockPublicAccessOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeVpcBlockPublicAccessOptionsRequestT = Model::DescribeVpcBlockPublicAccessOptionsRequest>
+        void DescribeVpcBlockPublicAccessOptionsAsync(const DescribeVpcBlockPublicAccessOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVpcBlockPublicAccessOptionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeVpcBlockPublicAccessOptions, request, handler, context);
         }
 
         /**
@@ -16797,6 +16927,67 @@ namespace EC2
         void ModifyVpcAttributeAsync(const ModifyVpcAttributeRequestT& request, const ModifyVpcAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::ModifyVpcAttribute, request, handler, context);
+        }
+
+        /**
+         * <p>Modify VPC Block Public Access (BPA) exclusions. A VPC BPA exclusion is a
+         * mode that can be applied to a single VPC or subnet that exempts it from the
+         * account’s BPA mode and will allow bidirectional or egress-only access. You can
+         * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
+         * account to ensure that there is no traffic disruption to the exclusions when VPC
+         * BPA is turned on.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessExclusion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyVpcBlockPublicAccessExclusionOutcome ModifyVpcBlockPublicAccessExclusion(const Model::ModifyVpcBlockPublicAccessExclusionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyVpcBlockPublicAccessExclusion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyVpcBlockPublicAccessExclusionRequestT = Model::ModifyVpcBlockPublicAccessExclusionRequest>
+        Model::ModifyVpcBlockPublicAccessExclusionOutcomeCallable ModifyVpcBlockPublicAccessExclusionCallable(const ModifyVpcBlockPublicAccessExclusionRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyVpcBlockPublicAccessExclusion, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyVpcBlockPublicAccessExclusion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyVpcBlockPublicAccessExclusionRequestT = Model::ModifyVpcBlockPublicAccessExclusionRequest>
+        void ModifyVpcBlockPublicAccessExclusionAsync(const ModifyVpcBlockPublicAccessExclusionRequestT& request, const ModifyVpcBlockPublicAccessExclusionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyVpcBlockPublicAccessExclusion, request, handler, context);
+        }
+
+        /**
+         * <p>Modify VPC Block Public Access (BPA) options. VPC Block public Access (BPA)
+         * enables you to block resources in VPCs and subnets that you own in a Region from
+         * reaching or being reached from the internet through internet gateways and
+         * egress-only internet gateways. To learn more about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyVpcBlockPublicAccessOptionsOutcome ModifyVpcBlockPublicAccessOptions(const Model::ModifyVpcBlockPublicAccessOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyVpcBlockPublicAccessOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyVpcBlockPublicAccessOptionsRequestT = Model::ModifyVpcBlockPublicAccessOptionsRequest>
+        Model::ModifyVpcBlockPublicAccessOptionsOutcomeCallable ModifyVpcBlockPublicAccessOptionsCallable(const ModifyVpcBlockPublicAccessOptionsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyVpcBlockPublicAccessOptions, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyVpcBlockPublicAccessOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyVpcBlockPublicAccessOptionsRequestT = Model::ModifyVpcBlockPublicAccessOptionsRequest>
+        void ModifyVpcBlockPublicAccessOptionsAsync(const ModifyVpcBlockPublicAccessOptionsRequestT& request, const ModifyVpcBlockPublicAccessOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyVpcBlockPublicAccessOptions, request, handler, context);
         }
 
         /**

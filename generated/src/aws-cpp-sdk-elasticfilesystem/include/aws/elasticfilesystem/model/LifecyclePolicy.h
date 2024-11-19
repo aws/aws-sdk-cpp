@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a policy used by Lifecycle management that specifies when to
+   * <p>Describes a policy used by lifecycle management that specifies when to
    * transition files into and out of storage classes. For more information, see <a
    * href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">Managing
    * file system storage</a>.</p>  <p>When using the
@@ -81,7 +81,7 @@ namespace Model
     ///@{
     /**
      * <p>The number of days after files were last accessed in primary storage (the
-     * Standard storage class) files at which to move them to Archive storage. Metadata
+     * Standard storage class) at which to move them to Archive storage. Metadata
      * operations such as listing the contents of a directory don't count as file
      * access events.</p>
      */

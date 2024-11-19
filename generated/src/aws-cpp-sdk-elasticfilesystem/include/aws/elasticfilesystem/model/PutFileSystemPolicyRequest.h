@@ -53,8 +53,8 @@ namespace Model
      * formatted policy definition. EFS file system policies have a 20,000 character
      * limit. To find out more about the elements that make up a file system policy,
      * see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS
-     * Resource-based Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/efs/latest/ug/security_iam_service-with-iam.html#security_iam_service-with-iam-resource-based-policies">Resource-based
+     * policies within Amazon EFS</a>. </p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }

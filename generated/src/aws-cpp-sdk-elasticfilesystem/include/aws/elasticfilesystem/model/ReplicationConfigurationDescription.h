@@ -128,6 +128,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>ID of the Amazon Web Services account in which the source file system
+     * resides.</p>
+     */
+    inline const Aws::String& GetSourceFileSystemOwnerId() const{ return m_sourceFileSystemOwnerId; }
+    inline bool SourceFileSystemOwnerIdHasBeenSet() const { return m_sourceFileSystemOwnerIdHasBeenSet; }
+    inline void SetSourceFileSystemOwnerId(const Aws::String& value) { m_sourceFileSystemOwnerIdHasBeenSet = true; m_sourceFileSystemOwnerId = value; }
+    inline void SetSourceFileSystemOwnerId(Aws::String&& value) { m_sourceFileSystemOwnerIdHasBeenSet = true; m_sourceFileSystemOwnerId = std::move(value); }
+    inline void SetSourceFileSystemOwnerId(const char* value) { m_sourceFileSystemOwnerIdHasBeenSet = true; m_sourceFileSystemOwnerId.assign(value); }
+    inline ReplicationConfigurationDescription& WithSourceFileSystemOwnerId(const Aws::String& value) { SetSourceFileSystemOwnerId(value); return *this;}
+    inline ReplicationConfigurationDescription& WithSourceFileSystemOwnerId(Aws::String&& value) { SetSourceFileSystemOwnerId(std::move(value)); return *this;}
+    inline ReplicationConfigurationDescription& WithSourceFileSystemOwnerId(const char* value) { SetSourceFileSystemOwnerId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -157,6 +172,9 @@ namespace Model
 
     Aws::Vector<Destination> m_destinations;
     bool m_destinationsHasBeenSet = false;
+
+    Aws::String m_sourceFileSystemOwnerId;
+    bool m_sourceFileSystemOwnerIdHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

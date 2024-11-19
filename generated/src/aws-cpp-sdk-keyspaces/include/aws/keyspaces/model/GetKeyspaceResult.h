@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/keyspaces/model/Rs.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/keyspaces/model/ReplicationGroupStatus.h>
 #include <utility>
 
 namespace Aws
@@ -88,6 +89,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> A list of all Regions the keyspace is replicated in after the update
+     * keyspace operation and their status. </p>
+     */
+    inline const Aws::Vector<ReplicationGroupStatus>& GetReplicationGroupStatuses() const{ return m_replicationGroupStatuses; }
+    inline void SetReplicationGroupStatuses(const Aws::Vector<ReplicationGroupStatus>& value) { m_replicationGroupStatuses = value; }
+    inline void SetReplicationGroupStatuses(Aws::Vector<ReplicationGroupStatus>&& value) { m_replicationGroupStatuses = std::move(value); }
+    inline GetKeyspaceResult& WithReplicationGroupStatuses(const Aws::Vector<ReplicationGroupStatus>& value) { SetReplicationGroupStatuses(value); return *this;}
+    inline GetKeyspaceResult& WithReplicationGroupStatuses(Aws::Vector<ReplicationGroupStatus>&& value) { SetReplicationGroupStatuses(std::move(value)); return *this;}
+    inline GetKeyspaceResult& AddReplicationGroupStatuses(const ReplicationGroupStatus& value) { m_replicationGroupStatuses.push_back(value); return *this; }
+    inline GetKeyspaceResult& AddReplicationGroupStatuses(ReplicationGroupStatus&& value) { m_replicationGroupStatuses.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -106,6 +121,8 @@ namespace Model
     Rs m_replicationStrategy;
 
     Aws::Vector<Aws::String> m_replicationRegions;
+
+    Aws::Vector<ReplicationGroupStatus> m_replicationGroupStatuses;
 
     Aws::String m_requestId;
   };

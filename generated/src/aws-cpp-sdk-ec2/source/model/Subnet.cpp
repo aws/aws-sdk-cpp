@@ -39,6 +39,7 @@ Subnet::Subnet() :
     m_ipv6Native(false),
     m_ipv6NativeHasBeenSet(false),
     m_privateDnsNameOptionsOnLaunchHasBeenSet(false),
+    m_blockPublicAccessStatesHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_state(SubnetState::NOT_SET),
     m_stateHasBeenSet(false),
@@ -155,6 +156,12 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     {
       m_privateDnsNameOptionsOnLaunch = privateDnsNameOptionsOnLaunchNode;
       m_privateDnsNameOptionsOnLaunchHasBeenSet = true;
+    }
+    XmlNode blockPublicAccessStatesNode = resultNode.FirstChild("blockPublicAccessStates");
+    if(!blockPublicAccessStatesNode.IsNull())
+    {
+      m_blockPublicAccessStates = blockPublicAccessStatesNode;
+      m_blockPublicAccessStatesHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
@@ -290,6 +297,13 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       m_privateDnsNameOptionsOnLaunch.OutputToStream(oStream, privateDnsNameOptionsOnLaunchLocationAndMemberSs.str().c_str());
   }
 
+  if(m_blockPublicAccessStatesHasBeenSet)
+  {
+      Aws::StringStream blockPublicAccessStatesLocationAndMemberSs;
+      blockPublicAccessStatesLocationAndMemberSs << location << index << locationValue << ".BlockPublicAccessStates";
+      m_blockPublicAccessStates.OutputToStream(oStream, blockPublicAccessStatesLocationAndMemberSs.str().c_str());
+  }
+
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
@@ -399,6 +413,12 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String privateDnsNameOptionsOnLaunchLocationAndMember(location);
       privateDnsNameOptionsOnLaunchLocationAndMember += ".PrivateDnsNameOptionsOnLaunch";
       m_privateDnsNameOptionsOnLaunch.OutputToStream(oStream, privateDnsNameOptionsOnLaunchLocationAndMember.c_str());
+  }
+  if(m_blockPublicAccessStatesHasBeenSet)
+  {
+      Aws::String blockPublicAccessStatesLocationAndMember(location);
+      blockPublicAccessStatesLocationAndMember += ".BlockPublicAccessStates";
+      m_blockPublicAccessStates.OutputToStream(oStream, blockPublicAccessStatesLocationAndMember.c_str());
   }
   if(m_subnetIdHasBeenSet)
   {

@@ -49,6 +49,22 @@ namespace Aws
         static const int UnknownError_HASH = HashingUtils::HashString("UnknownError");
         static const int AppXPackagesInstalled_HASH = HashingUtils::HashString("AppXPackagesInstalled");
         static const int ReservedStorageInUse_HASH = HashingUtils::HashString("ReservedStorageInUse");
+        static const int AdditionalDrivesPresent_HASH = HashingUtils::HashString("AdditionalDrivesPresent");
+        static const int WindowsUpdatesRequired_HASH = HashingUtils::HashString("WindowsUpdatesRequired");
+        static const int SysPrepFileMissing_HASH = HashingUtils::HashString("SysPrepFileMissing");
+        static const int UserProfileMissing_HASH = HashingUtils::HashString("UserProfileMissing");
+        static const int InsufficientDiskSpace_HASH = HashingUtils::HashString("InsufficientDiskSpace");
+        static const int EnvironmentVariablesPathMissingEntries_HASH = HashingUtils::HashString("EnvironmentVariablesPathMissingEntries");
+        static const int DomainAccountServicesFound_HASH = HashingUtils::HashString("DomainAccountServicesFound");
+        static const int InvalidIp_HASH = HashingUtils::HashString("InvalidIp");
+        static const int RemoteDesktopServicesDisabled_HASH = HashingUtils::HashString("RemoteDesktopServicesDisabled");
+        static const int WindowsModulesInstallerDisabled_HASH = HashingUtils::HashString("WindowsModulesInstallerDisabled");
+        static const int AmazonSsmAgentEnabled_HASH = HashingUtils::HashString("AmazonSsmAgentEnabled");
+        static const int UnsupportedSecurityProtocol_HASH = HashingUtils::HashString("UnsupportedSecurityProtocol");
+        static const int MultipleUserProfiles_HASH = HashingUtils::HashString("MultipleUserProfiles");
+        static const int StagedAppxPackage_HASH = HashingUtils::HashString("StagedAppxPackage");
+        static const int UnsupportedOsUpgrade_HASH = HashingUtils::HashString("UnsupportedOsUpgrade");
+        static const int InsufficientRearmCount_HASH = HashingUtils::HashString("InsufficientRearmCount");
 
 
         WorkspaceImageErrorDetailCode GetWorkspaceImageErrorDetailCodeForName(const Aws::String& name)
@@ -170,6 +186,70 @@ namespace Aws
           {
             return WorkspaceImageErrorDetailCode::ReservedStorageInUse;
           }
+          else if (hashCode == AdditionalDrivesPresent_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::AdditionalDrivesPresent;
+          }
+          else if (hashCode == WindowsUpdatesRequired_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::WindowsUpdatesRequired;
+          }
+          else if (hashCode == SysPrepFileMissing_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::SysPrepFileMissing;
+          }
+          else if (hashCode == UserProfileMissing_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::UserProfileMissing;
+          }
+          else if (hashCode == InsufficientDiskSpace_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::InsufficientDiskSpace;
+          }
+          else if (hashCode == EnvironmentVariablesPathMissingEntries_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::EnvironmentVariablesPathMissingEntries;
+          }
+          else if (hashCode == DomainAccountServicesFound_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::DomainAccountServicesFound;
+          }
+          else if (hashCode == InvalidIp_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::InvalidIp;
+          }
+          else if (hashCode == RemoteDesktopServicesDisabled_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::RemoteDesktopServicesDisabled;
+          }
+          else if (hashCode == WindowsModulesInstallerDisabled_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::WindowsModulesInstallerDisabled;
+          }
+          else if (hashCode == AmazonSsmAgentEnabled_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::AmazonSsmAgentEnabled;
+          }
+          else if (hashCode == UnsupportedSecurityProtocol_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::UnsupportedSecurityProtocol;
+          }
+          else if (hashCode == MultipleUserProfiles_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::MultipleUserProfiles;
+          }
+          else if (hashCode == StagedAppxPackage_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::StagedAppxPackage;
+          }
+          else if (hashCode == UnsupportedOsUpgrade_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::UnsupportedOsUpgrade;
+          }
+          else if (hashCode == InsufficientRearmCount_HASH)
+          {
+            return WorkspaceImageErrorDetailCode::InsufficientRearmCount;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -244,6 +324,38 @@ namespace Aws
             return "AppXPackagesInstalled";
           case WorkspaceImageErrorDetailCode::ReservedStorageInUse:
             return "ReservedStorageInUse";
+          case WorkspaceImageErrorDetailCode::AdditionalDrivesPresent:
+            return "AdditionalDrivesPresent";
+          case WorkspaceImageErrorDetailCode::WindowsUpdatesRequired:
+            return "WindowsUpdatesRequired";
+          case WorkspaceImageErrorDetailCode::SysPrepFileMissing:
+            return "SysPrepFileMissing";
+          case WorkspaceImageErrorDetailCode::UserProfileMissing:
+            return "UserProfileMissing";
+          case WorkspaceImageErrorDetailCode::InsufficientDiskSpace:
+            return "InsufficientDiskSpace";
+          case WorkspaceImageErrorDetailCode::EnvironmentVariablesPathMissingEntries:
+            return "EnvironmentVariablesPathMissingEntries";
+          case WorkspaceImageErrorDetailCode::DomainAccountServicesFound:
+            return "DomainAccountServicesFound";
+          case WorkspaceImageErrorDetailCode::InvalidIp:
+            return "InvalidIp";
+          case WorkspaceImageErrorDetailCode::RemoteDesktopServicesDisabled:
+            return "RemoteDesktopServicesDisabled";
+          case WorkspaceImageErrorDetailCode::WindowsModulesInstallerDisabled:
+            return "WindowsModulesInstallerDisabled";
+          case WorkspaceImageErrorDetailCode::AmazonSsmAgentEnabled:
+            return "AmazonSsmAgentEnabled";
+          case WorkspaceImageErrorDetailCode::UnsupportedSecurityProtocol:
+            return "UnsupportedSecurityProtocol";
+          case WorkspaceImageErrorDetailCode::MultipleUserProfiles:
+            return "MultipleUserProfiles";
+          case WorkspaceImageErrorDetailCode::StagedAppxPackage:
+            return "StagedAppxPackage";
+          case WorkspaceImageErrorDetailCode::UnsupportedOsUpgrade:
+            return "UnsupportedOsUpgrade";
+          case WorkspaceImageErrorDetailCode::InsufficientRearmCount:
+            return "InsufficientRearmCount";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
