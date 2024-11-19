@@ -153,6 +153,13 @@ namespace Aws
              * If not set, the max of `partSize` and 5 MiB will be used.
              */
             size_t multipartUploadThreshold{0};
+
+            /**
+             * Optional.
+             * THIS IS AN EXPERIMENTAL AND UNSTABLE API
+             * This setting maps to CRT's network_interface_names_array config.
+             */
+            Aws::Vector<Aws::String> networkInterfaceNames;
             /* End of S3 CRT specifics */
         private:
             void LoadS3CrtSpecificConfig(const Aws::String& profileName);
