@@ -58,6 +58,15 @@ GetKeyspaceResult& GetKeyspaceResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("replicationGroupStatuses"))
+  {
+    Aws::Utils::Array<JsonView> replicationGroupStatusesJsonList = jsonValue.GetArray("replicationGroupStatuses");
+    for(unsigned replicationGroupStatusesIndex = 0; replicationGroupStatusesIndex < replicationGroupStatusesJsonList.GetLength(); ++replicationGroupStatusesIndex)
+    {
+      m_replicationGroupStatuses.push_back(replicationGroupStatusesJsonList[replicationGroupStatusesIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

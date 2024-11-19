@@ -25,7 +25,29 @@ namespace Model
 
   /**
    * <p>Describes the new or existing destination file system for the replication
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * configuration.</p> <ul> <li> <p>If you want to replicate to a new file system,
+   * do not specify the File System ID for the destination file system. Amazon EFS
+   * creates a new, empty file system. For One Zone storage, specify the Availability
+   * Zone to create the file system in. To use an Key Management Service key other
+   * than the default KMS key, then specify it. For more information, see <a
+   * href="https://docs.aws.amazon.com/efs/latest/ug/create-replication.html">Configuring
+   * replication to new Amazon EFS file system</a> in the <i>Amazon EFS User
+   * Guide</i>.</p>  <p>After the file system is created, you cannot change the
+   * KMS key or the performance mode.</p>  </li> <li> <p>If you want to
+   * replicate to an existing file system that's in the same account as the source
+   * file system, then you need to provide the ID or Amazon Resource Name (ARN) of
+   * the file system to which to replicate. The file system's replication overwrite
+   * protection must be disabled. For more information, see <a
+   * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication#replicate-existing-destination">Replicating
+   * to an existing file system</a> in the <i>Amazon EFS User Guide</i>.</p> </li>
+   * <li> <p>If you are replicating the file system to a file system that's in a
+   * different account than the source file system (cross-account replication), you
+   * need to provide the ARN for the file system and the IAM role that allows Amazon
+   * EFS to perform replication on the destination account. The file system's
+   * replication overwrite protection must be disabled. For more information, see <a
+   * href="https://docs.aws.amazon.com/efs/latest/ug/cross-account-replication.html">Replicating
+   * across Amazon Web Services accounts</a> in the <i>Amazon EFS User Guide</i>.</p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DestinationToCreate">AWS
    * API Reference</a></p>
    */
@@ -41,7 +63,12 @@ namespace Model
     ///@{
     /**
      * <p>To create a file system that uses Regional storage, specify the Amazon Web
-     * Services Region in which to create the destination file system.</p>
+     * Services Region in which to create the destination file system. The Region must
+     * be enabled for the Amazon Web Services account that owns the source file system.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
+     * Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference
+     * Reference Guide</i>.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
@@ -76,7 +103,7 @@ namespace Model
      * ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - The unique
      * identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - The
-     * Amazon Resource Name (ARN) for the key, for example
+     * ARN for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Key alias - A previously created display name for a key, for
      * example <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - The
@@ -96,9 +123,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the file system to use for the destination. The file system's
-     * replication overwrite replication must be disabled. If you do not provide an ID,
-     * then EFS creates a new file system for the replication destination.</p>
+     * <p>The ID or ARN of the file system to use for the destination. For
+     * cross-account replication, this must be an ARN. The file system's replication
+     * overwrite replication must be disabled. If no ID or ARN is specified, then a new
+     * file system is created. </p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
@@ -108,6 +136,22 @@ namespace Model
     inline DestinationToCreate& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
     inline DestinationToCreate& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
     inline DestinationToCreate& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Amazon Resource Name (ARN) of the IAM role in the source account that allows
+     * Amazon EFS to perform replication on its behalf. This is optional for
+     * same-account replication and required for cross-account replication.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+    inline DestinationToCreate& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+    inline DestinationToCreate& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+    inline DestinationToCreate& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
     ///@}
   private:
 
@@ -122,6 +166,9 @@ namespace Model
 
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

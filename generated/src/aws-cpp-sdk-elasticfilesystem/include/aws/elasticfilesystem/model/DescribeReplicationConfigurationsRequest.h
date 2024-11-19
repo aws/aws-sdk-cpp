@@ -41,7 +41,9 @@ namespace Model
     ///@{
     /**
      * <p>You can retrieve the replication configuration for a specific file system by
-     * providing its file system ID.</p>
+     * providing its file system ID. For cross-account,cross-region replication, an
+     * account can only describe the replication configuration for a file system in its
+     * own Region.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }

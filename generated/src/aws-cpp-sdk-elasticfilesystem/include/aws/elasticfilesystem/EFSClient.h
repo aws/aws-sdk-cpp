@@ -158,15 +158,14 @@ namespace EFS
          * status by calling the <a>DescribeFileSystems</a> operation, which among other
          * things returns the file system state.</p>  <p>This operation accepts an
          * optional <code>PerformanceMode</code> parameter that you choose for your file
-         * system. We recommend <code>generalPurpose</code> performance mode for all file
-         * systems. File systems using the <code>maxIO</code> mode is a previous generation
+         * system. We recommend <code>generalPurpose</code> <code>PerformanceMode</code>
+         * for all file systems. The <code>maxIO</code> mode is a previous generation
          * performance type that is designed for highly parallelized workloads that can
-         * tolerate higher latencies than the General Purpose mode. Max I/O mode is not
-         * supported for One Zone file systems or file systems that use Elastic
-         * throughput.</p>  <p>Due to the higher per-operation latencies with
-         * Max I/O, we recommend using General Purpose performance mode for all file
-         * systems.</p>  <p>The performance mode can't be changed after the
-         * file system has been created. For more information, see <a
+         * tolerate higher latencies than the <code>generalPurpose</code> mode.
+         * <code>MaxIO</code> mode is not supported for One Zone file systems or file
+         * systems that use Elastic throughput.</p> <p>The <code>PerformanceMode</code>
+         * can't be changed after the file system has been created. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
          * EFS performance modes</a>.</p> <p>You can set the throughput mode for the file
          * system using the <code>ThroughputMode</code> parameter.</p> <p>After the file
@@ -313,58 +312,26 @@ namespace EFS
         }
 
         /**
-         * <p>Creates a replication configuration that replicates an existing EFS file
-         * system to a new, read-only file system. For more information, see <a
+         * <p>Creates a replication conﬁguration to either a new or existing EFS file
+         * system. For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS
          * replication</a> in the <i>Amazon EFS User Guide</i>. The replication
          * configuration specifies the following:</p> <ul> <li> <p> <b>Source file
-         * system</b> – The EFS file system that you want replicated. The source file
-         * system cannot be a destination file system in an existing replication
-         * configuration.</p> </li> <li> <p> <b>Amazon Web Services Region</b> – The Amazon
-         * Web Services Region in which the destination file system is created. Amazon EFS
-         * replication is available in all Amazon Web Services Regions in which EFS is
-         * available. The Region must be enabled. For more information, see <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
-         * Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference
-         * Reference Guide</i>.</p> </li> <li> <p> <b>Destination file system
-         * configuration</b> – The configuration of the destination file system to which
-         * the source file system will be replicated. There can only be one destination
-         * file system in a replication configuration. </p> <p>Parameters for the
-         * replication configuration include:</p> <ul> <li> <p> <b>File system ID</b> – The
-         * ID of the destination file system for the replication. If no ID is provided,
-         * then EFS creates a new file system with the default settings. For existing file
-         * systems, the file system's replication overwrite protection must be disabled.
-         * For more information, see <a
-         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication#replicate-existing-destination">
-         * Replicating to an existing file system</a>.</p> </li> <li> <p> <b>Availability
-         * Zone</b> – If you want the destination file system to use One Zone storage, you
-         * must specify the Availability Zone to create the file system in. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> EFS file
-         * system types</a> in the <i>Amazon EFS User Guide</i>.</p> </li> <li> <p>
-         * <b>Encryption</b> – All destination file systems are created with encryption at
-         * rest enabled. You can specify the Key Management Service (KMS) key that is used
-         * to encrypt the destination file system. If you don't specify a KMS key, your
-         * service-managed KMS key for Amazon EFS is used. </p>  <p>After the file
-         * system is created, you cannot change the KMS key.</p>  </li> </ul> </li>
-         * </ul>  <p>After the file system is created, you cannot change the KMS
-         * key.</p>  <p>For new destination file systems, the following properties
-         * are set by default:</p> <ul> <li> <p> <b>Performance mode</b> - The destination
-         * file system's performance mode matches that of the source file system, unless
-         * the destination file system uses EFS One Zone storage. In that case, the General
-         * Purpose performance mode is used. The performance mode cannot be changed.</p>
-         * </li> <li> <p> <b>Throughput mode</b> - The destination file system's throughput
-         * mode matches that of the source file system. After the file system is created,
-         * you can modify the throughput mode.</p> </li> </ul> <ul> <li> <p> <b>Lifecycle
-         * management</b> – Lifecycle management is not enabled on the destination file
-         * system. After the destination file system is created, you can enable lifecycle
-         * management.</p> </li> <li> <p> <b>Automatic backups</b> – Automatic daily
-         * backups are enabled on the destination file system. After the file system is
-         * created, you can change this setting.</p> </li> </ul> <p>For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS
-         * replication</a> in the <i>Amazon EFS User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * system</b> – The EFS file system that you want to replicate. </p> </li> <li> <p>
+         * <b>Destination file system</b> – The destination file system to which the source
+         * file system is replicated. There can only be one destination file system in a
+         * replication configuration. </p>  <p>A file system can be part of only one
+         * replication configuration. </p>  <p>The destination parameters for the
+         * replication configuration depend on whether you are replicating to a new file
+         * system or to an existing file system, and if you are replicating across Amazon
+         * Web Services accounts. See <a>DestinationToCreate</a> for more information.</p>
+         * </li> </ul> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:CreateReplicationConfiguration</code> action.
+         * Additionally, other permissions are required depending on how you are
+         * replicating file systems. For more information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html#efs-replication-permissions">Required
+         * permissions for replication</a> in the <i>Amazon EFS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateReplicationConfiguration">AWS
          * API Reference</a></p>
          */
@@ -425,7 +392,7 @@ namespace EFS
          * attached to a file system before you can delete an EFS file system. This step is
          * performed for you when you use the Amazon Web Services console to delete a file
          * system.</p>  <p>You cannot delete a file system that is part of an EFS
-         * Replication configuration. You need to delete the replication configuration
+         * replication configuration. You need to delete the replication configuration
          * first.</p>  <p> You can't delete a file system that is in use. That is,
          * if the file system has any mount targets, you must first delete them. For more
          * information, see <a>DescribeMountTargets</a> and <a>DeleteMountTarget</a>. </p>
@@ -981,9 +948,9 @@ namespace EFS
          * using this API operation. EFS file system policies have a 20,000 character
          * limit. When an explicit policy is set, it overrides the default policy. For more
          * information about the default file system policy, see <a
-         * href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
-         * EFS File System Policy</a>. </p>  <p>EFS file system policies have a
-         * 20,000 character limit.</p>  <p>This operation requires permissions for
+         * href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">
+         * Default EFS file system policy</a>. </p>  <p>EFS file system policies have
+         * a 20,000 character limit.</p>  <p>This operation requires permissions for
          * the <code>elasticfilesystem:PutFileSystemPolicy</code> action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">AWS
@@ -1021,8 +988,8 @@ namespace EFS
          * transition into Archive storage before transitioning into IA storage. Therefore,
          * TransitionToArchive must either not be set or must be later than
          * TransitionToIA.</p>  <p> The Archive storage class is available only for
-         * file systems that use the Elastic Throughput mode and the General Purpose
-         * Performance mode. </p>  </li> </ul> <ul> <li> <p> <b>
+         * file systems that use the Elastic throughput mode and the General Purpose
+         * performance mode. </p>  </li> </ul> <ul> <li> <p> <b>
          * <code>TransitionToPrimaryStorageClass</code> </b> – Whether to move files in the
          * file system back to primary storage (Standard storage class) after they are
          * accessed in IA or Archive storage.</p> </li> </ul> <p>For more information, see
@@ -1036,7 +1003,7 @@ namespace EFS
          * <code>LifecyclePolicies</code> array in the request body deletes any existing
          * <code>LifecycleConfiguration</code>. In the request, specify the following: </p>
          * <ul> <li> <p>The ID for the file system for which you are enabling, disabling,
-         * or modifying Lifecycle management.</p> </li> <li> <p>A
+         * or modifying lifecycle management.</p> </li> <li> <p>A
          * <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects
          * that define when to move files to IA storage, to Archive storage, and back to
          * primary storage.</p>  <p>Amazon EFS requires that each

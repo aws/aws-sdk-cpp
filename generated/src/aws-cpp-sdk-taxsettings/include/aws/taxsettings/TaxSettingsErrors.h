@@ -47,7 +47,9 @@ enum class TaxSettingsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ATTACHMENT_UPLOAD= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CASE_CREATION_LIMIT_EXCEEDED,
+  CONFLICT,
   INTERNAL_SERVER
 };
 

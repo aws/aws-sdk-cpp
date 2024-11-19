@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/model/TableOptimizerVpcConfiguration.h>
 #include <aws/glue/model/RetentionConfiguration.h>
 #include <aws/glue/model/OrphanFileDeletionConfiguration.h>
 #include <utility>
@@ -68,6 +69,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A <code>TableOptimizerVpcConfiguration</code> object representing the VPC
+     * configuration for a table optimizer.</p> <p>This configuration is necessary to
+     * perform optimization on tables that are in a customer VPC.</p>
+     */
+    inline const TableOptimizerVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+    inline void SetVpcConfiguration(const TableOptimizerVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+    inline void SetVpcConfiguration(TableOptimizerVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+    inline TableOptimizerConfiguration& WithVpcConfiguration(const TableOptimizerVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
+    inline TableOptimizerConfiguration& WithVpcConfiguration(TableOptimizerVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration for a snapshot retention optimizer.</p>
      */
     inline const RetentionConfiguration& GetRetentionConfiguration() const{ return m_retentionConfiguration; }
@@ -96,6 +111,9 @@ namespace Model
 
     bool m_enabled;
     bool m_enabledHasBeenSet = false;
+
+    TableOptimizerVpcConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     RetentionConfiguration m_retentionConfiguration;
     bool m_retentionConfigurationHasBeenSet = false;

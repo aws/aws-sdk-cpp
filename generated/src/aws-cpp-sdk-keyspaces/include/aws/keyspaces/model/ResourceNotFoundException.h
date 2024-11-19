@@ -56,7 +56,7 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier in the format of Amazon Resource Name (ARN) for the
-     * resource could't be found.</p>
+     * resource couldn’t be found.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

@@ -60,7 +60,7 @@ namespace Model
      * system in a replication configuration. The file system is read-only and is only
      * modified only by EFS replication.</p> </li> </ul> <p>If the replication
      * configuration is deleted, the file system's replication overwrite protection is
-     * re-enabled, the file system becomes writeable.</p>
+     * re-enabled and the file system becomes writeable.</p>
      */
     inline const ReplicationOverwriteProtection& GetReplicationOverwriteProtection() const{ return m_replicationOverwriteProtection; }
     inline bool ReplicationOverwriteProtectionHasBeenSet() const { return m_replicationOverwriteProtectionHasBeenSet; }

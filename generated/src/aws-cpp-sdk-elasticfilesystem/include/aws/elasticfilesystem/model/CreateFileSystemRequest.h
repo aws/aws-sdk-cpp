@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Performance mode of the file system. We recommend
+     * <p>The performance mode of the file system. We recommend
      * <code>generalPurpose</code> performance mode for all file systems. File systems
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
@@ -155,14 +155,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>Used to create a One Zone file system. It specifies the Amazon Web Services
-     * Availability Zone in which to create the file system. Use the format
-     * <code>us-east-1a</code> to specify the Availability Zone. For more information
-     * about One Zone file systems, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
-     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * file systems are not available in all Availability Zones in Amazon Web Services
-     * Regions where Amazon EFS is available.</p> 
+     * <p>For One Zone file systems, specify the Amazon Web Services Availability Zone
+     * in which to create the file system. Use the format <code>us-east-1a</code> to
+     * specify the Availability Zone. For more information about One Zone file systems,
+     * see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html#file-system-type">EFS
+     * file system types</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One
+     * Zone file systems are not available in all Availability Zones in Amazon Web
+     * Services Regions where Amazon EFS is available.</p> 
      */
     inline const Aws::String& GetAvailabilityZoneName() const{ return m_availabilityZoneName; }
     inline bool AvailabilityZoneNameHasBeenSet() const { return m_availabilityZoneNameHasBeenSet; }

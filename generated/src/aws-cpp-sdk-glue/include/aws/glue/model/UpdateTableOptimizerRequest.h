@@ -80,8 +80,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of table optimizer. Currently, the only valid value is
-     * <code>compaction</code>.</p>
+     * <p>The type of table optimizer.</p>
      */
     inline const TableOptimizerType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

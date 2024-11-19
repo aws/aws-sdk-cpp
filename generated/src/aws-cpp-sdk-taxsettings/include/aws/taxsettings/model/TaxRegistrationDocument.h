@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/taxsettings/TaxSettings_EXPORTS.h>
+#include <aws/taxsettings/model/TaxRegistrationDocFile.h>
 #include <aws/taxsettings/model/SourceS3Location.h>
 #include <utility>
 
@@ -39,6 +40,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The tax registration document. </p>
+     */
+    inline const TaxRegistrationDocFile& GetFile() const{ return m_file; }
+    inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
+    inline void SetFile(const TaxRegistrationDocFile& value) { m_fileHasBeenSet = true; m_file = value; }
+    inline void SetFile(TaxRegistrationDocFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
+    inline TaxRegistrationDocument& WithFile(const TaxRegistrationDocFile& value) { SetFile(value); return *this;}
+    inline TaxRegistrationDocument& WithFile(TaxRegistrationDocFile&& value) { SetFile(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon S3 location where your tax registration document is stored.</p>
      */
     inline const SourceS3Location& GetS3Location() const{ return m_s3Location; }
@@ -49,6 +62,9 @@ namespace Model
     inline TaxRegistrationDocument& WithS3Location(SourceS3Location&& value) { SetS3Location(std::move(value)); return *this;}
     ///@}
   private:
+
+    TaxRegistrationDocFile m_file;
+    bool m_fileHasBeenSet = false;
 
     SourceS3Location m_s3Location;
     bool m_s3LocationHasBeenSet = false;

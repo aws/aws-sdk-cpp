@@ -29,6 +29,7 @@ Vpc::Vpc() :
     m_isDefault(false),
     m_isDefaultHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_blockPublicAccessStatesHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_state(VpcState::NOT_SET),
     m_stateHasBeenSet(false),
@@ -102,6 +103,12 @@ Vpc& Vpc::operator =(const XmlNode& xmlNode)
       }
 
       m_tagsHasBeenSet = true;
+    }
+    XmlNode blockPublicAccessStatesNode = resultNode.FirstChild("blockPublicAccessStates");
+    if(!blockPublicAccessStatesNode.IsNull())
+    {
+      m_blockPublicAccessStates = blockPublicAccessStatesNode;
+      m_blockPublicAccessStatesHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
@@ -182,6 +189,13 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
       }
   }
 
+  if(m_blockPublicAccessStatesHasBeenSet)
+  {
+      Aws::StringStream blockPublicAccessStatesLocationAndMemberSs;
+      blockPublicAccessStatesLocationAndMemberSs << location << index << locationValue << ".BlockPublicAccessStates";
+      m_blockPublicAccessStates.OutputToStream(oStream, blockPublicAccessStatesLocationAndMemberSs.str().c_str());
+  }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
@@ -247,6 +261,12 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_blockPublicAccessStatesHasBeenSet)
+  {
+      Aws::String blockPublicAccessStatesLocationAndMember(location);
+      blockPublicAccessStatesLocationAndMember += ".BlockPublicAccessStates";
+      m_blockPublicAccessStates.OutputToStream(oStream, blockPublicAccessStatesLocationAndMember.c_str());
   }
   if(m_vpcIdHasBeenSet)
   {

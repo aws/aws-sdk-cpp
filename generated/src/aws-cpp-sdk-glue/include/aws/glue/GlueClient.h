@@ -1222,9 +1222,8 @@ namespace Glue
         }
 
         /**
-         * <p>Creates a new table optimizer for a specific function.
-         * <code>compaction</code> is the only currently supported optimizer
-         * type.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new table optimizer for a specific function. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTableOptimizer">AWS
          * API Reference</a></p>
          */
