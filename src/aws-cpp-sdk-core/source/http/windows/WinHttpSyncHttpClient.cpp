@@ -40,61 +40,54 @@ using namespace Aws::Utils::Logging;
 #ifndef WINHTTP_OPTION_HTTP_PROTOCOL_USED
     static const DWORD WINHTTP_OPTION_HTTP_PROTOCOL_USED = 134;
 #endif
+#ifndef WINHTTP_PROTOCOL_FLAG_HTTP2
+    static const DWORD WINHTTP_PROTOCOL_FLAG_HTTP2 = 0x1;
+#endif
+#ifndef WINHTTP_PROTOCOL_FLAG_HTTP3
+    static const DWORD WINHTTP_PROTOCOL_FLAG_HTTP3 = 0x2;
+#endif
 
-DWORD ConvertHttpVersionToWinHttpVersion(const Aws::Http::Version version)
+std::initializer_list<DWORD> GetWinHttpVersionsToTry(const Aws::Http::Version version)
 {
     if (version == Version::HTTP_VERSION_NONE)
     {
         /* WinHTTP http version None maps to HTTP1.1, however, libCurl None maps to "let http client decide", sticking to libCurl behavior here (use highest) */
-#if defined(WINHTTP_HAS_H3)
-        return WINHTTP_PROTOCOL_FLAG_HTTP3;
-#elif defined(WINHTTP_HAS_H2)
-        return WINHTTP_PROTOCOL_FLAG_HTTP2;
-#else
-        return 0x0;
-#endif
+        return { WINHTTP_PROTOCOL_FLAG_HTTP3 | WINHTTP_PROTOCOL_FLAG_HTTP2, WINHTTP_PROTOCOL_FLAG_HTTP2 };
     }
     else if (version == Version::HTTP_VERSION_1_0)
     {
-        return 0x0; // HTTP 1.1 can be still used, WinHTTP does not allow disabling 1,1
+        return {}; // HTTP 1.1 can be still used, WinHTTP does not allow disabling 1,1
     }
     else if (version == Version::HTTP_VERSION_1_1)
     {
-        return 0x0;
+        return {};
     }
 #ifdef WINHTTP_HAS_H2
         else if (version == Version::HTTP_VERSION_2_0 ||
              version == Version::HTTP_VERSION_2TLS)
     {
-        return WINHTTP_PROTOCOL_FLAG_HTTP2;
+        return { WINHTTP_PROTOCOL_FLAG_HTTP2 };
     }
     else if (version == Version::HTTP_VERSION_2_PRIOR_KNOWLEDGE)
     {
         AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to set HTTP/2 with Prior Knowledge on WinHTTP, enabling regular HTTP2");
-        return WINHTTP_PROTOCOL_FLAG_HTTP2;
+        return { WINHTTP_PROTOCOL_FLAG_HTTP2 };
     }
 #endif
 #ifdef WINHTTP_HAS_H3
-        else if (version == Version::HTTP_VERSION_3)
+    else if (version == Version::HTTP_VERSION_3)
     {
-        return WINHTTP_PROTOCOL_FLAG_HTTP3;
+      return { WINHTTP_PROTOCOL_FLAG_HTTP3 | WINHTTP_PROTOCOL_FLAG_HTTP2, WINHTTP_PROTOCOL_FLAG_HTTP2 };
     }
     else if (version == Version::HTTP_VERSION_3ONLY)
     {
-        AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to set HTTP3 only on WinHTTP");
-        return WINHTTP_PROTOCOL_FLAG_HTTP3;
+      AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to set HTTP3 only on WinHTTP");
+      return { WINHTTP_PROTOCOL_FLAG_HTTP3 };
     }
 #endif
-
-#ifdef WINHTTP_HAS_H2
-        AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to map requested HTTP Version: (raw enum value) "
-                        << static_cast<std::underlying_type<Aws::Http::Version>::type>(version) << " defaulting to WINHTTP_PROTOCOL_FLAG_HTTP2");
-    return WINHTTP_PROTOCOL_FLAG_HTTP2;
-#else
     AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to map requested HTTP Version: (raw enum value) "
-        << static_cast<std::underlying_type<Aws::Http::Version>::type>(version) << " defaulting to None (aka 1.1 and below)");
-    return 0x0;
-#endif
+                        << static_cast<std::underlying_type<Aws::Http::Version>::type>(version) << " defaulting to WINHTTP_PROTOCOL_FLAG_HTTP2");
+    return {WINHTTP_PROTOCOL_FLAG_HTTP2};
 }
 
 void AzWinHttpLogLastError(const char* FuncName)
@@ -197,14 +190,15 @@ bool AzCallWinHttp(const char* FuncName, WinHttpFunc func, Args &&... args)
 
 static void WinHttpSetHttpVersion(void* handle, const Aws::Http::Version version)
 {
-    DWORD winHttpVersion = ConvertHttpVersionToWinHttpVersion(version);
-    if (winHttpVersion == 0x0)
+    for (DWORD winHttpVersion : GetWinHttpVersionsToTry(version))
     {
-        return;
-    }
-    if (!AzCallWinHttp("WinHttpSetOption", WinHttpSetOption, handle, WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL, &winHttpVersion, (DWORD) sizeof(winHttpVersion)))
-    {
-        AWS_LOGSTREAM_ERROR("WinHttpHttp2", "Failed to set WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL to " << winHttpVersion << " on WinHttp handle: " << handle);
+        if (AzCallWinHttp("WinHttpSetOption", WinHttpSetOption, handle, WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL, &winHttpVersion, (DWORD)sizeof(winHttpVersion)))
+        {
+            break;
+        }
+        {
+            AWS_LOGSTREAM_ERROR("WinHttpHttp2", "Failed to set WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL to " << winHttpVersion << " on WinHttp handle: " << handle);
+        }
     }
 }
 
