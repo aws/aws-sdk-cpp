@@ -68,7 +68,6 @@ const std::initializer_list<DWORD>& GetWinHttpVersionsToTry(const Aws::Http::Ver
     {
         return noPreference;
     }
-#ifdef WINHTTP_HAS_H2
     else if (version == Version::HTTP_VERSION_2_0 || version == Version::HTTP_VERSION_2TLS)
     {
         return http2;
@@ -78,8 +77,6 @@ const std::initializer_list<DWORD>& GetWinHttpVersionsToTry(const Aws::Http::Ver
         AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to set HTTP/2 with Prior Knowledge on WinHTTP, enabling regular HTTP2");
         return http2;
     }
-#endif
-#ifdef WINHTTP_HAS_H3
     else if (version == Version::HTTP_VERSION_3)
     {
       return http2Or3;
@@ -89,7 +86,6 @@ const std::initializer_list<DWORD>& GetWinHttpVersionsToTry(const Aws::Http::Ver
       AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to set HTTP3 only on WinHTTP");
       return http3;
     }
-#endif
     AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to map requested HTTP Version: (raw enum value) "
                         << static_cast<std::underlying_type<Aws::Http::Version>::type>(version) << " defaulting to WINHTTP_PROTOCOL_FLAG_HTTP2");
     return http2;
