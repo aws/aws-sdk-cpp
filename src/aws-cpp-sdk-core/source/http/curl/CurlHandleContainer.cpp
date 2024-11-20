@@ -32,6 +32,7 @@ CurlHandleContainer::~CurlHandleContainer()
         AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Cleaning up " << handle);
         curl_easy_cleanup(handle);
     }
+    m_poolSize = 0;
 }
 
 CURL* CurlHandleContainer::AcquireCurlHandle()
@@ -44,7 +45,20 @@ CURL* CurlHandleContainer::AcquireCurlHandle()
         CheckAndGrowPool();
     }
 
-    CURL* handle = m_handleContainer.TryAcquire();
+    // TODO: 1.12: start to fail instead of infinite loop, possibly introduce another timeout config field
+    CURL* handle = nullptr;
+    bool errorLogged = false;  // avoid log explosion on legacy app behavior
+    while (!handle) {
+      constexpr unsigned long ACQUIRE_TIMEOUT = 1000l;  // some big enough arbitrary value, possibly need a user config or just fail ASAP.
+      handle = m_handleContainer.TryAcquire(ACQUIRE_TIMEOUT);
+      if (!handle && !errorLogged) {
+        AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG,
+                            "Unable to Acquire a curl handle within 1 second. "
+                            "Waiting further, this method will start failing in 1.12.x. "
+                            "Please increase the pool size.");
+        errorLogged = true;
+      }
+    }
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Connection has been released. Continuing.");
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Returning connection handle " << handle);
     return handle;
@@ -80,10 +94,16 @@ void CurlHandleContainer::DestroyCurlHandle(CURL* handle)
         // If the handle is not released back to the pool, it could create a deadlock
         // Create a new handle and release that into the pool
         handle = CreateCurlHandleInPool();
+        if (!handle && m_poolSize) {
+          m_poolSize -= 1;
+        }
     }
     if (handle)
     {
         AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Created replacement handle and released to pool: " << handle);
+    } else {
+      AWS_LOGSTREAM_ERROR(CURL_HANDLE_CONTAINER_TAG,
+                          "Failed to create a replacement handle. The handle pool size reduced to " << m_poolSize);
     }
 }
 

@@ -75,6 +75,34 @@ namespace Aws
             }
 
             /**
+             * Returns a resource with exclusive ownership or a nullptr.
+             * If resource is available within the wait timeout then the resource is returned.
+             * otherwise (if the timeout has expired or container is shutdown) the nullptr is returned.
+             * You must call Release on the resource when you are finished.
+             * This method is enabled only for pointer RESOURCE_TYPE type.
+             *
+             * @return instance of RESOURCE_TYPE, nullptr if the resource manager is being shutdown
+             */
+            template <typename std::enable_if<std::is_pointer<RESOURCE_TYPE>::value>::type* = nullptr>
+            RESOURCE_TYPE TryAcquire(const uint64_t timeoutMs) {
+              std::unique_lock<std::mutex> locker(m_queueLock);
+              bool hasResource = m_shutdown.load() || !m_resources.empty();
+              if (!hasResource) {
+                hasResource = m_semaphore.wait_for(locker, std::chrono::milliseconds(timeoutMs),
+                                                   [&]() { return m_shutdown.load() || !m_resources.empty(); });
+              }
+
+              if (m_shutdown || !hasResource) {
+                return nullptr;
+              }
+
+              RESOURCE_TYPE resource = m_resources.back();
+              m_resources.pop_back();
+
+              return resource;
+            }
+
+            /**
              * Returns whether or not resources are currently available for acquisition
              *
              * @return true means that at this instant some resources are available (though another thread may grab them from under you),
@@ -122,6 +150,7 @@ namespace Aws
             {
                 std::unique_lock<std::mutex> locker(m_queueLock);
                 m_shutdown = true;
+                m_semaphore.notify_all();
 
                 //wait for all acquired resources to be released.
                 while (m_resources.size() < resourceCount)
