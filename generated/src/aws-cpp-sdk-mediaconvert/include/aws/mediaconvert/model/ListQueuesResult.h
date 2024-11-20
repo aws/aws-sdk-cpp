@@ -61,6 +61,27 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * The maximum number of jobs that MediaConvert can process at one time, across all
+     * of your on-demand queues in the current AWS Region.
+     */
+    inline int GetTotalConcurrentJobs() const{ return m_totalConcurrentJobs; }
+    inline void SetTotalConcurrentJobs(int value) { m_totalConcurrentJobs = value; }
+    inline ListQueuesResult& WithTotalConcurrentJobs(int value) { SetTotalConcurrentJobs(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * The remaining number of concurrent jobs that are not associated with a queue and
+     * are available to allocate to a queue. You can allocate these jobs when you
+     * create or update a queue.
+     */
+    inline int GetUnallocatedConcurrentJobs() const{ return m_unallocatedConcurrentJobs; }
+    inline void SetUnallocatedConcurrentJobs(int value) { m_unallocatedConcurrentJobs = value; }
+    inline ListQueuesResult& WithUnallocatedConcurrentJobs(int value) { SetUnallocatedConcurrentJobs(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -75,6 +96,10 @@ namespace Model
     Aws::String m_nextToken;
 
     Aws::Vector<Queue> m_queues;
+
+    int m_totalConcurrentJobs;
+
+    int m_unallocatedConcurrentJobs;
 
     Aws::String m_requestId;
   };

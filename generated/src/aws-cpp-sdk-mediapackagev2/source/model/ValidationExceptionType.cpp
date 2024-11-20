@@ -77,6 +77,8 @@ namespace Aws
         static const int HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED_HASH = HashingUtils::HashString("HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED");
         static const int CLIP_START_TIME_WITH_START_OR_END_HASH = HashingUtils::HashString("CLIP_START_TIME_WITH_START_OR_END");
         static const int START_TAG_TIME_OFFSET_INVALID_HASH = HashingUtils::HashString("START_TAG_TIME_OFFSET_INVALID");
+        static const int ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING");
+        static const int ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION_HASH = HashingUtils::HashString("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION");
 
 
         ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name)
@@ -310,6 +312,14 @@ namespace Aws
           {
             return ValidationExceptionType::START_TAG_TIME_OFFSET_INVALID;
           }
+          else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING_HASH)
+          {
+            return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING;
+          }
+          else if (hashCode == ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION_HASH)
+          {
+            return ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -440,6 +450,10 @@ namespace Aws
             return "CLIP_START_TIME_WITH_START_OR_END";
           case ValidationExceptionType::START_TAG_TIME_OFFSET_INVALID:
             return "START_TAG_TIME_OFFSET_INVALID";
+          case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING:
+            return "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING";
+          case ValidationExceptionType::ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION:
+            return "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

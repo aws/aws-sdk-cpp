@@ -23,8 +23,11 @@ RDSDBRecommendation::RDSDBRecommendation() :
     m_accountIdHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
+    m_promotionTier(0),
+    m_promotionTierHasBeenSet(false),
     m_currentDBInstanceClassHasBeenSet(false),
     m_currentStorageConfigurationHasBeenSet(false),
+    m_dbClusterIdentifierHasBeenSet(false),
     m_idle(Idle::NOT_SET),
     m_idleHasBeenSet(false),
     m_instanceFinding(RDSInstanceFinding::NOT_SET),
@@ -32,6 +35,8 @@ RDSDBRecommendation::RDSDBRecommendation() :
     m_storageFinding(RDSStorageFinding::NOT_SET),
     m_storageFindingHasBeenSet(false),
     m_instanceFindingReasonCodesHasBeenSet(false),
+    m_currentInstancePerformanceRisk(RDSCurrentInstancePerformanceRisk::NOT_SET),
+    m_currentInstancePerformanceRiskHasBeenSet(false),
     m_storageFindingReasonCodesHasBeenSet(false),
     m_instanceRecommendationOptionsHasBeenSet(false),
     m_storageRecommendationOptionsHasBeenSet(false),
@@ -80,6 +85,13 @@ RDSDBRecommendation& RDSDBRecommendation::operator =(JsonView jsonValue)
     m_engineVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("promotionTier"))
+  {
+    m_promotionTier = jsonValue.GetInteger("promotionTier");
+
+    m_promotionTierHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("currentDBInstanceClass"))
   {
     m_currentDBInstanceClass = jsonValue.GetString("currentDBInstanceClass");
@@ -92,6 +104,13 @@ RDSDBRecommendation& RDSDBRecommendation::operator =(JsonView jsonValue)
     m_currentStorageConfiguration = jsonValue.GetObject("currentStorageConfiguration");
 
     m_currentStorageConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dbClusterIdentifier"))
+  {
+    m_dbClusterIdentifier = jsonValue.GetString("dbClusterIdentifier");
+
+    m_dbClusterIdentifierHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("idle"))
@@ -123,6 +142,13 @@ RDSDBRecommendation& RDSDBRecommendation::operator =(JsonView jsonValue)
       m_instanceFindingReasonCodes.push_back(RDSInstanceFindingReasonCodeMapper::GetRDSInstanceFindingReasonCodeForName(instanceFindingReasonCodesJsonList[instanceFindingReasonCodesIndex].AsString()));
     }
     m_instanceFindingReasonCodesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("currentInstancePerformanceRisk"))
+  {
+    m_currentInstancePerformanceRisk = RDSCurrentInstancePerformanceRiskMapper::GetRDSCurrentInstancePerformanceRiskForName(jsonValue.GetString("currentInstancePerformanceRisk"));
+
+    m_currentInstancePerformanceRiskHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("storageFindingReasonCodes"))
@@ -227,6 +253,12 @@ JsonValue RDSDBRecommendation::Jsonize() const
 
   }
 
+  if(m_promotionTierHasBeenSet)
+  {
+   payload.WithInteger("promotionTier", m_promotionTier);
+
+  }
+
   if(m_currentDBInstanceClassHasBeenSet)
   {
    payload.WithString("currentDBInstanceClass", m_currentDBInstanceClass);
@@ -236,6 +268,12 @@ JsonValue RDSDBRecommendation::Jsonize() const
   if(m_currentStorageConfigurationHasBeenSet)
   {
    payload.WithObject("currentStorageConfiguration", m_currentStorageConfiguration.Jsonize());
+
+  }
+
+  if(m_dbClusterIdentifierHasBeenSet)
+  {
+   payload.WithString("dbClusterIdentifier", m_dbClusterIdentifier);
 
   }
 
@@ -263,6 +301,11 @@ JsonValue RDSDBRecommendation::Jsonize() const
    }
    payload.WithArray("instanceFindingReasonCodes", std::move(instanceFindingReasonCodesJsonList));
 
+  }
+
+  if(m_currentInstancePerformanceRiskHasBeenSet)
+  {
+   payload.WithString("currentInstancePerformanceRisk", RDSCurrentInstancePerformanceRiskMapper::GetNameForRDSCurrentInstancePerformanceRisk(m_currentInstancePerformanceRisk));
   }
 
   if(m_storageFindingReasonCodesHasBeenSet)

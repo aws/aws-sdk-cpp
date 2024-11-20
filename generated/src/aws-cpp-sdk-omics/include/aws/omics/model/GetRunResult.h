@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/CacheBehavior.h>
 #include <aws/omics/model/RunStatus.h>
 #include <aws/omics/model/WorkflowType.h>
 #include <aws/core/utils/Document.h>
@@ -66,6 +67,43 @@ namespace Model
     inline GetRunResult& WithId(const Aws::String& value) { SetId(value); return *this;}
     inline GetRunResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
     inline GetRunResult& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The run cache associated with the run.</p>
+     */
+    inline const Aws::String& GetCacheId() const{ return m_cacheId; }
+    inline void SetCacheId(const Aws::String& value) { m_cacheId = value; }
+    inline void SetCacheId(Aws::String&& value) { m_cacheId = std::move(value); }
+    inline void SetCacheId(const char* value) { m_cacheId.assign(value); }
+    inline GetRunResult& WithCacheId(const Aws::String& value) { SetCacheId(value); return *this;}
+    inline GetRunResult& WithCacheId(Aws::String&& value) { SetCacheId(std::move(value)); return *this;}
+    inline GetRunResult& WithCacheId(const char* value) { SetCacheId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The run cache behavior for the run.</p>
+     */
+    inline const CacheBehavior& GetCacheBehavior() const{ return m_cacheBehavior; }
+    inline void SetCacheBehavior(const CacheBehavior& value) { m_cacheBehavior = value; }
+    inline void SetCacheBehavior(CacheBehavior&& value) { m_cacheBehavior = std::move(value); }
+    inline GetRunResult& WithCacheBehavior(const CacheBehavior& value) { SetCacheBehavior(value); return *this;}
+    inline GetRunResult& WithCacheBehavior(CacheBehavior&& value) { SetCacheBehavior(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The workflow engine version.</p>
+     */
+    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline void SetEngineVersion(const Aws::String& value) { m_engineVersion = value; }
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersion = std::move(value); }
+    inline void SetEngineVersion(const char* value) { m_engineVersion.assign(value); }
+    inline GetRunResult& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+    inline GetRunResult& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
+    inline GetRunResult& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -442,6 +480,12 @@ namespace Model
     Aws::String m_arn;
 
     Aws::String m_id;
+
+    Aws::String m_cacheId;
+
+    CacheBehavior m_cacheBehavior;
+
+    Aws::String m_engineVersion;
 
     RunStatus m_status;
 

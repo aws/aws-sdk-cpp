@@ -280,6 +280,39 @@ namespace ComputeOptimizer
         }
 
         /**
+         * <p> Export optimization recommendations for your idle resources. </p>
+         * <p>Recommendations are exported in a comma-separated values (CSV) file, and its
+         * metadata in a JavaScript Object Notation (JSON) file, to an existing Amazon
+         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+         * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
+         * have only one idle resource export job in progress per Amazon Web Services
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportIdleRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportIdleRecommendationsOutcome ExportIdleRecommendations(const Model::ExportIdleRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportIdleRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExportIdleRecommendationsRequestT = Model::ExportIdleRecommendationsRequest>
+        Model::ExportIdleRecommendationsOutcomeCallable ExportIdleRecommendationsCallable(const ExportIdleRecommendationsRequestT& request) const
+        {
+            return SubmitCallable(&ComputeOptimizerClient::ExportIdleRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for ExportIdleRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExportIdleRecommendationsRequestT = Model::ExportIdleRecommendationsRequest>
+        void ExportIdleRecommendationsAsync(const ExportIdleRecommendationsRequestT& request, const ExportIdleRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ComputeOptimizerClient::ExportIdleRecommendations, request, handler, context);
+        }
+
+        /**
          * <p>Exports optimization recommendations for Lambda functions.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
          * metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing
@@ -645,6 +678,36 @@ namespace ComputeOptimizer
         void GetEnrollmentStatusesForOrganizationAsync(const GetEnrollmentStatusesForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetEnrollmentStatusesForOrganizationRequestT& request = {}) const
         {
             return SubmitAsync(&ComputeOptimizerClient::GetEnrollmentStatusesForOrganization, request, handler, context);
+        }
+
+        /**
+         * <p>Returns idle resource recommendations. Compute Optimizer generates
+         * recommendations for idle resources that meet a specific set of requirements. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Resource
+         * requirements</a> in the <i>Compute Optimizer User Guide</i> </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetIdleRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIdleRecommendationsOutcome GetIdleRecommendations(const Model::GetIdleRecommendationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetIdleRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetIdleRecommendationsRequestT = Model::GetIdleRecommendationsRequest>
+        Model::GetIdleRecommendationsOutcomeCallable GetIdleRecommendationsCallable(const GetIdleRecommendationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&ComputeOptimizerClient::GetIdleRecommendations, request);
+        }
+
+        /**
+         * An Async wrapper for GetIdleRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetIdleRecommendationsRequestT = Model::GetIdleRecommendationsRequest>
+        void GetIdleRecommendationsAsync(const GetIdleRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetIdleRecommendationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&ComputeOptimizerClient::GetIdleRecommendations, request, handler, context);
         }
 
         /**

@@ -51,7 +51,8 @@ InstanceRequirements::InstanceRequirements() :
     m_acceleratorNamesHasBeenSet(false),
     m_acceleratorTotalMemoryMiBHasBeenSet(false),
     m_networkBandwidthGbpsHasBeenSet(false),
-    m_allowedInstanceTypesHasBeenSet(false)
+    m_allowedInstanceTypesHasBeenSet(false),
+    m_baselinePerformanceFactorsHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,12 @@ InstanceRequirements& InstanceRequirements::operator =(const XmlNode& xmlNode)
 
       m_allowedInstanceTypesHasBeenSet = true;
     }
+    XmlNode baselinePerformanceFactorsNode = resultNode.FirstChild("BaselinePerformanceFactors");
+    if(!baselinePerformanceFactorsNode.IsNull())
+    {
+      m_baselinePerformanceFactors = baselinePerformanceFactorsNode;
+      m_baselinePerformanceFactorsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -436,6 +443,13 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       }
   }
 
+  if(m_baselinePerformanceFactorsHasBeenSet)
+  {
+      Aws::StringStream baselinePerformanceFactorsLocationAndMemberSs;
+      baselinePerformanceFactorsLocationAndMemberSs << location << index << locationValue << ".BaselinePerformanceFactors";
+      m_baselinePerformanceFactors.OutputToStream(oStream, baselinePerformanceFactorsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -585,6 +599,12 @@ void InstanceRequirements::OutputToStream(Aws::OStream& oStream, const char* loc
       {
         oStream << location << ".AllowedInstanceTypes.member." << allowedInstanceTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_baselinePerformanceFactorsHasBeenSet)
+  {
+      Aws::String baselinePerformanceFactorsLocationAndMember(location);
+      baselinePerformanceFactorsLocationAndMember += ".BaselinePerformanceFactors";
+      m_baselinePerformanceFactors.OutputToStream(oStream, baselinePerformanceFactorsLocationAndMember.c_str());
   }
 }
 

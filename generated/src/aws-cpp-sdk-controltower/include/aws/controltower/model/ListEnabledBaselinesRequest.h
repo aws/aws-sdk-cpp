@@ -49,6 +49,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>A value that can be set to include the child enabled baselines in responses.
+     * The default value is false.</p>
+     */
+    inline bool GetIncludeChildren() const{ return m_includeChildren; }
+    inline bool IncludeChildrenHasBeenSet() const { return m_includeChildrenHasBeenSet; }
+    inline void SetIncludeChildren(bool value) { m_includeChildrenHasBeenSet = true; m_includeChildren = value; }
+    inline ListEnabledBaselinesRequest& WithIncludeChildren(bool value) { SetIncludeChildren(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of results to be shown.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -74,6 +85,9 @@ namespace Model
 
     EnabledBaselineFilter m_filter;
     bool m_filterHasBeenSet = false;
+
+    bool m_includeChildren;
+    bool m_includeChildrenHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;

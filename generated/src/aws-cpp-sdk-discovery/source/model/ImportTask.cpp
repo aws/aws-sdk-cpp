@@ -28,6 +28,8 @@ ImportTask::ImportTask() :
     m_importRequestTimeHasBeenSet(false),
     m_importCompletionTimeHasBeenSet(false),
     m_importDeletedTimeHasBeenSet(false),
+    m_fileClassification(FileClassification::NOT_SET),
+    m_fileClassificationHasBeenSet(false),
     m_serverImportSuccess(0),
     m_serverImportSuccessHasBeenSet(false),
     m_serverImportFailure(0),
@@ -102,6 +104,13 @@ ImportTask& ImportTask::operator =(JsonView jsonValue)
     m_importDeletedTime = jsonValue.GetDouble("importDeletedTime");
 
     m_importDeletedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fileClassification"))
+  {
+    m_fileClassification = FileClassificationMapper::GetFileClassificationForName(jsonValue.GetString("fileClassification"));
+
+    m_fileClassificationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("serverImportSuccess"))
@@ -188,6 +197,11 @@ JsonValue ImportTask::Jsonize() const
   if(m_importDeletedTimeHasBeenSet)
   {
    payload.WithDouble("importDeletedTime", m_importDeletedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_fileClassificationHasBeenSet)
+  {
+   payload.WithString("fileClassification", FileClassificationMapper::GetNameForFileClassification(m_fileClassification));
   }
 
   if(m_serverImportSuccessHasBeenSet)

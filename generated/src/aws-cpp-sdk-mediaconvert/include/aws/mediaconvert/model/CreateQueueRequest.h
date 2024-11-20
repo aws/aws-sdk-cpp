@@ -38,6 +38,20 @@ namespace Model
 
     ///@{
     /**
+     * Specify the maximum number of jobs your queue can process concurrently. For
+     * on-demand queues, the value you enter is constrained by your service quotas for
+     * Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per
+     * account. For reserved queues, specify the number of jobs you can process
+     * concurrently in your reservation plan instead.
+     */
+    inline int GetConcurrentJobs() const{ return m_concurrentJobs; }
+    inline bool ConcurrentJobsHasBeenSet() const { return m_concurrentJobsHasBeenSet; }
+    inline void SetConcurrentJobs(int value) { m_concurrentJobsHasBeenSet = true; m_concurrentJobs = value; }
+    inline CreateQueueRequest& WithConcurrentJobs(int value) { SetConcurrentJobs(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Optional. A description of the queue that you are creating.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -126,6 +140,9 @@ namespace Model
     inline CreateQueueRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
   private:
+
+    int m_concurrentJobs;
+    bool m_concurrentJobsHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

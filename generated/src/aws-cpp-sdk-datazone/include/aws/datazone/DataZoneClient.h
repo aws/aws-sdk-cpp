@@ -742,6 +742,38 @@ namespace DataZone
         }
 
         /**
+         * <p>Creates a rule in Amazon DataZone. A rule is a formal agreement that enforces
+         * specific requirements across user workflows (e.g., publishing assets to the
+         * catalog, requesting subscriptions, creating projects) within the Amazon DataZone
+         * data portal. These rules help maintain consistency, ensure compliance, and
+         * uphold governance standards in data management processes. For instance, a
+         * metadata enforcement rule can specify the required information for creating a
+         * subscription request or publishing a data asset to the catalog, ensuring
+         * alignment with organizational standards.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRuleOutcome CreateRule(const Model::CreateRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRuleRequestT = Model::CreateRuleRequest>
+        Model::CreateRuleOutcomeCallable CreateRuleCallable(const CreateRuleRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::CreateRule, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRuleRequestT = Model::CreateRuleRequest>
+        void CreateRuleAsync(const CreateRuleRequestT& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::CreateRule, request, handler, context);
+        }
+
+        /**
          * <p>Creates a subsscription grant in Amazon DataZone.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateSubscriptionGrant">AWS
@@ -1274,6 +1306,38 @@ namespace DataZone
         void DeleteProjectMembershipAsync(const DeleteProjectMembershipRequestT& request, const DeleteProjectMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::DeleteProjectMembership, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a rule in Amazon DataZone. A rule is a formal agreement that enforces
+         * specific requirements across user workflows (e.g., publishing assets to the
+         * catalog, requesting subscriptions, creating projects) within the Amazon DataZone
+         * data portal. These rules help maintain consistency, ensure compliance, and
+         * uphold governance standards in data management processes. For instance, a
+         * metadata enforcement rule can specify the required information for creating a
+         * subscription request or publishing a data asset to the catalog, ensuring
+         * alignment with organizational standards.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRuleRequestT = Model::DeleteRuleRequest>
+        Model::DeleteRuleOutcomeCallable DeleteRuleCallable(const DeleteRuleRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::DeleteRule, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRuleRequestT = Model::DeleteRuleRequest>
+        void DeleteRuleAsync(const DeleteRuleRequestT& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::DeleteRule, request, handler, context);
         }
 
         /**
@@ -1989,6 +2053,38 @@ namespace DataZone
         }
 
         /**
+         * <p>Gets the details of a rule in Amazon DataZone. A rule is a formal agreement
+         * that enforces specific requirements across user workflows (e.g., publishing
+         * assets to the catalog, requesting subscriptions, creating projects) within the
+         * Amazon DataZone data portal. These rules help maintain consistency, ensure
+         * compliance, and uphold governance standards in data management processes. For
+         * instance, a metadata enforcement rule can specify the required information for
+         * creating a subscription request or publishing a data asset to the catalog,
+         * ensuring alignment with organizational standards.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRuleOutcome GetRule(const Model::GetRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRuleRequestT = Model::GetRuleRequest>
+        Model::GetRuleOutcomeCallable GetRuleCallable(const GetRuleRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::GetRule, request);
+        }
+
+        /**
+         * An Async wrapper for GetRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRuleRequestT = Model::GetRuleRequest>
+        void GetRuleAsync(const GetRuleRequestT& request, const GetRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::GetRule, request, handler, context);
+        }
+
+        /**
          * <p>Gets a subscription in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetSubscription">AWS
          * API Reference</a></p>
@@ -2642,6 +2738,38 @@ namespace DataZone
         void ListProjectsAsync(const ListProjectsRequestT& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::ListProjects, request, handler, context);
+        }
+
+        /**
+         * <p>Lists existing rules. In Amazon DataZone, a rule is a formal agreement that
+         * enforces specific requirements across user workflows (e.g., publishing assets to
+         * the catalog, requesting subscriptions, creating projects) within the Amazon
+         * DataZone data portal. These rules help maintain consistency, ensure compliance,
+         * and uphold governance standards in data management processes. For instance, a
+         * metadata enforcement rule can specify the required information for creating a
+         * subscription request or publishing a data asset to the catalog, ensuring
+         * alignment with organizational standards.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRulesRequestT = Model::ListRulesRequest>
+        Model::ListRulesOutcomeCallable ListRulesCallable(const ListRulesRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListRules, request);
+        }
+
+        /**
+         * An Async wrapper for ListRules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRulesRequestT = Model::ListRulesRequest>
+        void ListRulesAsync(const ListRulesRequestT& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListRules, request, handler, context);
         }
 
         /**
@@ -3506,6 +3634,38 @@ namespace DataZone
         void UpdateProjectAsync(const UpdateProjectRequestT& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::UpdateProject, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a rule. In Amazon DataZone, a rule is a formal agreement that
+         * enforces specific requirements across user workflows (e.g., publishing assets to
+         * the catalog, requesting subscriptions, creating projects) within the Amazon
+         * DataZone data portal. These rules help maintain consistency, ensure compliance,
+         * and uphold governance standards in data management processes. For instance, a
+         * metadata enforcement rule can specify the required information for creating a
+         * subscription request or publishing a data asset to the catalog, ensuring
+         * alignment with organizational standards.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRuleOutcome UpdateRule(const Model::UpdateRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateRuleRequestT = Model::UpdateRuleRequest>
+        Model::UpdateRuleOutcomeCallable UpdateRuleCallable(const UpdateRuleRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::UpdateRule, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateRuleRequestT = Model::UpdateRuleRequest>
+        void UpdateRuleAsync(const UpdateRuleRequestT& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::UpdateRule, request, handler, context);
         }
 
         /**

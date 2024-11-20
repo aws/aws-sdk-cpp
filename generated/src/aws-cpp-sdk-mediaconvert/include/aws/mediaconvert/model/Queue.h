@@ -9,8 +9,10 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediaconvert/model/PricingPlan.h>
 #include <aws/mediaconvert/model/ReservationPlan.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/QueueStatus.h>
 #include <aws/mediaconvert/model/Type.h>
+#include <aws/mediaconvert/model/ServiceOverride.h>
 #include <utility>
 
 namespace Aws
@@ -59,6 +61,16 @@ namespace Model
     inline Queue& WithArn(const Aws::String& value) { SetArn(value); return *this;}
     inline Queue& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
     inline Queue& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * The maximum number of jobs your queue can process concurrently.
+     */
+    inline int GetConcurrentJobs() const{ return m_concurrentJobs; }
+    inline bool ConcurrentJobsHasBeenSet() const { return m_concurrentJobsHasBeenSet; }
+    inline void SetConcurrentJobs(int value) { m_concurrentJobsHasBeenSet = true; m_concurrentJobs = value; }
+    inline Queue& WithConcurrentJobs(int value) { SetConcurrentJobs(value); return *this;}
     ///@}
 
     ///@{
@@ -154,6 +166,22 @@ namespace Model
 
     ///@{
     /**
+     * A list of any service overrides applied by MediaConvert to the settings that you
+     * have configured. If you see any overrides, we recommend that you contact AWS
+     * Support.
+     */
+    inline const Aws::Vector<ServiceOverride>& GetServiceOverrides() const{ return m_serviceOverrides; }
+    inline bool ServiceOverridesHasBeenSet() const { return m_serviceOverridesHasBeenSet; }
+    inline void SetServiceOverrides(const Aws::Vector<ServiceOverride>& value) { m_serviceOverridesHasBeenSet = true; m_serviceOverrides = value; }
+    inline void SetServiceOverrides(Aws::Vector<ServiceOverride>&& value) { m_serviceOverridesHasBeenSet = true; m_serviceOverrides = std::move(value); }
+    inline Queue& WithServiceOverrides(const Aws::Vector<ServiceOverride>& value) { SetServiceOverrides(value); return *this;}
+    inline Queue& WithServiceOverrides(Aws::Vector<ServiceOverride>&& value) { SetServiceOverrides(std::move(value)); return *this;}
+    inline Queue& AddServiceOverrides(const ServiceOverride& value) { m_serviceOverridesHasBeenSet = true; m_serviceOverrides.push_back(value); return *this; }
+    inline Queue& AddServiceOverrides(ServiceOverride&& value) { m_serviceOverridesHasBeenSet = true; m_serviceOverrides.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin
      * processing jobs in that queue. Jobs that are running when you pause the queue
      * continue to run until they finish or result in an error.
@@ -194,6 +222,9 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
+    int m_concurrentJobs;
+    bool m_concurrentJobsHasBeenSet = false;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
 
@@ -214,6 +245,9 @@ namespace Model
 
     ReservationPlan m_reservationPlan;
     bool m_reservationPlanHasBeenSet = false;
+
+    Aws::Vector<ServiceOverride> m_serviceOverrides;
+    bool m_serviceOverridesHasBeenSet = false;
 
     QueueStatus m_status;
     bool m_statusHasBeenSet = false;

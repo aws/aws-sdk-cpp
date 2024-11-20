@@ -55,13 +55,13 @@ namespace Model
     ///@{
     /**
      * <p>The ingestion process to be used when importing the image, depending on which
-     * protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces
-     * Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify
-     * a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does
-     * not end in <code>_WSP</code>. To use BYOP, specify a value that ends in
+     * protocol you want to use for your BYOL Workspace image, either PCoIP, DCV, or
+     * bring your own protocol (BYOP). To use WSP, specify a value that ends in
+     * <code>_DCV</code>. To use PCoIP, specify a value that does not end in
+     * <code>_DCV</code>. To use BYOP, specify a value that ends in
      * <code>_BYOP</code>.</p> <p>For non-GPU-enabled bundles (bundles other than
      * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
-     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
+     * <code>BYOL_REGULAR_DCV</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
      * the protocol.</p>  <p>The <code>BYOL_REGULAR_BYOP</code> and
      * <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
      * WorkSpaces Core. Contact your account team to be allow-listed to use these
@@ -127,9 +127,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
      * Bring Your Own Windows Desktop Licenses</a>.</p>  <ul> <li> <p>Although
      * this parameter is an array, only one item is allowed at this time.</p> </li>
-     * <li> <p>During the image import process, non-GPU WSP WorkSpaces with Windows 11
-     * support only <code>Microsoft_Office_2019</code>. GPU WSP WorkSpaces with Windows
-     * 11 do not support Office installation.</p> </li> </ul> 
+     * <li> <p>During the image import process, non-GPU DCV (formerly WSP) WorkSpaces
+     * with Windows 11 support only <code>Microsoft_Office_2019</code>. GPU DCV
+     * (formerly WSP) WorkSpaces with Windows 11 do not support Office
+     * installation.</p> </li> </ul> 
      */
     inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
     inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }

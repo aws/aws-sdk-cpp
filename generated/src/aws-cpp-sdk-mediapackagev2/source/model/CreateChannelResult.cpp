@@ -97,6 +97,18 @@ CreateChannelResult& CreateChannelResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("InputSwitchConfiguration"))
+  {
+    m_inputSwitchConfiguration = jsonValue.GetObject("InputSwitchConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("OutputHeaderConfiguration"))
+  {
+    m_outputHeaderConfiguration = jsonValue.GetObject("OutputHeaderConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

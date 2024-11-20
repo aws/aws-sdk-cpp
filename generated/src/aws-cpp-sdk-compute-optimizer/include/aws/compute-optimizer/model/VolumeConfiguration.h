@@ -40,10 +40,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The volume type.</p> <p>This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code>
-     * for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
-     * <code>standard</code> for Magnetic volumes.</p>
+     * <p>The volume type.</p> <p>The volume types can be the following:</p> <ul> <li>
+     * <p>General Purpose SSD <code>gp2</code> and <code>gp3</code> </p> </li> <li>
+     * <p>Provisioned IOPS SSD <code>io1</code>, <code>io2</code>, and <code>io2 Block
+     * Express</code> </p> </li> <li> <p>Throughput Optimized HDD <code>st1</code> </p>
+     * </li> <li> <p>Cold HDD <code>sc1</code> </p> </li> <li> <p>Magnetic volumes
+     * <code>standard</code> </p> </li> </ul>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }

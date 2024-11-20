@@ -16,6 +16,8 @@ CreateServiceRequest::CreateServiceRequest() :
     m_clusterHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
+    m_availabilityZoneRebalancing(AvailabilityZoneRebalancing::NOT_SET),
+    m_availabilityZoneRebalancingHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
     m_serviceRegistriesHasBeenSet(false),
     m_desiredCount(0),
@@ -68,6 +70,11 @@ Aws::String CreateServiceRequest::SerializePayload() const
   {
    payload.WithString("taskDefinition", m_taskDefinition);
 
+  }
+
+  if(m_availabilityZoneRebalancingHasBeenSet)
+  {
+   payload.WithString("availabilityZoneRebalancing", AvailabilityZoneRebalancingMapper::GetNameForAvailabilityZoneRebalancing(m_availabilityZoneRebalancing));
   }
 
   if(m_loadBalancersHasBeenSet)

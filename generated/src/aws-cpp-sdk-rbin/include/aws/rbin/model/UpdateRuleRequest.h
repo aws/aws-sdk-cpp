@@ -92,17 +92,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the resource tags to use to identify resources that are to be
-     * retained by a tag-level retention rule. For tag-level retention rules, only
-     * deleted resources, of the specified resource type, that have one or more of the
-     * specified tag key and value pairs are retained. If a resource is deleted, but it
-     * does not have any of the specified tag key and value pairs, it is immediately
-     * deleted without being retained by the retention rule.</p> <p>You can add the
-     * same tag key and value pair to a maximum or five retention rules.</p> <p>To
-     * create a Region-level retention rule, omit this parameter. A Region-level
-     * retention rule does not have any resource tags specified. It retains all deleted
-     * resources of the specified resource type in the Region in which the rule is
-     * created, even if the resources are not tagged.</p>
+     * <p>[Tag-level retention rules only] Specifies the resource tags to use to
+     * identify resources that are to be retained by a tag-level retention rule. For
+     * tag-level retention rules, only deleted resources, of the specified resource
+     * type, that have one or more of the specified tag key and value pairs are
+     * retained. If a resource is deleted, but it does not have any of the specified
+     * tag key and value pairs, it is immediately deleted without being retained by the
+     * retention rule.</p> <p>You can add the same tag key and value pair to a maximum
+     * or five retention rules.</p> <p>To create a Region-level retention rule, omit
+     * this parameter. A Region-level retention rule does not have any resource tags
+     * specified. It retains all deleted resources of the specified resource type in
+     * the Region in which the rule is created, even if the resources are not
+     * tagged.</p>
      */
     inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
@@ -112,6 +113,24 @@ namespace Model
     inline UpdateRuleRequest& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
     inline UpdateRuleRequest& AddResourceTags(const ResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
     inline UpdateRuleRequest& AddResourceTags(ResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>[Region-level retention rules only] Specifies the exclusion tags to use to
+     * identify resources that are to be excluded, or ignored, by a Region-level
+     * retention rule. Resources that have any of these tags are not retained by the
+     * retention rule upon deletion.</p> <p>You can't specify exclusion tags for
+     * tag-level retention rules.</p>
+     */
+    inline const Aws::Vector<ResourceTag>& GetExcludeResourceTags() const{ return m_excludeResourceTags; }
+    inline bool ExcludeResourceTagsHasBeenSet() const { return m_excludeResourceTagsHasBeenSet; }
+    inline void SetExcludeResourceTags(const Aws::Vector<ResourceTag>& value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags = value; }
+    inline void SetExcludeResourceTags(Aws::Vector<ResourceTag>&& value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags = std::move(value); }
+    inline UpdateRuleRequest& WithExcludeResourceTags(const Aws::Vector<ResourceTag>& value) { SetExcludeResourceTags(value); return *this;}
+    inline UpdateRuleRequest& WithExcludeResourceTags(Aws::Vector<ResourceTag>&& value) { SetExcludeResourceTags(std::move(value)); return *this;}
+    inline UpdateRuleRequest& AddExcludeResourceTags(const ResourceTag& value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags.push_back(value); return *this; }
+    inline UpdateRuleRequest& AddExcludeResourceTags(ResourceTag&& value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags.push_back(std::move(value)); return *this; }
     ///@}
   private:
 
@@ -129,6 +148,9 @@ namespace Model
 
     Aws::Vector<ResourceTag> m_resourceTags;
     bool m_resourceTagsHasBeenSet = false;
+
+    Aws::Vector<ResourceTag> m_excludeResourceTags;
+    bool m_excludeResourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

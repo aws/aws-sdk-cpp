@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/timestream-query/model/QueryPricingModel.h>
+#include <aws/timestream-query/model/QueryComputeResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -55,6 +56,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Confirms the updated account settings for querying data in your account.</p>
+     */
+    inline const QueryComputeResponse& GetQueryCompute() const{ return m_queryCompute; }
+    inline void SetQueryCompute(const QueryComputeResponse& value) { m_queryCompute = value; }
+    inline void SetQueryCompute(QueryComputeResponse&& value) { m_queryCompute = std::move(value); }
+    inline UpdateAccountSettingsResult& WithQueryCompute(const QueryComputeResponse& value) { SetQueryCompute(value); return *this;}
+    inline UpdateAccountSettingsResult& WithQueryCompute(QueryComputeResponse&& value) { SetQueryCompute(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -69,6 +81,8 @@ namespace Model
     int m_maxQueryTCU;
 
     QueryPricingModel m_queryPricingModel;
+
+    QueryComputeResponse m_queryCompute;
 
     Aws::String m_requestId;
   };

@@ -25,7 +25,15 @@ namespace Model
     EBSVolumeWriteIOPS,
     EBSVolumeReadThroughput,
     EBSVolumeWriteThroughput,
-    DatabaseConnections
+    DatabaseConnections,
+    StorageNetworkReceiveThroughput,
+    StorageNetworkTransmitThroughput,
+    AuroraMemoryHealthState,
+    AuroraMemoryNumDeclinedSql,
+    AuroraMemoryNumKillConnTotal,
+    AuroraMemoryNumKillQueryTotal,
+    ReadIOPSEphemeralStorage,
+    WriteIOPSEphemeralStorage
   };
 
 namespace RDSDBMetricNameMapper

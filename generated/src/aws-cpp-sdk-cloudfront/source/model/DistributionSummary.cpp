@@ -46,7 +46,8 @@ DistributionSummary::DistributionSummary() :
     m_isIPV6EnabledHasBeenSet(false),
     m_aliasICPRecordalsHasBeenSet(false),
     m_staging(false),
-    m_stagingHasBeenSet(false)
+    m_stagingHasBeenSet(false),
+    m_anycastIpListIdHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,12 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
       m_staging = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stagingNode.GetText()).c_str()).c_str());
       m_stagingHasBeenSet = true;
     }
+    XmlNode anycastIpListIdNode = resultNode.FirstChild("AnycastIpListId");
+    if(!anycastIpListIdNode.IsNull())
+    {
+      m_anycastIpListId = Aws::Utils::Xml::DecodeEscapedXmlText(anycastIpListIdNode.GetText());
+      m_anycastIpListIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -336,6 +343,12 @@ void DistributionSummary::AddToNode(XmlNode& parentNode) const
    ss << std::boolalpha << m_staging;
    stagingNode.SetText(ss.str());
    ss.str("");
+  }
+
+  if(m_anycastIpListIdHasBeenSet)
+  {
+   XmlNode anycastIpListIdNode = parentNode.CreateChildElement("AnycastIpListId");
+   anycastIpListIdNode.SetText(m_anycastIpListId);
   }
 
 }

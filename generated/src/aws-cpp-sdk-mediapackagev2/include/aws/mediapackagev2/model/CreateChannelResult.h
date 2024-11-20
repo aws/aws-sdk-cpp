@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackagev2/model/InputType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mediapackagev2/model/InputSwitchConfiguration.h>
+#include <aws/mediapackagev2/model/OutputHeaderConfiguration.h>
 #include <aws/mediapackagev2/model/IngestEndpoint.h>
 #include <utility>
 
@@ -176,6 +178,32 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The configuration for input switching based on the media quality confidence
+     * score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid
+     * only when <code>InputType</code> is <code>CMAF</code>.</p>
+     */
+    inline const InputSwitchConfiguration& GetInputSwitchConfiguration() const{ return m_inputSwitchConfiguration; }
+    inline void SetInputSwitchConfiguration(const InputSwitchConfiguration& value) { m_inputSwitchConfiguration = value; }
+    inline void SetInputSwitchConfiguration(InputSwitchConfiguration&& value) { m_inputSwitchConfiguration = std::move(value); }
+    inline CreateChannelResult& WithInputSwitchConfiguration(const InputSwitchConfiguration& value) { SetInputSwitchConfiguration(value); return *this;}
+    inline CreateChannelResult& WithInputSwitchConfiguration(InputSwitchConfiguration&& value) { SetInputSwitchConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The settings for what common media server data (CMSD) headers AWS Elemental
+     * MediaPackage includes in responses to the CDN. This setting is valid only when
+     * <code>InputType</code> is <code>CMAF</code>.</p>
+     */
+    inline const OutputHeaderConfiguration& GetOutputHeaderConfiguration() const{ return m_outputHeaderConfiguration; }
+    inline void SetOutputHeaderConfiguration(const OutputHeaderConfiguration& value) { m_outputHeaderConfiguration = value; }
+    inline void SetOutputHeaderConfiguration(OutputHeaderConfiguration&& value) { m_outputHeaderConfiguration = std::move(value); }
+    inline CreateChannelResult& WithOutputHeaderConfiguration(const OutputHeaderConfiguration& value) { SetOutputHeaderConfiguration(value); return *this;}
+    inline CreateChannelResult& WithOutputHeaderConfiguration(OutputHeaderConfiguration&& value) { SetOutputHeaderConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -206,6 +234,10 @@ namespace Model
     Aws::String m_eTag;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    InputSwitchConfiguration m_inputSwitchConfiguration;
+
+    OutputHeaderConfiguration m_outputHeaderConfiguration;
 
     Aws::String m_requestId;
   };

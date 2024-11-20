@@ -597,6 +597,32 @@ namespace ElasticLoadBalancingv2
         }
 
         /**
+         * <p>Describes the capacity reservation status for the specified load
+         * balancer.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeCapacityReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCapacityReservationOutcome DescribeCapacityReservation(const Model::DescribeCapacityReservationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCapacityReservationRequestT = Model::DescribeCapacityReservationRequest>
+        Model::DescribeCapacityReservationOutcomeCallable DescribeCapacityReservationCallable(const DescribeCapacityReservationRequestT& request) const
+        {
+            return SubmitCallable(&ElasticLoadBalancingv2Client::DescribeCapacityReservation, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCapacityReservationRequestT = Model::DescribeCapacityReservationRequest>
+        void DescribeCapacityReservationAsync(const DescribeCapacityReservationRequestT& request, const DescribeCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElasticLoadBalancingv2Client::DescribeCapacityReservation, request, handler, context);
+        }
+
+        /**
          * <p>Describes the attributes for the specified listener.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">AWS
@@ -1076,6 +1102,34 @@ namespace ElasticLoadBalancingv2
         void GetTrustStoreRevocationContentAsync(const GetTrustStoreRevocationContentRequestT& request, const GetTrustStoreRevocationContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ElasticLoadBalancingv2Client::GetTrustStoreRevocationContent, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies the capacity reservation of the specified load balancer.</p> <p>When
+         * modifying capacity reservation, you must include at least one
+         * <code>MinimumLoadBalancerCapacity</code> or
+         * <code>ResetCapacityReservation</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyCapacityReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyCapacityReservationOutcome ModifyCapacityReservation(const Model::ModifyCapacityReservationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyCapacityReservationRequestT = Model::ModifyCapacityReservationRequest>
+        Model::ModifyCapacityReservationOutcomeCallable ModifyCapacityReservationCallable(const ModifyCapacityReservationRequestT& request) const
+        {
+            return SubmitCallable(&ElasticLoadBalancingv2Client::ModifyCapacityReservation, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyCapacityReservationRequestT = Model::ModifyCapacityReservationRequest>
+        void ModifyCapacityReservationAsync(const ModifyCapacityReservationRequestT& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElasticLoadBalancingv2Client::ModifyCapacityReservation, request, handler, context);
         }
 
         /**

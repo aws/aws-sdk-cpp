@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The run's ARN.</p>
+     * <p>Unique resource identifier for the run.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }

@@ -355,6 +355,37 @@ namespace Omics
         }
 
         /**
+         * <p>You can create a run cache to save the task outputs from completed tasks in a
+         * run for a private workflow. Subsequent runs use the task outputs from the cache,
+         * rather than computing the task outputs again. You specify an Amazon S3 location
+         * where HealthOmics saves the cached data. This data must be immediately
+         * accessible (not in an archived state).</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-create.html">Creating
+         * a run cache</a> in the AWS HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRunCacheOutcome CreateRunCache(const Model::CreateRunCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRunCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRunCacheRequestT = Model::CreateRunCacheRequest>
+        Model::CreateRunCacheOutcomeCallable CreateRunCacheCallable(const CreateRunCacheRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::CreateRunCache, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRunCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRunCacheRequestT = Model::CreateRunCacheRequest>
+        void CreateRunCacheAsync(const CreateRunCacheRequestT& request, const CreateRunCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::CreateRunCache, request, handler, context);
+        }
+
+        /**
          * <p>You can optionally create a run group to limit the compute resources for the
          * runs that you add to the group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunGroup">AWS
@@ -609,6 +640,37 @@ namespace Omics
         void DeleteRunAsync(const DeleteRunRequestT& request, const DeleteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::DeleteRun, request, handler, context);
+        }
+
+        /**
+         * <p>Delete a run cache. This action removes the cache metadata stored in the
+         * service account, but doesn't delete the data in Amazon S3. You can access the
+         * cache data in Amazon S3, for inspection or to troubleshoot issues. You can
+         * remove old cache data using standard S3 <code>Delete</code> operations. </p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-delete.html">Deleting
+         * a run cache</a> in the AWS HealthOmics User Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRunCacheOutcome DeleteRunCache(const Model::DeleteRunCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRunCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRunCacheRequestT = Model::DeleteRunCacheRequest>
+        Model::DeleteRunCacheOutcomeCallable DeleteRunCacheCallable(const DeleteRunCacheRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::DeleteRunCache, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRunCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRunCacheRequestT = Model::DeleteRunCacheRequest>
+        void DeleteRunCacheAsync(const DeleteRunCacheRequestT& request, const DeleteRunCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::DeleteRunCache, request, handler, context);
         }
 
         /**
@@ -1044,7 +1106,12 @@ namespace Omics
 
         /**
          * <p>Gets information about a workflow run.</p> <p>If a workflow is shared with
-         * you, you cannot export information about the run.</p><p><h3>See Also:</h3>   <a
+         * you, you cannot export information about the run.</p> <p>HealthOmics stores a
+         * fixed number of runs that are available to the console and API. If GetRun
+         * doesn't return the requested run, you can find run logs for all runs in the
+         * CloudWatch logs. For more information about viewing the run logs, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
+         * logs</a> in the <i>AWS HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRun">AWS API
          * Reference</a></p>
          */
@@ -1066,6 +1133,35 @@ namespace Omics
         void GetRunAsync(const GetRunRequestT& request, const GetRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::GetRun, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieve the details for the specified run cache.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/workflow-call-caching.html">Call
+         * caching for HealthOmics runs</a> in the AWS HealthOmics User
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRunCacheOutcome GetRunCache(const Model::GetRunCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRunCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRunCacheRequestT = Model::GetRunCacheRequest>
+        Model::GetRunCacheOutcomeCallable GetRunCacheCallable(const GetRunCacheRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::GetRunCache, request);
+        }
+
+        /**
+         * An Async wrapper for GetRunCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRunCacheRequestT = Model::GetRunCacheRequest>
+        void GetRunCacheAsync(const GetRunCacheRequestT& request, const GetRunCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::GetRunCache, request, handler, context);
         }
 
         /**
@@ -1549,6 +1645,31 @@ namespace Omics
         }
 
         /**
+         * <p>Retrieves a list of your run caches.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunCaches">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRunCachesOutcome ListRunCaches(const Model::ListRunCachesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListRunCaches that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRunCachesRequestT = Model::ListRunCachesRequest>
+        Model::ListRunCachesOutcomeCallable ListRunCachesCallable(const ListRunCachesRequestT& request = {}) const
+        {
+            return SubmitCallable(&OmicsClient::ListRunCaches, request);
+        }
+
+        /**
+         * An Async wrapper for ListRunCaches that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRunCachesRequestT = Model::ListRunCachesRequest>
+        void ListRunCachesAsync(const ListRunCachesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListRunCachesRequestT& request = {}) const
+        {
+            return SubmitAsync(&OmicsClient::ListRunCaches, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a list of run groups.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunGroups">AWS
          * API Reference</a></p>
@@ -1599,7 +1720,12 @@ namespace Omics
         }
 
         /**
-         * <p>Retrieves a list of runs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of runs.</p> <p>HealthOmics stores a fixed number of runs
+         * that are available to the console and API. If the ListRuns response doesn't
+         * include specific runs that you expected, you can find run logs for all runs in
+         * the CloudWatch logs. For more information about viewing the run logs, see <a
+         * href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
+         * logs</a> in the <i>AWS HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRuns">AWS API
          * Reference</a></p>
          */
@@ -1903,15 +2029,16 @@ namespace Omics
         /**
          * <p>Starts a workflow run. To duplicate a run, specify the run's ID and a role
          * ARN. The remaining parameters are copied from the previous run.</p> <p>StartRun
-         * will not support re-run for a workflow that is shared with you.</p> <p>The total
-         * number of runs in your account is subject to a quota per Region. To avoid
-         * needing to delete runs manually, you can set the retention mode to
-         * <code>REMOVE</code>. Runs with this setting are deleted automatically when the
-         * run quoata is exceeded.</p> <p>By default, the run uses STATIC storage. For
-         * STATIC storage, set the <code>storageCapacity</code> field. You can set the
-         * storage type to DYNAMIC. You do not set <code>storageCapacity</code>, because
-         * HealthOmics dynamically scales the storage up or down as required. For more
-         * information about static and dynamic storage, see <a
+         * will not support re-run for a workflow that is shared with you.</p>
+         * <p>HealthOmics stores a fixed number of runs that are available to the console
+         * and API. By default, HealthOmics doesn't any remove any runs. If HealthOmics
+         * reaches the maximum number of runs, you must manually remove runs. To have older
+         * runs removed automatically, set the retention mode to <code>REMOVE</code>.</p>
+         * <p>By default, the run uses STATIC storage. For STATIC storage, set the
+         * <code>storageCapacity</code> field. You can set the storage type to DYNAMIC. You
+         * do not set <code>storageCapacity</code>, because HealthOmics dynamically scales
+         * the storage up or down as required. For more information about static and
+         * dynamic storage, see <a
          * href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
          * workflows</a> in the <i>AWS HealthOmics User Guide</i>.</p><p><h3>See Also:</h3>
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">AWS
@@ -2061,6 +2188,31 @@ namespace Omics
         void UpdateAnnotationStoreVersionAsync(const UpdateAnnotationStoreVersionRequestT& request, const UpdateAnnotationStoreVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::UpdateAnnotationStoreVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Update a run cache. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRunCacheOutcome UpdateRunCache(const Model::UpdateRunCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRunCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateRunCacheRequestT = Model::UpdateRunCacheRequest>
+        Model::UpdateRunCacheOutcomeCallable UpdateRunCacheCallable(const UpdateRunCacheRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::UpdateRunCache, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateRunCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateRunCacheRequestT = Model::UpdateRunCacheRequest>
+        void UpdateRunCacheAsync(const UpdateRunCacheRequestT& request, const UpdateRunCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::UpdateRunCache, request, handler, context);
         }
 
         /**

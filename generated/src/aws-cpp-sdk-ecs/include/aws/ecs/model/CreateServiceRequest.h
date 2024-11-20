@@ -7,6 +7,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/AvailabilityZoneRebalancing.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/DeploymentConfiguration.h>
@@ -103,6 +104,22 @@ namespace Model
     inline CreateServiceRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
     inline CreateServiceRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
     inline CreateServiceRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether to use Availability Zone rebalancing for the service.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing
+     * an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic
+     * Container Service Developer Guide</i>.</p>
+     */
+    inline const AvailabilityZoneRebalancing& GetAvailabilityZoneRebalancing() const{ return m_availabilityZoneRebalancing; }
+    inline bool AvailabilityZoneRebalancingHasBeenSet() const { return m_availabilityZoneRebalancingHasBeenSet; }
+    inline void SetAvailabilityZoneRebalancing(const AvailabilityZoneRebalancing& value) { m_availabilityZoneRebalancingHasBeenSet = true; m_availabilityZoneRebalancing = value; }
+    inline void SetAvailabilityZoneRebalancing(AvailabilityZoneRebalancing&& value) { m_availabilityZoneRebalancingHasBeenSet = true; m_availabilityZoneRebalancing = std::move(value); }
+    inline CreateServiceRequest& WithAvailabilityZoneRebalancing(const AvailabilityZoneRebalancing& value) { SetAvailabilityZoneRebalancing(value); return *this;}
+    inline CreateServiceRequest& WithAvailabilityZoneRebalancing(AvailabilityZoneRebalancing&& value) { SetAvailabilityZoneRebalancing(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -571,6 +588,9 @@ namespace Model
 
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet = false;
+
+    AvailabilityZoneRebalancing m_availabilityZoneRebalancing;
+    bool m_availabilityZoneRebalancingHasBeenSet = false;
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
     bool m_loadBalancersHasBeenSet = false;

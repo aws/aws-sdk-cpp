@@ -138,6 +138,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the data protection settings.</p>
+     */
+    inline const Aws::String& GetDataProtectionSettingsArn() const{ return m_dataProtectionSettingsArn; }
+    inline bool DataProtectionSettingsArnHasBeenSet() const { return m_dataProtectionSettingsArnHasBeenSet; }
+    inline void SetDataProtectionSettingsArn(const Aws::String& value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn = value; }
+    inline void SetDataProtectionSettingsArn(Aws::String&& value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn = std::move(value); }
+    inline void SetDataProtectionSettingsArn(const char* value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn.assign(value); }
+    inline Portal& WithDataProtectionSettingsArn(const Aws::String& value) { SetDataProtectionSettingsArn(value); return *this;}
+    inline Portal& WithDataProtectionSettingsArn(Aws::String&& value) { SetDataProtectionSettingsArn(std::move(value)); return *this;}
+    inline Portal& WithDataProtectionSettingsArn(const char* value) { SetDataProtectionSettingsArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the web portal.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
@@ -328,6 +342,9 @@ namespace Model
 
     Aws::String m_customerManagedKey;
     bool m_customerManagedKeyHasBeenSet = false;
+
+    Aws::String m_dataProtectionSettingsArn;
+    bool m_dataProtectionSettingsArnHasBeenSet = false;
 
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;

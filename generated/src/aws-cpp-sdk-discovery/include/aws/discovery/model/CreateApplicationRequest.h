@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Name of the application to be created.</p>
+     * <p>The name of the application to be created.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Description of the application to be created.</p>
+     * <p>The description of the application to be created.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -61,6 +61,20 @@ namespace Model
     inline CreateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline CreateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of the migration wave of the application to be created.</p>
+     */
+    inline const Aws::String& GetWave() const{ return m_wave; }
+    inline bool WaveHasBeenSet() const { return m_waveHasBeenSet; }
+    inline void SetWave(const Aws::String& value) { m_waveHasBeenSet = true; m_wave = value; }
+    inline void SetWave(Aws::String&& value) { m_waveHasBeenSet = true; m_wave = std::move(value); }
+    inline void SetWave(const char* value) { m_waveHasBeenSet = true; m_wave.assign(value); }
+    inline CreateApplicationRequest& WithWave(const Aws::String& value) { SetWave(value); return *this;}
+    inline CreateApplicationRequest& WithWave(Aws::String&& value) { SetWave(std::move(value)); return *this;}
+    inline CreateApplicationRequest& WithWave(const char* value) { SetWave(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -68,6 +82,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_wave;
+    bool m_waveHasBeenSet = false;
   };
 
 } // namespace Model

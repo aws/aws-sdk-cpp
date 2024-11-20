@@ -16,6 +16,7 @@ namespace Model
   enum class CapacityReservationPreference
   {
     NOT_SET,
+    capacity_reservations_only,
     open,
     none
   };

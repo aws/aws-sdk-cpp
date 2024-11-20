@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/discovery/model/ImportStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/discovery/model/FileClassification.h>
 #include <utility>
 
 namespace Aws
@@ -160,6 +161,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of file detected by the import task.</p>
+     */
+    inline const FileClassification& GetFileClassification() const{ return m_fileClassification; }
+    inline bool FileClassificationHasBeenSet() const { return m_fileClassificationHasBeenSet; }
+    inline void SetFileClassification(const FileClassification& value) { m_fileClassificationHasBeenSet = true; m_fileClassification = value; }
+    inline void SetFileClassification(FileClassification&& value) { m_fileClassificationHasBeenSet = true; m_fileClassification = std::move(value); }
+    inline ImportTask& WithFileClassification(const FileClassification& value) { SetFileClassification(value); return *this;}
+    inline ImportTask& WithFileClassification(FileClassification&& value) { SetFileClassification(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The total number of server records in the import file that were successfully
      * imported.</p>
      */
@@ -249,6 +262,9 @@ namespace Model
 
     Aws::Utils::DateTime m_importDeletedTime;
     bool m_importDeletedTimeHasBeenSet = false;
+
+    FileClassification m_fileClassification;
+    bool m_fileClassificationHasBeenSet = false;
 
     int m_serverImportSuccess;
     bool m_serverImportSuccessHasBeenSet = false;

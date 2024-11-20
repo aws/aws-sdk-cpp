@@ -31,6 +31,7 @@ namespace Model
     CurrentInstanceOnDemandHourlyPrice,
     CurrentStorageOnDemandMonthlyPrice,
     LookbackPeriodInDays,
+    CurrentInstancePerformanceRisk,
     UtilizationMetricsCpuMaximum,
     UtilizationMetricsMemoryMaximum,
     UtilizationMetricsEBSVolumeStorageSpaceUtilizationMaximum,
@@ -41,6 +42,14 @@ namespace Model
     UtilizationMetricsEBSVolumeReadThroughputMaximum,
     UtilizationMetricsEBSVolumeWriteThroughputMaximum,
     UtilizationMetricsDatabaseConnectionsMaximum,
+    UtilizationMetricsStorageNetworkReceiveThroughputMaximum,
+    UtilizationMetricsStorageNetworkTransmitThroughputMaximum,
+    UtilizationMetricsAuroraMemoryHealthStateMaximum,
+    UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum,
+    UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum,
+    UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum,
+    UtilizationMetricsReadIOPSEphemeralStorageMaximum,
+    UtilizationMetricsWriteIOPSEphemeralStorageMaximum,
     InstanceFinding,
     InstanceFindingReasonCodes,
     StorageFinding,
@@ -74,7 +83,9 @@ namespace Model
     EffectiveRecommendationPreferencesLookBackPeriod,
     EffectiveRecommendationPreferencesSavingsEstimationMode,
     LastRefreshTimestamp,
-    Tags
+    Tags,
+    DBClusterIdentifier,
+    PromotionTier
   };
 
 namespace ExportableRDSDBFieldMapper

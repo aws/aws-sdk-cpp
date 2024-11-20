@@ -51,7 +51,8 @@ InstanceRequirementsRequest::InstanceRequirementsRequest() :
     m_networkBandwidthGbpsHasBeenSet(false),
     m_allowedInstanceTypesHasBeenSet(false),
     m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice(0),
-    m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet(false)
+    m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet(false),
+    m_baselinePerformanceFactorsHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,12 @@ InstanceRequirementsRequest& InstanceRequirementsRequest::operator =(const XmlNo
       m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSpotPriceAsPercentageOfOptimalOnDemandPriceNode.GetText()).c_str()).c_str());
       m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = true;
     }
+    XmlNode baselinePerformanceFactorsNode = resultNode.FirstChild("BaselinePerformanceFactors");
+    if(!baselinePerformanceFactorsNode.IsNull())
+    {
+      m_baselinePerformanceFactors = baselinePerformanceFactorsNode;
+      m_baselinePerformanceFactorsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -436,6 +443,13 @@ void InstanceRequirementsRequest::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << index << locationValue << ".MaxSpotPriceAsPercentageOfOptimalOnDemandPrice=" << m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice << "&";
   }
 
+  if(m_baselinePerformanceFactorsHasBeenSet)
+  {
+      Aws::StringStream baselinePerformanceFactorsLocationAndMemberSs;
+      baselinePerformanceFactorsLocationAndMemberSs << location << index << locationValue << ".BaselinePerformanceFactors";
+      m_baselinePerformanceFactors.OutputToStream(oStream, baselinePerformanceFactorsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceRequirementsRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -585,6 +599,12 @@ void InstanceRequirementsRequest::OutputToStream(Aws::OStream& oStream, const ch
   if(m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet)
   {
       oStream << location << ".MaxSpotPriceAsPercentageOfOptimalOnDemandPrice=" << m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice << "&";
+  }
+  if(m_baselinePerformanceFactorsHasBeenSet)
+  {
+      Aws::String baselinePerformanceFactorsLocationAndMember(location);
+      baselinePerformanceFactorsLocationAndMember += ".BaselinePerformanceFactors";
+      m_baselinePerformanceFactors.OutputToStream(oStream, baselinePerformanceFactorsLocationAndMember.c_str());
   }
 }
 

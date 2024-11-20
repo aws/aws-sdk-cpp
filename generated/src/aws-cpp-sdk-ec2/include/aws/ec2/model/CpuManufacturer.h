@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     intel,
     amd,
-    amazon_web_services
+    amazon_web_services,
+    apple
   };
 
 namespace CpuManufacturerMapper

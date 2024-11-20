@@ -75,6 +75,20 @@ namespace Model
     inline UpdateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline UpdateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The new migration wave of the application that you want to update.</p>
+     */
+    inline const Aws::String& GetWave() const{ return m_wave; }
+    inline bool WaveHasBeenSet() const { return m_waveHasBeenSet; }
+    inline void SetWave(const Aws::String& value) { m_waveHasBeenSet = true; m_wave = value; }
+    inline void SetWave(Aws::String&& value) { m_waveHasBeenSet = true; m_wave = std::move(value); }
+    inline void SetWave(const char* value) { m_waveHasBeenSet = true; m_wave.assign(value); }
+    inline UpdateApplicationRequest& WithWave(const Aws::String& value) { SetWave(value); return *this;}
+    inline UpdateApplicationRequest& WithWave(Aws::String&& value) { SetWave(std::move(value)); return *this;}
+    inline UpdateApplicationRequest& WithWave(const char* value) { SetWave(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_configurationId;
@@ -85,6 +99,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_wave;
+    bool m_waveHasBeenSet = false;
   };
 
 } // namespace Model

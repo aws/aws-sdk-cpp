@@ -15,6 +15,7 @@
 #include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/AvailabilityZoneDistribution.h>
 #include <aws/autoscaling/model/AvailabilityZoneImpairmentPolicy.h>
+#include <aws/autoscaling/model/CapacityReservationSpecification.h>
 #include <aws/autoscaling/model/Instance.h>
 #include <aws/autoscaling/model/SuspendedProcess.h>
 #include <aws/autoscaling/model/EnabledMetric.h>
@@ -525,6 +526,18 @@ namespace Model
     inline AutoScalingGroup& WithAvailabilityZoneImpairmentPolicy(const AvailabilityZoneImpairmentPolicy& value) { SetAvailabilityZoneImpairmentPolicy(value); return *this;}
     inline AutoScalingGroup& WithAvailabilityZoneImpairmentPolicy(AvailabilityZoneImpairmentPolicy&& value) { SetAvailabilityZoneImpairmentPolicy(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The capacity reservation specification. </p>
+     */
+    inline const CapacityReservationSpecification& GetCapacityReservationSpecification() const{ return m_capacityReservationSpecification; }
+    inline bool CapacityReservationSpecificationHasBeenSet() const { return m_capacityReservationSpecificationHasBeenSet; }
+    inline void SetCapacityReservationSpecification(const CapacityReservationSpecification& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = value; }
+    inline void SetCapacityReservationSpecification(CapacityReservationSpecification&& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = std::move(value); }
+    inline AutoScalingGroup& WithCapacityReservationSpecification(const CapacityReservationSpecification& value) { SetCapacityReservationSpecification(value); return *this;}
+    inline AutoScalingGroup& WithCapacityReservationSpecification(CapacityReservationSpecification&& value) { SetCapacityReservationSpecification(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -637,6 +650,9 @@ namespace Model
 
     AvailabilityZoneImpairmentPolicy m_availabilityZoneImpairmentPolicy;
     bool m_availabilityZoneImpairmentPolicyHasBeenSet = false;
+
+    CapacityReservationSpecification m_capacityReservationSpecification;
+    bool m_capacityReservationSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

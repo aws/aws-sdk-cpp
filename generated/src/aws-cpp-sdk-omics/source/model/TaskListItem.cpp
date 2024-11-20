@@ -25,6 +25,9 @@ TaskListItem::TaskListItem() :
     m_nameHasBeenSet(false),
     m_cpus(0),
     m_cpusHasBeenSet(false),
+    m_cacheHit(false),
+    m_cacheHitHasBeenSet(false),
+    m_cacheS3UriHasBeenSet(false),
     m_memory(0),
     m_memoryHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -70,6 +73,20 @@ TaskListItem& TaskListItem::operator =(JsonView jsonValue)
     m_cpus = jsonValue.GetInteger("cpus");
 
     m_cpusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cacheHit"))
+  {
+    m_cacheHit = jsonValue.GetBool("cacheHit");
+
+    m_cacheHitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cacheS3Uri"))
+  {
+    m_cacheS3Uri = jsonValue.GetString("cacheS3Uri");
+
+    m_cacheS3UriHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("memory"))
@@ -141,6 +158,18 @@ JsonValue TaskListItem::Jsonize() const
   if(m_cpusHasBeenSet)
   {
    payload.WithInteger("cpus", m_cpus);
+
+  }
+
+  if(m_cacheHitHasBeenSet)
+  {
+   payload.WithBool("cacheHit", m_cacheHit);
+
+  }
+
+  if(m_cacheS3UriHasBeenSet)
+  {
+   payload.WithString("cacheS3Uri", m_cacheS3Uri);
 
   }
 

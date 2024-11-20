@@ -442,7 +442,8 @@ namespace Model
      * <p>Information about the Capacity Reservation targeting option. If you do not
      * specify this parameter, the instance's Capacity Reservation preference defaults
      * to <code>open</code>, which enables it to run in any open Capacity Reservation
-     * that has matching attributes (instance type, platform, Availability Zone).</p>
+     * that has matching attributes (instance type, platform, Availability Zone, and
+     * tenancy).</p>
      */
     inline const CapacityReservationSpecification& GetCapacityReservationSpecification() const{ return m_capacityReservationSpecification; }
     inline bool CapacityReservationSpecificationHasBeenSet() const { return m_capacityReservationSpecificationHasBeenSet; }

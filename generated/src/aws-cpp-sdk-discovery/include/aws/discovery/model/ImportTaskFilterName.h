@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     IMPORT_TASK_ID,
     STATUS,
-    NAME
+    NAME,
+    FILE_CLASSIFICATION
   };
 
 namespace ImportTaskFilterNameMapper

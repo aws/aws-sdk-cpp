@@ -23,7 +23,9 @@ SubscriptionRequestSummary::SubscriptionRequestSummary() :
     m_createdByHasBeenSet(false),
     m_decisionCommentHasBeenSet(false),
     m_domainIdHasBeenSet(false),
+    m_existingSubscriptionIdHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_metadataFormsSummaryHasBeenSet(false),
     m_requestReasonHasBeenSet(false),
     m_reviewerIdHasBeenSet(false),
     m_status(SubscriptionRequestStatus::NOT_SET),
@@ -71,11 +73,28 @@ SubscriptionRequestSummary& SubscriptionRequestSummary::operator =(JsonView json
     m_domainIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("existingSubscriptionId"))
+  {
+    m_existingSubscriptionId = jsonValue.GetString("existingSubscriptionId");
+
+    m_existingSubscriptionIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("metadataFormsSummary"))
+  {
+    Aws::Utils::Array<JsonView> metadataFormsSummaryJsonList = jsonValue.GetArray("metadataFormsSummary");
+    for(unsigned metadataFormsSummaryIndex = 0; metadataFormsSummaryIndex < metadataFormsSummaryJsonList.GetLength(); ++metadataFormsSummaryIndex)
+    {
+      m_metadataFormsSummary.push_back(metadataFormsSummaryJsonList[metadataFormsSummaryIndex].AsObject());
+    }
+    m_metadataFormsSummaryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("requestReason"))
@@ -163,9 +182,26 @@ JsonValue SubscriptionRequestSummary::Jsonize() const
 
   }
 
+  if(m_existingSubscriptionIdHasBeenSet)
+  {
+   payload.WithString("existingSubscriptionId", m_existingSubscriptionId);
+
+  }
+
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_metadataFormsSummaryHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> metadataFormsSummaryJsonList(m_metadataFormsSummary.size());
+   for(unsigned metadataFormsSummaryIndex = 0; metadataFormsSummaryIndex < metadataFormsSummaryJsonList.GetLength(); ++metadataFormsSummaryIndex)
+   {
+     metadataFormsSummaryJsonList[metadataFormsSummaryIndex].AsObject(m_metadataFormsSummary[metadataFormsSummaryIndex].Jsonize());
+   }
+   payload.WithArray("metadataFormsSummary", std::move(metadataFormsSummaryJsonList));
 
   }
 

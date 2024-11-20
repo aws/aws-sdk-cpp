@@ -27,6 +27,7 @@ Portal::Portal() :
     m_browserTypeHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_customerManagedKeyHasBeenSet(false),
+    m_dataProtectionSettingsArnHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
@@ -98,6 +99,13 @@ Portal& Portal::operator =(JsonView jsonValue)
     m_customerManagedKey = jsonValue.GetString("customerManagedKey");
 
     m_customerManagedKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataProtectionSettingsArn"))
+  {
+    m_dataProtectionSettingsArn = jsonValue.GetString("dataProtectionSettingsArn");
+
+    m_dataProtectionSettingsArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("displayName"))
@@ -233,6 +241,12 @@ JsonValue Portal::Jsonize() const
   if(m_customerManagedKeyHasBeenSet)
   {
    payload.WithString("customerManagedKey", m_customerManagedKey);
+
+  }
+
+  if(m_dataProtectionSettingsArnHasBeenSet)
+  {
+   payload.WithString("dataProtectionSettingsArn", m_dataProtectionSettingsArn);
 
   }
 

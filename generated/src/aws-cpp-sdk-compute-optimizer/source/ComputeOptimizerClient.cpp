@@ -27,6 +27,7 @@
 #include <aws/compute-optimizer/model/ExportEBSVolumeRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/ExportEC2InstanceRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/ExportECSServiceRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/ExportIdleRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/ExportLambdaFunctionRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/ExportLicenseRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/ExportRDSDatabaseRecommendationsRequest.h>
@@ -39,6 +40,7 @@
 #include <aws/compute-optimizer/model/GetEffectiveRecommendationPreferencesRequest.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusRequest.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationRequest.h>
+#include <aws/compute-optimizer/model/GetIdleRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetLicenseRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetRDSDatabaseRecommendationProjectedMetricsRequest.h>
@@ -340,6 +342,32 @@ ExportECSServiceRecommendationsOutcome ComputeOptimizerClient::ExportECSServiceR
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportECSServiceRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return ExportECSServiceRecommendationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ExportIdleRecommendationsOutcome ComputeOptimizerClient::ExportIdleRecommendations(const ExportIdleRecommendationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ExportIdleRecommendations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportIdleRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ExportIdleRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ExportIdleRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ExportIdleRecommendations",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ExportIdleRecommendationsOutcome>(
+    [&]()-> ExportIdleRecommendationsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportIdleRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return ExportIdleRecommendationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -652,6 +680,32 @@ GetEnrollmentStatusesForOrganizationOutcome ComputeOptimizerClient::GetEnrollmen
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEnrollmentStatusesForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return GetEnrollmentStatusesForOrganizationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetIdleRecommendationsOutcome ComputeOptimizerClient::GetIdleRecommendations(const GetIdleRecommendationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetIdleRecommendations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIdleRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetIdleRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetIdleRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetIdleRecommendations",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetIdleRecommendationsOutcome>(
+    [&]()-> GetIdleRecommendationsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIdleRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return GetIdleRecommendationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

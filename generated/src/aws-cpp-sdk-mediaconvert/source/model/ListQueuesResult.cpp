@@ -17,11 +17,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListQueuesResult::ListQueuesResult()
+ListQueuesResult::ListQueuesResult() : 
+    m_totalConcurrentJobs(0),
+    m_unallocatedConcurrentJobs(0)
 {
 }
 
 ListQueuesResult::ListQueuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : ListQueuesResult()
 {
   *this = result;
 }
@@ -42,6 +45,18 @@ ListQueuesResult& ListQueuesResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_queues.push_back(queuesJsonList[queuesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("totalConcurrentJobs"))
+  {
+    m_totalConcurrentJobs = jsonValue.GetInteger("totalConcurrentJobs");
+
+  }
+
+  if(jsonValue.ValueExists("unallocatedConcurrentJobs"))
+  {
+    m_unallocatedConcurrentJobs = jsonValue.GetInteger("unallocatedConcurrentJobs");
+
   }
 
 

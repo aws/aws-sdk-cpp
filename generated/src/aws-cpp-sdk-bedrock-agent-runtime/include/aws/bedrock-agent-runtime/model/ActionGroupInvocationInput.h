@@ -31,7 +31,9 @@ namespace Model
    * <p>Contains information about the action group being invoked. For more
    * information about the possible structures, see the InvocationInput tab in <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-orchestration.html">OrchestrationTrace</a>
-   * in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
+   * in the <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+   * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/ActionGroupInvocationInput">AWS
    * API Reference</a></p>
    */

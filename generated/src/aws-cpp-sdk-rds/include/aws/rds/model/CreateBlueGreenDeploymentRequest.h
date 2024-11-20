@@ -167,6 +167,62 @@ namespace Model
     inline void SetUpgradeTargetStorageConfig(bool value) { m_upgradeTargetStorageConfigHasBeenSet = true; m_upgradeTargetStorageConfig = value; }
     inline CreateBlueGreenDeploymentRequest& WithUpgradeTargetStorageConfig(bool value) { SetUpgradeTargetStorageConfig(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to
+     * allocate for the green DB instance. For information about valid IOPS values, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon
+     * RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
+     * setting doesn't apply to Amazon Aurora blue/green deployments.</p>
+     */
+    inline int GetTargetIops() const{ return m_targetIops; }
+    inline bool TargetIopsHasBeenSet() const { return m_targetIopsHasBeenSet; }
+    inline void SetTargetIops(int value) { m_targetIopsHasBeenSet = true; m_targetIops = value; }
+    inline CreateBlueGreenDeploymentRequest& WithTargetIops(int value) { SetTargetIops(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The storage type to associate with the green DB instance.</p> <p>Valid
+     * Values: <code>gp2 | gp3 | io1 | io2</code> </p> <p>This setting doesn't apply to
+     * Amazon Aurora blue/green deployments.</p>
+     */
+    inline const Aws::String& GetTargetStorageType() const{ return m_targetStorageType; }
+    inline bool TargetStorageTypeHasBeenSet() const { return m_targetStorageTypeHasBeenSet; }
+    inline void SetTargetStorageType(const Aws::String& value) { m_targetStorageTypeHasBeenSet = true; m_targetStorageType = value; }
+    inline void SetTargetStorageType(Aws::String&& value) { m_targetStorageTypeHasBeenSet = true; m_targetStorageType = std::move(value); }
+    inline void SetTargetStorageType(const char* value) { m_targetStorageTypeHasBeenSet = true; m_targetStorageType.assign(value); }
+    inline CreateBlueGreenDeploymentRequest& WithTargetStorageType(const Aws::String& value) { SetTargetStorageType(value); return *this;}
+    inline CreateBlueGreenDeploymentRequest& WithTargetStorageType(Aws::String&& value) { SetTargetStorageType(std::move(value)); return *this;}
+    inline CreateBlueGreenDeploymentRequest& WithTargetStorageType(const char* value) { SetTargetStorageType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The amount of storage in gibibytes (GiB) to allocate for the green DB
+     * instance. You can choose to increase or decrease the allocated storage on the
+     * green DB instance.</p> <p>This setting doesn't apply to Amazon Aurora blue/green
+     * deployments.</p>
+     */
+    inline int GetTargetAllocatedStorage() const{ return m_targetAllocatedStorage; }
+    inline bool TargetAllocatedStorageHasBeenSet() const { return m_targetAllocatedStorageHasBeenSet; }
+    inline void SetTargetAllocatedStorage(int value) { m_targetAllocatedStorageHasBeenSet = true; m_targetAllocatedStorage = value; }
+    inline CreateBlueGreenDeploymentRequest& WithTargetAllocatedStorage(int value) { SetTargetAllocatedStorage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The storage throughput value for the green DB instance.</p> <p>This setting
+     * applies only to the <code>gp3</code> storage type.</p> <p>This setting doesn't
+     * apply to Amazon Aurora blue/green deployments.</p>
+     */
+    inline int GetTargetStorageThroughput() const{ return m_targetStorageThroughput; }
+    inline bool TargetStorageThroughputHasBeenSet() const { return m_targetStorageThroughputHasBeenSet; }
+    inline void SetTargetStorageThroughput(int value) { m_targetStorageThroughputHasBeenSet = true; m_targetStorageThroughput = value; }
+    inline CreateBlueGreenDeploymentRequest& WithTargetStorageThroughput(int value) { SetTargetStorageThroughput(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_blueGreenDeploymentName;
@@ -192,6 +248,18 @@ namespace Model
 
     bool m_upgradeTargetStorageConfig;
     bool m_upgradeTargetStorageConfigHasBeenSet = false;
+
+    int m_targetIops;
+    bool m_targetIopsHasBeenSet = false;
+
+    Aws::String m_targetStorageType;
+    bool m_targetStorageTypeHasBeenSet = false;
+
+    int m_targetAllocatedStorage;
+    bool m_targetAllocatedStorageHasBeenSet = false;
+
+    int m_targetStorageThroughput;
+    bool m_targetStorageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,12 +19,17 @@ namespace Model
     CPUOverprovisioned,
     NetworkBandwidthOverprovisioned,
     EBSIOPSOverprovisioned,
+    EBSIOPSUnderprovisioned,
     EBSThroughputOverprovisioned,
     CPUUnderprovisioned,
     NetworkBandwidthUnderprovisioned,
     EBSThroughputUnderprovisioned,
     NewGenerationDBInstanceClassAvailable,
-    NewEngineVersionAvailable
+    NewEngineVersionAvailable,
+    DBClusterWriterUnderprovisioned,
+    MemoryUnderprovisioned,
+    InstanceStorageReadIOPSUnderprovisioned,
+    InstanceStorageWriteIOPSUnderprovisioned
   };
 
 namespace RDSInstanceFindingReasonCodeMapper

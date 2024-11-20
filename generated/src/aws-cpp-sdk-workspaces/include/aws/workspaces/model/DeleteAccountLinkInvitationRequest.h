@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A string of up to 64 ASCII characters that Amazon EFS uses to ensure
+     * <p>A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure
      * idempotent creation.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }

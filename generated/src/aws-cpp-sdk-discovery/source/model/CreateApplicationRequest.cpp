@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 CreateApplicationRequest::CreateApplicationRequest() : 
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_waveHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_waveHasBeenSet)
+  {
+   payload.WithString("wave", m_wave);
 
   }
 

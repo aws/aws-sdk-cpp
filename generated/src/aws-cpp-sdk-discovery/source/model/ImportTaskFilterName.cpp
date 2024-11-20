@@ -23,6 +23,7 @@ namespace Aws
         static const int IMPORT_TASK_ID_HASH = HashingUtils::HashString("IMPORT_TASK_ID");
         static const int STATUS_HASH = HashingUtils::HashString("STATUS");
         static const int NAME_HASH = HashingUtils::HashString("NAME");
+        static const int FILE_CLASSIFICATION_HASH = HashingUtils::HashString("FILE_CLASSIFICATION");
 
 
         ImportTaskFilterName GetImportTaskFilterNameForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == NAME_HASH)
           {
             return ImportTaskFilterName::NAME;
+          }
+          else if (hashCode == FILE_CLASSIFICATION_HASH)
+          {
+            return ImportTaskFilterName::FILE_CLASSIFICATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "STATUS";
           case ImportTaskFilterName::NAME:
             return "NAME";
+          case ImportTaskFilterName::FILE_CLASSIFICATION:
+            return "FILE_CLASSIFICATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

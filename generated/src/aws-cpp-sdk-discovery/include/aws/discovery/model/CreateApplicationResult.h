@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Configuration ID of an application to be created.</p>
+     * <p>The configuration ID of an application to be created.</p>
      */
     inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
     inline void SetConfigurationId(const Aws::String& value) { m_configurationId = value; }

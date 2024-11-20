@@ -17,7 +17,9 @@ UpdateChannelRequest::UpdateChannelRequest() :
     m_channelGroupNameHasBeenSet(false),
     m_channelNameHasBeenSet(false),
     m_eTagHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_inputSwitchConfigurationHasBeenSet(false),
+    m_outputHeaderConfigurationHasBeenSet(false)
 {
 }
 
@@ -28,6 +30,18 @@ Aws::String UpdateChannelRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_inputSwitchConfigurationHasBeenSet)
+  {
+   payload.WithObject("InputSwitchConfiguration", m_inputSwitchConfiguration.Jsonize());
+
+  }
+
+  if(m_outputHeaderConfigurationHasBeenSet)
+  {
+   payload.WithObject("OutputHeaderConfiguration", m_outputHeaderConfiguration.Jsonize());
 
   }
 

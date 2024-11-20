@@ -11,6 +11,7 @@
 #include <aws/compute-optimizer/model/RDSInstanceFinding.h>
 #include <aws/compute-optimizer/model/RDSStorageFinding.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/compute-optimizer/model/RDSCurrentInstancePerformanceRisk.h>
 #include <aws/compute-optimizer/model/RDSEffectiveRecommendationPreferences.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/compute-optimizer/model/RDSInstanceFindingReasonCode.h>
@@ -110,6 +111,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The promotion tier for the Aurora instance.</p>
+     */
+    inline int GetPromotionTier() const{ return m_promotionTier; }
+    inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
+    inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
+    inline RDSDBRecommendation& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> The DB instance class of the current RDS instance. </p>
      */
     inline const Aws::String& GetCurrentDBInstanceClass() const{ return m_currentDBInstanceClass; }
@@ -132,6 +143,20 @@ namespace Model
     inline void SetCurrentStorageConfiguration(DBStorageConfiguration&& value) { m_currentStorageConfigurationHasBeenSet = true; m_currentStorageConfiguration = std::move(value); }
     inline RDSDBRecommendation& WithCurrentStorageConfiguration(const DBStorageConfiguration& value) { SetCurrentStorageConfiguration(value); return *this;}
     inline RDSDBRecommendation& WithCurrentStorageConfiguration(DBStorageConfiguration&& value) { SetCurrentStorageConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier for DB cluster.</p>
+     */
+    inline const Aws::String& GetDbClusterIdentifier() const{ return m_dbClusterIdentifier; }
+    inline bool DbClusterIdentifierHasBeenSet() const { return m_dbClusterIdentifierHasBeenSet; }
+    inline void SetDbClusterIdentifier(const Aws::String& value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier = value; }
+    inline void SetDbClusterIdentifier(Aws::String&& value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier = std::move(value); }
+    inline void SetDbClusterIdentifier(const char* value) { m_dbClusterIdentifierHasBeenSet = true; m_dbClusterIdentifier.assign(value); }
+    inline RDSDBRecommendation& WithDbClusterIdentifier(const Aws::String& value) { SetDbClusterIdentifier(value); return *this;}
+    inline RDSDBRecommendation& WithDbClusterIdentifier(Aws::String&& value) { SetDbClusterIdentifier(std::move(value)); return *this;}
+    inline RDSDBRecommendation& WithDbClusterIdentifier(const char* value) { SetDbClusterIdentifier(value); return *this;}
     ///@}
 
     ///@{
@@ -198,6 +223,18 @@ namespace Model
     inline RDSDBRecommendation& WithInstanceFindingReasonCodes(Aws::Vector<RDSInstanceFindingReasonCode>&& value) { SetInstanceFindingReasonCodes(std::move(value)); return *this;}
     inline RDSDBRecommendation& AddInstanceFindingReasonCodes(const RDSInstanceFindingReasonCode& value) { m_instanceFindingReasonCodesHasBeenSet = true; m_instanceFindingReasonCodes.push_back(value); return *this; }
     inline RDSDBRecommendation& AddInstanceFindingReasonCodes(RDSInstanceFindingReasonCode&& value) { m_instanceFindingReasonCodesHasBeenSet = true; m_instanceFindingReasonCodes.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The performance risk for the current DB instance.</p>
+     */
+    inline const RDSCurrentInstancePerformanceRisk& GetCurrentInstancePerformanceRisk() const{ return m_currentInstancePerformanceRisk; }
+    inline bool CurrentInstancePerformanceRiskHasBeenSet() const { return m_currentInstancePerformanceRiskHasBeenSet; }
+    inline void SetCurrentInstancePerformanceRisk(const RDSCurrentInstancePerformanceRisk& value) { m_currentInstancePerformanceRiskHasBeenSet = true; m_currentInstancePerformanceRisk = value; }
+    inline void SetCurrentInstancePerformanceRisk(RDSCurrentInstancePerformanceRisk&& value) { m_currentInstancePerformanceRiskHasBeenSet = true; m_currentInstancePerformanceRisk = std::move(value); }
+    inline RDSDBRecommendation& WithCurrentInstancePerformanceRisk(const RDSCurrentInstancePerformanceRisk& value) { SetCurrentInstancePerformanceRisk(value); return *this;}
+    inline RDSDBRecommendation& WithCurrentInstancePerformanceRisk(RDSCurrentInstancePerformanceRisk&& value) { SetCurrentInstancePerformanceRisk(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -320,11 +357,17 @@ namespace Model
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;
 
+    int m_promotionTier;
+    bool m_promotionTierHasBeenSet = false;
+
     Aws::String m_currentDBInstanceClass;
     bool m_currentDBInstanceClassHasBeenSet = false;
 
     DBStorageConfiguration m_currentStorageConfiguration;
     bool m_currentStorageConfigurationHasBeenSet = false;
+
+    Aws::String m_dbClusterIdentifier;
+    bool m_dbClusterIdentifierHasBeenSet = false;
 
     Idle m_idle;
     bool m_idleHasBeenSet = false;
@@ -337,6 +380,9 @@ namespace Model
 
     Aws::Vector<RDSInstanceFindingReasonCode> m_instanceFindingReasonCodes;
     bool m_instanceFindingReasonCodesHasBeenSet = false;
+
+    RDSCurrentInstancePerformanceRisk m_currentInstancePerformanceRisk;
+    bool m_currentInstancePerformanceRiskHasBeenSet = false;
 
     Aws::Vector<RDSStorageFindingReasonCode> m_storageFindingReasonCodes;
     bool m_storageFindingReasonCodesHasBeenSet = false;

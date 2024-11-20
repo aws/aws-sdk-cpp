@@ -15714,8 +15714,9 @@ namespace EC2
         /**
          * <p>Modifies the Capacity Reservation settings for a stopped instance. Use this
          * action to configure an instance to target a specific Capacity Reservation, run
-         * in any <code>open</code> Capacity Reservation with matching attributes, or run
-         * On-Demand Instance capacity.</p><p><h3>See Also:</h3>   <a
+         * in any <code>open</code> Capacity Reservation with matching attributes, run in
+         * On-Demand Instance capacity, or only run in a Capacity
+         * Reservation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes">AWS
          * API Reference</a></p>
          */
