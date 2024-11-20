@@ -20,6 +20,8 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_taskDefinitionHasBeenSet(false),
     m_capacityProviderStrategyHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
+    m_availabilityZoneRebalancing(AvailabilityZoneRebalancing::NOT_SET),
+    m_availabilityZoneRebalancingHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_placementConstraintsHasBeenSet(false),
     m_placementStrategyHasBeenSet(false),
@@ -85,6 +87,11 @@ Aws::String UpdateServiceRequest::SerializePayload() const
   {
    payload.WithObject("deploymentConfiguration", m_deploymentConfiguration.Jsonize());
 
+  }
+
+  if(m_availabilityZoneRebalancingHasBeenSet)
+  {
+   payload.WithString("availabilityZoneRebalancing", AvailabilityZoneRebalancingMapper::GetNameForAvailabilityZoneRebalancing(m_availabilityZoneRebalancing));
   }
 
   if(m_networkConfigurationHasBeenSet)

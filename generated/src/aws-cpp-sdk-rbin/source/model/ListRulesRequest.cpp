@@ -20,7 +20,8 @@ ListRulesRequest::ListRulesRequest() :
     m_resourceTypeHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_lockState(LockState::NOT_SET),
-    m_lockStateHasBeenSet(false)
+    m_lockStateHasBeenSet(false),
+    m_excludeResourceTagsHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,17 @@ Aws::String ListRulesRequest::SerializePayload() const
   if(m_lockStateHasBeenSet)
   {
    payload.WithString("LockState", LockStateMapper::GetNameForLockState(m_lockState));
+  }
+
+  if(m_excludeResourceTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> excludeResourceTagsJsonList(m_excludeResourceTags.size());
+   for(unsigned excludeResourceTagsIndex = 0; excludeResourceTagsIndex < excludeResourceTagsJsonList.GetLength(); ++excludeResourceTagsIndex)
+   {
+     excludeResourceTagsJsonList[excludeResourceTagsIndex].AsObject(m_excludeResourceTags[excludeResourceTagsIndex].Jsonize());
+   }
+   payload.WithArray("ExcludeResourceTags", std::move(excludeResourceTagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

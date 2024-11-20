@@ -20,6 +20,7 @@ namespace Model
 
 EnabledBaselineFilter::EnabledBaselineFilter() : 
     m_baselineIdentifiersHasBeenSet(false),
+    m_parentIdentifiersHasBeenSet(false),
     m_targetIdentifiersHasBeenSet(false)
 {
 }
@@ -40,6 +41,16 @@ EnabledBaselineFilter& EnabledBaselineFilter::operator =(JsonView jsonValue)
       m_baselineIdentifiers.push_back(baselineIdentifiersJsonList[baselineIdentifiersIndex].AsString());
     }
     m_baselineIdentifiersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("parentIdentifiers"))
+  {
+    Aws::Utils::Array<JsonView> parentIdentifiersJsonList = jsonValue.GetArray("parentIdentifiers");
+    for(unsigned parentIdentifiersIndex = 0; parentIdentifiersIndex < parentIdentifiersJsonList.GetLength(); ++parentIdentifiersIndex)
+    {
+      m_parentIdentifiers.push_back(parentIdentifiersJsonList[parentIdentifiersIndex].AsString());
+    }
+    m_parentIdentifiersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("targetIdentifiers"))
@@ -67,6 +78,17 @@ JsonValue EnabledBaselineFilter::Jsonize() const
      baselineIdentifiersJsonList[baselineIdentifiersIndex].AsString(m_baselineIdentifiers[baselineIdentifiersIndex]);
    }
    payload.WithArray("baselineIdentifiers", std::move(baselineIdentifiersJsonList));
+
+  }
+
+  if(m_parentIdentifiersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> parentIdentifiersJsonList(m_parentIdentifiers.size());
+   for(unsigned parentIdentifiersIndex = 0; parentIdentifiersIndex < parentIdentifiersJsonList.GetLength(); ++parentIdentifiersIndex)
+   {
+     parentIdentifiersJsonList[parentIdentifiersIndex].AsString(m_parentIdentifiers[parentIdentifiersIndex]);
+   }
+   payload.WithArray("parentIdentifiers", std::move(parentIdentifiersJsonList));
 
   }
 

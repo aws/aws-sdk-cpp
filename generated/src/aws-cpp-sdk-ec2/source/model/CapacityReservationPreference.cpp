@@ -20,6 +20,7 @@ namespace Aws
       namespace CapacityReservationPreferenceMapper
       {
 
+        static const int capacity_reservations_only_HASH = HashingUtils::HashString("capacity-reservations-only");
         static const int open_HASH = HashingUtils::HashString("open");
         static const int none_HASH = HashingUtils::HashString("none");
 
@@ -27,7 +28,11 @@ namespace Aws
         CapacityReservationPreference GetCapacityReservationPreferenceForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == open_HASH)
+          if (hashCode == capacity_reservations_only_HASH)
+          {
+            return CapacityReservationPreference::capacity_reservations_only;
+          }
+          else if (hashCode == open_HASH)
           {
             return CapacityReservationPreference::open;
           }
@@ -51,6 +56,8 @@ namespace Aws
           {
           case CapacityReservationPreference::NOT_SET:
             return {};
+          case CapacityReservationPreference::capacity_reservations_only:
+            return "capacity-reservations-only";
           case CapacityReservationPreference::open:
             return "open";
           case CapacityReservationPreference::none:

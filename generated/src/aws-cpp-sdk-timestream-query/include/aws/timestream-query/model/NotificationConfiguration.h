@@ -41,7 +41,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Details on SNS configuration. </p>
+     * <p>Details about the Amazon Simple Notification Service (SNS) configuration.
+     * This field is visible only when SNS Topic is provided when updating the account
+     * settings. </p>
      */
     inline const SnsConfiguration& GetSnsConfiguration() const{ return m_snsConfiguration; }
     inline bool SnsConfigurationHasBeenSet() const { return m_snsConfigurationHasBeenSet; }

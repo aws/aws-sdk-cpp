@@ -11,6 +11,7 @@
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/compute-optimizer/model/CurrentPerformanceRiskRatings.h>
 #include <aws/compute-optimizer/model/Summary.h>
+#include <aws/compute-optimizer/model/IdleSummary.h>
 #include <aws/compute-optimizer/model/InferredWorkloadSaving.h>
 #include <utility>
 
@@ -59,6 +60,20 @@ namespace Model
 
     ///@{
     /**
+     * <p> Describes the findings summary of the idle resources. </p>
+     */
+    inline const Aws::Vector<IdleSummary>& GetIdleSummaries() const{ return m_idleSummaries; }
+    inline bool IdleSummariesHasBeenSet() const { return m_idleSummariesHasBeenSet; }
+    inline void SetIdleSummaries(const Aws::Vector<IdleSummary>& value) { m_idleSummariesHasBeenSet = true; m_idleSummaries = value; }
+    inline void SetIdleSummaries(Aws::Vector<IdleSummary>&& value) { m_idleSummariesHasBeenSet = true; m_idleSummaries = std::move(value); }
+    inline RecommendationSummary& WithIdleSummaries(const Aws::Vector<IdleSummary>& value) { SetIdleSummaries(value); return *this;}
+    inline RecommendationSummary& WithIdleSummaries(Aws::Vector<IdleSummary>&& value) { SetIdleSummaries(std::move(value)); return *this;}
+    inline RecommendationSummary& AddIdleSummaries(const IdleSummary& value) { m_idleSummariesHasBeenSet = true; m_idleSummaries.push_back(value); return *this; }
+    inline RecommendationSummary& AddIdleSummaries(IdleSummary&& value) { m_idleSummariesHasBeenSet = true; m_idleSummaries.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The resource type that the recommendation summary applies to.</p>
      */
     inline const RecommendationSourceType& GetRecommendationResourceType() const{ return m_recommendationResourceType; }
@@ -98,6 +113,26 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const SavingsOpportunity& GetIdleSavingsOpportunity() const{ return m_idleSavingsOpportunity; }
+    inline bool IdleSavingsOpportunityHasBeenSet() const { return m_idleSavingsOpportunityHasBeenSet; }
+    inline void SetIdleSavingsOpportunity(const SavingsOpportunity& value) { m_idleSavingsOpportunityHasBeenSet = true; m_idleSavingsOpportunity = value; }
+    inline void SetIdleSavingsOpportunity(SavingsOpportunity&& value) { m_idleSavingsOpportunityHasBeenSet = true; m_idleSavingsOpportunity = std::move(value); }
+    inline RecommendationSummary& WithIdleSavingsOpportunity(const SavingsOpportunity& value) { SetIdleSavingsOpportunity(value); return *this;}
+    inline RecommendationSummary& WithIdleSavingsOpportunity(SavingsOpportunity&& value) { SetIdleSavingsOpportunity(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const SavingsOpportunity& GetAggregatedSavingsOpportunity() const{ return m_aggregatedSavingsOpportunity; }
+    inline bool AggregatedSavingsOpportunityHasBeenSet() const { return m_aggregatedSavingsOpportunityHasBeenSet; }
+    inline void SetAggregatedSavingsOpportunity(const SavingsOpportunity& value) { m_aggregatedSavingsOpportunityHasBeenSet = true; m_aggregatedSavingsOpportunity = value; }
+    inline void SetAggregatedSavingsOpportunity(SavingsOpportunity&& value) { m_aggregatedSavingsOpportunityHasBeenSet = true; m_aggregatedSavingsOpportunity = std::move(value); }
+    inline RecommendationSummary& WithAggregatedSavingsOpportunity(const SavingsOpportunity& value) { SetAggregatedSavingsOpportunity(value); return *this;}
+    inline RecommendationSummary& WithAggregatedSavingsOpportunity(SavingsOpportunity&& value) { SetAggregatedSavingsOpportunity(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>An object that describes the performance risk ratings for a given resource
      * type.</p>
@@ -131,6 +166,9 @@ namespace Model
     Aws::Vector<Summary> m_summaries;
     bool m_summariesHasBeenSet = false;
 
+    Aws::Vector<IdleSummary> m_idleSummaries;
+    bool m_idleSummariesHasBeenSet = false;
+
     RecommendationSourceType m_recommendationResourceType;
     bool m_recommendationResourceTypeHasBeenSet = false;
 
@@ -139,6 +177,12 @@ namespace Model
 
     SavingsOpportunity m_savingsOpportunity;
     bool m_savingsOpportunityHasBeenSet = false;
+
+    SavingsOpportunity m_idleSavingsOpportunity;
+    bool m_idleSavingsOpportunityHasBeenSet = false;
+
+    SavingsOpportunity m_aggregatedSavingsOpportunity;
+    bool m_aggregatedSavingsOpportunityHasBeenSet = false;
 
     CurrentPerformanceRiskRatings m_currentPerformanceRiskRatings;
     bool m_currentPerformanceRiskRatingsHasBeenSet = false;

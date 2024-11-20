@@ -12,6 +12,7 @@
 #include <aws/cloudfront/model/AllowedMethods.h>
 #include <aws/cloudfront/model/LambdaFunctionAssociations.h>
 #include <aws/cloudfront/model/FunctionAssociations.h>
+#include <aws/cloudfront/model/GrpcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -336,6 +337,18 @@ namespace Model
     inline CacheBehavior& WithResponseHeadersPolicyId(Aws::String&& value) { SetResponseHeadersPolicyId(std::move(value)); return *this;}
     inline CacheBehavior& WithResponseHeadersPolicyId(const char* value) { SetResponseHeadersPolicyId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The gRPC configuration for your cache behavior.</p>
+     */
+    inline const GrpcConfig& GetGrpcConfig() const{ return m_grpcConfig; }
+    inline bool GrpcConfigHasBeenSet() const { return m_grpcConfigHasBeenSet; }
+    inline void SetGrpcConfig(const GrpcConfig& value) { m_grpcConfigHasBeenSet = true; m_grpcConfig = value; }
+    inline void SetGrpcConfig(GrpcConfig&& value) { m_grpcConfigHasBeenSet = true; m_grpcConfig = std::move(value); }
+    inline CacheBehavior& WithGrpcConfig(const GrpcConfig& value) { SetGrpcConfig(value); return *this;}
+    inline CacheBehavior& WithGrpcConfig(GrpcConfig&& value) { SetGrpcConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_pathPattern;
@@ -382,6 +395,9 @@ namespace Model
 
     Aws::String m_responseHeadersPolicyId;
     bool m_responseHeadersPolicyIdHasBeenSet = false;
+
+    GrpcConfig m_grpcConfig;
+    bool m_grpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -96,6 +96,15 @@ UnlockRuleResult& UnlockRuleResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("ExcludeResourceTags"))
+  {
+    Aws::Utils::Array<JsonView> excludeResourceTagsJsonList = jsonValue.GetArray("ExcludeResourceTags");
+    for(unsigned excludeResourceTagsIndex = 0; excludeResourceTagsIndex < excludeResourceTagsJsonList.GetLength(); ++excludeResourceTagsIndex)
+    {
+      m_excludeResourceTags.push_back(excludeResourceTagsJsonList[excludeResourceTagsIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

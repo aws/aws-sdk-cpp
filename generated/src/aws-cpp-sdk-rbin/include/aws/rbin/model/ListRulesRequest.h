@@ -80,8 +80,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the resource tags used to identify resources that are
-     * retained by the retention rule.</p>
+     * <p>[Tag-level retention rules only] Information about the resource tags used to
+     * identify resources that are retained by the retention rule.</p>
      */
     inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
@@ -105,6 +105,22 @@ namespace Model
     inline ListRulesRequest& WithLockState(const LockState& value) { SetLockState(value); return *this;}
     inline ListRulesRequest& WithLockState(LockState&& value) { SetLockState(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>[Region-level retention rules only] Information about the exclusion tags used
+     * to identify resources that are to be excluded, or ignored, by the retention
+     * rule.</p>
+     */
+    inline const Aws::Vector<ResourceTag>& GetExcludeResourceTags() const{ return m_excludeResourceTags; }
+    inline bool ExcludeResourceTagsHasBeenSet() const { return m_excludeResourceTagsHasBeenSet; }
+    inline void SetExcludeResourceTags(const Aws::Vector<ResourceTag>& value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags = value; }
+    inline void SetExcludeResourceTags(Aws::Vector<ResourceTag>&& value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags = std::move(value); }
+    inline ListRulesRequest& WithExcludeResourceTags(const Aws::Vector<ResourceTag>& value) { SetExcludeResourceTags(value); return *this;}
+    inline ListRulesRequest& WithExcludeResourceTags(Aws::Vector<ResourceTag>&& value) { SetExcludeResourceTags(std::move(value)); return *this;}
+    inline ListRulesRequest& AddExcludeResourceTags(const ResourceTag& value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags.push_back(value); return *this; }
+    inline ListRulesRequest& AddExcludeResourceTags(ResourceTag&& value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     int m_maxResults;
@@ -121,6 +137,9 @@ namespace Model
 
     LockState m_lockState;
     bool m_lockStateHasBeenSet = false;
+
+    Aws::Vector<ResourceTag> m_excludeResourceTags;
+    bool m_excludeResourceTagsHasBeenSet = false;
   };
 
 } // namespace Model

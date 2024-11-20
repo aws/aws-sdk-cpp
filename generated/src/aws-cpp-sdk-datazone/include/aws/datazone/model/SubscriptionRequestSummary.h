@@ -7,8 +7,9 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/datazone/model/SubscriptionRequestStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/SubscriptionRequestStatus.h>
+#include <aws/datazone/model/MetadataFormSummary.h>
 #include <aws/datazone/model/SubscribedListing.h>
 #include <aws/datazone/model/SubscribedPrincipal.h>
 #include <utility>
@@ -99,6 +100,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the existing subscription.</p>
+     */
+    inline const Aws::String& GetExistingSubscriptionId() const{ return m_existingSubscriptionId; }
+    inline bool ExistingSubscriptionIdHasBeenSet() const { return m_existingSubscriptionIdHasBeenSet; }
+    inline void SetExistingSubscriptionId(const Aws::String& value) { m_existingSubscriptionIdHasBeenSet = true; m_existingSubscriptionId = value; }
+    inline void SetExistingSubscriptionId(Aws::String&& value) { m_existingSubscriptionIdHasBeenSet = true; m_existingSubscriptionId = std::move(value); }
+    inline void SetExistingSubscriptionId(const char* value) { m_existingSubscriptionIdHasBeenSet = true; m_existingSubscriptionId.assign(value); }
+    inline SubscriptionRequestSummary& WithExistingSubscriptionId(const Aws::String& value) { SetExistingSubscriptionId(value); return *this;}
+    inline SubscriptionRequestSummary& WithExistingSubscriptionId(Aws::String&& value) { SetExistingSubscriptionId(std::move(value)); return *this;}
+    inline SubscriptionRequestSummary& WithExistingSubscriptionId(const char* value) { SetExistingSubscriptionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the subscription request.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -109,6 +124,20 @@ namespace Model
     inline SubscriptionRequestSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
     inline SubscriptionRequestSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
     inline SubscriptionRequestSummary& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The summary of the metadata forms.</p>
+     */
+    inline const Aws::Vector<MetadataFormSummary>& GetMetadataFormsSummary() const{ return m_metadataFormsSummary; }
+    inline bool MetadataFormsSummaryHasBeenSet() const { return m_metadataFormsSummaryHasBeenSet; }
+    inline void SetMetadataFormsSummary(const Aws::Vector<MetadataFormSummary>& value) { m_metadataFormsSummaryHasBeenSet = true; m_metadataFormsSummary = value; }
+    inline void SetMetadataFormsSummary(Aws::Vector<MetadataFormSummary>&& value) { m_metadataFormsSummaryHasBeenSet = true; m_metadataFormsSummary = std::move(value); }
+    inline SubscriptionRequestSummary& WithMetadataFormsSummary(const Aws::Vector<MetadataFormSummary>& value) { SetMetadataFormsSummary(value); return *this;}
+    inline SubscriptionRequestSummary& WithMetadataFormsSummary(Aws::Vector<MetadataFormSummary>&& value) { SetMetadataFormsSummary(std::move(value)); return *this;}
+    inline SubscriptionRequestSummary& AddMetadataFormsSummary(const MetadataFormSummary& value) { m_metadataFormsSummaryHasBeenSet = true; m_metadataFormsSummary.push_back(value); return *this; }
+    inline SubscriptionRequestSummary& AddMetadataFormsSummary(MetadataFormSummary&& value) { m_metadataFormsSummaryHasBeenSet = true; m_metadataFormsSummary.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -219,8 +248,14 @@ namespace Model
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
 
+    Aws::String m_existingSubscriptionId;
+    bool m_existingSubscriptionIdHasBeenSet = false;
+
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::Vector<MetadataFormSummary> m_metadataFormsSummary;
+    bool m_metadataFormsSummaryHasBeenSet = false;
 
     Aws::String m_requestReason;
     bool m_requestReasonHasBeenSet = false;

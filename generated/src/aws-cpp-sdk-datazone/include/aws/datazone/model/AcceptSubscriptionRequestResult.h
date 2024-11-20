@@ -7,8 +7,9 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/datazone/model/SubscriptionRequestStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/SubscriptionRequestStatus.h>
+#include <aws/datazone/model/FormOutput.h>
 #include <aws/datazone/model/SubscribedListing.h>
 #include <aws/datazone/model/SubscribedPrincipal.h>
 #include <utility>
@@ -91,6 +92,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the existing subscription.</p>
+     */
+    inline const Aws::String& GetExistingSubscriptionId() const{ return m_existingSubscriptionId; }
+    inline void SetExistingSubscriptionId(const Aws::String& value) { m_existingSubscriptionId = value; }
+    inline void SetExistingSubscriptionId(Aws::String&& value) { m_existingSubscriptionId = std::move(value); }
+    inline void SetExistingSubscriptionId(const char* value) { m_existingSubscriptionId.assign(value); }
+    inline AcceptSubscriptionRequestResult& WithExistingSubscriptionId(const Aws::String& value) { SetExistingSubscriptionId(value); return *this;}
+    inline AcceptSubscriptionRequestResult& WithExistingSubscriptionId(Aws::String&& value) { SetExistingSubscriptionId(std::move(value)); return *this;}
+    inline AcceptSubscriptionRequestResult& WithExistingSubscriptionId(const char* value) { SetExistingSubscriptionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the subscription request.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -100,6 +114,19 @@ namespace Model
     inline AcceptSubscriptionRequestResult& WithId(const Aws::String& value) { SetId(value); return *this;}
     inline AcceptSubscriptionRequestResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
     inline AcceptSubscriptionRequestResult& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The metadata form in the subscription request.</p>
+     */
+    inline const Aws::Vector<FormOutput>& GetMetadataForms() const{ return m_metadataForms; }
+    inline void SetMetadataForms(const Aws::Vector<FormOutput>& value) { m_metadataForms = value; }
+    inline void SetMetadataForms(Aws::Vector<FormOutput>&& value) { m_metadataForms = std::move(value); }
+    inline AcceptSubscriptionRequestResult& WithMetadataForms(const Aws::Vector<FormOutput>& value) { SetMetadataForms(value); return *this;}
+    inline AcceptSubscriptionRequestResult& WithMetadataForms(Aws::Vector<FormOutput>&& value) { SetMetadataForms(std::move(value)); return *this;}
+    inline AcceptSubscriptionRequestResult& AddMetadataForms(const FormOutput& value) { m_metadataForms.push_back(value); return *this; }
+    inline AcceptSubscriptionRequestResult& AddMetadataForms(FormOutput&& value) { m_metadataForms.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -211,7 +238,11 @@ namespace Model
 
     Aws::String m_domainId;
 
+    Aws::String m_existingSubscriptionId;
+
     Aws::String m_id;
+
+    Aws::Vector<FormOutput> m_metadataForms;
 
     Aws::String m_requestReason;
 

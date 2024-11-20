@@ -37,6 +37,7 @@
 #include <aws/elasticloadbalancingv2/model/DeleteTrustStoreRequest.h>
 #include <aws/elasticloadbalancingv2/model/DeregisterTargetsRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeAccountLimitsRequest.h>
+#include <aws/elasticloadbalancingv2/model/DescribeCapacityReservationRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenerAttributesRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenerCertificatesRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenersRequest.h>
@@ -54,6 +55,7 @@
 #include <aws/elasticloadbalancingv2/model/GetResourcePolicyRequest.h>
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreCaCertificatesBundleRequest.h>
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreRevocationContentRequest.h>
+#include <aws/elasticloadbalancingv2/model/ModifyCapacityReservationRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyListenerRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyListenerAttributesRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyLoadBalancerAttributesRequest.h>
@@ -651,6 +653,32 @@ DescribeAccountLimitsOutcome ElasticLoadBalancingv2Client::DescribeAccountLimits
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeCapacityReservationOutcome ElasticLoadBalancingv2Client::DescribeCapacityReservation(const DescribeCapacityReservationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeCapacityReservation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCapacityReservation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeCapacityReservation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeCapacityReservation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeCapacityReservationOutcome>(
+    [&]()-> DescribeCapacityReservationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeCapacityReservation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return DescribeCapacityReservationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeListenerAttributesOutcome ElasticLoadBalancingv2Client::DescribeListenerAttributes(const DescribeListenerAttributesRequest& request) const
 {
   AWS_OPERATION_GUARD(DescribeListenerAttributes);
@@ -1087,6 +1115,32 @@ GetTrustStoreRevocationContentOutcome ElasticLoadBalancingv2Client::GetTrustStor
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTrustStoreRevocationContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return GetTrustStoreRevocationContentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ModifyCapacityReservationOutcome ElasticLoadBalancingv2Client::ModifyCapacityReservation(const ModifyCapacityReservationRequest& request) const
+{
+  AWS_OPERATION_GUARD(ModifyCapacityReservation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyCapacityReservation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ModifyCapacityReservation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ModifyCapacityReservation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ModifyCapacityReservationOutcome>(
+    [&]()-> ModifyCapacityReservationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyCapacityReservation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return ModifyCapacityReservationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

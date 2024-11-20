@@ -82,6 +82,29 @@ namespace Model
 
     ///@{
     /**
+     * <p>Set to true if AWS HealthOmics found a matching entry in the run cache for
+     * this task.</p>
+     */
+    inline bool GetCacheHit() const{ return m_cacheHit; }
+    inline void SetCacheHit(bool value) { m_cacheHit = value; }
+    inline GetRunTaskResult& WithCacheHit(bool value) { SetCacheHit(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The S3 URI of the cache location.</p>
+     */
+    inline const Aws::String& GetCacheS3Uri() const{ return m_cacheS3Uri; }
+    inline void SetCacheS3Uri(const Aws::String& value) { m_cacheS3Uri = value; }
+    inline void SetCacheS3Uri(Aws::String&& value) { m_cacheS3Uri = std::move(value); }
+    inline void SetCacheS3Uri(const char* value) { m_cacheS3Uri.assign(value); }
+    inline GetRunTaskResult& WithCacheS3Uri(const Aws::String& value) { SetCacheS3Uri(value); return *this;}
+    inline GetRunTaskResult& WithCacheS3Uri(Aws::String&& value) { SetCacheS3Uri(std::move(value)); return *this;}
+    inline GetRunTaskResult& WithCacheS3Uri(const char* value) { SetCacheS3Uri(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The task's memory use in gigabytes.</p>
      */
     inline int GetMemory() const{ return m_memory; }
@@ -202,6 +225,10 @@ namespace Model
     Aws::String m_name;
 
     int m_cpus;
+
+    bool m_cacheHit;
+
+    Aws::String m_cacheS3Uri;
 
     int m_memory;
 

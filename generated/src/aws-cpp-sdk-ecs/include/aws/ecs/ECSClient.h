@@ -387,7 +387,7 @@ namespace ECS
          * remaining capacity providers. Only capacity providers that aren't associated
          * with a cluster can be deleted. To remove a capacity provider from a cluster, you
          * can either use <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProviderProviders.html">PutCapacityProviderProviders</a>
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
          * or delete the cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">AWS
          * API Reference</a></p>

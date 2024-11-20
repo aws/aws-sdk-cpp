@@ -8,6 +8,8 @@
 #include <aws/mediapackagev2/Mediapackagev2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackagev2/model/InputType.h>
+#include <aws/mediapackagev2/model/InputSwitchConfiguration.h>
+#include <aws/mediapackagev2/model/OutputHeaderConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -118,6 +120,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>The configuration for input switching based on the media quality confidence
+     * score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid
+     * only when <code>InputType</code> is <code>CMAF</code>.</p>
+     */
+    inline const InputSwitchConfiguration& GetInputSwitchConfiguration() const{ return m_inputSwitchConfiguration; }
+    inline bool InputSwitchConfigurationHasBeenSet() const { return m_inputSwitchConfigurationHasBeenSet; }
+    inline void SetInputSwitchConfiguration(const InputSwitchConfiguration& value) { m_inputSwitchConfigurationHasBeenSet = true; m_inputSwitchConfiguration = value; }
+    inline void SetInputSwitchConfiguration(InputSwitchConfiguration&& value) { m_inputSwitchConfigurationHasBeenSet = true; m_inputSwitchConfiguration = std::move(value); }
+    inline CreateChannelRequest& WithInputSwitchConfiguration(const InputSwitchConfiguration& value) { SetInputSwitchConfiguration(value); return *this;}
+    inline CreateChannelRequest& WithInputSwitchConfiguration(InputSwitchConfiguration&& value) { SetInputSwitchConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The settings for what common media server data (CMSD) headers AWS Elemental
+     * MediaPackage includes in responses to the CDN. This setting is valid only when
+     * <code>InputType</code> is <code>CMAF</code>.</p>
+     */
+    inline const OutputHeaderConfiguration& GetOutputHeaderConfiguration() const{ return m_outputHeaderConfiguration; }
+    inline bool OutputHeaderConfigurationHasBeenSet() const { return m_outputHeaderConfigurationHasBeenSet; }
+    inline void SetOutputHeaderConfiguration(const OutputHeaderConfiguration& value) { m_outputHeaderConfigurationHasBeenSet = true; m_outputHeaderConfiguration = value; }
+    inline void SetOutputHeaderConfiguration(OutputHeaderConfiguration&& value) { m_outputHeaderConfigurationHasBeenSet = true; m_outputHeaderConfiguration = std::move(value); }
+    inline CreateChannelRequest& WithOutputHeaderConfiguration(const OutputHeaderConfiguration& value) { SetOutputHeaderConfiguration(value); return *this;}
+    inline CreateChannelRequest& WithOutputHeaderConfiguration(OutputHeaderConfiguration&& value) { SetOutputHeaderConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A comma-separated list of tag key:value pairs that you define. For
      * example:</p> <p> <code>"Key1": "Value1",</code> </p> <p> <code>"Key2":
      * "Value2"</code> </p>
@@ -152,6 +182,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    InputSwitchConfiguration m_inputSwitchConfiguration;
+    bool m_inputSwitchConfigurationHasBeenSet = false;
+
+    OutputHeaderConfiguration m_outputHeaderConfiguration;
+    bool m_outputHeaderConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

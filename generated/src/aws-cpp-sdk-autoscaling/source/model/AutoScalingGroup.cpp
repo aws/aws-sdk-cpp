@@ -68,7 +68,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_trafficSourcesHasBeenSet(false),
     m_instanceMaintenancePolicyHasBeenSet(false),
     m_availabilityZoneDistributionHasBeenSet(false),
-    m_availabilityZoneImpairmentPolicyHasBeenSet(false)
+    m_availabilityZoneImpairmentPolicyHasBeenSet(false),
+    m_capacityReservationSpecificationHasBeenSet(false)
 {
 }
 
@@ -360,6 +361,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_availabilityZoneImpairmentPolicy = availabilityZoneImpairmentPolicyNode;
       m_availabilityZoneImpairmentPolicyHasBeenSet = true;
     }
+    XmlNode capacityReservationSpecificationNode = resultNode.FirstChild("CapacityReservationSpecification");
+    if(!capacityReservationSpecificationNode.IsNull())
+    {
+      m_capacityReservationSpecification = capacityReservationSpecificationNode;
+      m_capacityReservationSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -610,6 +617,13 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       m_availabilityZoneImpairmentPolicy.OutputToStream(oStream, availabilityZoneImpairmentPolicyLocationAndMemberSs.str().c_str());
   }
 
+  if(m_capacityReservationSpecificationHasBeenSet)
+  {
+      Aws::StringStream capacityReservationSpecificationLocationAndMemberSs;
+      capacityReservationSpecificationLocationAndMemberSs << location << index << locationValue << ".CapacityReservationSpecification";
+      m_capacityReservationSpecification.OutputToStream(oStream, capacityReservationSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -819,6 +833,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       Aws::String availabilityZoneImpairmentPolicyLocationAndMember(location);
       availabilityZoneImpairmentPolicyLocationAndMember += ".AvailabilityZoneImpairmentPolicy";
       m_availabilityZoneImpairmentPolicy.OutputToStream(oStream, availabilityZoneImpairmentPolicyLocationAndMember.c_str());
+  }
+  if(m_capacityReservationSpecificationHasBeenSet)
+  {
+      Aws::String capacityReservationSpecificationLocationAndMember(location);
+      capacityReservationSpecificationLocationAndMember += ".CapacityReservationSpecification";
+      m_capacityReservationSpecification.OutputToStream(oStream, capacityReservationSpecificationLocationAndMember.c_str());
   }
 }
 

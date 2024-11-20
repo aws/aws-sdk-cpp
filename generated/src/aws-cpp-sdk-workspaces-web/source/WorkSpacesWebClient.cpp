@@ -22,12 +22,14 @@
 #include <aws/workspaces-web/WorkSpacesWebErrorMarshaller.h>
 #include <aws/workspaces-web/WorkSpacesWebEndpointProvider.h>
 #include <aws/workspaces-web/model/AssociateBrowserSettingsRequest.h>
+#include <aws/workspaces-web/model/AssociateDataProtectionSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateTrustStoreRequest.h>
 #include <aws/workspaces-web/model/AssociateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateUserSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateBrowserSettingsRequest.h>
+#include <aws/workspaces-web/model/CreateDataProtectionSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateIdentityProviderRequest.h>
 #include <aws/workspaces-web/model/CreateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateNetworkSettingsRequest.h>
@@ -36,6 +38,7 @@
 #include <aws/workspaces-web/model/CreateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateUserSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteBrowserSettingsRequest.h>
+#include <aws/workspaces-web/model/DeleteDataProtectionSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteIdentityProviderRequest.h>
 #include <aws/workspaces-web/model/DeleteIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteNetworkSettingsRequest.h>
@@ -44,6 +47,7 @@
 #include <aws/workspaces-web/model/DeleteUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteUserSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateBrowserSettingsRequest.h>
+#include <aws/workspaces-web/model/DisassociateDataProtectionSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateTrustStoreRequest.h>
@@ -51,6 +55,7 @@
 #include <aws/workspaces-web/model/DisassociateUserSettingsRequest.h>
 #include <aws/workspaces-web/model/ExpireSessionRequest.h>
 #include <aws/workspaces-web/model/GetBrowserSettingsRequest.h>
+#include <aws/workspaces-web/model/GetDataProtectionSettingsRequest.h>
 #include <aws/workspaces-web/model/GetIdentityProviderRequest.h>
 #include <aws/workspaces-web/model/GetIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/GetNetworkSettingsRequest.h>
@@ -62,6 +67,7 @@
 #include <aws/workspaces-web/model/GetUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/GetUserSettingsRequest.h>
 #include <aws/workspaces-web/model/ListBrowserSettingsRequest.h>
+#include <aws/workspaces-web/model/ListDataProtectionSettingsRequest.h>
 #include <aws/workspaces-web/model/ListIdentityProvidersRequest.h>
 #include <aws/workspaces-web/model/ListIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/ListNetworkSettingsRequest.h>
@@ -75,6 +81,7 @@
 #include <aws/workspaces-web/model/TagResourceRequest.h>
 #include <aws/workspaces-web/model/UntagResourceRequest.h>
 #include <aws/workspaces-web/model/UpdateBrowserSettingsRequest.h>
+#include <aws/workspaces-web/model/UpdateDataProtectionSettingsRequest.h>
 #include <aws/workspaces-web/model/UpdateIdentityProviderRequest.h>
 #include <aws/workspaces-web/model/UpdateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/UpdateNetworkSettingsRequest.h>
@@ -258,6 +265,45 @@ AssociateBrowserSettingsOutcome WorkSpacesWebClient::AssociateBrowserSettings(co
       endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
       endpointResolutionOutcome.GetResult().AddPathSegments("/browserSettings");
       return AssociateBrowserSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+AssociateDataProtectionSettingsOutcome WorkSpacesWebClient::AssociateDataProtectionSettings(const AssociateDataProtectionSettingsRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateDataProtectionSettings);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataProtectionSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateDataProtectionSettings", "Required field: DataProtectionSettingsArn, is not set");
+    return AssociateDataProtectionSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataProtectionSettingsArn]", false));
+  }
+  if (!request.PortalArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateDataProtectionSettings", "Required field: PortalArn, is not set");
+    return AssociateDataProtectionSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AssociateDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateDataProtectionSettings",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AssociateDataProtectionSettingsOutcome>(
+    [&]()-> AssociateDataProtectionSettingsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/portals/");
+      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataProtectionSettings");
+      return AssociateDataProtectionSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -486,6 +532,33 @@ CreateBrowserSettingsOutcome WorkSpacesWebClient::CreateBrowserSettings(const Cr
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateDataProtectionSettingsOutcome WorkSpacesWebClient::CreateDataProtectionSettings(const CreateDataProtectionSettingsRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateDataProtectionSettings);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateDataProtectionSettings",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateDataProtectionSettingsOutcome>(
+    [&]()-> CreateDataProtectionSettingsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataProtectionSettings");
+      return CreateDataProtectionSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateIdentityProviderOutcome WorkSpacesWebClient::CreateIdentityProvider(const CreateIdentityProviderRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateIdentityProvider);
@@ -702,6 +775,39 @@ DeleteBrowserSettingsOutcome WorkSpacesWebClient::DeleteBrowserSettings(const De
       endpointResolutionOutcome.GetResult().AddPathSegments("/browserSettings/");
       endpointResolutionOutcome.GetResult().AddPathSegments(request.GetBrowserSettingsArn());
       return DeleteBrowserSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteDataProtectionSettingsOutcome WorkSpacesWebClient::DeleteDataProtectionSettings(const DeleteDataProtectionSettingsRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteDataProtectionSettings);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataProtectionSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDataProtectionSettings", "Required field: DataProtectionSettingsArn, is not set");
+    return DeleteDataProtectionSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataProtectionSettingsArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteDataProtectionSettings",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteDataProtectionSettingsOutcome>(
+    [&]()-> DeleteDataProtectionSettingsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataProtectionSettings/");
+      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetDataProtectionSettingsArn());
+      return DeleteDataProtectionSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -973,6 +1079,40 @@ DisassociateBrowserSettingsOutcome WorkSpacesWebClient::DisassociateBrowserSetti
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DisassociateDataProtectionSettingsOutcome WorkSpacesWebClient::DisassociateDataProtectionSettings(const DisassociateDataProtectionSettingsRequest& request) const
+{
+  AWS_OPERATION_GUARD(DisassociateDataProtectionSettings);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PortalArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateDataProtectionSettings", "Required field: PortalArn, is not set");
+    return DisassociateDataProtectionSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisassociateDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateDataProtectionSettings",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisassociateDataProtectionSettingsOutcome>(
+    [&]()-> DisassociateDataProtectionSettingsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/portals/");
+      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataProtectionSettings");
+      return DisassociateDataProtectionSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DisassociateIpAccessSettingsOutcome WorkSpacesWebClient::DisassociateIpAccessSettings(const DisassociateIpAccessSettingsRequest& request) const
 {
   AWS_OPERATION_GUARD(DisassociateIpAccessSettings);
@@ -1210,6 +1350,39 @@ GetBrowserSettingsOutcome WorkSpacesWebClient::GetBrowserSettings(const GetBrows
       endpointResolutionOutcome.GetResult().AddPathSegments("/browserSettings/");
       endpointResolutionOutcome.GetResult().AddPathSegments(request.GetBrowserSettingsArn());
       return GetBrowserSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetDataProtectionSettingsOutcome WorkSpacesWebClient::GetDataProtectionSettings(const GetDataProtectionSettingsRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetDataProtectionSettings);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataProtectionSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDataProtectionSettings", "Required field: DataProtectionSettingsArn, is not set");
+    return GetDataProtectionSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataProtectionSettingsArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDataProtectionSettings",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDataProtectionSettingsOutcome>(
+    [&]()-> GetDataProtectionSettingsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataProtectionSettings/");
+      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetDataProtectionSettingsArn());
+      return GetDataProtectionSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1580,6 +1753,33 @@ ListBrowserSettingsOutcome WorkSpacesWebClient::ListBrowserSettings(const ListBr
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBrowserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/browserSettings");
       return ListBrowserSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDataProtectionSettingsOutcome WorkSpacesWebClient::ListDataProtectionSettings(const ListDataProtectionSettingsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListDataProtectionSettings);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDataProtectionSettings",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDataProtectionSettingsOutcome>(
+    [&]()-> ListDataProtectionSettingsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataProtectionSettings");
+      return ListDataProtectionSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1984,6 +2184,39 @@ UpdateBrowserSettingsOutcome WorkSpacesWebClient::UpdateBrowserSettings(const Up
       endpointResolutionOutcome.GetResult().AddPathSegments("/browserSettings/");
       endpointResolutionOutcome.GetResult().AddPathSegments(request.GetBrowserSettingsArn());
       return UpdateBrowserSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateDataProtectionSettingsOutcome WorkSpacesWebClient::UpdateDataProtectionSettings(const UpdateDataProtectionSettingsRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateDataProtectionSettings);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataProtectionSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDataProtectionSettings", "Required field: DataProtectionSettingsArn, is not set");
+    return UpdateDataProtectionSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataProtectionSettingsArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateDataProtectionSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateDataProtectionSettings",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateDataProtectionSettingsOutcome>(
+    [&]()-> UpdateDataProtectionSettingsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDataProtectionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataProtectionSettings/");
+      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetDataProtectionSettingsArn());
+      return UpdateDataProtectionSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

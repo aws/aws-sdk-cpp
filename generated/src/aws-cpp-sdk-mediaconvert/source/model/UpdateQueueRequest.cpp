@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateQueueRequest::UpdateQueueRequest() : 
+    m_concurrentJobs(0),
+    m_concurrentJobsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_reservationPlanSettingsHasBeenSet(false),
@@ -24,6 +26,12 @@ UpdateQueueRequest::UpdateQueueRequest() :
 Aws::String UpdateQueueRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_concurrentJobsHasBeenSet)
+  {
+   payload.WithInteger("concurrentJobs", m_concurrentJobs);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

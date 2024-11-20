@@ -121,9 +121,10 @@ namespace Model
      * Protocols for Amazon WorkSpaces</a>.</p>  <ul> <li> <p>Only available for
      * WorkSpaces created with PCoIP bundles.</p> </li> <li> <p>The
      * <code>Protocols</code> property is case sensitive. Ensure you use
-     * <code>PCOIP</code> or <code>WSP</code>.</p> </li> <li> <p>Unavailable for
-     * Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
-     * GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul> 
+     * <code>PCOIP</code> or <code>DCV</code> (formerly WSP).</p> </li> <li>
+     * <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles
+     * (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul>
+     * 
      */
     inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }

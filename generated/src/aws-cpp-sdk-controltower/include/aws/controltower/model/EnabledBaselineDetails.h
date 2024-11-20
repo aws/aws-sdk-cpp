@@ -100,6 +100,23 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>An ARN that represents the parent <code>EnabledBaseline</code> at the
+     * Organizational Unit (OU) level, from which the child
+     * <code>EnabledBaseline</code> inherits its configuration. The value is returned
+     * by <code>GetEnabledBaseline</code>.</p>
+     */
+    inline const Aws::String& GetParentIdentifier() const{ return m_parentIdentifier; }
+    inline bool ParentIdentifierHasBeenSet() const { return m_parentIdentifierHasBeenSet; }
+    inline void SetParentIdentifier(const Aws::String& value) { m_parentIdentifierHasBeenSet = true; m_parentIdentifier = value; }
+    inline void SetParentIdentifier(Aws::String&& value) { m_parentIdentifierHasBeenSet = true; m_parentIdentifier = std::move(value); }
+    inline void SetParentIdentifier(const char* value) { m_parentIdentifierHasBeenSet = true; m_parentIdentifier.assign(value); }
+    inline EnabledBaselineDetails& WithParentIdentifier(const Aws::String& value) { SetParentIdentifier(value); return *this;}
+    inline EnabledBaselineDetails& WithParentIdentifier(Aws::String&& value) { SetParentIdentifier(std::move(value)); return *this;}
+    inline EnabledBaselineDetails& WithParentIdentifier(const char* value) { SetParentIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const EnablementStatusSummary& GetStatusSummary() const{ return m_statusSummary; }
     inline bool StatusSummaryHasBeenSet() const { return m_statusSummaryHasBeenSet; }
@@ -135,6 +152,9 @@ namespace Model
 
     Aws::Vector<EnabledBaselineParameterSummary> m_parameters;
     bool m_parametersHasBeenSet = false;
+
+    Aws::String m_parentIdentifier;
+    bool m_parentIdentifierHasBeenSet = false;
 
     EnablementStatusSummary m_statusSummary;
     bool m_statusSummaryHasBeenSet = false;

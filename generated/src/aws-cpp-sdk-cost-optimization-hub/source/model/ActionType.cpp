@@ -26,6 +26,7 @@ namespace Aws
         static const int PurchaseSavingsPlans_HASH = HashingUtils::HashString("PurchaseSavingsPlans");
         static const int PurchaseReservedInstances_HASH = HashingUtils::HashString("PurchaseReservedInstances");
         static const int MigrateToGraviton_HASH = HashingUtils::HashString("MigrateToGraviton");
+        static const int Delete_HASH = HashingUtils::HashString("Delete");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ActionType::MigrateToGraviton;
           }
+          else if (hashCode == Delete_HASH)
+          {
+            return ActionType::Delete;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "PurchaseReservedInstances";
           case ActionType::MigrateToGraviton:
             return "MigrateToGraviton";
+          case ActionType::Delete:
+            return "Delete";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

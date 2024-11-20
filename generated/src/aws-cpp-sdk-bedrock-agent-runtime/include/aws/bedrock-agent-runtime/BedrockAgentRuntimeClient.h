@@ -182,9 +182,11 @@ namespace BedrockAgentRuntime
          * output of each node as a stream. If there's an error, the error is returned. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html">Test
-         * a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.</p>  <p>The
-         * CLI doesn't support streaming operations in Amazon Bedrock, including
-         * <code>InvokeFlow</code>.</p> <p><h3>See Also:</h3>   <a
+         * a flow in Amazon Bedrock</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p>  <p>The CLI doesn't support streaming
+         * operations in Amazon Bedrock, including <code>InvokeFlow</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeFlow">AWS
          * API Reference</a></p>
          */
@@ -206,6 +208,36 @@ namespace BedrockAgentRuntime
         void InvokeFlowAsync(InvokeFlowRequestT& request, const InvokeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentRuntimeClient::InvokeFlow, request, handler, context);
+        }
+
+        /**
+         * <p>Optimizes a prompt for the task that you specify. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-optimize.html">Optimize
+         * a prompt</a> in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+         * Bedrock User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/OptimizePrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::OptimizePromptOutcome OptimizePrompt(Model::OptimizePromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for OptimizePrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename OptimizePromptRequestT = Model::OptimizePromptRequest>
+        Model::OptimizePromptOutcomeCallable OptimizePromptCallable(OptimizePromptRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::OptimizePrompt, request);
+        }
+
+        /**
+         * An Async wrapper for OptimizePrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename OptimizePromptRequestT = Model::OptimizePromptRequest>
+        void OptimizePromptAsync(OptimizePromptRequestT& request, const OptimizePromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::OptimizePrompt, request, handler, context);
         }
 
         /**

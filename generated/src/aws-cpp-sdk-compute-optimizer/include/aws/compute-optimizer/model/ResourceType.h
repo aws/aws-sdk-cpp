@@ -23,7 +23,8 @@ namespace Model
     NotApplicable,
     EcsService,
     License,
-    RdsDBInstance
+    RdsDBInstance,
+    Idle
   };
 
 namespace ResourceTypeMapper

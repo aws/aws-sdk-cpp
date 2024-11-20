@@ -35,6 +35,7 @@ namespace Aws
         static const int CurrentInstanceOnDemandHourlyPrice_HASH = HashingUtils::HashString("CurrentInstanceOnDemandHourlyPrice");
         static const int CurrentStorageOnDemandMonthlyPrice_HASH = HashingUtils::HashString("CurrentStorageOnDemandMonthlyPrice");
         static const int LookbackPeriodInDays_HASH = HashingUtils::HashString("LookbackPeriodInDays");
+        static const int CurrentInstancePerformanceRisk_HASH = HashingUtils::HashString("CurrentInstancePerformanceRisk");
         static const int UtilizationMetricsCpuMaximum_HASH = HashingUtils::HashString("UtilizationMetricsCpuMaximum");
         static const int UtilizationMetricsMemoryMaximum_HASH = HashingUtils::HashString("UtilizationMetricsMemoryMaximum");
         static const int UtilizationMetricsEBSVolumeStorageSpaceUtilizationMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEBSVolumeStorageSpaceUtilizationMaximum");
@@ -45,6 +46,14 @@ namespace Aws
         static const int UtilizationMetricsEBSVolumeReadThroughputMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEBSVolumeReadThroughputMaximum");
         static const int UtilizationMetricsEBSVolumeWriteThroughputMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEBSVolumeWriteThroughputMaximum");
         static const int UtilizationMetricsDatabaseConnectionsMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDatabaseConnectionsMaximum");
+        static const int UtilizationMetricsStorageNetworkReceiveThroughputMaximum_HASH = HashingUtils::HashString("UtilizationMetricsStorageNetworkReceiveThroughputMaximum");
+        static const int UtilizationMetricsStorageNetworkTransmitThroughputMaximum_HASH = HashingUtils::HashString("UtilizationMetricsStorageNetworkTransmitThroughputMaximum");
+        static const int UtilizationMetricsAuroraMemoryHealthStateMaximum_HASH = HashingUtils::HashString("UtilizationMetricsAuroraMemoryHealthStateMaximum");
+        static const int UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum_HASH = HashingUtils::HashString("UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum");
+        static const int UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum_HASH = HashingUtils::HashString("UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum");
+        static const int UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum_HASH = HashingUtils::HashString("UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum");
+        static const int UtilizationMetricsReadIOPSEphemeralStorageMaximum_HASH = HashingUtils::HashString("UtilizationMetricsReadIOPSEphemeralStorageMaximum");
+        static const int UtilizationMetricsWriteIOPSEphemeralStorageMaximum_HASH = HashingUtils::HashString("UtilizationMetricsWriteIOPSEphemeralStorageMaximum");
         static const int InstanceFinding_HASH = HashingUtils::HashString("InstanceFinding");
         static const int InstanceFindingReasonCodes_HASH = HashingUtils::HashString("InstanceFindingReasonCodes");
         static const int StorageFinding_HASH = HashingUtils::HashString("StorageFinding");
@@ -79,6 +88,8 @@ namespace Aws
         static const int EffectiveRecommendationPreferencesSavingsEstimationMode_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesSavingsEstimationMode");
         static const int LastRefreshTimestamp_HASH = HashingUtils::HashString("LastRefreshTimestamp");
         static const int Tags_HASH = HashingUtils::HashString("Tags");
+        static const int DBClusterIdentifier_HASH = HashingUtils::HashString("DBClusterIdentifier");
+        static const int PromotionTier_HASH = HashingUtils::HashString("PromotionTier");
 
 
         ExportableRDSDBField GetExportableRDSDBFieldForName(const Aws::String& name)
@@ -144,6 +155,10 @@ namespace Aws
           {
             return ExportableRDSDBField::LookbackPeriodInDays;
           }
+          else if (hashCode == CurrentInstancePerformanceRisk_HASH)
+          {
+            return ExportableRDSDBField::CurrentInstancePerformanceRisk;
+          }
           else if (hashCode == UtilizationMetricsCpuMaximum_HASH)
           {
             return ExportableRDSDBField::UtilizationMetricsCpuMaximum;
@@ -183,6 +198,38 @@ namespace Aws
           else if (hashCode == UtilizationMetricsDatabaseConnectionsMaximum_HASH)
           {
             return ExportableRDSDBField::UtilizationMetricsDatabaseConnectionsMaximum;
+          }
+          else if (hashCode == UtilizationMetricsStorageNetworkReceiveThroughputMaximum_HASH)
+          {
+            return ExportableRDSDBField::UtilizationMetricsStorageNetworkReceiveThroughputMaximum;
+          }
+          else if (hashCode == UtilizationMetricsStorageNetworkTransmitThroughputMaximum_HASH)
+          {
+            return ExportableRDSDBField::UtilizationMetricsStorageNetworkTransmitThroughputMaximum;
+          }
+          else if (hashCode == UtilizationMetricsAuroraMemoryHealthStateMaximum_HASH)
+          {
+            return ExportableRDSDBField::UtilizationMetricsAuroraMemoryHealthStateMaximum;
+          }
+          else if (hashCode == UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum_HASH)
+          {
+            return ExportableRDSDBField::UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum;
+          }
+          else if (hashCode == UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum_HASH)
+          {
+            return ExportableRDSDBField::UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum;
+          }
+          else if (hashCode == UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum_HASH)
+          {
+            return ExportableRDSDBField::UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum;
+          }
+          else if (hashCode == UtilizationMetricsReadIOPSEphemeralStorageMaximum_HASH)
+          {
+            return ExportableRDSDBField::UtilizationMetricsReadIOPSEphemeralStorageMaximum;
+          }
+          else if (hashCode == UtilizationMetricsWriteIOPSEphemeralStorageMaximum_HASH)
+          {
+            return ExportableRDSDBField::UtilizationMetricsWriteIOPSEphemeralStorageMaximum;
           }
           else if (hashCode == InstanceFinding_HASH)
           {
@@ -320,6 +367,14 @@ namespace Aws
           {
             return ExportableRDSDBField::Tags;
           }
+          else if (hashCode == DBClusterIdentifier_HASH)
+          {
+            return ExportableRDSDBField::DBClusterIdentifier;
+          }
+          else if (hashCode == PromotionTier_HASH)
+          {
+            return ExportableRDSDBField::PromotionTier;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -366,6 +421,8 @@ namespace Aws
             return "CurrentStorageOnDemandMonthlyPrice";
           case ExportableRDSDBField::LookbackPeriodInDays:
             return "LookbackPeriodInDays";
+          case ExportableRDSDBField::CurrentInstancePerformanceRisk:
+            return "CurrentInstancePerformanceRisk";
           case ExportableRDSDBField::UtilizationMetricsCpuMaximum:
             return "UtilizationMetricsCpuMaximum";
           case ExportableRDSDBField::UtilizationMetricsMemoryMaximum:
@@ -386,6 +443,22 @@ namespace Aws
             return "UtilizationMetricsEBSVolumeWriteThroughputMaximum";
           case ExportableRDSDBField::UtilizationMetricsDatabaseConnectionsMaximum:
             return "UtilizationMetricsDatabaseConnectionsMaximum";
+          case ExportableRDSDBField::UtilizationMetricsStorageNetworkReceiveThroughputMaximum:
+            return "UtilizationMetricsStorageNetworkReceiveThroughputMaximum";
+          case ExportableRDSDBField::UtilizationMetricsStorageNetworkTransmitThroughputMaximum:
+            return "UtilizationMetricsStorageNetworkTransmitThroughputMaximum";
+          case ExportableRDSDBField::UtilizationMetricsAuroraMemoryHealthStateMaximum:
+            return "UtilizationMetricsAuroraMemoryHealthStateMaximum";
+          case ExportableRDSDBField::UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum:
+            return "UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum";
+          case ExportableRDSDBField::UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum:
+            return "UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum";
+          case ExportableRDSDBField::UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum:
+            return "UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum";
+          case ExportableRDSDBField::UtilizationMetricsReadIOPSEphemeralStorageMaximum:
+            return "UtilizationMetricsReadIOPSEphemeralStorageMaximum";
+          case ExportableRDSDBField::UtilizationMetricsWriteIOPSEphemeralStorageMaximum:
+            return "UtilizationMetricsWriteIOPSEphemeralStorageMaximum";
           case ExportableRDSDBField::InstanceFinding:
             return "InstanceFinding";
           case ExportableRDSDBField::InstanceFindingReasonCodes:
@@ -454,6 +527,10 @@ namespace Aws
             return "LastRefreshTimestamp";
           case ExportableRDSDBField::Tags:
             return "Tags";
+          case ExportableRDSDBField::DBClusterIdentifier:
+            return "DBClusterIdentifier";
+          case ExportableRDSDBField::PromotionTier:
+            return "PromotionTier";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

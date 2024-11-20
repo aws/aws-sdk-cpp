@@ -23,6 +23,7 @@ namespace Aws
         static const int intel_HASH = HashingUtils::HashString("intel");
         static const int amd_HASH = HashingUtils::HashString("amd");
         static const int amazon_web_services_HASH = HashingUtils::HashString("amazon-web-services");
+        static const int apple_HASH = HashingUtils::HashString("apple");
 
 
         CpuManufacturer GetCpuManufacturerForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == amazon_web_services_HASH)
           {
             return CpuManufacturer::amazon_web_services;
+          }
+          else if (hashCode == apple_HASH)
+          {
+            return CpuManufacturer::apple;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "amd";
           case CpuManufacturer::amazon_web_services:
             return "amazon-web-services";
+          case CpuManufacturer::apple:
+            return "apple";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

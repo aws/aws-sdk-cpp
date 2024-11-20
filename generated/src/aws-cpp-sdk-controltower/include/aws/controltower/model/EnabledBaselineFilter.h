@@ -58,6 +58,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>An optional filter that sets up a list of <code>parentIdentifiers</code> to
+     * filter the results of the <code>ListEnabledBaseline</code> output.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetParentIdentifiers() const{ return m_parentIdentifiers; }
+    inline bool ParentIdentifiersHasBeenSet() const { return m_parentIdentifiersHasBeenSet; }
+    inline void SetParentIdentifiers(const Aws::Vector<Aws::String>& value) { m_parentIdentifiersHasBeenSet = true; m_parentIdentifiers = value; }
+    inline void SetParentIdentifiers(Aws::Vector<Aws::String>&& value) { m_parentIdentifiersHasBeenSet = true; m_parentIdentifiers = std::move(value); }
+    inline EnabledBaselineFilter& WithParentIdentifiers(const Aws::Vector<Aws::String>& value) { SetParentIdentifiers(value); return *this;}
+    inline EnabledBaselineFilter& WithParentIdentifiers(Aws::Vector<Aws::String>&& value) { SetParentIdentifiers(std::move(value)); return *this;}
+    inline EnabledBaselineFilter& AddParentIdentifiers(const Aws::String& value) { m_parentIdentifiersHasBeenSet = true; m_parentIdentifiers.push_back(value); return *this; }
+    inline EnabledBaselineFilter& AddParentIdentifiers(Aws::String&& value) { m_parentIdentifiersHasBeenSet = true; m_parentIdentifiers.push_back(std::move(value)); return *this; }
+    inline EnabledBaselineFilter& AddParentIdentifiers(const char* value) { m_parentIdentifiersHasBeenSet = true; m_parentIdentifiers.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Identifiers for the targets of the <code>Baseline</code> filter
      * operation.</p>
      */
@@ -75,6 +91,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_baselineIdentifiers;
     bool m_baselineIdentifiersHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_parentIdentifiers;
+    bool m_parentIdentifiersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetIdentifiers;
     bool m_targetIdentifiersHasBeenSet = false;
