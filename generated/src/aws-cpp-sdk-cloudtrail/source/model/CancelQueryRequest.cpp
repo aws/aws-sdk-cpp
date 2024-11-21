@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CancelQueryRequest::CancelQueryRequest() : 
-    m_queryIdHasBeenSet(false)
+    m_queryIdHasBeenSet(false),
+    m_eventDataStoreOwnerAccountIdHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String CancelQueryRequest::SerializePayload() const
   if(m_queryIdHasBeenSet)
   {
    payload.WithString("QueryId", m_queryId);
+
+  }
+
+  if(m_eventDataStoreOwnerAccountIdHasBeenSet)
+  {
+   payload.WithString("EventDataStoreOwnerAccountId", m_eventDataStoreOwnerAccountId);
 
   }
 

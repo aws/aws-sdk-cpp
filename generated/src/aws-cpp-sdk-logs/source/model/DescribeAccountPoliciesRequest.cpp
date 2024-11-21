@@ -16,7 +16,8 @@ DescribeAccountPoliciesRequest::DescribeAccountPoliciesRequest() :
     m_policyType(PolicyType::NOT_SET),
     m_policyTypeHasBeenSet(false),
     m_policyNameHasBeenSet(false),
-    m_accountIdentifiersHasBeenSet(false)
+    m_accountIdentifiersHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String DescribeAccountPoliciesRequest::SerializePayload() const
      accountIdentifiersJsonList[accountIdentifiersIndex].AsString(m_accountIdentifiers[accountIdentifiersIndex]);
    }
    payload.WithArray("accountIdentifiers", std::move(accountIdentifiersJsonList));
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("nextToken", m_nextToken);
 
   }
 

@@ -55,8 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the list of resource grouping recommendations that could not be
-     * included in your application.</p>
+     * <p>List of resource grouping recommendations that could not be included in your
+     * application.</p>
      */
     inline const Aws::Vector<FailedGroupingRecommendationEntry>& GetFailedEntries() const{ return m_failedEntries; }
     inline void SetFailedEntries(const Aws::Vector<FailedGroupingRecommendationEntry>& value) { m_failedEntries = value; }

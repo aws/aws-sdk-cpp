@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The creation date of the object.</p>
+     * <p>Date and time when the object was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }

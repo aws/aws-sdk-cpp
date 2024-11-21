@@ -145,7 +145,7 @@ namespace Model
      * <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
      * <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code> </p> 
      * <p>For region availability, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>M6g node types</b> (available only for Redis
      * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
@@ -181,7 +181,7 @@ namespace Model
      * <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>,
      * <code>cache.r7g.8xlarge</code>, <code>cache.r7g.12xlarge</code>,
      * <code>cache.r7g.16xlarge</code> </p>  <p>For region availability, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R6g node types</b> (available only for Redis
      * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
@@ -506,7 +506,7 @@ namespace Model
      * <p>Enables data tiering. Data tiering is only supported for replication groups
      * using the r6gd node type. This parameter must be set to true when using r6gd
      * nodes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data
      * tiering</a>.</p>
      */
     inline const DataTieringStatus& GetDataTiering() const{ return m_dataTiering; }

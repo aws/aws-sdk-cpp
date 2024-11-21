@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>The recommendend date to apply the service update in order to ensure
      * compliance. For information on compliance, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service
      * Security Updates for Compliance</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetServiceUpdateRecommendedApplyByDate() const{ return m_serviceUpdateRecommendedApplyByDate; }

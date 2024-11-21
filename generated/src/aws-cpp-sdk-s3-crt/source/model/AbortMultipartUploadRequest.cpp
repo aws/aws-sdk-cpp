@@ -24,6 +24,7 @@ AbortMultipartUploadRequest::AbortMultipartUploadRequest() :
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_ifMatchInitiatedTimeHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -95,6 +96,11 @@ Aws::Http::HeaderValueCollection AbortMultipartUploadRequest::GetRequestSpecific
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
+  }
+
+  if(m_ifMatchInitiatedTimeHasBeenSet)
+  {
+    headers.emplace("x-amz-if-match-initiated-time", m_ifMatchInitiatedTime.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
   return headers;

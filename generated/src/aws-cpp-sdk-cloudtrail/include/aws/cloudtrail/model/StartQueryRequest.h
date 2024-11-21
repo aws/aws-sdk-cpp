@@ -91,6 +91,20 @@ namespace Model
     inline StartQueryRequest& AddQueryParameters(Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.push_back(std::move(value)); return *this; }
     inline StartQueryRequest& AddQueryParameters(const char* value) { m_queryParametersHasBeenSet = true; m_queryParameters.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> The account ID of the event data store owner. </p>
+     */
+    inline const Aws::String& GetEventDataStoreOwnerAccountId() const{ return m_eventDataStoreOwnerAccountId; }
+    inline bool EventDataStoreOwnerAccountIdHasBeenSet() const { return m_eventDataStoreOwnerAccountIdHasBeenSet; }
+    inline void SetEventDataStoreOwnerAccountId(const Aws::String& value) { m_eventDataStoreOwnerAccountIdHasBeenSet = true; m_eventDataStoreOwnerAccountId = value; }
+    inline void SetEventDataStoreOwnerAccountId(Aws::String&& value) { m_eventDataStoreOwnerAccountIdHasBeenSet = true; m_eventDataStoreOwnerAccountId = std::move(value); }
+    inline void SetEventDataStoreOwnerAccountId(const char* value) { m_eventDataStoreOwnerAccountIdHasBeenSet = true; m_eventDataStoreOwnerAccountId.assign(value); }
+    inline StartQueryRequest& WithEventDataStoreOwnerAccountId(const Aws::String& value) { SetEventDataStoreOwnerAccountId(value); return *this;}
+    inline StartQueryRequest& WithEventDataStoreOwnerAccountId(Aws::String&& value) { SetEventDataStoreOwnerAccountId(std::move(value)); return *this;}
+    inline StartQueryRequest& WithEventDataStoreOwnerAccountId(const char* value) { SetEventDataStoreOwnerAccountId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_queryStatement;
@@ -104,6 +118,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_queryParameters;
     bool m_queryParametersHasBeenSet = false;
+
+    Aws::String m_eventDataStoreOwnerAccountId;
+    bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

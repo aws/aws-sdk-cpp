@@ -71,6 +71,20 @@ namespace Model
     inline void SetMaxQueryResults(int value) { m_maxQueryResultsHasBeenSet = true; m_maxQueryResults = value; }
     inline GetQueryResultsRequest& WithMaxQueryResults(int value) { SetMaxQueryResults(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The account ID of the event data store owner. </p>
+     */
+    inline const Aws::String& GetEventDataStoreOwnerAccountId() const{ return m_eventDataStoreOwnerAccountId; }
+    inline bool EventDataStoreOwnerAccountIdHasBeenSet() const { return m_eventDataStoreOwnerAccountIdHasBeenSet; }
+    inline void SetEventDataStoreOwnerAccountId(const Aws::String& value) { m_eventDataStoreOwnerAccountIdHasBeenSet = true; m_eventDataStoreOwnerAccountId = value; }
+    inline void SetEventDataStoreOwnerAccountId(Aws::String&& value) { m_eventDataStoreOwnerAccountIdHasBeenSet = true; m_eventDataStoreOwnerAccountId = std::move(value); }
+    inline void SetEventDataStoreOwnerAccountId(const char* value) { m_eventDataStoreOwnerAccountIdHasBeenSet = true; m_eventDataStoreOwnerAccountId.assign(value); }
+    inline GetQueryResultsRequest& WithEventDataStoreOwnerAccountId(const Aws::String& value) { SetEventDataStoreOwnerAccountId(value); return *this;}
+    inline GetQueryResultsRequest& WithEventDataStoreOwnerAccountId(Aws::String&& value) { SetEventDataStoreOwnerAccountId(std::move(value)); return *this;}
+    inline GetQueryResultsRequest& WithEventDataStoreOwnerAccountId(const char* value) { SetEventDataStoreOwnerAccountId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_queryId;
@@ -81,6 +95,9 @@ namespace Model
 
     int m_maxQueryResults;
     bool m_maxQueryResultsHasBeenSet = false;
+
+    Aws::String m_eventDataStoreOwnerAccountId;
+    bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

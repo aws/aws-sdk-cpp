@@ -95,14 +95,14 @@ namespace CloudTrail
         virtual ~CloudTrailClient();
 
         /**
-         * <p>Adds one or more tags to a trail, event data store, or channel, up to a limit
-         * of 50. Overwrites an existing tag's value when a new value is specified for an
-         * existing tag key. Tag key names must be unique; you cannot have two keys with
-         * the same name but different values. If you specify a key without a value, the
-         * tag will be created with the specified key and a value of null. You can tag a
-         * trail or event data store that applies to all Amazon Web Services Regions only
-         * from the Region in which the trail or event data store was created (also known
-         * as its home Region).</p><p><h3>See Also:</h3>   <a
+         * <p>Adds one or more tags to a trail, event data store, dashboard, or channel, up
+         * to a limit of 50. Overwrites an existing tag's value when a new value is
+         * specified for an existing tag key. Tag key names must be unique; you cannot have
+         * two keys with the same name but different values. If you specify a key without a
+         * value, the tag will be created with the specified key and a value of null. You
+         * can tag a trail or event data store that applies to all Amazon Web Services
+         * Regions only from the Region in which the trail or event data store was created
+         * (also known as its home Region).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">AWS
          * API Reference</a></p>
          */
@@ -186,6 +186,57 @@ namespace CloudTrail
         }
 
         /**
+         * <p> Creates a custom dashboard or the Highlights dashboard. </p> <ul> <li> <p>
+         * <b>Custom dashboards</b> - Custom dashboards allow you to query events in any
+         * event data store type. You can add up to 10 widgets to a custom dashboard. You
+         * can manually refresh a custom dashboard, or you can set a refresh schedule.</p>
+         * </li> <li> <p> <b>Highlights dashboard</b> - You can create the Highlights
+         * dashboard to see a summary of key user activities and API usage across all your
+         * event data stores. CloudTrail Lake manages the Highlights dashboard and
+         * refreshes the dashboard every 6 hours. To create the Highlights dashboard, you
+         * must set and enable a refresh schedule.</p> </li> </ul> <p> CloudTrail runs
+         * queries to populate the dashboard's widgets during a manual or scheduled
+         * refresh. CloudTrail must be granted permissions to run the
+         * <code>StartQuery</code> operation on your behalf. To provide permissions, run
+         * the <code>PutResourcePolicy</code> operation to attach a resource-based policy
+         * to each event data store. For more information, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-eds-dashboard">Example:
+         * Allow CloudTrail to run queries to populate a dashboard</a> in the <i>CloudTrail
+         * User Guide</i>. </p> <p> To set a refresh schedule, CloudTrail must be granted
+         * permissions to run the <code>StartDashboardRefresh</code> operation to refresh
+         * the dashboard on your behalf. To provide permissions, run the
+         * <code>PutResourcePolicy</code> operation to attach a resource-based policy to
+         * the dashboard. For more information, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-dashboards">
+         * Resource-based policy example for a dashboard</a> in the <i>CloudTrail User
+         * Guide</i>. </p> <p>For more information about dashboards, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-dashboard.html">CloudTrail
+         * Lake dashboards</a> in the <i>CloudTrail User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateDashboard">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDashboardOutcome CreateDashboard(const Model::CreateDashboardRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDashboard that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDashboardRequestT = Model::CreateDashboardRequest>
+        Model::CreateDashboardOutcomeCallable CreateDashboardCallable(const CreateDashboardRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::CreateDashboard, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDashboardRequestT = Model::CreateDashboardRequest>
+        void CreateDashboardAsync(const CreateDashboardRequestT& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::CreateDashboard, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new event data store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateEventDataStore">AWS
          * API Reference</a></p>
@@ -262,6 +313,32 @@ namespace CloudTrail
         }
 
         /**
+         * <p> Deletes the specified dashboard. You cannot delete a dashboard that has
+         * termination protection enabled. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteDashboard">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDashboardOutcome DeleteDashboard(const Model::DeleteDashboardRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDashboard that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDashboardRequestT = Model::DeleteDashboardRequest>
+        Model::DeleteDashboardOutcomeCallable DeleteDashboardCallable(const DeleteDashboardRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::DeleteDashboard, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDashboardRequestT = Model::DeleteDashboardRequest>
+        void DeleteDashboardAsync(const DeleteDashboardRequestT& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::DeleteDashboard, request, handler, context);
+        }
+
+        /**
          * <p>Disables the event data store specified by <code>EventDataStore</code>, which
          * accepts an event data store ARN. After you run
          * <code>DeleteEventDataStore</code>, the event data store enters a
@@ -301,8 +378,8 @@ namespace CloudTrail
         }
 
         /**
-         * <p> Deletes the resource-based policy attached to the CloudTrail channel.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Deletes the resource-based policy attached to the CloudTrail event data
+         * store, dashboard, or channel. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          */
@@ -384,10 +461,12 @@ namespace CloudTrail
          * <p>Returns metadata about a query, including query run time in milliseconds,
          * number of events scanned and matched, and query status. If the query results
          * were delivered to an S3 bucket, the response also provides the S3 URI and the
-         * delivery status.</p> <p>You must specify either a <code>QueryID</code> or a
+         * delivery status.</p> <p>You must specify either <code>QueryId</code> or
          * <code>QueryAlias</code>. Specifying the <code>QueryAlias</code> parameter
-         * returns information about the last query run for the alias.</p><p><h3>See
-         * Also:</h3>   <a
+         * returns information about the last query run for the alias. You can provide
+         * <code>RefreshId</code> along with <code>QueryAlias</code> to view the query
+         * results of a dashboard query for the specified
+         * <code>RefreshId</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeQuery">AWS
          * API Reference</a></p>
          */
@@ -572,6 +651,31 @@ namespace CloudTrail
         }
 
         /**
+         * <p> Returns the specified dashboard. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetDashboard">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDashboardOutcome GetDashboard(const Model::GetDashboardRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDashboard that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDashboardRequestT = Model::GetDashboardRequest>
+        Model::GetDashboardOutcomeCallable GetDashboardCallable(const GetDashboardRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::GetDashboard, request);
+        }
+
+        /**
+         * An Async wrapper for GetDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDashboardRequestT = Model::GetDashboardRequest>
+        void GetDashboardAsync(const GetDashboardRequestT& request, const GetDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::GetDashboard, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about an event data store specified as either an ARN or
          * the ID portion of the ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventDataStore">AWS
@@ -730,7 +834,8 @@ namespace CloudTrail
 
         /**
          * <p> Retrieves the JSON text of the resource-based policy document attached to
-         * the CloudTrail channel. </p><p><h3>See Also:</h3>   <a
+         * the CloudTrail event data store, dashboard, or channel. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetResourcePolicy">AWS
          * API Reference</a></p>
          */
@@ -833,6 +938,32 @@ namespace CloudTrail
         void ListChannelsAsync(const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListChannelsRequestT& request = {}) const
         {
             return SubmitAsync(&CloudTrailClient::ListChannels, request, handler, context);
+        }
+
+        /**
+         * <p> Returns information about all dashboards in the account, in the current
+         * Region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListDashboards">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDashboardsOutcome ListDashboards(const Model::ListDashboardsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListDashboards that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDashboardsRequestT = Model::ListDashboardsRequest>
+        Model::ListDashboardsOutcomeCallable ListDashboardsCallable(const ListDashboardsRequestT& request = {}) const
+        {
+            return SubmitCallable(&CloudTrailClient::ListDashboards, request);
+        }
+
+        /**
+         * An Async wrapper for ListDashboards that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDashboardsRequestT = Model::ListDashboardsRequest>
+        void ListDashboardsAsync(const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDashboardsRequestT& request = {}) const
+        {
+            return SubmitAsync(&CloudTrailClient::ListDashboards, request, handler, context);
         }
 
         /**
@@ -1016,8 +1147,8 @@ namespace CloudTrail
         }
 
         /**
-         * <p>Lists the tags for the specified trails, event data stores, or channels in
-         * the current Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for the specified trails, event data stores, dashboards, or
+         * channels in the current Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">AWS
          * API Reference</a></p>
          */
@@ -1232,9 +1363,9 @@ namespace CloudTrail
         }
 
         /**
-         * <p> Attaches a resource-based permission policy to a CloudTrail channel that is
-         * used for an integration with an event source outside of Amazon Web Services. For
-         * more information about resource-based policies, see <a
+         * <p> Attaches a resource-based permission policy to a CloudTrail event data
+         * store, dashboard, or channel. For more information about resource-based
+         * policies, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html">CloudTrail
          * resource-based policy examples</a> in the <i>CloudTrail User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1289,7 +1420,7 @@ namespace CloudTrail
         }
 
         /**
-         * <p>Removes the specified tags from a trail, event data store, or
+         * <p>Removes the specified tags from a trail, event data store, dashboard, or
          * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">AWS
          * API Reference</a></p>
@@ -1341,6 +1472,39 @@ namespace CloudTrail
         void RestoreEventDataStoreAsync(const RestoreEventDataStoreRequestT& request, const RestoreEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudTrailClient::RestoreEventDataStore, request, handler, context);
+        }
+
+        /**
+         * <p> Starts a refresh of the specified dashboard. </p> <p> Each time a dashboard
+         * is refreshed, CloudTrail runs queries to populate the dashboard's widgets.
+         * CloudTrail must be granted permissions to run the <code>StartQuery</code>
+         * operation on your behalf. To provide permissions, run the
+         * <code>PutResourcePolicy</code> operation to attach a resource-based policy to
+         * each event data store. For more information, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-eds-dashboard">Example:
+         * Allow CloudTrail to run queries to populate a dashboard</a> in the <i>CloudTrail
+         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartDashboardRefresh">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDashboardRefreshOutcome StartDashboardRefresh(const Model::StartDashboardRefreshRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartDashboardRefresh that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartDashboardRefreshRequestT = Model::StartDashboardRefreshRequest>
+        Model::StartDashboardRefreshOutcomeCallable StartDashboardRefreshCallable(const StartDashboardRefreshRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::StartDashboardRefresh, request);
+        }
+
+        /**
+         * An Async wrapper for StartDashboardRefresh that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartDashboardRefreshRequestT = Model::StartDashboardRefreshRequest>
+        void StartDashboardRefreshAsync(const StartDashboardRefreshRequestT& request, const StartDashboardRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::StartDashboardRefresh, request, handler, context);
         }
 
         /**
@@ -1591,6 +1755,45 @@ namespace CloudTrail
         void UpdateChannelAsync(const UpdateChannelRequestT& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudTrailClient::UpdateChannel, request, handler, context);
+        }
+
+        /**
+         * <p> Updates the specified dashboard. </p> <p> To set a refresh schedule,
+         * CloudTrail must be granted permissions to run the
+         * <code>StartDashboardRefresh</code> operation to refresh the dashboard on your
+         * behalf. To provide permissions, run the <code>PutResourcePolicy</code> operation
+         * to attach a resource-based policy to the dashboard. For more information, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-dashboards">
+         * Resource-based policy example for a dashboard</a> in the <i>CloudTrail User
+         * Guide</i>. </p> <p> CloudTrail runs queries to populate the dashboard's widgets
+         * during a manual or scheduled refresh. CloudTrail must be granted permissions to
+         * run the <code>StartQuery</code> operation on your behalf. To provide
+         * permissions, run the <code>PutResourcePolicy</code> operation to attach a
+         * resource-based policy to each event data store. For more information, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html#security_iam_resource-based-policy-examples-eds-dashboard">Example:
+         * Allow CloudTrail to run queries to populate a dashboard</a> in the <i>CloudTrail
+         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateDashboard">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDashboardOutcome UpdateDashboard(const Model::UpdateDashboardRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDashboard that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDashboardRequestT = Model::UpdateDashboardRequest>
+        Model::UpdateDashboardOutcomeCallable UpdateDashboardCallable(const UpdateDashboardRequestT& request) const
+        {
+            return SubmitCallable(&CloudTrailClient::UpdateDashboard, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDashboard that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDashboardRequestT = Model::UpdateDashboardRequest>
+        void UpdateDashboardAsync(const UpdateDashboardRequestT& request, const UpdateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudTrailClient::UpdateDashboard, request, handler, context);
         }
 
         /**

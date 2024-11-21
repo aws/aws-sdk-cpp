@@ -19,6 +19,7 @@ using namespace Aws;
 PutObjectResult::PutObjectResult() : 
     m_serverSideEncryption(ServerSideEncryption::NOT_SET),
     m_bucketKeyEnabled(false),
+    m_size(0),
     m_requestCharged(RequestCharged::NOT_SET)
 {
 }
@@ -115,6 +116,12 @@ PutObjectResult& PutObjectResult::operator =(const Aws::AmazonWebServiceResult<X
   if(bucketKeyEnabledIter != headers.end())
   {
      m_bucketKeyEnabled = StringUtils::ConvertToBool(bucketKeyEnabledIter->second.c_str());
+  }
+
+  const auto& sizeIter = headers.find("x-amz-object-size");
+  if(sizeIter != headers.end())
+  {
+     m_size = StringUtils::ConvertToInt64(sizeIter->second.c_str());
   }
 
   const auto& requestChargedIter = headers.find("x-amz-request-charged");

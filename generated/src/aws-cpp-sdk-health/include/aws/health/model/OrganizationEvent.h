@@ -64,8 +64,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Service that is affected by the event, such as EC2 and
-     * RDS.</p>
+     * <p>The Amazon Web Services service that is affected by the event, such as EC2
+     * and RDS.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
@@ -109,8 +109,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter specifies if the Health event is a public Amazon Web Service
-     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <p>This parameter specifies if the Health event is a public Amazon Web Services
+     * service event or an account-specific event.</p> <ul> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
      * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the

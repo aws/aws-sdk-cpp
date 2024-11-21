@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A network interface that specifies the On-board diagnostic (OBD) II network
+   * <p>A network interface that specifies the on-board diagnostic (OBD) II network
    * protocol.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ObdInterface">AWS
    * API Reference</a></p>

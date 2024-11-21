@@ -13,6 +13,7 @@
 #include <aws/ec2/model/EndDateType.h>
 #include <aws/ec2/model/InstanceMatchCriteria.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/CapacityReservationDeliveryPreference.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -62,7 +63,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The instance type for which to reserve capacity. For more information, see <a
+     * <p>The instance type for which to reserve capacity.</p>  <p>You can
+     * request future-dated Capacity Reservations for instance types in the C, M, R, I,
+     * and T instance families only.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
@@ -137,8 +140,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of instances for which to reserve capacity.</p> <p>Valid range: 1
-     * - 1000</p>
+     * <p>The number of instances for which to reserve capacity.</p>  <p>You can
+     * request future-dated Capacity Reservations for an instance count with a minimum
+     * of 100 VPUs. For example, if you request a future-dated Capacity Reservation for
+     * <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25
+     * * m5.xlarge = 100 vCPUs</i>).</p>  <p>Valid range: 1 - 1000</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
@@ -182,7 +188,8 @@ namespace Model
      * <code>limited</code>, the Capacity Reservation is cancelled within an hour from
      * the specified time. For example, if you specify 5/31/2019, 13:30:55, the
      * Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on
-     * 5/31/2019.</p>
+     * 5/31/2019.</p> <p>If you are requesting a future-dated Capacity Reservation, you
+     * can't specify an end date and time that is within the commitment duration.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
@@ -222,7 +229,9 @@ namespace Model
      * Reservation only accepts instances that have matching attributes (instance type,
      * platform, and Availability Zone), and explicitly target the Capacity
      * Reservation. This ensures that only permitted instances can use the reserved
-     * capacity. </p> </li> </ul> <p>Default: <code>open</code> </p>
+     * capacity. </p> </li> </ul>  <p>If you are requesting a future-dated
+     * Capacity Reservation, you must specify <code>targeted</code>.</p> 
+     * <p>Default: <code>open</code> </p>
      */
     inline const InstanceMatchCriteria& GetInstanceMatchCriteria() const{ return m_instanceMatchCriteria; }
     inline bool InstanceMatchCriteriaHasBeenSet() const { return m_instanceMatchCriteriaHasBeenSet; }
@@ -261,6 +270,7 @@ namespace Model
 
     ///@{
     /**
+     *  <p>Not supported for future-dated Capacity Reservations.</p> 
      * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
      * Reservation.</p>
      */
@@ -276,6 +286,7 @@ namespace Model
 
     ///@{
     /**
+     *  <p>Not supported for future-dated Capacity Reservations.</p> 
      * <p>The Amazon Resource Name (ARN) of the cluster placement group in which to
      * create the Capacity Reservation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html"> Capacity
@@ -290,6 +301,58 @@ namespace Model
     inline CreateCapacityReservationRequest& WithPlacementGroupArn(const Aws::String& value) { SetPlacementGroupArn(value); return *this;}
     inline CreateCapacityReservationRequest& WithPlacementGroupArn(Aws::String&& value) { SetPlacementGroupArn(std::move(value)); return *this;}
     inline CreateCapacityReservationRequest& WithPlacementGroupArn(const char* value) { SetPlacementGroupArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     *  <p>Required for future-dated Capacity Reservations only. To create a
+     * Capacity Reservation for immediate use, omit this parameter. </p>  <p>The
+     * date and time at which the future-dated Capacity Reservation should become
+     * available for use, in the ISO8601 format in the UTC time zone
+     * (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).</p> <p>You can request a future-dated
+     * Capacity Reservation between 5 and 120 days in advance.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
+    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
+    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
+    inline CreateCapacityReservationRequest& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
+    inline CreateCapacityReservationRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     *  <p>Required for future-dated Capacity Reservations only. To create a
+     * Capacity Reservation for immediate use, omit this parameter. </p> 
+     * <p>Specify a commitment duration, in seconds, for the future-dated Capacity
+     * Reservation.</p> <p>The commitment duration is a minimum duration for which you
+     * commit to having the future-dated Capacity Reservation in the
+     * <code>active</code> state in your account after it has been delivered.</p>
+     * <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-concepts.html#cr-commitment-duration">
+     * Commitment duration</a>.</p>
+     */
+    inline long long GetCommitmentDuration() const{ return m_commitmentDuration; }
+    inline bool CommitmentDurationHasBeenSet() const { return m_commitmentDurationHasBeenSet; }
+    inline void SetCommitmentDuration(long long value) { m_commitmentDurationHasBeenSet = true; m_commitmentDuration = value; }
+    inline CreateCapacityReservationRequest& WithCommitmentDuration(long long value) { SetCommitmentDuration(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     *  <p>Required for future-dated Capacity Reservations only. To create a
+     * Capacity Reservation for immediate use, omit this parameter. </p> 
+     * <p>Indicates that the requested capacity will be delivered in addition to any
+     * running instances or reserved capacity that you have in your account at the
+     * requested date and time.</p> <p>The only supported value is
+     * <code>incremental</code>.</p>
+     */
+    inline const CapacityReservationDeliveryPreference& GetDeliveryPreference() const{ return m_deliveryPreference; }
+    inline bool DeliveryPreferenceHasBeenSet() const { return m_deliveryPreferenceHasBeenSet; }
+    inline void SetDeliveryPreference(const CapacityReservationDeliveryPreference& value) { m_deliveryPreferenceHasBeenSet = true; m_deliveryPreference = value; }
+    inline void SetDeliveryPreference(CapacityReservationDeliveryPreference&& value) { m_deliveryPreferenceHasBeenSet = true; m_deliveryPreference = std::move(value); }
+    inline CreateCapacityReservationRequest& WithDeliveryPreference(const CapacityReservationDeliveryPreference& value) { SetDeliveryPreference(value); return *this;}
+    inline CreateCapacityReservationRequest& WithDeliveryPreference(CapacityReservationDeliveryPreference&& value) { SetDeliveryPreference(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -340,6 +403,15 @@ namespace Model
 
     Aws::String m_placementGroupArn;
     bool m_placementGroupArnHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startDate;
+    bool m_startDateHasBeenSet = false;
+
+    long long m_commitmentDuration;
+    bool m_commitmentDurationHasBeenSet = false;
+
+    CapacityReservationDeliveryPreference m_deliveryPreference;
+    bool m_deliveryPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -159,6 +159,24 @@ GetCampaignResult& GetCampaignResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("dataPartitions"))
+  {
+    Aws::Utils::Array<JsonView> dataPartitionsJsonList = jsonValue.GetArray("dataPartitions");
+    for(unsigned dataPartitionsIndex = 0; dataPartitionsIndex < dataPartitionsJsonList.GetLength(); ++dataPartitionsIndex)
+    {
+      m_dataPartitions.push_back(dataPartitionsJsonList[dataPartitionsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("signalsToFetch"))
+  {
+    Aws::Utils::Array<JsonView> signalsToFetchJsonList = jsonValue.GetArray("signalsToFetch");
+    for(unsigned signalsToFetchIndex = 0; signalsToFetchIndex < signalsToFetchJsonList.GetLength(); ++signalsToFetchIndex)
+    {
+      m_signalsToFetch.push_back(signalsToFetchJsonList[signalsToFetchIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

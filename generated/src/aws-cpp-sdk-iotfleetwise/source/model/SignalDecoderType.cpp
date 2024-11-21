@@ -23,6 +23,7 @@ namespace Aws
         static const int CAN_SIGNAL_HASH = HashingUtils::HashString("CAN_SIGNAL");
         static const int OBD_SIGNAL_HASH = HashingUtils::HashString("OBD_SIGNAL");
         static const int MESSAGE_SIGNAL_HASH = HashingUtils::HashString("MESSAGE_SIGNAL");
+        static const int CUSTOM_DECODING_SIGNAL_HASH = HashingUtils::HashString("CUSTOM_DECODING_SIGNAL");
 
 
         SignalDecoderType GetSignalDecoderTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == MESSAGE_SIGNAL_HASH)
           {
             return SignalDecoderType::MESSAGE_SIGNAL;
+          }
+          else if (hashCode == CUSTOM_DECODING_SIGNAL_HASH)
+          {
+            return SignalDecoderType::CUSTOM_DECODING_SIGNAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "OBD_SIGNAL";
           case SignalDecoderType::MESSAGE_SIGNAL:
             return "MESSAGE_SIGNAL";
+          case SignalDecoderType::CUSTOM_DECODING_SIGNAL:
+            return "CUSTOM_DECODING_SIGNAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

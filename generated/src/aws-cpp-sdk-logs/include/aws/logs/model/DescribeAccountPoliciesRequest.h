@@ -83,6 +83,21 @@ namespace Model
     inline DescribeAccountPoliciesRequest& AddAccountIdentifiers(Aws::String&& value) { m_accountIdentifiersHasBeenSet = true; m_accountIdentifiers.push_back(std::move(value)); return *this; }
     inline DescribeAccountPoliciesRequest& AddAccountIdentifiers(const char* value) { m_accountIdentifiersHasBeenSet = true; m_accountIdentifiers.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+    inline DescribeAccountPoliciesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeAccountPoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline DescribeAccountPoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
   private:
 
     PolicyType m_policyType;
@@ -93,6 +108,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_accountIdentifiers;
     bool m_accountIdentifiersHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

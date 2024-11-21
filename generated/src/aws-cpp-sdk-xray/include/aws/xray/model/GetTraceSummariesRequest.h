@@ -61,8 +61,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A parameter to indicate whether to query trace summaries by TraceId, Event
-     * (trace update time), or Service (segment end time).</p>
+     * <p>Query trace summaries by TraceId (trace start time), Event (trace update
+     * time), or Service (trace segment end time).</p>
      */
     inline const TimeRangeType& GetTimeRangeType() const{ return m_timeRangeType; }
     inline bool TimeRangeTypeHasBeenSet() const { return m_timeRangeTypeHasBeenSet; }

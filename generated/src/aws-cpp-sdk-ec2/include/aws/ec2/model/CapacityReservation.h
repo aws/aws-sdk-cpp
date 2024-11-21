@@ -15,6 +15,8 @@
 #include <aws/ec2/model/InstanceMatchCriteria.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/CapacityReservationType.h>
+#include <aws/ec2/model/CapacityReservationCommitmentInfo.h>
+#include <aws/ec2/model/CapacityReservationDeliveryPreference.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/CapacityAllocation.h>
 #include <utility>
@@ -216,17 +218,29 @@ namespace Model
     /**
      * <p>The current state of the Capacity Reservation. A Capacity Reservation can be
      * in one of the following states:</p> <ul> <li> <p> <code>active</code> - The
-     * Capacity Reservation is active and the capacity is available for your use.</p>
-     * </li> <li> <p> <code>expired</code> - The Capacity Reservation expired
-     * automatically at the date and time specified in your request. The reserved
-     * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved
-     * capacity is no longer available for your use.</p> </li> <li> <p>
-     * <code>pending</code> - The Capacity Reservation request was successful but the
-     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
-     * The Capacity Reservation request has failed. A request might fail due to invalid
-     * request parameters, capacity constraints, or instance limit constraints. Failed
-     * requests are retained for 60 minutes.</p> </li> </ul>
+     * capacity is available for use.</p> </li> <li> <p> <code>expired</code> - The
+     * Capacity Reservation expired automatically at the date and time specified in
+     * your reservation request. The reserved capacity is no longer available for your
+     * use.</p> </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was
+     * canceled. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
+     * but the capacity provisioning is still pending.</p> </li> <li> <p>
+     * <code>failed</code> - The Capacity Reservation request has failed. A request can
+     * fail due to request parameters that are not valid, capacity constraints, or
+     * instance limit constraints. You can view a failed request for 60 minutes.</p>
+     * </li> <li> <p> <code>scheduled</code> - (<i>Future-dated Capacity Reservations
+     * only</i>) The future-dated Capacity Reservation request was approved and the
+     * Capacity Reservation is scheduled for delivery on the requested start date.</p>
+     * </li> <li> <p> <code>assessing</code> - (<i>Future-dated Capacity Reservations
+     * only</i>) Amazon EC2 is assessing your request for a future-dated Capacity
+     * Reservation.</p> </li> <li> <p> <code>delayed</code> - (<i>Future-dated Capacity
+     * Reservations only</i>) Amazon EC2 encountered a delay in provisioning the
+     * requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the
+     * requested capacity by the requested start date and time.</p> </li> <li> <p>
+     * <code>unsupported</code> - (<i>Future-dated Capacity Reservations only</i>)
+     * Amazon EC2 can't support the future-dated Capacity Reservation request due to
+     * capacity constraints. You can view unsupported requests for 30 days. The
+     * Capacity Reservation will not be delivered.</p> </li> </ul>
      */
     inline const CapacityReservationState& GetState() const{ return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
@@ -415,6 +429,34 @@ namespace Model
     inline CapacityReservation& WithUnusedReservationBillingOwnerId(Aws::String&& value) { SetUnusedReservationBillingOwnerId(std::move(value)); return *this;}
     inline CapacityReservation& WithUnusedReservationBillingOwnerId(const char* value) { SetUnusedReservationBillingOwnerId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about your commitment for a future-dated Capacity
+     * Reservation.</p>
+     */
+    inline const CapacityReservationCommitmentInfo& GetCommitmentInfo() const{ return m_commitmentInfo; }
+    inline bool CommitmentInfoHasBeenSet() const { return m_commitmentInfoHasBeenSet; }
+    inline void SetCommitmentInfo(const CapacityReservationCommitmentInfo& value) { m_commitmentInfoHasBeenSet = true; m_commitmentInfo = value; }
+    inline void SetCommitmentInfo(CapacityReservationCommitmentInfo&& value) { m_commitmentInfoHasBeenSet = true; m_commitmentInfo = std::move(value); }
+    inline CapacityReservation& WithCommitmentInfo(const CapacityReservationCommitmentInfo& value) { SetCommitmentInfo(value); return *this;}
+    inline CapacityReservation& WithCommitmentInfo(CapacityReservationCommitmentInfo&& value) { SetCommitmentInfo(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The delivery method for a future-dated Capacity Reservation.
+     * <code>incremental</code> indicates that the requested capacity is delivered in
+     * addition to any running instances and reserved capacity that you have in your
+     * account at the requested date and time.</p>
+     */
+    inline const CapacityReservationDeliveryPreference& GetDeliveryPreference() const{ return m_deliveryPreference; }
+    inline bool DeliveryPreferenceHasBeenSet() const { return m_deliveryPreferenceHasBeenSet; }
+    inline void SetDeliveryPreference(const CapacityReservationDeliveryPreference& value) { m_deliveryPreferenceHasBeenSet = true; m_deliveryPreference = value; }
+    inline void SetDeliveryPreference(CapacityReservationDeliveryPreference&& value) { m_deliveryPreferenceHasBeenSet = true; m_deliveryPreference = std::move(value); }
+    inline CapacityReservation& WithDeliveryPreference(const CapacityReservationDeliveryPreference& value) { SetDeliveryPreference(value); return *this;}
+    inline CapacityReservation& WithDeliveryPreference(CapacityReservationDeliveryPreference&& value) { SetDeliveryPreference(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_capacityReservationId;
@@ -491,6 +533,12 @@ namespace Model
 
     Aws::String m_unusedReservationBillingOwnerId;
     bool m_unusedReservationBillingOwnerIdHasBeenSet = false;
+
+    CapacityReservationCommitmentInfo m_commitmentInfo;
+    bool m_commitmentInfoHasBeenSet = false;
+
+    CapacityReservationDeliveryPreference m_deliveryPreference;
+    bool m_deliveryPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,6 +28,7 @@
 #include <aws/apigateway/model/CreateDocumentationPartRequest.h>
 #include <aws/apigateway/model/CreateDocumentationVersionRequest.h>
 #include <aws/apigateway/model/CreateDomainNameRequest.h>
+#include <aws/apigateway/model/CreateDomainNameAccessAssociationRequest.h>
 #include <aws/apigateway/model/CreateModelRequest.h>
 #include <aws/apigateway/model/CreateRequestValidatorRequest.h>
 #include <aws/apigateway/model/CreateResourceRequest.h>
@@ -44,6 +45,7 @@
 #include <aws/apigateway/model/DeleteDocumentationPartRequest.h>
 #include <aws/apigateway/model/DeleteDocumentationVersionRequest.h>
 #include <aws/apigateway/model/DeleteDomainNameRequest.h>
+#include <aws/apigateway/model/DeleteDomainNameAccessAssociationRequest.h>
 #include <aws/apigateway/model/DeleteGatewayResponseRequest.h>
 #include <aws/apigateway/model/DeleteIntegrationRequest.h>
 #include <aws/apigateway/model/DeleteIntegrationResponseRequest.h>
@@ -76,6 +78,7 @@
 #include <aws/apigateway/model/GetDocumentationVersionRequest.h>
 #include <aws/apigateway/model/GetDocumentationVersionsRequest.h>
 #include <aws/apigateway/model/GetDomainNameRequest.h>
+#include <aws/apigateway/model/GetDomainNameAccessAssociationsRequest.h>
 #include <aws/apigateway/model/GetDomainNamesRequest.h>
 #include <aws/apigateway/model/GetExportRequest.h>
 #include <aws/apigateway/model/GetGatewayResponseRequest.h>
@@ -115,6 +118,7 @@
 #include <aws/apigateway/model/PutMethodRequest.h>
 #include <aws/apigateway/model/PutMethodResponseRequest.h>
 #include <aws/apigateway/model/PutRestApiRequest.h>
+#include <aws/apigateway/model/RejectDomainNameAccessAssociationRequest.h>
 #include <aws/apigateway/model/TagResourceRequest.h>
 #include <aws/apigateway/model/TestInvokeAuthorizerRequest.h>
 #include <aws/apigateway/model/TestInvokeMethodRequest.h>
@@ -502,6 +506,33 @@ CreateDomainNameOutcome APIGatewayClient::CreateDomainName(const CreateDomainNam
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/domainnames");
       return CreateDomainNameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateDomainNameAccessAssociationOutcome APIGatewayClient::CreateDomainNameAccessAssociation(const CreateDomainNameAccessAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateDomainNameAccessAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDomainNameAccessAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateDomainNameAccessAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateDomainNameAccessAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateDomainNameAccessAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateDomainNameAccessAssociationOutcome>(
+    [&]()-> CreateDomainNameAccessAssociationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDomainNameAccessAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/domainnameaccessassociations");
+      return CreateDomainNameAccessAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1058,6 +1089,39 @@ DeleteDomainNameOutcome APIGatewayClient::DeleteDomainName(const DeleteDomainNam
       endpointResolutionOutcome.GetResult().AddPathSegments("/domainnames/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
       return DeleteDomainNameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteDomainNameAccessAssociationOutcome APIGatewayClient::DeleteDomainNameAccessAssociation(const DeleteDomainNameAccessAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteDomainNameAccessAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomainNameAccessAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameAccessAssociationArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDomainNameAccessAssociation", "Required field: DomainNameAccessAssociationArn, is not set");
+    return DeleteDomainNameAccessAssociationOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainNameAccessAssociationArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteDomainNameAccessAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteDomainNameAccessAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteDomainNameAccessAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteDomainNameAccessAssociationOutcome>(
+    [&]()-> DeleteDomainNameAccessAssociationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDomainNameAccessAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/domainnameaccessassociations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainNameAccessAssociationArn());
+      return DeleteDomainNameAccessAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2259,6 +2323,33 @@ GetDomainNameOutcome APIGatewayClient::GetDomainName(const GetDomainNameRequest&
       endpointResolutionOutcome.GetResult().AddPathSegments("/domainnames/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
       return GetDomainNameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetDomainNameAccessAssociationsOutcome APIGatewayClient::GetDomainNameAccessAssociations(const GetDomainNameAccessAssociationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetDomainNameAccessAssociations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainNameAccessAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDomainNameAccessAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDomainNameAccessAssociations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDomainNameAccessAssociations",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDomainNameAccessAssociationsOutcome>(
+    [&]()-> GetDomainNameAccessAssociationsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDomainNameAccessAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/domainnameaccessassociations");
+      return GetDomainNameAccessAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -3760,6 +3851,43 @@ PutRestApiOutcome APIGatewayClient::PutRestApi(const PutRestApiRequest& request)
       endpointResolutionOutcome.GetResult().AddPathSegments("/restapis/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRestApiId());
       return PutRestApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+RejectDomainNameAccessAssociationOutcome APIGatewayClient::RejectDomainNameAccessAssociation(const RejectDomainNameAccessAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(RejectDomainNameAccessAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RejectDomainNameAccessAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameAccessAssociationArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RejectDomainNameAccessAssociation", "Required field: DomainNameAccessAssociationArn, is not set");
+    return RejectDomainNameAccessAssociationOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainNameAccessAssociationArn]", false));
+  }
+  if (!request.DomainNameArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RejectDomainNameAccessAssociation", "Required field: DomainNameArn, is not set");
+    return RejectDomainNameAccessAssociationOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainNameArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, RejectDomainNameAccessAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, RejectDomainNameAccessAssociation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".RejectDomainNameAccessAssociation",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<RejectDomainNameAccessAssociationOutcome>(
+    [&]()-> RejectDomainNameAccessAssociationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RejectDomainNameAccessAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/rejectdomainnameaccessassociations");
+      return RejectDomainNameAccessAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

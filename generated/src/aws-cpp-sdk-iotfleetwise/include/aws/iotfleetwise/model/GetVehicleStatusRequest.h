@@ -41,7 +41,8 @@ namespace Model
      * <code>nextToken</code> pagination token is returned in the response. To retrieve
      * the next set of results, reissue the search request and include the returned
      * token. When all results have been returned, the response does not contain a
-     * pagination token value. </p>
+     * pagination token value. This parameter is only supported for resources of type
+     * <code>CAMPAIGN</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -55,7 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> The maximum number of items to return, between 1 and 100, inclusive. </p>
+     * <p>The maximum number of items to return, between 1 and 100, inclusive. This
+     * parameter is only supported for resources of type <code>CAMPAIGN</code>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

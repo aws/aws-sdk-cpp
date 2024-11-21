@@ -34,7 +34,12 @@ CreateCapacityReservationRequest::CreateCapacityReservationRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
-    m_placementGroupArnHasBeenSet(false)
+    m_placementGroupArnHasBeenSet(false),
+    m_startDateHasBeenSet(false),
+    m_commitmentDuration(0),
+    m_commitmentDurationHasBeenSet(false),
+    m_deliveryPreference(CapacityReservationDeliveryPreference::NOT_SET),
+    m_deliveryPreferenceHasBeenSet(false)
 {
 }
 
@@ -125,6 +130,21 @@ Aws::String CreateCapacityReservationRequest::SerializePayload() const
   if(m_placementGroupArnHasBeenSet)
   {
     ss << "PlacementGroupArn=" << StringUtils::URLEncode(m_placementGroupArn.c_str()) << "&";
+  }
+
+  if(m_startDateHasBeenSet)
+  {
+    ss << "StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_commitmentDurationHasBeenSet)
+  {
+    ss << "CommitmentDuration=" << m_commitmentDuration << "&";
+  }
+
+  if(m_deliveryPreferenceHasBeenSet)
+  {
+    ss << "DeliveryPreference=" << CapacityReservationDeliveryPreferenceMapper::GetNameForCapacityReservationDeliveryPreference(m_deliveryPreference) << "&";
   }
 
   ss << "Version=2016-11-15";

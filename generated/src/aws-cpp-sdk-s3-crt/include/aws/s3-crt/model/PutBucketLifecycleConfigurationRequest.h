@@ -102,7 +102,9 @@ namespace Model
     /**
      * <p>The account ID of the expected bucket owner. If the account ID that you
      * provide does not match the actual owner of the bucket, the request fails with
-     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p> 
+     * <p>This parameter applies to general purpose buckets only. It is not supported
+     * for directory bucket lifecycle configurations.</p> 
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
@@ -117,7 +119,9 @@ namespace Model
     ///@{
     /**
      * <p>Indicates which default minimum object size behavior is applied to the
-     * lifecycle configuration.</p> <ul> <li> <p> <code>all_storage_classes_128K</code>
+     * lifecycle configuration.</p>  <p>This parameter applies to general purpose
+     * buckets only. It is not supported for directory bucket lifecycle
+     * configurations.</p>  <ul> <li> <p> <code>all_storage_classes_128K</code>
      * - Objects smaller than 128 KB will not transition to any storage class by
      * default. </p> </li> <li> <p> <code>varies_by_storage_class</code> - Objects
      * smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier

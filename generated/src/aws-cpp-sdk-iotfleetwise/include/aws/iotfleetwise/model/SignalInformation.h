@@ -72,6 +72,31 @@ namespace Model
     inline void SetMinimumSamplingIntervalMs(long long value) { m_minimumSamplingIntervalMsHasBeenSet = true; m_minimumSamplingIntervalMs = value; }
     inline SignalInformation& WithMinimumSamplingIntervalMs(long long value) { SetMinimumSamplingIntervalMs(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the data partition this signal is associated with.</p> <p>The ID
+     * must match one of the IDs provided in <code>dataPartitions</code>. This is
+     * accomplished either by specifying a particular data partition ID or by using
+     * <code>default</code> for an established default partition. You can establish a
+     * default partition in the <code>DataPartition</code> data type.</p>  <p>If
+     * you upload a signal as a condition for a campaign's data partition, the same
+     * signal must be included in <code>signalsToCollect</code>.</p> 
+     *  <p>Access to certain Amazon Web Services IoT FleetWise features is
+     * currently gated. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+     * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+     * IoT FleetWise Developer Guide</i>.</p> 
+     */
+    inline const Aws::String& GetDataPartitionId() const{ return m_dataPartitionId; }
+    inline bool DataPartitionIdHasBeenSet() const { return m_dataPartitionIdHasBeenSet; }
+    inline void SetDataPartitionId(const Aws::String& value) { m_dataPartitionIdHasBeenSet = true; m_dataPartitionId = value; }
+    inline void SetDataPartitionId(Aws::String&& value) { m_dataPartitionIdHasBeenSet = true; m_dataPartitionId = std::move(value); }
+    inline void SetDataPartitionId(const char* value) { m_dataPartitionIdHasBeenSet = true; m_dataPartitionId.assign(value); }
+    inline SignalInformation& WithDataPartitionId(const Aws::String& value) { SetDataPartitionId(value); return *this;}
+    inline SignalInformation& WithDataPartitionId(Aws::String&& value) { SetDataPartitionId(std::move(value)); return *this;}
+    inline SignalInformation& WithDataPartitionId(const char* value) { SetDataPartitionId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -82,6 +107,9 @@ namespace Model
 
     long long m_minimumSamplingIntervalMs;
     bool m_minimumSamplingIntervalMsHasBeenSet = false;
+
+    Aws::String m_dataPartitionId;
+    bool m_dataPartitionIdHasBeenSet = false;
   };
 
 } // namespace Model

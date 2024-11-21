@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace APIGateway
 {
 namespace Model
@@ -34,6 +38,8 @@ namespace Model
 
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
+    AWS_APIGATEWAY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
 
     ///@{
     /**
@@ -47,6 +53,21 @@ namespace Model
     inline GetBasePathMappingRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
     inline GetBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
     inline GetBasePathMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The identifier for the domain name resource. Supported only for private
+     * custom domain names. </p>
+     */
+    inline const Aws::String& GetDomainNameId() const{ return m_domainNameId; }
+    inline bool DomainNameIdHasBeenSet() const { return m_domainNameIdHasBeenSet; }
+    inline void SetDomainNameId(const Aws::String& value) { m_domainNameIdHasBeenSet = true; m_domainNameId = value; }
+    inline void SetDomainNameId(Aws::String&& value) { m_domainNameIdHasBeenSet = true; m_domainNameId = std::move(value); }
+    inline void SetDomainNameId(const char* value) { m_domainNameIdHasBeenSet = true; m_domainNameId.assign(value); }
+    inline GetBasePathMappingRequest& WithDomainNameId(const Aws::String& value) { SetDomainNameId(value); return *this;}
+    inline GetBasePathMappingRequest& WithDomainNameId(Aws::String&& value) { SetDomainNameId(std::move(value)); return *this;}
+    inline GetBasePathMappingRequest& WithDomainNameId(const char* value) { SetDomainNameId(value); return *this;}
     ///@}
 
     ///@{
@@ -69,6 +90,9 @@ namespace Model
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
+
+    Aws::String m_domainNameId;
+    bool m_domainNameIdHasBeenSet = false;
 
     Aws::String m_basePath;
     bool m_basePathHasBeenSet = false;

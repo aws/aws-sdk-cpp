@@ -70,7 +70,7 @@ namespace Model
     ///@{
     /**
      * <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS",
-     * "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+     * "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
      */
     inline const JobExecutionStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -83,7 +83,8 @@ namespace Model
     ///@{
     /**
      * <p>A collection of name/value pairs that describe the status of the job
-     * execution.</p>
+     * execution.</p> <p>The maximum length of the value in the name/value pair is
+     * 1,024 characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const{ return m_statusDetails; }
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
@@ -102,7 +103,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was
+     * <p>The time, in seconds since the epoch, when the job execution was
      * enqueued.</p>
      */
     inline long long GetQueuedAt() const{ return m_queuedAt; }
@@ -113,8 +114,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was
-     * started.</p>
+     * <p>The time, in seconds since the epoch, when the job execution was started.</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
@@ -124,7 +124,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was last
+     * <p>The time, in seconds since the epoch, when the job execution was last
      * updated. </p>
      */
     inline long long GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
@@ -136,7 +136,8 @@ namespace Model
     ///@{
     /**
      * <p>The estimated number of seconds that remain before the job execution status
-     * will be changed to <code>TIMED_OUT</code>.</p>
+     * will be changed to <code>TIMED_OUT</code>. The actual job execution timeout can
+     * occur up to 60 seconds later than the estimated duration.</p>
      */
     inline long long GetApproximateSecondsBeforeTimedOut() const{ return m_approximateSecondsBeforeTimedOut; }
     inline bool ApproximateSecondsBeforeTimedOutHasBeenSet() const { return m_approximateSecondsBeforeTimedOutHasBeenSet; }

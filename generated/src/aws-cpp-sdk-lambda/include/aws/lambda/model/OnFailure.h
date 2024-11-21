@@ -40,15 +40,15 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the destination resource.</p> <p>To retain
-     * records of <a
+     * records of unsuccessful <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">asynchronous
-     * invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Lambda
-     * function, or Amazon EventBridge event bus as the destination.</p> <p>To retain
-     * records of failed invocations from <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#event-source-mapping-destinations">Kinesis
-     * and DynamoDB event sources</a>, you can configure an Amazon SNS topic or Amazon
-     * SQS queue as the destination.</p> <p>To retain records of failed invocations
-     * from <a
+     * invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Amazon
+     * S3 bucket, Lambda function, or Amazon EventBridge event bus as the
+     * destination.</p> <p>To retain records of failed invocations from <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Kinesis</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">DynamoDB</a>,
+     * <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination">self-managed
      * Kafka</a> or <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon

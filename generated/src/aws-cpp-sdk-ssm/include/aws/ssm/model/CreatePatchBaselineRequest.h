@@ -73,6 +73,10 @@ namespace Model
     ///@{
     /**
      * <p>A set of global filters used to include patches in the baseline.</p>
+     *  <p>The <code>GlobalFilters</code> parameter can be configured only
+     * by using the CLI or an Amazon Web Services SDK. It can't be configured from the
+     * Patch Manager console, and its value isn't displayed in the console.</p>
+     * 
      */
     inline const PatchFilterGroup& GetGlobalFilters() const{ return m_globalFilters; }
     inline bool GlobalFiltersHasBeenSet() const { return m_globalFiltersHasBeenSet; }

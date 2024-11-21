@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the list of resource grouping recommendations you have selected to
-     * exclude from your application.</p>
+     * <p>List of resource grouping recommendations you have selected to exclude from
+     * your application.</p>
      */
     inline const Aws::Vector<RejectGroupingRecommendationEntry>& GetEntries() const{ return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }

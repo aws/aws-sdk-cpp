@@ -45,7 +45,7 @@ namespace Model
      * The suffix, combined with the auto-generated prefix, guarantees uniqueness of
      * the Global datastore name across multiple regions. </p> <p>For a full list of
      * Amazon Regions and their respective Global datastore iD prefixes, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Redis-Global-Datastores-CLI.html">Using
      * the Amazon CLI with Global datastores </a>.</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupIdSuffix() const{ return m_globalReplicationGroupIdSuffix; }

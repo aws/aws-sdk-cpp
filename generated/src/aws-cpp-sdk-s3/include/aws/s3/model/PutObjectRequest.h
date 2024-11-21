@@ -470,6 +470,20 @@ namespace Model
 
     ///@{
     /**
+     * <p> Specifies the offset for appending data to existing objects in bytes. The
+     * offset must be equal to the size of the existing object being appended to. If no
+     * object exists, setting this header to 0 will create a new object. </p> 
+     * <p>This functionality is only supported for objects in the Amazon S3 Express One
+     * Zone storage class in directory buckets.</p> 
+     */
+    inline long long GetWriteOffsetBytes() const{ return m_writeOffsetBytes; }
+    inline bool WriteOffsetBytesHasBeenSet() const { return m_writeOffsetBytesHasBeenSet; }
+    inline void SetWriteOffsetBytes(long long value) { m_writeOffsetBytesHasBeenSet = true; m_writeOffsetBytes = value; }
+    inline PutObjectRequest& WithWriteOffsetBytes(long long value) { SetWriteOffsetBytes(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A map of metadata to store with the object in S3.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
@@ -912,6 +926,9 @@ namespace Model
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
+
+    long long m_writeOffsetBytes;
+    bool m_writeOffsetBytesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
     bool m_metadataHasBeenSet = false;

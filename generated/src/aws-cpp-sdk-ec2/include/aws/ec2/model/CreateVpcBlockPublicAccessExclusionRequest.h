@@ -83,12 +83,11 @@ namespace Model
     ///@{
     /**
      * <p>The exclusion mode for internet gateway traffic.</p> <ul> <li> <p>
-     * <code>bidirectional-access-allowed</code>: Allow all internet traffic to and
-     * from the excluded VPCs and subnets.</p> </li> <li> <p>
-     * <code>egress-access-allowed</code>: Allow outbound internet traffic from the
-     * excluded VPCs and subnets. Block inbound internet traffic to the excluded VPCs
-     * and subnets. Only applies when VPC Block Public Access is set to
-     * Bidirectional.</p> </li> </ul>
+     * <code>allow-bidirectional</code>: Allow all internet traffic to and from the
+     * excluded VPCs and subnets.</p> </li> <li> <p> <code>allow-egress</code>: Allow
+     * outbound internet traffic from the excluded VPCs and subnets. Block inbound
+     * internet traffic to the excluded VPCs and subnets. Only applies when VPC Block
+     * Public Access is set to Bidirectional.</p> </li> </ul>
      */
     inline const InternetGatewayExclusionMode& GetInternetGatewayExclusionMode() const{ return m_internetGatewayExclusionMode; }
     inline bool InternetGatewayExclusionModeHasBeenSet() const { return m_internetGatewayExclusionModeHasBeenSet; }

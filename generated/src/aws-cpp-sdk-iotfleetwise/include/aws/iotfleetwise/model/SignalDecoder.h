@@ -10,6 +10,7 @@
 #include <aws/iotfleetwise/model/CanSignal.h>
 #include <aws/iotfleetwise/model/ObdSignal.h>
 #include <aws/iotfleetwise/model/MessageSignal.h>
+#include <aws/iotfleetwise/model/CustomDecodingSignal.h>
 #include <utility>
 
 namespace Aws
@@ -101,7 +102,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about signal decoder using the On-board diagnostic (OBD) II
+     * <p>Information about signal decoder using the on-board diagnostic (OBD) II
      * protocol.</p>
      */
     inline const ObdSignal& GetObdSignal() const{ return m_obdSignal; }
@@ -124,6 +125,24 @@ namespace Model
     inline SignalDecoder& WithMessageSignal(const MessageSignal& value) { SetMessageSignal(value); return *this;}
     inline SignalDecoder& WithMessageSignal(MessageSignal&& value) { SetMessageSignal(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about a <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingSignal.html">custom
+     * signal decoder</a>.</p>  <p>Access to certain Amazon Web Services IoT
+     * FleetWise features is currently gated. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+     * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+     * IoT FleetWise Developer Guide</i>.</p> 
+     */
+    inline const CustomDecodingSignal& GetCustomDecodingSignal() const{ return m_customDecodingSignal; }
+    inline bool CustomDecodingSignalHasBeenSet() const { return m_customDecodingSignalHasBeenSet; }
+    inline void SetCustomDecodingSignal(const CustomDecodingSignal& value) { m_customDecodingSignalHasBeenSet = true; m_customDecodingSignal = value; }
+    inline void SetCustomDecodingSignal(CustomDecodingSignal&& value) { m_customDecodingSignalHasBeenSet = true; m_customDecodingSignal = std::move(value); }
+    inline SignalDecoder& WithCustomDecodingSignal(const CustomDecodingSignal& value) { SetCustomDecodingSignal(value); return *this;}
+    inline SignalDecoder& WithCustomDecodingSignal(CustomDecodingSignal&& value) { SetCustomDecodingSignal(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_fullyQualifiedName;
@@ -143,6 +162,9 @@ namespace Model
 
     MessageSignal m_messageSignal;
     bool m_messageSignalHasBeenSet = false;
+
+    CustomDecodingSignal m_customDecodingSignal;
+    bool m_customDecodingSignalHasBeenSet = false;
   };
 
 } // namespace Model

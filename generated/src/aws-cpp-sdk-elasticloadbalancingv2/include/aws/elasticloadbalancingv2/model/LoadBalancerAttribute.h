@@ -64,14 +64,16 @@ namespace Model
      * the load balancer. It is set to <code>false</code> for internet-facing load
      * balancers and <code>true</code> for internal load balancers, preventing
      * unintended access to your internal load balancer through an internet
-     * gateway.</p> </li> </ul> <p>The following attributes are supported by only
-     * Application Load Balancers:</p> <ul> <li> <p>
-     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds.
-     * The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li> <li> <p>
-     * <code>client_keep_alive.seconds</code> - The client keep alive value, in
-     * seconds. The valid range is 60-604800 seconds. The default is 3600 seconds.</p>
-     * </li> <li> <p> <code>connection_logs.s3.enabled</code> - Indicates whether
-     * connection logs are enabled. The value is <code>true</code> or
+     * gateway.</p> </li> <li> <p> <code>zonal_shift.config.enabled</code> - Indicates
+     * whether zonal shift is enabled. The possible values are <code>true</code> and
+     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul> <p>The
+     * following attributes are supported by only Application Load Balancers:</p> <ul>
+     * <li> <p> <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in
+     * seconds. The valid range is 1-4000 seconds. The default is 60 seconds.</p> </li>
+     * <li> <p> <code>client_keep_alive.seconds</code> - The client keep alive value,
+     * in seconds. The valid range is 60-604800 seconds. The default is 3600
+     * seconds.</p> </li> <li> <p> <code>connection_logs.s3.enabled</code> - Indicates
+     * whether connection logs are enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
      * <code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the
      * connection logs. This attribute is required if connection logs are enabled. The
@@ -133,9 +135,7 @@ namespace Model
      * values are <code>availability_zone_affinity</code> with 100 percent zonal
      * affinity, <code>partial_availability_zone_affinity</code> with 85 percent zonal
      * affinity, and <code>any_availability_zone</code> with 0 percent zonal
-     * affinity.</p> </li> <li> <p> <code>zonal_shift.config.enabled</code> - Indicates
-     * whether zonal shift is enabled. The possible values are <code>true</code> and
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * affinity.</p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

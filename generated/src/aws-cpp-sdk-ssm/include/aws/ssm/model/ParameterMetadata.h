@@ -60,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The (ARN) of the last user to update the parameter.</p>
+     * <p>The Amazon Resource Name (ARN) of the parameter.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }

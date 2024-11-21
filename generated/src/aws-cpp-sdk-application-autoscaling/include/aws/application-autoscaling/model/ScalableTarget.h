@@ -208,6 +208,16 @@ namespace Model
 
     ///@{
     /**
+     * <p> The predicted capacity of the scalable target. </p>
+     */
+    inline int GetPredictedCapacity() const{ return m_predictedCapacity; }
+    inline bool PredictedCapacityHasBeenSet() const { return m_predictedCapacityHasBeenSet; }
+    inline void SetPredictedCapacity(int value) { m_predictedCapacityHasBeenSet = true; m_predictedCapacity = value; }
+    inline ScalableTarget& WithPredictedCapacity(int value) { SetPredictedCapacity(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN of an IAM role that allows Application Auto Scaling to modify the
      * scalable target on your behalf.</p>
      */
@@ -275,6 +285,9 @@ namespace Model
 
     int m_maxCapacity;
     bool m_maxCapacityHasBeenSet = false;
+
+    int m_predictedCapacity;
+    bool m_predictedCapacityHasBeenSet = false;
 
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet = false;
