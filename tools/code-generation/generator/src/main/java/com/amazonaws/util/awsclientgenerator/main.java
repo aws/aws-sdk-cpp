@@ -86,22 +86,14 @@ public class main {
             String serviceName = argPairs.get(SERVICE_OPTION);
             boolean enableVirtualOperations = argPairs.containsKey(ENABLE_VIRTUAL_OPERATIONS);
 
-            if ((!argPairs.containsKey(INPUT_FILE_NAME) || !argPairs.containsKey(ENDPOINT_RULE_SET))
-                    && (!argPairs.containsKey(DEFAULTS_OPTION) && !argPairs.containsKey(PARTITIONS_OPTION))) {
-                System.err.println("Error: inputfile c2j model file AND endpoint-rule-set are mandatory for code generation!");
-                System.exit(-1);
-                return;
-            }
             String arbitraryJson = readFile(argPairs.getOrDefault(INPUT_FILE_NAME, ""));
-            String endpointRules = argPairs.containsKey(ENDPOINT_TESTS) ? readFile(argPairs.get(ENDPOINT_RULE_SET)) : null;
-
+            String endpointRules = null;
+            if (argPairs.containsKey(ENDPOINT_RULE_SET)) {
+                endpointRules = readFile(argPairs.get(ENDPOINT_RULE_SET));
+            }
             String endpointRuleTests = null;
             if (argPairs.containsKey(ENDPOINT_TESTS)) {
                 endpointRuleTests = readFile(argPairs.get(ENDPOINT_TESTS));
-            } else if (generateTests) {
-                System.err.println("Error: endpoint-tests file is mandatory for generate-tests!");
-                System.exit(-1);
-                return;
             }
 
             String outputFileName = null;

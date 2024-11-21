@@ -7,9 +7,6 @@ package com.amazonaws.util.awsclientgenerator.generators.cpp.s3control;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
 import org.apache.velocity.Template;
@@ -18,9 +15,7 @@ import org.apache.velocity.VelocityContext;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class S3ControlRestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
@@ -121,6 +116,56 @@ public class S3ControlRestXmlCppClientGenerator  extends RestXmlCppClientGenerat
             sourceFiles.add(makeFile(template, context, fileName, true));
         }
         return sourceFiles;
+    }
+
+    @Override
+    protected SdkFileEntry generateRegionHeaderFile(ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3control/S3ControlEndpointEnumHeader.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
+
+        String fileName = String.format("include/aws/%s/%sEndpoint.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    @Override
+    protected SdkFileEntry generateRegionSourceFile(ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3control/S3ControlEndpointEnumSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+
+        String fileName = String.format("source/%sEndpoint.cpp", serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    @Override
+    protected SdkFileEntry generateARNHeaderFile(final ServiceModel serviceModel) throws Exception {
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3control/S3ControlARNHeader.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
+
+        String fileName = String.format("include/aws/%s/%sARN.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    @Override
+    protected SdkFileEntry generateARNSourceFile(final ServiceModel serviceModel) throws Exception {
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3control/S3ControlARNSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+
+        String fileName = String.format("source/%sARN.cpp", serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
     }
 
     @Override
