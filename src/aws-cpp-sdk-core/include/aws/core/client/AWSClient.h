@@ -95,8 +95,6 @@ namespace Aws
                       const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
                       const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller);
 
-
-
             virtual ~AWSClient() { };
 
             /**
@@ -323,7 +321,7 @@ namespace Aws
             std::shared_ptr<Aws::Http::HttpResponse> MakeHttpRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
             Aws::String m_region;
 
-            void SetFeatureHeaders(Aws::Http::HeaderValueCollection && headers);
+            void SetFeatureHeaders(Aws::Http::HeaderValueCollection&& headers);
 
             /**
              * Adds "X-Amzn-Trace-Id" header with the value of _X_AMZN_TRACE_ID if both

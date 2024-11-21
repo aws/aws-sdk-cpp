@@ -883,8 +883,6 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request, co
     AddHeadersToRequest(httpRequest, request.GetAdditionalCustomHeaders());
     AddHeadersToRequest(httpRequest, m_featureHeaders);
 
-    
-
     if (request.IsEventStreamRequest())
     {
         httpRequest->AddContentBody(request.GetBody());
@@ -1053,9 +1051,6 @@ void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRe
     ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
 }
 
-
-void AWSClient::SetFeatureHeaders(Aws::Http::HeaderValueCollection && headers)
-{
-    m_featureHeaders = std::move(headers);
+void AWSClient::SetFeatureHeaders(Aws::Http::HeaderValueCollection&& headers) {
+  m_featureHeaders = std::move(headers);
 }
-
