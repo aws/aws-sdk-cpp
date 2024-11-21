@@ -136,6 +136,22 @@ namespace Model
     inline PutSubscriptionFilterRequest& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
     inline PutSubscriptionFilterRequest& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This parameter is valid only for log groups that have an active log
+     * transformer. For more information about log transformers, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+     * <p>If the log group uses either a log-group level or account-level transformer,
+     * and you specify <code>true</code>, the subscription filter will be applied on
+     * the transformed version of the log events instead of the original ingested log
+     * events.</p>
+     */
+    inline bool GetApplyOnTransformedLogs() const{ return m_applyOnTransformedLogs; }
+    inline bool ApplyOnTransformedLogsHasBeenSet() const { return m_applyOnTransformedLogsHasBeenSet; }
+    inline void SetApplyOnTransformedLogs(bool value) { m_applyOnTransformedLogsHasBeenSet = true; m_applyOnTransformedLogs = value; }
+    inline PutSubscriptionFilterRequest& WithApplyOnTransformedLogs(bool value) { SetApplyOnTransformedLogs(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_logGroupName;
@@ -155,6 +171,9 @@ namespace Model
 
     Distribution m_distribution;
     bool m_distributionHasBeenSet = false;
+
+    bool m_applyOnTransformedLogs;
+    bool m_applyOnTransformedLogsHasBeenSet = false;
   };
 
 } // namespace Model

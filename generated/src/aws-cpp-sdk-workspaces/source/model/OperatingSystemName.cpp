@@ -32,6 +32,7 @@ namespace Aws
         static const int WINDOWS_SERVER_2019_HASH = HashingUtils::HashString("WINDOWS_SERVER_2019");
         static const int WINDOWS_SERVER_2022_HASH = HashingUtils::HashString("WINDOWS_SERVER_2022");
         static const int RHEL_8_HASH = HashingUtils::HashString("RHEL_8");
+        static const int ROCKY_8_HASH = HashingUtils::HashString("ROCKY_8");
 
 
         OperatingSystemName GetOperatingSystemNameForName(const Aws::String& name)
@@ -85,6 +86,10 @@ namespace Aws
           {
             return OperatingSystemName::RHEL_8;
           }
+          else if (hashCode == ROCKY_8_HASH)
+          {
+            return OperatingSystemName::ROCKY_8;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -125,6 +130,8 @@ namespace Aws
             return "WINDOWS_SERVER_2022";
           case OperatingSystemName::RHEL_8:
             return "RHEL_8";
+          case OperatingSystemName::ROCKY_8:
+            return "ROCKY_8";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

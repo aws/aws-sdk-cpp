@@ -66,7 +66,8 @@ namespace Model
     ///@{
     /**
      * <p>This tag must exist in the object's tag set in order for the rule to
-     * apply.</p>
+     * apply.</p>  <p>This parameter applies to general purpose buckets only. It
+     * is not supported for directory bucket lifecycle configurations.</p> 
      */
     inline const Tag& GetTag() const{ return m_tag; }
     inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }

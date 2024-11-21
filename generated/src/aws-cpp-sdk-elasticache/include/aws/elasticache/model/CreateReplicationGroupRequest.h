@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html">Minimizing
      * Downtime: Multi-AZ</a>.</p>
      */
     inline bool GetMultiAZEnabled() const{ return m_multiAZEnabled; }
@@ -238,7 +238,7 @@ namespace Model
      * <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
      * <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code> </p> 
      * <p>For region availability, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>M6g node types</b> (available only for Redis
      * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
@@ -274,7 +274,7 @@ namespace Model
      * <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>,
      * <code>cache.r7g.8xlarge</code>, <code>cache.r7g.12xlarge</code>,
      * <code>cache.r7g.16xlarge</code> </p>  <p>For region availability, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R6g node types</b> (available only for Redis
      * OSS engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward):
      * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
@@ -333,7 +333,7 @@ namespace Model
      * replication group. To view the supported cache engine versions, use the
      * <code>DescribeCacheEngineVersions</code> operation.</p> <p> <b>Important:</b>
      * You can upgrade to a newer engine version (see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you
      * cannot downgrade to an earlier engine version. If you want to use an earlier
      * engine version, you must delete the existing cluster or replication group and
@@ -378,7 +378,7 @@ namespace Model
      *  <p>If you're going to launch your cluster in an Amazon VPC, you need
      * to create a subnet group before you start creating a cluster. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> 
      */
     inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
@@ -682,7 +682,7 @@ namespace Model
      * <p>Enables data tiering. Data tiering is only supported for replication groups
      * using the r6gd node type. This parameter must be set to true when using r6gd
      * nodes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data
      * tiering</a>.</p>
      */
     inline bool GetDataTieringEnabled() const{ return m_dataTieringEnabled; }

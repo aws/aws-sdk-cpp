@@ -7,7 +7,9 @@
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iotfleetwise/model/StateTemplateAssociation.h>
 #include <utility>
 
 namespace Aws
@@ -109,6 +111,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>State templates associated with the vehicle.</p>
+     */
+    inline const Aws::Vector<StateTemplateAssociation>& GetStateTemplates() const{ return m_stateTemplates; }
+    inline void SetStateTemplates(const Aws::Vector<StateTemplateAssociation>& value) { m_stateTemplates = value; }
+    inline void SetStateTemplates(Aws::Vector<StateTemplateAssociation>&& value) { m_stateTemplates = std::move(value); }
+    inline GetVehicleResult& WithStateTemplates(const Aws::Vector<StateTemplateAssociation>& value) { SetStateTemplates(value); return *this;}
+    inline GetVehicleResult& WithStateTemplates(Aws::Vector<StateTemplateAssociation>&& value) { SetStateTemplates(std::move(value)); return *this;}
+    inline GetVehicleResult& AddStateTemplates(const StateTemplateAssociation& value) { m_stateTemplates.push_back(value); return *this; }
+    inline GetVehicleResult& AddStateTemplates(StateTemplateAssociation&& value) { m_stateTemplates.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p> The time the vehicle was created in seconds since epoch (January 1, 1970 at
      * midnight UTC time). </p>
      */
@@ -152,6 +167,8 @@ namespace Model
     Aws::String m_decoderManifestArn;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
+
+    Aws::Vector<StateTemplateAssociation> m_stateTemplates;
 
     Aws::Utils::DateTime m_creationTime;
 

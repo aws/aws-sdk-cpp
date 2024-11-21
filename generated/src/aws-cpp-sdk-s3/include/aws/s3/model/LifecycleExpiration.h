@@ -44,7 +44,9 @@ namespace Model
     ///@{
     /**
      * <p>Indicates at what date the object is to be moved or deleted. The date value
-     * must conform to the ISO 8601 format. The time is always midnight UTC.</p>
+     * must conform to the ISO 8601 format. The time is always midnight UTC.</p> 
+     * <p>This parameter applies to general purpose buckets only. It is not supported
+     * for directory bucket lifecycle configurations.</p> 
      */
     inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
@@ -70,7 +72,9 @@ namespace Model
      * <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent
      * versions. If set to true, the delete marker will be expired; if set to false the
      * policy takes no action. This cannot be specified with Days or Date in a
-     * Lifecycle Expiration Policy.</p>
+     * Lifecycle Expiration Policy.</p>  <p>This parameter applies to general
+     * purpose buckets only. It is not supported for directory bucket lifecycle
+     * configurations.</p> 
      */
     inline bool GetExpiredObjectDeleteMarker() const{ return m_expiredObjectDeleteMarker; }
     inline bool ExpiredObjectDeleteMarkerHasBeenSet() const { return m_expiredObjectDeleteMarkerHasBeenSet; }

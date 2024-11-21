@@ -79,8 +79,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the lower limit of the range that is used to filter applications
-     * based on their last assessment times.</p>
+     * <p>Lower limit of the range that is used to filter applications based on their
+     * last assessment times.</p>
      */
     inline const Aws::Utils::DateTime& GetFromLastAssessmentTime() const{ return m_fromLastAssessmentTime; }
     inline bool FromLastAssessmentTimeHasBeenSet() const { return m_fromLastAssessmentTimeHasBeenSet; }
@@ -145,8 +145,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the upper limit of the range that is used to filter the
-     * applications based on their last assessment times.</p>
+     * <p>Upper limit of the range that is used to filter the applications based on
+     * their last assessment times.</p>
      */
     inline const Aws::Utils::DateTime& GetToLastAssessmentTime() const{ return m_toLastAssessmentTime; }
     inline bool ToLastAssessmentTimeHasBeenSet() const { return m_toLastAssessmentTimeHasBeenSet; }

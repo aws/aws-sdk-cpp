@@ -47,6 +47,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon S3 presigned URL of the tax registration document. </p>
+     */
+    inline const Aws::String& GetPresignedS3Url() const{ return m_presignedS3Url; }
+    inline void SetPresignedS3Url(const Aws::String& value) { m_presignedS3Url = value; }
+    inline void SetPresignedS3Url(Aws::String&& value) { m_presignedS3Url = std::move(value); }
+    inline void SetPresignedS3Url(const char* value) { m_presignedS3Url.assign(value); }
+    inline GetTaxRegistrationDocumentResult& WithPresignedS3Url(const Aws::String& value) { SetPresignedS3Url(value); return *this;}
+    inline GetTaxRegistrationDocumentResult& WithPresignedS3Url(Aws::String&& value) { SetPresignedS3Url(std::move(value)); return *this;}
+    inline GetTaxRegistrationDocumentResult& WithPresignedS3Url(const char* value) { SetPresignedS3Url(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -59,6 +72,8 @@ namespace Model
   private:
 
     Aws::String m_destinationFilePath;
+
+    Aws::String m_presignedS3Url;
 
     Aws::String m_requestId;
   };

@@ -189,69 +189,6 @@ elseif(ENABLE_WINDOWS_CLIENT)
     else()
         file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/Win*.h")
         file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/Win*.cpp")
-
-        # Starting with Windows 10, version 1507, WinINet supports HTTP2.
-        # https://docs.microsoft.com/en-us/windows/desktop/WinInet/option-flags#INTERNET_OPTION_ENABLE_HTTP_PROTOCOL
-        # Starting with Windows 10, version 1607, WinHttp supports HTTP2.
-        # https://docs.microsoft.com/en-us/windows/desktop/WinHttp/option-flags#WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL
-        set(CMAKE_REQUIRED_LIBRARIES "WinHttp.lib")
-        check_cxx_source_runs("
-        #include <Windows.h>
-        #include <winhttp.h>
-        int main() {
-
-        auto handle = WinHttpOpen(L\"aws-cpp-sdk\"/*user-agent*/,
-        WINHTTP_ACCESS_TYPE_NO_PROXY,
-        nullptr/*pszProxyW*/,
-        nullptr/*pszProxyBypassW*/,
-        0/*dwFlags*/);
-
-        DWORD http2 = WINHTTP_PROTOCOL_FLAG_HTTP2;
-        if (WinHttpSetOption(handle, WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL, &http2, sizeof(http2)))
-        {
-            return 0;
-        }
-        return 1;
-        }" WINHTTP_HAS_H2)
-
-        check_cxx_source_runs("
-        #include <Windows.h>
-        #include <winhttp.h>
-        int main() {
-
-        auto handle = WinHttpOpen(L\"aws-cpp-sdk\"/*user-agent*/,
-        WINHTTP_ACCESS_TYPE_NO_PROXY,
-        nullptr/*pszProxyW*/,
-        nullptr/*pszProxyBypassW*/,
-        0/*dwFlags*/);
-
-        DWORD http3 = WINHTTP_PROTOCOL_FLAG_HTTP3;
-        if (WinHttpSetOption(handle, WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL, &http3, sizeof(http3)))
-        {
-            return 0;
-        }
-        return 1;
-        }" WINHTTP_HAS_H3)
-
-        set(CMAKE_REQUIRED_LIBRARIES "Wininet.lib")
-        check_cxx_source_runs("
-        #include <Windows.h>
-        #include <WinInet.h>
-        int main() {
-        auto handle = InternetOpenA(\"aws-cpp-sdk\"/*lpszAgent*/,
-            INTERNET_OPEN_TYPE_DIRECT /*dwAccessType*/,
-            nullptr /*lpszProxy*/,
-            nullptr /*lpszProxyBypass*/,
-            0 /*dwFlags*/);
-        DWORD http2 = HTTP_PROTOCOL_FLAG_HTTP2;
-        if (InternetSetOptionA(handle, INTERNET_OPTION_ENABLE_HTTP_PROTOCOL, &http2, sizeof(http2)))
-        {
-            return 0;
-        }
-        return 1;
-        }" WININET_HAS_H2)
-        unset(CMAKE_REQUIRED_LIBRARIES)
-
     endif()
 elseif(USE_CRT_HTTP_CLIENT)
     file(GLOB CRT_HTTP_HEADERS "include/aws/core/http/crt/*.h")

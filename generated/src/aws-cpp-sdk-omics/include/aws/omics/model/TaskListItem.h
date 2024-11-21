@@ -91,6 +91,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>Set to true if AWS HealthOmics found a matching entry in the run cache for
+     * this task.</p>
+     */
+    inline bool GetCacheHit() const{ return m_cacheHit; }
+    inline bool CacheHitHasBeenSet() const { return m_cacheHitHasBeenSet; }
+    inline void SetCacheHit(bool value) { m_cacheHitHasBeenSet = true; m_cacheHit = value; }
+    inline TaskListItem& WithCacheHit(bool value) { SetCacheHit(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The S3 URI of the cache location.</p>
+     */
+    inline const Aws::String& GetCacheS3Uri() const{ return m_cacheS3Uri; }
+    inline bool CacheS3UriHasBeenSet() const { return m_cacheS3UriHasBeenSet; }
+    inline void SetCacheS3Uri(const Aws::String& value) { m_cacheS3UriHasBeenSet = true; m_cacheS3Uri = value; }
+    inline void SetCacheS3Uri(Aws::String&& value) { m_cacheS3UriHasBeenSet = true; m_cacheS3Uri = std::move(value); }
+    inline void SetCacheS3Uri(const char* value) { m_cacheS3UriHasBeenSet = true; m_cacheS3Uri.assign(value); }
+    inline TaskListItem& WithCacheS3Uri(const Aws::String& value) { SetCacheS3Uri(value); return *this;}
+    inline TaskListItem& WithCacheS3Uri(Aws::String&& value) { SetCacheS3Uri(std::move(value)); return *this;}
+    inline TaskListItem& WithCacheS3Uri(const char* value) { SetCacheS3Uri(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The task's memory use in gigabyes.</p>
      */
     inline int GetMemory() const{ return m_memory; }
@@ -171,6 +196,12 @@ namespace Model
 
     int m_cpus;
     bool m_cpusHasBeenSet = false;
+
+    bool m_cacheHit;
+    bool m_cacheHitHasBeenSet = false;
+
+    Aws::String m_cacheS3Uri;
+    bool m_cacheS3UriHasBeenSet = false;
 
     int m_memory;
     bool m_memoryHasBeenSet = false;

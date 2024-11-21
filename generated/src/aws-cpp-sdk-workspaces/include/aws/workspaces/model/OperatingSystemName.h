@@ -27,7 +27,8 @@ namespace Model
     WINDOWS_SERVER_2016,
     WINDOWS_SERVER_2019,
     WINDOWS_SERVER_2022,
-    RHEL_8
+    RHEL_8,
+    ROCKY_8
   };
 
 namespace OperatingSystemNameMapper

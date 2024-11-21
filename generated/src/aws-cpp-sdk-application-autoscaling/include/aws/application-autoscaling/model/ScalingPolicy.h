@@ -11,6 +11,7 @@
 #include <aws/application-autoscaling/model/PolicyType.h>
 #include <aws/application-autoscaling/model/StepScalingPolicyConfiguration.h>
 #include <aws/application-autoscaling/model/TargetTrackingScalingPolicyConfiguration.h>
+#include <aws/application-autoscaling/model/PredictiveScalingPolicyConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/application-autoscaling/model/Alarm.h>
@@ -263,6 +264,18 @@ namespace Model
 
     ///@{
     /**
+     * <p> The predictive scaling policy configuration. </p>
+     */
+    inline const PredictiveScalingPolicyConfiguration& GetPredictiveScalingPolicyConfiguration() const{ return m_predictiveScalingPolicyConfiguration; }
+    inline bool PredictiveScalingPolicyConfigurationHasBeenSet() const { return m_predictiveScalingPolicyConfigurationHasBeenSet; }
+    inline void SetPredictiveScalingPolicyConfiguration(const PredictiveScalingPolicyConfiguration& value) { m_predictiveScalingPolicyConfigurationHasBeenSet = true; m_predictiveScalingPolicyConfiguration = value; }
+    inline void SetPredictiveScalingPolicyConfiguration(PredictiveScalingPolicyConfiguration&& value) { m_predictiveScalingPolicyConfigurationHasBeenSet = true; m_predictiveScalingPolicyConfiguration = std::move(value); }
+    inline ScalingPolicy& WithPredictiveScalingPolicyConfiguration(const PredictiveScalingPolicyConfiguration& value) { SetPredictiveScalingPolicyConfiguration(value); return *this;}
+    inline ScalingPolicy& WithPredictiveScalingPolicyConfiguration(PredictiveScalingPolicyConfiguration&& value) { SetPredictiveScalingPolicyConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The CloudWatch alarms associated with the scaling policy.</p>
      */
     inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
@@ -311,6 +324,9 @@ namespace Model
 
     TargetTrackingScalingPolicyConfiguration m_targetTrackingScalingPolicyConfiguration;
     bool m_targetTrackingScalingPolicyConfigurationHasBeenSet = false;
+
+    PredictiveScalingPolicyConfiguration m_predictiveScalingPolicyConfiguration;
+    bool m_predictiveScalingPolicyConfigurationHasBeenSet = false;
 
     Aws::Vector<Alarm> m_alarms;
     bool m_alarmsHasBeenSet = false;

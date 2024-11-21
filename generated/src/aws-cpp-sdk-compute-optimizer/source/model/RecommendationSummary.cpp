@@ -20,10 +20,13 @@ namespace Model
 
 RecommendationSummary::RecommendationSummary() : 
     m_summariesHasBeenSet(false),
+    m_idleSummariesHasBeenSet(false),
     m_recommendationResourceType(RecommendationSourceType::NOT_SET),
     m_recommendationResourceTypeHasBeenSet(false),
     m_accountIdHasBeenSet(false),
     m_savingsOpportunityHasBeenSet(false),
+    m_idleSavingsOpportunityHasBeenSet(false),
+    m_aggregatedSavingsOpportunityHasBeenSet(false),
     m_currentPerformanceRiskRatingsHasBeenSet(false),
     m_inferredWorkloadSavingsHasBeenSet(false)
 {
@@ -47,6 +50,16 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
     m_summariesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("idleSummaries"))
+  {
+    Aws::Utils::Array<JsonView> idleSummariesJsonList = jsonValue.GetArray("idleSummaries");
+    for(unsigned idleSummariesIndex = 0; idleSummariesIndex < idleSummariesJsonList.GetLength(); ++idleSummariesIndex)
+    {
+      m_idleSummaries.push_back(idleSummariesJsonList[idleSummariesIndex].AsObject());
+    }
+    m_idleSummariesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("recommendationResourceType"))
   {
     m_recommendationResourceType = RecommendationSourceTypeMapper::GetRecommendationSourceTypeForName(jsonValue.GetString("recommendationResourceType"));
@@ -66,6 +79,20 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
     m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
 
     m_savingsOpportunityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("idleSavingsOpportunity"))
+  {
+    m_idleSavingsOpportunity = jsonValue.GetObject("idleSavingsOpportunity");
+
+    m_idleSavingsOpportunityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("aggregatedSavingsOpportunity"))
+  {
+    m_aggregatedSavingsOpportunity = jsonValue.GetObject("aggregatedSavingsOpportunity");
+
+    m_aggregatedSavingsOpportunityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("currentPerformanceRiskRatings"))
@@ -103,6 +130,17 @@ JsonValue RecommendationSummary::Jsonize() const
 
   }
 
+  if(m_idleSummariesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> idleSummariesJsonList(m_idleSummaries.size());
+   for(unsigned idleSummariesIndex = 0; idleSummariesIndex < idleSummariesJsonList.GetLength(); ++idleSummariesIndex)
+   {
+     idleSummariesJsonList[idleSummariesIndex].AsObject(m_idleSummaries[idleSummariesIndex].Jsonize());
+   }
+   payload.WithArray("idleSummaries", std::move(idleSummariesJsonList));
+
+  }
+
   if(m_recommendationResourceTypeHasBeenSet)
   {
    payload.WithString("recommendationResourceType", RecommendationSourceTypeMapper::GetNameForRecommendationSourceType(m_recommendationResourceType));
@@ -117,6 +155,18 @@ JsonValue RecommendationSummary::Jsonize() const
   if(m_savingsOpportunityHasBeenSet)
   {
    payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
+
+  }
+
+  if(m_idleSavingsOpportunityHasBeenSet)
+  {
+   payload.WithObject("idleSavingsOpportunity", m_idleSavingsOpportunity.Jsonize());
+
+  }
+
+  if(m_aggregatedSavingsOpportunityHasBeenSet)
+  {
+   payload.WithObject("aggregatedSavingsOpportunity", m_aggregatedSavingsOpportunity.Jsonize());
 
   }
 

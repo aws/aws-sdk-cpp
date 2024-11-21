@@ -44,6 +44,12 @@ UpdateAccountSettingsResult& UpdateAccountSettingsResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("QueryCompute"))
+  {
+    m_queryCompute = jsonValue.GetObject("QueryCompute");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

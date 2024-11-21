@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the identifier of the grouping recommendation task.</p>
+     * <p>Identifier of the grouping recommendation task.</p>
      */
     inline const Aws::String& GetGroupingId() const{ return m_groupingId; }
     inline bool GroupingIdHasBeenSet() const { return m_groupingIdHasBeenSet; }

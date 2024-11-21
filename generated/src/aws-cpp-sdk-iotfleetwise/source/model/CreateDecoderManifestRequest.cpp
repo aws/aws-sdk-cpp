@@ -18,6 +18,8 @@ CreateDecoderManifestRequest::CreateDecoderManifestRequest() :
     m_modelManifestArnHasBeenSet(false),
     m_signalDecodersHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
+    m_defaultForUnmappedSignals(DefaultForUnmappedSignalsType::NOT_SET),
+    m_defaultForUnmappedSignalsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -64,6 +66,11 @@ Aws::String CreateDecoderManifestRequest::SerializePayload() const
    }
    payload.WithArray("networkInterfaces", std::move(networkInterfacesJsonList));
 
+  }
+
+  if(m_defaultForUnmappedSignalsHasBeenSet)
+  {
+   payload.WithString("defaultForUnmappedSignals", DefaultForUnmappedSignalsTypeMapper::GetNameForDefaultForUnmappedSignalsType(m_defaultForUnmappedSignals));
   }
 
   if(m_tagsHasBeenSet)

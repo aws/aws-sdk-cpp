@@ -58,7 +58,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon S3 bucket to store the access logs in, for example,
-     * <code>myawslogbucket.s3.amazonaws.com</code>.</p>
+     * <code>amzn-s3-demo-bucket.s3.amazonaws.com</code>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }

@@ -262,6 +262,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> The size of the object in bytes. This will only be present if you append to
+     * an object. </p>  <p>This functionality is only supported for objects in
+     * the Amazon S3 Express One Zone storage class in directory buckets.</p> 
+     */
+    inline long long GetSize() const{ return m_size; }
+    inline void SetSize(long long value) { m_size = value; }
+    inline PutObjectResult& WithSize(long long value) { SetSize(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
     inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
@@ -307,6 +318,8 @@ namespace Model
     Aws::String m_sSEKMSEncryptionContext;
 
     bool m_bucketKeyEnabled;
+
+    long long m_size;
 
     RequestCharged m_requestCharged;
 

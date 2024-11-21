@@ -24,7 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Reserved for internal use.</p><p><h3>See Also:</h3>   <a
+   * <p>If an entity is rejected when a <code>PutLogEvents</code> request was made,
+   * this includes details about the reason for the rejection.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/RejectedEntityInfo">AWS
    * API Reference</a></p>
    */
@@ -39,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved for internal use.</p>
+     * <p>The type of error that caused the rejection of the entity when calling
+     * <code>PutLogEvents</code>.</p>
      */
     inline const EntityRejectionErrorType& GetErrorType() const{ return m_errorType; }
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }

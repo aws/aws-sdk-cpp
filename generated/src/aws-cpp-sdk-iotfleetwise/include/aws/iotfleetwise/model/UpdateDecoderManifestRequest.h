@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotfleetwise/model/ManifestStatus.h>
+#include <aws/iotfleetwise/model/DefaultForUnmappedSignalsType.h>
 #include <aws/iotfleetwise/model/SignalDecoder.h>
 #include <aws/iotfleetwise/model/NetworkInterface.h>
 #include <utility>
@@ -169,6 +170,24 @@ namespace Model
     inline UpdateDecoderManifestRequest& WithStatus(const ManifestStatus& value) { SetStatus(value); return *this;}
     inline UpdateDecoderManifestRequest& WithStatus(ManifestStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Use default decoders for all unmapped signals in the model. You don't need to
+     * provide any detailed decoding information.</p>  <p>Access to certain
+     * Amazon Web Services IoT FleetWise features is currently gated. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+     * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+     * IoT FleetWise Developer Guide</i>.</p> 
+     */
+    inline const DefaultForUnmappedSignalsType& GetDefaultForUnmappedSignals() const{ return m_defaultForUnmappedSignals; }
+    inline bool DefaultForUnmappedSignalsHasBeenSet() const { return m_defaultForUnmappedSignalsHasBeenSet; }
+    inline void SetDefaultForUnmappedSignals(const DefaultForUnmappedSignalsType& value) { m_defaultForUnmappedSignalsHasBeenSet = true; m_defaultForUnmappedSignals = value; }
+    inline void SetDefaultForUnmappedSignals(DefaultForUnmappedSignalsType&& value) { m_defaultForUnmappedSignalsHasBeenSet = true; m_defaultForUnmappedSignals = std::move(value); }
+    inline UpdateDecoderManifestRequest& WithDefaultForUnmappedSignals(const DefaultForUnmappedSignalsType& value) { SetDefaultForUnmappedSignals(value); return *this;}
+    inline UpdateDecoderManifestRequest& WithDefaultForUnmappedSignals(DefaultForUnmappedSignalsType&& value) { SetDefaultForUnmappedSignals(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -197,6 +216,9 @@ namespace Model
 
     ManifestStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    DefaultForUnmappedSignalsType m_defaultForUnmappedSignals;
+    bool m_defaultForUnmappedSignalsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,7 +19,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the tags to add to a trail, event data store, or
+   * <p>Specifies the tags to add to a trail, event data store, dashboard, or
    * channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTagsRequest">AWS
    * API Reference</a></p>
@@ -42,11 +42,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the ARN of the trail, event data store, or channel to which one or
-     * more tags will be added.</p> <p>The format of a trail ARN is:
+     * <p>Specifies the ARN of the trail, event data store, dashboard, or channel to
+     * which one or more tags will be added.</p> <p>The format of a trail ARN is:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>The
      * format of an event data store ARN is:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>The format of a dashboard ARN is:
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</code>
      * </p> <p>The format of a channel ARN is:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */

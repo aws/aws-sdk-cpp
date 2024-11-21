@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iotfleetwise/model/UpdateMode.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotfleetwise/model/StateTemplateAssociation.h>
 #include <utility>
 
 namespace Aws
@@ -112,6 +114,35 @@ namespace Model
     inline UpdateVehicleRequest& WithAttributeUpdateMode(const UpdateMode& value) { SetAttributeUpdateMode(value); return *this;}
     inline UpdateVehicleRequest& WithAttributeUpdateMode(UpdateMode&& value) { SetAttributeUpdateMode(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Associate state templates with the vehicle.</p>
+     */
+    inline const Aws::Vector<StateTemplateAssociation>& GetStateTemplatesToAdd() const{ return m_stateTemplatesToAdd; }
+    inline bool StateTemplatesToAddHasBeenSet() const { return m_stateTemplatesToAddHasBeenSet; }
+    inline void SetStateTemplatesToAdd(const Aws::Vector<StateTemplateAssociation>& value) { m_stateTemplatesToAddHasBeenSet = true; m_stateTemplatesToAdd = value; }
+    inline void SetStateTemplatesToAdd(Aws::Vector<StateTemplateAssociation>&& value) { m_stateTemplatesToAddHasBeenSet = true; m_stateTemplatesToAdd = std::move(value); }
+    inline UpdateVehicleRequest& WithStateTemplatesToAdd(const Aws::Vector<StateTemplateAssociation>& value) { SetStateTemplatesToAdd(value); return *this;}
+    inline UpdateVehicleRequest& WithStateTemplatesToAdd(Aws::Vector<StateTemplateAssociation>&& value) { SetStateTemplatesToAdd(std::move(value)); return *this;}
+    inline UpdateVehicleRequest& AddStateTemplatesToAdd(const StateTemplateAssociation& value) { m_stateTemplatesToAddHasBeenSet = true; m_stateTemplatesToAdd.push_back(value); return *this; }
+    inline UpdateVehicleRequest& AddStateTemplatesToAdd(StateTemplateAssociation&& value) { m_stateTemplatesToAddHasBeenSet = true; m_stateTemplatesToAdd.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Remove state templates from the vehicle.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetStateTemplatesToRemove() const{ return m_stateTemplatesToRemove; }
+    inline bool StateTemplatesToRemoveHasBeenSet() const { return m_stateTemplatesToRemoveHasBeenSet; }
+    inline void SetStateTemplatesToRemove(const Aws::Vector<Aws::String>& value) { m_stateTemplatesToRemoveHasBeenSet = true; m_stateTemplatesToRemove = value; }
+    inline void SetStateTemplatesToRemove(Aws::Vector<Aws::String>&& value) { m_stateTemplatesToRemoveHasBeenSet = true; m_stateTemplatesToRemove = std::move(value); }
+    inline UpdateVehicleRequest& WithStateTemplatesToRemove(const Aws::Vector<Aws::String>& value) { SetStateTemplatesToRemove(value); return *this;}
+    inline UpdateVehicleRequest& WithStateTemplatesToRemove(Aws::Vector<Aws::String>&& value) { SetStateTemplatesToRemove(std::move(value)); return *this;}
+    inline UpdateVehicleRequest& AddStateTemplatesToRemove(const Aws::String& value) { m_stateTemplatesToRemoveHasBeenSet = true; m_stateTemplatesToRemove.push_back(value); return *this; }
+    inline UpdateVehicleRequest& AddStateTemplatesToRemove(Aws::String&& value) { m_stateTemplatesToRemoveHasBeenSet = true; m_stateTemplatesToRemove.push_back(std::move(value)); return *this; }
+    inline UpdateVehicleRequest& AddStateTemplatesToRemove(const char* value) { m_stateTemplatesToRemoveHasBeenSet = true; m_stateTemplatesToRemove.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_vehicleName;
@@ -128,6 +159,12 @@ namespace Model
 
     UpdateMode m_attributeUpdateMode;
     bool m_attributeUpdateModeHasBeenSet = false;
+
+    Aws::Vector<StateTemplateAssociation> m_stateTemplatesToAdd;
+    bool m_stateTemplatesToAddHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_stateTemplatesToRemove;
+    bool m_stateTemplatesToRemoveHasBeenSet = false;
   };
 
 } // namespace Model

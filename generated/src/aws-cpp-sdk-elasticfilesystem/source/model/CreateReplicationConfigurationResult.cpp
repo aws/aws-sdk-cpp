@@ -68,6 +68,12 @@ CreateReplicationConfigurationResult& CreateReplicationConfigurationResult::oper
     }
   }
 
+  if(jsonValue.ValueExists("SourceFileSystemOwnerId"))
+  {
+    m_sourceFileSystemOwnerId = jsonValue.GetString("SourceFileSystemOwnerId");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -93,15 +93,15 @@ namespace Model
      * (<code>pending</code> | <code>available</code>).</p> </li> <li> <p>
      * <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.</p>
      * </li> <li> <p> <code>subnet-id</code> - The ID of the subnet.</p> </li> <li> <p>
-     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
-     * the resource. Use the tag key in the filter name and the tag value as the filter
-     * value. For example, to find all resources that have a tag with the key
-     * <code>Owner</code> and the value <code>TeamA</code>, specify
-     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
-     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
-     * the resource. Use this filter to find all resources assigned a tag with a
-     * specific key, regardless of the tag value.</p> </li> <li> <p>
-     * <code>vpc-id</code> - The ID of the VPC for the subnet.</p> </li> </ul>
+     * <code>tag</code> - The key/value combination of a tag assigned to the resource.
+     * Use the tag key in the filter name and the tag value as the filter value. For
+     * example, to find all resources that have a tag with the key <code>Owner</code>
+     * and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter
+     * name and <code>TeamA</code> for the filter value.</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this
+     * filter to find all resources assigned a tag with a specific key, regardless of
+     * the tag value.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for
+     * the subnet.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

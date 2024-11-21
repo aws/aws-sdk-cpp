@@ -13,6 +13,7 @@
 #include <aws/autoscaling/model/InstanceMaintenancePolicy.h>
 #include <aws/autoscaling/model/AvailabilityZoneDistribution.h>
 #include <aws/autoscaling/model/AvailabilityZoneImpairmentPolicy.h>
+#include <aws/autoscaling/model/CapacityReservationSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -445,6 +446,18 @@ namespace Model
     inline void SetSkipZonalShiftValidation(bool value) { m_skipZonalShiftValidationHasBeenSet = true; m_skipZonalShiftValidation = value; }
     inline UpdateAutoScalingGroupRequest& WithSkipZonalShiftValidation(bool value) { SetSkipZonalShiftValidation(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The capacity reservation specification for the Auto Scaling group. </p>
+     */
+    inline const CapacityReservationSpecification& GetCapacityReservationSpecification() const{ return m_capacityReservationSpecification; }
+    inline bool CapacityReservationSpecificationHasBeenSet() const { return m_capacityReservationSpecificationHasBeenSet; }
+    inline void SetCapacityReservationSpecification(const CapacityReservationSpecification& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = value; }
+    inline void SetCapacityReservationSpecification(CapacityReservationSpecification&& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = std::move(value); }
+    inline UpdateAutoScalingGroupRequest& WithCapacityReservationSpecification(const CapacityReservationSpecification& value) { SetCapacityReservationSpecification(value); return *this;}
+    inline UpdateAutoScalingGroupRequest& WithCapacityReservationSpecification(CapacityReservationSpecification&& value) { SetCapacityReservationSpecification(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -521,6 +534,9 @@ namespace Model
 
     bool m_skipZonalShiftValidation;
     bool m_skipZonalShiftValidationHasBeenSet = false;
+
+    CapacityReservationSpecification m_capacityReservationSpecification;
+    bool m_capacityReservationSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/ContainerRestartPolicy.h>
 #include <aws/ecs/model/LinuxParameters.h>
+#include <aws/ecs/model/VersionConsistency.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ecs/model/LogConfiguration.h>
 #include <aws/ecs/model/HealthCheck.h>
@@ -591,6 +592,26 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies whether Amazon ECS will resolve the container image tag provided in
+     * the container definition to an image digest. By default, the value is
+     * <code>enabled</code>. If you set the value for a container as
+     * <code>disabled</code>, Amazon ECS will not resolve the provided container image
+     * tag to a digest and will use the original image URI specified in the container
+     * definition for deployment. For more information about container image
+     * resolution, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html#deployment-container-image-stability">Container
+     * image resolution</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+     */
+    inline const VersionConsistency& GetVersionConsistency() const{ return m_versionConsistency; }
+    inline bool VersionConsistencyHasBeenSet() const { return m_versionConsistencyHasBeenSet; }
+    inline void SetVersionConsistency(const VersionConsistency& value) { m_versionConsistencyHasBeenSet = true; m_versionConsistency = value; }
+    inline void SetVersionConsistency(VersionConsistency&& value) { m_versionConsistencyHasBeenSet = true; m_versionConsistency = std::move(value); }
+    inline ContainerDefinition& WithVersionConsistency(const VersionConsistency& value) { SetVersionConsistency(value); return *this;}
+    inline ContainerDefinition& WithVersionConsistency(VersionConsistency&& value) { SetVersionConsistency(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the docker container create command and the
      * <code>--hostname</code> option to docker run.</p>  <p>The
@@ -1064,6 +1085,9 @@ namespace Model
 
     int m_stopTimeout;
     bool m_stopTimeoutHasBeenSet = false;
+
+    VersionConsistency m_versionConsistency;
+    bool m_versionConsistencyHasBeenSet = false;
 
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet = false;

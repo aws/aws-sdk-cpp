@@ -19,12 +19,14 @@
 
 /* Service model headers required in WorkSpacesWebClient header */
 #include <aws/workspaces-web/model/AssociateBrowserSettingsResult.h>
+#include <aws/workspaces-web/model/AssociateDataProtectionSettingsResult.h>
 #include <aws/workspaces-web/model/AssociateIpAccessSettingsResult.h>
 #include <aws/workspaces-web/model/AssociateNetworkSettingsResult.h>
 #include <aws/workspaces-web/model/AssociateTrustStoreResult.h>
 #include <aws/workspaces-web/model/AssociateUserAccessLoggingSettingsResult.h>
 #include <aws/workspaces-web/model/AssociateUserSettingsResult.h>
 #include <aws/workspaces-web/model/CreateBrowserSettingsResult.h>
+#include <aws/workspaces-web/model/CreateDataProtectionSettingsResult.h>
 #include <aws/workspaces-web/model/CreateIdentityProviderResult.h>
 #include <aws/workspaces-web/model/CreateIpAccessSettingsResult.h>
 #include <aws/workspaces-web/model/CreateNetworkSettingsResult.h>
@@ -33,6 +35,7 @@
 #include <aws/workspaces-web/model/CreateUserAccessLoggingSettingsResult.h>
 #include <aws/workspaces-web/model/CreateUserSettingsResult.h>
 #include <aws/workspaces-web/model/DeleteBrowserSettingsResult.h>
+#include <aws/workspaces-web/model/DeleteDataProtectionSettingsResult.h>
 #include <aws/workspaces-web/model/DeleteIdentityProviderResult.h>
 #include <aws/workspaces-web/model/DeleteIpAccessSettingsResult.h>
 #include <aws/workspaces-web/model/DeleteNetworkSettingsResult.h>
@@ -41,6 +44,7 @@
 #include <aws/workspaces-web/model/DeleteUserAccessLoggingSettingsResult.h>
 #include <aws/workspaces-web/model/DeleteUserSettingsResult.h>
 #include <aws/workspaces-web/model/DisassociateBrowserSettingsResult.h>
+#include <aws/workspaces-web/model/DisassociateDataProtectionSettingsResult.h>
 #include <aws/workspaces-web/model/DisassociateIpAccessSettingsResult.h>
 #include <aws/workspaces-web/model/DisassociateNetworkSettingsResult.h>
 #include <aws/workspaces-web/model/DisassociateTrustStoreResult.h>
@@ -48,6 +52,7 @@
 #include <aws/workspaces-web/model/DisassociateUserSettingsResult.h>
 #include <aws/workspaces-web/model/ExpireSessionResult.h>
 #include <aws/workspaces-web/model/GetBrowserSettingsResult.h>
+#include <aws/workspaces-web/model/GetDataProtectionSettingsResult.h>
 #include <aws/workspaces-web/model/GetIdentityProviderResult.h>
 #include <aws/workspaces-web/model/GetIpAccessSettingsResult.h>
 #include <aws/workspaces-web/model/GetNetworkSettingsResult.h>
@@ -59,6 +64,7 @@
 #include <aws/workspaces-web/model/GetUserAccessLoggingSettingsResult.h>
 #include <aws/workspaces-web/model/GetUserSettingsResult.h>
 #include <aws/workspaces-web/model/ListBrowserSettingsResult.h>
+#include <aws/workspaces-web/model/ListDataProtectionSettingsResult.h>
 #include <aws/workspaces-web/model/ListIdentityProvidersResult.h>
 #include <aws/workspaces-web/model/ListIpAccessSettingsResult.h>
 #include <aws/workspaces-web/model/ListNetworkSettingsResult.h>
@@ -72,6 +78,7 @@
 #include <aws/workspaces-web/model/TagResourceResult.h>
 #include <aws/workspaces-web/model/UntagResourceResult.h>
 #include <aws/workspaces-web/model/UpdateBrowserSettingsResult.h>
+#include <aws/workspaces-web/model/UpdateDataProtectionSettingsResult.h>
 #include <aws/workspaces-web/model/UpdateIdentityProviderResult.h>
 #include <aws/workspaces-web/model/UpdateIpAccessSettingsResult.h>
 #include <aws/workspaces-web/model/UpdateNetworkSettingsResult.h>
@@ -82,11 +89,13 @@
 #include <aws/workspaces-web/model/ListTrustStoresRequest.h>
 #include <aws/workspaces-web/model/ListUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/ListNetworkSettingsRequest.h>
+#include <aws/workspaces-web/model/CreateDataProtectionSettingsRequest.h>
 #include <aws/workspaces-web/model/CreatePortalRequest.h>
 #include <aws/workspaces-web/model/ListUserSettingsRequest.h>
 #include <aws/workspaces-web/model/ListBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/ListPortalsRequest.h>
 #include <aws/workspaces-web/model/ListIpAccessSettingsRequest.h>
+#include <aws/workspaces-web/model/ListDataProtectionSettingsRequest.h>
 /* End of service model headers required in WorkSpacesWebClient header */
 
 namespace Aws
@@ -128,12 +137,14 @@ namespace Aws
     {
       /* Service model forward declarations required in WorkSpacesWebClient header */
       class AssociateBrowserSettingsRequest;
+      class AssociateDataProtectionSettingsRequest;
       class AssociateIpAccessSettingsRequest;
       class AssociateNetworkSettingsRequest;
       class AssociateTrustStoreRequest;
       class AssociateUserAccessLoggingSettingsRequest;
       class AssociateUserSettingsRequest;
       class CreateBrowserSettingsRequest;
+      class CreateDataProtectionSettingsRequest;
       class CreateIdentityProviderRequest;
       class CreateIpAccessSettingsRequest;
       class CreateNetworkSettingsRequest;
@@ -142,6 +153,7 @@ namespace Aws
       class CreateUserAccessLoggingSettingsRequest;
       class CreateUserSettingsRequest;
       class DeleteBrowserSettingsRequest;
+      class DeleteDataProtectionSettingsRequest;
       class DeleteIdentityProviderRequest;
       class DeleteIpAccessSettingsRequest;
       class DeleteNetworkSettingsRequest;
@@ -150,6 +162,7 @@ namespace Aws
       class DeleteUserAccessLoggingSettingsRequest;
       class DeleteUserSettingsRequest;
       class DisassociateBrowserSettingsRequest;
+      class DisassociateDataProtectionSettingsRequest;
       class DisassociateIpAccessSettingsRequest;
       class DisassociateNetworkSettingsRequest;
       class DisassociateTrustStoreRequest;
@@ -157,6 +170,7 @@ namespace Aws
       class DisassociateUserSettingsRequest;
       class ExpireSessionRequest;
       class GetBrowserSettingsRequest;
+      class GetDataProtectionSettingsRequest;
       class GetIdentityProviderRequest;
       class GetIpAccessSettingsRequest;
       class GetNetworkSettingsRequest;
@@ -168,6 +182,7 @@ namespace Aws
       class GetUserAccessLoggingSettingsRequest;
       class GetUserSettingsRequest;
       class ListBrowserSettingsRequest;
+      class ListDataProtectionSettingsRequest;
       class ListIdentityProvidersRequest;
       class ListIpAccessSettingsRequest;
       class ListNetworkSettingsRequest;
@@ -181,6 +196,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateBrowserSettingsRequest;
+      class UpdateDataProtectionSettingsRequest;
       class UpdateIdentityProviderRequest;
       class UpdateIpAccessSettingsRequest;
       class UpdateNetworkSettingsRequest;
@@ -192,12 +208,14 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AssociateBrowserSettingsResult, WorkSpacesWebError> AssociateBrowserSettingsOutcome;
+      typedef Aws::Utils::Outcome<AssociateDataProtectionSettingsResult, WorkSpacesWebError> AssociateDataProtectionSettingsOutcome;
       typedef Aws::Utils::Outcome<AssociateIpAccessSettingsResult, WorkSpacesWebError> AssociateIpAccessSettingsOutcome;
       typedef Aws::Utils::Outcome<AssociateNetworkSettingsResult, WorkSpacesWebError> AssociateNetworkSettingsOutcome;
       typedef Aws::Utils::Outcome<AssociateTrustStoreResult, WorkSpacesWebError> AssociateTrustStoreOutcome;
       typedef Aws::Utils::Outcome<AssociateUserAccessLoggingSettingsResult, WorkSpacesWebError> AssociateUserAccessLoggingSettingsOutcome;
       typedef Aws::Utils::Outcome<AssociateUserSettingsResult, WorkSpacesWebError> AssociateUserSettingsOutcome;
       typedef Aws::Utils::Outcome<CreateBrowserSettingsResult, WorkSpacesWebError> CreateBrowserSettingsOutcome;
+      typedef Aws::Utils::Outcome<CreateDataProtectionSettingsResult, WorkSpacesWebError> CreateDataProtectionSettingsOutcome;
       typedef Aws::Utils::Outcome<CreateIdentityProviderResult, WorkSpacesWebError> CreateIdentityProviderOutcome;
       typedef Aws::Utils::Outcome<CreateIpAccessSettingsResult, WorkSpacesWebError> CreateIpAccessSettingsOutcome;
       typedef Aws::Utils::Outcome<CreateNetworkSettingsResult, WorkSpacesWebError> CreateNetworkSettingsOutcome;
@@ -206,6 +224,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateUserAccessLoggingSettingsResult, WorkSpacesWebError> CreateUserAccessLoggingSettingsOutcome;
       typedef Aws::Utils::Outcome<CreateUserSettingsResult, WorkSpacesWebError> CreateUserSettingsOutcome;
       typedef Aws::Utils::Outcome<DeleteBrowserSettingsResult, WorkSpacesWebError> DeleteBrowserSettingsOutcome;
+      typedef Aws::Utils::Outcome<DeleteDataProtectionSettingsResult, WorkSpacesWebError> DeleteDataProtectionSettingsOutcome;
       typedef Aws::Utils::Outcome<DeleteIdentityProviderResult, WorkSpacesWebError> DeleteIdentityProviderOutcome;
       typedef Aws::Utils::Outcome<DeleteIpAccessSettingsResult, WorkSpacesWebError> DeleteIpAccessSettingsOutcome;
       typedef Aws::Utils::Outcome<DeleteNetworkSettingsResult, WorkSpacesWebError> DeleteNetworkSettingsOutcome;
@@ -214,6 +233,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteUserAccessLoggingSettingsResult, WorkSpacesWebError> DeleteUserAccessLoggingSettingsOutcome;
       typedef Aws::Utils::Outcome<DeleteUserSettingsResult, WorkSpacesWebError> DeleteUserSettingsOutcome;
       typedef Aws::Utils::Outcome<DisassociateBrowserSettingsResult, WorkSpacesWebError> DisassociateBrowserSettingsOutcome;
+      typedef Aws::Utils::Outcome<DisassociateDataProtectionSettingsResult, WorkSpacesWebError> DisassociateDataProtectionSettingsOutcome;
       typedef Aws::Utils::Outcome<DisassociateIpAccessSettingsResult, WorkSpacesWebError> DisassociateIpAccessSettingsOutcome;
       typedef Aws::Utils::Outcome<DisassociateNetworkSettingsResult, WorkSpacesWebError> DisassociateNetworkSettingsOutcome;
       typedef Aws::Utils::Outcome<DisassociateTrustStoreResult, WorkSpacesWebError> DisassociateTrustStoreOutcome;
@@ -221,6 +241,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateUserSettingsResult, WorkSpacesWebError> DisassociateUserSettingsOutcome;
       typedef Aws::Utils::Outcome<ExpireSessionResult, WorkSpacesWebError> ExpireSessionOutcome;
       typedef Aws::Utils::Outcome<GetBrowserSettingsResult, WorkSpacesWebError> GetBrowserSettingsOutcome;
+      typedef Aws::Utils::Outcome<GetDataProtectionSettingsResult, WorkSpacesWebError> GetDataProtectionSettingsOutcome;
       typedef Aws::Utils::Outcome<GetIdentityProviderResult, WorkSpacesWebError> GetIdentityProviderOutcome;
       typedef Aws::Utils::Outcome<GetIpAccessSettingsResult, WorkSpacesWebError> GetIpAccessSettingsOutcome;
       typedef Aws::Utils::Outcome<GetNetworkSettingsResult, WorkSpacesWebError> GetNetworkSettingsOutcome;
@@ -232,6 +253,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetUserAccessLoggingSettingsResult, WorkSpacesWebError> GetUserAccessLoggingSettingsOutcome;
       typedef Aws::Utils::Outcome<GetUserSettingsResult, WorkSpacesWebError> GetUserSettingsOutcome;
       typedef Aws::Utils::Outcome<ListBrowserSettingsResult, WorkSpacesWebError> ListBrowserSettingsOutcome;
+      typedef Aws::Utils::Outcome<ListDataProtectionSettingsResult, WorkSpacesWebError> ListDataProtectionSettingsOutcome;
       typedef Aws::Utils::Outcome<ListIdentityProvidersResult, WorkSpacesWebError> ListIdentityProvidersOutcome;
       typedef Aws::Utils::Outcome<ListIpAccessSettingsResult, WorkSpacesWebError> ListIpAccessSettingsOutcome;
       typedef Aws::Utils::Outcome<ListNetworkSettingsResult, WorkSpacesWebError> ListNetworkSettingsOutcome;
@@ -245,6 +267,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, WorkSpacesWebError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, WorkSpacesWebError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateBrowserSettingsResult, WorkSpacesWebError> UpdateBrowserSettingsOutcome;
+      typedef Aws::Utils::Outcome<UpdateDataProtectionSettingsResult, WorkSpacesWebError> UpdateDataProtectionSettingsOutcome;
       typedef Aws::Utils::Outcome<UpdateIdentityProviderResult, WorkSpacesWebError> UpdateIdentityProviderOutcome;
       typedef Aws::Utils::Outcome<UpdateIpAccessSettingsResult, WorkSpacesWebError> UpdateIpAccessSettingsOutcome;
       typedef Aws::Utils::Outcome<UpdateNetworkSettingsResult, WorkSpacesWebError> UpdateNetworkSettingsOutcome;
@@ -256,12 +279,14 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<AssociateBrowserSettingsOutcome> AssociateBrowserSettingsOutcomeCallable;
+      typedef std::future<AssociateDataProtectionSettingsOutcome> AssociateDataProtectionSettingsOutcomeCallable;
       typedef std::future<AssociateIpAccessSettingsOutcome> AssociateIpAccessSettingsOutcomeCallable;
       typedef std::future<AssociateNetworkSettingsOutcome> AssociateNetworkSettingsOutcomeCallable;
       typedef std::future<AssociateTrustStoreOutcome> AssociateTrustStoreOutcomeCallable;
       typedef std::future<AssociateUserAccessLoggingSettingsOutcome> AssociateUserAccessLoggingSettingsOutcomeCallable;
       typedef std::future<AssociateUserSettingsOutcome> AssociateUserSettingsOutcomeCallable;
       typedef std::future<CreateBrowserSettingsOutcome> CreateBrowserSettingsOutcomeCallable;
+      typedef std::future<CreateDataProtectionSettingsOutcome> CreateDataProtectionSettingsOutcomeCallable;
       typedef std::future<CreateIdentityProviderOutcome> CreateIdentityProviderOutcomeCallable;
       typedef std::future<CreateIpAccessSettingsOutcome> CreateIpAccessSettingsOutcomeCallable;
       typedef std::future<CreateNetworkSettingsOutcome> CreateNetworkSettingsOutcomeCallable;
@@ -270,6 +295,7 @@ namespace Aws
       typedef std::future<CreateUserAccessLoggingSettingsOutcome> CreateUserAccessLoggingSettingsOutcomeCallable;
       typedef std::future<CreateUserSettingsOutcome> CreateUserSettingsOutcomeCallable;
       typedef std::future<DeleteBrowserSettingsOutcome> DeleteBrowserSettingsOutcomeCallable;
+      typedef std::future<DeleteDataProtectionSettingsOutcome> DeleteDataProtectionSettingsOutcomeCallable;
       typedef std::future<DeleteIdentityProviderOutcome> DeleteIdentityProviderOutcomeCallable;
       typedef std::future<DeleteIpAccessSettingsOutcome> DeleteIpAccessSettingsOutcomeCallable;
       typedef std::future<DeleteNetworkSettingsOutcome> DeleteNetworkSettingsOutcomeCallable;
@@ -278,6 +304,7 @@ namespace Aws
       typedef std::future<DeleteUserAccessLoggingSettingsOutcome> DeleteUserAccessLoggingSettingsOutcomeCallable;
       typedef std::future<DeleteUserSettingsOutcome> DeleteUserSettingsOutcomeCallable;
       typedef std::future<DisassociateBrowserSettingsOutcome> DisassociateBrowserSettingsOutcomeCallable;
+      typedef std::future<DisassociateDataProtectionSettingsOutcome> DisassociateDataProtectionSettingsOutcomeCallable;
       typedef std::future<DisassociateIpAccessSettingsOutcome> DisassociateIpAccessSettingsOutcomeCallable;
       typedef std::future<DisassociateNetworkSettingsOutcome> DisassociateNetworkSettingsOutcomeCallable;
       typedef std::future<DisassociateTrustStoreOutcome> DisassociateTrustStoreOutcomeCallable;
@@ -285,6 +312,7 @@ namespace Aws
       typedef std::future<DisassociateUserSettingsOutcome> DisassociateUserSettingsOutcomeCallable;
       typedef std::future<ExpireSessionOutcome> ExpireSessionOutcomeCallable;
       typedef std::future<GetBrowserSettingsOutcome> GetBrowserSettingsOutcomeCallable;
+      typedef std::future<GetDataProtectionSettingsOutcome> GetDataProtectionSettingsOutcomeCallable;
       typedef std::future<GetIdentityProviderOutcome> GetIdentityProviderOutcomeCallable;
       typedef std::future<GetIpAccessSettingsOutcome> GetIpAccessSettingsOutcomeCallable;
       typedef std::future<GetNetworkSettingsOutcome> GetNetworkSettingsOutcomeCallable;
@@ -296,6 +324,7 @@ namespace Aws
       typedef std::future<GetUserAccessLoggingSettingsOutcome> GetUserAccessLoggingSettingsOutcomeCallable;
       typedef std::future<GetUserSettingsOutcome> GetUserSettingsOutcomeCallable;
       typedef std::future<ListBrowserSettingsOutcome> ListBrowserSettingsOutcomeCallable;
+      typedef std::future<ListDataProtectionSettingsOutcome> ListDataProtectionSettingsOutcomeCallable;
       typedef std::future<ListIdentityProvidersOutcome> ListIdentityProvidersOutcomeCallable;
       typedef std::future<ListIpAccessSettingsOutcome> ListIpAccessSettingsOutcomeCallable;
       typedef std::future<ListNetworkSettingsOutcome> ListNetworkSettingsOutcomeCallable;
@@ -309,6 +338,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateBrowserSettingsOutcome> UpdateBrowserSettingsOutcomeCallable;
+      typedef std::future<UpdateDataProtectionSettingsOutcome> UpdateDataProtectionSettingsOutcomeCallable;
       typedef std::future<UpdateIdentityProviderOutcome> UpdateIdentityProviderOutcomeCallable;
       typedef std::future<UpdateIpAccessSettingsOutcome> UpdateIpAccessSettingsOutcomeCallable;
       typedef std::future<UpdateNetworkSettingsOutcome> UpdateNetworkSettingsOutcomeCallable;
@@ -323,12 +353,14 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const WorkSpacesWebClient*, const Model::AssociateBrowserSettingsRequest&, const Model::AssociateBrowserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateBrowserSettingsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesWebClient*, const Model::AssociateDataProtectionSettingsRequest&, const Model::AssociateDataProtectionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDataProtectionSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::AssociateIpAccessSettingsRequest&, const Model::AssociateIpAccessSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIpAccessSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::AssociateNetworkSettingsRequest&, const Model::AssociateNetworkSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateNetworkSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::AssociateTrustStoreRequest&, const Model::AssociateTrustStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTrustStoreResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::AssociateUserAccessLoggingSettingsRequest&, const Model::AssociateUserAccessLoggingSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateUserAccessLoggingSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::AssociateUserSettingsRequest&, const Model::AssociateUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateUserSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::CreateBrowserSettingsRequest&, const Model::CreateBrowserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBrowserSettingsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesWebClient*, const Model::CreateDataProtectionSettingsRequest&, const Model::CreateDataProtectionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataProtectionSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::CreateIdentityProviderRequest&, const Model::CreateIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::CreateIpAccessSettingsRequest&, const Model::CreateIpAccessSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIpAccessSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::CreateNetworkSettingsRequest&, const Model::CreateNetworkSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkSettingsResponseReceivedHandler;
@@ -337,6 +369,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesWebClient*, const Model::CreateUserAccessLoggingSettingsRequest&, const Model::CreateUserAccessLoggingSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserAccessLoggingSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::CreateUserSettingsRequest&, const Model::CreateUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DeleteBrowserSettingsRequest&, const Model::DeleteBrowserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBrowserSettingsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesWebClient*, const Model::DeleteDataProtectionSettingsRequest&, const Model::DeleteDataProtectionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataProtectionSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DeleteIdentityProviderRequest&, const Model::DeleteIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DeleteIpAccessSettingsRequest&, const Model::DeleteIpAccessSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpAccessSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DeleteNetworkSettingsRequest&, const Model::DeleteNetworkSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkSettingsResponseReceivedHandler;
@@ -345,6 +378,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DeleteUserAccessLoggingSettingsRequest&, const Model::DeleteUserAccessLoggingSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserAccessLoggingSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DeleteUserSettingsRequest&, const Model::DeleteUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DisassociateBrowserSettingsRequest&, const Model::DisassociateBrowserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateBrowserSettingsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesWebClient*, const Model::DisassociateDataProtectionSettingsRequest&, const Model::DisassociateDataProtectionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDataProtectionSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DisassociateIpAccessSettingsRequest&, const Model::DisassociateIpAccessSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIpAccessSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DisassociateNetworkSettingsRequest&, const Model::DisassociateNetworkSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateNetworkSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DisassociateTrustStoreRequest&, const Model::DisassociateTrustStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrustStoreResponseReceivedHandler;
@@ -352,6 +386,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesWebClient*, const Model::DisassociateUserSettingsRequest&, const Model::DisassociateUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateUserSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::ExpireSessionRequest&, const Model::ExpireSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExpireSessionResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetBrowserSettingsRequest&, const Model::GetBrowserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBrowserSettingsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesWebClient*, const Model::GetDataProtectionSettingsRequest&, const Model::GetDataProtectionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataProtectionSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetIdentityProviderRequest&, const Model::GetIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetIpAccessSettingsRequest&, const Model::GetIpAccessSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIpAccessSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetNetworkSettingsRequest&, const Model::GetNetworkSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkSettingsResponseReceivedHandler;
@@ -363,6 +398,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetUserAccessLoggingSettingsRequest&, const Model::GetUserAccessLoggingSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserAccessLoggingSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::GetUserSettingsRequest&, const Model::GetUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::ListBrowserSettingsRequest&, const Model::ListBrowserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBrowserSettingsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesWebClient*, const Model::ListDataProtectionSettingsRequest&, const Model::ListDataProtectionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataProtectionSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::ListIdentityProvidersRequest&, const Model::ListIdentityProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityProvidersResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::ListIpAccessSettingsRequest&, const Model::ListIpAccessSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIpAccessSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::ListNetworkSettingsRequest&, const Model::ListNetworkSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNetworkSettingsResponseReceivedHandler;
@@ -376,6 +412,7 @@ namespace Aws
     typedef std::function<void(const WorkSpacesWebClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::UpdateBrowserSettingsRequest&, const Model::UpdateBrowserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBrowserSettingsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesWebClient*, const Model::UpdateDataProtectionSettingsRequest&, const Model::UpdateDataProtectionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataProtectionSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::UpdateIdentityProviderRequest&, const Model::UpdateIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIdentityProviderResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::UpdateIpAccessSettingsRequest&, const Model::UpdateIpAccessSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIpAccessSettingsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesWebClient*, const Model::UpdateNetworkSettingsRequest&, const Model::UpdateNetworkSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkSettingsResponseReceivedHandler;

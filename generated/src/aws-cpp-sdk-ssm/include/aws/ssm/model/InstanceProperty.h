@@ -212,8 +212,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The operating system platform type of the managed node. For example,
-     * Windows.</p>
+     * <p>The operating system platform type of the managed node. For example, Windows
+     * Server or Amazon Linux 2.</p>
      */
     inline const PlatformType& GetPlatformType() const{ return m_platformType; }
     inline bool PlatformTypeHasBeenSet() const { return m_platformTypeHasBeenSet; }

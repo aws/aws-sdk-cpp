@@ -19,6 +19,7 @@ namespace ElasticLoadBalancingv2ErrorMapper
 {
 
 static const int AVAILABILITY_ZONE_NOT_SUPPORTED_HASH = HashingUtils::HashString("AvailabilityZoneNotSupported");
+static const int INSUFFICIENT_CAPACITY_HASH = HashingUtils::HashString("InsufficientCapacity");
 static const int INVALID_SCHEME_HASH = HashingUtils::HashString("InvalidScheme");
 static const int INCOMPATIBLE_PROTOCOLS_HASH = HashingUtils::HashString("IncompatibleProtocols");
 static const int DUPLICATE_LISTENER_HASH = HashingUtils::HashString("DuplicateListener");
@@ -43,7 +44,9 @@ static const int TRUST_STORE_IN_USE_HASH = HashingUtils::HashString("TrustStoreI
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTags");
 static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SubnetNotFound");
 static const int CERTIFICATE_NOT_FOUND_HASH = HashingUtils::HashString("CertificateNotFound");
+static const int PRIOR_REQUEST_NOT_COMPLETE_HASH = HashingUtils::HashString("PriorRequestNotComplete");
 static const int TOO_MANY_TARGETS_HASH = HashingUtils::HashString("TooManyTargets");
+static const int CAPACITY_DECREASE_REQUESTS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CapacityDecreaseRequestLimitExceeded");
 static const int CA_CERTIFICATES_BUNDLE_NOT_FOUND_HASH = HashingUtils::HashString("CaCertificatesBundleNotFound");
 static const int TOO_MANY_RULES_HASH = HashingUtils::HashString("TooManyRules");
 static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFound");
@@ -54,6 +57,8 @@ static const int REVOCATION_CONTENT_NOT_FOUND_HASH = HashingUtils::HashString("R
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUse");
 static const int TRUST_STORE_ASSOCIATION_NOT_FOUND_HASH = HashingUtils::HashString("AssociationNotFound");
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermitted");
+static const int CAPACITY_RESERVATION_PENDING_HASH = HashingUtils::HashString("CapacityReservationPending");
+static const int CAPACITY_UNITS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CapacityUnitsLimitExceeded");
 static const int TOO_MANY_TARGET_GROUPS_HASH = HashingUtils::HashString("TooManyTargetGroups");
 static const int INVALID_CA_CERTIFICATES_BUNDLE_HASH = HashingUtils::HashString("InvalidCaCertificatesBundle");
 static const int TOO_MANY_TRUST_STORE_REVOCATION_ENTRIES_HASH = HashingUtils::HashString("TooManyTrustStoreRevocationEntries");
@@ -77,6 +82,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == AVAILABILITY_ZONE_NOT_SUPPORTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::AVAILABILITY_ZONE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INSUFFICIENT_CAPACITY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::INSUFFICIENT_CAPACITY), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_SCHEME_HASH)
   {
@@ -174,9 +183,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::CERTIFICATE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == PRIOR_REQUEST_NOT_COMPLETE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::PRIOR_REQUEST_NOT_COMPLETE), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == TOO_MANY_TARGETS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::TOO_MANY_TARGETS), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CAPACITY_DECREASE_REQUESTS_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::CAPACITY_DECREASE_REQUESTS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CA_CERTIFICATES_BUNDLE_NOT_FOUND_HASH)
   {
@@ -217,6 +234,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::OPERATION_NOT_PERMITTED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CAPACITY_RESERVATION_PENDING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::CAPACITY_RESERVATION_PENDING), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CAPACITY_UNITS_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::CAPACITY_UNITS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TARGET_GROUPS_HASH)
   {

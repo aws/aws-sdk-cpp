@@ -38,6 +38,12 @@ DescribeAccountPoliciesResult& DescribeAccountPoliciesResult::operator =(const A
     }
   }
 
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

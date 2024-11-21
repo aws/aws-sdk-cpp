@@ -89,9 +89,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Optional) Enter an S3 bucket prefix. The prefix is the string of characters
-     * after the bucket name and before the object name. You can use the prefix to
-     * organize data stored in Amazon S3 buckets. For more information, see <a
+     * <p>Enter an S3 bucket prefix. The prefix is the string of characters after the
+     * bucket name and before the object name. You can use the prefix to organize data
+     * stored in Amazon S3 buckets. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
      * objects using prefixes</a> in the <i>Amazon Simple Storage Service User
      * Guide</i>.</p> <p>By default, Amazon Web Services IoT FleetWise sets the prefix

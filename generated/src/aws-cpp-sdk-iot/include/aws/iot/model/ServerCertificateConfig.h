@@ -56,13 +56,15 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for a Lambda function that acts as a Request
      * for Comments (RFC) 6960-compliant Online Certificate Status Protocol (OCSP)
-     * responder, supporting basic OCSP responses. The Lambda function accepts a JSON
-     * string that's Base64-encoded. Therefore, you must convert your OCSP response,
-     * which is typically in the Distinguished Encoding Rules (DER) format, into a JSON
-     * string that's Base64-encoded. The Lambda function's response is also a
-     * Base64-encoded JSON string and the response payload must not exceed 8 kilobytes
-     * (KiB) in size. The Lambda function must be in the same Amazon Web Services
-     * region and account as the domain configuration.</p>
+     * responder, supporting basic OCSP responses. The Lambda function accepts a
+     * base64-encoding of the OCSP request in the Distinguished Encoding Rules (DER)
+     * format. The Lambda function's response is also a base64-encoded OCSP response in
+     * the DER format. The response size must not exceed 4 kilobytes (KiB). The Lambda
+     * function must be in the same Amazon Web Services account and region as the
+     * domain configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html#iot-custom-endpoints-cert-config-ocsp-private-endpoint.html">Configuring
+     * server certificate OCSP for private endpoints in Amazon Web Services IoT
+     * Core</a> from the Amazon Web Services IoT Core developer guide.</p>
      */
     inline const Aws::String& GetOcspLambdaArn() const{ return m_ocspLambdaArn; }
     inline bool OcspLambdaArnHasBeenSet() const { return m_ocspLambdaArnHasBeenSet; }
@@ -82,7 +84,7 @@ namespace Model
      * response. The OCSP responder must sign responses using either this authorized
      * responder certificate or the issuing certificate, depending on whether the ARN
      * is provided or not. The certificate must be in the same Amazon Web Services
-     * region and account as the domain configuration. </p>
+     * account and region as the domain configuration.</p>
      */
     inline const Aws::String& GetOcspAuthorizedResponderArn() const{ return m_ocspAuthorizedResponderArn; }
     inline bool OcspAuthorizedResponderArnHasBeenSet() const { return m_ocspAuthorizedResponderArnHasBeenSet; }

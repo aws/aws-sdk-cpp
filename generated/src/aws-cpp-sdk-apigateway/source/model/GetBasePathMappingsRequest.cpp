@@ -17,6 +17,7 @@ using namespace Aws::Http;
 
 GetBasePathMappingsRequest::GetBasePathMappingsRequest() : 
     m_domainNameHasBeenSet(false),
+    m_domainNameIdHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false)
@@ -31,6 +32,13 @@ Aws::String GetBasePathMappingsRequest::SerializePayload() const
 void GetBasePathMappingsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_domainNameIdHasBeenSet)
+    {
+      ss << m_domainNameId;
+      uri.AddQueryStringParameter("domainNameId", ss.str());
+      ss.str("");
+    }
+
     if(m_positionHasBeenSet)
     {
       ss << m_position;

@@ -16,7 +16,8 @@ UpdateAccountSettingsRequest::UpdateAccountSettingsRequest() :
     m_maxQueryTCU(0),
     m_maxQueryTCUHasBeenSet(false),
     m_queryPricingModel(QueryPricingModel::NOT_SET),
-    m_queryPricingModelHasBeenSet(false)
+    m_queryPricingModelHasBeenSet(false),
+    m_queryComputeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,12 @@ Aws::String UpdateAccountSettingsRequest::SerializePayload() const
   if(m_queryPricingModelHasBeenSet)
   {
    payload.WithString("QueryPricingModel", QueryPricingModelMapper::GetNameForQueryPricingModel(m_queryPricingModel));
+  }
+
+  if(m_queryComputeHasBeenSet)
+  {
+   payload.WithObject("QueryCompute", m_queryCompute.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

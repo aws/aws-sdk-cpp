@@ -26,6 +26,7 @@ namespace Aws
         static const int IMPORT_FAILED_HASH = HashingUtils::HashString("IMPORT_FAILED");
         static const int IMPORT_FAILED_SERVER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("IMPORT_FAILED_SERVER_LIMIT_EXCEEDED");
         static const int IMPORT_FAILED_RECORD_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("IMPORT_FAILED_RECORD_LIMIT_EXCEEDED");
+        static const int IMPORT_FAILED_UNSUPPORTED_FILE_TYPE_HASH = HashingUtils::HashString("IMPORT_FAILED_UNSUPPORTED_FILE_TYPE");
         static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
         static const int DELETE_COMPLETE_HASH = HashingUtils::HashString("DELETE_COMPLETE");
         static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
@@ -59,6 +60,10 @@ namespace Aws
           else if (hashCode == IMPORT_FAILED_RECORD_LIMIT_EXCEEDED_HASH)
           {
             return ImportStatus::IMPORT_FAILED_RECORD_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == IMPORT_FAILED_UNSUPPORTED_FILE_TYPE_HASH)
+          {
+            return ImportStatus::IMPORT_FAILED_UNSUPPORTED_FILE_TYPE;
           }
           else if (hashCode == DELETE_IN_PROGRESS_HASH)
           {
@@ -108,6 +113,8 @@ namespace Aws
             return "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED";
           case ImportStatus::IMPORT_FAILED_RECORD_LIMIT_EXCEEDED:
             return "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED";
+          case ImportStatus::IMPORT_FAILED_UNSUPPORTED_FILE_TYPE:
+            return "IMPORT_FAILED_UNSUPPORTED_FILE_TYPE";
           case ImportStatus::DELETE_IN_PROGRESS:
             return "DELETE_IN_PROGRESS";
           case ImportStatus::DELETE_COMPLETE:

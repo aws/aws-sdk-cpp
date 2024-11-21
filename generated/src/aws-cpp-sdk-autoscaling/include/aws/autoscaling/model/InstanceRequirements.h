@@ -19,6 +19,7 @@
 #include <aws/autoscaling/model/AcceleratorCountRequest.h>
 #include <aws/autoscaling/model/AcceleratorTotalMemoryMiBRequest.h>
 #include <aws/autoscaling/model/NetworkBandwidthGbpsRequest.h>
+#include <aws/autoscaling/model/BaselinePerformanceFactorsRequest.h>
 #include <aws/autoscaling/model/CpuManufacturer.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/InstanceGeneration.h>
@@ -518,6 +519,18 @@ namespace Model
     inline InstanceRequirements& AddAllowedInstanceTypes(Aws::String&& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(std::move(value)); return *this; }
     inline InstanceRequirements& AddAllowedInstanceTypes(const char* value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> The baseline performance factors for the instance requirements. </p>
+     */
+    inline const BaselinePerformanceFactorsRequest& GetBaselinePerformanceFactors() const{ return m_baselinePerformanceFactors; }
+    inline bool BaselinePerformanceFactorsHasBeenSet() const { return m_baselinePerformanceFactorsHasBeenSet; }
+    inline void SetBaselinePerformanceFactors(const BaselinePerformanceFactorsRequest& value) { m_baselinePerformanceFactorsHasBeenSet = true; m_baselinePerformanceFactors = value; }
+    inline void SetBaselinePerformanceFactors(BaselinePerformanceFactorsRequest&& value) { m_baselinePerformanceFactorsHasBeenSet = true; m_baselinePerformanceFactors = std::move(value); }
+    inline InstanceRequirements& WithBaselinePerformanceFactors(const BaselinePerformanceFactorsRequest& value) { SetBaselinePerformanceFactors(value); return *this;}
+    inline InstanceRequirements& WithBaselinePerformanceFactors(BaselinePerformanceFactorsRequest&& value) { SetBaselinePerformanceFactors(std::move(value)); return *this;}
+    ///@}
   private:
 
     VCpuCountRequest m_vCpuCount;
@@ -591,6 +604,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_allowedInstanceTypes;
     bool m_allowedInstanceTypesHasBeenSet = false;
+
+    BaselinePerformanceFactorsRequest m_baselinePerformanceFactors;
+    bool m_baselinePerformanceFactorsHasBeenSet = false;
   };
 
 } // namespace Model

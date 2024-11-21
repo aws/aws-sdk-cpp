@@ -101,7 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved for internal use.</p>
+     * <p>The entity associated with the log events.</p>
      */
     inline const Entity& GetEntity() const{ return m_entity; }
     inline bool EntityHasBeenSet() const { return m_entityHasBeenSet; }

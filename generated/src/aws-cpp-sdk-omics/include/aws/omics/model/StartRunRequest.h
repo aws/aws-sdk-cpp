@@ -8,6 +8,7 @@
 #include <aws/omics/OmicsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/WorkflowType.h>
+#include <aws/omics/model/CacheBehavior.h>
 #include <aws/core/utils/Document.h>
 #include <aws/omics/model/RunLogLevel.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -105,6 +106,37 @@ namespace Model
     inline StartRunRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
     inline StartRunRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline StartRunRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Identifier of the cache associated with this run. If you don't specify a
+     * cache ID, no task outputs are cached for this run.</p>
+     */
+    inline const Aws::String& GetCacheId() const{ return m_cacheId; }
+    inline bool CacheIdHasBeenSet() const { return m_cacheIdHasBeenSet; }
+    inline void SetCacheId(const Aws::String& value) { m_cacheIdHasBeenSet = true; m_cacheId = value; }
+    inline void SetCacheId(Aws::String&& value) { m_cacheIdHasBeenSet = true; m_cacheId = std::move(value); }
+    inline void SetCacheId(const char* value) { m_cacheIdHasBeenSet = true; m_cacheId.assign(value); }
+    inline StartRunRequest& WithCacheId(const Aws::String& value) { SetCacheId(value); return *this;}
+    inline StartRunRequest& WithCacheId(Aws::String&& value) { SetCacheId(std::move(value)); return *this;}
+    inline StartRunRequest& WithCacheId(const char* value) { SetCacheId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The cache behavior for the run. You specify this value if you want to
+     * override the default behavior for the cache. You had set the default value when
+     * you created the cache. For more information, see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run
+     * cache behavior</a> in the AWS HealthOmics User Guide.</p>
+     */
+    inline const CacheBehavior& GetCacheBehavior() const{ return m_cacheBehavior; }
+    inline bool CacheBehaviorHasBeenSet() const { return m_cacheBehaviorHasBeenSet; }
+    inline void SetCacheBehavior(const CacheBehavior& value) { m_cacheBehaviorHasBeenSet = true; m_cacheBehavior = value; }
+    inline void SetCacheBehavior(CacheBehavior&& value) { m_cacheBehaviorHasBeenSet = true; m_cacheBehavior = std::move(value); }
+    inline StartRunRequest& WithCacheBehavior(const CacheBehavior& value) { SetCacheBehavior(value); return *this;}
+    inline StartRunRequest& WithCacheBehavior(CacheBehavior&& value) { SetCacheBehavior(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -216,7 +248,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The retention mode for the run.</p>
+     * <p>The retention mode for the run. The default value is RETAIN. </p>
+     * <p>HealthOmics stores a fixed number of runs that are available to the console
+     * and API. In the default mode (RETAIN), you need to remove runs manually when the
+     * number of run exceeds the maximum. If you set the retention mode to
+     * <code>REMOVE</code>, HealthOmics automatically removes runs (that have mode set
+     * to REMOVE) when the number of run exceeds the maximum. All run logs are
+     * available in CloudWatch logs, if you need information about a run that is no
+     * longer available to the API.</p> <p>For more information about retention mode,
+     * see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying
+     * run retention mode</a> in the <i>AWS HealthOmics User Guide</i>.</p>
      */
     inline const RunRetentionMode& GetRetentionMode() const{ return m_retentionMode; }
     inline bool RetentionModeHasBeenSet() const { return m_retentionModeHasBeenSet; }
@@ -270,6 +312,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_cacheId;
+    bool m_cacheIdHasBeenSet = false;
+
+    CacheBehavior m_cacheBehavior;
+    bool m_cacheBehaviorHasBeenSet = false;
 
     Aws::String m_runGroupId;
     bool m_runGroupIdHasBeenSet = false;

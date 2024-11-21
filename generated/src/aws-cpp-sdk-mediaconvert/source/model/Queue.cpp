@@ -20,6 +20,8 @@ namespace Model
 
 Queue::Queue() : 
     m_arnHasBeenSet(false),
+    m_concurrentJobs(0),
+    m_concurrentJobsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
@@ -29,6 +31,7 @@ Queue::Queue() :
     m_progressingJobsCount(0),
     m_progressingJobsCountHasBeenSet(false),
     m_reservationPlanHasBeenSet(false),
+    m_serviceOverridesHasBeenSet(false),
     m_status(QueueStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_submittedJobsCount(0),
@@ -51,6 +54,13 @@ Queue& Queue::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("concurrentJobs"))
+  {
+    m_concurrentJobs = jsonValue.GetInteger("concurrentJobs");
+
+    m_concurrentJobsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -102,6 +112,16 @@ Queue& Queue::operator =(JsonView jsonValue)
     m_reservationPlanHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("serviceOverrides"))
+  {
+    Aws::Utils::Array<JsonView> serviceOverridesJsonList = jsonValue.GetArray("serviceOverrides");
+    for(unsigned serviceOverridesIndex = 0; serviceOverridesIndex < serviceOverridesJsonList.GetLength(); ++serviceOverridesIndex)
+    {
+      m_serviceOverrides.push_back(serviceOverridesJsonList[serviceOverridesIndex].AsObject());
+    }
+    m_serviceOverridesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = QueueStatusMapper::GetQueueStatusForName(jsonValue.GetString("status"));
@@ -133,6 +153,12 @@ JsonValue Queue::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_concurrentJobsHasBeenSet)
+  {
+   payload.WithInteger("concurrentJobs", m_concurrentJobs);
 
   }
 
@@ -172,6 +198,17 @@ JsonValue Queue::Jsonize() const
   if(m_reservationPlanHasBeenSet)
   {
    payload.WithObject("reservationPlan", m_reservationPlan.Jsonize());
+
+  }
+
+  if(m_serviceOverridesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> serviceOverridesJsonList(m_serviceOverrides.size());
+   for(unsigned serviceOverridesIndex = 0; serviceOverridesIndex < serviceOverridesJsonList.GetLength(); ++serviceOverridesIndex)
+   {
+     serviceOverridesJsonList[serviceOverridesIndex].AsObject(m_serviceOverrides[serviceOverridesIndex].Jsonize());
+   }
+   payload.WithArray("serviceOverrides", std::move(serviceOverridesJsonList));
 
   }
 

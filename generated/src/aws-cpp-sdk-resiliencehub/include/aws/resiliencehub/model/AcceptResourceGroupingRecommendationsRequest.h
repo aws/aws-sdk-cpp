@@ -56,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the list of resource grouping recommendations you want to include
-     * in your application.</p>
+     * <p>List of resource grouping recommendations you want to include in your
+     * application.</p>
      */
     inline const Aws::Vector<AcceptGroupingRecommendationEntry>& GetEntries() const{ return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }

@@ -113,9 +113,8 @@ namespace Model
      * <p>Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval
      * that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags
      * aren't included in the manifest. The tags sync the stream to the wall clock so
-     * that viewers can seek to a specific time in the playback timeline on the player.
-     * ID3Timed metadata messages generate every 5 seconds whenever the content is
-     * ingested.</p> <p>Irrespective of this parameter, if any ID3Timed metadata is in
+     * that viewers can seek to a specific time in the playback timeline on the
+     * player.</p> <p>Irrespective of this parameter, if any ID3Timed metadata is in
      * the HLS input, it is passed through to the HLS output.</p>
      */
     inline int GetProgramDateTimeIntervalSeconds() const{ return m_programDateTimeIntervalSeconds; }

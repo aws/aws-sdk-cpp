@@ -58,7 +58,9 @@ Service::Service() :
     m_propagateTags(PropagateTags::NOT_SET),
     m_propagateTagsHasBeenSet(false),
     m_enableExecuteCommand(false),
-    m_enableExecuteCommandHasBeenSet(false)
+    m_enableExecuteCommandHasBeenSet(false),
+    m_availabilityZoneRebalancing(AvailabilityZoneRebalancing::NOT_SET),
+    m_availabilityZoneRebalancingHasBeenSet(false)
 {
 }
 
@@ -314,6 +316,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_enableExecuteCommandHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("availabilityZoneRebalancing"))
+  {
+    m_availabilityZoneRebalancing = AvailabilityZoneRebalancingMapper::GetAvailabilityZoneRebalancingForName(jsonValue.GetString("availabilityZoneRebalancing"));
+
+    m_availabilityZoneRebalancingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -546,6 +555,11 @@ JsonValue Service::Jsonize() const
   {
    payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
 
+  }
+
+  if(m_availabilityZoneRebalancingHasBeenSet)
+  {
+   payload.WithString("availabilityZoneRebalancing", AvailabilityZoneRebalancingMapper::GetNameForAvailabilityZoneRebalancing(m_availabilityZoneRebalancing));
   }
 
   return payload;

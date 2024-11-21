@@ -22,7 +22,9 @@ UpdateDecoderManifestRequest::UpdateDecoderManifestRequest() :
     m_networkInterfacesToUpdateHasBeenSet(false),
     m_networkInterfacesToRemoveHasBeenSet(false),
     m_status(ManifestStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_defaultForUnmappedSignals(DefaultForUnmappedSignalsType::NOT_SET),
+    m_defaultForUnmappedSignalsHasBeenSet(false)
 {
 }
 
@@ -111,6 +113,11 @@ Aws::String UpdateDecoderManifestRequest::SerializePayload() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ManifestStatusMapper::GetNameForManifestStatus(m_status));
+  }
+
+  if(m_defaultForUnmappedSignalsHasBeenSet)
+  {
+   payload.WithString("defaultForUnmappedSignals", DefaultForUnmappedSignalsTypeMapper::GetNameForDefaultForUnmappedSignalsType(m_defaultForUnmappedSignals));
   }
 
   return payload.View().WriteReadable();

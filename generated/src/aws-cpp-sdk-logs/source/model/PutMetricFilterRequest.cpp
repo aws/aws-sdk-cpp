@@ -16,7 +16,9 @@ PutMetricFilterRequest::PutMetricFilterRequest() :
     m_logGroupNameHasBeenSet(false),
     m_filterNameHasBeenSet(false),
     m_filterPatternHasBeenSet(false),
-    m_metricTransformationsHasBeenSet(false)
+    m_metricTransformationsHasBeenSet(false),
+    m_applyOnTransformedLogs(false),
+    m_applyOnTransformedLogsHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,12 @@ Aws::String PutMetricFilterRequest::SerializePayload() const
      metricTransformationsJsonList[metricTransformationsIndex].AsObject(m_metricTransformations[metricTransformationsIndex].Jsonize());
    }
    payload.WithArray("metricTransformations", std::move(metricTransformationsJsonList));
+
+  }
+
+  if(m_applyOnTransformedLogsHasBeenSet)
+  {
+   payload.WithBool("applyOnTransformedLogs", m_applyOnTransformedLogs);
 
   }
 

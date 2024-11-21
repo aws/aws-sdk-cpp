@@ -23,7 +23,8 @@ namespace Model
     HTTP,
     RELATIONAL_DATABASE,
     AMAZON_OPENSEARCH_SERVICE,
-    AMAZON_EVENTBRIDGE
+    AMAZON_EVENTBRIDGE,
+    AMAZON_BEDROCK_RUNTIME
   };
 
 namespace DataSourceTypeMapper

@@ -43,7 +43,7 @@ namespace Model
     ///@{
     /**
      * <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS",
-     * "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+     * "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
      */
     inline const JobExecutionStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -56,7 +56,8 @@ namespace Model
     ///@{
     /**
      * <p>A collection of name/value pairs that describe the status of the job
-     * execution.</p>
+     * execution.</p> <p>The maximum length of the value in the name/value pair is
+     * 1,024 characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const{ return m_statusDetails; }
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }

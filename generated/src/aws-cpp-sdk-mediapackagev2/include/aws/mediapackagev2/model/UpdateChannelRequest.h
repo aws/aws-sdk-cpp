@@ -7,6 +7,8 @@
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/mediapackagev2/Mediapackagev2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackagev2/model/InputSwitchConfiguration.h>
+#include <aws/mediapackagev2/model/OutputHeaderConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -96,6 +98,34 @@ namespace Model
     inline UpdateChannelRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline UpdateChannelRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for input switching based on the media quality confidence
+     * score (MQCS) as provided from AWS Elemental MediaLive. This setting is valid
+     * only when <code>InputType</code> is <code>CMAF</code>.</p>
+     */
+    inline const InputSwitchConfiguration& GetInputSwitchConfiguration() const{ return m_inputSwitchConfiguration; }
+    inline bool InputSwitchConfigurationHasBeenSet() const { return m_inputSwitchConfigurationHasBeenSet; }
+    inline void SetInputSwitchConfiguration(const InputSwitchConfiguration& value) { m_inputSwitchConfigurationHasBeenSet = true; m_inputSwitchConfiguration = value; }
+    inline void SetInputSwitchConfiguration(InputSwitchConfiguration&& value) { m_inputSwitchConfigurationHasBeenSet = true; m_inputSwitchConfiguration = std::move(value); }
+    inline UpdateChannelRequest& WithInputSwitchConfiguration(const InputSwitchConfiguration& value) { SetInputSwitchConfiguration(value); return *this;}
+    inline UpdateChannelRequest& WithInputSwitchConfiguration(InputSwitchConfiguration&& value) { SetInputSwitchConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The settings for what common media server data (CMSD) headers AWS Elemental
+     * MediaPackage includes in responses to the CDN. This setting is valid only when
+     * <code>InputType</code> is <code>CMAF</code>.</p>
+     */
+    inline const OutputHeaderConfiguration& GetOutputHeaderConfiguration() const{ return m_outputHeaderConfiguration; }
+    inline bool OutputHeaderConfigurationHasBeenSet() const { return m_outputHeaderConfigurationHasBeenSet; }
+    inline void SetOutputHeaderConfiguration(const OutputHeaderConfiguration& value) { m_outputHeaderConfigurationHasBeenSet = true; m_outputHeaderConfiguration = value; }
+    inline void SetOutputHeaderConfiguration(OutputHeaderConfiguration&& value) { m_outputHeaderConfigurationHasBeenSet = true; m_outputHeaderConfiguration = std::move(value); }
+    inline UpdateChannelRequest& WithOutputHeaderConfiguration(const OutputHeaderConfiguration& value) { SetOutputHeaderConfiguration(value); return *this;}
+    inline UpdateChannelRequest& WithOutputHeaderConfiguration(OutputHeaderConfiguration&& value) { SetOutputHeaderConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_channelGroupName;
@@ -109,6 +139,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    InputSwitchConfiguration m_inputSwitchConfiguration;
+    bool m_inputSwitchConfigurationHasBeenSet = false;
+
+    OutputHeaderConfiguration m_outputHeaderConfiguration;
+    bool m_outputHeaderConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

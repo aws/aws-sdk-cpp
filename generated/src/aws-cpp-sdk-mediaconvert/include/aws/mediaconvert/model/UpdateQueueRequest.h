@@ -36,6 +36,20 @@ namespace Model
 
     ///@{
     /**
+     * Specify the maximum number of jobs your queue can process concurrently. For
+     * on-demand queues, the value you enter is constrained by your service quotas for
+     * Maximum concurrent jobs, per on-demand queue and Maximum concurrent jobs, per
+     * account. For reserved queues, update your reservation plan instead in order to
+     * increase your yearly commitment.
+     */
+    inline int GetConcurrentJobs() const{ return m_concurrentJobs; }
+    inline bool ConcurrentJobsHasBeenSet() const { return m_concurrentJobsHasBeenSet; }
+    inline void SetConcurrentJobs(int value) { m_concurrentJobsHasBeenSet = true; m_concurrentJobs = value; }
+    inline UpdateQueueRequest& WithConcurrentJobs(int value) { SetConcurrentJobs(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * The new description for the queue, if you are changing it.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -92,6 +106,9 @@ namespace Model
     inline UpdateQueueRequest& WithStatus(QueueStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
   private:
+
+    int m_concurrentJobs;
+    bool m_concurrentJobsHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

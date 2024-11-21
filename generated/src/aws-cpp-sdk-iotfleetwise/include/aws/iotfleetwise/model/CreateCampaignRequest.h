@@ -16,6 +16,8 @@
 #include <aws/iotfleetwise/model/SignalInformation.h>
 #include <aws/iotfleetwise/model/Tag.h>
 #include <aws/iotfleetwise/model/DataDestinationConfig.h>
+#include <aws/iotfleetwise/model/DataPartition.h>
+#include <aws/iotfleetwise/model/SignalFetchInformation.h>
 #include <utility>
 
 namespace Aws
@@ -102,9 +104,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Optional) The time, in milliseconds, to deliver a campaign after it was
-     * approved. If it's not specified, <code>0</code> is used.</p> <p>Default:
-     * <code>0</code> </p>
+     * <p>The time, in milliseconds, to deliver a campaign after it was approved. If
+     * it's not specified, <code>0</code> is used.</p> <p>Default: <code>0</code> </p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
@@ -116,9 +117,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
-     * 1970 at midnight UTC time). Vehicle data isn't collected after the campaign
-     * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
+     * <p>The time the campaign expires, in seconds since epoch (January 1, 1970 at
+     * midnight UTC time). Vehicle data isn't collected after the campaign expires.
+     * </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline const Aws::Utils::DateTime& GetExpiryTime() const{ return m_expiryTime; }
     inline bool ExpiryTimeHasBeenSet() const { return m_expiryTimeHasBeenSet; }
@@ -130,9 +131,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> (Optional) How long (in milliseconds) to collect raw data after a triggering
-     * event initiates the collection. If it's not specified, <code>0</code> is
-     * used.</p> <p>Default: <code>0</code> </p>
+     * <p>How long (in milliseconds) to collect raw data after a triggering event
+     * initiates the collection. If it's not specified, <code>0</code> is used.</p>
+     * <p>Default: <code>0</code> </p>
      */
     inline long long GetPostTriggerCollectionDuration() const{ return m_postTriggerCollectionDuration; }
     inline bool PostTriggerCollectionDurationHasBeenSet() const { return m_postTriggerCollectionDurationHasBeenSet; }
@@ -142,8 +143,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> (Optional) Option for a vehicle to send diagnostic trouble codes to Amazon
-     * Web Services IoT FleetWise. If you want to send diagnostic trouble codes, use
+     * <p>Option for a vehicle to send diagnostic trouble codes to Amazon Web Services
+     * IoT FleetWise. If you want to send diagnostic trouble codes, use
      * <code>SEND_ACTIVE_DTCS</code>. If it's not specified, <code>OFF</code> is
      * used.</p> <p>Default: <code>OFF</code> </p>
      */
@@ -157,7 +158,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Optional) Whether to store collected data after a vehicle lost a connection
+     * <p>Determines whether to store collected data after a vehicle lost a connection
      * with the cloud. After a connection is re-established, the data is automatically
      * forwarded to Amazon Web Services IoT FleetWise. If you want to store collected
      * data when a vehicle loses connection with the cloud, use <code>TO_DISK</code>.
@@ -174,8 +175,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> (Optional) Whether to compress signals before transmitting data to Amazon
-     * Web Services IoT FleetWise. If you don't want to compress the signals, use
+     * <p>Determines whether to compress signals before transmitting data to Amazon Web
+     * Services IoT FleetWise. If you don't want to compress the signals, use
      * <code>OFF</code>. If it's not specified, <code>SNAPPY</code> is used. </p>
      * <p>Default: <code>SNAPPY</code> </p>
      */
@@ -189,7 +190,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>(Optional) A list of information about signals to collect. </p>
+     * <p>A list of information about signals to collect. </p>  <p>If you upload
+     * a signal as a condition in a data partition for a campaign, then those same
+     * signals must be included in <code>signalsToCollect</code>.</p> 
      */
     inline const Aws::Vector<SignalInformation>& GetSignalsToCollect() const{ return m_signalsToCollect; }
     inline bool SignalsToCollectHasBeenSet() const { return m_signalsToCollectHasBeenSet; }
@@ -216,12 +219,12 @@ namespace Model
 
     ///@{
     /**
-     * <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
-     * <p>Enrich the data with specified vehicle attributes. For example, add
-     * <code>make</code> and <code>model</code> to the campaign, and Amazon Web
-     * Services IoT FleetWise will associate the data with those attributes as
-     * dimensions in Amazon Timestream. You can then query the data against
-     * <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>
+     * <p>A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the
+     * data with specified vehicle attributes. For example, add <code>make</code> and
+     * <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will
+     * associate the data with those attributes as dimensions in Amazon Timestream. You
+     * can then query the data against <code>make</code> and <code>model</code>.</p>
+     * <p>Default: An empty array</p>
      */
     inline const Aws::Vector<Aws::String>& GetDataExtraDimensions() const{ return m_dataExtraDimensions; }
     inline bool DataExtraDimensionsHasBeenSet() const { return m_dataExtraDimensionsHasBeenSet; }
@@ -250,10 +253,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The destination where the campaign sends data. You can choose to send data to
-     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
-     * of data storage and provides additional mechanisms to use vehicle data, such as
-     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * <p>The destination where the campaign sends data. You can send data to an MQTT
+     * topic, or store it in Amazon S3 or Amazon Timestream.</p> <p>MQTT is the
+     * publish/subscribe messaging protocol used by Amazon Web Services IoT to
+     * communicate with your devices.</p> <p>Amazon S3 optimizes the cost of data
+     * storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics.
      * Amazon Web Services IoT FleetWise supports at-least-once file delivery to S3.
      * Your vehicle data is stored on multiple Amazon Web Services IoT FleetWise
      * servers for redundancy and high availability.</p> <p>You can use Amazon
@@ -268,6 +273,35 @@ namespace Model
     inline CreateCampaignRequest& WithDataDestinationConfigs(Aws::Vector<DataDestinationConfig>&& value) { SetDataDestinationConfigs(std::move(value)); return *this;}
     inline CreateCampaignRequest& AddDataDestinationConfigs(const DataDestinationConfig& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs.push_back(value); return *this; }
     inline CreateCampaignRequest& AddDataDestinationConfigs(DataDestinationConfig&& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The data partitions associated with the signals collected from the
+     * vehicle.</p>
+     */
+    inline const Aws::Vector<DataPartition>& GetDataPartitions() const{ return m_dataPartitions; }
+    inline bool DataPartitionsHasBeenSet() const { return m_dataPartitionsHasBeenSet; }
+    inline void SetDataPartitions(const Aws::Vector<DataPartition>& value) { m_dataPartitionsHasBeenSet = true; m_dataPartitions = value; }
+    inline void SetDataPartitions(Aws::Vector<DataPartition>&& value) { m_dataPartitionsHasBeenSet = true; m_dataPartitions = std::move(value); }
+    inline CreateCampaignRequest& WithDataPartitions(const Aws::Vector<DataPartition>& value) { SetDataPartitions(value); return *this;}
+    inline CreateCampaignRequest& WithDataPartitions(Aws::Vector<DataPartition>&& value) { SetDataPartitions(std::move(value)); return *this;}
+    inline CreateCampaignRequest& AddDataPartitions(const DataPartition& value) { m_dataPartitionsHasBeenSet = true; m_dataPartitions.push_back(value); return *this; }
+    inline CreateCampaignRequest& AddDataPartitions(DataPartition&& value) { m_dataPartitionsHasBeenSet = true; m_dataPartitions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>A list of information about signals to fetch.</p>
+     */
+    inline const Aws::Vector<SignalFetchInformation>& GetSignalsToFetch() const{ return m_signalsToFetch; }
+    inline bool SignalsToFetchHasBeenSet() const { return m_signalsToFetchHasBeenSet; }
+    inline void SetSignalsToFetch(const Aws::Vector<SignalFetchInformation>& value) { m_signalsToFetchHasBeenSet = true; m_signalsToFetch = value; }
+    inline void SetSignalsToFetch(Aws::Vector<SignalFetchInformation>&& value) { m_signalsToFetchHasBeenSet = true; m_signalsToFetch = std::move(value); }
+    inline CreateCampaignRequest& WithSignalsToFetch(const Aws::Vector<SignalFetchInformation>& value) { SetSignalsToFetch(value); return *this;}
+    inline CreateCampaignRequest& WithSignalsToFetch(Aws::Vector<SignalFetchInformation>&& value) { SetSignalsToFetch(std::move(value)); return *this;}
+    inline CreateCampaignRequest& AddSignalsToFetch(const SignalFetchInformation& value) { m_signalsToFetchHasBeenSet = true; m_signalsToFetch.push_back(value); return *this; }
+    inline CreateCampaignRequest& AddSignalsToFetch(SignalFetchInformation&& value) { m_signalsToFetchHasBeenSet = true; m_signalsToFetch.push_back(std::move(value)); return *this; }
     ///@}
   private:
 
@@ -315,6 +349,12 @@ namespace Model
 
     Aws::Vector<DataDestinationConfig> m_dataDestinationConfigs;
     bool m_dataDestinationConfigsHasBeenSet = false;
+
+    Aws::Vector<DataPartition> m_dataPartitions;
+    bool m_dataPartitionsHasBeenSet = false;
+
+    Aws::Vector<SignalFetchInformation> m_signalsToFetch;
+    bool m_signalsToFetchHasBeenSet = false;
   };
 
 } // namespace Model

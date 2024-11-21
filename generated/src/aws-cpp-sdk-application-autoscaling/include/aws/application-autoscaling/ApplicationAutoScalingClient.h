@@ -325,6 +325,38 @@ namespace ApplicationAutoScaling
         }
 
         /**
+         * <p>Retrieves the forecast data for a predictive scaling policy.</p> <p>Load
+         * forecasts are predictions of the hourly load values using historical load data
+         * from CloudWatch and an analysis of historical trends. Capacity forecasts are
+         * represented as predicted values for the minimum capacity that is needed on an
+         * hourly basis, based on the hourly load forecast.</p> <p>A minimum of 24 hours of
+         * data is required to create the initial forecasts. However, having a full 14 days
+         * of historical data results in more accurate forecasts.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/GetPredictiveScalingForecast">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPredictiveScalingForecastOutcome GetPredictiveScalingForecast(const Model::GetPredictiveScalingForecastRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPredictiveScalingForecast that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPredictiveScalingForecastRequestT = Model::GetPredictiveScalingForecastRequest>
+        Model::GetPredictiveScalingForecastOutcomeCallable GetPredictiveScalingForecastCallable(const GetPredictiveScalingForecastRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationAutoScalingClient::GetPredictiveScalingForecast, request);
+        }
+
+        /**
+         * An Async wrapper for GetPredictiveScalingForecast that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPredictiveScalingForecastRequestT = Model::GetPredictiveScalingForecastRequest>
+        void GetPredictiveScalingForecastAsync(const GetPredictiveScalingForecastRequestT& request, const GetPredictiveScalingForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationAutoScalingClient::GetPredictiveScalingForecast, request, handler, context);
+        }
+
+        /**
          * <p>Returns all the tags on the specified Application Auto Scaling scalable
          * target.</p> <p>For general information about tags, including the format and
          * syntax, see <a

@@ -30,6 +30,14 @@ namespace Aws
         static const int EBSVolumeReadThroughput_HASH = HashingUtils::HashString("EBSVolumeReadThroughput");
         static const int EBSVolumeWriteThroughput_HASH = HashingUtils::HashString("EBSVolumeWriteThroughput");
         static const int DatabaseConnections_HASH = HashingUtils::HashString("DatabaseConnections");
+        static const int StorageNetworkReceiveThroughput_HASH = HashingUtils::HashString("StorageNetworkReceiveThroughput");
+        static const int StorageNetworkTransmitThroughput_HASH = HashingUtils::HashString("StorageNetworkTransmitThroughput");
+        static const int AuroraMemoryHealthState_HASH = HashingUtils::HashString("AuroraMemoryHealthState");
+        static const int AuroraMemoryNumDeclinedSql_HASH = HashingUtils::HashString("AuroraMemoryNumDeclinedSql");
+        static const int AuroraMemoryNumKillConnTotal_HASH = HashingUtils::HashString("AuroraMemoryNumKillConnTotal");
+        static const int AuroraMemoryNumKillQueryTotal_HASH = HashingUtils::HashString("AuroraMemoryNumKillQueryTotal");
+        static const int ReadIOPSEphemeralStorage_HASH = HashingUtils::HashString("ReadIOPSEphemeralStorage");
+        static const int WriteIOPSEphemeralStorage_HASH = HashingUtils::HashString("WriteIOPSEphemeralStorage");
 
 
         RDSDBMetricName GetRDSDBMetricNameForName(const Aws::String& name)
@@ -75,6 +83,38 @@ namespace Aws
           {
             return RDSDBMetricName::DatabaseConnections;
           }
+          else if (hashCode == StorageNetworkReceiveThroughput_HASH)
+          {
+            return RDSDBMetricName::StorageNetworkReceiveThroughput;
+          }
+          else if (hashCode == StorageNetworkTransmitThroughput_HASH)
+          {
+            return RDSDBMetricName::StorageNetworkTransmitThroughput;
+          }
+          else if (hashCode == AuroraMemoryHealthState_HASH)
+          {
+            return RDSDBMetricName::AuroraMemoryHealthState;
+          }
+          else if (hashCode == AuroraMemoryNumDeclinedSql_HASH)
+          {
+            return RDSDBMetricName::AuroraMemoryNumDeclinedSql;
+          }
+          else if (hashCode == AuroraMemoryNumKillConnTotal_HASH)
+          {
+            return RDSDBMetricName::AuroraMemoryNumKillConnTotal;
+          }
+          else if (hashCode == AuroraMemoryNumKillQueryTotal_HASH)
+          {
+            return RDSDBMetricName::AuroraMemoryNumKillQueryTotal;
+          }
+          else if (hashCode == ReadIOPSEphemeralStorage_HASH)
+          {
+            return RDSDBMetricName::ReadIOPSEphemeralStorage;
+          }
+          else if (hashCode == WriteIOPSEphemeralStorage_HASH)
+          {
+            return RDSDBMetricName::WriteIOPSEphemeralStorage;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -111,6 +151,22 @@ namespace Aws
             return "EBSVolumeWriteThroughput";
           case RDSDBMetricName::DatabaseConnections:
             return "DatabaseConnections";
+          case RDSDBMetricName::StorageNetworkReceiveThroughput:
+            return "StorageNetworkReceiveThroughput";
+          case RDSDBMetricName::StorageNetworkTransmitThroughput:
+            return "StorageNetworkTransmitThroughput";
+          case RDSDBMetricName::AuroraMemoryHealthState:
+            return "AuroraMemoryHealthState";
+          case RDSDBMetricName::AuroraMemoryNumDeclinedSql:
+            return "AuroraMemoryNumDeclinedSql";
+          case RDSDBMetricName::AuroraMemoryNumKillConnTotal:
+            return "AuroraMemoryNumKillConnTotal";
+          case RDSDBMetricName::AuroraMemoryNumKillQueryTotal:
+            return "AuroraMemoryNumKillQueryTotal";
+          case RDSDBMetricName::ReadIOPSEphemeralStorage:
+            return "ReadIOPSEphemeralStorage";
+          case RDSDBMetricName::WriteIOPSEphemeralStorage:
+            return "WriteIOPSEphemeralStorage";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

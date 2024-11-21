@@ -21,6 +21,8 @@ namespace Model
 
 DomainName::DomainName() : 
     m_domainNameHasBeenSet(false),
+    m_domainNameIdHasBeenSet(false),
+    m_domainNameArnHasBeenSet(false),
     m_certificateNameHasBeenSet(false),
     m_certificateArnHasBeenSet(false),
     m_certificateUploadDateHasBeenSet(false),
@@ -39,6 +41,8 @@ DomainName::DomainName() :
     m_tagsHasBeenSet(false),
     m_mutualTlsAuthenticationHasBeenSet(false),
     m_ownershipVerificationCertificateArnHasBeenSet(false),
+    m_managementPolicyHasBeenSet(false),
+    m_policyHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
 }
@@ -56,6 +60,20 @@ DomainName& DomainName::operator =(JsonView jsonValue)
     m_domainName = jsonValue.GetString("domainName");
 
     m_domainNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("domainNameId"))
+  {
+    m_domainNameId = jsonValue.GetString("domainNameId");
+
+    m_domainNameIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("domainNameArn"))
+  {
+    m_domainNameArn = jsonValue.GetString("domainNameArn");
+
+    m_domainNameArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("certificateName"))
@@ -173,6 +191,20 @@ DomainName& DomainName::operator =(JsonView jsonValue)
     m_ownershipVerificationCertificateArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("managementPolicy"))
+  {
+    m_managementPolicy = jsonValue.GetString("managementPolicy");
+
+    m_managementPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("policy"))
+  {
+    m_policy = jsonValue.GetString("policy");
+
+    m_policyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +215,18 @@ JsonValue DomainName::Jsonize() const
   if(m_domainNameHasBeenSet)
   {
    payload.WithString("domainName", m_domainName);
+
+  }
+
+  if(m_domainNameIdHasBeenSet)
+  {
+   payload.WithString("domainNameId", m_domainNameId);
+
+  }
+
+  if(m_domainNameArnHasBeenSet)
+  {
+   payload.WithString("domainNameArn", m_domainNameArn);
 
   }
 
@@ -281,6 +325,18 @@ JsonValue DomainName::Jsonize() const
   if(m_ownershipVerificationCertificateArnHasBeenSet)
   {
    payload.WithString("ownershipVerificationCertificateArn", m_ownershipVerificationCertificateArn);
+
+  }
+
+  if(m_managementPolicyHasBeenSet)
+  {
+   payload.WithString("managementPolicy", m_managementPolicy);
+
+  }
+
+  if(m_policyHasBeenSet)
+  {
+   payload.WithString("policy", m_policy);
 
   }
 

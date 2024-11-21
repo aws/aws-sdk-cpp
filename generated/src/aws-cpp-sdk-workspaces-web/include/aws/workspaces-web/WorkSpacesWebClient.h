@@ -110,6 +110,32 @@ namespace WorkSpacesWeb
         }
 
         /**
+         * <p>Associates a data protection settings resource with a web
+         * portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateDataProtectionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateDataProtectionSettingsOutcome AssociateDataProtectionSettings(const Model::AssociateDataProtectionSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateDataProtectionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateDataProtectionSettingsRequestT = Model::AssociateDataProtectionSettingsRequest>
+        Model::AssociateDataProtectionSettingsOutcomeCallable AssociateDataProtectionSettingsCallable(const AssociateDataProtectionSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::AssociateDataProtectionSettings, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateDataProtectionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateDataProtectionSettingsRequestT = Model::AssociateDataProtectionSettingsRequest>
+        void AssociateDataProtectionSettingsAsync(const AssociateDataProtectionSettingsRequestT& request, const AssociateDataProtectionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::AssociateDataProtectionSettings, request, handler, context);
+        }
+
+        /**
          * <p>Associates an IP access settings resource with a web portal.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateIpAccessSettings">AWS
@@ -264,6 +290,32 @@ namespace WorkSpacesWeb
         void CreateBrowserSettingsAsync(const CreateBrowserSettingsRequestT& request, const CreateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesWebClient::CreateBrowserSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a data protection settings resource that can be associated with a web
+         * portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateDataProtectionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataProtectionSettingsOutcome CreateDataProtectionSettings(const Model::CreateDataProtectionSettingsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for CreateDataProtectionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDataProtectionSettingsRequestT = Model::CreateDataProtectionSettingsRequest>
+        Model::CreateDataProtectionSettingsOutcomeCallable CreateDataProtectionSettingsCallable(const CreateDataProtectionSettingsRequestT& request = {}) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::CreateDataProtectionSettings, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDataProtectionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDataProtectionSettingsRequestT = Model::CreateDataProtectionSettingsRequest>
+        void CreateDataProtectionSettingsAsync(const CreateDataProtectionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const CreateDataProtectionSettingsRequestT& request = {}) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::CreateDataProtectionSettings, request, handler, context);
         }
 
         /**
@@ -480,6 +532,31 @@ namespace WorkSpacesWeb
         }
 
         /**
+         * <p>Deletes data protection settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteDataProtectionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDataProtectionSettingsOutcome DeleteDataProtectionSettings(const Model::DeleteDataProtectionSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDataProtectionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDataProtectionSettingsRequestT = Model::DeleteDataProtectionSettingsRequest>
+        Model::DeleteDataProtectionSettingsOutcomeCallable DeleteDataProtectionSettingsCallable(const DeleteDataProtectionSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::DeleteDataProtectionSettings, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDataProtectionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDataProtectionSettingsRequestT = Model::DeleteDataProtectionSettingsRequest>
+        void DeleteDataProtectionSettingsAsync(const DeleteDataProtectionSettingsRequestT& request, const DeleteDataProtectionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::DeleteDataProtectionSettings, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the identity provider.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIdentityProvider">AWS
          * API Reference</a></p>
@@ -681,6 +758,32 @@ namespace WorkSpacesWeb
         }
 
         /**
+         * <p>Disassociates data protection settings from a web portal.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateDataProtectionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateDataProtectionSettingsOutcome DisassociateDataProtectionSettings(const Model::DisassociateDataProtectionSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateDataProtectionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateDataProtectionSettingsRequestT = Model::DisassociateDataProtectionSettingsRequest>
+        Model::DisassociateDataProtectionSettingsOutcomeCallable DisassociateDataProtectionSettingsCallable(const DisassociateDataProtectionSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::DisassociateDataProtectionSettings, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateDataProtectionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateDataProtectionSettingsRequestT = Model::DisassociateDataProtectionSettingsRequest>
+        void DisassociateDataProtectionSettingsAsync(const DisassociateDataProtectionSettingsRequestT& request, const DisassociateDataProtectionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::DisassociateDataProtectionSettings, request, handler, context);
+        }
+
+        /**
          * <p>Disassociates IP access settings from a web portal.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateIpAccessSettings">AWS
@@ -856,6 +959,31 @@ namespace WorkSpacesWeb
         void GetBrowserSettingsAsync(const GetBrowserSettingsRequestT& request, const GetBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesWebClient::GetBrowserSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the data protection settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetDataProtectionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataProtectionSettingsOutcome GetDataProtectionSettings(const Model::GetDataProtectionSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataProtectionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDataProtectionSettingsRequestT = Model::GetDataProtectionSettingsRequest>
+        Model::GetDataProtectionSettingsOutcomeCallable GetDataProtectionSettingsCallable(const GetDataProtectionSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::GetDataProtectionSettings, request);
+        }
+
+        /**
+         * An Async wrapper for GetDataProtectionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDataProtectionSettingsRequestT = Model::GetDataProtectionSettingsRequest>
+        void GetDataProtectionSettingsAsync(const GetDataProtectionSettingsRequestT& request, const GetDataProtectionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::GetDataProtectionSettings, request, handler, context);
         }
 
         /**
@@ -1131,6 +1259,31 @@ namespace WorkSpacesWeb
         void ListBrowserSettingsAsync(const ListBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListBrowserSettingsRequestT& request = {}) const
         {
             return SubmitAsync(&WorkSpacesWebClient::ListBrowserSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of data protection settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListDataProtectionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDataProtectionSettingsOutcome ListDataProtectionSettings(const Model::ListDataProtectionSettingsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListDataProtectionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDataProtectionSettingsRequestT = Model::ListDataProtectionSettingsRequest>
+        Model::ListDataProtectionSettingsOutcomeCallable ListDataProtectionSettingsCallable(const ListDataProtectionSettingsRequestT& request = {}) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::ListDataProtectionSettings, request);
+        }
+
+        /**
+         * An Async wrapper for ListDataProtectionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDataProtectionSettingsRequestT = Model::ListDataProtectionSettingsRequest>
+        void ListDataProtectionSettingsAsync(const ListDataProtectionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDataProtectionSettingsRequestT& request = {}) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::ListDataProtectionSettings, request, handler, context);
         }
 
         /**
@@ -1461,6 +1614,31 @@ namespace WorkSpacesWeb
         void UpdateBrowserSettingsAsync(const UpdateBrowserSettingsRequestT& request, const UpdateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesWebClient::UpdateBrowserSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Updates data protection settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateDataProtectionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDataProtectionSettingsOutcome UpdateDataProtectionSettings(const Model::UpdateDataProtectionSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDataProtectionSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDataProtectionSettingsRequestT = Model::UpdateDataProtectionSettingsRequest>
+        Model::UpdateDataProtectionSettingsOutcomeCallable UpdateDataProtectionSettingsCallable(const UpdateDataProtectionSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::UpdateDataProtectionSettings, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDataProtectionSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDataProtectionSettingsRequestT = Model::UpdateDataProtectionSettingsRequest>
+        void UpdateDataProtectionSettingsAsync(const UpdateDataProtectionSettingsRequestT& request, const UpdateDataProtectionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::UpdateDataProtectionSettings, request, handler, context);
         }
 
         /**

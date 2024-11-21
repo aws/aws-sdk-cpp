@@ -32,7 +32,7 @@ namespace Lambda
    * instructions, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
    * Services</a>. </p> <p>For a list of Region-specific endpoints that Lambda
    * supports, see <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/lambda-service.html/">Lambda
+   * href="https://docs.aws.amazon.com/general/latest/gr/lambda-service.html">Lambda
    * endpoints and quotas </a> in the <i>Amazon Web Services General Reference.</i>.
    * </p> <p>When making the API calls, you will need to authenticate your request by
    * providing a signature. Lambda supports signature version 4. For more
@@ -282,20 +282,22 @@ namespace Lambda
          * Kafka</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon
          * DocumentDB</a> </p> </li> </ul> <p>The following error handling options are
-         * available only for stream sources (DynamoDB and Kinesis):</p> <ul> <li> <p>
+         * available only for DynamoDB and Kinesis event sources:</p> <ul> <li> <p>
          * <code>BisectBatchOnFunctionError</code> – If the function returns an error,
          * split the batch in two and retry.</p> </li> <li> <p>
-         * <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue
-         * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> –
-         * Discard records older than the specified age. The default value is infinite
-         * (-1). When set to infinite (-1), failed records are retried until the record
-         * expires</p> </li> <li> <p> <code>MaximumRetryAttempts</code> – Discard records
-         * after the specified number of retries. The default value is infinite (-1). When
-         * set to infinite (-1), failed records are retried until the record expires.</p>
-         * </li> <li> <p> <code>ParallelizationFactor</code> – Process multiple batches
-         * from each shard concurrently.</p> </li> </ul> <p>For information about which
-         * configuration parameters apply to each event source, see the following
-         * topics.</p> <ul> <li> <p> <a
+         * <code>MaximumRecordAgeInSeconds</code> – Discard records older than the
+         * specified age. The default value is infinite (-1). When set to infinite (-1),
+         * failed records are retried until the record expires</p> </li> <li> <p>
+         * <code>MaximumRetryAttempts</code> – Discard records after the specified number
+         * of retries. The default value is infinite (-1). When set to infinite (-1),
+         * failed records are retried until the record expires.</p> </li> <li> <p>
+         * <code>ParallelizationFactor</code> – Process multiple batches from each shard
+         * concurrently.</p> </li> </ul> <p>For stream sources (DynamoDB, Kinesis, Amazon
+         * MSK, and self-managed Apache Kafka), the following option is also available:</p>
+         * <ul> <li> <p> <code>DestinationConfig</code> – Send discarded records to an
+         * Amazon SQS queue, Amazon SNS topic, or Amazon S3 bucket.</p> </li> </ul> <p>For
+         * information about which configuration parameters apply to each event source, see
+         * the following topics.</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-params">
          * Amazon DynamoDB Streams</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-params">
@@ -1762,11 +1764,13 @@ namespace Lambda
          * attempts or stays in the asynchronous invocation queue for too long, Lambda
          * discards it. To retain discarded events, configure a dead-letter queue with
          * <a>UpdateFunctionConfiguration</a>.</p> <p>To send an invocation record to a
-         * queue, topic, function, or event bus, specify a <a
+         * queue, topic, S3 bucket, function, or event bus, specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>.
          * You can configure separate destinations for successful invocations (on-success)
          * and events that fail all processing attempts (on-failure). You can configure
-         * destinations in addition to or instead of a dead-letter queue.</p><p><h3>See
+         * destinations in addition to or instead of a dead-letter queue.</p>  <p>S3
+         * buckets are supported only for on-failure destinations. To retain records of
+         * successful invocations, use another destination type.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">AWS
          * API Reference</a></p>
@@ -2065,20 +2069,22 @@ namespace Lambda
          * Kafka</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon
          * DocumentDB</a> </p> </li> </ul> <p>The following error handling options are
-         * available only for stream sources (DynamoDB and Kinesis):</p> <ul> <li> <p>
+         * available only for DynamoDB and Kinesis event sources:</p> <ul> <li> <p>
          * <code>BisectBatchOnFunctionError</code> – If the function returns an error,
          * split the batch in two and retry.</p> </li> <li> <p>
-         * <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue
-         * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> –
-         * Discard records older than the specified age. The default value is infinite
-         * (-1). When set to infinite (-1), failed records are retried until the record
-         * expires</p> </li> <li> <p> <code>MaximumRetryAttempts</code> – Discard records
-         * after the specified number of retries. The default value is infinite (-1). When
-         * set to infinite (-1), failed records are retried until the record expires.</p>
-         * </li> <li> <p> <code>ParallelizationFactor</code> – Process multiple batches
-         * from each shard concurrently.</p> </li> </ul> <p>For information about which
-         * configuration parameters apply to each event source, see the following
-         * topics.</p> <ul> <li> <p> <a
+         * <code>MaximumRecordAgeInSeconds</code> – Discard records older than the
+         * specified age. The default value is infinite (-1). When set to infinite (-1),
+         * failed records are retried until the record expires</p> </li> <li> <p>
+         * <code>MaximumRetryAttempts</code> – Discard records after the specified number
+         * of retries. The default value is infinite (-1). When set to infinite (-1),
+         * failed records are retried until the record expires.</p> </li> <li> <p>
+         * <code>ParallelizationFactor</code> – Process multiple batches from each shard
+         * concurrently.</p> </li> </ul> <p>For stream sources (DynamoDB, Kinesis, Amazon
+         * MSK, and self-managed Apache Kafka), the following option is also available:</p>
+         * <ul> <li> <p> <code>DestinationConfig</code> – Send discarded records to an
+         * Amazon SQS queue, Amazon SNS topic, or Amazon S3 bucket.</p> </li> </ul> <p>For
+         * information about which configuration parameters apply to each event source, see
+         * the following topics.</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-params">
          * Amazon DynamoDB Streams</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-params">

@@ -813,6 +813,112 @@
         "com.amazonaws.elasticloadbalancingv2#CanonicalHostedZoneId": {
             "type": "string"
         },
+        "com.amazonaws.elasticloadbalancingv2#CapacityDecreaseRequestsLimitExceededException": {
+            "type": "structure",
+            "members": {
+                "Message": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#ErrorDescription"
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "CapacityDecreaseRequestLimitExceeded",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>You've exceeded the daily capacity decrease limit for this reservation.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.elasticloadbalancingv2#CapacityReservationPendingException": {
+            "type": "structure",
+            "members": {
+                "Message": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#ErrorDescription"
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "CapacityReservationPending",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>There is a pending capacity reservation.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.elasticloadbalancingv2#CapacityReservationStateEnum": {
+            "type": "enum",
+            "members": {
+                "PROVISIONED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "provisioned"
+                    }
+                },
+                "PENDING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "pending"
+                    }
+                },
+                "REBALANCING": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "rebalancing"
+                    }
+                },
+                "FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "failed"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.elasticloadbalancingv2#CapacityReservationStatus": {
+            "type": "structure",
+            "members": {
+                "Code": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#CapacityReservationStateEnum",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The status code.</p>"
+                    }
+                },
+                "Reason": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#StateReason",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The reason code for the status.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The status of a capacity reservation.</p>"
+            }
+        },
+        "com.amazonaws.elasticloadbalancingv2#CapacityUnits": {
+            "type": "integer"
+        },
+        "com.amazonaws.elasticloadbalancingv2#CapacityUnitsDouble": {
+            "type": "double"
+        },
+        "com.amazonaws.elasticloadbalancingv2#CapacityUnitsLimitExceededException": {
+            "type": "structure",
+            "members": {
+                "Message": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#ErrorDescription"
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "CapacityUnitsLimitExceeded",
+                    "httpResponseCode": 400
+                },
+                "smithy.api#documentation": "<p>You've exceeded the capacity units limit.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
         "com.amazonaws.elasticloadbalancingv2#Certificate": {
             "type": "structure",
             "members": {
@@ -1810,6 +1916,9 @@
         "com.amazonaws.elasticloadbalancingv2#DNSName": {
             "type": "string"
         },
+        "com.amazonaws.elasticloadbalancingv2#DecreaseRequestsRemaining": {
+            "type": "integer"
+        },
         "com.amazonaws.elasticloadbalancingv2#Default": {
             "type": "boolean"
         },
@@ -2255,6 +2364,71 @@
                     "target": "com.amazonaws.elasticloadbalancingv2#Marker",
                     "traits": {
                         "smithy.api#documentation": "<p>If there are additional results, this is the marker for the next set of results.\n      Otherwise, this is null.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.elasticloadbalancingv2#DescribeCapacityReservation": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.elasticloadbalancingv2#DescribeCapacityReservationInput"
+            },
+            "output": {
+                "target": "com.amazonaws.elasticloadbalancingv2#DescribeCapacityReservationOutput"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.elasticloadbalancingv2#LoadBalancerNotFoundException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Describes the capacity reservation status for the specified load balancer.</p>"
+            }
+        },
+        "com.amazonaws.elasticloadbalancingv2#DescribeCapacityReservationInput": {
+            "type": "structure",
+            "members": {
+                "LoadBalancerArn": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#LoadBalancerArn",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the load balancer.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.elasticloadbalancingv2#DescribeCapacityReservationOutput": {
+            "type": "structure",
+            "members": {
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#LastModifiedTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The last time the capacity reservation was modified.</p>"
+                    }
+                },
+                "DecreaseRequestsRemaining": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#DecreaseRequestsRemaining",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The amount of daily capacity decreases remaining.</p>"
+                    }
+                },
+                "MinimumLoadBalancerCapacity": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#MinimumLoadBalancerCapacity",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The requested minimum capacity reservation for the load balancer</p>"
+                    }
+                },
+                "CapacityReservationState": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#ZonalCapacityReservationStates",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The state of the capacity reservation.</p>"
                     }
                 }
             },
@@ -3922,6 +4096,9 @@
                     "target": "com.amazonaws.elasticloadbalancingv2#DescribeAccountLimits"
                 },
                 {
+                    "target": "com.amazonaws.elasticloadbalancingv2#DescribeCapacityReservation"
+                },
+                {
                     "target": "com.amazonaws.elasticloadbalancingv2#DescribeListenerAttributes"
                 },
                 {
@@ -3971,6 +4148,9 @@
                 },
                 {
                     "target": "com.amazonaws.elasticloadbalancingv2#GetTrustStoreRevocationContent"
+                },
+                {
+                    "target": "com.amazonaws.elasticloadbalancingv2#ModifyCapacityReservation"
                 },
                 {
                     "target": "com.amazonaws.elasticloadbalancingv2#ModifyListener"
@@ -5458,6 +5638,23 @@
                 "smithy.api#httpError": 400
             }
         },
+        "com.amazonaws.elasticloadbalancingv2#InsufficientCapacityException": {
+            "type": "structure",
+            "members": {
+                "Message": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#ErrorDescription"
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "InsufficientCapacity",
+                    "httpResponseCode": 500
+                },
+                "smithy.api#documentation": "<p>There is insufficient capacity to reserve.</p>",
+                "smithy.api#error": "server",
+                "smithy.api#httpError": 500
+            }
+        },
         "com.amazonaws.elasticloadbalancingv2#InvalidCaCertificatesBundleException": {
             "type": "structure",
             "members": {
@@ -5623,6 +5820,9 @@
         "com.amazonaws.elasticloadbalancingv2#IsDefault": {
             "type": "boolean"
         },
+        "com.amazonaws.elasticloadbalancingv2#LastModifiedTime": {
+            "type": "timestamp"
+        },
         "com.amazonaws.elasticloadbalancingv2#Limit": {
             "type": "structure",
             "members": {
@@ -5738,7 +5938,7 @@
                 "Key": {
                     "target": "com.amazonaws.elasticloadbalancingv2#ListenerAttributeKey",
                     "traits": {
-                        "smithy.api#documentation": "<p>The name of the attribute.</p>\n         <p>The following attribute is supported by Network Load Balancers, and Gateway Load Balancers.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The \n          valid range is 60-6000 seconds. The default is 350 seconds.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The name of the attribute.</p>\n         <p>The following attribute is supported by Network Load Balancers, and Gateway Load Balancers.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The \n          valid range is 60-6000 seconds. The default is 350 seconds.</p>\n            </li>\n         </ul>\n         <p>The following attributes are only supported by Application Load Balancers.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>routing.http.request.x_amzn_mtls_clientcert_serial_number.header_name</code> - \n          Enables you to modify the header name of the  \n          <b>X-Amzn-Mtls-Clientcert-Serial-Number</b> HTTP request header.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.request.x_amzn_mtls_clientcert_issuer.header_name</code> - \n          Enables you to modify the header name of the  \n          <b>X-Amzn-Mtls-Clientcert-Issuer</b> HTTP request header.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.request.x_amzn_mtls_clientcert_subject.header_name</code> - \n          Enables you to modify the header name of the  \n          <b>X-Amzn-Mtls-Clientcert-Subject</b> HTTP request header.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.request.x_amzn_mtls_clientcert_validity.header_name</code> - \n          Enables you to modify the header name of the  \n          <b>X-Amzn-Mtls-Clientcert-Validity</b> HTTP request header.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.request.x_amzn_mtls_clientcert_leaf.header_name</code> - \n          Enables you to modify the header name of the  \n          <b>X-Amzn-Mtls-Clientcert-Leaf</b> HTTP request header.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.request.x_amzn_mtls_clientcert.header_name</code> - \n          Enables you to modify the header name of the  \n          <b>X-Amzn-Mtls-Clientcert</b> HTTP request header.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.request.x_amzn_tls_version.header_name</code> - \n          Enables you to modify the header name of the  \n          <b>X-Amzn-Tls-Version</b> HTTP request header.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.request.x_amzn_tls_cipher_suite.header_name</code> - \n          Enables you to modify the header name of the  \n          <b>X-Amzn-Tls-Cipher-Suite</b> HTTP request header.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.response.server.enabled</code> - \n          Enables you to allow or remove the HTTP response server header.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.response.strict_transport_security.header_value</code> - \n          Informs browsers that the site should only be accessed using HTTPS, and that \n          any future attempts to access it using HTTP should automatically be converted \n          to HTTPS.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.response.access_control_allow_origin.header_value</code> - \n          Specifies which origins are allowed to access the server.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.response.access_control_allow_methods.header_value</code> - \n          Returns which HTTP methods are allowed when accessing the server from a different \n          origin.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.response.access_control_allow_headers.header_value</code> - \n          Specifies which headers can be used during the request.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.response.access_control_allow_credentials.header_value</code> - \n          Indicates whether the browser should include credentials such as cookies or \n          authentication when making requests.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.response.access_control_expose_headers.header_value</code> - \n          Returns which headers the browser can expose to the requesting client.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.response.access_control_max_age.header_value</code> - \n          Specifies how long the results of a preflight request can be cached, in seconds.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.response.content_security_policy.header_value</code> - \n          Specifies restrictions enforced by the browser to help minimize the risk of certain \n          types of security threats.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.response.x_content_type_options.header_value</code> - \n          Indicates whether the MIME types advertised in the <b>Content-Type</b> \n          headers should be followed and not be changed.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.response.x_frame_options.header_value</code> - Indicates \n          whether the browser is allowed to render a page in a <b>frame</b>, \n          <b>iframe</b>, <b>embed</b> or \n          <b>object</b>.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "Value": {
@@ -5945,7 +6145,7 @@
                 "Key": {
                     "target": "com.amazonaws.elasticloadbalancingv2#LoadBalancerAttributeKey",
                     "traits": {
-                        "smithy.api#documentation": "<p>The name of the attribute.</p>\n         <p>The following attributes are supported by all load balancers:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>deletion_protection.enabled</code> - Indicates whether deletion protection is\n          enabled. The value is <code>true</code> or <code>false</code>. The default is\n            <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load\n          balancing is enabled. The possible values are <code>true</code> and <code>false</code>.\n          The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. \n          The default for Application Load Balancers is <code>true</code>, and can't be changed.</p>\n            </li>\n         </ul>\n         <p>The following attributes are supported by both Application Load Balancers and Network Load\n      Balancers:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The\n          value is <code>true</code> or <code>false</code>. The default is\n          <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs.\n          This attribute is required if access logs are enabled. The bucket must exist in the same\n          region as the load balancer and have a bucket policy that grants Elastic Load Balancing\n          permissions to write to the bucket.</p>\n            </li>\n            <li>\n               <p>\n                  <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the\n          access logs.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ipv6.deny_all_igw_traffic</code> - Blocks internet gateway (IGW) access to the\n          load balancer. It is set to <code>false</code> for internet-facing load balancers and\n            <code>true</code> for internal load balancers, preventing unintended access to your\n          internal load balancer through an internet gateway.</p>\n            </li>\n         </ul>\n         <p>The following attributes are supported by only Application Load Balancers:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The\n          valid range is 1-4000 seconds. The default is 60 seconds.</p>\n            </li>\n            <li>\n               <p>\n                  <code>client_keep_alive.seconds</code> - The client keep alive value, in seconds. The \n          valid range is 60-604800 seconds. The default is 3600 seconds.</p>\n            </li>\n            <li>\n               <p>\n                  <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are enabled. The\n          value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection logs.\n          This attribute is required if connection logs are enabled. The bucket must exist in the same\n          region as the load balancer and have a bucket policy that grants Elastic Load Balancing\n          permissions to write to the bucket.</p>\n            </li>\n            <li>\n               <p>\n                  <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the\n          connection logs.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer\n          handles requests that might pose a security risk to your application. The possible values\n          are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default\n          is <code>defensive</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP\n          headers with invalid header fields are removed by the load balancer (<code>true</code>) or\n          routed to targets (<code>false</code>). The default is <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.preserve_host_header.enabled</code> - Indicates whether the\n          Application Load Balancer should preserve the <code>Host</code> header in the HTTP request\n          and send it to the target without any change. The possible values are <code>true</code>\n          and <code>false</code>. The default is <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates\n          whether the two headers (<code>x-amzn-tls-version</code> and\n            <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated\n          TLS version and cipher suite, are added to the client request before sending it to the\n          target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol\n          version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header\n          has information about the cipher suite negotiated with the client. Both headers are in\n          OpenSSL format. The possible values for the attribute are <code>true</code> and\n            <code>false</code>. The default is <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.xff_client_port.enabled</code> - Indicates whether the\n            <code>X-Forwarded-For</code> header should preserve the source port that the client used\n          to connect to the load balancer. The possible values are <code>true</code> and\n            <code>false</code>. The default is <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.xff_header_processing.mode</code> - Enables you to modify,\n          preserve, or remove the <code>X-Forwarded-For</code> header in the HTTP request before the\n          Application Load Balancer sends the request to the target. The possible values are\n            <code>append</code>, <code>preserve</code>, and <code>remove</code>. The default is\n            <code>append</code>.</p>\n               <ul>\n                  <li>\n                     <p>If the value is <code>append</code>, the Application Load Balancer adds the client\n              IP address (of the last hop) to the <code>X-Forwarded-For</code> header in the HTTP\n              request before it sends it to targets.</p>\n                  </li>\n                  <li>\n                     <p>If the value is <code>preserve</code> the Application Load Balancer preserves the\n                <code>X-Forwarded-For</code> header in the HTTP request, and sends it to targets\n              without any change.</p>\n                  </li>\n                  <li>\n                     <p>If the value is <code>remove</code>, the Application Load Balancer removes the\n                <code>X-Forwarded-For</code> header in the HTTP request before it sends it to\n              targets.</p>\n                  </li>\n               </ul>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible\n          values are <code>true</code> and <code>false</code>. The default is <code>true</code>.\n          Elastic Load Balancing requires that message header names contain only alphanumeric\n          characters and hyphens.</p>\n            </li>\n            <li>\n               <p>\n                  <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load\n          balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The\n          default is <code>false</code>.</p>\n            </li>\n         </ul>\n         <p>The following attributes are supported by only Network Load Balancers:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>dns_record.client_routing_policy</code> - Indicates how traffic is \n          distributed among the load balancer Availability Zones. The possible values are \n          <code>availability_zone_affinity</code> with 100 percent zonal affinity, \n          <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, \n          and <code>any_availability_zone</code> with 0 percent zonal affinity.</p>\n            </li>\n            <li>\n               <p>\n                  <code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is \n          enabled. The possible values are <code>true</code> and <code>false</code>. The \n          default is <code>false</code>.</p>\n            </li>\n         </ul>"
+                        "smithy.api#documentation": "<p>The name of the attribute.</p>\n         <p>The following attributes are supported by all load balancers:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>deletion_protection.enabled</code> - Indicates whether deletion protection is\n          enabled. The value is <code>true</code> or <code>false</code>. The default is\n            <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load\n          balancing is enabled. The possible values are <code>true</code> and <code>false</code>.\n          The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>. \n          The default for Application Load Balancers is <code>true</code>, and can't be changed.</p>\n            </li>\n         </ul>\n         <p>The following attributes are supported by both Application Load Balancers and Network Load\n      Balancers:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The\n          value is <code>true</code> or <code>false</code>. The default is\n          <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs.\n          This attribute is required if access logs are enabled. The bucket must exist in the same\n          region as the load balancer and have a bucket policy that grants Elastic Load Balancing\n          permissions to write to the bucket.</p>\n            </li>\n            <li>\n               <p>\n                  <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the\n          access logs.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ipv6.deny_all_igw_traffic</code> - Blocks internet gateway (IGW) access to the\n          load balancer. It is set to <code>false</code> for internet-facing load balancers and\n            <code>true</code> for internal load balancers, preventing unintended access to your\n          internal load balancer through an internet gateway.</p>\n            </li>\n            <li>\n               <p>\n                  <code>zonal_shift.config.enabled</code> - Indicates whether zonal shift is \n          enabled. The possible values are <code>true</code> and <code>false</code>. The \n          default is <code>false</code>.</p>\n            </li>\n         </ul>\n         <p>The following attributes are supported by only Application Load Balancers:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The\n          valid range is 1-4000 seconds. The default is 60 seconds.</p>\n            </li>\n            <li>\n               <p>\n                  <code>client_keep_alive.seconds</code> - The client keep alive value, in seconds. The \n          valid range is 60-604800 seconds. The default is 3600 seconds.</p>\n            </li>\n            <li>\n               <p>\n                  <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are enabled. The\n          value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection logs.\n          This attribute is required if connection logs are enabled. The bucket must exist in the same\n          region as the load balancer and have a bucket policy that grants Elastic Load Balancing\n          permissions to write to the bucket.</p>\n            </li>\n            <li>\n               <p>\n                  <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the\n          connection logs.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer\n          handles requests that might pose a security risk to your application. The possible values\n          are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>. The default\n          is <code>defensive</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP\n          headers with invalid header fields are removed by the load balancer (<code>true</code>) or\n          routed to targets (<code>false</code>). The default is <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.preserve_host_header.enabled</code> - Indicates whether the\n          Application Load Balancer should preserve the <code>Host</code> header in the HTTP request\n          and send it to the target without any change. The possible values are <code>true</code>\n          and <code>false</code>. The default is <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates\n          whether the two headers (<code>x-amzn-tls-version</code> and\n            <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated\n          TLS version and cipher suite, are added to the client request before sending it to the\n          target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol\n          version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header\n          has information about the cipher suite negotiated with the client. Both headers are in\n          OpenSSL format. The possible values for the attribute are <code>true</code> and\n            <code>false</code>. The default is <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.xff_client_port.enabled</code> - Indicates whether the\n            <code>X-Forwarded-For</code> header should preserve the source port that the client used\n          to connect to the load balancer. The possible values are <code>true</code> and\n            <code>false</code>. The default is <code>false</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http.xff_header_processing.mode</code> - Enables you to modify,\n          preserve, or remove the <code>X-Forwarded-For</code> header in the HTTP request before the\n          Application Load Balancer sends the request to the target. The possible values are\n            <code>append</code>, <code>preserve</code>, and <code>remove</code>. The default is\n            <code>append</code>.</p>\n               <ul>\n                  <li>\n                     <p>If the value is <code>append</code>, the Application Load Balancer adds the client\n              IP address (of the last hop) to the <code>X-Forwarded-For</code> header in the HTTP\n              request before it sends it to targets.</p>\n                  </li>\n                  <li>\n                     <p>If the value is <code>preserve</code> the Application Load Balancer preserves the\n                <code>X-Forwarded-For</code> header in the HTTP request, and sends it to targets\n              without any change.</p>\n                  </li>\n                  <li>\n                     <p>If the value is <code>remove</code>, the Application Load Balancer removes the\n                <code>X-Forwarded-For</code> header in the HTTP request before it sends it to\n              targets.</p>\n                  </li>\n               </ul>\n            </li>\n            <li>\n               <p>\n                  <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible\n          values are <code>true</code> and <code>false</code>. The default is <code>true</code>.\n          Elastic Load Balancing requires that message header names contain only alphanumeric\n          characters and hyphens.</p>\n            </li>\n            <li>\n               <p>\n                  <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load\n          balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The\n          default is <code>false</code>.</p>\n            </li>\n         </ul>\n         <p>The following attributes are supported by only Network Load Balancers:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>dns_record.client_routing_policy</code> - Indicates how traffic is \n          distributed among the load balancer Availability Zones. The possible values are \n          <code>availability_zone_affinity</code> with 100 percent zonal affinity, \n          <code>partial_availability_zone_affinity</code> with 85 percent zonal affinity, \n          and <code>any_availability_zone</code> with 0 percent zonal affinity.</p>\n            </li>\n         </ul>"
                     }
                 },
                 "Value": {
@@ -6140,6 +6340,20 @@
         "com.amazonaws.elasticloadbalancingv2#Max": {
             "type": "string"
         },
+        "com.amazonaws.elasticloadbalancingv2#MinimumLoadBalancerCapacity": {
+            "type": "structure",
+            "members": {
+                "CapacityUnits": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#CapacityUnits",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of capacity units.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The minimum capacity for a load balancer.</p>"
+            }
+        },
         "com.amazonaws.elasticloadbalancingv2#MitigationInEffectEnum": {
             "type": "enum",
             "members": {
@@ -6159,6 +6373,104 @@
         },
         "com.amazonaws.elasticloadbalancingv2#Mode": {
             "type": "string"
+        },
+        "com.amazonaws.elasticloadbalancingv2#ModifyCapacityReservation": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.elasticloadbalancingv2#ModifyCapacityReservationInput"
+            },
+            "output": {
+                "target": "com.amazonaws.elasticloadbalancingv2#ModifyCapacityReservationOutput"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.elasticloadbalancingv2#CapacityDecreaseRequestsLimitExceededException"
+                },
+                {
+                    "target": "com.amazonaws.elasticloadbalancingv2#CapacityReservationPendingException"
+                },
+                {
+                    "target": "com.amazonaws.elasticloadbalancingv2#CapacityUnitsLimitExceededException"
+                },
+                {
+                    "target": "com.amazonaws.elasticloadbalancingv2#InsufficientCapacityException"
+                },
+                {
+                    "target": "com.amazonaws.elasticloadbalancingv2#InvalidConfigurationRequestException"
+                },
+                {
+                    "target": "com.amazonaws.elasticloadbalancingv2#LoadBalancerNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.elasticloadbalancingv2#OperationNotPermittedException"
+                },
+                {
+                    "target": "com.amazonaws.elasticloadbalancingv2#PriorRequestNotCompleteException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Modifies the capacity reservation of the specified load balancer.</p>\n         <p>When modifying capacity reservation, you must include at least one <code>MinimumLoadBalancerCapacity</code> \n      or <code>ResetCapacityReservation</code>.</p>"
+            }
+        },
+        "com.amazonaws.elasticloadbalancingv2#ModifyCapacityReservationInput": {
+            "type": "structure",
+            "members": {
+                "LoadBalancerArn": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#LoadBalancerArn",
+                    "traits": {
+                        "smithy.api#clientOptional": {},
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the load balancer.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "MinimumLoadBalancerCapacity": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#MinimumLoadBalancerCapacity",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The minimum load balancer capacity reserved.</p>"
+                    }
+                },
+                "ResetCapacityReservation": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#ResetCapacityReservation",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Resets the capacity reservation.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.elasticloadbalancingv2#ModifyCapacityReservationOutput": {
+            "type": "structure",
+            "members": {
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#LastModifiedTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The last time the capacity reservation was modified.</p>"
+                    }
+                },
+                "DecreaseRequestsRemaining": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#DecreaseRequestsRemaining",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The amount of daily capacity decreases remaining.</p>"
+                    }
+                },
+                "MinimumLoadBalancerCapacity": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#MinimumLoadBalancerCapacity",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The requested minimum capacity reservation for the load balancer</p>"
+                    }
+                },
+                "CapacityReservationState": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#ZonalCapacityReservationStates",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The state of the capacity reservation.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.elasticloadbalancingv2#ModifyListener": {
             "type": "operation",
@@ -7150,6 +7462,23 @@
                 }
             }
         },
+        "com.amazonaws.elasticloadbalancingv2#PriorRequestNotCompleteException": {
+            "type": "structure",
+            "members": {
+                "Message": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#ErrorDescription"
+                }
+            },
+            "traits": {
+                "aws.protocols#awsQueryError": {
+                    "code": "PriorRequestNotComplete",
+                    "httpResponseCode": 429
+                },
+                "smithy.api#documentation": "<p>This operation is not allowed while a prior request has not been completed.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 429
+            }
+        },
         "com.amazonaws.elasticloadbalancingv2#PriorityInUseException": {
             "type": "structure",
             "members": {
@@ -7629,6 +7958,9 @@
             "traits": {
                 "smithy.api#output": {}
             }
+        },
+        "com.amazonaws.elasticloadbalancingv2#ResetCapacityReservation": {
+            "type": "boolean"
         },
         "com.amazonaws.elasticloadbalancingv2#ResourceArn": {
             "type": "string"
@@ -8222,6 +8554,9 @@
                 },
                 {
                     "target": "com.amazonaws.elasticloadbalancingv2#AvailabilityZoneNotSupportedException"
+                },
+                {
+                    "target": "com.amazonaws.elasticloadbalancingv2#CapacityReservationPendingException"
                 },
                 {
                     "target": "com.amazonaws.elasticloadbalancingv2#InvalidConfigurationRequestException"
@@ -9635,6 +9970,38 @@
         },
         "com.amazonaws.elasticloadbalancingv2#VpcId": {
             "type": "string"
+        },
+        "com.amazonaws.elasticloadbalancingv2#ZonalCapacityReservationState": {
+            "type": "structure",
+            "members": {
+                "State": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#CapacityReservationStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The state of the capacity reservation.</p>"
+                    }
+                },
+                "AvailabilityZone": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#ZoneName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about the availability zone.</p>"
+                    }
+                },
+                "EffectiveCapacityUnits": {
+                    "target": "com.amazonaws.elasticloadbalancingv2#CapacityUnitsDouble",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The number of effective capacity units.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The capacity reservation status for each availability zone.</p>"
+            }
+        },
+        "com.amazonaws.elasticloadbalancingv2#ZonalCapacityReservationStates": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.elasticloadbalancingv2#ZonalCapacityReservationState"
+            }
         },
         "com.amazonaws.elasticloadbalancingv2#ZoneName": {
             "type": "string"

@@ -35,6 +35,7 @@
 #include <aws/keyspaces/model/RestoreTableResult.h>
 #include <aws/keyspaces/model/TagResourceResult.h>
 #include <aws/keyspaces/model/UntagResourceResult.h>
+#include <aws/keyspaces/model/UpdateKeyspaceResult.h>
 #include <aws/keyspaces/model/UpdateTableResult.h>
 #include <aws/keyspaces/model/ListKeyspacesRequest.h>
 /* End of service model headers required in KeyspacesClient header */
@@ -94,6 +95,7 @@ namespace Aws
       class RestoreTableRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdateKeyspaceRequest;
       class UpdateTableRequest;
       /* End of service model forward declarations required in KeyspacesClient header */
 
@@ -115,6 +117,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RestoreTableResult, KeyspacesError> RestoreTableOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, KeyspacesError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, KeyspacesError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateKeyspaceResult, KeyspacesError> UpdateKeyspaceOutcome;
       typedef Aws::Utils::Outcome<UpdateTableResult, KeyspacesError> UpdateTableOutcome;
       /* End of service model Outcome class definitions */
 
@@ -136,6 +139,7 @@ namespace Aws
       typedef std::future<RestoreTableOutcome> RestoreTableOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateKeyspaceOutcome> UpdateKeyspaceOutcomeCallable;
       typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -160,6 +164,7 @@ namespace Aws
     typedef std::function<void(const KeyspacesClient*, const Model::RestoreTableRequest&, const Model::RestoreTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreTableResponseReceivedHandler;
     typedef std::function<void(const KeyspacesClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const KeyspacesClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const KeyspacesClient*, const Model::UpdateKeyspaceRequest&, const Model::UpdateKeyspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKeyspaceResponseReceivedHandler;
     typedef std::function<void(const KeyspacesClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Keyspaces

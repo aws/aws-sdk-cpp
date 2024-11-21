@@ -19,6 +19,7 @@
 #include <aws/ec2/model/AcceleratorCount.h>
 #include <aws/ec2/model/AcceleratorTotalMemoryMiB.h>
 #include <aws/ec2/model/NetworkBandwidthGbps.h>
+#include <aws/ec2/model/BaselinePerformanceFactors.h>
 #include <aws/ec2/model/CpuManufacturer.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/InstanceGeneration.h>
@@ -543,6 +544,25 @@ namespace Model
     inline void SetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(int value) { m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = true; m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice = value; }
     inline InstanceRequirements& WithMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(int value) { SetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The baseline performance to consider, using an instance family as a baseline
+     * reference. The instance family establishes the lowest acceptable level of
+     * performance. Amazon EC2 uses this baseline to guide instance type selection, but
+     * there is no guarantee that the selected instance types will always exceed the
+     * baseline for every application. Currently, this parameter only supports CPU
+     * performance as a baseline performance factor. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-abis-performance-protection">Performance
+     * protection</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     */
+    inline const BaselinePerformanceFactors& GetBaselinePerformanceFactors() const{ return m_baselinePerformanceFactors; }
+    inline bool BaselinePerformanceFactorsHasBeenSet() const { return m_baselinePerformanceFactorsHasBeenSet; }
+    inline void SetBaselinePerformanceFactors(const BaselinePerformanceFactors& value) { m_baselinePerformanceFactorsHasBeenSet = true; m_baselinePerformanceFactors = value; }
+    inline void SetBaselinePerformanceFactors(BaselinePerformanceFactors&& value) { m_baselinePerformanceFactorsHasBeenSet = true; m_baselinePerformanceFactors = std::move(value); }
+    inline InstanceRequirements& WithBaselinePerformanceFactors(const BaselinePerformanceFactors& value) { SetBaselinePerformanceFactors(value); return *this;}
+    inline InstanceRequirements& WithBaselinePerformanceFactors(BaselinePerformanceFactors&& value) { SetBaselinePerformanceFactors(std::move(value)); return *this;}
+    ///@}
   private:
 
     VCpuCountRange m_vCpuCount;
@@ -616,6 +636,9 @@ namespace Model
 
     int m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice;
     bool m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = false;
+
+    BaselinePerformanceFactors m_baselinePerformanceFactors;
+    bool m_baselinePerformanceFactorsHasBeenSet = false;
   };
 
 } // namespace Model

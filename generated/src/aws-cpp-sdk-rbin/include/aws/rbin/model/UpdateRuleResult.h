@@ -87,8 +87,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the resource tags used to identify resources that are
-     * retained by the retention rule.</p>
+     * <p>[Tag-level retention rules only] Information about the resource tags used to
+     * identify resources that are retained by the retention rule.</p>
      */
     inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
     inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTags = value; }
@@ -113,17 +113,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The lock state for the retention rule.</p> <ul> <li> <p> <code>locked</code>
-     * - The retention rule is locked and can't be modified or deleted.</p> </li> <li>
-     * <p> <code>pending_unlock</code> - The retention rule has been unlocked but it is
-     * still within the unlock delay period. The retention rule can be modified or
-     * deleted only after the unlock delay period has expired.</p> </li> <li> <p>
-     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or
-     * deleted by any user with the required permissions.</p> </li> <li> <p>
-     * <code>null</code> - The retention rule has never been locked. Once a retention
-     * rule has been locked, it can transition between the <code>locked</code> and
-     * <code>unlocked</code> states only; it can never transition back to
-     * <code>null</code>.</p> </li> </ul>
+     * <p>[Region-level retention rules only] The lock state for the retention
+     * rule.</p> <ul> <li> <p> <code>locked</code> - The retention rule is locked and
+     * can't be modified or deleted.</p> </li> <li> <p> <code>pending_unlock</code> -
+     * The retention rule has been unlocked but it is still within the unlock delay
+     * period. The retention rule can be modified or deleted only after the unlock
+     * delay period has expired.</p> </li> <li> <p> <code>unlocked</code> - The
+     * retention rule is unlocked and it can be modified or deleted by any user with
+     * the required permissions.</p> </li> <li> <p> <code>null</code> - The retention
+     * rule has never been locked. Once a retention rule has been locked, it can
+     * transition between the <code>locked</code> and <code>unlocked</code> states
+     * only; it can never transition back to <code>null</code>.</p> </li> </ul>
      */
     inline const LockState& GetLockState() const{ return m_lockState; }
     inline void SetLockState(const LockState& value) { m_lockState = value; }
@@ -159,6 +159,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>[Region-level retention rules only] Information about the exclusion tags used
+     * to identify resources that are to be excluded, or ignored, by the retention
+     * rule.</p>
+     */
+    inline const Aws::Vector<ResourceTag>& GetExcludeResourceTags() const{ return m_excludeResourceTags; }
+    inline void SetExcludeResourceTags(const Aws::Vector<ResourceTag>& value) { m_excludeResourceTags = value; }
+    inline void SetExcludeResourceTags(Aws::Vector<ResourceTag>&& value) { m_excludeResourceTags = std::move(value); }
+    inline UpdateRuleResult& WithExcludeResourceTags(const Aws::Vector<ResourceTag>& value) { SetExcludeResourceTags(value); return *this;}
+    inline UpdateRuleResult& WithExcludeResourceTags(Aws::Vector<ResourceTag>&& value) { SetExcludeResourceTags(std::move(value)); return *this;}
+    inline UpdateRuleResult& AddExcludeResourceTags(const ResourceTag& value) { m_excludeResourceTags.push_back(value); return *this; }
+    inline UpdateRuleResult& AddExcludeResourceTags(ResourceTag&& value) { m_excludeResourceTags.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -187,6 +202,8 @@ namespace Model
     Aws::Utils::DateTime m_lockEndTime;
 
     Aws::String m_ruleArn;
+
+    Aws::Vector<ResourceTag> m_excludeResourceTags;
 
     Aws::String m_requestId;
   };

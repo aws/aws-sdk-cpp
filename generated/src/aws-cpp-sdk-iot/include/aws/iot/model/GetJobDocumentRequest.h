@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A flag that provides a view of the job document before and after the
-     * substitution parameters have been resolved with their exact values.</p>
+     * <p>Provides a view of the job document before and after the substitution
+     * parameters have been resolved with their exact values.</p>
      */
     inline bool GetBeforeSubstitution() const{ return m_beforeSubstitution; }
     inline bool BeforeSubstitutionHasBeenSet() const { return m_beforeSubstitutionHasBeenSet; }

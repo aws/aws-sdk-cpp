@@ -1523,12 +1523,18 @@ namespace EC2
         /**
          * <p>Cancels the specified Capacity Reservation, releases the reserved capacity,
          * and changes the Capacity Reservation's state to <code>cancelled</code>.</p>
-         * <p>Instances running in the reserved capacity continue running until you stop
-         * them. Stopped instances that target the Capacity Reservation can no longer
-         * launch. Modify these instances to either target a different Capacity
-         * Reservation, launch On-Demand Instance capacity, or run in any open Capacity
-         * Reservation that has matching attributes and sufficient capacity.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>You can cancel a Capacity Reservation that is in the following states:</p>
+         * <ul> <li> <p> <code>assessing</code> </p> </li> <li> <p> <code>active</code> and
+         * there is no commitment duration or the commitment duration has elapsed. You
+         * can't cancel a future-dated Capacity Reservation during the commitment
+         * duration.</p> </li> </ul> <p>If a future-dated Capacity Reservation enters the
+         * <code>delayed</code> state, the commitment duration is waived, and you can
+         * cancel it as soon as it enters the <code>active</code> state.</p> <p>Instances
+         * running in the reserved capacity continue running until you stop them. Stopped
+         * instances that target the Capacity Reservation can no longer launch. Modify
+         * these instances to either target a different Capacity Reservation, launch
+         * On-Demand Instance capacity, or run in any open Capacity Reservation that has
+         * matching attributes and sufficient capacity.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelCapacityReservation">AWS
          * API Reference</a></p>
          */
@@ -1925,28 +1931,25 @@ namespace EC2
         }
 
         /**
-         * <p>Creates a new Capacity Reservation with the specified attributes.</p>
-         * <p>Capacity Reservations enable you to reserve capacity for your Amazon EC2
-         * instances in a specific Availability Zone for any duration. This gives you the
-         * flexibility to selectively add capacity reservations and still get the Regional
-         * RI discounts for that usage. By creating Capacity Reservations, you ensure that
-         * you always have access to Amazon EC2 capacity when you need it, for as long as
-         * you need it. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
-         * Reservations</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Your request to
-         * create a Capacity Reservation could fail if Amazon EC2 does not have sufficient
-         * capacity to fulfill the request. If your request fails due to Amazon EC2
-         * capacity constraints, either try again at a later time, try in a different
-         * Availability Zone, or request a smaller capacity reservation. If your
-         * application is flexible across instance types and sizes, try to create a
-         * Capacity Reservation with different instance attributes.</p> <p>Your request
-         * could also fail if the requested quantity exceeds your On-Demand Instance limit
-         * for the selected instance type. If your request fails due to limit constraints,
-         * increase your On-Demand Instance limit for the required instance type and try
-         * again. For more information about increasing your instance limits, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-         * EC2 Service Quotas</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new Capacity Reservation with the specified attributes. Capacity
+         * Reservations enable you to reserve capacity for your Amazon EC2 instances in a
+         * specific Availability Zone for any duration.</p> <p>You can create a Capacity
+         * Reservation at any time, and you can choose when it starts. You can create a
+         * Capacity Reservation for immediate use or you can request a Capacity Reservation
+         * for a future date.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">
+         * Reserve compute capacity with On-Demand Capacity Reservations</a> in the
+         * <i>Amazon EC2 User Guide</i>.</p> <p>Your request to create a Capacity
+         * Reservation could fail if:</p> <ul> <li> <p>Amazon EC2 does not have sufficient
+         * capacity. In this case, try again at a later time, try in a different
+         * Availability Zone, or request a smaller Capacity Reservation. If your workload
+         * is flexible across instance types and sizes, try with different instance
+         * attributes.</p> </li> <li> <p>The requested quantity exceeds your On-Demand
+         * Instance quota. In this case, increase your On-Demand Instance quota for the
+         * requested instance type and try again. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">
+         * Amazon EC2 Service Quotas</a> in the <i>Amazon EC2 User Guide</i>.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">AWS
          * API Reference</a></p>
          */
@@ -4433,6 +4436,39 @@ namespace EC2
         }
 
         /**
+         * <p>Create a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a
+         * mode that can be applied to a single VPC or subnet that exempts it from the
+         * account’s BPA mode and will allow bidirectional or egress-only access. You can
+         * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
+         * account to ensure that there is no traffic disruption to the exclusions when VPC
+         * BPA is turned on. To learn more about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcBlockPublicAccessExclusion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVpcBlockPublicAccessExclusionOutcome CreateVpcBlockPublicAccessExclusion(const Model::CreateVpcBlockPublicAccessExclusionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateVpcBlockPublicAccessExclusion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateVpcBlockPublicAccessExclusionRequestT = Model::CreateVpcBlockPublicAccessExclusionRequest>
+        Model::CreateVpcBlockPublicAccessExclusionOutcomeCallable CreateVpcBlockPublicAccessExclusionCallable(const CreateVpcBlockPublicAccessExclusionRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::CreateVpcBlockPublicAccessExclusion, request);
+        }
+
+        /**
+         * An Async wrapper for CreateVpcBlockPublicAccessExclusion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateVpcBlockPublicAccessExclusionRequestT = Model::CreateVpcBlockPublicAccessExclusionRequest>
+        void CreateVpcBlockPublicAccessExclusionAsync(const CreateVpcBlockPublicAccessExclusionRequestT& request, const CreateVpcBlockPublicAccessExclusionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::CreateVpcBlockPublicAccessExclusion, request, handler, context);
+        }
+
+        /**
          * <p>Creates a VPC endpoint. A VPC endpoint provides a private connection between
          * the specified VPC and the specified endpoint service. You can use an endpoint
          * service provided by Amazon Web Services, an Amazon Web Services Marketplace
@@ -6523,6 +6559,39 @@ namespace EC2
         }
 
         /**
+         * <p>Delete a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a
+         * mode that can be applied to a single VPC or subnet that exempts it from the
+         * account’s BPA mode and will allow bidirectional or egress-only access. You can
+         * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
+         * account to ensure that there is no traffic disruption to the exclusions when VPC
+         * BPA is turned on. To learn more about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcBlockPublicAccessExclusion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVpcBlockPublicAccessExclusionOutcome DeleteVpcBlockPublicAccessExclusion(const Model::DeleteVpcBlockPublicAccessExclusionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteVpcBlockPublicAccessExclusion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteVpcBlockPublicAccessExclusionRequestT = Model::DeleteVpcBlockPublicAccessExclusionRequest>
+        Model::DeleteVpcBlockPublicAccessExclusionOutcomeCallable DeleteVpcBlockPublicAccessExclusionCallable(const DeleteVpcBlockPublicAccessExclusionRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DeleteVpcBlockPublicAccessExclusion, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteVpcBlockPublicAccessExclusion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteVpcBlockPublicAccessExclusionRequestT = Model::DeleteVpcBlockPublicAccessExclusionRequest>
+        void DeleteVpcBlockPublicAccessExclusionAsync(const DeleteVpcBlockPublicAccessExclusionRequestT& request, const DeleteVpcBlockPublicAccessExclusionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DeleteVpcBlockPublicAccessExclusion, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified VPC endpoint connection notifications.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointConnectionNotifications">AWS
@@ -7256,6 +7325,59 @@ namespace EC2
         void DescribeByoipCidrsAsync(const DescribeByoipCidrsRequestT& request, const DescribeByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::DescribeByoipCidrs, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the events for the specified Capacity Block extension during the
+         * specified time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockExtensionHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCapacityBlockExtensionHistoryOutcome DescribeCapacityBlockExtensionHistory(const Model::DescribeCapacityBlockExtensionHistoryRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeCapacityBlockExtensionHistory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCapacityBlockExtensionHistoryRequestT = Model::DescribeCapacityBlockExtensionHistoryRequest>
+        Model::DescribeCapacityBlockExtensionHistoryOutcomeCallable DescribeCapacityBlockExtensionHistoryCallable(const DescribeCapacityBlockExtensionHistoryRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeCapacityBlockExtensionHistory, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCapacityBlockExtensionHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCapacityBlockExtensionHistoryRequestT = Model::DescribeCapacityBlockExtensionHistoryRequest>
+        void DescribeCapacityBlockExtensionHistoryAsync(const DescribeCapacityBlockExtensionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeCapacityBlockExtensionHistoryRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeCapacityBlockExtensionHistory, request, handler, context);
+        }
+
+        /**
+         * <p>Describes Capacity Block extension offerings available for purchase in the
+         * Amazon Web Services Region that you're currently using.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockExtensionOfferings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCapacityBlockExtensionOfferingsOutcome DescribeCapacityBlockExtensionOfferings(const Model::DescribeCapacityBlockExtensionOfferingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCapacityBlockExtensionOfferings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCapacityBlockExtensionOfferingsRequestT = Model::DescribeCapacityBlockExtensionOfferingsRequest>
+        Model::DescribeCapacityBlockExtensionOfferingsOutcomeCallable DescribeCapacityBlockExtensionOfferingsCallable(const DescribeCapacityBlockExtensionOfferingsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeCapacityBlockExtensionOfferings, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCapacityBlockExtensionOfferings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCapacityBlockExtensionOfferingsRequestT = Model::DescribeCapacityBlockExtensionOfferingsRequest>
+        void DescribeCapacityBlockExtensionOfferingsAsync(const DescribeCapacityBlockExtensionOfferingsRequestT& request, const DescribeCapacityBlockExtensionOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeCapacityBlockExtensionOfferings, request, handler, context);
         }
 
         /**
@@ -11235,6 +11357,70 @@ namespace EC2
         }
 
         /**
+         * <p>Describe VPC Block Public Access (BPA) exclusions. A VPC BPA exclusion is a
+         * mode that can be applied to a single VPC or subnet that exempts it from the
+         * account’s BPA mode and will allow bidirectional or egress-only access. You can
+         * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
+         * account to ensure that there is no traffic disruption to the exclusions when VPC
+         * BPA is turned on. To learn more about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessExclusions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcBlockPublicAccessExclusionsOutcome DescribeVpcBlockPublicAccessExclusions(const Model::DescribeVpcBlockPublicAccessExclusionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeVpcBlockPublicAccessExclusions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeVpcBlockPublicAccessExclusionsRequestT = Model::DescribeVpcBlockPublicAccessExclusionsRequest>
+        Model::DescribeVpcBlockPublicAccessExclusionsOutcomeCallable DescribeVpcBlockPublicAccessExclusionsCallable(const DescribeVpcBlockPublicAccessExclusionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeVpcBlockPublicAccessExclusions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeVpcBlockPublicAccessExclusions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeVpcBlockPublicAccessExclusionsRequestT = Model::DescribeVpcBlockPublicAccessExclusionsRequest>
+        void DescribeVpcBlockPublicAccessExclusionsAsync(const DescribeVpcBlockPublicAccessExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVpcBlockPublicAccessExclusionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeVpcBlockPublicAccessExclusions, request, handler, context);
+        }
+
+        /**
+         * <p>Describe VPC Block Public Access (BPA) options. VPC Block Public Access (BPA)
+         * enables you to block resources in VPCs and subnets that you own in a Region from
+         * reaching or being reached from the internet through internet gateways and
+         * egress-only internet gateways. To learn more about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcBlockPublicAccessOptionsOutcome DescribeVpcBlockPublicAccessOptions(const Model::DescribeVpcBlockPublicAccessOptionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeVpcBlockPublicAccessOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeVpcBlockPublicAccessOptionsRequestT = Model::DescribeVpcBlockPublicAccessOptionsRequest>
+        Model::DescribeVpcBlockPublicAccessOptionsOutcomeCallable DescribeVpcBlockPublicAccessOptionsCallable(const DescribeVpcBlockPublicAccessOptionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EC2Client::DescribeVpcBlockPublicAccessOptions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeVpcBlockPublicAccessOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeVpcBlockPublicAccessOptionsRequestT = Model::DescribeVpcBlockPublicAccessOptionsRequest>
+        void DescribeVpcBlockPublicAccessOptionsAsync(const DescribeVpcBlockPublicAccessOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeVpcBlockPublicAccessOptionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EC2Client::DescribeVpcBlockPublicAccessOptions, request, handler, context);
+        }
+
+        /**
          *  <p>This action is deprecated.</p>  <p>Describes the ClassicLink
          * status of the specified VPCs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink">AWS
@@ -15146,8 +15332,19 @@ namespace EC2
          * settings, Availability Zone, or tenancy. If you need to modify any of these
          * attributes, we recommend that you cancel the Capacity Reservation, and then
          * create a new one with the required attributes. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">Modify
-         * an active Capacity Reservation</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">
+         * Modify an active Capacity Reservation</a>.</p> <p>The allowed modifications
+         * depend on the state of the Capacity Reservation:</p> <ul> <li> <p>
+         * <code>assessing</code> or <code>scheduled</code> state - You can modify the tags
+         * only.</p> </li> <li> <p> <code>pending</code> state - You can't modify the
+         * Capacity Reservation in any way.</p> </li> <li> <p> <code>active</code> state
+         * but still within the commitment duration - You can't decrease the instance count
+         * or set an end date that is within the commitment duration. All other
+         * modifications are allowed.</p> </li> <li> <p> <code>active</code> state with no
+         * commitment duration or elapsed commitment duration - All modifications are
+         * allowed.</p> </li> <li> <p> <code>expired</code>, <code>cancelled</code>,
+         * <code>unsupported</code>, or <code>failed</code> state - You can't modify the
+         * Capacity Reservation in any way.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation">AWS
          * API Reference</a></p>
          */
@@ -15584,8 +15781,9 @@ namespace EC2
         /**
          * <p>Modifies the Capacity Reservation settings for a stopped instance. Use this
          * action to configure an instance to target a specific Capacity Reservation, run
-         * in any <code>open</code> Capacity Reservation with matching attributes, or run
-         * On-Demand Instance capacity.</p><p><h3>See Also:</h3>   <a
+         * in any <code>open</code> Capacity Reservation with matching attributes, run in
+         * On-Demand Instance capacity, or only run in a Capacity
+         * Reservation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCapacityReservationAttributes">AWS
          * API Reference</a></p>
          */
@@ -16800,6 +16998,67 @@ namespace EC2
         }
 
         /**
+         * <p>Modify VPC Block Public Access (BPA) exclusions. A VPC BPA exclusion is a
+         * mode that can be applied to a single VPC or subnet that exempts it from the
+         * account’s BPA mode and will allow bidirectional or egress-only access. You can
+         * create BPA exclusions for VPCs and subnets even when BPA is not enabled on the
+         * account to ensure that there is no traffic disruption to the exclusions when VPC
+         * BPA is turned on.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessExclusion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyVpcBlockPublicAccessExclusionOutcome ModifyVpcBlockPublicAccessExclusion(const Model::ModifyVpcBlockPublicAccessExclusionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyVpcBlockPublicAccessExclusion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyVpcBlockPublicAccessExclusionRequestT = Model::ModifyVpcBlockPublicAccessExclusionRequest>
+        Model::ModifyVpcBlockPublicAccessExclusionOutcomeCallable ModifyVpcBlockPublicAccessExclusionCallable(const ModifyVpcBlockPublicAccessExclusionRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyVpcBlockPublicAccessExclusion, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyVpcBlockPublicAccessExclusion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyVpcBlockPublicAccessExclusionRequestT = Model::ModifyVpcBlockPublicAccessExclusionRequest>
+        void ModifyVpcBlockPublicAccessExclusionAsync(const ModifyVpcBlockPublicAccessExclusionRequestT& request, const ModifyVpcBlockPublicAccessExclusionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyVpcBlockPublicAccessExclusion, request, handler, context);
+        }
+
+        /**
+         * <p>Modify VPC Block Public Access (BPA) options. VPC Block Public Access (BPA)
+         * enables you to block resources in VPCs and subnets that you own in a Region from
+         * reaching or being reached from the internet through internet gateways and
+         * egress-only internet gateways. To learn more about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyVpcBlockPublicAccessOptionsOutcome ModifyVpcBlockPublicAccessOptions(const Model::ModifyVpcBlockPublicAccessOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyVpcBlockPublicAccessOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyVpcBlockPublicAccessOptionsRequestT = Model::ModifyVpcBlockPublicAccessOptionsRequest>
+        Model::ModifyVpcBlockPublicAccessOptionsOutcomeCallable ModifyVpcBlockPublicAccessOptionsCallable(const ModifyVpcBlockPublicAccessOptionsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyVpcBlockPublicAccessOptions, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyVpcBlockPublicAccessOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyVpcBlockPublicAccessOptionsRequestT = Model::ModifyVpcBlockPublicAccessOptionsRequest>
+        void ModifyVpcBlockPublicAccessOptionsAsync(const ModifyVpcBlockPublicAccessOptionsRequestT& request, const ModifyVpcBlockPublicAccessOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyVpcBlockPublicAccessOptions, request, handler, context);
+        }
+
+        /**
          * <p>Modifies attributes of a specified VPC endpoint. The attributes that you can
          * modify depend on the type of VPC endpoint (interface, gateway, or Gateway Load
          * Balancer). For more information, see the <a
@@ -17431,6 +17690,33 @@ namespace EC2
         void PurchaseCapacityBlockAsync(const PurchaseCapacityBlockRequestT& request, const PurchaseCapacityBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::PurchaseCapacityBlock, request, handler, context);
+        }
+
+        /**
+         * <p>Purchase the Capacity Block extension for use with your account. You must
+         * specify the ID of the Capacity Block extension offering you are
+         * purchasing.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlockExtension">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PurchaseCapacityBlockExtensionOutcome PurchaseCapacityBlockExtension(const Model::PurchaseCapacityBlockExtensionRequest& request) const;
+
+        /**
+         * A Callable wrapper for PurchaseCapacityBlockExtension that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PurchaseCapacityBlockExtensionRequestT = Model::PurchaseCapacityBlockExtensionRequest>
+        Model::PurchaseCapacityBlockExtensionOutcomeCallable PurchaseCapacityBlockExtensionCallable(const PurchaseCapacityBlockExtensionRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::PurchaseCapacityBlockExtension, request);
+        }
+
+        /**
+         * An Async wrapper for PurchaseCapacityBlockExtension that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PurchaseCapacityBlockExtensionRequestT = Model::PurchaseCapacityBlockExtensionRequest>
+        void PurchaseCapacityBlockExtensionAsync(const PurchaseCapacityBlockExtensionRequestT& request, const PurchaseCapacityBlockExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::PurchaseCapacityBlockExtension, request, handler, context);
         }
 
         /**

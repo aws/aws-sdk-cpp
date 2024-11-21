@@ -49,6 +49,8 @@ namespace TaxSettingsErrorMapper
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int ATTACHMENT_UPLOAD_HASH = HashingUtils::HashString("AttachmentUploadException");
+static const int CASE_CREATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("CaseCreationLimitExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -62,6 +64,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TaxSettingsErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == ATTACHMENT_UPLOAD_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TaxSettingsErrors::ATTACHMENT_UPLOAD), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CASE_CREATION_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TaxSettingsErrors::CASE_CREATION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

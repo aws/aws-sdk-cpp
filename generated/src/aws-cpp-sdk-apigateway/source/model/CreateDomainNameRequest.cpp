@@ -26,7 +26,8 @@ CreateDomainNameRequest::CreateDomainNameRequest() :
     m_securityPolicy(SecurityPolicy::NOT_SET),
     m_securityPolicyHasBeenSet(false),
     m_mutualTlsAuthenticationHasBeenSet(false),
-    m_ownershipVerificationCertificateArnHasBeenSet(false)
+    m_ownershipVerificationCertificateArnHasBeenSet(false),
+    m_policyHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,12 @@ Aws::String CreateDomainNameRequest::SerializePayload() const
   if(m_ownershipVerificationCertificateArnHasBeenSet)
   {
    payload.WithString("ownershipVerificationCertificateArn", m_ownershipVerificationCertificateArn);
+
+  }
+
+  if(m_policyHasBeenSet)
+  {
+   payload.WithString("policy", m_policy);
 
   }
 

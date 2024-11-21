@@ -19,7 +19,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the tags to remove from a trail, event data store, or
+   * <p>Specifies the tags to remove from a trail, event data store, dashboard, or
    * channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTagsRequest">AWS
    * API Reference</a></p>
@@ -42,11 +42,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the ARN of the trail, event data store, or channel from which tags
-     * should be removed.</p> <p> Example trail ARN format:
+     * <p>Specifies the ARN of the trail, event data store, dashboard, or channel from
+     * which tags should be removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      * <p>Example event data store ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>Example dashboard ARN format:
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</code>
      * </p> <p>Example channel ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */

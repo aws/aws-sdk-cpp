@@ -7,6 +7,7 @@
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/timestream-query/TimestreamQueryRequest.h>
 #include <aws/timestream-query/model/QueryPricingModel.h>
+#include <aws/timestream-query/model/QueryComputeRequest.h>
 #include <utility>
 
 namespace Aws
@@ -39,9 +40,14 @@ namespace Model
      * <p>The maximum number of compute units the service will use at any point in time
      * to serve your queries. To run queries, you must set a minimum capacity of 4 TCU.
      * You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16,
-     * 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code>
-     * is 1000. To request an increase to this soft limit, contact Amazon Web Services
-     * Support. For information about the default quota for maxQueryTCU, see <a
+     * 32, and so on. The maximum value supported for <code>MaxQueryTCU</code> is 1000.
+     * To request an increase to this soft limit, contact Amazon Web Services Support.
+     * For information about the default quota for maxQueryTCU, see Default quotas.
+     * This configuration is applicable only for on-demand usage of Timestream Compute
+     * Units (TCUs).</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is
+     * 1000. To request an increase to this soft limit, contact Amazon Web Services
+     * Support. For information about the default quota for <code>maxQueryTCU</code>,
+     * see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default
      * quotas</a>.</p>
      */
@@ -65,6 +71,22 @@ namespace Model
     inline UpdateAccountSettingsRequest& WithQueryPricingModel(const QueryPricingModel& value) { SetQueryPricingModel(value); return *this;}
     inline UpdateAccountSettingsRequest& WithQueryPricingModel(QueryPricingModel&& value) { SetQueryPricingModel(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Modifies the query compute settings configured in your account, including the
+     * query pricing model and provisioned Timestream Compute Units (TCUs) in your
+     * account.</p>  <p>This API is idempotent, meaning that making the same
+     * request multiple times will have the same effect as making the request once.</p>
+     * 
+     */
+    inline const QueryComputeRequest& GetQueryCompute() const{ return m_queryCompute; }
+    inline bool QueryComputeHasBeenSet() const { return m_queryComputeHasBeenSet; }
+    inline void SetQueryCompute(const QueryComputeRequest& value) { m_queryComputeHasBeenSet = true; m_queryCompute = value; }
+    inline void SetQueryCompute(QueryComputeRequest&& value) { m_queryComputeHasBeenSet = true; m_queryCompute = std::move(value); }
+    inline UpdateAccountSettingsRequest& WithQueryCompute(const QueryComputeRequest& value) { SetQueryCompute(value); return *this;}
+    inline UpdateAccountSettingsRequest& WithQueryCompute(QueryComputeRequest&& value) { SetQueryCompute(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_maxQueryTCU;
@@ -72,6 +94,9 @@ namespace Model
 
     QueryPricingModel m_queryPricingModel;
     bool m_queryPricingModelHasBeenSet = false;
+
+    QueryComputeRequest m_queryCompute;
+    bool m_queryComputeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,6 +21,8 @@ CreateChannelRequest::CreateChannelRequest() :
     m_inputType(InputType::NOT_SET),
     m_inputTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_inputSwitchConfigurationHasBeenSet(false),
+    m_outputHeaderConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -43,6 +45,18 @@ Aws::String CreateChannelRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_inputSwitchConfigurationHasBeenSet)
+  {
+   payload.WithObject("InputSwitchConfiguration", m_inputSwitchConfiguration.Jsonize());
+
+  }
+
+  if(m_outputHeaderConfigurationHasBeenSet)
+  {
+   payload.WithObject("OutputHeaderConfiguration", m_outputHeaderConfiguration.Jsonize());
 
   }
 

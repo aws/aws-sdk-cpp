@@ -340,6 +340,21 @@ namespace Model
     inline void SetStaging(bool value) { m_stagingHasBeenSet = true; m_staging = value; }
     inline DistributionSummary& WithStaging(bool value) { SetStaging(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>ID of the Anycast static IP list that is associated with the
+     * distribution.</p>
+     */
+    inline const Aws::String& GetAnycastIpListId() const{ return m_anycastIpListId; }
+    inline bool AnycastIpListIdHasBeenSet() const { return m_anycastIpListIdHasBeenSet; }
+    inline void SetAnycastIpListId(const Aws::String& value) { m_anycastIpListIdHasBeenSet = true; m_anycastIpListId = value; }
+    inline void SetAnycastIpListId(Aws::String&& value) { m_anycastIpListIdHasBeenSet = true; m_anycastIpListId = std::move(value); }
+    inline void SetAnycastIpListId(const char* value) { m_anycastIpListIdHasBeenSet = true; m_anycastIpListId.assign(value); }
+    inline DistributionSummary& WithAnycastIpListId(const Aws::String& value) { SetAnycastIpListId(value); return *this;}
+    inline DistributionSummary& WithAnycastIpListId(Aws::String&& value) { SetAnycastIpListId(std::move(value)); return *this;}
+    inline DistributionSummary& WithAnycastIpListId(const char* value) { SetAnycastIpListId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_id;
@@ -404,6 +419,9 @@ namespace Model
 
     bool m_staging;
     bool m_stagingHasBeenSet = false;
+
+    Aws::String m_anycastIpListId;
+    bool m_anycastIpListIdHasBeenSet = false;
   };
 
 } // namespace Model

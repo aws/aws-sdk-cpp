@@ -23,8 +23,17 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that controls whether access logs are written for the
-   * distribution.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that specifies whether access logs are written for the
+   * distribution.</p>  <p>If you already enabled standard logging (legacy) and
+   * you want to enable standard logging (v2) to send your access logs to Amazon S3,
+   * we recommend that you specify a <i>different</i> Amazon S3 bucket or use a
+   * <i>separate path</i> in the same bucket (for example, use a log prefix or
+   * partitioning). This helps you keep track of which log files are associated with
+   * which logging subscription and prevents log files from overwriting each other.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Standard
+   * logging (access logs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/LoggingConfig">AWS
    * API Reference</a></p>
    */
@@ -46,8 +55,8 @@ namespace Model
      * <code>false</code> for <code>Enabled</code>, and specify empty
      * <code>Bucket</code> and <code>Prefix</code> elements. If you specify
      * <code>false</code> for <code>Enabled</code> but you specify values for
-     * <code>Bucket</code>, <code>prefix</code>, and <code>IncludeCookies</code>, the
-     * values are automatically deleted.</p>
+     * <code>Bucket</code> and <code>prefix</code>, the values are automatically
+     * deleted.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -74,7 +83,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon S3 bucket to store the access logs in, for example,
-     * <code>myawslogbucket.s3.amazonaws.com</code>.</p>
+     * <code>amzn-s3-demo-bucket.s3.amazonaws.com</code>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }

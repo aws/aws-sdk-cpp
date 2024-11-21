@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of requests that failed with a 419 throttling status code.</p>
+     * <p>The number of requests that failed with a 429 throttling status code.</p>
      */
     inline long long GetThrottleCount() const{ return m_throttleCount; }
     inline bool ThrottleCountHasBeenSet() const { return m_throttleCountHasBeenSet; }

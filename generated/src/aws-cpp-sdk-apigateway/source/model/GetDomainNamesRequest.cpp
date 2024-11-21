@@ -18,7 +18,9 @@ using namespace Aws::Http;
 GetDomainNamesRequest::GetDomainNamesRequest() : 
     m_positionHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_resourceOwner(ResourceOwner::NOT_SET),
+    m_resourceOwnerHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,13 @@ void GetDomainNamesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_limit;
       uri.AddQueryStringParameter("limit", ss.str());
+      ss.str("");
+    }
+
+    if(m_resourceOwnerHasBeenSet)
+    {
+      ss << ResourceOwnerMapper::GetNameForResourceOwner(m_resourceOwner);
+      uri.AddQueryStringParameter("resourceOwner", ss.str());
       ss.str("");
     }
 

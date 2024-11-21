@@ -19,6 +19,9 @@ StartRunRequest::StartRunRequest() :
     m_runIdHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_cacheIdHasBeenSet(false),
+    m_cacheBehavior(CacheBehavior::NOT_SET),
+    m_cacheBehaviorHasBeenSet(false),
     m_runGroupIdHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
@@ -70,6 +73,17 @@ Aws::String StartRunRequest::SerializePayload() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_cacheIdHasBeenSet)
+  {
+   payload.WithString("cacheId", m_cacheId);
+
+  }
+
+  if(m_cacheBehaviorHasBeenSet)
+  {
+   payload.WithString("cacheBehavior", CacheBehaviorMapper::GetNameForCacheBehavior(m_cacheBehavior));
   }
 
   if(m_runGroupIdHasBeenSet)

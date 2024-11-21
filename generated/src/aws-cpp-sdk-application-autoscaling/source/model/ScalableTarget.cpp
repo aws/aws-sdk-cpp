@@ -28,6 +28,8 @@ ScalableTarget::ScalableTarget() :
     m_minCapacityHasBeenSet(false),
     m_maxCapacity(0),
     m_maxCapacityHasBeenSet(false),
+    m_predictedCapacity(0),
+    m_predictedCapacityHasBeenSet(false),
     m_roleARNHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_suspendedStateHasBeenSet(false),
@@ -76,6 +78,13 @@ ScalableTarget& ScalableTarget::operator =(JsonView jsonValue)
     m_maxCapacity = jsonValue.GetInteger("MaxCapacity");
 
     m_maxCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PredictedCapacity"))
+  {
+    m_predictedCapacity = jsonValue.GetInteger("PredictedCapacity");
+
+    m_predictedCapacityHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RoleARN"))
@@ -138,6 +147,12 @@ JsonValue ScalableTarget::Jsonize() const
   if(m_maxCapacityHasBeenSet)
   {
    payload.WithInteger("MaxCapacity", m_maxCapacity);
+
+  }
+
+  if(m_predictedCapacityHasBeenSet)
+  {
+   payload.WithInteger("PredictedCapacity", m_predictedCapacity);
 
   }
 

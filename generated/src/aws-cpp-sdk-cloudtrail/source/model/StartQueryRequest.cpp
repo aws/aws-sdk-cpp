@@ -16,7 +16,8 @@ StartQueryRequest::StartQueryRequest() :
     m_queryStatementHasBeenSet(false),
     m_deliveryS3UriHasBeenSet(false),
     m_queryAliasHasBeenSet(false),
-    m_queryParametersHasBeenSet(false)
+    m_queryParametersHasBeenSet(false),
+    m_eventDataStoreOwnerAccountIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String StartQueryRequest::SerializePayload() const
      queryParametersJsonList[queryParametersIndex].AsString(m_queryParameters[queryParametersIndex]);
    }
    payload.WithArray("QueryParameters", std::move(queryParametersJsonList));
+
+  }
+
+  if(m_eventDataStoreOwnerAccountIdHasBeenSet)
+  {
+   payload.WithString("EventDataStoreOwnerAccountId", m_eventDataStoreOwnerAccountId);
 
   }
 

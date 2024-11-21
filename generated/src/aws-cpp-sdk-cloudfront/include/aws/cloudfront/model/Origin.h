@@ -9,6 +9,7 @@
 #include <aws/cloudfront/model/CustomHeaders.h>
 #include <aws/cloudfront/model/S3OriginConfig.h>
 #include <aws/cloudfront/model/CustomOriginConfig.h>
+#include <aws/cloudfront/model/VpcOriginConfig.h>
 #include <aws/cloudfront/model/OriginShield.h>
 #include <utility>
 
@@ -152,6 +153,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The VPC origin configuration.</p>
+     */
+    inline const VpcOriginConfig& GetVpcOriginConfig() const{ return m_vpcOriginConfig; }
+    inline bool VpcOriginConfigHasBeenSet() const { return m_vpcOriginConfigHasBeenSet; }
+    inline void SetVpcOriginConfig(const VpcOriginConfig& value) { m_vpcOriginConfigHasBeenSet = true; m_vpcOriginConfig = value; }
+    inline void SetVpcOriginConfig(VpcOriginConfig&& value) { m_vpcOriginConfigHasBeenSet = true; m_vpcOriginConfig = std::move(value); }
+    inline Origin& WithVpcOriginConfig(const VpcOriginConfig& value) { SetVpcOriginConfig(value); return *this;}
+    inline Origin& WithVpcOriginConfig(VpcOriginConfig&& value) { SetVpcOriginConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
      * minimum number is 1, the maximum is 3, and the default (if you don't specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
@@ -235,6 +248,9 @@ namespace Model
 
     CustomOriginConfig m_customOriginConfig;
     bool m_customOriginConfigHasBeenSet = false;
+
+    VpcOriginConfig m_vpcOriginConfig;
+    bool m_vpcOriginConfigHasBeenSet = false;
 
     int m_connectionAttempts;
     bool m_connectionAttemptsHasBeenSet = false;

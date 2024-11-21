@@ -162,6 +162,7 @@ static const int TOO_MANY_KEY_GROUPS_HASH = HashingUtils::HashString("TooManyKey
 static const int PUBLIC_KEY_ALREADY_EXISTS_HASH = HashingUtils::HashString("PublicKeyAlreadyExists");
 static const int TOO_MANY_REMOVE_HEADERS_IN_RESPONSE_HEADERS_POLICY_HASH = HashingUtils::HashString("TooManyRemoveHeadersInResponseHeadersPolicy");
 static const int REALTIME_LOG_CONFIG_IN_USE_HASH = HashingUtils::HashString("RealtimeLogConfigInUse");
+static const int CANNOT_UPDATE_ENTITY_WHILE_IN_USE_HASH = HashingUtils::HashString("CannotUpdateEntityWhileInUse");
 static const int CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_IN_USE_HASH = HashingUtils::HashString("CloudFrontOriginAccessIdentityInUse");
 static const int TOO_MANY_CUSTOM_HEADERS_IN_RESPONSE_HEADERS_POLICY_HASH = HashingUtils::HashString("TooManyCustomHeadersInResponseHeadersPolicy");
 static const int ORIGIN_ACCESS_CONTROL_IN_USE_HASH = HashingUtils::HashString("OriginAccessControlInUse");
@@ -899,6 +900,11 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == REALTIME_LOG_CONFIG_IN_USE_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::REALTIME_LOG_CONFIG_IN_USE), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == CANNOT_UPDATE_ENTITY_WHILE_IN_USE_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::CANNOT_UPDATE_ENTITY_WHILE_IN_USE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == CLOUD_FRONT_ORIGIN_ACCESS_IDENTITY_IN_USE_HASH)

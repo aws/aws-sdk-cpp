@@ -105,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The log group selection criteria for this subscription filter policy.</p>
+     * <p>The log group selection criteria that is used for this policy.</p>
      */
     inline const Aws::String& GetSelectionCriteria() const{ return m_selectionCriteria; }
     inline bool SelectionCriteriaHasBeenSet() const { return m_selectionCriteriaHasBeenSet; }

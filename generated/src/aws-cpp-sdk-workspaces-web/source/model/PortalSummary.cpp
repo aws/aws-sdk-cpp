@@ -25,6 +25,7 @@ PortalSummary::PortalSummary() :
     m_browserType(BrowserType::NOT_SET),
     m_browserTypeHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_dataProtectionSettingsArnHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
@@ -78,6 +79,13 @@ PortalSummary& PortalSummary::operator =(JsonView jsonValue)
     m_creationDate = jsonValue.GetDouble("creationDate");
 
     m_creationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataProtectionSettingsArn"))
+  {
+    m_dataProtectionSettingsArn = jsonValue.GetString("dataProtectionSettingsArn");
+
+    m_dataProtectionSettingsArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("displayName"))
@@ -190,6 +198,12 @@ JsonValue PortalSummary::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
+  }
+
+  if(m_dataProtectionSettingsArnHasBeenSet)
+  {
+   payload.WithString("dataProtectionSettingsArn", m_dataProtectionSettingsArn);
+
   }
 
   if(m_displayNameHasBeenSet)

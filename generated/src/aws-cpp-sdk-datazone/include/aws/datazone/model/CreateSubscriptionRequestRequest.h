@@ -8,6 +8,7 @@
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/FormInput.h>
 #include <aws/datazone/model/SubscribedListingInput.h>
 #include <aws/datazone/model/SubscribedPrincipalInput.h>
 #include <utility>
@@ -68,6 +69,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The metadata form included in the subscription request.</p>
+     */
+    inline const Aws::Vector<FormInput>& GetMetadataForms() const{ return m_metadataForms; }
+    inline bool MetadataFormsHasBeenSet() const { return m_metadataFormsHasBeenSet; }
+    inline void SetMetadataForms(const Aws::Vector<FormInput>& value) { m_metadataFormsHasBeenSet = true; m_metadataForms = value; }
+    inline void SetMetadataForms(Aws::Vector<FormInput>&& value) { m_metadataFormsHasBeenSet = true; m_metadataForms = std::move(value); }
+    inline CreateSubscriptionRequestRequest& WithMetadataForms(const Aws::Vector<FormInput>& value) { SetMetadataForms(value); return *this;}
+    inline CreateSubscriptionRequestRequest& WithMetadataForms(Aws::Vector<FormInput>&& value) { SetMetadataForms(std::move(value)); return *this;}
+    inline CreateSubscriptionRequestRequest& AddMetadataForms(const FormInput& value) { m_metadataFormsHasBeenSet = true; m_metadataForms.push_back(value); return *this; }
+    inline CreateSubscriptionRequestRequest& AddMetadataForms(FormInput&& value) { m_metadataFormsHasBeenSet = true; m_metadataForms.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The reason for the subscription request.</p>
      */
     inline const Aws::String& GetRequestReason() const{ return m_requestReason; }
@@ -115,6 +130,9 @@ namespace Model
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;
+
+    Aws::Vector<FormInput> m_metadataForms;
+    bool m_metadataFormsHasBeenSet = false;
 
     Aws::String m_requestReason;
     bool m_requestReasonHasBeenSet = false;

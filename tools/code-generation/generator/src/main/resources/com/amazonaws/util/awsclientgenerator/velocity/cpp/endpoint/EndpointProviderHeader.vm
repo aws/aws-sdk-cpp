@@ -20,7 +20,9 @@
 \#include <aws/core/utils/memory/stl/AWSString.h>
 \#include <aws/core/utils/memory/stl/AWSVector.h>
 
+#if($serviceModel.endpointRules)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointRules.h>
+#end
 
 
 namespace ${rootNamespace}
@@ -36,6 +38,7 @@ using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::DefaultEndpointProvider;
 
+#if ($serviceModel.endpointRules)
 #if ($serviceModel.clientContextParams)
 class ${exportMacro} ${epContextClassName} : public Aws::Endpoint::ClientContextParameters
 {
@@ -125,6 +128,7 @@ public:
     {
     }
 };
+#end
 } // namespace Endpoint
 } // namespace ${serviceNamespace}
 } // namespace ${rootNamespace}

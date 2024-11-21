@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateApplicationRequest::UpdateApplicationRequest() : 
     m_configurationIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_waveHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_waveHasBeenSet)
+  {
+   payload.WithString("wave", m_wave);
 
   }
 

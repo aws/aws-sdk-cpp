@@ -31,7 +31,8 @@ IpamResourceDiscovery::IpamResourceDiscovery() :
     m_isDefaultHasBeenSet(false),
     m_state(IpamResourceDiscoveryState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_organizationalUnitExclusionsHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,18 @@ IpamResourceDiscovery& IpamResourceDiscovery::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode organizationalUnitExclusionsNode = resultNode.FirstChild("organizationalUnitExclusionSet");
+    if(!organizationalUnitExclusionsNode.IsNull())
+    {
+      XmlNode organizationalUnitExclusionsMember = organizationalUnitExclusionsNode.FirstChild("item");
+      while(!organizationalUnitExclusionsMember.IsNull())
+      {
+        m_organizationalUnitExclusions.push_back(organizationalUnitExclusionsMember);
+        organizationalUnitExclusionsMember = organizationalUnitExclusionsMember.NextNode("item");
+      }
+
+      m_organizationalUnitExclusionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -177,6 +190,17 @@ void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* lo
       }
   }
 
+  if(m_organizationalUnitExclusionsHasBeenSet)
+  {
+      unsigned organizationalUnitExclusionsIdx = 1;
+      for(auto& item : m_organizationalUnitExclusions)
+      {
+        Aws::StringStream organizationalUnitExclusionsSs;
+        organizationalUnitExclusionsSs << location << index << locationValue << ".OrganizationalUnitExclusionSet." << organizationalUnitExclusionsIdx++;
+        item.OutputToStream(oStream, organizationalUnitExclusionsSs.str().c_str());
+      }
+  }
+
 }
 
 void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -227,6 +251,16 @@ void IpamResourceDiscovery::OutputToStream(Aws::OStream& oStream, const char* lo
         Aws::StringStream tagsSs;
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+  if(m_organizationalUnitExclusionsHasBeenSet)
+  {
+      unsigned organizationalUnitExclusionsIdx = 1;
+      for(auto& item : m_organizationalUnitExclusions)
+      {
+        Aws::StringStream organizationalUnitExclusionsSs;
+        organizationalUnitExclusionsSs << location <<  ".OrganizationalUnitExclusionSet." << organizationalUnitExclusionsIdx++;
+        item.OutputToStream(oStream, organizationalUnitExclusionsSs.str().c_str());
       }
   }
 }

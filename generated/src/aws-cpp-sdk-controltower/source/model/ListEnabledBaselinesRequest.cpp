@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 ListEnabledBaselinesRequest::ListEnabledBaselinesRequest() : 
     m_filterHasBeenSet(false),
+    m_includeChildren(false),
+    m_includeChildrenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -27,6 +29,12 @@ Aws::String ListEnabledBaselinesRequest::SerializePayload() const
   if(m_filterHasBeenSet)
   {
    payload.WithObject("filter", m_filter.Jsonize());
+
+  }
+
+  if(m_includeChildrenHasBeenSet)
+  {
+   payload.WithBool("includeChildren", m_includeChildren);
 
   }
 

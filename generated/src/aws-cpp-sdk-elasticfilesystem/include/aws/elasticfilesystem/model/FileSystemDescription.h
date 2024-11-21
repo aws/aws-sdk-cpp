@@ -180,7 +180,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Performance mode of the file system.</p>
+     * <p>The performance mode of the file system.</p>
      */
     inline const PerformanceMode& GetPerformanceMode() const{ return m_performanceMode; }
     inline bool PerformanceModeHasBeenSet() const { return m_performanceModeHasBeenSet; }

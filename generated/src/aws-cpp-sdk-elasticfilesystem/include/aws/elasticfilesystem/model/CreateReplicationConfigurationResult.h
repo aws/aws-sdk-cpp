@@ -122,6 +122,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>ID of the Amazon Web Services account in which the source file system
+     * resides.</p>
+     */
+    inline const Aws::String& GetSourceFileSystemOwnerId() const{ return m_sourceFileSystemOwnerId; }
+    inline void SetSourceFileSystemOwnerId(const Aws::String& value) { m_sourceFileSystemOwnerId = value; }
+    inline void SetSourceFileSystemOwnerId(Aws::String&& value) { m_sourceFileSystemOwnerId = std::move(value); }
+    inline void SetSourceFileSystemOwnerId(const char* value) { m_sourceFileSystemOwnerId.assign(value); }
+    inline CreateReplicationConfigurationResult& WithSourceFileSystemOwnerId(const Aws::String& value) { SetSourceFileSystemOwnerId(value); return *this;}
+    inline CreateReplicationConfigurationResult& WithSourceFileSystemOwnerId(Aws::String&& value) { SetSourceFileSystemOwnerId(std::move(value)); return *this;}
+    inline CreateReplicationConfigurationResult& WithSourceFileSystemOwnerId(const char* value) { SetSourceFileSystemOwnerId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -144,6 +158,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Vector<Destination> m_destinations;
+
+    Aws::String m_sourceFileSystemOwnerId;
 
     Aws::String m_requestId;
   };

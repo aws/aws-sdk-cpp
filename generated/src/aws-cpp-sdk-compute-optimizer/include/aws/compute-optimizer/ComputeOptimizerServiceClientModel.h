@@ -24,6 +24,7 @@
 #include <aws/compute-optimizer/model/ExportEBSVolumeRecommendationsResult.h>
 #include <aws/compute-optimizer/model/ExportEC2InstanceRecommendationsResult.h>
 #include <aws/compute-optimizer/model/ExportECSServiceRecommendationsResult.h>
+#include <aws/compute-optimizer/model/ExportIdleRecommendationsResult.h>
 #include <aws/compute-optimizer/model/ExportLambdaFunctionRecommendationsResult.h>
 #include <aws/compute-optimizer/model/ExportLicenseRecommendationsResult.h>
 #include <aws/compute-optimizer/model/ExportRDSDatabaseRecommendationsResult.h>
@@ -36,6 +37,7 @@
 #include <aws/compute-optimizer/model/GetEffectiveRecommendationPreferencesResult.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusResult.h>
 #include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationResult.h>
+#include <aws/compute-optimizer/model/GetIdleRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetLicenseRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetRDSDatabaseRecommendationProjectedMetricsResult.h>
@@ -50,6 +52,7 @@
 #include <aws/compute-optimizer/model/GetEnrollmentStatusesForOrganizationRequest.h>
 #include <aws/compute-optimizer/model/GetLambdaFunctionRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/DescribeRecommendationExportJobsRequest.h>
+#include <aws/compute-optimizer/model/GetIdleRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetECSServiceRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetRDSDatabaseRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetRecommendationSummariesRequest.h>
@@ -101,6 +104,7 @@ namespace Aws
       class ExportEBSVolumeRecommendationsRequest;
       class ExportEC2InstanceRecommendationsRequest;
       class ExportECSServiceRecommendationsRequest;
+      class ExportIdleRecommendationsRequest;
       class ExportLambdaFunctionRecommendationsRequest;
       class ExportLicenseRecommendationsRequest;
       class ExportRDSDatabaseRecommendationsRequest;
@@ -113,6 +117,7 @@ namespace Aws
       class GetEffectiveRecommendationPreferencesRequest;
       class GetEnrollmentStatusRequest;
       class GetEnrollmentStatusesForOrganizationRequest;
+      class GetIdleRecommendationsRequest;
       class GetLambdaFunctionRecommendationsRequest;
       class GetLicenseRecommendationsRequest;
       class GetRDSDatabaseRecommendationProjectedMetricsRequest;
@@ -130,6 +135,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ExportEBSVolumeRecommendationsResult, ComputeOptimizerError> ExportEBSVolumeRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ExportEC2InstanceRecommendationsResult, ComputeOptimizerError> ExportEC2InstanceRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ExportECSServiceRecommendationsResult, ComputeOptimizerError> ExportECSServiceRecommendationsOutcome;
+      typedef Aws::Utils::Outcome<ExportIdleRecommendationsResult, ComputeOptimizerError> ExportIdleRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ExportLambdaFunctionRecommendationsResult, ComputeOptimizerError> ExportLambdaFunctionRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ExportLicenseRecommendationsResult, ComputeOptimizerError> ExportLicenseRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ExportRDSDatabaseRecommendationsResult, ComputeOptimizerError> ExportRDSDatabaseRecommendationsOutcome;
@@ -142,6 +148,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetEffectiveRecommendationPreferencesResult, ComputeOptimizerError> GetEffectiveRecommendationPreferencesOutcome;
       typedef Aws::Utils::Outcome<GetEnrollmentStatusResult, ComputeOptimizerError> GetEnrollmentStatusOutcome;
       typedef Aws::Utils::Outcome<GetEnrollmentStatusesForOrganizationResult, ComputeOptimizerError> GetEnrollmentStatusesForOrganizationOutcome;
+      typedef Aws::Utils::Outcome<GetIdleRecommendationsResult, ComputeOptimizerError> GetIdleRecommendationsOutcome;
       typedef Aws::Utils::Outcome<GetLambdaFunctionRecommendationsResult, ComputeOptimizerError> GetLambdaFunctionRecommendationsOutcome;
       typedef Aws::Utils::Outcome<GetLicenseRecommendationsResult, ComputeOptimizerError> GetLicenseRecommendationsOutcome;
       typedef Aws::Utils::Outcome<GetRDSDatabaseRecommendationProjectedMetricsResult, ComputeOptimizerError> GetRDSDatabaseRecommendationProjectedMetricsOutcome;
@@ -159,6 +166,7 @@ namespace Aws
       typedef std::future<ExportEBSVolumeRecommendationsOutcome> ExportEBSVolumeRecommendationsOutcomeCallable;
       typedef std::future<ExportEC2InstanceRecommendationsOutcome> ExportEC2InstanceRecommendationsOutcomeCallable;
       typedef std::future<ExportECSServiceRecommendationsOutcome> ExportECSServiceRecommendationsOutcomeCallable;
+      typedef std::future<ExportIdleRecommendationsOutcome> ExportIdleRecommendationsOutcomeCallable;
       typedef std::future<ExportLambdaFunctionRecommendationsOutcome> ExportLambdaFunctionRecommendationsOutcomeCallable;
       typedef std::future<ExportLicenseRecommendationsOutcome> ExportLicenseRecommendationsOutcomeCallable;
       typedef std::future<ExportRDSDatabaseRecommendationsOutcome> ExportRDSDatabaseRecommendationsOutcomeCallable;
@@ -171,6 +179,7 @@ namespace Aws
       typedef std::future<GetEffectiveRecommendationPreferencesOutcome> GetEffectiveRecommendationPreferencesOutcomeCallable;
       typedef std::future<GetEnrollmentStatusOutcome> GetEnrollmentStatusOutcomeCallable;
       typedef std::future<GetEnrollmentStatusesForOrganizationOutcome> GetEnrollmentStatusesForOrganizationOutcomeCallable;
+      typedef std::future<GetIdleRecommendationsOutcome> GetIdleRecommendationsOutcomeCallable;
       typedef std::future<GetLambdaFunctionRecommendationsOutcome> GetLambdaFunctionRecommendationsOutcomeCallable;
       typedef std::future<GetLicenseRecommendationsOutcome> GetLicenseRecommendationsOutcomeCallable;
       typedef std::future<GetRDSDatabaseRecommendationProjectedMetricsOutcome> GetRDSDatabaseRecommendationProjectedMetricsOutcomeCallable;
@@ -191,6 +200,7 @@ namespace Aws
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportEBSVolumeRecommendationsRequest&, const Model::ExportEBSVolumeRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportEBSVolumeRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportEC2InstanceRecommendationsRequest&, const Model::ExportEC2InstanceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportEC2InstanceRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportECSServiceRecommendationsRequest&, const Model::ExportECSServiceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportECSServiceRecommendationsResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportIdleRecommendationsRequest&, const Model::ExportIdleRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportIdleRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportLambdaFunctionRecommendationsRequest&, const Model::ExportLambdaFunctionRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportLambdaFunctionRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportLicenseRecommendationsRequest&, const Model::ExportLicenseRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportLicenseRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportRDSDatabaseRecommendationsRequest&, const Model::ExportRDSDatabaseRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportRDSDatabaseRecommendationsResponseReceivedHandler;
@@ -203,6 +213,7 @@ namespace Aws
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEffectiveRecommendationPreferencesRequest&, const Model::GetEffectiveRecommendationPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEffectiveRecommendationPreferencesResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEnrollmentStatusRequest&, const Model::GetEnrollmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnrollmentStatusResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEnrollmentStatusesForOrganizationRequest&, const Model::GetEnrollmentStatusesForOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnrollmentStatusesForOrganizationResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::GetIdleRecommendationsRequest&, const Model::GetIdleRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdleRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetLambdaFunctionRecommendationsRequest&, const Model::GetLambdaFunctionRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLambdaFunctionRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetLicenseRecommendationsRequest&, const Model::GetLicenseRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLicenseRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetRDSDatabaseRecommendationProjectedMetricsRequest&, const Model::GetRDSDatabaseRecommendationProjectedMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRDSDatabaseRecommendationProjectedMetricsResponseReceivedHandler;

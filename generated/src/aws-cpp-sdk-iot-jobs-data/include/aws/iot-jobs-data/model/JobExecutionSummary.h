@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was
+     * <p>The time, in seconds since the epoch, when the job execution was
      * enqueued.</p>
      */
     inline long long GetQueuedAt() const{ return m_queuedAt; }
@@ -65,8 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution
-     * started.</p>
+     * <p>The time, in seconds since the epoch, when the job execution started.</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
@@ -76,7 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was last
+     * <p>The time, in seconds since the epoch, when the job execution was last
      * updated.</p>
      */
     inline long long GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
@@ -88,7 +87,7 @@ namespace Model
     ///@{
     /**
      * <p>The version of the job execution. Job execution versions are incremented each
-     * time AWS IoT Jobs receives an update from a device.</p>
+     * time IoT Jobs receives an update from a device.</p>
      */
     inline long long GetVersionNumber() const{ return m_versionNumber; }
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }

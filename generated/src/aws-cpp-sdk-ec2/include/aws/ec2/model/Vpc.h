@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/Tenancy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/BlockPublicAccessStates.h>
 #include <aws/ec2/model/VpcState.h>
 #include <aws/ec2/model/VpcIpv6CidrBlockAssociation.h>
 #include <aws/ec2/model/VpcCidrBlockAssociation.h>
@@ -125,6 +126,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The state of VPC Block Public Access (BPA).</p>
+     */
+    inline const BlockPublicAccessStates& GetBlockPublicAccessStates() const{ return m_blockPublicAccessStates; }
+    inline bool BlockPublicAccessStatesHasBeenSet() const { return m_blockPublicAccessStatesHasBeenSet; }
+    inline void SetBlockPublicAccessStates(const BlockPublicAccessStates& value) { m_blockPublicAccessStatesHasBeenSet = true; m_blockPublicAccessStates = value; }
+    inline void SetBlockPublicAccessStates(BlockPublicAccessStates&& value) { m_blockPublicAccessStatesHasBeenSet = true; m_blockPublicAccessStates = std::move(value); }
+    inline Vpc& WithBlockPublicAccessStates(const BlockPublicAccessStates& value) { SetBlockPublicAccessStates(value); return *this;}
+    inline Vpc& WithBlockPublicAccessStates(BlockPublicAccessStates&& value) { SetBlockPublicAccessStates(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
@@ -195,6 +208,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    BlockPublicAccessStates m_blockPublicAccessStates;
+    bool m_blockPublicAccessStatesHasBeenSet = false;
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;

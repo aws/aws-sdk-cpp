@@ -37,7 +37,8 @@ DefaultCacheBehavior::DefaultCacheBehavior() :
     m_realtimeLogConfigArnHasBeenSet(false),
     m_cachePolicyIdHasBeenSet(false),
     m_originRequestPolicyIdHasBeenSet(false),
-    m_responseHeadersPolicyIdHasBeenSet(false)
+    m_responseHeadersPolicyIdHasBeenSet(false),
+    m_grpcConfigHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,12 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
       m_responseHeadersPolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(responseHeadersPolicyIdNode.GetText());
       m_responseHeadersPolicyIdHasBeenSet = true;
     }
+    XmlNode grpcConfigNode = resultNode.FirstChild("GrpcConfig");
+    if(!grpcConfigNode.IsNull())
+    {
+      m_grpcConfig = grpcConfigNode;
+      m_grpcConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -231,6 +238,12 @@ void DefaultCacheBehavior::AddToNode(XmlNode& parentNode) const
   {
    XmlNode responseHeadersPolicyIdNode = parentNode.CreateChildElement("ResponseHeadersPolicyId");
    responseHeadersPolicyIdNode.SetText(m_responseHeadersPolicyId);
+  }
+
+  if(m_grpcConfigHasBeenSet)
+  {
+   XmlNode grpcConfigNode = parentNode.CreateChildElement("GrpcConfig");
+   m_grpcConfig.AddToNode(grpcConfigNode);
   }
 
 }

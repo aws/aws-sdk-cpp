@@ -35,8 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of resiliency policy that was updated, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * <p>The resiliency policy that was updated, including the recovery time objective
+     * (RTO) and recovery point objective (RPO) in seconds.</p>
      */
     inline const ResiliencyPolicy& GetPolicy() const{ return m_policy; }
     inline void SetPolicy(const ResiliencyPolicy& value) { m_policy = value; }

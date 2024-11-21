@@ -1,0 +1,59 @@
+/**
+ * The following API function ${className}::${operation.name} has been generated using a customized template
+ * in order to accommodate the support of multi-regional endpoints.
+ */
+${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
+{
+  AWS_OPERATION_GUARD(${operation.name});
+  if (request.EndpointIdHasBeenSet())
+  {
+    Aws::Http::URI uri;
+    if (m_useCustomEndpoint) {
+      // SDK must send the PutEvents API operation to the custom endpoint if one has been configured
+      uri = m_uri;
+    } else {
+      if(request.GetEndpointId().empty()) {
+        return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "EndpointId must not be a zero length string", false/*retryable*/));
+      }
+      Aws::String uriStr = request.GetEndpointId() + ".endpoint" + EventBridgeEndpoint::GetEventBridgeSuffix(m_region, false);
+      if(!Utils::IsValidHost(uriStr)) {
+        // The SDK must validate and throw an exception if EndpointId is not a valid DNS hostname component
+        return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Invalid EventBridge EndpointId DNS hostname", false/*retryable*/));
+      }
+      uri = m_configScheme + "://" + uriStr;
+    }
+    // EventBridge multi-region endpoints must be signed using SigV4a authentication
+    const char* signerName = Aws::Auth::ASYMMETRIC_SIGV4_SIGNER;
+    // SDK must sign the requests with a region value of "*" since the primary and secondary failover regions is not known to the SDK at request time
+    const char* signerRegionOverride = "*";
+    return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, signerName, signerRegionOverride));
+  }
+  else
+  {
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+#if($serviceModel.endpointRules)
+    return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#else
+    return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#end
+#elseif($operation.result && $operation.result.shape.hasEventStreamMembers())
+    request.SetResponseStreamFactory(
+        [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+  );
+#if($serviceModel.endpointRules)
+    return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#else
+    return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#end
+#else
+#if($serviceModel.endpointRules)
+    return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}));
+#else
+    return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}));
+#end
+#end
+  }
+}

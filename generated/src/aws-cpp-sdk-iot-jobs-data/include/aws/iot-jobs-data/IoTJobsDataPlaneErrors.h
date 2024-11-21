@@ -48,8 +48,11 @@ enum class IoTJobsDataPlaneErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CERTIFICATE_VALIDATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
+  INTERNAL_SERVER,
   INVALID_REQUEST,
   INVALID_STATE_TRANSITION,
+  SERVICE_QUOTA_EXCEEDED,
   TERMINAL_STATE
 };
 

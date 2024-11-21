@@ -46,6 +46,8 @@ ContainerDefinition::ContainerDefinition() :
     m_startTimeoutHasBeenSet(false),
     m_stopTimeout(0),
     m_stopTimeoutHasBeenSet(false),
+    m_versionConsistency(VersionConsistency::NOT_SET),
+    m_versionConsistencyHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_userHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
@@ -257,6 +259,13 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_stopTimeout = jsonValue.GetInteger("stopTimeout");
 
     m_stopTimeoutHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("versionConsistency"))
+  {
+    m_versionConsistency = VersionConsistencyMapper::GetVersionConsistencyForName(jsonValue.GetString("versionConsistency"));
+
+    m_versionConsistencyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hostname"))
@@ -607,6 +616,11 @@ JsonValue ContainerDefinition::Jsonize() const
   {
    payload.WithInteger("stopTimeout", m_stopTimeout);
 
+  }
+
+  if(m_versionConsistencyHasBeenSet)
+  {
+   payload.WithString("versionConsistency", VersionConsistencyMapper::GetNameForVersionConsistency(m_versionConsistency));
   }
 
   if(m_hostnameHasBeenSet)

@@ -7,6 +7,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/apigateway/model/ResourceOwner.h>
 #include <utility>
 
 namespace Aws
@@ -66,6 +67,18 @@ namespace Model
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetDomainNamesRequest& WithLimit(int value) { SetLimit(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The owner of the domain name access association. </p>
+     */
+    inline const ResourceOwner& GetResourceOwner() const{ return m_resourceOwner; }
+    inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
+    inline void SetResourceOwner(const ResourceOwner& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
+    inline void SetResourceOwner(ResourceOwner&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
+    inline GetDomainNamesRequest& WithResourceOwner(const ResourceOwner& value) { SetResourceOwner(value); return *this;}
+    inline GetDomainNamesRequest& WithResourceOwner(ResourceOwner&& value) { SetResourceOwner(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_position;
@@ -73,6 +86,9 @@ namespace Model
 
     int m_limit;
     bool m_limitHasBeenSet = false;
+
+    ResourceOwner m_resourceOwner;
+    bool m_resourceOwnerHasBeenSet = false;
   };
 
 } // namespace Model

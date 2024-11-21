@@ -24,7 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>A destination for events that were processed successfully.</p><p><h3>See
+   * <p>A destination for events that were processed successfully.</p> <p>To retain
+   * records of successful <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">asynchronous
+   * invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Lambda
+   * function, or Amazon EventBridge event bus as the destination.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/OnSuccess">AWS
    * API Reference</a></p>

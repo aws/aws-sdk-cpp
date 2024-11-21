@@ -27,6 +27,10 @@ DeleteObjectRequest::DeleteObjectRequest() :
     m_bypassGovernanceRetention(false),
     m_bypassGovernanceRetentionHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_ifMatchHasBeenSet(false),
+    m_ifMatchLastModifiedTimeHasBeenSet(false),
+    m_ifMatchSize(0),
+    m_ifMatchSizeHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -111,6 +115,25 @@ Aws::Http::HeaderValueCollection DeleteObjectRequest::GetRequestSpecificHeaders(
   {
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  if(m_ifMatchHasBeenSet)
+  {
+    ss << m_ifMatch;
+    headers.emplace("if-match",  ss.str());
+    ss.str("");
+  }
+
+  if(m_ifMatchLastModifiedTimeHasBeenSet)
+  {
+    headers.emplace("x-amz-if-match-last-modified-time", m_ifMatchLastModifiedTime.ToGmtString(Aws::Utils::DateFormat::RFC822));
+  }
+
+  if(m_ifMatchSizeHasBeenSet)
+  {
+    ss << m_ifMatchSize;
+    headers.emplace("x-amz-if-match-size",  ss.str());
     ss.str("");
   }
 

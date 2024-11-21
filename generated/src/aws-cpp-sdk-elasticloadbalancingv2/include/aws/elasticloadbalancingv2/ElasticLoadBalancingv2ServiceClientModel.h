@@ -34,6 +34,7 @@
 #include <aws/elasticloadbalancingv2/model/DeleteTrustStoreResult.h>
 #include <aws/elasticloadbalancingv2/model/DeregisterTargetsResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeAccountLimitsResult.h>
+#include <aws/elasticloadbalancingv2/model/DescribeCapacityReservationResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenerAttributesResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenerCertificatesResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeListenersResult.h>
@@ -51,6 +52,7 @@
 #include <aws/elasticloadbalancingv2/model/GetResourcePolicyResult.h>
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreCaCertificatesBundleResult.h>
 #include <aws/elasticloadbalancingv2/model/GetTrustStoreRevocationContentResult.h>
+#include <aws/elasticloadbalancingv2/model/ModifyCapacityReservationResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyListenerResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyListenerAttributesResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyLoadBalancerAttributesResult.h>
@@ -129,6 +131,7 @@ namespace Aws
       class DeleteTrustStoreRequest;
       class DeregisterTargetsRequest;
       class DescribeAccountLimitsRequest;
+      class DescribeCapacityReservationRequest;
       class DescribeListenerAttributesRequest;
       class DescribeListenerCertificatesRequest;
       class DescribeListenersRequest;
@@ -146,6 +149,7 @@ namespace Aws
       class GetResourcePolicyRequest;
       class GetTrustStoreCaCertificatesBundleRequest;
       class GetTrustStoreRevocationContentRequest;
+      class ModifyCapacityReservationRequest;
       class ModifyListenerRequest;
       class ModifyListenerAttributesRequest;
       class ModifyLoadBalancerAttributesRequest;
@@ -180,6 +184,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteTrustStoreResult, ElasticLoadBalancingv2Error> DeleteTrustStoreOutcome;
       typedef Aws::Utils::Outcome<DeregisterTargetsResult, ElasticLoadBalancingv2Error> DeregisterTargetsOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, ElasticLoadBalancingv2Error> DescribeAccountLimitsOutcome;
+      typedef Aws::Utils::Outcome<DescribeCapacityReservationResult, ElasticLoadBalancingv2Error> DescribeCapacityReservationOutcome;
       typedef Aws::Utils::Outcome<DescribeListenerAttributesResult, ElasticLoadBalancingv2Error> DescribeListenerAttributesOutcome;
       typedef Aws::Utils::Outcome<DescribeListenerCertificatesResult, ElasticLoadBalancingv2Error> DescribeListenerCertificatesOutcome;
       typedef Aws::Utils::Outcome<DescribeListenersResult, ElasticLoadBalancingv2Error> DescribeListenersOutcome;
@@ -197,6 +202,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetResourcePolicyResult, ElasticLoadBalancingv2Error> GetResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<GetTrustStoreCaCertificatesBundleResult, ElasticLoadBalancingv2Error> GetTrustStoreCaCertificatesBundleOutcome;
       typedef Aws::Utils::Outcome<GetTrustStoreRevocationContentResult, ElasticLoadBalancingv2Error> GetTrustStoreRevocationContentOutcome;
+      typedef Aws::Utils::Outcome<ModifyCapacityReservationResult, ElasticLoadBalancingv2Error> ModifyCapacityReservationOutcome;
       typedef Aws::Utils::Outcome<ModifyListenerResult, ElasticLoadBalancingv2Error> ModifyListenerOutcome;
       typedef Aws::Utils::Outcome<ModifyListenerAttributesResult, ElasticLoadBalancingv2Error> ModifyListenerAttributesOutcome;
       typedef Aws::Utils::Outcome<ModifyLoadBalancerAttributesResult, ElasticLoadBalancingv2Error> ModifyLoadBalancerAttributesOutcome;
@@ -231,6 +237,7 @@ namespace Aws
       typedef std::future<DeleteTrustStoreOutcome> DeleteTrustStoreOutcomeCallable;
       typedef std::future<DeregisterTargetsOutcome> DeregisterTargetsOutcomeCallable;
       typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
+      typedef std::future<DescribeCapacityReservationOutcome> DescribeCapacityReservationOutcomeCallable;
       typedef std::future<DescribeListenerAttributesOutcome> DescribeListenerAttributesOutcomeCallable;
       typedef std::future<DescribeListenerCertificatesOutcome> DescribeListenerCertificatesOutcomeCallable;
       typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
@@ -248,6 +255,7 @@ namespace Aws
       typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
       typedef std::future<GetTrustStoreCaCertificatesBundleOutcome> GetTrustStoreCaCertificatesBundleOutcomeCallable;
       typedef std::future<GetTrustStoreRevocationContentOutcome> GetTrustStoreRevocationContentOutcomeCallable;
+      typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
       typedef std::future<ModifyListenerOutcome> ModifyListenerOutcomeCallable;
       typedef std::future<ModifyListenerAttributesOutcome> ModifyListenerAttributesOutcomeCallable;
       typedef std::future<ModifyLoadBalancerAttributesOutcome> ModifyLoadBalancerAttributesOutcomeCallable;
@@ -285,6 +293,7 @@ namespace Aws
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeleteTrustStoreRequest&, const Model::DeleteTrustStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrustStoreResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DeregisterTargetsRequest&, const Model::DeregisterTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTargetsResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
+    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeCapacityReservationRequest&, const Model::DescribeCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeListenerAttributesRequest&, const Model::DescribeListenerAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeListenerAttributesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeListenerCertificatesRequest&, const Model::DescribeListenerCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeListenerCertificatesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeListenersRequest&, const Model::DescribeListenersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeListenersResponseReceivedHandler;
@@ -302,6 +311,7 @@ namespace Aws
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::GetTrustStoreCaCertificatesBundleRequest&, const Model::GetTrustStoreCaCertificatesBundleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrustStoreCaCertificatesBundleResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::GetTrustStoreRevocationContentRequest&, const Model::GetTrustStoreRevocationContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrustStoreRevocationContentResponseReceivedHandler;
+    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyCapacityReservationRequest&, const Model::ModifyCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyListenerRequest&, const Model::ModifyListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyListenerResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyListenerAttributesRequest&, const Model::ModifyListenerAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyListenerAttributesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyLoadBalancerAttributesRequest&, const Model::ModifyLoadBalancerAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLoadBalancerAttributesResponseReceivedHandler;
