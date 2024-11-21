@@ -262,6 +262,11 @@ static void ${operation.name}RequestShutdownCallback(void *user_data)
 #set($signerRegionOverride = "")
 #set($signerServiceNameOverride = "")
 #end
+#if($serviceModel.endpointRules)
+#set($signerName = ", signerName")
+#set($signerRegionOverride = ", signerRegion")
+#set($signerServiceNameOverride = ", signerServiceName")
+#end
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")
 #set($refText = "&")
@@ -281,7 +286,11 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
   // Todo: Support EventStream
+#if($serviceModel.endpointRules)
   //return ${operation.name}Outcome(MakeRequestWithEventStream(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+#else
+  //return ${operation.name}Outcome(MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+#end
 #end
 
   request.SetServiceSpecificParameters(
@@ -318,6 +327,7 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   {
     userData->asyncCallerContext = handlerContext;
   }
+#if($serviceModel.endpointRules)
   InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
   if (userData != nullptr &&
     userData->request != nullptr &&
@@ -332,6 +342,9 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
     return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
 #end
   }
+#else
+  InitCommonCrtRequestOption(userData, &options, &request, uri, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+#end
   if(handlerContext)
   {
     handlerContext->GetMonitorContext().StartMonitorContext(Aws::String{"${className}"},request.GetServiceRequestName(), userData->request);
@@ -347,6 +360,7 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   options.type = AWS_S3_META_REQUEST_TYPE_DEFAULT;
 #end
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
+#if($serviceModel.endpointRules)
   if (endpointResolutionOutcome.GetResult().GetAttributes() && endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegion()) {
     signing_config_override.region = Aws::Crt::ByteCursorFromCString(endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegion()->c_str());
   }
@@ -361,6 +375,10 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   } else {
     signing_config_override.algorithm = aws_signing_algorithm::AWS_SIGNING_ALGORITHM_V4;
   }
+#else
+  signing_config_override.region = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerRegion.c_str());
+  signing_config_override.service = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerServiceName.c_str());
+#end
   options.signing_config = &signing_config_override;
 #if($operation.name == "PutObject" || $operation.name == "CopyObject")
 

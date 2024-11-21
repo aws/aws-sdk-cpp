@@ -13,9 +13,11 @@
 #set($signerRegionOverride = "")
 #set($signerServiceNameOverride = "")
 #end
+#if($serviceModel.endpointRules)
 #set($signerName = "")
 #set($signerRegionOverride = "")
 #set($signerServiceNameOverride = "")
+#end
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")
 #set($refText = "&")
@@ -70,11 +72,23 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
+#if($serviceModel.endpointRules)
       return ${operation.name}Outcome(MakeRequestWithEventStream(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+#else
+      return ${operation.name}Outcome(MakeRequestWithEventStream(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+#end
 #elseif($operation.result && $operation.result.shape.hasStreamMembers())
+#if($serviceModel.endpointRules)
       return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
 #else
+      return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+#end
+#else
+#if($serviceModel.endpointRules)
       return ${operation.name}Outcome(MakeRequest(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#else
+      return ${operation.name}Outcome(MakeRequest(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+#end
 #end
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -97,13 +111,34 @@ ${operation.name}Outcome ${className}::${operation.name}() const
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
     [&]()-> ${operation.name}Outcome {
+#if(!$serviceModel.endpointRules)
+        Aws::StringStream ss;
+#if($virtualAddressingSupported || $arnEndpointSupported)
+        ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+        if (!computeEndpointOutcome.IsSuccess())
+        {
+            return ${operation.name}Outcome(computeEndpointOutcome.GetError());
+        }
+        ss << computeEndpointOutcome.GetResult().endpoint;
+#end
+#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/EndpointRulesNoRequestUriComputation.vm")
+#if($serviceModel.endpointRules)
 #if($operation.result && $operation.result.shape.hasStreamMembers())
         return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(endpointResolutionOutcome.GetResult(), "${operation.name}", Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName));
 #elseif($operation.request)
         return ${operation.name}Outcome(MakeRequest(endpointResolutionOutcome.GetResult(), "${operation.name}", Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName));
 #else
         return ${operation.name}Outcome(MakeRequest(endpointResolutionOutcome.GetResult(), "${operation.name}", Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#end
+#else##-#if($serviceModel.endpointRules)
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+        return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
+#elseif($operation.request)
+        return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
+#else
+        return ${operation.name}Outcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
+#end
 #end
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

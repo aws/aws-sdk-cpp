@@ -11,6 +11,7 @@ namespace ${rootNamespace}
 {
 namespace ${serviceNamespace}
 {
+#if ($serviceModel.endpointRules)
 ##const Aws::String ${metadata.classNamePrefix}EndpointRules::Rules = \
 ###foreach($tmpStr in $serviceModel.endpointRules.split($nl))
 ###if( $foreach.hasNext )
@@ -58,5 +59,6 @@ const char* ${metadata.classNamePrefix}EndpointRules::GetRulesBlob()
     return RulesBlob.data();
 }
 
+#end
 } // namespace ${serviceNamespace}
 } // namespace ${rootNamespace}

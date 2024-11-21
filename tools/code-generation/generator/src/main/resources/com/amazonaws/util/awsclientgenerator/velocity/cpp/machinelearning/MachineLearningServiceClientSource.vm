@@ -16,7 +16,9 @@
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
 \#include <aws/core/utils/threading/Executor.h>
 \#include <aws/core/utils/logging/LogMacros.h>
+#if($serviceModel.endpointRules)
 \#include <aws/core/utils/logging/ErrorMacros.h>
+#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
 
 using namespace Aws;
@@ -27,7 +29,9 @@ using namespace Aws::${metadata.namespace}::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
+#if($serviceModel.endpointRules)
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+#end
 
 
 #if(!$onlyGeneratedOperations)
@@ -58,9 +62,19 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
     [&]() -> ${operation.name}Outcome{
+#if($serviceModel.endpointRules)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
       return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#else##-#if($serviceModel.endpointRules)
+#if($operation.name != "Predict")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
+      return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#else
+      return ${operation.name}Outcome(MakeRequest(request.GetPredictEndpoint(), request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#end
+#end##-#if($serviceModel.endpointRules)
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

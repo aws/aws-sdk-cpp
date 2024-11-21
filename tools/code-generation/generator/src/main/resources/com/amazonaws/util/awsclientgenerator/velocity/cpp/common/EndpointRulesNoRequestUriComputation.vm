@@ -1,4 +1,5 @@
 
+#if($serviceModel.endpointRules)
         AWS_OPERATION_CHECK_PTR(m_endpointProvider, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
 #if($operation.staticContextParams)
         const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters = {
@@ -15,3 +16,4 @@
             *meter,
             {{TracingUtils::SMITHY_METHOD_DIMENSION, "${operation.name}"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+#end

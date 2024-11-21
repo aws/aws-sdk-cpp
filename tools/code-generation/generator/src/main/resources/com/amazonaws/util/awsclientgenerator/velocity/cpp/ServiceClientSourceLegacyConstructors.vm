@@ -23,7 +23,13 @@
 #set($doubleEncodeValue = "")
 #end
 #if($virtualAddressingSupported)
+#if($serviceModel.endpointRules)
 #set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool useVirtualAddressing /*= true*/"))
+#else
+#set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool useVirtualAddressing /*= true*/"))
+#set($addArgDummy = $ctorMemberInitList.add("m_useVirtualAddressing(useVirtualAddressing)"))
+#set($virtualAddressing = ", bool useVirtualAddressing")
+#end
 #set($virtualAddressingInit = ", useVirtualAddressing")
 #else
 #set($virtualAddressing = "")
@@ -40,9 +46,15 @@
 #if(!$USEast1RegionalEndpointInitString)
 #set($USEast1RegionalEndpointInitString = "")
 #else
+#if(!$serviceModel.endpointRules)
+#set($addArgDummy = $ctorMemberInitList.add($USEast1RegionalEndpointInitString.replace(", ", "")))
+#end
 #end
 #if(!$ForRegionExtraArgsString)
 #set($ForRegionExtraArgsString = "")##single place in m_baseUri assignment-init
+#end
+#if($metadata.hasEndpointDiscoveryTrait && !$serviceModel.endpointRules)
+#set($AdditionalServiceSpecificConfigLoadString = "Load${metadata.classNamePrefix}SpecificConfig(config);")
 #end
 #set($clientConfigurationNamespace = "Client")
 #set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)")
