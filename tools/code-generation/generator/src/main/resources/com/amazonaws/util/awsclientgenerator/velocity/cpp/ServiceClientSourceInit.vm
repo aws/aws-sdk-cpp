@@ -420,11 +420,9 @@ void ${className}::init(const ${clientConfigurationCls}& config)
   m_enableHostPrefixInjection = config.enableHostPrefixInjection;
 #end##if($metadata.hasEndpointTrait)
 #end##-#if($serviceModel.endpointRules)
-
 #if ($metadata.awsQueryCompatible)
   SetFeatureHeaders({{"x-amzn-query-mode","True"}});
 #end
-
 }
 
 #if(!$serviceModel.endpointRules && $metadata.hasEndpointDiscoveryTrait)
