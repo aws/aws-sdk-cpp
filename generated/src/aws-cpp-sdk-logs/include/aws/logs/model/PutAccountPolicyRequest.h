@@ -102,7 +102,19 @@ namespace Model
      * distribute log data to the destination. By default, log data is grouped by log
      * stream, but the grouping can be set to <code>Random</code> for a more even
      * distribution. This property is only applicable when the destination is an
-     * Kinesis Data Streams data stream.</p> </li> </ul>
+     * Kinesis Data Streams data stream.</p> </li> </ul> <p> <b>Transformer policy</b>
+     * </p> <p>A transformer policy must include one JSON block with the array of
+     * processors and their configurations. For more information about available
+     * processors, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors">
+     * Processors that you can use</a>. </p> <p> <b>Field index policy</b> </p> <p>A
+     * field index filter policy can include the following attribute in a JSON
+     * block:</p> <ul> <li> <p> <b>Fields</b> The array of field indexes to create.</p>
+     * </li> </ul> <p>It must contain at least one field index.</p> <p>The following is
+     * an example of an index policy document that creates two indexes,
+     * <code>RequestId</code> and <code>TransactionId</code>.</p> <p>
+     * <code>"policyDocument": "{ \"Fields\": [ \"RequestId\", \"TransactionId\" ]
+     * }"</code> </p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
@@ -143,16 +155,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>Use this parameter to apply the subscription filter policy to a subset of log
-     * groups in the account. Currently, the only supported filter is
-     * <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string
-     * can be up to 25KB in length. The length is determined by using its UTF-8
-     * bytes.</p> <p>Using the <code>selectionCriteria</code> parameter is useful to
-     * help prevent infinite loops. For more information, see <a
+     * <p>Use this parameter to apply the new policy to a subset of log groups in the
+     * account.</p> <p>Specifing <code>selectionCriteria</code> is valid only when you
+     * specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code>
+     * or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p> <p>If
+     * <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only
+     * supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN
+     * []</code> </p> <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code>
+     * or <code>TRANSFORMER_POLICY</code>, the only supported
+     * <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code> </p>
+     * <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The
+     * length is determined by using its UTF-8 bytes.</p> <p>Using the
+     * <code>selectionCriteria</code> parameter with
+     * <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite
+     * loops. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log
-     * recursion prevention</a>.</p> <p>Specifing <code>selectionCriteria</code> is
-     * valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for
-     * <code>policyType</code>.</p>
+     * recursion prevention</a>.</p>
      */
     inline const Aws::String& GetSelectionCriteria() const{ return m_selectionCriteria; }
     inline bool SelectionCriteriaHasBeenSet() const { return m_selectionCriteriaHasBeenSet; }

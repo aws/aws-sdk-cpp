@@ -27,7 +27,7 @@ namespace Model
   /**
    * <p>Represents a predefined metric for a target tracking scaling policy to use
    * with Application Auto Scaling.</p> <p>For more information, <a
-   * href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitor-cloudwatch-metrics.html#predefined-metrics">Predefined
+   * href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html#predefined-metrics">Predefined
    * metrics for target tracking scaling policies</a> in the <i>Application Auto
    * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PredefinedMetricSpecification">AWS

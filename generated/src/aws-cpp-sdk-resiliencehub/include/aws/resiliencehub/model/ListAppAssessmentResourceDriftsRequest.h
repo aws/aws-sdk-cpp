@@ -53,9 +53,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the maximum number of drift results to include in the response. If
-     * more results exist than the specified <code>MaxResults</code> value, a token is
-     * included in the response so that the remaining results can be retrieved.</p>
+     * <p>Maximum number of drift results to include in the response. If more results
+     * exist than the specified <code>MaxResults</code> value, a token is included in
+     * the response so that the remaining results can be retrieved.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

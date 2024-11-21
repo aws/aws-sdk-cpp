@@ -11,6 +11,7 @@
 #include <aws/ec2/model/IpamResourceDiscoveryState.h>
 #include <aws/ec2/model/IpamOperatingRegion.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/IpamOrganizationalUnitExclusion.h>
 #include <utility>
 
 namespace Aws
@@ -188,6 +189,22 @@ namespace Model
     inline IpamResourceDiscovery& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline IpamResourceDiscovery& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>If your IPAM is integrated with Amazon Web Services Organizations and you add
+     * an organizational unit (OU) exclusion, IPAM will not manage the IP addresses in
+     * accounts in that OU exclusion.</p>
+     */
+    inline const Aws::Vector<IpamOrganizationalUnitExclusion>& GetOrganizationalUnitExclusions() const{ return m_organizationalUnitExclusions; }
+    inline bool OrganizationalUnitExclusionsHasBeenSet() const { return m_organizationalUnitExclusionsHasBeenSet; }
+    inline void SetOrganizationalUnitExclusions(const Aws::Vector<IpamOrganizationalUnitExclusion>& value) { m_organizationalUnitExclusionsHasBeenSet = true; m_organizationalUnitExclusions = value; }
+    inline void SetOrganizationalUnitExclusions(Aws::Vector<IpamOrganizationalUnitExclusion>&& value) { m_organizationalUnitExclusionsHasBeenSet = true; m_organizationalUnitExclusions = std::move(value); }
+    inline IpamResourceDiscovery& WithOrganizationalUnitExclusions(const Aws::Vector<IpamOrganizationalUnitExclusion>& value) { SetOrganizationalUnitExclusions(value); return *this;}
+    inline IpamResourceDiscovery& WithOrganizationalUnitExclusions(Aws::Vector<IpamOrganizationalUnitExclusion>&& value) { SetOrganizationalUnitExclusions(std::move(value)); return *this;}
+    inline IpamResourceDiscovery& AddOrganizationalUnitExclusions(const IpamOrganizationalUnitExclusion& value) { m_organizationalUnitExclusionsHasBeenSet = true; m_organizationalUnitExclusions.push_back(value); return *this; }
+    inline IpamResourceDiscovery& AddOrganizationalUnitExclusions(IpamOrganizationalUnitExclusion&& value) { m_organizationalUnitExclusionsHasBeenSet = true; m_organizationalUnitExclusions.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_ownerId;
@@ -216,6 +233,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<IpamOrganizationalUnitExclusion> m_organizationalUnitExclusions;
+    bool m_organizationalUnitExclusionsHasBeenSet = false;
   };
 
 } // namespace Model

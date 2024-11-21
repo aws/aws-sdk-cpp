@@ -230,6 +230,12 @@ UpdateEventSourceMappingResult& UpdateEventSourceMappingResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("MetricsConfig"))
+  {
+    m_metricsConfig = jsonValue.GetObject("MetricsConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

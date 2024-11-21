@@ -55,7 +55,10 @@ CapacityReservation::CapacityReservation() :
     m_capacityAllocationsHasBeenSet(false),
     m_reservationType(CapacityReservationType::NOT_SET),
     m_reservationTypeHasBeenSet(false),
-    m_unusedReservationBillingOwnerIdHasBeenSet(false)
+    m_unusedReservationBillingOwnerIdHasBeenSet(false),
+    m_commitmentInfoHasBeenSet(false),
+    m_deliveryPreference(CapacityReservationDeliveryPreference::NOT_SET),
+    m_deliveryPreferenceHasBeenSet(false)
 {
 }
 
@@ -233,6 +236,18 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
       m_unusedReservationBillingOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(unusedReservationBillingOwnerIdNode.GetText());
       m_unusedReservationBillingOwnerIdHasBeenSet = true;
     }
+    XmlNode commitmentInfoNode = resultNode.FirstChild("commitmentInfo");
+    if(!commitmentInfoNode.IsNull())
+    {
+      m_commitmentInfo = commitmentInfoNode;
+      m_commitmentInfoHasBeenSet = true;
+    }
+    XmlNode deliveryPreferenceNode = resultNode.FirstChild("deliveryPreference");
+    if(!deliveryPreferenceNode.IsNull())
+    {
+      m_deliveryPreference = CapacityReservationDeliveryPreferenceMapper::GetCapacityReservationDeliveryPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deliveryPreferenceNode.GetText()).c_str()).c_str());
+      m_deliveryPreferenceHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -377,6 +392,18 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".UnusedReservationBillingOwnerId=" << StringUtils::URLEncode(m_unusedReservationBillingOwnerId.c_str()) << "&";
   }
 
+  if(m_commitmentInfoHasBeenSet)
+  {
+      Aws::StringStream commitmentInfoLocationAndMemberSs;
+      commitmentInfoLocationAndMemberSs << location << index << locationValue << ".CommitmentInfo";
+      m_commitmentInfo.OutputToStream(oStream, commitmentInfoLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_deliveryPreferenceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeliveryPreference=" << CapacityReservationDeliveryPreferenceMapper::GetNameForCapacityReservationDeliveryPreference(m_deliveryPreference) << "&";
+  }
+
 }
 
 void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -492,6 +519,16 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_unusedReservationBillingOwnerIdHasBeenSet)
   {
       oStream << location << ".UnusedReservationBillingOwnerId=" << StringUtils::URLEncode(m_unusedReservationBillingOwnerId.c_str()) << "&";
+  }
+  if(m_commitmentInfoHasBeenSet)
+  {
+      Aws::String commitmentInfoLocationAndMember(location);
+      commitmentInfoLocationAndMember += ".CommitmentInfo";
+      m_commitmentInfo.OutputToStream(oStream, commitmentInfoLocationAndMember.c_str());
+  }
+  if(m_deliveryPreferenceHasBeenSet)
+  {
+      oStream << location << ".DeliveryPreference=" << CapacityReservationDeliveryPreferenceMapper::GetNameForCapacityReservationDeliveryPreference(m_deliveryPreference) << "&";
   }
 }
 

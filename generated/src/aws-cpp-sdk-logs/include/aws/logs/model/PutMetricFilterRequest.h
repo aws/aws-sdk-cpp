@@ -91,6 +91,22 @@ namespace Model
     inline PutMetricFilterRequest& AddMetricTransformations(const MetricTransformation& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(value); return *this; }
     inline PutMetricFilterRequest& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>This parameter is valid only for log groups that have an active log
+     * transformer. For more information about log transformers, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+     * <p>If the log group uses either a log-group level or account-level transformer,
+     * and you specify <code>true</code>, the metric filter will be applied on the
+     * transformed version of the log events instead of the original ingested log
+     * events.</p>
+     */
+    inline bool GetApplyOnTransformedLogs() const{ return m_applyOnTransformedLogs; }
+    inline bool ApplyOnTransformedLogsHasBeenSet() const { return m_applyOnTransformedLogsHasBeenSet; }
+    inline void SetApplyOnTransformedLogs(bool value) { m_applyOnTransformedLogsHasBeenSet = true; m_applyOnTransformedLogs = value; }
+    inline PutMetricFilterRequest& WithApplyOnTransformedLogs(bool value) { SetApplyOnTransformedLogs(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_logGroupName;
@@ -104,6 +120,9 @@ namespace Model
 
     Aws::Vector<MetricTransformation> m_metricTransformations;
     bool m_metricTransformationsHasBeenSet = false;
+
+    bool m_applyOnTransformedLogs;
+    bool m_applyOnTransformedLogsHasBeenSet = false;
   };
 
 } // namespace Model

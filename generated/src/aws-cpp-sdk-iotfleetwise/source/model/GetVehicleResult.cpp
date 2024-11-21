@@ -62,6 +62,15 @@ GetVehicleResult& GetVehicleResult::operator =(const Aws::AmazonWebServiceResult
     }
   }
 
+  if(jsonValue.ValueExists("stateTemplates"))
+  {
+    Aws::Utils::Array<JsonView> stateTemplatesJsonList = jsonValue.GetArray("stateTemplates");
+    for(unsigned stateTemplatesIndex = 0; stateTemplatesIndex < stateTemplatesJsonList.GetLength(); ++stateTemplatesIndex)
+    {
+      m_stateTemplates.push_back(stateTemplatesJsonList[stateTemplatesIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");

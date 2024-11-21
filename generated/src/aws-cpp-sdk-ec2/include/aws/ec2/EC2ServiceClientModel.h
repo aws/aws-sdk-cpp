@@ -227,6 +227,8 @@
 #include <aws/ec2/model/DescribeAwsNetworkPerformanceMetricSubscriptionsResponse.h>
 #include <aws/ec2/model/DescribeBundleTasksResponse.h>
 #include <aws/ec2/model/DescribeByoipCidrsResponse.h>
+#include <aws/ec2/model/DescribeCapacityBlockExtensionHistoryResponse.h>
+#include <aws/ec2/model/DescribeCapacityBlockExtensionOfferingsResponse.h>
 #include <aws/ec2/model/DescribeCapacityBlockOfferingsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsResponse.h>
 #include <aws/ec2/model/DescribeCapacityReservationFleetsResponse.h>
@@ -554,6 +556,7 @@
 #include <aws/ec2/model/ProvisionIpamPoolCidrResponse.h>
 #include <aws/ec2/model/ProvisionPublicIpv4PoolCidrResponse.h>
 #include <aws/ec2/model/PurchaseCapacityBlockResponse.h>
+#include <aws/ec2/model/PurchaseCapacityBlockExtensionResponse.h>
 #include <aws/ec2/model/PurchaseHostReservationResponse.h>
 #include <aws/ec2/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <aws/ec2/model/PurchaseScheduledInstancesResponse.h>
@@ -724,6 +727,7 @@
 #include <aws/ec2/model/DescribeVpcEndpointServicesRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsRequest.h>
 #include <aws/ec2/model/DescribeAddressTransfersRequest.h>
+#include <aws/ec2/model/DescribeCapacityBlockExtensionHistoryRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesOfferingsRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayRequest.h>
 #include <aws/ec2/model/DescribeAvailabilityZonesRequest.h>
@@ -1074,6 +1078,8 @@ namespace Aws
       class DescribeAwsNetworkPerformanceMetricSubscriptionsRequest;
       class DescribeBundleTasksRequest;
       class DescribeByoipCidrsRequest;
+      class DescribeCapacityBlockExtensionHistoryRequest;
+      class DescribeCapacityBlockExtensionOfferingsRequest;
       class DescribeCapacityBlockOfferingsRequest;
       class DescribeCapacityReservationBillingRequestsRequest;
       class DescribeCapacityReservationFleetsRequest;
@@ -1418,6 +1424,7 @@ namespace Aws
       class ProvisionIpamPoolCidrRequest;
       class ProvisionPublicIpv4PoolCidrRequest;
       class PurchaseCapacityBlockRequest;
+      class PurchaseCapacityBlockExtensionRequest;
       class PurchaseHostReservationRequest;
       class PurchaseReservedInstancesOfferingRequest;
       class PurchaseScheduledInstancesRequest;
@@ -1720,6 +1727,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAwsNetworkPerformanceMetricSubscriptionsResponse, EC2Error> DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome;
       typedef Aws::Utils::Outcome<DescribeBundleTasksResponse, EC2Error> DescribeBundleTasksOutcome;
       typedef Aws::Utils::Outcome<DescribeByoipCidrsResponse, EC2Error> DescribeByoipCidrsOutcome;
+      typedef Aws::Utils::Outcome<DescribeCapacityBlockExtensionHistoryResponse, EC2Error> DescribeCapacityBlockExtensionHistoryOutcome;
+      typedef Aws::Utils::Outcome<DescribeCapacityBlockExtensionOfferingsResponse, EC2Error> DescribeCapacityBlockExtensionOfferingsOutcome;
       typedef Aws::Utils::Outcome<DescribeCapacityBlockOfferingsResponse, EC2Error> DescribeCapacityBlockOfferingsOutcome;
       typedef Aws::Utils::Outcome<DescribeCapacityReservationBillingRequestsResponse, EC2Error> DescribeCapacityReservationBillingRequestsOutcome;
       typedef Aws::Utils::Outcome<DescribeCapacityReservationFleetsResponse, EC2Error> DescribeCapacityReservationFleetsOutcome;
@@ -2064,6 +2073,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ProvisionIpamPoolCidrResponse, EC2Error> ProvisionIpamPoolCidrOutcome;
       typedef Aws::Utils::Outcome<ProvisionPublicIpv4PoolCidrResponse, EC2Error> ProvisionPublicIpv4PoolCidrOutcome;
       typedef Aws::Utils::Outcome<PurchaseCapacityBlockResponse, EC2Error> PurchaseCapacityBlockOutcome;
+      typedef Aws::Utils::Outcome<PurchaseCapacityBlockExtensionResponse, EC2Error> PurchaseCapacityBlockExtensionOutcome;
       typedef Aws::Utils::Outcome<PurchaseHostReservationResponse, EC2Error> PurchaseHostReservationOutcome;
       typedef Aws::Utils::Outcome<PurchaseReservedInstancesOfferingResponse, EC2Error> PurchaseReservedInstancesOfferingOutcome;
       typedef Aws::Utils::Outcome<PurchaseScheduledInstancesResponse, EC2Error> PurchaseScheduledInstancesOutcome;
@@ -2366,6 +2376,8 @@ namespace Aws
       typedef std::future<DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome> DescribeAwsNetworkPerformanceMetricSubscriptionsOutcomeCallable;
       typedef std::future<DescribeBundleTasksOutcome> DescribeBundleTasksOutcomeCallable;
       typedef std::future<DescribeByoipCidrsOutcome> DescribeByoipCidrsOutcomeCallable;
+      typedef std::future<DescribeCapacityBlockExtensionHistoryOutcome> DescribeCapacityBlockExtensionHistoryOutcomeCallable;
+      typedef std::future<DescribeCapacityBlockExtensionOfferingsOutcome> DescribeCapacityBlockExtensionOfferingsOutcomeCallable;
       typedef std::future<DescribeCapacityBlockOfferingsOutcome> DescribeCapacityBlockOfferingsOutcomeCallable;
       typedef std::future<DescribeCapacityReservationBillingRequestsOutcome> DescribeCapacityReservationBillingRequestsOutcomeCallable;
       typedef std::future<DescribeCapacityReservationFleetsOutcome> DescribeCapacityReservationFleetsOutcomeCallable;
@@ -2710,6 +2722,7 @@ namespace Aws
       typedef std::future<ProvisionIpamPoolCidrOutcome> ProvisionIpamPoolCidrOutcomeCallable;
       typedef std::future<ProvisionPublicIpv4PoolCidrOutcome> ProvisionPublicIpv4PoolCidrOutcomeCallable;
       typedef std::future<PurchaseCapacityBlockOutcome> PurchaseCapacityBlockOutcomeCallable;
+      typedef std::future<PurchaseCapacityBlockExtensionOutcome> PurchaseCapacityBlockExtensionOutcomeCallable;
       typedef std::future<PurchaseHostReservationOutcome> PurchaseHostReservationOutcomeCallable;
       typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
       typedef std::future<PurchaseScheduledInstancesOutcome> PurchaseScheduledInstancesOutcomeCallable;
@@ -3015,6 +3028,8 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeAwsNetworkPerformanceMetricSubscriptionsRequest&, const Model::DescribeAwsNetworkPerformanceMetricSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAwsNetworkPerformanceMetricSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeBundleTasksRequest&, const Model::DescribeBundleTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBundleTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeByoipCidrsRequest&, const Model::DescribeByoipCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeByoipCidrsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeCapacityBlockExtensionHistoryRequest&, const Model::DescribeCapacityBlockExtensionHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityBlockExtensionHistoryResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeCapacityBlockExtensionOfferingsRequest&, const Model::DescribeCapacityBlockExtensionOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityBlockExtensionOfferingsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityBlockOfferingsRequest&, const Model::DescribeCapacityBlockOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityBlockOfferingsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationBillingRequestsRequest&, const Model::DescribeCapacityReservationBillingRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityReservationBillingRequestsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCapacityReservationFleetsRequest&, const Model::DescribeCapacityReservationFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityReservationFleetsResponseReceivedHandler;
@@ -3359,6 +3374,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::ProvisionIpamPoolCidrRequest&, const Model::ProvisionIpamPoolCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionIpamPoolCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ProvisionPublicIpv4PoolCidrRequest&, const Model::ProvisionPublicIpv4PoolCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionPublicIpv4PoolCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseCapacityBlockRequest&, const Model::PurchaseCapacityBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseCapacityBlockResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::PurchaseCapacityBlockExtensionRequest&, const Model::PurchaseCapacityBlockExtensionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseCapacityBlockExtensionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseHostReservationRequest&, const Model::PurchaseHostReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseHostReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseReservedInstancesOfferingRequest&, const Model::PurchaseReservedInstancesOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedInstancesOfferingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseScheduledInstancesRequest&, const Model::PurchaseScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseScheduledInstancesResponseReceivedHandler;

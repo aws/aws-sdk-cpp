@@ -40,11 +40,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies a list of trail, event data store, or channel ARNs whose tags will
-     * be listed. The list has a limit of 20 ARNs.</p> <p> Example trail ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-     * <p>Example event data store ARN format:
+     * <p>Specifies a list of trail, event data store, dashboard, or channel ARNs whose
+     * tags will be listed. The list has a limit of 20 ARNs.</p> <p> Example trail ARN
+     * format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     * </p> <p>Example event data store ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>Example dashboard ARN format:
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</code>
      * </p> <p>Example channel ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */

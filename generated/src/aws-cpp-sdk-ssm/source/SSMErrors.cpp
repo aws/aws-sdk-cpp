@@ -13,6 +13,7 @@
 #include <aws/ssm/model/ResourcePolicyInvalidParameterException.h>
 #include <aws/ssm/model/ItemSizeLimitExceededException.h>
 #include <aws/ssm/model/UnsupportedInventoryItemContextException.h>
+#include <aws/ssm/model/ValidationException.h>
 #include <aws/ssm/model/ResourceDataSyncAlreadyExistsException.h>
 #include <aws/ssm/model/OpsItemLimitExceededException.h>
 #include <aws/ssm/model/ItemContentMismatchException.h>
@@ -68,6 +69,12 @@ template<> AWS_SSM_API UnsupportedInventoryItemContextException SSMError::GetMod
 {
   assert(this->GetErrorType() == SSMErrors::UNSUPPORTED_INVENTORY_ITEM_CONTEXT);
   return UnsupportedInventoryItemContextException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API ValidationException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
 }
 
 template<> AWS_SSM_API ResourceDataSyncAlreadyExistsException SSMError::GetModeledError()
@@ -216,6 +223,7 @@ static const int TARGET_NOT_CONNECTED_HASH = HashingUtils::HashString("TargetNot
 static const int DOCUMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("DocumentAlreadyExists");
 static const int UNSUPPORTED_CALENDAR_HASH = HashingUtils::HashString("UnsupportedCalendarException");
 static const int INVALID_DOCUMENT_VERSION_HASH = HashingUtils::HashString("InvalidDocumentVersion");
+static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
 static const int INVALID_NOTIFICATION_CONFIG_HASH = HashingUtils::HashString("InvalidNotificationConfig");
 static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTag");
 static const int INVALID_SCHEDULE_HASH = HashingUtils::HashString("InvalidSchedule");
@@ -809,6 +817,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_VERSION), RetryableType::NOT_RETRYABLE);
     return true;
   }
+  else if (hashCode == UNSUPPORTED_OPERATION_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
   else if (hashCode == INVALID_NOTIFICATION_CONFIG_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NOTIFICATION_CONFIG), RetryableType::NOT_RETRYABLE);
@@ -849,17 +862,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER), RetryableType::NOT_RETRYABLE);
     return true;
   }
-  else if (hashCode == OPS_ITEM_INVALID_PARAMETER_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == INVALID_INVENTORY_GROUP_HASH)
+  if (hashCode == OPS_ITEM_INVALID_PARAMETER_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
+    return true;
+  }
+  else if (hashCode == INVALID_INVENTORY_GROUP_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_GROUP), RetryableType::NOT_RETRYABLE);
     return true;

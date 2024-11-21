@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     CAN_INTERFACE,
     OBD_INTERFACE,
-    VEHICLE_MIDDLEWARE
+    VEHICLE_MIDDLEWARE,
+    CUSTOM_DECODING_INTERFACE
   };
 
 namespace NetworkInterfaceTypeMapper

@@ -25,6 +25,7 @@
 #include <aws/apigateway/model/CreateDocumentationPartResult.h>
 #include <aws/apigateway/model/CreateDocumentationVersionResult.h>
 #include <aws/apigateway/model/CreateDomainNameResult.h>
+#include <aws/apigateway/model/CreateDomainNameAccessAssociationResult.h>
 #include <aws/apigateway/model/CreateModelResult.h>
 #include <aws/apigateway/model/CreateRequestValidatorResult.h>
 #include <aws/apigateway/model/CreateResourceResult.h>
@@ -50,6 +51,7 @@
 #include <aws/apigateway/model/GetDocumentationVersionResult.h>
 #include <aws/apigateway/model/GetDocumentationVersionsResult.h>
 #include <aws/apigateway/model/GetDomainNameResult.h>
+#include <aws/apigateway/model/GetDomainNameAccessAssociationsResult.h>
 #include <aws/apigateway/model/GetDomainNamesResult.h>
 #include <aws/apigateway/model/GetExportResult.h>
 #include <aws/apigateway/model/GetGatewayResponseResult.h>
@@ -116,6 +118,7 @@
 #include <aws/apigateway/model/CreateApiKeyRequest.h>
 #include <aws/apigateway/model/GetDomainNamesRequest.h>
 #include <aws/apigateway/model/GetAccountRequest.h>
+#include <aws/apigateway/model/GetDomainNameAccessAssociationsRequest.h>
 #include <aws/apigateway/model/GetUsagePlansRequest.h>
 #include <aws/apigateway/model/GetClientCertificatesRequest.h>
 #include <aws/apigateway/model/GetSdkTypesRequest.h>
@@ -172,6 +175,7 @@ namespace Aws
       class CreateDocumentationPartRequest;
       class CreateDocumentationVersionRequest;
       class CreateDomainNameRequest;
+      class CreateDomainNameAccessAssociationRequest;
       class CreateModelRequest;
       class CreateRequestValidatorRequest;
       class CreateResourceRequest;
@@ -188,6 +192,7 @@ namespace Aws
       class DeleteDocumentationPartRequest;
       class DeleteDocumentationVersionRequest;
       class DeleteDomainNameRequest;
+      class DeleteDomainNameAccessAssociationRequest;
       class DeleteGatewayResponseRequest;
       class DeleteIntegrationRequest;
       class DeleteIntegrationResponseRequest;
@@ -220,6 +225,7 @@ namespace Aws
       class GetDocumentationVersionRequest;
       class GetDocumentationVersionsRequest;
       class GetDomainNameRequest;
+      class GetDomainNameAccessAssociationsRequest;
       class GetDomainNamesRequest;
       class GetExportRequest;
       class GetGatewayResponseRequest;
@@ -259,6 +265,7 @@ namespace Aws
       class PutMethodRequest;
       class PutMethodResponseRequest;
       class PutRestApiRequest;
+      class RejectDomainNameAccessAssociationRequest;
       class TagResourceRequest;
       class TestInvokeAuthorizerRequest;
       class TestInvokeMethodRequest;
@@ -295,6 +302,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateDocumentationPartResult, APIGatewayError> CreateDocumentationPartOutcome;
       typedef Aws::Utils::Outcome<CreateDocumentationVersionResult, APIGatewayError> CreateDocumentationVersionOutcome;
       typedef Aws::Utils::Outcome<CreateDomainNameResult, APIGatewayError> CreateDomainNameOutcome;
+      typedef Aws::Utils::Outcome<CreateDomainNameAccessAssociationResult, APIGatewayError> CreateDomainNameAccessAssociationOutcome;
       typedef Aws::Utils::Outcome<CreateModelResult, APIGatewayError> CreateModelOutcome;
       typedef Aws::Utils::Outcome<CreateRequestValidatorResult, APIGatewayError> CreateRequestValidatorOutcome;
       typedef Aws::Utils::Outcome<CreateResourceResult, APIGatewayError> CreateResourceOutcome;
@@ -311,6 +319,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, APIGatewayError> DeleteDocumentationPartOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, APIGatewayError> DeleteDocumentationVersionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, APIGatewayError> DeleteDomainNameOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, APIGatewayError> DeleteDomainNameAccessAssociationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, APIGatewayError> DeleteGatewayResponseOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, APIGatewayError> DeleteIntegrationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, APIGatewayError> DeleteIntegrationResponseOutcome;
@@ -343,6 +352,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetDocumentationVersionResult, APIGatewayError> GetDocumentationVersionOutcome;
       typedef Aws::Utils::Outcome<GetDocumentationVersionsResult, APIGatewayError> GetDocumentationVersionsOutcome;
       typedef Aws::Utils::Outcome<GetDomainNameResult, APIGatewayError> GetDomainNameOutcome;
+      typedef Aws::Utils::Outcome<GetDomainNameAccessAssociationsResult, APIGatewayError> GetDomainNameAccessAssociationsOutcome;
       typedef Aws::Utils::Outcome<GetDomainNamesResult, APIGatewayError> GetDomainNamesOutcome;
       typedef Aws::Utils::Outcome<GetExportResult, APIGatewayError> GetExportOutcome;
       typedef Aws::Utils::Outcome<GetGatewayResponseResult, APIGatewayError> GetGatewayResponseOutcome;
@@ -382,6 +392,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutMethodResult, APIGatewayError> PutMethodOutcome;
       typedef Aws::Utils::Outcome<PutMethodResponseResult, APIGatewayError> PutMethodResponseOutcome;
       typedef Aws::Utils::Outcome<PutRestApiResult, APIGatewayError> PutRestApiOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, APIGatewayError> RejectDomainNameAccessAssociationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, APIGatewayError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<TestInvokeAuthorizerResult, APIGatewayError> TestInvokeAuthorizerOutcome;
       typedef Aws::Utils::Outcome<TestInvokeMethodResult, APIGatewayError> TestInvokeMethodOutcome;
@@ -418,6 +429,7 @@ namespace Aws
       typedef std::future<CreateDocumentationPartOutcome> CreateDocumentationPartOutcomeCallable;
       typedef std::future<CreateDocumentationVersionOutcome> CreateDocumentationVersionOutcomeCallable;
       typedef std::future<CreateDomainNameOutcome> CreateDomainNameOutcomeCallable;
+      typedef std::future<CreateDomainNameAccessAssociationOutcome> CreateDomainNameAccessAssociationOutcomeCallable;
       typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
       typedef std::future<CreateRequestValidatorOutcome> CreateRequestValidatorOutcomeCallable;
       typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
@@ -434,6 +446,7 @@ namespace Aws
       typedef std::future<DeleteDocumentationPartOutcome> DeleteDocumentationPartOutcomeCallable;
       typedef std::future<DeleteDocumentationVersionOutcome> DeleteDocumentationVersionOutcomeCallable;
       typedef std::future<DeleteDomainNameOutcome> DeleteDomainNameOutcomeCallable;
+      typedef std::future<DeleteDomainNameAccessAssociationOutcome> DeleteDomainNameAccessAssociationOutcomeCallable;
       typedef std::future<DeleteGatewayResponseOutcome> DeleteGatewayResponseOutcomeCallable;
       typedef std::future<DeleteIntegrationOutcome> DeleteIntegrationOutcomeCallable;
       typedef std::future<DeleteIntegrationResponseOutcome> DeleteIntegrationResponseOutcomeCallable;
@@ -466,6 +479,7 @@ namespace Aws
       typedef std::future<GetDocumentationVersionOutcome> GetDocumentationVersionOutcomeCallable;
       typedef std::future<GetDocumentationVersionsOutcome> GetDocumentationVersionsOutcomeCallable;
       typedef std::future<GetDomainNameOutcome> GetDomainNameOutcomeCallable;
+      typedef std::future<GetDomainNameAccessAssociationsOutcome> GetDomainNameAccessAssociationsOutcomeCallable;
       typedef std::future<GetDomainNamesOutcome> GetDomainNamesOutcomeCallable;
       typedef std::future<GetExportOutcome> GetExportOutcomeCallable;
       typedef std::future<GetGatewayResponseOutcome> GetGatewayResponseOutcomeCallable;
@@ -505,6 +519,7 @@ namespace Aws
       typedef std::future<PutMethodOutcome> PutMethodOutcomeCallable;
       typedef std::future<PutMethodResponseOutcome> PutMethodResponseOutcomeCallable;
       typedef std::future<PutRestApiOutcome> PutRestApiOutcomeCallable;
+      typedef std::future<RejectDomainNameAccessAssociationOutcome> RejectDomainNameAccessAssociationOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<TestInvokeAuthorizerOutcome> TestInvokeAuthorizerOutcomeCallable;
       typedef std::future<TestInvokeMethodOutcome> TestInvokeMethodOutcomeCallable;
@@ -544,6 +559,7 @@ namespace Aws
     typedef std::function<void(const APIGatewayClient*, const Model::CreateDocumentationPartRequest&, const Model::CreateDocumentationPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDocumentationPartResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateDocumentationVersionRequest&, const Model::CreateDocumentationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDocumentationVersionResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateDomainNameRequest&, const Model::CreateDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainNameResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::CreateDomainNameAccessAssociationRequest&, const Model::CreateDomainNameAccessAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainNameAccessAssociationResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateRequestValidatorRequest&, const Model::CreateRequestValidatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRequestValidatorResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::CreateResourceRequest&, const Model::CreateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceResponseReceivedHandler;
@@ -560,6 +576,7 @@ namespace Aws
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteDocumentationPartRequest&, const Model::DeleteDocumentationPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDocumentationPartResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteDocumentationVersionRequest&, const Model::DeleteDocumentationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDocumentationVersionResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteDomainNameRequest&, const Model::DeleteDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainNameResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::DeleteDomainNameAccessAssociationRequest&, const Model::DeleteDomainNameAccessAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainNameAccessAssociationResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteGatewayResponseRequest&, const Model::DeleteGatewayResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGatewayResponseResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteIntegrationRequest&, const Model::DeleteIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::DeleteIntegrationResponseRequest&, const Model::DeleteIntegrationResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationResponseResponseReceivedHandler;
@@ -592,6 +609,7 @@ namespace Aws
     typedef std::function<void(const APIGatewayClient*, const Model::GetDocumentationVersionRequest&, const Model::GetDocumentationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentationVersionResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetDocumentationVersionsRequest&, const Model::GetDocumentationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentationVersionsResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetDomainNameRequest&, const Model::GetDomainNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainNameResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::GetDomainNameAccessAssociationsRequest&, const Model::GetDomainNameAccessAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainNameAccessAssociationsResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetDomainNamesRequest&, const Model::GetDomainNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainNamesResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetExportRequest&, Model::GetExportOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExportResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::GetGatewayResponseRequest&, const Model::GetGatewayResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGatewayResponseResponseReceivedHandler;
@@ -631,6 +649,7 @@ namespace Aws
     typedef std::function<void(const APIGatewayClient*, const Model::PutMethodRequest&, const Model::PutMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMethodResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::PutMethodResponseRequest&, const Model::PutMethodResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMethodResponseResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::PutRestApiRequest&, const Model::PutRestApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRestApiResponseReceivedHandler;
+    typedef std::function<void(const APIGatewayClient*, const Model::RejectDomainNameAccessAssociationRequest&, const Model::RejectDomainNameAccessAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectDomainNameAccessAssociationResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::TestInvokeAuthorizerRequest&, const Model::TestInvokeAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestInvokeAuthorizerResponseReceivedHandler;
     typedef std::function<void(const APIGatewayClient*, const Model::TestInvokeMethodRequest&, const Model::TestInvokeMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestInvokeMethodResponseReceivedHandler;

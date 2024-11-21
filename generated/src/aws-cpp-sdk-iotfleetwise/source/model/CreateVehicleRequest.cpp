@@ -19,7 +19,8 @@ CreateVehicleRequest::CreateVehicleRequest() :
     m_attributesHasBeenSet(false),
     m_associationBehavior(VehicleAssociationBehavior::NOT_SET),
     m_associationBehaviorHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_stateTemplatesHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,17 @@ Aws::String CreateVehicleRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_stateTemplatesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> stateTemplatesJsonList(m_stateTemplates.size());
+   for(unsigned stateTemplatesIndex = 0; stateTemplatesIndex < stateTemplatesJsonList.GetLength(); ++stateTemplatesIndex)
+   {
+     stateTemplatesJsonList[stateTemplatesIndex].AsObject(m_stateTemplates[stateTemplatesIndex].Jsonize());
+   }
+   payload.WithArray("stateTemplates", std::move(stateTemplatesJsonList));
 
   }
 

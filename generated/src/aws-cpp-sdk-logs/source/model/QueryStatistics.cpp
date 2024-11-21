@@ -23,8 +23,14 @@ QueryStatistics::QueryStatistics() :
     m_recordsMatchedHasBeenSet(false),
     m_recordsScanned(0.0),
     m_recordsScannedHasBeenSet(false),
+    m_estimatedRecordsSkipped(0.0),
+    m_estimatedRecordsSkippedHasBeenSet(false),
     m_bytesScanned(0.0),
-    m_bytesScannedHasBeenSet(false)
+    m_bytesScannedHasBeenSet(false),
+    m_estimatedBytesSkipped(0.0),
+    m_estimatedBytesSkippedHasBeenSet(false),
+    m_logGroupsScanned(0.0),
+    m_logGroupsScannedHasBeenSet(false)
 {
 }
 
@@ -50,11 +56,32 @@ QueryStatistics& QueryStatistics::operator =(JsonView jsonValue)
     m_recordsScannedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("estimatedRecordsSkipped"))
+  {
+    m_estimatedRecordsSkipped = jsonValue.GetDouble("estimatedRecordsSkipped");
+
+    m_estimatedRecordsSkippedHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("bytesScanned"))
   {
     m_bytesScanned = jsonValue.GetDouble("bytesScanned");
 
     m_bytesScannedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("estimatedBytesSkipped"))
+  {
+    m_estimatedBytesSkipped = jsonValue.GetDouble("estimatedBytesSkipped");
+
+    m_estimatedBytesSkippedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("logGroupsScanned"))
+  {
+    m_logGroupsScanned = jsonValue.GetDouble("logGroupsScanned");
+
+    m_logGroupsScannedHasBeenSet = true;
   }
 
   return *this;
@@ -76,9 +103,27 @@ JsonValue QueryStatistics::Jsonize() const
 
   }
 
+  if(m_estimatedRecordsSkippedHasBeenSet)
+  {
+   payload.WithDouble("estimatedRecordsSkipped", m_estimatedRecordsSkipped);
+
+  }
+
   if(m_bytesScannedHasBeenSet)
   {
    payload.WithDouble("bytesScanned", m_bytesScanned);
+
+  }
+
+  if(m_estimatedBytesSkippedHasBeenSet)
+  {
+   payload.WithDouble("estimatedBytesSkipped", m_estimatedBytesSkipped);
+
+  }
+
+  if(m_logGroupsScannedHasBeenSet)
+  {
+   payload.WithDouble("logGroupsScanned", m_logGroupsScanned);
 
   }
 

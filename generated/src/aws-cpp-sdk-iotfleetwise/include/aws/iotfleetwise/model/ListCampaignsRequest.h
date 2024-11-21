@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The maximum number of items to return, between 1 and 100, inclusive. </p>
+     * <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -65,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional parameter to filter the results by the status of each created
+     * <p>An optional parameter to filter the results by the status of each created
      * campaign in your account. The status can be one of: <code>CREATING</code>,
      * <code>WAITING_FOR_APPROVAL</code>, <code>RUNNING</code>, or
      * <code>SUSPENDED</code>.</p>

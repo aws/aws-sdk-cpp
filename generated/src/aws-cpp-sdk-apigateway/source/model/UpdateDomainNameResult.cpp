@@ -38,6 +38,18 @@ UpdateDomainNameResult& UpdateDomainNameResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("domainNameId"))
+  {
+    m_domainNameId = jsonValue.GetString("domainNameId");
+
+  }
+
+  if(jsonValue.ValueExists("domainNameArn"))
+  {
+    m_domainNameArn = jsonValue.GetString("domainNameArn");
+
+  }
+
   if(jsonValue.ValueExists("certificateName"))
   {
     m_certificateName = jsonValue.GetString("certificateName");
@@ -134,6 +146,18 @@ UpdateDomainNameResult& UpdateDomainNameResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ownershipVerificationCertificateArn"))
   {
     m_ownershipVerificationCertificateArn = jsonValue.GetString("ownershipVerificationCertificateArn");
+
+  }
+
+  if(jsonValue.ValueExists("managementPolicy"))
+  {
+    m_managementPolicy = jsonValue.GetString("managementPolicy");
+
+  }
+
+  if(jsonValue.ValueExists("policy"))
+  {
+    m_policy = jsonValue.GetString("policy");
 
   }
 

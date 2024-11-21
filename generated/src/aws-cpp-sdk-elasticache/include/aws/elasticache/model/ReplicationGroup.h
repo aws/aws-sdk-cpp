@@ -189,7 +189,7 @@ namespace Model
     /**
      * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html">Minimizing
      * Downtime: Multi-AZ</a> </p>
      */
     inline const MultiAZStatus& GetMultiAZ() const{ return m_multiAZ; }
@@ -414,7 +414,7 @@ namespace Model
      * <p>Enables data tiering. Data tiering is only supported for replication groups
      * using the r6gd node type. This parameter must be set to true when using r6gd
      * nodes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data
      * tiering</a>.</p>
      */
     inline const DataTieringStatus& GetDataTiering() const{ return m_dataTiering; }

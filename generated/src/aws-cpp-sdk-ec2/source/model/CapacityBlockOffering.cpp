@@ -33,7 +33,9 @@ CapacityBlockOffering::CapacityBlockOffering() :
     m_upfrontFeeHasBeenSet(false),
     m_currencyCodeHasBeenSet(false),
     m_tenancy(CapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false)
+    m_tenancyHasBeenSet(false),
+    m_capacityBlockDurationMinutes(0),
+    m_capacityBlockDurationMinutesHasBeenSet(false)
 {
 }
 
@@ -109,6 +111,12 @@ CapacityBlockOffering& CapacityBlockOffering::operator =(const XmlNode& xmlNode)
       m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()).c_str());
       m_tenancyHasBeenSet = true;
     }
+    XmlNode capacityBlockDurationMinutesNode = resultNode.FirstChild("capacityBlockDurationMinutes");
+    if(!capacityBlockDurationMinutesNode.IsNull())
+    {
+      m_capacityBlockDurationMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityBlockDurationMinutesNode.GetText()).c_str()).c_str());
+      m_capacityBlockDurationMinutesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -166,6 +174,11 @@ void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".Tenancy=" << CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy) << "&";
   }
 
+  if(m_capacityBlockDurationMinutesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityBlockDurationMinutes=" << m_capacityBlockDurationMinutes << "&";
+  }
+
 }
 
 void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -209,6 +222,10 @@ void CapacityBlockOffering::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_tenancyHasBeenSet)
   {
       oStream << location << ".Tenancy=" << CapacityReservationTenancyMapper::GetNameForCapacityReservationTenancy(m_tenancy) << "&";
+  }
+  if(m_capacityBlockDurationMinutesHasBeenSet)
+  {
+      oStream << location << ".CapacityBlockDurationMinutes=" << m_capacityBlockDurationMinutes << "&";
   }
 }
 

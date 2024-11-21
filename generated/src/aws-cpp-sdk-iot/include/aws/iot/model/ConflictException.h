@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A resource with the same name already exists.</p><p><h3>See Also:</h3>   <a
+   * <p>The request conflicts with the current state of the resource.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ConflictException">AWS
    * API Reference</a></p>
    */

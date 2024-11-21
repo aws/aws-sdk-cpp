@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     StepScaling,
-    TargetTrackingScaling
+    TargetTrackingScaling,
+    PredictiveScaling
   };
 
 namespace PolicyTypeMapper

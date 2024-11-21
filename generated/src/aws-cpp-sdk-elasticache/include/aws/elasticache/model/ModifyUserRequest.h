@@ -116,6 +116,20 @@ namespace Model
     inline ModifyUserRequest& WithAuthenticationMode(const AuthenticationMode& value) { SetAuthenticationMode(value); return *this;}
     inline ModifyUserRequest& WithAuthenticationMode(AuthenticationMode&& value) { SetAuthenticationMode(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The engine for a specific user. </p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline ModifyUserRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline ModifyUserRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline ModifyUserRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_userId;
@@ -135,6 +149,9 @@ namespace Model
 
     AuthenticationMode m_authenticationMode;
     bool m_authenticationModeHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
   };
 
 } // namespace Model

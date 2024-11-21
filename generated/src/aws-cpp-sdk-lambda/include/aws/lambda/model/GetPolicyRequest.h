@@ -45,7 +45,7 @@ namespace Model
      * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
      * alias).</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> ��
+     * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
      * append a version number or alias to any of the formats. The length constraint
      * applies only to the full ARN. If you specify only the function name, it is

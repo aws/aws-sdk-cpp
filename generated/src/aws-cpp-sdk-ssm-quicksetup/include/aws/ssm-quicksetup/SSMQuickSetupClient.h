@@ -132,6 +132,32 @@ namespace SSMQuickSetup
         }
 
         /**
+         * <p>Returns details about the specified configuration.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConfigurationOutcome GetConfiguration(const Model::GetConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConfigurationRequestT = Model::GetConfigurationRequest>
+        Model::GetConfigurationOutcomeCallable GetConfigurationCallable(const GetConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&SSMQuickSetupClient::GetConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConfigurationRequestT = Model::GetConfigurationRequest>
+        void GetConfigurationAsync(const GetConfigurationRequestT& request, const GetConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMQuickSetupClient::GetConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Returns a configuration manager.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfigurationManager">AWS
          * API Reference</a></p>
@@ -205,6 +231,32 @@ namespace SSMQuickSetup
         void ListConfigurationManagersAsync(const ListConfigurationManagersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConfigurationManagersRequestT& request = {}) const
         {
             return SubmitAsync(&SSMQuickSetupClient::ListConfigurationManagers, request, handler, context);
+        }
+
+        /**
+         * <p>Returns configurations deployed by Quick Setup in the requesting Amazon Web
+         * Services account and Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConfigurationsOutcome ListConfigurations(const Model::ListConfigurationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConfigurationsRequestT = Model::ListConfigurationsRequest>
+        Model::ListConfigurationsOutcomeCallable ListConfigurationsCallable(const ListConfigurationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&SSMQuickSetupClient::ListConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for ListConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConfigurationsRequestT = Model::ListConfigurationsRequest>
+        void ListConfigurationsAsync(const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConfigurationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&SSMQuickSetupClient::ListConfigurations, request, handler, context);
         }
 
         /**

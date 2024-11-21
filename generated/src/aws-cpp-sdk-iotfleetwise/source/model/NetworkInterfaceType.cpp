@@ -23,6 +23,7 @@ namespace Aws
         static const int CAN_INTERFACE_HASH = HashingUtils::HashString("CAN_INTERFACE");
         static const int OBD_INTERFACE_HASH = HashingUtils::HashString("OBD_INTERFACE");
         static const int VEHICLE_MIDDLEWARE_HASH = HashingUtils::HashString("VEHICLE_MIDDLEWARE");
+        static const int CUSTOM_DECODING_INTERFACE_HASH = HashingUtils::HashString("CUSTOM_DECODING_INTERFACE");
 
 
         NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == VEHICLE_MIDDLEWARE_HASH)
           {
             return NetworkInterfaceType::VEHICLE_MIDDLEWARE;
+          }
+          else if (hashCode == CUSTOM_DECODING_INTERFACE_HASH)
+          {
+            return NetworkInterfaceType::CUSTOM_DECODING_INTERFACE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "OBD_INTERFACE";
           case NetworkInterfaceType::VEHICLE_MIDDLEWARE:
             return "VEHICLE_MIDDLEWARE";
+          case NetworkInterfaceType::CUSTOM_DECODING_INTERFACE:
+            return "CUSTOM_DECODING_INTERFACE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

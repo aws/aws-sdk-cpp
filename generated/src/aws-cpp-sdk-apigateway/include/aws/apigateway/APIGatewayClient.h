@@ -258,6 +258,33 @@ namespace APIGateway
         }
 
         /**
+         * <p> Creates a domain name access association resource between an access
+         * association source and a private custom domain name.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDomainNameAccessAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDomainNameAccessAssociationOutcome CreateDomainNameAccessAssociation(const Model::CreateDomainNameAccessAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDomainNameAccessAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDomainNameAccessAssociationRequestT = Model::CreateDomainNameAccessAssociationRequest>
+        Model::CreateDomainNameAccessAssociationOutcomeCallable CreateDomainNameAccessAssociationCallable(const CreateDomainNameAccessAssociationRequestT& request) const
+        {
+            return SubmitCallable(&APIGatewayClient::CreateDomainNameAccessAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDomainNameAccessAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDomainNameAccessAssociationRequestT = Model::CreateDomainNameAccessAssociationRequest>
+        void CreateDomainNameAccessAssociationAsync(const CreateDomainNameAccessAssociationRequestT& request, const CreateDomainNameAccessAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&APIGatewayClient::CreateDomainNameAccessAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Adds a new Model resource to an existing RestApi resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">AWS
@@ -663,6 +690,35 @@ namespace APIGateway
         void DeleteDomainNameAsync(const DeleteDomainNameRequestT& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&APIGatewayClient::DeleteDomainName, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes the DomainNameAccessAssociation resource.</p> <p>Only the AWS
+         * account that created the DomainNameAccessAssociation resource can delete it. To
+         * stop an access association source in another AWS account from accessing your
+         * private custom domain name, use the RejectDomainNameAccessAssociation
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainNameAccessAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDomainNameAccessAssociationOutcome DeleteDomainNameAccessAssociation(const Model::DeleteDomainNameAccessAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDomainNameAccessAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDomainNameAccessAssociationRequestT = Model::DeleteDomainNameAccessAssociationRequest>
+        Model::DeleteDomainNameAccessAssociationOutcomeCallable DeleteDomainNameAccessAssociationCallable(const DeleteDomainNameAccessAssociationRequestT& request) const
+        {
+            return SubmitCallable(&APIGatewayClient::DeleteDomainNameAccessAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDomainNameAccessAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDomainNameAccessAssociationRequestT = Model::DeleteDomainNameAccessAssociationRequest>
+        void DeleteDomainNameAccessAssociationAsync(const DeleteDomainNameAccessAssociationRequestT& request, const DeleteDomainNameAccessAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&APIGatewayClient::DeleteDomainNameAccessAssociation, request, handler, context);
         }
 
         /**
@@ -1476,6 +1532,32 @@ namespace APIGateway
         void GetDomainNameAsync(const GetDomainNameRequestT& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&APIGatewayClient::GetDomainName, request, handler, context);
+        }
+
+        /**
+         * <p>Represents a collection on DomainNameAccessAssociations
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNameAccessAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDomainNameAccessAssociationsOutcome GetDomainNameAccessAssociations(const Model::GetDomainNameAccessAssociationsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for GetDomainNameAccessAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDomainNameAccessAssociationsRequestT = Model::GetDomainNameAccessAssociationsRequest>
+        Model::GetDomainNameAccessAssociationsOutcomeCallable GetDomainNameAccessAssociationsCallable(const GetDomainNameAccessAssociationsRequestT& request = {}) const
+        {
+            return SubmitCallable(&APIGatewayClient::GetDomainNameAccessAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for GetDomainNameAccessAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDomainNameAccessAssociationsRequestT = Model::GetDomainNameAccessAssociationsRequest>
+        void GetDomainNameAccessAssociationsAsync(const GetDomainNameAccessAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetDomainNameAccessAssociationsRequestT& request = {}) const
+        {
+            return SubmitAsync(&APIGatewayClient::GetDomainNameAccessAssociations, request, handler, context);
         }
 
         /**
@@ -2477,6 +2559,36 @@ namespace APIGateway
         void PutRestApiAsync(const PutRestApiRequestT& request, const PutRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&APIGatewayClient::PutRestApi, request, handler, context);
+        }
+
+        /**
+         * <p>Rejects a domain name access association with a private custom domain
+         * name.</p> <p>To reject a domain name access association with an access
+         * association source in another AWS account, use this operation. To remove a
+         * domain name access association with an access association source in your own
+         * account, use the DeleteDomainNameAccessAssociation operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RejectDomainNameAccessAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RejectDomainNameAccessAssociationOutcome RejectDomainNameAccessAssociation(const Model::RejectDomainNameAccessAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for RejectDomainNameAccessAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RejectDomainNameAccessAssociationRequestT = Model::RejectDomainNameAccessAssociationRequest>
+        Model::RejectDomainNameAccessAssociationOutcomeCallable RejectDomainNameAccessAssociationCallable(const RejectDomainNameAccessAssociationRequestT& request) const
+        {
+            return SubmitCallable(&APIGatewayClient::RejectDomainNameAccessAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for RejectDomainNameAccessAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RejectDomainNameAccessAssociationRequestT = Model::RejectDomainNameAccessAssociationRequest>
+        void RejectDomainNameAccessAssociationAsync(const RejectDomainNameAccessAssociationRequestT& request, const RejectDomainNameAccessAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&APIGatewayClient::RejectDomainNameAccessAssociation, request, handler, context);
         }
 
         /**

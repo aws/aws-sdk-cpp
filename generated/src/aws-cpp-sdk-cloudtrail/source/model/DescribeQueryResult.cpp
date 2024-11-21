@@ -80,6 +80,12 @@ DescribeQueryResult& DescribeQueryResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("EventDataStoreOwnerAccountId"))
+  {
+    m_eventDataStoreOwnerAccountId = jsonValue.GetString("EventDataStoreOwnerAccountId");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

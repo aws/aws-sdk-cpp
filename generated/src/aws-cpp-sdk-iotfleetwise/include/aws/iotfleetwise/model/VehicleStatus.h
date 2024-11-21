@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the state of a vehicle and how it relates to the status of
-   * a campaign.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a campaign associated with a vehicle.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/VehicleStatus">AWS
    * API Reference</a></p>
    */
@@ -69,15 +69,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The state of a vehicle, which can be one of the following:</p> <ul> <li> <p>
-     * <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the
-     * vehicle. </p> </li> <li> <p> <code>READY</code> - The vehicle is ready to
-     * receive a campaign deployment. </p> </li> <li> <p> <code>HEALTHY</code> - A
-     * campaign deployment was delivered to the vehicle. </p> </li> <li> <p>
-     * <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended
-     * and data collection was paused. </p> </li> <li> <p> <code>DELETING</code> -
-     * Amazon Web Services IoT FleetWise is removing a campaign from the vehicle. </p>
-     * </li> </ul>
+     * <p>The status of a campaign, which can be one of the following:</p> <ul> <li>
+     * <p> <code>CREATED</code> - The campaign has been created successfully but has
+     * not been approved. </p> </li> <li> <p> <code>READY</code> - The campaign has
+     * been approved but has not been deployed to the vehicle.</p> </li> <li> <p>
+     * <code>HEALTHY</code> - The campaign has been deployed to the vehicle. </p> </li>
+     * <li> <p> <code>SUSPENDED</code> - The campaign has been suspended and data
+     * collection is paused. </p> </li> <li> <p> <code>DELETING</code> - The campaign
+     * is being removed from the vehicle.</p> </li> </ul>
      */
     inline const VehicleState& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

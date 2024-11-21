@@ -105,6 +105,21 @@ namespace Model
     inline MetricFilter& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
     inline MetricFilter& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This parameter is valid only for log groups that have an active log
+     * transformer. For more information about log transformers, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+     * <p>If this value is <code>true</code>, the metric filter is applied on the
+     * transformed version of the log events instead of the original ingested log
+     * events.</p>
+     */
+    inline bool GetApplyOnTransformedLogs() const{ return m_applyOnTransformedLogs; }
+    inline bool ApplyOnTransformedLogsHasBeenSet() const { return m_applyOnTransformedLogsHasBeenSet; }
+    inline void SetApplyOnTransformedLogs(bool value) { m_applyOnTransformedLogsHasBeenSet = true; m_applyOnTransformedLogs = value; }
+    inline MetricFilter& WithApplyOnTransformedLogs(bool value) { SetApplyOnTransformedLogs(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_filterName;
@@ -121,6 +136,9 @@ namespace Model
 
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet = false;
+
+    bool m_applyOnTransformedLogs;
+    bool m_applyOnTransformedLogsHasBeenSet = false;
   };
 
 } // namespace Model

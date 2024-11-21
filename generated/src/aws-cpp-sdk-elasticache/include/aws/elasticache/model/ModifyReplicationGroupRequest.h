@@ -273,7 +273,7 @@ namespace Model
      * <p>The upgraded version of the cache engine to be run on the clusters in the
      * replication group.</p> <p> <b>Important:</b> You can upgrade to a newer engine
      * version (see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing replication group and create it anew with the earlier engine version.
@@ -375,7 +375,7 @@ namespace Model
      * <ul> <li> <p>ROTATE - default, if no update strategy is provided</p> </li> <li>
      * <p>SET - allowed only after ROTATE</p> </li> <li> <p>DELETE - allowed only when
      * transitioning to RBAC</p> </li> </ul> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/auth.html">Authenticating
      * Users with AUTH</a> </p>
      */
     inline const AuthTokenUpdateStrategyType& GetAuthTokenUpdateStrategy() const{ return m_authTokenUpdateStrategy; }

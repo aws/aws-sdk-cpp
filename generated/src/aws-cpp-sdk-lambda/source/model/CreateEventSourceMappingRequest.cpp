@@ -46,7 +46,8 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_selfManagedKafkaEventSourceConfigHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
     m_documentDBEventSourceConfigHasBeenSet(false),
-    m_kMSKeyArnHasBeenSet(false)
+    m_kMSKeyArnHasBeenSet(false),
+    m_metricsConfigHasBeenSet(false)
 {
 }
 
@@ -224,6 +225,12 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
   if(m_kMSKeyArnHasBeenSet)
   {
    payload.WithString("KMSKeyArn", m_kMSKeyArn);
+
+  }
+
+  if(m_metricsConfigHasBeenSet)
+  {
+   payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
 
   }
 

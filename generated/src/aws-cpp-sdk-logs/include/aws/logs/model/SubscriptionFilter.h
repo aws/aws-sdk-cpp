@@ -118,6 +118,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>This parameter is valid only for log groups that have an active log
+     * transformer. For more information about log transformers, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.</p>
+     * <p>If this value is <code>true</code>, the subscription filter is applied on the
+     * transformed version of the log events instead of the original ingested log
+     * events.</p>
+     */
+    inline bool GetApplyOnTransformedLogs() const{ return m_applyOnTransformedLogs; }
+    inline bool ApplyOnTransformedLogsHasBeenSet() const { return m_applyOnTransformedLogsHasBeenSet; }
+    inline void SetApplyOnTransformedLogs(bool value) { m_applyOnTransformedLogsHasBeenSet = true; m_applyOnTransformedLogs = value; }
+    inline SubscriptionFilter& WithApplyOnTransformedLogs(bool value) { SetApplyOnTransformedLogs(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The creation time of the subscription filter, expressed as the number of
      * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
@@ -145,6 +160,9 @@ namespace Model
 
     Distribution m_distribution;
     bool m_distributionHasBeenSet = false;
+
+    bool m_applyOnTransformedLogs;
+    bool m_applyOnTransformedLogsHasBeenSet = false;
 
     long long m_creationTime;
     bool m_creationTimeHasBeenSet = false;

@@ -161,7 +161,7 @@ namespace Model
      * created nodes can be located in different Availability Zones. For guidance on
      * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/CacheNodes.SupportedTypes.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
      * requests upon pending requests</b> </p> <ul> <li> <p>Scenario-1</p> <ul> <li>
      * <p>Pending Action: Delete</p> </li> <li> <p>New Request: Delete</p> </li> <li>
@@ -333,7 +333,7 @@ namespace Model
     /**
      * <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
      * <p> <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster and create it anew with the earlier engine version. </p>
@@ -431,7 +431,7 @@ namespace Model
      * <ul> <li> <p>ROTATE - default, if no update strategy is provided</p> </li> <li>
      * <p>SET - allowed only after ROTATE</p> </li> <li> <p>DELETE - allowed only when
      * transitioning to RBAC</p> </li> </ul> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/auth.html">Authenticating
      * Users with AUTH</a> </p>
      */
     inline const AuthTokenUpdateStrategyType& GetAuthTokenUpdateStrategy() const{ return m_authTokenUpdateStrategy; }

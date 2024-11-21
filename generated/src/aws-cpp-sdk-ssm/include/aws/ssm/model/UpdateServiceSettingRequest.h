@@ -43,11 +43,13 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service setting to update. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
      * The setting ID can be one of the following.</p> <ul> <li> <p>
+     * <code>/ssm/appmanager/appmanager-enabled</code> </p> </li> <li> <p>
+     * <code>/ssm/automation/customer-script-log-destination</code> </p> </li> <li> <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code> </p> </li> <li>
+     * <p>/ssm/automation/enable-adaptive-concurrency</p> </li> <li> <p>
+     * <code>/ssm/documents/console/public-sharing-permission</code> </p> </li> <li>
+     * <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li> <li> <p>
      * <code>/ssm/managed-instance/default-ec2-instance-management-role</code> </p>
-     * </li> <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p>
-     * </li> <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p>
-     * </li> <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>
-     * </p> </li> <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p>
      * </li> <li> <p> <code>/ssm/opsinsights/opscenter</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> </ul>
@@ -71,8 +73,8 @@ namespace Model
     /**
      * <p>The new value to specify for the service setting. The following list
      * specifies the available values for each setting.</p> <ul> <li> <p>For
-     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter
-     * the name of an IAM role. </p> </li> <li> <p>For
+     * <code>/ssm/appmanager/appmanager-enabled</code>, enter <code>True</code> or
+     * <code>False</code>.</p> </li> <li> <p>For
      * <code>/ssm/automation/customer-script-log-destination</code>, enter
      * <code>CloudWatch</code>.</p> </li> <li> <p>For
      * <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of
@@ -80,7 +82,9 @@ namespace Model
      * <code>/ssm/documents/console/public-sharing-permission</code>, enter
      * <code>Enable</code> or <code>Disable</code>.</p> </li> <li> <p>For
      * <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code>
-     * or <code>advanced</code>.</p> </li> <li> <p> For
+     * or <code>advanced</code>.</p> </li> <li> <p>For
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter
+     * the name of an IAM role. </p> </li> <li> <p> For
      * <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or
      * <code>Disabled</code>. </p> </li> <li> <p>For
      * <code>/ssm/parameter-store/default-parameter-tier</code>, enter

@@ -86,7 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description for the policy.</p>
+     * <p>Description of the resiliency policy.</p>
      */
     inline const Aws::String& GetPolicyDescription() const{ return m_policyDescription; }
     inline bool PolicyDescriptionHasBeenSet() const { return m_policyDescriptionHasBeenSet; }
@@ -100,7 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the policy</p>
+     * <p>Name of the resiliency policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }

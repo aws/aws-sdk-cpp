@@ -78,7 +78,8 @@ namespace Model
     ///@{
     /**
      * <p> Optional. A collection of name/value pairs that describe the status of the
-     * job execution. If not specified, the statusDetails are unchanged.</p>
+     * job execution. If not specified, the statusDetails are unchanged.</p> <p>The
+     * maximum length of the value in the name/value pair is 1,024 characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const{ return m_statusDetails; }
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
@@ -100,12 +101,15 @@ namespace Model
      * <p>Specifies the amount of time this device has to finish execution of this job.
      * If the job execution status is not set to a terminal state before this timer
      * expires, or before the timer is reset (by again calling
-     * <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code>
+     * <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code>,
      * and specifying a new timeout value in this field) the job execution status will
      * be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting
-     * this timeout has no effect on that job execution timeout which may have been
+     * the step timeout has no effect on the in progress timeout that may have been
      * specified when the job was created (<code>CreateJob</code> using field
-     * <code>timeoutConfig</code>).</p>
+     * <code>timeoutConfig</code>).</p> <p>Valid values for this parameter range from 1
+     * to 10080 (1 minute to 7 days). A value of -1 is also valid and will cancel the
+     * current step timer (created by an earlier use of
+     * <code>UpdateJobExecutionRequest</code>).</p>
      */
     inline long long GetStepTimeoutInMinutes() const{ return m_stepTimeoutInMinutes; }
     inline bool StepTimeoutInMinutesHasBeenSet() const { return m_stepTimeoutInMinutesHasBeenSet; }

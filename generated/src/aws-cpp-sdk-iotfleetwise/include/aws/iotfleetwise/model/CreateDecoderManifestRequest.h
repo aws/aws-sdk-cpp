@@ -8,6 +8,7 @@
 #include <aws/iotfleetwise/IoTFleetWiseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotfleetwise/model/DefaultForUnmappedSignalsType.h>
 #include <aws/iotfleetwise/model/SignalDecoder.h>
 #include <aws/iotfleetwise/model/NetworkInterface.h>
 #include <aws/iotfleetwise/model/Tag.h>
@@ -54,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> A brief description of the decoder manifest. </p>
+     * <p>A brief description of the decoder manifest. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -110,6 +111,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>Use default decoders for all unmapped signals in the model. You don't need to
+     * provide any detailed decoding information.</p>  <p>Access to certain
+     * Amazon Web Services IoT FleetWise features is currently gated. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+     * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+     * IoT FleetWise Developer Guide</i>.</p> 
+     */
+    inline const DefaultForUnmappedSignalsType& GetDefaultForUnmappedSignals() const{ return m_defaultForUnmappedSignals; }
+    inline bool DefaultForUnmappedSignalsHasBeenSet() const { return m_defaultForUnmappedSignalsHasBeenSet; }
+    inline void SetDefaultForUnmappedSignals(const DefaultForUnmappedSignalsType& value) { m_defaultForUnmappedSignalsHasBeenSet = true; m_defaultForUnmappedSignals = value; }
+    inline void SetDefaultForUnmappedSignals(DefaultForUnmappedSignalsType&& value) { m_defaultForUnmappedSignalsHasBeenSet = true; m_defaultForUnmappedSignals = std::move(value); }
+    inline CreateDecoderManifestRequest& WithDefaultForUnmappedSignals(const DefaultForUnmappedSignalsType& value) { SetDefaultForUnmappedSignals(value); return *this;}
+    inline CreateDecoderManifestRequest& WithDefaultForUnmappedSignals(DefaultForUnmappedSignalsType&& value) { SetDefaultForUnmappedSignals(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Metadata that can be used to manage the decoder manifest.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -137,6 +156,9 @@ namespace Model
 
     Aws::Vector<NetworkInterface> m_networkInterfaces;
     bool m_networkInterfacesHasBeenSet = false;
+
+    DefaultForUnmappedSignalsType m_defaultForUnmappedSignals;
+    bool m_defaultForUnmappedSignalsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

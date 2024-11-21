@@ -380,6 +380,32 @@ namespace CostExplorer
         }
 
         /**
+         * <p>Retrieves a commitment purchase analysis result based on the
+         * <code>AnalysisId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCommitmentPurchaseAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCommitmentPurchaseAnalysisOutcome GetCommitmentPurchaseAnalysis(const Model::GetCommitmentPurchaseAnalysisRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCommitmentPurchaseAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCommitmentPurchaseAnalysisRequestT = Model::GetCommitmentPurchaseAnalysisRequest>
+        Model::GetCommitmentPurchaseAnalysisOutcomeCallable GetCommitmentPurchaseAnalysisCallable(const GetCommitmentPurchaseAnalysisRequestT& request) const
+        {
+            return SubmitCallable(&CostExplorerClient::GetCommitmentPurchaseAnalysis, request);
+        }
+
+        /**
+         * An Async wrapper for GetCommitmentPurchaseAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCommitmentPurchaseAnalysisRequestT = Model::GetCommitmentPurchaseAnalysisRequest>
+        void GetCommitmentPurchaseAnalysisAsync(const GetCommitmentPurchaseAnalysisRequestT& request, const GetCommitmentPurchaseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostExplorerClient::GetCommitmentPurchaseAnalysis, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves cost and usage metrics for your account. You can specify which cost
          * and usage-related metric that you want the request to return. For example, you
          * can specify <code>BlendedCosts</code> or <code>UsageQuantity</code>. You can
@@ -884,6 +910,32 @@ namespace CostExplorer
         }
 
         /**
+         * <p>Lists the commitment purchase analyses for your account based on the last 30
+         * days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCommitmentPurchaseAnalyses">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCommitmentPurchaseAnalysesOutcome ListCommitmentPurchaseAnalyses(const Model::ListCommitmentPurchaseAnalysesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListCommitmentPurchaseAnalyses that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCommitmentPurchaseAnalysesRequestT = Model::ListCommitmentPurchaseAnalysesRequest>
+        Model::ListCommitmentPurchaseAnalysesOutcomeCallable ListCommitmentPurchaseAnalysesCallable(const ListCommitmentPurchaseAnalysesRequestT& request = {}) const
+        {
+            return SubmitCallable(&CostExplorerClient::ListCommitmentPurchaseAnalyses, request);
+        }
+
+        /**
+         * An Async wrapper for ListCommitmentPurchaseAnalyses that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCommitmentPurchaseAnalysesRequestT = Model::ListCommitmentPurchaseAnalysesRequest>
+        void ListCommitmentPurchaseAnalysesAsync(const ListCommitmentPurchaseAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCommitmentPurchaseAnalysesRequestT& request = {}) const
+        {
+            return SubmitAsync(&CostExplorerClient::ListCommitmentPurchaseAnalyses, request, handler, context);
+        }
+
+        /**
          * <p> Retrieves a list of your historical cost allocation tag backfill requests.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTagBackfillHistory">AWS
@@ -1045,6 +1097,34 @@ namespace CostExplorer
         void ProvideAnomalyFeedbackAsync(const ProvideAnomalyFeedbackRequestT& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CostExplorerClient::ProvideAnomalyFeedback, request, handler, context);
+        }
+
+        /**
+         * <p>Specifies the parameters of a planned commitment purchase and starts the
+         * generation of the analysis. This enables you to estimate the cost, coverage, and
+         * utilization impact of your planned commitment purchases. You can request up to
+         * 20 analysis runs per day.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCommitmentPurchaseAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartCommitmentPurchaseAnalysisOutcome StartCommitmentPurchaseAnalysis(const Model::StartCommitmentPurchaseAnalysisRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartCommitmentPurchaseAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartCommitmentPurchaseAnalysisRequestT = Model::StartCommitmentPurchaseAnalysisRequest>
+        Model::StartCommitmentPurchaseAnalysisOutcomeCallable StartCommitmentPurchaseAnalysisCallable(const StartCommitmentPurchaseAnalysisRequestT& request) const
+        {
+            return SubmitCallable(&CostExplorerClient::StartCommitmentPurchaseAnalysis, request);
+        }
+
+        /**
+         * An Async wrapper for StartCommitmentPurchaseAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartCommitmentPurchaseAnalysisRequestT = Model::StartCommitmentPurchaseAnalysisRequest>
+        void StartCommitmentPurchaseAnalysisAsync(const StartCommitmentPurchaseAnalysisRequestT& request, const StartCommitmentPurchaseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostExplorerClient::StartCommitmentPurchaseAnalysis, request, handler, context);
         }
 
         /**

@@ -380,12 +380,12 @@ namespace Model
      * <p>Description: (Optional) A boolean value that determines whether instances
      * should scan for available patches at the next cron interval. The default value
      * is "<code>false</code>".</p> </li> </ul> </li> <li> <p>
-     * <code>RebootOption</code> </p> <ul> <li> <p>Description: (Optional) A boolean
-     * value that determines whether instances are rebooted after patches are
-     * installed. The default value is "<code>false</code>".</p> </li> </ul> </li> <li>
-     * <p> <code>IsPolicyAttachAllowed</code> </p> <ul> <li> <p>Description: (Optional)
-     * A boolean value that determines whether Quick Setup attaches policies to
-     * instances profiles already associated with the target instances. The default
+     * <code>RebootOption</code> </p> <ul> <li> <p>Description: (Optional) Determines
+     * whether instances are rebooted after patches are installed. Valid values are
+     * <code>RebootIfNeeded</code> and <code>NoReboot</code>.</p> </li> </ul> </li>
+     * <li> <p> <code>IsPolicyAttachAllowed</code> </p> <ul> <li> <p>Description:
+     * (Optional) A boolean value that determines whether Quick Setup attaches policies
+     * to instances profiles already associated with the target instances. The default
      * value is "<code>false</code>".</p> </li> </ul> </li> <li> <p>
      * <code>OutputLogEnableS3</code> </p> <ul> <li> <p>Description: (Optional) A
      * boolean value that determines whether command output logs are sent to Amazon

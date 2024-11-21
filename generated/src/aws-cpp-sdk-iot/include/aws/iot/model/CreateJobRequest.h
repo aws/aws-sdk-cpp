@@ -44,9 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A job identifier which must be unique for your Amazon Web Services account.
-     * We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for
-     * use here.</p>
+     * <p>A job identifier which must be unique for your account. We recommend using a
+     * UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }

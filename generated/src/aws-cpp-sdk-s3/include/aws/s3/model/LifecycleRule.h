@@ -83,7 +83,8 @@ namespace Model
      * applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>,
      * <code>Tag</code>, or <code>And</code> specified. <code>Filter</code> is required
      * if the <code>LifecycleRule</code> does not contain a <code>Prefix</code>
-     * element.</p>
+     * element.</p>  <p> <code>Tag</code> filters are not supported for directory
+     * buckets.</p> 
      */
     inline const LifecycleRuleFilter& GetFilter() const{ return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
@@ -109,7 +110,8 @@ namespace Model
     ///@{
     /**
      * <p>Specifies when an Amazon S3 object transitions to a specified storage
-     * class.</p>
+     * class.</p>  <p>This parameter applies to general purpose buckets only. It
+     * is not supported for directory bucket lifecycle configurations.</p> 
      */
     inline const Aws::Vector<Transition>& GetTransitions() const{ return m_transitions; }
     inline bool TransitionsHasBeenSet() const { return m_transitionsHasBeenSet; }
@@ -123,11 +125,13 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the transition rule for the lifecycle rule that describes when
+     * <p>Specifies the transition rule for the lifecycle rule that describes when
      * noncurrent objects transition to a specific storage class. If your bucket is
      * versioning-enabled (or versioning is suspended), you can set this action to
      * request that Amazon S3 transition noncurrent object versions to a specific
-     * storage class at a set period in the object's lifetime. </p>
+     * storage class at a set period in the object's lifetime.</p>  <p>This
+     * parameter applies to general purpose buckets only. It is not supported for
+     * directory bucket lifecycle configurations.</p> 
      */
     inline const Aws::Vector<NoncurrentVersionTransition>& GetNoncurrentVersionTransitions() const{ return m_noncurrentVersionTransitions; }
     inline bool NoncurrentVersionTransitionsHasBeenSet() const { return m_noncurrentVersionTransitionsHasBeenSet; }

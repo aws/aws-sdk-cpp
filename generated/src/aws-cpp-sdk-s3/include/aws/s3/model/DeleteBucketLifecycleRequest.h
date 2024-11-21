@@ -64,7 +64,9 @@ namespace Model
     /**
      * <p>The account ID of the expected bucket owner. If the account ID that you
      * provide does not match the actual owner of the bucket, the request fails with
-     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p> 
+     * <p>This parameter applies to general purpose buckets only. It is not supported
+     * for directory bucket lifecycle configurations.</p> 
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }

@@ -36,9 +36,14 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to the
-     * resource-based policy. The following is the format of a resource ARN:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
+     * <p> The Amazon Resource Name (ARN) of the CloudTrail event data store,
+     * dashboard, or channel attached to the resource-based policy.</p> <p>Example
+     * event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>Example dashboard ARN format:
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</code>
+     * </p> <p>Example channel ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -53,11 +58,9 @@ namespace Model
     ///@{
     /**
      * <p> A JSON-formatted string for an Amazon Web Services resource-based policy.
-     * </p> <p>The following are requirements for the resource policy:</p> <ul> <li>
-     * <p> Contains only one action: cloudtrail-data:PutAuditEvents </p> </li> <li> <p>
-     * Contains at least one statement. The policy can have a maximum of 20 statements.
-     * </p> </li> <li> <p> Each statement contains at least one principal. A statement
-     * can have a maximum of 50 principals. </p> </li> </ul>
+     * </p> <p> For example resource-based policies, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/security_iam_resource-based-policy-examples.html">CloudTrail
+     * resource-based policy examples</a> in the <i>CloudTrail User Guide</i>.</p>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
     inline bool ResourcePolicyHasBeenSet() const { return m_resourcePolicyHasBeenSet; }

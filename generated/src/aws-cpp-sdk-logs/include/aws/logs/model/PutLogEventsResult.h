@@ -66,7 +66,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Reserved for internal use.</p>
+     * <p>Information about why the entity is rejected when calling
+     * <code>PutLogEvents</code>. Only returned when the entity is rejected.</p> 
+     * <p>When the entity is rejected, the events may still be accepted.</p> 
      */
     inline const RejectedEntityInfo& GetRejectedEntityInfo() const{ return m_rejectedEntityInfo; }
     inline void SetRejectedEntityInfo(const RejectedEntityInfo& value) { m_rejectedEntityInfo = value; }

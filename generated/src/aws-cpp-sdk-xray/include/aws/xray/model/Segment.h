@@ -30,8 +30,8 @@ namespace Model
    * or an <code>inferred</code> segment for a downstream service, generated from a
    * subsegment sent by the service that called it.</p> <p>For the full segment
    * document schema, see <a
-   * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon
-   * Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray
+   * href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray-interface-api.html#xray-api-segmentdocuments">Amazon
+   * Web Services X-Ray segment documents</a> in the <i>Amazon Web Services X-Ray
    * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Segment">AWS API
    * Reference</a></p>

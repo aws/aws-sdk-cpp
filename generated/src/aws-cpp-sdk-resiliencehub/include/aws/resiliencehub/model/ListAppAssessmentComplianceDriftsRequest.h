@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the maximum number of compliance drifts requested.</p>
+     * <p>Maximum number of compliance drifts requested.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

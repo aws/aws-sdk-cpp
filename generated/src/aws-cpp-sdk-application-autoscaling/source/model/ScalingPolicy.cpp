@@ -30,6 +30,7 @@ ScalingPolicy::ScalingPolicy() :
     m_policyTypeHasBeenSet(false),
     m_stepScalingPolicyConfigurationHasBeenSet(false),
     m_targetTrackingScalingPolicyConfigurationHasBeenSet(false),
+    m_predictiveScalingPolicyConfigurationHasBeenSet(false),
     m_alarmsHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
@@ -99,6 +100,13 @@ ScalingPolicy& ScalingPolicy::operator =(JsonView jsonValue)
     m_targetTrackingScalingPolicyConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PredictiveScalingPolicyConfiguration"))
+  {
+    m_predictiveScalingPolicyConfiguration = jsonValue.GetObject("PredictiveScalingPolicyConfiguration");
+
+    m_predictiveScalingPolicyConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Alarms"))
   {
     Aws::Utils::Array<JsonView> alarmsJsonList = jsonValue.GetArray("Alarms");
@@ -165,6 +173,12 @@ JsonValue ScalingPolicy::Jsonize() const
   if(m_targetTrackingScalingPolicyConfigurationHasBeenSet)
   {
    payload.WithObject("TargetTrackingScalingPolicyConfiguration", m_targetTrackingScalingPolicyConfiguration.Jsonize());
+
+  }
+
+  if(m_predictiveScalingPolicyConfigurationHasBeenSet)
+  {
+   payload.WithObject("PredictiveScalingPolicyConfiguration", m_predictiveScalingPolicyConfiguration.Jsonize());
 
   }
 

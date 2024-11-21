@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/AddIpamOperatingRegion.h>
 #include <aws/ec2/model/RemoveIpamOperatingRegion.h>
+#include <aws/ec2/model/AddIpamOrganizationalUnitExclusion.h>
+#include <aws/ec2/model/RemoveIpamOrganizationalUnitExclusion.h>
 #include <utility>
 
 namespace Aws
@@ -110,6 +112,46 @@ namespace Model
     inline ModifyIpamResourceDiscoveryRequest& AddRemoveOperatingRegions(const RemoveIpamOperatingRegion& value) { m_removeOperatingRegionsHasBeenSet = true; m_removeOperatingRegions.push_back(value); return *this; }
     inline ModifyIpamResourceDiscoveryRequest& AddRemoveOperatingRegions(RemoveIpamOperatingRegion&& value) { m_removeOperatingRegionsHasBeenSet = true; m_removeOperatingRegions.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Add an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is
+     * integrated with Amazon Web Services Organizations and you add an organizational
+     * unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that
+     * OU exclusion. There is a limit on the number of exclusions you can create. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for
+     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline const Aws::Vector<AddIpamOrganizationalUnitExclusion>& GetAddOrganizationalUnitExclusions() const{ return m_addOrganizationalUnitExclusions; }
+    inline bool AddOrganizationalUnitExclusionsHasBeenSet() const { return m_addOrganizationalUnitExclusionsHasBeenSet; }
+    inline void SetAddOrganizationalUnitExclusions(const Aws::Vector<AddIpamOrganizationalUnitExclusion>& value) { m_addOrganizationalUnitExclusionsHasBeenSet = true; m_addOrganizationalUnitExclusions = value; }
+    inline void SetAddOrganizationalUnitExclusions(Aws::Vector<AddIpamOrganizationalUnitExclusion>&& value) { m_addOrganizationalUnitExclusionsHasBeenSet = true; m_addOrganizationalUnitExclusions = std::move(value); }
+    inline ModifyIpamResourceDiscoveryRequest& WithAddOrganizationalUnitExclusions(const Aws::Vector<AddIpamOrganizationalUnitExclusion>& value) { SetAddOrganizationalUnitExclusions(value); return *this;}
+    inline ModifyIpamResourceDiscoveryRequest& WithAddOrganizationalUnitExclusions(Aws::Vector<AddIpamOrganizationalUnitExclusion>&& value) { SetAddOrganizationalUnitExclusions(std::move(value)); return *this;}
+    inline ModifyIpamResourceDiscoveryRequest& AddAddOrganizationalUnitExclusions(const AddIpamOrganizationalUnitExclusion& value) { m_addOrganizationalUnitExclusionsHasBeenSet = true; m_addOrganizationalUnitExclusions.push_back(value); return *this; }
+    inline ModifyIpamResourceDiscoveryRequest& AddAddOrganizationalUnitExclusions(AddIpamOrganizationalUnitExclusion&& value) { m_addOrganizationalUnitExclusionsHasBeenSet = true; m_addOrganizationalUnitExclusions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Remove an Organizational Unit (OU) exclusion to your IPAM. If your IPAM is
+     * integrated with Amazon Web Services Organizations and you add an organizational
+     * unit (OU) exclusion, IPAM will not manage the IP addresses in accounts in that
+     * OU exclusion. There is a limit on the number of exclusions you can create. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas for
+     * your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
+     */
+    inline const Aws::Vector<RemoveIpamOrganizationalUnitExclusion>& GetRemoveOrganizationalUnitExclusions() const{ return m_removeOrganizationalUnitExclusions; }
+    inline bool RemoveOrganizationalUnitExclusionsHasBeenSet() const { return m_removeOrganizationalUnitExclusionsHasBeenSet; }
+    inline void SetRemoveOrganizationalUnitExclusions(const Aws::Vector<RemoveIpamOrganizationalUnitExclusion>& value) { m_removeOrganizationalUnitExclusionsHasBeenSet = true; m_removeOrganizationalUnitExclusions = value; }
+    inline void SetRemoveOrganizationalUnitExclusions(Aws::Vector<RemoveIpamOrganizationalUnitExclusion>&& value) { m_removeOrganizationalUnitExclusionsHasBeenSet = true; m_removeOrganizationalUnitExclusions = std::move(value); }
+    inline ModifyIpamResourceDiscoveryRequest& WithRemoveOrganizationalUnitExclusions(const Aws::Vector<RemoveIpamOrganizationalUnitExclusion>& value) { SetRemoveOrganizationalUnitExclusions(value); return *this;}
+    inline ModifyIpamResourceDiscoveryRequest& WithRemoveOrganizationalUnitExclusions(Aws::Vector<RemoveIpamOrganizationalUnitExclusion>&& value) { SetRemoveOrganizationalUnitExclusions(std::move(value)); return *this;}
+    inline ModifyIpamResourceDiscoveryRequest& AddRemoveOrganizationalUnitExclusions(const RemoveIpamOrganizationalUnitExclusion& value) { m_removeOrganizationalUnitExclusionsHasBeenSet = true; m_removeOrganizationalUnitExclusions.push_back(value); return *this; }
+    inline ModifyIpamResourceDiscoveryRequest& AddRemoveOrganizationalUnitExclusions(RemoveIpamOrganizationalUnitExclusion&& value) { m_removeOrganizationalUnitExclusionsHasBeenSet = true; m_removeOrganizationalUnitExclusions.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     bool m_dryRun;
@@ -126,6 +168,12 @@ namespace Model
 
     Aws::Vector<RemoveIpamOperatingRegion> m_removeOperatingRegions;
     bool m_removeOperatingRegionsHasBeenSet = false;
+
+    Aws::Vector<AddIpamOrganizationalUnitExclusion> m_addOrganizationalUnitExclusions;
+    bool m_addOrganizationalUnitExclusionsHasBeenSet = false;
+
+    Aws::Vector<RemoveIpamOrganizationalUnitExclusion> m_removeOrganizationalUnitExclusions;
+    bool m_removeOrganizationalUnitExclusionsHasBeenSet = false;
   };
 
 } // namespace Model

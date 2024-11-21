@@ -16,19 +16,25 @@ namespace Aws
 namespace IoTJobsDataPlane
 {
   /**
-   * <p>AWS IoT Jobs is a service that allows you to define a set of jobs — remote
-   * operations that are sent to and executed on one or more devices connected to AWS
-   * IoT. For example, you can define a job that instructs a set of devices to
-   * download and install application or firmware updates, reboot, rotate
-   * certificates, or perform remote troubleshooting operations.</p> <p> To create a
-   * job, you make a job document which is a description of the remote operations to
-   * be performed, and you specify a list of targets that should perform the
-   * operations. The targets can be individual things, thing groups or both.</p> <p>
-   * AWS IoT Jobs sends a message to inform the targets that a job is available. The
-   * target starts the execution of the job by downloading the job document,
-   * performing the operations it specifies, and reporting its progress to AWS IoT.
-   * The Jobs service provides commands to track the progress of a job on a specific
-   * target and for all the targets of the job</p>
+   * <p>IoT Jobs is a service that allows you to define a set of jobs — remote
+   * operations that are sent to and executed on one or more devices connected to
+   * Amazon Web Services IoT Core. For example, you can define a job that instructs a
+   * set of devices to download and install application or firmware updates, reboot,
+   * rotate certificates, or perform remote troubleshooting operations.</p> <p>Find
+   * the endpoint address for actions in the IoT jobs data plane by running this CLI
+   * command:</p> <p> <code>aws iot describe-endpoint --endpoint-type iot:Jobs</code>
+   * </p> <p>The service name used by <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Amazon
+   * Web Services Signature Version 4</a> to sign requests is:
+   * <i>iot-jobs-data</i>.</p> <p> To create a job, you make a job document which is
+   * a description of the remote operations to be performed, and you specify a list
+   * of targets that should perform the operations. The targets can be individual
+   * things, thing groups or both.</p> <p> IoT Jobs sends a message to inform the
+   * targets that a job is available. The target starts the execution of the job by
+   * downloading the job document, performing the operations it specifies, and
+   * reporting its progress to Amazon Web Services IoT Core. The Jobs service
+   * provides commands to track the progress of a job on a specific target and for
+   * all the targets of the job</p>
    */
   class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>
   {
@@ -89,7 +95,9 @@ namespace IoTJobsDataPlane
         virtual ~IoTJobsDataPlaneClient();
 
         /**
-         * <p>Gets details of a job execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets details of a job execution.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/DescribeJobExecution">AWS
          * API Reference</a></p>
          */
@@ -114,8 +122,10 @@ namespace IoTJobsDataPlane
         }
 
         /**
-         * <p>Gets the list of all jobs for a thing that are not in a terminal
-         * status.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the list of all jobs for a thing that are not in a terminal status.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPendingJobExecutions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/GetPendingJobExecutions">AWS
          * API Reference</a></p>
          */
@@ -140,8 +150,36 @@ namespace IoTJobsDataPlane
         }
 
         /**
+         * <p>Using the command created with the <code>CreateCommand</code> API, start a
+         * command execution on a specific device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartCommandExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartCommandExecutionOutcome StartCommandExecution(const Model::StartCommandExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartCommandExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartCommandExecutionRequestT = Model::StartCommandExecutionRequest>
+        Model::StartCommandExecutionOutcomeCallable StartCommandExecutionCallable(const StartCommandExecutionRequestT& request) const
+        {
+            return SubmitCallable(&IoTJobsDataPlaneClient::StartCommandExecution, request);
+        }
+
+        /**
+         * An Async wrapper for StartCommandExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartCommandExecutionRequestT = Model::StartCommandExecutionRequest>
+        void StartCommandExecutionAsync(const StartCommandExecutionRequestT& request, const StartCommandExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTJobsDataPlaneClient::StartCommandExecution, request, handler, context);
+        }
+
+        /**
          * <p>Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution
-         * for a thing.</p><p><h3>See Also:</h3>   <a
+         * for a thing.</p> <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartNextPendingJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/StartNextPendingJobExecution">AWS
          * API Reference</a></p>
          */
@@ -166,7 +204,10 @@ namespace IoTJobsDataPlane
         }
 
         /**
-         * <p>Updates the status of a job execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the status of a job execution.</p> <p>Requires permission to access
+         * the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotjobsdataplane.html">UpdateJobExecution</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/UpdateJobExecution">AWS
          * API Reference</a></p>
          */

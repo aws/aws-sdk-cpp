@@ -22,6 +22,8 @@ namespace Aws
 
         static const int DATA_PROTECTION_POLICY_HASH = HashingUtils::HashString("DATA_PROTECTION_POLICY");
         static const int SUBSCRIPTION_FILTER_POLICY_HASH = HashingUtils::HashString("SUBSCRIPTION_FILTER_POLICY");
+        static const int FIELD_INDEX_POLICY_HASH = HashingUtils::HashString("FIELD_INDEX_POLICY");
+        static const int TRANSFORMER_POLICY_HASH = HashingUtils::HashString("TRANSFORMER_POLICY");
 
 
         PolicyType GetPolicyTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == SUBSCRIPTION_FILTER_POLICY_HASH)
           {
             return PolicyType::SUBSCRIPTION_FILTER_POLICY;
+          }
+          else if (hashCode == FIELD_INDEX_POLICY_HASH)
+          {
+            return PolicyType::FIELD_INDEX_POLICY;
+          }
+          else if (hashCode == TRANSFORMER_POLICY_HASH)
+          {
+            return PolicyType::TRANSFORMER_POLICY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "DATA_PROTECTION_POLICY";
           case PolicyType::SUBSCRIPTION_FILTER_POLICY:
             return "SUBSCRIPTION_FILTER_POLICY";
+          case PolicyType::FIELD_INDEX_POLICY:
+            return "FIELD_INDEX_POLICY";
+          case PolicyType::TRANSFORMER_POLICY:
+            return "TRANSFORMER_POLICY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

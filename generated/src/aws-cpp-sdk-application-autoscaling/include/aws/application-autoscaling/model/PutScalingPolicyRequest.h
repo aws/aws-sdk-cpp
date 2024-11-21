@@ -12,6 +12,7 @@
 #include <aws/application-autoscaling/model/PolicyType.h>
 #include <aws/application-autoscaling/model/StepScalingPolicyConfiguration.h>
 #include <aws/application-autoscaling/model/TargetTrackingScalingPolicyConfiguration.h>
+#include <aws/application-autoscaling/model/PredictiveScalingPolicyConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -247,6 +248,18 @@ namespace Model
     inline PutScalingPolicyRequest& WithTargetTrackingScalingPolicyConfiguration(const TargetTrackingScalingPolicyConfiguration& value) { SetTargetTrackingScalingPolicyConfiguration(value); return *this;}
     inline PutScalingPolicyRequest& WithTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration&& value) { SetTargetTrackingScalingPolicyConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The configuration of the predictive scaling policy. </p>
+     */
+    inline const PredictiveScalingPolicyConfiguration& GetPredictiveScalingPolicyConfiguration() const{ return m_predictiveScalingPolicyConfiguration; }
+    inline bool PredictiveScalingPolicyConfigurationHasBeenSet() const { return m_predictiveScalingPolicyConfigurationHasBeenSet; }
+    inline void SetPredictiveScalingPolicyConfiguration(const PredictiveScalingPolicyConfiguration& value) { m_predictiveScalingPolicyConfigurationHasBeenSet = true; m_predictiveScalingPolicyConfiguration = value; }
+    inline void SetPredictiveScalingPolicyConfiguration(PredictiveScalingPolicyConfiguration&& value) { m_predictiveScalingPolicyConfigurationHasBeenSet = true; m_predictiveScalingPolicyConfiguration = std::move(value); }
+    inline PutScalingPolicyRequest& WithPredictiveScalingPolicyConfiguration(const PredictiveScalingPolicyConfiguration& value) { SetPredictiveScalingPolicyConfiguration(value); return *this;}
+    inline PutScalingPolicyRequest& WithPredictiveScalingPolicyConfiguration(PredictiveScalingPolicyConfiguration&& value) { SetPredictiveScalingPolicyConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_policyName;
@@ -269,6 +282,9 @@ namespace Model
 
     TargetTrackingScalingPolicyConfiguration m_targetTrackingScalingPolicyConfiguration;
     bool m_targetTrackingScalingPolicyConfigurationHasBeenSet = false;
+
+    PredictiveScalingPolicyConfiguration m_predictiveScalingPolicyConfiguration;
+    bool m_predictiveScalingPolicyConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,13 +19,16 @@
 
 /* Service model headers required in SSMQuickSetupClient header */
 #include <aws/ssm-quicksetup/model/CreateConfigurationManagerResult.h>
+#include <aws/ssm-quicksetup/model/GetConfigurationResult.h>
 #include <aws/ssm-quicksetup/model/GetConfigurationManagerResult.h>
 #include <aws/ssm-quicksetup/model/GetServiceSettingsResult.h>
 #include <aws/ssm-quicksetup/model/ListConfigurationManagersResult.h>
+#include <aws/ssm-quicksetup/model/ListConfigurationsResult.h>
 #include <aws/ssm-quicksetup/model/ListQuickSetupTypesResult.h>
 #include <aws/ssm-quicksetup/model/ListTagsForResourceResult.h>
 #include <aws/ssm-quicksetup/model/GetServiceSettingsRequest.h>
 #include <aws/ssm-quicksetup/model/ListQuickSetupTypesRequest.h>
+#include <aws/ssm-quicksetup/model/ListConfigurationsRequest.h>
 #include <aws/ssm-quicksetup/model/UpdateServiceSettingsRequest.h>
 #include <aws/ssm-quicksetup/model/ListConfigurationManagersRequest.h>
 #include <aws/core/NoResult.h>
@@ -71,9 +74,11 @@ namespace Aws
       /* Service model forward declarations required in SSMQuickSetupClient header */
       class CreateConfigurationManagerRequest;
       class DeleteConfigurationManagerRequest;
+      class GetConfigurationRequest;
       class GetConfigurationManagerRequest;
       class GetServiceSettingsRequest;
       class ListConfigurationManagersRequest;
+      class ListConfigurationsRequest;
       class ListQuickSetupTypesRequest;
       class ListTagsForResourceRequest;
       class TagResourceRequest;
@@ -86,9 +91,11 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateConfigurationManagerResult, SSMQuickSetupError> CreateConfigurationManagerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SSMQuickSetupError> DeleteConfigurationManagerOutcome;
+      typedef Aws::Utils::Outcome<GetConfigurationResult, SSMQuickSetupError> GetConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetConfigurationManagerResult, SSMQuickSetupError> GetConfigurationManagerOutcome;
       typedef Aws::Utils::Outcome<GetServiceSettingsResult, SSMQuickSetupError> GetServiceSettingsOutcome;
       typedef Aws::Utils::Outcome<ListConfigurationManagersResult, SSMQuickSetupError> ListConfigurationManagersOutcome;
+      typedef Aws::Utils::Outcome<ListConfigurationsResult, SSMQuickSetupError> ListConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListQuickSetupTypesResult, SSMQuickSetupError> ListQuickSetupTypesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, SSMQuickSetupError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SSMQuickSetupError> TagResourceOutcome;
@@ -101,9 +108,11 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<CreateConfigurationManagerOutcome> CreateConfigurationManagerOutcomeCallable;
       typedef std::future<DeleteConfigurationManagerOutcome> DeleteConfigurationManagerOutcomeCallable;
+      typedef std::future<GetConfigurationOutcome> GetConfigurationOutcomeCallable;
       typedef std::future<GetConfigurationManagerOutcome> GetConfigurationManagerOutcomeCallable;
       typedef std::future<GetServiceSettingsOutcome> GetServiceSettingsOutcomeCallable;
       typedef std::future<ListConfigurationManagersOutcome> ListConfigurationManagersOutcomeCallable;
+      typedef std::future<ListConfigurationsOutcome> ListConfigurationsOutcomeCallable;
       typedef std::future<ListQuickSetupTypesOutcome> ListQuickSetupTypesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -119,9 +128,11 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const SSMQuickSetupClient*, const Model::CreateConfigurationManagerRequest&, const Model::CreateConfigurationManagerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationManagerResponseReceivedHandler;
     typedef std::function<void(const SSMQuickSetupClient*, const Model::DeleteConfigurationManagerRequest&, const Model::DeleteConfigurationManagerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationManagerResponseReceivedHandler;
+    typedef std::function<void(const SSMQuickSetupClient*, const Model::GetConfigurationRequest&, const Model::GetConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationResponseReceivedHandler;
     typedef std::function<void(const SSMQuickSetupClient*, const Model::GetConfigurationManagerRequest&, const Model::GetConfigurationManagerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationManagerResponseReceivedHandler;
     typedef std::function<void(const SSMQuickSetupClient*, const Model::GetServiceSettingsRequest&, const Model::GetServiceSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceSettingsResponseReceivedHandler;
     typedef std::function<void(const SSMQuickSetupClient*, const Model::ListConfigurationManagersRequest&, const Model::ListConfigurationManagersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationManagersResponseReceivedHandler;
+    typedef std::function<void(const SSMQuickSetupClient*, const Model::ListConfigurationsRequest&, const Model::ListConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationsResponseReceivedHandler;
     typedef std::function<void(const SSMQuickSetupClient*, const Model::ListQuickSetupTypesRequest&, const Model::ListQuickSetupTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQuickSetupTypesResponseReceivedHandler;
     typedef std::function<void(const SSMQuickSetupClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SSMQuickSetupClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

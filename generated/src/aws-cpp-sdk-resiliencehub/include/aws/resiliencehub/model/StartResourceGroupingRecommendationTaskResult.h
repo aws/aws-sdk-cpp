@@ -54,8 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the error that occurred while executing a grouping recommendation
-     * task.</p>
+     * <p>Error that occurred while executing a grouping recommendation task.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
@@ -68,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the identifier of the grouping recommendation task.</p>
+     * <p>Identifier of the grouping recommendation task.</p>
      */
     inline const Aws::String& GetGroupingId() const{ return m_groupingId; }
     inline void SetGroupingId(const Aws::String& value) { m_groupingId = value; }

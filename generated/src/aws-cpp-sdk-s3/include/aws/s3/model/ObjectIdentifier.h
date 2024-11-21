@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -70,6 +71,50 @@ namespace Model
     inline ObjectIdentifier& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
     inline ObjectIdentifier& WithVersionId(const char* value) { SetVersionId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>An entity tag (ETag) is an identifier assigned by a web server to a specific
+     * version of a resource found at a URL. This header field makes the request method
+     * conditional on <code>ETags</code>. </p>  <p>Entity tags (ETags) for S3
+     * Express One Zone are random alphanumeric strings unique to the object. </p>
+     * 
+     */
+    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
+    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
+    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
+    inline ObjectIdentifier& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline ObjectIdentifier& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
+    inline ObjectIdentifier& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If present, the objects are deleted only if its modification times matches
+     * the provided <code>Timestamp</code>. </p>  <p>This functionality is only
+     * supported for directory buckets.</p> 
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
+    inline ObjectIdentifier& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+    inline ObjectIdentifier& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If present, the objects are deleted only if its size matches the provided
+     * size in bytes. </p>  <p>This functionality is only supported for directory
+     * buckets.</p> 
+     */
+    inline long long GetSize() const{ return m_size; }
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+    inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline ObjectIdentifier& WithSize(long long value) { SetSize(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_key;
@@ -77,6 +122,15 @@ namespace Model
 
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
+
+    Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet = false;
+
+    long long m_size;
+    bool m_sizeHasBeenSet = false;
   };
 
 } // namespace Model

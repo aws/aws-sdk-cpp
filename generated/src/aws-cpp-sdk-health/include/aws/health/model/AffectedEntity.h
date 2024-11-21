@@ -166,6 +166,25 @@ namespace Model
     inline AffectedEntity& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
     inline AffectedEntity& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Additional metadata about the affected entity.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetEntityMetadata() const{ return m_entityMetadata; }
+    inline bool EntityMetadataHasBeenSet() const { return m_entityMetadataHasBeenSet; }
+    inline void SetEntityMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_entityMetadataHasBeenSet = true; m_entityMetadata = value; }
+    inline void SetEntityMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_entityMetadataHasBeenSet = true; m_entityMetadata = std::move(value); }
+    inline AffectedEntity& WithEntityMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetEntityMetadata(value); return *this;}
+    inline AffectedEntity& WithEntityMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetEntityMetadata(std::move(value)); return *this;}
+    inline AffectedEntity& AddEntityMetadata(const Aws::String& key, const Aws::String& value) { m_entityMetadataHasBeenSet = true; m_entityMetadata.emplace(key, value); return *this; }
+    inline AffectedEntity& AddEntityMetadata(Aws::String&& key, const Aws::String& value) { m_entityMetadataHasBeenSet = true; m_entityMetadata.emplace(std::move(key), value); return *this; }
+    inline AffectedEntity& AddEntityMetadata(const Aws::String& key, Aws::String&& value) { m_entityMetadataHasBeenSet = true; m_entityMetadata.emplace(key, std::move(value)); return *this; }
+    inline AffectedEntity& AddEntityMetadata(Aws::String&& key, Aws::String&& value) { m_entityMetadataHasBeenSet = true; m_entityMetadata.emplace(std::move(key), std::move(value)); return *this; }
+    inline AffectedEntity& AddEntityMetadata(const char* key, Aws::String&& value) { m_entityMetadataHasBeenSet = true; m_entityMetadata.emplace(key, std::move(value)); return *this; }
+    inline AffectedEntity& AddEntityMetadata(Aws::String&& key, const char* value) { m_entityMetadataHasBeenSet = true; m_entityMetadata.emplace(std::move(key), value); return *this; }
+    inline AffectedEntity& AddEntityMetadata(const char* key, const char* value) { m_entityMetadataHasBeenSet = true; m_entityMetadata.emplace(key, value); return *this; }
+    ///@}
   private:
 
     Aws::String m_entityArn;
@@ -191,6 +210,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_entityMetadata;
+    bool m_entityMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,6 +15,8 @@
 #include <aws/iotfleetwise/model/CollectionScheme.h>
 #include <aws/iotfleetwise/model/SignalInformation.h>
 #include <aws/iotfleetwise/model/DataDestinationConfig.h>
+#include <aws/iotfleetwise/model/DataPartition.h>
+#include <aws/iotfleetwise/model/SignalFetchInformation.h>
 #include <utility>
 
 namespace Aws
@@ -266,12 +268,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The destination where the campaign sends data. You can choose to send data to
-     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
-     * of data storage and provides additional mechanisms to use vehicle data, such as
-     * data lakes, centralized data storage, data processing pipelines, and analytics.
-     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
-     * and Timestream to query vehicle data so that you can identify trends and
+     * <p>The destination where the campaign sends data. You can send data to an MQTT
+     * topic, or store it in Amazon S3 or Amazon Timestream.</p> <p>MQTT is the
+     * publish/subscribe messaging protocol used by Amazon Web Services IoT to
+     * communicate with your devices.</p> <p>Amazon S3 optimizes the cost of data
+     * storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics. </p>
+     * <p>You can use Amazon Timestream to access and analyze time series data, and
+     * Timestream to query vehicle data so that you can identify trends and
      * patterns.</p>
      */
     inline const Aws::Vector<DataDestinationConfig>& GetDataDestinationConfigs() const{ return m_dataDestinationConfigs; }
@@ -281,6 +285,33 @@ namespace Model
     inline GetCampaignResult& WithDataDestinationConfigs(Aws::Vector<DataDestinationConfig>&& value) { SetDataDestinationConfigs(std::move(value)); return *this;}
     inline GetCampaignResult& AddDataDestinationConfigs(const DataDestinationConfig& value) { m_dataDestinationConfigs.push_back(value); return *this; }
     inline GetCampaignResult& AddDataDestinationConfigs(DataDestinationConfig&& value) { m_dataDestinationConfigs.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The data partitions associated with the signals collected from the
+     * vehicle.</p>
+     */
+    inline const Aws::Vector<DataPartition>& GetDataPartitions() const{ return m_dataPartitions; }
+    inline void SetDataPartitions(const Aws::Vector<DataPartition>& value) { m_dataPartitions = value; }
+    inline void SetDataPartitions(Aws::Vector<DataPartition>&& value) { m_dataPartitions = std::move(value); }
+    inline GetCampaignResult& WithDataPartitions(const Aws::Vector<DataPartition>& value) { SetDataPartitions(value); return *this;}
+    inline GetCampaignResult& WithDataPartitions(Aws::Vector<DataPartition>&& value) { SetDataPartitions(std::move(value)); return *this;}
+    inline GetCampaignResult& AddDataPartitions(const DataPartition& value) { m_dataPartitions.push_back(value); return *this; }
+    inline GetCampaignResult& AddDataPartitions(DataPartition&& value) { m_dataPartitions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Information about a list of signals to fetch data from.</p>
+     */
+    inline const Aws::Vector<SignalFetchInformation>& GetSignalsToFetch() const{ return m_signalsToFetch; }
+    inline void SetSignalsToFetch(const Aws::Vector<SignalFetchInformation>& value) { m_signalsToFetch = value; }
+    inline void SetSignalsToFetch(Aws::Vector<SignalFetchInformation>&& value) { m_signalsToFetch = std::move(value); }
+    inline GetCampaignResult& WithSignalsToFetch(const Aws::Vector<SignalFetchInformation>& value) { SetSignalsToFetch(value); return *this;}
+    inline GetCampaignResult& WithSignalsToFetch(Aws::Vector<SignalFetchInformation>&& value) { SetSignalsToFetch(std::move(value)); return *this;}
+    inline GetCampaignResult& AddSignalsToFetch(const SignalFetchInformation& value) { m_signalsToFetch.push_back(value); return *this; }
+    inline GetCampaignResult& AddSignalsToFetch(SignalFetchInformation&& value) { m_signalsToFetch.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -332,6 +363,10 @@ namespace Model
     Aws::Utils::DateTime m_lastModificationTime;
 
     Aws::Vector<DataDestinationConfig> m_dataDestinationConfigs;
+
+    Aws::Vector<DataPartition> m_dataPartitions;
+
+    Aws::Vector<SignalFetchInformation> m_signalsToFetch;
 
     Aws::String m_requestId;
   };

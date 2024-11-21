@@ -13,7 +13,8 @@ using namespace Aws::Utils;
 ModifyUserGroupRequest::ModifyUserGroupRequest() : 
     m_userGroupIdHasBeenSet(false),
     m_userIdsToAddHasBeenSet(false),
-    m_userIdsToRemoveHasBeenSet(false)
+    m_userIdsToRemoveHasBeenSet(false),
+    m_engineHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,11 @@ Aws::String ModifyUserGroupRequest::SerializePayload() const
         userIdsToRemoveCount++;
       }
     }
+  }
+
+  if(m_engineHasBeenSet)
+  {
+    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
   ss << "Version=2015-02-02";

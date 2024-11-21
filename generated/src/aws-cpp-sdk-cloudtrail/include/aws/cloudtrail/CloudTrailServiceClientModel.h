@@ -21,9 +21,11 @@
 #include <aws/cloudtrail/model/AddTagsResult.h>
 #include <aws/cloudtrail/model/CancelQueryResult.h>
 #include <aws/cloudtrail/model/CreateChannelResult.h>
+#include <aws/cloudtrail/model/CreateDashboardResult.h>
 #include <aws/cloudtrail/model/CreateEventDataStoreResult.h>
 #include <aws/cloudtrail/model/CreateTrailResult.h>
 #include <aws/cloudtrail/model/DeleteChannelResult.h>
+#include <aws/cloudtrail/model/DeleteDashboardResult.h>
 #include <aws/cloudtrail/model/DeleteEventDataStoreResult.h>
 #include <aws/cloudtrail/model/DeleteResourcePolicyResult.h>
 #include <aws/cloudtrail/model/DeleteTrailResult.h>
@@ -34,6 +36,7 @@
 #include <aws/cloudtrail/model/EnableFederationResult.h>
 #include <aws/cloudtrail/model/GenerateQueryResult.h>
 #include <aws/cloudtrail/model/GetChannelResult.h>
+#include <aws/cloudtrail/model/GetDashboardResult.h>
 #include <aws/cloudtrail/model/GetEventDataStoreResult.h>
 #include <aws/cloudtrail/model/GetEventSelectorsResult.h>
 #include <aws/cloudtrail/model/GetImportResult.h>
@@ -43,6 +46,7 @@
 #include <aws/cloudtrail/model/GetTrailResult.h>
 #include <aws/cloudtrail/model/GetTrailStatusResult.h>
 #include <aws/cloudtrail/model/ListChannelsResult.h>
+#include <aws/cloudtrail/model/ListDashboardsResult.h>
 #include <aws/cloudtrail/model/ListEventDataStoresResult.h>
 #include <aws/cloudtrail/model/ListImportFailuresResult.h>
 #include <aws/cloudtrail/model/ListImportsResult.h>
@@ -58,6 +62,7 @@
 #include <aws/cloudtrail/model/RegisterOrganizationDelegatedAdminResult.h>
 #include <aws/cloudtrail/model/RemoveTagsResult.h>
 #include <aws/cloudtrail/model/RestoreEventDataStoreResult.h>
+#include <aws/cloudtrail/model/StartDashboardRefreshResult.h>
 #include <aws/cloudtrail/model/StartEventDataStoreIngestionResult.h>
 #include <aws/cloudtrail/model/StartImportResult.h>
 #include <aws/cloudtrail/model/StartLoggingResult.h>
@@ -66,9 +71,11 @@
 #include <aws/cloudtrail/model/StopImportResult.h>
 #include <aws/cloudtrail/model/StopLoggingResult.h>
 #include <aws/cloudtrail/model/UpdateChannelResult.h>
+#include <aws/cloudtrail/model/UpdateDashboardResult.h>
 #include <aws/cloudtrail/model/UpdateEventDataStoreResult.h>
 #include <aws/cloudtrail/model/UpdateTrailResult.h>
 #include <aws/cloudtrail/model/ListImportsRequest.h>
+#include <aws/cloudtrail/model/ListDashboardsRequest.h>
 #include <aws/cloudtrail/model/ListChannelsRequest.h>
 #include <aws/cloudtrail/model/DescribeQueryRequest.h>
 #include <aws/cloudtrail/model/GetInsightSelectorsRequest.h>
@@ -122,9 +129,11 @@ namespace Aws
       class AddTagsRequest;
       class CancelQueryRequest;
       class CreateChannelRequest;
+      class CreateDashboardRequest;
       class CreateEventDataStoreRequest;
       class CreateTrailRequest;
       class DeleteChannelRequest;
+      class DeleteDashboardRequest;
       class DeleteEventDataStoreRequest;
       class DeleteResourcePolicyRequest;
       class DeleteTrailRequest;
@@ -135,6 +144,7 @@ namespace Aws
       class EnableFederationRequest;
       class GenerateQueryRequest;
       class GetChannelRequest;
+      class GetDashboardRequest;
       class GetEventDataStoreRequest;
       class GetEventSelectorsRequest;
       class GetImportRequest;
@@ -144,6 +154,7 @@ namespace Aws
       class GetTrailRequest;
       class GetTrailStatusRequest;
       class ListChannelsRequest;
+      class ListDashboardsRequest;
       class ListEventDataStoresRequest;
       class ListImportFailuresRequest;
       class ListImportsRequest;
@@ -159,6 +170,7 @@ namespace Aws
       class RegisterOrganizationDelegatedAdminRequest;
       class RemoveTagsRequest;
       class RestoreEventDataStoreRequest;
+      class StartDashboardRefreshRequest;
       class StartEventDataStoreIngestionRequest;
       class StartImportRequest;
       class StartLoggingRequest;
@@ -167,6 +179,7 @@ namespace Aws
       class StopImportRequest;
       class StopLoggingRequest;
       class UpdateChannelRequest;
+      class UpdateDashboardRequest;
       class UpdateEventDataStoreRequest;
       class UpdateTrailRequest;
       /* End of service model forward declarations required in CloudTrailClient header */
@@ -175,9 +188,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<AddTagsResult, CloudTrailError> AddTagsOutcome;
       typedef Aws::Utils::Outcome<CancelQueryResult, CloudTrailError> CancelQueryOutcome;
       typedef Aws::Utils::Outcome<CreateChannelResult, CloudTrailError> CreateChannelOutcome;
+      typedef Aws::Utils::Outcome<CreateDashboardResult, CloudTrailError> CreateDashboardOutcome;
       typedef Aws::Utils::Outcome<CreateEventDataStoreResult, CloudTrailError> CreateEventDataStoreOutcome;
       typedef Aws::Utils::Outcome<CreateTrailResult, CloudTrailError> CreateTrailOutcome;
       typedef Aws::Utils::Outcome<DeleteChannelResult, CloudTrailError> DeleteChannelOutcome;
+      typedef Aws::Utils::Outcome<DeleteDashboardResult, CloudTrailError> DeleteDashboardOutcome;
       typedef Aws::Utils::Outcome<DeleteEventDataStoreResult, CloudTrailError> DeleteEventDataStoreOutcome;
       typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, CloudTrailError> DeleteResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<DeleteTrailResult, CloudTrailError> DeleteTrailOutcome;
@@ -188,6 +203,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<EnableFederationResult, CloudTrailError> EnableFederationOutcome;
       typedef Aws::Utils::Outcome<GenerateQueryResult, CloudTrailError> GenerateQueryOutcome;
       typedef Aws::Utils::Outcome<GetChannelResult, CloudTrailError> GetChannelOutcome;
+      typedef Aws::Utils::Outcome<GetDashboardResult, CloudTrailError> GetDashboardOutcome;
       typedef Aws::Utils::Outcome<GetEventDataStoreResult, CloudTrailError> GetEventDataStoreOutcome;
       typedef Aws::Utils::Outcome<GetEventSelectorsResult, CloudTrailError> GetEventSelectorsOutcome;
       typedef Aws::Utils::Outcome<GetImportResult, CloudTrailError> GetImportOutcome;
@@ -197,6 +213,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetTrailResult, CloudTrailError> GetTrailOutcome;
       typedef Aws::Utils::Outcome<GetTrailStatusResult, CloudTrailError> GetTrailStatusOutcome;
       typedef Aws::Utils::Outcome<ListChannelsResult, CloudTrailError> ListChannelsOutcome;
+      typedef Aws::Utils::Outcome<ListDashboardsResult, CloudTrailError> ListDashboardsOutcome;
       typedef Aws::Utils::Outcome<ListEventDataStoresResult, CloudTrailError> ListEventDataStoresOutcome;
       typedef Aws::Utils::Outcome<ListImportFailuresResult, CloudTrailError> ListImportFailuresOutcome;
       typedef Aws::Utils::Outcome<ListImportsResult, CloudTrailError> ListImportsOutcome;
@@ -212,6 +229,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<RegisterOrganizationDelegatedAdminResult, CloudTrailError> RegisterOrganizationDelegatedAdminOutcome;
       typedef Aws::Utils::Outcome<RemoveTagsResult, CloudTrailError> RemoveTagsOutcome;
       typedef Aws::Utils::Outcome<RestoreEventDataStoreResult, CloudTrailError> RestoreEventDataStoreOutcome;
+      typedef Aws::Utils::Outcome<StartDashboardRefreshResult, CloudTrailError> StartDashboardRefreshOutcome;
       typedef Aws::Utils::Outcome<StartEventDataStoreIngestionResult, CloudTrailError> StartEventDataStoreIngestionOutcome;
       typedef Aws::Utils::Outcome<StartImportResult, CloudTrailError> StartImportOutcome;
       typedef Aws::Utils::Outcome<StartLoggingResult, CloudTrailError> StartLoggingOutcome;
@@ -220,6 +238,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StopImportResult, CloudTrailError> StopImportOutcome;
       typedef Aws::Utils::Outcome<StopLoggingResult, CloudTrailError> StopLoggingOutcome;
       typedef Aws::Utils::Outcome<UpdateChannelResult, CloudTrailError> UpdateChannelOutcome;
+      typedef Aws::Utils::Outcome<UpdateDashboardResult, CloudTrailError> UpdateDashboardOutcome;
       typedef Aws::Utils::Outcome<UpdateEventDataStoreResult, CloudTrailError> UpdateEventDataStoreOutcome;
       typedef Aws::Utils::Outcome<UpdateTrailResult, CloudTrailError> UpdateTrailOutcome;
       /* End of service model Outcome class definitions */
@@ -228,9 +247,11 @@ namespace Aws
       typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
       typedef std::future<CancelQueryOutcome> CancelQueryOutcomeCallable;
       typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
+      typedef std::future<CreateDashboardOutcome> CreateDashboardOutcomeCallable;
       typedef std::future<CreateEventDataStoreOutcome> CreateEventDataStoreOutcomeCallable;
       typedef std::future<CreateTrailOutcome> CreateTrailOutcomeCallable;
       typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
+      typedef std::future<DeleteDashboardOutcome> DeleteDashboardOutcomeCallable;
       typedef std::future<DeleteEventDataStoreOutcome> DeleteEventDataStoreOutcomeCallable;
       typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
       typedef std::future<DeleteTrailOutcome> DeleteTrailOutcomeCallable;
@@ -241,6 +262,7 @@ namespace Aws
       typedef std::future<EnableFederationOutcome> EnableFederationOutcomeCallable;
       typedef std::future<GenerateQueryOutcome> GenerateQueryOutcomeCallable;
       typedef std::future<GetChannelOutcome> GetChannelOutcomeCallable;
+      typedef std::future<GetDashboardOutcome> GetDashboardOutcomeCallable;
       typedef std::future<GetEventDataStoreOutcome> GetEventDataStoreOutcomeCallable;
       typedef std::future<GetEventSelectorsOutcome> GetEventSelectorsOutcomeCallable;
       typedef std::future<GetImportOutcome> GetImportOutcomeCallable;
@@ -250,6 +272,7 @@ namespace Aws
       typedef std::future<GetTrailOutcome> GetTrailOutcomeCallable;
       typedef std::future<GetTrailStatusOutcome> GetTrailStatusOutcomeCallable;
       typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
+      typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
       typedef std::future<ListEventDataStoresOutcome> ListEventDataStoresOutcomeCallable;
       typedef std::future<ListImportFailuresOutcome> ListImportFailuresOutcomeCallable;
       typedef std::future<ListImportsOutcome> ListImportsOutcomeCallable;
@@ -265,6 +288,7 @@ namespace Aws
       typedef std::future<RegisterOrganizationDelegatedAdminOutcome> RegisterOrganizationDelegatedAdminOutcomeCallable;
       typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
       typedef std::future<RestoreEventDataStoreOutcome> RestoreEventDataStoreOutcomeCallable;
+      typedef std::future<StartDashboardRefreshOutcome> StartDashboardRefreshOutcomeCallable;
       typedef std::future<StartEventDataStoreIngestionOutcome> StartEventDataStoreIngestionOutcomeCallable;
       typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
       typedef std::future<StartLoggingOutcome> StartLoggingOutcomeCallable;
@@ -273,6 +297,7 @@ namespace Aws
       typedef std::future<StopImportOutcome> StopImportOutcomeCallable;
       typedef std::future<StopLoggingOutcome> StopLoggingOutcomeCallable;
       typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
+      typedef std::future<UpdateDashboardOutcome> UpdateDashboardOutcomeCallable;
       typedef std::future<UpdateEventDataStoreOutcome> UpdateEventDataStoreOutcomeCallable;
       typedef std::future<UpdateTrailOutcome> UpdateTrailOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -284,9 +309,11 @@ namespace Aws
     typedef std::function<void(const CloudTrailClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::CancelQueryRequest&, const Model::CancelQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelQueryResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::CreateDashboardRequest&, const Model::CreateDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDashboardResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::CreateEventDataStoreRequest&, const Model::CreateEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventDataStoreResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::CreateTrailRequest&, const Model::CreateTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrailResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::DeleteDashboardRequest&, const Model::DeleteDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDashboardResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::DeleteEventDataStoreRequest&, const Model::DeleteEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventDataStoreResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::DeleteTrailRequest&, const Model::DeleteTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrailResponseReceivedHandler;
@@ -297,6 +324,7 @@ namespace Aws
     typedef std::function<void(const CloudTrailClient*, const Model::EnableFederationRequest&, const Model::EnableFederationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableFederationResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GenerateQueryRequest&, const Model::GenerateQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateQueryResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetChannelRequest&, const Model::GetChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::GetDashboardRequest&, const Model::GetDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDashboardResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetEventDataStoreRequest&, const Model::GetEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventDataStoreResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetEventSelectorsRequest&, const Model::GetEventSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventSelectorsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetImportRequest&, const Model::GetImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportResponseReceivedHandler;
@@ -306,6 +334,7 @@ namespace Aws
     typedef std::function<void(const CloudTrailClient*, const Model::GetTrailRequest&, const Model::GetTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrailResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetTrailStatusRequest&, const Model::GetTrailStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrailStatusResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::ListDashboardsRequest&, const Model::ListDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListEventDataStoresRequest&, const Model::ListEventDataStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventDataStoresResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListImportFailuresRequest&, const Model::ListImportFailuresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportFailuresResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListImportsRequest&, const Model::ListImportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportsResponseReceivedHandler;
@@ -321,6 +350,7 @@ namespace Aws
     typedef std::function<void(const CloudTrailClient*, const Model::RegisterOrganizationDelegatedAdminRequest&, const Model::RegisterOrganizationDelegatedAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterOrganizationDelegatedAdminResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::RestoreEventDataStoreRequest&, const Model::RestoreEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreEventDataStoreResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::StartDashboardRefreshRequest&, const Model::StartDashboardRefreshOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDashboardRefreshResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StartEventDataStoreIngestionRequest&, const Model::StartEventDataStoreIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEventDataStoreIngestionResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StartImportRequest&, const Model::StartImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StartLoggingRequest&, const Model::StartLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLoggingResponseReceivedHandler;
@@ -329,6 +359,7 @@ namespace Aws
     typedef std::function<void(const CloudTrailClient*, const Model::StopImportRequest&, const Model::StopImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopImportResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StopLoggingRequest&, const Model::StopLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopLoggingResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::UpdateDashboardRequest&, const Model::UpdateDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDashboardResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::UpdateEventDataStoreRequest&, const Model::UpdateEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventDataStoreResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::UpdateTrailRequest&, const Model::UpdateTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrailResponseReceivedHandler;
     /* End of service model async handlers definitions */

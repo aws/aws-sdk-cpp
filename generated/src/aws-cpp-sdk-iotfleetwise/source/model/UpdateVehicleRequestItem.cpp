@@ -24,7 +24,9 @@ UpdateVehicleRequestItem::UpdateVehicleRequestItem() :
     m_decoderManifestArnHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_attributeUpdateMode(UpdateMode::NOT_SET),
-    m_attributeUpdateModeHasBeenSet(false)
+    m_attributeUpdateModeHasBeenSet(false),
+    m_stateTemplatesToAddHasBeenSet(false),
+    m_stateTemplatesToRemoveHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,26 @@ UpdateVehicleRequestItem& UpdateVehicleRequestItem::operator =(JsonView jsonValu
     m_attributeUpdateModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stateTemplatesToAdd"))
+  {
+    Aws::Utils::Array<JsonView> stateTemplatesToAddJsonList = jsonValue.GetArray("stateTemplatesToAdd");
+    for(unsigned stateTemplatesToAddIndex = 0; stateTemplatesToAddIndex < stateTemplatesToAddJsonList.GetLength(); ++stateTemplatesToAddIndex)
+    {
+      m_stateTemplatesToAdd.push_back(stateTemplatesToAddJsonList[stateTemplatesToAddIndex].AsObject());
+    }
+    m_stateTemplatesToAddHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stateTemplatesToRemove"))
+  {
+    Aws::Utils::Array<JsonView> stateTemplatesToRemoveJsonList = jsonValue.GetArray("stateTemplatesToRemove");
+    for(unsigned stateTemplatesToRemoveIndex = 0; stateTemplatesToRemoveIndex < stateTemplatesToRemoveJsonList.GetLength(); ++stateTemplatesToRemoveIndex)
+    {
+      m_stateTemplatesToRemove.push_back(stateTemplatesToRemoveJsonList[stateTemplatesToRemoveIndex].AsString());
+    }
+    m_stateTemplatesToRemoveHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +135,28 @@ JsonValue UpdateVehicleRequestItem::Jsonize() const
   if(m_attributeUpdateModeHasBeenSet)
   {
    payload.WithString("attributeUpdateMode", UpdateModeMapper::GetNameForUpdateMode(m_attributeUpdateMode));
+  }
+
+  if(m_stateTemplatesToAddHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> stateTemplatesToAddJsonList(m_stateTemplatesToAdd.size());
+   for(unsigned stateTemplatesToAddIndex = 0; stateTemplatesToAddIndex < stateTemplatesToAddJsonList.GetLength(); ++stateTemplatesToAddIndex)
+   {
+     stateTemplatesToAddJsonList[stateTemplatesToAddIndex].AsObject(m_stateTemplatesToAdd[stateTemplatesToAddIndex].Jsonize());
+   }
+   payload.WithArray("stateTemplatesToAdd", std::move(stateTemplatesToAddJsonList));
+
+  }
+
+  if(m_stateTemplatesToRemoveHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> stateTemplatesToRemoveJsonList(m_stateTemplatesToRemove.size());
+   for(unsigned stateTemplatesToRemoveIndex = 0; stateTemplatesToRemoveIndex < stateTemplatesToRemoveJsonList.GetLength(); ++stateTemplatesToRemoveIndex)
+   {
+     stateTemplatesToRemoveJsonList[stateTemplatesToRemoveIndex].AsString(m_stateTemplatesToRemove[stateTemplatesToRemoveIndex]);
+   }
+   payload.WithArray("stateTemplatesToRemove", std::move(stateTemplatesToRemoveJsonList));
+
   }
 
   return payload;

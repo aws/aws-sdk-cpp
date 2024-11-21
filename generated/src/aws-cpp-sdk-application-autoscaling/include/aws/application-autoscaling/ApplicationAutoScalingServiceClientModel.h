@@ -25,6 +25,7 @@
 #include <aws/application-autoscaling/model/DescribeScalingActivitiesResult.h>
 #include <aws/application-autoscaling/model/DescribeScalingPoliciesResult.h>
 #include <aws/application-autoscaling/model/DescribeScheduledActionsResult.h>
+#include <aws/application-autoscaling/model/GetPredictiveScalingForecastResult.h>
 #include <aws/application-autoscaling/model/ListTagsForResourceResult.h>
 #include <aws/application-autoscaling/model/PutScalingPolicyResult.h>
 #include <aws/application-autoscaling/model/PutScheduledActionResult.h>
@@ -78,6 +79,7 @@ namespace Aws
       class DescribeScalingActivitiesRequest;
       class DescribeScalingPoliciesRequest;
       class DescribeScheduledActionsRequest;
+      class GetPredictiveScalingForecastRequest;
       class ListTagsForResourceRequest;
       class PutScalingPolicyRequest;
       class PutScheduledActionRequest;
@@ -94,6 +96,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeScalingActivitiesResult, ApplicationAutoScalingError> DescribeScalingActivitiesOutcome;
       typedef Aws::Utils::Outcome<DescribeScalingPoliciesResult, ApplicationAutoScalingError> DescribeScalingPoliciesOutcome;
       typedef Aws::Utils::Outcome<DescribeScheduledActionsResult, ApplicationAutoScalingError> DescribeScheduledActionsOutcome;
+      typedef Aws::Utils::Outcome<GetPredictiveScalingForecastResult, ApplicationAutoScalingError> GetPredictiveScalingForecastOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ApplicationAutoScalingError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutScalingPolicyResult, ApplicationAutoScalingError> PutScalingPolicyOutcome;
       typedef Aws::Utils::Outcome<PutScheduledActionResult, ApplicationAutoScalingError> PutScheduledActionOutcome;
@@ -110,6 +113,7 @@ namespace Aws
       typedef std::future<DescribeScalingActivitiesOutcome> DescribeScalingActivitiesOutcomeCallable;
       typedef std::future<DescribeScalingPoliciesOutcome> DescribeScalingPoliciesOutcomeCallable;
       typedef std::future<DescribeScheduledActionsOutcome> DescribeScheduledActionsOutcomeCallable;
+      typedef std::future<GetPredictiveScalingForecastOutcome> GetPredictiveScalingForecastOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
       typedef std::future<PutScheduledActionOutcome> PutScheduledActionOutcomeCallable;
@@ -129,6 +133,7 @@ namespace Aws
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DescribeScalingActivitiesRequest&, const Model::DescribeScalingActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingActivitiesResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DescribeScalingPoliciesRequest&, const Model::DescribeScalingPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingPoliciesResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::DescribeScheduledActionsRequest&, const Model::DescribeScheduledActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduledActionsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationAutoScalingClient*, const Model::GetPredictiveScalingForecastRequest&, const Model::GetPredictiveScalingForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPredictiveScalingForecastResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::PutScalingPolicyRequest&, const Model::PutScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const ApplicationAutoScalingClient*, const Model::PutScheduledActionRequest&, const Model::PutScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScheduledActionResponseReceivedHandler;

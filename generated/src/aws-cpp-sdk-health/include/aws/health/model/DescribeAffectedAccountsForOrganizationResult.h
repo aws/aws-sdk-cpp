@@ -50,8 +50,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter specifies if the Health event is a public Amazon Web Service
-     * event or an account-specific event.</p> <ul> <li> <p>If the
+     * <p>This parameter specifies if the Health event is a public Amazon Web Services
+     * service event or an account-specific event.</p> <ul> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
      * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the

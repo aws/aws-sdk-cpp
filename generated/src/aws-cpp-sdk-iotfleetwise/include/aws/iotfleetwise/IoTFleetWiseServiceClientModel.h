@@ -26,12 +26,14 @@
 #include <aws/iotfleetwise/model/CreateFleetResult.h>
 #include <aws/iotfleetwise/model/CreateModelManifestResult.h>
 #include <aws/iotfleetwise/model/CreateSignalCatalogResult.h>
+#include <aws/iotfleetwise/model/CreateStateTemplateResult.h>
 #include <aws/iotfleetwise/model/CreateVehicleResult.h>
 #include <aws/iotfleetwise/model/DeleteCampaignResult.h>
 #include <aws/iotfleetwise/model/DeleteDecoderManifestResult.h>
 #include <aws/iotfleetwise/model/DeleteFleetResult.h>
 #include <aws/iotfleetwise/model/DeleteModelManifestResult.h>
 #include <aws/iotfleetwise/model/DeleteSignalCatalogResult.h>
+#include <aws/iotfleetwise/model/DeleteStateTemplateResult.h>
 #include <aws/iotfleetwise/model/DeleteVehicleResult.h>
 #include <aws/iotfleetwise/model/DisassociateVehicleFleetResult.h>
 #include <aws/iotfleetwise/model/GetCampaignResult.h>
@@ -42,6 +44,7 @@
 #include <aws/iotfleetwise/model/GetModelManifestResult.h>
 #include <aws/iotfleetwise/model/GetRegisterAccountStatusResult.h>
 #include <aws/iotfleetwise/model/GetSignalCatalogResult.h>
+#include <aws/iotfleetwise/model/GetStateTemplateResult.h>
 #include <aws/iotfleetwise/model/GetVehicleResult.h>
 #include <aws/iotfleetwise/model/GetVehicleStatusResult.h>
 #include <aws/iotfleetwise/model/ImportDecoderManifestResult.h>
@@ -56,6 +59,7 @@
 #include <aws/iotfleetwise/model/ListModelManifestsResult.h>
 #include <aws/iotfleetwise/model/ListSignalCatalogNodesResult.h>
 #include <aws/iotfleetwise/model/ListSignalCatalogsResult.h>
+#include <aws/iotfleetwise/model/ListStateTemplatesResult.h>
 #include <aws/iotfleetwise/model/ListTagsForResourceResult.h>
 #include <aws/iotfleetwise/model/ListVehiclesResult.h>
 #include <aws/iotfleetwise/model/ListVehiclesInFleetResult.h>
@@ -69,8 +73,10 @@
 #include <aws/iotfleetwise/model/UpdateFleetResult.h>
 #include <aws/iotfleetwise/model/UpdateModelManifestResult.h>
 #include <aws/iotfleetwise/model/UpdateSignalCatalogResult.h>
+#include <aws/iotfleetwise/model/UpdateStateTemplateResult.h>
 #include <aws/iotfleetwise/model/UpdateVehicleResult.h>
 #include <aws/iotfleetwise/model/ListModelManifestsRequest.h>
+#include <aws/iotfleetwise/model/ListStateTemplatesRequest.h>
 #include <aws/iotfleetwise/model/ListVehiclesRequest.h>
 #include <aws/iotfleetwise/model/GetRegisterAccountStatusRequest.h>
 #include <aws/iotfleetwise/model/RegisterAccountRequest.h>
@@ -128,12 +134,14 @@ namespace Aws
       class CreateFleetRequest;
       class CreateModelManifestRequest;
       class CreateSignalCatalogRequest;
+      class CreateStateTemplateRequest;
       class CreateVehicleRequest;
       class DeleteCampaignRequest;
       class DeleteDecoderManifestRequest;
       class DeleteFleetRequest;
       class DeleteModelManifestRequest;
       class DeleteSignalCatalogRequest;
+      class DeleteStateTemplateRequest;
       class DeleteVehicleRequest;
       class DisassociateVehicleFleetRequest;
       class GetCampaignRequest;
@@ -144,6 +152,7 @@ namespace Aws
       class GetModelManifestRequest;
       class GetRegisterAccountStatusRequest;
       class GetSignalCatalogRequest;
+      class GetStateTemplateRequest;
       class GetVehicleRequest;
       class GetVehicleStatusRequest;
       class ImportDecoderManifestRequest;
@@ -158,6 +167,7 @@ namespace Aws
       class ListModelManifestsRequest;
       class ListSignalCatalogNodesRequest;
       class ListSignalCatalogsRequest;
+      class ListStateTemplatesRequest;
       class ListTagsForResourceRequest;
       class ListVehiclesRequest;
       class ListVehiclesInFleetRequest;
@@ -171,6 +181,7 @@ namespace Aws
       class UpdateFleetRequest;
       class UpdateModelManifestRequest;
       class UpdateSignalCatalogRequest;
+      class UpdateStateTemplateRequest;
       class UpdateVehicleRequest;
       /* End of service model forward declarations required in IoTFleetWiseClient header */
 
@@ -183,12 +194,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateFleetResult, IoTFleetWiseError> CreateFleetOutcome;
       typedef Aws::Utils::Outcome<CreateModelManifestResult, IoTFleetWiseError> CreateModelManifestOutcome;
       typedef Aws::Utils::Outcome<CreateSignalCatalogResult, IoTFleetWiseError> CreateSignalCatalogOutcome;
+      typedef Aws::Utils::Outcome<CreateStateTemplateResult, IoTFleetWiseError> CreateStateTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateVehicleResult, IoTFleetWiseError> CreateVehicleOutcome;
       typedef Aws::Utils::Outcome<DeleteCampaignResult, IoTFleetWiseError> DeleteCampaignOutcome;
       typedef Aws::Utils::Outcome<DeleteDecoderManifestResult, IoTFleetWiseError> DeleteDecoderManifestOutcome;
       typedef Aws::Utils::Outcome<DeleteFleetResult, IoTFleetWiseError> DeleteFleetOutcome;
       typedef Aws::Utils::Outcome<DeleteModelManifestResult, IoTFleetWiseError> DeleteModelManifestOutcome;
       typedef Aws::Utils::Outcome<DeleteSignalCatalogResult, IoTFleetWiseError> DeleteSignalCatalogOutcome;
+      typedef Aws::Utils::Outcome<DeleteStateTemplateResult, IoTFleetWiseError> DeleteStateTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteVehicleResult, IoTFleetWiseError> DeleteVehicleOutcome;
       typedef Aws::Utils::Outcome<DisassociateVehicleFleetResult, IoTFleetWiseError> DisassociateVehicleFleetOutcome;
       typedef Aws::Utils::Outcome<GetCampaignResult, IoTFleetWiseError> GetCampaignOutcome;
@@ -199,6 +212,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetModelManifestResult, IoTFleetWiseError> GetModelManifestOutcome;
       typedef Aws::Utils::Outcome<GetRegisterAccountStatusResult, IoTFleetWiseError> GetRegisterAccountStatusOutcome;
       typedef Aws::Utils::Outcome<GetSignalCatalogResult, IoTFleetWiseError> GetSignalCatalogOutcome;
+      typedef Aws::Utils::Outcome<GetStateTemplateResult, IoTFleetWiseError> GetStateTemplateOutcome;
       typedef Aws::Utils::Outcome<GetVehicleResult, IoTFleetWiseError> GetVehicleOutcome;
       typedef Aws::Utils::Outcome<GetVehicleStatusResult, IoTFleetWiseError> GetVehicleStatusOutcome;
       typedef Aws::Utils::Outcome<ImportDecoderManifestResult, IoTFleetWiseError> ImportDecoderManifestOutcome;
@@ -213,6 +227,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListModelManifestsResult, IoTFleetWiseError> ListModelManifestsOutcome;
       typedef Aws::Utils::Outcome<ListSignalCatalogNodesResult, IoTFleetWiseError> ListSignalCatalogNodesOutcome;
       typedef Aws::Utils::Outcome<ListSignalCatalogsResult, IoTFleetWiseError> ListSignalCatalogsOutcome;
+      typedef Aws::Utils::Outcome<ListStateTemplatesResult, IoTFleetWiseError> ListStateTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTFleetWiseError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListVehiclesResult, IoTFleetWiseError> ListVehiclesOutcome;
       typedef Aws::Utils::Outcome<ListVehiclesInFleetResult, IoTFleetWiseError> ListVehiclesInFleetOutcome;
@@ -226,6 +241,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateFleetResult, IoTFleetWiseError> UpdateFleetOutcome;
       typedef Aws::Utils::Outcome<UpdateModelManifestResult, IoTFleetWiseError> UpdateModelManifestOutcome;
       typedef Aws::Utils::Outcome<UpdateSignalCatalogResult, IoTFleetWiseError> UpdateSignalCatalogOutcome;
+      typedef Aws::Utils::Outcome<UpdateStateTemplateResult, IoTFleetWiseError> UpdateStateTemplateOutcome;
       typedef Aws::Utils::Outcome<UpdateVehicleResult, IoTFleetWiseError> UpdateVehicleOutcome;
       /* End of service model Outcome class definitions */
 
@@ -238,12 +254,14 @@ namespace Aws
       typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
       typedef std::future<CreateModelManifestOutcome> CreateModelManifestOutcomeCallable;
       typedef std::future<CreateSignalCatalogOutcome> CreateSignalCatalogOutcomeCallable;
+      typedef std::future<CreateStateTemplateOutcome> CreateStateTemplateOutcomeCallable;
       typedef std::future<CreateVehicleOutcome> CreateVehicleOutcomeCallable;
       typedef std::future<DeleteCampaignOutcome> DeleteCampaignOutcomeCallable;
       typedef std::future<DeleteDecoderManifestOutcome> DeleteDecoderManifestOutcomeCallable;
       typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
       typedef std::future<DeleteModelManifestOutcome> DeleteModelManifestOutcomeCallable;
       typedef std::future<DeleteSignalCatalogOutcome> DeleteSignalCatalogOutcomeCallable;
+      typedef std::future<DeleteStateTemplateOutcome> DeleteStateTemplateOutcomeCallable;
       typedef std::future<DeleteVehicleOutcome> DeleteVehicleOutcomeCallable;
       typedef std::future<DisassociateVehicleFleetOutcome> DisassociateVehicleFleetOutcomeCallable;
       typedef std::future<GetCampaignOutcome> GetCampaignOutcomeCallable;
@@ -254,6 +272,7 @@ namespace Aws
       typedef std::future<GetModelManifestOutcome> GetModelManifestOutcomeCallable;
       typedef std::future<GetRegisterAccountStatusOutcome> GetRegisterAccountStatusOutcomeCallable;
       typedef std::future<GetSignalCatalogOutcome> GetSignalCatalogOutcomeCallable;
+      typedef std::future<GetStateTemplateOutcome> GetStateTemplateOutcomeCallable;
       typedef std::future<GetVehicleOutcome> GetVehicleOutcomeCallable;
       typedef std::future<GetVehicleStatusOutcome> GetVehicleStatusOutcomeCallable;
       typedef std::future<ImportDecoderManifestOutcome> ImportDecoderManifestOutcomeCallable;
@@ -268,6 +287,7 @@ namespace Aws
       typedef std::future<ListModelManifestsOutcome> ListModelManifestsOutcomeCallable;
       typedef std::future<ListSignalCatalogNodesOutcome> ListSignalCatalogNodesOutcomeCallable;
       typedef std::future<ListSignalCatalogsOutcome> ListSignalCatalogsOutcomeCallable;
+      typedef std::future<ListStateTemplatesOutcome> ListStateTemplatesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListVehiclesOutcome> ListVehiclesOutcomeCallable;
       typedef std::future<ListVehiclesInFleetOutcome> ListVehiclesInFleetOutcomeCallable;
@@ -281,6 +301,7 @@ namespace Aws
       typedef std::future<UpdateFleetOutcome> UpdateFleetOutcomeCallable;
       typedef std::future<UpdateModelManifestOutcome> UpdateModelManifestOutcomeCallable;
       typedef std::future<UpdateSignalCatalogOutcome> UpdateSignalCatalogOutcomeCallable;
+      typedef std::future<UpdateStateTemplateOutcome> UpdateStateTemplateOutcomeCallable;
       typedef std::future<UpdateVehicleOutcome> UpdateVehicleOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -296,12 +317,14 @@ namespace Aws
     typedef std::function<void(const IoTFleetWiseClient*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::CreateModelManifestRequest&, const Model::CreateModelManifestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelManifestResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::CreateSignalCatalogRequest&, const Model::CreateSignalCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSignalCatalogResponseReceivedHandler;
+    typedef std::function<void(const IoTFleetWiseClient*, const Model::CreateStateTemplateRequest&, const Model::CreateStateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStateTemplateResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::CreateVehicleRequest&, const Model::CreateVehicleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVehicleResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::DeleteCampaignRequest&, const Model::DeleteCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCampaignResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::DeleteDecoderManifestRequest&, const Model::DeleteDecoderManifestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDecoderManifestResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::DeleteFleetRequest&, const Model::DeleteFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::DeleteModelManifestRequest&, const Model::DeleteModelManifestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelManifestResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::DeleteSignalCatalogRequest&, const Model::DeleteSignalCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSignalCatalogResponseReceivedHandler;
+    typedef std::function<void(const IoTFleetWiseClient*, const Model::DeleteStateTemplateRequest&, const Model::DeleteStateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStateTemplateResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::DeleteVehicleRequest&, const Model::DeleteVehicleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVehicleResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::DisassociateVehicleFleetRequest&, const Model::DisassociateVehicleFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVehicleFleetResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::GetCampaignRequest&, const Model::GetCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCampaignResponseReceivedHandler;
@@ -312,6 +335,7 @@ namespace Aws
     typedef std::function<void(const IoTFleetWiseClient*, const Model::GetModelManifestRequest&, const Model::GetModelManifestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetModelManifestResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::GetRegisterAccountStatusRequest&, const Model::GetRegisterAccountStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegisterAccountStatusResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::GetSignalCatalogRequest&, const Model::GetSignalCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSignalCatalogResponseReceivedHandler;
+    typedef std::function<void(const IoTFleetWiseClient*, const Model::GetStateTemplateRequest&, const Model::GetStateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStateTemplateResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::GetVehicleRequest&, const Model::GetVehicleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVehicleResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::GetVehicleStatusRequest&, const Model::GetVehicleStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVehicleStatusResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::ImportDecoderManifestRequest&, const Model::ImportDecoderManifestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportDecoderManifestResponseReceivedHandler;
@@ -326,6 +350,7 @@ namespace Aws
     typedef std::function<void(const IoTFleetWiseClient*, const Model::ListModelManifestsRequest&, const Model::ListModelManifestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelManifestsResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::ListSignalCatalogNodesRequest&, const Model::ListSignalCatalogNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSignalCatalogNodesResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::ListSignalCatalogsRequest&, const Model::ListSignalCatalogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSignalCatalogsResponseReceivedHandler;
+    typedef std::function<void(const IoTFleetWiseClient*, const Model::ListStateTemplatesRequest&, const Model::ListStateTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStateTemplatesResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::ListVehiclesRequest&, const Model::ListVehiclesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVehiclesResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::ListVehiclesInFleetRequest&, const Model::ListVehiclesInFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVehiclesInFleetResponseReceivedHandler;
@@ -339,6 +364,7 @@ namespace Aws
     typedef std::function<void(const IoTFleetWiseClient*, const Model::UpdateFleetRequest&, const Model::UpdateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::UpdateModelManifestRequest&, const Model::UpdateModelManifestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelManifestResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::UpdateSignalCatalogRequest&, const Model::UpdateSignalCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSignalCatalogResponseReceivedHandler;
+    typedef std::function<void(const IoTFleetWiseClient*, const Model::UpdateStateTemplateRequest&, const Model::UpdateStateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStateTemplateResponseReceivedHandler;
     typedef std::function<void(const IoTFleetWiseClient*, const Model::UpdateVehicleRequest&, const Model::UpdateVehicleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVehicleResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace IoTFleetWise

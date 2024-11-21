@@ -52,8 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of resiliency policy to be created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * <p>Resiliency policy to be created, including the recovery time objective (RTO)
+     * and recovery point objective (RPO) in seconds.</p>
      */
     inline const Aws::Map<DisruptionType, FailurePolicy>& GetPolicy() const{ return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
@@ -89,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description for the policy.</p>
+     * <p>Description of the resiliency policy.</p>
      */
     inline const Aws::String& GetPolicyDescription() const{ return m_policyDescription; }
     inline bool PolicyDescriptionHasBeenSet() const { return m_policyDescriptionHasBeenSet; }
@@ -103,7 +103,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the policy</p>
+     * <p>Name of the resiliency policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }

@@ -10,6 +10,7 @@
 #include <aws/iotfleetwise/model/VehicleAssociationBehavior.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotfleetwise/model/Tag.h>
+#include <aws/iotfleetwise/model/StateTemplateAssociation.h>
 #include <utility>
 
 namespace Aws
@@ -130,6 +131,21 @@ namespace Model
     inline CreateVehicleRequestItem& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline CreateVehicleRequestItem& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Associate state templates to track the state of the vehicle. State templates
+     * determine which signal updates the vehicle sends to the cloud.</p>
+     */
+    inline const Aws::Vector<StateTemplateAssociation>& GetStateTemplates() const{ return m_stateTemplates; }
+    inline bool StateTemplatesHasBeenSet() const { return m_stateTemplatesHasBeenSet; }
+    inline void SetStateTemplates(const Aws::Vector<StateTemplateAssociation>& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates = value; }
+    inline void SetStateTemplates(Aws::Vector<StateTemplateAssociation>&& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates = std::move(value); }
+    inline CreateVehicleRequestItem& WithStateTemplates(const Aws::Vector<StateTemplateAssociation>& value) { SetStateTemplates(value); return *this;}
+    inline CreateVehicleRequestItem& WithStateTemplates(Aws::Vector<StateTemplateAssociation>&& value) { SetStateTemplates(std::move(value)); return *this;}
+    inline CreateVehicleRequestItem& AddStateTemplates(const StateTemplateAssociation& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates.push_back(value); return *this; }
+    inline CreateVehicleRequestItem& AddStateTemplates(StateTemplateAssociation&& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_vehicleName;
@@ -149,6 +165,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<StateTemplateAssociation> m_stateTemplates;
+    bool m_stateTemplatesHasBeenSet = false;
   };
 
 } // namespace Model

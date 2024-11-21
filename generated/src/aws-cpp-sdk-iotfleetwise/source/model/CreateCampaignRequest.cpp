@@ -31,7 +31,9 @@ CreateCampaignRequest::CreateCampaignRequest() :
     m_collectionSchemeHasBeenSet(false),
     m_dataExtraDimensionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_dataDestinationConfigsHasBeenSet(false)
+    m_dataDestinationConfigsHasBeenSet(false),
+    m_dataPartitionsHasBeenSet(false),
+    m_signalsToFetchHasBeenSet(false)
 {
 }
 
@@ -141,6 +143,28 @@ Aws::String CreateCampaignRequest::SerializePayload() const
      dataDestinationConfigsJsonList[dataDestinationConfigsIndex].AsObject(m_dataDestinationConfigs[dataDestinationConfigsIndex].Jsonize());
    }
    payload.WithArray("dataDestinationConfigs", std::move(dataDestinationConfigsJsonList));
+
+  }
+
+  if(m_dataPartitionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dataPartitionsJsonList(m_dataPartitions.size());
+   for(unsigned dataPartitionsIndex = 0; dataPartitionsIndex < dataPartitionsJsonList.GetLength(); ++dataPartitionsIndex)
+   {
+     dataPartitionsJsonList[dataPartitionsIndex].AsObject(m_dataPartitions[dataPartitionsIndex].Jsonize());
+   }
+   payload.WithArray("dataPartitions", std::move(dataPartitionsJsonList));
+
+  }
+
+  if(m_signalsToFetchHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> signalsToFetchJsonList(m_signalsToFetch.size());
+   for(unsigned signalsToFetchIndex = 0; signalsToFetchIndex < signalsToFetchJsonList.GetLength(); ++signalsToFetchIndex)
+   {
+     signalsToFetchJsonList[signalsToFetchIndex].AsObject(m_signalsToFetch[signalsToFetchIndex].Jsonize());
+   }
+   payload.WithArray("signalsToFetch", std::move(signalsToFetchJsonList));
 
   }
 

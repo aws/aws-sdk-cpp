@@ -20,6 +20,7 @@
 /* Service model headers required in IoTJobsDataPlaneClient header */
 #include <aws/iot-jobs-data/model/DescribeJobExecutionResult.h>
 #include <aws/iot-jobs-data/model/GetPendingJobExecutionsResult.h>
+#include <aws/iot-jobs-data/model/StartCommandExecutionResult.h>
 #include <aws/iot-jobs-data/model/StartNextPendingJobExecutionResult.h>
 #include <aws/iot-jobs-data/model/UpdateJobExecutionResult.h>
 /* End of service model headers required in IoTJobsDataPlaneClient header */
@@ -64,6 +65,7 @@ namespace Aws
       /* Service model forward declarations required in IoTJobsDataPlaneClient header */
       class DescribeJobExecutionRequest;
       class GetPendingJobExecutionsRequest;
+      class StartCommandExecutionRequest;
       class StartNextPendingJobExecutionRequest;
       class UpdateJobExecutionRequest;
       /* End of service model forward declarations required in IoTJobsDataPlaneClient header */
@@ -71,6 +73,7 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<DescribeJobExecutionResult, IoTJobsDataPlaneError> DescribeJobExecutionOutcome;
       typedef Aws::Utils::Outcome<GetPendingJobExecutionsResult, IoTJobsDataPlaneError> GetPendingJobExecutionsOutcome;
+      typedef Aws::Utils::Outcome<StartCommandExecutionResult, IoTJobsDataPlaneError> StartCommandExecutionOutcome;
       typedef Aws::Utils::Outcome<StartNextPendingJobExecutionResult, IoTJobsDataPlaneError> StartNextPendingJobExecutionOutcome;
       typedef Aws::Utils::Outcome<UpdateJobExecutionResult, IoTJobsDataPlaneError> UpdateJobExecutionOutcome;
       /* End of service model Outcome class definitions */
@@ -78,6 +81,7 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<DescribeJobExecutionOutcome> DescribeJobExecutionOutcomeCallable;
       typedef std::future<GetPendingJobExecutionsOutcome> GetPendingJobExecutionsOutcomeCallable;
+      typedef std::future<StartCommandExecutionOutcome> StartCommandExecutionOutcomeCallable;
       typedef std::future<StartNextPendingJobExecutionOutcome> StartNextPendingJobExecutionOutcomeCallable;
       typedef std::future<UpdateJobExecutionOutcome> UpdateJobExecutionOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -88,6 +92,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const IoTJobsDataPlaneClient*, const Model::DescribeJobExecutionRequest&, const Model::DescribeJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobExecutionResponseReceivedHandler;
     typedef std::function<void(const IoTJobsDataPlaneClient*, const Model::GetPendingJobExecutionsRequest&, const Model::GetPendingJobExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPendingJobExecutionsResponseReceivedHandler;
+    typedef std::function<void(const IoTJobsDataPlaneClient*, const Model::StartCommandExecutionRequest&, const Model::StartCommandExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCommandExecutionResponseReceivedHandler;
     typedef std::function<void(const IoTJobsDataPlaneClient*, const Model::StartNextPendingJobExecutionRequest&, const Model::StartNextPendingJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNextPendingJobExecutionResponseReceivedHandler;
     typedef std::function<void(const IoTJobsDataPlaneClient*, const Model::UpdateJobExecutionRequest&, const Model::UpdateJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobExecutionResponseReceivedHandler;
     /* End of service model async handlers definitions */

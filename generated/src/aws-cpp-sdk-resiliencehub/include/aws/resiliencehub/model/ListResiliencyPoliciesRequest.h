@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the policy</p>
+     * <p>Name of the resiliency policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }

@@ -110,7 +110,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Date and time when the app was created.</p>
+     * <p>Date and time when the application was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }

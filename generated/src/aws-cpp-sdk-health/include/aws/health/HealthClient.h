@@ -20,8 +20,8 @@ namespace Health
    * information that appears in the <a
    * href="https://health.aws.amazon.com/health/home">Health Dashboard</a>. You can
    * use the API operations to get information about events that might affect your
-   * Amazon Web Services and resources.</p> <p>You must have a Business, Enterprise
-   * On-Ramp, or Enterprise Support plan from <a
+   * Amazon Web Services services and resources.</p> <p>You must have a Business,
+   * Enterprise On-Ramp, or Enterprise Support plan from <a
    * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a> to
    * use the Health API. If you call the Health API from an Amazon Web Services
    * account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support
@@ -158,14 +158,14 @@ namespace Health
          * <p>Returns a list of entities that have been affected by the specified events,
          * based on the specified filter criteria. Entities can refer to individual
          * customer resources, groups of customer resources, or any other construct,
-         * depending on the Amazon Web Service. Events that have impact beyond that of the
-         * affected entities, or where the extent of impact is unknown, include at least
-         * one entity indicating this.</p> <p>At least one event ARN is required.</p>
-         *  <ul> <li> <p>This API operation uses pagination. Specify the
-         * <code>nextToken</code> parameter in the next request to return more results.</p>
-         * </li> <li> <p>This operation supports resource-level permissions. You can use
-         * this operation to allow or deny access to specific Health events. For more
-         * information, see <a
+         * depending on the Amazon Web Services service. Events that have impact beyond
+         * that of the affected entities, or where the extent of impact is unknown, include
+         * at least one entity indicating this.</p> <p>At least one event ARN is
+         * required.</p>  <ul> <li> <p>This API operation uses pagination. Specify
+         * the <code>nextToken</code> parameter in the next request to return more
+         * results.</p> </li> <li> <p>This operation supports resource-level permissions.
+         * You can use this operation to allow or deny access to specific Health events.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource-
          * and action-based conditions</a> in the <i>Health User Guide</i>.</p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
@@ -196,8 +196,8 @@ namespace Health
          * <p>Returns a list of entities that have been affected by one or more events for
          * one or more accounts in your organization in Organizations, based on the filter
          * criteria. Entities can refer to individual customer resources, groups of
-         * customer resources, or any other construct, depending on the Amazon Web
-         * Service.</p> <p>At least one event Amazon Resource Name (ARN) and account ID are
+         * customer resources, or any other construct, depending on the Amazon Web Services
+         * service.</p> <p>At least one event Amazon Resource Name (ARN) and account ID are
          * required.</p> <p>Before you can call this operation, you must first enable
          * Health to work with Organizations. To do this, call the <a
          * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
@@ -409,8 +409,8 @@ namespace Health
         /**
          * <p>Returns the event types that meet the specified filter criteria. You can use
          * this API operation to find information about the Health event, such as the
-         * category, Amazon Web Service, and event code. The metadata for each event
-         * appears in the <a
+         * category, Amazon Web Services service, and event code. The metadata for each
+         * event appears in the <a
          * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a>
          * object. </p> <p>If you don't specify a filter criteria, the API operation
          * returns all event types, in no particular order. </p>  <p>This API

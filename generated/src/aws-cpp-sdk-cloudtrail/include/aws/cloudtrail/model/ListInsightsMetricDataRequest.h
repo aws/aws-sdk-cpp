@@ -143,7 +143,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Type of datapoints to return. Valid values are <code>NonZeroData</code> and
+     * <p>Type of data points to return. Valid values are <code>NonZeroData</code> and
      * <code>FillWithZeros</code>. The default is <code>NonZeroData</code>.</p>
      */
     inline const InsightsMetricDataType& GetDataType() const{ return m_dataType; }
@@ -156,7 +156,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The maximum number of datapoints to return. Valid values are integers from 1
+     * <p>The maximum number of data points to return. Valid values are integers from 1
      * to 21600. The default value is 21600.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }

@@ -80,6 +80,20 @@ namespace Model
     inline ModifyUserGroupRequest& AddUserIdsToRemove(Aws::String&& value) { m_userIdsToRemoveHasBeenSet = true; m_userIdsToRemove.push_back(std::move(value)); return *this; }
     inline ModifyUserGroupRequest& AddUserIdsToRemove(const char* value) { m_userIdsToRemoveHasBeenSet = true; m_userIdsToRemove.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The engine for a user group. </p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+    inline ModifyUserGroupRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+    inline ModifyUserGroupRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+    inline ModifyUserGroupRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_userGroupId;
@@ -90,6 +104,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_userIdsToRemove;
     bool m_userIdsToRemoveHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
   };
 
 } // namespace Model

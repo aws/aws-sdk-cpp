@@ -1,0 +1,80 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/xray/XRay_EXPORTS.h>
+#include <aws/xray/model/TraceSegmentDestination.h>
+#include <aws/xray/model/TraceSegmentDestinationStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace XRay
+{
+namespace Model
+{
+  class GetTraceSegmentDestinationResult
+  {
+  public:
+    AWS_XRAY_API GetTraceSegmentDestinationResult();
+    AWS_XRAY_API GetTraceSegmentDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API GetTraceSegmentDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    ///@{
+    /**
+     * <p> Retrieves the current destination. </p>
+     */
+    inline const TraceSegmentDestination& GetDestination() const{ return m_destination; }
+    inline void SetDestination(const TraceSegmentDestination& value) { m_destination = value; }
+    inline void SetDestination(TraceSegmentDestination&& value) { m_destination = std::move(value); }
+    inline GetTraceSegmentDestinationResult& WithDestination(const TraceSegmentDestination& value) { SetDestination(value); return *this;}
+    inline GetTraceSegmentDestinationResult& WithDestination(TraceSegmentDestination&& value) { SetDestination(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Status of the retrieval. </p>
+     */
+    inline const TraceSegmentDestinationStatus& GetStatus() const{ return m_status; }
+    inline void SetStatus(const TraceSegmentDestinationStatus& value) { m_status = value; }
+    inline void SetStatus(TraceSegmentDestinationStatus&& value) { m_status = std::move(value); }
+    inline GetTraceSegmentDestinationResult& WithStatus(const TraceSegmentDestinationStatus& value) { SetStatus(value); return *this;}
+    inline GetTraceSegmentDestinationResult& WithStatus(TraceSegmentDestinationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+    inline GetTraceSegmentDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+    inline GetTraceSegmentDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+    inline GetTraceSegmentDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
+  private:
+
+    TraceSegmentDestination m_destination;
+
+    TraceSegmentDestinationStatus m_status;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace XRay
+} // namespace Aws

@@ -24,7 +24,11 @@ namespace IoTFleetWise
    * </p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/">What is
    * Amazon Web Services IoT FleetWise?</a> in the <i>Amazon Web Services IoT
-   * FleetWise Developer Guide</i>.</p>
+   * FleetWise Developer Guide</i>.</p>  <p>Access to certain Amazon Web
+   * Services IoT FleetWise features is currently gated. For more information, see <a
+   * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+   * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+   * IoT FleetWise Developer Guide</i>.</p> 
    */
   class AWS_IOTFLEETWISE_API IoTFleetWiseClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetWiseClient>
   {
@@ -178,7 +182,11 @@ namespace IoTFleetWise
          * see <a
          * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/campaigns.html">Collect
          * and transfer data with campaigns</a> in the <i>Amazon Web Services IoT FleetWise
-         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p>  <p>Access to certain Amazon Web Services
+         * IoT FleetWise features is currently gated. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+         * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+         * IoT FleetWise Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CreateCampaign">AWS
          * API Reference</a></p>
          */
@@ -318,6 +326,38 @@ namespace IoTFleetWise
         }
 
         /**
+         * <p>Creates a state template. State templates contain state properties, which are
+         * signals that belong to a signal catalog that is synchronized between the Amazon
+         * Web Services IoT FleetWise Edge and the Amazon Web Services Cloud.</p>
+         *  <p>Access to certain Amazon Web Services IoT FleetWise features is
+         * currently gated. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+         * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+         * IoT FleetWise Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CreateStateTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateStateTemplateOutcome CreateStateTemplate(const Model::CreateStateTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateStateTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateStateTemplateRequestT = Model::CreateStateTemplateRequest>
+        Model::CreateStateTemplateOutcomeCallable CreateStateTemplateCallable(const CreateStateTemplateRequestT& request) const
+        {
+            return SubmitCallable(&IoTFleetWiseClient::CreateStateTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for CreateStateTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateStateTemplateRequestT = Model::CreateStateTemplateRequest>
+        void CreateStateTemplateAsync(const CreateStateTemplateRequestT& request, const CreateStateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTFleetWiseClient::CreateStateTemplate, request, handler, context);
+        }
+
+        /**
          * <p> Creates a vehicle, which is an instance of a vehicle model (model manifest).
          * Vehicles created from the same vehicle model consist of the same signals
          * inherited from the vehicle model.</p>  <p> If you have an existing Amazon
@@ -378,9 +418,7 @@ namespace IoTFleetWise
 
         /**
          * <p> Deletes a decoder manifest. You can't delete a decoder manifest if it has
-         * vehicles associated with it. </p>  <p>If the decoder manifest is
-         * successfully deleted, Amazon Web Services IoT FleetWise sends back an HTTP 200
-         * response with an empty body.</p> <p><h3>See Also:</h3>   <a
+         * vehicles associated with it. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteDecoderManifest">AWS
          * API Reference</a></p>
          */
@@ -409,9 +447,7 @@ namespace IoTFleetWise
          * from the fleet. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/delete-fleet-cli.html">Delete
          * a fleet (AWS CLI)</a> in the <i>Amazon Web Services IoT FleetWise Developer
-         * Guide</i>.</p>  <p>If the fleet is successfully deleted, Amazon Web
-         * Services IoT FleetWise sends back an HTTP 200 response with an empty body.</p>
-         * <p><h3>See Also:</h3>   <a
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteFleet">AWS
          * API Reference</a></p>
          */
@@ -436,9 +472,7 @@ namespace IoTFleetWise
         }
 
         /**
-         * <p> Deletes a vehicle model (model manifest).</p>  <p>If the vehicle model
-         * is successfully deleted, Amazon Web Services IoT FleetWise sends back an HTTP
-         * 200 response with an empty body.</p> <p><h3>See Also:</h3>   <a
+         * <p> Deletes a vehicle model (model manifest).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteModelManifest">AWS
          * API Reference</a></p>
          */
@@ -463,9 +497,7 @@ namespace IoTFleetWise
         }
 
         /**
-         * <p> Deletes a signal catalog. </p>  <p>If the signal catalog is
-         * successfully deleted, Amazon Web Services IoT FleetWise sends back an HTTP 200
-         * response with an empty body.</p> <p><h3>See Also:</h3>   <a
+         * <p> Deletes a signal catalog. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteSignalCatalog">AWS
          * API Reference</a></p>
          */
@@ -490,9 +522,33 @@ namespace IoTFleetWise
         }
 
         /**
-         * <p> Deletes a vehicle and removes it from any campaigns.</p>  <p>If the
-         * vehicle is successfully deleted, Amazon Web Services IoT FleetWise sends back an
-         * HTTP 200 response with an empty body.</p> <p><h3>See Also:</h3>   <a
+         * <p>Deletes a state template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteStateTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteStateTemplateOutcome DeleteStateTemplate(const Model::DeleteStateTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteStateTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteStateTemplateRequestT = Model::DeleteStateTemplateRequest>
+        Model::DeleteStateTemplateOutcomeCallable DeleteStateTemplateCallable(const DeleteStateTemplateRequestT& request) const
+        {
+            return SubmitCallable(&IoTFleetWiseClient::DeleteStateTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteStateTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteStateTemplateRequestT = Model::DeleteStateTemplateRequest>
+        void DeleteStateTemplateAsync(const DeleteStateTemplateRequestT& request, const DeleteStateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTFleetWiseClient::DeleteStateTemplate, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes a vehicle and removes it from any campaigns.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DeleteVehicle">AWS
          * API Reference</a></p>
          */
@@ -518,10 +574,7 @@ namespace IoTFleetWise
 
         /**
          * <p>Removes, or disassociates, a vehicle from a fleet. Disassociating a vehicle
-         * from a fleet doesn't delete the vehicle.</p>  <p>If the vehicle is
-         * successfully dissociated from a fleet, Amazon Web Services IoT FleetWise sends
-         * back an HTTP 200 response with an empty body.</p> <p><h3>See Also:</h3>  
-         * <a
+         * from a fleet doesn't delete the vehicle.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DisassociateVehicleFleet">AWS
          * API Reference</a></p>
          */
@@ -546,7 +599,12 @@ namespace IoTFleetWise
         }
 
         /**
-         * <p> Retrieves information about a campaign. </p><p><h3>See Also:</h3>   <a
+         * <p> Retrieves information about a campaign. </p>  <p>Access to
+         * certain Amazon Web Services IoT FleetWise features is currently gated. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+         * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+         * IoT FleetWise Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetCampaign">AWS
          * API Reference</a></p>
          */
@@ -755,6 +813,36 @@ namespace IoTFleetWise
         }
 
         /**
+         * <p>Retrieves information about a state template.</p>  <p>Access to
+         * certain Amazon Web Services IoT FleetWise features is currently gated. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+         * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+         * IoT FleetWise Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetStateTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetStateTemplateOutcome GetStateTemplate(const Model::GetStateTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetStateTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetStateTemplateRequestT = Model::GetStateTemplateRequest>
+        Model::GetStateTemplateOutcomeCallable GetStateTemplateCallable(const GetStateTemplateRequestT& request) const
+        {
+            return SubmitCallable(&IoTFleetWiseClient::GetStateTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for GetStateTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetStateTemplateRequestT = Model::GetStateTemplateRequest>
+        void GetStateTemplateAsync(const GetStateTemplateRequestT& request, const GetStateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTFleetWiseClient::GetStateTemplate, request, handler, context);
+        }
+
+        /**
          * <p> Retrieves information about a vehicle. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetVehicle">AWS
          * API Reference</a></p>
@@ -780,8 +868,8 @@ namespace IoTFleetWise
         }
 
         /**
-         * <p> Retrieves information about the status of a vehicle with any associated
-         * campaigns. </p><p><h3>See Also:</h3>   <a
+         * <p> Retrieves information about the status of campaigns, decoder manifests, or
+         * state templates associated with a vehicle.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetVehicleStatus">AWS
          * API Reference</a></p>
          */
@@ -807,7 +895,8 @@ namespace IoTFleetWise
 
         /**
          * <p> Creates a decoder manifest using your existing CAN DBC file from your local
-         * device. </p><p><h3>See Also:</h3>   <a
+         * device. </p> <p>The CAN signal name must be unique and not repeated across CAN
+         * message definitions in a .dbc file. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ImportDecoderManifest">AWS
          * API Reference</a></p>
          */
@@ -1136,6 +1225,36 @@ namespace IoTFleetWise
         }
 
         /**
+         * <p>Lists information about created state templates.</p>  <p>Access to
+         * certain Amazon Web Services IoT FleetWise features is currently gated. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+         * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+         * IoT FleetWise Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListStateTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStateTemplatesOutcome ListStateTemplates(const Model::ListStateTemplatesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListStateTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListStateTemplatesRequestT = Model::ListStateTemplatesRequest>
+        Model::ListStateTemplatesOutcomeCallable ListStateTemplatesCallable(const ListStateTemplatesRequestT& request = {}) const
+        {
+            return SubmitCallable(&IoTFleetWiseClient::ListStateTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for ListStateTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListStateTemplatesRequestT = Model::ListStateTemplatesRequest>
+        void ListStateTemplatesAsync(const ListStateTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListStateTemplatesRequestT& request = {}) const
+        {
+            return SubmitAsync(&IoTFleetWiseClient::ListStateTemplates, request, handler, context);
+        }
+
+        /**
          * <p>Lists the tags (metadata) you have assigned to the resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ListTagsForResource">AWS
@@ -1433,9 +1552,7 @@ namespace IoTFleetWise
         }
 
         /**
-         * <p> Updates the description of an existing fleet. </p>  <p>If the fleet is
-         * successfully updated, Amazon Web Services IoT FleetWise sends back an HTTP 200
-         * response with an empty HTTP body.</p> <p><h3>See Also:</h3>   <a
+         * <p> Updates the description of an existing fleet. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateFleet">AWS
          * API Reference</a></p>
          */
@@ -1508,6 +1625,35 @@ namespace IoTFleetWise
         void UpdateSignalCatalogAsync(const UpdateSignalCatalogRequestT& request, const UpdateSignalCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTFleetWiseClient::UpdateSignalCatalog, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a state template.</p>  <p>Access to certain Amazon Web
+         * Services IoT FleetWise features is currently gated. For more information, see <a
+         * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+         * Web Services Region and feature availability</a> in the <i>Amazon Web Services
+         * IoT FleetWise Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateStateTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateStateTemplateOutcome UpdateStateTemplate(const Model::UpdateStateTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateStateTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateStateTemplateRequestT = Model::UpdateStateTemplateRequest>
+        Model::UpdateStateTemplateOutcomeCallable UpdateStateTemplateCallable(const UpdateStateTemplateRequestT& request) const
+        {
+            return SubmitCallable(&IoTFleetWiseClient::UpdateStateTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateStateTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateStateTemplateRequestT = Model::UpdateStateTemplateRequest>
+        void UpdateStateTemplateAsync(const UpdateStateTemplateRequestT& request, const UpdateStateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTFleetWiseClient::UpdateStateTemplate, request, handler, context);
         }
 
         /**

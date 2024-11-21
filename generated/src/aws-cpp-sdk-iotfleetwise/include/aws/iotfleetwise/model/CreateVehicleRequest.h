@@ -11,6 +11,7 @@
 #include <aws/iotfleetwise/model/VehicleAssociationBehavior.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotfleetwise/model/Tag.h>
+#include <aws/iotfleetwise/model/StateTemplateAssociation.h>
 #include <utility>
 
 namespace Aws
@@ -83,9 +84,11 @@ namespace Model
     ///@{
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
-     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
-     * to display in Amazon Timestream.</p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>To use attributes
+     * with Campaigns or State Templates, you must include them using the request
+     * parameters <code>dataExtraDimensions</code> and/or
+     * <code>metadataExtraDimensions</code> (for state templates only) when creating
+     * your campaign/state template. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -129,6 +132,21 @@ namespace Model
     inline CreateVehicleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline CreateVehicleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Associate state templates with the vehicle. You can monitor the last known
+     * state of the vehicle in near real time.</p>
+     */
+    inline const Aws::Vector<StateTemplateAssociation>& GetStateTemplates() const{ return m_stateTemplates; }
+    inline bool StateTemplatesHasBeenSet() const { return m_stateTemplatesHasBeenSet; }
+    inline void SetStateTemplates(const Aws::Vector<StateTemplateAssociation>& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates = value; }
+    inline void SetStateTemplates(Aws::Vector<StateTemplateAssociation>&& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates = std::move(value); }
+    inline CreateVehicleRequest& WithStateTemplates(const Aws::Vector<StateTemplateAssociation>& value) { SetStateTemplates(value); return *this;}
+    inline CreateVehicleRequest& WithStateTemplates(Aws::Vector<StateTemplateAssociation>&& value) { SetStateTemplates(std::move(value)); return *this;}
+    inline CreateVehicleRequest& AddStateTemplates(const StateTemplateAssociation& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates.push_back(value); return *this; }
+    inline CreateVehicleRequest& AddStateTemplates(StateTemplateAssociation&& value) { m_stateTemplatesHasBeenSet = true; m_stateTemplates.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_vehicleName;
@@ -148,6 +166,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<StateTemplateAssociation> m_stateTemplates;
+    bool m_stateTemplatesHasBeenSet = false;
   };
 
 } // namespace Model

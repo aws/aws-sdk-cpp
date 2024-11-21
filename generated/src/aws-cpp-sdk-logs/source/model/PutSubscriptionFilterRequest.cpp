@@ -19,7 +19,9 @@ PutSubscriptionFilterRequest::PutSubscriptionFilterRequest() :
     m_destinationArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_distribution(Distribution::NOT_SET),
-    m_distributionHasBeenSet(false)
+    m_distributionHasBeenSet(false),
+    m_applyOnTransformedLogs(false),
+    m_applyOnTransformedLogsHasBeenSet(false)
 {
 }
 
@@ -60,6 +62,12 @@ Aws::String PutSubscriptionFilterRequest::SerializePayload() const
   if(m_distributionHasBeenSet)
   {
    payload.WithString("distribution", DistributionMapper::GetNameForDistribution(m_distribution));
+  }
+
+  if(m_applyOnTransformedLogsHasBeenSet)
+  {
+   payload.WithBool("applyOnTransformedLogs", m_applyOnTransformedLogs);
+
   }
 
   return payload.View().WriteReadable();

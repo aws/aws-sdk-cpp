@@ -738,6 +738,32 @@ namespace ResilienceHub
         }
 
         /**
+         * <p>Describes the metrics of the application configuration being
+         * exported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeMetricsExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMetricsExportOutcome DescribeMetricsExport(const Model::DescribeMetricsExportRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMetricsExport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMetricsExportRequestT = Model::DescribeMetricsExportRequest>
+        Model::DescribeMetricsExportOutcomeCallable DescribeMetricsExportCallable(const DescribeMetricsExportRequestT& request) const
+        {
+            return SubmitCallable(&ResilienceHubClient::DescribeMetricsExport, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMetricsExport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMetricsExportRequestT = Model::DescribeMetricsExportRequest>
+        void DescribeMetricsExportAsync(const DescribeMetricsExportRequestT& request, const DescribeMetricsExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ResilienceHubClient::DescribeMetricsExport, request, handler, context);
+        }
+
+        /**
          * <p>Describes a specified resiliency policy for an Resilience Hub application.
          * The returned policy object includes creation time, data location constraints,
          * the Amazon Resource Name (ARN) for the policy, tags, tier, and
@@ -848,7 +874,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Indicates the list of compliance drifts that were detected while running an
+         * <p>List of compliance drifts that were detected while running an
          * assessment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts">AWS
          * API Reference</a></p>
@@ -874,7 +900,7 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Indicates the list of resource drifts that were detected while running an
+         * <p>List of resource drifts that were detected while running an
          * assessment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts">AWS
          * API Reference</a></p>
@@ -1140,6 +1166,31 @@ namespace ResilienceHub
         void ListAppsAsync(const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListAppsRequestT& request = {}) const
         {
             return SubmitAsync(&ResilienceHubClient::ListApps, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the metrics that can be exported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMetricsOutcome ListMetrics(const Model::ListMetricsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMetricsRequestT = Model::ListMetricsRequest>
+        Model::ListMetricsOutcomeCallable ListMetricsCallable(const ListMetricsRequestT& request = {}) const
+        {
+            return SubmitCallable(&ResilienceHubClient::ListMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for ListMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMetricsRequestT = Model::ListMetricsRequest>
+        void ListMetricsAsync(const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMetricsRequestT& request = {}) const
+        {
+            return SubmitAsync(&ResilienceHubClient::ListMetrics, request, handler, context);
         }
 
         /**
@@ -1505,6 +1556,31 @@ namespace ResilienceHub
         void StartAppAssessmentAsync(const StartAppAssessmentRequestT& request, const StartAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ResilienceHubClient::StartAppAssessment, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates the export task of metrics.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartMetricsExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMetricsExportOutcome StartMetricsExport(const Model::StartMetricsExportRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for StartMetricsExport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMetricsExportRequestT = Model::StartMetricsExportRequest>
+        Model::StartMetricsExportOutcomeCallable StartMetricsExportCallable(const StartMetricsExportRequestT& request = {}) const
+        {
+            return SubmitCallable(&ResilienceHubClient::StartMetricsExport, request);
+        }
+
+        /**
+         * An Async wrapper for StartMetricsExport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMetricsExportRequestT = Model::StartMetricsExportRequest>
+        void StartMetricsExportAsync(const StartMetricsExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const StartMetricsExportRequestT& request = {}) const
+        {
+            return SubmitAsync(&ResilienceHubClient::StartMetricsExport, request, handler, context);
         }
 
         /**

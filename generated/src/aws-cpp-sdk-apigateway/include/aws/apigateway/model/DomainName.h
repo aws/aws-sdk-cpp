@@ -61,8 +61,38 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the certificate that will be used by edge-optimized endpoint for
-     * this domain name.</p>
+     * <p>The identifier for the domain name resource. Supported only for private
+     * custom domain names.</p>
+     */
+    inline const Aws::String& GetDomainNameId() const{ return m_domainNameId; }
+    inline bool DomainNameIdHasBeenSet() const { return m_domainNameIdHasBeenSet; }
+    inline void SetDomainNameId(const Aws::String& value) { m_domainNameIdHasBeenSet = true; m_domainNameId = value; }
+    inline void SetDomainNameId(Aws::String&& value) { m_domainNameIdHasBeenSet = true; m_domainNameId = std::move(value); }
+    inline void SetDomainNameId(const char* value) { m_domainNameIdHasBeenSet = true; m_domainNameId.assign(value); }
+    inline DomainName& WithDomainNameId(const Aws::String& value) { SetDomainNameId(value); return *this;}
+    inline DomainName& WithDomainNameId(Aws::String&& value) { SetDomainNameId(std::move(value)); return *this;}
+    inline DomainName& WithDomainNameId(const char* value) { SetDomainNameId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the domain name. Supported only for private custom domain names.
+     * </p>
+     */
+    inline const Aws::String& GetDomainNameArn() const{ return m_domainNameArn; }
+    inline bool DomainNameArnHasBeenSet() const { return m_domainNameArnHasBeenSet; }
+    inline void SetDomainNameArn(const Aws::String& value) { m_domainNameArnHasBeenSet = true; m_domainNameArn = value; }
+    inline void SetDomainNameArn(Aws::String&& value) { m_domainNameArnHasBeenSet = true; m_domainNameArn = std::move(value); }
+    inline void SetDomainNameArn(const char* value) { m_domainNameArnHasBeenSet = true; m_domainNameArn.assign(value); }
+    inline DomainName& WithDomainNameArn(const Aws::String& value) { SetDomainNameArn(value); return *this;}
+    inline DomainName& WithDomainNameArn(Aws::String&& value) { SetDomainNameArn(std::move(value)); return *this;}
+    inline DomainName& WithDomainNameArn(const char* value) { SetDomainNameArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the certificate that will be used by edge-optimized endpoint or
+     * private endpoint for this domain name.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
     inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
@@ -77,8 +107,8 @@ namespace Model
     ///@{
     /**
      * <p>The reference to an Amazon Web Services-managed certificate that will be used
-     * by edge-optimized endpoint for this domain name. Certificate Manager is the only
-     * supported source.</p>
+     * by edge-optimized endpoint or private endpoint for this domain name. Certificate
+     * Manager is the only supported source.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
@@ -93,8 +123,7 @@ namespace Model
     ///@{
     /**
      * <p>The timestamp when the certificate that was used by edge-optimized endpoint
-     * for this domain name was uploaded. API Gateway doesn't change this value if you
-     * update the certificate.</p>
+     * or private endpoint for this domain name was uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetCertificateUploadDate() const{ return m_certificateUploadDate; }
     inline bool CertificateUploadDateHasBeenSet() const { return m_certificateUploadDateHasBeenSet; }
@@ -312,6 +341,39 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A stringified JSON policy document that applies to the API Gateway Management
+     * service for this DomainName. This policy document controls access for access
+     * association sources to create domain name access associations with this
+     * DomainName. Supported only for private custom domain names.</p>
+     */
+    inline const Aws::String& GetManagementPolicy() const{ return m_managementPolicy; }
+    inline bool ManagementPolicyHasBeenSet() const { return m_managementPolicyHasBeenSet; }
+    inline void SetManagementPolicy(const Aws::String& value) { m_managementPolicyHasBeenSet = true; m_managementPolicy = value; }
+    inline void SetManagementPolicy(Aws::String&& value) { m_managementPolicyHasBeenSet = true; m_managementPolicy = std::move(value); }
+    inline void SetManagementPolicy(const char* value) { m_managementPolicyHasBeenSet = true; m_managementPolicy.assign(value); }
+    inline DomainName& WithManagementPolicy(const Aws::String& value) { SetManagementPolicy(value); return *this;}
+    inline DomainName& WithManagementPolicy(Aws::String&& value) { SetManagementPolicy(std::move(value)); return *this;}
+    inline DomainName& WithManagementPolicy(const char* value) { SetManagementPolicy(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A stringified JSON policy document that applies to the
+     * <code>execute-api</code> service for this DomainName regardless of the caller
+     * and Method configuration. Supported only for private custom domain names.</p>
+     */
+    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
+    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
+    inline DomainName& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
+    inline DomainName& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
+    inline DomainName& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -326,6 +388,12 @@ namespace Model
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
+
+    Aws::String m_domainNameId;
+    bool m_domainNameIdHasBeenSet = false;
+
+    Aws::String m_domainNameArn;
+    bool m_domainNameArnHasBeenSet = false;
 
     Aws::String m_certificateName;
     bool m_certificateNameHasBeenSet = false;
@@ -374,6 +442,12 @@ namespace Model
 
     Aws::String m_ownershipVerificationCertificateArn;
     bool m_ownershipVerificationCertificateArnHasBeenSet = false;
+
+    Aws::String m_managementPolicy;
+    bool m_managementPolicyHasBeenSet = false;
+
+    Aws::String m_policy;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

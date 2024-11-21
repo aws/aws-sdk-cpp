@@ -10,6 +10,7 @@
 #include <aws/iotfleetwise/model/CanInterface.h>
 #include <aws/iotfleetwise/model/ObdInterface.h>
 #include <aws/iotfleetwise/model/VehicleMiddleware.h>
+#include <aws/iotfleetwise/model/CustomDecodingInterface.h>
 #include <utility>
 
 namespace Aws
@@ -88,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about a network interface specified by the On-board diagnostic
+     * <p>Information about a network interface specified by the on-board diagnostic
      * (OBD) II protocol.</p>
      */
     inline const ObdInterface& GetObdInterface() const{ return m_obdInterface; }
@@ -111,6 +112,20 @@ namespace Model
     inline NetworkInterface& WithVehicleMiddleware(const VehicleMiddleware& value) { SetVehicleMiddleware(value); return *this;}
     inline NetworkInterface& WithVehicleMiddleware(VehicleMiddleware&& value) { SetVehicleMiddleware(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about a <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingInterface.html">custom
+     * network interface</a>.</p>
+     */
+    inline const CustomDecodingInterface& GetCustomDecodingInterface() const{ return m_customDecodingInterface; }
+    inline bool CustomDecodingInterfaceHasBeenSet() const { return m_customDecodingInterfaceHasBeenSet; }
+    inline void SetCustomDecodingInterface(const CustomDecodingInterface& value) { m_customDecodingInterfaceHasBeenSet = true; m_customDecodingInterface = value; }
+    inline void SetCustomDecodingInterface(CustomDecodingInterface&& value) { m_customDecodingInterfaceHasBeenSet = true; m_customDecodingInterface = std::move(value); }
+    inline NetworkInterface& WithCustomDecodingInterface(const CustomDecodingInterface& value) { SetCustomDecodingInterface(value); return *this;}
+    inline NetworkInterface& WithCustomDecodingInterface(CustomDecodingInterface&& value) { SetCustomDecodingInterface(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_interfaceId;
@@ -127,6 +142,9 @@ namespace Model
 
     VehicleMiddleware m_vehicleMiddleware;
     bool m_vehicleMiddlewareHasBeenSet = false;
+
+    CustomDecodingInterface m_customDecodingInterface;
+    bool m_customDecodingInterfaceHasBeenSet = false;
   };
 
 } // namespace Model

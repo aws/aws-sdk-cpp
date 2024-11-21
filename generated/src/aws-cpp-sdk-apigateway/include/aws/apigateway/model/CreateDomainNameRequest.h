@@ -56,7 +56,7 @@ namespace Model
     ///@{
     /**
      * <p>The user-friendly name of the certificate that will be used by edge-optimized
-     * endpoint for this domain name.</p>
+     * endpoint or private endpoint for this domain name.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
     inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
@@ -71,8 +71,8 @@ namespace Model
     ///@{
     /**
      * <p>[Deprecated] The body of the server certificate that will be used by
-     * edge-optimized endpoint for this domain name provided by your certificate
-     * authority.</p>
+     * edge-optimized endpoint or private endpoint for this domain name provided by
+     * your certificate authority.</p>
      */
     inline const Aws::String& GetCertificateBody() const{ return m_certificateBody; }
     inline bool CertificateBodyHasBeenSet() const { return m_certificateBodyHasBeenSet; }
@@ -122,8 +122,8 @@ namespace Model
     ///@{
     /**
      * <p>The reference to an Amazon Web Services-managed certificate that will be used
-     * by edge-optimized endpoint for this domain name. Certificate Manager is the only
-     * supported source.</p>
+     * by edge-optimized endpoint or private endpoint for this domain name. Certificate
+     * Manager is the only supported source.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
@@ -239,6 +239,22 @@ namespace Model
     inline CreateDomainNameRequest& WithOwnershipVerificationCertificateArn(Aws::String&& value) { SetOwnershipVerificationCertificateArn(std::move(value)); return *this;}
     inline CreateDomainNameRequest& WithOwnershipVerificationCertificateArn(const char* value) { SetOwnershipVerificationCertificateArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A stringified JSON policy document that applies to the
+     * <code>execute-api</code> service for this DomainName regardless of the caller
+     * and Method configuration. Supported only for private custom domain names.</p>
+     */
+    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
+    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
+    inline CreateDomainNameRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
+    inline CreateDomainNameRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
+    inline CreateDomainNameRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_domainName;
@@ -279,6 +295,9 @@ namespace Model
 
     Aws::String m_ownershipVerificationCertificateArn;
     bool m_ownershipVerificationCertificateArnHasBeenSet = false;
+
+    Aws::String m_policy;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

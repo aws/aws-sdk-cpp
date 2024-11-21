@@ -58,6 +58,21 @@ namespace Model
 
     ///@{
     /**
+     * <p> The identifier for the domain name resource. Supported only for private
+     * custom domain names. </p>
+     */
+    inline const Aws::String& GetDomainNameId() const{ return m_domainNameId; }
+    inline bool DomainNameIdHasBeenSet() const { return m_domainNameIdHasBeenSet; }
+    inline void SetDomainNameId(const Aws::String& value) { m_domainNameIdHasBeenSet = true; m_domainNameId = value; }
+    inline void SetDomainNameId(Aws::String&& value) { m_domainNameIdHasBeenSet = true; m_domainNameId = std::move(value); }
+    inline void SetDomainNameId(const char* value) { m_domainNameIdHasBeenSet = true; m_domainNameId.assign(value); }
+    inline GetBasePathMappingsRequest& WithDomainNameId(const Aws::String& value) { SetDomainNameId(value); return *this;}
+    inline GetBasePathMappingsRequest& WithDomainNameId(Aws::String&& value) { SetDomainNameId(std::move(value)); return *this;}
+    inline GetBasePathMappingsRequest& WithDomainNameId(const char* value) { SetDomainNameId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
@@ -84,6 +99,9 @@ namespace Model
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
+
+    Aws::String m_domainNameId;
+    bool m_domainNameIdHasBeenSet = false;
 
     Aws::String m_position;
     bool m_positionHasBeenSet = false;

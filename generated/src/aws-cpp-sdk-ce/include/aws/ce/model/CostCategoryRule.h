@@ -62,10 +62,11 @@ namespace Model
      * expressions. Currently the only dimensions supported are
      * <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
      * <code>RECORD_TYPE</code>, <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>,
-     * and <code>USAGE_TYPE</code>.</p> <p> <code>RECORD_TYPE</code> is a dimension
-     * used for Cost Explorer APIs, and is also supported for Cost Category
-     * expressions. This dimension uses different terms, depending on whether you're
-     * using the console or API/JSON editor. For a detailed comparison, see <a
+     * <code>USAGE_TYPE</code>, and <code>BILLING_ENTITY</code>.</p> <p>
+     * <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also
+     * supported for Cost Category expressions. This dimension uses different terms,
+     * depending on whether you're using the console or API/JSON editor. For a detailed
+     * comparison, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
      * Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.</p>
      */

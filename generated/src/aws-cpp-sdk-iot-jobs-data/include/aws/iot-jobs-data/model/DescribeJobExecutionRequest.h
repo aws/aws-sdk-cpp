@@ -69,8 +69,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Optional. When set to true, the response contains the job document. The
-     * default is false.</p>
+     * <p>Optional. Unless set to false, the response contains the job document. The
+     * default is true.</p>
      */
     inline bool GetIncludeJobDocument() const{ return m_includeJobDocument; }
     inline bool IncludeJobDocumentHasBeenSet() const { return m_includeJobDocumentHasBeenSet; }

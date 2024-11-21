@@ -8,6 +8,7 @@
 #include <aws/s3-crt/S3CrtRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/model/RequestPayer.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -146,6 +147,24 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>If present, this header aborts an in progress multipart upload only if it was
+     * initiated on the provided timestamp. If the initiated timestamp of the multipart
+     * upload does not match the provided value, the operation returns a <code>412
+     * Precondition Failed</code> error. If the initiated timestamp matches or if the
+     * multipart upload doesn’t exist, the operation returns a <code>204 Success (No
+     * Content)</code> response. </p>  <p>This functionality is only supported
+     * for directory buckets.</p> 
+     */
+    inline const Aws::Utils::DateTime& GetIfMatchInitiatedTime() const{ return m_ifMatchInitiatedTime; }
+    inline bool IfMatchInitiatedTimeHasBeenSet() const { return m_ifMatchInitiatedTimeHasBeenSet; }
+    inline void SetIfMatchInitiatedTime(const Aws::Utils::DateTime& value) { m_ifMatchInitiatedTimeHasBeenSet = true; m_ifMatchInitiatedTime = value; }
+    inline void SetIfMatchInitiatedTime(Aws::Utils::DateTime&& value) { m_ifMatchInitiatedTimeHasBeenSet = true; m_ifMatchInitiatedTime = std::move(value); }
+    inline AbortMultipartUploadRequest& WithIfMatchInitiatedTime(const Aws::Utils::DateTime& value) { SetIfMatchInitiatedTime(value); return *this;}
+    inline AbortMultipartUploadRequest& WithIfMatchInitiatedTime(Aws::Utils::DateTime&& value) { SetIfMatchInitiatedTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
     inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
@@ -177,6 +196,9 @@ namespace Model
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet = false;
+
+    Aws::Utils::DateTime m_ifMatchInitiatedTime;
+    bool m_ifMatchInitiatedTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet = false;

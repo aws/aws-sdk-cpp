@@ -120,7 +120,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The amount of time of the Capacity Block reservation in hours.</p>
+     * <p>The number of hours (in addition to
+     * <code>capacityBlockDurationMinutes</code>) for the duration of the Capacity
+     * Block reservation. For example, if a Capacity Block starts at <b>04:55</b> and
+     * ends at <b>11:30</b>, the hours field would be <b>6</b>.</p>
      */
     inline int GetCapacityBlockDurationHours() const{ return m_capacityBlockDurationHours; }
     inline bool CapacityBlockDurationHoursHasBeenSet() const { return m_capacityBlockDurationHoursHasBeenSet; }
@@ -167,6 +170,19 @@ namespace Model
     inline CapacityBlockOffering& WithTenancy(const CapacityReservationTenancy& value) { SetTenancy(value); return *this;}
     inline CapacityBlockOffering& WithTenancy(CapacityReservationTenancy&& value) { SetTenancy(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The number of minutes (in addition to
+     * <code>capacityBlockDurationHours</code>) for the duration of the Capacity Block
+     * reservation. For example, if a Capacity Block starts at <b>08:55</b> and ends at
+     * <b>11:30</b>, the minutes field would be <b>35</b>.</p>
+     */
+    inline int GetCapacityBlockDurationMinutes() const{ return m_capacityBlockDurationMinutes; }
+    inline bool CapacityBlockDurationMinutesHasBeenSet() const { return m_capacityBlockDurationMinutesHasBeenSet; }
+    inline void SetCapacityBlockDurationMinutes(int value) { m_capacityBlockDurationMinutesHasBeenSet = true; m_capacityBlockDurationMinutes = value; }
+    inline CapacityBlockOffering& WithCapacityBlockDurationMinutes(int value) { SetCapacityBlockDurationMinutes(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_capacityBlockOfferingId;
@@ -198,6 +214,9 @@ namespace Model
 
     CapacityReservationTenancy m_tenancy;
     bool m_tenancyHasBeenSet = false;
+
+    int m_capacityBlockDurationMinutes;
+    bool m_capacityBlockDurationMinutesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -87,8 +87,11 @@ namespace Model
      * processing.</p> <p class="title"> <b>Destinations</b> </p> <ul> <li> <p>
      * <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
      * <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li> <li> <p>
-     * <b>Topic</b> - The ARN of a standard SNS topic.</p> </li> <li> <p> <b>Event
-     * Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> </ul>
+     * <b>Bucket</b> - The ARN of an Amazon S3 bucket.</p> </li> <li> <p> <b>Topic</b>
+     * - The ARN of a standard SNS topic.</p> </li> <li> <p> <b>Event Bus</b> - The ARN
+     * of an Amazon EventBridge event bus.</p> </li> </ul>  <p>S3 buckets are
+     * supported only for on-failure destinations. To retain records of successful
+     * invocations, use another destination type.</p> 
      */
     inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
     inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }

@@ -113,7 +113,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The operating system platform type. </p>
+     * <p>The operating system platform type.</p>
      */
     inline const PlatformType& GetPlatformType() const{ return m_platformType; }
     inline bool PlatformTypeHasBeenSet() const { return m_platformTypeHasBeenSet; }

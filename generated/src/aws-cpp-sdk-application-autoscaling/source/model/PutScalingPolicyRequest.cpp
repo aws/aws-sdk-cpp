@@ -22,7 +22,8 @@ PutScalingPolicyRequest::PutScalingPolicyRequest() :
     m_policyType(PolicyType::NOT_SET),
     m_policyTypeHasBeenSet(false),
     m_stepScalingPolicyConfigurationHasBeenSet(false),
-    m_targetTrackingScalingPolicyConfigurationHasBeenSet(false)
+    m_targetTrackingScalingPolicyConfigurationHasBeenSet(false),
+    m_predictiveScalingPolicyConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,12 @@ Aws::String PutScalingPolicyRequest::SerializePayload() const
   if(m_targetTrackingScalingPolicyConfigurationHasBeenSet)
   {
    payload.WithObject("TargetTrackingScalingPolicyConfiguration", m_targetTrackingScalingPolicyConfiguration.Jsonize());
+
+  }
+
+  if(m_predictiveScalingPolicyConfigurationHasBeenSet)
+  {
+   payload.WithObject("PredictiveScalingPolicyConfiguration", m_predictiveScalingPolicyConfiguration.Jsonize());
 
   }
 

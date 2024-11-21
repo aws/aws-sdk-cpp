@@ -143,6 +143,19 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> The account ID of the event data store owner. </p>
+     */
+    inline const Aws::String& GetEventDataStoreOwnerAccountId() const{ return m_eventDataStoreOwnerAccountId; }
+    inline void SetEventDataStoreOwnerAccountId(const Aws::String& value) { m_eventDataStoreOwnerAccountId = value; }
+    inline void SetEventDataStoreOwnerAccountId(Aws::String&& value) { m_eventDataStoreOwnerAccountId = std::move(value); }
+    inline void SetEventDataStoreOwnerAccountId(const char* value) { m_eventDataStoreOwnerAccountId.assign(value); }
+    inline DescribeQueryResult& WithEventDataStoreOwnerAccountId(const Aws::String& value) { SetEventDataStoreOwnerAccountId(value); return *this;}
+    inline DescribeQueryResult& WithEventDataStoreOwnerAccountId(Aws::String&& value) { SetEventDataStoreOwnerAccountId(std::move(value)); return *this;}
+    inline DescribeQueryResult& WithEventDataStoreOwnerAccountId(const char* value) { SetEventDataStoreOwnerAccountId(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -169,6 +182,8 @@ namespace Model
     DeliveryStatus m_deliveryStatus;
 
     Aws::String m_prompt;
+
+    Aws::String m_eventDataStoreOwnerAccountId;
 
     Aws::String m_requestId;
   };

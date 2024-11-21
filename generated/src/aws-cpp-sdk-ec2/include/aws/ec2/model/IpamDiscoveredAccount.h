@@ -109,6 +109,20 @@ namespace Model
     inline IpamDiscoveredAccount& WithLastSuccessfulDiscoveryTime(const Aws::Utils::DateTime& value) { SetLastSuccessfulDiscoveryTime(value); return *this;}
     inline IpamDiscoveredAccount& WithLastSuccessfulDiscoveryTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulDiscoveryTime(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of an Organizational Unit in Amazon Web Services Organizations.</p>
+     */
+    inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
+    inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
+    inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
+    inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
+    inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
+    inline IpamDiscoveredAccount& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
+    inline IpamDiscoveredAccount& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
+    inline IpamDiscoveredAccount& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_accountId;
@@ -125,6 +139,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastSuccessfulDiscoveryTime;
     bool m_lastSuccessfulDiscoveryTimeHasBeenSet = false;
+
+    Aws::String m_organizationalUnitId;
+    bool m_organizationalUnitIdHasBeenSet = false;
   };
 
 } // namespace Model

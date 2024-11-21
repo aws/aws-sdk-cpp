@@ -60,8 +60,36 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the certificate that will be used by edge-optimized endpoint for
-     * this domain name.</p>
+     * <p>The identifier for the domain name resource. Supported only for private
+     * custom domain names.</p>
+     */
+    inline const Aws::String& GetDomainNameId() const{ return m_domainNameId; }
+    inline void SetDomainNameId(const Aws::String& value) { m_domainNameId = value; }
+    inline void SetDomainNameId(Aws::String&& value) { m_domainNameId = std::move(value); }
+    inline void SetDomainNameId(const char* value) { m_domainNameId.assign(value); }
+    inline CreateDomainNameResult& WithDomainNameId(const Aws::String& value) { SetDomainNameId(value); return *this;}
+    inline CreateDomainNameResult& WithDomainNameId(Aws::String&& value) { SetDomainNameId(std::move(value)); return *this;}
+    inline CreateDomainNameResult& WithDomainNameId(const char* value) { SetDomainNameId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ARN of the domain name. Supported only for private custom domain names.
+     * </p>
+     */
+    inline const Aws::String& GetDomainNameArn() const{ return m_domainNameArn; }
+    inline void SetDomainNameArn(const Aws::String& value) { m_domainNameArn = value; }
+    inline void SetDomainNameArn(Aws::String&& value) { m_domainNameArn = std::move(value); }
+    inline void SetDomainNameArn(const char* value) { m_domainNameArn.assign(value); }
+    inline CreateDomainNameResult& WithDomainNameArn(const Aws::String& value) { SetDomainNameArn(value); return *this;}
+    inline CreateDomainNameResult& WithDomainNameArn(Aws::String&& value) { SetDomainNameArn(std::move(value)); return *this;}
+    inline CreateDomainNameResult& WithDomainNameArn(const char* value) { SetDomainNameArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the certificate that will be used by edge-optimized endpoint or
+     * private endpoint for this domain name.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
     inline void SetCertificateName(const Aws::String& value) { m_certificateName = value; }
@@ -75,8 +103,8 @@ namespace Model
     ///@{
     /**
      * <p>The reference to an Amazon Web Services-managed certificate that will be used
-     * by edge-optimized endpoint for this domain name. Certificate Manager is the only
-     * supported source.</p>
+     * by edge-optimized endpoint or private endpoint for this domain name. Certificate
+     * Manager is the only supported source.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArn = value; }
@@ -90,8 +118,7 @@ namespace Model
     ///@{
     /**
      * <p>The timestamp when the certificate that was used by edge-optimized endpoint
-     * for this domain name was uploaded. API Gateway doesn't change this value if you
-     * update the certificate.</p>
+     * or private endpoint for this domain name was uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetCertificateUploadDate() const{ return m_certificateUploadDate; }
     inline void SetCertificateUploadDate(const Aws::Utils::DateTime& value) { m_certificateUploadDate = value; }
@@ -295,6 +322,37 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A stringified JSON policy document that applies to the API Gateway Management
+     * service for this DomainName. This policy document controls access for access
+     * association sources to create domain name access associations with this
+     * DomainName. Supported only for private custom domain names.</p>
+     */
+    inline const Aws::String& GetManagementPolicy() const{ return m_managementPolicy; }
+    inline void SetManagementPolicy(const Aws::String& value) { m_managementPolicy = value; }
+    inline void SetManagementPolicy(Aws::String&& value) { m_managementPolicy = std::move(value); }
+    inline void SetManagementPolicy(const char* value) { m_managementPolicy.assign(value); }
+    inline CreateDomainNameResult& WithManagementPolicy(const Aws::String& value) { SetManagementPolicy(value); return *this;}
+    inline CreateDomainNameResult& WithManagementPolicy(Aws::String&& value) { SetManagementPolicy(std::move(value)); return *this;}
+    inline CreateDomainNameResult& WithManagementPolicy(const char* value) { SetManagementPolicy(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A stringified JSON policy document that applies to the
+     * <code>execute-api</code> service for this DomainName regardless of the caller
+     * and Method configuration. Supported only for private custom domain names.</p>
+     */
+    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline void SetPolicy(const Aws::String& value) { m_policy = value; }
+    inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
+    inline void SetPolicy(const char* value) { m_policy.assign(value); }
+    inline CreateDomainNameResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
+    inline CreateDomainNameResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
+    inline CreateDomainNameResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -307,6 +365,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
+
+    Aws::String m_domainNameId;
+
+    Aws::String m_domainNameArn;
 
     Aws::String m_certificateName;
 
@@ -339,6 +401,10 @@ namespace Model
     MutualTlsAuthentication m_mutualTlsAuthentication;
 
     Aws::String m_ownershipVerificationCertificateArn;
+
+    Aws::String m_managementPolicy;
+
+    Aws::String m_policy;
 
     Aws::String m_requestId;
   };

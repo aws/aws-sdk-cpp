@@ -495,7 +495,7 @@ namespace SSM
          * <code>SyncToDestination</code> type to synchronize Inventory data from multiple
          * Amazon Web Services Regions to a single Amazon Simple Storage Service (Amazon
          * S3) bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-create-resource-data-sync.html">Creatinga
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-create-resource-data-sync.html">Creating
          * a resource data sync for Inventory</a> in the <i>Amazon Web Services Systems
          * Manager User Guide</i>.</p> <p>You can configure Systems Manager Explorer to use
          * the <code>SyncFromSource</code> type to synchronize operational work items
@@ -2165,6 +2165,33 @@ namespace SSM
         }
 
         /**
+         * <p>Initiates the process of retrieving an existing preview that shows the
+         * effects that running a specified Automation runbook would have on the targeted
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetExecutionPreview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetExecutionPreviewOutcome GetExecutionPreview(const Model::GetExecutionPreviewRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetExecutionPreview that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetExecutionPreviewRequestT = Model::GetExecutionPreviewRequest>
+        Model::GetExecutionPreviewOutcomeCallable GetExecutionPreviewCallable(const GetExecutionPreviewRequestT& request) const
+        {
+            return SubmitCallable(&SSMClient::GetExecutionPreview, request);
+        }
+
+        /**
+         * An Async wrapper for GetExecutionPreview that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetExecutionPreviewRequestT = Model::GetExecutionPreviewRequest>
+        void GetExecutionPreviewAsync(const GetExecutionPreviewRequestT& request, const GetExecutionPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMClient::GetExecutionPreview, request, handler, context);
+        }
+
+        /**
          * <p>Query inventory information. This includes managed node status, such as
          * <code>Stopped</code> or <code>Terminated</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">AWS
@@ -2995,6 +3022,59 @@ namespace SSM
         }
 
         /**
+         * <p>Takes in filters and returns a list of managed nodes matching the filter
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListNodes">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::ListNodesOutcome ListNodes(const Model::ListNodesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListNodes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListNodesRequestT = Model::ListNodesRequest>
+        Model::ListNodesOutcomeCallable ListNodesCallable(const ListNodesRequestT& request = {}) const
+        {
+            return SubmitCallable(&SSMClient::ListNodes, request);
+        }
+
+        /**
+         * An Async wrapper for ListNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListNodesRequestT = Model::ListNodesRequest>
+        void ListNodesAsync(const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListNodesRequestT& request = {}) const
+        {
+            return SubmitAsync(&SSMClient::ListNodes, request, handler, context);
+        }
+
+        /**
+         * <p>Generates a summary of managed instance/node metadata based on the filters
+         * and aggregators you specify. Results are grouped by the input aggregator you
+         * specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListNodesSummary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListNodesSummaryOutcome ListNodesSummary(const Model::ListNodesSummaryRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListNodesSummary that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListNodesSummaryRequestT = Model::ListNodesSummaryRequest>
+        Model::ListNodesSummaryOutcomeCallable ListNodesSummaryCallable(const ListNodesSummaryRequestT& request) const
+        {
+            return SubmitCallable(&SSMClient::ListNodesSummary, request);
+        }
+
+        /**
+         * An Async wrapper for ListNodesSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListNodesSummaryRequestT = Model::ListNodesSummaryRequest>
+        void ListNodesSummaryAsync(const ListNodesSummaryRequestT& request, const ListNodesSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMClient::ListNodesSummary, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of all OpsItem events in the current Amazon Web Services
          * Region and Amazon Web Services account. You can limit the results to events
          * associated with specific OpsItems by specifying a filter.</p><p><h3>See
@@ -3680,6 +3760,33 @@ namespace SSM
         void StartChangeRequestExecutionAsync(const StartChangeRequestExecutionRequestT& request, const StartChangeRequestExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSMClient::StartChangeRequestExecution, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates the process of creating a preview showing the effects that running
+         * a specified Automation runbook would have on the targeted
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartExecutionPreview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartExecutionPreviewOutcome StartExecutionPreview(const Model::StartExecutionPreviewRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartExecutionPreview that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartExecutionPreviewRequestT = Model::StartExecutionPreviewRequest>
+        Model::StartExecutionPreviewOutcomeCallable StartExecutionPreviewCallable(const StartExecutionPreviewRequestT& request) const
+        {
+            return SubmitCallable(&SSMClient::StartExecutionPreview, request);
+        }
+
+        /**
+         * An Async wrapper for StartExecutionPreview that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartExecutionPreviewRequestT = Model::StartExecutionPreviewRequest>
+        void StartExecutionPreviewAsync(const StartExecutionPreviewRequestT& request, const StartExecutionPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMClient::StartExecutionPreview, request, handler, context);
         }
 
         /**

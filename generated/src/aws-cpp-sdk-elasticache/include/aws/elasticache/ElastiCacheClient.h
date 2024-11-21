@@ -98,14 +98,14 @@ namespace ElastiCache
          * exception of global replication group. When you add or remove tags on
          * replication groups, those actions will be replicated to all nodes in the
          * replication group. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
          * permissions</a>.</p> <p> For example, you can use cost-allocation tags to your
          * ElastiCache resources, Amazon generates a cost allocation report as a
          * comma-separated value (CSV) file with your usage and costs aggregated by your
          * tags. You can apply tags that represent business categories (such as cost
          * centers, application names, or owners) to organize your costs across multiple
          * services.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Tagging.html">Using
          * Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">AWS
@@ -163,7 +163,7 @@ namespace ElastiCache
         /**
          * <p>Apply the service update. For more information on service updates and
          * applying them, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/applying-updates.html">Applying
          * Service Updates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchApplyUpdateAction">AWS
          * API Reference</a></p>
@@ -191,7 +191,7 @@ namespace ElastiCache
         /**
          * <p>Stop the service update. For more information on service updates and stopping
          * them, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/stopping-self-service-updates.html">Stopping
          * Service Updates</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/BatchStopUpdateAction">AWS
          * API Reference</a></p>
@@ -275,25 +275,25 @@ namespace ElastiCache
          * snapshots, use an IAM policy to control who has the ability to use the
          * <code>CopySnapshot</code> operation. For more information about using IAM to
          * control the use of ElastiCache operations, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html">Exporting
          * Snapshots</a> and <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.html">Authentication
          * &amp; Access Control</a>.</p>  <p>You could receive the following
          * error messages.</p> <p class="title"> <b>Error Messages</b> </p> <ul> <li> <p>
          * <b>Error Message:</b> The S3 bucket %s is outside of the region.</p> <p>
          * <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
          * For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The S3 bucket %s does not exist.</p> <p>
          * <b>Solution:</b> Create an Amazon S3 bucket in the same region as your snapshot.
          * For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The S3 bucket %s is not owned by the authenticated
          * user.</p> <p> <b>Solution:</b> Create an Amazon S3 bucket in the same region as
          * your snapshot. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-create-s3-bucket">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-create-s3-bucket">Step
          * 1: Create an Amazon S3 Bucket</a> in the ElastiCache User Guide.</p> </li> <li>
          * <p> <b>Error Message:</b> The authenticated user does not have sufficient
          * permissions to perform the desired activity.</p> <p> <b>Solution:</b> Contact
@@ -306,17 +306,17 @@ namespace ElastiCache
          * ElastiCache has not been granted READ permissions %s on the S3 Bucket.</p> <p>
          * <b>Solution:</b> Add List and Read permissions on the bucket. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted WRITE permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * Upload/Delete permissions on the bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> <li> <p> <b>Error Message: </b> ElastiCache has not been
          * granted READ_ACP permissions %s on the S3 Bucket.</p> <p> <b>Solution:</b> Add
          * View Permissions on the bucket. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-grant-access">Step
          * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the ElastiCache User
          * Guide.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">AWS
@@ -380,7 +380,7 @@ namespace ElastiCache
          * specific parameters. For more information, see:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html">ModifyCacheParameterGroup</a>
          * in the ElastiCache API Reference.</p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.html">Parameters
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ParameterGroups.html">Parameters
          * and Parameter Groups</a> in the ElastiCache User Guide.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">AWS
@@ -469,7 +469,7 @@ namespace ElastiCache
          * replication. Using Global Datastore with Valkey or Redis OSS, you can create
          * cross-region read replica clusters for ElastiCache to enable low-latency reads
          * and disaster recovery across regions. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Redis-Global-Datastore.html">Replication
          * Across Regions Using Global Datastore</a>. </p> <ul> <li> <p>The
          * <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global datastore.</p>
          * </li> <li> <p>The <b>PrimaryReplicationGroupId</b> represents the name of the
@@ -518,7 +518,7 @@ namespace ElastiCache
          * pitfalls include the subnets in the subnet group have too small a CIDR range or
          * the subnets are shared and heavily used by other clusters. For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.Creating.html">Creating
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SubnetGroups.Creating.html">Creating
          * a Subnet Group</a>. For versions below 5.0.6, the limit is 250 per cluster.</p>
          * <p>To request a limit increase, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
@@ -528,7 +528,7 @@ namespace ElastiCache
          * it, up to a total of 5 read replicas. If you need to increase or decrease the
          * number of node groups (console: shards), you can use scaling. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.html">Scaling
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Scaling.html">Scaling
          * self-designed clusters</a> in the <i>ElastiCache User Guide</i>.</p> 
          * <p>This operation is valid for Valkey and Redis OSS only.</p> <p><h3>See
          * Also:</h3>   <a
@@ -637,7 +637,7 @@ namespace ElastiCache
         /**
          * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 and onwards: Creates
          * a user. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">AWS
          * API Reference</a></p>
@@ -665,7 +665,7 @@ namespace ElastiCache
         /**
          * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a
          * user group. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup">AWS
          * API Reference</a></p>
@@ -1023,7 +1023,7 @@ namespace ElastiCache
          * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Deletes a
          * user. The user will be removed from all user groups and in turn removed from all
          * replication groups. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser">AWS
          * API Reference</a></p>
@@ -1052,7 +1052,7 @@ namespace ElastiCache
          * <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Deletes a
          * user group. The user group must first be disassociated from the replication
          * group before it can be deleted. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
          * Role Based Access Control (RBAC)</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup">AWS
          * API Reference</a></p>
@@ -1772,7 +1772,7 @@ namespace ElastiCache
          * replication group. When you add or remove tags on replication groups, those
          * actions will be replicated to all nodes in the replication group. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
          * permissions</a>.</p> <p>If the cluster is not in the <i>available</i> state,
          * <code>ListTagsForResource</code> returns an error.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">AWS
@@ -1905,7 +1905,7 @@ namespace ElastiCache
         /**
          * <p>Modifies the settings for a replication group. This is limited to Valkey and
          * Redis OSS 7 and above.</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/scaling-redis-cluster-mode-enabled.html">Scaling
          * for Valkey or Redis OSS (cluster mode enabled)</a> in the ElastiCache User
          * Guide</p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a>
@@ -2041,7 +2041,7 @@ namespace ElastiCache
         /**
          * <p>Allows you to purchase a reserved cache node offering. Reserved nodes are not
          * eligible for cancellation and are non-refundable. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html">Managing
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/reserved-nodes.html">Managing
          * Costs with Reserved Nodes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">AWS
          * API Reference</a></p>
@@ -2104,7 +2104,7 @@ namespace ElastiCache
          * Valkey or Redis OSS (cluster mode enabled) clusters.</p> <p>If you make changes
          * to parameters that require a Valkey or Redis OSS (cluster mode enabled) cluster
          * reboot for the changes to be applied, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes.rebooting.html">Rebooting
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/nodes.rebooting.html">Rebooting
          * a Cluster</a> for an alternate process.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">AWS
          * API Reference</a></p>
@@ -2136,7 +2136,7 @@ namespace ElastiCache
          * the exception of global replication group. When you add or remove tags on
          * replication groups, those actions will be replicated to all nodes in the
          * replication group. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+         * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
          * permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource">AWS
          * API Reference</a></p>
@@ -2271,12 +2271,12 @@ namespace ElastiCache
          * &lt;node-id&gt;</code> </p> </li> <li> <p>Cache cluster message: <code>Finished
          * recovery for cache nodes &lt;node-id&gt;</code> </p> </li> </ol> <p>For more
          * information see:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ECEvents.Viewing.html">Viewing
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ECEvents.Viewing.html">Viewing
          * ElastiCache Events</a> in the <i>ElastiCache User Guide</i> </p> </li> <li> <p>
          * <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
          * in the ElastiCache API Reference</p> </li> </ul> </li> </ul> <p>Also see, <a
-         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html#auto-failover-test">Testing
+         * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html#auto-failover-test">Testing
          * Multi-AZ </a> in the <i>ElastiCache User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">AWS

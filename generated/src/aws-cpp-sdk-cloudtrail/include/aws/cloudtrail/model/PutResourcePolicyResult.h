@@ -34,8 +34,14 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to the
-     * resource-based policy. </p>
+     * <p> The Amazon Resource Name (ARN) of the CloudTrail event data store,
+     * dashboard, or channel attached to the resource-based policy. </p> <p>Example
+     * event data store ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * </p> <p>Example dashboard ARN format:
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:dashboard/exampleDash</code>
+     * </p> <p>Example channel ARN format:
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
@@ -49,7 +55,7 @@ namespace Model
     ///@{
     /**
      * <p> The JSON-formatted string of the Amazon Web Services resource-based policy
-     * attached to the CloudTrail channel. </p>
+     * attached to the CloudTrail event data store, dashboard, or channel. </p>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicy = value; }
@@ -58,6 +64,24 @@ namespace Model
     inline PutResourcePolicyResult& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
     inline PutResourcePolicyResult& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
     inline PutResourcePolicyResult& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The default resource-based policy that is automatically generated for the
+     * delegated administrator of an Organizations organization. This policy will be
+     * evaluated in tandem with any policy you submit for the resource. For more
+     * information about this policy, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-organizations.html#cloudtrail-lake-organizations-eds-rbp">Default
+     * resource policy for delegated administrators</a>. </p>
+     */
+    inline const Aws::String& GetDelegatedAdminResourcePolicy() const{ return m_delegatedAdminResourcePolicy; }
+    inline void SetDelegatedAdminResourcePolicy(const Aws::String& value) { m_delegatedAdminResourcePolicy = value; }
+    inline void SetDelegatedAdminResourcePolicy(Aws::String&& value) { m_delegatedAdminResourcePolicy = std::move(value); }
+    inline void SetDelegatedAdminResourcePolicy(const char* value) { m_delegatedAdminResourcePolicy.assign(value); }
+    inline PutResourcePolicyResult& WithDelegatedAdminResourcePolicy(const Aws::String& value) { SetDelegatedAdminResourcePolicy(value); return *this;}
+    inline PutResourcePolicyResult& WithDelegatedAdminResourcePolicy(Aws::String&& value) { SetDelegatedAdminResourcePolicy(std::move(value)); return *this;}
+    inline PutResourcePolicyResult& WithDelegatedAdminResourcePolicy(const char* value) { SetDelegatedAdminResourcePolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -75,6 +99,8 @@ namespace Model
     Aws::String m_resourceArn;
 
     Aws::String m_resourcePolicy;
+
+    Aws::String m_delegatedAdminResourcePolicy;
 
     Aws::String m_requestId;
   };

@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services associated with the event. For example,
+     * <p>The Amazon Web Services services associated with the event. For example,
      * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServices() const{ return m_services; }

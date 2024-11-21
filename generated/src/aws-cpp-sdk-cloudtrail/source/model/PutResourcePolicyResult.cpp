@@ -41,6 +41,12 @@ PutResourcePolicyResult& PutResourcePolicyResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("DelegatedAdminResourcePolicy"))
+  {
+    m_delegatedAdminResourcePolicy = jsonValue.GetString("DelegatedAdminResourcePolicy");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
