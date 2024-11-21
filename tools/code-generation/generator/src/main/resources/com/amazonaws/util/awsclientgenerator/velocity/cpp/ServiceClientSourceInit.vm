@@ -135,7 +135,11 @@ ${className}& ${className}::operator=(${className} &&rhs) noexcept {
 #end
   BASECLASS(clientConfiguration,
             Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG, bearerTokenProvider),
+  #if ($metadata.awsQueryCompatible)
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG, true)),
+  #else
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+  #end
 #foreach($ctorMemberInit in $ctorMemberInitList)
   ${ctorMemberInit}#if( $foreach.hasNext ),
 
@@ -172,7 +176,11 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
                             ${signerWSpace}  ${signerCtorArg}#if( $foreach.hasNext ),
 #else#end
 #end),
+  #if ($metadata.awsQueryCompatible)
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG, true)),
+  #else
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+  #end
 #foreach($ctorMemberInit in $ctorMemberInitList)
   ${ctorMemberInit}#if( $foreach.hasNext ),
 #else#end
@@ -209,7 +217,11 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
                             ${signerWSpace}  ${signerCtorArg}#if( $foreach.hasNext ),
 #else#end
 #end),
+  #if ($metadata.awsQueryCompatible)
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG, true)),
+  #else
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+  #end
 #foreach($ctorMemberInit in $ctorMemberInitList)
     ${ctorMemberInit}#if( $foreach.hasNext ),
 #else#end
@@ -246,7 +258,11 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
                             ${signerWSpace}  ${signerCtorArg}#if( $foreach.hasNext ),
 #else#end
 #end),
+  #if ($metadata.awsQueryCompatible)
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG, true)),
+  #else
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+  #end
 #foreach($ctorMemberInit in $ctorMemberInitList)
     ${ctorMemberInit}#if( $foreach.hasNext ),
 #else#end
@@ -272,7 +288,11 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end
   BASECLASS(clientConfiguration,
             signerProvider,
+  #if ($metadata.awsQueryCompatible)
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG, true)),
+  #else
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+  #end
 ${virtualAddressingInit}
 {
   init(m_clientConfiguration);
@@ -308,6 +328,11 @@ void ${className}::init(const ${clientConfigurationCls}& config)
 #if($AdditionalServiceSpecificConfigLoadString)
   ${AdditionalServiceSpecificConfigLoadString}
 #end##if($AdditionalServiceSpecificConfigLoadString)
+
+#if ($metadata.awsQueryCompatible)
+  SetFeatureHeaders({{"x-amzn-query-mode","True"}});
+#end
+
 }
 
 void ${className}::OverrideEndpoint(const Aws::String& endpoint)

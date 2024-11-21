@@ -602,7 +602,7 @@ namespace Aws
         SSOCredentialsClient::SSOCredentialsClient(const Aws::Client::ClientConfiguration& clientConfiguration, Aws::Http::Scheme scheme, const Aws::String& region)
                 : AWSHttpResourceClient(clientConfiguration, SSO_RESOURCE_CLIENT_LOG_TAG)
         {
-            SetErrorMarshaller(Aws::MakeUnique<Aws::Client::JsonErrorMarshaller>(SSO_RESOURCE_CLIENT_LOG_TAG));
+            (Aws::MakeUnique<Aws::Client::JsonErrorMarshaller>(SSO_RESOURCE_CLIENT_LOG_TAG));
 
             m_endpoint = buildEndpoint(scheme, region, "portal.sso.", "federation/credentials");
             m_oidcEndpoint = buildEndpoint(scheme, region, "oidc.", "token");
