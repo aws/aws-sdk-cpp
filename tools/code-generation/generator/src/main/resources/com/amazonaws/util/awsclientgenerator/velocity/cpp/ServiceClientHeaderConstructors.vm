@@ -1,15 +1,26 @@
 #set($additionalCtorArgs = {})
 #if($signPayloadsOptional)
+#if(!$serviceModel.endpointRules)
+#set($signPayloads = ", Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never")
+#set($addArgDummy = $additionalCtorArgs.put("signPayloads", "Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never"))
+#end##-#if(!$serviceModel.endpointRules)
 #else
 #set($signPayloads = "")
 #end
 #if($virtualAddressingSupported)
+#if(!$serviceModel.endpointRules)
+    #set($virtualAddressing = ", bool useVirtualAddressing = true")
+#set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool useVirtualAddressing = true"))
+#end##-#if($serviceModel.endpointRules)
 #else
     #set($virtualAddressing = "")
 #end
 #if(!$USEast1RegionalEndpointArgString)
 #set($USEast1RegionalEndpointArgString = "")
 #else
+#if(!$serviceModel.endpointRules)
+#set($addArgDummy = $additionalCtorArgs.put("USEast1RegionalEndpoint", $USEast1RegionalEndpointArgString.replace(", ", "")))
+#end##-#if($serviceModel.endpointRules)
 #end
 #if($serviceNamespace == "S3Crt")
 #set($clientConfigurationNamespace = $serviceNamespace)
@@ -20,8 +31,12 @@
 #set($credentialProviderArg = "")
 #end
 #set($clsWSpace = $className.replaceAll(".", " "))
+#if($serviceModel.endpointRules)
 #set($endpointsProviderDefaultCtorDummy = "nullptr")
 #set($clientConfigurationCls = "Aws::" + ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
+#else
+#set($clientConfigurationCls = "Aws::" + ${clientConfigurationNamespace} + "::ClientConfiguration")
+#end
 #if($serviceModel.metadata.serviceId == "S3")
         /**
          * Copy constructor for a ${className}. Copies all members that do not reference self.
@@ -53,7 +68,7 @@
          */
         ${className}& operator=(${className} &&rhs) noexcept;
 #end
-#if($serviceNamespace != "S3Crt")
+#if($serviceModel.endpointRules && $serviceNamespace != "S3Crt")
 #if($serviceModel.hasOnlyBearerAuth())
 #set($bearerAddCtorArgs = {})
 #foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
@@ -63,7 +78,9 @@
         * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
         */
         ${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
+#if($serviceModel.endpointRules)
         ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorDummy},
+#end
         ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}()#if($bearerAddCtorArgs.isEmpty()));#else,#end
 
 #foreach($ctorArgument in $bearerAddCtorArgs)
@@ -79,9 +96,12 @@
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ${className}(const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}(),
+        ${className}(const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}()#if($defCredsChainCtor.isEmpty() && !$serviceModel.endpointRules));#else,#end
+
+#if($serviceModel.endpointRules)
         ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorDummy}#if($defCredsChainCtor.isEmpty()));#else,#end
 
+#end
 #foreach($ctorArgument in $defCredsChainCtor)
         ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
 
@@ -96,7 +116,9 @@
         * is not specified, it will be initialized to default values.
         */
         ${className}(const Aws::Auth::AWSCredentials& credentials,
+#if($serviceModel.endpointRules)
         ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorDummy},
+#end
         ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}()#if($simpleCredsCtor.isEmpty()));#else,#end
 
 #foreach($ctorArgument in $simpleCredsCtor)
@@ -113,7 +135,9 @@
         * the default http client factory will be used
         */
         ${className}(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+#if($serviceModel.endpointRules)
         ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorDummy},
+#end
         ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}()#if($specCredsCtor.isEmpty()));#else,#end
 
 #foreach($ctorArgument in $specCredsCtor)
@@ -132,7 +156,9 @@
         * is not specified, it will be initialized to default values.
         */
         ${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
+#if($serviceModel.endpointRules)
         ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorDummy},
+#end
         ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}()#if($standaloneCredsCtor.isEmpty()));#else,#end
 
 #foreach($ctorArgument in $specCredsCtor)
@@ -141,9 +167,11 @@
 #end
 
 #end
-#end##-#if($serviceNamespace != "S3Crt")
+#end##-#if($serviceModel.endpointRules && $serviceNamespace != "S3Crt")
 
+#if($serviceModel.endpointRules)
         /* Legacy constructors due deprecation */
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderLegacyConstructors.vm")
         /* End of legacy constructors due deprecation */
+#end
         virtual ~${className}();

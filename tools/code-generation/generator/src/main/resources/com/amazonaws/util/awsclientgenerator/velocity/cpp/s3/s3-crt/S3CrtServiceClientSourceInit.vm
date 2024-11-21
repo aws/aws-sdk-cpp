@@ -15,7 +15,11 @@
 #end
 #if($virtualAddressingSupported)
 #set($virtualAddressing = ", bool useVirtualAddressing")
+#if($serviceModel.endpointRules)
 #set($virtualAddressingInit = ", useVirtualAddressing")
+#else
+#set($virtualAddressingInit = ", m_useVirtualAddressing(useVirtualAddressing)")
+#end
 #else
 #set($virtualAddressing = "")
 #set($virtualAddressingInit = "")
@@ -26,10 +30,15 @@
 #if(!$USEast1RegionalEndpointInitString)
 #set($USEast1RegionalEndpointInitString = "")
 #else
+#if($serviceModel.endpointRules)
 #set($USEast1RegionalEndpointInitString = $USEast1RegionalEndpointInitString.replace("m_USEast1RegionalEndpointOption(", "").replace(")", ""))
+#end
 #end
 #if(!$ForRegionExtraArgsString)
 #set($ForRegionExtraArgsString = "")
+#end
+#if($metadata.hasEndpointDiscoveryTrait && !$serviceModel.endpointRules)
+#set($AdditionalServiceSpecificConfigLoadString = "Load${metadata.classNamePrefix}SpecificConfig(config);")
 #end
 #set($clientConfigurationNamespace = $serviceNamespace)
 #set($credentialsParam = ", m_credProvider")
@@ -122,8 +131,11 @@ ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfigur
             signPayloads,
             false),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
     ${defaultCredentialsProviderChainMember},
+#else${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
+#end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
@@ -139,8 +151,11 @@ ${className}::${className}(const AWSCredentials& credentials, const ${clientConf
             signPayloads,
             false),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
     ${simpleCredentialsProviderMember},
+#else${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
+#end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
@@ -157,8 +172,12 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
             signPayloads,
             false),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
     ${credentialsProviderMember},
+#else
+    ${credentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
+#end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
@@ -169,8 +188,12 @@ ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfigur
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, ${defaultCredentialsProviderChainParam},
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
     ${defaultCredentialsProviderChainMember},
+#else
+    ${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
+#end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
@@ -181,8 +204,12 @@ ${className}::${className}(const AWSCredentials& credentials, const ${clientConf
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, ${simpleCredentialsProviderParam},
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
     ${simpleCredentialsProviderMember},
+#else
+    ${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString},
+#end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
@@ -194,8 +221,12 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
     ${virtualAddressingInit},
+#else
+    ${virtualAddressingInit}${USEast1RegionalEndpointInitString}${credentialsProviderMember},
+#end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(clientConfiguration${credentialsParam});
@@ -207,8 +238,12 @@ ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvide
   const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}) :
   BASECLASS(clientConfiguration, signerProvider,
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
     m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
     ${virtualAddressingInit},
+#else
+    ${virtualAddressingInit},
+#end
     m_identityProvider(Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this))
 {
   init(m_clientConfiguration);
@@ -227,11 +262,13 @@ ${className}::~${className}()
   ShutdownSdkClient(this, -1);
 }
 
+#if($serviceModel.endpointRules)
 std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& ${className}::accessEndpointProvider()
 {
   return m_endpointProvider;
 }
 
+#end
 void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config,
     const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider)
 {
@@ -244,9 +281,58 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
     }
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
+#if($serviceModel.endpointRules)
   m_endpointProvider = Aws::MakeShared<S3CrtEndpointProvider>(ALLOCATION_TAG);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
+#end
+#if(!$serviceModel.endpointRules)
+#if($AdditionalServiceSpecificConfigLoadString)
+  ${AdditionalServiceSpecificConfigLoadString}
+#end
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+#if($metadata.hasPreSignedUrl)
+  m_useDualStack = config.useDualStack;
+#end
+#if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
+  m_scheme = m_configScheme;
+#if($arnEndpointSupported)
+  m_useDualStack = config.useDualStack;
+#end
+  if (config.endpointOverride.empty())
+  {
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
+      m_useCustomEndpoint = false;
+#end
+      m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack${ForRegionExtraArgsString});
+  }
+  else
+  {
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
+      m_useCustomEndpoint = true;
+#end
+      OverrideEndpoint(config.endpointOverride);
+  }
+#else
+  if (config.endpointOverride.empty())
+  {
+      m_uri = m_configScheme + "://" + ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
+#if($customEndpointUsed)
+      m_useCustomEndpoint = false;
+#end
+  }
+  else
+  {
+      OverrideEndpoint(config.endpointOverride);
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
+      m_useCustomEndpoint = true;
+#end
+  }
+#end
+#if($metadata.hasEndpointTrait)
+  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
+#end
+#end##-#if($serviceModel.endpointRules)
 #if($serviceNamespace == "S3Crt")
 
   // initialize aws_s3_client;
@@ -495,6 +581,38 @@ void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::Clie
 
 void ${className}::OverrideEndpoint(const Aws::String& endpoint)
 {
+#if($serviceModel.endpointRules)
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
+#else##-#if($serviceModel.endpointRules)
+#if($virtualAddressingSupported || $arnEndpointSupported || $metadata.hasEndpointTrait)
+  if (endpoint.compare(0, 7, "http://") == 0)
+  {
+      m_scheme = "http";
+      m_baseUri = endpoint.substr(7);
+  }
+  else if (endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_scheme = "https";
+      m_baseUri = endpoint.substr(8);
+  }
+  else
+  {
+      m_scheme = m_configScheme;
+      m_baseUri = endpoint;
+  }
+#else
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+#end
+#if($metadata.hasEndpointDiscoveryTrait)
+  m_enableEndpointDiscovery = false;
+#end
+#end##-#if($serviceModel.endpointRules)
 }

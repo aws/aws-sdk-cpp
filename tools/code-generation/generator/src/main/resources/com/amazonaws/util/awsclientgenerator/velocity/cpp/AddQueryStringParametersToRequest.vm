@@ -46,7 +46,31 @@ void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
     ${spaces}  ss.str("");
     ${spaces}}
 #else
+#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("querystring") && $operation.arnEndpointMemberName.equals($$memberEntry.key) && !$serviceModel.endpointRules))
+    ${spaces}${metadata.classNamePrefix}ARN arn($CppViewHelper.computeMemberVariableName($operation.arnEndpointMemberName));
+    ${spaces}if (arn && arn.Validate().IsSuccess())
+    ${spaces}{
+    ${spaces}  if (arn.GetResourceType() == ARNResourceType::BUCKET)
+    ${spaces}  {
+    ${spaces}    ss << arn.GetResourceId();
+    ${spaces}  }
+    ${spaces}  else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
+    ${spaces}  {
+    ${spaces}    ss << arn.GetSubResourceId();
+    ${spaces}  }
+    ${spaces}  else
+    ${spaces}  {
+    ${spaces}    // It's a valid ARN, but has incorrect resource type.
+    ${spaces}    assert(false);
+    ${spaces}  }
+    ${spaces}}
+    ${spaces}else
+    ${spaces}{
+    ${spaces}  ss << ${memberVarName};
+    ${spaces}}
+#else
     ${spaces}ss << ${memberVarName};
+#end
     ${spaces}uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
     ${spaces}ss.str("");
 #end
