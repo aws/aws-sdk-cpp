@@ -16,8 +16,6 @@ namespace Client
 class AWS_SQS_API SQSErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
-
-  explicit SQSErrorMarshaller(bool queryCompatibilityMode) : Aws::Client::JsonErrorMarshaller(queryCompatibilityMode){}
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 

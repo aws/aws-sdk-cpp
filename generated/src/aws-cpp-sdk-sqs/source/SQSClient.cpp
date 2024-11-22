@@ -76,7 +76,7 @@ SQSClient::SQSClient(const SQS::SQSClientConfiguration& clientConfiguration,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG, true)),
+            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG))
 {
@@ -91,7 +91,7 @@ SQSClient::SQSClient(const AWSCredentials& credentials,
                                              Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG, true)),
+            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG))
 {
@@ -106,7 +106,7 @@ SQSClient::SQSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
                                              credentialsProvider,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG, true)),
+            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG))
 {
@@ -120,7 +120,7 @@ SQSClient::SQSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG, true)),
+            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_endpointProvider(Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG))
 {
@@ -134,7 +134,7 @@ SQSClient::SQSClient(const AWSCredentials& credentials,
                                              Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG, true)),
+            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_endpointProvider(Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG))
 {
@@ -148,7 +148,7 @@ SQSClient::SQSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
                                              credentialsProvider,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG, true)),
+            Aws::MakeShared<SQSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_endpointProvider(Aws::MakeShared<SQSEndpointProvider>(ALLOCATION_TAG))
 {
