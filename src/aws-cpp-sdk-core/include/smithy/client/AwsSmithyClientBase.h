@@ -158,17 +158,15 @@ namespace client
         virtual SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
         virtual SigningOutcome SignRequest(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemeOption& targetAuthSchemeOption) const = 0;
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
-        void SetFeatureHeaders(Aws::Http::HeaderValueCollection&& headers);
 
-       protected:
-        Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
-        Aws::String m_serviceName;
-        Aws::String m_userAgent;
+    protected:
+     Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
+     Aws::String m_serviceName;
+     Aws::String m_userAgent;
 
-        std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
-        std::shared_ptr<Aws::Client::AWSErrorMarshaller> m_errorMarshaller;
-        Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors{};
-        Aws::Http::HeaderValueCollection m_featureHeaders;
+     std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
+     std::shared_ptr<Aws::Client::AWSErrorMarshaller> m_errorMarshaller;
+     Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors{};
     };
-} // namespace client
+    }  // namespace client
 } // namespace smithy

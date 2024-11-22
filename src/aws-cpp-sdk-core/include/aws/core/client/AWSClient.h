@@ -321,8 +321,6 @@ namespace Aws
             std::shared_ptr<Aws::Http::HttpResponse> MakeHttpRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
             Aws::String m_region;
 
-            void SetFeatureHeaders(Aws::Http::HeaderValueCollection&& headers);
-
             /**
              * Adds "X-Amzn-Trace-Id" header with the value of _X_AMZN_TRACE_ID if both
              * environment variables AWS_LAMBDA_FUNCTION_NAME and _X_AMZN_TRACE_ID are set.
@@ -358,7 +356,6 @@ namespace Aws
             Aws::String m_serviceName = "AWSBaseClient";
             Aws::Client::RequestCompressionConfig m_requestCompressionConfig;
             Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors;
-            Aws::Http::HeaderValueCollection m_featureHeaders;
         };
 
         AWS_CORE_API Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);

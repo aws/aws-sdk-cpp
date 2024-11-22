@@ -63,7 +63,6 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
     {
         AddHeadersToRequest(httpRequest, pRequest->GetHeaders());
         AddHeadersToRequest(httpRequest, pRequest->GetAdditionalCustomHeaders());
-        AddHeadersToRequest(httpRequest, m_featureHeaders);
 
         if (pRequest->IsEventStreamRequest())
         {
@@ -94,8 +93,6 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
 
     return httpRequest;
 }
-
-void AwsSmithyClientBase::SetFeatureHeaders(Aws::Http::HeaderValueCollection&& headers) { m_featureHeaders = std::move(headers); }
 
 void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* const request, const char* requestName,
                                            Aws::Http::HttpMethod method, EndpointUpdateCallback&& endpointCallback,
