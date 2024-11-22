@@ -171,10 +171,10 @@ public class C2jModelToGeneratorModelTransformer {
 
         // add protocol check. only for json, query protocols
         if (serviceModel.getMetadata().getProtocol().equals("json")) {
-          serviceModel.getMetadata().setAwsQueryCompatible(
-              c2jServiceModel.getMetadata().getAwsQueryCompatible() != null);
+            serviceModel.getMetadata().setAwsQueryCompatible(
+                    c2jServiceModel.getMetadata().getAwsQueryCompatible() != null);
         } else {
-          serviceModel.getMetadata().setAwsQueryCompatible(false);
+            serviceModel.getMetadata().setAwsQueryCompatible(false);
         }
 
         if (c2jServiceModel.getEndpointRules() != null) {
