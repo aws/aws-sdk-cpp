@@ -98,10 +98,6 @@ AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse
         }
 
         error.SetExceptionName(errorCode);
-
-        //@todo: add support for Type from
-        // x-amzn-query-error:AWS.SimpleQueueService.NonExistentQueue;Sender
-        // , type is sender
       }
       // check for exception name from payload field 'type'
       else if (payloadView.ValueExists(TYPE)) {
@@ -126,35 +122,28 @@ AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse
   return error;
 }
 
-AWSError<CoreErrors> JsonErrorMarshaller::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const
-{
-    AWSError<CoreErrors> error;
-    if (httpResponse->HasClientError())
-    {
-        bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
-        error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
-    }
-    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
-    {
-        auto responseCode = httpResponse->GetResponseCode();
-        auto errorCode = GuessBodylessErrorType(responseCode);
+AWSError<CoreErrors> JsonErrorMarshaller::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const {
+  AWSError<CoreErrors> error;
+  if (httpResponse->HasClientError()) {
+    bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
+    error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
+  } else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1) {
+    auto responseCode = httpResponse->GetResponseCode();
+    auto errorCode = GuessBodylessErrorType(responseCode);
 
-        Aws::StringStream ss;
-        ss << "No response body.";
-        error = AWSError<CoreErrors>(errorCode, "", ss.str(),
-            IsRetryableHttpResponseCode(responseCode));
-    }
-    else
-    {
-        assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
-        error = Marshall(*httpResponse);
-    }
+    Aws::StringStream ss;
+    ss << "No response body.";
+    error = AWSError<CoreErrors>(errorCode, "", ss.str(), IsRetryableHttpResponseCode(responseCode));
+  } else {
+    assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
+    error = Marshall(*httpResponse);
+  }
 
-    error.SetResponseHeaders(httpResponse->GetHeaders());
-    error.SetResponseCode(httpResponse->GetResponseCode());
-    error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
-    AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, error);
-    return error;
+  error.SetResponseHeaders(httpResponse->GetHeaders());
+  error.SetResponseCode(httpResponse->GetResponseCode());
+  error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
+  AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, error);
+  return error;
 }
 
 const JsonValue& JsonErrorMarshaller::GetJsonPayloadFromError(const AWSError<CoreErrors>& error) const
