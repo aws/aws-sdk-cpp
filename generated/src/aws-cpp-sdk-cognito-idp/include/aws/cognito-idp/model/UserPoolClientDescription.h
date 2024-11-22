@@ -24,7 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>The description of the user pool client.</p><p><h3>See Also:</h3>   <a
+   * <p>A short description of a user pool app client.</p> <p>This data type is a
+   * response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClients.html">ListUserPoolClients</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolClientDescription">AWS
    * API Reference</a></p>
    */
@@ -39,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the client associated with the user pool.</p>
+     * <p>The app client ID.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -53,8 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool where you want to describe the user pool
-     * client.</p>
+     * <p>The ID of the user pool that's associated with the app client.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -68,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The client name from the user pool client description.</p>
+     * <p>The app client name.</p>
      */
     inline const Aws::String& GetClientName() const{ return m_clientName; }
     inline bool ClientNameHasBeenSet() const { return m_clientNameHasBeenSet; }

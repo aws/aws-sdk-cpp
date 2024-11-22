@@ -28,6 +28,7 @@ namespace Aws
         static const int ALLOW_USER_PASSWORD_AUTH_HASH = HashingUtils::HashString("ALLOW_USER_PASSWORD_AUTH");
         static const int ALLOW_USER_SRP_AUTH_HASH = HashingUtils::HashString("ALLOW_USER_SRP_AUTH");
         static const int ALLOW_REFRESH_TOKEN_AUTH_HASH = HashingUtils::HashString("ALLOW_REFRESH_TOKEN_AUTH");
+        static const int ALLOW_USER_AUTH_HASH = HashingUtils::HashString("ALLOW_USER_AUTH");
 
 
         ExplicitAuthFlowsType GetExplicitAuthFlowsTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return ExplicitAuthFlowsType::ALLOW_REFRESH_TOKEN_AUTH;
           }
+          else if (hashCode == ALLOW_USER_AUTH_HASH)
+          {
+            return ExplicitAuthFlowsType::ALLOW_USER_AUTH;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +102,8 @@ namespace Aws
             return "ALLOW_USER_SRP_AUTH";
           case ExplicitAuthFlowsType::ALLOW_REFRESH_TOKEN_AUTH:
             return "ALLOW_REFRESH_TOKEN_AUTH";
+          case ExplicitAuthFlowsType::ALLOW_USER_AUTH:
+            return "ALLOW_USER_AUTH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

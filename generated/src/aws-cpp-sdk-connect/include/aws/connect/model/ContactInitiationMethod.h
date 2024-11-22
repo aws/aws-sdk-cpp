@@ -24,7 +24,10 @@ namespace Model
     API,
     DISCONNECT,
     MONITOR,
-    EXTERNAL_OUTBOUND
+    EXTERNAL_OUTBOUND,
+    WEBRTC_API,
+    AGENT_REPLY,
+    FLOW
   };
 
 namespace ContactInitiationMethodMapper

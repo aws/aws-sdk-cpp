@@ -30,6 +30,7 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 
 
         ImportTaskStatus GetImportTaskStatusForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return ImportTaskStatus::CANCELLED;
           }
+          else if (hashCode == DELETED_HASH)
+          {
+            return ImportTaskStatus::DELETED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -111,6 +116,8 @@ namespace Aws
             return "CANCELLING";
           case ImportTaskStatus::CANCELLED:
             return "CANCELLED";
+          case ImportTaskStatus::DELETED:
+            return "DELETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

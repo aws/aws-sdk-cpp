@@ -21,6 +21,7 @@
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/UserPoolAddOnsType.h>
 #include <aws/cognito-idp/model/AccountRecoverySettingType.h>
+#include <aws/cognito-idp/model/UserPoolTierType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <utility>
 
@@ -347,6 +348,36 @@ namespace Model
     inline UpdateUserPoolRequest& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
     inline UpdateUserPoolRequest& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The updated name of your user pool.</p>
+     */
+    inline const Aws::String& GetPoolName() const{ return m_poolName; }
+    inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
+    inline void SetPoolName(const Aws::String& value) { m_poolNameHasBeenSet = true; m_poolName = value; }
+    inline void SetPoolName(Aws::String&& value) { m_poolNameHasBeenSet = true; m_poolName = std::move(value); }
+    inline void SetPoolName(const char* value) { m_poolNameHasBeenSet = true; m_poolName.assign(value); }
+    inline UpdateUserPoolRequest& WithPoolName(const Aws::String& value) { SetPoolName(value); return *this;}
+    inline UpdateUserPoolRequest& WithPoolName(Aws::String&& value) { SetPoolName(std::move(value)); return *this;}
+    inline UpdateUserPoolRequest& WithPoolName(const char* value) { SetPoolName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user pool <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
+     * plan</a>, or tier. This parameter determines the eligibility of the user pool
+     * for features like managed login, access-token customization, and threat
+     * protection. Defaults to <code>ESSENTIALS</code>.</p>
+     */
+    inline const UserPoolTierType& GetUserPoolTier() const{ return m_userPoolTier; }
+    inline bool UserPoolTierHasBeenSet() const { return m_userPoolTierHasBeenSet; }
+    inline void SetUserPoolTier(const UserPoolTierType& value) { m_userPoolTierHasBeenSet = true; m_userPoolTier = value; }
+    inline void SetUserPoolTier(UserPoolTierType&& value) { m_userPoolTierHasBeenSet = true; m_userPoolTier = std::move(value); }
+    inline UpdateUserPoolRequest& WithUserPoolTier(const UserPoolTierType& value) { SetUserPoolTier(value); return *this;}
+    inline UpdateUserPoolRequest& WithUserPoolTier(UserPoolTierType&& value) { SetUserPoolTier(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_userPoolId;
@@ -405,6 +436,12 @@ namespace Model
 
     AccountRecoverySettingType m_accountRecoverySetting;
     bool m_accountRecoverySettingHasBeenSet = false;
+
+    Aws::String m_poolName;
+    bool m_poolNameHasBeenSet = false;
+
+    UserPoolTierType m_userPoolTier;
+    bool m_userPoolTierHasBeenSet = false;
   };
 
 } // namespace Model

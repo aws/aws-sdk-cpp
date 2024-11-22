@@ -28,7 +28,13 @@ ConfirmSignUpResult::ConfirmSignUpResult(const Aws::AmazonWebServiceResult<JsonV
 
 ConfirmSignUpResult& ConfirmSignUpResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Session"))
+  {
+    m_session = jsonValue.GetString("Session");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

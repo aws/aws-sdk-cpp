@@ -20,7 +20,8 @@ namespace Model
 
 OptimizationConfig::OptimizationConfig() : 
     m_modelQuantizationConfigHasBeenSet(false),
-    m_modelCompilationConfigHasBeenSet(false)
+    m_modelCompilationConfigHasBeenSet(false),
+    m_modelShardingConfigHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ OptimizationConfig& OptimizationConfig::operator =(JsonView jsonValue)
     m_modelCompilationConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelShardingConfig"))
+  {
+    m_modelShardingConfig = jsonValue.GetObject("ModelShardingConfig");
+
+    m_modelShardingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue OptimizationConfig::Jsonize() const
   if(m_modelCompilationConfigHasBeenSet)
   {
    payload.WithObject("ModelCompilationConfig", m_modelCompilationConfig.Jsonize());
+
+  }
+
+  if(m_modelShardingConfigHasBeenSet)
+  {
+   payload.WithObject("ModelShardingConfig", m_modelShardingConfig.Jsonize());
 
   }
 

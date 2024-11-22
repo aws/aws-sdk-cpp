@@ -24,7 +24,14 @@ namespace Model
 {
 
   /**
-   * <p>Account takeover action type.</p><p><h3>See Also:</h3>   <a
+   * <p>The automated response to a risk level for adaptive authentication in
+   * full-function, or <code>ENFORCED</code>, mode. You can assign an action to each
+   * risk level that advanced security features evaluates.</p> <p>This data type is a
+   * request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AccountTakeoverActionType">AWS
    * API Reference</a></p>
    */
@@ -39,7 +46,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Flag specifying whether to send a notification.</p>
+     * <p>Determines whether Amazon Cognito sends a user a notification message when
+     * your user pools assesses a user's session at the associated risk level.</p>
      */
     inline bool GetNotify() const{ return m_notify; }
     inline bool NotifyHasBeenSet() const { return m_notifyHasBeenSet; }
@@ -49,13 +57,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The action to take in response to the account takeover action. Valid values
-     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
-     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
-     * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
-     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
-     * user to sign in.</p> </li> </ul>
+     * <p>The action to take for the attempted account takeover action for the
+     * associated risk level. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>BLOCK</code>: Block the request.</p> </li> <li> <p>
+     * <code>MFA_IF_CONFIGURED</code>: Present an MFA challenge if possible. MFA is
+     * possible if the user pool has active MFA methods that the user can set up. For
+     * example, if the user pool only supports SMS message MFA but the user doesn't
+     * have a phone number attribute, MFA setup isn't possible. If MFA setup isn't
+     * possible, allow the request.</p> </li> <li> <p> <code>MFA_REQUIRED</code>:
+     * Present an MFA challenge if possible. Block the request if a user hasn't set up
+     * MFA. To sign in with required MFA, users must have an email address or phone
+     * number attribute, or a registered TOTP factor.</p> </li> <li> <p>
+     * <code>NO_ACTION</code>: Take no action. Permit sign-in.</p> </li> </ul>
      */
     inline const AccountTakeoverEventActionType& GetEventAction() const{ return m_eventAction; }
     inline bool EventActionHasBeenSet() const { return m_eventActionHasBeenSet; }

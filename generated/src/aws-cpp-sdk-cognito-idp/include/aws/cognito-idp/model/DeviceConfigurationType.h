@@ -43,8 +43,14 @@ namespace Model
    * <code>DEVICE_GROUP_KEY</code> values under <code>NewDeviceMetadata</code>. Store
    * these values to use in future device-authentication requests.</p>  <p>When
    * you provide a value for any property of <code>DeviceConfiguration</code>, you
-   * activate the device remembering for the user pool.</p> <p><h3>See
-   * Also:</h3>   <a
+   * activate the device remembering for the user pool.</p> <p>This data type is a
+   * request and response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceConfigurationType">AWS
    * API Reference</a></p>
    */

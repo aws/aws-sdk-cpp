@@ -237,12 +237,20 @@ namespace Model
      * value for <code>ExplicitAuthFlows</code>, your user client supports
      * <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and
      * <code>ALLOW_CUSTOM_AUTH</code>.</p>  <p>Valid values include:</p> <ul>
-     * <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user
-     * password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting
-     * replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
-     * flow, your app passes a user name and password to Amazon Cognito in the request,
-     * instead of using the Secure Remote Password (SRP) protocol to securely transmit
-     * the password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
+     * <li> <p> <code>ALLOW_USER_AUTH</code>: Enable selection-based sign-in with
+     * <code>USER_AUTH</code>. This setting covers username-password, secure remote
+     * password (SRP), passwordless, and passkey authentication. This authentiation
+     * flow can do username-password and SRP authentication without other
+     * <code>ExplicitAuthFlows</code> permitting them. For example users can complete
+     * an SRP challenge through <code>USER_AUTH</code> without the flow
+     * <code>USER_SRP_AUTH</code> being active for the app client. This flow doesn't
+     * include <code>CUSTOM_AUTH</code>. </p> </li> <li> <p>
+     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+     * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
+     * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your
+     * app passes a user name and password to Amazon Cognito in the request, instead of
+     * using the Secure Remote Password (SRP) protocol to securely transmit the
+     * password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
      * trigger based authentication.</p> </li> <li> <p>
      * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
      * authentication. In this flow, Amazon Cognito receives the password in the
@@ -268,10 +276,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of provider names for the IdPs that this client supports. The
-     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>,
-     * and the names of your own SAML and OIDC providers.</p>
+     * <p>A list of provider names for the identity providers (IdPs) that are supported
+     * on this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
+     * <code>LoginWithAmazon</code>. You can also specify the names that you configured
+     * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
+     * or <code>MyOIDCIdP</code>.</p> <p>This setting applies to providers that you can
+     * access with the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html">hosted
+     * UI and OAuth 2.0 authorization server</a>. The removal of <code>COGNITO</code>
+     * from this list doesn't prevent authentication operations for local users with
+     * the user pools API in an Amazon Web Services SDK. The only way to prevent
+     * API-based authentication is to block access with a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF
+     * rule</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedIdentityProviders() const{ return m_supportedIdentityProviders; }
     inline bool SupportedIdentityProvidersHasBeenSet() const { return m_supportedIdentityProvidersHasBeenSet; }
@@ -462,7 +480,7 @@ namespace Model
     /**
      * <p>Activates the propagation of additional user context data. For more
      * information about propagation of user context data, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-threat-protection.html">
      * Adding advanced security to a user pool</a>. If you don’t include this
      * parameter, you can't send device fingerprint information, including source IP
      * address, to Amazon Cognito advanced security. You can only activate

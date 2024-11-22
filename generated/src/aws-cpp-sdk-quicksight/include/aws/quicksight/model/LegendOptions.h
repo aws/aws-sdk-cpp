@@ -9,6 +9,7 @@
 #include <aws/quicksight/model/LabelOptions.h>
 #include <aws/quicksight/model/LegendPosition.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/FontConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -108,6 +109,16 @@ namespace Model
     inline LegendOptions& WithHeight(Aws::String&& value) { SetHeight(std::move(value)); return *this;}
     inline LegendOptions& WithHeight(const char* value) { SetHeight(value); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const FontConfiguration& GetValueFontConfiguration() const{ return m_valueFontConfiguration; }
+    inline bool ValueFontConfigurationHasBeenSet() const { return m_valueFontConfigurationHasBeenSet; }
+    inline void SetValueFontConfiguration(const FontConfiguration& value) { m_valueFontConfigurationHasBeenSet = true; m_valueFontConfiguration = value; }
+    inline void SetValueFontConfiguration(FontConfiguration&& value) { m_valueFontConfigurationHasBeenSet = true; m_valueFontConfiguration = std::move(value); }
+    inline LegendOptions& WithValueFontConfiguration(const FontConfiguration& value) { SetValueFontConfiguration(value); return *this;}
+    inline LegendOptions& WithValueFontConfiguration(FontConfiguration&& value) { SetValueFontConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Visibility m_visibility;
@@ -124,6 +135,9 @@ namespace Model
 
     Aws::String m_height;
     bool m_heightHasBeenSet = false;
+
+    FontConfiguration m_valueFontConfiguration;
+    bool m_valueFontConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

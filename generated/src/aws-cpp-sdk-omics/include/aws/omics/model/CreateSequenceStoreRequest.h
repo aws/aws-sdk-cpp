@@ -10,7 +10,10 @@
 #include <aws/omics/model/SseConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/omics/model/ETagAlgorithmFamily.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/omics/model/S3AccessConfig.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -135,6 +138,34 @@ namespace Model
     inline CreateSequenceStoreRequest& WithETagAlgorithmFamily(const ETagAlgorithmFamily& value) { SetETagAlgorithmFamily(value); return *this;}
     inline CreateSequenceStoreRequest& WithETagAlgorithmFamily(ETagAlgorithmFamily&& value) { SetETagAlgorithmFamily(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The tags keys to propagate to the S3 objects associated with read sets in the
+     * sequence store.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPropagatedSetLevelTags() const{ return m_propagatedSetLevelTags; }
+    inline bool PropagatedSetLevelTagsHasBeenSet() const { return m_propagatedSetLevelTagsHasBeenSet; }
+    inline void SetPropagatedSetLevelTags(const Aws::Vector<Aws::String>& value) { m_propagatedSetLevelTagsHasBeenSet = true; m_propagatedSetLevelTags = value; }
+    inline void SetPropagatedSetLevelTags(Aws::Vector<Aws::String>&& value) { m_propagatedSetLevelTagsHasBeenSet = true; m_propagatedSetLevelTags = std::move(value); }
+    inline CreateSequenceStoreRequest& WithPropagatedSetLevelTags(const Aws::Vector<Aws::String>& value) { SetPropagatedSetLevelTags(value); return *this;}
+    inline CreateSequenceStoreRequest& WithPropagatedSetLevelTags(Aws::Vector<Aws::String>&& value) { SetPropagatedSetLevelTags(std::move(value)); return *this;}
+    inline CreateSequenceStoreRequest& AddPropagatedSetLevelTags(const Aws::String& value) { m_propagatedSetLevelTagsHasBeenSet = true; m_propagatedSetLevelTags.push_back(value); return *this; }
+    inline CreateSequenceStoreRequest& AddPropagatedSetLevelTags(Aws::String&& value) { m_propagatedSetLevelTagsHasBeenSet = true; m_propagatedSetLevelTags.push_back(std::move(value)); return *this; }
+    inline CreateSequenceStoreRequest& AddPropagatedSetLevelTags(const char* value) { m_propagatedSetLevelTagsHasBeenSet = true; m_propagatedSetLevelTags.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>S3 access configuration parameters</p>
+     */
+    inline const S3AccessConfig& GetS3AccessConfig() const{ return m_s3AccessConfig; }
+    inline bool S3AccessConfigHasBeenSet() const { return m_s3AccessConfigHasBeenSet; }
+    inline void SetS3AccessConfig(const S3AccessConfig& value) { m_s3AccessConfigHasBeenSet = true; m_s3AccessConfig = value; }
+    inline void SetS3AccessConfig(S3AccessConfig&& value) { m_s3AccessConfigHasBeenSet = true; m_s3AccessConfig = std::move(value); }
+    inline CreateSequenceStoreRequest& WithS3AccessConfig(const S3AccessConfig& value) { SetS3AccessConfig(value); return *this;}
+    inline CreateSequenceStoreRequest& WithS3AccessConfig(S3AccessConfig&& value) { SetS3AccessConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -157,6 +188,12 @@ namespace Model
 
     ETagAlgorithmFamily m_eTagAlgorithmFamily;
     bool m_eTagAlgorithmFamilyHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_propagatedSetLevelTags;
+    bool m_propagatedSetLevelTagsHasBeenSet = false;
+
+    S3AccessConfig m_s3AccessConfig;
+    bool m_s3AccessConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -91,6 +91,21 @@ namespace Model
     inline TargetTrackingMetricStat& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
     inline TargetTrackingMetricStat& WithUnit(const char* value) { SetUnit(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> The period of the metric in seconds. The default value is 60. Accepted
+     * values are 10, 30, and 60. For high resolution metric, set the value to less
+     * than 60. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create
+     * a target tracking policy using high-resolution metrics for faster response</a>.
+     * </p>
+     */
+    inline int GetPeriod() const{ return m_period; }
+    inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
+    inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
+    inline TargetTrackingMetricStat& WithPeriod(int value) { SetPeriod(value); return *this;}
+    ///@}
   private:
 
     Metric m_metric;
@@ -101,6 +116,9 @@ namespace Model
 
     Aws::String m_unit;
     bool m_unitHasBeenSet = false;
+
+    int m_period;
+    bool m_periodHasBeenSet = false;
   };
 
 } // namespace Model

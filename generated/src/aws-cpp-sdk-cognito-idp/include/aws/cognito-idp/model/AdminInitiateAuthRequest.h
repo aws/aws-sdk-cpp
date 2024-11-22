@@ -72,26 +72,41 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authentication flow for this call to run. The API action will depend on
-     * this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code> will
-     * take in a valid refresh token and return new tokens.</p> </li> <li> <p>
-     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>SRP_A</code> and return the Secure Remote Password (SRP) protocol
-     * variables to be used for next challenge execution.</p> </li> <li> <p>
-     * <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and
-     * <code>PASSWORD</code> and return the next challenge or tokens.</p> </li> </ul>
-     * <p>Valid values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>:
-     * Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li>
-     * <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>:
-     * Authentication flow for refreshing the access token and ID token by supplying a
-     * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
-     * authentication flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP
-     * authentication flow; you can pass in the USERNAME and PASSWORD directly if the
-     * flow is enabled for calling the app client.</p> </li> <li> <p>
-     * <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
-     * This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this
-     * flow, Amazon Cognito receives the password in the request instead of using the
-     * SRP process to verify passwords.</p> </li> </ul>
+     * <p>The authentication flow that you want to initiate. The
+     * <code>AuthParameters</code> that you must submit are linked to the flow that you
+     * submit. For example:</p> <ul> <li> <p> <code>USER_AUTH</code>: Request a
+     * preferred authentication type or review available authentication types. From the
+     * offered authentication types, select one in a challenge response and then
+     * authenticate with that method in an additional challenge response.</p> </li>
+     * <li> <p> <code>REFRESH_TOKEN_AUTH</code>: Receive new ID and access tokens when
+     * you pass a <code>REFRESH_TOKEN</code> parameter with a valid refresh token as
+     * the value.</p> </li> <li> <p> <code>USER_SRP_AUTH</code>: Receive secure remote
+     * password (SRP) variables for the next challenge, <code>PASSWORD_VERIFIER</code>,
+     * when you pass <code>USERNAME</code> and <code>SRP_A</code> parameters..</p>
+     * </li> <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Receive new tokens or the
+     * next challenge, for example <code>SOFTWARE_TOKEN_MFA</code>, when you pass
+     * <code>USERNAME</code> and <code>PASSWORD</code> parameters.</p> </li> </ul>
+     * <p>Valid values include the following:</p> <dl> <dt>USER_AUTH</dt> <dd> <p>The
+     * entry point for sign-in with passwords, one-time passwords, biometric devices,
+     * and security keys.</p> </dd> <dt>USER_SRP_AUTH</dt> <dd> <p>Username-password
+     * authentication with the Secure Remote Password (SRP) protocol. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Using-SRP-password-verification-in-custom-authentication-flow">Use
+     * SRP password verification in custom authentication flow</a>.</p> </dd>
+     * <dt>REFRESH_TOKEN_AUTH and REFRESH_TOKEN</dt> <dd> <p>Provide a valid refresh
+     * token and receive new ID and access tokens. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html">Using
+     * the refresh token</a>.</p> </dd> <dt>CUSTOM_AUTH</dt> <dd> <p>Custom
+     * authentication with Lambda triggers. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">Custom
+     * authentication challenge Lambda triggers</a>.</p> </dd>
+     * <dt>ADMIN_USER_PASSWORD_AUTH</dt> <dd> <p>Username-password authentication with
+     * the password sent directly in the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Built-in-authentication-flow-and-challenges">Admin
+     * authentication flow</a>.</p> </dd> </dl> <p> <code>USER_PASSWORD_AUTH</code> is
+     * a flow type of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>
+     * and isn't valid for AdminInitiateAuth.</p>
      */
     inline const AuthFlowType& GetAuthFlow() const{ return m_authFlow; }
     inline bool AuthFlowHasBeenSet() const { return m_authFlowHasBeenSet; }
@@ -105,7 +120,11 @@ namespace Model
     /**
      * <p>The authentication parameters. These are inputs corresponding to the
      * <code>AuthFlow</code> that you're invoking. The required values depend on the
-     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>:
+     * value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_AUTH</code>:
+     * <code>USERNAME</code> (required), <code>PREFERRED_CHALLENGE</code>. If you don't
+     * provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds
+     * with the <code>AvailableChallenges</code> parameter that specifies the available
+     * sign-in methods.</p> </li> <li> <p>For <code>USER_SRP_AUTH</code>:
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p>For
@@ -160,8 +179,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
-     * <a
+     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Custom email sender</p>
+     * </li> <li> <p>Custom SMS sender</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -215,6 +234,22 @@ namespace Model
     inline AdminInitiateAuthRequest& WithContextData(const ContextDataType& value) { SetContextData(value); return *this;}
     inline AdminInitiateAuthRequest& WithContextData(ContextDataType&& value) { SetContextData(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The optional session ID from a <code>ConfirmSignUp</code> API request. You
+     * can sign in a user directly from the sign-up process with the
+     * <code>USER_AUTH</code> authentication flow.</p>
+     */
+    inline const Aws::String& GetSession() const{ return m_session; }
+    inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
+    inline void SetSession(const Aws::String& value) { m_sessionHasBeenSet = true; m_session = value; }
+    inline void SetSession(Aws::String&& value) { m_sessionHasBeenSet = true; m_session = std::move(value); }
+    inline void SetSession(const char* value) { m_sessionHasBeenSet = true; m_session.assign(value); }
+    inline AdminInitiateAuthRequest& WithSession(const Aws::String& value) { SetSession(value); return *this;}
+    inline AdminInitiateAuthRequest& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
+    inline AdminInitiateAuthRequest& WithSession(const char* value) { SetSession(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_userPoolId;
@@ -237,6 +272,9 @@ namespace Model
 
     ContextDataType m_contextData;
     bool m_contextDataHasBeenSet = false;
+
+    Aws::String m_session;
+    bool m_sessionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -57,9 +57,27 @@ namespace Model
 
     ///@{
     /**
+     * <p>The input after Step Functions applies an Arguments filter. This event will
+     * only be present when QueryLanguage for the state machine or individual states is
+     * set to JSONata. For more info, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/data-transform.html">Transforming
+     * data with Step Functions</a>.</p>
+     */
+    inline const Aws::String& GetAfterArguments() const{ return m_afterArguments; }
+    inline bool AfterArgumentsHasBeenSet() const { return m_afterArgumentsHasBeenSet; }
+    inline void SetAfterArguments(const Aws::String& value) { m_afterArgumentsHasBeenSet = true; m_afterArguments = value; }
+    inline void SetAfterArguments(Aws::String&& value) { m_afterArgumentsHasBeenSet = true; m_afterArguments = std::move(value); }
+    inline void SetAfterArguments(const char* value) { m_afterArgumentsHasBeenSet = true; m_afterArguments.assign(value); }
+    inline InspectionData& WithAfterArguments(const Aws::String& value) { SetAfterArguments(value); return *this;}
+    inline InspectionData& WithAfterArguments(Aws::String&& value) { SetAfterArguments(std::move(value)); return *this;}
+    inline InspectionData& WithAfterArguments(const char* value) { SetAfterArguments(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The input after Step Functions applies the <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-inputpath">InputPath</a>
-     * filter.</p>
+     * filter. Not populated when QueryLanguage is JSONata.</p>
      */
     inline const Aws::String& GetAfterInputPath() const{ return m_afterInputPath; }
     inline bool AfterInputPathHasBeenSet() const { return m_afterInputPathHasBeenSet; }
@@ -75,7 +93,7 @@ namespace Model
     /**
      * <p>The effective input after Step Functions applies the <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-parameters">Parameters</a>
-     * filter.</p>
+     * filter. Not populated when QueryLanguage is JSONata.</p>
      */
     inline const Aws::String& GetAfterParameters() const{ return m_afterParameters; }
     inline bool AfterParametersHasBeenSet() const { return m_afterParametersHasBeenSet; }
@@ -105,7 +123,7 @@ namespace Model
     /**
      * <p>The effective result after Step Functions applies the <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-inputpath-params.html#input-output-resultselector">ResultSelector</a>
-     * filter.</p>
+     * filter. Not populated when QueryLanguage is JSONata.</p>
      */
     inline const Aws::String& GetAfterResultSelector() const{ return m_afterResultSelector; }
     inline bool AfterResultSelectorHasBeenSet() const { return m_afterResultSelectorHasBeenSet; }
@@ -122,7 +140,7 @@ namespace Model
      * <p>The effective result combined with the raw state input after Step Functions
      * applies the <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultpath.html">ResultPath</a>
-     * filter.</p>
+     * filter. Not populated when QueryLanguage is JSONata.</p>
      */
     inline const Aws::String& GetAfterResultPath() const{ return m_afterResultPath; }
     inline bool AfterResultPathHasBeenSet() const { return m_afterResultPathHasBeenSet; }
@@ -157,10 +175,29 @@ namespace Model
     inline InspectionData& WithResponse(const InspectionDataResponse& value) { SetResponse(value); return *this;}
     inline InspectionData& WithResponse(InspectionDataResponse&& value) { SetResponse(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>JSON string that contains the set of workflow variables after execution of
+     * the state. The set will include variables assigned in the state and variables
+     * set up as test state input.</p>
+     */
+    inline const Aws::String& GetVariables() const{ return m_variables; }
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
+    inline void SetVariables(const Aws::String& value) { m_variablesHasBeenSet = true; m_variables = value; }
+    inline void SetVariables(Aws::String&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
+    inline void SetVariables(const char* value) { m_variablesHasBeenSet = true; m_variables.assign(value); }
+    inline InspectionData& WithVariables(const Aws::String& value) { SetVariables(value); return *this;}
+    inline InspectionData& WithVariables(Aws::String&& value) { SetVariables(std::move(value)); return *this;}
+    inline InspectionData& WithVariables(const char* value) { SetVariables(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_input;
     bool m_inputHasBeenSet = false;
+
+    Aws::String m_afterArguments;
+    bool m_afterArgumentsHasBeenSet = false;
 
     Aws::String m_afterInputPath;
     bool m_afterInputPathHasBeenSet = false;
@@ -182,6 +219,9 @@ namespace Model
 
     InspectionDataResponse m_response;
     bool m_responseHasBeenSet = false;
+
+    Aws::String m_variables;
+    bool m_variablesHasBeenSet = false;
   };
 
 } // namespace Model

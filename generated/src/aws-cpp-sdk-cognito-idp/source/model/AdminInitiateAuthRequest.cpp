@@ -20,7 +20,8 @@ AdminInitiateAuthRequest::AdminInitiateAuthRequest() :
     m_authParametersHasBeenSet(false),
     m_clientMetadataHasBeenSet(false),
     m_analyticsMetadataHasBeenSet(false),
-    m_contextDataHasBeenSet(false)
+    m_contextDataHasBeenSet(false),
+    m_sessionHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,12 @@ Aws::String AdminInitiateAuthRequest::SerializePayload() const
   if(m_contextDataHasBeenSet)
   {
    payload.WithObject("ContextData", m_contextData.Jsonize());
+
+  }
+
+  if(m_sessionHasBeenSet)
+  {
+   payload.WithString("Session", m_session);
 
   }
 

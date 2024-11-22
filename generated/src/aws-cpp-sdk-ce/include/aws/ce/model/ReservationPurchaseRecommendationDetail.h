@@ -195,8 +195,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The average utilization of your recommendations. Amazon Web Services uses
-     * this to calculate your recommended reservation purchases.</p>
+     * <p>The average utilization of your instances. Amazon Web Services uses this to
+     * calculate your recommended reservation purchases.</p>
      */
     inline const Aws::String& GetAverageUtilization() const{ return m_averageUtilization; }
     inline bool AverageUtilizationHasBeenSet() const { return m_averageUtilizationHasBeenSet; }
@@ -210,8 +210,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>How long Amazon Web Services estimates that it takes for this recommendation
-     * to start saving you money, in months.</p>
+     * <p>How long Amazon Web Services estimates that it takes for this instance to
+     * start saving you money, in months.</p>
      */
     inline const Aws::String& GetEstimatedBreakEvenInMonths() const{ return m_estimatedBreakEvenInMonths; }
     inline bool EstimatedBreakEvenInMonthsHasBeenSet() const { return m_estimatedBreakEvenInMonthsHasBeenSet; }
@@ -226,7 +226,7 @@ namespace Model
     ///@{
     /**
      * <p>The currency code that Amazon Web Services used to calculate the costs for
-     * this recommendation.</p>
+     * this instance.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
@@ -300,7 +300,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>How much purchasing this recommendation costs you upfront.</p>
+     * <p>How much purchasing this instance costs you upfront.</p>
      */
     inline const Aws::String& GetUpfrontCost() const{ return m_upfrontCost; }
     inline bool UpfrontCostHasBeenSet() const { return m_upfrontCostHasBeenSet; }
@@ -314,7 +314,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>How much purchasing this recommendation costs you on a monthly basis.</p>
+     * <p>How much purchasing this instance costs you on a monthly basis.</p>
      */
     inline const Aws::String& GetRecurringStandardMonthlyCost() const{ return m_recurringStandardMonthlyCost; }
     inline bool RecurringStandardMonthlyCostHasBeenSet() const { return m_recurringStandardMonthlyCostHasBeenSet; }

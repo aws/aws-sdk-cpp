@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/SheetImage.h>
 #include <utility>
 
 namespace Aws
@@ -70,6 +72,20 @@ namespace Model
     inline Sheet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline Sheet& WithName(const char* value) { SetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of images on a sheet.</p>
+     */
+    inline const Aws::Vector<SheetImage>& GetImages() const{ return m_images; }
+    inline bool ImagesHasBeenSet() const { return m_imagesHasBeenSet; }
+    inline void SetImages(const Aws::Vector<SheetImage>& value) { m_imagesHasBeenSet = true; m_images = value; }
+    inline void SetImages(Aws::Vector<SheetImage>&& value) { m_imagesHasBeenSet = true; m_images = std::move(value); }
+    inline Sheet& WithImages(const Aws::Vector<SheetImage>& value) { SetImages(value); return *this;}
+    inline Sheet& WithImages(Aws::Vector<SheetImage>&& value) { SetImages(std::move(value)); return *this;}
+    inline Sheet& AddImages(const SheetImage& value) { m_imagesHasBeenSet = true; m_images.push_back(value); return *this; }
+    inline Sheet& AddImages(SheetImage&& value) { m_imagesHasBeenSet = true; m_images.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_sheetId;
@@ -77,6 +93,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::Vector<SheetImage> m_images;
+    bool m_imagesHasBeenSet = false;
   };
 
 } // namespace Model

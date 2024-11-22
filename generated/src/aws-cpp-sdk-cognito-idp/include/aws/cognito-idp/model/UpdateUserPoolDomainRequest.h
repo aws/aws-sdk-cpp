@@ -73,9 +73,29 @@ namespace Model
 
     ///@{
     /**
+     * <p>A version number that indicates the state of managed login for your domain.
+     * Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the
+     * newer managed login with the branding designer. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed
+     * login</a>.</p>
+     */
+    inline int GetManagedLoginVersion() const{ return m_managedLoginVersion; }
+    inline bool ManagedLoginVersionHasBeenSet() const { return m_managedLoginVersionHasBeenSet; }
+    inline void SetManagedLoginVersion(int value) { m_managedLoginVersionHasBeenSet = true; m_managedLoginVersion = value; }
+    inline UpdateUserPoolDomainRequest& WithManagedLoginVersion(int value) { SetManagedLoginVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The configuration for a custom domain that hosts the sign-up and sign-in
      * pages for your application. Use this object to specify an SSL certificate that
-     * is managed by ACM.</p>
+     * is managed by ACM.</p> <p>When you create a custom domain, the passkey RP ID
+     * defaults to the custom domain. If you had a prefix domain active, this will
+     * cause passkey integration for your prefix domain to stop working due to a
+     * mismatch in RP ID. To keep the prefix domain passkey integration working, you
+     * can explicitly set RP ID to the prefix domain. Update the RP ID in a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * request.</p>
      */
     inline const CustomDomainConfigType& GetCustomDomainConfig() const{ return m_customDomainConfig; }
     inline bool CustomDomainConfigHasBeenSet() const { return m_customDomainConfigHasBeenSet; }
@@ -91,6 +111,9 @@ namespace Model
 
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet = false;
+
+    int m_managedLoginVersion;
+    bool m_managedLoginVersionHasBeenSet = false;
 
     CustomDomainConfigType m_customDomainConfig;
     bool m_customDomainConfigHasBeenSet = false;

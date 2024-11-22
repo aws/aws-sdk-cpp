@@ -24,8 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for a custom domain that hosts the sign-up and sign-in
-   * webpages for your application.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration for a hosted UI custom domain.</p> <p>This data type is a
+   * request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolDomain.html">CreateUserPoolDomain</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolDomain.html">UpdateUserPoolDomain</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CustomDomainConfigType">AWS
    * API Reference</a></p>
    */

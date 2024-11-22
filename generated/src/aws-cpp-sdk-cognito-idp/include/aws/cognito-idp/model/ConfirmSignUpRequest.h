@@ -183,6 +183,22 @@ namespace Model
     inline ConfirmSignUpRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
     inline ConfirmSignUpRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The optional session ID from a <code>SignUp</code> API request. You can sign
+     * in a user directly from the sign-up process with the <code>USER_AUTH</code>
+     * authentication flow.</p>
+     */
+    inline const Aws::String& GetSession() const{ return m_session; }
+    inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
+    inline void SetSession(const Aws::String& value) { m_sessionHasBeenSet = true; m_session = value; }
+    inline void SetSession(Aws::String&& value) { m_sessionHasBeenSet = true; m_session = std::move(value); }
+    inline void SetSession(const char* value) { m_sessionHasBeenSet = true; m_session.assign(value); }
+    inline ConfirmSignUpRequest& WithSession(const Aws::String& value) { SetSession(value); return *this;}
+    inline ConfirmSignUpRequest& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
+    inline ConfirmSignUpRequest& WithSession(const char* value) { SetSession(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_clientId;
@@ -208,6 +224,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_clientMetadata;
     bool m_clientMetadataHasBeenSet = false;
+
+    Aws::String m_session;
+    bool m_sessionHasBeenSet = false;
   };
 
 } // namespace Model

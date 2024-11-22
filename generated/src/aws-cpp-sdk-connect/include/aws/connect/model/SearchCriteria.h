@@ -9,6 +9,7 @@
 #include <aws/connect/model/AgentHierarchyGroups.h>
 #include <aws/connect/model/ContactAnalysis.h>
 #include <aws/connect/model/SearchableContactAttributes.h>
+#include <aws/connect/model/SearchableSegmentAttributes.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/ContactInitiationMethod.h>
@@ -147,6 +148,18 @@ namespace Model
     inline SearchCriteria& WithSearchableContactAttributes(const SearchableContactAttributes& value) { SetSearchableContactAttributes(value); return *this;}
     inline SearchCriteria& WithSearchableContactAttributes(SearchableContactAttributes&& value) { SetSearchableContactAttributes(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const SearchableSegmentAttributes& GetSearchableSegmentAttributes() const{ return m_searchableSegmentAttributes; }
+    inline bool SearchableSegmentAttributesHasBeenSet() const { return m_searchableSegmentAttributesHasBeenSet; }
+    inline void SetSearchableSegmentAttributes(const SearchableSegmentAttributes& value) { m_searchableSegmentAttributesHasBeenSet = true; m_searchableSegmentAttributes = value; }
+    inline void SetSearchableSegmentAttributes(SearchableSegmentAttributes&& value) { m_searchableSegmentAttributesHasBeenSet = true; m_searchableSegmentAttributes = std::move(value); }
+    inline SearchCriteria& WithSearchableSegmentAttributes(const SearchableSegmentAttributes& value) { SetSearchableSegmentAttributes(value); return *this;}
+    inline SearchCriteria& WithSearchableSegmentAttributes(SearchableSegmentAttributes&& value) { SetSearchableSegmentAttributes(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_agentIds;
@@ -169,6 +182,9 @@ namespace Model
 
     SearchableContactAttributes m_searchableContactAttributes;
     bool m_searchableContactAttributesHasBeenSet = false;
+
+    SearchableSegmentAttributes m_searchableSegmentAttributes;
+    bool m_searchableSegmentAttributesHasBeenSet = false;
   };
 
 } // namespace Model

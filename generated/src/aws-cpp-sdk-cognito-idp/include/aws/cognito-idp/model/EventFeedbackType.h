@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the event feedback type.</p><p><h3>See Also:</h3>   <a
+   * <p>The feedback that your application submitted to an advanced security features
+   * event log, as displayed in an <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>
+   * response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EventFeedbackType">AWS
    * API Reference</a></p>
    */
@@ -59,7 +62,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The provider.</p>
+     * <p>The submitter of the event feedback. For example, if you submit event
+     * feedback in the Amazon Cognito console, this value is <code>Admin</code>.</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
@@ -73,7 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The event feedback date.</p>
+     * <p>The date that you or your user submitted the feedback.</p>
      */
     inline const Aws::Utils::DateTime& GetFeedbackDate() const{ return m_feedbackDate; }
     inline bool FeedbackDateHasBeenSet() const { return m_feedbackDateHasBeenSet; }

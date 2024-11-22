@@ -24,7 +24,13 @@ namespace Model
 {
 
   /**
-   * <p>The compromised credentials actions type.</p><p><h3>See Also:</h3>   <a
+   * <p>Settings for user pool actions when Amazon Cognito detects compromised
+   * credentials with advanced security features in full-function
+   * <code>ENFORCED</code> mode.</p> <p>This data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CompromisedCredentialsActionsType">AWS
    * API Reference</a></p>
    */
@@ -39,7 +45,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The event action.</p>
+     * <p>The action that Amazon Cognito takes when it detects compromised
+     * credentials.</p>
      */
     inline const CompromisedCredentialsEventActionType& GetEventAction() const{ return m_eventAction; }
     inline bool EventActionHasBeenSet() const { return m_eventActionHasBeenSet; }

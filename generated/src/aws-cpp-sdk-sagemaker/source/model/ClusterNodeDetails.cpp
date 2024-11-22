@@ -26,6 +26,7 @@ ClusterNodeDetails::ClusterNodeDetails() :
     m_instanceTypeHasBeenSet(false),
     m_launchTimeHasBeenSet(false),
     m_lifeCycleConfigHasBeenSet(false),
+    m_overrideVpcConfigHasBeenSet(false),
     m_threadsPerCore(0),
     m_threadsPerCoreHasBeenSet(false),
     m_instanceStorageConfigsHasBeenSet(false),
@@ -83,6 +84,13 @@ ClusterNodeDetails& ClusterNodeDetails::operator =(JsonView jsonValue)
     m_lifeCycleConfig = jsonValue.GetObject("LifeCycleConfig");
 
     m_lifeCycleConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OverrideVpcConfig"))
+  {
+    m_overrideVpcConfig = jsonValue.GetObject("OverrideVpcConfig");
+
+    m_overrideVpcConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ThreadsPerCore"))
@@ -161,6 +169,12 @@ JsonValue ClusterNodeDetails::Jsonize() const
   if(m_lifeCycleConfigHasBeenSet)
   {
    payload.WithObject("LifeCycleConfig", m_lifeCycleConfig.Jsonize());
+
+  }
+
+  if(m_overrideVpcConfigHasBeenSet)
+  {
+   payload.WithObject("OverrideVpcConfig", m_overrideVpcConfig.Jsonize());
 
   }
 

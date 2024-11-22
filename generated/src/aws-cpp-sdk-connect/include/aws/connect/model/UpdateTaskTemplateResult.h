@@ -121,6 +121,19 @@ namespace Model
 
     ///@{
     /**
+     * <p/>
+     */
+    inline const Aws::String& GetSelfAssignFlowId() const{ return m_selfAssignFlowId; }
+    inline void SetSelfAssignFlowId(const Aws::String& value) { m_selfAssignFlowId = value; }
+    inline void SetSelfAssignFlowId(Aws::String&& value) { m_selfAssignFlowId = std::move(value); }
+    inline void SetSelfAssignFlowId(const char* value) { m_selfAssignFlowId.assign(value); }
+    inline UpdateTaskTemplateResult& WithSelfAssignFlowId(const Aws::String& value) { SetSelfAssignFlowId(value); return *this;}
+    inline UpdateTaskTemplateResult& WithSelfAssignFlowId(Aws::String&& value) { SetSelfAssignFlowId(std::move(value)); return *this;}
+    inline UpdateTaskTemplateResult& WithSelfAssignFlowId(const char* value) { SetSelfAssignFlowId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Constraints that are applicable to the fields listed.</p>
      */
     inline const TaskTemplateConstraints& GetConstraints() const{ return m_constraints; }
@@ -214,6 +227,8 @@ namespace Model
     Aws::String m_description;
 
     Aws::String m_contactFlowId;
+
+    Aws::String m_selfAssignFlowId;
 
     TaskTemplateConstraints m_constraints;
 

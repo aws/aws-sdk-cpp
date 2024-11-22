@@ -910,8 +910,8 @@ namespace CostExplorer
         }
 
         /**
-         * <p>Lists the commitment purchase analyses for your account based on the last 30
-         * days.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the commitment purchase analyses for your account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCommitmentPurchaseAnalyses">AWS
          * API Reference</a></p>
          */
@@ -1102,8 +1102,8 @@ namespace CostExplorer
         /**
          * <p>Specifies the parameters of a planned commitment purchase and starts the
          * generation of the analysis. This enables you to estimate the cost, coverage, and
-         * utilization impact of your planned commitment purchases. You can request up to
-         * 20 analysis runs per day.</p><p><h3>See Also:</h3>   <a
+         * utilization impact of your planned commitment purchases.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCommitmentPurchaseAnalysis">AWS
          * API Reference</a></p>
          */

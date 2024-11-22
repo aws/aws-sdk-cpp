@@ -16,7 +16,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_awsAccountIdHasBeenSet(false),
     m_topicIdHasBeenSet(false),
     m_topicHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_folderArnsHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,17 @@ Aws::String CreateTopicRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_folderArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> folderArnsJsonList(m_folderArns.size());
+   for(unsigned folderArnsIndex = 0; folderArnsIndex < folderArnsJsonList.GetLength(); ++folderArnsIndex)
+   {
+     folderArnsJsonList[folderArnsIndex].AsString(m_folderArns[folderArnsIndex]);
+   }
+   payload.WithArray("FolderArns", std::move(folderArnsJsonList));
 
   }
 

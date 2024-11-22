@@ -32,6 +32,8 @@ namespace Aws
         static const int BOOLEAN_HASH = HashingUtils::HashString("BOOLEAN");
         static const int SINGLE_SELECT_HASH = HashingUtils::HashString("SINGLE_SELECT");
         static const int EMAIL_HASH = HashingUtils::HashString("EMAIL");
+        static const int SELF_ASSIGN_HASH = HashingUtils::HashString("SELF_ASSIGN");
+        static const int EXPIRY_DURATION_HASH = HashingUtils::HashString("EXPIRY_DURATION");
 
 
         TaskTemplateFieldType GetTaskTemplateFieldTypeForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return TaskTemplateFieldType::EMAIL;
           }
+          else if (hashCode == SELF_ASSIGN_HASH)
+          {
+            return TaskTemplateFieldType::SELF_ASSIGN;
+          }
+          else if (hashCode == EXPIRY_DURATION_HASH)
+          {
+            return TaskTemplateFieldType::EXPIRY_DURATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -125,6 +135,10 @@ namespace Aws
             return "SINGLE_SELECT";
           case TaskTemplateFieldType::EMAIL:
             return "EMAIL";
+          case TaskTemplateFieldType::SELF_ASSIGN:
+            return "SELF_ASSIGN";
+          case TaskTemplateFieldType::EXPIRY_DURATION:
+            return "EXPIRY_DURATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

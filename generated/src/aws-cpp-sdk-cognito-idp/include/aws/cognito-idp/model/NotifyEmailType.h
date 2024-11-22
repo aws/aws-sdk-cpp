@@ -24,7 +24,13 @@ namespace Model
 {
 
   /**
-   * <p>The notify email type.</p><p><h3>See Also:</h3>   <a
+   * <p>The template for email messages that advanced security features sends to a
+   * user when your threat protection automated response has a <i>Notify</i>
+   * action.</p> <p>This data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/NotifyEmailType">AWS
    * API Reference</a></p>
    */
@@ -39,7 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email subject.</p>
+     * <p>The subject of the threat protection email notification.</p>
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
@@ -53,7 +59,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email HTML body.</p>
+     * <p>The body of an email notification formatted in HTML. Choose an
+     * <code>HtmlBody</code> or a <code>TextBody</code> to send an HTML-formatted or
+     * plaintext message, respectively.</p>
      */
     inline const Aws::String& GetHtmlBody() const{ return m_htmlBody; }
     inline bool HtmlBodyHasBeenSet() const { return m_htmlBodyHasBeenSet; }
@@ -67,7 +75,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email text body.</p>
+     * <p>The body of an email notification formatted in plaintext. Choose an
+     * <code>HtmlBody</code> or a <code>TextBody</code> to send an HTML-formatted or
+     * plaintext message, respectively.</p>
      */
     inline const Aws::String& GetTextBody() const{ return m_textBody; }
     inline bool TextBodyHasBeenSet() const { return m_textBodyHasBeenSet; }

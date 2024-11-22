@@ -30,10 +30,11 @@ static const int UPDATE_CHIME_WEBHOOK_CONFIGURATION_HASH = HashingUtils::HashStr
 static const int DELETE_SLACK_CHANNEL_CONFIGURATION_HASH = HashingUtils::HashString("DeleteSlackChannelConfigurationException");
 static const int DESCRIBE_SLACK_WORKSPACES_HASH = HashingUtils::HashString("DescribeSlackWorkspacesException");
 static const int DESCRIBE_SLACK_CHANNEL_CONFIGURATIONS_HASH = HashingUtils::HashString("DescribeSlackChannelConfigurationsException");
-static const int DESCRIBE_SLACK_USER_IDENTITIES_HASH = HashingUtils::HashString("DescribeSlackUserIdentitiesException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceError");
+static const int DESCRIBE_SLACK_USER_IDENTITIES_HASH = HashingUtils::HashString("DescribeSlackUserIdentitiesException");
 static const int DESCRIBE_CHIME_WEBHOOK_CONFIGURATIONS_HASH = HashingUtils::HashString("DescribeChimeWebhookConfigurationsException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int DELETE_TEAMS_CONFIGURED_TEAM_HASH = HashingUtils::HashString("DeleteTeamsConfiguredTeamException");
 static const int DELETE_MICROSOFT_TEAMS_USER_IDENTITY_HASH = HashingUtils::HashString("DeleteMicrosoftTeamsUserIdentityException");
 static const int CREATE_TEAMS_CHANNEL_CONFIGURATION_HASH = HashingUtils::HashString("CreateTeamsChannelConfigurationException");
@@ -101,13 +102,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DESCRIBE_SLACK_CHANNEL_CONFIGURATIONS), RetryableType::NOT_RETRYABLE);
   }
-  else if (hashCode == DESCRIBE_SLACK_USER_IDENTITIES_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DESCRIBE_SLACK_USER_IDENTITIES), RetryableType::NOT_RETRYABLE);
-  }
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == DESCRIBE_SLACK_USER_IDENTITIES_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::DESCRIBE_SLACK_USER_IDENTITIES), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DESCRIBE_CHIME_WEBHOOK_CONFIGURATIONS_HASH)
   {
@@ -116,6 +117,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == UNAUTHORIZED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChatbotErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DELETE_TEAMS_CONFIGURED_TEAM_HASH)
   {

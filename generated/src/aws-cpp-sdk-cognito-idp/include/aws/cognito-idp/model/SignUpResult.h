@@ -76,6 +76,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A session Id that you can pass to <code>ConfirmSignUp</code> when you want to
+     * immediately sign in your user with the <code>USER_AUTH</code> flow after they
+     * complete sign-up.</p>
+     */
+    inline const Aws::String& GetSession() const{ return m_session; }
+    inline void SetSession(const Aws::String& value) { m_session = value; }
+    inline void SetSession(Aws::String&& value) { m_session = std::move(value); }
+    inline void SetSession(const char* value) { m_session.assign(value); }
+    inline SignUpResult& WithSession(const Aws::String& value) { SetSession(value); return *this;}
+    inline SignUpResult& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
+    inline SignUpResult& WithSession(const char* value) { SetSession(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -92,6 +107,8 @@ namespace Model
     CodeDeliveryDetailsType m_codeDeliveryDetails;
 
     Aws::String m_userSub;
+
+    Aws::String m_session;
 
     Aws::String m_requestId;
   };

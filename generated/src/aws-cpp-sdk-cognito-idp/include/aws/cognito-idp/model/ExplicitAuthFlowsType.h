@@ -23,7 +23,8 @@ namespace Model
     ALLOW_CUSTOM_AUTH,
     ALLOW_USER_PASSWORD_AUTH,
     ALLOW_USER_SRP_AUTH,
-    ALLOW_REFRESH_TOKEN_AUTH
+    ALLOW_REFRESH_TOKEN_AUTH,
+    ALLOW_USER_AUTH
   };
 
 namespace ExplicitAuthFlowsTypeMapper

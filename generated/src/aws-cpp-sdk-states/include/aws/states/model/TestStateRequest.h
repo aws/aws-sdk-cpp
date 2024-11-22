@@ -121,6 +121,21 @@ namespace Model
     inline void SetRevealSecrets(bool value) { m_revealSecretsHasBeenSet = true; m_revealSecrets = value; }
     inline TestStateRequest& WithRevealSecrets(bool value) { SetRevealSecrets(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>JSON object literal that sets variables used in the state under test. Object
+     * keys are the variable names and values are the variable values.</p>
+     */
+    inline const Aws::String& GetVariables() const{ return m_variables; }
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
+    inline void SetVariables(const Aws::String& value) { m_variablesHasBeenSet = true; m_variables = value; }
+    inline void SetVariables(Aws::String&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
+    inline void SetVariables(const char* value) { m_variablesHasBeenSet = true; m_variables.assign(value); }
+    inline TestStateRequest& WithVariables(const Aws::String& value) { SetVariables(value); return *this;}
+    inline TestStateRequest& WithVariables(Aws::String&& value) { SetVariables(std::move(value)); return *this;}
+    inline TestStateRequest& WithVariables(const char* value) { SetVariables(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_definition;
@@ -137,6 +152,9 @@ namespace Model
 
     bool m_revealSecrets;
     bool m_revealSecretsHasBeenSet = false;
+
+    Aws::String m_variables;
+    bool m_variablesHasBeenSet = false;
   };
 
 } // namespace Model

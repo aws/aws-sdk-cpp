@@ -8,6 +8,7 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/OutboundCallerConfig.h>
+#include <aws/connect/model/OutboundEmailConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -93,6 +94,18 @@ namespace Model
 
     ///@{
     /**
+     * <p/>
+     */
+    inline const OutboundEmailConfig& GetOutboundEmailConfig() const{ return m_outboundEmailConfig; }
+    inline bool OutboundEmailConfigHasBeenSet() const { return m_outboundEmailConfigHasBeenSet; }
+    inline void SetOutboundEmailConfig(const OutboundEmailConfig& value) { m_outboundEmailConfigHasBeenSet = true; m_outboundEmailConfig = value; }
+    inline void SetOutboundEmailConfig(OutboundEmailConfig&& value) { m_outboundEmailConfigHasBeenSet = true; m_outboundEmailConfig = std::move(value); }
+    inline CreateQueueRequest& WithOutboundEmailConfig(const OutboundEmailConfig& value) { SetOutboundEmailConfig(value); return *this;}
+    inline CreateQueueRequest& WithOutboundEmailConfig(OutboundEmailConfig&& value) { SetOutboundEmailConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier for the hours of operation.</p>
      */
     inline const Aws::String& GetHoursOfOperationId() const{ return m_hoursOfOperationId; }
@@ -163,6 +176,9 @@ namespace Model
 
     OutboundCallerConfig m_outboundCallerConfig;
     bool m_outboundCallerConfigHasBeenSet = false;
+
+    OutboundEmailConfig m_outboundEmailConfig;
+    bool m_outboundEmailConfigHasBeenSet = false;
 
     Aws::String m_hoursOfOperationId;
     bool m_hoursOfOperationIdHasBeenSet = false;

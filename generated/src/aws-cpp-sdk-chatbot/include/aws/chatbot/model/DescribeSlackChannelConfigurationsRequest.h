@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An optional Amazon Resource Number (ARN) of a SlackChannelConfiguration to
+     * <p>An optional Amazon Resource Name (ARN) of a SlackChannelConfiguration to
      * describe.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }

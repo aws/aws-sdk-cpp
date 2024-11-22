@@ -31,7 +31,14 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a user pool client.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration of a user pool client.</p> <p>This data type is a request
+   * parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html">CreateUserPoolClient</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html">UpdateUserPoolClient</a>,
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolClientType">AWS
    * API Reference</a></p>
    */
@@ -46,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool client.</p>
+     * <p>The ID of the user pool associated with the app client.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -60,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The client name from the user pool request of the client type.</p>
+     * <p>The name of the app client.</p>
      */
     inline const Aws::String& GetClientName() const{ return m_clientName; }
     inline bool ClientNameHasBeenSet() const { return m_clientNameHasBeenSet; }
@@ -74,7 +81,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the client associated with the user pool.</p>
+     * <p>The ID of the app client.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -88,7 +95,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The client secret from the user pool request of the client type.</p>
+     * <p>The app client secret.</p>
      */
     inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }
     inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
@@ -193,8 +200,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time units used to specify the token validity times of each token type:
-     * ID, access, and refresh.</p>
+     * <p>The time units that, with <code>IdTokenValidity</code>,
+     * <code>AccessTokenValidity</code>, and <code>RefreshTokenValidity</code>, set and
+     * display the duration of ID, access, and refresh tokens for an app client. You
+     * can assign a separate token validity unit to each type of token. </p>
      */
     inline const TokenValidityUnitsType& GetTokenValidityUnits() const{ return m_tokenValidityUnits; }
     inline bool TokenValidityUnitsHasBeenSet() const { return m_tokenValidityUnitsHasBeenSet; }
@@ -277,12 +286,20 @@ namespace Model
      * value for <code>ExplicitAuthFlows</code>, your user client supports
      * <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and
      * <code>ALLOW_CUSTOM_AUTH</code>.</p>  <p>Valid values include:</p> <ul>
-     * <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user
-     * password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting
-     * replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
-     * flow, your app passes a user name and password to Amazon Cognito in the request,
-     * instead of using the Secure Remote Password (SRP) protocol to securely transmit
-     * the password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
+     * <li> <p> <code>ALLOW_USER_AUTH</code>: Enable selection-based sign-in with
+     * <code>USER_AUTH</code>. This setting covers username-password, secure remote
+     * password (SRP), passwordless, and passkey authentication. This authentiation
+     * flow can do username-password and SRP authentication without other
+     * <code>ExplicitAuthFlows</code> permitting them. For example users can complete
+     * an SRP challenge through <code>USER_AUTH</code> without the flow
+     * <code>USER_SRP_AUTH</code> being active for the app client. This flow doesn't
+     * include <code>CUSTOM_AUTH</code>. </p> </li> <li> <p>
+     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
+     * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
+     * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow, your
+     * app passes a user name and password to Amazon Cognito in the request, instead of
+     * using the Secure Remote Password (SRP) protocol to securely transmit the
+     * password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
      * trigger based authentication.</p> </li> <li> <p>
      * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
      * authentication. In this flow, Amazon Cognito receives the password in the
@@ -308,10 +325,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of provider names for the IdPs that this client supports. The
-     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
-     * <code>Google</code>, <code>SignInWithApple</code>, <code>LoginWithAmazon</code>,
-     * and the names of your own SAML and OIDC providers.</p>
+     * <p>A list of provider names for the identity providers (IdPs) that are supported
+     * on this client. The following are supported: <code>COGNITO</code>,
+     * <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>, and
+     * <code>LoginWithAmazon</code>. You can also specify the names that you configured
+     * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
+     * or <code>MyOIDCIdP</code>.</p> <p>This setting applies to providers that you can
+     * access with the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html">hosted
+     * UI and OAuth 2.0 authorization server</a>. The removal of <code>COGNITO</code>
+     * from this list doesn't prevent authentication operations for local users with
+     * the user pools API in an Amazon Web Services SDK. The only way to prevent
+     * API-based authentication is to block access with a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF
+     * rule</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedIdentityProviders() const{ return m_supportedIdentityProviders; }
     inline bool SupportedIdentityProvidersHasBeenSet() const { return m_supportedIdentityProvidersHasBeenSet; }
@@ -384,13 +411,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
-     * flow, which provides an authorization code as the response. This code can be
-     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
-     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
-     * token, based on scopes) directly to your user.</p> </dd>
-     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
-     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * <p>The OAuth grant types that you want your app client to generate. To create an
+     * app client that generates client credentials grants, you must add
+     * <code>client_credentials</code> as the only allowed OAuth flow.</p> <dl>
+     * <dt>code</dt> <dd> <p>Use a code grant flow, which provides an authorization
+     * code as the response. This code can be exchanged for access tokens with the
+     * <code>/oauth2/token</code> endpoint.</p> </dd> <dt>implicit</dt> <dd> <p>Issue
+     * the access token (and, optionally, ID token, based on scopes) directly to your
+     * user.</p> </dd> <dt>client_credentials</dt> <dd> <p>Issue the access token from
+     * the <code>/oauth2/token</code> endpoint directly to a non-person user using a
      * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline const Aws::Vector<OAuthFlowType>& GetAllowedOAuthFlows() const{ return m_allowedOAuthFlows; }
@@ -405,11 +434,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The OAuth scopes that your app client supports. Possible values that OAuth
-     * provides are <code>phone</code>, <code>email</code>, <code>openid</code>, and
-     * <code>profile</code>. Possible values that Amazon Web Services provides are
-     * <code>aws.cognito.signin.user.admin</code>. Amazon Cognito also supports custom
-     * scopes that you create in Resource Servers.</p>
+     * <p>The OAuth 2.0 scopes that you want your app client to support. Can include
+     * standard OAuth scopes like <code>phone</code>, <code>email</code>,
+     * <code>openid</code>, and <code>profile</code>. Can also include the
+     * <code>aws.cognito.signin.user.admin</code> scope that authorizes user profile
+     * self-service operations and custom scopes from resource servers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedOAuthScopes() const{ return m_allowedOAuthScopes; }
     inline bool AllowedOAuthScopesHasBeenSet() const { return m_allowedOAuthScopesHasBeenSet; }
@@ -447,10 +476,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Pinpoint analytics configuration for the user pool client.</p>
-     *  <p>Amazon Cognito user pools only support sending events to Amazon
-     * Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of
-     * the Region where the user pool resides.</p> 
+     * <p>The user pool analytics configuration for collecting metrics and sending them
+     * to your Amazon Pinpoint campaign.</p>  <p>In Amazon Web Services Regions
+     * where Amazon Pinpoint isn't available, user pools only support sending events to
+     * Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions
+     * where Amazon Pinpoint is available, user pools support sending events to Amazon
+     * Pinpoint projects within that same Region.</p> 
      */
     inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
     inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }

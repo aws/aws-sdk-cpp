@@ -18,6 +18,7 @@ namespace Model
     NOT_SET,
     CSV,
     OPEN_CYPHER,
+    PARQUET,
     NTRIPLES
   };
 

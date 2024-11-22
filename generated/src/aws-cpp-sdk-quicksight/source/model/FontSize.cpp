@@ -20,7 +20,8 @@ namespace Model
 
 FontSize::FontSize() : 
     m_relative(RelativeFontSize::NOT_SET),
-    m_relativeHasBeenSet(false)
+    m_relativeHasBeenSet(false),
+    m_absoluteHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,13 @@ FontSize& FontSize::operator =(JsonView jsonValue)
     m_relativeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Absolute"))
+  {
+    m_absolute = jsonValue.GetString("Absolute");
+
+    m_absoluteHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +57,12 @@ JsonValue FontSize::Jsonize() const
   if(m_relativeHasBeenSet)
   {
    payload.WithString("Relative", RelativeFontSizeMapper::GetNameForRelativeFontSize(m_relative));
+  }
+
+  if(m_absoluteHasBeenSet)
+  {
+   payload.WithString("Absolute", m_absolute);
+
   }
 
   return payload;

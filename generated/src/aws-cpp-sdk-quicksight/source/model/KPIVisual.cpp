@@ -25,7 +25,8 @@ KPIVisual::KPIVisual() :
     m_chartConfigurationHasBeenSet(false),
     m_conditionalFormattingHasBeenSet(false),
     m_actionsHasBeenSet(false),
-    m_columnHierarchiesHasBeenSet(false)
+    m_columnHierarchiesHasBeenSet(false),
+    m_visualContentAltTextHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,13 @@ KPIVisual& KPIVisual::operator =(JsonView jsonValue)
     m_columnHierarchiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VisualContentAltText"))
+  {
+    m_visualContentAltText = jsonValue.GetString("VisualContentAltText");
+
+    m_visualContentAltTextHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +156,12 @@ JsonValue KPIVisual::Jsonize() const
      columnHierarchiesJsonList[columnHierarchiesIndex].AsObject(m_columnHierarchies[columnHierarchiesIndex].Jsonize());
    }
    payload.WithArray("ColumnHierarchies", std::move(columnHierarchiesJsonList));
+
+  }
+
+  if(m_visualContentAltTextHasBeenSet)
+  {
+   payload.WithString("VisualContentAltText", m_visualContentAltText);
 
   }
 

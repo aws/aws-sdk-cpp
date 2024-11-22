@@ -24,9 +24,17 @@ namespace Model
 {
 
   /**
-   * <p>The data type TokenValidityUnits specifies the time units you use when you
-   * set the duration of ID, access, and refresh tokens.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The time units that, with <code>IdTokenValidity</code>,
+   * <code>AccessTokenValidity</code>, and <code>RefreshTokenValidity</code>, set and
+   * display the duration of ID, access, and refresh tokens for an app client. You
+   * can assign a separate token validity unit to each type of token. </p> <p>This
+   * data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html">CreateUserPoolClient</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html">UpdateUserPoolClient</a>,
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/TokenValidityUnitsType">AWS
    * API Reference</a></p>
    */
@@ -41,10 +49,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> A time unit of <code>seconds</code>, <code>minutes</code>,
-     * <code>hours</code>, or <code>days</code> for the value that you set in the
+     * <p> A time unit for the value that you set in the
      * <code>AccessTokenValidity</code> parameter. The default
-     * <code>AccessTokenValidity</code> time unit is hours.
+     * <code>AccessTokenValidity</code> time unit is <code>hours</code>.
      * <code>AccessTokenValidity</code> duration can range from five minutes to one
      * day.</p>
      */
@@ -58,10 +65,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
-     * <code>hours</code>, or <code>days</code> for the value that you set in the
-     * <code>IdTokenValidity</code> parameter. The default <code>IdTokenValidity</code>
-     * time unit is hours. <code>IdTokenValidity</code> duration can range from five
+     * <p>A time unit for the value that you set in the <code>IdTokenValidity</code>
+     * parameter. The default <code>IdTokenValidity</code> time unit is
+     * <code>hours</code>. <code>IdTokenValidity</code> duration can range from five
      * minutes to one day.</p>
      */
     inline const TimeUnitsType& GetIdToken() const{ return m_idToken; }
@@ -74,10 +80,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A time unit of <code>seconds</code>, <code>minutes</code>,
-     * <code>hours</code>, or <code>days</code> for the value that you set in the
+     * <p>A time unit for the value that you set in the
      * <code>RefreshTokenValidity</code> parameter. The default
-     * <code>RefreshTokenValidity</code> time unit is days.
+     * <code>RefreshTokenValidity</code> time unit is <code>days</code>.
      * <code>RefreshTokenValidity</code> duration can range from 60 minutes to 10
      * years.</p>
      */

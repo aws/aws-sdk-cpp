@@ -22,6 +22,7 @@
 #include <aws/cognito-idp/model/UserPoolAddOnsType.h>
 #include <aws/cognito-idp/model/UsernameConfigurationType.h>
 #include <aws/cognito-idp/model/AccountRecoverySettingType.h>
+#include <aws/cognito-idp/model/UserPoolTierType.h>
 #include <aws/cognito-idp/model/SchemaAttributeType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
@@ -44,8 +45,14 @@ namespace Model
 {
 
   /**
-   * <p>A container for information about the user pool.</p><p><h3>See Also:</h3>  
+   * <p>The configuration of a user pool.</p> <p>This data type is a response
+   * parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>,
    * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolType">AWS
    * API Reference</a></p>
    */
@@ -88,7 +95,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The policies associated with the user pool.</p>
+     * <p>A list of user pool policies. Contains the policy that sets
+     * password-complexity requirements.</p>
      */
     inline const UserPoolPolicyType& GetPolicies() const{ return m_policies; }
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
@@ -119,7 +127,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Lambda triggers associated with the user pool.</p>
+     * <p>A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at
+     * several possible stages of user pool operations. Triggers can modify the outcome
+     * of the operations that invoked them.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
@@ -165,7 +175,7 @@ namespace Model
      * prefix. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
      * pool attributes</a>.</p> <p>Developer-only attributes are a legacy feature of
-     * user pools, are read-only to all app clients. You can create and update
+     * user pools, and are read-only to all app clients. You can create and update
      * developer-only attributes only with IAM-authenticated API operations. Use app
      * client read/write permissions instead.</p>
      */
@@ -195,7 +205,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attributes that are aliased in a user pool.</p>
+     * <p>Attributes supported as an alias for this user pool. An alias is an attribute
+     * that users can enter as an alternative username. Possible values:
+     * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
      */
     inline const Aws::Vector<AliasAttributeType>& GetAliasAttributes() const{ return m_aliasAttributes; }
     inline bool AliasAttributesHasBeenSet() const { return m_aliasAttributesHasBeenSet; }
@@ -269,7 +281,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The template for verification messages.</p>
+     * <p>The template for the verification message that your user pool delivers to
+     * users who set an email address or phone number attribute.</p>
      */
     inline const VerificationMessageTemplateType& GetVerificationMessageTemplate() const{ return m_verificationMessageTemplate; }
     inline bool VerificationMessageTemplateHasBeenSet() const { return m_verificationMessageTemplateHasBeenSet; }
@@ -368,12 +381,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
-     * must use to send an SMS message from your Amazon Web Services account through
-     * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
-     * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
-     * Identity and Access Management (IAM) role in your Amazon Web Services
-     * account.</p>
+     * <p>User pool configuration for delivery of SMS messages with Amazon Simple
+     * Notification Service. To send SMS messages with Amazon SNS in the Amazon Web
+     * Services Region that you want, the Amazon Cognito user pool uses an Identity and
+     * Access Management (IAM) role in your Amazon Web Services account.</p>
      */
     inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
     inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
@@ -513,10 +524,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>Case sensitivity of the username input for the selected sign-in option. For
-     * example, when case sensitivity is set to <code>False</code>, users can sign in
-     * using either "username" or "Username". This configuration is immutable once it
-     * has been set. For more information, see <a
+     * <p>Case sensitivity of the username input for the selected sign-in option. When
+     * case sensitivity is set to <code>False</code> (case insensitive), users can sign
+     * in with any combination of capital and lowercase letters. For example,
+     * <code>username</code>, <code>USERNAME</code>, or <code>UserName</code>, or for
+     * email, <code>email@example.com</code> or <code>EMaiL@eXamplE.Com</code>. For
+     * most use cases, set case sensitivity to <code>False</code> (case insensitive) as
+     * a best practice. When usernames and email addresses are case insensitive, Amazon
+     * Cognito treats any variation in case as the same user, and prevents a case
+     * variation from being assigned to the same attribute for a different user.</p>
+     * <p>This configuration is immutable after you set it. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
      */
     inline const UsernameConfigurationType& GetUsernameConfiguration() const{ return m_usernameConfiguration; }
@@ -529,7 +547,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     * <p>The Amazon Resource Name (ARN) of the user pool.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -557,6 +575,22 @@ namespace Model
     inline void SetAccountRecoverySetting(AccountRecoverySettingType&& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = std::move(value); }
     inline UserPoolType& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
     inline UserPoolType& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user pool <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
+     * plan</a>, or tier. This parameter determines the eligibility of the user pool
+     * for features like managed login, access-token customization, and threat
+     * protection. Defaults to <code>ESSENTIALS</code>.</p>
+     */
+    inline const UserPoolTierType& GetUserPoolTier() const{ return m_userPoolTier; }
+    inline bool UserPoolTierHasBeenSet() const { return m_userPoolTierHasBeenSet; }
+    inline void SetUserPoolTier(const UserPoolTierType& value) { m_userPoolTierHasBeenSet = true; m_userPoolTier = value; }
+    inline void SetUserPoolTier(UserPoolTierType&& value) { m_userPoolTierHasBeenSet = true; m_userPoolTier = std::move(value); }
+    inline UserPoolType& WithUserPoolTier(const UserPoolTierType& value) { SetUserPoolTier(value); return *this;}
+    inline UserPoolType& WithUserPoolTier(UserPoolTierType&& value) { SetUserPoolTier(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -655,6 +689,9 @@ namespace Model
 
     AccountRecoverySettingType m_accountRecoverySetting;
     bool m_accountRecoverySettingHasBeenSet = false;
+
+    UserPoolTierType m_userPoolTier;
+    bool m_userPoolTierHasBeenSet = false;
   };
 
 } // namespace Model

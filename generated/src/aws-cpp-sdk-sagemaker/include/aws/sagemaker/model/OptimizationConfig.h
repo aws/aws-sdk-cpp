@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ModelQuantizationConfig.h>
 #include <aws/sagemaker/model/ModelCompilationConfig.h>
+#include <aws/sagemaker/model/ModelShardingConfig.h>
 #include <utility>
 
 namespace Aws
@@ -64,6 +65,19 @@ namespace Model
     inline OptimizationConfig& WithModelCompilationConfig(const ModelCompilationConfig& value) { SetModelCompilationConfig(value); return *this;}
     inline OptimizationConfig& WithModelCompilationConfig(ModelCompilationConfig&& value) { SetModelCompilationConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Settings for the model sharding technique that's applied by a model
+     * optimization job.</p>
+     */
+    inline const ModelShardingConfig& GetModelShardingConfig() const{ return m_modelShardingConfig; }
+    inline bool ModelShardingConfigHasBeenSet() const { return m_modelShardingConfigHasBeenSet; }
+    inline void SetModelShardingConfig(const ModelShardingConfig& value) { m_modelShardingConfigHasBeenSet = true; m_modelShardingConfig = value; }
+    inline void SetModelShardingConfig(ModelShardingConfig&& value) { m_modelShardingConfigHasBeenSet = true; m_modelShardingConfig = std::move(value); }
+    inline OptimizationConfig& WithModelShardingConfig(const ModelShardingConfig& value) { SetModelShardingConfig(value); return *this;}
+    inline OptimizationConfig& WithModelShardingConfig(ModelShardingConfig&& value) { SetModelShardingConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     ModelQuantizationConfig m_modelQuantizationConfig;
@@ -71,6 +85,9 @@ namespace Model
 
     ModelCompilationConfig m_modelCompilationConfig;
     bool m_modelCompilationConfigHasBeenSet = false;
+
+    ModelShardingConfig m_modelShardingConfig;
+    bool m_modelShardingConfigHasBeenSet = false;
   };
 
 } // namespace Model

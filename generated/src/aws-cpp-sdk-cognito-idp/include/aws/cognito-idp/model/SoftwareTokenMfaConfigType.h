@@ -22,8 +22,13 @@ namespace Model
 {
 
   /**
-   * <p>Configures a user pool for time-based one-time password (TOTP) multi-factor
-   * authentication (MFA). Enables or disables TOTP.</p><p><h3>See Also:</h3>   <a
+   * <p>Settings for time-based one-time password (TOTP) multi-factor authentication
+   * (MFA) in a user pool. Enables and disables availability of this feature.</p>
+   * <p>This data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SoftwareTokenMfaConfigType">AWS
    * API Reference</a></p>
    */
@@ -38,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether software token MFA is activated.</p>
+     * <p>The activation state of TOTP MFA.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }

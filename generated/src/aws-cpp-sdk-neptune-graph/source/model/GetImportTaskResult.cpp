@@ -19,6 +19,7 @@ using namespace Aws;
 
 GetImportTaskResult::GetImportTaskResult() : 
     m_format(Format::NOT_SET),
+    m_parquetType(ParquetType::NOT_SET),
     m_status(ImportTaskStatus::NOT_SET),
     m_attemptNumber(0)
 {
@@ -54,6 +55,12 @@ GetImportTaskResult& GetImportTaskResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("format"))
   {
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("format"));
+
+  }
+
+  if(jsonValue.ValueExists("parquetType"))
+  {
+    m_parquetType = ParquetTypeMapper::GetParquetTypeForName(jsonValue.GetString("parquetType"));
 
   }
 

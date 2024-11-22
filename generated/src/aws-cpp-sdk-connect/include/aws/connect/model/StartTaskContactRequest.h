@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/connect/model/Reference.h>
+#include <aws/connect/model/SegmentAttributeValue.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -251,6 +252,24 @@ namespace Model
     inline StartTaskContactRequest& WithRelatedContactId(Aws::String&& value) { SetRelatedContactId(std::move(value)); return *this;}
     inline StartTaskContactRequest& WithRelatedContactId(const char* value) { SetRelatedContactId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const{ return m_segmentAttributes; }
+    inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }
+    inline void SetSegmentAttributes(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = value; }
+    inline void SetSegmentAttributes(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = std::move(value); }
+    inline StartTaskContactRequest& WithSegmentAttributes(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { SetSegmentAttributes(value); return *this;}
+    inline StartTaskContactRequest& WithSegmentAttributes(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { SetSegmentAttributes(std::move(value)); return *this;}
+    inline StartTaskContactRequest& AddSegmentAttributes(const Aws::String& key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
+    inline StartTaskContactRequest& AddSegmentAttributes(Aws::String&& key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), value); return *this; }
+    inline StartTaskContactRequest& AddSegmentAttributes(const Aws::String& key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
+    inline StartTaskContactRequest& AddSegmentAttributes(Aws::String&& key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), std::move(value)); return *this; }
+    inline StartTaskContactRequest& AddSegmentAttributes(const char* key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
+    inline StartTaskContactRequest& AddSegmentAttributes(const char* key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -288,6 +307,9 @@ namespace Model
 
     Aws::String m_relatedContactId;
     bool m_relatedContactIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
+    bool m_segmentAttributesHasBeenSet = false;
   };
 
 } // namespace Model

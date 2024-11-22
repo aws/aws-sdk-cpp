@@ -59,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Number (ARN) of the ChimeWebhookConfiguration.</p>
+     * <p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }

@@ -29,7 +29,12 @@ namespace Model
 {
 
   /**
-   * <p>A user profile in a Amazon Cognito user pool.</p><p><h3>See Also:</h3>   <a
+   * <p>A user profile in a Amazon Cognito user pool.</p> <p>This data type is a
+   * response parameter to <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html">AdminCreateUser</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsers.html">ListUsers</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserType">AWS
    * API Reference</a></p>
    */
@@ -44,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user name of the user you want to describe.</p>
+     * <p>The user's username.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
@@ -58,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A container with information about the user type attributes.</p>
+     * <p>Names and values of a user's attributes, for example <code>email</code>.</p>
      */
     inline const Aws::Vector<AttributeType>& GetAttributes() const{ return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -72,7 +77,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The creation date of the user.</p>
+     * <p>The date and time when the item was created. Amazon Cognito returns this
+     * timestamp in UNIX epoch time format. Your SDK might render the output in a
+     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline const Aws::Utils::DateTime& GetUserCreateDate() const{ return m_userCreateDate; }
     inline bool UserCreateDateHasBeenSet() const { return m_userCreateDateHasBeenSet; }
@@ -98,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether the user is enabled.</p>
+     * <p>Indicates whether the user's account is enabled or disabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
@@ -128,7 +135,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The MFA options for the user.</p>
+     * <p>The user's MFA configuration.</p>
      */
     inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const{ return m_mFAOptions; }
     inline bool MFAOptionsHasBeenSet() const { return m_mFAOptionsHasBeenSet; }

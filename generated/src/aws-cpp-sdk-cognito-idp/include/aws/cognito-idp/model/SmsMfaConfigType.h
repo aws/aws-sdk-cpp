@@ -25,9 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>Configures user pool SMS messages for multi-factor authentication (MFA). Sets
-   * the message template and the SMS message sending configuration for Amazon
-   * SNS.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration of multi-factor authentication (MFA) with SMS messages in a
+   * user pool.</p> <p>This data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SmsMfaConfigType">AWS
    * API Reference</a></p>
    */
@@ -42,10 +45,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SMS message that your user pool sends to users with an MFA code. The
-     * message must contain the <code>{####}</code> placeholder. In the message, Amazon
-     * Cognito replaces this placeholder with the code. If you don't provide this
-     * parameter, Amazon Cognito sends messages in the default format.</p>
+     * <p>The SMS authentication message that will be sent to users with the code they
+     * must sign in with. The message must contain the <code>{####}</code> placeholder.
+     * Your user pool replaces the placeholder with the MFA code. If this parameter
+     * isn't provided, your user pool sends a default message.</p>
      */
     inline const Aws::String& GetSmsAuthenticationMessage() const{ return m_smsAuthenticationMessage; }
     inline bool SmsAuthenticationMessageHasBeenSet() const { return m_smsAuthenticationMessageHasBeenSet; }
@@ -59,12 +62,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SMS configuration with the settings that your Amazon Cognito user pool
-     * must use to send an SMS message from your Amazon Web Services account through
-     * Amazon Simple Notification Service. To request Amazon SNS in the Amazon Web
+     * <p>User pool configuration for delivery of SMS messages with Amazon Simple
+     * Notification Service. To send SMS messages with Amazon SNS in the Amazon Web
      * Services Region that you want, the Amazon Cognito user pool uses an Identity and
-     * Access Management (IAM) role that you provide for your Amazon Web Services
-     * account.</p>
+     * Access Management (IAM) role in your Amazon Web Services account.</p> <p>You can
+     * set <code>SmsConfiguration</code> in <code>CreateUserPool</code> and <code>
+     * UpdateUserPool</code>, or in <code>SetUserPoolMfaConfig</code>.</p>
      */
     inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
     inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }

@@ -10,6 +10,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/SequenceStoreS3Access.h>
 #include <aws/omics/model/ETagAlgorithmFamily.h>
+#include <aws/omics/model/SequenceStoreStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -148,6 +150,56 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The status of the sequence store.</p>
+     */
+    inline const SequenceStoreStatus& GetStatus() const{ return m_status; }
+    inline void SetStatus(const SequenceStoreStatus& value) { m_status = value; }
+    inline void SetStatus(SequenceStoreStatus&& value) { m_status = std::move(value); }
+    inline GetSequenceStoreResult& WithStatus(const SequenceStoreStatus& value) { SetStatus(value); return *this;}
+    inline GetSequenceStoreResult& WithStatus(SequenceStoreStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status message of the sequence store.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
+    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
+    inline GetSequenceStoreResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+    inline GetSequenceStoreResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+    inline GetSequenceStoreResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The tags keys to propagate to the S3 objects associated with read sets in the
+     * sequence store.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPropagatedSetLevelTags() const{ return m_propagatedSetLevelTags; }
+    inline void SetPropagatedSetLevelTags(const Aws::Vector<Aws::String>& value) { m_propagatedSetLevelTags = value; }
+    inline void SetPropagatedSetLevelTags(Aws::Vector<Aws::String>&& value) { m_propagatedSetLevelTags = std::move(value); }
+    inline GetSequenceStoreResult& WithPropagatedSetLevelTags(const Aws::Vector<Aws::String>& value) { SetPropagatedSetLevelTags(value); return *this;}
+    inline GetSequenceStoreResult& WithPropagatedSetLevelTags(Aws::Vector<Aws::String>&& value) { SetPropagatedSetLevelTags(std::move(value)); return *this;}
+    inline GetSequenceStoreResult& AddPropagatedSetLevelTags(const Aws::String& value) { m_propagatedSetLevelTags.push_back(value); return *this; }
+    inline GetSequenceStoreResult& AddPropagatedSetLevelTags(Aws::String&& value) { m_propagatedSetLevelTags.push_back(std::move(value)); return *this; }
+    inline GetSequenceStoreResult& AddPropagatedSetLevelTags(const char* value) { m_propagatedSetLevelTags.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The last-updated time of the sequence store.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
+    inline GetSequenceStoreResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+    inline GetSequenceStoreResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -176,6 +228,14 @@ namespace Model
     SequenceStoreS3Access m_s3Access;
 
     ETagAlgorithmFamily m_eTagAlgorithmFamily;
+
+    SequenceStoreStatus m_status;
+
+    Aws::String m_statusMessage;
+
+    Aws::Vector<Aws::String> m_propagatedSetLevelTags;
+
+    Aws::Utils::DateTime m_updateTime;
 
     Aws::String m_requestId;
   };

@@ -30,6 +30,7 @@ namespace Aws
         static const int CASES_DOMAIN_HASH = HashingUtils::HashString("CASES_DOMAIN");
         static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
         static const int FILE_SCANNER_HASH = HashingUtils::HashString("FILE_SCANNER");
+        static const int SES_IDENTITY_HASH = HashingUtils::HashString("SES_IDENTITY");
 
 
         IntegrationType GetIntegrationTypeForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return IntegrationType::FILE_SCANNER;
           }
+          else if (hashCode == SES_IDENTITY_HASH)
+          {
+            return IntegrationType::SES_IDENTITY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -111,6 +116,8 @@ namespace Aws
             return "APPLICATION";
           case IntegrationType::FILE_SCANNER:
             return "FILE_SCANNER";
+          case IntegrationType::SES_IDENTITY:
+            return "SES_IDENTITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

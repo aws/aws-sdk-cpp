@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>A user pool description.</p><p><h3>See Also:</h3>   <a
+   * <p>A short description of a user pool.</p> <p>This data type is a response
+   * parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPools.html">ListUserPools</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolDescriptionType">AWS
    * API Reference</a></p>
    */
@@ -41,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID in a user pool description.</p>
+     * <p>The user pool ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -55,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name in a user pool description.</p>
+     * <p>The user pool name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -69,7 +72,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Lambda configuration information in a user pool description.</p>
+     * <p>A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at
+     * several possible stages of user pool operations. Triggers can modify the outcome
+     * of the operations that invoked them.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }

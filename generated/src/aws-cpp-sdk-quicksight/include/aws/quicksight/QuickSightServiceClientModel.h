@@ -92,6 +92,7 @@
 #include <aws/quicksight/model/DescribeDashboardPermissionsResult.h>
 #include <aws/quicksight/model/DescribeDashboardSnapshotJobResult.h>
 #include <aws/quicksight/model/DescribeDashboardSnapshotJobResultResult.h>
+#include <aws/quicksight/model/DescribeDashboardsQAConfigurationResult.h>
 #include <aws/quicksight/model/DescribeDataSetResult.h>
 #include <aws/quicksight/model/DescribeDataSetPermissionsResult.h>
 #include <aws/quicksight/model/DescribeDataSetRefreshPropertiesResult.h>
@@ -170,6 +171,7 @@
 #include <aws/quicksight/model/SearchDataSourcesResult.h>
 #include <aws/quicksight/model/SearchFoldersResult.h>
 #include <aws/quicksight/model/SearchGroupsResult.h>
+#include <aws/quicksight/model/SearchTopicsResult.h>
 #include <aws/quicksight/model/StartAssetBundleExportJobResult.h>
 #include <aws/quicksight/model/StartAssetBundleImportJobResult.h>
 #include <aws/quicksight/model/StartDashboardSnapshotJobResult.h>
@@ -188,6 +190,7 @@
 #include <aws/quicksight/model/UpdateDashboardLinksResult.h>
 #include <aws/quicksight/model/UpdateDashboardPermissionsResult.h>
 #include <aws/quicksight/model/UpdateDashboardPublishedVersionResult.h>
+#include <aws/quicksight/model/UpdateDashboardsQAConfigurationResult.h>
 #include <aws/quicksight/model/UpdateDataSetResult.h>
 #include <aws/quicksight/model/UpdateDataSetPermissionsResult.h>
 #include <aws/quicksight/model/UpdateDataSourceResult.h>
@@ -330,6 +333,7 @@ namespace Aws
       class DescribeDashboardPermissionsRequest;
       class DescribeDashboardSnapshotJobRequest;
       class DescribeDashboardSnapshotJobResultRequest;
+      class DescribeDashboardsQAConfigurationRequest;
       class DescribeDataSetRequest;
       class DescribeDataSetPermissionsRequest;
       class DescribeDataSetRefreshPropertiesRequest;
@@ -408,6 +412,7 @@ namespace Aws
       class SearchDataSourcesRequest;
       class SearchFoldersRequest;
       class SearchGroupsRequest;
+      class SearchTopicsRequest;
       class StartAssetBundleExportJobRequest;
       class StartAssetBundleImportJobRequest;
       class StartDashboardSnapshotJobRequest;
@@ -426,6 +431,7 @@ namespace Aws
       class UpdateDashboardLinksRequest;
       class UpdateDashboardPermissionsRequest;
       class UpdateDashboardPublishedVersionRequest;
+      class UpdateDashboardsQAConfigurationRequest;
       class UpdateDataSetRequest;
       class UpdateDataSetPermissionsRequest;
       class UpdateDataSourceRequest;
@@ -531,6 +537,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeDashboardPermissionsResult, QuickSightError> DescribeDashboardPermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeDashboardSnapshotJobResult, QuickSightError> DescribeDashboardSnapshotJobOutcome;
       typedef Aws::Utils::Outcome<DescribeDashboardSnapshotJobResultResult, QuickSightError> DescribeDashboardSnapshotJobResultOutcome;
+      typedef Aws::Utils::Outcome<DescribeDashboardsQAConfigurationResult, QuickSightError> DescribeDashboardsQAConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribeDataSetResult, QuickSightError> DescribeDataSetOutcome;
       typedef Aws::Utils::Outcome<DescribeDataSetPermissionsResult, QuickSightError> DescribeDataSetPermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeDataSetRefreshPropertiesResult, QuickSightError> DescribeDataSetRefreshPropertiesOutcome;
@@ -609,6 +616,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<SearchDataSourcesResult, QuickSightError> SearchDataSourcesOutcome;
       typedef Aws::Utils::Outcome<SearchFoldersResult, QuickSightError> SearchFoldersOutcome;
       typedef Aws::Utils::Outcome<SearchGroupsResult, QuickSightError> SearchGroupsOutcome;
+      typedef Aws::Utils::Outcome<SearchTopicsResult, QuickSightError> SearchTopicsOutcome;
       typedef Aws::Utils::Outcome<StartAssetBundleExportJobResult, QuickSightError> StartAssetBundleExportJobOutcome;
       typedef Aws::Utils::Outcome<StartAssetBundleImportJobResult, QuickSightError> StartAssetBundleImportJobOutcome;
       typedef Aws::Utils::Outcome<StartDashboardSnapshotJobResult, QuickSightError> StartDashboardSnapshotJobOutcome;
@@ -627,6 +635,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateDashboardLinksResult, QuickSightError> UpdateDashboardLinksOutcome;
       typedef Aws::Utils::Outcome<UpdateDashboardPermissionsResult, QuickSightError> UpdateDashboardPermissionsOutcome;
       typedef Aws::Utils::Outcome<UpdateDashboardPublishedVersionResult, QuickSightError> UpdateDashboardPublishedVersionOutcome;
+      typedef Aws::Utils::Outcome<UpdateDashboardsQAConfigurationResult, QuickSightError> UpdateDashboardsQAConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateDataSetResult, QuickSightError> UpdateDataSetOutcome;
       typedef Aws::Utils::Outcome<UpdateDataSetPermissionsResult, QuickSightError> UpdateDataSetPermissionsOutcome;
       typedef Aws::Utils::Outcome<UpdateDataSourceResult, QuickSightError> UpdateDataSourceOutcome;
@@ -732,6 +741,7 @@ namespace Aws
       typedef std::future<DescribeDashboardPermissionsOutcome> DescribeDashboardPermissionsOutcomeCallable;
       typedef std::future<DescribeDashboardSnapshotJobOutcome> DescribeDashboardSnapshotJobOutcomeCallable;
       typedef std::future<DescribeDashboardSnapshotJobResultOutcome> DescribeDashboardSnapshotJobResultOutcomeCallable;
+      typedef std::future<DescribeDashboardsQAConfigurationOutcome> DescribeDashboardsQAConfigurationOutcomeCallable;
       typedef std::future<DescribeDataSetOutcome> DescribeDataSetOutcomeCallable;
       typedef std::future<DescribeDataSetPermissionsOutcome> DescribeDataSetPermissionsOutcomeCallable;
       typedef std::future<DescribeDataSetRefreshPropertiesOutcome> DescribeDataSetRefreshPropertiesOutcomeCallable;
@@ -810,6 +820,7 @@ namespace Aws
       typedef std::future<SearchDataSourcesOutcome> SearchDataSourcesOutcomeCallable;
       typedef std::future<SearchFoldersOutcome> SearchFoldersOutcomeCallable;
       typedef std::future<SearchGroupsOutcome> SearchGroupsOutcomeCallable;
+      typedef std::future<SearchTopicsOutcome> SearchTopicsOutcomeCallable;
       typedef std::future<StartAssetBundleExportJobOutcome> StartAssetBundleExportJobOutcomeCallable;
       typedef std::future<StartAssetBundleImportJobOutcome> StartAssetBundleImportJobOutcomeCallable;
       typedef std::future<StartDashboardSnapshotJobOutcome> StartDashboardSnapshotJobOutcomeCallable;
@@ -828,6 +839,7 @@ namespace Aws
       typedef std::future<UpdateDashboardLinksOutcome> UpdateDashboardLinksOutcomeCallable;
       typedef std::future<UpdateDashboardPermissionsOutcome> UpdateDashboardPermissionsOutcomeCallable;
       typedef std::future<UpdateDashboardPublishedVersionOutcome> UpdateDashboardPublishedVersionOutcomeCallable;
+      typedef std::future<UpdateDashboardsQAConfigurationOutcome> UpdateDashboardsQAConfigurationOutcomeCallable;
       typedef std::future<UpdateDataSetOutcome> UpdateDataSetOutcomeCallable;
       typedef std::future<UpdateDataSetPermissionsOutcome> UpdateDataSetPermissionsOutcomeCallable;
       typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
@@ -936,6 +948,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDashboardPermissionsRequest&, const Model::DescribeDashboardPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDashboardSnapshotJobRequest&, const Model::DescribeDashboardSnapshotJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardSnapshotJobResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDashboardSnapshotJobResultRequest&, const Model::DescribeDashboardSnapshotJobResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardSnapshotJobResultResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeDashboardsQAConfigurationRequest&, const Model::DescribeDashboardsQAConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardsQAConfigurationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSetRequest&, const Model::DescribeDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSetResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSetPermissionsRequest&, const Model::DescribeDataSetPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSetPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSetRefreshPropertiesRequest&, const Model::DescribeDataSetRefreshPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSetRefreshPropertiesResponseReceivedHandler;
@@ -1014,6 +1027,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::SearchDataSourcesRequest&, const Model::SearchDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDataSourcesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchFoldersRequest&, const Model::SearchFoldersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFoldersResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchGroupsRequest&, const Model::SearchGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchGroupsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::SearchTopicsRequest&, const Model::SearchTopicsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchTopicsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::StartAssetBundleExportJobRequest&, const Model::StartAssetBundleExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAssetBundleExportJobResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::StartAssetBundleImportJobRequest&, const Model::StartAssetBundleImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAssetBundleImportJobResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::StartDashboardSnapshotJobRequest&, const Model::StartDashboardSnapshotJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDashboardSnapshotJobResponseReceivedHandler;
@@ -1032,6 +1046,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDashboardLinksRequest&, const Model::UpdateDashboardLinksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDashboardLinksResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDashboardPermissionsRequest&, const Model::UpdateDashboardPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDashboardPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDashboardPublishedVersionRequest&, const Model::UpdateDashboardPublishedVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDashboardPublishedVersionResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateDashboardsQAConfigurationRequest&, const Model::UpdateDashboardsQAConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDashboardsQAConfigurationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDataSetRequest&, const Model::UpdateDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSetResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDataSetPermissionsRequest&, const Model::UpdateDataSetPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSetPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;

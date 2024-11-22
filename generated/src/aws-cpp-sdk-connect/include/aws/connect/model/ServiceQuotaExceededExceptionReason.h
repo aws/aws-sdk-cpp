@@ -1,0 +1,59 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/AttachedFileServiceQuotaExceededExceptionReason.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace Connect
+{
+namespace Model
+{
+
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ServiceQuotaExceededExceptionReason">AWS
+   * API Reference</a></p>
+   */
+  class ServiceQuotaExceededExceptionReason
+  {
+  public:
+    AWS_CONNECT_API ServiceQuotaExceededExceptionReason();
+    AWS_CONNECT_API ServiceQuotaExceededExceptionReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ServiceQuotaExceededExceptionReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const AttachedFileServiceQuotaExceededExceptionReason& GetAttachedFileServiceQuotaExceededExceptionReason() const{ return m_attachedFileServiceQuotaExceededExceptionReason; }
+    inline bool AttachedFileServiceQuotaExceededExceptionReasonHasBeenSet() const { return m_attachedFileServiceQuotaExceededExceptionReasonHasBeenSet; }
+    inline void SetAttachedFileServiceQuotaExceededExceptionReason(const AttachedFileServiceQuotaExceededExceptionReason& value) { m_attachedFileServiceQuotaExceededExceptionReasonHasBeenSet = true; m_attachedFileServiceQuotaExceededExceptionReason = value; }
+    inline void SetAttachedFileServiceQuotaExceededExceptionReason(AttachedFileServiceQuotaExceededExceptionReason&& value) { m_attachedFileServiceQuotaExceededExceptionReasonHasBeenSet = true; m_attachedFileServiceQuotaExceededExceptionReason = std::move(value); }
+    inline ServiceQuotaExceededExceptionReason& WithAttachedFileServiceQuotaExceededExceptionReason(const AttachedFileServiceQuotaExceededExceptionReason& value) { SetAttachedFileServiceQuotaExceededExceptionReason(value); return *this;}
+    inline ServiceQuotaExceededExceptionReason& WithAttachedFileServiceQuotaExceededExceptionReason(AttachedFileServiceQuotaExceededExceptionReason&& value) { SetAttachedFileServiceQuotaExceededExceptionReason(std::move(value)); return *this;}
+    ///@}
+  private:
+
+    AttachedFileServiceQuotaExceededExceptionReason m_attachedFileServiceQuotaExceededExceptionReason;
+    bool m_attachedFileServiceQuotaExceededExceptionReasonHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace Connect
+} // namespace Aws

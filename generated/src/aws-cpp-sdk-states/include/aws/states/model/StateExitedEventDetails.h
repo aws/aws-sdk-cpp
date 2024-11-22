@@ -7,6 +7,8 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/model/HistoryEventExecutionDataDetails.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/states/model/AssignedVariablesDetails.h>
 #include <utility>
 
 namespace Aws
@@ -85,6 +87,37 @@ namespace Model
     inline StateExitedEventDetails& WithOutputDetails(const HistoryEventExecutionDataDetails& value) { SetOutputDetails(value); return *this;}
     inline StateExitedEventDetails& WithOutputDetails(HistoryEventExecutionDataDetails&& value) { SetOutputDetails(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Map of variable name and value as a serialized JSON representation.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAssignedVariables() const{ return m_assignedVariables; }
+    inline bool AssignedVariablesHasBeenSet() const { return m_assignedVariablesHasBeenSet; }
+    inline void SetAssignedVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables = value; }
+    inline void SetAssignedVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables = std::move(value); }
+    inline StateExitedEventDetails& WithAssignedVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetAssignedVariables(value); return *this;}
+    inline StateExitedEventDetails& WithAssignedVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetAssignedVariables(std::move(value)); return *this;}
+    inline StateExitedEventDetails& AddAssignedVariables(const Aws::String& key, const Aws::String& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(key, value); return *this; }
+    inline StateExitedEventDetails& AddAssignedVariables(Aws::String&& key, const Aws::String& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(std::move(key), value); return *this; }
+    inline StateExitedEventDetails& AddAssignedVariables(const Aws::String& key, Aws::String&& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(key, std::move(value)); return *this; }
+    inline StateExitedEventDetails& AddAssignedVariables(Aws::String&& key, Aws::String&& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(std::move(key), std::move(value)); return *this; }
+    inline StateExitedEventDetails& AddAssignedVariables(const char* key, Aws::String&& value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(key, std::move(value)); return *this; }
+    inline StateExitedEventDetails& AddAssignedVariables(Aws::String&& key, const char* value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(std::move(key), value); return *this; }
+    inline StateExitedEventDetails& AddAssignedVariables(const char* key, const char* value) { m_assignedVariablesHasBeenSet = true; m_assignedVariables.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Provides details about input or output in an execution history event.</p>
+     */
+    inline const AssignedVariablesDetails& GetAssignedVariablesDetails() const{ return m_assignedVariablesDetails; }
+    inline bool AssignedVariablesDetailsHasBeenSet() const { return m_assignedVariablesDetailsHasBeenSet; }
+    inline void SetAssignedVariablesDetails(const AssignedVariablesDetails& value) { m_assignedVariablesDetailsHasBeenSet = true; m_assignedVariablesDetails = value; }
+    inline void SetAssignedVariablesDetails(AssignedVariablesDetails&& value) { m_assignedVariablesDetailsHasBeenSet = true; m_assignedVariablesDetails = std::move(value); }
+    inline StateExitedEventDetails& WithAssignedVariablesDetails(const AssignedVariablesDetails& value) { SetAssignedVariablesDetails(value); return *this;}
+    inline StateExitedEventDetails& WithAssignedVariablesDetails(AssignedVariablesDetails&& value) { SetAssignedVariablesDetails(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -95,6 +128,12 @@ namespace Model
 
     HistoryEventExecutionDataDetails m_outputDetails;
     bool m_outputDetailsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_assignedVariables;
+    bool m_assignedVariablesHasBeenSet = false;
+
+    AssignedVariablesDetails m_assignedVariablesDetails;
+    bool m_assignedVariablesDetailsHasBeenSet = false;
   };
 
 } // namespace Model

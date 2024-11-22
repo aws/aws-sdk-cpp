@@ -45,8 +45,21 @@ namespace Model
     /**
      * <p>The name of the challenge that you're responding to with this call. This is
      * returned in the <code>AdminInitiateAuth</code> response if you must pass another
-     * challenge.</p> <ul> <li> <p> <code>MFA_SETUP</code>: If MFA is required, users
-     * who don't have at least one of the MFA methods set up are presented with an
+     * challenge.</p> <ul> <li> <p> <code>WEB_AUTHN</code>: Respond to the challenge
+     * with the results of a successful authentication with a passkey, or webauthN,
+     * factor. These are typically biometric devices or security keys.</p> </li> <li>
+     * <p> <code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code>
+     * parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client
+     * secret), <code>DEVICE_KEY</code>.</p> </li> <li> <p> <code>PASSWORD_SRP</code>:
+     * Respond with <code>USER_SRP_AUTH</code> parameters: <code>USERNAME</code>
+     * (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if
+     * the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p>
+     * </li> <li> <p> <code>SELECT_CHALLENGE</code>: Respond to the challenge with
+     * <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the
+     * challenge types in the <code>AvailableChallenges</code> response parameter.</p>
+     * </li> <li> <p> <code>MFA_SETUP</code>: If MFA is required, users who don't have
+     * at least one of the MFA methods set up are presented with an
      * <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
      * continue to authenticate.</p> </li> <li> <p> <code>SELECT_MFA_TYPE</code>:
      * Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for SMS message
@@ -76,6 +89,13 @@ namespace Model
      * parameter. You can also set values for attributes that aren't required by your
      * user pool and that your app client can write. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
+     * <p>Amazon Cognito only returns this challenge for users who have temporary
+     * passwords. Because of this, and because in some cases you can create users who
+     * don't have values for required attributes, take care to collect and submit
+     * required-attribute values for all users who don't have passwords. You can create
+     * a user in the Amazon Cognito console without, for example, a required
+     * <code>birthdate</code> attribute. The API response from Amazon Cognito won't
+     * prompt you to submit a birthdate for the user if they don't have a password.</p>
      *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
      * modify a required attribute that already has a value. In
      * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon

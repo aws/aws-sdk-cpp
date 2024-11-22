@@ -18,6 +18,7 @@
 #include <aws/lambda/model/DocumentDBEventSourceConfig.h>
 #include <aws/lambda/model/FilterCriteriaError.h>
 #include <aws/lambda/model/EventSourceMappingMetricsConfig.h>
+#include <aws/lambda/model/ProvisionedPollerConfig.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
@@ -469,6 +470,20 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>(Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode
+     * configuration for the event source. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned
+     * Mode</a>.</p>
+     */
+    inline const ProvisionedPollerConfig& GetProvisionedPollerConfig() const{ return m_provisionedPollerConfig; }
+    inline void SetProvisionedPollerConfig(const ProvisionedPollerConfig& value) { m_provisionedPollerConfig = value; }
+    inline void SetProvisionedPollerConfig(ProvisionedPollerConfig&& value) { m_provisionedPollerConfig = std::move(value); }
+    inline UpdateEventSourceMappingResult& WithProvisionedPollerConfig(const ProvisionedPollerConfig& value) { SetProvisionedPollerConfig(value); return *this;}
+    inline UpdateEventSourceMappingResult& WithProvisionedPollerConfig(ProvisionedPollerConfig&& value) { SetProvisionedPollerConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -541,6 +556,8 @@ namespace Model
     Aws::String m_eventSourceMappingArn;
 
     EventSourceMappingMetricsConfig m_metricsConfig;
+
+    ProvisionedPollerConfig m_provisionedPollerConfig;
 
     Aws::String m_requestId;
   };

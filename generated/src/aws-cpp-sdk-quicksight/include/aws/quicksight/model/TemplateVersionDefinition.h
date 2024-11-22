@@ -15,6 +15,7 @@
 #include <aws/quicksight/model/ParameterDeclaration.h>
 #include <aws/quicksight/model/FilterGroup.h>
 #include <aws/quicksight/model/ColumnConfiguration.h>
+#include <aws/quicksight/model/StaticFile.h>
 #include <utility>
 
 namespace Aws
@@ -170,6 +171,20 @@ namespace Model
     inline TemplateVersionDefinition& WithQueryExecutionOptions(const QueryExecutionOptions& value) { SetQueryExecutionOptions(value); return *this;}
     inline TemplateVersionDefinition& WithQueryExecutionOptions(QueryExecutionOptions&& value) { SetQueryExecutionOptions(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The static files for the definition.</p>
+     */
+    inline const Aws::Vector<StaticFile>& GetStaticFiles() const{ return m_staticFiles; }
+    inline bool StaticFilesHasBeenSet() const { return m_staticFilesHasBeenSet; }
+    inline void SetStaticFiles(const Aws::Vector<StaticFile>& value) { m_staticFilesHasBeenSet = true; m_staticFiles = value; }
+    inline void SetStaticFiles(Aws::Vector<StaticFile>&& value) { m_staticFilesHasBeenSet = true; m_staticFiles = std::move(value); }
+    inline TemplateVersionDefinition& WithStaticFiles(const Aws::Vector<StaticFile>& value) { SetStaticFiles(value); return *this;}
+    inline TemplateVersionDefinition& WithStaticFiles(Aws::Vector<StaticFile>&& value) { SetStaticFiles(std::move(value)); return *this;}
+    inline TemplateVersionDefinition& AddStaticFiles(const StaticFile& value) { m_staticFilesHasBeenSet = true; m_staticFiles.push_back(value); return *this; }
+    inline TemplateVersionDefinition& AddStaticFiles(StaticFile&& value) { m_staticFilesHasBeenSet = true; m_staticFiles.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<DataSetConfiguration> m_dataSetConfigurations;
@@ -198,6 +213,9 @@ namespace Model
 
     QueryExecutionOptions m_queryExecutionOptions;
     bool m_queryExecutionOptionsHasBeenSet = false;
+
+    Aws::Vector<StaticFile> m_staticFiles;
+    bool m_staticFilesHasBeenSet = false;
   };
 
 } // namespace Model

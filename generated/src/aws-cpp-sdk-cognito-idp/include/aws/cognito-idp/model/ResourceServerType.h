@@ -26,8 +26,12 @@ namespace Model
 {
 
   /**
-   * <p>A container for information about a resource server for a user
-   * pool.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a resource server configuration and associated custom scopes
+   * in a user pool.</p> <p>This data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html">CreateResourceServer</a>
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html">DescribeResourceServer</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResourceServerType">AWS
    * API Reference</a></p>
    */
@@ -42,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool that hosts the resource server.</p>
+     * <p>The ID of the user pool that contains the resource server configuration.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }

@@ -25,7 +25,15 @@ namespace Model
 {
 
   /**
-   * <p>The template for verification messages.</p><p><h3>See Also:</h3>   <a
+   * <p>The template for the verification message that your user pool delivers to
+   * users who set an email address or phone number attribute.</p> <p>This data type
+   * is a request and response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerificationMessageTemplateType">AWS
    * API Reference</a></p>
    */
@@ -135,7 +143,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The default email option.</p>
+     * <p>The configuration of verification emails to contain a clickable link or a
+     * verification code.</p> <p>For link, your template body must contain link text in
+     * the format <code>{##Click here##}</code>. "Click here" in the example is a
+     * customizable string. For code, your template body must contain a code
+     * placeholder in the format <code>{####}</code>.</p>
      */
     inline const DefaultEmailOptionType& GetDefaultEmailOption() const{ return m_defaultEmailOption; }
     inline bool DefaultEmailOptionHasBeenSet() const { return m_defaultEmailOptionHasBeenSet; }

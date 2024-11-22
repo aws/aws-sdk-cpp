@@ -9,6 +9,7 @@
 #include <aws/neptune-graph/model/ImportOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/model/Format.h>
+#include <aws/neptune-graph/model/ParquetType.h>
 #include <aws/neptune-graph/model/BlankNodeHandling.h>
 #include <utility>
 
@@ -92,6 +93,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The parquet type of the import task.</p>
+     */
+    inline const ParquetType& GetParquetType() const{ return m_parquetType; }
+    inline bool ParquetTypeHasBeenSet() const { return m_parquetTypeHasBeenSet; }
+    inline void SetParquetType(const ParquetType& value) { m_parquetTypeHasBeenSet = true; m_parquetType = value; }
+    inline void SetParquetType(ParquetType&& value) { m_parquetTypeHasBeenSet = true; m_parquetType = std::move(value); }
+    inline StartImportTaskRequest& WithParquetType(const ParquetType& value) { SetParquetType(value); return *this;}
+    inline StartImportTaskRequest& WithParquetType(ParquetType&& value) { SetParquetType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The method to handle blank nodes in the dataset. Currently, only
      * <code>convertToIri</code> is supported, meaning blank nodes are converted to
      * unique IRIs at load time. Must be provided when format is <code>ntriples</code>.
@@ -148,6 +161,9 @@ namespace Model
 
     Format m_format;
     bool m_formatHasBeenSet = false;
+
+    ParquetType m_parquetType;
+    bool m_parquetTypeHasBeenSet = false;
 
     BlankNodeHandling m_blankNodeHandling;
     bool m_blankNodeHandlingHasBeenSet = false;

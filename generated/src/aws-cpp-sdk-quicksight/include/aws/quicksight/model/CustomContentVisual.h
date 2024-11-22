@@ -125,6 +125,20 @@ namespace Model
     inline CustomContentVisual& WithDataSetIdentifier(Aws::String&& value) { SetDataSetIdentifier(std::move(value)); return *this;}
     inline CustomContentVisual& WithDataSetIdentifier(const char* value) { SetDataSetIdentifier(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The alt text for the visual.</p>
+     */
+    inline const Aws::String& GetVisualContentAltText() const{ return m_visualContentAltText; }
+    inline bool VisualContentAltTextHasBeenSet() const { return m_visualContentAltTextHasBeenSet; }
+    inline void SetVisualContentAltText(const Aws::String& value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText = value; }
+    inline void SetVisualContentAltText(Aws::String&& value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText = std::move(value); }
+    inline void SetVisualContentAltText(const char* value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText.assign(value); }
+    inline CustomContentVisual& WithVisualContentAltText(const Aws::String& value) { SetVisualContentAltText(value); return *this;}
+    inline CustomContentVisual& WithVisualContentAltText(Aws::String&& value) { SetVisualContentAltText(std::move(value)); return *this;}
+    inline CustomContentVisual& WithVisualContentAltText(const char* value) { SetVisualContentAltText(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_visualId;
@@ -144,6 +158,9 @@ namespace Model
 
     Aws::String m_dataSetIdentifier;
     bool m_dataSetIdentifierHasBeenSet = false;
+
+    Aws::String m_visualContentAltText;
+    bool m_visualContentAltTextHasBeenSet = false;
   };
 
 } // namespace Model

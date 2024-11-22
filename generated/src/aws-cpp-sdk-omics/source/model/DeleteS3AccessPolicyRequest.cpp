@@ -1,0 +1,27 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/omics/model/DeleteS3AccessPolicyRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Omics::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+DeleteS3AccessPolicyRequest::DeleteS3AccessPolicyRequest() : 
+    m_s3AccessPointArnHasBeenSet(false)
+{
+}
+
+Aws::String DeleteS3AccessPolicyRequest::SerializePayload() const
+{
+  return {};
+}
+
+
+
+

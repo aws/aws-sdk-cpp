@@ -83,8 +83,12 @@ namespace Model
      * in the <i>Key Management Service API Reference</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO
-     * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
-     * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
+     * topics</a>:</p> <ul> <li> <p> <code>ArchivePolicy</code> – The policy that sets
+     * the retention period for messages stored in the message archive of an Amazon SNS
+     * FIFO topic.</p> </li> <li> <p> <code>BeginningArchiveTime</code> – The earliest
+     * starting point at which a message in the topic’s archive can be replayed from.
+     * This point in time is based on the configured message retention period set by
+     * the topic’s message archiving policy.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
      * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
      * is set to <code>false</code>. If you create a FIFO topic and this attribute is
@@ -96,7 +100,9 @@ namespace Model
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
      * you can specify a value for the <code>MessageDeduplicationId</code> parameter
-     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> <li> <p>
+     * <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO topic is
+     * created.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }

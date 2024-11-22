@@ -25,7 +25,15 @@ namespace Model
 {
 
   /**
-   * <p>The data type for <code>AccountRecoverySetting</code>.</p><p><h3>See
+   * <p>The settings for user message delivery in forgot-password operations.
+   * Contains preference for email or SMS message delivery of password reset codes,
+   * or for admin-only password reset.</p> <p>This data type is a request and
+   * response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AccountRecoverySettingType">AWS
    * API Reference</a></p>
@@ -41,7 +49,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of <code>RecoveryOptionTypes</code>.</p>
+     * <p>The list of options and priorities for user message delivery in
+     * forgot-password operations. Sets or displays user pool preferences for email or
+     * SMS message priority, whether users should fall back to a second delivery
+     * method, and whether passwords should only be reset by administrators.</p>
      */
     inline const Aws::Vector<RecoveryOptionType>& GetRecoveryMechanisms() const{ return m_recoveryMechanisms; }
     inline bool RecoveryMechanismsHasBeenSet() const { return m_recoveryMechanismsHasBeenSet; }

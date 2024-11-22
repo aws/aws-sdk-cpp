@@ -24,7 +24,8 @@ HeatMapVisual::HeatMapVisual() :
     m_subtitleHasBeenSet(false),
     m_chartConfigurationHasBeenSet(false),
     m_columnHierarchiesHasBeenSet(false),
-    m_actionsHasBeenSet(false)
+    m_actionsHasBeenSet(false),
+    m_visualContentAltTextHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,13 @@ HeatMapVisual& HeatMapVisual::operator =(JsonView jsonValue)
     m_actionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VisualContentAltText"))
+  {
+    m_visualContentAltText = jsonValue.GetString("VisualContentAltText");
+
+    m_visualContentAltTextHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +142,12 @@ JsonValue HeatMapVisual::Jsonize() const
      actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
    }
    payload.WithArray("Actions", std::move(actionsJsonList));
+
+  }
+
+  if(m_visualContentAltTextHasBeenSet)
+  {
+   payload.WithString("VisualContentAltText", m_visualContentAltText);
 
   }
 

@@ -755,6 +755,31 @@ namespace Connect
         }
 
         /**
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContactOutcome CreateContact(const Model::CreateContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateContactRequestT = Model::CreateContactRequest>
+        Model::CreateContactOutcomeCallable CreateContactCallable(const CreateContactRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CreateContact, request);
+        }
+
+        /**
+         * An Async wrapper for CreateContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateContactRequestT = Model::CreateContactRequest>
+        void CreateContactAsync(const CreateContactRequestT& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CreateContact, request, handler, context);
+        }
+
+        /**
          * <p>Creates a flow for the specified Amazon Connect instance.</p> <p>You can also
          * create and update flows using the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
@@ -837,6 +862,31 @@ namespace Connect
         void CreateContactFlowVersionAsync(const CreateContactFlowVersionRequestT& request, const CreateContactFlowVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::CreateContactFlowVersion, request, handler, context);
+        }
+
+        /**
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEmailAddress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEmailAddressOutcome CreateEmailAddress(const Model::CreateEmailAddressRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEmailAddress that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateEmailAddressRequestT = Model::CreateEmailAddressRequest>
+        Model::CreateEmailAddressOutcomeCallable CreateEmailAddressCallable(const CreateEmailAddressRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CreateEmailAddress, request);
+        }
+
+        /**
+         * An Async wrapper for CreateEmailAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateEmailAddressRequestT = Model::CreateEmailAddressRequest>
+        void CreateEmailAddressAsync(const CreateEmailAddressRequestT& request, const CreateEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CreateEmailAddress, request, handler, context);
         }
 
         /**
@@ -1603,6 +1653,31 @@ namespace Connect
         }
 
         /**
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEmailAddress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEmailAddressOutcome DeleteEmailAddress(const Model::DeleteEmailAddressRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEmailAddress that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteEmailAddressRequestT = Model::DeleteEmailAddressRequest>
+        Model::DeleteEmailAddressOutcomeCallable DeleteEmailAddressCallable(const DeleteEmailAddressRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeleteEmailAddress, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteEmailAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteEmailAddressRequestT = Model::DeleteEmailAddressRequest>
+        void DeleteEmailAddressAsync(const DeleteEmailAddressRequestT& request, const DeleteEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeleteEmailAddress, request, handler, context);
+        }
+
+        /**
          * <p>Deletes an evaluation form in the specified Amazon Connect instance. </p>
          * <ul> <li> <p>If the version property is provided, only the specified version of
          * the evaluation form is deleted.</p> </li> <li> <p>If no version is provided,
@@ -2302,6 +2377,31 @@ namespace Connect
         void DescribeContactFlowModuleAsync(const DescribeContactFlowModuleRequestT& request, const DescribeContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DescribeContactFlowModule, request, handler, context);
+        }
+
+        /**
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEmailAddress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEmailAddressOutcome DescribeEmailAddress(const Model::DescribeEmailAddressRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEmailAddress that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeEmailAddressRequestT = Model::DescribeEmailAddressRequest>
+        Model::DescribeEmailAddressOutcomeCallable DescribeEmailAddressCallable(const DescribeEmailAddressRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DescribeEmailAddress, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeEmailAddress that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeEmailAddressRequestT = Model::DescribeEmailAddressRequest>
+        void DescribeEmailAddressAsync(const DescribeEmailAddressRequestT& request, const DescribeEmailAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DescribeEmailAddress, request, handler, context);
         }
 
         /**
@@ -3655,6 +3755,31 @@ namespace Connect
         void ListApprovedOriginsAsync(const ListApprovedOriginsRequestT& request, const ListApprovedOriginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ListApprovedOrigins, request, handler, context);
+        }
+
+        /**
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAssociatedContacts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssociatedContactsOutcome ListAssociatedContacts(const Model::ListAssociatedContactsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAssociatedContacts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAssociatedContactsRequestT = Model::ListAssociatedContactsRequest>
+        Model::ListAssociatedContactsOutcomeCallable ListAssociatedContactsCallable(const ListAssociatedContactsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListAssociatedContacts, request);
+        }
+
+        /**
+         * An Async wrapper for ListAssociatedContacts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAssociatedContactsRequestT = Model::ListAssociatedContactsRequest>
+        void ListAssociatedContactsAsync(const ListAssociatedContactsRequestT& request, const ListAssociatedContactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListAssociatedContacts, request, handler, context);
         }
 
         /**
@@ -5210,6 +5335,31 @@ namespace Connect
         }
 
         /**
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEmailAddresses">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchEmailAddressesOutcome SearchEmailAddresses(const Model::SearchEmailAddressesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchEmailAddresses that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchEmailAddressesRequestT = Model::SearchEmailAddressesRequest>
+        Model::SearchEmailAddressesOutcomeCallable SearchEmailAddressesCallable(const SearchEmailAddressesRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SearchEmailAddresses, request);
+        }
+
+        /**
+         * An Async wrapper for SearchEmailAddresses that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchEmailAddressesRequestT = Model::SearchEmailAddressesRequest>
+        void SearchEmailAddressesAsync(const SearchEmailAddressesRequestT& request, const SearchEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SearchEmailAddresses, request, handler, context);
+        }
+
+        /**
          * <p>Searches the hours of operation in an Amazon Connect instance, with optional
          * filtering.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">AWS
@@ -5544,6 +5694,31 @@ namespace Connect
         }
 
         /**
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendOutboundEmail">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendOutboundEmailOutcome SendOutboundEmail(const Model::SendOutboundEmailRequest& request) const;
+
+        /**
+         * A Callable wrapper for SendOutboundEmail that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SendOutboundEmailRequestT = Model::SendOutboundEmailRequest>
+        Model::SendOutboundEmailOutcomeCallable SendOutboundEmailCallable(const SendOutboundEmailRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SendOutboundEmail, request);
+        }
+
+        /**
+         * An Async wrapper for SendOutboundEmail that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SendOutboundEmailRequestT = Model::SendOutboundEmailRequest>
+        void SendOutboundEmailAsync(const SendOutboundEmailRequestT& request, const SendOutboundEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SendOutboundEmail, request, handler, context);
+        }
+
+        /**
          * <p>Provides a pre-signed Amazon S3 URL in response for uploading your
          * content.</p>  <p>You may only use this API to upload attachments to
          * an <a
@@ -5727,6 +5902,31 @@ namespace Connect
         }
 
         /**
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartEmailContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartEmailContactOutcome StartEmailContact(const Model::StartEmailContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartEmailContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartEmailContactRequestT = Model::StartEmailContactRequest>
+        Model::StartEmailContactOutcomeCallable StartEmailContactCallable(const StartEmailContactRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::StartEmailContact, request);
+        }
+
+        /**
+         * An Async wrapper for StartEmailContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartEmailContactRequestT = Model::StartEmailContactRequest>
+        void StartEmailContactAsync(const StartEmailContactRequestT& request, const StartEmailContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::StartEmailContact, request, handler, context);
+        }
+
+        /**
          * <p>Initiates a new outbound SMS contact to a customer. Response of this API
          * provides the ContactId of the outbound SMS contact created.</p> <p>
          * <b>SourceEndpoint</b> only supports Endpoints with
@@ -5766,6 +5966,31 @@ namespace Connect
         void StartOutboundChatContactAsync(const StartOutboundChatContactRequestT& request, const StartOutboundChatContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::StartOutboundChatContact, request, handler, context);
+        }
+
+        /**
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundEmailContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartOutboundEmailContactOutcome StartOutboundEmailContact(const Model::StartOutboundEmailContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartOutboundEmailContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartOutboundEmailContactRequestT = Model::StartOutboundEmailContactRequest>
+        Model::StartOutboundEmailContactOutcomeCallable StartOutboundEmailContactCallable(const StartOutboundEmailContactRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::StartOutboundEmailContact, request);
+        }
+
+        /**
+         * An Async wrapper for StartOutboundEmailContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartOutboundEmailContactRequestT = Model::StartOutboundEmailContactRequest>
+        void StartOutboundEmailContactAsync(const StartOutboundEmailContactRequestT& request, const StartOutboundEmailContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::StartOutboundEmailContact, request, handler, context);
         }
 
         /**
@@ -6583,6 +6808,31 @@ namespace Connect
         }
 
         /**
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEmailAddressMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEmailAddressMetadataOutcome UpdateEmailAddressMetadata(const Model::UpdateEmailAddressMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEmailAddressMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEmailAddressMetadataRequestT = Model::UpdateEmailAddressMetadataRequest>
+        Model::UpdateEmailAddressMetadataOutcomeCallable UpdateEmailAddressMetadataCallable(const UpdateEmailAddressMetadataRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdateEmailAddressMetadata, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEmailAddressMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEmailAddressMetadataRequestT = Model::UpdateEmailAddressMetadataRequest>
+        void UpdateEmailAddressMetadataAsync(const UpdateEmailAddressMetadataRequestT& request, const UpdateEmailAddressMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdateEmailAddressMetadata, request, handler, context);
+        }
+
+        /**
          * <p>Updates details about a specific evaluation form version in the specified
          * Amazon Connect instance. Question and section identifiers cannot be duplicated
          * within the same evaluation form.</p> <p>This operation does not support partial
@@ -6969,6 +7219,31 @@ namespace Connect
         void UpdateQueueOutboundCallerConfigAsync(const UpdateQueueOutboundCallerConfigRequestT& request, const UpdateQueueOutboundCallerConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::UpdateQueueOutboundCallerConfig, request, handler, context);
+        }
+
+        /**
+         * <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundEmailConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQueueOutboundEmailConfigOutcome UpdateQueueOutboundEmailConfig(const Model::UpdateQueueOutboundEmailConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateQueueOutboundEmailConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateQueueOutboundEmailConfigRequestT = Model::UpdateQueueOutboundEmailConfigRequest>
+        Model::UpdateQueueOutboundEmailConfigOutcomeCallable UpdateQueueOutboundEmailConfigCallable(const UpdateQueueOutboundEmailConfigRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdateQueueOutboundEmailConfig, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateQueueOutboundEmailConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateQueueOutboundEmailConfigRequestT = Model::UpdateQueueOutboundEmailConfigRequest>
+        void UpdateQueueOutboundEmailConfigAsync(const UpdateQueueOutboundEmailConfigRequestT& request, const UpdateQueueOutboundEmailConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdateQueueOutboundEmailConfig, request, handler, context);
         }
 
         /**

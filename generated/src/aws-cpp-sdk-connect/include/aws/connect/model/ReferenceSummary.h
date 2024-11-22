@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/UrlReference.h>
 #include <aws/connect/model/AttachmentReference.h>
+#include <aws/connect/model/EmailMessageReference.h>
 #include <aws/connect/model/StringReference.h>
 #include <aws/connect/model/NumberReference.h>
 #include <aws/connect/model/DateReference.h>
@@ -72,6 +73,18 @@ namespace Model
 
     ///@{
     /**
+     * <p/>
+     */
+    inline const EmailMessageReference& GetEmailMessage() const{ return m_emailMessage; }
+    inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
+    inline void SetEmailMessage(const EmailMessageReference& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
+    inline void SetEmailMessage(EmailMessageReference&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::move(value); }
+    inline ReferenceSummary& WithEmailMessage(const EmailMessageReference& value) { SetEmailMessage(value); return *this;}
+    inline ReferenceSummary& WithEmailMessage(EmailMessageReference&& value) { SetEmailMessage(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Information about a reference when the <code>referenceType</code> is
      * <code>STRING</code>. Otherwise, null.</p>
      */
@@ -128,6 +141,9 @@ namespace Model
 
     AttachmentReference m_attachment;
     bool m_attachmentHasBeenSet = false;
+
+    EmailMessageReference m_emailMessage;
+    bool m_emailMessageHasBeenSet = false;
 
     StringReference m_string;
     bool m_stringHasBeenSet = false;

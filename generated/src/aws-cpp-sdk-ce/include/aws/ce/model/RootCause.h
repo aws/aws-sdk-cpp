@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ce/model/RootCauseImpact.h>
 #include <utility>
 
 namespace Aws
@@ -25,8 +26,9 @@ namespace Model
 
   /**
    * <p>The combination of Amazon Web Services service, linked account, linked
-   * account name, Region, and usage type where a cost anomaly is observed. The
-   * linked account name will only be available when the account name can be
+   * account name, Region, and usage type where a cost anomaly is observed, along
+   * with the dollar and percentage amount of the anomaly impact. The linked account
+   * name will only be available when the account name can be
    * identified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RootCause">AWS API
    * Reference</a></p>
@@ -85,6 +87,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The member account name value that's associated with the cost anomaly.</p>
+     */
+    inline const Aws::String& GetLinkedAccountName() const{ return m_linkedAccountName; }
+    inline bool LinkedAccountNameHasBeenSet() const { return m_linkedAccountNameHasBeenSet; }
+    inline void SetLinkedAccountName(const Aws::String& value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName = value; }
+    inline void SetLinkedAccountName(Aws::String&& value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName = std::move(value); }
+    inline void SetLinkedAccountName(const char* value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName.assign(value); }
+    inline RootCause& WithLinkedAccountName(const Aws::String& value) { SetLinkedAccountName(value); return *this;}
+    inline RootCause& WithLinkedAccountName(Aws::String&& value) { SetLinkedAccountName(std::move(value)); return *this;}
+    inline RootCause& WithLinkedAccountName(const char* value) { SetLinkedAccountName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The <code>UsageType</code> value that's associated with the cost anomaly.
      * </p>
      */
@@ -100,16 +116,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The member account name value that's associated with the cost anomaly.</p>
+     * <p>The dollar impact for the root cause.</p>
      */
-    inline const Aws::String& GetLinkedAccountName() const{ return m_linkedAccountName; }
-    inline bool LinkedAccountNameHasBeenSet() const { return m_linkedAccountNameHasBeenSet; }
-    inline void SetLinkedAccountName(const Aws::String& value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName = value; }
-    inline void SetLinkedAccountName(Aws::String&& value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName = std::move(value); }
-    inline void SetLinkedAccountName(const char* value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName.assign(value); }
-    inline RootCause& WithLinkedAccountName(const Aws::String& value) { SetLinkedAccountName(value); return *this;}
-    inline RootCause& WithLinkedAccountName(Aws::String&& value) { SetLinkedAccountName(std::move(value)); return *this;}
-    inline RootCause& WithLinkedAccountName(const char* value) { SetLinkedAccountName(value); return *this;}
+    inline const RootCauseImpact& GetImpact() const{ return m_impact; }
+    inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
+    inline void SetImpact(const RootCauseImpact& value) { m_impactHasBeenSet = true; m_impact = value; }
+    inline void SetImpact(RootCauseImpact&& value) { m_impactHasBeenSet = true; m_impact = std::move(value); }
+    inline RootCause& WithImpact(const RootCauseImpact& value) { SetImpact(value); return *this;}
+    inline RootCause& WithImpact(RootCauseImpact&& value) { SetImpact(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -122,11 +136,14 @@ namespace Model
     Aws::String m_linkedAccount;
     bool m_linkedAccountHasBeenSet = false;
 
+    Aws::String m_linkedAccountName;
+    bool m_linkedAccountNameHasBeenSet = false;
+
     Aws::String m_usageType;
     bool m_usageTypeHasBeenSet = false;
 
-    Aws::String m_linkedAccountName;
-    bool m_linkedAccountNameHasBeenSet = false;
+    RootCauseImpact m_impact;
+    bool m_impactHasBeenSet = false;
   };
 
 } // namespace Model

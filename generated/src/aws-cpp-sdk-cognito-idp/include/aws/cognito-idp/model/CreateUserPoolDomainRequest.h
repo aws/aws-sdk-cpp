@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool where you want to add a domain.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -63,6 +63,21 @@ namespace Model
     inline CreateUserPoolDomainRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
     inline CreateUserPoolDomainRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
     inline CreateUserPoolDomainRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The version of managed login branding that you want to apply to your domain.
+     * A value of <code>1</code> indicates hosted UI (classic) branding and a version
+     * of <code>2</code> indicates managed login branding.</p> <p>Managed login
+     * requires that your user pool be configured for any <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
+     * plan</a> other than <code>Lite</code>.</p>
+     */
+    inline int GetManagedLoginVersion() const{ return m_managedLoginVersion; }
+    inline bool ManagedLoginVersionHasBeenSet() const { return m_managedLoginVersionHasBeenSet; }
+    inline void SetManagedLoginVersion(int value) { m_managedLoginVersionHasBeenSet = true; m_managedLoginVersion = value; }
+    inline CreateUserPoolDomainRequest& WithManagedLoginVersion(int value) { SetManagedLoginVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -89,6 +104,9 @@ namespace Model
 
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet = false;
+
+    int m_managedLoginVersion;
+    bool m_managedLoginVersionHasBeenSet = false;
 
     CustomDomainConfigType m_customDomainConfig;
     bool m_customDomainConfigHasBeenSet = false;

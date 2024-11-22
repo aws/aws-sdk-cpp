@@ -65,6 +65,20 @@ namespace Model
     inline SequenceStoreS3Access& WithS3AccessPointArn(Aws::String&& value) { SetS3AccessPointArn(std::move(value)); return *this;}
     inline SequenceStoreS3Access& WithS3AccessPointArn(const char* value) { SetS3AccessPointArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Location of the access logs.</p>
+     */
+    inline const Aws::String& GetAccessLogLocation() const{ return m_accessLogLocation; }
+    inline bool AccessLogLocationHasBeenSet() const { return m_accessLogLocationHasBeenSet; }
+    inline void SetAccessLogLocation(const Aws::String& value) { m_accessLogLocationHasBeenSet = true; m_accessLogLocation = value; }
+    inline void SetAccessLogLocation(Aws::String&& value) { m_accessLogLocationHasBeenSet = true; m_accessLogLocation = std::move(value); }
+    inline void SetAccessLogLocation(const char* value) { m_accessLogLocationHasBeenSet = true; m_accessLogLocation.assign(value); }
+    inline SequenceStoreS3Access& WithAccessLogLocation(const Aws::String& value) { SetAccessLogLocation(value); return *this;}
+    inline SequenceStoreS3Access& WithAccessLogLocation(Aws::String&& value) { SetAccessLogLocation(std::move(value)); return *this;}
+    inline SequenceStoreS3Access& WithAccessLogLocation(const char* value) { SetAccessLogLocation(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_s3Uri;
@@ -72,6 +86,9 @@ namespace Model
 
     Aws::String m_s3AccessPointArn;
     bool m_s3AccessPointArnHasBeenSet = false;
+
+    Aws::String m_accessLogLocation;
+    bool m_accessLogLocationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/omics/model/SequenceStoreStatus.h>
 #include <utility>
 
 namespace Aws
@@ -75,6 +76,42 @@ namespace Model
     inline SequenceStoreFilter& WithCreatedBefore(const Aws::Utils::DateTime& value) { SetCreatedBefore(value); return *this;}
     inline SequenceStoreFilter& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Filter results based on status.</p>
+     */
+    inline const SequenceStoreStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const SequenceStoreStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(SequenceStoreStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline SequenceStoreFilter& WithStatus(const SequenceStoreStatus& value) { SetStatus(value); return *this;}
+    inline SequenceStoreFilter& WithStatus(SequenceStoreStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Filter results based on stores updated after the specified time.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAfter() const{ return m_updatedAfter; }
+    inline bool UpdatedAfterHasBeenSet() const { return m_updatedAfterHasBeenSet; }
+    inline void SetUpdatedAfter(const Aws::Utils::DateTime& value) { m_updatedAfterHasBeenSet = true; m_updatedAfter = value; }
+    inline void SetUpdatedAfter(Aws::Utils::DateTime&& value) { m_updatedAfterHasBeenSet = true; m_updatedAfter = std::move(value); }
+    inline SequenceStoreFilter& WithUpdatedAfter(const Aws::Utils::DateTime& value) { SetUpdatedAfter(value); return *this;}
+    inline SequenceStoreFilter& WithUpdatedAfter(Aws::Utils::DateTime&& value) { SetUpdatedAfter(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Filter results based on stores updated before the specified time.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedBefore() const{ return m_updatedBefore; }
+    inline bool UpdatedBeforeHasBeenSet() const { return m_updatedBeforeHasBeenSet; }
+    inline void SetUpdatedBefore(const Aws::Utils::DateTime& value) { m_updatedBeforeHasBeenSet = true; m_updatedBefore = value; }
+    inline void SetUpdatedBefore(Aws::Utils::DateTime&& value) { m_updatedBeforeHasBeenSet = true; m_updatedBefore = std::move(value); }
+    inline SequenceStoreFilter& WithUpdatedBefore(const Aws::Utils::DateTime& value) { SetUpdatedBefore(value); return *this;}
+    inline SequenceStoreFilter& WithUpdatedBefore(Aws::Utils::DateTime&& value) { SetUpdatedBefore(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -85,6 +122,15 @@ namespace Model
 
     Aws::Utils::DateTime m_createdBefore;
     bool m_createdBeforeHasBeenSet = false;
+
+    SequenceStoreStatus m_status;
+    bool m_statusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updatedAfter;
+    bool m_updatedAfterHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updatedBefore;
+    bool m_updatedBeforeHasBeenSet = false;
   };
 
 } // namespace Model

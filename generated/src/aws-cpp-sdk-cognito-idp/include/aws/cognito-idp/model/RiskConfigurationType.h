@@ -28,7 +28,13 @@ namespace Model
 {
 
   /**
-   * <p>The risk configuration type.</p><p><h3>See Also:</h3>   <a
+   * <p>The settings of risk configuration for threat protection with advanced
+   * security features in a user pool.</p> <p>This data type is a response parameter
+   * of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RiskConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -43,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool that has the risk configuration applied.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -57,7 +63,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The app client ID.</p>
+     * <p>The app client where this configuration is applied. When this parameter isn't
+     * present, the risk configuration applies to all user pool app clients that don't
+     * have client-level settings.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -71,8 +79,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The compromised credentials risk configuration object, including the
-     * <code>EventFilter</code> and the <code>EventAction</code>.</p>
+     * <p>Settings for compromised-credentials actions and authentication types with
+     * advanced security features in full-function <code>ENFORCED</code> mode.</p>
      */
     inline const CompromisedCredentialsRiskConfigurationType& GetCompromisedCredentialsRiskConfiguration() const{ return m_compromisedCredentialsRiskConfiguration; }
     inline bool CompromisedCredentialsRiskConfigurationHasBeenSet() const { return m_compromisedCredentialsRiskConfigurationHasBeenSet; }
@@ -84,9 +92,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The account takeover risk configuration object, including the
-     * <code>NotifyConfiguration</code> object and <code>Actions</code> to take if
-     * there is an account takeover.</p>
+     * <p>The settings for automated responses and notification templates for adaptive
+     * authentication with advanced security features.</p>
      */
     inline const AccountTakeoverRiskConfigurationType& GetAccountTakeoverRiskConfiguration() const{ return m_accountTakeoverRiskConfiguration; }
     inline bool AccountTakeoverRiskConfigurationHasBeenSet() const { return m_accountTakeoverRiskConfigurationHasBeenSet; }
@@ -98,7 +105,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration to override the risk decision.</p>
+     * <p>Exceptions to the risk evaluation configuration, including always-allow and
+     * always-block IP address ranges. </p>
      */
     inline const RiskExceptionConfigurationType& GetRiskExceptionConfiguration() const{ return m_riskExceptionConfiguration; }
     inline bool RiskExceptionConfigurationHasBeenSet() const { return m_riskExceptionConfigurationHasBeenSet; }

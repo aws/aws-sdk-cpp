@@ -25,7 +25,8 @@ namespace Model
     SUCCEEDED,
     FAILED,
     CANCELLING,
-    CANCELLED
+    CANCELLED,
+    DELETED
   };
 
 namespace ImportTaskStatusMapper

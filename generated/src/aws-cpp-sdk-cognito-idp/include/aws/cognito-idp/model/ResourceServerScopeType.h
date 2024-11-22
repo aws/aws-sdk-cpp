@@ -24,7 +24,16 @@ namespace Model
 {
 
   /**
-   * <p>A resource server scope.</p><p><h3>See Also:</h3>   <a
+   * <p>One custom scope associated with a user pool resource server. This data type
+   * is a member of <code>ResourceServerScopeType</code>. For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">
+   * Scopes, M2M, and API authorization with resource servers</a>. </p> <p>This data
+   * type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateResourceServer.html">CreateResourceServer</a>
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeResourceServer.html">DescribeResourceServer</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResourceServerScopeType">AWS
    * API Reference</a></p>
    */
@@ -39,7 +48,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the scope.</p>
+     * <p>The name of the scope. Amazon Cognito renders custom scopes in the format
+     * <code>resourceServerIdentifier/ScopeName</code>. For example, if this parameter
+     * is <code>exampleScope</code> in the resource server with the identifier
+     * <code>exampleResourceServer</code>, you request and receive the scope
+     * <code>exampleResourceServer/exampleScope</code>.</p>
      */
     inline const Aws::String& GetScopeName() const{ return m_scopeName; }
     inline bool ScopeNameHasBeenSet() const { return m_scopeNameHasBeenSet; }
@@ -53,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description of the scope.</p>
+     * <p>A friendly description of a custom scope.</p>
      */
     inline const Aws::String& GetScopeDescription() const{ return m_scopeDescription; }
     inline bool ScopeDescriptionHasBeenSet() const { return m_scopeDescriptionHasBeenSet; }

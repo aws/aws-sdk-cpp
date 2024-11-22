@@ -16,6 +16,7 @@ namespace Model
   enum class FileUseCaseType
   {
     NOT_SET,
+    EMAIL_MESSAGE,
     ATTACHMENT
   };
 

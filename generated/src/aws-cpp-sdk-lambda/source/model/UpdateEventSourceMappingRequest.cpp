@@ -38,7 +38,8 @@ UpdateEventSourceMappingRequest::UpdateEventSourceMappingRequest() :
     m_scalingConfigHasBeenSet(false),
     m_documentDBEventSourceConfigHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false),
-    m_metricsConfigHasBeenSet(false)
+    m_metricsConfigHasBeenSet(false),
+    m_provisionedPollerConfigHasBeenSet(false)
 {
 }
 
@@ -155,6 +156,12 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const
   if(m_metricsConfigHasBeenSet)
   {
    payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
+
+  }
+
+  if(m_provisionedPollerConfigHasBeenSet)
+  {
+   payload.WithObject("ProvisionedPollerConfig", m_provisionedPollerConfig.Jsonize());
 
   }
 

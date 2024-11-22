@@ -19,7 +19,8 @@ TestStateRequest::TestStateRequest() :
     m_inspectionLevel(InspectionLevel::NOT_SET),
     m_inspectionLevelHasBeenSet(false),
     m_revealSecrets(false),
-    m_revealSecretsHasBeenSet(false)
+    m_revealSecretsHasBeenSet(false),
+    m_variablesHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,12 @@ Aws::String TestStateRequest::SerializePayload() const
   if(m_revealSecretsHasBeenSet)
   {
    payload.WithBool("revealSecrets", m_revealSecrets);
+
+  }
+
+  if(m_variablesHasBeenSet)
+  {
+   payload.WithString("variables", m_variables);
 
   }
 

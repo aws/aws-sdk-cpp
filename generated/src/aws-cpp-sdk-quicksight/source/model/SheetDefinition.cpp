@@ -27,6 +27,7 @@ SheetDefinition::SheetDefinition() :
     m_filterControlsHasBeenSet(false),
     m_visualsHasBeenSet(false),
     m_textBoxesHasBeenSet(false),
+    m_imagesHasBeenSet(false),
     m_layoutsHasBeenSet(false),
     m_sheetControlLayoutsHasBeenSet(false),
     m_contentType(SheetContentType::NOT_SET),
@@ -108,6 +109,16 @@ SheetDefinition& SheetDefinition::operator =(JsonView jsonValue)
       m_textBoxes.push_back(textBoxesJsonList[textBoxesIndex].AsObject());
     }
     m_textBoxesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Images"))
+  {
+    Aws::Utils::Array<JsonView> imagesJsonList = jsonValue.GetArray("Images");
+    for(unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex)
+    {
+      m_images.push_back(imagesJsonList[imagesIndex].AsObject());
+    }
+    m_imagesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Layouts"))
@@ -209,6 +220,17 @@ JsonValue SheetDefinition::Jsonize() const
      textBoxesJsonList[textBoxesIndex].AsObject(m_textBoxes[textBoxesIndex].Jsonize());
    }
    payload.WithArray("TextBoxes", std::move(textBoxesJsonList));
+
+  }
+
+  if(m_imagesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> imagesJsonList(m_images.size());
+   for(unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex)
+   {
+     imagesJsonList[imagesIndex].AsObject(m_images[imagesIndex].Jsonize());
+   }
+   payload.WithArray("Images", std::move(imagesJsonList));
 
   }
 

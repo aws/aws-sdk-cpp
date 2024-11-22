@@ -28,7 +28,13 @@ namespace Model
 {
 
   /**
-   * <p>The logging parameters of a user pool.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration of user event logs to an external Amazon Web Services
+   * service like Amazon Data Firehose, Amazon S3, or Amazon CloudWatch Logs.</p>
+   * <p>This data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetLogDeliveryConfiguration.html">SetLogDeliveryConfiguration</a>
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetLogDeliveryConfiguration.html">GetLogDeliveryConfiguration</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/LogConfigurationType">AWS
    * API Reference</a></p>
    */

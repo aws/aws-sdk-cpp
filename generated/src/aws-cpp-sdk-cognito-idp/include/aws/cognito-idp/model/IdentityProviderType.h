@@ -28,7 +28,18 @@ namespace Model
 {
 
   /**
-   * <p>A container for information about an IdP.</p><p><h3>See Also:</h3>   <a
+   * <p>A user pool identity provider (IdP). Contains information about a third-party
+   * IdP to a user pool, the attributes that it populates to user profiles, and the
+   * trust relationship between the IdP and your user pool.</p> <p>This data type is
+   * a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html">CreateIdentityProvider</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeIdentityProvider.html">DescribeIdentityProvider</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetIdentityProviderByIdentifier.html">GetIdentityProviderByIdentifier</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateIdentityProvider.html">UpdateIdentityProvider</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/IdentityProviderType">AWS
    * API Reference</a></p>
    */
@@ -43,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool associated with the IdP.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -57,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IdP name.</p>
+     * <p>A friendly name for the IdP.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
@@ -71,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IdP type.</p>
+     * <p>The type of IdP. Either SAML, OIDC, or a named social identity provider.</p>
      */
     inline const IdentityProviderTypeType& GetProviderType() const{ return m_providerType; }
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
@@ -201,7 +212,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of IdP identifiers.</p>
+     * <p>A list of IdP identifiers. IdP identifiers are strings that represent
+     * friendly names or domain names of IdPs, for example <code>MyIdP</code> or
+     * <code>auth.example.com</code>. You can choose to route user authorization
+     * requests to the right IdP with either IdP identifiers or IdP names. For more
+     * information, see <code>identity_provider</code> and <code>idp_identifier</code>
+     * at <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html#get-authorize-request-parameters">Authorize
+     * endpoint</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdpIdentifiers() const{ return m_idpIdentifiers; }
     inline bool IdpIdentifiersHasBeenSet() const { return m_idpIdentifiersHasBeenSet; }

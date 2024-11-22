@@ -49,9 +49,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the result is <code>OK</code>, this field will be empty. When there are
-     * errors, this field will contain an array of <b>Diagnostic</b> objects to help
-     * you troubleshoot.</p>
+     * <p>An array of diagnostic errors and warnings found during validation of the
+     * state machine definition. Since <b>warnings</b> do not prevent deploying your
+     * workflow definition, the <b>result</b> value could be <code>OK</code> even when
+     * warning diagnostics are present in the response.</p>
      */
     inline const Aws::Vector<ValidateStateMachineDefinitionDiagnostic>& GetDiagnostics() const{ return m_diagnostics; }
     inline void SetDiagnostics(const Aws::Vector<ValidateStateMachineDefinitionDiagnostic>& value) { m_diagnostics = value; }

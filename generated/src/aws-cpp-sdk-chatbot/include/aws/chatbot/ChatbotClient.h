@@ -87,6 +87,32 @@ namespace chatbot
         virtual ~ChatbotClient();
 
         /**
+         * <p>Links a resource (for example, a custom action) to a channel
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/AssociateToConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateToConfigurationOutcome AssociateToConfiguration(const Model::AssociateToConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateToConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateToConfigurationRequestT = Model::AssociateToConfigurationRequest>
+        Model::AssociateToConfigurationOutcomeCallable AssociateToConfigurationCallable(const AssociateToConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&ChatbotClient::AssociateToConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateToConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateToConfigurationRequestT = Model::AssociateToConfigurationRequest>
+        void AssociateToConfigurationAsync(const AssociateToConfigurationRequestT& request, const AssociateToConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChatbotClient::AssociateToConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Creates an AWS Chatbot configuration for Amazon Chime.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateChimeWebhookConfiguration">AWS
@@ -110,6 +136,32 @@ namespace chatbot
         void CreateChimeWebhookConfigurationAsync(const CreateChimeWebhookConfigurationRequestT& request, const CreateChimeWebhookConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChatbotClient::CreateChimeWebhookConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a custom action that can be invoked as an alias or as a button on a
+         * notification.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateCustomAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCustomActionOutcome CreateCustomAction(const Model::CreateCustomActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCustomAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCustomActionRequestT = Model::CreateCustomActionRequest>
+        Model::CreateCustomActionOutcomeCallable CreateCustomActionCallable(const CreateCustomActionRequestT& request) const
+        {
+            return SubmitCallable(&ChatbotClient::CreateCustomAction, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCustomAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCustomActionRequestT = Model::CreateCustomActionRequest>
+        void CreateCustomActionAsync(const CreateCustomActionRequestT& request, const CreateCustomActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChatbotClient::CreateCustomAction, request, handler, context);
         }
 
         /**
@@ -187,6 +239,31 @@ namespace chatbot
         void DeleteChimeWebhookConfigurationAsync(const DeleteChimeWebhookConfigurationRequestT& request, const DeleteChimeWebhookConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChatbotClient::DeleteChimeWebhookConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a custom action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteCustomAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCustomActionOutcome DeleteCustomAction(const Model::DeleteCustomActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCustomAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCustomActionRequestT = Model::DeleteCustomActionRequest>
+        Model::DeleteCustomActionOutcomeCallable DeleteCustomActionCallable(const DeleteCustomActionRequestT& request) const
+        {
+            return SubmitCallable(&ChatbotClient::DeleteCustomAction, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCustomAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCustomActionRequestT = Model::DeleteCustomActionRequest>
+        void DeleteCustomActionAsync(const DeleteCustomActionRequestT& request, const DeleteCustomActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChatbotClient::DeleteCustomAction, request, handler, context);
         }
 
         /**
@@ -452,6 +529,32 @@ namespace chatbot
         }
 
         /**
+         * <p>Unlink a resource, for example a custom action, from a channel
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DisassociateFromConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateFromConfigurationOutcome DisassociateFromConfiguration(const Model::DisassociateFromConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateFromConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateFromConfigurationRequestT = Model::DisassociateFromConfigurationRequest>
+        Model::DisassociateFromConfigurationOutcomeCallable DisassociateFromConfigurationCallable(const DisassociateFromConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&ChatbotClient::DisassociateFromConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateFromConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateFromConfigurationRequestT = Model::DisassociateFromConfigurationRequest>
+        void DisassociateFromConfigurationAsync(const DisassociateFromConfigurationRequestT& request, const DisassociateFromConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChatbotClient::DisassociateFromConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Returns AWS Chatbot account preferences.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetAccountPreferences">AWS
          * API Reference</a></p>
@@ -474,6 +577,31 @@ namespace chatbot
         void GetAccountPreferencesAsync(const GetAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountPreferencesRequestT& request = {}) const
         {
             return SubmitAsync(&ChatbotClient::GetAccountPreferences, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a custom action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetCustomAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCustomActionOutcome GetCustomAction(const Model::GetCustomActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCustomAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCustomActionRequestT = Model::GetCustomActionRequest>
+        Model::GetCustomActionOutcomeCallable GetCustomActionCallable(const GetCustomActionRequestT& request) const
+        {
+            return SubmitCallable(&ChatbotClient::GetCustomAction, request);
+        }
+
+        /**
+         * An Async wrapper for GetCustomAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCustomActionRequestT = Model::GetCustomActionRequest>
+        void GetCustomActionAsync(const GetCustomActionRequestT& request, const GetCustomActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChatbotClient::GetCustomAction, request, handler, context);
         }
 
         /**
@@ -500,6 +628,57 @@ namespace chatbot
         void GetMicrosoftTeamsChannelConfigurationAsync(const GetMicrosoftTeamsChannelConfigurationRequestT& request, const GetMicrosoftTeamsChannelConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChatbotClient::GetMicrosoftTeamsChannelConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Lists resources associated with a channel configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssociationsOutcome ListAssociations(const Model::ListAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAssociationsRequestT = Model::ListAssociationsRequest>
+        Model::ListAssociationsOutcomeCallable ListAssociationsCallable(const ListAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&ChatbotClient::ListAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAssociationsRequestT = Model::ListAssociationsRequest>
+        void ListAssociationsAsync(const ListAssociationsRequestT& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChatbotClient::ListAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Lists custom actions defined in this account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListCustomActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCustomActionsOutcome ListCustomActions(const Model::ListCustomActionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListCustomActions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCustomActionsRequestT = Model::ListCustomActionsRequest>
+        Model::ListCustomActionsOutcomeCallable ListCustomActionsCallable(const ListCustomActionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&ChatbotClient::ListCustomActions, request);
+        }
+
+        /**
+         * An Async wrapper for ListCustomActions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCustomActionsRequestT = Model::ListCustomActionsRequest>
+        void ListCustomActionsAsync(const ListCustomActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCustomActionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&ChatbotClient::ListCustomActions, request, handler, context);
         }
 
         /**
@@ -709,6 +888,31 @@ namespace chatbot
         void UpdateChimeWebhookConfigurationAsync(const UpdateChimeWebhookConfigurationRequestT& request, const UpdateChimeWebhookConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChatbotClient::UpdateChimeWebhookConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a custom action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateCustomAction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCustomActionOutcome UpdateCustomAction(const Model::UpdateCustomActionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCustomAction that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateCustomActionRequestT = Model::UpdateCustomActionRequest>
+        Model::UpdateCustomActionOutcomeCallable UpdateCustomActionCallable(const UpdateCustomActionRequestT& request) const
+        {
+            return SubmitCallable(&ChatbotClient::UpdateCustomAction, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateCustomAction that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateCustomActionRequestT = Model::UpdateCustomActionRequest>
+        void UpdateCustomActionAsync(const UpdateCustomActionRequestT& request, const UpdateCustomActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChatbotClient::UpdateCustomAction, request, handler, context);
         }
 
         /**

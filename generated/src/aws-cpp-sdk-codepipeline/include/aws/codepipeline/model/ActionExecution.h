@@ -180,6 +180,20 @@ namespace Model
     inline ActionExecution& WithErrorDetails(const ErrorDetails& value) { SetErrorDetails(value); return *this;}
     inline ActionExecution& WithErrorDetails(ErrorDetails&& value) { SetErrorDetails(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log stream for the action compute.</p>
+     */
+    inline const Aws::String& GetLogStreamARN() const{ return m_logStreamARN; }
+    inline bool LogStreamARNHasBeenSet() const { return m_logStreamARNHasBeenSet; }
+    inline void SetLogStreamARN(const Aws::String& value) { m_logStreamARNHasBeenSet = true; m_logStreamARN = value; }
+    inline void SetLogStreamARN(Aws::String&& value) { m_logStreamARNHasBeenSet = true; m_logStreamARN = std::move(value); }
+    inline void SetLogStreamARN(const char* value) { m_logStreamARNHasBeenSet = true; m_logStreamARN.assign(value); }
+    inline ActionExecution& WithLogStreamARN(const Aws::String& value) { SetLogStreamARN(value); return *this;}
+    inline ActionExecution& WithLogStreamARN(Aws::String&& value) { SetLogStreamARN(std::move(value)); return *this;}
+    inline ActionExecution& WithLogStreamARN(const char* value) { SetLogStreamARN(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_actionExecutionId;
@@ -211,6 +225,9 @@ namespace Model
 
     ErrorDetails m_errorDetails;
     bool m_errorDetailsHasBeenSet = false;
+
+    Aws::String m_logStreamARN;
+    bool m_logStreamARNHasBeenSet = false;
   };
 
 } // namespace Model

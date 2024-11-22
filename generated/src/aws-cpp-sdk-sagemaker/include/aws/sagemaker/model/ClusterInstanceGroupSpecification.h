@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
 #include <aws/sagemaker/model/DeepHealthCheckType.h>
 #include <utility>
@@ -152,6 +153,16 @@ namespace Model
     inline ClusterInstanceGroupSpecification& AddOnStartDeepHealthChecks(const DeepHealthCheckType& value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks.push_back(value); return *this; }
     inline ClusterInstanceGroupSpecification& AddOnStartDeepHealthChecks(DeepHealthCheckType&& value) { m_onStartDeepHealthChecksHasBeenSet = true; m_onStartDeepHealthChecks.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    
+    inline const VpcConfig& GetOverrideVpcConfig() const{ return m_overrideVpcConfig; }
+    inline bool OverrideVpcConfigHasBeenSet() const { return m_overrideVpcConfigHasBeenSet; }
+    inline void SetOverrideVpcConfig(const VpcConfig& value) { m_overrideVpcConfigHasBeenSet = true; m_overrideVpcConfig = value; }
+    inline void SetOverrideVpcConfig(VpcConfig&& value) { m_overrideVpcConfigHasBeenSet = true; m_overrideVpcConfig = std::move(value); }
+    inline ClusterInstanceGroupSpecification& WithOverrideVpcConfig(const VpcConfig& value) { SetOverrideVpcConfig(value); return *this;}
+    inline ClusterInstanceGroupSpecification& WithOverrideVpcConfig(VpcConfig&& value) { SetOverrideVpcConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_instanceCount;
@@ -177,6 +188,9 @@ namespace Model
 
     Aws::Vector<DeepHealthCheckType> m_onStartDeepHealthChecks;
     bool m_onStartDeepHealthChecksHasBeenSet = false;
+
+    VpcConfig m_overrideVpcConfig;
+    bool m_overrideVpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

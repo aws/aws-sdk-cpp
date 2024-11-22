@@ -12,6 +12,7 @@
 #include <aws/connect/model/AgentInfo.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/connect/model/WisdomInfo.h>
+#include <aws/connect/model/EndpointInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/connect/model/RoutingCriteria.h>
 #include <aws/connect/model/Customer.h>
@@ -20,6 +21,7 @@
 #include <aws/connect/model/CustomerVoiceActivity.h>
 #include <aws/connect/model/QualityMetrics.h>
 #include <aws/connect/model/DisconnectDetails.h>
+#include <aws/connect/model/AdditionalEmailRecipients.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
 #include <utility>
 
@@ -108,6 +110,20 @@ namespace Model
     inline Contact& WithPreviousContactId(const Aws::String& value) { SetPreviousContactId(value); return *this;}
     inline Contact& WithPreviousContactId(Aws::String&& value) { SetPreviousContactId(std::move(value)); return *this;}
     inline Contact& WithPreviousContactId(const char* value) { SetPreviousContactId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetContactAssociationId() const{ return m_contactAssociationId; }
+    inline bool ContactAssociationIdHasBeenSet() const { return m_contactAssociationIdHasBeenSet; }
+    inline void SetContactAssociationId(const Aws::String& value) { m_contactAssociationIdHasBeenSet = true; m_contactAssociationId = value; }
+    inline void SetContactAssociationId(Aws::String&& value) { m_contactAssociationIdHasBeenSet = true; m_contactAssociationId = std::move(value); }
+    inline void SetContactAssociationId(const char* value) { m_contactAssociationIdHasBeenSet = true; m_contactAssociationId.assign(value); }
+    inline Contact& WithContactAssociationId(const Aws::String& value) { SetContactAssociationId(value); return *this;}
+    inline Contact& WithContactAssociationId(Aws::String&& value) { SetContactAssociationId(std::move(value)); return *this;}
+    inline Contact& WithContactAssociationId(const char* value) { SetContactAssociationId(value); return *this;}
     ///@}
 
     ///@{
@@ -318,6 +334,30 @@ namespace Model
 
     ///@{
     /**
+     * <p/>
+     */
+    inline const EndpointInfo& GetCustomerEndpoint() const{ return m_customerEndpoint; }
+    inline bool CustomerEndpointHasBeenSet() const { return m_customerEndpointHasBeenSet; }
+    inline void SetCustomerEndpoint(const EndpointInfo& value) { m_customerEndpointHasBeenSet = true; m_customerEndpoint = value; }
+    inline void SetCustomerEndpoint(EndpointInfo&& value) { m_customerEndpointHasBeenSet = true; m_customerEndpoint = std::move(value); }
+    inline Contact& WithCustomerEndpoint(const EndpointInfo& value) { SetCustomerEndpoint(value); return *this;}
+    inline Contact& WithCustomerEndpoint(EndpointInfo&& value) { SetCustomerEndpoint(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const EndpointInfo& GetSystemEndpoint() const{ return m_systemEndpoint; }
+    inline bool SystemEndpointHasBeenSet() const { return m_systemEndpointHasBeenSet; }
+    inline void SetSystemEndpoint(const EndpointInfo& value) { m_systemEndpointHasBeenSet = true; m_systemEndpoint = value; }
+    inline void SetSystemEndpoint(EndpointInfo&& value) { m_systemEndpointHasBeenSet = true; m_systemEndpoint = std::move(value); }
+    inline Contact& WithSystemEndpoint(const EndpointInfo& value) { SetSystemEndpoint(value); return *this;}
+    inline Contact& WithSystemEndpoint(EndpointInfo&& value) { SetSystemEndpoint(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An integer that represents the queue time adjust to be applied to the
      * contact, in seconds (longer / larger queue time are routed preferentially).
      * Cannot be specified if the QueuePriority is specified. Must be statically
@@ -461,6 +501,18 @@ namespace Model
 
     ///@{
     /**
+     * <p/>
+     */
+    inline const AdditionalEmailRecipients& GetAdditionalEmailRecipients() const{ return m_additionalEmailRecipients; }
+    inline bool AdditionalEmailRecipientsHasBeenSet() const { return m_additionalEmailRecipientsHasBeenSet; }
+    inline void SetAdditionalEmailRecipients(const AdditionalEmailRecipients& value) { m_additionalEmailRecipientsHasBeenSet = true; m_additionalEmailRecipients = value; }
+    inline void SetAdditionalEmailRecipients(AdditionalEmailRecipients&& value) { m_additionalEmailRecipientsHasBeenSet = true; m_additionalEmailRecipients = std::move(value); }
+    inline Contact& WithAdditionalEmailRecipients(const AdditionalEmailRecipients& value) { SetAdditionalEmailRecipients(value); return *this;}
+    inline Contact& WithAdditionalEmailRecipients(AdditionalEmailRecipients&& value) { SetAdditionalEmailRecipients(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A set of system defined key-value pairs stored on individual contact segments
      * using an attribute map. The attributes are standard Amazon Connect attributes
      * and can be accessed in flows. Attribute keys can include only alphanumeric, -,
@@ -493,6 +545,9 @@ namespace Model
 
     Aws::String m_previousContactId;
     bool m_previousContactIdHasBeenSet = false;
+
+    Aws::String m_contactAssociationId;
+    bool m_contactAssociationIdHasBeenSet = false;
 
     ContactInitiationMethod m_initiationMethod;
     bool m_initiationMethodHasBeenSet = false;
@@ -542,6 +597,12 @@ namespace Model
     WisdomInfo m_wisdomInfo;
     bool m_wisdomInfoHasBeenSet = false;
 
+    EndpointInfo m_customerEndpoint;
+    bool m_customerEndpointHasBeenSet = false;
+
+    EndpointInfo m_systemEndpoint;
+    bool m_systemEndpointHasBeenSet = false;
+
     int m_queueTimeAdjustmentSeconds;
     bool m_queueTimeAdjustmentSecondsHasBeenSet = false;
 
@@ -574,6 +635,9 @@ namespace Model
 
     DisconnectDetails m_disconnectDetails;
     bool m_disconnectDetailsHasBeenSet = false;
+
+    AdditionalEmailRecipients m_additionalEmailRecipients;
+    bool m_additionalEmailRecipientsHasBeenSet = false;
 
     Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
     bool m_segmentAttributesHasBeenSet = false;

@@ -25,7 +25,8 @@ namespace Model
     Q_MESSAGE_TEMPLATES,
     CASES_DOMAIN,
     APPLICATION,
-    FILE_SCANNER
+    FILE_SCANNER,
+    SES_IDENTITY
   };
 
 namespace IntegrationTypeMapper

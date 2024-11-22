@@ -11,6 +11,8 @@
 #include <aws/connect/model/ContactSearchSummaryQueueInfo.h>
 #include <aws/connect/model/ContactSearchSummaryAgentInfo.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connect/model/ContactSearchSummarySegmentAttributeValue.h>
 #include <utility>
 
 namespace Aws
@@ -193,6 +195,24 @@ namespace Model
     inline ContactSearchSummary& WithScheduledTimestamp(const Aws::Utils::DateTime& value) { SetScheduledTimestamp(value); return *this;}
     inline ContactSearchSummary& WithScheduledTimestamp(Aws::Utils::DateTime&& value) { SetScheduledTimestamp(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::Map<Aws::String, ContactSearchSummarySegmentAttributeValue>& GetSegmentAttributes() const{ return m_segmentAttributes; }
+    inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }
+    inline void SetSegmentAttributes(const Aws::Map<Aws::String, ContactSearchSummarySegmentAttributeValue>& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = value; }
+    inline void SetSegmentAttributes(Aws::Map<Aws::String, ContactSearchSummarySegmentAttributeValue>&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = std::move(value); }
+    inline ContactSearchSummary& WithSegmentAttributes(const Aws::Map<Aws::String, ContactSearchSummarySegmentAttributeValue>& value) { SetSegmentAttributes(value); return *this;}
+    inline ContactSearchSummary& WithSegmentAttributes(Aws::Map<Aws::String, ContactSearchSummarySegmentAttributeValue>&& value) { SetSegmentAttributes(std::move(value)); return *this;}
+    inline ContactSearchSummary& AddSegmentAttributes(const Aws::String& key, const ContactSearchSummarySegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
+    inline ContactSearchSummary& AddSegmentAttributes(Aws::String&& key, const ContactSearchSummarySegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), value); return *this; }
+    inline ContactSearchSummary& AddSegmentAttributes(const Aws::String& key, ContactSearchSummarySegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
+    inline ContactSearchSummary& AddSegmentAttributes(Aws::String&& key, ContactSearchSummarySegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), std::move(value)); return *this; }
+    inline ContactSearchSummary& AddSegmentAttributes(const char* key, ContactSearchSummarySegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
+    inline ContactSearchSummary& AddSegmentAttributes(const char* key, const ContactSearchSummarySegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -227,6 +247,9 @@ namespace Model
 
     Aws::Utils::DateTime m_scheduledTimestamp;
     bool m_scheduledTimestampHasBeenSet = false;
+
+    Aws::Map<Aws::String, ContactSearchSummarySegmentAttributeValue> m_segmentAttributes;
+    bool m_segmentAttributesHasBeenSet = false;
   };
 
 } // namespace Model

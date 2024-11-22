@@ -25,7 +25,17 @@ namespace Model
 {
 
   /**
-   * <p>The authentication result.</p><p><h3>See Also:</h3>   <a
+   * <p>The object that your application receives after authentication. Contains
+   * tokens and information for device authentication.</p> <p>This data type is a
+   * response parameter of authentication operations like <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AuthenticationResultType">AWS
    * API Reference</a></p>
    */
@@ -40,8 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A valid access token that Amazon Cognito issued to the user who you want to
-     * authenticate.</p>
+     * <p>Your user's access token.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
@@ -65,7 +74,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The token type.</p>
+     * <p>The intended use of the token, for example <code>Bearer</code>.</p>
      */
     inline const Aws::String& GetTokenType() const{ return m_tokenType; }
     inline bool TokenTypeHasBeenSet() const { return m_tokenTypeHasBeenSet; }
@@ -79,7 +88,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The refresh token.</p>
+     * <p>Your user's refresh token.</p>
      */
     inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
@@ -93,7 +102,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID token.</p>
+     * <p>Your user's ID token.</p>
      */
     inline const Aws::String& GetIdToken() const{ return m_idToken; }
     inline bool IdTokenHasBeenSet() const { return m_idTokenHasBeenSet; }

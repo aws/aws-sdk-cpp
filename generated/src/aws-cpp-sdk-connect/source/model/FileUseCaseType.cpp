@@ -20,13 +20,18 @@ namespace Aws
       namespace FileUseCaseTypeMapper
       {
 
+        static const int EMAIL_MESSAGE_HASH = HashingUtils::HashString("EMAIL_MESSAGE");
         static const int ATTACHMENT_HASH = HashingUtils::HashString("ATTACHMENT");
 
 
         FileUseCaseType GetFileUseCaseTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ATTACHMENT_HASH)
+          if (hashCode == EMAIL_MESSAGE_HASH)
+          {
+            return FileUseCaseType::EMAIL_MESSAGE;
+          }
+          else if (hashCode == ATTACHMENT_HASH)
           {
             return FileUseCaseType::ATTACHMENT;
           }
@@ -46,6 +51,8 @@ namespace Aws
           {
           case FileUseCaseType::NOT_SET:
             return {};
+          case FileUseCaseType::EMAIL_MESSAGE:
+            return "EMAIL_MESSAGE";
           case FileUseCaseType::ATTACHMENT:
             return "ATTACHMENT";
           default:

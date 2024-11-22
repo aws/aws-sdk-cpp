@@ -24,7 +24,8 @@ RadarChartVisual::RadarChartVisual() :
     m_subtitleHasBeenSet(false),
     m_chartConfigurationHasBeenSet(false),
     m_actionsHasBeenSet(false),
-    m_columnHierarchiesHasBeenSet(false)
+    m_columnHierarchiesHasBeenSet(false),
+    m_visualContentAltTextHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,13 @@ RadarChartVisual& RadarChartVisual::operator =(JsonView jsonValue)
     m_columnHierarchiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VisualContentAltText"))
+  {
+    m_visualContentAltText = jsonValue.GetString("VisualContentAltText");
+
+    m_visualContentAltTextHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +142,12 @@ JsonValue RadarChartVisual::Jsonize() const
      columnHierarchiesJsonList[columnHierarchiesIndex].AsObject(m_columnHierarchies[columnHierarchiesIndex].Jsonize());
    }
    payload.WithArray("ColumnHierarchies", std::move(columnHierarchiesJsonList));
+
+  }
+
+  if(m_visualContentAltTextHasBeenSet)
+  {
+   payload.WithString("VisualContentAltText", m_visualContentAltText);
 
   }
 

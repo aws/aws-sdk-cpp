@@ -22,6 +22,7 @@
 #include <aws/cognito-idp/model/UserPoolAddOnsType.h>
 #include <aws/cognito-idp/model/UsernameConfigurationType.h>
 #include <aws/cognito-idp/model/AccountRecoverySettingType.h>
+#include <aws/cognito-idp/model/UserPoolTierType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
 #include <aws/cognito-idp/model/UsernameAttributeType.h>
@@ -103,16 +104,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Lambda trigger configuration information for the new user pool.</p>
-     *  <p>In a push model, event sources (such as Amazon S3 and custom
-     * applications) need permission to invoke a function. So you must make an extra
-     * call to add permission for these event sources to invoke your Lambda
-     * function.</p> <p/> <p>For more information on using the Lambda API to add
-     * permission, see<a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-     * AddPermission </a>. </p> <p>For adding permission using the CLI, see<a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-     * add-permission </a>.</p> 
+     * <p>A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at
+     * several possible stages of authentication operations. Triggers can modify the
+     * outcome of the operations that invoked them.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
     inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
@@ -214,8 +208,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The template for the verification message that the user sees when the app
-     * requests permission to access the user's information.</p>
+     * <p>The template for the verification message that your user pool delivers to
+     * users who set an email address or phone number attribute.</p> <p>Set the email
+     * message type that corresponds to your <code>DefaultEmailOption</code> selection.
+     * For <code>CONFIRM_WITH_LINK</code>, specify an <code>EmailMessageByLink</code>
+     * and leave <code>EmailMessage</code> blank. For <code>CONFIRM_WITH_CODE</code>,
+     * specify an <code>EmailMessage</code> and leave <code>EmailMessageByLink</code>
+     * blank. When you supply both parameters with either choice, Amazon Cognito
+     * returns an error.</p>
      */
     inline const VerificationMessageTemplateType& GetVerificationMessageTemplate() const{ return m_verificationMessageTemplate; }
     inline bool VerificationMessageTemplateHasBeenSet() const { return m_verificationMessageTemplateHasBeenSet; }
@@ -420,6 +420,22 @@ namespace Model
     inline CreateUserPoolRequest& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
     inline CreateUserPoolRequest& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The user pool <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
+     * plan</a>, or tier. This parameter determines the eligibility of the user pool
+     * for features like managed login, access-token customization, and threat
+     * protection. Defaults to <code>ESSENTIALS</code>.</p>
+     */
+    inline const UserPoolTierType& GetUserPoolTier() const{ return m_userPoolTier; }
+    inline bool UserPoolTierHasBeenSet() const { return m_userPoolTierHasBeenSet; }
+    inline void SetUserPoolTier(const UserPoolTierType& value) { m_userPoolTierHasBeenSet = true; m_userPoolTier = value; }
+    inline void SetUserPoolTier(UserPoolTierType&& value) { m_userPoolTierHasBeenSet = true; m_userPoolTier = std::move(value); }
+    inline CreateUserPoolRequest& WithUserPoolTier(const UserPoolTierType& value) { SetUserPoolTier(value); return *this;}
+    inline CreateUserPoolRequest& WithUserPoolTier(UserPoolTierType&& value) { SetUserPoolTier(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_poolName;
@@ -490,6 +506,9 @@ namespace Model
 
     AccountRecoverySettingType m_accountRecoverySetting;
     bool m_accountRecoverySettingHasBeenSet = false;
+
+    UserPoolTierType m_userPoolTier;
+    bool m_userPoolTierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,7 +26,9 @@ NamespaceInfoV2::NamespaceInfoV2() :
     m_creationStatusHasBeenSet(false),
     m_identityStore(IdentityStore::NOT_SET),
     m_identityStoreHasBeenSet(false),
-    m_namespaceErrorHasBeenSet(false)
+    m_namespaceErrorHasBeenSet(false),
+    m_iamIdentityCenterApplicationArnHasBeenSet(false),
+    m_iamIdentityCenterInstanceArnHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,20 @@ NamespaceInfoV2& NamespaceInfoV2::operator =(JsonView jsonValue)
     m_namespaceErrorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IamIdentityCenterApplicationArn"))
+  {
+    m_iamIdentityCenterApplicationArn = jsonValue.GetString("IamIdentityCenterApplicationArn");
+
+    m_iamIdentityCenterApplicationArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IamIdentityCenterInstanceArn"))
+  {
+    m_iamIdentityCenterInstanceArn = jsonValue.GetString("IamIdentityCenterInstanceArn");
+
+    m_iamIdentityCenterInstanceArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +134,18 @@ JsonValue NamespaceInfoV2::Jsonize() const
   if(m_namespaceErrorHasBeenSet)
   {
    payload.WithObject("NamespaceError", m_namespaceError.Jsonize());
+
+  }
+
+  if(m_iamIdentityCenterApplicationArnHasBeenSet)
+  {
+   payload.WithString("IamIdentityCenterApplicationArn", m_iamIdentityCenterApplicationArn);
+
+  }
+
+  if(m_iamIdentityCenterInstanceArnHasBeenSet)
+  {
+   payload.WithString("IamIdentityCenterInstanceArn", m_iamIdentityCenterInstanceArn);
 
   }
 

@@ -20,7 +20,8 @@ namespace Model
 
 SequenceStoreS3Access::SequenceStoreS3Access() : 
     m_s3UriHasBeenSet(false),
-    m_s3AccessPointArnHasBeenSet(false)
+    m_s3AccessPointArnHasBeenSet(false),
+    m_accessLogLocationHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ SequenceStoreS3Access& SequenceStoreS3Access::operator =(JsonView jsonValue)
     m_s3AccessPointArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("accessLogLocation"))
+  {
+    m_accessLogLocation = jsonValue.GetString("accessLogLocation");
+
+    m_accessLogLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue SequenceStoreS3Access::Jsonize() const
   if(m_s3AccessPointArnHasBeenSet)
   {
    payload.WithString("s3AccessPointArn", m_s3AccessPointArn);
+
+  }
+
+  if(m_accessLogLocationHasBeenSet)
+  {
+   payload.WithString("accessLogLocation", m_accessLogLocation);
 
   }
 

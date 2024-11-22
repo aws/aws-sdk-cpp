@@ -23,6 +23,7 @@ Contact::Contact() :
     m_idHasBeenSet(false),
     m_initialContactIdHasBeenSet(false),
     m_previousContactIdHasBeenSet(false),
+    m_contactAssociationIdHasBeenSet(false),
     m_initiationMethod(ContactInitiationMethod::NOT_SET),
     m_initiationMethodHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -43,6 +44,8 @@ Contact::Contact() :
     m_scheduledTimestampHasBeenSet(false),
     m_relatedContactIdHasBeenSet(false),
     m_wisdomInfoHasBeenSet(false),
+    m_customerEndpointHasBeenSet(false),
+    m_systemEndpointHasBeenSet(false),
     m_queueTimeAdjustmentSeconds(0),
     m_queueTimeAdjustmentSecondsHasBeenSet(false),
     m_queuePriority(0),
@@ -57,6 +60,7 @@ Contact::Contact() :
     m_customerVoiceActivityHasBeenSet(false),
     m_qualityMetricsHasBeenSet(false),
     m_disconnectDetailsHasBeenSet(false),
+    m_additionalEmailRecipientsHasBeenSet(false),
     m_segmentAttributesHasBeenSet(false)
 {
 }
@@ -95,6 +99,13 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_previousContactId = jsonValue.GetString("PreviousContactId");
 
     m_previousContactIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ContactAssociationId"))
+  {
+    m_contactAssociationId = jsonValue.GetString("ContactAssociationId");
+
+    m_contactAssociationIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InitiationMethod"))
@@ -209,6 +220,20 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_wisdomInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomerEndpoint"))
+  {
+    m_customerEndpoint = jsonValue.GetObject("CustomerEndpoint");
+
+    m_customerEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SystemEndpoint"))
+  {
+    m_systemEndpoint = jsonValue.GetObject("SystemEndpoint");
+
+    m_systemEndpointHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("QueueTimeAdjustmentSeconds"))
   {
     m_queueTimeAdjustmentSeconds = jsonValue.GetInteger("QueueTimeAdjustmentSeconds");
@@ -289,6 +314,13 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_disconnectDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalEmailRecipients"))
+  {
+    m_additionalEmailRecipients = jsonValue.GetObject("AdditionalEmailRecipients");
+
+    m_additionalEmailRecipientsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SegmentAttributes"))
   {
     Aws::Map<Aws::String, JsonView> segmentAttributesJsonMap = jsonValue.GetObject("SegmentAttributes").GetAllObjects();
@@ -327,6 +359,12 @@ JsonValue Contact::Jsonize() const
   if(m_previousContactIdHasBeenSet)
   {
    payload.WithString("PreviousContactId", m_previousContactId);
+
+  }
+
+  if(m_contactAssociationIdHasBeenSet)
+  {
+   payload.WithString("ContactAssociationId", m_contactAssociationId);
 
   }
 
@@ -418,6 +456,18 @@ JsonValue Contact::Jsonize() const
 
   }
 
+  if(m_customerEndpointHasBeenSet)
+  {
+   payload.WithObject("CustomerEndpoint", m_customerEndpoint.Jsonize());
+
+  }
+
+  if(m_systemEndpointHasBeenSet)
+  {
+   payload.WithObject("SystemEndpoint", m_systemEndpoint.Jsonize());
+
+  }
+
   if(m_queueTimeAdjustmentSecondsHasBeenSet)
   {
    payload.WithInteger("QueueTimeAdjustmentSeconds", m_queueTimeAdjustmentSeconds);
@@ -484,6 +534,12 @@ JsonValue Contact::Jsonize() const
   if(m_disconnectDetailsHasBeenSet)
   {
    payload.WithObject("DisconnectDetails", m_disconnectDetails.Jsonize());
+
+  }
+
+  if(m_additionalEmailRecipientsHasBeenSet)
+  {
+   payload.WithObject("AdditionalEmailRecipients", m_additionalEmailRecipients.Jsonize());
 
   }
 

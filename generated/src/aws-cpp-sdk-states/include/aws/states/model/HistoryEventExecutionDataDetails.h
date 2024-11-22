@@ -39,7 +39,8 @@ namespace Model
     ///@{
     /**
      * <p>Indicates whether input or output was truncated in the response. Always
-     * <code>false</code> for API calls.</p>
+     * <code>false</code> for API calls. In CloudWatch logs, the value will be true if
+     * the data is truncated due to size limits.</p>
      */
     inline bool GetTruncated() const{ return m_truncated; }
     inline bool TruncatedHasBeenSet() const { return m_truncatedHasBeenSet; }

@@ -24,8 +24,21 @@ namespace Model
 {
 
   /**
-   * <p>A map containing a priority as a key, and recovery method name as a
-   * value.</p><p><h3>See Also:</h3>   <a
+   * <p>A recovery option for a user. The <code>AccountRecoverySettingType</code>
+   * data type is an array of this object. Each <code>RecoveryOptionType</code> has a
+   * priority property that determines whether it is a primary or secondary
+   * option.</p> <p>For example, if <code>verified_email</code> has a priority of
+   * <code>1</code> and <code>verified_phone_number</code> has a priority of
+   * <code>2</code>, your user pool sends account-recovery messages to a verified
+   * email address but falls back to an SMS message if the user has a verified phone
+   * number. The <code>admin_only</code> option prevents self-service account
+   * recovery.</p> <p>This data type is a request and response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RecoveryOptionType">AWS
    * API Reference</a></p>
    */
@@ -40,8 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A positive integer specifying priority of a method with 1 being the highest
-     * priority.</p>
+     * <p>Your priority preference for using the specified attribute in account
+     * recovery. The highest priority is <code>1</code>.</p>
      */
     inline int GetPriority() const{ return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
@@ -51,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The recovery method for a user.</p>
+     * <p>The recovery method that this object sets a recovery option for.</p>
      */
     inline const RecoveryOptionNameType& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

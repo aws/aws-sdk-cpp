@@ -2152,6 +2152,32 @@ namespace QuickSight
         }
 
         /**
+         * <p>Describes an existing dashboard QA configuration.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardsQAConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDashboardsQAConfigurationOutcome DescribeDashboardsQAConfiguration(const Model::DescribeDashboardsQAConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDashboardsQAConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDashboardsQAConfigurationRequestT = Model::DescribeDashboardsQAConfigurationRequest>
+        Model::DescribeDashboardsQAConfigurationOutcomeCallable DescribeDashboardsQAConfigurationCallable(const DescribeDashboardsQAConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeDashboardsQAConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDashboardsQAConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDashboardsQAConfigurationRequestT = Model::DescribeDashboardsQAConfigurationRequest>
+        void DescribeDashboardsQAConfigurationAsync(const DescribeDashboardsQAConfigurationRequestT& request, const DescribeDashboardsQAConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeDashboardsQAConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Describes a dataset. This operation doesn't support datasets that include
          * uploaded files as a source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSet">AWS
@@ -4253,6 +4279,32 @@ namespace QuickSight
         }
 
         /**
+         * <p>Searches for any Q topic that exists in an Amazon QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchTopics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchTopicsOutcome SearchTopics(const Model::SearchTopicsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchTopics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchTopicsRequestT = Model::SearchTopicsRequest>
+        Model::SearchTopicsOutcomeCallable SearchTopicsCallable(const SearchTopicsRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::SearchTopics, request);
+        }
+
+        /**
+         * An Async wrapper for SearchTopics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchTopicsRequestT = Model::SearchTopicsRequest>
+        void SearchTopicsAsync(const SearchTopicsRequestT& request, const SearchTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::SearchTopics, request, handler, context);
+        }
+
+        /**
          * <p>Starts an Asset Bundle export job.</p> <p>An Asset Bundle export job exports
          * specified Amazon QuickSight assets. You can also choose to export any asset
          * dependencies in the same job. Export jobs run asynchronously and can be polled
@@ -4810,6 +4862,31 @@ namespace QuickSight
         void UpdateDashboardPublishedVersionAsync(const UpdateDashboardPublishedVersionRequestT& request, const UpdateDashboardPublishedVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::UpdateDashboardPublishedVersion, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a Dashboard QA configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardsQAConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDashboardsQAConfigurationOutcome UpdateDashboardsQAConfiguration(const Model::UpdateDashboardsQAConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDashboardsQAConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDashboardsQAConfigurationRequestT = Model::UpdateDashboardsQAConfigurationRequest>
+        Model::UpdateDashboardsQAConfigurationOutcomeCallable UpdateDashboardsQAConfigurationCallable(const UpdateDashboardsQAConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateDashboardsQAConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDashboardsQAConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDashboardsQAConfigurationRequestT = Model::UpdateDashboardsQAConfigurationRequest>
+        void UpdateDashboardsQAConfigurationAsync(const UpdateDashboardsQAConfigurationRequestT& request, const UpdateDashboardsQAConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateDashboardsQAConfiguration, request, handler, context);
         }
 
         /**

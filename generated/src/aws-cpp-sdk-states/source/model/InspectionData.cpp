@@ -20,13 +20,15 @@ namespace Model
 
 InspectionData::InspectionData() : 
     m_inputHasBeenSet(false),
+    m_afterArgumentsHasBeenSet(false),
     m_afterInputPathHasBeenSet(false),
     m_afterParametersHasBeenSet(false),
     m_resultHasBeenSet(false),
     m_afterResultSelectorHasBeenSet(false),
     m_afterResultPathHasBeenSet(false),
     m_requestHasBeenSet(false),
-    m_responseHasBeenSet(false)
+    m_responseHasBeenSet(false),
+    m_variablesHasBeenSet(false)
 {
 }
 
@@ -43,6 +45,13 @@ InspectionData& InspectionData::operator =(JsonView jsonValue)
     m_input = jsonValue.GetString("input");
 
     m_inputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("afterArguments"))
+  {
+    m_afterArguments = jsonValue.GetString("afterArguments");
+
+    m_afterArgumentsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("afterInputPath"))
@@ -94,6 +103,13 @@ InspectionData& InspectionData::operator =(JsonView jsonValue)
     m_responseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("variables"))
+  {
+    m_variables = jsonValue.GetString("variables");
+
+    m_variablesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +120,12 @@ JsonValue InspectionData::Jsonize() const
   if(m_inputHasBeenSet)
   {
    payload.WithString("input", m_input);
+
+  }
+
+  if(m_afterArgumentsHasBeenSet)
+  {
+   payload.WithString("afterArguments", m_afterArguments);
 
   }
 
@@ -146,6 +168,12 @@ JsonValue InspectionData::Jsonize() const
   if(m_responseHasBeenSet)
   {
    payload.WithObject("response", m_response.Jsonize());
+
+  }
+
+  if(m_variablesHasBeenSet)
+  {
+   payload.WithString("variables", m_variables);
 
   }
 

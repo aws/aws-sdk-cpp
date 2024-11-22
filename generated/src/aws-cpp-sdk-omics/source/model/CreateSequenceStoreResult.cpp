@@ -18,7 +18,8 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateSequenceStoreResult::CreateSequenceStoreResult() : 
-    m_eTagAlgorithmFamily(ETagAlgorithmFamily::NOT_SET)
+    m_eTagAlgorithmFamily(ETagAlgorithmFamily::NOT_SET),
+    m_status(SequenceStoreStatus::NOT_SET)
 {
 }
 
@@ -76,6 +77,33 @@ CreateSequenceStoreResult& CreateSequenceStoreResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("eTagAlgorithmFamily"))
   {
     m_eTagAlgorithmFamily = ETagAlgorithmFamilyMapper::GetETagAlgorithmFamilyForName(jsonValue.GetString("eTagAlgorithmFamily"));
+
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = SequenceStoreStatusMapper::GetSequenceStoreStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("statusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("statusMessage");
+
+  }
+
+  if(jsonValue.ValueExists("propagatedSetLevelTags"))
+  {
+    Aws::Utils::Array<JsonView> propagatedSetLevelTagsJsonList = jsonValue.GetArray("propagatedSetLevelTags");
+    for(unsigned propagatedSetLevelTagsIndex = 0; propagatedSetLevelTagsIndex < propagatedSetLevelTagsJsonList.GetLength(); ++propagatedSetLevelTagsIndex)
+    {
+      m_propagatedSetLevelTags.push_back(propagatedSetLevelTagsJsonList[propagatedSetLevelTagsIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("s3Access"))
+  {
+    m_s3Access = jsonValue.GetObject("s3Access");
 
   }
 

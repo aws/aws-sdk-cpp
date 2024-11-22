@@ -7,6 +7,7 @@
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/model/Format.h>
+#include <aws/neptune-graph/model/ParquetType.h>
 #include <aws/neptune-graph/model/ImportTaskStatus.h>
 #include <utility>
 
@@ -101,6 +102,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The parquet type of the import task.</p>
+     */
+    inline const ParquetType& GetParquetType() const{ return m_parquetType; }
+    inline bool ParquetTypeHasBeenSet() const { return m_parquetTypeHasBeenSet; }
+    inline void SetParquetType(const ParquetType& value) { m_parquetTypeHasBeenSet = true; m_parquetType = value; }
+    inline void SetParquetType(ParquetType&& value) { m_parquetTypeHasBeenSet = true; m_parquetType = std::move(value); }
+    inline ImportTaskSummary& WithParquetType(const ParquetType& value) { SetParquetType(value); return *this;}
+    inline ImportTaskSummary& WithParquetType(ParquetType&& value) { SetParquetType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN of the IAM role that will allow access to the data that is to be
      * imported.</p>
      */
@@ -138,6 +151,9 @@ namespace Model
 
     Format m_format;
     bool m_formatHasBeenSet = false;
+
+    ParquetType m_parquetType;
+    bool m_parquetTypeHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

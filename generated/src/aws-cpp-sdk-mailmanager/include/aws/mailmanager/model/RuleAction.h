@@ -8,6 +8,7 @@
 #include <aws/mailmanager/model/AddHeaderAction.h>
 #include <aws/mailmanager/model/ArchiveAction.h>
 #include <aws/mailmanager/model/DeliverToMailboxAction.h>
+#include <aws/mailmanager/model/DeliverToQBusinessAction.h>
 #include <aws/mailmanager/model/DropAction.h>
 #include <aws/mailmanager/model/RelayAction.h>
 #include <aws/mailmanager/model/ReplaceRecipientAction.h>
@@ -85,6 +86,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>This action delivers an email to an Amazon Q Business application for
+     * ingestion into its knowledge base.</p>
+     */
+    inline const DeliverToQBusinessAction& GetDeliverToQBusiness() const{ return m_deliverToQBusiness; }
+    inline bool DeliverToQBusinessHasBeenSet() const { return m_deliverToQBusinessHasBeenSet; }
+    inline void SetDeliverToQBusiness(const DeliverToQBusinessAction& value) { m_deliverToQBusinessHasBeenSet = true; m_deliverToQBusiness = value; }
+    inline void SetDeliverToQBusiness(DeliverToQBusinessAction&& value) { m_deliverToQBusinessHasBeenSet = true; m_deliverToQBusiness = std::move(value); }
+    inline RuleAction& WithDeliverToQBusiness(const DeliverToQBusinessAction& value) { SetDeliverToQBusiness(value); return *this;}
+    inline RuleAction& WithDeliverToQBusiness(DeliverToQBusinessAction&& value) { SetDeliverToQBusiness(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>This action terminates the evaluation of rules in the rule set.</p>
      */
     inline const DropAction& GetDrop() const{ return m_drop; }
@@ -153,6 +167,9 @@ namespace Model
 
     DeliverToMailboxAction m_deliverToMailbox;
     bool m_deliverToMailboxHasBeenSet = false;
+
+    DeliverToQBusinessAction m_deliverToQBusiness;
+    bool m_deliverToQBusinessHasBeenSet = false;
 
     DropAction m_drop;
     bool m_dropHasBeenSet = false;

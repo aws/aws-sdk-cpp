@@ -9,6 +9,7 @@
 #include <aws/cognito-idp/model/SoftwareTokenMfaConfigType.h>
 #include <aws/cognito-idp/model/EmailMfaConfigType.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
+#include <aws/cognito-idp/model/WebAuthnConfigurationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -91,6 +92,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The configuration of your user pool for passkey, or webauthN, biometric and
+     * security-key devices.</p>
+     */
+    inline const WebAuthnConfigurationType& GetWebAuthnConfiguration() const{ return m_webAuthnConfiguration; }
+    inline void SetWebAuthnConfiguration(const WebAuthnConfigurationType& value) { m_webAuthnConfiguration = value; }
+    inline void SetWebAuthnConfiguration(WebAuthnConfigurationType&& value) { m_webAuthnConfiguration = std::move(value); }
+    inline SetUserPoolMfaConfigResult& WithWebAuthnConfiguration(const WebAuthnConfigurationType& value) { SetWebAuthnConfiguration(value); return *this;}
+    inline SetUserPoolMfaConfigResult& WithWebAuthnConfiguration(WebAuthnConfigurationType&& value) { SetWebAuthnConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -109,6 +122,8 @@ namespace Model
     EmailMfaConfigType m_emailMfaConfiguration;
 
     UserPoolMfaType m_mfaConfiguration;
+
+    WebAuthnConfigurationType m_webAuthnConfiguration;
 
     Aws::String m_requestId;
   };

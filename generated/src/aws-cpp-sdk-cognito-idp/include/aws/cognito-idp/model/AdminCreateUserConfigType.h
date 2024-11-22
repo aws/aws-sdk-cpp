@@ -24,8 +24,16 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for creating a new user profile.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The settings for administrator creation of users in a user pool. Contains
+   * settings for allowing user sign-up, customizing invitation messages to new
+   * users, and the amount of time before temporary passwords expire.</p> <p>This
+   * data type is a request and response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUserConfigType">AWS
    * API Reference</a></p>
    */
@@ -40,9 +48,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Set to <code>True</code> if only the administrator is allowed to create user
-     * profiles. Set to <code>False</code> if users can sign themselves up via an
-     * app.</p>
+     * <p>The setting for allowing self-service sign-up. When <code>true</code>, only
+     * administrators can create new user profiles. When <code>false</code>, users can
+     * register themselves and create a new user profile with the <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html">SignUp</a>
+     * operation.</p>
      */
     inline bool GetAllowAdminCreateUserOnly() const{ return m_allowAdminCreateUserOnly; }
     inline bool AllowAdminCreateUserOnlyHasBeenSet() const { return m_allowAdminCreateUserOnlyHasBeenSet; }
@@ -52,14 +62,17 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user account expiration limit, in days, after which a new account that
-     * hasn't signed in is no longer usable. To reset the account after that time
+     * <p>This parameter is no longer in use. Configure the duration of temporary
+     * passwords with the <code>TemporaryPasswordValidityDays</code> parameter of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_PasswordPolicyType.html">PasswordPolicyType</a>.
+     * For older user pools that have a <code>UnusedAccountValidityDays</code>
+     * configuration, that value is effective until you set a value for
+     * <code>TemporaryPasswordValidityDays</code>.</p> <p>The password expiration limit
+     * in days for administrator-created users. When this time expires, the user can't
+     * sign in with their temporary password. To reset the account after that time
      * limit, you must call <code>AdminCreateUser</code> again, specifying
-     * <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default
-     * value for this parameter is 7.</p>  <p>If you set a value for
-     * <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that
-     * value will be used, and <code>UnusedAccountValidityDays</code> will be no longer
-     * be an available parameter for that user pool.</p> 
+     * <code>RESEND</code> for the <code>MessageAction</code> parameter. </p> <p>The
+     * default value for this parameter is 7.</p>
      */
     inline int GetUnusedAccountValidityDays() const{ return m_unusedAccountValidityDays; }
     inline bool UnusedAccountValidityDaysHasBeenSet() const { return m_unusedAccountValidityDaysHasBeenSet; }
@@ -69,8 +82,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The message template to be used for the welcome message to new users.</p>
-     * <p>See also <a
+     * <p>The template for the welcome message to new users. This template must include
+     * the <code>{####}</code> temporary password placeholder if you are creating users
+     * with passwords. If your users don't have passwords, you can omit the
+     * placeholder.</p> <p>See also <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing
      * User Invitation Messages</a>.</p>
      */

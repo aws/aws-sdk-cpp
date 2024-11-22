@@ -24,6 +24,7 @@ namespace Aws
         static const int ORCHESTRATION_HASH = HashingUtils::HashString("ORCHESTRATION");
         static const int KNOWLEDGE_BASE_RESPONSE_GENERATION_HASH = HashingUtils::HashString("KNOWLEDGE_BASE_RESPONSE_GENERATION");
         static const int POST_PROCESSING_HASH = HashingUtils::HashString("POST_PROCESSING");
+        static const int ROUTING_CLASSIFIER_HASH = HashingUtils::HashString("ROUTING_CLASSIFIER");
 
 
         PromptType GetPromptTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == POST_PROCESSING_HASH)
           {
             return PromptType::POST_PROCESSING;
+          }
+          else if (hashCode == ROUTING_CLASSIFIER_HASH)
+          {
+            return PromptType::ROUTING_CLASSIFIER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "KNOWLEDGE_BASE_RESPONSE_GENERATION";
           case PromptType::POST_PROCESSING:
             return "POST_PROCESSING";
+          case PromptType::ROUTING_CLASSIFIER:
+            return "ROUTING_CLASSIFIER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

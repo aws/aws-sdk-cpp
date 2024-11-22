@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Number (ARN) of the SlackChannelConfiguration associated
+     * <p>The Amazon Resource Name (ARN) of the SlackChannelConfiguration associated
      * with the user identities to describe.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
