@@ -16,6 +16,7 @@ namespace Client
 class AWS_ACM_API ACMErrorMarshaller : public Aws::Client::JsonErrorMarshaller
 {
 public:
+
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };
 

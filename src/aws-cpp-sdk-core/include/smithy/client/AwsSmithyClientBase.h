@@ -160,13 +160,13 @@ namespace client
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
 
     protected:
-     Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
-     Aws::String m_serviceName;
-     Aws::String m_userAgent;
+        Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
+        Aws::String m_serviceName;
+        Aws::String m_userAgent;
 
-     std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
-     std::shared_ptr<Aws::Client::AWSErrorMarshaller> m_errorMarshaller;
-     Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors{};
+        std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
+        std::shared_ptr<Aws::Client::AWSErrorMarshaller> m_errorMarshaller;
+        Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors{};
     };
-    }  // namespace client
+} // namespace client
 } // namespace smithy
