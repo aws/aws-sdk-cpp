@@ -613,6 +613,18 @@
                     "traits": {
                         "smithy.api#enumValue": "SUBJECT"
                     }
+                },
+                "ENVELOPE_TO": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ENVELOPE_TO"
+                    }
+                },
+                "ENVELOPE_FROM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ENVELOPE_FROM"
+                    }
                 }
             }
         },
@@ -1717,6 +1729,41 @@
                 "smithy.api#documentation": "<p>This action to delivers an email to a mailbox.</p>"
             }
         },
+        "com.amazonaws.mailmanager#DeliverToQBusinessAction": {
+            "type": "structure",
+            "members": {
+                "ActionFailurePolicy": {
+                    "target": "com.amazonaws.mailmanager#ActionFailurePolicy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A policy that states what to do in the case of failure. The action will fail if there are\n            configuration errors. For example, the specified application has been deleted or the role lacks\n            necessary permissions to call the qbusiness:BatchPutDocument API.</p>"
+                    }
+                },
+                "ApplicationId": {
+                    "target": "com.amazonaws.mailmanager#QBusinessApplicationId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique identifier of the Amazon Q Business application instance where the email\n            content will be delivered.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "IndexId": {
+                    "target": "com.amazonaws.mailmanager#QBusinessIndexId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The identifier of the knowledge base index within the Amazon Q Business application\n            where the email content will be stored and indexed.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "RoleArn": {
+                    "target": "com.amazonaws.mailmanager#IamRoleArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the IAM Role to use while delivering to Amazon Q Business. This role must have access\n            to the qbusiness:BatchPutDocument API for the given application and index.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The action to deliver incoming emails to an Amazon Q Business application for indexing.</p>"
+            }
+        },
         "com.amazonaws.mailmanager#DropAction": {
             "type": "structure",
             "members": {},
@@ -1739,6 +1786,32 @@
             "type": "list",
             "member": {
                 "target": "smithy.api#String"
+            }
+        },
+        "com.amazonaws.mailmanager#Envelope": {
+            "type": "structure",
+            "members": {
+                "Helo": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The HELO used by the host from which the email was received.</p>"
+                    }
+                },
+                "From": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The RCPT FROM given by the host from which the email was received.</p>"
+                    }
+                },
+                "To": {
+                    "target": "com.amazonaws.mailmanager#StringList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>All SMTP TO entries given by the host from which the email was received.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The SMTP envelope information of the email.</p>"
             }
         },
         "com.amazonaws.mailmanager#ErrorMessage": {
@@ -2217,6 +2290,18 @@
                     "target": "com.amazonaws.mailmanager#S3PresignedURL",
                     "traits": {
                         "smithy.api#documentation": "<p>A pre-signed URL to temporarily download the full message content.</p>"
+                    }
+                },
+                "Metadata": {
+                    "target": "com.amazonaws.mailmanager#Metadata",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The metadata about the email.</p>"
+                    }
+                },
+                "Envelope": {
+                    "target": "com.amazonaws.mailmanager#Envelope",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The SMTP envelope information of the email.</p>"
                     }
                 }
             },
@@ -5120,6 +5205,62 @@
                 "smithy.api#documentation": "<p>The textual body content of an email message.</p>"
             }
         },
+        "com.amazonaws.mailmanager#Metadata": {
+            "type": "structure",
+            "members": {
+                "Timestamp": {
+                    "target": "smithy.api#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The timestamp of when the email was received.</p>"
+                    }
+                },
+                "IngressPointId": {
+                    "target": "com.amazonaws.mailmanager#IngressPointId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the ingress endpoint through which the email was received.</p>"
+                    }
+                },
+                "TrafficPolicyId": {
+                    "target": "com.amazonaws.mailmanager#TrafficPolicyId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the traffic policy that was in effect when the email was received.</p>"
+                    }
+                },
+                "RuleSetId": {
+                    "target": "com.amazonaws.mailmanager#RuleSetId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the rule set that processed the email.</p>"
+                    }
+                },
+                "SenderHostname": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the host from which the email was received.</p>"
+                    }
+                },
+                "SenderIpAddress": {
+                    "target": "com.amazonaws.mailmanager#SenderIpAddress",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The IP address of the host from which the email was received.</p>"
+                    }
+                },
+                "TlsCipherSuite": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The TLS cipher suite used to communicate with the host from which the email was received.</p>"
+                    }
+                },
+                "TlsProtocol": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The TLS protocol used to communicate with the host from which the email was received.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The metadata about the email.</p>"
+            }
+        },
         "com.amazonaws.mailmanager#MimeHeaderAttribute": {
             "type": "string",
             "traits": {
@@ -5230,6 +5371,26 @@
             "type": "list",
             "member": {
                 "target": "com.amazonaws.mailmanager#PolicyStatement"
+            }
+        },
+        "com.amazonaws.mailmanager#QBusinessApplicationId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 36,
+                    "max": 36
+                },
+                "smithy.api#pattern": "^[a-z0-9-]+$"
+            }
+        },
+        "com.amazonaws.mailmanager#QBusinessIndexId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 36,
+                    "max": 36
+                },
+                "smithy.api#pattern": "^[a-z0-9-]+$"
             }
         },
         "com.amazonaws.mailmanager#Recipients": {
@@ -5647,6 +5808,30 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The priority level of the email.</p>"
                     }
+                },
+                "IngressPointId": {
+                    "target": "com.amazonaws.mailmanager#IngressPointId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the ingress endpoint through which the email was received.</p>"
+                    }
+                },
+                "SenderHostname": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the host from which the email was received.</p>"
+                    }
+                },
+                "SenderIpAddress": {
+                    "target": "com.amazonaws.mailmanager#SenderIpAddress",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The IP address of the host from which the email was received.</p>"
+                    }
+                },
+                "Envelope": {
+                    "target": "com.amazonaws.mailmanager#Envelope",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The SMTP envelope information of the email.</p>"
+                    }
                 }
             },
             "traits": {
@@ -5741,6 +5926,12 @@
                     "target": "com.amazonaws.mailmanager#DeliverToMailboxAction",
                     "traits": {
                         "smithy.api#documentation": "<p>This action delivers an email to a WorkMail mailbox.</p>"
+                    }
+                },
+                "DeliverToQBusiness": {
+                    "target": "com.amazonaws.mailmanager#DeliverToQBusinessAction",
+                    "traits": {
+                        "smithy.api#documentation": "<p>This action delivers an email to an Amazon Q Business application for ingestion into\n            its knowledge base.</p>"
                     }
                 }
             },
@@ -6787,6 +6978,12 @@
                 "smithy.api#documentation": "<p>Sends the email to the internet using the ses:SendRawEmail API.</p>"
             }
         },
+        "com.amazonaws.mailmanager#SenderIpAddress": {
+            "type": "string",
+            "traits": {
+                "smithy.api#sensitive": {}
+            }
+        },
         "com.amazonaws.mailmanager#ServiceQuotaExceededException": {
             "type": "structure",
             "members": {
@@ -6881,6 +7078,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Details on where to deliver the exported email data.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "IncludeMetadata": {
+                    "target": "smithy.api#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Whether to include message metadata as JSON files in the export.</p>"
                     }
                 }
             },
