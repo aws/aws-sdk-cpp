@@ -297,7 +297,7 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
 
     size_t amountToRead = size * nmemb;
     bool isAwsChunked = request->HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) &&
-        request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER) == Aws::Http::AWS_CHUNKED_VALUE;
+                        request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER).find(Aws::Http::AWS_CHUNKED_VALUE) != Aws::String::npos;
 
     if (ioStream != nullptr && amountToRead > 0)
     {

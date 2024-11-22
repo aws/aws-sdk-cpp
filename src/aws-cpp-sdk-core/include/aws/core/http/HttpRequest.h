@@ -396,6 +396,19 @@ namespace Aws
                 SetHeaderValue(CONTENT_TYPE_HEADER, value);
             }
 
+            /**
+             * Has content-encoding header.
+             */
+            inline bool HasContentEncoding() const { return HasHeader(CONTENT_ENCODING_HEADER); }
+            /**
+             * Gets content-encoding header.
+             */
+            inline const Aws::String& GetContentEncoding() const { return GetHeaderValue(CONTENT_ENCODING_HEADER); }
+            /**
+             * Sets content-encoding header.
+             */
+            inline void SetContentEncoding(const Aws::String& value) { SetHeaderValue(CONTENT_ENCODING_HEADER, value); }
+
             inline bool HasTransferEncoding() const
             {
                 return HasHeader(TRANSFER_ENCODING_HEADER);
