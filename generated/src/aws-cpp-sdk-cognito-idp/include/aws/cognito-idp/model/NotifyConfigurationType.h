@@ -25,7 +25,13 @@ namespace Model
 {
 
   /**
-   * <p>The notify configuration type.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration for Amazon SES email messages that advanced security
+   * features sends to a user when your adaptive authentication automated response
+   * has a <i>Notify</i> action.</p> <p>This data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/NotifyConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -40,7 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email address that is sending the email. The address must be either
+     * <p>The email address that sends the email message. The address must be either
      * individually verified with Amazon Simple Email Service, or from a domain that
      * has been verified with Amazon SES.</p>
      */
@@ -56,7 +62,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The destination to which the receiver of an email should reply to.</p>
+     * <p>The reply-to email address of an email template.</p>
      */
     inline const Aws::String& GetReplyTo() const{ return m_replyTo; }
     inline bool ReplyToHasBeenSet() const { return m_replyToHasBeenSet; }
@@ -86,7 +92,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Email template used when a detected risk event is blocked.</p>
+     * <p>The template for the email message that your user pool sends when a detected
+     * risk event is blocked.</p>
      */
     inline const NotifyEmailType& GetBlockEmail() const{ return m_blockEmail; }
     inline bool BlockEmailHasBeenSet() const { return m_blockEmailHasBeenSet; }
@@ -98,7 +105,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The email template used when a detected risk event is allowed.</p>
+     * <p>The template for the email message that your user pool sends when no action
+     * is taken in response to a detected risk.</p>
      */
     inline const NotifyEmailType& GetNoActionEmail() const{ return m_noActionEmail; }
     inline bool NoActionEmailHasBeenSet() const { return m_noActionEmailHasBeenSet; }
@@ -110,8 +118,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The multi-factor authentication (MFA) email template used when MFA is
-     * challenged as part of a detected risk.</p>
+     * <p>The template for the email message that your user pool sends when MFA is
+     * challenged in response to a detected risk.</p>
      */
     inline const NotifyEmailType& GetMfaEmail() const{ return m_mfaEmail; }
     inline bool MfaEmailHasBeenSet() const { return m_mfaEmailHasBeenSet; }

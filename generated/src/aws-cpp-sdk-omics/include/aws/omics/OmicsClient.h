@@ -699,6 +699,32 @@ namespace Omics
         }
 
         /**
+         * <p>Deletes an access policy for the specified store.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteS3AccessPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteS3AccessPolicyOutcome DeleteS3AccessPolicy(const Model::DeleteS3AccessPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteS3AccessPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteS3AccessPolicyRequestT = Model::DeleteS3AccessPolicyRequest>
+        Model::DeleteS3AccessPolicyOutcomeCallable DeleteS3AccessPolicyCallable(const DeleteS3AccessPolicyRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::DeleteS3AccessPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteS3AccessPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteS3AccessPolicyRequestT = Model::DeleteS3AccessPolicyRequest>
+        void DeleteS3AccessPolicyAsync(const DeleteS3AccessPolicyRequestT& request, const DeleteS3AccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::DeleteS3AccessPolicy, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a sequence store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteSequenceStore">AWS
          * API Reference</a></p>
@@ -1212,6 +1238,32 @@ namespace Omics
         void GetRunTaskAsync(const GetRunTaskRequestT& request, const GetRunTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::GetRunTask, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves details about an access policy on a given store.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetS3AccessPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetS3AccessPolicyOutcome GetS3AccessPolicy(const Model::GetS3AccessPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetS3AccessPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetS3AccessPolicyRequestT = Model::GetS3AccessPolicyRequest>
+        Model::GetS3AccessPolicyOutcomeCallable GetS3AccessPolicyCallable(const GetS3AccessPolicyRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::GetS3AccessPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetS3AccessPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetS3AccessPolicyRequestT = Model::GetS3AccessPolicyRequest>
+        void GetS3AccessPolicyAsync(const GetS3AccessPolicyRequestT& request, const GetS3AccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::GetS3AccessPolicy, request, handler, context);
         }
 
         /**
@@ -1901,6 +1953,31 @@ namespace Omics
         }
 
         /**
+         * <p>Adds an access policy to the specified store.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/PutS3AccessPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutS3AccessPolicyOutcome PutS3AccessPolicy(const Model::PutS3AccessPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutS3AccessPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutS3AccessPolicyRequestT = Model::PutS3AccessPolicyRequest>
+        Model::PutS3AccessPolicyOutcomeCallable PutS3AccessPolicyCallable(const PutS3AccessPolicyRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::PutS3AccessPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutS3AccessPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutS3AccessPolicyRequestT = Model::PutS3AccessPolicyRequest>
+        void PutS3AccessPolicyAsync(const PutS3AccessPolicyRequestT& request, const PutS3AccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::PutS3AccessPolicy, request, handler, context);
+        }
+
+        /**
          * <p>Starts an annotation import job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartAnnotationImportJob">AWS
          * API Reference</a></p>
@@ -2238,6 +2315,32 @@ namespace Omics
         void UpdateRunGroupAsync(const UpdateRunGroupRequestT& request, const UpdateRunGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::UpdateRunGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Update one or more parameters for the sequence store.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateSequenceStore">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSequenceStoreOutcome UpdateSequenceStore(const Model::UpdateSequenceStoreRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSequenceStore that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSequenceStoreRequestT = Model::UpdateSequenceStoreRequest>
+        Model::UpdateSequenceStoreOutcomeCallable UpdateSequenceStoreCallable(const UpdateSequenceStoreRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::UpdateSequenceStore, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSequenceStore that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSequenceStoreRequestT = Model::UpdateSequenceStoreRequest>
+        void UpdateSequenceStoreAsync(const UpdateSequenceStoreRequestT& request, const UpdateSequenceStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::UpdateSequenceStore, request, handler, context);
         }
 
         /**

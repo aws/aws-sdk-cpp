@@ -24,8 +24,19 @@ namespace Model
 {
 
   /**
-   * <p>The constraints associated with a string attribute.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>The minimum and maximum length values of an attribute that is of the string
+   * type, for example <code>custom:department</code>.</p> <p>This data type is part
+   * of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SchemaAttributeType.html">SchemaAttributeType</a>.
+   * It defines the length constraints on string-type attributes that you configure
+   * in <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+   * and displays the length constraints of all string-type attributes in the
+   * response to <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StringAttributeConstraintsType">AWS
    * API Reference</a></p>
    */
@@ -40,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The minimum length.</p>
+     * <p>The minimum length of a string attribute value.</p>
      */
     inline const Aws::String& GetMinLength() const{ return m_minLength; }
     inline bool MinLengthHasBeenSet() const { return m_minLengthHasBeenSet; }

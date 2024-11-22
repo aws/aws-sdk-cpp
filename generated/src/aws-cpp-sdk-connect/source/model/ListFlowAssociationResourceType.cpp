@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int VOICE_PHONE_NUMBER_HASH = HashingUtils::HashString("VOICE_PHONE_NUMBER");
+        static const int INBOUND_EMAIL_HASH = HashingUtils::HashString("INBOUND_EMAIL");
+        static const int OUTBOUND_EMAIL_HASH = HashingUtils::HashString("OUTBOUND_EMAIL");
 
 
         ListFlowAssociationResourceType GetListFlowAssociationResourceTypeForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == VOICE_PHONE_NUMBER_HASH)
           {
             return ListFlowAssociationResourceType::VOICE_PHONE_NUMBER;
+          }
+          else if (hashCode == INBOUND_EMAIL_HASH)
+          {
+            return ListFlowAssociationResourceType::INBOUND_EMAIL;
+          }
+          else if (hashCode == OUTBOUND_EMAIL_HASH)
+          {
+            return ListFlowAssociationResourceType::OUTBOUND_EMAIL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +58,10 @@ namespace Aws
             return {};
           case ListFlowAssociationResourceType::VOICE_PHONE_NUMBER:
             return "VOICE_PHONE_NUMBER";
+          case ListFlowAssociationResourceType::INBOUND_EMAIL:
+            return "INBOUND_EMAIL";
+          case ListFlowAssociationResourceType::OUTBOUND_EMAIL:
+            return "OUTBOUND_EMAIL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

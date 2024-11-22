@@ -27,6 +27,8 @@ CustomizedMetricSpecification::CustomizedMetricSpecification() :
     m_statistic(MetricStatistic::NOT_SET),
     m_statisticHasBeenSet(false),
     m_unitHasBeenSet(false),
+    m_period(0),
+    m_periodHasBeenSet(false),
     m_metricsHasBeenSet(false)
 {
 }
@@ -79,6 +81,12 @@ CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(const X
       m_unit = Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText());
       m_unitHasBeenSet = true;
     }
+    XmlNode periodNode = resultNode.FirstChild("Period");
+    if(!periodNode.IsNull())
+    {
+      m_period = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
+      m_periodHasBeenSet = true;
+    }
     XmlNode metricsNode = resultNode.FirstChild("Metrics");
     if(!metricsNode.IsNull())
     {
@@ -129,6 +137,11 @@ void CustomizedMetricSpecification::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(m_unit.c_str()) << "&";
   }
 
+  if(m_periodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Period=" << m_period << "&";
+  }
+
   if(m_metricsHasBeenSet)
   {
       unsigned metricsIdx = 1;
@@ -169,6 +182,10 @@ void CustomizedMetricSpecification::OutputToStream(Aws::OStream& oStream, const 
   if(m_unitHasBeenSet)
   {
       oStream << location << ".Unit=" << StringUtils::URLEncode(m_unit.c_str()) << "&";
+  }
+  if(m_periodHasBeenSet)
+  {
+      oStream << location << ".Period=" << m_period << "&";
   }
   if(m_metricsHasBeenSet)
   {

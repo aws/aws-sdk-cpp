@@ -99,6 +99,20 @@ namespace Model
 
     ///@{
     /**
+     * <p/>
+     */
+    inline const Aws::String& GetSelfAssignFlowId() const{ return m_selfAssignFlowId; }
+    inline bool SelfAssignFlowIdHasBeenSet() const { return m_selfAssignFlowIdHasBeenSet; }
+    inline void SetSelfAssignFlowId(const Aws::String& value) { m_selfAssignFlowIdHasBeenSet = true; m_selfAssignFlowId = value; }
+    inline void SetSelfAssignFlowId(Aws::String&& value) { m_selfAssignFlowIdHasBeenSet = true; m_selfAssignFlowId = std::move(value); }
+    inline void SetSelfAssignFlowId(const char* value) { m_selfAssignFlowIdHasBeenSet = true; m_selfAssignFlowId.assign(value); }
+    inline CreateTaskTemplateRequest& WithSelfAssignFlowId(const Aws::String& value) { SetSelfAssignFlowId(value); return *this;}
+    inline CreateTaskTemplateRequest& WithSelfAssignFlowId(Aws::String&& value) { SetSelfAssignFlowId(std::move(value)); return *this;}
+    inline CreateTaskTemplateRequest& WithSelfAssignFlowId(const char* value) { SetSelfAssignFlowId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Constraints that are applicable to the fields listed.</p>
      */
     inline const TaskTemplateConstraints& GetConstraints() const{ return m_constraints; }
@@ -181,6 +195,9 @@ namespace Model
 
     Aws::String m_contactFlowId;
     bool m_contactFlowIdHasBeenSet = false;
+
+    Aws::String m_selfAssignFlowId;
+    bool m_selfAssignFlowIdHasBeenSet = false;
 
     TaskTemplateConstraints m_constraints;
     bool m_constraintsHasBeenSet = false;

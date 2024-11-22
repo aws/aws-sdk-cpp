@@ -17,6 +17,7 @@ CreateTaskTemplateRequest::CreateTaskTemplateRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_contactFlowIdHasBeenSet(false),
+    m_selfAssignFlowIdHasBeenSet(false),
     m_constraintsHasBeenSet(false),
     m_defaultsHasBeenSet(false),
     m_status(TaskTemplateStatus::NOT_SET),
@@ -46,6 +47,12 @@ Aws::String CreateTaskTemplateRequest::SerializePayload() const
   if(m_contactFlowIdHasBeenSet)
   {
    payload.WithString("ContactFlowId", m_contactFlowId);
+
+  }
+
+  if(m_selfAssignFlowIdHasBeenSet)
+  {
+   payload.WithString("SelfAssignFlowId", m_selfAssignFlowId);
 
   }
 

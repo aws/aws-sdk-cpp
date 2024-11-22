@@ -132,6 +132,20 @@ namespace Model
     inline PieChartVisual& AddColumnHierarchies(const ColumnHierarchy& value) { m_columnHierarchiesHasBeenSet = true; m_columnHierarchies.push_back(value); return *this; }
     inline PieChartVisual& AddColumnHierarchies(ColumnHierarchy&& value) { m_columnHierarchiesHasBeenSet = true; m_columnHierarchies.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The alt text for the visual.</p>
+     */
+    inline const Aws::String& GetVisualContentAltText() const{ return m_visualContentAltText; }
+    inline bool VisualContentAltTextHasBeenSet() const { return m_visualContentAltTextHasBeenSet; }
+    inline void SetVisualContentAltText(const Aws::String& value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText = value; }
+    inline void SetVisualContentAltText(Aws::String&& value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText = std::move(value); }
+    inline void SetVisualContentAltText(const char* value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText.assign(value); }
+    inline PieChartVisual& WithVisualContentAltText(const Aws::String& value) { SetVisualContentAltText(value); return *this;}
+    inline PieChartVisual& WithVisualContentAltText(Aws::String&& value) { SetVisualContentAltText(std::move(value)); return *this;}
+    inline PieChartVisual& WithVisualContentAltText(const char* value) { SetVisualContentAltText(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_visualId;
@@ -151,6 +165,9 @@ namespace Model
 
     Aws::Vector<ColumnHierarchy> m_columnHierarchies;
     bool m_columnHierarchiesHasBeenSet = false;
+
+    Aws::String m_visualContentAltText;
+    bool m_visualContentAltTextHasBeenSet = false;
   };
 
 } // namespace Model

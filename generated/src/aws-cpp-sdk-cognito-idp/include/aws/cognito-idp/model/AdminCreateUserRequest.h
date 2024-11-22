@@ -22,8 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to create a user in the specified user
-   * pool.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a new user in the specified user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUserRequest">AWS
    * API Reference</a></p>
    */
@@ -93,8 +92,12 @@ namespace Model
      * message inviting the user to sign up, you must specify the user's email address
      * or phone number. You can do this in your call to AdminCreateUser or in the
      * <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p>
-     * <p>In your call to <code>AdminCreateUser</code>, you can set the
-     * <code>email_verified</code> attribute to <code>True</code>, and you can set the
+     * <p>You must also provide an email address or phone number when you expect the
+     * user to do passwordless sign-in with an email or SMS OTP. These attributes must
+     * be provided when passwordless options are the only available, or when you don't
+     * submit a <code>TemporaryPassword</code>.</p> <p>In your call to
+     * <code>AdminCreateUser</code>, you can set the <code>email_verified</code>
+     * attribute to <code>True</code>, and you can set the
      * <code>phone_number_verified</code> attribute to <code>True</code>. You can also
      * do this by calling <a
      * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.</p>
@@ -145,15 +148,25 @@ namespace Model
     ///@{
     /**
      * <p>The user's temporary password. This password must conform to the password
-     * policy that you specified when you created the user pool.</p> <p>The temporary
-     * password is valid only once. To complete the Admin Create User flow, the user
-     * must enter the temporary password in the sign-in page, along with a new password
-     * to be used in all future sign-ins.</p> <p>This parameter isn't required. If you
-     * don't specify a value, Amazon Cognito generates one for you.</p> <p>The
-     * temporary password can only be used until the user account expiration limit that
-     * you set for your user pool. To reset the account after that time limit, you must
-     * call <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the
-     * <code>MessageAction</code> parameter.</p>
+     * policy that you specified when you created the user pool.</p> <p>The exception
+     * to the requirement for a password is when your user pool supports passwordless
+     * sign-in with email or SMS OTPs. To create a user with no password, omit this
+     * parameter or submit a blank value. You can only create a passwordless user when
+     * passwordless sign-in is available. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignInPolicyType.html">the
+     * SignInPolicyType</a> property of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>.</p>
+     * <p>The temporary password is valid only once. To complete the Admin Create User
+     * flow, the user must enter the temporary password in the sign-in page, along with
+     * a new password to be used in all future sign-ins.</p> <p>If you don't specify a
+     * value, Amazon Cognito generates one for you unless you have passwordless options
+     * active for your user pool.</p> <p>The temporary password can only be used until
+     * the user account expiration limit that you set for your user pool. To reset the
+     * account after that time limit, you must call <code>AdminCreateUser</code> again
+     * and specify <code>RESEND</code> for the <code>MessageAction</code>
+     * parameter.</p>
      */
     inline const Aws::String& GetTemporaryPassword() const{ return m_temporaryPassword; }
     inline bool TemporaryPasswordHasBeenSet() const { return m_temporaryPasswordHasBeenSet; }

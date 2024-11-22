@@ -254,7 +254,7 @@ namespace CognitoIdentityProvider
          * Pinpoint</a>. Amazon Cognito uses the registered number automatically.
          * Otherwise, Amazon Cognito users who must receive SMS messages might not be able
          * to sign up, activate their accounts, or sign in.</p> <p>If you have never used
-         * SMS text messages with Amazon Cognito or any other Amazon Web Servicesservice,
+         * SMS text messages with Amazon Cognito or any other Amazon Web Services service,
          * Amazon Simple Notification Service might place your account in the SMS sandbox.
          * In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
@@ -268,13 +268,18 @@ namespace CognitoIdentityProvider
          * your custom sign-up instructions and placeholders for user name and temporary
          * password.</p> <p>Alternatively, you can call <code>AdminCreateUser</code> with
          * <code>SUPPRESS</code> for the <code>MessageAction</code> parameter, and Amazon
-         * Cognito won't send any email. </p> <p>In either case, the user will be in the
-         * <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change their
-         * password.</p>  <p>Amazon Cognito evaluates Identity and Access Management
-         * (IAM) policies in requests for this API operation. For this operation, you must
-         * use IAM credentials to authorize requests, and you must grant yourself the
-         * corresponding IAM permission in a policy.</p> <p class="title"> <b>Learn
-         * more</b> </p> <ul> <li> <p> <a
+         * Cognito won't send any email. </p> <p>In either case, if the user has a
+         * password, they will be in the <code>FORCE_CHANGE_PASSWORD</code> state until
+         * they sign in and set their password. Your invitation message template must have
+         * the <code>{####}</code> password placeholder if your users have passwords. If
+         * your template doesn't have this placeholder, Amazon Cognito doesn't deliver the
+         * invitation message. In this case, you must update your message template and
+         * resend the password with a new <code>AdminCreateUser</code> request with a
+         * <code>MessageAction</code> value of <code>RESEND</code>.</p>  <p>Amazon
+         * Cognito evaluates Identity and Access Management (IAM) policies in requests for
+         * this API operation. For this operation, you must use IAM credentials to
+         * authorize requests, and you must grant yourself the corresponding IAM permission
+         * in a policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
          * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
@@ -573,11 +578,12 @@ namespace CognitoIdentityProvider
 
         /**
          * <p>Gets the specified user by user name in a user pool as an administrator.
-         * Works on any user.</p>  <p>Amazon Cognito evaluates Identity and Access
-         * Management (IAM) policies in requests for this API operation. For this
-         * operation, you must use IAM credentials to authorize requests, and you must
-         * grant yourself the corresponding IAM permission in a policy.</p> <p
-         * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * Works on any user. This operation contributes to your monthly active user (MAU)
+         * count for the purpose of billing.</p>  <p>Amazon Cognito evaluates
+         * Identity and Access Management (IAM) policies in requests for this API
+         * operation. For this operation, you must use IAM credentials to authorize
+         * requests, and you must grant yourself the corresponding IAM permission in a
+         * policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
          * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
@@ -616,7 +622,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -705,7 +711,7 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Lists devices, as an administrator.</p>  <p>Amazon Cognito evaluates
+         * <p>Lists a user's registered devices.</p>  <p>Amazon Cognito evaluates
          * Identity and Access Management (IAM) policies in requests for this API
          * operation. For this operation, you must use IAM credentials to authorize
          * requests, and you must grant yourself the corresponding IAM permission in a
@@ -855,7 +861,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -922,7 +928,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -1173,7 +1179,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -1352,6 +1358,37 @@ namespace CognitoIdentityProvider
         void ChangePasswordAsync(const ChangePasswordRequestT& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CognitoIdentityProviderClient::ChangePassword, request, handler, context);
+        }
+
+        /**
+         * <p>Completes registration of a passkey authenticator for the current user. Your
+         * application provides data from a successful registration request with the data
+         * from the output of a <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StartWebAuthnRegistration.html">
+         * StartWebAuthnRegistration</a>.</p> <p>Authorize this action with a signed-in
+         * user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CompleteWebAuthnRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CompleteWebAuthnRegistrationOutcome CompleteWebAuthnRegistration(const Model::CompleteWebAuthnRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CompleteWebAuthnRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CompleteWebAuthnRegistrationRequestT = Model::CompleteWebAuthnRegistrationRequest>
+        Model::CompleteWebAuthnRegistrationOutcomeCallable CompleteWebAuthnRegistrationCallable(const CompleteWebAuthnRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::CompleteWebAuthnRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for CompleteWebAuthnRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CompleteWebAuthnRegistrationRequestT = Model::CompleteWebAuthnRegistrationRequest>
+        void CompleteWebAuthnRegistrationAsync(const CompleteWebAuthnRegistrationRequestT& request, const CompleteWebAuthnRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::CompleteWebAuthnRegistration, request, handler, context);
         }
 
         /**
@@ -1539,6 +1576,54 @@ namespace CognitoIdentityProvider
         }
 
         /**
+         * <p>Creates a new set of branding settings for a user pool style and associates
+         * it with an app client. This operation is the programmatic option for the
+         * creation of a new style in the branding designer.</p> <p>Provides values for UI
+         * customization in a <code>Settings</code> JSON object and image files in an
+         * <code>Assets</code> array. To send the JSON object <code>Document</code> type
+         * parameter in <code>Settings</code>, you might need to update to the most recent
+         * version of your Amazon Web Services SDK. </p> <p> This operation has a
+         * 2-megabyte request-size limit and include the CSS settings and image assets for
+         * your app client. Your branding settings might exceed 2MB in size. Amazon Cognito
+         * doesn't require that you pass all parameters in one request and preserves
+         * existing style settings that you don't specify. If your request is larger than
+         * 2MB, separate it into multiple requests, each with a size smaller than the
+         * limit. </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/managed-login-brandingdesigner.html#branding-designer-api">API
+         * and SDK operations for managed login branding</a> </p>  <p>Amazon Cognito
+         * evaluates Identity and Access Management (IAM) policies in requests for this API
+         * operation. For this operation, you must use IAM credentials to authorize
+         * requests, and you must grant yourself the corresponding IAM permission in a
+         * policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+         * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+         * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateManagedLoginBranding">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateManagedLoginBrandingOutcome CreateManagedLoginBranding(const Model::CreateManagedLoginBrandingRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateManagedLoginBranding that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateManagedLoginBrandingRequestT = Model::CreateManagedLoginBrandingRequest>
+        Model::CreateManagedLoginBrandingOutcomeCallable CreateManagedLoginBrandingCallable(const CreateManagedLoginBrandingRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::CreateManagedLoginBranding, request);
+        }
+
+        /**
+         * An Async wrapper for CreateManagedLoginBranding that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateManagedLoginBrandingRequestT = Model::CreateManagedLoginBrandingRequest>
+        void CreateManagedLoginBrandingAsync(const CreateManagedLoginBrandingRequestT& request, const CreateManagedLoginBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::CreateManagedLoginBranding, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new OAuth2.0 resource server and defines custom scopes within
          * it.</p>  <p>Amazon Cognito evaluates Identity and Access Management (IAM)
          * policies in requests for this API operation. For this operation, you must use
@@ -1616,7 +1701,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -1700,11 +1785,13 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Creates a new domain for a user pool.</p>  <p>Amazon Cognito evaluates
-         * Identity and Access Management (IAM) policies in requests for this API
-         * operation. For this operation, you must use IAM credentials to authorize
-         * requests, and you must grant yourself the corresponding IAM permission in a
-         * policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * <p>Creates a new domain for a user pool. The domain hosts user pool domain
+         * services like managed login, the hosted UI (classic), and the user pool
+         * authorization server.</p>  <p>Amazon Cognito evaluates Identity and Access
+         * Management (IAM) policies in requests for this API operation. For this
+         * operation, you must use IAM credentials to authorize requests, and you must
+         * grant yourself the corresponding IAM permission in a policy.</p> <p
+         * class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
          * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
@@ -1782,6 +1869,42 @@ namespace CognitoIdentityProvider
         void DeleteIdentityProviderAsync(const DeleteIdentityProviderRequestT& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CognitoIdentityProviderClient::DeleteIdentityProvider, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a managed login branding style. When you delete a style, you delete
+         * the branding association for an app client and restore it to default
+         * settings.</p>  <p>Amazon Cognito evaluates Identity and Access Management
+         * (IAM) policies in requests for this API operation. For this operation, you must
+         * use IAM credentials to authorize requests, and you must grant yourself the
+         * corresponding IAM permission in a policy.</p> <p class="title"> <b>Learn
+         * more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+         * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+         * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteManagedLoginBranding">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteManagedLoginBrandingOutcome DeleteManagedLoginBranding(const Model::DeleteManagedLoginBrandingRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteManagedLoginBranding that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteManagedLoginBrandingRequestT = Model::DeleteManagedLoginBrandingRequest>
+        Model::DeleteManagedLoginBrandingOutcomeCallable DeleteManagedLoginBrandingCallable(const DeleteManagedLoginBrandingRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::DeleteManagedLoginBranding, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteManagedLoginBranding that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteManagedLoginBrandingRequestT = Model::DeleteManagedLoginBrandingRequest>
+        void DeleteManagedLoginBrandingAsync(const DeleteManagedLoginBrandingRequestT& request, const DeleteManagedLoginBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::DeleteManagedLoginBranding, request, handler, context);
         }
 
         /**
@@ -1954,6 +2077,34 @@ namespace CognitoIdentityProvider
         }
 
         /**
+         * <p>Deletes a registered passkey, or webauthN, device for the currently signed-in
+         * user.</p> <p>Authorize this action with a signed-in user's access token. It must
+         * include the scope <code>aws.cognito.signin.user.admin</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteWebAuthnCredential">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWebAuthnCredentialOutcome DeleteWebAuthnCredential(const Model::DeleteWebAuthnCredentialRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWebAuthnCredential that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteWebAuthnCredentialRequestT = Model::DeleteWebAuthnCredentialRequest>
+        Model::DeleteWebAuthnCredentialOutcomeCallable DeleteWebAuthnCredentialCallable(const DeleteWebAuthnCredentialRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::DeleteWebAuthnCredential, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteWebAuthnCredential that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteWebAuthnCredentialRequestT = Model::DeleteWebAuthnCredentialRequest>
+        void DeleteWebAuthnCredentialAsync(const DeleteWebAuthnCredentialRequestT& request, const DeleteWebAuthnCredentialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::DeleteWebAuthnCredential, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about a specific IdP.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider">AWS
          * API Reference</a></p>
@@ -1976,6 +2127,58 @@ namespace CognitoIdentityProvider
         void DescribeIdentityProviderAsync(const DescribeIdentityProviderRequestT& request, const DescribeIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CognitoIdentityProviderClient::DescribeIdentityProvider, request, handler, context);
+        }
+
+        /**
+         * <p>When given the ID of a managed login branding style, returns detailed
+         * information about the style.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeManagedLoginBranding">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeManagedLoginBrandingOutcome DescribeManagedLoginBranding(const Model::DescribeManagedLoginBrandingRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeManagedLoginBranding that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeManagedLoginBrandingRequestT = Model::DescribeManagedLoginBrandingRequest>
+        Model::DescribeManagedLoginBrandingOutcomeCallable DescribeManagedLoginBrandingCallable(const DescribeManagedLoginBrandingRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::DescribeManagedLoginBranding, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeManagedLoginBranding that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeManagedLoginBrandingRequestT = Model::DescribeManagedLoginBrandingRequest>
+        void DescribeManagedLoginBrandingAsync(const DescribeManagedLoginBrandingRequestT& request, const DescribeManagedLoginBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::DescribeManagedLoginBranding, request, handler, context);
+        }
+
+        /**
+         * <p>When given the ID of a user pool app client, returns detailed information
+         * about the style assigned to the app client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeManagedLoginBrandingByClient">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeManagedLoginBrandingByClientOutcome DescribeManagedLoginBrandingByClient(const Model::DescribeManagedLoginBrandingByClientRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeManagedLoginBrandingByClient that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeManagedLoginBrandingByClientRequestT = Model::DescribeManagedLoginBrandingByClientRequest>
+        Model::DescribeManagedLoginBrandingByClientOutcomeCallable DescribeManagedLoginBrandingByClientCallable(const DescribeManagedLoginBrandingByClientRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::DescribeManagedLoginBrandingByClient, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeManagedLoginBrandingByClient that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeManagedLoginBrandingByClientRequestT = Model::DescribeManagedLoginBrandingByClientRequest>
+        void DescribeManagedLoginBrandingByClientAsync(const DescribeManagedLoginBrandingByClientRequestT& request, const DescribeManagedLoginBrandingByClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::DescribeManagedLoginBrandingByClient, request, handler, context);
         }
 
         /**
@@ -2216,7 +2419,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -2499,7 +2702,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -2529,6 +2732,36 @@ namespace CognitoIdentityProvider
         void GetUserAttributeVerificationCodeAsync(const GetUserAttributeVerificationCodeRequestT& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CognitoIdentityProviderClient::GetUserAttributeVerificationCode, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the authentication options for the currently signed-in user. Returns
+         * the following:</p> <ol> <li> <p>The user's multi-factor authentication (MFA)
+         * preferences.</p> </li> <li> <p>The user's options in the <code>USER_AUTH</code>
+         * flow that they can select in a <code>SELECT_CHALLENGE</code> response or request
+         * in a <code>PREFERRED_CHALLENGE</code>request.</p> </li> </ol><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAuthFactors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetUserAuthFactorsOutcome GetUserAuthFactors(const Model::GetUserAuthFactorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetUserAuthFactors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetUserAuthFactorsRequestT = Model::GetUserAuthFactorsRequest>
+        Model::GetUserAuthFactorsOutcomeCallable GetUserAuthFactorsCallable(const GetUserAuthFactorsRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::GetUserAuthFactors, request);
+        }
+
+        /**
+         * An Async wrapper for GetUserAuthFactors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetUserAuthFactorsRequestT = Model::GetUserAuthFactorsRequest>
+        void GetUserAuthFactorsAsync(const GetUserAuthFactorsRequestT& request, const GetUserAuthFactorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::GetUserAuthFactors, request, handler, context);
         }
 
         /**
@@ -2628,7 +2861,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -3001,6 +3234,32 @@ namespace CognitoIdentityProvider
         }
 
         /**
+         * <p>Generates a list of the current user's registered passkey, or webauthN,
+         * credentials.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListWebAuthnCredentials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWebAuthnCredentialsOutcome ListWebAuthnCredentials(const Model::ListWebAuthnCredentialsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWebAuthnCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListWebAuthnCredentialsRequestT = Model::ListWebAuthnCredentialsRequest>
+        Model::ListWebAuthnCredentialsOutcomeCallable ListWebAuthnCredentialsCallable(const ListWebAuthnCredentialsRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::ListWebAuthnCredentials, request);
+        }
+
+        /**
+         * An Async wrapper for ListWebAuthnCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListWebAuthnCredentialsRequestT = Model::ListWebAuthnCredentialsRequest>
+        void ListWebAuthnCredentialsAsync(const ListWebAuthnCredentialsRequestT& request, const ListWebAuthnCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::ListWebAuthnCredentials, request, handler, context);
+        }
+
+        /**
          * <p>Resends the confirmation (for confirmation of registration) to a specific
          * user in the user pool.</p>  <p>Amazon Cognito doesn't evaluate Identity
          * and Access Management (IAM) policies in requests for this API operation. For
@@ -3017,7 +3276,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -3073,7 +3332,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -3274,17 +3533,18 @@ namespace CognitoIdentityProvider
         }
 
         /**
-         * <p>Sets the user pool multi-factor authentication (MFA) configuration.</p>
-         *  <p>This action might generate an SMS text message. Starting June 1, 2021,
-         * US telecom carriers require you to register an origination phone number before
-         * you can send SMS messages to US phone numbers. If you use SMS text messages in
-         * Amazon Cognito, you must register a phone number with <a
-         * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
-         * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
-         * users who must receive SMS messages might not be able to sign up, activate their
-         * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
-         * Notification Service might place your account in the SMS sandbox. In <i> <a
+         * <p>Sets the user pool multi-factor authentication (MFA) and passkey
+         * configuration.</p>  <p>This action might generate an SMS text message.
+         * Starting June 1, 2021, US telecom carriers require you to register an
+         * origination phone number before you can send SMS messages to US phone numbers.
+         * If you use SMS text messages in Amazon Cognito, you must register a phone number
+         * with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
+         * Pinpoint</a>. Amazon Cognito uses the registered number automatically.
+         * Otherwise, Amazon Cognito users who must receive SMS messages might not be able
+         * to sign up, activate their accounts, or sign in.</p> <p>If you have never used
+         * SMS text messages with Amazon Cognito or any other Amazon Web Services service,
+         * Amazon Simple Notification Service might place your account in the SMS sandbox.
+         * In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
@@ -3370,7 +3630,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -3378,7 +3638,17 @@ namespace CognitoIdentityProvider
          * and into production. For more information, see <a
          * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">
          * SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito
-         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p>  <p>You might receive a
+         * <code>LimitExceeded</code> exception in response to this request if you have
+         * exceeded a rate quota for email or SMS messages, and if your user pool
+         * automatically verifies email addresses or phone numbers. When you get this
+         * exception in the response, the user is successfully created and is in an
+         * <code>UNCONFIRMED</code> state. You can send a new code with the <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ResendConfirmationCode.html">
+         * ResendConfirmationCode</a> request, or confirm the user as an administrator with
+         * an <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminConfirmSignUp.html">
+         * AdminConfirmSignUp</a> request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp">AWS
          * API Reference</a></p>
          */
@@ -3425,6 +3695,40 @@ namespace CognitoIdentityProvider
         void StartUserImportJobAsync(const StartUserImportJobRequestT& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CognitoIdentityProviderClient::StartUserImportJob, request, handler, context);
+        }
+
+        /**
+         * <p>Requests credential creation options from your user pool for registration of
+         * a passkey authenticator. Returns information about the user pool, the user
+         * profile, and authentication requirements. Users must provide this information in
+         * their request to enroll your application with their passkey provider.</p>
+         * <p>After users present this data and register with their passkey provider,
+         * return the response to your user pool in a <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CompleteWebAuthnRegistration.html">
+         * CompleteWebAuthnRegistration</a> API request.</p> <p>Authorize this action with
+         * a signed-in user's access token. It must include the scope
+         * <code>aws.cognito.signin.user.admin</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartWebAuthnRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartWebAuthnRegistrationOutcome StartWebAuthnRegistration(const Model::StartWebAuthnRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartWebAuthnRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartWebAuthnRegistrationRequestT = Model::StartWebAuthnRegistrationRequest>
+        Model::StartWebAuthnRegistrationOutcomeCallable StartWebAuthnRegistrationCallable(const StartWebAuthnRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::StartWebAuthnRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for StartWebAuthnRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartWebAuthnRegistrationRequestT = Model::StartWebAuthnRegistrationRequest>
+        void StartWebAuthnRegistrationAsync(const StartWebAuthnRegistrationRequestT& request, const StartWebAuthnRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::StartWebAuthnRegistration, request, handler, context);
         }
 
         /**
@@ -3658,6 +3962,51 @@ namespace CognitoIdentityProvider
         }
 
         /**
+         * <p>Configures the branding settings for a user pool style. This operation is the
+         * programmatic option for the configuration of a style in the branding
+         * designer.</p> <p>Provides values for UI customization in a <code>Settings</code>
+         * JSON object and image files in an <code>Assets</code> array.</p> <p> This
+         * operation has a 2-megabyte request-size limit and include the CSS settings and
+         * image assets for your app client. Your branding settings might exceed 2MB in
+         * size. Amazon Cognito doesn't require that you pass all parameters in one request
+         * and preserves existing style settings that you don't specify. If your request is
+         * larger than 2MB, separate it into multiple requests, each with a size smaller
+         * than the limit. </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/managed-login-brandingdesigner.html#branding-designer-api">API
+         * and SDK operations for managed login branding</a>.</p>  <p>Amazon Cognito
+         * evaluates Identity and Access Management (IAM) policies in requests for this API
+         * operation. For this operation, you must use IAM credentials to authorize
+         * requests, and you must grant yourself the corresponding IAM permission in a
+         * policy.</p> <p class="title"> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+         * Amazon Web Services API Requests</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+         * the Amazon Cognito user pools API and user pool endpoints</a> </p> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateManagedLoginBranding">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateManagedLoginBrandingOutcome UpdateManagedLoginBranding(const Model::UpdateManagedLoginBrandingRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for UpdateManagedLoginBranding that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateManagedLoginBrandingRequestT = Model::UpdateManagedLoginBrandingRequest>
+        Model::UpdateManagedLoginBrandingOutcomeCallable UpdateManagedLoginBrandingCallable(const UpdateManagedLoginBrandingRequestT& request = {}) const
+        {
+            return SubmitCallable(&CognitoIdentityProviderClient::UpdateManagedLoginBranding, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateManagedLoginBranding that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateManagedLoginBrandingRequestT = Model::UpdateManagedLoginBrandingRequest>
+        void UpdateManagedLoginBrandingAsync(const UpdateManagedLoginBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const UpdateManagedLoginBrandingRequestT& request = {}) const
+        {
+            return SubmitAsync(&CognitoIdentityProviderClient::UpdateManagedLoginBranding, request, handler, context);
+        }
+
+        /**
          * <p>Updates the name and scopes of resource server. All other fields are
          * read-only.</p>  <p>If you don't provide a value for an attribute, it
          * is set to the default value.</p>   <p>Amazon Cognito evaluates
@@ -3715,7 +4064,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
@@ -3756,7 +4105,7 @@ namespace CognitoIdentityProvider
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
          * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Servicesservice, Amazon Simple
+         * Amazon Cognito or any other Amazon Web Services service, Amazon Simple
          * Notification Service might place your account in the SMS sandbox. In <i> <a
          * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you

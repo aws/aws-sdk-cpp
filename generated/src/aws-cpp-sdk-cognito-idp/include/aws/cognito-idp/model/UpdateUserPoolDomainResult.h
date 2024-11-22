@@ -39,6 +39,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>A version number that indicates the state of managed login for your domain.
+     * Version <code>1</code> is hosted UI (classic). Version <code>2</code> is the
+     * newer managed login with the branding designer. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed
+     * login</a>.</p>
+     */
+    inline int GetManagedLoginVersion() const{ return m_managedLoginVersion; }
+    inline void SetManagedLoginVersion(int value) { m_managedLoginVersion = value; }
+    inline UpdateUserPoolDomainResult& WithManagedLoginVersion(int value) { SetManagedLoginVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon CloudFront endpoint that Amazon Cognito set up when you added the
      * custom domain to your user pool.</p>
      */
@@ -62,6 +75,8 @@ namespace Model
     inline UpdateUserPoolDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
     ///@}
   private:
+
+    int m_managedLoginVersion;
 
     Aws::String m_cloudFrontDomain;
 

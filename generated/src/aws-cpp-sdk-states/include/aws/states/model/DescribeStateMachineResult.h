@@ -12,6 +12,8 @@
 #include <aws/states/model/LoggingConfiguration.h>
 #include <aws/states/model/TracingConfiguration.h>
 #include <aws/states/model/EncryptionConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -216,6 +218,25 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>A map of <b>state name</b> to a list of variables referenced by that state.
+     * States that do not use variable references will not be shown in the
+     * response.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetVariableReferences() const{ return m_variableReferences; }
+    inline void SetVariableReferences(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_variableReferences = value; }
+    inline void SetVariableReferences(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_variableReferences = std::move(value); }
+    inline DescribeStateMachineResult& WithVariableReferences(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetVariableReferences(value); return *this;}
+    inline DescribeStateMachineResult& WithVariableReferences(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetVariableReferences(std::move(value)); return *this;}
+    inline DescribeStateMachineResult& AddVariableReferences(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_variableReferences.emplace(key, value); return *this; }
+    inline DescribeStateMachineResult& AddVariableReferences(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_variableReferences.emplace(std::move(key), value); return *this; }
+    inline DescribeStateMachineResult& AddVariableReferences(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_variableReferences.emplace(key, std::move(value)); return *this; }
+    inline DescribeStateMachineResult& AddVariableReferences(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_variableReferences.emplace(std::move(key), std::move(value)); return *this; }
+    inline DescribeStateMachineResult& AddVariableReferences(const char* key, Aws::Vector<Aws::String>&& value) { m_variableReferences.emplace(key, std::move(value)); return *this; }
+    inline DescribeStateMachineResult& AddVariableReferences(const char* key, const Aws::Vector<Aws::String>& value) { m_variableReferences.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -252,6 +273,8 @@ namespace Model
     Aws::String m_description;
 
     EncryptionConfiguration m_encryptionConfiguration;
+
+    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_variableReferences;
 
     Aws::String m_requestId;
   };

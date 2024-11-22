@@ -211,6 +211,47 @@ namespace BedrockAgentRuntime
         }
 
         /**
+         * <p> Invokes an inline Amazon Bedrock agent using the configurations you provide
+         * with the request. </p> <ul> <li> <p>Specify the following fields for security
+         * purposes.</p> <ul> <li> <p>(Optional) <code>customerEncryptionKeyArn</code> –
+         * The Amazon Resource Name (ARN) of a KMS key to encrypt the creation of the
+         * agent.</p> </li> <li> <p>(Optional) <code>idleSessionTTLinSeconds</code> –
+         * Specify the number of seconds for which the agent should maintain session
+         * information. After this time expires, the subsequent
+         * <code>InvokeInlineAgent</code> request begins a new session.</p> </li> </ul>
+         * </li> <li> <p>To override the default prompt behavior for agent orchestration
+         * and to use advanced prompts, include a <code>promptOverrideConfiguration</code>
+         * object. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+         * prompts</a>.</p> </li> <li> <p>The agent instructions will not be honored if
+         * your agent has only one knowledge base, uses default prompts, has no action
+         * group, and user input is disabled.</p> </li> </ul>  <p>The CLI doesn't
+         * support streaming operations in Amazon Bedrock, including
+         * <code>InvokeInlineAgent</code>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeInlineAgent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::InvokeInlineAgentOutcome InvokeInlineAgent(Model::InvokeInlineAgentRequest& request) const;
+
+        /**
+         * A Callable wrapper for InvokeInlineAgent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename InvokeInlineAgentRequestT = Model::InvokeInlineAgentRequest>
+        Model::InvokeInlineAgentOutcomeCallable InvokeInlineAgentCallable(InvokeInlineAgentRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::InvokeInlineAgent, request);
+        }
+
+        /**
+         * An Async wrapper for InvokeInlineAgent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename InvokeInlineAgentRequestT = Model::InvokeInlineAgentRequest>
+        void InvokeInlineAgentAsync(InvokeInlineAgentRequestT& request, const InvokeInlineAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::InvokeInlineAgent, request, handler, context);
+        }
+
+        /**
          * <p>Optimizes a prompt for the task that you specify. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-optimize.html">Optimize

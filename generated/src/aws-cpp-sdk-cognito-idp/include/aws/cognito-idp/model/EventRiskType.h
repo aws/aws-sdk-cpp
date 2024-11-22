@@ -25,7 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>The event risk type.</p><p><h3>See Also:</h3>   <a
+   * <p>The risk evaluation by adaptive authentication, as displayed in an <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>
+   * response. Contains evaluations of compromised-credentials detection and assessed
+   * risk level and action taken by adaptive authentication.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EventRiskType">AWS
    * API Reference</a></p>
    */
@@ -40,7 +44,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The risk decision.</p>
+     * <p>The action taken by adaptive authentication. If <code>NoRisk</code>, your
+     * user pool took no action. If <code>AccountTakeover</code>, your user pool
+     * applied the adaptive authentication automated response that you configured. If
+     * <code>Block</code>, your user pool prevented the attempt.</p>
      */
     inline const RiskDecisionType& GetRiskDecision() const{ return m_riskDecision; }
     inline bool RiskDecisionHasBeenSet() const { return m_riskDecisionHasBeenSet; }
@@ -52,7 +59,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The risk level.</p>
+     * <p>The risk level that adaptive authentication assessed for the authentication
+     * event.</p>
      */
     inline const RiskLevelType& GetRiskLevel() const{ return m_riskLevel; }
     inline bool RiskLevelHasBeenSet() const { return m_riskLevelHasBeenSet; }

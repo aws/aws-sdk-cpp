@@ -19,7 +19,8 @@ namespace Model
     VISUAL,
     FILTER_CONTROL,
     PARAMETER_CONTROL,
-    TEXT_BOX
+    TEXT_BOX,
+    IMAGE
   };
 
 namespace LayoutElementTypeMapper

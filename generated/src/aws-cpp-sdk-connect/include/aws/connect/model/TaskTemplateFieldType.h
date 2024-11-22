@@ -27,7 +27,9 @@ namespace Model
     DATE_TIME,
     BOOLEAN,
     SINGLE_SELECT,
-    EMAIL
+    EMAIL,
+    SELF_ASSIGN,
+    EXPIRY_DURATION
   };
 
 namespace TaskTemplateFieldTypeMapper

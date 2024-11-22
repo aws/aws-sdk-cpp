@@ -25,7 +25,21 @@ namespace Model
 {
 
   /**
-   * <p>The group type.</p><p><h3>See Also:</h3>   <a
+   * <p>A user pool group. Contains details about the group and the way that it
+   * contributes to IAM role decisions with identity pools. Identity pools can make
+   * decisions about the IAM role to assign based on groups: users get credentials
+   * for the role associated with their highest-priority group.</p> <p>This data type
+   * is a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListGroupsForUser.html">AdminListGroupsForUser</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetGroup.html">GetGroup</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListGroups.html">ListGroups</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateGroup.html">UpdateGroup</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GroupType">AWS
    * API Reference</a></p>
    */
@@ -54,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool.</p>
+     * <p>The ID of the user pool that contains the group.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -68,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A string containing the description of the group.</p>
+     * <p>A friendly description of the group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -82,7 +96,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The role Amazon Resource Name (ARN) for the group.</p>
+     * <p>The ARN of the IAM role associated with the group. If a group has the highest
+     * priority of a user's groups, users who authenticate with an identity pool get
+     * credentials for the <code>RoleArn</code> that's associated with the group.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -109,7 +125,7 @@ namespace Model
      * <code>cognito:preferred_role</code> claim in tokens for users in each group. If
      * the two groups have different role ARNs, the <code>cognito:preferred_role</code>
      * claim isn't set in users' tokens.</p> <p>The default <code>Precedence</code>
-     * value is null.</p>
+     * value is <code>null</code>.</p>
      */
     inline int GetPrecedence() const{ return m_precedence; }
     inline bool PrecedenceHasBeenSet() const { return m_precedenceHasBeenSet; }

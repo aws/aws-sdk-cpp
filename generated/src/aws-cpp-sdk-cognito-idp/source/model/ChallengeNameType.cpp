@@ -27,10 +27,15 @@ namespace Aws
         static const int MFA_SETUP_HASH = HashingUtils::HashString("MFA_SETUP");
         static const int PASSWORD_VERIFIER_HASH = HashingUtils::HashString("PASSWORD_VERIFIER");
         static const int CUSTOM_CHALLENGE_HASH = HashingUtils::HashString("CUSTOM_CHALLENGE");
+        static const int SELECT_CHALLENGE_HASH = HashingUtils::HashString("SELECT_CHALLENGE");
         static const int DEVICE_SRP_AUTH_HASH = HashingUtils::HashString("DEVICE_SRP_AUTH");
         static const int DEVICE_PASSWORD_VERIFIER_HASH = HashingUtils::HashString("DEVICE_PASSWORD_VERIFIER");
         static const int ADMIN_NO_SRP_AUTH_HASH = HashingUtils::HashString("ADMIN_NO_SRP_AUTH");
         static const int NEW_PASSWORD_REQUIRED_HASH = HashingUtils::HashString("NEW_PASSWORD_REQUIRED");
+        static const int SMS_OTP_HASH = HashingUtils::HashString("SMS_OTP");
+        static const int PASSWORD_HASH = HashingUtils::HashString("PASSWORD");
+        static const int WEB_AUTHN_HASH = HashingUtils::HashString("WEB_AUTHN");
+        static const int PASSWORD_SRP_HASH = HashingUtils::HashString("PASSWORD_SRP");
 
 
         ChallengeNameType GetChallengeNameTypeForName(const Aws::String& name)
@@ -64,6 +69,10 @@ namespace Aws
           {
             return ChallengeNameType::CUSTOM_CHALLENGE;
           }
+          else if (hashCode == SELECT_CHALLENGE_HASH)
+          {
+            return ChallengeNameType::SELECT_CHALLENGE;
+          }
           else if (hashCode == DEVICE_SRP_AUTH_HASH)
           {
             return ChallengeNameType::DEVICE_SRP_AUTH;
@@ -79,6 +88,22 @@ namespace Aws
           else if (hashCode == NEW_PASSWORD_REQUIRED_HASH)
           {
             return ChallengeNameType::NEW_PASSWORD_REQUIRED;
+          }
+          else if (hashCode == SMS_OTP_HASH)
+          {
+            return ChallengeNameType::SMS_OTP;
+          }
+          else if (hashCode == PASSWORD_HASH)
+          {
+            return ChallengeNameType::PASSWORD;
+          }
+          else if (hashCode == WEB_AUTHN_HASH)
+          {
+            return ChallengeNameType::WEB_AUTHN;
+          }
+          else if (hashCode == PASSWORD_SRP_HASH)
+          {
+            return ChallengeNameType::PASSWORD_SRP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -110,6 +135,8 @@ namespace Aws
             return "PASSWORD_VERIFIER";
           case ChallengeNameType::CUSTOM_CHALLENGE:
             return "CUSTOM_CHALLENGE";
+          case ChallengeNameType::SELECT_CHALLENGE:
+            return "SELECT_CHALLENGE";
           case ChallengeNameType::DEVICE_SRP_AUTH:
             return "DEVICE_SRP_AUTH";
           case ChallengeNameType::DEVICE_PASSWORD_VERIFIER:
@@ -118,6 +145,14 @@ namespace Aws
             return "ADMIN_NO_SRP_AUTH";
           case ChallengeNameType::NEW_PASSWORD_REQUIRED:
             return "NEW_PASSWORD_REQUIRED";
+          case ChallengeNameType::SMS_OTP:
+            return "SMS_OTP";
+          case ChallengeNameType::PASSWORD:
+            return "PASSWORD";
+          case ChallengeNameType::WEB_AUTHN:
+            return "WEB_AUTHN";
+          case ChallengeNameType::PASSWORD_SRP:
+            return "PASSWORD_SRP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

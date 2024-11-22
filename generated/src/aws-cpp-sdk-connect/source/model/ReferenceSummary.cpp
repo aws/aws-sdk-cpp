@@ -21,6 +21,7 @@ namespace Model
 ReferenceSummary::ReferenceSummary() : 
     m_urlHasBeenSet(false),
     m_attachmentHasBeenSet(false),
+    m_emailMessageHasBeenSet(false),
     m_stringHasBeenSet(false),
     m_numberHasBeenSet(false),
     m_dateHasBeenSet(false),
@@ -48,6 +49,13 @@ ReferenceSummary& ReferenceSummary::operator =(JsonView jsonValue)
     m_attachment = jsonValue.GetObject("Attachment");
 
     m_attachmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EmailMessage"))
+  {
+    m_emailMessage = jsonValue.GetObject("EmailMessage");
+
+    m_emailMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("String"))
@@ -94,6 +102,12 @@ JsonValue ReferenceSummary::Jsonize() const
   if(m_attachmentHasBeenSet)
   {
    payload.WithObject("Attachment", m_attachment.Jsonize());
+
+  }
+
+  if(m_emailMessageHasBeenSet)
+  {
+   payload.WithObject("EmailMessage", m_emailMessage.Jsonize());
 
   }
 

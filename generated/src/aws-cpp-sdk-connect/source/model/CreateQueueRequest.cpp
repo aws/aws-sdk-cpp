@@ -17,6 +17,7 @@ CreateQueueRequest::CreateQueueRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_outboundCallerConfigHasBeenSet(false),
+    m_outboundEmailConfigHasBeenSet(false),
     m_hoursOfOperationIdHasBeenSet(false),
     m_maxContacts(0),
     m_maxContactsHasBeenSet(false),
@@ -44,6 +45,12 @@ Aws::String CreateQueueRequest::SerializePayload() const
   if(m_outboundCallerConfigHasBeenSet)
   {
    payload.WithObject("OutboundCallerConfig", m_outboundCallerConfig.Jsonize());
+
+  }
+
+  if(m_outboundEmailConfigHasBeenSet)
+  {
+   payload.WithObject("OutboundEmailConfig", m_outboundEmailConfig.Jsonize());
 
   }
 

@@ -126,6 +126,20 @@ namespace Model
     inline GeospatialMapVisual& AddActions(const VisualCustomAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
     inline GeospatialMapVisual& AddActions(VisualCustomAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The alt text for the visual.</p>
+     */
+    inline const Aws::String& GetVisualContentAltText() const{ return m_visualContentAltText; }
+    inline bool VisualContentAltTextHasBeenSet() const { return m_visualContentAltTextHasBeenSet; }
+    inline void SetVisualContentAltText(const Aws::String& value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText = value; }
+    inline void SetVisualContentAltText(Aws::String&& value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText = std::move(value); }
+    inline void SetVisualContentAltText(const char* value) { m_visualContentAltTextHasBeenSet = true; m_visualContentAltText.assign(value); }
+    inline GeospatialMapVisual& WithVisualContentAltText(const Aws::String& value) { SetVisualContentAltText(value); return *this;}
+    inline GeospatialMapVisual& WithVisualContentAltText(Aws::String&& value) { SetVisualContentAltText(std::move(value)); return *this;}
+    inline GeospatialMapVisual& WithVisualContentAltText(const char* value) { SetVisualContentAltText(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_visualId;
@@ -145,6 +159,9 @@ namespace Model
 
     Aws::Vector<VisualCustomAction> m_actions;
     bool m_actionsHasBeenSet = false;
+
+    Aws::String m_visualContentAltText;
+    bool m_visualContentAltTextHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,12 @@ namespace Model
 {
 
   /**
-   * <p>The authentication event type.</p><p><h3>See Also:</h3>   <a
+   * <p>One authentication event that Amazon Cognito logged in a user pool with
+   * advanced security features active. Contains user and device metadata and a risk
+   * assessment from your user pool.</p> <p>This data type is a request parameter of
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AuthEventType">AWS
    * API Reference</a></p>
    */
@@ -61,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The event type.</p>
+     * <p>The type of authentication event.</p>
      */
     inline const EventType& GetEventType() const{ return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
@@ -99,7 +104,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The event risk.</p>
+     * <p>The threat evaluation from your user pool about an event. Contains
+     * information about whether your user pool detected compromised credentials,
+     * whether the event triggered an automated response, and the level of risk.</p>
      */
     inline const EventRiskType& GetEventRisk() const{ return m_eventRisk; }
     inline bool EventRiskHasBeenSet() const { return m_eventRiskHasBeenSet; }
@@ -111,7 +118,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The challenge responses.</p>
+     * <p>A list of the challenges that the user was requested to answer, for example
+     * <code>Password</code>, and the result, for example <code>Success</code>.</p>
      */
     inline const Aws::Vector<ChallengeResponseType>& GetChallengeResponses() const{ return m_challengeResponses; }
     inline bool ChallengeResponsesHasBeenSet() const { return m_challengeResponsesHasBeenSet; }
@@ -139,8 +147,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>A flag specifying the user feedback captured at the time of an event request
-     * is good or bad. </p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateAuthEventFeedback.html">UpdateAuthEventFeedback</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateAuthEventFeedback.html">AdminUpdateAuthEventFeedback</a>
+     * feedback that you or your user provided in response to the event. A value of
+     * <code>Valid</code> indicates that you disagreed with the level of risk that your
+     * user pool assigned, and evaluated a session to be valid, or likely safe. A value
+     * of <code>Invalid</code> indicates that you agreed with the user pool risk level
+     * and evaluated a session to be invalid, or likely malicious.</p>
      */
     inline const EventFeedbackType& GetEventFeedback() const{ return m_eventFeedback; }
     inline bool EventFeedbackHasBeenSet() const { return m_eventFeedbackHasBeenSet; }

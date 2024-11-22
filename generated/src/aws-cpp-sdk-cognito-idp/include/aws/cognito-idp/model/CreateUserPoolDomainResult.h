@@ -34,6 +34,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The version of managed login branding applied your domain. A value of
+     * <code>1</code> indicates hosted UI (classic) branding and a version of
+     * <code>2</code> indicates managed login branding.</p>
+     */
+    inline int GetManagedLoginVersion() const{ return m_managedLoginVersion; }
+    inline void SetManagedLoginVersion(int value) { m_managedLoginVersion = value; }
+    inline CreateUserPoolDomainResult& WithManagedLoginVersion(int value) { SetManagedLoginVersion(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
      * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
      * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
@@ -60,6 +71,8 @@ namespace Model
     inline CreateUserPoolDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
     ///@}
   private:
+
+    int m_managedLoginVersion;
 
     Aws::String m_cloudFrontDomain;
 

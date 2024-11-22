@@ -67,6 +67,12 @@ UpdateTaskTemplateResult& UpdateTaskTemplateResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("SelfAssignFlowId"))
+  {
+    m_selfAssignFlowId = jsonValue.GetString("SelfAssignFlowId");
+
+  }
+
   if(jsonValue.ValueExists("Constraints"))
   {
     m_constraints = jsonValue.GetObject("Constraints");

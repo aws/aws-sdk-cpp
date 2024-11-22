@@ -22,7 +22,15 @@ namespace Model
 {
 
   /**
-   * <p>The password policy type.</p><p><h3>See Also:</h3>   <a
+   * <p>The password policy settings for a user pool, including complexity, history,
+   * and length requirements.</p> <p>This data type is a request and response
+   * parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/PasswordPolicyType">AWS
    * API Reference</a></p>
    */
@@ -48,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>In the password policy that you have set, refers to whether you have required
-     * users to use at least one uppercase letter in their password.</p>
+     * <p>The requirement in a password policy that users must include at least one
+     * uppercase letter in their password.</p>
      */
     inline bool GetRequireUppercase() const{ return m_requireUppercase; }
     inline bool RequireUppercaseHasBeenSet() const { return m_requireUppercaseHasBeenSet; }
@@ -59,8 +67,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>In the password policy that you have set, refers to whether you have required
-     * users to use at least one lowercase letter in their password.</p>
+     * <p>The requirement in a password policy that users must include at least one
+     * lowercase letter in their password.</p>
      */
     inline bool GetRequireLowercase() const{ return m_requireLowercase; }
     inline bool RequireLowercaseHasBeenSet() const { return m_requireLowercaseHasBeenSet; }
@@ -70,8 +78,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>In the password policy that you have set, refers to whether you have required
-     * users to use at least one number in their password.</p>
+     * <p>The requirement in a password policy that users must include at least one
+     * number in their password.</p>
      */
     inline bool GetRequireNumbers() const{ return m_requireNumbers; }
     inline bool RequireNumbersHasBeenSet() const { return m_requireNumbersHasBeenSet; }
@@ -81,8 +89,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>In the password policy that you have set, refers to whether you have required
-     * users to use at least one symbol in their password.</p>
+     * <p>The requirement in a password policy that users must include at least one
+     * symbol in their password.</p>
      */
     inline bool GetRequireSymbols() const{ return m_requireSymbols; }
     inline bool RequireSymbolsHasBeenSet() const { return m_requireSymbolsHasBeenSet; }

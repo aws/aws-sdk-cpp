@@ -33,7 +33,10 @@ UpdateUserPoolRequest::UpdateUserPoolRequest() :
     m_userPoolTagsHasBeenSet(false),
     m_adminCreateUserConfigHasBeenSet(false),
     m_userPoolAddOnsHasBeenSet(false),
-    m_accountRecoverySettingHasBeenSet(false)
+    m_accountRecoverySettingHasBeenSet(false),
+    m_poolNameHasBeenSet(false),
+    m_userPoolTier(UserPoolTierType::NOT_SET),
+    m_userPoolTierHasBeenSet(false)
 {
 }
 
@@ -161,6 +164,17 @@ Aws::String UpdateUserPoolRequest::SerializePayload() const
   {
    payload.WithObject("AccountRecoverySetting", m_accountRecoverySetting.Jsonize());
 
+  }
+
+  if(m_poolNameHasBeenSet)
+  {
+   payload.WithString("PoolName", m_poolName);
+
+  }
+
+  if(m_userPoolTierHasBeenSet)
+  {
+   payload.WithString("UserPoolTier", UserPoolTierTypeMapper::GetNameForUserPoolTierType(m_userPoolTier));
   }
 
   return payload.View().WriteReadable();

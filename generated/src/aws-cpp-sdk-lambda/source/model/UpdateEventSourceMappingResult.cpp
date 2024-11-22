@@ -236,6 +236,12 @@ UpdateEventSourceMappingResult& UpdateEventSourceMappingResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("ProvisionedPollerConfig"))
+  {
+    m_provisionedPollerConfig = jsonValue.GetObject("ProvisionedPollerConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

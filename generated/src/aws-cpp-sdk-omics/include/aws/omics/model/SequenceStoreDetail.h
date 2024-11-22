@@ -9,6 +9,7 @@
 #include <aws/omics/model/SseConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/ETagAlgorithmFamily.h>
+#include <aws/omics/model/SequenceStoreStatus.h>
 #include <utility>
 
 namespace Aws
@@ -146,6 +147,44 @@ namespace Model
     inline SequenceStoreDetail& WithETagAlgorithmFamily(const ETagAlgorithmFamily& value) { SetETagAlgorithmFamily(value); return *this;}
     inline SequenceStoreDetail& WithETagAlgorithmFamily(ETagAlgorithmFamily&& value) { SetETagAlgorithmFamily(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Status of the sequence store.</p>
+     */
+    inline const SequenceStoreStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const SequenceStoreStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(SequenceStoreStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline SequenceStoreDetail& WithStatus(const SequenceStoreStatus& value) { SetStatus(value); return *this;}
+    inline SequenceStoreDetail& WithStatus(SequenceStoreStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status message of the sequence store.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
+    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
+    inline SequenceStoreDetail& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+    inline SequenceStoreDetail& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+    inline SequenceStoreDetail& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The last-updated time of the Sequence Store.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
+    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
+    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
+    inline SequenceStoreDetail& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
+    inline SequenceStoreDetail& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -171,6 +210,15 @@ namespace Model
 
     ETagAlgorithmFamily m_eTagAlgorithmFamily;
     bool m_eTagAlgorithmFamilyHasBeenSet = false;
+
+    SequenceStoreStatus m_status;
+    bool m_statusHasBeenSet = false;
+
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updateTime;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

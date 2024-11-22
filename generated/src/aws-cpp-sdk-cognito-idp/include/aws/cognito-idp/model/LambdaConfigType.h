@@ -27,8 +27,16 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the configuration for Lambda triggers.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at
+   * several possible stages of user pool operations. Triggers can modify the outcome
+   * of the operations that invoked them.</p> <p>This data type is a request and
+   * response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/LambdaConfigType">AWS
    * API Reference</a></p>
    */
@@ -43,7 +51,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>A pre-registration Lambda trigger.</p>
+     * <p>The configuration of a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">pre
+     * sign-up Lambda trigger</a> in a user pool. This trigger evaluates new users and
+     * can bypass confirmation, <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">link
+     * a federated user profile</a>, or block sign-up requests.</p>
      */
     inline const Aws::String& GetPreSignUp() const{ return m_preSignUp; }
     inline bool PreSignUpHasBeenSet() const { return m_preSignUpHasBeenSet; }
@@ -57,7 +70,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A custom Message Lambda trigger.</p>
+     * <p>A custom message Lambda trigger. This trigger is an opportunity to customize
+     * all SMS and email messages from your user pool. When a custom message trigger is
+     * active, your user pool routes all messages to a Lambda function that returns a
+     * runtime-customized message subject and body for your user pool to deliver to a
+     * user.</p>
      */
     inline const Aws::String& GetCustomMessage() const{ return m_customMessage; }
     inline bool CustomMessageHasBeenSet() const { return m_customMessageHasBeenSet; }
@@ -71,7 +88,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A post-confirmation Lambda trigger.</p>
+     * <p>The configuration of a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-post-confirmation.html">post
+     * confirmation Lambda trigger</a> in a user pool. This trigger can take custom
+     * actions after a user confirms their user account and their email address or
+     * phone number.</p>
      */
     inline const Aws::String& GetPostConfirmation() const{ return m_postConfirmation; }
     inline bool PostConfirmationHasBeenSet() const { return m_postConfirmationHasBeenSet; }
@@ -85,7 +106,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A pre-authentication Lambda trigger.</p>
+     * <p>The configuration of a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-authentication.html">pre
+     * authentication trigger</a> in a user pool. This trigger can evaluate and modify
+     * user sign-in events.</p>
      */
     inline const Aws::String& GetPreAuthentication() const{ return m_preAuthentication; }
     inline bool PreAuthenticationHasBeenSet() const { return m_preAuthenticationHasBeenSet; }
@@ -99,7 +123,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A post-authentication Lambda trigger.</p>
+     * <p>The configuration of a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-post-authentication.html">post
+     * authentication Lambda trigger</a> in a user pool. This trigger can take custom
+     * actions after a user signs in.</p>
      */
     inline const Aws::String& GetPostAuthentication() const{ return m_postAuthentication; }
     inline bool PostAuthenticationHasBeenSet() const { return m_postAuthenticationHasBeenSet; }
@@ -113,7 +140,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Defines the authentication challenge.</p>
+     * <p>The configuration of a define auth challenge Lambda trigger, one of three
+     * triggers in the sequence of the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">custom
+     * authentication challenge triggers</a>.</p>
      */
     inline const Aws::String& GetDefineAuthChallenge() const{ return m_defineAuthChallenge; }
     inline bool DefineAuthChallengeHasBeenSet() const { return m_defineAuthChallengeHasBeenSet; }
@@ -127,7 +157,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Creates an authentication challenge.</p>
+     * <p>The configuration of a create auth challenge Lambda trigger, one of three
+     * triggers in the sequence of the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">custom
+     * authentication challenge triggers</a>.</p>
      */
     inline const Aws::String& GetCreateAuthChallenge() const{ return m_createAuthChallenge; }
     inline bool CreateAuthChallengeHasBeenSet() const { return m_createAuthChallengeHasBeenSet; }
@@ -141,7 +174,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Verifies the authentication challenge response.</p>
+     * <p>The configuration of a verify auth challenge Lambda trigger, one of three
+     * triggers in the sequence of the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">custom
+     * authentication challenge triggers</a>.</p>
      */
     inline const Aws::String& GetVerifyAuthChallengeResponse() const{ return m_verifyAuthChallengeResponse; }
     inline bool VerifyAuthChallengeResponseHasBeenSet() const { return m_verifyAuthChallengeResponseHasBeenSet; }
@@ -155,12 +191,14 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
-     * your Lambda trigger.</p> <p>Set this parameter for legacy purposes. If you also
-     * set an ARN in <code>PreTokenGenerationConfig</code>, its value must be identical
-     * to <code>PreTokenGeneration</code>. For new instances of pre token generation
+     * <p>The legacy configuration of a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-token-generation.html">pre
+     * token generation Lambda trigger</a> in a user pool.</p> <p>Set this parameter
+     * for legacy purposes. If you also set an ARN in
+     * <code>PreTokenGenerationConfig</code>, its value must be identical to
+     * <code>PreTokenGeneration</code>. For new instances of pre token generation
      * triggers, set the <code>LambdaArn</code> of
-     * <code>PreTokenGenerationConfig</code>.</p> <p>You can set <code/> </p>
+     * <code>PreTokenGenerationConfig</code>.</p>
      */
     inline const Aws::String& GetPreTokenGeneration() const{ return m_preTokenGeneration; }
     inline bool PreTokenGenerationHasBeenSet() const { return m_preTokenGenerationHasBeenSet; }
@@ -174,7 +212,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user migration Lambda config type.</p>
+     * <p>The configuration of a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-migrate-user.html">migrate
+     * user Lambda trigger</a> in a user pool. This trigger can create user profiles
+     * when users sign in or attempt to reset their password with credentials that
+     * don't exist yet.</p>
      */
     inline const Aws::String& GetUserMigration() const{ return m_userMigration; }
     inline bool UserMigrationHasBeenSet() const { return m_userMigrationHasBeenSet; }
@@ -188,8 +230,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The detailed configuration of a pre token generation trigger. If you also set
-     * an ARN in <code>PreTokenGeneration</code>, its value must be identical to
+     * <p>The detailed configuration of a <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-token-generation.html">pre
+     * token generation Lambda trigger</a> in a user pool. If you also set an ARN in
+     * <code>PreTokenGeneration</code>, its value must be identical to
      * <code>PreTokenGenerationConfig</code>.</p>
      */
     inline const PreTokenGenerationVersionConfigType& GetPreTokenGenerationConfig() const{ return m_preTokenGenerationConfig; }
@@ -202,7 +246,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A custom SMS sender Lambda trigger.</p>
+     * <p>The configuration of a custom SMS sender Lambda trigger. This trigger routes
+     * all SMS notifications from a user pool to a Lambda function that delivers the
+     * message using custom logic.</p>
      */
     inline const CustomSMSLambdaVersionConfigType& GetCustomSMSSender() const{ return m_customSMSSender; }
     inline bool CustomSMSSenderHasBeenSet() const { return m_customSMSSenderHasBeenSet; }
@@ -214,7 +260,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A custom email sender Lambda trigger.</p>
+     * <p>The configuration of a custom email sender Lambda trigger. This trigger
+     * routes all email notifications from a user pool to a Lambda function that
+     * delivers the message using custom logic.</p>
      */
     inline const CustomEmailLambdaVersionConfigType& GetCustomEmailSender() const{ return m_customEmailSender; }
     inline bool CustomEmailSenderHasBeenSet() const { return m_customEmailSenderHasBeenSet; }
@@ -226,10 +274,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of an <a
-     * href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon
-     * Cognito uses the key to encrypt codes and temporary passwords sent to
-     * <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
+     * <p>The ARN of an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">KMS
+     * key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords
+     * sent to custom sender Lambda triggers.</p>
      */
     inline const Aws::String& GetKMSKeyID() const{ return m_kMSKeyID; }
     inline bool KMSKeyIDHasBeenSet() const { return m_kMSKeyIDHasBeenSet; }

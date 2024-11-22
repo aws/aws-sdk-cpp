@@ -18,6 +18,7 @@
 #include <aws/lambda/model/DocumentDBEventSourceConfig.h>
 #include <aws/lambda/model/FilterCriteriaError.h>
 #include <aws/lambda/model/EventSourceMappingMetricsConfig.h>
+#include <aws/lambda/model/ProvisionedPollerConfig.h>
 #include <aws/lambda/model/SourceAccessConfiguration.h>
 #include <aws/lambda/model/FunctionResponseType.h>
 #include <utility>
@@ -500,6 +501,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>(Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode
+     * configuration for the event source. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned
+     * Mode</a>.</p>
+     */
+    inline const ProvisionedPollerConfig& GetProvisionedPollerConfig() const{ return m_provisionedPollerConfig; }
+    inline bool ProvisionedPollerConfigHasBeenSet() const { return m_provisionedPollerConfigHasBeenSet; }
+    inline void SetProvisionedPollerConfig(const ProvisionedPollerConfig& value) { m_provisionedPollerConfigHasBeenSet = true; m_provisionedPollerConfig = value; }
+    inline void SetProvisionedPollerConfig(ProvisionedPollerConfig&& value) { m_provisionedPollerConfigHasBeenSet = true; m_provisionedPollerConfig = std::move(value); }
+    inline EventSourceMappingConfiguration& WithProvisionedPollerConfig(const ProvisionedPollerConfig& value) { SetProvisionedPollerConfig(value); return *this;}
+    inline EventSourceMappingConfiguration& WithProvisionedPollerConfig(ProvisionedPollerConfig&& value) { SetProvisionedPollerConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -604,6 +620,9 @@ namespace Model
 
     EventSourceMappingMetricsConfig m_metricsConfig;
     bool m_metricsConfigHasBeenSet = false;
+
+    ProvisionedPollerConfig m_provisionedPollerConfig;
+    bool m_provisionedPollerConfigHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

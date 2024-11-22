@@ -59,6 +59,7 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_filterCriteriaErrorHasBeenSet(false),
     m_eventSourceMappingArnHasBeenSet(false),
     m_metricsConfigHasBeenSet(false),
+    m_provisionedPollerConfigHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
 }
@@ -300,6 +301,13 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_metricsConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProvisionedPollerConfig"))
+  {
+    m_provisionedPollerConfig = jsonValue.GetObject("ProvisionedPollerConfig");
+
+    m_provisionedPollerConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -507,6 +515,12 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_metricsConfigHasBeenSet)
   {
    payload.WithObject("MetricsConfig", m_metricsConfig.Jsonize());
+
+  }
+
+  if(m_provisionedPollerConfigHasBeenSet)
+  {
+   payload.WithObject("ProvisionedPollerConfig", m_provisionedPollerConfig.Jsonize());
 
   }
 

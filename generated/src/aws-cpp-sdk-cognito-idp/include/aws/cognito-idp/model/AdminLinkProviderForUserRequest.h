@@ -88,20 +88,19 @@ namespace Model
      * <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The
      * <code>ProviderAttributeValue</code> for the user must be the same value as the
      * <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the
-     * social IdP token.</p> <p/> <p>For OIDC, the <code>ProviderAttributeName</code>
-     * can be any value that matches a claim in the ID token, or that your app
-     * retrieves from the <code>userInfo</code> endpoint. You must map the claim to a
-     * user pool attribute in your IdP configuration, and set the user pool attribute
-     * name as the value of <code>ProviderAttributeName</code> in your
-     * <code>AdminLinkProviderForUser</code> request.</p> <p>For SAML, the
-     * <code>ProviderAttributeName</code> can be any value that matches a claim in the
-     * SAML assertion. To link SAML users based on the subject of the SAML assertion,
-     * map the subject to a claim through the SAML IdP and set that claim name as the
-     * value of <code>ProviderAttributeName</code> in your
-     * <code>AdminLinkProviderForUser</code> request.</p> <p>For both OIDC and SAML
-     * users, when you set <code>ProviderAttributeName</code> to
-     * <code>Cognito_Subject</code>, Amazon Cognito will automatically parse the
-     * default unique identifier found in the subject from the IdP token.</p>
+     * social IdP token.</p> <p>For OIDC, the <code>ProviderAttributeName</code> can be
+     * any mapped value from a claim in the ID token, or that your app retrieves from
+     * the <code>userInfo</code> endpoint. For SAML, the
+     * <code>ProviderAttributeName</code> can be any mapped value from a claim in the
+     * SAML assertion.</p> <p>The following additional considerations apply to
+     * <code>SourceUser</code> for OIDC and SAML providers.</p> <ul> <li> <p>You must
+     * map the claim to a user pool attribute in your IdP configuration, and set the
+     * user pool attribute name as the value of <code>ProviderAttributeName</code> in
+     * your <code>AdminLinkProviderForUser</code> request. For example,
+     * <code>email</code>.</p> </li> <li> <p>When you set
+     * <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Amazon
+     * Cognito will automatically parse the default unique identifier found in the
+     * subject from the IdP token.</p> </li> </ul>
      */
     inline const ProviderUserIdentifierType& GetSourceUser() const{ return m_sourceUser; }
     inline bool SourceUserHasBeenSet() const { return m_sourceUserHasBeenSet; }

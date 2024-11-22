@@ -83,14 +83,14 @@ namespace Model
      * doesn’t immediately update the value of that attribute. After your user receives
      * and responds to a verification message to verify the new value, Amazon Cognito
      * updates the attribute value. Your user can sign in and receive messages with the
-     * original attribute value until they verify the new value.</p> <p>To update the
-     * value of an attribute that requires verification in the same API request,
-     * include the <code>email_verified</code> or <code>phone_number_verified</code>
-     * attribute, with a value of <code>true</code>. If you set the
-     * <code>email_verified</code> or <code>phone_number_verified</code> value for an
-     * <code>email</code> or <code>phone_number</code> attribute that requires
-     * verification to <code>true</code>, Amazon Cognito doesn’t send a verification
-     * message to your user.</p>
+     * original attribute value until they verify the new value.</p> <p>To skip the
+     * verification message and update the value of an attribute that requires
+     * verification in the same API request, include the <code>email_verified</code> or
+     * <code>phone_number_verified</code> attribute, with a value of <code>true</code>.
+     * If you set the <code>email_verified</code> or <code>phone_number_verified</code>
+     * value for an <code>email</code> or <code>phone_number</code> attribute that
+     * requires verification to <code>true</code>, Amazon Cognito doesn’t send a
+     * verification message to your user.</p>
      */
     inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
     inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }

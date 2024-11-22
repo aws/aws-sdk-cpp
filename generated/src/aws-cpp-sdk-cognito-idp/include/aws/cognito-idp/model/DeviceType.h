@@ -27,7 +27,17 @@ namespace Model
 {
 
   /**
-   * <p>The device type.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a user's device that they've registered for device SRP
+   * authentication in your application. For more information, see <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+   * with user devices in your user pool</a>.</p> <p>The data type is a response
+   * parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetDevice.html">AdminGetDevice</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html">AdminListDevices</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetDevice.html">GetDevice</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceType">AWS
    * API Reference</a></p>
    */
@@ -42,7 +52,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device key.</p>
+     * <p>The device key, for example
+     * <code>us-west-2_EXAMPLE-a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
      */
     inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
     inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
@@ -56,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device attributes.</p>
+     * <p>Metadata about a user's device, like name and last-access source IP.</p>
      */
     inline const Aws::Vector<AttributeType>& GetDeviceAttributes() const{ return m_deviceAttributes; }
     inline bool DeviceAttributesHasBeenSet() const { return m_deviceAttributesHasBeenSet; }
@@ -70,7 +81,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The creation date of the device.</p>
+     * <p>The date and time when the item was created. Amazon Cognito returns this
+     * timestamp in UNIX epoch time format. Your SDK might render the output in a
+     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline const Aws::Utils::DateTime& GetDeviceCreateDate() const{ return m_deviceCreateDate; }
     inline bool DeviceCreateDateHasBeenSet() const { return m_deviceCreateDateHasBeenSet; }
@@ -96,7 +109,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date when the device was last authenticated.</p>
+     * <p>The date when the user last signed in with the device.</p>
      */
     inline const Aws::Utils::DateTime& GetDeviceLastAuthenticatedDate() const{ return m_deviceLastAuthenticatedDate; }
     inline bool DeviceLastAuthenticatedDateHasBeenSet() const { return m_deviceLastAuthenticatedDateHasBeenSet; }

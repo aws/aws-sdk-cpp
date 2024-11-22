@@ -18,10 +18,12 @@ namespace Model
     NOT_SET,
     URL,
     ATTACHMENT,
+    CONTACT_ANALYSIS,
     NUMBER,
     STRING,
     DATE,
-    EMAIL
+    EMAIL,
+    EMAIL_MESSAGE
   };
 
 namespace ReferenceTypeMapper

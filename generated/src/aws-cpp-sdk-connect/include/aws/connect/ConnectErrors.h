@@ -47,7 +47,8 @@ enum class ConnectErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONDITIONAL_OPERATION_FAILED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
   CONTACT_FLOW_NOT_PUBLISHED,
   CONTACT_NOT_FOUND,
   DESTINATION_NOT_ALLOWED,

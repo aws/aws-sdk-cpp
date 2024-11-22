@@ -16,7 +16,9 @@ namespace Model
   enum class ListFlowAssociationResourceType
   {
     NOT_SET,
-    VOICE_PHONE_NUMBER
+    VOICE_PHONE_NUMBER,
+    INBOUND_EMAIL,
+    OUTBOUND_EMAIL
   };
 
 namespace ListFlowAssociationResourceTypeMapper

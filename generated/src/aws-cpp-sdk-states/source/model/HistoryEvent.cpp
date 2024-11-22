@@ -61,7 +61,8 @@ HistoryEvent::HistoryEvent() :
     m_stateExitedEventDetailsHasBeenSet(false),
     m_mapRunStartedEventDetailsHasBeenSet(false),
     m_mapRunFailedEventDetailsHasBeenSet(false),
-    m_mapRunRedrivenEventDetailsHasBeenSet(false)
+    m_mapRunRedrivenEventDetailsHasBeenSet(false),
+    m_evaluationFailedEventDetailsHasBeenSet(false)
 {
 }
 
@@ -353,6 +354,13 @@ HistoryEvent& HistoryEvent::operator =(JsonView jsonValue)
     m_mapRunRedrivenEventDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("evaluationFailedEventDetails"))
+  {
+    m_evaluationFailedEventDetails = jsonValue.GetObject("evaluationFailedEventDetails");
+
+    m_evaluationFailedEventDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -595,6 +603,12 @@ JsonValue HistoryEvent::Jsonize() const
   if(m_mapRunRedrivenEventDetailsHasBeenSet)
   {
    payload.WithObject("mapRunRedrivenEventDetails", m_mapRunRedrivenEventDetails.Jsonize());
+
+  }
+
+  if(m_evaluationFailedEventDetailsHasBeenSet)
+  {
+   payload.WithObject("evaluationFailedEventDetails", m_evaluationFailedEventDetails.Jsonize());
 
   }
 

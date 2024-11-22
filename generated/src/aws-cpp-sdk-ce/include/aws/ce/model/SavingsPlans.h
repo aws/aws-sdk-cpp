@@ -116,7 +116,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique ID that's used to distinguish commitments from one another.</p>
+     * <p>The unique ID that's used to distinguish Savings Plans commitments from one
+     * another.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
     inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }

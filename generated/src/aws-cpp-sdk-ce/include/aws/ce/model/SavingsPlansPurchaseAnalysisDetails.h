@@ -210,7 +210,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The remaining On-Demand cost estimated to not be covered by the commitment,
+     * <p>The remaining On-Demand cost estimated to not be covered by the Savings Plan
      * over the length of the lookback period.</p>
      */
     inline const Aws::String& GetEstimatedOnDemandCost() const{ return m_estimatedOnDemandCost; }
@@ -225,7 +225,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The estimated On-Demand cost you expect with no additional commitment, based
+     * <p>The estimated On-Demand cost you expect with no additional commitment based
      * on your usage of the selected time period and the Savings Plan you own.</p>
      */
     inline const Aws::String& GetEstimatedOnDemandCostWithCurrentCommitment() const{ return m_estimatedOnDemandCostWithCurrentCommitment; }
@@ -240,8 +240,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The estimated return on investment that's based on the purchase commitment
-     * and estimated savings. This is calculated as
+     * <p>The estimated return on investment that's based on the Savings Plan and
+     * estimated savings. This is calculated as
      * estimatedSavingsAmount/estimatedSPCost*100.</p>
      */
     inline const Aws::String& GetEstimatedROI() const{ return m_estimatedROI; }
@@ -256,8 +256,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The estimated savings amount that's based on the purchase commitment over the
-     * length of the lookback period.</p>
+     * <p>The estimated savings amount that's based on the Savings Plan over the length
+     * of the lookback period.</p>
      */
     inline const Aws::String& GetEstimatedSavingsAmount() const{ return m_estimatedSavingsAmount; }
     inline bool EstimatedSavingsAmountHasBeenSet() const { return m_estimatedSavingsAmountHasBeenSet; }
@@ -286,7 +286,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The estimated cost of the purchase commitment over the length of the lookback
+     * <p>The estimated cost of the Savings Plan over the length of the lookback
      * period.</p>
      */
     inline const Aws::String& GetEstimatedCommitmentCost() const{ return m_estimatedCommitmentCost; }
@@ -315,7 +315,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The upfront cost of the Savings Plan, based on the selected payment
+     * <p>The upfront cost of the Savings Plan based on the selected payment
      * option.</p>
      */
     inline const Aws::String& GetUpfrontCost() const{ return m_upfrontCost; }

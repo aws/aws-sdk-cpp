@@ -40,6 +40,7 @@
 #include <aws/states/model/MapRunStartedEventDetails.h>
 #include <aws/states/model/MapRunFailedEventDetails.h>
 #include <aws/states/model/MapRunRedrivenEventDetails.h>
+#include <aws/states/model/EvaluationFailedEventDetails.h>
 #include <utility>
 
 namespace Aws
@@ -520,6 +521,19 @@ namespace Model
     inline HistoryEvent& WithMapRunRedrivenEventDetails(const MapRunRedrivenEventDetails& value) { SetMapRunRedrivenEventDetails(value); return *this;}
     inline HistoryEvent& WithMapRunRedrivenEventDetails(MapRunRedrivenEventDetails&& value) { SetMapRunRedrivenEventDetails(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains details about an evaluation failure that occurred while processing a
+     * state.</p>
+     */
+    inline const EvaluationFailedEventDetails& GetEvaluationFailedEventDetails() const{ return m_evaluationFailedEventDetails; }
+    inline bool EvaluationFailedEventDetailsHasBeenSet() const { return m_evaluationFailedEventDetailsHasBeenSet; }
+    inline void SetEvaluationFailedEventDetails(const EvaluationFailedEventDetails& value) { m_evaluationFailedEventDetailsHasBeenSet = true; m_evaluationFailedEventDetails = value; }
+    inline void SetEvaluationFailedEventDetails(EvaluationFailedEventDetails&& value) { m_evaluationFailedEventDetailsHasBeenSet = true; m_evaluationFailedEventDetails = std::move(value); }
+    inline HistoryEvent& WithEvaluationFailedEventDetails(const EvaluationFailedEventDetails& value) { SetEvaluationFailedEventDetails(value); return *this;}
+    inline HistoryEvent& WithEvaluationFailedEventDetails(EvaluationFailedEventDetails&& value) { SetEvaluationFailedEventDetails(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_timestamp;
@@ -641,6 +655,9 @@ namespace Model
 
     MapRunRedrivenEventDetails m_mapRunRedrivenEventDetails;
     bool m_mapRunRedrivenEventDetailsHasBeenSet = false;
+
+    EvaluationFailedEventDetails m_evaluationFailedEventDetails;
+    bool m_evaluationFailedEventDetailsHasBeenSet = false;
   };
 
 } // namespace Model

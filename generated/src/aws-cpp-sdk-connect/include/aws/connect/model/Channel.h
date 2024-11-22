@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     VOICE,
     CHAT,
-    TASK
+    TASK,
+    EMAIL
   };
 
 namespace ChannelMapper

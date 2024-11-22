@@ -13,6 +13,7 @@
 #include <aws/email/model/StopAction.h>
 #include <aws/email/model/AddHeaderAction.h>
 #include <aws/email/model/SNSAction.h>
+#include <aws/email/model/ConnectAction.h>
 #include <utility>
 
 namespace Aws
@@ -139,6 +140,19 @@ namespace Model
     inline ReceiptAction& WithSNSAction(const SNSAction& value) { SetSNSAction(value); return *this;}
     inline ReceiptAction& WithSNSAction(SNSAction&& value) { SetSNSAction(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Parses the received message and starts an email contact in Amazon Connect on
+     * your behalf.</p>
+     */
+    inline const ConnectAction& GetConnectAction() const{ return m_connectAction; }
+    inline bool ConnectActionHasBeenSet() const { return m_connectActionHasBeenSet; }
+    inline void SetConnectAction(const ConnectAction& value) { m_connectActionHasBeenSet = true; m_connectAction = value; }
+    inline void SetConnectAction(ConnectAction&& value) { m_connectActionHasBeenSet = true; m_connectAction = std::move(value); }
+    inline ReceiptAction& WithConnectAction(const ConnectAction& value) { SetConnectAction(value); return *this;}
+    inline ReceiptAction& WithConnectAction(ConnectAction&& value) { SetConnectAction(std::move(value)); return *this;}
+    ///@}
   private:
 
     S3Action m_s3Action;
@@ -161,6 +175,9 @@ namespace Model
 
     SNSAction m_sNSAction;
     bool m_sNSActionHasBeenSet = false;
+
+    ConnectAction m_connectAction;
+    bool m_connectActionHasBeenSet = false;
   };
 
 } // namespace Model

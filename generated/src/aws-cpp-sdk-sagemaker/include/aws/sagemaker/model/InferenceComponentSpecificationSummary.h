@@ -83,8 +83,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The compute resources allocated to run the model assigned to the inference
-     * component.</p>
+     * <p>The compute resources allocated to run the model, plus any adapter models,
+     * that you assign to the inference component.</p>
      */
     inline const InferenceComponentComputeResourceRequirements& GetComputeResourceRequirements() const{ return m_computeResourceRequirements; }
     inline bool ComputeResourceRequirementsHasBeenSet() const { return m_computeResourceRequirementsHasBeenSet; }
@@ -92,6 +92,21 @@ namespace Model
     inline void SetComputeResourceRequirements(InferenceComponentComputeResourceRequirements&& value) { m_computeResourceRequirementsHasBeenSet = true; m_computeResourceRequirements = std::move(value); }
     inline InferenceComponentSpecificationSummary& WithComputeResourceRequirements(const InferenceComponentComputeResourceRequirements& value) { SetComputeResourceRequirements(value); return *this;}
     inline InferenceComponentSpecificationSummary& WithComputeResourceRequirements(InferenceComponentComputeResourceRequirements&& value) { SetComputeResourceRequirements(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name of the base inference component that contains this inference
+     * component.</p>
+     */
+    inline const Aws::String& GetBaseInferenceComponentName() const{ return m_baseInferenceComponentName; }
+    inline bool BaseInferenceComponentNameHasBeenSet() const { return m_baseInferenceComponentNameHasBeenSet; }
+    inline void SetBaseInferenceComponentName(const Aws::String& value) { m_baseInferenceComponentNameHasBeenSet = true; m_baseInferenceComponentName = value; }
+    inline void SetBaseInferenceComponentName(Aws::String&& value) { m_baseInferenceComponentNameHasBeenSet = true; m_baseInferenceComponentName = std::move(value); }
+    inline void SetBaseInferenceComponentName(const char* value) { m_baseInferenceComponentNameHasBeenSet = true; m_baseInferenceComponentName.assign(value); }
+    inline InferenceComponentSpecificationSummary& WithBaseInferenceComponentName(const Aws::String& value) { SetBaseInferenceComponentName(value); return *this;}
+    inline InferenceComponentSpecificationSummary& WithBaseInferenceComponentName(Aws::String&& value) { SetBaseInferenceComponentName(std::move(value)); return *this;}
+    inline InferenceComponentSpecificationSummary& WithBaseInferenceComponentName(const char* value) { SetBaseInferenceComponentName(value); return *this;}
     ///@}
   private:
 
@@ -106,6 +121,9 @@ namespace Model
 
     InferenceComponentComputeResourceRequirements m_computeResourceRequirements;
     bool m_computeResourceRequirementsHasBeenSet = false;
+
+    Aws::String m_baseInferenceComponentName;
+    bool m_baseInferenceComponentNameHasBeenSet = false;
   };
 
 } // namespace Model

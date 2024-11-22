@@ -26,7 +26,21 @@ namespace Model
 {
 
   /**
-   * <p>The user import job type.</p><p><h3>See Also:</h3>   <a
+   * <p>A user import job in a user pool. Describes the status of user import with a
+   * CSV file. For more information, see <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html">Importing
+   * users into user pools from a CSV file</a>.</p> <p>This data type is a request
+   * parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserImportJob.html">CreateUserImportJob</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserImportJob.html">DescribeUserImportJob</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserImportJobs.html">ListUserImportJobs</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StartUserImportJob.html">StartUserImportJob</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StopUserImportJob.html">StopUserImportJob</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserImportJobType">AWS
    * API Reference</a></p>
    */
@@ -41,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job name for the user import job.</p>
+     * <p>The friendly name of the user import job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
@@ -55,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job ID for the user import job.</p>
+     * <p>The ID of the user import job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
@@ -69,8 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
+     * <p>The ID of the user pool that the users are being imported into.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -84,7 +97,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
+     * <p>The pre-signed URL target for uploading the CSV file.</p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }

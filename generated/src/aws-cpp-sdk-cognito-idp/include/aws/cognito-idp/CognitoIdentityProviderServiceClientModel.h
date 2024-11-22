@@ -43,11 +43,13 @@
 #include <aws/cognito-idp/model/AdminUserGlobalSignOutResult.h>
 #include <aws/cognito-idp/model/AssociateSoftwareTokenResult.h>
 #include <aws/cognito-idp/model/ChangePasswordResult.h>
+#include <aws/cognito-idp/model/CompleteWebAuthnRegistrationResult.h>
 #include <aws/cognito-idp/model/ConfirmDeviceResult.h>
 #include <aws/cognito-idp/model/ConfirmForgotPasswordResult.h>
 #include <aws/cognito-idp/model/ConfirmSignUpResult.h>
 #include <aws/cognito-idp/model/CreateGroupResult.h>
 #include <aws/cognito-idp/model/CreateIdentityProviderResult.h>
+#include <aws/cognito-idp/model/CreateManagedLoginBrandingResult.h>
 #include <aws/cognito-idp/model/CreateResourceServerResult.h>
 #include <aws/cognito-idp/model/CreateUserImportJobResult.h>
 #include <aws/cognito-idp/model/CreateUserPoolResult.h>
@@ -55,7 +57,10 @@
 #include <aws/cognito-idp/model/CreateUserPoolDomainResult.h>
 #include <aws/cognito-idp/model/DeleteUserAttributesResult.h>
 #include <aws/cognito-idp/model/DeleteUserPoolDomainResult.h>
+#include <aws/cognito-idp/model/DeleteWebAuthnCredentialResult.h>
 #include <aws/cognito-idp/model/DescribeIdentityProviderResult.h>
+#include <aws/cognito-idp/model/DescribeManagedLoginBrandingResult.h>
+#include <aws/cognito-idp/model/DescribeManagedLoginBrandingByClientResult.h>
 #include <aws/cognito-idp/model/DescribeResourceServerResult.h>
 #include <aws/cognito-idp/model/DescribeRiskConfigurationResult.h>
 #include <aws/cognito-idp/model/DescribeUserImportJobResult.h>
@@ -72,6 +77,7 @@
 #include <aws/cognito-idp/model/GetUICustomizationResult.h>
 #include <aws/cognito-idp/model/GetUserResult.h>
 #include <aws/cognito-idp/model/GetUserAttributeVerificationCodeResult.h>
+#include <aws/cognito-idp/model/GetUserAuthFactorsResult.h>
 #include <aws/cognito-idp/model/GetUserPoolMfaConfigResult.h>
 #include <aws/cognito-idp/model/GlobalSignOutResult.h>
 #include <aws/cognito-idp/model/InitiateAuthResult.h>
@@ -85,6 +91,7 @@
 #include <aws/cognito-idp/model/ListUserPoolsResult.h>
 #include <aws/cognito-idp/model/ListUsersResult.h>
 #include <aws/cognito-idp/model/ListUsersInGroupResult.h>
+#include <aws/cognito-idp/model/ListWebAuthnCredentialsResult.h>
 #include <aws/cognito-idp/model/ResendConfirmationCodeResult.h>
 #include <aws/cognito-idp/model/RespondToAuthChallengeResult.h>
 #include <aws/cognito-idp/model/RevokeTokenResult.h>
@@ -96,6 +103,7 @@
 #include <aws/cognito-idp/model/SetUserSettingsResult.h>
 #include <aws/cognito-idp/model/SignUpResult.h>
 #include <aws/cognito-idp/model/StartUserImportJobResult.h>
+#include <aws/cognito-idp/model/StartWebAuthnRegistrationResult.h>
 #include <aws/cognito-idp/model/StopUserImportJobResult.h>
 #include <aws/cognito-idp/model/TagResourceResult.h>
 #include <aws/cognito-idp/model/UntagResourceResult.h>
@@ -103,6 +111,7 @@
 #include <aws/cognito-idp/model/UpdateDeviceStatusResult.h>
 #include <aws/cognito-idp/model/UpdateGroupResult.h>
 #include <aws/cognito-idp/model/UpdateIdentityProviderResult.h>
+#include <aws/cognito-idp/model/UpdateManagedLoginBrandingResult.h>
 #include <aws/cognito-idp/model/UpdateResourceServerResult.h>
 #include <aws/cognito-idp/model/UpdateUserAttributesResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolResult.h>
@@ -111,6 +120,7 @@
 #include <aws/cognito-idp/model/VerifySoftwareTokenResult.h>
 #include <aws/cognito-idp/model/VerifyUserAttributeResult.h>
 #include <aws/cognito-idp/model/AssociateSoftwareTokenRequest.h>
+#include <aws/cognito-idp/model/UpdateManagedLoginBrandingRequest.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CognitoIdentityProviderClient header */
 
@@ -181,11 +191,13 @@ namespace Aws
       class AdminUserGlobalSignOutRequest;
       class AssociateSoftwareTokenRequest;
       class ChangePasswordRequest;
+      class CompleteWebAuthnRegistrationRequest;
       class ConfirmDeviceRequest;
       class ConfirmForgotPasswordRequest;
       class ConfirmSignUpRequest;
       class CreateGroupRequest;
       class CreateIdentityProviderRequest;
+      class CreateManagedLoginBrandingRequest;
       class CreateResourceServerRequest;
       class CreateUserImportJobRequest;
       class CreateUserPoolRequest;
@@ -193,13 +205,17 @@ namespace Aws
       class CreateUserPoolDomainRequest;
       class DeleteGroupRequest;
       class DeleteIdentityProviderRequest;
+      class DeleteManagedLoginBrandingRequest;
       class DeleteResourceServerRequest;
       class DeleteUserRequest;
       class DeleteUserAttributesRequest;
       class DeleteUserPoolRequest;
       class DeleteUserPoolClientRequest;
       class DeleteUserPoolDomainRequest;
+      class DeleteWebAuthnCredentialRequest;
       class DescribeIdentityProviderRequest;
+      class DescribeManagedLoginBrandingRequest;
+      class DescribeManagedLoginBrandingByClientRequest;
       class DescribeResourceServerRequest;
       class DescribeRiskConfigurationRequest;
       class DescribeUserImportJobRequest;
@@ -217,6 +233,7 @@ namespace Aws
       class GetUICustomizationRequest;
       class GetUserRequest;
       class GetUserAttributeVerificationCodeRequest;
+      class GetUserAuthFactorsRequest;
       class GetUserPoolMfaConfigRequest;
       class GlobalSignOutRequest;
       class InitiateAuthRequest;
@@ -230,6 +247,7 @@ namespace Aws
       class ListUserPoolsRequest;
       class ListUsersRequest;
       class ListUsersInGroupRequest;
+      class ListWebAuthnCredentialsRequest;
       class ResendConfirmationCodeRequest;
       class RespondToAuthChallengeRequest;
       class RevokeTokenRequest;
@@ -241,6 +259,7 @@ namespace Aws
       class SetUserSettingsRequest;
       class SignUpRequest;
       class StartUserImportJobRequest;
+      class StartWebAuthnRegistrationRequest;
       class StopUserImportJobRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -248,6 +267,7 @@ namespace Aws
       class UpdateDeviceStatusRequest;
       class UpdateGroupRequest;
       class UpdateIdentityProviderRequest;
+      class UpdateManagedLoginBrandingRequest;
       class UpdateResourceServerRequest;
       class UpdateUserAttributesRequest;
       class UpdateUserPoolRequest;
@@ -287,11 +307,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<AdminUserGlobalSignOutResult, CognitoIdentityProviderError> AdminUserGlobalSignOutOutcome;
       typedef Aws::Utils::Outcome<AssociateSoftwareTokenResult, CognitoIdentityProviderError> AssociateSoftwareTokenOutcome;
       typedef Aws::Utils::Outcome<ChangePasswordResult, CognitoIdentityProviderError> ChangePasswordOutcome;
+      typedef Aws::Utils::Outcome<CompleteWebAuthnRegistrationResult, CognitoIdentityProviderError> CompleteWebAuthnRegistrationOutcome;
       typedef Aws::Utils::Outcome<ConfirmDeviceResult, CognitoIdentityProviderError> ConfirmDeviceOutcome;
       typedef Aws::Utils::Outcome<ConfirmForgotPasswordResult, CognitoIdentityProviderError> ConfirmForgotPasswordOutcome;
       typedef Aws::Utils::Outcome<ConfirmSignUpResult, CognitoIdentityProviderError> ConfirmSignUpOutcome;
       typedef Aws::Utils::Outcome<CreateGroupResult, CognitoIdentityProviderError> CreateGroupOutcome;
       typedef Aws::Utils::Outcome<CreateIdentityProviderResult, CognitoIdentityProviderError> CreateIdentityProviderOutcome;
+      typedef Aws::Utils::Outcome<CreateManagedLoginBrandingResult, CognitoIdentityProviderError> CreateManagedLoginBrandingOutcome;
       typedef Aws::Utils::Outcome<CreateResourceServerResult, CognitoIdentityProviderError> CreateResourceServerOutcome;
       typedef Aws::Utils::Outcome<CreateUserImportJobResult, CognitoIdentityProviderError> CreateUserImportJobOutcome;
       typedef Aws::Utils::Outcome<CreateUserPoolResult, CognitoIdentityProviderError> CreateUserPoolOutcome;
@@ -299,13 +321,17 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateUserPoolDomainResult, CognitoIdentityProviderError> CreateUserPoolDomainOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteGroupOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteIdentityProviderOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteManagedLoginBrandingOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteResourceServerOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteUserOutcome;
       typedef Aws::Utils::Outcome<DeleteUserAttributesResult, CognitoIdentityProviderError> DeleteUserAttributesOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteUserPoolOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CognitoIdentityProviderError> DeleteUserPoolClientOutcome;
       typedef Aws::Utils::Outcome<DeleteUserPoolDomainResult, CognitoIdentityProviderError> DeleteUserPoolDomainOutcome;
+      typedef Aws::Utils::Outcome<DeleteWebAuthnCredentialResult, CognitoIdentityProviderError> DeleteWebAuthnCredentialOutcome;
       typedef Aws::Utils::Outcome<DescribeIdentityProviderResult, CognitoIdentityProviderError> DescribeIdentityProviderOutcome;
+      typedef Aws::Utils::Outcome<DescribeManagedLoginBrandingResult, CognitoIdentityProviderError> DescribeManagedLoginBrandingOutcome;
+      typedef Aws::Utils::Outcome<DescribeManagedLoginBrandingByClientResult, CognitoIdentityProviderError> DescribeManagedLoginBrandingByClientOutcome;
       typedef Aws::Utils::Outcome<DescribeResourceServerResult, CognitoIdentityProviderError> DescribeResourceServerOutcome;
       typedef Aws::Utils::Outcome<DescribeRiskConfigurationResult, CognitoIdentityProviderError> DescribeRiskConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribeUserImportJobResult, CognitoIdentityProviderError> DescribeUserImportJobOutcome;
@@ -323,6 +349,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetUICustomizationResult, CognitoIdentityProviderError> GetUICustomizationOutcome;
       typedef Aws::Utils::Outcome<GetUserResult, CognitoIdentityProviderError> GetUserOutcome;
       typedef Aws::Utils::Outcome<GetUserAttributeVerificationCodeResult, CognitoIdentityProviderError> GetUserAttributeVerificationCodeOutcome;
+      typedef Aws::Utils::Outcome<GetUserAuthFactorsResult, CognitoIdentityProviderError> GetUserAuthFactorsOutcome;
       typedef Aws::Utils::Outcome<GetUserPoolMfaConfigResult, CognitoIdentityProviderError> GetUserPoolMfaConfigOutcome;
       typedef Aws::Utils::Outcome<GlobalSignOutResult, CognitoIdentityProviderError> GlobalSignOutOutcome;
       typedef Aws::Utils::Outcome<InitiateAuthResult, CognitoIdentityProviderError> InitiateAuthOutcome;
@@ -336,6 +363,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListUserPoolsResult, CognitoIdentityProviderError> ListUserPoolsOutcome;
       typedef Aws::Utils::Outcome<ListUsersResult, CognitoIdentityProviderError> ListUsersOutcome;
       typedef Aws::Utils::Outcome<ListUsersInGroupResult, CognitoIdentityProviderError> ListUsersInGroupOutcome;
+      typedef Aws::Utils::Outcome<ListWebAuthnCredentialsResult, CognitoIdentityProviderError> ListWebAuthnCredentialsOutcome;
       typedef Aws::Utils::Outcome<ResendConfirmationCodeResult, CognitoIdentityProviderError> ResendConfirmationCodeOutcome;
       typedef Aws::Utils::Outcome<RespondToAuthChallengeResult, CognitoIdentityProviderError> RespondToAuthChallengeOutcome;
       typedef Aws::Utils::Outcome<RevokeTokenResult, CognitoIdentityProviderError> RevokeTokenOutcome;
@@ -347,6 +375,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<SetUserSettingsResult, CognitoIdentityProviderError> SetUserSettingsOutcome;
       typedef Aws::Utils::Outcome<SignUpResult, CognitoIdentityProviderError> SignUpOutcome;
       typedef Aws::Utils::Outcome<StartUserImportJobResult, CognitoIdentityProviderError> StartUserImportJobOutcome;
+      typedef Aws::Utils::Outcome<StartWebAuthnRegistrationResult, CognitoIdentityProviderError> StartWebAuthnRegistrationOutcome;
       typedef Aws::Utils::Outcome<StopUserImportJobResult, CognitoIdentityProviderError> StopUserImportJobOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, CognitoIdentityProviderError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, CognitoIdentityProviderError> UntagResourceOutcome;
@@ -354,6 +383,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateDeviceStatusResult, CognitoIdentityProviderError> UpdateDeviceStatusOutcome;
       typedef Aws::Utils::Outcome<UpdateGroupResult, CognitoIdentityProviderError> UpdateGroupOutcome;
       typedef Aws::Utils::Outcome<UpdateIdentityProviderResult, CognitoIdentityProviderError> UpdateIdentityProviderOutcome;
+      typedef Aws::Utils::Outcome<UpdateManagedLoginBrandingResult, CognitoIdentityProviderError> UpdateManagedLoginBrandingOutcome;
       typedef Aws::Utils::Outcome<UpdateResourceServerResult, CognitoIdentityProviderError> UpdateResourceServerOutcome;
       typedef Aws::Utils::Outcome<UpdateUserAttributesResult, CognitoIdentityProviderError> UpdateUserAttributesOutcome;
       typedef Aws::Utils::Outcome<UpdateUserPoolResult, CognitoIdentityProviderError> UpdateUserPoolOutcome;
@@ -393,11 +423,13 @@ namespace Aws
       typedef std::future<AdminUserGlobalSignOutOutcome> AdminUserGlobalSignOutOutcomeCallable;
       typedef std::future<AssociateSoftwareTokenOutcome> AssociateSoftwareTokenOutcomeCallable;
       typedef std::future<ChangePasswordOutcome> ChangePasswordOutcomeCallable;
+      typedef std::future<CompleteWebAuthnRegistrationOutcome> CompleteWebAuthnRegistrationOutcomeCallable;
       typedef std::future<ConfirmDeviceOutcome> ConfirmDeviceOutcomeCallable;
       typedef std::future<ConfirmForgotPasswordOutcome> ConfirmForgotPasswordOutcomeCallable;
       typedef std::future<ConfirmSignUpOutcome> ConfirmSignUpOutcomeCallable;
       typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
       typedef std::future<CreateIdentityProviderOutcome> CreateIdentityProviderOutcomeCallable;
+      typedef std::future<CreateManagedLoginBrandingOutcome> CreateManagedLoginBrandingOutcomeCallable;
       typedef std::future<CreateResourceServerOutcome> CreateResourceServerOutcomeCallable;
       typedef std::future<CreateUserImportJobOutcome> CreateUserImportJobOutcomeCallable;
       typedef std::future<CreateUserPoolOutcome> CreateUserPoolOutcomeCallable;
@@ -405,13 +437,17 @@ namespace Aws
       typedef std::future<CreateUserPoolDomainOutcome> CreateUserPoolDomainOutcomeCallable;
       typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
       typedef std::future<DeleteIdentityProviderOutcome> DeleteIdentityProviderOutcomeCallable;
+      typedef std::future<DeleteManagedLoginBrandingOutcome> DeleteManagedLoginBrandingOutcomeCallable;
       typedef std::future<DeleteResourceServerOutcome> DeleteResourceServerOutcomeCallable;
       typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
       typedef std::future<DeleteUserAttributesOutcome> DeleteUserAttributesOutcomeCallable;
       typedef std::future<DeleteUserPoolOutcome> DeleteUserPoolOutcomeCallable;
       typedef std::future<DeleteUserPoolClientOutcome> DeleteUserPoolClientOutcomeCallable;
       typedef std::future<DeleteUserPoolDomainOutcome> DeleteUserPoolDomainOutcomeCallable;
+      typedef std::future<DeleteWebAuthnCredentialOutcome> DeleteWebAuthnCredentialOutcomeCallable;
       typedef std::future<DescribeIdentityProviderOutcome> DescribeIdentityProviderOutcomeCallable;
+      typedef std::future<DescribeManagedLoginBrandingOutcome> DescribeManagedLoginBrandingOutcomeCallable;
+      typedef std::future<DescribeManagedLoginBrandingByClientOutcome> DescribeManagedLoginBrandingByClientOutcomeCallable;
       typedef std::future<DescribeResourceServerOutcome> DescribeResourceServerOutcomeCallable;
       typedef std::future<DescribeRiskConfigurationOutcome> DescribeRiskConfigurationOutcomeCallable;
       typedef std::future<DescribeUserImportJobOutcome> DescribeUserImportJobOutcomeCallable;
@@ -429,6 +465,7 @@ namespace Aws
       typedef std::future<GetUICustomizationOutcome> GetUICustomizationOutcomeCallable;
       typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
       typedef std::future<GetUserAttributeVerificationCodeOutcome> GetUserAttributeVerificationCodeOutcomeCallable;
+      typedef std::future<GetUserAuthFactorsOutcome> GetUserAuthFactorsOutcomeCallable;
       typedef std::future<GetUserPoolMfaConfigOutcome> GetUserPoolMfaConfigOutcomeCallable;
       typedef std::future<GlobalSignOutOutcome> GlobalSignOutOutcomeCallable;
       typedef std::future<InitiateAuthOutcome> InitiateAuthOutcomeCallable;
@@ -442,6 +479,7 @@ namespace Aws
       typedef std::future<ListUserPoolsOutcome> ListUserPoolsOutcomeCallable;
       typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
       typedef std::future<ListUsersInGroupOutcome> ListUsersInGroupOutcomeCallable;
+      typedef std::future<ListWebAuthnCredentialsOutcome> ListWebAuthnCredentialsOutcomeCallable;
       typedef std::future<ResendConfirmationCodeOutcome> ResendConfirmationCodeOutcomeCallable;
       typedef std::future<RespondToAuthChallengeOutcome> RespondToAuthChallengeOutcomeCallable;
       typedef std::future<RevokeTokenOutcome> RevokeTokenOutcomeCallable;
@@ -453,6 +491,7 @@ namespace Aws
       typedef std::future<SetUserSettingsOutcome> SetUserSettingsOutcomeCallable;
       typedef std::future<SignUpOutcome> SignUpOutcomeCallable;
       typedef std::future<StartUserImportJobOutcome> StartUserImportJobOutcomeCallable;
+      typedef std::future<StartWebAuthnRegistrationOutcome> StartWebAuthnRegistrationOutcomeCallable;
       typedef std::future<StopUserImportJobOutcome> StopUserImportJobOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -460,6 +499,7 @@ namespace Aws
       typedef std::future<UpdateDeviceStatusOutcome> UpdateDeviceStatusOutcomeCallable;
       typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
       typedef std::future<UpdateIdentityProviderOutcome> UpdateIdentityProviderOutcomeCallable;
+      typedef std::future<UpdateManagedLoginBrandingOutcome> UpdateManagedLoginBrandingOutcomeCallable;
       typedef std::future<UpdateResourceServerOutcome> UpdateResourceServerOutcomeCallable;
       typedef std::future<UpdateUserAttributesOutcome> UpdateUserAttributesOutcomeCallable;
       typedef std::future<UpdateUserPoolOutcome> UpdateUserPoolOutcomeCallable;
@@ -502,11 +542,13 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminUserGlobalSignOutRequest&, const Model::AdminUserGlobalSignOutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminUserGlobalSignOutResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AssociateSoftwareTokenRequest&, const Model::AssociateSoftwareTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSoftwareTokenResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ChangePasswordRequest&, const Model::ChangePasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangePasswordResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CompleteWebAuthnRegistrationRequest&, const Model::CompleteWebAuthnRegistrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteWebAuthnRegistrationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ConfirmDeviceRequest&, const Model::ConfirmDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmDeviceResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ConfirmForgotPasswordRequest&, const Model::ConfirmForgotPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmForgotPasswordResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ConfirmSignUpRequest&, const Model::ConfirmSignUpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmSignUpResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateIdentityProviderRequest&, const Model::CreateIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIdentityProviderResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateManagedLoginBrandingRequest&, const Model::CreateManagedLoginBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateManagedLoginBrandingResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateResourceServerRequest&, const Model::CreateResourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceServerResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateUserImportJobRequest&, const Model::CreateUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserImportJobResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateUserPoolRequest&, const Model::CreateUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserPoolResponseReceivedHandler;
@@ -514,13 +556,17 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::CreateUserPoolDomainRequest&, const Model::CreateUserPoolDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserPoolDomainResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteIdentityProviderRequest&, const Model::DeleteIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIdentityProviderResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteManagedLoginBrandingRequest&, const Model::DeleteManagedLoginBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteManagedLoginBrandingResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteResourceServerRequest&, const Model::DeleteResourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceServerResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserAttributesRequest&, const Model::DeleteUserAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserAttributesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserPoolRequest&, const Model::DeleteUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserPoolResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserPoolClientRequest&, const Model::DeleteUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserPoolClientResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteUserPoolDomainRequest&, const Model::DeleteUserPoolDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserPoolDomainResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DeleteWebAuthnCredentialRequest&, const Model::DeleteWebAuthnCredentialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebAuthnCredentialResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeIdentityProviderRequest&, const Model::DescribeIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityProviderResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeManagedLoginBrandingRequest&, const Model::DescribeManagedLoginBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedLoginBrandingResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeManagedLoginBrandingByClientRequest&, const Model::DescribeManagedLoginBrandingByClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedLoginBrandingByClientResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeResourceServerRequest&, const Model::DescribeResourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourceServerResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeRiskConfigurationRequest&, const Model::DescribeRiskConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRiskConfigurationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::DescribeUserImportJobRequest&, const Model::DescribeUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserImportJobResponseReceivedHandler;
@@ -538,6 +584,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUICustomizationRequest&, const Model::GetUICustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUICustomizationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserAttributeVerificationCodeRequest&, const Model::GetUserAttributeVerificationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserAttributeVerificationCodeResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserAuthFactorsRequest&, const Model::GetUserAuthFactorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserAuthFactorsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserPoolMfaConfigRequest&, const Model::GetUserPoolMfaConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserPoolMfaConfigResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GlobalSignOutRequest&, const Model::GlobalSignOutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GlobalSignOutResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::InitiateAuthRequest&, const Model::InitiateAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateAuthResponseReceivedHandler;
@@ -551,6 +598,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUserPoolsRequest&, const Model::ListUserPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserPoolsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUsersInGroupRequest&, const Model::ListUsersInGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersInGroupResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListWebAuthnCredentialsRequest&, const Model::ListWebAuthnCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebAuthnCredentialsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ResendConfirmationCodeRequest&, const Model::ResendConfirmationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResendConfirmationCodeResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::RespondToAuthChallengeRequest&, const Model::RespondToAuthChallengeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RespondToAuthChallengeResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::RevokeTokenRequest&, const Model::RevokeTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeTokenResponseReceivedHandler;
@@ -562,6 +610,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetUserSettingsRequest&, const Model::SetUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetUserSettingsResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SignUpRequest&, const Model::SignUpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignUpResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::StartUserImportJobRequest&, const Model::StartUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartUserImportJobResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::StartWebAuthnRegistrationRequest&, const Model::StartWebAuthnRegistrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWebAuthnRegistrationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::StopUserImportJobRequest&, const Model::StopUserImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopUserImportJobResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -569,6 +618,7 @@ namespace Aws
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateDeviceStatusRequest&, const Model::UpdateDeviceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceStatusResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateIdentityProviderRequest&, const Model::UpdateIdentityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIdentityProviderResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateManagedLoginBrandingRequest&, const Model::UpdateManagedLoginBrandingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateManagedLoginBrandingResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateResourceServerRequest&, const Model::UpdateResourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceServerResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserAttributesRequest&, const Model::UpdateUserAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserAttributesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserPoolRequest&, const Model::UpdateUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPoolResponseReceivedHandler;

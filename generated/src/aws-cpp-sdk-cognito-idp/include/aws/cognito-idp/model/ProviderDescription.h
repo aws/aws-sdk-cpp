@@ -26,7 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>A container for IdP details.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a user pool identity provider (IdP), including name and
+   * type.</p> <p>This data type is a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListIdentityProviders.html">ListIdentityProviders</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ProviderDescription">AWS
    * API Reference</a></p>
    */
@@ -41,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IdP name.</p>
+     * <p>The name of the IdP, for example <code>MySAMLProvider</code>.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
@@ -55,7 +58,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IdP type.</p>
+     * <p>The type of the provider, for example <code>SAML</code>. Amazon Cognito
+     * supports SAML 2.0, OIDC, and social IdPs. User pools list supported social IdPs
+     * by name in this response parameter: Facebook, Google, Login with Amazon, and
+     * Sign in with Apple.</p>
      */
     inline const IdentityProviderTypeType& GetProviderType() const{ return m_providerType; }
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
@@ -67,7 +73,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date the provider was last modified.</p>
+     * <p>The date and time when the item was modified. Amazon Cognito returns this
+     * timestamp in UNIX epoch time format. Your SDK might render the output in a
+     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }

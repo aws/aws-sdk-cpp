@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateUserPoolDomainResult::UpdateUserPoolDomainResult()
+UpdateUserPoolDomainResult::UpdateUserPoolDomainResult() : 
+    m_managedLoginVersion(0)
 {
 }
 
 UpdateUserPoolDomainResult::UpdateUserPoolDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : UpdateUserPoolDomainResult()
 {
   *this = result;
 }
@@ -29,6 +31,12 @@ UpdateUserPoolDomainResult::UpdateUserPoolDomainResult(const Aws::AmazonWebServi
 UpdateUserPoolDomainResult& UpdateUserPoolDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("ManagedLoginVersion"))
+  {
+    m_managedLoginVersion = jsonValue.GetInteger("ManagedLoginVersion");
+
+  }
+
   if(jsonValue.ValueExists("CloudFrontDomain"))
   {
     m_cloudFrontDomain = jsonValue.GetString("CloudFrontDomain");

@@ -21,7 +21,11 @@ namespace Model
 Reference::Reference() : 
     m_valueHasBeenSet(false),
     m_type(ReferenceType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_status(ReferenceStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_arnHasBeenSet(false),
+    m_statusReasonHasBeenSet(false)
 {
 }
 
@@ -47,6 +51,27 @@ Reference& Reference::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = ReferenceStatusMapper::GetReferenceStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatusReason"))
+  {
+    m_statusReason = jsonValue.GetString("StatusReason");
+
+    m_statusReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +88,23 @@ JsonValue Reference::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", ReferenceTypeMapper::GetNameForReferenceType(m_type));
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", ReferenceStatusMapper::GetNameForReferenceStatus(m_status));
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_statusReasonHasBeenSet)
+  {
+   payload.WithString("StatusReason", m_statusReason);
+
   }
 
   return payload;

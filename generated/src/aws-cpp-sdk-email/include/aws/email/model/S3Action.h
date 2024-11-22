@@ -105,32 +105,33 @@ namespace Model
     ///@{
     /**
      * <p>The customer managed key that Amazon SES should use to encrypt your emails
-     * before saving them to the Amazon S3 bucket. You can use the default managed key
-     * or a custom managed key that you created in Amazon Web Services KMS as
-     * follows:</p> <ul> <li> <p>To use the default managed key, provide an ARN in the
-     * form of
+     * before saving them to the Amazon S3 bucket. You can use the Amazon Web Services
+     * managed key or a customer managed key that you created in Amazon Web Services
+     * KMS as follows:</p> <ul> <li> <p>To use the Amazon Web Services managed key,
+     * provide an ARN in the form of
      * <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>. For
      * example, if your Amazon Web Services account ID is 123456789012 and you want to
-     * use the default managed key in the US West (Oregon) Region, the ARN of the
-     * default master key would be
+     * use the Amazon Web Services managed key in the US West (Oregon) Region, the ARN
+     * of the Amazon Web Services managed key would be
      * <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>. If you use the
-     * default managed key, you don't need to perform any extra steps to give Amazon
-     * SES permission to use the key.</p> </li> <li> <p>To use a custom managed key
-     * that you created in Amazon Web Services KMS, provide the ARN of the managed key
-     * and ensure that you add a statement to your key's policy to give Amazon SES
-     * permission to use it. For more information about giving permissions, see the <a
+     * Amazon Web Services managed key, you don't need to perform any extra steps to
+     * give Amazon SES permission to use the key.</p> </li> <li> <p>To use a customer
+     * managed key that you created in Amazon Web Services KMS, provide the ARN of the
+     * customer managed key and ensure that you add a statement to your key's policy to
+     * give Amazon SES permission to use it. For more information about giving
+     * permissions, see the <a
      * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon
      * SES Developer Guide</a>.</p> </li> </ul> <p>For more information about key
      * policies, see the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon
-     * Web Services KMS Developer Guide</a>. If you do not specify a managed key,
-     * Amazon SES does not encrypt your emails.</p>  <p>Your mail is
-     * encrypted by Amazon SES using the Amazon S3 encryption client before the mail is
-     * submitted to Amazon S3 for storage. It is not encrypted using Amazon S3
-     * server-side encryption. This means that you must use the Amazon S3 encryption
-     * client to decrypt the email after retrieving it from Amazon S3, as the service
-     * has no access to use your Amazon Web Services KMS keys for decryption. This
-     * encryption client is currently available with the <a
+     * Web Services KMS Developer Guide</a>. If you do not specify an Amazon Web
+     * Services KMS key, Amazon SES does not encrypt your emails.</p> 
+     * <p>Your mail is encrypted by Amazon SES using the Amazon S3 encryption client
+     * before the mail is submitted to Amazon S3 for storage. It is not encrypted using
+     * Amazon S3 server-side encryption. This means that you must use the Amazon S3
+     * encryption client to decrypt the email after retrieving it from Amazon S3, as
+     * the service has no access to use your Amazon Web Services KMS keys for
+     * decryption. This encryption client is currently available with the <a
      * href="http://aws.amazon.com/sdk-for-java/">Amazon Web Services SDK for Java</a>
      * and <a href="http://aws.amazon.com/sdk-for-ruby/">Amazon Web Services SDK for
      * Ruby</a> only. For more information about client-side encryption using Amazon

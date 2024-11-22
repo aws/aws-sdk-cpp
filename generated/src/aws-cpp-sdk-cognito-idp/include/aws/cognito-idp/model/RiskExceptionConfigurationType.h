@@ -25,7 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>The type of the configuration to override the risk decision.</p><p><h3>See
+   * <p>Exceptions to the risk evaluation configuration, including always-allow and
+   * always-block IP address ranges. </p> <p>This data type is a request parameter of
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RiskExceptionConfigurationType">AWS
    * API Reference</a></p>
@@ -41,9 +46,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Overrides the risk decision to always block the pre-authentication requests.
-     * The IP range is in CIDR notation, a compact representation of an IP address and
-     * its routing prefix.</p>
+     * <p>An always-block IP address list. Overrides the risk decision and always
+     * blocks authentication requests. This parameter is displayed and set in CIDR
+     * notation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBlockedIPRangeList() const{ return m_blockedIPRangeList; }
     inline bool BlockedIPRangeListHasBeenSet() const { return m_blockedIPRangeListHasBeenSet; }
@@ -58,8 +63,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Risk detection isn't performed on the IP addresses in this range list. The IP
-     * range is in CIDR notation.</p>
+     * <p>An always-allow IP address list. Risk detection isn't performed on the IP
+     * addresses in this range list. This parameter is displayed and set in CIDR
+     * notation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSkippedIPRangeList() const{ return m_skippedIPRangeList; }
     inline bool SkippedIPRangeListHasBeenSet() const { return m_skippedIPRangeListHasBeenSet; }

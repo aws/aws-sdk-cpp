@@ -7,6 +7,7 @@
 #include <aws/neptune-graph/NeptuneGraph_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/neptune-graph/model/Format.h>
+#include <aws/neptune-graph/model/ParquetType.h>
 #include <aws/neptune-graph/model/ImportTaskStatus.h>
 #include <aws/neptune-graph/model/ImportOptions.h>
 #include <aws/neptune-graph/model/ImportTaskDetails.h>
@@ -94,6 +95,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The parquet type of the import task.</p>
+     */
+    inline const ParquetType& GetParquetType() const{ return m_parquetType; }
+    inline void SetParquetType(const ParquetType& value) { m_parquetType = value; }
+    inline void SetParquetType(ParquetType&& value) { m_parquetType = std::move(value); }
+    inline GetImportTaskResult& WithParquetType(const ParquetType& value) { SetParquetType(value); return *this;}
+    inline GetImportTaskResult& WithParquetType(ParquetType&& value) { SetParquetType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ARN of the IAM role that will allow access to the data that is to be
      * imported.</p>
      */
@@ -162,7 +174,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of the current attempt to execute the import task.</p>
+     * <p>The number of the current attempts to execute the import task.</p>
      */
     inline int GetAttemptNumber() const{ return m_attemptNumber; }
     inline void SetAttemptNumber(int value) { m_attemptNumber = value; }
@@ -201,6 +213,8 @@ namespace Model
     Aws::String m_source;
 
     Format m_format;
+
+    ParquetType m_parquetType;
 
     Aws::String m_roleArn;
 

@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/ClusterInstanceType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ClusterLifeCycleConfig.h>
+#include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/ClusterInstancePlacement.h>
 #include <aws/sagemaker/model/ClusterInstanceStorageConfig.h>
@@ -122,6 +123,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const VpcConfig& GetOverrideVpcConfig() const{ return m_overrideVpcConfig; }
+    inline bool OverrideVpcConfigHasBeenSet() const { return m_overrideVpcConfigHasBeenSet; }
+    inline void SetOverrideVpcConfig(const VpcConfig& value) { m_overrideVpcConfigHasBeenSet = true; m_overrideVpcConfig = value; }
+    inline void SetOverrideVpcConfig(VpcConfig&& value) { m_overrideVpcConfigHasBeenSet = true; m_overrideVpcConfig = std::move(value); }
+    inline ClusterNodeDetails& WithOverrideVpcConfig(const VpcConfig& value) { SetOverrideVpcConfig(value); return *this;}
+    inline ClusterNodeDetails& WithOverrideVpcConfig(VpcConfig&& value) { SetOverrideVpcConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>The number of threads per CPU core you specified under
      * <code>CreateCluster</code>.</p>
@@ -205,6 +216,9 @@ namespace Model
 
     ClusterLifeCycleConfig m_lifeCycleConfig;
     bool m_lifeCycleConfigHasBeenSet = false;
+
+    VpcConfig m_overrideVpcConfig;
+    bool m_overrideVpcConfigHasBeenSet = false;
 
     int m_threadsPerCore;
     bool m_threadsPerCoreHasBeenSet = false;

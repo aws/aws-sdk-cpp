@@ -26,8 +26,13 @@ namespace Model
 {
 
   /**
-   * <p>The compromised credentials risk configuration type.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Settings for compromised-credentials actions and authentication-event sources
+   * with advanced security features in full-function <code>ENFORCED</code> mode.</p>
+   * <p>This data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CompromisedCredentialsRiskConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -42,8 +47,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Perform the action for these events. The default is to perform all events if
-     * no event filter is specified.</p>
+     * <p>Settings for the sign-in activity where you want to configure
+     * compromised-credentials actions. Defaults to all events.</p>
      */
     inline const Aws::Vector<EventFilterType>& GetEventFilter() const{ return m_eventFilter; }
     inline bool EventFilterHasBeenSet() const { return m_eventFilterHasBeenSet; }
@@ -57,7 +62,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The compromised credentials risk configuration actions.</p>
+     * <p>Settings for the actions that you want your user pool to take when Amazon
+     * Cognito detects compromised credentials.</p>
      */
     inline const CompromisedCredentialsActionsType& GetActions() const{ return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }

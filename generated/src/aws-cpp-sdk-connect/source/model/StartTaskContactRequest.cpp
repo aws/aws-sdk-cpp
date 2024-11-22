@@ -25,7 +25,8 @@ StartTaskContactRequest::StartTaskContactRequest() :
     m_scheduledTimeHasBeenSet(false),
     m_taskTemplateIdHasBeenSet(false),
     m_quickConnectIdHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false)
+    m_relatedContactIdHasBeenSet(false),
+    m_segmentAttributesHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,17 @@ Aws::String StartTaskContactRequest::SerializePayload() const
   if(m_relatedContactIdHasBeenSet)
   {
    payload.WithString("RelatedContactId", m_relatedContactId);
+
+  }
+
+  if(m_segmentAttributesHasBeenSet)
+  {
+   JsonValue segmentAttributesJsonMap;
+   for(auto& segmentAttributesItem : m_segmentAttributes)
+   {
+     segmentAttributesJsonMap.WithObject(segmentAttributesItem.first, segmentAttributesItem.second.Jsonize());
+   }
+   payload.WithObject("SegmentAttributes", std::move(segmentAttributesJsonMap));
 
   }
 

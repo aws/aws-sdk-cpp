@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/FilterControl.h>
 #include <aws/quicksight/model/Visual.h>
 #include <aws/quicksight/model/SheetTextBox.h>
+#include <aws/quicksight/model/SheetImage.h>
 #include <aws/quicksight/model/Layout.h>
 #include <aws/quicksight/model/SheetControlLayout.h>
 #include <utility>
@@ -171,6 +172,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A list of images on a sheet.</p>
+     */
+    inline const Aws::Vector<SheetImage>& GetImages() const{ return m_images; }
+    inline bool ImagesHasBeenSet() const { return m_imagesHasBeenSet; }
+    inline void SetImages(const Aws::Vector<SheetImage>& value) { m_imagesHasBeenSet = true; m_images = value; }
+    inline void SetImages(Aws::Vector<SheetImage>&& value) { m_imagesHasBeenSet = true; m_images = std::move(value); }
+    inline SheetDefinition& WithImages(const Aws::Vector<SheetImage>& value) { SetImages(value); return *this;}
+    inline SheetDefinition& WithImages(Aws::Vector<SheetImage>&& value) { SetImages(std::move(value)); return *this;}
+    inline SheetDefinition& AddImages(const SheetImage& value) { m_imagesHasBeenSet = true; m_images.push_back(value); return *this; }
+    inline SheetDefinition& AddImages(SheetImage&& value) { m_imagesHasBeenSet = true; m_images.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Layouts define how the components of a sheet are arranged.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types
@@ -239,6 +254,9 @@ namespace Model
 
     Aws::Vector<SheetTextBox> m_textBoxes;
     bool m_textBoxesHasBeenSet = false;
+
+    Aws::Vector<SheetImage> m_images;
+    bool m_imagesHasBeenSet = false;
 
     Aws::Vector<Layout> m_layouts;
     bool m_layoutsHasBeenSet = false;

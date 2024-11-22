@@ -76,7 +76,8 @@ namespace Model
     MapRunStarted,
     MapRunSucceeded,
     ExecutionRedriven,
-    MapRunRedriven
+    MapRunRedriven,
+    EvaluationFailed
   };
 
 namespace HistoryEventTypeMapper

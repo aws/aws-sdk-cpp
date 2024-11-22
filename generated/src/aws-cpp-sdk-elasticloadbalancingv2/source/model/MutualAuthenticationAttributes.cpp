@@ -26,7 +26,9 @@ MutualAuthenticationAttributes::MutualAuthenticationAttributes() :
     m_ignoreClientCertificateExpiry(false),
     m_ignoreClientCertificateExpiryHasBeenSet(false),
     m_trustStoreAssociationStatus(TrustStoreAssociationStatusEnum::NOT_SET),
-    m_trustStoreAssociationStatusHasBeenSet(false)
+    m_trustStoreAssociationStatusHasBeenSet(false),
+    m_advertiseTrustStoreCaNames(AdvertiseTrustStoreCaNamesEnum::NOT_SET),
+    m_advertiseTrustStoreCaNamesHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,12 @@ MutualAuthenticationAttributes& MutualAuthenticationAttributes::operator =(const
       m_trustStoreAssociationStatus = TrustStoreAssociationStatusEnumMapper::GetTrustStoreAssociationStatusEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trustStoreAssociationStatusNode.GetText()).c_str()).c_str());
       m_trustStoreAssociationStatusHasBeenSet = true;
     }
+    XmlNode advertiseTrustStoreCaNamesNode = resultNode.FirstChild("AdvertiseTrustStoreCaNames");
+    if(!advertiseTrustStoreCaNamesNode.IsNull())
+    {
+      m_advertiseTrustStoreCaNames = AdvertiseTrustStoreCaNamesEnumMapper::GetAdvertiseTrustStoreCaNamesEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(advertiseTrustStoreCaNamesNode.GetText()).c_str()).c_str());
+      m_advertiseTrustStoreCaNamesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -93,6 +101,11 @@ void MutualAuthenticationAttributes::OutputToStream(Aws::OStream& oStream, const
       oStream << location << index << locationValue << ".TrustStoreAssociationStatus=" << TrustStoreAssociationStatusEnumMapper::GetNameForTrustStoreAssociationStatusEnum(m_trustStoreAssociationStatus) << "&";
   }
 
+  if(m_advertiseTrustStoreCaNamesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AdvertiseTrustStoreCaNames=" << AdvertiseTrustStoreCaNamesEnumMapper::GetNameForAdvertiseTrustStoreCaNamesEnum(m_advertiseTrustStoreCaNames) << "&";
+  }
+
 }
 
 void MutualAuthenticationAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -112,6 +125,10 @@ void MutualAuthenticationAttributes::OutputToStream(Aws::OStream& oStream, const
   if(m_trustStoreAssociationStatusHasBeenSet)
   {
       oStream << location << ".TrustStoreAssociationStatus=" << TrustStoreAssociationStatusEnumMapper::GetNameForTrustStoreAssociationStatusEnum(m_trustStoreAssociationStatus) << "&";
+  }
+  if(m_advertiseTrustStoreCaNamesHasBeenSet)
+  {
+      oStream << location << ".AdvertiseTrustStoreCaNames=" << AdvertiseTrustStoreCaNamesEnumMapper::GetNameForAdvertiseTrustStoreCaNamesEnum(m_advertiseTrustStoreCaNames) << "&";
   }
 }
 

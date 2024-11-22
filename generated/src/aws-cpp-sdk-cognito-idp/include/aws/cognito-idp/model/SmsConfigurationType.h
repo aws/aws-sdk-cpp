@@ -24,12 +24,23 @@ namespace Model
 {
 
   /**
-   * <p>The SMS configuration type is the settings that your Amazon Cognito user pool
-   * must use to send an SMS message from your Amazon Web Services account through
-   * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
-   * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
-   * Identity and Access Management (IAM) role in your Amazon Web Services
-   * account.</p><p><h3>See Also:</h3>   <a
+   * <p>User pool configuration for delivery of SMS messages with Amazon Simple
+   * Notification Service. To send SMS messages with Amazon SNS in the Amazon Web
+   * Services Region that you want, the Amazon Cognito user pool uses an Identity and
+   * Access Management (IAM) role in your Amazon Web Services account.</p> <p>This
+   * data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>,
+   * and a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SmsConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -74,7 +85,7 @@ namespace Model
      * information about the <code>ExternalId</code> of a role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
      * to use an external ID when granting access to your Amazon Web Services resources
-     * to a third party</a> </p>
+     * to a third party</a>.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }

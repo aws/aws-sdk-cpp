@@ -19,6 +19,8 @@ StartImportTaskRequest::StartImportTaskRequest() :
     m_sourceHasBeenSet(false),
     m_format(Format::NOT_SET),
     m_formatHasBeenSet(false),
+    m_parquetType(ParquetType::NOT_SET),
+    m_parquetTypeHasBeenSet(false),
     m_blankNodeHandling(BlankNodeHandling::NOT_SET),
     m_blankNodeHandlingHasBeenSet(false),
     m_graphIdentifierHasBeenSet(false),
@@ -51,6 +53,11 @@ Aws::String StartImportTaskRequest::SerializePayload() const
   if(m_formatHasBeenSet)
   {
    payload.WithString("format", FormatMapper::GetNameForFormat(m_format));
+  }
+
+  if(m_parquetTypeHasBeenSet)
+  {
+   payload.WithString("parquetType", ParquetTypeMapper::GetNameForParquetType(m_parquetType));
   }
 
   if(m_blankNodeHandlingHasBeenSet)

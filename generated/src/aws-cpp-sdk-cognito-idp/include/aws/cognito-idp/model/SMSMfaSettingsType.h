@@ -22,13 +22,15 @@ namespace Model
 {
 
   /**
-   * <p>The type used for enabling SMS multi-factor authentication (MFA) at the user
-   * level. Phone numbers don't need to be verified to be used for SMS MFA. If an MFA
-   * type is activated for a user, the user will be prompted for MFA during all
-   * sign-in attempts, unless device tracking is turned on and the device has been
-   * trusted. If you would like MFA to be applied selectively based on the assessed
-   * risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive
-   * Authentication for the user pool.</p><p><h3>See Also:</h3>   <a
+   * <p>A user's preference for using SMS message multi-factor authentication (MFA).
+   * Turns SMS MFA on and off, and can set SMS as preferred when other MFA options
+   * are available. You can't turn off SMS MFA for any of your users when MFA is
+   * required in your user pool; you can only set the type that your user prefers.
+   * </p> <p>This data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SMSMfaSettingsType">AWS
    * API Reference</a></p>
    */
@@ -55,7 +57,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether SMS is the preferred MFA method.</p>
+     * <p>Specifies whether SMS is the preferred MFA method. If true, your user pool
+     * prompts the specified user for a code delivered by SMS message after
+     * username-password sign-in succeeds. </p>
      */
     inline bool GetPreferredMfa() const{ return m_preferredMfa; }
     inline bool PreferredMfaHasBeenSet() const { return m_preferredMfaHasBeenSet; }

@@ -16,8 +16,12 @@ namespace Model
   enum class ReferenceStatus
   {
     NOT_SET,
+    AVAILABLE,
+    DELETED,
     APPROVED,
-    REJECTED
+    REJECTED,
+    PROCESSING,
+    FAILED
   };
 
 namespace ReferenceStatusMapper

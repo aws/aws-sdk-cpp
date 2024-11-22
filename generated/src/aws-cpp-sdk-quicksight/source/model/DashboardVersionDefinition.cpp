@@ -26,7 +26,8 @@ DashboardVersionDefinition::DashboardVersionDefinition() :
     m_filterGroupsHasBeenSet(false),
     m_columnConfigurationsHasBeenSet(false),
     m_analysisDefaultsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
+    m_optionsHasBeenSet(false),
+    m_staticFilesHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,16 @@ DashboardVersionDefinition& DashboardVersionDefinition::operator =(JsonView json
     m_optionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StaticFiles"))
+  {
+    Aws::Utils::Array<JsonView> staticFilesJsonList = jsonValue.GetArray("StaticFiles");
+    for(unsigned staticFilesIndex = 0; staticFilesIndex < staticFilesJsonList.GetLength(); ++staticFilesIndex)
+    {
+      m_staticFiles.push_back(staticFilesJsonList[staticFilesIndex].AsObject());
+    }
+    m_staticFilesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -194,6 +205,17 @@ JsonValue DashboardVersionDefinition::Jsonize() const
   if(m_optionsHasBeenSet)
   {
    payload.WithObject("Options", m_options.Jsonize());
+
+  }
+
+  if(m_staticFilesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> staticFilesJsonList(m_staticFiles.size());
+   for(unsigned staticFilesIndex = 0; staticFilesIndex < staticFilesJsonList.GetLength(); ++staticFilesIndex)
+   {
+     staticFilesJsonList[staticFilesIndex].AsObject(m_staticFiles[staticFilesIndex].Jsonize());
+   }
+   payload.WithArray("StaticFiles", std::move(staticFilesJsonList));
 
   }
 

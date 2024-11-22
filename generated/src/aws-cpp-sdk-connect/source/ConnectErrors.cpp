@@ -8,6 +8,7 @@
 #include <aws/connect/ConnectErrors.h>
 #include <aws/connect/model/PropertyValidationException.h>
 #include <aws/connect/model/InvalidContactFlowException.h>
+#include <aws/connect/model/ServiceQuotaExceededException.h>
 #include <aws/connect/model/ResourceInUseException.h>
 #include <aws/connect/model/InvalidRequestException.h>
 #include <aws/connect/model/InvalidContactFlowModuleException.h>
@@ -33,6 +34,12 @@ template<> AWS_CONNECT_API InvalidContactFlowException ConnectError::GetModeledE
   return InvalidContactFlowException(this->GetJsonPayload().View());
 }
 
+template<> AWS_CONNECT_API ServiceQuotaExceededException ConnectError::GetModeledError()
+{
+  assert(this->GetErrorType() == ConnectErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
+}
+
 template<> AWS_CONNECT_API ResourceInUseException ConnectError::GetModeledError()
 {
   assert(this->GetErrorType() == ConnectErrors::RESOURCE_IN_USE);
@@ -54,8 +61,8 @@ template<> AWS_CONNECT_API InvalidContactFlowModuleException ConnectError::GetMo
 namespace ConnectErrorMapper
 {
 
-static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
 static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
 static const int MAXIMUM_RESULT_RETURNED_HASH = HashingUtils::HashString("MaximumResultReturnedException");
 static const int PROPERTY_VALIDATION_HASH = HashingUtils::HashString("PropertyValidationException");
@@ -68,6 +75,7 @@ static const int CONTACT_FLOW_NOT_PUBLISHED_HASH = HashingUtils::HashString("Con
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 static const int INVALID_CONTACT_FLOW_MODULE_HASH = HashingUtils::HashString("InvalidContactFlowModuleException");
 static const int OUTBOUND_CONTACT_NOT_PERMITTED_HASH = HashingUtils::HashString("OutboundContactNotPermittedException");
+static const int CONDITIONAL_OPERATION_FAILED_HASH = HashingUtils::HashString("ConditionalOperationFailedException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int CONTACT_NOT_FOUND_HASH = HashingUtils::HashString("ContactNotFoundException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
@@ -82,13 +90,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_NOT_READY_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_NOT_READY), RetryableType::NOT_RETRYABLE);
-  }
-  else if (hashCode == CONFLICT_HASH)
+  if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == RESOURCE_NOT_READY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_NOT_READY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IDEMPOTENCY_HASH)
   {
@@ -137,6 +145,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == OUTBOUND_CONTACT_NOT_PERMITTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::OUTBOUND_CONTACT_NOT_PERMITTED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CONDITIONAL_OPERATION_FAILED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONDITIONAL_OPERATION_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {

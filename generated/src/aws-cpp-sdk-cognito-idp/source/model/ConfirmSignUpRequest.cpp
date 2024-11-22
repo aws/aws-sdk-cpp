@@ -21,7 +21,8 @@ ConfirmSignUpRequest::ConfirmSignUpRequest() :
     m_forceAliasCreationHasBeenSet(false),
     m_analyticsMetadataHasBeenSet(false),
     m_userContextDataHasBeenSet(false),
-    m_clientMetadataHasBeenSet(false)
+    m_clientMetadataHasBeenSet(false),
+    m_sessionHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String ConfirmSignUpRequest::SerializePayload() const
      clientMetadataJsonMap.WithString(clientMetadataItem.first, clientMetadataItem.second);
    }
    payload.WithObject("ClientMetadata", std::move(clientMetadataJsonMap));
+
+  }
+
+  if(m_sessionHasBeenSet)
+  {
+   payload.WithString("Session", m_session);
 
   }
 

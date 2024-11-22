@@ -11,6 +11,7 @@
 #include <aws/cognito-idp/model/SoftwareTokenMfaConfigType.h>
 #include <aws/cognito-idp/model/EmailMfaConfigType.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
+#include <aws/cognito-idp/model/WebAuthnConfigurationType.h>
 #include <utility>
 
 namespace Aws
@@ -111,6 +112,20 @@ namespace Model
     inline SetUserPoolMfaConfigRequest& WithMfaConfiguration(const UserPoolMfaType& value) { SetMfaConfiguration(value); return *this;}
     inline SetUserPoolMfaConfigRequest& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration of your user pool for passkey, or webauthN, authentication
+     * and registration. You can set this configuration independent of the MFA
+     * configuration options in this operation.</p>
+     */
+    inline const WebAuthnConfigurationType& GetWebAuthnConfiguration() const{ return m_webAuthnConfiguration; }
+    inline bool WebAuthnConfigurationHasBeenSet() const { return m_webAuthnConfigurationHasBeenSet; }
+    inline void SetWebAuthnConfiguration(const WebAuthnConfigurationType& value) { m_webAuthnConfigurationHasBeenSet = true; m_webAuthnConfiguration = value; }
+    inline void SetWebAuthnConfiguration(WebAuthnConfigurationType&& value) { m_webAuthnConfigurationHasBeenSet = true; m_webAuthnConfiguration = std::move(value); }
+    inline SetUserPoolMfaConfigRequest& WithWebAuthnConfiguration(const WebAuthnConfigurationType& value) { SetWebAuthnConfiguration(value); return *this;}
+    inline SetUserPoolMfaConfigRequest& WithWebAuthnConfiguration(WebAuthnConfigurationType&& value) { SetWebAuthnConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_userPoolId;
@@ -127,6 +142,9 @@ namespace Model
 
     UserPoolMfaType m_mfaConfiguration;
     bool m_mfaConfigurationHasBeenSet = false;
+
+    WebAuthnConfigurationType m_webAuthnConfiguration;
+    bool m_webAuthnConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

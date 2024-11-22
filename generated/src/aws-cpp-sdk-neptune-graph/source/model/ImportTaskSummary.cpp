@@ -24,6 +24,8 @@ ImportTaskSummary::ImportTaskSummary() :
     m_sourceHasBeenSet(false),
     m_format(Format::NOT_SET),
     m_formatHasBeenSet(false),
+    m_parquetType(ParquetType::NOT_SET),
+    m_parquetTypeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_status(ImportTaskStatus::NOT_SET),
     m_statusHasBeenSet(false)
@@ -64,6 +66,13 @@ ImportTaskSummary& ImportTaskSummary::operator =(JsonView jsonValue)
     m_format = FormatMapper::GetFormatForName(jsonValue.GetString("format"));
 
     m_formatHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("parquetType"))
+  {
+    m_parquetType = ParquetTypeMapper::GetParquetTypeForName(jsonValue.GetString("parquetType"));
+
+    m_parquetTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("roleArn"))
@@ -108,6 +117,11 @@ JsonValue ImportTaskSummary::Jsonize() const
   if(m_formatHasBeenSet)
   {
    payload.WithString("format", FormatMapper::GetNameForFormat(m_format));
+  }
+
+  if(m_parquetTypeHasBeenSet)
+  {
+   payload.WithString("parquetType", ParquetTypeMapper::GetNameForParquetType(m_parquetType));
   }
 
   if(m_roleArnHasBeenSet)

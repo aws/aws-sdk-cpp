@@ -1,0 +1,59 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/quicksight/model/GeospatialLineLayer.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace QuickSight
+{
+namespace Model
+{
+
+GeospatialLineLayer::GeospatialLineLayer() : 
+    m_styleHasBeenSet(false)
+{
+}
+
+GeospatialLineLayer::GeospatialLineLayer(JsonView jsonValue)
+  : GeospatialLineLayer()
+{
+  *this = jsonValue;
+}
+
+GeospatialLineLayer& GeospatialLineLayer::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("Style"))
+  {
+    m_style = jsonValue.GetObject("Style");
+
+    m_styleHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue GeospatialLineLayer::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_styleHasBeenSet)
+  {
+   payload.WithObject("Style", m_style.Jsonize());
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace QuickSight
+} // namespace Aws

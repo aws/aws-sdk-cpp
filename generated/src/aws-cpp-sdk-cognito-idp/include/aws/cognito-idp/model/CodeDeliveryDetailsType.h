@@ -26,7 +26,13 @@ namespace Model
 
   /**
    * <p>The delivery details for an email or SMS message that Amazon Cognito sent for
-   * authentication or verification.</p><p><h3>See Also:</h3>   <a
+   * authentication or verification.</p> <p>This data type is a response parameter of
+   * operations that send a code for user profile confirmation, verification, or
+   * management, for example <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html">SignUp</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CodeDeliveryDetailsType">AWS
    * API Reference</a></p>
    */

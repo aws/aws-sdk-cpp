@@ -24,6 +24,7 @@ namespace Aws
         static const int FILTER_CONTROL_HASH = HashingUtils::HashString("FILTER_CONTROL");
         static const int PARAMETER_CONTROL_HASH = HashingUtils::HashString("PARAMETER_CONTROL");
         static const int TEXT_BOX_HASH = HashingUtils::HashString("TEXT_BOX");
+        static const int IMAGE_HASH = HashingUtils::HashString("IMAGE");
 
 
         LayoutElementType GetLayoutElementTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == TEXT_BOX_HASH)
           {
             return LayoutElementType::TEXT_BOX;
+          }
+          else if (hashCode == IMAGE_HASH)
+          {
+            return LayoutElementType::IMAGE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "PARAMETER_CONTROL";
           case LayoutElementType::TEXT_BOX:
             return "TEXT_BOX";
+          case LayoutElementType::IMAGE:
+            return "IMAGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

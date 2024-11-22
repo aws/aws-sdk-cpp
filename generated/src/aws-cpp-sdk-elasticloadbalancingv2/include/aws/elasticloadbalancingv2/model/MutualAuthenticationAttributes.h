@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticloadbalancingv2/model/TrustStoreAssociationStatusEnum.h>
+#include <aws/elasticloadbalancingv2/model/AdvertiseTrustStoreCaNamesEnum.h>
 #include <utility>
 
 namespace Aws
@@ -92,6 +93,18 @@ namespace Model
     inline MutualAuthenticationAttributes& WithTrustStoreAssociationStatus(const TrustStoreAssociationStatusEnum& value) { SetTrustStoreAssociationStatus(value); return *this;}
     inline MutualAuthenticationAttributes& WithTrustStoreAssociationStatus(TrustStoreAssociationStatusEnum&& value) { SetTrustStoreAssociationStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether trust store CA certificate names are advertised.</p>
+     */
+    inline const AdvertiseTrustStoreCaNamesEnum& GetAdvertiseTrustStoreCaNames() const{ return m_advertiseTrustStoreCaNames; }
+    inline bool AdvertiseTrustStoreCaNamesHasBeenSet() const { return m_advertiseTrustStoreCaNamesHasBeenSet; }
+    inline void SetAdvertiseTrustStoreCaNames(const AdvertiseTrustStoreCaNamesEnum& value) { m_advertiseTrustStoreCaNamesHasBeenSet = true; m_advertiseTrustStoreCaNames = value; }
+    inline void SetAdvertiseTrustStoreCaNames(AdvertiseTrustStoreCaNamesEnum&& value) { m_advertiseTrustStoreCaNamesHasBeenSet = true; m_advertiseTrustStoreCaNames = std::move(value); }
+    inline MutualAuthenticationAttributes& WithAdvertiseTrustStoreCaNames(const AdvertiseTrustStoreCaNamesEnum& value) { SetAdvertiseTrustStoreCaNames(value); return *this;}
+    inline MutualAuthenticationAttributes& WithAdvertiseTrustStoreCaNames(AdvertiseTrustStoreCaNamesEnum&& value) { SetAdvertiseTrustStoreCaNames(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_mode;
@@ -105,6 +118,9 @@ namespace Model
 
     TrustStoreAssociationStatusEnum m_trustStoreAssociationStatus;
     bool m_trustStoreAssociationStatusHasBeenSet = false;
+
+    AdvertiseTrustStoreCaNamesEnum m_advertiseTrustStoreCaNames;
+    bool m_advertiseTrustStoreCaNamesHasBeenSet = false;
   };
 
 } // namespace Model

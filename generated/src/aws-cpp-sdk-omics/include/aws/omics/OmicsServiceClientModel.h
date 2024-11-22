@@ -38,6 +38,7 @@
 #include <aws/omics/model/DeleteAnnotationStoreVersionsResult.h>
 #include <aws/omics/model/DeleteReferenceResult.h>
 #include <aws/omics/model/DeleteReferenceStoreResult.h>
+#include <aws/omics/model/DeleteS3AccessPolicyResult.h>
 #include <aws/omics/model/DeleteSequenceStoreResult.h>
 #include <aws/omics/model/DeleteShareResult.h>
 #include <aws/omics/model/DeleteVariantStoreResult.h>
@@ -57,6 +58,7 @@
 #include <aws/omics/model/GetRunCacheResult.h>
 #include <aws/omics/model/GetRunGroupResult.h>
 #include <aws/omics/model/GetRunTaskResult.h>
+#include <aws/omics/model/GetS3AccessPolicyResult.h>
 #include <aws/omics/model/GetSequenceStoreResult.h>
 #include <aws/omics/model/GetShareResult.h>
 #include <aws/omics/model/GetVariantImportJobResult.h>
@@ -84,6 +86,7 @@
 #include <aws/omics/model/ListVariantImportJobsResult.h>
 #include <aws/omics/model/ListVariantStoresResult.h>
 #include <aws/omics/model/ListWorkflowsResult.h>
+#include <aws/omics/model/PutS3AccessPolicyResult.h>
 #include <aws/omics/model/StartAnnotationImportJobResult.h>
 #include <aws/omics/model/StartReadSetActivationJobResult.h>
 #include <aws/omics/model/StartReadSetExportJobResult.h>
@@ -95,6 +98,7 @@
 #include <aws/omics/model/UntagResourceResult.h>
 #include <aws/omics/model/UpdateAnnotationStoreResult.h>
 #include <aws/omics/model/UpdateAnnotationStoreVersionResult.h>
+#include <aws/omics/model/UpdateSequenceStoreResult.h>
 #include <aws/omics/model/UpdateVariantStoreResult.h>
 #include <aws/omics/model/UploadReadSetPartResult.h>
 #include <aws/omics/model/ListVariantStoresRequest.h>
@@ -172,6 +176,7 @@ namespace Aws
       class DeleteRunRequest;
       class DeleteRunCacheRequest;
       class DeleteRunGroupRequest;
+      class DeleteS3AccessPolicyRequest;
       class DeleteSequenceStoreRequest;
       class DeleteShareRequest;
       class DeleteVariantStoreRequest;
@@ -192,6 +197,7 @@ namespace Aws
       class GetRunCacheRequest;
       class GetRunGroupRequest;
       class GetRunTaskRequest;
+      class GetS3AccessPolicyRequest;
       class GetSequenceStoreRequest;
       class GetShareRequest;
       class GetVariantImportJobRequest;
@@ -219,6 +225,7 @@ namespace Aws
       class ListVariantImportJobsRequest;
       class ListVariantStoresRequest;
       class ListWorkflowsRequest;
+      class PutS3AccessPolicyRequest;
       class StartAnnotationImportJobRequest;
       class StartReadSetActivationJobRequest;
       class StartReadSetExportJobRequest;
@@ -232,6 +239,7 @@ namespace Aws
       class UpdateAnnotationStoreVersionRequest;
       class UpdateRunCacheRequest;
       class UpdateRunGroupRequest;
+      class UpdateSequenceStoreRequest;
       class UpdateVariantStoreRequest;
       class UpdateWorkflowRequest;
       class UploadReadSetPartRequest;
@@ -262,6 +270,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> DeleteRunOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> DeleteRunCacheOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> DeleteRunGroupOutcome;
+      typedef Aws::Utils::Outcome<DeleteS3AccessPolicyResult, OmicsError> DeleteS3AccessPolicyOutcome;
       typedef Aws::Utils::Outcome<DeleteSequenceStoreResult, OmicsError> DeleteSequenceStoreOutcome;
       typedef Aws::Utils::Outcome<DeleteShareResult, OmicsError> DeleteShareOutcome;
       typedef Aws::Utils::Outcome<DeleteVariantStoreResult, OmicsError> DeleteVariantStoreOutcome;
@@ -282,6 +291,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetRunCacheResult, OmicsError> GetRunCacheOutcome;
       typedef Aws::Utils::Outcome<GetRunGroupResult, OmicsError> GetRunGroupOutcome;
       typedef Aws::Utils::Outcome<GetRunTaskResult, OmicsError> GetRunTaskOutcome;
+      typedef Aws::Utils::Outcome<GetS3AccessPolicyResult, OmicsError> GetS3AccessPolicyOutcome;
       typedef Aws::Utils::Outcome<GetSequenceStoreResult, OmicsError> GetSequenceStoreOutcome;
       typedef Aws::Utils::Outcome<GetShareResult, OmicsError> GetShareOutcome;
       typedef Aws::Utils::Outcome<GetVariantImportJobResult, OmicsError> GetVariantImportJobOutcome;
@@ -309,6 +319,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListVariantImportJobsResult, OmicsError> ListVariantImportJobsOutcome;
       typedef Aws::Utils::Outcome<ListVariantStoresResult, OmicsError> ListVariantStoresOutcome;
       typedef Aws::Utils::Outcome<ListWorkflowsResult, OmicsError> ListWorkflowsOutcome;
+      typedef Aws::Utils::Outcome<PutS3AccessPolicyResult, OmicsError> PutS3AccessPolicyOutcome;
       typedef Aws::Utils::Outcome<StartAnnotationImportJobResult, OmicsError> StartAnnotationImportJobOutcome;
       typedef Aws::Utils::Outcome<StartReadSetActivationJobResult, OmicsError> StartReadSetActivationJobOutcome;
       typedef Aws::Utils::Outcome<StartReadSetExportJobResult, OmicsError> StartReadSetExportJobOutcome;
@@ -322,6 +333,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateAnnotationStoreVersionResult, OmicsError> UpdateAnnotationStoreVersionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> UpdateRunCacheOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> UpdateRunGroupOutcome;
+      typedef Aws::Utils::Outcome<UpdateSequenceStoreResult, OmicsError> UpdateSequenceStoreOutcome;
       typedef Aws::Utils::Outcome<UpdateVariantStoreResult, OmicsError> UpdateVariantStoreOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> UpdateWorkflowOutcome;
       typedef Aws::Utils::Outcome<UploadReadSetPartResult, OmicsError> UploadReadSetPartOutcome;
@@ -352,6 +364,7 @@ namespace Aws
       typedef std::future<DeleteRunOutcome> DeleteRunOutcomeCallable;
       typedef std::future<DeleteRunCacheOutcome> DeleteRunCacheOutcomeCallable;
       typedef std::future<DeleteRunGroupOutcome> DeleteRunGroupOutcomeCallable;
+      typedef std::future<DeleteS3AccessPolicyOutcome> DeleteS3AccessPolicyOutcomeCallable;
       typedef std::future<DeleteSequenceStoreOutcome> DeleteSequenceStoreOutcomeCallable;
       typedef std::future<DeleteShareOutcome> DeleteShareOutcomeCallable;
       typedef std::future<DeleteVariantStoreOutcome> DeleteVariantStoreOutcomeCallable;
@@ -372,6 +385,7 @@ namespace Aws
       typedef std::future<GetRunCacheOutcome> GetRunCacheOutcomeCallable;
       typedef std::future<GetRunGroupOutcome> GetRunGroupOutcomeCallable;
       typedef std::future<GetRunTaskOutcome> GetRunTaskOutcomeCallable;
+      typedef std::future<GetS3AccessPolicyOutcome> GetS3AccessPolicyOutcomeCallable;
       typedef std::future<GetSequenceStoreOutcome> GetSequenceStoreOutcomeCallable;
       typedef std::future<GetShareOutcome> GetShareOutcomeCallable;
       typedef std::future<GetVariantImportJobOutcome> GetVariantImportJobOutcomeCallable;
@@ -399,6 +413,7 @@ namespace Aws
       typedef std::future<ListVariantImportJobsOutcome> ListVariantImportJobsOutcomeCallable;
       typedef std::future<ListVariantStoresOutcome> ListVariantStoresOutcomeCallable;
       typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
+      typedef std::future<PutS3AccessPolicyOutcome> PutS3AccessPolicyOutcomeCallable;
       typedef std::future<StartAnnotationImportJobOutcome> StartAnnotationImportJobOutcomeCallable;
       typedef std::future<StartReadSetActivationJobOutcome> StartReadSetActivationJobOutcomeCallable;
       typedef std::future<StartReadSetExportJobOutcome> StartReadSetExportJobOutcomeCallable;
@@ -412,6 +427,7 @@ namespace Aws
       typedef std::future<UpdateAnnotationStoreVersionOutcome> UpdateAnnotationStoreVersionOutcomeCallable;
       typedef std::future<UpdateRunCacheOutcome> UpdateRunCacheOutcomeCallable;
       typedef std::future<UpdateRunGroupOutcome> UpdateRunGroupOutcomeCallable;
+      typedef std::future<UpdateSequenceStoreOutcome> UpdateSequenceStoreOutcomeCallable;
       typedef std::future<UpdateVariantStoreOutcome> UpdateVariantStoreOutcomeCallable;
       typedef std::future<UpdateWorkflowOutcome> UpdateWorkflowOutcomeCallable;
       typedef std::future<UploadReadSetPartOutcome> UploadReadSetPartOutcomeCallable;
@@ -445,6 +461,7 @@ namespace Aws
     typedef std::function<void(const OmicsClient*, const Model::DeleteRunRequest&, const Model::DeleteRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRunResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::DeleteRunCacheRequest&, const Model::DeleteRunCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRunCacheResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::DeleteRunGroupRequest&, const Model::DeleteRunGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRunGroupResponseReceivedHandler;
+    typedef std::function<void(const OmicsClient*, const Model::DeleteS3AccessPolicyRequest&, const Model::DeleteS3AccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteS3AccessPolicyResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::DeleteSequenceStoreRequest&, const Model::DeleteSequenceStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSequenceStoreResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::DeleteShareRequest&, const Model::DeleteShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteShareResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::DeleteVariantStoreRequest&, const Model::DeleteVariantStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVariantStoreResponseReceivedHandler;
@@ -465,6 +482,7 @@ namespace Aws
     typedef std::function<void(const OmicsClient*, const Model::GetRunCacheRequest&, const Model::GetRunCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRunCacheResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::GetRunGroupRequest&, const Model::GetRunGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRunGroupResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::GetRunTaskRequest&, const Model::GetRunTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRunTaskResponseReceivedHandler;
+    typedef std::function<void(const OmicsClient*, const Model::GetS3AccessPolicyRequest&, const Model::GetS3AccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetS3AccessPolicyResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::GetSequenceStoreRequest&, const Model::GetSequenceStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSequenceStoreResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::GetShareRequest&, const Model::GetShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetShareResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::GetVariantImportJobRequest&, const Model::GetVariantImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVariantImportJobResponseReceivedHandler;
@@ -492,6 +510,7 @@ namespace Aws
     typedef std::function<void(const OmicsClient*, const Model::ListVariantImportJobsRequest&, const Model::ListVariantImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVariantImportJobsResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::ListVariantStoresRequest&, const Model::ListVariantStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVariantStoresResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::ListWorkflowsRequest&, const Model::ListWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowsResponseReceivedHandler;
+    typedef std::function<void(const OmicsClient*, const Model::PutS3AccessPolicyRequest&, const Model::PutS3AccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutS3AccessPolicyResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::StartAnnotationImportJobRequest&, const Model::StartAnnotationImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAnnotationImportJobResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::StartReadSetActivationJobRequest&, const Model::StartReadSetActivationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReadSetActivationJobResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::StartReadSetExportJobRequest&, const Model::StartReadSetExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReadSetExportJobResponseReceivedHandler;
@@ -505,6 +524,7 @@ namespace Aws
     typedef std::function<void(const OmicsClient*, const Model::UpdateAnnotationStoreVersionRequest&, const Model::UpdateAnnotationStoreVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnnotationStoreVersionResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::UpdateRunCacheRequest&, const Model::UpdateRunCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRunCacheResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::UpdateRunGroupRequest&, const Model::UpdateRunGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRunGroupResponseReceivedHandler;
+    typedef std::function<void(const OmicsClient*, const Model::UpdateSequenceStoreRequest&, const Model::UpdateSequenceStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSequenceStoreResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::UpdateVariantStoreRequest&, const Model::UpdateVariantStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVariantStoreResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::UpdateWorkflowRequest&, const Model::UpdateWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkflowResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::UploadReadSetPartRequest&, const Model::UploadReadSetPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadReadSetPartResponseReceivedHandler;

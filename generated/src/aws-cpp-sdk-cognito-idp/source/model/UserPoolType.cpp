@@ -53,7 +53,9 @@ UserPoolType::UserPoolType() :
     m_userPoolAddOnsHasBeenSet(false),
     m_usernameConfigurationHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_accountRecoverySettingHasBeenSet(false)
+    m_accountRecoverySettingHasBeenSet(false),
+    m_userPoolTier(UserPoolTierType::NOT_SET),
+    m_userPoolTierHasBeenSet(false)
 {
 }
 
@@ -304,6 +306,13 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     m_accountRecoverySettingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UserPoolTier"))
+  {
+    m_userPoolTier = UserPoolTierTypeMapper::GetUserPoolTierTypeForName(jsonValue.GetString("UserPoolTier"));
+
+    m_userPoolTierHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -522,6 +531,11 @@ JsonValue UserPoolType::Jsonize() const
   {
    payload.WithObject("AccountRecoverySetting", m_accountRecoverySetting.Jsonize());
 
+  }
+
+  if(m_userPoolTierHasBeenSet)
+  {
+   payload.WithString("UserPoolTier", UserPoolTierTypeMapper::GetNameForUserPoolTierType(m_userPoolTier));
   }
 
   return payload;

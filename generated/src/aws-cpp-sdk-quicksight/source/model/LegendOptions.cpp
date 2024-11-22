@@ -25,7 +25,8 @@ LegendOptions::LegendOptions() :
     m_position(LegendPosition::NOT_SET),
     m_positionHasBeenSet(false),
     m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false)
+    m_heightHasBeenSet(false),
+    m_valueFontConfigurationHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,13 @@ LegendOptions& LegendOptions::operator =(JsonView jsonValue)
     m_heightHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ValueFontConfiguration"))
+  {
+    m_valueFontConfiguration = jsonValue.GetObject("ValueFontConfiguration");
+
+    m_valueFontConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +112,12 @@ JsonValue LegendOptions::Jsonize() const
   if(m_heightHasBeenSet)
   {
    payload.WithString("Height", m_height);
+
+  }
+
+  if(m_valueFontConfigurationHasBeenSet)
+  {
+   payload.WithObject("ValueFontConfiguration", m_valueFontConfiguration.Jsonize());
 
   }
 

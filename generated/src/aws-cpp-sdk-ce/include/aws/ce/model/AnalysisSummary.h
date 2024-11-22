@@ -108,7 +108,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The analysis ID that's associated with the commitment purchase.</p>
+     * <p>The analysis ID that's associated with the commitment purchase analysis.</p>
      */
     inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
     inline bool AnalysisIdHasBeenSet() const { return m_analysisIdHasBeenSet; }
@@ -122,7 +122,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The analysis configuration for the commitment purchase analysis.</p>
+     * <p>The configuration for the commitment purchase analysis.</p>
      */
     inline const CommitmentPurchaseAnalysisConfiguration& GetCommitmentPurchaseAnalysisConfiguration() const{ return m_commitmentPurchaseAnalysisConfiguration; }
     inline bool CommitmentPurchaseAnalysisConfigurationHasBeenSet() const { return m_commitmentPurchaseAnalysisConfigurationHasBeenSet; }

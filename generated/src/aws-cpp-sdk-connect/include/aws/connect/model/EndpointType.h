@@ -19,7 +19,8 @@ namespace Model
     TELEPHONE_NUMBER,
     VOIP,
     CONTACT_FLOW,
-    CONNECT_PHONENUMBER_ARN
+    CONNECT_PHONENUMBER_ARN,
+    EMAIL_ADDRESS
   };
 
 namespace EndpointTypeMapper

@@ -24,7 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>The device verifier against which it is authenticated.</p><p><h3>See
+   * <p>A Secure Remote Password (SRP) value that your application generates when you
+   * register a user's device. For more information, see <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-getting-a-device-key">Getting
+   * a device key</a>.</p> <p>This data type is a request parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">ConfirmDevice</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceSecretVerifierConfigType">AWS
    * API Reference</a></p>
@@ -40,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The password verifier.</p>
+     * <p>A password verifier for a user's device. Used in SRP authentication.</p>
      */
     inline const Aws::String& GetPasswordVerifier() const{ return m_passwordVerifier; }
     inline bool PasswordVerifierHasBeenSet() const { return m_passwordVerifierHasBeenSet; }
@@ -54,7 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> </p>
+     * <p>The salt that you want to use in SRP authentication with the user's
+     * device.</p>
      */
     inline const Aws::String& GetSalt() const{ return m_salt; }
     inline bool SaltHasBeenSet() const { return m_saltHasBeenSet; }

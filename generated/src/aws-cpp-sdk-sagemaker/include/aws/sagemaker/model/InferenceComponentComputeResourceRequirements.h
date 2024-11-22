@@ -22,9 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>Defines the compute resources to allocate to run a model that you assign to
-   * an inference component. These resources include CPU cores, accelerators, and
-   * memory.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines the compute resources to allocate to run a model, plus any adapter
+   * models, that you assign to an inference component. These resources include CPU
+   * cores, accelerators, and memory.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InferenceComponentComputeResourceRequirements">AWS
    * API Reference</a></p>
    */

@@ -117,6 +117,34 @@ namespace Model
     inline NamespaceInfoV2& WithNamespaceError(const NamespaceError& value) { SetNamespaceError(value); return *this;}
     inline NamespaceInfoV2& WithNamespaceError(NamespaceError&& value) { SetNamespaceError(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM Identity Center application.</p>
+     */
+    inline const Aws::String& GetIamIdentityCenterApplicationArn() const{ return m_iamIdentityCenterApplicationArn; }
+    inline bool IamIdentityCenterApplicationArnHasBeenSet() const { return m_iamIdentityCenterApplicationArnHasBeenSet; }
+    inline void SetIamIdentityCenterApplicationArn(const Aws::String& value) { m_iamIdentityCenterApplicationArnHasBeenSet = true; m_iamIdentityCenterApplicationArn = value; }
+    inline void SetIamIdentityCenterApplicationArn(Aws::String&& value) { m_iamIdentityCenterApplicationArnHasBeenSet = true; m_iamIdentityCenterApplicationArn = std::move(value); }
+    inline void SetIamIdentityCenterApplicationArn(const char* value) { m_iamIdentityCenterApplicationArnHasBeenSet = true; m_iamIdentityCenterApplicationArn.assign(value); }
+    inline NamespaceInfoV2& WithIamIdentityCenterApplicationArn(const Aws::String& value) { SetIamIdentityCenterApplicationArn(value); return *this;}
+    inline NamespaceInfoV2& WithIamIdentityCenterApplicationArn(Aws::String&& value) { SetIamIdentityCenterApplicationArn(std::move(value)); return *this;}
+    inline NamespaceInfoV2& WithIamIdentityCenterApplicationArn(const char* value) { SetIamIdentityCenterApplicationArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM Identity Center instance.</p>
+     */
+    inline const Aws::String& GetIamIdentityCenterInstanceArn() const{ return m_iamIdentityCenterInstanceArn; }
+    inline bool IamIdentityCenterInstanceArnHasBeenSet() const { return m_iamIdentityCenterInstanceArnHasBeenSet; }
+    inline void SetIamIdentityCenterInstanceArn(const Aws::String& value) { m_iamIdentityCenterInstanceArnHasBeenSet = true; m_iamIdentityCenterInstanceArn = value; }
+    inline void SetIamIdentityCenterInstanceArn(Aws::String&& value) { m_iamIdentityCenterInstanceArnHasBeenSet = true; m_iamIdentityCenterInstanceArn = std::move(value); }
+    inline void SetIamIdentityCenterInstanceArn(const char* value) { m_iamIdentityCenterInstanceArnHasBeenSet = true; m_iamIdentityCenterInstanceArn.assign(value); }
+    inline NamespaceInfoV2& WithIamIdentityCenterInstanceArn(const Aws::String& value) { SetIamIdentityCenterInstanceArn(value); return *this;}
+    inline NamespaceInfoV2& WithIamIdentityCenterInstanceArn(Aws::String&& value) { SetIamIdentityCenterInstanceArn(std::move(value)); return *this;}
+    inline NamespaceInfoV2& WithIamIdentityCenterInstanceArn(const char* value) { SetIamIdentityCenterInstanceArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -136,6 +164,12 @@ namespace Model
 
     NamespaceError m_namespaceError;
     bool m_namespaceErrorHasBeenSet = false;
+
+    Aws::String m_iamIdentityCenterApplicationArn;
+    bool m_iamIdentityCenterApplicationArnHasBeenSet = false;
+
+    Aws::String m_iamIdentityCenterInstanceArn;
+    bool m_iamIdentityCenterInstanceArnHasBeenSet = false;
   };
 
 } // namespace Model

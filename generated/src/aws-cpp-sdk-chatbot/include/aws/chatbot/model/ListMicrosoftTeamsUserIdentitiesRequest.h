@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Number (ARN) of the MicrosoftTeamsChannelConfiguration
+     * <p>The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration
      * associated with the user identities to list.</p>
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }

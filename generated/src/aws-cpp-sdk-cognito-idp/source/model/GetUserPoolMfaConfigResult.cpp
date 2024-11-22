@@ -55,6 +55,12 @@ GetUserPoolMfaConfigResult& GetUserPoolMfaConfigResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("WebAuthnConfiguration"))
+  {
+    m_webAuthnConfiguration = jsonValue.GetObject("WebAuthnConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

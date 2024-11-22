@@ -25,8 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A container for the UI customization information for a user pool's built-in
-   * app UI.</p><p><h3>See Also:</h3>   <a
+   * <p>A container for the UI customization information for the hosted UI in a user
+   * pool.</p> <p>This data type is a response parameter of <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">GetUICustomization</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UICustomizationType">AWS
    * API Reference</a></p>
    */
@@ -41,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool.</p>
+     * <p>The ID of the user pool with hosted UI customizations.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -55,7 +57,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The client ID for the client app.</p>
+     * <p>The app client ID for your UI customization. When this value isn't present,
+     * the customization applies to all user pool app clients that don't have
+     * client-level settings..</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -69,7 +73,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The logo image for the UI customization.</p>
+     * <p>A URL path to the hosted logo image of your UI customization.</p>
      */
     inline const Aws::String& GetImageUrl() const{ return m_imageUrl; }
     inline bool ImageUrlHasBeenSet() const { return m_imageUrlHasBeenSet; }
@@ -83,7 +87,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The CSS values in the UI customization.</p>
+     * <p>The CSS values in the UI customization. To get a template with your UI
+     * customization options, make a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUiCustomization.html">GetUiCustomization</a>
+     * request.</p>
      */
     inline const Aws::String& GetCSS() const{ return m_cSS; }
     inline bool CSSHasBeenSet() const { return m_cSSHasBeenSet; }

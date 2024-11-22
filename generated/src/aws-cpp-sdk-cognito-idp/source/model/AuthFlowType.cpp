@@ -27,6 +27,7 @@ namespace Aws
         static const int ADMIN_NO_SRP_AUTH_HASH = HashingUtils::HashString("ADMIN_NO_SRP_AUTH");
         static const int USER_PASSWORD_AUTH_HASH = HashingUtils::HashString("USER_PASSWORD_AUTH");
         static const int ADMIN_USER_PASSWORD_AUTH_HASH = HashingUtils::HashString("ADMIN_USER_PASSWORD_AUTH");
+        static const int USER_AUTH_HASH = HashingUtils::HashString("USER_AUTH");
 
 
         AuthFlowType GetAuthFlowTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return AuthFlowType::ADMIN_USER_PASSWORD_AUTH;
           }
+          else if (hashCode == USER_AUTH_HASH)
+          {
+            return AuthFlowType::USER_AUTH;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "USER_PASSWORD_AUTH";
           case AuthFlowType::ADMIN_USER_PASSWORD_AUTH:
             return "ADMIN_USER_PASSWORD_AUTH";
+          case AuthFlowType::USER_AUTH:
+            return "USER_AUTH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -67,6 +67,12 @@ GetTaskTemplateResult& GetTaskTemplateResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("SelfAssignFlowId"))
+  {
+    m_selfAssignFlowId = jsonValue.GetString("SelfAssignFlowId");
+
+  }
+
   if(jsonValue.ValueExists("Constraints"))
   {
     m_constraints = jsonValue.GetObject("Constraints");

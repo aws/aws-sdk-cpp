@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the user context data captured at the time of an event
-   * request.</p><p><h3>See Also:</h3>   <a
+   * <p>The context data that your application submitted in an authentication request
+   * with advanced security features, as displayed in an <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>
+   * response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EventContextDataType">AWS
    * API Reference</a></p>
    */

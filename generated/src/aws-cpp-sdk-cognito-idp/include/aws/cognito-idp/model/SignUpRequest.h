@@ -89,7 +89,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The password of the user you want to register.</p>
+     * <p>The password of the user you want to register.</p> <p>Users can sign up
+     * without a password when your user pool supports passwordless sign-in with email
+     * or SMS OTPs. To create a user with no password, omit this parameter or submit a
+     * blank value. You can only create a passwordless user when passwordless sign-in
+     * is available. See <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignInPolicyType.html">the
+     * SignInPolicyType</a> property of <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }

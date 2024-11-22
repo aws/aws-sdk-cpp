@@ -1,0 +1,109 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/ConnectRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Http
+{
+    class URI;
+} //namespace Http
+namespace Connect
+{
+namespace Model
+{
+
+  /**
+   */
+  class ListAssociatedContactsRequest : public ConnectRequest
+  {
+  public:
+    AWS_CONNECT_API ListAssociatedContactsRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "ListAssociatedContacts"; }
+
+    AWS_CONNECT_API Aws::String SerializePayload() const override;
+
+    AWS_CONNECT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+    inline ListAssociatedContactsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+    inline ListAssociatedContactsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+    inline ListAssociatedContactsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
+    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
+    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
+    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
+    inline ListAssociatedContactsRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
+    inline ListAssociatedContactsRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
+    inline ListAssociatedContactsRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline ListAssociatedContactsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+    inline ListAssociatedContactsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListAssociatedContactsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListAssociatedContactsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
+  private:
+
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
+
+    Aws::String m_contactId;
+    bool m_contactIdHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace Connect
+} // namespace Aws

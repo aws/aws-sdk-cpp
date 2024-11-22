@@ -23,7 +23,9 @@ namespace Model
 TargetTrackingMetricStat::TargetTrackingMetricStat() : 
     m_metricHasBeenSet(false),
     m_statHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_period(0),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,12 @@ TargetTrackingMetricStat& TargetTrackingMetricStat::operator =(const XmlNode& xm
       m_unit = Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText());
       m_unitHasBeenSet = true;
     }
+    XmlNode periodNode = resultNode.FirstChild("Period");
+    if(!periodNode.IsNull())
+    {
+      m_period = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
+      m_periodHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -81,6 +89,11 @@ void TargetTrackingMetricStat::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(m_unit.c_str()) << "&";
   }
 
+  if(m_periodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Period=" << m_period << "&";
+  }
+
 }
 
 void TargetTrackingMetricStat::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -98,6 +111,10 @@ void TargetTrackingMetricStat::OutputToStream(Aws::OStream& oStream, const char*
   if(m_unitHasBeenSet)
   {
       oStream << location << ".Unit=" << StringUtils::URLEncode(m_unit.c_str()) << "&";
+  }
+  if(m_periodHasBeenSet)
+  {
+      oStream << location << ".Period=" << m_period << "&";
   }
 }
 

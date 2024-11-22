@@ -16,6 +16,7 @@
 #include <aws/quicksight/model/TreeMapVisual.h>
 #include <aws/quicksight/model/GeospatialMapVisual.h>
 #include <aws/quicksight/model/FilledMapVisual.h>
+#include <aws/quicksight/model/LayerMapVisual.h>
 #include <aws/quicksight/model/FunnelChartVisual.h>
 #include <aws/quicksight/model/ScatterPlotVisual.h>
 #include <aws/quicksight/model/ComboChartVisual.h>
@@ -28,6 +29,7 @@
 #include <aws/quicksight/model/CustomContentVisual.h>
 #include <aws/quicksight/model/EmptyVisual.h>
 #include <aws/quicksight/model/RadarChartVisual.h>
+#include <aws/quicksight/model/PluginVisual.h>
 #include <utility>
 
 namespace Aws
@@ -218,6 +220,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The properties for a layer map visual</p>
+     */
+    inline const LayerMapVisual& GetLayerMapVisual() const{ return m_layerMapVisual; }
+    inline bool LayerMapVisualHasBeenSet() const { return m_layerMapVisualHasBeenSet; }
+    inline void SetLayerMapVisual(const LayerMapVisual& value) { m_layerMapVisualHasBeenSet = true; m_layerMapVisual = value; }
+    inline void SetLayerMapVisual(LayerMapVisual&& value) { m_layerMapVisualHasBeenSet = true; m_layerMapVisual = std::move(value); }
+    inline Visual& WithLayerMapVisual(const LayerMapVisual& value) { SetLayerMapVisual(value); return *this;}
+    inline Visual& WithLayerMapVisual(LayerMapVisual&& value) { SetLayerMapVisual(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A funnel chart.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/funnel-visual-content.html">Using
      * funnel charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>
@@ -381,6 +395,18 @@ namespace Model
     inline Visual& WithRadarChartVisual(const RadarChartVisual& value) { SetRadarChartVisual(value); return *this;}
     inline Visual& WithRadarChartVisual(RadarChartVisual&& value) { SetRadarChartVisual(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The custom plugin visual type.</p>
+     */
+    inline const PluginVisual& GetPluginVisual() const{ return m_pluginVisual; }
+    inline bool PluginVisualHasBeenSet() const { return m_pluginVisualHasBeenSet; }
+    inline void SetPluginVisual(const PluginVisual& value) { m_pluginVisualHasBeenSet = true; m_pluginVisual = value; }
+    inline void SetPluginVisual(PluginVisual&& value) { m_pluginVisualHasBeenSet = true; m_pluginVisual = std::move(value); }
+    inline Visual& WithPluginVisual(const PluginVisual& value) { SetPluginVisual(value); return *this;}
+    inline Visual& WithPluginVisual(PluginVisual&& value) { SetPluginVisual(std::move(value)); return *this;}
+    ///@}
   private:
 
     TableVisual m_tableVisual;
@@ -415,6 +441,9 @@ namespace Model
 
     FilledMapVisual m_filledMapVisual;
     bool m_filledMapVisualHasBeenSet = false;
+
+    LayerMapVisual m_layerMapVisual;
+    bool m_layerMapVisualHasBeenSet = false;
 
     FunnelChartVisual m_funnelChartVisual;
     bool m_funnelChartVisualHasBeenSet = false;
@@ -451,6 +480,9 @@ namespace Model
 
     RadarChartVisual m_radarChartVisual;
     bool m_radarChartVisualHasBeenSet = false;
+
+    PluginVisual m_pluginVisual;
+    bool m_pluginVisualHasBeenSet = false;
   };
 
 } // namespace Model

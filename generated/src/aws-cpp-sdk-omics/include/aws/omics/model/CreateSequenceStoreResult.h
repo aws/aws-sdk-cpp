@@ -9,6 +9,9 @@
 #include <aws/omics/model/SseConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/ETagAlgorithmFamily.h>
+#include <aws/omics/model/SequenceStoreStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/omics/model/SequenceStoreS3Access.h>
 #include <utility>
 
 namespace Aws
@@ -135,6 +138,54 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The status of the sequence store.</p>
+     */
+    inline const SequenceStoreStatus& GetStatus() const{ return m_status; }
+    inline void SetStatus(const SequenceStoreStatus& value) { m_status = value; }
+    inline void SetStatus(SequenceStoreStatus&& value) { m_status = std::move(value); }
+    inline CreateSequenceStoreResult& WithStatus(const SequenceStoreStatus& value) { SetStatus(value); return *this;}
+    inline CreateSequenceStoreResult& WithStatus(SequenceStoreStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status message of the sequence store.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
+    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
+    inline CreateSequenceStoreResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+    inline CreateSequenceStoreResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+    inline CreateSequenceStoreResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The tags keys to propagate to the S3 objects associated with read sets in the
+     * sequence store.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPropagatedSetLevelTags() const{ return m_propagatedSetLevelTags; }
+    inline void SetPropagatedSetLevelTags(const Aws::Vector<Aws::String>& value) { m_propagatedSetLevelTags = value; }
+    inline void SetPropagatedSetLevelTags(Aws::Vector<Aws::String>&& value) { m_propagatedSetLevelTags = std::move(value); }
+    inline CreateSequenceStoreResult& WithPropagatedSetLevelTags(const Aws::Vector<Aws::String>& value) { SetPropagatedSetLevelTags(value); return *this;}
+    inline CreateSequenceStoreResult& WithPropagatedSetLevelTags(Aws::Vector<Aws::String>&& value) { SetPropagatedSetLevelTags(std::move(value)); return *this;}
+    inline CreateSequenceStoreResult& AddPropagatedSetLevelTags(const Aws::String& value) { m_propagatedSetLevelTags.push_back(value); return *this; }
+    inline CreateSequenceStoreResult& AddPropagatedSetLevelTags(Aws::String&& value) { m_propagatedSetLevelTags.push_back(std::move(value)); return *this; }
+    inline CreateSequenceStoreResult& AddPropagatedSetLevelTags(const char* value) { m_propagatedSetLevelTags.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    
+    inline const SequenceStoreS3Access& GetS3Access() const{ return m_s3Access; }
+    inline void SetS3Access(const SequenceStoreS3Access& value) { m_s3Access = value; }
+    inline void SetS3Access(SequenceStoreS3Access&& value) { m_s3Access = std::move(value); }
+    inline CreateSequenceStoreResult& WithS3Access(const SequenceStoreS3Access& value) { SetS3Access(value); return *this;}
+    inline CreateSequenceStoreResult& WithS3Access(SequenceStoreS3Access&& value) { SetS3Access(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -161,6 +212,14 @@ namespace Model
     Aws::String m_fallbackLocation;
 
     ETagAlgorithmFamily m_eTagAlgorithmFamily;
+
+    SequenceStoreStatus m_status;
+
+    Aws::String m_statusMessage;
+
+    Aws::Vector<Aws::String> m_propagatedSetLevelTags;
+
+    SequenceStoreS3Access m_s3Access;
 
     Aws::String m_requestId;
   };

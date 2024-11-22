@@ -21,7 +21,11 @@ namespace Model
 SequenceStoreFilter::SequenceStoreFilter() : 
     m_nameHasBeenSet(false),
     m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
+    m_createdBeforeHasBeenSet(false),
+    m_status(SequenceStoreStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_updatedAfterHasBeenSet(false),
+    m_updatedBeforeHasBeenSet(false)
 {
 }
 
@@ -54,6 +58,27 @@ SequenceStoreFilter& SequenceStoreFilter::operator =(JsonView jsonValue)
     m_createdBeforeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = SequenceStoreStatusMapper::GetSequenceStoreStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedAfter"))
+  {
+    m_updatedAfter = jsonValue.GetString("updatedAfter");
+
+    m_updatedAfterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedBefore"))
+  {
+    m_updatedBefore = jsonValue.GetString("updatedBefore");
+
+    m_updatedBeforeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +100,21 @@ JsonValue SequenceStoreFilter::Jsonize() const
   if(m_createdBeforeHasBeenSet)
   {
    payload.WithString("createdBefore", m_createdBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", SequenceStoreStatusMapper::GetNameForSequenceStoreStatus(m_status));
+  }
+
+  if(m_updatedAfterHasBeenSet)
+  {
+   payload.WithString("updatedAfter", m_updatedAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updatedBeforeHasBeenSet)
+  {
+   payload.WithString("updatedBefore", m_updatedBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

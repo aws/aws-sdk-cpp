@@ -39,6 +39,26 @@ namespace Model
 
 
     ///@{
+    /**
+     * <p>You can automatically sign users in with the one-time password that they
+     * provided in a successful <code>ConfirmSignUp</code> request. To do this, pass
+     * the <code>Session</code> parameter from the <code>ConfirmSignUp</code> response
+     * in the <code>Session</code> parameter of an <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>
+     * request.</p>
+     */
+    inline const Aws::String& GetSession() const{ return m_session; }
+    inline void SetSession(const Aws::String& value) { m_session = value; }
+    inline void SetSession(Aws::String&& value) { m_session = std::move(value); }
+    inline void SetSession(const char* value) { m_session.assign(value); }
+    inline ConfirmSignUpResult& WithSession(const Aws::String& value) { SetSession(value); return *this;}
+    inline ConfirmSignUpResult& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
+    inline ConfirmSignUpResult& WithSession(const char* value) { SetSession(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -49,6 +69,8 @@ namespace Model
     inline ConfirmSignUpResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_session;
 
     Aws::String m_requestId;
   };

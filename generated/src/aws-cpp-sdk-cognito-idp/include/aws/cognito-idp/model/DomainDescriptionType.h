@@ -26,7 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>A container for information about a domain.</p><p><h3>See Also:</h3>   <a
+   * <p>A container for information about the user pool domain associated with the
+   * hosted UI and OAuth endpoints.</p> <p>This data type is a response parameter of
+   * <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolDomain.html">DescribeUserPoolDomain</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DomainDescriptionType">AWS
    * API Reference</a></p>
    */
@@ -41,7 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool that the domain is attached to.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -55,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Web Services ID for the user pool owner.</p>
+     * <p>The Amazon Web Services account that you created the user pool in.</p>
      */
     inline const Aws::String& GetAWSAccountId() const{ return m_aWSAccountId; }
     inline bool AWSAccountIdHasBeenSet() const { return m_aWSAccountIdHasBeenSet; }
@@ -99,8 +103,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider.</p>
+     * <p>The Amazon CloudFront endpoint that hosts your custom domain.</p>
      */
     inline const Aws::String& GetCloudFrontDistribution() const{ return m_cloudFrontDistribution; }
     inline bool CloudFrontDistributionHasBeenSet() const { return m_cloudFrontDistributionHasBeenSet; }
@@ -150,6 +153,21 @@ namespace Model
     inline DomainDescriptionType& WithCustomDomainConfig(const CustomDomainConfigType& value) { SetCustomDomainConfig(value); return *this;}
     inline DomainDescriptionType& WithCustomDomainConfig(CustomDomainConfigType&& value) { SetCustomDomainConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The version of managed login branding that you want to apply to your domain.
+     * A value of <code>1</code> indicates hosted UI (classic) branding and a version
+     * of <code>2</code> indicates managed login branding.</p> <p>Managed login
+     * requires that your user pool be configured for any <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
+     * plan</a> other than <code>Lite</code>.</p>
+     */
+    inline int GetManagedLoginVersion() const{ return m_managedLoginVersion; }
+    inline bool ManagedLoginVersionHasBeenSet() const { return m_managedLoginVersionHasBeenSet; }
+    inline void SetManagedLoginVersion(int value) { m_managedLoginVersionHasBeenSet = true; m_managedLoginVersion = value; }
+    inline DomainDescriptionType& WithManagedLoginVersion(int value) { SetManagedLoginVersion(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_userPoolId;
@@ -175,6 +193,9 @@ namespace Model
 
     CustomDomainConfigType m_customDomainConfig;
     bool m_customDomainConfigHasBeenSet = false;
+
+    int m_managedLoginVersion;
+    bool m_managedLoginVersionHasBeenSet = false;
   };
 
 } // namespace Model

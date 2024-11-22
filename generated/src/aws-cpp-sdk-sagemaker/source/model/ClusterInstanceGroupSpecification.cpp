@@ -29,7 +29,8 @@ ClusterInstanceGroupSpecification::ClusterInstanceGroupSpecification() :
     m_threadsPerCore(0),
     m_threadsPerCoreHasBeenSet(false),
     m_instanceStorageConfigsHasBeenSet(false),
-    m_onStartDeepHealthChecksHasBeenSet(false)
+    m_onStartDeepHealthChecksHasBeenSet(false),
+    m_overrideVpcConfigHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,13 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator =
     m_onStartDeepHealthChecksHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OverrideVpcConfig"))
+  {
+    m_overrideVpcConfig = jsonValue.GetObject("OverrideVpcConfig");
+
+    m_overrideVpcConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -164,6 +172,12 @@ JsonValue ClusterInstanceGroupSpecification::Jsonize() const
      onStartDeepHealthChecksJsonList[onStartDeepHealthChecksIndex].AsString(DeepHealthCheckTypeMapper::GetNameForDeepHealthCheckType(m_onStartDeepHealthChecks[onStartDeepHealthChecksIndex]));
    }
    payload.WithArray("OnStartDeepHealthChecks", std::move(onStartDeepHealthChecksJsonList));
+
+  }
+
+  if(m_overrideVpcConfigHasBeenSet)
+  {
+   payload.WithObject("OverrideVpcConfig", m_overrideVpcConfig.Jsonize());
 
   }
 

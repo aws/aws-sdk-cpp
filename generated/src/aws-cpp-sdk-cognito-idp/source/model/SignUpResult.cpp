@@ -49,6 +49,12 @@ SignUpResult& SignUpResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   }
 
+  if(jsonValue.ValueExists("Session"))
+  {
+    m_session = jsonValue.GetString("Session");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

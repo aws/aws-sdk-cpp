@@ -26,8 +26,13 @@ namespace Model
 {
 
   /**
-   * <p>Contextual user data type used for evaluating the risk of an unexpected event
-   * by Amazon Cognito advanced security.</p><p><h3>See Also:</h3>   <a
+   * <p>Contextual user data used for evaluating the risk of an authentication event
+   * by user pool threat protection.</p> <p>This data type is a request parameter of
+   * server-side authentication operations like <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ContextDataType">AWS
    * API Reference</a></p>
    */
@@ -56,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Your server endpoint where this API is invoked.</p>
+     * <p>The name of your application's service endpoint.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
@@ -70,7 +75,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Your server path where this API is invoked.</p>
+     * <p>The path of your application's service endpoint.</p>
      */
     inline const Aws::String& GetServerPath() const{ return m_serverPath; }
     inline bool ServerPathHasBeenSet() const { return m_serverPathHasBeenSet; }
@@ -84,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>HttpHeaders received on your server in same order.</p>
+     * <p>The HTTP headers from your user's authentication request.</p>
      */
     inline const Aws::Vector<HttpHeader>& GetHttpHeaders() const{ return m_httpHeaders; }
     inline bool HttpHeadersHasBeenSet() const { return m_httpHeadersHasBeenSet; }

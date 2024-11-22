@@ -30,6 +30,7 @@ Visual::Visual() :
     m_treeMapVisualHasBeenSet(false),
     m_geospatialMapVisualHasBeenSet(false),
     m_filledMapVisualHasBeenSet(false),
+    m_layerMapVisualHasBeenSet(false),
     m_funnelChartVisualHasBeenSet(false),
     m_scatterPlotVisualHasBeenSet(false),
     m_comboChartVisualHasBeenSet(false),
@@ -41,7 +42,8 @@ Visual::Visual() :
     m_sankeyDiagramVisualHasBeenSet(false),
     m_customContentVisualHasBeenSet(false),
     m_emptyVisualHasBeenSet(false),
-    m_radarChartVisualHasBeenSet(false)
+    m_radarChartVisualHasBeenSet(false),
+    m_pluginVisualHasBeenSet(false)
 {
 }
 
@@ -130,6 +132,13 @@ Visual& Visual::operator =(JsonView jsonValue)
     m_filledMapVisualHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LayerMapVisual"))
+  {
+    m_layerMapVisual = jsonValue.GetObject("LayerMapVisual");
+
+    m_layerMapVisualHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("FunnelChartVisual"))
   {
     m_funnelChartVisual = jsonValue.GetObject("FunnelChartVisual");
@@ -214,6 +223,13 @@ Visual& Visual::operator =(JsonView jsonValue)
     m_radarChartVisualHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PluginVisual"))
+  {
+    m_pluginVisual = jsonValue.GetObject("PluginVisual");
+
+    m_pluginVisualHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -287,6 +303,12 @@ JsonValue Visual::Jsonize() const
 
   }
 
+  if(m_layerMapVisualHasBeenSet)
+  {
+   payload.WithObject("LayerMapVisual", m_layerMapVisual.Jsonize());
+
+  }
+
   if(m_funnelChartVisualHasBeenSet)
   {
    payload.WithObject("FunnelChartVisual", m_funnelChartVisual.Jsonize());
@@ -356,6 +378,12 @@ JsonValue Visual::Jsonize() const
   if(m_radarChartVisualHasBeenSet)
   {
    payload.WithObject("RadarChartVisual", m_radarChartVisual.Jsonize());
+
+  }
+
+  if(m_pluginVisualHasBeenSet)
+  {
+   payload.WithObject("PluginVisual", m_pluginVisual.Jsonize());
 
   }
 

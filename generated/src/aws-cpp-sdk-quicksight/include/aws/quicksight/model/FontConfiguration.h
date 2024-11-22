@@ -104,6 +104,20 @@ namespace Model
     inline FontConfiguration& WithFontStyle(const FontStyle& value) { SetFontStyle(value); return *this;}
     inline FontConfiguration& WithFontStyle(FontStyle&& value) { SetFontStyle(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The font family that you want to use.</p>
+     */
+    inline const Aws::String& GetFontFamily() const{ return m_fontFamily; }
+    inline bool FontFamilyHasBeenSet() const { return m_fontFamilyHasBeenSet; }
+    inline void SetFontFamily(const Aws::String& value) { m_fontFamilyHasBeenSet = true; m_fontFamily = value; }
+    inline void SetFontFamily(Aws::String&& value) { m_fontFamilyHasBeenSet = true; m_fontFamily = std::move(value); }
+    inline void SetFontFamily(const char* value) { m_fontFamilyHasBeenSet = true; m_fontFamily.assign(value); }
+    inline FontConfiguration& WithFontFamily(const Aws::String& value) { SetFontFamily(value); return *this;}
+    inline FontConfiguration& WithFontFamily(Aws::String&& value) { SetFontFamily(std::move(value)); return *this;}
+    inline FontConfiguration& WithFontFamily(const char* value) { SetFontFamily(value); return *this;}
+    ///@}
   private:
 
     FontSize m_fontSize;
@@ -120,6 +134,9 @@ namespace Model
 
     FontStyle m_fontStyle;
     bool m_fontStyleHasBeenSet = false;
+
+    Aws::String m_fontFamily;
+    bool m_fontFamilyHasBeenSet = false;
   };
 
 } // namespace Model
