@@ -266,9 +266,9 @@ AWSError<CoreErrors> JsonErrorMarshallerQueryCompatible::Marshall(const Aws::Htt
                                                                       : "");
 
     if (httpResponse.HasHeader(ERROR_TYPE_HEADER)) {
-      error = Marshall(httpResponse.GetHeader(ERROR_TYPE_HEADER), message);
+      error = AWSErrorMarshaller::Marshall(httpResponse.GetHeader(ERROR_TYPE_HEADER), message);
     } else if (payloadView.ValueExists(TYPE)) {
-      error = Marshall(payloadView.GetString(TYPE), message);
+      error = AWSErrorMarshaller::Marshall(payloadView.GetString(TYPE), message);
     } else {
       error = FindErrorByHttpResponseCode(httpResponse.GetResponseCode());
       error.SetMessage(message);
