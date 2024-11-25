@@ -21,7 +21,6 @@ namespace ${serviceNamespace}
 class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} $className : public Aws::Client::JsonErrorMarshaller
 {
 public:
-
 #if ($metadata.awsQueryCompatible)
   explicit $className(bool queryCompatibilityMode) : Aws::Client::JsonErrorMarshaller(queryCompatibilityMode){}
 #end
