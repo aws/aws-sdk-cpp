@@ -80,21 +80,29 @@ namespace Aws
         {
             using AWSErrorMarshaller::Marshall;
         public:
-         JsonErrorMarshaller(bool queryCompatibilityMode);
-         JsonErrorMarshaller() = default;
          /**
           * Converts an exceptionName and message into an Error object, if it
           * can be parsed. Otherwise, it returns and AWSError with
           * CoreErrors::UNKNOWN as the error type.
           */
-         AWSError<CoreErrors> Marshall(const Aws::Http::HttpResponse& response) const override;
+         virtual AWSError<CoreErrors> Marshall(const Aws::Http::HttpResponse& response) const override;
 
          AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const override;
 
         protected:
          const Aws::Utils::Json::JsonValue& GetJsonPayloadFromError(const AWSError<CoreErrors>&) const;
-         bool isQueryCompatibleMode() const;
-         const bool m_queryCompatibilityMode{false};
+        };
+
+        class AWS_CORE_API JsonErrorMarshallerQueryCompatible : public JsonErrorMarshaller {
+          using AWSErrorMarshaller::Marshall;
+
+         public:
+          /**
+           * Converts an exceptionName and message into an Error object, if it
+           * can be parsed. Otherwise, it returns and AWSError with
+           * CoreErrors::UNKNOWN as the error type.
+           */
+          AWSError<CoreErrors> Marshall(const Aws::Http::HttpResponse& response) const override;
         };
 
         class AWS_CORE_API XmlErrorMarshaller : public AWSErrorMarshaller {
