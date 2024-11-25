@@ -249,9 +249,7 @@ AWSError<CoreErrors> AWSErrorMarshaller::FindErrorByHttpResponseCode(Aws::Http::
     return CoreErrorsMapper::GetErrorForHttpResponseCode(code);
 }
 
-
-AWSError<CoreErrors> JsonErrorMarshallerQueryCompatible::Marshall(const Aws::Http::HttpResponse& httpResponse) const
-{
+AWSError<CoreErrors> JsonErrorMarshallerQueryCompatible::Marshall(const Aws::Http::HttpResponse& httpResponse) const {
   Aws::StringStream memoryStream;
   std::copy(std::istreambuf_iterator<char>(httpResponse.GetResponseBody()), std::istreambuf_iterator<char>(),
             std::ostreambuf_iterator<char>(memoryStream));
