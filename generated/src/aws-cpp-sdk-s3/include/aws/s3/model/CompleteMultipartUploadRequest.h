@@ -235,6 +235,30 @@ namespace Model
 
     ///@{
     /**
+     * <p>Uploads the object only if the ETag (entity tag) value provided during the
+     * WRITE operation matches the ETag of the object in S3. If the ETag values do not
+     * match, the operation returns a <code>412 Precondition Failed</code> error.</p>
+     * <p>If a conflicting operation occurs during the upload S3 returns a <code>409
+     * ConditionalRequestConflict</code> response. On a 409 failure you should fetch
+     * the object's ETag, re-initiate the multipart upload with
+     * <code>CreateMultipartUpload</code>, and re-upload each part.</p> <p>Expects the
+     * ETag value as a string.</p> <p>For more information about conditional requests,
+     * see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>, or <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional
+     * requests</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+    inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
+    inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
+    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
+    inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
+    inline CompleteMultipartUploadRequest& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
+    inline CompleteMultipartUploadRequest& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
+    inline CompleteMultipartUploadRequest& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Uploads the object only if the object key name does not already exist in the
      * bucket specified. Otherwise, Amazon S3 returns a <code>412 Precondition
      * Failed</code> error.</p> <p>If a conflicting operation occurs during the upload
@@ -361,6 +385,9 @@ namespace Model
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet = false;
+
+    Aws::String m_ifMatch;
+    bool m_ifMatchHasBeenSet = false;
 
     Aws::String m_ifNoneMatch;
     bool m_ifNoneMatchHasBeenSet = false;

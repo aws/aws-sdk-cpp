@@ -365,6 +365,32 @@ namespace NetworkManager
         }
 
         /**
+         * <p>Creates an Amazon Web Services Direct Connect gateway attachment
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateDirectConnectGatewayAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDirectConnectGatewayAttachmentOutcome CreateDirectConnectGatewayAttachment(const Model::CreateDirectConnectGatewayAttachmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateDirectConnectGatewayAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateDirectConnectGatewayAttachmentRequestT = Model::CreateDirectConnectGatewayAttachmentRequest>
+        Model::CreateDirectConnectGatewayAttachmentOutcomeCallable CreateDirectConnectGatewayAttachmentCallable(const CreateDirectConnectGatewayAttachmentRequestT& request) const
+        {
+            return SubmitCallable(&NetworkManagerClient::CreateDirectConnectGatewayAttachment, request);
+        }
+
+        /**
+         * An Async wrapper for CreateDirectConnectGatewayAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateDirectConnectGatewayAttachmentRequestT = Model::CreateDirectConnectGatewayAttachmentRequest>
+        void CreateDirectConnectGatewayAttachmentAsync(const CreateDirectConnectGatewayAttachmentRequestT& request, const CreateDirectConnectGatewayAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkManagerClient::CreateDirectConnectGatewayAttachment, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new, empty global network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateGlobalNetwork">AWS
          * API Reference</a></p>
@@ -1275,6 +1301,32 @@ namespace NetworkManager
         void GetDevicesAsync(const GetDevicesRequestT& request, const GetDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&NetworkManagerClient::GetDevices, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a specific Amazon Web Services Direct Connect
+         * gateway attachment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetDirectConnectGatewayAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDirectConnectGatewayAttachmentOutcome GetDirectConnectGatewayAttachment(const Model::GetDirectConnectGatewayAttachmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDirectConnectGatewayAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDirectConnectGatewayAttachmentRequestT = Model::GetDirectConnectGatewayAttachmentRequest>
+        Model::GetDirectConnectGatewayAttachmentOutcomeCallable GetDirectConnectGatewayAttachmentCallable(const GetDirectConnectGatewayAttachmentRequestT& request) const
+        {
+            return SubmitCallable(&NetworkManagerClient::GetDirectConnectGatewayAttachment, request);
+        }
+
+        /**
+         * An Async wrapper for GetDirectConnectGatewayAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDirectConnectGatewayAttachmentRequestT = Model::GetDirectConnectGatewayAttachmentRequest>
+        void GetDirectConnectGatewayAttachmentAsync(const GetDirectConnectGatewayAttachmentRequestT& request, const GetDirectConnectGatewayAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkManagerClient::GetDirectConnectGatewayAttachment, request, handler, context);
         }
 
         /**
@@ -2189,6 +2241,32 @@ namespace NetworkManager
         void UpdateDeviceAsync(const UpdateDeviceRequestT& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&NetworkManagerClient::UpdateDevice, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the edge locations associated with an Amazon Web Services Direct
+         * Connect gateway attachment. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateDirectConnectGatewayAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDirectConnectGatewayAttachmentOutcome UpdateDirectConnectGatewayAttachment(const Model::UpdateDirectConnectGatewayAttachmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDirectConnectGatewayAttachment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDirectConnectGatewayAttachmentRequestT = Model::UpdateDirectConnectGatewayAttachmentRequest>
+        Model::UpdateDirectConnectGatewayAttachmentOutcomeCallable UpdateDirectConnectGatewayAttachmentCallable(const UpdateDirectConnectGatewayAttachmentRequestT& request) const
+        {
+            return SubmitCallable(&NetworkManagerClient::UpdateDirectConnectGatewayAttachment, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDirectConnectGatewayAttachment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDirectConnectGatewayAttachmentRequestT = Model::UpdateDirectConnectGatewayAttachmentRequest>
+        void UpdateDirectConnectGatewayAttachmentAsync(const UpdateDirectConnectGatewayAttachmentRequestT& request, const UpdateDirectConnectGatewayAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkManagerClient::UpdateDirectConnectGatewayAttachment, request, handler, context);
         }
 
         /**

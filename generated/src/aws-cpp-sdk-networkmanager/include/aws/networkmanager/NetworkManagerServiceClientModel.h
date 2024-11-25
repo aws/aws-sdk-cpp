@@ -28,6 +28,7 @@
 #include <aws/networkmanager/model/CreateConnectionResult.h>
 #include <aws/networkmanager/model/CreateCoreNetworkResult.h>
 #include <aws/networkmanager/model/CreateDeviceResult.h>
+#include <aws/networkmanager/model/CreateDirectConnectGatewayAttachmentResult.h>
 #include <aws/networkmanager/model/CreateGlobalNetworkResult.h>
 #include <aws/networkmanager/model/CreateLinkResult.h>
 #include <aws/networkmanager/model/CreateSiteResult.h>
@@ -63,6 +64,7 @@
 #include <aws/networkmanager/model/GetCoreNetworkPolicyResult.h>
 #include <aws/networkmanager/model/GetCustomerGatewayAssociationsResult.h>
 #include <aws/networkmanager/model/GetDevicesResult.h>
+#include <aws/networkmanager/model/GetDirectConnectGatewayAttachmentResult.h>
 #include <aws/networkmanager/model/GetLinkAssociationsResult.h>
 #include <aws/networkmanager/model/GetLinksResult.h>
 #include <aws/networkmanager/model/GetNetworkResourceCountsResult.h>
@@ -98,6 +100,7 @@
 #include <aws/networkmanager/model/UpdateConnectionResult.h>
 #include <aws/networkmanager/model/UpdateCoreNetworkResult.h>
 #include <aws/networkmanager/model/UpdateDeviceResult.h>
+#include <aws/networkmanager/model/UpdateDirectConnectGatewayAttachmentResult.h>
 #include <aws/networkmanager/model/UpdateGlobalNetworkResult.h>
 #include <aws/networkmanager/model/UpdateLinkResult.h>
 #include <aws/networkmanager/model/UpdateNetworkResourceMetadataResult.h>
@@ -160,6 +163,7 @@ namespace Aws
       class CreateConnectionRequest;
       class CreateCoreNetworkRequest;
       class CreateDeviceRequest;
+      class CreateDirectConnectGatewayAttachmentRequest;
       class CreateGlobalNetworkRequest;
       class CreateLinkRequest;
       class CreateSiteRequest;
@@ -195,6 +199,7 @@ namespace Aws
       class GetCoreNetworkPolicyRequest;
       class GetCustomerGatewayAssociationsRequest;
       class GetDevicesRequest;
+      class GetDirectConnectGatewayAttachmentRequest;
       class GetLinkAssociationsRequest;
       class GetLinksRequest;
       class GetNetworkResourceCountsRequest;
@@ -230,6 +235,7 @@ namespace Aws
       class UpdateConnectionRequest;
       class UpdateCoreNetworkRequest;
       class UpdateDeviceRequest;
+      class UpdateDirectConnectGatewayAttachmentRequest;
       class UpdateGlobalNetworkRequest;
       class UpdateLinkRequest;
       class UpdateNetworkResourceMetadataRequest;
@@ -248,6 +254,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateConnectionResult, NetworkManagerError> CreateConnectionOutcome;
       typedef Aws::Utils::Outcome<CreateCoreNetworkResult, NetworkManagerError> CreateCoreNetworkOutcome;
       typedef Aws::Utils::Outcome<CreateDeviceResult, NetworkManagerError> CreateDeviceOutcome;
+      typedef Aws::Utils::Outcome<CreateDirectConnectGatewayAttachmentResult, NetworkManagerError> CreateDirectConnectGatewayAttachmentOutcome;
       typedef Aws::Utils::Outcome<CreateGlobalNetworkResult, NetworkManagerError> CreateGlobalNetworkOutcome;
       typedef Aws::Utils::Outcome<CreateLinkResult, NetworkManagerError> CreateLinkOutcome;
       typedef Aws::Utils::Outcome<CreateSiteResult, NetworkManagerError> CreateSiteOutcome;
@@ -283,6 +290,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetCoreNetworkPolicyResult, NetworkManagerError> GetCoreNetworkPolicyOutcome;
       typedef Aws::Utils::Outcome<GetCustomerGatewayAssociationsResult, NetworkManagerError> GetCustomerGatewayAssociationsOutcome;
       typedef Aws::Utils::Outcome<GetDevicesResult, NetworkManagerError> GetDevicesOutcome;
+      typedef Aws::Utils::Outcome<GetDirectConnectGatewayAttachmentResult, NetworkManagerError> GetDirectConnectGatewayAttachmentOutcome;
       typedef Aws::Utils::Outcome<GetLinkAssociationsResult, NetworkManagerError> GetLinkAssociationsOutcome;
       typedef Aws::Utils::Outcome<GetLinksResult, NetworkManagerError> GetLinksOutcome;
       typedef Aws::Utils::Outcome<GetNetworkResourceCountsResult, NetworkManagerError> GetNetworkResourceCountsOutcome;
@@ -318,6 +326,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateConnectionResult, NetworkManagerError> UpdateConnectionOutcome;
       typedef Aws::Utils::Outcome<UpdateCoreNetworkResult, NetworkManagerError> UpdateCoreNetworkOutcome;
       typedef Aws::Utils::Outcome<UpdateDeviceResult, NetworkManagerError> UpdateDeviceOutcome;
+      typedef Aws::Utils::Outcome<UpdateDirectConnectGatewayAttachmentResult, NetworkManagerError> UpdateDirectConnectGatewayAttachmentOutcome;
       typedef Aws::Utils::Outcome<UpdateGlobalNetworkResult, NetworkManagerError> UpdateGlobalNetworkOutcome;
       typedef Aws::Utils::Outcome<UpdateLinkResult, NetworkManagerError> UpdateLinkOutcome;
       typedef Aws::Utils::Outcome<UpdateNetworkResourceMetadataResult, NetworkManagerError> UpdateNetworkResourceMetadataOutcome;
@@ -336,6 +345,7 @@ namespace Aws
       typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
       typedef std::future<CreateCoreNetworkOutcome> CreateCoreNetworkOutcomeCallable;
       typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
+      typedef std::future<CreateDirectConnectGatewayAttachmentOutcome> CreateDirectConnectGatewayAttachmentOutcomeCallable;
       typedef std::future<CreateGlobalNetworkOutcome> CreateGlobalNetworkOutcomeCallable;
       typedef std::future<CreateLinkOutcome> CreateLinkOutcomeCallable;
       typedef std::future<CreateSiteOutcome> CreateSiteOutcomeCallable;
@@ -371,6 +381,7 @@ namespace Aws
       typedef std::future<GetCoreNetworkPolicyOutcome> GetCoreNetworkPolicyOutcomeCallable;
       typedef std::future<GetCustomerGatewayAssociationsOutcome> GetCustomerGatewayAssociationsOutcomeCallable;
       typedef std::future<GetDevicesOutcome> GetDevicesOutcomeCallable;
+      typedef std::future<GetDirectConnectGatewayAttachmentOutcome> GetDirectConnectGatewayAttachmentOutcomeCallable;
       typedef std::future<GetLinkAssociationsOutcome> GetLinkAssociationsOutcomeCallable;
       typedef std::future<GetLinksOutcome> GetLinksOutcomeCallable;
       typedef std::future<GetNetworkResourceCountsOutcome> GetNetworkResourceCountsOutcomeCallable;
@@ -406,6 +417,7 @@ namespace Aws
       typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
       typedef std::future<UpdateCoreNetworkOutcome> UpdateCoreNetworkOutcomeCallable;
       typedef std::future<UpdateDeviceOutcome> UpdateDeviceOutcomeCallable;
+      typedef std::future<UpdateDirectConnectGatewayAttachmentOutcome> UpdateDirectConnectGatewayAttachmentOutcomeCallable;
       typedef std::future<UpdateGlobalNetworkOutcome> UpdateGlobalNetworkOutcomeCallable;
       typedef std::future<UpdateLinkOutcome> UpdateLinkOutcomeCallable;
       typedef std::future<UpdateNetworkResourceMetadataOutcome> UpdateNetworkResourceMetadataOutcomeCallable;
@@ -427,6 +439,7 @@ namespace Aws
     typedef std::function<void(const NetworkManagerClient*, const Model::CreateConnectionRequest&, const Model::CreateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectionResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::CreateCoreNetworkRequest&, const Model::CreateCoreNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCoreNetworkResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::CreateDeviceRequest&, const Model::CreateDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeviceResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::CreateDirectConnectGatewayAttachmentRequest&, const Model::CreateDirectConnectGatewayAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDirectConnectGatewayAttachmentResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::CreateGlobalNetworkRequest&, const Model::CreateGlobalNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGlobalNetworkResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::CreateLinkRequest&, const Model::CreateLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLinkResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::CreateSiteRequest&, const Model::CreateSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSiteResponseReceivedHandler;
@@ -462,6 +475,7 @@ namespace Aws
     typedef std::function<void(const NetworkManagerClient*, const Model::GetCoreNetworkPolicyRequest&, const Model::GetCoreNetworkPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCoreNetworkPolicyResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetCustomerGatewayAssociationsRequest&, const Model::GetCustomerGatewayAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomerGatewayAssociationsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetDevicesRequest&, const Model::GetDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDevicesResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::GetDirectConnectGatewayAttachmentRequest&, const Model::GetDirectConnectGatewayAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDirectConnectGatewayAttachmentResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetLinkAssociationsRequest&, const Model::GetLinkAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLinkAssociationsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetLinksRequest&, const Model::GetLinksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLinksResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::GetNetworkResourceCountsRequest&, const Model::GetNetworkResourceCountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkResourceCountsResponseReceivedHandler;
@@ -497,6 +511,7 @@ namespace Aws
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectionResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateCoreNetworkRequest&, const Model::UpdateCoreNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCoreNetworkResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateDeviceRequest&, const Model::UpdateDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::UpdateDirectConnectGatewayAttachmentRequest&, const Model::UpdateDirectConnectGatewayAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDirectConnectGatewayAttachmentResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateGlobalNetworkRequest&, const Model::UpdateGlobalNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalNetworkResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateLinkRequest&, const Model::UpdateLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLinkResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateNetworkResourceMetadataRequest&, const Model::UpdateNetworkResourceMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkResourceMetadataResponseReceivedHandler;
