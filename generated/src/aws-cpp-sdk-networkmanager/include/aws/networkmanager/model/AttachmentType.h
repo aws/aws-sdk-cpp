@@ -19,6 +19,7 @@ namespace Model
     CONNECT,
     SITE_TO_SITE_VPN,
     VPC,
+    DIRECT_CONNECT_GATEWAY,
     TRANSIT_GATEWAY_ROUTE_TABLE
   };
 

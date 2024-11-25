@@ -29,6 +29,7 @@ CompleteMultipartUploadRequest::CompleteMultipartUploadRequest() :
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_ifMatchHasBeenSet(false),
     m_ifNoneMatchHasBeenSet(false),
     m_sSECustomerAlgorithmHasBeenSet(false),
     m_sSECustomerKeyHasBeenSet(false),
@@ -142,6 +143,13 @@ Aws::Http::HeaderValueCollection CompleteMultipartUploadRequest::GetRequestSpeci
   {
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner",  ss.str());
+    ss.str("");
+  }
+
+  if(m_ifMatchHasBeenSet)
+  {
+    ss << m_ifMatch;
+    headers.emplace("if-match",  ss.str());
     ss.str("");
   }
 

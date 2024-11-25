@@ -28,6 +28,7 @@ Attachment::Attachment() :
     m_state(AttachmentState::NOT_SET),
     m_stateHasBeenSet(false),
     m_edgeLocationHasBeenSet(false),
+    m_edgeLocationsHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_attachmentPolicyRuleNumber(0),
     m_attachmentPolicyRuleNumberHasBeenSet(false),
@@ -97,6 +98,16 @@ Attachment& Attachment::operator =(JsonView jsonValue)
     m_edgeLocation = jsonValue.GetString("EdgeLocation");
 
     m_edgeLocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EdgeLocations"))
+  {
+    Aws::Utils::Array<JsonView> edgeLocationsJsonList = jsonValue.GetArray("EdgeLocations");
+    for(unsigned edgeLocationsIndex = 0; edgeLocationsIndex < edgeLocationsJsonList.GetLength(); ++edgeLocationsIndex)
+    {
+      m_edgeLocations.push_back(edgeLocationsJsonList[edgeLocationsIndex].AsString());
+    }
+    m_edgeLocationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceArn"))
@@ -219,6 +230,17 @@ JsonValue Attachment::Jsonize() const
   if(m_edgeLocationHasBeenSet)
   {
    payload.WithString("EdgeLocation", m_edgeLocation);
+
+  }
+
+  if(m_edgeLocationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> edgeLocationsJsonList(m_edgeLocations.size());
+   for(unsigned edgeLocationsIndex = 0; edgeLocationsIndex < edgeLocationsJsonList.GetLength(); ++edgeLocationsIndex)
+   {
+     edgeLocationsJsonList[edgeLocationsIndex].AsString(m_edgeLocations[edgeLocationsIndex]);
+   }
+   payload.WithArray("EdgeLocations", std::move(edgeLocationsJsonList));
 
   }
 

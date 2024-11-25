@@ -31,6 +31,7 @@
 #include <aws/networkmanager/model/CreateConnectionRequest.h>
 #include <aws/networkmanager/model/CreateCoreNetworkRequest.h>
 #include <aws/networkmanager/model/CreateDeviceRequest.h>
+#include <aws/networkmanager/model/CreateDirectConnectGatewayAttachmentRequest.h>
 #include <aws/networkmanager/model/CreateGlobalNetworkRequest.h>
 #include <aws/networkmanager/model/CreateLinkRequest.h>
 #include <aws/networkmanager/model/CreateSiteRequest.h>
@@ -66,6 +67,7 @@
 #include <aws/networkmanager/model/GetCoreNetworkPolicyRequest.h>
 #include <aws/networkmanager/model/GetCustomerGatewayAssociationsRequest.h>
 #include <aws/networkmanager/model/GetDevicesRequest.h>
+#include <aws/networkmanager/model/GetDirectConnectGatewayAttachmentRequest.h>
 #include <aws/networkmanager/model/GetLinkAssociationsRequest.h>
 #include <aws/networkmanager/model/GetLinksRequest.h>
 #include <aws/networkmanager/model/GetNetworkResourceCountsRequest.h>
@@ -101,6 +103,7 @@
 #include <aws/networkmanager/model/UpdateConnectionRequest.h>
 #include <aws/networkmanager/model/UpdateCoreNetworkRequest.h>
 #include <aws/networkmanager/model/UpdateDeviceRequest.h>
+#include <aws/networkmanager/model/UpdateDirectConnectGatewayAttachmentRequest.h>
 #include <aws/networkmanager/model/UpdateGlobalNetworkRequest.h>
 #include <aws/networkmanager/model/UpdateLinkRequest.h>
 #include <aws/networkmanager/model/UpdateNetworkResourceMetadataRequest.h>
@@ -562,6 +565,33 @@ CreateDeviceOutcome NetworkManagerClient::CreateDevice(const CreateDeviceRequest
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGlobalNetworkId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/devices");
       return CreateDeviceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateDirectConnectGatewayAttachmentOutcome NetworkManagerClient::CreateDirectConnectGatewayAttachment(const CreateDirectConnectGatewayAttachmentRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateDirectConnectGatewayAttachment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDirectConnectGatewayAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateDirectConnectGatewayAttachment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateDirectConnectGatewayAttachment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateDirectConnectGatewayAttachment",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateDirectConnectGatewayAttachmentOutcome>(
+    [&]()-> CreateDirectConnectGatewayAttachmentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDirectConnectGatewayAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/direct-connect-gateway-attachments");
+      return CreateDirectConnectGatewayAttachmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1790,6 +1820,39 @@ GetDevicesOutcome NetworkManagerClient::GetDevices(const GetDevicesRequest& requ
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetDirectConnectGatewayAttachmentOutcome NetworkManagerClient::GetDirectConnectGatewayAttachment(const GetDirectConnectGatewayAttachmentRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetDirectConnectGatewayAttachment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDirectConnectGatewayAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AttachmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDirectConnectGatewayAttachment", "Required field: AttachmentId, is not set");
+    return GetDirectConnectGatewayAttachmentOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttachmentId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDirectConnectGatewayAttachment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDirectConnectGatewayAttachment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDirectConnectGatewayAttachment",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDirectConnectGatewayAttachmentOutcome>(
+    [&]()-> GetDirectConnectGatewayAttachmentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDirectConnectGatewayAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/direct-connect-gateway-attachments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
+      return GetDirectConnectGatewayAttachmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetLinkAssociationsOutcome NetworkManagerClient::GetLinkAssociations(const GetLinkAssociationsRequest& request) const
 {
   AWS_OPERATION_GUARD(GetLinkAssociations);
@@ -2952,6 +3015,39 @@ UpdateDeviceOutcome NetworkManagerClient::UpdateDevice(const UpdateDeviceRequest
       endpointResolutionOutcome.GetResult().AddPathSegments("/devices/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceId());
       return UpdateDeviceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateDirectConnectGatewayAttachmentOutcome NetworkManagerClient::UpdateDirectConnectGatewayAttachment(const UpdateDirectConnectGatewayAttachmentRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateDirectConnectGatewayAttachment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDirectConnectGatewayAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AttachmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDirectConnectGatewayAttachment", "Required field: AttachmentId, is not set");
+    return UpdateDirectConnectGatewayAttachmentOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttachmentId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateDirectConnectGatewayAttachment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateDirectConnectGatewayAttachment, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateDirectConnectGatewayAttachment",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateDirectConnectGatewayAttachmentOutcome>(
+    [&]()-> UpdateDirectConnectGatewayAttachmentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDirectConnectGatewayAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/direct-connect-gateway-attachments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
+      return UpdateDirectConnectGatewayAttachmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

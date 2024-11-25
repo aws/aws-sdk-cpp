@@ -28,6 +28,9 @@ namespace Aws
         static const int SUBNET_NO_IPV6_CIDRS_HASH = HashingUtils::HashString("SUBNET_NO_IPV6_CIDRS");
         static const int VPN_CONNECTION_NOT_FOUND_HASH = HashingUtils::HashString("VPN_CONNECTION_NOT_FOUND");
         static const int MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED");
+        static const int DIRECT_CONNECT_GATEWAY_NOT_FOUND_HASH = HashingUtils::HashString("DIRECT_CONNECT_GATEWAY_NOT_FOUND");
+        static const int DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS_HASH = HashingUtils::HashString("DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS");
+        static const int DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF_HASH = HashingUtils::HashString("DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF");
 
 
         AttachmentErrorCode GetAttachmentErrorCodeForName(const Aws::String& name)
@@ -65,6 +68,18 @@ namespace Aws
           {
             return AttachmentErrorCode::MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED;
           }
+          else if (hashCode == DIRECT_CONNECT_GATEWAY_NOT_FOUND_HASH)
+          {
+            return AttachmentErrorCode::DIRECT_CONNECT_GATEWAY_NOT_FOUND;
+          }
+          else if (hashCode == DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS_HASH)
+          {
+            return AttachmentErrorCode::DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS;
+          }
+          else if (hashCode == DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF_HASH)
+          {
+            return AttachmentErrorCode::DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -97,6 +112,12 @@ namespace Aws
             return "VPN_CONNECTION_NOT_FOUND";
           case AttachmentErrorCode::MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED:
             return "MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED";
+          case AttachmentErrorCode::DIRECT_CONNECT_GATEWAY_NOT_FOUND:
+            return "DIRECT_CONNECT_GATEWAY_NOT_FOUND";
+          case AttachmentErrorCode::DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS:
+            return "DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS";
+          case AttachmentErrorCode::DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF:
+            return "DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

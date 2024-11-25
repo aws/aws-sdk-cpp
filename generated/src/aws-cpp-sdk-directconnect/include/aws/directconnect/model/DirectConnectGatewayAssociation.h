@@ -9,6 +9,7 @@
 #include <aws/directconnect/model/DirectConnectGatewayAssociationState.h>
 #include <aws/directconnect/model/AssociatedGateway.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/directconnect/model/AssociatedCoreNetwork.h>
 #include <aws/directconnect/model/RouteFilterPrefix.h>
 #include <utility>
 
@@ -151,6 +152,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the Cloud WAN core network associated with the Direct Connect
+     * attachment.</p>
+     */
+    inline const AssociatedCoreNetwork& GetAssociatedCoreNetwork() const{ return m_associatedCoreNetwork; }
+    inline bool AssociatedCoreNetworkHasBeenSet() const { return m_associatedCoreNetworkHasBeenSet; }
+    inline void SetAssociatedCoreNetwork(const AssociatedCoreNetwork& value) { m_associatedCoreNetworkHasBeenSet = true; m_associatedCoreNetwork = value; }
+    inline void SetAssociatedCoreNetwork(AssociatedCoreNetwork&& value) { m_associatedCoreNetworkHasBeenSet = true; m_associatedCoreNetwork = std::move(value); }
+    inline DirectConnectGatewayAssociation& WithAssociatedCoreNetwork(const AssociatedCoreNetwork& value) { SetAssociatedCoreNetwork(value); return *this;}
+    inline DirectConnectGatewayAssociation& WithAssociatedCoreNetwork(AssociatedCoreNetwork&& value) { SetAssociatedCoreNetwork(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the virtual private gateway. Applies only to private virtual
      * interfaces.</p>
      */
@@ -215,6 +229,9 @@ namespace Model
 
     Aws::Vector<RouteFilterPrefix> m_allowedPrefixesToDirectConnectGateway;
     bool m_allowedPrefixesToDirectConnectGatewayHasBeenSet = false;
+
+    AssociatedCoreNetwork m_associatedCoreNetwork;
+    bool m_associatedCoreNetworkHasBeenSet = false;
 
     Aws::String m_virtualGatewayId;
     bool m_virtualGatewayIdHasBeenSet = false;

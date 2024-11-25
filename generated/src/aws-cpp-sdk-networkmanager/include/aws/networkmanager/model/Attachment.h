@@ -127,7 +127,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Region where the edge is located.</p>
+     * <p>The Region where the edge is located. This is returned for all attachment
+     * types except a Direct Connect gateway attachment, which instead returns
+     * <code>EdgeLocations</code>.</p>
      */
     inline const Aws::String& GetEdgeLocation() const{ return m_edgeLocation; }
     inline bool EdgeLocationHasBeenSet() const { return m_edgeLocationHasBeenSet; }
@@ -137,6 +139,23 @@ namespace Model
     inline Attachment& WithEdgeLocation(const Aws::String& value) { SetEdgeLocation(value); return *this;}
     inline Attachment& WithEdgeLocation(Aws::String&& value) { SetEdgeLocation(std::move(value)); return *this;}
     inline Attachment& WithEdgeLocation(const char* value) { SetEdgeLocation(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The edge locations that the Direct Connect gateway is associated with. This
+     * is returned only for Direct Connect gateway attachments. All other attachment
+     * types retrun <code>EdgeLocation</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEdgeLocations() const{ return m_edgeLocations; }
+    inline bool EdgeLocationsHasBeenSet() const { return m_edgeLocationsHasBeenSet; }
+    inline void SetEdgeLocations(const Aws::Vector<Aws::String>& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = value; }
+    inline void SetEdgeLocations(Aws::Vector<Aws::String>&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = std::move(value); }
+    inline Attachment& WithEdgeLocations(const Aws::Vector<Aws::String>& value) { SetEdgeLocations(value); return *this;}
+    inline Attachment& WithEdgeLocations(Aws::Vector<Aws::String>&& value) { SetEdgeLocations(std::move(value)); return *this;}
+    inline Attachment& AddEdgeLocations(const Aws::String& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(value); return *this; }
+    inline Attachment& AddEdgeLocations(Aws::String&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(std::move(value)); return *this; }
+    inline Attachment& AddEdgeLocations(const char* value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -289,6 +308,9 @@ namespace Model
 
     Aws::String m_edgeLocation;
     bool m_edgeLocationHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_edgeLocations;
+    bool m_edgeLocationsHasBeenSet = false;
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;

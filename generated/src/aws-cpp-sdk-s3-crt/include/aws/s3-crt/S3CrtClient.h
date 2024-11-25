@@ -5409,16 +5409,19 @@ namespace Aws
         /**
          *  <p>This operation is not supported for directory buckets.</p> 
          *  <p>When you enable versioning on a bucket for the first time, it might
-         * take a short amount of time for the change to be fully propagated. We recommend
-         * that you wait for 15 minutes after enabling versioning before issuing write
-         * operations (<code>PUT</code> or <code>DELETE</code>) on objects in the bucket.
-         * </p>  <p>Sets the versioning state of an existing bucket.</p> <p>You can
-         * set the versioning state with one of the following values:</p> <p>
-         * <b>Enabled</b>—Enables versioning for the objects in the bucket. All objects
-         * added to the bucket receive a unique version ID.</p> <p>
-         * <b>Suspended</b>—Disables versioning for the objects in the bucket. All objects
-         * added to the bucket receive the version ID null.</p> <p>If the versioning state
-         * has never been set on a bucket, it has no versioning state; a <a
+         * take a short amount of time for the change to be fully propagated. While this
+         * change is propagating, you may encounter intermittent <code>HTTP 404
+         * NoSuchKey</code> errors for requests to objects created or updated after
+         * enabling versioning. We recommend that you wait for 15 minutes after enabling
+         * versioning before issuing write operations (<code>PUT</code> or
+         * <code>DELETE</code>) on objects in the bucket. </p>  <p>Sets the
+         * versioning state of an existing bucket.</p> <p>You can set the versioning state
+         * with one of the following values:</p> <p> <b>Enabled</b>—Enables versioning for
+         * the objects in the bucket. All objects added to the bucket receive a unique
+         * version ID.</p> <p> <b>Suspended</b>—Disables versioning for the objects in the
+         * bucket. All objects added to the bucket receive the version ID null.</p> <p>If
+         * the versioning state has never been set on a bucket, it has no versioning state;
+         * a <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>
          * request does not return a versioning state value.</p> <p>In order to enable MFA
          * Delete, you must be the bucket owner. If you are the bucket owner and want to

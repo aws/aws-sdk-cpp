@@ -1,0 +1,87 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/directconnect/model/AssociatedCoreNetwork.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace DirectConnect
+{
+namespace Model
+{
+
+AssociatedCoreNetwork::AssociatedCoreNetwork() : 
+    m_idHasBeenSet(false),
+    m_ownerAccountHasBeenSet(false),
+    m_attachmentIdHasBeenSet(false)
+{
+}
+
+AssociatedCoreNetwork::AssociatedCoreNetwork(JsonView jsonValue)
+  : AssociatedCoreNetwork()
+{
+  *this = jsonValue;
+}
+
+AssociatedCoreNetwork& AssociatedCoreNetwork::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ownerAccount"))
+  {
+    m_ownerAccount = jsonValue.GetString("ownerAccount");
+
+    m_ownerAccountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("attachmentId"))
+  {
+    m_attachmentId = jsonValue.GetString("attachmentId");
+
+    m_attachmentIdHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue AssociatedCoreNetwork::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_ownerAccountHasBeenSet)
+  {
+   payload.WithString("ownerAccount", m_ownerAccount);
+
+  }
+
+  if(m_attachmentIdHasBeenSet)
+  {
+   payload.WithString("attachmentId", m_attachmentId);
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace DirectConnect
+} // namespace Aws
