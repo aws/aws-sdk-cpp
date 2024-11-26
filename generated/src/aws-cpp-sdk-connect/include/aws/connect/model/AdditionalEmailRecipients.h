@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>List of additional email addresses for an email contact.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AdditionalEmailRecipients">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>List of additional TO email recipients for an email contact.</p>
      */
     inline const Aws::Vector<EmailRecipient>& GetToList() const{ return m_toList; }
     inline bool ToListHasBeenSet() const { return m_toListHasBeenSet; }
@@ -54,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>List of additional CC email recipients for an email contact.</p>
      */
     inline const Aws::Vector<EmailRecipient>& GetCcList() const{ return m_ccList; }
     inline bool CcListHasBeenSet() const { return m_ccListHasBeenSet; }

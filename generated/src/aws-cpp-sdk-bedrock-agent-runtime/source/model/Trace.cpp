@@ -19,6 +19,7 @@ namespace Model
 {
 
 Trace::Trace() : 
+    m_customOrchestrationTraceHasBeenSet(false),
     m_failureTraceHasBeenSet(false),
     m_guardrailTraceHasBeenSet(false),
     m_orchestrationTraceHasBeenSet(false),
@@ -35,6 +36,13 @@ Trace::Trace(JsonView jsonValue)
 
 Trace& Trace::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("customOrchestrationTrace"))
+  {
+    m_customOrchestrationTrace = jsonValue.GetObject("customOrchestrationTrace");
+
+    m_customOrchestrationTraceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("failureTrace"))
   {
     m_failureTrace = jsonValue.GetObject("failureTrace");
@@ -76,6 +84,12 @@ Trace& Trace::operator =(JsonView jsonValue)
 JsonValue Trace::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customOrchestrationTraceHasBeenSet)
+  {
+   payload.WithObject("customOrchestrationTrace", m_customOrchestrationTrace.Jsonize());
+
+  }
 
   if(m_failureTraceHasBeenSet)
   {

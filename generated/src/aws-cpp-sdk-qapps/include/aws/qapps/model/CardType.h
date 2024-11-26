@@ -19,7 +19,8 @@ namespace Model
     text_input,
     q_query,
     file_upload,
-    q_plugin
+    q_plugin,
+    form_input
   };
 
 namespace CardTypeMapper

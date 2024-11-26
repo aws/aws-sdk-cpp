@@ -135,6 +135,22 @@ namespace Model
     inline QQueryCard& WithAttributeFilter(const AttributeFilter& value) { SetAttributeFilter(value); return *this;}
     inline QQueryCard& WithAttributeFilter(AttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Any dependencies for the query card, where the dependencies are references to
+     * the collected responses.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetMemoryReferences() const{ return m_memoryReferences; }
+    inline bool MemoryReferencesHasBeenSet() const { return m_memoryReferencesHasBeenSet; }
+    inline void SetMemoryReferences(const Aws::Vector<Aws::String>& value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences = value; }
+    inline void SetMemoryReferences(Aws::Vector<Aws::String>&& value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences = std::move(value); }
+    inline QQueryCard& WithMemoryReferences(const Aws::Vector<Aws::String>& value) { SetMemoryReferences(value); return *this;}
+    inline QQueryCard& WithMemoryReferences(Aws::Vector<Aws::String>&& value) { SetMemoryReferences(std::move(value)); return *this;}
+    inline QQueryCard& AddMemoryReferences(const Aws::String& value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences.push_back(value); return *this; }
+    inline QQueryCard& AddMemoryReferences(Aws::String&& value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences.push_back(std::move(value)); return *this; }
+    inline QQueryCard& AddMemoryReferences(const char* value) { m_memoryReferencesHasBeenSet = true; m_memoryReferences.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_id;
@@ -157,6 +173,9 @@ namespace Model
 
     AttributeFilter m_attributeFilter;
     bool m_attributeFilterHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_memoryReferences;
+    bool m_memoryReferencesHasBeenSet = false;
   };
 
 } // namespace Model

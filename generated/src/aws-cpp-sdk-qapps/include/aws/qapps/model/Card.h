@@ -9,6 +9,7 @@
 #include <aws/qapps/model/QQueryCard.h>
 #include <aws/qapps/model/QPluginCard.h>
 #include <aws/qapps/model/FileUploadCard.h>
+#include <aws/qapps/model/FormInputCard.h>
 #include <utility>
 
 namespace Aws
@@ -88,6 +89,18 @@ namespace Model
     inline Card& WithFileUpload(const FileUploadCard& value) { SetFileUpload(value); return *this;}
     inline Card& WithFileUpload(FileUploadCard&& value) { SetFileUpload(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A container for the properties of the form input card.</p>
+     */
+    inline const FormInputCard& GetFormInput() const{ return m_formInput; }
+    inline bool FormInputHasBeenSet() const { return m_formInputHasBeenSet; }
+    inline void SetFormInput(const FormInputCard& value) { m_formInputHasBeenSet = true; m_formInput = value; }
+    inline void SetFormInput(FormInputCard&& value) { m_formInputHasBeenSet = true; m_formInput = std::move(value); }
+    inline Card& WithFormInput(const FormInputCard& value) { SetFormInput(value); return *this;}
+    inline Card& WithFormInput(FormInputCard&& value) { SetFormInput(std::move(value)); return *this;}
+    ///@}
   private:
 
     TextInputCard m_textInput;
@@ -101,6 +114,9 @@ namespace Model
 
     FileUploadCard m_fileUpload;
     bool m_fileUploadHasBeenSet = false;
+
+    FormInputCard m_formInput;
+    bool m_formInputHasBeenSet = false;
   };
 
 } // namespace Model

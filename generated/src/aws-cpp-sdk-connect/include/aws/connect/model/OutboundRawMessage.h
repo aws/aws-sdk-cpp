@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Information about the raw email body content.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/OutboundRawMessage">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email subject.</p>
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email message body.</p>
      */
     inline const Aws::String& GetBody() const{ return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
@@ -67,7 +67,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Type of content, that is, <code>text/plain</code> or
+     * <code>text/html</code>.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }

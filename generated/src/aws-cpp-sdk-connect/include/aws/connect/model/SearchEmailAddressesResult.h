@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>If there are additional results, this is the token for the next set of
+     * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
@@ -49,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>List of email addresses matching SearchFilter and SearchCriteria </p>
      */
     inline const Aws::Vector<EmailAddressMetadata>& GetEmailAddresses() const{ return m_emailAddresses; }
     inline void SetEmailAddresses(const Aws::Vector<EmailAddressMetadata>& value) { m_emailAddresses = value; }
@@ -62,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The total number of email addresses which matched your search query.</p>
      */
     inline long long GetApproximateTotalCount() const{ return m_approximateTotalCount; }
     inline void SetApproximateTotalCount(long long value) { m_approximateTotalCount = value; }

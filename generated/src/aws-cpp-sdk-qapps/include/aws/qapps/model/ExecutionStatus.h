@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     IN_PROGRESS,
     WAITING,
-    COMPLETED
+    COMPLETED,
+    ERROR_
   };
 
 namespace ExecutionStatusMapper

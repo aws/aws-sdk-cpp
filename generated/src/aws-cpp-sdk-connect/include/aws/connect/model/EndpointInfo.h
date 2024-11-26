@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Information about the endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EndpointInfo">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Type of endpoint.</p>
      */
     inline const EndpointType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Address of the endpoint.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Display name of the endpoint.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }

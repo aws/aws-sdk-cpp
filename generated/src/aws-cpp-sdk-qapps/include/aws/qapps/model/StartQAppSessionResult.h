@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the new Q App session.</p>
+     * <p>The unique identifier of the new or retrieved Q App session.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
     inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }

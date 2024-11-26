@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -52,10 +53,44 @@ namespace Model
     inline SegmentAttributeValue& WithValueString(Aws::String&& value) { SetValueString(std::move(value)); return *this;}
     inline SegmentAttributeValue& WithValueString(const char* value) { SetValueString(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The value of a segment attribute.</p>
+     */
+    inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetValueMap() const{ return m_valueMap; }
+    inline bool ValueMapHasBeenSet() const { return m_valueMapHasBeenSet; }
+    inline void SetValueMap(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { m_valueMapHasBeenSet = true; m_valueMap = value; }
+    inline void SetValueMap(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { m_valueMapHasBeenSet = true; m_valueMap = std::move(value); }
+    inline SegmentAttributeValue& WithValueMap(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { SetValueMap(value); return *this;}
+    inline SegmentAttributeValue& WithValueMap(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { SetValueMap(std::move(value)); return *this;}
+    inline SegmentAttributeValue& AddValueMap(const Aws::String& key, const SegmentAttributeValue& value) { m_valueMapHasBeenSet = true; m_valueMap.emplace(key, value); return *this; }
+    inline SegmentAttributeValue& AddValueMap(Aws::String&& key, const SegmentAttributeValue& value) { m_valueMapHasBeenSet = true; m_valueMap.emplace(std::move(key), value); return *this; }
+    inline SegmentAttributeValue& AddValueMap(const Aws::String& key, SegmentAttributeValue&& value) { m_valueMapHasBeenSet = true; m_valueMap.emplace(key, std::move(value)); return *this; }
+    inline SegmentAttributeValue& AddValueMap(Aws::String&& key, SegmentAttributeValue&& value) { m_valueMapHasBeenSet = true; m_valueMap.emplace(std::move(key), std::move(value)); return *this; }
+    inline SegmentAttributeValue& AddValueMap(const char* key, SegmentAttributeValue&& value) { m_valueMapHasBeenSet = true; m_valueMap.emplace(key, std::move(value)); return *this; }
+    inline SegmentAttributeValue& AddValueMap(const char* key, const SegmentAttributeValue& value) { m_valueMapHasBeenSet = true; m_valueMap.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The value of a segment attribute.</p>
+     */
+    inline int GetValueInteger() const{ return m_valueInteger; }
+    inline bool ValueIntegerHasBeenSet() const { return m_valueIntegerHasBeenSet; }
+    inline void SetValueInteger(int value) { m_valueIntegerHasBeenSet = true; m_valueInteger = value; }
+    inline SegmentAttributeValue& WithValueInteger(int value) { SetValueInteger(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_valueString;
     bool m_valueStringHasBeenSet = false;
+
+    Aws::Map<Aws::String, SegmentAttributeValue> m_valueMap;
+    bool m_valueMapHasBeenSet = false;
+
+    int m_valueInteger;
+    bool m_valueIntegerHasBeenSet = false;
   };
 
 } // namespace Model

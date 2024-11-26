@@ -29,7 +29,8 @@ ConnectionNotification::ConnectionNotification() :
     m_connectionNotificationArnHasBeenSet(false),
     m_connectionEventsHasBeenSet(false),
     m_connectionNotificationState(ConnectionNotificationState::NOT_SET),
-    m_connectionNotificationStateHasBeenSet(false)
+    m_connectionNotificationStateHasBeenSet(false),
+    m_serviceRegionHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,12 @@ ConnectionNotification& ConnectionNotification::operator =(const XmlNode& xmlNod
       m_connectionNotificationState = ConnectionNotificationStateMapper::GetConnectionNotificationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationStateNode.GetText()).c_str()).c_str());
       m_connectionNotificationStateHasBeenSet = true;
     }
+    XmlNode serviceRegionNode = resultNode.FirstChild("serviceRegion");
+    if(!serviceRegionNode.IsNull())
+    {
+      m_serviceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(serviceRegionNode.GetText());
+      m_serviceRegionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -139,6 +146,11 @@ void ConnectionNotification::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << index << locationValue << ".ConnectionNotificationState=" << ConnectionNotificationStateMapper::GetNameForConnectionNotificationState(m_connectionNotificationState) << "&";
   }
 
+  if(m_serviceRegionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceRegion=" << StringUtils::URLEncode(m_serviceRegion.c_str()) << "&";
+  }
+
 }
 
 void ConnectionNotification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -174,6 +186,10 @@ void ConnectionNotification::OutputToStream(Aws::OStream& oStream, const char* l
   if(m_connectionNotificationStateHasBeenSet)
   {
       oStream << location << ".ConnectionNotificationState=" << ConnectionNotificationStateMapper::GetNameForConnectionNotificationState(m_connectionNotificationState) << "&";
+  }
+  if(m_serviceRegionHasBeenSet)
+  {
+      oStream << location << ".ServiceRegion=" << StringUtils::URLEncode(m_serviceRegion.c_str()) << "&";
   }
 }
 

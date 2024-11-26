@@ -112,7 +112,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the contact flow.</p>
+     * <p>The status of the flow.</p>
      */
     inline const ContactFlowStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -176,17 +176,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>Amazon Connect includes a set of default flows that have already been
-     * published. It uses them to power your contact center.</p>
-     */
-    inline bool GetIsDefault() const{ return m_isDefault; }
-    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
-    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
-    inline ContactFlow& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p>Indicates the checksum value of the flow content.</p>
      */
     inline const Aws::String& GetFlowContentSha256() const{ return m_flowContentSha256; }
@@ -225,7 +214,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time at which the contact flow was last modified.</p>
+     * <p>The time at which the flow was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
@@ -237,7 +226,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The region in which the contact flow was last modified</p>
+     * <p>The region in which the flow was last modified</p>
      */
     inline const Aws::String& GetLastModifiedRegion() const{ return m_lastModifiedRegion; }
     inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
@@ -276,9 +265,6 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    bool m_isDefault;
-    bool m_isDefaultHasBeenSet = false;
 
     Aws::String m_flowContentSha256;
     bool m_flowContentSha256HasBeenSet = false;

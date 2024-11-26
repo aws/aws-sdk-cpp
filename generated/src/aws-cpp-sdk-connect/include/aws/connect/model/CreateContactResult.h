@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
     inline void SetContactId(const Aws::String& value) { m_contactId = value; }
@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the created contact.</p>
      */
     inline const Aws::String& GetContactArn() const{ return m_contactArn; }
     inline void SetContactArn(const Aws::String& value) { m_contactArn = value; }

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A summary of a contact flow version's metadata.</p><p><h3>See Also:</h3>   <a
+   * <p>A summary of a flow version's metadata.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowVersionSummary">AWS
    * API Reference</a></p>
    */

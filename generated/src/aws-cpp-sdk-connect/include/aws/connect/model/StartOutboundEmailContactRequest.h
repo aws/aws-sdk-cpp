@@ -38,7 +38,9 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -52,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
@@ -66,7 +68,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email address associated with the instance.</p>
      */
     inline const EmailAddressInfo& GetFromEmailAddress() const{ return m_fromEmailAddress; }
     inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
@@ -78,7 +80,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email address of the customer.</p>
      */
     inline const EmailAddressInfo& GetDestinationEmailAddress() const{ return m_destinationEmailAddress; }
     inline bool DestinationEmailAddressHasBeenSet() const { return m_destinationEmailAddressHasBeenSet; }
@@ -90,7 +92,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The addtional recipients address of email in CC.</p>
      */
     inline const OutboundAdditionalRecipients& GetAdditionalRecipients() const{ return m_additionalRecipients; }
     inline bool AdditionalRecipientsHasBeenSet() const { return m_additionalRecipientsHasBeenSet; }
@@ -102,7 +104,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email message body to be sent to the newly created email.</p>
      */
     inline const OutboundEmailContent& GetEmailMessage() const{ return m_emailMessage; }
     inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
@@ -114,7 +116,11 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

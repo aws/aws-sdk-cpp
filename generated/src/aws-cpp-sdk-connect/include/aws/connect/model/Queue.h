@@ -112,7 +112,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The outbound email address ID for a specified queue.</p>
      */
     inline const OutboundEmailConfig& GetOutboundEmailConfig() const{ return m_outboundEmailConfig; }
     inline bool OutboundEmailConfigHasBeenSet() const { return m_outboundEmailConfigHasBeenSet; }

@@ -68,6 +68,16 @@ namespace Model
     inline GetQAppRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
     inline GetQAppRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The version of the Q App.</p>
+     */
+    inline int GetAppVersion() const{ return m_appVersion; }
+    inline bool AppVersionHasBeenSet() const { return m_appVersionHasBeenSet; }
+    inline void SetAppVersion(int value) { m_appVersionHasBeenSet = true; m_appVersion = value; }
+    inline GetQAppRequest& WithAppVersion(int value) { SetAppVersion(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -75,6 +85,9 @@ namespace Model
 
     Aws::String m_appId;
     bool m_appIdHasBeenSet = false;
+
+    int m_appVersion;
+    bool m_appVersionHasBeenSet = false;
   };
 
 } // namespace Model

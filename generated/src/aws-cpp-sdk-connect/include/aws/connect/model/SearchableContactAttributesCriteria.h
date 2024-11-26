@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The search criteria based on user-defned contact attribute key and values to
+   * <p>The search criteria based on user-defined contact attribute key and values to
    * search on.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchableContactAttributesCriteria">AWS
    * API Reference</a></p>

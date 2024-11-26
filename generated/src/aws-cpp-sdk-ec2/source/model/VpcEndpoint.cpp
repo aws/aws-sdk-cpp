@@ -44,7 +44,8 @@ VpcEndpoint::VpcEndpoint() :
     m_creationTimestampHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_lastErrorHasBeenSet(false)
+    m_lastErrorHasBeenSet(false),
+    m_serviceRegionHasBeenSet(false)
 {
 }
 
@@ -210,6 +211,12 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
       m_lastError = lastErrorNode;
       m_lastErrorHasBeenSet = true;
     }
+    XmlNode serviceRegionNode = resultNode.FirstChild("serviceRegion");
+    if(!serviceRegionNode.IsNull())
+    {
+      m_serviceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(serviceRegionNode.GetText());
+      m_serviceRegionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -346,6 +353,11 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
       m_lastError.OutputToStream(oStream, lastErrorLocationAndMemberSs.str().c_str());
   }
 
+  if(m_serviceRegionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceRegion=" << StringUtils::URLEncode(m_serviceRegion.c_str()) << "&";
+  }
+
 }
 
 void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -459,6 +471,10 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
       Aws::String lastErrorLocationAndMember(location);
       lastErrorLocationAndMember += ".LastError";
       m_lastError.OutputToStream(oStream, lastErrorLocationAndMember.c_str());
+  }
+  if(m_serviceRegionHasBeenSet)
+  {
+      oStream << location << ".ServiceRegion=" << StringUtils::URLEncode(m_serviceRegion.c_str()) << "&";
   }
 }
 

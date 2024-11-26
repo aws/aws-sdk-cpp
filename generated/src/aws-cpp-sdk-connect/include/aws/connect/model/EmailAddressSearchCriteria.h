@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The search criteria to be used to return email addresses.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EmailAddressSearchCriteria">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A list of conditions which would be applied together with an OR
+     * condition.</p>
      */
     inline const Aws::Vector<EmailAddressSearchCriteria>& GetOrConditions() const{ return m_orConditions; }
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
@@ -54,7 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A list of conditions which would be applied together with an AND
+     * condition.</p>
      */
     inline const Aws::Vector<EmailAddressSearchCriteria>& GetAndConditions() const{ return m_andConditions; }
     inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }

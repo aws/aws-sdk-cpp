@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/CustomOrchestrationTrace.h>
 #include <aws/bedrock-agent-runtime/model/FailureTrace.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailTrace.h>
 #include <aws/bedrock-agent-runtime/model/OrchestrationTrace.h>
@@ -45,6 +46,19 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Trace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p> Details about the custom orchestration step in which the agent determines
+     * the order in which actions are executed. </p>
+     */
+    inline const CustomOrchestrationTrace& GetCustomOrchestrationTrace() const{ return m_customOrchestrationTrace; }
+    inline bool CustomOrchestrationTraceHasBeenSet() const { return m_customOrchestrationTraceHasBeenSet; }
+    inline void SetCustomOrchestrationTrace(const CustomOrchestrationTrace& value) { m_customOrchestrationTraceHasBeenSet = true; m_customOrchestrationTrace = value; }
+    inline void SetCustomOrchestrationTrace(CustomOrchestrationTrace&& value) { m_customOrchestrationTraceHasBeenSet = true; m_customOrchestrationTrace = std::move(value); }
+    inline Trace& WithCustomOrchestrationTrace(const CustomOrchestrationTrace& value) { SetCustomOrchestrationTrace(value); return *this;}
+    inline Trace& WithCustomOrchestrationTrace(CustomOrchestrationTrace&& value) { SetCustomOrchestrationTrace(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -109,6 +123,9 @@ namespace Model
     inline Trace& WithPreProcessingTrace(PreProcessingTrace&& value) { SetPreProcessingTrace(std::move(value)); return *this;}
     ///@}
   private:
+
+    CustomOrchestrationTrace m_customOrchestrationTrace;
+    bool m_customOrchestrationTraceHasBeenSet = false;
 
     FailureTrace m_failureTrace;
     bool m_failureTraceHasBeenSet = false;

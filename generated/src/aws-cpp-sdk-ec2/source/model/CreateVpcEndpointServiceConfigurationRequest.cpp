@@ -19,6 +19,7 @@ CreateVpcEndpointServiceConfigurationRequest::CreateVpcEndpointServiceConfigurat
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_gatewayLoadBalancerArnsHasBeenSet(false),
     m_supportedIpAddressTypesHasBeenSet(false),
+    m_supportedRegionsHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false)
 {
@@ -73,6 +74,17 @@ Aws::String CreateVpcEndpointServiceConfigurationRequest::SerializePayload() con
       ss << "SupportedIpAddressType." << supportedIpAddressTypesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       supportedIpAddressTypesCount++;
+    }
+  }
+
+  if(m_supportedRegionsHasBeenSet)
+  {
+    unsigned supportedRegionsCount = 1;
+    for(auto& item : m_supportedRegions)
+    {
+      ss << "SupportedRegion." << supportedRegionsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      supportedRegionsCount++;
     }
   }
 

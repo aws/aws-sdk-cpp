@@ -35,7 +35,9 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -49,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier for the queue.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
@@ -63,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The outbound email address ID for a specified queue.</p>
      */
     inline const OutboundEmailConfig& GetOutboundEmailConfig() const{ return m_outboundEmailConfig; }
     inline bool OutboundEmailConfigHasBeenSet() const { return m_outboundEmailConfigHasBeenSet; }

@@ -249,6 +249,21 @@ namespace Model
     inline CreateVpcEndpointRequest& AddSubnetConfigurations(const SubnetConfiguration& value) { m_subnetConfigurationsHasBeenSet = true; m_subnetConfigurations.push_back(value); return *this; }
     inline CreateVpcEndpointRequest& AddSubnetConfigurations(SubnetConfiguration&& value) { m_subnetConfigurationsHasBeenSet = true; m_subnetConfigurations.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The Region where the service is hosted. The default is the current
+     * Region.</p>
+     */
+    inline const Aws::String& GetServiceRegion() const{ return m_serviceRegion; }
+    inline bool ServiceRegionHasBeenSet() const { return m_serviceRegionHasBeenSet; }
+    inline void SetServiceRegion(const Aws::String& value) { m_serviceRegionHasBeenSet = true; m_serviceRegion = value; }
+    inline void SetServiceRegion(Aws::String&& value) { m_serviceRegionHasBeenSet = true; m_serviceRegion = std::move(value); }
+    inline void SetServiceRegion(const char* value) { m_serviceRegionHasBeenSet = true; m_serviceRegion.assign(value); }
+    inline CreateVpcEndpointRequest& WithServiceRegion(const Aws::String& value) { SetServiceRegion(value); return *this;}
+    inline CreateVpcEndpointRequest& WithServiceRegion(Aws::String&& value) { SetServiceRegion(std::move(value)); return *this;}
+    inline CreateVpcEndpointRequest& WithServiceRegion(const char* value) { SetServiceRegion(value); return *this;}
+    ///@}
   private:
 
     bool m_dryRun;
@@ -292,6 +307,9 @@ namespace Model
 
     Aws::Vector<SubnetConfiguration> m_subnetConfigurations;
     bool m_subnetConfigurationsHasBeenSet = false;
+
+    Aws::String m_serviceRegion;
+    bool m_serviceRegionHasBeenSet = false;
   };
 
 } // namespace Model

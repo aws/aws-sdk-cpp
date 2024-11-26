@@ -8,9 +8,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/AgentStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/bedrock-agent/model/CustomOrchestration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent/model/MemoryConfiguration.h>
+#include <aws/bedrock-agent/model/OrchestrationType.h>
 #include <aws/bedrock-agent/model/PromptOverrideConfiguration.h>
 #include <utility>
 
@@ -165,6 +167,18 @@ namespace Model
 
     ///@{
     /**
+     * <p> Contains custom orchestration configurations for the agent. </p>
+     */
+    inline const CustomOrchestration& GetCustomOrchestration() const{ return m_customOrchestration; }
+    inline bool CustomOrchestrationHasBeenSet() const { return m_customOrchestrationHasBeenSet; }
+    inline void SetCustomOrchestration(const CustomOrchestration& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = value; }
+    inline void SetCustomOrchestration(CustomOrchestration&& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = std::move(value); }
+    inline Agent& WithCustomOrchestration(const CustomOrchestration& value) { SetCustomOrchestration(value); return *this;}
+    inline Agent& WithCustomOrchestration(CustomOrchestration&& value) { SetCustomOrchestration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Resource Name (ARN) of the KMS key that encrypts the agent.</p>
      */
     inline const Aws::String& GetCustomerEncryptionKeyArn() const{ return m_customerEncryptionKeyArn; }
@@ -275,6 +289,18 @@ namespace Model
 
     ///@{
     /**
+     * <p> Specifies the orchestration strategy for the agent. </p>
+     */
+    inline const OrchestrationType& GetOrchestrationType() const{ return m_orchestrationType; }
+    inline bool OrchestrationTypeHasBeenSet() const { return m_orchestrationTypeHasBeenSet; }
+    inline void SetOrchestrationType(const OrchestrationType& value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = value; }
+    inline void SetOrchestrationType(OrchestrationType&& value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = std::move(value); }
+    inline Agent& WithOrchestrationType(const OrchestrationType& value) { SetOrchestrationType(value); return *this;}
+    inline Agent& WithOrchestrationType(OrchestrationType&& value) { SetOrchestrationType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The time at which the agent was last prepared.</p>
      */
     inline const Aws::Utils::DateTime& GetPreparedAt() const{ return m_preparedAt; }
@@ -353,6 +379,9 @@ namespace Model
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
 
+    CustomOrchestration m_customOrchestration;
+    bool m_customOrchestrationHasBeenSet = false;
+
     Aws::String m_customerEncryptionKeyArn;
     bool m_customerEncryptionKeyArnHasBeenSet = false;
 
@@ -376,6 +405,9 @@ namespace Model
 
     MemoryConfiguration m_memoryConfiguration;
     bool m_memoryConfigurationHasBeenSet = false;
+
+    OrchestrationType m_orchestrationType;
+    bool m_orchestrationTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_preparedAt;
     bool m_preparedAtHasBeenSet = false;

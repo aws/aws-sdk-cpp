@@ -111,7 +111,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The use case for the file.</p>
+     * <p>The use case for the file.</p>  <p> Only <code>ATTACHMENTS</code>
+     * are supported.</p> 
      */
     inline const FileUseCaseType& GetFileUseCaseType() const{ return m_fileUseCaseType; }
     inline bool FileUseCaseTypeHasBeenSet() const { return m_fileUseCaseTypeHasBeenSet; }
@@ -123,10 +124,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The resource to which the attached file is (being) uploaded to. <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
+     * <p>The resource to which the attached file is (being) uploaded to. The supported
+     * resources are <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p>
+     *  <p>This value must be a valid ARN.</p> 
      */
     inline const Aws::String& GetAssociatedResourceArn() const{ return m_associatedResourceArn; }
     inline bool AssociatedResourceArnHasBeenSet() const { return m_associatedResourceArnHasBeenSet; }

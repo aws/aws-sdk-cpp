@@ -151,7 +151,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The search criteria based on searchable segment attributes of a contact.</p>
      */
     inline const SearchableSegmentAttributes& GetSearchableSegmentAttributes() const{ return m_searchableSegmentAttributes; }
     inline bool SearchableSegmentAttributesHasBeenSet() const { return m_searchableSegmentAttributesHasBeenSet; }

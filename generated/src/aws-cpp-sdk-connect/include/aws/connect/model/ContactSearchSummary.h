@@ -198,7 +198,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Set of segment attributes for a contact.</p>
      */
     inline const Aws::Map<Aws::String, ContactSearchSummarySegmentAttributeValue>& GetSegmentAttributes() const{ return m_segmentAttributes; }
     inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }

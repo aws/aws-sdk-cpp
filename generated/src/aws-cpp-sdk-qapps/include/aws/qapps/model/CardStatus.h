@@ -7,6 +7,8 @@
 #include <aws/qapps/QApps_EXPORTS.h>
 #include <aws/qapps/model/ExecutionStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qapps/model/Submission.h>
 #include <utility>
 
 namespace Aws
@@ -64,6 +66,20 @@ namespace Model
     inline CardStatus& WithCurrentValue(Aws::String&& value) { SetCurrentValue(std::move(value)); return *this;}
     inline CardStatus& WithCurrentValue(const char* value) { SetCurrentValue(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of previous submissions, if the card is a form card.</p>
+     */
+    inline const Aws::Vector<Submission>& GetSubmissions() const{ return m_submissions; }
+    inline bool SubmissionsHasBeenSet() const { return m_submissionsHasBeenSet; }
+    inline void SetSubmissions(const Aws::Vector<Submission>& value) { m_submissionsHasBeenSet = true; m_submissions = value; }
+    inline void SetSubmissions(Aws::Vector<Submission>&& value) { m_submissionsHasBeenSet = true; m_submissions = std::move(value); }
+    inline CardStatus& WithSubmissions(const Aws::Vector<Submission>& value) { SetSubmissions(value); return *this;}
+    inline CardStatus& WithSubmissions(Aws::Vector<Submission>&& value) { SetSubmissions(std::move(value)); return *this;}
+    inline CardStatus& AddSubmissions(const Submission& value) { m_submissionsHasBeenSet = true; m_submissions.push_back(value); return *this; }
+    inline CardStatus& AddSubmissions(Submission&& value) { m_submissionsHasBeenSet = true; m_submissions.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     ExecutionStatus m_currentState;
@@ -71,6 +87,9 @@ namespace Model
 
     Aws::String m_currentValue;
     bool m_currentValueHasBeenSet = false;
+
+    Aws::Vector<Submission> m_submissions;
+    bool m_submissionsHasBeenSet = false;
   };
 
 } // namespace Model

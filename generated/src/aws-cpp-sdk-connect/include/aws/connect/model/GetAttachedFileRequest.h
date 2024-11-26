@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The unique identifier of the Connect instance.</p>
+     * <p>The unique identifier of the Amazon Connect instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -82,10 +82,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The resource to which the attached file is (being) uploaded to. <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     * are the only current supported resource.</p>  <p>This value must be a
-     * valid ARN.</p> 
+     * <p>The resource to which the attached file is (being) uploaded to. The supported
+     * resources are <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p>
+     *  <p>This value must be a valid ARN.</p> 
      */
     inline const Aws::String& GetAssociatedResourceArn() const{ return m_associatedResourceArn; }
     inline bool AssociatedResourceArnHasBeenSet() const { return m_associatedResourceArnHasBeenSet; }

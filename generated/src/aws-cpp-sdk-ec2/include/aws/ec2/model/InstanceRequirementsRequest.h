@@ -118,10 +118,11 @@ namespace Model
      * Intel CPUs, specify <code>intel</code>.</p> </li> <li> <p>For instance types
      * with AMD CPUs, specify <code>amd</code>.</p> </li> <li> <p>For instance types
      * with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p>
-     * </li> </ul>  <p>Don't confuse the CPU manufacturer with the CPU
-     * architecture. Instances will be launched with a compatible CPU architecture
-     * based on the Amazon Machine Image (AMI) that you specify in your launch
-     * template.</p>  <p>Default: Any manufacturer</p>
+     * </li> <li> <p>For instance types with Apple CPUs, specify
+     * <code>apple</code>.</p> </li> </ul>  <p>Don't confuse the CPU manufacturer
+     * with the CPU architecture. Instances will be launched with a compatible CPU
+     * architecture based on the Amazon Machine Image (AMI) that you specify in your
+     * launch template.</p>  <p>Default: Any manufacturer</p>
      */
     inline const Aws::Vector<CpuManufacturer>& GetCpuManufacturers() const{ return m_cpuManufacturers; }
     inline bool CpuManufacturersHasBeenSet() const { return m_cpuManufacturersHasBeenSet; }

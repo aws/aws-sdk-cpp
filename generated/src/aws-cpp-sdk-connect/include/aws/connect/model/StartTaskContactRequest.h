@@ -74,9 +74,9 @@ namespace Model
     /**
      * <p>The identifier of the flow for initiating the tasks. To see the ContactFlowId
      * in the Amazon Connect admin website, on the navigation menu go to
-     * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
-     * the name of the flow, choose <b>Show additional flow information</b>. The
-     * ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * <b>Routing</b>, <b>Flows</b>. Choose the flow. On the flow page, under the name
+     * of the flow, choose <b>Show additional flow information</b>. The ContactFlowId
+     * is the last part of the ARN, shown here in bold: </p>
      * <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      */
@@ -255,7 +255,20 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * (unique contact ID) using an attribute map. The attributes are standard Amazon
+     * Connect attributes. They can be accessed in flows.</p> <p>Attribute keys can
+     * include only alphanumeric, -, and _.</p> <p>This field can be used to set
+     * Contact Expiry as a duration in minutes and set a UserId for the User who
+     * created a task.</p>  <p>To set contact expiry, a ValueMap must be
+     * specified containing the integer number of minutes the contact will be active
+     * for before expiring, with <code>SegmentAttributes</code> like { <code>
+     * "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger":
+     * 135}}}}</code>. </p> <p>To set the created by user, a valid AgentResourceId must
+     * be supplied, with <code>SegmentAttributes</code> like {
+     * <code>"connect:CreatedByUser" { "ValueString":
+     * "arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/agent/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"}}}</code>.
+     * </p> 
      */
     inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const{ return m_segmentAttributes; }
     inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }

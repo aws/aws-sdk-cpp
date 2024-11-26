@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The search criteria based on searchable segment attributes of a
+   * contact</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchableSegmentAttributes">AWS
    * API Reference</a></p>
    */
@@ -41,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The list of criteria based on searchable segment attributes.</p>
      */
     inline const Aws::Vector<SearchableSegmentAttributesCriteria>& GetCriteria() const{ return m_criteria; }
     inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
@@ -55,7 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The match type combining search criteria using multiple searchable segment
+     * attributes.</p>
      */
     inline const SearchContactsMatchType& GetMatchType() const{ return m_matchType; }
     inline bool MatchTypeHasBeenSet() const { return m_matchTypeHasBeenSet; }

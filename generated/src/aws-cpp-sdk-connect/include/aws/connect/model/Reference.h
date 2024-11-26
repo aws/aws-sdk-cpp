@@ -72,7 +72,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Status of the attachment reference type.</p>
      */
     inline const ReferenceStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -84,7 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the reference</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -98,7 +98,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Relevant details why the reference was not successfully created.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }

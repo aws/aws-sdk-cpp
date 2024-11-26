@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Contact summary of a contact in contact tree associated with unique
+   * identifier.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociatedContactSummary">AWS
    * API Reference</a></p>
    */
@@ -42,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
@@ -56,7 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the contact</p>
      */
     inline const Aws::String& GetContactArn() const{ return m_contactArn; }
     inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
@@ -70,7 +71,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The date and time this contact was initiated, in UTC time.</p>
      */
     inline const Aws::Utils::DateTime& GetInitiationTimestamp() const{ return m_initiationTimestamp; }
     inline bool InitiationTimestampHasBeenSet() const { return m_initiationTimestampHasBeenSet; }
@@ -82,7 +83,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The timestamp when the customer endpoint disconnected from Amazon
+     * Connect.</p>
      */
     inline const Aws::Utils::DateTime& GetDisconnectTimestamp() const{ return m_disconnectTimestamp; }
     inline bool DisconnectTimestampHasBeenSet() const { return m_disconnectTimestampHasBeenSet; }
@@ -94,7 +96,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>If this contact is related to other contacts, this is the ID of the initial
+     * contact.</p>
      */
     inline const Aws::String& GetInitialContactId() const{ return m_initialContactId; }
     inline bool InitialContactIdHasBeenSet() const { return m_initialContactIdHasBeenSet; }
@@ -108,7 +111,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>If this contact is not the first contact, this is the ID of the previous
+     * contact.</p>
      */
     inline const Aws::String& GetPreviousContactId() const{ return m_previousContactId; }
     inline bool PreviousContactIdHasBeenSet() const { return m_previousContactIdHasBeenSet; }
@@ -122,7 +126,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The contactId that is related to this contact.</p>
      */
     inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
     inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
@@ -136,7 +140,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Indicates how the contact was initiated.</p>
      */
     inline const ContactInitiationMethod& GetInitiationMethod() const{ return m_initiationMethod; }
     inline bool InitiationMethodHasBeenSet() const { return m_initiationMethodHasBeenSet; }
@@ -148,7 +152,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>How the contact reached your contact center.</p>
      */
     inline const Channel& GetChannel() const{ return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }

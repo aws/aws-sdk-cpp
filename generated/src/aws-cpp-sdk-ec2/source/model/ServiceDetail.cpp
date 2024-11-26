@@ -24,6 +24,7 @@ ServiceDetail::ServiceDetail() :
     m_serviceNameHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
+    m_serviceRegionHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
@@ -79,6 +80,12 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
       }
 
       m_serviceTypeHasBeenSet = true;
+    }
+    XmlNode serviceRegionNode = resultNode.FirstChild("serviceRegion");
+    if(!serviceRegionNode.IsNull())
+    {
+      m_serviceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(serviceRegionNode.GetText());
+      m_serviceRegionHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("availabilityZoneSet");
     if(!availabilityZonesNode.IsNull())
@@ -210,6 +217,11 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
       }
   }
 
+  if(m_serviceRegionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceRegion=" << StringUtils::URLEncode(m_serviceRegion.c_str()) << "&";
+  }
+
   if(m_availabilityZonesHasBeenSet)
   {
       unsigned availabilityZonesIdx = 1;
@@ -315,6 +327,10 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
         serviceTypeSs << location <<  ".ServiceType." << serviceTypeIdx++;
         item.OutputToStream(oStream, serviceTypeSs.str().c_str());
       }
+  }
+  if(m_serviceRegionHasBeenSet)
+  {
+      oStream << location << ".ServiceRegion=" << StringUtils::URLEncode(m_serviceRegion.c_str()) << "&";
   }
   if(m_availabilityZonesHasBeenSet)
   {

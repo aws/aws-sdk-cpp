@@ -27,7 +27,8 @@ QQueryCard::QQueryCard() :
     m_promptHasBeenSet(false),
     m_outputSource(CardOutputSource::NOT_SET),
     m_outputSourceHasBeenSet(false),
-    m_attributeFilterHasBeenSet(false)
+    m_attributeFilterHasBeenSet(false),
+    m_memoryReferencesHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,16 @@ QQueryCard& QQueryCard::operator =(JsonView jsonValue)
     m_attributeFilterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("memoryReferences"))
+  {
+    Aws::Utils::Array<JsonView> memoryReferencesJsonList = jsonValue.GetArray("memoryReferences");
+    for(unsigned memoryReferencesIndex = 0; memoryReferencesIndex < memoryReferencesJsonList.GetLength(); ++memoryReferencesIndex)
+    {
+      m_memoryReferences.push_back(memoryReferencesJsonList[memoryReferencesIndex].AsString());
+    }
+    m_memoryReferencesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +151,17 @@ JsonValue QQueryCard::Jsonize() const
   if(m_attributeFilterHasBeenSet)
   {
    payload.WithObject("attributeFilter", m_attributeFilter.Jsonize());
+
+  }
+
+  if(m_memoryReferencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> memoryReferencesJsonList(m_memoryReferences.size());
+   for(unsigned memoryReferencesIndex = 0; memoryReferencesIndex < memoryReferencesJsonList.GetLength(); ++memoryReferencesIndex)
+   {
+     memoryReferencesJsonList[memoryReferencesIndex].AsString(m_memoryReferences[memoryReferencesIndex]);
+   }
+   payload.WithArray("memoryReferences", std::move(memoryReferencesJsonList));
 
   }
 

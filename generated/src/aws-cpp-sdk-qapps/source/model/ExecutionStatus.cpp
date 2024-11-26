@@ -23,6 +23,7 @@ namespace Aws
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int WAITING_HASH = HashingUtils::HashString("WAITING");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 
         ExecutionStatus GetExecutionStatusForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == COMPLETED_HASH)
           {
             return ExecutionStatus::COMPLETED;
+          }
+          else if (hashCode == ERROR__HASH)
+          {
+            return ExecutionStatus::ERROR_;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "WAITING";
           case ExecutionStatus::COMPLETED:
             return "COMPLETED";
+          case ExecutionStatus::ERROR_:
+            return "ERROR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

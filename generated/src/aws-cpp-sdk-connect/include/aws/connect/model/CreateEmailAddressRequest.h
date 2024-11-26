@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The description of the email address.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -49,7 +49,9 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -63,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The email address with the instance, in [^\s@]+@[^\s@]+\.[^\s@]+ format.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
@@ -77,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The display name of email address</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
@@ -91,7 +93,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -110,7 +113,11 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

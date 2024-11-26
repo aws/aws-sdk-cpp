@@ -24,6 +24,7 @@ namespace Aws
         static const int q_query_HASH = HashingUtils::HashString("q-query");
         static const int file_upload_HASH = HashingUtils::HashString("file-upload");
         static const int q_plugin_HASH = HashingUtils::HashString("q-plugin");
+        static const int form_input_HASH = HashingUtils::HashString("form-input");
 
 
         CardType GetCardTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == q_plugin_HASH)
           {
             return CardType::q_plugin;
+          }
+          else if (hashCode == form_input_HASH)
+          {
+            return CardType::form_input;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -69,6 +74,8 @@ namespace Aws
             return "file-upload";
           case CardType::q_plugin:
             return "q-plugin";
+          case CardType::form_input:
+            return "form-input";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

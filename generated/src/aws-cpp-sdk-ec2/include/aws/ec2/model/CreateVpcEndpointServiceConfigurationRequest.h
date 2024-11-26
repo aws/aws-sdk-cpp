@@ -125,6 +125,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Regions from which service consumers can access the service.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedRegions() const{ return m_supportedRegions; }
+    inline bool SupportedRegionsHasBeenSet() const { return m_supportedRegionsHasBeenSet; }
+    inline void SetSupportedRegions(const Aws::Vector<Aws::String>& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions = value; }
+    inline void SetSupportedRegions(Aws::Vector<Aws::String>&& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions = std::move(value); }
+    inline CreateVpcEndpointServiceConfigurationRequest& WithSupportedRegions(const Aws::Vector<Aws::String>& value) { SetSupportedRegions(value); return *this;}
+    inline CreateVpcEndpointServiceConfigurationRequest& WithSupportedRegions(Aws::Vector<Aws::String>&& value) { SetSupportedRegions(std::move(value)); return *this;}
+    inline CreateVpcEndpointServiceConfigurationRequest& AddSupportedRegions(const Aws::String& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions.push_back(value); return *this; }
+    inline CreateVpcEndpointServiceConfigurationRequest& AddSupportedRegions(Aws::String&& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions.push_back(std::move(value)); return *this; }
+    inline CreateVpcEndpointServiceConfigurationRequest& AddSupportedRegions(const char* value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How
@@ -172,6 +187,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_supportedIpAddressTypes;
     bool m_supportedIpAddressTypesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_supportedRegions;
+    bool m_supportedRegionsHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;

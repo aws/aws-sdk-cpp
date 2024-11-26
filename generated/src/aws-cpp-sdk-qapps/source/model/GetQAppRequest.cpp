@@ -17,7 +17,9 @@ using namespace Aws::Http;
 
 GetQAppRequest::GetQAppRequest() : 
     m_instanceIdHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_appVersion(0),
+    m_appVersionHasBeenSet(false)
 {
 }
 
@@ -48,6 +50,13 @@ void GetQAppRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_appId;
       uri.AddQueryStringParameter("appId", ss.str());
+      ss.str("");
+    }
+
+    if(m_appVersionHasBeenSet)
+    {
+      ss << m_appVersion;
+      uri.AddQueryStringParameter("appVersion", ss.str());
       ss.str("");
     }
 

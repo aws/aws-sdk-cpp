@@ -21,6 +21,8 @@ CopySnapshotRequest::CopySnapshotRequest() :
     m_sourceRegionHasBeenSet(false),
     m_sourceSnapshotIdHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
+    m_completionDurationMinutes(0),
+    m_completionDurationMinutesHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -73,6 +75,11 @@ Aws::String CopySnapshotRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_completionDurationMinutesHasBeenSet)
+  {
+    ss << "CompletionDurationMinutes=" << m_completionDurationMinutes << "&";
   }
 
   if(m_dryRunHasBeenSet)

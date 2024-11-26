@@ -23,6 +23,7 @@ InvokeAgentRequest::InvokeAgentRequest() :
     m_memoryIdHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionStateHasBeenSet(false),
+    m_streamingConfigurationsHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -58,6 +59,12 @@ Aws::String InvokeAgentRequest::SerializePayload() const
   if(m_sessionStateHasBeenSet)
   {
    payload.WithObject("sessionState", m_sessionState.Jsonize());
+
+  }
+
+  if(m_streamingConfigurationsHasBeenSet)
+  {
+   payload.WithObject("streamingConfigurations", m_streamingConfigurations.Jsonize());
 
   }
 

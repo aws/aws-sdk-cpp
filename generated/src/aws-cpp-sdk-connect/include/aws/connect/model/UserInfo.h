@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The user details for the contact.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserInfo">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The user identifier for the contact.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }

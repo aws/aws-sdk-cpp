@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The search criteria to be used to return contact flow modules.</p>
+     * <p>The search criteria to be used to return flow modules.</p>
      */
     inline const Aws::Vector<ContactFlowModule>& GetContactFlowModules() const{ return m_contactFlowModules; }
     inline void SetContactFlowModules(const Aws::Vector<ContactFlowModule>& value) { m_contactFlowModules = value; }
@@ -63,7 +63,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The total number of contact flows which matched your search query.</p>
+     * <p>The total number of flows which matched your search query.</p>
      */
     inline long long GetApproximateTotalCount() const{ return m_approximateTotalCount; }
     inline void SetApproximateTotalCount(long long value) { m_approximateTotalCount = value; }

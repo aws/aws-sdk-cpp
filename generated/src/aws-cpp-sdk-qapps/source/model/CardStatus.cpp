@@ -21,7 +21,8 @@ namespace Model
 CardStatus::CardStatus() : 
     m_currentState(ExecutionStatus::NOT_SET),
     m_currentStateHasBeenSet(false),
-    m_currentValueHasBeenSet(false)
+    m_currentValueHasBeenSet(false),
+    m_submissionsHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,16 @@ CardStatus& CardStatus::operator =(JsonView jsonValue)
     m_currentValueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("submissions"))
+  {
+    Aws::Utils::Array<JsonView> submissionsJsonList = jsonValue.GetArray("submissions");
+    for(unsigned submissionsIndex = 0; submissionsIndex < submissionsJsonList.GetLength(); ++submissionsIndex)
+    {
+      m_submissions.push_back(submissionsJsonList[submissionsIndex].AsObject());
+    }
+    m_submissionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +73,17 @@ JsonValue CardStatus::Jsonize() const
   if(m_currentValueHasBeenSet)
   {
    payload.WithString("currentValue", m_currentValue);
+
+  }
+
+  if(m_submissionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> submissionsJsonList(m_submissions.size());
+   for(unsigned submissionsIndex = 0; submissionsIndex < submissionsJsonList.GetLength(); ++submissionsIndex)
+   {
+     submissionsJsonList[submissionsIndex].AsObject(m_submissions[submissionsIndex].Jsonize());
+   }
+   payload.WithArray("submissions", std::move(submissionsJsonList));
 
   }
 
