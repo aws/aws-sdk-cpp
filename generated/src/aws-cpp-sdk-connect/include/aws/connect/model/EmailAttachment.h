@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Information about the email attachment files.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EmailAttachment">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A case-sensitive name of the attached file being uploaded.</p>
      */
     inline const Aws::String& GetFileName() const{ return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
@@ -53,7 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The pre-signed URLs for the S3 bucket where the email attachment is
+     * stored.</p>
      */
     inline const Aws::String& GetS3Url() const{ return m_s3Url; }
     inline bool S3UrlHasBeenSet() const { return m_s3UrlHasBeenSet; }

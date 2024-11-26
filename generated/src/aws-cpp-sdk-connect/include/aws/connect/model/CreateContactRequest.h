@@ -42,7 +42,9 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -56,7 +58,11 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
@@ -70,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
     inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
@@ -84,7 +90,11 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A custom key-value pair using an attribute map. The attributes are standard
+     * Amazon Connect attributes, and can be accessed in flows just like any other
+     * contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes across all
+     * key-value pairs per contact. Attribute keys can include only alphanumeric, dash,
+     * and underscore characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -103,7 +113,9 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+     * Tasks can have the following reference types at the time of creation: URL |
+     * NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
      */
     inline const Aws::Map<Aws::String, Reference>& GetReferences() const{ return m_references; }
     inline bool ReferencesHasBeenSet() const { return m_referencesHasBeenSet; }
@@ -121,7 +133,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The channel for the contact</p>
      */
     inline const Channel& GetChannel() const{ return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
@@ -133,7 +145,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Indicates how the contact was initiated.</p>
      */
     inline const ContactInitiationMethod& GetInitiationMethod() const{ return m_initiationMethod; }
     inline bool InitiationMethodHasBeenSet() const { return m_initiationMethodHasBeenSet; }
@@ -145,7 +157,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Number of minutes the contact will be active for before expiring</p>
      */
     inline int GetExpiryDurationInMinutes() const{ return m_expiryDurationInMinutes; }
     inline bool ExpiryDurationInMinutesHasBeenSet() const { return m_expiryDurationInMinutesHasBeenSet; }
@@ -155,7 +167,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>User details for the contact</p>
      */
     inline const UserInfo& GetUserInfo() const{ return m_userInfo; }
     inline bool UserInfoHasBeenSet() const { return m_userInfoHasBeenSet; }
@@ -167,7 +179,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Initial state of the contact when it's created</p>
      */
     inline const InitiateAs& GetInitiateAs() const{ return m_initiateAs; }
     inline bool InitiateAsHasBeenSet() const { return m_initiateAsHasBeenSet; }
@@ -179,7 +191,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The name of a the contact.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -193,7 +205,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A description of the contact.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -207,7 +219,15 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * (unique contact ID) using an attribute map. The attributes are standard Amazon
+     * Connect attributes. They can be accessed in flows.</p> <p>Attribute keys can
+     * include only alphanumeric, -, and _.</p> <p>This field can be used to set
+     * Segment Contact Expiry as a duration in minutes.</p>  <p>To set contact
+     * expiry, a ValueMap must be specified containing the integer number of minutes
+     * the contact will be active for before expiring, with
+     * <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry":
+     * {"ValueMap" : { "ExpiryDuration": { "ValueInteger": 135}}}}</code>. </p> 
      */
     inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const{ return m_segmentAttributes; }
     inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }

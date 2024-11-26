@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Information about the reference when the referenceType is
+   * <code>EMAIL_MESSAGE</code>. Otherwise, null.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EmailMessageReference">AWS
    * API Reference</a></p>
    */
@@ -39,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The name of the email message reference</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -53,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the email message reference</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

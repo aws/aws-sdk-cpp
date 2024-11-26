@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/qapps/QApps_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qapps/model/SubmissionMutation.h>
 #include <utility>
 
 namespace Aws
@@ -65,6 +66,19 @@ namespace Model
     inline CardValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
     inline CardValue& WithValue(const char* value) { SetValue(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The structure that describes how the current form card value is mutated. Only
+     * applies for form cards when multiple responses are allowed.</p>
+     */
+    inline const SubmissionMutation& GetSubmissionMutation() const{ return m_submissionMutation; }
+    inline bool SubmissionMutationHasBeenSet() const { return m_submissionMutationHasBeenSet; }
+    inline void SetSubmissionMutation(const SubmissionMutation& value) { m_submissionMutationHasBeenSet = true; m_submissionMutation = value; }
+    inline void SetSubmissionMutation(SubmissionMutation&& value) { m_submissionMutationHasBeenSet = true; m_submissionMutation = std::move(value); }
+    inline CardValue& WithSubmissionMutation(const SubmissionMutation& value) { SetSubmissionMutation(value); return *this;}
+    inline CardValue& WithSubmissionMutation(SubmissionMutation&& value) { SetSubmissionMutation(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_cardId;
@@ -72,6 +86,9 @@ namespace Model
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
+
+    SubmissionMutation m_submissionMutation;
+    bool m_submissionMutationHasBeenSet = false;
   };
 
 } // namespace Model

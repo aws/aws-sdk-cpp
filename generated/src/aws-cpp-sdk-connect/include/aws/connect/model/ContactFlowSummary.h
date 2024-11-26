@@ -111,7 +111,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the contact flow.</p>
+     * <p>The status of the flow.</p>
      */
     inline const ContactFlowStatus& GetContactFlowStatus() const{ return m_contactFlowStatus; }
     inline bool ContactFlowStatusHasBeenSet() const { return m_contactFlowStatusHasBeenSet; }

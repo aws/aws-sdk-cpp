@@ -20,7 +20,8 @@ namespace Model
 
 CardValue::CardValue() : 
     m_cardIdHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_submissionMutationHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ CardValue& CardValue::operator =(JsonView jsonValue)
     m_valueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("submissionMutation"))
+  {
+    m_submissionMutation = jsonValue.GetObject("submissionMutation");
+
+    m_submissionMutationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue CardValue::Jsonize() const
   if(m_valueHasBeenSet)
   {
    payload.WithString("value", m_value);
+
+  }
+
+  if(m_submissionMutationHasBeenSet)
+  {
+   payload.WithObject("submissionMutation", m_submissionMutation.Jsonize());
 
   }
 

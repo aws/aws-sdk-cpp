@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The additional recipients information of outbound email.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/OutboundAdditionalRecipients">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The additional CC email address recipients information.</p>
      */
     inline const Aws::Vector<EmailAddressInfo>& GetCcEmailAddresses() const{ return m_ccEmailAddresses; }
     inline bool CcEmailAddressesHasBeenSet() const { return m_ccEmailAddressesHasBeenSet; }

@@ -10,6 +10,7 @@
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/SessionState.h>
+#include <aws/bedrock-agent-runtime/model/StreamingConfigurations.h>
 #include <utility>
 
 namespace Aws
@@ -167,6 +168,18 @@ namespace Model
     inline InvokeAgentRequest& WithSessionState(const SessionState& value) { SetSessionState(value); return *this;}
     inline InvokeAgentRequest& WithSessionState(SessionState&& value) { SetSessionState(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Specifies the configurations for streaming. </p>
+     */
+    inline const StreamingConfigurations& GetStreamingConfigurations() const{ return m_streamingConfigurations; }
+    inline bool StreamingConfigurationsHasBeenSet() const { return m_streamingConfigurationsHasBeenSet; }
+    inline void SetStreamingConfigurations(const StreamingConfigurations& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = value; }
+    inline void SetStreamingConfigurations(StreamingConfigurations&& value) { m_streamingConfigurationsHasBeenSet = true; m_streamingConfigurations = std::move(value); }
+    inline InvokeAgentRequest& WithStreamingConfigurations(const StreamingConfigurations& value) { SetStreamingConfigurations(value); return *this;}
+    inline InvokeAgentRequest& WithStreamingConfigurations(StreamingConfigurations&& value) { SetStreamingConfigurations(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_agentAliasId;
@@ -192,6 +205,9 @@ namespace Model
 
     SessionState m_sessionState;
     bool m_sessionStateHasBeenSet = false;
+
+    StreamingConfigurations m_streamingConfigurations;
+    bool m_streamingConfigurationsHasBeenSet = false;
     InvokeAgentHandler m_handler;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
 

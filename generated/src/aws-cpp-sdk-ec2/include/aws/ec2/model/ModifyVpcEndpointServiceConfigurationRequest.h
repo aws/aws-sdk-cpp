@@ -92,7 +92,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether requests to create an endpoint to your service must be
+     * <p>Indicates whether requests to create an endpoint to the service must be
      * accepted.</p>
      */
     inline bool GetAcceptanceRequired() const{ return m_acceptanceRequired; }
@@ -103,7 +103,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to your
+     * <p>The Amazon Resource Names (ARNs) of Network Load Balancers to add to the
      * service configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddNetworkLoadBalancerArns() const{ return m_addNetworkLoadBalancerArns; }
@@ -119,8 +119,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from
-     * your service configuration.</p>
+     * <p>The Amazon Resource Names (ARNs) of Network Load Balancers to remove from the
+     * service configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveNetworkLoadBalancerArns() const{ return m_removeNetworkLoadBalancerArns; }
     inline bool RemoveNetworkLoadBalancerArnsHasBeenSet() const { return m_removeNetworkLoadBalancerArnsHasBeenSet; }
@@ -135,7 +135,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to your
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to add to the
      * service configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddGatewayLoadBalancerArns() const{ return m_addGatewayLoadBalancerArns; }
@@ -151,8 +151,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from
-     * your service configuration.</p>
+     * <p>The Amazon Resource Names (ARNs) of Gateway Load Balancers to remove from the
+     * service configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveGatewayLoadBalancerArns() const{ return m_removeGatewayLoadBalancerArns; }
     inline bool RemoveGatewayLoadBalancerArnsHasBeenSet() const { return m_removeGatewayLoadBalancerArnsHasBeenSet; }
@@ -167,7 +167,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IP address types to add to your service configuration.</p>
+     * <p>The IP address types to add to the service configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddSupportedIpAddressTypes() const{ return m_addSupportedIpAddressTypes; }
     inline bool AddSupportedIpAddressTypesHasBeenSet() const { return m_addSupportedIpAddressTypesHasBeenSet; }
@@ -182,7 +182,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IP address types to remove from your service configuration.</p>
+     * <p>The IP address types to remove from the service configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveSupportedIpAddressTypes() const{ return m_removeSupportedIpAddressTypes; }
     inline bool RemoveSupportedIpAddressTypesHasBeenSet() const { return m_removeSupportedIpAddressTypesHasBeenSet; }
@@ -193,6 +193,36 @@ namespace Model
     inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(const Aws::String& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(value); return *this; }
     inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(Aws::String&& value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(std::move(value)); return *this; }
     inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedIpAddressTypes(const char* value) { m_removeSupportedIpAddressTypesHasBeenSet = true; m_removeSupportedIpAddressTypes.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The supported Regions to add to the service configuration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAddSupportedRegions() const{ return m_addSupportedRegions; }
+    inline bool AddSupportedRegionsHasBeenSet() const { return m_addSupportedRegionsHasBeenSet; }
+    inline void SetAddSupportedRegions(const Aws::Vector<Aws::String>& value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions = value; }
+    inline void SetAddSupportedRegions(Aws::Vector<Aws::String>&& value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions = std::move(value); }
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedRegions(const Aws::Vector<Aws::String>& value) { SetAddSupportedRegions(value); return *this;}
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithAddSupportedRegions(Aws::Vector<Aws::String>&& value) { SetAddSupportedRegions(std::move(value)); return *this;}
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedRegions(const Aws::String& value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions.push_back(value); return *this; }
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedRegions(Aws::String&& value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions.push_back(std::move(value)); return *this; }
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddAddSupportedRegions(const char* value) { m_addSupportedRegionsHasBeenSet = true; m_addSupportedRegions.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The supported Regions to remove from the service configuration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRemoveSupportedRegions() const{ return m_removeSupportedRegions; }
+    inline bool RemoveSupportedRegionsHasBeenSet() const { return m_removeSupportedRegionsHasBeenSet; }
+    inline void SetRemoveSupportedRegions(const Aws::Vector<Aws::String>& value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions = value; }
+    inline void SetRemoveSupportedRegions(Aws::Vector<Aws::String>&& value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions = std::move(value); }
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedRegions(const Aws::Vector<Aws::String>& value) { SetRemoveSupportedRegions(value); return *this;}
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemoveSupportedRegions(Aws::Vector<Aws::String>&& value) { SetRemoveSupportedRegions(std::move(value)); return *this;}
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedRegions(const Aws::String& value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions.push_back(value); return *this; }
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedRegions(Aws::String&& value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions.push_back(std::move(value)); return *this; }
+    inline ModifyVpcEndpointServiceConfigurationRequest& AddRemoveSupportedRegions(const char* value) { m_removeSupportedRegionsHasBeenSet = true; m_removeSupportedRegions.push_back(value); return *this; }
     ///@}
   private:
 
@@ -228,6 +258,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_removeSupportedIpAddressTypes;
     bool m_removeSupportedIpAddressTypesHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_addSupportedRegions;
+    bool m_addSupportedRegionsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_removeSupportedRegions;
+    bool m_removeSupportedRegionsHasBeenSet = false;
   };
 
 } // namespace Model

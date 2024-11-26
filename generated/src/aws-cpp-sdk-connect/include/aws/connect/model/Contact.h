@@ -114,7 +114,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>This is the root contactId which is used as a unique identifier for all
+     * subsequent contacts in a contact tree.</p>
      */
     inline const Aws::String& GetContactAssociationId() const{ return m_contactAssociationId; }
     inline bool ContactAssociationIdHasBeenSet() const { return m_contactAssociationIdHasBeenSet; }
@@ -334,7 +335,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The customer or external third party participant endpoint.</p>
      */
     inline const EndpointInfo& GetCustomerEndpoint() const{ return m_customerEndpoint; }
     inline bool CustomerEndpointHasBeenSet() const { return m_customerEndpointHasBeenSet; }
@@ -346,7 +347,11 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The system endpoint. For <code>INBOUND</code>, this is the phone number or
+     * email address that the customer dialed. For <code>OUTBOUND</code> and
+     * <code>EXTERNAL_OUTBOUND</code>, this is the outbound caller ID number assigned
+     * to the outbound queue that is used to dial the customer. For callback, this
+     * shows up as Softphone for calls handled by agents with softphone.</p>
      */
     inline const EndpointInfo& GetSystemEndpoint() const{ return m_systemEndpoint; }
     inline bool SystemEndpointHasBeenSet() const { return m_systemEndpointHasBeenSet; }
@@ -501,7 +506,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>List of additional email addresses for an email contact.</p>
      */
     inline const AdditionalEmailRecipients& GetAdditionalEmailRecipients() const{ return m_additionalEmailRecipients; }
     inline bool AdditionalEmailRecipientsHasBeenSet() const { return m_additionalEmailRecipientsHasBeenSet; }

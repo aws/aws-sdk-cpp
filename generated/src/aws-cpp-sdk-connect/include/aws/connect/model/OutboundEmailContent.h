@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Information about email body content.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/OutboundEmailContent">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The message source type, that is, <code>RAW</code> or
+     * <code>TEMPLATE</code>.</p>
      */
     inline const OutboundMessageSourceType& GetMessageSourceType() const{ return m_messageSourceType; }
     inline bool MessageSourceTypeHasBeenSet() const { return m_messageSourceTypeHasBeenSet; }
@@ -53,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Information about template message configuration.</p>
      */
     inline const TemplatedMessageConfig& GetTemplatedMessageConfig() const{ return m_templatedMessageConfig; }
     inline bool TemplatedMessageConfigHasBeenSet() const { return m_templatedMessageConfigHasBeenSet; }
@@ -65,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The raw email body content.</p>
      */
     inline const OutboundRawMessage& GetRawMessage() const{ return m_rawMessage; }
     inline bool RawMessageHasBeenSet() const { return m_rawMessageHasBeenSet; }

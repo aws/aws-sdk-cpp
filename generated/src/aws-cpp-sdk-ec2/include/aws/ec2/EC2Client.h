@@ -17115,12 +17115,9 @@ namespace EC2
         }
 
         /**
-         * <p>Modifies the attributes of your VPC endpoint service configuration. You can
-         * change the Network Load Balancers or Gateway Load Balancers for your service,
-         * and you can specify whether acceptance is required for requests to connect to
-         * your endpoint service through an interface VPC endpoint.</p> <p>If you set or
-         * modify the private DNS name, you must prove that you own the private DNS domain
-         * name.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the attributes of the specified VPC endpoint service
+         * configuration.</p> <p>If you set or modify the private DNS name, you must prove
+         * that you own the private DNS domain name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration">AWS
          * API Reference</a></p>
          */

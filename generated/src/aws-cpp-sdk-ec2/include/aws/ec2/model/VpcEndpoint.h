@@ -300,6 +300,20 @@ namespace Model
     inline VpcEndpoint& WithLastError(const LastError& value) { SetLastError(value); return *this;}
     inline VpcEndpoint& WithLastError(LastError&& value) { SetLastError(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Region where the service is hosted.</p>
+     */
+    inline const Aws::String& GetServiceRegion() const{ return m_serviceRegion; }
+    inline bool ServiceRegionHasBeenSet() const { return m_serviceRegionHasBeenSet; }
+    inline void SetServiceRegion(const Aws::String& value) { m_serviceRegionHasBeenSet = true; m_serviceRegion = value; }
+    inline void SetServiceRegion(Aws::String&& value) { m_serviceRegionHasBeenSet = true; m_serviceRegion = std::move(value); }
+    inline void SetServiceRegion(const char* value) { m_serviceRegionHasBeenSet = true; m_serviceRegion.assign(value); }
+    inline VpcEndpoint& WithServiceRegion(const Aws::String& value) { SetServiceRegion(value); return *this;}
+    inline VpcEndpoint& WithServiceRegion(Aws::String&& value) { SetServiceRegion(std::move(value)); return *this;}
+    inline VpcEndpoint& WithServiceRegion(const char* value) { SetServiceRegion(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_vpcEndpointId;
@@ -358,6 +372,9 @@ namespace Model
 
     LastError m_lastError;
     bool m_lastErrorHasBeenSet = false;
+
+    Aws::String m_serviceRegion;
+    bool m_serviceRegionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The outbound email address Id.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/OutboundEmailConfig">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the email address.</p>
      */
     inline const Aws::String& GetOutboundEmailAddressId() const{ return m_outboundEmailAddressId; }
     inline bool OutboundEmailAddressIdHasBeenSet() const { return m_outboundEmailAddressIdHasBeenSet; }

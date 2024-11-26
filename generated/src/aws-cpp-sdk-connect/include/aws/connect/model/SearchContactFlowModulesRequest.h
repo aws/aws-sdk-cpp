@@ -88,11 +88,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The search criteria to be used to return contact flow modules.</p> 
-     * <p>The <code>name</code> and <code>description</code> fields support "contains"
-     * queries with a minimum of 2 characters and a maximum of 25 characters. Any
-     * queries with character lengths outside of this range will result in invalid
-     * results.</p> 
+     * <p>The search criteria to be used to return flow modules.</p>  <p>The
+     * <code>name</code> and <code>description</code> fields support "contains" queries
+     * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
+     * character lengths outside of this range will result in invalid results.</p>
+     * 
      */
     inline const ContactFlowModuleSearchCriteria& GetSearchCriteria() const{ return m_searchCriteria; }
     inline bool SearchCriteriaHasBeenSet() const { return m_searchCriteriaHasBeenSet; }

@@ -20,6 +20,8 @@ using namespace Aws;
 CreateSnapshotResponse::CreateSnapshotResponse() : 
     m_storageTier(StorageTier::NOT_SET),
     m_sseType(SSEType::NOT_SET),
+    m_transferType(TransferType::NOT_SET),
+    m_completionDurationMinutes(0),
     m_state(SnapshotState::NOT_SET),
     m_volumeSize(0),
     m_encrypted(false)
@@ -79,6 +81,21 @@ CreateSnapshotResponse& CreateSnapshotResponse::operator =(const Aws::AmazonWebS
     if(!sseTypeNode.IsNull())
     {
       m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
+    }
+    XmlNode transferTypeNode = resultNode.FirstChild("transferType");
+    if(!transferTypeNode.IsNull())
+    {
+      m_transferType = TransferTypeMapper::GetTransferTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transferTypeNode.GetText()).c_str()).c_str());
+    }
+    XmlNode completionDurationMinutesNode = resultNode.FirstChild("completionDurationMinutes");
+    if(!completionDurationMinutesNode.IsNull())
+    {
+      m_completionDurationMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(completionDurationMinutesNode.GetText()).c_str()).c_str());
+    }
+    XmlNode completionTimeNode = resultNode.FirstChild("completionTime");
+    if(!completionTimeNode.IsNull())
+    {
+      m_completionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(completionTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
     }
     XmlNode snapshotIdNode = resultNode.FirstChild("snapshotId");
     if(!snapshotIdNode.IsNull())

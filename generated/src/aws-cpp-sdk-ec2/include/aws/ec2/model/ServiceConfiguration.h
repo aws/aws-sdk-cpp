@@ -14,6 +14,7 @@
 #include <aws/ec2/model/ServiceTypeDetail.h>
 #include <aws/ec2/model/ServiceConnectivityType.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/SupportedRegionDetail.h>
 #include <utility>
 
 namespace Aws
@@ -250,6 +251,31 @@ namespace Model
     inline ServiceConfiguration& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline ServiceConfiguration& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The supported Regions.</p>
+     */
+    inline const Aws::Vector<SupportedRegionDetail>& GetSupportedRegions() const{ return m_supportedRegions; }
+    inline bool SupportedRegionsHasBeenSet() const { return m_supportedRegionsHasBeenSet; }
+    inline void SetSupportedRegions(const Aws::Vector<SupportedRegionDetail>& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions = value; }
+    inline void SetSupportedRegions(Aws::Vector<SupportedRegionDetail>&& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions = std::move(value); }
+    inline ServiceConfiguration& WithSupportedRegions(const Aws::Vector<SupportedRegionDetail>& value) { SetSupportedRegions(value); return *this;}
+    inline ServiceConfiguration& WithSupportedRegions(Aws::Vector<SupportedRegionDetail>&& value) { SetSupportedRegions(std::move(value)); return *this;}
+    inline ServiceConfiguration& AddSupportedRegions(const SupportedRegionDetail& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions.push_back(value); return *this; }
+    inline ServiceConfiguration& AddSupportedRegions(SupportedRegionDetail&& value) { m_supportedRegionsHasBeenSet = true; m_supportedRegions.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether consumers can access the service from a Region other than
+     * the Region where the service is hosted.</p>
+     */
+    inline bool GetRemoteAccessEnabled() const{ return m_remoteAccessEnabled; }
+    inline bool RemoteAccessEnabledHasBeenSet() const { return m_remoteAccessEnabledHasBeenSet; }
+    inline void SetRemoteAccessEnabled(bool value) { m_remoteAccessEnabledHasBeenSet = true; m_remoteAccessEnabled = value; }
+    inline ServiceConfiguration& WithRemoteAccessEnabled(bool value) { SetRemoteAccessEnabled(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<ServiceTypeDetail> m_serviceType;
@@ -296,6 +322,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<SupportedRegionDetail> m_supportedRegions;
+    bool m_supportedRegionsHasBeenSet = false;
+
+    bool m_remoteAccessEnabled;
+    bool m_remoteAccessEnabledHasBeenSet = false;
   };
 
 } // namespace Model

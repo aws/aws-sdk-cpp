@@ -261,6 +261,35 @@ namespace QApps
         }
 
         /**
+         * <p>Creates a presigned URL for an S3 POST operation to upload a file. You can
+         * use this URL to set a default file for a <code>FileUploadCard</code> in a Q App
+         * definition or to provide a file for a single Q App run. The <code>scope</code>
+         * parameter determines how the file will be used, either at the app definition
+         * level or the app session level.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreatePresignedUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePresignedUrlOutcome CreatePresignedUrl(const Model::CreatePresignedUrlRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePresignedUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePresignedUrlRequestT = Model::CreatePresignedUrlRequest>
+        Model::CreatePresignedUrlOutcomeCallable CreatePresignedUrlCallable(const CreatePresignedUrlRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::CreatePresignedUrl, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePresignedUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePresignedUrlRequestT = Model::CreatePresignedUrlRequest>
+        void CreatePresignedUrlAsync(const CreatePresignedUrlRequestT& request, const CreatePresignedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::CreatePresignedUrl, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new Amazon Q App based on the provided definition. The Q App
          * definition specifies the cards and flow of the Q App. This operation also
          * calculates the dependencies between the cards by inspecting the references in
@@ -343,6 +372,32 @@ namespace QApps
         }
 
         /**
+         * <p> Describes read permissions for a Amazon Q App in Amazon Q Business
+         * application environment instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DescribeQAppPermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeQAppPermissionsOutcome DescribeQAppPermissions(const Model::DescribeQAppPermissionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeQAppPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeQAppPermissionsRequestT = Model::DescribeQAppPermissionsRequest>
+        Model::DescribeQAppPermissionsOutcomeCallable DescribeQAppPermissionsCallable(const DescribeQAppPermissionsRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::DescribeQAppPermissions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeQAppPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeQAppPermissionsRequestT = Model::DescribeQAppPermissionsRequest>
+        void DescribeQAppPermissionsAsync(const DescribeQAppPermissionsRequestT& request, const DescribeQAppPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::DescribeQAppPermissions, request, handler, context);
+        }
+
+        /**
          * <p>Removes a rating or review previously submitted by the user for a library
          * item.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DisassociateLibraryItemReview">AWS
@@ -392,6 +447,32 @@ namespace QApps
         void DisassociateQAppFromUserAsync(const DisassociateQAppFromUserRequestT& request, const DisassociateQAppFromUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QAppsClient::DisassociateQAppFromUser, request, handler, context);
+        }
+
+        /**
+         * <p>Exports the collected data of a Q App data collection session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ExportQAppSessionData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportQAppSessionDataOutcome ExportQAppSessionData(const Model::ExportQAppSessionDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportQAppSessionData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExportQAppSessionDataRequestT = Model::ExportQAppSessionDataRequest>
+        Model::ExportQAppSessionDataOutcomeCallable ExportQAppSessionDataCallable(const ExportQAppSessionDataRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::ExportQAppSessionData, request);
+        }
+
+        /**
+         * An Async wrapper for ExportQAppSessionData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExportQAppSessionDataRequestT = Model::ExportQAppSessionDataRequest>
+        void ExportQAppSessionDataAsync(const ExportQAppSessionDataRequestT& request, const ExportQAppSessionDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::ExportQAppSessionData, request, handler, context);
         }
 
         /**
@@ -471,6 +552,32 @@ namespace QApps
         void GetQAppSessionAsync(const GetQAppSessionRequestT& request, const GetQAppSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QAppsClient::GetQAppSession, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the current configuration of a Q App session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQAppSessionMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetQAppSessionMetadataOutcome GetQAppSessionMetadata(const Model::GetQAppSessionMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetQAppSessionMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetQAppSessionMetadataRequestT = Model::GetQAppSessionMetadataRequest>
+        Model::GetQAppSessionMetadataOutcomeCallable GetQAppSessionMetadataCallable(const GetQAppSessionMetadataRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::GetQAppSessionMetadata, request);
+        }
+
+        /**
+         * An Async wrapper for GetQAppSessionMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetQAppSessionMetadataRequestT = Model::GetQAppSessionMetadataRequest>
+        void GetQAppSessionMetadataAsync(const GetQAppSessionMetadataRequestT& request, const GetQAppSessionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::GetQAppSessionMetadata, request, handler, context);
         }
 
         /**
@@ -554,6 +661,32 @@ namespace QApps
         void ListLibraryItemsAsync(const ListLibraryItemsRequestT& request, const ListLibraryItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QAppsClient::ListLibraryItems, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the collected data of a Q App data collection session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListQAppSessionData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListQAppSessionDataOutcome ListQAppSessionData(const Model::ListQAppSessionDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListQAppSessionData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListQAppSessionDataRequestT = Model::ListQAppSessionDataRequest>
+        Model::ListQAppSessionDataOutcomeCallable ListQAppSessionDataCallable(const ListQAppSessionDataRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::ListQAppSessionData, request);
+        }
+
+        /**
+         * An Async wrapper for ListQAppSessionData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListQAppSessionDataRequestT = Model::ListQAppSessionDataRequest>
+        void ListQAppSessionDataAsync(const ListQAppSessionDataRequestT& request, const ListQAppSessionDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::ListQAppSessionData, request, handler, context);
         }
 
         /**
@@ -821,6 +954,32 @@ namespace QApps
         }
 
         /**
+         * <p>Updates read permissions for a Amazon Q App in Amazon Q Business application
+         * environment instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppPermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQAppPermissionsOutcome UpdateQAppPermissions(const Model::UpdateQAppPermissionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateQAppPermissions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateQAppPermissionsRequestT = Model::UpdateQAppPermissionsRequest>
+        Model::UpdateQAppPermissionsOutcomeCallable UpdateQAppPermissionsCallable(const UpdateQAppPermissionsRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::UpdateQAppPermissions, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateQAppPermissions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateQAppPermissionsRequestT = Model::UpdateQAppPermissionsRequest>
+        void UpdateQAppPermissionsAsync(const UpdateQAppPermissionsRequestT& request, const UpdateQAppPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::UpdateQAppPermissions, request, handler, context);
+        }
+
+        /**
          * <p>Updates the session for a given Q App <code>sessionId</code>. This is only
          * valid when at least one card of the session is in the <code>WAITING</code>
          * state. Data for each <code>WAITING</code> card can be provided as input. If
@@ -848,6 +1007,32 @@ namespace QApps
         void UpdateQAppSessionAsync(const UpdateQAppSessionRequestT& request, const UpdateQAppSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QAppsClient::UpdateQAppSession, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the configuration metadata of a session for a given Q App
+         * <code>sessionId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppSessionMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateQAppSessionMetadataOutcome UpdateQAppSessionMetadata(const Model::UpdateQAppSessionMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateQAppSessionMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateQAppSessionMetadataRequestT = Model::UpdateQAppSessionMetadataRequest>
+        Model::UpdateQAppSessionMetadataOutcomeCallable UpdateQAppSessionMetadataCallable(const UpdateQAppSessionMetadataRequestT& request) const
+        {
+            return SubmitCallable(&QAppsClient::UpdateQAppSessionMetadata, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateQAppSessionMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateQAppSessionMetadataRequestT = Model::UpdateQAppSessionMetadataRequest>
+        void UpdateQAppSessionMetadataAsync(const UpdateQAppSessionMetadataRequestT& request, const UpdateQAppSessionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QAppsClient::UpdateQAppSessionMetadata, request, handler, context);
         }
 
 

@@ -36,7 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -50,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -60,7 +62,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The token for the next set of results. Use the value returned in the previous
+     * response in the next request to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -74,7 +77,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The search criteria to be used to return email addresses.</p>
      */
     inline const EmailAddressSearchCriteria& GetSearchCriteria() const{ return m_searchCriteria; }
     inline bool SearchCriteriaHasBeenSet() const { return m_searchCriteriaHasBeenSet; }
@@ -86,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Filters to be applied to search results.</p>
      */
     inline const EmailAddressSearchFilter& GetSearchFilter() const{ return m_searchFilter; }
     inline bool SearchFilterHasBeenSet() const { return m_searchFilterHasBeenSet; }

@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Information about template message configuration.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TemplatedMessageConfig">AWS
    * API Reference</a></p>
    */
@@ -40,7 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs
+     * cannot contain the ARN.</p>
      */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
@@ -54,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>The identifier of the message template Id.</p>
      */
     inline const Aws::String& GetMessageTemplateId() const{ return m_messageTemplateId; }
     inline bool MessageTemplateIdHasBeenSet() const { return m_messageTemplateIdHasBeenSet; }
@@ -68,7 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * <p/>
+     * <p>Information about template attributes, that is, CustomAttributes or
+     * CustomerProfileAttributes.</p>
      */
     inline const TemplateAttributes& GetTemplateAttributes() const{ return m_templateAttributes; }
     inline bool TemplateAttributesHasBeenSet() const { return m_templateAttributesHasBeenSet; }

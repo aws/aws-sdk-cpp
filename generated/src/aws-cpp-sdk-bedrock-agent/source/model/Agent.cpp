@@ -28,6 +28,7 @@ Agent::Agent() :
     m_agentVersionHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_createdAtHasBeenSet(false),
+    m_customOrchestrationHasBeenSet(false),
     m_customerEncryptionKeyArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_failureReasonsHasBeenSet(false),
@@ -37,6 +38,8 @@ Agent::Agent() :
     m_idleSessionTTLInSecondsHasBeenSet(false),
     m_instructionHasBeenSet(false),
     m_memoryConfigurationHasBeenSet(false),
+    m_orchestrationType(OrchestrationType::NOT_SET),
+    m_orchestrationTypeHasBeenSet(false),
     m_preparedAtHasBeenSet(false),
     m_promptOverrideConfigurationHasBeenSet(false),
     m_recommendedActionsHasBeenSet(false),
@@ -108,6 +111,13 @@ Agent& Agent::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("customOrchestration"))
+  {
+    m_customOrchestration = jsonValue.GetObject("customOrchestration");
+
+    m_customOrchestrationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("customerEncryptionKeyArn"))
   {
     m_customerEncryptionKeyArn = jsonValue.GetString("customerEncryptionKeyArn");
@@ -165,6 +175,13 @@ Agent& Agent::operator =(JsonView jsonValue)
     m_memoryConfiguration = jsonValue.GetObject("memoryConfiguration");
 
     m_memoryConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("orchestrationType"))
+  {
+    m_orchestrationType = OrchestrationTypeMapper::GetOrchestrationTypeForName(jsonValue.GetString("orchestrationType"));
+
+    m_orchestrationTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("preparedAt"))
@@ -251,6 +268,12 @@ JsonValue Agent::Jsonize() const
    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
+  if(m_customOrchestrationHasBeenSet)
+  {
+   payload.WithObject("customOrchestration", m_customOrchestration.Jsonize());
+
+  }
+
   if(m_customerEncryptionKeyArnHasBeenSet)
   {
    payload.WithString("customerEncryptionKeyArn", m_customerEncryptionKeyArn);
@@ -302,6 +325,11 @@ JsonValue Agent::Jsonize() const
   {
    payload.WithObject("memoryConfiguration", m_memoryConfiguration.Jsonize());
 
+  }
+
+  if(m_orchestrationTypeHasBeenSet)
+  {
+   payload.WithString("orchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_orchestrationType));
   }
 
   if(m_preparedAtHasBeenSet)

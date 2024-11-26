@@ -755,7 +755,7 @@ namespace Connect
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Creates a new contact.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContact">AWS
          * API Reference</a></p>
          */
@@ -865,7 +865,11 @@ namespace Connect
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Create new email address in the specified Amazon Connect instance. For more
+         * information about email addresses, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
+         * email addresses</a> in the Amazon Connect Administrator Guide.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEmailAddress">AWS
          * API Reference</a></p>
          */
@@ -1653,7 +1657,8 @@ namespace Connect
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Deletes email address from the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEmailAddress">AWS
          * API Reference</a></p>
          */
@@ -2320,13 +2325,13 @@ namespace Connect
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
          * Connect Flow language</a>.</p> <p>Use the <code>$SAVED</code> alias in the
          * request to describe the <code>SAVED</code> content of a Flow. For example,
-         * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is
-         * published, <code>$SAVED</code> needs to be supplied to view saved content that
-         * has not been published.</p> <p>In the response, <b>Status</b> indicates the flow
-         * status as either <code>SAVED</code> or <code>PUBLISHED</code>. The
-         * <code>PUBLISHED</code> status will initiate validation on the content.
-         * <code>SAVED</code> does not initiate validation of the content.
-         * <code>SAVED</code> | <code>PUBLISHED</code> </p><p><h3>See Also:</h3>   <a
+         * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. After a flow is published,
+         * <code>$SAVED</code> needs to be supplied to view saved content that has not been
+         * published.</p> <p>In the response, <b>Status</b> indicates the flow status as
+         * either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code>
+         * status will initiate validation on the content. <code>SAVED</code> does not
+         * initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow">AWS
          * API Reference</a></p>
          */
@@ -2353,9 +2358,9 @@ namespace Connect
         /**
          * <p>Describes the specified flow module.</p> <p>Use the <code>$SAVED</code> alias
          * in the request to describe the <code>SAVED</code> content of a Flow. For
-         * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow
-         * is published, <code>$SAVED</code> needs to be supplied to view saved content
-         * that has not been published.</p><p><h3>See Also:</h3>   <a
+         * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. After a flow is
+         * published, <code>$SAVED</code> needs to be supplied to view saved content that
+         * has not been published.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule">AWS
          * API Reference</a></p>
          */
@@ -2380,7 +2385,8 @@ namespace Connect
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Describe email address form the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEmailAddress">AWS
          * API Reference</a></p>
          */
@@ -3758,7 +3764,8 @@ namespace Connect
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Provides information about contact tree, a list of associated contacts with a
+         * unique identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAssociatedContacts">AWS
          * API Reference</a></p>
          */
@@ -5283,7 +5290,7 @@ namespace Connect
         }
 
         /**
-         * <p>Searches the contact flows in an Amazon Connect instance, with optional
+         * <p>Searches the flows in an Amazon Connect instance, with optional
          * filtering.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows">AWS
          * API Reference</a></p>
@@ -5335,7 +5342,8 @@ namespace Connect
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Searches email address in an instance, with optional filtering.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEmailAddresses">AWS
          * API Reference</a></p>
          */
@@ -5694,7 +5702,12 @@ namespace Connect
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Send outbound email for outbound campaigns. For more information about
+         * outbound campaigns, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
+         * up Amazon Connect outbound campaigns</a>.</p>  <p>Only the Amazon Connect
+         * outbound campaigns service principal is allowed to assume a role in your account
+         * and call this API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendOutboundEmail">AWS
          * API Reference</a></p>
          */
@@ -5723,7 +5736,9 @@ namespace Connect
          * content.</p>  <p>You may only use this API to upload attachments to
          * an <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
-         * Connect Case</a>.</p> <p><h3>See Also:</h3>   <a
+         * Connect Case</a> or <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Amazon
+         * Connect Email</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAttachedFileUpload">AWS
          * API Reference</a></p>
          */
@@ -5902,7 +5917,9 @@ namespace Connect
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Creates an inbound email contact and initiates a flow to start the email
+         * contact for the customer. Response of this API provides the ContactId of the
+         * email contact created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartEmailContact">AWS
          * API Reference</a></p>
          */
@@ -5969,7 +5986,8 @@ namespace Connect
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Initiates a flow to send an agent reply or outbound email contact (created
+         * from the CreateContact API) to a customer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundEmailContact">AWS
          * API Reference</a></p>
          */
@@ -6330,8 +6348,8 @@ namespace Connect
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>Some of the
          * supported resource types are agents, routing profiles, queues, quick connects,
-         * contact flows, agent statuses, hours of operation, phone numbers, security
-         * profiles, and task templates. For a complete list, see <a
+         * flows, agent statuses, hours of operation, phone numbers, security profiles, and
+         * task templates. For a complete list, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
          * resources in Amazon Connect</a>.</p> <p>For sample policies that use tags, see
          * <a
@@ -6609,9 +6627,9 @@ namespace Connect
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
          * Connect Flow language</a>.</p> <p>Use the <code>$SAVED</code> alias in the
          * request to describe the <code>SAVED</code> content of a Flow. For example,
-         * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is
-         * published, <code>$SAVED</code> needs to be supplied to view saved content that
-         * has not been published.</p><p><h3>See Also:</h3>   <a
+         * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. After a flow is published,
+         * <code>$SAVED</code> needs to be supplied to view saved content that has not been
+         * published.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowContent">AWS
          * API Reference</a></p>
          */
@@ -6664,9 +6682,9 @@ namespace Connect
          * <p>Updates specified flow module for the specified Amazon Connect instance. </p>
          * <p>Use the <code>$SAVED</code> alias in the request to describe the
          * <code>SAVED</code> content of a Flow. For example,
-         * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is
-         * published, <code>$SAVED</code> needs to be supplied to view saved content that
-         * has not been published.</p><p><h3>See Also:</h3>   <a
+         * <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. After a flow is published,
+         * <code>$SAVED</code> needs to be supplied to view saved content that has not been
+         * published.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleContent">AWS
          * API Reference</a></p>
          */
@@ -6808,7 +6826,11 @@ namespace Connect
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Updates an email address metadata. For more information about email
+         * addresses, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
+         * email addresses</a> in the Amazon Connect Administrator Guide.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEmailAddressMetadata">AWS
          * API Reference</a></p>
          */
@@ -7222,7 +7244,8 @@ namespace Connect
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Updates the outbound email address Id for a specified queue.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundEmailConfig">AWS
          * API Reference</a></p>
          */
