@@ -168,7 +168,14 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
         serviceModel.getMetadata().setRequireEndpointDiscovery(requireEndpointDiscovery);
         serviceModel.getMetadata().setEndpointOperationName(endpointOperationName);
-        serviceModel.getMetadata().setAwsQueryCompatible(c2jServiceModel.getMetadata().getAwsQueryCompatible() != null);
+
+        // add protocol check. only for json, query protocols
+        if (serviceModel.getMetadata().getProtocol().equals("json")) {
+            serviceModel.getMetadata().setAwsQueryCompatible(
+                    c2jServiceModel.getMetadata().getAwsQueryCompatible() != null);
+        } else {
+            serviceModel.getMetadata().setAwsQueryCompatible(false);
+        }
 
         if (c2jServiceModel.getEndpointRules() != null) {
             ObjectMapper objectMapper = new ObjectMapper();

@@ -56,7 +56,7 @@ jobs:
         run: |
           clang-format --version
           if [ -s diff_output.patch ]; then
-            python3 clang-format-diff.py -p1 -style=file:.clang-format < diff_output.patch > formatted_differences.patch 2> error.log || true
+            python3 clang-format-diff.py -iregex '.*\.(cpp|cc|c\+\+|cxx|c|h|hh|hpp)' -p1 -style=file:.clang-format < diff_output.patch > formatted_differences.patch 2> error.log || true
             if [ -s error.log ]; then
               echo "Errors from clang-format-diff.py:"
               cat error.log

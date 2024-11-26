@@ -43,6 +43,7 @@ namespace Aws
         // Allow ErrorMarshaller to set error payload.
         friend class XmlErrorMarshaller;
         friend class JsonErrorMarshaller;
+        friend class JsonErrorMarshallerQueryCompatible;
         template<typename T> friend class AWSError;
         public:
             /**
