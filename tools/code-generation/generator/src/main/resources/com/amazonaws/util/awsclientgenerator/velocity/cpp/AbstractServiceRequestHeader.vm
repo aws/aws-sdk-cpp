@@ -40,6 +40,9 @@ namespace ${serviceNamespace}
 #if($metadata.acceptHeader)
         headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::ACCEPT_HEADER, "${metadata.acceptHeader}"));
 #end
+#if ($metadata.awsQueryCompatible)
+        headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::X_AMZN_QUERY_MODE,"true"));
+#end
       }
 #if($metadata.apiVersion)
       headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::API_VERSION_HEADER, "${metadata.apiVersion}"));

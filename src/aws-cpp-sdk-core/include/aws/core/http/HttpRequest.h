@@ -63,6 +63,7 @@ namespace Aws
         extern AWS_CORE_API const char CHUNKED_VALUE[];
         extern AWS_CORE_API const char AWS_CHUNKED_VALUE[];
         extern AWS_CORE_API const char X_AMZN_ERROR_TYPE[];
+        extern AWS_CORE_API const char X_AMZN_QUERY_MODE[];
 
         class HttpRequest;
         class HttpResponse;

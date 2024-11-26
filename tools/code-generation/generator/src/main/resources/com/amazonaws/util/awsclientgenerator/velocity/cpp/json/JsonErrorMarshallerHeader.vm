@@ -18,7 +18,11 @@ namespace ${serviceNamespace}
 {
 
 #set($className = "${metadata.classNamePrefix}ErrorMarshaller")
+#if ($metadata.awsQueryCompatible)
+class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} $className : public Aws::Client::JsonErrorMarshallerQueryCompatible
+#else
 class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} $className : public Aws::Client::JsonErrorMarshaller
+#end
 {
 public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;

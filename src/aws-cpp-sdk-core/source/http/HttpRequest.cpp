@@ -42,7 +42,7 @@ namespace Aws
         const char X_AMZN_TRACE_ID_HEADER[] = "X-Amzn-Trace-Id";
         const char ALLOCATION_TAG[] = "HttpRequestConversion";
         const char X_AMZN_ERROR_TYPE[] = "x-amzn-errortype";
-
+        const char X_AMZN_QUERY_MODE[] = "x-amzn-query-mode";
         std::shared_ptr<Aws::Crt::Http::HttpRequest> HttpRequest::ToCrtHttpRequest()
         {
             auto request = Aws::MakeShared<Aws::Crt::Http::HttpRequest>(ALLOCATION_TAG);
