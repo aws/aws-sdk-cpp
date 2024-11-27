@@ -16,7 +16,8 @@ PutConfigurationAggregatorRequest::PutConfigurationAggregatorRequest() :
     m_configurationAggregatorNameHasBeenSet(false),
     m_accountAggregationSourcesHasBeenSet(false),
     m_organizationAggregationSourceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_aggregatorFiltersHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,12 @@ Aws::String PutConfigurationAggregatorRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_aggregatorFiltersHasBeenSet)
+  {
+   payload.WithObject("AggregatorFilters", m_aggregatorFilters.Jsonize());
 
   }
 

@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>The input for the <a>StartConfigurationRecorder</a> action.</p><p><h3>See
+   * <p>The input for the <a>StartConfigurationRecorder</a> operation.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorderRequest">AWS
    * API Reference</a></p>
@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the recorder object that records each configuration change made
-     * to the resources.</p>
+     * <p>The name of the customer managed configuration recorder that you want to
+     * start.</p>
      */
     inline const Aws::String& GetConfigurationRecorderName() const{ return m_configurationRecorderName; }
     inline bool ConfigurationRecorderNameHasBeenSet() const { return m_configurationRecorderNameHasBeenSet; }

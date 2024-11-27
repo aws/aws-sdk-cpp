@@ -58,7 +58,7 @@ namespace Model
     ///@{
     /**
      * <p>A comma-separated list that specifies which resource types Config includes in
-     * the override.</p>  <p>Daily recording is not supported for the
+     * the override.</p>  <p>Daily recording cannot be specified for the
      * following resource types:</p> <ul> <li> <p>
      * <code>AWS::Config::ResourceCompliance</code> </p> </li> <li> <p>
      * <code>AWS::Config::ConformancePackCompliance</code> </p> </li> <li> <p>

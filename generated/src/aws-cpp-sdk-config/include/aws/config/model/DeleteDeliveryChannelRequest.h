@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the delivery channel to delete.</p>
+     * <p>The name of the delivery channel that you want to delete.</p>
      */
     inline const Aws::String& GetDeliveryChannelName() const{ return m_deliveryChannelName; }
     inline bool DeliveryChannelNameHasBeenSet() const { return m_deliveryChannelNameHasBeenSet; }

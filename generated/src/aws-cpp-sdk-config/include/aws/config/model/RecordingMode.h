@@ -52,13 +52,14 @@ namespace Model
     ///@{
     /**
      * <p>The default recording frequency that Config uses to record configuration
-     * changes.</p>  <p>Daily recording is not supported for the following
-     * resource types:</p> <ul> <li> <p> <code>AWS::Config::ResourceCompliance</code>
-     * </p> </li> <li> <p> <code>AWS::Config::ConformancePackCompliance</code> </p>
-     * </li> <li> <p> <code>AWS::Config::ConfigurationRecorder</code> </p> </li> </ul>
-     * <p>For the <b>allSupported</b> (<code>ALL_SUPPORTED_RESOURCE_TYPES</code>)
-     * recording strategy, these resource types will be set to Continuous
-     * recording.</p> 
+     * changes.</p>  <p>Daily recording cannot be specified for the
+     * following resource types:</p> <ul> <li> <p>
+     * <code>AWS::Config::ResourceCompliance</code> </p> </li> <li> <p>
+     * <code>AWS::Config::ConformancePackCompliance</code> </p> </li> <li> <p>
+     * <code>AWS::Config::ConfigurationRecorder</code> </p> </li> </ul> <p>For the
+     * <b>allSupported</b> (<code>ALL_SUPPORTED_RESOURCE_TYPES</code>) recording
+     * strategy, these resource types will be set to Continuous recording.</p>
+     * 
      */
     inline const RecordingFrequency& GetRecordingFrequency() const{ return m_recordingFrequency; }
     inline bool RecordingFrequencyHasBeenSet() const { return m_recordingFrequencyHasBeenSet; }

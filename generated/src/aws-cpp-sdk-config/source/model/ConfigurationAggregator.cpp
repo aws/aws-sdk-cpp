@@ -25,7 +25,8 @@ ConfigurationAggregator::ConfigurationAggregator() :
     m_organizationAggregationSourceHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false)
+    m_createdByHasBeenSet(false),
+    m_aggregatorFiltersHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,13 @@ ConfigurationAggregator& ConfigurationAggregator::operator =(JsonView jsonValue)
     m_createdByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AggregatorFilters"))
+  {
+    m_aggregatorFilters = jsonValue.GetObject("AggregatorFilters");
+
+    m_aggregatorFiltersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +146,12 @@ JsonValue ConfigurationAggregator::Jsonize() const
   if(m_createdByHasBeenSet)
   {
    payload.WithString("CreatedBy", m_createdBy);
+
+  }
+
+  if(m_aggregatorFiltersHasBeenSet)
+  {
+   payload.WithObject("AggregatorFilters", m_aggregatorFilters.Jsonize());
 
   }
 

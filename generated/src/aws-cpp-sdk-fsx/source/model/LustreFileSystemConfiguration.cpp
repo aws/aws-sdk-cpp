@@ -37,7 +37,9 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration() :
     m_dataCompressionTypeHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
     m_rootSquashConfigurationHasBeenSet(false),
-    m_metadataConfigurationHasBeenSet(false)
+    m_metadataConfigurationHasBeenSet(false),
+    m_efaEnabled(false),
+    m_efaEnabledHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,13 @@ LustreFileSystemConfiguration& LustreFileSystemConfiguration::operator =(JsonVie
     m_metadataConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EfaEnabled"))
+  {
+    m_efaEnabled = jsonValue.GetBool("EfaEnabled");
+
+    m_efaEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -219,6 +228,12 @@ JsonValue LustreFileSystemConfiguration::Jsonize() const
   if(m_metadataConfigurationHasBeenSet)
   {
    payload.WithObject("MetadataConfiguration", m_metadataConfiguration.Jsonize());
+
+  }
+
+  if(m_efaEnabledHasBeenSet)
+  {
+   payload.WithBool("EfaEnabled", m_efaEnabled);
 
   }
 

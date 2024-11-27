@@ -243,6 +243,17 @@ namespace Model
     inline LustreFileSystemConfiguration& WithMetadataConfiguration(const FileSystemLustreMetadataConfiguration& value) { SetMetadataConfiguration(value); return *this;}
     inline LustreFileSystemConfiguration& WithMetadataConfiguration(FileSystemLustreMetadataConfiguration&& value) { SetMetadataConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS)
+     * support is enabled for the Amazon FSx for Lustre file system.</p>
+     */
+    inline bool GetEfaEnabled() const{ return m_efaEnabled; }
+    inline bool EfaEnabledHasBeenSet() const { return m_efaEnabledHasBeenSet; }
+    inline void SetEfaEnabled(bool value) { m_efaEnabledHasBeenSet = true; m_efaEnabled = value; }
+    inline LustreFileSystemConfiguration& WithEfaEnabled(bool value) { SetEfaEnabled(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -283,6 +294,9 @@ namespace Model
 
     FileSystemLustreMetadataConfiguration m_metadataConfiguration;
     bool m_metadataConfigurationHasBeenSet = false;
+
+    bool m_efaEnabled;
+    bool m_efaEnabledHasBeenSet = false;
   };
 
 } // namespace Model

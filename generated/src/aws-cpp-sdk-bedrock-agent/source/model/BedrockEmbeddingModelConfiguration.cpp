@@ -20,7 +20,9 @@ namespace Model
 
 BedrockEmbeddingModelConfiguration::BedrockEmbeddingModelConfiguration() : 
     m_dimensions(0),
-    m_dimensionsHasBeenSet(false)
+    m_dimensionsHasBeenSet(false),
+    m_embeddingDataType(EmbeddingDataType::NOT_SET),
+    m_embeddingDataTypeHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,13 @@ BedrockEmbeddingModelConfiguration& BedrockEmbeddingModelConfiguration::operator
     m_dimensionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("embeddingDataType"))
+  {
+    m_embeddingDataType = EmbeddingDataTypeMapper::GetEmbeddingDataTypeForName(jsonValue.GetString("embeddingDataType"));
+
+    m_embeddingDataTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +59,11 @@ JsonValue BedrockEmbeddingModelConfiguration::Jsonize() const
   {
    payload.WithInteger("dimensions", m_dimensions);
 
+  }
+
+  if(m_embeddingDataTypeHasBeenSet)
+  {
+   payload.WithString("embeddingDataType", EmbeddingDataTypeMapper::GetNameForEmbeddingDataType(m_embeddingDataType));
   }
 
   return payload;

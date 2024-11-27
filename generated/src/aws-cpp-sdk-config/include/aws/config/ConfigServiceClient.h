@@ -99,6 +99,39 @@ namespace ConfigService
         virtual ~ConfigServiceClient();
 
         /**
+         * <p>Adds all resource types specified in the <code>ResourceTypes</code> list to
+         * the <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+         * of specified configuration recorder and includes those resource types when
+         * recording.</p> <p>For this operation, the specified configuration recorder must
+         * use a <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
+         * that is either <code>INCLUSION_BY_RESOURCE_TYPES</code> or
+         * <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AssociateResourceTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateResourceTypesOutcome AssociateResourceTypes(const Model::AssociateResourceTypesRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateResourceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateResourceTypesRequestT = Model::AssociateResourceTypesRequest>
+        Model::AssociateResourceTypesOutcomeCallable AssociateResourceTypesCallable(const AssociateResourceTypesRequestT& request) const
+        {
+            return SubmitCallable(&ConfigServiceClient::AssociateResourceTypes, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateResourceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateResourceTypesRequestT = Model::AssociateResourceTypesRequest>
+        void AssociateResourceTypesAsync(const AssociateResourceTypesRequestT& request, const AssociateResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConfigServiceClient::AssociateResourceTypes, request, handler, context);
+        }
+
+        /**
          * <p>Returns the current configuration items for resources that are present in
          * your Config aggregator. The operation also returns a list of resources that are
          * not processed in the current request. If there are no unprocessed resources, the
@@ -194,7 +227,19 @@ namespace ConfigService
          * <code>PutConfigRule</code> or <code>DeleteConfigRule</code> request for the
          * rule, you will receive a <code>ResourceInUseException</code>.</p> <p>You can
          * check the state of a rule by using the <code>DescribeConfigRules</code>
-         * request.</p><p><h3>See Also:</h3>   <a
+         * request.</p>  <p> <b>Recommendation: Stop recording resource compliance
+         * before deleting rules</b> </p> <p>It is highly recommended that you stop
+         * recording for the <code>AWS::Config::ResourceCompliance</code> resource type
+         * before you delete rules in your account. Deleting rules creates CIs for
+         * <code>AWS::Config::ResourceCompliance</code> and can affect your Config <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">configuration
+         * recorder</a> costs. If you are deleting rules which evaluate a large number of
+         * resource types, this can lead to a spike in the number of CIs recorded.</p>
+         * <p>Best practice:</p> <ol> <li> <p>Stop recording
+         * <code>AWS::Config::ResourceCompliance</code> </p> </li> <li> <p>Delete
+         * rule(s)</p> </li> <li> <p>Turn on recording for
+         * <code>AWS::Config::ResourceCompliance</code> </p> </li> </ol> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">AWS
          * API Reference</a></p>
          */
@@ -245,13 +290,12 @@ namespace ConfigService
         }
 
         /**
-         * <p>Deletes the configuration recorder.</p> <p>After the configuration recorder
-         * is deleted, Config will not record resource configuration changes until you
-         * create a new configuration recorder.</p> <p>This action does not delete the
-         * configuration information that was previously recorded. You will be able to
-         * access the previously recorded information by using the
-         * <code>GetResourceConfigHistory</code> action, but you will not be able to access
-         * this information in the Config console until you create a new configuration
+         * <p>Deletes the customer managed configuration recorder.</p> <p>This operation
+         * does not delete the configuration information that was previously recorded. You
+         * will be able to access the previously recorded information by using the <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceConfigHistory.html">GetResourceConfigHistory</a>
+         * operation, but you will not be able to access this information in the Config
+         * console until you have created a new customer managed configuration
          * recorder.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">AWS
          * API Reference</a></p>
@@ -307,8 +351,9 @@ namespace ConfigService
 
         /**
          * <p>Deletes the delivery channel.</p> <p>Before you can delete the delivery
-         * channel, you must stop the configuration recorder by using the
-         * <a>StopConfigurationRecorder</a> action.</p><p><h3>See Also:</h3>   <a
+         * channel, you must stop the customer managed configuration recorder. You can use
+         * the <a>StopConfigurationRecorder</a> operation to stop the customer managed
+         * configuration recorder.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">AWS
          * API Reference</a></p>
          */
@@ -559,6 +604,43 @@ namespace ConfigService
         }
 
         /**
+         * <p>Deletes an existing service-linked configuration recorder.</p> <p>This
+         * operation does not delete the configuration information that was previously
+         * recorded. You will be able to access the previously recorded information by
+         * using the <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceConfigHistory.html">GetResourceConfigHistory</a>
+         * operation, but you will not be able to access this information in the Config
+         * console until you have created a new service-linked configuration recorder for
+         * the same service.</p>  <p> <b>The recording scope determines if you
+         * receive configuration items</b> </p> <p>The recording scope is set by the
+         * service that is linked to the configuration recorder and determines whether you
+         * receive configuration items (CIs) in the delivery channel. If the recording
+         * scope is internal, you will not receive CIs in the delivery channel.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteServiceLinkedConfigurationRecorder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteServiceLinkedConfigurationRecorderOutcome DeleteServiceLinkedConfigurationRecorder(const Model::DeleteServiceLinkedConfigurationRecorderRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteServiceLinkedConfigurationRecorder that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteServiceLinkedConfigurationRecorderRequestT = Model::DeleteServiceLinkedConfigurationRecorderRequest>
+        Model::DeleteServiceLinkedConfigurationRecorderOutcomeCallable DeleteServiceLinkedConfigurationRecorderCallable(const DeleteServiceLinkedConfigurationRecorderRequestT& request) const
+        {
+            return SubmitCallable(&ConfigServiceClient::DeleteServiceLinkedConfigurationRecorder, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteServiceLinkedConfigurationRecorder that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteServiceLinkedConfigurationRecorderRequestT = Model::DeleteServiceLinkedConfigurationRecorderRequest>
+        void DeleteServiceLinkedConfigurationRecorderAsync(const DeleteServiceLinkedConfigurationRecorderRequestT& request, const DeleteServiceLinkedConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConfigServiceClient::DeleteServiceLinkedConfigurationRecorder, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the stored query for a single Amazon Web Services account and a
          * single Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">AWS
@@ -645,13 +727,13 @@ namespace ConfigService
         }
 
         /**
-         * <p>Returns a list of the conformance packs and their associated compliance
-         * status with the count of compliant and noncompliant Config rules within each
-         * conformance pack. Also returns the total rule count which includes compliant
-         * rules, noncompliant rules, and rules that cannot be evaluated due to
-         * insufficient data.</p>  <p>The results can return an empty result page,
-         * but if you have a <code>nextToken</code>, the results are displayed on the next
-         * page.</p> <p><h3>See Also:</h3>   <a
+         * <p>Returns a list of the existing and deleted conformance packs and their
+         * associated compliance status with the count of compliant and noncompliant Config
+         * rules within each conformance pack. Also returns the total rule count which
+         * includes compliant rules, noncompliant rules, and rules that cannot be evaluated
+         * due to insufficient data.</p>  <p>The results can return an empty result
+         * page, but if you have a <code>nextToken</code>, the results are displayed on the
+         * next page.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">AWS
          * API Reference</a></p>
          */
@@ -703,7 +785,7 @@ namespace ConfigService
 
         /**
          * <p>Indicates whether the specified Config rules are compliant. If a rule is
-         * noncompliant, this action returns the number of Amazon Web Services resources
+         * noncompliant, this operation returns the number of Amazon Web Services resources
          * that do not comply with the rule.</p> <p>A rule is compliant if all of the
          * evaluated resources comply with it. It is noncompliant if any of these resources
          * do not comply.</p> <p>If Config has no current evaluation results for the rule,
@@ -746,7 +828,7 @@ namespace ConfigService
 
         /**
          * <p>Indicates whether the specified Amazon Web Services resources are compliant.
-         * If a resource is noncompliant, this action returns the number of Config rules
+         * If a resource is noncompliant, this operation returns the number of Config rules
          * that the resource does not comply with.</p> <p>A resource is compliant if it
          * complies with all the Config rules that evaluate it. It is noncompliant if it
          * does not comply with one or more of these rules.</p> <p>If Config has no current
@@ -871,9 +953,9 @@ namespace ConfigService
 
         /**
          * <p>Returns the details of one or more configuration aggregators. If the
-         * configuration aggregator is not specified, this action returns the details for
-         * all the configuration aggregators associated with the account. </p><p><h3>See
-         * Also:</h3>   <a
+         * configuration aggregator is not specified, this operation returns the details
+         * for all the configuration aggregators associated with the account.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">AWS
          * API Reference</a></p>
          */
@@ -898,14 +980,14 @@ namespace ConfigService
         }
 
         /**
-         * <p>Returns the current status of the specified configuration recorder as well as
-         * the status of the last recording event for the recorder. If a configuration
-         * recorder is not specified, this action returns the status of all configuration
-         * recorders associated with the account.</p>  <p>&gt;You can specify only
-         * one configuration recorder for each Amazon Web Services Region for each account.
-         * For a detailed status of recording events over time, add your Config events to
-         * Amazon CloudWatch metrics and use CloudWatch metrics.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the current status of the configuration recorder you specify as well
+         * as the status of the last recording event for the configuration recorders.</p>
+         * <p>For a detailed status of recording events over time, add your Config events
+         * to Amazon CloudWatch metrics and use CloudWatch metrics.</p> <p>If a
+         * configuration recorder is not specified, this operation returns the status for
+         * the customer managed configuration recorder configured for the account, if
+         * applicable.</p>  <p>When making a request to this operation, you can only
+         * specify one configuration recorder.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
          * API Reference</a></p>
          */
@@ -930,11 +1012,11 @@ namespace ConfigService
         }
 
         /**
-         * <p>Returns the details for the specified configuration recorders. If the
-         * configuration recorder is not specified, this action returns the details for all
-         * configuration recorders associated with the account.</p>  <p>You can
-         * specify only one configuration recorder for each Amazon Web Services Region for
-         * each account.</p> <p><h3>See Also:</h3>   <a
+         * <p>Returns details for the configuration recorder you specify.</p> <p>If a
+         * configuration recorder is not specified, this operation returns details for the
+         * customer managed configuration recorder configured for the account, if
+         * applicable.</p>  <p>When making a request to this operation, you can only
+         * specify one configuration recorder.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">AWS
          * API Reference</a></p>
          */
@@ -1039,10 +1121,10 @@ namespace ConfigService
 
         /**
          * <p>Returns the current status of the specified delivery channel. If a delivery
-         * channel is not specified, this action returns the current status of all delivery
-         * channels associated with the account.</p>  <p>Currently, you can specify
-         * only one delivery channel per region in your account.</p> <p><h3>See
-         * Also:</h3>   <a
+         * channel is not specified, this operation returns the current status of all
+         * delivery channels associated with the account.</p>  <p>Currently, you can
+         * specify only one delivery channel per region in your account.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">AWS
          * API Reference</a></p>
          */
@@ -1068,7 +1150,7 @@ namespace ConfigService
 
         /**
          * <p>Returns details about the specified delivery channel. If a delivery channel
-         * is not specified, this action returns the details of all delivery channels
+         * is not specified, this operation returns the details of all delivery channels
          * associated with the account.</p>  <p>Currently, you can specify only one
          * delivery channel per region in your account.</p> <p><h3>See Also:</h3>  
          * <a
@@ -1356,8 +1438,8 @@ namespace ConfigService
 
         /**
          * <p>Returns the details of one or more retention configurations. If the retention
-         * configuration name is not specified, this action returns the details for all the
-         * retention configurations for that account.</p>  <p>Currently, Config
+         * configuration name is not specified, this operation returns the details for all
+         * the retention configurations for that account.</p>  <p>Currently, Config
          * supports only one retention configuration per region in your account.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">AWS
@@ -1381,6 +1463,38 @@ namespace ConfigService
         void DescribeRetentionConfigurationsAsync(const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeRetentionConfigurationsRequestT& request = {}) const
         {
             return SubmitAsync(&ConfigServiceClient::DescribeRetentionConfigurations, request, handler, context);
+        }
+
+        /**
+         * <p>Removes all resource types specified in the <code>ResourceTypes</code> list
+         * from the <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+         * of configuration recorder and excludes these resource types when recording.</p>
+         * <p>For this operation, the configuration recorder must use a <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
+         * that is either <code>INCLUSION_BY_RESOURCE_TYPES</code> or
+         * <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DisassociateResourceTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateResourceTypesOutcome DisassociateResourceTypes(const Model::DisassociateResourceTypesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateResourceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateResourceTypesRequestT = Model::DisassociateResourceTypesRequest>
+        Model::DisassociateResourceTypesOutcomeCallable DisassociateResourceTypesCallable(const DisassociateResourceTypesRequestT& request) const
+        {
+            return SubmitCallable(&ConfigServiceClient::DisassociateResourceTypes, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateResourceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateResourceTypesRequestT = Model::DisassociateResourceTypesRequest>
+        void DisassociateResourceTypesAsync(const DisassociateResourceTypesRequestT& request, const DisassociateResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConfigServiceClient::DisassociateResourceTypes, request, handler, context);
         }
 
         /**
@@ -1504,7 +1618,8 @@ namespace ConfigService
 
         /**
          * <p>Returns configuration item that is aggregated for your specific resource in a
-         * specific source account and region.</p><p><h3>See Also:</h3>   <a
+         * specific source account and region.</p>  <p>The API does not return
+         * results for deleted resources.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">AWS
          * API Reference</a></p>
          */
@@ -1979,6 +2094,32 @@ namespace ConfigService
         }
 
         /**
+         * <p>Returns a list of configuration recorders depending on the filters you
+         * specify.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConfigurationRecorders">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConfigurationRecordersOutcome ListConfigurationRecorders(const Model::ListConfigurationRecordersRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListConfigurationRecorders that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConfigurationRecordersRequestT = Model::ListConfigurationRecordersRequest>
+        Model::ListConfigurationRecordersOutcomeCallable ListConfigurationRecordersCallable(const ListConfigurationRecordersRequestT& request = {}) const
+        {
+            return SubmitCallable(&ConfigServiceClient::ListConfigurationRecorders, request);
+        }
+
+        /**
+         * An Async wrapper for ListConfigurationRecorders that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConfigurationRecordersRequestT = Model::ListConfigurationRecordersRequest>
+        void ListConfigurationRecordersAsync(const ListConfigurationRecordersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListConfigurationRecordersRequestT& request = {}) const
+        {
+            return SubmitAsync(&ConfigServiceClient::ListConfigurationRecorders, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of conformance pack compliance scores. A compliance score is
          * the percentage of the number of compliant rule-resource combinations in a
          * conformance pack compared to the number of total possible rule-resource
@@ -2127,12 +2268,18 @@ namespace ConfigService
 
         /**
          * <p>Authorizes the aggregator account and region to collect data from the source
-         * account and region. </p>  <p> <code>PutAggregationAuthorization</code> is
-         * an idempotent API. Subsequent requests won’t create a duplicate resource if one
-         * was already created. If a following request has different <code>tags</code>
-         * values, Config will ignore these differences and treat it as an idempotent
-         * request of the previous. In this case, <code>tags</code> will not be updated,
-         * even if they are different.</p> <p><h3>See Also:</h3>   <a
+         * account and region. </p>  <p> <b>Tags are added at creation and cannot be
+         * updated with this operation</b> </p> <p>
+         * <code>PutAggregationAuthorization</code> is an idempotent API. Subsequent
+         * requests won’t create a duplicate resource if one was already created. If a
+         * following request has different <code>tags</code> values, Config will ignore
+         * these differences and treat it as an idempotent request of the previous. In this
+         * case, <code>tags</code> will not be updated, even if they are different.</p>
+         * <p>Use <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+         * to update tags after creation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">AWS
          * API Reference</a></p>
          */
@@ -2194,12 +2341,16 @@ namespace ConfigService
          * rules, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
          * Resources with Config Rules</a> in the <i>Config Developer Guide</i>.</p> 
-         * <p> <code>PutConfigRule</code> is an idempotent API. Subsequent requests won’t
-         * create a duplicate resource if one was already created. If a following request
-         * has different <code>tags</code> values, Config will ignore these differences and
-         * treat it as an idempotent request of the previous. In this case,
-         * <code>tags</code> will not be updated, even if they are different.</p>
-         * <p><h3>See Also:</h3>   <a
+         * <p> <b>Tags are added at creation and cannot be updated with this operation</b>
+         * </p> <p> <code>PutConfigRule</code> is an idempotent API. Subsequent requests
+         * won’t create a duplicate resource if one was already created. If a following
+         * request has different <code>tags</code> values, Config will ignore these
+         * differences and treat it as an idempotent request of the previous. In this case,
+         * <code>tags</code> will not be updated, even if they are different.</p> <p>Use <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+         * to update tags after creation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">AWS
          * API Reference</a></p>
          */
@@ -2241,12 +2392,17 @@ namespace ConfigService
          * administrator, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
          * a Delegated Administrator</a> in the <i>Config developer guide</i>. </p> 
-         *  <p> <code>PutConfigurationAggregator</code> is an idempotent API.
-         * Subsequent requests won’t create a duplicate resource if one was already
+         *  <p> <b>Tags are added at creation and cannot be updated with this
+         * operation</b> </p> <p> <code>PutConfigurationAggregator</code> is an idempotent
+         * API. Subsequent requests won’t create a duplicate resource if one was already
          * created. If a following request has different <code>tags</code> values, Config
          * will ignore these differences and treat it as an idempotent request of the
          * previous. In this case, <code>tags</code> will not be updated, even if they are
-         * different.</p> <p><h3>See Also:</h3>   <a
+         * different.</p> <p>Use <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+         * to update tags after creation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
          */
@@ -2271,17 +2427,35 @@ namespace ConfigService
         }
 
         /**
-         * <p>Creates a new configuration recorder to record configuration changes for
-         * specified resource types.</p> <p>You can also use this action to change the
-         * <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder.
-         * For more information, see <a
+         * <p>Creates or updates the customer managed configuration recorder.</p> <p>You
+         * can use this operation to create a new customer managed configuration recorder
+         * or to update the <code>roleARN</code> and the <code>recordingGroup</code> for an
+         * existing customer managed configuration recorder.</p> <p>To start the customer
+         * managed configuration recorder and begin recording configuration changes for the
+         * resource types you specify, use the <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigurationRecorder.html">StartConfigurationRecorder</a>
+         * operation.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
-         * <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer
-         * Guide</i>.</p>  <p>You can specify only one configuration recorder for
-         * each Amazon Web Services Region for each account.</p> <p>If the configuration
-         * recorder does not have the <code>recordingGroup</code> field specified, the
-         * default is to record all supported resource types.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <b>Working with the Configuration Recorder</b> </a> in the <i>Config Developer
+         * Guide</i>.</p>  <p> <b>One customer managed configuration recorder per
+         * account per Region</b> </p> <p>You can create only one customer managed
+         * configuration recorder for each account for each Amazon Web Services Region.</p>
+         * <p> <b>Default is to record all supported resource types, excluding the global
+         * IAM resource types</b> </p> <p>If you have not specified values for the
+         * <code>recordingGroup</code> field, the default for the customer managed
+         * configuration recorder is to record all supported resource types, excluding the
+         * global IAM resource types: <code>AWS::IAM::Group</code>,
+         * <code>AWS::IAM::Policy</code>, <code>AWS::IAM::Role</code>, and
+         * <code>AWS::IAM::User</code>.</p> <p> <b>Tags are added at creation and cannot be
+         * updated</b> </p> <p> <code>PutConfigurationRecorder</code> is an idempotent API.
+         * Subsequent requests won’t create a duplicate resource if one was already
+         * created. If a following request has different tags values, Config will ignore
+         * these differences and treat it as an idempotent request of the previous. In this
+         * case, tags will not be updated, even if they are different.</p> <p>Use <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+         * to update tags after creation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">AWS
          * API Reference</a></p>
          */
@@ -2341,19 +2515,15 @@ namespace ConfigService
         }
 
         /**
-         * <p>Creates a delivery channel object to deliver configuration information and
-         * other compliance information to an Amazon S3 bucket and Amazon SNS topic. For
-         * more information, see <a
-         * href="https://docs.aws.amazon.com/config/latest/developerguide/notifications-for-AWS-Config.html">Notifications
-         * that Config Sends to an Amazon SNS topic</a>.</p> <p>Before you can create a
-         * delivery channel, you must create a configuration recorder.</p> <p>You can use
-         * this action to change the Amazon S3 bucket or an Amazon SNS topic of the
-         * existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS
-         * topic, call this action and specify the changed values for the S3 bucket and the
-         * SNS topic. If you specify a different value for either the S3 bucket or the SNS
-         * topic, this action will keep the existing value for the parameter that is not
-         * changed.</p>  <p>You can have only one delivery channel per region in your
-         * account.</p> <p><h3>See Also:</h3>   <a
+         * <p>Creates or updates a delivery channel to deliver configuration information
+         * and other compliance information.</p> <p>You can use this operation to create a
+         * new delivery channel or to update the Amazon S3 bucket and the Amazon SNS topic
+         * of an existing delivery channel.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/manage-delivery-channel.html">
+         * <b>Working with the Delivery Channel</b> </a> in the <i>Config Developer
+         * Guide.</i> </p>  <p> <b>One delivery channel per account per Region</b>
+         * </p> <p>You can have only one delivery channel for each account for each Amazon
+         * Web Services Region.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">AWS
          * API Reference</a></p>
          */
@@ -2379,7 +2549,7 @@ namespace ConfigService
 
         /**
          * <p>Used by an Lambda function to deliver evaluation results to Config. This
-         * action is required in every Lambda function that is invoked by an Config
+         * operation is required in every Lambda function that is invoked by an Config
          * rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">AWS
          * API Reference</a></p>
@@ -2629,8 +2799,11 @@ namespace ConfigService
          * initiate the possible Config evaluation results, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts
          * | Config Rules</a> in the <i>Config Developer Guide</i>.</p>   <p>
-         * <b>Auto remediation can be initiated even for compliant resources</b> </p> <p>If
-         * you enable auto remediation for a specific Config rule using the <a
+         * <b>Exceptions cannot be placed on service-linked remediation actions</b> </p>
+         * <p>You cannot place an exception on service-linked remediation actions, such as
+         * remediation actions put by an organizational conformance pack.</p> 
+         *  <p> <b>Auto remediation can be initiated even for compliant resources</b>
+         * </p> <p>If you enable auto remediation for a specific Config rule using the <a
          * href="https://docs.aws.amazon.com/config/latest/APIReference/emAPI_PutRemediationConfigurations.html">PutRemediationConfigurations</a>
          * API or the Config console, it initiates the remediation process for all
          * non-compliant resources for that specific rule. The auto remediation process
@@ -2731,14 +2904,60 @@ namespace ConfigService
         }
 
         /**
+         * <p>Creates a service-linked configuration recorder that is linked to a specific
+         * Amazon Web Services service based on the <code>ServicePrincipal</code> you
+         * specify.</p> <p>The configuration recorder's <code>name</code>,
+         * <code>recordingGroup</code>, <code>recordingMode</code>, and
+         * <code>recordingScope</code> is set by the service that is linked to the
+         * configuration recorder.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+         * <b>Working with the Configuration Recorder</b> </a> in the <i>Config Developer
+         * Guide</i>.</p> <p>This API creates a service-linked role
+         * <code>AWSServiceRoleForConfig</code> in your account. The service-linked role is
+         * created only when the role does not exist in your account.</p>  <p> <b>The
+         * recording scope determines if you receive configuration items</b> </p> <p>The
+         * recording scope is set by the service that is linked to the configuration
+         * recorder and determines whether you receive configuration items (CIs) in the
+         * delivery channel. If the recording scope is internal, you will not receive CIs
+         * in the delivery channel.</p> <p> <b>Tags are added at creation and cannot be
+         * updated with this operation</b> </p> <p>Use <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+         * to update tags after creation.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutServiceLinkedConfigurationRecorder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutServiceLinkedConfigurationRecorderOutcome PutServiceLinkedConfigurationRecorder(const Model::PutServiceLinkedConfigurationRecorderRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutServiceLinkedConfigurationRecorder that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutServiceLinkedConfigurationRecorderRequestT = Model::PutServiceLinkedConfigurationRecorderRequest>
+        Model::PutServiceLinkedConfigurationRecorderOutcomeCallable PutServiceLinkedConfigurationRecorderCallable(const PutServiceLinkedConfigurationRecorderRequestT& request) const
+        {
+            return SubmitCallable(&ConfigServiceClient::PutServiceLinkedConfigurationRecorder, request);
+        }
+
+        /**
+         * An Async wrapper for PutServiceLinkedConfigurationRecorder that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutServiceLinkedConfigurationRecorderRequestT = Model::PutServiceLinkedConfigurationRecorderRequest>
+        void PutServiceLinkedConfigurationRecorderAsync(const PutServiceLinkedConfigurationRecorderRequestT& request, const PutServiceLinkedConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConfigServiceClient::PutServiceLinkedConfigurationRecorder, request, handler, context);
+        }
+
+        /**
          * <p>Saves a new query or updates an existing saved query. The
          * <code>QueryName</code> must be unique for a single Amazon Web Services account
          * and a single Amazon Web Services Region. You can create upto 300 queries in a
          * single Amazon Web Services account and a single Amazon Web Services Region.</p>
-         *  <p> <code>PutStoredQuery</code> is an idempotent API. Subsequent requests
-         * won’t create a duplicate resource if one was already created. If a following
-         * request has different <code>tags</code> values, Config will ignore these
-         * differences and treat it as an idempotent request of the previous. In this case,
+         *  <p> <b>Tags are added at creation and cannot be updated</b> </p> <p>
+         * <code>PutStoredQuery</code> is an idempotent API. Subsequent requests won’t
+         * create a duplicate resource if one was already created. If a following request
+         * has different <code>tags</code> values, Config will ignore these differences and
+         * treat it as an idempotent request of the previous. In this case,
          * <code>tags</code> will not be updated, even if they are different.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">AWS
@@ -2884,10 +3103,13 @@ namespace ConfigService
         }
 
         /**
-         * <p>Starts recording configurations of the Amazon Web Services resources you have
-         * selected to record in your Amazon Web Services account.</p> <p>You must have
-         * created at least one delivery channel to successfully start the configuration
-         * recorder.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the customer managed configuration recorder. The customer managed
+         * configuration recorder will begin recording configuration changes for the
+         * resource types you specify.</p> <p>You must have created a delivery channel to
+         * successfully start the customer managed configuration recorder. You can use the
+         * <a
+         * href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutDeliveryChannel.html">PutDeliveryChannel</a>
+         * operation to create a delivery channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">AWS
          * API Reference</a></p>
          */
@@ -2983,9 +3205,9 @@ namespace ConfigService
         }
 
         /**
-         * <p>Stops recording configurations of the Amazon Web Services resources you have
-         * selected to record in your Amazon Web Services account.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Stops the customer managed configuration recorder. The customer managed
+         * configuration recorder will stop recording configuration changes for the
+         * resource types you have specified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">AWS
          * API Reference</a></p>
          */
@@ -3010,11 +3232,11 @@ namespace ConfigService
         }
 
         /**
-         * <p>Associates the specified tags to a resource with the specified resourceArn.
-         * If existing tags on a resource are not specified in the request parameters, they
-         * are not changed. If existing tags are specified, however, then their values will
-         * be updated. When a resource is deleted, the tags associated with that resource
-         * are deleted as well.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>ResourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. If existing tags are specified,
+         * however, then their values will be updated. When a resource is deleted, the tags
+         * associated with that resource are deleted as well.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/TagResource">AWS
          * API Reference</a></p>
          */

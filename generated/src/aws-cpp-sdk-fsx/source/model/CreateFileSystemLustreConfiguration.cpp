@@ -39,6 +39,8 @@ CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration() :
     m_driveCacheTypeHasBeenSet(false),
     m_dataCompressionType(DataCompressionType::NOT_SET),
     m_dataCompressionTypeHasBeenSet(false),
+    m_efaEnabled(false),
+    m_efaEnabledHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
     m_rootSquashConfigurationHasBeenSet(false),
     m_metadataConfigurationHasBeenSet(false)
@@ -137,6 +139,13 @@ CreateFileSystemLustreConfiguration& CreateFileSystemLustreConfiguration::operat
     m_dataCompressionTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EfaEnabled"))
+  {
+    m_efaEnabled = jsonValue.GetBool("EfaEnabled");
+
+    m_efaEnabledHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LogConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("LogConfiguration");
@@ -231,6 +240,12 @@ JsonValue CreateFileSystemLustreConfiguration::Jsonize() const
   if(m_dataCompressionTypeHasBeenSet)
   {
    payload.WithString("DataCompressionType", DataCompressionTypeMapper::GetNameForDataCompressionType(m_dataCompressionType));
+  }
+
+  if(m_efaEnabledHasBeenSet)
+  {
+   payload.WithBool("EfaEnabled", m_efaEnabled);
+
   }
 
   if(m_logConfigurationHasBeenSet)
