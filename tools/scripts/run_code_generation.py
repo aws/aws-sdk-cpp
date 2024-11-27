@@ -50,9 +50,23 @@ SERVICE_NAME_REMAPS = {"runtime.lex": "lex",
 CORE_COMPONENT_TO_MODEL = {"defaults": DEFAULTS_FILE_LOCATION,
                            "partitions": PARTITIONS_FILE_LOCATION}
 
-SMITHY_SUPPORTED_CLIENTS = [
+SMITHY_SUPPORTED_CLIENTS = {
     "dynamodb"
-]
+}
+
+SMITHY_EXCLUSION_CLIENTS = {
+    #multi auth
+    "eventbridge"
+    ,"cloudfront-keyvaluestore"
+    ,"cognito-identity"
+    ,"cognito-idp"
+    #bearer token
+    #,"codecatalyst"
+    #bidirectional streaming
+    #,"lexv2-runtime"
+    #,"qbusiness"
+    #,"transcribestreaming"
+}
 
 DEBUG = False
 
@@ -129,18 +143,26 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_ma
             key = key.replace(";", "-")  # just in case... just replicating existing legacy behavior
         
         # determine if new service/service indifferent to name mapping
-        if key not in legacy_mapped_services:
-            with open(models_dir + "/" + model_file_date[0], 'r') as json_file:
-                model = json.load(json_file)
-                #get service id. It has to exist, else continue
-                if ("metadata" in model and "serviceId" in model["metadata"]):
+        with open(models_dir + "/" + model_file_date[0], 'r') as json_file:
+            model = json.load(json_file)
+            #get service id. It has to exist, else continue
+            if ("metadata" in model and "serviceId" in model["metadata"]):
+                if key not in legacy_mapped_services:
                     key = model["metadata"]["serviceId"] 
                     #convert into smithy case convention
                     key = key.lower().replace(' ', '-')
-                else:
-                    print("service Id not found in model file:", model_file_date[0], " Skipping.")
-                    continue
+                
+                #if protocol is 
+                if ("protocol" in  model["metadata"] and 
+                    (model["metadata"]["protocol"] == "json" or model["metadata"]["protocol"] == "rest-json")):
+                    if key not in SMITHY_EXCLUSION_CLIENTS:
+                        SMITHY_SUPPORTED_CLIENTS.add(key)
+                    
+            else:
+                print("service Id not found in model file:", model_file_date[0], " Skipping.")
+                continue
         
+            
         # fetch endpoint-rules filename which is based on ServiceId in c2j models:
         try:
             service_name_to_model_filename[key] = _build_service_model_with_endpoints(models_dir,
@@ -164,7 +186,6 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_ma
 
     if service_name_to_model_filename.get("s3") and "s3-crt" not in service_name_to_model_filename:
         service_name_to_model_filename["s3-crt"] = service_name_to_model_filename["s3"]
-
     return service_name_to_model_filename
 
 
@@ -292,6 +313,7 @@ def generate_single_client(service_name: str,
                            generator_filepath: str,
                            output_dir: str,
                            tmp_dir: str,
+                           use_smithy: bool,
                            kwargs):
     """Generate a single AWS client in AWS-SDK-CPP from c2j model
 
@@ -330,8 +352,7 @@ def generate_single_client(service_name: str,
         run_command += ["--endpoint-tests", f"{endpoints_filepath}/{model_files.endpoint_tests}"]
     run_command += ["--service", service_name]
     run_command += ["--outputfile", output_filename]
-
-    if service_name in SMITHY_SUPPORTED_CLIENTS:
+    if use_smithy:
         run_command += ["--use-smithy-client"]
 
     for key, val in kwargs.items():
@@ -578,7 +599,7 @@ def main():
 
         pending = set()
         done = set()
-
+        print(f"Smithy supported clients: {SMITHY_SUPPORTED_CLIENTS}")
         print(f"Running code generator, up to {max_workers} processes in parallel")
         sys.stdout.flush()
         for core_component in ["defaults", "partitions"]:
@@ -592,14 +613,12 @@ def main():
                                        None,
                                        args["raw_generator_arguments"])
                 pending.add(task)
-
         for service in clients_to_build:
             model_files = available_models[service]
 
             while len(pending) >= max_workers:
                 new_done, pending = wait(pending, return_when=FIRST_COMPLETED)
                 done.update(new_done)
-
             task = executor.submit(generate_single_client,
                                    service,
                                    model_files,
@@ -608,6 +627,7 @@ def main():
                                    args["path_to_generator"],
                                    args["output_location"],
                                    None,
+                                   (service in SMITHY_SUPPORTED_CLIENTS),
                                    args["raw_generator_arguments"])
             pending.add(task)
 

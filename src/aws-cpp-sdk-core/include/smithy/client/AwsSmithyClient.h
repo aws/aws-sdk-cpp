@@ -4,21 +4,21 @@
  */
 #pragma once
 
-#include <smithy/client/AwsSmithyClientBase.h>
-#include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
-#include <smithy/client/common/AwsSmithyRequestSigning.h>
-#include <smithy/identity/identity/AwsIdentity.h>
-#include <smithy/identity/auth/AuthSchemeOption.h>
-#include <smithy/identity/auth/AuthSchemeResolverBase.h>
-#include <smithy/tracing/TelemetryProvider.h>
-
-#include <aws/crt/Variant.h>
-
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/http/HttpResponse.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/FutureOutcome.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/SameThreadExecutor.h>
+#include <aws/crt/Variant.h>
+#include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
+#include <smithy/client/AwsSmithyClientBase.h>
+#include <smithy/client/common/AwsSmithyRequestSigning.h>
+#include <smithy/identity/auth/AuthSchemeOption.h>
+#include <smithy/identity/auth/AuthSchemeResolverBase.h>
+#include <smithy/identity/identity/AwsIdentity.h>
+#include <smithy/tracing/TelemetryProvider.h>
 
 namespace smithy {
 namespace client
@@ -86,11 +86,15 @@ namespace client
                     else
                         assert(!"Unknown endpoint parameter!");
                 }
+                if (ctx.m_isEventStreaming) {
+                  identityParams.additionalProperties.insert({"isEventStreaming", true});
+                }
+
                 const auto& serviceParams = ctx.m_pRequest->GetServiceSpecificParameters();
                 if (serviceParams) {
-                    for (const auto& serviceParam : serviceParams->parameterMap) {
-                        identityParams.additionalProperties.insert({serviceParam.first, serviceParam.second});
-                    }
+                  for (const auto& serviceParam : serviceParams->parameterMap) {
+                    identityParams.additionalProperties.insert({serviceParam.first, serviceParam.second});
+                  }
                 }
             }
             Aws::Vector<AuthSchemeOption> authSchemeOptions = m_authSchemeResolver->resolveAuthScheme(identityParams);
@@ -121,16 +125,45 @@ namespace client
             return AwsClientRequestSigning<AuthSchemesVariantT>::AdjustClockSkew(outcome, authSchemeOption, m_authSchemes);
         }
 
-        ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const * const request,
-                                     const char* requestName,
-                                     Aws::Http::HttpMethod method,
-                                     EndpointUpdateCallback&& endpointCallback) const
-        {
-            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
-            return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
+        ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const* const request, const char* requestName,
+                                         Aws::Http::HttpMethod method, EndpointUpdateCallback&& endpointCallback) const {
+          auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
+          return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
 
-    protected:
+        ResponseT MakeEventStreamRequestDeserialize(
+            Aws::AmazonWebServiceRequest const* const request, const char* requestName, Aws::Http::HttpMethod method,
+            EndpointUpdateCallback&& endpointCallback,
+            std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream> eventEncoderStream_sp) const {
+          std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor =
+              Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>("AwsSmithyClient");
+          assert(pExecutor);
+
+          HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
+          ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome) { outcome = std::move(asyncOutcome); };
+          pExecutor->Submit([&]() {
+            this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), pExecutor,
+                                   std::move(eventEncoderStream_sp));
+          });
+          pExecutor->WaitUntilStopped();
+          return m_serializer->Deserialize(std::move(outcome), GetServiceClientName(), requestName);
+        }
+
+       protected:
+        void SetSignerInEventStreamRequest(
+            std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
+            std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream>& eventEncoderStreamSp) const override {
+          if (pRequestCtx && pRequestCtx->m_pRequest && eventEncoderStreamSp) {
+            if (AwsClientRequestSigning<AuthSchemesVariantT>::SetSignerInEventStream(eventEncoderStreamSp, pRequestCtx->m_authSchemeOption,
+                                                                                     m_authSchemes)) {
+              const_cast<Aws::AmazonWebServiceRequest*>(pRequestCtx->m_pRequest)
+                  ->SetRequestSignedHandler([eventEncoderStreamSp](const Aws::Http::HttpRequest& httpRequest) {
+                    eventEncoderStreamSp->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest));
+                  });
+            }
+          }
+        }
+
         ServiceClientConfigurationT& m_clientConfiguration;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
@@ -138,5 +171,5 @@ namespace client
         Aws::UniquePtr<SerializerT> m_serializer{};
     };
 
-} // namespace client
-} // namespace smithy
+    }  // namespace client
+    }  // namespace smithy

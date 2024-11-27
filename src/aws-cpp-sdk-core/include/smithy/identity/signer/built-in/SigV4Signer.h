@@ -61,4 +61,5 @@ namespace smithy {
         Aws::String m_region;
         Aws::Client::AWSAuthV4Signer legacySigner;
     };
-}
+
+    }  // namespace smithy
