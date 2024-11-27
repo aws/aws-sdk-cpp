@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class JsonCppClientGenerator extends CppClientGenerator {
 
@@ -150,6 +151,10 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
 
+        if (serviceModel.isUseSmithyClient()) {
+            return generateClientSmithyHeaderFile(serviceModel);
+        }
+
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceClientHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
@@ -158,14 +163,23 @@ public class JsonCppClientGenerator extends CppClientGenerator {
 
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
-
         return makeFile(template, context, fileName, true);
     }
 
     @Override
     protected List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception {
         List<SdkFileEntry> sourceFiles = new ArrayList<>();
+
+        sourceFiles = generateSmithyClientSourceFile(serviceModels.stream()
+        .filter(ServiceModel::isUseSmithyClient)
+        .collect(Collectors.toList()));
+
+
         for (int i = 0; i < serviceModels.size(); i++) {
+            if(serviceModels.get(i).isUseSmithyClient())
+            {
+                continue;
+            }
             Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceClientSource.vm", StandardCharsets.UTF_8.name());
 
             VelocityContext context = createContext(serviceModels.get(i));

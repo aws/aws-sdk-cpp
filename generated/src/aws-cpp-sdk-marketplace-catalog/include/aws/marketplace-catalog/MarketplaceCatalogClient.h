@@ -6,15 +6,18 @@
 #pragma once
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
 
 namespace Aws
 {
 namespace MarketplaceCatalog
 {
+  AWS_MARKETPLACECATALOG_API extern const char SERVICE_NAME[];
   /**
    * <p>Catalog API actions allow you to manage your entities through list, describe,
    * and update capabilities. An entity can be a product or an offer on AWS
@@ -23,12 +26,19 @@ namespace MarketplaceCatalog
    * deployment pipelines. You can also create your own applications on top of the
    * Catalog API to manage your products on AWS Marketplace.</p>
    */
-  class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>
+  class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : smithy::client::AwsSmithyClientT<Aws::MarketplaceCatalog::SERVICE_NAME,
+      Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MarketplaceCatalogEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome>,
+    Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Marketplace Catalog"; }
 
       typedef MarketplaceCatalogClientConfiguration ClientConfigurationType;
       typedef MarketplaceCatalogEndpointProvider EndpointProviderType;
@@ -459,8 +469,6 @@ namespace MarketplaceCatalog
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>;
       void init(const MarketplaceCatalogClientConfiguration& clientConfiguration);
 
-      MarketplaceCatalogClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MarketplaceCatalogEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MarketplaceCatalog

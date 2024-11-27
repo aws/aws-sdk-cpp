@@ -6,15 +6,18 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/qbusiness/QBusinessServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
 
 namespace Aws
 {
 namespace QBusiness
 {
+  AWS_QBUSINESS_API extern const char SERVICE_NAME[];
   /**
    * <p>This is the <i>Amazon Q Business</i> API Reference. Amazon Q Business is a
    * fully managed, generative-AI powered enterprise chat assistant that you can
@@ -41,12 +44,19 @@ namespace QBusiness
    * href="https://docs.aws.amazon.com/general/latest/gr/amazonq.html">Amazon Web
    * Services General Reference</a> </i> </p> </li> </ul>
    */
-  class AWS_QBUSINESS_API QBusinessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<QBusinessClient>
+  class AWS_QBUSINESS_API QBusinessClient : smithy::client::AwsSmithyClientT<Aws::QBusiness::SERVICE_NAME,
+      Aws::QBusiness::QBusinessClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      QBusinessEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome>,
+    Aws::Client::ClientWithAsyncTemplateMethods<QBusinessClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "QBusiness"; }
 
       typedef QBusinessClientConfiguration ClientConfigurationType;
       typedef QBusinessEndpointProvider EndpointProviderType;
@@ -1587,8 +1597,6 @@ namespace QBusiness
       friend class Aws::Client::ClientWithAsyncTemplateMethods<QBusinessClient>;
       void init(const QBusinessClientConfiguration& clientConfiguration);
 
-      QBusinessClientConfiguration m_clientConfiguration;
-      std::shared_ptr<QBusinessEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace QBusiness

@@ -50,11 +50,11 @@ SERVICE_NAME_REMAPS = {"runtime.lex": "lex",
 CORE_COMPONENT_TO_MODEL = {"defaults": DEFAULTS_FILE_LOCATION,
                            "partitions": PARTITIONS_FILE_LOCATION}
 
-SMITHY_SUPPORTED_CLIENTS = [
+SMITHY_SUPPORTED_CLIENTS = {
     "dynamodb"
-]
+}
 
-DEBUG = False
+DEBUG = True
 
 class ServiceModel(object):
     def __init__(self, service_id, c2j_model, endpoint_rule_set, endpoint_tests):
@@ -137,6 +137,11 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_ma
                     key = model["metadata"]["serviceId"] 
                     #convert into smithy case convention
                     key = key.lower().replace(' ', '-')
+                    
+                    #if protocol is 
+                    if ("protocol" in  model["metadata"] and 
+                        (model["metadata"]["protocol"] == "json" or model["metadata"]["protocol"] == "rest-json")):
+                        SMITHY_SUPPORTED_CLIENTS.add(key)
                 else:
                     print("service Id not found in model file:", model_file_date[0], " Skipping.")
                     continue
@@ -164,7 +169,6 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_ma
 
     if service_name_to_model_filename.get("s3") and "s3-crt" not in service_name_to_model_filename:
         service_name_to_model_filename["s3-crt"] = service_name_to_model_filename["s3"]
-
     return service_name_to_model_filename
 
 
@@ -292,6 +296,7 @@ def generate_single_client(service_name: str,
                            generator_filepath: str,
                            output_dir: str,
                            tmp_dir: str,
+                           use_smithy: bool,
                            kwargs):
     """Generate a single AWS client in AWS-SDK-CPP from c2j model
 
@@ -330,8 +335,7 @@ def generate_single_client(service_name: str,
         run_command += ["--endpoint-tests", f"{endpoints_filepath}/{model_files.endpoint_tests}"]
     run_command += ["--service", service_name]
     run_command += ["--outputfile", output_filename]
-
-    if service_name in SMITHY_SUPPORTED_CLIENTS:
+    if use_smithy:
         run_command += ["--use-smithy-client"]
 
     for key, val in kwargs.items():
@@ -592,14 +596,12 @@ def main():
                                        None,
                                        args["raw_generator_arguments"])
                 pending.add(task)
-
         for service in clients_to_build:
             model_files = available_models[service]
 
             while len(pending) >= max_workers:
                 new_done, pending = wait(pending, return_when=FIRST_COMPLETED)
                 done.update(new_done)
-
             task = executor.submit(generate_single_client,
                                    service,
                                    model_files,
@@ -608,6 +610,7 @@ def main():
                                    args["path_to_generator"],
                                    args["output_location"],
                                    None,
+                                   service in SMITHY_SUPPORTED_CLIENTS,
                                    args["raw_generator_arguments"])
             pending.add(task)
 

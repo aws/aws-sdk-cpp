@@ -55,6 +55,12 @@ namespace Aws
     namespace Endpoint
     {
         class AWSEndpoint;
+
+        struct AWSEndpointResolutionOverrides
+        {
+            Aws::Vector<Aws::String> pathSegments;
+            bool setRfc3986Encoded{false};
+        };
     }
 }
 
@@ -131,7 +137,9 @@ namespace client
                               Aws::Http::HttpMethod method,
                               EndpointUpdateCallback&& endpointCallback,
                               ResponseHandlerFunc&& responseHandler,
-                              std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
+                              std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                              const Aws::Endpoint::AWSEndpointResolutionOverrides& pathSegments = Aws::Endpoint::AWSEndpointResolutionOverrides{}
+                              ) const;
 
         HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
                                             const char* requestName,

@@ -1,0 +1,7 @@
+#foreach($operation in $serviceModel.operations)
+#if($operation.request.shape.hasEventStreamMembers())
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyJsonServiceEventStreamOperationsSource.vm")
+#else
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceOperationsSource.vm")
+#end
+#end
