@@ -94,12 +94,10 @@ namespace Model
      * IAM users, groups, roles, and customer managed policies. These global IAM
      * resource types can only be recorded by Config in Regions where Config was
      * available before February 2022. You cannot be record the global IAM resouce
-     * types in Regions supported by Config after February 2022. This list where you
-     * cannot record the global IAM resource types includes the following Regions:</p>
-     * <ul> <li> <p>Asia Pacific (Hyderabad)</p> </li> <li> <p>Asia Pacific
-     * (Melbourne)</p> </li> <li> <p>Canada West (Calgary)</p> </li> <li> <p>Europe
-     * (Spain)</p> </li> <li> <p>Europe (Zurich)</p> </li> <li> <p>Israel (Tel
-     * Aviv)</p> </li> <li> <p>Middle East (UAE)</p> </li> </ul>  <p>
+     * types in Regions supported by Config after February 2022. For a list of those
+     * Regions, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording
+     * Amazon Web Services Resources | Global Resources</a>.</p>  <p>
      * <b>Aurora global clusters are recorded in all enabled Regions</b> </p> <p>The
      * <code>AWS::RDS::GlobalCluster</code> resource type will be recorded in all
      * supported Config Regions where the configuration recorder is enabled, even if
@@ -263,12 +261,9 @@ namespace Model
      * policies will be recorded in the Region where you set up the configuration
      * recorder if that is a Region where Config was available before February 2022.
      * You cannot be record the global IAM resouce types in Regions supported by Config
-     * after February 2022. This list where you cannot record the global IAM resource
-     * types includes the following Regions:</p> <ul> <li> <p>Asia Pacific
-     * (Hyderabad)</p> </li> <li> <p>Asia Pacific (Melbourne)</p> </li> <li> <p>Canada
-     * West (Calgary)</p> </li> <li> <p>Europe (Spain)</p> </li> <li> <p>Europe
-     * (Zurich)</p> </li> <li> <p>Israel (Tel Aviv)</p> </li> <li> <p>Middle East
-     * (UAE)</p> </li> </ul> 
+     * after February 2022. For a list of those Regions, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording
+     * Amazon Web Services Resources | Global Resources</a>.</p> 
      */
     inline const RecordingStrategy& GetRecordingStrategy() const{ return m_recordingStrategy; }
     inline bool RecordingStrategyHasBeenSet() const { return m_recordingStrategyHasBeenSet; }

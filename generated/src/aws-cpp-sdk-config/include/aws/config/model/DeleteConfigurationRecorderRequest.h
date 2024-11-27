@@ -18,7 +18,7 @@ namespace Model
 
   /**
    * <p>The request object for the <code>DeleteConfigurationRecorder</code>
-   * action.</p><p><h3>See Also:</h3>   <a
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorderRequest">AWS
    * API Reference</a></p>
    */
@@ -40,9 +40,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the configuration recorder to be deleted. You can retrieve the
-     * name of your configuration recorder by using the
-     * <code>DescribeConfigurationRecorders</code> action.</p>
+     * <p>The name of the customer managed configuration recorder that you want to
+     * delete. You can retrieve the name of your configuration recorders by using the
+     * <a
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a>
+     * operation.</p>
      */
     inline const Aws::String& GetConfigurationRecorderName() const{ return m_configurationRecorderName; }
     inline bool ConfigurationRecorderNameHasBeenSet() const { return m_configurationRecorderNameHasBeenSet; }

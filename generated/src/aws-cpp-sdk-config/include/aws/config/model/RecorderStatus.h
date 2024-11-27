@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     Pending,
     Success,
-    Failure
+    Failure,
+    NotApplicable
   };
 
 namespace RecorderStatusMapper

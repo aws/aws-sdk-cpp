@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeConfigurationRecorderStatusRequest::DescribeConfigurationRecorderStatusRequest() : 
-    m_configurationRecorderNamesHasBeenSet(false)
+    m_configurationRecorderNamesHasBeenSet(false),
+    m_servicePrincipalHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -29,6 +31,18 @@ Aws::String DescribeConfigurationRecorderStatusRequest::SerializePayload() const
      configurationRecorderNamesJsonList[configurationRecorderNamesIndex].AsString(m_configurationRecorderNames[configurationRecorderNamesIndex]);
    }
    payload.WithArray("ConfigurationRecorderNames", std::move(configurationRecorderNamesJsonList));
+
+  }
+
+  if(m_servicePrincipalHasBeenSet)
+  {
+   payload.WithString("ServicePrincipal", m_servicePrincipal);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
 
   }
 

@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/EmbeddingDataType.h>
+#include <utility>
 
 namespace Aws
 {
@@ -46,10 +48,31 @@ namespace Model
     inline void SetDimensions(int value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
     inline BedrockEmbeddingModelConfiguration& WithDimensions(int value) { SetDimensions(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The data type for the vectors when using a model to convert text into vector
+     * embeddings. The model must support the specified data type for vector
+     * embeddings. Floating-point (float32) is the default data type, and is supported
+     * by most models for vector embeddings. See <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-supported.html">Supported
+     * embeddings models</a> for information on the available models and their vector
+     * data types.</p>
+     */
+    inline const EmbeddingDataType& GetEmbeddingDataType() const{ return m_embeddingDataType; }
+    inline bool EmbeddingDataTypeHasBeenSet() const { return m_embeddingDataTypeHasBeenSet; }
+    inline void SetEmbeddingDataType(const EmbeddingDataType& value) { m_embeddingDataTypeHasBeenSet = true; m_embeddingDataType = value; }
+    inline void SetEmbeddingDataType(EmbeddingDataType&& value) { m_embeddingDataTypeHasBeenSet = true; m_embeddingDataType = std::move(value); }
+    inline BedrockEmbeddingModelConfiguration& WithEmbeddingDataType(const EmbeddingDataType& value) { SetEmbeddingDataType(value); return *this;}
+    inline BedrockEmbeddingModelConfiguration& WithEmbeddingDataType(EmbeddingDataType&& value) { SetEmbeddingDataType(std::move(value)); return *this;}
+    ///@}
   private:
 
     int m_dimensions;
     bool m_dimensionsHasBeenSet = false;
+
+    EmbeddingDataType m_embeddingDataType;
+    bool m_embeddingDataTypeHasBeenSet = false;
   };
 
 } // namespace Model

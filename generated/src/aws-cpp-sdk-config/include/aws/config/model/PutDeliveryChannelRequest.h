@@ -40,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration delivery channel object that delivers the configuration
-     * information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+     * <p>An object for the delivery channel. A delivery channel sends notifications
+     * and updated configuration states. </p>
      */
     inline const DeliveryChannel& GetDeliveryChannel() const{ return m_deliveryChannel; }
     inline bool DeliveryChannelHasBeenSet() const { return m_deliveryChannelHasBeenSet; }

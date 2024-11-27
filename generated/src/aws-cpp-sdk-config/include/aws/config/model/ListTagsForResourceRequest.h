@@ -37,9 +37,14 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the resource for which to list
-     * the tags. Currently, the supported resources are <code>ConfigRule</code>,
-     * <code>ConfigurationAggregator</code> and
-     * <code>AggregatorAuthorization</code>.</p>
+     * the tags. The following resources are supported:</p> <ul> <li> <p>
+     * <code>ConfigurationRecorder</code> </p> </li> <li> <p> <code>ConfigRule</code>
+     * </p> </li> <li> <p> <code>OrganizationConfigRule</code> </p> </li> <li> <p>
+     * <code>ConformancePack</code> </p> </li> <li> <p>
+     * <code>OrganizationConformancePack</code> </p> </li> <li> <p>
+     * <code>ConfigurationAggregator</code> </p> </li> <li> <p>
+     * <code>AggregationAuthorization</code> </p> </li> <li> <p>
+     * <code>StoredQuery</code> </p> </li> </ul>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

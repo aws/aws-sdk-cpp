@@ -47,7 +47,8 @@ enum class ConfigServiceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CONFORMANCE_PACK_TEMPLATE_VALIDATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFORMANCE_PACK_TEMPLATE_VALIDATION,
   IDEMPOTENT_PARAMETER_MISMATCH,
   INSUFFICIENT_DELIVERY_POLICY,
   INSUFFICIENT_PERMISSIONS,
@@ -97,7 +98,8 @@ enum class ConfigServiceErrors
   RESOURCE_CONCURRENT_MODIFICATION,
   RESOURCE_IN_USE,
   RESOURCE_NOT_DISCOVERED,
-  TOO_MANY_TAGS
+  TOO_MANY_TAGS,
+  UNMODIFIABLE_ENTITY
 };
 
 class AWS_CONFIGSERVICE_API ConfigServiceError : public Aws::Client::AWSError<ConfigServiceErrors>

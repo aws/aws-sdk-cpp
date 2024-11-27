@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of configuration recorder names.</p>
+     * <p>A list of names of the configuration recorders that you want to specify.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigurationRecorderNames() const{ return m_configurationRecorderNames; }
     inline bool ConfigurationRecorderNamesHasBeenSet() const { return m_configurationRecorderNamesHasBeenSet; }
@@ -53,10 +53,47 @@ namespace Model
     inline DescribeConfigurationRecordersRequest& AddConfigurationRecorderNames(Aws::String&& value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames.push_back(std::move(value)); return *this; }
     inline DescribeConfigurationRecordersRequest& AddConfigurationRecorderNames(const char* value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>For service-linked configuration recorders, you can use the service principal
+     * of the linked Amazon Web Services service to specify the configuration
+     * recorder.</p>
+     */
+    inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
+    inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
+    inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
+    inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
+    inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
+    inline DescribeConfigurationRecordersRequest& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
+    inline DescribeConfigurationRecordersRequest& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
+    inline DescribeConfigurationRecordersRequest& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the configuration recorder that you want to
+     * specify.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+    inline DescribeConfigurationRecordersRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline DescribeConfigurationRecordersRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline DescribeConfigurationRecordersRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_configurationRecorderNames;
     bool m_configurationRecorderNamesHasBeenSet = false;
+
+    Aws::String m_servicePrincipal;
+    bool m_servicePrincipalHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,10 +19,14 @@ namespace Model
 {
 
 ConfigurationRecorder::ConfigurationRecorder() : 
+    m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_roleARNHasBeenSet(false),
     m_recordingGroupHasBeenSet(false),
-    m_recordingModeHasBeenSet(false)
+    m_recordingModeHasBeenSet(false),
+    m_recordingScope(RecordingScope::NOT_SET),
+    m_recordingScopeHasBeenSet(false),
+    m_servicePrincipalHasBeenSet(false)
 {
 }
 
@@ -34,6 +38,13 @@ ConfigurationRecorder::ConfigurationRecorder(JsonView jsonValue)
 
 ConfigurationRecorder& ConfigurationRecorder::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -62,12 +73,32 @@ ConfigurationRecorder& ConfigurationRecorder::operator =(JsonView jsonValue)
     m_recordingModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("recordingScope"))
+  {
+    m_recordingScope = RecordingScopeMapper::GetRecordingScopeForName(jsonValue.GetString("recordingScope"));
+
+    m_recordingScopeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("servicePrincipal"))
+  {
+    m_servicePrincipal = jsonValue.GetString("servicePrincipal");
+
+    m_servicePrincipalHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ConfigurationRecorder::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
 
   if(m_nameHasBeenSet)
   {
@@ -90,6 +121,17 @@ JsonValue ConfigurationRecorder::Jsonize() const
   if(m_recordingModeHasBeenSet)
   {
    payload.WithObject("recordingMode", m_recordingMode.Jsonize());
+
+  }
+
+  if(m_recordingScopeHasBeenSet)
+  {
+   payload.WithString("recordingScope", RecordingScopeMapper::GetNameForRecordingScope(m_recordingScope));
+  }
+
+  if(m_servicePrincipalHasBeenSet)
+  {
+   payload.WithString("servicePrincipal", m_servicePrincipal);
 
   }
 
