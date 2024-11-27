@@ -31,9 +31,15 @@ const char* GetNameForHttpMethod(HttpMethod httpMethod)
             return "HEAD";
         case HttpMethod::HTTP_PATCH:
             return "PATCH";
+        case HttpMethod::HTTP_CONNECT:
+          return "CONNECT";
+        case HttpMethod::HTTP_OPTIONS:
+          return "OPTIONS";
+        case HttpMethod::HTTP_TRACE:
+          return "TRACE";
         default:
-            assert(0);
-            return "GET";
+          assert(0);
+          return "GET";
     }
 }
 
