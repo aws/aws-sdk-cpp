@@ -110,6 +110,10 @@ if (LEGACY_BUILD)
         set(BoldWhite "${Esc}[1;37m")
     endif ()
 
+    if (WIN32)
+        set(CMAKE_OBJECT_PATH_MAX 260)
+    endif ()
+
     # backwards compatibility with old command line params
     if ("${STATIC_LINKING}" STREQUAL "1")
         set(BUILD_SHARED_LIBS OFF)
