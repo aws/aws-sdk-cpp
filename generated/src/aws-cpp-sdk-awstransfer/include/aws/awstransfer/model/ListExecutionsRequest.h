@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the maximum number of executions to return.</p>
+     * <p>The maximum number of items to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

@@ -127,6 +127,12 @@ GetDataSourceResult& GetDataSourceResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("mediaExtractionConfiguration"))
+  {
+    m_mediaExtractionConfiguration = jsonValue.GetObject("mediaExtractionConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

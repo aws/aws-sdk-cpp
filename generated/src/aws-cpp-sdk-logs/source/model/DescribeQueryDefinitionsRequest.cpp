@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeQueryDefinitionsRequest::DescribeQueryDefinitionsRequest() : 
+    m_queryLanguage(QueryLanguage::NOT_SET),
+    m_queryLanguageHasBeenSet(false),
     m_queryDefinitionNamePrefixHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
@@ -23,6 +25,11 @@ DescribeQueryDefinitionsRequest::DescribeQueryDefinitionsRequest() :
 Aws::String DescribeQueryDefinitionsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_queryLanguageHasBeenSet)
+  {
+   payload.WithString("queryLanguage", QueryLanguageMapper::GetNameForQueryLanguage(m_queryLanguage));
+  }
 
   if(m_queryDefinitionNamePrefixHasBeenSet)
   {

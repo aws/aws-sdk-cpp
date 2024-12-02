@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/VoiceRecordingTrack.h>
+#include <aws/connect/model/IvrRecordingTrack.h>
 #include <utility>
 
 namespace Aws
@@ -49,10 +50,25 @@ namespace Model
     inline VoiceRecordingConfiguration& WithVoiceRecordingTrack(const VoiceRecordingTrack& value) { SetVoiceRecordingTrack(value); return *this;}
     inline VoiceRecordingConfiguration& WithVoiceRecordingTrack(VoiceRecordingTrack&& value) { SetVoiceRecordingTrack(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Identifies which IVR track is being recorded.</p>
+     */
+    inline const IvrRecordingTrack& GetIvrRecordingTrack() const{ return m_ivrRecordingTrack; }
+    inline bool IvrRecordingTrackHasBeenSet() const { return m_ivrRecordingTrackHasBeenSet; }
+    inline void SetIvrRecordingTrack(const IvrRecordingTrack& value) { m_ivrRecordingTrackHasBeenSet = true; m_ivrRecordingTrack = value; }
+    inline void SetIvrRecordingTrack(IvrRecordingTrack&& value) { m_ivrRecordingTrackHasBeenSet = true; m_ivrRecordingTrack = std::move(value); }
+    inline VoiceRecordingConfiguration& WithIvrRecordingTrack(const IvrRecordingTrack& value) { SetIvrRecordingTrack(value); return *this;}
+    inline VoiceRecordingConfiguration& WithIvrRecordingTrack(IvrRecordingTrack&& value) { SetIvrRecordingTrack(std::move(value)); return *this;}
+    ///@}
   private:
 
     VoiceRecordingTrack m_voiceRecordingTrack;
     bool m_voiceRecordingTrackHasBeenSet = false;
+
+    IvrRecordingTrack m_ivrRecordingTrack;
+    bool m_ivrRecordingTrackHasBeenSet = false;
   };
 
 } // namespace Model

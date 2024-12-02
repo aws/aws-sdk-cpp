@@ -18,7 +18,8 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetSnapshotBlockPublicAccessStateResponse::GetSnapshotBlockPublicAccessStateResponse() : 
-    m_state(SnapshotBlockPublicAccessState::NOT_SET)
+    m_state(SnapshotBlockPublicAccessState::NOT_SET),
+    m_managedBy(ManagedBy::NOT_SET)
 {
 }
 
@@ -44,6 +45,11 @@ GetSnapshotBlockPublicAccessStateResponse& GetSnapshotBlockPublicAccessStateResp
     if(!stateNode.IsNull())
     {
       m_state = SnapshotBlockPublicAccessStateMapper::GetSnapshotBlockPublicAccessStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+    }
+    XmlNode managedByNode = resultNode.FirstChild("managedBy");
+    if(!managedByNode.IsNull())
+    {
+      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()).c_str());
     }
   }
 

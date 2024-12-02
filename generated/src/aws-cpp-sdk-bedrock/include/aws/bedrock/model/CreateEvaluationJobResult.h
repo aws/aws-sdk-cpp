@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of the model evaluation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the evaluation job.</p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
     inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }

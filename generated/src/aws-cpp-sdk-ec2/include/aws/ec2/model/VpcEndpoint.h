@@ -17,6 +17,7 @@
 #include <aws/ec2/model/SecurityGroupIdentifier.h>
 #include <aws/ec2/model/DnsEntry.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/SubnetIpPrefixes.h>
 #include <utility>
 
 namespace Aws
@@ -303,6 +304,76 @@ namespace Model
 
     ///@{
     /**
+     * <p>Array of IPv4 prefixes.</p>
+     */
+    inline const Aws::Vector<SubnetIpPrefixes>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
+    inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
+    inline void SetIpv4Prefixes(const Aws::Vector<SubnetIpPrefixes>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
+    inline void SetIpv4Prefixes(Aws::Vector<SubnetIpPrefixes>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
+    inline VpcEndpoint& WithIpv4Prefixes(const Aws::Vector<SubnetIpPrefixes>& value) { SetIpv4Prefixes(value); return *this;}
+    inline VpcEndpoint& WithIpv4Prefixes(Aws::Vector<SubnetIpPrefixes>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
+    inline VpcEndpoint& AddIpv4Prefixes(const SubnetIpPrefixes& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
+    inline VpcEndpoint& AddIpv4Prefixes(SubnetIpPrefixes&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Array of IPv6 prefixes.</p>
+     */
+    inline const Aws::Vector<SubnetIpPrefixes>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }
+    inline bool Ipv6PrefixesHasBeenSet() const { return m_ipv6PrefixesHasBeenSet; }
+    inline void SetIpv6Prefixes(const Aws::Vector<SubnetIpPrefixes>& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = value; }
+    inline void SetIpv6Prefixes(Aws::Vector<SubnetIpPrefixes>&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = std::move(value); }
+    inline VpcEndpoint& WithIpv6Prefixes(const Aws::Vector<SubnetIpPrefixes>& value) { SetIpv6Prefixes(value); return *this;}
+    inline VpcEndpoint& WithIpv6Prefixes(Aws::Vector<SubnetIpPrefixes>&& value) { SetIpv6Prefixes(std::move(value)); return *this;}
+    inline VpcEndpoint& AddIpv6Prefixes(const SubnetIpPrefixes& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
+    inline VpcEndpoint& AddIpv6Prefixes(SubnetIpPrefixes&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Reason for the failure.</p>
+     */
+    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
+    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
+    inline VpcEndpoint& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
+    inline VpcEndpoint& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
+    inline VpcEndpoint& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service network.</p>
+     */
+    inline const Aws::String& GetServiceNetworkArn() const{ return m_serviceNetworkArn; }
+    inline bool ServiceNetworkArnHasBeenSet() const { return m_serviceNetworkArnHasBeenSet; }
+    inline void SetServiceNetworkArn(const Aws::String& value) { m_serviceNetworkArnHasBeenSet = true; m_serviceNetworkArn = value; }
+    inline void SetServiceNetworkArn(Aws::String&& value) { m_serviceNetworkArnHasBeenSet = true; m_serviceNetworkArn = std::move(value); }
+    inline void SetServiceNetworkArn(const char* value) { m_serviceNetworkArnHasBeenSet = true; m_serviceNetworkArn.assign(value); }
+    inline VpcEndpoint& WithServiceNetworkArn(const Aws::String& value) { SetServiceNetworkArn(value); return *this;}
+    inline VpcEndpoint& WithServiceNetworkArn(Aws::String&& value) { SetServiceNetworkArn(std::move(value)); return *this;}
+    inline VpcEndpoint& WithServiceNetworkArn(const char* value) { SetServiceNetworkArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
+     */
+    inline const Aws::String& GetResourceConfigurationArn() const{ return m_resourceConfigurationArn; }
+    inline bool ResourceConfigurationArnHasBeenSet() const { return m_resourceConfigurationArnHasBeenSet; }
+    inline void SetResourceConfigurationArn(const Aws::String& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = value; }
+    inline void SetResourceConfigurationArn(Aws::String&& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = std::move(value); }
+    inline void SetResourceConfigurationArn(const char* value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn.assign(value); }
+    inline VpcEndpoint& WithResourceConfigurationArn(const Aws::String& value) { SetResourceConfigurationArn(value); return *this;}
+    inline VpcEndpoint& WithResourceConfigurationArn(Aws::String&& value) { SetResourceConfigurationArn(std::move(value)); return *this;}
+    inline VpcEndpoint& WithResourceConfigurationArn(const char* value) { SetResourceConfigurationArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Region where the service is hosted.</p>
      */
     inline const Aws::String& GetServiceRegion() const{ return m_serviceRegion; }
@@ -372,6 +443,21 @@ namespace Model
 
     LastError m_lastError;
     bool m_lastErrorHasBeenSet = false;
+
+    Aws::Vector<SubnetIpPrefixes> m_ipv4Prefixes;
+    bool m_ipv4PrefixesHasBeenSet = false;
+
+    Aws::Vector<SubnetIpPrefixes> m_ipv6Prefixes;
+    bool m_ipv6PrefixesHasBeenSet = false;
+
+    Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
+
+    Aws::String m_serviceNetworkArn;
+    bool m_serviceNetworkArnHasBeenSet = false;
+
+    Aws::String m_resourceConfigurationArn;
+    bool m_resourceConfigurationArnHasBeenSet = false;
 
     Aws::String m_serviceRegion;
     bool m_serviceRegionHasBeenSet = false;

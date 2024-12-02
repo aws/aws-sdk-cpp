@@ -282,6 +282,35 @@ namespace BedrockAgentRuntime
         }
 
         /**
+         * <p>Reranks the relevance of sources based on queries. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html">Improve
+         * the relevance of query responses with a reranker model</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/Rerank">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RerankOutcome Rerank(const Model::RerankRequest& request) const;
+
+        /**
+         * A Callable wrapper for Rerank that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RerankRequestT = Model::RerankRequest>
+        Model::RerankOutcomeCallable RerankCallable(const RerankRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::Rerank, request);
+        }
+
+        /**
+         * An Async wrapper for Rerank that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RerankRequestT = Model::RerankRequest>
+        void RerankAsync(const RerankRequestT& request, const RerankResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::Rerank, request, handler, context);
+        }
+
+        /**
          * <p>Queries a knowledge base and retrieves information from it.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/Retrieve">AWS
@@ -334,6 +363,35 @@ namespace BedrockAgentRuntime
         void RetrieveAndGenerateAsync(const RetrieveAndGenerateRequestT& request, const RetrieveAndGenerateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&BedrockAgentRuntimeClient::RetrieveAndGenerate, request, handler, context);
+        }
+
+        /**
+         * <p>Queries a knowledge base and generates responses based on the retrieved
+         * results, with output in streaming format.</p>  <p>The CLI doesn't support
+         * streaming operations in Amazon Bedrock, including
+         * <code>InvokeModelWithResponseStream</code>.</p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerateStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RetrieveAndGenerateStreamOutcome RetrieveAndGenerateStream(Model::RetrieveAndGenerateStreamRequest& request) const;
+
+        /**
+         * A Callable wrapper for RetrieveAndGenerateStream that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RetrieveAndGenerateStreamRequestT = Model::RetrieveAndGenerateStreamRequest>
+        Model::RetrieveAndGenerateStreamOutcomeCallable RetrieveAndGenerateStreamCallable(RetrieveAndGenerateStreamRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::RetrieveAndGenerateStream, request);
+        }
+
+        /**
+         * An Async wrapper for RetrieveAndGenerateStream that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RetrieveAndGenerateStreamRequestT = Model::RetrieveAndGenerateStreamRequest>
+        void RetrieveAndGenerateStreamAsync(RetrieveAndGenerateStreamRequestT& request, const RetrieveAndGenerateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::RetrieveAndGenerateStream, request, handler, context);
         }
 
 

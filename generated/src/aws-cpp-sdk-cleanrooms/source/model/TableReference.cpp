@@ -19,7 +19,9 @@ namespace Model
 {
 
 TableReference::TableReference() : 
-    m_glueHasBeenSet(false)
+    m_glueHasBeenSet(false),
+    m_snowflakeHasBeenSet(false),
+    m_athenaHasBeenSet(false)
 {
 }
 
@@ -38,6 +40,20 @@ TableReference& TableReference::operator =(JsonView jsonValue)
     m_glueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("snowflake"))
+  {
+    m_snowflake = jsonValue.GetObject("snowflake");
+
+    m_snowflakeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("athena"))
+  {
+    m_athena = jsonValue.GetObject("athena");
+
+    m_athenaHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +64,18 @@ JsonValue TableReference::Jsonize() const
   if(m_glueHasBeenSet)
   {
    payload.WithObject("glue", m_glue.Jsonize());
+
+  }
+
+  if(m_snowflakeHasBeenSet)
+  {
+   payload.WithObject("snowflake", m_snowflake.Jsonize());
+
+  }
+
+  if(m_athenaHasBeenSet)
+  {
+   payload.WithObject("athena", m_athena.Jsonize());
 
   }
 

@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalFilter.h>
+#include <aws/bedrock-agent-runtime/model/ImplicitFilterConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/SearchType.h>
+#include <aws/bedrock-agent-runtime/model/VectorSearchRerankingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -65,6 +67,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Settings for implicit filtering.</p>
+     */
+    inline const ImplicitFilterConfiguration& GetImplicitFilterConfiguration() const{ return m_implicitFilterConfiguration; }
+    inline bool ImplicitFilterConfigurationHasBeenSet() const { return m_implicitFilterConfigurationHasBeenSet; }
+    inline void SetImplicitFilterConfiguration(const ImplicitFilterConfiguration& value) { m_implicitFilterConfigurationHasBeenSet = true; m_implicitFilterConfiguration = value; }
+    inline void SetImplicitFilterConfiguration(ImplicitFilterConfiguration&& value) { m_implicitFilterConfigurationHasBeenSet = true; m_implicitFilterConfiguration = std::move(value); }
+    inline KnowledgeBaseVectorSearchConfiguration& WithImplicitFilterConfiguration(const ImplicitFilterConfiguration& value) { SetImplicitFilterConfiguration(value); return *this;}
+    inline KnowledgeBaseVectorSearchConfiguration& WithImplicitFilterConfiguration(ImplicitFilterConfiguration&& value) { SetImplicitFilterConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of source chunks to retrieve.</p>
      */
     inline int GetNumberOfResults() const{ return m_numberOfResults; }
@@ -92,16 +106,37 @@ namespace Model
     inline KnowledgeBaseVectorSearchConfiguration& WithOverrideSearchType(const SearchType& value) { SetOverrideSearchType(value); return *this;}
     inline KnowledgeBaseVectorSearchConfiguration& WithOverrideSearchType(SearchType&& value) { SetOverrideSearchType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains configurations for reranking the retrieved results. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html">Improve
+     * the relevance of query responses with a reranker model</a>.</p>
+     */
+    inline const VectorSearchRerankingConfiguration& GetRerankingConfiguration() const{ return m_rerankingConfiguration; }
+    inline bool RerankingConfigurationHasBeenSet() const { return m_rerankingConfigurationHasBeenSet; }
+    inline void SetRerankingConfiguration(const VectorSearchRerankingConfiguration& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = value; }
+    inline void SetRerankingConfiguration(VectorSearchRerankingConfiguration&& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = std::move(value); }
+    inline KnowledgeBaseVectorSearchConfiguration& WithRerankingConfiguration(const VectorSearchRerankingConfiguration& value) { SetRerankingConfiguration(value); return *this;}
+    inline KnowledgeBaseVectorSearchConfiguration& WithRerankingConfiguration(VectorSearchRerankingConfiguration&& value) { SetRerankingConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     RetrievalFilter m_filter;
     bool m_filterHasBeenSet = false;
+
+    ImplicitFilterConfiguration m_implicitFilterConfiguration;
+    bool m_implicitFilterConfigurationHasBeenSet = false;
 
     int m_numberOfResults;
     bool m_numberOfResultsHasBeenSet = false;
 
     SearchType m_overrideSearchType;
     bool m_overrideSearchTypeHasBeenSet = false;
+
+    VectorSearchRerankingConfiguration m_rerankingConfiguration;
+    bool m_rerankingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

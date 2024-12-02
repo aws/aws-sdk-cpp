@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
+     * <p>The ID or ARN of the service network.</p>
      */
     inline const Aws::String& GetServiceNetworkIdentifier() const{ return m_serviceNetworkIdentifier; }
     inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
@@ -78,7 +78,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the VPC.</p>
+     * <p>The ID or ARN of the VPC.</p>
      */
     inline const Aws::String& GetVpcIdentifier() const{ return m_vpcIdentifier; }
     inline bool VpcIdentifierHasBeenSet() const { return m_vpcIdentifierHasBeenSet; }

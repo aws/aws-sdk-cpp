@@ -69,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specified whether the value is a secret.</p>
+     * <p>Specifies whether the value is a secret.</p>
      */
     inline bool GetIsValueSecret() const{ return m_isValueSecret; }
     inline bool IsValueSecretHasBeenSet() const { return m_isValueSecretHasBeenSet; }

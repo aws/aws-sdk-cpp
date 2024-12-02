@@ -81,7 +81,7 @@ namespace Model
     ///@{
     /**
      * <p>Whether the task's elastic network interface receives a public IP address.
-     * The default value is <code>DISABLED</code>.</p>
+     * The default value is <code>ENABLED</code>.</p>
      */
     inline const AssignPublicIp& GetAssignPublicIp() const{ return m_assignPublicIp; }
     inline bool AssignPublicIpHasBeenSet() const { return m_assignPublicIpHasBeenSet; }

@@ -40,7 +40,8 @@ Component::Component() :
     m_tagsHasBeenSet(false),
     m_publisherHasBeenSet(false),
     m_obfuscate(false),
-    m_obfuscateHasBeenSet(false)
+    m_obfuscateHasBeenSet(false),
+    m_productCodesHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,16 @@ Component& Component::operator =(JsonView jsonValue)
     m_obfuscateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("productCodes"))
+  {
+    Aws::Utils::Array<JsonView> productCodesJsonList = jsonValue.GetArray("productCodes");
+    for(unsigned productCodesIndex = 0; productCodesIndex < productCodesJsonList.GetLength(); ++productCodesIndex)
+    {
+      m_productCodes.push_back(productCodesJsonList[productCodesIndex].AsObject());
+    }
+    m_productCodesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -312,6 +323,17 @@ JsonValue Component::Jsonize() const
   if(m_obfuscateHasBeenSet)
   {
    payload.WithBool("obfuscate", m_obfuscate);
+
+  }
+
+  if(m_productCodesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> productCodesJsonList(m_productCodes.size());
+   for(unsigned productCodesIndex = 0; productCodesIndex < productCodesJsonList.GetLength(); ++productCodesIndex)
+   {
+     productCodesJsonList[productCodesIndex].AsObject(m_productCodes[productCodesIndex].Jsonize());
+   }
+   payload.WithArray("productCodes", std::move(productCodesJsonList));
 
   }
 

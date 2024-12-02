@@ -44,7 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Amazon Resource Name (ARN) for the domain to view tags for.</p>
+     * <p>Amazon Resource Name (ARN) for the domain, data source, or application to
+     * view tags for.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     http,
-    https
+    https,
+    tcp
   };
 
 namespace VerifiedAccessEndpointProtocolMapper

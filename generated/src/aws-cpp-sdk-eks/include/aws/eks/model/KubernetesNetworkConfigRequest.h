@@ -7,6 +7,7 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/model/IpFamily.h>
+#include <aws/eks/model/ElasticLoadBalancing.h>
 #include <utility>
 
 namespace Aws
@@ -91,6 +92,20 @@ namespace Model
     inline KubernetesNetworkConfigRequest& WithIpFamily(const IpFamily& value) { SetIpFamily(value); return *this;}
     inline KubernetesNetworkConfigRequest& WithIpFamily(IpFamily&& value) { SetIpFamily(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Request to enable or disable the load balancing capability on your EKS Auto
+     * Mode cluster. For more information, see EKS Auto Mode load balancing capability
+     * in the EKS User Guide.</p>
+     */
+    inline const ElasticLoadBalancing& GetElasticLoadBalancing() const{ return m_elasticLoadBalancing; }
+    inline bool ElasticLoadBalancingHasBeenSet() const { return m_elasticLoadBalancingHasBeenSet; }
+    inline void SetElasticLoadBalancing(const ElasticLoadBalancing& value) { m_elasticLoadBalancingHasBeenSet = true; m_elasticLoadBalancing = value; }
+    inline void SetElasticLoadBalancing(ElasticLoadBalancing&& value) { m_elasticLoadBalancingHasBeenSet = true; m_elasticLoadBalancing = std::move(value); }
+    inline KubernetesNetworkConfigRequest& WithElasticLoadBalancing(const ElasticLoadBalancing& value) { SetElasticLoadBalancing(value); return *this;}
+    inline KubernetesNetworkConfigRequest& WithElasticLoadBalancing(ElasticLoadBalancing&& value) { SetElasticLoadBalancing(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_serviceIpv4Cidr;
@@ -98,6 +113,9 @@ namespace Model
 
     IpFamily m_ipFamily;
     bool m_ipFamilyHasBeenSet = false;
+
+    ElasticLoadBalancing m_elasticLoadBalancing;
+    bool m_elasticLoadBalancingHasBeenSet = false;
   };
 
 } // namespace Model

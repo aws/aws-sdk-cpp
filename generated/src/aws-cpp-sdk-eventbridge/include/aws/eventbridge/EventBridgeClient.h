@@ -220,8 +220,11 @@ namespace EventBridge
 
         /**
          * <p>Creates a connection. A connection defines the authorization type and
-         * credentials to use for authorization with an API destination HTTP
-         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * credentials to use for authorization with an API destination HTTP endpoint.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection.html">Connections
+         * for endpoint targets</a> in the <i>Amazon EventBridge User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnection">AWS
          * API Reference</a></p>
          */
@@ -1287,7 +1290,7 @@ namespace EventBridge
          * </i> </p> <p>PutEvents accepts the data in JSON format. For the JSON number
          * (integer) data type, the constraints are: a minimum value of
          * -9,223,372,036,854,775,808 and a maximum value of 9,223,372,036,854,775,807.</p>
-         *  <p>PutEvents will only process nested JSON up to 1100 levels deep.</p>
+         *  <p>PutEvents will only process nested JSON up to 1000 levels deep.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutEvents">AWS
          * API Reference</a></p>
@@ -1345,14 +1348,14 @@ namespace EventBridge
         /**
          * <p>Running <code>PutPermission</code> permits the specified Amazon Web Services
          * account or Amazon Web Services organization to put events to the specified
-         * <i>event bus</i>. Amazon EventBridge (CloudWatch Events) rules in your account
-         * are triggered by these events arriving to an event bus in your account. </p>
-         * <p>For another account to send events to your account, that external account
-         * must have an EventBridge rule with your account's event bus as a target.</p>
-         * <p>To enable multiple Amazon Web Services accounts to put events to your event
-         * bus, run <code>PutPermission</code> once for each of these accounts. Or, if all
-         * the accounts are members of the same Amazon Web Services organization, you can
-         * run <code>PutPermission</code> once specifying <code>Principal</code> as "*" and
+         * <i>event bus</i>. Amazon EventBridge rules in your account are triggered by
+         * these events arriving to an event bus in your account. </p> <p>For another
+         * account to send events to your account, that external account must have an
+         * EventBridge rule with your account's event bus as a target.</p> <p>To enable
+         * multiple Amazon Web Services accounts to put events to your event bus, run
+         * <code>PutPermission</code> once for each of these accounts. Or, if all the
+         * accounts are members of the same Amazon Web Services organization, you can run
+         * <code>PutPermission</code> once specifying <code>Principal</code> as "*" and
          * specifying the Amazon Web Services organization ID in <code>Condition</code>, to
          * grant permissions to all accounts in that organization.</p> <p>If you grant
          * permissions using an organization, then accounts in that organization must
@@ -1435,7 +1438,11 @@ namespace EventBridge
          * alerts you when charges exceed your specified limit. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing
-         * Your Costs with Budgets</a>.</p><p><h3>See Also:</h3>   <a
+         * Your Costs with Budgets</a>.</p> <p>To create a rule that filters for management
+         * events from Amazon Web Services services, see <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event-cloudtrail.html#eb-service-event-cloudtrail-management">Receiving
+         * read-only management events from Amazon Web Services services</a> in the
+         * <i>EventBridge User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutRule">AWS
          * API Reference</a></p>
          */
@@ -1726,8 +1733,7 @@ namespace EventBridge
 
         /**
          * <p>Removes one or more tags from the specified EventBridge resource. In Amazon
-         * EventBridge (CloudWatch Events), rules and event buses can be
-         * tagged.</p><p><h3>See Also:</h3>   <a
+         * EventBridge, rules and event buses can be tagged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UntagResource">AWS
          * API Reference</a></p>
          */

@@ -49,8 +49,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether there are additional results to retrieve. If there are no
-     * more results, the value is null.</p>
+     * <p>A token indicating there are more results available. If there are no more
+     * results, no token is included in the response.</p> <p>The value of
+     * <code>nextToken</code> is a unique pagination token for each page. To retrieve
+     * the next page of results, make the call again using the returned token. Keep all
+     * other arguments unchanged.</p> <p> Using an expired pagination token results in
+     * an <code>HTTP 400 InvalidToken</code> error.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

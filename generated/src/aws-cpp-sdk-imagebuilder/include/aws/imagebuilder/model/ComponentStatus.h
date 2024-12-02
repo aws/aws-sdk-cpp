@@ -16,7 +16,9 @@ namespace Model
   enum class ComponentStatus
   {
     NOT_SET,
-    DEPRECATED
+    DEPRECATED,
+    DISABLED,
+    ACTIVE
   };
 
 namespace ComponentStatusMapper

@@ -56,8 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the association was created, specified in ISO-8601
-     * format.</p>
+     * <p>The date and time that the association was created, in ISO-8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -97,8 +96,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the association was last updated, specified in
-     * ISO-8601 format.</p>
+     * <p>The date and time that the association was last updated, in ISO-8601
+     * format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }

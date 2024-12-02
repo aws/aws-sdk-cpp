@@ -19,7 +19,8 @@ using namespace Aws;
 
 GetEvaluationJobResult::GetEvaluationJobResult() : 
     m_status(EvaluationJobStatus::NOT_SET),
-    m_jobType(EvaluationJobType::NOT_SET)
+    m_jobType(EvaluationJobType::NOT_SET),
+    m_applicationType(ApplicationType::NOT_SET)
 {
 }
 
@@ -71,6 +72,12 @@ GetEvaluationJobResult& GetEvaluationJobResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("jobType"))
   {
     m_jobType = EvaluationJobTypeMapper::GetEvaluationJobTypeForName(jsonValue.GetString("jobType"));
+
+  }
+
+  if(jsonValue.ValueExists("applicationType"))
+  {
+    m_applicationType = ApplicationTypeMapper::GetApplicationTypeForName(jsonValue.GetString("applicationType"));
 
   }
 

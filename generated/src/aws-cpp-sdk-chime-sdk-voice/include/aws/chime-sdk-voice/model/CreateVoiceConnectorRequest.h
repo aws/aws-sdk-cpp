@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime-sdk-voice/model/VoiceConnectorAwsRegion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime-sdk-voice/model/VoiceConnectorIntegrationType.h>
 #include <aws/chime-sdk-voice/model/Tag.h>
 #include <utility>
 
@@ -85,6 +86,38 @@ namespace Model
     inline CreateVoiceConnectorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline CreateVoiceConnectorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The connectors for use with Amazon Connect.</p> <p>The following options are
+     * available:</p> <ul> <li> <p> <code>CONNECT_CALL_TRANSFER_CONNECTOR</code> -
+     * Enables enterprises to integrate Amazon Connect with other voice systems to
+     * directly transfer voice calls and metadata without using the public telephone
+     * network. They can use Amazon Connect telephony and Interactive Voice Response
+     * (IVR) with their existing voice systems to modernize the IVR experience of their
+     * existing contact center and their enterprise and branch voice systems.
+     * Additionally, enterprises migrating their contact center to Amazon Connect can
+     * start with Connect telephony and IVR for immediate modernization ahead of agent
+     * migration.</p> </li> <li> <p> <code>CONNECT_ANALYTICS_CONNECTOR</code> - Enables
+     * enterprises to integrate Amazon Connect with other voice systems for real-time
+     * and post-call analytics. They can use Amazon Connect Contact Lens with their
+     * existing voice systems to provides call recordings, conversational analytics
+     * (including contact transcript, sensitive data redaction, content categorization,
+     * theme detection, sentiment analysis, real-time alerts, and post-contact
+     * summary), and agent performance evaluations (including evaluation forms,
+     * automated evaluation, supervisor review) with a rich user experience to display,
+     * search and filter customer interactions, and programmatic access to data streams
+     * and the data lake. Additionally, enterprises migrating their contact center to
+     * Amazon Connect can start with Contact Lens analytics and performance insights
+     * ahead of agent migration.</p> </li> </ul>
+     */
+    inline const VoiceConnectorIntegrationType& GetIntegrationType() const{ return m_integrationType; }
+    inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
+    inline void SetIntegrationType(const VoiceConnectorIntegrationType& value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
+    inline void SetIntegrationType(VoiceConnectorIntegrationType&& value) { m_integrationTypeHasBeenSet = true; m_integrationType = std::move(value); }
+    inline CreateVoiceConnectorRequest& WithIntegrationType(const VoiceConnectorIntegrationType& value) { SetIntegrationType(value); return *this;}
+    inline CreateVoiceConnectorRequest& WithIntegrationType(VoiceConnectorIntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -98,6 +131,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    VoiceConnectorIntegrationType m_integrationType;
+    bool m_integrationTypeHasBeenSet = false;
   };
 
 } // namespace Model

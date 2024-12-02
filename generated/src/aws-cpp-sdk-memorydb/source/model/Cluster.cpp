@@ -23,6 +23,7 @@ Cluster::Cluster() :
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_pendingUpdatesHasBeenSet(false),
+    m_multiRegionClusterNameHasBeenSet(false),
     m_numberOfShards(0),
     m_numberOfShardsHasBeenSet(false),
     m_shardsHasBeenSet(false),
@@ -89,6 +90,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_pendingUpdates = jsonValue.GetObject("PendingUpdates");
 
     m_pendingUpdatesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MultiRegionClusterName"))
+  {
+    m_multiRegionClusterName = jsonValue.GetString("MultiRegionClusterName");
+
+    m_multiRegionClusterNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("NumberOfShards"))
@@ -286,6 +294,12 @@ JsonValue Cluster::Jsonize() const
   if(m_pendingUpdatesHasBeenSet)
   {
    payload.WithObject("PendingUpdates", m_pendingUpdates.Jsonize());
+
+  }
+
+  if(m_multiRegionClusterNameHasBeenSet)
+  {
+   payload.WithString("MultiRegionClusterName", m_multiRegionClusterName);
 
   }
 

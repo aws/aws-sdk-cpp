@@ -18,7 +18,8 @@ CreateVerifiedAccessInstanceRequest::CreateVerifiedAccessInstanceRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_fIPSEnabled(false),
-    m_fIPSEnabledHasBeenSet(false)
+    m_fIPSEnabledHasBeenSet(false),
+    m_cidrEndpointsCustomSubDomainHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,11 @@ Aws::String CreateVerifiedAccessInstanceRequest::SerializePayload() const
   if(m_fIPSEnabledHasBeenSet)
   {
     ss << "FIPSEnabled=" << std::boolalpha << m_fIPSEnabled << "&";
+  }
+
+  if(m_cidrEndpointsCustomSubDomainHasBeenSet)
+  {
+    ss << "CidrEndpointsCustomSubDomain=" << StringUtils::URLEncode(m_cidrEndpointsCustomSubDomain.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

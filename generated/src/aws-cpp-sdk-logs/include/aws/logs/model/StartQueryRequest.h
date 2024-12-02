@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
+#include <aws/logs/model/QueryLanguage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
@@ -37,7 +38,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The log group on which to perform the query.</p>
+     * <p>Specify the query language to use for this query. The options are Logs
+     * Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the
+     * query languages that CloudWatch Logs supports, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported
+     * query languages</a>.</p>
+     */
+    inline const QueryLanguage& GetQueryLanguage() const{ return m_queryLanguage; }
+    inline bool QueryLanguageHasBeenSet() const { return m_queryLanguageHasBeenSet; }
+    inline void SetQueryLanguage(const QueryLanguage& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = value; }
+    inline void SetQueryLanguage(QueryLanguage&& value) { m_queryLanguageHasBeenSet = true; m_queryLanguage = std::move(value); }
+    inline StartQueryRequest& WithQueryLanguage(const QueryLanguage& value) { SetQueryLanguage(value); return *this;}
+    inline StartQueryRequest& WithQueryLanguage(QueryLanguage&& value) { SetQueryLanguage(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The log group on which to perform the query.</p>  <p>A
+     * <code>StartQuery</code> operation must include exactly one of the following
+     * parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or
+     * <code>logGroupIdentifiers</code>. The exception is queries using the OpenSearch
+     * Service SQL query language, where you specify the log group names inside the
+     * <code>querystring</code> instead of here.</p> 
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
@@ -52,7 +74,12 @@ namespace Model
     ///@{
     /**
      * <p>The list of log groups to be queried. You can include up to 50 log
-     * groups.</p>
+     * groups.</p>  <p>A <code>StartQuery</code> operation must include exactly
+     * one of the following parameters: <code>logGroupName</code>,
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception
+     * is queries using the OpenSearch Service SQL query language, where you specify
+     * the log group names inside the <code>querystring</code> instead of here.</p>
+     * 
      */
     inline const Aws::Vector<Aws::String>& GetLogGroupNames() const{ return m_logGroupNames; }
     inline bool LogGroupNamesHasBeenSet() const { return m_logGroupNamesHasBeenSet; }
@@ -75,7 +102,9 @@ namespace Model
      * arn:aws:logs:<i>region</i>:<i>account-id</i>:log-group:<i>log_group_name</i>
      * Don't include an * at the end.</p> <p>A <code>StartQuery</code> operation must
      * include exactly one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. The exception
+     * is queries using the OpenSearch Service SQL query language, where you specify
+     * the log group names inside the <code>querystring</code> instead of here. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogGroupIdentifiers() const{ return m_logGroupIdentifiers; }
     inline bool LogGroupIdentifiersHasBeenSet() const { return m_logGroupIdentifiersHasBeenSet; }
@@ -140,6 +169,9 @@ namespace Model
     inline StartQueryRequest& WithLimit(int value) { SetLimit(value); return *this;}
     ///@}
   private:
+
+    QueryLanguage m_queryLanguage;
+    bool m_queryLanguageHasBeenSet = false;
 
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet = false;

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the client response parameters for the connection when OAuth is
-   * specified as the authorization type.</p><p><h3>See Also:</h3>   <a
+   * <p>The client response parameters for the connection when OAuth is specified as
+   * the authorization type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ConnectionOAuthClientResponseParameters">AWS
    * API Reference</a></p>
    */

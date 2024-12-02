@@ -42,7 +42,10 @@ Cluster::Cluster() :
     m_outpostConfigHasBeenSet(false),
     m_accessConfigHasBeenSet(false),
     m_upgradePolicyHasBeenSet(false),
-    m_zonalShiftConfigHasBeenSet(false)
+    m_zonalShiftConfigHasBeenSet(false),
+    m_remoteNetworkConfigHasBeenSet(false),
+    m_computeConfigHasBeenSet(false),
+    m_storageConfigHasBeenSet(false)
 {
 }
 
@@ -221,6 +224,27 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_zonalShiftConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("remoteNetworkConfig"))
+  {
+    m_remoteNetworkConfig = jsonValue.GetObject("remoteNetworkConfig");
+
+    m_remoteNetworkConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("computeConfig"))
+  {
+    m_computeConfig = jsonValue.GetObject("computeConfig");
+
+    m_computeConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageConfig"))
+  {
+    m_storageConfig = jsonValue.GetObject("storageConfig");
+
+    m_storageConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -371,6 +395,24 @@ JsonValue Cluster::Jsonize() const
   if(m_zonalShiftConfigHasBeenSet)
   {
    payload.WithObject("zonalShiftConfig", m_zonalShiftConfig.Jsonize());
+
+  }
+
+  if(m_remoteNetworkConfigHasBeenSet)
+  {
+   payload.WithObject("remoteNetworkConfig", m_remoteNetworkConfig.Jsonize());
+
+  }
+
+  if(m_computeConfigHasBeenSet)
+  {
+   payload.WithObject("computeConfig", m_computeConfig.Jsonize());
+
+  }
+
+  if(m_storageConfigHasBeenSet)
+  {
+   payload.WithObject("storageConfig", m_storageConfig.Jsonize());
 
   }
 

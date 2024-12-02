@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/ServiceNetworkLogType.h>
 #include <utility>
 
 namespace Aws
@@ -98,6 +99,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+     */
+    inline const ServiceNetworkLogType& GetServiceNetworkLogType() const{ return m_serviceNetworkLogType; }
+    inline void SetServiceNetworkLogType(const ServiceNetworkLogType& value) { m_serviceNetworkLogType = value; }
+    inline void SetServiceNetworkLogType(ServiceNetworkLogType&& value) { m_serviceNetworkLogType = std::move(value); }
+    inline CreateAccessLogSubscriptionResult& WithServiceNetworkLogType(const ServiceNetworkLogType& value) { SetServiceNetworkLogType(value); return *this;}
+    inline CreateAccessLogSubscriptionResult& WithServiceNetworkLogType(ServiceNetworkLogType&& value) { SetServiceNetworkLogType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -118,6 +130,8 @@ namespace Model
     Aws::String m_resourceArn;
 
     Aws::String m_resourceId;
+
+    ServiceNetworkLogType m_serviceNetworkLogType;
 
     Aws::String m_requestId;
   };

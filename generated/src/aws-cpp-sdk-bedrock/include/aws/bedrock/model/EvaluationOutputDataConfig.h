@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon S3 location where the results of your model evaluation job are
+   * <p>The Amazon S3 location where the results of your evaluation job are
    * saved.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/EvaluationOutputDataConfig">AWS
    * API Reference</a></p>
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon S3 URI where the results of model evaluation job are saved.</p>
+     * <p>The Amazon S3 URI where the results of the evaluation job are saved.</p>
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }

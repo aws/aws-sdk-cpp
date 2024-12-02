@@ -97,6 +97,15 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("EventTriggerNames"))
+  {
+    Aws::Utils::Array<JsonView> eventTriggerNamesJsonList = jsonValue.GetArray("EventTriggerNames");
+    for(unsigned eventTriggerNamesIndex = 0; eventTriggerNamesIndex < eventTriggerNamesJsonList.GetLength(); ++eventTriggerNamesIndex)
+    {
+      m_eventTriggerNames.push_back(eventTriggerNamesJsonList[eventTriggerNamesIndex].AsString());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

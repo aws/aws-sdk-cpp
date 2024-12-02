@@ -27,6 +27,8 @@ namespace Aws
         static const int DEAUTHORIZED_HASH = HashingUtils::HashString("DEAUTHORIZED");
         static const int AUTHORIZING_HASH = HashingUtils::HashString("AUTHORIZING");
         static const int DEAUTHORIZING_HASH = HashingUtils::HashString("DEAUTHORIZING");
+        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int FAILED_CONNECTIVITY_HASH = HashingUtils::HashString("FAILED_CONNECTIVITY");
 
 
         ConnectionState GetConnectionStateForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return ConnectionState::DEAUTHORIZING;
           }
+          else if (hashCode == ACTIVE_HASH)
+          {
+            return ConnectionState::ACTIVE;
+          }
+          else if (hashCode == FAILED_CONNECTIVITY_HASH)
+          {
+            return ConnectionState::FAILED_CONNECTIVITY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +100,10 @@ namespace Aws
             return "AUTHORIZING";
           case ConnectionState::DEAUTHORIZING:
             return "DEAUTHORIZING";
+          case ConnectionState::ACTIVE:
+            return "ACTIVE";
+          case ConnectionState::FAILED_CONNECTIVITY:
+            return "FAILED_CONNECTIVITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

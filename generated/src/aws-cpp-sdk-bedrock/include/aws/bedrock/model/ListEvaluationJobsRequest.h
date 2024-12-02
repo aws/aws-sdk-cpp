@@ -8,6 +8,7 @@
 #include <aws/bedrock/BedrockRequest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/bedrock/model/EvaluationJobStatus.h>
+#include <aws/bedrock/model/ApplicationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock/model/SortJobsBy.h>
 #include <aws/bedrock/model/SortOrder.h>
@@ -44,8 +45,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A filter that includes model evaluation jobs created after the time
-     * specified.</p>
+     * <p>A filter to only list evaluation jobs created after a specified time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
     inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
@@ -57,8 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A filter that includes model evaluation jobs created prior to the time
-     * specified.</p>
+     * <p>A filter to only list evaluation jobs created before a specified time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
     inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
@@ -70,7 +69,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Only return jobs where the status condition is met.</p>
+     * <p>A filter to only list evaluation jobs that are of a certain status.</p>
      */
     inline const EvaluationJobStatus& GetStatusEquals() const{ return m_statusEquals; }
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
@@ -82,7 +81,21 @@ namespace Model
 
     ///@{
     /**
-     * <p>Query parameter string for model evaluation job names.</p>
+     * <p>A filter to only list evaluation jobs that are either model evaluations or
+     * knowledge base evaluations.</p>
+     */
+    inline const ApplicationType& GetApplicationTypeEquals() const{ return m_applicationTypeEquals; }
+    inline bool ApplicationTypeEqualsHasBeenSet() const { return m_applicationTypeEqualsHasBeenSet; }
+    inline void SetApplicationTypeEquals(const ApplicationType& value) { m_applicationTypeEqualsHasBeenSet = true; m_applicationTypeEquals = value; }
+    inline void SetApplicationTypeEquals(ApplicationType&& value) { m_applicationTypeEqualsHasBeenSet = true; m_applicationTypeEquals = std::move(value); }
+    inline ListEvaluationJobsRequest& WithApplicationTypeEquals(const ApplicationType& value) { SetApplicationTypeEquals(value); return *this;}
+    inline ListEvaluationJobsRequest& WithApplicationTypeEquals(ApplicationType&& value) { SetApplicationTypeEquals(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A filter to only list evaluation jobs that contain a specified string in the
+     * job name.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
@@ -121,7 +134,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Allows you to sort model evaluation jobs by when they were created.</p>
+     * <p>Specifies a creation time to sort the list of evaluation jobs by when they
+     * were created.</p>
      */
     inline const SortJobsBy& GetSortBy() const{ return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
@@ -133,7 +147,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>How you want the order of jobs sorted.</p>
+     * <p>Specifies whether to sort the list of evaluation jobs by either ascending or
+     * descending order.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
@@ -152,6 +167,9 @@ namespace Model
 
     EvaluationJobStatus m_statusEquals;
     bool m_statusEqualsHasBeenSet = false;
+
+    ApplicationType m_applicationTypeEquals;
+    bool m_applicationTypeEqualsHasBeenSet = false;
 
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet = false;

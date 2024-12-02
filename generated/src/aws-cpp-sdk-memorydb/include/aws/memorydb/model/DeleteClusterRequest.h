@@ -50,6 +50,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the multi-Region cluster to be deleted.</p>
+     */
+    inline const Aws::String& GetMultiRegionClusterName() const{ return m_multiRegionClusterName; }
+    inline bool MultiRegionClusterNameHasBeenSet() const { return m_multiRegionClusterNameHasBeenSet; }
+    inline void SetMultiRegionClusterName(const Aws::String& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = value; }
+    inline void SetMultiRegionClusterName(Aws::String&& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = std::move(value); }
+    inline void SetMultiRegionClusterName(const char* value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName.assign(value); }
+    inline DeleteClusterRequest& WithMultiRegionClusterName(const Aws::String& value) { SetMultiRegionClusterName(value); return *this;}
+    inline DeleteClusterRequest& WithMultiRegionClusterName(Aws::String&& value) { SetMultiRegionClusterName(std::move(value)); return *this;}
+    inline DeleteClusterRequest& WithMultiRegionClusterName(const char* value) { SetMultiRegionClusterName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The user-supplied name of a final cluster snapshot. This is the unique name
      * that identifies the snapshot. MemoryDB creates the snapshot, and then deletes
      * the cluster immediately afterward.</p>
@@ -67,6 +81,9 @@ namespace Model
 
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet = false;
+
+    Aws::String m_multiRegionClusterName;
+    bool m_multiRegionClusterNameHasBeenSet = false;
 
     Aws::String m_finalSnapshotName;
     bool m_finalSnapshotNameHasBeenSet = false;

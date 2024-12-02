@@ -68,7 +68,8 @@ AwsSecurityFinding::AwsSecurityFinding() :
     m_sampleHasBeenSet(false),
     m_generatorDetailsHasBeenSet(false),
     m_processedAtHasBeenSet(false),
-    m_awsAccountNameHasBeenSet(false)
+    m_awsAccountNameHasBeenSet(false),
+    m_detectionHasBeenSet(false)
 {
 }
 
@@ -418,6 +419,13 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     m_awsAccountNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Detection"))
+  {
+    m_detection = jsonValue.GetObject("Detection");
+
+    m_detectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -733,6 +741,12 @@ JsonValue AwsSecurityFinding::Jsonize() const
   if(m_awsAccountNameHasBeenSet)
   {
    payload.WithString("AwsAccountName", m_awsAccountName);
+
+  }
+
+  if(m_detectionHasBeenSet)
+  {
+   payload.WithObject("Detection", m_detection.Jsonize());
 
   }
 

@@ -16,12 +16,13 @@ namespace Aws
 namespace MemoryDB
 {
   /**
-   * <p>MemoryDB for Redis is a fully managed, Redis-compatible, in-memory database
-   * that delivers ultra-fast performance and Multi-AZ durability for modern
-   * applications built using microservices architectures. MemoryDB stores the entire
-   * database in-memory, enabling low latency and high throughput data access. It is
-   * compatible with Redis, a popular open source data store, enabling you to
-   * leverage Redis’ flexible and friendly data structures, APIs, and commands.</p>
+   * <p>MemoryDB is a fully managed, Redis OSS-compatible, in-memory database that
+   * delivers ultra-fast performance and Multi-AZ durability for modern applications
+   * built using microservices architectures. MemoryDB stores the entire database
+   * in-memory, enabling low latency and high throughput data access. It is
+   * compatible with Redis OSS, a popular open source data store, enabling you to
+   * leverage Redis OSS’ flexible and friendly data structures, APIs, and
+   * commands.</p>
    */
   class AWS_MEMORYDB_API MemoryDBClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MemoryDBClient>
   {
@@ -188,6 +189,31 @@ namespace MemoryDB
         }
 
         /**
+         * <p>Creates a new multi-Region cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateMultiRegionCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMultiRegionClusterOutcome CreateMultiRegionCluster(const Model::CreateMultiRegionClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMultiRegionCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMultiRegionClusterRequestT = Model::CreateMultiRegionClusterRequest>
+        Model::CreateMultiRegionClusterOutcomeCallable CreateMultiRegionClusterCallable(const CreateMultiRegionClusterRequestT& request) const
+        {
+            return SubmitCallable(&MemoryDBClient::CreateMultiRegionCluster, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMultiRegionCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMultiRegionClusterRequestT = Model::CreateMultiRegionClusterRequest>
+        void CreateMultiRegionClusterAsync(const CreateMultiRegionClusterRequestT& request, const CreateMultiRegionClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MemoryDBClient::CreateMultiRegionCluster, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new MemoryDB parameter group. A parameter group is a collection of
          * parameters and their values that are applied to all of the nodes in any cluster.
          * For more information, see <a
@@ -331,7 +357,9 @@ namespace MemoryDB
 
         /**
          * <p>Deletes a cluster. It also deletes all associated nodes and node
-         * endpoints</p><p><h3>See Also:</h3>   <a
+         * endpoints.</p>  <p> <code>CreateSnapshot</code> permission is required to
+         * create a final snapshot. Without this permission, the API call will fail with an
+         * <code>Access Denied</code> exception.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteCluster">AWS
          * API Reference</a></p>
          */
@@ -353,6 +381,31 @@ namespace MemoryDB
         void DeleteClusterAsync(const DeleteClusterRequestT& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MemoryDBClient::DeleteCluster, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an existing multi-Region cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteMultiRegionCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMultiRegionClusterOutcome DeleteMultiRegionCluster(const Model::DeleteMultiRegionClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMultiRegionCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMultiRegionClusterRequestT = Model::DeleteMultiRegionClusterRequest>
+        Model::DeleteMultiRegionClusterOutcomeCallable DeleteMultiRegionClusterCallable(const DeleteMultiRegionClusterRequestT& request) const
+        {
+            return SubmitCallable(&MemoryDBClient::DeleteMultiRegionCluster, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMultiRegionCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMultiRegionClusterRequestT = Model::DeleteMultiRegionClusterRequest>
+        void DeleteMultiRegionClusterAsync(const DeleteMultiRegionClusterRequestT& request, const DeleteMultiRegionClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MemoryDBClient::DeleteMultiRegionCluster, request, handler, context);
         }
 
         /**
@@ -462,7 +515,7 @@ namespace MemoryDB
         }
 
         /**
-         * <p>Returns a list of ACLs</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of ACLs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeACLs">AWS
          * API Reference</a></p>
          */
@@ -514,8 +567,8 @@ namespace MemoryDB
         }
 
         /**
-         * <p>Returns a list of the available engine versions.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns a list of the available Redis OSS engine versions.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeEngineVersions">AWS
          * API Reference</a></p>
          */
@@ -566,6 +619,32 @@ namespace MemoryDB
         void DescribeEventsAsync(const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeEventsRequestT& request = {}) const
         {
             return SubmitAsync(&MemoryDBClient::DescribeEvents, request, handler, context);
+        }
+
+        /**
+         * <p>Returns details about one or more multi-Region clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionClusters">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMultiRegionClustersOutcome DescribeMultiRegionClusters(const Model::DescribeMultiRegionClustersRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeMultiRegionClusters that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMultiRegionClustersRequestT = Model::DescribeMultiRegionClustersRequest>
+        Model::DescribeMultiRegionClustersOutcomeCallable DescribeMultiRegionClustersCallable(const DescribeMultiRegionClustersRequestT& request = {}) const
+        {
+            return SubmitCallable(&MemoryDBClient::DescribeMultiRegionClusters, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMultiRegionClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMultiRegionClustersRequestT = Model::DescribeMultiRegionClustersRequest>
+        void DescribeMultiRegionClustersAsync(const DescribeMultiRegionClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeMultiRegionClustersRequestT& request = {}) const
+        {
+            return SubmitAsync(&MemoryDBClient::DescribeMultiRegionClusters, request, handler, context);
         }
 
         /**
@@ -673,7 +752,7 @@ namespace MemoryDB
         }
 
         /**
-         * <p>Returns details of the service updates</p><p><h3>See Also:</h3>   <a
+         * <p>Returns details of the service updates.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeServiceUpdates">AWS
          * API Reference</a></p>
          */
@@ -807,6 +886,32 @@ namespace MemoryDB
         }
 
         /**
+         * <p>Lists the allowed updates for a multi-Region cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListAllowedMultiRegionClusterUpdates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAllowedMultiRegionClusterUpdatesOutcome ListAllowedMultiRegionClusterUpdates(const Model::ListAllowedMultiRegionClusterUpdatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAllowedMultiRegionClusterUpdates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAllowedMultiRegionClusterUpdatesRequestT = Model::ListAllowedMultiRegionClusterUpdatesRequest>
+        Model::ListAllowedMultiRegionClusterUpdatesOutcomeCallable ListAllowedMultiRegionClusterUpdatesCallable(const ListAllowedMultiRegionClusterUpdatesRequestT& request) const
+        {
+            return SubmitCallable(&MemoryDBClient::ListAllowedMultiRegionClusterUpdates, request);
+        }
+
+        /**
+         * An Async wrapper for ListAllowedMultiRegionClusterUpdates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAllowedMultiRegionClusterUpdatesRequestT = Model::ListAllowedMultiRegionClusterUpdatesRequest>
+        void ListAllowedMultiRegionClusterUpdatesAsync(const ListAllowedMultiRegionClusterUpdatesRequestT& request, const ListAllowedMultiRegionClusterUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MemoryDBClient::ListAllowedMultiRegionClusterUpdates, request, handler, context);
+        }
+
+        /**
          * <p>Lists all available node types that you can scale to from your cluster's
          * current node type. When you use the UpdateCluster operation to scale your
          * cluster, the value of the NodeType parameter must be one of the node types
@@ -839,7 +944,7 @@ namespace MemoryDB
          * the key and value are case-sensitive. You can use tags to categorize and track
          * your MemoryDB resources. For more information, see <a
          * href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
-         * your MemoryDB resources</a> </p><p><h3>See Also:</h3>   <a
+         * your MemoryDB resources</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListTags">AWS
          * API Reference</a></p>
          */
@@ -955,7 +1060,8 @@ namespace MemoryDB
         }
 
         /**
-         * <p>Use this operation to remove tags on a resource</p><p><h3>See Also:</h3>   <a
+         * <p>Use this operation to remove tags on a resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1030,6 +1136,32 @@ namespace MemoryDB
         void UpdateClusterAsync(const UpdateClusterRequestT& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MemoryDBClient::UpdateCluster, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the configuration of an existing multi-Region cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateMultiRegionCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMultiRegionClusterOutcome UpdateMultiRegionCluster(const Model::UpdateMultiRegionClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMultiRegionCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateMultiRegionClusterRequestT = Model::UpdateMultiRegionClusterRequest>
+        Model::UpdateMultiRegionClusterOutcomeCallable UpdateMultiRegionClusterCallable(const UpdateMultiRegionClusterRequestT& request) const
+        {
+            return SubmitCallable(&MemoryDBClient::UpdateMultiRegionCluster, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateMultiRegionCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateMultiRegionClusterRequestT = Model::UpdateMultiRegionClusterRequest>
+        void UpdateMultiRegionClusterAsync(const UpdateMultiRegionClusterRequestT& request, const UpdateMultiRegionClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MemoryDBClient::UpdateMultiRegionCluster, request, handler, context);
         }
 
         /**

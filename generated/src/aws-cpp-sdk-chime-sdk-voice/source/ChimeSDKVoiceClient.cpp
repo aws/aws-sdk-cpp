@@ -40,6 +40,7 @@
 #include <aws/chime-sdk-voice/model/DeleteSipRuleRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorEmergencyCallingConfigurationRequest.h>
+#include <aws/chime-sdk-voice/model/DeleteVoiceConnectorExternalSystemsConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorGroupRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorOriginationRequest.h>
 #include <aws/chime-sdk-voice/model/DeleteVoiceConnectorProxyRequest.h>
@@ -61,6 +62,7 @@
 #include <aws/chime-sdk-voice/model/GetSpeakerSearchTaskRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorEmergencyCallingConfigurationRequest.h>
+#include <aws/chime-sdk-voice/model/GetVoiceConnectorExternalSystemsConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorGroupRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorLoggingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorOriginationRequest.h>
@@ -86,6 +88,7 @@
 #include <aws/chime-sdk-voice/model/ListVoiceProfilesRequest.h>
 #include <aws/chime-sdk-voice/model/PutSipMediaApplicationLoggingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorEmergencyCallingConfigurationRequest.h>
+#include <aws/chime-sdk-voice/model/PutVoiceConnectorExternalSystemsConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorLoggingConfigurationRequest.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorOriginationRequest.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorProxyRequest.h>
@@ -850,6 +853,40 @@ DeleteVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::De
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteVoiceConnectorExternalSystemsConfigurationOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorExternalSystemsConfiguration(const DeleteVoiceConnectorExternalSystemsConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorExternalSystemsConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVoiceConnectorExternalSystemsConfiguration", "Required field: VoiceConnectorId, is not set");
+    return DeleteVoiceConnectorExternalSystemsConfigurationOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteVoiceConnectorExternalSystemsConfiguration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteVoiceConnectorExternalSystemsConfigurationOutcome>(
+    [&]()-> DeleteVoiceConnectorExternalSystemsConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/external-systems-configuration");
+      return DeleteVoiceConnectorExternalSystemsConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteVoiceConnectorGroupOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorGroup(const DeleteVoiceConnectorGroupRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteVoiceConnectorGroup);
@@ -1555,6 +1592,40 @@ GetVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::GetVo
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/emergency-calling-configuration");
       return GetVoiceConnectorEmergencyCallingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetVoiceConnectorExternalSystemsConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConnectorExternalSystemsConfiguration(const GetVoiceConnectorExternalSystemsConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetVoiceConnectorExternalSystemsConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVoiceConnectorExternalSystemsConfiguration", "Required field: VoiceConnectorId, is not set");
+    return GetVoiceConnectorExternalSystemsConfigurationOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetVoiceConnectorExternalSystemsConfiguration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetVoiceConnectorExternalSystemsConfigurationOutcome>(
+    [&]()-> GetVoiceConnectorExternalSystemsConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/external-systems-configuration");
+      return GetVoiceConnectorExternalSystemsConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2351,6 +2422,40 @@ PutVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::PutVo
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/emergency-calling-configuration");
       return PutVoiceConnectorEmergencyCallingConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutVoiceConnectorExternalSystemsConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConnectorExternalSystemsConfiguration(const PutVoiceConnectorExternalSystemsConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(PutVoiceConnectorExternalSystemsConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutVoiceConnectorExternalSystemsConfiguration", "Required field: VoiceConnectorId, is not set");
+    return PutVoiceConnectorExternalSystemsConfigurationOutcome(Aws::Client::AWSError<ChimeSDKVoiceErrors>(ChimeSDKVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutVoiceConnectorExternalSystemsConfiguration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutVoiceConnectorExternalSystemsConfigurationOutcome>(
+    [&]()-> PutVoiceConnectorExternalSystemsConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutVoiceConnectorExternalSystemsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/voice-connectors/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVoiceConnectorId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/external-systems-configuration");
+      return PutVoiceConnectorExternalSystemsConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

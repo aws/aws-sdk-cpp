@@ -50,8 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the association was created, specified in ISO-8601
-     * format.</p>
+     * <p>The date and time that the association was created, in ISO-8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }

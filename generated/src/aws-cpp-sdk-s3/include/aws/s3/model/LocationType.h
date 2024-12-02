@@ -16,7 +16,8 @@ namespace Model
   enum class LocationType
   {
     NOT_SET,
-    AvailabilityZone
+    AvailabilityZone,
+    LocalZone
   };
 
 namespace LocationTypeMapper

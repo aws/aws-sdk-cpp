@@ -29,6 +29,8 @@ CreateVpcEndpointRequest::CreateVpcEndpointRequest() :
     m_privateDnsEnabledHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_subnetConfigurationsHasBeenSet(false),
+    m_serviceNetworkArnHasBeenSet(false),
+    m_resourceConfigurationArnHasBeenSet(false),
     m_serviceRegionHasBeenSet(false)
 {
 }
@@ -133,6 +135,16 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
       item.OutputToStream(ss, "SubnetConfiguration.", subnetConfigurationsCount, "");
       subnetConfigurationsCount++;
     }
+  }
+
+  if(m_serviceNetworkArnHasBeenSet)
+  {
+    ss << "ServiceNetworkArn=" << StringUtils::URLEncode(m_serviceNetworkArn.c_str()) << "&";
+  }
+
+  if(m_resourceConfigurationArnHasBeenSet)
+  {
+    ss << "ResourceConfigurationArn=" << StringUtils::URLEncode(m_resourceConfigurationArn.c_str()) << "&";
   }
 
   if(m_serviceRegionHasBeenSet)

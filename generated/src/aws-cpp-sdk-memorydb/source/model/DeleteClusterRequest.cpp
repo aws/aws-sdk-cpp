@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 DeleteClusterRequest::DeleteClusterRequest() : 
     m_clusterNameHasBeenSet(false),
+    m_multiRegionClusterNameHasBeenSet(false),
     m_finalSnapshotNameHasBeenSet(false)
 {
 }
@@ -25,6 +26,12 @@ Aws::String DeleteClusterRequest::SerializePayload() const
   if(m_clusterNameHasBeenSet)
   {
    payload.WithString("ClusterName", m_clusterName);
+
+  }
+
+  if(m_multiRegionClusterNameHasBeenSet)
+  {
+   payload.WithString("MultiRegionClusterName", m_multiRegionClusterName);
 
   }
 

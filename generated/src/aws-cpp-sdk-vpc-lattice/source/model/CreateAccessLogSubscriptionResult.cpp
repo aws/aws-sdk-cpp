@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAccessLogSubscriptionResult::CreateAccessLogSubscriptionResult()
+CreateAccessLogSubscriptionResult::CreateAccessLogSubscriptionResult() : 
+    m_serviceNetworkLogType(ServiceNetworkLogType::NOT_SET)
 {
 }
 
 CreateAccessLogSubscriptionResult::CreateAccessLogSubscriptionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : CreateAccessLogSubscriptionResult()
 {
   *this = result;
 }
@@ -56,6 +58,12 @@ CreateAccessLogSubscriptionResult& CreateAccessLogSubscriptionResult::operator =
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
+
+  }
+
+  if(jsonValue.ValueExists("serviceNetworkLogType"))
+  {
+    m_serviceNetworkLogType = ServiceNetworkLogTypeMapper::GetServiceNetworkLogTypeForName(jsonValue.GetString("serviceNetworkLogType"));
 
   }
 

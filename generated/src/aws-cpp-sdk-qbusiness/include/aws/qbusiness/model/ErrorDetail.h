@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a data source sync error.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Provides information about a Amazon Q Business request error.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ErrorDetail">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The message explaining the data source sync error.</p>
+     * <p>The message explaining the Amazon Q Business request error.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The code associated with the data source sync error.</p>
+     * <p>The code associated with the Amazon Q Business request error.</p>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }

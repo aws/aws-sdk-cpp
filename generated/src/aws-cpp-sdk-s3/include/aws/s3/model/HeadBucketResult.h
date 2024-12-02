@@ -48,9 +48,10 @@ namespace Model
     ///@{
     /**
      * <p>The name of the location where the bucket will be created.</p> <p>For
-     * directory buckets, the AZ ID of the Availability Zone where the bucket is
-     * created. An example AZ ID value is <code>usw2-az1</code>.</p>  <p>This
-     * functionality is only supported by directory buckets.</p> 
+     * directory buckets, the Zone ID of the Availability Zone or the Local Zone where
+     * the bucket is created. An example Zone ID value for an Availability Zone is
+     * <code>usw2-az1</code>.</p>  <p>This functionality is only supported by
+     * directory buckets.</p> 
      */
     inline const Aws::String& GetBucketLocationName() const{ return m_bucketLocationName; }
     inline void SetBucketLocationName(const Aws::String& value) { m_bucketLocationName = value; }

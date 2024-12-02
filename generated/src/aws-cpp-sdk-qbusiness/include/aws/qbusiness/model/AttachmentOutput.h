@@ -76,6 +76,34 @@ namespace Model
     inline AttachmentOutput& WithError(const ErrorDetail& value) { SetError(value); return *this;}
     inline AttachmentOutput& WithError(ErrorDetail&& value) { SetError(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the Amazon Q Business attachment.</p>
+     */
+    inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
+    inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
+    inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
+    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
+    inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
+    inline AttachmentOutput& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
+    inline AttachmentOutput& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
+    inline AttachmentOutput& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The unique identifier of the Amazon Q Business conversation.</p>
+     */
+    inline const Aws::String& GetConversationId() const{ return m_conversationId; }
+    inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
+    inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
+    inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
+    inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
+    inline AttachmentOutput& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
+    inline AttachmentOutput& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
+    inline AttachmentOutput& WithConversationId(const char* value) { SetConversationId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -86,6 +114,12 @@ namespace Model
 
     ErrorDetail m_error;
     bool m_errorHasBeenSet = false;
+
+    Aws::String m_attachmentId;
+    bool m_attachmentIdHasBeenSet = false;
+
+    Aws::String m_conversationId;
+    bool m_conversationIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1,0 +1,182 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/ec2/model/VerifiedAccessEndpointRdsOptions.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
+VerifiedAccessEndpointRdsOptions::VerifiedAccessEndpointRdsOptions() : 
+    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
+    m_protocolHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
+    m_rdsDbInstanceArnHasBeenSet(false),
+    m_rdsDbClusterArnHasBeenSet(false),
+    m_rdsDbProxyArnHasBeenSet(false),
+    m_rdsEndpointHasBeenSet(false),
+    m_subnetIdsHasBeenSet(false)
+{
+}
+
+VerifiedAccessEndpointRdsOptions::VerifiedAccessEndpointRdsOptions(const XmlNode& xmlNode)
+  : VerifiedAccessEndpointRdsOptions()
+{
+  *this = xmlNode;
+}
+
+VerifiedAccessEndpointRdsOptions& VerifiedAccessEndpointRdsOptions::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode protocolNode = resultNode.FirstChild("protocol");
+    if(!protocolNode.IsNull())
+    {
+      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocolHasBeenSet = true;
+    }
+    XmlNode portNode = resultNode.FirstChild("port");
+    if(!portNode.IsNull())
+    {
+      m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
+      m_portHasBeenSet = true;
+    }
+    XmlNode rdsDbInstanceArnNode = resultNode.FirstChild("rdsDbInstanceArn");
+    if(!rdsDbInstanceArnNode.IsNull())
+    {
+      m_rdsDbInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(rdsDbInstanceArnNode.GetText());
+      m_rdsDbInstanceArnHasBeenSet = true;
+    }
+    XmlNode rdsDbClusterArnNode = resultNode.FirstChild("rdsDbClusterArn");
+    if(!rdsDbClusterArnNode.IsNull())
+    {
+      m_rdsDbClusterArn = Aws::Utils::Xml::DecodeEscapedXmlText(rdsDbClusterArnNode.GetText());
+      m_rdsDbClusterArnHasBeenSet = true;
+    }
+    XmlNode rdsDbProxyArnNode = resultNode.FirstChild("rdsDbProxyArn");
+    if(!rdsDbProxyArnNode.IsNull())
+    {
+      m_rdsDbProxyArn = Aws::Utils::Xml::DecodeEscapedXmlText(rdsDbProxyArnNode.GetText());
+      m_rdsDbProxyArnHasBeenSet = true;
+    }
+    XmlNode rdsEndpointNode = resultNode.FirstChild("rdsEndpoint");
+    if(!rdsEndpointNode.IsNull())
+    {
+      m_rdsEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(rdsEndpointNode.GetText());
+      m_rdsEndpointHasBeenSet = true;
+    }
+    XmlNode subnetIdsNode = resultNode.FirstChild("subnetIdSet");
+    if(!subnetIdsNode.IsNull())
+    {
+      XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      while(!subnetIdsMember.IsNull())
+      {
+        m_subnetIds.push_back(subnetIdsMember.GetText());
+        subnetIdsMember = subnetIdsMember.NextNode("item");
+      }
+
+      m_subnetIdsHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void VerifiedAccessEndpointRdsOptions::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+{
+  if(m_protocolHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Protocol=" << VerifiedAccessEndpointProtocolMapper::GetNameForVerifiedAccessEndpointProtocol(m_protocol) << "&";
+  }
+
+  if(m_portHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Port=" << m_port << "&";
+  }
+
+  if(m_rdsDbInstanceArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RdsDbInstanceArn=" << StringUtils::URLEncode(m_rdsDbInstanceArn.c_str()) << "&";
+  }
+
+  if(m_rdsDbClusterArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RdsDbClusterArn=" << StringUtils::URLEncode(m_rdsDbClusterArn.c_str()) << "&";
+  }
+
+  if(m_rdsDbProxyArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RdsDbProxyArn=" << StringUtils::URLEncode(m_rdsDbProxyArn.c_str()) << "&";
+  }
+
+  if(m_rdsEndpointHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RdsEndpoint=" << StringUtils::URLEncode(m_rdsEndpoint.c_str()) << "&";
+  }
+
+  if(m_subnetIdsHasBeenSet)
+  {
+      unsigned subnetIdsIdx = 1;
+      for(auto& item : m_subnetIds)
+      {
+        oStream << location << index << locationValue << ".SubnetIdSet." << subnetIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+}
+
+void VerifiedAccessEndpointRdsOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_protocolHasBeenSet)
+  {
+      oStream << location << ".Protocol=" << VerifiedAccessEndpointProtocolMapper::GetNameForVerifiedAccessEndpointProtocol(m_protocol) << "&";
+  }
+  if(m_portHasBeenSet)
+  {
+      oStream << location << ".Port=" << m_port << "&";
+  }
+  if(m_rdsDbInstanceArnHasBeenSet)
+  {
+      oStream << location << ".RdsDbInstanceArn=" << StringUtils::URLEncode(m_rdsDbInstanceArn.c_str()) << "&";
+  }
+  if(m_rdsDbClusterArnHasBeenSet)
+  {
+      oStream << location << ".RdsDbClusterArn=" << StringUtils::URLEncode(m_rdsDbClusterArn.c_str()) << "&";
+  }
+  if(m_rdsDbProxyArnHasBeenSet)
+  {
+      oStream << location << ".RdsDbProxyArn=" << StringUtils::URLEncode(m_rdsDbProxyArn.c_str()) << "&";
+  }
+  if(m_rdsEndpointHasBeenSet)
+  {
+      oStream << location << ".RdsEndpoint=" << StringUtils::URLEncode(m_rdsEndpoint.c_str()) << "&";
+  }
+  if(m_subnetIdsHasBeenSet)
+  {
+      unsigned subnetIdsIdx = 1;
+      for(auto& item : m_subnetIds)
+      {
+        oStream << location << ".SubnetIdSet." << subnetIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+}
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

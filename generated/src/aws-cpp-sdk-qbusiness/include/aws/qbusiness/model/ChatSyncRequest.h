@@ -187,21 +187,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>The chat modes available to an Amazon Q Business end user.</p> <ul> <li> <p>
-     * <code>RETRIEVAL_MODE</code> - The default chat mode for an Amazon Q Business
-     * application. When this mode is enabled, Amazon Q Business generates responses
-     * only from data sources connected to an Amazon Q Business application.</p> </li>
-     * <li> <p> <code>CREATOR_MODE</code> - By selecting this mode, users can choose to
-     * generate responses only from the LLM knowledge, without consulting connected
-     * data sources, for a chat request.</p> </li> <li> <p> <code>PLUGIN_MODE</code> -
-     * By selecting this mode, users can choose to use plugins in chat.</p> </li> </ul>
-     * <p>For more information, see <a
+     * <p>The <code>chatMode</code> parameter determines the chat modes available to
+     * Amazon Q Business users:</p> <ul> <li> <p> <code>RETRIEVAL_MODE</code> - If you
+     * choose this mode, Amazon Q generates responses solely from the data sources
+     * connected and indexed by the application. If an answer is not found in the data
+     * sources or there are no data sources available, Amazon Q will respond with a
+     * "<i>No Answer Found</i>" message, unless LLM knowledge has been enabled. In that
+     * case, Amazon Q will generate a response from the LLM knowledge</p> </li> <li>
+     * <p> <code>CREATOR_MODE</code> - By selecting this mode, you can choose to
+     * generate responses only from the LLM knowledge. You can also attach files and
+     * have Amazon Q generate a response based on the data in those files. If the
+     * attached files do not contain an answer for the query, Amazon Q will
+     * automatically fall back to generating a response from the LLM knowledge.</p>
+     * </li> <li> <p> <code>PLUGIN_MODE</code> - By selecting this mode, users can
+     * choose to use plugins in chat to get their responses.</p> </li> </ul> 
+     * <p>If none of the modes are selected, Amazon Q will only respond using the
+     * information from the attached files.</p>  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/guardrails.html">Admin
      * controls and guardrails</a>, <a
      * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins.html">Plugins</a>,
      * and <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Conversation
-     * settings</a>.</p>
+     * href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/using-web-experience.html#chat-source-scope">Response
+     * sources</a>.</p>
      */
     inline const ChatMode& GetChatMode() const{ return m_chatMode; }
     inline bool ChatModeHasBeenSet() const { return m_chatModeHasBeenSet; }

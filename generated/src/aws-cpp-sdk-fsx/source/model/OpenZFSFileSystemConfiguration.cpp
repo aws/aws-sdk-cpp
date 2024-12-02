@@ -36,7 +36,8 @@ OpenZFSFileSystemConfiguration::OpenZFSFileSystemConfiguration() :
     m_preferredSubnetIdHasBeenSet(false),
     m_endpointIpAddressRangeHasBeenSet(false),
     m_routeTableIdsHasBeenSet(false),
-    m_endpointIpAddressHasBeenSet(false)
+    m_endpointIpAddressHasBeenSet(false),
+    m_readCacheConfigurationHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,13 @@ OpenZFSFileSystemConfiguration& OpenZFSFileSystemConfiguration::operator =(JsonV
     m_endpointIpAddressHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReadCacheConfiguration"))
+  {
+    m_readCacheConfiguration = jsonValue.GetObject("ReadCacheConfiguration");
+
+    m_readCacheConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -228,6 +236,12 @@ JsonValue OpenZFSFileSystemConfiguration::Jsonize() const
   if(m_endpointIpAddressHasBeenSet)
   {
    payload.WithString("EndpointIpAddress", m_endpointIpAddress);
+
+  }
+
+  if(m_readCacheConfigurationHasBeenSet)
+  {
+   payload.WithObject("ReadCacheConfiguration", m_readCacheConfiguration.Jsonize());
 
   }
 

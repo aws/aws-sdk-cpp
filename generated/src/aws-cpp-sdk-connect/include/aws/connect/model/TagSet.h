@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The tag key in the tagSet.</p>
+     * <p>The tag key in the TagSet.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

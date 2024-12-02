@@ -22,7 +22,8 @@ ConnectionAuthResponseParameters::ConnectionAuthResponseParameters() :
     m_basicAuthParametersHasBeenSet(false),
     m_oAuthParametersHasBeenSet(false),
     m_apiKeyAuthParametersHasBeenSet(false),
-    m_invocationHttpParametersHasBeenSet(false)
+    m_invocationHttpParametersHasBeenSet(false),
+    m_connectivityParametersHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,13 @@ ConnectionAuthResponseParameters& ConnectionAuthResponseParameters::operator =(J
     m_invocationHttpParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConnectivityParameters"))
+  {
+    m_connectivityParameters = jsonValue.GetObject("ConnectivityParameters");
+
+    m_connectivityParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +98,12 @@ JsonValue ConnectionAuthResponseParameters::Jsonize() const
   if(m_invocationHttpParametersHasBeenSet)
   {
    payload.WithObject("InvocationHttpParameters", m_invocationHttpParameters.Jsonize());
+
+  }
+
+  if(m_connectivityParametersHasBeenSet)
+  {
+   payload.WithObject("ConnectivityParameters", m_connectivityParameters.Jsonize());
 
   }
 

@@ -19,7 +19,8 @@ namespace Model
 {
 
 Source::Source() : 
-    m_customerProfilesSegmentArnHasBeenSet(false)
+    m_customerProfilesSegmentArnHasBeenSet(false),
+    m_eventTriggerHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ Source& Source::operator =(JsonView jsonValue)
     m_customerProfilesSegmentArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("eventTrigger"))
+  {
+    m_eventTrigger = jsonValue.GetObject("eventTrigger");
+
+    m_eventTriggerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue Source::Jsonize() const
   if(m_customerProfilesSegmentArnHasBeenSet)
   {
    payload.WithString("customerProfilesSegmentArn", m_customerProfilesSegmentArn);
+
+  }
+
+  if(m_eventTriggerHasBeenSet)
+  {
+   payload.WithObject("eventTrigger", m_eventTrigger.Jsonize());
 
   }
 

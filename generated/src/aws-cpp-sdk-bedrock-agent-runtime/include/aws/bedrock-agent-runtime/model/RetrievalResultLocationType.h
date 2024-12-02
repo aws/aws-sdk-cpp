@@ -20,7 +20,8 @@ namespace Model
     WEB,
     CONFLUENCE,
     SALESFORCE,
-    SHAREPOINT
+    SHAREPOINT,
+    CUSTOM
   };
 
 namespace RetrievalResultLocationTypeMapper

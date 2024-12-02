@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/qbusiness/model/IndexType.h>
 #include <aws/qbusiness/model/IndexStatus.h>
+#include <aws/qbusiness/model/IndexType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/IndexCapacityConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -82,17 +82,6 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of index attached to your Amazon Q Business application.</p>
-     */
-    inline const IndexType& GetType() const{ return m_type; }
-    inline void SetType(const IndexType& value) { m_type = value; }
-    inline void SetType(IndexType&& value) { m_type = std::move(value); }
-    inline GetIndexResult& WithType(const IndexType& value) { SetType(value); return *this;}
-    inline GetIndexResult& WithType(IndexType&& value) { SetType(std::move(value)); return *this;}
-    ///@}
-
-    ///@{
-    /**
      * <p> The Amazon Resource Name (ARN) of the Amazon Q Business index. </p>
      */
     inline const Aws::String& GetIndexArn() const{ return m_indexArn; }
@@ -116,6 +105,17 @@ namespace Model
     inline void SetStatus(IndexStatus&& value) { m_status = std::move(value); }
     inline GetIndexResult& WithStatus(const IndexStatus& value) { SetStatus(value); return *this;}
     inline GetIndexResult& WithStatus(IndexStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of index attached to your Amazon Q Business application.</p>
+     */
+    inline const IndexType& GetType() const{ return m_type; }
+    inline void SetType(const IndexType& value) { m_type = value; }
+    inline void SetType(IndexType&& value) { m_type = std::move(value); }
+    inline GetIndexResult& WithType(const IndexType& value) { SetType(value); return *this;}
+    inline GetIndexResult& WithType(IndexType&& value) { SetType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,11 +222,11 @@ namespace Model
 
     Aws::String m_displayName;
 
-    IndexType m_type;
-
     Aws::String m_indexArn;
 
     IndexStatus m_status;
+
+    IndexType m_type;
 
     Aws::String m_description;
 

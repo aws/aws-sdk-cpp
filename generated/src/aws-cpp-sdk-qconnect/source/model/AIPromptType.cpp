@@ -23,6 +23,8 @@ namespace Aws
         static const int ANSWER_GENERATION_HASH = HashingUtils::HashString("ANSWER_GENERATION");
         static const int INTENT_LABELING_GENERATION_HASH = HashingUtils::HashString("INTENT_LABELING_GENERATION");
         static const int QUERY_REFORMULATION_HASH = HashingUtils::HashString("QUERY_REFORMULATION");
+        static const int SELF_SERVICE_PRE_PROCESSING_HASH = HashingUtils::HashString("SELF_SERVICE_PRE_PROCESSING");
+        static const int SELF_SERVICE_ANSWER_GENERATION_HASH = HashingUtils::HashString("SELF_SERVICE_ANSWER_GENERATION");
 
 
         AIPromptType GetAIPromptTypeForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == QUERY_REFORMULATION_HASH)
           {
             return AIPromptType::QUERY_REFORMULATION;
+          }
+          else if (hashCode == SELF_SERVICE_PRE_PROCESSING_HASH)
+          {
+            return AIPromptType::SELF_SERVICE_PRE_PROCESSING;
+          }
+          else if (hashCode == SELF_SERVICE_ANSWER_GENERATION_HASH)
+          {
+            return AIPromptType::SELF_SERVICE_ANSWER_GENERATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +72,10 @@ namespace Aws
             return "INTENT_LABELING_GENERATION";
           case AIPromptType::QUERY_REFORMULATION:
             return "QUERY_REFORMULATION";
+          case AIPromptType::SELF_SERVICE_PRE_PROCESSING:
+            return "SELF_SERVICE_PRE_PROCESSING";
+          case AIPromptType::SELF_SERVICE_ANSWER_GENERATION:
+            return "SELF_SERVICE_ANSWER_GENERATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

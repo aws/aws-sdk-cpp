@@ -28,7 +28,11 @@ VpcBlockPublicAccessOptions::VpcBlockPublicAccessOptions() :
     m_internetGatewayBlockMode(InternetGatewayBlockMode::NOT_SET),
     m_internetGatewayBlockModeHasBeenSet(false),
     m_reasonHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false)
+    m_lastUpdateTimestampHasBeenSet(false),
+    m_managedBy(ManagedBy::NOT_SET),
+    m_managedByHasBeenSet(false),
+    m_exclusionsAllowed(VpcBlockPublicAccessExclusionsAllowed::NOT_SET),
+    m_exclusionsAllowedHasBeenSet(false)
 {
 }
 
@@ -80,6 +84,18 @@ VpcBlockPublicAccessOptions& VpcBlockPublicAccessOptions::operator =(const XmlNo
       m_lastUpdateTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdateTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUpdateTimestampHasBeenSet = true;
     }
+    XmlNode managedByNode = resultNode.FirstChild("managedBy");
+    if(!managedByNode.IsNull())
+    {
+      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()).c_str());
+      m_managedByHasBeenSet = true;
+    }
+    XmlNode exclusionsAllowedNode = resultNode.FirstChild("exclusionsAllowed");
+    if(!exclusionsAllowedNode.IsNull())
+    {
+      m_exclusionsAllowed = VpcBlockPublicAccessExclusionsAllowedMapper::GetVpcBlockPublicAccessExclusionsAllowedForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(exclusionsAllowedNode.GetText()).c_str()).c_str());
+      m_exclusionsAllowedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -117,6 +133,16 @@ void VpcBlockPublicAccessOptions::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << index << locationValue << ".LastUpdateTimestamp=" << StringUtils::URLEncode(m_lastUpdateTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_managedByHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ManagedBy=" << ManagedByMapper::GetNameForManagedBy(m_managedBy) << "&";
+  }
+
+  if(m_exclusionsAllowedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExclusionsAllowed=" << VpcBlockPublicAccessExclusionsAllowedMapper::GetNameForVpcBlockPublicAccessExclusionsAllowed(m_exclusionsAllowed) << "&";
+  }
+
 }
 
 void VpcBlockPublicAccessOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -144,6 +170,14 @@ void VpcBlockPublicAccessOptions::OutputToStream(Aws::OStream& oStream, const ch
   if(m_lastUpdateTimestampHasBeenSet)
   {
       oStream << location << ".LastUpdateTimestamp=" << StringUtils::URLEncode(m_lastUpdateTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_managedByHasBeenSet)
+  {
+      oStream << location << ".ManagedBy=" << ManagedByMapper::GetNameForManagedBy(m_managedBy) << "&";
+  }
+  if(m_exclusionsAllowedHasBeenSet)
+  {
+      oStream << location << ".ExclusionsAllowed=" << VpcBlockPublicAccessExclusionsAllowedMapper::GetNameForVpcBlockPublicAccessExclusionsAllowed(m_exclusionsAllowed) << "&";
   }
 }
 

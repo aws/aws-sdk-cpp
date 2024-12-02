@@ -45,6 +45,11 @@ VpcEndpoint::VpcEndpoint() :
     m_tagsHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_lastErrorHasBeenSet(false),
+    m_ipv4PrefixesHasBeenSet(false),
+    m_ipv6PrefixesHasBeenSet(false),
+    m_failureReasonHasBeenSet(false),
+    m_serviceNetworkArnHasBeenSet(false),
+    m_resourceConfigurationArnHasBeenSet(false),
     m_serviceRegionHasBeenSet(false)
 {
 }
@@ -211,6 +216,48 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
       m_lastError = lastErrorNode;
       m_lastErrorHasBeenSet = true;
     }
+    XmlNode ipv4PrefixesNode = resultNode.FirstChild("ipv4PrefixSet");
+    if(!ipv4PrefixesNode.IsNull())
+    {
+      XmlNode ipv4PrefixesMember = ipv4PrefixesNode.FirstChild("item");
+      while(!ipv4PrefixesMember.IsNull())
+      {
+        m_ipv4Prefixes.push_back(ipv4PrefixesMember);
+        ipv4PrefixesMember = ipv4PrefixesMember.NextNode("item");
+      }
+
+      m_ipv4PrefixesHasBeenSet = true;
+    }
+    XmlNode ipv6PrefixesNode = resultNode.FirstChild("ipv6PrefixSet");
+    if(!ipv6PrefixesNode.IsNull())
+    {
+      XmlNode ipv6PrefixesMember = ipv6PrefixesNode.FirstChild("item");
+      while(!ipv6PrefixesMember.IsNull())
+      {
+        m_ipv6Prefixes.push_back(ipv6PrefixesMember);
+        ipv6PrefixesMember = ipv6PrefixesMember.NextNode("item");
+      }
+
+      m_ipv6PrefixesHasBeenSet = true;
+    }
+    XmlNode failureReasonNode = resultNode.FirstChild("failureReason");
+    if(!failureReasonNode.IsNull())
+    {
+      m_failureReason = Aws::Utils::Xml::DecodeEscapedXmlText(failureReasonNode.GetText());
+      m_failureReasonHasBeenSet = true;
+    }
+    XmlNode serviceNetworkArnNode = resultNode.FirstChild("serviceNetworkArn");
+    if(!serviceNetworkArnNode.IsNull())
+    {
+      m_serviceNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNetworkArnNode.GetText());
+      m_serviceNetworkArnHasBeenSet = true;
+    }
+    XmlNode resourceConfigurationArnNode = resultNode.FirstChild("resourceConfigurationArn");
+    if(!resourceConfigurationArnNode.IsNull())
+    {
+      m_resourceConfigurationArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceConfigurationArnNode.GetText());
+      m_resourceConfigurationArnHasBeenSet = true;
+    }
     XmlNode serviceRegionNode = resultNode.FirstChild("serviceRegion");
     if(!serviceRegionNode.IsNull())
     {
@@ -353,6 +400,43 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
       m_lastError.OutputToStream(oStream, lastErrorLocationAndMemberSs.str().c_str());
   }
 
+  if(m_ipv4PrefixesHasBeenSet)
+  {
+      unsigned ipv4PrefixesIdx = 1;
+      for(auto& item : m_ipv4Prefixes)
+      {
+        Aws::StringStream ipv4PrefixesSs;
+        ipv4PrefixesSs << location << index << locationValue << ".Ipv4PrefixSet." << ipv4PrefixesIdx++;
+        item.OutputToStream(oStream, ipv4PrefixesSs.str().c_str());
+      }
+  }
+
+  if(m_ipv6PrefixesHasBeenSet)
+  {
+      unsigned ipv6PrefixesIdx = 1;
+      for(auto& item : m_ipv6Prefixes)
+      {
+        Aws::StringStream ipv6PrefixesSs;
+        ipv6PrefixesSs << location << index << locationValue << ".Ipv6PrefixSet." << ipv6PrefixesIdx++;
+        item.OutputToStream(oStream, ipv6PrefixesSs.str().c_str());
+      }
+  }
+
+  if(m_failureReasonHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FailureReason=" << StringUtils::URLEncode(m_failureReason.c_str()) << "&";
+  }
+
+  if(m_serviceNetworkArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceNetworkArn=" << StringUtils::URLEncode(m_serviceNetworkArn.c_str()) << "&";
+  }
+
+  if(m_resourceConfigurationArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResourceConfigurationArn=" << StringUtils::URLEncode(m_resourceConfigurationArn.c_str()) << "&";
+  }
+
   if(m_serviceRegionHasBeenSet)
   {
       oStream << location << index << locationValue << ".ServiceRegion=" << StringUtils::URLEncode(m_serviceRegion.c_str()) << "&";
@@ -471,6 +555,38 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
       Aws::String lastErrorLocationAndMember(location);
       lastErrorLocationAndMember += ".LastError";
       m_lastError.OutputToStream(oStream, lastErrorLocationAndMember.c_str());
+  }
+  if(m_ipv4PrefixesHasBeenSet)
+  {
+      unsigned ipv4PrefixesIdx = 1;
+      for(auto& item : m_ipv4Prefixes)
+      {
+        Aws::StringStream ipv4PrefixesSs;
+        ipv4PrefixesSs << location <<  ".Ipv4PrefixSet." << ipv4PrefixesIdx++;
+        item.OutputToStream(oStream, ipv4PrefixesSs.str().c_str());
+      }
+  }
+  if(m_ipv6PrefixesHasBeenSet)
+  {
+      unsigned ipv6PrefixesIdx = 1;
+      for(auto& item : m_ipv6Prefixes)
+      {
+        Aws::StringStream ipv6PrefixesSs;
+        ipv6PrefixesSs << location <<  ".Ipv6PrefixSet." << ipv6PrefixesIdx++;
+        item.OutputToStream(oStream, ipv6PrefixesSs.str().c_str());
+      }
+  }
+  if(m_failureReasonHasBeenSet)
+  {
+      oStream << location << ".FailureReason=" << StringUtils::URLEncode(m_failureReason.c_str()) << "&";
+  }
+  if(m_serviceNetworkArnHasBeenSet)
+  {
+      oStream << location << ".ServiceNetworkArn=" << StringUtils::URLEncode(m_serviceNetworkArn.c_str()) << "&";
+  }
+  if(m_resourceConfigurationArnHasBeenSet)
+  {
+      oStream << location << ".ResourceConfigurationArn=" << StringUtils::URLEncode(m_resourceConfigurationArn.c_str()) << "&";
   }
   if(m_serviceRegionHasBeenSet)
   {

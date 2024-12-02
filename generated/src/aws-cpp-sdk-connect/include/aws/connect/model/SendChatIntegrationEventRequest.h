@@ -54,8 +54,9 @@ namespace Model
     /**
      * <p>Chat system identifier, used in part to uniquely identify chat. This is
      * associated with the Amazon Connect instance and flow to be used to start chats.
-     * For SMS, this is the phone number destination of inbound SMS messages
-     * represented by an Amazon Pinpoint phone number ARN.</p>
+     * For Server Migration Service, this is the phone number destination of inbound
+     * Server Migration Service messages represented by an Amazon Web Services End User
+     * Messaging phone number ARN.</p>
      */
     inline const Aws::String& GetDestinationId() const{ return m_destinationId; }
     inline bool DestinationIdHasBeenSet() const { return m_destinationIdHasBeenSet; }
@@ -70,7 +71,7 @@ namespace Model
     ///@{
     /**
      * <p>Classification of a channel. This is used in part to uniquely identify chat.
-     * </p> <p>Valid value: <code>["connect:sms"]</code> </p>
+     * </p> <p>Valid value: <code>["connect:sms", connect:"WhatsApp"]</code> </p>
      */
     inline const Aws::String& GetSubtype() const{ return m_subtype; }
     inline bool SubtypeHasBeenSet() const { return m_subtypeHasBeenSet; }

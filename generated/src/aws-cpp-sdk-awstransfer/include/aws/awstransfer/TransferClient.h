@@ -272,6 +272,32 @@ namespace Transfer
         }
 
         /**
+         * <p>Creates a web app based on specified parameters, and returns the ID for the
+         * new web app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWebApp">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWebAppOutcome CreateWebApp(const Model::CreateWebAppRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWebApp that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateWebAppRequestT = Model::CreateWebAppRequest>
+        Model::CreateWebAppOutcomeCallable CreateWebAppCallable(const CreateWebAppRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::CreateWebApp, request);
+        }
+
+        /**
+         * An Async wrapper for CreateWebApp that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateWebAppRequestT = Model::CreateWebAppRequest>
+        void CreateWebAppAsync(const CreateWebAppRequestT& request, const CreateWebAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::CreateWebApp, request, handler, context);
+        }
+
+        /**
          * <p> Allows you to create a workflow with specified steps and step details the
          * workflow invokes after file transfer completes. After creating a workflow, you
          * can associate the workflow created with any transfer servers by specifying the
@@ -533,6 +559,57 @@ namespace Transfer
         void DeleteUserAsync(const DeleteUserRequestT& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TransferClient::DeleteUser, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified web app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebApp">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWebAppOutcome DeleteWebApp(const Model::DeleteWebAppRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWebApp that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteWebAppRequestT = Model::DeleteWebAppRequest>
+        Model::DeleteWebAppOutcomeCallable DeleteWebAppCallable(const DeleteWebAppRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::DeleteWebApp, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteWebApp that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteWebAppRequestT = Model::DeleteWebAppRequest>
+        void DeleteWebAppAsync(const DeleteWebAppRequestT& request, const DeleteWebAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::DeleteWebApp, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the <code>WebAppCustomization</code> object that corresponds to the
+         * web app ID specified.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebAppCustomization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWebAppCustomizationOutcome DeleteWebAppCustomization(const Model::DeleteWebAppCustomizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWebAppCustomization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteWebAppCustomizationRequestT = Model::DeleteWebAppCustomizationRequest>
+        Model::DeleteWebAppCustomizationOutcomeCallable DeleteWebAppCustomizationCallable(const DeleteWebAppCustomizationRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::DeleteWebAppCustomization, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteWebAppCustomization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteWebAppCustomizationRequestT = Model::DeleteWebAppCustomizationRequest>
+        void DeleteWebAppCustomizationAsync(const DeleteWebAppCustomizationRequestT& request, const DeleteWebAppCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::DeleteWebAppCustomization, request, handler, context);
         }
 
         /**
@@ -835,6 +912,58 @@ namespace Transfer
         void DescribeUserAsync(const DescribeUserRequestT& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TransferClient::DescribeUser, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the web app that's identified by
+         * <code>WebAppId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebApp">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWebAppOutcome DescribeWebApp(const Model::DescribeWebAppRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeWebApp that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeWebAppRequestT = Model::DescribeWebAppRequest>
+        Model::DescribeWebAppOutcomeCallable DescribeWebAppCallable(const DescribeWebAppRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::DescribeWebApp, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeWebApp that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeWebAppRequestT = Model::DescribeWebAppRequest>
+        void DescribeWebAppAsync(const DescribeWebAppRequestT& request, const DescribeWebAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::DescribeWebApp, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the web app customization object that's identified by
+         * <code>WebAppId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebAppCustomization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWebAppCustomizationOutcome DescribeWebAppCustomization(const Model::DescribeWebAppCustomizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeWebAppCustomization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeWebAppCustomizationRequestT = Model::DescribeWebAppCustomizationRequest>
+        Model::DescribeWebAppCustomizationOutcomeCallable DescribeWebAppCustomizationCallable(const DescribeWebAppCustomizationRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::DescribeWebAppCustomization, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeWebAppCustomization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeWebAppCustomizationRequestT = Model::DescribeWebAppCustomizationRequest>
+        void DescribeWebAppCustomizationAsync(const DescribeWebAppCustomizationRequestT& request, const DescribeWebAppCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::DescribeWebAppCustomization, request, handler, context);
         }
 
         /**
@@ -1274,6 +1403,32 @@ namespace Transfer
         void ListUsersAsync(const ListUsersRequestT& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TransferClient::ListUsers, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all web apps associated with your Amazon Web Services account for your
+         * current region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWebApps">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWebAppsOutcome ListWebApps(const Model::ListWebAppsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListWebApps that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListWebAppsRequestT = Model::ListWebAppsRequest>
+        Model::ListWebAppsOutcomeCallable ListWebAppsCallable(const ListWebAppsRequestT& request = {}) const
+        {
+            return SubmitCallable(&TransferClient::ListWebApps, request);
+        }
+
+        /**
+         * An Async wrapper for ListWebApps that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListWebAppsRequestT = Model::ListWebAppsRequest>
+        void ListWebAppsAsync(const ListWebAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListWebAppsRequestT& request = {}) const
+        {
+            return SubmitAsync(&TransferClient::ListWebApps, request, handler, context);
         }
 
         /**
@@ -1851,6 +2006,58 @@ namespace Transfer
         void UpdateUserAsync(const UpdateUserRequestT& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&TransferClient::UpdateUser, request, handler, context);
+        }
+
+        /**
+         * <p>Assigns new properties to a web app. You can modify the access point,
+         * identity provider details, and the web app units.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebApp">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateWebAppOutcome UpdateWebApp(const Model::UpdateWebAppRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateWebApp that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateWebAppRequestT = Model::UpdateWebAppRequest>
+        Model::UpdateWebAppOutcomeCallable UpdateWebAppCallable(const UpdateWebAppRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::UpdateWebApp, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateWebApp that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateWebAppRequestT = Model::UpdateWebAppRequest>
+        void UpdateWebAppAsync(const UpdateWebAppRequestT& request, const UpdateWebAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::UpdateWebApp, request, handler, context);
+        }
+
+        /**
+         * <p>Assigns new customization properties to a web app. You can modify the icon
+         * file, logo file, and title.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebAppCustomization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateWebAppCustomizationOutcome UpdateWebAppCustomization(const Model::UpdateWebAppCustomizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateWebAppCustomization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateWebAppCustomizationRequestT = Model::UpdateWebAppCustomizationRequest>
+        Model::UpdateWebAppCustomizationOutcomeCallable UpdateWebAppCustomizationCallable(const UpdateWebAppCustomizationRequestT& request) const
+        {
+            return SubmitCallable(&TransferClient::UpdateWebAppCustomization, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateWebAppCustomization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateWebAppCustomizationRequestT = Model::UpdateWebAppCustomizationRequest>
+        void UpdateWebAppCustomizationAsync(const UpdateWebAppCustomizationRequestT& request, const UpdateWebAppCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TransferClient::UpdateWebAppCustomization, request, handler, context);
         }
 
 

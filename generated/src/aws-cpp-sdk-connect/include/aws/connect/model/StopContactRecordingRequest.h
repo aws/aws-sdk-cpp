@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connect/model/ContactRecordingType.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +77,18 @@ namespace Model
     inline StopContactRecordingRequest& WithInitialContactId(Aws::String&& value) { SetInitialContactId(std::move(value)); return *this;}
     inline StopContactRecordingRequest& WithInitialContactId(const char* value) { SetInitialContactId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of recording being operated on.</p>
+     */
+    inline const ContactRecordingType& GetContactRecordingType() const{ return m_contactRecordingType; }
+    inline bool ContactRecordingTypeHasBeenSet() const { return m_contactRecordingTypeHasBeenSet; }
+    inline void SetContactRecordingType(const ContactRecordingType& value) { m_contactRecordingTypeHasBeenSet = true; m_contactRecordingType = value; }
+    inline void SetContactRecordingType(ContactRecordingType&& value) { m_contactRecordingTypeHasBeenSet = true; m_contactRecordingType = std::move(value); }
+    inline StopContactRecordingRequest& WithContactRecordingType(const ContactRecordingType& value) { SetContactRecordingType(value); return *this;}
+    inline StopContactRecordingRequest& WithContactRecordingType(ContactRecordingType&& value) { SetContactRecordingType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -86,6 +99,9 @@ namespace Model
 
     Aws::String m_initialContactId;
     bool m_initialContactIdHasBeenSet = false;
+
+    ContactRecordingType m_contactRecordingType;
+    bool m_contactRecordingTypeHasBeenSet = false;
   };
 
 } // namespace Model

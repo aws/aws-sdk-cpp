@@ -29,12 +29,17 @@ namespace Model
 {
 
   /**
-   * <p>Request to filter the contents of an Amazon S3 object based on a simple
-   * Structured Query Language (SQL) statement. In the request, along with the SQL
-   * expression, you must specify a data serialization format (JSON or CSV) of the
-   * object. Amazon S3 uses this to parse object data into records. It returns only
-   * records that match the specified SQL expression. You must also specify the data
-   * serialization format for the response. For more information, see <a
+   *  <p>Learn Amazon S3 Select is no longer available to new customers.
+   * Existing customers of Amazon S3 Select can continue to use the feature as usual.
+   * <a
+   * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+   * more</a> </p>  <p>Request to filter the contents of an Amazon S3 object
+   * based on a simple Structured Query Language (SQL) statement. In the request,
+   * along with the SQL expression, you must specify a data serialization format
+   * (JSON or CSV) of the object. Amazon S3 uses this to parse object data into
+   * records. It returns only records that match the specified SQL expression. You
+   * must also specify the data serialization format for the response. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select
    * API Documentation</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContentRequest">AWS

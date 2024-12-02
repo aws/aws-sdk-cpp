@@ -44,8 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of Availability Zone that's used for redundancy for the
-     * bucket.</p>
+     * <p>The number of Zone (Availability Zone or Local Zone) that's used for
+     * redundancy for the bucket.</p>
      */
     inline const DataRedundancy& GetDataRedundancy() const{ return m_dataRedundancy; }
     inline bool DataRedundancyHasBeenSet() const { return m_dataRedundancyHasBeenSet; }

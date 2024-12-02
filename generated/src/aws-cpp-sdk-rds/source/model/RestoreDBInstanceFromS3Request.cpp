@@ -58,6 +58,8 @@ RestoreDBInstanceFromS3Request::RestoreDBInstanceFromS3Request() :
     m_s3BucketNameHasBeenSet(false),
     m_s3PrefixHasBeenSet(false),
     m_s3IngestionRoleArnHasBeenSet(false),
+    m_databaseInsightsMode(DatabaseInsightsMode::NOT_SET),
+    m_databaseInsightsModeHasBeenSet(false),
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
@@ -304,6 +306,11 @@ Aws::String RestoreDBInstanceFromS3Request::SerializePayload() const
   if(m_s3IngestionRoleArnHasBeenSet)
   {
     ss << "S3IngestionRoleArn=" << StringUtils::URLEncode(m_s3IngestionRoleArn.c_str()) << "&";
+  }
+
+  if(m_databaseInsightsModeHasBeenSet)
+  {
+    ss << "DatabaseInsightsMode=" << DatabaseInsightsModeMapper::GetNameForDatabaseInsightsMode(m_databaseInsightsMode) << "&";
   }
 
   if(m_enablePerformanceInsightsHasBeenSet)

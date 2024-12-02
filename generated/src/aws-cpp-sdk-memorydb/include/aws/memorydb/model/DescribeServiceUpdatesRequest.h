@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of cluster names to identify service updates to apply</p>
+     * <p>The list of cluster names to identify service updates to apply.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClusterNames() const{ return m_clusterNames; }
     inline bool ClusterNamesHasBeenSet() const { return m_clusterNamesHasBeenSet; }
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status(es) of the service updates to filter on</p>
+     * <p>The status(es) of the service updates to filter on.</p>
      */
     inline const Aws::Vector<ServiceUpdateStatus>& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

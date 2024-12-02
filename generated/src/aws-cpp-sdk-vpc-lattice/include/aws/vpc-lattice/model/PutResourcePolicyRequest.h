@@ -49,8 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service network or service for
-     * which the policy is created.</p>
+     * <p>The ID or ARN of the service network or service for which the policy is
+     * created.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }

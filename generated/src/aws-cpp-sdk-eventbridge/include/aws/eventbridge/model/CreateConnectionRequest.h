@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eventbridge/model/ConnectionAuthorizationType.h>
 #include <aws/eventbridge/model/CreateConnectionAuthRequestParameters.h>
+#include <aws/eventbridge/model/ConnectivityResourceParameters.h>
 #include <utility>
 
 namespace Aws
@@ -79,8 +80,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the
-     * authorization parameters to use to authorize with the endpoint. </p>
+     * <p>The authorization parameters to use to authorize with the endpoint. </p>
+     * <p>You must include only authorization parameters for the
+     * <code>AuthorizationType</code> you specify.</p>
      */
     inline const CreateConnectionAuthRequestParameters& GetAuthParameters() const{ return m_authParameters; }
     inline bool AuthParametersHasBeenSet() const { return m_authParametersHasBeenSet; }
@@ -88,6 +90,22 @@ namespace Model
     inline void SetAuthParameters(CreateConnectionAuthRequestParameters&& value) { m_authParametersHasBeenSet = true; m_authParameters = std::move(value); }
     inline CreateConnectionRequest& WithAuthParameters(const CreateConnectionAuthRequestParameters& value) { SetAuthParameters(value); return *this;}
     inline CreateConnectionRequest& WithAuthParameters(CreateConnectionAuthRequestParameters&& value) { SetAuthParameters(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>For connections to private resource endpoints, the parameters to use for
+     * invoking the resource endpoint.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting
+     * to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i>
+     * </i>.</p>
+     */
+    inline const ConnectivityResourceParameters& GetInvocationConnectivityParameters() const{ return m_invocationConnectivityParameters; }
+    inline bool InvocationConnectivityParametersHasBeenSet() const { return m_invocationConnectivityParametersHasBeenSet; }
+    inline void SetInvocationConnectivityParameters(const ConnectivityResourceParameters& value) { m_invocationConnectivityParametersHasBeenSet = true; m_invocationConnectivityParameters = value; }
+    inline void SetInvocationConnectivityParameters(ConnectivityResourceParameters&& value) { m_invocationConnectivityParametersHasBeenSet = true; m_invocationConnectivityParameters = std::move(value); }
+    inline CreateConnectionRequest& WithInvocationConnectivityParameters(const ConnectivityResourceParameters& value) { SetInvocationConnectivityParameters(value); return *this;}
+    inline CreateConnectionRequest& WithInvocationConnectivityParameters(ConnectivityResourceParameters&& value) { SetInvocationConnectivityParameters(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -102,6 +120,9 @@ namespace Model
 
     CreateConnectionAuthRequestParameters m_authParameters;
     bool m_authParametersHasBeenSet = false;
+
+    ConnectivityResourceParameters m_invocationConnectivityParameters;
+    bool m_invocationConnectivityParametersHasBeenSet = false;
   };
 
 } // namespace Model

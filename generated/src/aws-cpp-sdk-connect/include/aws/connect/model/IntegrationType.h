@@ -26,7 +26,9 @@ namespace Model
     CASES_DOMAIN,
     APPLICATION,
     FILE_SCANNER,
-    SES_IDENTITY
+    SES_IDENTITY,
+    ANALYTICS_CONNECTOR,
+    CALL_TRANSFER_CONNECTOR
   };
 
 namespace IntegrationTypeMapper

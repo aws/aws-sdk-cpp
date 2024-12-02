@@ -66,8 +66,9 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the integration.</p>  <p>When
-     * integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint
-     * instances must be in the same account.</p> 
+     * integrating with Amazon Web Services End User Messaging, the Amazon Connect and
+     * Amazon Web Services End User Messaging instances must be in the same
+     * account.</p> 
      */
     inline const Aws::String& GetIntegrationArn() const{ return m_integrationArn; }
     inline bool IntegrationArnHasBeenSet() const { return m_integrationArnHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/vpc-lattice/model/ServiceNetworkLogType.h>
 #include <utility>
 
 namespace Aws
@@ -48,8 +49,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the access log subscription was created, specified in
-     * ISO-8601 format.</p>
+     * <p>The date and time that the access log subscription was created, in ISO-8601
+     * format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
@@ -86,8 +87,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the access log subscription was last updated,
-     * specified in ISO-8601 format.</p>
+     * <p>The date and time that the access log subscription was last updated, in
+     * ISO-8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
@@ -123,6 +124,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The log type for the service network.</p>
+     */
+    inline const ServiceNetworkLogType& GetServiceNetworkLogType() const{ return m_serviceNetworkLogType; }
+    inline void SetServiceNetworkLogType(const ServiceNetworkLogType& value) { m_serviceNetworkLogType = value; }
+    inline void SetServiceNetworkLogType(ServiceNetworkLogType&& value) { m_serviceNetworkLogType = std::move(value); }
+    inline GetAccessLogSubscriptionResult& WithServiceNetworkLogType(const ServiceNetworkLogType& value) { SetServiceNetworkLogType(value); return *this;}
+    inline GetAccessLogSubscriptionResult& WithServiceNetworkLogType(ServiceNetworkLogType&& value) { SetServiceNetworkLogType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -147,6 +159,8 @@ namespace Model
     Aws::String m_resourceArn;
 
     Aws::String m_resourceId;
+
+    ServiceNetworkLogType m_serviceNetworkLogType;
 
     Aws::String m_requestId;
   };

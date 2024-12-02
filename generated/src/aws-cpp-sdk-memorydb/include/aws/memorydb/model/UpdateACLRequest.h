@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the Access Control List</p>
+     * <p>The name of the Access Control List.</p>
      */
     inline const Aws::String& GetACLName() const{ return m_aCLName; }
     inline bool ACLNameHasBeenSet() const { return m_aCLNameHasBeenSet; }
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of users to add to the Access Control List</p>
+     * <p>The list of users to add to the Access Control List.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserNamesToAdd() const{ return m_userNamesToAdd; }
     inline bool UserNamesToAddHasBeenSet() const { return m_userNamesToAddHasBeenSet; }
@@ -66,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of users to remove from the Access Control List</p>
+     * <p>The list of users to remove from the Access Control List.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserNamesToRemove() const{ return m_userNamesToRemove; }
     inline bool UserNamesToRemoveHasBeenSet() const { return m_userNamesToRemoveHasBeenSet; }

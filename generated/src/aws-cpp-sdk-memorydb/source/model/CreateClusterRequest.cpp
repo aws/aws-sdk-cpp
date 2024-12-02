@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 CreateClusterRequest::CreateClusterRequest() : 
     m_clusterNameHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
+    m_multiRegionClusterNameHasBeenSet(false),
     m_parameterGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_numShards(0),
@@ -59,6 +60,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_nodeTypeHasBeenSet)
   {
    payload.WithString("NodeType", m_nodeType);
+
+  }
+
+  if(m_multiRegionClusterNameHasBeenSet)
+  {
+   payload.WithString("MultiRegionClusterName", m_multiRegionClusterName);
 
   }
 

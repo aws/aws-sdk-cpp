@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the authorization parameters for the connection if Basic is
-   * specified as the authorization type.</p><p><h3>See Also:</h3>   <a
+   * <p>The authorization parameters for the connection if Basic is specified as the
+   * authorization type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ConnectionBasicAuthResponseParameters">AWS
    * API Reference</a></p>
    */

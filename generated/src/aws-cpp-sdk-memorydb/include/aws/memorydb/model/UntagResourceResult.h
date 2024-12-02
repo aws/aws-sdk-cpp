@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of tags removed</p>
+     * <p>The list of tags removed.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagList = value; }

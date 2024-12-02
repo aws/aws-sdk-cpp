@@ -372,6 +372,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>If <code>true</code>, the AMI satisfies the criteria for Allowed AMIs and can
+     * be discovered and used in the account. If <code>false</code> and Allowed AMIs is
+     * set to <code>enabled</code>, the AMI can't be discovered or used in the account.
+     * If <code>false</code> and Allowed AMIs is set to <code>audit-mode</code>, the
+     * AMI can be discovered and used in the account.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control
+     * the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon
+     * EC2 User Guide</i>.</p>
+     */
+    inline bool GetImageAllowed() const{ return m_imageAllowed; }
+    inline bool ImageAllowedHasBeenSet() const { return m_imageAllowedHasBeenSet; }
+    inline void SetImageAllowed(bool value) { m_imageAllowedHasBeenSet = true; m_imageAllowed = value; }
+    inline Image& WithImageAllowed(bool value) { SetImageAllowed(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the source AMI from which the AMI was created.</p> <p>The ID only
      * appears if the AMI was created using <a>CreateImage</a>, <a>CopyImage</a>, or
      * <a>CreateRestoreImageTask</a>. The ID does not appear if the AMI was created
@@ -637,6 +655,9 @@ namespace Model
 
     Aws::String m_lastLaunchedTime;
     bool m_lastLaunchedTimeHasBeenSet = false;
+
+    bool m_imageAllowed;
+    bool m_imageAllowedHasBeenSet = false;
 
     Aws::String m_sourceImageId;
     bool m_sourceImageIdHasBeenSet = false;

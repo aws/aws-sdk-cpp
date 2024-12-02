@@ -22,6 +22,7 @@ namespace Aws
 
         static const int http_HASH = HashingUtils::HashString("http");
         static const int https_HASH = HashingUtils::HashString("https");
+        static const int tcp_HASH = HashingUtils::HashString("tcp");
 
 
         VerifiedAccessEndpointProtocol GetVerifiedAccessEndpointProtocolForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == https_HASH)
           {
             return VerifiedAccessEndpointProtocol::https;
+          }
+          else if (hashCode == tcp_HASH)
+          {
+            return VerifiedAccessEndpointProtocol::tcp;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "http";
           case VerifiedAccessEndpointProtocol::https:
             return "https";
+          case VerifiedAccessEndpointProtocol::tcp:
+            return "tcp";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

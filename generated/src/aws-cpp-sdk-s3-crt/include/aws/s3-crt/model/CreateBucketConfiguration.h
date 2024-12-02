@@ -61,8 +61,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the location where the bucket will be created.</p> <p>For directory
-     * buckets, the location type is Availability Zone.</p>  <p>This
+     * <p>Specifies the location where the bucket will be created.</p> <p> <b>Directory
+     * buckets </b> - The location type is Availability Zone or Local Zone. When the
+     * location type is Local Zone, your Local Zone must be in opt-in status.
+     * Otherwise, you get an HTTP <code>400 Bad Request</code> error with the error
+     * code <code>Access denied</code>. To learn more about opt-in Local Zones, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/opt-in-directory-bucket-lz.html">Opt-in
+     * Dedicated Local Zones</a>in the <i>Amazon S3 User Guide</i>. </p>  <p>This
      * functionality is only supported by directory buckets.</p> 
      */
     inline const LocationInfo& GetLocation() const{ return m_location; }

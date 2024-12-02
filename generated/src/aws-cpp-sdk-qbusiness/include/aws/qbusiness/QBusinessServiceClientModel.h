@@ -43,11 +43,13 @@
 #include <aws/qbusiness/model/GetDataSourceResult.h>
 #include <aws/qbusiness/model/GetGroupResult.h>
 #include <aws/qbusiness/model/GetIndexResult.h>
+#include <aws/qbusiness/model/GetMediaResult.h>
 #include <aws/qbusiness/model/GetPluginResult.h>
 #include <aws/qbusiness/model/GetRetrieverResult.h>
 #include <aws/qbusiness/model/GetUserResult.h>
 #include <aws/qbusiness/model/GetWebExperienceResult.h>
 #include <aws/qbusiness/model/ListApplicationsResult.h>
+#include <aws/qbusiness/model/ListAttachmentsResult.h>
 #include <aws/qbusiness/model/ListConversationsResult.h>
 #include <aws/qbusiness/model/ListDataSourceSyncJobsResult.h>
 #include <aws/qbusiness/model/ListDataSourcesResult.h>
@@ -146,11 +148,13 @@ namespace Aws
       class GetDataSourceRequest;
       class GetGroupRequest;
       class GetIndexRequest;
+      class GetMediaRequest;
       class GetPluginRequest;
       class GetRetrieverRequest;
       class GetUserRequest;
       class GetWebExperienceRequest;
       class ListApplicationsRequest;
+      class ListAttachmentsRequest;
       class ListConversationsRequest;
       class ListDataSourceSyncJobsRequest;
       class ListDataSourcesRequest;
@@ -205,11 +209,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetDataSourceResult, QBusinessError> GetDataSourceOutcome;
       typedef Aws::Utils::Outcome<GetGroupResult, QBusinessError> GetGroupOutcome;
       typedef Aws::Utils::Outcome<GetIndexResult, QBusinessError> GetIndexOutcome;
+      typedef Aws::Utils::Outcome<GetMediaResult, QBusinessError> GetMediaOutcome;
       typedef Aws::Utils::Outcome<GetPluginResult, QBusinessError> GetPluginOutcome;
       typedef Aws::Utils::Outcome<GetRetrieverResult, QBusinessError> GetRetrieverOutcome;
       typedef Aws::Utils::Outcome<GetUserResult, QBusinessError> GetUserOutcome;
       typedef Aws::Utils::Outcome<GetWebExperienceResult, QBusinessError> GetWebExperienceOutcome;
       typedef Aws::Utils::Outcome<ListApplicationsResult, QBusinessError> ListApplicationsOutcome;
+      typedef Aws::Utils::Outcome<ListAttachmentsResult, QBusinessError> ListAttachmentsOutcome;
       typedef Aws::Utils::Outcome<ListConversationsResult, QBusinessError> ListConversationsOutcome;
       typedef Aws::Utils::Outcome<ListDataSourceSyncJobsResult, QBusinessError> ListDataSourceSyncJobsOutcome;
       typedef Aws::Utils::Outcome<ListDataSourcesResult, QBusinessError> ListDataSourcesOutcome;
@@ -264,11 +270,13 @@ namespace Aws
       typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
       typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
       typedef std::future<GetIndexOutcome> GetIndexOutcomeCallable;
+      typedef std::future<GetMediaOutcome> GetMediaOutcomeCallable;
       typedef std::future<GetPluginOutcome> GetPluginOutcomeCallable;
       typedef std::future<GetRetrieverOutcome> GetRetrieverOutcomeCallable;
       typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
       typedef std::future<GetWebExperienceOutcome> GetWebExperienceOutcomeCallable;
       typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
+      typedef std::future<ListAttachmentsOutcome> ListAttachmentsOutcomeCallable;
       typedef std::future<ListConversationsOutcome> ListConversationsOutcomeCallable;
       typedef std::future<ListDataSourceSyncJobsOutcome> ListDataSourceSyncJobsOutcomeCallable;
       typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
@@ -327,11 +335,13 @@ namespace Aws
     typedef std::function<void(const QBusinessClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetIndexRequest&, const Model::GetIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIndexResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::GetMediaRequest&, const Model::GetMediaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetPluginRequest&, const Model::GetPluginOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPluginResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetRetrieverRequest&, const Model::GetRetrieverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRetrieverResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::GetWebExperienceRequest&, const Model::GetWebExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWebExperienceResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
+    typedef std::function<void(const QBusinessClient*, const Model::ListAttachmentsRequest&, const Model::ListAttachmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttachmentsResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListConversationsRequest&, const Model::ListConversationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConversationsResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListDataSourceSyncJobsRequest&, const Model::ListDataSourceSyncJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourceSyncJobsResponseReceivedHandler;
     typedef std::function<void(const QBusinessClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourcesResponseReceivedHandler;

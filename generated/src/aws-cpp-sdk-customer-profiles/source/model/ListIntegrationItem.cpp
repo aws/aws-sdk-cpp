@@ -29,7 +29,8 @@ ListIntegrationItem::ListIntegrationItem() :
     m_workflowIdHasBeenSet(false),
     m_isUnstructured(false),
     m_isUnstructuredHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_eventTriggerNamesHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ ListIntegrationItem& ListIntegrationItem::operator =(JsonView jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EventTriggerNames"))
+  {
+    Aws::Utils::Array<JsonView> eventTriggerNamesJsonList = jsonValue.GetArray("EventTriggerNames");
+    for(unsigned eventTriggerNamesIndex = 0; eventTriggerNamesIndex < eventTriggerNamesJsonList.GetLength(); ++eventTriggerNamesIndex)
+    {
+      m_eventTriggerNames.push_back(eventTriggerNamesJsonList[eventTriggerNamesIndex].AsString());
+    }
+    m_eventTriggerNamesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -189,6 +200,17 @@ JsonValue ListIntegrationItem::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_eventTriggerNamesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> eventTriggerNamesJsonList(m_eventTriggerNames.size());
+   for(unsigned eventTriggerNamesIndex = 0; eventTriggerNamesIndex < eventTriggerNamesJsonList.GetLength(); ++eventTriggerNamesIndex)
+   {
+     eventTriggerNamesJsonList[eventTriggerNamesIndex].AsString(m_eventTriggerNames[eventTriggerNamesIndex]);
+   }
+   payload.WithArray("EventTriggerNames", std::move(eventTriggerNamesJsonList));
 
   }
 

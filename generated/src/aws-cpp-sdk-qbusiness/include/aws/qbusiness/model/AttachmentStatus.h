@@ -17,7 +17,7 @@ namespace Model
   {
     NOT_SET,
     FAILED,
-    SUCCEEDED
+    SUCCESS
   };
 
 namespace AttachmentStatusMapper

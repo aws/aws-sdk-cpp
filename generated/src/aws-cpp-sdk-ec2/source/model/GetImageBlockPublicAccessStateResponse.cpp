@@ -17,11 +17,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetImageBlockPublicAccessStateResponse::GetImageBlockPublicAccessStateResponse()
+GetImageBlockPublicAccessStateResponse::GetImageBlockPublicAccessStateResponse() : 
+    m_managedBy(ManagedBy::NOT_SET)
 {
 }
 
 GetImageBlockPublicAccessStateResponse::GetImageBlockPublicAccessStateResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+  : GetImageBlockPublicAccessStateResponse()
 {
   *this = result;
 }
@@ -42,6 +44,11 @@ GetImageBlockPublicAccessStateResponse& GetImageBlockPublicAccessStateResponse::
     if(!imageBlockPublicAccessStateNode.IsNull())
     {
       m_imageBlockPublicAccessState = Aws::Utils::Xml::DecodeEscapedXmlText(imageBlockPublicAccessStateNode.GetText());
+    }
+    XmlNode managedByNode = resultNode.FirstChild("managedBy");
+    if(!managedByNode.IsNull())
+    {
+      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()).c_str());
     }
   }
 

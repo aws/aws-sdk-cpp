@@ -40,8 +40,8 @@ namespace Model
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the task or tasks to describe. If you do not specify a cluster, the default
-     * cluster is assumed. This parameter is required if the task or tasks you are
-     * describing were launched in any cluster other than the default cluster.</p>
+     * cluster is assumed. This parameter is required. If you do not specify a value,
+     * the <code>default</code> cluster is used.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }

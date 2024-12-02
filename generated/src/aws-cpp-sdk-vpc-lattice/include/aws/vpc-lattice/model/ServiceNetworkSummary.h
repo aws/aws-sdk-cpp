@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the service network was created, specified in ISO-8601
+     * <p>The date and time that the service network was created, in ISO-8601
      * format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -81,8 +81,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the service network was last updated, specified in
-     * ISO-8601 format.</p>
+     * <p>The date and time that the service network was last updated, in ISO-8601
+     * format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
@@ -104,6 +104,16 @@ namespace Model
     inline ServiceNetworkSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
     inline ServiceNetworkSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline ServiceNetworkSummary& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The number of resource configurations associated with a service network.</p>
+     */
+    inline long long GetNumberOfAssociatedResourceConfigurations() const{ return m_numberOfAssociatedResourceConfigurations; }
+    inline bool NumberOfAssociatedResourceConfigurationsHasBeenSet() const { return m_numberOfAssociatedResourceConfigurationsHasBeenSet; }
+    inline void SetNumberOfAssociatedResourceConfigurations(long long value) { m_numberOfAssociatedResourceConfigurationsHasBeenSet = true; m_numberOfAssociatedResourceConfigurations = value; }
+    inline ServiceNetworkSummary& WithNumberOfAssociatedResourceConfigurations(long long value) { SetNumberOfAssociatedResourceConfigurations(value); return *this;}
     ///@}
 
     ///@{
@@ -141,6 +151,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    long long m_numberOfAssociatedResourceConfigurations;
+    bool m_numberOfAssociatedResourceConfigurationsHasBeenSet = false;
 
     long long m_numberOfAssociatedServices;
     bool m_numberOfAssociatedServicesHasBeenSet = false;

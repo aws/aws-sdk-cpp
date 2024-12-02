@@ -9,6 +9,8 @@
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/imagebuilder/model/ComponentType.h>
+#include <aws/imagebuilder/model/ComponentStatus.h>
+#include <aws/imagebuilder/model/ProductCodeListItem.h>
 #include <utility>
 
 namespace Aws
@@ -187,6 +189,33 @@ namespace Model
     inline ComponentVersion& WithDateCreated(Aws::String&& value) { SetDateCreated(std::move(value)); return *this;}
     inline ComponentVersion& WithDateCreated(const char* value) { SetDateCreated(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Describes the current status of the component version.</p>
+     */
+    inline const ComponentStatus& GetStatus() const{ return m_status; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline void SetStatus(const ComponentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetStatus(ComponentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline ComponentVersion& WithStatus(const ComponentStatus& value) { SetStatus(value); return *this;}
+    inline ComponentVersion& WithStatus(ComponentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains product codes that are used for billing purposes for Amazon Web
+     * Services Marketplace components.</p>
+     */
+    inline const Aws::Vector<ProductCodeListItem>& GetProductCodes() const{ return m_productCodes; }
+    inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
+    inline void SetProductCodes(const Aws::Vector<ProductCodeListItem>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
+    inline void SetProductCodes(Aws::Vector<ProductCodeListItem>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
+    inline ComponentVersion& WithProductCodes(const Aws::Vector<ProductCodeListItem>& value) { SetProductCodes(value); return *this;}
+    inline ComponentVersion& WithProductCodes(Aws::Vector<ProductCodeListItem>&& value) { SetProductCodes(std::move(value)); return *this;}
+    inline ComponentVersion& AddProductCodes(const ProductCodeListItem& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
+    inline ComponentVersion& AddProductCodes(ProductCodeListItem&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -215,6 +244,12 @@ namespace Model
 
     Aws::String m_dateCreated;
     bool m_dateCreatedHasBeenSet = false;
+
+    ComponentStatus m_status;
+    bool m_statusHasBeenSet = false;
+
+    Aws::Vector<ProductCodeListItem> m_productCodes;
+    bool m_productCodesHasBeenSet = false;
   };
 
 } // namespace Model

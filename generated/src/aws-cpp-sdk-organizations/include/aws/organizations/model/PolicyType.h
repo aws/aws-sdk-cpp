@@ -21,7 +21,8 @@ namespace Model
     TAG_POLICY,
     BACKUP_POLICY,
     AISERVICES_OPT_OUT_POLICY,
-    CHATBOT_POLICY
+    CHATBOT_POLICY,
+    DECLARATIVE_POLICY_EC2
   };
 
 namespace PolicyTypeMapper

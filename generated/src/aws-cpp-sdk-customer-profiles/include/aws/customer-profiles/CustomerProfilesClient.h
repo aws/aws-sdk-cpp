@@ -274,6 +274,34 @@ namespace CustomerProfiles
         }
 
         /**
+         * <p>Creates an event trigger, which specifies the rules when to perform action
+         * based on customer's ingested data.</p> <p>Each event stream can be associated
+         * with only one integration in the same region and AWS account as the event
+         * stream. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventTrigger">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEventTriggerOutcome CreateEventTrigger(const Model::CreateEventTriggerRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEventTrigger that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateEventTriggerRequestT = Model::CreateEventTriggerRequest>
+        Model::CreateEventTriggerOutcomeCallable CreateEventTriggerCallable(const CreateEventTriggerRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::CreateEventTrigger, request);
+        }
+
+        /**
+         * An Async wrapper for CreateEventTrigger that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateEventTriggerRequestT = Model::CreateEventTriggerRequest>
+        void CreateEventTriggerAsync(const CreateEventTriggerRequestT& request, const CreateEventTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::CreateEventTrigger, request, handler, context);
+        }
+
+        /**
          * <p> Creates an integration workflow. An integration workflow is an async process
          * which ingests historic data and sets up an integration for ongoing updates. The
          * supported Amazon AppFlow sources are Salesforce, ServiceNow, and Marketo.
@@ -484,6 +512,33 @@ namespace CustomerProfiles
         void DeleteEventStreamAsync(const DeleteEventStreamRequestT& request, const DeleteEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::DeleteEventStream, request, handler, context);
+        }
+
+        /**
+         * <p>Disable and deletes the Event Trigger.</p>  <p>You cannot delete an
+         * Event Trigger with an active Integration associated.</p> <p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventTrigger">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEventTriggerOutcome DeleteEventTrigger(const Model::DeleteEventTriggerRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEventTrigger that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteEventTriggerRequestT = Model::DeleteEventTriggerRequest>
+        Model::DeleteEventTriggerOutcomeCallable DeleteEventTriggerCallable(const DeleteEventTriggerRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::DeleteEventTrigger, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteEventTrigger that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteEventTriggerRequestT = Model::DeleteEventTriggerRequest>
+        void DeleteEventTriggerAsync(const DeleteEventTriggerRequestT& request, const DeleteEventTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::DeleteEventTrigger, request, handler, context);
         }
 
         /**
@@ -833,6 +888,31 @@ namespace CustomerProfiles
         void GetEventStreamAsync(const GetEventStreamRequestT& request, const GetEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::GetEventStream, request, handler, context);
+        }
+
+        /**
+         * <p>Get a specific Event Trigger from the domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventTrigger">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEventTriggerOutcome GetEventTrigger(const Model::GetEventTriggerRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEventTrigger that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEventTriggerRequestT = Model::GetEventTriggerRequest>
+        Model::GetEventTriggerOutcomeCallable GetEventTriggerCallable(const GetEventTriggerRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::GetEventTrigger, request);
+        }
+
+        /**
+         * An Async wrapper for GetEventTrigger that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEventTriggerRequestT = Model::GetEventTriggerRequest>
+        void GetEventTriggerAsync(const GetEventTriggerRequestT& request, const GetEventTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::GetEventTrigger, request, handler, context);
         }
 
         /**
@@ -1306,6 +1386,31 @@ namespace CustomerProfiles
         void ListEventStreamsAsync(const ListEventStreamsRequestT& request, const ListEventStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::ListEventStreams, request, handler, context);
+        }
+
+        /**
+         * <p>List all Event Triggers under a domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventTriggers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEventTriggersOutcome ListEventTriggers(const Model::ListEventTriggersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEventTriggers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEventTriggersRequestT = Model::ListEventTriggersRequest>
+        Model::ListEventTriggersOutcomeCallable ListEventTriggersCallable(const ListEventTriggersRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::ListEventTriggers, request);
+        }
+
+        /**
+         * An Async wrapper for ListEventTriggers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEventTriggersRequestT = Model::ListEventTriggersRequest>
+        void ListEventTriggersAsync(const ListEventTriggersRequestT& request, const ListEventTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::ListEventTriggers, request, handler, context);
         }
 
         /**
@@ -1887,6 +1992,31 @@ namespace CustomerProfiles
         void UpdateDomainAsync(const UpdateDomainRequestT& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::UpdateDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Update the properties of an Event Trigger.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateEventTrigger">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEventTriggerOutcome UpdateEventTrigger(const Model::UpdateEventTriggerRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEventTrigger that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEventTriggerRequestT = Model::UpdateEventTriggerRequest>
+        Model::UpdateEventTriggerOutcomeCallable UpdateEventTriggerCallable(const UpdateEventTriggerRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::UpdateEventTrigger, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEventTrigger that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEventTriggerRequestT = Model::UpdateEventTriggerRequest>
+        void UpdateEventTriggerAsync(const UpdateEventTriggerRequestT& request, const UpdateEventTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::UpdateEventTrigger, request, handler, context);
         }
 
         /**

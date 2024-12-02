@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the OAuth request parameters to use for the
-   * connection.</p><p><h3>See Also:</h3>   <a
+   * <p>The OAuth request parameters to use for the connection.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnectionOAuthRequestParameters">AWS
    * API Reference</a></p>
    */
@@ -43,9 +43,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that
-     * contains the client parameters to use for the connection when OAuth is specified
-     * as the authorization type.</p>
+     * <p>The client parameters to use for the connection when OAuth is specified as
+     * the authorization type.</p>
      */
     inline const UpdateConnectionOAuthClientRequestParameters& GetClientParameters() const{ return m_clientParameters; }
     inline bool ClientParametersHasBeenSet() const { return m_clientParametersHasBeenSet; }

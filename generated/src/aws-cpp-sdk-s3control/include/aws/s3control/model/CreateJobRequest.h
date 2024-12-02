@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>The action that you want this job to perform on every object listed in the
      * manifest. For more information about the available actions, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a>
      * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const JobOperation& GetOperation() const{ return m_operation; }

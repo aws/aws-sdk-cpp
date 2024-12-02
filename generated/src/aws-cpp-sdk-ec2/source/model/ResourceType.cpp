@@ -25,6 +25,7 @@ namespace Aws
         static const int customer_gateway_HASH = HashingUtils::HashString("customer-gateway");
         static const int carrier_gateway_HASH = HashingUtils::HashString("carrier-gateway");
         static const int coip_pool_HASH = HashingUtils::HashString("coip-pool");
+        static const int declarative_policies_report_HASH = HashingUtils::HashString("declarative-policies-report");
         static const int dedicated_host_HASH = HashingUtils::HashString("dedicated-host");
         static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
         static const int egress_only_internet_gateway_HASH = HashingUtils::HashString("egress-only-internet-gateway");
@@ -106,6 +107,7 @@ namespace Aws
         static const int ipam_resource_discovery_HASH = HashingUtils::HashString("ipam-resource-discovery");
         static const int ipam_resource_discovery_association_HASH = HashingUtils::HashString("ipam-resource-discovery-association");
         static const int instance_connect_endpoint_HASH = HashingUtils::HashString("instance-connect-endpoint");
+        static const int verified_access_endpoint_target_HASH = HashingUtils::HashString("verified-access-endpoint-target");
         static const int ipam_external_resource_verification_token_HASH = HashingUtils::HashString("ipam-external-resource-verification-token");
 
 
@@ -131,6 +133,10 @@ namespace Aws
           else if (hashCode == coip_pool_HASH)
           {
             return ResourceType::coip_pool;
+          }
+          else if (hashCode == declarative_policies_report_HASH)
+          {
+            return ResourceType::declarative_policies_report;
           }
           else if (hashCode == dedicated_host_HASH)
           {
@@ -456,6 +462,10 @@ namespace Aws
           {
             return ResourceType::instance_connect_endpoint;
           }
+          else if (hashCode == verified_access_endpoint_target_HASH)
+          {
+            return ResourceType::verified_access_endpoint_target;
+          }
           else if (hashCode == ipam_external_resource_verification_token_HASH)
           {
             return ResourceType::ipam_external_resource_verification_token;
@@ -486,6 +496,8 @@ namespace Aws
             return "carrier-gateway";
           case ResourceType::coip_pool:
             return "coip-pool";
+          case ResourceType::declarative_policies_report:
+            return "declarative-policies-report";
           case ResourceType::dedicated_host:
             return "dedicated-host";
           case ResourceType::dhcp_options:
@@ -648,6 +660,8 @@ namespace Aws
             return "ipam-resource-discovery-association";
           case ResourceType::instance_connect_endpoint:
             return "instance-connect-endpoint";
+          case ResourceType::verified_access_endpoint_target:
+            return "verified-access-endpoint-target";
           case ResourceType::ipam_external_resource_verification_token:
             return "ipam-external-resource-verification-token";
           default:

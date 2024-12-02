@@ -22,7 +22,8 @@ UpdateDataSourceRequest::UpdateDataSourceRequest() :
     m_descriptionHasBeenSet(false),
     m_syncScheduleHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_documentEnrichmentConfigurationHasBeenSet(false)
+    m_documentEnrichmentConfigurationHasBeenSet(false),
+    m_mediaExtractionConfigurationHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,12 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
   if(m_documentEnrichmentConfigurationHasBeenSet)
   {
    payload.WithObject("documentEnrichmentConfiguration", m_documentEnrichmentConfiguration.Jsonize());
+
+  }
+
+  if(m_mediaExtractionConfigurationHasBeenSet)
+  {
+   payload.WithObject("mediaExtractionConfiguration", m_mediaExtractionConfiguration.Jsonize());
 
   }
 

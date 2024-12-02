@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/GuadrailAction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseRetrievalResult.h>
@@ -33,6 +34,17 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API RetrieveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENTRUNTIME_API RetrieveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+
+    ///@{
+    /**
+     * <p>Specifies if there is a guardrail intervention in the response.</p>
+     */
+    inline const GuadrailAction& GetGuardrailAction() const{ return m_guardrailAction; }
+    inline void SetGuardrailAction(const GuadrailAction& value) { m_guardrailAction = value; }
+    inline void SetGuardrailAction(GuadrailAction&& value) { m_guardrailAction = std::move(value); }
+    inline RetrieveResult& WithGuardrailAction(const GuadrailAction& value) { SetGuardrailAction(value); return *this;}
+    inline RetrieveResult& WithGuardrailAction(GuadrailAction&& value) { SetGuardrailAction(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -73,6 +85,8 @@ namespace Model
     inline RetrieveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
     ///@}
   private:
+
+    GuadrailAction m_guardrailAction;
 
     Aws::String m_nextToken;
 

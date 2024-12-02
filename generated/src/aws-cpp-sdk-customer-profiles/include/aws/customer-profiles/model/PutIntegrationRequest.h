@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/customer-profiles/model/FlowDefinition.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -147,6 +148,22 @@ namespace Model
     inline PutIntegrationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
     inline PutIntegrationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of unique names for active event triggers associated with the
+     * integration.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEventTriggerNames() const{ return m_eventTriggerNames; }
+    inline bool EventTriggerNamesHasBeenSet() const { return m_eventTriggerNamesHasBeenSet; }
+    inline void SetEventTriggerNames(const Aws::Vector<Aws::String>& value) { m_eventTriggerNamesHasBeenSet = true; m_eventTriggerNames = value; }
+    inline void SetEventTriggerNames(Aws::Vector<Aws::String>&& value) { m_eventTriggerNamesHasBeenSet = true; m_eventTriggerNames = std::move(value); }
+    inline PutIntegrationRequest& WithEventTriggerNames(const Aws::Vector<Aws::String>& value) { SetEventTriggerNames(value); return *this;}
+    inline PutIntegrationRequest& WithEventTriggerNames(Aws::Vector<Aws::String>&& value) { SetEventTriggerNames(std::move(value)); return *this;}
+    inline PutIntegrationRequest& AddEventTriggerNames(const Aws::String& value) { m_eventTriggerNamesHasBeenSet = true; m_eventTriggerNames.push_back(value); return *this; }
+    inline PutIntegrationRequest& AddEventTriggerNames(Aws::String&& value) { m_eventTriggerNamesHasBeenSet = true; m_eventTriggerNames.push_back(std::move(value)); return *this; }
+    inline PutIntegrationRequest& AddEventTriggerNames(const char* value) { m_eventTriggerNamesHasBeenSet = true; m_eventTriggerNames.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_domainName;
@@ -169,6 +186,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_eventTriggerNames;
+    bool m_eventTriggerNamesHasBeenSet = false;
   };
 
 } // namespace Model

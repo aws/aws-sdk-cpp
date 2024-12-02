@@ -21,6 +21,9 @@
 #include <aws/eks/model/AccessConfigResponse.h>
 #include <aws/eks/model/UpgradePolicyResponse.h>
 #include <aws/eks/model/ZonalShiftConfigResponse.h>
+#include <aws/eks/model/RemoteNetworkConfigResponse.h>
+#include <aws/eks/model/ComputeConfigResponse.h>
+#include <aws/eks/model/StorageConfigResponse.h>
 #include <aws/eks/model/EncryptionConfig.h>
 #include <utility>
 
@@ -378,6 +381,51 @@ namespace Model
     inline Cluster& WithZonalShiftConfig(const ZonalShiftConfigResponse& value) { SetZonalShiftConfig(value); return *this;}
     inline Cluster& WithZonalShiftConfig(ZonalShiftConfigResponse&& value) { SetZonalShiftConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or
+     * update this configuration after the cluster is created.</p>
+     */
+    inline const RemoteNetworkConfigResponse& GetRemoteNetworkConfig() const{ return m_remoteNetworkConfig; }
+    inline bool RemoteNetworkConfigHasBeenSet() const { return m_remoteNetworkConfigHasBeenSet; }
+    inline void SetRemoteNetworkConfig(const RemoteNetworkConfigResponse& value) { m_remoteNetworkConfigHasBeenSet = true; m_remoteNetworkConfig = value; }
+    inline void SetRemoteNetworkConfig(RemoteNetworkConfigResponse&& value) { m_remoteNetworkConfigHasBeenSet = true; m_remoteNetworkConfig = std::move(value); }
+    inline Cluster& WithRemoteNetworkConfig(const RemoteNetworkConfigResponse& value) { SetRemoteNetworkConfig(value); return *this;}
+    inline Cluster& WithRemoteNetworkConfig(RemoteNetworkConfigResponse&& value) { SetRemoteNetworkConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates the current configuration of the compute capability on your EKS
+     * Auto Mode cluster. For example, if the capability is enabled or disabled. If the
+     * compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed
+     * Instances in your Amazon Web Services account. For more information, see EKS
+     * Auto Mode compute capability in the EKS User Guide.</p>
+     */
+    inline const ComputeConfigResponse& GetComputeConfig() const{ return m_computeConfig; }
+    inline bool ComputeConfigHasBeenSet() const { return m_computeConfigHasBeenSet; }
+    inline void SetComputeConfig(const ComputeConfigResponse& value) { m_computeConfigHasBeenSet = true; m_computeConfig = value; }
+    inline void SetComputeConfig(ComputeConfigResponse&& value) { m_computeConfigHasBeenSet = true; m_computeConfig = std::move(value); }
+    inline Cluster& WithComputeConfig(const ComputeConfigResponse& value) { SetComputeConfig(value); return *this;}
+    inline Cluster& WithComputeConfig(ComputeConfigResponse&& value) { SetComputeConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates the current configuration of the block storage capability on your
+     * EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If
+     * the block storage capability is enabled, EKS Auto Mode will create and delete
+     * EBS volumes in your Amazon Web Services account. For more information, see EKS
+     * Auto Mode block storage capability in the EKS User Guide.</p>
+     */
+    inline const StorageConfigResponse& GetStorageConfig() const{ return m_storageConfig; }
+    inline bool StorageConfigHasBeenSet() const { return m_storageConfigHasBeenSet; }
+    inline void SetStorageConfig(const StorageConfigResponse& value) { m_storageConfigHasBeenSet = true; m_storageConfig = value; }
+    inline void SetStorageConfig(StorageConfigResponse&& value) { m_storageConfigHasBeenSet = true; m_storageConfig = std::move(value); }
+    inline Cluster& WithStorageConfig(const StorageConfigResponse& value) { SetStorageConfig(value); return *this;}
+    inline Cluster& WithStorageConfig(StorageConfigResponse&& value) { SetStorageConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -448,6 +496,15 @@ namespace Model
 
     ZonalShiftConfigResponse m_zonalShiftConfig;
     bool m_zonalShiftConfigHasBeenSet = false;
+
+    RemoteNetworkConfigResponse m_remoteNetworkConfig;
+    bool m_remoteNetworkConfigHasBeenSet = false;
+
+    ComputeConfigResponse m_computeConfig;
+    bool m_computeConfigHasBeenSet = false;
+
+    StorageConfigResponse m_storageConfig;
+    bool m_storageConfigHasBeenSet = false;
   };
 
 } // namespace Model

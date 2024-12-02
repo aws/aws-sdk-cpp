@@ -50,6 +50,12 @@ DescribeConnectionResult& DescribeConnectionResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("InvocationConnectivityParameters"))
+  {
+    m_invocationConnectivityParameters = jsonValue.GetObject("InvocationConnectivityParameters");
+
+  }
+
   if(jsonValue.ValueExists("ConnectionState"))
   {
     m_connectionState = ConnectionStateMapper::GetConnectionStateForName(jsonValue.GetString("ConnectionState"));

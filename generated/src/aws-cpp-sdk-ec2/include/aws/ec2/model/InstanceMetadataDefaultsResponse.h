@@ -9,6 +9,8 @@
 #include <aws/ec2/model/HttpTokensState.h>
 #include <aws/ec2/model/InstanceMetadataEndpointState.h>
 #include <aws/ec2/model/InstanceMetadataTagsState.h>
+#include <aws/ec2/model/ManagedBy.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -96,6 +98,37 @@ namespace Model
     inline InstanceMetadataDefaultsResponse& WithInstanceMetadataTags(const InstanceMetadataTagsState& value) { SetInstanceMetadataTags(value); return *this;}
     inline InstanceMetadataDefaultsResponse& WithInstanceMetadataTags(InstanceMetadataTagsState&& value) { SetInstanceMetadataTags(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The entity that manages the IMDS default settings. Possible values
+     * include:</p> <ul> <li> <p> <code>account</code> - The IMDS default settings are
+     * managed by the account.</p> </li> <li> <p> <code>declarative-policy</code> - The
+     * IMDS default settings are managed by a declarative policy and can't be modified
+     * by the account.</p> </li> </ul>
+     */
+    inline const ManagedBy& GetManagedBy() const{ return m_managedBy; }
+    inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
+    inline void SetManagedBy(const ManagedBy& value) { m_managedByHasBeenSet = true; m_managedBy = value; }
+    inline void SetManagedBy(ManagedBy&& value) { m_managedByHasBeenSet = true; m_managedBy = std::move(value); }
+    inline InstanceMetadataDefaultsResponse& WithManagedBy(const ManagedBy& value) { SetManagedBy(value); return *this;}
+    inline InstanceMetadataDefaultsResponse& WithManagedBy(ManagedBy&& value) { SetManagedBy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The customized exception message that is specified in the declarative
+     * policy.</p>
+     */
+    inline const Aws::String& GetManagedExceptionMessage() const{ return m_managedExceptionMessage; }
+    inline bool ManagedExceptionMessageHasBeenSet() const { return m_managedExceptionMessageHasBeenSet; }
+    inline void SetManagedExceptionMessage(const Aws::String& value) { m_managedExceptionMessageHasBeenSet = true; m_managedExceptionMessage = value; }
+    inline void SetManagedExceptionMessage(Aws::String&& value) { m_managedExceptionMessageHasBeenSet = true; m_managedExceptionMessage = std::move(value); }
+    inline void SetManagedExceptionMessage(const char* value) { m_managedExceptionMessageHasBeenSet = true; m_managedExceptionMessage.assign(value); }
+    inline InstanceMetadataDefaultsResponse& WithManagedExceptionMessage(const Aws::String& value) { SetManagedExceptionMessage(value); return *this;}
+    inline InstanceMetadataDefaultsResponse& WithManagedExceptionMessage(Aws::String&& value) { SetManagedExceptionMessage(std::move(value)); return *this;}
+    inline InstanceMetadataDefaultsResponse& WithManagedExceptionMessage(const char* value) { SetManagedExceptionMessage(value); return *this;}
+    ///@}
   private:
 
     HttpTokensState m_httpTokens;
@@ -109,6 +142,12 @@ namespace Model
 
     InstanceMetadataTagsState m_instanceMetadataTags;
     bool m_instanceMetadataTagsHasBeenSet = false;
+
+    ManagedBy m_managedBy;
+    bool m_managedByHasBeenSet = false;
+
+    Aws::String m_managedExceptionMessage;
+    bool m_managedExceptionMessageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -179,6 +179,8 @@ namespace Organizations
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html">RESOURCE_CONTROL_POLICY</a>
          * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative.html">DECLARATIVE_POLICY_EC2</a>
+         * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
@@ -861,8 +863,9 @@ namespace Organizations
          * <p>Returns the contents of the effective policy for specified policy type and
          * account. The effective policy is the aggregation of any policies of the
          * specified type that the account inherits, plus any policy of that type that is
-         * directly attached to the account.</p> <p>This operation applies only to policy
-         * types <i>other</i> than service control policies (SCPs).</p> <p>For more
+         * directly attached to the account.</p> <p>This operation applies only to
+         * management policies. It does not apply to authorization policies: service
+         * control policies (SCPs) and resource control policies (RCPs).</p> <p>For more
          * information about policy inheritance, see <a
          * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inheritance_mgmt.html">Understanding
          * management policy inheritance</a> in the <i>Organizations User Guide</i>.</p>

@@ -18,6 +18,7 @@ CreateServiceNetworkRequest::CreateServiceNetworkRequest() :
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_nameHasBeenSet(false),
+    m_sharingConfigHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -40,6 +41,12 @@ Aws::String CreateServiceNetworkRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_sharingConfigHasBeenSet)
+  {
+   payload.WithObject("sharingConfig", m_sharingConfig.Jsonize());
 
   }
 

@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VerifiedAccessSseSpecificationRequest.h>
+#include <aws/ec2/model/CreateVerifiedAccessNativeApplicationOidcOptions.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -192,6 +193,18 @@ namespace Model
     inline CreateVerifiedAccessTrustProviderRequest& WithSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { SetSseSpecification(value); return *this;}
     inline CreateVerifiedAccessTrustProviderRequest& WithSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { SetSseSpecification(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The OpenID Connect (OIDC) options.</p>
+     */
+    inline const CreateVerifiedAccessNativeApplicationOidcOptions& GetNativeApplicationOidcOptions() const{ return m_nativeApplicationOidcOptions; }
+    inline bool NativeApplicationOidcOptionsHasBeenSet() const { return m_nativeApplicationOidcOptionsHasBeenSet; }
+    inline void SetNativeApplicationOidcOptions(const CreateVerifiedAccessNativeApplicationOidcOptions& value) { m_nativeApplicationOidcOptionsHasBeenSet = true; m_nativeApplicationOidcOptions = value; }
+    inline void SetNativeApplicationOidcOptions(CreateVerifiedAccessNativeApplicationOidcOptions&& value) { m_nativeApplicationOidcOptionsHasBeenSet = true; m_nativeApplicationOidcOptions = std::move(value); }
+    inline CreateVerifiedAccessTrustProviderRequest& WithNativeApplicationOidcOptions(const CreateVerifiedAccessNativeApplicationOidcOptions& value) { SetNativeApplicationOidcOptions(value); return *this;}
+    inline CreateVerifiedAccessTrustProviderRequest& WithNativeApplicationOidcOptions(CreateVerifiedAccessNativeApplicationOidcOptions&& value) { SetNativeApplicationOidcOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     TrustProviderType m_trustProviderType;
@@ -226,6 +239,9 @@ namespace Model
 
     VerifiedAccessSseSpecificationRequest m_sseSpecification;
     bool m_sseSpecificationHasBeenSet = false;
+
+    CreateVerifiedAccessNativeApplicationOidcOptions m_nativeApplicationOidcOptions;
+    bool m_nativeApplicationOidcOptionsHasBeenSet = false;
   };
 
 } // namespace Model

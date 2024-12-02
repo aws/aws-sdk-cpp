@@ -97,12 +97,15 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the suggested block size for a volume in a ZFS dataset, in
-     * kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB.
-     * The default is 128 KiB. We recommend using the default setting for the majority
-     * of use cases. Generally, workloads that write in fixed small or large record
-     * sizes may benefit from setting a custom record size, like database workloads
-     * (small record size) or media streaming workloads (large record size). For
-     * additional guidance on when to set a custom record size, see <a
+     * kibibytes (KiB). For file systems using the Intelligent-Tiering storage class,
+     * valid values are 128, 256, 512, 1024, 2048, or 4096 KiB, with a default of 2048
+     * KiB. For all other file systems, valid values are 4, 8, 16, 32, 64, 128, 256,
+     * 512, or 1024 KiB, with a default of 128 KiB. We recommend using the default
+     * setting for the majority of use cases. Generally, workloads that write in fixed
+     * small or large record sizes may benefit from setting a custom record size, like
+     * database workloads (small record size) or media streaming workloads (large
+     * record size). For additional guidance on when to set a custom record size, see
+     * <a
      * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#record-size-performance">
      * ZFS Record size</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
      */

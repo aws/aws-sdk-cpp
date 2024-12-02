@@ -22,6 +22,7 @@
 #include <aws/securityhub/model/Action.h>
 #include <aws/securityhub/model/FindingProviderFields.h>
 #include <aws/securityhub/model/GeneratorDetails.h>
+#include <aws/securityhub/model/Detection.h>
 #include <aws/securityhub/model/Malware.h>
 #include <aws/securityhub/model/NetworkPathComponent.h>
 #include <aws/securityhub/model/Threat.h>
@@ -788,6 +789,24 @@ namespace Model
     inline AwsSecurityFinding& WithAwsAccountName(Aws::String&& value) { SetAwsAccountName(std::move(value)); return *this;}
     inline AwsSecurityFinding& WithAwsAccountName(const char* value) { SetAwsAccountName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p> Provides details about an Amazon GuardDuty Extended Threat Detection attack
+     * sequence. GuardDuty generates an attack sequence finding when multiple events
+     * align to a potentially suspicious activity. To receive GuardDuty attack sequence
+     * findings in Security Hub, you must have GuardDuty and GuardDuty S3 Protection
+     * enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty
+     * Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>. </p>
+     */
+    inline const Detection& GetDetection() const{ return m_detection; }
+    inline bool DetectionHasBeenSet() const { return m_detectionHasBeenSet; }
+    inline void SetDetection(const Detection& value) { m_detectionHasBeenSet = true; m_detection = value; }
+    inline void SetDetection(Detection&& value) { m_detectionHasBeenSet = true; m_detection = std::move(value); }
+    inline AwsSecurityFinding& WithDetection(const Detection& value) { SetDetection(value); return *this;}
+    inline AwsSecurityFinding& WithDetection(Detection&& value) { SetDetection(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_schemaVersion;
@@ -921,6 +940,9 @@ namespace Model
 
     Aws::String m_awsAccountName;
     bool m_awsAccountNameHasBeenSet = false;
+
+    Detection m_detection;
+    bool m_detectionHasBeenSet = false;
   };
 
 } // namespace Model

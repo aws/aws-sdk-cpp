@@ -13,6 +13,7 @@
 #include <aws/rds/model/DBSubnetGroup.h>
 #include <aws/rds/model/PendingModifiedValues.h>
 #include <aws/rds/model/ReplicaMode.h>
+#include <aws/rds/model/DatabaseInsightsMode.h>
 #include <aws/rds/model/ActivityStreamStatus.h>
 #include <aws/rds/model/ActivityStreamMode.h>
 #include <aws/rds/model/AutomationMode.h>
@@ -823,6 +824,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The mode of Database Insights that is enabled for the instance.</p>
+     */
+    inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
+    inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }
+    inline void SetDatabaseInsightsMode(const DatabaseInsightsMode& value) { m_databaseInsightsModeHasBeenSet = true; m_databaseInsightsMode = value; }
+    inline void SetDatabaseInsightsMode(DatabaseInsightsMode&& value) { m_databaseInsightsModeHasBeenSet = true; m_databaseInsightsMode = std::move(value); }
+    inline DBInstance& WithDatabaseInsightsMode(const DatabaseInsightsMode& value) { SetDatabaseInsightsMode(value); return *this;}
+    inline DBInstance& WithDatabaseInsightsMode(DatabaseInsightsMode&& value) { SetDatabaseInsightsMode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
      */
     inline bool GetPerformanceInsightsEnabled() const{ return m_performanceInsightsEnabled; }
@@ -1471,6 +1484,9 @@ namespace Model
 
     bool m_iAMDatabaseAuthenticationEnabled;
     bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
+
+    DatabaseInsightsMode m_databaseInsightsMode;
+    bool m_databaseInsightsModeHasBeenSet = false;
 
     bool m_performanceInsightsEnabled;
     bool m_performanceInsightsEnabledHasBeenSet = false;

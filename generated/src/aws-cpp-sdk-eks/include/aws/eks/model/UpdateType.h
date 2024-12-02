@@ -27,7 +27,8 @@ namespace Model
     VpcConfigUpdate,
     AccessConfigUpdate,
     UpgradePolicyUpdate,
-    ZonalShiftConfigUpdate
+    ZonalShiftConfigUpdate,
+    AutoModeUpdate
   };
 
 namespace UpdateTypeMapper

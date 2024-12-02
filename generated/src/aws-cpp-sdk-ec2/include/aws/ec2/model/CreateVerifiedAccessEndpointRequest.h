@@ -13,6 +13,8 @@
 #include <aws/ec2/model/CreateVerifiedAccessEndpointLoadBalancerOptions.h>
 #include <aws/ec2/model/CreateVerifiedAccessEndpointEniOptions.h>
 #include <aws/ec2/model/VerifiedAccessSseSpecificationRequest.h>
+#include <aws/ec2/model/CreateVerifiedAccessEndpointRdsOptions.h>
+#include <aws/ec2/model/CreateVerifiedAccessEndpointCidrOptions.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -253,6 +255,32 @@ namespace Model
     inline CreateVerifiedAccessEndpointRequest& WithSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { SetSseSpecification(value); return *this;}
     inline CreateVerifiedAccessEndpointRequest& WithSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { SetSseSpecification(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The RDS details. This parameter is required if the endpoint type is
+     * <code>rds</code>.</p>
+     */
+    inline const CreateVerifiedAccessEndpointRdsOptions& GetRdsOptions() const{ return m_rdsOptions; }
+    inline bool RdsOptionsHasBeenSet() const { return m_rdsOptionsHasBeenSet; }
+    inline void SetRdsOptions(const CreateVerifiedAccessEndpointRdsOptions& value) { m_rdsOptionsHasBeenSet = true; m_rdsOptions = value; }
+    inline void SetRdsOptions(CreateVerifiedAccessEndpointRdsOptions&& value) { m_rdsOptionsHasBeenSet = true; m_rdsOptions = std::move(value); }
+    inline CreateVerifiedAccessEndpointRequest& WithRdsOptions(const CreateVerifiedAccessEndpointRdsOptions& value) { SetRdsOptions(value); return *this;}
+    inline CreateVerifiedAccessEndpointRequest& WithRdsOptions(CreateVerifiedAccessEndpointRdsOptions&& value) { SetRdsOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The CIDR options. This parameter is required if the endpoint type is
+     * <code>cidr</code>.</p>
+     */
+    inline const CreateVerifiedAccessEndpointCidrOptions& GetCidrOptions() const{ return m_cidrOptions; }
+    inline bool CidrOptionsHasBeenSet() const { return m_cidrOptionsHasBeenSet; }
+    inline void SetCidrOptions(const CreateVerifiedAccessEndpointCidrOptions& value) { m_cidrOptionsHasBeenSet = true; m_cidrOptions = value; }
+    inline void SetCidrOptions(CreateVerifiedAccessEndpointCidrOptions&& value) { m_cidrOptionsHasBeenSet = true; m_cidrOptions = std::move(value); }
+    inline CreateVerifiedAccessEndpointRequest& WithCidrOptions(const CreateVerifiedAccessEndpointCidrOptions& value) { SetCidrOptions(value); return *this;}
+    inline CreateVerifiedAccessEndpointRequest& WithCidrOptions(CreateVerifiedAccessEndpointCidrOptions&& value) { SetCidrOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_verifiedAccessGroupId;
@@ -299,6 +327,12 @@ namespace Model
 
     VerifiedAccessSseSpecificationRequest m_sseSpecification;
     bool m_sseSpecificationHasBeenSet = false;
+
+    CreateVerifiedAccessEndpointRdsOptions m_rdsOptions;
+    bool m_rdsOptionsHasBeenSet = false;
+
+    CreateVerifiedAccessEndpointCidrOptions m_cidrOptions;
+    bool m_cidrOptionsHasBeenSet = false;
   };
 
 } // namespace Model

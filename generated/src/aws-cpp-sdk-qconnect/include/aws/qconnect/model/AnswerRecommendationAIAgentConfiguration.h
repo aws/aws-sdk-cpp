@@ -42,6 +42,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The AI Guardrail identifier for the Answer Generation Guardrail used by the
+     * <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
+     */
+    inline const Aws::String& GetAnswerGenerationAIGuardrailId() const{ return m_answerGenerationAIGuardrailId; }
+    inline bool AnswerGenerationAIGuardrailIdHasBeenSet() const { return m_answerGenerationAIGuardrailIdHasBeenSet; }
+    inline void SetAnswerGenerationAIGuardrailId(const Aws::String& value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId = value; }
+    inline void SetAnswerGenerationAIGuardrailId(Aws::String&& value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId = std::move(value); }
+    inline void SetAnswerGenerationAIGuardrailId(const char* value) { m_answerGenerationAIGuardrailIdHasBeenSet = true; m_answerGenerationAIGuardrailId.assign(value); }
+    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(const Aws::String& value) { SetAnswerGenerationAIGuardrailId(value); return *this;}
+    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(Aws::String&& value) { SetAnswerGenerationAIGuardrailId(std::move(value)); return *this;}
+    inline AnswerRecommendationAIAgentConfiguration& WithAnswerGenerationAIGuardrailId(const char* value) { SetAnswerGenerationAIGuardrailId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The AI Prompt identifier for the Answer Generation prompt used by the
      * <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
      */
@@ -99,6 +114,9 @@ namespace Model
     inline AnswerRecommendationAIAgentConfiguration& WithQueryReformulationAIPromptId(const char* value) { SetQueryReformulationAIPromptId(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_answerGenerationAIGuardrailId;
+    bool m_answerGenerationAIGuardrailIdHasBeenSet = false;
 
     Aws::String m_answerGenerationAIPromptId;
     bool m_answerGenerationAIPromptIdHasBeenSet = false;

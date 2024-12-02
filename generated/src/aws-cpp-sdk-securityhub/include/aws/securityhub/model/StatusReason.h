@@ -42,8 +42,8 @@ namespace Model
     /**
      * <p>A code that represents a reason for the control status. For the list of
      * status reason codes and their meanings, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
-     * information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-asff-compliance">Compliance
+     * details for control findings</a> in the <i>Security Hub User Guide</i>. </p>
      */
     inline const Aws::String& GetReasonCode() const{ return m_reasonCode; }
     inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }

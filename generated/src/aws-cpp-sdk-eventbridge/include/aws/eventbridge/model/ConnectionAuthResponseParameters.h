@@ -9,6 +9,7 @@
 #include <aws/eventbridge/model/ConnectionOAuthResponseParameters.h>
 #include <aws/eventbridge/model/ConnectionApiKeyAuthResponseParameters.h>
 #include <aws/eventbridge/model/ConnectionHttpParameters.h>
+#include <aws/eventbridge/model/DescribeConnectionConnectivityParameters.h>
 #include <utility>
 
 namespace Aws
@@ -27,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the authorization parameters to use for the
-   * connection.</p><p><h3>See Also:</h3>   <a
+   * <p>Tthe authorization parameters to use for the connection.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ConnectionAuthResponseParameters">AWS
    * API Reference</a></p>
    */
@@ -89,6 +90,22 @@ namespace Model
     inline ConnectionAuthResponseParameters& WithInvocationHttpParameters(const ConnectionHttpParameters& value) { SetInvocationHttpParameters(value); return *this;}
     inline ConnectionAuthResponseParameters& WithInvocationHttpParameters(ConnectionHttpParameters&& value) { SetInvocationHttpParameters(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>For private OAuth authentication endpoints. The parameters EventBridge uses
+     * to authenticate against the endpoint.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-auth.html">Authorization
+     * methods for connections</a> in the <i> <i>Amazon EventBridge User Guide</i>
+     * </i>.</p>
+     */
+    inline const DescribeConnectionConnectivityParameters& GetConnectivityParameters() const{ return m_connectivityParameters; }
+    inline bool ConnectivityParametersHasBeenSet() const { return m_connectivityParametersHasBeenSet; }
+    inline void SetConnectivityParameters(const DescribeConnectionConnectivityParameters& value) { m_connectivityParametersHasBeenSet = true; m_connectivityParameters = value; }
+    inline void SetConnectivityParameters(DescribeConnectionConnectivityParameters&& value) { m_connectivityParametersHasBeenSet = true; m_connectivityParameters = std::move(value); }
+    inline ConnectionAuthResponseParameters& WithConnectivityParameters(const DescribeConnectionConnectivityParameters& value) { SetConnectivityParameters(value); return *this;}
+    inline ConnectionAuthResponseParameters& WithConnectivityParameters(DescribeConnectionConnectivityParameters&& value) { SetConnectivityParameters(std::move(value)); return *this;}
+    ///@}
   private:
 
     ConnectionBasicAuthResponseParameters m_basicAuthParameters;
@@ -102,6 +119,9 @@ namespace Model
 
     ConnectionHttpParameters m_invocationHttpParameters;
     bool m_invocationHttpParametersHasBeenSet = false;
+
+    DescribeConnectionConnectivityParameters m_connectivityParameters;
+    bool m_connectivityParametersHasBeenSet = false;
   };
 
 } // namespace Model

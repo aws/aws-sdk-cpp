@@ -140,11 +140,38 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set
-         * of case-sensitive key-value pairs. A domain can have up to 10 tags. For more
+         * <p> Adds a new data source in Amazon OpenSearch Service so that you can perform
+         * direct queries on external data. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddDirectQueryDataSource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddDirectQueryDataSourceOutcome AddDirectQueryDataSource(const Model::AddDirectQueryDataSourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for AddDirectQueryDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AddDirectQueryDataSourceRequestT = Model::AddDirectQueryDataSourceRequest>
+        Model::AddDirectQueryDataSourceOutcomeCallable AddDirectQueryDataSourceCallable(const AddDirectQueryDataSourceRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::AddDirectQueryDataSource, request);
+        }
+
+        /**
+         * An Async wrapper for AddDirectQueryDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AddDirectQueryDataSourceRequestT = Model::AddDirectQueryDataSourceRequest>
+        void AddDirectQueryDataSourceAsync(const AddDirectQueryDataSourceRequestT& request, const AddDirectQueryDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::AddDirectQueryDataSource, request, handler, context);
+        }
+
+        /**
+         * <p>Attaches tags to an existing Amazon OpenSearch Service domain, data source,
+         * or application. </p> <p>Tags are a set of case-sensitive key-value pairs. A
+         * domain, data source, or application can have up to 10 tags. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
-         * Amazon OpenSearch Service domains</a>. </p><p><h3>See Also:</h3>   <a
+         * Amazon OpenSearch Service resources</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddTags">AWS
          * API Reference</a></p>
          */
@@ -490,6 +517,32 @@ namespace OpenSearchService
         void DeleteDataSourceAsync(const DeleteDataSourceRequestT& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OpenSearchServiceClient::DeleteDataSource, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes a previously configured direct query data source from Amazon
+         * OpenSearch Service. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDirectQueryDataSource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDirectQueryDataSourceOutcome DeleteDirectQueryDataSource(const Model::DeleteDirectQueryDataSourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDirectQueryDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDirectQueryDataSourceRequestT = Model::DeleteDirectQueryDataSourceRequest>
+        Model::DeleteDirectQueryDataSourceOutcomeCallable DeleteDirectQueryDataSourceCallable(const DeleteDirectQueryDataSourceRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::DeleteDirectQueryDataSource, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDirectQueryDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDirectQueryDataSourceRequestT = Model::DeleteDirectQueryDataSourceRequest>
+        void DeleteDirectQueryDataSourceAsync(const DeleteDirectQueryDataSourceRequestT& request, const DeleteDirectQueryDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::DeleteDirectQueryDataSource, request, handler, context);
         }
 
         /**
@@ -1174,6 +1227,32 @@ namespace OpenSearchService
         }
 
         /**
+         * <p> Returns detailed configuration information for a specific direct query data
+         * source in Amazon OpenSearch Service. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDirectQueryDataSource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDirectQueryDataSourceOutcome GetDirectQueryDataSource(const Model::GetDirectQueryDataSourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDirectQueryDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDirectQueryDataSourceRequestT = Model::GetDirectQueryDataSourceRequest>
+        Model::GetDirectQueryDataSourceOutcomeCallable GetDirectQueryDataSourceCallable(const GetDirectQueryDataSourceRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::GetDirectQueryDataSource, request);
+        }
+
+        /**
+         * An Async wrapper for GetDirectQueryDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDirectQueryDataSourceRequestT = Model::GetDirectQueryDataSourceRequest>
+        void GetDirectQueryDataSourceAsync(const GetDirectQueryDataSourceRequestT& request, const GetDirectQueryDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::GetDirectQueryDataSource, request, handler, context);
+        }
+
+        /**
          * <p>The status of the maintenance action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDomainMaintenanceStatus">AWS
          * API Reference</a></p>
@@ -1333,6 +1412,32 @@ namespace OpenSearchService
         void ListDataSourcesAsync(const ListDataSourcesRequestT& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OpenSearchServiceClient::ListDataSources, request, handler, context);
+        }
+
+        /**
+         * <p> Lists an inventory of all the direct query data sources that you have
+         * configured within Amazon OpenSearch Service. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDirectQueryDataSources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDirectQueryDataSourcesOutcome ListDirectQueryDataSources(const Model::ListDirectQueryDataSourcesRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListDirectQueryDataSources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDirectQueryDataSourcesRequestT = Model::ListDirectQueryDataSourcesRequest>
+        Model::ListDirectQueryDataSourcesOutcomeCallable ListDirectQueryDataSourcesCallable(const ListDirectQueryDataSourcesRequestT& request = {}) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::ListDirectQueryDataSources, request);
+        }
+
+        /**
+         * An Async wrapper for ListDirectQueryDataSources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDirectQueryDataSourcesRequestT = Model::ListDirectQueryDataSourcesRequest>
+        void ListDirectQueryDataSourcesAsync(const ListDirectQueryDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListDirectQueryDataSourcesRequestT& request = {}) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::ListDirectQueryDataSources, request, handler, context);
         }
 
         /**
@@ -1499,10 +1604,10 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Returns all resource tags for an Amazon OpenSearch Service domain. For more
-         * information, see <a
+         * <p>Returns all resource tags for an Amazon OpenSearch Service domain, data
+         * source, or application. For more information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
-         * Amazon OpenSearch Service domains</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon OpenSearch Service resources</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListTags">AWS
          * API Reference</a></p>
          */
@@ -1684,10 +1789,10 @@ namespace OpenSearchService
         }
 
         /**
-         * <p>Removes the specified set of tags from an Amazon OpenSearch Service domain.
-         * For more information, see <a
+         * <p>Removes the specified set of tags from an Amazon OpenSearch Service domain,
+         * data source, or application. For more information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
-         * Tagging Amazon OpenSearch Service domains</a>.</p><p><h3>See Also:</h3>   <a
+         * Tagging Amazon OpenSearch Service resources</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RemoveTags">AWS
          * API Reference</a></p>
          */
@@ -1843,6 +1948,32 @@ namespace OpenSearchService
         void UpdateDataSourceAsync(const UpdateDataSourceRequestT& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OpenSearchServiceClient::UpdateDataSource, request, handler, context);
+        }
+
+        /**
+         * <p> Updates the configuration or properties of an existing direct query data
+         * source in Amazon OpenSearch Service. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDirectQueryDataSource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDirectQueryDataSourceOutcome UpdateDirectQueryDataSource(const Model::UpdateDirectQueryDataSourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDirectQueryDataSource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDirectQueryDataSourceRequestT = Model::UpdateDirectQueryDataSourceRequest>
+        Model::UpdateDirectQueryDataSourceOutcomeCallable UpdateDirectQueryDataSourceCallable(const UpdateDirectQueryDataSourceRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::UpdateDirectQueryDataSource, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDirectQueryDataSource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDirectQueryDataSourceRequestT = Model::UpdateDirectQueryDataSourceRequest>
+        void UpdateDirectQueryDataSourceAsync(const UpdateDirectQueryDataSourceRequestT& request, const UpdateDirectQueryDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::UpdateDirectQueryDataSource, request, handler, context);
         }
 
         /**

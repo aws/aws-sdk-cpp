@@ -139,37 +139,43 @@ namespace Model
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> |
-     * <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> |
+     * <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code> BOT_ID</code> |
+     * <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> |
+     * <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> |
      * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |<code>CASE_TEMPLATE_ARN</code> |
      * <code>CASE_STATUS</code> | <code>CHANNEL</code> |
      * <code>contact/segmentAttributes/connect:Subtype</code> |
-     * <code>DISCONNECT_REASON</code> | <code>FEATURE</code> | <code>FLOW_TYPE</code> |
-     * <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code>
-     * | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> |
-     * <code>INITIATION_METHOD</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> |
-     * <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> |
-     * <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> | </p> </li> <li> <p>
-     * <b>Filter values</b>: A maximum of 100 filter values are supported in a single
-     * request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the
-     * CHANNEL filter key. They do not count towards limitation of 100 filter values.
-     * For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and
-     * 15 routing profiles for a total of 100 filter values, along with 3 channel
-     * filters. </p> <p> <code>contact_lens_conversational_analytics</code> is a valid
-     * filterValue for the <code>FEATURE</code> filter key. It is available only to
-     * contacts analyzed by Contact Lens conversational analytics.</p> <p>
-     * <code>connect:Chat</code>, <code>connect:SMS</code>,
-     * <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid
-     * <code>filterValue</code> examples (not exhaustive) for the
-     * <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p> <p>
-     * <code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value
-     * up to 3000 length. This filter is case and order sensitive. JSON string fields
-     * must be sorted in ascending order and JSON array order should be kept as is.</p>
-     * <p> <code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid
-     * filterValues for the <code>Q_CONNECT_ENABLED</code> filter key. </p> <ul> <li>
-     * <p>TRUE includes all contacts that had Amazon Q in Connect enabled as part of
-     * the flow.</p> </li> <li> <p>FALSE includes all contacts that did not have Amazon
-     * Q in Connect enabled as part of the flow</p> </li> </ul> <p>This filter is
-     * available only for contact record-driven metrics. </p> <p> <a
+     * <code>DISCONNECT_REASON</code> | <code>FEATURE</code> |
+     * <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> |
+     * <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> |
+     * <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> |
+     * <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> |
+     * <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> |
+     * <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
+     * <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> |
+     * <code>Q_CONNECT_ENABLED</code> | </p> </li> <li> <p> <b>Filter values</b>: A
+     * maximum of 100 filter values are supported in a single request. VOICE, CHAT, and
+     * TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not
+     * count towards limitation of 100 filter values. For example, a GetMetricDataV2
+     * request can filter by 50 queues, 35 agents, and 15 routing profiles for a total
+     * of 100 filter values, along with 3 channel filters. </p> <p>
+     * <code>contact_lens_conversational_analytics</code> is a valid filterValue for
+     * the <code>FEATURE</code> filter key. It is available only to contacts analyzed
+     * by Contact Lens conversational analytics.</p> <p> <code>connect:Chat</code>,
+     * <code>connect:SMS</code>, <code>connect:Telephony</code>, and
+     * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not
+     * exhaustive) for the <code>contact/segmentAttributes/connect:Subtype
+     * filter</code> key.</p> <p> <code>ROUTING_STEP_EXPRESSION</code> is a valid
+     * filter key with a filter value up to 3000 length. This filter is case and order
+     * sensitive. JSON string fields must be sorted in ascending order and JSON array
+     * order should be kept as is.</p> <p> <code>Q_CONNECT_ENABLED</code>. TRUE and
+     * FALSE are the only valid filterValues for the <code>Q_CONNECT_ENABLED</code>
+     * filter key. </p> <ul> <li> <p>TRUE includes all contacts that had Amazon Q in
+     * Connect enabled as part of the flow.</p> </li> <li> <p>FALSE includes all
+     * contacts that did not have Amazon Q in Connect enabled as part of the flow</p>
+     * </li> </ul> <p>This filter is available only for contact record-driven metrics.
+     * </p> <p> <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a>
      * ARNs are valid <code>filterValues</code> for the <code>CAMPAIGN</code> filter
      * key.</p> </li> </ul>
@@ -195,13 +201,18 @@ namespace Model
      * | <code>AGENT_HIERARCHY_LEVEL_THREE</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> |
-     * <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>CAMPAIGN</code> |
+     * <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ID</code> |
+     * <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> |
+     * <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> |
      * <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CASE_TEMPLATE_ARN</code> |
      * <code>CASE_STATUS</code> | <code>CHANNEL</code> |
      * <code>contact/segmentAttributes/connect:Subtype</code> |
      * <code>DISCONNECT_REASON</code> | <code>FLOWS_RESOURCE_ID</code> |
-     * <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_TYPE</code> |
-     * <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> |
+     * <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_ACTION_ID</code> |
+     * <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> |
+     * <code>INITIATION_METHOD</code> |
+     * <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> |
+     * <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
      * <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> |
      * <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
      * <code>ROUTING_STEP_EXPRESSION</code> </p>
@@ -300,9 +311,23 @@ namespace Model
      * filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in
      * Connect</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-pause-time-historical">Average
-     * agent pause time</a> </p> </dd> <dt>AVG_CASE_RELATED_CONTACTS</dt> <dd> <p>Unit:
-     * Count</p> <p>Required filter key: CASE_TEMPLATE_ARN</p> <p>Valid groupings and
-     * filters: CASE_TEMPLATE_ARN, CASE_STATUS</p> <p>UI name: <a
+     * agent pause time</a> </p> </dd> <dt>AVG_BOT_CONVERSATION_TIME</dt> <dd> <p>Unit:
+     * Seconds</p> <p>Valid groupings and filters: Channel,
+     * contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot
+     * locale, Flows resource ID, Flows module resource ID, Flow type, Flow action ID,
+     * Invoking resource published timestamp, Initiation method, Invoking resource
+     * type, Parent flows resource ID</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#average-bot-conversation-time-metric">Average
+     * bot conversation time</a> </p> </dd> <dt>AVG_BOT_CONVERSATION_TURNS</dt> <dd>
+     * <p>Unit: Count</p> <p>Valid groupings and filters: Channel,
+     * contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot
+     * locale, Flows resource ID, Flows module resource ID, Flow type, Flow action ID,
+     * Invoking resource published timestamp, Initiation method, Invoking resource
+     * type, Parent flows resource ID</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#average-bot-conversation-turns-metric">Average
+     * bot conversation turns</a> </p> </dd> <dt>AVG_CASE_RELATED_CONTACTS</dt> <dd>
+     * <p>Unit: Count</p> <p>Required filter key: CASE_TEMPLATE_ARN</p> <p>Valid
+     * groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-contacts-case-historical">Average
      * contacts per case</a> </p> </dd> <dt>AVG_CASE_RESOLUTION_TIME</dt> <dd> <p>Unit:
      * Seconds</p> <p>Required filter key: CASE_TEMPLATE_ARN</p> <p>Valid groupings and
@@ -425,12 +450,26 @@ namespace Model
      * filters: Campaign</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average
      * wait time after customer connection</a> </p> </dd>
-     * <dt>CAMPAIGN_CONTACTS_ABANDONED_AFTER_X</dt> <dd> <p>This metric is available
-     * only for outbound campaigns using the agent assisted voice and automated voice
-     * delivery modes.</p> <p>Unit: Count</p> <p>Valid groupings and filters: Agent,
-     * Campaign</p> <p>Threshold: For <code>ThresholdValue</code>, enter any whole
-     * number from 1 to 604800 (inclusive), in seconds. For <code>Comparison</code>,
-     * you must enter <code>GT</code> (for <i>Greater than</i>).</p> <p>UI name: <a
+     * <dt>BOT_CONVERSATIONS_COMPLETED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
+     * and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot ID, Bot
+     * alias, Bot version, Bot locale, Flows resource ID, Flows module resource ID,
+     * Flow type, Flow action ID, Invoking resource published timestamp, Initiation
+     * method, Invoking resource type, Parent flows resource ID</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed-metric">Bot
+     * conversations</a> </p> </dd> <dt>BOT_INTENTS_COMPLETED</dt> <dd> <p>Unit:
+     * Count</p> <p>Valid groupings and filters: Channel,
+     * contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot
+     * locale, Bot intent name, Flows resource ID, Flows module resource ID, Flow type,
+     * Flow action ID, Invoking resource published timestamp, Initiation method,
+     * Invoking resource type, Parent flows resource ID</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed-metric">Bot
+     * intents completed</a> </p> </dd> <dt>CAMPAIGN_CONTACTS_ABANDONED_AFTER_X</dt>
+     * <dd> <p>This metric is available only for outbound campaigns using the agent
+     * assisted voice and automated voice delivery modes.</p> <p>Unit: Count</p>
+     * <p>Valid groupings and filters: Agent, Campaign</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>GT</code> (for <i>Greater than</i>).</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-historical">Campaign
      * contacts abandoned after X</a> </p> </dd>
      * <dt>CAMPAIGN_CONTACTS_ABANDONED_AFTER_X_RATE</dt> <dd> <p>This metric is
@@ -608,8 +647,22 @@ namespace Model
      * Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows
      * resource ID, Initiation method, Resource published timestamp</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#minimum-flow-time-historical">Minimum
-     * flow time</a> </p> </dd> <dt>PERCENT_CASES_FIRST_CONTACT_RESOLVED</dt> <dd>
-     * <p>Unit: Percent</p> <p>Required filter key: CASE_TEMPLATE_ARN</p> <p>Valid
+     * flow time</a> </p> </dd> <dt>PERCENT_BOT_CONVERSATIONS_OUTCOME</dt> <dd>
+     * <p>Unit: Percent</p> <p>Valid groupings and filters: Channel,
+     * contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot
+     * locale, Flows resource ID, Flows module resource ID, Flow type, Flow action ID,
+     * Invoking resource published timestamp, Initiation method, Invoking resource
+     * type, Parent flows resource ID</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#percent-bot-conversations-outcome-metric">Percent
+     * bot conversations outcome</a> </p> </dd> <dt>PERCENT_BOT_INTENTS_OUTCOME</dt>
+     * <dd> <p>Unit: Percent</p> <p>Valid groupings and filters: Channel,
+     * contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot
+     * locale, Bot intent name, Flows resource ID, Flows module resource ID, Flow type,
+     * Flow action ID, Invoking resource published timestamp, Initiation method,
+     * Invoking resource type, Parent flows resource ID</p> <p>UI name: <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#percent-bot-intents-outcome-metric">Percent
+     * bot intents outcome</a> </p> </dd> <dt>PERCENT_CASES_FIRST_CONTACT_RESOLVED</dt>
+     * <dd> <p>Unit: Percent</p> <p>Required filter key: CASE_TEMPLATE_ARN</p> <p>Valid
      * groupings and filters: CASE_TEMPLATE_ARN, CASE_STATUS</p> <p>UI name: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#cases-resolved-first-contact-historical">Cases
      * resolved on first contact</a> </p> </dd> <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt>

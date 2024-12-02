@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>You are trying to perform an action that conflicts with the current status of
-   * your resource. Fix any inconsistences with your resources and try
+   * your resource. Fix any inconsistencies with your resources and try
    * again.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ConflictException">AWS
    * API Reference</a></p>

@@ -18,7 +18,11 @@ UpdateContactRequest::UpdateContactRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_referencesHasBeenSet(false),
-    m_segmentAttributesHasBeenSet(false)
+    m_segmentAttributesHasBeenSet(false),
+    m_queueInfoHasBeenSet(false),
+    m_userInfoHasBeenSet(false),
+    m_customerEndpointHasBeenSet(false),
+    m_systemEndpointHasBeenSet(false)
 {
 }
 
@@ -57,6 +61,30 @@ Aws::String UpdateContactRequest::SerializePayload() const
      segmentAttributesJsonMap.WithObject(segmentAttributesItem.first, segmentAttributesItem.second.Jsonize());
    }
    payload.WithObject("SegmentAttributes", std::move(segmentAttributesJsonMap));
+
+  }
+
+  if(m_queueInfoHasBeenSet)
+  {
+   payload.WithObject("QueueInfo", m_queueInfo.Jsonize());
+
+  }
+
+  if(m_userInfoHasBeenSet)
+  {
+   payload.WithObject("UserInfo", m_userInfo.Jsonize());
+
+  }
+
+  if(m_customerEndpointHasBeenSet)
+  {
+   payload.WithObject("CustomerEndpoint", m_customerEndpoint.Jsonize());
+
+  }
+
+  if(m_systemEndpointHasBeenSet)
+  {
+   payload.WithObject("SystemEndpoint", m_systemEndpoint.Jsonize());
 
   }
 

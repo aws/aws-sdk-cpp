@@ -11,6 +11,7 @@
 #include <aws/qbusiness/model/DataSourceVpcConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/DocumentEnrichmentConfiguration.h>
+#include <aws/qbusiness/model/MediaExtractionConfiguration.h>
 #include <aws/qbusiness/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -217,6 +218,19 @@ namespace Model
     inline CreateDataSourceRequest& WithDocumentEnrichmentConfiguration(const DocumentEnrichmentConfiguration& value) { SetDocumentEnrichmentConfiguration(value); return *this;}
     inline CreateDataSourceRequest& WithDocumentEnrichmentConfiguration(DocumentEnrichmentConfiguration&& value) { SetDocumentEnrichmentConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for extracting information from media in documents during
+     * ingestion.</p>
+     */
+    inline const MediaExtractionConfiguration& GetMediaExtractionConfiguration() const{ return m_mediaExtractionConfiguration; }
+    inline bool MediaExtractionConfigurationHasBeenSet() const { return m_mediaExtractionConfigurationHasBeenSet; }
+    inline void SetMediaExtractionConfiguration(const MediaExtractionConfiguration& value) { m_mediaExtractionConfigurationHasBeenSet = true; m_mediaExtractionConfiguration = value; }
+    inline void SetMediaExtractionConfiguration(MediaExtractionConfiguration&& value) { m_mediaExtractionConfigurationHasBeenSet = true; m_mediaExtractionConfiguration = std::move(value); }
+    inline CreateDataSourceRequest& WithMediaExtractionConfiguration(const MediaExtractionConfiguration& value) { SetMediaExtractionConfiguration(value); return *this;}
+    inline CreateDataSourceRequest& WithMediaExtractionConfiguration(MediaExtractionConfiguration&& value) { SetMediaExtractionConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -251,6 +265,9 @@ namespace Model
 
     DocumentEnrichmentConfiguration m_documentEnrichmentConfiguration;
     bool m_documentEnrichmentConfigurationHasBeenSet = false;
+
+    MediaExtractionConfiguration m_mediaExtractionConfiguration;
+    bool m_mediaExtractionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

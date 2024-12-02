@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     MANUAL_SEARCH,
-    ANSWER_RECOMMENDATION
+    ANSWER_RECOMMENDATION,
+    SELF_SERVICE
   };
 
 namespace AIAgentTypeMapper

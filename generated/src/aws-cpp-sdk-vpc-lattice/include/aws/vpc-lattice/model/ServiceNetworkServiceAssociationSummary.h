@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Summary information about the association between a service network and a
+   * <p>Summary information about an association between a service network and a
    * service.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/ServiceNetworkServiceAssociationSummary">AWS
    * API Reference</a></p>
@@ -57,8 +57,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the association was created, specified in ISO-8601
-     * format.</p>
+     * <p>The date and time that the association was created, in ISO-8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }

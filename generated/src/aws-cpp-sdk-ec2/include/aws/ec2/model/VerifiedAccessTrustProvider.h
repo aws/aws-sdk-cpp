@@ -14,6 +14,7 @@
 #include <aws/ec2/model/DeviceOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VerifiedAccessSseSpecificationResponse.h>
+#include <aws/ec2/model/NativeApplicationOidcOptions.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -203,6 +204,18 @@ namespace Model
     inline VerifiedAccessTrustProvider& WithSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { SetSseSpecification(value); return *this;}
     inline VerifiedAccessTrustProvider& WithSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { SetSseSpecification(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The OpenID Connect (OIDC) options.</p>
+     */
+    inline const NativeApplicationOidcOptions& GetNativeApplicationOidcOptions() const{ return m_nativeApplicationOidcOptions; }
+    inline bool NativeApplicationOidcOptionsHasBeenSet() const { return m_nativeApplicationOidcOptionsHasBeenSet; }
+    inline void SetNativeApplicationOidcOptions(const NativeApplicationOidcOptions& value) { m_nativeApplicationOidcOptionsHasBeenSet = true; m_nativeApplicationOidcOptions = value; }
+    inline void SetNativeApplicationOidcOptions(NativeApplicationOidcOptions&& value) { m_nativeApplicationOidcOptionsHasBeenSet = true; m_nativeApplicationOidcOptions = std::move(value); }
+    inline VerifiedAccessTrustProvider& WithNativeApplicationOidcOptions(const NativeApplicationOidcOptions& value) { SetNativeApplicationOidcOptions(value); return *this;}
+    inline VerifiedAccessTrustProvider& WithNativeApplicationOidcOptions(NativeApplicationOidcOptions&& value) { SetNativeApplicationOidcOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_verifiedAccessTrustProviderId;
@@ -240,6 +253,9 @@ namespace Model
 
     VerifiedAccessSseSpecificationResponse m_sseSpecification;
     bool m_sseSpecificationHasBeenSet = false;
+
+    NativeApplicationOidcOptions m_nativeApplicationOidcOptions;
+    bool m_nativeApplicationOidcOptionsHasBeenSet = false;
   };
 
 } // namespace Model

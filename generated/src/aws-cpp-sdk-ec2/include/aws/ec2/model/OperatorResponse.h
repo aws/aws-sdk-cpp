@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes whether the resource is managed by an entity and, if so, describes
-   * the entity that manages it.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes whether the resource is managed by an service provider and, if so,
+   * describes the service provider that manages it.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/OperatorResponse">AWS
    * API Reference</a></p>
    */
@@ -42,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>If <code>true</code>, the resource is managed by an entity.</p>
+     * <p>If <code>true</code>, the resource is managed by an service provider.</p>
      */
     inline bool GetManaged() const{ return m_managed; }
     inline bool ManagedHasBeenSet() const { return m_managedHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
     ///@{
     /**
      * <p>If <code>managed</code> is <code>true</code>, then the principal is returned.
-     * The principal is the entity that manages the resource.</p>
+     * The principal is the service provider that manages the resource.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }

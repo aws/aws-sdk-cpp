@@ -29,6 +29,8 @@ ImageMetadata::ImageMetadata() :
     m_imageOwnerAliasHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_deprecationTimeHasBeenSet(false),
+    m_imageAllowed(false),
+    m_imageAllowedHasBeenSet(false),
     m_isPublic(false),
     m_isPublicHasBeenSet(false)
 {
@@ -88,6 +90,12 @@ ImageMetadata& ImageMetadata::operator =(const XmlNode& xmlNode)
       m_deprecationTime = Aws::Utils::Xml::DecodeEscapedXmlText(deprecationTimeNode.GetText());
       m_deprecationTimeHasBeenSet = true;
     }
+    XmlNode imageAllowedNode = resultNode.FirstChild("imageAllowed");
+    if(!imageAllowedNode.IsNull())
+    {
+      m_imageAllowed = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imageAllowedNode.GetText()).c_str()).c_str());
+      m_imageAllowedHasBeenSet = true;
+    }
     XmlNode isPublicNode = resultNode.FirstChild("isPublic");
     if(!isPublicNode.IsNull())
     {
@@ -136,6 +144,11 @@ void ImageMetadata::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".DeprecationTime=" << StringUtils::URLEncode(m_deprecationTime.c_str()) << "&";
   }
 
+  if(m_imageAllowedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ImageAllowed=" << std::boolalpha << m_imageAllowed << "&";
+  }
+
   if(m_isPublicHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsPublic=" << std::boolalpha << m_isPublic << "&";
@@ -172,6 +185,10 @@ void ImageMetadata::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_deprecationTimeHasBeenSet)
   {
       oStream << location << ".DeprecationTime=" << StringUtils::URLEncode(m_deprecationTime.c_str()) << "&";
+  }
+  if(m_imageAllowedHasBeenSet)
+  {
+      oStream << location << ".ImageAllowed=" << std::boolalpha << m_imageAllowed << "&";
   }
   if(m_isPublicHasBeenSet)
   {

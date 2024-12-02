@@ -1553,6 +1553,7 @@ namespace FSx
          * <code>CopyTagsToVolumes</code> </p> </li> <li> <p>
          * <code>DailyAutomaticBackupStartTime</code> </p> </li> <li> <p>
          * <code>DiskIopsConfiguration</code> </p> </li> <li> <p>
+         * <code>ReadCacheConfiguration</code> </p> </li> <li> <p>
          * <code>RemoveRouteTableIds</code> </p> </li> <li> <p>
          * <code>StorageCapacity</code> </p> </li> <li> <p> <code>ThroughputCapacity</code>
          * </p> </li> <li> <p> <code>WeeklyMaintenanceStartTime</code> </p> </li>

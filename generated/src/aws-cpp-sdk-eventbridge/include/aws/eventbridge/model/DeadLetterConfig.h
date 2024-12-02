@@ -26,9 +26,9 @@ namespace Model
   /**
    * <p>Configuration details of the Amazon SQS queue for EventBridge to use as a
    * dead-letter queue (DLQ).</p> <p>For more information, see <a
-   * href="eventbridge/latest/userguide/eb-rule-dlq.html">Event retry policy and
-   * using dead-letter queues</a> in the <i>EventBridge User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using
+   * dead-letter queues to process undelivered events</a> in the <i>EventBridge User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeadLetterConfig">AWS
    * API Reference</a></p>
    */

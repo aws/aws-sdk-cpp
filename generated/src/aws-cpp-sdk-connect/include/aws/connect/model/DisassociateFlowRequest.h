@@ -51,7 +51,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier of the resource.</p>
+     * <p>The identifier of the resource.</p> <ul> <li> <p>Amazon Web Services End User
+     * Messaging SMS phone number ARN when using <code>SMS_PHONE_NUMBER</code> </p>
+     * </li> <li> <p>Amazon Web Services End User Messaging Social phone number ARN
+     * when using <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code> </p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }

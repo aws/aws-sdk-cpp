@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the association.</p>
+     * <p>The ID or ARN of the association.</p>
      */
     inline const Aws::String& GetServiceNetworkServiceAssociationIdentifier() const{ return m_serviceNetworkServiceAssociationIdentifier; }
     inline bool ServiceNetworkServiceAssociationIdentifierHasBeenSet() const { return m_serviceNetworkServiceAssociationIdentifierHasBeenSet; }

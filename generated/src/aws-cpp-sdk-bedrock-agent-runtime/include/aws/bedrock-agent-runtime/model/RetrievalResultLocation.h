@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultConfluenceLocation.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalResultCustomDocumentLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultS3Location.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultSalesforceLocation.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultSharePointLocation.h>
@@ -60,6 +61,18 @@ namespace Model
     inline void SetConfluenceLocation(RetrievalResultConfluenceLocation&& value) { m_confluenceLocationHasBeenSet = true; m_confluenceLocation = std::move(value); }
     inline RetrievalResultLocation& WithConfluenceLocation(const RetrievalResultConfluenceLocation& value) { SetConfluenceLocation(value); return *this;}
     inline RetrievalResultLocation& WithConfluenceLocation(RetrievalResultConfluenceLocation&& value) { SetConfluenceLocation(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the location of a document in a custom data source.</p>
+     */
+    inline const RetrievalResultCustomDocumentLocation& GetCustomDocumentLocation() const{ return m_customDocumentLocation; }
+    inline bool CustomDocumentLocationHasBeenSet() const { return m_customDocumentLocationHasBeenSet; }
+    inline void SetCustomDocumentLocation(const RetrievalResultCustomDocumentLocation& value) { m_customDocumentLocationHasBeenSet = true; m_customDocumentLocation = value; }
+    inline void SetCustomDocumentLocation(RetrievalResultCustomDocumentLocation&& value) { m_customDocumentLocationHasBeenSet = true; m_customDocumentLocation = std::move(value); }
+    inline RetrievalResultLocation& WithCustomDocumentLocation(const RetrievalResultCustomDocumentLocation& value) { SetCustomDocumentLocation(value); return *this;}
+    inline RetrievalResultLocation& WithCustomDocumentLocation(RetrievalResultCustomDocumentLocation&& value) { SetCustomDocumentLocation(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,6 +138,9 @@ namespace Model
 
     RetrievalResultConfluenceLocation m_confluenceLocation;
     bool m_confluenceLocationHasBeenSet = false;
+
+    RetrievalResultCustomDocumentLocation m_customDocumentLocation;
+    bool m_customDocumentLocationHasBeenSet = false;
 
     RetrievalResultS3Location m_s3Location;
     bool m_s3LocationHasBeenSet = false;

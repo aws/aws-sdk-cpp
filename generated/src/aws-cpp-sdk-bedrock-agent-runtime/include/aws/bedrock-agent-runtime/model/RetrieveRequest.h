@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeRequest.h>
+#include <aws/bedrock-agent-runtime/model/GuardrailConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseRetrievalConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseQuery.h>
@@ -33,6 +34,18 @@ namespace Model
 
     AWS_BEDROCKAGENTRUNTIME_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>Guardrail settings.</p>
+     */
+    inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+    inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
+    inline void SetGuardrailConfiguration(const GuardrailConfiguration& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
+    inline void SetGuardrailConfiguration(GuardrailConfiguration&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
+    inline RetrieveRequest& WithGuardrailConfiguration(const GuardrailConfiguration& value) { SetGuardrailConfiguration(value); return *this;}
+    inline RetrieveRequest& WithGuardrailConfiguration(GuardrailConfiguration&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -91,6 +104,9 @@ namespace Model
     inline RetrieveRequest& WithRetrievalQuery(KnowledgeBaseQuery&& value) { SetRetrievalQuery(std::move(value)); return *this;}
     ///@}
   private:
+
+    GuardrailConfiguration m_guardrailConfiguration;
+    bool m_guardrailConfigurationHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;

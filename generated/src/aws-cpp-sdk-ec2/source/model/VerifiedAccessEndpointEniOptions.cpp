@@ -25,7 +25,8 @@ VerifiedAccessEndpointEniOptions::VerifiedAccessEndpointEniOptions() :
     m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_portRangesHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,18 @@ VerifiedAccessEndpointEniOptions& VerifiedAccessEndpointEniOptions::operator =(c
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
     }
+    XmlNode portRangesNode = resultNode.FirstChild("portRangeSet");
+    if(!portRangesNode.IsNull())
+    {
+      XmlNode portRangesMember = portRangesNode.FirstChild("item");
+      while(!portRangesMember.IsNull())
+      {
+        m_portRanges.push_back(portRangesMember);
+        portRangesMember = portRangesMember.NextNode("item");
+      }
+
+      m_portRangesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -81,6 +94,17 @@ void VerifiedAccessEndpointEniOptions::OutputToStream(Aws::OStream& oStream, con
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
   }
 
+  if(m_portRangesHasBeenSet)
+  {
+      unsigned portRangesIdx = 1;
+      for(auto& item : m_portRanges)
+      {
+        Aws::StringStream portRangesSs;
+        portRangesSs << location << index << locationValue << ".PortRangeSet." << portRangesIdx++;
+        item.OutputToStream(oStream, portRangesSs.str().c_str());
+      }
+  }
+
 }
 
 void VerifiedAccessEndpointEniOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -96,6 +120,16 @@ void VerifiedAccessEndpointEniOptions::OutputToStream(Aws::OStream& oStream, con
   if(m_portHasBeenSet)
   {
       oStream << location << ".Port=" << m_port << "&";
+  }
+  if(m_portRangesHasBeenSet)
+  {
+      unsigned portRangesIdx = 1;
+      for(auto& item : m_portRanges)
+      {
+        Aws::StringStream portRangesSs;
+        portRangesSs << location <<  ".PortRangeSet." << portRangesIdx++;
+        item.OutputToStream(oStream, portRangesSs.str().c_str());
+      }
   }
 }
 

@@ -128,7 +128,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information about the tag-key value pair.</p>
+     * <p>Information about the tag key-value pair.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SSD_HASH = HashingUtils::HashString("SSD");
         static const int HDD_HASH = HashingUtils::HashString("HDD");
+        static const int INTELLIGENT_TIERING_HASH = HashingUtils::HashString("INTELLIGENT_TIERING");
 
 
         StorageType GetStorageTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == HDD_HASH)
           {
             return StorageType::HDD;
+          }
+          else if (hashCode == INTELLIGENT_TIERING_HASH)
+          {
+            return StorageType::INTELLIGENT_TIERING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "SSD";
           case StorageType::HDD:
             return "HDD";
+          case StorageType::INTELLIGENT_TIERING:
+            return "INTELLIGENT_TIERING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

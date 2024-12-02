@@ -7,6 +7,7 @@
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/ServiceNetworkLogType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -69,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
+     * <p>The ID or ARN of the service network or service.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
@@ -79,6 +80,18 @@ namespace Model
     inline CreateAccessLogSubscriptionRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
     inline CreateAccessLogSubscriptionRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
     inline CreateAccessLogSubscriptionRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of log that monitors your Amazon VPC Lattice service networks.</p>
+     */
+    inline const ServiceNetworkLogType& GetServiceNetworkLogType() const{ return m_serviceNetworkLogType; }
+    inline bool ServiceNetworkLogTypeHasBeenSet() const { return m_serviceNetworkLogTypeHasBeenSet; }
+    inline void SetServiceNetworkLogType(const ServiceNetworkLogType& value) { m_serviceNetworkLogTypeHasBeenSet = true; m_serviceNetworkLogType = value; }
+    inline void SetServiceNetworkLogType(ServiceNetworkLogType&& value) { m_serviceNetworkLogTypeHasBeenSet = true; m_serviceNetworkLogType = std::move(value); }
+    inline CreateAccessLogSubscriptionRequest& WithServiceNetworkLogType(const ServiceNetworkLogType& value) { SetServiceNetworkLogType(value); return *this;}
+    inline CreateAccessLogSubscriptionRequest& WithServiceNetworkLogType(ServiceNetworkLogType&& value) { SetServiceNetworkLogType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,6 +122,9 @@ namespace Model
 
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
+
+    ServiceNetworkLogType m_serviceNetworkLogType;
+    bool m_serviceNetworkLogTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

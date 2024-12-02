@@ -68,7 +68,7 @@ namespace Model
    * <p>CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management
    * account. To close the management account for the organization, you must first
    * either remove or close all member accounts in the organization. Follow standard
-   * account closure process using root credentials.��� </p> </li> <li>
+   * account closure process using root credentials.​ </p> </li> <li>
    * <p>CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an
    * account that is registered as a delegated administrator for a service integrated
    * with your organization. To complete this operation, you must first deregister

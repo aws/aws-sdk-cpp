@@ -16,7 +16,8 @@ ModifyVerifiedAccessInstanceRequest::ModifyVerifiedAccessInstanceRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_cidrEndpointsCustomSubDomainHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,11 @@ Aws::String ModifyVerifiedAccessInstanceRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
+  }
+
+  if(m_cidrEndpointsCustomSubDomainHasBeenSet)
+  {
+    ss << "CidrEndpointsCustomSubDomain=" << StringUtils::URLEncode(m_cidrEndpointsCustomSubDomain.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

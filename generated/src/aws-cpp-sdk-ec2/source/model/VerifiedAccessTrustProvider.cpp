@@ -35,7 +35,8 @@ VerifiedAccessTrustProvider::VerifiedAccessTrustProvider() :
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_sseSpecificationHasBeenSet(false)
+    m_sseSpecificationHasBeenSet(false),
+    m_nativeApplicationOidcOptionsHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,12 @@ VerifiedAccessTrustProvider& VerifiedAccessTrustProvider::operator =(const XmlNo
       m_sseSpecification = sseSpecificationNode;
       m_sseSpecificationHasBeenSet = true;
     }
+    XmlNode nativeApplicationOidcOptionsNode = resultNode.FirstChild("nativeApplicationOidcOptions");
+    if(!nativeApplicationOidcOptionsNode.IsNull())
+    {
+      m_nativeApplicationOidcOptions = nativeApplicationOidcOptionsNode;
+      m_nativeApplicationOidcOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -208,6 +215,13 @@ void VerifiedAccessTrustProvider::OutputToStream(Aws::OStream& oStream, const ch
       m_sseSpecification.OutputToStream(oStream, sseSpecificationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_nativeApplicationOidcOptionsHasBeenSet)
+  {
+      Aws::StringStream nativeApplicationOidcOptionsLocationAndMemberSs;
+      nativeApplicationOidcOptionsLocationAndMemberSs << location << index << locationValue << ".NativeApplicationOidcOptions";
+      m_nativeApplicationOidcOptions.OutputToStream(oStream, nativeApplicationOidcOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void VerifiedAccessTrustProvider::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -271,6 +285,12 @@ void VerifiedAccessTrustProvider::OutputToStream(Aws::OStream& oStream, const ch
       Aws::String sseSpecificationLocationAndMember(location);
       sseSpecificationLocationAndMember += ".SseSpecification";
       m_sseSpecification.OutputToStream(oStream, sseSpecificationLocationAndMember.c_str());
+  }
+  if(m_nativeApplicationOidcOptionsHasBeenSet)
+  {
+      Aws::String nativeApplicationOidcOptionsLocationAndMember(location);
+      nativeApplicationOidcOptionsLocationAndMember += ".NativeApplicationOidcOptions";
+      m_nativeApplicationOidcOptions.OutputToStream(oStream, nativeApplicationOidcOptionsLocationAndMember.c_str());
   }
 }
 

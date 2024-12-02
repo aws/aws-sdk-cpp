@@ -148,7 +148,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The entity that manages the volume.</p>
+     * <p>The service provider that manages the volume.</p>
      */
     inline const OperatorResponse& GetOperator() const{ return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }

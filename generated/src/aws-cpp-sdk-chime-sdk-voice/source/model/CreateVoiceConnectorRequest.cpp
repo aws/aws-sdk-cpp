@@ -18,7 +18,9 @@ CreateVoiceConnectorRequest::CreateVoiceConnectorRequest() :
     m_awsRegionHasBeenSet(false),
     m_requireEncryption(false),
     m_requireEncryptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_integrationType(VoiceConnectorIntegrationType::NOT_SET),
+    m_integrationTypeHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,11 @@ Aws::String CreateVoiceConnectorRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_integrationTypeHasBeenSet)
+  {
+   payload.WithString("IntegrationType", VoiceConnectorIntegrationTypeMapper::GetNameForVoiceConnectorIntegrationType(m_integrationType));
   }
 
   return payload.View().WriteReadable();

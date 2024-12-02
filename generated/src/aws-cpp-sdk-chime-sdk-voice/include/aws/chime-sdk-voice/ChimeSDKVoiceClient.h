@@ -614,6 +614,32 @@ namespace ChimeSDKVoice
         }
 
         /**
+         * <p>Deletes the external systems configuration for a Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorExternalSystemsConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVoiceConnectorExternalSystemsConfigurationOutcome DeleteVoiceConnectorExternalSystemsConfiguration(const Model::DeleteVoiceConnectorExternalSystemsConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteVoiceConnectorExternalSystemsConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteVoiceConnectorExternalSystemsConfigurationRequestT = Model::DeleteVoiceConnectorExternalSystemsConfigurationRequest>
+        Model::DeleteVoiceConnectorExternalSystemsConfigurationOutcomeCallable DeleteVoiceConnectorExternalSystemsConfigurationCallable(const DeleteVoiceConnectorExternalSystemsConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::DeleteVoiceConnectorExternalSystemsConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteVoiceConnectorExternalSystemsConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteVoiceConnectorExternalSystemsConfigurationRequestT = Model::DeleteVoiceConnectorExternalSystemsConfigurationRequest>
+        void DeleteVoiceConnectorExternalSystemsConfigurationAsync(const DeleteVoiceConnectorExternalSystemsConfigurationRequestT& request, const DeleteVoiceConnectorExternalSystemsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::DeleteVoiceConnectorExternalSystemsConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Deletes an Amazon Chime SDK Voice Connector group. Any
          * <code>VoiceConnectorItems</code> and phone numbers associated with the group
          * must be removed before it can be deleted.</p><p><h3>See Also:</h3>   <a
@@ -1164,6 +1190,32 @@ namespace ChimeSDKVoice
         void GetVoiceConnectorEmergencyCallingConfigurationAsync(const GetVoiceConnectorEmergencyCallingConfigurationRequestT& request, const GetVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKVoiceClient::GetVoiceConnectorEmergencyCallingConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about an external systems configuration for a Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorExternalSystemsConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVoiceConnectorExternalSystemsConfigurationOutcome GetVoiceConnectorExternalSystemsConfiguration(const Model::GetVoiceConnectorExternalSystemsConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetVoiceConnectorExternalSystemsConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetVoiceConnectorExternalSystemsConfigurationRequestT = Model::GetVoiceConnectorExternalSystemsConfigurationRequest>
+        Model::GetVoiceConnectorExternalSystemsConfigurationOutcomeCallable GetVoiceConnectorExternalSystemsConfigurationCallable(const GetVoiceConnectorExternalSystemsConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::GetVoiceConnectorExternalSystemsConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetVoiceConnectorExternalSystemsConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetVoiceConnectorExternalSystemsConfigurationRequestT = Model::GetVoiceConnectorExternalSystemsConfigurationRequest>
+        void GetVoiceConnectorExternalSystemsConfigurationAsync(const GetVoiceConnectorExternalSystemsConfigurationRequestT& request, const GetVoiceConnectorExternalSystemsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::GetVoiceConnectorExternalSystemsConfiguration, request, handler, context);
         }
 
         /**
@@ -1819,6 +1871,32 @@ namespace ChimeSDKVoice
         void PutVoiceConnectorEmergencyCallingConfigurationAsync(const PutVoiceConnectorEmergencyCallingConfigurationRequestT& request, const PutVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ChimeSDKVoiceClient::PutVoiceConnectorEmergencyCallingConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Adds an external systems configuration to a Voice Connector.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorExternalSystemsConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutVoiceConnectorExternalSystemsConfigurationOutcome PutVoiceConnectorExternalSystemsConfiguration(const Model::PutVoiceConnectorExternalSystemsConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutVoiceConnectorExternalSystemsConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutVoiceConnectorExternalSystemsConfigurationRequestT = Model::PutVoiceConnectorExternalSystemsConfigurationRequest>
+        Model::PutVoiceConnectorExternalSystemsConfigurationOutcomeCallable PutVoiceConnectorExternalSystemsConfigurationCallable(const PutVoiceConnectorExternalSystemsConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&ChimeSDKVoiceClient::PutVoiceConnectorExternalSystemsConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for PutVoiceConnectorExternalSystemsConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutVoiceConnectorExternalSystemsConfigurationRequestT = Model::PutVoiceConnectorExternalSystemsConfigurationRequest>
+        void PutVoiceConnectorExternalSystemsConfigurationAsync(const PutVoiceConnectorExternalSystemsConfigurationRequestT& request, const PutVoiceConnectorExternalSystemsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ChimeSDKVoiceClient::PutVoiceConnectorExternalSystemsConfiguration, request, handler, context);
         }
 
         /**

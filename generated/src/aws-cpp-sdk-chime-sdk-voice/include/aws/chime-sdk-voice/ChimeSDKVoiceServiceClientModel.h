@@ -44,6 +44,7 @@
 #include <aws/chime-sdk-voice/model/GetSpeakerSearchTaskResult.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorResult.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorEmergencyCallingConfigurationResult.h>
+#include <aws/chime-sdk-voice/model/GetVoiceConnectorExternalSystemsConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorGroupResult.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorLoggingConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/GetVoiceConnectorOriginationResult.h>
@@ -69,6 +70,7 @@
 #include <aws/chime-sdk-voice/model/ListVoiceProfilesResult.h>
 #include <aws/chime-sdk-voice/model/PutSipMediaApplicationLoggingConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorEmergencyCallingConfigurationResult.h>
+#include <aws/chime-sdk-voice/model/PutVoiceConnectorExternalSystemsConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorLoggingConfigurationResult.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorOriginationResult.h>
 #include <aws/chime-sdk-voice/model/PutVoiceConnectorProxyResult.h>
@@ -160,6 +162,7 @@ namespace Aws
       class DeleteSipRuleRequest;
       class DeleteVoiceConnectorRequest;
       class DeleteVoiceConnectorEmergencyCallingConfigurationRequest;
+      class DeleteVoiceConnectorExternalSystemsConfigurationRequest;
       class DeleteVoiceConnectorGroupRequest;
       class DeleteVoiceConnectorOriginationRequest;
       class DeleteVoiceConnectorProxyRequest;
@@ -181,6 +184,7 @@ namespace Aws
       class GetSpeakerSearchTaskRequest;
       class GetVoiceConnectorRequest;
       class GetVoiceConnectorEmergencyCallingConfigurationRequest;
+      class GetVoiceConnectorExternalSystemsConfigurationRequest;
       class GetVoiceConnectorGroupRequest;
       class GetVoiceConnectorLoggingConfigurationRequest;
       class GetVoiceConnectorOriginationRequest;
@@ -206,6 +210,7 @@ namespace Aws
       class ListVoiceProfilesRequest;
       class PutSipMediaApplicationLoggingConfigurationRequest;
       class PutVoiceConnectorEmergencyCallingConfigurationRequest;
+      class PutVoiceConnectorExternalSystemsConfigurationRequest;
       class PutVoiceConnectorLoggingConfigurationRequest;
       class PutVoiceConnectorOriginationRequest;
       class PutVoiceConnectorProxyRequest;
@@ -254,6 +259,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKVoiceError> DeleteSipRuleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKVoiceError> DeleteVoiceConnectorOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKVoiceError> DeleteVoiceConnectorEmergencyCallingConfigurationOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKVoiceError> DeleteVoiceConnectorExternalSystemsConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKVoiceError> DeleteVoiceConnectorGroupOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKVoiceError> DeleteVoiceConnectorOriginationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKVoiceError> DeleteVoiceConnectorProxyOutcome;
@@ -275,6 +281,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetSpeakerSearchTaskResult, ChimeSDKVoiceError> GetSpeakerSearchTaskOutcome;
       typedef Aws::Utils::Outcome<GetVoiceConnectorResult, ChimeSDKVoiceError> GetVoiceConnectorOutcome;
       typedef Aws::Utils::Outcome<GetVoiceConnectorEmergencyCallingConfigurationResult, ChimeSDKVoiceError> GetVoiceConnectorEmergencyCallingConfigurationOutcome;
+      typedef Aws::Utils::Outcome<GetVoiceConnectorExternalSystemsConfigurationResult, ChimeSDKVoiceError> GetVoiceConnectorExternalSystemsConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetVoiceConnectorGroupResult, ChimeSDKVoiceError> GetVoiceConnectorGroupOutcome;
       typedef Aws::Utils::Outcome<GetVoiceConnectorLoggingConfigurationResult, ChimeSDKVoiceError> GetVoiceConnectorLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetVoiceConnectorOriginationResult, ChimeSDKVoiceError> GetVoiceConnectorOriginationOutcome;
@@ -300,6 +307,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListVoiceProfilesResult, ChimeSDKVoiceError> ListVoiceProfilesOutcome;
       typedef Aws::Utils::Outcome<PutSipMediaApplicationLoggingConfigurationResult, ChimeSDKVoiceError> PutSipMediaApplicationLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutVoiceConnectorEmergencyCallingConfigurationResult, ChimeSDKVoiceError> PutVoiceConnectorEmergencyCallingConfigurationOutcome;
+      typedef Aws::Utils::Outcome<PutVoiceConnectorExternalSystemsConfigurationResult, ChimeSDKVoiceError> PutVoiceConnectorExternalSystemsConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutVoiceConnectorLoggingConfigurationResult, ChimeSDKVoiceError> PutVoiceConnectorLoggingConfigurationOutcome;
       typedef Aws::Utils::Outcome<PutVoiceConnectorOriginationResult, ChimeSDKVoiceError> PutVoiceConnectorOriginationOutcome;
       typedef Aws::Utils::Outcome<PutVoiceConnectorProxyResult, ChimeSDKVoiceError> PutVoiceConnectorProxyOutcome;
@@ -348,6 +356,7 @@ namespace Aws
       typedef std::future<DeleteSipRuleOutcome> DeleteSipRuleOutcomeCallable;
       typedef std::future<DeleteVoiceConnectorOutcome> DeleteVoiceConnectorOutcomeCallable;
       typedef std::future<DeleteVoiceConnectorEmergencyCallingConfigurationOutcome> DeleteVoiceConnectorEmergencyCallingConfigurationOutcomeCallable;
+      typedef std::future<DeleteVoiceConnectorExternalSystemsConfigurationOutcome> DeleteVoiceConnectorExternalSystemsConfigurationOutcomeCallable;
       typedef std::future<DeleteVoiceConnectorGroupOutcome> DeleteVoiceConnectorGroupOutcomeCallable;
       typedef std::future<DeleteVoiceConnectorOriginationOutcome> DeleteVoiceConnectorOriginationOutcomeCallable;
       typedef std::future<DeleteVoiceConnectorProxyOutcome> DeleteVoiceConnectorProxyOutcomeCallable;
@@ -369,6 +378,7 @@ namespace Aws
       typedef std::future<GetSpeakerSearchTaskOutcome> GetSpeakerSearchTaskOutcomeCallable;
       typedef std::future<GetVoiceConnectorOutcome> GetVoiceConnectorOutcomeCallable;
       typedef std::future<GetVoiceConnectorEmergencyCallingConfigurationOutcome> GetVoiceConnectorEmergencyCallingConfigurationOutcomeCallable;
+      typedef std::future<GetVoiceConnectorExternalSystemsConfigurationOutcome> GetVoiceConnectorExternalSystemsConfigurationOutcomeCallable;
       typedef std::future<GetVoiceConnectorGroupOutcome> GetVoiceConnectorGroupOutcomeCallable;
       typedef std::future<GetVoiceConnectorLoggingConfigurationOutcome> GetVoiceConnectorLoggingConfigurationOutcomeCallable;
       typedef std::future<GetVoiceConnectorOriginationOutcome> GetVoiceConnectorOriginationOutcomeCallable;
@@ -394,6 +404,7 @@ namespace Aws
       typedef std::future<ListVoiceProfilesOutcome> ListVoiceProfilesOutcomeCallable;
       typedef std::future<PutSipMediaApplicationLoggingConfigurationOutcome> PutSipMediaApplicationLoggingConfigurationOutcomeCallable;
       typedef std::future<PutVoiceConnectorEmergencyCallingConfigurationOutcome> PutVoiceConnectorEmergencyCallingConfigurationOutcomeCallable;
+      typedef std::future<PutVoiceConnectorExternalSystemsConfigurationOutcome> PutVoiceConnectorExternalSystemsConfigurationOutcomeCallable;
       typedef std::future<PutVoiceConnectorLoggingConfigurationOutcome> PutVoiceConnectorLoggingConfigurationOutcomeCallable;
       typedef std::future<PutVoiceConnectorOriginationOutcome> PutVoiceConnectorOriginationOutcomeCallable;
       typedef std::future<PutVoiceConnectorProxyOutcome> PutVoiceConnectorProxyOutcomeCallable;
@@ -445,6 +456,7 @@ namespace Aws
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::DeleteSipRuleRequest&, const Model::DeleteSipRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSipRuleResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::DeleteVoiceConnectorRequest&, const Model::DeleteVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::DeleteVoiceConnectorEmergencyCallingConfigurationRequest&, const Model::DeleteVoiceConnectorEmergencyCallingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKVoiceClient*, const Model::DeleteVoiceConnectorExternalSystemsConfigurationRequest&, const Model::DeleteVoiceConnectorExternalSystemsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorExternalSystemsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::DeleteVoiceConnectorGroupRequest&, const Model::DeleteVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::DeleteVoiceConnectorOriginationRequest&, const Model::DeleteVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorOriginationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::DeleteVoiceConnectorProxyRequest&, const Model::DeleteVoiceConnectorProxyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorProxyResponseReceivedHandler;
@@ -466,6 +478,7 @@ namespace Aws
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetSpeakerSearchTaskRequest&, const Model::GetSpeakerSearchTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSpeakerSearchTaskResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetVoiceConnectorRequest&, const Model::GetVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetVoiceConnectorEmergencyCallingConfigurationRequest&, const Model::GetVoiceConnectorEmergencyCallingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetVoiceConnectorExternalSystemsConfigurationRequest&, const Model::GetVoiceConnectorExternalSystemsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorExternalSystemsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetVoiceConnectorGroupRequest&, const Model::GetVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetVoiceConnectorLoggingConfigurationRequest&, const Model::GetVoiceConnectorLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetVoiceConnectorOriginationRequest&, const Model::GetVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorOriginationResponseReceivedHandler;
@@ -491,6 +504,7 @@ namespace Aws
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::ListVoiceProfilesRequest&, const Model::ListVoiceProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceProfilesResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::PutSipMediaApplicationLoggingConfigurationRequest&, const Model::PutSipMediaApplicationLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSipMediaApplicationLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::PutVoiceConnectorEmergencyCallingConfigurationRequest&, const Model::PutVoiceConnectorEmergencyCallingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKVoiceClient*, const Model::PutVoiceConnectorExternalSystemsConfigurationRequest&, const Model::PutVoiceConnectorExternalSystemsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorExternalSystemsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::PutVoiceConnectorLoggingConfigurationRequest&, const Model::PutVoiceConnectorLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::PutVoiceConnectorOriginationRequest&, const Model::PutVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorOriginationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::PutVoiceConnectorProxyRequest&, const Model::PutVoiceConnectorProxyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorProxyResponseReceivedHandler;

@@ -178,8 +178,8 @@ namespace Model
      * <code>AWS_DIRECTORY_SERVICE</code>, <code>Amazon Web Services_LAMBDA</code> or
      * <code>API_GATEWAY</code>. Accepts an array containing all of the information
      * required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a
-     * customer-supplied authentication API, including the API Gateway URL. Not
-     * required when <code>IdentityProviderType</code> is set to
+     * customer-supplied authentication API, including the API Gateway URL. Cannot be
+     * specified when <code>IdentityProviderType</code> is set to
      * <code>SERVICE_MANAGED</code>.</p>
      */
     inline const IdentityProviderDetails& GetIdentityProviderDetails() const{ return m_identityProviderDetails; }

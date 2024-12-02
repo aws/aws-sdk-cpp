@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/vpc-lattice/model/AuthType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/vpc-lattice/model/SharingConfig.h>
 #include <utility>
 
 namespace Aws
@@ -60,7 +61,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the service network was created, specified in ISO-8601
+     * <p>The date and time that the service network was created, in ISO-8601
      * format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -85,7 +86,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time of the last update, specified in ISO-8601 format.</p>
+     * <p>The date and time of the last update, in ISO-8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
@@ -126,6 +127,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Specifies if the service network is enabled for sharing.</p>
+     */
+    inline const SharingConfig& GetSharingConfig() const{ return m_sharingConfig; }
+    inline void SetSharingConfig(const SharingConfig& value) { m_sharingConfig = value; }
+    inline void SetSharingConfig(SharingConfig&& value) { m_sharingConfig = std::move(value); }
+    inline GetServiceNetworkResult& WithSharingConfig(const SharingConfig& value) { SetSharingConfig(value); return *this;}
+    inline GetServiceNetworkResult& WithSharingConfig(SharingConfig&& value) { SetSharingConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -152,6 +164,8 @@ namespace Model
     long long m_numberOfAssociatedServices;
 
     long long m_numberOfAssociatedVPCs;
+
+    SharingConfig m_sharingConfig;
 
     Aws::String m_requestId;
   };

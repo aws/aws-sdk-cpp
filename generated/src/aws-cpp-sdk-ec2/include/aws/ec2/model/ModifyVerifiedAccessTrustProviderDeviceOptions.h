@@ -43,7 +43,7 @@ namespace Model
     ///@{
     /**
      * <p> The URL Amazon Web Services Verified Access will use to verify the
-     * authenticity of the device tokens. </p>
+     * authenticity of the device tokens.</p>
      */
     inline const Aws::String& GetPublicSigningKeyUrl() const{ return m_publicSigningKeyUrl; }
     inline bool PublicSigningKeyUrlHasBeenSet() const { return m_publicSigningKeyUrlHasBeenSet; }
