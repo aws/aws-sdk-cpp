@@ -102,6 +102,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The name of the multi-Region cluster that this cluster belongs to.</p>
+     */
+    inline const Aws::String& GetMultiRegionClusterName() const{ return m_multiRegionClusterName; }
+    inline bool MultiRegionClusterNameHasBeenSet() const { return m_multiRegionClusterNameHasBeenSet; }
+    inline void SetMultiRegionClusterName(const Aws::String& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = value; }
+    inline void SetMultiRegionClusterName(Aws::String&& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = std::move(value); }
+    inline void SetMultiRegionClusterName(const char* value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName.assign(value); }
+    inline Cluster& WithMultiRegionClusterName(const Aws::String& value) { SetMultiRegionClusterName(value); return *this;}
+    inline Cluster& WithMultiRegionClusterName(Aws::String&& value) { SetMultiRegionClusterName(std::move(value)); return *this;}
+    inline Cluster& WithMultiRegionClusterName(const char* value) { SetMultiRegionClusterName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of shards in the cluster</p>
      */
     inline int GetNumberOfShards() const{ return m_numberOfShards; }
@@ -165,7 +179,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The Redis OSS or Valkey engine used by the cluster.</p>
+     * <p>The name of the engine used by the cluster.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -179,7 +193,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Redis engine version used by the cluster</p>
+     * <p>The Redis OSS engine version used by the cluster</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -193,7 +207,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The engine patch version used by the cluster</p>
+     * <p>The Redis OSS engine patch version used by the cluster</p>
      */
     inline const Aws::String& GetEnginePatchVersion() const{ return m_enginePatchVersion; }
     inline bool EnginePatchVersionHasBeenSet() const { return m_enginePatchVersionHasBeenSet; }
@@ -425,6 +439,9 @@ namespace Model
 
     ClusterPendingUpdates m_pendingUpdates;
     bool m_pendingUpdatesHasBeenSet = false;
+
+    Aws::String m_multiRegionClusterName;
+    bool m_multiRegionClusterNameHasBeenSet = false;
 
     int m_numberOfShards;
     bool m_numberOfShardsHasBeenSet = false;

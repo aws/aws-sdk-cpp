@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/IdentityProviderConfiguration.h>
 #include <aws/qbusiness/model/ErrorDetail.h>
+#include <aws/qbusiness/model/BrowserExtensionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -240,6 +241,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The browser extension configuration for an Amazon Q Business web
+     * experience.</p>
+     */
+    inline const BrowserExtensionConfiguration& GetBrowserExtensionConfiguration() const{ return m_browserExtensionConfiguration; }
+    inline void SetBrowserExtensionConfiguration(const BrowserExtensionConfiguration& value) { m_browserExtensionConfiguration = value; }
+    inline void SetBrowserExtensionConfiguration(BrowserExtensionConfiguration&& value) { m_browserExtensionConfiguration = std::move(value); }
+    inline GetWebExperienceResult& WithBrowserExtensionConfiguration(const BrowserExtensionConfiguration& value) { SetBrowserExtensionConfiguration(value); return *this;}
+    inline GetWebExperienceResult& WithBrowserExtensionConfiguration(BrowserExtensionConfiguration&& value) { SetBrowserExtensionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -280,6 +293,8 @@ namespace Model
     IdentityProviderConfiguration m_identityProviderConfiguration;
 
     ErrorDetail m_error;
+
+    BrowserExtensionConfiguration m_browserExtensionConfiguration;
 
     Aws::String m_requestId;
   };

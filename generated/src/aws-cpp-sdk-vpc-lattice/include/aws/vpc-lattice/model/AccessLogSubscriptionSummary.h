@@ -7,6 +7,7 @@
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/vpc-lattice/model/ServiceNetworkLogType.h>
 #include <utility>
 
 namespace Aws
@@ -55,8 +56,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the access log subscription was created, specified in
-     * ISO-8601 format.</p>
+     * <p>The date and time that the access log subscription was created, in ISO-8601
+     * format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -96,8 +97,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the access log subscription was last updated,
-     * specified in ISO-8601 format.</p>
+     * <p>The date and time that the access log subscription was last updated, in
+     * ISO-8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
@@ -134,6 +135,18 @@ namespace Model
     inline AccessLogSubscriptionSummary& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
     inline AccessLogSubscriptionSummary& WithResourceId(const char* value) { SetResourceId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Log type of the service network.</p>
+     */
+    inline const ServiceNetworkLogType& GetServiceNetworkLogType() const{ return m_serviceNetworkLogType; }
+    inline bool ServiceNetworkLogTypeHasBeenSet() const { return m_serviceNetworkLogTypeHasBeenSet; }
+    inline void SetServiceNetworkLogType(const ServiceNetworkLogType& value) { m_serviceNetworkLogTypeHasBeenSet = true; m_serviceNetworkLogType = value; }
+    inline void SetServiceNetworkLogType(ServiceNetworkLogType&& value) { m_serviceNetworkLogTypeHasBeenSet = true; m_serviceNetworkLogType = std::move(value); }
+    inline AccessLogSubscriptionSummary& WithServiceNetworkLogType(const ServiceNetworkLogType& value) { SetServiceNetworkLogType(value); return *this;}
+    inline AccessLogSubscriptionSummary& WithServiceNetworkLogType(ServiceNetworkLogType&& value) { SetServiceNetworkLogType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -156,6 +169,9 @@ namespace Model
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
+
+    ServiceNetworkLogType m_serviceNetworkLogType;
+    bool m_serviceNetworkLogTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of model evaluation job ARNs to be deleted.</p>
+     * <p>A list of one or more evaluation job Amazon Resource Names (ARNs) you want to
+     * delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetJobIdentifiers() const{ return m_jobIdentifiers; }
     inline bool JobIdentifiersHasBeenSet() const { return m_jobIdentifiersHasBeenSet; }

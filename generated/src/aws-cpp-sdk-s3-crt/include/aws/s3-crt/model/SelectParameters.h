@@ -26,7 +26,18 @@ namespace Model
 {
 
   /**
-   * <p>Describes the parameters for Select job types.</p><p><h3>See Also:</h3>   <a
+   *  <p>Amazon S3 Select is no longer available to new customers.
+   * Existing customers of Amazon S3 Select can continue to use the feature as usual.
+   * <a
+   * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+   * more</a> </p>  <p>Describes the parameters for Select job types.</p>
+   * <p>Learn <a
+   * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">How
+   * to optimize querying your data in Amazon S3</a> using <a
+   * href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html">Amazon
+   * Athena</a>, <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">S3
+   * Object Lambda</a>, or client-side filtering.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectParameters">AWS
    * API Reference</a></p>
    */
@@ -66,7 +77,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The expression that is used to query the object.</p>
+     *  <p>Amazon S3 Select is no longer available to new customers.
+     * Existing customers of Amazon S3 Select can continue to use the feature as usual.
+     * <a
+     * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
+     * more</a> </p>  <p>The expression that is used to query the
+     * object.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }

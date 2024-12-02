@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a package installed on an Image Builder image.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A software package that's installed on top of the base image to create a
+   * customized image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImagePackage">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the package as reported to the operating system package
+     * <p>The name of the package that's reported to the operating system package
      * manager.</p>
      */
     inline const Aws::String& GetPackageName() const{ return m_packageName; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The version of the package as reported to the operating system package
+     * <p>The version of the package that's reported to the operating system package
      * manager.</p>
      */
     inline const Aws::String& GetPackageVersion() const{ return m_packageVersion; }

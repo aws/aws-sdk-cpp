@@ -22,7 +22,8 @@ UpdateWebExperienceRequest::UpdateWebExperienceRequest() :
     m_samplePromptsControlMode(WebExperienceSamplePromptsControlMode::NOT_SET),
     m_samplePromptsControlModeHasBeenSet(false),
     m_identityProviderConfigurationHasBeenSet(false),
-    m_originsHasBeenSet(false)
+    m_originsHasBeenSet(false),
+    m_browserExtensionConfigurationHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,12 @@ Aws::String UpdateWebExperienceRequest::SerializePayload() const
      originsJsonList[originsIndex].AsString(m_origins[originsIndex]);
    }
    payload.WithArray("origins", std::move(originsJsonList));
+
+  }
+
+  if(m_browserExtensionConfigurationHasBeenSet)
+  {
+   payload.WithObject("browserExtensionConfiguration", m_browserExtensionConfiguration.Jsonize());
 
   }
 

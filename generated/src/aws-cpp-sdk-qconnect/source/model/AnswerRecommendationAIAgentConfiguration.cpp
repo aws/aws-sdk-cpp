@@ -19,6 +19,7 @@ namespace Model
 {
 
 AnswerRecommendationAIAgentConfiguration::AnswerRecommendationAIAgentConfiguration() : 
+    m_answerGenerationAIGuardrailIdHasBeenSet(false),
     m_answerGenerationAIPromptIdHasBeenSet(false),
     m_associationConfigurationsHasBeenSet(false),
     m_intentLabelingGenerationAIPromptIdHasBeenSet(false),
@@ -34,6 +35,13 @@ AnswerRecommendationAIAgentConfiguration::AnswerRecommendationAIAgentConfigurati
 
 AnswerRecommendationAIAgentConfiguration& AnswerRecommendationAIAgentConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("answerGenerationAIGuardrailId"))
+  {
+    m_answerGenerationAIGuardrailId = jsonValue.GetString("answerGenerationAIGuardrailId");
+
+    m_answerGenerationAIGuardrailIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("answerGenerationAIPromptId"))
   {
     m_answerGenerationAIPromptId = jsonValue.GetString("answerGenerationAIPromptId");
@@ -71,6 +79,12 @@ AnswerRecommendationAIAgentConfiguration& AnswerRecommendationAIAgentConfigurati
 JsonValue AnswerRecommendationAIAgentConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_answerGenerationAIGuardrailIdHasBeenSet)
+  {
+   payload.WithString("answerGenerationAIGuardrailId", m_answerGenerationAIGuardrailId);
+
+  }
 
   if(m_answerGenerationAIPromptIdHasBeenSet)
   {

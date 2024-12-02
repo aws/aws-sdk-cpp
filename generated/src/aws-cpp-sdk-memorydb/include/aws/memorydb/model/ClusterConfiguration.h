@@ -83,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for the Redis OSS or Valkey engine used by the cluster.</p>
+     * <p>The name of the engine used by the cluster configuration.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -97,7 +97,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The engine version used by the cluster</p>
+     * <p>The Redis OSS engine version used by the cluster</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
@@ -237,6 +237,36 @@ namespace Model
     inline ClusterConfiguration& AddShards(const ShardDetail& value) { m_shardsHasBeenSet = true; m_shards.push_back(value); return *this; }
     inline ClusterConfiguration& AddShards(ShardDetail&& value) { m_shardsHasBeenSet = true; m_shards.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The name of the multi-Region parameter group associated with the cluster
+     * configuration.</p>
+     */
+    inline const Aws::String& GetMultiRegionParameterGroupName() const{ return m_multiRegionParameterGroupName; }
+    inline bool MultiRegionParameterGroupNameHasBeenSet() const { return m_multiRegionParameterGroupNameHasBeenSet; }
+    inline void SetMultiRegionParameterGroupName(const Aws::String& value) { m_multiRegionParameterGroupNameHasBeenSet = true; m_multiRegionParameterGroupName = value; }
+    inline void SetMultiRegionParameterGroupName(Aws::String&& value) { m_multiRegionParameterGroupNameHasBeenSet = true; m_multiRegionParameterGroupName = std::move(value); }
+    inline void SetMultiRegionParameterGroupName(const char* value) { m_multiRegionParameterGroupNameHasBeenSet = true; m_multiRegionParameterGroupName.assign(value); }
+    inline ClusterConfiguration& WithMultiRegionParameterGroupName(const Aws::String& value) { SetMultiRegionParameterGroupName(value); return *this;}
+    inline ClusterConfiguration& WithMultiRegionParameterGroupName(Aws::String&& value) { SetMultiRegionParameterGroupName(std::move(value)); return *this;}
+    inline ClusterConfiguration& WithMultiRegionParameterGroupName(const char* value) { SetMultiRegionParameterGroupName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The name for the multi-Region cluster associated with the cluster
+     * configuration.</p>
+     */
+    inline const Aws::String& GetMultiRegionClusterName() const{ return m_multiRegionClusterName; }
+    inline bool MultiRegionClusterNameHasBeenSet() const { return m_multiRegionClusterNameHasBeenSet; }
+    inline void SetMultiRegionClusterName(const Aws::String& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = value; }
+    inline void SetMultiRegionClusterName(Aws::String&& value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName = std::move(value); }
+    inline void SetMultiRegionClusterName(const char* value) { m_multiRegionClusterNameHasBeenSet = true; m_multiRegionClusterName.assign(value); }
+    inline ClusterConfiguration& WithMultiRegionClusterName(const Aws::String& value) { SetMultiRegionClusterName(value); return *this;}
+    inline ClusterConfiguration& WithMultiRegionClusterName(Aws::String&& value) { SetMultiRegionClusterName(std::move(value)); return *this;}
+    inline ClusterConfiguration& WithMultiRegionClusterName(const char* value) { SetMultiRegionClusterName(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -283,6 +313,12 @@ namespace Model
 
     Aws::Vector<ShardDetail> m_shards;
     bool m_shardsHasBeenSet = false;
+
+    Aws::String m_multiRegionParameterGroupName;
+    bool m_multiRegionParameterGroupNameHasBeenSet = false;
+
+    Aws::String m_multiRegionClusterName;
+    bool m_multiRegionClusterNameHasBeenSet = false;
   };
 
 } // namespace Model

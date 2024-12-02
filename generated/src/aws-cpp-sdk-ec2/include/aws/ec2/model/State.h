@@ -23,7 +23,8 @@ namespace Model
     Deleted,
     Rejected,
     Failed,
-    Expired
+    Expired,
+    Partial
   };
 
 namespace StateMapper

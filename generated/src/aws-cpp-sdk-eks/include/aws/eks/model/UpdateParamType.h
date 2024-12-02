@@ -45,7 +45,10 @@ namespace Model
     AuthenticationMode,
     PodIdentityAssociations,
     UpgradePolicy,
-    ZonalShiftConfig
+    ZonalShiftConfig,
+    ComputeConfig,
+    StorageConfig,
+    KubernetesNetworkConfig
   };
 
 namespace UpdateParamTypeMapper

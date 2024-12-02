@@ -38,8 +38,9 @@ namespace Model
     ///@{
     /**
      * <p>If the object expiration is configured, the response includes this
-     * header.</p>  <p>This functionality is not supported for directory
-     * buckets.</p> 
+     * header.</p>  <p>Object expiration information is not returned in directory
+     * buckets and this header returns the value "<code>NotImplemented</code>" in all
+     * responses for directory buckets.</p> 
      */
     inline const Aws::String& GetExpiration() const{ return m_expiration; }
     inline void SetExpiration(const Aws::String& value) { m_expiration = value; }

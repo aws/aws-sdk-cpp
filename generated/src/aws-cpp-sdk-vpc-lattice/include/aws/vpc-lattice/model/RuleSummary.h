@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Summary information about the listener rule.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information about a listener rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/vpc-lattice-2022-11-30/RuleSummary">AWS
    * API Reference</a></p>
    */
@@ -54,8 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the listener rule was created, specified in ISO-8601
-     * format.</p>
+     * <p>The date and time that the listener rule was created, in ISO-8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -91,8 +90,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the listener rule was last updated, specified in
-     * ISO-8601 format.</p>
+     * <p>The date and time that the listener rule was last updated, in ISO-8601
+     * format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }

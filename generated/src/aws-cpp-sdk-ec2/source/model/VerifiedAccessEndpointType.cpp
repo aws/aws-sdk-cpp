@@ -22,6 +22,8 @@ namespace Aws
 
         static const int load_balancer_HASH = HashingUtils::HashString("load-balancer");
         static const int network_interface_HASH = HashingUtils::HashString("network-interface");
+        static const int rds_HASH = HashingUtils::HashString("rds");
+        static const int cidr_HASH = HashingUtils::HashString("cidr");
 
 
         VerifiedAccessEndpointType GetVerifiedAccessEndpointTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == network_interface_HASH)
           {
             return VerifiedAccessEndpointType::network_interface;
+          }
+          else if (hashCode == rds_HASH)
+          {
+            return VerifiedAccessEndpointType::rds;
+          }
+          else if (hashCode == cidr_HASH)
+          {
+            return VerifiedAccessEndpointType::cidr;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +65,10 @@ namespace Aws
             return "load-balancer";
           case VerifiedAccessEndpointType::network_interface:
             return "network-interface";
+          case VerifiedAccessEndpointType::rds:
+            return "rds";
+          case VerifiedAccessEndpointType::cidr:
+            return "cidr";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The trace event details used with the custom orchestration. </p>
+     * <p> The event details used with the custom orchestration. </p>
      */
     inline const CustomOrchestrationTraceEvent& GetEvent() const{ return m_event; }
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }

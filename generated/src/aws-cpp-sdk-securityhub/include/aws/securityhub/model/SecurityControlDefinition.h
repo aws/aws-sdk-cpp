@@ -144,7 +144,7 @@ namespace Model
     /**
      * <p> Security control properties that you can customize. Currently, only
      * parameter customization is supported for select controls. An empty array is
-     * returned for controls that don’t support custom properties. </p>
+     * returned for controls that don���t support custom properties. </p>
      */
     inline const Aws::Vector<SecurityControlProperty>& GetCustomizableProperties() const{ return m_customizableProperties; }
     inline bool CustomizablePropertiesHasBeenSet() const { return m_customizablePropertiesHasBeenSet; }

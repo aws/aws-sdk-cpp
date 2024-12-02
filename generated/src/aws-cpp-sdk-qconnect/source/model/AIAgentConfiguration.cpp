@@ -20,7 +20,8 @@ namespace Model
 
 AIAgentConfiguration::AIAgentConfiguration() : 
     m_answerRecommendationAIAgentConfigurationHasBeenSet(false),
-    m_manualSearchAIAgentConfigurationHasBeenSet(false)
+    m_manualSearchAIAgentConfigurationHasBeenSet(false),
+    m_selfServiceAIAgentConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ AIAgentConfiguration& AIAgentConfiguration::operator =(JsonView jsonValue)
     m_manualSearchAIAgentConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("selfServiceAIAgentConfiguration"))
+  {
+    m_selfServiceAIAgentConfiguration = jsonValue.GetObject("selfServiceAIAgentConfiguration");
+
+    m_selfServiceAIAgentConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue AIAgentConfiguration::Jsonize() const
   if(m_manualSearchAIAgentConfigurationHasBeenSet)
   {
    payload.WithObject("manualSearchAIAgentConfiguration", m_manualSearchAIAgentConfiguration.Jsonize());
+
+  }
+
+  if(m_selfServiceAIAgentConfigurationHasBeenSet)
+  {
+   payload.WithObject("selfServiceAIAgentConfiguration", m_selfServiceAIAgentConfiguration.Jsonize());
 
   }
 

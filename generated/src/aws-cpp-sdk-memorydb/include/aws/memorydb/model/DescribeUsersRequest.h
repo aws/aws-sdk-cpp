@@ -38,7 +38,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the user</p>
+     * <p>The name of the user.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }

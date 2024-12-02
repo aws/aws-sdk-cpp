@@ -20,6 +20,8 @@ ListEvaluationJobsRequest::ListEvaluationJobsRequest() :
     m_creationTimeBeforeHasBeenSet(false),
     m_statusEquals(EvaluationJobStatus::NOT_SET),
     m_statusEqualsHasBeenSet(false),
+    m_applicationTypeEquals(ApplicationType::NOT_SET),
+    m_applicationTypeEqualsHasBeenSet(false),
     m_nameContainsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
@@ -57,6 +59,13 @@ void ListEvaluationJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << EvaluationJobStatusMapper::GetNameForEvaluationJobStatus(m_statusEquals);
       uri.AddQueryStringParameter("statusEquals", ss.str());
+      ss.str("");
+    }
+
+    if(m_applicationTypeEqualsHasBeenSet)
+    {
+      ss << ApplicationTypeMapper::GetNameForApplicationType(m_applicationTypeEquals);
+      uri.AddQueryStringParameter("applicationTypeEquals", ss.str());
       ss.str("");
     }
 

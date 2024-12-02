@@ -31,7 +31,8 @@ UpdateFileSystemOpenZFSConfiguration::UpdateFileSystemOpenZFSConfiguration() :
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
     m_diskIopsConfigurationHasBeenSet(false),
     m_addRouteTableIdsHasBeenSet(false),
-    m_removeRouteTableIdsHasBeenSet(false)
+    m_removeRouteTableIdsHasBeenSet(false),
+    m_readCacheConfigurationHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,13 @@ UpdateFileSystemOpenZFSConfiguration& UpdateFileSystemOpenZFSConfiguration::oper
     m_removeRouteTableIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReadCacheConfiguration"))
+  {
+    m_readCacheConfiguration = jsonValue.GetObject("ReadCacheConfiguration");
+
+    m_readCacheConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -180,6 +188,12 @@ JsonValue UpdateFileSystemOpenZFSConfiguration::Jsonize() const
      removeRouteTableIdsJsonList[removeRouteTableIdsIndex].AsString(m_removeRouteTableIds[removeRouteTableIdsIndex]);
    }
    payload.WithArray("RemoveRouteTableIds", std::move(removeRouteTableIdsJsonList));
+
+  }
+
+  if(m_readCacheConfigurationHasBeenSet)
+  {
+   payload.WithObject("ReadCacheConfiguration", m_readCacheConfiguration.Jsonize());
 
   }
 

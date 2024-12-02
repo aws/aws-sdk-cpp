@@ -37,8 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A JSON object containing the HTTP status codes and the ARNs of model
-     * evaluation jobs that failed to be deleted.</p>
+     * <p>A JSON object containing the HTTP status codes and the ARNs of evaluation
+     * jobs that failed to be deleted.</p>
      */
     inline const Aws::Vector<BatchDeleteEvaluationJobError>& GetErrors() const{ return m_errors; }
     inline void SetErrors(const Aws::Vector<BatchDeleteEvaluationJobError>& value) { m_errors = value; }
@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of model evaluation jobs to be deleted.</p>
+     * <p>The list of evaluation jobs for deletion.</p>
      */
     inline const Aws::Vector<BatchDeleteEvaluationJobItem>& GetEvaluationJobs() const{ return m_evaluationJobs; }
     inline void SetEvaluationJobs(const Aws::Vector<BatchDeleteEvaluationJobItem>& value) { m_evaluationJobs = value; }

@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
+     * <p>The ID or ARN of the access log subscription.</p>
      */
     inline const Aws::String& GetAccessLogSubscriptionIdentifier() const{ return m_accessLogSubscriptionIdentifier; }
     inline bool AccessLogSubscriptionIdentifierHasBeenSet() const { return m_accessLogSubscriptionIdentifierHasBeenSet; }

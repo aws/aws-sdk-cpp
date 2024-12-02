@@ -53,8 +53,9 @@ namespace Model
     ///@{
     /**
      * <p>The claimed phone number ARN being imported from the external service, such
-     * as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like the ARN of the
-     * phone number to import from Amazon Pinpoint.</p>
+     * as Amazon Web Services End User Messaging. If it is from Amazon Web Services End
+     * User Messaging, it looks like the ARN of the phone number to import from Amazon
+     * Web Services End User Messaging.</p>
      */
     inline const Aws::String& GetSourcePhoneNumberArn() const{ return m_sourcePhoneNumberArn; }
     inline bool SourcePhoneNumberArnHasBeenSet() const { return m_sourcePhoneNumberArnHasBeenSet; }

@@ -48,8 +48,10 @@ enum class QBusinessErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  EXTERNAL_RESOURCE,
   INTERNAL_SERVER,
   LICENSE_NOT_FOUND,
+  MEDIA_TOO_LARGE,
   SERVICE_QUOTA_EXCEEDED
 };
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/ManagedBy.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -51,6 +52,21 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The entity that manages the state for block public access for AMIs. Possible
+     * values include:</p> <ul> <li> <p> <code>account</code> - The state is managed by
+     * the account.</p> </li> <li> <p> <code>declarative-policy</code> - The state is
+     * managed by a declarative policy and can't be modified by the account.</p> </li>
+     * </ul>
+     */
+    inline const ManagedBy& GetManagedBy() const{ return m_managedBy; }
+    inline void SetManagedBy(const ManagedBy& value) { m_managedBy = value; }
+    inline void SetManagedBy(ManagedBy&& value) { m_managedBy = std::move(value); }
+    inline GetImageBlockPublicAccessStateResponse& WithManagedBy(const ManagedBy& value) { SetManagedBy(value); return *this;}
+    inline GetImageBlockPublicAccessStateResponse& WithManagedBy(ManagedBy&& value) { SetManagedBy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -61,6 +77,8 @@ namespace Model
   private:
 
     Aws::String m_imageBlockPublicAccessState;
+
+    ManagedBy m_managedBy;
 
     ResponseMetadata m_responseMetadata;
   };

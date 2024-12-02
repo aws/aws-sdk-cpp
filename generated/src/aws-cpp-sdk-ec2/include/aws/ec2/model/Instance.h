@@ -575,7 +575,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The entity that manages the instance.</p>
+     * <p>The service provider that manages the instance.</p>
      */
     inline const OperatorResponse& GetOperator() const{ return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }

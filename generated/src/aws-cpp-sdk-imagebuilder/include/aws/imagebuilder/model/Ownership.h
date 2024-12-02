@@ -19,7 +19,8 @@ namespace Model
     Self,
     Shared,
     Amazon,
-    ThirdParty
+    ThirdParty,
+    AWSMarketplace
   };
 
 namespace OwnershipMapper

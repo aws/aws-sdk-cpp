@@ -233,6 +233,20 @@ namespace Model
     inline Finding& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
     inline Finding& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Amazon Resource Name (ARN) associated with the attack sequence finding.</p>
+     */
+    inline const Aws::String& GetAssociatedAttackSequenceArn() const{ return m_associatedAttackSequenceArn; }
+    inline bool AssociatedAttackSequenceArnHasBeenSet() const { return m_associatedAttackSequenceArnHasBeenSet; }
+    inline void SetAssociatedAttackSequenceArn(const Aws::String& value) { m_associatedAttackSequenceArnHasBeenSet = true; m_associatedAttackSequenceArn = value; }
+    inline void SetAssociatedAttackSequenceArn(Aws::String&& value) { m_associatedAttackSequenceArnHasBeenSet = true; m_associatedAttackSequenceArn = std::move(value); }
+    inline void SetAssociatedAttackSequenceArn(const char* value) { m_associatedAttackSequenceArnHasBeenSet = true; m_associatedAttackSequenceArn.assign(value); }
+    inline Finding& WithAssociatedAttackSequenceArn(const Aws::String& value) { SetAssociatedAttackSequenceArn(value); return *this;}
+    inline Finding& WithAssociatedAttackSequenceArn(Aws::String&& value) { SetAssociatedAttackSequenceArn(std::move(value)); return *this;}
+    inline Finding& WithAssociatedAttackSequenceArn(const char* value) { SetAssociatedAttackSequenceArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_accountId;
@@ -279,6 +293,9 @@ namespace Model
 
     Aws::String m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
+
+    Aws::String m_associatedAttackSequenceArn;
+    bool m_associatedAttackSequenceArnHasBeenSet = false;
   };
 
 } // namespace Model

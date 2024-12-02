@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/model/SnippetExcerpt.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -72,6 +73,36 @@ namespace Model
     inline TextSegment& WithSnippetExcerpt(const SnippetExcerpt& value) { SetSnippetExcerpt(value); return *this;}
     inline TextSegment& WithSnippetExcerpt(SnippetExcerpt&& value) { SetSnippetExcerpt(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The identifier of the media object associated with the text segment in the
+     * source attribution.</p>
+     */
+    inline const Aws::String& GetMediaId() const{ return m_mediaId; }
+    inline bool MediaIdHasBeenSet() const { return m_mediaIdHasBeenSet; }
+    inline void SetMediaId(const Aws::String& value) { m_mediaIdHasBeenSet = true; m_mediaId = value; }
+    inline void SetMediaId(Aws::String&& value) { m_mediaIdHasBeenSet = true; m_mediaId = std::move(value); }
+    inline void SetMediaId(const char* value) { m_mediaIdHasBeenSet = true; m_mediaId.assign(value); }
+    inline TextSegment& WithMediaId(const Aws::String& value) { SetMediaId(value); return *this;}
+    inline TextSegment& WithMediaId(Aws::String&& value) { SetMediaId(std::move(value)); return *this;}
+    inline TextSegment& WithMediaId(const char* value) { SetMediaId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The MIME type (image/png) of the media object associated with the text
+     * segment in the source attribution.</p>
+     */
+    inline const Aws::String& GetMediaMimeType() const{ return m_mediaMimeType; }
+    inline bool MediaMimeTypeHasBeenSet() const { return m_mediaMimeTypeHasBeenSet; }
+    inline void SetMediaMimeType(const Aws::String& value) { m_mediaMimeTypeHasBeenSet = true; m_mediaMimeType = value; }
+    inline void SetMediaMimeType(Aws::String&& value) { m_mediaMimeTypeHasBeenSet = true; m_mediaMimeType = std::move(value); }
+    inline void SetMediaMimeType(const char* value) { m_mediaMimeTypeHasBeenSet = true; m_mediaMimeType.assign(value); }
+    inline TextSegment& WithMediaMimeType(const Aws::String& value) { SetMediaMimeType(value); return *this;}
+    inline TextSegment& WithMediaMimeType(Aws::String&& value) { SetMediaMimeType(std::move(value)); return *this;}
+    inline TextSegment& WithMediaMimeType(const char* value) { SetMediaMimeType(value); return *this;}
+    ///@}
   private:
 
     int m_beginOffset;
@@ -82,6 +113,12 @@ namespace Model
 
     SnippetExcerpt m_snippetExcerpt;
     bool m_snippetExcerptHasBeenSet = false;
+
+    Aws::String m_mediaId;
+    bool m_mediaIdHasBeenSet = false;
+
+    Aws::String m_mediaMimeType;
+    bool m_mediaMimeTypeHasBeenSet = false;
   };
 
 } // namespace Model

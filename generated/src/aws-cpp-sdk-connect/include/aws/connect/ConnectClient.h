@@ -31,8 +31,8 @@ namespace Connect
    * information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
    * Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-   * <p>You can connect programmatically to an Amazon Web Services service by using
-   * an endpoint. For a list of Amazon Connect endpoints, see <a
+   * <p>You can use an endpoint to connect programmatically to an Amazon Web Services
+   * service. For a list of Amazon Connect endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
    * Connect Endpoints</a>.</p>
    */
@@ -2557,9 +2557,9 @@ namespace Connect
          * URI request parameter. However, if the number is claimed to a traffic
          * distribution group and you are calling this API in the alternate Amazon Web
          * Services Region associated with the traffic distribution group, you must provide
-         * a full phone number ARN. If a UUID is provided in this scenario, you will
-         * receive a <code>ResourceNotFoundException</code>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * a full phone number ARN. If a UUID is provided in this scenario, you receive a
+         * <code>ResourceNotFoundException</code>.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -3641,10 +3641,10 @@ namespace Connect
         }
 
         /**
-         * <p>Imports a claimed phone number from an external service, such as Amazon
-         * Pinpoint, into an Amazon Connect instance. You can call this API only in the
-         * same Amazon Web Services Region where the Amazon Connect instance was
-         * created.</p>  <p>Call the <a
+         * <p>Imports a claimed phone number from an external service, such as Amazon Web
+         * Services End User Messaging, into an Amazon Connect instance. You can call this
+         * API only in the same Amazon Web Services Region where the Amazon Connect
+         * instance was created.</p>  <p>Call the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
          * API to verify the status of a previous <code>ImportPhoneNumber</code> operation.
          * </p>  <p>If you plan to claim or import numbers and then release
@@ -5677,7 +5677,8 @@ namespace Connect
          * </ul> <p>When a chat integration event is sent with chat identifiers that do not
          * map to an active chat contact, a new chat contact is also created before
          * handling chat action. </p> <p>Access to this API is currently restricted to
-         * Amazon Pinpoint for supporting SMS integration. </p><p><h3>See Also:</h3>   <a
+         * Amazon Web Services End User Messaging for supporting SMS integration.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendChatIntegrationEvent">AWS
          * API Reference</a></p>
          */
@@ -5945,13 +5946,13 @@ namespace Connect
 
         /**
          * <p>Initiates a new outbound SMS contact to a customer. Response of this API
-         * provides the ContactId of the outbound SMS contact created.</p> <p>
+         * provides the <code>ContactId</code> of the outbound SMS contact created.</p> <p>
          * <b>SourceEndpoint</b> only supports Endpoints with
          * <code>CONNECT_PHONENUMBER_ARN</code> as Type and <b>DestinationEndpoint</b> only
          * supports Endpoints with <code>TELEPHONE_NUMBER</code> as Type.
          * <b>ContactFlowId</b> initiates the flow to manage the new SMS contact
          * created.</p> <p>This API can be used to initiate outbound SMS contacts for an
-         * agent or it can also deflect an ongoing contact to an outbound SMS contact by
+         * agent, or it can also deflect an ongoing contact to an outbound SMS contact by
          * using the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
          * Flow Action.</p> <p>For more information about using SMS in Amazon Connect, see

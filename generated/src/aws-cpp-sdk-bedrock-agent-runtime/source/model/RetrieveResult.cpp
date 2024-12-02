@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RetrieveResult::RetrieveResult()
+RetrieveResult::RetrieveResult() : 
+    m_guardrailAction(GuadrailAction::NOT_SET)
 {
 }
 
 RetrieveResult::RetrieveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : RetrieveResult()
 {
   *this = result;
 }
@@ -29,6 +31,12 @@ RetrieveResult::RetrieveResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 RetrieveResult& RetrieveResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("guardrailAction"))
+  {
+    m_guardrailAction = GuadrailActionMapper::GetGuadrailActionForName(jsonValue.GetString("guardrailAction"));
+
+  }
+
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");

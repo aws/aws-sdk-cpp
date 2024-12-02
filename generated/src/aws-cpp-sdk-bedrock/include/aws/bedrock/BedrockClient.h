@@ -78,7 +78,7 @@ namespace Bedrock
         virtual ~BedrockClient();
 
         /**
-         * <p>Creates a batch deletion job. A model evaluation job can only be deleted if
+         * <p>Deletes a batch of evaluation jobs. An evaluation job can only be deleted if
          * it has following status <code>FAILED</code>, <code>COMPLETED</code>, and
          * <code>STOPPED</code>. You can request up to 25 model evaluation jobs be deleted
          * in a single request.</p><p><h3>See Also:</h3>   <a
@@ -106,11 +106,7 @@ namespace Bedrock
         }
 
         /**
-         * <p>API operation for creating and managing Amazon Bedrock automatic model
-         * evaluation jobs and model evaluation jobs that use human workers. To learn more
-         * about the requirements for creating a model evaluation job see, <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-         * evaluation</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an evaluation job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob">AWS
          * API Reference</a></p>
          */
@@ -603,10 +599,8 @@ namespace Bedrock
         }
 
         /**
-         * <p>Retrieves the properties associated with a model evaluation job, including
-         * the status of the job. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-         * evaluation</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about an evaluation job, such as the status of the
+         * job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetEvaluationJob">AWS
          * API Reference</a></p>
          */
@@ -940,7 +934,7 @@ namespace Bedrock
         }
 
         /**
-         * <p>Lists model evaluation jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all existing evaluation jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs">AWS
          * API Reference</a></p>
          */
@@ -1291,7 +1285,8 @@ namespace Bedrock
         }
 
         /**
-         * <p>Stops an in progress model evaluation job.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops an evaluation job that is current being created or
+         * running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopEvaluationJob">AWS
          * API Reference</a></p>
          */

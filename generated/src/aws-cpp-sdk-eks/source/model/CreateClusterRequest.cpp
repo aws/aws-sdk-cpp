@@ -28,7 +28,10 @@ CreateClusterRequest::CreateClusterRequest() :
     m_bootstrapSelfManagedAddons(false),
     m_bootstrapSelfManagedAddonsHasBeenSet(false),
     m_upgradePolicyHasBeenSet(false),
-    m_zonalShiftConfigHasBeenSet(false)
+    m_zonalShiftConfigHasBeenSet(false),
+    m_remoteNetworkConfigHasBeenSet(false),
+    m_computeConfigHasBeenSet(false),
+    m_storageConfigHasBeenSet(false)
 {
 }
 
@@ -127,6 +130,24 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_zonalShiftConfigHasBeenSet)
   {
    payload.WithObject("zonalShiftConfig", m_zonalShiftConfig.Jsonize());
+
+  }
+
+  if(m_remoteNetworkConfigHasBeenSet)
+  {
+   payload.WithObject("remoteNetworkConfig", m_remoteNetworkConfig.Jsonize());
+
+  }
+
+  if(m_computeConfigHasBeenSet)
+  {
+   payload.WithObject("computeConfig", m_computeConfig.Jsonize());
+
+  }
+
+  if(m_storageConfigHasBeenSet)
+  {
+   payload.WithObject("storageConfig", m_storageConfig.Jsonize());
 
   }
 

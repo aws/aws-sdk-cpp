@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VerifiedAccessEndpointProtocol.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/ModifyVerifiedAccessEndpointPortRange.h>
 #include <utility>
 
 namespace Aws
@@ -79,6 +80,20 @@ namespace Model
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline ModifyVerifiedAccessEndpointLoadBalancerOptions& WithPort(int value) { SetPort(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The port ranges.</p>
+     */
+    inline const Aws::Vector<ModifyVerifiedAccessEndpointPortRange>& GetPortRanges() const{ return m_portRanges; }
+    inline bool PortRangesHasBeenSet() const { return m_portRangesHasBeenSet; }
+    inline void SetPortRanges(const Aws::Vector<ModifyVerifiedAccessEndpointPortRange>& value) { m_portRangesHasBeenSet = true; m_portRanges = value; }
+    inline void SetPortRanges(Aws::Vector<ModifyVerifiedAccessEndpointPortRange>&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::move(value); }
+    inline ModifyVerifiedAccessEndpointLoadBalancerOptions& WithPortRanges(const Aws::Vector<ModifyVerifiedAccessEndpointPortRange>& value) { SetPortRanges(value); return *this;}
+    inline ModifyVerifiedAccessEndpointLoadBalancerOptions& WithPortRanges(Aws::Vector<ModifyVerifiedAccessEndpointPortRange>&& value) { SetPortRanges(std::move(value)); return *this;}
+    inline ModifyVerifiedAccessEndpointLoadBalancerOptions& AddPortRanges(const ModifyVerifiedAccessEndpointPortRange& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(value); return *this; }
+    inline ModifyVerifiedAccessEndpointLoadBalancerOptions& AddPortRanges(ModifyVerifiedAccessEndpointPortRange&& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
@@ -89,6 +104,9 @@ namespace Model
 
     int m_port;
     bool m_portHasBeenSet = false;
+
+    Aws::Vector<ModifyVerifiedAccessEndpointPortRange> m_portRanges;
+    bool m_portRangesHasBeenSet = false;
   };
 
 } // namespace Model

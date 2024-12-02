@@ -83,9 +83,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon
-     * Q Business returns a next token as a pagination token to retrieve the next set
-     * of messages.</p>
+     * <p>If the number of messages returned exceeds <code>maxResults</code>, Amazon Q
+     * Business returns a next token as a pagination token to retrieve the next set of
+     * messages.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

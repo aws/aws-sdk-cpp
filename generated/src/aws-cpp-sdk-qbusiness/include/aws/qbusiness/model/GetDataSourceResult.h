@@ -12,6 +12,7 @@
 #include <aws/qbusiness/model/DataSourceStatus.h>
 #include <aws/qbusiness/model/ErrorDetail.h>
 #include <aws/qbusiness/model/DocumentEnrichmentConfiguration.h>
+#include <aws/qbusiness/model/MediaExtractionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -237,6 +238,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The configuration for extracting information from media in documents for the
+     * data source. </p>
+     */
+    inline const MediaExtractionConfiguration& GetMediaExtractionConfiguration() const{ return m_mediaExtractionConfiguration; }
+    inline void SetMediaExtractionConfiguration(const MediaExtractionConfiguration& value) { m_mediaExtractionConfiguration = value; }
+    inline void SetMediaExtractionConfiguration(MediaExtractionConfiguration&& value) { m_mediaExtractionConfiguration = std::move(value); }
+    inline GetDataSourceResult& WithMediaExtractionConfiguration(const MediaExtractionConfiguration& value) { SetMediaExtractionConfiguration(value); return *this;}
+    inline GetDataSourceResult& WithMediaExtractionConfiguration(MediaExtractionConfiguration&& value) { SetMediaExtractionConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -279,6 +292,8 @@ namespace Model
     ErrorDetail m_error;
 
     DocumentEnrichmentConfiguration m_documentEnrichmentConfiguration;
+
+    MediaExtractionConfiguration m_mediaExtractionConfiguration;
 
     Aws::String m_requestId;
   };

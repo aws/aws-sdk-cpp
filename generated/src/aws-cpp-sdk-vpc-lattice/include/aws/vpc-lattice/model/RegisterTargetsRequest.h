@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
+     * <p>The ID or ARN of the target group.</p>
      */
     inline const Aws::String& GetTargetGroupIdentifier() const{ return m_targetGroupIdentifier; }
     inline bool TargetGroupIdentifierHasBeenSet() const { return m_targetGroupIdentifierHasBeenSet; }

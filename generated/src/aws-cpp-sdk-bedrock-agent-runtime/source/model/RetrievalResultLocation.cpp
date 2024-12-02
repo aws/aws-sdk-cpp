@@ -20,6 +20,7 @@ namespace Model
 
 RetrievalResultLocation::RetrievalResultLocation() : 
     m_confluenceLocationHasBeenSet(false),
+    m_customDocumentLocationHasBeenSet(false),
     m_s3LocationHasBeenSet(false),
     m_salesforceLocationHasBeenSet(false),
     m_sharePointLocationHasBeenSet(false),
@@ -42,6 +43,13 @@ RetrievalResultLocation& RetrievalResultLocation::operator =(JsonView jsonValue)
     m_confluenceLocation = jsonValue.GetObject("confluenceLocation");
 
     m_confluenceLocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customDocumentLocation"))
+  {
+    m_customDocumentLocation = jsonValue.GetObject("customDocumentLocation");
+
+    m_customDocumentLocationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("s3Location"))
@@ -89,6 +97,12 @@ JsonValue RetrievalResultLocation::Jsonize() const
   if(m_confluenceLocationHasBeenSet)
   {
    payload.WithObject("confluenceLocation", m_confluenceLocation.Jsonize());
+
+  }
+
+  if(m_customDocumentLocationHasBeenSet)
+  {
+   payload.WithObject("customDocumentLocation", m_customDocumentLocation.Jsonize());
 
   }
 

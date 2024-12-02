@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock/model/EvaluationJobStatus.h>
 #include <aws/bedrock/model/EvaluationJobType.h>
+#include <aws/bedrock/model/ApplicationType.h>
 #include <aws/bedrock/model/EvaluationConfig.h>
 #include <aws/bedrock/model/EvaluationInferenceConfig.h>
 #include <aws/bedrock/model/EvaluationOutputDataConfig.h>
@@ -41,7 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the model evaluation job.</p>
+     * <p>The name for the evaluation job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
     inline void SetJobName(const Aws::String& value) { m_jobName = value; }
@@ -54,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the model evaluation job.</p>
+     * <p>The current status of the evaluation job.</p>
      */
     inline const EvaluationJobStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const EvaluationJobStatus& value) { m_status = value; }
@@ -65,7 +66,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the model evaluation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the evaluation job.</p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
     inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
@@ -78,7 +79,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the model evaluation job.</p>
+     * <p>The description of the evaluation job.</p>
      */
     inline const Aws::String& GetJobDescription() const{ return m_jobDescription; }
     inline void SetJobDescription(const Aws::String& value) { m_jobDescription = value; }
@@ -91,8 +92,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM service role used in the model
-     * evaluation job.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM service role used in the evaluation
+     * job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
@@ -105,8 +106,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the customer managed key specified when the
-     * model evaluation job was created.</p>
+     * <p>The Amazon Resource Name (ARN) of the customer managed encryption key
+     * specified when the evaluation job was created.</p>
      */
     inline const Aws::String& GetCustomerEncryptionKeyId() const{ return m_customerEncryptionKeyId; }
     inline void SetCustomerEncryptionKeyId(const Aws::String& value) { m_customerEncryptionKeyId = value; }
@@ -119,7 +120,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of model evaluation job.</p>
+     * <p>Specifies whether the evaluation job is automated or human-based.</p>
      */
     inline const EvaluationJobType& GetJobType() const{ return m_jobType; }
     inline void SetJobType(const EvaluationJobType& value) { m_jobType = value; }
@@ -130,9 +131,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains details about the type of model evaluation job, the metrics used,
-     * the task type selected, the datasets used, and any custom metrics you
-     * defined.</p>
+     * <p>Specifies whether the evaluation job is for evaluating a model or evaluating
+     * a knowledge base (retrieval and response generation).</p>
+     */
+    inline const ApplicationType& GetApplicationType() const{ return m_applicationType; }
+    inline void SetApplicationType(const ApplicationType& value) { m_applicationType = value; }
+    inline void SetApplicationType(ApplicationType&& value) { m_applicationType = std::move(value); }
+    inline GetEvaluationJobResult& WithApplicationType(const ApplicationType& value) { SetApplicationType(value); return *this;}
+    inline GetEvaluationJobResult& WithApplicationType(ApplicationType&& value) { SetApplicationType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains the configuration details of either an automated or human-based
+     * evaluation job.</p>
      */
     inline const EvaluationConfig& GetEvaluationConfig() const{ return m_evaluationConfig; }
     inline void SetEvaluationConfig(const EvaluationConfig& value) { m_evaluationConfig = value; }
@@ -143,7 +155,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Details about the models you specified in your model evaluation job.</p>
+     * <p>Contains the configuration details of the inference model used for the
+     * evaluation job. </p>
      */
     inline const EvaluationInferenceConfig& GetInferenceConfig() const{ return m_inferenceConfig; }
     inline void SetInferenceConfig(const EvaluationInferenceConfig& value) { m_inferenceConfig = value; }
@@ -154,7 +167,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Amazon S3 location for where output data is saved.</p>
+     * <p>Contains the configuration details of the Amazon S3 bucket for storing the
+     * results of the evaluation job.</p>
      */
     inline const EvaluationOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
     inline void SetOutputDataConfig(const EvaluationOutputDataConfig& value) { m_outputDataConfig = value; }
@@ -165,7 +179,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>When the model evaluation job was created.</p>
+     * <p>The time the evaluation job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
@@ -176,7 +190,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>When the model evaluation job was last modified.</p>
+     * <p>The time the evaluation job was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
@@ -187,7 +201,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of strings the specify why the model evaluation job has failed.</p>
+     * <p>A list of strings that specify why the evaluation job failed to create.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFailureMessages() const{ return m_failureMessages; }
     inline void SetFailureMessages(const Aws::Vector<Aws::String>& value) { m_failureMessages = value; }
@@ -224,6 +238,8 @@ namespace Model
     Aws::String m_customerEncryptionKeyId;
 
     EvaluationJobType m_jobType;
+
+    ApplicationType m_applicationType;
 
     EvaluationConfig m_evaluationConfig;
 

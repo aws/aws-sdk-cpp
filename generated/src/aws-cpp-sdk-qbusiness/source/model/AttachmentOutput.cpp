@@ -22,7 +22,9 @@ AttachmentOutput::AttachmentOutput() :
     m_nameHasBeenSet(false),
     m_status(AttachmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false)
+    m_errorHasBeenSet(false),
+    m_attachmentIdHasBeenSet(false),
+    m_conversationIdHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,20 @@ AttachmentOutput& AttachmentOutput::operator =(JsonView jsonValue)
     m_errorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("attachmentId"))
+  {
+    m_attachmentId = jsonValue.GetString("attachmentId");
+
+    m_attachmentIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("conversationId"))
+  {
+    m_conversationId = jsonValue.GetString("conversationId");
+
+    m_conversationIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +92,18 @@ JsonValue AttachmentOutput::Jsonize() const
   if(m_errorHasBeenSet)
   {
    payload.WithObject("error", m_error.Jsonize());
+
+  }
+
+  if(m_attachmentIdHasBeenSet)
+  {
+   payload.WithString("attachmentId", m_attachmentId);
+
+  }
+
+  if(m_conversationIdHasBeenSet)
+  {
+   payload.WithString("conversationId", m_conversationId);
 
   }
 

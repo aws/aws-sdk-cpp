@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/Anomaly.h>
+#include <aws/guardduty/model/Sequence.h>
 #include <utility>
 
 namespace Aws
@@ -50,10 +51,25 @@ namespace Model
     inline Detection& WithAnomaly(const Anomaly& value) { SetAnomaly(value); return *this;}
     inline Detection& WithAnomaly(Anomaly&& value) { SetAnomaly(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The details about the attack sequence.</p>
+     */
+    inline const Sequence& GetSequence() const{ return m_sequence; }
+    inline bool SequenceHasBeenSet() const { return m_sequenceHasBeenSet; }
+    inline void SetSequence(const Sequence& value) { m_sequenceHasBeenSet = true; m_sequence = value; }
+    inline void SetSequence(Sequence&& value) { m_sequenceHasBeenSet = true; m_sequence = std::move(value); }
+    inline Detection& WithSequence(const Sequence& value) { SetSequence(value); return *this;}
+    inline Detection& WithSequence(Sequence&& value) { SetSequence(std::move(value)); return *this;}
+    ///@}
   private:
 
     Anomaly m_anomaly;
     bool m_anomalyHasBeenSet = false;
+
+    Sequence m_sequence;
+    bool m_sequenceHasBeenSet = false;
   };
 
 } // namespace Model

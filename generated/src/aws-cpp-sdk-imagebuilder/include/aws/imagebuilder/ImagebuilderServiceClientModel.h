@@ -51,6 +51,7 @@
 #include <aws/imagebuilder/model/GetInfrastructureConfigurationResult.h>
 #include <aws/imagebuilder/model/GetLifecycleExecutionResult.h>
 #include <aws/imagebuilder/model/GetLifecyclePolicyResult.h>
+#include <aws/imagebuilder/model/GetMarketplaceResourceResult.h>
 #include <aws/imagebuilder/model/GetWorkflowResult.h>
 #include <aws/imagebuilder/model/GetWorkflowExecutionResult.h>
 #include <aws/imagebuilder/model/GetWorkflowStepExecutionResult.h>
@@ -176,6 +177,7 @@ namespace Aws
       class GetInfrastructureConfigurationRequest;
       class GetLifecycleExecutionRequest;
       class GetLifecyclePolicyRequest;
+      class GetMarketplaceResourceRequest;
       class GetWorkflowRequest;
       class GetWorkflowExecutionRequest;
       class GetWorkflowStepExecutionRequest;
@@ -252,6 +254,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetInfrastructureConfigurationResult, ImagebuilderError> GetInfrastructureConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetLifecycleExecutionResult, ImagebuilderError> GetLifecycleExecutionOutcome;
       typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, ImagebuilderError> GetLifecyclePolicyOutcome;
+      typedef Aws::Utils::Outcome<GetMarketplaceResourceResult, ImagebuilderError> GetMarketplaceResourceOutcome;
       typedef Aws::Utils::Outcome<GetWorkflowResult, ImagebuilderError> GetWorkflowOutcome;
       typedef Aws::Utils::Outcome<GetWorkflowExecutionResult, ImagebuilderError> GetWorkflowExecutionOutcome;
       typedef Aws::Utils::Outcome<GetWorkflowStepExecutionResult, ImagebuilderError> GetWorkflowStepExecutionOutcome;
@@ -328,6 +331,7 @@ namespace Aws
       typedef std::future<GetInfrastructureConfigurationOutcome> GetInfrastructureConfigurationOutcomeCallable;
       typedef std::future<GetLifecycleExecutionOutcome> GetLifecycleExecutionOutcomeCallable;
       typedef std::future<GetLifecyclePolicyOutcome> GetLifecyclePolicyOutcomeCallable;
+      typedef std::future<GetMarketplaceResourceOutcome> GetMarketplaceResourceOutcomeCallable;
       typedef std::future<GetWorkflowOutcome> GetWorkflowOutcomeCallable;
       typedef std::future<GetWorkflowExecutionOutcome> GetWorkflowExecutionOutcomeCallable;
       typedef std::future<GetWorkflowStepExecutionOutcome> GetWorkflowStepExecutionOutcomeCallable;
@@ -407,6 +411,7 @@ namespace Aws
     typedef std::function<void(const ImagebuilderClient*, const Model::GetInfrastructureConfigurationRequest&, const Model::GetInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInfrastructureConfigurationResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetLifecycleExecutionRequest&, const Model::GetLifecycleExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecycleExecutionResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetLifecyclePolicyRequest&, const Model::GetLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecyclePolicyResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::GetMarketplaceResourceRequest&, const Model::GetMarketplaceResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMarketplaceResourceResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetWorkflowRequest&, const Model::GetWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetWorkflowExecutionRequest&, const Model::GetWorkflowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowExecutionResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetWorkflowStepExecutionRequest&, const Model::GetWorkflowStepExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowStepExecutionResponseReceivedHandler;

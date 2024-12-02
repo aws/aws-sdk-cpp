@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>An array of model evaluation jobs to be deleted, and their associated
-   * statuses.</p><p><h3>See Also:</h3>   <a
+   * <p>An evaluation job for deletion, and it’s current status.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteEvaluationJobItem">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ARN of model evaluation job to be deleted.</p>
+     * <p>The Amazon Resource Name (ARN) of the evaluation job for deletion.</p>
      */
     inline const Aws::String& GetJobIdentifier() const{ return m_jobIdentifier; }
     inline bool JobIdentifierHasBeenSet() const { return m_jobIdentifierHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status of the job's deletion.</p>
+     * <p>The status of the evaluation job for deletion.</p>
      */
     inline const EvaluationJobStatus& GetJobStatus() const{ return m_jobStatus; }
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }

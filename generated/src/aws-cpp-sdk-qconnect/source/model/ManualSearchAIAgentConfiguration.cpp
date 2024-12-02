@@ -19,6 +19,7 @@ namespace Model
 {
 
 ManualSearchAIAgentConfiguration::ManualSearchAIAgentConfiguration() : 
+    m_answerGenerationAIGuardrailIdHasBeenSet(false),
     m_answerGenerationAIPromptIdHasBeenSet(false),
     m_associationConfigurationsHasBeenSet(false)
 {
@@ -32,6 +33,13 @@ ManualSearchAIAgentConfiguration::ManualSearchAIAgentConfiguration(JsonView json
 
 ManualSearchAIAgentConfiguration& ManualSearchAIAgentConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("answerGenerationAIGuardrailId"))
+  {
+    m_answerGenerationAIGuardrailId = jsonValue.GetString("answerGenerationAIGuardrailId");
+
+    m_answerGenerationAIGuardrailIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("answerGenerationAIPromptId"))
   {
     m_answerGenerationAIPromptId = jsonValue.GetString("answerGenerationAIPromptId");
@@ -55,6 +63,12 @@ ManualSearchAIAgentConfiguration& ManualSearchAIAgentConfiguration::operator =(J
 JsonValue ManualSearchAIAgentConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_answerGenerationAIGuardrailIdHasBeenSet)
+  {
+   payload.WithString("answerGenerationAIGuardrailId", m_answerGenerationAIGuardrailId);
+
+  }
 
   if(m_answerGenerationAIPromptIdHasBeenSet)
   {

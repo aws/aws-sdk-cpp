@@ -42,7 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>List of resource tags associated with the specified domain.</p>
+     * <p>List of resource tags associated with the specified domain, data source, or
+     * application.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagList = value; }

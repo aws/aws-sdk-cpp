@@ -16,7 +16,8 @@ namespace Model
   enum class DataRedundancy
   {
     NOT_SET,
-    SingleAvailabilityZone
+    SingleAvailabilityZone,
+    SingleLocalZone
   };
 
 namespace DataRedundancyMapper

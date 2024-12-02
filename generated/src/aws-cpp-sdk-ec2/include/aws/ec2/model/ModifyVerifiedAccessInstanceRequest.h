@@ -94,6 +94,20 @@ namespace Model
     inline ModifyVerifiedAccessInstanceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
     inline ModifyVerifiedAccessInstanceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The custom subdomain.</p>
+     */
+    inline const Aws::String& GetCidrEndpointsCustomSubDomain() const{ return m_cidrEndpointsCustomSubDomain; }
+    inline bool CidrEndpointsCustomSubDomainHasBeenSet() const { return m_cidrEndpointsCustomSubDomainHasBeenSet; }
+    inline void SetCidrEndpointsCustomSubDomain(const Aws::String& value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain = value; }
+    inline void SetCidrEndpointsCustomSubDomain(Aws::String&& value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain = std::move(value); }
+    inline void SetCidrEndpointsCustomSubDomain(const char* value) { m_cidrEndpointsCustomSubDomainHasBeenSet = true; m_cidrEndpointsCustomSubDomain.assign(value); }
+    inline ModifyVerifiedAccessInstanceRequest& WithCidrEndpointsCustomSubDomain(const Aws::String& value) { SetCidrEndpointsCustomSubDomain(value); return *this;}
+    inline ModifyVerifiedAccessInstanceRequest& WithCidrEndpointsCustomSubDomain(Aws::String&& value) { SetCidrEndpointsCustomSubDomain(std::move(value)); return *this;}
+    inline ModifyVerifiedAccessInstanceRequest& WithCidrEndpointsCustomSubDomain(const char* value) { SetCidrEndpointsCustomSubDomain(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_verifiedAccessInstanceId;
@@ -107,6 +121,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_cidrEndpointsCustomSubDomain;
+    bool m_cidrEndpointsCustomSubDomainHasBeenSet = false;
   };
 
 } // namespace Model

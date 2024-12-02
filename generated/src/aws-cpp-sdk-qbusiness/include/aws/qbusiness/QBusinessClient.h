@@ -207,12 +207,17 @@ namespace QBusiness
          * Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a
          * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers">Amazon
          * Q Business tiers</a>. You must use the Amazon Q Business console to assign
-         * subscription tiers to users. </p> <p> A Amazon Q Apps service linked role will
-         * be created if it's absent in the Amazon Web Services account when the
-         * QAppsConfiguration is enabled in the request. For more information, see <a
+         * subscription tiers to users. </p> <p>An Amazon Q Apps service linked role will
+         * be created if it's absent in the Amazon Web Services account when
+         * <code>QAppsConfiguration</code> is enabled in the request. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
-         * Using service-linked roles for Q Apps </a> </p> <p><h3>See Also:</h3>  
-         * <a
+         * Using service-linked roles for Q Apps</a>.</p> <p>When you create an
+         * application, Amazon Q Business may securely transmit data for processing from
+         * your selected Amazon Web Services region, but within your geography. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+         * region inference in Amazon Q Business</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateApplication">AWS
          * API Reference</a></p>
          */
@@ -794,6 +799,37 @@ namespace QBusiness
         }
 
         /**
+         * <p>Returns the image bytes corresponding to a media object. If you have
+         * implemented your own application with the Chat and ChatSync APIs, and have
+         * enabled content extraction from visual data in Amazon Q Business, you use the
+         * GetMedia API operation to download the images so you can show them in your UI
+         * with responses.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/extracting-meaning-from-images.html">Extracting
+         * semantic meaning from images and visuals</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetMedia">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMediaOutcome GetMedia(const Model::GetMediaRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMedia that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMediaRequestT = Model::GetMediaRequest>
+        Model::GetMediaOutcomeCallable GetMediaCallable(const GetMediaRequestT& request) const
+        {
+            return SubmitCallable(&QBusinessClient::GetMedia, request);
+        }
+
+        /**
+         * An Async wrapper for GetMedia that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMediaRequestT = Model::GetMediaRequest>
+        void GetMediaAsync(const GetMediaRequestT& request, const GetMediaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QBusinessClient::GetMedia, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about an existing Amazon Q Business plugin.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetPlugin">AWS
@@ -898,7 +934,11 @@ namespace QBusiness
         }
 
         /**
-         * <p>Lists Amazon Q Business applications.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists Amazon Q Business applications.</p>  <p>Amazon Q Business
+         * applications may securely transmit data for processing across Amazon Web
+         * Services Regions within your geography. For more information, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+         * region inference in Amazon Q Business</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListApplications">AWS
          * API Reference</a></p>
          */
@@ -920,6 +960,33 @@ namespace QBusiness
         void ListApplicationsAsync(const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListApplicationsRequestT& request = {}) const
         {
             return SubmitAsync(&QBusinessClient::ListApplications, request, handler, context);
+        }
+
+        /**
+         * <p>Gets a list of attachments associated with an Amazon Q Business web
+         * experience or a list of attachements associated with a specific Amazon Q
+         * Business conversation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListAttachments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAttachmentsOutcome ListAttachments(const Model::ListAttachmentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAttachments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAttachmentsRequestT = Model::ListAttachmentsRequest>
+        Model::ListAttachmentsOutcomeCallable ListAttachmentsCallable(const ListAttachmentsRequestT& request) const
+        {
+            return SubmitCallable(&QBusinessClient::ListAttachments, request);
+        }
+
+        /**
+         * An Async wrapper for ListAttachments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAttachmentsRequestT = Model::ListAttachmentsRequest>
+        void ListAttachmentsAsync(const ListAttachmentsRequestT& request, const ListAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QBusinessClient::ListAttachments, request, handler, context);
         }
 
         /**
@@ -1371,13 +1438,16 @@ namespace QBusiness
         }
 
         /**
-         * <p>Updates an existing Amazon Q Business application.</p>  <p> A Amazon Q
+         * <p>Updates an existing Amazon Q Business application.</p>  <p>Amazon Q
+         * Business applications may securely transmit data for processing across Amazon
+         * Web Services Regions within your geography. For more information, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+         * region inference in Amazon Q Business</a>.</p>   <p>An Amazon Q
          * Apps service-linked role will be created if it's absent in the Amazon Web
-         * Services account when the QAppsConfiguration is enabled in the request. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
-         * Using service-linked roles for Q Apps </a> </p> <p><h3>See Also:</h3>  
-         * <a
+         * Services account when <code>QAppsConfiguration</code> is enabled in the request.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">Using
+         * service-linked roles for Q Apps</a>. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateApplication">AWS
          * API Reference</a></p>
          */

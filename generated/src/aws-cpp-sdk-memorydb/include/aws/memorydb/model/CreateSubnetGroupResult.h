@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The newly-created subnet group</p>
+     * <p>The newly-created subnet group.</p>
      */
     inline const SubnetGroup& GetSubnetGroup() const{ return m_subnetGroup; }
     inline void SetSubnetGroup(const SubnetGroup& value) { m_subnetGroup = value; }

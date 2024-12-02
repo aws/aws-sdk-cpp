@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> The event in the custom orchestration sequence. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p> The event in the custom orchestration sequence. Events are the responses
+   * which the custom orchestration Lambda function sends as response to the agent.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/CustomOrchestrationTraceEvent">AWS
    * API Reference</a></p>
    */

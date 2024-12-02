@@ -17,7 +17,8 @@ CreateConnectionRequest::CreateConnectionRequest() :
     m_descriptionHasBeenSet(false),
     m_authorizationType(ConnectionAuthorizationType::NOT_SET),
     m_authorizationTypeHasBeenSet(false),
-    m_authParametersHasBeenSet(false)
+    m_authParametersHasBeenSet(false),
+    m_invocationConnectivityParametersHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,12 @@ Aws::String CreateConnectionRequest::SerializePayload() const
   if(m_authParametersHasBeenSet)
   {
    payload.WithObject("AuthParameters", m_authParameters.Jsonize());
+
+  }
+
+  if(m_invocationConnectivityParametersHasBeenSet)
+  {
+   payload.WithObject("InvocationConnectivityParameters", m_invocationConnectivityParameters.Jsonize());
 
   }
 

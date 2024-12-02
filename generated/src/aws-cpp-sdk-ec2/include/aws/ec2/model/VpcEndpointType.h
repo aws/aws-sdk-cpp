@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     Interface,
     Gateway,
-    GatewayLoadBalancer
+    GatewayLoadBalancer,
+    Resource,
+    ServiceNetwork
   };
 
 namespace VpcEndpointTypeMapper

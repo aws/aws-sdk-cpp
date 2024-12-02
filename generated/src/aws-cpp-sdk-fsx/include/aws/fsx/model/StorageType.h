@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SSD,
-    HDD
+    HDD,
+    INTELLIGENT_TIERING
   };
 
 namespace StorageTypeMapper

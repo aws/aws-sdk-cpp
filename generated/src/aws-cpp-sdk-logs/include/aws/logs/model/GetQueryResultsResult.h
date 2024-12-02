@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
+#include <aws/logs/model/QueryLanguage.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/model/QueryStatistics.h>
 #include <aws/logs/model/QueryStatus.h>
@@ -35,6 +36,20 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API GetQueryResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API GetQueryResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+
+    ///@{
+    /**
+     * <p>The query language used for this query. For more information about the query
+     * languages that CloudWatch Logs supports, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported
+     * query languages</a>.</p>
+     */
+    inline const QueryLanguage& GetQueryLanguage() const{ return m_queryLanguage; }
+    inline void SetQueryLanguage(const QueryLanguage& value) { m_queryLanguage = value; }
+    inline void SetQueryLanguage(QueryLanguage&& value) { m_queryLanguage = std::move(value); }
+    inline GetQueryResultsResult& WithQueryLanguage(const QueryLanguage& value) { SetQueryLanguage(value); return *this;}
+    inline GetQueryResultsResult& WithQueryLanguage(QueryLanguage&& value) { SetQueryLanguage(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -109,6 +124,8 @@ namespace Model
     inline GetQueryResultsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
     ///@}
   private:
+
+    QueryLanguage m_queryLanguage;
 
     Aws::Vector<Aws::Vector<ResultField>> m_results;
 

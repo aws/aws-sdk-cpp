@@ -12,6 +12,7 @@
 #include <aws/imagebuilder/model/ComponentState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/ComponentParameterDetail.h>
+#include <aws/imagebuilder/model/ProductCodeListItem.h>
 #include <utility>
 
 namespace Aws
@@ -158,8 +159,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Describes the current status of the component. This is used for components
-     * that are no longer active.</p>
+     * <p>Describes the current status of the component.</p>
      */
     inline const ComponentState& GetState() const{ return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
@@ -294,6 +294,21 @@ namespace Model
     inline void SetObfuscate(bool value) { m_obfuscateHasBeenSet = true; m_obfuscate = value; }
     inline Component& WithObfuscate(bool value) { SetObfuscate(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains product codes that are used for billing purposes for Amazon Web
+     * Services Marketplace components.</p>
+     */
+    inline const Aws::Vector<ProductCodeListItem>& GetProductCodes() const{ return m_productCodes; }
+    inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
+    inline void SetProductCodes(const Aws::Vector<ProductCodeListItem>& value) { m_productCodesHasBeenSet = true; m_productCodes = value; }
+    inline void SetProductCodes(Aws::Vector<ProductCodeListItem>&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::move(value); }
+    inline Component& WithProductCodes(const Aws::Vector<ProductCodeListItem>& value) { SetProductCodes(value); return *this;}
+    inline Component& WithProductCodes(Aws::Vector<ProductCodeListItem>&& value) { SetProductCodes(std::move(value)); return *this;}
+    inline Component& AddProductCodes(const ProductCodeListItem& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(value); return *this; }
+    inline Component& AddProductCodes(ProductCodeListItem&& value) { m_productCodesHasBeenSet = true; m_productCodes.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -349,6 +364,9 @@ namespace Model
 
     bool m_obfuscate;
     bool m_obfuscateHasBeenSet = false;
+
+    Aws::Vector<ProductCodeListItem> m_productCodes;
+    bool m_productCodesHasBeenSet = false;
   };
 
 } // namespace Model

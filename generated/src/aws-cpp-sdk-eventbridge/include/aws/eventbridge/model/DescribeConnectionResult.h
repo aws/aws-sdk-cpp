@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eventbridge/model/DescribeConnectionConnectivityParameters.h>
 #include <aws/eventbridge/model/ConnectionState.h>
 #include <aws/eventbridge/model/ConnectionAuthorizationType.h>
 #include <aws/eventbridge/model/ConnectionAuthResponseParameters.h>
@@ -73,6 +74,21 @@ namespace Model
     inline DescribeConnectionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
     inline DescribeConnectionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline DescribeConnectionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>For connections to private resource endpoints. The parameters EventBridge
+     * uses to invoke the resource endpoint.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting
+     * to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i>
+     * </i>.</p>
+     */
+    inline const DescribeConnectionConnectivityParameters& GetInvocationConnectivityParameters() const{ return m_invocationConnectivityParameters; }
+    inline void SetInvocationConnectivityParameters(const DescribeConnectionConnectivityParameters& value) { m_invocationConnectivityParameters = value; }
+    inline void SetInvocationConnectivityParameters(DescribeConnectionConnectivityParameters&& value) { m_invocationConnectivityParameters = std::move(value); }
+    inline DescribeConnectionResult& WithInvocationConnectivityParameters(const DescribeConnectionConnectivityParameters& value) { SetInvocationConnectivityParameters(value); return *this;}
+    inline DescribeConnectionResult& WithInvocationConnectivityParameters(DescribeConnectionConnectivityParameters&& value) { SetInvocationConnectivityParameters(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -185,6 +201,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::String m_description;
+
+    DescribeConnectionConnectivityParameters m_invocationConnectivityParameters;
 
     ConnectionState m_connectionState;
 

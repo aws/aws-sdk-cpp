@@ -18,7 +18,9 @@ DescribeQueriesRequest::DescribeQueriesRequest() :
     m_statusHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_queryLanguage(QueryLanguage::NOT_SET),
+    m_queryLanguageHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,11 @@ Aws::String DescribeQueriesRequest::SerializePayload() const
   {
    payload.WithString("nextToken", m_nextToken);
 
+  }
+
+  if(m_queryLanguageHasBeenSet)
+  {
+   payload.WithString("queryLanguage", QueryLanguageMapper::GetNameForQueryLanguage(m_queryLanguage));
   }
 
   return payload.View().WriteReadable();

@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 
 
         ComponentStatus GetComponentStatusForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == DEPRECATED_HASH)
           {
             return ComponentStatus::DEPRECATED;
+          }
+          else if (hashCode == DISABLED_HASH)
+          {
+            return ComponentStatus::DISABLED;
+          }
+          else if (hashCode == ACTIVE_HASH)
+          {
+            return ComponentStatus::ACTIVE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +58,10 @@ namespace Aws
             return {};
           case ComponentStatus::DEPRECATED:
             return "DEPRECATED";
+          case ComponentStatus::DISABLED:
+            return "DISABLED";
+          case ComponentStatus::ACTIVE:
+            return "ACTIVE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

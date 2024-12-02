@@ -1,0 +1,78 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock/Bedrock_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace Bedrock
+{
+namespace Model
+{
+
+  /**
+   * <p>The configuration details for the guardrail.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GuardrailConfiguration">AWS
+   * API Reference</a></p>
+   */
+  class GuardrailConfiguration
+  {
+  public:
+    AWS_BEDROCK_API GuardrailConfiguration();
+    AWS_BEDROCK_API GuardrailConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BEDROCK_API GuardrailConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    ///@{
+    /**
+     * <p>The unique identifier for the guardrail.</p>
+     */
+    inline const Aws::String& GetGuardrailId() const{ return m_guardrailId; }
+    inline bool GuardrailIdHasBeenSet() const { return m_guardrailIdHasBeenSet; }
+    inline void SetGuardrailId(const Aws::String& value) { m_guardrailIdHasBeenSet = true; m_guardrailId = value; }
+    inline void SetGuardrailId(Aws::String&& value) { m_guardrailIdHasBeenSet = true; m_guardrailId = std::move(value); }
+    inline void SetGuardrailId(const char* value) { m_guardrailIdHasBeenSet = true; m_guardrailId.assign(value); }
+    inline GuardrailConfiguration& WithGuardrailId(const Aws::String& value) { SetGuardrailId(value); return *this;}
+    inline GuardrailConfiguration& WithGuardrailId(Aws::String&& value) { SetGuardrailId(std::move(value)); return *this;}
+    inline GuardrailConfiguration& WithGuardrailId(const char* value) { SetGuardrailId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The version of the guardrail.</p>
+     */
+    inline const Aws::String& GetGuardrailVersion() const{ return m_guardrailVersion; }
+    inline bool GuardrailVersionHasBeenSet() const { return m_guardrailVersionHasBeenSet; }
+    inline void SetGuardrailVersion(const Aws::String& value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion = value; }
+    inline void SetGuardrailVersion(Aws::String&& value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion = std::move(value); }
+    inline void SetGuardrailVersion(const char* value) { m_guardrailVersionHasBeenSet = true; m_guardrailVersion.assign(value); }
+    inline GuardrailConfiguration& WithGuardrailVersion(const Aws::String& value) { SetGuardrailVersion(value); return *this;}
+    inline GuardrailConfiguration& WithGuardrailVersion(Aws::String&& value) { SetGuardrailVersion(std::move(value)); return *this;}
+    inline GuardrailConfiguration& WithGuardrailVersion(const char* value) { SetGuardrailVersion(value); return *this;}
+    ///@}
+  private:
+
+    Aws::String m_guardrailId;
+    bool m_guardrailIdHasBeenSet = false;
+
+    Aws::String m_guardrailVersion;
+    bool m_guardrailVersionHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace Bedrock
+} // namespace Aws

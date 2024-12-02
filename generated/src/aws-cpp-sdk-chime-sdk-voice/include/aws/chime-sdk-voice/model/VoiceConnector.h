@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime-sdk-voice/model/VoiceConnectorAwsRegion.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/chime-sdk-voice/model/VoiceConnectorIntegrationType.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +143,18 @@ namespace Model
     inline VoiceConnector& WithVoiceConnectorArn(Aws::String&& value) { SetVoiceConnectorArn(std::move(value)); return *this;}
     inline VoiceConnector& WithVoiceConnectorArn(const char* value) { SetVoiceConnectorArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The connectors for use with Amazon Connect.</p>
+     */
+    inline const VoiceConnectorIntegrationType& GetIntegrationType() const{ return m_integrationType; }
+    inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
+    inline void SetIntegrationType(const VoiceConnectorIntegrationType& value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
+    inline void SetIntegrationType(VoiceConnectorIntegrationType&& value) { m_integrationTypeHasBeenSet = true; m_integrationType = std::move(value); }
+    inline VoiceConnector& WithIntegrationType(const VoiceConnectorIntegrationType& value) { SetIntegrationType(value); return *this;}
+    inline VoiceConnector& WithIntegrationType(VoiceConnectorIntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_voiceConnectorId;
@@ -167,6 +180,9 @@ namespace Model
 
     Aws::String m_voiceConnectorArn;
     bool m_voiceConnectorArnHasBeenSet = false;
+
+    VoiceConnectorIntegrationType m_integrationType;
+    bool m_integrationTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the cluster to update</p>
+     * <p>The name of the cluster to update.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The description of the cluster to update</p>
+     * <p>The description of the cluster to update.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -67,7 +67,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SecurityGroupIds to update</p>
+     * <p>The SecurityGroupIds to update.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
@@ -103,7 +103,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The SNS topic ARN to update</p>
+     * <p>The SNS topic ARN to update.</p>
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
@@ -132,7 +132,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the parameter group to update</p>
+     * <p>The name of the parameter group to update.</p>
      */
     inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
     inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
@@ -187,8 +187,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the engine to be used for the nodes in this cluster. The value
-     * must be set to either Redis or Valkey.</p>
+     * <p>The name of the engine to be used for the cluster.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
@@ -219,7 +218,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of replicas that will reside in each shard</p>
+     * <p>The number of replicas that will reside in each shard.</p>
      */
     inline const ReplicaConfigurationRequest& GetReplicaConfiguration() const{ return m_replicaConfiguration; }
     inline bool ReplicaConfigurationHasBeenSet() const { return m_replicaConfigurationHasBeenSet; }
@@ -231,7 +230,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The number of shards in the cluster</p>
+     * <p>The number of shards in the cluster.</p>
      */
     inline const ShardConfigurationRequest& GetShardConfiguration() const{ return m_shardConfiguration; }
     inline bool ShardConfigurationHasBeenSet() const { return m_shardConfigurationHasBeenSet; }
@@ -243,7 +242,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Access Control List that is associated with the cluster</p>
+     * <p>The Access Control List that is associated with the cluster.</p>
      */
     inline const Aws::String& GetACLName() const{ return m_aCLName; }
     inline bool ACLNameHasBeenSet() const { return m_aCLNameHasBeenSet; }

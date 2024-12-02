@@ -21,6 +21,7 @@ namespace Model
 AddonVersionInfo::AddonVersionInfo() : 
     m_addonVersionHasBeenSet(false),
     m_architectureHasBeenSet(false),
+    m_computeTypesHasBeenSet(false),
     m_compatibilitiesHasBeenSet(false),
     m_requiresConfiguration(false),
     m_requiresConfigurationHasBeenSet(false),
@@ -52,6 +53,16 @@ AddonVersionInfo& AddonVersionInfo::operator =(JsonView jsonValue)
       m_architecture.push_back(architectureJsonList[architectureIndex].AsString());
     }
     m_architectureHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("computeTypes"))
+  {
+    Aws::Utils::Array<JsonView> computeTypesJsonList = jsonValue.GetArray("computeTypes");
+    for(unsigned computeTypesIndex = 0; computeTypesIndex < computeTypesJsonList.GetLength(); ++computeTypesIndex)
+    {
+      m_computeTypes.push_back(computeTypesJsonList[computeTypesIndex].AsString());
+    }
+    m_computeTypesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("compatibilities"))
@@ -99,6 +110,17 @@ JsonValue AddonVersionInfo::Jsonize() const
      architectureJsonList[architectureIndex].AsString(m_architecture[architectureIndex]);
    }
    payload.WithArray("architecture", std::move(architectureJsonList));
+
+  }
+
+  if(m_computeTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> computeTypesJsonList(m_computeTypes.size());
+   for(unsigned computeTypesIndex = 0; computeTypesIndex < computeTypesJsonList.GetLength(); ++computeTypesIndex)
+   {
+     computeTypesJsonList[computeTypesIndex].AsString(m_computeTypes[computeTypesIndex]);
+   }
+   payload.WithArray("computeTypes", std::move(computeTypesJsonList));
 
   }
 

@@ -288,8 +288,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The <code>RetryPolicy</code> object that contains the retry policy
-     * configuration to use for the dead-letter queue.</p>
+     * <p>The retry policy configuration to use for the dead-letter queue.</p>
      */
     inline const RetryPolicy& GetRetryPolicy() const{ return m_retryPolicy; }
     inline bool RetryPolicyHasBeenSet() const { return m_retryPolicyHasBeenSet; }

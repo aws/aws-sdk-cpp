@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the OAuth authorization parameters to use for the
-   * connection.</p><p><h3>See Also:</h3>   <a
+   * <p>The OAuth authorization parameters to use for the connection.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnectionOAuthClientRequestParameters">AWS
    * API Reference</a></p>
    */

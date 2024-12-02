@@ -8,6 +8,7 @@
 #include <aws/bedrock/BedrockRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock/model/ApplicationType.h>
 #include <aws/bedrock/model/EvaluationConfig.h>
 #include <aws/bedrock/model/EvaluationInferenceConfig.h>
 #include <aws/bedrock/model/EvaluationOutputDataConfig.h>
@@ -40,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the model evaluation job. Model evaluation job names must unique
-     * with your AWS account, and your account's AWS region.</p>
+     * <p>A name for the evaluation job. Names must unique with your Amazon Web
+     * Services account, and your account's Amazon Web Services region.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
@@ -55,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A description of the model evaluation job.</p>
+     * <p>A description of the evaluation job.</p>
      */
     inline const Aws::String& GetJobDescription() const{ return m_jobDescription; }
     inline bool JobDescriptionHasBeenSet() const { return m_jobDescriptionHasBeenSet; }
@@ -88,13 +89,10 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can
-     * assume to perform tasks on your behalf. The service role must have Amazon
-     * Bedrock as the service principal, and provide access to any Amazon S3 buckets
-     * specified in the <code>EvaluationConfig</code> object. To pass this role to
-     * Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code>
-     * permission. To learn more about the required permissions, see <a
+     * assume to perform tasks on your behalf. To learn more about the required
+     * permissions, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-security.html">Required
-     * permissions</a>.</p>
+     * permissions for model evaluations</a>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -108,8 +106,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify your customer managed key ARN that will be used to encrypt your model
-     * evaluation job.</p>
+     * <p>Specify your customer managed encryption key Amazon Resource Name (ARN) that
+     * will be used to encrypt your evaluation job.</p>
      */
     inline const Aws::String& GetCustomerEncryptionKeyId() const{ return m_customerEncryptionKeyId; }
     inline bool CustomerEncryptionKeyIdHasBeenSet() const { return m_customerEncryptionKeyIdHasBeenSet; }
@@ -137,8 +135,21 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies whether the model evaluation job is automatic or uses human
-     * worker.</p>
+     * <p>Specifies whether the evaluation job is for evaluating a model or evaluating
+     * a knowledge base (retrieval and response generation).</p>
+     */
+    inline const ApplicationType& GetApplicationType() const{ return m_applicationType; }
+    inline bool ApplicationTypeHasBeenSet() const { return m_applicationTypeHasBeenSet; }
+    inline void SetApplicationType(const ApplicationType& value) { m_applicationTypeHasBeenSet = true; m_applicationType = value; }
+    inline void SetApplicationType(ApplicationType&& value) { m_applicationTypeHasBeenSet = true; m_applicationType = std::move(value); }
+    inline CreateEvaluationJobRequest& WithApplicationType(const ApplicationType& value) { SetApplicationType(value); return *this;}
+    inline CreateEvaluationJobRequest& WithApplicationType(ApplicationType&& value) { SetApplicationType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Contains the configuration details of either an automated or human-based
+     * evaluation job.</p>
      */
     inline const EvaluationConfig& GetEvaluationConfig() const{ return m_evaluationConfig; }
     inline bool EvaluationConfigHasBeenSet() const { return m_evaluationConfigHasBeenSet; }
@@ -150,11 +161,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify the models you want to use in your model evaluation job. Automatic
-     * model evaluation jobs support a single model or <a
+     * <p>Contains the configuration details of the inference model for the evaluation
+     * job.</p> <p>For model evaluation jobs, automated jobs support a single model or
+     * <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-     * profile</a>, and model evaluation job that use human workers support two models
-     * or inference profiles.</p>
+     * profile</a>, and jobs that use human workers support two models or inference
+     * profiles.</p>
      */
     inline const EvaluationInferenceConfig& GetInferenceConfig() const{ return m_inferenceConfig; }
     inline bool InferenceConfigHasBeenSet() const { return m_inferenceConfigHasBeenSet; }
@@ -166,8 +178,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that defines where the results of model evaluation job will be
-     * saved in Amazon S3.</p>
+     * <p>Contains the configuration details of the Amazon S3 bucket for storing the
+     * results of the evaluation job.</p>
      */
     inline const EvaluationOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
@@ -195,6 +207,9 @@ namespace Model
 
     Aws::Vector<Tag> m_jobTags;
     bool m_jobTagsHasBeenSet = false;
+
+    ApplicationType m_applicationType;
+    bool m_applicationTypeHasBeenSet = false;
 
     EvaluationConfig m_evaluationConfig;
     bool m_evaluationConfigHasBeenSet = false;

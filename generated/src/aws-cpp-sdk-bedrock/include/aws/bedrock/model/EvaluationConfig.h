@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Used to specify either a <code>AutomatedEvaluationConfig</code> or
-   * <code>HumanEvaluationConfig</code> object.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration details of either an automated or human-based evaluation
+   * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/EvaluationConfig">AWS
    * API Reference</a></p>
    */
@@ -41,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Used to specify an automated model evaluation job. See
-     * <code>AutomatedEvaluationConfig</code> to view the required parameters.</p>
+     * <p>Contains the configuration details of an automated evaluation job that
+     * computes metrics.</p>
      */
     inline const AutomatedEvaluationConfig& GetAutomated() const{ return m_automated; }
     inline bool AutomatedHasBeenSet() const { return m_automatedHasBeenSet; }
@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Used to specify a model evaluation job that uses human workers.See
-     * <code>HumanEvaluationConfig</code> to view the required parameters.</p>
+     * <p>Contains the configuration details of an evaluation job that uses human
+     * workers.</p>
      */
     inline const HumanEvaluationConfig& GetHuman() const{ return m_human; }
     inline bool HumanHasBeenSet() const { return m_humanHasBeenSet; }

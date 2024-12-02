@@ -20,7 +20,8 @@ namespace Model
 
   /**
    * <p>Container for the parameters to the <code>AddTags</code> operation. Specifies
-   * the tags to attach to the domain.</p><p><h3>See Also:</h3>   <a
+   * the tags to attach to the domain, data source, or application.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddTagsRequest">AWS
    * API Reference</a></p>
    */
@@ -40,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Amazon Resource Name (ARN) for the OpenSearch Service domain to which you
-     * want to attach resource tags.</p>
+     * <p>Amazon Resource Name (ARN) for the OpenSearch Service domain, data source, or
+     * application to which you want to attach resource tags.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }

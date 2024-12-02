@@ -31,6 +31,8 @@ namespace Aws
         static const int APPLICATION_HASH = HashingUtils::HashString("APPLICATION");
         static const int FILE_SCANNER_HASH = HashingUtils::HashString("FILE_SCANNER");
         static const int SES_IDENTITY_HASH = HashingUtils::HashString("SES_IDENTITY");
+        static const int ANALYTICS_CONNECTOR_HASH = HashingUtils::HashString("ANALYTICS_CONNECTOR");
+        static const int CALL_TRANSFER_CONNECTOR_HASH = HashingUtils::HashString("CALL_TRANSFER_CONNECTOR");
 
 
         IntegrationType GetIntegrationTypeForName(const Aws::String& name)
@@ -80,6 +82,14 @@ namespace Aws
           {
             return IntegrationType::SES_IDENTITY;
           }
+          else if (hashCode == ANALYTICS_CONNECTOR_HASH)
+          {
+            return IntegrationType::ANALYTICS_CONNECTOR;
+          }
+          else if (hashCode == CALL_TRANSFER_CONNECTOR_HASH)
+          {
+            return IntegrationType::CALL_TRANSFER_CONNECTOR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +128,10 @@ namespace Aws
             return "FILE_SCANNER";
           case IntegrationType::SES_IDENTITY:
             return "SES_IDENTITY";
+          case IntegrationType::ANALYTICS_CONNECTOR:
+            return "ANALYTICS_CONNECTOR";
+          case IntegrationType::CALL_TRANSFER_CONNECTOR:
+            return "CALL_TRANSFER_CONNECTOR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

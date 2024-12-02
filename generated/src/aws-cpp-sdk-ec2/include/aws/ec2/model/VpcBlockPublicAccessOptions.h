@@ -10,6 +10,8 @@
 #include <aws/ec2/model/VpcBlockPublicAccessState.h>
 #include <aws/ec2/model/InternetGatewayBlockMode.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/ManagedBy.h>
+#include <aws/ec2/model/VpcBlockPublicAccessExclusionsAllowed.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +136,36 @@ namespace Model
     inline VpcBlockPublicAccessOptions& WithLastUpdateTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdateTimestamp(value); return *this;}
     inline VpcBlockPublicAccessOptions& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The entity that manages the state of VPC BPA. Possible values include:</p>
+     * <ul> <li> <p> <code>account</code> - The state is managed by the account.</p>
+     * </li> <li> <p> <code>declarative-policy</code> - The state is managed by a
+     * declarative policy and can't be modified by the account.</p> </li> </ul>
+     */
+    inline const ManagedBy& GetManagedBy() const{ return m_managedBy; }
+    inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
+    inline void SetManagedBy(const ManagedBy& value) { m_managedByHasBeenSet = true; m_managedBy = value; }
+    inline void SetManagedBy(ManagedBy&& value) { m_managedByHasBeenSet = true; m_managedBy = std::move(value); }
+    inline VpcBlockPublicAccessOptions& WithManagedBy(const ManagedBy& value) { SetManagedBy(value); return *this;}
+    inline VpcBlockPublicAccessOptions& WithManagedBy(ManagedBy&& value) { SetManagedBy(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Determines if exclusions are allowed. If you have <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html#security-vpc-bpa-exclusions-orgs">enabled
+     * VPC BPA at the Organization level</a>, exclusions may be
+     * <code>not-allowed</code>. Otherwise, they are <code>allowed</code>.</p>
+     */
+    inline const VpcBlockPublicAccessExclusionsAllowed& GetExclusionsAllowed() const{ return m_exclusionsAllowed; }
+    inline bool ExclusionsAllowedHasBeenSet() const { return m_exclusionsAllowedHasBeenSet; }
+    inline void SetExclusionsAllowed(const VpcBlockPublicAccessExclusionsAllowed& value) { m_exclusionsAllowedHasBeenSet = true; m_exclusionsAllowed = value; }
+    inline void SetExclusionsAllowed(VpcBlockPublicAccessExclusionsAllowed&& value) { m_exclusionsAllowedHasBeenSet = true; m_exclusionsAllowed = std::move(value); }
+    inline VpcBlockPublicAccessOptions& WithExclusionsAllowed(const VpcBlockPublicAccessExclusionsAllowed& value) { SetExclusionsAllowed(value); return *this;}
+    inline VpcBlockPublicAccessOptions& WithExclusionsAllowed(VpcBlockPublicAccessExclusionsAllowed&& value) { SetExclusionsAllowed(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_awsAccountId;
@@ -153,6 +185,12 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTimestamp;
     bool m_lastUpdateTimestampHasBeenSet = false;
+
+    ManagedBy m_managedBy;
+    bool m_managedByHasBeenSet = false;
+
+    VpcBlockPublicAccessExclusionsAllowed m_exclusionsAllowed;
+    bool m_exclusionsAllowedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AnswerRecommendationAIAgentConfiguration.h>
 #include <aws/qconnect/model/ManualSearchAIAgentConfiguration.h>
+#include <aws/qconnect/model/SelfServiceAIAgentConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -63,6 +64,18 @@ namespace Model
     inline AIAgentConfiguration& WithManualSearchAIAgentConfiguration(const ManualSearchAIAgentConfiguration& value) { SetManualSearchAIAgentConfiguration(value); return *this;}
     inline AIAgentConfiguration& WithManualSearchAIAgentConfiguration(ManualSearchAIAgentConfiguration&& value) { SetManualSearchAIAgentConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for AI Agents of type SELF_SERVICE.</p>
+     */
+    inline const SelfServiceAIAgentConfiguration& GetSelfServiceAIAgentConfiguration() const{ return m_selfServiceAIAgentConfiguration; }
+    inline bool SelfServiceAIAgentConfigurationHasBeenSet() const { return m_selfServiceAIAgentConfigurationHasBeenSet; }
+    inline void SetSelfServiceAIAgentConfiguration(const SelfServiceAIAgentConfiguration& value) { m_selfServiceAIAgentConfigurationHasBeenSet = true; m_selfServiceAIAgentConfiguration = value; }
+    inline void SetSelfServiceAIAgentConfiguration(SelfServiceAIAgentConfiguration&& value) { m_selfServiceAIAgentConfigurationHasBeenSet = true; m_selfServiceAIAgentConfiguration = std::move(value); }
+    inline AIAgentConfiguration& WithSelfServiceAIAgentConfiguration(const SelfServiceAIAgentConfiguration& value) { SetSelfServiceAIAgentConfiguration(value); return *this;}
+    inline AIAgentConfiguration& WithSelfServiceAIAgentConfiguration(SelfServiceAIAgentConfiguration&& value) { SetSelfServiceAIAgentConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     AnswerRecommendationAIAgentConfiguration m_answerRecommendationAIAgentConfiguration;
@@ -70,6 +83,9 @@ namespace Model
 
     ManualSearchAIAgentConfiguration m_manualSearchAIAgentConfiguration;
     bool m_manualSearchAIAgentConfigurationHasBeenSet = false;
+
+    SelfServiceAIAgentConfiguration m_selfServiceAIAgentConfiguration;
+    bool m_selfServiceAIAgentConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,8 +18,8 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetIndexResult::GetIndexResult() : 
-    m_type(IndexType::NOT_SET),
-    m_status(IndexStatus::NOT_SET)
+    m_status(IndexStatus::NOT_SET),
+    m_type(IndexType::NOT_SET)
 {
 }
 
@@ -50,12 +50,6 @@ GetIndexResult& GetIndexResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = IndexTypeMapper::GetIndexTypeForName(jsonValue.GetString("type"));
-
-  }
-
   if(jsonValue.ValueExists("indexArn"))
   {
     m_indexArn = jsonValue.GetString("indexArn");
@@ -65,6 +59,12 @@ GetIndexResult& GetIndexResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("status"))
   {
     m_status = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = IndexTypeMapper::GetIndexTypeForName(jsonValue.GetString("type"));
 
   }
 

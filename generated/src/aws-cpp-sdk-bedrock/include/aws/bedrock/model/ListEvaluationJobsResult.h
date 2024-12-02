@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A summary of the model evaluation jobs.</p>
+     * <p>A list of summaries of the evaluation jobs.</p>
      */
     inline const Aws::Vector<EvaluationSummary>& GetJobSummaries() const{ return m_jobSummaries; }
     inline void SetJobSummaries(const Aws::Vector<EvaluationSummary>& value) { m_jobSummaries = value; }

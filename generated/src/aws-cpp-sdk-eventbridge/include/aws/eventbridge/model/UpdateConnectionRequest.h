@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eventbridge/model/ConnectionAuthorizationType.h>
 #include <aws/eventbridge/model/UpdateConnectionAuthRequestParameters.h>
+#include <aws/eventbridge/model/ConnectivityResourceParameters.h>
 #include <utility>
 
 namespace Aws
@@ -87,6 +88,22 @@ namespace Model
     inline UpdateConnectionRequest& WithAuthParameters(const UpdateConnectionAuthRequestParameters& value) { SetAuthParameters(value); return *this;}
     inline UpdateConnectionRequest& WithAuthParameters(UpdateConnectionAuthRequestParameters&& value) { SetAuthParameters(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>For connections to private resource endpoints, the parameters to use for
+     * invoking the resource endpoint.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting
+     * to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i>
+     * </i>.</p>
+     */
+    inline const ConnectivityResourceParameters& GetInvocationConnectivityParameters() const{ return m_invocationConnectivityParameters; }
+    inline bool InvocationConnectivityParametersHasBeenSet() const { return m_invocationConnectivityParametersHasBeenSet; }
+    inline void SetInvocationConnectivityParameters(const ConnectivityResourceParameters& value) { m_invocationConnectivityParametersHasBeenSet = true; m_invocationConnectivityParameters = value; }
+    inline void SetInvocationConnectivityParameters(ConnectivityResourceParameters&& value) { m_invocationConnectivityParametersHasBeenSet = true; m_invocationConnectivityParameters = std::move(value); }
+    inline UpdateConnectionRequest& WithInvocationConnectivityParameters(const ConnectivityResourceParameters& value) { SetInvocationConnectivityParameters(value); return *this;}
+    inline UpdateConnectionRequest& WithInvocationConnectivityParameters(ConnectivityResourceParameters&& value) { SetInvocationConnectivityParameters(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -100,6 +117,9 @@ namespace Model
 
     UpdateConnectionAuthRequestParameters m_authParameters;
     bool m_authParametersHasBeenSet = false;
+
+    ConnectivityResourceParameters m_invocationConnectivityParameters;
+    bool m_invocationConnectivityParametersHasBeenSet = false;
   };
 
 } // namespace Model

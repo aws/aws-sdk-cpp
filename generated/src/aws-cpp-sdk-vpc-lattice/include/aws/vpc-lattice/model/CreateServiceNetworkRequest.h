@@ -8,6 +8,7 @@
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
 #include <aws/vpc-lattice/model/AuthType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/vpc-lattice/model/SharingConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -85,6 +86,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specify if the service network should be enabled for sharing.</p>
+     */
+    inline const SharingConfig& GetSharingConfig() const{ return m_sharingConfig; }
+    inline bool SharingConfigHasBeenSet() const { return m_sharingConfigHasBeenSet; }
+    inline void SetSharingConfig(const SharingConfig& value) { m_sharingConfigHasBeenSet = true; m_sharingConfig = value; }
+    inline void SetSharingConfig(SharingConfig&& value) { m_sharingConfigHasBeenSet = true; m_sharingConfig = std::move(value); }
+    inline CreateServiceNetworkRequest& WithSharingConfig(const SharingConfig& value) { SetSharingConfig(value); return *this;}
+    inline CreateServiceNetworkRequest& WithSharingConfig(SharingConfig&& value) { SetSharingConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The tags for the service network.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -111,6 +124,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    SharingConfig m_sharingConfig;
+    bool m_sharingConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

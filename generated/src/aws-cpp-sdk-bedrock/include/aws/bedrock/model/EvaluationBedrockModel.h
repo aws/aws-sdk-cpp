@@ -26,9 +26,9 @@ namespace Model
   /**
    * <p>Contains the ARN of the Amazon Bedrock model or <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-   * profile</a> specified in your model evaluation job. Each Amazon Bedrock model
-   * supports different <code>inferenceParams</code>. To learn more about supported
-   * inference parameters for Amazon Bedrock models, see <a
+   * profile</a> specified in your evaluation job. Each Amazon Bedrock model supports
+   * different <code>inferenceParams</code>. To learn more about supported inference
+   * parameters for Amazon Bedrock models, see <a
    * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
    * parameters for foundation models</a>.</p> <p>The <code>inferenceParams</code>
    * are specified using JSON. To successfully insert JSON as string make sure that

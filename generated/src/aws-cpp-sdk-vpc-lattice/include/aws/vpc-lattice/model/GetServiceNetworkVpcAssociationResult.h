@@ -50,8 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the association was created, specified in ISO-8601
-     * format.</p>
+     * <p>The date and time that the association was created, in ISO-8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
@@ -101,8 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the specified association between the service network and the
-     * VPC.</p>
+     * <p>The ID of the association.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline void SetId(const Aws::String& value) { m_id = value; }
@@ -115,8 +113,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date and time that the association was last updated, specified in
-     * ISO-8601 format.</p>
+     * <p>The date and time that the association was last updated, in ISO-8601
+     * format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
