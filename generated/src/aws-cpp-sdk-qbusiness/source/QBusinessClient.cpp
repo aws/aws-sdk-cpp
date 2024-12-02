@@ -256,7 +256,13 @@ BatchDeleteDocumentOutcome QBusinessClient::BatchDeleteDocument(const BatchDelet
       endpointOverrides.pathSegments.emplace_back("/indices/");
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/documents/delete");
-      return BatchDeleteDocumentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return BatchDeleteDocumentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -293,7 +299,13 @@ BatchPutDocumentOutcome QBusinessClient::BatchPutDocument(const BatchPutDocument
       endpointOverrides.pathSegments.emplace_back("/indices/");
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/documents");
-      return BatchPutDocumentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return BatchPutDocumentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -317,7 +329,7 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
     handler(this, request, ChatOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false)), handlerContext);
     return;
   }
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
   endpointOverrides.pathSegments.emplace_back("/applications/");
   endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
@@ -326,16 +338,17 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
 
-  auto eventEncoderStream = Aws::MakeShared<Model::ChatInputStream>(ALLOCATION_TAG);
-  eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
-  request.SetInputStream(eventEncoderStream); // this becomes the body of the request
-  auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
-  request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
-
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext] () mutable {
-      JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides ] () mutable {
+  JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       },
-      endpointOverrides)
+      Aws::MakeShared<Model::ChatInputStream>(ALLOCATION_TAG)
+      );
       if(outcome.IsSuccess())
       {
         handler(this, request, ChatOutcome(NoResult()), handlerContext);
@@ -346,10 +359,7 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
         handler(this, request, ChatOutcome(outcome.GetError()), handlerContext);
       }
       return ChatOutcome(NoResult());
-  }
- 
-  );
-  sem->WaitOne();
+  });
   streamReadyHandler(*request.GetInputStream());
 }
 ChatSyncOutcome QBusinessClient::ChatSync(const ChatSyncRequest& request) const
@@ -376,8 +386,14 @@ ChatSyncOutcome QBusinessClient::ChatSync(const ChatSyncRequest& request) const
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/conversations");
       ss.str("?sync");
-      endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
-      return ChatSyncOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      endpointOverrides.queryString = ss.str();
+      return ChatSyncOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -400,7 +416,13 @@ CreateApplicationOutcome QBusinessClient::CreateApplication(const CreateApplicat
     [&]()-> CreateApplicationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
       endpointOverrides.pathSegments.emplace_back("/applications");
-      return CreateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return CreateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -437,7 +459,13 @@ CreateDataSourceOutcome QBusinessClient::CreateDataSource(const CreateDataSource
       endpointOverrides.pathSegments.emplace_back("/indices/");
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/datasources");
-      return CreateDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return CreateDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -467,7 +495,13 @@ CreateIndexOutcome QBusinessClient::CreateIndex(const CreateIndexRequest& reques
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/indices");
-      return CreateIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return CreateIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -497,7 +531,13 @@ CreatePluginOutcome QBusinessClient::CreatePlugin(const CreatePluginRequest& req
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/plugins");
-      return CreatePluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return CreatePluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -527,7 +567,13 @@ CreateRetrieverOutcome QBusinessClient::CreateRetriever(const CreateRetrieverReq
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/retrievers");
-      return CreateRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return CreateRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -557,7 +603,13 @@ CreateUserOutcome QBusinessClient::CreateUser(const CreateUserRequest& request) 
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/users");
-      return CreateUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return CreateUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -587,7 +639,13 @@ CreateWebExperienceOutcome QBusinessClient::CreateWebExperience(const CreateWebE
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/experiences");
-      return CreateWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return CreateWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -616,7 +674,13 @@ DeleteApplicationOutcome QBusinessClient::DeleteApplication(const DeleteApplicat
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      return DeleteApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return DeleteApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -646,7 +710,13 @@ DeleteChatControlsConfigurationOutcome QBusinessClient::DeleteChatControlsConfig
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/chatcontrols");
-      return DeleteChatControlsConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return DeleteChatControlsConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -682,7 +752,13 @@ DeleteConversationOutcome QBusinessClient::DeleteConversation(const DeleteConver
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/conversations/");
       endpointOverrides.pathSegments.emplace_back(request.GetConversationId());
-      return DeleteConversationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return DeleteConversationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -725,7 +801,13 @@ DeleteDataSourceOutcome QBusinessClient::DeleteDataSource(const DeleteDataSource
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/datasources/");
       endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
-      return DeleteDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return DeleteDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -768,7 +850,13 @@ DeleteGroupOutcome QBusinessClient::DeleteGroup(const DeleteGroupRequest& reques
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/groups/");
       endpointOverrides.pathSegments.emplace_back(request.GetGroupName());
-      return DeleteGroupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return DeleteGroupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -804,7 +892,13 @@ DeleteIndexOutcome QBusinessClient::DeleteIndex(const DeleteIndexRequest& reques
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/indices/");
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      return DeleteIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return DeleteIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -840,7 +934,13 @@ DeletePluginOutcome QBusinessClient::DeletePlugin(const DeletePluginRequest& req
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/plugins/");
       endpointOverrides.pathSegments.emplace_back(request.GetPluginId());
-      return DeletePluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return DeletePluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -876,7 +976,13 @@ DeleteRetrieverOutcome QBusinessClient::DeleteRetriever(const DeleteRetrieverReq
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/retrievers/");
       endpointOverrides.pathSegments.emplace_back(request.GetRetrieverId());
-      return DeleteRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return DeleteRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -912,7 +1018,13 @@ DeleteUserOutcome QBusinessClient::DeleteUser(const DeleteUserRequest& request) 
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/users/");
       endpointOverrides.pathSegments.emplace_back(request.GetUserId());
-      return DeleteUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return DeleteUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -948,7 +1060,13 @@ DeleteWebExperienceOutcome QBusinessClient::DeleteWebExperience(const DeleteWebE
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/experiences/");
       endpointOverrides.pathSegments.emplace_back(request.GetWebExperienceId());
-      return DeleteWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return DeleteWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -977,7 +1095,13 @@ GetApplicationOutcome QBusinessClient::GetApplication(const GetApplicationReques
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      return GetApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return GetApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1007,7 +1131,13 @@ GetChatControlsConfigurationOutcome QBusinessClient::GetChatControlsConfiguratio
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/chatcontrols");
-      return GetChatControlsConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return GetChatControlsConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1050,7 +1180,13 @@ GetDataSourceOutcome QBusinessClient::GetDataSource(const GetDataSourceRequest& 
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/datasources/");
       endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
-      return GetDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return GetDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1093,7 +1229,13 @@ GetGroupOutcome QBusinessClient::GetGroup(const GetGroupRequest& request) const
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/groups/");
       endpointOverrides.pathSegments.emplace_back(request.GetGroupName());
-      return GetGroupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return GetGroupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1129,7 +1271,13 @@ GetIndexOutcome QBusinessClient::GetIndex(const GetIndexRequest& request) const
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/indices/");
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      return GetIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return GetIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1165,7 +1313,13 @@ GetPluginOutcome QBusinessClient::GetPlugin(const GetPluginRequest& request) con
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/plugins/");
       endpointOverrides.pathSegments.emplace_back(request.GetPluginId());
-      return GetPluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return GetPluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1201,7 +1355,13 @@ GetRetrieverOutcome QBusinessClient::GetRetriever(const GetRetrieverRequest& req
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/retrievers/");
       endpointOverrides.pathSegments.emplace_back(request.GetRetrieverId());
-      return GetRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return GetRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1237,7 +1397,13 @@ GetUserOutcome QBusinessClient::GetUser(const GetUserRequest& request) const
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/users/");
       endpointOverrides.pathSegments.emplace_back(request.GetUserId());
-      return GetUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return GetUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1273,7 +1439,13 @@ GetWebExperienceOutcome QBusinessClient::GetWebExperience(const GetWebExperience
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/experiences/");
       endpointOverrides.pathSegments.emplace_back(request.GetWebExperienceId());
-      return GetWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return GetWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1296,7 +1468,13 @@ ListApplicationsOutcome QBusinessClient::ListApplications(const ListApplications
     [&]()-> ListApplicationsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
       endpointOverrides.pathSegments.emplace_back("/applications");
-      return ListApplicationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListApplicationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1326,7 +1504,13 @@ ListConversationsOutcome QBusinessClient::ListConversations(const ListConversati
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/conversations");
-      return ListConversationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListConversationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1370,7 +1554,13 @@ ListDataSourceSyncJobsOutcome QBusinessClient::ListDataSourceSyncJobs(const List
       endpointOverrides.pathSegments.emplace_back("/datasources/");
       endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
       endpointOverrides.pathSegments.emplace_back("/syncjobs");
-      return ListDataSourceSyncJobsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListDataSourceSyncJobsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1407,7 +1597,13 @@ ListDataSourcesOutcome QBusinessClient::ListDataSources(const ListDataSourcesReq
       endpointOverrides.pathSegments.emplace_back("/indices/");
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/datasources");
-      return ListDataSourcesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListDataSourcesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1444,7 +1640,13 @@ ListDocumentsOutcome QBusinessClient::ListDocuments(const ListDocumentsRequest& 
       endpointOverrides.pathSegments.emplace_back("/index/");
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/documents");
-      return ListDocumentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListDocumentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1486,7 +1688,13 @@ ListGroupsOutcome QBusinessClient::ListGroups(const ListGroupsRequest& request) 
       endpointOverrides.pathSegments.emplace_back("/indices/");
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/groups");
-      return ListGroupsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListGroupsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1516,7 +1724,13 @@ ListIndicesOutcome QBusinessClient::ListIndices(const ListIndicesRequest& reques
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/indices");
-      return ListIndicesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListIndicesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1552,7 +1766,13 @@ ListMessagesOutcome QBusinessClient::ListMessages(const ListMessagesRequest& req
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/conversations/");
       endpointOverrides.pathSegments.emplace_back(request.GetConversationId());
-      return ListMessagesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListMessagesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1582,7 +1802,13 @@ ListPluginsOutcome QBusinessClient::ListPlugins(const ListPluginsRequest& reques
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/plugins");
-      return ListPluginsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListPluginsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1612,7 +1838,13 @@ ListRetrieversOutcome QBusinessClient::ListRetrievers(const ListRetrieversReques
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/retrievers");
-      return ListRetrieversOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListRetrieversOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1641,7 +1873,13 @@ ListTagsForResourceOutcome QBusinessClient::ListTagsForResource(const ListTagsFo
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
       endpointOverrides.pathSegments.emplace_back("/v1/tags/");
       endpointOverrides.pathSegments.emplace_back(request.GetResourceARN());
-      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1671,7 +1909,13 @@ ListWebExperiencesOutcome QBusinessClient::ListWebExperiences(const ListWebExper
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/experiences");
-      return ListWebExperiencesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return ListWebExperiencesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1715,7 +1959,13 @@ PutFeedbackOutcome QBusinessClient::PutFeedback(const PutFeedbackRequest& reques
       endpointOverrides.pathSegments.emplace_back("/messages/");
       endpointOverrides.pathSegments.emplace_back(request.GetMessageId());
       endpointOverrides.pathSegments.emplace_back("/feedback");
-      return PutFeedbackOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return PutFeedbackOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1752,7 +2002,13 @@ PutGroupOutcome QBusinessClient::PutGroup(const PutGroupRequest& request) const
       endpointOverrides.pathSegments.emplace_back("/indices/");
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/groups");
-      return PutGroupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return PutGroupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1796,7 +2052,13 @@ StartDataSourceSyncJobOutcome QBusinessClient::StartDataSourceSyncJob(const Star
       endpointOverrides.pathSegments.emplace_back("/datasources/");
       endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
       endpointOverrides.pathSegments.emplace_back("/startsync");
-      return StartDataSourceSyncJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return StartDataSourceSyncJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1840,7 +2102,13 @@ StopDataSourceSyncJobOutcome QBusinessClient::StopDataSourceSyncJob(const StopDa
       endpointOverrides.pathSegments.emplace_back("/datasources/");
       endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
       endpointOverrides.pathSegments.emplace_back("/stopsync");
-      return StopDataSourceSyncJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return StopDataSourceSyncJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1869,7 +2137,13 @@ TagResourceOutcome QBusinessClient::TagResource(const TagResourceRequest& reques
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
       endpointOverrides.pathSegments.emplace_back("/v1/tags/");
       endpointOverrides.pathSegments.emplace_back(request.GetResourceARN());
-      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1903,7 +2177,13 @@ UntagResourceOutcome QBusinessClient::UntagResource(const UntagResourceRequest& 
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
       endpointOverrides.pathSegments.emplace_back("/v1/tags/");
       endpointOverrides.pathSegments.emplace_back(request.GetResourceARN());
-      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1932,7 +2212,13 @@ UpdateApplicationOutcome QBusinessClient::UpdateApplication(const UpdateApplicat
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      return UpdateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return UpdateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1962,7 +2248,13 @@ UpdateChatControlsConfigurationOutcome QBusinessClient::UpdateChatControlsConfig
       endpointOverrides.pathSegments.emplace_back("/applications/");
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/chatcontrols");
-      return UpdateChatControlsConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return UpdateChatControlsConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2005,7 +2297,13 @@ UpdateDataSourceOutcome QBusinessClient::UpdateDataSource(const UpdateDataSource
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
       endpointOverrides.pathSegments.emplace_back("/datasources/");
       endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
-      return UpdateDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return UpdateDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2041,7 +2339,13 @@ UpdateIndexOutcome QBusinessClient::UpdateIndex(const UpdateIndexRequest& reques
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/indices/");
       endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      return UpdateIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return UpdateIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2077,7 +2381,13 @@ UpdatePluginOutcome QBusinessClient::UpdatePlugin(const UpdatePluginRequest& req
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/plugins/");
       endpointOverrides.pathSegments.emplace_back(request.GetPluginId());
-      return UpdatePluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return UpdatePluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2113,7 +2423,13 @@ UpdateRetrieverOutcome QBusinessClient::UpdateRetriever(const UpdateRetrieverReq
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/retrievers/");
       endpointOverrides.pathSegments.emplace_back(request.GetRetrieverId());
-      return UpdateRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return UpdateRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2149,7 +2465,13 @@ UpdateUserOutcome QBusinessClient::UpdateUser(const UpdateUserRequest& request) 
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/users/");
       endpointOverrides.pathSegments.emplace_back(request.GetUserId());
-      return UpdateUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return UpdateUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2185,7 +2507,13 @@ UpdateWebExperienceOutcome QBusinessClient::UpdateWebExperience(const UpdateWebE
       endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
       endpointOverrides.pathSegments.emplace_back("/experiences/");
       endpointOverrides.pathSegments.emplace_back(request.GetWebExperienceId());
-      return UpdateWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+      return UpdateWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

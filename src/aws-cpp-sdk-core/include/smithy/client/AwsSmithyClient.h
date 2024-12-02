@@ -124,13 +124,39 @@ namespace client
         ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const * const request,
                                      const char* requestName,
                                      Aws::Http::HttpMethod method,
-                                     EndpointUpdateCallback&& endpointCallback) const
+                                     EndpointUpdateCallback&& endpointCallback,
+                                     std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp = nullptr
+                                     ) const
         {
-            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
+            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback),  std::move(eventEncoderStream_sp));
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
 
     protected:
+        //Aws::Utils::Event::EventEncoderStream
+        void SetInputStreamInRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx, std::shared_ptr<Aws::Utils::Event::EventEncoderStream>&  eventEncoderStreamSp) const override
+        {
+            if(pRequestCtx &&
+               pRequestCtx->m_pRequest && 
+               pRequestCtx->m_authSchemeOption && 
+               eventEncoderStreamSp)
+            {
+                auto authSchemeIter = m_authSchemes.find(pRequestCtx->m_authSchemeOption->schemeId);
+                if(authSchemeIter != m_authSchemes.end())
+                {
+                    eventEncoderStreamSp->SetSigner(authSchemeIter->second->signer());
+                    pRequestCtx->m_pRequest->SetInputStream(eventEncoderStreamSp);
+                    pRequestCtx->m_semaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ServiceNameT, 0, 1);
+                    pRequestCtx->m_pRequest->SetRequestSignedHandler([eventEncoderStreamSp, pRequestCtx->m_semaphore](const Aws::Http::HttpRequest& httpRequest) 
+                    { 
+                        eventEncoderStreamSp->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); 
+                        pRequestCtx->m_semaphore->ReleaseAll(); 
+                    });
+                }
+            }
+
+        }
+
         ServiceClientConfigurationT& m_clientConfiguration;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};

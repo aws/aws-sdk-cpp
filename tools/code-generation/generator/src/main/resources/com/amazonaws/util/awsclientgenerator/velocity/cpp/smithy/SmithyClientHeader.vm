@@ -60,6 +60,7 @@ namespace ${serviceNamespace}
       friend class ${rootNamespace}::Client::ClientWithAsyncTemplateMethods<${className}>;
       void init(const ${metadata.classNamePrefix}ClientConfiguration& clientConfiguration);
 
+
 #if($metadata.hasEndpointDiscoveryTrait)
       void OptionallyUpdateDescribeEndpointsCache(${rootNamespace}::Endpoint::AWSEndpoint& resolvedEndpoint,
         const ${rootNamespace}::String& operationName,

@@ -17,7 +17,6 @@
 #include "aws/core/utils/threading/Executor.h"
 #include "aws/core/utils/threading/SameThreadExecutor.h"
 #include "smithy/tracing/TracingUtils.h"
-
 using namespace smithy::client;
 using namespace smithy::interceptor;
 using namespace smithy::components::tracing;
@@ -100,7 +99,8 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
                                            EndpointUpdateCallback&& endpointCallback,
                                            ResponseHandlerFunc&& responseHandler,
                                            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
-                                           const Aws::Endpoint::AWSEndpointResolutionOverrides& overrides
+                                           const Aws::Endpoint::AWSEndpointResolutionOverrides& overrides,
+                                           std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStreamSp
                                            ) const
 {
     if(!responseHandler)
@@ -176,11 +176,17 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
           } );
         return;
     }
+    SetInputStreamInRequest(pRequestCtx, eventEncoderStreamSp);
     pRequestCtx->m_requestInfo.attempt = 1;
     pRequestCtx->m_requestInfo.maxAttempts = 0;
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
 
     AttemptOneRequestAsync(std::move(pRequestCtx));
+
+    if(pRequestCtx->m_semaphore)
+    {
+        pRequestCtx->m_semaphore->WaitOne();
+    }
 }
 
 /*HttpResponseOutcome*/
@@ -267,6 +273,7 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
 
     std::shared_ptr<Aws::Http::HttpRequest> signedHttpRequest = signingOutcome.GetResultWithOwnership();
     assert(signedHttpRequest);
+
 
     if (pRequestCtx->m_pRequest && pRequestCtx->m_pRequest->GetRequestSignedHandler())
     {
@@ -495,7 +502,9 @@ AwsSmithyClientBase::HttpResponseOutcome
 AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
                                      const char* requestName,
                                      Aws::Http::HttpMethod method,
-                                     EndpointUpdateCallback&& endpointCallback) const
+                                     EndpointUpdateCallback&& endpointCallback,
+                                     std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp
+                                     ) const
 {
     std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(AWS_SMITHY_CLIENT_LOG);
     assert(pExecutor);
@@ -508,7 +517,7 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
 
     pExecutor->Submit([&]()
     {
-        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), pExecutor);
+        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback) ,std::move(responseHandler), pExecutor, std::move(eventEncoderStream_sp));
     });
     pExecutor->WaitUntilStopped();
 

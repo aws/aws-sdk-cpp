@@ -1597,6 +1597,7 @@ namespace QBusiness
       friend class Aws::Client::ClientWithAsyncTemplateMethods<QBusinessClient>;
       void init(const QBusinessClientConfiguration& clientConfiguration);
 
+
   };
 
 } // namespace QBusiness

@@ -1,3 +1,4 @@
+#set($hasEndPointOverrides = false)
 #foreach($operation in $serviceModel.operations)
 #if($operation.request.shape.hasEventStreamMembers())
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyJsonServiceEventStreamOperationsSource.vm")

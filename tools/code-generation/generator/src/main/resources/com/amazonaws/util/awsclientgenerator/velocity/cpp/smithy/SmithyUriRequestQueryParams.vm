@@ -6,7 +6,7 @@
 #set($indent = "    ")
 #end
 #if($meterNeeded)
-${indent}  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+${indent}  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
 #end
 #if($operation.http.requestUri.contains("?"))
 ${indent}  Aws::StringStream ss;
@@ -23,8 +23,9 @@ ${indent}  Aws::StringStream ss;
 #if($uriPartString.contains("?"))## if (request uri contains query) ----------
 #set($queryStart = true)
 #set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
-Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
 #if(!$pathAndQuery.get(0).isEmpty())
+${indent}  Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
+#set($hasEndPointOverrides = true)
 #if($pathAndQuery.get(0).toLowerCase().contains("resourcearn"))
 ${indent}  endpointOverrides.setRfc3986Encoded = true;
 #end
@@ -33,6 +34,7 @@ ${indent}  endpointOverrides.pathSegments.emplace_back("${pathAndQuery.get(0)}")
 ${indent}  ss.str("${pathAndQuery.get(1)}");
 #elseif(!$uriPartString.equals("/"))
 ${indent}  Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
+#set($hasEndPointOverrides = true)
 #if($uriPartString.get(0).toLowerCase().contains("resourcearn"))
 ${indent}  endpointOverrides.setRfc3986Encoded = true;
 #end
@@ -86,5 +88,5 @@ ${indent}  endpointOverrides.pathSegments.emplace_back("$uriPartString");
 #end## --------------------- if uriParts.size() > startIndex end ---
 #end## --------------------- for (parameter in request uri parameters) end ---
 #if($queryStart)
-${indent}  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+${indent}  endpointOverrides.queryString = ss.str();
 #end
