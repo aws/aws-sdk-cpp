@@ -45,12 +45,6 @@ namespace Aws
             {
                 return m_encoder.EncodeAndSign(msg);
             }
-
-
-            Aws::Vector<unsigned char> SmithyEventEncoderStream::EncodeAndSign(const Aws::Utils::Event::Message& msg)
-            {
-                return m_evtEncoder.EncodeAndSign(msg);
-            }
         }
     }
 }

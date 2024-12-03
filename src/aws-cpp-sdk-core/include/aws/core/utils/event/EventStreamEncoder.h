@@ -64,16 +64,20 @@ namespace Aws
                 Aws::Client::AWSAuthSigner* m_signer;
             };
 
+            template <typename IdentityT>
             class AWS_CORE_API SmithyEventStreamEncoder : public EventStreamEncoder
             {
-                using SIGNER_TYPE = smithy::AwsSignerBase<smithy::AwsCredentialIdentityBase>;
+                using SIGNER_TYPE = smithy::AwsSignerBase<IdentityT>;
             public:
                 SmithyEventStreamEncoder(std::shared_ptr<SIGNER_TYPE> signer): EventStreamEncoder(), m_smithySigner(signer){};
                 SmithyEventStreamEncoder(): EventStreamEncoder(){};
 
                 void SetSigner(std::shared_ptr<SIGNER_TYPE> signer) { m_smithySigner = signer; }
             protected:
-                bool SignEventMessage(Event::Message& msg) override;
+                bool SignEventMessage(Event::Message& signedMessage) override
+                {
+                    return (m_smithySigner->SignEventMessage(signedMessage, m_signatureSeed));
+                }
                 
             private:
                 std::shared_ptr<SIGNER_TYPE> m_smithySigner;

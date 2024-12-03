@@ -28,7 +28,6 @@ namespace Aws
             class AWS_CORE_API EventEncoderStream : public Aws::IOStream
             {
             public:
-                using SIGNER_TYPE = smithy::AwsSignerBase<smithy::AwsCredentialIdentityBase>;
                 /**
                  * Creates a stream for encoding events sent by the client.
                  * @param bufferSize The length of the underlying buffer.
@@ -52,8 +51,6 @@ namespace Aws
                  */
                 void SetSigner(Aws::Client::AWSAuthSigner* signer) { m_encoder.SetSigner(signer); }
 
-                void SetSigner(std::shared_ptr<SIGNER_TYPE> signer) { m_evtEncoder.SetSigner(signer); }
-
                 /**
                  * Allows a stream writer to communicate the end of the stream to a stream reader.
                  *
@@ -72,22 +69,26 @@ namespace Aws
                 virtual ~EventEncoderStream(){}
                 
             protected:
-                SmithyEventStreamEncoder m_evtEncoder;
                 virtual Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) ;
             private:
                 Stream::ConcurrentStreamBuf m_streambuf;
                 EventStreamEncoder m_encoder;
             };
-
+            
+            template <typename IdentityT>
             class AWS_CORE_API SmithyEventEncoderStream : public EventEncoderStream
             {
                 public:
                 explicit SmithyEventEncoderStream(size_t bufferSize = DEFAULT_BUF_SIZE):EventEncoderStream(bufferSize){}
                 virtual ~SmithyEventEncoderStream() {}
+                void SetSigner(std::shared_ptr<smithy::AwsSignerBase<IdentityT> > signer) { m_evtEncoder.SetSigner(signer); }
+                
                 protected:
-                Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) override ;
-                
-                
+                Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) override
+                {
+                    return m_evtEncoder.EncodeAndSign(msg);
+                }
+                SmithyEventStreamEncoder<IdentityT> m_evtEncoder;
             };
         }
     }

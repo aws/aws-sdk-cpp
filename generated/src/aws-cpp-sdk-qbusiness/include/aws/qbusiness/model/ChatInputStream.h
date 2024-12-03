@@ -28,7 +28,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ChatInputStream">AWS
    * API Reference</a></p>
    */
-  class AWS_QBUSINESS_API ChatInputStream : public Aws::Utils::Event::SmithyEventEncoderStream
+  class AWS_QBUSINESS_API ChatInputStream : public Aws::Utils::Event::SmithyEventEncoderStream<smithy::AwsCredentialIdentityBase>
   {
   public:
     ChatInputStream& WriteConfigurationEvent(const ConfigurationEvent& value)

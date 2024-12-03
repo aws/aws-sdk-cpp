@@ -179,10 +179,7 @@ namespace Aws
                 return (m_signer->SignEventMessage(signedMessage, m_signatureSeed));
             }
 
-            bool SmithyEventStreamEncoder::SignEventMessage(Event::Message& signedMessage)
-            {
-                return (m_smithySigner->SignEventMessage(signedMessage, m_signatureSeed));
-            }
+            
 
         } // namespace Event
     } // namespace Utils

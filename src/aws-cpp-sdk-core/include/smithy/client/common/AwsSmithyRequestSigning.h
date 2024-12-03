@@ -259,8 +259,8 @@ namespace smithy
                     AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to adjust signing clock skew. Signer is null.");
                     return;
                 }
-                
-                m_eventEncoderStreamSp->SetSigner(signer);
+                //typecast to streaming type
+                (std::dynamic_pointer_cast<Aws::Utils::Event::SmithyEventEncoderStream<IdentityT>>(m_eventEncoderStreamSp))->SetSigner(signer);
             }
         };
 
