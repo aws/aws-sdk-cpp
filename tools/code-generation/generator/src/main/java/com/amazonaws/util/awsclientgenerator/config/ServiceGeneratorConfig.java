@@ -27,6 +27,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.s3.S3RestXmlCppClien
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3control.S3ControlRestXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.sqs.SQSJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.sqs.SQSQueryXmlCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.dsql.DsqlCppClientGenerator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -66,7 +67,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-docdb-query", new DocDBCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-neptune-query", new NeptuneCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-eventbridge-json", new EventBridgeCppClientGenerator());
-
+            SPEC_OVERRIDE_MAPPING.put("cpp-dsql-rest-json", new DsqlCppClientGenerator());
         } catch (Exception e) {
             e.printStackTrace();
         }

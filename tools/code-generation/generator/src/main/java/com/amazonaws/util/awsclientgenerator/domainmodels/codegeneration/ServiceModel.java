@@ -31,6 +31,7 @@ public class ServiceModel {
     Map<String, Operation> operations;
     boolean enableVirtualOperations;
     Collection<Error> serviceErrors;
+    Collection<CustomPresignedUtility> presigners;
 
     public boolean hasStreamingRequestShapes() {
         return shapes.values().parallelStream().anyMatch(shape -> shape.isRequest() && (shape.hasStreamMembers() || shape.hasEventStreamMembers()));

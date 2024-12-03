@@ -12,3 +12,31 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/JsonServiceOperationSource.vm")
 #end
 #end
+#foreach($presigner in $serviceModel.presigners)
+Aws::Utils::Outcome<String, ${metadata.classNamePrefix}Error> ${className}::${presigner.functionName}(const Aws::String& ${presigner.hostNameVarName}, const Aws::String& ${presigner.regionVarName},#foreach($arg in $presigner.queryParams)#if(${arg.variableName}) ${arg.type} ${arg.variableName},#end#end long long expiresIn)
+{
+    if (${presigner.hostNameVarName}.empty() || ${presigner.regionVarName}.empty()#foreach($arg in $presigner.queryParams)#if(${arg.variableName}) || ${arg.variableName}.empty()#end#end)
+    {
+      return AWSError<CoreErrors>{CoreErrors::INVALID_PARAMETER_VALUE, "InavlidParameterValue", "all argments must be non-empty", false};
+    }
+    URI uri(${presigner.hostNameVarName});
+## if we are restricting possible actions, we assume there exists a actions query paramter
+#if(!$presigner.possibleActions.isEmpty())
+    static const char* SUPPORRTED_ACTIONS[]{#foreach($supportedAction in $presigner.possibleActions)"${supportedAction}"#if($foreach.hasNext), #end#end};
+    if (std::find(std::begin(SUPPORRTED_ACTIONS), std::end(SUPPORRTED_ACTIONS), action) == std::end(SUPPORRTED_ACTIONS))
+    {
+      return AWSError<CoreErrors>{CoreErrors::INVALID_QUERY_PARAMETER, "InvalidQueryParameter", "action must be one of #foreach($supportedAction in $presigner.possibleActions)${supportedAction}#if($foreach.hasNext), #end#end", false};
+    }
+#end
+#foreach($arg in $presigner.queryParams)
+#if(${arg.variableName})
+    uri.AddQueryStringParameter("${arg.paramterName}", ${arg.variableName});
+#elseif(${arg.hardcodedValue})
+    uri.AddQueryStringParameter("${arg.paramterName}", "${arg.hardcodedValue}");
+#end
+#end
+    auto url = GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, ${presigner.regionVarName}.c_str(), GetServiceName(), expiresIn);
+    Aws::Utils::StringUtils::Replace(url, "http://", "");
+    return url;
+}
+#end
