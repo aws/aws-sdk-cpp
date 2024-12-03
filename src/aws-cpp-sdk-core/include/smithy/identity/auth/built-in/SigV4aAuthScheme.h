@@ -52,7 +52,7 @@ namespace smithy {
             return m_identityResolver;
         }
 
-        std::shared_ptr<AwsCredentialSignerT> signer() override
+        std::shared_ptr<AwsCredentialSignerT> signer(bool) override
         {
             return m_signer;
         }

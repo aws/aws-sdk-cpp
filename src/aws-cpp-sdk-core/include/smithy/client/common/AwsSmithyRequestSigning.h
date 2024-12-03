@@ -141,7 +141,7 @@ namespace smithy
                 }
                 auto identity = std::move(identityResult.GetResultWithOwnership());
 
-                std::shared_ptr<Signer> signer = authScheme.signer();
+                std::shared_ptr<Signer> signer = authScheme.signer(m_targetAuthSchemeOption.isEventStreaming);
                 if (!signer)
                 {
                     result.emplace(SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
@@ -198,7 +198,7 @@ namespace smithy
                 using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
                 using Signer = AwsSignerBase<IdentityT>;
 
-                std::shared_ptr<Signer> signer = authScheme.signer();
+                std::shared_ptr<Signer> signer = authScheme.signer(m_targetAuthSchemeOption.isEventStreaming);
                 if (!signer)
                 {
                     AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to adjust signing clock skew. Signer is null.");
@@ -253,13 +253,13 @@ namespace smithy
                 using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
                 using Signer = AwsSignerBase<IdentityT>;
 
-                std::shared_ptr<Signer> signer = authScheme.signer();
+                std::shared_ptr<Signer> signer = authScheme.signer(m_targetAuthSchemeOption.isEventStreaming);
                 if (!signer)
                 {
                     AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to adjust signing clock skew. Signer is null.");
                     return;
                 }
-                //typecast to streaming type
+                //typecast to streaming type as we know this visitor is for smithy types
                 (std::dynamic_pointer_cast<Aws::Utils::Event::SmithyEventEncoderStream<IdentityT>>(m_eventEncoderStreamSp))->SetSigner(signer);
             }
         };

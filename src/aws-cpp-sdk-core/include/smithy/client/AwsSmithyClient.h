@@ -86,6 +86,11 @@ namespace client
                     else
                         assert(!"Unknown endpoint parameter!");
                 }
+                if (ctx.m_isEventStreaming)
+                {
+                    identityParams.additionalProperties.insert({"isEventStreaming", true});
+                }
+
                 const auto& serviceParams = ctx.m_pRequest->GetServiceSpecificParameters();
                 if (serviceParams) {
                     for (const auto& serviceParam : serviceParams->parameterMap) {
@@ -125,10 +130,11 @@ namespace client
                                      const char* requestName,
                                      Aws::Http::HttpMethod method,
                                      EndpointUpdateCallback&& endpointCallback,
+                                     bool isEventStreamRequest = false,
                                      std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp = nullptr
                                      ) const
         {
-            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback),  std::move(eventEncoderStream_sp));
+            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback), isEventStreamRequest,  std::move(eventEncoderStream_sp));
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
 

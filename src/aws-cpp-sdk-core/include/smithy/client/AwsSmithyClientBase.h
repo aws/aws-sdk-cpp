@@ -140,6 +140,7 @@ namespace client
                               EndpointUpdateCallback&& endpointCallback,
                               ResponseHandlerFunc&& responseHandler,
                               std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                              bool isEventStreamRequest,
                               std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp
                               ) const;
 
@@ -147,6 +148,7 @@ namespace client
                                             const char* requestName,
                                             Aws::Http::HttpMethod method,
                                             EndpointUpdateCallback&& endpointCallback,
+                                            bool isEventStreamRequest,
                                             std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp) const;
 
     protected:

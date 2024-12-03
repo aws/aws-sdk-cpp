@@ -99,6 +99,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
                                            EndpointUpdateCallback&& endpointCallback,
                                            ResponseHandlerFunc&& responseHandler,
                                            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                                           bool isEventStreamRequest,
                                            std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStreamSp
                                            ) const
 {
@@ -131,6 +132,8 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     pRequestCtx->m_method = method;
     pRequestCtx->m_retryCount = 0;
     pRequestCtx->m_invocationId = Aws::Utils::UUID::PseudoRandomUUID();
+    pRequestCtx->m_isEventStreaming = isEventStreamRequest;
+    
     auto authSchemeOptionOutcome = this->SelectAuthSchemeOption(*pRequestCtx);
     if (!authSchemeOptionOutcome.IsSuccess())
     {
@@ -493,6 +496,7 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
                                      const char* requestName,
                                      Aws::Http::HttpMethod method,
                                      EndpointUpdateCallback&& endpointCallback,
+                                     bool isEventStreamRequest,
                                      std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp
                                      ) const
 {
@@ -507,7 +511,7 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
 
     pExecutor->Submit([&]()
     {
-        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback) ,std::move(responseHandler), pExecutor, std::move(eventEncoderStream_sp));
+        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback) ,std::move(responseHandler), pExecutor, isEventStreamRequest, std::move(eventEncoderStream_sp));
     });
     pExecutor->WaitUntilStopped();
 
