@@ -16,6 +16,7 @@
 #include <aws/qbusiness/model/PersonalizationConfiguration.h>
 #include <aws/qbusiness/model/AutoSubscriptionConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/model/QuickSightConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -271,6 +272,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon QuickSight authentication configuration for the Amazon Q Business
+     * application.</p>
+     */
+    inline const QuickSightConfiguration& GetQuickSightConfiguration() const{ return m_quickSightConfiguration; }
+    inline void SetQuickSightConfiguration(const QuickSightConfiguration& value) { m_quickSightConfiguration = value; }
+    inline void SetQuickSightConfiguration(QuickSightConfiguration&& value) { m_quickSightConfiguration = std::move(value); }
+    inline GetApplicationResult& WithQuickSightConfiguration(const QuickSightConfiguration& value) { SetQuickSightConfiguration(value); return *this;}
+    inline GetApplicationResult& WithQuickSightConfiguration(QuickSightConfiguration&& value) { SetQuickSightConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -317,6 +330,8 @@ namespace Model
     AutoSubscriptionConfiguration m_autoSubscriptionConfiguration;
 
     Aws::Vector<Aws::String> m_clientIdsForOIDC;
+
+    QuickSightConfiguration m_quickSightConfiguration;
 
     Aws::String m_requestId;
   };

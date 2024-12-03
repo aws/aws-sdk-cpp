@@ -26,7 +26,8 @@ Application::Application() :
     m_status(ApplicationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_identityType(IdentityType::NOT_SET),
-    m_identityTypeHasBeenSet(false)
+    m_identityTypeHasBeenSet(false),
+    m_quickSightConfigurationHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,13 @@ Application& Application::operator =(JsonView jsonValue)
     m_identityTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("quickSightConfiguration"))
+  {
+    m_quickSightConfiguration = jsonValue.GetObject("quickSightConfiguration");
+
+    m_quickSightConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +125,12 @@ JsonValue Application::Jsonize() const
   if(m_identityTypeHasBeenSet)
   {
    payload.WithString("identityType", IdentityTypeMapper::GetNameForIdentityType(m_identityType));
+  }
+
+  if(m_quickSightConfigurationHasBeenSet)
+  {
+   payload.WithObject("quickSightConfiguration", m_quickSightConfiguration.Jsonize());
+
   }
 
   return payload;

@@ -37,7 +37,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>An array of the Regions in which you want to create additional clusters.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetLinkedRegionList() const{ return m_linkedRegionList; }
     inline bool LinkedRegionListHasBeenSet() const { return m_linkedRegionListHasBeenSet; }
     inline void SetLinkedRegionList(const Aws::Vector<Aws::String>& value) { m_linkedRegionListHasBeenSet = true; m_linkedRegionList = value; }
@@ -50,7 +52,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>A mapping of properties to use when creating linked clusters.</p>
+     */
     inline const Aws::Map<Aws::String, LinkedClusterProperties>& GetClusterProperties() const{ return m_clusterProperties; }
     inline bool ClusterPropertiesHasBeenSet() const { return m_clusterPropertiesHasBeenSet; }
     inline void SetClusterProperties(const Aws::Map<Aws::String, LinkedClusterProperties>& value) { m_clusterPropertiesHasBeenSet = true; m_clusterProperties = value; }
@@ -66,7 +70,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The witness Region of multi-Region clusters.</p>
+     */
     inline const Aws::String& GetWitnessRegion() const{ return m_witnessRegion; }
     inline bool WitnessRegionHasBeenSet() const { return m_witnessRegionHasBeenSet; }
     inline void SetWitnessRegion(const Aws::String& value) { m_witnessRegionHasBeenSet = true; m_witnessRegion = value; }
@@ -78,7 +84,15 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. Idempotency ensures that an API request completes
+     * only once. With an idempotent request, if the original request completes
+     * successfully. The subsequent retries with the same client token return the
+     * result from the original successful request and they have no additional
+     * effect.</p> <p>If you don't specify a client token, the Amazon Web Services SDK
+     * automatically generates one.</p>
+     */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }

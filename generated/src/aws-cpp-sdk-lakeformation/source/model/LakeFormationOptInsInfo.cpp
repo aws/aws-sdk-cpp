@@ -21,6 +21,7 @@ namespace Model
 LakeFormationOptInsInfo::LakeFormationOptInsInfo() : 
     m_resourceHasBeenSet(false),
     m_principalHasBeenSet(false),
+    m_conditionHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
     m_lastUpdatedByHasBeenSet(false)
 {
@@ -46,6 +47,13 @@ LakeFormationOptInsInfo& LakeFormationOptInsInfo::operator =(JsonView jsonValue)
     m_principal = jsonValue.GetObject("Principal");
 
     m_principalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Condition"))
+  {
+    m_condition = jsonValue.GetObject("Condition");
+
+    m_conditionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastModified"))
@@ -78,6 +86,12 @@ JsonValue LakeFormationOptInsInfo::Jsonize() const
   if(m_principalHasBeenSet)
   {
    payload.WithObject("Principal", m_principal.Jsonize());
+
+  }
+
+  if(m_conditionHasBeenSet)
+  {
+   payload.WithObject("Condition", m_condition.Jsonize());
 
   }
 

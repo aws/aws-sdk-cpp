@@ -27,7 +27,7 @@ namespace RedshiftServerless
    * for your business and customers. </p> <p> To learn more about Amazon Redshift
    * Serverless, see <a
    * href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-whatis.html">What
-   * is Amazon Redshift Serverless</a>. </p>
+   * is Amazon Redshift Serverless?</a>.</p>
    */
   class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient>
   {
@@ -302,8 +302,18 @@ namespace RedshiftServerless
         }
 
         /**
-         * <p>Creates an workgroup in Amazon Redshift Serverless.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates an workgroup in Amazon Redshift Serverless.</p> <p>VPC Block Public
+         * Access (BPA) enables you to block resources in VPCs and subnets that you own in
+         * a Region from reaching or being reached from the internet through internet
+         * gateways and egress-only internet gateways. If a workgroup is in an account with
+         * VPC BPA turned on, the following capabilities are blocked: </p> <ul> <li>
+         * <p>Creating a public access workgroup</p> </li> <li> <p>Modifying a private
+         * workgroup to public</p> </li> <li> <p>Adding a subnet with VPC BPA turned on to
+         * the workgroup when the workgroup is public</p> </li> </ul> <p>For more
+         * information about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateWorkgroup">AWS
          * API Reference</a></p>
          */
@@ -563,12 +573,11 @@ namespace RedshiftServerless
          * authorization to log in to Amazon Redshift Serverless.</p> <p>By default, the
          * temporary credentials expire in 900 seconds. You can optionally specify a
          * duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes).</p>
-         * <pre><code> &lt;p&gt;The Identity and Access Management (IAM) user or role that
-         * runs GetCredentials must have an IAM policy attached that allows access to all
-         * necessary actions and resources.&lt;/p&gt; &lt;p&gt;If the
-         * &lt;code&gt;DbName&lt;/code&gt; parameter is specified, the IAM policy must
-         * allow access to the resource dbname for the specified database name.&lt;/p&gt;
-         * </code></pre><p><h3>See Also:</h3>   <a
+         * <p>The Identity and Access Management (IAM) user or role that runs
+         * GetCredentials must have an IAM policy attached that allows access to all
+         * necessary actions and resources.</p> <p>If the <code>DbName</code> parameter is
+         * specified, the IAM policy must allow access to the resource dbname for the
+         * specified database name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCredentials">AWS
          * API Reference</a></p>
          */
@@ -896,6 +905,32 @@ namespace RedshiftServerless
         void ListEndpointAccessAsync(const ListEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListEndpointAccessRequestT& request = {}) const
         {
             return SubmitAsync(&RedshiftServerlessClient::ListEndpointAccess, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about a list of specified managed workgroups in your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListManagedWorkgroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedWorkgroupsOutcome ListManagedWorkgroups(const Model::ListManagedWorkgroupsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListManagedWorkgroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListManagedWorkgroupsRequestT = Model::ListManagedWorkgroupsRequest>
+        Model::ListManagedWorkgroupsOutcomeCallable ListManagedWorkgroupsCallable(const ListManagedWorkgroupsRequestT& request = {}) const
+        {
+            return SubmitCallable(&RedshiftServerlessClient::ListManagedWorkgroups, request);
+        }
+
+        /**
+         * An Async wrapper for ListManagedWorkgroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListManagedWorkgroupsRequestT = Model::ListManagedWorkgroupsRequest>
+        void ListManagedWorkgroupsAsync(const ListManagedWorkgroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListManagedWorkgroupsRequestT& request = {}) const
+        {
+            return SubmitAsync(&RedshiftServerlessClient::ListManagedWorkgroups, request, handler, context);
         }
 
         /**
@@ -1496,7 +1531,18 @@ namespace RedshiftServerless
          * <p>Updates a workgroup with the specified configuration settings. You can't
          * update multiple parameters in one request. For example, you can update
          * <code>baseCapacity</code> or <code>port</code> in a single request, but you
-         * can't update both in the same request.</p><p><h3>See Also:</h3>   <a
+         * can't update both in the same request.</p> <p>VPC Block Public Access (BPA)
+         * enables you to block resources in VPCs and subnets that you own in a Region from
+         * reaching or being reached from the internet through internet gateways and
+         * egress-only internet gateways. If a workgroup is in an account with VPC BPA
+         * turned on, the following capabilities are blocked: </p> <ul> <li> <p>Creating a
+         * public access workgroup</p> </li> <li> <p>Modifying a private workgroup to
+         * public</p> </li> <li> <p>Adding a subnet with VPC BPA turned on to the workgroup
+         * when the workgroup is public</p> </li> </ul> <p>For more information about VPC
+         * BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateWorkgroup">AWS
          * API Reference</a></p>
          */

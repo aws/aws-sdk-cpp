@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Unexpected error during processing of request</p><p><h3>See Also:</h3>   <a
+   * <p>The request processing has failed because of an unknown error, exception or
+   * failure.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/InternalServerException">AWS
    * API Reference</a></p>
    */
@@ -38,9 +39,7 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>Description of the error</p>
-     */
+    
     inline const Aws::String& GetMessage() const{ return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
@@ -53,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Advice to clients on when the call can be safely retried</p>
+     * <p>Retry after seconds.</p>
      */
     inline int GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }

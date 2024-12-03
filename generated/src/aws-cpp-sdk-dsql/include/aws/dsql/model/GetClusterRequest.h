@@ -33,7 +33,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The ID of the cluster to retrieve.</p>
+     */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }

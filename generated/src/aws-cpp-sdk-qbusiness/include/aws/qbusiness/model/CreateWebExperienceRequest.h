@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/IdentityProviderConfiguration.h>
 #include <aws/qbusiness/model/BrowserExtensionConfiguration.h>
+#include <aws/qbusiness/model/CustomizationConfiguration.h>
 #include <aws/qbusiness/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -210,6 +211,19 @@ namespace Model
     inline CreateWebExperienceRequest& WithBrowserExtensionConfiguration(const BrowserExtensionConfiguration& value) { SetBrowserExtensionConfiguration(value); return *this;}
     inline CreateWebExperienceRequest& WithBrowserExtensionConfiguration(BrowserExtensionConfiguration&& value) { SetBrowserExtensionConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Sets the custom logo, favicon, font, and color used in the Amazon Q web
+     * experience. </p>
+     */
+    inline const CustomizationConfiguration& GetCustomizationConfiguration() const{ return m_customizationConfiguration; }
+    inline bool CustomizationConfigurationHasBeenSet() const { return m_customizationConfigurationHasBeenSet; }
+    inline void SetCustomizationConfiguration(const CustomizationConfiguration& value) { m_customizationConfigurationHasBeenSet = true; m_customizationConfiguration = value; }
+    inline void SetCustomizationConfiguration(CustomizationConfiguration&& value) { m_customizationConfigurationHasBeenSet = true; m_customizationConfiguration = std::move(value); }
+    inline CreateWebExperienceRequest& WithCustomizationConfiguration(const CustomizationConfiguration& value) { SetCustomizationConfiguration(value); return *this;}
+    inline CreateWebExperienceRequest& WithCustomizationConfiguration(CustomizationConfiguration&& value) { SetCustomizationConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -244,6 +258,9 @@ namespace Model
 
     BrowserExtensionConfiguration m_browserExtensionConfiguration;
     bool m_browserExtensionConfigurationHasBeenSet = false;
+
+    CustomizationConfiguration m_customizationConfiguration;
+    bool m_customizationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

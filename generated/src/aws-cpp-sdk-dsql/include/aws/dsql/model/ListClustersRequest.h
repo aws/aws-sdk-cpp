@@ -39,7 +39,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>An optional parameter that specifies the maximum number of results to return.
+     * You can use nextToken to display the next page of results.</p>
+     */
     inline int GetMaxResults() const{ return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -47,7 +50,11 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>If your initial ListClusters operation returns a nextToken, you can include
+     * the returned nextToken in following ListClusters operations, which returns
+     * results in the next page.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }

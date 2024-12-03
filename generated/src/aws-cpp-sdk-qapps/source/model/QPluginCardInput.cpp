@@ -24,7 +24,8 @@ QPluginCardInput::QPluginCardInput() :
     m_type(CardType::NOT_SET),
     m_typeHasBeenSet(false),
     m_promptHasBeenSet(false),
-    m_pluginIdHasBeenSet(false)
+    m_pluginIdHasBeenSet(false),
+    m_actionIdentifierHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,13 @@ QPluginCardInput& QPluginCardInput::operator =(JsonView jsonValue)
     m_pluginIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("actionIdentifier"))
+  {
+    m_actionIdentifier = jsonValue.GetString("actionIdentifier");
+
+    m_actionIdentifierHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +112,12 @@ JsonValue QPluginCardInput::Jsonize() const
   if(m_pluginIdHasBeenSet)
   {
    payload.WithString("pluginId", m_pluginId);
+
+  }
+
+  if(m_actionIdentifierHasBeenSet)
+  {
+   payload.WithString("actionIdentifier", m_actionIdentifier);
 
   }
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
+#include <aws/bedrock-agent/model/AgentCollaboration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/CustomOrchestration.h>
 #include <aws/bedrock-agent/model/GuardrailConfiguration.h>
@@ -38,6 +39,18 @@ namespace Model
 
     AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
 
+
+    ///@{
+    /**
+     * <p>The agent's collaboration role.</p>
+     */
+    inline const AgentCollaboration& GetAgentCollaboration() const{ return m_agentCollaboration; }
+    inline bool AgentCollaborationHasBeenSet() const { return m_agentCollaborationHasBeenSet; }
+    inline void SetAgentCollaboration(const AgentCollaboration& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
+    inline void SetAgentCollaboration(AgentCollaboration&& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = std::move(value); }
+    inline CreateAgentRequest& WithAgentCollaboration(const AgentCollaboration& value) { SetAgentCollaboration(value); return *this;}
+    inline CreateAgentRequest& WithAgentCollaboration(AgentCollaboration&& value) { SetAgentCollaboration(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -267,6 +280,9 @@ namespace Model
     inline CreateAgentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
     ///@}
   private:
+
+    AgentCollaboration m_agentCollaboration;
+    bool m_agentCollaborationHasBeenSet = false;
 
     Aws::String m_agentName;
     bool m_agentNameHasBeenSet = false;

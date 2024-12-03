@@ -25,7 +25,8 @@ CreateWebExperienceRequest::CreateWebExperienceRequest() :
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_identityProviderConfigurationHasBeenSet(false),
-    m_browserExtensionConfigurationHasBeenSet(false)
+    m_browserExtensionConfigurationHasBeenSet(false),
+    m_customizationConfigurationHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,12 @@ Aws::String CreateWebExperienceRequest::SerializePayload() const
   if(m_browserExtensionConfigurationHasBeenSet)
   {
    payload.WithObject("browserExtensionConfiguration", m_browserExtensionConfiguration.Jsonize());
+
+  }
+
+  if(m_customizationConfigurationHasBeenSet)
+  {
+   payload.WithObject("customizationConfiguration", m_customizationConfiguration.Jsonize());
 
   }
 

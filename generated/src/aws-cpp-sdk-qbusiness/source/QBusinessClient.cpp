@@ -22,11 +22,13 @@
 #include <aws/qbusiness/QBusinessClient.h>
 #include <aws/qbusiness/QBusinessErrorMarshaller.h>
 #include <aws/qbusiness/QBusinessEndpointProvider.h>
+#include <aws/qbusiness/model/AssociatePermissionRequest.h>
 #include <aws/qbusiness/model/BatchDeleteDocumentRequest.h>
 #include <aws/qbusiness/model/BatchPutDocumentRequest.h>
 #include <aws/qbusiness/model/ChatRequest.h>
 #include <aws/qbusiness/model/ChatSyncRequest.h>
 #include <aws/qbusiness/model/CreateApplicationRequest.h>
+#include <aws/qbusiness/model/CreateDataAccessorRequest.h>
 #include <aws/qbusiness/model/CreateDataSourceRequest.h>
 #include <aws/qbusiness/model/CreateIndexRequest.h>
 #include <aws/qbusiness/model/CreatePluginRequest.h>
@@ -36,6 +38,7 @@
 #include <aws/qbusiness/model/DeleteApplicationRequest.h>
 #include <aws/qbusiness/model/DeleteChatControlsConfigurationRequest.h>
 #include <aws/qbusiness/model/DeleteConversationRequest.h>
+#include <aws/qbusiness/model/DeleteDataAccessorRequest.h>
 #include <aws/qbusiness/model/DeleteDataSourceRequest.h>
 #include <aws/qbusiness/model/DeleteGroupRequest.h>
 #include <aws/qbusiness/model/DeleteIndexRequest.h>
@@ -43,37 +46,46 @@
 #include <aws/qbusiness/model/DeleteRetrieverRequest.h>
 #include <aws/qbusiness/model/DeleteUserRequest.h>
 #include <aws/qbusiness/model/DeleteWebExperienceRequest.h>
+#include <aws/qbusiness/model/DisassociatePermissionRequest.h>
 #include <aws/qbusiness/model/GetApplicationRequest.h>
 #include <aws/qbusiness/model/GetChatControlsConfigurationRequest.h>
+#include <aws/qbusiness/model/GetDataAccessorRequest.h>
 #include <aws/qbusiness/model/GetDataSourceRequest.h>
 #include <aws/qbusiness/model/GetGroupRequest.h>
 #include <aws/qbusiness/model/GetIndexRequest.h>
 #include <aws/qbusiness/model/GetMediaRequest.h>
 #include <aws/qbusiness/model/GetPluginRequest.h>
+#include <aws/qbusiness/model/GetPolicyRequest.h>
 #include <aws/qbusiness/model/GetRetrieverRequest.h>
 #include <aws/qbusiness/model/GetUserRequest.h>
 #include <aws/qbusiness/model/GetWebExperienceRequest.h>
 #include <aws/qbusiness/model/ListApplicationsRequest.h>
 #include <aws/qbusiness/model/ListAttachmentsRequest.h>
 #include <aws/qbusiness/model/ListConversationsRequest.h>
+#include <aws/qbusiness/model/ListDataAccessorsRequest.h>
 #include <aws/qbusiness/model/ListDataSourceSyncJobsRequest.h>
 #include <aws/qbusiness/model/ListDataSourcesRequest.h>
 #include <aws/qbusiness/model/ListDocumentsRequest.h>
 #include <aws/qbusiness/model/ListGroupsRequest.h>
 #include <aws/qbusiness/model/ListIndicesRequest.h>
 #include <aws/qbusiness/model/ListMessagesRequest.h>
+#include <aws/qbusiness/model/ListPluginActionsRequest.h>
+#include <aws/qbusiness/model/ListPluginTypeActionsRequest.h>
+#include <aws/qbusiness/model/ListPluginTypeMetadataRequest.h>
 #include <aws/qbusiness/model/ListPluginsRequest.h>
 #include <aws/qbusiness/model/ListRetrieversRequest.h>
 #include <aws/qbusiness/model/ListTagsForResourceRequest.h>
 #include <aws/qbusiness/model/ListWebExperiencesRequest.h>
 #include <aws/qbusiness/model/PutFeedbackRequest.h>
 #include <aws/qbusiness/model/PutGroupRequest.h>
+#include <aws/qbusiness/model/SearchRelevantContentRequest.h>
 #include <aws/qbusiness/model/StartDataSourceSyncJobRequest.h>
 #include <aws/qbusiness/model/StopDataSourceSyncJobRequest.h>
 #include <aws/qbusiness/model/TagResourceRequest.h>
 #include <aws/qbusiness/model/UntagResourceRequest.h>
 #include <aws/qbusiness/model/UpdateApplicationRequest.h>
 #include <aws/qbusiness/model/UpdateChatControlsConfigurationRequest.h>
+#include <aws/qbusiness/model/UpdateDataAccessorRequest.h>
 #include <aws/qbusiness/model/UpdateDataSourceRequest.h>
 #include <aws/qbusiness/model/UpdateIndexRequest.h>
 #include <aws/qbusiness/model/UpdatePluginRequest.h>
@@ -221,6 +233,40 @@ void QBusinessClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+AssociatePermissionOutcome QBusinessClient::AssociatePermission(const AssociatePermissionRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociatePermission);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociatePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociatePermission", "Required field: ApplicationId, is not set");
+    return AssociatePermissionOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociatePermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AssociatePermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociatePermission",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AssociatePermissionOutcome>(
+    [&]()-> AssociatePermissionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociatePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+      return AssociatePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 BatchDeleteDocumentOutcome QBusinessClient::BatchDeleteDocument(const BatchDeleteDocumentRequest& request) const
@@ -419,6 +465,40 @@ CreateApplicationOutcome QBusinessClient::CreateApplication(const CreateApplicat
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/applications");
       return CreateApplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateDataAccessorOutcome QBusinessClient::CreateDataAccessor(const CreateDataAccessorRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateDataAccessor);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateDataAccessor", "Required field: ApplicationId, is not set");
+    return CreateDataAccessorOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateDataAccessor, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateDataAccessor, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateDataAccessor",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateDataAccessorOutcome>(
+    [&]()-> CreateDataAccessorOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataaccessors");
+      return CreateDataAccessorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -743,6 +823,46 @@ DeleteConversationOutcome QBusinessClient::DeleteConversation(const DeleteConver
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DeleteDataAccessorOutcome QBusinessClient::DeleteDataAccessor(const DeleteDataAccessorRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteDataAccessor);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDataAccessor", "Required field: ApplicationId, is not set");
+    return DeleteDataAccessorOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.DataAccessorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDataAccessor", "Required field: DataAccessorId, is not set");
+    return DeleteDataAccessorOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataAccessorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteDataAccessor, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteDataAccessor, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteDataAccessor",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteDataAccessorOutcome>(
+    [&]()-> DeleteDataAccessorOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDataAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataaccessors/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataAccessorId());
+      return DeleteDataAccessorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteDataSourceOutcome QBusinessClient::DeleteDataSource(const DeleteDataSourceRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteDataSource);
@@ -1037,6 +1157,46 @@ DeleteWebExperienceOutcome QBusinessClient::DeleteWebExperience(const DeleteWebE
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DisassociatePermissionOutcome QBusinessClient::DisassociatePermission(const DisassociatePermissionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DisassociatePermission);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociatePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociatePermission", "Required field: ApplicationId, is not set");
+    return DisassociatePermissionOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.StatementIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociatePermission", "Required field: StatementId, is not set");
+    return DisassociatePermissionOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatementId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociatePermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisassociatePermission, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociatePermission",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisassociatePermissionOutcome>(
+    [&]()-> DisassociatePermissionOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociatePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/policy/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStatementId());
+      return DisassociatePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetApplicationOutcome QBusinessClient::GetApplication(const GetApplicationRequest& request) const
 {
   AWS_OPERATION_GUARD(GetApplication);
@@ -1098,6 +1258,46 @@ GetChatControlsConfigurationOutcome QBusinessClient::GetChatControlsConfiguratio
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/chatcontrols");
       return GetChatControlsConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetDataAccessorOutcome QBusinessClient::GetDataAccessor(const GetDataAccessorRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetDataAccessor);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDataAccessor", "Required field: ApplicationId, is not set");
+    return GetDataAccessorOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.DataAccessorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDataAccessor", "Required field: DataAccessorId, is not set");
+    return GetDataAccessorOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataAccessorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetDataAccessor, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetDataAccessor, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDataAccessor",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetDataAccessorOutcome>(
+    [&]()-> GetDataAccessorOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataaccessors/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataAccessorId());
+      return GetDataAccessorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1332,6 +1532,40 @@ GetPluginOutcome QBusinessClient::GetPlugin(const GetPluginRequest& request) con
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetPolicyOutcome QBusinessClient::GetPolicy(const GetPolicyRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetPolicy);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPolicy", "Required field: ApplicationId, is not set");
+    return GetPolicyOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetPolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetPolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetPolicy",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetPolicyOutcome>(
+    [&]()-> GetPolicyOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/policy");
+      return GetPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetRetrieverOutcome QBusinessClient::GetRetriever(const GetRetrieverRequest& request) const
 {
   AWS_OPERATION_GUARD(GetRetriever);
@@ -1541,6 +1775,40 @@ ListConversationsOutcome QBusinessClient::ListConversations(const ListConversati
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/conversations");
       return ListConversationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListDataAccessorsOutcome QBusinessClient::ListDataAccessors(const ListDataAccessorsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListDataAccessors);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataAccessors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDataAccessors", "Required field: ApplicationId, is not set");
+    return ListDataAccessorsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListDataAccessors, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListDataAccessors, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListDataAccessors",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListDataAccessorsOutcome>(
+    [&]()-> ListDataAccessorsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataAccessors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataaccessors");
+      return ListDataAccessorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1797,6 +2065,108 @@ ListMessagesOutcome QBusinessClient::ListMessages(const ListMessagesRequest& req
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListPluginActionsOutcome QBusinessClient::ListPluginActions(const ListPluginActionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListPluginActions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPluginActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPluginActions", "Required field: ApplicationId, is not set");
+    return ListPluginActionsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.PluginIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPluginActions", "Required field: PluginId, is not set");
+    return ListPluginActionsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PluginId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListPluginActions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListPluginActions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListPluginActions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListPluginActionsOutcome>(
+    [&]()-> ListPluginActionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPluginActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/plugins/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPluginId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
+      return ListPluginActionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListPluginTypeActionsOutcome QBusinessClient::ListPluginTypeActions(const ListPluginTypeActionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListPluginTypeActions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPluginTypeActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PluginTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPluginTypeActions", "Required field: PluginType, is not set");
+    return ListPluginTypeActionsOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PluginType]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListPluginTypeActions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListPluginTypeActions, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListPluginTypeActions",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListPluginTypeActionsOutcome>(
+    [&]()-> ListPluginTypeActionsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPluginTypeActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/pluginTypes/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(PluginTypeMapper::GetNameForPluginType(request.GetPluginType()));
+      endpointResolutionOutcome.GetResult().AddPathSegments("/actions");
+      return ListPluginTypeActionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListPluginTypeMetadataOutcome QBusinessClient::ListPluginTypeMetadata(const ListPluginTypeMetadataRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListPluginTypeMetadata);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPluginTypeMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListPluginTypeMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListPluginTypeMetadata, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListPluginTypeMetadata",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListPluginTypeMetadataOutcome>(
+    [&]()-> ListPluginTypeMetadataOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPluginTypeMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/pluginTypeMetadata");
+      return ListPluginTypeMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListPluginsOutcome QBusinessClient::ListPlugins(const ListPluginsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListPlugins);
@@ -2015,6 +2385,40 @@ PutGroupOutcome QBusinessClient::PutGroup(const PutGroupRequest& request) const
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIndexId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/groups");
       return PutGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SearchRelevantContentOutcome QBusinessClient::SearchRelevantContent(const SearchRelevantContentRequest& request) const
+{
+  AWS_OPERATION_GUARD(SearchRelevantContent);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchRelevantContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchRelevantContent", "Required field: ApplicationId, is not set");
+    return SearchRelevantContentOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SearchRelevantContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SearchRelevantContent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SearchRelevantContent",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SearchRelevantContentOutcome>(
+    [&]()-> SearchRelevantContentOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchRelevantContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/relevant-content");
+      return SearchRelevantContentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2249,6 +2653,46 @@ UpdateChatControlsConfigurationOutcome QBusinessClient::UpdateChatControlsConfig
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/chatcontrols");
       return UpdateChatControlsConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateDataAccessorOutcome QBusinessClient::UpdateDataAccessor(const UpdateDataAccessorRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateDataAccessor);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDataAccessor", "Required field: ApplicationId, is not set");
+    return UpdateDataAccessorOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.DataAccessorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDataAccessor", "Required field: DataAccessorId, is not set");
+    return UpdateDataAccessorOutcome(Aws::Client::AWSError<QBusinessErrors>(QBusinessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataAccessorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateDataAccessor, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateDataAccessor, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateDataAccessor",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateDataAccessorOutcome>(
+    [&]()-> UpdateDataAccessorOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDataAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/dataaccessors/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataAccessorId());
+      return UpdateDataAccessorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

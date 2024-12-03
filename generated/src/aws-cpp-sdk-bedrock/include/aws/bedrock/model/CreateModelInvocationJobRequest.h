@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>The configuration of the Virtual Private Cloud (VPC) for the data in the
      * batch inference job. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-vpc">Protect
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc">Protect
      * batch inference jobs using a VPC</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }

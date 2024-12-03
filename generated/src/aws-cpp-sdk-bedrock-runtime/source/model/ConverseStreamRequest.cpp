@@ -22,6 +22,7 @@ ConverseStreamRequest::ConverseStreamRequest() :
     m_additionalModelRequestFieldsHasBeenSet(false),
     m_promptVariablesHasBeenSet(false),
     m_additionalModelResponseFieldPathsHasBeenSet(false),
+    m_requestMetadataHasBeenSet(false),
     m_performanceConfigHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
@@ -98,6 +99,17 @@ Aws::String ConverseStreamRequest::SerializePayload() const
      additionalModelResponseFieldPathsJsonList[additionalModelResponseFieldPathsIndex].AsString(m_additionalModelResponseFieldPaths[additionalModelResponseFieldPathsIndex]);
    }
    payload.WithArray("additionalModelResponseFieldPaths", std::move(additionalModelResponseFieldPathsJsonList));
+
+  }
+
+  if(m_requestMetadataHasBeenSet)
+  {
+   JsonValue requestMetadataJsonMap;
+   for(auto& requestMetadataItem : m_requestMetadata)
+   {
+     requestMetadataJsonMap.WithString(requestMetadataItem.first, requestMetadataItem.second);
+   }
+   payload.WithObject("requestMetadata", std::move(requestMetadataJsonMap));
 
   }
 

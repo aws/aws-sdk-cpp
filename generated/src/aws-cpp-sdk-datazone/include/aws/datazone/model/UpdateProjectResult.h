@@ -7,9 +7,11 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/model/EnvironmentDeploymentDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/model/ProjectStatus.h>
 #include <aws/datazone/model/ProjectDeletionError.h>
+#include <aws/datazone/model/EnvironmentConfigurationUserParameter.h>
 #include <utility>
 
 namespace Aws
@@ -102,6 +104,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The environment deployment details of the project.</p>
+     */
+    inline const EnvironmentDeploymentDetails& GetEnvironmentDeploymentDetails() const{ return m_environmentDeploymentDetails; }
+    inline void SetEnvironmentDeploymentDetails(const EnvironmentDeploymentDetails& value) { m_environmentDeploymentDetails = value; }
+    inline void SetEnvironmentDeploymentDetails(EnvironmentDeploymentDetails&& value) { m_environmentDeploymentDetails = std::move(value); }
+    inline UpdateProjectResult& WithEnvironmentDeploymentDetails(const EnvironmentDeploymentDetails& value) { SetEnvironmentDeploymentDetails(value); return *this;}
+    inline UpdateProjectResult& WithEnvironmentDeploymentDetails(EnvironmentDeploymentDetails&& value) { SetEnvironmentDeploymentDetails(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the error message that is returned if the operation cannot be
      * successfully completed.</p>
      */
@@ -167,6 +180,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the project profile.</p>
+     */
+    inline const Aws::String& GetProjectProfileId() const{ return m_projectProfileId; }
+    inline void SetProjectProfileId(const Aws::String& value) { m_projectProfileId = value; }
+    inline void SetProjectProfileId(Aws::String&& value) { m_projectProfileId = std::move(value); }
+    inline void SetProjectProfileId(const char* value) { m_projectProfileId.assign(value); }
+    inline UpdateProjectResult& WithProjectProfileId(const Aws::String& value) { SetProjectProfileId(value); return *this;}
+    inline UpdateProjectResult& WithProjectProfileId(Aws::String&& value) { SetProjectProfileId(std::move(value)); return *this;}
+    inline UpdateProjectResult& WithProjectProfileId(const char* value) { SetProjectProfileId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the project.</p>
      */
     inline const ProjectStatus& GetProjectStatus() const{ return m_projectStatus; }
@@ -174,6 +200,19 @@ namespace Model
     inline void SetProjectStatus(ProjectStatus&& value) { m_projectStatus = std::move(value); }
     inline UpdateProjectResult& WithProjectStatus(const ProjectStatus& value) { SetProjectStatus(value); return *this;}
     inline UpdateProjectResult& WithProjectStatus(ProjectStatus&& value) { SetProjectStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user parameters of the project.</p>
+     */
+    inline const Aws::Vector<EnvironmentConfigurationUserParameter>& GetUserParameters() const{ return m_userParameters; }
+    inline void SetUserParameters(const Aws::Vector<EnvironmentConfigurationUserParameter>& value) { m_userParameters = value; }
+    inline void SetUserParameters(Aws::Vector<EnvironmentConfigurationUserParameter>&& value) { m_userParameters = std::move(value); }
+    inline UpdateProjectResult& WithUserParameters(const Aws::Vector<EnvironmentConfigurationUserParameter>& value) { SetUserParameters(value); return *this;}
+    inline UpdateProjectResult& WithUserParameters(Aws::Vector<EnvironmentConfigurationUserParameter>&& value) { SetUserParameters(std::move(value)); return *this;}
+    inline UpdateProjectResult& AddUserParameters(const EnvironmentConfigurationUserParameter& value) { m_userParameters.push_back(value); return *this; }
+    inline UpdateProjectResult& AddUserParameters(EnvironmentConfigurationUserParameter&& value) { m_userParameters.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -198,6 +237,8 @@ namespace Model
 
     Aws::String m_domainUnitId;
 
+    EnvironmentDeploymentDetails m_environmentDeploymentDetails;
+
     Aws::Vector<ProjectDeletionError> m_failureReasons;
 
     Aws::Vector<Aws::String> m_glossaryTerms;
@@ -208,7 +249,11 @@ namespace Model
 
     Aws::String m_name;
 
+    Aws::String m_projectProfileId;
+
     ProjectStatus m_projectStatus;
+
+    Aws::Vector<EnvironmentConfigurationUserParameter> m_userParameters;
 
     Aws::String m_requestId;
   };

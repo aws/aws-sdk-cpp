@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     ACTION_GROUP,
+    AGENT_COLLABORATOR,
     KNOWLEDGE_BASE,
     FINISH,
     ASK_USER,

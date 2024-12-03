@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/datazone/model/EnableSetting.h>
 #include <aws/datazone/model/DataSourceErrorMessage.h>
 #include <aws/datazone/model/DataSourceRunStatus.h>
@@ -45,6 +45,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The connection ID that's part of the data source summary.</p>
+     */
+    inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
+    inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
+    inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
+    inline DataSourceSummary& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
+    inline DataSourceSummary& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
+    inline DataSourceSummary& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The timestamp of when the data source was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -67,6 +81,20 @@ namespace Model
     inline DataSourceSummary& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
     inline DataSourceSummary& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
     inline DataSourceSummary& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The data source description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline DataSourceSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline DataSourceSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline DataSourceSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
     ///@}
 
     ///@{
@@ -216,11 +244,17 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_connectionId;
+    bool m_connectionIdHasBeenSet = false;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_dataSourceId;
     bool m_dataSourceIdHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;

@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Request references a resource which does not exist</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The resource could not be found.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */

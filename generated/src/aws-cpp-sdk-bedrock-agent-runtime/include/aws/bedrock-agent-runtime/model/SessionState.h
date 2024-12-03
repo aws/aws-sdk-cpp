@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/ConversationHistory.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -51,6 +52,18 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API SessionState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p>The state's conversation history.</p>
+     */
+    inline const ConversationHistory& GetConversationHistory() const{ return m_conversationHistory; }
+    inline bool ConversationHistoryHasBeenSet() const { return m_conversationHistoryHasBeenSet; }
+    inline void SetConversationHistory(const ConversationHistory& value) { m_conversationHistoryHasBeenSet = true; m_conversationHistory = value; }
+    inline void SetConversationHistory(ConversationHistory&& value) { m_conversationHistoryHasBeenSet = true; m_conversationHistory = std::move(value); }
+    inline SessionState& WithConversationHistory(const ConversationHistory& value) { SetConversationHistory(value); return *this;}
+    inline SessionState& WithConversationHistory(ConversationHistory&& value) { SetConversationHistory(std::move(value)); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -165,6 +178,9 @@ namespace Model
     inline SessionState& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
     ///@}
   private:
+
+    ConversationHistory m_conversationHistory;
+    bool m_conversationHistoryHasBeenSet = false;
 
     Aws::Vector<InputFile> m_files;
     bool m_filesHasBeenSet = false;

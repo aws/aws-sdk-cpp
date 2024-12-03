@@ -5,6 +5,7 @@
 
 #include <aws/bedrock-agent-runtime/model/InvokeAgentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -23,6 +24,7 @@ InvokeAgentRequest::InvokeAgentRequest() :
     m_memoryIdHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionStateHasBeenSet(false),
+    m_sourceArnHasBeenSet(false),
     m_streamingConfigurationsHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
@@ -69,6 +71,21 @@ Aws::String InvokeAgentRequest::SerializePayload() const
   }
 
   return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection InvokeAgentRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_sourceArnHasBeenSet)
+  {
+    ss << m_sourceArn;
+    headers.emplace("x-amz-source-arn",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 

@@ -40,7 +40,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The ARN of the resource from which to remove tags.</p>
+     */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
@@ -52,7 +54,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The array of keys of the tags that you want to remove.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }

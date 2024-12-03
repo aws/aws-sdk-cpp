@@ -131,6 +131,12 @@ GetWebExperienceResult& GetWebExperienceResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("customizationConfiguration"))
+  {
+    m_customizationConfiguration = jsonValue.GetObject("customizationConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

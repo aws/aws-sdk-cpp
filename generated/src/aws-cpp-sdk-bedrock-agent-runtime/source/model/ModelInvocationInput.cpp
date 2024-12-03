@@ -19,6 +19,7 @@ namespace Model
 {
 
 ModelInvocationInput::ModelInvocationInput() : 
+    m_foundationModelHasBeenSet(false),
     m_inferenceConfigurationHasBeenSet(false),
     m_overrideLambdaHasBeenSet(false),
     m_parserMode(CreationMode::NOT_SET),
@@ -40,6 +41,13 @@ ModelInvocationInput::ModelInvocationInput(JsonView jsonValue)
 
 ModelInvocationInput& ModelInvocationInput::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("foundationModel"))
+  {
+    m_foundationModel = jsonValue.GetString("foundationModel");
+
+    m_foundationModelHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inferenceConfiguration"))
   {
     m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
@@ -95,6 +103,12 @@ ModelInvocationInput& ModelInvocationInput::operator =(JsonView jsonValue)
 JsonValue ModelInvocationInput::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_foundationModelHasBeenSet)
+  {
+   payload.WithString("foundationModel", m_foundationModel);
+
+  }
 
   if(m_inferenceConfigurationHasBeenSet)
   {

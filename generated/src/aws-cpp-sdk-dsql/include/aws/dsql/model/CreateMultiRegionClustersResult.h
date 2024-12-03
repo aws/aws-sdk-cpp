@@ -34,7 +34,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>An array that contains the ARNs of all linked clusters.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetLinkedClusterArns() const{ return m_linkedClusterArns; }
     inline void SetLinkedClusterArns(const Aws::Vector<Aws::String>& value) { m_linkedClusterArns = value; }
     inline void SetLinkedClusterArns(Aws::Vector<Aws::String>&& value) { m_linkedClusterArns = std::move(value); }

@@ -22,6 +22,7 @@ ContentBlock::ContentBlock() :
     m_textHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_documentHasBeenSet(false),
+    m_videoHasBeenSet(false),
     m_toolUseHasBeenSet(false),
     m_toolResultHasBeenSet(false),
     m_guardContentHasBeenSet(false)
@@ -55,6 +56,13 @@ ContentBlock& ContentBlock::operator =(JsonView jsonValue)
     m_document = jsonValue.GetObject("document");
 
     m_documentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("video"))
+  {
+    m_video = jsonValue.GetObject("video");
+
+    m_videoHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("toolUse"))
@@ -100,6 +108,12 @@ JsonValue ContentBlock::Jsonize() const
   if(m_documentHasBeenSet)
   {
    payload.WithObject("document", m_document.Jsonize());
+
+  }
+
+  if(m_videoHasBeenSet)
+  {
+   payload.WithObject("video", m_video.Jsonize());
 
   }
 

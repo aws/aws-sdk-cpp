@@ -458,6 +458,17 @@ namespace Redshift
          * clusters, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p> <p>VPC Block Public Access (BPA) enables you to block resources
+         * in VPCs and subnets that you own in a Region from reaching or being reached from
+         * the internet through internet gateways and egress-only internet gateways. If a
+         * subnet group for a provisioned cluster is in an account with VPC BPA turned on,
+         * the following capabilities are blocked:</p> <ul> <li> <p>Creating a public
+         * cluster</p> </li> <li> <p>Restoring a public cluster</p> </li> <li> <p>Modifying
+         * a private cluster to be public</p> </li> <li> <p>Adding a subnet with VPC BPA
+         * turned on to the subnet group when there's at least one public cluster within
+         * the group</p> </li> </ul> <p>For more information about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">AWS
          * API Reference</a></p>
@@ -1526,6 +1537,32 @@ namespace Redshift
         void DeleteUsageLimitAsync(const DeleteUsageLimitRequestT& request, const DeleteUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftClient::DeleteUsageLimit, request, handler, context);
+        }
+
+        /**
+         * <p>Deregisters a cluster or serverless namespace from the Amazon Web Services
+         * Glue Data Catalog.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeregisterNamespace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterNamespaceOutcome DeregisterNamespace(const Model::DeregisterNamespaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeregisterNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeregisterNamespaceRequestT = Model::DeregisterNamespaceRequest>
+        Model::DeregisterNamespaceOutcomeCallable DeregisterNamespaceCallable(const DeregisterNamespaceRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::DeregisterNamespace, request);
+        }
+
+        /**
+         * An Async wrapper for DeregisterNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeregisterNamespaceRequestT = Model::DeregisterNamespaceRequest>
+        void DeregisterNamespaceAsync(const DeregisterNamespaceRequestT& request, const DeregisterNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::DeregisterNamespace, request, handler, context);
         }
 
         /**
@@ -3172,6 +3209,17 @@ namespace Redshift
          * effect. For more information about managing clusters, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
          * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management
+         * Guide</i>.</p> <p>VPC Block Public Access (BPA) enables you to block resources
+         * in VPCs and subnets that you own in a Region from reaching or being reached from
+         * the internet through internet gateways and egress-only internet gateways. If a
+         * subnet group for a provisioned cluster is in an account with VPC BPA turned on,
+         * the following capabilities are blocked:</p> <ul> <li> <p>Creating a public
+         * cluster</p> </li> <li> <p>Restoring a public cluster</p> </li> <li> <p>Modifying
+         * a private cluster to be public</p> </li> <li> <p>Adding a subnet with VPC BPA
+         * turned on to the subnet group when there's at least one public cluster within
+         * the group</p> </li> </ul> <p>For more information about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster">AWS
          * API Reference</a></p>
@@ -3364,7 +3412,18 @@ namespace Redshift
         /**
          * <p>Modifies a cluster subnet group to include the specified list of VPC subnets.
          * The operation replaces the existing list of subnets with the new list of
-         * subnets.</p><p><h3>See Also:</h3>   <a
+         * subnets.</p> <p>VPC Block Public Access (BPA) enables you to block resources in
+         * VPCs and subnets that you own in a Region from reaching or being reached from
+         * the internet through internet gateways and egress-only internet gateways. If a
+         * subnet group for a provisioned cluster is in an account with VPC BPA turned on,
+         * the following capabilities are blocked:</p> <ul> <li> <p>Creating a public
+         * cluster</p> </li> <li> <p>Restoring a public cluster</p> </li> <li> <p>Modifying
+         * a private cluster to be public</p> </li> <li> <p>Adding a subnet with VPC BPA
+         * turned on to the subnet group when there's at least one public cluster within
+         * the group</p> </li> </ul> <p>For more information about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup">AWS
          * API Reference</a></p>
          */
@@ -3743,6 +3802,32 @@ namespace Redshift
         }
 
         /**
+         * <p>Registers a cluster or serverless namespace to the Amazon Web Services Glue
+         * Data Catalog.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RegisterNamespace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterNamespaceOutcome RegisterNamespace(const Model::RegisterNamespaceRequest& request) const;
+
+        /**
+         * A Callable wrapper for RegisterNamespace that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RegisterNamespaceRequestT = Model::RegisterNamespaceRequest>
+        Model::RegisterNamespaceOutcomeCallable RegisterNamespaceCallable(const RegisterNamespaceRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::RegisterNamespace, request);
+        }
+
+        /**
+         * An Async wrapper for RegisterNamespace that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RegisterNamespaceRequestT = Model::RegisterNamespaceRequest>
+        void RegisterNamespaceAsync(const RegisterNamespaceRequestT& request, const RegisterNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::RegisterNamespace, request, handler, context);
+        }
+
+        /**
          * <p>From a datashare consumer account, rejects the specified
          * datashare.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RejectDataShare">AWS
@@ -3840,8 +3925,19 @@ namespace Redshift
          * security group and different parameter group with the restored cluster. If you
          * are using a DS node type, you can also choose to change to another DS node type
          * of the same size during restore.</p> <p>If you restore a cluster into a VPC, you
-         * must provide a cluster subnet group where you want the cluster restored.</p> <p>
-         * For more information about working with snapshots, go to <a
+         * must provide a cluster subnet group where you want the cluster restored.</p>
+         * <p>VPC Block Public Access (BPA) enables you to block resources in VPCs and
+         * subnets that you own in a Region from reaching or being reached from the
+         * internet through internet gateways and egress-only internet gateways. If a
+         * subnet group for a provisioned cluster is in an account with VPC BPA turned on,
+         * the following capabilities are blocked:</p> <ul> <li> <p>Creating a public
+         * cluster</p> </li> <li> <p>Restoring a public cluster</p> </li> <li> <p>Modifying
+         * a private cluster to be public</p> </li> <li> <p>Adding a subnet with VPC BPA
+         * turned on to the subnet group when there's at least one public cluster within
+         * the group</p> </li> </ul> <p>For more information about VPC BPA, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+         * public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+         * <p> For more information about working with snapshots, go to <a
          * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
          * Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management
          * Guide</i>.</p><p><h3>See Also:</h3>   <a

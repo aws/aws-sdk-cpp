@@ -26,6 +26,8 @@ UpdateTableRequest::UpdateTableRequest() :
     m_tableClassHasBeenSet(false),
     m_deletionProtectionEnabled(false),
     m_deletionProtectionEnabledHasBeenSet(false),
+    m_multiRegionConsistency(MultiRegionConsistency::NOT_SET),
+    m_multiRegionConsistencyHasBeenSet(false),
     m_onDemandThroughputHasBeenSet(false),
     m_warmThroughputHasBeenSet(false)
 {
@@ -106,6 +108,11 @@ Aws::String UpdateTableRequest::SerializePayload() const
   {
    payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
 
+  }
+
+  if(m_multiRegionConsistencyHasBeenSet)
+  {
+   payload.WithString("MultiRegionConsistency", MultiRegionConsistencyMapper::GetNameForMultiRegionConsistency(m_multiRegionConsistency));
   }
 
   if(m_onDemandThroughputHasBeenSet)

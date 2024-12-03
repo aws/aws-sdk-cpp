@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-runtime/model/ImageBlock.h>
 #include <aws/bedrock-runtime/model/DocumentBlock.h>
+#include <aws/bedrock-runtime/model/VideoBlock.h>
 #include <utility>
 
 namespace Aws
@@ -90,6 +91,18 @@ namespace Model
     inline ToolResultContentBlock& WithDocument(const DocumentBlock& value) { SetDocument(value); return *this;}
     inline ToolResultContentBlock& WithDocument(DocumentBlock&& value) { SetDocument(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A tool result that is video.</p>
+     */
+    inline const VideoBlock& GetVideo() const{ return m_video; }
+    inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
+    inline void SetVideo(const VideoBlock& value) { m_videoHasBeenSet = true; m_video = value; }
+    inline void SetVideo(VideoBlock&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
+    inline ToolResultContentBlock& WithVideo(const VideoBlock& value) { SetVideo(value); return *this;}
+    inline ToolResultContentBlock& WithVideo(VideoBlock&& value) { SetVideo(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Utils::Document m_json;
@@ -103,6 +116,9 @@ namespace Model
 
     DocumentBlock m_document;
     bool m_documentHasBeenSet = false;
+
+    VideoBlock m_video;
+    bool m_videoHasBeenSet = false;
   };
 
 } // namespace Model

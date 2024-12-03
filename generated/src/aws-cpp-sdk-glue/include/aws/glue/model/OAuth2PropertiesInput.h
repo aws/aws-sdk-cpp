@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/AuthorizationCodeProperties.h>
+#include <aws/glue/model/OAuth2Credentials.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +116,19 @@ namespace Model
     inline OAuth2PropertiesInput& WithAuthorizationCodeProperties(const AuthorizationCodeProperties& value) { SetAuthorizationCodeProperties(value); return *this;}
     inline OAuth2PropertiesInput& WithAuthorizationCodeProperties(AuthorizationCodeProperties&& value) { SetAuthorizationCodeProperties(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The credentials used when the authentication type is OAuth2
+     * authentication.</p>
+     */
+    inline const OAuth2Credentials& GetOAuth2Credentials() const{ return m_oAuth2Credentials; }
+    inline bool OAuth2CredentialsHasBeenSet() const { return m_oAuth2CredentialsHasBeenSet; }
+    inline void SetOAuth2Credentials(const OAuth2Credentials& value) { m_oAuth2CredentialsHasBeenSet = true; m_oAuth2Credentials = value; }
+    inline void SetOAuth2Credentials(OAuth2Credentials&& value) { m_oAuth2CredentialsHasBeenSet = true; m_oAuth2Credentials = std::move(value); }
+    inline OAuth2PropertiesInput& WithOAuth2Credentials(const OAuth2Credentials& value) { SetOAuth2Credentials(value); return *this;}
+    inline OAuth2PropertiesInput& WithOAuth2Credentials(OAuth2Credentials&& value) { SetOAuth2Credentials(std::move(value)); return *this;}
+    ///@}
   private:
 
     OAuth2GrantType m_oAuth2GrantType;
@@ -131,6 +145,9 @@ namespace Model
 
     AuthorizationCodeProperties m_authorizationCodeProperties;
     bool m_authorizationCodePropertiesHasBeenSet = false;
+
+    OAuth2Credentials m_oAuth2Credentials;
+    bool m_oAuth2CredentialsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The resource you want to use doesn’t exist. Make sure you have provided the
-   * correct resource and try again.</p><p><h3>See Also:</h3>   <a
+   * <p>The application or plugin resource you want to use doesn’t exist. Make sure
+   * you have provided the correct resource and try again.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */

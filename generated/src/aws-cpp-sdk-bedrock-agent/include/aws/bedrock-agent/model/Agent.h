@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent/model/AgentCollaboration.h>
 #include <aws/bedrock-agent/model/AgentStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/bedrock-agent/model/CustomOrchestration.h>
@@ -57,6 +58,18 @@ namespace Model
     inline Agent& WithAgentArn(const Aws::String& value) { SetAgentArn(value); return *this;}
     inline Agent& WithAgentArn(Aws::String&& value) { SetAgentArn(std::move(value)); return *this;}
     inline Agent& WithAgentArn(const char* value) { SetAgentArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The agent's collaboration settings.</p>
+     */
+    inline const AgentCollaboration& GetAgentCollaboration() const{ return m_agentCollaboration; }
+    inline bool AgentCollaborationHasBeenSet() const { return m_agentCollaborationHasBeenSet; }
+    inline void SetAgentCollaboration(const AgentCollaboration& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
+    inline void SetAgentCollaboration(AgentCollaboration&& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = std::move(value); }
+    inline Agent& WithAgentCollaboration(const AgentCollaboration& value) { SetAgentCollaboration(value); return *this;}
+    inline Agent& WithAgentCollaboration(AgentCollaboration&& value) { SetAgentCollaboration(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -357,6 +370,9 @@ namespace Model
 
     Aws::String m_agentArn;
     bool m_agentArnHasBeenSet = false;
+
+    AgentCollaboration m_agentCollaboration;
+    bool m_agentCollaborationHasBeenSet = false;
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;

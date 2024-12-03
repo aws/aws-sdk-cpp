@@ -26,7 +26,9 @@ DataShare::DataShare() :
     m_allowPubliclyAccessibleConsumers(false),
     m_allowPubliclyAccessibleConsumersHasBeenSet(false),
     m_dataShareAssociationsHasBeenSet(false),
-    m_managedByHasBeenSet(false)
+    m_managedByHasBeenSet(false),
+    m_dataShareType(DataShareType::NOT_SET),
+    m_dataShareTypeHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,12 @@ DataShare& DataShare::operator =(const XmlNode& xmlNode)
       m_managedBy = Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText());
       m_managedByHasBeenSet = true;
     }
+    XmlNode dataShareTypeNode = resultNode.FirstChild("DataShareType");
+    if(!dataShareTypeNode.IsNull())
+    {
+      m_dataShareType = DataShareTypeMapper::GetDataShareTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataShareTypeNode.GetText()).c_str()).c_str());
+      m_dataShareTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -116,6 +124,11 @@ void DataShare::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".ManagedBy=" << StringUtils::URLEncode(m_managedBy.c_str()) << "&";
   }
 
+  if(m_dataShareTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DataShareType=" << DataShareTypeMapper::GetNameForDataShareType(m_dataShareType) << "&";
+  }
+
   Aws::StringStream responseMetadataLocationAndMemberSs;
   responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
   m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
@@ -148,6 +161,10 @@ void DataShare::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_managedByHasBeenSet)
   {
       oStream << location << ".ManagedBy=" << StringUtils::URLEncode(m_managedBy.c_str()) << "&";
+  }
+  if(m_dataShareTypeHasBeenSet)
+  {
+      oStream << location << ".DataShareType=" << DataShareTypeMapper::GetNameForDataShareType(m_dataShareType) << "&";
   }
   Aws::String responseMetadataLocationAndMember(location);
   responseMetadataLocationAndMember += ".ResponseMetadata";

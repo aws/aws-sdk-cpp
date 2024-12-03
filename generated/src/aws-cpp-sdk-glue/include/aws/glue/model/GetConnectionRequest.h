@@ -7,6 +7,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glue/model/ComputeEnvironment.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +77,19 @@ namespace Model
     inline void SetHidePassword(bool value) { m_hidePasswordHasBeenSet = true; m_hidePassword = value; }
     inline GetConnectionRequest& WithHidePassword(bool value) { SetHidePassword(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>For connections that may be used in multiple services, specifies returning
+     * properties for the specified compute environment.</p>
+     */
+    inline const ComputeEnvironment& GetApplyOverrideForComputeEnvironment() const{ return m_applyOverrideForComputeEnvironment; }
+    inline bool ApplyOverrideForComputeEnvironmentHasBeenSet() const { return m_applyOverrideForComputeEnvironmentHasBeenSet; }
+    inline void SetApplyOverrideForComputeEnvironment(const ComputeEnvironment& value) { m_applyOverrideForComputeEnvironmentHasBeenSet = true; m_applyOverrideForComputeEnvironment = value; }
+    inline void SetApplyOverrideForComputeEnvironment(ComputeEnvironment&& value) { m_applyOverrideForComputeEnvironmentHasBeenSet = true; m_applyOverrideForComputeEnvironment = std::move(value); }
+    inline GetConnectionRequest& WithApplyOverrideForComputeEnvironment(const ComputeEnvironment& value) { SetApplyOverrideForComputeEnvironment(value); return *this;}
+    inline GetConnectionRequest& WithApplyOverrideForComputeEnvironment(ComputeEnvironment&& value) { SetApplyOverrideForComputeEnvironment(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_catalogId;
@@ -86,6 +100,9 @@ namespace Model
 
     bool m_hidePassword;
     bool m_hidePasswordHasBeenSet = false;
+
+    ComputeEnvironment m_applyOverrideForComputeEnvironment;
+    bool m_applyOverrideForComputeEnvironmentHasBeenSet = false;
   };
 
 } // namespace Model

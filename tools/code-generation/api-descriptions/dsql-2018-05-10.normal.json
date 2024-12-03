@@ -23,14 +23,14 @@
       "input":{"shape":"CreateClusterInput"},
       "output":{"shape":"CreateClusterOutput"},
       "errors":[
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
         {"shape":"ServiceQuotaExceededException"},
-        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ValidationException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Create a cluster</p>"
+      "documentation":"<p>Creates a cluster in Amazon Aurora DSQL.</p>"
     },
     "CreateMultiRegionClusters":{
       "name":"CreateMultiRegionClusters",
@@ -42,14 +42,14 @@
       "input":{"shape":"CreateMultiRegionClustersInput"},
       "output":{"shape":"CreateMultiRegionClustersOutput"},
       "errors":[
-        {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
         {"shape":"ServiceQuotaExceededException"},
-        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ValidationException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Create clusters in multiple regions</p>"
+      "documentation":"<p>Creates multi-Region clusters in Amazon Aurora DSQL. Multi-Region clusters require a linked Region list, which is an array of the Regions in which you want to create linked clusters. Multi-Region clusters require a witness Region, which participates in quorum in failure scenarios.</p>"
     },
     "DeleteCluster":{
       "name":"DeleteCluster",
@@ -61,14 +61,14 @@
       "input":{"shape":"DeleteClusterInput"},
       "output":{"shape":"DeleteClusterOutput"},
       "errors":[
-        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
         {"shape":"InternalServerException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Delete a cluster</p>",
+      "documentation":"<p>Deletes a cluster in Amazon Aurora DSQL.</p>",
       "idempotent":true
     },
     "DeleteMultiRegionClusters":{
@@ -80,14 +80,14 @@
       },
       "input":{"shape":"DeleteMultiRegionClustersInput"},
       "errors":[
-        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
         {"shape":"InternalServerException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Delete clusters in multiple regions</p>",
+      "documentation":"<p>Deletes a multi-Region cluster in Amazon Aurora DSQL.</p>",
       "idempotent":true
     },
     "GetCluster":{
@@ -100,13 +100,13 @@
       "input":{"shape":"GetClusterInput"},
       "output":{"shape":"GetClusterOutput"},
       "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
         {"shape":"InternalServerException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Get a cluster</p>"
+      "documentation":"<p>Retrieves information about a cluster.</p>"
     },
     "ListClusters":{
       "name":"ListClusters",
@@ -118,13 +118,13 @@
       "input":{"shape":"ListClustersInput"},
       "output":{"shape":"ListClustersOutput"},
       "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
         {"shape":"InternalServerException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>List clusters</p>"
+      "documentation":"<p>Retrieves information about a list of clusters.</p>"
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -136,13 +136,13 @@
       "input":{"shape":"ListTagsForResourceInput"},
       "output":{"shape":"ListTagsForResourceOutput"},
       "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
         {"shape":"InternalServerException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>List all Tags on an ARN</p>"
+      "documentation":"<p>Lists all of the tags for a resource.</p>"
     },
     "TagResource":{
       "name":"TagResource",
@@ -153,14 +153,14 @@
       },
       "input":{"shape":"TagResourceInput"},
       "errors":[
-        {"shape":"ValidationException"},
         {"shape":"ServiceQuotaExceededException"},
-        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ValidationException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Add Tags to an ARN</p>",
+      "documentation":"<p>Tags a resource with a map of key and value pairs.</p>",
       "idempotent":true
     },
     "UntagResource":{
@@ -172,13 +172,13 @@
       },
       "input":{"shape":"UntagResourceInput"},
       "errors":[
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
         {"shape":"InternalServerException"},
-        {"shape":"AccessDeniedException"},
-        {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Remove Tags from an ARN</p>",
+      "documentation":"<p>Removes a tag from a resource.</p>",
       "idempotent":true
     },
     "UpdateCluster":{
@@ -191,14 +191,14 @@
       "input":{"shape":"UpdateClusterInput"},
       "output":{"shape":"UpdateClusterOutput"},
       "errors":[
-        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
         {"shape":"InternalServerException"},
-        {"shape":"AccessDeniedException"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Update a cluster</p>"
+      "documentation":"<p>Updates a cluster.</p>"
     }
   },
   "shapes":{
@@ -208,7 +208,7 @@
       "members":{
         "message":{"shape":"String"}
       },
-      "documentation":"<p>User does not have sufficient access to perform this action</p>",
+      "documentation":"<p>You do not have sufficient access to perform this action.</p>",
       "error":{
         "httpStatusCode":403,
         "senderFault":true
@@ -244,7 +244,7 @@
     },
     "ClusterId":{
       "type":"string",
-      "documentation":"<p>Cluster ID</p>"
+      "documentation":"<p>The ID of the cluster</p>"
     },
     "ClusterList":{
       "type":"list",
@@ -276,29 +276,32 @@
         "arn"
       ],
       "members":{
-        "identifier":{"shape":"ClusterId"},
-        "arn":{"shape":"ClusterArn"}
+        "identifier":{
+          "shape":"ClusterId",
+          "documentation":"<p>The ID of the cluster.</p>"
+        },
+        "arn":{
+          "shape":"ClusterArn",
+          "documentation":"<p>The ARN of the cluster.</p>"
+        }
       },
-      "documentation":"<p>Cluster Summary</p>"
+      "documentation":"<p>A summary of the properties of a cluster.</p>"
     },
     "ConflictException":{
       "type":"structure",
       "required":["message"],
       "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error</p>"
-        },
+        "message":{"shape":"String"},
         "resourceId":{
           "shape":"String",
-          "documentation":"<p>Identifier of the resource affected</p>"
+          "documentation":"<p>Resource Id</p>"
         },
         "resourceType":{
           "shape":"String",
-          "documentation":"<p>Type of the resource affected</p>"
+          "documentation":"<p>Resource Type</p>"
         }
       },
-      "documentation":"<p>Updating or deleting a resource can cause an inconsistent state</p>",
+      "documentation":"<p>The submitted action has conflicts.</p>",
       "error":{
         "httpStatusCode":409,
         "senderFault":true
@@ -308,10 +311,17 @@
     "CreateClusterInput":{
       "type":"structure",
       "members":{
-        "deletionProtectionEnabled":{"shape":"DeletionProtectionEnabled"},
-        "tags":{"shape":"TagMap"},
+        "deletionProtectionEnabled":{
+          "shape":"DeletionProtectionEnabled",
+          "documentation":"<p>If enabled, you can't delete your cluster. You must first disable this property before you can delete your cluster.</p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map of key and value pairs to use to tag your cluster.</p>"
+        },
         "clientToken":{
           "shape":"ClientToken",
+          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p> <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>",
           "idempotencyToken":true
         }
       }
@@ -326,11 +336,26 @@
         "deletionProtectionEnabled"
       ],
       "members":{
-        "identifier":{"shape":"ClusterId"},
-        "arn":{"shape":"ClusterArn"},
-        "status":{"shape":"ClusterStatus"},
-        "creationTime":{"shape":"ClusterCreationTime"},
-        "deletionProtectionEnabled":{"shape":"DeletionProtectionEnabled"}
+        "identifier":{
+          "shape":"ClusterId",
+          "documentation":"<p>The ID of the created cluster.</p>"
+        },
+        "arn":{
+          "shape":"ClusterArn",
+          "documentation":"<p>The ARN of the created cluster.</p>"
+        },
+        "status":{
+          "shape":"ClusterStatus",
+          "documentation":"<p>The status of the created cluster.</p>"
+        },
+        "creationTime":{
+          "shape":"ClusterCreationTime",
+          "documentation":"<p>The time of when created the cluster.</p>"
+        },
+        "deletionProtectionEnabled":{
+          "shape":"DeletionProtectionEnabled",
+          "documentation":"<p>Whether deletion protection is enabled on this cluster.</p>"
+        }
       },
       "documentation":"<p>Output Mixin</p>"
     },
@@ -341,11 +366,21 @@
         "witnessRegion"
       ],
       "members":{
-        "linkedRegionList":{"shape":"RegionList"},
-        "clusterProperties":{"shape":"ClusterPropertyMap"},
-        "witnessRegion":{"shape":"Region"},
+        "linkedRegionList":{
+          "shape":"RegionList",
+          "documentation":"<p>An array of the Regions in which you want to create additional clusters.</p>"
+        },
+        "clusterProperties":{
+          "shape":"ClusterPropertyMap",
+          "documentation":"<p>A mapping of properties to use when creating linked clusters.</p>"
+        },
+        "witnessRegion":{
+          "shape":"Region",
+          "documentation":"<p>The witness Region of multi-Region clusters.</p>"
+        },
         "clientToken":{
           "shape":"ClientToken",
+          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p> <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>",
           "idempotencyToken":true
         }
       }
@@ -354,7 +389,10 @@
       "type":"structure",
       "required":["linkedClusterArns"],
       "members":{
-        "linkedClusterArns":{"shape":"ClusterArnList"}
+        "linkedClusterArns":{
+          "shape":"ClusterArnList",
+          "documentation":"<p>An array that contains the ARNs of all linked clusters.</p>"
+        }
       }
     },
     "DeleteClusterInput":{
@@ -363,11 +401,13 @@
       "members":{
         "identifier":{
           "shape":"ClusterId",
+          "documentation":"<p>The ID of the cluster to delete.</p>",
           "location":"uri",
           "locationName":"identifier"
         },
         "clientToken":{
           "shape":"ClientToken",
+          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p> <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>",
           "idempotencyToken":true,
           "location":"querystring",
           "locationName":"client-token"
@@ -384,11 +424,26 @@
         "deletionProtectionEnabled"
       ],
       "members":{
-        "identifier":{"shape":"ClusterId"},
-        "arn":{"shape":"ClusterArn"},
-        "status":{"shape":"ClusterStatus"},
-        "creationTime":{"shape":"ClusterCreationTime"},
-        "deletionProtectionEnabled":{"shape":"DeletionProtectionEnabled"}
+        "identifier":{
+          "shape":"ClusterId",
+          "documentation":"<p>The ID of the deleted cluster.</p>"
+        },
+        "arn":{
+          "shape":"ClusterArn",
+          "documentation":"<p>The ARN of the deleted cluster.</p>"
+        },
+        "status":{
+          "shape":"ClusterStatus",
+          "documentation":"<p>The status of the cluster.</p>"
+        },
+        "creationTime":{
+          "shape":"ClusterCreationTime",
+          "documentation":"<p>The time of when the cluster was created.</p>"
+        },
+        "deletionProtectionEnabled":{
+          "shape":"DeletionProtectionEnabled",
+          "documentation":"<p>Specifies whether deletion protection was enabled on the cluster.</p>"
+        }
       },
       "documentation":"<p>Output Mixin</p>"
     },
@@ -398,11 +453,13 @@
       "members":{
         "linkedClusterArns":{
           "shape":"ClusterArnList",
+          "documentation":"<p>The ARNs of the clusters linked to the cluster you want to delete. also deletes these clusters as part of the operation.</p>",
           "location":"querystring",
           "locationName":"linked-cluster-arns"
         },
         "clientToken":{
           "shape":"ClientToken",
+          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p> <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>",
           "idempotencyToken":true,
           "location":"querystring",
           "locationName":"client-token"
@@ -420,6 +477,7 @@
       "members":{
         "identifier":{
           "shape":"ClusterId",
+          "documentation":"<p>The ID of the cluster to retrieve.</p>",
           "location":"uri",
           "locationName":"identifier"
         }
@@ -435,13 +493,34 @@
         "deletionProtectionEnabled"
       ],
       "members":{
-        "identifier":{"shape":"ClusterId"},
-        "arn":{"shape":"ClusterArn"},
-        "status":{"shape":"ClusterStatus"},
-        "creationTime":{"shape":"ClusterCreationTime"},
-        "deletionProtectionEnabled":{"shape":"DeletionProtectionEnabled"},
-        "witnessRegion":{"shape":"Region"},
-        "linkedClusterArns":{"shape":"ClusterArnList"}
+        "identifier":{
+          "shape":"ClusterId",
+          "documentation":"<p>The ID of the retrieved cluster.</p>"
+        },
+        "arn":{
+          "shape":"ClusterArn",
+          "documentation":"<p>The ARN of the retrieved cluster.</p>"
+        },
+        "status":{
+          "shape":"ClusterStatus",
+          "documentation":"<p>The status of the retrieved cluster.</p>"
+        },
+        "creationTime":{
+          "shape":"ClusterCreationTime",
+          "documentation":"<p>The time of when the cluster was created.</p>"
+        },
+        "deletionProtectionEnabled":{
+          "shape":"DeletionProtectionEnabled",
+          "documentation":"<p>Whether deletion protection is enabled in this cluster.</p>"
+        },
+        "witnessRegion":{
+          "shape":"Region",
+          "documentation":"<p>The witness Region of the cluster. Applicable only for multi-Region clusters.</p>"
+        },
+        "linkedClusterArns":{
+          "shape":"ClusterArnList",
+          "documentation":"<p>The ARNs of the clusters linked to the retrieved cluster.</p>"
+        }
       },
       "documentation":"<p>Output Mixin</p>"
     },
@@ -453,18 +532,15 @@
       "type":"structure",
       "required":["message"],
       "members":{
-        "message":{
-          "shape":"String",
-          "documentation":"<p>Description of the error</p>"
-        },
+        "message":{"shape":"String"},
         "retryAfterSeconds":{
           "shape":"Integer",
-          "documentation":"<p>Advice to clients on when the call can be safely retried</p>",
+          "documentation":"<p>Retry after seconds.</p>",
           "location":"header",
           "locationName":"Retry-After"
         }
       },
-      "documentation":"<p>Unexpected error during processing of request</p>",
+      "documentation":"<p>The request processing has failed because of an unknown error, exception or failure.</p>",
       "error":{"httpStatusCode":500},
       "exception":true,
       "fault":true,
@@ -473,21 +549,29 @@
     "LinkedClusterProperties":{
       "type":"structure",
       "members":{
-        "deletionProtectionEnabled":{"shape":"DeletionProtectionEnabled"},
-        "tags":{"shape":"TagMap"}
+        "deletionProtectionEnabled":{
+          "shape":"DeletionProtectionEnabled",
+          "documentation":"<p>Whether deletion protection is enabled.</p>"
+        },
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map of key and value pairs the linked cluster is tagged with.</p>"
+        }
       },
-      "documentation":"<p>Linked Cluster Properties</p>"
+      "documentation":"<p>Properties of linked clusters.</p>"
     },
     "ListClustersInput":{
       "type":"structure",
       "members":{
         "maxResults":{
           "shape":"MaxResults",
+          "documentation":"<p>An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.</p>",
           "location":"querystring",
           "locationName":"max-results"
         },
         "nextToken":{
           "shape":"NextToken",
+          "documentation":"<p>If your initial ListClusters operation returns a nextToken, you can include the returned nextToken in following ListClusters operations, which returns results in the next page.</p>",
           "location":"querystring",
           "locationName":"next-token"
         }
@@ -497,8 +581,14 @@
       "type":"structure",
       "required":["clusters"],
       "members":{
-        "nextToken":{"shape":"NextToken"},
-        "clusters":{"shape":"ClusterList"}
+        "nextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token.</p>"
+        },
+        "clusters":{
+          "shape":"ClusterList",
+          "documentation":"<p>An array of the returned clusters.</p>"
+        }
       }
     },
     "ListTagsForResourceInput":{
@@ -507,6 +597,7 @@
       "members":{
         "resourceArn":{
           "shape":"Arn",
+          "documentation":"<p>The ARN of the resource for which you want to list the tags.</p>",
           "location":"uri",
           "locationName":"resourceArn"
         }
@@ -515,7 +606,10 @@
     "ListTagsForResourceOutput":{
       "type":"structure",
       "members":{
-        "tags":{"shape":"TagMap"}
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map of key and value pairs that you used to tag your resource.</p>"
+        }
       }
     },
     "MaxResults":{
@@ -558,7 +652,7 @@
           "documentation":"<p>Hypothetical type of the resource which does not exist</p>"
         }
       },
-      "documentation":"<p>Request references a resource which does not exist</p>",
+      "documentation":"<p>The resource could not be found.</p>",
       "error":{
         "httpStatusCode":404,
         "senderFault":true
@@ -596,7 +690,7 @@
           "documentation":"<p>Service Quotas requirement to identify originating quota</p>"
         }
       },
-      "documentation":"<p>Request would cause a service quota to be exceeded</p>",
+      "documentation":"<p>The service limit was exceeded.</p>",
       "error":{
         "httpStatusCode":402,
         "senderFault":true
@@ -606,7 +700,7 @@
     "String":{"type":"string"},
     "TagKey":{
       "type":"string",
-      "documentation":"<p>Tag Key</p>",
+      "documentation":"<p>Unique tag key, maximum 128 Unicode characters in UTF-8</p>",
       "max":128,
       "min":1,
       "pattern":"[a-zA-Z0-9_.:/=+\\-@ ]*"
@@ -635,15 +729,19 @@
       "members":{
         "resourceArn":{
           "shape":"Arn",
+          "documentation":"<p>The ARN of the resource that you want to tag.</p>",
           "location":"uri",
           "locationName":"resourceArn"
         },
-        "tags":{"shape":"TagMap"}
+        "tags":{
+          "shape":"TagMap",
+          "documentation":"<p>A map of key and value pairs to use to tag your resource.</p>"
+        }
       }
     },
     "TagValue":{
       "type":"string",
-      "documentation":"<p>Tag Value</p>",
+      "documentation":"<p>Tag value, maximum 256 Unicode characters in UTF-8</p>",
       "max":256,
       "min":0,
       "pattern":"[a-zA-Z0-9_.:/=+\\-@ ]*"
@@ -671,7 +769,7 @@
           "locationName":"Retry-After"
         }
       },
-      "documentation":"<p>Request was denied due to request throttling</p>",
+      "documentation":"<p>The request was denied due to request throttling.</p>",
       "error":{
         "httpStatusCode":429,
         "senderFault":true
@@ -688,11 +786,13 @@
       "members":{
         "resourceArn":{
           "shape":"Arn",
+          "documentation":"<p>The ARN of the resource from which to remove tags.</p>",
           "location":"uri",
           "locationName":"resourceArn"
         },
         "tagKeys":{
           "shape":"TagKeyList",
+          "documentation":"<p>The array of keys of the tags that you want to remove.</p>",
           "location":"querystring",
           "locationName":"tagKeys"
         }
@@ -704,12 +804,17 @@
       "members":{
         "identifier":{
           "shape":"ClusterId",
+          "documentation":"<p>The ID of the cluster you want to update.</p>",
           "location":"uri",
           "locationName":"identifier"
         },
-        "deletionProtectionEnabled":{"shape":"DeletionProtectionEnabled"},
+        "deletionProtectionEnabled":{
+          "shape":"DeletionProtectionEnabled",
+          "documentation":"<p>Specifies whether to enable deletion protection in your cluster.</p>"
+        },
         "clientToken":{
           "shape":"ClientToken",
+          "documentation":"<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p> <p>If you don't specify a client token, the Amazon Web Services SDK automatically generates one.</p>",
           "idempotencyToken":true
         }
       }
@@ -724,13 +829,34 @@
         "deletionProtectionEnabled"
       ],
       "members":{
-        "identifier":{"shape":"ClusterId"},
-        "arn":{"shape":"ClusterArn"},
-        "status":{"shape":"ClusterStatus"},
-        "creationTime":{"shape":"ClusterCreationTime"},
-        "deletionProtectionEnabled":{"shape":"DeletionProtectionEnabled"},
-        "witnessRegion":{"shape":"Region"},
-        "linkedClusterArns":{"shape":"ClusterArnList"}
+        "identifier":{
+          "shape":"ClusterId",
+          "documentation":"<p>The ID of the cluster to update.</p>"
+        },
+        "arn":{
+          "shape":"ClusterArn",
+          "documentation":"<p>The ARN of the updated cluster.</p>"
+        },
+        "status":{
+          "shape":"ClusterStatus",
+          "documentation":"<p>The status of the updated cluster.</p>"
+        },
+        "creationTime":{
+          "shape":"ClusterCreationTime",
+          "documentation":"<p>The time of when the cluster was created.</p>"
+        },
+        "deletionProtectionEnabled":{
+          "shape":"DeletionProtectionEnabled",
+          "documentation":"<p>Whether deletion protection is enabled for the updated cluster.</p>"
+        },
+        "witnessRegion":{
+          "shape":"Region",
+          "documentation":"<p>The Region that receives all data you write to linked clusters.</p>"
+        },
+        "linkedClusterArns":{
+          "shape":"ClusterArnList",
+          "documentation":"<p>The ARNs of the clusters linked to the updated cluster. Applicable only for multi-Region clusters.</p>"
+        }
       },
       "documentation":"<p>Output Mixin</p>"
     },
@@ -745,7 +871,7 @@
         "reason":{"shape":"ValidationExceptionReason"},
         "fieldList":{"shape":"ValidationExceptionFieldList"}
       },
-      "documentation":"<p>The input fails to satisfy the constraints specified by an AWS service</p>",
+      "documentation":"<p>The input failed to satisfy the constraints specified by an Amazon Web Services service.</p>",
       "error":{
         "httpStatusCode":400,
         "senderFault":true
@@ -761,14 +887,14 @@
       "members":{
         "name":{
           "shape":"String",
-          "documentation":"<p>The field name</p>"
+          "documentation":"<p>The name of the field.</p>"
         },
         "message":{
           "shape":"String",
-          "documentation":"<p>Message describing why the field failed validation</p>"
+          "documentation":"<p>A message describing why this field failed validation.</p>"
         }
       },
-      "documentation":"<p>A field that caused the error</p>"
+      "documentation":"<p>Stores information about a field passed inside a request that resulted in an validation error.</p>"
     },
     "ValidationExceptionFieldList":{
       "type":"list",
@@ -787,5 +913,5 @@
       ]
     }
   },
-  "documentation":"<p>Amazon Aurora DSQL is a serverless, distributed SQL database suitable for workloads of any size. Aurora DSQL provides you with a familiar relational database experience based on PostgreSQL that lets you get started quickly. Aurora DSQL offers reliable multi-AZ database clusters in single and multi-Region configurations. Aurora DSQL supports active-active read and write to endpoints, so Aurora DSQL is always available even if an Availability Zone or if an AWS Region is unavailable. With Aurora DSQL, you don't have to manage, patch, or scale any servers to manage, patch, or scale. There are no maintenance windows or planned downtime.</p>"
+  "documentation":"<p>This is an interface reference for Amazon Aurora DSQL. It contains documentation for one of the programming or command line interfaces you can use to manage Amazon Aurora DSQL.</p> <p>Amazon Aurora DSQL is a serverless, distributed SQL database suitable for workloads of any size. Aurora DSQL is available in both single-Region and multi-Region configurations, so your clusters and databases are always available even if an Availability Zone or an Amazon Web Services Region are unavailable. Aurora DSQL lets you focus on using your data to acquire new insights for your business and customers.</p>"
 }

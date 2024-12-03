@@ -19,7 +19,8 @@ namespace Model
     ACTION_GROUP,
     KNOWLEDGE_BASE,
     FINISH,
-    ACTION_GROUP_CODE_INTERPRETER
+    ACTION_GROUP_CODE_INTERPRETER,
+    AGENT_COLLABORATOR
   };
 
 namespace InvocationTypeMapper

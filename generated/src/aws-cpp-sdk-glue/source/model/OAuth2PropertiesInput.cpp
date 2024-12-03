@@ -24,7 +24,8 @@ OAuth2PropertiesInput::OAuth2PropertiesInput() :
     m_oAuth2ClientApplicationHasBeenSet(false),
     m_tokenUrlHasBeenSet(false),
     m_tokenUrlParametersMapHasBeenSet(false),
-    m_authorizationCodePropertiesHasBeenSet(false)
+    m_authorizationCodePropertiesHasBeenSet(false),
+    m_oAuth2CredentialsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,13 @@ OAuth2PropertiesInput& OAuth2PropertiesInput::operator =(JsonView jsonValue)
     m_authorizationCodePropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OAuth2Credentials"))
+  {
+    m_oAuth2Credentials = jsonValue.GetObject("OAuth2Credentials");
+
+    m_oAuth2CredentialsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -112,6 +120,12 @@ JsonValue OAuth2PropertiesInput::Jsonize() const
   if(m_authorizationCodePropertiesHasBeenSet)
   {
    payload.WithObject("AuthorizationCodeProperties", m_authorizationCodeProperties.Jsonize());
+
+  }
+
+  if(m_oAuth2CredentialsHasBeenSet)
+  {
+   payload.WithObject("OAuth2Credentials", m_oAuth2Credentials.Jsonize());
 
   }
 

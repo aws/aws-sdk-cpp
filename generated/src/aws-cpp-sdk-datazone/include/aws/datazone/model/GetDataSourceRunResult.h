@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/model/DataSourceErrorMessage.h>
+#include <aws/datazone/model/DataSourceRunLineageSummary.h>
 #include <aws/datazone/model/RunStatisticsForAssets.h>
 #include <aws/datazone/model/DataSourceRunStatus.h>
 #include <aws/datazone/model/DataSourceRunType.h>
@@ -114,6 +115,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The summary of the data lineage.</p>
+     */
+    inline const DataSourceRunLineageSummary& GetLineageSummary() const{ return m_lineageSummary; }
+    inline void SetLineageSummary(const DataSourceRunLineageSummary& value) { m_lineageSummary = value; }
+    inline void SetLineageSummary(DataSourceRunLineageSummary&& value) { m_lineageSummary = std::move(value); }
+    inline GetDataSourceRunResult& WithLineageSummary(const DataSourceRunLineageSummary& value) { SetLineageSummary(value); return *this;}
+    inline GetDataSourceRunResult& WithLineageSummary(DataSourceRunLineageSummary&& value) { SetLineageSummary(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The ID of the project in which this data source run occured.</p>
      */
     inline const Aws::String& GetProjectId() const{ return m_projectId; }
@@ -214,6 +226,8 @@ namespace Model
     DataSourceErrorMessage m_errorMessage;
 
     Aws::String m_id;
+
+    DataSourceRunLineageSummary m_lineageSummary;
 
     Aws::String m_projectId;
 

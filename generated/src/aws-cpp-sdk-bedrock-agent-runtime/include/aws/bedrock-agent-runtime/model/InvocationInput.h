@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/ActionGroupInvocationInput.h>
+#include <aws/bedrock-agent-runtime/model/AgentCollaboratorInvocationInput.h>
 #include <aws/bedrock-agent-runtime/model/CodeInterpreterInvocationInput.h>
 #include <aws/bedrock-agent-runtime/model/InvocationType.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseLookupInput.h>
@@ -52,6 +53,18 @@ namespace Model
     inline void SetActionGroupInvocationInput(ActionGroupInvocationInput&& value) { m_actionGroupInvocationInputHasBeenSet = true; m_actionGroupInvocationInput = std::move(value); }
     inline InvocationInput& WithActionGroupInvocationInput(const ActionGroupInvocationInput& value) { SetActionGroupInvocationInput(value); return *this;}
     inline InvocationInput& WithActionGroupInvocationInput(ActionGroupInvocationInput&& value) { SetActionGroupInvocationInput(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The collaborator's invocation input.</p>
+     */
+    inline const AgentCollaboratorInvocationInput& GetAgentCollaboratorInvocationInput() const{ return m_agentCollaboratorInvocationInput; }
+    inline bool AgentCollaboratorInvocationInputHasBeenSet() const { return m_agentCollaboratorInvocationInputHasBeenSet; }
+    inline void SetAgentCollaboratorInvocationInput(const AgentCollaboratorInvocationInput& value) { m_agentCollaboratorInvocationInputHasBeenSet = true; m_agentCollaboratorInvocationInput = value; }
+    inline void SetAgentCollaboratorInvocationInput(AgentCollaboratorInvocationInput&& value) { m_agentCollaboratorInvocationInputHasBeenSet = true; m_agentCollaboratorInvocationInput = std::move(value); }
+    inline InvocationInput& WithAgentCollaboratorInvocationInput(const AgentCollaboratorInvocationInput& value) { SetAgentCollaboratorInvocationInput(value); return *this;}
+    inline InvocationInput& WithAgentCollaboratorInvocationInput(AgentCollaboratorInvocationInput&& value) { SetAgentCollaboratorInvocationInput(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,6 +122,9 @@ namespace Model
 
     ActionGroupInvocationInput m_actionGroupInvocationInput;
     bool m_actionGroupInvocationInputHasBeenSet = false;
+
+    AgentCollaboratorInvocationInput m_agentCollaboratorInvocationInput;
+    bool m_agentCollaboratorInvocationInputHasBeenSet = false;
 
     CodeInterpreterInvocationInput m_codeInterpreterInvocationInput;
     bool m_codeInterpreterInvocationInputHasBeenSet = false;

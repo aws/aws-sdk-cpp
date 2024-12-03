@@ -13,6 +13,7 @@
 #include <aws/datazone/model/CreateFormTypePolicyGrantDetail.h>
 #include <aws/datazone/model/CreateGlossaryPolicyGrantDetail.h>
 #include <aws/datazone/model/CreateProjectPolicyGrantDetail.h>
+#include <aws/datazone/model/CreateProjectFromProjectProfilePolicyGrantDetail.h>
 #include <aws/datazone/model/OverrideDomainUnitOwnersPolicyGrantDetail.h>
 #include <aws/datazone/model/OverrideProjectOwnersPolicyGrantDetail.h>
 #include <utility>
@@ -96,6 +97,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const Unit& GetCreateEnvironmentFromBlueprint() const{ return m_createEnvironmentFromBlueprint; }
+    inline bool CreateEnvironmentFromBlueprintHasBeenSet() const { return m_createEnvironmentFromBlueprintHasBeenSet; }
+    inline void SetCreateEnvironmentFromBlueprint(const Unit& value) { m_createEnvironmentFromBlueprintHasBeenSet = true; m_createEnvironmentFromBlueprint = value; }
+    inline void SetCreateEnvironmentFromBlueprint(Unit&& value) { m_createEnvironmentFromBlueprintHasBeenSet = true; m_createEnvironmentFromBlueprint = std::move(value); }
+    inline PolicyGrantDetail& WithCreateEnvironmentFromBlueprint(const Unit& value) { SetCreateEnvironmentFromBlueprint(value); return *this;}
+    inline PolicyGrantDetail& WithCreateEnvironmentFromBlueprint(Unit&& value) { SetCreateEnvironmentFromBlueprint(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * <p>Specifies that this is a create environment profile policy.</p>
      */
@@ -141,6 +152,18 @@ namespace Model
     inline void SetCreateProject(CreateProjectPolicyGrantDetail&& value) { m_createProjectHasBeenSet = true; m_createProject = std::move(value); }
     inline PolicyGrantDetail& WithCreateProject(const CreateProjectPolicyGrantDetail& value) { SetCreateProject(value); return *this;}
     inline PolicyGrantDetail& WithCreateProject(CreateProjectPolicyGrantDetail&& value) { SetCreateProject(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to create a project from project profile.</p>
+     */
+    inline const CreateProjectFromProjectProfilePolicyGrantDetail& GetCreateProjectFromProjectProfile() const{ return m_createProjectFromProjectProfile; }
+    inline bool CreateProjectFromProjectProfileHasBeenSet() const { return m_createProjectFromProjectProfileHasBeenSet; }
+    inline void SetCreateProjectFromProjectProfile(const CreateProjectFromProjectProfilePolicyGrantDetail& value) { m_createProjectFromProjectProfileHasBeenSet = true; m_createProjectFromProjectProfile = value; }
+    inline void SetCreateProjectFromProjectProfile(CreateProjectFromProjectProfilePolicyGrantDetail&& value) { m_createProjectFromProjectProfileHasBeenSet = true; m_createProjectFromProjectProfile = std::move(value); }
+    inline PolicyGrantDetail& WithCreateProjectFromProjectProfile(const CreateProjectFromProjectProfilePolicyGrantDetail& value) { SetCreateProjectFromProjectProfile(value); return *this;}
+    inline PolicyGrantDetail& WithCreateProjectFromProjectProfile(CreateProjectFromProjectProfilePolicyGrantDetail&& value) { SetCreateProjectFromProjectProfile(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,6 +216,9 @@ namespace Model
     Unit m_createEnvironment;
     bool m_createEnvironmentHasBeenSet = false;
 
+    Unit m_createEnvironmentFromBlueprint;
+    bool m_createEnvironmentFromBlueprintHasBeenSet = false;
+
     CreateEnvironmentProfilePolicyGrantDetail m_createEnvironmentProfile;
     bool m_createEnvironmentProfileHasBeenSet = false;
 
@@ -204,6 +230,9 @@ namespace Model
 
     CreateProjectPolicyGrantDetail m_createProject;
     bool m_createProjectHasBeenSet = false;
+
+    CreateProjectFromProjectProfilePolicyGrantDetail m_createProjectFromProjectProfile;
+    bool m_createProjectFromProjectProfileHasBeenSet = false;
 
     Unit m_delegateCreateEnvironmentProfile;
     bool m_delegateCreateEnvironmentProfileHasBeenSet = false;

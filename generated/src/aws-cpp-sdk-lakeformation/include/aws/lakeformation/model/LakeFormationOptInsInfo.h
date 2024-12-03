@@ -7,6 +7,7 @@
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/lakeformation/model/Resource.h>
 #include <aws/lakeformation/model/DataLakePrincipal.h>
+#include <aws/lakeformation/model/Condition.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -63,6 +64,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>A Lake Formation condition, which applies to permissions and opt-ins that
+     * contain an expression.</p>
+     */
+    inline const Condition& GetCondition() const{ return m_condition; }
+    inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
+    inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
+    inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
+    inline LakeFormationOptInsInfo& WithCondition(const Condition& value) { SetCondition(value); return *this;}
+    inline LakeFormationOptInsInfo& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The last modified date and time of the record.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
@@ -93,6 +107,9 @@ namespace Model
 
     DataLakePrincipal m_principal;
     bool m_principalHasBeenSet = false;
+
+    Condition m_condition;
+    bool m_conditionHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet = false;

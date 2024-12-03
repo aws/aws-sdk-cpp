@@ -22,6 +22,8 @@ DomainSummary::DomainSummary() :
     m_arnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_domainVersion(DomainVersion::NOT_SET),
+    m_domainVersionHasBeenSet(false),
     m_idHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_managedAccountIdHasBeenSet(false),
@@ -59,6 +61,13 @@ DomainSummary& DomainSummary::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("domainVersion"))
+  {
+    m_domainVersion = DomainVersionMapper::GetDomainVersionForName(jsonValue.GetString("domainVersion"));
+
+    m_domainVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -125,6 +134,11 @@ JsonValue DomainSummary::Jsonize() const
   {
    payload.WithString("description", m_description);
 
+  }
+
+  if(m_domainVersionHasBeenSet)
+  {
+   payload.WithString("domainVersion", DomainVersionMapper::GetNameForDomainVersion(m_domainVersion));
   }
 
   if(m_idHasBeenSet)

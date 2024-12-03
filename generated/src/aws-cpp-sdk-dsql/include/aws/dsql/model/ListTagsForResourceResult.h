@@ -34,7 +34,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>A map of key and value pairs that you used to tag your resource.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }

@@ -115,6 +115,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The service role of the domain.</p>
+     */
+    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+    inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
+    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
+    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
+    inline UpdateDomainRequest& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
+    inline UpdateDomainRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
+    inline UpdateDomainRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The single sign-on option to be updated as part of the
      * <code>UpdateDomain</code> action.</p>
      */
@@ -141,6 +155,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_serviceRole;
+    bool m_serviceRoleHasBeenSet = false;
 
     SingleSignOn m_singleSignOn;
     bool m_singleSignOnHasBeenSet = false;

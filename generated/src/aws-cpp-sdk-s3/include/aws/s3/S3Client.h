@@ -628,6 +628,55 @@ namespace Aws
         }
 
         /**
+         * <p>Creates a metadata table configuration for a general purpose bucket. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+         * data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. </p>
+         * <dl> <dt>Permissions</dt> <dd> <p>To use this operation, you must have the
+         * following permissions. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+         * up permissions for configuring metadata tables</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> <p>If you also want to integrate your table bucket with Amazon
+         * Web Services analytics services so that you can query your metadata table, you
+         * need additional permissions. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-integrating-aws.html">
+         * Integrating Amazon S3 Tables with Amazon Web Services analytics services</a> in
+         * the <i>Amazon S3 User Guide</i>.</p> <ul> <li> <p>
+         * <code>s3:CreateBucketMetadataTableConfiguration</code> </p> </li> <li> <p>
+         * <code>s3tables:CreateNamespace</code> </p> </li> <li> <p>
+         * <code>s3tables:GetTable</code> </p> </li> <li> <p>
+         * <code>s3tables:CreateTable</code> </p> </li> <li> <p>
+         * <code>s3tables:PutTablePolicy</code> </p> </li> </ul> </dd> </dl> <p>The
+         * following operations are related to
+         * <code>CreateBucketMetadataTableConfiguration</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBucketMetadataTableConfigurationOutcome CreateBucketMetadataTableConfiguration(const Model::CreateBucketMetadataTableConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateBucketMetadataTableConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateBucketMetadataTableConfigurationRequestT = Model::CreateBucketMetadataTableConfigurationRequest>
+        Model::CreateBucketMetadataTableConfigurationOutcomeCallable CreateBucketMetadataTableConfigurationCallable(const CreateBucketMetadataTableConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&S3Client::CreateBucketMetadataTableConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateBucketMetadataTableConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateBucketMetadataTableConfigurationRequestT = Model::CreateBucketMetadataTableConfigurationRequest>
+        void CreateBucketMetadataTableConfigurationAsync(const CreateBucketMetadataTableConfigurationRequestT& request, const CreateBucketMetadataTableConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3Client::CreateBucketMetadataTableConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>This action initiates a multipart upload and returns an upload ID. This
          * upload ID is used to associate all of the parts in the specific multipart
          * upload. You specify this upload ID in each of your subsequent upload part
@@ -1388,6 +1437,45 @@ namespace Aws
         void DeleteBucketLifecycleAsync(const DeleteBucketLifecycleRequestT& request, const DeleteBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3Client::DeleteBucketLifecycle, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes a metadata table configuration from a general purpose bucket. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+         * data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. </p>
+         * <dl> <dt>Permissions</dt> <dd> <p>To use this operation, you must have the
+         * <code>s3:DeleteBucketMetadataTableConfiguration</code> permission. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+         * up permissions for configuring metadata tables</a> in the <i>Amazon S3 User
+         * Guide</i>. </p> </dd> </dl> <p>The following operations are related to
+         * <code>DeleteBucketMetadataTableConfiguration</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBucketMetadataTableConfigurationOutcome DeleteBucketMetadataTableConfiguration(const Model::DeleteBucketMetadataTableConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteBucketMetadataTableConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteBucketMetadataTableConfigurationRequestT = Model::DeleteBucketMetadataTableConfigurationRequest>
+        Model::DeleteBucketMetadataTableConfigurationOutcomeCallable DeleteBucketMetadataTableConfigurationCallable(const DeleteBucketMetadataTableConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&S3Client::DeleteBucketMetadataTableConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteBucketMetadataTableConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteBucketMetadataTableConfigurationRequestT = Model::DeleteBucketMetadataTableConfigurationRequest>
+        void DeleteBucketMetadataTableConfigurationAsync(const DeleteBucketMetadataTableConfigurationRequestT& request, const DeleteBucketMetadataTableConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3Client::DeleteBucketMetadataTableConfiguration, request, handler, context);
         }
 
         /**
@@ -2472,6 +2560,45 @@ namespace Aws
         void GetBucketLoggingAsync(const GetBucketLoggingRequestT& request, const GetBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&S3Client::GetBucketLogging, request, handler, context);
+        }
+
+        /**
+         * <p> Retrieves the metadata table configuration for a general purpose bucket. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+         * data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. </p>
+         * <dl> <dt>Permissions</dt> <dd> <p>To use this operation, you must have the
+         * <code>s3:GetBucketMetadataTableConfiguration</code> permission. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+         * up permissions for configuring metadata tables</a> in the <i>Amazon S3 User
+         * Guide</i>. </p> </dd> </dl> <p>The following operations are related to
+         * <code>GetBucketMetadataTableConfiguration</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBucketMetadataTableConfigurationOutcome GetBucketMetadataTableConfiguration(const Model::GetBucketMetadataTableConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetBucketMetadataTableConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetBucketMetadataTableConfigurationRequestT = Model::GetBucketMetadataTableConfigurationRequest>
+        Model::GetBucketMetadataTableConfigurationOutcomeCallable GetBucketMetadataTableConfigurationCallable(const GetBucketMetadataTableConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&S3Client::GetBucketMetadataTableConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetBucketMetadataTableConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetBucketMetadataTableConfigurationRequestT = Model::GetBucketMetadataTableConfigurationRequest>
+        void GetBucketMetadataTableConfigurationAsync(const GetBucketMetadataTableConfigurationRequestT& request, const GetBucketMetadataTableConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&S3Client::GetBucketMetadataTableConfiguration, request, handler, context);
         }
 
         /**

@@ -27,6 +27,7 @@
 #include <aws/s3/model/CompleteMultipartUploadRequest.h>
 #include <aws/s3/model/CopyObjectRequest.h>
 #include <aws/s3/model/CreateBucketRequest.h>
+#include <aws/s3/model/CreateBucketMetadataTableConfigurationRequest.h>
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/s3/model/CreateSessionRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
@@ -36,6 +37,7 @@
 #include <aws/s3/model/DeleteBucketIntelligentTieringConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketInventoryConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketLifecycleRequest.h>
+#include <aws/s3/model/DeleteBucketMetadataTableConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketMetricsConfigurationRequest.h>
 #include <aws/s3/model/DeleteBucketOwnershipControlsRequest.h>
 #include <aws/s3/model/DeleteBucketPolicyRequest.h>
@@ -56,6 +58,7 @@
 #include <aws/s3/model/GetBucketLifecycleConfigurationRequest.h>
 #include <aws/s3/model/GetBucketLocationRequest.h>
 #include <aws/s3/model/GetBucketLoggingRequest.h>
+#include <aws/s3/model/GetBucketMetadataTableConfigurationRequest.h>
 #include <aws/s3/model/GetBucketMetricsConfigurationRequest.h>
 #include <aws/s3/model/GetBucketNotificationConfigurationRequest.h>
 #include <aws/s3/model/GetBucketOwnershipControlsRequest.h>
@@ -556,6 +559,51 @@ CreateBucketOutcome S3Client::CreateBucket(const CreateBucketRequest& request) c
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateBucketMetadataTableConfigurationOutcome S3Client::CreateBucketMetadataTableConfiguration(const CreateBucketMetadataTableConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateBucketMetadataTableConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBucketMetadataTableConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBucketMetadataTableConfiguration", "Required field: Bucket, is not set");
+    return CreateBucketMetadataTableConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateBucketMetadataTableConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateBucketMetadataTableConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateBucketMetadataTableConfigurationOutcome>(
+    [&]()-> CreateBucketMetadataTableConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBucketMetadataTableConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      Aws::StringStream ss;
+      ss.str("?metadataTable");
+      endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+      request.SetServiceSpecificParameters(
+        [&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+          Aws::Map<Aws::String, Aws::String> params;
+          auto isExpress = endpointResolutionOutcome.GetResult().AccessAttributes().value().backend == "S3Express";
+          if (!request.ChecksumAlgorithmHasBeenSet() && isExpress && request.GetChecksumAlgorithmName() == "md5") {
+            params.emplace("overrideChecksum", "crc32");
+          }
+          params.emplace("bucketName", request.GetBucket());
+          ServiceSpecificParameters serviceSpecificParameters{params};
+          return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+        }());
+      return CreateBucketMetadataTableConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateMultipartUploadOutcome S3Client::CreateMultipartUpload(const CreateMultipartUploadRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateMultipartUpload);
@@ -937,6 +985,47 @@ DeleteBucketLifecycleOutcome S3Client::DeleteBucketLifecycle(const DeleteBucketL
           return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
         }());
       return DeleteBucketLifecycleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteBucketMetadataTableConfigurationOutcome S3Client::DeleteBucketMetadataTableConfiguration(const DeleteBucketMetadataTableConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteBucketMetadataTableConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketMetadataTableConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBucketMetadataTableConfiguration", "Required field: Bucket, is not set");
+    return DeleteBucketMetadataTableConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBucketMetadataTableConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteBucketMetadataTableConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteBucketMetadataTableConfigurationOutcome>(
+    [&]()-> DeleteBucketMetadataTableConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBucketMetadataTableConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      Aws::StringStream ss;
+      ss.str("?metadataTable");
+      endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+      request.SetServiceSpecificParameters(
+        [&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+          Aws::Map<Aws::String, Aws::String> params;
+          params.emplace("bucketName", request.GetBucket());
+          ServiceSpecificParameters serviceSpecificParameters{params};
+          return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+        }());
+      return DeleteBucketMetadataTableConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1790,6 +1879,47 @@ GetBucketLoggingOutcome S3Client::GetBucketLogging(const GetBucketLoggingRequest
           return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
         }());
       return GetBucketLoggingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetBucketMetadataTableConfigurationOutcome S3Client::GetBucketMetadataTableConfiguration(const GetBucketMetadataTableConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetBucketMetadataTableConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketMetadataTableConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketMetadataTableConfiguration", "Required field: Bucket, is not set");
+    return GetBucketMetadataTableConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBucketMetadataTableConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetBucketMetadataTableConfiguration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetBucketMetadataTableConfigurationOutcome>(
+    [&]()-> GetBucketMetadataTableConfigurationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBucketMetadataTableConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      Aws::StringStream ss;
+      ss.str("?metadataTable");
+      endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+      request.SetServiceSpecificParameters(
+        [&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+          Aws::Map<Aws::String, Aws::String> params;
+          params.emplace("bucketName", request.GetBucket());
+          ServiceSpecificParameters serviceSpecificParameters{params};
+          return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+        }());
+      return GetBucketMetadataTableConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

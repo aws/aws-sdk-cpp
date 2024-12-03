@@ -13,6 +13,7 @@
 #include <aws/qbusiness/model/AttachmentsConfiguration.h>
 #include <aws/qbusiness/model/QAppsConfiguration.h>
 #include <aws/qbusiness/model/PersonalizationConfiguration.h>
+#include <aws/qbusiness/model/QuickSightConfiguration.h>
 #include <aws/qbusiness/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -227,6 +228,23 @@ namespace Model
     inline CreateApplicationRequest& WithPersonalizationConfiguration(const PersonalizationConfiguration& value) { SetPersonalizationConfiguration(value); return *this;}
     inline CreateApplicationRequest& WithPersonalizationConfiguration(PersonalizationConfiguration&& value) { SetPersonalizationConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon QuickSight configuration for an Amazon Q Business application that
+     * uses QuickSight for authentication. This configuration is required if your
+     * application uses QuickSight as the identity provider. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating
+     * an Amazon QuickSight integrated application</a>.</p>
+     */
+    inline const QuickSightConfiguration& GetQuickSightConfiguration() const{ return m_quickSightConfiguration; }
+    inline bool QuickSightConfigurationHasBeenSet() const { return m_quickSightConfigurationHasBeenSet; }
+    inline void SetQuickSightConfiguration(const QuickSightConfiguration& value) { m_quickSightConfigurationHasBeenSet = true; m_quickSightConfiguration = value; }
+    inline void SetQuickSightConfiguration(QuickSightConfiguration&& value) { m_quickSightConfigurationHasBeenSet = true; m_quickSightConfiguration = std::move(value); }
+    inline CreateApplicationRequest& WithQuickSightConfiguration(const QuickSightConfiguration& value) { SetQuickSightConfiguration(value); return *this;}
+    inline CreateApplicationRequest& WithQuickSightConfiguration(QuickSightConfiguration&& value) { SetQuickSightConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_displayName;
@@ -267,6 +285,9 @@ namespace Model
 
     PersonalizationConfiguration m_personalizationConfiguration;
     bool m_personalizationConfigurationHasBeenSet = false;
+
+    QuickSightConfiguration m_quickSightConfiguration;
+    bool m_quickSightConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

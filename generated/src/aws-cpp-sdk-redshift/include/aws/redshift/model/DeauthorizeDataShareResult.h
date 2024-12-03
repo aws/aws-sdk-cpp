@@ -7,6 +7,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift/model/DataShareType.h>
 #include <aws/redshift/model/ResponseMetadata.h>
 #include <aws/redshift/model/DataShareAssociation.h>
 #include <utility>
@@ -100,6 +101,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p> The type of the datashare created by RegisterNamespace.</p>
+     */
+    inline const DataShareType& GetDataShareType() const{ return m_dataShareType; }
+    inline void SetDataShareType(const DataShareType& value) { m_dataShareType = value; }
+    inline void SetDataShareType(DataShareType&& value) { m_dataShareType = std::move(value); }
+    inline DeauthorizeDataShareResult& WithDataShareType(const DataShareType& value) { SetDataShareType(value); return *this;}
+    inline DeauthorizeDataShareResult& WithDataShareType(DataShareType&& value) { SetDataShareType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
@@ -118,6 +130,8 @@ namespace Model
     Aws::Vector<DataShareAssociation> m_dataShareAssociations;
 
     Aws::String m_managedBy;
+
+    DataShareType m_dataShareType;
 
     ResponseMetadata m_responseMetadata;
   };

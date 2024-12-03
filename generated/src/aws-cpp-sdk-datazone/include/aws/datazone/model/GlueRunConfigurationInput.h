@@ -53,6 +53,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The catalog name in the Amazon Web Services Glue run configuration.</p>
+     */
+    inline const Aws::String& GetCatalogName() const{ return m_catalogName; }
+    inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
+    inline void SetCatalogName(const Aws::String& value) { m_catalogNameHasBeenSet = true; m_catalogName = value; }
+    inline void SetCatalogName(Aws::String&& value) { m_catalogNameHasBeenSet = true; m_catalogName = std::move(value); }
+    inline void SetCatalogName(const char* value) { m_catalogNameHasBeenSet = true; m_catalogName.assign(value); }
+    inline GlueRunConfigurationInput& WithCatalogName(const Aws::String& value) { SetCatalogName(value); return *this;}
+    inline GlueRunConfigurationInput& WithCatalogName(Aws::String&& value) { SetCatalogName(std::move(value)); return *this;}
+    inline GlueRunConfigurationInput& WithCatalogName(const char* value) { SetCatalogName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The data access role included in the configuration details of the Amazon Web
      * Services Glue data source.</p>
      */
@@ -84,6 +98,9 @@ namespace Model
 
     bool m_autoImportDataQualityResult;
     bool m_autoImportDataQualityResultHasBeenSet = false;
+
+    Aws::String m_catalogName;
+    bool m_catalogNameHasBeenSet = false;
 
     Aws::String m_dataAccessRole;
     bool m_dataAccessRoleHasBeenSet = false;

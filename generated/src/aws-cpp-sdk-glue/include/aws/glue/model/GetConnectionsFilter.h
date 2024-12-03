@@ -67,6 +67,16 @@ namespace Model
     inline GetConnectionsFilter& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
     inline GetConnectionsFilter& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Denotes if the connection was created with schema version 1 or 2.</p>
+     */
+    inline int GetConnectionSchemaVersion() const{ return m_connectionSchemaVersion; }
+    inline bool ConnectionSchemaVersionHasBeenSet() const { return m_connectionSchemaVersionHasBeenSet; }
+    inline void SetConnectionSchemaVersion(int value) { m_connectionSchemaVersionHasBeenSet = true; m_connectionSchemaVersion = value; }
+    inline GetConnectionsFilter& WithConnectionSchemaVersion(int value) { SetConnectionSchemaVersion(value); return *this;}
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_matchCriteria;
@@ -74,6 +84,9 @@ namespace Model
 
     ConnectionType m_connectionType;
     bool m_connectionTypeHasBeenSet = false;
+
+    int m_connectionSchemaVersion;
+    bool m_connectionSchemaVersionHasBeenSet = false;
   };
 
 } // namespace Model

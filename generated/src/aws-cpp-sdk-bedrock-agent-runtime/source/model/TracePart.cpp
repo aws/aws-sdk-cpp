@@ -22,6 +22,8 @@ TracePart::TracePart() :
     m_agentAliasIdHasBeenSet(false),
     m_agentIdHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
+    m_callerChainHasBeenSet(false),
+    m_collaboratorNameHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_traceHasBeenSet(false)
 {
@@ -54,6 +56,23 @@ TracePart& TracePart::operator =(JsonView jsonValue)
     m_agentVersion = jsonValue.GetString("agentVersion");
 
     m_agentVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("callerChain"))
+  {
+    Aws::Utils::Array<JsonView> callerChainJsonList = jsonValue.GetArray("callerChain");
+    for(unsigned callerChainIndex = 0; callerChainIndex < callerChainJsonList.GetLength(); ++callerChainIndex)
+    {
+      m_callerChain.push_back(callerChainJsonList[callerChainIndex].AsObject());
+    }
+    m_callerChainHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("collaboratorName"))
+  {
+    m_collaboratorName = jsonValue.GetString("collaboratorName");
+
+    m_collaboratorNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sessionId"))
@@ -92,6 +111,23 @@ JsonValue TracePart::Jsonize() const
   if(m_agentVersionHasBeenSet)
   {
    payload.WithString("agentVersion", m_agentVersion);
+
+  }
+
+  if(m_callerChainHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> callerChainJsonList(m_callerChain.size());
+   for(unsigned callerChainIndex = 0; callerChainIndex < callerChainJsonList.GetLength(); ++callerChainIndex)
+   {
+     callerChainJsonList[callerChainIndex].AsObject(m_callerChain[callerChainIndex].Jsonize());
+   }
+   payload.WithArray("callerChain", std::move(callerChainJsonList));
+
+  }
+
+  if(m_collaboratorNameHasBeenSet)
+  {
+   payload.WithString("collaboratorName", m_collaboratorName);
 
   }
 

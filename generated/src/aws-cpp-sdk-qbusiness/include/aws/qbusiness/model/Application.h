@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/qbusiness/model/ApplicationStatus.h>
 #include <aws/qbusiness/model/IdentityType.h>
+#include <aws/qbusiness/model/QuickSightConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -118,6 +119,19 @@ namespace Model
     inline Application& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
     inline Application& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon QuickSight configuration for an Amazon Q Business application that
+     * uses QuickSight as the identity provider.</p>
+     */
+    inline const QuickSightConfiguration& GetQuickSightConfiguration() const{ return m_quickSightConfiguration; }
+    inline bool QuickSightConfigurationHasBeenSet() const { return m_quickSightConfigurationHasBeenSet; }
+    inline void SetQuickSightConfiguration(const QuickSightConfiguration& value) { m_quickSightConfigurationHasBeenSet = true; m_quickSightConfiguration = value; }
+    inline void SetQuickSightConfiguration(QuickSightConfiguration&& value) { m_quickSightConfigurationHasBeenSet = true; m_quickSightConfiguration = std::move(value); }
+    inline Application& WithQuickSightConfiguration(const QuickSightConfiguration& value) { SetQuickSightConfiguration(value); return *this;}
+    inline Application& WithQuickSightConfiguration(QuickSightConfiguration&& value) { SetQuickSightConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_displayName;
@@ -137,6 +151,9 @@ namespace Model
 
     IdentityType m_identityType;
     bool m_identityTypeHasBeenSet = false;
+
+    QuickSightConfiguration m_quickSightConfiguration;
+    bool m_quickSightConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

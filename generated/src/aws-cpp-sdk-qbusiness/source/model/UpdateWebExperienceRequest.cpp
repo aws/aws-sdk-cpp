@@ -23,7 +23,8 @@ UpdateWebExperienceRequest::UpdateWebExperienceRequest() :
     m_samplePromptsControlModeHasBeenSet(false),
     m_identityProviderConfigurationHasBeenSet(false),
     m_originsHasBeenSet(false),
-    m_browserExtensionConfigurationHasBeenSet(false)
+    m_browserExtensionConfigurationHasBeenSet(false),
+    m_customizationConfigurationHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,12 @@ Aws::String UpdateWebExperienceRequest::SerializePayload() const
   if(m_browserExtensionConfigurationHasBeenSet)
   {
    payload.WithObject("browserExtensionConfiguration", m_browserExtensionConfiguration.Jsonize());
+
+  }
+
+  if(m_customizationConfigurationHasBeenSet)
+  {
+   payload.WithObject("customizationConfiguration", m_customizationConfiguration.Jsonize());
 
   }
 

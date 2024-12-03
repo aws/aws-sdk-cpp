@@ -16,15 +16,14 @@ namespace Aws
 namespace DSQL
 {
   /**
-   * <p>Amazon Aurora DSQL is a serverless, distributed SQL database suitable for
-   * workloads of any size. Aurora DSQL provides you with a familiar relational
-   * database experience based on PostgreSQL that lets you get started quickly.
-   * Aurora DSQL offers reliable multi-AZ database clusters in single and
-   * multi-Region configurations. Aurora DSQL supports active-active read and write
-   * to endpoints, so Aurora DSQL is always available even if an Availability Zone or
-   * if an AWS Region is unavailable. With Aurora DSQL, you don't have to manage,
-   * patch, or scale any servers to manage, patch, or scale. There are no maintenance
-   * windows or planned downtime.</p>
+   * <p>This is an interface reference for Amazon Aurora DSQL. It contains
+   * documentation for one of the programming or command line interfaces you can use
+   * to manage Amazon Aurora DSQL.</p> <p>Amazon Aurora DSQL is a serverless,
+   * distributed SQL database suitable for workloads of any size. Aurora DSQL is
+   * available in both single-Region and multi-Region configurations, so your
+   * clusters and databases are always available even if an Availability Zone or an
+   * Amazon Web Services Region are unavailable. Aurora DSQL lets you focus on using
+   * your data to acquire new insights for your business and customers.</p>
    */
   class AWS_DSQL_API DSQLClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DSQLClient>
   {
@@ -85,7 +84,7 @@ namespace DSQL
         virtual ~DSQLClient();
 
         /**
-         * <p>Create a cluster</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a cluster in Amazon Aurora DSQL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateCluster">AWS
          * API Reference</a></p>
          */
@@ -110,7 +109,10 @@ namespace DSQL
         }
 
         /**
-         * <p>Create clusters in multiple regions</p><p><h3>See Also:</h3>   <a
+         * <p>Creates multi-Region clusters in Amazon Aurora DSQL. Multi-Region clusters
+         * require a linked Region list, which is an array of the Regions in which you want
+         * to create linked clusters. Multi-Region clusters require a witness Region, which
+         * participates in quorum in failure scenarios.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateMultiRegionClusters">AWS
          * API Reference</a></p>
          */
@@ -135,7 +137,7 @@ namespace DSQL
         }
 
         /**
-         * <p>Delete a cluster</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a cluster in Amazon Aurora DSQL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteCluster">AWS
          * API Reference</a></p>
          */
@@ -160,7 +162,8 @@ namespace DSQL
         }
 
         /**
-         * <p>Delete clusters in multiple regions</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a multi-Region cluster in Amazon Aurora DSQL.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteMultiRegionClusters">AWS
          * API Reference</a></p>
          */
@@ -185,7 +188,7 @@ namespace DSQL
         }
 
         /**
-         * <p>Get a cluster</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetCluster">AWS API
          * Reference</a></p>
          */
@@ -210,7 +213,7 @@ namespace DSQL
         }
 
         /**
-         * <p>List clusters</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a list of clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ListClusters">AWS
          * API Reference</a></p>
          */
@@ -235,7 +238,7 @@ namespace DSQL
         }
 
         /**
-         * <p>List all Tags on an ARN</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the tags for a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -260,8 +263,8 @@ namespace DSQL
         }
 
         /**
-         * <p>Add Tags to an ARN</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/TagResource">AWS
+         * <p>Tags a resource with a map of key and value pairs.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
@@ -285,7 +288,7 @@ namespace DSQL
         }
 
         /**
-         * <p>Remove Tags from an ARN</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -310,7 +313,7 @@ namespace DSQL
         }
 
         /**
-         * <p>Update a cluster</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/UpdateCluster">AWS
          * API Reference</a></p>
          */

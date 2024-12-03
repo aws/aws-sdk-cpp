@@ -35,6 +35,8 @@ namespace Model
 
     AWS_BEDROCKAGENTRUNTIME_API Aws::String SerializePayload() const override;
 
+    AWS_BEDROCKAGENTRUNTIME_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
     /**
      * Underlying Event Stream Decoder.
      */
@@ -171,6 +173,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ARN of the resource making the request.</p>
+     */
+    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
+    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
+    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
+    inline InvokeAgentRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
+    inline InvokeAgentRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
+    inline InvokeAgentRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p> Specifies the configurations for streaming. </p>
      */
     inline const StreamingConfigurations& GetStreamingConfigurations() const{ return m_streamingConfigurations; }
@@ -205,6 +221,9 @@ namespace Model
 
     SessionState m_sessionState;
     bool m_sessionStateHasBeenSet = false;
+
+    Aws::String m_sourceArn;
+    bool m_sourceArnHasBeenSet = false;
 
     StreamingConfigurations m_streamingConfigurations;
     bool m_streamingConfigurationsHasBeenSet = false;

@@ -40,7 +40,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The ID of the deleted cluster.</p>
+     */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline void SetIdentifier(const Aws::String& value) { m_identifier = value; }
     inline void SetIdentifier(Aws::String&& value) { m_identifier = std::move(value); }
@@ -51,7 +53,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The ARN of the deleted cluster.</p>
+     */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
@@ -62,7 +66,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The status of the cluster.</p>
+     */
     inline const ClusterStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const ClusterStatus& value) { m_status = value; }
     inline void SetStatus(ClusterStatus&& value) { m_status = std::move(value); }
@@ -71,7 +77,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The time of when the cluster was created.</p>
+     */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
@@ -80,7 +88,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Specifies whether deletion protection was enabled on the cluster.</p>
+     */
     inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
     inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabled = value; }
     inline DeleteClusterResult& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
