@@ -70,7 +70,14 @@ public class JsonCppClientGenerator extends CppClientGenerator {
                     template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonResultHeader.vm", StandardCharsets.UTF_8.name());
                 }
             } else if (shape.isEventStream() && shape.isOutgoingEventStream()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/EventStreamHeader.vm", StandardCharsets.UTF_8.name());
+                if (serviceModel.isUseSmithyClient())
+                {
+                    template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEventStreamHeader.vm", StandardCharsets.UTF_8.name());
+                }
+                else
+                {
+                    template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/EventStreamHeader.vm", StandardCharsets.UTF_8.name());
+                }
             } else if (shape.isStructure()) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonSubObjectHeader.vm", StandardCharsets.UTF_8.name());
             }

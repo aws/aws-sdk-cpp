@@ -8,6 +8,8 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/event-stream/event_stream.h>
+#include <smithy/identity/signer/AwsSignerBase.h>
+#include <smithy/identity/identity/AwsCredentialIdentityBase.h>
 
 namespace Aws
 {
@@ -40,6 +42,9 @@ namespace Aws
                  * The signing is done via the signer member.
                  */
                 Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg);
+            protected:
+                virtual bool SignEventMessage(Event::Message& msg);
+                Aws::String m_signatureSeed;
             private:
                 /**
                  * Initialize C struct based on C++ object.
@@ -57,7 +62,21 @@ namespace Aws
                 bool InitSignedStruct(const aws_event_stream_message* payload, aws_event_stream_message* signedmsg);
 
                 Aws::Client::AWSAuthSigner* m_signer;
-                Aws::String m_signatureSeed;
+            };
+
+            class AWS_CORE_API SmithyEventStreamEncoder : public EventStreamEncoder
+            {
+                using SIGNER_TYPE = smithy::AwsSignerBase<smithy::AwsCredentialIdentityBase>;
+            public:
+                SmithyEventStreamEncoder(std::shared_ptr<SIGNER_TYPE> signer): EventStreamEncoder(), m_smithySigner(signer){};
+                SmithyEventStreamEncoder(): EventStreamEncoder(){};
+
+                void SetSigner(std::shared_ptr<SIGNER_TYPE> signer) { m_smithySigner = signer; }
+            protected:
+                bool SignEventMessage(Event::Message& msg) override;
+                
+            private:
+                std::shared_ptr<SIGNER_TYPE> m_smithySigner;
             };
         }
     }

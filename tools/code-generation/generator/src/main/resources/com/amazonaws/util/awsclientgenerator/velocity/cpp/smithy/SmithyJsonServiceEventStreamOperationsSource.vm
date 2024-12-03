@@ -27,11 +27,13 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
 #end
 #end
 #set($streamModelNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($streamModelName))
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext, #if($hasEndPointOverrides) endpointOverrides #end] () mutable {
+  auto eventEncoderStream = Aws::MakeShared<Model::$streamModelType>(ALLOCATION_TAG);
+  request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext, #if($hasEndPointOverrides) endpointOverrides #end, eventEncoderStream] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
       },
-      Aws::MakeShared<Model::$streamModelType>(ALLOCATION_TAG)
+      eventEncoderStream
       );
       if(outcome.IsSuccess())
       {

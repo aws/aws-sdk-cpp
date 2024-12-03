@@ -99,7 +99,6 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
                                            EndpointUpdateCallback&& endpointCallback,
                                            ResponseHandlerFunc&& responseHandler,
                                            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
-                                           const Aws::Endpoint::AWSEndpointResolutionOverrides& overrides,
                                            std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStreamSp
                                            ) const
 {
@@ -155,15 +154,6 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
           } );
         return;
     }
-    if(!overrides.pathSegments.empty())
-    {
-        for (const auto& p : overrides.pathSegments)
-        {
-            epResolutionOutcome.GetResult().AddPathSegments(p);
-        }
-    }
-
-    epResolutionOutcome.GetResult().SetRfc3986Encoded(overrides.setRfc3986Encoded);
 
     pRequestCtx->m_endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
     if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))

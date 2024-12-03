@@ -338,7 +338,9 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
 
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides ] () mutable {
+  auto eventEncoderStream = Aws::MakeShared<Model::ChatInputStream>(ALLOCATION_TAG);
+  request.SetInputStream(eventEncoderStream); // this becomes the body of the request
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -347,7 +349,7 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
       },
-      Aws::MakeShared<Model::ChatInputStream>(ALLOCATION_TAG)
+      eventEncoderStream
       );
       if(outcome.IsSuccess())
       {

@@ -138,23 +138,22 @@ namespace client
         {
             if(pRequestCtx &&
                pRequestCtx->m_pRequest && 
-               pRequestCtx->m_authSchemeOption && 
                eventEncoderStreamSp)
             {
-                auto authSchemeIter = m_authSchemes.find(pRequestCtx->m_authSchemeOption->schemeId);
-                if(authSchemeIter != m_authSchemes.end())
+                if(AwsClientRequestSigning<AuthSchemesVariantT>::SetSignerInEventStream(eventEncoderStreamSp, 
+                                    pRequestCtx->m_authSchemeOption,
+                                    m_authSchemes))
                 {
-                    eventEncoderStreamSp->SetSigner(authSchemeIter->second->signer());
-                    pRequestCtx->m_pRequest->SetInputStream(eventEncoderStreamSp);
-                    pRequestCtx->m_semaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ServiceNameT, 0, 1);
-                    pRequestCtx->m_pRequest->SetRequestSignedHandler([eventEncoderStreamSp, pRequestCtx->m_semaphore](const Aws::Http::HttpRequest& httpRequest) 
+                    auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ServiceNameT, 0, 1);
+                    pRequestCtx->m_semaphore = sem;
+
+                    const_cast<Aws::AmazonWebServiceRequest*>(pRequestCtx->m_pRequest)->SetRequestSignedHandler([eventEncoderStreamSp, sem](const Aws::Http::HttpRequest& httpRequest) 
                     { 
                         eventEncoderStreamSp->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); 
-                        pRequestCtx->m_semaphore->ReleaseAll(); 
+                        sem->ReleaseAll(); 
                     });
                 }
             }
-
         }
 
         ServiceClientConfigurationT& m_clientConfiguration;

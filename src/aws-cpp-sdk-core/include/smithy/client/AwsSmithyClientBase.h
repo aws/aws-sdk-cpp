@@ -140,7 +140,6 @@ namespace client
                               EndpointUpdateCallback&& endpointCallback,
                               ResponseHandlerFunc&& responseHandler,
                               std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
-                              const Aws::Endpoint::AWSEndpointResolutionOverrides& pathSegments = Aws::Endpoint::AWSEndpointResolutionOverrides{},
                               std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp
                               ) const;
 
@@ -170,8 +169,10 @@ namespace client
         virtual SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
         virtual SigningOutcome SignRequest(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemeOption& targetAuthSchemeOption) const = 0;
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
+        virtual bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String& /* priorSignature */) const { return false; }
+
     protected:
-        virtual void SetInputStreamInRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx, std::shared_ptr<Aws::Utils::Event::EventEncoderStream>&  eventEncoderStreamSp) const {} ;
+        virtual void SetInputStreamInRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& , std::shared_ptr<Aws::Utils::Event::EventEncoderStream>& ) const {} ;
         Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
         Aws::String m_userAgent;

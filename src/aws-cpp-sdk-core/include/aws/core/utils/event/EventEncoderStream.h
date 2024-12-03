@@ -28,7 +28,7 @@ namespace Aws
             class AWS_CORE_API EventEncoderStream : public Aws::IOStream
             {
             public:
-
+                using SIGNER_TYPE = smithy::AwsSignerBase<smithy::AwsCredentialIdentityBase>;
                 /**
                  * Creates a stream for encoding events sent by the client.
                  * @param bufferSize The length of the underlying buffer.
@@ -52,6 +52,8 @@ namespace Aws
                  */
                 void SetSigner(Aws::Client::AWSAuthSigner* signer) { m_encoder.SetSigner(signer); }
 
+                void SetSigner(std::shared_ptr<SIGNER_TYPE> signer) { m_evtEncoder.SetSigner(signer); }
+
                 /**
                  * Allows a stream writer to communicate the end of the stream to a stream reader.
                  *
@@ -66,9 +68,26 @@ namespace Aws
                  */
                 bool WaitForDrain(int64_t timeoutMs = 1000);
 
+
+                virtual ~EventEncoderStream(){}
+                
+            protected:
+                SmithyEventStreamEncoder m_evtEncoder;
+                virtual Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) ;
             private:
                 Stream::ConcurrentStreamBuf m_streambuf;
                 EventStreamEncoder m_encoder;
+            };
+
+            class AWS_CORE_API SmithyEventEncoderStream : public EventEncoderStream
+            {
+                public:
+                explicit SmithyEventEncoderStream(size_t bufferSize = DEFAULT_BUF_SIZE):EventEncoderStream(bufferSize){}
+                virtual ~SmithyEventEncoderStream() {}
+                protected:
+                Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) override ;
+                
+                
             };
         }
     }
