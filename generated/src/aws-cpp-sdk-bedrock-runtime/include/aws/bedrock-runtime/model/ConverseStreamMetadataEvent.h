@@ -8,6 +8,7 @@
 #include <aws/bedrock-runtime/model/TokenUsage.h>
 #include <aws/bedrock-runtime/model/ConverseStreamMetrics.h>
 #include <aws/bedrock-runtime/model/ConverseStreamTrace.h>
+#include <aws/bedrock-runtime/model/PerformanceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +77,19 @@ namespace Model
     inline ConverseStreamMetadataEvent& WithTrace(const ConverseStreamTrace& value) { SetTrace(value); return *this;}
     inline ConverseStreamMetadataEvent& WithTrace(ConverseStreamTrace&& value) { SetTrace(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Model performance configuration metadata for the conversation stream
+     * event.</p>
+     */
+    inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
+    inline bool PerformanceConfigHasBeenSet() const { return m_performanceConfigHasBeenSet; }
+    inline void SetPerformanceConfig(const PerformanceConfiguration& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = value; }
+    inline void SetPerformanceConfig(PerformanceConfiguration&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::move(value); }
+    inline ConverseStreamMetadataEvent& WithPerformanceConfig(const PerformanceConfiguration& value) { SetPerformanceConfig(value); return *this;}
+    inline ConverseStreamMetadataEvent& WithPerformanceConfig(PerformanceConfiguration&& value) { SetPerformanceConfig(std::move(value)); return *this;}
+    ///@}
   private:
 
     TokenUsage m_usage;
@@ -86,6 +100,9 @@ namespace Model
 
     ConverseStreamTrace m_trace;
     bool m_traceHasBeenSet = false;
+
+    PerformanceConfiguration m_performanceConfig;
+    bool m_performanceConfigHasBeenSet = false;
   };
 
 } // namespace Model

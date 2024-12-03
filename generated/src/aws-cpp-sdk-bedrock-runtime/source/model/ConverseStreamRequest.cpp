@@ -22,6 +22,7 @@ ConverseStreamRequest::ConverseStreamRequest() :
     m_additionalModelRequestFieldsHasBeenSet(false),
     m_promptVariablesHasBeenSet(false),
     m_additionalModelResponseFieldPathsHasBeenSet(false),
+    m_performanceConfigHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -97,6 +98,12 @@ Aws::String ConverseStreamRequest::SerializePayload() const
      additionalModelResponseFieldPathsJsonList[additionalModelResponseFieldPathsIndex].AsString(m_additionalModelResponseFieldPaths[additionalModelResponseFieldPathsIndex]);
    }
    payload.WithArray("additionalModelResponseFieldPaths", std::move(additionalModelResponseFieldPathsJsonList));
+
+  }
+
+  if(m_performanceConfigHasBeenSet)
+  {
+   payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
 
   }
 

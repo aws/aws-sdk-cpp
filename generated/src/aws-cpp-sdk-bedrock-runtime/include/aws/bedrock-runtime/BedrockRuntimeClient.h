@@ -129,7 +129,22 @@ namespace BedrockRuntime
          * (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> </p> <p>For
          * example code, see <i>Converse API examples</i> in the <i>Amazon Bedrock User
          * Guide</i>. </p> <p>This operation requires permission for the
-         * <code>bedrock:InvokeModel</code> action. </p><p><h3>See Also:</h3>   <a
+         * <code>bedrock:InvokeModel</code> action. </p>  <p>To deny all
+         * inference access to resources that you specify in the modelId field, you need to
+         * deny access to the <code>bedrock:InvokeModel</code> and
+         * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
+         * denies access to the resource through the base inference actions (<a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a>).
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+         * access for inference on specific models</a>. </p>  <p>For
+         * troubleshooting some of the common errors you might encounter when using the
+         * <code>Converse</code> API, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+         * Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User
+         * Guide</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/Converse">AWS
          * API Reference</a></p>
          */
@@ -185,8 +200,22 @@ namespace BedrockRuntime
          * (Function calling)</i> in the <i>Amazon Bedrock User Guide</i> </p> <p>For
          * example code, see <i>Conversation streaming example</i> in the <i>Amazon Bedrock
          * User Guide</i>. </p> <p>This operation requires permission for the
-         * <code>bedrock:InvokeModelWithResponseStream</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>bedrock:InvokeModelWithResponseStream</code> action.</p>  <p>To
+         * deny all inference access to resources that you specify in the modelId field,
+         * you need to deny access to the <code>bedrock:InvokeModel</code> and
+         * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
+         * denies access to the resource through the base inference actions (<a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a>).
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+         * access for inference on specific models</a>. </p>  <p>For
+         * troubleshooting some of the common errors you might encounter when using the
+         * <code>ConverseStream</code> API, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+         * Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User
+         * Guide</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/ConverseStream">AWS
          * API Reference</a></p>
          */
@@ -216,7 +245,22 @@ namespace BedrockRuntime
          * to generate text, images, and embeddings.</p> <p>For example code, see <i>Invoke
          * model code examples</i> in the <i>Amazon Bedrock User Guide</i>. </p> <p>This
          * operation requires permission for the <code>bedrock:InvokeModel</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p>  <p>To deny all inference access to resources that you
+         * specify in the modelId field, you need to deny access to the
+         * <code>bedrock:InvokeModel</code> and
+         * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
+         * denies access to the resource through the Converse API actions (<a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+         * access for inference on specific models</a>. </p>  <p>For
+         * troubleshooting some of the common errors you might encounter when using the
+         * <code>InvokeModel</code> API, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+         * Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User
+         * Guide</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModel">AWS
          * API Reference</a></p>
          */
@@ -250,8 +294,22 @@ namespace BedrockRuntime
          * including <code>InvokeModelWithResponseStream</code>.</p>  <p>For example
          * code, see <i>Invoke model with streaming code example</i> in the <i>Amazon
          * Bedrock User Guide</i>. </p> <p>This operation requires permissions to perform
-         * the <code>bedrock:InvokeModelWithResponseStream</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * the <code>bedrock:InvokeModelWithResponseStream</code> action. </p> 
+         * <p>To deny all inference access to resources that you specify in the modelId
+         * field, you need to deny access to the <code>bedrock:InvokeModel</code> and
+         * <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also
+         * denies access to the resource through the Converse API actions (<a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+         * For more information see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+         * access for inference on specific models</a>. </p>  <p>For
+         * troubleshooting some of the common errors you might encounter when using the
+         * <code>InvokeModelWithResponseStream</code> API, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+         * Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User
+         * Guide</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-runtime-2023-09-30/InvokeModelWithResponseStream">AWS
          * API Reference</a></p>
          */

@@ -8,6 +8,7 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-runtime/model/PerformanceConfigLatency.h>
 #include <utility>
 
 namespace Aws
@@ -64,6 +65,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Model performance settings for the request.</p>
+     */
+    inline const PerformanceConfigLatency& GetPerformanceConfigLatency() const{ return m_performanceConfigLatency; }
+    inline void SetPerformanceConfigLatency(const PerformanceConfigLatency& value) { m_performanceConfigLatency = value; }
+    inline void SetPerformanceConfigLatency(PerformanceConfigLatency&& value) { m_performanceConfigLatency = std::move(value); }
+    inline InvokeModelResult& WithPerformanceConfigLatency(const PerformanceConfigLatency& value) { SetPerformanceConfigLatency(value); return *this;}
+    inline InvokeModelResult& WithPerformanceConfigLatency(PerformanceConfigLatency&& value) { SetPerformanceConfigLatency(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -78,6 +90,8 @@ namespace Model
     Aws::Utils::Stream::ResponseStream m_body;
 
     Aws::String m_contentType;
+
+    PerformanceConfigLatency m_performanceConfigLatency;
 
     Aws::String m_requestId;
   };

@@ -21,7 +21,8 @@ ConverseRequest::ConverseRequest() :
     m_guardrailConfigHasBeenSet(false),
     m_additionalModelRequestFieldsHasBeenSet(false),
     m_promptVariablesHasBeenSet(false),
-    m_additionalModelResponseFieldPathsHasBeenSet(false)
+    m_additionalModelResponseFieldPathsHasBeenSet(false),
+    m_performanceConfigHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,12 @@ Aws::String ConverseRequest::SerializePayload() const
      additionalModelResponseFieldPathsJsonList[additionalModelResponseFieldPathsIndex].AsString(m_additionalModelResponseFieldPaths[additionalModelResponseFieldPathsIndex]);
    }
    payload.WithArray("additionalModelResponseFieldPaths", std::move(additionalModelResponseFieldPathsJsonList));
+
+  }
+
+  if(m_performanceConfigHasBeenSet)
+  {
+   payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
 
   }
 

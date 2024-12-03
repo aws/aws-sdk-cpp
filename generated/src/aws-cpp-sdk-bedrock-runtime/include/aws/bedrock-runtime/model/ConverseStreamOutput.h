@@ -170,7 +170,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The service isn't currently available. Try again later.</p>
+     * <p>The service isn't currently available. For troubleshooting this error, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
+     * in the Amazon Bedrock User Guide</p>
      */
     inline const ServiceUnavailableException& GetServiceUnavailableException() const{ return m_serviceUnavailableException; }
     inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }

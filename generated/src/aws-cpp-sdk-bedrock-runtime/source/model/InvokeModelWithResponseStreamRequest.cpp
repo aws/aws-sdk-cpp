@@ -22,6 +22,8 @@ InvokeModelWithResponseStreamRequest::InvokeModelWithResponseStreamRequest() :
     m_traceHasBeenSet(false),
     m_guardrailIdentifierHasBeenSet(false),
     m_guardrailVersionHasBeenSet(false),
+    m_performanceConfigLatency(PerformanceConfigLatency::NOT_SET),
+    m_performanceConfigLatencyHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
     AmazonWebServiceRequest::SetHeadersReceivedEventHandler([this](const Http::HttpRequest*, Http::HttpResponse* response)
@@ -63,6 +65,11 @@ Aws::Http::HeaderValueCollection InvokeModelWithResponseStreamRequest::GetReques
     ss << m_guardrailVersion;
     headers.emplace("x-amzn-bedrock-guardrailversion",  ss.str());
     ss.str("");
+  }
+
+  if(m_performanceConfigLatencyHasBeenSet && m_performanceConfigLatency != PerformanceConfigLatency::NOT_SET)
+  {
+    headers.emplace("x-amzn-bedrock-performanceconfig-latency", PerformanceConfigLatencyMapper::GetNameForPerformanceConfigLatency(m_performanceConfigLatency));
   }
 
   return headers;
