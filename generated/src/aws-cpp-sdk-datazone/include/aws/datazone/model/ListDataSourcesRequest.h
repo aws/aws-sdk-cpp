@@ -41,6 +41,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the connection.</p>
+     */
+    inline const Aws::String& GetConnectionIdentifier() const{ return m_connectionIdentifier; }
+    inline bool ConnectionIdentifierHasBeenSet() const { return m_connectionIdentifierHasBeenSet; }
+    inline void SetConnectionIdentifier(const Aws::String& value) { m_connectionIdentifierHasBeenSet = true; m_connectionIdentifier = value; }
+    inline void SetConnectionIdentifier(Aws::String&& value) { m_connectionIdentifierHasBeenSet = true; m_connectionIdentifier = std::move(value); }
+    inline void SetConnectionIdentifier(const char* value) { m_connectionIdentifierHasBeenSet = true; m_connectionIdentifier.assign(value); }
+    inline ListDataSourcesRequest& WithConnectionIdentifier(const Aws::String& value) { SetConnectionIdentifier(value); return *this;}
+    inline ListDataSourcesRequest& WithConnectionIdentifier(Aws::String&& value) { SetConnectionIdentifier(std::move(value)); return *this;}
+    inline ListDataSourcesRequest& WithConnectionIdentifier(const char* value) { SetConnectionIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the Amazon DataZone domain in which to list the data
      * sources.</p>
      */
@@ -155,6 +169,9 @@ namespace Model
     inline ListDataSourcesRequest& WithType(const char* value) { SetType(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_connectionIdentifier;
+    bool m_connectionIdentifierHasBeenSet = false;
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;

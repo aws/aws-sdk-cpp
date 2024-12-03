@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/model/DataSourceErrorMessage.h>
+#include <aws/datazone/model/DataSourceRunLineageSummary.h>
 #include <aws/datazone/model/RunStatisticsForAssets.h>
 #include <aws/datazone/model/DataSourceRunStatus.h>
 #include <aws/datazone/model/DataSourceRunType.h>
@@ -90,6 +91,18 @@ namespace Model
     inline DataSourceRunSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
     inline DataSourceRunSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
     inline DataSourceRunSummary& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The run lineage summary of a data source.</p>
+     */
+    inline const DataSourceRunLineageSummary& GetLineageSummary() const{ return m_lineageSummary; }
+    inline bool LineageSummaryHasBeenSet() const { return m_lineageSummaryHasBeenSet; }
+    inline void SetLineageSummary(const DataSourceRunLineageSummary& value) { m_lineageSummaryHasBeenSet = true; m_lineageSummary = value; }
+    inline void SetLineageSummary(DataSourceRunLineageSummary&& value) { m_lineageSummaryHasBeenSet = true; m_lineageSummary = std::move(value); }
+    inline DataSourceRunSummary& WithLineageSummary(const DataSourceRunLineageSummary& value) { SetLineageSummary(value); return *this;}
+    inline DataSourceRunSummary& WithLineageSummary(DataSourceRunLineageSummary&& value) { SetLineageSummary(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,6 +201,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    DataSourceRunLineageSummary m_lineageSummary;
+    bool m_lineageSummaryHasBeenSet = false;
 
     Aws::String m_projectId;
     bool m_projectIdHasBeenSet = false;

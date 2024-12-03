@@ -12,6 +12,7 @@
 #include <aws/glue/model/PhysicalConnectionRequirements.h>
 #include <aws/glue/model/AuthenticationConfigurationInput.h>
 #include <aws/glue/model/ConnectionPropertyKey.h>
+#include <aws/glue/model/ComputeEnvironment.h>
 #include <utility>
 
 namespace Aws
@@ -112,10 +113,7 @@ namespace Model
      * ConnectionParameters.</p> <ul> <li> <p>Required:
      * <code>CONNECTION_URL</code>.</p> </li> <li> <p>Required: All of
      * (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
-     * </li> </ul> </li> <li> <p> <code>SALESFORCE</code> - Designates a connection to
-     * Salesforce using OAuth authencation.</p> <ul> <li> <p>Requires the
-     * <code>AuthenticationConfiguration</code> member to be configured.</p> </li>
-     * </ul> </li> <li> <p> <code>VIEW_VALIDATION_REDSHIFT</code> - Designates a
+     * </li> </ul> </li> <li> <p> <code>VIEW_VALIDATION_REDSHIFT</code> - Designates a
      * connection used for view validation by Amazon Redshift.</p> </li> <li> <p>
      * <code>VIEW_VALIDATION_ATHENA</code> - Designates a connection used for view
      * validation by Amazon Athena.</p> </li> <li> <p> <code>NETWORK</code> -
@@ -133,7 +131,35 @@ namespace Model
      * of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p>
      * </li> </ul> </li> <li> <p> <code>CUSTOM</code> - Uses configuration settings
      * contained in a custom connector to read from and write to data stores that are
-     * not natively supported by Glue.</p> </li> </ul> <p> <code>SFTP</code> is not
+     * not natively supported by Glue.</p> </li> </ul> <p>Additionally, a
+     * <code>ConnectionType</code> for the following SaaS connectors is supported:</p>
+     * <ul> <li> <p> <code>FACEBOOKADS</code> - Designates a connection to Facebook
+     * Ads.</p> </li> <li> <p> <code>GOOGLEADS</code> - Designates a connection to
+     * Google Ads.</p> </li> <li> <p> <code>GOOGLESHEETS</code> - Designates a
+     * connection to Google Sheets.</p> </li> <li> <p> <code>GOOGLEANALYTICS4</code> -
+     * Designates a connection to Google Analytics 4.</p> </li> <li> <p>
+     * <code>HUBSPOT</code> - Designates a connection to HubSpot.</p> </li> <li> <p>
+     * <code>INSTAGRAMADS</code> - Designates a connection to Instagram Ads.</p> </li>
+     * <li> <p> <code>INTERCOM</code> - Designates a connection to Intercom.</p> </li>
+     * <li> <p> <code>JIRACLOUD</code> - Designates a connection to Jira Cloud.</p>
+     * </li> <li> <p> <code>MARKETO</code> - Designates a connection to Adobe Marketo
+     * Engage.</p> </li> <li> <p> <code>NETSUITEERP</code> - Designates a connection to
+     * Oracle NetSuite.</p> </li> <li> <p> <code>SALESFORCE</code> - Designates a
+     * connection to Salesforce using OAuth authentication.</p> </li> <li> <p>
+     * <code>SALESFORCEMARKETINGCLOUD</code> - Designates a connection to Salesforce
+     * Marketing Cloud.</p> </li> <li> <p> <code>SALESFORCEPARDOT</code> - Designates a
+     * connection to Salesforce Marketing Cloud Account Engagement (MCAE).</p> </li>
+     * <li> <p> <code>SAPODATA</code> - Designates a connection to SAP OData.</p> </li>
+     * <li> <p> <code>SERVICENOW</code> - Designates a connection to ServiceNow.</p>
+     * </li> <li> <p> <code>SLACK</code> - Designates a connection to Slack.</p> </li>
+     * <li> <p> <code>SNAPCHATADS</code> - Designates a connection to Snapchat Ads.</p>
+     * </li> <li> <p> <code>STRIPE</code> - Designates a connection to Stripe.</p>
+     * </li> <li> <p> <code>ZENDESK</code> - Designates a connection to Zendesk.</p>
+     * </li> <li> <p> <code>ZOHOCRM</code> - Designates a connection to Zoho CRM.</p>
+     * </li> </ul> <p>For more information on the connection parameters needed for a
+     * particular connector, see the documentation for the connector in <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/console-connections.html">Adding
+     * an Glue connection</a>in the Glue User Guide.</p> <p> <code>SFTP</code> is not
      * supported.</p> <p>For more information about how optional ConnectionProperties
      * are used to configure features in Glue, consult <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/connection-defining.html">Glue
@@ -185,7 +211,26 @@ namespace Model
 
     ///@{
     /**
-     * <p>This field is not currently used.</p>
+     * <p>Connection properties specific to the Spark compute environment.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetSparkProperties() const{ return m_sparkProperties; }
+    inline bool SparkPropertiesHasBeenSet() const { return m_sparkPropertiesHasBeenSet; }
+    inline void SetSparkProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties = value; }
+    inline void SetSparkProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties = std::move(value); }
+    inline ConnectionInput& WithSparkProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetSparkProperties(value); return *this;}
+    inline ConnectionInput& WithSparkProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetSparkProperties(std::move(value)); return *this;}
+    inline ConnectionInput& AddSparkProperties(const Aws::String& key, const Aws::String& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, value); return *this; }
+    inline ConnectionInput& AddSparkProperties(Aws::String&& key, const Aws::String& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), value); return *this; }
+    inline ConnectionInput& AddSparkProperties(const Aws::String& key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, std::move(value)); return *this; }
+    inline ConnectionInput& AddSparkProperties(Aws::String&& key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), std::move(value)); return *this; }
+    inline ConnectionInput& AddSparkProperties(const char* key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, std::move(value)); return *this; }
+    inline ConnectionInput& AddSparkProperties(Aws::String&& key, const char* value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), value); return *this; }
+    inline ConnectionInput& AddSparkProperties(const char* key, const char* value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Connection properties specific to the Athena compute environment.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAthenaProperties() const{ return m_athenaProperties; }
     inline bool AthenaPropertiesHasBeenSet() const { return m_athenaPropertiesHasBeenSet; }
@@ -204,6 +249,25 @@ namespace Model
 
     ///@{
     /**
+     * <p>Connection properties specific to the Python compute environment.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetPythonProperties() const{ return m_pythonProperties; }
+    inline bool PythonPropertiesHasBeenSet() const { return m_pythonPropertiesHasBeenSet; }
+    inline void SetPythonProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties = value; }
+    inline void SetPythonProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties = std::move(value); }
+    inline ConnectionInput& WithPythonProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetPythonProperties(value); return *this;}
+    inline ConnectionInput& WithPythonProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetPythonProperties(std::move(value)); return *this;}
+    inline ConnectionInput& AddPythonProperties(const Aws::String& key, const Aws::String& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(key, value); return *this; }
+    inline ConnectionInput& AddPythonProperties(Aws::String&& key, const Aws::String& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(std::move(key), value); return *this; }
+    inline ConnectionInput& AddPythonProperties(const Aws::String& key, Aws::String&& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(key, std::move(value)); return *this; }
+    inline ConnectionInput& AddPythonProperties(Aws::String&& key, Aws::String&& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(std::move(key), std::move(value)); return *this; }
+    inline ConnectionInput& AddPythonProperties(const char* key, Aws::String&& value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(key, std::move(value)); return *this; }
+    inline ConnectionInput& AddPythonProperties(Aws::String&& key, const char* value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(std::move(key), value); return *this; }
+    inline ConnectionInput& AddPythonProperties(const char* key, const char* value) { m_pythonPropertiesHasBeenSet = true; m_pythonProperties.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>The physical connection requirements, such as virtual private cloud (VPC) and
      * <code>SecurityGroup</code>, that are needed to successfully make this
      * connection.</p>
@@ -218,8 +282,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authentication properties of the connection. Used for a Salesforce
-     * connection.</p>
+     * <p>The authentication properties of the connection.</p>
      */
     inline const AuthenticationConfigurationInput& GetAuthenticationConfiguration() const{ return m_authenticationConfiguration; }
     inline bool AuthenticationConfigurationHasBeenSet() const { return m_authenticationConfigurationHasBeenSet; }
@@ -231,13 +294,28 @@ namespace Model
 
     ///@{
     /**
-     * <p>A flag to validate the credentials during create connection. Used for a
-     * Salesforce connection. Default is true. </p>
+     * <p>A flag to validate the credentials during create connection. Default is true.
+     * </p>
      */
     inline bool GetValidateCredentials() const{ return m_validateCredentials; }
     inline bool ValidateCredentialsHasBeenSet() const { return m_validateCredentialsHasBeenSet; }
     inline void SetValidateCredentials(bool value) { m_validateCredentialsHasBeenSet = true; m_validateCredentials = value; }
     inline ConnectionInput& WithValidateCredentials(bool value) { SetValidateCredentials(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The compute environments that the specified connection properties are
+     * validated against.</p>
+     */
+    inline const Aws::Vector<ComputeEnvironment>& GetValidateForComputeEnvironments() const{ return m_validateForComputeEnvironments; }
+    inline bool ValidateForComputeEnvironmentsHasBeenSet() const { return m_validateForComputeEnvironmentsHasBeenSet; }
+    inline void SetValidateForComputeEnvironments(const Aws::Vector<ComputeEnvironment>& value) { m_validateForComputeEnvironmentsHasBeenSet = true; m_validateForComputeEnvironments = value; }
+    inline void SetValidateForComputeEnvironments(Aws::Vector<ComputeEnvironment>&& value) { m_validateForComputeEnvironmentsHasBeenSet = true; m_validateForComputeEnvironments = std::move(value); }
+    inline ConnectionInput& WithValidateForComputeEnvironments(const Aws::Vector<ComputeEnvironment>& value) { SetValidateForComputeEnvironments(value); return *this;}
+    inline ConnectionInput& WithValidateForComputeEnvironments(Aws::Vector<ComputeEnvironment>&& value) { SetValidateForComputeEnvironments(std::move(value)); return *this;}
+    inline ConnectionInput& AddValidateForComputeEnvironments(const ComputeEnvironment& value) { m_validateForComputeEnvironmentsHasBeenSet = true; m_validateForComputeEnvironments.push_back(value); return *this; }
+    inline ConnectionInput& AddValidateForComputeEnvironments(ComputeEnvironment&& value) { m_validateForComputeEnvironmentsHasBeenSet = true; m_validateForComputeEnvironments.push_back(std::move(value)); return *this; }
     ///@}
   private:
 
@@ -256,8 +334,14 @@ namespace Model
     Aws::Map<ConnectionPropertyKey, Aws::String> m_connectionProperties;
     bool m_connectionPropertiesHasBeenSet = false;
 
+    Aws::Map<Aws::String, Aws::String> m_sparkProperties;
+    bool m_sparkPropertiesHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_athenaProperties;
     bool m_athenaPropertiesHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_pythonProperties;
+    bool m_pythonPropertiesHasBeenSet = false;
 
     PhysicalConnectionRequirements m_physicalConnectionRequirements;
     bool m_physicalConnectionRequirementsHasBeenSet = false;
@@ -267,6 +351,9 @@ namespace Model
 
     bool m_validateCredentials;
     bool m_validateCredentialsHasBeenSet = false;
+
+    Aws::Vector<ComputeEnvironment> m_validateForComputeEnvironments;
+    bool m_validateForComputeEnvironmentsHasBeenSet = false;
   };
 
 } // namespace Model

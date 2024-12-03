@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Request would cause a service quota to be exceeded</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The service limit was exceeded.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ServiceQuotaExceededException">AWS
    * API Reference</a></p>
    */

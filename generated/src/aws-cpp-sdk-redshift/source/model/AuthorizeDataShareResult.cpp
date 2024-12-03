@@ -18,7 +18,8 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 AuthorizeDataShareResult::AuthorizeDataShareResult() : 
-    m_allowPubliclyAccessibleConsumers(false)
+    m_allowPubliclyAccessibleConsumers(false),
+    m_dataShareType(DataShareType::NOT_SET)
 {
 }
 
@@ -70,6 +71,11 @@ AuthorizeDataShareResult& AuthorizeDataShareResult::operator =(const Aws::Amazon
     if(!managedByNode.IsNull())
     {
       m_managedBy = Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText());
+    }
+    XmlNode dataShareTypeNode = resultNode.FirstChild("DataShareType");
+    if(!dataShareTypeNode.IsNull())
+    {
+      m_dataShareType = DataShareTypeMapper::GetDataShareTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataShareTypeNode.GetText()).c_str()).c_str());
     }
   }
 

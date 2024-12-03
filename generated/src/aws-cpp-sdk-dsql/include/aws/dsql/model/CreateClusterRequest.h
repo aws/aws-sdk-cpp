@@ -35,7 +35,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>If enabled, you can't delete your cluster. You must first disable this
+     * property before you can delete your cluster.</p>
+     */
     inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
     inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
     inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
@@ -43,7 +46,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>A map of key and value pairs to use to tag your cluster.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -60,7 +65,15 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. Idempotency ensures that an API request completes
+     * only once. With an idempotent request, if the original request completes
+     * successfully, the subsequent retries with the same client token return the
+     * result from the original successful request and they have no additional
+     * effect.</p> <p>If you don't specify a client token, the Amazon Web Services SDK
+     * automatically generates one.</p>
+     */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }

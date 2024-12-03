@@ -55,14 +55,18 @@ static const int SCHEDULER_RUNNING_HASH = HashingUtils::HashString("SchedulerRun
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int CRAWLER_RUNNING_HASH = HashingUtils::HashString("CrawlerRunningException");
 static const int COLUMN_STATISTICS_TASK_RUNNING_HASH = HashingUtils::HashString("ColumnStatisticsTaskRunningException");
+static const int INVALID_INTEGRATION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidIntegrationStateFault");
 static const int GLUE_ENCRYPTION_HASH = HashingUtils::HashString("GlueEncryptionException");
 static const int M_L_TRANSFORM_NOT_READY_HASH = HashingUtils::HashString("MLTransformNotReadyException");
+static const int INTEGRATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("IntegrationNotFoundFault");
 static const int PERMISSION_TYPE_MISMATCH_HASH = HashingUtils::HashString("PermissionTypeMismatchException");
 static const int RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceNumberLimitExceededException");
 static const int COLUMN_STATISTICS_TASK_NOT_RUNNING_HASH = HashingUtils::HashString("ColumnStatisticsTaskNotRunningException");
+static const int K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH = HashingUtils::HashString("KMSKeyNotAccessibleFault");
 static const int OPERATION_TIMEOUT_HASH = HashingUtils::HashString("OperationTimeoutException");
 static const int VERSION_MISMATCH_HASH = HashingUtils::HashString("VersionMismatchException");
 static const int CRAWLER_NOT_RUNNING_HASH = HashingUtils::HashString("CrawlerNotRunningException");
+static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int SCHEDULER_NOT_RUNNING_HASH = HashingUtils::HashString("SchedulerNotRunningException");
 static const int OPERATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("OperationNotSupportedException");
 static const int COLUMN_STATISTICS_TASK_STOPPING_HASH = HashingUtils::HashString("ColumnStatisticsTaskStoppingException");
@@ -72,15 +76,18 @@ static const int CONDITION_CHECK_FAILURE_HASH = HashingUtils::HashString("Condit
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 static const int FEDERATED_RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("FederatedResourceAlreadyExistsException");
+static const int INTEGRATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("IntegrationQuotaExceededFault");
 static const int ILLEGAL_WORKFLOW_STATE_HASH = HashingUtils::HashString("IllegalWorkflowStateException");
 static const int ENTITY_NOT_FOUND_HASH = HashingUtils::HashString("EntityNotFoundException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
+static const int INTEGRATION_CONFLICT_OPERATION_FAULT_HASH = HashingUtils::HashString("IntegrationConflictOperationFault");
 static const int SCHEDULER_TRANSITIONING_HASH = HashingUtils::HashString("SchedulerTransitioningException");
 static const int CRAWLER_STOPPING_HASH = HashingUtils::HashString("CrawlerStoppingException");
 static const int NO_SCHEDULE_HASH = HashingUtils::HashString("NoScheduleException");
 static const int CONCURRENT_RUNS_EXCEEDED_HASH = HashingUtils::HashString("ConcurrentRunsExceededException");
 static const int ILLEGAL_SESSION_STATE_HASH = HashingUtils::HashString("IllegalSessionStateException");
 static const int FEDERATION_SOURCE_HASH = HashingUtils::HashString("FederationSourceException");
+static const int TARGET_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("TargetResourceNotFound");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -119,6 +126,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::COLUMN_STATISTICS_TASK_RUNNING), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == INVALID_INTEGRATION_STATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::INVALID_INTEGRATION_STATE_FAULT), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == GLUE_ENCRYPTION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::GLUE_ENCRYPTION), RetryableType::NOT_RETRYABLE);
@@ -126,6 +137,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == M_L_TRANSFORM_NOT_READY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::M_L_TRANSFORM_NOT_READY), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INTEGRATION_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::INTEGRATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PERMISSION_TYPE_MISMATCH_HASH)
   {
@@ -139,6 +154,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::COLUMN_STATISTICS_TASK_NOT_RUNNING), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::K_M_S_KEY_NOT_ACCESSIBLE_FAULT), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == OPERATION_TIMEOUT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::OPERATION_TIMEOUT), RetryableType::NOT_RETRYABLE);
@@ -150,6 +169,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CRAWLER_NOT_RUNNING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::CRAWLER_NOT_RUNNING), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INTERNAL_SERVER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SCHEDULER_NOT_RUNNING_HASH)
   {
@@ -187,6 +210,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::FEDERATED_RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
+  else if (hashCode == INTEGRATION_QUOTA_EXCEEDED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::INTEGRATION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
+  }
   else if (hashCode == ILLEGAL_WORKFLOW_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::ILLEGAL_WORKFLOW_STATE), RetryableType::NOT_RETRYABLE);
@@ -198,6 +225,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == INTEGRATION_CONFLICT_OPERATION_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::INTEGRATION_CONFLICT_OPERATION_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SCHEDULER_TRANSITIONING_HASH)
   {
@@ -222,6 +253,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == FEDERATION_SOURCE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::FEDERATION_SOURCE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == TARGET_RESOURCE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::TARGET_RESOURCE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

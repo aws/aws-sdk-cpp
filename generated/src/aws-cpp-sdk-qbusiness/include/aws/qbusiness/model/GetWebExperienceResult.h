@@ -13,6 +13,7 @@
 #include <aws/qbusiness/model/IdentityProviderConfiguration.h>
 #include <aws/qbusiness/model/ErrorDetail.h>
 #include <aws/qbusiness/model/BrowserExtensionConfiguration.h>
+#include <aws/qbusiness/model/CustomizationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -253,6 +254,18 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>Gets the custom logo, favicon, font, and color used in the Amazon Q web
+     * experience. </p>
+     */
+    inline const CustomizationConfiguration& GetCustomizationConfiguration() const{ return m_customizationConfiguration; }
+    inline void SetCustomizationConfiguration(const CustomizationConfiguration& value) { m_customizationConfiguration = value; }
+    inline void SetCustomizationConfiguration(CustomizationConfiguration&& value) { m_customizationConfiguration = std::move(value); }
+    inline GetWebExperienceResult& WithCustomizationConfiguration(const CustomizationConfiguration& value) { SetCustomizationConfiguration(value); return *this;}
+    inline GetWebExperienceResult& WithCustomizationConfiguration(CustomizationConfiguration&& value) { SetCustomizationConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -295,6 +308,8 @@ namespace Model
     ErrorDetail m_error;
 
     BrowserExtensionConfiguration m_browserExtensionConfiguration;
+
+    CustomizationConfiguration m_customizationConfiguration;
 
     Aws::String m_requestId;
   };

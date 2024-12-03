@@ -64,6 +64,9 @@ namespace Model
      * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
      * </code> </p> </li> </ul> <p> <b>Systems Manager actions:</b> </p> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </code> </p> <p> <b>Start a Amazon Q Developer operational investigation</b>
+     * </p> <p>
+     * <code>arn:aws:aiops:<i>region</i>:<i>account-id</i>:investigation-group:<i>ingestigation-group-id</i>
      * </code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetAlarmActions() const{ return m_alarmActions; }

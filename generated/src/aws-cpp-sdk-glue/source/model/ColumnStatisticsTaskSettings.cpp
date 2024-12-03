@@ -27,7 +27,12 @@ ColumnStatisticsTaskSettings::ColumnStatisticsTaskSettings() :
     m_roleHasBeenSet(false),
     m_sampleSize(0.0),
     m_sampleSizeHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false)
+    m_securityConfigurationHasBeenSet(false),
+    m_scheduleType(ScheduleType::NOT_SET),
+    m_scheduleTypeHasBeenSet(false),
+    m_settingSource(SettingSource::NOT_SET),
+    m_settingSourceHasBeenSet(false),
+    m_lastExecutionAttemptHasBeenSet(false)
 {
 }
 
@@ -98,6 +103,27 @@ ColumnStatisticsTaskSettings& ColumnStatisticsTaskSettings::operator =(JsonView 
     m_securityConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ScheduleType"))
+  {
+    m_scheduleType = ScheduleTypeMapper::GetScheduleTypeForName(jsonValue.GetString("ScheduleType"));
+
+    m_scheduleTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SettingSource"))
+  {
+    m_settingSource = SettingSourceMapper::GetSettingSourceForName(jsonValue.GetString("SettingSource"));
+
+    m_settingSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastExecutionAttempt"))
+  {
+    m_lastExecutionAttempt = jsonValue.GetObject("LastExecutionAttempt");
+
+    m_lastExecutionAttemptHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +181,22 @@ JsonValue ColumnStatisticsTaskSettings::Jsonize() const
   if(m_securityConfigurationHasBeenSet)
   {
    payload.WithString("SecurityConfiguration", m_securityConfiguration);
+
+  }
+
+  if(m_scheduleTypeHasBeenSet)
+  {
+   payload.WithString("ScheduleType", ScheduleTypeMapper::GetNameForScheduleType(m_scheduleType));
+  }
+
+  if(m_settingSourceHasBeenSet)
+  {
+   payload.WithString("SettingSource", SettingSourceMapper::GetNameForSettingSource(m_settingSource));
+  }
+
+  if(m_lastExecutionAttemptHasBeenSet)
+  {
+   payload.WithObject("LastExecutionAttempt", m_lastExecutionAttempt.Jsonize());
 
   }
 

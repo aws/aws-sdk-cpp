@@ -20,6 +20,7 @@ namespace Model
 
 ApiResult::ApiResult() : 
     m_actionGroupHasBeenSet(false),
+    m_agentIdHasBeenSet(false),
     m_apiPathHasBeenSet(false),
     m_confirmationState(ConfirmationState::NOT_SET),
     m_confirmationStateHasBeenSet(false),
@@ -45,6 +46,13 @@ ApiResult& ApiResult::operator =(JsonView jsonValue)
     m_actionGroup = jsonValue.GetString("actionGroup");
 
     m_actionGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("agentId"))
+  {
+    m_agentId = jsonValue.GetString("agentId");
+
+    m_agentIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("apiPath"))
@@ -102,6 +110,12 @@ JsonValue ApiResult::Jsonize() const
   if(m_actionGroupHasBeenSet)
   {
    payload.WithString("actionGroup", m_actionGroup);
+
+  }
+
+  if(m_agentIdHasBeenSet)
+  {
+   payload.WithString("agentId", m_agentId);
 
   }
 

@@ -242,7 +242,15 @@ namespace Athena
         /**
          * <p>Creates (registers) a data catalog with the specified name and properties.
          * Catalogs created are visible to all users of the same Amazon Web Services
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account.</p> <p>This API operation creates the following resources.</p> <ul>
+         * <li> <p>CFN Stack Name with a maximum length of 128 characters and prefix
+         * <code>athenafederatedcatalog-CATALOG_NAME_SANITIZED</code> with length 23
+         * characters.</p> </li> <li> <p>Lambda Function Name with a maximum length of 64
+         * characters and prefix <code>athenafederatedcatalog_CATALOG_NAME_SANITIZED</code>
+         * with length 23 characters.</p> </li> <li> <p>Glue Connection Name with a maximum
+         * length of 255 characters and a prefix
+         * <code>athenafederatedcatalog_CATALOG_NAME_SANITIZED</code> with length 23
+         * characters. </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog">AWS
          * API Reference</a></p>
          */

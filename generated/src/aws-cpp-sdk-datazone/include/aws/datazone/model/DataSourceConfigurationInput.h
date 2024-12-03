@@ -7,6 +7,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/GlueRunConfigurationInput.h>
 #include <aws/datazone/model/RedshiftRunConfigurationInput.h>
+#include <aws/datazone/model/SageMakerRunConfigurationInput.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +62,18 @@ namespace Model
     inline DataSourceConfigurationInput& WithRedshiftRunConfiguration(const RedshiftRunConfigurationInput& value) { SetRedshiftRunConfiguration(value); return *this;}
     inline DataSourceConfigurationInput& WithRedshiftRunConfiguration(RedshiftRunConfigurationInput&& value) { SetRedshiftRunConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon SageMaker run configuration.</p>
+     */
+    inline const SageMakerRunConfigurationInput& GetSageMakerRunConfiguration() const{ return m_sageMakerRunConfiguration; }
+    inline bool SageMakerRunConfigurationHasBeenSet() const { return m_sageMakerRunConfigurationHasBeenSet; }
+    inline void SetSageMakerRunConfiguration(const SageMakerRunConfigurationInput& value) { m_sageMakerRunConfigurationHasBeenSet = true; m_sageMakerRunConfiguration = value; }
+    inline void SetSageMakerRunConfiguration(SageMakerRunConfigurationInput&& value) { m_sageMakerRunConfigurationHasBeenSet = true; m_sageMakerRunConfiguration = std::move(value); }
+    inline DataSourceConfigurationInput& WithSageMakerRunConfiguration(const SageMakerRunConfigurationInput& value) { SetSageMakerRunConfiguration(value); return *this;}
+    inline DataSourceConfigurationInput& WithSageMakerRunConfiguration(SageMakerRunConfigurationInput&& value) { SetSageMakerRunConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     GlueRunConfigurationInput m_glueRunConfiguration;
@@ -68,6 +81,9 @@ namespace Model
 
     RedshiftRunConfigurationInput m_redshiftRunConfiguration;
     bool m_redshiftRunConfigurationHasBeenSet = false;
+
+    SageMakerRunConfigurationInput m_sageMakerRunConfiguration;
+    bool m_sageMakerRunConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

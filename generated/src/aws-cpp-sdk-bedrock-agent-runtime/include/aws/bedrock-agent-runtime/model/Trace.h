@@ -11,6 +11,7 @@
 #include <aws/bedrock-agent-runtime/model/OrchestrationTrace.h>
 #include <aws/bedrock-agent-runtime/model/PostProcessingTrace.h>
 #include <aws/bedrock-agent-runtime/model/PreProcessingTrace.h>
+#include <aws/bedrock-agent-runtime/model/RoutingClassifierTrace.h>
 #include <utility>
 
 namespace Aws
@@ -122,6 +123,18 @@ namespace Model
     inline Trace& WithPreProcessingTrace(const PreProcessingTrace& value) { SetPreProcessingTrace(value); return *this;}
     inline Trace& WithPreProcessingTrace(PreProcessingTrace&& value) { SetPreProcessingTrace(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A routing classifier's trace.</p>
+     */
+    inline const RoutingClassifierTrace& GetRoutingClassifierTrace() const{ return m_routingClassifierTrace; }
+    inline bool RoutingClassifierTraceHasBeenSet() const { return m_routingClassifierTraceHasBeenSet; }
+    inline void SetRoutingClassifierTrace(const RoutingClassifierTrace& value) { m_routingClassifierTraceHasBeenSet = true; m_routingClassifierTrace = value; }
+    inline void SetRoutingClassifierTrace(RoutingClassifierTrace&& value) { m_routingClassifierTraceHasBeenSet = true; m_routingClassifierTrace = std::move(value); }
+    inline Trace& WithRoutingClassifierTrace(const RoutingClassifierTrace& value) { SetRoutingClassifierTrace(value); return *this;}
+    inline Trace& WithRoutingClassifierTrace(RoutingClassifierTrace&& value) { SetRoutingClassifierTrace(std::move(value)); return *this;}
+    ///@}
   private:
 
     CustomOrchestrationTrace m_customOrchestrationTrace;
@@ -141,6 +154,9 @@ namespace Model
 
     PreProcessingTrace m_preProcessingTrace;
     bool m_preProcessingTraceHasBeenSet = false;
+
+    RoutingClassifierTrace m_routingClassifierTrace;
+    bool m_routingClassifierTraceHasBeenSet = false;
   };
 
 } // namespace Model

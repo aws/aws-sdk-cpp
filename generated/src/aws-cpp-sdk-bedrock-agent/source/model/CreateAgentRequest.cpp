@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateAgentRequest::CreateAgentRequest() : 
+    m_agentCollaboration(AgentCollaboration::NOT_SET),
+    m_agentCollaborationHasBeenSet(false),
     m_agentNameHasBeenSet(false),
     m_agentResourceRoleArnHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
@@ -36,6 +38,11 @@ CreateAgentRequest::CreateAgentRequest() :
 Aws::String CreateAgentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_agentCollaborationHasBeenSet)
+  {
+   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
+  }
 
   if(m_agentNameHasBeenSet)
   {

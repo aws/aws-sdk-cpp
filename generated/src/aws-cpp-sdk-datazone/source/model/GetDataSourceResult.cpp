@@ -50,6 +50,12 @@ GetDataSourceResult& GetDataSourceResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("connectionId"))
+  {
+    m_connectionId = jsonValue.GetString("connectionId");
+
+  }
+
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");

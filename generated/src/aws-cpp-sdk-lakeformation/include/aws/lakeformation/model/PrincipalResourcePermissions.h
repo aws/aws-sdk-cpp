@@ -7,6 +7,7 @@
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/lakeformation/model/DataLakePrincipal.h>
 #include <aws/lakeformation/model/Resource.h>
+#include <aws/lakeformation/model/Condition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lakeformation/model/DetailsMap.h>
 #include <aws/core/utils/DateTime.h>
@@ -66,6 +67,19 @@ namespace Model
     inline void SetResource(Resource&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
     inline PrincipalResourcePermissions& WithResource(const Resource& value) { SetResource(value); return *this;}
     inline PrincipalResourcePermissions& WithResource(Resource&& value) { SetResource(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A Lake Formation condition, which applies to permissions and opt-ins that
+     * contain an expression.</p>
+     */
+    inline const Condition& GetCondition() const{ return m_condition; }
+    inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
+    inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
+    inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
+    inline PrincipalResourcePermissions& WithCondition(const Condition& value) { SetCondition(value); return *this;}
+    inline PrincipalResourcePermissions& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,6 +157,9 @@ namespace Model
 
     Resource m_resource;
     bool m_resourceHasBeenSet = false;
+
+    Condition m_condition;
+    bool m_conditionHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissions;
     bool m_permissionsHasBeenSet = false;

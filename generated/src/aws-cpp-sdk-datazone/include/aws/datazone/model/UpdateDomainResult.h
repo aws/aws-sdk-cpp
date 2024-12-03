@@ -114,6 +114,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The service role of the domain.</p>
+     */
+    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+    inline void SetServiceRole(const Aws::String& value) { m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRole = std::move(value); }
+    inline void SetServiceRole(const char* value) { m_serviceRole.assign(value); }
+    inline UpdateDomainResult& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
+    inline UpdateDomainResult& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
+    inline UpdateDomainResult& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The single sign-on option of the Amazon DataZone domain.</p>
      */
     inline const SingleSignOn& GetSingleSignOn() const{ return m_singleSignOn; }
@@ -146,6 +159,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::String m_rootDomainUnitId;
+
+    Aws::String m_serviceRole;
 
     SingleSignOn m_singleSignOn;
 

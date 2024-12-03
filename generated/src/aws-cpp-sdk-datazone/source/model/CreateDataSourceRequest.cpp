@@ -17,6 +17,7 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_configurationHasBeenSet(false),
+    m_connectionIdentifierHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_domainIdentifierHasBeenSet(false),
     m_enableSetting(EnableSetting::NOT_SET),
@@ -56,6 +57,12 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
   if(m_configurationHasBeenSet)
   {
    payload.WithObject("configuration", m_configuration.Jsonize());
+
+  }
+
+  if(m_connectionIdentifierHasBeenSet)
+  {
+   payload.WithString("connectionIdentifier", m_connectionIdentifier);
 
   }
 

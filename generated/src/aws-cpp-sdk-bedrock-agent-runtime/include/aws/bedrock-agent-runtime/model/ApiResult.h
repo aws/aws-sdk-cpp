@@ -62,6 +62,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The agent's ID.</p>
+     */
+    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
+    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
+    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
+    inline ApiResult& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
+    inline ApiResult& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
+    inline ApiResult& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The path to the API operation.</p>
      */
     inline const Aws::String& GetApiPath() const{ return m_apiPath; }
@@ -150,6 +164,9 @@ namespace Model
 
     Aws::String m_actionGroup;
     bool m_actionGroupHasBeenSet = false;
+
+    Aws::String m_agentId;
+    bool m_agentIdHasBeenSet = false;
 
     Aws::String m_apiPath;
     bool m_apiPathHasBeenSet = false;

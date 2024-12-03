@@ -66,6 +66,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The agent's foundation model.</p>
+     */
+    inline const Aws::String& GetFoundationModel() const{ return m_foundationModel; }
+    inline bool FoundationModelHasBeenSet() const { return m_foundationModelHasBeenSet; }
+    inline void SetFoundationModel(const Aws::String& value) { m_foundationModelHasBeenSet = true; m_foundationModel = value; }
+    inline void SetFoundationModel(Aws::String&& value) { m_foundationModelHasBeenSet = true; m_foundationModel = std::move(value); }
+    inline void SetFoundationModel(const char* value) { m_foundationModelHasBeenSet = true; m_foundationModel.assign(value); }
+    inline PromptConfiguration& WithFoundationModel(const Aws::String& value) { SetFoundationModel(value); return *this;}
+    inline PromptConfiguration& WithFoundationModel(Aws::String&& value) { SetFoundationModel(std::move(value)); return *this;}
+    inline PromptConfiguration& WithFoundationModel(const char* value) { SetFoundationModel(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains inference parameters to use when the agent invokes a foundation
      * model in the part of the agent sequence defined by the <code>promptType</code>.
      * For more information, see <a
@@ -146,6 +160,9 @@ namespace Model
 
     Aws::String m_basePromptTemplate;
     bool m_basePromptTemplateHasBeenSet = false;
+
+    Aws::String m_foundationModel;
+    bool m_foundationModelHasBeenSet = false;
 
     InferenceConfiguration m_inferenceConfiguration;
     bool m_inferenceConfigurationHasBeenSet = false;

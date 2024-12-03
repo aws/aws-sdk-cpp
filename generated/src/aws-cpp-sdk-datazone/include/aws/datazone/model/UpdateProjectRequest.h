@@ -7,6 +7,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/model/EnvironmentDeploymentDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -64,6 +65,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The environment deployment details of the project.</p>
+     */
+    inline const EnvironmentDeploymentDetails& GetEnvironmentDeploymentDetails() const{ return m_environmentDeploymentDetails; }
+    inline bool EnvironmentDeploymentDetailsHasBeenSet() const { return m_environmentDeploymentDetailsHasBeenSet; }
+    inline void SetEnvironmentDeploymentDetails(const EnvironmentDeploymentDetails& value) { m_environmentDeploymentDetailsHasBeenSet = true; m_environmentDeploymentDetails = value; }
+    inline void SetEnvironmentDeploymentDetails(EnvironmentDeploymentDetails&& value) { m_environmentDeploymentDetailsHasBeenSet = true; m_environmentDeploymentDetails = std::move(value); }
+    inline UpdateProjectRequest& WithEnvironmentDeploymentDetails(const EnvironmentDeploymentDetails& value) { SetEnvironmentDeploymentDetails(value); return *this;}
+    inline UpdateProjectRequest& WithEnvironmentDeploymentDetails(EnvironmentDeploymentDetails&& value) { SetEnvironmentDeploymentDetails(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The glossary terms to be updated as part of the <code>UpdateProject</code>
      * action.</p>
      */
@@ -112,6 +125,9 @@ namespace Model
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;
+
+    EnvironmentDeploymentDetails m_environmentDeploymentDetails;
+    bool m_environmentDeploymentDetailsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_glossaryTerms;
     bool m_glossaryTermsHasBeenSet = false;

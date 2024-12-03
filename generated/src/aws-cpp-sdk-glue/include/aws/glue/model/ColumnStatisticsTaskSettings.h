@@ -8,6 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/Schedule.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/ScheduleType.h>
+#include <aws/glue/model/SettingSource.h>
+#include <aws/glue/model/ExecutionAttempt.h>
 #include <utility>
 
 namespace Aws
@@ -146,6 +149,45 @@ namespace Model
     inline ColumnStatisticsTaskSettings& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
     inline ColumnStatisticsTaskSettings& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The type of schedule for a column statistics task. Possible values may be
+     * <code>CRON</code> or <code>AUTO</code>.</p>
+     */
+    inline const ScheduleType& GetScheduleType() const{ return m_scheduleType; }
+    inline bool ScheduleTypeHasBeenSet() const { return m_scheduleTypeHasBeenSet; }
+    inline void SetScheduleType(const ScheduleType& value) { m_scheduleTypeHasBeenSet = true; m_scheduleType = value; }
+    inline void SetScheduleType(ScheduleType&& value) { m_scheduleTypeHasBeenSet = true; m_scheduleType = std::move(value); }
+    inline ColumnStatisticsTaskSettings& WithScheduleType(const ScheduleType& value) { SetScheduleType(value); return *this;}
+    inline ColumnStatisticsTaskSettings& WithScheduleType(ScheduleType&& value) { SetScheduleType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The source of setting the column statistics task. Possible values may be
+     * <code>CATALOG</code> or <code>TABLE</code>.</p>
+     */
+    inline const SettingSource& GetSettingSource() const{ return m_settingSource; }
+    inline bool SettingSourceHasBeenSet() const { return m_settingSourceHasBeenSet; }
+    inline void SetSettingSource(const SettingSource& value) { m_settingSourceHasBeenSet = true; m_settingSource = value; }
+    inline void SetSettingSource(SettingSource&& value) { m_settingSourceHasBeenSet = true; m_settingSource = std::move(value); }
+    inline ColumnStatisticsTaskSettings& WithSettingSource(const SettingSource& value) { SetSettingSource(value); return *this;}
+    inline ColumnStatisticsTaskSettings& WithSettingSource(SettingSource&& value) { SetSettingSource(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The last <code>ExecutionAttempt</code> for the column statistics task
+     * run.</p>
+     */
+    inline const ExecutionAttempt& GetLastExecutionAttempt() const{ return m_lastExecutionAttempt; }
+    inline bool LastExecutionAttemptHasBeenSet() const { return m_lastExecutionAttemptHasBeenSet; }
+    inline void SetLastExecutionAttempt(const ExecutionAttempt& value) { m_lastExecutionAttemptHasBeenSet = true; m_lastExecutionAttempt = value; }
+    inline void SetLastExecutionAttempt(ExecutionAttempt&& value) { m_lastExecutionAttemptHasBeenSet = true; m_lastExecutionAttempt = std::move(value); }
+    inline ColumnStatisticsTaskSettings& WithLastExecutionAttempt(const ExecutionAttempt& value) { SetLastExecutionAttempt(value); return *this;}
+    inline ColumnStatisticsTaskSettings& WithLastExecutionAttempt(ExecutionAttempt&& value) { SetLastExecutionAttempt(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_databaseName;
@@ -171,6 +213,15 @@ namespace Model
 
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet = false;
+
+    ScheduleType m_scheduleType;
+    bool m_scheduleTypeHasBeenSet = false;
+
+    SettingSource m_settingSource;
+    bool m_settingSourceHasBeenSet = false;
+
+    ExecutionAttempt m_lastExecutionAttempt;
+    bool m_lastExecutionAttemptHasBeenSet = false;
   };
 
 } // namespace Model

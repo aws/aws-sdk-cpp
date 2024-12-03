@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     BASIC,
     OAUTH2,
-    CUSTOM
+    CUSTOM,
+    IAM
   };
 
 namespace AuthenticationTypeMapper

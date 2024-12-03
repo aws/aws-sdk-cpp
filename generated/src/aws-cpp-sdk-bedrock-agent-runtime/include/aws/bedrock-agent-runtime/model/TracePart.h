@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock-agent-runtime/model/Trace.h>
+#include <aws/bedrock-agent-runtime/model/Caller.h>
 #include <utility>
 
 namespace Aws
@@ -88,6 +90,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>The part's caller chain.</p>
+     */
+    inline const Aws::Vector<Caller>& GetCallerChain() const{ return m_callerChain; }
+    inline bool CallerChainHasBeenSet() const { return m_callerChainHasBeenSet; }
+    inline void SetCallerChain(const Aws::Vector<Caller>& value) { m_callerChainHasBeenSet = true; m_callerChain = value; }
+    inline void SetCallerChain(Aws::Vector<Caller>&& value) { m_callerChainHasBeenSet = true; m_callerChain = std::move(value); }
+    inline TracePart& WithCallerChain(const Aws::Vector<Caller>& value) { SetCallerChain(value); return *this;}
+    inline TracePart& WithCallerChain(Aws::Vector<Caller>&& value) { SetCallerChain(std::move(value)); return *this;}
+    inline TracePart& AddCallerChain(const Caller& value) { m_callerChainHasBeenSet = true; m_callerChain.push_back(value); return *this; }
+    inline TracePart& AddCallerChain(Caller&& value) { m_callerChainHasBeenSet = true; m_callerChain.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The part's collaborator name.</p>
+     */
+    inline const Aws::String& GetCollaboratorName() const{ return m_collaboratorName; }
+    inline bool CollaboratorNameHasBeenSet() const { return m_collaboratorNameHasBeenSet; }
+    inline void SetCollaboratorName(const Aws::String& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = value; }
+    inline void SetCollaboratorName(Aws::String&& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = std::move(value); }
+    inline void SetCollaboratorName(const char* value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName.assign(value); }
+    inline TracePart& WithCollaboratorName(const Aws::String& value) { SetCollaboratorName(value); return *this;}
+    inline TracePart& WithCollaboratorName(Aws::String&& value) { SetCollaboratorName(std::move(value)); return *this;}
+    inline TracePart& WithCollaboratorName(const char* value) { SetCollaboratorName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The unique identifier of the session with the agent.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
@@ -126,6 +156,12 @@ namespace Model
 
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet = false;
+
+    Aws::Vector<Caller> m_callerChain;
+    bool m_callerChainHasBeenSet = false;
+
+    Aws::String m_collaboratorName;
+    bool m_collaboratorNameHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;

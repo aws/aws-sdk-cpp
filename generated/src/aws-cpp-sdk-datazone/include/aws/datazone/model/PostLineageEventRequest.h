@@ -13,10 +13,6 @@
 
 namespace Aws
 {
-namespace Http
-{
-    class URI;
-} //namespace Http
 namespace DataZone
 {
 namespace Model
@@ -35,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PostLineageEvent"; }
 
-    AWS_DATAZONE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_DATAZONE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     ///@{

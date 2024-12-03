@@ -8,6 +8,7 @@
 #include <aws/qbusiness/model/BasicAuthConfiguration.h>
 #include <aws/qbusiness/model/OAuth2ClientCredentialConfiguration.h>
 #include <aws/qbusiness/model/NoAuthConfiguration.h>
+#include <aws/qbusiness/model/IdcAuthConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -77,6 +78,19 @@ namespace Model
     inline PluginAuthConfiguration& WithNoAuthConfiguration(const NoAuthConfiguration& value) { SetNoAuthConfiguration(value); return *this;}
     inline PluginAuthConfiguration& WithNoAuthConfiguration(NoAuthConfiguration&& value) { SetNoAuthConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Information about the IAM Identity Center Application used to configure
+     * authentication for a plugin.</p>
+     */
+    inline const IdcAuthConfiguration& GetIdcAuthConfiguration() const{ return m_idcAuthConfiguration; }
+    inline bool IdcAuthConfigurationHasBeenSet() const { return m_idcAuthConfigurationHasBeenSet; }
+    inline void SetIdcAuthConfiguration(const IdcAuthConfiguration& value) { m_idcAuthConfigurationHasBeenSet = true; m_idcAuthConfiguration = value; }
+    inline void SetIdcAuthConfiguration(IdcAuthConfiguration&& value) { m_idcAuthConfigurationHasBeenSet = true; m_idcAuthConfiguration = std::move(value); }
+    inline PluginAuthConfiguration& WithIdcAuthConfiguration(const IdcAuthConfiguration& value) { SetIdcAuthConfiguration(value); return *this;}
+    inline PluginAuthConfiguration& WithIdcAuthConfiguration(IdcAuthConfiguration&& value) { SetIdcAuthConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     BasicAuthConfiguration m_basicAuthConfiguration;
@@ -87,6 +101,9 @@ namespace Model
 
     NoAuthConfiguration m_noAuthConfiguration;
     bool m_noAuthConfigurationHasBeenSet = false;
+
+    IdcAuthConfiguration m_idcAuthConfiguration;
+    bool m_idcAuthConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

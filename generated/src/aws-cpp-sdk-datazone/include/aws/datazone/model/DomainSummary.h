@@ -7,6 +7,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/datazone/model/DomainVersion.h>
 #include <aws/datazone/model/DomainStatus.h>
 #include <utility>
 
@@ -77,6 +78,18 @@ namespace Model
     inline DomainSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
     inline DomainSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
     inline DomainSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The domain version.</p>
+     */
+    inline const DomainVersion& GetDomainVersion() const{ return m_domainVersion; }
+    inline bool DomainVersionHasBeenSet() const { return m_domainVersionHasBeenSet; }
+    inline void SetDomainVersion(const DomainVersion& value) { m_domainVersionHasBeenSet = true; m_domainVersion = value; }
+    inline void SetDomainVersion(DomainVersion&& value) { m_domainVersionHasBeenSet = true; m_domainVersion = std::move(value); }
+    inline DomainSummary& WithDomainVersion(const DomainVersion& value) { SetDomainVersion(value); return *this;}
+    inline DomainSummary& WithDomainVersion(DomainVersion&& value) { SetDomainVersion(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,6 +182,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    DomainVersion m_domainVersion;
+    bool m_domainVersionHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;

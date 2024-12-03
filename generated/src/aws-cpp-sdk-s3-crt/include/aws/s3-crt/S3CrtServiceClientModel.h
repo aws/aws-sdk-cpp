@@ -37,6 +37,7 @@
 #include <aws/s3-crt/model/GetBucketLifecycleConfigurationResult.h>
 #include <aws/s3-crt/model/GetBucketLocationResult.h>
 #include <aws/s3-crt/model/GetBucketLoggingResult.h>
+#include <aws/s3-crt/model/GetBucketMetadataTableConfigurationSdkResult.h>
 #include <aws/s3-crt/model/GetBucketMetricsConfigurationResult.h>
 #include <aws/s3-crt/model/GetBucketNotificationConfigurationResult.h>
 #include <aws/s3-crt/model/GetBucketOwnershipControlsResult.h>
@@ -125,6 +126,7 @@ namespace Aws
       class CompleteMultipartUploadRequest;
       class CopyObjectRequest;
       class CreateBucketRequest;
+      class CreateBucketMetadataTableConfigurationRequest;
       class CreateMultipartUploadRequest;
       class CreateSessionRequest;
       class DeleteBucketRequest;
@@ -134,6 +136,7 @@ namespace Aws
       class DeleteBucketIntelligentTieringConfigurationRequest;
       class DeleteBucketInventoryConfigurationRequest;
       class DeleteBucketLifecycleRequest;
+      class DeleteBucketMetadataTableConfigurationRequest;
       class DeleteBucketMetricsConfigurationRequest;
       class DeleteBucketOwnershipControlsRequest;
       class DeleteBucketPolicyRequest;
@@ -154,6 +157,7 @@ namespace Aws
       class GetBucketLifecycleConfigurationRequest;
       class GetBucketLocationRequest;
       class GetBucketLoggingRequest;
+      class GetBucketMetadataTableConfigurationRequest;
       class GetBucketMetricsConfigurationRequest;
       class GetBucketNotificationConfigurationRequest;
       class GetBucketOwnershipControlsRequest;
@@ -223,6 +227,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CompleteMultipartUploadResult, S3CrtError> CompleteMultipartUploadOutcome;
       typedef Aws::Utils::Outcome<CopyObjectResult, S3CrtError> CopyObjectOutcome;
       typedef Aws::Utils::Outcome<CreateBucketResult, S3CrtError> CreateBucketOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> CreateBucketMetadataTableConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateMultipartUploadResult, S3CrtError> CreateMultipartUploadOutcome;
       typedef Aws::Utils::Outcome<CreateSessionResult, S3CrtError> CreateSessionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> DeleteBucketOutcome;
@@ -232,6 +237,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> DeleteBucketIntelligentTieringConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> DeleteBucketInventoryConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> DeleteBucketLifecycleOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> DeleteBucketMetadataTableConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> DeleteBucketMetricsConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> DeleteBucketOwnershipControlsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3CrtError> DeleteBucketPolicyOutcome;
@@ -252,6 +258,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetBucketLifecycleConfigurationResult, S3CrtError> GetBucketLifecycleConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetBucketLocationResult, S3CrtError> GetBucketLocationOutcome;
       typedef Aws::Utils::Outcome<GetBucketLoggingResult, S3CrtError> GetBucketLoggingOutcome;
+      typedef Aws::Utils::Outcome<GetBucketMetadataTableConfigurationSdkResult, S3CrtError> GetBucketMetadataTableConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetBucketMetricsConfigurationResult, S3CrtError> GetBucketMetricsConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetBucketNotificationConfigurationResult, S3CrtError> GetBucketNotificationConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetBucketOwnershipControlsResult, S3CrtError> GetBucketOwnershipControlsOutcome;
@@ -320,6 +327,7 @@ namespace Aws
       typedef std::future<AbortMultipartUploadOutcome> AbortMultipartUploadOutcomeCallable;
       typedef std::future<CompleteMultipartUploadOutcome> CompleteMultipartUploadOutcomeCallable;
       typedef std::future<CreateBucketOutcome> CreateBucketOutcomeCallable;
+      typedef std::future<CreateBucketMetadataTableConfigurationOutcome> CreateBucketMetadataTableConfigurationOutcomeCallable;
       typedef std::future<CreateMultipartUploadOutcome> CreateMultipartUploadOutcomeCallable;
       typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
       typedef std::future<DeleteBucketOutcome> DeleteBucketOutcomeCallable;
@@ -329,6 +337,7 @@ namespace Aws
       typedef std::future<DeleteBucketIntelligentTieringConfigurationOutcome> DeleteBucketIntelligentTieringConfigurationOutcomeCallable;
       typedef std::future<DeleteBucketInventoryConfigurationOutcome> DeleteBucketInventoryConfigurationOutcomeCallable;
       typedef std::future<DeleteBucketLifecycleOutcome> DeleteBucketLifecycleOutcomeCallable;
+      typedef std::future<DeleteBucketMetadataTableConfigurationOutcome> DeleteBucketMetadataTableConfigurationOutcomeCallable;
       typedef std::future<DeleteBucketMetricsConfigurationOutcome> DeleteBucketMetricsConfigurationOutcomeCallable;
       typedef std::future<DeleteBucketOwnershipControlsOutcome> DeleteBucketOwnershipControlsOutcomeCallable;
       typedef std::future<DeleteBucketPolicyOutcome> DeleteBucketPolicyOutcomeCallable;
@@ -349,6 +358,7 @@ namespace Aws
       typedef std::future<GetBucketLifecycleConfigurationOutcome> GetBucketLifecycleConfigurationOutcomeCallable;
       typedef std::future<GetBucketLocationOutcome> GetBucketLocationOutcomeCallable;
       typedef std::future<GetBucketLoggingOutcome> GetBucketLoggingOutcomeCallable;
+      typedef std::future<GetBucketMetadataTableConfigurationOutcome> GetBucketMetadataTableConfigurationOutcomeCallable;
       typedef std::future<GetBucketMetricsConfigurationOutcome> GetBucketMetricsConfigurationOutcomeCallable;
       typedef std::future<GetBucketNotificationConfigurationOutcome> GetBucketNotificationConfigurationOutcomeCallable;
       typedef std::future<GetBucketOwnershipControlsOutcome> GetBucketOwnershipControlsOutcomeCallable;
@@ -419,6 +429,7 @@ namespace Aws
     typedef std::function<void(const S3CrtClient*, const Model::CompleteMultipartUploadRequest&, const Model::CompleteMultipartUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteMultipartUploadResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::CopyObjectRequest&, const Model::CopyObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyObjectResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::CreateBucketRequest&, const Model::CreateBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBucketResponseReceivedHandler;
+    typedef std::function<void(const S3CrtClient*, const Model::CreateBucketMetadataTableConfigurationRequest&, const Model::CreateBucketMetadataTableConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBucketMetadataTableConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::CreateMultipartUploadRequest&, const Model::CreateMultipartUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultipartUploadResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::CreateSessionRequest&, const Model::CreateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSessionResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::DeleteBucketRequest&, const Model::DeleteBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketResponseReceivedHandler;
@@ -428,6 +439,7 @@ namespace Aws
     typedef std::function<void(const S3CrtClient*, const Model::DeleteBucketIntelligentTieringConfigurationRequest&, const Model::DeleteBucketIntelligentTieringConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketIntelligentTieringConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::DeleteBucketInventoryConfigurationRequest&, const Model::DeleteBucketInventoryConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketInventoryConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::DeleteBucketLifecycleRequest&, const Model::DeleteBucketLifecycleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketLifecycleResponseReceivedHandler;
+    typedef std::function<void(const S3CrtClient*, const Model::DeleteBucketMetadataTableConfigurationRequest&, const Model::DeleteBucketMetadataTableConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketMetadataTableConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::DeleteBucketMetricsConfigurationRequest&, const Model::DeleteBucketMetricsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketMetricsConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::DeleteBucketOwnershipControlsRequest&, const Model::DeleteBucketOwnershipControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketOwnershipControlsResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::DeleteBucketPolicyRequest&, const Model::DeleteBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBucketPolicyResponseReceivedHandler;
@@ -448,6 +460,7 @@ namespace Aws
     typedef std::function<void(const S3CrtClient*, const Model::GetBucketLifecycleConfigurationRequest&, const Model::GetBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::GetBucketLocationRequest&, const Model::GetBucketLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLocationResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::GetBucketLoggingRequest&, const Model::GetBucketLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLoggingResponseReceivedHandler;
+    typedef std::function<void(const S3CrtClient*, const Model::GetBucketMetadataTableConfigurationRequest&, const Model::GetBucketMetadataTableConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketMetadataTableConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::GetBucketMetricsConfigurationRequest&, const Model::GetBucketMetricsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketMetricsConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::GetBucketNotificationConfigurationRequest&, const Model::GetBucketNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketNotificationConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3CrtClient*, const Model::GetBucketOwnershipControlsRequest&, const Model::GetBucketOwnershipControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketOwnershipControlsResponseReceivedHandler;

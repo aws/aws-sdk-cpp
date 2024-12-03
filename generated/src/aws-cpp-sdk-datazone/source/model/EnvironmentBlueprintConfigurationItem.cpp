@@ -23,6 +23,7 @@ EnvironmentBlueprintConfigurationItem::EnvironmentBlueprintConfigurationItem() :
     m_domainIdHasBeenSet(false),
     m_enabledRegionsHasBeenSet(false),
     m_environmentBlueprintIdHasBeenSet(false),
+    m_environmentRolePermissionBoundaryHasBeenSet(false),
     m_manageAccessRoleArnHasBeenSet(false),
     m_provisioningConfigurationsHasBeenSet(false),
     m_provisioningRoleArnHasBeenSet(false),
@@ -68,6 +69,13 @@ EnvironmentBlueprintConfigurationItem& EnvironmentBlueprintConfigurationItem::op
     m_environmentBlueprintId = jsonValue.GetString("environmentBlueprintId");
 
     m_environmentBlueprintIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("environmentRolePermissionBoundary"))
+  {
+    m_environmentRolePermissionBoundary = jsonValue.GetString("environmentRolePermissionBoundary");
+
+    m_environmentRolePermissionBoundaryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("manageAccessRoleArn"))
@@ -149,6 +157,12 @@ JsonValue EnvironmentBlueprintConfigurationItem::Jsonize() const
   if(m_environmentBlueprintIdHasBeenSet)
   {
    payload.WithString("environmentBlueprintId", m_environmentBlueprintId);
+
+  }
+
+  if(m_environmentRolePermissionBoundaryHasBeenSet)
+  {
+   payload.WithString("environmentRolePermissionBoundary", m_environmentRolePermissionBoundary);
 
   }
 

@@ -91,6 +91,16 @@ namespace Model
     inline void SetEmbeddingDataDeliveryEnabled(bool value) { m_embeddingDataDeliveryEnabledHasBeenSet = true; m_embeddingDataDeliveryEnabled = value; }
     inline LoggingConfig& WithEmbeddingDataDeliveryEnabled(bool value) { SetEmbeddingDataDeliveryEnabled(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Set to include video data in the log delivery.</p>
+     */
+    inline bool GetVideoDataDeliveryEnabled() const{ return m_videoDataDeliveryEnabled; }
+    inline bool VideoDataDeliveryEnabledHasBeenSet() const { return m_videoDataDeliveryEnabledHasBeenSet; }
+    inline void SetVideoDataDeliveryEnabled(bool value) { m_videoDataDeliveryEnabledHasBeenSet = true; m_videoDataDeliveryEnabled = value; }
+    inline LoggingConfig& WithVideoDataDeliveryEnabled(bool value) { SetVideoDataDeliveryEnabled(value); return *this;}
+    ///@}
   private:
 
     CloudWatchConfig m_cloudWatchConfig;
@@ -107,6 +117,9 @@ namespace Model
 
     bool m_embeddingDataDeliveryEnabled;
     bool m_embeddingDataDeliveryEnabledHasBeenSet = false;
+
+    bool m_videoDataDeliveryEnabled;
+    bool m_videoDataDeliveryEnabledHasBeenSet = false;
   };
 
 } // namespace Model

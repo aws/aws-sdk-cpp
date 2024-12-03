@@ -7,8 +7,8 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datazone/model/DataSourceConfigurationOutput.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/datazone/model/EnableSetting.h>
 #include <aws/datazone/model/DataSourceErrorMessage.h>
 #include <aws/datazone/model/DataSourceRunStatus.h>
@@ -65,6 +65,19 @@ namespace Model
     inline void SetConfiguration(DataSourceConfigurationOutput&& value) { m_configuration = std::move(value); }
     inline GetDataSourceResult& WithConfiguration(const DataSourceConfigurationOutput& value) { SetConfiguration(value); return *this;}
     inline GetDataSourceResult& WithConfiguration(DataSourceConfigurationOutput&& value) { SetConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the connection.</p>
+     */
+    inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+    inline void SetConnectionId(const Aws::String& value) { m_connectionId = value; }
+    inline void SetConnectionId(Aws::String&& value) { m_connectionId = std::move(value); }
+    inline void SetConnectionId(const char* value) { m_connectionId.assign(value); }
+    inline GetDataSourceResult& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
+    inline GetDataSourceResult& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
+    inline GetDataSourceResult& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
     ///@}
 
     ///@{
@@ -316,6 +329,8 @@ namespace Model
     Aws::Vector<FormOutput> m_assetFormsOutput;
 
     DataSourceConfigurationOutput m_configuration;
+
+    Aws::String m_connectionId;
 
     Aws::Utils::DateTime m_createdAt;
 

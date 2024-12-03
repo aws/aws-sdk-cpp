@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 TestConnectionRequest::TestConnectionRequest() : 
     m_connectionNameHasBeenSet(false),
+    m_catalogIdHasBeenSet(false),
     m_testConnectionInputHasBeenSet(false)
 {
 }
@@ -25,6 +26,12 @@ Aws::String TestConnectionRequest::SerializePayload() const
   if(m_connectionNameHasBeenSet)
   {
    payload.WithString("ConnectionName", m_connectionName);
+
+  }
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
 
   }
 

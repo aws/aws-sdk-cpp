@@ -22,6 +22,7 @@ UpdateDomainRequest::UpdateDomainRequest() :
     m_domainExecutionRoleHasBeenSet(false),
     m_identifierHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_serviceRoleHasBeenSet(false),
     m_singleSignOnHasBeenSet(false)
 {
 }
@@ -45,6 +46,12 @@ Aws::String UpdateDomainRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_serviceRoleHasBeenSet)
+  {
+   payload.WithString("serviceRole", m_serviceRole);
 
   }
 

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ACTION_GROUP_HASH = HashingUtils::HashString("ACTION_GROUP");
+        static const int AGENT_COLLABORATOR_HASH = HashingUtils::HashString("AGENT_COLLABORATOR");
         static const int KNOWLEDGE_BASE_HASH = HashingUtils::HashString("KNOWLEDGE_BASE");
         static const int FINISH_HASH = HashingUtils::HashString("FINISH");
         static const int ASK_USER_HASH = HashingUtils::HashString("ASK_USER");
@@ -33,6 +34,10 @@ namespace Aws
           if (hashCode == ACTION_GROUP_HASH)
           {
             return Type::ACTION_GROUP;
+          }
+          else if (hashCode == AGENT_COLLABORATOR_HASH)
+          {
+            return Type::AGENT_COLLABORATOR;
           }
           else if (hashCode == KNOWLEDGE_BASE_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return {};
           case Type::ACTION_GROUP:
             return "ACTION_GROUP";
+          case Type::AGENT_COLLABORATOR:
+            return "AGENT_COLLABORATOR";
           case Type::KNOWLEDGE_BASE:
             return "KNOWLEDGE_BASE";
           case Type::FINISH:

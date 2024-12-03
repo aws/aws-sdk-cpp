@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/model/DomainVersion.h>
 #include <aws/datazone/model/SingleSignOn.h>
 #include <aws/datazone/model/DomainStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -78,6 +79,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The version of the domain that is created.</p>
+     */
+    inline const DomainVersion& GetDomainVersion() const{ return m_domainVersion; }
+    inline void SetDomainVersion(const DomainVersion& value) { m_domainVersion = value; }
+    inline void SetDomainVersion(DomainVersion&& value) { m_domainVersion = std::move(value); }
+    inline CreateDomainResult& WithDomainVersion(const DomainVersion& value) { SetDomainVersion(value); return *this;}
+    inline CreateDomainResult& WithDomainVersion(DomainVersion&& value) { SetDomainVersion(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the Amazon DataZone domain.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -145,6 +157,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Te service role of the domain that is created.</p>
+     */
+    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+    inline void SetServiceRole(const Aws::String& value) { m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRole = std::move(value); }
+    inline void SetServiceRole(const char* value) { m_serviceRole.assign(value); }
+    inline CreateDomainResult& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
+    inline CreateDomainResult& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
+    inline CreateDomainResult& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The single-sign on configuration of the Amazon DataZone domain.</p>
      */
     inline const SingleSignOn& GetSingleSignOn() const{ return m_singleSignOn; }
@@ -201,6 +226,8 @@ namespace Model
 
     Aws::String m_domainExecutionRole;
 
+    DomainVersion m_domainVersion;
+
     Aws::String m_id;
 
     Aws::String m_kmsKeyIdentifier;
@@ -210,6 +237,8 @@ namespace Model
     Aws::String m_portalUrl;
 
     Aws::String m_rootDomainUnitId;
+
+    Aws::String m_serviceRole;
 
     SingleSignOn m_singleSignOn;
 

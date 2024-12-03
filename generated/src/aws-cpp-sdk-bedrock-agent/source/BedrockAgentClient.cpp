@@ -21,6 +21,7 @@
 #include <aws/bedrock-agent/BedrockAgentClient.h>
 #include <aws/bedrock-agent/BedrockAgentErrorMarshaller.h>
 #include <aws/bedrock-agent/BedrockAgentEndpointProvider.h>
+#include <aws/bedrock-agent/model/AssociateAgentCollaboratorRequest.h>
 #include <aws/bedrock-agent/model/AssociateAgentKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/CreateAgentRequest.h>
 #include <aws/bedrock-agent/model/CreateAgentActionGroupRequest.h>
@@ -43,10 +44,12 @@
 #include <aws/bedrock-agent/model/DeleteKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/DeleteKnowledgeBaseDocumentsRequest.h>
 #include <aws/bedrock-agent/model/DeletePromptRequest.h>
+#include <aws/bedrock-agent/model/DisassociateAgentCollaboratorRequest.h>
 #include <aws/bedrock-agent/model/DisassociateAgentKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/GetAgentRequest.h>
 #include <aws/bedrock-agent/model/GetAgentActionGroupRequest.h>
 #include <aws/bedrock-agent/model/GetAgentAliasRequest.h>
+#include <aws/bedrock-agent/model/GetAgentCollaboratorRequest.h>
 #include <aws/bedrock-agent/model/GetAgentKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/GetAgentVersionRequest.h>
 #include <aws/bedrock-agent/model/GetDataSourceRequest.h>
@@ -60,6 +63,7 @@
 #include <aws/bedrock-agent/model/IngestKnowledgeBaseDocumentsRequest.h>
 #include <aws/bedrock-agent/model/ListAgentActionGroupsRequest.h>
 #include <aws/bedrock-agent/model/ListAgentAliasesRequest.h>
+#include <aws/bedrock-agent/model/ListAgentCollaboratorsRequest.h>
 #include <aws/bedrock-agent/model/ListAgentKnowledgeBasesRequest.h>
 #include <aws/bedrock-agent/model/ListAgentVersionsRequest.h>
 #include <aws/bedrock-agent/model/ListAgentsRequest.h>
@@ -81,6 +85,7 @@
 #include <aws/bedrock-agent/model/UpdateAgentRequest.h>
 #include <aws/bedrock-agent/model/UpdateAgentActionGroupRequest.h>
 #include <aws/bedrock-agent/model/UpdateAgentAliasRequest.h>
+#include <aws/bedrock-agent/model/UpdateAgentCollaboratorRequest.h>
 #include <aws/bedrock-agent/model/UpdateAgentKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/UpdateDataSourceRequest.h>
 #include <aws/bedrock-agent/model/UpdateFlowRequest.h>
@@ -229,6 +234,47 @@ void BedrockAgentClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+AssociateAgentCollaboratorOutcome BedrockAgentClient::AssociateAgentCollaborator(const AssociateAgentCollaboratorRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateAgentCollaborator);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateAgentCollaborator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateAgentCollaborator", "Required field: AgentId, is not set");
+    return AssociateAgentCollaboratorOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  if (!request.AgentVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateAgentCollaborator", "Required field: AgentVersion, is not set");
+    return AssociateAgentCollaboratorOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentVersion]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, AssociateAgentCollaborator, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, AssociateAgentCollaborator, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".AssociateAgentCollaborator",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<AssociateAgentCollaboratorOutcome>(
+    [&]()-> AssociateAgentCollaboratorOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateAgentCollaborator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agents/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agentversions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentVersion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agentcollaborators/");
+      return AssociateAgentCollaboratorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 AssociateAgentKnowledgeBaseOutcome BedrockAgentClient::AssociateAgentKnowledgeBase(const AssociateAgentKnowledgeBaseRequest& request) const
@@ -1011,6 +1057,53 @@ DeletePromptOutcome BedrockAgentClient::DeletePrompt(const DeletePromptRequest& 
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DisassociateAgentCollaboratorOutcome BedrockAgentClient::DisassociateAgentCollaborator(const DisassociateAgentCollaboratorRequest& request) const
+{
+  AWS_OPERATION_GUARD(DisassociateAgentCollaborator);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateAgentCollaborator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateAgentCollaborator", "Required field: AgentId, is not set");
+    return DisassociateAgentCollaboratorOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  if (!request.AgentVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateAgentCollaborator", "Required field: AgentVersion, is not set");
+    return DisassociateAgentCollaboratorOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentVersion]", false));
+  }
+  if (!request.CollaboratorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateAgentCollaborator", "Required field: CollaboratorId, is not set");
+    return DisassociateAgentCollaboratorOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollaboratorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DisassociateAgentCollaborator, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DisassociateAgentCollaborator, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DisassociateAgentCollaborator",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DisassociateAgentCollaboratorOutcome>(
+    [&]()-> DisassociateAgentCollaboratorOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateAgentCollaborator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agents/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agentversions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentVersion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agentcollaborators/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaboratorId());
+      return DisassociateAgentCollaboratorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DisassociateAgentKnowledgeBaseOutcome BedrockAgentClient::DisassociateAgentKnowledgeBase(const DisassociateAgentKnowledgeBaseRequest& request) const
 {
   AWS_OPERATION_GUARD(DisassociateAgentKnowledgeBase);
@@ -1172,6 +1265,53 @@ GetAgentAliasOutcome BedrockAgentClient::GetAgentAlias(const GetAgentAliasReques
       endpointResolutionOutcome.GetResult().AddPathSegments("/agentaliases/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentAliasId());
       return GetAgentAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetAgentCollaboratorOutcome BedrockAgentClient::GetAgentCollaborator(const GetAgentCollaboratorRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetAgentCollaborator);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAgentCollaborator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAgentCollaborator", "Required field: AgentId, is not set");
+    return GetAgentCollaboratorOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  if (!request.AgentVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAgentCollaborator", "Required field: AgentVersion, is not set");
+    return GetAgentCollaboratorOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentVersion]", false));
+  }
+  if (!request.CollaboratorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAgentCollaborator", "Required field: CollaboratorId, is not set");
+    return GetAgentCollaboratorOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollaboratorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetAgentCollaborator, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetAgentCollaborator, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetAgentCollaborator",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetAgentCollaboratorOutcome>(
+    [&]()-> GetAgentCollaboratorOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAgentCollaborator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agents/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agentversions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentVersion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agentcollaborators/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaboratorId());
+      return GetAgentCollaboratorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1682,6 +1822,47 @@ ListAgentAliasesOutcome BedrockAgentClient::ListAgentAliases(const ListAgentAlia
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/agentaliases/");
       return ListAgentAliasesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListAgentCollaboratorsOutcome BedrockAgentClient::ListAgentCollaborators(const ListAgentCollaboratorsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListAgentCollaborators);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAgentCollaborators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAgentCollaborators", "Required field: AgentId, is not set");
+    return ListAgentCollaboratorsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  if (!request.AgentVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAgentCollaborators", "Required field: AgentVersion, is not set");
+    return ListAgentCollaboratorsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentVersion]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAgentCollaborators, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListAgentCollaborators, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAgentCollaborators",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListAgentCollaboratorsOutcome>(
+    [&]()-> ListAgentCollaboratorsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAgentCollaborators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agents/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agentversions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentVersion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agentcollaborators/");
+      return ListAgentCollaboratorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2428,6 +2609,53 @@ UpdateAgentAliasOutcome BedrockAgentClient::UpdateAgentAlias(const UpdateAgentAl
       endpointResolutionOutcome.GetResult().AddPathSegments("/agentaliases/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentAliasId());
       return UpdateAgentAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateAgentCollaboratorOutcome BedrockAgentClient::UpdateAgentCollaborator(const UpdateAgentCollaboratorRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateAgentCollaborator);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAgentCollaborator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAgentCollaborator", "Required field: AgentId, is not set");
+    return UpdateAgentCollaboratorOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
+  }
+  if (!request.AgentVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAgentCollaborator", "Required field: AgentVersion, is not set");
+    return UpdateAgentCollaboratorOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentVersion]", false));
+  }
+  if (!request.CollaboratorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAgentCollaborator", "Required field: CollaboratorId, is not set");
+    return UpdateAgentCollaboratorOutcome(Aws::Client::AWSError<BedrockAgentErrors>(BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollaboratorId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateAgentCollaborator, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateAgentCollaborator, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateAgentCollaborator",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateAgentCollaboratorOutcome>(
+    [&]()-> UpdateAgentCollaboratorOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAgentCollaborator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agents/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agentversions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAgentVersion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/agentcollaborators/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaboratorId());
+      return UpdateAgentCollaboratorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

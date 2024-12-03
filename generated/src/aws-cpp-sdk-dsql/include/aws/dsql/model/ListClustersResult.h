@@ -35,7 +35,11 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>If nextToken is returned, there are more results available. The value of
+     * nextToken is a unique pagination token for each page. To retrieve the next page,
+     * make the call again using the returned token.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
@@ -46,7 +50,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>An array of the returned clusters.</p>
+     */
     inline const Aws::Vector<ClusterSummary>& GetClusters() const{ return m_clusters; }
     inline void SetClusters(const Aws::Vector<ClusterSummary>& value) { m_clusters = value; }
     inline void SetClusters(Aws::Vector<ClusterSummary>&& value) { m_clusters = std::move(value); }

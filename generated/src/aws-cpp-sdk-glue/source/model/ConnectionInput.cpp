@@ -25,11 +25,14 @@ ConnectionInput::ConnectionInput() :
     m_connectionTypeHasBeenSet(false),
     m_matchCriteriaHasBeenSet(false),
     m_connectionPropertiesHasBeenSet(false),
+    m_sparkPropertiesHasBeenSet(false),
     m_athenaPropertiesHasBeenSet(false),
+    m_pythonPropertiesHasBeenSet(false),
     m_physicalConnectionRequirementsHasBeenSet(false),
     m_authenticationConfigurationHasBeenSet(false),
     m_validateCredentials(false),
-    m_validateCredentialsHasBeenSet(false)
+    m_validateCredentialsHasBeenSet(false),
+    m_validateForComputeEnvironmentsHasBeenSet(false)
 {
 }
 
@@ -82,6 +85,16 @@ ConnectionInput& ConnectionInput::operator =(JsonView jsonValue)
     m_connectionPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SparkProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> sparkPropertiesJsonMap = jsonValue.GetObject("SparkProperties").GetAllObjects();
+    for(auto& sparkPropertiesItem : sparkPropertiesJsonMap)
+    {
+      m_sparkProperties[sparkPropertiesItem.first] = sparkPropertiesItem.second.AsString();
+    }
+    m_sparkPropertiesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AthenaProperties"))
   {
     Aws::Map<Aws::String, JsonView> athenaPropertiesJsonMap = jsonValue.GetObject("AthenaProperties").GetAllObjects();
@@ -90,6 +103,16 @@ ConnectionInput& ConnectionInput::operator =(JsonView jsonValue)
       m_athenaProperties[athenaPropertiesItem.first] = athenaPropertiesItem.second.AsString();
     }
     m_athenaPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PythonProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> pythonPropertiesJsonMap = jsonValue.GetObject("PythonProperties").GetAllObjects();
+    for(auto& pythonPropertiesItem : pythonPropertiesJsonMap)
+    {
+      m_pythonProperties[pythonPropertiesItem.first] = pythonPropertiesItem.second.AsString();
+    }
+    m_pythonPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PhysicalConnectionRequirements"))
@@ -111,6 +134,16 @@ ConnectionInput& ConnectionInput::operator =(JsonView jsonValue)
     m_validateCredentials = jsonValue.GetBool("ValidateCredentials");
 
     m_validateCredentialsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ValidateForComputeEnvironments"))
+  {
+    Aws::Utils::Array<JsonView> validateForComputeEnvironmentsJsonList = jsonValue.GetArray("ValidateForComputeEnvironments");
+    for(unsigned validateForComputeEnvironmentsIndex = 0; validateForComputeEnvironmentsIndex < validateForComputeEnvironmentsJsonList.GetLength(); ++validateForComputeEnvironmentsIndex)
+    {
+      m_validateForComputeEnvironments.push_back(ComputeEnvironmentMapper::GetComputeEnvironmentForName(validateForComputeEnvironmentsJsonList[validateForComputeEnvironmentsIndex].AsString()));
+    }
+    m_validateForComputeEnvironmentsHasBeenSet = true;
   }
 
   return *this;
@@ -159,6 +192,17 @@ JsonValue ConnectionInput::Jsonize() const
 
   }
 
+  if(m_sparkPropertiesHasBeenSet)
+  {
+   JsonValue sparkPropertiesJsonMap;
+   for(auto& sparkPropertiesItem : m_sparkProperties)
+   {
+     sparkPropertiesJsonMap.WithString(sparkPropertiesItem.first, sparkPropertiesItem.second);
+   }
+   payload.WithObject("SparkProperties", std::move(sparkPropertiesJsonMap));
+
+  }
+
   if(m_athenaPropertiesHasBeenSet)
   {
    JsonValue athenaPropertiesJsonMap;
@@ -167,6 +211,17 @@ JsonValue ConnectionInput::Jsonize() const
      athenaPropertiesJsonMap.WithString(athenaPropertiesItem.first, athenaPropertiesItem.second);
    }
    payload.WithObject("AthenaProperties", std::move(athenaPropertiesJsonMap));
+
+  }
+
+  if(m_pythonPropertiesHasBeenSet)
+  {
+   JsonValue pythonPropertiesJsonMap;
+   for(auto& pythonPropertiesItem : m_pythonProperties)
+   {
+     pythonPropertiesJsonMap.WithString(pythonPropertiesItem.first, pythonPropertiesItem.second);
+   }
+   payload.WithObject("PythonProperties", std::move(pythonPropertiesJsonMap));
 
   }
 
@@ -185,6 +240,17 @@ JsonValue ConnectionInput::Jsonize() const
   if(m_validateCredentialsHasBeenSet)
   {
    payload.WithBool("ValidateCredentials", m_validateCredentials);
+
+  }
+
+  if(m_validateForComputeEnvironmentsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> validateForComputeEnvironmentsJsonList(m_validateForComputeEnvironments.size());
+   for(unsigned validateForComputeEnvironmentsIndex = 0; validateForComputeEnvironmentsIndex < validateForComputeEnvironmentsJsonList.GetLength(); ++validateForComputeEnvironmentsIndex)
+   {
+     validateForComputeEnvironmentsJsonList[validateForComputeEnvironmentsIndex].AsString(ComputeEnvironmentMapper::GetNameForComputeEnvironment(m_validateForComputeEnvironments[validateForComputeEnvironmentsIndex]));
+   }
+   payload.WithArray("ValidateForComputeEnvironments", std::move(validateForComputeEnvironmentsJsonList));
 
   }
 

@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A field that caused the error</p><p><h3>See Also:</h3>   <a
+   * <p>Stores information about a field passed inside a request that resulted in an
+   * validation error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ValidationExceptionField">AWS
    * API Reference</a></p>
    */
@@ -39,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The field name</p>
+     * <p>The name of the field.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -53,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Message describing why the field failed validation</p>
+     * <p>A message describing why this field failed validation.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }

@@ -41,7 +41,10 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The ARNs of the clusters linked to the cluster you want to delete. also
+     * deletes these clusters as part of the operation.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetLinkedClusterArns() const{ return m_linkedClusterArns; }
     inline bool LinkedClusterArnsHasBeenSet() const { return m_linkedClusterArnsHasBeenSet; }
     inline void SetLinkedClusterArns(const Aws::Vector<Aws::String>& value) { m_linkedClusterArnsHasBeenSet = true; m_linkedClusterArns = value; }
@@ -54,7 +57,15 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. Idempotency ensures that an API request completes
+     * only once. With an idempotent request, if the original request completes
+     * successfully. The subsequent retries with the same client token return the
+     * result from the original successful request and they have no additional
+     * effect.</p> <p>If you don't specify a client token, the Amazon Web Services SDK
+     * automatically generates one.</p>
+     */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }

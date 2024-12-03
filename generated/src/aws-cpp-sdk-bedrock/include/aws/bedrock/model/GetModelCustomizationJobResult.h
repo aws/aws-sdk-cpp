@@ -16,6 +16,7 @@
 #include <aws/bedrock/model/TrainingMetrics.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/bedrock/model/VpcConfig.h>
+#include <aws/bedrock/model/CustomizationConfig.h>
 #include <aws/bedrock/model/ValidatorMetric.h>
 #include <utility>
 
@@ -309,6 +310,17 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The customization configuration for the model customization job.</p>
+     */
+    inline const CustomizationConfig& GetCustomizationConfig() const{ return m_customizationConfig; }
+    inline void SetCustomizationConfig(const CustomizationConfig& value) { m_customizationConfig = value; }
+    inline void SetCustomizationConfig(CustomizationConfig&& value) { m_customizationConfig = std::move(value); }
+    inline GetModelCustomizationJobResult& WithCustomizationConfig(const CustomizationConfig& value) { SetCustomizationConfig(value); return *this;}
+    inline GetModelCustomizationJobResult& WithCustomizationConfig(CustomizationConfig&& value) { SetCustomizationConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -361,6 +373,8 @@ namespace Model
     Aws::Vector<ValidatorMetric> m_validationMetrics;
 
     VpcConfig m_vpcConfig;
+
+    CustomizationConfig m_customizationConfig;
 
     Aws::String m_requestId;
   };

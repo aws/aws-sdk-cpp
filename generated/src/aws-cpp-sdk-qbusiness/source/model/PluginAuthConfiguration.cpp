@@ -21,7 +21,8 @@ namespace Model
 PluginAuthConfiguration::PluginAuthConfiguration() : 
     m_basicAuthConfigurationHasBeenSet(false),
     m_oAuth2ClientCredentialConfigurationHasBeenSet(false),
-    m_noAuthConfigurationHasBeenSet(false)
+    m_noAuthConfigurationHasBeenSet(false),
+    m_idcAuthConfigurationHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,13 @@ PluginAuthConfiguration& PluginAuthConfiguration::operator =(JsonView jsonValue)
     m_noAuthConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("idcAuthConfiguration"))
+  {
+    m_idcAuthConfiguration = jsonValue.GetObject("idcAuthConfiguration");
+
+    m_idcAuthConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +84,12 @@ JsonValue PluginAuthConfiguration::Jsonize() const
   if(m_noAuthConfigurationHasBeenSet)
   {
    payload.WithObject("noAuthConfiguration", m_noAuthConfiguration.Jsonize());
+
+  }
+
+  if(m_idcAuthConfigurationHasBeenSet)
+  {
+   payload.WithObject("idcAuthConfiguration", m_idcAuthConfiguration.Jsonize());
 
   }
 

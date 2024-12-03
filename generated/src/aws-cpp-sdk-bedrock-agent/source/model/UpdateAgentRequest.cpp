@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateAgentRequest::UpdateAgentRequest() : 
+    m_agentCollaboration(AgentCollaboration::NOT_SET),
+    m_agentCollaborationHasBeenSet(false),
     m_agentIdHasBeenSet(false),
     m_agentNameHasBeenSet(false),
     m_agentResourceRoleArnHasBeenSet(false),
@@ -34,6 +36,11 @@ UpdateAgentRequest::UpdateAgentRequest() :
 Aws::String UpdateAgentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_agentCollaborationHasBeenSet)
+  {
+   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
+  }
 
   if(m_agentNameHasBeenSet)
   {

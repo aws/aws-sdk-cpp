@@ -68,6 +68,12 @@ GetDataSourceRunResult& GetDataSourceRunResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("lineageSummary"))
+  {
+    m_lineageSummary = jsonValue.GetObject("lineageSummary");
+
+  }
+
   if(jsonValue.ValueExists("projectId"))
   {
     m_projectId = jsonValue.GetString("projectId");

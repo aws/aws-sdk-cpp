@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 UpdateProjectRequest::UpdateProjectRequest() : 
     m_descriptionHasBeenSet(false),
     m_domainIdentifierHasBeenSet(false),
+    m_environmentDeploymentDetailsHasBeenSet(false),
     m_glossaryTermsHasBeenSet(false),
     m_identifierHasBeenSet(false),
     m_nameHasBeenSet(false)
@@ -28,6 +29,12 @@ Aws::String UpdateProjectRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_environmentDeploymentDetailsHasBeenSet)
+  {
+   payload.WithObject("environmentDeploymentDetails", m_environmentDeploymentDetails.Jsonize());
 
   }
 

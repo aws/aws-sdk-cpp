@@ -28,7 +28,19 @@ PostLineageEventResult::PostLineageEventResult(const Aws::AmazonWebServiceResult
 
 PostLineageEventResult& PostLineageEventResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("domainId"))
+  {
+    m_domainId = jsonValue.GetString("domainId");
+
+  }
+
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

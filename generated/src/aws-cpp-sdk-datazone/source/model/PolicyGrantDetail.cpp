@@ -23,10 +23,12 @@ PolicyGrantDetail::PolicyGrantDetail() :
     m_createAssetTypeHasBeenSet(false),
     m_createDomainUnitHasBeenSet(false),
     m_createEnvironmentHasBeenSet(false),
+    m_createEnvironmentFromBlueprintHasBeenSet(false),
     m_createEnvironmentProfileHasBeenSet(false),
     m_createFormTypeHasBeenSet(false),
     m_createGlossaryHasBeenSet(false),
     m_createProjectHasBeenSet(false),
+    m_createProjectFromProjectProfileHasBeenSet(false),
     m_delegateCreateEnvironmentProfileHasBeenSet(false),
     m_overrideDomainUnitOwnersHasBeenSet(false),
     m_overrideProjectOwnersHasBeenSet(false)
@@ -69,6 +71,13 @@ PolicyGrantDetail& PolicyGrantDetail::operator =(JsonView jsonValue)
     m_createEnvironmentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("createEnvironmentFromBlueprint"))
+  {
+    m_createEnvironmentFromBlueprint = jsonValue.GetObject("createEnvironmentFromBlueprint");
+
+    m_createEnvironmentFromBlueprintHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createEnvironmentProfile"))
   {
     m_createEnvironmentProfile = jsonValue.GetObject("createEnvironmentProfile");
@@ -95,6 +104,13 @@ PolicyGrantDetail& PolicyGrantDetail::operator =(JsonView jsonValue)
     m_createProject = jsonValue.GetObject("createProject");
 
     m_createProjectHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createProjectFromProjectProfile"))
+  {
+    m_createProjectFromProjectProfile = jsonValue.GetObject("createProjectFromProjectProfile");
+
+    m_createProjectFromProjectProfileHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("delegateCreateEnvironmentProfile"))
@@ -149,6 +165,12 @@ JsonValue PolicyGrantDetail::Jsonize() const
 
   }
 
+  if(m_createEnvironmentFromBlueprintHasBeenSet)
+  {
+   payload.WithObject("createEnvironmentFromBlueprint", m_createEnvironmentFromBlueprint.Jsonize());
+
+  }
+
   if(m_createEnvironmentProfileHasBeenSet)
   {
    payload.WithObject("createEnvironmentProfile", m_createEnvironmentProfile.Jsonize());
@@ -170,6 +192,12 @@ JsonValue PolicyGrantDetail::Jsonize() const
   if(m_createProjectHasBeenSet)
   {
    payload.WithObject("createProject", m_createProject.Jsonize());
+
+  }
+
+  if(m_createProjectFromProjectProfileHasBeenSet)
+  {
+   payload.WithObject("createProjectFromProjectProfile", m_createProjectFromProjectProfile.Jsonize());
 
   }
 

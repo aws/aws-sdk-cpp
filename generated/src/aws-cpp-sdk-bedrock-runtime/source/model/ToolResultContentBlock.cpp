@@ -22,7 +22,8 @@ ToolResultContentBlock::ToolResultContentBlock() :
     m_jsonHasBeenSet(false),
     m_textHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_documentHasBeenSet(false)
+    m_documentHasBeenSet(false),
+    m_videoHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,13 @@ ToolResultContentBlock& ToolResultContentBlock::operator =(JsonView jsonValue)
     m_documentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("video"))
+  {
+    m_video = jsonValue.GetObject("video");
+
+    m_videoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +100,12 @@ JsonValue ToolResultContentBlock::Jsonize() const
   if(m_documentHasBeenSet)
   {
    payload.WithObject("document", m_document.Jsonize());
+
+  }
+
+  if(m_videoHasBeenSet)
+  {
+   payload.WithObject("video", m_video.Jsonize());
 
   }
 

@@ -17,7 +17,9 @@ CreateProjectRequest::CreateProjectRequest() :
     m_domainIdentifierHasBeenSet(false),
     m_domainUnitIdHasBeenSet(false),
     m_glossaryTermsHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_projectProfileIdHasBeenSet(false),
+    m_userParametersHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,23 @@ Aws::String CreateProjectRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_projectProfileIdHasBeenSet)
+  {
+   payload.WithString("projectProfileId", m_projectProfileId);
+
+  }
+
+  if(m_userParametersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> userParametersJsonList(m_userParameters.size());
+   for(unsigned userParametersIndex = 0; userParametersIndex < userParametersJsonList.GetLength(); ++userParametersIndex)
+   {
+     userParametersJsonList[userParametersIndex].AsObject(m_userParameters[userParametersIndex].Jsonize());
+   }
+   payload.WithArray("userParameters", std::move(userParametersJsonList));
 
   }
 

@@ -72,6 +72,34 @@ namespace Model
 
     ///@{
     /**
+     * <p>The agent's ID.</p>
+     */
+    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
+    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
+    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
+    inline FunctionInvocationInput& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
+    inline FunctionInvocationInput& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
+    inline FunctionInvocationInput& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The collaborator's name.</p>
+     */
+    inline const Aws::String& GetCollaboratorName() const{ return m_collaboratorName; }
+    inline bool CollaboratorNameHasBeenSet() const { return m_collaboratorNameHasBeenSet; }
+    inline void SetCollaboratorName(const Aws::String& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = value; }
+    inline void SetCollaboratorName(Aws::String&& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = std::move(value); }
+    inline void SetCollaboratorName(const char* value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName.assign(value); }
+    inline FunctionInvocationInput& WithCollaboratorName(const Aws::String& value) { SetCollaboratorName(value); return *this;}
+    inline FunctionInvocationInput& WithCollaboratorName(Aws::String&& value) { SetCollaboratorName(std::move(value)); return *this;}
+    inline FunctionInvocationInput& WithCollaboratorName(const char* value) { SetCollaboratorName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The name of the function.</p>
      */
     inline const Aws::String& GetFunction() const{ return m_function; }
@@ -104,6 +132,12 @@ namespace Model
 
     ActionInvocationType m_actionInvocationType;
     bool m_actionInvocationTypeHasBeenSet = false;
+
+    Aws::String m_agentId;
+    bool m_agentIdHasBeenSet = false;
+
+    Aws::String m_collaboratorName;
+    bool m_collaboratorNameHasBeenSet = false;
 
     Aws::String m_function;
     bool m_functionHasBeenSet = false;

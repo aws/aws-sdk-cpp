@@ -164,6 +164,12 @@ GetModelCustomizationJobResult& GetModelCustomizationJobResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("customizationConfig"))
+  {
+    m_customizationConfig = jsonValue.GetObject("customizationConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

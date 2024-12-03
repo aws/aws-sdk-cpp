@@ -53,6 +53,7 @@
 #include <aws/redshift/model/DeleteEndpointAccessResult.h>
 #include <aws/redshift/model/DeleteIntegrationResult.h>
 #include <aws/redshift/model/DeletePartnerResult.h>
+#include <aws/redshift/model/DeregisterNamespaceResult.h>
 #include <aws/redshift/model/DescribeAccountAttributesResult.h>
 #include <aws/redshift/model/DescribeAuthenticationProfilesResult.h>
 #include <aws/redshift/model/DescribeClusterDbRevisionsResult.h>
@@ -128,6 +129,7 @@
 #include <aws/redshift/model/PurchaseReservedNodeOfferingResult.h>
 #include <aws/redshift/model/PutResourcePolicyResult.h>
 #include <aws/redshift/model/RebootClusterResult.h>
+#include <aws/redshift/model/RegisterNamespaceResult.h>
 #include <aws/redshift/model/RejectDataShareResult.h>
 #include <aws/redshift/model/ResetClusterParameterGroupResult.h>
 #include <aws/redshift/model/ResizeClusterResult.h>
@@ -269,6 +271,7 @@ namespace Aws
       class DeleteSnapshotScheduleRequest;
       class DeleteTagsRequest;
       class DeleteUsageLimitRequest;
+      class DeregisterNamespaceRequest;
       class DescribeAccountAttributesRequest;
       class DescribeAuthenticationProfilesRequest;
       class DescribeClusterDbRevisionsRequest;
@@ -345,6 +348,7 @@ namespace Aws
       class PurchaseReservedNodeOfferingRequest;
       class PutResourcePolicyRequest;
       class RebootClusterRequest;
+      class RegisterNamespaceRequest;
       class RejectDataShareRequest;
       class ResetClusterParameterGroupRequest;
       class ResizeClusterRequest;
@@ -409,6 +413,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteSnapshotScheduleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteTagsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteUsageLimitOutcome;
+      typedef Aws::Utils::Outcome<DeregisterNamespaceResult, RedshiftError> DeregisterNamespaceOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, RedshiftError> DescribeAccountAttributesOutcome;
       typedef Aws::Utils::Outcome<DescribeAuthenticationProfilesResult, RedshiftError> DescribeAuthenticationProfilesOutcome;
       typedef Aws::Utils::Outcome<DescribeClusterDbRevisionsResult, RedshiftError> DescribeClusterDbRevisionsOutcome;
@@ -485,6 +490,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PurchaseReservedNodeOfferingResult, RedshiftError> PurchaseReservedNodeOfferingOutcome;
       typedef Aws::Utils::Outcome<PutResourcePolicyResult, RedshiftError> PutResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<RebootClusterResult, RedshiftError> RebootClusterOutcome;
+      typedef Aws::Utils::Outcome<RegisterNamespaceResult, RedshiftError> RegisterNamespaceOutcome;
       typedef Aws::Utils::Outcome<RejectDataShareResult, RedshiftError> RejectDataShareOutcome;
       typedef Aws::Utils::Outcome<ResetClusterParameterGroupResult, RedshiftError> ResetClusterParameterGroupOutcome;
       typedef Aws::Utils::Outcome<ResizeClusterResult, RedshiftError> ResizeClusterOutcome;
@@ -549,6 +555,7 @@ namespace Aws
       typedef std::future<DeleteSnapshotScheduleOutcome> DeleteSnapshotScheduleOutcomeCallable;
       typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
       typedef std::future<DeleteUsageLimitOutcome> DeleteUsageLimitOutcomeCallable;
+      typedef std::future<DeregisterNamespaceOutcome> DeregisterNamespaceOutcomeCallable;
       typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
       typedef std::future<DescribeAuthenticationProfilesOutcome> DescribeAuthenticationProfilesOutcomeCallable;
       typedef std::future<DescribeClusterDbRevisionsOutcome> DescribeClusterDbRevisionsOutcomeCallable;
@@ -625,6 +632,7 @@ namespace Aws
       typedef std::future<PurchaseReservedNodeOfferingOutcome> PurchaseReservedNodeOfferingOutcomeCallable;
       typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
       typedef std::future<RebootClusterOutcome> RebootClusterOutcomeCallable;
+      typedef std::future<RegisterNamespaceOutcome> RegisterNamespaceOutcomeCallable;
       typedef std::future<RejectDataShareOutcome> RejectDataShareOutcomeCallable;
       typedef std::future<ResetClusterParameterGroupOutcome> ResetClusterParameterGroupOutcomeCallable;
       typedef std::future<ResizeClusterOutcome> ResizeClusterOutcomeCallable;
@@ -692,6 +700,7 @@ namespace Aws
     typedef std::function<void(const RedshiftClient*, const Model::DeleteSnapshotScheduleRequest&, const Model::DeleteSnapshotScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotScheduleResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteUsageLimitRequest&, const Model::DeleteUsageLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUsageLimitResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DeregisterNamespaceRequest&, const Model::DeregisterNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterNamespaceResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAttributesResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeAuthenticationProfilesRequest&, const Model::DescribeAuthenticationProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAuthenticationProfilesResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeClusterDbRevisionsRequest&, const Model::DescribeClusterDbRevisionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterDbRevisionsResponseReceivedHandler;
@@ -768,6 +777,7 @@ namespace Aws
     typedef std::function<void(const RedshiftClient*, const Model::PurchaseReservedNodeOfferingRequest&, const Model::PurchaseReservedNodeOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedNodeOfferingResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RebootClusterRequest&, const Model::RebootClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootClusterResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::RegisterNamespaceRequest&, const Model::RegisterNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterNamespaceResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RejectDataShareRequest&, const Model::RejectDataShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectDataShareResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ResetClusterParameterGroupRequest&, const Model::ResetClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ResizeClusterRequest&, const Model::ResizeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResizeClusterResponseReceivedHandler;

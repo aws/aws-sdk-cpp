@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Cluster Summary</p><p><h3>See Also:</h3>   <a
+   * <p>A summary of the properties of a cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ClusterSummary">AWS
    * API Reference</a></p>
    */
@@ -38,7 +38,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The ID of the cluster.</p>
+     */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
@@ -50,7 +52,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The ARN of the cluster.</p>
+     */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }

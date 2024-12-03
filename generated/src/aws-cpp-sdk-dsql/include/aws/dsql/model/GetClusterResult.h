@@ -41,7 +41,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The ID of the retrieved cluster.</p>
+     */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline void SetIdentifier(const Aws::String& value) { m_identifier = value; }
     inline void SetIdentifier(Aws::String&& value) { m_identifier = std::move(value); }
@@ -52,7 +54,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The ARN of the retrieved cluster.</p>
+     */
     inline const Aws::String& GetArn() const{ return m_arn; }
     inline void SetArn(const Aws::String& value) { m_arn = value; }
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
@@ -63,7 +67,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The status of the retrieved cluster.</p>
+     */
     inline const ClusterStatus& GetStatus() const{ return m_status; }
     inline void SetStatus(const ClusterStatus& value) { m_status = value; }
     inline void SetStatus(ClusterStatus&& value) { m_status = std::move(value); }
@@ -72,7 +78,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The time of when the cluster was created.</p>
+     */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
@@ -81,14 +89,19 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Whether deletion protection is enabled in this cluster.</p>
+     */
     inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
     inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabled = value; }
     inline GetClusterResult& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The witness Region of the cluster. Applicable only for multi-Region
+     * clusters.</p>
+     */
     inline const Aws::String& GetWitnessRegion() const{ return m_witnessRegion; }
     inline void SetWitnessRegion(const Aws::String& value) { m_witnessRegion = value; }
     inline void SetWitnessRegion(Aws::String&& value) { m_witnessRegion = std::move(value); }
@@ -99,7 +112,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The ARNs of the clusters linked to the retrieved cluster.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetLinkedClusterArns() const{ return m_linkedClusterArns; }
     inline void SetLinkedClusterArns(const Aws::Vector<Aws::String>& value) { m_linkedClusterArns = value; }
     inline void SetLinkedClusterArns(Aws::Vector<Aws::String>&& value) { m_linkedClusterArns = std::move(value); }

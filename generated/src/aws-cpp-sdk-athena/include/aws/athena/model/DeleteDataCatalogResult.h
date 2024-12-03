@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
+#include <aws/athena/model/DataCatalog.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -34,6 +35,15 @@ namespace Model
 
     ///@{
     
+    inline const DataCatalog& GetDataCatalog() const{ return m_dataCatalog; }
+    inline void SetDataCatalog(const DataCatalog& value) { m_dataCatalog = value; }
+    inline void SetDataCatalog(DataCatalog&& value) { m_dataCatalog = std::move(value); }
+    inline DeleteDataCatalogResult& WithDataCatalog(const DataCatalog& value) { SetDataCatalog(value); return *this;}
+    inline DeleteDataCatalogResult& WithDataCatalog(DataCatalog&& value) { SetDataCatalog(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
@@ -43,6 +53,8 @@ namespace Model
     inline DeleteDataCatalogResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
     ///@}
   private:
+
+    DataCatalog m_dataCatalog;
 
     Aws::String m_requestId;
   };

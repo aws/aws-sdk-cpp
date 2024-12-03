@@ -8,6 +8,7 @@
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/model/EnvironmentConfigurationUserParameter.h>
 #include <utility>
 
 namespace Aws
@@ -104,6 +105,34 @@ namespace Model
     inline CreateProjectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline CreateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ID of the project profile.</p>
+     */
+    inline const Aws::String& GetProjectProfileId() const{ return m_projectProfileId; }
+    inline bool ProjectProfileIdHasBeenSet() const { return m_projectProfileIdHasBeenSet; }
+    inline void SetProjectProfileId(const Aws::String& value) { m_projectProfileIdHasBeenSet = true; m_projectProfileId = value; }
+    inline void SetProjectProfileId(Aws::String&& value) { m_projectProfileIdHasBeenSet = true; m_projectProfileId = std::move(value); }
+    inline void SetProjectProfileId(const char* value) { m_projectProfileIdHasBeenSet = true; m_projectProfileId.assign(value); }
+    inline CreateProjectRequest& WithProjectProfileId(const Aws::String& value) { SetProjectProfileId(value); return *this;}
+    inline CreateProjectRequest& WithProjectProfileId(Aws::String&& value) { SetProjectProfileId(std::move(value)); return *this;}
+    inline CreateProjectRequest& WithProjectProfileId(const char* value) { SetProjectProfileId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The user parameters of the project.</p>
+     */
+    inline const Aws::Vector<EnvironmentConfigurationUserParameter>& GetUserParameters() const{ return m_userParameters; }
+    inline bool UserParametersHasBeenSet() const { return m_userParametersHasBeenSet; }
+    inline void SetUserParameters(const Aws::Vector<EnvironmentConfigurationUserParameter>& value) { m_userParametersHasBeenSet = true; m_userParameters = value; }
+    inline void SetUserParameters(Aws::Vector<EnvironmentConfigurationUserParameter>&& value) { m_userParametersHasBeenSet = true; m_userParameters = std::move(value); }
+    inline CreateProjectRequest& WithUserParameters(const Aws::Vector<EnvironmentConfigurationUserParameter>& value) { SetUserParameters(value); return *this;}
+    inline CreateProjectRequest& WithUserParameters(Aws::Vector<EnvironmentConfigurationUserParameter>&& value) { SetUserParameters(std::move(value)); return *this;}
+    inline CreateProjectRequest& AddUserParameters(const EnvironmentConfigurationUserParameter& value) { m_userParametersHasBeenSet = true; m_userParameters.push_back(value); return *this; }
+    inline CreateProjectRequest& AddUserParameters(EnvironmentConfigurationUserParameter&& value) { m_userParametersHasBeenSet = true; m_userParameters.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_description;
@@ -120,6 +149,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_projectProfileId;
+    bool m_projectProfileIdHasBeenSet = false;
+
+    Aws::Vector<EnvironmentConfigurationUserParameter> m_userParameters;
+    bool m_userParametersHasBeenSet = false;
   };
 
 } // namespace Model

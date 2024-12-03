@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-runtime/model/ImageBlock.h>
 #include <aws/bedrock-runtime/model/DocumentBlock.h>
+#include <aws/bedrock-runtime/model/VideoBlock.h>
 #include <aws/bedrock-runtime/model/ToolUseBlock.h>
 #include <aws/bedrock-runtime/model/ToolResultBlock.h>
 #include <aws/bedrock-runtime/model/GuardrailConverseContentBlock.h>
@@ -88,6 +89,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Video to include in the message. </p>
+     */
+    inline const VideoBlock& GetVideo() const{ return m_video; }
+    inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
+    inline void SetVideo(const VideoBlock& value) { m_videoHasBeenSet = true; m_video = value; }
+    inline void SetVideo(VideoBlock&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
+    inline ContentBlock& WithVideo(const VideoBlock& value) { SetVideo(value); return *this;}
+    inline ContentBlock& WithVideo(VideoBlock&& value) { SetVideo(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Information about a tool use request from a model.</p>
      */
     inline const ToolUseBlock& GetToolUse() const{ return m_toolUse; }
@@ -135,6 +148,9 @@ namespace Model
 
     DocumentBlock m_document;
     bool m_documentHasBeenSet = false;
+
+    VideoBlock m_video;
+    bool m_videoHasBeenSet = false;
 
     ToolUseBlock m_toolUse;
     bool m_toolUseHasBeenSet = false;

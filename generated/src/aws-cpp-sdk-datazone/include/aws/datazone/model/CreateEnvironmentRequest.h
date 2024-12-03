@@ -36,6 +36,16 @@ namespace Model
 
     ///@{
     /**
+     * <p>The deployment order of the environment.</p>
+     */
+    inline int GetDeploymentOrder() const{ return m_deploymentOrder; }
+    inline bool DeploymentOrderHasBeenSet() const { return m_deploymentOrderHasBeenSet; }
+    inline void SetDeploymentOrder(int value) { m_deploymentOrderHasBeenSet = true; m_deploymentOrder = value; }
+    inline CreateEnvironmentRequest& WithDeploymentOrder(int value) { SetDeploymentOrder(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The description of the Amazon DataZone environment.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -103,6 +113,20 @@ namespace Model
     inline CreateEnvironmentRequest& WithEnvironmentBlueprintIdentifier(const Aws::String& value) { SetEnvironmentBlueprintIdentifier(value); return *this;}
     inline CreateEnvironmentRequest& WithEnvironmentBlueprintIdentifier(Aws::String&& value) { SetEnvironmentBlueprintIdentifier(std::move(value)); return *this;}
     inline CreateEnvironmentRequest& WithEnvironmentBlueprintIdentifier(const char* value) { SetEnvironmentBlueprintIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The configuration ID of the environment.</p>
+     */
+    inline const Aws::String& GetEnvironmentConfigurationId() const{ return m_environmentConfigurationId; }
+    inline bool EnvironmentConfigurationIdHasBeenSet() const { return m_environmentConfigurationIdHasBeenSet; }
+    inline void SetEnvironmentConfigurationId(const Aws::String& value) { m_environmentConfigurationIdHasBeenSet = true; m_environmentConfigurationId = value; }
+    inline void SetEnvironmentConfigurationId(Aws::String&& value) { m_environmentConfigurationIdHasBeenSet = true; m_environmentConfigurationId = std::move(value); }
+    inline void SetEnvironmentConfigurationId(const char* value) { m_environmentConfigurationIdHasBeenSet = true; m_environmentConfigurationId.assign(value); }
+    inline CreateEnvironmentRequest& WithEnvironmentConfigurationId(const Aws::String& value) { SetEnvironmentConfigurationId(value); return *this;}
+    inline CreateEnvironmentRequest& WithEnvironmentConfigurationId(Aws::String&& value) { SetEnvironmentConfigurationId(std::move(value)); return *this;}
+    inline CreateEnvironmentRequest& WithEnvironmentConfigurationId(const char* value) { SetEnvironmentConfigurationId(value); return *this;}
     ///@}
 
     ///@{
@@ -179,6 +203,9 @@ namespace Model
     ///@}
   private:
 
+    int m_deploymentOrder;
+    bool m_deploymentOrderHasBeenSet = false;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
@@ -193,6 +220,9 @@ namespace Model
 
     Aws::String m_environmentBlueprintIdentifier;
     bool m_environmentBlueprintIdentifierHasBeenSet = false;
+
+    Aws::String m_environmentConfigurationId;
+    bool m_environmentConfigurationIdHasBeenSet = false;
 
     Aws::String m_environmentProfileIdentifier;
     bool m_environmentProfileIdentifierHasBeenSet = false;

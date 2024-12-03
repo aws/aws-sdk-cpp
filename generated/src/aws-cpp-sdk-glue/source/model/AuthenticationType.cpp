@@ -23,6 +23,7 @@ namespace Aws
         static const int BASIC_HASH = HashingUtils::HashString("BASIC");
         static const int OAUTH2_HASH = HashingUtils::HashString("OAUTH2");
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static const int IAM_HASH = HashingUtils::HashString("IAM");
 
 
         AuthenticationType GetAuthenticationTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == CUSTOM_HASH)
           {
             return AuthenticationType::CUSTOM;
+          }
+          else if (hashCode == IAM_HASH)
+          {
+            return AuthenticationType::IAM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "OAUTH2";
           case AuthenticationType::CUSTOM:
             return "CUSTOM";
+          case AuthenticationType::IAM:
+            return "IAM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

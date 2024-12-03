@@ -149,8 +149,10 @@ namespace Model
     ///@{
     /**
      * <p>Configuration information for the tools that the model can use when
-     * generating a response.</p>  <p>This field is only supported by Anthropic
-     * Claude 3 models.</p> 
+     * generating a response.</p> <p>For information about models that support
+     * streaming tool use, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported
+     * models and model features</a>.</p>
      */
     inline const ToolConfiguration& GetToolConfig() const{ return m_toolConfig; }
     inline bool ToolConfigHasBeenSet() const { return m_toolConfigHasBeenSet; }
@@ -243,6 +245,25 @@ namespace Model
 
     ///@{
     /**
+     * <p>Key-value pairs that you can use to filter invocation logs.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequestMetadata() const{ return m_requestMetadata; }
+    inline bool RequestMetadataHasBeenSet() const { return m_requestMetadataHasBeenSet; }
+    inline void SetRequestMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata = value; }
+    inline void SetRequestMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata = std::move(value); }
+    inline ConverseStreamRequest& WithRequestMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestMetadata(value); return *this;}
+    inline ConverseStreamRequest& WithRequestMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestMetadata(std::move(value)); return *this;}
+    inline ConverseStreamRequest& AddRequestMetadata(const Aws::String& key, const Aws::String& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, value); return *this; }
+    inline ConverseStreamRequest& AddRequestMetadata(Aws::String&& key, const Aws::String& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(std::move(key), value); return *this; }
+    inline ConverseStreamRequest& AddRequestMetadata(const Aws::String& key, Aws::String&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, std::move(value)); return *this; }
+    inline ConverseStreamRequest& AddRequestMetadata(Aws::String&& key, Aws::String&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(std::move(key), std::move(value)); return *this; }
+    inline ConverseStreamRequest& AddRequestMetadata(const char* key, Aws::String&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, std::move(value)); return *this; }
+    inline ConverseStreamRequest& AddRequestMetadata(Aws::String&& key, const char* value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(std::move(key), value); return *this; }
+    inline ConverseStreamRequest& AddRequestMetadata(const char* key, const char* value) { m_requestMetadataHasBeenSet = true; m_requestMetadata.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
      * <p>Model performance settings for the request.</p>
      */
     inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
@@ -280,6 +301,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_additionalModelResponseFieldPaths;
     bool m_additionalModelResponseFieldPathsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_requestMetadata;
+    bool m_requestMetadataHasBeenSet = false;
 
     PerformanceConfiguration m_performanceConfig;
     bool m_performanceConfigHasBeenSet = false;

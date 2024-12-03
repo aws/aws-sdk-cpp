@@ -20,6 +20,8 @@ namespace Model
 
 Agent::Agent() : 
     m_agentArnHasBeenSet(false),
+    m_agentCollaboration(AgentCollaboration::NOT_SET),
+    m_agentCollaborationHasBeenSet(false),
     m_agentIdHasBeenSet(false),
     m_agentNameHasBeenSet(false),
     m_agentResourceRoleArnHasBeenSet(false),
@@ -60,6 +62,13 @@ Agent& Agent::operator =(JsonView jsonValue)
     m_agentArn = jsonValue.GetString("agentArn");
 
     m_agentArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("agentCollaboration"))
+  {
+    m_agentCollaboration = AgentCollaborationMapper::GetAgentCollaborationForName(jsonValue.GetString("agentCollaboration"));
+
+    m_agentCollaborationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("agentId"))
@@ -226,6 +235,11 @@ JsonValue Agent::Jsonize() const
   {
    payload.WithString("agentArn", m_agentArn);
 
+  }
+
+  if(m_agentCollaborationHasBeenSet)
+  {
+   payload.WithString("agentCollaboration", AgentCollaborationMapper::GetNameForAgentCollaboration(m_agentCollaboration));
   }
 
   if(m_agentIdHasBeenSet)

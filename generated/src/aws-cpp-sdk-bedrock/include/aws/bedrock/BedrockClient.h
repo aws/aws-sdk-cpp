@@ -148,8 +148,8 @@ namespace Bedrock
          * configure the messages to be returned to the user if a user input or model
          * response is in violation of the policies defined in the guardrail.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Guardrails
-         * for Amazon Bedrock</a> in the <i>Amazon Bedrock User Guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Amazon
+         * Bedrock Guardrails</a> in the <i>Amazon Bedrock User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrail">AWS
          * API Reference</a></p>
@@ -822,8 +822,8 @@ namespace Bedrock
 
         /**
          * <p>Gets details about a batch inference job. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
-         * details about a batch inference job</a> </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor">Monitor
+         * batch inference jobs</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelInvocationJob">AWS
          * API Reference</a></p>
          */
@@ -1173,7 +1173,7 @@ namespace Bedrock
 
         /**
          * <p>Lists all batch inference jobs in the account. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-view.html">View
          * details about a batch inference job</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelInvocationJobs">AWS
          * API Reference</a></p>
@@ -1342,7 +1342,7 @@ namespace Bedrock
         /**
          * <p>Stops a batch inference job. You're only charged for tokens that were already
          * processed. For more information, see <a
-         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-stop">Stop
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-stop.html">Stop
          * a batch inference job</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopModelInvocationJob">AWS
          * API Reference</a></p>

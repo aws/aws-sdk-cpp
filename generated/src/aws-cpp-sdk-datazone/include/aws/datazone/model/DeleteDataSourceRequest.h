@@ -8,7 +8,6 @@
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
-#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -38,21 +37,6 @@ namespace Model
 
     AWS_DATAZONE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-
-    ///@{
-    /**
-     * <p>A unique, case-sensitive identifier that is provided to ensure the
-     * idempotency of the request.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteDataSourceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteDataSourceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteDataSourceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-    ///@}
 
     ///@{
     /**
@@ -93,9 +77,6 @@ namespace Model
     inline DeleteDataSourceRequest& WithRetainPermissionsOnRevokeFailure(bool value) { SetRetainPermissionsOnRevokeFailure(value); return *this;}
     ///@}
   private:
-
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;

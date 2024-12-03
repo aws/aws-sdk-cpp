@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Linked Cluster Properties</p><p><h3>See Also:</h3>   <a
+   * <p>Properties of linked clusters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/LinkedClusterProperties">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>Whether deletion protection is enabled.</p>
+     */
     inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
     inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
     inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
@@ -47,7 +49,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>A map of key and value pairs the linked cluster is tagged with.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }

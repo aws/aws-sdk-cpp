@@ -61,6 +61,12 @@ CreateProjectResult& CreateProjectResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("environmentDeploymentDetails"))
+  {
+    m_environmentDeploymentDetails = jsonValue.GetObject("environmentDeploymentDetails");
+
+  }
+
   if(jsonValue.ValueExists("failureReasons"))
   {
     Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
@@ -97,10 +103,25 @@ CreateProjectResult& CreateProjectResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("projectProfileId"))
+  {
+    m_projectProfileId = jsonValue.GetString("projectProfileId");
+
+  }
+
   if(jsonValue.ValueExists("projectStatus"))
   {
     m_projectStatus = ProjectStatusMapper::GetProjectStatusForName(jsonValue.GetString("projectStatus"));
 
+  }
+
+  if(jsonValue.ValueExists("userParameters"))
+  {
+    Aws::Utils::Array<JsonView> userParametersJsonList = jsonValue.GetArray("userParameters");
+    for(unsigned userParametersIndex = 0; userParametersIndex < userParametersJsonList.GetLength(); ++userParametersIndex)
+    {
+      m_userParameters.push_back(userParametersJsonList[userParametersIndex].AsObject());
+    }
   }
 
 

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     AWS_IAM_IDP_SAML,
     AWS_IAM_IDP_OIDC,
-    AWS_IAM_IDC
+    AWS_IAM_IDC,
+    AWS_QUICKSIGHT_IDP
   };
 
 namespace IdentityTypeMapper

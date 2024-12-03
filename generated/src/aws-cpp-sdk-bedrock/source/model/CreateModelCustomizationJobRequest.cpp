@@ -28,7 +28,8 @@ CreateModelCustomizationJobRequest::CreateModelCustomizationJobRequest() :
     m_validationDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_hyperParametersHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_customizationConfigHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,12 @@ Aws::String CreateModelCustomizationJobRequest::SerializePayload() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_customizationConfigHasBeenSet)
+  {
+   payload.WithObject("customizationConfig", m_customizationConfig.Jsonize());
 
   }
 

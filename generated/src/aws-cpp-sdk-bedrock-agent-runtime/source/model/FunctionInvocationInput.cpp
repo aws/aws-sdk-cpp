@@ -22,6 +22,8 @@ FunctionInvocationInput::FunctionInvocationInput() :
     m_actionGroupHasBeenSet(false),
     m_actionInvocationType(ActionInvocationType::NOT_SET),
     m_actionInvocationTypeHasBeenSet(false),
+    m_agentIdHasBeenSet(false),
+    m_collaboratorNameHasBeenSet(false),
     m_functionHasBeenSet(false),
     m_parametersHasBeenSet(false)
 {
@@ -47,6 +49,20 @@ FunctionInvocationInput& FunctionInvocationInput::operator =(JsonView jsonValue)
     m_actionInvocationType = ActionInvocationTypeMapper::GetActionInvocationTypeForName(jsonValue.GetString("actionInvocationType"));
 
     m_actionInvocationTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("agentId"))
+  {
+    m_agentId = jsonValue.GetString("agentId");
+
+    m_agentIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("collaboratorName"))
+  {
+    m_collaboratorName = jsonValue.GetString("collaboratorName");
+
+    m_collaboratorNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("function"))
@@ -82,6 +98,18 @@ JsonValue FunctionInvocationInput::Jsonize() const
   if(m_actionInvocationTypeHasBeenSet)
   {
    payload.WithString("actionInvocationType", ActionInvocationTypeMapper::GetNameForActionInvocationType(m_actionInvocationType));
+  }
+
+  if(m_agentIdHasBeenSet)
+  {
+   payload.WithString("agentId", m_agentId);
+
+  }
+
+  if(m_collaboratorNameHasBeenSet)
+  {
+   payload.WithString("collaboratorName", m_collaboratorName);
+
   }
 
   if(m_functionHasBeenSet)

@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteDataCatalogRequest::DeleteDataCatalogRequest() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_deleteCatalogOnly(false),
+    m_deleteCatalogOnlyHasBeenSet(false)
 {
 }
 
@@ -24,6 +26,12 @@ Aws::String DeleteDataCatalogRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_deleteCatalogOnlyHasBeenSet)
+  {
+   payload.WithBool("DeleteCatalogOnly", m_deleteCatalogOnly);
 
   }
 

@@ -84,6 +84,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The ID of the connection.</p>
+     */
+    inline const Aws::String& GetConnectionIdentifier() const{ return m_connectionIdentifier; }
+    inline bool ConnectionIdentifierHasBeenSet() const { return m_connectionIdentifierHasBeenSet; }
+    inline void SetConnectionIdentifier(const Aws::String& value) { m_connectionIdentifierHasBeenSet = true; m_connectionIdentifier = value; }
+    inline void SetConnectionIdentifier(Aws::String&& value) { m_connectionIdentifierHasBeenSet = true; m_connectionIdentifier = std::move(value); }
+    inline void SetConnectionIdentifier(const char* value) { m_connectionIdentifierHasBeenSet = true; m_connectionIdentifier.assign(value); }
+    inline CreateDataSourceRequest& WithConnectionIdentifier(const Aws::String& value) { SetConnectionIdentifier(value); return *this;}
+    inline CreateDataSourceRequest& WithConnectionIdentifier(Aws::String&& value) { SetConnectionIdentifier(std::move(value)); return *this;}
+    inline CreateDataSourceRequest& WithConnectionIdentifier(const char* value) { SetConnectionIdentifier(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The description of the data source.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -225,6 +239,9 @@ namespace Model
 
     DataSourceConfigurationInput m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    Aws::String m_connectionIdentifier;
+    bool m_connectionIdentifierHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

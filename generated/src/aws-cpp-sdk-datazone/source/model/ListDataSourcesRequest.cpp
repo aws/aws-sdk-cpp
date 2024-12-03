@@ -16,6 +16,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListDataSourcesRequest::ListDataSourcesRequest() : 
+    m_connectionIdentifierHasBeenSet(false),
     m_domainIdentifierHasBeenSet(false),
     m_environmentIdentifierHasBeenSet(false),
     m_maxResults(0),
@@ -37,6 +38,13 @@ Aws::String ListDataSourcesRequest::SerializePayload() const
 void ListDataSourcesRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_connectionIdentifierHasBeenSet)
+    {
+      ss << m_connectionIdentifier;
+      uri.AddQueryStringParameter("connectionIdentifier", ss.str());
+      ss.str("");
+    }
+
     if(m_environmentIdentifierHasBeenSet)
     {
       ss << m_environmentIdentifier;

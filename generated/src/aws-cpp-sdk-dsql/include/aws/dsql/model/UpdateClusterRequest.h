@@ -34,7 +34,9 @@ namespace Model
 
 
     ///@{
-    
+    /**
+     * <p>The ID of the cluster you want to update.</p>
+     */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
@@ -46,7 +48,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>Specifies whether to enable deletion protection in your cluster.</p>
+     */
     inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
     inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
     inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
@@ -54,7 +58,15 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. Idempotency ensures that an API request completes
+     * only once. With an idempotent request, if the original request completes
+     * successfully. The subsequent retries with the same client token return the
+     * result from the original successful request and they have no additional
+     * effect.</p> <p>If you don't specify a client token, the Amazon Web Services SDK
+     * automatically generates one.</p>
+     */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }

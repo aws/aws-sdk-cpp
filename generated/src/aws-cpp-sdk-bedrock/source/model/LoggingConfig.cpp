@@ -26,7 +26,9 @@ LoggingConfig::LoggingConfig() :
     m_imageDataDeliveryEnabled(false),
     m_imageDataDeliveryEnabledHasBeenSet(false),
     m_embeddingDataDeliveryEnabled(false),
-    m_embeddingDataDeliveryEnabledHasBeenSet(false)
+    m_embeddingDataDeliveryEnabledHasBeenSet(false),
+    m_videoDataDeliveryEnabled(false),
+    m_videoDataDeliveryEnabledHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,13 @@ LoggingConfig& LoggingConfig::operator =(JsonView jsonValue)
     m_embeddingDataDeliveryEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("videoDataDeliveryEnabled"))
+  {
+    m_videoDataDeliveryEnabled = jsonValue.GetBool("videoDataDeliveryEnabled");
+
+    m_videoDataDeliveryEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -107,6 +116,12 @@ JsonValue LoggingConfig::Jsonize() const
   if(m_embeddingDataDeliveryEnabledHasBeenSet)
   {
    payload.WithBool("embeddingDataDeliveryEnabled", m_embeddingDataDeliveryEnabled);
+
+  }
+
+  if(m_videoDataDeliveryEnabledHasBeenSet)
+  {
+   payload.WithBool("videoDataDeliveryEnabled", m_videoDataDeliveryEnabled);
 
   }
 

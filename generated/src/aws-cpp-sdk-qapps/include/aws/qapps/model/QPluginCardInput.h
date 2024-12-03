@@ -106,6 +106,20 @@ namespace Model
     inline QPluginCardInput& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
     inline QPluginCardInput& WithPluginId(const char* value) { SetPluginId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The action identifier of the action to be performed by the plugin card.</p>
+     */
+    inline const Aws::String& GetActionIdentifier() const{ return m_actionIdentifier; }
+    inline bool ActionIdentifierHasBeenSet() const { return m_actionIdentifierHasBeenSet; }
+    inline void SetActionIdentifier(const Aws::String& value) { m_actionIdentifierHasBeenSet = true; m_actionIdentifier = value; }
+    inline void SetActionIdentifier(Aws::String&& value) { m_actionIdentifierHasBeenSet = true; m_actionIdentifier = std::move(value); }
+    inline void SetActionIdentifier(const char* value) { m_actionIdentifierHasBeenSet = true; m_actionIdentifier.assign(value); }
+    inline QPluginCardInput& WithActionIdentifier(const Aws::String& value) { SetActionIdentifier(value); return *this;}
+    inline QPluginCardInput& WithActionIdentifier(Aws::String&& value) { SetActionIdentifier(std::move(value)); return *this;}
+    inline QPluginCardInput& WithActionIdentifier(const char* value) { SetActionIdentifier(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_title;
@@ -122,6 +136,9 @@ namespace Model
 
     Aws::String m_pluginId;
     bool m_pluginIdHasBeenSet = false;
+
+    Aws::String m_actionIdentifier;
+    bool m_actionIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

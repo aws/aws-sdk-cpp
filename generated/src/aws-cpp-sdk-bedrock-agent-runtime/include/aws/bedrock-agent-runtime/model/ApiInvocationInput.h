@@ -73,6 +73,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The agent's ID.</p>
+     */
+    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
+    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
+    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
+    inline ApiInvocationInput& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
+    inline ApiInvocationInput& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
+    inline ApiInvocationInput& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The path to the API operation.</p>
      */
     inline const Aws::String& GetApiPath() const{ return m_apiPath; }
@@ -83,6 +97,20 @@ namespace Model
     inline ApiInvocationInput& WithApiPath(const Aws::String& value) { SetApiPath(value); return *this;}
     inline ApiInvocationInput& WithApiPath(Aws::String&& value) { SetApiPath(std::move(value)); return *this;}
     inline ApiInvocationInput& WithApiPath(const char* value) { SetApiPath(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The agent collaborator's name.</p>
+     */
+    inline const Aws::String& GetCollaboratorName() const{ return m_collaboratorName; }
+    inline bool CollaboratorNameHasBeenSet() const { return m_collaboratorNameHasBeenSet; }
+    inline void SetCollaboratorName(const Aws::String& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = value; }
+    inline void SetCollaboratorName(Aws::String&& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = std::move(value); }
+    inline void SetCollaboratorName(const char* value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName.assign(value); }
+    inline ApiInvocationInput& WithCollaboratorName(const Aws::String& value) { SetCollaboratorName(value); return *this;}
+    inline ApiInvocationInput& WithCollaboratorName(Aws::String&& value) { SetCollaboratorName(std::move(value)); return *this;}
+    inline ApiInvocationInput& WithCollaboratorName(const char* value) { SetCollaboratorName(value); return *this;}
     ///@}
 
     ///@{
@@ -134,8 +162,14 @@ namespace Model
     ActionInvocationType m_actionInvocationType;
     bool m_actionInvocationTypeHasBeenSet = false;
 
+    Aws::String m_agentId;
+    bool m_agentIdHasBeenSet = false;
+
     Aws::String m_apiPath;
     bool m_apiPathHasBeenSet = false;
+
+    Aws::String m_collaboratorName;
+    bool m_collaboratorNameHasBeenSet = false;
 
     Aws::String m_httpMethod;
     bool m_httpMethodHasBeenSet = false;

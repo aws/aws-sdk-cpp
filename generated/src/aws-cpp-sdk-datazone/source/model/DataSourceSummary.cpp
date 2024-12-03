@@ -19,8 +19,10 @@ namespace Model
 {
 
 DataSourceSummary::DataSourceSummary() : 
+    m_connectionIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_dataSourceIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_domainIdHasBeenSet(false),
     m_enableSetting(EnableSetting::NOT_SET),
     m_enableSettingHasBeenSet(false),
@@ -48,6 +50,13 @@ DataSourceSummary::DataSourceSummary(JsonView jsonValue)
 
 DataSourceSummary& DataSourceSummary::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("connectionId"))
+  {
+    m_connectionId = jsonValue.GetString("connectionId");
+
+    m_connectionIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
@@ -60,6 +69,13 @@ DataSourceSummary& DataSourceSummary::operator =(JsonView jsonValue)
     m_dataSourceId = jsonValue.GetString("dataSourceId");
 
     m_dataSourceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("domainId"))
@@ -153,6 +169,12 @@ JsonValue DataSourceSummary::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_connectionIdHasBeenSet)
+  {
+   payload.WithString("connectionId", m_connectionId);
+
+  }
+
   if(m_createdAtHasBeenSet)
   {
    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
@@ -161,6 +183,12 @@ JsonValue DataSourceSummary::Jsonize() const
   if(m_dataSourceIdHasBeenSet)
   {
    payload.WithString("dataSourceId", m_dataSourceId);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Updating or deleting a resource can cause an inconsistent state</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The submitted action has conflicts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ConflictException">AWS
    * API Reference</a></p>
    */
@@ -39,9 +38,7 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>Description of the error</p>
-     */
+    
     inline const Aws::String& GetMessage() const{ return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
@@ -54,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Identifier of the resource affected</p>
+     * <p>Resource Id</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
@@ -68,7 +65,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Type of the resource affected</p>
+     * <p>Resource Type</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

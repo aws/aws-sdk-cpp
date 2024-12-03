@@ -13,6 +13,7 @@
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/SSESpecification.h>
 #include <aws/dynamodb/model/TableClass.h>
+#include <aws/dynamodb/model/MultiRegionConsistency.h>
 #include <aws/dynamodb/model/OnDemandThroughput.h>
 #include <aws/dynamodb/model/WarmThroughput.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
@@ -209,6 +210,33 @@ namespace Model
 
     ///@{
     /**
+     * <p>Specifies the consistency mode for a new global table. This parameter is only
+     * valid when you create a global table by specifying one or more <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ReplicationGroupUpdate.html#DDB-Type-ReplicationGroupUpdate-Create">Create</a>
+     * actions in the <a
+     * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html#DDB-UpdateTable-request-ReplicaUpdates">ReplicaUpdates</a>
+     * action list.</p> <p>You can specify one of the following consistency modes:</p>
+     * <ul> <li> <p> <code>EVENTUAL</code>: Configures a new global table for
+     * multi-Region eventual consistency. This is the default consistency mode for
+     * global tables.</p> </li> <li> <p> <code>STRONG</code>: Configures a new global
+     * table for multi-Region strong consistency (preview).</p>  <p>Multi-Region
+     * strong consistency (MRSC) is a new DynamoDB global tables capability currently
+     * available in preview mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global
+     * tables multi-Region strong consistency</a>.</p>  </li> </ul> <p>If you
+     * don't specify this parameter, the global table consistency mode defaults to
+     * <code>EVENTUAL</code>.</p>
+     */
+    inline const MultiRegionConsistency& GetMultiRegionConsistency() const{ return m_multiRegionConsistency; }
+    inline bool MultiRegionConsistencyHasBeenSet() const { return m_multiRegionConsistencyHasBeenSet; }
+    inline void SetMultiRegionConsistency(const MultiRegionConsistency& value) { m_multiRegionConsistencyHasBeenSet = true; m_multiRegionConsistency = value; }
+    inline void SetMultiRegionConsistency(MultiRegionConsistency&& value) { m_multiRegionConsistencyHasBeenSet = true; m_multiRegionConsistency = std::move(value); }
+    inline UpdateTableRequest& WithMultiRegionConsistency(const MultiRegionConsistency& value) { SetMultiRegionConsistency(value); return *this;}
+    inline UpdateTableRequest& WithMultiRegionConsistency(MultiRegionConsistency&& value) { SetMultiRegionConsistency(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Updates the maximum number of read and write units for the specified table in
      * on-demand capacity mode. If you use this parameter, you must specify
      * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
@@ -265,6 +293,9 @@ namespace Model
 
     bool m_deletionProtectionEnabled;
     bool m_deletionProtectionEnabledHasBeenSet = false;
+
+    MultiRegionConsistency m_multiRegionConsistency;
+    bool m_multiRegionConsistencyHasBeenSet = false;
 
     OnDemandThroughput m_onDemandThroughput;
     bool m_onDemandThroughputHasBeenSet = false;

@@ -7,6 +7,7 @@
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/model/DomainVersion.h>
 #include <aws/datazone/model/SingleSignOn.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -82,6 +83,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The version of the domain that is created.</p>
+     */
+    inline const DomainVersion& GetDomainVersion() const{ return m_domainVersion; }
+    inline bool DomainVersionHasBeenSet() const { return m_domainVersionHasBeenSet; }
+    inline void SetDomainVersion(const DomainVersion& value) { m_domainVersionHasBeenSet = true; m_domainVersion = value; }
+    inline void SetDomainVersion(DomainVersion&& value) { m_domainVersionHasBeenSet = true; m_domainVersion = std::move(value); }
+    inline CreateDomainRequest& WithDomainVersion(const DomainVersion& value) { SetDomainVersion(value); return *this;}
+    inline CreateDomainRequest& WithDomainVersion(DomainVersion&& value) { SetDomainVersion(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The identifier of the Amazon Web Services Key Management Service (KMS) key
      * that is used to encrypt the Amazon DataZone domain, metadata, and reporting
      * data. </p>
@@ -108,6 +121,20 @@ namespace Model
     inline CreateDomainRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
     inline CreateDomainRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
     inline CreateDomainRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The service role of the domain that is created.</p>
+     */
+    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+    inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
+    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
+    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
+    inline CreateDomainRequest& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
+    inline CreateDomainRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
+    inline CreateDomainRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
     ///@}
 
     ///@{
@@ -151,11 +178,17 @@ namespace Model
     Aws::String m_domainExecutionRole;
     bool m_domainExecutionRoleHasBeenSet = false;
 
+    DomainVersion m_domainVersion;
+    bool m_domainVersionHasBeenSet = false;
+
     Aws::String m_kmsKeyIdentifier;
     bool m_kmsKeyIdentifierHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_serviceRole;
+    bool m_serviceRoleHasBeenSet = false;
 
     SingleSignOn m_singleSignOn;
     bool m_singleSignOnHasBeenSet = false;

@@ -19,7 +19,8 @@ namespace Model
 {
 
 TrainingDataConfig::TrainingDataConfig() : 
-    m_s3UriHasBeenSet(false)
+    m_s3UriHasBeenSet(false),
+    m_invocationLogsConfigHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ TrainingDataConfig& TrainingDataConfig::operator =(JsonView jsonValue)
     m_s3UriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("invocationLogsConfig"))
+  {
+    m_invocationLogsConfig = jsonValue.GetObject("invocationLogsConfig");
+
+    m_invocationLogsConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue TrainingDataConfig::Jsonize() const
   if(m_s3UriHasBeenSet)
   {
    payload.WithString("s3Uri", m_s3Uri);
+
+  }
+
+  if(m_invocationLogsConfigHasBeenSet)
+  {
+   payload.WithObject("invocationLogsConfig", m_invocationLogsConfig.Jsonize());
 
   }
 

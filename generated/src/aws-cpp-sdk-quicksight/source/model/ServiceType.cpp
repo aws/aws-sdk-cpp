@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
+        static const int QBUSINESS_HASH = HashingUtils::HashString("QBUSINESS");
 
 
         ServiceType GetServiceTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == REDSHIFT_HASH)
           {
             return ServiceType::REDSHIFT;
+          }
+          else if (hashCode == QBUSINESS_HASH)
+          {
+            return ServiceType::QBUSINESS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case ServiceType::REDSHIFT:
             return "REDSHIFT";
+          case ServiceType::QBUSINESS:
+            return "QBUSINESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

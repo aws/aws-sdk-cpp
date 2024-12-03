@@ -22,7 +22,10 @@ AuthenticationConfigurationInput::AuthenticationConfigurationInput() :
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
     m_oAuth2PropertiesHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+    m_secretArnHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false),
+    m_basicAuthenticationCredentialsHasBeenSet(false),
+    m_customAuthenticationCredentialsHasBeenSet(false)
 {
 }
 
@@ -55,6 +58,30 @@ AuthenticationConfigurationInput& AuthenticationConfigurationInput::operator =(J
     m_secretArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+
+    m_kmsKeyArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BasicAuthenticationCredentials"))
+  {
+    m_basicAuthenticationCredentials = jsonValue.GetObject("BasicAuthenticationCredentials");
+
+    m_basicAuthenticationCredentialsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomAuthenticationCredentials"))
+  {
+    Aws::Map<Aws::String, JsonView> customAuthenticationCredentialsJsonMap = jsonValue.GetObject("CustomAuthenticationCredentials").GetAllObjects();
+    for(auto& customAuthenticationCredentialsItem : customAuthenticationCredentialsJsonMap)
+    {
+      m_customAuthenticationCredentials[customAuthenticationCredentialsItem.first] = customAuthenticationCredentialsItem.second.AsString();
+    }
+    m_customAuthenticationCredentialsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +103,29 @@ JsonValue AuthenticationConfigurationInput::Jsonize() const
   if(m_secretArnHasBeenSet)
   {
    payload.WithString("SecretArn", m_secretArn);
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("KmsKeyArn", m_kmsKeyArn);
+
+  }
+
+  if(m_basicAuthenticationCredentialsHasBeenSet)
+  {
+   payload.WithObject("BasicAuthenticationCredentials", m_basicAuthenticationCredentials.Jsonize());
+
+  }
+
+  if(m_customAuthenticationCredentialsHasBeenSet)
+  {
+   JsonValue customAuthenticationCredentialsJsonMap;
+   for(auto& customAuthenticationCredentialsItem : m_customAuthenticationCredentials)
+   {
+     customAuthenticationCredentialsJsonMap.WithString(customAuthenticationCredentialsItem.first, customAuthenticationCredentialsItem.second);
+   }
+   payload.WithObject("CustomAuthenticationCredentials", std::move(customAuthenticationCredentialsJsonMap));
 
   }
 
