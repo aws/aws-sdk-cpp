@@ -50,10 +50,28 @@ namespace Model
     inline WhatsAppBusinessAccountEventDestination& WithEventDestinationArn(Aws::String&& value) { SetEventDestinationArn(std::move(value)); return *this;}
     inline WhatsAppBusinessAccountEventDestination& WithEventDestinationArn(const char* value) { SetEventDestinationArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that
+     * is able to import phone numbers and write events.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+    inline WhatsAppBusinessAccountEventDestination& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+    inline WhatsAppBusinessAccountEventDestination& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+    inline WhatsAppBusinessAccountEventDestination& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_eventDestinationArn;
     bool m_eventDestinationArnHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

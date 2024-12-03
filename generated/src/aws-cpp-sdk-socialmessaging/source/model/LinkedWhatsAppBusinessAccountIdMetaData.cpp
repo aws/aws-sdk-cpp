@@ -22,7 +22,8 @@ LinkedWhatsAppBusinessAccountIdMetaData::LinkedWhatsAppBusinessAccountIdMetaData
     m_accountNameHasBeenSet(false),
     m_registrationStatus(RegistrationStatus::NOT_SET),
     m_registrationStatusHasBeenSet(false),
-    m_unregisteredWhatsAppPhoneNumbersHasBeenSet(false)
+    m_unregisteredWhatsAppPhoneNumbersHasBeenSet(false),
+    m_wabaIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,13 @@ LinkedWhatsAppBusinessAccountIdMetaData& LinkedWhatsAppBusinessAccountIdMetaData
     m_unregisteredWhatsAppPhoneNumbersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("wabaId"))
+  {
+    m_wabaId = jsonValue.GetString("wabaId");
+
+    m_wabaIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +92,12 @@ JsonValue LinkedWhatsAppBusinessAccountIdMetaData::Jsonize() const
      unregisteredWhatsAppPhoneNumbersJsonList[unregisteredWhatsAppPhoneNumbersIndex].AsObject(m_unregisteredWhatsAppPhoneNumbers[unregisteredWhatsAppPhoneNumbersIndex].Jsonize());
    }
    payload.WithArray("unregisteredWhatsAppPhoneNumbers", std::move(unregisteredWhatsAppPhoneNumbersJsonList));
+
+  }
+
+  if(m_wabaIdHasBeenSet)
+  {
+   payload.WithString("wabaId", m_wabaId);
 
   }
 

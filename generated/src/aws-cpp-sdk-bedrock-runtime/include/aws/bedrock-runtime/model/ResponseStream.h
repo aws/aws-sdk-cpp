@@ -121,7 +121,9 @@ namespace Model
     ///@}
 
     ///@{
-    
+    /**
+     * <p>The service isn't available. Try again later.</p>
+     */
     inline const ServiceUnavailableException& GetServiceUnavailableException() const{ return m_serviceUnavailableException; }
     inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
     inline void SetServiceUnavailableException(const ServiceUnavailableException& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = value; }

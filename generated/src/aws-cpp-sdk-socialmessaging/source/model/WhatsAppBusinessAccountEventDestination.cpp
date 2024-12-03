@@ -19,7 +19,8 @@ namespace Model
 {
 
 WhatsAppBusinessAccountEventDestination::WhatsAppBusinessAccountEventDestination() : 
-    m_eventDestinationArnHasBeenSet(false)
+    m_eventDestinationArnHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ WhatsAppBusinessAccountEventDestination& WhatsAppBusinessAccountEventDestination
     m_eventDestinationArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("roleArn"))
+  {
+    m_roleArn = jsonValue.GetString("roleArn");
+
+    m_roleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue WhatsAppBusinessAccountEventDestination::Jsonize() const
   if(m_eventDestinationArnHasBeenSet)
   {
    payload.WithString("eventDestinationArn", m_eventDestinationArn);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 

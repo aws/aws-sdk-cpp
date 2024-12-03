@@ -67,6 +67,12 @@ ConverseResult& ConverseResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("performanceConfig"))
+  {
+    m_performanceConfig = jsonValue.GetObject("performanceConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

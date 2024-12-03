@@ -21,7 +21,9 @@ InvokeModelRequest::InvokeModelRequest() :
     m_trace(Trace::NOT_SET),
     m_traceHasBeenSet(false),
     m_guardrailIdentifierHasBeenSet(false),
-    m_guardrailVersionHasBeenSet(false)
+    m_guardrailVersionHasBeenSet(false),
+    m_performanceConfigLatency(PerformanceConfigLatency::NOT_SET),
+    m_performanceConfigLatencyHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,11 @@ Aws::Http::HeaderValueCollection InvokeModelRequest::GetRequestSpecificHeaders()
     ss << m_guardrailVersion;
     headers.emplace("x-amzn-bedrock-guardrailversion",  ss.str());
     ss.str("");
+  }
+
+  if(m_performanceConfigLatencyHasBeenSet && m_performanceConfigLatency != PerformanceConfigLatency::NOT_SET)
+  {
+    headers.emplace("x-amzn-bedrock-performanceconfig-latency", PerformanceConfigLatencyMapper::GetNameForPerformanceConfigLatency(m_performanceConfigLatency));
   }
 
   return headers;

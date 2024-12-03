@@ -21,7 +21,8 @@ namespace Model
 ConverseStreamMetadataEvent::ConverseStreamMetadataEvent() : 
     m_usageHasBeenSet(false),
     m_metricsHasBeenSet(false),
-    m_traceHasBeenSet(false)
+    m_traceHasBeenSet(false),
+    m_performanceConfigHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,13 @@ ConverseStreamMetadataEvent& ConverseStreamMetadataEvent::operator =(JsonView js
     m_traceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("performanceConfig"))
+  {
+    m_performanceConfig = jsonValue.GetObject("performanceConfig");
+
+    m_performanceConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +84,12 @@ JsonValue ConverseStreamMetadataEvent::Jsonize() const
   if(m_traceHasBeenSet)
   {
    payload.WithObject("trace", m_trace.Jsonize());
+
+  }
+
+  if(m_performanceConfigHasBeenSet)
+  {
+   payload.WithObject("performanceConfig", m_performanceConfig.Jsonize());
 
   }
 
