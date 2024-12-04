@@ -20,7 +20,8 @@ namespace Model
 
 VectorKnowledgeBaseConfiguration::VectorKnowledgeBaseConfiguration() : 
     m_embeddingModelArnHasBeenSet(false),
-    m_embeddingModelConfigurationHasBeenSet(false)
+    m_embeddingModelConfigurationHasBeenSet(false),
+    m_supplementalDataStorageConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,13 @@ VectorKnowledgeBaseConfiguration& VectorKnowledgeBaseConfiguration::operator =(J
     m_embeddingModelConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("supplementalDataStorageConfiguration"))
+  {
+    m_supplementalDataStorageConfiguration = jsonValue.GetObject("supplementalDataStorageConfiguration");
+
+    m_supplementalDataStorageConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -62,6 +70,12 @@ JsonValue VectorKnowledgeBaseConfiguration::Jsonize() const
   if(m_embeddingModelConfigurationHasBeenSet)
   {
    payload.WithObject("embeddingModelConfiguration", m_embeddingModelConfiguration.Jsonize());
+
+  }
+
+  if(m_supplementalDataStorageConfigurationHasBeenSet)
+  {
+   payload.WithObject("supplementalDataStorageConfiguration", m_supplementalDataStorageConfiguration.Jsonize());
 
   }
 

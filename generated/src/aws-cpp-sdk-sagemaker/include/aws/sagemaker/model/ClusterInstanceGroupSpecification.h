@@ -155,6 +155,25 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN); of the training plan to use for this cluster
+     * instance group.</p> <p>For more information about how to reserve GPU capacity
+     * for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see
+     * <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+     * </code>.</p>
+     */
+    inline const Aws::String& GetTrainingPlanArn() const{ return m_trainingPlanArn; }
+    inline bool TrainingPlanArnHasBeenSet() const { return m_trainingPlanArnHasBeenSet; }
+    inline void SetTrainingPlanArn(const Aws::String& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = value; }
+    inline void SetTrainingPlanArn(Aws::String&& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = std::move(value); }
+    inline void SetTrainingPlanArn(const char* value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn.assign(value); }
+    inline ClusterInstanceGroupSpecification& WithTrainingPlanArn(const Aws::String& value) { SetTrainingPlanArn(value); return *this;}
+    inline ClusterInstanceGroupSpecification& WithTrainingPlanArn(Aws::String&& value) { SetTrainingPlanArn(std::move(value)); return *this;}
+    inline ClusterInstanceGroupSpecification& WithTrainingPlanArn(const char* value) { SetTrainingPlanArn(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const VpcConfig& GetOverrideVpcConfig() const{ return m_overrideVpcConfig; }
     inline bool OverrideVpcConfigHasBeenSet() const { return m_overrideVpcConfigHasBeenSet; }
@@ -188,6 +207,9 @@ namespace Model
 
     Aws::Vector<DeepHealthCheckType> m_onStartDeepHealthChecks;
     bool m_onStartDeepHealthChecksHasBeenSet = false;
+
+    Aws::String m_trainingPlanArn;
+    bool m_trainingPlanArnHasBeenSet = false;
 
     VpcConfig m_overrideVpcConfig;
     bool m_overrideVpcConfigHasBeenSet = false;

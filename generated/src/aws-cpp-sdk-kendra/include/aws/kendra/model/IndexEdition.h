@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     DEVELOPER_EDITION,
-    ENTERPRISE_EDITION
+    ENTERPRISE_EDITION,
+    GEN_AI_ENTERPRISE_EDITION
   };
 
 namespace IndexEditionMapper

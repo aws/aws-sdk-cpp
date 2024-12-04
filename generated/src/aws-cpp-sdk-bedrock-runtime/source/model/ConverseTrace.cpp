@@ -19,7 +19,8 @@ namespace Model
 {
 
 ConverseTrace::ConverseTrace() : 
-    m_guardrailHasBeenSet(false)
+    m_guardrailHasBeenSet(false),
+    m_promptRouterHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ ConverseTrace& ConverseTrace::operator =(JsonView jsonValue)
     m_guardrailHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("promptRouter"))
+  {
+    m_promptRouter = jsonValue.GetObject("promptRouter");
+
+    m_promptRouterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue ConverseTrace::Jsonize() const
   if(m_guardrailHasBeenSet)
   {
    payload.WithObject("guardrail", m_guardrail.Jsonize());
+
+  }
+
+  if(m_promptRouterHasBeenSet)
+  {
+   payload.WithObject("promptRouter", m_promptRouter.Jsonize());
 
   }
 

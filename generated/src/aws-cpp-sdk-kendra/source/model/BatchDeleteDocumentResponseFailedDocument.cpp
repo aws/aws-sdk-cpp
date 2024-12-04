@@ -20,6 +20,7 @@ namespace Model
 
 BatchDeleteDocumentResponseFailedDocument::BatchDeleteDocumentResponseFailedDocument() : 
     m_idHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false),
     m_errorCode(ErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -39,6 +40,13 @@ BatchDeleteDocumentResponseFailedDocument& BatchDeleteDocumentResponseFailedDocu
     m_id = jsonValue.GetString("Id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataSourceId"))
+  {
+    m_dataSourceId = jsonValue.GetString("DataSourceId");
+
+    m_dataSourceIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ErrorCode"))
@@ -65,6 +73,12 @@ JsonValue BatchDeleteDocumentResponseFailedDocument::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("Id", m_id);
+
+  }
+
+  if(m_dataSourceIdHasBeenSet)
+  {
+   payload.WithString("DataSourceId", m_dataSourceId);
 
   }
 

@@ -156,10 +156,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Shows the Amazon Resource Name (ARN) of a role with permission to access
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permission to access the
      * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
-     * and group information.</p>
+     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your users
+     * and groups information.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }

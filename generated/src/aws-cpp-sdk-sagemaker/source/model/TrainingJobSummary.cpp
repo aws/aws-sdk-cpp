@@ -28,7 +28,8 @@ TrainingJobSummary::TrainingJobSummary() :
     m_trainingJobStatusHasBeenSet(false),
     m_secondaryStatus(SecondaryStatus::NOT_SET),
     m_secondaryStatusHasBeenSet(false),
-    m_warmPoolStatusHasBeenSet(false)
+    m_warmPoolStatusHasBeenSet(false),
+    m_trainingPlanArnHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,13 @@ TrainingJobSummary& TrainingJobSummary::operator =(JsonView jsonValue)
     m_warmPoolStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TrainingPlanArn"))
+  {
+    m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
+
+    m_trainingPlanArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -143,6 +151,12 @@ JsonValue TrainingJobSummary::Jsonize() const
   if(m_warmPoolStatusHasBeenSet)
   {
    payload.WithObject("WarmPoolStatus", m_warmPoolStatus.Jsonize());
+
+  }
+
+  if(m_trainingPlanArnHasBeenSet)
+  {
+   payload.WithString("TrainingPlanArn", m_trainingPlanArn);
 
   }
 

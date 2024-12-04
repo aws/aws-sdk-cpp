@@ -19,6 +19,7 @@ namespace Model
 {
 
 ParsingConfiguration::ParsingConfiguration() : 
+    m_bedrockDataAutomationConfigurationHasBeenSet(false),
     m_bedrockFoundationModelConfigurationHasBeenSet(false),
     m_parsingStrategy(ParsingStrategy::NOT_SET),
     m_parsingStrategyHasBeenSet(false)
@@ -33,6 +34,13 @@ ParsingConfiguration::ParsingConfiguration(JsonView jsonValue)
 
 ParsingConfiguration& ParsingConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("bedrockDataAutomationConfiguration"))
+  {
+    m_bedrockDataAutomationConfiguration = jsonValue.GetObject("bedrockDataAutomationConfiguration");
+
+    m_bedrockDataAutomationConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("bedrockFoundationModelConfiguration"))
   {
     m_bedrockFoundationModelConfiguration = jsonValue.GetObject("bedrockFoundationModelConfiguration");
@@ -53,6 +61,12 @@ ParsingConfiguration& ParsingConfiguration::operator =(JsonView jsonValue)
 JsonValue ParsingConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_bedrockDataAutomationConfigurationHasBeenSet)
+  {
+   payload.WithObject("bedrockDataAutomationConfiguration", m_bedrockDataAutomationConfiguration.Jsonize());
+
+  }
 
   if(m_bedrockFoundationModelConfigurationHasBeenSet)
   {

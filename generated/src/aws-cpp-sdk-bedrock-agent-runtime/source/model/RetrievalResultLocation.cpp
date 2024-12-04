@@ -21,9 +21,11 @@ namespace Model
 RetrievalResultLocation::RetrievalResultLocation() : 
     m_confluenceLocationHasBeenSet(false),
     m_customDocumentLocationHasBeenSet(false),
+    m_kendraDocumentLocationHasBeenSet(false),
     m_s3LocationHasBeenSet(false),
     m_salesforceLocationHasBeenSet(false),
     m_sharePointLocationHasBeenSet(false),
+    m_sqlLocationHasBeenSet(false),
     m_type(RetrievalResultLocationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_webLocationHasBeenSet(false)
@@ -52,6 +54,13 @@ RetrievalResultLocation& RetrievalResultLocation::operator =(JsonView jsonValue)
     m_customDocumentLocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("kendraDocumentLocation"))
+  {
+    m_kendraDocumentLocation = jsonValue.GetObject("kendraDocumentLocation");
+
+    m_kendraDocumentLocationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
@@ -71,6 +80,13 @@ RetrievalResultLocation& RetrievalResultLocation::operator =(JsonView jsonValue)
     m_sharePointLocation = jsonValue.GetObject("sharePointLocation");
 
     m_sharePointLocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sqlLocation"))
+  {
+    m_sqlLocation = jsonValue.GetObject("sqlLocation");
+
+    m_sqlLocationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("type"))
@@ -106,6 +122,12 @@ JsonValue RetrievalResultLocation::Jsonize() const
 
   }
 
+  if(m_kendraDocumentLocationHasBeenSet)
+  {
+   payload.WithObject("kendraDocumentLocation", m_kendraDocumentLocation.Jsonize());
+
+  }
+
   if(m_s3LocationHasBeenSet)
   {
    payload.WithObject("s3Location", m_s3Location.Jsonize());
@@ -121,6 +143,12 @@ JsonValue RetrievalResultLocation::Jsonize() const
   if(m_sharePointLocationHasBeenSet)
   {
    payload.WithObject("sharePointLocation", m_sharePointLocation.Jsonize());
+
+  }
+
+  if(m_sqlLocationHasBeenSet)
+  {
+   payload.WithObject("sqlLocation", m_sqlLocation.Jsonize());
 
   }
 

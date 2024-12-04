@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>information about the FAQs associated with the specified index.</p>
+     * <p>Summary information about the FAQs for a specified index.</p>
      */
     inline const Aws::Vector<FaqSummary>& GetFaqSummaryItems() const{ return m_faqSummaryItems; }
     inline void SetFaqSummaryItems(const Aws::Vector<FaqSummary>& value) { m_faqSummaryItems = value; }

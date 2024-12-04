@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent/model/EmbeddingModelConfiguration.h>
+#include <aws/bedrock-agent/model/SupplementalDataStorageConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -66,6 +67,22 @@ namespace Model
     inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelConfiguration(const EmbeddingModelConfiguration& value) { SetEmbeddingModelConfiguration(value); return *this;}
     inline VectorKnowledgeBaseConfiguration& WithEmbeddingModelConfiguration(EmbeddingModelConfiguration&& value) { SetEmbeddingModelConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>If you include multimodal data from your data source, use this object to
+     * specify configurations for the storage location of the images extracted from
+     * your documents. These images can be retrieved and returned to the end user. They
+     * can also be used in generation when using <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html">RetrieveAndGenerate</a>.</p>
+     */
+    inline const SupplementalDataStorageConfiguration& GetSupplementalDataStorageConfiguration() const{ return m_supplementalDataStorageConfiguration; }
+    inline bool SupplementalDataStorageConfigurationHasBeenSet() const { return m_supplementalDataStorageConfigurationHasBeenSet; }
+    inline void SetSupplementalDataStorageConfiguration(const SupplementalDataStorageConfiguration& value) { m_supplementalDataStorageConfigurationHasBeenSet = true; m_supplementalDataStorageConfiguration = value; }
+    inline void SetSupplementalDataStorageConfiguration(SupplementalDataStorageConfiguration&& value) { m_supplementalDataStorageConfigurationHasBeenSet = true; m_supplementalDataStorageConfiguration = std::move(value); }
+    inline VectorKnowledgeBaseConfiguration& WithSupplementalDataStorageConfiguration(const SupplementalDataStorageConfiguration& value) { SetSupplementalDataStorageConfiguration(value); return *this;}
+    inline VectorKnowledgeBaseConfiguration& WithSupplementalDataStorageConfiguration(SupplementalDataStorageConfiguration&& value) { SetSupplementalDataStorageConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_embeddingModelArn;
@@ -73,6 +90,9 @@ namespace Model
 
     EmbeddingModelConfiguration m_embeddingModelConfiguration;
     bool m_embeddingModelConfigurationHasBeenSet = false;
+
+    SupplementalDataStorageConfiguration m_supplementalDataStorageConfiguration;
+    bool m_supplementalDataStorageConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

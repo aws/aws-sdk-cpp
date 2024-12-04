@@ -16,7 +16,9 @@ namespace Model
   enum class KnowledgeBaseType
   {
     NOT_SET,
-    VECTOR
+    VECTOR,
+    KENDRA,
+    SQL
   };
 
 namespace KnowledgeBaseTypeMapper

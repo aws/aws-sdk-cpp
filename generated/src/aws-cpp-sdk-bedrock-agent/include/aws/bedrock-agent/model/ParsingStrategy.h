@@ -16,7 +16,8 @@ namespace Model
   enum class ParsingStrategy
   {
     NOT_SET,
-    BEDROCK_FOUNDATION_MODEL
+    BEDROCK_FOUNDATION_MODEL,
+    BEDROCK_DATA_AUTOMATION
   };
 
 namespace ParsingStrategyMapper

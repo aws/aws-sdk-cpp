@@ -19,7 +19,8 @@ namespace Model
 {
 
 CustomFileSystemConfig::CustomFileSystemConfig() : 
-    m_eFSFileSystemConfigHasBeenSet(false)
+    m_eFSFileSystemConfigHasBeenSet(false),
+    m_fSxLustreFileSystemConfigHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ CustomFileSystemConfig& CustomFileSystemConfig::operator =(JsonView jsonValue)
     m_eFSFileSystemConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FSxLustreFileSystemConfig"))
+  {
+    m_fSxLustreFileSystemConfig = jsonValue.GetObject("FSxLustreFileSystemConfig");
+
+    m_fSxLustreFileSystemConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue CustomFileSystemConfig::Jsonize() const
   if(m_eFSFileSystemConfigHasBeenSet)
   {
    payload.WithObject("EFSFileSystemConfig", m_eFSFileSystemConfig.Jsonize());
+
+  }
+
+  if(m_fSxLustreFileSystemConfigHasBeenSet)
+  {
+   payload.WithObject("FSxLustreFileSystemConfig", m_fSxLustreFileSystemConfig.Jsonize());
 
   }
 

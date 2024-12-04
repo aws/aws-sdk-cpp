@@ -325,7 +325,12 @@ namespace kendra
          * <code>.metadata.json</code> with the <code>AccessControlConfigurationId</code>
          * and synchronize your data source. Amazon Kendra currently only supports access
          * control configuration for S3 data sources and documents indexed using the
-         * <code>BatchPutDocument</code> API.</p><p><h3>See Also:</h3>   <a
+         * <code>BatchPutDocument</code> API.</p>  <p>You can't configure access
+         * control using <code>CreateAccessControlConfiguration</code> for an Amazon Kendra
+         * Gen AI Enterprise Edition index. Amazon Kendra will return a
+         * <code>ValidationException</code> error for a
+         * <code>Gen_AI_ENTERPRISE_EDITION</code> index.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateAccessControlConfiguration">AWS
          * API Reference</a></p>
          */
@@ -672,7 +677,7 @@ namespace kendra
         }
 
         /**
-         * <p>Removes an FAQ from an index.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a FAQ from an index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteFaq">AWS
          * API Reference</a></p>
          */
@@ -725,11 +730,11 @@ namespace kendra
         }
 
         /**
-         * <p>Deletes a group so that all users and sub groups that belong to the group can
-         * no longer access documents only available to that group.</p> <p>For example,
-         * after deleting the group "Summer Interns", all interns who belonged to that
-         * group no longer see intern-only documents in their search results.</p> <p>If you
-         * want to delete or replace users or sub groups of a group, you need to use the
+         * <p>Deletes a group so that all users that belong to the group can no longer
+         * access documents only available to that group.</p> <p>For example, after
+         * deleting the group "Summer Interns", all interns who belonged to that group no
+         * longer see intern-only documents in their search results.</p> <p>If you want to
+         * delete or replace users or sub groups of a group, you need to use the
          * <code>PutPrincipalMapping</code> operation. For example, if a user in the group
          * "Engineering" leaves the engineering team and another user takes their place,
          * you provide an updated list of users or sub groups that belong to the
@@ -901,7 +906,7 @@ namespace kendra
         }
 
         /**
-         * <p>Gets information about an FAQ list.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a FAQ.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeFaq">AWS
          * API Reference</a></p>
          */
@@ -1373,9 +1378,9 @@ namespace kendra
         }
 
         /**
-         * <p>Gets a list of FAQ lists associated with an index.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFaqs">AWS
-         * API Reference</a></p>
+         * <p>Gets a list of FAQs associated with an index.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFaqs">AWS API
+         * Reference</a></p>
          */
         virtual Model::ListFaqsOutcome ListFaqs(const Model::ListFaqsRequest& request) const;
 
@@ -1510,8 +1515,9 @@ namespace kendra
         }
 
         /**
-         * <p>Gets a list of tags associated with a specified resource. Indexes, FAQs, and
-         * data sources can have tags associated with them.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of tags associated with a resource. Indexes, FAQs, data sources,
+         * and other resources can have tags associated with them.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -1619,7 +1625,12 @@ namespace kendra
          * one type of result using the <code>QueryResultTypeFilter</code> parameter. Each
          * query returns the 100 most relevant results. If you filter result type to only
          * question-answers, a maximum of four results are returned. If you filter result
-         * type to only answers, a maximum of three results are returned.</p><p><h3>See
+         * type to only answers, a maximum of three results are returned.</p> 
+         * <p>If you're using an Amazon Kendra Gen AI Enterprise Edition index, you can
+         * only use <code>ATTRIBUTE_FILTER</code> to filter search results by user context.
+         * If you're using an Amazon Kendra Gen AI Enterprise Edition index and you try to
+         * use <code>USER_TOKEN</code> to configure user context policy, Amazon Kendra
+         * returns a <code>ValidationException</code> error.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Query">AWS API
          * Reference</a></p>
@@ -1671,7 +1682,12 @@ namespace kendra
          * included in a single capacity unit and the default base capacity for an index,
          * see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
-         * capacity</a>.</p><p><h3>See Also:</h3>   <a
+         * capacity</a>.</p>  <p>If you're using an Amazon Kendra Gen AI
+         * Enterprise Edition index, you can only use <code>ATTRIBUTE_FILTER</code> to
+         * filter search results by user context. If you're using an Amazon Kendra Gen AI
+         * Enterprise Edition index and you try to use <code>USER_TOKEN</code> to configure
+         * user context policy, Amazon Kendra returns a <code>ValidationException</code>
+         * error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Retrieve">AWS API
          * Reference</a></p>
          */
@@ -1779,8 +1795,8 @@ namespace kendra
         }
 
         /**
-         * <p>Adds the specified tag to the specified index, FAQ, or data source resource.
-         * If the tag already exists, the existing value is replaced with the new
+         * <p>Adds the specified tag to the specified index, FAQ, data source, or other
+         * resource. If the tag already exists, the existing value is replaced with the new
          * value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TagResource">AWS
          * API Reference</a></p>
@@ -1806,8 +1822,8 @@ namespace kendra
         }
 
         /**
-         * <p>Removes a tag from an index, FAQ, or a data source.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Removes a tag from an index, FAQ, data source, or other
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1853,7 +1869,12 @@ namespace kendra
          * source to apply the <code>AccessControlConfigurationId</code> in the
          * <code>.metadata.json</code> file. Amazon Kendra currently only supports access
          * control configuration for S3 data sources and documents indexed using the
-         * <code>BatchPutDocument</code> API.</p><p><h3>See Also:</h3>   <a
+         * <code>BatchPutDocument</code> API.</p>  <p>You can't configure access
+         * control using <code>CreateAccessControlConfiguration</code> for an Amazon Kendra
+         * Gen AI Enterprise Edition index. Amazon Kendra will return a
+         * <code>ValidationException</code> error for a
+         * <code>Gen_AI_ENTERPRISE_EDITION</code> index.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateAccessControlConfiguration">AWS
          * API Reference</a></p>
          */

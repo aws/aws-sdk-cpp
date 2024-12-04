@@ -179,8 +179,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the role with permission to access the data
-     * source and required resources.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role with permission to access the
+     * data source and required resources.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }

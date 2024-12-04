@@ -35,7 +35,15 @@ namespace Model
    * search results.</p> <p>You provide one of the following:</p> <ul> <li> <p>User
    * token</p> </li> <li> <p>User ID, the groups the user belongs to, and any data
    * sources the groups can access.</p> </li> </ul> <p>If you provide both, an
-   * exception is thrown.</p><p><h3>See Also:</h3>   <a
+   * exception is thrown.</p>  <p>If you're using an Amazon Kendra Gen AI
+   * Enterprise Edition index, you can use <code>UserId</code>, <code>Groups</code>,
+   * and <code>DataSourceGroups</code> to filter content. If you set the
+   * <code>UserId</code> to a particular user ID, it also includes all public
+   * documents.</p> <p>Amazon Kendra Gen AI Enterprise Edition indices don't support
+   * token based document filtering. If you're using an Amazon Kendra Gen AI
+   * Enterprise Edition index, Amazon Kendra returns a
+   * <code>ValidationException</code> error if the <code>Token</code> field has a
+   * non-null value.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UserContext">AWS
    * API Reference</a></p>
    */

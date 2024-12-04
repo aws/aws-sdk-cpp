@@ -93,12 +93,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
-     * credentials should be a user/password pair. For more information, see <a
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that stores the
+     * credentials. The credentials should be a user-password pair. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using
      * a Database Data Source</a>. For more information about Secrets Manager, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is Secrets Manager</a> in the <i> Secrets Manager </i> user guide.</p>
+     * What Is Secrets Manager</a> in the <i>Secrets Manager</i> user guide.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }

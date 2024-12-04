@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/BedrockDataAutomationConfiguration.h>
 #include <aws/bedrock-agent/model/BedrockFoundationModelConfiguration.h>
 #include <aws/bedrock-agent/model/ParsingStrategy.h>
 #include <utility>
@@ -25,24 +26,16 @@ namespace Model
 {
 
   /**
-   * <p>Settings for parsing document contents. By default, the service converts the
-   * contents of each document into text before splitting it into chunks. To improve
-   * processing of PDF files with tables and images, you can configure the data
-   * source to convert the pages of text into images and use a model to describe the
-   * contents of each page.</p> <p>To use a model to parse PDF documents, set the
-   * parsing strategy to <code>BEDROCK_FOUNDATION_MODEL</code> and specify the model
-   * or <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-   * profile</a> to use by ARN. You can also override the default parsing prompt with
-   * instructions for how to interpret images and tables in your documents. The
-   * following models are supported.</p> <ul> <li> <p>Anthropic Claude 3 Sonnet -
-   * <code>anthropic.claude-3-sonnet-20240229-v1:0</code> </p> </li> <li>
-   * <p>Anthropic Claude 3 Haiku -
-   * <code>anthropic.claude-3-haiku-20240307-v1:0</code> </p> </li> </ul> <p>You can
-   * get the ARN of a model with the <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListFoundationModels.html">ListFoundationModels</a>
-   * action. Standard model usage charges apply for the foundation model parsing
-   * strategy.</p><p><h3>See Also:</h3>   <a
+   * <p>Settings for parsing document contents. If you exclude this field, the
+   * default parser converts the contents of each document into text before splitting
+   * it into chunks. Specify the parsing strategy to use in the
+   * <code>parsingStrategy</code> field and include the relevant configuration, or
+   * omit it to use the Amazon Bedrock default parser. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-advanced-parsing.html">Parsing
+   * options for your data source</a>.</p>  <p>If you specify
+   * <code>BEDROCK_DATA_AUTOMATION</code> or <code>BEDROCK_FOUNDATION_MODEL</code>
+   * and it fails to parse a file, the Amazon Bedrock default parser will be used
+   * instead.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ParsingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -57,8 +50,23 @@ namespace Model
 
     ///@{
     /**
-     * <p>Settings for a foundation model used to parse documents for a data
-     * source.</p>
+     * <p>If you specify <code>BEDROCK_DATA_AUTOMATION</code> as the parsing strategy
+     * for ingesting your data source, use this object to modify configurations for
+     * using the Amazon Bedrock Data Automation parser.</p>
+     */
+    inline const BedrockDataAutomationConfiguration& GetBedrockDataAutomationConfiguration() const{ return m_bedrockDataAutomationConfiguration; }
+    inline bool BedrockDataAutomationConfigurationHasBeenSet() const { return m_bedrockDataAutomationConfigurationHasBeenSet; }
+    inline void SetBedrockDataAutomationConfiguration(const BedrockDataAutomationConfiguration& value) { m_bedrockDataAutomationConfigurationHasBeenSet = true; m_bedrockDataAutomationConfiguration = value; }
+    inline void SetBedrockDataAutomationConfiguration(BedrockDataAutomationConfiguration&& value) { m_bedrockDataAutomationConfigurationHasBeenSet = true; m_bedrockDataAutomationConfiguration = std::move(value); }
+    inline ParsingConfiguration& WithBedrockDataAutomationConfiguration(const BedrockDataAutomationConfiguration& value) { SetBedrockDataAutomationConfiguration(value); return *this;}
+    inline ParsingConfiguration& WithBedrockDataAutomationConfiguration(BedrockDataAutomationConfiguration&& value) { SetBedrockDataAutomationConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>If you specify <code>BEDROCK_FOUNDATION_MODEL</code> as the parsing strategy
+     * for ingesting your data source, use this object to modify configurations for
+     * using a foundation model to parse documents.</p>
      */
     inline const BedrockFoundationModelConfiguration& GetBedrockFoundationModelConfiguration() const{ return m_bedrockFoundationModelConfiguration; }
     inline bool BedrockFoundationModelConfigurationHasBeenSet() const { return m_bedrockFoundationModelConfigurationHasBeenSet; }
@@ -80,6 +88,9 @@ namespace Model
     inline ParsingConfiguration& WithParsingStrategy(ParsingStrategy&& value) { SetParsingStrategy(std::move(value)); return *this;}
     ///@}
   private:
+
+    BedrockDataAutomationConfiguration m_bedrockDataAutomationConfiguration;
+    bool m_bedrockDataAutomationConfigurationHasBeenSet = false;
 
     BedrockFoundationModelConfiguration m_bedrockFoundationModelConfiguration;
     bool m_bedrockFoundationModelConfigurationHasBeenSet = false;

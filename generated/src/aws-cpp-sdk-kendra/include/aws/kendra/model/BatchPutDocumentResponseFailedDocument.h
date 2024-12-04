@@ -55,6 +55,21 @@ namespace Model
 
     ///@{
     /**
+     * <p> The identifier of the data source connector that the failed document belongs
+     * to. </p>
+     */
+    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
+    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
+    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
+    inline BatchPutDocumentResponseFailedDocument& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
+    inline BatchPutDocumentResponseFailedDocument& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
+    inline BatchPutDocumentResponseFailedDocument& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The type of error that caused the document to fail to be indexed.</p>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
@@ -82,6 +97,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_dataSourceId;
+    bool m_dataSourceIdHasBeenSet = false;
 
     ErrorCode m_errorCode;
     bool m_errorCodeHasBeenSet = false;

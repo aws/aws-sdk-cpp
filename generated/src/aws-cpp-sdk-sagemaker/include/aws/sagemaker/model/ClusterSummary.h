@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ClusterStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -91,6 +92,26 @@ namespace Model
     inline ClusterSummary& WithClusterStatus(const ClusterStatus& value) { SetClusterStatus(value); return *this;}
     inline ClusterSummary& WithClusterStatus(ClusterStatus&& value) { SetClusterStatus(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of Amazon Resource Names (ARNs) of the training plans associated with
+     * this cluster.</p> <p>For more information about how to reserve GPU capacity for
+     * your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see
+     * <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+     * </code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTrainingPlanArns() const{ return m_trainingPlanArns; }
+    inline bool TrainingPlanArnsHasBeenSet() const { return m_trainingPlanArnsHasBeenSet; }
+    inline void SetTrainingPlanArns(const Aws::Vector<Aws::String>& value) { m_trainingPlanArnsHasBeenSet = true; m_trainingPlanArns = value; }
+    inline void SetTrainingPlanArns(Aws::Vector<Aws::String>&& value) { m_trainingPlanArnsHasBeenSet = true; m_trainingPlanArns = std::move(value); }
+    inline ClusterSummary& WithTrainingPlanArns(const Aws::Vector<Aws::String>& value) { SetTrainingPlanArns(value); return *this;}
+    inline ClusterSummary& WithTrainingPlanArns(Aws::Vector<Aws::String>&& value) { SetTrainingPlanArns(std::move(value)); return *this;}
+    inline ClusterSummary& AddTrainingPlanArns(const Aws::String& value) { m_trainingPlanArnsHasBeenSet = true; m_trainingPlanArns.push_back(value); return *this; }
+    inline ClusterSummary& AddTrainingPlanArns(Aws::String&& value) { m_trainingPlanArnsHasBeenSet = true; m_trainingPlanArns.push_back(std::move(value)); return *this; }
+    inline ClusterSummary& AddTrainingPlanArns(const char* value) { m_trainingPlanArnsHasBeenSet = true; m_trainingPlanArns.push_back(value); return *this; }
+    ///@}
   private:
 
     Aws::String m_clusterArn;
@@ -104,6 +125,9 @@ namespace Model
 
     ClusterStatus m_clusterStatus;
     bool m_clusterStatusHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_trainingPlanArns;
+    bool m_trainingPlanArnsHasBeenSet = false;
   };
 
 } // namespace Model

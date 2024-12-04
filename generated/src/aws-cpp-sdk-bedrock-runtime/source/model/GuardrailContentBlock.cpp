@@ -19,7 +19,8 @@ namespace Model
 {
 
 GuardrailContentBlock::GuardrailContentBlock() : 
-    m_textHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_imageHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ GuardrailContentBlock& GuardrailContentBlock::operator =(JsonView jsonValue)
     m_textHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("image"))
+  {
+    m_image = jsonValue.GetObject("image");
+
+    m_imageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue GuardrailContentBlock::Jsonize() const
   if(m_textHasBeenSet)
   {
    payload.WithObject("text", m_text.Jsonize());
+
+  }
+
+  if(m_imageHasBeenSet)
+  {
+   payload.WithObject("image", m_image.Jsonize());
 
   }
 

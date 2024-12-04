@@ -19,7 +19,8 @@ namespace Model
 {
 
 GuardrailCoverage::GuardrailCoverage() : 
-    m_textCharactersHasBeenSet(false)
+    m_textCharactersHasBeenSet(false),
+    m_imagesHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,13 @@ GuardrailCoverage& GuardrailCoverage::operator =(JsonView jsonValue)
     m_textCharactersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("images"))
+  {
+    m_images = jsonValue.GetObject("images");
+
+    m_imagesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +56,12 @@ JsonValue GuardrailCoverage::Jsonize() const
   if(m_textCharactersHasBeenSet)
   {
    payload.WithObject("textCharacters", m_textCharacters.Jsonize());
+
+  }
+
+  if(m_imagesHasBeenSet)
+  {
+   payload.WithObject("images", m_images.Jsonize());
 
   }
 

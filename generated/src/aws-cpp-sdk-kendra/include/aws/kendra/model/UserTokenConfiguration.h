@@ -25,8 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>Provides the configuration information for a token.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Provides the configuration information for a token.</p>  <p>If
+   * you're using an Amazon Kendra Gen AI Enterprise Edition index and you try to use
+   * <code>UserTokenConfigurations</code> to configure user context policy, Amazon
+   * Kendra returns a <code>ValidationException</code> error.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UserTokenConfiguration">AWS
    * API Reference</a></p>
    */

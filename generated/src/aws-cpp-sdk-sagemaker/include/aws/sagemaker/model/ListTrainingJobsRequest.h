@@ -180,6 +180,24 @@ namespace Model
     inline ListTrainingJobsRequest& WithWarmPoolStatusEquals(const WarmPoolResourceStatus& value) { SetWarmPoolStatusEquals(value); return *this;}
     inline ListTrainingJobsRequest& WithWarmPoolStatusEquals(WarmPoolResourceStatus&& value) { SetWarmPoolStatusEquals(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN); of the training plan to filter training jobs
+     * by. For more information about reserving GPU capacity for your SageMaker
+     * training jobs using Amazon SageMaker Training Plan, see <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+     * </code>.</p>
+     */
+    inline const Aws::String& GetTrainingPlanArnEquals() const{ return m_trainingPlanArnEquals; }
+    inline bool TrainingPlanArnEqualsHasBeenSet() const { return m_trainingPlanArnEqualsHasBeenSet; }
+    inline void SetTrainingPlanArnEquals(const Aws::String& value) { m_trainingPlanArnEqualsHasBeenSet = true; m_trainingPlanArnEquals = value; }
+    inline void SetTrainingPlanArnEquals(Aws::String&& value) { m_trainingPlanArnEqualsHasBeenSet = true; m_trainingPlanArnEquals = std::move(value); }
+    inline void SetTrainingPlanArnEquals(const char* value) { m_trainingPlanArnEqualsHasBeenSet = true; m_trainingPlanArnEquals.assign(value); }
+    inline ListTrainingJobsRequest& WithTrainingPlanArnEquals(const Aws::String& value) { SetTrainingPlanArnEquals(value); return *this;}
+    inline ListTrainingJobsRequest& WithTrainingPlanArnEquals(Aws::String&& value) { SetTrainingPlanArnEquals(std::move(value)); return *this;}
+    inline ListTrainingJobsRequest& WithTrainingPlanArnEquals(const char* value) { SetTrainingPlanArnEquals(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_nextToken;
@@ -214,6 +232,9 @@ namespace Model
 
     WarmPoolResourceStatus m_warmPoolStatusEquals;
     bool m_warmPoolStatusEqualsHasBeenSet = false;
+
+    Aws::String m_trainingPlanArnEquals;
+    bool m_trainingPlanArnEqualsHasBeenSet = false;
   };
 
 } // namespace Model

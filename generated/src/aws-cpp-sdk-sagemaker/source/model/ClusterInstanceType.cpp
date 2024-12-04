@@ -77,6 +77,8 @@ namespace Aws
         static const int ml_g6e_24xlarge_HASH = HashingUtils::HashString("ml.g6e.24xlarge");
         static const int ml_g6e_48xlarge_HASH = HashingUtils::HashString("ml.g6e.48xlarge");
         static const int ml_p5e_48xlarge_HASH = HashingUtils::HashString("ml.p5e.48xlarge");
+        static const int ml_p5en_48xlarge_HASH = HashingUtils::HashString("ml.p5en.48xlarge");
+        static const int ml_trn2_48xlarge_HASH = HashingUtils::HashString("ml.trn2.48xlarge");
 
 
         ClusterInstanceType GetClusterInstanceTypeForName(const Aws::String& name)
@@ -310,6 +312,14 @@ namespace Aws
           {
             return ClusterInstanceType::ml_p5e_48xlarge;
           }
+          else if (hashCode == ml_p5en_48xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_p5en_48xlarge;
+          }
+          else if (hashCode == ml_trn2_48xlarge_HASH)
+          {
+            return ClusterInstanceType::ml_trn2_48xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -440,6 +450,10 @@ namespace Aws
             return "ml.g6e.48xlarge";
           case ClusterInstanceType::ml_p5e_48xlarge:
             return "ml.p5e.48xlarge";
+          case ClusterInstanceType::ml_p5en_48xlarge:
+            return "ml.p5en.48xlarge";
+          case ClusterInstanceType::ml_trn2_48xlarge:
+            return "ml.trn2.48xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

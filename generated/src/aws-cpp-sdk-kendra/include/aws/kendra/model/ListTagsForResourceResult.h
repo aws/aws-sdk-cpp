@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of tags associated with the index, FAQ, or data source.</p>
+     * <p>A list of tags associated with the index, FAQ, data source, or other
+     * resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }

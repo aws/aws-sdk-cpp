@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/GuardrailConverseTextBlock.h>
+#include <aws/bedrock-runtime/model/GuardrailConverseImageBlock.h>
 #include <utility>
 
 namespace Aws
@@ -52,10 +53,25 @@ namespace Model
     inline GuardrailConverseContentBlock& WithText(const GuardrailConverseTextBlock& value) { SetText(value); return *this;}
     inline GuardrailConverseContentBlock& WithText(GuardrailConverseTextBlock&& value) { SetText(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Image within converse content block to be evaluated by the guardrail.</p>
+     */
+    inline const GuardrailConverseImageBlock& GetImage() const{ return m_image; }
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+    inline void SetImage(const GuardrailConverseImageBlock& value) { m_imageHasBeenSet = true; m_image = value; }
+    inline void SetImage(GuardrailConverseImageBlock&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
+    inline GuardrailConverseContentBlock& WithImage(const GuardrailConverseImageBlock& value) { SetImage(value); return *this;}
+    inline GuardrailConverseContentBlock& WithImage(GuardrailConverseImageBlock&& value) { SetImage(std::move(value)); return *this;}
+    ///@}
   private:
 
     GuardrailConverseTextBlock m_text;
     bool m_textHasBeenSet = false;
+
+    GuardrailConverseImageBlock m_image;
+    bool m_imageHasBeenSet = false;
   };
 
 } // namespace Model

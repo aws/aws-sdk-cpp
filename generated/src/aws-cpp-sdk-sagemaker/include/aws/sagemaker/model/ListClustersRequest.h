@@ -142,6 +142,24 @@ namespace Model
     inline ListClustersRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
     inline ListClustersRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Resource Name (ARN); of the training plan to filter clusters by.
+     * For more information about reserving GPU capacity for your SageMaker HyperPod
+     * clusters using Amazon SageMaker Training Plan, see <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+     * </code>.</p>
+     */
+    inline const Aws::String& GetTrainingPlanArn() const{ return m_trainingPlanArn; }
+    inline bool TrainingPlanArnHasBeenSet() const { return m_trainingPlanArnHasBeenSet; }
+    inline void SetTrainingPlanArn(const Aws::String& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = value; }
+    inline void SetTrainingPlanArn(Aws::String&& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = std::move(value); }
+    inline void SetTrainingPlanArn(const char* value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn.assign(value); }
+    inline ListClustersRequest& WithTrainingPlanArn(const Aws::String& value) { SetTrainingPlanArn(value); return *this;}
+    inline ListClustersRequest& WithTrainingPlanArn(Aws::String&& value) { SetTrainingPlanArn(std::move(value)); return *this;}
+    inline ListClustersRequest& WithTrainingPlanArn(const char* value) { SetTrainingPlanArn(value); return *this;}
+    ///@}
   private:
 
     Aws::Utils::DateTime m_creationTimeAfter;
@@ -164,6 +182,9 @@ namespace Model
 
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet = false;
+
+    Aws::String m_trainingPlanArn;
+    bool m_trainingPlanArnHasBeenSet = false;
   };
 
 } // namespace Model

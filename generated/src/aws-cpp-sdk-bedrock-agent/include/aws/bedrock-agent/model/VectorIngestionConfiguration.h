@@ -68,7 +68,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A custom parser for data source documents.</p>
+     * <p>Configurations for a parser to use for parsing documents in your data source.
+     * If you exclude this field, the default parser will be used.</p>
      */
     inline const ParsingConfiguration& GetParsingConfiguration() const{ return m_parsingConfiguration; }
     inline bool ParsingConfigurationHasBeenSet() const { return m_parsingConfigurationHasBeenSet; }

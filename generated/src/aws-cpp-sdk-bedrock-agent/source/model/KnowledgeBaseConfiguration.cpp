@@ -19,6 +19,8 @@ namespace Model
 {
 
 KnowledgeBaseConfiguration::KnowledgeBaseConfiguration() : 
+    m_kendraKnowledgeBaseConfigurationHasBeenSet(false),
+    m_sqlKnowledgeBaseConfigurationHasBeenSet(false),
     m_type(KnowledgeBaseType::NOT_SET),
     m_typeHasBeenSet(false),
     m_vectorKnowledgeBaseConfigurationHasBeenSet(false)
@@ -33,6 +35,20 @@ KnowledgeBaseConfiguration::KnowledgeBaseConfiguration(JsonView jsonValue)
 
 KnowledgeBaseConfiguration& KnowledgeBaseConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("kendraKnowledgeBaseConfiguration"))
+  {
+    m_kendraKnowledgeBaseConfiguration = jsonValue.GetObject("kendraKnowledgeBaseConfiguration");
+
+    m_kendraKnowledgeBaseConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sqlKnowledgeBaseConfiguration"))
+  {
+    m_sqlKnowledgeBaseConfiguration = jsonValue.GetObject("sqlKnowledgeBaseConfiguration");
+
+    m_sqlKnowledgeBaseConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("type"))
   {
     m_type = KnowledgeBaseTypeMapper::GetKnowledgeBaseTypeForName(jsonValue.GetString("type"));
@@ -53,6 +69,18 @@ KnowledgeBaseConfiguration& KnowledgeBaseConfiguration::operator =(JsonView json
 JsonValue KnowledgeBaseConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_kendraKnowledgeBaseConfigurationHasBeenSet)
+  {
+   payload.WithObject("kendraKnowledgeBaseConfiguration", m_kendraKnowledgeBaseConfiguration.Jsonize());
+
+  }
+
+  if(m_sqlKnowledgeBaseConfigurationHasBeenSet)
+  {
+   payload.WithObject("sqlKnowledgeBaseConfiguration", m_sqlKnowledgeBaseConfiguration.Jsonize());
+
+  }
 
   if(m_typeHasBeenSet)
   {

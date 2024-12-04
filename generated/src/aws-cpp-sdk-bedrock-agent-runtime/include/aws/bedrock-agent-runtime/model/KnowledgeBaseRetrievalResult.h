@@ -47,7 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Contains a chunk of text from a data source in the knowledge base.</p>
+     * <p>Contains information about the content of the chunk.</p>
      */
     inline const RetrievalResultContent& GetContent() const{ return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }

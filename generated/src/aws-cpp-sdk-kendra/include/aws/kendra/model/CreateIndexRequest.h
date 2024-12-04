@@ -60,11 +60,13 @@ namespace Model
     /**
      * <p>The Amazon Kendra edition to use for the index. Choose
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
-     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you
-     * set the edition for an index, it can't be changed.</p> <p>The
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Use
+     * <code>GEN_AI_ENTERPRISE_EDITION</code> for creating generative AI applications.
+     * Once you set the edition for an index, it can't be changed. </p> <p>The
      * <code>Edition</code> parameter is optional. If you don't supply a value, the
      * default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on quota
-     * limits for Enterprise and Developer editions, see <a
+     * limits for Gen AI Enterprise Edition, Enterprise Edition, and Developer Edition
+     * indices, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline const IndexEdition& GetEdition() const{ return m_edition; }
@@ -155,7 +157,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user token configuration.</p>
+     * <p>The user token configuration.</p>  <p>If you're using an Amazon
+     * Kendra Gen AI Enterprise Edition index and you try to use
+     * <code>UserTokenConfigurations</code> to configure user context policy, Amazon
+     * Kendra returns a <code>ValidationException</code> error.</p> 
      */
     inline const Aws::Vector<UserTokenConfiguration>& GetUserTokenConfigurations() const{ return m_userTokenConfigurations; }
     inline bool UserTokenConfigurationsHasBeenSet() const { return m_userTokenConfigurationsHasBeenSet; }
@@ -169,14 +174,20 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user context policy.</p> <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All
-     * indexed content is searchable and displayable for all users. If you want to
-     * filter search results on user context, you can use the attribute filters of
-     * <code>_user_id</code> and <code>_group_ids</code> or you can provide user and
-     * group information in <code>UserContext</code>. </p> </dd> <dt>USER_TOKEN</dt>
-     * <dd> <p>Enables token-based user access control to filter search results on user
-     * context. All documents with no access control and all documents accessible to
-     * the user will be searchable and displayable. </p> </dd> </dl>
+     * <p>The user context policy.</p>  <p>If you're using an Amazon Kendra
+     * Gen AI Enterprise Edition index, you can only use <code>ATTRIBUTE_FILTER</code>
+     * to filter search results by user context. If you're using an Amazon Kendra Gen
+     * AI Enterprise Edition index and you try to use <code>USER_TOKEN</code> to
+     * configure user context policy, Amazon Kendra returns a
+     * <code>ValidationException</code> error.</p>  <dl>
+     * <dt>ATTRIBUTE_FILTER</dt> <dd> <p>All indexed content is searchable and
+     * displayable for all users. If you want to filter search results on user context,
+     * you can use the attribute filters of <code>_user_id</code> and
+     * <code>_group_ids</code> or you can provide user and group information in
+     * <code>UserContext</code>. </p> </dd> <dt>USER_TOKEN</dt> <dd> <p>Enables
+     * token-based user access control to filter search results on user context. All
+     * documents with no access control and all documents accessible to the user will
+     * be searchable and displayable. </p> </dd> </dl>
      */
     inline const UserContextPolicy& GetUserContextPolicy() const{ return m_userContextPolicy; }
     inline bool UserContextPolicyHasBeenSet() const { return m_userContextPolicyHasBeenSet; }
@@ -192,7 +203,9 @@ namespace Model
      * this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
      * This is useful for user context filtering, where search results are filtered
-     * based on the user or their group access to documents.</p>
+     * based on the user or their group access to documents.</p>  <p>If
+     * you're using an Amazon Kendra Gen AI Enterprise Edition index,
+     * <code>UserGroupResolutionConfiguration</code> isn't supported.</p> 
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
     inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
