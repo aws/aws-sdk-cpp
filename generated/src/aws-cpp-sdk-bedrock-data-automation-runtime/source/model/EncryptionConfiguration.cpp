@@ -1,0 +1,81 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bedrock-data-automation-runtime/model/EncryptionConfiguration.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace BedrockDataAutomationRuntime
+{
+namespace Model
+{
+
+EncryptionConfiguration::EncryptionConfiguration() : 
+    m_kmsKeyIdHasBeenSet(false),
+    m_kmsEncryptionContextHasBeenSet(false)
+{
+}
+
+EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
+  : EncryptionConfiguration()
+{
+  *this = jsonValue;
+}
+
+EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("kmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("kmsKeyId");
+
+    m_kmsKeyIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kmsEncryptionContext"))
+  {
+    Aws::Map<Aws::String, JsonView> kmsEncryptionContextJsonMap = jsonValue.GetObject("kmsEncryptionContext").GetAllObjects();
+    for(auto& kmsEncryptionContextItem : kmsEncryptionContextJsonMap)
+    {
+      m_kmsEncryptionContext[kmsEncryptionContextItem.first] = kmsEncryptionContextItem.second.AsString();
+    }
+    m_kmsEncryptionContextHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue EncryptionConfiguration::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("kmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_kmsEncryptionContextHasBeenSet)
+  {
+   JsonValue kmsEncryptionContextJsonMap;
+   for(auto& kmsEncryptionContextItem : m_kmsEncryptionContext)
+   {
+     kmsEncryptionContextJsonMap.WithString(kmsEncryptionContextItem.first, kmsEncryptionContextItem.second);
+   }
+   payload.WithObject("kmsEncryptionContext", std::move(kmsEncryptionContextJsonMap));
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace BedrockDataAutomationRuntime
+} // namespace Aws

@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/bedrock-agent/model/KendraKnowledgeBaseConfiguration.h>
+#include <aws/bedrock-agent/model/SqlKnowledgeBaseConfiguration.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseType.h>
 #include <aws/bedrock-agent/model/VectorKnowledgeBaseConfiguration.h>
 #include <utility>
@@ -41,6 +43,31 @@ namespace Model
 
     ///@{
     /**
+     * <p>Settings for an Amazon Kendra knowledge base.</p>
+     */
+    inline const KendraKnowledgeBaseConfiguration& GetKendraKnowledgeBaseConfiguration() const{ return m_kendraKnowledgeBaseConfiguration; }
+    inline bool KendraKnowledgeBaseConfigurationHasBeenSet() const { return m_kendraKnowledgeBaseConfigurationHasBeenSet; }
+    inline void SetKendraKnowledgeBaseConfiguration(const KendraKnowledgeBaseConfiguration& value) { m_kendraKnowledgeBaseConfigurationHasBeenSet = true; m_kendraKnowledgeBaseConfiguration = value; }
+    inline void SetKendraKnowledgeBaseConfiguration(KendraKnowledgeBaseConfiguration&& value) { m_kendraKnowledgeBaseConfigurationHasBeenSet = true; m_kendraKnowledgeBaseConfiguration = std::move(value); }
+    inline KnowledgeBaseConfiguration& WithKendraKnowledgeBaseConfiguration(const KendraKnowledgeBaseConfiguration& value) { SetKendraKnowledgeBaseConfiguration(value); return *this;}
+    inline KnowledgeBaseConfiguration& WithKendraKnowledgeBaseConfiguration(KendraKnowledgeBaseConfiguration&& value) { SetKendraKnowledgeBaseConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies configurations for a knowledge base connected to an SQL
+     * database.</p>
+     */
+    inline const SqlKnowledgeBaseConfiguration& GetSqlKnowledgeBaseConfiguration() const{ return m_sqlKnowledgeBaseConfiguration; }
+    inline bool SqlKnowledgeBaseConfigurationHasBeenSet() const { return m_sqlKnowledgeBaseConfigurationHasBeenSet; }
+    inline void SetSqlKnowledgeBaseConfiguration(const SqlKnowledgeBaseConfiguration& value) { m_sqlKnowledgeBaseConfigurationHasBeenSet = true; m_sqlKnowledgeBaseConfiguration = value; }
+    inline void SetSqlKnowledgeBaseConfiguration(SqlKnowledgeBaseConfiguration&& value) { m_sqlKnowledgeBaseConfigurationHasBeenSet = true; m_sqlKnowledgeBaseConfiguration = std::move(value); }
+    inline KnowledgeBaseConfiguration& WithSqlKnowledgeBaseConfiguration(const SqlKnowledgeBaseConfiguration& value) { SetSqlKnowledgeBaseConfiguration(value); return *this;}
+    inline KnowledgeBaseConfiguration& WithSqlKnowledgeBaseConfiguration(SqlKnowledgeBaseConfiguration&& value) { SetSqlKnowledgeBaseConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The type of data that the data source is converted into for the knowledge
      * base.</p>
      */
@@ -65,6 +92,12 @@ namespace Model
     inline KnowledgeBaseConfiguration& WithVectorKnowledgeBaseConfiguration(VectorKnowledgeBaseConfiguration&& value) { SetVectorKnowledgeBaseConfiguration(std::move(value)); return *this;}
     ///@}
   private:
+
+    KendraKnowledgeBaseConfiguration m_kendraKnowledgeBaseConfiguration;
+    bool m_kendraKnowledgeBaseConfigurationHasBeenSet = false;
+
+    SqlKnowledgeBaseConfiguration m_sqlKnowledgeBaseConfiguration;
+    bool m_sqlKnowledgeBaseConfigurationHasBeenSet = false;
 
     KnowledgeBaseType m_type;
     bool m_typeHasBeenSet = false;

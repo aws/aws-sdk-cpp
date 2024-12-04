@@ -24,9 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>A list of key/value pairs that identify an index, FAQ, or data source. Tag
-   * keys and values can consist of Unicode letters, digits, white space, and any of
-   * the following symbols: _ . : / = + - @.</p><p><h3>See Also:</h3>   <a
+   * <p>A key-value pair that identifies or categorizes an index, FAQ, data source,
+   * or other resource. TA tag key and value can consist of Unicode letters, digits,
+   * white space, and any of the following symbols: _ . : / = + - @.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Tag">AWS API
    * Reference</a></p>
    */
@@ -42,7 +43,7 @@ namespace Model
     ///@{
     /**
      * <p>The key for the tag. Keys are not case sensitive and must be unique for the
-     * index, FAQ, or data source.</p>
+     * index, FAQ, data source, or other resource.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

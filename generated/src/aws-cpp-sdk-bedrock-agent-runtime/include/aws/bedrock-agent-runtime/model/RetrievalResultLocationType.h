@@ -21,7 +21,9 @@ namespace Model
     CONFLUENCE,
     SALESFORCE,
     SHAREPOINT,
-    CUSTOM
+    CUSTOM,
+    KENDRA,
+    SQL
   };
 
 namespace RetrievalResultLocationTypeMapper

@@ -28,7 +28,8 @@ ResourceConfig::ResourceConfig() :
     m_volumeKmsKeyIdHasBeenSet(false),
     m_keepAlivePeriodInSeconds(0),
     m_keepAlivePeriodInSecondsHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false)
+    m_instanceGroupsHasBeenSet(false),
+    m_trainingPlanArnHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,13 @@ ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
     m_instanceGroupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TrainingPlanArn"))
+  {
+    m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
+
+    m_trainingPlanArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -129,6 +137,12 @@ JsonValue ResourceConfig::Jsonize() const
      instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());
    }
    payload.WithArray("InstanceGroups", std::move(instanceGroupsJsonList));
+
+  }
+
+  if(m_trainingPlanArnHasBeenSet)
+  {
+   payload.WithString("TrainingPlanArn", m_trainingPlanArn);
 
   }
 

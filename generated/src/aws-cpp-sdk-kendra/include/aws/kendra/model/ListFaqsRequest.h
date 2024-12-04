@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The index that contains the FAQ lists.</p>
+     * <p>The index for the FAQs.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }

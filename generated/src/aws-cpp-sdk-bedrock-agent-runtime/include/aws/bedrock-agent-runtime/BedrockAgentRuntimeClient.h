@@ -104,6 +104,35 @@ namespace BedrockAgentRuntime
         }
 
         /**
+         * <p>Generates an SQL query from a natural language query. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-generate-query.html">Generate
+         * a query for structured data</a> in the Amazon Bedrock User Guide.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GenerateQuery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GenerateQueryOutcome GenerateQuery(const Model::GenerateQueryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GenerateQuery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GenerateQueryRequestT = Model::GenerateQueryRequest>
+        Model::GenerateQueryOutcomeCallable GenerateQueryCallable(const GenerateQueryRequestT& request) const
+        {
+            return SubmitCallable(&BedrockAgentRuntimeClient::GenerateQuery, request);
+        }
+
+        /**
+         * An Async wrapper for GenerateQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GenerateQueryRequestT = Model::GenerateQueryRequest>
+        void GenerateQueryAsync(const GenerateQueryRequestT& request, const GenerateQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&BedrockAgentRuntimeClient::GenerateQuery, request, handler, context);
+        }
+
+        /**
          * <p>Gets the sessions stored in the memory of the agent.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetAgentMemory">AWS

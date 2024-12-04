@@ -133,8 +133,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that provides access to the S3
-     * bucket containing the input files for the FAQ.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that provides access to the S3
+     * bucket containing the FAQ file.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
@@ -161,7 +161,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The file format used by the input files for the FAQ.</p>
+     * <p>The file format used for the FAQ file.</p>
      */
     inline const FaqFileFormat& GetFileFormat() const{ return m_fileFormat; }
     inline void SetFileFormat(const FaqFileFormat& value) { m_fileFormat = value; }

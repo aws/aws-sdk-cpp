@@ -67,10 +67,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to run a Lambda
      * function during ingestion. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">an IAM roles
+     * for Amazon Kendra</a>.</p>
      */
     inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }

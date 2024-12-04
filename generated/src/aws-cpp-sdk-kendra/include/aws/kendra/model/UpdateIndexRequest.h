@@ -131,7 +131,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user token configuration.</p>
+     * <p>The user token configuration.</p>  <p>If you're using an Amazon
+     * Kendra Gen AI Enterprise Edition index and you try to use
+     * <code>UserTokenConfigurations</code> to configure user context policy, Amazon
+     * Kendra returns a <code>ValidationException</code> error.</p> 
      */
     inline const Aws::Vector<UserTokenConfiguration>& GetUserTokenConfigurations() const{ return m_userTokenConfigurations; }
     inline bool UserTokenConfigurationsHasBeenSet() const { return m_userTokenConfigurationsHasBeenSet; }
@@ -145,7 +148,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user context policy.</p>
+     * <p>The user context policy.</p>  <p>If you're using an Amazon Kendra
+     * Gen AI Enterprise Edition index, you can only use <code>ATTRIBUTE_FILTER</code>
+     * to filter search results by user context. If you're using an Amazon Kendra Gen
+     * AI Enterprise Edition index and you try to use <code>USER_TOKEN</code> to
+     * configure user context policy, Amazon Kendra returns a
+     * <code>ValidationException</code> error.</p> 
      */
     inline const UserContextPolicy& GetUserContextPolicy() const{ return m_userContextPolicy; }
     inline bool UserContextPolicyHasBeenSet() const { return m_userContextPolicyHasBeenSet; }
@@ -161,7 +169,9 @@ namespace Model
      * this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
      * This is useful for user context filtering, where search results are filtered
-     * based on the user or their group access to documents.</p>
+     * based on the user or their group access to documents.</p>  <p>If
+     * you're using an Amazon Kendra Gen AI Enterprise Edition index,
+     * <code>UserGroupResolutionConfiguration</code> isn't supported.</p> 
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
     inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }

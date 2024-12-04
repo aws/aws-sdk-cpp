@@ -23,7 +23,8 @@ ClusterSummary::ClusterSummary() :
     m_clusterNameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_clusterStatus(ClusterStatus::NOT_SET),
-    m_clusterStatusHasBeenSet(false)
+    m_clusterStatusHasBeenSet(false),
+    m_trainingPlanArnsHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,16 @@ ClusterSummary& ClusterSummary::operator =(JsonView jsonValue)
     m_clusterStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TrainingPlanArns"))
+  {
+    Aws::Utils::Array<JsonView> trainingPlanArnsJsonList = jsonValue.GetArray("TrainingPlanArns");
+    for(unsigned trainingPlanArnsIndex = 0; trainingPlanArnsIndex < trainingPlanArnsJsonList.GetLength(); ++trainingPlanArnsIndex)
+    {
+      m_trainingPlanArns.push_back(trainingPlanArnsJsonList[trainingPlanArnsIndex].AsString());
+    }
+    m_trainingPlanArnsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +101,17 @@ JsonValue ClusterSummary::Jsonize() const
   if(m_clusterStatusHasBeenSet)
   {
    payload.WithString("ClusterStatus", ClusterStatusMapper::GetNameForClusterStatus(m_clusterStatus));
+  }
+
+  if(m_trainingPlanArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> trainingPlanArnsJsonList(m_trainingPlanArns.size());
+   for(unsigned trainingPlanArnsIndex = 0; trainingPlanArnsIndex < trainingPlanArnsJsonList.GetLength(); ++trainingPlanArnsIndex)
+   {
+     trainingPlanArnsJsonList[trainingPlanArnsIndex].AsString(m_trainingPlanArns[trainingPlanArnsIndex]);
+   }
+   payload.WithArray("TrainingPlanArns", std::move(trainingPlanArnsJsonList));
+
   }
 
   return payload;

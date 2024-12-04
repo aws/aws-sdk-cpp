@@ -30,6 +30,7 @@ ClusterInstanceGroupSpecification::ClusterInstanceGroupSpecification() :
     m_threadsPerCoreHasBeenSet(false),
     m_instanceStorageConfigsHasBeenSet(false),
     m_onStartDeepHealthChecksHasBeenSet(false),
+    m_trainingPlanArnHasBeenSet(false),
     m_overrideVpcConfigHasBeenSet(false)
 {
 }
@@ -104,6 +105,13 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator =
     m_onStartDeepHealthChecksHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TrainingPlanArn"))
+  {
+    m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
+
+    m_trainingPlanArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("OverrideVpcConfig"))
   {
     m_overrideVpcConfig = jsonValue.GetObject("OverrideVpcConfig");
@@ -172,6 +180,12 @@ JsonValue ClusterInstanceGroupSpecification::Jsonize() const
      onStartDeepHealthChecksJsonList[onStartDeepHealthChecksIndex].AsString(DeepHealthCheckTypeMapper::GetNameForDeepHealthCheckType(m_onStartDeepHealthChecks[onStartDeepHealthChecksIndex]));
    }
    payload.WithArray("OnStartDeepHealthChecks", std::move(onStartDeepHealthChecksJsonList));
+
+  }
+
+  if(m_trainingPlanArnHasBeenSet)
+  {
+   payload.WithString("TrainingPlanArn", m_trainingPlanArn);
 
   }
 

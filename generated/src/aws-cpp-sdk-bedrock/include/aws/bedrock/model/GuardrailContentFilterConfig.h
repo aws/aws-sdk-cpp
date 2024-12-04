@@ -7,6 +7,8 @@
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/GuardrailContentFilterType.h>
 #include <aws/bedrock/model/GuardrailFilterStrength.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock/model/GuardrailModality.h>
 #include <utility>
 
 namespace Aws
@@ -103,6 +105,36 @@ namespace Model
     inline GuardrailContentFilterConfig& WithOutputStrength(const GuardrailFilterStrength& value) { SetOutputStrength(value); return *this;}
     inline GuardrailContentFilterConfig& WithOutputStrength(GuardrailFilterStrength&& value) { SetOutputStrength(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The input modalities selected for the guardrail content filter
+     * configuration.</p>
+     */
+    inline const Aws::Vector<GuardrailModality>& GetInputModalities() const{ return m_inputModalities; }
+    inline bool InputModalitiesHasBeenSet() const { return m_inputModalitiesHasBeenSet; }
+    inline void SetInputModalities(const Aws::Vector<GuardrailModality>& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = value; }
+    inline void SetInputModalities(Aws::Vector<GuardrailModality>&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = std::move(value); }
+    inline GuardrailContentFilterConfig& WithInputModalities(const Aws::Vector<GuardrailModality>& value) { SetInputModalities(value); return *this;}
+    inline GuardrailContentFilterConfig& WithInputModalities(Aws::Vector<GuardrailModality>&& value) { SetInputModalities(std::move(value)); return *this;}
+    inline GuardrailContentFilterConfig& AddInputModalities(const GuardrailModality& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(value); return *this; }
+    inline GuardrailContentFilterConfig& AddInputModalities(GuardrailModality&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The output modalities selected for the guardrail content filter
+     * configuration.</p>
+     */
+    inline const Aws::Vector<GuardrailModality>& GetOutputModalities() const{ return m_outputModalities; }
+    inline bool OutputModalitiesHasBeenSet() const { return m_outputModalitiesHasBeenSet; }
+    inline void SetOutputModalities(const Aws::Vector<GuardrailModality>& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = value; }
+    inline void SetOutputModalities(Aws::Vector<GuardrailModality>&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = std::move(value); }
+    inline GuardrailContentFilterConfig& WithOutputModalities(const Aws::Vector<GuardrailModality>& value) { SetOutputModalities(value); return *this;}
+    inline GuardrailContentFilterConfig& WithOutputModalities(Aws::Vector<GuardrailModality>&& value) { SetOutputModalities(std::move(value)); return *this;}
+    inline GuardrailContentFilterConfig& AddOutputModalities(const GuardrailModality& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(value); return *this; }
+    inline GuardrailContentFilterConfig& AddOutputModalities(GuardrailModality&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     GuardrailContentFilterType m_type;
@@ -113,6 +145,12 @@ namespace Model
 
     GuardrailFilterStrength m_outputStrength;
     bool m_outputStrengthHasBeenSet = false;
+
+    Aws::Vector<GuardrailModality> m_inputModalities;
+    bool m_inputModalitiesHasBeenSet = false;
+
+    Aws::Vector<GuardrailModality> m_outputModalities;
+    bool m_outputModalitiesHasBeenSet = false;
   };
 
 } // namespace Model

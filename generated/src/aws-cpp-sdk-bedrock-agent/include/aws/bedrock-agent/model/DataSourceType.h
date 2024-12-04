@@ -21,7 +21,8 @@ namespace Model
     CONFLUENCE,
     SALESFORCE,
     SHAREPOINT,
-    CUSTOM
+    CUSTOM,
+    REDSHIFT_METADATA
   };
 
 namespace DataSourceTypeMapper

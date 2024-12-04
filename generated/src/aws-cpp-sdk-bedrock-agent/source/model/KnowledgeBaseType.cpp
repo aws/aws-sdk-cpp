@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int VECTOR_HASH = HashingUtils::HashString("VECTOR");
+        static const int KENDRA_HASH = HashingUtils::HashString("KENDRA");
+        static const int SQL_HASH = HashingUtils::HashString("SQL");
 
 
         KnowledgeBaseType GetKnowledgeBaseTypeForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == VECTOR_HASH)
           {
             return KnowledgeBaseType::VECTOR;
+          }
+          else if (hashCode == KENDRA_HASH)
+          {
+            return KnowledgeBaseType::KENDRA;
+          }
+          else if (hashCode == SQL_HASH)
+          {
+            return KnowledgeBaseType::SQL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +58,10 @@ namespace Aws
             return {};
           case KnowledgeBaseType::VECTOR:
             return "VECTOR";
+          case KnowledgeBaseType::KENDRA:
+            return "KENDRA";
+          case KnowledgeBaseType::SQL:
+            return "SQL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

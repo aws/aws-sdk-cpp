@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>A list of users whose documents should be indexed. Specify the user names in
      * email format, for example, <code>username@tenantdomain</code>. If you need to
-     * index the documents of more than 100 users, use the
+     * index the documents of more than 10 users, use the
      * <code>OneDriveUserS3Path</code> field to specify the location of a file
      * containing a list of users.</p>
      */

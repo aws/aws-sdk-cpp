@@ -22,7 +22,8 @@ ListClustersRequest::ListClustersRequest() :
     m_sortBy(ClusterSortBy::NOT_SET),
     m_sortByHasBeenSet(false),
     m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+    m_sortOrderHasBeenSet(false),
+    m_trainingPlanArnHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,12 @@ Aws::String ListClustersRequest::SerializePayload() const
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
+
+  if(m_trainingPlanArnHasBeenSet)
+  {
+   payload.WithString("TrainingPlanArn", m_trainingPlanArn);
+
   }
 
   return payload.View().WriteReadable();

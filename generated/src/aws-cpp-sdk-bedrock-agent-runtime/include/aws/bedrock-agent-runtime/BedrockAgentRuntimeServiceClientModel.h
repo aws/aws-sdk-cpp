@@ -19,6 +19,7 @@
 
 /* Service model headers required in BedrockAgentRuntimeClient header */
 #include <aws/bedrock-agent-runtime/model/DeleteAgentMemoryResult.h>
+#include <aws/bedrock-agent-runtime/model/GenerateQueryResult.h>
 #include <aws/bedrock-agent-runtime/model/GetAgentMemoryResult.h>
 #include <aws/bedrock-agent-runtime/model/RerankSdkResult.h>
 #include <aws/bedrock-agent-runtime/model/RetrieveResult.h>
@@ -65,6 +66,7 @@ namespace Aws
     {
       /* Service model forward declarations required in BedrockAgentRuntimeClient header */
       class DeleteAgentMemoryRequest;
+      class GenerateQueryRequest;
       class GetAgentMemoryRequest;
       class InvokeAgentRequest;
       class InvokeFlowRequest;
@@ -78,6 +80,7 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<DeleteAgentMemoryResult, BedrockAgentRuntimeError> DeleteAgentMemoryOutcome;
+      typedef Aws::Utils::Outcome<GenerateQueryResult, BedrockAgentRuntimeError> GenerateQueryOutcome;
       typedef Aws::Utils::Outcome<GetAgentMemoryResult, BedrockAgentRuntimeError> GetAgentMemoryOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentRuntimeError> InvokeAgentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentRuntimeError> InvokeFlowOutcome;
@@ -91,6 +94,7 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<DeleteAgentMemoryOutcome> DeleteAgentMemoryOutcomeCallable;
+      typedef std::future<GenerateQueryOutcome> GenerateQueryOutcomeCallable;
       typedef std::future<GetAgentMemoryOutcome> GetAgentMemoryOutcomeCallable;
       typedef std::future<InvokeAgentOutcome> InvokeAgentOutcomeCallable;
       typedef std::future<InvokeFlowOutcome> InvokeFlowOutcomeCallable;
@@ -107,6 +111,7 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::DeleteAgentMemoryRequest&, const Model::DeleteAgentMemoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAgentMemoryResponseReceivedHandler;
+    typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::GenerateQueryRequest&, const Model::GenerateQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateQueryResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::GetAgentMemoryRequest&, const Model::GetAgentMemoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAgentMemoryResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::InvokeAgentRequest&, const Model::InvokeAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeAgentResponseReceivedHandler;
     typedef std::function<void(const BedrockAgentRuntimeClient*, const Model::InvokeFlowRequest&, const Model::InvokeFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeFlowResponseReceivedHandler;

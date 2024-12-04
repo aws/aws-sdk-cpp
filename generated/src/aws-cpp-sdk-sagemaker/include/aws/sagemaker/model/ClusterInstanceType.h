@@ -72,7 +72,9 @@ namespace Model
     ml_g6e_12xlarge,
     ml_g6e_24xlarge,
     ml_g6e_48xlarge,
-    ml_p5e_48xlarge
+    ml_p5e_48xlarge,
+    ml_p5en_48xlarge,
+    ml_trn2_48xlarge
   };
 
 namespace ClusterInstanceTypeMapper

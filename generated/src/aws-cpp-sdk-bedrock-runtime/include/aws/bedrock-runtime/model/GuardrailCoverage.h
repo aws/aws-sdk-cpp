@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/GuardrailTextCharactersCoverage.h>
+#include <aws/bedrock-runtime/model/GuardrailImageCoverage.h>
 #include <utility>
 
 namespace Aws
@@ -48,10 +49,26 @@ namespace Model
     inline GuardrailCoverage& WithTextCharacters(const GuardrailTextCharactersCoverage& value) { SetTextCharacters(value); return *this;}
     inline GuardrailCoverage& WithTextCharacters(GuardrailTextCharactersCoverage&& value) { SetTextCharacters(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The guardrail coverage for images (the number of images that guardrails
+     * guarded).</p>
+     */
+    inline const GuardrailImageCoverage& GetImages() const{ return m_images; }
+    inline bool ImagesHasBeenSet() const { return m_imagesHasBeenSet; }
+    inline void SetImages(const GuardrailImageCoverage& value) { m_imagesHasBeenSet = true; m_images = value; }
+    inline void SetImages(GuardrailImageCoverage&& value) { m_imagesHasBeenSet = true; m_images = std::move(value); }
+    inline GuardrailCoverage& WithImages(const GuardrailImageCoverage& value) { SetImages(value); return *this;}
+    inline GuardrailCoverage& WithImages(GuardrailImageCoverage&& value) { SetImages(std::move(value)); return *this;}
+    ///@}
   private:
 
     GuardrailTextCharactersCoverage m_textCharacters;
     bool m_textCharactersHasBeenSet = false;
+
+    GuardrailImageCoverage m_images;
+    bool m_imagesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -37,8 +37,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to remove
-     * the tag from.</p>
+     * <p>The Amazon Resource Name (ARN) of the index, FAQ, data source, or other
+     * resource to remove a tag. For example, the ARN of an index is constructed as
+     * follows: <i>arn:aws:kendra:your-region:your-account-id:index/index-id</i> For
+     * information on how to construct an ARN for all types of Amazon Kendra resources,
+     * see <a
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkendra.html#amazonkendra-resources-for-iam-policies">Resource
+     * types</a>.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
@@ -52,8 +57,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of tag keys to remove from the index, FAQ, or data source. If a tag
-     * key does not exist on the resource, it is ignored.</p>
+     * <p>A list of tag keys to remove from the index, FAQ, data source, or other
+     * resource. If a tag key doesn't exist for the resource, it is ignored.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
