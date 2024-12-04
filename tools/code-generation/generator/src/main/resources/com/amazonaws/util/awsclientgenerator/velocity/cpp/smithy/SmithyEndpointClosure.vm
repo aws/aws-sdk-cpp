@@ -39,4 +39,6 @@ ${indent}this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.
 #else
 ${indent}AWS_UNREFERENCED_PARAM(resolvedEndpoint);
 #end
+#else
+${indent}AWS_UNREFERENCED_PARAM(resolvedEndpoint);
 #end

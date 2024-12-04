@@ -205,6 +205,7 @@ BatchDescribeEntitiesOutcome MarketplaceCatalogClient::BatchDescribeEntities(con
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -244,6 +245,7 @@ CancelChangeSetOutcome MarketplaceCatalogClient::CancelChangeSet(const CancelCha
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -278,6 +280,7 @@ DeleteResourcePolicyOutcome MarketplaceCatalogClient::DeleteResourcePolicy(const
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -317,6 +320,7 @@ DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const Descr
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -356,6 +360,7 @@ DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEnt
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -390,6 +395,7 @@ GetResourcePolicyOutcome MarketplaceCatalogClient::GetResourcePolicy(const GetRe
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -419,6 +425,7 @@ ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeS
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -448,6 +455,7 @@ ListEntitiesOutcome MarketplaceCatalogClient::ListEntities(const ListEntitiesReq
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -477,6 +485,7 @@ ListTagsForResourceOutcome MarketplaceCatalogClient::ListTagsForResource(const L
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -506,6 +515,7 @@ PutResourcePolicyOutcome MarketplaceCatalogClient::PutResourcePolicy(const PutRe
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -535,6 +545,7 @@ StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChange
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -564,6 +575,7 @@ TagResourceOutcome MarketplaceCatalogClient::TagResource(const TagResourceReques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -593,6 +605,7 @@ UntagResourceOutcome MarketplaceCatalogClient::UntagResource(const UntagResource
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

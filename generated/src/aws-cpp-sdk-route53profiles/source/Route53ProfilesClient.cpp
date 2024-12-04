@@ -208,6 +208,7 @@ AssociateProfileOutcome Route53ProfilesClient::AssociateProfile(const AssociateP
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -237,6 +238,7 @@ AssociateResourceToProfileOutcome Route53ProfilesClient::AssociateResourceToProf
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -266,6 +268,7 @@ CreateProfileOutcome Route53ProfilesClient::CreateProfile(const CreateProfileReq
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -301,6 +304,7 @@ DeleteProfileOutcome Route53ProfilesClient::DeleteProfile(const DeleteProfileReq
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -343,6 +347,7 @@ DisassociateProfileOutcome Route53ProfilesClient::DisassociateProfile(const Disa
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -386,6 +391,7 @@ DisassociateResourceFromProfileOutcome Route53ProfilesClient::DisassociateResour
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -421,6 +427,7 @@ GetProfileOutcome Route53ProfilesClient::GetProfile(const GetProfileRequest& req
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -456,6 +463,7 @@ GetProfileAssociationOutcome Route53ProfilesClient::GetProfileAssociation(const 
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -491,6 +499,7 @@ GetProfileResourceAssociationOutcome Route53ProfilesClient::GetProfileResourceAs
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -520,6 +529,7 @@ ListProfileAssociationsOutcome Route53ProfilesClient::ListProfileAssociations(co
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -555,6 +565,7 @@ ListProfileResourceAssociationsOutcome Route53ProfilesClient::ListProfileResourc
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -584,6 +595,7 @@ ListProfilesOutcome Route53ProfilesClient::ListProfiles(const ListProfilesReques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -619,6 +631,7 @@ ListTagsForResourceOutcome Route53ProfilesClient::ListTagsForResource(const List
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -654,6 +667,7 @@ TagResourceOutcome Route53ProfilesClient::TagResource(const TagResourceRequest& 
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -694,6 +708,7 @@ UntagResourceOutcome Route53ProfilesClient::UntagResource(const UntagResourceReq
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -729,6 +744,7 @@ UpdateProfileResourceAssociationOutcome Route53ProfilesClient::UpdateProfileReso
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,

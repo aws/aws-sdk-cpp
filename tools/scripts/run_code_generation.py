@@ -129,23 +129,24 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_ma
             key = key.replace(";", "-")  # just in case... just replicating existing legacy behavior
         
         # determine if new service/service indifferent to name mapping
-        if key not in legacy_mapped_services:
-            with open(models_dir + "/" + model_file_date[0], 'r') as json_file:
-                model = json.load(json_file)
-                #get service id. It has to exist, else continue
-                if ("metadata" in model and "serviceId" in model["metadata"]):
+        with open(models_dir + "/" + model_file_date[0], 'r') as json_file:
+            model = json.load(json_file)
+            #get service id. It has to exist, else continue
+            if ("metadata" in model and "serviceId" in model["metadata"]):
+                if key not in legacy_mapped_services:
                     key = model["metadata"]["serviceId"] 
                     #convert into smithy case convention
                     key = key.lower().replace(' ', '-')
-                    
-                    #if protocol is 
-                    if ("protocol" in  model["metadata"] and 
-                        (model["metadata"]["protocol"] == "json" or model["metadata"]["protocol"] == "rest-json")):
-                        SMITHY_SUPPORTED_CLIENTS.add(key)
-                else:
-                    print("service Id not found in model file:", model_file_date[0], " Skipping.")
-                    continue
+                
+                #if protocol is 
+                if ("protocol" in  model["metadata"] and 
+                    (model["metadata"]["protocol"] == "json" or model["metadata"]["protocol"] == "rest-json")):
+                    SMITHY_SUPPORTED_CLIENTS.add(key)
+            else:
+                print("service Id not found in model file:", model_file_date[0], " Skipping.")
+                continue
         
+            
         # fetch endpoint-rules filename which is based on ServiceId in c2j models:
         try:
             service_name_to_model_filename[key] = _build_service_model_with_endpoints(models_dir,
@@ -582,7 +583,7 @@ def main():
 
         pending = set()
         done = set()
-
+        print(f"Smithy supported clients: {SMITHY_SUPPORTED_CLIENTS}")
         print(f"Running code generator, up to {max_workers} processes in parallel")
         sys.stdout.flush()
         for core_component in ["defaults", "partitions"]:

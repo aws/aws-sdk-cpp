@@ -263,6 +263,7 @@ BatchDeleteDocumentOutcome QBusinessClient::BatchDeleteDocument(const BatchDelet
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -306,6 +307,7 @@ BatchPutDocumentOutcome QBusinessClient::BatchPutDocument(const BatchPutDocument
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -348,6 +350,7 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
       true,
       eventEncoderStream
@@ -397,6 +400,7 @@ ChatSyncOutcome QBusinessClient::ChatSync(const ChatSyncRequest& request) const
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -426,6 +430,7 @@ CreateApplicationOutcome QBusinessClient::CreateApplication(const CreateApplicat
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -469,6 +474,7 @@ CreateDataSourceOutcome QBusinessClient::CreateDataSource(const CreateDataSource
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -505,6 +511,7 @@ CreateIndexOutcome QBusinessClient::CreateIndex(const CreateIndexRequest& reques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -541,6 +548,7 @@ CreatePluginOutcome QBusinessClient::CreatePlugin(const CreatePluginRequest& req
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -577,6 +585,7 @@ CreateRetrieverOutcome QBusinessClient::CreateRetriever(const CreateRetrieverReq
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -613,6 +622,7 @@ CreateUserOutcome QBusinessClient::CreateUser(const CreateUserRequest& request) 
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -649,6 +659,7 @@ CreateWebExperienceOutcome QBusinessClient::CreateWebExperience(const CreateWebE
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -684,6 +695,7 @@ DeleteApplicationOutcome QBusinessClient::DeleteApplication(const DeleteApplicat
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -720,6 +732,7 @@ DeleteChatControlsConfigurationOutcome QBusinessClient::DeleteChatControlsConfig
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -762,6 +775,7 @@ DeleteConversationOutcome QBusinessClient::DeleteConversation(const DeleteConver
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -811,6 +825,7 @@ DeleteDataSourceOutcome QBusinessClient::DeleteDataSource(const DeleteDataSource
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -860,6 +875,7 @@ DeleteGroupOutcome QBusinessClient::DeleteGroup(const DeleteGroupRequest& reques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -902,6 +918,7 @@ DeleteIndexOutcome QBusinessClient::DeleteIndex(const DeleteIndexRequest& reques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -944,6 +961,7 @@ DeletePluginOutcome QBusinessClient::DeletePlugin(const DeletePluginRequest& req
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -986,6 +1004,7 @@ DeleteRetrieverOutcome QBusinessClient::DeleteRetriever(const DeleteRetrieverReq
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1028,6 +1047,7 @@ DeleteUserOutcome QBusinessClient::DeleteUser(const DeleteUserRequest& request) 
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1070,6 +1090,7 @@ DeleteWebExperienceOutcome QBusinessClient::DeleteWebExperience(const DeleteWebE
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1105,6 +1126,7 @@ GetApplicationOutcome QBusinessClient::GetApplication(const GetApplicationReques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1141,6 +1163,7 @@ GetChatControlsConfigurationOutcome QBusinessClient::GetChatControlsConfiguratio
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1190,6 +1213,7 @@ GetDataSourceOutcome QBusinessClient::GetDataSource(const GetDataSourceRequest& 
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1239,6 +1263,7 @@ GetGroupOutcome QBusinessClient::GetGroup(const GetGroupRequest& request) const
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1281,6 +1306,7 @@ GetIndexOutcome QBusinessClient::GetIndex(const GetIndexRequest& request) const
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1323,6 +1349,7 @@ GetPluginOutcome QBusinessClient::GetPlugin(const GetPluginRequest& request) con
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1365,6 +1392,7 @@ GetRetrieverOutcome QBusinessClient::GetRetriever(const GetRetrieverRequest& req
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1407,6 +1435,7 @@ GetUserOutcome QBusinessClient::GetUser(const GetUserRequest& request) const
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1449,6 +1478,7 @@ GetWebExperienceOutcome QBusinessClient::GetWebExperience(const GetWebExperience
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1478,6 +1508,7 @@ ListApplicationsOutcome QBusinessClient::ListApplications(const ListApplications
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1514,6 +1545,7 @@ ListConversationsOutcome QBusinessClient::ListConversations(const ListConversati
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1564,6 +1596,7 @@ ListDataSourceSyncJobsOutcome QBusinessClient::ListDataSourceSyncJobs(const List
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1607,6 +1640,7 @@ ListDataSourcesOutcome QBusinessClient::ListDataSources(const ListDataSourcesReq
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1650,6 +1684,7 @@ ListDocumentsOutcome QBusinessClient::ListDocuments(const ListDocumentsRequest& 
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1698,6 +1733,7 @@ ListGroupsOutcome QBusinessClient::ListGroups(const ListGroupsRequest& request) 
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1734,6 +1770,7 @@ ListIndicesOutcome QBusinessClient::ListIndices(const ListIndicesRequest& reques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1776,6 +1813,7 @@ ListMessagesOutcome QBusinessClient::ListMessages(const ListMessagesRequest& req
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1812,6 +1850,7 @@ ListPluginsOutcome QBusinessClient::ListPlugins(const ListPluginsRequest& reques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1848,6 +1887,7 @@ ListRetrieversOutcome QBusinessClient::ListRetrievers(const ListRetrieversReques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1883,6 +1923,7 @@ ListTagsForResourceOutcome QBusinessClient::ListTagsForResource(const ListTagsFo
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1919,6 +1960,7 @@ ListWebExperiencesOutcome QBusinessClient::ListWebExperiences(const ListWebExper
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -1969,6 +2011,7 @@ PutFeedbackOutcome QBusinessClient::PutFeedback(const PutFeedbackRequest& reques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2012,6 +2055,7 @@ PutGroupOutcome QBusinessClient::PutGroup(const PutGroupRequest& request) const
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2062,6 +2106,7 @@ StartDataSourceSyncJobOutcome QBusinessClient::StartDataSourceSyncJob(const Star
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2112,6 +2157,7 @@ StopDataSourceSyncJobOutcome QBusinessClient::StopDataSourceSyncJob(const StopDa
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2147,6 +2193,7 @@ TagResourceOutcome QBusinessClient::TagResource(const TagResourceRequest& reques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2187,6 +2234,7 @@ UntagResourceOutcome QBusinessClient::UntagResource(const UntagResourceRequest& 
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2222,6 +2270,7 @@ UpdateApplicationOutcome QBusinessClient::UpdateApplication(const UpdateApplicat
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2258,6 +2307,7 @@ UpdateChatControlsConfigurationOutcome QBusinessClient::UpdateChatControlsConfig
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2307,6 +2357,7 @@ UpdateDataSourceOutcome QBusinessClient::UpdateDataSource(const UpdateDataSource
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2349,6 +2400,7 @@ UpdateIndexOutcome QBusinessClient::UpdateIndex(const UpdateIndexRequest& reques
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2391,6 +2443,7 @@ UpdatePluginOutcome QBusinessClient::UpdatePlugin(const UpdatePluginRequest& req
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2433,6 +2486,7 @@ UpdateRetrieverOutcome QBusinessClient::UpdateRetriever(const UpdateRetrieverReq
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2475,6 +2529,7 @@ UpdateUserOutcome QBusinessClient::UpdateUser(const UpdateUserRequest& request) 
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
@@ -2517,6 +2572,7 @@ UpdateWebExperienceOutcome QBusinessClient::UpdateWebExperience(const UpdateWebE
         }
         resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
