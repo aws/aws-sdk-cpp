@@ -20,13 +20,18 @@ namespace Aws
       namespace ParticipantTypeMapper
       {
 
+        static const int SENDER_HASH = HashingUtils::HashString("SENDER");
         static const int RECEIVER_HASH = HashingUtils::HashString("RECEIVER");
 
 
         ParticipantType GetParticipantTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == RECEIVER_HASH)
+          if (hashCode == SENDER_HASH)
+          {
+            return ParticipantType::SENDER;
+          }
+          else if (hashCode == RECEIVER_HASH)
           {
             return ParticipantType::RECEIVER;
           }
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ParticipantType::NOT_SET:
             return {};
+          case ParticipantType::SENDER:
+            return "SENDER";
           case ParticipantType::RECEIVER:
             return "RECEIVER";
           default:

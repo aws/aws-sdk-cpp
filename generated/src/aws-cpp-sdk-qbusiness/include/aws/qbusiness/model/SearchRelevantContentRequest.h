@@ -7,17 +7,12 @@
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/QBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qbusiness/model/ContentSource.h>
 #include <aws/qbusiness/model/AttributeFilter.h>
 #include <utility>
 
 namespace Aws
 {
-namespace Http
-{
-    class URI;
-} //namespace Http
 namespace QBusiness
 {
 namespace Model
@@ -38,8 +33,6 @@ namespace Model
 
     AWS_QBUSINESS_API Aws::String SerializePayload() const override;
 
-    AWS_QBUSINESS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
 
     ///@{
     /**
@@ -53,35 +46,6 @@ namespace Model
     inline SearchRelevantContentRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
     inline SearchRelevantContentRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
     inline SearchRelevantContentRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The ID of the user performing the search. Used for access control.</p>
-     */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
-    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline SearchRelevantContentRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline SearchRelevantContentRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline SearchRelevantContentRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
-    ///@}
-
-    ///@{
-    /**
-     * <p>The groups the user belongs to. Used for access control.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetUserGroups() const{ return m_userGroups; }
-    inline bool UserGroupsHasBeenSet() const { return m_userGroupsHasBeenSet; }
-    inline void SetUserGroups(const Aws::Vector<Aws::String>& value) { m_userGroupsHasBeenSet = true; m_userGroups = value; }
-    inline void SetUserGroups(Aws::Vector<Aws::String>&& value) { m_userGroupsHasBeenSet = true; m_userGroups = std::move(value); }
-    inline SearchRelevantContentRequest& WithUserGroups(const Aws::Vector<Aws::String>& value) { SetUserGroups(value); return *this;}
-    inline SearchRelevantContentRequest& WithUserGroups(Aws::Vector<Aws::String>&& value) { SetUserGroups(std::move(value)); return *this;}
-    inline SearchRelevantContentRequest& AddUserGroups(const Aws::String& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
-    inline SearchRelevantContentRequest& AddUserGroups(Aws::String&& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(std::move(value)); return *this; }
-    inline SearchRelevantContentRequest& AddUserGroups(const char* value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -148,12 +112,6 @@ namespace Model
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
-
-    Aws::String m_userId;
-    bool m_userIdHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_userGroups;
-    bool m_userGroupsHasBeenSet = false;
 
     Aws::String m_queryText;
     bool m_queryTextHasBeenSet = false;

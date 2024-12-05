@@ -32,6 +32,12 @@ GetOpportunityResult::GetOpportunityResult(const Aws::AmazonWebServiceResult<Jso
 GetOpportunityResult& GetOpportunityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+  }
+
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");

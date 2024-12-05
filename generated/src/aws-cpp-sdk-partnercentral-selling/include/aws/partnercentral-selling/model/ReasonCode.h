@@ -17,16 +17,24 @@ namespace Model
   {
     NOT_SET,
     InvitationAccessDenied,
+    InvitationValidationFailed,
     EngagementAccessDenied,
     OpportunityAccessDenied,
     ResourceSnapshotJobAccessDenied,
+    ResourceSnapshotJobValidationFailed,
+    ResourceSnapshotJobConflict,
     EngagementValidationFailed,
+    EngagementConflict,
     OpportunitySubmissionFailed,
     EngagementInvitationConflict,
-    InternalError,
     OpportunityValidationFailed,
     OpportunityConflict,
-    ResourceSnapshotAccessDenied
+    ResourceSnapshotAccessDenied,
+    ResourceSnapshotValidationFailed,
+    ResourceSnapshotConflict,
+    InternalError,
+    ServiceQuotaExceeded,
+    RequestThrottled
   };
 
 namespace ReasonCodeMapper

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>An object that contains the details of the sender-provided contact person for
-   * the <code>EngagementInvitation</code>. </p><p><h3>See Also:</h3>   <a
+   * the <code>EngagementInvitation</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SenderContact">AWS
    * API Reference</a></p>
    */
@@ -41,7 +41,7 @@ namespace Model
     ///@{
     /**
      * <p>The sender-provided contact's title (job title or role) associated with the
-     * <code>EngagementInvitation</code>. </p>
+     * <code>EngagementInvitation</code>.</p>
      */
     inline const Aws::String& GetBusinessTitle() const{ return m_businessTitle; }
     inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
@@ -56,7 +56,7 @@ namespace Model
     ///@{
     /**
      * <p>The sender-provided contact's email address associated with the
-     * <code>EngagementInvitation</code>. </p>
+     * <code>EngagementInvitation</code>.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
@@ -71,7 +71,7 @@ namespace Model
     ///@{
     /**
      * <p>The sender-provided contact's last name associated with the
-     * <code>EngagementInvitation</code>. </p>
+     * <code>EngagementInvitation</code>.</p>
      */
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
@@ -86,7 +86,7 @@ namespace Model
     ///@{
     /**
      * <p>The sender-provided contact's first name associated with the
-     * <code>EngagementInvitation</code>. </p>
+     * <code>EngagementInvitation</code>.</p>
      */
     inline const Aws::String& GetLastName() const{ return m_lastName; }
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
@@ -101,7 +101,7 @@ namespace Model
     ///@{
     /**
      * <p>The sender-provided contact's phone number associated with the
-     * <code>EngagementInvitation</code>. </p>
+     * <code>EngagementInvitation</code>.</p>
      */
     inline const Aws::String& GetPhone() const{ return m_phone; }
     inline bool PhoneHasBeenSet() const { return m_phoneHasBeenSet; }

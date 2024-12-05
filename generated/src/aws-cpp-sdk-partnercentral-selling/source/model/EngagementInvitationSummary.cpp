@@ -21,10 +21,13 @@ namespace Model
 EngagementInvitationSummary::EngagementInvitationSummary() : 
     m_arnHasBeenSet(false),
     m_catalogHasBeenSet(false),
+    m_engagementIdHasBeenSet(false),
     m_engagementTitleHasBeenSet(false),
     m_expirationDateHasBeenSet(false),
     m_idHasBeenSet(false),
     m_invitationDateHasBeenSet(false),
+    m_participantType(ParticipantType::NOT_SET),
+    m_participantTypeHasBeenSet(false),
     m_payloadType(EngagementInvitationPayloadType::NOT_SET),
     m_payloadTypeHasBeenSet(false),
     m_receiverHasBeenSet(false),
@@ -57,6 +60,13 @@ EngagementInvitationSummary& EngagementInvitationSummary::operator =(JsonView js
     m_catalogHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EngagementId"))
+  {
+    m_engagementId = jsonValue.GetString("EngagementId");
+
+    m_engagementIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("EngagementTitle"))
   {
     m_engagementTitle = jsonValue.GetString("EngagementTitle");
@@ -83,6 +93,13 @@ EngagementInvitationSummary& EngagementInvitationSummary::operator =(JsonView js
     m_invitationDate = jsonValue.GetString("InvitationDate");
 
     m_invitationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ParticipantType"))
+  {
+    m_participantType = ParticipantTypeMapper::GetParticipantTypeForName(jsonValue.GetString("ParticipantType"));
+
+    m_participantTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PayloadType"))
@@ -139,6 +156,12 @@ JsonValue EngagementInvitationSummary::Jsonize() const
 
   }
 
+  if(m_engagementIdHasBeenSet)
+  {
+   payload.WithString("EngagementId", m_engagementId);
+
+  }
+
   if(m_engagementTitleHasBeenSet)
   {
    payload.WithString("EngagementTitle", m_engagementTitle);
@@ -159,6 +182,11 @@ JsonValue EngagementInvitationSummary::Jsonize() const
   if(m_invitationDateHasBeenSet)
   {
    payload.WithString("InvitationDate", m_invitationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_participantTypeHasBeenSet)
+  {
+   payload.WithString("ParticipantType", ParticipantTypeMapper::GetNameForParticipantType(m_participantType));
   }
 
   if(m_payloadTypeHasBeenSet)

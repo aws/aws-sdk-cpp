@@ -16,6 +16,7 @@ namespace Model
   enum class ParticipantType
   {
     NOT_SET,
+    SENDER,
     RECEIVER
   };
 

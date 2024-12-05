@@ -5,20 +5,15 @@
 
 #include <aws/qbusiness/model/SearchRelevantContentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/http/URI.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
-using namespace Aws::Http;
 
 SearchRelevantContentRequest::SearchRelevantContentRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_userGroupsHasBeenSet(false),
     m_queryTextHasBeenSet(false),
     m_contentSourceHasBeenSet(false),
     m_attributeFilterHasBeenSet(false),
@@ -65,27 +60,6 @@ Aws::String SearchRelevantContentRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-void SearchRelevantContentRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_userIdHasBeenSet)
-    {
-      ss << m_userId;
-      uri.AddQueryStringParameter("userId", ss.str());
-      ss.str("");
-    }
-
-    if(m_userGroupsHasBeenSet)
-    {
-      for(const auto& item : m_userGroups)
-      {
-        ss << item;
-        uri.AddQueryStringParameter("userGroups", ss.str());
-        ss.str("");
-      }
-    }
-
-}
 
 
 

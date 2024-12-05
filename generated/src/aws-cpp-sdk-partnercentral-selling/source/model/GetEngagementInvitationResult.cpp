@@ -44,10 +44,31 @@ GetEngagementInvitationResult& GetEngagementInvitationResult::operator =(const A
 
   }
 
+  if(jsonValue.ValueExists("EngagementDescription"))
+  {
+    m_engagementDescription = jsonValue.GetString("EngagementDescription");
+
+  }
+
+  if(jsonValue.ValueExists("EngagementId"))
+  {
+    m_engagementId = jsonValue.GetString("EngagementId");
+
+  }
+
   if(jsonValue.ValueExists("EngagementTitle"))
   {
     m_engagementTitle = jsonValue.GetString("EngagementTitle");
 
+  }
+
+  if(jsonValue.ValueExists("ExistingMembers"))
+  {
+    Aws::Utils::Array<JsonView> existingMembersJsonList = jsonValue.GetArray("ExistingMembers");
+    for(unsigned existingMembersIndex = 0; existingMembersIndex < existingMembersJsonList.GetLength(); ++existingMembersIndex)
+    {
+      m_existingMembers.push_back(existingMembersJsonList[existingMembersIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("ExpirationDate"))
@@ -65,6 +86,12 @@ GetEngagementInvitationResult& GetEngagementInvitationResult::operator =(const A
   if(jsonValue.ValueExists("InvitationDate"))
   {
     m_invitationDate = jsonValue.GetString("InvitationDate");
+
+  }
+
+  if(jsonValue.ValueExists("InvitationMessage"))
+  {
+    m_invitationMessage = jsonValue.GetString("InvitationMessage");
 
   }
 

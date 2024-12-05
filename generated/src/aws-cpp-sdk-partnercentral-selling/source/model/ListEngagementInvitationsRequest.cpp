@@ -14,13 +14,16 @@ using namespace Aws::Utils;
 
 ListEngagementInvitationsRequest::ListEngagementInvitationsRequest() : 
     m_catalogHasBeenSet(false),
+    m_engagementIdentifierHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_participantType(ParticipantType::NOT_SET),
     m_participantTypeHasBeenSet(false),
     m_payloadTypeHasBeenSet(false),
-    m_sortHasBeenSet(false)
+    m_senderAwsAccountIdHasBeenSet(false),
+    m_sortHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -31,6 +34,17 @@ Aws::String ListEngagementInvitationsRequest::SerializePayload() const
   if(m_catalogHasBeenSet)
   {
    payload.WithString("Catalog", m_catalog);
+
+  }
+
+  if(m_engagementIdentifierHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> engagementIdentifierJsonList(m_engagementIdentifier.size());
+   for(unsigned engagementIdentifierIndex = 0; engagementIdentifierIndex < engagementIdentifierJsonList.GetLength(); ++engagementIdentifierIndex)
+   {
+     engagementIdentifierJsonList[engagementIdentifierIndex].AsString(m_engagementIdentifier[engagementIdentifierIndex]);
+   }
+   payload.WithArray("EngagementIdentifier", std::move(engagementIdentifierJsonList));
 
   }
 
@@ -62,9 +76,31 @@ Aws::String ListEngagementInvitationsRequest::SerializePayload() const
 
   }
 
+  if(m_senderAwsAccountIdHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> senderAwsAccountIdJsonList(m_senderAwsAccountId.size());
+   for(unsigned senderAwsAccountIdIndex = 0; senderAwsAccountIdIndex < senderAwsAccountIdJsonList.GetLength(); ++senderAwsAccountIdIndex)
+   {
+     senderAwsAccountIdJsonList[senderAwsAccountIdIndex].AsString(m_senderAwsAccountId[senderAwsAccountIdIndex]);
+   }
+   payload.WithArray("SenderAwsAccountId", std::move(senderAwsAccountIdJsonList));
+
+  }
+
   if(m_sortHasBeenSet)
   {
    payload.WithObject("Sort", m_sort.Jsonize());
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> statusJsonList(m_status.size());
+   for(unsigned statusIndex = 0; statusIndex < statusJsonList.GetLength(); ++statusIndex)
+   {
+     statusJsonList[statusIndex].AsString(InvitationStatusMapper::GetNameForInvitationStatus(m_status[statusIndex]));
+   }
+   payload.WithArray("Status", std::move(statusJsonList));
 
   }
 

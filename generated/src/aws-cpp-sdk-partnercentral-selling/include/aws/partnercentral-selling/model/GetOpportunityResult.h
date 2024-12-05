@@ -46,12 +46,25 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog associated with the request. This field takes a string
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies the opportunity.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+    inline GetOpportunityResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline GetOpportunityResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline GetOpportunityResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the catalog associated with the request. This field takes a string
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
      * catalog determines which environment the opportunity information is retrieved
      * from. Use <code>AWS</code> to retrieve opportunities in the Amazon Web Services
      * catalog, and <code>Sandbox</code> to retrieve opportunities in a secure and
-     * isolated testing environment. </p>
+     * isolated testing environment.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline void SetCatalog(const Aws::String& value) { m_catalog = value; }
@@ -64,8 +77,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> <code>DateTime</code> when the <code>Opportunity</code> was last created.
-     * </p>
+     * <p> <code>DateTime</code> when the <code>Opportunity</code> was last
+     * created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
@@ -77,7 +90,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies details of the customer associated with the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const Customer& GetCustomer() const{ return m_customer; }
     inline void SetCustomer(const Customer& value) { m_customer = value; }
@@ -88,7 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Read-only, system generated <code>Opportunity</code> unique identifier. </p>
+     * <p>Read-only, system generated <code>Opportunity</code> unique identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline void SetId(const Aws::String& value) { m_id = value; }
@@ -101,7 +114,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> <code>DateTime</code> when the opportunity was last modified. </p>
+     * <p> <code>DateTime</code> when the opportunity was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }
@@ -112,8 +125,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains lifecycle details for the <code>Opportunity</code>.
-     * </p>
+     * <p>An object that contains lifecycle details for the
+     * <code>Opportunity</code>.</p>
      */
     inline const LifeCycle& GetLifeCycle() const{ return m_lifeCycle; }
     inline void SetLifeCycle(const LifeCycle& value) { m_lifeCycle = value; }
@@ -124,8 +137,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains marketing details for the <code>Opportunity</code>.
-     * </p>
+     * <p>An object that contains marketing details for the
+     * <code>Opportunity</code>.</p>
      */
     inline const Marketing& GetMarketing() const{ return m_marketing; }
     inline void SetMarketing(const Marketing& value) { m_marketing = value; }
@@ -166,15 +179,15 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the opportunity type as renewal, new, or expansion. </p> <p>
-     * Opportunity types: </p> <ul> <li> <p> New opportunity: Represents a new business
-     * opportunity with a potential customer that's not previously engaged with your
-     * solutions or services. </p> </li> <li> <p> Renewal opportunity: Represents an
-     * opportunity to renew an existing contract or subscription with a current
-     * customer, which helps to ensure service continuity. </p> </li> <li> <p>
-     * Expansion opportunity: Represents an opportunity to expand the scope of a
+     * <p>Specifies the opportunity type as renewal, new, or expansion.</p>
+     * <p>Opportunity types:</p> <ul> <li> <p>New opportunity: Represents a new
+     * business opportunity with a potential customer that's not previously engaged
+     * with your solutions or services.</p> </li> <li> <p>Renewal opportunity:
+     * Represents an opportunity to renew an existing contract or subscription with a
+     * current customer, which helps to ensure service continuity.</p> </li> <li>
+     * <p>Expansion opportunity: Represents an opportunity to expand the scope of a
      * customer's contract or subscription, either by adding new services or increasing
-     * the volume of existing services. </p> </li> </ul>
+     * the volume of existing services.</p> </li> </ul>
      */
     inline const OpportunityType& GetOpportunityType() const{ return m_opportunityType; }
     inline void SetOpportunityType(const OpportunityType& value) { m_opportunityType = value; }
@@ -187,7 +200,7 @@ namespace Model
     /**
      * <p>Specifies the opportunity's unique identifier in the partner's CRM system.
      * This value is essential to track and reconcile because it's included in the
-     * outbound payload sent back to the partner. </p>
+     * outbound payload sent back to the partner.</p>
      */
     inline const Aws::String& GetPartnerOpportunityIdentifier() const{ return m_partnerOpportunityIdentifier; }
     inline void SetPartnerOpportunityIdentifier(const Aws::String& value) { m_partnerOpportunityIdentifier = value; }
@@ -200,32 +213,31 @@ namespace Model
 
     ///@{
     /**
-     * <p> Identifies the type of support the partner needs from Amazon Web Services.
-     * </p> <p> Valid values: </p> <ul> <li> <p> Cosell—Architectural Validation:
+     * <p>Identifies the type of support the partner needs from Amazon Web
+     * Services.</p> <p>Valid values:</p> <ul> <li> <p>Cosell—Architectural Validation:
      * Confirmation from Amazon Web Services that the partner's proposed solution
      * architecture is aligned with Amazon Web Services best practices and poses
-     * minimal architectural risks. </p> </li> <li> <p> Cosell—Business Presentation:
+     * minimal architectural risks.</p> </li> <li> <p>Cosell—Business Presentation:
      * Request Amazon Web Services seller's participation in a joint customer
-     * presentation. </p> </li> <li> <p> Cosell—Competitive Information: Access to
-     * Amazon Web Services competitive resources and support for the partner's proposed
-     * solution. </p> </li> <li> <p> Cosell—Pricing Assistance: Connect with an Amazon
+     * presentation.</p> </li> <li> <p>Cosell—Competitive Information: Access to Amazon
+     * Web Services competitive resources and support for the partner's proposed
+     * solution.</p> </li> <li> <p>Cosell—Pricing Assistance: Connect with an Amazon
      * Web Services seller for support situations where a partner may be receiving an
-     * upfront discount on a service (for example: EDP deals). </p> </li> <li> <p>
-     * Cosell—Technical Consultation: Connect with an Amazon Web Services Solutions
-     * Architect to address the partner's questions about the proposed solution. </p>
-     * </li> <li> <p> Cosell—Total Cost of Ownership Evaluation: Assistance with
-     * quoting different cost savings of proposed solutions on Amazon Web Services
-     * versus on-premises or a traditional hosting environment. </p> </li> <li> <p>
-     * Cosell—Deal Support: Request Amazon Web Services seller's support to progress
-     * the opportunity (for example: joint customer call, strategic positioning). </p>
-     * </li> <li> <p> Cosell—Support for Public Tender/RFx: Opportunity related to the
-     * public sector where the partner needs Amazon Web Services RFx support. </p>
-     * </li> <li> <p> Do Not Need Support from Amazon Web Services Sales Rep: Indicates
-     * that a partner doesn't need support from an Amazon Web Services sales
-     * representative, and the partner solely manages the opportunity. It's possible to
-     * request coselling support on these opportunities at any stage during their
-     * lifecycle. Also known as, for-visibility-only (FVO) opportunity. </p> </li>
-     * </ul>
+     * upfront discount on a service (for example: EDP deals).</p> </li> <li>
+     * <p>Cosell—Technical Consultation: Connect with an Amazon Web Services Solutions
+     * Architect to address the partner's questions about the proposed solution.</p>
+     * </li> <li> <p>Cosell—Total Cost of Ownership Evaluation: Assistance with quoting
+     * different cost savings of proposed solutions on Amazon Web Services versus
+     * on-premises or a traditional hosting environment.</p> </li> <li> <p>Cosell—Deal
+     * Support: Request Amazon Web Services seller's support to progress the
+     * opportunity (for example: joint customer call, strategic positioning).</p> </li>
+     * <li> <p>Cosell—Support for Public Tender/RFx: Opportunity related to the public
+     * sector where the partner needs Amazon Web Services RFx support.</p> </li> <li>
+     * <p>Do Not Need Support from Amazon Web Services Sales Rep: Indicates that a
+     * partner doesn't need support from an Amazon Web Services sales representative,
+     * and the partner solely manages the opportunity. It's possible to request
+     * coselling support on these opportunities at any stage during their lifecycle.
+     * Also known as, for-visibility-only (FVO) opportunity.</p> </li> </ul>
      */
     inline const Aws::Vector<PrimaryNeedFromAws>& GetPrimaryNeedsFromAws() const{ return m_primaryNeedsFromAws; }
     inline void SetPrimaryNeedsFromAws(const Aws::Vector<PrimaryNeedFromAws>& value) { m_primaryNeedsFromAws = value; }
@@ -239,7 +251,7 @@ namespace Model
     ///@{
     /**
      * <p>An object that contains project details summary for the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const Project& GetProject() const{ return m_project; }
     inline void SetProject(const Project& value) { m_project = value; }
@@ -250,9 +262,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Provides information about the associations of other entities with the
+     * <p>Provides information about the associations of other entities with the
      * opportunity. These entities include identifiers for <code>AWSProducts</code>,
-     * <code>Partner Solutions</code>, and <code>AWSMarketplaceOffers</code>. </p>
+     * <code>Partner Solutions</code>, and <code>AWSMarketplaceOffers</code>.</p>
      */
     inline const RelatedEntityIdentifiers& GetRelatedEntityIdentifiers() const{ return m_relatedEntityIdentifiers; }
     inline void SetRelatedEntityIdentifiers(const RelatedEntityIdentifiers& value) { m_relatedEntityIdentifiers = value; }
@@ -284,6 +296,8 @@ namespace Model
     inline GetOpportunityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_arn;
 
     Aws::String m_catalog;
 

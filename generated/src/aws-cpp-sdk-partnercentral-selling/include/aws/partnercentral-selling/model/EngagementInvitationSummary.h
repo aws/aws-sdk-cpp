@@ -7,6 +7,7 @@
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/partnercentral-selling/model/ParticipantType.h>
 #include <aws/partnercentral-selling/model/EngagementInvitationPayloadType.h>
 #include <aws/partnercentral-selling/model/Receiver.h>
 #include <aws/partnercentral-selling/model/InvitationStatus.h>
@@ -77,6 +78,21 @@ namespace Model
 
     ///@{
     /**
+     * <p> The identifier of the Engagement associated with this invitation. This links
+     * the invitation to its parent Engagement. </p>
+     */
+    inline const Aws::String& GetEngagementId() const{ return m_engagementId; }
+    inline bool EngagementIdHasBeenSet() const { return m_engagementIdHasBeenSet; }
+    inline void SetEngagementId(const Aws::String& value) { m_engagementIdHasBeenSet = true; m_engagementId = value; }
+    inline void SetEngagementId(Aws::String&& value) { m_engagementIdHasBeenSet = true; m_engagementId = std::move(value); }
+    inline void SetEngagementId(const char* value) { m_engagementIdHasBeenSet = true; m_engagementId.assign(value); }
+    inline EngagementInvitationSummary& WithEngagementId(const Aws::String& value) { SetEngagementId(value); return *this;}
+    inline EngagementInvitationSummary& WithEngagementId(Aws::String&& value) { SetEngagementId(std::move(value)); return *this;}
+    inline EngagementInvitationSummary& WithEngagementId(const char* value) { SetEngagementId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Provides a short title or description of the Engagement Invitation. This
      * title helps partners quickly identify and differentiate between multiple
      * engagement opportunities.</p>
@@ -133,6 +149,18 @@ namespace Model
     inline void SetInvitationDate(Aws::Utils::DateTime&& value) { m_invitationDateHasBeenSet = true; m_invitationDate = std::move(value); }
     inline EngagementInvitationSummary& WithInvitationDate(const Aws::Utils::DateTime& value) { SetInvitationDate(value); return *this;}
     inline EngagementInvitationSummary& WithInvitationDate(Aws::Utils::DateTime&& value) { SetInvitationDate(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Identifies the role of the caller in the engagement invitation.</p>
+     */
+    inline const ParticipantType& GetParticipantType() const{ return m_participantType; }
+    inline bool ParticipantTypeHasBeenSet() const { return m_participantTypeHasBeenSet; }
+    inline void SetParticipantType(const ParticipantType& value) { m_participantTypeHasBeenSet = true; m_participantType = value; }
+    inline void SetParticipantType(ParticipantType&& value) { m_participantTypeHasBeenSet = true; m_participantType = std::move(value); }
+    inline EngagementInvitationSummary& WithParticipantType(const ParticipantType& value) { SetParticipantType(value); return *this;}
+    inline EngagementInvitationSummary& WithParticipantType(ParticipantType&& value) { SetParticipantType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -216,6 +244,9 @@ namespace Model
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;
 
+    Aws::String m_engagementId;
+    bool m_engagementIdHasBeenSet = false;
+
     Aws::String m_engagementTitle;
     bool m_engagementTitleHasBeenSet = false;
 
@@ -227,6 +258,9 @@ namespace Model
 
     Aws::Utils::DateTime m_invitationDate;
     bool m_invitationDateHasBeenSet = false;
+
+    ParticipantType m_participantType;
+    bool m_participantTypeHasBeenSet = false;
 
     EngagementInvitationPayloadType m_payloadType;
     bool m_payloadTypeHasBeenSet = false;

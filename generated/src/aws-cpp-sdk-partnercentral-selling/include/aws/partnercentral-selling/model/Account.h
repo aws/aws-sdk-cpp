@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>Specifies the <code>Customer</code>'s account details associated with the
-   * <code>Opportunity</code>. </p><p><h3>See Also:</h3>   <a
+   * <code>Opportunity</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/Account">AWS
    * API Reference</a></p>
    */
@@ -43,7 +43,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the end <code>Customer</code>'s address details associated with the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const Address& GetAddress() const{ return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
@@ -56,7 +56,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the <code>Customer</code> Amazon Web Services account ID associated
-     * with the <code>Opportunity</code>. </p>
+     * with the <code>Opportunity</code>.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
@@ -71,7 +71,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the end <code>Customer</code>'s company name associated with the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const Aws::String& GetCompanyName() const{ return m_companyName; }
     inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
@@ -85,7 +85,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates the <code>Customer</code> DUNS number, if available. </p>
+     * <p>Indicates the <code>Customer</code> DUNS number, if available.</p>
      */
     inline const Aws::String& GetDuns() const{ return m_duns; }
     inline bool DunsHasBeenSet() const { return m_dunsHasBeenSet; }
@@ -101,7 +101,7 @@ namespace Model
     /**
      * <p>Specifies the industry the end <code>Customer</code> belongs to that's
      * associated with the <code>Opportunity</code>. It refers to the category or
-     * sector where the customer's business operates. This is a required field. </p>
+     * sector where the customer's business operates. This is a required field.</p>
      */
     inline const Industry& GetIndustry() const{ return m_industry; }
     inline bool IndustryHasBeenSet() const { return m_industryHasBeenSet; }
@@ -115,7 +115,7 @@ namespace Model
     /**
      * <p>Specifies the end <code>Customer</code>'s industry associated with the
      * <code>Opportunity</code>, when the selected value in the <code>Industry</code>
-     * field is <code>Other</code>. </p>
+     * field is <code>Other</code>.</p>
      */
     inline const Aws::String& GetOtherIndustry() const{ return m_otherIndustry; }
     inline bool OtherIndustryHasBeenSet() const { return m_otherIndustryHasBeenSet; }
@@ -129,10 +129,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the end customer's company website URL associated with the
+     * <p>Specifies the end customer's company website URL associated with the
      * <code>Opportunity</code>. This value is crucial to map the customer within the
      * Amazon Web Services CRM system. This field is required in all cases except when
-     * the opportunity is related to national security. </p>
+     * the opportunity is related to national security.</p>
      */
     inline const Aws::String& GetWebsiteUrl() const{ return m_websiteUrl; }
     inline bool WebsiteUrlHasBeenSet() const { return m_websiteUrlHasBeenSet; }
