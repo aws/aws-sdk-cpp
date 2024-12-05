@@ -37,11 +37,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog associated with the request. This field takes a string
+     * <p>Specifies the catalog associated with the request. This field takes a string
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
      * catalog determines which environment the opportunity association is made in. Use
      * <code>AWS</code> to associate opportunities in the Amazon Web Services catalog,
-     * and <code>Sandbox</code> for testing in secure, isolated environments. </p>
+     * and <code>Sandbox</code> for testing in secure, isolated environments.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>Requires the <code>Opportunity</code>'s unique identifier when you want to
      * associate it with a related entity. Provide the correct identifier so the
-     * intended opportunity is updated with the association. </p>
+     * intended opportunity is updated with the association.</p>
      */
     inline const Aws::String& GetOpportunityIdentifier() const{ return m_opportunityIdentifier; }
     inline bool OpportunityIdentifierHasBeenSet() const { return m_opportunityIdentifierHasBeenSet; }
@@ -75,7 +75,7 @@ namespace Model
      * with the <code> Opportunity</code>. For Amazon Web Services Marketplace
      * entities, provide the Amazon Resource Name (ARN). Use the <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html">
-     * Amazon Web Services Marketplace API</a> to obtain the ARN. </p>
+     * Amazon Web Services Marketplace API</a> to obtain the ARN.</p>
      */
     inline const Aws::String& GetRelatedEntityIdentifier() const{ return m_relatedEntityIdentifier; }
     inline bool RelatedEntityIdentifierHasBeenSet() const { return m_relatedEntityIdentifierHasBeenSet; }
@@ -91,7 +91,7 @@ namespace Model
     /**
      * <p>Specifies the entity type that you're associating with the <code>
      * Opportunity</code>. This helps to categorize and properly process the
-     * association. </p>
+     * association.</p>
      */
     inline const RelatedEntityType& GetRelatedEntityType() const{ return m_relatedEntityType; }
     inline bool RelatedEntityTypeHasBeenSet() const { return m_relatedEntityTypeHasBeenSet; }

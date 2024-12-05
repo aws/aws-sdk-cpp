@@ -27,7 +27,7 @@ namespace Model
 
   /**
    * <p>An object that contains the customer's <code>Account</code> and
-   * <code>Contact</code>. </p><p><h3>See Also:</h3>   <a
+   * <code>Contact</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/Customer">AWS
    * API Reference</a></p>
    */

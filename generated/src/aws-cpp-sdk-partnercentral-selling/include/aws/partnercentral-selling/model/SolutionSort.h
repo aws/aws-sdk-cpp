@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> Configures the solutions' response sorting that enables partners to order
-   * solutions based on specified attributes. </p><p><h3>See Also:</h3>   <a
+   * <p>Configures the solutions' response sorting that enables partners to order
+   * solutions based on specified attributes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/SolutionSort">AWS
    * API Reference</a></p>
    */
@@ -41,8 +41,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the attribute to sort by, such as <code>Name</code>,
-     * <code>CreatedDate</code>, or <code>Status</code>. </p>
+     * <p>Specifies the attribute to sort by, such as <code>Name</code>,
+     * <code>CreatedDate</code>, or <code>Status</code>.</p>
      */
     inline const SolutionSortName& GetSortBy() const{ return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the sorting order, either <code>Ascending</code> or
-     * <code>Descending</code>. The default is <code>Descending</code>. </p>
+     * <p>Specifies the sorting order, either <code>Ascending</code> or
+     * <code>Descending</code>. The default is <code>Descending</code>.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }

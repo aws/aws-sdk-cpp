@@ -36,9 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> A pagination token used to retrieve the next set of results in subsequent
+     * <p>A pagination token used to retrieve the next set of results in subsequent
      * calls. This token is included in the response only if there are additional
-     * result pages available. </p>
+     * result pages available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }

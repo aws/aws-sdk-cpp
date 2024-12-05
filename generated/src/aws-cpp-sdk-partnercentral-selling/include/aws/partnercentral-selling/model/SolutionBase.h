@@ -42,6 +42,21 @@ namespace Model
 
     ///@{
     /**
+     * <p> The SolutionBase structure provides essential information about a solution.
+     * </p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+    inline SolutionBase& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline SolutionBase& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline SolutionBase& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the catalog in which the solution is hosted, either
      * <code>AWS</code> or <code>Sandbox</code>. This helps partners differentiate
      * between live solutions and those in testing environments.</p>
@@ -58,13 +73,13 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the solution category, which helps to categorize and organize the
+     * <p>Specifies the solution category, which helps to categorize and organize the
      * solutions partners offer. Valid values: <code>Software Product</code> |
      * <code>Consulting Service</code> | <code>Hardware Product</code> |
      * <code>Communications Product</code> | <code>Professional Service</code> |
      * <code>Managed Service</code> | <code>Value-Added Resale Amazon Web Services
      * Service</code> | <code>Distribution Service</code> | <code>Training
-     * Service</code> | <code>Merger and Acquisition Advising Service</code>. </p>
+     * Service</code> | <code>Merger and Acquisition Advising Service</code>.</p>
      */
     inline const Aws::String& GetCategory() const{ return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
@@ -118,11 +133,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the solution's current status, which indicates its state in the
+     * <p>Specifies the solution's current status, which indicates its state in the
      * system. Valid values: <code>Active</code> | <code>Inactive</code> |
      * <code>Draft</code>. The status helps partners and Amazon Web Services track the
      * solution's lifecycle and availability. Filter for <code>Active</code> solutions
-     * for association to an opportunity. </p>
+     * for association to an opportunity.</p>
      */
     inline const SolutionStatus& GetStatus() const{ return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -132,6 +147,9 @@ namespace Model
     inline SolutionBase& WithStatus(SolutionStatus&& value) { SetStatus(std::move(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;

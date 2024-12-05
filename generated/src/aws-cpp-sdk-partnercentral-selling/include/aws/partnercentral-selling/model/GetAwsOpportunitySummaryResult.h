@@ -45,9 +45,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog in which the AWS Opportunity exists. This is the
+     * <p>Specifies the catalog in which the AWS Opportunity exists. This is the
      * environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the
-     * opportunity is being managed. </p>
+     * opportunity is being managed.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline void SetCatalog(const Aws::String& value) { m_catalog = value; }
@@ -60,9 +60,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Provides details about the customer associated with the AWS Opportunity,
+     * <p>Provides details about the customer associated with the AWS Opportunity,
      * including account information, industry, and other customer data. These details
-     * help partners understand the business context of the opportunity. </p>
+     * help partners understand the business context of the opportunity.</p>
      */
     inline const AwsOpportunityCustomer& GetCustomer() const{ return m_customer; }
     inline void SetCustomer(const AwsOpportunityCustomer& value) { m_customer = value; }
@@ -73,8 +73,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> Provides insights into the AWS Opportunity, including engagement score and
-     * recommended actions that AWS suggests for the partner. </p>
+     * <p>Provides insights into the AWS Opportunity, including engagement score and
+     * recommended actions that AWS suggests for the partner.</p>
      */
     inline const AwsOpportunityInsights& GetInsights() const{ return m_insights; }
     inline void SetInsights(const AwsOpportunityInsights& value) { m_insights = value; }
@@ -85,9 +85,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the type of involvement AWS has in the opportunity, such as direct
+     * <p>Specifies the type of involvement AWS has in the opportunity, such as direct
      * cosell or advisory support. This field helps partners understand the role AWS
-     * plays in advancing the opportunity. </p>
+     * plays in advancing the opportunity.</p>
      */
     inline const SalesInvolvementType& GetInvolvementType() const{ return m_involvementType; }
     inline void SetInvolvementType(const SalesInvolvementType& value) { m_involvementType = value; }
@@ -98,10 +98,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> Provides a reason for any changes in the involvement type of AWS in the
+     * <p>Provides a reason for any changes in the involvement type of AWS in the
      * opportunity. This field is used to track why the level of AWS engagement has
      * changed from <code>For Visibility Only</code> to <code>Co-sell</code> offering
-     * transparency into the partnership dynamics. </p>
+     * transparency into the partnership dynamics.</p>
      */
     inline const InvolvementTypeChangeReason& GetInvolvementTypeChangeReason() const{ return m_involvementTypeChangeReason; }
     inline void SetInvolvementTypeChangeReason(const InvolvementTypeChangeReason& value) { m_involvementTypeChangeReason = value; }
@@ -112,9 +112,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Contains lifecycle information for the AWS Opportunity, including review
+     * <p>Contains lifecycle information for the AWS Opportunity, including review
      * status, stage, and target close date. This field is crucial for partners to
-     * monitor the progression of the opportunity. </p>
+     * monitor the progression of the opportunity.</p>
      */
     inline const AwsOpportunityLifeCycle& GetLifeCycle() const{ return m_lifeCycle; }
     inline void SetLifeCycle(const AwsOpportunityLifeCycle& value) { m_lifeCycle = value; }
@@ -125,9 +125,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Details the AWS opportunity team, including members involved. This
-     * information helps partners know who from AWS is engaged and what their role is.
-     * </p>
+     * <p>Details the AWS opportunity team, including members involved. This
+     * information helps partners know who from AWS is engaged and what their role
+     * is.</p>
      */
     inline const Aws::Vector<AwsTeamMember>& GetOpportunityTeam() const{ return m_opportunityTeam; }
     inline void SetOpportunityTeam(const Aws::Vector<AwsTeamMember>& value) { m_opportunityTeam = value; }
@@ -140,9 +140,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies whether the AWS Opportunity originated from AWS or the partner.
+     * <p>Specifies whether the AWS Opportunity originated from AWS or the partner.
      * This helps distinguish between opportunities that were sourced by AWS and those
-     * referred by the partner. </p>
+     * referred by the partner.</p>
      */
     inline const OpportunityOrigin& GetOrigin() const{ return m_origin; }
     inline void SetOrigin(const OpportunityOrigin& value) { m_origin = value; }
@@ -153,10 +153,10 @@ namespace Model
 
     ///@{
     /**
-     * <p> Provides details about the project associated with the AWS Opportunity,
+     * <p>Provides details about the project associated with the AWS Opportunity,
      * including the customer’s business problem, expected outcomes, and project scope.
      * This information is crucial for understanding the broader context of the
-     * opportunity. </p>
+     * opportunity.</p>
      */
     inline const AwsOpportunityProject& GetProject() const{ return m_project; }
     inline void SetProject(const AwsOpportunityProject& value) { m_project = value; }
@@ -167,9 +167,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Lists related entity identifiers, such as AWS products or partner solutions,
+     * <p>Lists related entity identifiers, such as AWS products or partner solutions,
      * associated with the AWS Opportunity. These identifiers provide additional
-     * context and help partners understand which AWS services are involved. </p>
+     * context and help partners understand which AWS services are involved.</p>
      */
     inline const AwsOpportunityRelatedEntities& GetRelatedEntityIds() const{ return m_relatedEntityIds; }
     inline void SetRelatedEntityIds(const AwsOpportunityRelatedEntities& value) { m_relatedEntityIds = value; }
@@ -180,9 +180,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Provides the unique identifier of the related partner opportunity, allowing
+     * <p>Provides the unique identifier of the related partner opportunity, allowing
      * partners to link the AWS Opportunity to their corresponding opportunity in their
-     * CRM system. </p>
+     * CRM system.</p>
      */
     inline const Aws::String& GetRelatedOpportunityId() const{ return m_relatedOpportunityId; }
     inline void SetRelatedOpportunityId(const Aws::String& value) { m_relatedOpportunityId = value; }
@@ -195,9 +195,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Defines the visibility level for the AWS Opportunity. Use <code>Full</code>
+     * <p>Defines the visibility level for the AWS Opportunity. Use <code>Full</code>
      * visibility for most cases, while <code>Limited</code> visibility is reserved for
-     * special programs or sensitive opportunities. </p>
+     * special programs or sensitive opportunities.</p>
      */
     inline const Visibility& GetVisibility() const{ return m_visibility; }
     inline void SetVisibility(const Visibility& value) { m_visibility = value; }

@@ -19,6 +19,7 @@ namespace Model
 {
 
 SolutionBase::SolutionBase() : 
+    m_arnHasBeenSet(false),
     m_catalogHasBeenSet(false),
     m_categoryHasBeenSet(false),
     m_createdDateHasBeenSet(false),
@@ -37,6 +38,13 @@ SolutionBase::SolutionBase(JsonView jsonValue)
 
 SolutionBase& SolutionBase::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Catalog"))
   {
     m_catalog = jsonValue.GetString("Catalog");
@@ -85,6 +93,12 @@ SolutionBase& SolutionBase::operator =(JsonView jsonValue)
 JsonValue SolutionBase::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
+  }
 
   if(m_catalogHasBeenSet)
   {

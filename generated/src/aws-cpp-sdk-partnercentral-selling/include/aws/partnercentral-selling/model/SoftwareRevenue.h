@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>Specifies the customer's intended payment type agreement or procurement
      * method to acquire the solution or service outlined in the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const RevenueModel& GetDeliveryModel() const{ return m_deliveryModel; }
     inline bool DeliveryModelHasBeenSet() const { return m_deliveryModelHasBeenSet; }
@@ -57,7 +57,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the <code>Opportunity</code>'s customer engagement start date for
-     * the contract's effectiveness. </p>
+     * the contract's effectiveness.</p>
      */
     inline const Aws::String& GetEffectiveDate() const{ return m_effectiveDate; }
     inline bool EffectiveDateHasBeenSet() const { return m_effectiveDateHasBeenSet; }
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>Specifies the expiration date for the contract between the customer and
      * Amazon Web Services partner. It signifies the termination date of the
-     * agreed-upon engagement period between both parties. </p>
+     * agreed-upon engagement period between both parties.</p>
      */
     inline const Aws::String& GetExpirationDate() const{ return m_expirationDate; }
     inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }

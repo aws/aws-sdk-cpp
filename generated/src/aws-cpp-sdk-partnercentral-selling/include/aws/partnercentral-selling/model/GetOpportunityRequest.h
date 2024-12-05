@@ -36,12 +36,12 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the catalog associated with the request. This field takes a string
+     * <p>Specifies the catalog associated with the request. This field takes a string
      * value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The
      * catalog determines which environment the opportunity is fetched from. Use
      * <code>AWS</code> to retrieve opportunities in the Amazon Web Services catalog,
      * and <code>Sandbox</code> to retrieve opportunities in a secure, isolated testing
-     * environment. </p>
+     * environment.</p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
@@ -55,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Read-only, system generated <code>Opportunity</code> unique identifier. </p>
+     * <p>Read-only, system generated <code>Opportunity</code> unique identifier.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

@@ -28,9 +28,9 @@ namespace Model
 
   /**
    * <p>The input fails to satisfy the constraints specified by the service or
-   * business validation rules. </p> <p>Suggested action: Review the error message,
-   * including the failed fields and reasons, to correct the request payload.
-   * </p><p><h3>See Also:</h3>   <a
+   * business validation rules.</p> <p>Suggested action: Review the error message,
+   * including the failed fields and reasons, to correct the request
+   * payload.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ValidationException">AWS
    * API Reference</a></p>
    */
@@ -46,7 +46,7 @@ namespace Model
     ///@{
     /**
      * <p>A list of issues that were discovered in the submitted request or the
-     * resource state. </p>
+     * resource state.</p>
      */
     inline const Aws::Vector<ValidationExceptionError>& GetErrorList() const{ return m_errorList; }
     inline bool ErrorListHasBeenSet() const { return m_errorListHasBeenSet; }
@@ -72,13 +72,13 @@ namespace Model
 
     ///@{
     /**
-     * <p> The primary reason for this validation exception to occur. </p> <ul> <li>
-     * <p> <i>REQUEST_VALIDATION_FAILED:</i> The request format is not valid.</p>
-     * <p>Fix: Verify your request payload includes all required fields, uses correct
-     * data types and string formats. </p> </li> <li> <p>
-     * <i>BUSINESS_VALIDATION_FAILED:</i> The requested change doesn't pass the
-     * business validation rules.</p> <p>Fix: Check that your change aligns with the
-     * business rules defined by AWS Partner Central. </p> </li> </ul>
+     * <p>The primary reason for this validation exception to occur.</p> <ul> <li> <p>
+     * <i>REQUEST_VALIDATION_FAILED:</i> The request format is not valid.</p> <p>Fix:
+     * Verify your request payload includes all required fields, uses correct data
+     * types and string formats.</p> </li> <li> <p> <i>BUSINESS_VALIDATION_FAILED:</i>
+     * The requested change doesn't pass the business validation rules.</p> <p>Fix:
+     * Check that your change aligns with the business rules defined by AWS Partner
+     * Central.</p> </li> </ul>
      */
     inline const ValidationExceptionReason& GetReason() const{ return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }

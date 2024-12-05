@@ -6,11 +6,13 @@
 #pragma once
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/partnercentral-selling/model/Payload.h>
 #include <aws/partnercentral-selling/model/EngagementInvitationPayloadType.h>
 #include <aws/partnercentral-selling/model/Receiver.h>
 #include <aws/partnercentral-selling/model/InvitationStatus.h>
+#include <aws/partnercentral-selling/model/EngagementMemberSummary.h>
 #include <utility>
 
 namespace Aws
@@ -67,6 +69,33 @@ namespace Model
 
     ///@{
     /**
+     * <p> The description of the engagement associated with this invitation. </p>
+     */
+    inline const Aws::String& GetEngagementDescription() const{ return m_engagementDescription; }
+    inline void SetEngagementDescription(const Aws::String& value) { m_engagementDescription = value; }
+    inline void SetEngagementDescription(Aws::String&& value) { m_engagementDescription = std::move(value); }
+    inline void SetEngagementDescription(const char* value) { m_engagementDescription.assign(value); }
+    inline GetEngagementInvitationResult& WithEngagementDescription(const Aws::String& value) { SetEngagementDescription(value); return *this;}
+    inline GetEngagementInvitationResult& WithEngagementDescription(Aws::String&& value) { SetEngagementDescription(std::move(value)); return *this;}
+    inline GetEngagementInvitationResult& WithEngagementDescription(const char* value) { SetEngagementDescription(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The identifier of the engagement associated with this invitation.This ID
+     * links the invitation to its corresponding engagement. </p>
+     */
+    inline const Aws::String& GetEngagementId() const{ return m_engagementId; }
+    inline void SetEngagementId(const Aws::String& value) { m_engagementId = value; }
+    inline void SetEngagementId(Aws::String&& value) { m_engagementId = std::move(value); }
+    inline void SetEngagementId(const char* value) { m_engagementId.assign(value); }
+    inline GetEngagementInvitationResult& WithEngagementId(const Aws::String& value) { SetEngagementId(value); return *this;}
+    inline GetEngagementInvitationResult& WithEngagementId(Aws::String&& value) { SetEngagementId(std::move(value)); return *this;}
+    inline GetEngagementInvitationResult& WithEngagementId(const char* value) { SetEngagementId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The title of the engagement invitation, summarizing the purpose or objectives
      * of the opportunity shared by AWS.</p>
      */
@@ -77,6 +106,23 @@ namespace Model
     inline GetEngagementInvitationResult& WithEngagementTitle(const Aws::String& value) { SetEngagementTitle(value); return *this;}
     inline GetEngagementInvitationResult& WithEngagementTitle(Aws::String&& value) { SetEngagementTitle(std::move(value)); return *this;}
     inline GetEngagementInvitationResult& WithEngagementTitle(const char* value) { SetEngagementTitle(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> A list of active members currently part of the Engagement. This array
+     * contains a maximum of 10 members, each represented by an object with the
+     * following properties. </p> <ul> <li> <p> CompanyName: The name of the member's
+     * company. </p> </li> <li> <p> WebsiteUrl: The website URL of the member's
+     * company. </p> </li> </ul>
+     */
+    inline const Aws::Vector<EngagementMemberSummary>& GetExistingMembers() const{ return m_existingMembers; }
+    inline void SetExistingMembers(const Aws::Vector<EngagementMemberSummary>& value) { m_existingMembers = value; }
+    inline void SetExistingMembers(Aws::Vector<EngagementMemberSummary>&& value) { m_existingMembers = std::move(value); }
+    inline GetEngagementInvitationResult& WithExistingMembers(const Aws::Vector<EngagementMemberSummary>& value) { SetExistingMembers(value); return *this;}
+    inline GetEngagementInvitationResult& WithExistingMembers(Aws::Vector<EngagementMemberSummary>&& value) { SetExistingMembers(std::move(value)); return *this;}
+    inline GetEngagementInvitationResult& AddExistingMembers(const EngagementMemberSummary& value) { m_existingMembers.push_back(value); return *this; }
+    inline GetEngagementInvitationResult& AddExistingMembers(EngagementMemberSummary&& value) { m_existingMembers.push_back(std::move(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,6 +159,20 @@ namespace Model
     inline void SetInvitationDate(Aws::Utils::DateTime&& value) { m_invitationDate = std::move(value); }
     inline GetEngagementInvitationResult& WithInvitationDate(const Aws::Utils::DateTime& value) { SetInvitationDate(value); return *this;}
     inline GetEngagementInvitationResult& WithInvitationDate(Aws::Utils::DateTime&& value) { SetInvitationDate(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The message sent to the invited partner when the invitation was created.
+     * </p>
+     */
+    inline const Aws::String& GetInvitationMessage() const{ return m_invitationMessage; }
+    inline void SetInvitationMessage(const Aws::String& value) { m_invitationMessage = value; }
+    inline void SetInvitationMessage(Aws::String&& value) { m_invitationMessage = std::move(value); }
+    inline void SetInvitationMessage(const char* value) { m_invitationMessage.assign(value); }
+    inline GetEngagementInvitationResult& WithInvitationMessage(const Aws::String& value) { SetInvitationMessage(value); return *this;}
+    inline GetEngagementInvitationResult& WithInvitationMessage(Aws::String&& value) { SetInvitationMessage(std::move(value)); return *this;}
+    inline GetEngagementInvitationResult& WithInvitationMessage(const char* value) { SetInvitationMessage(value); return *this;}
     ///@}
 
     ///@{
@@ -169,7 +229,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the AWS Account ID of the sender, which identifies the AWS team
-     * responsible for sharing the engagement invitation. </p>
+     * responsible for sharing the engagement invitation.</p>
      */
     inline const Aws::String& GetSenderAwsAccountId() const{ return m_senderAwsAccountId; }
     inline void SetSenderAwsAccountId(const Aws::String& value) { m_senderAwsAccountId = value; }
@@ -221,13 +281,21 @@ namespace Model
 
     Aws::String m_catalog;
 
+    Aws::String m_engagementDescription;
+
+    Aws::String m_engagementId;
+
     Aws::String m_engagementTitle;
+
+    Aws::Vector<EngagementMemberSummary> m_existingMembers;
 
     Aws::Utils::DateTime m_expirationDate;
 
     Aws::String m_id;
 
     Aws::Utils::DateTime m_invitationDate;
+
+    Aws::String m_invitationMessage;
 
     Payload m_payload;
 

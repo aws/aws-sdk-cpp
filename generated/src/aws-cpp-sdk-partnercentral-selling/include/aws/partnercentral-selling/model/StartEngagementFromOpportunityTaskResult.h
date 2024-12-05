@@ -37,6 +37,34 @@ namespace Model
 
     ///@{
     /**
+     * <p> The identifier of the newly created engagement. Only populated if TaskStatus
+     * is COMPLETE. </p>
+     */
+    inline const Aws::String& GetEngagementId() const{ return m_engagementId; }
+    inline void SetEngagementId(const Aws::String& value) { m_engagementId = value; }
+    inline void SetEngagementId(Aws::String&& value) { m_engagementId = std::move(value); }
+    inline void SetEngagementId(const char* value) { m_engagementId.assign(value); }
+    inline StartEngagementFromOpportunityTaskResult& WithEngagementId(const Aws::String& value) { SetEngagementId(value); return *this;}
+    inline StartEngagementFromOpportunityTaskResult& WithEngagementId(Aws::String&& value) { SetEngagementId(std::move(value)); return *this;}
+    inline StartEngagementFromOpportunityTaskResult& WithEngagementId(const char* value) { SetEngagementId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The identifier of the new engagement invitation. Only populated if
+     * TaskStatus is COMPLETE. </p>
+     */
+    inline const Aws::String& GetEngagementInvitationId() const{ return m_engagementInvitationId; }
+    inline void SetEngagementInvitationId(const Aws::String& value) { m_engagementInvitationId = value; }
+    inline void SetEngagementInvitationId(Aws::String&& value) { m_engagementInvitationId = std::move(value); }
+    inline void SetEngagementInvitationId(const char* value) { m_engagementInvitationId.assign(value); }
+    inline StartEngagementFromOpportunityTaskResult& WithEngagementInvitationId(const Aws::String& value) { SetEngagementInvitationId(value); return *this;}
+    inline StartEngagementFromOpportunityTaskResult& WithEngagementInvitationId(Aws::String&& value) { SetEngagementInvitationId(std::move(value)); return *this;}
+    inline StartEngagementFromOpportunityTaskResult& WithEngagementInvitationId(const char* value) { SetEngagementInvitationId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>If the task fails, this field contains a detailed message describing the
      * failure and possible recovery steps.</p>
      */
@@ -72,6 +100,21 @@ namespace Model
     inline void SetReasonCode(ReasonCode&& value) { m_reasonCode = std::move(value); }
     inline StartEngagementFromOpportunityTaskResult& WithReasonCode(const ReasonCode& value) { SetReasonCode(value); return *this;}
     inline StartEngagementFromOpportunityTaskResult& WithReasonCode(ReasonCode&& value) { SetReasonCode(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> The identifier of the resource snapshot job created to add the opportunity
+     * resource snapshot to the Engagement. Only populated if TaskStatus is COMPLETE.
+     * </p>
+     */
+    inline const Aws::String& GetResourceSnapshotJobId() const{ return m_resourceSnapshotJobId; }
+    inline void SetResourceSnapshotJobId(const Aws::String& value) { m_resourceSnapshotJobId = value; }
+    inline void SetResourceSnapshotJobId(Aws::String&& value) { m_resourceSnapshotJobId = std::move(value); }
+    inline void SetResourceSnapshotJobId(const char* value) { m_resourceSnapshotJobId.assign(value); }
+    inline StartEngagementFromOpportunityTaskResult& WithResourceSnapshotJobId(const Aws::String& value) { SetResourceSnapshotJobId(value); return *this;}
+    inline StartEngagementFromOpportunityTaskResult& WithResourceSnapshotJobId(Aws::String&& value) { SetResourceSnapshotJobId(std::move(value)); return *this;}
+    inline StartEngagementFromOpportunityTaskResult& WithResourceSnapshotJobId(const char* value) { SetResourceSnapshotJobId(value); return *this;}
     ///@}
 
     ///@{
@@ -138,11 +181,17 @@ namespace Model
     ///@}
   private:
 
+    Aws::String m_engagementId;
+
+    Aws::String m_engagementInvitationId;
+
     Aws::String m_message;
 
     Aws::String m_opportunityId;
 
     ReasonCode m_reasonCode;
+
+    Aws::String m_resourceSnapshotJobId;
 
     Aws::Utils::DateTime m_startTime;
 

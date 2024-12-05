@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Read-only, system generated <code>Opportunity</code> unique identifier. </p>
+     * <p>Read-only, system generated <code>Opportunity</code> unique identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline void SetId(const Aws::String& value) { m_id = value; }
@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> <code>DateTime</code> when the opportunity was last modified. </p>
+     * <p> <code>DateTime</code> when the opportunity was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }

@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that contains an <code>Opportunity</code>'s subset of fields.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>An object that contains an <code>Opportunity</code>'s subset of
+   * fields.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/OpportunitySummary">AWS
    * API Reference</a></p>
    */
@@ -42,6 +42,21 @@ namespace Model
     AWS_PARTNERCENTRALSELLING_API OpportunitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
+
+    ///@{
+    /**
+     * <p> The Amazon Resource Name (ARN) for the opportunity. This globally unique
+     * identifier can be used for IAM policies and cross-service references. </p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+    inline OpportunitySummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+    inline OpportunitySummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+    inline OpportunitySummary& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
     ///@{
     /**
@@ -61,8 +76,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> <code>DateTime</code> when the <code>Opportunity</code> was last created.
-     * </p>
+     * <p> <code>DateTime</code> when the <code>Opportunity</code> was last
+     * created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
@@ -74,7 +89,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains the <code>Opportunity</code>'s customer details. </p>
+     * <p>An object that contains the <code>Opportunity</code>'s customer details.</p>
      */
     inline const CustomerSummary& GetCustomer() const{ return m_customer; }
     inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
@@ -86,7 +101,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Read-only, system-generated <code>Opportunity</code> unique identifier. </p>
+     * <p>Read-only, system-generated <code>Opportunity</code> unique identifier.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -100,8 +115,8 @@ namespace Model
 
     ///@{
     /**
-     * <p> <code>DateTime</code> when the <code>Opportunity</code> was last modified.
-     * </p>
+     * <p> <code>DateTime</code> when the <code>Opportunity</code> was last
+     * modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
@@ -113,8 +128,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>An object that contains the <code>Opportunity</code>'s lifecycle details.
-     * </p>
+     * <p>An object that contains the <code>Opportunity</code>'s lifecycle details.</p>
      */
     inline const LifeCycleSummary& GetLifeCycle() const{ return m_lifeCycle; }
     inline bool LifeCycleHasBeenSet() const { return m_lifeCycleHasBeenSet; }
@@ -126,15 +140,15 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies opportunity type as a renewal, new, or expansion. </p> <p>
-     * Opportunity types: </p> <ul> <li> <p> New Opportunity: Represents a new business
-     * opportunity with a potential customer that's not previously engaged with your
-     * solutions or services. </p> </li> <li> <p> Renewal Opportunity: Represents an
-     * opportunity to renew an existing contract or subscription with a current
-     * customer, ensuring continuity of service. </p> </li> <li> <p> Expansion
+     * <p>Specifies opportunity type as a renewal, new, or expansion.</p>
+     * <p>Opportunity types:</p> <ul> <li> <p>New Opportunity: Represents a new
+     * business opportunity with a potential customer that's not previously engaged
+     * with your solutions or services.</p> </li> <li> <p>Renewal Opportunity:
+     * Represents an opportunity to renew an existing contract or subscription with a
+     * current customer, ensuring continuity of service.</p> </li> <li> <p>Expansion
      * Opportunity: Represents an opportunity to expand the scope of an existing
      * contract or subscription, either by adding new services or increasing the volume
-     * of existing services for a current customer. </p> </li> </ul>
+     * of existing services for a current customer.</p> </li> </ul>
      */
     inline const OpportunityType& GetOpportunityType() const{ return m_opportunityType; }
     inline bool OpportunityTypeHasBeenSet() const { return m_opportunityTypeHasBeenSet; }
@@ -149,7 +163,7 @@ namespace Model
      * <p>Specifies the <code>Opportunity</code>'s unique identifier in the partner's
      * CRM system. This value is essential to track and reconcile because it's included
      * in the outbound payload sent back to the partner. It allows partners to link an
-     * opportunity to their CRM. </p>
+     * opportunity to their CRM.</p>
      */
     inline const Aws::String& GetPartnerOpportunityIdentifier() const{ return m_partnerOpportunityIdentifier; }
     inline bool PartnerOpportunityIdentifierHasBeenSet() const { return m_partnerOpportunityIdentifierHasBeenSet; }
@@ -164,7 +178,7 @@ namespace Model
     ///@{
     /**
      * <p>An object that contains the <code>Opportunity</code>'s project details
-     * summary. </p>
+     * summary.</p>
      */
     inline const ProjectSummary& GetProject() const{ return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
@@ -174,6 +188,9 @@ namespace Model
     inline OpportunitySummary& WithProject(ProjectSummary&& value) { SetProject(std::move(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_catalog;
     bool m_catalogHasBeenSet = false;

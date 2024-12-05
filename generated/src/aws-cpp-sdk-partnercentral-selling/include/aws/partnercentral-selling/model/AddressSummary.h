@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that contains an <code>Address</code> object's subset of fields.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>An object that contains an <code>Address</code> object's subset of
+   * fields.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/AddressSummary">AWS
    * API Reference</a></p>
    */
@@ -42,7 +42,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the end <code>Customer</code>'s city associated with the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const Aws::String& GetCity() const{ return m_city; }
     inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
@@ -57,7 +57,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the end <code>Customer</code>'s country associated with the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const CountryCode& GetCountryCode() const{ return m_countryCode; }
     inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the end <code>Customer</code>'s postal code associated with the
-     * <code>Opportunity</code>. </p>
+     * <code>Opportunity</code>.</p>
      */
     inline const Aws::String& GetPostalCode() const{ return m_postalCode; }
     inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
@@ -85,13 +85,13 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the end <code>Customer</code>'s state or region associated with the
-     * <code>Opportunity</code>. </p> <p>Valid values: <code>Alabama | Alaska |
-     * American Samoa | Arizona | Arkansas | California | Colorado | Connecticut |
-     * Delaware | Dist. of Columbia | Federated States of Micronesia | Florida |
-     * Georgia | Guam | Hawaii | Idaho | Illinois | Indiana | Iowa | Kansas | Kentucky
-     * | Louisiana | Maine | Marshall Islands | Maryland | Massachusetts | Michigan |
-     * Minnesota | Mississippi | Missouri | Montana | Nebraska | Nevada | New Hampshire
-     * | New Jersey | New Mexico | New York | North Carolina | North Dakota | Northern
+     * <code>Opportunity</code>.</p> <p>Valid values: <code>Alabama | Alaska | American
+     * Samoa | Arizona | Arkansas | California | Colorado | Connecticut | Delaware |
+     * Dist. of Columbia | Federated States of Micronesia | Florida | Georgia | Guam |
+     * Hawaii | Idaho | Illinois | Indiana | Iowa | Kansas | Kentucky | Louisiana |
+     * Maine | Marshall Islands | Maryland | Massachusetts | Michigan | Minnesota |
+     * Mississippi | Missouri | Montana | Nebraska | Nevada | New Hampshire | New
+     * Jersey | New Mexico | New York | North Carolina | North Dakota | Northern
      * Mariana Islands | Ohio | Oklahoma | Oregon | Palau | Pennsylvania | Puerto Rico
      * | Rhode Island | South Carolina | South Dakota | Tennessee | Texas | Utah |
      * Vermont | Virginia | Virgin Islands | Washington | West Virginia | Wisconsin |

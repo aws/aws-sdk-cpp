@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that contains a <code>Customer Partner</code>'s contact details.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>An object that contains a <code>Customer Partner</code>'s contact
+   * details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/Contact">AWS
    * API Reference</a></p>
    */
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The partner contact's title (job title or role) associated with the
      * <code>Opportunity</code>. <code>BusinessTitle</code> supports either
-     * <code>PartnerAccountManager</code> or <code>OpportunityOwner</code>. </p>
+     * <code>PartnerAccountManager</code> or <code>OpportunityOwner</code>.</p>
      */
     inline const Aws::String& GetBusinessTitle() const{ return m_businessTitle; }
     inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
@@ -56,8 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The contact's email address associated with the <code>Opportunity</code>.
-     * </p>
+     * <p>The contact's email address associated with the <code>Opportunity</code>.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
@@ -71,7 +70,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The contact's first name associated with the <code>Opportunity</code>. </p>
+     * <p>The contact's first name associated with the <code>Opportunity</code>.</p>
      */
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
@@ -85,7 +84,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The contact's last name associated with the <code>Opportunity</code>. </p>
+     * <p>The contact's last name associated with the <code>Opportunity</code>.</p>
      */
     inline const Aws::String& GetLastName() const{ return m_lastName; }
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
@@ -99,7 +98,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The contact's phone number associated with the <code>Opportunity</code>. </p>
+     * <p>The contact's phone number associated with the <code>Opportunity</code>.</p>
      */
     inline const Aws::String& GetPhone() const{ return m_phone; }
     inline bool PhoneHasBeenSet() const { return m_phoneHasBeenSet; }

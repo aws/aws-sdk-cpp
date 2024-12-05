@@ -71,6 +71,21 @@ namespace Model
 
     ///@{
     /**
+     * <p> A URL providing additional information or context about the spend
+     * estimation. </p>
+     */
+    inline const Aws::String& GetEstimationUrl() const{ return m_estimationUrl; }
+    inline bool EstimationUrlHasBeenSet() const { return m_estimationUrlHasBeenSet; }
+    inline void SetEstimationUrl(const Aws::String& value) { m_estimationUrlHasBeenSet = true; m_estimationUrl = value; }
+    inline void SetEstimationUrl(Aws::String&& value) { m_estimationUrlHasBeenSet = true; m_estimationUrl = std::move(value); }
+    inline void SetEstimationUrl(const char* value) { m_estimationUrlHasBeenSet = true; m_estimationUrl.assign(value); }
+    inline ExpectedCustomerSpend& WithEstimationUrl(const Aws::String& value) { SetEstimationUrl(value); return *this;}
+    inline ExpectedCustomerSpend& WithEstimationUrl(Aws::String&& value) { SetEstimationUrl(std::move(value)); return *this;}
+    inline ExpectedCustomerSpend& WithEstimationUrl(const char* value) { SetEstimationUrl(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates how frequently the customer is expected to spend the projected
      * amount. This can include values such as <code>Monthly</code>,
      * <code>Quarterly</code>, or <code>Annually</code>. The default value is
@@ -106,6 +121,9 @@ namespace Model
 
     ExpectedCustomerSpendCurrencyCodeEnum m_currencyCode;
     bool m_currencyCodeHasBeenSet = false;
+
+    Aws::String m_estimationUrl;
+    bool m_estimationUrlHasBeenSet = false;
 
     PaymentFrequency m_frequency;
     bool m_frequencyHasBeenSet = false;
