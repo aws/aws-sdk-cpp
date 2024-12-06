@@ -179,7 +179,10 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
 
     if(sem)
     {
+        std::cout<<"waiting for semaphore"<<std::endl;
         sem->WaitOne();
+        std::cout<<"waiting for semaphore done"<<std::endl;
+
     }
 }
 

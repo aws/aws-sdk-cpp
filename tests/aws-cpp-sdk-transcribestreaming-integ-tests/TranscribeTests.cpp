@@ -200,9 +200,11 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 
     auto OnStreamReady = [](AudioStream& stream)
     {
+        std::cout<<"OnStreamReady"<<std::endl;
         Aws::FStream file(TEST_FILE_NAME, std::ios_base::in | std::ios_base::binary);
         ASSERT_TRUE(file);
         char buf[1024];
+        size_t count = 0;
         while(file)
         {
             file.read(buf, sizeof(buf));
@@ -216,13 +218,17 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
             {
                 break;
             }
+            std::cout<<"count="<<count++<<std::endl;
             std::this_thread::sleep_for(std::chrono::milliseconds(60));
         }
+        std::cout<<"finished file"<<std::endl;
         stream.WriteAudioEvent({}); // per the spec, we have to send an empty event (i.e. without a payload) at the end.
         stream.flush();
         // For some reason, this sleep is required in order to not get the empty frame lost.
         std::this_thread::sleep_for(std::chrono::milliseconds(1000)); /* We are investigating why we need this */
         stream.Close();
+
+        std::cout<<"finished stream"<<std::endl;
     };
 
     Aws::Utils::Threading::Semaphore semaphore(0, 1);
@@ -231,6 +237,7 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
             const StartStreamTranscriptionOutcome&,
             const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)
     {
+        std::cout<<"OnResponseCallback"<<std::endl;
         semaphore.ReleaseAll();
     };
 
