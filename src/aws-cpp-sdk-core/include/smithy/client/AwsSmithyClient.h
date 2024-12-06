@@ -86,6 +86,11 @@ namespace client
                     else
                         assert(!"Unknown endpoint parameter!");
                 }
+                if (ctx.m_isEventStreaming)
+                {
+                    identityParams.additionalProperties.insert({"isEventStreaming", true});
+                }
+
                 const auto& serviceParams = ctx.m_pRequest->GetServiceSpecificParameters();
                 if (serviceParams) {
                     for (const auto& serviceParam : serviceParams->parameterMap) {
@@ -124,13 +129,39 @@ namespace client
         ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const * const request,
                                      const char* requestName,
                                      Aws::Http::HttpMethod method,
-                                     EndpointUpdateCallback&& endpointCallback) const
+                                     EndpointUpdateCallback&& endpointCallback,
+                                     bool isEventStreamRequest = false,
+                                     std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp = nullptr
+                                     ) const
         {
-            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
+            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback), isEventStreamRequest,  std::move(eventEncoderStream_sp));
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
 
     protected:
+        //Aws::Utils::Event::EventEncoderStream
+        void SetInputStreamInRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx, std::shared_ptr<Aws::Utils::Event::EventEncoderStream>&  eventEncoderStreamSp) const override
+        {
+            if(pRequestCtx &&
+               pRequestCtx->m_pRequest && 
+               eventEncoderStreamSp)
+            {
+                if(AwsClientRequestSigning<AuthSchemesVariantT>::SetSignerInEventStream(eventEncoderStreamSp, 
+                                    pRequestCtx->m_authSchemeOption,
+                                    m_authSchemes))
+                {
+                    auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ServiceNameT, 0, 1);
+                    pRequestCtx->m_semaphore = sem;
+
+                    const_cast<Aws::AmazonWebServiceRequest*>(pRequestCtx->m_pRequest)->SetRequestSignedHandler([eventEncoderStreamSp, sem](const Aws::Http::HttpRequest& httpRequest) 
+                    { 
+                        eventEncoderStreamSp->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); 
+                        sem->ReleaseAll(); 
+                    });
+                }
+            }
+        }
+
         ServiceClientConfigurationT& m_clientConfiguration;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};

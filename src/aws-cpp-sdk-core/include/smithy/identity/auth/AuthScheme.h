@@ -26,6 +26,6 @@ namespace smithy {
 
         virtual std::shared_ptr<IdentityResolverBase<IdentityT>> identityResolver() = 0;
 
-        virtual std::shared_ptr<AwsSignerBase<IdentityT>> signer() = 0;
+        virtual std::shared_ptr<AwsSignerBase<IdentityT>> signer(bool isEventStreaming = false) = 0;
     };
 }

@@ -46,6 +46,7 @@ namespace smithy {
 
         // signer may copy the original httpRequest or create a new one
         virtual SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const IdentityT& identity, SigningProperties properties) = 0;
+        virtual bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String&) const {return false;};
 
         virtual ~AwsSignerBase() {};
     };

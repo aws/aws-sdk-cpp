@@ -9,7 +9,7 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
         {
 #foreach($entry in $AuthSchemeMapEntries)
-            {${entry}{GetServiceName(), clientConfiguration.region}},
+            {${entry}{GetServiceName(), clientConfiguration.region#if($serviceModel.hasStreamingRequestShapes()), true#end}},
 #end
         })
 {
@@ -27,7 +27,7 @@ ${className}::${className}(const AWSCredentials& credentials,
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
         {
 #foreach($entry in $AuthSchemeMapEntries)
-            {${entry}{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
+            {${entry}{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region#if($serviceModel.hasStreamingRequestShapes()) , true#end}},
 #end
         })
 {
@@ -45,7 +45,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
         {
 #foreach($entry in $AuthSchemeMapEntries)
-            {${entry}{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+            {${entry}{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region#if($serviceModel.hasStreamingRequestShapes()) , true#end}}
 #end
         })
 {
@@ -62,7 +62,7 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
       Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
       {
 #foreach($entry in $AuthSchemeMapEntries)
-          {$entry{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
+          {$entry{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region#if($serviceModel.hasStreamingRequestShapes()) , true#end}}
 #end
       })
 {
@@ -79,7 +79,7 @@ ${className}::${className}(const AWSCredentials& credentials,
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
         {
 #foreach($entry in $AuthSchemeMapEntries)
-          {$entry{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
+          {$entry{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region#if($serviceModel.hasStreamingRequestShapes()) , true#end}}
 #end
         })
 {
@@ -96,7 +96,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
         Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
         {
 #foreach($entry in $AuthSchemeMapEntries)
-          {$entry{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+          {$entry{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region#if($serviceModel.hasStreamingRequestShapes()) , true#end}}
 #end
         })
 {

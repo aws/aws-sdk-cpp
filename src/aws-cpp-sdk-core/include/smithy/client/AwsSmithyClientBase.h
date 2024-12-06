@@ -17,6 +17,7 @@
 #include <aws/core/utils/FutureOutcome.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/event/EventStream.h>
 
 namespace Aws
 {
@@ -55,6 +56,13 @@ namespace Aws
     namespace Endpoint
     {
         class AWSEndpoint;
+
+        struct AWSEndpointResolutionOverrides
+        {
+            Aws::Vector<Aws::String> pathSegments;
+            bool setRfc3986Encoded{false};
+            Aws::String queryString;
+        };
     }
 }
 
@@ -131,12 +139,17 @@ namespace client
                               Aws::Http::HttpMethod method,
                               EndpointUpdateCallback&& endpointCallback,
                               ResponseHandlerFunc&& responseHandler,
-                              std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
+                              std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
+                              bool isEventStreamRequest,
+                              std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp
+                              ) const;
 
         HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
                                             const char* requestName,
                                             Aws::Http::HttpMethod method,
-                                            EndpointUpdateCallback&& endpointCallback) const;
+                                            EndpointUpdateCallback&& endpointCallback,
+                                            bool isEventStreamRequest,
+                                            std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp) const;
 
     protected:
         /**
@@ -158,8 +171,10 @@ namespace client
         virtual SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
         virtual SigningOutcome SignRequest(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemeOption& targetAuthSchemeOption) const = 0;
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
+        virtual bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String& /* priorSignature */) const { return false; }
 
     protected:
+        virtual void SetInputStreamInRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& , std::shared_ptr<Aws::Utils::Event::EventEncoderStream>& ) const {} ;
         Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
         Aws::String m_userAgent;

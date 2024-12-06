@@ -18,7 +18,12 @@ namespace smithy {
 
         Aws::Vector<AuthSchemeOption> resolveAuthScheme(const ServiceAuthSchemeParameters& identityProperties) override
         {
-            AWS_UNREFERENCED_PARAM(identityProperties);
+            //AWS_UNREFERENCED_PARAM(identityProperties);
+            if(identityProperties.additionalProperties.find("isEventStreaming") != identityProperties.additionalProperties.end())
+            {
+                return  {SigV4AuthSchemeOption::sigV4EventStreamingAuthSchemeOption};
+            }
+            
             return {SigV4AuthSchemeOption::sigV4AuthSchemeOption};
         }
     };

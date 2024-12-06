@@ -6,25 +6,35 @@
 #pragma once
 #include <aws/route53profiles/Route53Profiles_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53profiles/Route53ProfilesServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
 
 namespace Aws
 {
 namespace Route53Profiles
 {
+  AWS_ROUTE53PROFILES_API extern const char SERVICE_NAME[];
   /**
    * <p> With Amazon Route 53 Profiles you can share Route 53 configurations with
    * VPCs and AWS accounts </p>
    */
-  class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient>
+  class AWS_ROUTE53PROFILES_API Route53ProfilesClient : smithy::client::AwsSmithyClientT<Aws::Route53Profiles::SERVICE_NAME,
+      Aws::Route53Profiles::Route53ProfilesClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      Route53ProfilesEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome>,
+    Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Route53Profiles"; }
 
       typedef Route53ProfilesClientConfiguration ClientConfigurationType;
       typedef Route53ProfilesEndpointProvider EndpointProviderType;
@@ -504,8 +514,7 @@ namespace Route53Profiles
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient>;
       void init(const Route53ProfilesClientConfiguration& clientConfiguration);
 
-      Route53ProfilesClientConfiguration m_clientConfiguration;
-      std::shared_ptr<Route53ProfilesEndpointProviderBase> m_endpointProvider;
+
   };
 
 } // namespace Route53Profiles
