@@ -173,12 +173,13 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     pRequestCtx->m_requestInfo.attempt = 1;
     pRequestCtx->m_requestInfo.maxAttempts = 0;
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
+    auto sem = pRequestCtx->m_semaphore;
 
     AttemptOneRequestAsync(std::move(pRequestCtx));
 
-    if(pRequestCtx->m_semaphore)
+    if(sem)
     {
-        pRequestCtx->m_semaphore->WaitOne();
+        sem->WaitOne();
     }
 }
 
