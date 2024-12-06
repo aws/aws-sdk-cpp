@@ -145,6 +145,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     }
     pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
     assert(pRequestCtx->m_authSchemeOption.schemeId);
+    SetInputStreamInRequest(pRequestCtx, eventEncoderStreamSp);
     Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
     const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
     epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());
@@ -157,7 +158,6 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
           } );
         return;
     }
-
     pRequestCtx->m_endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
     if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))
     {
@@ -169,7 +169,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
           } );
         return;
     }
-    SetInputStreamInRequest(pRequestCtx, eventEncoderStreamSp);
+    
     pRequestCtx->m_requestInfo.attempt = 1;
     pRequestCtx->m_requestInfo.maxAttempts = 0;
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
