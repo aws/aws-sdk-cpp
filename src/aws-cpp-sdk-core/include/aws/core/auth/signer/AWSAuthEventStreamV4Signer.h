@@ -55,6 +55,9 @@ namespace Aws
 
             bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String& priorSignature) const override;
 
+            bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String& priorSignature, const Aws::Auth::AWSCredentials& creds) const;
+
+
             bool SignRequest(Aws::Http::HttpRequest& request) const override
             {
                 return SignRequest(request, m_region.c_str(), m_serviceName.c_str(), true);

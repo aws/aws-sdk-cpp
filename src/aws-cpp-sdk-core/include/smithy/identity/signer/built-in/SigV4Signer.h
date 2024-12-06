@@ -96,9 +96,21 @@ namespace smithy {
             }
             return SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to sign the request with sigv4 stream", false);
         }
-        bool SignEventMessage(Aws::Utils::Event::Message& em, Aws::String& sig) const override
+        bool SignEventMessage(Aws::Utils::Event::Message& em, Aws::String& sig, const AwsCredentialIdentityBase& identity) const override
         { 
-            return legacySigner.SignEventMessage(em, sig);
+            auto getCreds = [&]() -> Aws::Auth::AWSCredentials {
+                if(identity.sessionToken().has_value() && identity.expiration().has_value())
+                {
+                    return Aws::Auth::AWSCredentials(identity.accessKeyId(), identity.secretAccessKey(), identity.sessionToken().value(), identity.expiration().value());
+                }
+                else if(identity.sessionToken().has_value())
+                {
+                    return Aws::Auth::AWSCredentials(identity.accessKeyId(), identity.secretAccessKey(), identity.sessionToken().value());
+                }
+                return Aws::Auth::AWSCredentials(identity.accessKeyId(), identity.secretAccessKey());
+            };
+            
+            return legacySigner.SignEventMessage(em, sig, getCreds());
         }
 
 

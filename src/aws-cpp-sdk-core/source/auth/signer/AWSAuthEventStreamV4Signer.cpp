@@ -158,8 +158,9 @@ static void WriteBigEndian(Aws::String& str, uint64_t n)
     }
 }
 
-bool AWSAuthEventStreamV4Signer::SignEventMessage(Event::Message& message, Aws::String& priorSignature) const
+bool AWSAuthEventStreamV4Signer::SignEventMessage(Event::Message& message, Aws::String& priorSignature, const AWSCredentials& creds) const
 {
+
     using Event::EventHeaderValue;
 
     Aws::StringStream stringToSign;
@@ -214,7 +215,7 @@ bool AWSAuthEventStreamV4Signer::SignEventMessage(Event::Message& message, Aws::
 
     Aws::String canonicalRequestString = stringToSign.str();
     AWS_LOGSTREAM_TRACE(v4StreamingLogTag, "EventStream Event Canonical Request String: " << canonicalRequestString);
-    Aws::Utils::ByteBuffer finalSignatureDigest = GenerateSignature(m_credentialsProvider->GetAWSCredentials(), canonicalRequestString, simpleDate, m_region, m_serviceName);
+    Aws::Utils::ByteBuffer finalSignatureDigest = GenerateSignature(creds, canonicalRequestString, simpleDate, m_region, m_serviceName);
     const auto finalSignature = HashingUtils::HexEncode(finalSignatureDigest);
     AWS_LOGSTREAM_DEBUG(v4StreamingLogTag, "Final computed signing hash: " << finalSignature);
     priorSignature = finalSignature;
@@ -223,7 +224,17 @@ bool AWSAuthEventStreamV4Signer::SignEventMessage(Event::Message& message, Aws::
     message.InsertEventHeader(EVENTSTREAM_SIGNATURE_HEADER, std::move(finalSignatureDigest));
 
     AWS_LOGSTREAM_INFO(v4StreamingLogTag, "Event chunk final signature - " << finalSignature);
-    return true;
+    return true;    
+
+
+}
+
+
+bool AWSAuthEventStreamV4Signer::SignEventMessage(Event::Message& message, Aws::String& priorSignature) const
+{
+    const auto& creds = m_credentialsProvider->GetAWSCredentials();
+
+    return SignEventMessage( message,  priorSignature, creds);
 }
 
 bool AWSAuthEventStreamV4Signer::ShouldSignHeader(const Aws::String& header) const

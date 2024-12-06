@@ -81,7 +81,8 @@ namespace Aws
                 public:
                 explicit SmithyEventEncoderStream(size_t bufferSize = DEFAULT_BUF_SIZE):EventEncoderStream(bufferSize){}
                 virtual ~SmithyEventEncoderStream() {}
-                void SetSigner(std::shared_ptr<smithy::AwsSignerBase<IdentityT> > signer) { m_evtEncoder.SetSigner(signer); }
+                void SetSigner(std::shared_ptr<smithy::AwsSignerBase<IdentityT> > signer, Aws::UniquePtr<IdentityT> identity) { m_evtEncoder.SetSigner(signer, std::move(identity));
+                }
                 
                 protected:
                 Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) override
