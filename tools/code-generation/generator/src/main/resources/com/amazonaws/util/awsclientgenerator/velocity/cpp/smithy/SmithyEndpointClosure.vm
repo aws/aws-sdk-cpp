@@ -1,4 +1,7 @@
 #set($indent = "        ")
+#if($operation.request.shape.hasEventStreamMembers())
+${indent}streamReadyCallback();
+#end
 #if($hasEndPointOverrides)
 ${indent}for(const auto& pathSegment : endpointOverrides.pathSegments)
 ${indent}{

@@ -342,8 +342,13 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
 
   auto eventEncoderStream = Aws::MakeShared<Model::ChatInputStream>(ALLOCATION_TAG);
   request.SetInputStream(eventEncoderStream); // this becomes the body of the request
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream] () mutable {
+  auto streamSp = request.GetInputStream();
+  auto streamReadyCallback = [streamReadyHandler, streamSp]{ 
+    streamReadyHandler(*streamSp);
+  };
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        streamReadyCallback();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -366,7 +371,6 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
       }
       return ChatOutcome(NoResult());
   });
-  streamReadyHandler(*request.GetInputStream());
 }
 ChatSyncOutcome QBusinessClient::ChatSync(const ChatSyncRequest& request) const
 {

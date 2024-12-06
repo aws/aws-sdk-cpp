@@ -211,8 +211,13 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
 
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream] () mutable {
+  auto streamSp = request.GetAudioStream();
+  auto streamReadyCallback = [streamReadyHandler, streamSp]{ 
+    streamReadyHandler(*streamSp);
+  };
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        streamReadyCallback();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -235,7 +240,6 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
       }
       return StartCallAnalyticsStreamTranscriptionOutcome(NoResult());
   });
-  streamReadyHandler(*request.GetAudioStream());
 }
 void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Model::StartMedicalStreamTranscriptionRequest& request,
                 const StartMedicalStreamTranscriptionStreamReadyHandler& streamReadyHandler,
@@ -286,8 +290,13 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
 
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream] () mutable {
+  auto streamSp = request.GetAudioStream();
+  auto streamReadyCallback = [streamReadyHandler, streamSp]{ 
+    streamReadyHandler(*streamSp);
+  };
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        streamReadyCallback();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -310,7 +319,6 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
       }
       return StartMedicalStreamTranscriptionOutcome(NoResult());
   });
-  streamReadyHandler(*request.GetAudioStream());
 }
 void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::StartStreamTranscriptionRequest& request,
                 const StartStreamTranscriptionStreamReadyHandler& streamReadyHandler,
@@ -343,8 +351,13 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
 
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream] () mutable {
+  auto streamSp = request.GetAudioStream();
+  auto streamReadyCallback = [streamReadyHandler, streamSp]{ 
+    streamReadyHandler(*streamSp);
+  };
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        streamReadyCallback();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -367,6 +380,5 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
       }
       return StartStreamTranscriptionOutcome(NoResult());
   });
-  streamReadyHandler(*request.GetAudioStream());
 }
 
