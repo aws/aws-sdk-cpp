@@ -146,20 +146,16 @@ namespace client
         {
             if(pRequestCtx &&
                pRequestCtx->m_pRequest && 
-               eventEncoderStreamSp &&
-               pRequestCtx->m_semaphore)
+               eventEncoderStreamSp)
             {
                 if(AwsClientRequestSigning<AuthSchemesVariantT>::SetSignerInEventStream(eventEncoderStreamSp, 
                                     pRequestCtx->m_authSchemeOption,
                                     m_authSchemes))
                 {
-                    auto sem = pRequestCtx->m_semaphore;
-
-                    const_cast<Aws::AmazonWebServiceRequest*>(pRequestCtx->m_pRequest)->SetRequestSignedHandler([eventEncoderStreamSp, sem](const Aws::Http::HttpRequest& httpRequest) 
+                    const_cast<Aws::AmazonWebServiceRequest*>(pRequestCtx->m_pRequest)->SetRequestSignedHandler([eventEncoderStreamSp](const Aws::Http::HttpRequest& httpRequest) 
                     { 
                         eventEncoderStreamSp->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); 
-                        std::cout<<"release semaphore"<<std::endl;
-                        sem->ReleaseAll(); 
+                        std::cout<<"SetRequestSignedHandler done"<<std::endl;
                     });
                 }
             }

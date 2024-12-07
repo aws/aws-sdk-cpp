@@ -150,11 +150,34 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     }
     pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
     assert(pRequestCtx->m_authSchemeOption.schemeId);
-
+    std::shared_ptr<std::thread> t;
     if(eventEncoderStreamSp)
     {
-        pRequestCtx->m_semaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(requestName, 0, 1);
+        //set signer in event encoder stream
+        
+        //pRequestCtx->m_semaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(requestName, 0, 1);
         SetInputStreamInRequest(pRequestCtx, eventEncoderStreamSp);
+        
+        //std::cout<<"waiting for semaphore"<<std::endl;
+        //pRequestCtx->m_semaphore->WaitOne();
+        //std::cout<<"waiting for semaphore done"<<std::endl;
+
+        //here semaphore is released
+        if(streamReadyCallback)
+        {
+            streamReadyCallback();
+            //t = std::make_shared<std::thread>(streamReadyCallback);
+            //std::thread t(streamReadyCallback);
+
+            // Detach the thread, meaning it will run independently and cleanup will be automatic
+            //t.detach();
+            //(void)std::async(std::launch::async, streamReadyCallback);
+            //pExecutor->Submit([streamReadyCallback](){
+            //    streamReadyCallback();
+            //});
+        }
+
+    
     }
     Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
     const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
@@ -168,7 +191,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
           } );
         return;
     }
-
+    
     pRequestCtx->m_endpoint = std::move(epResolutionOutcome.GetResultWithOwnership());
     if (!Aws::Utils::IsValidHost(pRequestCtx->m_endpoint.GetURI().GetAuthority()))
     {
@@ -191,29 +214,9 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
 
     AttemptOneRequestAsync(std::move(pRequestCtx));
 
-    if(sem)
-    {
-        std::cout<<"waiting for semaphore"<<std::endl;
-        sem->WaitOne();
-        std::cout<<"waiting for semaphore done"<<std::endl;
-
-    }
     
-    std::shared_ptr<std::thread> t;
-
-    if(streamReadyCallback)
-    {
-        streamReadyCallback();
-        //t = std::make_shared<std::thread>(streamReadyCallback);
-        //std::thread t(streamReadyCallback);
-
-        // Detach the thread, meaning it will run independently and cleanup will be automatic
-        //t.detach();
-        //(void)std::async(std::launch::async, streamReadyCallback);
-        //pExecutor->Submit([streamReadyCallback](){
-        //    streamReadyCallback();
-        //});
-    }
+    
+    
     if(t)
     {
         t->join();

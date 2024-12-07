@@ -352,11 +352,15 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
   auto streamSp = request.GetAudioStream();
-  auto streamReadyCallback = [streamReadyHandler, streamSp]{ 
-    streamReadyHandler(*streamSp);
-  };
   auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
+  std::cout<<"Created semaphore:"<< std::this_thread::get_id() << std::endl;
+  auto streamReadyCallback = [sem]{ 
+    sem->ReleaseAll();
+    std::cout<<"Released semaphore:"<<std::this_thread::get_id() << std::endl;;
+  };
   m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
+  std::cout<<"MakeRequestDeserialize started"<<std::this_thread::get_id() << std::endl;
+
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -379,16 +383,13 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
         request.GetAudioStream()->Close();
         handler(this, request, StartStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
       }
-      std::cout<<"MakeRequestDeserialize done"<<std::endl;
+      std::cout<<"MakeRequestDeserialize done"<<std::this_thread::get_id() << std::endl;
+
       return StartStreamTranscriptionOutcome(NoResult());
   });
 
-  /*std::cout<<"wait started"<<std::endl;
-
-  m_clientConfiguration.executor->WaitUntilStopped();
-
-  std::cout<<"wait done"<<std::endl;
-
-  streamReadyCallback();*/
+  sem->WaitOne();
+  std::cout<<"WaitOne done"<<std::this_thread::get_id() << std::endl;;
+  streamReadyHandler(*streamSp);
 }
 
