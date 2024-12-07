@@ -348,7 +348,6 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
   };
   m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        streamReadyCallback();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -358,7 +357,8 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
         AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
       true,
-      eventEncoderStream
+      eventEncoderStream,
+      streamReadyCallback
       );
       if(outcome.IsSuccess())
       {

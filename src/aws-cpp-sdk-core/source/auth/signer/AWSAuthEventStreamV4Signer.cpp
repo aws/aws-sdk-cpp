@@ -58,10 +58,25 @@ AWSAuthEventStreamV4Signer::AWSAuthEventStreamV4Signer(const std::shared_ptr<Aut
     m_unsignedHeaders.emplace_back(USER_AGENT_HEADER);
 }
 
-bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool /* signBody */) const
+bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
 {
-    AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
+    const auto credentials = m_credentialsProvider->GetAWSCredentials();
+    return SignRequest(request, m_region.c_str(), m_serviceName.c_str(), true, credentials);
+}
 
+bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, bool signBody) const
+{
+    return SignRequest(request, m_region.c_str(), m_serviceName.c_str(), signBody, m_credentialsProvider->GetAWSCredentials());
+}
+
+bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, bool signBody) const
+{
+    return SignRequest(request, region, m_serviceName.c_str(), signBody, m_credentialsProvider->GetAWSCredentials());
+}
+
+
+bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool /* signBody */, const  AWSCredentials& credentials) const
+{
     //don't sign anonymous requests
     if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
     {
@@ -145,6 +160,13 @@ bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, co
     request.SetSigningAccessKey(credentials.GetAWSAccessKeyId());
     request.SetSigningRegion(signingRegion);
     return true;
+}
+
+
+bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool  signBody ) const
+{
+    AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
+    return SignRequest( request,  region,  serviceName, signBody  , credentials);
 }
 
 // this works regardless if the current machine is Big/Little Endian

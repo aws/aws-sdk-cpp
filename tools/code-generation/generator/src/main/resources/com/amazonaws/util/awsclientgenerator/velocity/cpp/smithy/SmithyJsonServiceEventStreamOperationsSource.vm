@@ -38,7 +38,8 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
       },
       true,
-      eventEncoderStream
+      eventEncoderStream,
+      streamReadyCallback
       );
       if(outcome.IsSuccess())
       {

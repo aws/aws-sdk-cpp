@@ -152,6 +152,8 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
     StartStreamTranscriptionHandler handler;
     handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev)
     {
+        std::cout<<"SetTranscriptEventCallback"<<std::endl;
+
         // TODO: only check the result marked as "final"
         const auto& results = ev.GetTranscript().GetResults();
         if (results.empty())
@@ -170,6 +172,7 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
     Aws::String operationRequestId;
     handler.SetInitialResponseCallback([&](const StartStreamTranscriptionInitialResponse& initialResponse)
     {
+        std::cout<<"SetTranscriptEventCallback"<<std::endl;
         operationRequestId = initialResponse.GetRequestId();
         if (operationRequestId.empty()) {
             AWS_ADD_FAILURE("InitialResponseCallback is called but received empty RequestId");
@@ -200,6 +203,8 @@ TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 
     auto OnStreamReady = [](AudioStream& stream)
     {
+        std::cout << "OnStreamReady thread ID: " << std::this_thread::get_id() << std::endl;
+
         std::cout<<"OnStreamReady"<<std::endl;
         Aws::FStream file(TEST_FILE_NAME, std::ios_base::in | std::ios_base::binary);
         ASSERT_TRUE(file);

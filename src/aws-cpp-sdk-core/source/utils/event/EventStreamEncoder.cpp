@@ -93,6 +93,7 @@ namespace Aws
 
                 if (msgEncodeSuccess)
                 {
+                    (void)encodedPayload;
                     aws_event_stream_message signedMessage;
                     if (InitSignedStruct(encodedPayload, &signedMessage))
                     {
@@ -108,6 +109,7 @@ namespace Aws
                     {
                         aws_event_stream_message_clean_up(encodedPayload);
                     }
+                    
                 }
 
                 return outputBits;
@@ -176,6 +178,7 @@ namespace Aws
             bool EventStreamEncoder::SignEventMessage(Event::Message& signedMessage)
             {
                 assert(m_signer);
+                assert(!m_signatureSeed.empty());
                 return (m_signer->SignEventMessage(signedMessage, m_signatureSeed));
             }
 

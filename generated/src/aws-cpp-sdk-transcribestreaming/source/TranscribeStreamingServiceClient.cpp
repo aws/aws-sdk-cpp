@@ -217,7 +217,6 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
   };
   m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        streamReadyCallback();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -227,7 +226,8 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
         AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
       true,
-      eventEncoderStream
+      eventEncoderStream,
+      streamReadyCallback
       );
       if(outcome.IsSuccess())
       {
@@ -296,7 +296,6 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
   };
   m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        streamReadyCallback();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -306,7 +305,8 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
         AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
       true,
-      eventEncoderStream
+      eventEncoderStream,
+      streamReadyCallback
       );
       if(outcome.IsSuccess())
       {
@@ -355,9 +355,9 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
   auto streamReadyCallback = [streamReadyHandler, streamSp]{ 
     streamReadyHandler(*streamSp);
   };
+  auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-        streamReadyCallback();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -367,7 +367,8 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
         AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
       true,
-      eventEncoderStream
+      eventEncoderStream,
+      streamReadyCallback
       );
       if(outcome.IsSuccess())
       {
@@ -378,7 +379,16 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
         request.GetAudioStream()->Close();
         handler(this, request, StartStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
       }
+      std::cout<<"MakeRequestDeserialize done"<<std::endl;
       return StartStreamTranscriptionOutcome(NoResult());
   });
+
+  /*std::cout<<"wait started"<<std::endl;
+
+  m_clientConfiguration.executor->WaitUntilStopped();
+
+  std::cout<<"wait done"<<std::endl;
+
+  streamReadyCallback();*/
 }
 

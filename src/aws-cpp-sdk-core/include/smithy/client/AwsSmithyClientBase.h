@@ -141,7 +141,8 @@ namespace client
                               ResponseHandlerFunc&& responseHandler,
                               std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
                               bool isEventStreamRequest,
-                              std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp
+                              std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp,
+                              std::function<void()> streamReadyCallback = nullptr
                               ) const;
 
         HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
@@ -149,7 +150,18 @@ namespace client
                                             Aws::Http::HttpMethod method,
                                             EndpointUpdateCallback&& endpointCallback,
                                             bool isEventStreamRequest,
-                                            std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp) const;
+                                            std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp,
+                                            std::function<void()> streamReadyCallback = nullptr) const;
+
+        AwsSmithyClientBase::HttpResponseOutcome
+        MakeRequestStreaming(Aws::AmazonWebServiceRequest const * const request,
+                                            const char* requestName,
+                                            Aws::Http::HttpMethod method,
+                                            EndpointUpdateCallback&& endpointCallback,
+                                            bool isEventStreamRequest,
+                                            std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp,
+                                            std::function<void()> streamReadyCallback
+                                            ) const;
 
     protected:
         /**

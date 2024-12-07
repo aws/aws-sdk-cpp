@@ -39,7 +39,7 @@ namespace Aws
                  * Every event uses its previous event's signature to calculate its own signature.
                  * Setting this value affects the signature calculation of the first event.
                  */
-                void SetSignatureSeed(const Aws::String& seed) { m_encoder.SetSignatureSeed(seed); }
+                virtual void SetSignatureSeed(const Aws::String& seed) { m_encoder.SetSignatureSeed(seed); }
 
                 /**
                  * Writes an event-stream message to the underlying buffer.
@@ -83,7 +83,8 @@ namespace Aws
                 virtual ~SmithyEventEncoderStream() {}
                 void SetSigner(std::shared_ptr<smithy::AwsSignerBase<IdentityT> > signer, Aws::UniquePtr<IdentityT> identity) { m_evtEncoder.SetSigner(signer, std::move(identity));
                 }
-                
+                void SetSignatureSeed(const Aws::String& seed) override { m_evtEncoder.SetSignatureSeed(seed); }
+
                 protected:
                 Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) override
                 {

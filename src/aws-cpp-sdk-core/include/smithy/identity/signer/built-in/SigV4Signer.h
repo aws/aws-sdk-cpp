@@ -89,7 +89,7 @@ namespace smithy {
             auto signPayloadIt = properties.find("SignPayload");
             bool signPayload = signPayloadIt != properties.end() ? signPayloadIt->second.get<Aws::String>() == "true" : false;
             assert(httpRequest);
-            bool success = legacySigner.SignRequest( *httpRequest, m_region.c_str(), m_serviceName.c_str(), signPayload);
+            bool success = legacySigner.SignRequest( *httpRequest, m_region.c_str(), m_serviceName.c_str(), signPayload, credentials);
             if (success)
             {
                 return SigningFutureOutcome(std::move(httpRequest));
