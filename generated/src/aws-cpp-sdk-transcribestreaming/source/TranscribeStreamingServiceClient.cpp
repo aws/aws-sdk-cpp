@@ -211,12 +211,10 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
 
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
-  auto streamSp = request.GetAudioStream();
-  auto streamReadyCallback = [streamReadyHandler, streamSp]{ 
-    streamReadyHandler(*streamSp);
-  };
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
+  auto streamReadySemaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadySemaphore] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        streamReadySemaphore->ReleaseAll();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -226,8 +224,7 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
         AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
       true,
-      eventEncoderStream,
-      streamReadyCallback
+      eventEncoderStream
       );
       if(outcome.IsSuccess())
       {
@@ -240,6 +237,8 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
       }
       return StartCallAnalyticsStreamTranscriptionOutcome(NoResult());
   });
+  streamReadySemaphore->WaitOne();
+  streamReadyHandler(*request.GetAudioStream());
 }
 void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Model::StartMedicalStreamTranscriptionRequest& request,
                 const StartMedicalStreamTranscriptionStreamReadyHandler& streamReadyHandler,
@@ -290,12 +289,10 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
 
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
-  auto streamSp = request.GetAudioStream();
-  auto streamReadyCallback = [streamReadyHandler, streamSp]{ 
-    streamReadyHandler(*streamSp);
-  };
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
+  auto streamReadySemaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadySemaphore] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        streamReadySemaphore->ReleaseAll();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -305,8 +302,7 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
         AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
       true,
-      eventEncoderStream,
-      streamReadyCallback
+      eventEncoderStream
       );
       if(outcome.IsSuccess())
       {
@@ -319,6 +315,8 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
       }
       return StartMedicalStreamTranscriptionOutcome(NoResult());
   });
+  streamReadySemaphore->WaitOne();
+  streamReadyHandler(*request.GetAudioStream());
 }
 void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::StartStreamTranscriptionRequest& request,
                 const StartStreamTranscriptionStreamReadyHandler& streamReadyHandler,
@@ -351,17 +349,10 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
 
   auto eventEncoderStream = Aws::MakeShared<Model::AudioStream>(ALLOCATION_TAG);
   request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
-  auto streamSp = request.GetAudioStream();
-  auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
-  std::cout<<"Created semaphore:"<< std::this_thread::get_id() << std::endl;
-  auto streamReadyCallback = [sem]{ 
-    sem->ReleaseAll();
-    std::cout<<"Released semaphore:"<<std::this_thread::get_id() << std::endl;;
-  };
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
-  std::cout<<"MakeRequestDeserialize started"<<std::this_thread::get_id() << std::endl;
-
+  auto streamReadySemaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadySemaphore] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        streamReadySemaphore->ReleaseAll();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -371,8 +362,7 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
         AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
       true,
-      eventEncoderStream,
-      streamReadyCallback
+      eventEncoderStream
       );
       if(outcome.IsSuccess())
       {
@@ -383,13 +373,9 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
         request.GetAudioStream()->Close();
         handler(this, request, StartStreamTranscriptionOutcome(outcome.GetError()), handlerContext);
       }
-      std::cout<<"MakeRequestDeserialize done"<<std::this_thread::get_id() << std::endl;
-
       return StartStreamTranscriptionOutcome(NoResult());
   });
-
-  sem->WaitOne();
-  std::cout<<"WaitOne done"<<std::this_thread::get_id() << std::endl;;
-  streamReadyHandler(*streamSp);
+  streamReadySemaphore->WaitOne();
+  streamReadyHandler(*request.GetAudioStream());
 }
 

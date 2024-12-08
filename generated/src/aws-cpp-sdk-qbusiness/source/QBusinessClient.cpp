@@ -342,12 +342,10 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
 
   auto eventEncoderStream = Aws::MakeShared<Model::ChatInputStream>(ALLOCATION_TAG);
   request.SetInputStream(eventEncoderStream); // this becomes the body of the request
-  auto streamSp = request.GetInputStream();
-  auto streamReadyCallback = [streamReadyHandler, streamSp]{ 
-    streamReadyHandler(*streamSp);
-  };
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadyCallback] () mutable {
+  auto streamReadySemaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadySemaphore] () mutable {
   JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        streamReadySemaphore->ReleaseAll();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
             resolvedEndpoint.AddPathSegment(pathSegment);
@@ -357,8 +355,7 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
         AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
       true,
-      eventEncoderStream,
-      streamReadyCallback
+      eventEncoderStream
       );
       if(outcome.IsSuccess())
       {
@@ -371,6 +368,8 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
       }
       return ChatOutcome(NoResult());
   });
+  streamReadySemaphore->WaitOne();
+  streamReadyHandler(*request.GetInputStream());
 }
 ChatSyncOutcome QBusinessClient::ChatSync(const ChatSyncRequest& request) const
 {

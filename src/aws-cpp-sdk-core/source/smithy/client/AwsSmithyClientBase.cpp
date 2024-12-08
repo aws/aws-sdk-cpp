@@ -102,12 +102,9 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
                                            ResponseHandlerFunc&& responseHandler,
                                            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
                                            bool isEventStreamRequest,
-                                           std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStreamSp,
-                                           std::function<void()> streamReadyCallback
+                                           std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStreamSp
                                            ) const
 {
-    std::cout << "MakeRequestAsync thread ID: " << std::this_thread::get_id() << std::endl;
-
     if(!responseHandler)
     {
         assert(!"Missing a mandatory response handler!");
@@ -154,30 +151,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     if(eventEncoderStreamSp)
     {
         //set signer in event encoder stream
-        
-        //pRequestCtx->m_semaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(requestName, 0, 1);
         SetInputStreamInRequest(pRequestCtx, eventEncoderStreamSp);
-        
-        //std::cout<<"waiting for semaphore"<<std::endl;
-        //pRequestCtx->m_semaphore->WaitOne();
-        //std::cout<<"waiting for semaphore done"<<std::endl;
-
-        //here semaphore is released
-        if(streamReadyCallback)
-        {
-            streamReadyCallback();
-            //t = std::make_shared<std::thread>(streamReadyCallback);
-            //std::thread t(streamReadyCallback);
-
-            // Detach the thread, meaning it will run independently and cleanup will be automatic
-            //t.detach();
-            //(void)std::async(std::launch::async, streamReadyCallback);
-            //pExecutor->Submit([streamReadyCallback](){
-            //    streamReadyCallback();
-            //});
-        }
-
-    
     }
     Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
     const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
@@ -207,20 +181,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     pRequestCtx->m_requestInfo.attempt = 1;
     pRequestCtx->m_requestInfo.maxAttempts = 0;
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
-    auto sem = pRequestCtx->m_semaphore;
-
-    std::cout<<"AttemptOneRequestAsync "<<std::endl;
-
-
     AttemptOneRequestAsync(std::move(pRequestCtx));
-
-    
-    
-    
-    if(t)
-    {
-        t->join();
-    }
     
 }
 
@@ -243,9 +204,6 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
       *m_clientConfig->telemetryProvider->getMeter(this->GetServiceClientName(), {}),
       {{TracingUtils::SMITHY_METHOD_DIMENSION, pRequestCtx->m_requestName},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-
-    std::cout<<"BuildHttpRequest done "<<std::endl;
-
 
     if (!pRequestCtx->m_httpRequest)
     {
@@ -542,8 +500,7 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
                                      Aws::Http::HttpMethod method,
                                      EndpointUpdateCallback&& endpointCallback,
                                      bool isEventStreamRequest,
-                                     std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp,
-                                     std::function<void()> streamReadyCallback
+                                     std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp
                                      ) const
 {
     std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(AWS_SMITHY_CLIENT_LOG);
@@ -554,49 +511,13 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
     {
         outcome = std::move(asyncOutcome);
     };
-    std::cout<<"requestName started"<<requestName<<std::endl;
-
     pExecutor->Submit([&]()
     {
-        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback) ,std::move(responseHandler), pExecutor, isEventStreamRequest, std::move(eventEncoderStream_sp), streamReadyCallback);
+        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback) ,std::move(responseHandler), pExecutor, isEventStreamRequest, std::move(eventEncoderStream_sp));
     });
     pExecutor->WaitUntilStopped();
-    std::cout<<"requestName done"<<requestName<<std::endl;
-
     return outcome;
 }
-
-
-AwsSmithyClientBase::HttpResponseOutcome
-AwsSmithyClientBase::MakeRequestStreaming(Aws::AmazonWebServiceRequest const * const request,
-                                            const char* requestName,
-                                            Aws::Http::HttpMethod method,
-                                            EndpointUpdateCallback&& endpointCallback,
-                                            bool isEventStreamRequest,
-                                            std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp,
-                                            std::function<void()> streamReadyCallback
-                                            ) const
-{
-    std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(AWS_SMITHY_CLIENT_LOG);
-    assert(pExecutor);
-
-    HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
-    ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome)
-    {
-        outcome = std::move(asyncOutcome);
-    };
-    std::cout<<"requestName started"<<requestName<<std::endl;
-
-    pExecutor->Submit([&]()
-    {
-        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback) ,std::move(responseHandler), pExecutor, isEventStreamRequest, std::move(eventEncoderStream_sp), streamReadyCallback);
-    });
-    pExecutor->WaitUntilStopped();
-    std::cout<<"requestName done"<<requestName<<std::endl;
-
-    return outcome;
-}
-
 
 void AwsSmithyClientBase::DisableRequestProcessing()
 {

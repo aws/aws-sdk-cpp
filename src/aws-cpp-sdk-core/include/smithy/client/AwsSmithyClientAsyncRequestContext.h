@@ -72,7 +72,6 @@ namespace smithy
             ResponseHandlerFunc m_responseHandler;
             std::shared_ptr<Aws::Utils::Threading::Executor> m_pExecutor;
             std::shared_ptr<interceptor::InterceptorContext> m_interceptorContext;
-            std::shared_ptr<Aws::Utils::Threading::Semaphore> m_semaphore;
             bool m_isEventStreaming{false};
         };
     } // namespace client

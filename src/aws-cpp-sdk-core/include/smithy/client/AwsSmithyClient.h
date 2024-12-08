@@ -131,11 +131,10 @@ namespace client
                                      Aws::Http::HttpMethod method,
                                      EndpointUpdateCallback&& endpointCallback,
                                      bool isEventStreamRequest = false,
-                                     std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp = nullptr,
-                                     std::function<void()> streamReadyCallback = nullptr
+                                     std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp = nullptr
                                      ) const
         {
-            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback), isEventStreamRequest,  std::move(eventEncoderStream_sp), streamReadyCallback);
+            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback), isEventStreamRequest,  std::move(eventEncoderStream_sp));
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
         
