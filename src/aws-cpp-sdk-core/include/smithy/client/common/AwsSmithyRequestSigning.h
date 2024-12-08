@@ -232,10 +232,6 @@ namespace smithy
 
         struct EventStreamSignerVisitor
         {
-            using DateTime = Aws::Utils::DateTime;
-            using DateFormat = Aws::Utils::DateFormat;
-            using ClientError = Aws::Client::AWSError<Aws::Client::CoreErrors>;
-
             explicit EventStreamSignerVisitor(std::shared_ptr<Aws::Utils::Event::EventEncoderStream> evSp, const AuthSchemeOption& targetAuthSchemeOption)
                 : m_eventEncoderStreamSp(evSp),m_targetAuthSchemeOption(targetAuthSchemeOption)
             {

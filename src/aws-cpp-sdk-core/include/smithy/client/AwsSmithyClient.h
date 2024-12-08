@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/FutureOutcome.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/SameThreadExecutor.h>
 
 namespace smithy {
 namespace client
@@ -129,19 +131,40 @@ namespace client
         ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const * const request,
                                      const char* requestName,
                                      Aws::Http::HttpMethod method,
-                                     EndpointUpdateCallback&& endpointCallback,
-                                     bool isEventStreamRequest = false,
-                                     std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp = nullptr
+                                     EndpointUpdateCallback&& endpointCallback
                                      ) const
         {
-            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback), isEventStreamRequest,  std::move(eventEncoderStream_sp));
+            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
             return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
+        }
+
+        ResponseT MakeEventStreamRequestDeserialize(Aws::AmazonWebServiceRequest const * const request,
+                                     const char* requestName,
+                                     Aws::Http::HttpMethod method,
+                                     EndpointUpdateCallback&& endpointCallback,
+                                     std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp
+                                    ) const
+        {
+            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>("AwsSmithyClient");
+            assert(pExecutor);
+
+            HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
+            ResponseHandlerFunc responseHandler = [&outcome](HttpResponseOutcome&& asyncOutcome)
+            {
+                outcome = std::move(asyncOutcome);
+            };
+            pExecutor->Submit([&]()
+            {
+                this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback) ,std::move(responseHandler), pExecutor, std::move(eventEncoderStream_sp));
+            });
+            pExecutor->WaitUntilStopped();
+            return m_serializer->Deserialize(std::move(outcome), GetServiceClientName(), requestName);
         }
         
 
     protected:
         //Aws::Utils::Event::EventEncoderStream
-        void SetInputStreamInRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx, std::shared_ptr<Aws::Utils::Event::EventEncoderStream>&  eventEncoderStreamSp) const override
+        void SetSignerInEventStreamRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx, std::shared_ptr<Aws::Utils::Event::EventEncoderStream>&  eventEncoderStreamSp) const override
         {
             if(pRequestCtx &&
                pRequestCtx->m_pRequest && 
@@ -154,7 +177,6 @@ namespace client
                     const_cast<Aws::AmazonWebServiceRequest*>(pRequestCtx->m_pRequest)->SetRequestSignedHandler([eventEncoderStreamSp](const Aws::Http::HttpRequest& httpRequest) 
                     { 
                         eventEncoderStreamSp->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); 
-                        std::cout<<"SetRequestSignedHandler done"<<std::endl;
                     });
                 }
             }

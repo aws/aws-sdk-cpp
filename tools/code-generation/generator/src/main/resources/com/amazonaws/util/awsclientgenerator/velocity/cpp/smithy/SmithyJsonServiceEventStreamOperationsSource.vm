@@ -31,10 +31,9 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
   request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
   auto streamReadySemaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext, #if($hasEndPointOverrides) endpointOverrides #end, eventEncoderStream, streamReadySemaphore] () mutable {
-  JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+  JsonOutcome outcome = MakeEventStreamRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
       },
-      true,
       eventEncoderStream
       );
       if(outcome.IsSuccess())

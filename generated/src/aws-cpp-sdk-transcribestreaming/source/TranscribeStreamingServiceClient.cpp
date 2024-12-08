@@ -213,7 +213,7 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
   request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
   auto streamReadySemaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadySemaphore] () mutable {
-  JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+  JsonOutcome outcome = MakeEventStreamRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         streamReadySemaphore->ReleaseAll();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -223,7 +223,6 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
         AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
-      true,
       eventEncoderStream
       );
       if(outcome.IsSuccess())
@@ -291,7 +290,7 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
   request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
   auto streamReadySemaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadySemaphore] () mutable {
-  JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+  JsonOutcome outcome = MakeEventStreamRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         streamReadySemaphore->ReleaseAll();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -301,7 +300,6 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
         AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
-      true,
       eventEncoderStream
       );
       if(outcome.IsSuccess())
@@ -351,7 +349,7 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
   request.SetAudioStream(eventEncoderStream); // this becomes the body of the request
   auto streamReadySemaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext,  endpointOverrides , eventEncoderStream, streamReadySemaphore] () mutable {
-  JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+  JsonOutcome outcome = MakeEventStreamRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         streamReadySemaphore->ReleaseAll();
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -361,7 +359,6 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
         resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
         AWS_UNREFERENCED_PARAM(resolvedEndpoint);
       },
-      true,
       eventEncoderStream
       );
       if(outcome.IsSuccess())

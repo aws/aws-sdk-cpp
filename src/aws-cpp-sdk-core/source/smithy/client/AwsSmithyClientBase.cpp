@@ -101,7 +101,6 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
                                            EndpointUpdateCallback&& endpointCallback,
                                            ResponseHandlerFunc&& responseHandler,
                                            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
-                                           bool isEventStreamRequest,
                                            std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStreamSp
                                            ) const
 {
@@ -134,7 +133,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     pRequestCtx->m_method = method;
     pRequestCtx->m_retryCount = 0;
     pRequestCtx->m_invocationId = Aws::Utils::UUID::PseudoRandomUUID();
-    pRequestCtx->m_isEventStreaming = isEventStreamRequest;
+    pRequestCtx->m_isEventStreaming = eventEncoderStreamSp != nullptr;
     
     auto authSchemeOptionOutcome = this->SelectAuthSchemeOption(*pRequestCtx);
     if (!authSchemeOptionOutcome.IsSuccess())
@@ -147,11 +146,10 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     }
     pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
     assert(pRequestCtx->m_authSchemeOption.schemeId);
-    std::shared_ptr<std::thread> t;
     if(eventEncoderStreamSp)
     {
-        //set signer in event encoder stream
-        SetInputStreamInRequest(pRequestCtx, eventEncoderStreamSp);
+        //set signer in event encoder stream before subsequent steps
+        SetSignerInEventStreamRequest(pRequestCtx, eventEncoderStreamSp);
     }
     Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
     const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
@@ -177,12 +175,10 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
           } );
         return;
     }
-    
     pRequestCtx->m_requestInfo.attempt = 1;
     pRequestCtx->m_requestInfo.maxAttempts = 0;
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
     AttemptOneRequestAsync(std::move(pRequestCtx));
-    
 }
 
 /*HttpResponseOutcome*/
@@ -498,9 +494,7 @@ AwsSmithyClientBase::HttpResponseOutcome
 AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
                                      const char* requestName,
                                      Aws::Http::HttpMethod method,
-                                     EndpointUpdateCallback&& endpointCallback,
-                                     bool isEventStreamRequest,
-                                     std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp
+                                     EndpointUpdateCallback&& endpointCallback
                                      ) const
 {
     std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(AWS_SMITHY_CLIENT_LOG);
@@ -513,7 +507,7 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
     };
     pExecutor->Submit([&]()
     {
-        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback) ,std::move(responseHandler), pExecutor, isEventStreamRequest, std::move(eventEncoderStream_sp));
+        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback) ,std::move(responseHandler), pExecutor);
     });
     pExecutor->WaitUntilStopped();
     return outcome;

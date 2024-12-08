@@ -140,16 +140,13 @@ namespace client
                               EndpointUpdateCallback&& endpointCallback,
                               ResponseHandlerFunc&& responseHandler,
                               std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
-                              bool isEventStreamRequest,
-                              std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp
+                              std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp = nullptr
                               ) const;
 
         HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
                                             const char* requestName,
                                             Aws::Http::HttpMethod method,
-                                            EndpointUpdateCallback&& endpointCallback,
-                                            bool isEventStreamRequest,
-                                            std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp) const;
+                                            EndpointUpdateCallback&& endpointCallback) const;
 
     protected:
         /**
@@ -174,7 +171,7 @@ namespace client
         virtual bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String& /* priorSignature */) const { return false; }
 
     protected:
-        virtual void SetInputStreamInRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& , std::shared_ptr<Aws::Utils::Event::EventEncoderStream>& ) const {} ;
+        virtual void SetSignerInEventStreamRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& , std::shared_ptr<Aws::Utils::Event::EventEncoderStream>& ) const {} ;
         Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
         Aws::String m_userAgent;
