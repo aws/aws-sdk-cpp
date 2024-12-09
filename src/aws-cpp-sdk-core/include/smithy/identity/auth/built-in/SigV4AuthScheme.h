@@ -5,15 +5,12 @@
 #pragma once
 
 #include <smithy/identity/auth/AuthScheme.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
-
-#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
-
-#include <smithy/identity/identity/AwsCredentialIdentityBase.h>
-#include <smithy/identity/signer/built-in/SigV4Signer.h>
-#include <smithy/identity/signer/built-in/SigV4EventStreamSigner.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
+#include <smithy/identity/identity/AwsCredentialIdentityBase.h>
+#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+#include <smithy/identity/signer/built-in/SigV4EventStreamSigner.h>
+#include <smithy/identity/signer/built-in/SigV4Signer.h>
 
 namespace smithy {
     constexpr char SIGV4[] = "aws.auth#sigv4";

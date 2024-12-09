@@ -274,7 +274,7 @@ void AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncR
     if (!modifiedResponse.IsSuccess()) {
       return pRequestCtx->m_responseHandler(HttpResponseOutcome(modifiedResponse.GetError()));
     }
-    };
+  };
 
     Aws::Client::HttpResponseOutcome outcome = [&]()
     {

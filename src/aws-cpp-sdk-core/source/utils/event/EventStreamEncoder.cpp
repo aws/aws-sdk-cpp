@@ -103,7 +103,7 @@ namespace Aws
                     outputBits.insert(outputBits.end(), signedMessageBuffer, signedMessageBuffer + signedMessageLength);
 
                     aws_event_stream_message_clean_up(&signedMessage);
-                    }
+                  }
                     if (encodedPayload)
                     {
                         aws_event_stream_message_clean_up(encodedPayload);
