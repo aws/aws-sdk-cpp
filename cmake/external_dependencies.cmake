@@ -111,6 +111,7 @@ endif()
 
 # Open telemetry client
 if (BUILD_OPTEL)
+    find_package(nlohmann_json REQUIRED)
     find_package(opentelemetry-cpp CONFIG REQUIRED)
 endif ()
 if (BUILD_OPTEL_OTLP_BENCHMARKS)
