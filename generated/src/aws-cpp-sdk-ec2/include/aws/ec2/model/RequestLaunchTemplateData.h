@@ -24,6 +24,7 @@
 #include <aws/ec2/model/LaunchTemplatePrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMaintenanceOptionsRequest.h>
 #include <aws/ec2/model/OperatorRequest.h>
+#include <aws/ec2/model/LaunchTemplateNetworkPerformanceOptionsRequest.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMappingRequest.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecificationRequest.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecificationRequest.h>
@@ -596,6 +597,19 @@ namespace Model
     inline RequestLaunchTemplateData& WithOperator(const OperatorRequest& value) { SetOperator(value); return *this;}
     inline RequestLaunchTemplateData& WithOperator(OperatorRequest&& value) { SetOperator(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains launch template settings to boost network performance for the type
+     * of workload that runs on your instance.</p>
+     */
+    inline const LaunchTemplateNetworkPerformanceOptionsRequest& GetNetworkPerformanceOptions() const{ return m_networkPerformanceOptions; }
+    inline bool NetworkPerformanceOptionsHasBeenSet() const { return m_networkPerformanceOptionsHasBeenSet; }
+    inline void SetNetworkPerformanceOptions(const LaunchTemplateNetworkPerformanceOptionsRequest& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = value; }
+    inline void SetNetworkPerformanceOptions(LaunchTemplateNetworkPerformanceOptionsRequest&& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = std::move(value); }
+    inline RequestLaunchTemplateData& WithNetworkPerformanceOptions(const LaunchTemplateNetworkPerformanceOptionsRequest& value) { SetNetworkPerformanceOptions(value); return *this;}
+    inline RequestLaunchTemplateData& WithNetworkPerformanceOptions(LaunchTemplateNetworkPerformanceOptionsRequest&& value) { SetNetworkPerformanceOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_kernelId;
@@ -693,6 +707,9 @@ namespace Model
 
     OperatorRequest m_operator;
     bool m_operatorHasBeenSet = false;
+
+    LaunchTemplateNetworkPerformanceOptionsRequest m_networkPerformanceOptions;
+    bool m_networkPerformanceOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -52,9 +52,14 @@ namespace Model
      * resource separately. The ARN and resource ID format of a resource is defined by
      * the opt-in status of the user or role that created the resource. You must turn
      * on this setting to use Amazon ECS features such as resource tagging.</p> </li>
-     * <li> <p> <code>containerInstanceLongArnFormat</code> - When modified, the Amazon
-     * Resource Name (ARN) and resource ID format of the resource type for a specified
-     * user, role, or the root user for an account is affected. The opt-in and opt-out
+     * <li> <p> <code>fargateFIPSMode</code> - When turned on, you can run Fargate
+     * workloads in a manner that is compliant with Federal Information Processing
+     * Standard (FIPS-140). For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-fips-compliance.html">Fargate
+     * Federal Information Processing Standard (FIPS-140)</a>.</p> </li> <li> <p>
+     * <code>containerInstanceLongArnFormat</code> - When modified, the Amazon Resource
+     * Name (ARN) and resource ID format of the resource type for a specified user,
+     * role, or the root user for an account is affected. The opt-in and opt-out
      * account setting must be set for each Amazon ECS resource separately. The ARN and
      * resource ID format of a resource is defined by the opt-in status of the user or
      * role that created the resource. You must turn on this setting to use Amazon ECS

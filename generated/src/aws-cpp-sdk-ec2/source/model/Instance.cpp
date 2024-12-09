@@ -68,6 +68,7 @@ Instance::Instance() :
     m_maintenanceOptionsHasBeenSet(false),
     m_currentInstanceBootMode(InstanceBootModeValues::NOT_SET),
     m_currentInstanceBootModeHasBeenSet(false),
+    m_networkPerformanceOptionsHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_imageIdHasBeenSet(false),
@@ -370,6 +371,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     {
       m_currentInstanceBootMode = InstanceBootModeValuesMapper::GetInstanceBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentInstanceBootModeNode.GetText()).c_str()).c_str());
       m_currentInstanceBootModeHasBeenSet = true;
+    }
+    XmlNode networkPerformanceOptionsNode = resultNode.FirstChild("networkPerformanceOptions");
+    if(!networkPerformanceOptionsNode.IsNull())
+    {
+      m_networkPerformanceOptions = networkPerformanceOptionsNode;
+      m_networkPerformanceOptionsHasBeenSet = true;
     }
     XmlNode operatorNode = resultNode.FirstChild("operator");
     if(!operatorNode.IsNull())
@@ -755,6 +762,13 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".CurrentInstanceBootMode=" << InstanceBootModeValuesMapper::GetNameForInstanceBootModeValues(m_currentInstanceBootMode) << "&";
   }
 
+  if(m_networkPerformanceOptionsHasBeenSet)
+  {
+      Aws::StringStream networkPerformanceOptionsLocationAndMemberSs;
+      networkPerformanceOptionsLocationAndMemberSs << location << index << locationValue << ".NetworkPerformanceOptions";
+      m_networkPerformanceOptions.OutputToStream(oStream, networkPerformanceOptionsLocationAndMemberSs.str().c_str());
+  }
+
   if(m_operatorHasBeenSet)
   {
       Aws::StringStream operatorLocationAndMemberSs;
@@ -1085,6 +1099,12 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_currentInstanceBootModeHasBeenSet)
   {
       oStream << location << ".CurrentInstanceBootMode=" << InstanceBootModeValuesMapper::GetNameForInstanceBootModeValues(m_currentInstanceBootMode) << "&";
+  }
+  if(m_networkPerformanceOptionsHasBeenSet)
+  {
+      Aws::String networkPerformanceOptionsLocationAndMember(location);
+      networkPerformanceOptionsLocationAndMember += ".NetworkPerformanceOptions";
+      m_networkPerformanceOptions.OutputToStream(oStream, networkPerformanceOptionsLocationAndMember.c_str());
   }
   if(m_operatorHasBeenSet)
   {

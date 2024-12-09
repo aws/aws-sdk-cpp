@@ -49,6 +49,7 @@ RunInstancesRequest::RunInstancesRequest() :
     m_disableApiStopHasBeenSet(false),
     m_enablePrimaryIpv6(false),
     m_enablePrimaryIpv6HasBeenSet(false),
+    m_networkPerformanceOptionsHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
@@ -271,6 +272,11 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_enablePrimaryIpv6HasBeenSet)
   {
     ss << "EnablePrimaryIpv6=" << std::boolalpha << m_enablePrimaryIpv6 << "&";
+  }
+
+  if(m_networkPerformanceOptionsHasBeenSet)
+  {
+    m_networkPerformanceOptions.OutputToStream(ss, "NetworkPerformanceOptions");
   }
 
   if(m_operatorHasBeenSet)

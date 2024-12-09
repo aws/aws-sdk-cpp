@@ -8793,10 +8793,10 @@ namespace EC2
          * <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> |
          * <code>hpc7g.16xlarge</code> </p> </li> <li> <p> <code>p3dn.24xlarge</code> |
          * <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> |
-         * <code>p5.48xlarge</code> | <code>p5e.48xlarge</code> </p> </li> <li> <p>
-         * <code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> |
-         * <code>trn1n.32xlarge</code> </p> </li> </ul> </li> </ul> <p>For more
-         * information, see <a
+         * <code>p5.48xlarge</code> | <code>p5e.48xlarge</code> |
+         * <code>p5en.48xlarge</code> </p> </li> <li> <p> <code>trn1.2xlarge</code> |
+         * <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code> </p> </li> </ul> </li>
+         * </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
          * EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -16326,6 +16326,32 @@ namespace EC2
         void ModifyInstanceMetadataOptionsAsync(const ModifyInstanceMetadataOptionsRequestT& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::ModifyInstanceMetadataOptions, request, handler, context);
+        }
+
+        /**
+         * <p>Change the configuration of the network performance options for an existing
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceNetworkPerformanceOptionsOutcome ModifyInstanceNetworkPerformanceOptions(const Model::ModifyInstanceNetworkPerformanceOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyInstanceNetworkPerformanceOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyInstanceNetworkPerformanceOptionsRequestT = Model::ModifyInstanceNetworkPerformanceOptionsRequest>
+        Model::ModifyInstanceNetworkPerformanceOptionsOutcomeCallable ModifyInstanceNetworkPerformanceOptionsCallable(const ModifyInstanceNetworkPerformanceOptionsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyInstanceNetworkPerformanceOptions, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyInstanceNetworkPerformanceOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyInstanceNetworkPerformanceOptionsRequestT = Model::ModifyInstanceNetworkPerformanceOptionsRequest>
+        void ModifyInstanceNetworkPerformanceOptionsAsync(const ModifyInstanceNetworkPerformanceOptionsRequestT& request, const ModifyInstanceNetworkPerformanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyInstanceNetworkPerformanceOptions, request, handler, context);
         }
 
         /**

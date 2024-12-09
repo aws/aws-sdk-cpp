@@ -515,6 +515,7 @@
 #include <aws/ec2/model/ModifyInstanceMaintenanceOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstanceMetadataDefaultsResponse.h>
 #include <aws/ec2/model/ModifyInstanceMetadataOptionsResponse.h>
+#include <aws/ec2/model/ModifyInstanceNetworkPerformanceOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
 #include <aws/ec2/model/ModifyIpamResponse.h>
 #include <aws/ec2/model/ModifyIpamPoolResponse.h>
@@ -1394,6 +1395,7 @@ namespace Aws
       class ModifyInstanceMaintenanceOptionsRequest;
       class ModifyInstanceMetadataDefaultsRequest;
       class ModifyInstanceMetadataOptionsRequest;
+      class ModifyInstanceNetworkPerformanceOptionsRequest;
       class ModifyInstancePlacementRequest;
       class ModifyIpamRequest;
       class ModifyIpamPoolRequest;
@@ -2054,6 +2056,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ModifyInstanceMaintenanceOptionsResponse, EC2Error> ModifyInstanceMaintenanceOptionsOutcome;
       typedef Aws::Utils::Outcome<ModifyInstanceMetadataDefaultsResponse, EC2Error> ModifyInstanceMetadataDefaultsOutcome;
       typedef Aws::Utils::Outcome<ModifyInstanceMetadataOptionsResponse, EC2Error> ModifyInstanceMetadataOptionsOutcome;
+      typedef Aws::Utils::Outcome<ModifyInstanceNetworkPerformanceOptionsResponse, EC2Error> ModifyInstanceNetworkPerformanceOptionsOutcome;
       typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, EC2Error> ModifyInstancePlacementOutcome;
       typedef Aws::Utils::Outcome<ModifyIpamResponse, EC2Error> ModifyIpamOutcome;
       typedef Aws::Utils::Outcome<ModifyIpamPoolResponse, EC2Error> ModifyIpamPoolOutcome;
@@ -2714,6 +2717,7 @@ namespace Aws
       typedef std::future<ModifyInstanceMaintenanceOptionsOutcome> ModifyInstanceMaintenanceOptionsOutcomeCallable;
       typedef std::future<ModifyInstanceMetadataDefaultsOutcome> ModifyInstanceMetadataDefaultsOutcomeCallable;
       typedef std::future<ModifyInstanceMetadataOptionsOutcome> ModifyInstanceMetadataOptionsOutcomeCallable;
+      typedef std::future<ModifyInstanceNetworkPerformanceOptionsOutcome> ModifyInstanceNetworkPerformanceOptionsOutcomeCallable;
       typedef std::future<ModifyInstancePlacementOutcome> ModifyInstancePlacementOutcomeCallable;
       typedef std::future<ModifyIpamOutcome> ModifyIpamOutcomeCallable;
       typedef std::future<ModifyIpamPoolOutcome> ModifyIpamPoolOutcomeCallable;
@@ -3377,6 +3381,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceMaintenanceOptionsRequest&, const Model::ModifyInstanceMaintenanceOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceMaintenanceOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceMetadataDefaultsRequest&, const Model::ModifyInstanceMetadataDefaultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceMetadataDefaultsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceMetadataOptionsRequest&, const Model::ModifyInstanceMetadataOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceMetadataOptionsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyInstanceNetworkPerformanceOptionsRequest&, const Model::ModifyInstanceNetworkPerformanceOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceNetworkPerformanceOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstancePlacementRequest&, const Model::ModifyInstancePlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstancePlacementResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyIpamRequest&, const Model::ModifyIpamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIpamResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyIpamPoolRequest&, const Model::ModifyIpamPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIpamPoolResponseReceivedHandler;

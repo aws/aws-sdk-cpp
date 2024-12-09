@@ -25,6 +25,7 @@
 #include <aws/ec2/model/PrivateDnsNameOptionsResponse.h>
 #include <aws/ec2/model/InstanceMaintenanceOptions.h>
 #include <aws/ec2/model/InstanceBootModeValues.h>
+#include <aws/ec2/model/InstanceNetworkPerformanceOptions.h>
 #include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/InstanceState.h>
 #include <aws/ec2/model/InstanceType.h>
@@ -575,6 +576,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains settings for the network performance options for your instance.</p>
+     */
+    inline const InstanceNetworkPerformanceOptions& GetNetworkPerformanceOptions() const{ return m_networkPerformanceOptions; }
+    inline bool NetworkPerformanceOptionsHasBeenSet() const { return m_networkPerformanceOptionsHasBeenSet; }
+    inline void SetNetworkPerformanceOptions(const InstanceNetworkPerformanceOptions& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = value; }
+    inline void SetNetworkPerformanceOptions(InstanceNetworkPerformanceOptions&& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = std::move(value); }
+    inline Instance& WithNetworkPerformanceOptions(const InstanceNetworkPerformanceOptions& value) { SetNetworkPerformanceOptions(value); return *this;}
+    inline Instance& WithNetworkPerformanceOptions(InstanceNetworkPerformanceOptions&& value) { SetNetworkPerformanceOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The service provider that manages the instance.</p>
      */
     inline const OperatorResponse& GetOperator() const{ return m_operator; }
@@ -976,6 +989,9 @@ namespace Model
 
     InstanceBootModeValues m_currentInstanceBootMode;
     bool m_currentInstanceBootModeHasBeenSet = false;
+
+    InstanceNetworkPerformanceOptions m_networkPerformanceOptions;
+    bool m_networkPerformanceOptionsHasBeenSet = false;
 
     OperatorResponse m_operator;
     bool m_operatorHasBeenSet = false;
