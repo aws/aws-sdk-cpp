@@ -27,6 +27,7 @@
 #include <aws/medialive/model/H265MvTemporalPredictor.h>
 #include <aws/medialive/model/H265TilePadding.h>
 #include <aws/medialive/model/H265TreeblockSize.h>
+#include <aws/medialive/model/H265Deblocking.h>
 #include <utility>
 
 namespace Aws
@@ -566,6 +567,23 @@ apply an appropriate value.
     inline void SetMinQp(int value) { m_minQpHasBeenSet = true; m_minQp = value; }
     inline H265Settings& WithMinQp(int value) { SetMinQp(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Enable or disable the deblocking filter for this codec. The filter reduces
+     * blocking artifacts at block boundaries,
+which improves overall video quality. If
+     * the filter is disabled, visible block edges might appear in the
+     * output,
+especially at lower bitrates.
+     */
+    inline const H265Deblocking& GetDeblocking() const{ return m_deblocking; }
+    inline bool DeblockingHasBeenSet() const { return m_deblockingHasBeenSet; }
+    inline void SetDeblocking(const H265Deblocking& value) { m_deblockingHasBeenSet = true; m_deblocking = value; }
+    inline void SetDeblocking(H265Deblocking&& value) { m_deblockingHasBeenSet = true; m_deblocking = std::move(value); }
+    inline H265Settings& WithDeblocking(const H265Deblocking& value) { SetDeblocking(value); return *this;}
+    inline H265Settings& WithDeblocking(H265Deblocking&& value) { SetDeblocking(std::move(value)); return *this;}
+    ///@}
   private:
 
     H265AdaptiveQuantization m_adaptiveQuantization;
@@ -678,6 +696,9 @@ apply an appropriate value.
 
     int m_minQp;
     bool m_minQpHasBeenSet = false;
+
+    H265Deblocking m_deblocking;
+    bool m_deblockingHasBeenSet = false;
   };
 
 } // namespace Model

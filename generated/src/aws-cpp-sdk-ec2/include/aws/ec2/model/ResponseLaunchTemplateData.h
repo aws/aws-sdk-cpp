@@ -24,6 +24,7 @@
 #include <aws/ec2/model/LaunchTemplatePrivateDnsNameOptions.h>
 #include <aws/ec2/model/LaunchTemplateInstanceMaintenanceOptions.h>
 #include <aws/ec2/model/OperatorResponse.h>
+#include <aws/ec2/model/LaunchTemplateNetworkPerformanceOptions.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMapping.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecification.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecification.h>
@@ -510,6 +511,19 @@ namespace Model
     inline ResponseLaunchTemplateData& WithOperator(const OperatorResponse& value) { SetOperator(value); return *this;}
     inline ResponseLaunchTemplateData& WithOperator(OperatorResponse&& value) { SetOperator(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Contains the launch template settings for network performance options for
+     * your instance.</p>
+     */
+    inline const LaunchTemplateNetworkPerformanceOptions& GetNetworkPerformanceOptions() const{ return m_networkPerformanceOptions; }
+    inline bool NetworkPerformanceOptionsHasBeenSet() const { return m_networkPerformanceOptionsHasBeenSet; }
+    inline void SetNetworkPerformanceOptions(const LaunchTemplateNetworkPerformanceOptions& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = value; }
+    inline void SetNetworkPerformanceOptions(LaunchTemplateNetworkPerformanceOptions&& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = std::move(value); }
+    inline ResponseLaunchTemplateData& WithNetworkPerformanceOptions(const LaunchTemplateNetworkPerformanceOptions& value) { SetNetworkPerformanceOptions(value); return *this;}
+    inline ResponseLaunchTemplateData& WithNetworkPerformanceOptions(LaunchTemplateNetworkPerformanceOptions&& value) { SetNetworkPerformanceOptions(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_kernelId;
@@ -607,6 +621,9 @@ namespace Model
 
     OperatorResponse m_operator;
     bool m_operatorHasBeenSet = false;
+
+    LaunchTemplateNetworkPerformanceOptions m_networkPerformanceOptions;
+    bool m_networkPerformanceOptionsHasBeenSet = false;
   };
 
 } // namespace Model

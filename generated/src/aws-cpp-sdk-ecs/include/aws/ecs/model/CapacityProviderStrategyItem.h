@@ -50,7 +50,7 @@ namespace Model
    * warning. <code>FARGATE_SPOT</code> supports Linux tasks with the X86_64
    * architecture on platform version 1.3.0 or later. <code>FARGATE_SPOT</code>
    * supports Linux tasks with the ARM64 architecture on platform version 1.4.0 or
-   * later.</p> <p>A capacity provider strategy may contain a maximum of 6 capacity
+   * later.</p> <p>A capacity provider strategy can contain a maximum of 20 capacity
    * providers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CapacityProviderStrategyItem">AWS
    * API Reference</a></p>

@@ -43,7 +43,8 @@ NetworkInfo::NetworkInfo() :
     m_encryptionInTransitSupported(false),
     m_encryptionInTransitSupportedHasBeenSet(false),
     m_enaSrdSupported(false),
-    m_enaSrdSupportedHasBeenSet(false)
+    m_enaSrdSupportedHasBeenSet(false),
+    m_bandwidthWeightingsHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,18 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
       m_enaSrdSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSrdSupportedNode.GetText()).c_str()).c_str());
       m_enaSrdSupportedHasBeenSet = true;
     }
+    XmlNode bandwidthWeightingsNode = resultNode.FirstChild("bandwidthWeightings");
+    if(!bandwidthWeightingsNode.IsNull())
+    {
+      XmlNode bandwidthWeightingsMember = bandwidthWeightingsNode.FirstChild("item");
+      while(!bandwidthWeightingsMember.IsNull())
+      {
+        m_bandwidthWeightings.push_back(BandwidthWeightingTypeMapper::GetBandwidthWeightingTypeForName(StringUtils::Trim(bandwidthWeightingsMember.GetText().c_str())));
+        bandwidthWeightingsMember = bandwidthWeightingsMember.NextNode("item");
+      }
+
+      m_bandwidthWeightingsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -223,6 +236,15 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".EnaSrdSupported=" << std::boolalpha << m_enaSrdSupported << "&";
   }
 
+  if(m_bandwidthWeightingsHasBeenSet)
+  {
+      unsigned bandwidthWeightingsIdx = 1;
+      for(auto& item : m_bandwidthWeightings)
+      {
+        oStream << location << index << locationValue << ".BandwidthWeightings." << bandwidthWeightingsIdx++ << "=" << BandwidthWeightingTypeMapper::GetNameForBandwidthWeightingType(item) << "&";
+      }
+  }
+
 }
 
 void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -286,6 +308,14 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_enaSrdSupportedHasBeenSet)
   {
       oStream << location << ".EnaSrdSupported=" << std::boolalpha << m_enaSrdSupported << "&";
+  }
+  if(m_bandwidthWeightingsHasBeenSet)
+  {
+      unsigned bandwidthWeightingsIdx = 1;
+      for(auto& item : m_bandwidthWeightings)
+      {
+        oStream << location << ".BandwidthWeightings." << bandwidthWeightingsIdx++ << "=" << BandwidthWeightingTypeMapper::GetNameForBandwidthWeightingType(item) << "&";
+      }
   }
 }
 

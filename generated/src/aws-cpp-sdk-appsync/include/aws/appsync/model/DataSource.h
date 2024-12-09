@@ -97,12 +97,14 @@ namespace Model
      * domain.</p> </li> <li> <p> <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is
      * an Amazon OpenSearch Service domain.</p> </li> <li> <p>
      * <b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge
-     * configuration.</p> </li> <li> <p> <b>NONE</b>: There is no data source. Use this
-     * type when you want to invoke a GraphQL operation without connecting to a data
-     * source, such as when you're performing data transformation with resolvers or
-     * invoking a subscription from a mutation.</p> </li> <li> <p> <b>HTTP</b>: The
-     * data source is an HTTP endpoint.</p> </li> <li> <p> <b>RELATIONAL_DATABASE</b>:
-     * The data source is a relational database.</p> </li> </ul>
+     * configuration.</p> </li> <li> <p> <b>AMAZON_BEDROCK_RUNTIME</b>: The data source
+     * is the Amazon Bedrock runtime.</p> </li> <li> <p> <b>NONE</b>: There is no data
+     * source. Use this type when you want to invoke a GraphQL operation without
+     * connecting to a data source, such as when you're performing data transformation
+     * with resolvers or invoking a subscription from a mutation.</p> </li> <li> <p>
+     * <b>HTTP</b>: The data source is an HTTP endpoint.</p> </li> <li> <p>
+     * <b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p> </li>
+     * </ul>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

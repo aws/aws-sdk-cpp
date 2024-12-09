@@ -21,6 +21,7 @@
 #include <aws/ec2/model/EnclaveOptionsRequest.h>
 #include <aws/ec2/model/PrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/InstanceMaintenanceOptionsRequest.h>
+#include <aws/ec2/model/InstanceNetworkPerformanceOptionsRequest.h>
 #include <aws/ec2/model/OperatorRequest.h>
 #include <aws/ec2/model/ShutdownBehavior.h>
 #include <aws/ec2/model/IamInstanceProfileSpecification.h>
@@ -580,6 +581,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains settings for the network performance options for the instance.</p>
+     */
+    inline const InstanceNetworkPerformanceOptionsRequest& GetNetworkPerformanceOptions() const{ return m_networkPerformanceOptions; }
+    inline bool NetworkPerformanceOptionsHasBeenSet() const { return m_networkPerformanceOptionsHasBeenSet; }
+    inline void SetNetworkPerformanceOptions(const InstanceNetworkPerformanceOptionsRequest& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = value; }
+    inline void SetNetworkPerformanceOptions(InstanceNetworkPerformanceOptionsRequest&& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = std::move(value); }
+    inline RunInstancesRequest& WithNetworkPerformanceOptions(const InstanceNetworkPerformanceOptionsRequest& value) { SetNetworkPerformanceOptions(value); return *this;}
+    inline RunInstancesRequest& WithNetworkPerformanceOptions(InstanceNetworkPerformanceOptionsRequest&& value) { SetNetworkPerformanceOptions(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Reserved for internal use.</p>
      */
     inline const OperatorRequest& GetOperator() const{ return m_operator; }
@@ -822,6 +835,9 @@ namespace Model
 
     bool m_enablePrimaryIpv6;
     bool m_enablePrimaryIpv6HasBeenSet = false;
+
+    InstanceNetworkPerformanceOptionsRequest m_networkPerformanceOptions;
+    bool m_networkPerformanceOptionsHasBeenSet = false;
 
     OperatorRequest m_operator;
     bool m_operatorHasBeenSet = false;

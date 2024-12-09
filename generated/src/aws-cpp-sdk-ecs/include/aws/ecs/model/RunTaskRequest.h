@@ -54,7 +54,7 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      * <p>When you use cluster auto scaling, you must specify
      * <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p> <p>A
-     * capacity provider strategy may contain a maximum of 6 capacity providers.</p>
+     * capacity provider strategy can contain a maximum of 20 capacity providers.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }

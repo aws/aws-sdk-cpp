@@ -11,6 +11,7 @@
 #include <aws/ec2/model/EnaSupport.h>
 #include <aws/ec2/model/EfaInfo.h>
 #include <aws/ec2/model/NetworkCardInfo.h>
+#include <aws/ec2/model/BandwidthWeightingType.h>
 #include <utility>
 
 namespace Aws
@@ -190,6 +191,21 @@ namespace Model
     inline void SetEnaSrdSupported(bool value) { m_enaSrdSupportedHasBeenSet = true; m_enaSrdSupported = value; }
     inline NetworkInfo& WithEnaSrdSupported(bool value) { SetEnaSrdSupported(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of valid settings for configurable bandwidth weighting for the
+     * instance type, if supported.</p>
+     */
+    inline const Aws::Vector<BandwidthWeightingType>& GetBandwidthWeightings() const{ return m_bandwidthWeightings; }
+    inline bool BandwidthWeightingsHasBeenSet() const { return m_bandwidthWeightingsHasBeenSet; }
+    inline void SetBandwidthWeightings(const Aws::Vector<BandwidthWeightingType>& value) { m_bandwidthWeightingsHasBeenSet = true; m_bandwidthWeightings = value; }
+    inline void SetBandwidthWeightings(Aws::Vector<BandwidthWeightingType>&& value) { m_bandwidthWeightingsHasBeenSet = true; m_bandwidthWeightings = std::move(value); }
+    inline NetworkInfo& WithBandwidthWeightings(const Aws::Vector<BandwidthWeightingType>& value) { SetBandwidthWeightings(value); return *this;}
+    inline NetworkInfo& WithBandwidthWeightings(Aws::Vector<BandwidthWeightingType>&& value) { SetBandwidthWeightings(std::move(value)); return *this;}
+    inline NetworkInfo& AddBandwidthWeightings(const BandwidthWeightingType& value) { m_bandwidthWeightingsHasBeenSet = true; m_bandwidthWeightings.push_back(value); return *this; }
+    inline NetworkInfo& AddBandwidthWeightings(BandwidthWeightingType&& value) { m_bandwidthWeightingsHasBeenSet = true; m_bandwidthWeightings.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_networkPerformance;
@@ -230,6 +246,9 @@ namespace Model
 
     bool m_enaSrdSupported;
     bool m_enaSrdSupportedHasBeenSet = false;
+
+    Aws::Vector<BandwidthWeightingType> m_bandwidthWeightings;
+    bool m_bandwidthWeightingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -57,7 +57,8 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData() :
     m_maintenanceOptionsHasBeenSet(false),
     m_disableApiStop(false),
     m_disableApiStopHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_networkPerformanceOptionsHasBeenSet(false)
 {
 }
 
@@ -313,6 +314,12 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
       m_operator = operatorNode;
       m_operatorHasBeenSet = true;
     }
+    XmlNode networkPerformanceOptionsNode = resultNode.FirstChild("networkPerformanceOptions");
+    if(!networkPerformanceOptionsNode.IsNull())
+    {
+      m_networkPerformanceOptions = networkPerformanceOptionsNode;
+      m_networkPerformanceOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -552,6 +559,13 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
   }
 
+  if(m_networkPerformanceOptionsHasBeenSet)
+  {
+      Aws::StringStream networkPerformanceOptionsLocationAndMemberSs;
+      networkPerformanceOptionsLocationAndMemberSs << location << index << locationValue << ".NetworkPerformanceOptions";
+      m_networkPerformanceOptions.OutputToStream(oStream, networkPerformanceOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -755,6 +769,12 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       Aws::String operatorLocationAndMember(location);
       operatorLocationAndMember += ".Operator";
       m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
+  }
+  if(m_networkPerformanceOptionsHasBeenSet)
+  {
+      Aws::String networkPerformanceOptionsLocationAndMember(location);
+      networkPerformanceOptionsLocationAndMember += ".NetworkPerformanceOptions";
+      m_networkPerformanceOptions.OutputToStream(oStream, networkPerformanceOptionsLocationAndMember.c_str());
   }
 }
 

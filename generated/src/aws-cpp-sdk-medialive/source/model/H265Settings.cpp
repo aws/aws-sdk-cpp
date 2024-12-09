@@ -89,7 +89,9 @@ H265Settings::H265Settings() :
     m_treeblockSize(H265TreeblockSize::NOT_SET),
     m_treeblockSizeHasBeenSet(false),
     m_minQp(0),
-    m_minQpHasBeenSet(false)
+    m_minQpHasBeenSet(false),
+    m_deblocking(H265Deblocking::NOT_SET),
+    m_deblockingHasBeenSet(false)
 {
 }
 
@@ -360,6 +362,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_minQpHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deblocking"))
+  {
+    m_deblocking = H265DeblockingMapper::GetH265DeblockingForName(jsonValue.GetString("deblocking"));
+
+    m_deblockingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -568,6 +577,11 @@ JsonValue H265Settings::Jsonize() const
   {
    payload.WithInteger("minQp", m_minQp);
 
+  }
+
+  if(m_deblockingHasBeenSet)
+  {
+   payload.WithString("deblocking", H265DeblockingMapper::GetNameForH265Deblocking(m_deblocking));
   }
 
   return payload;
