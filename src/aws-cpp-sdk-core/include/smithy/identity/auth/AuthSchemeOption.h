@@ -19,7 +19,7 @@ namespace smithy {
         /* note: AuthSchemeOption is not connected with AuthScheme by type system, only by the String of schemeId, this is in accordance with SRA */
     public:
         AuthSchemeOption(const char* id = nullptr): schemeId(id) {}
-        AuthSchemeOption(const char* id, bool isStreaming): schemeId(id),isEventStreaming{isStreaming} {}
+        AuthSchemeOption(const char* id, bool isStreaming) : schemeId(id), isEventStreaming{isStreaming} {}
         virtual ~AuthSchemeOption() = default;
 
         const char* schemeId = nullptr;

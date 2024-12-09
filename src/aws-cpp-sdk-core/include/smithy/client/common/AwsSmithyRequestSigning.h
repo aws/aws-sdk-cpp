@@ -80,97 +80,78 @@ namespace smithy
             return visitor.m_resultShouldWait;
         }
 
-        static bool SetSignerInEventStream(std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStreamSp, 
-                                    const AuthSchemeOption& authSchemeOption,
-                                    const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
-        {
-            bool result = false;
-            auto authSchemeIter = authSchemes.find(authSchemeOption.schemeId);
-            if(authSchemeIter != authSchemes.end())
-            {
-                //set signer in event encoder
-                AuthSchemesVariantT authScheme = authSchemeIter->second;
-                EventStreamSignerVisitor visitor(eventEncoderStreamSp, authSchemeOption);
-                authScheme.Visit(visitor);
-                result = true;
-            }
-            return result;
+        static bool SetSignerInEventStream(std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStreamSp,
+                                           const AuthSchemeOption& authSchemeOption,
+                                           const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes) {
+          bool result = false;
+          auto authSchemeIter = authSchemes.find(authSchemeOption.schemeId);
+          if (authSchemeIter != authSchemes.end()) {
+            // set signer in event encoder
+            AuthSchemesVariantT authScheme = authSchemeIter->second;
+            EventStreamSignerVisitor visitor(eventEncoderStreamSp, authSchemeOption);
+            authScheme.Visit(visitor);
+            result = true;
+          }
+          return result;
         }
 
+       protected:
+        struct SignerVisitor {
+          SignerVisitor(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemeOption& targetAuthSchemeOption)
+              : m_httpRequest(std::move(httpRequest)), m_targetAuthSchemeOption(targetAuthSchemeOption) {}
 
+          const std::shared_ptr<HttpRequest> m_httpRequest;
+          const AuthSchemeOption& m_targetAuthSchemeOption;
 
-    protected:
-        struct SignerVisitor
-        {
-            SignerVisitor(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemeOption& targetAuthSchemeOption)
-                : m_httpRequest(std::move(httpRequest)), m_targetAuthSchemeOption(targetAuthSchemeOption)
-            {
+          Aws::Crt::Optional<SigningOutcome> result;
+
+          template <typename AuthSchemeAlternativeT>
+          void operator()(AuthSchemeAlternativeT& authScheme) {
+            // Auth Scheme Variant alternative contains the requested auth option
+            assert(strcmp(authScheme.schemeId, m_targetAuthSchemeOption.schemeId) == 0);
+
+            using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
+            using IdentityResolver = IdentityResolverBase<IdentityT>;
+            using Signer = AwsSignerBase<IdentityT>;
+
+            std::shared_ptr<IdentityResolver> identityResolver = authScheme.identityResolver();
+            if (!identityResolver) {
+              result.emplace(SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "",
+                                          "Auth scheme provided a nullptr identityResolver", false /*retryable*/));
+              return;
             }
 
-            const std::shared_ptr<HttpRequest> m_httpRequest;
-            const AuthSchemeOption& m_targetAuthSchemeOption;
+            auto identityResult =
+                identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
 
-            Aws::Crt::Optional<SigningOutcome> result;
-
-            template <typename AuthSchemeAlternativeT>
-            void operator()(AuthSchemeAlternativeT& authScheme)
-            {
-                // Auth Scheme Variant alternative contains the requested auth option
-                assert(strcmp(authScheme.schemeId, m_targetAuthSchemeOption.schemeId) == 0);
-
-                using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
-                using IdentityResolver = IdentityResolverBase<IdentityT>;
-                using Signer = AwsSignerBase<IdentityT>;
-
-                std::shared_ptr<IdentityResolver> identityResolver = authScheme.identityResolver();
-                if (!identityResolver)
-                {
-                    result.emplace(SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
-                                                "",
-                                                "Auth scheme provided a nullptr identityResolver",
-                                                false/*retryable*/));
-                    return;
-                }
-
-                auto identityResult = identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
-
-                if (!identityResult.IsSuccess())
-                {
-                    result.emplace(identityResult.GetError());
-                    return;
-                }
-                auto identity = std::move(identityResult.GetResultWithOwnership());
-
-                std::shared_ptr<Signer> signer = authScheme.signer(m_targetAuthSchemeOption.isEventStreaming);
-                if (!signer)
-                {
-                    result.emplace(SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
-                                                "",
-                                                "Auth scheme provided a nullptr signer",
-                                                false/*retryable*/));
-                    return;
-                }
-
-                result.emplace(signer->sign(m_httpRequest, *identity, m_targetAuthSchemeOption.signerProperties()));
+            if (!identityResult.IsSuccess()) {
+              result.emplace(identityResult.GetError());
+              return;
             }
+            auto identity = std::move(identityResult.GetResultWithOwnership());
+
+            std::shared_ptr<Signer> signer = authScheme.signer(m_targetAuthSchemeOption.isEventStreaming);
+            if (!signer) {
+              result.emplace(SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Auth scheme provided a nullptr signer",
+                                          false /*retryable*/));
+              return;
+            }
+
+            result.emplace(signer->sign(m_httpRequest, *identity, m_targetAuthSchemeOption.signerProperties()));
+          }
         };
 
-        static
-        SigningOutcome SignWithAuthScheme(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemesVariantT& authSchemesVariant,
-                                          const AuthSchemeOption& targetAuthSchemeOption)
-        {
-            SignerVisitor visitor(httpRequest, targetAuthSchemeOption);
-            AuthSchemesVariantT authSchemesVariantCopy(authSchemesVariant); // TODO: allow const visiting
-            authSchemesVariantCopy.Visit(visitor);
+        static SigningOutcome SignWithAuthScheme(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemesVariantT& authSchemesVariant,
+                                                 const AuthSchemeOption& targetAuthSchemeOption) {
+          SignerVisitor visitor(httpRequest, targetAuthSchemeOption);
+          AuthSchemesVariantT authSchemesVariantCopy(authSchemesVariant);  // TODO: allow const visiting
+          authSchemesVariantCopy.Visit(visitor);
 
-            if (!visitor.result)
-            {
-                return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
-                                     "",
-                                     "Failed to sign with an unknown error",
-                                     false/*retryable*/));
-            }
-            return std::move(*visitor.result);
+          if (!visitor.result) {
+            return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign with an unknown error",
+                                 false /*retryable*/));
+          }
+          return std::move(*visitor.result);
         }
 
         struct ClockSkewVisitor
@@ -212,71 +193,67 @@ namespace smithy
                     return;
                 }
 
-                AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_SIGNING_TAG, "Server time is " << m_serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
+                AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_SIGNING_TAG, "Server time is " << m_serverTime.ToGmtString(DateFormat::RFC822)
+                                                                                     << ", while client time is "
+                                                                                     << DateTime::Now().ToGmtString(DateFormat::RFC822));
                 auto diff = DateTime::Diff(m_serverTime, signingTimestamp);
                 //only try again if clock skew was the cause of the error.
-                if (diff >= TIME_DIFF_MAX || diff <= TIME_DIFF_MIN)
-                {
-                    diff = DateTime::Diff(m_serverTime, DateTime::Now());
-                    AWS_LOGSTREAM_INFO(AWS_SMITHY_CLIENT_SIGNING_TAG, "Computed time difference as " << diff.count() << " milliseconds. Adjusting signer with the skew.");
-                    signer->SetClockSkew(diff);
-                    ClientError newError(m_outcome.GetError());
-                    newError.SetRetryableType(Aws::Client::RetryableType::RETRYABLE);
+                if (diff >= TIME_DIFF_MAX || diff <= TIME_DIFF_MIN) {
+                  diff = DateTime::Diff(m_serverTime, DateTime::Now());
+                  AWS_LOGSTREAM_INFO(AWS_SMITHY_CLIENT_SIGNING_TAG,
+                                     "Computed time difference as " << diff.count() << " milliseconds. Adjusting signer with the skew.");
+                  signer->SetClockSkew(diff);
+                  ClientError newError(m_outcome.GetError());
+                  newError.SetRetryableType(Aws::Client::RetryableType::RETRYABLE);
 
-                    m_outcome = std::move(newError);
-                    m_resultShouldWait = true;
+                  m_outcome = std::move(newError);
+                  m_resultShouldWait = true;
                 }
             }
         };
 
+        struct EventStreamSignerVisitor {
+          explicit EventStreamSignerVisitor(std::shared_ptr<Aws::Utils::Event::EventEncoderStream> evSp,
+                                            const AuthSchemeOption& targetAuthSchemeOption)
+              : m_eventEncoderStreamSp(evSp), m_targetAuthSchemeOption(targetAuthSchemeOption) {}
 
-        struct EventStreamSignerVisitor
-        {
-            explicit EventStreamSignerVisitor(std::shared_ptr<Aws::Utils::Event::EventEncoderStream> evSp, const AuthSchemeOption& targetAuthSchemeOption)
-                : m_eventEncoderStreamSp(evSp),m_targetAuthSchemeOption(targetAuthSchemeOption)
-            {
+          std::shared_ptr<Aws::Utils::Event::EventEncoderStream> m_eventEncoderStreamSp;
+          const AuthSchemeOption& m_targetAuthSchemeOption;
+
+          template <typename AuthSchemeAlternativeT>
+          void operator()(AuthSchemeAlternativeT& authScheme) {
+            // Auth Scheme Variant alternative contains the requested auth option
+            assert(strcmp(authScheme.schemeId, m_targetAuthSchemeOption.schemeId) == 0);
+
+            using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
+            using IdentityResolver = IdentityResolverBase<IdentityT>;
+            using Signer = AwsSignerBase<IdentityT>;
+
+            std::shared_ptr<Signer> signer = authScheme.signer(m_targetAuthSchemeOption.isEventStreaming);
+            if (!signer) {
+              AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to adjust signing clock skew. Signer is null.");
+              return;
             }
 
-            std::shared_ptr<Aws::Utils::Event::EventEncoderStream> m_eventEncoderStreamSp;
-            const AuthSchemeOption& m_targetAuthSchemeOption;
+            std::shared_ptr<IdentityResolver> identityResolver = authScheme.identityResolver();
+            if (!identityResolver) {
+              AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to find identityResolver.");
 
-            template <typename AuthSchemeAlternativeT>
-            void operator()(AuthSchemeAlternativeT& authScheme)
-            {
-                // Auth Scheme Variant alternative contains the requested auth option
-                assert(strcmp(authScheme.schemeId, m_targetAuthSchemeOption.schemeId) == 0);
-
-                using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
-                using IdentityResolver = IdentityResolverBase<IdentityT>;
-                using Signer = AwsSignerBase<IdentityT>;
-
-                std::shared_ptr<Signer> signer = authScheme.signer(m_targetAuthSchemeOption.isEventStreaming);
-                if (!signer)
-                {
-                    AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to adjust signing clock skew. Signer is null.");
-                    return;
-                }
-
-                std::shared_ptr<IdentityResolver> identityResolver = authScheme.identityResolver();
-                if (!identityResolver)
-                {                    
-                    AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to find identityResolver.");
-
-                    return;
-                }
-
-                auto identityResult = identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
-
-                if (!identityResult.IsSuccess())
-                {
-                    AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to resolve identity");
-                    return;
-                }
-
-                //typecast to streaming type as we know this visitor is for smithy types
-                (std::dynamic_pointer_cast<Aws::Utils::Event::SmithyEventEncoderStream<IdentityT>>(m_eventEncoderStreamSp))->SetSigner(signer, std::move(identityResult.GetResultWithOwnership()));
+              return;
             }
+
+            auto identityResult =
+                identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
+
+            if (!identityResult.IsSuccess()) {
+              AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to resolve identity");
+              return;
+            }
+
+            // typecast to streaming type as we know this visitor is for smithy types
+            (std::dynamic_pointer_cast<Aws::Utils::Event::SmithyEventEncoderStream<IdentityT>>(m_eventEncoderStreamSp))
+                ->SetSigner(signer, std::move(identityResult.GetResultWithOwnership()));
+          }
         };
-
     };
-}
+    }  // namespace smithy

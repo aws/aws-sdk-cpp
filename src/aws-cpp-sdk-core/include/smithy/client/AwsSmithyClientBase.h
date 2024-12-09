@@ -4,20 +4,19 @@
  */
 #pragma once
 
-#include <smithy/identity/auth/AuthSchemeOption.h>
-#include <smithy/identity/identity/AwsIdentity.h>
-#include <smithy/tracing/TelemetryProvider.h>
-#include <smithy/interceptor/Interceptor.h>
-#include <smithy/client/features/ChecksumInterceptor.h>
-
-#include <aws/crt/Variant.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/FutureOutcome.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/crt/Variant.h>
+#include <smithy/client/features/ChecksumInterceptor.h>
+#include <smithy/identity/auth/AuthSchemeOption.h>
+#include <smithy/identity/identity/AwsIdentity.h>
+#include <smithy/interceptor/Interceptor.h>
+#include <smithy/tracing/TelemetryProvider.h>
 
 namespace Aws
 {
@@ -57,14 +56,13 @@ namespace Aws
     {
         class AWSEndpoint;
 
-        struct AWSEndpointResolutionOverrides
-        {
-            Aws::Vector<Aws::String> pathSegments;
-            bool setRfc3986Encoded{false};
-            Aws::String queryString;
+        struct AWSEndpointResolutionOverrides {
+          Aws::Vector<Aws::String> pathSegments;
+          bool setRfc3986Encoded{false};
+          Aws::String queryString;
         };
-    }
-}
+        }  // namespace Endpoint
+        }  // namespace Aws
 
 namespace smithy {
 namespace client
@@ -134,21 +132,15 @@ namespace client
 
         virtual ~AwsSmithyClientBase() = default;
 
-        void MakeRequestAsync(Aws::AmazonWebServiceRequest const * const request,
-                              const char* requestName,
-                              Aws::Http::HttpMethod method,
-                              EndpointUpdateCallback&& endpointCallback,
-                              ResponseHandlerFunc&& responseHandler,
+        void MakeRequestAsync(Aws::AmazonWebServiceRequest const* const request, const char* requestName, Aws::Http::HttpMethod method,
+                              EndpointUpdateCallback&& endpointCallback, ResponseHandlerFunc&& responseHandler,
                               std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
-                              std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp = nullptr
-                              ) const;
+                              std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp = nullptr) const;
 
-        HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
-                                            const char* requestName,
-                                            Aws::Http::HttpMethod method,
-                                            EndpointUpdateCallback&& endpointCallback) const;
+        HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const* const request, const char* requestName,
+                                            Aws::Http::HttpMethod method, EndpointUpdateCallback&& endpointCallback) const;
 
-    protected:
+       protected:
         /**
          * Transforms the AmazonWebServicesResult object into an HttpRequest.
          */
@@ -170,8 +162,9 @@ namespace client
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
         virtual bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String& /* priorSignature */) const { return false; }
 
-    protected:
-        virtual void SetSignerInEventStreamRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& , std::shared_ptr<Aws::Utils::Event::EventEncoderStream>& ) const {} ;
+       protected:
+        virtual void SetSignerInEventStreamRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>&,
+                                                   std::shared_ptr<Aws::Utils::Event::EventEncoderStream>&) const {};
         Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
         Aws::String m_userAgent;

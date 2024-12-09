@@ -13,6 +13,7 @@
 
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Outcome.h>
+#include <smithy/identity/auth/AuthSchemeOption.h>
 
 
 namespace smithy

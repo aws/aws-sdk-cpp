@@ -65,33 +65,32 @@ namespace Aws
                  */
                 bool WaitForDrain(int64_t timeoutMs = 1000);
 
+                virtual ~EventEncoderStream() {}
 
-                virtual ~EventEncoderStream(){}
-                
-            protected:
-                virtual Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) ;
-            private:
+               protected:
+                virtual Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg);
+
+               private:
                 Stream::ConcurrentStreamBuf m_streambuf;
                 EventStreamEncoder m_encoder;
             };
-            
-            template <typename IdentityT>
-            class AWS_CORE_API SmithyEventEncoderStream : public EventEncoderStream
-            {
-                public:
-                explicit SmithyEventEncoderStream(size_t bufferSize = DEFAULT_BUF_SIZE):EventEncoderStream(bufferSize){}
-                virtual ~SmithyEventEncoderStream() {}
-                void SetSigner(std::shared_ptr<smithy::AwsSignerBase<IdentityT> > signer, Aws::UniquePtr<IdentityT> identity) { m_evtEncoder.SetSigner(signer, std::move(identity));
-                }
-                void SetSignatureSeed(const Aws::String& seed) override { m_evtEncoder.SetSignatureSeed(seed); }
 
-                protected:
-                Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) override
-                {
-                    return m_evtEncoder.EncodeAndSign(msg);
-                }
-                SmithyEventStreamEncoder<IdentityT> m_evtEncoder;
+            template <typename IdentityT>
+            class AWS_CORE_API SmithyEventEncoderStream : public EventEncoderStream {
+             public:
+              explicit SmithyEventEncoderStream(size_t bufferSize = DEFAULT_BUF_SIZE) : EventEncoderStream(bufferSize) {}
+              virtual ~SmithyEventEncoderStream() {}
+              void SetSigner(std::shared_ptr<smithy::AwsSignerBase<IdentityT> > signer, Aws::UniquePtr<IdentityT> identity) {
+                m_evtEncoder.SetSigner(signer, std::move(identity));
+              }
+              void SetSignatureSeed(const Aws::String& seed) override { m_evtEncoder.SetSignatureSeed(seed); }
+
+             protected:
+              Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) override {
+                return m_evtEncoder.EncodeAndSign(msg);
+              }
+              SmithyEventStreamEncoder<IdentityT> m_evtEncoder;
             };
-        }
+            }  // namespace Event
     }
 }
