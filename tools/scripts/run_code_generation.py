@@ -54,6 +54,18 @@ SMITHY_SUPPORTED_CLIENTS = {
     "dynamodb"
 }
 
+SMITHY_EXCLUSION_CLIENTS = {
+    #multi auth
+    "eventbridge"
+    ,"cloudfront-keyvaluestore"
+    ,"cognito-identity"
+    ,"cognito-idp"
+    #bidirectional streaming
+    #,"lexv2-runtime"
+    #,"qbusiness"
+    #,"transcribestreaming"
+}
+
 DEBUG = True
 
 class ServiceModel(object):
@@ -141,7 +153,9 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_ma
                 #if protocol is 
                 if ("protocol" in  model["metadata"] and 
                     (model["metadata"]["protocol"] == "json" or model["metadata"]["protocol"] == "rest-json")):
-                    SMITHY_SUPPORTED_CLIENTS.add(key)
+                    if key not in SMITHY_EXCLUSION_CLIENTS:
+                        SMITHY_SUPPORTED_CLIENTS.add(key)
+                    
             else:
                 print("service Id not found in model file:", model_file_date[0], " Skipping.")
                 continue
@@ -611,7 +625,7 @@ def main():
                                    args["path_to_generator"],
                                    args["output_location"],
                                    None,
-                                   service in SMITHY_SUPPORTED_CLIENTS,
+                                   (service in SMITHY_SUPPORTED_CLIENTS),
                                    args["raw_generator_arguments"])
             pending.add(task)
 
