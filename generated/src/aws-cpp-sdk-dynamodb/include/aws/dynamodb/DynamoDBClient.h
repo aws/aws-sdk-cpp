@@ -2285,7 +2285,6 @@ namespace DynamoDB
       friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>;
       void init(const DynamoDBClientConfiguration& clientConfiguration);
 
-
       void OptionallyUpdateDescribeEndpointsCache(Aws::Endpoint::AWSEndpoint& resolvedEndpoint,
         const Aws::String& operationName,
         const Aws::String& endpointKey,

@@ -3108,7 +3108,6 @@ namespace CloudWatchLogs
       friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>;
       void init(const CloudWatchLogsClientConfiguration& clientConfiguration);
 
-
   };
 
 } // namespace CloudWatchLogs

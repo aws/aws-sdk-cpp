@@ -469,7 +469,6 @@ namespace MarketplaceCatalog
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>;
       void init(const MarketplaceCatalogClientConfiguration& clientConfiguration);
 
-
   };
 
 } // namespace MarketplaceCatalog

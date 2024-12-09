@@ -514,7 +514,6 @@ namespace Route53Profiles
       friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient>;
       void init(const Route53ProfilesClientConfiguration& clientConfiguration);
 
-
   };
 
 } // namespace Route53Profiles

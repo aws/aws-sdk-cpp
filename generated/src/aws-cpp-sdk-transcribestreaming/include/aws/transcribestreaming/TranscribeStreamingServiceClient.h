@@ -168,7 +168,6 @@ namespace TranscribeStreamingService
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TranscribeStreamingServiceClient>;
       void init(const TranscribeStreamingServiceClientConfiguration& clientConfiguration);
 
-
   };
 
 } // namespace TranscribeStreamingService
