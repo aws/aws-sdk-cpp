@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 
 #include <cassert>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 
 namespace smithy
@@ -80,7 +81,7 @@ namespace smithy
             return visitor.m_resultShouldWait;
         }
 
-        static bool SetSignerInEventStream(std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStreamSp,
+        static bool SetSignerInEventStream(std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream> eventEncoderStreamSp,
                                            const AuthSchemeOption& authSchemeOption,
                                            const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes) {
           bool result = false;
@@ -197,7 +198,7 @@ namespace smithy
                                                                                      << ", while client time is "
                                                                                      << DateTime::Now().ToGmtString(DateFormat::RFC822));
                 auto diff = DateTime::Diff(m_serverTime, signingTimestamp);
-                //only try again if clock skew was the cause of the error.
+                // only try again if clock skew was the cause of the error.
                 if (diff >= TIME_DIFF_MAX || diff <= TIME_DIFF_MIN) {
                   diff = DateTime::Diff(m_serverTime, DateTime::Now());
                   AWS_LOGSTREAM_INFO(AWS_SMITHY_CLIENT_SIGNING_TAG,
@@ -213,22 +214,23 @@ namespace smithy
         };
 
         struct EventStreamSignerVisitor {
-          explicit EventStreamSignerVisitor(std::shared_ptr<Aws::Utils::Event::EventEncoderStream> evSp,
+          explicit EventStreamSignerVisitor(std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream> evSp,
                                             const AuthSchemeOption& targetAuthSchemeOption)
               : m_eventEncoderStreamSp(evSp), m_targetAuthSchemeOption(targetAuthSchemeOption) {}
 
-          std::shared_ptr<Aws::Utils::Event::EventEncoderStream> m_eventEncoderStreamSp;
+          std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream> m_eventEncoderStreamSp;
           const AuthSchemeOption& m_targetAuthSchemeOption;
 
           template <typename AuthSchemeAlternativeT>
-          void operator()(AuthSchemeAlternativeT& authScheme) {
+          void operator()(AuthSchemeAlternativeT&) {}
+
+          template <>
+          void operator()<smithy::SigV4AuthScheme>(smithy::SigV4AuthScheme& authScheme) {
             // Auth Scheme Variant alternative contains the requested auth option
             assert(strcmp(authScheme.schemeId, m_targetAuthSchemeOption.schemeId) == 0);
-
-            using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
+            using IdentityT = smithy::SigV4AuthScheme::IdentityT;
             using IdentityResolver = IdentityResolverBase<IdentityT>;
             using Signer = AwsSignerBase<IdentityT>;
-
             std::shared_ptr<Signer> signer = authScheme.signer(m_targetAuthSchemeOption.isEventStreaming);
             if (!signer) {
               AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to adjust signing clock skew. Signer is null.");
@@ -251,8 +253,7 @@ namespace smithy
             }
 
             // typecast to streaming type as we know this visitor is for smithy types
-            (std::dynamic_pointer_cast<Aws::Utils::Event::SmithyEventEncoderStream<IdentityT>>(m_eventEncoderStreamSp))
-                ->SetSigner(signer, std::move(identityResult.GetResultWithOwnership()));
+            m_eventEncoderStreamSp->SetSigner(signer, std::move(identityResult.GetResultWithOwnership()));
           }
         };
     };

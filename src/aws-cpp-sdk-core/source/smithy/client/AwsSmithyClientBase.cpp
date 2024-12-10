@@ -100,7 +100,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
                                            Aws::Http::HttpMethod method, EndpointUpdateCallback&& endpointCallback,
                                            ResponseHandlerFunc&& responseHandler,
                                            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
-                                           std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStreamSp) const {
+                                           std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream> eventEncoderStreamSp) const {
   if (!responseHandler) {
     assert(!"Missing a mandatory response handler!");
     AWS_LOGSTREAM_FATAL(AWS_SMITHY_CLIENT_LOG, "Unable to continue AWSClient request: response handler is missing!");

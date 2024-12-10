@@ -131,9 +131,10 @@ namespace client
           return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
 
-        ResponseT MakeEventStreamRequestDeserialize(Aws::AmazonWebServiceRequest const* const request, const char* requestName,
-                                                    Aws::Http::HttpMethod method, EndpointUpdateCallback&& endpointCallback,
-                                                    std::shared_ptr<Aws::Utils::Event::EventEncoderStream> eventEncoderStream_sp) const {
+        ResponseT MakeEventStreamRequestDeserialize(
+            Aws::AmazonWebServiceRequest const* const request, const char* requestName, Aws::Http::HttpMethod method,
+            EndpointUpdateCallback&& endpointCallback,
+            std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream> eventEncoderStream_sp) const {
           std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor =
               Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>("AwsSmithyClient");
           assert(pExecutor);
@@ -149,8 +150,9 @@ namespace client
         }
 
        protected:
-        void SetSignerInEventStreamRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
-                                           std::shared_ptr<Aws::Utils::Event::EventEncoderStream>& eventEncoderStreamSp) const override {
+        void SetSignerInEventStreamRequest(
+            std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
+            std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream>& eventEncoderStreamSp) const override {
           if (pRequestCtx && pRequestCtx->m_pRequest && eventEncoderStreamSp) {
             if (AwsClientRequestSigning<AuthSchemesVariantT>::SetSignerInEventStream(eventEncoderStreamSp, pRequestCtx->m_authSchemeOption,
                                                                                      m_authSchemes)) {

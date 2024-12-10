@@ -75,12 +75,12 @@ namespace Aws
                 EventStreamEncoder m_encoder;
             };
 
-            template <typename IdentityT>
             class AWS_CORE_API SmithyEventEncoderStream : public EventEncoderStream {
              public:
               explicit SmithyEventEncoderStream(size_t bufferSize = DEFAULT_BUF_SIZE) : EventEncoderStream(bufferSize) {}
               virtual ~SmithyEventEncoderStream() {}
-              void SetSigner(std::shared_ptr<smithy::AwsSignerBase<IdentityT> > signer, Aws::UniquePtr<IdentityT> identity) {
+              void SetSigner(std::shared_ptr<smithy::AwsSignerBase<smithy::AwsCredentialIdentityBase> > signer,
+                             Aws::UniquePtr<smithy::AwsCredentialIdentityBase> identity) {
                 m_evtEncoder.SetSigner(signer, std::move(identity));
               }
               void SetSignatureSeed(const Aws::String& seed) override { m_evtEncoder.SetSignatureSeed(seed); }
@@ -89,7 +89,7 @@ namespace Aws
               Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) override {
                 return m_evtEncoder.EncodeAndSign(msg);
               }
-              SmithyEventStreamEncoder<IdentityT> m_evtEncoder;
+              SmithyEventStreamEncoder<smithy::AwsCredentialIdentityBase> m_evtEncoder;
             };
             }  // namespace Event
     }
