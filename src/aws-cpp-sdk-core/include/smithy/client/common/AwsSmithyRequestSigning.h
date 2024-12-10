@@ -4,23 +4,20 @@
  */
 #pragma once
 
+#include <aws/core/client/AWSError.h>
+#include <aws/core/http/HttpRequest.h>
+#include <aws/core/utils/FutureOutcome.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/crt/Optional.h>
+#include <aws/crt/Variant.h>
 #include <smithy/client/common/AwsSmithyClientUtils.h>
 #include <smithy/identity/auth/AuthSchemeOption.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/identity/identity/AwsIdentity.h>
 #include <smithy/identity/resolver/AwsIdentityResolverBase.h>
 #include <smithy/identity/signer/AwsSignerBase.h>
 
-#include <aws/core/utils/FutureOutcome.h>
-#include <aws/core/client/AWSError.h>
-#include <aws/core/http/HttpRequest.h>
-
-#include <aws/crt/Variant.h>
-#include <aws/crt/Optional.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-
 #include <cassert>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-
 
 namespace smithy
 {
