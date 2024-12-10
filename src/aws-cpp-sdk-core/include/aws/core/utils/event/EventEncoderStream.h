@@ -28,7 +28,6 @@ namespace Aws
             class AWS_CORE_API EventEncoderStream : public Aws::IOStream
             {
             public:
-
                 /**
                  * Creates a stream for encoding events sent by the client.
                  * @param bufferSize The length of the underlying buffer.
@@ -40,7 +39,7 @@ namespace Aws
                  * Every event uses its previous event's signature to calculate its own signature.
                  * Setting this value affects the signature calculation of the first event.
                  */
-                void SetSignatureSeed(const Aws::String& seed) { m_encoder.SetSignatureSeed(seed); }
+                virtual void SetSignatureSeed(const Aws::String& seed) { m_encoder.SetSignatureSeed(seed); }
 
                 /**
                  * Writes an event-stream message to the underlying buffer.
@@ -66,10 +65,32 @@ namespace Aws
                  */
                 bool WaitForDrain(int64_t timeoutMs = 1000);
 
-            private:
+                virtual ~EventEncoderStream() {}
+
+               protected:
+                virtual Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg);
+
+               private:
                 Stream::ConcurrentStreamBuf m_streambuf;
                 EventStreamEncoder m_encoder;
             };
-        }
+
+            class AWS_CORE_API SmithyEventEncoderStream : public EventEncoderStream {
+             public:
+              explicit SmithyEventEncoderStream(size_t bufferSize = DEFAULT_BUF_SIZE) : EventEncoderStream(bufferSize) {}
+              virtual ~SmithyEventEncoderStream() {}
+              void SetSigner(std::shared_ptr<smithy::AwsSignerBase<smithy::AwsCredentialIdentityBase> > signer,
+                             Aws::UniquePtr<smithy::AwsCredentialIdentityBase> identity) {
+                m_evtEncoder.SetSigner(signer, std::move(identity));
+              }
+              void SetSignatureSeed(const Aws::String& seed) override { m_evtEncoder.SetSignatureSeed(seed); }
+
+             protected:
+              Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg) override {
+                return m_evtEncoder.EncodeAndSign(msg);
+              }
+              SmithyEventStreamEncoder<smithy::AwsCredentialIdentityBase> m_evtEncoder;
+            };
+            }  // namespace Event
     }
 }

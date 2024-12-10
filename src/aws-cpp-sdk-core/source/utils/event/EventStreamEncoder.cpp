@@ -93,17 +93,17 @@ namespace Aws
 
                 if (msgEncodeSuccess)
                 {
-                    aws_event_stream_message signedMessage;
-                    if (InitSignedStruct(encodedPayload, &signedMessage))
-                    {
-                        // success!
-                        const auto signedMessageBuffer = aws_event_stream_message_buffer(&signedMessage);
-                        const auto signedMessageLength = aws_event_stream_message_total_length(&signedMessage);
-                        outputBits.reserve(signedMessageLength);
-                        outputBits.insert(outputBits.end(), signedMessageBuffer, signedMessageBuffer + signedMessageLength);
+                  (void)encodedPayload;
+                  aws_event_stream_message signedMessage;
+                  if (InitSignedStruct(encodedPayload, &signedMessage)) {
+                    // success!
+                    const auto signedMessageBuffer = aws_event_stream_message_buffer(&signedMessage);
+                    const auto signedMessageLength = aws_event_stream_message_total_length(&signedMessage);
+                    outputBits.reserve(signedMessageLength);
+                    outputBits.insert(outputBits.end(), signedMessageBuffer, signedMessageBuffer + signedMessageLength);
 
-                        aws_event_stream_message_clean_up(&signedMessage);
-                    }
+                    aws_event_stream_message_clean_up(&signedMessage);
+                  }
                     if (encodedPayload)
                     {
                         aws_event_stream_message_clean_up(encodedPayload);
@@ -147,33 +147,32 @@ namespace Aws
                     signedMessage.WriteEventPayload(msgbuf, msglen);
                 }
 
-                assert(m_signer);
-                if (m_signer->SignEventMessage(signedMessage, m_signatureSeed))
-                {
-                    aws_array_list headers;
-                    EncodeHeaders(signedMessage, &headers);
+                if (SignEventMessage(signedMessage)) {
+                  aws_array_list headers;
+                  EncodeHeaders(signedMessage, &headers);
 
-                    aws_byte_buf signedPayload = aws_byte_buf_from_array(signedMessage.GetEventPayload().data(), signedMessage.GetEventPayload().size());
+                  aws_byte_buf signedPayload =
+                      aws_byte_buf_from_array(signedMessage.GetEventPayload().data(), signedMessage.GetEventPayload().size());
 
-                    if(aws_event_stream_message_init(signedmsg, get_aws_allocator(), &headers, &signedPayload) == AWS_OP_SUCCESS)
-                    {
-                        success = true;
-                    }
-                    else
-                    {
-                        AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from payload.");
-                    }
-                    aws_event_stream_headers_list_cleanup(&headers);
-                }
-                else
-                {
-                    AWS_LOGSTREAM_ERROR(TAG, "Failed to sign event message frame.");
+                  if (aws_event_stream_message_init(signedmsg, get_aws_allocator(), &headers, &signedPayload) == AWS_OP_SUCCESS) {
+                    success = true;
+                  } else {
+                    AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from payload.");
+                  }
+                  aws_event_stream_headers_list_cleanup(&headers);
+                } else {
+                  AWS_LOGSTREAM_ERROR(TAG, "Failed to sign event message frame.");
                 }
 
                 return success;
             }
 
+            bool EventStreamEncoder::SignEventMessage(Event::Message& signedMessage) {
+              assert(m_signer);
+              assert(!m_signatureSeed.empty());
+              return (m_signer->SignEventMessage(signedMessage, m_signatureSeed));
+            }
+
         } // namespace Event
     } // namespace Utils
-} // namespace Aws
-
+    }  // namespace Aws

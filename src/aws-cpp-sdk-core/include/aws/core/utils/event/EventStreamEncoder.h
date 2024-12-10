@@ -8,6 +8,8 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/event-stream/event_stream.h>
+#include <smithy/identity/identity/AwsCredentialIdentityBase.h>
+#include <smithy/identity/signer/AwsSignerBase.h>
 
 namespace Aws
 {
@@ -40,7 +42,12 @@ namespace Aws
                  * The signing is done via the signer member.
                  */
                 Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg);
-            private:
+
+               protected:
+                virtual bool SignEventMessage(Event::Message& msg);
+                Aws::String m_signatureSeed;
+
+               private:
                 /**
                  * Initialize C struct based on C++ object.
                  * Returns true if successful.
@@ -57,7 +64,29 @@ namespace Aws
                 bool InitSignedStruct(const aws_event_stream_message* payload, aws_event_stream_message* signedmsg);
 
                 Aws::Client::AWSAuthSigner* m_signer;
-                Aws::String m_signatureSeed;
+            };
+
+            template <typename IdentityT>
+            class AWS_CORE_API SmithyEventStreamEncoder : public EventStreamEncoder {
+              using SIGNER_TYPE = smithy::AwsSignerBase<IdentityT>;
+
+             public:
+              SmithyEventStreamEncoder(std::shared_ptr<SIGNER_TYPE> signer) : EventStreamEncoder(), m_smithySigner(signer){};
+              SmithyEventStreamEncoder() : EventStreamEncoder(){};
+
+              void SetSigner(std::shared_ptr<SIGNER_TYPE> signer, Aws::UniquePtr<IdentityT> identity) {
+                m_smithySigner = signer;
+                m_identity = std::move(identity);
+              }
+
+             protected:
+              bool SignEventMessage(Event::Message& signedMessage) override {
+                return (m_smithySigner->SignEventMessage(signedMessage, m_signatureSeed, *m_identity));
+              }
+
+             private:
+              std::shared_ptr<SIGNER_TYPE> m_smithySigner;
+              Aws::UniquePtr<IdentityT> m_identity;
             };
         }
     }
