@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p> Represents a predictive scaling policy configuration. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> Represents a predictive scaling policy configuration. Predictive scaling is
+   * supported on Amazon ECS services. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PredictiveScalingPolicyConfiguration">AWS
    * API Reference</a></p>
    */

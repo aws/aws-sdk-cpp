@@ -22,6 +22,28 @@ namespace Aws
 
         static const int AWS_SES_HASH = HashingUtils::HashString("AWS_SES");
         static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
+        static const int AWS_SES_AF_SOUTH_1_HASH = HashingUtils::HashString("AWS_SES_AF_SOUTH_1");
+        static const int AWS_SES_EU_NORTH_1_HASH = HashingUtils::HashString("AWS_SES_EU_NORTH_1");
+        static const int AWS_SES_AP_SOUTH_1_HASH = HashingUtils::HashString("AWS_SES_AP_SOUTH_1");
+        static const int AWS_SES_EU_WEST_3_HASH = HashingUtils::HashString("AWS_SES_EU_WEST_3");
+        static const int AWS_SES_EU_WEST_2_HASH = HashingUtils::HashString("AWS_SES_EU_WEST_2");
+        static const int AWS_SES_EU_SOUTH_1_HASH = HashingUtils::HashString("AWS_SES_EU_SOUTH_1");
+        static const int AWS_SES_EU_WEST_1_HASH = HashingUtils::HashString("AWS_SES_EU_WEST_1");
+        static const int AWS_SES_AP_NORTHEAST_3_HASH = HashingUtils::HashString("AWS_SES_AP_NORTHEAST_3");
+        static const int AWS_SES_AP_NORTHEAST_2_HASH = HashingUtils::HashString("AWS_SES_AP_NORTHEAST_2");
+        static const int AWS_SES_ME_SOUTH_1_HASH = HashingUtils::HashString("AWS_SES_ME_SOUTH_1");
+        static const int AWS_SES_AP_NORTHEAST_1_HASH = HashingUtils::HashString("AWS_SES_AP_NORTHEAST_1");
+        static const int AWS_SES_IL_CENTRAL_1_HASH = HashingUtils::HashString("AWS_SES_IL_CENTRAL_1");
+        static const int AWS_SES_SA_EAST_1_HASH = HashingUtils::HashString("AWS_SES_SA_EAST_1");
+        static const int AWS_SES_CA_CENTRAL_1_HASH = HashingUtils::HashString("AWS_SES_CA_CENTRAL_1");
+        static const int AWS_SES_AP_SOUTHEAST_1_HASH = HashingUtils::HashString("AWS_SES_AP_SOUTHEAST_1");
+        static const int AWS_SES_AP_SOUTHEAST_2_HASH = HashingUtils::HashString("AWS_SES_AP_SOUTHEAST_2");
+        static const int AWS_SES_AP_SOUTHEAST_3_HASH = HashingUtils::HashString("AWS_SES_AP_SOUTHEAST_3");
+        static const int AWS_SES_EU_CENTRAL_1_HASH = HashingUtils::HashString("AWS_SES_EU_CENTRAL_1");
+        static const int AWS_SES_US_EAST_1_HASH = HashingUtils::HashString("AWS_SES_US_EAST_1");
+        static const int AWS_SES_US_EAST_2_HASH = HashingUtils::HashString("AWS_SES_US_EAST_2");
+        static const int AWS_SES_US_WEST_1_HASH = HashingUtils::HashString("AWS_SES_US_WEST_1");
+        static const int AWS_SES_US_WEST_2_HASH = HashingUtils::HashString("AWS_SES_US_WEST_2");
 
 
         DkimSigningAttributesOrigin GetDkimSigningAttributesOriginForName(const Aws::String& name)
@@ -34,6 +56,94 @@ namespace Aws
           else if (hashCode == EXTERNAL_HASH)
           {
             return DkimSigningAttributesOrigin::EXTERNAL;
+          }
+          else if (hashCode == AWS_SES_AF_SOUTH_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_AF_SOUTH_1;
+          }
+          else if (hashCode == AWS_SES_EU_NORTH_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_EU_NORTH_1;
+          }
+          else if (hashCode == AWS_SES_AP_SOUTH_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_AP_SOUTH_1;
+          }
+          else if (hashCode == AWS_SES_EU_WEST_3_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_EU_WEST_3;
+          }
+          else if (hashCode == AWS_SES_EU_WEST_2_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_EU_WEST_2;
+          }
+          else if (hashCode == AWS_SES_EU_SOUTH_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_EU_SOUTH_1;
+          }
+          else if (hashCode == AWS_SES_EU_WEST_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_EU_WEST_1;
+          }
+          else if (hashCode == AWS_SES_AP_NORTHEAST_3_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_AP_NORTHEAST_3;
+          }
+          else if (hashCode == AWS_SES_AP_NORTHEAST_2_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_AP_NORTHEAST_2;
+          }
+          else if (hashCode == AWS_SES_ME_SOUTH_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_ME_SOUTH_1;
+          }
+          else if (hashCode == AWS_SES_AP_NORTHEAST_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_AP_NORTHEAST_1;
+          }
+          else if (hashCode == AWS_SES_IL_CENTRAL_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_IL_CENTRAL_1;
+          }
+          else if (hashCode == AWS_SES_SA_EAST_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_SA_EAST_1;
+          }
+          else if (hashCode == AWS_SES_CA_CENTRAL_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_CA_CENTRAL_1;
+          }
+          else if (hashCode == AWS_SES_AP_SOUTHEAST_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_AP_SOUTHEAST_1;
+          }
+          else if (hashCode == AWS_SES_AP_SOUTHEAST_2_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_AP_SOUTHEAST_2;
+          }
+          else if (hashCode == AWS_SES_AP_SOUTHEAST_3_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_AP_SOUTHEAST_3;
+          }
+          else if (hashCode == AWS_SES_EU_CENTRAL_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_EU_CENTRAL_1;
+          }
+          else if (hashCode == AWS_SES_US_EAST_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_US_EAST_1;
+          }
+          else if (hashCode == AWS_SES_US_EAST_2_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_US_EAST_2;
+          }
+          else if (hashCode == AWS_SES_US_WEST_1_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_US_WEST_1;
+          }
+          else if (hashCode == AWS_SES_US_WEST_2_HASH)
+          {
+            return DkimSigningAttributesOrigin::AWS_SES_US_WEST_2;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +165,50 @@ namespace Aws
             return "AWS_SES";
           case DkimSigningAttributesOrigin::EXTERNAL:
             return "EXTERNAL";
+          case DkimSigningAttributesOrigin::AWS_SES_AF_SOUTH_1:
+            return "AWS_SES_AF_SOUTH_1";
+          case DkimSigningAttributesOrigin::AWS_SES_EU_NORTH_1:
+            return "AWS_SES_EU_NORTH_1";
+          case DkimSigningAttributesOrigin::AWS_SES_AP_SOUTH_1:
+            return "AWS_SES_AP_SOUTH_1";
+          case DkimSigningAttributesOrigin::AWS_SES_EU_WEST_3:
+            return "AWS_SES_EU_WEST_3";
+          case DkimSigningAttributesOrigin::AWS_SES_EU_WEST_2:
+            return "AWS_SES_EU_WEST_2";
+          case DkimSigningAttributesOrigin::AWS_SES_EU_SOUTH_1:
+            return "AWS_SES_EU_SOUTH_1";
+          case DkimSigningAttributesOrigin::AWS_SES_EU_WEST_1:
+            return "AWS_SES_EU_WEST_1";
+          case DkimSigningAttributesOrigin::AWS_SES_AP_NORTHEAST_3:
+            return "AWS_SES_AP_NORTHEAST_3";
+          case DkimSigningAttributesOrigin::AWS_SES_AP_NORTHEAST_2:
+            return "AWS_SES_AP_NORTHEAST_2";
+          case DkimSigningAttributesOrigin::AWS_SES_ME_SOUTH_1:
+            return "AWS_SES_ME_SOUTH_1";
+          case DkimSigningAttributesOrigin::AWS_SES_AP_NORTHEAST_1:
+            return "AWS_SES_AP_NORTHEAST_1";
+          case DkimSigningAttributesOrigin::AWS_SES_IL_CENTRAL_1:
+            return "AWS_SES_IL_CENTRAL_1";
+          case DkimSigningAttributesOrigin::AWS_SES_SA_EAST_1:
+            return "AWS_SES_SA_EAST_1";
+          case DkimSigningAttributesOrigin::AWS_SES_CA_CENTRAL_1:
+            return "AWS_SES_CA_CENTRAL_1";
+          case DkimSigningAttributesOrigin::AWS_SES_AP_SOUTHEAST_1:
+            return "AWS_SES_AP_SOUTHEAST_1";
+          case DkimSigningAttributesOrigin::AWS_SES_AP_SOUTHEAST_2:
+            return "AWS_SES_AP_SOUTHEAST_2";
+          case DkimSigningAttributesOrigin::AWS_SES_AP_SOUTHEAST_3:
+            return "AWS_SES_AP_SOUTHEAST_3";
+          case DkimSigningAttributesOrigin::AWS_SES_EU_CENTRAL_1:
+            return "AWS_SES_EU_CENTRAL_1";
+          case DkimSigningAttributesOrigin::AWS_SES_US_EAST_1:
+            return "AWS_SES_US_EAST_1";
+          case DkimSigningAttributesOrigin::AWS_SES_US_EAST_2:
+            return "AWS_SES_US_EAST_2";
+          case DkimSigningAttributesOrigin::AWS_SES_US_WEST_1:
+            return "AWS_SES_US_WEST_1";
+          case DkimSigningAttributesOrigin::AWS_SES_US_WEST_2:
+            return "AWS_SES_US_WEST_2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

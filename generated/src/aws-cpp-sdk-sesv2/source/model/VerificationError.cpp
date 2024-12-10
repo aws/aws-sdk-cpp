@@ -25,6 +25,11 @@ namespace Aws
         static const int HOST_NOT_FOUND_HASH = HashingUtils::HashString("HOST_NOT_FOUND");
         static const int TYPE_NOT_FOUND_HASH = HashingUtils::HashString("TYPE_NOT_FOUND");
         static const int INVALID_VALUE_HASH = HashingUtils::HashString("INVALID_VALUE");
+        static const int REPLICATION_ACCESS_DENIED_HASH = HashingUtils::HashString("REPLICATION_ACCESS_DENIED");
+        static const int REPLICATION_PRIMARY_NOT_FOUND_HASH = HashingUtils::HashString("REPLICATION_PRIMARY_NOT_FOUND");
+        static const int REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED_HASH = HashingUtils::HashString("REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED");
+        static const int REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED_HASH = HashingUtils::HashString("REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED");
+        static const int REPLICATION_PRIMARY_INVALID_REGION_HASH = HashingUtils::HashString("REPLICATION_PRIMARY_INVALID_REGION");
 
 
         VerificationError GetVerificationErrorForName(const Aws::String& name)
@@ -49,6 +54,26 @@ namespace Aws
           else if (hashCode == INVALID_VALUE_HASH)
           {
             return VerificationError::INVALID_VALUE;
+          }
+          else if (hashCode == REPLICATION_ACCESS_DENIED_HASH)
+          {
+            return VerificationError::REPLICATION_ACCESS_DENIED;
+          }
+          else if (hashCode == REPLICATION_PRIMARY_NOT_FOUND_HASH)
+          {
+            return VerificationError::REPLICATION_PRIMARY_NOT_FOUND;
+          }
+          else if (hashCode == REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED_HASH)
+          {
+            return VerificationError::REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED;
+          }
+          else if (hashCode == REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED_HASH)
+          {
+            return VerificationError::REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED;
+          }
+          else if (hashCode == REPLICATION_PRIMARY_INVALID_REGION_HASH)
+          {
+            return VerificationError::REPLICATION_PRIMARY_INVALID_REGION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +101,16 @@ namespace Aws
             return "TYPE_NOT_FOUND";
           case VerificationError::INVALID_VALUE:
             return "INVALID_VALUE";
+          case VerificationError::REPLICATION_ACCESS_DENIED:
+            return "REPLICATION_ACCESS_DENIED";
+          case VerificationError::REPLICATION_PRIMARY_NOT_FOUND:
+            return "REPLICATION_PRIMARY_NOT_FOUND";
+          case VerificationError::REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED:
+            return "REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED";
+          case VerificationError::REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED:
+            return "REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED";
+          case VerificationError::REPLICATION_PRIMARY_INVALID_REGION:
+            return "REPLICATION_PRIMARY_INVALID_REGION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

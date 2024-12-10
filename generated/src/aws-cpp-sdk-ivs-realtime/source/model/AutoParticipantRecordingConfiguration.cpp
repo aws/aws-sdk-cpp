@@ -20,7 +20,8 @@ namespace Model
 
 AutoParticipantRecordingConfiguration::AutoParticipantRecordingConfiguration() : 
     m_storageConfigurationArnHasBeenSet(false),
-    m_mediaTypesHasBeenSet(false)
+    m_mediaTypesHasBeenSet(false),
+    m_thumbnailConfigurationHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,13 @@ AutoParticipantRecordingConfiguration& AutoParticipantRecordingConfiguration::op
     m_mediaTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("thumbnailConfiguration"))
+  {
+    m_thumbnailConfiguration = jsonValue.GetObject("thumbnailConfiguration");
+
+    m_thumbnailConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -70,6 +78,12 @@ JsonValue AutoParticipantRecordingConfiguration::Jsonize() const
      mediaTypesJsonList[mediaTypesIndex].AsString(ParticipantRecordingMediaTypeMapper::GetNameForParticipantRecordingMediaType(m_mediaTypes[mediaTypesIndex]));
    }
    payload.WithArray("mediaTypes", std::move(mediaTypesJsonList));
+
+  }
+
+  if(m_thumbnailConfigurationHasBeenSet)
+  {
+   payload.WithObject("thumbnailConfiguration", m_thumbnailConfiguration.Jsonize());
 
   }
 

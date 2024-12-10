@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     AUDIO_VIDEO,
-    AUDIO_ONLY
+    AUDIO_ONLY,
+    NONE
   };
 
 namespace ParticipantRecordingMediaTypeMapper
