@@ -60,6 +60,8 @@ SMITHY_EXCLUSION_CLIENTS = {
     ,"cloudfront-keyvaluestore"
     ,"cognito-identity"
     ,"cognito-idp"
+    #bearer token
+    #,"codecatalyst"
     #bidirectional streaming
     #,"lexv2-runtime"
     #,"qbusiness"

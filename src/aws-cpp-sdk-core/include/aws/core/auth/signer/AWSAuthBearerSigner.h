@@ -97,6 +97,10 @@ namespace Aws
                 return PresignRequest(ioRequest, expirationInSeconds);
             }
 
+            std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase> BearerTokenProvider() const 
+            {
+                return m_bearerTokenProvider;
+            }
         protected:
             std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase> m_bearerTokenProvider;
         };

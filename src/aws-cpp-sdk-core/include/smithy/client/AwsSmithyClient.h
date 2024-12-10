@@ -149,7 +149,6 @@ namespace client
         }
 
        protected:
-        // Aws::Utils::Event::EventEncoderStream
         void SetSignerInEventStreamRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
                                            std::shared_ptr<Aws::Utils::Event::EventEncoderStream>& eventEncoderStreamSp) const override {
           if (pRequestCtx && pRequestCtx->m_pRequest && eventEncoderStreamSp) {

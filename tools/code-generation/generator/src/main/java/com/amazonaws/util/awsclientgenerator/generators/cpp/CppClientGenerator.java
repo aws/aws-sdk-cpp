@@ -726,7 +726,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
     private static final Map<String, String> AuthSchemeMapping = ImmutableMap.of(
             "aws.auth#sigv4", "smithy::SigV4AuthScheme",
             "aws.auth#sigv4a", "smithy::SigV4aAuthScheme",
-            "bearer", "smithy::BearerAuthScheme",
+            "bearer", "smithy::BearerTokenAuthScheme",
             "v4", "smithy::SigV4AuthScheme"
     );
 
