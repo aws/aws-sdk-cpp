@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivs-realtime/model/RecordingConfiguration.h>
+#include <aws/ivs-realtime/model/CompositionThumbnailConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -84,6 +85,22 @@ namespace Model
     inline S3DestinationConfiguration& WithRecordingConfiguration(const RecordingConfiguration& value) { SetRecordingConfiguration(value); return *this;}
     inline S3DestinationConfiguration& WithRecordingConfiguration(RecordingConfiguration&& value) { SetRecordingConfiguration(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A complex type that allows you to enable/disable the recording of thumbnails
+     * for a <a>Composition</a> and modify the interval at which thumbnails are
+     * generated for the live session.</p>
+     */
+    inline const Aws::Vector<CompositionThumbnailConfiguration>& GetThumbnailConfigurations() const{ return m_thumbnailConfigurations; }
+    inline bool ThumbnailConfigurationsHasBeenSet() const { return m_thumbnailConfigurationsHasBeenSet; }
+    inline void SetThumbnailConfigurations(const Aws::Vector<CompositionThumbnailConfiguration>& value) { m_thumbnailConfigurationsHasBeenSet = true; m_thumbnailConfigurations = value; }
+    inline void SetThumbnailConfigurations(Aws::Vector<CompositionThumbnailConfiguration>&& value) { m_thumbnailConfigurationsHasBeenSet = true; m_thumbnailConfigurations = std::move(value); }
+    inline S3DestinationConfiguration& WithThumbnailConfigurations(const Aws::Vector<CompositionThumbnailConfiguration>& value) { SetThumbnailConfigurations(value); return *this;}
+    inline S3DestinationConfiguration& WithThumbnailConfigurations(Aws::Vector<CompositionThumbnailConfiguration>&& value) { SetThumbnailConfigurations(std::move(value)); return *this;}
+    inline S3DestinationConfiguration& AddThumbnailConfigurations(const CompositionThumbnailConfiguration& value) { m_thumbnailConfigurationsHasBeenSet = true; m_thumbnailConfigurations.push_back(value); return *this; }
+    inline S3DestinationConfiguration& AddThumbnailConfigurations(CompositionThumbnailConfiguration&& value) { m_thumbnailConfigurationsHasBeenSet = true; m_thumbnailConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_storageConfigurationArn;
@@ -94,6 +111,9 @@ namespace Model
 
     RecordingConfiguration m_recordingConfiguration;
     bool m_recordingConfigurationHasBeenSet = false;
+
+    Aws::Vector<CompositionThumbnailConfiguration> m_thumbnailConfigurations;
+    bool m_thumbnailConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

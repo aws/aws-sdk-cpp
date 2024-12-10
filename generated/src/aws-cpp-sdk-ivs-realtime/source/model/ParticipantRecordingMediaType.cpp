@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AUDIO_VIDEO_HASH = HashingUtils::HashString("AUDIO_VIDEO");
         static const int AUDIO_ONLY_HASH = HashingUtils::HashString("AUDIO_ONLY");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         ParticipantRecordingMediaType GetParticipantRecordingMediaTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == AUDIO_ONLY_HASH)
           {
             return ParticipantRecordingMediaType::AUDIO_ONLY;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return ParticipantRecordingMediaType::NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "AUDIO_VIDEO";
           case ParticipantRecordingMediaType::AUDIO_ONLY:
             return "AUDIO_ONLY";
+          case ParticipantRecordingMediaType::NONE:
+            return "NONE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

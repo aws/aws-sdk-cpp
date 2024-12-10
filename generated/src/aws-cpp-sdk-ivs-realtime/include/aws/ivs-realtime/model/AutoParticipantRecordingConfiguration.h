@@ -7,6 +7,7 @@
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ivs-realtime/model/ParticipantThumbnailConfiguration.h>
 #include <aws/ivs-realtime/model/ParticipantRecordingMediaType.h>
 #include <utility>
 
@@ -71,6 +72,20 @@ namespace Model
     inline AutoParticipantRecordingConfiguration& AddMediaTypes(const ParticipantRecordingMediaType& value) { m_mediaTypesHasBeenSet = true; m_mediaTypes.push_back(value); return *this; }
     inline AutoParticipantRecordingConfiguration& AddMediaTypes(ParticipantRecordingMediaType&& value) { m_mediaTypesHasBeenSet = true; m_mediaTypes.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A complex type that allows you to enable/disable the recording of thumbnails
+     * for individual participant recording and modify the interval at which thumbnails
+     * are generated for the live session.</p>
+     */
+    inline const ParticipantThumbnailConfiguration& GetThumbnailConfiguration() const{ return m_thumbnailConfiguration; }
+    inline bool ThumbnailConfigurationHasBeenSet() const { return m_thumbnailConfigurationHasBeenSet; }
+    inline void SetThumbnailConfiguration(const ParticipantThumbnailConfiguration& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = value; }
+    inline void SetThumbnailConfiguration(ParticipantThumbnailConfiguration&& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = std::move(value); }
+    inline AutoParticipantRecordingConfiguration& WithThumbnailConfiguration(const ParticipantThumbnailConfiguration& value) { SetThumbnailConfiguration(value); return *this;}
+    inline AutoParticipantRecordingConfiguration& WithThumbnailConfiguration(ParticipantThumbnailConfiguration&& value) { SetThumbnailConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_storageConfigurationArn;
@@ -78,6 +93,9 @@ namespace Model
 
     Aws::Vector<ParticipantRecordingMediaType> m_mediaTypes;
     bool m_mediaTypesHasBeenSet = false;
+
+    ParticipantThumbnailConfiguration m_thumbnailConfiguration;
+    bool m_thumbnailConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -45,6 +45,7 @@
 #include <aws/connect/model/CreateParticipantResult.h>
 #include <aws/connect/model/CreatePersistentContactAssociationResult.h>
 #include <aws/connect/model/CreatePromptResult.h>
+#include <aws/connect/model/CreatePushNotificationRegistrationResult.h>
 #include <aws/connect/model/CreateQueueResult.h>
 #include <aws/connect/model/CreateQuickConnectResult.h>
 #include <aws/connect/model/CreateRoutingProfileResult.h>
@@ -63,6 +64,7 @@
 #include <aws/connect/model/DeleteContactFlowResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleResult.h>
 #include <aws/connect/model/DeleteEmailAddressResult.h>
+#include <aws/connect/model/DeletePushNotificationRegistrationResult.h>
 #include <aws/connect/model/DeleteTaskTemplateResult.h>
 #include <aws/connect/model/DeleteTrafficDistributionGroupResult.h>
 #include <aws/connect/model/DeleteViewResult.h>
@@ -300,6 +302,7 @@ namespace Aws
       class CreatePersistentContactAssociationRequest;
       class CreatePredefinedAttributeRequest;
       class CreatePromptRequest;
+      class CreatePushNotificationRegistrationRequest;
       class CreateQueueRequest;
       class CreateQuickConnectRequest;
       class CreateRoutingProfileRequest;
@@ -325,6 +328,7 @@ namespace Aws
       class DeleteIntegrationAssociationRequest;
       class DeletePredefinedAttributeRequest;
       class DeletePromptRequest;
+      class DeletePushNotificationRegistrationRequest;
       class DeleteQueueRequest;
       class DeleteQuickConnectRequest;
       class DeleteRoutingProfileRequest;
@@ -573,6 +577,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreatePersistentContactAssociationResult, ConnectError> CreatePersistentContactAssociationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> CreatePredefinedAttributeOutcome;
       typedef Aws::Utils::Outcome<CreatePromptResult, ConnectError> CreatePromptOutcome;
+      typedef Aws::Utils::Outcome<CreatePushNotificationRegistrationResult, ConnectError> CreatePushNotificationRegistrationOutcome;
       typedef Aws::Utils::Outcome<CreateQueueResult, ConnectError> CreateQueueOutcome;
       typedef Aws::Utils::Outcome<CreateQuickConnectResult, ConnectError> CreateQuickConnectOutcome;
       typedef Aws::Utils::Outcome<CreateRoutingProfileResult, ConnectError> CreateRoutingProfileOutcome;
@@ -598,6 +603,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteIntegrationAssociationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeletePredefinedAttributeOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeletePromptOutcome;
+      typedef Aws::Utils::Outcome<DeletePushNotificationRegistrationResult, ConnectError> DeletePushNotificationRegistrationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteQueueOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteQuickConnectOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteRoutingProfileOutcome;
@@ -846,6 +852,7 @@ namespace Aws
       typedef std::future<CreatePersistentContactAssociationOutcome> CreatePersistentContactAssociationOutcomeCallable;
       typedef std::future<CreatePredefinedAttributeOutcome> CreatePredefinedAttributeOutcomeCallable;
       typedef std::future<CreatePromptOutcome> CreatePromptOutcomeCallable;
+      typedef std::future<CreatePushNotificationRegistrationOutcome> CreatePushNotificationRegistrationOutcomeCallable;
       typedef std::future<CreateQueueOutcome> CreateQueueOutcomeCallable;
       typedef std::future<CreateQuickConnectOutcome> CreateQuickConnectOutcomeCallable;
       typedef std::future<CreateRoutingProfileOutcome> CreateRoutingProfileOutcomeCallable;
@@ -871,6 +878,7 @@ namespace Aws
       typedef std::future<DeleteIntegrationAssociationOutcome> DeleteIntegrationAssociationOutcomeCallable;
       typedef std::future<DeletePredefinedAttributeOutcome> DeletePredefinedAttributeOutcomeCallable;
       typedef std::future<DeletePromptOutcome> DeletePromptOutcomeCallable;
+      typedef std::future<DeletePushNotificationRegistrationOutcome> DeletePushNotificationRegistrationOutcomeCallable;
       typedef std::future<DeleteQueueOutcome> DeleteQueueOutcomeCallable;
       typedef std::future<DeleteQuickConnectOutcome> DeleteQuickConnectOutcomeCallable;
       typedef std::future<DeleteRoutingProfileOutcome> DeleteRoutingProfileOutcomeCallable;
@@ -1122,6 +1130,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::CreatePersistentContactAssociationRequest&, const Model::CreatePersistentContactAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePersistentContactAssociationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreatePredefinedAttributeRequest&, const Model::CreatePredefinedAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePredefinedAttributeResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreatePromptRequest&, const Model::CreatePromptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePromptResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CreatePushNotificationRegistrationRequest&, const Model::CreatePushNotificationRegistrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePushNotificationRegistrationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateQueueRequest&, const Model::CreateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueueResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateQuickConnectRequest&, const Model::CreateQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuickConnectResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateRoutingProfileRequest&, const Model::CreateRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoutingProfileResponseReceivedHandler;
@@ -1147,6 +1156,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::DeleteIntegrationAssociationRequest&, const Model::DeleteIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationAssociationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeletePredefinedAttributeRequest&, const Model::DeletePredefinedAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePredefinedAttributeResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeletePromptRequest&, const Model::DeletePromptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePromptResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeletePushNotificationRegistrationRequest&, const Model::DeletePushNotificationRegistrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePushNotificationRegistrationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteQueueRequest&, const Model::DeleteQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueueResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteQuickConnectRequest&, const Model::DeleteQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQuickConnectResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteRoutingProfileRequest&, const Model::DeleteRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoutingProfileResponseReceivedHandler;

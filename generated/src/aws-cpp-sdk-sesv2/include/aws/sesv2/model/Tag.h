@@ -37,7 +37,7 @@ namespace Model
    * The following additional restrictions apply to tags:</p> <ul> <li> <p>Tag keys
    * and values are case sensitive.</p> </li> <li> <p>For each associated resource,
    * each tag key must be unique and it can have only one value.</p> </li> <li>
-   * <p>The <code>aws:</code>��prefix is reserved for use by Amazon Web Services; you
+   * <p>The <code>aws:</code> prefix is reserved for use by Amazon Web Services; you
    * can’t use it in any tag keys or values that you define. In addition, you can't
    * edit or remove tag keys or values that use this prefix. Tags that use this
    * prefix don’t count against the limit of 50 tags per resource.</p> </li> <li>

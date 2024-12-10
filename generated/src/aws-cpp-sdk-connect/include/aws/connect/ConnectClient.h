@@ -1130,6 +1130,36 @@ namespace Connect
         }
 
         /**
+         * <p>Creates registration for a device token and a chat contact to receive
+         * real-time push notifications. For more information about push notifications, see
+         * <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-up-push-notifications-for-mobile-chat.html">Set
+         * up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon
+         * Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePushNotificationRegistrationOutcome CreatePushNotificationRegistration(const Model::CreatePushNotificationRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePushNotificationRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePushNotificationRegistrationRequestT = Model::CreatePushNotificationRegistrationRequest>
+        Model::CreatePushNotificationRegistrationOutcomeCallable CreatePushNotificationRegistrationCallable(const CreatePushNotificationRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CreatePushNotificationRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePushNotificationRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePushNotificationRegistrationRequestT = Model::CreatePushNotificationRegistrationRequest>
+        void CreatePushNotificationRegistrationAsync(const CreatePushNotificationRegistrationRequestT& request, const CreatePushNotificationRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CreatePushNotificationRegistration, request, handler, context);
+        }
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Creates a new queue for the specified Amazon Connect
          * instance.</p>  <ul> <li> <p>If the phone number is claimed to a
@@ -1847,6 +1877,32 @@ namespace Connect
         void DeletePromptAsync(const DeletePromptRequestT& request, const DeletePromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DeletePrompt, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes registration for a device token and a chat contact.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePushNotificationRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePushNotificationRegistrationOutcome DeletePushNotificationRegistration(const Model::DeletePushNotificationRegistrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePushNotificationRegistration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePushNotificationRegistrationRequestT = Model::DeletePushNotificationRegistrationRequest>
+        Model::DeletePushNotificationRegistrationOutcomeCallable DeletePushNotificationRegistrationCallable(const DeletePushNotificationRegistrationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeletePushNotificationRegistration, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePushNotificationRegistration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePushNotificationRegistrationRequestT = Model::DeletePushNotificationRegistrationRequest>
+        void DeletePushNotificationRegistrationAsync(const DeletePushNotificationRegistrationRequestT& request, const DeletePushNotificationRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeletePushNotificationRegistration, request, handler, context);
         }
 
         /**
