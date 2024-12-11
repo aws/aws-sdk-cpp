@@ -42,8 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool that the users are to be imported
-     * into.</p>
+     * <p>The ID of the user pool that the users are to be imported into.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolId = value; }

@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device.</p>
+     * <p>Details of the requested device. Includes device information, last-accessed
+     * and created dates, and the device key.</p>
      */
     inline const DeviceType& GetDevice() const{ return m_device; }
     inline void SetDevice(const DeviceType& value) { m_device = value; }

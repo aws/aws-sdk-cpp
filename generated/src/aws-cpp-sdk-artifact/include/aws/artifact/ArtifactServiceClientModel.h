@@ -22,11 +22,13 @@
 #include <aws/artifact/model/GetReportResult.h>
 #include <aws/artifact/model/GetReportMetadataResult.h>
 #include <aws/artifact/model/GetTermForReportResult.h>
+#include <aws/artifact/model/ListCustomerAgreementsResult.h>
 #include <aws/artifact/model/ListReportsResult.h>
 #include <aws/artifact/model/PutAccountSettingsResult.h>
 #include <aws/artifact/model/ListReportsRequest.h>
 #include <aws/artifact/model/PutAccountSettingsRequest.h>
 #include <aws/artifact/model/GetAccountSettingsRequest.h>
+#include <aws/artifact/model/ListCustomerAgreementsRequest.h>
 /* End of service model headers required in ArtifactClient header */
 
 namespace Aws
@@ -71,6 +73,7 @@ namespace Aws
       class GetReportRequest;
       class GetReportMetadataRequest;
       class GetTermForReportRequest;
+      class ListCustomerAgreementsRequest;
       class ListReportsRequest;
       class PutAccountSettingsRequest;
       /* End of service model forward declarations required in ArtifactClient header */
@@ -80,6 +83,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetReportResult, ArtifactError> GetReportOutcome;
       typedef Aws::Utils::Outcome<GetReportMetadataResult, ArtifactError> GetReportMetadataOutcome;
       typedef Aws::Utils::Outcome<GetTermForReportResult, ArtifactError> GetTermForReportOutcome;
+      typedef Aws::Utils::Outcome<ListCustomerAgreementsResult, ArtifactError> ListCustomerAgreementsOutcome;
       typedef Aws::Utils::Outcome<ListReportsResult, ArtifactError> ListReportsOutcome;
       typedef Aws::Utils::Outcome<PutAccountSettingsResult, ArtifactError> PutAccountSettingsOutcome;
       /* End of service model Outcome class definitions */
@@ -89,6 +93,7 @@ namespace Aws
       typedef std::future<GetReportOutcome> GetReportOutcomeCallable;
       typedef std::future<GetReportMetadataOutcome> GetReportMetadataOutcomeCallable;
       typedef std::future<GetTermForReportOutcome> GetTermForReportOutcomeCallable;
+      typedef std::future<ListCustomerAgreementsOutcome> ListCustomerAgreementsOutcomeCallable;
       typedef std::future<ListReportsOutcome> ListReportsOutcomeCallable;
       typedef std::future<PutAccountSettingsOutcome> PutAccountSettingsOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -101,6 +106,7 @@ namespace Aws
     typedef std::function<void(const ArtifactClient*, const Model::GetReportRequest&, const Model::GetReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReportResponseReceivedHandler;
     typedef std::function<void(const ArtifactClient*, const Model::GetReportMetadataRequest&, const Model::GetReportMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReportMetadataResponseReceivedHandler;
     typedef std::function<void(const ArtifactClient*, const Model::GetTermForReportRequest&, const Model::GetTermForReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTermForReportResponseReceivedHandler;
+    typedef std::function<void(const ArtifactClient*, const Model::ListCustomerAgreementsRequest&, const Model::ListCustomerAgreementsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomerAgreementsResponseReceivedHandler;
     typedef std::function<void(const ArtifactClient*, const Model::ListReportsRequest&, const Model::ListReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportsResponseReceivedHandler;
     typedef std::function<void(const ArtifactClient*, const Model::PutAccountSettingsRequest&, const Model::PutAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSettingsResponseReceivedHandler;
     /* End of service model async handlers definitions */

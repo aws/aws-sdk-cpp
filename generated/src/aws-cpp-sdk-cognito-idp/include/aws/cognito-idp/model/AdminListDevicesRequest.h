@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool where the device owner is a user.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -72,7 +72,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The limit of the devices request.</p>
+     * <p>The maximum number of devices that you want Amazon Cognito to return in the
+     * response.</p>
      */
     inline int GetLimit() const{ return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/timestream-influxdb/model/Status.h>
+#include <aws/timestream-influxdb/model/NetworkType.h>
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
 #include <aws/timestream-influxdb/model/DbStorageType.h>
 #include <aws/timestream-influxdb/model/DeploymentType.h>
@@ -58,8 +59,8 @@ namespace Model
     ///@{
     /**
      * <p>This customer-supplied name uniquely identifies the DB instance when
-     * interacting with the Amazon Timestream for InfluxDB API and AWS CLI
-     * commands.</p>
+     * interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services
+     * CLI commands.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -120,6 +121,20 @@ namespace Model
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline DbInstanceSummary& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the networkType of the Timestream for InfluxDB instance is
+     * IPV4, which can communicate over IPv4 protocol only, or DUAL, which can
+     * communicate over both IPv4 and IPv6 protocols.</p>
+     */
+    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(const NetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline void SetNetworkType(NetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+    inline DbInstanceSummary& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
+    inline DbInstanceSummary& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,6 +202,9 @@ namespace Model
 
     int m_port;
     bool m_portHasBeenSet = false;
+
+    NetworkType m_networkType;
+    bool m_networkTypeHasBeenSet = false;
 
     DbInstanceType m_dbInstanceType;
     bool m_dbInstanceTypeHasBeenSet = false;

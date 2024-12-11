@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool where you want to change a user's device status.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -73,7 +73,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device key.</p>
+     * <p>The unique identifier, or device key, of the device that you want to update
+     * the status for.</p>
      */
     inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
     inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
@@ -87,7 +88,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The status indicating whether a device has been remembered or not.</p>
+     * <p>To enable device authentication with the specified device, set to
+     * <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
      */
     inline const DeviceRememberedStatusType& GetDeviceRememberedStatus() const{ return m_deviceRememberedStatus; }
     inline bool DeviceRememberedStatusHasBeenSet() const { return m_deviceRememberedStatusHasBeenSet; }

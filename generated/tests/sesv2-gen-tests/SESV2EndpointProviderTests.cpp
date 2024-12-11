@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<SESV2EndpointProviderEndpointTestCase>> SESV2EndpointProviderTests::TEST_CASES;
-const size_t SESV2EndpointProviderTests::TEST_CASES_SZ = 47;
+const size_t SESV2EndpointProviderTests::TEST_CASES_SZ = 57;
 
 Aws::Vector<SESV2EndpointProviderEndpointTestCase> SESV2EndpointProviderTests::getTestCase() {
 
@@ -480,6 +480,78 @@ Aws::Vector<SESV2EndpointProviderEndpointTestCase> SESV2EndpointProviderTests::g
     {}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
+  },
+  /*TEST CASE 47*/
+  {"Valid EndpointId with dualstack and FIPS disabled. i.e, IPv4 Only stack with no FIPS", // documentation
+    {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://abc123.456def.endpoints.email.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 48*/
+  {"Valid EndpointId with dualstack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-west-2"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://abc123.456def.endpoints.email.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 49*/
+  {"Valid EndpointId with FIPS set, dualstack disabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with multi-region endpoints"} // expect
+  },
+  /*TEST CASE 50*/
+  {"Valid EndpointId with both dualstack and FIPS enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with multi-region endpoints"} // expect
+  },
+  /*TEST CASE 51*/
+  {"Regular regional request, without EndpointId", // documentation
+    {EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://email.eu-west-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 52*/
+  {"Invalid EndpointId (Invalid chars / format)", // documentation
+    {EpParam("EndpointId", "badactor.com?foo=bar"), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"EndpointId must be a valid host label"} // expect
+  },
+  /*TEST CASE 53*/
+  {"Invalid EndpointId (Empty)", // documentation
+    {EpParam("EndpointId", ""), EpParam("Region", "ap-south-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"EndpointId must be a valid host label"} // expect
+  },
+  /*TEST CASE 54*/
+  {"Valid EndpointId with custom sdk endpoint", // documentation
+    {EpParam("Endpoint", "https://example.com"), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 55*/
+  {"Valid EndpointId with custom sdk endpoint with FIPS enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS is not supported with multi-region endpoints"} // expect
+  },
+  /*TEST CASE 56*/
+  {"Valid EndpointId with DualStack enabled and partition does not support DualStack", // documentation
+    {EpParam("EndpointId", "abc123.456def"), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   }
   };
   return test_cases;

@@ -36,7 +36,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool with the risk configuration that you want to inspect.
+     * You can apply default risk configuration at the user pool level and further
+     * customize it from user pool defaults at the app-client level. Specify
+     * <code>ClientId</code> to inspect client-level configuration, or
+     * <code>UserPoolId</code> to inspect pool-level configuration.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -50,7 +54,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The app client ID.</p>
+     * <p>The ID of the app client with the risk configuration that you want to
+     * inspect. You can apply default risk configuration at the user pool level and
+     * further customize it from user pool defaults at the app-client level. Specify
+     * <code>ClientId</code> to inspect client-level configuration, or
+     * <code>UserPoolId</code> to inspect pool-level configuration.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }

@@ -76,6 +76,17 @@ namespace Model
     inline void SetAttempt(int value) { m_attemptHasBeenSet = true; m_attempt = value; }
     inline GetDashboardForJobRunRequest& WithAttempt(int value) { SetAttempt(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Allows access to system profile logs for Lake Formation-enabled jobs. Default
+     * is false.</p>
+     */
+    inline bool GetAccessSystemProfileLogs() const{ return m_accessSystemProfileLogs; }
+    inline bool AccessSystemProfileLogsHasBeenSet() const { return m_accessSystemProfileLogsHasBeenSet; }
+    inline void SetAccessSystemProfileLogs(bool value) { m_accessSystemProfileLogsHasBeenSet = true; m_accessSystemProfileLogs = value; }
+    inline GetDashboardForJobRunRequest& WithAccessSystemProfileLogs(bool value) { SetAccessSystemProfileLogs(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -86,6 +97,9 @@ namespace Model
 
     int m_attempt;
     bool m_attemptHasBeenSet = false;
+
+    bool m_accessSystemProfileLogs;
+    bool m_accessSystemProfileLogsHasBeenSet = false;
   };
 
 } // namespace Model
