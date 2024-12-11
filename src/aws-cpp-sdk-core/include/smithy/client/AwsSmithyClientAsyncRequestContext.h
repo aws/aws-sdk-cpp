@@ -4,16 +4,14 @@
  */
 #pragma once
 
-#include <smithy/Smithy_EXPORTS.h>
-#include <smithy/interceptor/InterceptorContext.h>
-
+#include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/endpoint/AWSEndpoint.h>
 #include <aws/core/http/HttpRequest.h>
-#include <aws/core/AmazonWebServiceRequest.h>
-
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Outcome.h>
-
+#include <smithy/Smithy_EXPORTS.h>
+#include <smithy/identity/auth/AuthSchemeOption.h>
+#include <smithy/interceptor/InterceptorContext.h>
 
 namespace smithy
 {
@@ -72,6 +70,7 @@ namespace smithy
             ResponseHandlerFunc m_responseHandler;
             std::shared_ptr<Aws::Utils::Threading::Executor> m_pExecutor;
             std::shared_ptr<interceptor::InterceptorContext> m_interceptorContext;
+            bool m_isEventStreaming{false};
         };
     } // namespace client
 } // namespace smithy

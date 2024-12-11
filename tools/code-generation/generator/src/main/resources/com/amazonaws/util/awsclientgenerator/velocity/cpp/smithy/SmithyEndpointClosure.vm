@@ -1,5 +1,16 @@
-#if($metadata.hasEndpointDiscoveryTrait)
 #set($indent = "        ")
+#if($operation.request.shape.hasEventStreamMembers())
+${indent}streamReadySemaphore->ReleaseAll();
+#end
+#if($hasEndPointOverrides)
+${indent}for(const auto& pathSegment : endpointOverrides.pathSegments)
+${indent}{
+${indent}    resolvedEndpoint.AddPathSegment(pathSegment);
+${indent}}
+${indent}resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+${indent}resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+#end
+#if($metadata.hasEndpointDiscoveryTrait)
 #if($operation.hasEndpointDiscoveryTrait)
 #set($hasId=false)
 #foreach($memberEntry in $operation.request.shape.members.entrySet())
@@ -31,4 +42,6 @@ ${indent}this->OptionallyUpdateDescribeEndpointsCache(resolvedEndpoint, request.
 #else
 ${indent}AWS_UNREFERENCED_PARAM(resolvedEndpoint);
 #end
+#else
+${indent}AWS_UNREFERENCED_PARAM(resolvedEndpoint);
 #end

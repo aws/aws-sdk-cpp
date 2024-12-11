@@ -5,14 +5,12 @@
 #pragma once
 
 #include <smithy/identity/auth/AuthScheme.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
-
-#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
-
-#include <smithy/identity/identity/AwsCredentialIdentityBase.h>
-#include <smithy/identity/signer/built-in/SigV4Signer.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
+#include <smithy/identity/identity/AwsCredentialIdentityBase.h>
+#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+#include <smithy/identity/signer/built-in/SigV4EventStreamSigner.h>
+#include <smithy/identity/signer/built-in/SigV4Signer.h>
 
 namespace smithy {
     constexpr char SIGV4[] = "aws.auth#sigv4";
@@ -24,40 +22,40 @@ namespace smithy {
         using AwsCredentialSignerT = AwsSignerBase<IdentityT>;
         using SigV4AuthSchemeParameters = DefaultAuthSchemeResolverParameters;
 
-        //This allows to override the identity resolver
-        explicit SigV4AuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver, 
-                                 const Aws::String& serviceName,
-                                 const Aws::String& region)
-            : AuthScheme(SIGV4), 
-            m_identityResolver{identityResolver}, 
-            m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", serviceName, region)}
-        {
-            assert(m_identityResolver);
-            assert(m_signer);
+        // same authscheme can have two variants for the same scheme id that can be switched
+        // in between for different operations
+        explicit SigV4AuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver, const Aws::String& serviceName,
+                                 const Aws::String& region, bool eventStream = false)
+            : AuthScheme(SIGV4),
+              m_identityResolver{identityResolver},
+              m_signer{Aws::MakeShared<AwsSigV4Signer>("SigV4AuthScheme", serviceName, region)} {
+          if (eventStream) {
+            m_eventStreamSigner = Aws::MakeShared<SigV4EventStreamSigner>("SigV4AuthScheme", serviceName, region);
+            assert(m_eventStreamSigner);
+          }
+          assert(m_identityResolver);
+          assert(m_signer);
         }
 
         //delegate constructor
-        explicit SigV4AuthScheme(const Aws::String& serviceName,
-                                 const Aws::String& region)
-            : SigV4AuthScheme(Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4AuthScheme"),  
-                              serviceName,
-                              region)
-        {
-        }
+        explicit SigV4AuthScheme(const Aws::String& serviceName, const Aws::String& region, bool eventStream = false)
+            : SigV4AuthScheme(Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4AuthScheme"), serviceName, region, eventStream) {}
 
         virtual ~SigV4AuthScheme() = default;
 
-        std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver() override
-        {
-            return m_identityResolver;
+        std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver() override { return m_identityResolver; }
+
+        std::shared_ptr<AwsCredentialSignerT> signer(bool isEventStreaming) override {
+          if (isEventStreaming && m_eventStreamSigner) {
+            return m_eventStreamSigner;
+          }
+
+          return m_signer;
         }
 
-        std::shared_ptr<AwsCredentialSignerT> signer() override
-        {
-            return m_signer;
-        }
     protected:
         std::shared_ptr<AwsCredentialIdentityResolverT> m_identityResolver;
         std::shared_ptr<AwsCredentialSignerT> m_signer;
+        std::shared_ptr<AwsCredentialSignerT> m_eventStreamSigner;
     };
-}
+    }  // namespace smithy

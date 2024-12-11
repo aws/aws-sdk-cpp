@@ -1,0 +1,52 @@
+void ${className}::${operation.name}Async(Model::${operation.request.shape.name}& request,
+                const ${operation.name}StreamReadyHandler& streamReadyHandler,
+                const ${operation.name}ResponseReceivedHandler& handler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+{
+  AWS_ASYNC_OPERATION_GUARD(${operation.name});
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
+#if($operation.result && $operation.result.shape.hasEventStreamMembers())
+  request.SetResponseStreamFactory(
+      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+  );
+#else
+      JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, 
+      [ & #if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+#parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
+      })
+#end
+
+#set($streamModelName = '')
+#foreach($entity in $operation.request.shape.members.entrySet())
+#if($entity.value.shape.isEventStream())
+#set($streamModelName = ${entity.key})
+#set($streamModelType = ${entity.value.shape.name})
+#break
+#end
+#end
+#set($streamModelNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($streamModelName))
+  auto eventEncoderStream = Aws::MakeShared<Model::$streamModelType>(ALLOCATION_TAG);
+  request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
+  auto streamReadySemaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
+  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext, #if($hasEndPointOverrides) endpointOverrides #end, eventEncoderStream, streamReadySemaphore] () mutable {
+  JsonOutcome outcome = MakeEventStreamRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+#parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
+      },
+      eventEncoderStream
+      );
+      if(outcome.IsSuccess())
+      {
+        handler(this, request, ${operation.name}Outcome(NoResult()), handlerContext);
+      }
+      else
+      {
+        request.Get${streamModelNameWithFirstLetterCapitalized}()->Close();
+        handler(this, request, ${operation.name}Outcome(outcome.GetError()), handlerContext);
+      }
+      return ${operation.name}Outcome(NoResult());
+  });
+  streamReadySemaphore->WaitOne();
+  streamReadyHandler(*request.Get${streamModelNameWithFirstLetterCapitalized}());
+}
