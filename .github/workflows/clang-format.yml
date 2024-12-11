@@ -30,12 +30,21 @@ jobs:
       - name: Get the base and head branches
         id: fetchstep
         run: |
-          echo "BASE_BRANCH=${{ github.event.pull_request.base.ref }}" >> $GITHUB_ENV
-          echo "HEAD_BRANCH=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
+          BASE_BRANCH="${{ github.event.pull_request.base.ref }}"
+          HEAD_BRANCH="${{ github.event.pull_request.head.ref }}"
+
+          # validate branch names to ensure they are safe (no special characters or spaces) 
+          if [[ ! "$BASE_BRANCH" =~ ^[a-zA-Z0-9/_-]+$ ]] || [[ ! "$HEAD_BRANCH" =~ ^[a-zA-Z0-9/_-]+$ ]]; then
+            echo "Error: Invalid characters in branch names!"
+            exit 1
+          fi
+
+          echo "BASE_BRANCH=$BASE_BRANCH" >> $GITHUB_ENV
+          echo "HEAD_BRANCH=$HEAD_BRANCH" >> $GITHUB_ENV
           echo "Base branch: $BASE_BRANCH"
           echo "Head branch: $HEAD_BRANCH"
-          git fetch origin ${{ env.BASE_BRANCH }}
-          git fetch origin ${{ env.HEAD_BRANCH }}
+          git fetch origin "$BASE_BRANCH"
+          git fetch origin "$HEAD_BRANCH"
 
       #get differences on the PR branch excluding generated folder in the root
       - name: git diff
@@ -45,7 +54,16 @@ jobs:
         run: |
           # Format only the changed lines using clang-format-diff.py
           set -e
-          git diff -U0 --no-color origin/${{ env.BASE_BRANCH }}...origin/${{ env.HEAD_BRANCH }} -- . ':!generated/' > diff_output.patch
+          BASE_BRANCH="${{ env.BASE_BRANCH }}"
+          HEAD_BRANCH="${{ env.HEAD_BRANCH }}"
+
+          # Validate branch names again (for extra safety)
+          if [[ ! "$BASE_BRANCH" =~ ^[a-zA-Z0-9/_-]+$ ]] || [[ ! "$HEAD_BRANCH" =~ ^[a-zA-Z0-9/_-]+$ ]]; then
+            echo "Error: Invalid characters in branch names!"
+            exit 1
+          fi
+
+          git diff -U0 --no-color origin/"$BASE_BRANCH"...origin/"$HEAD_BRANCH" -- . ':!generated/' > diff_output.patch
           cat diff_output.patch
           
       # run formatter on the differences if any
