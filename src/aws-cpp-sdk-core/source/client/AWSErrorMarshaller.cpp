@@ -248,6 +248,9 @@ AWSError<CoreErrors> AWSErrorMarshaller::FindErrorByHttpResponseCode(Aws::Http::
 {
     return CoreErrorsMapper::GetErrorForHttpResponseCode(code);
 }
+AWSError<CoreErrors> JsonErrorMarshaller::MarshallHelper(const Aws::String& exceptionName, const Aws::String& message) const {
+  return AWSErrorMarshaller::Marshall(exceptionName, message);
+}
 
 AWSError<CoreErrors> JsonErrorMarshallerQueryCompatible::Marshall(const Aws::Http::HttpResponse& httpResponse) const {
   Aws::StringStream memoryStream;
@@ -266,9 +269,9 @@ AWSError<CoreErrors> JsonErrorMarshallerQueryCompatible::Marshall(const Aws::Htt
                                                                       : "");
 
     if (httpResponse.HasHeader(ERROR_TYPE_HEADER)) {
-      error = AWSErrorMarshaller::Marshall(httpResponse.GetHeader(ERROR_TYPE_HEADER), message);
+      error = JsonErrorMarshaller::MarshallHelper(httpResponse.GetHeader(ERROR_TYPE_HEADER), message);
     } else if (payloadView.ValueExists(TYPE)) {
-      error = AWSErrorMarshaller::Marshall(payloadView.GetString(TYPE), message);
+      error = JsonErrorMarshaller::MarshallHelper(payloadView.GetString(TYPE), message);
     } else {
       error = FindErrorByHttpResponseCode(httpResponse.GetResponseCode());
       error.SetMessage(message);

@@ -91,11 +91,10 @@ namespace Aws
 
         protected:
          const Aws::Utils::Json::JsonValue& GetJsonPayloadFromError(const AWSError<CoreErrors>&) const;
+         AWSError<CoreErrors> MarshallHelper(const Aws::String& exceptionName, const Aws::String& message) const;
         };
 
         class AWS_CORE_API JsonErrorMarshallerQueryCompatible : public JsonErrorMarshaller {
-          using AWSErrorMarshaller::Marshall;
-
          public:
           /**
            * Converts an exceptionName and message into an Error object, if it
