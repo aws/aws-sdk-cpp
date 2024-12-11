@@ -30,30 +30,28 @@ class AwsChunkedStream {
 
   size_t BufferedRead(char *dst, size_t amountToRead) {
     assert(dst != nullptr);
-    if (dst == nullptr) {
-      AWS_LOGSTREAM_ERROR("AwsChunkedStream", "dst is null");
+
+    // only read and write to chunked stream if the underlying stream
+    // is still in a valid state
+    if (m_stream->good()) {
+      // Try to read in a 64K chunk, if we cant we know the stream is over
+      m_stream->read(m_data.GetUnderlyingData(), DataBufferSize);
+      size_t bytesRead = static_cast<size_t>(m_stream->gcount());
+
+      if (bytesRead > 0) {
+        writeChunk(bytesRead);
+      }
+
+      // if we've read everything from the stream, we want to add the trailer
+      // to the underlying stream
+      if ((m_stream->peek() == EOF || m_stream->eof()) && !m_stream->bad()) {
+        writeTrailerToUnderlyingStream();
+      }
     }
 
-    // the chunk has ended and cannot be read from
-    if (m_chunkEnd) {
+    // if the underlying stream is empty there is nothing to read
+    if ((m_chunkingStream->peek() == EOF || m_chunkingStream->eof()) && !m_chunkingStream->bad()) {
       return 0;
-    }
-
-    // If we've read all of the underlying stream write the checksum trailing header
-    // the set that the chunked stream is over.
-    if (m_stream->eof() && !m_stream->bad() && (m_chunkingStream->eof() || m_chunkingStream->peek() == EOF)) {
-      return writeTrailer(dst, amountToRead);
-    }
-
-    // Try to read in a 64K chunk, if we cant we know the stream is over
-    size_t bytesRead = 0;
-    while (m_stream->good() && bytesRead < DataBufferSize) {
-      m_stream->read(&m_data[bytesRead], DataBufferSize - bytesRead);
-      bytesRead += static_cast<size_t>(m_stream->gcount());
-    }
-
-    if (bytesRead > 0) {
-      writeChunk(bytesRead);
     }
 
     // Read to destination buffer, return how much was read
@@ -62,7 +60,7 @@ class AwsChunkedStream {
   }
 
  private:
-  size_t writeTrailer(char *dst, size_t amountToRead) {
+  void writeTrailerToUnderlyingStream() {
     Aws::StringStream chunkedTrailerStream;
     chunkedTrailerStream << "0\r\n";
     if (m_request->GetRequestHash().second != nullptr) {
@@ -71,13 +69,7 @@ class AwsChunkedStream {
     }
     chunkedTrailerStream << "\r\n";
     const auto chunkedTrailer = chunkedTrailerStream.str();
-    auto trailerSize = chunkedTrailer.size();
-    // unreferenced param for assert
-    AWS_UNREFERENCED_PARAM(amountToRead);
-    assert(amountToRead >= trailerSize);
-    memcpy(dst, chunkedTrailer.c_str(), trailerSize);
-    m_chunkEnd = true;
-    return trailerSize;
+    *m_chunkingStream << chunkedTrailer;
   }
 
   void writeChunk(size_t bytesRead) {
@@ -94,7 +86,6 @@ class AwsChunkedStream {
 
   Aws::Utils::Array<char> m_data{DataBufferSize};
   std::shared_ptr<Aws::IOStream> m_chunkingStream;
-  bool m_chunkEnd{false};
   Http::HttpRequest *m_request{nullptr};
   std::shared_ptr<Aws::IOStream> m_stream;
 };
