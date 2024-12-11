@@ -73,7 +73,8 @@ namespace Aws
              */
             virtual Aws::String ExtractEndpoint(const AWSError<CoreErrors>&) const { return {}; }
         protected:
-            AWSError<CoreErrors> Marshall(const Aws::String& exceptionName, const Aws::String& message) const;
+         virtual AWSError<CoreErrors> Marshall(const Aws::String& exceptionName, const Aws::String& message) const;
+         virtual void MarshallError(AWSError<CoreErrors>&, const Http::HttpResponse&) const {};
         };
 
         class AWS_CORE_API JsonErrorMarshaller : public AWSErrorMarshaller
@@ -91,16 +92,12 @@ namespace Aws
 
         protected:
          const Aws::Utils::Json::JsonValue& GetJsonPayloadFromError(const AWSError<CoreErrors>&) const;
+         static Aws::Utils::Json::JsonValue GetJsonPayloadHttpResponse(const Http::HttpResponse& httpResponse);
         };
 
         class AWS_CORE_API JsonErrorMarshallerQueryCompatible : public JsonErrorMarshaller {
-         public:
-          /**
-           * Converts an exceptionName and message into an Error object, if it
-           * can be parsed. Otherwise, it returns and AWSError with
-           * CoreErrors::UNKNOWN as the error type.
-           */
-          AWSError<CoreErrors> Marshall(const Aws::Http::HttpResponse& response) const override;
+         protected:
+          void MarshallError(AWSError<CoreErrors>&, const Http::HttpResponse&) const override;
         };
 
         class AWS_CORE_API XmlErrorMarshaller : public AWSErrorMarshaller {
