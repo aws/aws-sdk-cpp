@@ -94,8 +94,6 @@ namespace Aws
         };
 
         class AWS_CORE_API JsonErrorMarshallerQueryCompatible : public JsonErrorMarshaller {
-          using AWSErrorMarshaller::Marshall;
-
          public:
           /**
            * Converts an exceptionName and message into an Error object, if it
