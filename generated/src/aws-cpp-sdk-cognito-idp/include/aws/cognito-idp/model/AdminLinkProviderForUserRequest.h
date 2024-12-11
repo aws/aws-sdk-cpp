@@ -37,7 +37,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool.</p>
+     * <p>The ID of the user pool where you want to link a federated identity.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }

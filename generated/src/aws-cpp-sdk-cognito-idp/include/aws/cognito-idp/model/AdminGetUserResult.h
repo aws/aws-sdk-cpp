@@ -58,7 +58,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of name-value pairs representing user attributes.</p>
+     * <p>An array of name-value pairs of user attributes and their values, for example
+     * <code>"email": "testuser@example.com"</code>.</p>
      */
     inline const Aws::Vector<AttributeType>& GetUserAttributes() const{ return m_userAttributes; }
     inline void SetUserAttributes(const Aws::Vector<AttributeType>& value) { m_userAttributes = value; }
@@ -71,7 +72,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The date the user was created.</p>
+     * <p>The date and time when the item was created. Amazon Cognito returns this
+     * timestamp in UNIX epoch time format. Your SDK might render the output in a
+     * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
     inline const Aws::Utils::DateTime& GetUserCreateDate() const{ return m_userCreateDate; }
     inline void SetUserCreateDate(const Aws::Utils::DateTime& value) { m_userCreateDate = value; }
@@ -95,7 +98,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates that the status is <code>enabled</code>.</p>
+     * <p>Indicates whether the user is activated for sign-in. The <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html">AdminDisableUser</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html">AdminEnableUser</a>
+     * API operations deactivate and activate user sign-in, respectively.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
     inline void SetEnabled(bool value) { m_enabled = value; }
@@ -104,14 +111,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED -
-     * User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User has
-     * been confirmed.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
-     * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
-     * reset their password before they can sign in.</p> </li> <li>
+     * <p>The user's status. Can be one of the following:</p> <ul> <li> <p>UNCONFIRMED
+     * - User has been created but not confirmed.</p> </li> <li> <p>CONFIRMED - User
+     * has been confirmed.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p>
+     * </li> <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a
+     * code and reset their password before they can sign in.</p> </li> <li>
      * <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using
      * a temporary password, but on first sign-in, the user must change their password
-     * to a new value before doing anything else. </p> </li> </ul>
+     * to a new value before doing anything else. </p> </li> <li> <p>EXTERNAL_PROVIDER
+     * - The user signed in with a third-party identity provider.</p> </li> </ul>
      */
     inline const UserStatusType& GetUserStatus() const{ return m_userStatus; }
     inline void SetUserStatus(const UserStatusType& value) { m_userStatus = value; }
@@ -139,7 +147,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user's preferred MFA setting.</p>
+     * <p>The user's preferred MFA. Users can prefer SMS message, email message, or
+     * TOTP MFA.</p>
      */
     inline const Aws::String& GetPreferredMfaSetting() const{ return m_preferredMfaSetting; }
     inline void SetPreferredMfaSetting(const Aws::String& value) { m_preferredMfaSetting = value; }
@@ -154,7 +163,11 @@ namespace Model
     /**
      * <p>The MFA options that are activated for the user. The possible values in this
      * list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and
-     * <code>SOFTWARE_TOKEN_MFA</code>.</p>
+     * <code>SOFTWARE_TOKEN_MFA</code>. You can change the MFA preference for users who
+     * have more than one available MFA factor with <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserMFASettingList() const{ return m_userMFASettingList; }
     inline void SetUserMFASettingList(const Aws::Vector<Aws::String>& value) { m_userMFASettingList = value; }

@@ -37,32 +37,9 @@ namespace Model
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
    * management events</a> topics in the <i>CloudTrail User Guide</i>.</p> <p>You
    * cannot apply both event selectors and advanced event selectors to a trail.</p>
-   * <p> <b>Supported CloudTrail event record fields for management events</b> </p>
-   * <ul> <li> <p> <code>eventCategory</code> (required)</p> </li> <li> <p>
-   * <code>eventSource</code> </p> </li> <li> <p> <code>readOnly</code> </p> </li>
-   * </ul> <p>The following additional fields are available for event data
-   * stores:</p> <ul> <li> <p> <code>eventName</code> </p> </li> <li> <p>
-   * <code>eventType</code> </p> </li> <li> <p>
-   * <code>sessionCredentialFromConsole</code> </p> </li> <li> <p>
-   * <code>userIdentity.arn</code> </p> </li> </ul> <p> <b>Supported CloudTrail event
-   * record fields for data events</b> </p> <ul> <li> <p> <code>eventCategory</code>
-   * (required)</p> </li> <li> <p> <code>resources.type</code> (required)</p> </li>
-   * <li> <p> <code>readOnly</code> </p> </li> <li> <p> <code>eventName</code> </p>
-   * </li> <li> <p> <code>resources.ARN</code> </p> </li> </ul> <p>The following
-   * additional fields are available for event data stores:</p> <ul> <li> <p>
-   * <code>eventSource</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
-   * <li> <p> <code>sessionCredentialFromConsole</code> </p> </li> <li> <p>
-   * <code>userIdentity.arn</code> </p> </li> </ul> <p> <b>Supported CloudTrail event
-   * record fields for network activity events</b> </p>  <p>Network activity
-   * events is in preview release for CloudTrail and is subject to change.</p>
-   *  <ul> <li> <p> <code>eventCategory</code> (required)</p> </li> <li> <p>
-   * <code>eventSource</code> (required)</p> </li> <li> <p> <code>eventName</code>
-   * </p> </li> <li> <p> <code>errorCode</code> - The only valid value for
-   * <code>errorCode</code> is <code>VpceAccessDenied</code>.</p> </li> <li> <p>
-   * <code>vpcEndpointId</code> </p> </li> </ul>  <p>For event data stores for
-   * CloudTrail Insights events, Config configuration items, Audit Manager evidence,
-   * or events outside of Amazon Web Services, the only supported field is
-   * <code>eventCategory</code>. </p> <p><h3>See Also:</h3>   <a
+   * <p>For information about configurable advanced event selector fields, see <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>
+   * in the <i>CloudTrailUser Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AdvancedEventSelector">AWS
    * API Reference</a></p>
    */

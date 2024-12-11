@@ -37,7 +37,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool.</p>
+     * <p>The ID of the user pool where you want to delete the user's linked
+     * identities.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -51,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user to be disabled.</p>
+     * <p>The user profile that you want to delete a linked identity from.</p>
      */
     inline const ProviderUserIdentifierType& GetUser() const{ return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }

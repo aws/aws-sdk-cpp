@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The newly created user.</p>
+     * <p>The new user's profile details.</p>
      */
     inline const UserType& GetUser() const{ return m_user; }
     inline void SetUser(const UserType& value) { m_user = value; }

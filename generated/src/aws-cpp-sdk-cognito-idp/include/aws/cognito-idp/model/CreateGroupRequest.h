@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the group. Must be unique.</p>
+     * <p>A name for the group. This name must be unique in your user pool.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool.</p>
+     * <p>The ID of the user pool where you want to create a user group.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -64,7 +64,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A string containing the description of the group.</p>
+     * <p>A description of the group that you're creating.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
@@ -78,7 +78,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The role Amazon Resource Name (ARN) for the group.</p>
+     * <p>The Amazon Resource Name (ARN) for the IAM role that you want to associate
+     * with the group. A group role primarily declares a preferred role for the
+     * credentials that you get from an identity pool. Amazon Cognito ID tokens have a
+     * <code>cognito:preferred_role</code> claim that presents the highest-precedence
+     * group that a user belongs to. Both ID and access tokens also contain a
+     * <code>cognito:groups</code> claim that list all the groups that a user is a
+     * member of.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }

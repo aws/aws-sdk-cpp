@@ -38,8 +38,10 @@ namespace Model
     ///@{
     /**
      * <p>The domain string. For custom domains, this is the fully-qualified domain
-     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
-     * this is the prefix alone, such as <code>auth</code>.</p>
+     * name, such as <code>auth.example.com</code>. For prefix domains, this is the
+     * prefix alone, such as <code>myprefix</code>. A prefix value of
+     * <code>myprefix</code> for a user pool in the us-east-1 Region results in a
+     * domain of <code>myprefix.auth.us-east-1.amazoncognito.com</code>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
@@ -68,9 +70,9 @@ namespace Model
     ///@{
     /**
      * <p>The version of managed login branding that you want to apply to your domain.
-     * A value of <code>1</code> indicates hosted UI (classic) branding and a version
-     * of <code>2</code> indicates managed login branding.</p> <p>Managed login
-     * requires that your user pool be configured for any <a
+     * A value of <code>1</code> indicates hosted UI (classic) and a version of
+     * <code>2</code> indicates managed login.</p> <p>Managed login requires that your
+     * user pool be configured for any <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
      * plan</a> other than <code>Lite</code>.</p>
      */
@@ -82,11 +84,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
-     * webpages for your application.</p> <p>Provide this parameter only if you want to
-     * use a custom domain for your user pool. Otherwise, you can exclude this
-     * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
-     * information about the hosted domain and custom domains, see <a
+     * <p>The configuration for a custom domain. Configures your domain with an
+     * Certificate Manager certificate in the <code>us-east-1</code> Region.</p>
+     * <p>Provide this parameter only if you want to use a custom domain for your user
+     * pool. Otherwise, you can exclude this parameter and use a prefix domain
+     * instead.</p> <p>For more information about the hosted domain and custom domains,
+     * see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
      * a User Pool Domain</a>.</p>
      */

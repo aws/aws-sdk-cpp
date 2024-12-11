@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool where you want to delete the client.</p>
+     * <p>The ID of the user pool where you want to delete the client.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -54,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The app client ID of the app associated with the user pool.</p>
+     * <p>The ID of the user pool app client that you want to delete.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }

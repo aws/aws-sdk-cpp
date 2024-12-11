@@ -36,8 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool where you want to set the user's
-     * password.</p>
+     * <p>The ID of the user pool where you want to set the user's password.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -69,7 +68,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The password for the user.</p>
+     * <p>The new temporary or permanent password that you want to set for the user.
+     * You can't remove the password for a user who already has a password so that they
+     * can only sign in with passwordless methods. In this scenario, you must create a
+     * new user without a password.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
@@ -83,8 +85,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> <code>True</code> if the password is permanent, <code>False</code> if it is
-     * temporary.</p>
+     * <p>Set to <code>true</code> to set a password that the user can immediately sign
+     * in with. Set to <code>false</code> to set a temporary password that the user
+     * must change on their next sign-in.</p>
      */
     inline bool GetPermanent() const{ return m_permanent; }
     inline bool PermanentHasBeenSet() const { return m_permanentHasBeenSet; }

@@ -46,8 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool where you want to create a user pool
-     * client.</p>
+     * <p>The ID of the user pool where you want to create an app client.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -61,7 +60,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The client name for the user pool client you would like to create.</p>
+     * <p>A friendly name for the app client that you want to create.</p>
      */
     inline const Aws::String& GetClientName() const{ return m_clientName; }
     inline bool ClientNameHasBeenSet() const { return m_clientNameHasBeenSet; }
@@ -75,8 +74,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Boolean to specify whether you want to generate a secret for the user pool
-     * client being created.</p>
+     * <p>When <code>true</code>, generates a client secret for the app client. Client
+     * secrets are used with server-side and machine-to-machine applications. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types">App
+     * client types</a>.</p>
      */
     inline bool GetGenerateSecret() const{ return m_generateSecret; }
     inline bool GenerateSecretHasBeenSet() const { return m_generateSecretHasBeenSet; }
@@ -149,8 +151,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The units in which the validity times are represented. The default unit for
-     * RefreshToken is days, and default for ID and access tokens are hours.</p>
+     * <p>The units that validity times are represented in. The default unit for
+     * refresh tokens is days, and the default for ID and access tokens are hours.</p>
      */
     inline const TokenValidityUnitsType& GetTokenValidityUnits() const{ return m_tokenValidityUnits; }
     inline bool TokenValidityUnitsHasBeenSet() const { return m_tokenValidityUnitsHasBeenSet; }
@@ -278,12 +280,12 @@ namespace Model
      * <code>LoginWithAmazon</code>. You can also specify the names that you configured
      * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
      * or <code>MyOIDCIdP</code>.</p> <p>This setting applies to providers that you can
-     * access with the <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html">hosted
-     * UI and OAuth 2.0 authorization server</a>. The removal of <code>COGNITO</code>
-     * from this list doesn't prevent authentication operations for local users with
-     * the user pools API in an Amazon Web Services SDK. The only way to prevent
-     * API-based authentication is to block access with a <a
+     * access with <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed
+     * login</a>. The removal of <code>COGNITO</code> from this list doesn't prevent
+     * authentication operations for local users with the user pools API in an Amazon
+     * Web Services SDK. The only way to prevent API-based authentication is to block
+     * access with a <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF
      * rule</a>.</p>
      */
@@ -302,8 +304,10 @@ namespace Model
     /**
      * <p>A list of allowed redirect (callback) URLs for the IdPs.</p> <p>A redirect
      * URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li> <p>Be registered
-     * with the authorization server.</p> </li> <li> <p>Not include a fragment
-     * component.</p> </li> </ul> <p>See <a
+     * with the authorization server. Amazon Cognito doesn't accept authorization
+     * requests with <code>redirect_uri</code> values that aren't in the list of
+     * <code>CallbackURLs</code> that you provide in this parameter.</p> </li> <li>
+     * <p>Not include a fragment component.</p> </li> </ul> <p>See <a
      * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
      * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
@@ -322,7 +326,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of allowed logout URLs for the IdPs.</p>
+     * <p>A list of allowed logout URLs for managed login authentication. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">Logout
+     * endpoint</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogoutURLs() const{ return m_logoutURLs; }
     inline bool LogoutURLsHasBeenSet() const { return m_logoutURLsHasBeenSet; }
@@ -339,14 +346,7 @@ namespace Model
     /**
      * <p>The default redirect URI. In app clients with one assigned IdP, replaces
      * <code>redirect_uri</code> in authentication requests. Must be in the
-     * <code>CallbackURLs</code> list.</p> <p>A redirect URI must:</p> <ul> <li> <p>Be
-     * an absolute URI.</p> </li> <li> <p>Be registered with the authorization
-     * server.</p> </li> <li> <p>Not include a fragment component.</p> </li> </ul>
-     * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#cognito-user-pools-app-idp-settings-about">Default
-     * redirect URI</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
-     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
-     * myapp://example are also supported.</p>
+     * <code>CallbackURLs</code> list.</p>
      */
     inline const Aws::String& GetDefaultRedirectURI() const{ return m_defaultRedirectURI; }
     inline bool DefaultRedirectURIHasBeenSet() const { return m_defaultRedirectURIHasBeenSet; }
@@ -383,11 +383,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The allowed OAuth scopes. Possible values provided by OAuth are
-     * <code>phone</code>, <code>email</code>, <code>openid</code>, and
-     * <code>profile</code>. Possible values provided by Amazon Web Services are
-     * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
-     * Servers are also supported.</p>
+     * <p>The OAuth 2.0 scopes that you want to permit your app client to authorize.
+     * Scopes govern access control to user pool self-service API operations, user data
+     * from the <code>userInfo</code> endpoint, and third-party APIs. Possible values
+     * provided by OAuth are <code>phone</code>, <code>email</code>,
+     * <code>openid</code>, and <code>profile</code>. Possible values provided by
+     * Amazon Web Services are <code>aws.cognito.signin.user.admin</code>. Custom
+     * scopes created in Resource Servers are also supported.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedOAuthScopes() const{ return m_allowedOAuthScopes; }
     inline bool AllowedOAuthScopesHasBeenSet() const { return m_allowedOAuthScopesHasBeenSet; }
@@ -426,11 +428,12 @@ namespace Model
     ///@{
     /**
      * <p>The user pool analytics configuration for collecting metrics and sending them
-     * to your Amazon Pinpoint campaign.</p>  <p>In Amazon Web Services Regions
-     * where Amazon Pinpoint isn't available, user pools only support sending events to
-     * Amazon Pinpoint projects in Amazon Web Services Region us-east-1. In Regions
-     * where Amazon Pinpoint is available, user pools support sending events to Amazon
-     * Pinpoint projects within that same Region.</p> 
+     * to your Amazon Pinpoint campaign.</p> <p>In Amazon Web Services Regions where
+     * Amazon Pinpoint isn't available, user pools might not have access to analytics
+     * or might be configurable with campaigns in the US East (N. Virginia) Region. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html">Using
+     * Amazon Pinpoint analytics</a>.</p>
      */
     inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
     inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }

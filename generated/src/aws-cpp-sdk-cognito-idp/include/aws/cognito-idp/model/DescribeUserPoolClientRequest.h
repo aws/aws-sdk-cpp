@@ -40,7 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool you want to describe.</p>
+     * <p>The ID of the user pool that contains the app client you want to
+     * describe.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -54,7 +55,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The app client ID of the app associated with the user pool.</p>
+     * <p>The ID of the app client that you want to describe.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }

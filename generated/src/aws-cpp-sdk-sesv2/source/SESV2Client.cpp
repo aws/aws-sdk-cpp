@@ -35,6 +35,7 @@
 #include <aws/sesv2/model/CreateEmailTemplateRequest.h>
 #include <aws/sesv2/model/CreateExportJobRequest.h>
 #include <aws/sesv2/model/CreateImportJobRequest.h>
+#include <aws/sesv2/model/CreateMultiRegionEndpointRequest.h>
 #include <aws/sesv2/model/DeleteConfigurationSetRequest.h>
 #include <aws/sesv2/model/DeleteConfigurationSetEventDestinationRequest.h>
 #include <aws/sesv2/model/DeleteContactRequest.h>
@@ -44,6 +45,7 @@
 #include <aws/sesv2/model/DeleteEmailIdentityRequest.h>
 #include <aws/sesv2/model/DeleteEmailIdentityPolicyRequest.h>
 #include <aws/sesv2/model/DeleteEmailTemplateRequest.h>
+#include <aws/sesv2/model/DeleteMultiRegionEndpointRequest.h>
 #include <aws/sesv2/model/DeleteSuppressedDestinationRequest.h>
 #include <aws/sesv2/model/GetAccountRequest.h>
 #include <aws/sesv2/model/GetBlacklistReportsRequest.h>
@@ -65,6 +67,7 @@
 #include <aws/sesv2/model/GetExportJobRequest.h>
 #include <aws/sesv2/model/GetImportJobRequest.h>
 #include <aws/sesv2/model/GetMessageInsightsRequest.h>
+#include <aws/sesv2/model/GetMultiRegionEndpointRequest.h>
 #include <aws/sesv2/model/GetSuppressedDestinationRequest.h>
 #include <aws/sesv2/model/ListConfigurationSetsRequest.h>
 #include <aws/sesv2/model/ListContactListsRequest.h>
@@ -77,6 +80,7 @@
 #include <aws/sesv2/model/ListEmailTemplatesRequest.h>
 #include <aws/sesv2/model/ListExportJobsRequest.h>
 #include <aws/sesv2/model/ListImportJobsRequest.h>
+#include <aws/sesv2/model/ListMultiRegionEndpointsRequest.h>
 #include <aws/sesv2/model/ListRecommendationsRequest.h>
 #include <aws/sesv2/model/ListSuppressedDestinationsRequest.h>
 #include <aws/sesv2/model/ListTagsForResourceRequest.h>
@@ -141,10 +145,10 @@ const char* SESV2Client::GetAllocationTag() {return ALLOCATION_TAG;}
 SESV2Client::SESV2Client(const SESV2::SESV2ClientConfiguration& clientConfiguration,
                          std::shared_ptr<SESV2EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG))
@@ -156,10 +160,10 @@ SESV2Client::SESV2Client(const AWSCredentials& credentials,
                          std::shared_ptr<SESV2EndpointProviderBase> endpointProvider,
                          const SESV2::SESV2ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG))
@@ -171,10 +175,10 @@ SESV2Client::SESV2Client(const std::shared_ptr<AWSCredentialsProvider>& credenti
                          std::shared_ptr<SESV2EndpointProviderBase> endpointProvider,
                          const SESV2::SESV2ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG))
@@ -185,10 +189,10 @@ SESV2Client::SESV2Client(const std::shared_ptr<AWSCredentialsProvider>& credenti
     /* Legacy constructors due deprecation */
   SESV2Client::SESV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_endpointProvider(Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG))
@@ -199,10 +203,10 @@ SESV2Client::SESV2Client(const std::shared_ptr<AWSCredentialsProvider>& credenti
 SESV2Client::SESV2Client(const AWSCredentials& credentials,
                          const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_endpointProvider(Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG))
@@ -213,10 +217,10 @@ SESV2Client::SESV2Client(const AWSCredentials& credentials,
 SESV2Client::SESV2Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                          const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             credentialsProvider,
-                                             SERVICE_NAME,
-                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
+                                                                  credentialsProvider,
+                                                                  SERVICE_NAME,
+                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_endpointProvider(Aws::MakeShared<SESV2EndpointProvider>(ALLOCATION_TAG))
@@ -668,6 +672,33 @@ CreateImportJobOutcome SESV2Client::CreateImportJob(const CreateImportJobRequest
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateMultiRegionEndpointOutcome SESV2Client::CreateMultiRegionEndpoint(const CreateMultiRegionEndpointRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateMultiRegionEndpoint);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMultiRegionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateMultiRegionEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateMultiRegionEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateMultiRegionEndpoint",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateMultiRegionEndpointOutcome>(
+    [&]()-> CreateMultiRegionEndpointOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMultiRegionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/multi-region-endpoints");
+      return CreateMultiRegionEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DeleteConfigurationSetOutcome SESV2Client::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteConfigurationSet);
@@ -980,6 +1011,39 @@ DeleteEmailTemplateOutcome SESV2Client::DeleteEmailTemplate(const DeleteEmailTem
       endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/templates/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTemplateName());
       return DeleteEmailTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteMultiRegionEndpointOutcome SESV2Client::DeleteMultiRegionEndpoint(const DeleteMultiRegionEndpointRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteMultiRegionEndpoint);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMultiRegionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.EndpointNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMultiRegionEndpoint", "Required field: EndpointName, is not set");
+    return DeleteMultiRegionEndpointOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteMultiRegionEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteMultiRegionEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteMultiRegionEndpoint",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteMultiRegionEndpointOutcome>(
+    [&]()-> DeleteMultiRegionEndpointOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMultiRegionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/multi-region-endpoints/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointName());
+      return DeleteMultiRegionEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1679,6 +1743,39 @@ GetMessageInsightsOutcome SESV2Client::GetMessageInsights(const GetMessageInsigh
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetMultiRegionEndpointOutcome SESV2Client::GetMultiRegionEndpoint(const GetMultiRegionEndpointRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetMultiRegionEndpoint);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMultiRegionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.EndpointNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMultiRegionEndpoint", "Required field: EndpointName, is not set");
+    return GetMultiRegionEndpointOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointName]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetMultiRegionEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetMultiRegionEndpoint, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetMultiRegionEndpoint",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetMultiRegionEndpointOutcome>(
+    [&]()-> GetMultiRegionEndpointOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMultiRegionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/multi-region-endpoints/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointName());
+      return GetMultiRegionEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetSuppressedDestinationOutcome SESV2Client::GetSuppressedDestination(const GetSuppressedDestinationRequest& request) const
 {
   AWS_OPERATION_GUARD(GetSuppressedDestination);
@@ -2027,6 +2124,33 @@ ListImportJobsOutcome SESV2Client::ListImportJobs(const ListImportJobsRequest& r
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/import-jobs/list");
       return ListImportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListMultiRegionEndpointsOutcome SESV2Client::ListMultiRegionEndpoints(const ListMultiRegionEndpointsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListMultiRegionEndpoints);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMultiRegionEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListMultiRegionEndpoints, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListMultiRegionEndpoints, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListMultiRegionEndpoints",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListMultiRegionEndpointsOutcome>(
+    [&]()-> ListMultiRegionEndpointsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMultiRegionEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/multi-region-endpoints");
+      return ListMultiRegionEndpointsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

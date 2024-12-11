@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identity provider details.</p>
+     * <p>The details of the requested IdP.</p>
      */
     inline const IdentityProviderType& GetIdentityProvider() const{ return m_identityProvider; }
     inline void SetIdentityProvider(const IdentityProviderType& value) { m_identityProvider = value; }

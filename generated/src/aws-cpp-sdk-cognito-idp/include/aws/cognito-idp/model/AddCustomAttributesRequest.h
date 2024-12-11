@@ -42,8 +42,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool where you want to add custom
-     * attributes.</p>
+     * <p>The ID of the user pool where you want to add custom attributes.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -57,7 +56,22 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of custom attributes, such as Mutable and Name.</p>
+     * <p>An array of custom attribute names and other properties. Sets the following
+     * characteristics:</p> <dl> <dt>AttributeDataType</dt> <dd> <p>The expected data
+     * type. Can be a string, a number, a date and time, or a boolean.</p> </dd>
+     * <dt>Mutable</dt> <dd> <p>If true, you can grant app clients write access to the
+     * attribute value. If false, the attribute value can only be set up on sign-up or
+     * administrator creation of users.</p> </dd> <dt>Name</dt> <dd> <p>The attribute
+     * name. For an attribute like <code>custom:myAttribute</code>, enter
+     * <code>myAttribute</code> for this field.</p> </dd> <dt>Required</dt> <dd>
+     * <p>When true, users who sign up or are created must set a value for the
+     * attribute.</p> </dd> <dt>NumberAttributeConstraints</dt> <dd> <p>The minimum and
+     * maximum length of accepted values for a <code>Number</code>-type attribute.</p>
+     * </dd> <dt>StringAttributeConstraints</dt> <dd> <p>The minimum and maximum length
+     * of accepted values for a <code>String</code>-type attribute.</p> </dd>
+     * <dt>DeveloperOnlyAttribute</dt> <dd> <p>This legacy option creates an attribute
+     * with a <code>dev:</code> prefix. You can only set the value of a developer-only
+     * attribute with administrative IAM credentials.</p> </dd> </dl>
      */
     inline const Aws::Vector<SchemaAttributeType>& GetCustomAttributes() const{ return m_customAttributes; }
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }

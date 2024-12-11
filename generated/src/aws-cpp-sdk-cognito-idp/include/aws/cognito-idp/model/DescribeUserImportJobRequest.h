@@ -40,8 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
+     * <p>The ID of the user pool that's associated with the import job.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -55,7 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job ID for the user import job.</p>
+     * <p>The Id of the user import job that you want to describe.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }

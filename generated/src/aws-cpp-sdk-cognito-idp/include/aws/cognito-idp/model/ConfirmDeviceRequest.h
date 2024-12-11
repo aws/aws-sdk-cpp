@@ -18,7 +18,7 @@ namespace Model
 {
 
   /**
-   * <p>Confirms the device request.</p><p><h3>See Also:</h3>   <a
+   * <p>The confirm-device request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDeviceRequest">AWS
    * API Reference</a></p>
    */
@@ -55,7 +55,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device key.</p>
+     * <p>The unique identifier, or device key, of the device that you want to update
+     * the status for.</p>
      */
     inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
     inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
@@ -81,7 +82,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device name.</p>
+     * <p>A friendly name for the device, for example <code>MyMobilePhone</code>.</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }

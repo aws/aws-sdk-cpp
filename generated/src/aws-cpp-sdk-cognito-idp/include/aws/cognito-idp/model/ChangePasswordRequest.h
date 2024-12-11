@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The new password.</p>
+     * <p>A new password that you prompted the user to enter in your application.</p>
      */
     inline const Aws::String& GetProposedPassword() const{ return m_proposedPassword; }
     inline bool ProposedPasswordHasBeenSet() const { return m_proposedPasswordHasBeenSet; }

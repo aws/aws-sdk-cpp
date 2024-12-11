@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool where the device owner is a user.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -72,7 +72,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device key.</p>
+     * <p>The key ID of the device that you want to delete. You can get device keys in
+     * the response to an <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html">AdminListDevices</a>
+     * request.</p>
      */
     inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
     inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }

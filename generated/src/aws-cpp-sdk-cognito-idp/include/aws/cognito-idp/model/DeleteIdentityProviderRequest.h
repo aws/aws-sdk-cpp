@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID.</p>
+     * <p>The ID of the user pool where you want to delete the identity provider.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IdP name.</p>
+     * <p>The name of the IdP that you want to delete.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }

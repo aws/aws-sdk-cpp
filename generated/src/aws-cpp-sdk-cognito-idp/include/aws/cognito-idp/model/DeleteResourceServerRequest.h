@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool that hosts the resource server.</p>
+     * <p>The ID of the user pool where you want to delete the resource server.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -50,7 +50,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The identifier for the resource server.</p>
+     * <p>The identifier of the resource server that you want to delete.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

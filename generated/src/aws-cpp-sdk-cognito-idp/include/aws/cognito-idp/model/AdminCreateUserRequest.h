@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool where the user will be created.</p>
+     * <p>The ID of the user pool where you want to create a user.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -183,10 +183,10 @@ namespace Model
      * <p>This parameter is used only if the <code>phone_number_verified</code> or
      * <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it
      * is ignored.</p> <p>If this parameter is set to <code>True</code> and the phone
-     * number or email address specified in the UserAttributes parameter already exists
-     * as an alias with a different user, the API call will migrate the alias from the
-     * previous user to the newly created user. The previous user will no longer be
-     * able to log in using that alias.</p> <p>If this parameter is set to
+     * number or email address specified in the <code>UserAttributes</code> parameter
+     * already exists as an alias with a different user, this request migrates the
+     * alias from the previous user to the newly-created user. The previous user will
+     * no longer be able to log in using that alias.</p> <p>If this parameter is set to
      * <code>False</code>, the API throws an <code>AliasExistsException</code> error if
      * the alias already exists. The default value is <code>False</code>.</p>
      */
@@ -199,9 +199,9 @@ namespace Model
     ///@{
     /**
      * <p>Set to <code>RESEND</code> to resend the invitation message to a user that
-     * already exists and reset the expiration limit on the user's account. Set to
-     * <code>SUPPRESS</code> to suppress sending the message. You can specify only one
-     * value.</p>
+     * already exists, and to reset the temporary-password duration with a new
+     * temporary password. Set to <code>SUPPRESS</code> to suppress sending the
+     * message. You can specify only one value.</p>
      */
     inline const MessageActionType& GetMessageAction() const{ return m_messageAction; }
     inline bool MessageActionHasBeenSet() const { return m_messageActionHasBeenSet; }
@@ -213,9 +213,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specify <code>"EMAIL"</code> if email will be used to send the welcome
-     * message. Specify <code>"SMS"</code> if the phone number will be used. The
-     * default value is <code>"SMS"</code>. You can specify more than one value.</p>
+     * <p>Specify <code>EMAIL</code> if email will be used to send the welcome message.
+     * Specify <code>SMS</code> if the phone number will be used. The default value is
+     * <code>SMS</code>. You can specify more than one value.</p>
      */
     inline const Aws::Vector<DeliveryMediumType>& GetDesiredDeliveryMediums() const{ return m_desiredDeliveryMediums; }
     inline bool DesiredDeliveryMediumsHasBeenSet() const { return m_desiredDeliveryMediumsHasBeenSet; }
@@ -235,21 +235,22 @@ namespace Model
      * AdminCreateUser API action, Amazon Cognito invokes the function that is assigned
      * to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function, it
      * passes a JSON payload, which the function receives as input. This payload
-     * contains a <code>clientMetadata</code> attribute, which provides the data that
+     * contains a <code>ClientMetadata</code> attribute, which provides the data that
      * you assigned to the ClientMetadata parameter in your AdminCreateUser request. In
      * your function code in Lambda, you can process the <code>clientMetadata</code>
      * value to enhance your workflow for your specific needs.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
-     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
-     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
-     * <p>Store the ClientMetadata value. This data is available only to Lambda
-     * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration doesn't include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
-     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
-     * provide sensitive information.</p> </li> </ul> 
+     * Cognito Developer Guide</i>.</p>  <p>When you use the
+     * <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the
+     * following:</p> <ul> <li> <p>Store the <code>ClientMetadata</code> value. This
+     * data is available only to Lambda triggers that are assigned to a user pool to
+     * support custom workflows. If your user pool configuration doesn't include
+     * triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p> </li>
+     * <li> <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li>
+     * <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive
+     * information in this parameter.</p> </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }

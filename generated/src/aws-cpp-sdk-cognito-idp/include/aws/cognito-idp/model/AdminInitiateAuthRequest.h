@@ -44,7 +44,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The ID of the Amazon Cognito user pool.</p>
+     * <p>The ID of the user pool where the user wants to sign in.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The app client ID.</p>
+     * <p>The ID of the app client where the user wants to sign in.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -72,25 +72,25 @@ namespace Model
 
     ///@{
     /**
-     * <p>The authentication flow that you want to initiate. The
-     * <code>AuthParameters</code> that you must submit are linked to the flow that you
-     * submit. For example:</p> <ul> <li> <p> <code>USER_AUTH</code>: Request a
-     * preferred authentication type or review available authentication types. From the
-     * offered authentication types, select one in a challenge response and then
-     * authenticate with that method in an additional challenge response.</p> </li>
-     * <li> <p> <code>REFRESH_TOKEN_AUTH</code>: Receive new ID and access tokens when
-     * you pass a <code>REFRESH_TOKEN</code> parameter with a valid refresh token as
-     * the value.</p> </li> <li> <p> <code>USER_SRP_AUTH</code>: Receive secure remote
+     * <p>The authentication flow that you want to initiate. Each <code>AuthFlow</code>
+     * has linked <code>AuthParameters</code> that you must submit. The following are
+     * some example flows and their parameters.</p> <ul> <li> <p>
+     * <code>USER_AUTH</code>: Request a preferred authentication type or review
+     * available authentication types. From the offered authentication types, select
+     * one in a challenge response and then authenticate with that method in an
+     * additional challenge response.</p> </li> <li> <p>
+     * <code>REFRESH_TOKEN_AUTH</code>: Receive new ID and access tokens when you pass
+     * a <code>REFRESH_TOKEN</code> parameter with a valid refresh token as the
+     * value.</p> </li> <li> <p> <code>USER_SRP_AUTH</code>: Receive secure remote
      * password (SRP) variables for the next challenge, <code>PASSWORD_VERIFIER</code>,
      * when you pass <code>USERNAME</code> and <code>SRP_A</code> parameters..</p>
      * </li> <li> <p> <code>ADMIN_USER_PASSWORD_AUTH</code>: Receive new tokens or the
      * next challenge, for example <code>SOFTWARE_TOKEN_MFA</code>, when you pass
-     * <code>USERNAME</code> and <code>PASSWORD</code> parameters.</p> </li> </ul>
-     * <p>Valid values include the following:</p> <dl> <dt>USER_AUTH</dt> <dd> <p>The
-     * entry point for sign-in with passwords, one-time passwords, biometric devices,
-     * and security keys.</p> </dd> <dt>USER_SRP_AUTH</dt> <dd> <p>Username-password
-     * authentication with the Secure Remote Password (SRP) protocol. For more
-     * information, see <a
+     * <code>USERNAME</code> and <code>PASSWORD</code> parameters.</p> </li> </ul> <p>
+     * <i>All flows</i> </p> <dl> <dt>USER_AUTH</dt> <dd> <p>The entry point for
+     * sign-in with passwords, one-time passwords, and WebAuthN authenticators.</p>
+     * </dd> <dt>USER_SRP_AUTH</dt> <dd> <p>Username-password authentication with the
+     * Secure Remote Password (SRP) protocol. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Using-SRP-password-verification-in-custom-authentication-flow">Use
      * SRP password verification in custom authentication flow</a>.</p> </dd>
      * <dt>REFRESH_TOKEN_AUTH and REFRESH_TOKEN</dt> <dd> <p>Provide a valid refresh
@@ -183,14 +183,15 @@ namespace Model
      * </li> <li> <p>Custom SMS sender</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
-     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
-     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
-     * <p>Store the ClientMetadata value. This data is available only to Lambda
-     * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration doesn't include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
-     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
-     * provide sensitive information.</p> </li> </ul> 
+     * Cognito Developer Guide</i>.</p>  <p>When you use the
+     * <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the
+     * following:</p> <ul> <li> <p>Store the <code>ClientMetadata</code> value. This
+     * data is available only to Lambda triggers that are assigned to a user pool to
+     * support custom workflows. If your user pool configuration doesn't include
+     * triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p> </li>
+     * <li> <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li>
+     * <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive
+     * information in this parameter.</p> </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
@@ -209,8 +210,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The analytics metadata for collecting Amazon Pinpoint metrics for
-     * <code>AdminInitiateAuth</code> calls.</p>
+     * <p>The analytics metadata for collecting Amazon Pinpoint metrics.</p>
      */
     inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
     inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
@@ -225,7 +225,9 @@ namespace Model
      * <p>Contextual data about your user session, such as the device fingerprint, IP
      * address, or location. Amazon Cognito advanced security evaluates the risk of an
      * authentication event based on the context that your app generates and passes to
-     * Amazon Cognito when it makes API requests.</p>
+     * Amazon Cognito when it makes API requests.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
+     * data for threat protection in applications</a>.</p>
      */
     inline const ContextDataType& GetContextData() const{ return m_contextData; }
     inline bool ContextDataHasBeenSet() const { return m_contextDataHasBeenSet; }
@@ -238,8 +240,10 @@ namespace Model
     ///@{
     /**
      * <p>The optional session ID from a <code>ConfirmSignUp</code> API request. You
-     * can sign in a user directly from the sign-up process with the
-     * <code>USER_AUTH</code> authentication flow.</p>
+     * can sign in a user directly from the sign-up process with an
+     * <code>AuthFlow</code> of <code>USER_AUTH</code> and <code>AuthParameters</code>
+     * of <code>EMAIL_OTP</code> or <code>SMS_OTP</code>, depending on how your user
+     * pool sent the confirmation-code message.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
     inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }

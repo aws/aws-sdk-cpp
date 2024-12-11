@@ -59,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A string used to name the user pool.</p>
+     * <p>A friendlhy name for your user pool.</p>
      */
     inline const Aws::String& GetPoolName() const{ return m_poolName; }
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
@@ -73,7 +73,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The policies associated with the new user pool.</p>
+     * <p>The password policy and sign-in policy in the user pool. The password policy
+     * sets options like password complexity requirements and password history. The
+     * sign-in policy sets the options available to applications in <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based
+     * authentication</a>.</p>
      */
     inline const UserPoolPolicyType& GetPolicies() const{ return m_policies; }
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
@@ -118,8 +122,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The attributes to be auto-verified. Possible values: <b>email</b>,
-     * <b>phone_number</b>.</p>
+     * <p>The attributes that you want your user pool to automatically verify. Possible
+     * values: <b>email</b>, <b>phone_number</b>. For more information see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#allowing-users-to-sign-up-and-confirm-themselves">Verifying
+     * contact information at sign-up</a>.</p>
      */
     inline const Aws::Vector<VerifiedAttributeType>& GetAutoVerifiedAttributes() const{ return m_autoVerifiedAttributes; }
     inline bool AutoVerifiedAttributesHasBeenSet() const { return m_autoVerifiedAttributesHasBeenSet; }
@@ -134,7 +140,10 @@ namespace Model
     ///@{
     /**
      * <p>Attributes supported as an alias for this user pool. Possible values:
-     * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>.</p>
+     * <b>phone_number</b>, <b>email</b>, or <b>preferred_username</b>. For more
+     * information about alias attributes, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+     * sign-in attributes</a>.</p>
      */
     inline const Aws::Vector<AliasAttributeType>& GetAliasAttributes() const{ return m_aliasAttributes; }
     inline bool AliasAttributesHasBeenSet() const { return m_aliasAttributesHasBeenSet; }
@@ -149,7 +158,9 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether a user can use an email address or phone number as a
-     * username when they sign up.</p>
+     * username when they sign up. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+     * sign-in attributes</a>.</p>
      */
     inline const Aws::Vector<UsernameAttributeType>& GetUsernameAttributes() const{ return m_usernameAttributes; }
     inline bool UsernameAttributesHasBeenSet() const { return m_usernameAttributesHasBeenSet; }
@@ -241,7 +252,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies MFA configuration details.</p>
+     * <p>Sets multi-factor authentication (MFA) to be on, off, or optional. When
+     * <code>ON</code>, all users must set up MFA before they can sign in. When
+     * <code>OPTIONAL</code>, your application must make a client-side determination of
+     * whether a user wants to register an MFA device. For user pools with adaptive
+     * authentication with threat protection, choose <code>OPTIONAL</code>.</p>
      */
     inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
     inline bool MfaConfigurationHasBeenSet() const { return m_mfaConfigurationHasBeenSet; }
@@ -270,10 +285,16 @@ namespace Model
 
     ///@{
     /**
-     * <p>The device-remembering configuration for a user pool. A null value indicates
-     * that you have deactivated device remembering in your user pool.</p> 
-     * <p>When you provide a value for any <code>DeviceConfiguration</code> field, you
-     * activate the Amazon Cognito device-remembering feature.</p> 
+     * <p>The device-remembering configuration for a user pool. Device remembering or
+     * device tracking is a "Remember me on this device" option for user pools that
+     * perform authentication with the device key of a trusted device in the back end,
+     * instead of a user-provided MFA code. For more information about device
+     * authentication, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+     * with user devices in your user pool</a>. A null value indicates that you have
+     * deactivated device remembering in your user pool.</p>  <p>When you provide
+     * a value for any <code>DeviceConfiguration</code> field, you activate the Amazon
+     * Cognito device-remembering feature. For more infor</p> 
      */
     inline const DeviceConfigurationType& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
     inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
@@ -303,8 +324,10 @@ namespace Model
      * must use to send an SMS message from your Amazon Web Services account through
      * Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the
      * Amazon Web Services Region that you want, the Amazon Cognito user pool uses an
-     * Identity and Access Management (IAM) role in your Amazon Web Services
-     * account.</p>
+     * Identity and Access Management (IAM) role in your Amazon Web Services account.
+     * For more information see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
+     * message settings</a>.</p>
      */
     inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
     inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
@@ -337,7 +360,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
+     * <p>The configuration for <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html">AdminCreateUser</a>
+     * requests. Includes the template for the invitation message for new users, the
+     * duration of temporary passwords, and permitting self-service sign-up.</p>
      */
     inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const{ return m_adminCreateUserConfig; }
     inline bool AdminCreateUserConfigHasBeenSet() const { return m_adminCreateUserConfigHasBeenSet; }
@@ -349,8 +375,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>An array of schema attributes for the new user pool. These attributes can be
-     * standard or custom attributes.</p>
+     * <p>An array of attributes for the new user pool. You can add custom attributes
+     * and modify the properties of default attributes. The specifications in this
+     * parameter set the required attributes in your user pool. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">Working
+     * with user attributes</a>.</p>
      */
     inline const Aws::Vector<SchemaAttributeType>& GetSchema() const{ return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
@@ -382,18 +412,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>Case sensitivity on the username input for the selected sign-in option. When
-     * case sensitivity is set to <code>False</code> (case insensitive), users can sign
-     * in with any combination of capital and lowercase letters. For example,
+     * <p>Sets the case sensitivity option for sign-in usernames. When
+     * <code>CaseSensitive</code> is <code>false</code> (case insensitive), users can
+     * sign in with any combination of capital and lowercase letters. For example,
      * <code>username</code>, <code>USERNAME</code>, or <code>UserName</code>, or for
      * email, <code>email@example.com</code> or <code>EMaiL@eXamplE.Com</code>. For
-     * most use cases, set case sensitivity to <code>False</code> (case insensitive) as
-     * a best practice. When usernames and email addresses are case insensitive, Amazon
-     * Cognito treats any variation in case as the same user, and prevents a case
-     * variation from being assigned to the same attribute for a different user.</p>
-     * <p>This configuration is immutable after you set it. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
+     * most use cases, set case sensitivity to <code>false</code> as a best practice.
+     * When usernames and email addresses are case insensitive, Amazon Cognito treats
+     * any variation in case as the same user, and prevents a case variation from being
+     * assigned to the same attribute for a different user.</p> <p>When
+     * <code>CaseSensitive</code> is <code>true</code> (case sensitive), Amazon Cognito
+     * interprets <code>USERNAME</code> and <code>UserName</code> as distinct
+     * users.</p> <p>This configuration is immutable after you set it.</p>
      */
     inline const UsernameConfigurationType& GetUsernameConfiguration() const{ return m_usernameConfiguration; }
     inline bool UsernameConfigurationHasBeenSet() const { return m_usernameConfigurationHasBeenSet; }

@@ -42,8 +42,8 @@ namespace Model
     ///@{
     /**
      * <p>An array of strings representing the user attribute names you want to
-     * delete.</p> <p>For custom attributes, you must prependattach the
-     * <code>custom:</code> prefix to the front of the attribute name.</p>
+     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
+     * prefix to the attribute name, for example <code>custom:department</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserAttributeNames() const{ return m_userAttributeNames; }
     inline bool UserAttributeNamesHasBeenSet() const { return m_userAttributeNamesHasBeenSet; }

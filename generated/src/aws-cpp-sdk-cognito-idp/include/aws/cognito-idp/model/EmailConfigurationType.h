@@ -147,7 +147,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Either the sender’s email address or the sender’s name with their email
+     * <p>Either the sender’s email address or the sender��s name with their email
      * address. For example, <code>testuser@example.com</code> or <code>Test User
      * &lt;testuser@example.com&gt;</code>. This address appears before the body of the
      * email.</p>

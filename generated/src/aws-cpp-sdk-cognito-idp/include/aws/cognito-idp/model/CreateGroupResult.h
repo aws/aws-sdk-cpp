@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The group object for the group.</p>
+     * <p>The response object for a created group.</p>
      */
     inline const GroupType& GetGroup() const{ return m_group; }
     inline void SetGroup(const GroupType& value) { m_group = value; }
