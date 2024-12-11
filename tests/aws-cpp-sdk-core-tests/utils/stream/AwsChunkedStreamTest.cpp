@@ -39,3 +39,20 @@ TEST_F(AwsChunkedStreamTest, ChunkedStreamShouldWork) {
   auto expectedStreamWithChecksum = "A\r\n1234567890\r\nA\r\n1234567890\r\n5\r\n12345\r\n0\r\nx-amz-checksum-crc32:78DeVw==\r\n\r\n";
   EXPECT_EQ(expectedStreamWithChecksum, encodedStr);
 }
+
+TEST_F(AwsChunkedStreamTest, ShouldNotRequireTwoReadsOnSmallChunk) {
+  StandardHttpRequest request{"www.clemar.com/strohl", Http::HttpMethod::HTTP_GET};
+  auto requestHash = Aws::MakeShared<CRC32>(TEST_LOG_TAG);
+  request.SetRequestHash("crc32", requestHash);
+  std::shared_ptr<IOStream> inputStream = Aws::MakeShared<StringStream>(TEST_LOG_TAG, "12345");
+  AwsChunkedStream<100> chunkedStream{&request, inputStream};
+  Aws::Utils::Array<char> outputBuffer{100};
+  Aws::StringStream output;
+  const auto bufferOffset = chunkedStream.BufferedRead(outputBuffer.GetUnderlyingData(), 100);
+  std::copy(outputBuffer.GetUnderlyingData(), outputBuffer.GetUnderlyingData() + bufferOffset, std::ostream_iterator<char>(output));
+  EXPECT_EQ(46ul, bufferOffset);
+  const auto encodedStr = output.str();
+  auto expectedStreamWithChecksum = "5\r\n12345\r\n0\r\nx-amz-checksum-crc32:y/U6HA==\r\n\r\n";
+  EXPECT_EQ(expectedStreamWithChecksum, encodedStr);
+}
+
