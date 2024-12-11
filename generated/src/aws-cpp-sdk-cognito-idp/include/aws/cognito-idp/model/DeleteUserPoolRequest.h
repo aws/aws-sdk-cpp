@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool you want to delete.</p>
+     * <p>The ID of the user pool that you want to delete.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }

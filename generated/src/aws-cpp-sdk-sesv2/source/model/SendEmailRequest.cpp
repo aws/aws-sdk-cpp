@@ -22,6 +22,7 @@ SendEmailRequest::SendEmailRequest() :
     m_contentHasBeenSet(false),
     m_emailTagsHasBeenSet(false),
     m_configurationSetNameHasBeenSet(false),
+    m_endpointIdHasBeenSet(false),
     m_listManagementOptionsHasBeenSet(false)
 {
 }
@@ -94,6 +95,12 @@ Aws::String SendEmailRequest::SerializePayload() const
 
   }
 
+  if(m_endpointIdHasBeenSet)
+  {
+   payload.WithString("EndpointId", m_endpointId);
+
+  }
+
   if(m_listManagementOptionsHasBeenSet)
   {
    payload.WithObject("ListManagementOptions", m_listManagementOptions.Jsonize());
@@ -104,5 +111,15 @@ Aws::String SendEmailRequest::SerializePayload() const
 }
 
 
+
+SendEmailRequest::EndpointParameters SendEmailRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (EndpointIdHasBeenSet()) {
+        parameters.emplace_back(Aws::String("EndpointId"), this->GetEndpointId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
 
 

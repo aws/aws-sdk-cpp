@@ -21,7 +21,8 @@ SendBulkEmailRequest::SendBulkEmailRequest() :
     m_defaultEmailTagsHasBeenSet(false),
     m_defaultContentHasBeenSet(false),
     m_bulkEmailEntriesHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false)
+    m_configurationSetNameHasBeenSet(false),
+    m_endpointIdHasBeenSet(false)
 {
 }
 
@@ -98,9 +99,25 @@ Aws::String SendBulkEmailRequest::SerializePayload() const
 
   }
 
+  if(m_endpointIdHasBeenSet)
+  {
+   payload.WithString("EndpointId", m_endpointId);
+
+  }
+
   return payload.View().WriteReadable();
 }
 
 
+
+SendBulkEmailRequest::EndpointParameters SendBulkEmailRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Operation context parameters
+    if (EndpointIdHasBeenSet()) {
+        parameters.emplace_back(Aws::String("EndpointId"), this->GetEndpointId(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
 
 

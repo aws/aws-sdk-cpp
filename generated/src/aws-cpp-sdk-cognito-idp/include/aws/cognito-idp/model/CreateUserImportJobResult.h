@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job object that represents the user import job.</p>
+     * <p>The details of the user import job.</p>
      */
     inline const UserImportJobType& GetUserImportJob() const{ return m_userImportJob; }
     inline void SetUserImportJob(const UserImportJobType& value) { m_userImportJob = value; }

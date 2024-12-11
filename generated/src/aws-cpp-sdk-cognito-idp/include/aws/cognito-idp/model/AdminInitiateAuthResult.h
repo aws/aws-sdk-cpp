@@ -122,12 +122,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The session that should be passed both ways in challenge-response calls to
-     * the service. If <code>AdminInitiateAuth</code> or
-     * <code>AdminRespondToAuthChallenge</code> API call determines that the caller
-     * must pass another challenge, they return a session with other challenge
-     * parameters. This session should be passed as it is to the next
-     * <code>AdminRespondToAuthChallenge</code> API call.</p>
+     * <p>The session that must be passed to challenge-response requests. If an
+     * <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API
+     * request determines that the caller must pass another challenge, Amazon Cognito
+     * returns a session ID and the parameters of the next challenge. Pass this session
+     * Id in the <code>Session</code> parameter of
+     * <code>AdminRespondToAuthChallenge</code>.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
     inline void SetSession(const Aws::String& value) { m_session = value; }
@@ -168,10 +168,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The result of the authentication response. This is only returned if the
-     * caller doesn't need to pass another challenge. If the caller does need to pass
-     * another challenge before it gets tokens, <code>ChallengeName</code>,
-     * <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
+     * <p>The outcome of successful authentication. This is only returned if the user
+     * pool has no additional challenges to return. If Amazon Cognito returns another
+     * challenge, the response includes <code>ChallengeName</code>,
+     * <code>ChallengeParameters</code>, and <code>Session</code> so that your user can
+     * answer the challenge.</p>
      */
     inline const AuthenticationResultType& GetAuthenticationResult() const{ return m_authenticationResult; }
     inline void SetAuthenticationResult(const AuthenticationResultType& value) { m_authenticationResult = value; }

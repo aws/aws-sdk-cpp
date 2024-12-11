@@ -179,6 +179,32 @@ namespace Artifact
         }
 
         /**
+         * <p>List active customer-agreements applicable to calling identity.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListCustomerAgreements">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCustomerAgreementsOutcome ListCustomerAgreements(const Model::ListCustomerAgreementsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListCustomerAgreements that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCustomerAgreementsRequestT = Model::ListCustomerAgreementsRequest>
+        Model::ListCustomerAgreementsOutcomeCallable ListCustomerAgreementsCallable(const ListCustomerAgreementsRequestT& request = {}) const
+        {
+            return SubmitCallable(&ArtifactClient::ListCustomerAgreements, request);
+        }
+
+        /**
+         * An Async wrapper for ListCustomerAgreements that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCustomerAgreementsRequestT = Model::ListCustomerAgreementsRequest>
+        void ListCustomerAgreementsAsync(const ListCustomerAgreementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListCustomerAgreementsRequestT& request = {}) const
+        {
+            return SubmitAsync(&ArtifactClient::ListCustomerAgreements, request, handler, context);
+        }
+
+        /**
          * <p>List available reports.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListReports">AWS
          * API Reference</a></p>

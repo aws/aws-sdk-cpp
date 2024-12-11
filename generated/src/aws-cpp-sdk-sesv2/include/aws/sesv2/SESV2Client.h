@@ -506,6 +506,37 @@ namespace SESV2
         }
 
         /**
+         * <p>Creates a multi-region endpoint (global-endpoint).</p> <p>The primary region
+         * is going to be the AWS-Region where the operation is executed. The secondary
+         * region has to be provided in request's parameters. From the data flow standpoint
+         * there is no difference between primary and secondary regions - sending traffic
+         * will be split equally between the two. The primary region is the region where
+         * the resource has been created and where it can be managed. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateMultiRegionEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMultiRegionEndpointOutcome CreateMultiRegionEndpoint(const Model::CreateMultiRegionEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMultiRegionEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMultiRegionEndpointRequestT = Model::CreateMultiRegionEndpointRequest>
+        Model::CreateMultiRegionEndpointOutcomeCallable CreateMultiRegionEndpointCallable(const CreateMultiRegionEndpointRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::CreateMultiRegionEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMultiRegionEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMultiRegionEndpointRequestT = Model::CreateMultiRegionEndpointRequest>
+        void CreateMultiRegionEndpointAsync(const CreateMultiRegionEndpointRequestT& request, const CreateMultiRegionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::CreateMultiRegionEndpoint, request, handler, context);
+        }
+
+        /**
          * <p>Delete an existing configuration set.</p> <p> <i>Configuration sets</i> are
          * groups of rules that you can apply to the emails you send. You apply a
          * configuration set to an email by including a reference to the configuration set
@@ -754,6 +785,33 @@ namespace SESV2
         void DeleteEmailTemplateAsync(const DeleteEmailTemplateRequestT& request, const DeleteEmailTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SESV2Client::DeleteEmailTemplate, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a multi-region endpoint (global-endpoint).</p> <p>Only multi-region
+         * endpoints (global-endpoints) whose primary region is the AWS-Region where
+         * operation is executed can be deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteMultiRegionEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMultiRegionEndpointOutcome DeleteMultiRegionEndpoint(const Model::DeleteMultiRegionEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteMultiRegionEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteMultiRegionEndpointRequestT = Model::DeleteMultiRegionEndpointRequest>
+        Model::DeleteMultiRegionEndpointOutcomeCallable DeleteMultiRegionEndpointCallable(const DeleteMultiRegionEndpointRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::DeleteMultiRegionEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteMultiRegionEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteMultiRegionEndpointRequestT = Model::DeleteMultiRegionEndpointRequest>
+        void DeleteMultiRegionEndpointAsync(const DeleteMultiRegionEndpointRequestT& request, const DeleteMultiRegionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::DeleteMultiRegionEndpoint, request, handler, context);
         }
 
         /**
@@ -1337,6 +1395,34 @@ namespace SESV2
         }
 
         /**
+         * <p>Displays the multi-region endpoint (global-endpoint) configuration.</p>
+         * <p>Only multi-region endpoints (global-endpoints) whose primary region is the
+         * AWS-Region where operation is executed can be displayed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMultiRegionEndpoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMultiRegionEndpointOutcome GetMultiRegionEndpoint(const Model::GetMultiRegionEndpointRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMultiRegionEndpoint that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMultiRegionEndpointRequestT = Model::GetMultiRegionEndpointRequest>
+        Model::GetMultiRegionEndpointOutcomeCallable GetMultiRegionEndpointCallable(const GetMultiRegionEndpointRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::GetMultiRegionEndpoint, request);
+        }
+
+        /**
+         * An Async wrapper for GetMultiRegionEndpoint that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMultiRegionEndpointRequestT = Model::GetMultiRegionEndpointRequest>
+        void GetMultiRegionEndpointAsync(const GetMultiRegionEndpointRequestT& request, const GetMultiRegionEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::GetMultiRegionEndpoint, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about a specific email address that's on the
          * suppression list for your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">AWS
@@ -1660,6 +1746,33 @@ namespace SESV2
         void ListImportJobsAsync(const ListImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListImportJobsRequestT& request = {}) const
         {
             return SubmitAsync(&SESV2Client::ListImportJobs, request, handler, context);
+        }
+
+        /**
+         * <p>List the multi-region endpoints (global-endpoints).</p> <p>Only multi-region
+         * endpoints (global-endpoints) whose primary region is the AWS-Region where
+         * operation is executed will be listed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListMultiRegionEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMultiRegionEndpointsOutcome ListMultiRegionEndpoints(const Model::ListMultiRegionEndpointsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListMultiRegionEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMultiRegionEndpointsRequestT = Model::ListMultiRegionEndpointsRequest>
+        Model::ListMultiRegionEndpointsOutcomeCallable ListMultiRegionEndpointsCallable(const ListMultiRegionEndpointsRequestT& request = {}) const
+        {
+            return SubmitCallable(&SESV2Client::ListMultiRegionEndpoints, request);
+        }
+
+        /**
+         * An Async wrapper for ListMultiRegionEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMultiRegionEndpointsRequestT = Model::ListMultiRegionEndpointsRequest>
+        void ListMultiRegionEndpointsAsync(const ListMultiRegionEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListMultiRegionEndpointsRequestT& request = {}) const
+        {
+            return SubmitAsync(&SESV2Client::ListMultiRegionEndpoints, request, handler, context);
         }
 
         /**

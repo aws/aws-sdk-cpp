@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The container of metadata returned by the server to describe the pool.</p>
+     * <p>The details of the requested user pool.</p>
      */
     inline const UserPoolType& GetUserPool() const{ return m_userPool; }
     inline void SetUserPool(const UserPoolType& value) { m_userPool = value; }

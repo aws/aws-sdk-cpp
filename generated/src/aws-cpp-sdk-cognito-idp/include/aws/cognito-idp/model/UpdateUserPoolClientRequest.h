@@ -46,8 +46,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool where you want to update the user pool
-     * client.</p>
+     * <p>The ID of the user pool where you want to update the user pool client.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -282,12 +281,12 @@ namespace Model
      * <code>LoginWithAmazon</code>. You can also specify the names that you configured
      * for the SAML and OIDC IdPs in your user pool, for example <code>MySAMLIdP</code>
      * or <code>MyOIDCIdP</code>.</p> <p>This setting applies to providers that you can
-     * access with the <a
-     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html">hosted
-     * UI and OAuth 2.0 authorization server</a>. The removal of <code>COGNITO</code>
-     * from this list doesn't prevent authentication operations for local users with
-     * the user pools API in an Amazon Web Services SDK. The only way to prevent
-     * API-based authentication is to block access with a <a
+     * access with <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed
+     * login</a>. The removal of <code>COGNITO</code> from this list doesn't prevent
+     * authentication operations for local users with the user pools API in an Amazon
+     * Web Services SDK. The only way to prevent API-based authentication is to block
+     * access with a <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF
      * rule</a>.</p>
      */

@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool.</p>
+     * <p>The ID of the user pool that contains the group and the user that you want to
+     * remove.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -68,7 +69,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The group name.</p>
+     * <p>The name of the group that you want to remove the user from, for example
+     * <code>MyTestGroup</code>.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }

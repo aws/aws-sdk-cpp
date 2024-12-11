@@ -27,6 +27,8 @@ DbInstanceSummary::DbInstanceSummary() :
     m_endpointHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_networkType(NetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false),
     m_dbInstanceType(DbInstanceType::NOT_SET),
     m_dbInstanceTypeHasBeenSet(false),
     m_dbStorageType(DbStorageType::NOT_SET),
@@ -86,6 +88,13 @@ DbInstanceSummary& DbInstanceSummary::operator =(JsonView jsonValue)
     m_port = jsonValue.GetInteger("port");
 
     m_portHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkType"))
+  {
+    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("networkType"));
+
+    m_networkTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dbInstanceType"))
@@ -156,6 +165,11 @@ JsonValue DbInstanceSummary::Jsonize() const
   {
    payload.WithInteger("port", m_port);
 
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("networkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   if(m_dbInstanceTypeHasBeenSet)
