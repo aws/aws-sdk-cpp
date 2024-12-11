@@ -40,14 +40,19 @@ static CoreErrors GuessBodylessErrorType(const Aws::Http::HttpResponseCode respo
     }
 }
 
-AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const {
+JsonValue JsonErrorMarshaller::GetJsonPayloadHttpResponse(const Http::HttpResponse& httpResponse)
+{
   Aws::StringStream memoryStream;
   std::copy(std::istreambuf_iterator<char>(httpResponse.GetResponseBody()), std::istreambuf_iterator<char>(),
             std::ostreambuf_iterator<char>(memoryStream));
   Aws::String rawPayloadStr = memoryStream.str();
 
-  JsonValue exceptionPayload(rawPayloadStr);
-  JsonView payloadView(exceptionPayload);
+  return JsonValue(rawPayloadStr);
+}
+
+AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const {
+  auto exceptionPayload = GetJsonPayloadHttpResponse(httpResponse); 
+  auto payloadView = JsonView(exceptionPayload);
   AWSError<CoreErrors> error;
   if (exceptionPayload.WasParseSuccessful()) {
     AWS_LOGSTREAM_TRACE(AWS_ERROR_MARSHALLER_LOG_TAG, "Error response is " << payloadView.WriteReadable());
@@ -68,9 +73,11 @@ AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse
   } else {
     bool isRetryable = IsRetryableHttpResponseCode(httpResponse.GetResponseCode());
     AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG,
-                        "Failed to parse error payload: " << httpResponse.GetResponseCode() << ": " << rawPayloadStr);
-    error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", "Failed to parse error payload: " + rawPayloadStr, isRetryable);
+                        "Failed to parse error payload: " << httpResponse.GetResponseCode() << ": " << payloadView.AsString());
+    error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", "Failed to parse error payload: " + payloadView.AsString(), isRetryable);
   }
+
+  MarshallError(error, httpResponse);
 
   error.SetRequestId(httpResponse.HasHeader(REQUEST_ID_HEADER) ? httpResponse.GetHeader(REQUEST_ID_HEADER) : "");
   error.SetJsonPayload(std::move(exceptionPayload));
@@ -248,36 +255,12 @@ AWSError<CoreErrors> AWSErrorMarshaller::FindErrorByHttpResponseCode(Aws::Http::
 {
     return CoreErrorsMapper::GetErrorForHttpResponseCode(code);
 }
-AWSError<CoreErrors> JsonErrorMarshaller::MarshallHelper(const Aws::String& exceptionName, const Aws::String& message) const {
-  return AWSErrorMarshaller::Marshall(exceptionName, message);
-}
 
-AWSError<CoreErrors> JsonErrorMarshallerQueryCompatible::Marshall(const Aws::Http::HttpResponse& httpResponse) const {
-  Aws::StringStream memoryStream;
-  std::copy(std::istreambuf_iterator<char>(httpResponse.GetResponseBody()), std::istreambuf_iterator<char>(),
-            std::ostreambuf_iterator<char>(memoryStream));
-  Aws::String rawPayloadStr = memoryStream.str();
-
-  JsonValue exceptionPayload(rawPayloadStr);
-  JsonView payloadView(exceptionPayload);
-  AWSError<CoreErrors> error;
-  if (exceptionPayload.WasParseSuccessful()) {
-    AWS_LOGSTREAM_TRACE(AWS_ERROR_MARSHALLER_LOG_TAG, "Error response is " << payloadView.WriteReadable());
-
-    Aws::String message(payloadView.ValueExists(MESSAGE_CAMEL_CASE)   ? payloadView.GetString(MESSAGE_CAMEL_CASE)
-                        : payloadView.ValueExists(MESSAGE_LOWER_CASE) ? payloadView.GetString(MESSAGE_LOWER_CASE)
-                                                                      : "");
-
-    if (httpResponse.HasHeader(ERROR_TYPE_HEADER)) {
-      error = JsonErrorMarshaller::MarshallHelper(httpResponse.GetHeader(ERROR_TYPE_HEADER), message);
-    } else if (payloadView.ValueExists(TYPE)) {
-      error = JsonErrorMarshaller::MarshallHelper(payloadView.GetString(TYPE), message);
-    } else {
-      error = FindErrorByHttpResponseCode(httpResponse.GetResponseCode());
-      error.SetMessage(message);
-    }
-
+void JsonErrorMarshallerQueryCompatible::MarshallError(AWSError<CoreErrors>& error,const Http::HttpResponse& httpResponse) const 
+{
     if (!error.GetExceptionName().empty()) {
+       auto exceptionPayload = GetJsonPayloadHttpResponse(httpResponse); 
+       auto payloadView = JsonView(exceptionPayload);
       /*
           AWS Query-Compatible mode: This is a special setting that allows
          certain AWS services to communicate using a specific "query"
@@ -316,15 +299,4 @@ AWSError<CoreErrors> JsonErrorMarshallerQueryCompatible::Marshall(const Aws::Htt
         }
       }
     }
-
-  } else {
-    bool isRetryable = IsRetryableHttpResponseCode(httpResponse.GetResponseCode());
-    AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG,
-                        "Failed to parse error payload: " << httpResponse.GetResponseCode() << ": " << rawPayloadStr);
-    error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", "Failed to parse error payload: " + rawPayloadStr, isRetryable);
-  }
-
-  error.SetRequestId(httpResponse.HasHeader(REQUEST_ID_HEADER) ? httpResponse.GetHeader(REQUEST_ID_HEADER) : "");
-  error.SetJsonPayload(std::move(exceptionPayload));
-  return error;
 }
