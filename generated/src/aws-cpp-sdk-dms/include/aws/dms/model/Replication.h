@@ -203,7 +203,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The replication type.</p>
+     * <p>The type of replication to start.</p>
      */
     inline const Aws::String& GetStartReplicationType() const{ return m_startReplicationType; }
     inline bool StartReplicationTypeHasBeenSet() const { return m_startReplicationTypeHasBeenSet; }

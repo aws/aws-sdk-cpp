@@ -55,7 +55,19 @@ namespace Model
 
     ///@{
     /**
-     * <p>The replication type.</p>
+     * <p>The replication type.</p> <p>When the replication type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the replication is <code>start-replication</code>. This
+     * option will start the replication.</p> <p>You can also use <a>ReloadTables</a>
+     * to reload specific tables that failed during replication instead of restarting
+     * the replication.</p> <p>The <code>resume-processing</code> option isn't
+     * applicable for a full-load replication, because you can't resume partially
+     * loaded tables during the full load phase.</p> <p>For a
+     * <code>full-load-and-cdc</code> replication, DMS migrates table data, and then
+     * applies data changes that occur on the source. To load all the tables again, and
+     * start capturing source changes, use <code>reload-target</code>. Otherwise use
+     * <code>resume-processing</code>, to replicate the changes from the last stop
+     * position.</p>
      */
     inline const Aws::String& GetStartReplicationType() const{ return m_startReplicationType; }
     inline bool StartReplicationTypeHasBeenSet() const { return m_startReplicationTypeHasBeenSet; }

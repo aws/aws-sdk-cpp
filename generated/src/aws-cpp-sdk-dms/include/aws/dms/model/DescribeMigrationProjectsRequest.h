@@ -39,7 +39,10 @@ namespace Model
     ///@{
     /**
      * <p>Filters applied to the migration projects described in the form of key-value
-     * pairs.</p>
+     * pairs.</p> <p>Valid filter names and values:</p> <ul> <li>
+     * <p>instance-profile-identifier, instance profile arn or name</p> </li> <li>
+     * <p>data-provider-identifier, data provider arn or name</p> </li> <li>
+     * <p>migration-project-identifier, migration project arn or name</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

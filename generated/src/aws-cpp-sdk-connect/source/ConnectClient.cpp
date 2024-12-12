@@ -51,6 +51,7 @@
 #include <aws/connect/model/CreateEmailAddressRequest.h>
 #include <aws/connect/model/CreateEvaluationFormRequest.h>
 #include <aws/connect/model/CreateHoursOfOperationRequest.h>
+#include <aws/connect/model/CreateHoursOfOperationOverrideRequest.h>
 #include <aws/connect/model/CreateInstanceRequest.h>
 #include <aws/connect/model/CreateIntegrationAssociationRequest.h>
 #include <aws/connect/model/CreateParticipantRequest.h>
@@ -79,6 +80,7 @@
 #include <aws/connect/model/DeleteEmailAddressRequest.h>
 #include <aws/connect/model/DeleteEvaluationFormRequest.h>
 #include <aws/connect/model/DeleteHoursOfOperationRequest.h>
+#include <aws/connect/model/DeleteHoursOfOperationOverrideRequest.h>
 #include <aws/connect/model/DeleteInstanceRequest.h>
 #include <aws/connect/model/DeleteIntegrationAssociationRequest.h>
 #include <aws/connect/model/DeletePredefinedAttributeRequest.h>
@@ -106,6 +108,7 @@
 #include <aws/connect/model/DescribeEmailAddressRequest.h>
 #include <aws/connect/model/DescribeEvaluationFormRequest.h>
 #include <aws/connect/model/DescribeHoursOfOperationRequest.h>
+#include <aws/connect/model/DescribeHoursOfOperationOverrideRequest.h>
 #include <aws/connect/model/DescribeInstanceRequest.h>
 #include <aws/connect/model/DescribeInstanceAttributeRequest.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigRequest.h>
@@ -118,9 +121,6 @@
 #include <aws/connect/model/DescribeRuleRequest.h>
 #include <aws/connect/model/DescribeSecurityProfileRequest.h>
 #include <aws/connect/model/DescribeTrafficDistributionGroupRequest.h>
-#include <aws/connect/model/DescribeUserRequest.h>
-#include <aws/connect/model/DescribeUserHierarchyGroupRequest.h>
-#include <aws/connect/model/DescribeUserHierarchyStructureRequest.h>
 
 #include <smithy/tracing/TracingUtils.h>
 
@@ -1310,6 +1310,46 @@ CreateHoursOfOperationOutcome ConnectClient::CreateHoursOfOperation(const Create
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+CreateHoursOfOperationOverrideOutcome ConnectClient::CreateHoursOfOperationOverride(const CreateHoursOfOperationOverrideRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateHoursOfOperationOverride);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHoursOfOperationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateHoursOfOperationOverride", "Required field: InstanceId, is not set");
+    return CreateHoursOfOperationOverrideOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.HoursOfOperationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateHoursOfOperationOverride", "Required field: HoursOfOperationId, is not set");
+    return CreateHoursOfOperationOverrideOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HoursOfOperationId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateHoursOfOperationOverride, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateHoursOfOperationOverride, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateHoursOfOperationOverride",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateHoursOfOperationOverrideOutcome>(
+    [&]()-> CreateHoursOfOperationOverrideOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHoursOfOperationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/hours-of-operations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/overrides");
+      return CreateHoursOfOperationOverrideOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 CreateInstanceOutcome ConnectClient::CreateInstance(const CreateInstanceRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateInstance);
@@ -2288,6 +2328,52 @@ DeleteHoursOfOperationOutcome ConnectClient::DeleteHoursOfOperation(const Delete
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationId());
       return DeleteHoursOfOperationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteHoursOfOperationOverrideOutcome ConnectClient::DeleteHoursOfOperationOverride(const DeleteHoursOfOperationOverrideRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteHoursOfOperationOverride);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHoursOfOperationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteHoursOfOperationOverride", "Required field: InstanceId, is not set");
+    return DeleteHoursOfOperationOverrideOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.HoursOfOperationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteHoursOfOperationOverride", "Required field: HoursOfOperationId, is not set");
+    return DeleteHoursOfOperationOverrideOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HoursOfOperationId]", false));
+  }
+  if (!request.HoursOfOperationOverrideIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteHoursOfOperationOverride", "Required field: HoursOfOperationOverrideId, is not set");
+    return DeleteHoursOfOperationOverrideOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HoursOfOperationOverrideId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteHoursOfOperationOverride, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteHoursOfOperationOverride, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteHoursOfOperationOverride",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteHoursOfOperationOverrideOutcome>(
+    [&]()-> DeleteHoursOfOperationOverrideOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteHoursOfOperationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/hours-of-operations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/overrides/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationOverrideId());
+      return DeleteHoursOfOperationOverrideOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -3358,6 +3444,52 @@ DescribeHoursOfOperationOutcome ConnectClient::DescribeHoursOfOperation(const De
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeHoursOfOperationOverrideOutcome ConnectClient::DescribeHoursOfOperationOverride(const DescribeHoursOfOperationOverrideRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeHoursOfOperationOverride);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHoursOfOperationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeHoursOfOperationOverride", "Required field: InstanceId, is not set");
+    return DescribeHoursOfOperationOverrideOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.HoursOfOperationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeHoursOfOperationOverride", "Required field: HoursOfOperationId, is not set");
+    return DescribeHoursOfOperationOverrideOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HoursOfOperationId]", false));
+  }
+  if (!request.HoursOfOperationOverrideIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeHoursOfOperationOverride", "Required field: HoursOfOperationOverrideId, is not set");
+    return DescribeHoursOfOperationOverrideOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HoursOfOperationOverrideId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeHoursOfOperationOverride, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeHoursOfOperationOverride, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeHoursOfOperationOverride",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeHoursOfOperationOverrideOutcome>(
+    [&]()-> DescribeHoursOfOperationOverrideOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeHoursOfOperationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/hours-of-operations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/overrides/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationOverrideId());
+      return DescribeHoursOfOperationOverrideOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeInstanceOutcome ConnectClient::DescribeInstance(const DescribeInstanceRequest& request) const
 {
   AWS_OPERATION_GUARD(DescribeInstance);
@@ -3809,117 +3941,6 @@ DescribeTrafficDistributionGroupOutcome ConnectClient::DescribeTrafficDistributi
       endpointResolutionOutcome.GetResult().AddPathSegments("/traffic-distribution-group/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTrafficDistributionGroupId());
       return DescribeTrafficDistributionGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-DescribeUserOutcome ConnectClient::DescribeUser(const DescribeUserRequest& request) const
-{
-  AWS_OPERATION_GUARD(DescribeUser);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.UserIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeUser", "Required field: UserId, is not set");
-    return DescribeUserOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
-  }
-  if (!request.InstanceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeUser", "Required field: InstanceId, is not set");
-    return DescribeUserOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DescribeUser, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeUser",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeUserOutcome>(
-    [&]()-> DescribeUserOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/users/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetUserId());
-      return DescribeUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-DescribeUserHierarchyGroupOutcome ConnectClient::DescribeUserHierarchyGroup(const DescribeUserHierarchyGroupRequest& request) const
-{
-  AWS_OPERATION_GUARD(DescribeUserHierarchyGroup);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUserHierarchyGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.HierarchyGroupIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeUserHierarchyGroup", "Required field: HierarchyGroupId, is not set");
-    return DescribeUserHierarchyGroupOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HierarchyGroupId]", false));
-  }
-  if (!request.InstanceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeUserHierarchyGroup", "Required field: InstanceId, is not set");
-    return DescribeUserHierarchyGroupOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeUserHierarchyGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DescribeUserHierarchyGroup, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeUserHierarchyGroup",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeUserHierarchyGroupOutcome>(
-    [&]()-> DescribeUserHierarchyGroupOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeUserHierarchyGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/user-hierarchy-groups/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHierarchyGroupId());
-      return DescribeUserHierarchyGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-DescribeUserHierarchyStructureOutcome ConnectClient::DescribeUserHierarchyStructure(const DescribeUserHierarchyStructureRequest& request) const
-{
-  AWS_OPERATION_GUARD(DescribeUserHierarchyStructure);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUserHierarchyStructure, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.InstanceIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("DescribeUserHierarchyStructure", "Required field: InstanceId, is not set");
-    return DescribeUserHierarchyStructureOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeUserHierarchyStructure, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, DescribeUserHierarchyStructure, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeUserHierarchyStructure",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeUserHierarchyStructureOutcome>(
-    [&]()-> DescribeUserHierarchyStructureOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeUserHierarchyStructure, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments("/user-hierarchy-structure/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-      return DescribeUserHierarchyStructureOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

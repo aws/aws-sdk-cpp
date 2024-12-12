@@ -29,7 +29,8 @@ ModifyReplicationInstanceRequest::ModifyReplicationInstanceRequest() :
     m_autoMinorVersionUpgrade(false),
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_replicationInstanceIdentifierHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+    m_networkTypeHasBeenSet(false),
+    m_kerberosAuthenticationSettingsHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,12 @@ Aws::String ModifyReplicationInstanceRequest::SerializePayload() const
   if(m_networkTypeHasBeenSet)
   {
    payload.WithString("NetworkType", m_networkType);
+
+  }
+
+  if(m_kerberosAuthenticationSettingsHasBeenSet)
+  {
+   payload.WithObject("KerberosAuthenticationSettings", m_kerberosAuthenticationSettings.Jsonize());
 
   }
 

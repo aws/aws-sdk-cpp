@@ -48,7 +48,9 @@ namespace Model
     ///@{
     /**
      * <p>The first name. This is required if you are using Amazon Connect or SAML for
-     * identity management.</p>
+     * identity management. Inputs must be in Unicode Normalization Form C (NFC). Text
+     * containing characters in a non-NFC form (for example, decomposed characters or
+     * combining marks) are not accepted.</p>
      */
     inline const Aws::String& GetFirstName() const{ return m_firstName; }
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
@@ -63,7 +65,9 @@ namespace Model
     ///@{
     /**
      * <p>The last name. This is required if you are using Amazon Connect or SAML for
-     * identity management.</p>
+     * identity management. Inputs must be in Unicode Normalization Form C (NFC). Text
+     * containing characters in a non-NFC form (for example, decomposed characters or
+     * combining marks) are not accepted.</p>
      */
     inline const Aws::String& GetLastName() const{ return m_lastName; }
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }

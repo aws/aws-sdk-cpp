@@ -45,7 +45,9 @@ MicrosoftSQLServerSettings::MicrosoftSQLServerSettings() :
     m_tlogAccessMode(TlogAccessMode::NOT_SET),
     m_tlogAccessModeHasBeenSet(false),
     m_forceLobLookup(false),
-    m_forceLobLookupHasBeenSet(false)
+    m_forceLobLookupHasBeenSet(false),
+    m_authenticationMethod(SqlServerAuthenticationMethod::NOT_SET),
+    m_authenticationMethodHasBeenSet(false)
 {
 }
 
@@ -176,6 +178,13 @@ MicrosoftSQLServerSettings& MicrosoftSQLServerSettings::operator =(JsonView json
     m_forceLobLookupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuthenticationMethod"))
+  {
+    m_authenticationMethod = SqlServerAuthenticationMethodMapper::GetSqlServerAuthenticationMethodForName(jsonValue.GetString("AuthenticationMethod"));
+
+    m_authenticationMethodHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -281,6 +290,11 @@ JsonValue MicrosoftSQLServerSettings::Jsonize() const
   {
    payload.WithBool("ForceLobLookup", m_forceLobLookup);
 
+  }
+
+  if(m_authenticationMethodHasBeenSet)
+  {
+   payload.WithString("AuthenticationMethod", SqlServerAuthenticationMethodMapper::GetNameForSqlServerAuthenticationMethod(m_authenticationMethod));
   }
 
   return payload;

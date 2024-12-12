@@ -177,6 +177,16 @@ namespace Model
     inline void SetNoHexPrefix(bool value) { m_noHexPrefixHasBeenSet = true; m_noHexPrefix = value; }
     inline KinesisSettings& WithNoHexPrefix(bool value) { SetNoHexPrefix(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies using the large integer value with Kinesis.</p>
+     */
+    inline bool GetUseLargeIntegerValue() const{ return m_useLargeIntegerValue; }
+    inline bool UseLargeIntegerValueHasBeenSet() const { return m_useLargeIntegerValueHasBeenSet; }
+    inline void SetUseLargeIntegerValue(bool value) { m_useLargeIntegerValueHasBeenSet = true; m_useLargeIntegerValue = value; }
+    inline KinesisSettings& WithUseLargeIntegerValue(bool value) { SetUseLargeIntegerValue(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_streamArn;
@@ -208,6 +218,9 @@ namespace Model
 
     bool m_noHexPrefix;
     bool m_noHexPrefixHasBeenSet = false;
+
+    bool m_useLargeIntegerValue;
+    bool m_useLargeIntegerValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -45,7 +45,8 @@ ReplicationInstance::ReplicationInstance() :
     m_secondaryAvailabilityZoneHasBeenSet(false),
     m_freeUntilHasBeenSet(false),
     m_dnsNameServersHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+    m_networkTypeHasBeenSet(false),
+    m_kerberosAuthenticationSettingsHasBeenSet(false)
 {
 }
 
@@ -230,6 +231,13 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
     m_networkTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KerberosAuthenticationSettings"))
+  {
+    m_kerberosAuthenticationSettings = jsonValue.GetObject("KerberosAuthenticationSettings");
+
+    m_kerberosAuthenticationSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -390,6 +398,12 @@ JsonValue ReplicationInstance::Jsonize() const
   if(m_networkTypeHasBeenSet)
   {
    payload.WithString("NetworkType", m_networkType);
+
+  }
+
+  if(m_kerberosAuthenticationSettingsHasBeenSet)
+  {
+   payload.WithObject("KerberosAuthenticationSettings", m_kerberosAuthenticationSettings.Jsonize());
 
   }
 

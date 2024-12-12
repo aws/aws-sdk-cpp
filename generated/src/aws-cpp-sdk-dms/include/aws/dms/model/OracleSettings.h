@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/CharLengthSemantics.h>
+#include <aws/dms/model/OracleAuthenticationMethod.h>
 #include <utility>
 
 namespace Aws
@@ -254,9 +255,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>When this field is set to <code>Y</code>, DMS only accesses the archived redo
-     * logs. If the archived redo logs are stored on Automatic Storage Management (ASM)
-     * only, the DMS user account needs to be granted ASM privileges.</p>
+     * <p>When this field is set to <code>True</code>, DMS only accesses the archived
+     * redo logs. If the archived redo logs are stored on Automatic Storage Management
+     * (ASM) only, the DMS user account needs to be granted ASM privileges.</p>
      */
     inline bool GetArchivedLogsOnly() const{ return m_archivedLogsOnly; }
     inline bool ArchivedLogsOnlyHasBeenSet() const { return m_archivedLogsOnlyHasBeenSet; }
@@ -551,11 +552,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Set this attribute to Y to capture change data using the Binary Reader
-     * utility. Set <code>UseLogminerReader</code> to N to set this attribute to Y. To
-     * use Binary Reader with Amazon RDS for Oracle as the source, you set additional
-     * attributes. For more information about using this setting with Oracle Automatic
-     * Storage Management (ASM), see <a
+     * <p>Set this attribute to True to capture change data using the Binary Reader
+     * utility. Set <code>UseLogminerReader</code> to False to set this attribute to
+     * True. To use Binary Reader with Amazon RDS for Oracle as the source, you set
+     * additional attributes. For more information about using this setting with Oracle
+     * Automatic Storage Management (ASM), see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
      * Using Oracle LogMiner or DMS Binary Reader for CDC</a>.</p>
      */
@@ -567,9 +568,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>Set this attribute to Y to have DMS use a direct path full load. Specify this
-     * value to use the direct path protocol in the Oracle Call Interface (OCI). By
-     * using this OCI protocol, you can bulk-load Oracle target tables during a full
+     * <p>Set this attribute to True to have DMS use a direct path full load. Specify
+     * this value to use the direct path protocol in the Oracle Call Interface (OCI).
+     * By using this OCI protocol, you can bulk-load Oracle target tables during a full
      * load.</p>
      */
     inline bool GetUseDirectPathFullLoad() const{ return m_useDirectPathFullLoad; }
@@ -580,11 +581,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Set this attribute to Y to capture change data using the Oracle LogMiner
-     * utility (the default). Set this attribute to N if you want to access the redo
-     * logs as a binary file. When you set <code>UseLogminerReader</code> to N, also
-     * set <code>UseBfile</code> to Y. For more information on this setting and using
-     * Oracle ASM, see <a
+     * <p>Set this attribute to True to capture change data using the Oracle LogMiner
+     * utility (the default). Set this attribute to False if you want to access the
+     * redo logs as a binary file. When you set <code>UseLogminerReader</code> to
+     * False, also set <code>UseBfile</code> to True. For more information on this
+     * setting and using Oracle ASM, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
      * Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User
      * Guide</i>.</p>
@@ -714,13 +715,24 @@ namespace Model
      * <p>The timeframe in minutes to check for open transactions for a CDC-only
      * task.</p> <p>You can specify an integer value between 0 (the default) and 240
      * (the maximum). </p>  <p>This parameter is only valid in DMS version 3.5.0
-     * and later. DMS supports a window of up to 9.5 hours including the value for
-     * <code>OpenTransactionWindow</code>.</p> 
+     * and later.</p> 
      */
     inline int GetOpenTransactionWindow() const{ return m_openTransactionWindow; }
     inline bool OpenTransactionWindowHasBeenSet() const { return m_openTransactionWindowHasBeenSet; }
     inline void SetOpenTransactionWindow(int value) { m_openTransactionWindowHasBeenSet = true; m_openTransactionWindow = value; }
     inline OracleSettings& WithOpenTransactionWindow(int value) { SetOpenTransactionWindow(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies using Kerberos authentication with Oracle.</p>
+     */
+    inline const OracleAuthenticationMethod& GetAuthenticationMethod() const{ return m_authenticationMethod; }
+    inline bool AuthenticationMethodHasBeenSet() const { return m_authenticationMethodHasBeenSet; }
+    inline void SetAuthenticationMethod(const OracleAuthenticationMethod& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = value; }
+    inline void SetAuthenticationMethod(OracleAuthenticationMethod&& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = std::move(value); }
+    inline OracleSettings& WithAuthenticationMethod(const OracleAuthenticationMethod& value) { SetAuthenticationMethod(value); return *this;}
+    inline OracleSettings& WithAuthenticationMethod(OracleAuthenticationMethod&& value) { SetAuthenticationMethod(std::move(value)); return *this;}
     ///@}
   private:
 
@@ -852,6 +864,9 @@ namespace Model
 
     int m_openTransactionWindow;
     bool m_openTransactionWindowHasBeenSet = false;
+
+    OracleAuthenticationMethod m_authenticationMethod;
+    bool m_authenticationMethodHasBeenSet = false;
   };
 
 } // namespace Model

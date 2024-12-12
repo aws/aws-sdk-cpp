@@ -122,13 +122,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a>
      * condition:</p> <ul> <li> <p> <b>Low</b>: <code>["1", "2", "3"]</code> </p> </li>
      * <li> <p> <b>Medium</b>: <code>["4", "5", "6"]</code> </p> </li> <li> <p>
-     * <b>High</b>: <code>["7", "8", "9"]</code> </p> </li> </ul> <p>For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity
-     * levels for GuardDuty findings</a>.</p> </li> <li> <p>type</p> </li> <li>
-     * <p>updatedAt</p> <p>Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
-     * YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains milliseconds.</p>
-     * </li> <li> <p>resource.accessKeyDetails.accessKeyId</p> </li> <li>
+     * <b>High</b>: <code>["7", "8"]</code> </p> </li> <li> <p> <b>Critical</b>:
+     * <code>["9", "10"]</code> </p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings
+     * severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p> </li> <li>
+     * <p>type</p> </li> <li> <p>updatedAt</p> <p>Type: ISO 8601 string format:
+     * YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
+     * contains milliseconds.</p> </li> <li>
+     * <p>resource.accessKeyDetails.accessKeyId</p> </li> <li>
      * <p>resource.accessKeyDetails.principalId</p> </li> <li>
      * <p>resource.accessKeyDetails.userName</p> </li> <li>
      * <p>resource.accessKeyDetails.userType</p> </li> <li>

@@ -35,7 +35,8 @@ namespace Model
     INTERNAL_TRANSFER_OUT_DOMAIN,
     INTERNAL_TRANSFER_IN_DOMAIN,
     RELEASE_TO_GANDI,
-    TRANSFER_ON_RENEW
+    TRANSFER_ON_RENEW,
+    RESTORE_DOMAIN
   };
 
 namespace OperationTypeMapper

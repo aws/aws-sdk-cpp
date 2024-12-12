@@ -39,7 +39,8 @@ namespace Model
     ///@{
     /**
      * <p>Filters applied to the data providers described in the form of key-value
-     * pairs.</p> <p>Valid filter names: data-provider-identifier</p>
+     * pairs.</p> <p>Valid filter names and values: data-provider-identifier, data
+     * provider arn or name</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

@@ -18,7 +18,6 @@
 #include <aws/acm/model/ListCertificatesRequest.h>
 #include <aws/acm/ACMClient.h>
 #include <aws/acm/model/GetCertificateRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace ACMSmokeTest{
 using namespace Aws::Auth;
@@ -32,19 +31,6 @@ class ACMSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char ACMSmokeTestSuite::ALLOCATION_TAG[] = "ACMSmokeTest";
-TEST_F(ACMSmokeTestSuite, ListCertificatesSuccess )
-{
-    Aws::ACM::ACMClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<ACMClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    ListCertificatesRequest input;
-    auto outcome = clientSp->ListCertificates(input);
-    EXPECT_TRUE( outcome.IsSuccess());
-}
 TEST_F(ACMSmokeTestSuite, GetCertificateFailure )
 {
     Aws::ACM::ACMClientConfiguration clientConfiguration;
@@ -58,5 +44,18 @@ TEST_F(ACMSmokeTestSuite, GetCertificateFailure )
     input.SetCertificateArn("arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012");
     auto outcome = clientSp->GetCertificate(input);
     EXPECT_FALSE( outcome.IsSuccess());
+}
+TEST_F(ACMSmokeTestSuite, ListCertificatesSuccess )
+{
+    Aws::ACM::ACMClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<ACMClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    ListCertificatesRequest input;
+    auto outcome = clientSp->ListCertificates(input);
+    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

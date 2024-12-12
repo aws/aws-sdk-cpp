@@ -55,7 +55,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The role of the participant in the chat conversation.</p>
+     * <p>The role of the participant in the chat conversation.</p>  <p>Only
+     * <code>CUSTOMER</code> is currently supported. Any other values other than
+     * <code>CUSTOMER</code> will result in an exception (4xx error).</p> 
      */
     inline const ParticipantRole& GetParticipantRole() const{ return m_participantRole; }
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }

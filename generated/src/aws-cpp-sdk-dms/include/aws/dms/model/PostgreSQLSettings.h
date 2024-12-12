@@ -61,9 +61,10 @@ namespace Model
     ///@{
     /**
      * <p>To capture DDL events, DMS creates various artifacts in the PostgreSQL
-     * database when the task starts. You can later remove these artifacts.</p> <p>If
-     * this value is set to <code>N</code>, you don't have to create tables or triggers
-     * on the source database.</p>
+     * database when the task starts. You can later remove these artifacts.</p> <p>The
+     * default value is <code>true</code>.</p> <p>If this value is set to
+     * <code>N</code>, you don't have to create tables or triggers on the source
+     * database.</p>
      */
     inline bool GetCaptureDdls() const{ return m_captureDdls; }
     inline bool CaptureDdlsHasBeenSet() const { return m_captureDdlsHasBeenSet; }
@@ -74,7 +75,8 @@ namespace Model
     ///@{
     /**
      * <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to
-     * PostgreSQL.</p> <p>Example: <code>maxFileSize=512</code> </p>
+     * PostgreSQL.</p> <p>The default value is 32,768 KB (32 MB).</p> <p>Example:
+     * <code>maxFileSize=512</code> </p>
      */
     inline int GetMaxFileSize() const{ return m_maxFileSize; }
     inline bool MaxFileSizeHasBeenSet() const { return m_maxFileSizeHasBeenSet; }
@@ -99,7 +101,8 @@ namespace Model
     ///@{
     /**
      * <p>The schema in which the operational DDL database artifacts are created.</p>
-     * <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code> </p>
+     * <p>The default value is <code>public</code>.</p> <p>Example:
+     * <code>ddlArtifactsSchema=xyzddlschema;</code> </p>
      */
     inline const Aws::String& GetDdlArtifactsSchema() const{ return m_ddlArtifactsSchema; }
     inline bool DdlArtifactsSchemaHasBeenSet() const { return m_ddlArtifactsSchemaHasBeenSet; }
@@ -127,8 +130,9 @@ namespace Model
     /**
      * <p>When set to <code>true</code>, this value causes a task to fail if the actual
      * size of a LOB column is greater than the specified <code>LobMaxSize</code>.</p>
-     * <p>If task is set to Limited LOB mode and this option is set to true, the task
-     * fails instead of truncating the LOB data.</p>
+     * <p>The default value is <code>false</code>.</p> <p>If task is set to Limited LOB
+     * mode and this option is set to true, the task fails instead of truncating the
+     * LOB data.</p>
      */
     inline bool GetFailTasksOnLobTruncation() const{ return m_failTasksOnLobTruncation; }
     inline bool FailTasksOnLobTruncationHasBeenSet() const { return m_failTasksOnLobTruncationHasBeenSet; }
@@ -142,6 +146,7 @@ namespace Model
      * doing this, it prevents idle logical replication slots from holding onto old WAL
      * logs, which can result in storage full situations on the source. This heartbeat
      * keeps <code>restart_lsn</code> moving and prevents storage full scenarios.</p>
+     * <p>The default value is <code>false</code>.</p>
      */
     inline bool GetHeartbeatEnable() const{ return m_heartbeatEnable; }
     inline bool HeartbeatEnableHasBeenSet() const { return m_heartbeatEnableHasBeenSet; }
@@ -151,7 +156,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Sets the schema in which the heartbeat artifacts are created.</p>
+     * <p>Sets the schema in which the heartbeat artifacts are created.</p> <p>The
+     * default value is <code>public</code>.</p>
      */
     inline const Aws::String& GetHeartbeatSchema() const{ return m_heartbeatSchema; }
     inline bool HeartbeatSchemaHasBeenSet() const { return m_heartbeatSchemaHasBeenSet; }
@@ -165,7 +171,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Sets the WAL heartbeat frequency (in minutes).</p>
+     * <p>Sets the WAL heartbeat frequency (in minutes).</p> <p>The default value is 5
+     * minutes.</p>
      */
     inline int GetHeartbeatFrequency() const{ return m_heartbeatFrequency; }
     inline bool HeartbeatFrequencyHasBeenSet() const { return m_heartbeatFrequencyHasBeenSet; }
@@ -266,7 +273,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the plugin to use to create a replication slot.</p>
+     * <p>Specifies the plugin to use to create a replication slot.</p> <p>The default
+     * value is <code>pglogical</code>.</p>
      */
     inline const PluginNameValue& GetPluginName() const{ return m_pluginName; }
     inline bool PluginNameHasBeenSet() const { return m_pluginNameHasBeenSet; }
@@ -338,6 +346,7 @@ namespace Model
      * <p>When true, lets PostgreSQL migrate the boolean type as boolean. By default,
      * PostgreSQL migrates booleans as <code>varchar(5)</code>. You must set this
      * setting on both the source and target endpoints for it to take effect.</p>
+     * <p>The default value is <code>false</code>.</p>
      */
     inline bool GetMapBooleanAsBoolean() const{ return m_mapBooleanAsBoolean; }
     inline bool MapBooleanAsBooleanHasBeenSet() const { return m_mapBooleanAsBooleanHasBeenSet; }
@@ -347,7 +356,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>When true, DMS migrates JSONB values as CLOB.</p>
+     * <p>When true, DMS migrates JSONB values as CLOB.</p> <p>The default value is
+     * <code>false</code>.</p>
      */
     inline bool GetMapJsonbAsClob() const{ return m_mapJsonbAsClob; }
     inline bool MapJsonbAsClobHasBeenSet() const { return m_mapJsonbAsClobHasBeenSet; }
@@ -357,7 +367,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     * <p>Sets what datatype to map LONG values as.</p> <p>The default value is
+     * <code>wstring</code>.</p>
      */
     inline const LongVarcharMappingType& GetMapLongVarcharAs() const{ return m_mapLongVarcharAs; }
     inline bool MapLongVarcharAsHasBeenSet() const { return m_mapLongVarcharAsHasBeenSet; }
@@ -393,6 +404,21 @@ namespace Model
     inline PostgreSQLSettings& WithBabelfishDatabaseName(const Aws::String& value) { SetBabelfishDatabaseName(value); return *this;}
     inline PostgreSQLSettings& WithBabelfishDatabaseName(Aws::String&& value) { SetBabelfishDatabaseName(std::move(value)); return *this;}
     inline PostgreSQLSettings& WithBabelfishDatabaseName(const char* value) { SetBabelfishDatabaseName(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Disables the Unicode source filter with PostgreSQL, for values passed into
+     * the Selection rule filter on Source Endpoint column values. By default DMS
+     * performs source filter comparisons using a Unicode string which can cause look
+     * ups to ignore the indexes in the text columns and slow down migrations.</p>
+     * <p>Unicode support should only be disabled when using a selection rule filter is
+     * on a text column in the Source database that is indexed.</p>
+     */
+    inline bool GetDisableUnicodeSourceFilter() const{ return m_disableUnicodeSourceFilter; }
+    inline bool DisableUnicodeSourceFilterHasBeenSet() const { return m_disableUnicodeSourceFilterHasBeenSet; }
+    inline void SetDisableUnicodeSourceFilter(bool value) { m_disableUnicodeSourceFilterHasBeenSet = true; m_disableUnicodeSourceFilter = value; }
+    inline PostgreSQLSettings& WithDisableUnicodeSourceFilter(bool value) { SetDisableUnicodeSourceFilter(value); return *this;}
     ///@}
   private:
 
@@ -467,6 +493,9 @@ namespace Model
 
     Aws::String m_babelfishDatabaseName;
     bool m_babelfishDatabaseNameHasBeenSet = false;
+
+    bool m_disableUnicodeSourceFilter;
+    bool m_disableUnicodeSourceFilterHasBeenSet = false;
   };
 
 } // namespace Model
