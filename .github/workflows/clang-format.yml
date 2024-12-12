@@ -29,18 +29,16 @@ jobs:
       # get names of the base and pr branches
       - name: Get the base and head branches
         id: fetchstep
+        env:
+          BASE_BRANCH: "${{ github.event.pull_request.base.ref }}"
+          HEAD_BRANCH: "${{ github.event.pull_request.head.ref }}"
         run: |
-          BASE_BRANCH="${{ github.event.pull_request.base.ref }}"
-          HEAD_BRANCH="${{ github.event.pull_request.head.ref }}"
 
           # validate branch names to ensure they are safe (no special characters or spaces) 
           if [[ ! "$BASE_BRANCH" =~ ^[a-zA-Z0-9/_-]+$ ]] || [[ ! "$HEAD_BRANCH" =~ ^[a-zA-Z0-9/_-]+$ ]]; then
             echo "Error: Invalid characters in branch names!"
             exit 1
           fi
-
-          echo "BASE_BRANCH=$BASE_BRANCH" >> $GITHUB_ENV
-          echo "HEAD_BRANCH=$HEAD_BRANCH" >> $GITHUB_ENV
           echo "Base branch: $BASE_BRANCH"
           echo "Head branch: $HEAD_BRANCH"
           git fetch origin "$BASE_BRANCH"
@@ -51,12 +49,11 @@ jobs:
         id: diffstep
         env:
           ACTIONS_RUNNER_DEBUG: true
+          BASE_BRANCH: "${{ env.BASE_BRANCH }}"
+          HEAD_BRANCH: "${{ env.HEAD_BRANCH }}"
         run: |
           # Format only the changed lines using clang-format-diff.py
           set -e
-          BASE_BRANCH="${{ env.BASE_BRANCH }}"
-          HEAD_BRANCH="${{ env.HEAD_BRANCH }}"
-
           # Validate branch names again (for extra safety)
           if [[ ! "$BASE_BRANCH" =~ ^[a-zA-Z0-9/_-]+$ ]] || [[ ! "$HEAD_BRANCH" =~ ^[a-zA-Z0-9/_-]+$ ]]; then
             echo "Error: Invalid characters in branch names!"
