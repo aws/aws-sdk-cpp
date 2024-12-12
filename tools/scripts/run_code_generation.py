@@ -599,7 +599,8 @@ def main():
 
         pending = set()
         done = set()
-        print(f"Smithy supported clients: {SMITHY_SUPPORTED_CLIENTS}")
+        if DEBUG:
+            print(f"Smithy supported clients: {SMITHY_SUPPORTED_CLIENTS}")
         print(f"Running code generator, up to {max_workers} processes in parallel")
         sys.stdout.flush()
         for core_component in ["defaults", "partitions"]:
