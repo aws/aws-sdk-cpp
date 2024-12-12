@@ -33,12 +33,6 @@ jobs:
           BASE_BRANCH: "${{ github.event.pull_request.base.ref }}"
           HEAD_BRANCH: "${{ github.event.pull_request.head.ref }}"
         run: |
-
-          # validate branch names to ensure they are safe (no special characters or spaces) 
-          if [[ ! $BASE_BRANCH =~ ^[a-zA-Z0-9/_-]+$ ]] || [[ ! $HEAD_BRANCH =~ ^[a-zA-Z0-9/_-]+$ ]]; then
-            echo "Error: Invalid characters in branch names!"
-            exit 1
-          fi
           echo "Base branch: $BASE_BRANCH"
           echo "Head branch: $HEAD_BRANCH"
           git fetch origin "$BASE_BRANCH"
@@ -54,12 +48,6 @@ jobs:
         run: |
           # Format only the changed lines using clang-format-diff.py
           set -e
-          # Validate branch names again (for extra safety)
-          if [[ ! $BASE_BRANCH =~ ^[a-zA-Z0-9/_-]+$ ]] || [[ ! $HEAD_BRANCH =~ ^[a-zA-Z0-9/_-]+$ ]]; then
-            echo "Error: Invalid characters in branch names!"
-            exit 1
-          fi
-
           git diff -U0 --no-color origin/$BASE_BRANCH...origin/$HEAD_BRANCH -- . ':!generated/' > diff_output.patch
           cat diff_output.patch
           
