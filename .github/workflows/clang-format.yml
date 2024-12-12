@@ -43,8 +43,8 @@ jobs:
         id: diffstep
         env:
           ACTIONS_RUNNER_DEBUG: true
-          BASE_BRANCH: "${{ env.BASE_BRANCH }}"
-          HEAD_BRANCH: "${{ env.HEAD_BRANCH }}"
+          BASE_BRANCH: "${{ github.event.pull_request.base.ref }}"
+          HEAD_BRANCH: "${{ github.event.pull_request.head.ref }}"
         run: |
           # Format only the changed lines using clang-format-diff.py
           set -e
