@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/ReplicationSubnetGroup.h>
 #include <aws/dms/model/ReplicationPendingModifiedValues.h>
+#include <aws/dms/model/KerberosAuthenticationSettings.h>
 #include <aws/dms/model/VpcSecurityGroupMembership.h>
 #include <utility>
 
@@ -386,6 +387,19 @@ namespace Model
     inline ReplicationInstance& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
     inline ReplicationInstance& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the ID of the secret that stores the key cache file required for
+     * kerberos authentication, when replicating an instance.</p>
+     */
+    inline const KerberosAuthenticationSettings& GetKerberosAuthenticationSettings() const{ return m_kerberosAuthenticationSettings; }
+    inline bool KerberosAuthenticationSettingsHasBeenSet() const { return m_kerberosAuthenticationSettingsHasBeenSet; }
+    inline void SetKerberosAuthenticationSettings(const KerberosAuthenticationSettings& value) { m_kerberosAuthenticationSettingsHasBeenSet = true; m_kerberosAuthenticationSettings = value; }
+    inline void SetKerberosAuthenticationSettings(KerberosAuthenticationSettings&& value) { m_kerberosAuthenticationSettingsHasBeenSet = true; m_kerberosAuthenticationSettings = std::move(value); }
+    inline ReplicationInstance& WithKerberosAuthenticationSettings(const KerberosAuthenticationSettings& value) { SetKerberosAuthenticationSettings(value); return *this;}
+    inline ReplicationInstance& WithKerberosAuthenticationSettings(KerberosAuthenticationSettings&& value) { SetKerberosAuthenticationSettings(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_replicationInstanceIdentifier;
@@ -456,6 +470,9 @@ namespace Model
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
+
+    KerberosAuthenticationSettings m_kerberosAuthenticationSettings;
+    bool m_kerberosAuthenticationSettingsHasBeenSet = false;
   };
 
 } // namespace Model

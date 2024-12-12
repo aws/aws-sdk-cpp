@@ -66,7 +66,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The properties to put for the specified run.</p>
+     * <p>The properties to put for the specified run.</p> <p>Run properties may be
+     * logged. Do not pass plaintext secrets as properties. Retrieve secrets from a
+     * Glue Connection, Amazon Web Services Secrets Manager or other secret management
+     * mechanism if you intend to use them within the workflow run.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRunProperties() const{ return m_runProperties; }
     inline bool RunPropertiesHasBeenSet() const { return m_runPropertiesHasBeenSet; }

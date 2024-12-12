@@ -32,7 +32,8 @@ CreateReplicationInstanceRequest::CreateReplicationInstanceRequest() :
     m_publiclyAccessibleHasBeenSet(false),
     m_dnsNameServersHasBeenSet(false),
     m_resourceIdentifierHasBeenSet(false),
-    m_networkTypeHasBeenSet(false)
+    m_networkTypeHasBeenSet(false),
+    m_kerberosAuthenticationSettingsHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,12 @@ Aws::String CreateReplicationInstanceRequest::SerializePayload() const
   if(m_networkTypeHasBeenSet)
   {
    payload.WithString("NetworkType", m_networkType);
+
+  }
+
+  if(m_kerberosAuthenticationSettingsHasBeenSet)
+  {
+   payload.WithObject("KerberosAuthenticationSettings", m_kerberosAuthenticationSettings.Jsonize());
 
   }
 

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/CloudWatchEncryption.h>
 #include <aws/glue/model/JobBookmarksEncryption.h>
+#include <aws/glue/model/DataQualityEncryption.h>
 #include <aws/glue/model/S3Encryption.h>
 #include <utility>
 
@@ -78,6 +79,18 @@ namespace Model
     inline EncryptionConfiguration& WithJobBookmarksEncryption(const JobBookmarksEncryption& value) { SetJobBookmarksEncryption(value); return *this;}
     inline EncryptionConfiguration& WithJobBookmarksEncryption(JobBookmarksEncryption&& value) { SetJobBookmarksEncryption(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The encryption configuration for Glue Data Quality assets.</p>
+     */
+    inline const DataQualityEncryption& GetDataQualityEncryption() const{ return m_dataQualityEncryption; }
+    inline bool DataQualityEncryptionHasBeenSet() const { return m_dataQualityEncryptionHasBeenSet; }
+    inline void SetDataQualityEncryption(const DataQualityEncryption& value) { m_dataQualityEncryptionHasBeenSet = true; m_dataQualityEncryption = value; }
+    inline void SetDataQualityEncryption(DataQualityEncryption&& value) { m_dataQualityEncryptionHasBeenSet = true; m_dataQualityEncryption = std::move(value); }
+    inline EncryptionConfiguration& WithDataQualityEncryption(const DataQualityEncryption& value) { SetDataQualityEncryption(value); return *this;}
+    inline EncryptionConfiguration& WithDataQualityEncryption(DataQualityEncryption&& value) { SetDataQualityEncryption(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<S3Encryption> m_s3Encryption;
@@ -88,6 +101,9 @@ namespace Model
 
     JobBookmarksEncryption m_jobBookmarksEncryption;
     bool m_jobBookmarksEncryptionHasBeenSet = false;
+
+    DataQualityEncryption m_dataQualityEncryption;
+    bool m_dataQualityEncryptionHasBeenSet = false;
   };
 
 } // namespace Model

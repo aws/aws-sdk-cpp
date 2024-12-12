@@ -7,6 +7,8 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connect/model/StringCondition.h>
+#include <aws/connect/model/ContactFlowModuleState.h>
+#include <aws/connect/model/ContactFlowModuleStatus.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +80,30 @@ namespace Model
     inline ContactFlowModuleSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
     inline ContactFlowModuleSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The state of the flow.</p>
+     */
+    inline const ContactFlowModuleState& GetStateCondition() const{ return m_stateCondition; }
+    inline bool StateConditionHasBeenSet() const { return m_stateConditionHasBeenSet; }
+    inline void SetStateCondition(const ContactFlowModuleState& value) { m_stateConditionHasBeenSet = true; m_stateCondition = value; }
+    inline void SetStateCondition(ContactFlowModuleState&& value) { m_stateConditionHasBeenSet = true; m_stateCondition = std::move(value); }
+    inline ContactFlowModuleSearchCriteria& WithStateCondition(const ContactFlowModuleState& value) { SetStateCondition(value); return *this;}
+    inline ContactFlowModuleSearchCriteria& WithStateCondition(ContactFlowModuleState&& value) { SetStateCondition(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The status of the flow.</p>
+     */
+    inline const ContactFlowModuleStatus& GetStatusCondition() const{ return m_statusCondition; }
+    inline bool StatusConditionHasBeenSet() const { return m_statusConditionHasBeenSet; }
+    inline void SetStatusCondition(const ContactFlowModuleStatus& value) { m_statusConditionHasBeenSet = true; m_statusCondition = value; }
+    inline void SetStatusCondition(ContactFlowModuleStatus&& value) { m_statusConditionHasBeenSet = true; m_statusCondition = std::move(value); }
+    inline ContactFlowModuleSearchCriteria& WithStatusCondition(const ContactFlowModuleStatus& value) { SetStatusCondition(value); return *this;}
+    inline ContactFlowModuleSearchCriteria& WithStatusCondition(ContactFlowModuleStatus&& value) { SetStatusCondition(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::Vector<ContactFlowModuleSearchCriteria> m_orConditions;
@@ -88,6 +114,12 @@ namespace Model
 
     StringCondition m_stringCondition;
     bool m_stringConditionHasBeenSet = false;
+
+    ContactFlowModuleState m_stateCondition;
+    bool m_stateConditionHasBeenSet = false;
+
+    ContactFlowModuleStatus m_statusCondition;
+    bool m_statusConditionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -331,6 +331,16 @@ namespace Model
     inline KafkaSettings& WithSslEndpointIdentificationAlgorithm(const KafkaSslEndpointIdentificationAlgorithm& value) { SetSslEndpointIdentificationAlgorithm(value); return *this;}
     inline KafkaSettings& WithSslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm&& value) { SetSslEndpointIdentificationAlgorithm(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies using the large integer value with Kafka.</p>
+     */
+    inline bool GetUseLargeIntegerValue() const{ return m_useLargeIntegerValue; }
+    inline bool UseLargeIntegerValueHasBeenSet() const { return m_useLargeIntegerValueHasBeenSet; }
+    inline void SetUseLargeIntegerValue(bool value) { m_useLargeIntegerValueHasBeenSet = true; m_useLargeIntegerValue = value; }
+    inline KafkaSettings& WithUseLargeIntegerValue(bool value) { SetUseLargeIntegerValue(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_broker;
@@ -392,6 +402,9 @@ namespace Model
 
     KafkaSslEndpointIdentificationAlgorithm m_sslEndpointIdentificationAlgorithm;
     bool m_sslEndpointIdentificationAlgorithmHasBeenSet = false;
+
+    bool m_useLargeIntegerValue;
+    bool m_useLargeIntegerValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -948,6 +948,32 @@ namespace Connect
         }
 
         /**
+         * <p>Creates an hours of operation override in an Amazon Connect hours of
+         * operation resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateHoursOfOperationOverrideOutcome CreateHoursOfOperationOverride(const Model::CreateHoursOfOperationOverrideRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateHoursOfOperationOverride that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateHoursOfOperationOverrideRequestT = Model::CreateHoursOfOperationOverrideRequest>
+        Model::CreateHoursOfOperationOverrideOutcomeCallable CreateHoursOfOperationOverrideCallable(const CreateHoursOfOperationOverrideRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CreateHoursOfOperationOverride, request);
+        }
+
+        /**
+         * An Async wrapper for CreateHoursOfOperationOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateHoursOfOperationOverrideRequestT = Model::CreateHoursOfOperationOverrideRequest>
+        void CreateHoursOfOperationOverrideAsync(const CreateHoursOfOperationOverrideRequestT& request, const CreateHoursOfOperationOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CreateHoursOfOperationOverride, request, handler, context);
+        }
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Initiates an Amazon Connect instance with all the supported
          * channels enabled. It does not attach any storage, such as Amazon Simple Storage
@@ -1160,21 +1186,19 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Creates a new queue for the specified Amazon Connect
-         * instance.</p>  <ul> <li> <p>If the phone number is claimed to a
-         * traffic distribution group that was created in the same Region as the Amazon
-         * Connect instance where you are calling this API, then you can use a full phone
-         * number ARN or a UUID for <code>OutboundCallerIdNumberId</code>. However, if the
-         * phone number is claimed to a traffic distribution group that is in one Region,
-         * and you are calling this API from an instance in another Amazon Web Services
-         * Region that is associated with the traffic distribution group, you must provide
-         * a full phone number ARN. If a UUID is provided in this scenario, you will
-         * receive a <code>ResourceNotFoundException</code>.</p> </li> <li> <p>Only use the
-         * phone number ARN format that doesn't contain <code>instance</code> in the path,
-         * for example,
-         * <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>. This is the
-         * same ARN format that is returned when you call the <a
+         * <p>Creates a new queue for the specified Amazon Connect instance.</p>
+         *  <ul> <li> <p>If the phone number is claimed to a traffic
+         * distribution group that was created in the same Region as the Amazon Connect
+         * instance where you are calling this API, then you can use a full phone number
+         * ARN or a UUID for <code>OutboundCallerIdNumberId</code>. However, if the phone
+         * number is claimed to a traffic distribution group that is in one Region, and you
+         * are calling this API from an instance in another Amazon Web Services Region that
+         * is associated with the traffic distribution group, you must provide a full phone
+         * number ARN. If a UUID is provided in this scenario, you will receive a
+         * <code>ResourceNotFoundException</code>.</p> </li> <li> <p>Only use the phone
+         * number ARN format that doesn't contain <code>instance</code> in the path, for
+         * example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
+         * This is the same ARN format that is returned when you call the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
          * API.</p> </li> <li> <p>If you plan to use IAM policies to allow/deny access to
          * this API for phone number resources claimed to a traffic distribution group, see
@@ -1765,6 +1789,32 @@ namespace Connect
         void DeleteHoursOfOperationAsync(const DeleteHoursOfOperationRequestT& request, const DeleteHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DeleteHoursOfOperation, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an hours of operation override in an Amazon Connect hours of
+         * operation resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteHoursOfOperationOverrideOutcome DeleteHoursOfOperationOverride(const Model::DeleteHoursOfOperationOverrideRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteHoursOfOperationOverride that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteHoursOfOperationOverrideRequestT = Model::DeleteHoursOfOperationOverrideRequest>
+        Model::DeleteHoursOfOperationOverrideOutcomeCallable DeleteHoursOfOperationOverrideCallable(const DeleteHoursOfOperationOverrideRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeleteHoursOfOperationOverride, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteHoursOfOperationOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteHoursOfOperationOverrideRequestT = Model::DeleteHoursOfOperationOverrideRequest>
+        void DeleteHoursOfOperationOverrideAsync(const DeleteHoursOfOperationOverrideRequestT& request, const DeleteHoursOfOperationOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeleteHoursOfOperationOverride, request, handler, context);
         }
 
         /**
@@ -2517,6 +2567,31 @@ namespace Connect
         void DescribeHoursOfOperationAsync(const DescribeHoursOfOperationRequestT& request, const DescribeHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DescribeHoursOfOperation, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the hours of operation override.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperationOverride">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeHoursOfOperationOverrideOutcome DescribeHoursOfOperationOverride(const Model::DescribeHoursOfOperationOverrideRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeHoursOfOperationOverride that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeHoursOfOperationOverrideRequestT = Model::DescribeHoursOfOperationOverrideRequest>
+        Model::DescribeHoursOfOperationOverrideOutcomeCallable DescribeHoursOfOperationOverrideCallable(const DescribeHoursOfOperationOverrideRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DescribeHoursOfOperationOverride, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeHoursOfOperationOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeHoursOfOperationOverrideRequestT = Model::DescribeHoursOfOperationOverrideRequest>
+        void DescribeHoursOfOperationOverrideAsync(const DescribeHoursOfOperationOverrideRequestT& request, const DescribeHoursOfOperationOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DescribeHoursOfOperationOverride, request, handler, context);
         }
 
         /**
@@ -3486,6 +3561,32 @@ namespace Connect
         }
 
         /**
+         * <p>Get the hours of operations with the effective override
+         * applied.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEffectiveHoursOfOperations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEffectiveHoursOfOperationsOutcome GetEffectiveHoursOfOperations(const Model::GetEffectiveHoursOfOperationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEffectiveHoursOfOperations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEffectiveHoursOfOperationsRequestT = Model::GetEffectiveHoursOfOperationsRequest>
+        Model::GetEffectiveHoursOfOperationsOutcomeCallable GetEffectiveHoursOfOperationsCallable(const GetEffectiveHoursOfOperationsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::GetEffectiveHoursOfOperations, request);
+        }
+
+        /**
+         * An Async wrapper for GetEffectiveHoursOfOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEffectiveHoursOfOperationsRequestT = Model::GetEffectiveHoursOfOperationsRequest>
+        void GetEffectiveHoursOfOperationsAsync(const GetEffectiveHoursOfOperationsRequestT& request, const GetEffectiveHoursOfOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::GetEffectiveHoursOfOperations, request, handler, context);
+        }
+
+        /**
          * <p>Supports SAML sign-in for Amazon Connect. Retrieves a token for federation.
          * The token is for the Amazon Connect user which corresponds to the IAM
          * credentials that were used to invoke this action. </p> <p>For more information
@@ -4139,6 +4240,31 @@ namespace Connect
         void ListFlowAssociationsAsync(const ListFlowAssociationsRequestT& request, const ListFlowAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ListFlowAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>List the hours of operation overrides.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperationOverrides">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHoursOfOperationOverridesOutcome ListHoursOfOperationOverrides(const Model::ListHoursOfOperationOverridesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListHoursOfOperationOverrides that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListHoursOfOperationOverridesRequestT = Model::ListHoursOfOperationOverridesRequest>
+        Model::ListHoursOfOperationOverridesOutcomeCallable ListHoursOfOperationOverridesCallable(const ListHoursOfOperationOverridesRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListHoursOfOperationOverrides, request);
+        }
+
+        /**
+         * An Async wrapper for ListHoursOfOperationOverrides that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListHoursOfOperationOverridesRequestT = Model::ListHoursOfOperationOverridesRequest>
+        void ListHoursOfOperationOverridesAsync(const ListHoursOfOperationOverridesRequestT& request, const ListHoursOfOperationOverridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListHoursOfOperationOverrides, request, handler, context);
         }
 
         /**
@@ -5421,6 +5547,31 @@ namespace Connect
         void SearchEmailAddressesAsync(const SearchEmailAddressesRequestT& request, const SearchEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::SearchEmailAddresses, request, handler, context);
+        }
+
+        /**
+         * <p>Searches the hours of operation overrides.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperationOverrides">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchHoursOfOperationOverridesOutcome SearchHoursOfOperationOverrides(const Model::SearchHoursOfOperationOverridesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchHoursOfOperationOverrides that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchHoursOfOperationOverridesRequestT = Model::SearchHoursOfOperationOverridesRequest>
+        Model::SearchHoursOfOperationOverridesOutcomeCallable SearchHoursOfOperationOverridesCallable(const SearchHoursOfOperationOverridesRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SearchHoursOfOperationOverrides, request);
+        }
+
+        /**
+         * An Async wrapper for SearchHoursOfOperationOverrides that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchHoursOfOperationOverridesRequestT = Model::SearchHoursOfOperationOverridesRequest>
+        void SearchHoursOfOperationOverridesAsync(const SearchHoursOfOperationOverridesRequestT& request, const SearchHoursOfOperationOverridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SearchHoursOfOperationOverrides, request, handler, context);
         }
 
         /**
@@ -6964,6 +7115,31 @@ namespace Connect
         void UpdateHoursOfOperationAsync(const UpdateHoursOfOperationRequestT& request, const UpdateHoursOfOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::UpdateHoursOfOperation, request, handler, context);
+        }
+
+        /**
+         * <p>Update the hours of operation override.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperationOverride">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateHoursOfOperationOverrideOutcome UpdateHoursOfOperationOverride(const Model::UpdateHoursOfOperationOverrideRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateHoursOfOperationOverride that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateHoursOfOperationOverrideRequestT = Model::UpdateHoursOfOperationOverrideRequest>
+        Model::UpdateHoursOfOperationOverrideOutcomeCallable UpdateHoursOfOperationOverrideCallable(const UpdateHoursOfOperationOverrideRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdateHoursOfOperationOverride, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateHoursOfOperationOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateHoursOfOperationOverrideRequestT = Model::UpdateHoursOfOperationOverrideRequest>
+        void UpdateHoursOfOperationOverrideAsync(const UpdateHoursOfOperationOverrideRequestT& request, const UpdateHoursOfOperationOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdateHoursOfOperationOverride, request, handler, context);
         }
 
         /**

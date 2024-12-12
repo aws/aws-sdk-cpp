@@ -1363,7 +1363,10 @@ namespace Glue
         }
 
         /**
-         * <p>Creates a new trigger.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new trigger.</p> <p>Job arguments may be logged. Do not pass
+         * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Amazon
+         * Web Services Secrets Manager or other secret management mechanism if you intend
+         * to keep them within the Job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTrigger">AWS
          * API Reference</a></p>
          */
@@ -3370,7 +3373,7 @@ namespace Glue
 
         /**
          * <p>Retrieves the metadata for a given job run. Job run history is accessible for
-         * 90 days for your workflow and job run.</p><p><h3>See Also:</h3>   <a
+         * 365 days for your workflow and job run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRun">AWS API
          * Reference</a></p>
          */
@@ -3395,8 +3398,9 @@ namespace Glue
         }
 
         /**
-         * <p>Retrieves metadata for all runs of a given job definition.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves metadata for all runs of a given job definition.</p> <p>
+         * <code>GetJobRuns</code> returns the job runs in chronological order, with the
+         * newest jobs returned first.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRuns">AWS API
          * Reference</a></p>
          */
@@ -6833,7 +6837,10 @@ namespace Glue
         }
 
         /**
-         * <p>Updates a trigger definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a trigger definition.</p> <p>Job arguments may be logged. Do not pass
+         * plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Amazon
+         * Web Services Secrets Manager or other secret management mechanism if you intend
+         * to keep them within the Job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTrigger">AWS
          * API Reference</a></p>
          */

@@ -21,7 +21,11 @@ namespace Model
 ContactFlowModuleSearchCriteria::ContactFlowModuleSearchCriteria() : 
     m_orConditionsHasBeenSet(false),
     m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false)
+    m_stringConditionHasBeenSet(false),
+    m_stateCondition(ContactFlowModuleState::NOT_SET),
+    m_stateConditionHasBeenSet(false),
+    m_statusCondition(ContactFlowModuleStatus::NOT_SET),
+    m_statusConditionHasBeenSet(false)
 {
 }
 
@@ -60,6 +64,20 @@ ContactFlowModuleSearchCriteria& ContactFlowModuleSearchCriteria::operator =(Jso
     m_stringConditionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StateCondition"))
+  {
+    m_stateCondition = ContactFlowModuleStateMapper::GetContactFlowModuleStateForName(jsonValue.GetString("StateCondition"));
+
+    m_stateConditionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatusCondition"))
+  {
+    m_statusCondition = ContactFlowModuleStatusMapper::GetContactFlowModuleStatusForName(jsonValue.GetString("StatusCondition"));
+
+    m_statusConditionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +111,16 @@ JsonValue ContactFlowModuleSearchCriteria::Jsonize() const
   {
    payload.WithObject("StringCondition", m_stringCondition.Jsonize());
 
+  }
+
+  if(m_stateConditionHasBeenSet)
+  {
+   payload.WithString("StateCondition", ContactFlowModuleStateMapper::GetNameForContactFlowModuleState(m_stateCondition));
+  }
+
+  if(m_statusConditionHasBeenSet)
+  {
+   payload.WithString("StatusCondition", ContactFlowModuleStatusMapper::GetNameForContactFlowModuleStatus(m_statusCondition));
   }
 
   return payload;

@@ -50,7 +50,9 @@ KafkaSettings::KafkaSettings() :
     m_saslMechanism(KafkaSaslMechanism::NOT_SET),
     m_saslMechanismHasBeenSet(false),
     m_sslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm::NOT_SET),
-    m_sslEndpointIdentificationAlgorithmHasBeenSet(false)
+    m_sslEndpointIdentificationAlgorithmHasBeenSet(false),
+    m_useLargeIntegerValue(false),
+    m_useLargeIntegerValueHasBeenSet(false)
 {
 }
 
@@ -202,6 +204,13 @@ KafkaSettings& KafkaSettings::operator =(JsonView jsonValue)
     m_sslEndpointIdentificationAlgorithmHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UseLargeIntegerValue"))
+  {
+    m_useLargeIntegerValue = jsonValue.GetBool("UseLargeIntegerValue");
+
+    m_useLargeIntegerValueHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -323,6 +332,12 @@ JsonValue KafkaSettings::Jsonize() const
   if(m_sslEndpointIdentificationAlgorithmHasBeenSet)
   {
    payload.WithString("SslEndpointIdentificationAlgorithm", KafkaSslEndpointIdentificationAlgorithmMapper::GetNameForKafkaSslEndpointIdentificationAlgorithm(m_sslEndpointIdentificationAlgorithm));
+  }
+
+  if(m_useLargeIntegerValueHasBeenSet)
+  {
+   payload.WithBool("UseLargeIntegerValue", m_useLargeIntegerValue);
+
   }
 
   return payload;
