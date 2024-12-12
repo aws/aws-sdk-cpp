@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The job name for the user import job.</p>
+     * <p>A friendly name for the user import job.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
@@ -54,8 +54,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
+     * <p>The ID of the user pool that you want to import users into.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
@@ -69,8 +68,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import
-     * job.</p>
+     * <p>You must specify an IAM role that has permission to log import-job results to
+     * Amazon CloudWatch Logs. This parameter is the ARN of that role.</p>
      */
     inline const Aws::String& GetCloudWatchLogsRoleArn() const{ return m_cloudWatchLogsRoleArn; }
     inline bool CloudWatchLogsRoleArnHasBeenSet() const { return m_cloudWatchLogsRoleArnHasBeenSet; }

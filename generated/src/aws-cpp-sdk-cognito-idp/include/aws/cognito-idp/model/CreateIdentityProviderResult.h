@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The newly created IdP object.</p>
+     * <p>The details of the new user pool IdP.</p>
      */
     inline const IdentityProviderType& GetIdentityProvider() const{ return m_identityProvider; }
     inline void SetIdentityProvider(const IdentityProviderType& value) { m_identityProvider = value; }

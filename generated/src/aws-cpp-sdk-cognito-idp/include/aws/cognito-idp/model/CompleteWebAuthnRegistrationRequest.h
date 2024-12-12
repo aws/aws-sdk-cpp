@@ -38,7 +38,7 @@ namespace Model
     ///@{
     /**
      * <p>A valid access token that Amazon Cognito issued to the user whose passkey
-     * registration you want to verify.</p>
+     * registration you want to complete.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }

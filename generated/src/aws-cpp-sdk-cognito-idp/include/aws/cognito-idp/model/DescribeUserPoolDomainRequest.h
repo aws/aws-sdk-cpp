@@ -36,9 +36,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The domain string. For custom domains, this is the fully-qualified domain
-     * name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains,
-     * this is the prefix alone, such as <code>auth</code>.</p>
+     * <p>The domain that you want to describe. For custom domains, this is the
+     * fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon
+     * Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }

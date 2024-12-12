@@ -58,7 +58,10 @@ namespace Model
     ///@{
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
-     * key of a user pool client and username plus the client ID in the message.</p>
+     * key of a user pool client and username plus the client ID in the message. For
+     * more information about <code>SecretHash</code>, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+     * secret hash values</a>.</p>
      */
     inline const Aws::String& GetSecretHash() const{ return m_secretHash; }
     inline bool SecretHashHasBeenSet() const { return m_secretHashHasBeenSet; }
@@ -90,7 +93,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The confirmation code sent by a user's request to confirm registration.</p>
+     * <p>The confirmation code that your user pool sent in response to the
+     * <code>SignUp</code> request.</p>
      */
     inline const Aws::String& GetConfirmationCode() const{ return m_confirmationCode; }
     inline bool ConfirmationCodeHasBeenSet() const { return m_confirmationCodeHasBeenSet; }
@@ -104,13 +108,21 @@ namespace Model
 
     ///@{
     /**
-     * <p>Boolean to be specified to force user confirmation irrespective of existing
-     * alias. By default set to <code>False</code>. If this parameter is set to
-     * <code>True</code> and the phone number/email used for sign up confirmation
-     * already exists as an alias with a different user, the API call will migrate the
-     * alias from the previous user to the newly created user being confirmed. If set
-     * to <code>False</code>, the API will throw an <b>AliasExistsException</b>
-     * error.</p>
+     * <p>When <code>true</code>, forces user confirmation despite any existing
+     * aliases. Defaults to <code>false</code>. A value of <code>true</code> migrates
+     * the alias from an existing user to the new user if an existing user already has
+     * the phone number or email address as an alias.</p> <p>Say, for example, that an
+     * existing user has an <code>email</code> attribute of
+     * <code>bob@example.com</code> and email is an alias in your user pool. If the new
+     * user also has an email of <code>bob@example.com</code> and your
+     * <code>ConfirmSignUp</code> response sets <code>ForceAliasCreation</code> to
+     * <code>true</code>, the new user can sign in with a username of
+     * <code>bob@example.com</code> and the existing user can no longer do so.</p>
+     * <p>If <code>false</code> and an attribute belongs to an existing alias, this
+     * request returns an <b>AliasExistsException</b> error.</p> <p>For more
+     * information about sign-in aliases, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases">Customizing
+     * sign-in attributes</a>.</p>
      */
     inline bool GetForceAliasCreation() const{ return m_forceAliasCreation; }
     inline bool ForceAliasCreationHasBeenSet() const { return m_forceAliasCreationHasBeenSet; }
@@ -136,7 +148,9 @@ namespace Model
      * <p>Contextual data about your user session, such as the device fingerprint, IP
      * address, or location. Amazon Cognito advanced security evaluates the risk of an
      * authentication event based on the context that your app generates and passes to
-     * Amazon Cognito when it makes API requests.</p>
+     * Amazon Cognito when it makes API requests.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
+     * data for threat protection in applications</a>.</p>
      */
     inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
     inline bool UserContextDataHasBeenSet() const { return m_userContextDataHasBeenSet; }
@@ -160,14 +174,15 @@ namespace Model
      * your workflow for your specific needs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
-     * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
-     * parameter, remember that Amazon Cognito won't do the following:</p> <ul> <li>
-     * <p>Store the ClientMetadata value. This data is available only to Lambda
-     * triggers that are assigned to a user pool to support custom workflows. If your
-     * user pool configuration doesn't include triggers, the ClientMetadata parameter
-     * serves no purpose.</p> </li> <li> <p>Validate the ClientMetadata value.</p>
-     * </li> <li> <p>Encrypt the ClientMetadata value. Don't use Amazon Cognito to
-     * provide sensitive information.</p> </li> </ul> 
+     * Cognito Developer Guide</i>.</p>  <p>When you use the
+     * <code>ClientMetadata</code> parameter, note that Amazon Cognito won't do the
+     * following:</p> <ul> <li> <p>Store the <code>ClientMetadata</code> value. This
+     * data is available only to Lambda triggers that are assigned to a user pool to
+     * support custom workflows. If your user pool configuration doesn't include
+     * triggers, the <code>ClientMetadata</code> parameter serves no purpose.</p> </li>
+     * <li> <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li>
+     * <p>Encrypt the <code>ClientMetadata</code> value. Don't send sensitive
+     * information in this parameter.</p> </li> </ul> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }

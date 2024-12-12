@@ -35,8 +35,8 @@ namespace Model
     ///@{
     /**
      * <p>The version of managed login branding applied your domain. A value of
-     * <code>1</code> indicates hosted UI (classic) branding and a version of
-     * <code>2</code> indicates managed login branding.</p>
+     * <code>1</code> indicates hosted UI (classic) and a version of <code>2</code>
+     * indicates managed login.</p>
      */
     inline int GetManagedLoginVersion() const{ return m_managedLoginVersion; }
     inline void SetManagedLoginVersion(int value) { m_managedLoginVersion = value; }

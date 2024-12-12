@@ -42,7 +42,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The devices in the list of devices response.</p>
+     * <p>An array of devices and their information. Each entry that's returned
+     * includes device information, last-accessed and created dates, and the device
+     * key.</p>
      */
     inline const Aws::Vector<DeviceType>& GetDevices() const{ return m_devices; }
     inline void SetDevices(const Aws::Vector<DeviceType>& value) { m_devices = value; }

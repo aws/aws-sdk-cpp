@@ -48,10 +48,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>The template for the email message that your user pool sends to users with an
-     * MFA code. The message must contain the <code>{####}</code> placeholder. In the
-     * message, Amazon Cognito replaces this placeholder with the code. If you don't
-     * provide this parameter, Amazon Cognito sends messages in the default format.</p>
+     * <p>The template for the email message that your user pool sends to users with a
+     * code for MFA and sign-in with an email OTP. The message must contain the
+     * <code>{####}</code> placeholder. In the message, Amazon Cognito replaces this
+     * placeholder with the code. If you don't provide this parameter, Amazon Cognito
+     * sends messages in the default format.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
@@ -65,8 +66,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The subject of the email message that your user pool sends to users with an
-     * MFA code.</p>
+     * <p>The subject of the email message that your user pool sends to users with a
+     * code for MFA and email OTP sign-in.</p>
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }

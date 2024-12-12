@@ -7,6 +7,7 @@
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/timestream-influxdb/model/Status.h>
+#include <aws/timestream-influxdb/model/NetworkType.h>
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
 #include <aws/timestream-influxdb/model/DbStorageType.h>
 #include <aws/timestream-influxdb/model/DeploymentType.h>
@@ -110,6 +111,19 @@ namespace Model
     inline int GetPort() const{ return m_port; }
     inline void SetPort(int value) { m_port = value; }
     inline DeleteDbInstanceResult& WithPort(int value) { SetPort(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the networkType of the Timestream for InfluxDB instance is
+     * IPV4, which can communicate over IPv4 protocol only, or DUAL, which can
+     * communicate over both IPv4 and IPv6 protocols.</p>
+     */
+    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+    inline void SetNetworkType(const NetworkType& value) { m_networkType = value; }
+    inline void SetNetworkType(NetworkType&& value) { m_networkType = std::move(value); }
+    inline DeleteDbInstanceResult& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
+    inline DeleteDbInstanceResult& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -246,10 +260,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret containing
-     * the initial InfluxDB authorization parameters. The secret value is a JSON
-     * formatted key-value pair holding InfluxDB authorization values: organization,
-     * bucket, username, and password.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+     * secret containing the initial InfluxDB authorization parameters. The secret
+     * value is a JSON formatted key-value pair holding InfluxDB authorization values:
+     * organization, bucket, username, and password.</p>
      */
     inline const Aws::String& GetInfluxAuthParametersSecretArn() const{ return m_influxAuthParametersSecretArn; }
     inline void SetInfluxAuthParametersSecretArn(const Aws::String& value) { m_influxAuthParametersSecretArn = value; }
@@ -283,6 +297,8 @@ namespace Model
     Aws::String m_endpoint;
 
     int m_port;
+
+    NetworkType m_networkType;
 
     DbInstanceType m_dbInstanceType;
 

@@ -41,7 +41,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A container for the user pool details.</p>
+     * <p>The details of the created user pool.</p>
      */
     inline const UserPoolType& GetUserPool() const{ return m_userPool; }
     inline void SetUserPool(const UserPoolType& value) { m_userPool = value; }

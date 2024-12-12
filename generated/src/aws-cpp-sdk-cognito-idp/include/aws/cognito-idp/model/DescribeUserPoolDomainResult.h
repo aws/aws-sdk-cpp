@@ -35,7 +35,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A domain description object containing information about the domain.</p>
+     * <p>The details of the requested user pool domain.</p>
      */
     inline const DomainDescriptionType& GetDomainDescription() const{ return m_domainDescription; }
     inline void SetDomainDescription(const DomainDescriptionType& value) { m_domainDescription = value; }

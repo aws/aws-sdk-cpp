@@ -19,7 +19,9 @@ GetDashboardForJobRunRequest::GetDashboardForJobRunRequest() :
     m_applicationIdHasBeenSet(false),
     m_jobRunIdHasBeenSet(false),
     m_attempt(0),
-    m_attemptHasBeenSet(false)
+    m_attemptHasBeenSet(false),
+    m_accessSystemProfileLogs(false),
+    m_accessSystemProfileLogsHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,13 @@ void GetDashboardForJobRunRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_attempt;
       uri.AddQueryStringParameter("attempt", ss.str());
+      ss.str("");
+    }
+
+    if(m_accessSystemProfileLogsHasBeenSet)
+    {
+      ss << m_accessSystemProfileLogs;
+      uri.AddQueryStringParameter("accessSystemProfileLogs", ss.str());
       ss.str("");
     }
 

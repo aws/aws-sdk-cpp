@@ -13,6 +13,7 @@
 #include <aws/timestream-influxdb/model/DeploymentType.h>
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/timestream-influxdb/model/NetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -81,7 +82,8 @@ namespace Model
      * <p>The password of the initial admin user created in InfluxDB. This password
      * will allow you to access the InfluxDB UI to perform various administrative tasks
      * and also use the InfluxDB CLI to create an operator token. These attributes will
-     * be stored in a Secret created in AWS SecretManager in your account.</p>
+     * be stored in a Secret created in Amazon Web Services SecretManager in your
+     * account.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
@@ -277,6 +279,20 @@ namespace Model
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline CreateDbInstanceRequest& WithPort(int value) { SetPort(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether the networkType of the Timestream for InfluxDB instance is
+     * IPV4, which can communicate over IPv4 protocol only, or DUAL, which can
+     * communicate over both IPv4 and IPv6 protocols.</p>
+     */
+    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(const NetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline void SetNetworkType(NetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+    inline CreateDbInstanceRequest& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
+    inline CreateDbInstanceRequest& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -326,6 +342,9 @@ namespace Model
 
     int m_port;
     bool m_portHasBeenSet = false;
+
+    NetworkType m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model
