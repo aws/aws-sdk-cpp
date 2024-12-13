@@ -181,7 +181,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
 
         return serviceModelsIndices.stream().map(index -> 
         {
-            if(index == 0 && serviceModels.get(index).isUseSmithyClient())
+            if(serviceModels.get(index).isUseSmithyClient())
             {
                 return GenerateSmithyClientSourceFile(serviceModels.get(index), index);
             }
