@@ -24,6 +24,7 @@
 #include <aws/servicediscovery/model/CreateServiceResult.h>
 #include <aws/servicediscovery/model/DeleteNamespaceResult.h>
 #include <aws/servicediscovery/model/DeleteServiceResult.h>
+#include <aws/servicediscovery/model/DeleteServiceAttributesResult.h>
 #include <aws/servicediscovery/model/DeregisterInstanceResult.h>
 #include <aws/servicediscovery/model/DiscoverInstancesResult.h>
 #include <aws/servicediscovery/model/DiscoverInstancesRevisionResult.h>
@@ -32,6 +33,7 @@
 #include <aws/servicediscovery/model/GetNamespaceResult.h>
 #include <aws/servicediscovery/model/GetOperationResult.h>
 #include <aws/servicediscovery/model/GetServiceResult.h>
+#include <aws/servicediscovery/model/GetServiceAttributesResult.h>
 #include <aws/servicediscovery/model/ListInstancesResult.h>
 #include <aws/servicediscovery/model/ListNamespacesResult.h>
 #include <aws/servicediscovery/model/ListOperationsResult.h>
@@ -44,6 +46,7 @@
 #include <aws/servicediscovery/model/UpdatePrivateDnsNamespaceResult.h>
 #include <aws/servicediscovery/model/UpdatePublicDnsNamespaceResult.h>
 #include <aws/servicediscovery/model/UpdateServiceResult.h>
+#include <aws/servicediscovery/model/UpdateServiceAttributesResult.h>
 #include <aws/servicediscovery/model/ListServicesRequest.h>
 #include <aws/servicediscovery/model/ListNamespacesRequest.h>
 #include <aws/servicediscovery/model/ListOperationsRequest.h>
@@ -94,6 +97,7 @@ namespace Aws
       class CreateServiceRequest;
       class DeleteNamespaceRequest;
       class DeleteServiceRequest;
+      class DeleteServiceAttributesRequest;
       class DeregisterInstanceRequest;
       class DiscoverInstancesRequest;
       class DiscoverInstancesRevisionRequest;
@@ -102,6 +106,7 @@ namespace Aws
       class GetNamespaceRequest;
       class GetOperationRequest;
       class GetServiceRequest;
+      class GetServiceAttributesRequest;
       class ListInstancesRequest;
       class ListNamespacesRequest;
       class ListOperationsRequest;
@@ -115,6 +120,7 @@ namespace Aws
       class UpdatePrivateDnsNamespaceRequest;
       class UpdatePublicDnsNamespaceRequest;
       class UpdateServiceRequest;
+      class UpdateServiceAttributesRequest;
       /* End of service model forward declarations required in ServiceDiscoveryClient header */
 
       /* Service model Outcome class definitions */
@@ -124,6 +130,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateServiceResult, ServiceDiscoveryError> CreateServiceOutcome;
       typedef Aws::Utils::Outcome<DeleteNamespaceResult, ServiceDiscoveryError> DeleteNamespaceOutcome;
       typedef Aws::Utils::Outcome<DeleteServiceResult, ServiceDiscoveryError> DeleteServiceOutcome;
+      typedef Aws::Utils::Outcome<DeleteServiceAttributesResult, ServiceDiscoveryError> DeleteServiceAttributesOutcome;
       typedef Aws::Utils::Outcome<DeregisterInstanceResult, ServiceDiscoveryError> DeregisterInstanceOutcome;
       typedef Aws::Utils::Outcome<DiscoverInstancesResult, ServiceDiscoveryError> DiscoverInstancesOutcome;
       typedef Aws::Utils::Outcome<DiscoverInstancesRevisionResult, ServiceDiscoveryError> DiscoverInstancesRevisionOutcome;
@@ -132,6 +139,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetNamespaceResult, ServiceDiscoveryError> GetNamespaceOutcome;
       typedef Aws::Utils::Outcome<GetOperationResult, ServiceDiscoveryError> GetOperationOutcome;
       typedef Aws::Utils::Outcome<GetServiceResult, ServiceDiscoveryError> GetServiceOutcome;
+      typedef Aws::Utils::Outcome<GetServiceAttributesResult, ServiceDiscoveryError> GetServiceAttributesOutcome;
       typedef Aws::Utils::Outcome<ListInstancesResult, ServiceDiscoveryError> ListInstancesOutcome;
       typedef Aws::Utils::Outcome<ListNamespacesResult, ServiceDiscoveryError> ListNamespacesOutcome;
       typedef Aws::Utils::Outcome<ListOperationsResult, ServiceDiscoveryError> ListOperationsOutcome;
@@ -145,6 +153,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdatePrivateDnsNamespaceResult, ServiceDiscoveryError> UpdatePrivateDnsNamespaceOutcome;
       typedef Aws::Utils::Outcome<UpdatePublicDnsNamespaceResult, ServiceDiscoveryError> UpdatePublicDnsNamespaceOutcome;
       typedef Aws::Utils::Outcome<UpdateServiceResult, ServiceDiscoveryError> UpdateServiceOutcome;
+      typedef Aws::Utils::Outcome<UpdateServiceAttributesResult, ServiceDiscoveryError> UpdateServiceAttributesOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -154,6 +163,7 @@ namespace Aws
       typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
       typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
       typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
+      typedef std::future<DeleteServiceAttributesOutcome> DeleteServiceAttributesOutcomeCallable;
       typedef std::future<DeregisterInstanceOutcome> DeregisterInstanceOutcomeCallable;
       typedef std::future<DiscoverInstancesOutcome> DiscoverInstancesOutcomeCallable;
       typedef std::future<DiscoverInstancesRevisionOutcome> DiscoverInstancesRevisionOutcomeCallable;
@@ -162,6 +172,7 @@ namespace Aws
       typedef std::future<GetNamespaceOutcome> GetNamespaceOutcomeCallable;
       typedef std::future<GetOperationOutcome> GetOperationOutcomeCallable;
       typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
+      typedef std::future<GetServiceAttributesOutcome> GetServiceAttributesOutcomeCallable;
       typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
       typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
       typedef std::future<ListOperationsOutcome> ListOperationsOutcomeCallable;
@@ -175,6 +186,7 @@ namespace Aws
       typedef std::future<UpdatePrivateDnsNamespaceOutcome> UpdatePrivateDnsNamespaceOutcomeCallable;
       typedef std::future<UpdatePublicDnsNamespaceOutcome> UpdatePublicDnsNamespaceOutcomeCallable;
       typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
+      typedef std::future<UpdateServiceAttributesOutcome> UpdateServiceAttributesOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -187,6 +199,7 @@ namespace Aws
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::CreateServiceRequest&, const Model::CreateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::DeleteNamespaceRequest&, const Model::DeleteNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNamespaceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceResponseReceivedHandler;
+    typedef std::function<void(const ServiceDiscoveryClient*, const Model::DeleteServiceAttributesRequest&, const Model::DeleteServiceAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceAttributesResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::DeregisterInstanceRequest&, const Model::DeregisterInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterInstanceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::DiscoverInstancesRequest&, const Model::DiscoverInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverInstancesResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::DiscoverInstancesRevisionRequest&, const Model::DiscoverInstancesRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverInstancesRevisionResponseReceivedHandler;
@@ -195,6 +208,7 @@ namespace Aws
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::GetNamespaceRequest&, const Model::GetNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNamespaceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::GetOperationRequest&, const Model::GetOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOperationResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::GetServiceRequest&, const Model::GetServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceResponseReceivedHandler;
+    typedef std::function<void(const ServiceDiscoveryClient*, const Model::GetServiceAttributesRequest&, const Model::GetServiceAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceAttributesResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::ListInstancesRequest&, const Model::ListInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstancesResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::ListNamespacesRequest&, const Model::ListNamespacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNamespacesResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::ListOperationsRequest&, const Model::ListOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOperationsResponseReceivedHandler;
@@ -208,6 +222,7 @@ namespace Aws
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::UpdatePrivateDnsNamespaceRequest&, const Model::UpdatePrivateDnsNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePrivateDnsNamespaceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::UpdatePublicDnsNamespaceRequest&, const Model::UpdatePublicDnsNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePublicDnsNamespaceResponseReceivedHandler;
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
+    typedef std::function<void(const ServiceDiscoveryClient*, const Model::UpdateServiceAttributesRequest&, const Model::UpdateServiceAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceAttributesResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace ServiceDiscovery
 } // namespace Aws

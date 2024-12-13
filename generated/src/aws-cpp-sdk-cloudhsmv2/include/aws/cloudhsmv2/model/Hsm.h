@@ -111,6 +111,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The IPv6 address (if any) of the HSM's elastic network interface (ENI).</p>
+     */
+    inline const Aws::String& GetEniIpV6() const{ return m_eniIpV6; }
+    inline bool EniIpV6HasBeenSet() const { return m_eniIpV6HasBeenSet; }
+    inline void SetEniIpV6(const Aws::String& value) { m_eniIpV6HasBeenSet = true; m_eniIpV6 = value; }
+    inline void SetEniIpV6(Aws::String&& value) { m_eniIpV6HasBeenSet = true; m_eniIpV6 = std::move(value); }
+    inline void SetEniIpV6(const char* value) { m_eniIpV6HasBeenSet = true; m_eniIpV6.assign(value); }
+    inline Hsm& WithEniIpV6(const Aws::String& value) { SetEniIpV6(value); return *this;}
+    inline Hsm& WithEniIpV6(Aws::String&& value) { SetEniIpV6(std::move(value)); return *this;}
+    inline Hsm& WithEniIpV6(const char* value) { SetEniIpV6(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The HSM's identifier (ID).</p>
      */
     inline const Aws::String& GetHsmId() const{ return m_hsmId; }
@@ -164,6 +178,9 @@ namespace Model
 
     Aws::String m_eniIp;
     bool m_eniIpHasBeenSet = false;
+
+    Aws::String m_eniIpV6;
+    bool m_eniIpV6HasBeenSet = false;
 
     Aws::String m_hsmId;
     bool m_hsmIdHasBeenSet = false;

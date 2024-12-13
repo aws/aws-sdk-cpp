@@ -27,10 +27,8 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the Amazon Route 53 DNS
-   * records that you want Cloud Map to create when you register an instance.</p>
-   *  <p>The record types of a service can only be changed by deleting the
-   * service and recreating it with a new <code>Dnsconfig</code>.</p>
-   * <p><h3>See Also:</h3>   <a
+   * records that you want Cloud Map to create when you register an
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DnsConfig">AWS
    * API Reference</a></p>
    */
@@ -89,6 +87,10 @@ namespace Model
     /**
      * <p>An array that contains one <code>DnsRecord</code> object for each Route 53
      * DNS record that you want Cloud Map to create when you register an instance.</p>
+     *  <p>The record type of a service specified in a
+     * <code>DnsRecord</code> object can't be updated. To change a record type, you
+     * need to delete the service and recreate it with a new
+     * <code>DnsConfig</code>.</p> 
      */
     inline const Aws::Vector<DnsRecord>& GetDnsRecords() const{ return m_dnsRecords; }
     inline bool DnsRecordsHasBeenSet() const { return m_dnsRecordsHasBeenSet; }

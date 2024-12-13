@@ -17,6 +17,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_hsmTypeHasBeenSet(false),
     m_sourceBackupIdHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
+    m_networkType(NetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_mode(ClusterMode::NOT_SET),
     m_modeHasBeenSet(false)
@@ -54,6 +56,11 @@ Aws::String CreateClusterRequest::SerializePayload() const
    }
    payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
 
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   if(m_tagListHasBeenSet)

@@ -39,6 +39,7 @@ namespace Model
     ResolveConflicts,
     MaxUnavailable,
     MaxUnavailablePercentage,
+    NodeRepairEnabled,
     ConfigurationValues,
     SecurityGroups,
     Subnets,

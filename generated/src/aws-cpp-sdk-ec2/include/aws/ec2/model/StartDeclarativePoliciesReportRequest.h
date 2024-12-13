@@ -53,7 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the S3 bucket where the report will be saved.</p>
+     * <p>The name of the S3 bucket where the report will be saved. The bucket must be
+     * in the same Region where the report generation request is made.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }

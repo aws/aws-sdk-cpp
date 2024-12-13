@@ -187,6 +187,7 @@
 #include <aws/ec2/model/DeleteNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/DeletePublicIpv4PoolResponse.h>
 #include <aws/ec2/model/DeleteQueuedReservedInstancesResponse.h>
+#include <aws/ec2/model/DeleteSecurityGroupResponse.h>
 #include <aws/ec2/model/DeleteSubnetCidrReservationResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorFilterResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorFilterRuleResponse.h>
@@ -1705,7 +1706,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteQueuedReservedInstancesResponse, EC2Error> DeleteQueuedReservedInstancesOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteRouteOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteRouteTableOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSecurityGroupOutcome;
+      typedef Aws::Utils::Outcome<DeleteSecurityGroupResponse, EC2Error> DeleteSecurityGroupOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSnapshotOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSpotDatafeedSubscriptionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteSubnetOutcome;

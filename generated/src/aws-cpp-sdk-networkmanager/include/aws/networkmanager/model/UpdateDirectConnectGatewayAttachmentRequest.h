@@ -53,7 +53,7 @@ namespace Model
      * <p>One or more edge locations to update for the Direct Connect gateway
      * attachment. The updated array of edge locations overwrites the previous array of
      * locations. <code>EdgeLocations</code> is only used for Direct Connect gateway
-     * attachments. Do</p>
+     * attachments.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEdgeLocations() const{ return m_edgeLocations; }
     inline bool EdgeLocationsHasBeenSet() const { return m_edgeLocationsHasBeenSet; }
