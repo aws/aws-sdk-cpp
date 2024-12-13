@@ -691,36 +691,51 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, fileName, true);
     }
 
-    protected List<SdkFileEntry> generateSmithyClientSourceFile(final List<ServiceModel> serviceModels) {
-        List<SdkFileEntry> sourceFiles = new ArrayList<>();
-        for (int i = 0; i < serviceModels.size(); i++) {
-            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientSource.vm", StandardCharsets.UTF_8.name());
+    protected SdkFileEntry GenerateSmithyClientSourceFile(final ServiceModel serviceModel, int i) {
+        
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientSource.vm", StandardCharsets.UTF_8.name());
 
-            VelocityContext context = createContext(serviceModels.get(i));
-            context.put("CppViewHelper", CppViewHelper.class);
-            Optional<String> firstAuthScheme = serviceModels.get(i).getAuthSchemes().stream().filter(entry->ResolverMapping.containsKey(entry)).findFirst();
-            if(firstAuthScheme.isPresent())
-            {
-                context.put("AuthSchemeResolver", ResolverMapping.get(firstAuthScheme.get()));
-            }
-            else
-            {
-                throw new RuntimeException(String.format("authSchemes '%s'",serviceModels.get(i).getAuthSchemes().stream().collect(Collectors.toList())
-                ));
-            }
-            context.put("AuthSchemeMapEntries", createAuthSchemeMapEntries(serviceModels.get(i)));
-
-            final String fileName;
-            if (i == 0) {
-                context.put("onlyGeneratedOperations", false);
-                fileName = String.format("source/%sClient.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix());
-            } else {
-                context.put("onlyGeneratedOperations", true);
-                fileName = String.format("source/%sClient%d.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix(), i);
-            }
-            sourceFiles.add(makeFile(template, context, fileName, true));
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+        Optional<String> firstAuthScheme = serviceModel.getAuthSchemes().stream().filter(entry->ResolverMapping.containsKey(entry)).findFirst();
+        if(firstAuthScheme.isPresent())
+        {
+            context.put("AuthSchemeResolver", ResolverMapping.get(firstAuthScheme.get()));
         }
-        return sourceFiles;
+        else
+        {
+            throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())
+            ));
+        }
+        context.put("AuthSchemeMapEntries", createAuthSchemeMapEntries(serviceModel));
+
+        final String fileName;
+        if (i == 0) {
+            context.put("onlyGeneratedOperations", false);
+            fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
+        } else {
+            context.put("onlyGeneratedOperations", true);
+            fileName = String.format("source/%sClient%d.cpp", serviceModel.getMetadata().getClassNamePrefix(), i);
+        }
+        return makeFile(template, context, fileName, true);
+    }
+
+    protected SdkFileEntry GenerateLegacyClientSourceFile(final ServiceModel serviceModel, int i){
+        
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceClientSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+
+        final String fileName;
+        if (i == 0) {
+            context.put("onlyGeneratedOperations", false);
+            fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
+        } else {
+            context.put("onlyGeneratedOperations", true);
+            fileName = String.format("source/%sClient%d.cpp", serviceModel.getMetadata().getClassNamePrefix(), i);
+        }
+        return makeFile(template, context, fileName, true);
     }
 
     private static final Map<String, String> AuthSchemeMapping = ImmutableMap.of(

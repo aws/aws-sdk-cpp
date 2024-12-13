@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class JsonCppClientGenerator extends CppClientGenerator {
 
@@ -174,35 +175,21 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     }
 
     @Override
-    protected List<SdkFileEntry> generateClientSourceFile(final List<ServiceModel> serviceModels) throws Exception {
-        List<SdkFileEntry> sourceFiles = new ArrayList<>();
+    protected List<SdkFileEntry> generateClientSourceFile( List<ServiceModel> serviceModels) throws Exception {
 
-        sourceFiles = generateSmithyClientSourceFile(serviceModels.stream()
-        .filter(ServiceModel::isUseSmithyClient)
-        .collect(Collectors.toList()));
+        List<Integer> serviceModelsIndices = IntStream.range(0, serviceModels.size()).boxed().collect(Collectors.toList());
 
-
-        for (int i = 0; i < serviceModels.size(); i++) {
-            if(serviceModels.get(i).isUseSmithyClient())
+        return serviceModelsIndices.stream().map(index -> 
+        {
+            if(index == 0 && serviceModels.get(index).isUseSmithyClient())
             {
-                continue;
+                return GenerateSmithyClientSourceFile(serviceModels.get(index), index);
             }
-            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceClientSource.vm", StandardCharsets.UTF_8.name());
-
-            VelocityContext context = createContext(serviceModels.get(i));
-            context.put("CppViewHelper", CppViewHelper.class);
-
-            final String fileName;
-            if (i == 0) {
-                context.put("onlyGeneratedOperations", false);
-                fileName = String.format("source/%sClient.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix());
-            } else {
-                context.put("onlyGeneratedOperations", true);
-                fileName = String.format("source/%sClient%d.cpp", serviceModels.get(i).getMetadata().getClassNamePrefix(), i);
+            else
+            {
+                return GenerateLegacyClientSourceFile(serviceModels.get(index), index);
             }
-            sourceFiles.add(makeFile(template, context, fileName, true));
-        }
-        return sourceFiles;
+        }).collect(Collectors.toList()); 
     }
 
     @Override
