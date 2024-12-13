@@ -55,6 +55,7 @@ static const int DUPLICATE_REQUEST_HASH = HashingUtils::HashString("DuplicateReq
 static const int SERVICE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ServiceAlreadyExists");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInput");
 static const int INSTANCE_NOT_FOUND_HASH = HashingUtils::HashString("InstanceNotFound");
+static const int SERVICE_ATTRIBUTES_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ServiceAttributesLimitExceededException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int REQUEST_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RequestLimitExceeded");
 static const int SERVICE_NOT_FOUND_HASH = HashingUtils::HashString("ServiceNotFound");
@@ -97,6 +98,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INSTANCE_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::INSTANCE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == SERVICE_ATTRIBUTES_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceDiscoveryErrors::SERVICE_ATTRIBUTES_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {

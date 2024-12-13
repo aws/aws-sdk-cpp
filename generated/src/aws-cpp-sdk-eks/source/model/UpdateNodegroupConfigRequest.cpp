@@ -19,6 +19,7 @@ UpdateNodegroupConfigRequest::UpdateNodegroupConfigRequest() :
     m_taintsHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
     m_updateConfigHasBeenSet(false),
+    m_nodeRepairConfigHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
@@ -49,6 +50,12 @@ Aws::String UpdateNodegroupConfigRequest::SerializePayload() const
   if(m_updateConfigHasBeenSet)
   {
    payload.WithObject("updateConfig", m_updateConfig.Jsonize());
+
+  }
+
+  if(m_nodeRepairConfigHasBeenSet)
+  {
+   payload.WithObject("nodeRepairConfig", m_nodeRepairConfig.Jsonize());
 
   }
 

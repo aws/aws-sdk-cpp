@@ -34,6 +34,8 @@ Cluster::Cluster() :
     m_stateMessageHasBeenSet(false),
     m_subnetMappingHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_networkType(NetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false),
     m_certificatesHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_mode(ClusterMode::NOT_SET),
@@ -144,6 +146,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_vpcId = jsonValue.GetString("VpcId");
 
     m_vpcIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkType"))
+  {
+    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("NetworkType"));
+
+    m_networkTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Certificates"))
@@ -260,6 +269,11 @@ JsonValue Cluster::Jsonize() const
   {
    payload.WithString("VpcId", m_vpcId);
 
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   if(m_certificatesHasBeenSet)

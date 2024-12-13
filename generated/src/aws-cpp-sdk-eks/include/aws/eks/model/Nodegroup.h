@@ -17,6 +17,7 @@
 #include <aws/eks/model/NodegroupResources.h>
 #include <aws/eks/model/NodegroupHealth.h>
 #include <aws/eks/model/NodegroupUpdateConfig.h>
+#include <aws/eks/model/NodeRepairConfig.h>
 #include <aws/eks/model/LaunchTemplateSpecification.h>
 #include <aws/eks/model/Taint.h>
 #include <utility>
@@ -358,6 +359,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The node auto repair configuration for the node group.</p>
+     */
+    inline const NodeRepairConfig& GetNodeRepairConfig() const{ return m_nodeRepairConfig; }
+    inline bool NodeRepairConfigHasBeenSet() const { return m_nodeRepairConfigHasBeenSet; }
+    inline void SetNodeRepairConfig(const NodeRepairConfig& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = value; }
+    inline void SetNodeRepairConfig(NodeRepairConfig&& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = std::move(value); }
+    inline Nodegroup& WithNodeRepairConfig(const NodeRepairConfig& value) { SetNodeRepairConfig(value); return *this;}
+    inline Nodegroup& WithNodeRepairConfig(NodeRepairConfig&& value) { SetNodeRepairConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>If a launch template was used to create the node group, then this is the
      * launch template that was used.</p>
      */
@@ -453,6 +466,9 @@ namespace Model
 
     NodegroupUpdateConfig m_updateConfig;
     bool m_updateConfigHasBeenSet = false;
+
+    NodeRepairConfig m_nodeRepairConfig;
+    bool m_nodeRepairConfigHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
     bool m_launchTemplateHasBeenSet = false;

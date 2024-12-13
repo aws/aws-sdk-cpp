@@ -11,6 +11,7 @@
 #include <aws/eks/model/UpdateTaintsPayload.h>
 #include <aws/eks/model/NodegroupScalingConfig.h>
 #include <aws/eks/model/NodegroupUpdateConfig.h>
+#include <aws/eks/model/NodeRepairConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -120,6 +121,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The node auto repair configuration for the node group.</p>
+     */
+    inline const NodeRepairConfig& GetNodeRepairConfig() const{ return m_nodeRepairConfig; }
+    inline bool NodeRepairConfigHasBeenSet() const { return m_nodeRepairConfigHasBeenSet; }
+    inline void SetNodeRepairConfig(const NodeRepairConfig& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = value; }
+    inline void SetNodeRepairConfig(NodeRepairConfig&& value) { m_nodeRepairConfigHasBeenSet = true; m_nodeRepairConfig = std::move(value); }
+    inline UpdateNodegroupConfigRequest& WithNodeRepairConfig(const NodeRepairConfig& value) { SetNodeRepairConfig(value); return *this;}
+    inline UpdateNodegroupConfigRequest& WithNodeRepairConfig(NodeRepairConfig&& value) { SetNodeRepairConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
@@ -151,6 +164,9 @@ namespace Model
 
     NodegroupUpdateConfig m_updateConfig;
     bool m_updateConfigHasBeenSet = false;
+
+    NodeRepairConfig m_nodeRepairConfig;
+    bool m_nodeRepairConfigHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;

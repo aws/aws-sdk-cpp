@@ -9,6 +9,7 @@
 #include <aws/cloudhsmv2/model/BackupRetentionPolicy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudhsmv2/model/NetworkType.h>
 #include <aws/cloudhsmv2/model/ClusterMode.h>
 #include <aws/cloudhsmv2/model/Tag.h>
 #include <utility>
@@ -104,6 +105,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The NetworkType to create a cluster with. The allowed values are
+     * <code>IPV4</code> and <code>DUALSTACK</code>. </p>
+     */
+    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(const NetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline void SetNetworkType(NetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+    inline CreateClusterRequest& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
+    inline CreateClusterRequest& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Tags to apply to the CloudHSM cluster during creation.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
@@ -141,6 +155,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
+
+    NetworkType m_networkType;
+    bool m_networkTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;

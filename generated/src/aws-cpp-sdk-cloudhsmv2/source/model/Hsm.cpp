@@ -24,6 +24,7 @@ Hsm::Hsm() :
     m_subnetIdHasBeenSet(false),
     m_eniIdHasBeenSet(false),
     m_eniIpHasBeenSet(false),
+    m_eniIpV6HasBeenSet(false),
     m_hsmIdHasBeenSet(false),
     m_state(HsmState::NOT_SET),
     m_stateHasBeenSet(false),
@@ -72,6 +73,13 @@ Hsm& Hsm::operator =(JsonView jsonValue)
     m_eniIp = jsonValue.GetString("EniIp");
 
     m_eniIpHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EniIpV6"))
+  {
+    m_eniIpV6 = jsonValue.GetString("EniIpV6");
+
+    m_eniIpV6HasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("HsmId"))
@@ -129,6 +137,12 @@ JsonValue Hsm::Jsonize() const
   if(m_eniIpHasBeenSet)
   {
    payload.WithString("EniIp", m_eniIp);
+
+  }
+
+  if(m_eniIpV6HasBeenSet)
+  {
+   payload.WithString("EniIpV6", m_eniIpV6);
 
   }
 

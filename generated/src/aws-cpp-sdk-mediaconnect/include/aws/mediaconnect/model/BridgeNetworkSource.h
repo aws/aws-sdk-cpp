@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconnect/model/MulticastSourceSettings.h>
 #include <aws/mediaconnect/model/Protocol.h>
 #include <utility>
 
@@ -51,6 +52,16 @@ namespace Model
     inline BridgeNetworkSource& WithMulticastIp(const Aws::String& value) { SetMulticastIp(value); return *this;}
     inline BridgeNetworkSource& WithMulticastIp(Aws::String&& value) { SetMulticastIp(std::move(value)); return *this;}
     inline BridgeNetworkSource& WithMulticastIp(const char* value) { SetMulticastIp(value); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline const MulticastSourceSettings& GetMulticastSourceSettings() const{ return m_multicastSourceSettings; }
+    inline bool MulticastSourceSettingsHasBeenSet() const { return m_multicastSourceSettingsHasBeenSet; }
+    inline void SetMulticastSourceSettings(const MulticastSourceSettings& value) { m_multicastSourceSettingsHasBeenSet = true; m_multicastSourceSettings = value; }
+    inline void SetMulticastSourceSettings(MulticastSourceSettings&& value) { m_multicastSourceSettingsHasBeenSet = true; m_multicastSourceSettings = std::move(value); }
+    inline BridgeNetworkSource& WithMulticastSourceSettings(const MulticastSourceSettings& value) { SetMulticastSourceSettings(value); return *this;}
+    inline BridgeNetworkSource& WithMulticastSourceSettings(MulticastSourceSettings&& value) { SetMulticastSourceSettings(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,6 +117,9 @@ namespace Model
 
     Aws::String m_multicastIp;
     bool m_multicastIpHasBeenSet = false;
+
+    MulticastSourceSettings m_multicastSourceSettings;
+    bool m_multicastSourceSettingsHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

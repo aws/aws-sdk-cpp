@@ -29,8 +29,11 @@ namespace Model
    * results from a describe operation. Filters can be used to match a set of
    * resources by specific criteria, such as tags, attributes, or IDs.</p> <p>If you
    * specify multiple filters, the filters are joined with an <code>AND</code>, and
-   * the request returns only results that match all of the specified
-   * filters.</p><p><h3>See Also:</h3>   <a
+   * the request returns only results that match all of the specified filters.</p>
+   * <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Filtering.html#Filtering_Resources_CLI">List
+   * and filter using the CLI and API</a> in the <i>Amazon EC2 User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Filter">AWS API
    * Reference</a></p>
    */

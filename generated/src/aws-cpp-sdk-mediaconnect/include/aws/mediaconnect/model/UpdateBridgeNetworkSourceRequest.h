@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconnect/model/MulticastSourceSettings.h>
 #include <aws/mediaconnect/model/Protocol.h>
 #include <utility>
 
@@ -53,6 +54,16 @@ namespace Model
     ///@}
 
     ///@{
+    
+    inline const MulticastSourceSettings& GetMulticastSourceSettings() const{ return m_multicastSourceSettings; }
+    inline bool MulticastSourceSettingsHasBeenSet() const { return m_multicastSourceSettingsHasBeenSet; }
+    inline void SetMulticastSourceSettings(const MulticastSourceSettings& value) { m_multicastSourceSettingsHasBeenSet = true; m_multicastSourceSettings = value; }
+    inline void SetMulticastSourceSettings(MulticastSourceSettings&& value) { m_multicastSourceSettingsHasBeenSet = true; m_multicastSourceSettings = std::move(value); }
+    inline UpdateBridgeNetworkSourceRequest& WithMulticastSourceSettings(const MulticastSourceSettings& value) { SetMulticastSourceSettings(value); return *this;}
+    inline UpdateBridgeNetworkSourceRequest& WithMulticastSourceSettings(MulticastSourceSettings&& value) { SetMulticastSourceSettings(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     /**
      * The network source's gateway network name.
      */
@@ -91,6 +102,9 @@ namespace Model
 
     Aws::String m_multicastIp;
     bool m_multicastIpHasBeenSet = false;
+
+    MulticastSourceSettings m_multicastSourceSettings;
+    bool m_multicastSourceSettingsHasBeenSet = false;
 
     Aws::String m_networkName;
     bool m_networkNameHasBeenSet = false;

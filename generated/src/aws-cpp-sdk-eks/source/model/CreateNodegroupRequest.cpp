@@ -31,6 +31,7 @@ CreateNodegroupRequest::CreateNodegroupRequest() :
     m_clientRequestTokenHasBeenSet(true),
     m_launchTemplateHasBeenSet(false),
     m_updateConfigHasBeenSet(false),
+    m_nodeRepairConfigHasBeenSet(false),
     m_capacityType(CapacityTypes::NOT_SET),
     m_capacityTypeHasBeenSet(false),
     m_versionHasBeenSet(false),
@@ -147,6 +148,12 @@ Aws::String CreateNodegroupRequest::SerializePayload() const
   if(m_updateConfigHasBeenSet)
   {
    payload.WithObject("updateConfig", m_updateConfig.Jsonize());
+
+  }
+
+  if(m_nodeRepairConfigHasBeenSet)
+  {
+   payload.WithObject("nodeRepairConfig", m_nodeRepairConfig.Jsonize());
 
   }
 
