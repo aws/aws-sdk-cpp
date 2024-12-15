@@ -105,7 +105,7 @@ def _build_service_model_with_endpoints(models_dir: str, endpoint_rules_dir: str
                             endpoint_tests=endpoint_tests_filename)
 
 
-def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_mapped_services: Set[str]) -> dict:
+def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_mapped_services: Set[str], smithy_supported_clients: Set[str]) -> dict:
     """Return a dict of <service_name, model_file_name> with all available c2j models in a models_dir
 
     :param models_dir: path to the directory with c2j models
@@ -156,7 +156,7 @@ def collect_available_models(models_dir: str, endpoint_rules_dir: str, legacy_ma
                 if ("protocol" in  model["metadata"] and 
                     (model["metadata"]["protocol"] == "json" or model["metadata"]["protocol"] == "rest-json")):
                     if key not in SMITHY_EXCLUSION_CLIENTS:
-                        SMITHY_SUPPORTED_CLIENTS.add(key)
+                        smithy_supported_clients.add(key)
                     
             else:
                 print("service Id not found in model file:", model_file_date[0], " Skipping.")
@@ -563,6 +563,9 @@ def main():
     with open(os.path.abspath(SMITHY_TO_C2J_MAP_FILE), 'r') as file:
         smithy_c2j_data = json.load(file)
         c2j_smithy_data = {value: key for key, value in smithy_c2j_data.items()}
+        
+        
+    smithy_supported_clients = SMITHY_SUPPORTED_CLIENTS.copy()
 
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         build_generator_future = None
@@ -575,7 +578,8 @@ def main():
 
         available_models = collect_available_models(args["path_to_api_definitions"],
                                                     args["path_to_endpoint_rules"],
-                                                    set(c2j_smithy_data.keys()))
+                                                    set(c2j_smithy_data.keys()),
+                                                    smithy_supported_clients)
         if args.get("list_all"):
             model_list = available_models.keys()
             print(model_list)
@@ -600,7 +604,7 @@ def main():
         pending = set()
         done = set()
         if DEBUG:
-            print(f"Smithy supported clients: {SMITHY_SUPPORTED_CLIENTS}")
+            print(f"Smithy supported clients: {smithy_supported_clients}")
         print(f"Running code generator, up to {max_workers} processes in parallel")
         sys.stdout.flush()
         for core_component in ["defaults", "partitions"]:
@@ -628,7 +632,7 @@ def main():
                                    args["path_to_generator"],
                                    args["output_location"],
                                    None,
-                                   (service in SMITHY_SUPPORTED_CLIENTS),
+                                   (service in smithy_supported_clients),
                                    args["raw_generator_arguments"])
             pending.add(task)
 

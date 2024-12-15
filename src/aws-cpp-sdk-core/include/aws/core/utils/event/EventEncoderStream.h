@@ -91,6 +91,6 @@ namespace Aws
               }
               SmithyEventStreamEncoder<smithy::AwsCredentialIdentityBase> m_evtEncoder;
             };
-            }  // namespace Event
+        }  // namespace Event
     }
 }
