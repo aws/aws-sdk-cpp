@@ -18,8 +18,13 @@
 \#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
 \#include <smithy/client/AwsSmithyClient.h>
+#if($serviceModel.hasOnlyBearerAuth())
+\#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeResolver.h>
+\#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
+#else
 \#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 \#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#end
 \#include <smithy/client/serializer/${serializer}.h>
 
 namespace ${rootNamespace}
