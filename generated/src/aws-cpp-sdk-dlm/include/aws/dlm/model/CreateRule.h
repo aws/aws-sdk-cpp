@@ -50,14 +50,19 @@ namespace Model
     ///@{
     /**
      * <p> <b>[Custom snapshot policies only]</b> Specifies the destination for
-     * snapshots created by the policy. To create snapshots in the same Region as the
-     * source resource, specify <code>CLOUD</code>. To create snapshots on the same
-     * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit
-     * this parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy
-     * targets resources in an Amazon Web Services Region, then you must create
-     * snapshots in the same Region as the source resource. If the policy targets
-     * resources on an Outpost, then you can create snapshots on the same Outpost as
-     * the source resource, or in the Region of that Outpost.</p>
+     * snapshots created by the policy. The allowed destinations depend on the location
+     * of the targeted resources.</p> <ul> <li> <p>If the policy targets resources in a
+     * Region, then you must create snapshots in the same Region as the source
+     * resource.</p> </li> <li> <p>If the policy targets resources in a Local Zone, you
+     * can create snapshots in the same Local Zone or in its parent Region.</p> </li>
+     * <li> <p>If the policy targets resources on an Outpost, then you can create
+     * snapshots on the same Outpost or in its parent Region.</p> </li> </ul>
+     * <p>Specify one of the following values:</p> <ul> <li> <p>To create snapshots in
+     * the same Region as the source resource, specify <code>CLOUD</code>.</p> </li>
+     * <li> <p>To create snapshots in the same Local Zone as the source resource,
+     * specify <code>LOCAL_ZONE</code>.</p> </li> <li> <p>To create snapshots on the
+     * same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>.</p>
+     * </li> </ul> <p>Default: <code>CLOUD</code> </p>
      */
     inline const LocationValues& GetLocation() const{ return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
@@ -111,9 +116,9 @@ namespace Model
     ///@{
     /**
      * <p>The schedule, as a Cron expression. The schedule interval must be between 1
-     * hour and 1 year. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * expressions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+     * hour and 1 year. For more information, see the <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">Cron
+     * expressions reference</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline const Aws::String& GetCronExpression() const{ return m_cronExpression; }
     inline bool CronExpressionHasBeenSet() const { return m_cronExpressionHasBeenSet; }

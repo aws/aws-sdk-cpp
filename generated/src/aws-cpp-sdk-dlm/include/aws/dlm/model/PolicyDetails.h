@@ -51,8 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> <b>[Custom policies only]</b> The valid target resource types and actions a
-     * policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a
+     * <p>The type of policy. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a
      * lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
      * <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the
      * lifecycle of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create
@@ -88,12 +87,17 @@ namespace Model
     ///@{
     /**
      * <p> <b>[Custom snapshot and AMI policies only]</b> The location of the resources
-     * to backup. If the source resources are located in an Amazon Web Services Region,
-     * specify <code>CLOUD</code>. If the source resources are located on an Outpost in
-     * your account, specify <code>OUTPOST</code>.</p> <p>If you specify
-     * <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources of
-     * the specified type with matching target tags across all of the Outposts in your
-     * account.</p>
+     * to backup.</p> <ul> <li> <p>If the source resources are located in a Region,
+     * specify <code>CLOUD</code>. In this case, the policy targets all resources of
+     * the specified type with matching target tags across all Availability Zones in
+     * the Region.</p> </li> <li> <p> <b>[Custom snapshot policies only]</b> If the
+     * source resources are located in a Local Zone, specify <code>LOCAL_ZONE</code>.
+     * In this case, the policy targets all resources of the specified type with
+     * matching target tags across all Local Zones in the Region.</p> </li> <li> <p>If
+     * the source resources are located on an Outpost in your account, specify
+     * <code>OUTPOST</code>. In this case, the policy targets all resources of the
+     * specified type with matching target tags across all of the Outposts in your
+     * account.</p> </li> </ul> <p/>
      */
     inline const Aws::Vector<ResourceLocationValues>& GetResourceLocations() const{ return m_resourceLocations; }
     inline bool ResourceLocationsHasBeenSet() const { return m_resourceLocationsHasBeenSet; }
