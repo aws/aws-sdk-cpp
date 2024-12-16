@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * Settings for the action to emit HLS metadata<p><h3>See Also:</h3>   <a
+   * Settings for the action to insert ID3 metadata (as a one-time action) in HLS
+   * output groups.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsTimedMetadataScheduleActionSettings">AWS
    * API Reference</a></p>
    */
@@ -39,8 +40,8 @@ namespace Model
 
     ///@{
     /**
-     * Base64 string formatted according to the ID3 specification:
-     * http://id3.org/id3v2.4.0-structure
+     * Enter a base64 string that contains one or more fully formed ID3 tags.See the
+     * ID3 specification: http://id3.org/id3v2.4.0-structure
      */
     inline const Aws::String& GetId3() const{ return m_id3; }
     inline bool Id3HasBeenSet() const { return m_id3HasBeenSet; }

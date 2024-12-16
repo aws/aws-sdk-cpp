@@ -137,6 +137,22 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Availability Zone or Local Zone of the snapshot. For example,
+     * <code>us-west-1a</code> (Availability Zone) or <code>us-west-2-lax-1a</code>
+     * (Local Zone).</p>
+     */
+    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
+    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
+    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
+    inline Snapshot& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
+    inline Snapshot& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
+    inline Snapshot& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      *  <p>Only for snapshot copies.</p>  <p>Indicates whether the
      * snapshot copy was created with a standard or time-based snapshot copy operation.
      * Time-based snapshot copy operations complete within the completion duration
@@ -373,6 +389,9 @@ namespace Model
 
     SSEType m_sseType;
     bool m_sseTypeHasBeenSet = false;
+
+    Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet = false;
 
     TransferType m_transferType;
     bool m_transferTypeHasBeenSet = false;

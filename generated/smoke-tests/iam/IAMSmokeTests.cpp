@@ -18,6 +18,7 @@
 #include <aws/iam/model/GetUserRequest.h>
 #include <aws/iam/IAMClient.h>
 #include <aws/iam/model/ListUsersRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace IAMSmokeTest{
 using namespace Aws::Auth;
@@ -31,6 +32,19 @@ class IAMSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char IAMSmokeTestSuite::ALLOCATION_TAG[] = "IAMSmokeTest";
+TEST_F(IAMSmokeTestSuite, ListUsersSuccess )
+{
+    Aws::IAM::IAMClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-east-1";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<IAMClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    ListUsersRequest input;
+    auto outcome = clientSp->ListUsers(input);
+    EXPECT_TRUE( outcome.IsSuccess());
+}
 TEST_F(IAMSmokeTestSuite, GetUserFailure )
 {
     Aws::IAM::IAMClientConfiguration clientConfiguration;
@@ -44,18 +58,5 @@ TEST_F(IAMSmokeTestSuite, GetUserFailure )
     input.SetUserName("fake_user");
     auto outcome = clientSp->GetUser(input);
     EXPECT_FALSE( outcome.IsSuccess());
-}
-TEST_F(IAMSmokeTestSuite, ListUsersSuccess )
-{
-    Aws::IAM::IAMClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<IAMClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    ListUsersRequest input;
-    auto outcome = clientSp->ListUsers(input);
-    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

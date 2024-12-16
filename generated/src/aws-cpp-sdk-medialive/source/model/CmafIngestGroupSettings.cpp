@@ -29,7 +29,12 @@ CmafIngestGroupSettings::CmafIngestGroupSettings() :
     m_segmentLengthUnits(CmafIngestSegmentLengthUnits::NOT_SET),
     m_segmentLengthUnitsHasBeenSet(false),
     m_sendDelayMs(0),
-    m_sendDelayMsHasBeenSet(false)
+    m_sendDelayMsHasBeenSet(false),
+    m_klvBehavior(CmafKLVBehavior::NOT_SET),
+    m_klvBehaviorHasBeenSet(false),
+    m_klvNameModifierHasBeenSet(false),
+    m_nielsenId3NameModifierHasBeenSet(false),
+    m_scte35NameModifierHasBeenSet(false)
 {
 }
 
@@ -83,6 +88,34 @@ CmafIngestGroupSettings& CmafIngestGroupSettings::operator =(JsonView jsonValue)
     m_sendDelayMsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("klvBehavior"))
+  {
+    m_klvBehavior = CmafKLVBehaviorMapper::GetCmafKLVBehaviorForName(jsonValue.GetString("klvBehavior"));
+
+    m_klvBehaviorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("klvNameModifier"))
+  {
+    m_klvNameModifier = jsonValue.GetString("klvNameModifier");
+
+    m_klvNameModifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("nielsenId3NameModifier"))
+  {
+    m_nielsenId3NameModifier = jsonValue.GetString("nielsenId3NameModifier");
+
+    m_nielsenId3NameModifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scte35NameModifier"))
+  {
+    m_scte35NameModifier = jsonValue.GetString("scte35NameModifier");
+
+    m_scte35NameModifierHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -120,6 +153,29 @@ JsonValue CmafIngestGroupSettings::Jsonize() const
   if(m_sendDelayMsHasBeenSet)
   {
    payload.WithInteger("sendDelayMs", m_sendDelayMs);
+
+  }
+
+  if(m_klvBehaviorHasBeenSet)
+  {
+   payload.WithString("klvBehavior", CmafKLVBehaviorMapper::GetNameForCmafKLVBehavior(m_klvBehavior));
+  }
+
+  if(m_klvNameModifierHasBeenSet)
+  {
+   payload.WithString("klvNameModifier", m_klvNameModifier);
+
+  }
+
+  if(m_nielsenId3NameModifierHasBeenSet)
+  {
+   payload.WithString("nielsenId3NameModifier", m_nielsenId3NameModifier);
+
+  }
+
+  if(m_scte35NameModifierHasBeenSet)
+  {
+   payload.WithString("scte35NameModifier", m_scte35NameModifier);
 
   }
 
