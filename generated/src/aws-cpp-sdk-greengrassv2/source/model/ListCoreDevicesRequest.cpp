@@ -21,7 +21,8 @@ ListCoreDevicesRequest::ListCoreDevicesRequest() :
     m_statusHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_runtimeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,13 @@ void ListCoreDevicesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_runtimeHasBeenSet)
+    {
+      ss << m_runtime;
+      uri.AddQueryStringParameter("runtime", ss.str());
       ss.str("");
     }
 

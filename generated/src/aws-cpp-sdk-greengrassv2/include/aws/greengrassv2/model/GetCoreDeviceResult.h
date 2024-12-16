@@ -93,6 +93,21 @@ namespace Model
 
     ///@{
     /**
+     * <p>The runtime for the core device. The runtime can be:</p> <ul> <li> <p>
+     * <code>aws_nucleus_classic</code> </p> </li> <li> <p>
+     * <code>aws_nucleus_lite</code> </p> </li> </ul>
+     */
+    inline const Aws::String& GetRuntime() const{ return m_runtime; }
+    inline void SetRuntime(const Aws::String& value) { m_runtime = value; }
+    inline void SetRuntime(Aws::String&& value) { m_runtime = std::move(value); }
+    inline void SetRuntime(const char* value) { m_runtime.assign(value); }
+    inline GetCoreDeviceResult& WithRuntime(const Aws::String& value) { SetRuntime(value); return *this;}
+    inline GetCoreDeviceResult& WithRuntime(Aws::String&& value) { SetRuntime(std::move(value)); return *this;}
+    inline GetCoreDeviceResult& WithRuntime(const char* value) { SetRuntime(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the core device. The core device status can be:</p> <ul> <li>
      * <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components
      * run on the core device without issue.</p> </li> <li> <p> <code>UNHEALTHY</code>
@@ -158,6 +173,8 @@ namespace Model
     Aws::String m_platform;
 
     Aws::String m_architecture;
+
+    Aws::String m_runtime;
 
     CoreDeviceStatus m_status;
 

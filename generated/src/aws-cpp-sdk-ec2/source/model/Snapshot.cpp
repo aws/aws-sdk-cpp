@@ -29,6 +29,7 @@ Snapshot::Snapshot() :
     m_restoreExpiryTimeHasBeenSet(false),
     m_sseType(SSEType::NOT_SET),
     m_sseTypeHasBeenSet(false),
+    m_availabilityZoneHasBeenSet(false),
     m_transferType(TransferType::NOT_SET),
     m_transferTypeHasBeenSet(false),
     m_completionDurationMinutes(0),
@@ -105,6 +106,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     {
       m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
       m_sseTypeHasBeenSet = true;
+    }
+    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
+    if(!availabilityZoneNode.IsNull())
+    {
+      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
+      m_availabilityZoneHasBeenSet = true;
     }
     XmlNode transferTypeNode = resultNode.FirstChild("transferType");
     if(!transferTypeNode.IsNull())
@@ -239,6 +246,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
   }
 
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
   if(m_transferTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".TransferType=" << TransferTypeMapper::GetNameForTransferType(m_transferType) << "&";
@@ -350,6 +362,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_sseTypeHasBeenSet)
   {
       oStream << location << ".SseType=" << SSETypeMapper::GetNameForSSEType(m_sseType) << "&";
+  }
+  if(m_availabilityZoneHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
   if(m_transferTypeHasBeenSet)
   {

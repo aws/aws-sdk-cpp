@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CLOUD,
-    OUTPOST_LOCAL
+    OUTPOST_LOCAL,
+    LOCAL_ZONE
   };
 
 namespace LocationValuesMapper

@@ -145,10 +145,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies a rule for copying snapshots or AMIs across regions.</p> 
+     * <p>Specifies a rule for copying snapshots or AMIs across Regions.</p> 
      * <p>You can't specify cross-Region copy rules for policies that create snapshots
-     * on an Outpost. If the policy creates snapshots in a Region, then snapshots can
-     * be copied to up to three Regions or Outposts.</p> 
+     * on an Outpost or in a Local Zone. If the policy creates snapshots in a Region,
+     * then snapshots can be copied to up to three Regions or Outposts.</p> 
      */
     inline const Aws::Vector<CrossRegionCopyRule>& GetCrossRegionCopyRules() const{ return m_crossRegionCopyRules; }
     inline bool CrossRegionCopyRulesHasBeenSet() const { return m_crossRegionCopyRulesHasBeenSet; }

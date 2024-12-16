@@ -55,6 +55,12 @@ GetCoreDeviceResult& GetCoreDeviceResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("runtime"))
+  {
+    m_runtime = jsonValue.GetString("runtime");
+
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = CoreDeviceStatusMapper::GetCoreDeviceStatusForName(jsonValue.GetString("status"));

@@ -15,6 +15,8 @@ CreateSnapshotRequest::CreateSnapshotRequest() :
     m_outpostArnHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
+    m_location(SnapshotLocationEnum::NOT_SET),
+    m_locationHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -47,6 +49,11 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_locationHasBeenSet)
+  {
+    ss << "Location=" << SnapshotLocationEnumMapper::GetNameForSnapshotLocationEnum(m_location) << "&";
   }
 
   if(m_dryRunHasBeenSet)

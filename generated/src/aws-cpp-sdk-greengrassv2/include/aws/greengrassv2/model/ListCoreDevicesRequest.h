@@ -98,6 +98,22 @@ namespace Model
     inline ListCoreDevicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
     inline ListCoreDevicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The runtime to be used by the core device. The runtime can be:</p> <ul> <li>
+     * <p> <code>aws_nucleus_classic</code> </p> </li> <li> <p>
+     * <code>aws_nucleus_lite</code> </p> </li> </ul>
+     */
+    inline const Aws::String& GetRuntime() const{ return m_runtime; }
+    inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
+    inline void SetRuntime(const Aws::String& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+    inline void SetRuntime(Aws::String&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
+    inline void SetRuntime(const char* value) { m_runtimeHasBeenSet = true; m_runtime.assign(value); }
+    inline ListCoreDevicesRequest& WithRuntime(const Aws::String& value) { SetRuntime(value); return *this;}
+    inline ListCoreDevicesRequest& WithRuntime(Aws::String&& value) { SetRuntime(std::move(value)); return *this;}
+    inline ListCoreDevicesRequest& WithRuntime(const char* value) { SetRuntime(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_thingGroupArn;
@@ -111,6 +127,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_runtime;
+    bool m_runtimeHasBeenSet = false;
   };
 
 } // namespace Model

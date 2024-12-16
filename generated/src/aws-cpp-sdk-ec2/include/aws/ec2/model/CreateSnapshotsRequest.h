@@ -10,6 +10,7 @@
 #include <aws/ec2/model/InstanceSpecification.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/CopyTagsFromSource.h>
+#include <aws/ec2/model/SnapshotLocationEnum.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -69,18 +70,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the local
-     * snapshots.</p> <ul> <li> <p>To create snapshots from an instance in a Region,
-     * omit this parameter. The snapshots are created in the same Region as the
-     * instance.</p> </li> <li> <p>To create snapshots from an instance on an Outpost
-     * and store the snapshots in the Region, omit this parameter. The snapshots are
-     * created in the Region for the Outpost.</p> </li> <li> <p>To create snapshots
-     * from an instance on an Outpost and store the snapshots on an Outpost, specify
-     * the ARN of the destination Outpost. The snapshots must be created on the same
-     * Outpost as the instance.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
-     * Create multi-volume local snapshots from instances on an Outpost</a> in the
-     * <i>Amazon EBS User Guide</i>.</p>
+     *  <p>Only supported for instances on Outposts. If the source instance is
+     * not on an Outpost, omit this parameter.</p>  <ul> <li> <p>To create the
+     * snapshots on the same Outpost as the source instance, specify the ARN of that
+     * Outpost. The snapshots must be created on the same Outpost as the instance.</p>
+     * </li> <li> <p>To create the snapshots in the parent Region of the Outpost, omit
+     * this parameter.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">
+     * Create local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
@@ -130,6 +128,23 @@ namespace Model
     inline CreateSnapshotsRequest& WithCopyTagsFromSource(const CopyTagsFromSource& value) { SetCopyTagsFromSource(value); return *this;}
     inline CreateSnapshotsRequest& WithCopyTagsFromSource(CopyTagsFromSource&& value) { SetCopyTagsFromSource(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     *  <p>Only supported for instances in Local Zones. If the source instance is
+     * not in a Local Zone, omit this parameter.</p>  <ul> <li> <p>To create
+     * local snapshots in the same Local Zone as the source instance, specify
+     * <code>local</code>.</p> </li> <li> <p>To create a regional snapshots in the
+     * parent Region of the Local Zone, specify <code>regional</code> or omit this
+     * parameter.</p> </li> </ul> <p>Default value: <code>regional</code> </p>
+     */
+    inline const SnapshotLocationEnum& GetLocation() const{ return m_location; }
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+    inline void SetLocation(const SnapshotLocationEnum& value) { m_locationHasBeenSet = true; m_location = value; }
+    inline void SetLocation(SnapshotLocationEnum&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
+    inline CreateSnapshotsRequest& WithLocation(const SnapshotLocationEnum& value) { SetLocation(value); return *this;}
+    inline CreateSnapshotsRequest& WithLocation(SnapshotLocationEnum&& value) { SetLocation(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
@@ -149,6 +164,9 @@ namespace Model
 
     CopyTagsFromSource m_copyTagsFromSource;
     bool m_copyTagsFromSourceHasBeenSet = false;
+
+    SnapshotLocationEnum m_location;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model
