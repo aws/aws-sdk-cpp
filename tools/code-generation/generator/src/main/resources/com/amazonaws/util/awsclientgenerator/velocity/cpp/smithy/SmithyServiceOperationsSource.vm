@@ -12,9 +12,7 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
   return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
     [&]()-> ${operation.name}Outcome {
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
-#if($operation.result && $operation.result.shape.hasStreamMembers())
-      return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
-#elseif($operation.result && $operation.result.shape.hasEventStreamMembers())
+#if($operation.result && $operation.result.shape.hasEventStreamMembers())
       request.SetResponseStreamFactory(
           [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
       );
