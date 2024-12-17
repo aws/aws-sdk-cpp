@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/m2/model/EngineType.h>
 #include <aws/m2/model/HighAvailabilityConfig.h>
+#include <aws/m2/model/NetworkType.h>
 #include <aws/m2/model/PendingMaintenance.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/m2/model/EnvironmentLifecycle.h>
@@ -192,6 +193,17 @@ namespace Model
 
     ///@{
     /**
+     * <p>The network type supported by the runtime environment.</p>
+     */
+    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+    inline void SetNetworkType(const NetworkType& value) { m_networkType = value; }
+    inline void SetNetworkType(NetworkType&& value) { m_networkType = std::move(value); }
+    inline GetEnvironmentResult& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
+    inline GetEnvironmentResult& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates the pending maintenance scheduled on this environment.</p>
      */
     inline const PendingMaintenance& GetPendingMaintenance() const{ return m_pendingMaintenance; }
@@ -360,6 +372,8 @@ namespace Model
     Aws::String m_loadBalancerArn;
 
     Aws::String m_name;
+
+    NetworkType m_networkType;
 
     PendingMaintenance m_pendingMaintenance;
 

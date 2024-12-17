@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/backup/model/CopyAction.h>
+#include <aws/backup/model/IndexAction.h>
 #include <utility>
 
 namespace Aws
@@ -202,6 +203,24 @@ namespace Model
     inline BackupRuleInput& WithScheduleExpressionTimezone(Aws::String&& value) { SetScheduleExpressionTimezone(std::move(value)); return *this;}
     inline BackupRuleInput& WithScheduleExpressionTimezone(const char* value) { SetScheduleExpressionTimezone(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>There can up to one IndexAction in each BackupRule, as each backup can have 0
+     * or 1 backup index associated with it.</p> <p>Within the array is ResourceTypes.
+     * Only 1 resource type will be accepted for each BackupRule. Valid values:</p>
+     * <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p> </li> </ul>
+     */
+    inline const Aws::Vector<IndexAction>& GetIndexActions() const{ return m_indexActions; }
+    inline bool IndexActionsHasBeenSet() const { return m_indexActionsHasBeenSet; }
+    inline void SetIndexActions(const Aws::Vector<IndexAction>& value) { m_indexActionsHasBeenSet = true; m_indexActions = value; }
+    inline void SetIndexActions(Aws::Vector<IndexAction>&& value) { m_indexActionsHasBeenSet = true; m_indexActions = std::move(value); }
+    inline BackupRuleInput& WithIndexActions(const Aws::Vector<IndexAction>& value) { SetIndexActions(value); return *this;}
+    inline BackupRuleInput& WithIndexActions(Aws::Vector<IndexAction>&& value) { SetIndexActions(std::move(value)); return *this;}
+    inline BackupRuleInput& AddIndexActions(const IndexAction& value) { m_indexActionsHasBeenSet = true; m_indexActions.push_back(value); return *this; }
+    inline BackupRuleInput& AddIndexActions(IndexAction&& value) { m_indexActionsHasBeenSet = true; m_indexActions.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_ruleName;
@@ -233,6 +252,9 @@ namespace Model
 
     Aws::String m_scheduleExpressionTimezone;
     bool m_scheduleExpressionTimezoneHasBeenSet = false;
+
+    Aws::Vector<IndexAction> m_indexActions;
+    bool m_indexActionsHasBeenSet = false;
   };
 
 } // namespace Model

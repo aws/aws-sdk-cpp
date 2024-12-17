@@ -85,6 +85,17 @@ namespace Model
     inline VpcConfigOutput& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
     inline VpcConfigOutput& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates whether this canary allows outbound IPv6 traffic if it is connected
+     * to dual-stack subnets.</p>
+     */
+    inline bool GetIpv6AllowedForDualStack() const{ return m_ipv6AllowedForDualStack; }
+    inline bool Ipv6AllowedForDualStackHasBeenSet() const { return m_ipv6AllowedForDualStackHasBeenSet; }
+    inline void SetIpv6AllowedForDualStack(bool value) { m_ipv6AllowedForDualStackHasBeenSet = true; m_ipv6AllowedForDualStack = value; }
+    inline VpcConfigOutput& WithIpv6AllowedForDualStack(bool value) { SetIpv6AllowedForDualStack(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_vpcId;
@@ -95,6 +106,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;
+
+    bool m_ipv6AllowedForDualStack;
+    bool m_ipv6AllowedForDualStackHasBeenSet = false;
   };
 
 } // namespace Model

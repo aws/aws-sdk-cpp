@@ -105,8 +105,9 @@ namespace Model
      * origin. This is also known as the <i>origin response timeout</i>. The minimum
      * timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
      * specify otherwise) is 30 seconds.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
-     * Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Response
+     * timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline int GetOriginReadTimeout() const{ return m_originReadTimeout; }
     inline bool OriginReadTimeoutHasBeenSet() const { return m_originReadTimeoutHasBeenSet; }
@@ -120,8 +121,9 @@ namespace Model
      * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the
      * default (if you don't specify otherwise) is 5 seconds.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin
-     * Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive
+     * timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline int GetOriginKeepaliveTimeout() const{ return m_originKeepaliveTimeout; }
     inline bool OriginKeepaliveTimeoutHasBeenSet() const { return m_originKeepaliveTimeoutHasBeenSet; }

@@ -21,6 +21,7 @@ namespace Model
 EksContainerVolumeMount::EksContainerVolumeMount() : 
     m_nameHasBeenSet(false),
     m_mountPathHasBeenSet(false),
+    m_subPathHasBeenSet(false),
     m_readOnly(false),
     m_readOnlyHasBeenSet(false)
 {
@@ -48,6 +49,13 @@ EksContainerVolumeMount& EksContainerVolumeMount::operator =(JsonView jsonValue)
     m_mountPathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("subPath"))
+  {
+    m_subPath = jsonValue.GetString("subPath");
+
+    m_subPathHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("readOnly"))
   {
     m_readOnly = jsonValue.GetBool("readOnly");
@@ -71,6 +79,12 @@ JsonValue EksContainerVolumeMount::Jsonize() const
   if(m_mountPathHasBeenSet)
   {
    payload.WithString("mountPath", m_mountPath);
+
+  }
+
+  if(m_subPathHasBeenSet)
+  {
+   payload.WithString("subPath", m_subPath);
 
   }
 

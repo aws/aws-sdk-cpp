@@ -13,6 +13,7 @@
 #include <aws/backup/model/Lifecycle.h>
 #include <aws/backup/model/StorageClass.h>
 #include <aws/backup/model/VaultType.h>
+#include <aws/backup/model/IndexStatus.h>
 #include <utility>
 
 namespace Aws
@@ -394,6 +395,35 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>This is the current status for the backup index associated with the specified
+     * recovery point.</p> <p>Statuses are: <code>PENDING</code> | <code>ACTIVE</code>
+     * | <code>FAILED</code> | <code>DELETING</code> </p> <p>A recovery point with an
+     * index that has the status of <code>ACTIVE</code> can be included in a
+     * search.</p>
+     */
+    inline const IndexStatus& GetIndexStatus() const{ return m_indexStatus; }
+    inline void SetIndexStatus(const IndexStatus& value) { m_indexStatus = value; }
+    inline void SetIndexStatus(IndexStatus&& value) { m_indexStatus = std::move(value); }
+    inline DescribeRecoveryPointResult& WithIndexStatus(const IndexStatus& value) { SetIndexStatus(value); return *this;}
+    inline DescribeRecoveryPointResult& WithIndexStatus(IndexStatus&& value) { SetIndexStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A string in the form of a detailed message explaining the status of a backup
+     * index associated with the recovery point.</p>
+     */
+    inline const Aws::String& GetIndexStatusMessage() const{ return m_indexStatusMessage; }
+    inline void SetIndexStatusMessage(const Aws::String& value) { m_indexStatusMessage = value; }
+    inline void SetIndexStatusMessage(Aws::String&& value) { m_indexStatusMessage = std::move(value); }
+    inline void SetIndexStatusMessage(const char* value) { m_indexStatusMessage.assign(value); }
+    inline DescribeRecoveryPointResult& WithIndexStatusMessage(const Aws::String& value) { SetIndexStatusMessage(value); return *this;}
+    inline DescribeRecoveryPointResult& WithIndexStatusMessage(Aws::String&& value) { SetIndexStatusMessage(std::move(value)); return *this;}
+    inline DescribeRecoveryPointResult& WithIndexStatusMessage(const char* value) { SetIndexStatusMessage(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -452,6 +482,10 @@ namespace Model
     Aws::String m_resourceName;
 
     VaultType m_vaultType;
+
+    IndexStatus m_indexStatus;
+
+    Aws::String m_indexStatusMessage;
 
     Aws::String m_requestId;
   };

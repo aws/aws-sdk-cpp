@@ -71,6 +71,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>A sub-path inside the referenced volume instead of its root.</p>
+     */
+    inline const Aws::String& GetSubPath() const{ return m_subPath; }
+    inline bool SubPathHasBeenSet() const { return m_subPathHasBeenSet; }
+    inline void SetSubPath(const Aws::String& value) { m_subPathHasBeenSet = true; m_subPath = value; }
+    inline void SetSubPath(Aws::String&& value) { m_subPathHasBeenSet = true; m_subPath = std::move(value); }
+    inline void SetSubPath(const char* value) { m_subPathHasBeenSet = true; m_subPath.assign(value); }
+    inline EksContainerVolumeMount& WithSubPath(const Aws::String& value) { SetSubPath(value); return *this;}
+    inline EksContainerVolumeMount& WithSubPath(Aws::String&& value) { SetSubPath(std::move(value)); return *this;}
+    inline EksContainerVolumeMount& WithSubPath(const char* value) { SetSubPath(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>If this value is <code>true</code>, the container has read-only access to the
      * volume. Otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
@@ -87,6 +101,9 @@ namespace Model
 
     Aws::String m_mountPath;
     bool m_mountPathHasBeenSet = false;
+
+    Aws::String m_subPath;
+    bool m_subPathHasBeenSet = false;
 
     bool m_readOnly;
     bool m_readOnlyHasBeenSet = false;

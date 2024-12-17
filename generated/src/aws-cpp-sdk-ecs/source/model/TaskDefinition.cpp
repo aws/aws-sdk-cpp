@@ -47,7 +47,9 @@ TaskDefinition::TaskDefinition() :
     m_registeredAtHasBeenSet(false),
     m_deregisteredAtHasBeenSet(false),
     m_registeredByHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
+    m_ephemeralStorageHasBeenSet(false),
+    m_enableFaultInjection(false),
+    m_enableFaultInjectionHasBeenSet(false)
 {
 }
 
@@ -248,6 +250,13 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     m_ephemeralStorageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enableFaultInjection"))
+  {
+    m_enableFaultInjection = jsonValue.GetBool("enableFaultInjection");
+
+    m_enableFaultInjectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -425,6 +434,12 @@ JsonValue TaskDefinition::Jsonize() const
   if(m_ephemeralStorageHasBeenSet)
   {
    payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
+
+  }
+
+  if(m_enableFaultInjectionHasBeenSet)
+  {
+   payload.WithBool("enableFaultInjection", m_enableFaultInjection);
 
   }
 

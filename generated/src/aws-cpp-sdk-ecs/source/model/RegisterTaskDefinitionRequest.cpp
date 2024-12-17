@@ -32,7 +32,9 @@ RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() :
     m_proxyConfigurationHasBeenSet(false),
     m_inferenceAcceleratorsHasBeenSet(false),
     m_ephemeralStorageHasBeenSet(false),
-    m_runtimePlatformHasBeenSet(false)
+    m_runtimePlatformHasBeenSet(false),
+    m_enableFaultInjection(false),
+    m_enableFaultInjectionHasBeenSet(false)
 {
 }
 
@@ -166,6 +168,12 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
   if(m_runtimePlatformHasBeenSet)
   {
    payload.WithObject("runtimePlatform", m_runtimePlatform.Jsonize());
+
+  }
+
+  if(m_enableFaultInjectionHasBeenSet)
+  {
+   payload.WithBool("enableFaultInjection", m_enableFaultInjection);
 
   }
 

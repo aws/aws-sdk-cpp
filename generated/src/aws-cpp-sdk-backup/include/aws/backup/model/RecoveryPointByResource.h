@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/backup/model/RecoveryPointStatus.h>
 #include <aws/backup/model/VaultType.h>
+#include <aws/backup/model/IndexStatus.h>
 #include <utility>
 
 namespace Aws
@@ -190,6 +191,37 @@ namespace Model
     inline RecoveryPointByResource& WithVaultType(const VaultType& value) { SetVaultType(value); return *this;}
     inline RecoveryPointByResource& WithVaultType(VaultType&& value) { SetVaultType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This is the current status for the backup index associated with the specified
+     * recovery point.</p> <p>Statuses are: <code>PENDING</code> | <code>ACTIVE</code>
+     * | <code>FAILED</code> | <code>DELETING</code> </p> <p>A recovery point with an
+     * index that has the status of <code>ACTIVE</code> can be included in a
+     * search.</p>
+     */
+    inline const IndexStatus& GetIndexStatus() const{ return m_indexStatus; }
+    inline bool IndexStatusHasBeenSet() const { return m_indexStatusHasBeenSet; }
+    inline void SetIndexStatus(const IndexStatus& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
+    inline void SetIndexStatus(IndexStatus&& value) { m_indexStatusHasBeenSet = true; m_indexStatus = std::move(value); }
+    inline RecoveryPointByResource& WithIndexStatus(const IndexStatus& value) { SetIndexStatus(value); return *this;}
+    inline RecoveryPointByResource& WithIndexStatus(IndexStatus&& value) { SetIndexStatus(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>A string in the form of a detailed message explaining the status of a backup
+     * index associated with the recovery point.</p>
+     */
+    inline const Aws::String& GetIndexStatusMessage() const{ return m_indexStatusMessage; }
+    inline bool IndexStatusMessageHasBeenSet() const { return m_indexStatusMessageHasBeenSet; }
+    inline void SetIndexStatusMessage(const Aws::String& value) { m_indexStatusMessageHasBeenSet = true; m_indexStatusMessage = value; }
+    inline void SetIndexStatusMessage(Aws::String&& value) { m_indexStatusMessageHasBeenSet = true; m_indexStatusMessage = std::move(value); }
+    inline void SetIndexStatusMessage(const char* value) { m_indexStatusMessageHasBeenSet = true; m_indexStatusMessage.assign(value); }
+    inline RecoveryPointByResource& WithIndexStatusMessage(const Aws::String& value) { SetIndexStatusMessage(value); return *this;}
+    inline RecoveryPointByResource& WithIndexStatusMessage(Aws::String&& value) { SetIndexStatusMessage(std::move(value)); return *this;}
+    inline RecoveryPointByResource& WithIndexStatusMessage(const char* value) { SetIndexStatusMessage(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_recoveryPointArn;
@@ -224,6 +256,12 @@ namespace Model
 
     VaultType m_vaultType;
     bool m_vaultTypeHasBeenSet = false;
+
+    IndexStatus m_indexStatus;
+    bool m_indexStatusHasBeenSet = false;
+
+    Aws::String m_indexStatusMessage;
+    bool m_indexStatusMessageHasBeenSet = false;
   };
 
 } // namespace Model

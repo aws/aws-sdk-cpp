@@ -442,6 +442,18 @@ namespace Model
     inline RegisterTaskDefinitionRequest& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
     inline RegisterTaskDefinitionRequest& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Enables fault injection when you register your task definition and allows for
+     * fault injection requests to be accepted from the task's containers. The default
+     * value is <code>false</code>.</p>
+     */
+    inline bool GetEnableFaultInjection() const{ return m_enableFaultInjection; }
+    inline bool EnableFaultInjectionHasBeenSet() const { return m_enableFaultInjectionHasBeenSet; }
+    inline void SetEnableFaultInjection(bool value) { m_enableFaultInjectionHasBeenSet = true; m_enableFaultInjection = value; }
+    inline RegisterTaskDefinitionRequest& WithEnableFaultInjection(bool value) { SetEnableFaultInjection(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_family;
@@ -494,6 +506,9 @@ namespace Model
 
     RuntimePlatform m_runtimePlatform;
     bool m_runtimePlatformHasBeenSet = false;
+
+    bool m_enableFaultInjection;
+    bool m_enableFaultInjectionHasBeenSet = false;
   };
 
 } // namespace Model

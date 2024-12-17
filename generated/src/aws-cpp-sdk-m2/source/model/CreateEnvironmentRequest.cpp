@@ -23,6 +23,8 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_instanceTypeHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_networkType(NetworkType::NOT_SET),
+    m_networkTypeHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
@@ -82,6 +84,11 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+   payload.WithString("networkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
   }
 
   if(m_preferredMaintenanceWindowHasBeenSet)

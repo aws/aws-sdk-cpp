@@ -50,10 +50,48 @@ namespace Model
     inline VpcOriginConfig& WithVpcOriginId(Aws::String&& value) { SetVpcOriginId(std::move(value)); return *this;}
     inline VpcOriginConfig& WithVpcOriginId(const char* value) { SetVpcOriginId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies how long, in seconds, CloudFront waits for a response from the
+     * origin. This is also known as the <i>origin response timeout</i>. The minimum
+     * timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
+     * specify otherwise) is 30 seconds.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Response
+     * timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline int GetOriginReadTimeout() const{ return m_originReadTimeout; }
+    inline bool OriginReadTimeoutHasBeenSet() const { return m_originReadTimeoutHasBeenSet; }
+    inline void SetOriginReadTimeout(int value) { m_originReadTimeoutHasBeenSet = true; m_originReadTimeout = value; }
+    inline VpcOriginConfig& WithOriginReadTimeout(int value) { SetOriginReadTimeout(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies how long, in seconds, CloudFront persists its connection to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the
+     * default (if you don't specify otherwise) is 5 seconds.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive
+     * timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
+     */
+    inline int GetOriginKeepaliveTimeout() const{ return m_originKeepaliveTimeout; }
+    inline bool OriginKeepaliveTimeoutHasBeenSet() const { return m_originKeepaliveTimeoutHasBeenSet; }
+    inline void SetOriginKeepaliveTimeout(int value) { m_originKeepaliveTimeoutHasBeenSet = true; m_originKeepaliveTimeout = value; }
+    inline VpcOriginConfig& WithOriginKeepaliveTimeout(int value) { SetOriginKeepaliveTimeout(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_vpcOriginId;
     bool m_vpcOriginIdHasBeenSet = false;
+
+    int m_originReadTimeout;
+    bool m_originReadTimeoutHasBeenSet = false;
+
+    int m_originKeepaliveTimeout;
+    bool m_originKeepaliveTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

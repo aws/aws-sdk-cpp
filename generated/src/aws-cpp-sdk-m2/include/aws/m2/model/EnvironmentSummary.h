@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/m2/model/EngineType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/m2/model/NetworkType.h>
 #include <aws/m2/model/EnvironmentLifecycle.h>
 #include <utility>
 
@@ -137,6 +138,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The network type supported by the runtime environment.</p>
+     */
+    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(const NetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline void SetNetworkType(NetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+    inline EnvironmentSummary& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
+    inline EnvironmentSummary& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The status of the runtime environment</p>
      */
     inline const EnvironmentLifecycle& GetStatus() const{ return m_status; }
@@ -168,6 +181,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    NetworkType m_networkType;
+    bool m_networkTypeHasBeenSet = false;
 
     EnvironmentLifecycle m_status;
     bool m_statusHasBeenSet = false;

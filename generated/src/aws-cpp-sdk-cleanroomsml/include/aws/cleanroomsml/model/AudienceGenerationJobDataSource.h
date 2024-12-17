@@ -8,6 +8,7 @@
 #include <aws/cleanroomsml/model/S3ConfigMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cleanroomsml/model/ProtectedQuerySQLParameters.h>
+#include <aws/cleanroomsml/model/ComputeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -81,6 +82,16 @@ namespace Model
     inline AudienceGenerationJobDataSource& WithSqlParameters(const ProtectedQuerySQLParameters& value) { SetSqlParameters(value); return *this;}
     inline AudienceGenerationJobDataSource& WithSqlParameters(ProtectedQuerySQLParameters&& value) { SetSqlParameters(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    
+    inline const ComputeConfiguration& GetSqlComputeConfiguration() const{ return m_sqlComputeConfiguration; }
+    inline bool SqlComputeConfigurationHasBeenSet() const { return m_sqlComputeConfigurationHasBeenSet; }
+    inline void SetSqlComputeConfiguration(const ComputeConfiguration& value) { m_sqlComputeConfigurationHasBeenSet = true; m_sqlComputeConfiguration = value; }
+    inline void SetSqlComputeConfiguration(ComputeConfiguration&& value) { m_sqlComputeConfigurationHasBeenSet = true; m_sqlComputeConfiguration = std::move(value); }
+    inline AudienceGenerationJobDataSource& WithSqlComputeConfiguration(const ComputeConfiguration& value) { SetSqlComputeConfiguration(value); return *this;}
+    inline AudienceGenerationJobDataSource& WithSqlComputeConfiguration(ComputeConfiguration&& value) { SetSqlComputeConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     S3ConfigMap m_dataSource;
@@ -91,6 +102,9 @@ namespace Model
 
     ProtectedQuerySQLParameters m_sqlParameters;
     bool m_sqlParametersHasBeenSet = false;
+
+    ComputeConfiguration m_sqlComputeConfiguration;
+    bool m_sqlComputeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

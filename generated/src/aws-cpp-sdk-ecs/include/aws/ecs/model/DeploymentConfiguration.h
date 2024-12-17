@@ -89,9 +89,11 @@ namespace Model
      * <code>DRAINING</code> state.</p>  <p>You can't specify a custom
      * <code>maximumPercent</code> value for a service that uses either the blue/green
      * (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and has
-     * tasks that use the EC2 launch type.</p>  <p>If the tasks in the service
-     * use the Fargate launch type, the maximum percent value is not used, although it
-     * is returned when describing your service.</p>
+     * tasks that use the EC2 launch type.</p>  <p>If the service uses either
+     * the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment
+     * types, and the tasks in the service use the Fargate launch type, the maximum
+     * percent value is not used. The value is still returned when describing your
+     * service.</p>
      */
     inline int GetMaximumPercent() const{ return m_maximumPercent; }
     inline bool MaximumPercentHasBeenSet() const { return m_maximumPercentHasBeenSet; }

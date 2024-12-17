@@ -22,6 +22,7 @@ RuleDeclaration::RuleDeclaration() :
     m_nameHasBeenSet(false),
     m_ruleTypeIdHasBeenSet(false),
     m_configurationHasBeenSet(false),
+    m_commandsHasBeenSet(false),
     m_inputArtifactsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_regionHasBeenSet(false),
@@ -60,6 +61,16 @@ RuleDeclaration& RuleDeclaration::operator =(JsonView jsonValue)
       m_configuration[configurationItem.first] = configurationItem.second.AsString();
     }
     m_configurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("commands"))
+  {
+    Aws::Utils::Array<JsonView> commandsJsonList = jsonValue.GetArray("commands");
+    for(unsigned commandsIndex = 0; commandsIndex < commandsJsonList.GetLength(); ++commandsIndex)
+    {
+      m_commands.push_back(commandsJsonList[commandsIndex].AsString());
+    }
+    m_commandsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputArtifacts"))
@@ -120,6 +131,17 @@ JsonValue RuleDeclaration::Jsonize() const
      configurationJsonMap.WithString(configurationItem.first, configurationItem.second);
    }
    payload.WithObject("configuration", std::move(configurationJsonMap));
+
+  }
+
+  if(m_commandsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> commandsJsonList(m_commands.size());
+   for(unsigned commandsIndex = 0; commandsIndex < commandsJsonList.GetLength(); ++commandsIndex)
+   {
+     commandsJsonList[commandsIndex].AsString(m_commands[commandsIndex]);
+   }
+   payload.WithArray("commands", std::move(commandsJsonList));
 
   }
 

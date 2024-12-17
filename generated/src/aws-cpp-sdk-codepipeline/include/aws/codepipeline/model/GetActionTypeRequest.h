@@ -41,7 +41,8 @@ namespace Model
      * valid values:</p> <ul> <li> <p> <code>Source</code> </p> </li> <li> <p>
      * <code>Build</code> </p> </li> <li> <p> <code>Test</code> </p> </li> <li> <p>
      * <code>Deploy</code> </p> </li> <li> <p> <code>Approval</code> </p> </li> <li>
-     * <p> <code>Invoke</code> </p> </li> </ul>
+     * <p> <code>Invoke</code> </p> </li> <li> <p> <code>Compute</code> </p> </li>
+     * </ul>
      */
     inline const ActionCategory& GetCategory() const{ return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }

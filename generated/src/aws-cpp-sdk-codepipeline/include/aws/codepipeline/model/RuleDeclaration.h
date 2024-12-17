@@ -31,7 +31,11 @@ namespace Model
    * <p>Represents information about the rule to be created for an associated
    * condition. An example would be creating a new rule for an entry condition, such
    * as a rule that checks for a test result before allowing the run to enter the
-   * deployment stage.</p><p><h3>See Also:</h3>   <a
+   * deployment stage. For more information about conditions, see <a
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+   * conditions</a>. For more information about rules, see the <a
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+   * rule reference</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RuleDeclaration">AWS
    * API Reference</a></p>
    */
@@ -47,7 +51,7 @@ namespace Model
     ///@{
     /**
      * <p>The name of the rule that is created for the condition, such as
-     * CheckAllResults.</p>
+     * <code>VariableCheck</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -89,6 +93,25 @@ namespace Model
     inline RuleDeclaration& AddConfiguration(const char* key, Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration.emplace(key, std::move(value)); return *this; }
     inline RuleDeclaration& AddConfiguration(Aws::String&& key, const char* value) { m_configurationHasBeenSet = true; m_configuration.emplace(std::move(key), value); return *this; }
     inline RuleDeclaration& AddConfiguration(const char* key, const char* value) { m_configurationHasBeenSet = true; m_configuration.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The shell commands to run with your commands rule in CodePipeline. All
+     * commands are supported except multi-line formats. While CodeBuild logs and
+     * permissions are used, you do not need to create any resources in CodeBuild.</p>
+     *  <p>Using compute time for this action will incur separate charges in
+     * CodeBuild.</p> 
+     */
+    inline const Aws::Vector<Aws::String>& GetCommands() const{ return m_commands; }
+    inline bool CommandsHasBeenSet() const { return m_commandsHasBeenSet; }
+    inline void SetCommands(const Aws::Vector<Aws::String>& value) { m_commandsHasBeenSet = true; m_commands = value; }
+    inline void SetCommands(Aws::Vector<Aws::String>&& value) { m_commandsHasBeenSet = true; m_commands = std::move(value); }
+    inline RuleDeclaration& WithCommands(const Aws::Vector<Aws::String>& value) { SetCommands(value); return *this;}
+    inline RuleDeclaration& WithCommands(Aws::Vector<Aws::String>&& value) { SetCommands(std::move(value)); return *this;}
+    inline RuleDeclaration& AddCommands(const Aws::String& value) { m_commandsHasBeenSet = true; m_commands.push_back(value); return *this; }
+    inline RuleDeclaration& AddCommands(Aws::String&& value) { m_commandsHasBeenSet = true; m_commands.push_back(std::move(value)); return *this; }
+    inline RuleDeclaration& AddCommands(const char* value) { m_commandsHasBeenSet = true; m_commands.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -153,6 +176,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_commands;
+    bool m_commandsHasBeenSet = false;
 
     Aws::Vector<InputArtifact> m_inputArtifacts;
     bool m_inputArtifactsHasBeenSet = false;
