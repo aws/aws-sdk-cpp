@@ -9,6 +9,7 @@
 #include <aws/batch/model/EksHostPath.h>
 #include <aws/batch/model/EksEmptyDir.h>
 #include <aws/batch/model/EksSecret.h>
+#include <aws/batch/model/EksPersistentVolumeClaim.h>
 #include <utility>
 
 namespace Aws
@@ -101,6 +102,22 @@ namespace Model
     inline EksVolume& WithSecret(const EksSecret& value) { SetSecret(value); return *this;}
     inline EksVolume& WithSecret(EksSecret&& value) { SetSecret(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies the configuration of a Kubernetes
+     * <code>persistentVolumeClaim</code> bounded to a <code>persistentVolume</code>.
+     * For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims">
+     * Persistent Volume Claims</a> in the <i>Kubernetes documentation</i>.</p>
+     */
+    inline const EksPersistentVolumeClaim& GetPersistentVolumeClaim() const{ return m_persistentVolumeClaim; }
+    inline bool PersistentVolumeClaimHasBeenSet() const { return m_persistentVolumeClaimHasBeenSet; }
+    inline void SetPersistentVolumeClaim(const EksPersistentVolumeClaim& value) { m_persistentVolumeClaimHasBeenSet = true; m_persistentVolumeClaim = value; }
+    inline void SetPersistentVolumeClaim(EksPersistentVolumeClaim&& value) { m_persistentVolumeClaimHasBeenSet = true; m_persistentVolumeClaim = std::move(value); }
+    inline EksVolume& WithPersistentVolumeClaim(const EksPersistentVolumeClaim& value) { SetPersistentVolumeClaim(value); return *this;}
+    inline EksVolume& WithPersistentVolumeClaim(EksPersistentVolumeClaim&& value) { SetPersistentVolumeClaim(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_name;
@@ -114,6 +131,9 @@ namespace Model
 
     EksSecret m_secret;
     bool m_secretHasBeenSet = false;
+
+    EksPersistentVolumeClaim m_persistentVolumeClaim;
+    bool m_persistentVolumeClaimHasBeenSet = false;
   };
 
 } // namespace Model

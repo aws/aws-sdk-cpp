@@ -45,7 +45,7 @@ namespace Model
      * constrains the provider type for the action. Valid categories are limited to one
      * of the following values. </p> <ul> <li> <p>Source</p> </li> <li> <p>Build</p>
      * </li> <li> <p>Test</p> </li> <li> <p>Deploy</p> </li> <li> <p>Invoke</p> </li>
-     * <li> <p>Approval</p> </li> </ul>
+     * <li> <p>Approval</p> </li> <li> <p>Compute</p> </li> </ul>
      */
     inline const ActionCategory& GetCategory() const{ return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/m2/model/EngineType.h>
 #include <aws/m2/model/HighAvailabilityConfig.h>
+#include <aws/m2/model/NetworkType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/m2/model/StorageConfiguration.h>
@@ -154,6 +155,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The network type required for the runtime environment.</p>
+     */
+    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+    inline void SetNetworkType(const NetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline void SetNetworkType(NetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+    inline CreateEnvironmentRequest& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
+    inline CreateEnvironmentRequest& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Configures the maintenance window that you want for the runtime environment.
      * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * and must be less than 24 hours. The following two examples are valid maintenance
@@ -269,6 +282,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    NetworkType m_networkType;
+    bool m_networkTypeHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet = false;

@@ -200,15 +200,17 @@ namespace Model
      * Amazon OpenSearch Service, you can specify options like <code>Name</code>,
      * <code>Host</code> (OpenSearch Service endpoint without protocol),
      * <code>Port</code>, <code>Index</code>, <code>Type</code>, <code>Aws_auth</code>,
-     * <code>Aws_region</code>, <code>Suppress_Type_Name</code>, and
-     * <code>tls</code>.</p> <p>When you export logs to Amazon S3, you can specify the
-     * bucket using the <code>bucket</code> option. You can also specify
-     * <code>region</code>, <code>total_file_size</code>, <code>upload_timeout</code>,
-     * and <code>use_put_object</code> as options.</p> <p>This parameter requires
-     * version 1.19 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version
-     * --format '{{.Server.APIVersion}}'</code> </p>
+     * <code>Aws_region</code>, <code>Suppress_Type_Name</code>, and <code>tls</code>.
+     * For more information, see <a
+     * href="http://aws.amazon.com/blogs/containers/under-the-hood-firelens-for-amazon-ecs-tasks/">Under
+     * the hood: FireLens for Amazon ECS Tasks</a>.</p> <p>When you export logs to
+     * Amazon S3, you can specify the bucket using the <code>bucket</code> option. You
+     * can also specify <code>region</code>, <code>total_file_size</code>,
+     * <code>upload_timeout</code>, and <code>use_put_object</code> as options.</p>
+     * <p>This parameter requires version 1.19 of the Docker Remote API or greater on
+     * your container instance. To check the Docker Remote API version on your
+     * container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const{ return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }

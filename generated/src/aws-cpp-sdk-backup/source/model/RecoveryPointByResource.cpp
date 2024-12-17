@@ -33,7 +33,10 @@ RecoveryPointByResource::RecoveryPointByResource() :
     m_parentRecoveryPointArnHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
     m_vaultType(VaultType::NOT_SET),
-    m_vaultTypeHasBeenSet(false)
+    m_vaultTypeHasBeenSet(false),
+    m_indexStatus(IndexStatus::NOT_SET),
+    m_indexStatusHasBeenSet(false),
+    m_indexStatusMessageHasBeenSet(false)
 {
 }
 
@@ -122,6 +125,20 @@ RecoveryPointByResource& RecoveryPointByResource::operator =(JsonView jsonValue)
     m_vaultTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IndexStatus"))
+  {
+    m_indexStatus = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("IndexStatus"));
+
+    m_indexStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IndexStatusMessage"))
+  {
+    m_indexStatusMessage = jsonValue.GetString("IndexStatusMessage");
+
+    m_indexStatusMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -190,6 +207,17 @@ JsonValue RecoveryPointByResource::Jsonize() const
   if(m_vaultTypeHasBeenSet)
   {
    payload.WithString("VaultType", VaultTypeMapper::GetNameForVaultType(m_vaultType));
+  }
+
+  if(m_indexStatusHasBeenSet)
+  {
+   payload.WithString("IndexStatus", IndexStatusMapper::GetNameForIndexStatus(m_indexStatus));
+  }
+
+  if(m_indexStatusMessageHasBeenSet)
+  {
+   payload.WithString("IndexStatusMessage", m_indexStatusMessage);
+
   }
 
   return payload;
