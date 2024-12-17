@@ -80,6 +80,8 @@ toolchains/android/
 
 # codegen
 tools/code-generation/generator/target/
+tools/code-generation/smithy/codegen/gradle/
+tools/code-generation/smithy/codegen/.gradle/
 
 #config output
 aws-cpp-sdk-core/include/aws/core/SDKConfig.h
