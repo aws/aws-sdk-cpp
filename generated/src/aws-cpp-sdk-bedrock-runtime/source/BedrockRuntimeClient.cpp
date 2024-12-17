@@ -200,11 +200,11 @@ ApplyGuardrailOutcome BedrockRuntimeClient::ApplyGuardrail(const ApplyGuardrailR
   return TracingUtils::MakeCallWithTiming<ApplyGuardrailOutcome>(
     [&]()-> ApplyGuardrailOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/guardrail/");
-      endpointOverrides.pathSegments.emplace_back(request.GetGuardrailIdentifier());
-      endpointOverrides.pathSegments.emplace_back("/version/");
-      endpointOverrides.pathSegments.emplace_back(request.GetGuardrailVersion());
-      endpointOverrides.pathSegments.emplace_back("/apply");
+      endpointOverrides.AddPathSegment("/guardrail/");
+      endpointOverrides.AddPathSegment(request.GetGuardrailIdentifier());
+      endpointOverrides.AddPathSegment("/version/");
+      endpointOverrides.AddPathSegment(request.GetGuardrailVersion());
+      endpointOverrides.AddPathSegment("/apply");
       return ApplyGuardrailOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -239,9 +239,9 @@ ConverseOutcome BedrockRuntimeClient::Converse(const ConverseRequest& request) c
   return TracingUtils::MakeCallWithTiming<ConverseOutcome>(
     [&]()-> ConverseOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/model/");
-      endpointOverrides.pathSegments.emplace_back(request.GetModelId());
-      endpointOverrides.pathSegments.emplace_back("/converse");
+      endpointOverrides.AddPathSegment("/model/");
+      endpointOverrides.AddPathSegment(request.GetModelId());
+      endpointOverrides.AddPathSegment("/converse");
       return ConverseOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -276,9 +276,9 @@ ConverseStreamOutcome BedrockRuntimeClient::ConverseStream(ConverseStreamRequest
   return TracingUtils::MakeCallWithTiming<ConverseStreamOutcome>(
     [&]()-> ConverseStreamOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/model/");
-      endpointOverrides.pathSegments.emplace_back(request.GetModelId());
-      endpointOverrides.pathSegments.emplace_back("/converse-stream");
+      endpointOverrides.AddPathSegment("/model/");
+      endpointOverrides.AddPathSegment(request.GetModelId());
+      endpointOverrides.AddPathSegment("/converse-stream");
       request.SetResponseStreamFactory(
           [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
       );
@@ -316,9 +316,9 @@ InvokeModelOutcome BedrockRuntimeClient::InvokeModel(const InvokeModelRequest& r
   return TracingUtils::MakeCallWithTiming<InvokeModelOutcome>(
     [&]()-> InvokeModelOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/model/");
-      endpointOverrides.pathSegments.emplace_back(request.GetModelId());
-      endpointOverrides.pathSegments.emplace_back("/invoke");
+      endpointOverrides.AddPathSegment("/model/");
+      endpointOverrides.AddPathSegment(request.GetModelId());
+      endpointOverrides.AddPathSegment("/invoke");
       return InvokeModelOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -353,9 +353,9 @@ InvokeModelWithResponseStreamOutcome BedrockRuntimeClient::InvokeModelWithRespon
   return TracingUtils::MakeCallWithTiming<InvokeModelWithResponseStreamOutcome>(
     [&]()-> InvokeModelWithResponseStreamOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/model/");
-      endpointOverrides.pathSegments.emplace_back(request.GetModelId());
-      endpointOverrides.pathSegments.emplace_back("/invoke-with-response-stream");
+      endpointOverrides.AddPathSegment("/model/");
+      endpointOverrides.AddPathSegment(request.GetModelId());
+      endpointOverrides.AddPathSegment("/invoke-with-response-stream");
       request.SetResponseStreamFactory(
           [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
       );

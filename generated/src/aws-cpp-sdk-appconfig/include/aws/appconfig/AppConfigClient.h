@@ -6,15 +6,18 @@
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appconfig/AppConfigServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
 
 namespace Aws
 {
 namespace AppConfig
 {
+  AWS_APPCONFIG_API extern const char SERVICE_NAME[];
   /**
    * <p>AppConfig feature flags and dynamic configurations help software builders
    * quickly and securely adjust application behavior in production environments
@@ -111,12 +114,19 @@ namespace AppConfig
    * href="http://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">AppConfig
    * User Guide</a>.</p>
    */
-  class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppConfigClient>
+  class AWS_APPCONFIG_API AppConfigClient : smithy::client::AwsSmithyClientT<Aws::AppConfig::SERVICE_NAME,
+      Aws::AppConfig::AppConfigClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      AppConfigEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome>,
+    Aws::Client::ClientWithAsyncTemplateMethods<AppConfigClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "AppConfig"; }
 
       typedef AppConfigClientConfiguration ClientConfigurationType;
       typedef AppConfigEndpointProvider EndpointProviderType;
@@ -1397,8 +1407,6 @@ namespace AppConfig
       friend class Aws::Client::ClientWithAsyncTemplateMethods<AppConfigClient>;
       void init(const AppConfigClientConfiguration& clientConfiguration);
 
-      AppConfigClientConfiguration m_clientConfiguration;
-      std::shared_ptr<AppConfigEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppConfig

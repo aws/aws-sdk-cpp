@@ -191,7 +191,7 @@ GetLatestConfigurationOutcome AppConfigDataClient::GetLatestConfiguration(const 
   return TracingUtils::MakeCallWithTiming<GetLatestConfigurationOutcome>(
     [&]()-> GetLatestConfigurationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/configuration");
+      endpointOverrides.AddPathSegment("/configuration");
       return GetLatestConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -221,7 +221,7 @@ StartConfigurationSessionOutcome AppConfigDataClient::StartConfigurationSession(
   return TracingUtils::MakeCallWithTiming<StartConfigurationSessionOutcome>(
     [&]()-> StartConfigurationSessionOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/configurationsessions");
+      endpointOverrides.AddPathSegment("/configurationsessions");
       return StartConfigurationSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {

@@ -197,7 +197,7 @@ BatchDescribeEntitiesOutcome MarketplaceCatalogClient::BatchDescribeEntities(con
   return TracingUtils::MakeCallWithTiming<BatchDescribeEntitiesOutcome>(
     [&]()-> BatchDescribeEntitiesOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/BatchDescribeEntities");
+      endpointOverrides.AddPathSegment("/BatchDescribeEntities");
       return BatchDescribeEntitiesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -237,7 +237,7 @@ CancelChangeSetOutcome MarketplaceCatalogClient::CancelChangeSet(const CancelCha
   return TracingUtils::MakeCallWithTiming<CancelChangeSetOutcome>(
     [&]()-> CancelChangeSetOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/CancelChangeSet");
+      endpointOverrides.AddPathSegment("/CancelChangeSet");
       return CancelChangeSetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -272,7 +272,7 @@ DeleteResourcePolicyOutcome MarketplaceCatalogClient::DeleteResourcePolicy(const
   return TracingUtils::MakeCallWithTiming<DeleteResourcePolicyOutcome>(
     [&]()-> DeleteResourcePolicyOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/DeleteResourcePolicy");
+      endpointOverrides.AddPathSegment("/DeleteResourcePolicy");
       return DeleteResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -312,7 +312,7 @@ DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const Descr
   return TracingUtils::MakeCallWithTiming<DescribeChangeSetOutcome>(
     [&]()-> DescribeChangeSetOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/DescribeChangeSet");
+      endpointOverrides.AddPathSegment("/DescribeChangeSet");
       return DescribeChangeSetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -352,7 +352,7 @@ DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEnt
   return TracingUtils::MakeCallWithTiming<DescribeEntityOutcome>(
     [&]()-> DescribeEntityOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/DescribeEntity");
+      endpointOverrides.AddPathSegment("/DescribeEntity");
       return DescribeEntityOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -387,7 +387,7 @@ GetResourcePolicyOutcome MarketplaceCatalogClient::GetResourcePolicy(const GetRe
   return TracingUtils::MakeCallWithTiming<GetResourcePolicyOutcome>(
     [&]()-> GetResourcePolicyOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/GetResourcePolicy");
+      endpointOverrides.AddPathSegment("/GetResourcePolicy");
       return GetResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -417,7 +417,7 @@ ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeS
   return TracingUtils::MakeCallWithTiming<ListChangeSetsOutcome>(
     [&]()-> ListChangeSetsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/ListChangeSets");
+      endpointOverrides.AddPathSegment("/ListChangeSets");
       return ListChangeSetsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -447,7 +447,7 @@ ListEntitiesOutcome MarketplaceCatalogClient::ListEntities(const ListEntitiesReq
   return TracingUtils::MakeCallWithTiming<ListEntitiesOutcome>(
     [&]()-> ListEntitiesOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/ListEntities");
+      endpointOverrides.AddPathSegment("/ListEntities");
       return ListEntitiesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -477,7 +477,7 @@ ListTagsForResourceOutcome MarketplaceCatalogClient::ListTagsForResource(const L
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/ListTagsForResource");
+      endpointOverrides.AddPathSegment("/ListTagsForResource");
       return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -507,7 +507,7 @@ PutResourcePolicyOutcome MarketplaceCatalogClient::PutResourcePolicy(const PutRe
   return TracingUtils::MakeCallWithTiming<PutResourcePolicyOutcome>(
     [&]()-> PutResourcePolicyOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/PutResourcePolicy");
+      endpointOverrides.AddPathSegment("/PutResourcePolicy");
       return PutResourcePolicyOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -537,7 +537,7 @@ StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChange
   return TracingUtils::MakeCallWithTiming<StartChangeSetOutcome>(
     [&]()-> StartChangeSetOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/StartChangeSet");
+      endpointOverrides.AddPathSegment("/StartChangeSet");
       return StartChangeSetOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -567,7 +567,7 @@ TagResourceOutcome MarketplaceCatalogClient::TagResource(const TagResourceReques
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/TagResource");
+      endpointOverrides.AddPathSegment("/TagResource");
       return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -597,7 +597,7 @@ UntagResourceOutcome MarketplaceCatalogClient::UntagResource(const UntagResource
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/UntagResource");
+      endpointOverrides.AddPathSegment("/UntagResource");
       return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {

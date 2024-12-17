@@ -6,15 +6,18 @@
 #pragma once
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opensearch/OpenSearchServiceServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
 
 namespace Aws
 {
 namespace OpenSearchService
 {
+  AWS_OPENSEARCHSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p>Use the Amazon OpenSearch Service configuration API to create, configure, and
    * manage OpenSearch Service domains. The endpoint for configuration service
@@ -24,12 +27,19 @@ namespace OpenSearchService
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions">Amazon
    * Web Services service endpoints</a>.</p>
    */
-  class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>
+  class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : smithy::client::AwsSmithyClientT<Aws::OpenSearchService::SERVICE_NAME,
+      Aws::OpenSearchService::OpenSearchServiceClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      OpenSearchServiceEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome>,
+    Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "OpenSearch"; }
 
       typedef OpenSearchServiceClientConfiguration ClientConfigurationType;
       typedef OpenSearchServiceEndpointProvider EndpointProviderType;
@@ -2015,8 +2025,6 @@ namespace OpenSearchService
       friend class Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>;
       void init(const OpenSearchServiceClientConfiguration& clientConfiguration);
 
-      OpenSearchServiceClientConfiguration m_clientConfiguration;
-      std::shared_ptr<OpenSearchServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace OpenSearchService

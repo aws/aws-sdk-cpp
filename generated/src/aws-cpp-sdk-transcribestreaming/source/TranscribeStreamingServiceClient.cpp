@@ -204,7 +204,7 @@ void TranscribeStreamingServiceClient::StartCallAnalyticsStreamTranscriptionAsyn
   }
   auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-  endpointOverrides.pathSegments.emplace_back("/call-analytics-stream-transcription");
+  endpointOverrides.AddPathSegment("/call-analytics-stream-transcription");
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
@@ -281,7 +281,7 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
   }
   auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-  endpointOverrides.pathSegments.emplace_back("/medical-stream-transcription");
+  endpointOverrides.AddPathSegment("/medical-stream-transcription");
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
@@ -340,7 +340,7 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
   }
   auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-  endpointOverrides.pathSegments.emplace_back("/stream-transcription");
+  endpointOverrides.AddPathSegment("/stream-transcription");
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );

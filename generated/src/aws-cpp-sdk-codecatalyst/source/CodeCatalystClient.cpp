@@ -163,7 +163,7 @@ CreateAccessTokenOutcome CodeCatalystClient::CreateAccessToken(const CreateAcces
   return TracingUtils::MakeCallWithTiming<CreateAccessTokenOutcome>(
     [&]()-> CreateAccessTokenOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/accessTokens");
+      endpointOverrides.AddPathSegment("/v1/accessTokens");
       return CreateAccessTokenOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -203,11 +203,11 @@ CreateDevEnvironmentOutcome CodeCatalystClient::CreateDevEnvironment(const Creat
   return TracingUtils::MakeCallWithTiming<CreateDevEnvironmentOutcome>(
     [&]()-> CreateDevEnvironmentOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/devEnvironments");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/devEnvironments");
       return CreateDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -242,9 +242,9 @@ CreateProjectOutcome CodeCatalystClient::CreateProject(const CreateProjectReques
   return TracingUtils::MakeCallWithTiming<CreateProjectOutcome>(
     [&]()-> CreateProjectOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects");
       return CreateProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -289,12 +289,12 @@ CreateSourceRepositoryOutcome CodeCatalystClient::CreateSourceRepository(const C
   return TracingUtils::MakeCallWithTiming<CreateSourceRepositoryOutcome>(
     [&]()-> CreateSourceRepositoryOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/sourceRepositories/");
-      endpointOverrides.pathSegments.emplace_back(request.GetName());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/sourceRepositories/");
+      endpointOverrides.AddPathSegment(request.GetName());
       return CreateSourceRepositoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -344,14 +344,14 @@ CreateSourceRepositoryBranchOutcome CodeCatalystClient::CreateSourceRepositoryBr
   return TracingUtils::MakeCallWithTiming<CreateSourceRepositoryBranchOutcome>(
     [&]()-> CreateSourceRepositoryBranchOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/sourceRepositories/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSourceRepositoryName());
-      endpointOverrides.pathSegments.emplace_back("/branches/");
-      endpointOverrides.pathSegments.emplace_back(request.GetName());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/sourceRepositories/");
+      endpointOverrides.AddPathSegment(request.GetSourceRepositoryName());
+      endpointOverrides.AddPathSegment("/branches/");
+      endpointOverrides.AddPathSegment(request.GetName());
       return CreateSourceRepositoryBranchOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -386,8 +386,8 @@ DeleteAccessTokenOutcome CodeCatalystClient::DeleteAccessToken(const DeleteAcces
   return TracingUtils::MakeCallWithTiming<DeleteAccessTokenOutcome>(
     [&]()-> DeleteAccessTokenOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/accessTokens/");
-      endpointOverrides.pathSegments.emplace_back(request.GetId());
+      endpointOverrides.AddPathSegment("/v1/accessTokens/");
+      endpointOverrides.AddPathSegment(request.GetId());
       return DeleteAccessTokenOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -432,12 +432,12 @@ DeleteDevEnvironmentOutcome CodeCatalystClient::DeleteDevEnvironment(const Delet
   return TracingUtils::MakeCallWithTiming<DeleteDevEnvironmentOutcome>(
     [&]()-> DeleteDevEnvironmentOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/devEnvironments/");
-      endpointOverrides.pathSegments.emplace_back(request.GetId());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/devEnvironments/");
+      endpointOverrides.AddPathSegment(request.GetId());
       return DeleteDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -477,10 +477,10 @@ DeleteProjectOutcome CodeCatalystClient::DeleteProject(const DeleteProjectReques
   return TracingUtils::MakeCallWithTiming<DeleteProjectOutcome>(
     [&]()-> DeleteProjectOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetName());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetName());
       return DeleteProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -525,12 +525,12 @@ DeleteSourceRepositoryOutcome CodeCatalystClient::DeleteSourceRepository(const D
   return TracingUtils::MakeCallWithTiming<DeleteSourceRepositoryOutcome>(
     [&]()-> DeleteSourceRepositoryOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/sourceRepositories/");
-      endpointOverrides.pathSegments.emplace_back(request.GetName());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/sourceRepositories/");
+      endpointOverrides.AddPathSegment(request.GetName());
       return DeleteSourceRepositoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -565,8 +565,8 @@ DeleteSpaceOutcome CodeCatalystClient::DeleteSpace(const DeleteSpaceRequest& req
   return TracingUtils::MakeCallWithTiming<DeleteSpaceOutcome>(
     [&]()-> DeleteSpaceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetName());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetName());
       return DeleteSpaceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -611,12 +611,12 @@ GetDevEnvironmentOutcome CodeCatalystClient::GetDevEnvironment(const GetDevEnvir
   return TracingUtils::MakeCallWithTiming<GetDevEnvironmentOutcome>(
     [&]()-> GetDevEnvironmentOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/devEnvironments/");
-      endpointOverrides.pathSegments.emplace_back(request.GetId());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/devEnvironments/");
+      endpointOverrides.AddPathSegment(request.GetId());
       return GetDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -656,10 +656,10 @@ GetProjectOutcome CodeCatalystClient::GetProject(const GetProjectRequest& reques
   return TracingUtils::MakeCallWithTiming<GetProjectOutcome>(
     [&]()-> GetProjectOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetName());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetName());
       return GetProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -704,12 +704,12 @@ GetSourceRepositoryOutcome CodeCatalystClient::GetSourceRepository(const GetSour
   return TracingUtils::MakeCallWithTiming<GetSourceRepositoryOutcome>(
     [&]()-> GetSourceRepositoryOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/sourceRepositories/");
-      endpointOverrides.pathSegments.emplace_back(request.GetName());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/sourceRepositories/");
+      endpointOverrides.AddPathSegment(request.GetName());
       return GetSourceRepositoryOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -754,13 +754,13 @@ GetSourceRepositoryCloneUrlsOutcome CodeCatalystClient::GetSourceRepositoryClone
   return TracingUtils::MakeCallWithTiming<GetSourceRepositoryCloneUrlsOutcome>(
     [&]()-> GetSourceRepositoryCloneUrlsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/sourceRepositories/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSourceRepositoryName());
-      endpointOverrides.pathSegments.emplace_back("/cloneUrls");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/sourceRepositories/");
+      endpointOverrides.AddPathSegment(request.GetSourceRepositoryName());
+      endpointOverrides.AddPathSegment("/cloneUrls");
       return GetSourceRepositoryCloneUrlsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -795,8 +795,8 @@ GetSpaceOutcome CodeCatalystClient::GetSpace(const GetSpaceRequest& request) con
   return TracingUtils::MakeCallWithTiming<GetSpaceOutcome>(
     [&]()-> GetSpaceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetName());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetName());
       return GetSpaceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -831,9 +831,9 @@ GetSubscriptionOutcome CodeCatalystClient::GetSubscription(const GetSubscription
   return TracingUtils::MakeCallWithTiming<GetSubscriptionOutcome>(
     [&]()-> GetSubscriptionOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/subscription");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/subscription");
       return GetSubscriptionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -863,7 +863,7 @@ GetUserDetailsOutcome CodeCatalystClient::GetUserDetails(const GetUserDetailsReq
   return TracingUtils::MakeCallWithTiming<GetUserDetailsOutcome>(
     [&]()-> GetUserDetailsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/userDetails");
+      endpointOverrides.AddPathSegment("/userDetails");
       return GetUserDetailsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -908,12 +908,12 @@ GetWorkflowOutcome CodeCatalystClient::GetWorkflow(const GetWorkflowRequest& req
   return TracingUtils::MakeCallWithTiming<GetWorkflowOutcome>(
     [&]()-> GetWorkflowOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/workflows/");
-      endpointOverrides.pathSegments.emplace_back(request.GetId());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/workflows/");
+      endpointOverrides.AddPathSegment(request.GetId());
       return GetWorkflowOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -958,12 +958,12 @@ GetWorkflowRunOutcome CodeCatalystClient::GetWorkflowRun(const GetWorkflowRunReq
   return TracingUtils::MakeCallWithTiming<GetWorkflowRunOutcome>(
     [&]()-> GetWorkflowRunOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/workflowRuns/");
-      endpointOverrides.pathSegments.emplace_back(request.GetId());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/workflowRuns/");
+      endpointOverrides.AddPathSegment(request.GetId());
       return GetWorkflowRunOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -993,7 +993,7 @@ ListAccessTokensOutcome CodeCatalystClient::ListAccessTokens(const ListAccessTok
   return TracingUtils::MakeCallWithTiming<ListAccessTokensOutcome>(
     [&]()-> ListAccessTokensOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/accessTokens");
+      endpointOverrides.AddPathSegment("/v1/accessTokens");
       return ListAccessTokensOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1038,13 +1038,13 @@ ListDevEnvironmentSessionsOutcome CodeCatalystClient::ListDevEnvironmentSessions
   return TracingUtils::MakeCallWithTiming<ListDevEnvironmentSessionsOutcome>(
     [&]()-> ListDevEnvironmentSessionsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/devEnvironments/");
-      endpointOverrides.pathSegments.emplace_back(request.GetDevEnvironmentId());
-      endpointOverrides.pathSegments.emplace_back("/sessions");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/devEnvironments/");
+      endpointOverrides.AddPathSegment(request.GetDevEnvironmentId());
+      endpointOverrides.AddPathSegment("/sessions");
       return ListDevEnvironmentSessionsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1079,9 +1079,9 @@ ListDevEnvironmentsOutcome CodeCatalystClient::ListDevEnvironments(const ListDev
   return TracingUtils::MakeCallWithTiming<ListDevEnvironmentsOutcome>(
     [&]()-> ListDevEnvironmentsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/devEnvironments");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/devEnvironments");
       return ListDevEnvironmentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1116,9 +1116,9 @@ ListEventLogsOutcome CodeCatalystClient::ListEventLogs(const ListEventLogsReques
   return TracingUtils::MakeCallWithTiming<ListEventLogsOutcome>(
     [&]()-> ListEventLogsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/eventLogs");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/eventLogs");
       return ListEventLogsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1153,9 +1153,9 @@ ListProjectsOutcome CodeCatalystClient::ListProjects(const ListProjectsRequest& 
   return TracingUtils::MakeCallWithTiming<ListProjectsOutcome>(
     [&]()-> ListProjectsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects");
       return ListProjectsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1195,11 +1195,11 @@ ListSourceRepositoriesOutcome CodeCatalystClient::ListSourceRepositories(const L
   return TracingUtils::MakeCallWithTiming<ListSourceRepositoriesOutcome>(
     [&]()-> ListSourceRepositoriesOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/sourceRepositories");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/sourceRepositories");
       return ListSourceRepositoriesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1244,13 +1244,13 @@ ListSourceRepositoryBranchesOutcome CodeCatalystClient::ListSourceRepositoryBran
   return TracingUtils::MakeCallWithTiming<ListSourceRepositoryBranchesOutcome>(
     [&]()-> ListSourceRepositoryBranchesOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/sourceRepositories/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSourceRepositoryName());
-      endpointOverrides.pathSegments.emplace_back("/branches");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/sourceRepositories/");
+      endpointOverrides.AddPathSegment(request.GetSourceRepositoryName());
+      endpointOverrides.AddPathSegment("/branches");
       return ListSourceRepositoryBranchesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1280,7 +1280,7 @@ ListSpacesOutcome CodeCatalystClient::ListSpaces(const ListSpacesRequest& reques
   return TracingUtils::MakeCallWithTiming<ListSpacesOutcome>(
     [&]()-> ListSpacesOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces");
+      endpointOverrides.AddPathSegment("/v1/spaces");
       return ListSpacesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1320,11 +1320,11 @@ ListWorkflowRunsOutcome CodeCatalystClient::ListWorkflowRuns(const ListWorkflowR
   return TracingUtils::MakeCallWithTiming<ListWorkflowRunsOutcome>(
     [&]()-> ListWorkflowRunsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/workflowRuns");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/workflowRuns");
       return ListWorkflowRunsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1364,11 +1364,11 @@ ListWorkflowsOutcome CodeCatalystClient::ListWorkflows(const ListWorkflowsReques
   return TracingUtils::MakeCallWithTiming<ListWorkflowsOutcome>(
     [&]()-> ListWorkflowsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/workflows");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/workflows");
       return ListWorkflowsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1413,13 +1413,13 @@ StartDevEnvironmentOutcome CodeCatalystClient::StartDevEnvironment(const StartDe
   return TracingUtils::MakeCallWithTiming<StartDevEnvironmentOutcome>(
     [&]()-> StartDevEnvironmentOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/devEnvironments/");
-      endpointOverrides.pathSegments.emplace_back(request.GetId());
-      endpointOverrides.pathSegments.emplace_back("/start");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/devEnvironments/");
+      endpointOverrides.AddPathSegment(request.GetId());
+      endpointOverrides.AddPathSegment("/start");
       return StartDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1464,13 +1464,13 @@ StartDevEnvironmentSessionOutcome CodeCatalystClient::StartDevEnvironmentSession
   return TracingUtils::MakeCallWithTiming<StartDevEnvironmentSessionOutcome>(
     [&]()-> StartDevEnvironmentSessionOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/devEnvironments/");
-      endpointOverrides.pathSegments.emplace_back(request.GetId());
-      endpointOverrides.pathSegments.emplace_back("/session");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/devEnvironments/");
+      endpointOverrides.AddPathSegment(request.GetId());
+      endpointOverrides.AddPathSegment("/session");
       return StartDevEnvironmentSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1515,11 +1515,11 @@ StartWorkflowRunOutcome CodeCatalystClient::StartWorkflowRun(const StartWorkflow
   return TracingUtils::MakeCallWithTiming<StartWorkflowRunOutcome>(
     [&]()-> StartWorkflowRunOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/workflowRuns");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/workflowRuns");
       return StartWorkflowRunOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1564,13 +1564,13 @@ StopDevEnvironmentOutcome CodeCatalystClient::StopDevEnvironment(const StopDevEn
   return TracingUtils::MakeCallWithTiming<StopDevEnvironmentOutcome>(
     [&]()-> StopDevEnvironmentOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/devEnvironments/");
-      endpointOverrides.pathSegments.emplace_back(request.GetId());
-      endpointOverrides.pathSegments.emplace_back("/stop");
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/devEnvironments/");
+      endpointOverrides.AddPathSegment(request.GetId());
+      endpointOverrides.AddPathSegment("/stop");
       return StopDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1620,14 +1620,14 @@ StopDevEnvironmentSessionOutcome CodeCatalystClient::StopDevEnvironmentSession(c
   return TracingUtils::MakeCallWithTiming<StopDevEnvironmentSessionOutcome>(
     [&]()-> StopDevEnvironmentSessionOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/devEnvironments/");
-      endpointOverrides.pathSegments.emplace_back(request.GetId());
-      endpointOverrides.pathSegments.emplace_back("/session/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSessionId());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/devEnvironments/");
+      endpointOverrides.AddPathSegment(request.GetId());
+      endpointOverrides.AddPathSegment("/session/");
+      endpointOverrides.AddPathSegment(request.GetSessionId());
       return StopDevEnvironmentSessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1672,12 +1672,12 @@ UpdateDevEnvironmentOutcome CodeCatalystClient::UpdateDevEnvironment(const Updat
   return TracingUtils::MakeCallWithTiming<UpdateDevEnvironmentOutcome>(
     [&]()-> UpdateDevEnvironmentOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProjectName());
-      endpointOverrides.pathSegments.emplace_back("/devEnvironments/");
-      endpointOverrides.pathSegments.emplace_back(request.GetId());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetProjectName());
+      endpointOverrides.AddPathSegment("/devEnvironments/");
+      endpointOverrides.AddPathSegment(request.GetId());
       return UpdateDevEnvironmentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1717,10 +1717,10 @@ UpdateProjectOutcome CodeCatalystClient::UpdateProject(const UpdateProjectReques
   return TracingUtils::MakeCallWithTiming<UpdateProjectOutcome>(
     [&]()-> UpdateProjectOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetSpaceName());
-      endpointOverrides.pathSegments.emplace_back("/projects/");
-      endpointOverrides.pathSegments.emplace_back(request.GetName());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetSpaceName());
+      endpointOverrides.AddPathSegment("/projects/");
+      endpointOverrides.AddPathSegment(request.GetName());
       return UpdateProjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1755,8 +1755,8 @@ UpdateSpaceOutcome CodeCatalystClient::UpdateSpace(const UpdateSpaceRequest& req
   return TracingUtils::MakeCallWithTiming<UpdateSpaceOutcome>(
     [&]()-> UpdateSpaceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/spaces/");
-      endpointOverrides.pathSegments.emplace_back(request.GetName());
+      endpointOverrides.AddPathSegment("/v1/spaces/");
+      endpointOverrides.AddPathSegment(request.GetName());
       return UpdateSpaceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1786,7 +1786,7 @@ VerifySessionOutcome CodeCatalystClient::VerifySession(const VerifySessionReques
   return TracingUtils::MakeCallWithTiming<VerifySessionOutcome>(
     [&]()-> VerifySessionOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/session");
+      endpointOverrides.AddPathSegment("/session");
       return VerifySessionOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {

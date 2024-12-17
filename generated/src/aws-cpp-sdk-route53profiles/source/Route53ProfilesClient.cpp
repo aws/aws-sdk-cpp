@@ -200,7 +200,7 @@ AssociateProfileOutcome Route53ProfilesClient::AssociateProfile(const AssociateP
   return TracingUtils::MakeCallWithTiming<AssociateProfileOutcome>(
     [&]()-> AssociateProfileOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profileassociation");
+      endpointOverrides.AddPathSegment("/profileassociation");
       return AssociateProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -230,7 +230,7 @@ AssociateResourceToProfileOutcome Route53ProfilesClient::AssociateResourceToProf
   return TracingUtils::MakeCallWithTiming<AssociateResourceToProfileOutcome>(
     [&]()-> AssociateResourceToProfileOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profileresourceassociation");
+      endpointOverrides.AddPathSegment("/profileresourceassociation");
       return AssociateResourceToProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -260,7 +260,7 @@ CreateProfileOutcome Route53ProfilesClient::CreateProfile(const CreateProfileReq
   return TracingUtils::MakeCallWithTiming<CreateProfileOutcome>(
     [&]()-> CreateProfileOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profile");
+      endpointOverrides.AddPathSegment("/profile");
       return CreateProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -295,8 +295,8 @@ DeleteProfileOutcome Route53ProfilesClient::DeleteProfile(const DeleteProfileReq
   return TracingUtils::MakeCallWithTiming<DeleteProfileOutcome>(
     [&]()-> DeleteProfileOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profile/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProfileId());
+      endpointOverrides.AddPathSegment("/profile/");
+      endpointOverrides.AddPathSegment(request.GetProfileId());
       return DeleteProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -336,10 +336,10 @@ DisassociateProfileOutcome Route53ProfilesClient::DisassociateProfile(const Disa
   return TracingUtils::MakeCallWithTiming<DisassociateProfileOutcome>(
     [&]()-> DisassociateProfileOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profileassociation/Profileid/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProfileId());
-      endpointOverrides.pathSegments.emplace_back("/resourceid/");
-      endpointOverrides.pathSegments.emplace_back(request.GetResourceId());
+      endpointOverrides.AddPathSegment("/profileassociation/Profileid/");
+      endpointOverrides.AddPathSegment(request.GetProfileId());
+      endpointOverrides.AddPathSegment("/resourceid/");
+      endpointOverrides.AddPathSegment(request.GetResourceId());
       return DisassociateProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -379,11 +379,11 @@ DisassociateResourceFromProfileOutcome Route53ProfilesClient::DisassociateResour
   return TracingUtils::MakeCallWithTiming<DisassociateResourceFromProfileOutcome>(
     [&]()-> DisassociateResourceFromProfileOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profileresourceassociation/profileid/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProfileId());
+      endpointOverrides.AddPathSegment("/profileresourceassociation/profileid/");
+      endpointOverrides.AddPathSegment(request.GetProfileId());
       endpointOverrides.setRfc3986Encoded = true;
-      endpointOverrides.pathSegments.emplace_back("/resourcearn/");
-      endpointOverrides.pathSegments.emplace_back(request.GetResourceArn());
+      endpointOverrides.AddPathSegment("/resourcearn/");
+      endpointOverrides.AddPathSegment(request.GetResourceArn());
       return DisassociateResourceFromProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -418,8 +418,8 @@ GetProfileOutcome Route53ProfilesClient::GetProfile(const GetProfileRequest& req
   return TracingUtils::MakeCallWithTiming<GetProfileOutcome>(
     [&]()-> GetProfileOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profile/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProfileId());
+      endpointOverrides.AddPathSegment("/profile/");
+      endpointOverrides.AddPathSegment(request.GetProfileId());
       return GetProfileOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -454,8 +454,8 @@ GetProfileAssociationOutcome Route53ProfilesClient::GetProfileAssociation(const 
   return TracingUtils::MakeCallWithTiming<GetProfileAssociationOutcome>(
     [&]()-> GetProfileAssociationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profileassociation/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProfileAssociationId());
+      endpointOverrides.AddPathSegment("/profileassociation/");
+      endpointOverrides.AddPathSegment(request.GetProfileAssociationId());
       return GetProfileAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -490,8 +490,8 @@ GetProfileResourceAssociationOutcome Route53ProfilesClient::GetProfileResourceAs
   return TracingUtils::MakeCallWithTiming<GetProfileResourceAssociationOutcome>(
     [&]()-> GetProfileResourceAssociationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profileresourceassociation/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProfileResourceAssociationId());
+      endpointOverrides.AddPathSegment("/profileresourceassociation/");
+      endpointOverrides.AddPathSegment(request.GetProfileResourceAssociationId());
       return GetProfileResourceAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -521,7 +521,7 @@ ListProfileAssociationsOutcome Route53ProfilesClient::ListProfileAssociations(co
   return TracingUtils::MakeCallWithTiming<ListProfileAssociationsOutcome>(
     [&]()-> ListProfileAssociationsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profileassociations");
+      endpointOverrides.AddPathSegment("/profileassociations");
       return ListProfileAssociationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -556,8 +556,8 @@ ListProfileResourceAssociationsOutcome Route53ProfilesClient::ListProfileResourc
   return TracingUtils::MakeCallWithTiming<ListProfileResourceAssociationsOutcome>(
     [&]()-> ListProfileResourceAssociationsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profileresourceassociations/profileid/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProfileId());
+      endpointOverrides.AddPathSegment("/profileresourceassociations/profileid/");
+      endpointOverrides.AddPathSegment(request.GetProfileId());
       return ListProfileResourceAssociationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -587,7 +587,7 @@ ListProfilesOutcome Route53ProfilesClient::ListProfiles(const ListProfilesReques
   return TracingUtils::MakeCallWithTiming<ListProfilesOutcome>(
     [&]()-> ListProfilesOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profiles");
+      endpointOverrides.AddPathSegment("/profiles");
       return ListProfilesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -622,8 +622,8 @@ ListTagsForResourceOutcome Route53ProfilesClient::ListTagsForResource(const List
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/tags/");
-      endpointOverrides.pathSegments.emplace_back(request.GetResourceArn());
+      endpointOverrides.AddPathSegment("/tags/");
+      endpointOverrides.AddPathSegment(request.GetResourceArn());
       return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -658,8 +658,8 @@ TagResourceOutcome Route53ProfilesClient::TagResource(const TagResourceRequest& 
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/tags/");
-      endpointOverrides.pathSegments.emplace_back(request.GetResourceArn());
+      endpointOverrides.AddPathSegment("/tags/");
+      endpointOverrides.AddPathSegment(request.GetResourceArn());
       return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -699,8 +699,8 @@ UntagResourceOutcome Route53ProfilesClient::UntagResource(const UntagResourceReq
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/tags/");
-      endpointOverrides.pathSegments.emplace_back(request.GetResourceArn());
+      endpointOverrides.AddPathSegment("/tags/");
+      endpointOverrides.AddPathSegment(request.GetResourceArn());
       return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -735,8 +735,8 @@ UpdateProfileResourceAssociationOutcome Route53ProfilesClient::UpdateProfileReso
   return TracingUtils::MakeCallWithTiming<UpdateProfileResourceAssociationOutcome>(
     [&]()-> UpdateProfileResourceAssociationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/profileresourceassociation/");
-      endpointOverrides.pathSegments.emplace_back(request.GetProfileResourceAssociationId());
+      endpointOverrides.AddPathSegment("/profileresourceassociation/");
+      endpointOverrides.AddPathSegment(request.GetProfileResourceAssociationId());
       return UpdateProfileResourceAssociationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {

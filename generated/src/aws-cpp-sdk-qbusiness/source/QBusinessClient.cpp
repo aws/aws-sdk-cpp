@@ -251,11 +251,11 @@ BatchDeleteDocumentOutcome QBusinessClient::BatchDeleteDocument(const BatchDelet
   return TracingUtils::MakeCallWithTiming<BatchDeleteDocumentOutcome>(
     [&]()-> BatchDeleteDocumentOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/documents/delete");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/documents/delete");
       return BatchDeleteDocumentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -295,11 +295,11 @@ BatchPutDocumentOutcome QBusinessClient::BatchPutDocument(const BatchPutDocument
   return TracingUtils::MakeCallWithTiming<BatchPutDocumentOutcome>(
     [&]()-> BatchPutDocumentOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/documents");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/documents");
       return BatchPutDocumentOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -333,9 +333,9 @@ void QBusinessClient::ChatAsync(Model::ChatRequest& request,
   }
   auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-  endpointOverrides.pathSegments.emplace_back("/applications/");
-  endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-  endpointOverrides.pathSegments.emplace_back("/conversations");
+  endpointOverrides.AddPathSegment("/applications/");
+  endpointOverrides.AddPathSegment(request.GetApplicationId());
+  endpointOverrides.AddPathSegment("/conversations");
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
@@ -390,9 +390,9 @@ ChatSyncOutcome QBusinessClient::ChatSync(const ChatSyncRequest& request) const
     [&]()-> ChatSyncOutcome {
       Aws::StringStream ss;
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/conversations");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/conversations");
       ss.str("?sync");
       endpointOverrides.queryString = ss.str();
       return ChatSyncOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
@@ -424,7 +424,7 @@ CreateApplicationOutcome QBusinessClient::CreateApplication(const CreateApplicat
   return TracingUtils::MakeCallWithTiming<CreateApplicationOutcome>(
     [&]()-> CreateApplicationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications");
+      endpointOverrides.AddPathSegment("/applications");
       return CreateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -464,11 +464,11 @@ CreateDataSourceOutcome QBusinessClient::CreateDataSource(const CreateDataSource
   return TracingUtils::MakeCallWithTiming<CreateDataSourceOutcome>(
     [&]()-> CreateDataSourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/datasources");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/datasources");
       return CreateDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -503,9 +503,9 @@ CreateIndexOutcome QBusinessClient::CreateIndex(const CreateIndexRequest& reques
   return TracingUtils::MakeCallWithTiming<CreateIndexOutcome>(
     [&]()-> CreateIndexOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices");
       return CreateIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -540,9 +540,9 @@ CreatePluginOutcome QBusinessClient::CreatePlugin(const CreatePluginRequest& req
   return TracingUtils::MakeCallWithTiming<CreatePluginOutcome>(
     [&]()-> CreatePluginOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/plugins");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/plugins");
       return CreatePluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -577,9 +577,9 @@ CreateRetrieverOutcome QBusinessClient::CreateRetriever(const CreateRetrieverReq
   return TracingUtils::MakeCallWithTiming<CreateRetrieverOutcome>(
     [&]()-> CreateRetrieverOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/retrievers");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/retrievers");
       return CreateRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -614,9 +614,9 @@ CreateUserOutcome QBusinessClient::CreateUser(const CreateUserRequest& request) 
   return TracingUtils::MakeCallWithTiming<CreateUserOutcome>(
     [&]()-> CreateUserOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/users");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/users");
       return CreateUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -651,9 +651,9 @@ CreateWebExperienceOutcome QBusinessClient::CreateWebExperience(const CreateWebE
   return TracingUtils::MakeCallWithTiming<CreateWebExperienceOutcome>(
     [&]()-> CreateWebExperienceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/experiences");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/experiences");
       return CreateWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -688,8 +688,8 @@ DeleteApplicationOutcome QBusinessClient::DeleteApplication(const DeleteApplicat
   return TracingUtils::MakeCallWithTiming<DeleteApplicationOutcome>(
     [&]()-> DeleteApplicationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
       return DeleteApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -724,9 +724,9 @@ DeleteChatControlsConfigurationOutcome QBusinessClient::DeleteChatControlsConfig
   return TracingUtils::MakeCallWithTiming<DeleteChatControlsConfigurationOutcome>(
     [&]()-> DeleteChatControlsConfigurationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/chatcontrols");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/chatcontrols");
       return DeleteChatControlsConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -766,10 +766,10 @@ DeleteConversationOutcome QBusinessClient::DeleteConversation(const DeleteConver
   return TracingUtils::MakeCallWithTiming<DeleteConversationOutcome>(
     [&]()-> DeleteConversationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/conversations/");
-      endpointOverrides.pathSegments.emplace_back(request.GetConversationId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/conversations/");
+      endpointOverrides.AddPathSegment(request.GetConversationId());
       return DeleteConversationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -814,12 +814,12 @@ DeleteDataSourceOutcome QBusinessClient::DeleteDataSource(const DeleteDataSource
   return TracingUtils::MakeCallWithTiming<DeleteDataSourceOutcome>(
     [&]()-> DeleteDataSourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/datasources/");
-      endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/datasources/");
+      endpointOverrides.AddPathSegment(request.GetDataSourceId());
       return DeleteDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -864,12 +864,12 @@ DeleteGroupOutcome QBusinessClient::DeleteGroup(const DeleteGroupRequest& reques
   return TracingUtils::MakeCallWithTiming<DeleteGroupOutcome>(
     [&]()-> DeleteGroupOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/groups/");
-      endpointOverrides.pathSegments.emplace_back(request.GetGroupName());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/groups/");
+      endpointOverrides.AddPathSegment(request.GetGroupName());
       return DeleteGroupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -909,10 +909,10 @@ DeleteIndexOutcome QBusinessClient::DeleteIndex(const DeleteIndexRequest& reques
   return TracingUtils::MakeCallWithTiming<DeleteIndexOutcome>(
     [&]()-> DeleteIndexOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
       return DeleteIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -952,10 +952,10 @@ DeletePluginOutcome QBusinessClient::DeletePlugin(const DeletePluginRequest& req
   return TracingUtils::MakeCallWithTiming<DeletePluginOutcome>(
     [&]()-> DeletePluginOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/plugins/");
-      endpointOverrides.pathSegments.emplace_back(request.GetPluginId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/plugins/");
+      endpointOverrides.AddPathSegment(request.GetPluginId());
       return DeletePluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -995,10 +995,10 @@ DeleteRetrieverOutcome QBusinessClient::DeleteRetriever(const DeleteRetrieverReq
   return TracingUtils::MakeCallWithTiming<DeleteRetrieverOutcome>(
     [&]()-> DeleteRetrieverOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/retrievers/");
-      endpointOverrides.pathSegments.emplace_back(request.GetRetrieverId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/retrievers/");
+      endpointOverrides.AddPathSegment(request.GetRetrieverId());
       return DeleteRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1038,10 +1038,10 @@ DeleteUserOutcome QBusinessClient::DeleteUser(const DeleteUserRequest& request) 
   return TracingUtils::MakeCallWithTiming<DeleteUserOutcome>(
     [&]()-> DeleteUserOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/users/");
-      endpointOverrides.pathSegments.emplace_back(request.GetUserId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/users/");
+      endpointOverrides.AddPathSegment(request.GetUserId());
       return DeleteUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1081,10 +1081,10 @@ DeleteWebExperienceOutcome QBusinessClient::DeleteWebExperience(const DeleteWebE
   return TracingUtils::MakeCallWithTiming<DeleteWebExperienceOutcome>(
     [&]()-> DeleteWebExperienceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/experiences/");
-      endpointOverrides.pathSegments.emplace_back(request.GetWebExperienceId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/experiences/");
+      endpointOverrides.AddPathSegment(request.GetWebExperienceId());
       return DeleteWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1119,8 +1119,8 @@ GetApplicationOutcome QBusinessClient::GetApplication(const GetApplicationReques
   return TracingUtils::MakeCallWithTiming<GetApplicationOutcome>(
     [&]()-> GetApplicationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
       return GetApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1155,9 +1155,9 @@ GetChatControlsConfigurationOutcome QBusinessClient::GetChatControlsConfiguratio
   return TracingUtils::MakeCallWithTiming<GetChatControlsConfigurationOutcome>(
     [&]()-> GetChatControlsConfigurationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/chatcontrols");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/chatcontrols");
       return GetChatControlsConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1202,12 +1202,12 @@ GetDataSourceOutcome QBusinessClient::GetDataSource(const GetDataSourceRequest& 
   return TracingUtils::MakeCallWithTiming<GetDataSourceOutcome>(
     [&]()-> GetDataSourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/datasources/");
-      endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/datasources/");
+      endpointOverrides.AddPathSegment(request.GetDataSourceId());
       return GetDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1252,12 +1252,12 @@ GetGroupOutcome QBusinessClient::GetGroup(const GetGroupRequest& request) const
   return TracingUtils::MakeCallWithTiming<GetGroupOutcome>(
     [&]()-> GetGroupOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/groups/");
-      endpointOverrides.pathSegments.emplace_back(request.GetGroupName());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/groups/");
+      endpointOverrides.AddPathSegment(request.GetGroupName());
       return GetGroupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1297,10 +1297,10 @@ GetIndexOutcome QBusinessClient::GetIndex(const GetIndexRequest& request) const
   return TracingUtils::MakeCallWithTiming<GetIndexOutcome>(
     [&]()-> GetIndexOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
       return GetIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1340,10 +1340,10 @@ GetPluginOutcome QBusinessClient::GetPlugin(const GetPluginRequest& request) con
   return TracingUtils::MakeCallWithTiming<GetPluginOutcome>(
     [&]()-> GetPluginOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/plugins/");
-      endpointOverrides.pathSegments.emplace_back(request.GetPluginId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/plugins/");
+      endpointOverrides.AddPathSegment(request.GetPluginId());
       return GetPluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1383,10 +1383,10 @@ GetRetrieverOutcome QBusinessClient::GetRetriever(const GetRetrieverRequest& req
   return TracingUtils::MakeCallWithTiming<GetRetrieverOutcome>(
     [&]()-> GetRetrieverOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/retrievers/");
-      endpointOverrides.pathSegments.emplace_back(request.GetRetrieverId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/retrievers/");
+      endpointOverrides.AddPathSegment(request.GetRetrieverId());
       return GetRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1426,10 +1426,10 @@ GetUserOutcome QBusinessClient::GetUser(const GetUserRequest& request) const
   return TracingUtils::MakeCallWithTiming<GetUserOutcome>(
     [&]()-> GetUserOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/users/");
-      endpointOverrides.pathSegments.emplace_back(request.GetUserId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/users/");
+      endpointOverrides.AddPathSegment(request.GetUserId());
       return GetUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1469,10 +1469,10 @@ GetWebExperienceOutcome QBusinessClient::GetWebExperience(const GetWebExperience
   return TracingUtils::MakeCallWithTiming<GetWebExperienceOutcome>(
     [&]()-> GetWebExperienceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/experiences/");
-      endpointOverrides.pathSegments.emplace_back(request.GetWebExperienceId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/experiences/");
+      endpointOverrides.AddPathSegment(request.GetWebExperienceId());
       return GetWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1502,7 +1502,7 @@ ListApplicationsOutcome QBusinessClient::ListApplications(const ListApplications
   return TracingUtils::MakeCallWithTiming<ListApplicationsOutcome>(
     [&]()-> ListApplicationsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications");
+      endpointOverrides.AddPathSegment("/applications");
       return ListApplicationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1537,9 +1537,9 @@ ListConversationsOutcome QBusinessClient::ListConversations(const ListConversati
   return TracingUtils::MakeCallWithTiming<ListConversationsOutcome>(
     [&]()-> ListConversationsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/conversations");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/conversations");
       return ListConversationsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1584,13 +1584,13 @@ ListDataSourceSyncJobsOutcome QBusinessClient::ListDataSourceSyncJobs(const List
   return TracingUtils::MakeCallWithTiming<ListDataSourceSyncJobsOutcome>(
     [&]()-> ListDataSourceSyncJobsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/datasources/");
-      endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
-      endpointOverrides.pathSegments.emplace_back("/syncjobs");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/datasources/");
+      endpointOverrides.AddPathSegment(request.GetDataSourceId());
+      endpointOverrides.AddPathSegment("/syncjobs");
       return ListDataSourceSyncJobsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1630,11 +1630,11 @@ ListDataSourcesOutcome QBusinessClient::ListDataSources(const ListDataSourcesReq
   return TracingUtils::MakeCallWithTiming<ListDataSourcesOutcome>(
     [&]()-> ListDataSourcesOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/datasources");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/datasources");
       return ListDataSourcesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1674,11 +1674,11 @@ ListDocumentsOutcome QBusinessClient::ListDocuments(const ListDocumentsRequest& 
   return TracingUtils::MakeCallWithTiming<ListDocumentsOutcome>(
     [&]()-> ListDocumentsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/index/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/documents");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/index/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/documents");
       return ListDocumentsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1723,11 +1723,11 @@ ListGroupsOutcome QBusinessClient::ListGroups(const ListGroupsRequest& request) 
   return TracingUtils::MakeCallWithTiming<ListGroupsOutcome>(
     [&]()-> ListGroupsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/groups");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/groups");
       return ListGroupsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1762,9 +1762,9 @@ ListIndicesOutcome QBusinessClient::ListIndices(const ListIndicesRequest& reques
   return TracingUtils::MakeCallWithTiming<ListIndicesOutcome>(
     [&]()-> ListIndicesOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices");
       return ListIndicesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1804,10 +1804,10 @@ ListMessagesOutcome QBusinessClient::ListMessages(const ListMessagesRequest& req
   return TracingUtils::MakeCallWithTiming<ListMessagesOutcome>(
     [&]()-> ListMessagesOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/conversations/");
-      endpointOverrides.pathSegments.emplace_back(request.GetConversationId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/conversations/");
+      endpointOverrides.AddPathSegment(request.GetConversationId());
       return ListMessagesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1842,9 +1842,9 @@ ListPluginsOutcome QBusinessClient::ListPlugins(const ListPluginsRequest& reques
   return TracingUtils::MakeCallWithTiming<ListPluginsOutcome>(
     [&]()-> ListPluginsOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/plugins");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/plugins");
       return ListPluginsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1879,9 +1879,9 @@ ListRetrieversOutcome QBusinessClient::ListRetrievers(const ListRetrieversReques
   return TracingUtils::MakeCallWithTiming<ListRetrieversOutcome>(
     [&]()-> ListRetrieversOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/retrievers");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/retrievers");
       return ListRetrieversOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1916,8 +1916,8 @@ ListTagsForResourceOutcome QBusinessClient::ListTagsForResource(const ListTagsFo
   return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
     [&]()-> ListTagsForResourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/tags/");
-      endpointOverrides.pathSegments.emplace_back(request.GetResourceARN());
+      endpointOverrides.AddPathSegment("/v1/tags/");
+      endpointOverrides.AddPathSegment(request.GetResourceARN());
       return ListTagsForResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1952,9 +1952,9 @@ ListWebExperiencesOutcome QBusinessClient::ListWebExperiences(const ListWebExper
   return TracingUtils::MakeCallWithTiming<ListWebExperiencesOutcome>(
     [&]()-> ListWebExperiencesOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/experiences");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/experiences");
       return ListWebExperiencesOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -1999,13 +1999,13 @@ PutFeedbackOutcome QBusinessClient::PutFeedback(const PutFeedbackRequest& reques
   return TracingUtils::MakeCallWithTiming<PutFeedbackOutcome>(
     [&]()-> PutFeedbackOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/conversations/");
-      endpointOverrides.pathSegments.emplace_back(request.GetConversationId());
-      endpointOverrides.pathSegments.emplace_back("/messages/");
-      endpointOverrides.pathSegments.emplace_back(request.GetMessageId());
-      endpointOverrides.pathSegments.emplace_back("/feedback");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/conversations/");
+      endpointOverrides.AddPathSegment(request.GetConversationId());
+      endpointOverrides.AddPathSegment("/messages/");
+      endpointOverrides.AddPathSegment(request.GetMessageId());
+      endpointOverrides.AddPathSegment("/feedback");
       return PutFeedbackOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2045,11 +2045,11 @@ PutGroupOutcome QBusinessClient::PutGroup(const PutGroupRequest& request) const
   return TracingUtils::MakeCallWithTiming<PutGroupOutcome>(
     [&]()-> PutGroupOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/groups");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/groups");
       return PutGroupOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2094,13 +2094,13 @@ StartDataSourceSyncJobOutcome QBusinessClient::StartDataSourceSyncJob(const Star
   return TracingUtils::MakeCallWithTiming<StartDataSourceSyncJobOutcome>(
     [&]()-> StartDataSourceSyncJobOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/datasources/");
-      endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
-      endpointOverrides.pathSegments.emplace_back("/startsync");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/datasources/");
+      endpointOverrides.AddPathSegment(request.GetDataSourceId());
+      endpointOverrides.AddPathSegment("/startsync");
       return StartDataSourceSyncJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2145,13 +2145,13 @@ StopDataSourceSyncJobOutcome QBusinessClient::StopDataSourceSyncJob(const StopDa
   return TracingUtils::MakeCallWithTiming<StopDataSourceSyncJobOutcome>(
     [&]()-> StopDataSourceSyncJobOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/datasources/");
-      endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
-      endpointOverrides.pathSegments.emplace_back("/stopsync");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/datasources/");
+      endpointOverrides.AddPathSegment(request.GetDataSourceId());
+      endpointOverrides.AddPathSegment("/stopsync");
       return StopDataSourceSyncJobOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2186,8 +2186,8 @@ TagResourceOutcome QBusinessClient::TagResource(const TagResourceRequest& reques
   return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
     [&]()-> TagResourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/tags/");
-      endpointOverrides.pathSegments.emplace_back(request.GetResourceARN());
+      endpointOverrides.AddPathSegment("/v1/tags/");
+      endpointOverrides.AddPathSegment(request.GetResourceARN());
       return TagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2227,8 +2227,8 @@ UntagResourceOutcome QBusinessClient::UntagResource(const UntagResourceRequest& 
   return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
     [&]()-> UntagResourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/v1/tags/");
-      endpointOverrides.pathSegments.emplace_back(request.GetResourceARN());
+      endpointOverrides.AddPathSegment("/v1/tags/");
+      endpointOverrides.AddPathSegment(request.GetResourceARN());
       return UntagResourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2263,8 +2263,8 @@ UpdateApplicationOutcome QBusinessClient::UpdateApplication(const UpdateApplicat
   return TracingUtils::MakeCallWithTiming<UpdateApplicationOutcome>(
     [&]()-> UpdateApplicationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
       return UpdateApplicationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2299,9 +2299,9 @@ UpdateChatControlsConfigurationOutcome QBusinessClient::UpdateChatControlsConfig
   return TracingUtils::MakeCallWithTiming<UpdateChatControlsConfigurationOutcome>(
     [&]()-> UpdateChatControlsConfigurationOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/chatcontrols");
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/chatcontrols");
       return UpdateChatControlsConfigurationOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PATCH, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2346,12 +2346,12 @@ UpdateDataSourceOutcome QBusinessClient::UpdateDataSource(const UpdateDataSource
   return TracingUtils::MakeCallWithTiming<UpdateDataSourceOutcome>(
     [&]()-> UpdateDataSourceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
-      endpointOverrides.pathSegments.emplace_back("/datasources/");
-      endpointOverrides.pathSegments.emplace_back(request.GetDataSourceId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/datasources/");
+      endpointOverrides.AddPathSegment(request.GetDataSourceId());
       return UpdateDataSourceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2391,10 +2391,10 @@ UpdateIndexOutcome QBusinessClient::UpdateIndex(const UpdateIndexRequest& reques
   return TracingUtils::MakeCallWithTiming<UpdateIndexOutcome>(
     [&]()-> UpdateIndexOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/indices/");
-      endpointOverrides.pathSegments.emplace_back(request.GetIndexId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/indices/");
+      endpointOverrides.AddPathSegment(request.GetIndexId());
       return UpdateIndexOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2434,10 +2434,10 @@ UpdatePluginOutcome QBusinessClient::UpdatePlugin(const UpdatePluginRequest& req
   return TracingUtils::MakeCallWithTiming<UpdatePluginOutcome>(
     [&]()-> UpdatePluginOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/plugins/");
-      endpointOverrides.pathSegments.emplace_back(request.GetPluginId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/plugins/");
+      endpointOverrides.AddPathSegment(request.GetPluginId());
       return UpdatePluginOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2477,10 +2477,10 @@ UpdateRetrieverOutcome QBusinessClient::UpdateRetriever(const UpdateRetrieverReq
   return TracingUtils::MakeCallWithTiming<UpdateRetrieverOutcome>(
     [&]()-> UpdateRetrieverOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/retrievers/");
-      endpointOverrides.pathSegments.emplace_back(request.GetRetrieverId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/retrievers/");
+      endpointOverrides.AddPathSegment(request.GetRetrieverId());
       return UpdateRetrieverOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2520,10 +2520,10 @@ UpdateUserOutcome QBusinessClient::UpdateUser(const UpdateUserRequest& request) 
   return TracingUtils::MakeCallWithTiming<UpdateUserOutcome>(
     [&]()-> UpdateUserOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/users/");
-      endpointOverrides.pathSegments.emplace_back(request.GetUserId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/users/");
+      endpointOverrides.AddPathSegment(request.GetUserId());
       return UpdateUserOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
@@ -2563,10 +2563,10 @@ UpdateWebExperienceOutcome QBusinessClient::UpdateWebExperience(const UpdateWebE
   return TracingUtils::MakeCallWithTiming<UpdateWebExperienceOutcome>(
     [&]()-> UpdateWebExperienceOutcome {
       Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
-      endpointOverrides.pathSegments.emplace_back("/applications/");
-      endpointOverrides.pathSegments.emplace_back(request.GetApplicationId());
-      endpointOverrides.pathSegments.emplace_back("/experiences/");
-      endpointOverrides.pathSegments.emplace_back(request.GetWebExperienceId());
+      endpointOverrides.AddPathSegment("/applications/");
+      endpointOverrides.AddPathSegment(request.GetApplicationId());
+      endpointOverrides.AddPathSegment("/experiences/");
+      endpointOverrides.AddPathSegment(request.GetWebExperienceId());
       return UpdateWebExperienceOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
         for(const auto& pathSegment : endpointOverrides.pathSegments)
         {
