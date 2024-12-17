@@ -9,9 +9,11 @@
 #include <smithy/tracing/TelemetryProvider.h>
 #include <smithy/interceptor/Interceptor.h>
 #include <smithy/client/features/ChecksumInterceptor.h>
+#include <smithy/client/features/UserAgentInterceptor.h>
 
 #include <aws/crt/Variant.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/RetryStrategy.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/FutureOutcome.h>
@@ -85,7 +87,6 @@ namespace client
                             std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) :
           m_clientConfig(std::move(clientConfig)),
           m_serviceName(std::move(serviceName)),
-          m_userAgent(),
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller)),
           m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase")}
@@ -115,8 +116,12 @@ namespace client
                 assert(m_clientConfig->configFactories.telemetryProviderCreateFn);
                 m_clientConfig->telemetryProvider = m_clientConfig->configFactories.telemetryProviderCreateFn();
             }
-
-            m_userAgent = Aws::Client::ComputeUserAgentString(m_clientConfig.get());
+            if (m_clientConfig->retryStrategy) {
+              auto userAgentInterceptor = Aws::MakeShared<UserAgentInterceptor>("AwsSmithyClientBase", *m_clientConfig,
+                                                                                m_clientConfig->retryStrategy->GetStrategyName());
+              userAgentInterceptor->SetApiName(m_serviceName);
+              m_interceptors.emplace_back(std::move(userAgentInterceptor));
+            }
         }
 
         AwsSmithyClientBase(const AwsSmithyClientBase&) = delete;
@@ -162,7 +167,6 @@ namespace client
     protected:
         Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
-        Aws::String m_userAgent;
 
         std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
         std::shared_ptr<Aws::Client::AWSErrorMarshaller> m_errorMarshaller;

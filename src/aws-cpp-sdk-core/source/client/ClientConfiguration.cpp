@@ -192,6 +192,14 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
 
     AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use SDK Auto Resolved profile: [" << clientConfig.profileName << "] if not specified by users.");
 
+    clientConfig.appId = clientConfig.LoadConfigFromEnvOrProfile(
+            "AWS_SDK_UA_APP_ID",
+            clientConfig.profileName,
+            "sdk_ua_app_id",
+            {},
+            ""
+    );
+
     // Automatically determine the AWS region from environment variables, configuration file and EC2 metadata.
     clientConfig.region = Aws::Environment::GetEnv("AWS_DEFAULT_REGION");
     if (!clientConfig.region.empty())
@@ -222,14 +230,6 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
             client->SetEndpoint(ec2MetadataServiceEndpoint);
         }
     }
-
-    clientConfig.appId = clientConfig.LoadConfigFromEnvOrProfile(
-            "AWS_SDK_UA_APP_ID",
-            clientConfig.profileName,
-            "sdk_ua_app_id",
-            {},
-            ""
-    );
 }
 
 void setConfigFromEnvOrProfile(ClientConfiguration &config)

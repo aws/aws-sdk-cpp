@@ -54,7 +54,6 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
         return httpRequest;
     }
 
-    httpRequest->SetUserAgent(m_userAgent);
     httpRequest->SetHeaderValue(Aws::Http::SDK_INVOCATION_ID_HEADER, pRequestCtx->m_invocationId);
     httpRequest->SetHeaderValue(Aws::Http::SDK_REQUEST_HEADER, pRequestCtx->m_requestInfo.ToString());
     RecursionDetection::AppendRecursionDetectionHeader(pRequestCtx->m_httpRequest);
