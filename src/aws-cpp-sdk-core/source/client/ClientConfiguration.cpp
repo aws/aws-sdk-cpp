@@ -131,6 +131,28 @@ Aws::String ComputeUserAgentString(ClientConfiguration const * const pConfig)
   return ss.str();
 }
 
+Aws::String calculateRegion() {
+  // Automatically determine the AWS region from environment variables, configuration file and EC2 metadata.
+  auto region = Aws::Environment::GetEnv("AWS_DEFAULT_REGION");
+  if (!region.empty())
+  {
+    return region;
+  }
+
+  region = Aws::Environment::GetEnv("AWS_REGION");
+  if (!region.empty())
+  {
+    return region;
+  }
+
+  region = Aws::Config::GetCachedConfigValue("region");
+  if (!region.empty())
+  {
+    return region;
+  }
+  return "";
+}
+
 void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
 {
     clientConfig.scheme = Aws::Http::Scheme::HTTPS;
@@ -192,24 +214,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
 
     AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use SDK Auto Resolved profile: [" << clientConfig.profileName << "] if not specified by users.");
 
-    // Automatically determine the AWS region from environment variables, configuration file and EC2 metadata.
-    clientConfig.region = Aws::Environment::GetEnv("AWS_DEFAULT_REGION");
-    if (!clientConfig.region.empty())
-    {
-        return;
-    }
-
-    clientConfig.region = Aws::Environment::GetEnv("AWS_REGION");
-    if (!clientConfig.region.empty())
-    {
-        return;
-    }
-
-    clientConfig.region = Aws::Config::GetCachedConfigValue("region");
-    if (!clientConfig.region.empty())
-    {
-        return;
-    }
+    clientConfig.region = calculateRegion();
 
     // Set the endpoint to interact with EC2 instance's metadata service
     Aws::String ec2MetadataServiceEndpoint = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");

@@ -16,6 +16,7 @@
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/auth/AWSAuthSignerProvider.h>
 #include <aws/core/endpoint/AWSEndpoint.h>
+#include <smithy/client/features/UserAgentInterceptor.h>
 #include <smithy/interceptor/Interceptor.h>
 #include <memory>
 #include <atomic>
@@ -341,7 +342,6 @@ namespace Aws
             void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Http::HeaderValueCollection& headerValues) const;
             void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const std::shared_ptr<Aws::IOStream>& body,
                                          bool needsContentMd5 = false, bool isChunked = false) const;
-            void AddCommonHeaders(Aws::Http::HttpRequest& httpRequest) const;
             void AppendHeaderValueToRequest(const std::shared_ptr<Http::HttpRequest> &request, String header, String value) const;
 
             std::shared_ptr<Aws::Http::HttpClient> m_httpClient;
@@ -349,12 +349,12 @@ namespace Aws
             std::shared_ptr<RetryStrategy> m_retryStrategy;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_writeRateLimiter;
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_readRateLimiter;
-            Aws::String m_userAgent;
             std::shared_ptr<Aws::Utils::Crypto::Hash> m_hash;
             long m_requestTimeoutMs;
             bool m_enableClockSkewAdjustment;
             Aws::String m_serviceName = "AWSBaseClient";
             Aws::Client::RequestCompressionConfig m_requestCompressionConfig;
+            std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;
             Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors;
         };
 

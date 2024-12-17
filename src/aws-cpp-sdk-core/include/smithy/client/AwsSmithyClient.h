@@ -36,13 +36,19 @@ namespace client
     public:
         static_assert(std::is_base_of<Aws::Client::AWSErrorMarshaller, ErrorMarshallerT>::value, "MarshallerT must be derived from class Aws::Client::AWSErrorMarshaller");
 
-        explicit AwsSmithyClientT(const ServiceClientConfigurationT& clientConfig, const Aws::String& serviceName,
+        explicit AwsSmithyClientT(const ServiceClientConfigurationT& clientConfig,
+            const Aws::String& serviceName,
+            const Aws::String& serviceUserAgentName,
             const std::shared_ptr<Aws::Http::HttpClient>& httpClient,
             const std::shared_ptr<Aws::Client::AWSErrorMarshaller>& errorMarshaller,
             const std::shared_ptr<EndpointProviderT> endpointProvider,
             const std::shared_ptr<ServiceAuthSchemeResolverT>& authSchemeResolver,
             const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
-            : AwsSmithyClientBase(Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, clientConfig), serviceName, httpClient, errorMarshaller),
+            : AwsSmithyClientBase(Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, clientConfig),
+                serviceName,
+                serviceUserAgentName,
+                httpClient,
+                errorMarshaller),
               m_clientConfiguration(*static_cast<ServiceClientConfigurationT*>(AwsSmithyClientBase::m_clientConfig.get())),
               m_endpointProvider(endpointProvider),
               m_authSchemeResolver(authSchemeResolver),
@@ -57,6 +63,7 @@ namespace client
             AwsSmithyClientBase(other,
               Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, other.m_clientConfiguration),
               ServiceNameT,
+              other.m_serviceUserAgentName,
               Aws::Http::CreateHttpClient(other.m_clientConfiguration),
               Aws::MakeShared<ErrorMarshallerT>(ServiceNameT)),
             m_clientConfiguration{*static_cast<ServiceClientConfigurationT*>(m_clientConfig.get())},

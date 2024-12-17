@@ -25,8 +25,10 @@ using namespace Aws::Monitoring;
 using namespace Aws::Http;
 using namespace Aws::Http::Standard;
 
+namespace {
 const char* LOG_TAG = "DynamoDBUnitTest";
 const int MAX_RETRIES = 2;
+}  // namespace
 
 class  MonitoringContext
 {
@@ -281,4 +283,51 @@ TEST_F(DynamoDBUnitTest, DefaultRetryStrategyShouldFailWhenRetriesFail)
   EXPECT_EQ(2, monitoring_context_->failed);
   EXPECT_EQ(0, monitoring_context_->succeeded);
   EXPECT_EQ(1, monitoring_context_->retryCount);
+}
+
+TEST_F(DynamoDBUnitTest, ListTablesShouldHaveCorrectUserAgent)
+{
+  // mock response
+  auto success_stream_ = Aws::MakeShared<StandardHttpRequest>(LOG_TAG, "grantrad.com/honeybeeinn", HttpMethod::HTTP_GET);
+  success_stream_->SetResponseStreamFactory([]() -> IOStream* {
+    auto listTablesString =  R"({"LastEvaluatedTableName": "Thread","TableNames": ["Forum","Reply","Thread"]}))";
+    return Aws::New<StringStream>(LOG_TAG, listTablesString, std::ios_base::in | std::ios_base::binary);
+  });
+  auto successResponse = Aws::MakeShared<StandardHttpResponse>(LOG_TAG, success_stream_);
+  successResponse->SetResponseCode(HttpResponseCode::OK);
+  mock_http_client_->AddResponseToReturn(successResponse);
+
+  const auto listTablesOutcome = client_->ListTables();
+  EXPECT_TRUE(listTablesOutcome.IsSuccess());
+
+  const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
+  EXPECT_TRUE(requestSeen.HasUserAgent());
+  const auto& userAgent = requestSeen.GetUserAgent();
+  EXPECT_TRUE(!userAgent.empty());
+  const auto userAgentParsed = Utils::StringUtils::Split(userAgent, ' ');
+  auto sdkMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("aws-sdk-cpp/") != Aws::String::npos; });
+  EXPECT_TRUE(sdkMetadata != userAgentParsed.end());
+  auto uaMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("ua/") != Aws::String::npos; });
+  EXPECT_TRUE(uaMetadata != userAgentParsed.end());
+  auto apiMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("api/DynamoDB") != Aws::String::npos; });
+  EXPECT_TRUE(apiMetadata != userAgentParsed.end());
+  auto osMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("os/") != Aws::String::npos; });
+  EXPECT_TRUE(osMetadata != userAgentParsed.end());
+  auto langMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("lang/c++") != Aws::String::npos; });
+  EXPECT_TRUE(langMetadata != userAgentParsed.end());
+  auto crtMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("md/aws-crt") != Aws::String::npos; });
+  EXPECT_TRUE(crtMetadata != userAgentParsed.end());
+  auto archMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("md/arch") != Aws::String::npos; });
+  EXPECT_TRUE(archMetadata != userAgentParsed.end());
+  auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("m/") != Aws::String::npos; });
+  EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+
+  // assert the order of the UA header
+  EXPECT_TRUE(sdkMetadata < uaMetadata);
+  EXPECT_TRUE(uaMetadata < apiMetadata);
+  EXPECT_TRUE(apiMetadata < osMetadata);
+  EXPECT_TRUE(osMetadata < langMetadata);
+  EXPECT_TRUE(langMetadata < crtMetadata);
+  EXPECT_TRUE(crtMetadata <  archMetadata);
+  EXPECT_TRUE(archMetadata < businessMetrics);
 }

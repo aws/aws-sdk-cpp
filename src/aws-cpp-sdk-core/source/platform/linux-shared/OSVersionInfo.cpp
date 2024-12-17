@@ -48,7 +48,7 @@ Aws::String ComputeOSVersionString()
     if(success >= 0)
     {
         Aws::StringStream ss;
-        ss << name.sysname << "/" << name.release;
+        ss << name.sysname << "#" << name.release;
         return ss.str();
     }
 

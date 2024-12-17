@@ -50,6 +50,10 @@ public:
     AWS_UNREFERENCED_PARAM(attemptedRetries);
     return 0;
   };
+
+  const char* GetStrategyName() const override {
+    return "standard";
+  };
 };
 
 class S3UnitTest : public testing::Test {
@@ -284,3 +288,55 @@ TEST_F(S3UnitTest, S3EmbeddedErrorTestNonOKResponse) {
   EXPECT_FALSE(response.IsSuccess());
 }
 
+TEST_F(S3UnitTest, PutObjectShouldHaveCorrectUserAgent) {
+  auto request = PutObjectRequest()
+    .WithBucket("o-worthy-heart")
+    .WithKey("who-tempers-anxiety-into-strength");
+
+  std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG, "time marches on, and the age of a new king draws nearer");
+
+  request.SetBody(body);
+
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "alonzo.com/faker", HttpMethod::HTTP_PUT);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG, "", std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::OK);
+
+  _mockHttpClient->AddResponseToReturn(mockResponse);
+
+  const auto response =_s3Client->PutObject(request);
+  EXPECT_TRUE(response.IsSuccess());
+
+  const auto requestSeen = _mockHttpClient->GetMostRecentHttpRequest();
+  EXPECT_TRUE(requestSeen.HasUserAgent());
+  const auto& userAgent = requestSeen.GetUserAgent();
+  EXPECT_TRUE(!userAgent.empty());
+  const auto userAgentParsed = Utils::StringUtils::Split(userAgent, ' ');
+  auto sdkMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("aws-sdk-cpp/") != Aws::String::npos; });
+  EXPECT_TRUE(sdkMetadata != userAgentParsed.end());
+  auto uaMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("ua/") != Aws::String::npos; });
+  EXPECT_TRUE(uaMetadata != userAgentParsed.end());
+  auto apiMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("api/S3") != Aws::String::npos; });
+  EXPECT_TRUE(apiMetadata != userAgentParsed.end());
+  auto osMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("os/") != Aws::String::npos; });
+  EXPECT_TRUE(osMetadata != userAgentParsed.end());
+  auto langMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("lang/c++") != Aws::String::npos; });
+  EXPECT_TRUE(langMetadata != userAgentParsed.end());
+  auto crtMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("md/aws-crt") != Aws::String::npos; });
+  EXPECT_TRUE(crtMetadata != userAgentParsed.end());
+  auto archMetadata = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("md/arch") != Aws::String::npos; });
+  EXPECT_TRUE(archMetadata != userAgentParsed.end());
+  auto businessMetrics = std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String & value) { return value.find("m/") != Aws::String::npos; });
+  EXPECT_TRUE(businessMetrics != userAgentParsed.end());
+
+  // assert the order of the UA header
+  EXPECT_TRUE(sdkMetadata < uaMetadata);
+  EXPECT_TRUE(uaMetadata < apiMetadata);
+  EXPECT_TRUE(apiMetadata < osMetadata);
+  EXPECT_TRUE(osMetadata < langMetadata);
+  EXPECT_TRUE(langMetadata < crtMetadata);
+  EXPECT_TRUE(crtMetadata <  archMetadata);
+  EXPECT_TRUE(archMetadata < businessMetrics);
+}
