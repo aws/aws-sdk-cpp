@@ -9,6 +9,7 @@
 #include <aws/testing/Testing_EXPORTS.h>
 
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -25,5 +26,19 @@ namespace Testing
      * This signal, when not explicitly handled defaults to abort app run.
      * */
     AWS_TESTING_API void SetDefaultSigPipeHandler();
+
+    /**
+     * RAII Class that sets environment variables and resets
+     * them when destroyed.
+     */
+    class AWS_TESTING_API EnvironmentVarContainer {
+     public:
+      explicit EnvironmentVarContainer(const Aws::Vector<std::pair<Aws::String, Aws::String>>& envVars);
+
+      ~EnvironmentVarContainer();
+
+     private:
+      Aws::Vector<std::pair<Aws::String, Aws::String>> m_envVars;
+    };
 } // namespace Testing
 } // namespace Aws

@@ -101,5 +101,21 @@ AWS_TESTING_API void SetDefaultSigPipeHandler()
 #endif
 }
 
+EnvironmentVarContainer::EnvironmentVarContainer(const Aws::Vector<std::pair<Aws::String, Aws::String>>& envVars) {
+  for (const auto& envVar : envVars) {
+    m_envVars.emplace_back(envVar.first, Aws::Environment::GetEnv(envVar.first.c_str()).c_str());
+    Aws::Environment::SetEnv(envVar.first.c_str(), envVar.second.c_str(), 1);
+  }
+}
+
+EnvironmentVarContainer::~EnvironmentVarContainer() {
+  for (const auto& iter : m_envVars) {
+    if (iter.second.empty()) {
+      Aws::Environment::UnSetEnv(iter.first.c_str());
+    } else {
+      Aws::Environment::SetEnv(iter.first.c_str(), iter.second.c_str(), 1);
+    }
+  }
+}
 } // namespace Testing
 } // namespace Aws
