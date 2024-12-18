@@ -23,6 +23,9 @@ public class Operation {
     private boolean virtualAddressAllowed;
     private String virtualAddressMemberName;
     private String authtype;
+    // Non-empty, priority-ordered list of string auth types.
+    // This trait should only be present if its value differs from the service-level trait
+    private List<String> auth; // aws.auth#sigv4 | aws.auth#sigv4a | smithy.api#httpBearerAuth | smithy.api#noAuth
     private String signerName;
     private String authorizer;
     private boolean eventStream;
