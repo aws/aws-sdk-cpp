@@ -27,8 +27,8 @@ namespace Model
    * <p>Specifies the Amazon Resource Name (ARN) of the Identity and Access
    * Management (IAM) role that DataSync uses to access your S3 bucket.</p> <p>For
    * more information, see <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-access">Accessing
-   * S3 buckets</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-access">Providing
+   * DataSync access to S3 buckets</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/S3Config">AWS
    * API Reference</a></p>
    */

@@ -13,6 +13,7 @@
 #include <aws/quicksight/model/RowLevelPermissionDataSet.h>
 #include <aws/quicksight/model/RowLevelPermissionTagConfiguration.h>
 #include <aws/quicksight/model/DataSetUsageConfiguration.h>
+#include <aws/quicksight/model/PerformanceConfiguration.h>
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/ColumnGroup.h>
@@ -282,6 +283,19 @@ namespace Model
     inline CreateDataSetRequest& AddFolderArns(Aws::String&& value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(std::move(value)); return *this; }
     inline CreateDataSetRequest& AddFolderArns(const char* value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The configuration for the performance optimization of the dataset that
+     * contains a <code>UniqueKey</code> configuration.</p>
+     */
+    inline const PerformanceConfiguration& GetPerformanceConfiguration() const{ return m_performanceConfiguration; }
+    inline bool PerformanceConfigurationHasBeenSet() const { return m_performanceConfigurationHasBeenSet; }
+    inline void SetPerformanceConfiguration(const PerformanceConfiguration& value) { m_performanceConfigurationHasBeenSet = true; m_performanceConfiguration = value; }
+    inline void SetPerformanceConfiguration(PerformanceConfiguration&& value) { m_performanceConfigurationHasBeenSet = true; m_performanceConfiguration = std::move(value); }
+    inline CreateDataSetRequest& WithPerformanceConfiguration(const PerformanceConfiguration& value) { SetPerformanceConfiguration(value); return *this;}
+    inline CreateDataSetRequest& WithPerformanceConfiguration(PerformanceConfiguration&& value) { SetPerformanceConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_awsAccountId;
@@ -331,6 +345,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_folderArns;
     bool m_folderArnsHasBeenSet = false;
+
+    PerformanceConfiguration m_performanceConfiguration;
+    bool m_performanceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

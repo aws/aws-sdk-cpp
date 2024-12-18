@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAttachmentResult::GetAttachmentResult()
+GetAttachmentResult::GetAttachmentResult() : 
+    m_attachmentSizeInBytes(0)
 {
 }
 
 GetAttachmentResult::GetAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetAttachmentResult()
 {
   *this = result;
 }
@@ -38,6 +40,12 @@ GetAttachmentResult& GetAttachmentResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("UrlExpiry"))
   {
     m_urlExpiry = jsonValue.GetString("UrlExpiry");
+
+  }
+
+  if(jsonValue.ValueExists("AttachmentSizeInBytes"))
+  {
+    m_attachmentSizeInBytes = jsonValue.GetInt64("AttachmentSizeInBytes");
 
   }
 

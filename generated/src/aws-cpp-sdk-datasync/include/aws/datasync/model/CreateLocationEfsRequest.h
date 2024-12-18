@@ -44,8 +44,8 @@ namespace Model
     ///@{
     /**
      * <p>Specifies a mount path for your Amazon EFS file system. This is where
-     * DataSync reads or writes data (depending on if this is a source or destination
-     * location) on your file system.</p> <p>By default, DataSync uses the root
+     * DataSync reads or writes data on your file system (depending on if this is a
+     * source or destination location).</p> <p>By default, DataSync uses the root
      * directory (or <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">access
      * point</a> if you provide one by using <code>AccessPointArn</code>). You can also

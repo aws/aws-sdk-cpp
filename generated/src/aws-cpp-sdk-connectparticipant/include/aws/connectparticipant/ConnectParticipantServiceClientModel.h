@@ -18,11 +18,13 @@
 /* End of generic header includes */
 
 /* Service model headers required in ConnectParticipantClient header */
+#include <aws/connectparticipant/model/CancelParticipantAuthenticationResult.h>
 #include <aws/connectparticipant/model/CompleteAttachmentUploadResult.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionResult.h>
 #include <aws/connectparticipant/model/DescribeViewResult.h>
 #include <aws/connectparticipant/model/DisconnectParticipantResult.h>
 #include <aws/connectparticipant/model/GetAttachmentResult.h>
+#include <aws/connectparticipant/model/GetAuthenticationUrlResult.h>
 #include <aws/connectparticipant/model/GetTranscriptResult.h>
 #include <aws/connectparticipant/model/SendEventResult.h>
 #include <aws/connectparticipant/model/SendMessageResult.h>
@@ -67,11 +69,13 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in ConnectParticipantClient header */
+      class CancelParticipantAuthenticationRequest;
       class CompleteAttachmentUploadRequest;
       class CreateParticipantConnectionRequest;
       class DescribeViewRequest;
       class DisconnectParticipantRequest;
       class GetAttachmentRequest;
+      class GetAuthenticationUrlRequest;
       class GetTranscriptRequest;
       class SendEventRequest;
       class SendMessageRequest;
@@ -79,11 +83,13 @@ namespace Aws
       /* End of service model forward declarations required in ConnectParticipantClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<CancelParticipantAuthenticationResult, ConnectParticipantError> CancelParticipantAuthenticationOutcome;
       typedef Aws::Utils::Outcome<CompleteAttachmentUploadResult, ConnectParticipantError> CompleteAttachmentUploadOutcome;
       typedef Aws::Utils::Outcome<CreateParticipantConnectionResult, ConnectParticipantError> CreateParticipantConnectionOutcome;
       typedef Aws::Utils::Outcome<DescribeViewResult, ConnectParticipantError> DescribeViewOutcome;
       typedef Aws::Utils::Outcome<DisconnectParticipantResult, ConnectParticipantError> DisconnectParticipantOutcome;
       typedef Aws::Utils::Outcome<GetAttachmentResult, ConnectParticipantError> GetAttachmentOutcome;
+      typedef Aws::Utils::Outcome<GetAuthenticationUrlResult, ConnectParticipantError> GetAuthenticationUrlOutcome;
       typedef Aws::Utils::Outcome<GetTranscriptResult, ConnectParticipantError> GetTranscriptOutcome;
       typedef Aws::Utils::Outcome<SendEventResult, ConnectParticipantError> SendEventOutcome;
       typedef Aws::Utils::Outcome<SendMessageResult, ConnectParticipantError> SendMessageOutcome;
@@ -91,11 +97,13 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<CancelParticipantAuthenticationOutcome> CancelParticipantAuthenticationOutcomeCallable;
       typedef std::future<CompleteAttachmentUploadOutcome> CompleteAttachmentUploadOutcomeCallable;
       typedef std::future<CreateParticipantConnectionOutcome> CreateParticipantConnectionOutcomeCallable;
       typedef std::future<DescribeViewOutcome> DescribeViewOutcomeCallable;
       typedef std::future<DisconnectParticipantOutcome> DisconnectParticipantOutcomeCallable;
       typedef std::future<GetAttachmentOutcome> GetAttachmentOutcomeCallable;
+      typedef std::future<GetAuthenticationUrlOutcome> GetAuthenticationUrlOutcomeCallable;
       typedef std::future<GetTranscriptOutcome> GetTranscriptOutcomeCallable;
       typedef std::future<SendEventOutcome> SendEventOutcomeCallable;
       typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
@@ -106,11 +114,13 @@ namespace Aws
     class ConnectParticipantClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const ConnectParticipantClient*, const Model::CancelParticipantAuthenticationRequest&, const Model::CancelParticipantAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelParticipantAuthenticationResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::CompleteAttachmentUploadRequest&, const Model::CompleteAttachmentUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteAttachmentUploadResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::CreateParticipantConnectionRequest&, const Model::CreateParticipantConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateParticipantConnectionResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::DescribeViewRequest&, const Model::DescribeViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeViewResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::DisconnectParticipantRequest&, const Model::DisconnectParticipantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisconnectParticipantResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::GetAttachmentRequest&, const Model::GetAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttachmentResponseReceivedHandler;
+    typedef std::function<void(const ConnectParticipantClient*, const Model::GetAuthenticationUrlRequest&, const Model::GetAuthenticationUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAuthenticationUrlResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::GetTranscriptRequest&, const Model::GetTranscriptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTranscriptResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::SendEventRequest&, const Model::SendEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendEventResponseReceivedHandler;
     typedef std::function<void(const ConnectParticipantClient*, const Model::SendMessageRequest&, const Model::SendMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessageResponseReceivedHandler;

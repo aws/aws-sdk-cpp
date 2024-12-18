@@ -31,6 +31,7 @@ namespace Aws
         static const int HIGH_VOLUME_OUTBOUND_HASH = HashingUtils::HashString("HIGH_VOLUME_OUTBOUND");
         static const int ENHANCED_CONTACT_MONITORING_HASH = HashingUtils::HashString("ENHANCED_CONTACT_MONITORING");
         static const int ENHANCED_CHAT_MONITORING_HASH = HashingUtils::HashString("ENHANCED_CHAT_MONITORING");
+        static const int MULTI_PARTY_CHAT_CONFERENCE_HASH = HashingUtils::HashString("MULTI_PARTY_CHAT_CONFERENCE");
 
 
         InstanceAttributeType GetInstanceAttributeTypeForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return InstanceAttributeType::ENHANCED_CHAT_MONITORING;
           }
+          else if (hashCode == MULTI_PARTY_CHAT_CONFERENCE_HASH)
+          {
+            return InstanceAttributeType::MULTI_PARTY_CHAT_CONFERENCE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +123,8 @@ namespace Aws
             return "ENHANCED_CONTACT_MONITORING";
           case InstanceAttributeType::ENHANCED_CHAT_MONITORING:
             return "ENHANCED_CHAT_MONITORING";
+          case InstanceAttributeType::MULTI_PARTY_CHAT_CONFERENCE:
+            return "MULTI_PARTY_CHAT_CONFERENCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

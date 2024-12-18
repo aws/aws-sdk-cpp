@@ -21,10 +21,12 @@ namespace Model
 RecommendationItem::RecommendationItem() : 
     m_alreadyImplemented(false),
     m_alreadyImplementedHasBeenSet(false),
+    m_discoveredAlarmHasBeenSet(false),
     m_excludeReason(ExcludeRecommendationReason::NOT_SET),
     m_excludeReasonHasBeenSet(false),
     m_excluded(false),
     m_excludedHasBeenSet(false),
+    m_latestDiscoveredExperimentHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_targetAccountIdHasBeenSet(false),
     m_targetRegionHasBeenSet(false)
@@ -46,6 +48,13 @@ RecommendationItem& RecommendationItem::operator =(JsonView jsonValue)
     m_alreadyImplementedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("discoveredAlarm"))
+  {
+    m_discoveredAlarm = jsonValue.GetObject("discoveredAlarm");
+
+    m_discoveredAlarmHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("excludeReason"))
   {
     m_excludeReason = ExcludeRecommendationReasonMapper::GetExcludeRecommendationReasonForName(jsonValue.GetString("excludeReason"));
@@ -58,6 +67,13 @@ RecommendationItem& RecommendationItem::operator =(JsonView jsonValue)
     m_excluded = jsonValue.GetBool("excluded");
 
     m_excludedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("latestDiscoveredExperiment"))
+  {
+    m_latestDiscoveredExperiment = jsonValue.GetObject("latestDiscoveredExperiment");
+
+    m_latestDiscoveredExperimentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceId"))
@@ -94,6 +110,12 @@ JsonValue RecommendationItem::Jsonize() const
 
   }
 
+  if(m_discoveredAlarmHasBeenSet)
+  {
+   payload.WithObject("discoveredAlarm", m_discoveredAlarm.Jsonize());
+
+  }
+
   if(m_excludeReasonHasBeenSet)
   {
    payload.WithString("excludeReason", ExcludeRecommendationReasonMapper::GetNameForExcludeRecommendationReason(m_excludeReason));
@@ -102,6 +124,12 @@ JsonValue RecommendationItem::Jsonize() const
   if(m_excludedHasBeenSet)
   {
    payload.WithBool("excluded", m_excluded);
+
+  }
+
+  if(m_latestDiscoveredExperimentHasBeenSet)
+  {
+   payload.WithObject("latestDiscoveredExperiment", m_latestDiscoveredExperiment.Jsonize());
 
   }
 

@@ -129,10 +129,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the name of the Microsoft Active Directory domain that the FSx for
-     * Windows File Server file system belongs to.</p> <p>If you have multiple Active
-     * Directory domains in your environment, configuring this parameter makes sure
-     * that DataSync connects to the right file system.</p>
+     * <p>Specifies the name of the Windows domain that the FSx for Windows File Server
+     * file system belongs to.</p> <p>If you have multiple Active Directory domains in
+     * your environment, configuring this parameter makes sure that DataSync connects
+     * to the right file system.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }

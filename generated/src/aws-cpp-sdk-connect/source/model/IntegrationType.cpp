@@ -33,6 +33,7 @@ namespace Aws
         static const int SES_IDENTITY_HASH = HashingUtils::HashString("SES_IDENTITY");
         static const int ANALYTICS_CONNECTOR_HASH = HashingUtils::HashString("ANALYTICS_CONNECTOR");
         static const int CALL_TRANSFER_CONNECTOR_HASH = HashingUtils::HashString("CALL_TRANSFER_CONNECTOR");
+        static const int COGNITO_USER_POOL_HASH = HashingUtils::HashString("COGNITO_USER_POOL");
 
 
         IntegrationType GetIntegrationTypeForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return IntegrationType::CALL_TRANSFER_CONNECTOR;
           }
+          else if (hashCode == COGNITO_USER_POOL_HASH)
+          {
+            return IntegrationType::COGNITO_USER_POOL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -132,6 +137,8 @@ namespace Aws
             return "ANALYTICS_CONNECTOR";
           case IntegrationType::CALL_TRANSFER_CONNECTOR:
             return "CALL_TRANSFER_CONNECTOR";
+          case IntegrationType::COGNITO_USER_POOL:
+            return "COGNITO_USER_POOL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

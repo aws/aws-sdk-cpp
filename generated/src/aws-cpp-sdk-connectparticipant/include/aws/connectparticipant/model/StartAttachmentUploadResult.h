@@ -48,7 +48,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Fields to be used while uploading the attachment.</p>
+     * <p>The headers to be provided while uploading the file to the URL.</p>
      */
     inline const UploadMetadata& GetUploadMetadata() const{ return m_uploadMetadata; }
     inline void SetUploadMetadata(const UploadMetadata& value) { m_uploadMetadata = value; }

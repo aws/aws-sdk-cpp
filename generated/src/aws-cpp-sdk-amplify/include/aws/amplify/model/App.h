@@ -14,6 +14,7 @@
 #include <aws/amplify/model/AutoBranchCreationConfig.h>
 #include <aws/amplify/model/RepositoryCloneMethod.h>
 #include <aws/amplify/model/CacheConfig.h>
+#include <aws/amplify/model/WafConfiguration.h>
 #include <aws/amplify/model/CustomRule.h>
 #include <utility>
 
@@ -156,7 +157,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Creates a date and time for the Amplify app. </p>
+     * <p>A timestamp of when Amplify created the application.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
@@ -168,7 +169,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Updates the date and time for the Amplify app. </p>
+     * <p>A timestamp of when Amplify updated the application.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
@@ -399,6 +400,32 @@ namespace Model
     inline App& WithCacheConfig(const CacheConfig& value) { SetCacheConfig(value); return *this;}
     inline App& WithCacheConfig(CacheConfig&& value) { SetCacheConfig(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
+     */
+    inline const Aws::Utils::DateTime& GetWebhookCreateTime() const{ return m_webhookCreateTime; }
+    inline bool WebhookCreateTimeHasBeenSet() const { return m_webhookCreateTimeHasBeenSet; }
+    inline void SetWebhookCreateTime(const Aws::Utils::DateTime& value) { m_webhookCreateTimeHasBeenSet = true; m_webhookCreateTime = value; }
+    inline void SetWebhookCreateTime(Aws::Utils::DateTime&& value) { m_webhookCreateTimeHasBeenSet = true; m_webhookCreateTime = std::move(value); }
+    inline App& WithWebhookCreateTime(const Aws::Utils::DateTime& value) { SetWebhookCreateTime(value); return *this;}
+    inline App& WithWebhookCreateTime(Aws::Utils::DateTime&& value) { SetWebhookCreateTime(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Describes the Firewall configuration for the Amplify app. Firewall support
+     * enables you to protect your hosted applications with a direct integration with
+     * WAF.</p>
+     */
+    inline const WafConfiguration& GetWafConfiguration() const{ return m_wafConfiguration; }
+    inline bool WafConfigurationHasBeenSet() const { return m_wafConfigurationHasBeenSet; }
+    inline void SetWafConfiguration(const WafConfiguration& value) { m_wafConfigurationHasBeenSet = true; m_wafConfiguration = value; }
+    inline void SetWafConfiguration(WafConfiguration&& value) { m_wafConfigurationHasBeenSet = true; m_wafConfiguration = std::move(value); }
+    inline App& WithWafConfiguration(const WafConfiguration& value) { SetWafConfiguration(value); return *this;}
+    inline App& WithWafConfiguration(WafConfiguration&& value) { SetWafConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_appId;
@@ -475,6 +502,12 @@ namespace Model
 
     CacheConfig m_cacheConfig;
     bool m_cacheConfigHasBeenSet = false;
+
+    Aws::Utils::DateTime m_webhookCreateTime;
+    bool m_webhookCreateTimeHasBeenSet = false;
+
+    WafConfiguration m_wafConfiguration;
+    bool m_wafConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

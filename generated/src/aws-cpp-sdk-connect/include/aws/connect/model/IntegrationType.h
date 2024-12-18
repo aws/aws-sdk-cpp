@@ -28,7 +28,8 @@ namespace Model
     FILE_SCANNER,
     SES_IDENTITY,
     ANALYTICS_CONNECTOR,
-    CALL_TRANSFER_CONNECTOR
+    CALL_TRANSFER_CONNECTOR,
+    COGNITO_USER_POOL
   };
 
 namespace IntegrationTypeMapper

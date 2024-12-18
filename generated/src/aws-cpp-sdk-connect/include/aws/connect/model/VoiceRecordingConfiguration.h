@@ -53,7 +53,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Identifies which IVR track is being recorded.</p>
+     * <p>Identifies which IVR track is being recorded.</p> <p>One and only one of the
+     * track configurations should be presented in the request.</p>
      */
     inline const IvrRecordingTrack& GetIvrRecordingTrack() const{ return m_ivrRecordingTrack; }
     inline bool IvrRecordingTrackHasBeenSet() const { return m_ivrRecordingTrackHasBeenSet; }

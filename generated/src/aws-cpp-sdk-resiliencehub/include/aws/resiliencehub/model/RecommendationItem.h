@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
+#include <aws/resiliencehub/model/Alarm.h>
 #include <aws/resiliencehub/model/ExcludeRecommendationReason.h>
+#include <aws/resiliencehub/model/Experiment.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -50,6 +52,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates the previously implemented Amazon CloudWatch alarm discovered by
+     * Resilience Hub.</p>
+     */
+    inline const Alarm& GetDiscoveredAlarm() const{ return m_discoveredAlarm; }
+    inline bool DiscoveredAlarmHasBeenSet() const { return m_discoveredAlarmHasBeenSet; }
+    inline void SetDiscoveredAlarm(const Alarm& value) { m_discoveredAlarmHasBeenSet = true; m_discoveredAlarm = value; }
+    inline void SetDiscoveredAlarm(Alarm&& value) { m_discoveredAlarmHasBeenSet = true; m_discoveredAlarm = std::move(value); }
+    inline RecommendationItem& WithDiscoveredAlarm(const Alarm& value) { SetDiscoveredAlarm(value); return *this;}
+    inline RecommendationItem& WithDiscoveredAlarm(Alarm&& value) { SetDiscoveredAlarm(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Indicates the reason for excluding an operational recommendation.</p>
      */
     inline const ExcludeRecommendationReason& GetExcludeReason() const{ return m_excludeReason; }
@@ -68,6 +83,19 @@ namespace Model
     inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
     inline void SetExcluded(bool value) { m_excludedHasBeenSet = true; m_excluded = value; }
     inline RecommendationItem& WithExcluded(bool value) { SetExcluded(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Indicates the experiment created in FIS that was discovered by Resilience
+     * Hub, which matches the recommendation.</p>
+     */
+    inline const Experiment& GetLatestDiscoveredExperiment() const{ return m_latestDiscoveredExperiment; }
+    inline bool LatestDiscoveredExperimentHasBeenSet() const { return m_latestDiscoveredExperimentHasBeenSet; }
+    inline void SetLatestDiscoveredExperiment(const Experiment& value) { m_latestDiscoveredExperimentHasBeenSet = true; m_latestDiscoveredExperiment = value; }
+    inline void SetLatestDiscoveredExperiment(Experiment&& value) { m_latestDiscoveredExperimentHasBeenSet = true; m_latestDiscoveredExperiment = std::move(value); }
+    inline RecommendationItem& WithLatestDiscoveredExperiment(const Experiment& value) { SetLatestDiscoveredExperiment(value); return *this;}
+    inline RecommendationItem& WithLatestDiscoveredExperiment(Experiment&& value) { SetLatestDiscoveredExperiment(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,11 +144,17 @@ namespace Model
     bool m_alreadyImplemented;
     bool m_alreadyImplementedHasBeenSet = false;
 
+    Alarm m_discoveredAlarm;
+    bool m_discoveredAlarmHasBeenSet = false;
+
     ExcludeRecommendationReason m_excludeReason;
     bool m_excludeReasonHasBeenSet = false;
 
     bool m_excluded;
     bool m_excludedHasBeenSet = false;
+
+    Experiment m_latestDiscoveredExperiment;
+    bool m_latestDiscoveredExperimentHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;

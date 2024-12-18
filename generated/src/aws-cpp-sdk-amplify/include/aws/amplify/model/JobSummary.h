@@ -100,7 +100,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The commit date and time for the job. </p>
+     * <p>The commit date and time for the job. </p>
      */
     inline const Aws::Utils::DateTime& GetCommitTime() const{ return m_commitTime; }
     inline bool CommitTimeHasBeenSet() const { return m_commitTimeHasBeenSet; }

@@ -21,7 +21,11 @@ UpdateAgreementRequest::UpdateAgreementRequest() :
     m_localProfileIdHasBeenSet(false),
     m_partnerProfileIdHasBeenSet(false),
     m_baseDirectoryHasBeenSet(false),
-    m_accessRoleHasBeenSet(false)
+    m_accessRoleHasBeenSet(false),
+    m_preserveFilename(PreserveFilenameType::NOT_SET),
+    m_preserveFilenameHasBeenSet(false),
+    m_enforceMessageSigning(EnforceMessageSigningType::NOT_SET),
+    m_enforceMessageSigningHasBeenSet(false)
 {
 }
 
@@ -74,6 +78,16 @@ Aws::String UpdateAgreementRequest::SerializePayload() const
   {
    payload.WithString("AccessRole", m_accessRole);
 
+  }
+
+  if(m_preserveFilenameHasBeenSet)
+  {
+   payload.WithString("PreserveFilename", PreserveFilenameTypeMapper::GetNameForPreserveFilenameType(m_preserveFilename));
+  }
+
+  if(m_enforceMessageSigningHasBeenSet)
+  {
+   payload.WithString("EnforceMessageSigning", EnforceMessageSigningTypeMapper::GetNameForEnforceMessageSigningType(m_enforceMessageSigning));
   }
 
   return payload.View().WriteReadable();

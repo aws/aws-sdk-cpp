@@ -331,8 +331,8 @@ namespace Model
      * Airflow versions on Amazon Managed Workflows for Apache Airflow (Amazon
      * MWAA)</a>.</p> <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>,
      * <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>,
-     * <code>2.7.2</code>, <code>2.8.1</code>, <code>2.9.2</code>, and
-     * <code>2.10.1</code>.</p>
+     * <code>2.7.2</code>, <code>2.8.1</code>, <code>2.9.2</code>, <code>2.10.1</code>,
+     * and <code>2.10.3</code>.</p>
      */
     inline const Aws::String& GetAirflowVersion() const{ return m_airflowVersion; }
     inline bool AirflowVersionHasBeenSet() const { return m_airflowVersionHasBeenSet; }

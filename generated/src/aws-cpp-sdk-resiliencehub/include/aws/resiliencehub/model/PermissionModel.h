@@ -67,11 +67,14 @@ namespace Model
     /**
      * <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services
      * account that will be assumed by Resilience Hub Service Principle to obtain a
-     * read-only access to your application resources while running an assessment.</p>
-     *  <ul> <li> <p>You must have <code>iam:passRole</code> permission for this
-     * role while creating or updating the application.</p> </li> <li> <p>Currently,
-     * <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code>
-     * characters.</p> </li> </ul> 
+     * read-only access to your application resources while running an assessment. </p>
+     * <p>If your IAM role includes a path, you must include the path in the
+     * <code>invokerRoleName</code> parameter. For example, if your IAM role's ARN is
+     * <code>arn:aws:iam:123456789012:role/my-path/role-name</code>, you should pass
+     * <code>my-path/role-name</code>. </p>  <ul> <li> <p>You must have
+     * <code>iam:passRole</code> permission for this role while creating or updating
+     * the application.</p> </li> <li> <p>Currently, <code>invokerRoleName</code>
+     * accepts only <code>[A-Za-z0-9_+=,.@-]</code> characters.</p> </li> </ul> 
      */
     inline const Aws::String& GetInvokerRoleName() const{ return m_invokerRoleName; }
     inline bool InvokerRoleNameHasBeenSet() const { return m_invokerRoleNameHasBeenSet; }

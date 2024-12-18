@@ -44,6 +44,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>Indicates the identifier of the AppComponent.</p>
+     */
+    inline const Aws::String& GetAppComponentId() const{ return m_appComponentId; }
+    inline bool AppComponentIdHasBeenSet() const { return m_appComponentIdHasBeenSet; }
+    inline void SetAppComponentId(const Aws::String& value) { m_appComponentIdHasBeenSet = true; m_appComponentId = value; }
+    inline void SetAppComponentId(Aws::String&& value) { m_appComponentIdHasBeenSet = true; m_appComponentId = std::move(value); }
+    inline void SetAppComponentId(const char* value) { m_appComponentIdHasBeenSet = true; m_appComponentId.assign(value); }
+    inline TestRecommendation& WithAppComponentId(const Aws::String& value) { SetAppComponentId(value); return *this;}
+    inline TestRecommendation& WithAppComponentId(Aws::String&& value) { SetAppComponentId(std::move(value)); return *this;}
+    inline TestRecommendation& WithAppComponentId(const char* value) { SetAppComponentId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Name of the Application Component.</p>
      */
     inline const Aws::String& GetAppComponentName() const{ return m_appComponentName; }
@@ -206,6 +220,9 @@ namespace Model
     inline TestRecommendation& WithType(TestType&& value) { SetType(std::move(value)); return *this;}
     ///@}
   private:
+
+    Aws::String m_appComponentId;
+    bool m_appComponentIdHasBeenSet = false;
 
     Aws::String m_appComponentName;
     bool m_appComponentNameHasBeenSet = false;

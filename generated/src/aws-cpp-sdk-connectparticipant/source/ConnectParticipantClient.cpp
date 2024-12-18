@@ -21,11 +21,13 @@
 #include <aws/connectparticipant/ConnectParticipantClient.h>
 #include <aws/connectparticipant/ConnectParticipantErrorMarshaller.h>
 #include <aws/connectparticipant/ConnectParticipantEndpointProvider.h>
+#include <aws/connectparticipant/model/CancelParticipantAuthenticationRequest.h>
 #include <aws/connectparticipant/model/CompleteAttachmentUploadRequest.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionRequest.h>
 #include <aws/connectparticipant/model/DescribeViewRequest.h>
 #include <aws/connectparticipant/model/DisconnectParticipantRequest.h>
 #include <aws/connectparticipant/model/GetAttachmentRequest.h>
+#include <aws/connectparticipant/model/GetAuthenticationUrlRequest.h>
 #include <aws/connectparticipant/model/GetTranscriptRequest.h>
 #include <aws/connectparticipant/model/SendEventRequest.h>
 #include <aws/connectparticipant/model/SendMessageRequest.h>
@@ -171,6 +173,38 @@ void ConnectParticipantClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+CancelParticipantAuthenticationOutcome ConnectParticipantClient::CancelParticipantAuthentication(const CancelParticipantAuthenticationRequest& request) const
+{
+  AWS_OPERATION_GUARD(CancelParticipantAuthentication);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelParticipantAuthentication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ConnectionTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelParticipantAuthentication", "Required field: ConnectionToken, is not set");
+    return CancelParticipantAuthenticationOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CancelParticipantAuthentication, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CancelParticipantAuthentication, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CancelParticipantAuthentication",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CancelParticipantAuthenticationOutcome>(
+    [&]()-> CancelParticipantAuthenticationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelParticipantAuthentication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/participant/cancel-authentication");
+      return CancelParticipantAuthenticationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 CompleteAttachmentUploadOutcome ConnectParticipantClient::CompleteAttachmentUpload(const CompleteAttachmentUploadRequest& request) const
@@ -333,6 +367,38 @@ GetAttachmentOutcome ConnectParticipantClient::GetAttachment(const GetAttachment
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/participant/attachment");
       return GetAttachmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetAuthenticationUrlOutcome ConnectParticipantClient::GetAuthenticationUrl(const GetAuthenticationUrlRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetAuthenticationUrl);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAuthenticationUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ConnectionTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAuthenticationUrl", "Required field: ConnectionToken, is not set");
+    return GetAuthenticationUrlOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetAuthenticationUrl, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetAuthenticationUrl, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetAuthenticationUrl",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetAuthenticationUrlOutcome>(
+    [&]()-> GetAuthenticationUrlOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAuthenticationUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/participant/authentication-url");
+      return GetAuthenticationUrlOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

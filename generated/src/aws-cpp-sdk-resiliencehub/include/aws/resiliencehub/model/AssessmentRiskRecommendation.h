@@ -49,7 +49,7 @@ namespace Model
     ///@{
     /**
      * <p>Indicates the Application Components (AppComponents) that were assessed as
-     * part of the assessnent and are associated with the identified risk and
+     * part of the assessment and are associated with the identified risk and
      * recommendation.</p>  <p>This property is available only in the US East (N.
      * Virginia) Region.</p> 
      */

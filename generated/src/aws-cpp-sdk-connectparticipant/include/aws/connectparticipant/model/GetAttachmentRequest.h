@@ -61,6 +61,17 @@ namespace Model
     inline GetAttachmentRequest& WithConnectionToken(Aws::String&& value) { SetConnectionToken(std::move(value)); return *this;}
     inline GetAttachmentRequest& WithConnectionToken(const char* value) { SetConnectionToken(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The expiration time of the URL in ISO timestamp. It's specified in ISO 8601
+     * format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
+     */
+    inline int GetUrlExpiryInSeconds() const{ return m_urlExpiryInSeconds; }
+    inline bool UrlExpiryInSecondsHasBeenSet() const { return m_urlExpiryInSecondsHasBeenSet; }
+    inline void SetUrlExpiryInSeconds(int value) { m_urlExpiryInSecondsHasBeenSet = true; m_urlExpiryInSeconds = value; }
+    inline GetAttachmentRequest& WithUrlExpiryInSeconds(int value) { SetUrlExpiryInSeconds(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_attachmentId;
@@ -68,6 +79,9 @@ namespace Model
 
     Aws::String m_connectionToken;
     bool m_connectionTokenHasBeenSet = false;
+
+    int m_urlExpiryInSeconds;
+    bool m_urlExpiryInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

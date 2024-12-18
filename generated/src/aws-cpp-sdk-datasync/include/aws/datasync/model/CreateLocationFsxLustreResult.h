@@ -35,7 +35,7 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the FSx for Lustre file system location
-     * that's created. </p>
+     * that you created. </p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
     inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }

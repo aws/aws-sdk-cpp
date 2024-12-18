@@ -32,7 +32,9 @@ As2ConnectorConfig::As2ConnectorConfig() :
     m_mdnSigningAlgorithmHasBeenSet(false),
     m_mdnResponse(MdnResponse::NOT_SET),
     m_mdnResponseHasBeenSet(false),
-    m_basicAuthSecretIdHasBeenSet(false)
+    m_basicAuthSecretIdHasBeenSet(false),
+    m_preserveContentType(PreserveContentType::NOT_SET),
+    m_preserveContentTypeHasBeenSet(false)
 {
 }
 
@@ -107,6 +109,13 @@ As2ConnectorConfig& As2ConnectorConfig::operator =(JsonView jsonValue)
     m_basicAuthSecretIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PreserveContentType"))
+  {
+    m_preserveContentType = PreserveContentTypeMapper::GetPreserveContentTypeForName(jsonValue.GetString("PreserveContentType"));
+
+    m_preserveContentTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,6 +170,11 @@ JsonValue As2ConnectorConfig::Jsonize() const
   {
    payload.WithString("BasicAuthSecretId", m_basicAuthSecretId);
 
+  }
+
+  if(m_preserveContentTypeHasBeenSet)
+  {
+   payload.WithString("PreserveContentType", PreserveContentTypeMapper::GetNameForPreserveContentType(m_preserveContentType));
   }
 
   return payload;

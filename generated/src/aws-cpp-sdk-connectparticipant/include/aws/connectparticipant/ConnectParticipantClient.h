@@ -16,16 +16,20 @@ namespace Aws
 namespace ConnectParticipant
 {
   /**
-   * <p>Amazon Connect is an easy-to-use omnichannel cloud contact center service
-   * that enables companies of any size to deliver superior customer service at a
-   * lower cost. Amazon Connect communications capabilities make it easy for
-   * companies to deliver personalized interactions across communication channels,
-   * including chat. </p> <p>Use the Amazon Connect Participant Service to manage
-   * participants (for example, agents, customers, and managers listening in), and to
-   * send messages and events within a chat contact. The APIs in the service enable
-   * the following: sending chat messages, attachment sharing, managing a
-   * participant's connection state and message events, and retrieving chat
-   * transcripts.</p>
+   * <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Participant_Service.html">Participant
+   * Service actions</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Participant_Service.html">Participant
+   * Service data types</a> </p> </li> </ul> <p>Amazon Connect is an easy-to-use
+   * omnichannel cloud contact center service that enables companies of any size to
+   * deliver superior customer service at a lower cost. Amazon Connect communications
+   * capabilities make it easy for companies to deliver personalized interactions
+   * across communication channels, including chat. </p> <p>Use the Amazon Connect
+   * Participant Service to manage participants (for example, agents, customers, and
+   * managers listening in), and to send messages and events within a chat contact.
+   * The APIs in the service enable the following: sending chat messages, attachment
+   * sharing, managing a participant's connection state and message events, and
+   * retrieving chat transcripts.</p>
    */
   class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectParticipantClient>
   {
@@ -86,10 +90,41 @@ namespace ConnectParticipant
         virtual ~ConnectParticipantClient();
 
         /**
+         * <p>Cancels the authentication session. The opted out branch of the Authenticate
+         * Customer flow block will be taken.</p>  <p>The current supported channel
+         * is chat. This API is not supported for Apple Messages for Business, WhatsApp, or
+         * SMS chats.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CancelParticipantAuthentication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelParticipantAuthenticationOutcome CancelParticipantAuthentication(const Model::CancelParticipantAuthenticationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelParticipantAuthentication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelParticipantAuthenticationRequestT = Model::CancelParticipantAuthenticationRequest>
+        Model::CancelParticipantAuthenticationOutcomeCallable CancelParticipantAuthenticationCallable(const CancelParticipantAuthenticationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectParticipantClient::CancelParticipantAuthentication, request);
+        }
+
+        /**
+         * An Async wrapper for CancelParticipantAuthentication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelParticipantAuthenticationRequestT = Model::CancelParticipantAuthenticationRequest>
+        void CancelParticipantAuthenticationAsync(const CancelParticipantAuthenticationRequestT& request, const CancelParticipantAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectParticipantClient::CancelParticipantAuthentication, request, handler, context);
+        }
+
+        /**
          * <p>Allows you to confirm that the attachment has been uploaded using the
          * pre-signed URL provided in StartAttachmentUpload API. A conflict exception is
          * thrown when an attachment with that identifier is already being uploaded.</p>
-         *  <p> <code>ConnectionToken</code> is used for invoking this API instead of
+         * <p>For security recommendations, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a>.</p>  <p>
+         * <code>ConnectionToken</code> is used for invoking this API instead of
          * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
          * Service APIs do not use <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
@@ -118,7 +153,10 @@ namespace ConnectParticipant
         }
 
         /**
-         * <p>Creates the participant's connection. </p>  <p>
+         * <p>Creates the participant's connection. </p> <p>For security recommendations,
+         * see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a>.</p>  <p>
          * <code>ParticipantToken</code> is used for invoking this API instead of
          * <code>ConnectionToken</code>.</p>  <p>The participant token is valid for
          * the lifetime of the participant – until they are part of a contact.</p> <p>The
@@ -168,8 +206,10 @@ namespace ConnectParticipant
         }
 
         /**
-         * <p>Retrieves the view for the specified view token.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves the view for the specified view token.</p> <p>For security
+         * recommendations, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DescribeView">AWS
          * API Reference</a></p>
          */
@@ -194,9 +234,12 @@ namespace ConnectParticipant
         }
 
         /**
-         * <p>Disconnects a participant. </p>  <p> <code>ConnectionToken</code> is
-         * used for invoking this API instead of <code>ParticipantToken</code>.</p> 
-         * <p>The Amazon Connect Participant Service APIs do not use <a
+         * <p>Disconnects a participant. </p> <p>For security recommendations, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a>.</p>  <p>
+         * <code>ConnectionToken</code> is used for invoking this API instead of
+         * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
+         * Service APIs do not use <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
          * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/DisconnectParticipant">AWS
@@ -224,7 +267,10 @@ namespace ConnectParticipant
 
         /**
          * <p>Provides a pre-signed URL for download of a completed attachment. This is an
-         * asynchronous API for use with active contacts.</p>  <p>
+         * asynchronous API for use with active contacts.</p> <p>For security
+         * recommendations, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a>.</p>  <p>
          * <code>ConnectionToken</code> is used for invoking this API instead of
          * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
          * Service APIs do not use <a
@@ -254,14 +300,49 @@ namespace ConnectParticipant
         }
 
         /**
+         * <p>Retrieves the AuthenticationUrl for the current authentication session for
+         * the AuthenticateCustomer flow block. </p> <p>For security recommendations, see
+         * <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a>.</p>  <ul> <li> <p>This API can
+         * only be called within one minute of receiving the authenticationInitiated
+         * event.</p> </li> <li> <p>The current supported channel is chat. This API is not
+         * supported for Apple Messages for Business, WhatsApp, or SMS chats.</p> </li>
+         * </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAuthenticationUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAuthenticationUrlOutcome GetAuthenticationUrl(const Model::GetAuthenticationUrlRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAuthenticationUrl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAuthenticationUrlRequestT = Model::GetAuthenticationUrlRequest>
+        Model::GetAuthenticationUrlOutcomeCallable GetAuthenticationUrlCallable(const GetAuthenticationUrlRequestT& request) const
+        {
+            return SubmitCallable(&ConnectParticipantClient::GetAuthenticationUrl, request);
+        }
+
+        /**
+         * An Async wrapper for GetAuthenticationUrl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAuthenticationUrlRequestT = Model::GetAuthenticationUrlRequest>
+        void GetAuthenticationUrlAsync(const GetAuthenticationUrlRequestT& request, const GetAuthenticationUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectParticipantClient::GetAuthenticationUrl, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a transcript of the session, including details about any
          * attachments. For information about accessing past chat contact transcripts for a
          * persistent chat, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
-         * persistent chat</a>. </p> <p>If you have a process that consumes events in the
-         * transcript of an chat that has ended, note that chat transcripts contain the
-         * following event content types if the event has occurred during the chat
-         * session:</p> <ul> <li> <p>
+         * persistent chat</a>. </p> <p>For security recommendations, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a>.</p> <p>If you have a process that
+         * consumes events in the transcript of an chat that has ended, note that chat
+         * transcripts contain the following event content types if the event has occurred
+         * during the chat session:</p> <ul> <li> <p>
          * <code>application/vnd.amazonaws.connect.event.participant.left</code> </p> </li>
          * <li> <p> <code>application/vnd.amazonaws.connect.event.participant.joined</code>
          * </p> </li> <li> <p>
@@ -306,7 +387,10 @@ namespace ConnectParticipant
          * API using the <code>ConnectParticipant</code> field.</p>  <p>Sends an
          * event. Message receipts are not supported when there are more than two active
          * participants in the chat. Using the SendEvent API for message receipts when a
-         * supervisor is barged-in will result in a conflict exception.</p>  <p>
+         * supervisor is barged-in will result in a conflict exception.</p> <p>For security
+         * recommendations, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a>.</p>  <p>
          * <code>ConnectionToken</code> is used for invoking this API instead of
          * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
          * Service APIs do not use <a
@@ -336,9 +420,12 @@ namespace ConnectParticipant
         }
 
         /**
-         * <p>Sends a message.</p>  <p> <code>ConnectionToken</code> is used for
-         * invoking this API instead of <code>ParticipantToken</code>.</p>  <p>The
-         * Amazon Connect Participant Service APIs do not use <a
+         * <p>Sends a message.</p> <p>For security recommendations, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a>.</p>  <p>
+         * <code>ConnectionToken</code> is used for invoking this API instead of
+         * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
+         * Service APIs do not use <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
          * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendMessage">AWS
@@ -366,9 +453,12 @@ namespace ConnectParticipant
 
         /**
          * <p>Provides a pre-signed Amazon S3 URL in response for uploading the file
-         * directly to S3.</p>  <p> <code>ConnectionToken</code> is used for invoking
-         * this API instead of <code>ParticipantToken</code>.</p>  <p>The Amazon
-         * Connect Participant Service APIs do not use <a
+         * directly to S3.</p> <p>For security recommendations, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+         * Connect Chat security best practices</a>.</p>  <p>
+         * <code>ConnectionToken</code> is used for invoking this API instead of
+         * <code>ParticipantToken</code>.</p>  <p>The Amazon Connect Participant
+         * Service APIs do not use <a
          * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
          * Version 4 authentication</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartAttachmentUpload">AWS
