@@ -185,7 +185,7 @@ class TestClient : public MySmithyClient
 
     SigningOutcome SignRequest(std::shared_ptr<HttpRequest> httpRequest, const smithy::AuthSchemeOption& targetAuthSchemeOption) const
     {
-        return MySmithyClient::SignRequest(httpRequest, targetAuthSchemeOption);
+        return MySmithyClient::SignHttpRequest(httpRequest, targetAuthSchemeOption);
     }
 
 
