@@ -7,6 +7,7 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration;
 
 import lombok.Data;
 
+import java.util.List;
 import java.util.Map;
 
 @Data
@@ -43,4 +44,7 @@ public class Metadata {
     private boolean hasPreSignedUrl;
 
     private boolean awsQueryCompatible;
+
+    // Priority-ordered list of auth types present on the service model
+    private List<String> auth;
 }
