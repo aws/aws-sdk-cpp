@@ -6,15 +6,18 @@
 #pragma once
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/glacier/GlacierServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
 
 namespace Aws
 {
 namespace Glacier
 {
+  AWS_GLACIER_API extern const char SERVICE_NAME[];
   /**
    * <p> Amazon S3 Glacier (Glacier) is a storage solution for "cold data."</p>
    * <p>Glacier is an extremely low-cost storage service that provides secure,
@@ -43,12 +46,19 @@ namespace Glacier
    * download archives, retrieving the job output, and deleting archives.</p> </li>
    * </ul>
    */
-  class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>
+  class AWS_GLACIER_API GlacierClient : smithy::client::AwsSmithyClientT<Aws::Glacier::SERVICE_NAME,
+      Aws::Glacier::GlacierClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      GlacierEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome>,
+    Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "Glacier"; }
 
       typedef GlacierClientConfiguration ClientConfigurationType;
       typedef GlacierEndpointProvider EndpointProviderType;
@@ -1520,8 +1530,6 @@ namespace Glacier
       friend class Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>;
       void init(const GlacierClientConfiguration& clientConfiguration);
 
-      GlacierClientConfiguration m_clientConfiguration;
-      std::shared_ptr<GlacierEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Glacier
