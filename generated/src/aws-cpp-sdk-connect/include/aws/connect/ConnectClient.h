@@ -1159,7 +1159,7 @@ namespace Connect
          * <p>Creates registration for a device token and a chat contact to receive
          * real-time push notifications. For more information about push notifications, see
          * <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/set-up-push-notifications-for-mobile-chat.html">Set
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-push-notifications-for-mobile-chat.html">Set
          * up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon
          * Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">AWS
@@ -3978,7 +3978,7 @@ namespace Connect
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>For the specified version of Amazon Lex, returns a paginated list
          * of all the Amazon Lex bots currently associated with the instance. Use this API
-         * to returns both Amazon Lex V1 and V2 bots.</p><p><h3>See Also:</h3>   <a
+         * to return both Amazon Lex V1 and V2 bots.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListBots">AWS
          * API Reference</a></p>
          */
@@ -7194,6 +7194,39 @@ namespace Connect
         void UpdateInstanceStorageConfigAsync(const UpdateInstanceStorageConfigRequestT& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::UpdateInstanceStorageConfig, request, handler, context);
+        }
+
+        /**
+         * <p>Instructs Amazon Connect to resume the authentication process. The subsequent
+         * actions depend on the request body contents:</p> <ul> <li> <p> <b>If a code is
+         * provided</b>: Connect retrieves the identity information from Amazon Cognito and
+         * imports it into Connect Customer Profiles.</p> </li> <li> <p> <b>If an error is
+         * provided</b>: The error branch of the Authenticate Customer block is
+         * executed.</p> </li> </ul>  <p>The API returns a success response to
+         * acknowledge the request. However, the interaction and exchange of identity
+         * information occur asynchronously after the response is returned.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantAuthentication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateParticipantAuthenticationOutcome UpdateParticipantAuthentication(const Model::UpdateParticipantAuthenticationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateParticipantAuthentication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateParticipantAuthenticationRequestT = Model::UpdateParticipantAuthenticationRequest>
+        Model::UpdateParticipantAuthenticationOutcomeCallable UpdateParticipantAuthenticationCallable(const UpdateParticipantAuthenticationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdateParticipantAuthentication, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateParticipantAuthentication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateParticipantAuthenticationRequestT = Model::UpdateParticipantAuthenticationRequest>
+        void UpdateParticipantAuthenticationAsync(const UpdateParticipantAuthenticationRequestT& request, const UpdateParticipantAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdateParticipantAuthentication, request, handler, context);
         }
 
         /**

@@ -335,6 +335,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>The customer's identification number. For example, the
+     * <code>CustomerId</code> may be a customer number from your CRM. You can create a
+     * Lambda function to pull the unique customer ID of the caller from your CRM
+     * system. If you enable Amazon Connect Voice ID capability, this attribute is
+     * populated with the <code>CustomerSpeakerId</code> of the caller.</p>
+     */
+    inline const Aws::String& GetCustomerId() const{ return m_customerId; }
+    inline bool CustomerIdHasBeenSet() const { return m_customerIdHasBeenSet; }
+    inline void SetCustomerId(const Aws::String& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
+    inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = std::move(value); }
+    inline void SetCustomerId(const char* value) { m_customerIdHasBeenSet = true; m_customerId.assign(value); }
+    inline Contact& WithCustomerId(const Aws::String& value) { SetCustomerId(value); return *this;}
+    inline Contact& WithCustomerId(Aws::String&& value) { SetCustomerId(std::move(value)); return *this;}
+    inline Contact& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The customer or external third party participant endpoint.</p>
      */
     inline const EndpointInfo& GetCustomerEndpoint() const{ return m_customerEndpoint; }
@@ -601,6 +619,9 @@ namespace Model
 
     WisdomInfo m_wisdomInfo;
     bool m_wisdomInfoHasBeenSet = false;
+
+    Aws::String m_customerId;
+    bool m_customerIdHasBeenSet = false;
 
     EndpointInfo m_customerEndpoint;
     bool m_customerEndpointHasBeenSet = false;

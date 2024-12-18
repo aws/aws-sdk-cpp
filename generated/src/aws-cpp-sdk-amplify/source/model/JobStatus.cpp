@@ -20,6 +20,7 @@ namespace Aws
       namespace JobStatusMapper
       {
 
+        static const int CREATED_HASH = HashingUtils::HashString("CREATED");
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
         static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
@@ -32,7 +33,11 @@ namespace Aws
         JobStatus GetJobStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == PENDING_HASH)
+          if (hashCode == CREATED_HASH)
+          {
+            return JobStatus::CREATED;
+          }
+          else if (hashCode == PENDING_HASH)
           {
             return JobStatus::PENDING;
           }
@@ -76,6 +81,8 @@ namespace Aws
           {
           case JobStatus::NOT_SET:
             return {};
+          case JobStatus::CREATED:
+            return "CREATED";
           case JobStatus::PENDING:
             return "PENDING";
           case JobStatus::PROVISIONING:

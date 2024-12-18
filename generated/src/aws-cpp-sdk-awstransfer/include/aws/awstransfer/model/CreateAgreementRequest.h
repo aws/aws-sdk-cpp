@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/awstransfer/model/AgreementStatusType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/awstransfer/model/PreserveFilenameType.h>
+#include <aws/awstransfer/model/EnforceMessageSigningType.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <utility>
 
@@ -173,6 +175,41 @@ namespace Model
     inline CreateAgreementRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
     inline CreateAgreementRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p> Determines whether or not Transfer Family appends a unique string of
+     * characters to the end of the AS2 message payload filename when saving it. </p>
+     * <ul> <li> <p> <code>ENABLED</code>: the filename provided by your trading parter
+     * is preserved when the file is saved.</p> </li> <li> <p> <code>DISABLED</code>
+     * (default value): when Transfer Family saves the file, the filename is adjusted,
+     * as described in <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File
+     * names and locations</a>.</p> </li> </ul>
+     */
+    inline const PreserveFilenameType& GetPreserveFilename() const{ return m_preserveFilename; }
+    inline bool PreserveFilenameHasBeenSet() const { return m_preserveFilenameHasBeenSet; }
+    inline void SetPreserveFilename(const PreserveFilenameType& value) { m_preserveFilenameHasBeenSet = true; m_preserveFilename = value; }
+    inline void SetPreserveFilename(PreserveFilenameType&& value) { m_preserveFilenameHasBeenSet = true; m_preserveFilename = std::move(value); }
+    inline CreateAgreementRequest& WithPreserveFilename(const PreserveFilenameType& value) { SetPreserveFilename(value); return *this;}
+    inline CreateAgreementRequest& WithPreserveFilename(PreserveFilenameType&& value) { SetPreserveFilename(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p> Determines whether or not unsigned messages from your trading partners will
+     * be accepted. </p> <ul> <li> <p> <code>ENABLED</code>: Transfer Family rejects
+     * unsigned messages from your trading partner.</p> </li> <li> <p>
+     * <code>DISABLED</code> (default value): Transfer Family accepts unsigned messages
+     * from your trading partner.</p> </li> </ul>
+     */
+    inline const EnforceMessageSigningType& GetEnforceMessageSigning() const{ return m_enforceMessageSigning; }
+    inline bool EnforceMessageSigningHasBeenSet() const { return m_enforceMessageSigningHasBeenSet; }
+    inline void SetEnforceMessageSigning(const EnforceMessageSigningType& value) { m_enforceMessageSigningHasBeenSet = true; m_enforceMessageSigning = value; }
+    inline void SetEnforceMessageSigning(EnforceMessageSigningType&& value) { m_enforceMessageSigningHasBeenSet = true; m_enforceMessageSigning = std::move(value); }
+    inline CreateAgreementRequest& WithEnforceMessageSigning(const EnforceMessageSigningType& value) { SetEnforceMessageSigning(value); return *this;}
+    inline CreateAgreementRequest& WithEnforceMessageSigning(EnforceMessageSigningType&& value) { SetEnforceMessageSigning(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_description;
@@ -198,6 +235,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    PreserveFilenameType m_preserveFilename;
+    bool m_preserveFilenameHasBeenSet = false;
+
+    EnforceMessageSigningType m_enforceMessageSigning;
+    bool m_enforceMessageSigningHasBeenSet = false;
   };
 
 } // namespace Model

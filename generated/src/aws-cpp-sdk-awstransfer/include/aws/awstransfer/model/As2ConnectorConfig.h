@@ -11,6 +11,7 @@
 #include <aws/awstransfer/model/SigningAlg.h>
 #include <aws/awstransfer/model/MdnSigningAlg.h>
 #include <aws/awstransfer/model/MdnResponse.h>
+#include <aws/awstransfer/model/PreserveContentType.h>
 #include <utility>
 
 namespace Aws
@@ -192,6 +193,22 @@ namespace Model
     inline As2ConnectorConfig& WithBasicAuthSecretId(Aws::String&& value) { SetBasicAuthSecretId(std::move(value)); return *this;}
     inline As2ConnectorConfig& WithBasicAuthSecretId(const char* value) { SetBasicAuthSecretId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Allows you to use the Amazon S3 <code>Content-Type</code> that is associated
+     * with objects in S3 instead of having the content type mapped based on the file
+     * extension. This parameter is enabled by default when you create an AS2 connector
+     * from the console, but disabled by default when you create an AS2 connector by
+     * calling the API directly.</p>
+     */
+    inline const PreserveContentType& GetPreserveContentType() const{ return m_preserveContentType; }
+    inline bool PreserveContentTypeHasBeenSet() const { return m_preserveContentTypeHasBeenSet; }
+    inline void SetPreserveContentType(const PreserveContentType& value) { m_preserveContentTypeHasBeenSet = true; m_preserveContentType = value; }
+    inline void SetPreserveContentType(PreserveContentType&& value) { m_preserveContentTypeHasBeenSet = true; m_preserveContentType = std::move(value); }
+    inline As2ConnectorConfig& WithPreserveContentType(const PreserveContentType& value) { SetPreserveContentType(value); return *this;}
+    inline As2ConnectorConfig& WithPreserveContentType(PreserveContentType&& value) { SetPreserveContentType(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_localProfileId;
@@ -220,6 +237,9 @@ namespace Model
 
     Aws::String m_basicAuthSecretId;
     bool m_basicAuthSecretIdHasBeenSet = false;
+
+    PreserveContentType m_preserveContentType;
+    bool m_preserveContentTypeHasBeenSet = false;
   };
 
 } // namespace Model

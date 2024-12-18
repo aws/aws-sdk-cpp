@@ -13,6 +13,7 @@
 #include <aws/quicksight/model/RowLevelPermissionDataSet.h>
 #include <aws/quicksight/model/RowLevelPermissionTagConfiguration.h>
 #include <aws/quicksight/model/DataSetUsageConfiguration.h>
+#include <aws/quicksight/model/PerformanceConfiguration.h>
 #include <aws/quicksight/model/PhysicalTable.h>
 #include <aws/quicksight/model/LogicalTable.h>
 #include <aws/quicksight/model/OutputColumn.h>
@@ -292,6 +293,18 @@ namespace Model
     inline DataSet& AddDatasetParameters(const DatasetParameter& value) { m_datasetParametersHasBeenSet = true; m_datasetParameters.push_back(value); return *this; }
     inline DataSet& AddDatasetParameters(DatasetParameter&& value) { m_datasetParametersHasBeenSet = true; m_datasetParameters.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The performance optimization configuration of a dataset.</p>
+     */
+    inline const PerformanceConfiguration& GetPerformanceConfiguration() const{ return m_performanceConfiguration; }
+    inline bool PerformanceConfigurationHasBeenSet() const { return m_performanceConfigurationHasBeenSet; }
+    inline void SetPerformanceConfiguration(const PerformanceConfiguration& value) { m_performanceConfigurationHasBeenSet = true; m_performanceConfiguration = value; }
+    inline void SetPerformanceConfiguration(PerformanceConfiguration&& value) { m_performanceConfigurationHasBeenSet = true; m_performanceConfiguration = std::move(value); }
+    inline DataSet& WithPerformanceConfiguration(const PerformanceConfiguration& value) { SetPerformanceConfiguration(value); return *this;}
+    inline DataSet& WithPerformanceConfiguration(PerformanceConfiguration&& value) { SetPerformanceConfiguration(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -344,6 +357,9 @@ namespace Model
 
     Aws::Vector<DatasetParameter> m_datasetParameters;
     bool m_datasetParametersHasBeenSet = false;
+
+    PerformanceConfiguration m_performanceConfiguration;
+    bool m_performanceConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

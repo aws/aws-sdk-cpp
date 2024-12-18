@@ -49,7 +49,9 @@ App::App() :
     m_autoBranchCreationConfigHasBeenSet(false),
     m_repositoryCloneMethod(RepositoryCloneMethod::NOT_SET),
     m_repositoryCloneMethodHasBeenSet(false),
-    m_cacheConfigHasBeenSet(false)
+    m_cacheConfigHasBeenSet(false),
+    m_webhookCreateTimeHasBeenSet(false),
+    m_wafConfigurationHasBeenSet(false)
 {
 }
 
@@ -248,6 +250,20 @@ App& App::operator =(JsonView jsonValue)
     m_cacheConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("webhookCreateTime"))
+  {
+    m_webhookCreateTime = jsonValue.GetDouble("webhookCreateTime");
+
+    m_webhookCreateTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("wafConfiguration"))
+  {
+    m_wafConfiguration = jsonValue.GetObject("wafConfiguration");
+
+    m_wafConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -418,6 +434,17 @@ JsonValue App::Jsonize() const
   if(m_cacheConfigHasBeenSet)
   {
    payload.WithObject("cacheConfig", m_cacheConfig.Jsonize());
+
+  }
+
+  if(m_webhookCreateTimeHasBeenSet)
+  {
+   payload.WithDouble("webhookCreateTime", m_webhookCreateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_wafConfigurationHasBeenSet)
+  {
+   payload.WithObject("wafConfiguration", m_wafConfiguration.Jsonize());
 
   }
 

@@ -128,8 +128,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The IAM role that allows access to retrieve information about the
-     * command.</p>
+     * <p>The IAM role that you provided when creating the command with
+     * <code>AWS-IoT-FleetWise</code> as the namespace.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }

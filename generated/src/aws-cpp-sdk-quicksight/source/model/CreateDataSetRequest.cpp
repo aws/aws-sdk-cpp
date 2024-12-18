@@ -29,7 +29,8 @@ CreateDataSetRequest::CreateDataSetRequest() :
     m_tagsHasBeenSet(false),
     m_dataSetUsageConfigurationHasBeenSet(false),
     m_datasetParametersHasBeenSet(false),
-    m_folderArnsHasBeenSet(false)
+    m_folderArnsHasBeenSet(false),
+    m_performanceConfigurationHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,12 @@ Aws::String CreateDataSetRequest::SerializePayload() const
      folderArnsJsonList[folderArnsIndex].AsString(m_folderArns[folderArnsIndex]);
    }
    payload.WithArray("FolderArns", std::move(folderArnsJsonList));
+
+  }
+
+  if(m_performanceConfigurationHasBeenSet)
+  {
+   payload.WithObject("PerformanceConfiguration", m_performanceConfiguration.Jsonize());
 
   }
 

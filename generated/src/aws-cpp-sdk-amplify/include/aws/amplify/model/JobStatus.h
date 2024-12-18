@@ -16,6 +16,7 @@ namespace Model
   enum class JobStatus
   {
     NOT_SET,
+    CREATED,
     PENDING,
     PROVISIONING,
     RUNNING,

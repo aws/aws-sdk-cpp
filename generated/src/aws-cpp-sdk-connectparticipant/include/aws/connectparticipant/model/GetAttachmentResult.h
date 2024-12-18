@@ -62,6 +62,15 @@ namespace Model
     ///@}
 
     ///@{
+    /**
+     * <p>The size of the attachment in bytes.</p>
+     */
+    inline long long GetAttachmentSizeInBytes() const{ return m_attachmentSizeInBytes; }
+    inline void SetAttachmentSizeInBytes(long long value) { m_attachmentSizeInBytes = value; }
+    inline GetAttachmentResult& WithAttachmentSizeInBytes(long long value) { SetAttachmentSizeInBytes(value); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -76,6 +85,8 @@ namespace Model
     Aws::String m_url;
 
     Aws::String m_urlExpiry;
+
+    long long m_attachmentSizeInBytes;
 
     Aws::String m_requestId;
   };

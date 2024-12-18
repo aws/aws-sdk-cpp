@@ -44,6 +44,7 @@ Contact::Contact() :
     m_scheduledTimestampHasBeenSet(false),
     m_relatedContactIdHasBeenSet(false),
     m_wisdomInfoHasBeenSet(false),
+    m_customerIdHasBeenSet(false),
     m_customerEndpointHasBeenSet(false),
     m_systemEndpointHasBeenSet(false),
     m_queueTimeAdjustmentSeconds(0),
@@ -218,6 +219,13 @@ Contact& Contact::operator =(JsonView jsonValue)
     m_wisdomInfo = jsonValue.GetObject("WisdomInfo");
 
     m_wisdomInfoHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomerId"))
+  {
+    m_customerId = jsonValue.GetString("CustomerId");
+
+    m_customerIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CustomerEndpoint"))
@@ -453,6 +461,12 @@ JsonValue Contact::Jsonize() const
   if(m_wisdomInfoHasBeenSet)
   {
    payload.WithObject("WisdomInfo", m_wisdomInfo.Jsonize());
+
+  }
+
+  if(m_customerIdHasBeenSet)
+  {
+   payload.WithString("CustomerId", m_customerId);
 
   }
 

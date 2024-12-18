@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 
 GetAttachmentRequest::GetAttachmentRequest() : 
     m_attachmentIdHasBeenSet(false),
-    m_connectionTokenHasBeenSet(false)
+    m_connectionTokenHasBeenSet(false),
+    m_urlExpiryInSeconds(0),
+    m_urlExpiryInSecondsHasBeenSet(false)
 {
 }
 
@@ -26,6 +28,12 @@ Aws::String GetAttachmentRequest::SerializePayload() const
   if(m_attachmentIdHasBeenSet)
   {
    payload.WithString("AttachmentId", m_attachmentId);
+
+  }
+
+  if(m_urlExpiryInSecondsHasBeenSet)
+  {
+   payload.WithInteger("UrlExpiryInSeconds", m_urlExpiryInSeconds);
 
   }
 

@@ -220,6 +220,7 @@
 #include <aws/connect/model/UpdateContactScheduleResult.h>
 #include <aws/connect/model/UpdateEmailAddressMetadataResult.h>
 #include <aws/connect/model/UpdateEvaluationFormResult.h>
+#include <aws/connect/model/UpdateParticipantAuthenticationResult.h>
 #include <aws/connect/model/UpdateParticipantRoleConfigResult.h>
 #include <aws/connect/model/UpdatePhoneNumberResult.h>
 #include <aws/connect/model/UpdatePromptResult.h>
@@ -518,6 +519,7 @@ namespace Aws
       class UpdateHoursOfOperationOverrideRequest;
       class UpdateInstanceAttributeRequest;
       class UpdateInstanceStorageConfigRequest;
+      class UpdateParticipantAuthenticationRequest;
       class UpdateParticipantRoleConfigRequest;
       class UpdatePhoneNumberRequest;
       class UpdatePhoneNumberMetadataRequest;
@@ -800,6 +802,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateHoursOfOperationOverrideOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceAttributeOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceStorageConfigOutcome;
+      typedef Aws::Utils::Outcome<UpdateParticipantAuthenticationResult, ConnectError> UpdateParticipantAuthenticationOutcome;
       typedef Aws::Utils::Outcome<UpdateParticipantRoleConfigResult, ConnectError> UpdateParticipantRoleConfigOutcome;
       typedef Aws::Utils::Outcome<UpdatePhoneNumberResult, ConnectError> UpdatePhoneNumberOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdatePhoneNumberMetadataOutcome;
@@ -1082,6 +1085,7 @@ namespace Aws
       typedef std::future<UpdateHoursOfOperationOverrideOutcome> UpdateHoursOfOperationOverrideOutcomeCallable;
       typedef std::future<UpdateInstanceAttributeOutcome> UpdateInstanceAttributeOutcomeCallable;
       typedef std::future<UpdateInstanceStorageConfigOutcome> UpdateInstanceStorageConfigOutcomeCallable;
+      typedef std::future<UpdateParticipantAuthenticationOutcome> UpdateParticipantAuthenticationOutcomeCallable;
       typedef std::future<UpdateParticipantRoleConfigOutcome> UpdateParticipantRoleConfigOutcomeCallable;
       typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
       typedef std::future<UpdatePhoneNumberMetadataOutcome> UpdatePhoneNumberMetadataOutcomeCallable;
@@ -1367,6 +1371,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::UpdateHoursOfOperationOverrideRequest&, const Model::UpdateHoursOfOperationOverrideOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHoursOfOperationOverrideResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceAttributeRequest&, const Model::UpdateInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateInstanceStorageConfigRequest&, const Model::UpdateInstanceStorageConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceStorageConfigResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateParticipantAuthenticationRequest&, const Model::UpdateParticipantAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateParticipantAuthenticationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateParticipantRoleConfigRequest&, const Model::UpdateParticipantRoleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateParticipantRoleConfigResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdatePhoneNumberRequest&, const Model::UpdatePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdatePhoneNumberMetadataRequest&, const Model::UpdatePhoneNumberMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberMetadataResponseReceivedHandler;

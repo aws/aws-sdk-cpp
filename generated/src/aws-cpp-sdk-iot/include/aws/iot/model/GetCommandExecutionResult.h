@@ -203,8 +203,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>The time to live (TTL) parameter for the <code>GetCommandExecution</code>
-     * API.</p>
+     * <p>The time to live (TTL) parameter that indicates the duration for which
+     * executions will be retained in your account. The default value is six
+     * months.</p>
      */
     inline const Aws::Utils::DateTime& GetTimeToLive() const{ return m_timeToLive; }
     inline void SetTimeToLive(const Aws::Utils::DateTime& value) { m_timeToLive = value; }

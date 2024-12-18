@@ -240,6 +240,21 @@ namespace Model
     inline StartChatContactRequest& AddSegmentAttributes(const char* key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
     inline StartChatContactRequest& AddSegmentAttributes(const char* key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The customer's identification number. For example, the
+     * <code>CustomerId</code> may be a customer number from your CRM.</p>
+     */
+    inline const Aws::String& GetCustomerId() const{ return m_customerId; }
+    inline bool CustomerIdHasBeenSet() const { return m_customerIdHasBeenSet; }
+    inline void SetCustomerId(const Aws::String& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
+    inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = std::move(value); }
+    inline void SetCustomerId(const char* value) { m_customerIdHasBeenSet = true; m_customerId.assign(value); }
+    inline StartChatContactRequest& WithCustomerId(const Aws::String& value) { SetCustomerId(value); return *this;}
+    inline StartChatContactRequest& WithCustomerId(Aws::String&& value) { SetCustomerId(std::move(value)); return *this;}
+    inline StartChatContactRequest& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_instanceId;
@@ -274,6 +289,9 @@ namespace Model
 
     Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
     bool m_segmentAttributesHasBeenSet = false;
+
+    Aws::String m_customerId;
+    bool m_customerIdHasBeenSet = false;
   };
 
 } // namespace Model

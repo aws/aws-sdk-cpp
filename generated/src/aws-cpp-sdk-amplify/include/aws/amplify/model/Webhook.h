@@ -111,7 +111,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The create date and time for a webhook. </p>
+     * <p>A timestamp of when Amplify created the webhook in your Git repository.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
@@ -123,7 +123,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Updates the date and time for a webhook. </p>
+     * <p>A timestamp of when Amplify updated the webhook in your Git repository.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }

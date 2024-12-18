@@ -18,7 +18,6 @@
 #include <aws/rds/model/DescribeDBEngineVersionsRequest.h>
 #include <aws/rds/model/DescribeDBInstancesRequest.h>
 #include <aws/rds/RDSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace RDSSmokeTest{
 using namespace Aws::Auth;
@@ -32,19 +31,6 @@ class RDSSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char RDSSmokeTestSuite::ALLOCATION_TAG[] = "RDSSmokeTest";
-TEST_F(RDSSmokeTestSuite, DescribeDBEngineVersionsSuccess )
-{
-    Aws::RDS::RDSClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<RDSClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    DescribeDBEngineVersionsRequest input;
-    auto outcome = clientSp->DescribeDBEngineVersions(input);
-    EXPECT_TRUE( outcome.IsSuccess());
-}
 TEST_F(RDSSmokeTestSuite, DescribeDBInstancesFailure )
 {
     Aws::RDS::RDSClientConfiguration clientConfiguration;
@@ -58,5 +44,18 @@ TEST_F(RDSSmokeTestSuite, DescribeDBInstancesFailure )
     input.SetDBInstanceIdentifier("fake-id");
     auto outcome = clientSp->DescribeDBInstances(input);
     EXPECT_FALSE( outcome.IsSuccess());
+}
+TEST_F(RDSSmokeTestSuite, DescribeDBEngineVersionsSuccess )
+{
+    Aws::RDS::RDSClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<RDSClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    DescribeDBEngineVersionsRequest input;
+    auto outcome = clientSp->DescribeDBEngineVersions(input);
+    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

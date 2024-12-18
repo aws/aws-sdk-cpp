@@ -144,6 +144,7 @@
 #include <aws/iot/model/GetPolicyVersionResult.h>
 #include <aws/iot/model/GetRegistrationCodeResult.h>
 #include <aws/iot/model/GetStatisticsResult.h>
+#include <aws/iot/model/GetThingConnectivityDataResult.h>
 #include <aws/iot/model/GetTopicRuleResult.h>
 #include <aws/iot/model/GetTopicRuleDestinationResult.h>
 #include <aws/iot/model/GetV2LoggingOptionsResult.h>
@@ -501,6 +502,7 @@ namespace Aws
       class GetPolicyVersionRequest;
       class GetRegistrationCodeRequest;
       class GetStatisticsRequest;
+      class GetThingConnectivityDataRequest;
       class GetTopicRuleRequest;
       class GetTopicRuleDestinationRequest;
       class GetV2LoggingOptionsRequest;
@@ -769,6 +771,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetPolicyVersionResult, IoTError> GetPolicyVersionOutcome;
       typedef Aws::Utils::Outcome<GetRegistrationCodeResult, IoTError> GetRegistrationCodeOutcome;
       typedef Aws::Utils::Outcome<GetStatisticsResult, IoTError> GetStatisticsOutcome;
+      typedef Aws::Utils::Outcome<GetThingConnectivityDataResult, IoTError> GetThingConnectivityDataOutcome;
       typedef Aws::Utils::Outcome<GetTopicRuleResult, IoTError> GetTopicRuleOutcome;
       typedef Aws::Utils::Outcome<GetTopicRuleDestinationResult, IoTError> GetTopicRuleDestinationOutcome;
       typedef Aws::Utils::Outcome<GetV2LoggingOptionsResult, IoTError> GetV2LoggingOptionsOutcome;
@@ -1037,6 +1040,7 @@ namespace Aws
       typedef std::future<GetPolicyVersionOutcome> GetPolicyVersionOutcomeCallable;
       typedef std::future<GetRegistrationCodeOutcome> GetRegistrationCodeOutcomeCallable;
       typedef std::future<GetStatisticsOutcome> GetStatisticsOutcomeCallable;
+      typedef std::future<GetThingConnectivityDataOutcome> GetThingConnectivityDataOutcomeCallable;
       typedef std::future<GetTopicRuleOutcome> GetTopicRuleOutcomeCallable;
       typedef std::future<GetTopicRuleDestinationOutcome> GetTopicRuleDestinationOutcomeCallable;
       typedef std::future<GetV2LoggingOptionsOutcome> GetV2LoggingOptionsOutcomeCallable;
@@ -1308,6 +1312,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::GetPolicyVersionRequest&, const Model::GetPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyVersionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetRegistrationCodeRequest&, const Model::GetRegistrationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegistrationCodeResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetStatisticsRequest&, const Model::GetStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStatisticsResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::GetThingConnectivityDataRequest&, const Model::GetThingConnectivityDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThingConnectivityDataResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetTopicRuleRequest&, const Model::GetTopicRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTopicRuleResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetTopicRuleDestinationRequest&, const Model::GetTopicRuleDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTopicRuleDestinationResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::GetV2LoggingOptionsRequest&, const Model::GetV2LoggingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetV2LoggingOptionsResponseReceivedHandler;

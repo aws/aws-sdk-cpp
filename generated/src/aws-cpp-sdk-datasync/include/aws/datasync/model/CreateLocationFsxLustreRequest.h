@@ -38,7 +38,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the FSx for Lustre file
+     * system.</p>
      */
     inline const Aws::String& GetFsxFilesystemArn() const{ return m_fsxFilesystemArn; }
     inline bool FsxFilesystemArnHasBeenSet() const { return m_fsxFilesystemArnHasBeenSet; }
@@ -52,8 +53,13 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Names (ARNs) of the security groups that are used to
-     * configure the FSx for Lustre file system.</p>
+     * <p>Specifies the Amazon Resource Names (ARNs) of up to five security groups that
+     * provide access to your FSx for Lustre file system.</p> <p>The security groups
+     * must be able to access the file system's ports. The file system must also allow
+     * access from the security groups. For information about file system access, see
+     * the <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/limit-access-security-groups.html">
+     * <i>Amazon FSx for Lustre User Guide</i> </a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
     inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }
@@ -68,9 +74,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>A subdirectory in the location's path. This subdirectory in the FSx for
-     * Lustre file system is used to read data from the FSx for Lustre source location
-     * or write data to the FSx for Lustre destination.</p>
+     * <p>Specifies a mount path for your FSx for Lustre file system. The path can
+     * include subdirectories.</p> <p>When the location is used as a source, DataSync
+     * reads data from the mount path. When the location is used as a destination,
+     * DataSync writes data to the mount path. If you don't include this parameter,
+     * DataSync uses the file system's root directory (<code>/</code>).</p>
      */
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
@@ -84,9 +92,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The key-value pair that represents a tag that you want to add to the
-     * resource. The value can be an empty string. This value helps you manage, filter,
-     * and search for your resources. We recommend that you create a name tag for your
+     * <p>Specifies labels that help you categorize, filter, and search for your Amazon
+     * Web Services resources. We recommend creating at least a name tag for your
      * location.</p>
      */
     inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
