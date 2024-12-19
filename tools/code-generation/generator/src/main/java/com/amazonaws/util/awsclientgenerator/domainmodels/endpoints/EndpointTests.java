@@ -31,7 +31,8 @@ public class EndpointTests {
         enum ParameterType {
             BOOLEAN,
             INTEGER,
-            STRING
+            STRING,
+            STRING_ARRAY
         }
 
         ParameterType type;
@@ -39,6 +40,7 @@ public class EndpointTests {
         Boolean boolValue;
         Integer intValue;
         String strValue;
+        List<String> strArrayValue;
 
         public String getAsCppSourceString(boolean isEndpointProperty) throws Exception {
             String typeAlias = isEndpointProperty ? "EpProp" : "EpParam";
@@ -50,6 +52,30 @@ public class EndpointTests {
             } else if (ParameterType.STRING == this.type) {
                 String strValueEscaped = (strValue.contains("\"") || strValue.contains("\\")) ? "R\"(" + strValue + ")\"" : "\"" + strValue + "\"";
                 return new StringBuilder(typeAlias).append("(\"").append(name).append("\", ").append(strValueEscaped).append(")").toString();
+            }else if (ParameterType.STRING_ARRAY == this.type) {
+
+                // Escape each string in the array and join them with commas.
+                StringBuilder arrayBuilder = new StringBuilder("Aws::Vector<Aws::String>{");
+                for (int i = 0; i < strArrayValue.size(); i++) {
+                    String element = strArrayValue.get(i);
+                    String escapedElement = element.contains("\"") || element.contains("\\")
+                            ? "R\"(" + element + ")\""
+                            : "\"" + element + "\"";
+                    arrayBuilder.append(escapedElement);
+                    if (i < strArrayValue.size() - 1) {
+                        arrayBuilder.append(", ");
+                    }
+                }
+                arrayBuilder.append("}");
+
+                return new StringBuilder(typeAlias)
+                        .append("(\"")
+                        .append(name)
+                        .append("\", ")
+                        .append(arrayBuilder.toString())
+                        .append(")")
+                        .toString();
+                
             }
             throw new Exception("EndpointTestParameter value not set!");
         }
