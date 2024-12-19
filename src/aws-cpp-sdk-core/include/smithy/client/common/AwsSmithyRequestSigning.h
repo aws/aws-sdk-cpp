@@ -27,52 +27,6 @@ namespace smithy
   //-4 Minutes
   static const std::chrono::milliseconds TIME_DIFF_MIN = std::chrono::minutes(-4);
 
-
-    struct EventStreamSignerVisitor
-    {
-       explicit EventStreamSignerVisitor(std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream> evSp,
-                                      const AuthSchemeOption& targetAuthSchemeOption)
-                                        : m_eventEncoderStreamSp(evSp), m_targetAuthSchemeOption(targetAuthSchemeOption) {}
-      template <typename AuthSchemeAlternativeT>
-      void operator()(AuthSchemeAlternativeT&) {}
-      std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream> m_eventEncoderStreamSp;
-      const AuthSchemeOption& m_targetAuthSchemeOption;
-    };
-
-
-
-      template <> 
-      void  EventStreamSignerVisitor::operator()(smithy::SigV4AuthScheme& authScheme) {
-        // Auth Scheme Variant alternative contains the requested auth option
-        assert(strcmp(authScheme.schemeId, m_targetAuthSchemeOption.schemeId) == 0);
-        using IdentityT = smithy::SigV4AuthScheme::IdentityT;
-        using IdentityResolver = IdentityResolverBase<IdentityT>;
-        using Signer = AwsSignerBase<IdentityT>;
-        std::shared_ptr<Signer> signer = authScheme.signer(m_targetAuthSchemeOption.isEventStreaming);
-        if (!signer) {
-        AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to adjust signing clock skew. Signer is null.");
-        return;
-        }
-
-        std::shared_ptr<IdentityResolver> identityResolver = authScheme.identityResolver();
-        if (!identityResolver) {
-        AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to find identityResolver.");
-
-        return;
-        }
-
-        auto identityResult =
-            identityResolver->getIdentity(m_targetAuthSchemeOption.identityProperties(), m_targetAuthSchemeOption.identityProperties());
-
-        if (!identityResult.IsSuccess()) {
-        AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to resolve identity");
-        return;
-        }
-
-        // typecast to streaming type as we know this visitor is for smithy types
-        m_eventEncoderStreamSp->SetSigner(signer, std::move(identityResult.GetResultWithOwnership()));
-    }
-
     template <typename AuthSchemesVariantT>
     class AwsClientRequestSigning
     {
@@ -122,21 +76,6 @@ namespace smithy
             authScheme.Visit(visitor);
 
             return visitor.m_resultShouldWait;
-        }
-
-        static bool SetSignerInEventStream(std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream> eventEncoderStreamSp,
-                                           const AuthSchemeOption& authSchemeOption,
-                                           const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes) {
-          bool result = false;
-          auto authSchemeIter = authSchemes.find(authSchemeOption.schemeId);
-          if (authSchemeIter != authSchemes.end()) {
-            // set signer in event encoder
-            AuthSchemesVariantT authScheme = authSchemeIter->second;
-            EventStreamSignerVisitor visitor(eventEncoderStreamSp, authSchemeOption);
-            authScheme.Visit(visitor);
-            result = true;
-          }
-          return result;
         }
 
        protected:

@@ -2,7 +2,7 @@
 #foreach($operation in $serviceModel.operations)
 #if($operation.request.shape.hasEventStreamMembers())
 #set($constText = "")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyJsonServiceEventStreamOperationsSource.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/JsonServiceEventStreamOperationsSource.vm")
 #else
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")

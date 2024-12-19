@@ -40,7 +40,7 @@ namespace Model
    * $shape.documentation
    */
 #end
-  class $typeInfo.exportValue $typeInfo.className : public Aws::Utils::Event::SmithyEventEncoderStream
+  class $typeInfo.exportValue $typeInfo.className : public Aws::Utils::Event::EventEncoderStream
   {
   public:
 #foreach($entry in $shape.members.entrySet())

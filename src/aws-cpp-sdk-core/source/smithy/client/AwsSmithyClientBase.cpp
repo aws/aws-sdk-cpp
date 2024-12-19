@@ -99,8 +99,7 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
 void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* const request, const char* requestName,
                                            Aws::Http::HttpMethod method, EndpointUpdateCallback&& endpointCallback,
                                            ResponseHandlerFunc&& responseHandler,
-                                           std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
-                                           std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream> eventEncoderStreamSp) const {
+                                           std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const {
   if (!responseHandler) {
     assert(!"Missing a mandatory response handler!");
     AWS_LOGSTREAM_FATAL(AWS_SMITHY_CLIENT_LOG, "Unable to continue AWSClient request: response handler is missing!");
@@ -135,10 +134,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
   }
   pRequestCtx->m_authSchemeOption = std::move(authSchemeOptionOutcome.GetResultWithOwnership());
   assert(pRequestCtx->m_authSchemeOption.schemeId);
-  if (eventEncoderStreamSp) {
-    // set signer in event encoder stream before subsequent steps
-    SetSignerInEventStreamRequest(pRequestCtx, eventEncoderStreamSp);
-  }
+
   Aws::Endpoint::EndpointParameters epParams = request ? request->GetEndpointContextParams() : Aws::Endpoint::EndpointParameters();
   const auto authSchemeEpParams = pRequestCtx->m_authSchemeOption.endpointParameters();
   epParams.insert(epParams.end(), authSchemeEpParams.begin(), authSchemeEpParams.end());

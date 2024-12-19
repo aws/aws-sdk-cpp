@@ -141,8 +141,7 @@ namespace client
 
         void MakeRequestAsync(Aws::AmazonWebServiceRequest const* const request, const char* requestName, Aws::Http::HttpMethod method,
                               EndpointUpdateCallback&& endpointCallback, ResponseHandlerFunc&& responseHandler,
-                              std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor,
-                              std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream> eventEncoderStream_sp = nullptr) const;
+                              std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
 
         HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const* const request, const char* requestName,
                                             Aws::Http::HttpMethod method, EndpointUpdateCallback&& endpointCallback) const;
@@ -169,8 +168,6 @@ namespace client
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
 
        protected:
-        virtual void SetSignerInEventStreamRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>&,
-                                                   std::shared_ptr<Aws::Utils::Event::SmithyEventEncoderStream>&) const {};
         Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
         Aws::String m_userAgent;
