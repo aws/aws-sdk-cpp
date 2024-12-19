@@ -167,7 +167,6 @@ namespace client
         virtual SelectAuthSchemeOptionOutcome SelectAuthSchemeOption(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
         virtual SigningOutcome SignHttpRequest(std::shared_ptr<HttpRequest> httpRequest, const AuthSchemeOption& targetAuthSchemeOption) const = 0;
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
-        virtual bool SignEventMessage(Aws::Utils::Event::Message&, Aws::String& /* priorSignature */) const { return false; }
 
        protected:
         virtual void SetSignerInEventStreamRequest(std::shared_ptr<AwsSmithyClientAsyncRequestContext>&,

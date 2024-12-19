@@ -39,7 +39,7 @@ class SigV4EventStreamSigner : public AwsSignerBase<AwsCredentialIdentityBase> {
     }
     return SigningError(Aws::Client::CoreErrors::MEMORY_ALLOCATION, "", "Failed to sign the request with sigv4 stream", false);
   }
-  bool SignEventMessage(Aws::Utils::Event::Message& em, Aws::String& sig, const AwsCredentialIdentityBase& identity) const override {
+  bool SignEventMessage(Aws::Utils::Event::Message& em, Aws::String& sig, const AwsCredentialIdentityBase& identity) const {
     auto getCreds = [&]() -> Aws::Auth::AWSCredentials {
       if (identity.sessionToken().has_value() && identity.expiration().has_value()) {
         return Aws::Auth::AWSCredentials(identity.accessKeyId(), identity.secretAccessKey(), identity.sessionToken().value(),
