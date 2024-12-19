@@ -36,6 +36,9 @@ public class EndpointTestParamsDeserializer implements JsonDeserializer<Endpoint
         EndpointTests.EndpointTestParameter parameter = new EndpointTests.EndpointTestParameter();
         parameter.setName(parameterName);
 
+        boolean isStringArray = element.isJsonArray() && StreamSupport.stream(element.getAsJsonArray().spliterator(), false)
+            .allMatch(arrElem -> arrElem.isJsonPrimitive() && arrElem.getAsJsonPrimitive().isString());
+
         if (element.isJsonPrimitive()) {
             JsonPrimitive jsonPrimitive = element.getAsJsonPrimitive();
 
@@ -53,7 +56,15 @@ public class EndpointTestParamsDeserializer implements JsonDeserializer<Endpoint
             }
             
         }
-        else if(element.isJsonArray())
+        else if (parameterName.equals("signingRegionSet") &&
+                element.getAsJsonArray().size() == 1 &&
+                element.getAsString().equals("*")) {
+                // The set of signing regions to use for this endpoint. Currently,
+                // this will always be ["*"], however this should not be relied upon.
+                parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING);
+                parameter.setStrValue("*");
+        }
+        else if(isStringArray)
         {
             JsonArray jsonArray = element.getAsJsonArray();
             parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING_ARRAY);
@@ -67,14 +78,6 @@ public class EndpointTestParamsDeserializer implements JsonDeserializer<Endpoint
                     })
                     .collect(Collectors.toList());
             parameter.setStrArrayValue(stringArray);
-        }
-        else if (parameterName.equals("signingRegionSet") &&
-                element.getAsJsonArray().size() == 1 &&
-                element.getAsString().equals("*")) {
-            // The set of signing regions to use for this endpoint. Currently,
-            // this will always be ["*"], however this should not be relied upon.
-            parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING);
-            parameter.setStrValue("*");
         }
         else {
             // TODO: follow-up once per-operation tests are enabled
