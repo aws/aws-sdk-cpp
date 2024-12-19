@@ -9,6 +9,7 @@
 #include <aws/workspaces/model/Compute.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/OperatingSystemName.h>
+#include <aws/workspaces/model/GlobalAcceleratorForWorkSpace.h>
 #include <aws/workspaces/model/Protocol.h>
 #include <utility>
 
@@ -147,6 +148,18 @@ namespace Model
     inline WorkspaceProperties& WithOperatingSystemName(const OperatingSystemName& value) { SetOperatingSystemName(value); return *this;}
     inline WorkspaceProperties& WithOperatingSystemName(OperatingSystemName&& value) { SetOperatingSystemName(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Indicates the Global Accelerator properties.</p>
+     */
+    inline const GlobalAcceleratorForWorkSpace& GetGlobalAccelerator() const{ return m_globalAccelerator; }
+    inline bool GlobalAcceleratorHasBeenSet() const { return m_globalAcceleratorHasBeenSet; }
+    inline void SetGlobalAccelerator(const GlobalAcceleratorForWorkSpace& value) { m_globalAcceleratorHasBeenSet = true; m_globalAccelerator = value; }
+    inline void SetGlobalAccelerator(GlobalAcceleratorForWorkSpace&& value) { m_globalAcceleratorHasBeenSet = true; m_globalAccelerator = std::move(value); }
+    inline WorkspaceProperties& WithGlobalAccelerator(const GlobalAcceleratorForWorkSpace& value) { SetGlobalAccelerator(value); return *this;}
+    inline WorkspaceProperties& WithGlobalAccelerator(GlobalAcceleratorForWorkSpace&& value) { SetGlobalAccelerator(std::move(value)); return *this;}
+    ///@}
   private:
 
     RunningMode m_runningMode;
@@ -169,6 +182,9 @@ namespace Model
 
     OperatingSystemName m_operatingSystemName;
     bool m_operatingSystemNameHasBeenSet = false;
+
+    GlobalAcceleratorForWorkSpace m_globalAccelerator;
+    bool m_globalAcceleratorHasBeenSet = false;
   };
 
 } // namespace Model

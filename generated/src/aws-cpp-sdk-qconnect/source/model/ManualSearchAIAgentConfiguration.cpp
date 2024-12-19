@@ -21,7 +21,8 @@ namespace Model
 ManualSearchAIAgentConfiguration::ManualSearchAIAgentConfiguration() : 
     m_answerGenerationAIGuardrailIdHasBeenSet(false),
     m_answerGenerationAIPromptIdHasBeenSet(false),
-    m_associationConfigurationsHasBeenSet(false)
+    m_associationConfigurationsHasBeenSet(false),
+    m_localeHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,13 @@ ManualSearchAIAgentConfiguration& ManualSearchAIAgentConfiguration::operator =(J
     m_associationConfigurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("locale"))
+  {
+    m_locale = jsonValue.GetString("locale");
+
+    m_localeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +92,12 @@ JsonValue ManualSearchAIAgentConfiguration::Jsonize() const
      associationConfigurationsJsonList[associationConfigurationsIndex].AsObject(m_associationConfigurations[associationConfigurationsIndex].Jsonize());
    }
    payload.WithArray("associationConfigurations", std::move(associationConfigurationsJsonList));
+
+  }
+
+  if(m_localeHasBeenSet)
+  {
+   payload.WithString("locale", m_locale);
 
   }
 

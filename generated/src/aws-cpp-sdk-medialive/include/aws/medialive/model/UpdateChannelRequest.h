@@ -13,6 +13,7 @@
 #include <aws/medialive/model/InputSpecification.h>
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/MaintenanceUpdateSettings.h>
+#include <aws/medialive/model/ChannelEngineVersionRequest.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <utility>
@@ -172,6 +173,26 @@ namespace Model
     inline UpdateChannelRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
     inline UpdateChannelRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Channel engine version for this channel
+     */
+    inline const ChannelEngineVersionRequest& GetChannelEngineVersion() const{ return m_channelEngineVersion; }
+    inline bool ChannelEngineVersionHasBeenSet() const { return m_channelEngineVersionHasBeenSet; }
+    inline void SetChannelEngineVersion(const ChannelEngineVersionRequest& value) { m_channelEngineVersionHasBeenSet = true; m_channelEngineVersion = value; }
+    inline void SetChannelEngineVersion(ChannelEngineVersionRequest&& value) { m_channelEngineVersionHasBeenSet = true; m_channelEngineVersion = std::move(value); }
+    inline UpdateChannelRequest& WithChannelEngineVersion(const ChannelEngineVersionRequest& value) { SetChannelEngineVersion(value); return *this;}
+    inline UpdateChannelRequest& WithChannelEngineVersion(ChannelEngineVersionRequest&& value) { SetChannelEngineVersion(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    
+    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+    inline UpdateChannelRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
   private:
 
     CdiInputSpecification m_cdiInputSpecification;
@@ -203,6 +224,12 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    ChannelEngineVersionRequest m_channelEngineVersion;
+    bool m_channelEngineVersionHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

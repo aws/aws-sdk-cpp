@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/VpcOutputSettingsDescription.h>
 #include <aws/medialive/model/DescribeAnywhereSettings.h>
+#include <aws/medialive/model/ChannelEngineVersionResponse.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -301,6 +302,18 @@ one destination per
     inline Channel& WithAnywhereSettings(const DescribeAnywhereSettings& value) { SetAnywhereSettings(value); return *this;}
     inline Channel& WithAnywhereSettings(DescribeAnywhereSettings&& value) { SetAnywhereSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Requested engine version for this channel.
+     */
+    inline const ChannelEngineVersionResponse& GetChannelEngineVersion() const{ return m_channelEngineVersion; }
+    inline bool ChannelEngineVersionHasBeenSet() const { return m_channelEngineVersionHasBeenSet; }
+    inline void SetChannelEngineVersion(const ChannelEngineVersionResponse& value) { m_channelEngineVersionHasBeenSet = true; m_channelEngineVersion = value; }
+    inline void SetChannelEngineVersion(ChannelEngineVersionResponse&& value) { m_channelEngineVersionHasBeenSet = true; m_channelEngineVersion = std::move(value); }
+    inline Channel& WithChannelEngineVersion(const ChannelEngineVersionResponse& value) { SetChannelEngineVersion(value); return *this;}
+    inline Channel& WithChannelEngineVersion(ChannelEngineVersionResponse&& value) { SetChannelEngineVersion(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -359,6 +372,9 @@ one destination per
 
     DescribeAnywhereSettings m_anywhereSettings;
     bool m_anywhereSettingsHasBeenSet = false;
+
+    ChannelEngineVersionResponse m_channelEngineVersion;
+    bool m_channelEngineVersionHasBeenSet = false;
   };
 
 } // namespace Model

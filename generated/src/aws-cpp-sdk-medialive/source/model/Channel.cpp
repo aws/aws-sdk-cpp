@@ -41,7 +41,8 @@ Channel::Channel() :
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_vpcHasBeenSet(false),
-    m_anywhereSettingsHasBeenSet(false)
+    m_anywhereSettingsHasBeenSet(false),
+    m_channelEngineVersionHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_anywhereSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("channelEngineVersion"))
+  {
+    m_channelEngineVersion = jsonValue.GetObject("channelEngineVersion");
+
+    m_channelEngineVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -341,6 +349,12 @@ JsonValue Channel::Jsonize() const
   if(m_anywhereSettingsHasBeenSet)
   {
    payload.WithObject("anywhereSettings", m_anywhereSettings.Jsonize());
+
+  }
+
+  if(m_channelEngineVersionHasBeenSet)
+  {
+   payload.WithObject("channelEngineVersion", m_channelEngineVersion.Jsonize());
 
   }
 

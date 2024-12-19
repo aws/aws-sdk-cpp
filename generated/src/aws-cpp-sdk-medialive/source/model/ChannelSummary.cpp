@@ -39,7 +39,9 @@ ChannelSummary::ChannelSummary() :
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_vpcHasBeenSet(false),
-    m_anywhereSettingsHasBeenSet(false)
+    m_anywhereSettingsHasBeenSet(false),
+    m_channelEngineVersionHasBeenSet(false),
+    m_usedChannelEngineVersionsHasBeenSet(false)
 {
 }
 
@@ -182,6 +184,23 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_anywhereSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("channelEngineVersion"))
+  {
+    m_channelEngineVersion = jsonValue.GetObject("channelEngineVersion");
+
+    m_channelEngineVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("usedChannelEngineVersions"))
+  {
+    Aws::Utils::Array<JsonView> usedChannelEngineVersionsJsonList = jsonValue.GetArray("usedChannelEngineVersions");
+    for(unsigned usedChannelEngineVersionsIndex = 0; usedChannelEngineVersionsIndex < usedChannelEngineVersionsJsonList.GetLength(); ++usedChannelEngineVersionsIndex)
+    {
+      m_usedChannelEngineVersions.push_back(usedChannelEngineVersionsJsonList[usedChannelEngineVersionsIndex].AsObject());
+    }
+    m_usedChannelEngineVersionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -305,6 +324,23 @@ JsonValue ChannelSummary::Jsonize() const
   if(m_anywhereSettingsHasBeenSet)
   {
    payload.WithObject("anywhereSettings", m_anywhereSettings.Jsonize());
+
+  }
+
+  if(m_channelEngineVersionHasBeenSet)
+  {
+   payload.WithObject("channelEngineVersion", m_channelEngineVersion.Jsonize());
+
+  }
+
+  if(m_usedChannelEngineVersionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> usedChannelEngineVersionsJsonList(m_usedChannelEngineVersions.size());
+   for(unsigned usedChannelEngineVersionsIndex = 0; usedChannelEngineVersionsIndex < usedChannelEngineVersionsJsonList.GetLength(); ++usedChannelEngineVersionsIndex)
+   {
+     usedChannelEngineVersionsJsonList[usedChannelEngineVersionsIndex].AsObject(m_usedChannelEngineVersions[usedChannelEngineVersionsIndex].Jsonize());
+   }
+   payload.WithArray("usedChannelEngineVersions", std::move(usedChannelEngineVersionsJsonList));
 
   }
 

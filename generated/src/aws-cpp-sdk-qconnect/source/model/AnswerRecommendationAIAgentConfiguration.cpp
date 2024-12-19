@@ -23,6 +23,7 @@ AnswerRecommendationAIAgentConfiguration::AnswerRecommendationAIAgentConfigurati
     m_answerGenerationAIPromptIdHasBeenSet(false),
     m_associationConfigurationsHasBeenSet(false),
     m_intentLabelingGenerationAIPromptIdHasBeenSet(false),
+    m_localeHasBeenSet(false),
     m_queryReformulationAIPromptIdHasBeenSet(false)
 {
 }
@@ -66,6 +67,13 @@ AnswerRecommendationAIAgentConfiguration& AnswerRecommendationAIAgentConfigurati
     m_intentLabelingGenerationAIPromptIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("locale"))
+  {
+    m_locale = jsonValue.GetString("locale");
+
+    m_localeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("queryReformulationAIPromptId"))
   {
     m_queryReformulationAIPromptId = jsonValue.GetString("queryReformulationAIPromptId");
@@ -106,6 +114,12 @@ JsonValue AnswerRecommendationAIAgentConfiguration::Jsonize() const
   if(m_intentLabelingGenerationAIPromptIdHasBeenSet)
   {
    payload.WithString("intentLabelingGenerationAIPromptId", m_intentLabelingGenerationAIPromptId);
+
+  }
+
+  if(m_localeHasBeenSet)
+  {
+   payload.WithString("locale", m_locale);
 
   }
 

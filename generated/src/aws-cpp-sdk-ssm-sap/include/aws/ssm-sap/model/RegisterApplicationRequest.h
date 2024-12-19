@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm-sap/model/ApplicationCredential.h>
+#include <aws/ssm-sap/model/ComponentInfo.h>
 #include <utility>
 
 namespace Aws
@@ -151,6 +152,22 @@ namespace Model
     inline RegisterApplicationRequest& WithDatabaseArn(Aws::String&& value) { SetDatabaseArn(std::move(value)); return *this;}
     inline RegisterApplicationRequest& WithDatabaseArn(const char* value) { SetDatabaseArn(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>This is an optional parameter for component details to which the SAP ABAP
+     * application is attached, such as Web Dispatcher.</p> <p>This is an array of
+     * ApplicationComponent objects. You may input 0 to 5 items.</p>
+     */
+    inline const Aws::Vector<ComponentInfo>& GetComponentsInfo() const{ return m_componentsInfo; }
+    inline bool ComponentsInfoHasBeenSet() const { return m_componentsInfoHasBeenSet; }
+    inline void SetComponentsInfo(const Aws::Vector<ComponentInfo>& value) { m_componentsInfoHasBeenSet = true; m_componentsInfo = value; }
+    inline void SetComponentsInfo(Aws::Vector<ComponentInfo>&& value) { m_componentsInfoHasBeenSet = true; m_componentsInfo = std::move(value); }
+    inline RegisterApplicationRequest& WithComponentsInfo(const Aws::Vector<ComponentInfo>& value) { SetComponentsInfo(value); return *this;}
+    inline RegisterApplicationRequest& WithComponentsInfo(Aws::Vector<ComponentInfo>&& value) { SetComponentsInfo(std::move(value)); return *this;}
+    inline RegisterApplicationRequest& AddComponentsInfo(const ComponentInfo& value) { m_componentsInfoHasBeenSet = true; m_componentsInfo.push_back(value); return *this; }
+    inline RegisterApplicationRequest& AddComponentsInfo(ComponentInfo&& value) { m_componentsInfoHasBeenSet = true; m_componentsInfo.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_applicationId;
@@ -176,6 +193,9 @@ namespace Model
 
     Aws::String m_databaseArn;
     bool m_databaseArnHasBeenSet = false;
+
+    Aws::Vector<ComponentInfo> m_componentsInfo;
+    bool m_componentsInfoHasBeenSet = false;
   };
 
 } // namespace Model

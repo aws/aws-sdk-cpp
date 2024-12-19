@@ -92,6 +92,7 @@
 #include <aws/medialive/model/ListReservationsResult.h>
 #include <aws/medialive/model/ListSignalMapsResult.h>
 #include <aws/medialive/model/ListTagsForResourceResult.h>
+#include <aws/medialive/model/ListVersionsResult.h>
 #include <aws/medialive/model/PurchaseOfferingResult.h>
 #include <aws/medialive/model/RebootInputDeviceResult.h>
 #include <aws/medialive/model/RejectInputDeviceTransferResult.h>
@@ -145,6 +146,7 @@
 #include <aws/medialive/model/ListOfferingsRequest.h>
 #include <aws/medialive/model/ListChannelsRequest.h>
 #include <aws/medialive/model/ListInputsRequest.h>
+#include <aws/medialive/model/ListVersionsRequest.h>
 #include <aws/medialive/model/ListReservationsRequest.h>
 #include <aws/medialive/model/ListEventBridgeRuleTemplateGroupsRequest.h>
 #include <aws/medialive/model/ListSignalMapsRequest.h>
@@ -272,6 +274,7 @@ namespace Aws
       class ListReservationsRequest;
       class ListSignalMapsRequest;
       class ListTagsForResourceRequest;
+      class ListVersionsRequest;
       class PurchaseOfferingRequest;
       class RebootInputDeviceRequest;
       class RejectInputDeviceTransferRequest;
@@ -389,6 +392,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListReservationsResult, MediaLiveError> ListReservationsOutcome;
       typedef Aws::Utils::Outcome<ListSignalMapsResult, MediaLiveError> ListSignalMapsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaLiveError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ListVersionsResult, MediaLiveError> ListVersionsOutcome;
       typedef Aws::Utils::Outcome<PurchaseOfferingResult, MediaLiveError> PurchaseOfferingOutcome;
       typedef Aws::Utils::Outcome<RebootInputDeviceResult, MediaLiveError> RebootInputDeviceOutcome;
       typedef Aws::Utils::Outcome<RejectInputDeviceTransferResult, MediaLiveError> RejectInputDeviceTransferOutcome;
@@ -506,6 +510,7 @@ namespace Aws
       typedef std::future<ListReservationsOutcome> ListReservationsOutcomeCallable;
       typedef std::future<ListSignalMapsOutcome> ListSignalMapsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ListVersionsOutcome> ListVersionsOutcomeCallable;
       typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
       typedef std::future<RebootInputDeviceOutcome> RebootInputDeviceOutcomeCallable;
       typedef std::future<RejectInputDeviceTransferOutcome> RejectInputDeviceTransferOutcomeCallable;
@@ -626,6 +631,7 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::ListReservationsRequest&, const Model::ListReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReservationsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListSignalMapsRequest&, const Model::ListSignalMapsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSignalMapsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::ListVersionsRequest&, const Model::ListVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVersionsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::PurchaseOfferingRequest&, const Model::PurchaseOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseOfferingResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::RebootInputDeviceRequest&, const Model::RebootInputDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootInputDeviceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::RejectInputDeviceTransferRequest&, const Model::RejectInputDeviceTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInputDeviceTransferResponseReceivedHandler;

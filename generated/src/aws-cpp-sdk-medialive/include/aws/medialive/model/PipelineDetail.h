@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/ChannelEngineVersionResponse.h>
 #include <utility>
 
 namespace Aws
@@ -110,6 +111,18 @@ namespace Model
     inline PipelineDetail& WithPipelineId(Aws::String&& value) { SetPipelineId(std::move(value)); return *this;}
     inline PipelineDetail& WithPipelineId(const char* value) { SetPipelineId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * Current engine version of the encoder for this pipeline.
+     */
+    inline const ChannelEngineVersionResponse& GetChannelEngineVersion() const{ return m_channelEngineVersion; }
+    inline bool ChannelEngineVersionHasBeenSet() const { return m_channelEngineVersionHasBeenSet; }
+    inline void SetChannelEngineVersion(const ChannelEngineVersionResponse& value) { m_channelEngineVersionHasBeenSet = true; m_channelEngineVersion = value; }
+    inline void SetChannelEngineVersion(ChannelEngineVersionResponse&& value) { m_channelEngineVersionHasBeenSet = true; m_channelEngineVersion = std::move(value); }
+    inline PipelineDetail& WithChannelEngineVersion(const ChannelEngineVersionResponse& value) { SetChannelEngineVersion(value); return *this;}
+    inline PipelineDetail& WithChannelEngineVersion(ChannelEngineVersionResponse&& value) { SetChannelEngineVersion(std::move(value)); return *this;}
+    ///@}
   private:
 
     Aws::String m_activeInputAttachmentName;
@@ -126,6 +139,9 @@ namespace Model
 
     Aws::String m_pipelineId;
     bool m_pipelineIdHasBeenSet = false;
+
+    ChannelEngineVersionResponse m_channelEngineVersion;
+    bool m_channelEngineVersionHasBeenSet = false;
   };
 
 } // namespace Model

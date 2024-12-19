@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/FontScript.h>
 #include <aws/mediaconvert/model/BurninSubtitleOutlineColor.h>
+#include <aws/mediaconvert/model/RemoveRubyReserveAttributes.h>
 #include <aws/mediaconvert/model/BurninSubtitleShadowColor.h>
 #include <aws/mediaconvert/model/BurnInSubtitleStylePassthrough.h>
 #include <aws/mediaconvert/model/BurninSubtitleTeletextSpacing.h>
@@ -307,6 +308,22 @@ When you do, you must also separately
 
     ///@{
     /**
+     * Optionally remove any tts:rubyReserve attributes present in your input, that do 
+     * not have a tts:ruby attribute in the same element, from your output. Use if your
+     * vertical Japanese output captions have alignment issues. To remove ruby reserve
+     * attributes when present: Choose Enabled. To not remove any ruby reserve
+     * attributes: Keep the default value, Disabled.
+     */
+    inline const RemoveRubyReserveAttributes& GetRemoveRubyReserveAttributes() const{ return m_removeRubyReserveAttributes; }
+    inline bool RemoveRubyReserveAttributesHasBeenSet() const { return m_removeRubyReserveAttributesHasBeenSet; }
+    inline void SetRemoveRubyReserveAttributes(const RemoveRubyReserveAttributes& value) { m_removeRubyReserveAttributesHasBeenSet = true; m_removeRubyReserveAttributes = value; }
+    inline void SetRemoveRubyReserveAttributes(RemoveRubyReserveAttributes&& value) { m_removeRubyReserveAttributesHasBeenSet = true; m_removeRubyReserveAttributes = std::move(value); }
+    inline BurninDestinationSettings& WithRemoveRubyReserveAttributes(const RemoveRubyReserveAttributes& value) { SetRemoveRubyReserveAttributes(value); return *this;}
+    inline BurninDestinationSettings& WithRemoveRubyReserveAttributes(RemoveRubyReserveAttributes&& value) { SetRemoveRubyReserveAttributes(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * Specify the color of the shadow cast by the captions. Leave Shadow color blank
      * and set Style passthrough to enabled to use the shadow color data from your
      * input captions, if present.
@@ -470,6 +487,9 @@ When you do, you must also separately
 
     int m_outlineSize;
     bool m_outlineSizeHasBeenSet = false;
+
+    RemoveRubyReserveAttributes m_removeRubyReserveAttributes;
+    bool m_removeRubyReserveAttributesHasBeenSet = false;
 
     BurninSubtitleShadowColor m_shadowColor;
     bool m_shadowColorHasBeenSet = false;
