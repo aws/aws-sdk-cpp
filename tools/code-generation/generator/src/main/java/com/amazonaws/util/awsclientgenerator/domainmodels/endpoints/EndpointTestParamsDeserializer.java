@@ -4,6 +4,9 @@ import com.google.gson.*;
 
 import java.lang.reflect.Type;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+import java.util.List;
 
 public class EndpointTestParamsDeserializer implements JsonDeserializer<EndpointTests.EndpointTestParams> {
 
@@ -57,7 +60,24 @@ public class EndpointTestParamsDeserializer implements JsonDeserializer<Endpoint
                 // this will always be ["*"], however this should not be relied upon.
                 parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING);
                 parameter.setStrValue("*");
-            } else {
+            }
+            else if(element.isJsonArray())
+            {
+                JsonArray jsonArray = element.getAsJsonArray();
+                parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING_ARRAY);
+                
+                List<String> stringArray = StreamSupport.stream(jsonArray.spliterator(), false)
+                .map(arrElem -> {
+                    if (arrElem.isJsonPrimitive() && arrElem.getAsJsonPrimitive().isString()) {
+                        return arrElem.getAsJsonPrimitive().getAsString();
+                    } else {
+                        throw new JsonParseException("Unsupported type in array");
+                    }
+                })
+                .collect(Collectors.toList());
+                parameter.setStrArrayValue(stringArray);
+            }
+            else {
                 // TODO: follow-up once per-operation tests are enabled
                 // throw new JsonParseException("Unexpected EndpointTestParameter JSON value/type, primitive expected.");
                 // tracing Warning to Error because STDOUT is already occupied for binary forwarding
