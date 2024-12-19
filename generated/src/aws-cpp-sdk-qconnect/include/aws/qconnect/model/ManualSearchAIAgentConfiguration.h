@@ -83,6 +83,22 @@ namespace Model
     inline ManualSearchAIAgentConfiguration& AddAssociationConfigurations(const AssociationConfiguration& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations.push_back(value); return *this; }
     inline ManualSearchAIAgentConfiguration& AddAssociationConfigurations(AssociationConfiguration&& value) { m_associationConfigurationsHasBeenSet = true; m_associationConfigurations.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>The locale to which specifies the language and region settings that determine
+     * the response language for <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p>
+     */
+    inline const Aws::String& GetLocale() const{ return m_locale; }
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+    inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
+    inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
+    inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
+    inline ManualSearchAIAgentConfiguration& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
+    inline ManualSearchAIAgentConfiguration& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
+    inline ManualSearchAIAgentConfiguration& WithLocale(const char* value) { SetLocale(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_answerGenerationAIGuardrailId;
@@ -93,6 +109,9 @@ namespace Model
 
     Aws::Vector<AssociationConfiguration> m_associationConfigurations;
     bool m_associationConfigurationsHasBeenSet = false;
+
+    Aws::String m_locale;
+    bool m_localeHasBeenSet = false;
   };
 
 } // namespace Model

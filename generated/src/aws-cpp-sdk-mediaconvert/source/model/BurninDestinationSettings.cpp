@@ -48,6 +48,8 @@ BurninDestinationSettings::BurninDestinationSettings() :
     m_outlineColorHasBeenSet(false),
     m_outlineSize(0),
     m_outlineSizeHasBeenSet(false),
+    m_removeRubyReserveAttributes(RemoveRubyReserveAttributes::NOT_SET),
+    m_removeRubyReserveAttributesHasBeenSet(false),
     m_shadowColor(BurninSubtitleShadowColor::NOT_SET),
     m_shadowColorHasBeenSet(false),
     m_shadowOpacity(0),
@@ -192,6 +194,13 @@ BurninDestinationSettings& BurninDestinationSettings::operator =(JsonView jsonVa
     m_outlineSize = jsonValue.GetInteger("outlineSize");
 
     m_outlineSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("removeRubyReserveAttributes"))
+  {
+    m_removeRubyReserveAttributes = RemoveRubyReserveAttributesMapper::GetRemoveRubyReserveAttributesForName(jsonValue.GetString("removeRubyReserveAttributes"));
+
+    m_removeRubyReserveAttributesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("shadowColor"))
@@ -350,6 +359,11 @@ JsonValue BurninDestinationSettings::Jsonize() const
   {
    payload.WithInteger("outlineSize", m_outlineSize);
 
+  }
+
+  if(m_removeRubyReserveAttributesHasBeenSet)
+  {
+   payload.WithString("removeRubyReserveAttributes", RemoveRubyReserveAttributesMapper::GetNameForRemoveRubyReserveAttributes(m_removeRubyReserveAttributes));
   }
 
   if(m_shadowColorHasBeenSet)

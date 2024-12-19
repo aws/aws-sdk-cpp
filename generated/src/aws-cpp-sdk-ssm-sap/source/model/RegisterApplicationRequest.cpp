@@ -21,7 +21,8 @@ RegisterApplicationRequest::RegisterApplicationRequest() :
     m_sidHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_credentialsHasBeenSet(false),
-    m_databaseArnHasBeenSet(false)
+    m_databaseArnHasBeenSet(false),
+    m_componentsInfoHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,17 @@ Aws::String RegisterApplicationRequest::SerializePayload() const
   if(m_databaseArnHasBeenSet)
   {
    payload.WithString("DatabaseArn", m_databaseArn);
+
+  }
+
+  if(m_componentsInfoHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> componentsInfoJsonList(m_componentsInfo.size());
+   for(unsigned componentsInfoIndex = 0; componentsInfoIndex < componentsInfoJsonList.GetLength(); ++componentsInfoIndex)
+   {
+     componentsInfoJsonList[componentsInfoIndex].AsObject(m_componentsInfo[componentsInfoIndex].Jsonize());
+   }
+   payload.WithArray("ComponentsInfo", std::move(componentsInfoJsonList));
 
   }
 

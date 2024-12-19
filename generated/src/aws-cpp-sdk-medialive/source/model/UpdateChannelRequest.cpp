@@ -23,7 +23,10 @@ UpdateChannelRequest::UpdateChannelRequest() :
     m_logLevelHasBeenSet(false),
     m_maintenanceHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_channelEngineVersionHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -91,6 +94,18 @@ Aws::String UpdateChannelRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_channelEngineVersionHasBeenSet)
+  {
+   payload.WithObject("channelEngineVersion", m_channelEngineVersion.Jsonize());
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("dryRun", m_dryRun);
 
   }
 

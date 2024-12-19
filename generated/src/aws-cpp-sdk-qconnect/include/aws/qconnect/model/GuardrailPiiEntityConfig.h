@@ -84,7 +84,7 @@ namespace Model
      * Vehicle Identification Number (VIN) uniquely identifies a vehicle. VIN content
      * and format are defined in the <i>ISO 3779</i> specification. Each country has
      * specific codes and formats for VINs. </p> </li> </ul> </li> <li> <p>
-     * <b>Finance</b> </p> <ul> <li> <p> <b>REDIT_DEBIT_CARD_CVV</b> </p> <p>A
+     * <b>Finance</b> </p> <ul> <li> <p> <b>CREDIT_DEBIT_CARD_CVV</b> </p> <p>A
      * three-digit card verification code (CVV) that is present on VISA, MasterCard,
      * and Discover credit and debit cards. For American Express credit or debit cards,
      * the CVV is a four-digit numeric code. </p> </li> <li> <p>

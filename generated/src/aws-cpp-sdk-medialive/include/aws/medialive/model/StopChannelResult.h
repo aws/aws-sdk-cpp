@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/VpcOutputSettingsDescription.h>
 #include <aws/medialive/model/DescribeAnywhereSettings.h>
+#include <aws/medialive/model/ChannelEngineVersionResponse.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -284,6 +285,17 @@ one destination per
     ///@}
 
     ///@{
+    /**
+     * Requested engine version for this channel.
+     */
+    inline const ChannelEngineVersionResponse& GetChannelEngineVersion() const{ return m_channelEngineVersion; }
+    inline void SetChannelEngineVersion(const ChannelEngineVersionResponse& value) { m_channelEngineVersion = value; }
+    inline void SetChannelEngineVersion(ChannelEngineVersionResponse&& value) { m_channelEngineVersion = std::move(value); }
+    inline StopChannelResult& WithChannelEngineVersion(const ChannelEngineVersionResponse& value) { SetChannelEngineVersion(value); return *this;}
+    inline StopChannelResult& WithChannelEngineVersion(ChannelEngineVersionResponse&& value) { SetChannelEngineVersion(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -332,6 +344,8 @@ one destination per
     VpcOutputSettingsDescription m_vpc;
 
     DescribeAnywhereSettings m_anywhereSettings;
+
+    ChannelEngineVersionResponse m_channelEngineVersion;
 
     Aws::String m_requestId;
   };

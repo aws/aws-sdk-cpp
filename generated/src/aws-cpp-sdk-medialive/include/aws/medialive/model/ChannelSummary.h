@@ -16,6 +16,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/VpcOutputSettingsDescription.h>
 #include <aws/medialive/model/DescribeAnywhereSettings.h>
+#include <aws/medialive/model/ChannelEngineVersionResponse.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -275,6 +276,32 @@ one destination per
     inline ChannelSummary& WithAnywhereSettings(const DescribeAnywhereSettings& value) { SetAnywhereSettings(value); return *this;}
     inline ChannelSummary& WithAnywhereSettings(DescribeAnywhereSettings&& value) { SetAnywhereSettings(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * The engine version that you requested for this channel.
+     */
+    inline const ChannelEngineVersionResponse& GetChannelEngineVersion() const{ return m_channelEngineVersion; }
+    inline bool ChannelEngineVersionHasBeenSet() const { return m_channelEngineVersionHasBeenSet; }
+    inline void SetChannelEngineVersion(const ChannelEngineVersionResponse& value) { m_channelEngineVersionHasBeenSet = true; m_channelEngineVersion = value; }
+    inline void SetChannelEngineVersion(ChannelEngineVersionResponse&& value) { m_channelEngineVersionHasBeenSet = true; m_channelEngineVersion = std::move(value); }
+    inline ChannelSummary& WithChannelEngineVersion(const ChannelEngineVersionResponse& value) { SetChannelEngineVersion(value); return *this;}
+    inline ChannelSummary& WithChannelEngineVersion(ChannelEngineVersionResponse&& value) { SetChannelEngineVersion(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * The engine version that the running pipelines are using.
+     */
+    inline const Aws::Vector<ChannelEngineVersionResponse>& GetUsedChannelEngineVersions() const{ return m_usedChannelEngineVersions; }
+    inline bool UsedChannelEngineVersionsHasBeenSet() const { return m_usedChannelEngineVersionsHasBeenSet; }
+    inline void SetUsedChannelEngineVersions(const Aws::Vector<ChannelEngineVersionResponse>& value) { m_usedChannelEngineVersionsHasBeenSet = true; m_usedChannelEngineVersions = value; }
+    inline void SetUsedChannelEngineVersions(Aws::Vector<ChannelEngineVersionResponse>&& value) { m_usedChannelEngineVersionsHasBeenSet = true; m_usedChannelEngineVersions = std::move(value); }
+    inline ChannelSummary& WithUsedChannelEngineVersions(const Aws::Vector<ChannelEngineVersionResponse>& value) { SetUsedChannelEngineVersions(value); return *this;}
+    inline ChannelSummary& WithUsedChannelEngineVersions(Aws::Vector<ChannelEngineVersionResponse>&& value) { SetUsedChannelEngineVersions(std::move(value)); return *this;}
+    inline ChannelSummary& AddUsedChannelEngineVersions(const ChannelEngineVersionResponse& value) { m_usedChannelEngineVersionsHasBeenSet = true; m_usedChannelEngineVersions.push_back(value); return *this; }
+    inline ChannelSummary& AddUsedChannelEngineVersions(ChannelEngineVersionResponse&& value) { m_usedChannelEngineVersionsHasBeenSet = true; m_usedChannelEngineVersions.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::String m_arn;
@@ -327,6 +354,12 @@ one destination per
 
     DescribeAnywhereSettings m_anywhereSettings;
     bool m_anywhereSettingsHasBeenSet = false;
+
+    ChannelEngineVersionResponse m_channelEngineVersion;
+    bool m_channelEngineVersionHasBeenSet = false;
+
+    Aws::Vector<ChannelEngineVersionResponse> m_usedChannelEngineVersions;
+    bool m_usedChannelEngineVersionsHasBeenSet = false;
   };
 
 } // namespace Model

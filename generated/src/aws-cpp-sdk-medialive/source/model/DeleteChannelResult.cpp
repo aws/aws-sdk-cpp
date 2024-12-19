@@ -163,6 +163,12 @@ DeleteChannelResult& DeleteChannelResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("channelEngineVersion"))
+  {
+    m_channelEngineVersion = jsonValue.GetObject("channelEngineVersion");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -2143,6 +2143,32 @@ namespace MediaLive
         }
 
         /**
+         * Retrieves an array of all the encoder engine versions that are available in this
+         * AWS account.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVersionsOutcome ListVersions(const Model::ListVersionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for ListVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListVersionsRequestT = Model::ListVersionsRequest>
+        Model::ListVersionsOutcomeCallable ListVersionsCallable(const ListVersionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&MediaLiveClient::ListVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListVersionsRequestT = Model::ListVersionsRequest>
+        void ListVersionsAsync(const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const ListVersionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&MediaLiveClient::ListVersions, request, handler, context);
+        }
+
+        /**
          * Purchase an offering and create a reservation.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PurchaseOffering">AWS
          * API Reference</a></p>
