@@ -40,7 +40,7 @@ namespace Model
     ///@{
     /**
      * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
-     * image created on the instance.</p>
+     * AI image created on the instance.</p>
      */
     inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }

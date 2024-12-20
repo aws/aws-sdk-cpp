@@ -26,7 +26,7 @@ namespace Model
    * that apply to S3 buckets. Each field contains aggregated data for all the
    * buckets that have a sensitivity score (sensitivityScore) of a specified value or
    * within a specified range (BucketStatisticsBySensitivity). If automated sensitive
-   * data discovery is currently disabled for your account, the value for each field
+   * data discovery is currently disabled for your account, the value for most fields
    * is 0.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SensitivityAggregations">AWS
    * API Reference</a></p>

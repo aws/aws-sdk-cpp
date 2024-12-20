@@ -18,7 +18,6 @@
 #include <aws/route53domains/model/GetDomainDetailRequest.h>
 #include <aws/route53domains/Route53DomainsClient.h>
 #include <aws/route53domains/model/ListDomainsRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Route53DomainsSmokeTest{
 using namespace Aws::Auth;
@@ -32,19 +31,6 @@ class Route53DomainsSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char Route53DomainsSmokeTestSuite::ALLOCATION_TAG[] = "Route53DomainsSmokeTest";
-TEST_F(Route53DomainsSmokeTestSuite, ListDomainsSuccess )
-{
-    Aws::Route53Domains::Route53DomainsClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<Route53DomainsClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    ListDomainsRequest input;
-    auto outcome = clientSp->ListDomains(input);
-    EXPECT_TRUE( outcome.IsSuccess());
-}
 TEST_F(Route53DomainsSmokeTestSuite, GetDomainDetailFailure )
 {
     Aws::Route53Domains::Route53DomainsClientConfiguration clientConfiguration;
@@ -58,5 +44,18 @@ TEST_F(Route53DomainsSmokeTestSuite, GetDomainDetailFailure )
     input.SetDomainName("fake-domain-name");
     auto outcome = clientSp->GetDomainDetail(input);
     EXPECT_FALSE( outcome.IsSuccess());
+}
+TEST_F(Route53DomainsSmokeTestSuite, ListDomainsSuccess )
+{
+    Aws::Route53Domains::Route53DomainsClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-east-1";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<Route53DomainsClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    ListDomainsRequest input;
+    auto outcome = clientSp->ListDomains(input);
+    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

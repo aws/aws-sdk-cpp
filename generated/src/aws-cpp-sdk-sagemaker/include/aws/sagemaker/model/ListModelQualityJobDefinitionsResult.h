@@ -49,7 +49,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the response is truncated, Amazon SageMaker returns this token. To
+     * <p>If the response is truncated, Amazon SageMaker AI returns this token. To
      * retrieve the next set of model quality monitoring job definitions, use it in the
      * next request.</p>
      */

@@ -147,6 +147,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing
+     * view. The ARN is used to specify which particular billing view you want to
+     * interact with or retrieve information from when making API calls related to
+     * Amazon Web Services Billing and Cost Management features. The BillingViewArn can
+     * be retrieved by calling the ListBillingViews API.</p>
+     */
+    inline const Aws::String& GetBillingViewArn() const{ return m_billingViewArn; }
+    inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
+    inline void SetBillingViewArn(const Aws::String& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = value; }
+    inline void SetBillingViewArn(Aws::String&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::move(value); }
+    inline void SetBillingViewArn(const char* value) { m_billingViewArnHasBeenSet = true; m_billingViewArn.assign(value); }
+    inline GetCostAndUsageRequest& WithBillingViewArn(const Aws::String& value) { SetBillingViewArn(value); return *this;}
+    inline GetCostAndUsageRequest& WithBillingViewArn(Aws::String&& value) { SetBillingViewArn(std::move(value)); return *this;}
+    inline GetCostAndUsageRequest& WithBillingViewArn(const char* value) { SetBillingViewArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
      * maximum page size.</p>
@@ -176,6 +194,9 @@ namespace Model
 
     Aws::Vector<GroupDefinition> m_groupBy;
     bool m_groupByHasBeenSet = false;
+
+    Aws::String m_billingViewArn;
+    bool m_billingViewArnHasBeenSet = false;
 
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet = false;

@@ -43,10 +43,11 @@ namespace Model
     ///@{
     /**
      * <p>The default instance type and the Amazon Resource Name (ARN) of the default
-     * SageMaker image used by the KernelGateway app.</p>  <p>The Amazon
-     * SageMaker Studio UI does not use the default instance type value set here. The
-     * default instance type set here is used when Apps are created using the CLI or
-     * CloudFormation and the instance type parameter value is not passed.</p> 
+     * SageMaker AI image used by the KernelGateway app.</p>  <p>The Amazon
+     * SageMaker AI Studio UI does not use the default instance type value set here.
+     * The default instance type set here is used when Apps are created using the CLI
+     * or CloudFormation and the instance type parameter value is not passed.</p>
+     * 
      */
     inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
@@ -58,7 +59,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of custom SageMaker images that are configured to run as a
+     * <p>A list of custom SageMaker AI images that are configured to run as a
      * KernelGateway app.</p>
      */
     inline const Aws::Vector<CustomImage>& GetCustomImages() const{ return m_customImages; }

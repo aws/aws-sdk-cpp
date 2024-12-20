@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>The settings for assigning a custom file system to a user profile or space
-   * for an Amazon SageMaker Domain. Permitted users can access this file system in
-   * Amazon SageMaker Studio.</p><p><h3>See Also:</h3>   <a
+   * for an Amazon SageMaker AI Domain. Permitted users can access this file system
+   * in Amazon SageMaker AI Studio.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CustomFileSystemConfig">AWS
    * API Reference</a></p>
    */

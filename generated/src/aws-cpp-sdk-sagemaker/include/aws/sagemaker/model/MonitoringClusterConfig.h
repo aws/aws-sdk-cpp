@@ -76,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt
+     * <p>The Key Management Service (KMS) key that Amazon SageMaker AI uses to encrypt
      * data on the storage volume attached to the ML compute instance(s) that run the
      * model monitoring job.</p>
      */

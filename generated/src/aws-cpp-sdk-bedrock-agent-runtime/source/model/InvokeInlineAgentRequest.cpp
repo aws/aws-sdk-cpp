@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 InvokeInlineAgentRequest::InvokeInlineAgentRequest() : 
     m_actionGroupsHasBeenSet(false),
+    m_bedrockModelConfigurationsHasBeenSet(false),
     m_customerEncryptionKeyArnHasBeenSet(false),
     m_enableTrace(false),
     m_enableTraceHasBeenSet(false),
@@ -45,6 +46,12 @@ Aws::String InvokeInlineAgentRequest::SerializePayload() const
      actionGroupsJsonList[actionGroupsIndex].AsObject(m_actionGroups[actionGroupsIndex].Jsonize());
    }
    payload.WithArray("actionGroups", std::move(actionGroupsJsonList));
+
+  }
+
+  if(m_bedrockModelConfigurationsHasBeenSet)
+  {
+   payload.WithObject("bedrockModelConfigurations", m_bedrockModelConfigurations.Jsonize());
 
   }
 

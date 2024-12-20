@@ -43,7 +43,7 @@ namespace Model
     ///@{
     /**
      * <p>The default instance type and the Amazon Resource Name (ARN) of the default
-     * SageMaker image used by the JupyterServer app. If you use the
+     * SageMaker AI image used by the JupyterServer app. If you use the
      * <code>LifecycleConfigArns</code> parameter, then this parameter is also
      * required.</p>
      */
@@ -76,8 +76,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of Git repositories that SageMaker automatically displays to users for
-     * cloning in the JupyterServer application.</p>
+     * <p>A list of Git repositories that SageMaker AI automatically displays to users
+     * for cloning in the JupyterServer application.</p>
      */
     inline const Aws::Vector<CodeRepository>& GetCodeRepositories() const{ return m_codeRepositories; }
     inline bool CodeRepositoriesHasBeenSet() const { return m_codeRepositoriesHasBeenSet; }

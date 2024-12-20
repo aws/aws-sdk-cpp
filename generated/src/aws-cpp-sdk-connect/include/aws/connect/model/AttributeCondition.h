@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/connect/model/Range.h>
 #include <aws/connect/model/MatchCriteria.h>
 #include <utility>
 
@@ -79,6 +80,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>An Object to define the minimum and maximum proficiency levels.</p>
+     */
+    inline const Range& GetRange() const{ return m_range; }
+    inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
+    inline void SetRange(const Range& value) { m_rangeHasBeenSet = true; m_range = value; }
+    inline void SetRange(Range&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
+    inline AttributeCondition& WithRange(const Range& value) { SetRange(value); return *this;}
+    inline AttributeCondition& WithRange(Range&& value) { SetRange(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>An object to define <code>AgentsCriteria</code>.</p>
      */
     inline const MatchCriteria& GetMatchCriteria() const{ return m_matchCriteria; }
@@ -112,6 +125,9 @@ namespace Model
 
     double m_proficiencyLevel;
     bool m_proficiencyLevelHasBeenSet = false;
+
+    Range m_range;
+    bool m_rangeHasBeenSet = false;
 
     MatchCriteria m_matchCriteria;
     bool m_matchCriteriaHasBeenSet = false;

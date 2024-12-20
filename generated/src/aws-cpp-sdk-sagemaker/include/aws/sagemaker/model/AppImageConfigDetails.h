@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for running a SageMaker image as a KernelGateway
+   * <p>The configuration for running a SageMaker AI image as a KernelGateway
    * app.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AppImageConfigDetails">AWS
    * API Reference</a></p>
@@ -96,7 +96,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for the file system and kernels in the SageMaker image.</p>
+     * <p>The configuration for the file system and kernels in the SageMaker AI
+     * image.</p>
      */
     inline const KernelGatewayImageConfig& GetKernelGatewayImageConfig() const{ return m_kernelGatewayImageConfig; }
     inline bool KernelGatewayImageConfigHasBeenSet() const { return m_kernelGatewayImageConfigHasBeenSet; }

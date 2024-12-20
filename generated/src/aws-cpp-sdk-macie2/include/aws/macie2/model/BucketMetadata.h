@@ -43,12 +43,12 @@ namespace Model
    * incomplete multipart uploads. For more information, see <a
    * href="https://docs.aws.amazon.com/macie/latest/user/monitoring-s3-how-it-works.html">How
    * Macie monitors Amazon S3 data security</a> in the <i>Amazon Macie User
-   * Guide</i>.</p> <p>If an error occurs when Macie attempts to retrieve and process
-   * metadata from Amazon S3 for the bucket or the bucket's objects, the value for
-   * the versioning property is false and the value for most other properties is
-   * null. Key exceptions are accountId, bucketArn, bucketCreatedAt, bucketName,
-   * lastUpdated, and region. To identify the cause of the error, refer to the
-   * errorCode and errorMessage values.</p><p><h3>See Also:</h3>   <a
+   * Guide</i>.</p> <p>If an error or issue prevents Macie from retrieving and
+   * processing metadata from Amazon S3 for the bucket or the bucket's objects, the
+   * value for the versioning property is false and the value for most other
+   * properties is null or UNKNOWN. Key exceptions are accountId, bucketArn,
+   * bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause,
+   * refer to the errorCode and errorMessage values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketMetadata">AWS
    * API Reference</a></p>
    */
@@ -187,12 +187,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>The error code for an error that prevented Amazon Macie from retrieving and
-     * processing information about the bucket and the bucket's objects. If this value
-     * is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For
-     * example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the
-     * information.</p>
+     * <p>The code for an error or issue that prevented Amazon Macie from retrieving
+     * and processing information about the bucket and the bucket's objects. Possible
+     * values are:</p> <ul><li><p>ACCESS_DENIED - Macie doesn't have permission to
+     * retrieve the information. For example, the bucket has a restrictive bucket
+     * policy and Amazon S3 denied the request.</p></li>
+     * <li><p>BUCKET_COUNT_EXCEEDS_QUOTA - Retrieving and processing the information
+     * would exceed the quota for the number of buckets that Macie monitors for an
+     * account (10,000).</p></li></ul> <p>If this value is null, Macie was able to
+     * retrieve and process the information.</p>
      */
     inline const BucketMetadataErrorCode& GetErrorCode() const{ return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
@@ -204,10 +207,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>A brief description of the error (errorCode) that prevented Amazon Macie from
-     * retrieving and processing information about the bucket and the bucket's objects.
-     * This value is null if Macie was able to retrieve and process the
-     * information.</p>
+     * <p>A brief description of the error or issue (errorCode) that prevented Amazon
+     * Macie from retrieving and processing information about the bucket and the
+     * bucket's objects. This value is null if Macie was able to retrieve and process
+     * the information.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
@@ -237,8 +240,8 @@ namespace Model
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie
      * most recently analyzed objects in the bucket while performing automated
-     * sensitive data discovery. This value is null if automated sensitive data
-     * discovery is disabled for your account.</p>
+     * sensitive data discovery. This value is null if this analysis hasn't
+     * occurred.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAutomatedDiscoveryTime() const{ return m_lastAutomatedDiscoveryTime; }
     inline bool LastAutomatedDiscoveryTimeHasBeenSet() const { return m_lastAutomatedDiscoveryTimeHasBeenSet; }
@@ -332,9 +335,9 @@ namespace Model
     /**
      * <p>The sensitivity score for the bucket, ranging from -1 (classification error)
      * to 100 (sensitive).</p><p>If automated sensitive data discovery has never been
-     * enabled for your account or it’s been disabled for your organization or your
+     * enabled for your account or it's been disabled for your organization or
      * standalone account for more than 30 days, possible values are: 1, the bucket is
-     * empty; or, 50, the bucket stores objects but it’s been excluded from recent
+     * empty; or, 50, the bucket stores objects but it's been excluded from recent
      * analyses.</p>
      */
     inline int GetSensitivityScore() const{ return m_sensitivityScore; }

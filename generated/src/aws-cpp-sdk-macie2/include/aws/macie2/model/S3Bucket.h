@@ -31,8 +31,11 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the S3 bucket that a finding applies
-   * to.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the S3 bucket that a finding applies to. If a
+   * quota prevented Amazon Macie from retrieving and processing all the bucket's
+   * information prior to generating the finding, the following values are UNKNOWN or
+   * null: allowsUnencryptedObjectUploads, defaultServerSideEncryption, publicAccess,
+   * and tags.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3Bucket">AWS API
    * Reference</a></p>
    */

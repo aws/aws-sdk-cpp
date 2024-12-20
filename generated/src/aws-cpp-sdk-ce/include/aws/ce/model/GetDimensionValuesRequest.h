@@ -219,6 +219,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing
+     * view. The ARN is used to specify which particular billing view you want to
+     * interact with or retrieve information from when making API calls related to
+     * Amazon Web Services Billing and Cost Management features. The BillingViewArn can
+     * be retrieved by calling the ListBillingViews API.</p>
+     */
+    inline const Aws::String& GetBillingViewArn() const{ return m_billingViewArn; }
+    inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
+    inline void SetBillingViewArn(const Aws::String& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = value; }
+    inline void SetBillingViewArn(Aws::String&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::move(value); }
+    inline void SetBillingViewArn(const char* value) { m_billingViewArnHasBeenSet = true; m_billingViewArn.assign(value); }
+    inline GetDimensionValuesRequest& WithBillingViewArn(const Aws::String& value) { SetBillingViewArn(value); return *this;}
+    inline GetDimensionValuesRequest& WithBillingViewArn(Aws::String&& value) { SetBillingViewArn(std::move(value)); return *this;}
+    inline GetDimensionValuesRequest& WithBillingViewArn(const char* value) { SetBillingViewArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>This field is only used when SortBy is provided in the request. The maximum
      * number of objects that are returned for this request. If MaxResults isn't
      * specified with SortBy, the request returns 1000 results as the default value for
@@ -265,6 +283,9 @@ namespace Model
 
     Aws::Vector<SortDefinition> m_sortBy;
     bool m_sortByHasBeenSet = false;
+
+    Aws::String m_billingViewArn;
+    bool m_billingViewArnHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;

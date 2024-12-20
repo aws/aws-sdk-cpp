@@ -101,7 +101,7 @@ namespace Model
     /**
      * <p>The aggregated sensitive data discovery statistics for the buckets. If
      * automated sensitive data discovery is currently disabled for your account, the
-     * value for each statistic is 0.</p>
+     * value for most statistics is 0.</p>
      */
     inline const BucketStatisticsBySensitivity& GetBucketStatisticsBySensitivity() const{ return m_bucketStatisticsBySensitivity; }
     inline void SetBucketStatisticsBySensitivity(const BucketStatisticsBySensitivity& value) { m_bucketStatisticsBySensitivity = value; }

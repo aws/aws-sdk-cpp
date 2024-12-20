@@ -106,7 +106,8 @@ namespace Model
     ///@{
     /**
      * <p>Specifies whether occurrences of this type of sensitive data are excluded
-     * (true) or included (false) in the bucket's sensitivity score.</p>
+     * (true) or included (false) in the bucket's sensitivity score, if the score is
+     * calculated by Amazon Macie.</p>
      */
     inline bool GetSuppressed() const{ return m_suppressed; }
     inline bool SuppressedHasBeenSet() const { return m_suppressedHasBeenSet; }

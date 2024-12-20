@@ -9,6 +9,7 @@
 #include <aws/bedrock-agent-runtime/model/InvokeAgentHandler.h>
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/bedrock-agent-runtime/model/BedrockModelConfigurations.h>
 #include <aws/bedrock-agent-runtime/model/SessionState.h>
 #include <aws/bedrock-agent-runtime/model/StreamingConfigurations.h>
 #include <utility>
@@ -84,6 +85,18 @@ namespace Model
     inline InvokeAgentRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
     inline InvokeAgentRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
     inline InvokeAgentRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Model performance settings for the request.</p>
+     */
+    inline const BedrockModelConfigurations& GetBedrockModelConfigurations() const{ return m_bedrockModelConfigurations; }
+    inline bool BedrockModelConfigurationsHasBeenSet() const { return m_bedrockModelConfigurationsHasBeenSet; }
+    inline void SetBedrockModelConfigurations(const BedrockModelConfigurations& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = value; }
+    inline void SetBedrockModelConfigurations(BedrockModelConfigurations&& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = std::move(value); }
+    inline InvokeAgentRequest& WithBedrockModelConfigurations(const BedrockModelConfigurations& value) { SetBedrockModelConfigurations(value); return *this;}
+    inline InvokeAgentRequest& WithBedrockModelConfigurations(BedrockModelConfigurations&& value) { SetBedrockModelConfigurations(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,7 +200,9 @@ namespace Model
 
     ///@{
     /**
-     * <p> Specifies the configurations for streaming. </p>
+     * <p> Specifies the configurations for streaming. </p>  <p>To use agent
+     * streaming, you need permissions to perform the
+     * <code>bedrock:InvokeModelWithResponseStream</code> action.</p> 
      */
     inline const StreamingConfigurations& GetStreamingConfigurations() const{ return m_streamingConfigurations; }
     inline bool StreamingConfigurationsHasBeenSet() const { return m_streamingConfigurationsHasBeenSet; }
@@ -203,6 +218,9 @@ namespace Model
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
+
+    BedrockModelConfigurations m_bedrockModelConfigurations;
+    bool m_bedrockModelConfigurationsHasBeenSet = false;
 
     bool m_enableTrace;
     bool m_enableTraceHasBeenSet = false;

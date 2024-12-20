@@ -44,8 +44,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of an existing SageMaker model object in your account that you want
-     * to deploy with the inference component.</p>
+     * <p>The name of an existing SageMaker AI model object in your account that you
+     * want to deploy with the inference component.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }

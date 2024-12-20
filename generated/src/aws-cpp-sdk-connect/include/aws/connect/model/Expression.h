@@ -78,6 +78,16 @@ namespace Model
     inline Expression& AddOrExpression(const Expression& value) { m_orExpressionHasBeenSet = true; m_orExpression.push_back(value); return *this; }
     inline Expression& AddOrExpression(Expression&& value) { m_orExpressionHasBeenSet = true; m_orExpression.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    
+    inline const AttributeCondition& GetNotAttributeCondition() const{ return m_notAttributeCondition; }
+    inline bool NotAttributeConditionHasBeenSet() const { return m_notAttributeConditionHasBeenSet; }
+    inline void SetNotAttributeCondition(const AttributeCondition& value) { m_notAttributeConditionHasBeenSet = true; m_notAttributeCondition = value; }
+    inline void SetNotAttributeCondition(AttributeCondition&& value) { m_notAttributeConditionHasBeenSet = true; m_notAttributeCondition = std::move(value); }
+    inline Expression& WithNotAttributeCondition(const AttributeCondition& value) { SetNotAttributeCondition(value); return *this;}
+    inline Expression& WithNotAttributeCondition(AttributeCondition&& value) { SetNotAttributeCondition(std::move(value)); return *this;}
+    ///@}
   private:
 
     AttributeCondition m_attributeCondition;
@@ -88,6 +98,9 @@ namespace Model
 
     Aws::Vector<Expression> m_orExpression;
     bool m_orExpressionHasBeenSet = false;
+
+    AttributeCondition m_notAttributeCondition;
+    bool m_notAttributeConditionHasBeenSet = false;
   };
 
 } // namespace Model

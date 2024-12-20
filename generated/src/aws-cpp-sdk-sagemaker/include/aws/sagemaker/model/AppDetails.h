@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about an Amazon SageMaker app.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about an Amazon SageMaker AI app.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AppDetails">AWS
    * API Reference</a></p>
    */

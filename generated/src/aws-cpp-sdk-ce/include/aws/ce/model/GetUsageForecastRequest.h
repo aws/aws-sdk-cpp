@@ -10,6 +10,7 @@
 #include <aws/ce/model/Metric.h>
 #include <aws/ce/model/Granularity.h>
 #include <aws/ce/model/Expression.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +116,24 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) that uniquely identifies a specific billing
+     * view. The ARN is used to specify which particular billing view you want to
+     * interact with or retrieve information from when making API calls related to
+     * Amazon Web Services Billing and Cost Management features. The BillingViewArn can
+     * be retrieved by calling the ListBillingViews API.</p>
+     */
+    inline const Aws::String& GetBillingViewArn() const{ return m_billingViewArn; }
+    inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
+    inline void SetBillingViewArn(const Aws::String& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = value; }
+    inline void SetBillingViewArn(Aws::String&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::move(value); }
+    inline void SetBillingViewArn(const char* value) { m_billingViewArnHasBeenSet = true; m_billingViewArn.assign(value); }
+    inline GetUsageForecastRequest& WithBillingViewArn(const Aws::String& value) { SetBillingViewArn(value); return *this;}
+    inline GetUsageForecastRequest& WithBillingViewArn(Aws::String&& value) { SetBillingViewArn(std::move(value)); return *this;}
+    inline GetUsageForecastRequest& WithBillingViewArn(const char* value) { SetBillingViewArn(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Amazon Web Services Cost Explorer always returns the mean forecast as a
      * single point. You can request a prediction interval around the mean by
      * specifying a confidence level. The higher the confidence level, the more
@@ -139,6 +158,9 @@ namespace Model
 
     Expression m_filter;
     bool m_filterHasBeenSet = false;
+
+    Aws::String m_billingViewArn;
+    bool m_billingViewArnHasBeenSet = false;
 
     int m_predictionIntervalLevel;
     bool m_predictionIntervalLevelHasBeenSet = false;

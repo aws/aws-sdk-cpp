@@ -35,7 +35,7 @@ namespace Model
     ///@{
     /**
      * <p>If the action is successful, the service sends back an HTTP 200 response.
-     * Amazon SageMaker returns the following data in JSON format:</p> <ul> <li> <p>
+     * Amazon SageMaker AI returns the following data in JSON format:</p> <ul> <li> <p>
      * <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled
      * job.</p> </li> </ul>
      */

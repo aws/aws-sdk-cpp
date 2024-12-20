@@ -46,7 +46,7 @@ namespace Model
      * (ClassificationScopeUpdateOperation), an array of strings that: lists the names
      * of buckets to add or remove from the list, or specifies a new set of bucket
      * names that overwrites all existing names in the list. Each string must be the
-     * full name of an S3 bucket. Values are case sensitive.</p>
+     * full name of an existing S3 bucket. Values are case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBucketNames() const{ return m_bucketNames; }
     inline bool BucketNamesHasBeenSet() const { return m_bucketNamesHasBeenSet; }

@@ -169,14 +169,18 @@ namespace BedrockAgentRuntime
          * processed, the actions it took, and the final result it yielded. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace
-         * enablement</a>.</p> </li> <li> <p>End a conversation by setting
-         * <code>endSession</code> to <code>true</code>.</p> </li> <li> <p>In the
-         * <code>sessionState</code> object, you can include attributes for the session or
-         * prompt or, if you configured an action group to return control, results from
-         * invocation of the action group.</p> </li> </ul> <p>The response is returned in
-         * the <code>bytes</code> field of the <code>chunk</code> object.</p> <ul> <li>
-         * <p>The <code>attribution</code> object contains citations for parts of the
-         * response.</p> </li> <li> <p>If you set <code>enableTrace</code> to
+         * enablement</a>.</p> </li> <li> <p>To stream agent responses, make sure that only
+         * orchestration prompt is enabled. Agent streaming is not supported for the
+         * following steps: </p> <ul> <li> <p> <code>Pre-processing</code> </p> </li> <li>
+         * <p> <code>Post-processing</code> </p> </li> <li> <p>Agent with 1 Knowledge base
+         * and <code>User Input</code> not enabled</p> </li> </ul> </li> <li> <p>End a
+         * conversation by setting <code>endSession</code> to <code>true</code>.</p> </li>
+         * <li> <p>In the <code>sessionState</code> object, you can include attributes for
+         * the session or prompt or, if you configured an action group to return control,
+         * results from invocation of the action group.</p> </li> </ul> <p>The response is
+         * returned in the <code>bytes</code> field of the <code>chunk</code> object.</p>
+         * <ul> <li> <p>The <code>attribution</code> object contains citations for parts of
+         * the response.</p> </li> <li> <p>If you set <code>enableTrace</code> to
          * <code>true</code> in the request, you can trace the agent's steps and reasoning
          * process that led it to the response.</p> </li> <li> <p>If the action predicted
          * was configured to return control, the response returns parameters for the

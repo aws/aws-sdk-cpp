@@ -23,7 +23,8 @@ WebCrawlerConfiguration::WebCrawlerConfiguration() :
     m_exclusionFiltersHasBeenSet(false),
     m_inclusionFiltersHasBeenSet(false),
     m_scope(WebScopeType::NOT_SET),
-    m_scopeHasBeenSet(false)
+    m_scopeHasBeenSet(false),
+    m_userAgentHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,13 @@ WebCrawlerConfiguration& WebCrawlerConfiguration::operator =(JsonView jsonValue)
     m_scopeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("userAgent"))
+  {
+    m_userAgent = jsonValue.GetString("userAgent");
+
+    m_userAgentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -107,6 +115,12 @@ JsonValue WebCrawlerConfiguration::Jsonize() const
   if(m_scopeHasBeenSet)
   {
    payload.WithString("scope", WebScopeTypeMapper::GetNameForWebScopeType(m_scope));
+  }
+
+  if(m_userAgentHasBeenSet)
+  {
+   payload.WithString("userAgent", m_userAgent);
+
   }
 
   return payload;

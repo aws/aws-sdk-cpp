@@ -51,7 +51,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>If the response is truncated, Amazon SageMaker returns this
+     * <p>If the response is truncated, Amazon SageMaker AI returns this
      * <code>NextToken</code>. To retrieve the next set of model compilation jobs, use
      * this token in the next request.</p>
      */

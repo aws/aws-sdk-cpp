@@ -19,7 +19,8 @@ namespace Model
 {
 
 InsightCategorySpecificSummary::InsightCategorySpecificSummary() : 
-    m_deprecationDetailsHasBeenSet(false)
+    m_deprecationDetailsHasBeenSet(false),
+    m_addonCompatibilityDetailsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,16 @@ InsightCategorySpecificSummary& InsightCategorySpecificSummary::operator =(JsonV
     m_deprecationDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("addonCompatibilityDetails"))
+  {
+    Aws::Utils::Array<JsonView> addonCompatibilityDetailsJsonList = jsonValue.GetArray("addonCompatibilityDetails");
+    for(unsigned addonCompatibilityDetailsIndex = 0; addonCompatibilityDetailsIndex < addonCompatibilityDetailsJsonList.GetLength(); ++addonCompatibilityDetailsIndex)
+    {
+      m_addonCompatibilityDetails.push_back(addonCompatibilityDetailsJsonList[addonCompatibilityDetailsIndex].AsObject());
+    }
+    m_addonCompatibilityDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -56,6 +67,17 @@ JsonValue InsightCategorySpecificSummary::Jsonize() const
      deprecationDetailsJsonList[deprecationDetailsIndex].AsObject(m_deprecationDetails[deprecationDetailsIndex].Jsonize());
    }
    payload.WithArray("deprecationDetails", std::move(deprecationDetailsJsonList));
+
+  }
+
+  if(m_addonCompatibilityDetailsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> addonCompatibilityDetailsJsonList(m_addonCompatibilityDetails.size());
+   for(unsigned addonCompatibilityDetailsIndex = 0; addonCompatibilityDetailsIndex < addonCompatibilityDetailsJsonList.GetLength(); ++addonCompatibilityDetailsIndex)
+   {
+     addonCompatibilityDetailsJsonList[addonCompatibilityDetailsIndex].AsObject(m_addonCompatibilityDetails[addonCompatibilityDetailsIndex].Jsonize());
+   }
+   payload.WithArray("addonCompatibilityDetails", std::move(addonCompatibilityDetailsJsonList));
 
   }
 

@@ -19,7 +19,8 @@ namespace Model
     L6_30P,
     IEC309,
     AH530P7W,
-    AH532P6W
+    AH532P6W,
+    CS8365C
   };
 
 namespace PowerConnectorMapper

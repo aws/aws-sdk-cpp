@@ -90,7 +90,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>The type of app created within the space.</p>
+     * <p>The type of app created within the space.</p> <p>If using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html">
+     * UpdateSpace</a> API, you can't change the app type of your space by specifying a
+     * different value for this field.</p>
      */
     inline const AppType& GetAppType() const{ return m_appType; }
     inline bool AppTypeHasBeenSet() const { return m_appTypeHasBeenSet; }
@@ -115,8 +118,8 @@ namespace Model
     ///@{
     /**
      * <p>A file system, created by you, that you assign to a space for an Amazon
-     * SageMaker Domain. Permitted users can access this file system in Amazon
-     * SageMaker Studio.</p>
+     * SageMaker AI Domain. Permitted users can access this file system in Amazon
+     * SageMaker AI Studio.</p>
      */
     inline const Aws::Vector<CustomFileSystem>& GetCustomFileSystems() const{ return m_customFileSystems; }
     inline bool CustomFileSystemsHasBeenSet() const { return m_customFileSystemsHasBeenSet; }

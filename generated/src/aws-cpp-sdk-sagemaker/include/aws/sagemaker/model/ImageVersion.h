@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A version of a SageMaker <code>Image</code>. A version represents an existing
-   * container image.</p><p><h3>See Also:</h3>   <a
+   * <p>A version of a SageMaker AI <code>Image</code>. A version represents an
+   * existing container image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImageVersion">AWS
    * API Reference</a></p>
    */

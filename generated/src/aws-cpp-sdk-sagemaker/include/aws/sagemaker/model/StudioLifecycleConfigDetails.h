@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Details of the Amazon SageMaker Studio Lifecycle Configuration.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Details of the Amazon SageMaker AI Studio Lifecycle
+   * Configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StudioLifecycleConfigDetails">AWS
    * API Reference</a></p>
    */
@@ -56,7 +56,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration.</p>
+     * <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration.</p>
      */
     inline const Aws::String& GetStudioLifecycleConfigName() const{ return m_studioLifecycleConfigName; }
     inline bool StudioLifecycleConfigNameHasBeenSet() const { return m_studioLifecycleConfigNameHasBeenSet; }
@@ -70,7 +70,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The creation time of the Amazon SageMaker Studio Lifecycle Configuration.</p>
+     * <p>The creation time of the Amazon SageMaker AI Studio Lifecycle
+     * Configuration.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
@@ -82,7 +83,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>This value is equivalent to CreationTime because Amazon SageMaker Studio
+     * <p>This value is equivalent to CreationTime because Amazon SageMaker AI Studio
      * Lifecycle Configurations are immutable.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }

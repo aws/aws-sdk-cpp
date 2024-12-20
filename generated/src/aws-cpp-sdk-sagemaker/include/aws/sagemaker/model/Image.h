@@ -26,10 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>A SageMaker image. A SageMaker image represents a set of container images
-   * that are derived from a common base container image. Each of these container
-   * images is represented by a SageMaker <code>ImageVersion</code>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A SageMaker AI image. A SageMaker AI image represents a set of container
+   * images that are derived from a common base container image. Each of these
+   * container images is represented by a SageMaker AI
+   * <code>ImageVersion</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Image">AWS API
    * Reference</a></p>
    */

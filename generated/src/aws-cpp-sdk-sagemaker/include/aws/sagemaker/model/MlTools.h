@@ -31,11 +31,11 @@ namespace Model
     Projects,
     InferenceOptimization,
     PerformanceEvaluation,
-    HyperPodClusters,
     LakeraGuard,
     Comet,
     DeepchecksLLMEvaluation,
-    Fiddler
+    Fiddler,
+    HyperPodClusters
   };
 
 namespace MlToolsMapper

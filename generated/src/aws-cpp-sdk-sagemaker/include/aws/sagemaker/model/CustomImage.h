@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>A custom SageMaker image. For more information, see <a
+   * <p>A custom SageMaker AI image. For more information, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
-   * your own SageMaker image</a>.</p><p><h3>See Also:</h3>   <a
+   * your own SageMaker AI image</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CustomImage">AWS
    * API Reference</a></p>
    */

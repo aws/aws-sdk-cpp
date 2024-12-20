@@ -16,7 +16,8 @@ namespace Model
   enum class SharePointAuthType
   {
     NOT_SET,
-    OAUTH2_CLIENT_CREDENTIALS
+    OAUTH2_CLIENT_CREDENTIALS,
+    OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS
   };
 
 namespace SharePointAuthTypeMapper

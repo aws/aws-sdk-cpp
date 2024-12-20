@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies options for sharing Amazon SageMaker Studio notebooks. These
+   * <p>Specifies options for sharing Amazon SageMaker AI Studio notebooks. These
    * settings are specified as part of <code>DefaultUserSettings</code> when the
    * <code>CreateDomain</code> API is called, and as part of
    * <code>UserSettings</code> when the <code>CreateUserProfile</code> API is called.

@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>Specifies a custom data identifier or managed data identifier that detected a
-   * type of sensitive data to start excluding or including in an S3 bucket's
-   * sensitivity score.</p><p><h3>See Also:</h3>   <a
+   * type of sensitive data to exclude from an S3 bucket's sensitivity
+   * score.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SuppressDataIdentifier">AWS
    * API Reference</a></p>
    */
@@ -43,7 +43,7 @@ namespace Model
     ///@{
     /**
      * <p>The unique identifier for the custom data identifier or managed data
-     * identifier that detected the type of sensitive data to exclude or include in the
+     * identifier that detected the type of sensitive data to exclude from the
      * score.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }

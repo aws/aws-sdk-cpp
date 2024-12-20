@@ -101,14 +101,15 @@ namespace Model
     ///@{
     /**
      * <p> When you send any requests to Amazon Web Services resources from the
-     * notebook instance, SageMaker assumes this role to perform tasks on your behalf.
-     * You must grant this role necessary permissions so SageMaker can perform these
-     * tasks. The policy must allow the SageMaker service principal
+     * notebook instance, SageMaker AI assumes this role to perform tasks on your
+     * behalf. You must grant this role necessary permissions so SageMaker AI can
+     * perform these tasks. The policy must allow the SageMaker AI service principal
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
-     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
-     * of this API must have the <code>iam:PassRole</code> permission.</p> 
+     * AI Roles</a>. </p>  <p>To be able to pass this role to SageMaker AI, the
+     * caller of this API must have the <code>iam:PassRole</code> permission.</p>
+     * 
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
@@ -123,8 +124,8 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-     * Service key that SageMaker uses to encrypt data on the storage volume attached
-     * to your notebook instance. The KMS key you provide must be enabled. For
+     * Service key that SageMaker AI uses to encrypt data on the storage volume
+     * attached to your notebook instance. The KMS key you provide must be enabled. For
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
      * and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service
@@ -177,11 +178,11 @@ namespace Model
 
     ///@{
     /**
-     * <p>Sets whether SageMaker provides internet access to the notebook instance. If
-     * you set this to <code>Disabled</code> this notebook instance is able to access
-     * resources only in your VPC, and is not be able to connect to SageMaker training
-     * and endpoint services unless you configure a NAT Gateway in your VPC.</p> <p>For
-     * more information, see <a
+     * <p>Sets whether SageMaker AI provides internet access to the notebook instance.
+     * If you set this to <code>Disabled</code> this notebook instance is able to
+     * access resources only in your VPC, and is not be able to connect to SageMaker AI
+     * training and endpoint services unless you configure a NAT Gateway in your
+     * VPC.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
@@ -232,7 +233,7 @@ namespace Model
      * notebook instance, it opens in the directory that contains this repository. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker AI Notebook Instances</a>.</p>
      */
     inline const Aws::String& GetDefaultCodeRepository() const{ return m_defaultCodeRepository; }
     inline bool DefaultCodeRepositoryHasBeenSet() const { return m_defaultCodeRepositoryHasBeenSet; }
@@ -254,7 +255,7 @@ namespace Model
      * are cloned at the same level as the default repository of your notebook
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker AI Notebook Instances</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const{ return m_additionalCodeRepositories; }
     inline bool AdditionalCodeRepositoriesHasBeenSet() const { return m_additionalCodeRepositoriesHasBeenSet; }

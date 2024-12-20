@@ -114,6 +114,8 @@ namespace Aws
         static const int ml_g5_16xlarge_HASH = HashingUtils::HashString("ml.g5.16xlarge");
         static const int ml_g5_24xlarge_HASH = HashingUtils::HashString("ml.g5.24xlarge");
         static const int ml_g5_48xlarge_HASH = HashingUtils::HashString("ml.g5.48xlarge");
+        static const int ml_trn1_2xlarge_HASH = HashingUtils::HashString("ml.trn1.2xlarge");
+        static const int ml_trn1_32xlarge_HASH = HashingUtils::HashString("ml.trn1.32xlarge");
         static const int ml_inf2_xlarge_HASH = HashingUtils::HashString("ml.inf2.xlarge");
         static const int ml_inf2_8xlarge_HASH = HashingUtils::HashString("ml.inf2.8xlarge");
         static const int ml_inf2_24xlarge_HASH = HashingUtils::HashString("ml.inf2.24xlarge");
@@ -499,6 +501,14 @@ namespace Aws
           {
             return TransformInstanceType::ml_g5_48xlarge;
           }
+          else if (hashCode == ml_trn1_2xlarge_HASH)
+          {
+            return TransformInstanceType::ml_trn1_2xlarge;
+          }
+          else if (hashCode == ml_trn1_32xlarge_HASH)
+          {
+            return TransformInstanceType::ml_trn1_32xlarge;
+          }
           else if (hashCode == ml_inf2_xlarge_HASH)
           {
             return TransformInstanceType::ml_inf2_xlarge;
@@ -719,6 +729,10 @@ namespace Aws
             return "ml.g5.24xlarge";
           case TransformInstanceType::ml_g5_48xlarge:
             return "ml.g5.48xlarge";
+          case TransformInstanceType::ml_trn1_2xlarge:
+            return "ml.trn1.2xlarge";
+          case TransformInstanceType::ml_trn1_32xlarge:
+            return "ml.trn1.32xlarge";
           case TransformInstanceType::ml_inf2_xlarge:
             return "ml.inf2.xlarge";
           case TransformInstanceType::ml_inf2_8xlarge:

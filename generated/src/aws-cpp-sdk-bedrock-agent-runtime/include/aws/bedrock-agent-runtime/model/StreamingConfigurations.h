@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p> Configurations for streaming. </p><p><h3>See Also:</h3>   <a
+   * <p> Configurations for streaming.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/StreamingConfigurations">AWS
    * API Reference</a></p>
    */

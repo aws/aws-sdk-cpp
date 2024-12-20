@@ -750,8 +750,8 @@ namespace Outposts
         }
 
         /**
-         * <p>Starts the specified capacity task. You can have one active capacity task per
-         * order or Outpost.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the specified capacity task. You can have one active capacity task for
+         * each order and each Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartCapacityTask">AWS
          * API Reference</a></p>
          */

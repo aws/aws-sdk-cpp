@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int OAUTH2_CLIENT_CREDENTIALS_HASH = HashingUtils::HashString("OAUTH2_CLIENT_CREDENTIALS");
+        static const int OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS_HASH = HashingUtils::HashString("OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS");
 
 
         SharePointAuthType GetSharePointAuthTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == OAUTH2_CLIENT_CREDENTIALS_HASH)
           {
             return SharePointAuthType::OAUTH2_CLIENT_CREDENTIALS;
+          }
+          else if (hashCode == OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS_HASH)
+          {
+            return SharePointAuthType::OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case SharePointAuthType::OAUTH2_CLIENT_CREDENTIALS:
             return "OAUTH2_CLIENT_CREDENTIALS";
+          case SharePointAuthType::OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS:
+            return "OAUTH2_SHAREPOINT_APP_ONLY_CLIENT_CREDENTIALS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

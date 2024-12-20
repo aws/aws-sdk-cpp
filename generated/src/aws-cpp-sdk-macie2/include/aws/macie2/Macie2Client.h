@@ -1430,8 +1430,8 @@ namespace Macie2
         }
 
         /**
-         * <p>Retrieves a subset of information about all the custom data identifiers for
-         * an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a subset of information about the custom data identifiers for an
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers">AWS
          * API Reference</a></p>
          */
@@ -1769,8 +1769,8 @@ namespace Macie2
 
         /**
          * <p>Retrieves (queries) statistical data and other information about Amazon Web
-         * Services resources that Amazon Macie monitors and analyzes.</p><p><h3>See
-         * Also:</h3>   <a
+         * Services resources that Amazon Macie monitors and analyzes for an
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources">AWS
          * API Reference</a></p>
          */

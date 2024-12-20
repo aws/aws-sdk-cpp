@@ -79,9 +79,10 @@ namespace Model
     ///@{
     /**
      * <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared
-     * access settings for. Macie can't determine whether these buckets are shared with
-     * other Amazon Web Services accounts, Amazon CloudFront OAIs, or CloudFront
-     * OACs.</p>
+     * access settings for. For example, the buckets' permissions settings or a quota
+     * prevented Macie from retrieving the requisite data. Macie can't determine
+     * whether the buckets are shared with other Amazon Web Services accounts, Amazon
+     * CloudFront OAIs, or CloudFront OACs.</p>
      */
     inline long long GetUnknown() const{ return m_unknown; }
     inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }

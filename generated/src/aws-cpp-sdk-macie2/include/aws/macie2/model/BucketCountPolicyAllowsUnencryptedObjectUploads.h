@@ -71,9 +71,10 @@ namespace Model
     ///@{
     /**
      * <p>The total number of buckets that Amazon Macie wasn't able to evaluate
-     * server-side encryption requirements for. Macie can't determine whether the
-     * bucket policies for these buckets require server-side encryption of new
-     * objects.</p>
+     * server-side encryption requirements for. For example, the buckets' permissions
+     * settings or a quota prevented Macie from retrieving the requisite data. Macie
+     * can't determine whether bucket policies for the buckets require server-side
+     * encryption of new objects.</p>
      */
     inline long long GetUnknown() const{ return m_unknown; }
     inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }

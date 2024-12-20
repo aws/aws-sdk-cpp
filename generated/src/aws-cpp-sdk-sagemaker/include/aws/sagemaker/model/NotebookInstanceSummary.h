@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides summary information for an SageMaker notebook
+   * <p>Provides summary information for an SageMaker AI notebook
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/NotebookInstanceSummary">AWS
    * API Reference</a></p>
@@ -161,7 +161,7 @@ namespace Model
      * notebook instance, it opens in the directory that contains this repository. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker AI Notebook Instances</a>.</p>
      */
     inline const Aws::String& GetDefaultCodeRepository() const{ return m_defaultCodeRepository; }
     inline bool DefaultCodeRepositoryHasBeenSet() const { return m_defaultCodeRepositoryHasBeenSet; }
@@ -183,7 +183,7 @@ namespace Model
      * are cloned at the same level as the default repository of your notebook
      * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker AI Notebook Instances</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const{ return m_additionalCodeRepositories; }
     inline bool AdditionalCodeRepositoriesHasBeenSet() const { return m_additionalCodeRepositoriesHasBeenSet; }

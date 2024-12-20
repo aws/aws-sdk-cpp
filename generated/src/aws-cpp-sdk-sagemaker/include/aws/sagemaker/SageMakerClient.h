@@ -314,9 +314,9 @@ namespace SageMaker
 
         /**
          * <p>Creates a running app for the specified UserProfile. This operation is
-         * automatically invoked by Amazon SageMaker upon access to the associated Domain,
-         * and when new kernel configurations are selected by the user. A user may have
-         * multiple Apps active simultaneously.</p><p><h3>See Also:</h3>   <a
+         * automatically invoked by Amazon SageMaker AI upon access to the associated
+         * Domain, and when new kernel configurations are selected by the user. A user may
+         * have multiple Apps active simultaneously.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">AWS
          * API Reference</a></p>
          */
@@ -341,9 +341,10 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a configuration for running a SageMaker image as a KernelGateway app.
-         * The configuration specifies the Amazon Elastic File System storage volume on the
-         * image, and a list of the kernels in the image.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a configuration for running a SageMaker AI image as a KernelGateway
+         * app. The configuration specifies the Amazon Elastic File System storage volume
+         * on the image, and a list of the kernels in the image.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">AWS
          * API Reference</a></p>
          */
@@ -398,21 +399,21 @@ namespace SageMaker
 
         /**
          * <p>Creates an Autopilot job also referred to as Autopilot experiment or AutoML
-         * job.</p> <p>An AutoML job in SageMaker is a fully automated process that allows
-         * you to build machine learning models with minimal effort and machine learning
-         * expertise. When initiating an AutoML job, you provide your data and optionally
-         * specify parameters tailored to your use case. SageMaker then automates the
-         * entire model development lifecycle, including data preprocessing, model
-         * training, tuning, and evaluation. AutoML jobs are designed to simplify and
+         * job.</p> <p>An AutoML job in SageMaker AI is a fully automated process that
+         * allows you to build machine learning models with minimal effort and machine
+         * learning expertise. When initiating an AutoML job, you provide your data and
+         * optionally specify parameters tailored to your use case. SageMaker AI then
+         * automates the entire model development lifecycle, including data preprocessing,
+         * model training, tuning, and evaluation. AutoML jobs are designed to simplify and
          * accelerate the model building process by automating various tasks and exploring
          * different combinations of machine learning algorithms, data preprocessing
          * techniques, and hyperparameter values. The output of an AutoML job comprises one
          * or more trained models ready for deployment and inference. Additionally,
-         * SageMaker AutoML jobs generate a candidate model leaderboard, allowing you to
+         * SageMaker AI AutoML jobs generate a candidate model leaderboard, allowing you to
          * select the best-performing model for deployment.</p> <p>For more information
          * about AutoML jobs, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html</a>
-         * in the SageMaker developer guide.</p>  <p>We recommend using the new
+         * in the SageMaker AI developer guide.</p>  <p>We recommend using the new
          * versions <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
          * and <a
@@ -455,24 +456,25 @@ namespace SageMaker
 
         /**
          * <p>Creates an Autopilot job also referred to as Autopilot experiment or AutoML
-         * job V2.</p> <p>An AutoML job in SageMaker is a fully automated process that
+         * job V2.</p> <p>An AutoML job in SageMaker AI is a fully automated process that
          * allows you to build machine learning models with minimal effort and machine
          * learning expertise. When initiating an AutoML job, you provide your data and
-         * optionally specify parameters tailored to your use case. SageMaker then
+         * optionally specify parameters tailored to your use case. SageMaker AI then
          * automates the entire model development lifecycle, including data preprocessing,
          * model training, tuning, and evaluation. AutoML jobs are designed to simplify and
          * accelerate the model building process by automating various tasks and exploring
          * different combinations of machine learning algorithms, data preprocessing
          * techniques, and hyperparameter values. The output of an AutoML job comprises one
          * or more trained models ready for deployment and inference. Additionally,
-         * SageMaker AutoML jobs generate a candidate model leaderboard, allowing you to
+         * SageMaker AI AutoML jobs generate a candidate model leaderboard, allowing you to
          * select the best-performing model for deployment.</p> <p>For more information
          * about AutoML jobs, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html</a>
-         * in the SageMaker developer guide.</p> <p>AutoML jobs V2 support various problem
-         * types such as regression, binary, and multiclass classification with tabular
-         * data, text and image classification, time-series forecasting, and fine-tuning of
-         * large language models (LLMs) for text generation.</p>  <p> <a
+         * in the SageMaker AI developer guide.</p> <p>AutoML jobs V2 support various
+         * problem types such as regression, binary, and multiclass classification with
+         * tabular data, text and image classification, time-series forecasting, and
+         * fine-tuning of large language models (LLMs) for text generation.</p>  <p>
+         * <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
          * and <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>
@@ -577,12 +579,13 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a Git repository as a resource in your SageMaker account. You can
+         * <p>Creates a Git repository as a resource in your SageMaker AI account. You can
          * associate the repository with notebook instances so that you can use Git source
          * control for the notebooks you create. The Git repository is a resource in your
-         * SageMaker account, so it can be associated with more than one notebook instance,
-         * and it persists independently from the lifecycle of any notebook instances it is
-         * associated with.</p> <p>The repository can be hosted either in <a
+         * SageMaker AI account, so it can be associated with more than one notebook
+         * instance, and it persists independently from the lifecycle of any notebook
+         * instances it is associated with.</p> <p>The repository can be hosted either in
+         * <a
          * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
          * Web Services CodeCommit</a> or in any other Git repository.</p><p><h3>See
          * Also:</h3>   <a
@@ -611,16 +614,16 @@ namespace SageMaker
 
         /**
          * <p>Starts a model compilation job. After the model has been compiled, Amazon
-         * SageMaker saves the resulting model artifacts to an Amazon Simple Storage
+         * SageMaker AI saves the resulting model artifacts to an Amazon Simple Storage
          * Service (Amazon S3) bucket that you specify. </p> <p>If you choose to host your
-         * model using Amazon SageMaker hosting services, you can use the resulting model
-         * artifacts as part of the model. You can also use the artifacts with Amazon Web
-         * Services IoT Greengrass. In that case, deploy them as an ML resource.</p> <p>In
-         * the request body, you provide the following:</p> <ul> <li> <p>A name for the
-         * compilation job</p> </li> <li> <p> Information about the input model artifacts
-         * </p> </li> <li> <p>The output location for the compiled model and the device
-         * (target) that the model runs on </p> </li> <li> <p>The Amazon Resource Name
-         * (ARN) of the IAM role that Amazon SageMaker assumes to perform the model
+         * model using Amazon SageMaker AI hosting services, you can use the resulting
+         * model artifacts as part of the model. You can also use the artifacts with Amazon
+         * Web Services IoT Greengrass. In that case, deploy them as an ML resource.</p>
+         * <p>In the request body, you provide the following:</p> <ul> <li> <p>A name for
+         * the compilation job</p> </li> <li> <p> Information about the input model
+         * artifacts </p> </li> <li> <p>The output location for the compiled model and the
+         * device (target) that the model runs on </p> </li> <li> <p>The Amazon Resource
+         * Name (ARN) of the IAM role that Amazon SageMaker AI assumes to perform the model
          * compilation job. </p> </li> </ul> <p>You can also provide a <code>Tag</code> to
          * track the model compilation job's resource use and costs. The response body
          * contains the <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop
@@ -715,7 +718,7 @@ namespace SageMaker
          * <p>Creates a definition for a job that monitors data quality and drift. For
          * information about model monitor, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
-         * SageMaker Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker AI Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition">AWS
          * API Reference</a></p>
          */
@@ -772,11 +775,11 @@ namespace SageMaker
          * artifacts with each other.</p> <p> <b>EFS storage</b> </p> <p>When a domain is
          * created, an EFS volume is created for use by all of the users within the domain.
          * Each user receives a private home directory within the EFS volume for notebooks,
-         * Git repositories, and data files.</p> <p>SageMaker uses the Amazon Web Services
-         * Key Management Service (Amazon Web Services KMS) to encrypt the EFS volume
-         * attached to the domain with an Amazon Web Services managed key by default. For
-         * more control, you can specify a customer managed key. For more information, see
-         * <a
+         * Git repositories, and data files.</p> <p>SageMaker AI uses the Amazon Web
+         * Services Key Management Service (Amazon Web Services KMS) to encrypt the EFS
+         * volume attached to the domain with an Amazon Web Services managed key by
+         * default. For more control, you can specify a customer managed key. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
          * Data at Rest Using Encryption</a>.</p> <p> <b>VPC configuration</b> </p> <p>All
          * traffic between the domain and the Amazon EFS volume is through the specified
@@ -785,19 +788,19 @@ namespace SageMaker
          * corresponds to the network access type that you choose when you onboard to the
          * domain. The following options are available:</p> <ul> <li> <p>
          * <code>PublicInternetOnly</code> - Non-EFS traffic goes through a VPC managed by
-         * Amazon SageMaker, which allows internet access. This is the default value.</p>
-         * </li> <li> <p> <code>VpcOnly</code> - All traffic is through the specified VPC
-         * and subnets. Internet access is disabled by default. To allow internet access,
-         * you must specify a NAT gateway.</p> <p>When internet access is disabled, you
-         * won't be able to run a Amazon SageMaker Studio notebook or to train or host
-         * models unless your VPC has an interface endpoint to the SageMaker API and
-         * runtime or a NAT gateway and your security groups allow outbound
+         * Amazon SageMaker AI, which allows internet access. This is the default
+         * value.</p> </li> <li> <p> <code>VpcOnly</code> - All traffic is through the
+         * specified VPC and subnets. Internet access is disabled by default. To allow
+         * internet access, you must specify a NAT gateway.</p> <p>When internet access is
+         * disabled, you won't be able to run a Amazon SageMaker AI Studio notebook or to
+         * train or host models unless your VPC has an interface endpoint to the SageMaker
+         * AI API and runtime or a NAT gateway and your security groups allow outbound
          * connections.</p> </li> </ul>  <p>NFS traffic over TCP on port 2049
          * needs to be allowed in both inbound and outbound rules in order to launch a
-         * Amazon SageMaker Studio app successfully.</p>  <p>For more
+         * Amazon SageMaker AI Studio app successfully.</p>  <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
-         * Amazon SageMaker Studio Notebooks to Resources in a VPC</a>.</p><p><h3>See
+         * Amazon SageMaker AI Studio Notebooks to Resources in a VPC</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
          * API Reference</a></p>
@@ -1277,11 +1280,11 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a custom SageMaker image. A SageMaker image is a set of image
+         * <p>Creates a custom SageMaker AI image. A SageMaker AI image is a set of image
          * versions. Each image version represents a container image stored in Amazon ECR.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring
-         * your own SageMaker image</a>.</p><p><h3>See Also:</h3>   <a
+         * your own SageMaker AI image</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImage">AWS
          * API Reference</a></p>
          */
@@ -1306,9 +1309,9 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a version of the SageMaker image specified by <code>ImageName</code>.
-         * The version represents the Amazon ECR container image specified by
-         * <code>BaseImage</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a version of the SageMaker AI image specified by
+         * <code>ImageName</code>. The version represents the Amazon ECR container image
+         * specified by <code>BaseImage</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion">AWS
          * API Reference</a></p>
          */
@@ -1333,15 +1336,16 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates an inference component, which is a SageMaker hosting object that you
-         * can use to deploy a model to an endpoint. In the inference component settings,
-         * you specify the model, the endpoint, and how the model utilizes the resources
-         * that the endpoint hosts. You can optimize resource utilization by tailoring how
-         * the required CPU cores, accelerators, and memory are allocated. You can deploy
-         * multiple inference components to an endpoint, where each inference component
-         * contains one model and the resource utilization needs for that individual model.
-         * After you deploy an inference component, you can directly invoke the associated
-         * model when you use the InvokeEndpoint API action.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an inference component, which is a SageMaker AI hosting object that
+         * you can use to deploy a model to an endpoint. In the inference component
+         * settings, you specify the model, the endpoint, and how the model utilizes the
+         * resources that the endpoint hosts. You can optimize resource utilization by
+         * tailoring how the required CPU cores, accelerators, and memory are allocated.
+         * You can deploy multiple inference components to an endpoint, where each
+         * inference component contains one model and the resource utilization needs for
+         * that individual model. After you deploy an inference component, you can directly
+         * invoke the associated model when you use the InvokeEndpoint API
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceComponent">AWS
          * API Reference</a></p>
          */
@@ -1727,7 +1731,7 @@ namespace SageMaker
          * <p>Creates a definition for a job that monitors model quality and drift. For
          * information about model monitor, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
-         * SageMaker Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker AI Model Monitor</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition">AWS
          * API Reference</a></p>
          */
@@ -1752,8 +1756,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to
-         * monitor the data captured for an Amazon SageMaker Endpoint.</p><p><h3>See
+         * <p>Creates a schedule that regularly starts Amazon SageMaker AI Processing Jobs
+         * to monitor the data captured for an Amazon SageMaker AI Endpoint.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMonitoringSchedule">AWS
          * API Reference</a></p>
@@ -1779,32 +1783,32 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates an SageMaker notebook instance. A notebook instance is a machine
+         * <p>Creates an SageMaker AI notebook instance. A notebook instance is a machine
          * learning (ML) compute instance running on a Jupyter notebook. </p> <p>In a
          * <code>CreateNotebookInstance</code> request, specify the type of ML compute
-         * instance that you want to run. SageMaker launches the instance, installs common
-         * libraries that you can use to explore datasets for model training, and attaches
-         * an ML storage volume to the notebook instance. </p> <p>SageMaker also provides a
-         * set of example notebooks. Each notebook demonstrates how to use SageMaker with a
-         * specific algorithm or with a machine learning framework. </p> <p>After receiving
-         * the request, SageMaker does the following:</p> <ol> <li> <p>Creates a network
-         * interface in the SageMaker VPC.</p> </li> <li> <p>(Option) If you specified
-         * <code>SubnetId</code>, SageMaker creates a network interface in your own VPC,
-         * which is inferred from the subnet ID that you provide in the input. When
-         * creating this network interface, SageMaker attaches the security group that you
-         * specified in the request to the network interface that it creates in your
-         * VPC.</p> </li> <li> <p>Launches an EC2 instance of the type specified in the
-         * request in the SageMaker VPC. If you specified <code>SubnetId</code> of your
-         * VPC, SageMaker specifies both network interfaces when launching this instance.
-         * This enables inbound traffic from your own VPC to the notebook instance,
-         * assuming that the security groups allow it.</p> </li> </ol> <p>After creating
-         * the notebook instance, SageMaker returns its Amazon Resource Name (ARN). You
-         * can't change the name of a notebook instance after you create it.</p> <p>After
-         * SageMaker creates the notebook instance, you can connect to the Jupyter server
-         * and work in Jupyter notebooks. For example, you can write code to explore a
-         * dataset that you can use for model training, train a model, host models by
-         * creating SageMaker endpoints, and validate hosted models. </p> <p>For more
-         * information, see <a
+         * instance that you want to run. SageMaker AI launches the instance, installs
+         * common libraries that you can use to explore datasets for model training, and
+         * attaches an ML storage volume to the notebook instance. </p> <p>SageMaker AI
+         * also provides a set of example notebooks. Each notebook demonstrates how to use
+         * SageMaker AI with a specific algorithm or with a machine learning framework.
+         * </p> <p>After receiving the request, SageMaker AI does the following:</p> <ol>
+         * <li> <p>Creates a network interface in the SageMaker AI VPC.</p> </li> <li>
+         * <p>(Option) If you specified <code>SubnetId</code>, SageMaker AI creates a
+         * network interface in your own VPC, which is inferred from the subnet ID that you
+         * provide in the input. When creating this network interface, SageMaker AI
+         * attaches the security group that you specified in the request to the network
+         * interface that it creates in your VPC.</p> </li> <li> <p>Launches an EC2
+         * instance of the type specified in the request in the SageMaker AI VPC. If you
+         * specified <code>SubnetId</code> of your VPC, SageMaker AI specifies both network
+         * interfaces when launching this instance. This enables inbound traffic from your
+         * own VPC to the notebook instance, assuming that the security groups allow
+         * it.</p> </li> </ol> <p>After creating the notebook instance, SageMaker AI
+         * returns its Amazon Resource Name (ARN). You can't change the name of a notebook
+         * instance after you create it.</p> <p>After SageMaker AI creates the notebook
+         * instance, you can connect to the Jupyter server and work in Jupyter notebooks.
+         * For example, you can write code to explore a dataset that you can use for model
+         * training, train a model, host models by creating SageMaker AI endpoints, and
+         * validate hosted models. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
          * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance">AWS
@@ -1991,7 +1995,7 @@ namespace SageMaker
          * that it returns to a list of IP addresses, Amazon VPCs or Amazon VPC Endpoints
          * that you specify. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
-         * to Amazon SageMaker Studio Through an Interface VPC Endpoint</a> .</p> 
+         * to Amazon SageMaker AI Studio Through an Interface VPC Endpoint</a> .</p> 
          * <ul> <li> <p>The URL that you get from a call to
          * <code>CreatePresignedDomainUrl</code> has a default timeout of 5 minutes. You
          * can configure this value using <code>ExpiresInSeconds</code>. If you try to use
@@ -2053,19 +2057,19 @@ namespace SageMaker
 
         /**
          * <p>Returns a URL that you can use to connect to the Jupyter server from a
-         * notebook instance. In the SageMaker console, when you choose <code>Open</code>
-         * next to a notebook instance, SageMaker opens a new tab showing the Jupyter
-         * server home page from the notebook instance. The console uses this API to get
-         * the URL and show the page.</p> <p> The IAM role or user used to call this API
-         * defines the permissions to access the notebook instance. Once the presigned URL
-         * is created, no additional permission is required to access this URL. IAM
-         * authorization policies for this API are also enforced for every HTTP request and
-         * WebSocket frame that attempts to connect to the notebook instance.</p> <p>You
-         * can restrict access to this API and to the URL that it returns to a list of IP
-         * addresses that you specify. Use the <code>NotIpAddress</code> condition operator
-         * and the <code>aws:SourceIP</code> condition context key to specify the list of
-         * IP addresses that you want to have access to the notebook instance. For more
-         * information, see <a
+         * notebook instance. In the SageMaker AI console, when you choose
+         * <code>Open</code> next to a notebook instance, SageMaker AI opens a new tab
+         * showing the Jupyter server home page from the notebook instance. The console
+         * uses this API to get the URL and show the page.</p> <p> The IAM role or user
+         * used to call this API defines the permissions to access the notebook instance.
+         * Once the presigned URL is created, no additional permission is required to
+         * access this URL. IAM authorization policies for this API are also enforced for
+         * every HTTP request and WebSocket frame that attempts to connect to the notebook
+         * instance.</p> <p>You can restrict access to this API and to the URL that it
+         * returns to a list of IP addresses that you specify. Use the
+         * <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code>
+         * condition context key to specify the list of IP addresses that you want to have
+         * access to the notebook instance. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p>  <p>The URL that you
          * get from a call to <a
@@ -2175,8 +2179,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Creates a new Amazon SageMaker Studio Lifecycle Configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new Amazon SageMaker AI Studio Lifecycle
+         * Configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateStudioLifecycleConfig">AWS
          * API Reference</a></p>
          */
@@ -2770,10 +2774,10 @@ namespace SageMaker
 
         /**
          * <p>Deletes the specified compilation job. This action deletes only the
-         * compilation job resource in Amazon SageMaker. It doesn't delete other resources
-         * that are related to that job, such as the model artifacts that the job creates,
-         * the compilation logs in CloudWatch, the compiled model, or the IAM role.</p>
-         * <p>You can delete a compilation job only if its current status is
+         * compilation job resource in Amazon SageMaker AI. It doesn't delete other
+         * resources that are related to that job, such as the model artifacts that the job
+         * creates, the compilation logs in CloudWatch, the compiled model, or the IAM
+         * role.</p> <p>You can delete a compilation job only if its current status is
          * <code>COMPLETED</code>, <code>FAILED</code>, or <code>STOPPED</code>. If the job
          * status is <code>STARTING</code> or <code>INPROGRESS</code>, stop the job, and
          * then delete it after its status becomes <code>STOPPED</code>.</p><p><h3>See
@@ -3276,8 +3280,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Deletes a SageMaker image and all versions of the image. The container images
-         * aren't deleted.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a SageMaker AI image and all versions of the image. The container
+         * images aren't deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage">AWS
          * API Reference</a></p>
          */
@@ -3302,7 +3306,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Deletes a version of a SageMaker image. The container image the version
+         * <p>Deletes a version of a SageMaker AI image. The container image the version
          * represents isn't deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion">AWS
          * API Reference</a></p>
@@ -3435,7 +3439,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Deletes an Amazon SageMaker model bias job definition.</p><p><h3>See
+         * <p>Deletes an Amazon SageMaker AI model bias job definition.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition">AWS
          * API Reference</a></p>
@@ -3486,7 +3490,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Deletes an Amazon SageMaker model explainability job
+         * <p>Deletes an Amazon SageMaker AI model explainability job
          * definition.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition">AWS
          * API Reference</a></p>
@@ -3643,11 +3647,11 @@ namespace SageMaker
         }
 
         /**
-         * <p> Deletes an SageMaker notebook instance. Before you can delete a notebook
+         * <p> Deletes an SageMaker AI notebook instance. Before you can delete a notebook
          * instance, you must call the <code>StopNotebookInstance</code> API. </p>
          *  <p>When you delete a notebook instance, you lose all of your data.
-         * SageMaker removes the ML compute instance, and deletes the ML storage volume and
-         * the network interface associated with the notebook instance. </p>
+         * SageMaker AI removes the ML compute instance, and deletes the ML storage volume
+         * and the network interface associated with the notebook instance. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstance">AWS
          * API Reference</a></p>
@@ -3827,7 +3831,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Deletes the Amazon SageMaker Studio Lifecycle Configuration. In order to
+         * <p>Deletes the Amazon SageMaker AI Studio Lifecycle Configuration. In order to
          * delete the Lifecycle Configuration, there must be no running apps using the
          * Lifecycle Configuration. You must also remove the Lifecycle Configuration from
          * UserSettings in all Domains and UserProfiles.</p><p><h3>See Also:</h3>   <a
@@ -4841,7 +4845,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Describes a SageMaker image.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a SageMaker AI image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage">AWS
          * API Reference</a></p>
          */
@@ -4866,7 +4870,7 @@ namespace SageMaker
         }
 
         /**
-         * <p>Describes a version of a SageMaker image.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a version of a SageMaker AI image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion">AWS
          * API Reference</a></p>
          */
@@ -5544,8 +5548,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Describes the Amazon SageMaker Studio Lifecycle Configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the Amazon SageMaker AI Studio Lifecycle
+         * Configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeStudioLifecycleConfig">AWS
          * API Reference</a></p>
          */
@@ -7562,8 +7566,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Returns a list of the SageMaker notebook instances in the requester's account
-         * in an Amazon Web Services Region. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of the SageMaker AI notebook instances in the requester's
+         * account in an Amazon Web Services Region. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstances">AWS
          * API Reference</a></p>
          */
@@ -7872,8 +7876,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Lists the Amazon SageMaker Studio Lifecycle Configurations in your Amazon Web
-         * Services Account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon SageMaker AI Studio Lifecycle Configurations in your Amazon
+         * Web Services Account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStudioLifecycleConfigs">AWS
          * API Reference</a></p>
          */
@@ -8569,7 +8573,7 @@ namespace SageMaker
         /**
          * <p>Launches an ML compute instance with the latest version of the libraries and
          * attaches your ML storage volume. After configuring the notebook instance,
-         * SageMaker sets the notebook instance status to <code>InService</code>. A
+         * SageMaker AI sets the notebook instance status to <code>InService</code>. A
          * notebook instance's status must be <code>InService</code> before you can connect
          * to your Jupyter notebook. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance">AWS
@@ -8647,10 +8651,10 @@ namespace SageMaker
         }
 
         /**
-         * <p>Stops a model compilation job.</p> <p> To stop a job, Amazon SageMaker sends
-         * the algorithm the SIGTERM signal. This gracefully shuts the job down. If the job
-         * hasn't stopped, it sends the SIGKILL signal.</p> <p>When it receives a
-         * <code>StopCompilationJob</code> request, Amazon SageMaker changes the
+         * <p>Stops a model compilation job.</p> <p> To stop a job, Amazon SageMaker AI
+         * sends the algorithm the SIGTERM signal. This gracefully shuts the job down. If
+         * the job hasn't stopped, it sends the SIGKILL signal.</p> <p>When it receives a
+         * <code>StopCompilationJob</code> request, Amazon SageMaker AI changes the
          * <code>CompilationJobStatus</code> of the job to <code>Stopping</code>. After
          * Amazon SageMaker stops the job, it sets the <code>CompilationJobStatus</code> to
          * <code>Stopped</code>. </p><p><h3>See Also:</h3>   <a
@@ -8887,11 +8891,11 @@ namespace SageMaker
 
         /**
          * <p>Terminates the ML compute instance. Before terminating the instance,
-         * SageMaker disconnects the ML storage volume from it. SageMaker preserves the ML
-         * storage volume. SageMaker stops charging you for the ML compute instance when
-         * you call <code>StopNotebookInstance</code>.</p> <p>To access data on the ML
-         * storage volume for a notebook instance that has been terminated, call the
-         * <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code>
+         * SageMaker AI disconnects the ML storage volume from it. SageMaker AI preserves
+         * the ML storage volume. SageMaker AI stops charging you for the ML compute
+         * instance when you call <code>StopNotebookInstance</code>.</p> <p>To access data
+         * on the ML storage volume for a notebook instance that has been terminated, call
+         * the <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code>
          * launches another ML compute instance, configures it, and attaches the preserved
          * ML storage volume so you can continue your work. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopNotebookInstance">AWS
@@ -9570,8 +9574,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Updates the properties of a SageMaker image. To change the image's tags, use
-         * the <a
+         * <p>Updates the properties of a SageMaker AI image. To change the image's tags,
+         * use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html">AddTags</a>
          * and <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTags.html">DeleteTags</a>
@@ -9600,8 +9604,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Updates the properties of a SageMaker image version.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Updates the properties of a SageMaker AI image version.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImageVersion">AWS
          * API Reference</a></p>
          */
@@ -9995,7 +9999,8 @@ namespace SageMaker
         }
 
         /**
-         * <p>Updates the settings of a space.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the settings of a space.</p>  <p>You can't edit the app type of
+         * a space in the <code>SpaceSettings</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace">AWS
          * API Reference</a></p>
          */

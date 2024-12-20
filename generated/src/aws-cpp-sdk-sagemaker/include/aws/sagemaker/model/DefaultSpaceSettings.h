@@ -129,7 +129,7 @@ namespace Model
     ///@{
     /**
      * <p>The settings for assigning a custom file system to a domain. Permitted users
-     * can access this file system in Amazon SageMaker Studio.</p>
+     * can access this file system in Amazon SageMaker AI Studio.</p>
      */
     inline const Aws::Vector<CustomFileSystemConfig>& GetCustomFileSystemConfigs() const{ return m_customFileSystemConfigs; }
     inline bool CustomFileSystemConfigsHasBeenSet() const { return m_customFileSystemConfigsHasBeenSet; }

@@ -151,7 +151,7 @@ namespace Model
      * <p>Specifies the VPC used for non-EFS traffic. The default value is
      * <code>PublicInternetOnly</code>.</p> <ul> <li> <p>
      * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
-     * Amazon SageMaker, which allows direct internet access</p> </li> <li> <p>
+     * Amazon SageMaker AI, which allows direct internet access</p> </li> <li> <p>
      * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p>
      * </li> </ul>
      */
@@ -165,7 +165,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes
+     * <p>SageMaker AI uses Amazon Web Services KMS to encrypt EFS and EBS volumes
      * attached to the domain with an Amazon Web Services managed key by default. For
      * more control, specify a customer managed key.</p>
      */

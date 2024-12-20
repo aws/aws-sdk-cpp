@@ -16,6 +16,7 @@ using namespace Aws::Utils;
 InvokeAgentRequest::InvokeAgentRequest() : 
     m_agentAliasIdHasBeenSet(false),
     m_agentIdHasBeenSet(false),
+    m_bedrockModelConfigurationsHasBeenSet(false),
     m_enableTrace(false),
     m_enableTraceHasBeenSet(false),
     m_endSession(false),
@@ -33,6 +34,12 @@ InvokeAgentRequest::InvokeAgentRequest() :
 Aws::String InvokeAgentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_bedrockModelConfigurationsHasBeenSet)
+  {
+   payload.WithObject("bedrockModelConfigurations", m_bedrockModelConfigurations.Jsonize());
+
+  }
 
   if(m_enableTraceHasBeenSet)
   {

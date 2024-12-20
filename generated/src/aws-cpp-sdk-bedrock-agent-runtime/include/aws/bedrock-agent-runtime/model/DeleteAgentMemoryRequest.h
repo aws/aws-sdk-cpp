@@ -79,6 +79,20 @@ namespace Model
     inline DeleteAgentMemoryRequest& WithMemoryId(Aws::String&& value) { SetMemoryId(std::move(value)); return *this;}
     inline DeleteAgentMemoryRequest& WithMemoryId(const char* value) { SetMemoryId(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The unique session identifier of the memory.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
+    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
+    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
+    inline DeleteAgentMemoryRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+    inline DeleteAgentMemoryRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+    inline DeleteAgentMemoryRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_agentAliasId;
@@ -89,6 +103,9 @@ namespace Model
 
     Aws::String m_memoryId;
     bool m_memoryIdHasBeenSet = false;
+
+    Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
   };
 
 } // namespace Model

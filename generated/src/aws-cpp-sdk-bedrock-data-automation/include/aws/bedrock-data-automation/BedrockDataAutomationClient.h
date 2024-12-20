@@ -16,7 +16,7 @@ namespace Aws
 namespace BedrockDataAutomation
 {
   /**
-   * <p>Amazon Bedrock Keystone Build</p>
+   * <p>Amazon Bedrock Data Automation BuildTime</p>
    */
   class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockDataAutomationClient>
   {
@@ -77,7 +77,8 @@ namespace BedrockDataAutomation
         virtual ~BedrockDataAutomationClient();
 
         /**
-         * <p>Creates an Amazon Bedrock Keystone Blueprint</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Bedrock Data Automation Blueprint</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CreateBlueprint">AWS
          * API Reference</a></p>
          */
@@ -102,7 +103,7 @@ namespace BedrockDataAutomation
         }
 
         /**
-         * <p>Creates a new version of an existing Amazon Bedrock Keystone
+         * <p>Creates a new version of an existing Amazon Bedrock Data Automation
          * Blueprint</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CreateBlueprintVersion">AWS
          * API Reference</a></p>
@@ -128,8 +129,8 @@ namespace BedrockDataAutomation
         }
 
         /**
-         * <p>Creates an Amazon Bedrock Keystone DataAutomationProject</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an Amazon Bedrock Data Automation Project</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CreateDataAutomationProject">AWS
          * API Reference</a></p>
          */
@@ -154,7 +155,7 @@ namespace BedrockDataAutomation
         }
 
         /**
-         * <p>Deletes an existing Amazon Bedrock Keystone Blueprint</p><p><h3>See
+         * <p>Deletes an existing Amazon Bedrock Data Automation Blueprint</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/DeleteBlueprint">AWS
          * API Reference</a></p>
@@ -180,8 +181,8 @@ namespace BedrockDataAutomation
         }
 
         /**
-         * <p>Deletes an existing Amazon Bedrock Keystone
-         * DataAutomationProject</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing Amazon Bedrock Data Automation Project</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/DeleteDataAutomationProject">AWS
          * API Reference</a></p>
          */
@@ -206,8 +207,8 @@ namespace BedrockDataAutomation
         }
 
         /**
-         * <p>Gets an existing Amazon Bedrock Keystone Blueprint</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Gets an existing Amazon Bedrock Data Automation Blueprint</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetBlueprint">AWS
          * API Reference</a></p>
          */
@@ -232,7 +233,7 @@ namespace BedrockDataAutomation
         }
 
         /**
-         * <p>Gets an existing Amazon Bedrock Keystone DataAutomationProject</p><p><h3>See
+         * <p>Gets an existing Amazon Bedrock Data Automation Project</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationProject">AWS
          * API Reference</a></p>
@@ -258,7 +259,7 @@ namespace BedrockDataAutomation
         }
 
         /**
-         * <p>Lists all existing Amazon Bedrock Keystone Blueprints</p><p><h3>See
+         * <p>Lists all existing Amazon Bedrock Data Automation Blueprints</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListBlueprints">AWS
          * API Reference</a></p>
@@ -284,8 +285,8 @@ namespace BedrockDataAutomation
         }
 
         /**
-         * <p>Lists all existing Amazon Bedrock Keystone
-         * DataAutomationProjects</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all existing Amazon Bedrock Data Automation Projects</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/ListDataAutomationProjects">AWS
          * API Reference</a></p>
          */
@@ -310,7 +311,8 @@ namespace BedrockDataAutomation
         }
 
         /**
-         * <p>Updates an existing Amazon Bedrock Blueprint</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Amazon Bedrock Data Automation Blueprint</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/UpdateBlueprint">AWS
          * API Reference</a></p>
          */
@@ -335,7 +337,7 @@ namespace BedrockDataAutomation
         }
 
         /**
-         * <p>Updates an existing Amazon Bedrock DataAutomationProject</p><p><h3>See
+         * <p>Updates an existing Amazon Bedrock Data Automation Project</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/UpdateDataAutomationProject">AWS
          * API Reference</a></p>

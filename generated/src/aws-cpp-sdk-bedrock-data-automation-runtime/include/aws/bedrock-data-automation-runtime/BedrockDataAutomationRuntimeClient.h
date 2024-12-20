@@ -16,7 +16,7 @@ namespace Aws
 namespace BedrockDataAutomationRuntime
 {
   /**
-   * <p>Amazon Bedrock Keystone Runtime</p>
+   * <p>Amazon Bedrock Data Automation Runtime</p>
    */
   class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockDataAutomationRuntimeClient>
   {

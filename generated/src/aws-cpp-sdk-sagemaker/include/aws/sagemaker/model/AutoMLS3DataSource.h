@@ -41,14 +41,14 @@ namespace Model
     ///@{
     /**
      * <p>The data type. </p> <ul> <li> <p>If you choose <code>S3Prefix</code>,
-     * <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that
-     * match the specified key name prefix for model training.</p> <p>The
+     * <code>S3Uri</code> identifies a key name prefix. SageMaker AI uses all objects
+     * that match the specified key name prefix for model training.</p> <p>The
      * <code>S3Prefix</code> should have the following format:</p> <p>
      * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p> </li> <li>
      * <p>If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an
      * object that is a manifest file containing a list of object keys that you want
-     * SageMaker to use for model training.</p> <p>A <code>ManifestFile</code> should
-     * have the format shown below:</p> <p> <code>[ {"prefix":
+     * SageMaker AI to use for model training.</p> <p>A <code>ManifestFile</code>
+     * should have the format shown below:</p> <p> <code>[ {"prefix":
      * "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
      * <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p> <p>
      * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p> <p>

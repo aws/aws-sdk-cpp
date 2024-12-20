@@ -105,7 +105,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Information to be used while uploading the attached file. </p>
+     * <p>The headers to be provided while uploading the file to the URL.</p>
      */
     inline const UploadUrlMetadata& GetUploadUrlMetadata() const{ return m_uploadUrlMetadata; }
     inline void SetUploadUrlMetadata(const UploadUrlMetadata& value) { m_uploadUrlMetadata = value; }

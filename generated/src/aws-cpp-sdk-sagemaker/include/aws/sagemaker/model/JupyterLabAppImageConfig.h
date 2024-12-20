@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for the file system and kernels in a SageMaker image
+   * <p>The configuration for the file system and kernels in a SageMaker AI image
    * running as a JupyterLab app. The <code>FileSystemConfig</code> object is not
    * supported.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/JupyterLabAppImageConfig">AWS

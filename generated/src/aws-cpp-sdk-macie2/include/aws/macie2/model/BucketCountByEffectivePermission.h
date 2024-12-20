@@ -73,8 +73,9 @@ namespace Model
     ///@{
     /**
      * <p>The total number of buckets that Amazon Macie wasn't able to evaluate
-     * permissions settings for. Macie can't determine whether these buckets are
-     * publicly accessible.</p>
+     * permissions settings for. For example, the buckets' policies or a quota
+     * prevented Macie from retrieving the requisite data. Macie can't determine
+     * whether the buckets are publicly accessible.</p>
      */
     inline long long GetUnknown() const{ return m_unknown; }
     inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }

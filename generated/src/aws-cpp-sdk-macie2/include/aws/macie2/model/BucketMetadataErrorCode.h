@@ -16,7 +16,8 @@ namespace Model
   enum class BucketMetadataErrorCode
   {
     NOT_SET,
-    ACCESS_DENIED
+    ACCESS_DENIED,
+    BUCKET_COUNT_EXCEEDS_QUOTA
   };
 
 namespace BucketMetadataErrorCodeMapper

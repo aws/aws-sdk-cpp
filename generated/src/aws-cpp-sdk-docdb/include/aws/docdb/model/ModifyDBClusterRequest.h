@@ -285,6 +285,71 @@ namespace Model
     inline ModifyDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
     inline ModifyDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to manage the master user password with Amazon Web Services
+     * Secrets Manager. If the cluster doesn't manage the master user password with
+     * Amazon Web Services Secrets Manager, you can turn on this management. In this
+     * case, you can't specify <code>MasterUserPassword</code>. If the cluster already
+     * manages the master user password with Amazon Web Services Secrets Manager, and
+     * you specify that the master user password is not managed with Amazon Web
+     * Services Secrets Manager, then you must specify <code>MasterUserPassword</code>.
+     * In this case, Amazon DocumentDB deletes the secret and uses the new password for
+     * the master user specified by <code>MasterUserPassword</code>.</p>
+     */
+    inline bool GetManageMasterUserPassword() const{ return m_manageMasterUserPassword; }
+    inline bool ManageMasterUserPasswordHasBeenSet() const { return m_manageMasterUserPasswordHasBeenSet; }
+    inline void SetManageMasterUserPassword(bool value) { m_manageMasterUserPasswordHasBeenSet = true; m_manageMasterUserPassword = value; }
+    inline ModifyDBClusterRequest& WithManageMasterUserPassword(bool value) { SetManageMasterUserPassword(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The Amazon Web Services KMS key identifier to encrypt a secret that is
+     * automatically generated and managed in Amazon Web Services Secrets Manager.</p>
+     * <p>This setting is valid only if both of the following conditions are met:</p>
+     * <ul> <li> <p>The cluster doesn't manage the master user password in Amazon Web
+     * Services Secrets Manager. If the cluster already manages the master user
+     * password in Amazon Web Services Secrets Manager, you can't change the KMS key
+     * that is used to encrypt the secret.</p> </li> <li> <p>You are enabling
+     * <code>ManageMasterUserPassword</code> to manage the master user password in
+     * Amazon Web Services Secrets Manager. If you are turning on
+     * <code>ManageMasterUserPassword</code> and don't specify
+     * <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+     * KMS key is used to encrypt the secret. If the secret is in a different Amazon
+     * Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS
+     * key to encrypt the secret, and you must use a customer managed KMS key.</p>
+     * </li> </ul> <p>The Amazon Web Services KMS key identifier is the key ARN, key
+     * ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different
+     * Amazon Web Services account, specify the key ARN or alias ARN.</p> <p>There is a
+     * default KMS key for your Amazon Web Services account. Your Amazon Web Services
+     * account has a different default KMS key for each Amazon Web Services Region.</p>
+     */
+    inline const Aws::String& GetMasterUserSecretKmsKeyId() const{ return m_masterUserSecretKmsKeyId; }
+    inline bool MasterUserSecretKmsKeyIdHasBeenSet() const { return m_masterUserSecretKmsKeyIdHasBeenSet; }
+    inline void SetMasterUserSecretKmsKeyId(const Aws::String& value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId = value; }
+    inline void SetMasterUserSecretKmsKeyId(Aws::String&& value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId = std::move(value); }
+    inline void SetMasterUserSecretKmsKeyId(const char* value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId.assign(value); }
+    inline ModifyDBClusterRequest& WithMasterUserSecretKmsKeyId(const Aws::String& value) { SetMasterUserSecretKmsKeyId(value); return *this;}
+    inline ModifyDBClusterRequest& WithMasterUserSecretKmsKeyId(Aws::String&& value) { SetMasterUserSecretKmsKeyId(std::move(value)); return *this;}
+    inline ModifyDBClusterRequest& WithMasterUserSecretKmsKeyId(const char* value) { SetMasterUserSecretKmsKeyId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets
+     * Manager for the master user password.</p> <p>This setting is valid only if the
+     * master user password is managed by Amazon DocumentDB in Amazon Web Services
+     * Secrets Manager for the cluster. The secret value contains the updated
+     * password.</p> <p>Constraint: You must apply the change immediately when rotating
+     * the master user password.</p>
+     */
+    inline bool GetRotateMasterUserPassword() const{ return m_rotateMasterUserPassword; }
+    inline bool RotateMasterUserPasswordHasBeenSet() const { return m_rotateMasterUserPasswordHasBeenSet; }
+    inline void SetRotateMasterUserPassword(bool value) { m_rotateMasterUserPasswordHasBeenSet = true; m_rotateMasterUserPassword = value; }
+    inline ModifyDBClusterRequest& WithRotateMasterUserPassword(bool value) { SetRotateMasterUserPassword(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -331,6 +396,15 @@ namespace Model
 
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet = false;
+
+    bool m_manageMasterUserPassword;
+    bool m_manageMasterUserPasswordHasBeenSet = false;
+
+    Aws::String m_masterUserSecretKmsKeyId;
+    bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
+
+    bool m_rotateMasterUserPassword;
+    bool m_rotateMasterUserPasswordHasBeenSet = false;
   };
 
 } // namespace Model
