@@ -86,9 +86,6 @@ namespace client
                     else
                         assert(!"Unknown endpoint parameter!");
                 }
-                if (ctx.m_isEventStreaming) {
-                  identityParams.additionalProperties.insert({"isEventStreaming", true});
-                }
 
                 const auto& serviceParams = ctx.m_pRequest->GetServiceSpecificParameters();
                 if (serviceParams) {

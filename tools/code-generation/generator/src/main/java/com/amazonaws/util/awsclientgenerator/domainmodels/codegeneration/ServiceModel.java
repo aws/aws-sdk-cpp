@@ -36,6 +36,10 @@ public class ServiceModel {
         return shapes.values().parallelStream().anyMatch(shape -> shape.isRequest() && (shape.hasStreamMembers() || shape.hasEventStreamMembers()));
     }
 
+    public boolean hasEventStreamingRequestShapes() {
+        return shapes.values().parallelStream().anyMatch(shape -> shape.isRequest() && shape.hasEventStreamMembers());
+    }
+
     public Collection<Error> getNonCoreServiceErrors() {
         return serviceErrors.stream().filter(e -> !e.isCoreError()).collect(Collectors.toSet());
     }

@@ -9,4 +9,3 @@ using namespace smithy;
 
 AuthSchemeOption SigV4AuthSchemeOption::sigV4AuthSchemeOption = AuthSchemeOption("aws.auth#sigv4");
 AuthSchemeOption SigV4aAuthSchemeOption::sigV4aAuthSchemeOption = AuthSchemeOption("aws.auth#sigv4a");
-AuthSchemeOption SigV4AuthSchemeOption::sigV4EventStreamingAuthSchemeOption = AuthSchemeOption("aws.auth#sigv4", true);

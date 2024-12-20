@@ -125,7 +125,6 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
   pRequestCtx->m_method = method;
   pRequestCtx->m_retryCount = 0;
   pRequestCtx->m_invocationId = Aws::Utils::UUID::PseudoRandomUUID();
-  pRequestCtx->m_isEventStreaming = eventEncoderStreamSp != nullptr;
 
   auto authSchemeOptionOutcome = this->SelectAuthSchemeOption(*pRequestCtx);
   if (!authSchemeOptionOutcome.IsSuccess()) {

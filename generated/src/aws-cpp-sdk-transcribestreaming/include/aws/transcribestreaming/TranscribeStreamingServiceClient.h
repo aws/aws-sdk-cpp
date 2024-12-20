@@ -6,18 +6,15 @@
 #pragma once
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceServiceClientModel.h>
-#include <smithy/client/AwsSmithyClient.h>
-#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
-#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
-#include <smithy/client/serializer/JsonOutcomeSerializer.h>
 
 namespace Aws
 {
 namespace TranscribeStreamingService
 {
-  AWS_TRANSCRIBESTREAMINGSERVICE_API extern const char SERVICE_NAME[];
   /**
    * <p>Amazon Transcribe streaming offers three main types of real-time
    * transcription: <b>Standard</b>, <b>Medical</b>, and <b>Call Analytics</b>.</p>
@@ -30,19 +27,12 @@ namespace TranscribeStreamingService
    * center audio on two different channels; if you're looking for insight into
    * customer service calls, use this option. Refer to for details.</p> </li> </ul>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscribeStreamingServiceClient : smithy::client::AwsSmithyClientT<Aws::TranscribeStreamingService::SERVICE_NAME,
-      Aws::TranscribeStreamingService::TranscribeStreamingServiceClientConfiguration,
-      smithy::SigV4AuthSchemeResolver<>,
-      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-      TranscribeStreamingServiceEndpointProviderBase,
-      smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
-    Aws::Client::ClientWithAsyncTemplateMethods<TranscribeStreamingServiceClient>
+  class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscribeStreamingServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TranscribeStreamingServiceClient>
   {
     public:
+      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
-      inline const char* GetServiceClientName() const override { return "Transcribe Streaming"; }
 
       typedef TranscribeStreamingServiceClientConfiguration ClientConfigurationType;
       typedef TranscribeStreamingServiceEndpointProvider EndpointProviderType;
@@ -168,6 +158,8 @@ namespace TranscribeStreamingService
       friend class Aws::Client::ClientWithAsyncTemplateMethods<TranscribeStreamingServiceClient>;
       void init(const TranscribeStreamingServiceClientConfiguration& clientConfiguration);
 
+      TranscribeStreamingServiceClientConfiguration m_clientConfiguration;
+      std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace TranscribeStreamingService

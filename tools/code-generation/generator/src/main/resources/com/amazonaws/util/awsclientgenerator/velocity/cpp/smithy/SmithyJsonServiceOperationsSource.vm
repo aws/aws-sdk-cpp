@@ -1,14 +1,10 @@
 #set($hasEndPointOverrides = false)
 #foreach($operation in $serviceModel.operations)
-#if($operation.request.shape.hasEventStreamMembers())
-#set($constText = "")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/JsonServiceEventStreamOperationsSource.vm")
-#else
+## todo: add support for request stream
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")
 #else
 #set($constText = "const ")
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceOperationsSource.vm")
-#end
 #end

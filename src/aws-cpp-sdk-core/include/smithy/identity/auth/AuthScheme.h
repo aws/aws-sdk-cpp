@@ -27,6 +27,6 @@ namespace smithy {
         virtual std::shared_ptr<IdentityResolverBase<IdentityT>> identityResolver() = 0;
 
         // The same auth scheme can have a different signer based on operation supports request with event stream
-        virtual std::shared_ptr<AwsSignerBase<IdentityT>> signer(bool isEventStreaming = false) = 0;
+        virtual std::shared_ptr<AwsSignerBase<IdentityT>> signer() = 0;
     };
 }

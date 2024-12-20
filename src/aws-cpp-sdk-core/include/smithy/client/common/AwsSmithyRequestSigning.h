@@ -113,7 +113,7 @@ namespace smithy
             }
             auto identity = std::move(identityResult.GetResultWithOwnership());
 
-            std::shared_ptr<Signer> signer = authScheme.signer(m_targetAuthSchemeOption.isEventStreaming);
+            std::shared_ptr<Signer> signer = authScheme.signer();
             if (!signer) {
               result.emplace(SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Auth scheme provided a nullptr signer",
                                           false /*retryable*/));
@@ -162,7 +162,7 @@ namespace smithy
                 using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
                 using Signer = AwsSignerBase<IdentityT>;
 
-                std::shared_ptr<Signer> signer = authScheme.signer(m_targetAuthSchemeOption.isEventStreaming);
+                std::shared_ptr<Signer> signer = authScheme.signer();
                 if (!signer)
                 {
                     AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_SIGNING_TAG, "Failed to adjust signing clock skew. Signer is null.");
