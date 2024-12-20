@@ -46,7 +46,7 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
       return Optional.of(expression.getLeft().accept(this))
           .filter(elem -> elem.right.isList())
           .map(elem -> {
-            String varName = elem.left + "Elem";
+            String varName = elem.left + "LoopElem";
             context.rangeBasedForLoop(varName);
             context.openVariableScope(varName);
             Pair<String, Shape> right =
@@ -69,7 +69,7 @@ class CppEndpointsJmesPathVisitor implements ExpressionVisitor<Pair<String, Shap
             if (!shapeMember.getShape().isString()) {
                 throw new SmithyBuildException("map key of type other than string is not supported");
             }
-            String varName = expression.getName() + "Elem";
+            String varName = expression.getName() + "LoopElem";
             context.rangeBasedForLoop(varName);
             context.openVariableScope(varName);
             context.addInScopeVariableToResult(Optional.of("first"));
