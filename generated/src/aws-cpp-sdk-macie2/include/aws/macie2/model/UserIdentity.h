@@ -74,7 +74,7 @@ namespace Model
     ///@{
     /**
      * <p>If the action was performed by an Amazon Web Services account that belongs to
-     * an Amazon Web Service, the name of the service.</p>
+     * an Amazon Web Services service, the name of the service.</p>
      */
     inline const AwsService& GetAwsService() const{ return m_awsService; }
     inline bool AwsServiceHasBeenSet() const { return m_awsServiceHasBeenSet; }

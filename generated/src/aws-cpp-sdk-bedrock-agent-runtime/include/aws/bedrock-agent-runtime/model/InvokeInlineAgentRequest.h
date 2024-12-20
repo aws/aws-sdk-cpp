@@ -9,6 +9,7 @@
 #include <aws/bedrock-agent-runtime/model/InvokeInlineAgentHandler.h>
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent-runtime/model/InlineBedrockModelConfigurations.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailConfigurationWithArn.h>
 #include <aws/bedrock-agent-runtime/model/InlineSessionState.h>
@@ -73,6 +74,18 @@ namespace Model
     inline InvokeInlineAgentRequest& WithActionGroups(Aws::Vector<AgentActionGroup>&& value) { SetActionGroups(std::move(value)); return *this;}
     inline InvokeInlineAgentRequest& AddActionGroups(const AgentActionGroup& value) { m_actionGroupsHasBeenSet = true; m_actionGroups.push_back(value); return *this; }
     inline InvokeInlineAgentRequest& AddActionGroups(AgentActionGroup&& value) { m_actionGroupsHasBeenSet = true; m_actionGroups.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>Model settings for the request.</p>
+     */
+    inline const InlineBedrockModelConfigurations& GetBedrockModelConfigurations() const{ return m_bedrockModelConfigurations; }
+    inline bool BedrockModelConfigurationsHasBeenSet() const { return m_bedrockModelConfigurationsHasBeenSet; }
+    inline void SetBedrockModelConfigurations(const InlineBedrockModelConfigurations& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = value; }
+    inline void SetBedrockModelConfigurations(InlineBedrockModelConfigurations&& value) { m_bedrockModelConfigurationsHasBeenSet = true; m_bedrockModelConfigurations = std::move(value); }
+    inline InvokeInlineAgentRequest& WithBedrockModelConfigurations(const InlineBedrockModelConfigurations& value) { SetBedrockModelConfigurations(value); return *this;}
+    inline InvokeInlineAgentRequest& WithBedrockModelConfigurations(InlineBedrockModelConfigurations&& value) { SetBedrockModelConfigurations(std::move(value)); return *this;}
     ///@}
 
     ///@{
@@ -254,6 +267,9 @@ namespace Model
 
     Aws::Vector<AgentActionGroup> m_actionGroups;
     bool m_actionGroupsHasBeenSet = false;
+
+    InlineBedrockModelConfigurations m_bedrockModelConfigurations;
+    bool m_bedrockModelConfigurationsHasBeenSet = false;
 
     Aws::String m_customerEncryptionKeyArn;
     bool m_customerEncryptionKeyArnHasBeenSet = false;

@@ -76,7 +76,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The configuration for attaching a SageMaker user profile name to the
+     * <p>The configuration for attaching a SageMaker AI user profile name to the
      * execution role as a <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
      * key</a>.</p>

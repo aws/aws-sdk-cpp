@@ -39,7 +39,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration to
+     * <p>The name of the Amazon SageMaker AI Studio Lifecycle Configuration to
      * create.</p>
      */
     inline const Aws::String& GetStudioLifecycleConfigName() const{ return m_studioLifecycleConfigName; }
@@ -54,8 +54,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The content of your Amazon SageMaker Studio Lifecycle Configuration script.
-     * This content must be base64 encoded.</p>
+     * <p>The content of your Amazon SageMaker AI Studio Lifecycle Configuration
+     * script. This content must be base64 encoded.</p>
      */
     inline const Aws::String& GetStudioLifecycleConfigContent() const{ return m_studioLifecycleConfigContent; }
     inline bool StudioLifecycleConfigContentHasBeenSet() const { return m_studioLifecycleConfigContentHasBeenSet; }

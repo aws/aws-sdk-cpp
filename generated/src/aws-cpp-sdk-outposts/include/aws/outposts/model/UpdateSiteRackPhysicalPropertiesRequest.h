@@ -91,7 +91,8 @@ namespace Model
      * single phase</p> </li> <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
      * phase</p> </li> </ul> </li> <li> <p>Three-phase AC feed</p> <ul> <li> <p>
      * <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li> <li> <p>
-     * <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li> </ul> </li>
+     * <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li> <li> <p>
+     * <b>CS8365C</b> – (common in US); 3P+E, 50A; three phase</p> </li> </ul> </li>
      * </ul>
      */
     inline const PowerConnector& GetPowerConnector() const{ return m_powerConnector; }

@@ -7,7 +7,9 @@
 #include <aws/billing/Billing_EXPORTS.h>
 #include <aws/billing/BillingRequest.h>
 #include <aws/billing/model/ActiveTimeRange.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/billing/model/BillingViewType.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +54,50 @@ namespace Model
 
     ///@{
     /**
+     * <p>The Amazon Resource Name (ARN) that can be used to uniquely identify the
+     * billing view. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetArns() const{ return m_arns; }
+    inline bool ArnsHasBeenSet() const { return m_arnsHasBeenSet; }
+    inline void SetArns(const Aws::Vector<Aws::String>& value) { m_arnsHasBeenSet = true; m_arns = value; }
+    inline void SetArns(Aws::Vector<Aws::String>&& value) { m_arnsHasBeenSet = true; m_arns = std::move(value); }
+    inline ListBillingViewsRequest& WithArns(const Aws::Vector<Aws::String>& value) { SetArns(value); return *this;}
+    inline ListBillingViewsRequest& WithArns(Aws::Vector<Aws::String>&& value) { SetArns(std::move(value)); return *this;}
+    inline ListBillingViewsRequest& AddArns(const Aws::String& value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
+    inline ListBillingViewsRequest& AddArns(Aws::String&& value) { m_arnsHasBeenSet = true; m_arns.push_back(std::move(value)); return *this; }
+    inline ListBillingViewsRequest& AddArns(const char* value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p>The type of billing view.</p>
+     */
+    inline const Aws::Vector<BillingViewType>& GetBillingViewTypes() const{ return m_billingViewTypes; }
+    inline bool BillingViewTypesHasBeenSet() const { return m_billingViewTypesHasBeenSet; }
+    inline void SetBillingViewTypes(const Aws::Vector<BillingViewType>& value) { m_billingViewTypesHasBeenSet = true; m_billingViewTypes = value; }
+    inline void SetBillingViewTypes(Aws::Vector<BillingViewType>&& value) { m_billingViewTypesHasBeenSet = true; m_billingViewTypes = std::move(value); }
+    inline ListBillingViewsRequest& WithBillingViewTypes(const Aws::Vector<BillingViewType>& value) { SetBillingViewTypes(value); return *this;}
+    inline ListBillingViewsRequest& WithBillingViewTypes(Aws::Vector<BillingViewType>&& value) { SetBillingViewTypes(std::move(value)); return *this;}
+    inline ListBillingViewsRequest& AddBillingViewTypes(const BillingViewType& value) { m_billingViewTypesHasBeenSet = true; m_billingViewTypes.push_back(value); return *this; }
+    inline ListBillingViewsRequest& AddBillingViewTypes(BillingViewType&& value) { m_billingViewTypesHasBeenSet = true; m_billingViewTypes.push_back(std::move(value)); return *this; }
+    ///@}
+
+    ///@{
+    /**
+     * <p> The list of owners of the billing view. </p>
+     */
+    inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
+    inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
+    inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
+    inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
+    inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
+    inline ListBillingViewsRequest& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
+    inline ListBillingViewsRequest& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
+    inline ListBillingViewsRequest& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The maximum number of billing views to retrieve. Default is 100. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -78,6 +124,15 @@ namespace Model
 
     ActiveTimeRange m_activeTimeRange;
     bool m_activeTimeRangeHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_arns;
+    bool m_arnsHasBeenSet = false;
+
+    Aws::Vector<BillingViewType> m_billingViewTypes;
+    bool m_billingViewTypesHasBeenSet = false;
+
+    Aws::String m_ownerAccountId;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;

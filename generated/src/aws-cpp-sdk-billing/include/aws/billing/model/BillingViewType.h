@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     PRIMARY,
-    BILLING_GROUP
+    BILLING_GROUP,
+    CUSTOM
   };
 
 namespace BillingViewTypeMapper

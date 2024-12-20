@@ -36,7 +36,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the SageMaker notebook instance to delete.</p>
+     * <p>The name of the SageMaker AI notebook instance to delete.</p>
      */
     inline const Aws::String& GetNotebookInstanceName() const{ return m_notebookInstanceName; }
     inline bool NotebookInstanceNameHasBeenSet() const { return m_notebookInstanceNameHasBeenSet; }

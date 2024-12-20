@@ -19,6 +19,7 @@ GetCostAndUsageRequest::GetCostAndUsageRequest() :
     m_filterHasBeenSet(false),
     m_metricsHasBeenSet(false),
     m_groupByHasBeenSet(false),
+    m_billingViewArnHasBeenSet(false),
     m_nextPageTokenHasBeenSet(false)
 {
 }
@@ -63,6 +64,12 @@ Aws::String GetCostAndUsageRequest::SerializePayload() const
      groupByJsonList[groupByIndex].AsObject(m_groupBy[groupByIndex].Jsonize());
    }
    payload.WithArray("GroupBy", std::move(groupByJsonList));
+
+  }
+
+  if(m_billingViewArnHasBeenSet)
+  {
+   payload.WithString("BillingViewArn", m_billingViewArn);
 
   }
 

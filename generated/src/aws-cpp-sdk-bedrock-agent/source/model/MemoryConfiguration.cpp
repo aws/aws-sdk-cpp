@@ -20,6 +20,7 @@ namespace Model
 
 MemoryConfiguration::MemoryConfiguration() : 
     m_enabledMemoryTypesHasBeenSet(false),
+    m_sessionSummaryConfigurationHasBeenSet(false),
     m_storageDays(0),
     m_storageDaysHasBeenSet(false)
 {
@@ -41,6 +42,13 @@ MemoryConfiguration& MemoryConfiguration::operator =(JsonView jsonValue)
       m_enabledMemoryTypes.push_back(MemoryTypeMapper::GetMemoryTypeForName(enabledMemoryTypesJsonList[enabledMemoryTypesIndex].AsString()));
     }
     m_enabledMemoryTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sessionSummaryConfiguration"))
+  {
+    m_sessionSummaryConfiguration = jsonValue.GetObject("sessionSummaryConfiguration");
+
+    m_sessionSummaryConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("storageDays"))
@@ -65,6 +73,12 @@ JsonValue MemoryConfiguration::Jsonize() const
      enabledMemoryTypesJsonList[enabledMemoryTypesIndex].AsString(MemoryTypeMapper::GetNameForMemoryType(m_enabledMemoryTypes[enabledMemoryTypesIndex]));
    }
    payload.WithArray("enabledMemoryTypes", std::move(enabledMemoryTypesJsonList));
+
+  }
+
+  if(m_sessionSummaryConfigurationHasBeenSet)
+  {
+   payload.WithObject("sessionSummaryConfiguration", m_sessionSummaryConfiguration.Jsonize());
 
   }
 

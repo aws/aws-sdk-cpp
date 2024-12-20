@@ -18,6 +18,7 @@
 #include <aws/ec2/model/DescribeInstancesRequest.h>
 #include <aws/ec2/model/DescribeRegionsRequest.h>
 #include <aws/ec2/EC2Client.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace EC2SmokeTest{
 using namespace Aws::Auth;
@@ -31,6 +32,19 @@ class EC2SmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char EC2SmokeTestSuite::ALLOCATION_TAG[] = "EC2SmokeTest";
+TEST_F(EC2SmokeTestSuite, DescribeRegionsSuccess )
+{
+    Aws::EC2::EC2ClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<EC2Client>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    DescribeRegionsRequest input;
+    auto outcome = clientSp->DescribeRegions(input);
+    EXPECT_TRUE( outcome.IsSuccess());
+}
 TEST_F(EC2SmokeTestSuite, DescribeInstancesFailure )
 {
     Aws::EC2::EC2ClientConfiguration clientConfiguration;
@@ -53,18 +67,5 @@ TEST_F(EC2SmokeTestSuite, DescribeInstancesFailure )
     input.SetInstanceIds(GetdescribeinstancesElemLvl0Idx0());
     auto outcome = clientSp->DescribeInstances(input);
     EXPECT_FALSE( outcome.IsSuccess());
-}
-TEST_F(EC2SmokeTestSuite, DescribeRegionsSuccess )
-{
-    Aws::EC2::EC2ClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<EC2Client>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    DescribeRegionsRequest input;
-    auto outcome = clientSp->DescribeRegions(input);
-    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

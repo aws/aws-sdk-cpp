@@ -7,6 +7,7 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/model/DeprecationDetail.h>
+#include <aws/eks/model/AddonCompatibilityDetail.h>
 #include <utility>
 
 namespace Aws
@@ -54,10 +55,28 @@ namespace Model
     inline InsightCategorySpecificSummary& AddDeprecationDetails(const DeprecationDetail& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails.push_back(value); return *this; }
     inline InsightCategorySpecificSummary& AddDeprecationDetails(DeprecationDetail&& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails.push_back(std::move(value)); return *this; }
     ///@}
+
+    ///@{
+    /**
+     * <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS
+     * add-ons.</p>
+     */
+    inline const Aws::Vector<AddonCompatibilityDetail>& GetAddonCompatibilityDetails() const{ return m_addonCompatibilityDetails; }
+    inline bool AddonCompatibilityDetailsHasBeenSet() const { return m_addonCompatibilityDetailsHasBeenSet; }
+    inline void SetAddonCompatibilityDetails(const Aws::Vector<AddonCompatibilityDetail>& value) { m_addonCompatibilityDetailsHasBeenSet = true; m_addonCompatibilityDetails = value; }
+    inline void SetAddonCompatibilityDetails(Aws::Vector<AddonCompatibilityDetail>&& value) { m_addonCompatibilityDetailsHasBeenSet = true; m_addonCompatibilityDetails = std::move(value); }
+    inline InsightCategorySpecificSummary& WithAddonCompatibilityDetails(const Aws::Vector<AddonCompatibilityDetail>& value) { SetAddonCompatibilityDetails(value); return *this;}
+    inline InsightCategorySpecificSummary& WithAddonCompatibilityDetails(Aws::Vector<AddonCompatibilityDetail>&& value) { SetAddonCompatibilityDetails(std::move(value)); return *this;}
+    inline InsightCategorySpecificSummary& AddAddonCompatibilityDetails(const AddonCompatibilityDetail& value) { m_addonCompatibilityDetailsHasBeenSet = true; m_addonCompatibilityDetails.push_back(value); return *this; }
+    inline InsightCategorySpecificSummary& AddAddonCompatibilityDetails(AddonCompatibilityDetail&& value) { m_addonCompatibilityDetailsHasBeenSet = true; m_addonCompatibilityDetails.push_back(std::move(value)); return *this; }
+    ///@}
   private:
 
     Aws::Vector<DeprecationDetail> m_deprecationDetails;
     bool m_deprecationDetailsHasBeenSet = false;
+
+    Aws::Vector<AddonCompatibilityDetail> m_addonCompatibilityDetails;
+    bool m_addonCompatibilityDetailsHasBeenSet = false;
   };
 
 } // namespace Model

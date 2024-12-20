@@ -62,7 +62,7 @@ namespace Model
     ///@{
     /**
      * <p>The array of inputs for the monitoring job. Currently we support monitoring
-     * an Amazon SageMaker Endpoint.</p>
+     * an Amazon SageMaker AI Endpoint.</p>
      */
     inline const Aws::Vector<MonitoringInput>& GetMonitoringInputs() const{ return m_monitoringInputs; }
     inline bool MonitoringInputsHasBeenSet() const { return m_monitoringInputsHasBeenSet; }
@@ -157,7 +157,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can
      * assume to perform tasks on your behalf.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }

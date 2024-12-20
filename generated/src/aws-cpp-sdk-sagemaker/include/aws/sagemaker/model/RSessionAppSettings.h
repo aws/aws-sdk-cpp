@@ -52,7 +52,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of custom SageMaker images that are configured to run as a RSession
+     * <p>A list of custom SageMaker AI images that are configured to run as a RSession
      * app.</p>
      */
     inline const Aws::Vector<CustomImage>& GetCustomImages() const{ return m_customImages; }

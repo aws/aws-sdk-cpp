@@ -106,6 +106,24 @@ namespace Model
     inline WebCrawlerConfiguration& WithScope(const WebScopeType& value) { SetScope(value); return *this;}
     inline WebCrawlerConfiguration& WithScope(WebScopeType&& value) { SetScope(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>A string used for identifying the crawler or a bot when it accesses a web
+     * server. By default, this is set to <code>bedrockbot_UUID</code> for your
+     * crawler. You can optionally append a custom string to
+     * <code>bedrockbot_UUID</code> to allowlist a specific user agent permitted to
+     * access your source URLs. </p>
+     */
+    inline const Aws::String& GetUserAgent() const{ return m_userAgent; }
+    inline bool UserAgentHasBeenSet() const { return m_userAgentHasBeenSet; }
+    inline void SetUserAgent(const Aws::String& value) { m_userAgentHasBeenSet = true; m_userAgent = value; }
+    inline void SetUserAgent(Aws::String&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::move(value); }
+    inline void SetUserAgent(const char* value) { m_userAgentHasBeenSet = true; m_userAgent.assign(value); }
+    inline WebCrawlerConfiguration& WithUserAgent(const Aws::String& value) { SetUserAgent(value); return *this;}
+    inline WebCrawlerConfiguration& WithUserAgent(Aws::String&& value) { SetUserAgent(std::move(value)); return *this;}
+    inline WebCrawlerConfiguration& WithUserAgent(const char* value) { SetUserAgent(value); return *this;}
+    ///@}
   private:
 
     WebCrawlerLimits m_crawlerLimits;
@@ -119,6 +137,9 @@ namespace Model
 
     WebScopeType m_scope;
     bool m_scopeHasBeenSet = false;
+
+    Aws::String m_userAgent;
+    bool m_userAgentHasBeenSet = false;
   };
 
 } // namespace Model

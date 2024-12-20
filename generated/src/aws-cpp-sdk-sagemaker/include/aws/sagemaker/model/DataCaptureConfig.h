@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration to control how SageMaker captures inference data.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Configuration to control how SageMaker AI captures inference
+   * data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DataCaptureConfig">AWS
    * API Reference</a></p>
    */
@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The percentage of requests SageMaker will capture. A lower value is
+     * <p>The percentage of requests SageMaker AI will capture. A lower value is
      * recommended for Endpoints with high traffic.</p>
      */
     inline int GetInitialSamplingPercentage() const{ return m_initialSamplingPercentage; }
@@ -79,10 +79,10 @@ namespace Model
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of an Key Management Service key that
-     * SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side
-     * encryption.</p> <p>The KmsKeyId can be any of the following formats: </p> <ul>
-     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-     * <li> <p>Key ARN:
+     * SageMaker AI uses to encrypt the captured data at rest using Amazon S3
+     * server-side encryption.</p> <p>The KmsKeyId can be any of the following formats:
+     * </p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
+     * </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -117,7 +117,8 @@ namespace Model
     ///@{
     /**
      * <p>Configuration specifying how to treat different headers. If no headers are
-     * specified SageMaker will by default base64 encode when capturing the data.</p>
+     * specified SageMaker AI will by default base64 encode when capturing the
+     * data.</p>
      */
     inline const CaptureContentTypeHeader& GetCaptureContentTypeHeader() const{ return m_captureContentTypeHeader; }
     inline bool CaptureContentTypeHeaderHasBeenSet() const { return m_captureContentTypeHeaderHasBeenSet; }

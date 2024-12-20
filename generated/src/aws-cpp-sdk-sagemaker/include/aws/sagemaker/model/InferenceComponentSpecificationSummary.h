@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The name of the SageMaker model object that is deployed with the inference
+     * <p>The name of the SageMaker AI model object that is deployed with the inference
      * component.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }

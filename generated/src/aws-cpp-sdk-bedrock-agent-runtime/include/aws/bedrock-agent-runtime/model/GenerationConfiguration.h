@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/bedrock-agent-runtime/model/GuardrailConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/InferenceConfig.h>
+#include <aws/bedrock-agent-runtime/model/PerformanceConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/PromptTemplate.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Document.h>
@@ -93,6 +94,18 @@ namespace Model
 
     ///@{
     /**
+     * <p>The latency configuration for the model.</p>
+     */
+    inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
+    inline bool PerformanceConfigHasBeenSet() const { return m_performanceConfigHasBeenSet; }
+    inline void SetPerformanceConfig(const PerformanceConfiguration& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = value; }
+    inline void SetPerformanceConfig(PerformanceConfiguration&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::move(value); }
+    inline GenerationConfiguration& WithPerformanceConfig(const PerformanceConfiguration& value) { SetPerformanceConfig(value); return *this;}
+    inline GenerationConfiguration& WithPerformanceConfig(PerformanceConfiguration&& value) { SetPerformanceConfig(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Contains the template for the prompt that's sent to the model for response
      * generation. Generation prompts must include the <code>$search_results$</code>
      * variable. For more information, see <a
@@ -116,6 +129,9 @@ namespace Model
 
     InferenceConfig m_inferenceConfig;
     bool m_inferenceConfigHasBeenSet = false;
+
+    PerformanceConfiguration m_performanceConfig;
+    bool m_performanceConfigHasBeenSet = false;
 
     PromptTemplate m_promptTemplate;
     bool m_promptTemplateHasBeenSet = false;

@@ -51,6 +51,7 @@ enum class BedrockAgentRuntimeErrors
   CONFLICT,
   DEPENDENCY_FAILED,
   INTERNAL_SERVER,
+  MODEL_NOT_READY,
   SERVICE_QUOTA_EXCEEDED
 };
 

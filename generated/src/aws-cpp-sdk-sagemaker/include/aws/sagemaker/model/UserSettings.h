@@ -83,12 +83,12 @@ namespace Model
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>VpcOnly</code>, unless specified as part of the
-     * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
-     * security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
-     * number of security groups that you can specify is one less than the maximum
-     * number shown.</p> <p>SageMaker applies these settings only to private spaces
-     * that the user creates in the domain. SageMaker doesn't apply these settings to
-     * shared spaces.</p>
+     * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker AI adds
+     * a security group to allow NFS traffic from Amazon SageMaker AI Studio.
+     * Therefore, the number of security groups that you can specify is one less than
+     * the maximum number shown.</p> <p>SageMaker applies these settings only to
+     * private spaces that the user creates in the domain. SageMaker doesn't apply
+     * these settings to shared spaces.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
@@ -103,7 +103,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies options for sharing Amazon SageMaker Studio notebooks.</p>
+     * <p>Specifies options for sharing Amazon SageMaker AI Studio notebooks.</p>
      */
     inline const SharingSettings& GetSharingSettings() const{ return m_sharingSettings; }
     inline bool SharingSettingsHasBeenSet() const { return m_sharingSettingsHasBeenSet; }
@@ -280,9 +280,9 @@ namespace Model
     ///@{
     /**
      * <p>The settings for assigning a custom file system to a user profile. Permitted
-     * users can access this file system in Amazon SageMaker Studio.</p> <p>SageMaker
-     * applies these settings only to private spaces that the user creates in the
-     * domain. SageMaker doesn't apply these settings to shared spaces.</p>
+     * users can access this file system in Amazon SageMaker AI Studio.</p>
+     * <p>SageMaker applies these settings only to private spaces that the user creates
+     * in the domain. SageMaker doesn't apply these settings to shared spaces.</p>
      */
     inline const Aws::Vector<CustomFileSystemConfig>& GetCustomFileSystemConfigs() const{ return m_customFileSystemConfigs; }
     inline bool CustomFileSystemConfigsHasBeenSet() const { return m_customFileSystemConfigsHasBeenSet; }

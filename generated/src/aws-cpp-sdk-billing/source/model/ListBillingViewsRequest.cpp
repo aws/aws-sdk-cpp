@@ -14,6 +14,9 @@ using namespace Aws::Utils;
 
 ListBillingViewsRequest::ListBillingViewsRequest() : 
     m_activeTimeRangeHasBeenSet(false),
+    m_arnsHasBeenSet(false),
+    m_billingViewTypesHasBeenSet(false),
+    m_ownerAccountIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -27,6 +30,34 @@ Aws::String ListBillingViewsRequest::SerializePayload() const
   if(m_activeTimeRangeHasBeenSet)
   {
    payload.WithObject("activeTimeRange", m_activeTimeRange.Jsonize());
+
+  }
+
+  if(m_arnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> arnsJsonList(m_arns.size());
+   for(unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex)
+   {
+     arnsJsonList[arnsIndex].AsString(m_arns[arnsIndex]);
+   }
+   payload.WithArray("arns", std::move(arnsJsonList));
+
+  }
+
+  if(m_billingViewTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> billingViewTypesJsonList(m_billingViewTypes.size());
+   for(unsigned billingViewTypesIndex = 0; billingViewTypesIndex < billingViewTypesJsonList.GetLength(); ++billingViewTypesIndex)
+   {
+     billingViewTypesJsonList[billingViewTypesIndex].AsString(BillingViewTypeMapper::GetNameForBillingViewType(m_billingViewTypes[billingViewTypesIndex]));
+   }
+   payload.WithArray("billingViewTypes", std::move(billingViewTypesJsonList));
+
+  }
+
+  if(m_ownerAccountIdHasBeenSet)
+  {
+   payload.WithString("ownerAccountId", m_ownerAccountId);
 
   }
 

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int PRIMARY_HASH = HashingUtils::HashString("PRIMARY");
         static const int BILLING_GROUP_HASH = HashingUtils::HashString("BILLING_GROUP");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 
 
         BillingViewType GetBillingViewTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == BILLING_GROUP_HASH)
           {
             return BillingViewType::BILLING_GROUP;
+          }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return BillingViewType::CUSTOM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "PRIMARY";
           case BillingViewType::BILLING_GROUP:
             return "BILLING_GROUP";
+          case BillingViewType::CUSTOM:
+            return "CUSTOM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

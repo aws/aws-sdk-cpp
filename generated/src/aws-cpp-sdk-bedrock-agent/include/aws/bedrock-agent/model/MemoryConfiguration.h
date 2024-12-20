@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/bedrock-agent/model/SessionSummaryConfiguration.h>
 #include <aws/bedrock-agent/model/MemoryType.h>
 #include <utility>
 
@@ -54,6 +55,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>Contains the configuration for SESSION_SUMMARY memory type enabled for the
+     * agent. </p>
+     */
+    inline const SessionSummaryConfiguration& GetSessionSummaryConfiguration() const{ return m_sessionSummaryConfiguration; }
+    inline bool SessionSummaryConfigurationHasBeenSet() const { return m_sessionSummaryConfigurationHasBeenSet; }
+    inline void SetSessionSummaryConfiguration(const SessionSummaryConfiguration& value) { m_sessionSummaryConfigurationHasBeenSet = true; m_sessionSummaryConfiguration = value; }
+    inline void SetSessionSummaryConfiguration(SessionSummaryConfiguration&& value) { m_sessionSummaryConfigurationHasBeenSet = true; m_sessionSummaryConfiguration = std::move(value); }
+    inline MemoryConfiguration& WithSessionSummaryConfiguration(const SessionSummaryConfiguration& value) { SetSessionSummaryConfiguration(value); return *this;}
+    inline MemoryConfiguration& WithSessionSummaryConfiguration(SessionSummaryConfiguration&& value) { SetSessionSummaryConfiguration(std::move(value)); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The number of days the agent is configured to retain the conversational
      * context.</p>
      */
@@ -66,6 +80,9 @@ namespace Model
 
     Aws::Vector<MemoryType> m_enabledMemoryTypes;
     bool m_enabledMemoryTypesHasBeenSet = false;
+
+    SessionSummaryConfiguration m_sessionSummaryConfiguration;
+    bool m_sessionSummaryConfigurationHasBeenSet = false;
 
     int m_storageDays;
     bool m_storageDaysHasBeenSet = false;

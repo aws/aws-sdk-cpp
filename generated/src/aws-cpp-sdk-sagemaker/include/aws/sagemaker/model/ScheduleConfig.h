@@ -57,9 +57,9 @@ namespace Model
      * <ul> <li> <p>Even though the cron expression is set to start at 5PM UTC, note
      * that there could be a delay of 0-20 minutes from the actual requested time to
      * run the execution. </p> </li> <li> <p>We recommend that if you would like a
-     * daily schedule, you do not provide this parameter. Amazon SageMaker will pick a
-     * time for running every day.</p> </li> </ul>  <p>You can also specify the
-     * keyword <code>NOW</code> to run the monitoring job immediately, one time,
+     * daily schedule, you do not provide this parameter. Amazon SageMaker AI will pick
+     * a time for running every day.</p> </li> </ul>  <p>You can also specify
+     * the keyword <code>NOW</code> to run the monitoring job immediately, one time,
      * without recurring.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }

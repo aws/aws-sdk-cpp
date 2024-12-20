@@ -36,6 +36,9 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_deletionProtectionHasBeenSet(false),
     m_globalClusterIdentifierHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
+    m_manageMasterUserPassword(false),
+    m_manageMasterUserPasswordHasBeenSet(false),
+    m_masterUserSecretKmsKeyIdHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -198,6 +201,16 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_storageTypeHasBeenSet)
   {
     ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
+  if(m_manageMasterUserPasswordHasBeenSet)
+  {
+    ss << "ManageMasterUserPassword=" << std::boolalpha << m_manageMasterUserPassword << "&";
+  }
+
+  if(m_masterUserSecretKmsKeyIdHasBeenSet)
+  {
+    ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

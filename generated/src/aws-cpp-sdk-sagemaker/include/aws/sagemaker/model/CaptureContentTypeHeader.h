@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Configuration specifying how to treat different headers. If no headers are
-   * specified Amazon SageMaker will by default base64 encode when capturing the
+   * specified Amazon SageMaker AI will by default base64 encode when capturing the
    * data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CaptureContentTypeHeader">AWS
    * API Reference</a></p>
@@ -42,8 +42,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of all content type headers that Amazon SageMaker will treat as CSV
-     * and capture accordingly.</p>
+     * <p>The list of all content type headers that Amazon SageMaker AI will treat as
+     * CSV and capture accordingly.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCsvContentTypes() const{ return m_csvContentTypes; }
     inline bool CsvContentTypesHasBeenSet() const { return m_csvContentTypesHasBeenSet; }
@@ -58,7 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of all content type headers that SageMaker will treat as JSON and
+     * <p>The list of all content type headers that SageMaker AI will treat as JSON and
      * capture accordingly.</p>
      */
     inline const Aws::Vector<Aws::String>& GetJsonContentTypes() const{ return m_jsonContentTypes; }
