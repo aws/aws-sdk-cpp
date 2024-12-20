@@ -23,13 +23,6 @@ namespace DynamoDB
 namespace Model
 {
 
-  /**
-   * <p>Represents the provisioned throughput settings for the table, consisting of
-   * read and write capacity units, along with data about increases and
-   * decreases.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ProvisionedThroughputDescription">AWS
-   * API Reference</a></p>
-   */
   class ProvisionedThroughputDescription
   {
   public:
@@ -40,10 +33,7 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>The date and time of the last provisioned throughput increase for this
-     * table.</p>
-     */
+    
     inline const Aws::Utils::DateTime& GetLastIncreaseDateTime() const{ return m_lastIncreaseDateTime; }
     inline bool LastIncreaseDateTimeHasBeenSet() const { return m_lastIncreaseDateTimeHasBeenSet; }
     inline void SetLastIncreaseDateTime(const Aws::Utils::DateTime& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
@@ -53,10 +43,7 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The date and time of the last provisioned throughput decrease for this
-     * table.</p>
-     */
+    
     inline const Aws::Utils::DateTime& GetLastDecreaseDateTime() const{ return m_lastDecreaseDateTime; }
     inline bool LastDecreaseDateTimeHasBeenSet() const { return m_lastDecreaseDateTimeHasBeenSet; }
     inline void SetLastDecreaseDateTime(const Aws::Utils::DateTime& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = value; }
@@ -66,12 +53,7 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The number of provisioned throughput decreases for this table during this UTC
-     * calendar day. For current maximums on provisioned throughput decreases, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     */
+    
     inline long long GetNumberOfDecreasesToday() const{ return m_numberOfDecreasesToday; }
     inline bool NumberOfDecreasesTodayHasBeenSet() const { return m_numberOfDecreasesTodayHasBeenSet; }
     inline void SetNumberOfDecreasesToday(long long value) { m_numberOfDecreasesTodayHasBeenSet = true; m_numberOfDecreasesToday = value; }
@@ -79,13 +61,7 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The maximum number of strongly consistent reads consumed per second before
-     * DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads
-     * require less effort than strongly consistent reads, so a setting of 50
-     * <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
-     * <code>ReadCapacityUnits</code> per second.</p>
-     */
+    
     inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
     inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
@@ -93,10 +69,7 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <code>ThrottlingException</code>.</p>
-     */
+    
     inline long long GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
     inline bool WriteCapacityUnitsHasBeenSet() const { return m_writeCapacityUnitsHasBeenSet; }
     inline void SetWriteCapacityUnits(long long value) { m_writeCapacityUnitsHasBeenSet = true; m_writeCapacityUnits = value; }

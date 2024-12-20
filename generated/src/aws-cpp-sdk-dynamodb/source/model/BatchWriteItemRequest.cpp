@@ -13,11 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchWriteItemRequest::BatchWriteItemRequest() : 
-    m_requestItemsHasBeenSet(false),
-    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
-    m_returnConsumedCapacityHasBeenSet(false),
-    m_returnItemCollectionMetrics(ReturnItemCollectionMetrics::NOT_SET),
-    m_returnItemCollectionMetricsHasBeenSet(false)
+    m_requestItemsHasBeenSet(false)
 {
 }
 
@@ -41,23 +37,13 @@ Aws::String BatchWriteItemRequest::SerializePayload() const
 
   }
 
-  if(m_returnConsumedCapacityHasBeenSet)
-  {
-   payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
-  }
-
-  if(m_returnItemCollectionMetricsHasBeenSet)
-  {
-   payload.WithString("ReturnItemCollectionMetrics", ReturnItemCollectionMetricsMapper::GetNameForReturnItemCollectionMetrics(m_returnItemCollectionMetrics));
-  }
-
   return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchWriteItemRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.BatchWriteItem"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20111205.BatchWriteItem"));
   return headers;
 
 }

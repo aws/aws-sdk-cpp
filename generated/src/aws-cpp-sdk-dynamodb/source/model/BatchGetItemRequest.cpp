@@ -13,9 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchGetItemRequest::BatchGetItemRequest() : 
-    m_requestItemsHasBeenSet(false),
-    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
-    m_returnConsumedCapacityHasBeenSet(false)
+    m_requestItemsHasBeenSet(false)
 {
 }
 
@@ -34,18 +32,13 @@ Aws::String BatchGetItemRequest::SerializePayload() const
 
   }
 
-  if(m_returnConsumedCapacityHasBeenSet)
-  {
-   payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
-  }
-
   return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchGetItemRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.BatchGetItem"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20111205.BatchGetItem"));
   return headers;
 
 }

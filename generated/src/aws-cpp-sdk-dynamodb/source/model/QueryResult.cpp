@@ -19,7 +19,7 @@ using namespace Aws;
 
 QueryResult::QueryResult() : 
     m_count(0),
-    m_scannedCount(0)
+    m_consumedCapacityUnits(0.0)
 {
 }
 
@@ -53,24 +53,15 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
 
   }
 
-  if(jsonValue.ValueExists("ScannedCount"))
-  {
-    m_scannedCount = jsonValue.GetInteger("ScannedCount");
-
-  }
-
   if(jsonValue.ValueExists("LastEvaluatedKey"))
   {
-    Aws::Map<Aws::String, JsonView> lastEvaluatedKeyJsonMap = jsonValue.GetObject("LastEvaluatedKey").GetAllObjects();
-    for(auto& lastEvaluatedKeyItem : lastEvaluatedKeyJsonMap)
-    {
-      m_lastEvaluatedKey[lastEvaluatedKeyItem.first] = lastEvaluatedKeyItem.second.AsObject();
-    }
+    m_lastEvaluatedKey = jsonValue.GetObject("LastEvaluatedKey");
+
   }
 
-  if(jsonValue.ValueExists("ConsumedCapacity"))
+  if(jsonValue.ValueExists("ConsumedCapacityUnits"))
   {
-    m_consumedCapacity = jsonValue.GetObject("ConsumedCapacity");
+    m_consumedCapacityUnits = jsonValue.GetDouble("ConsumedCapacityUnits");
 
   }
 

@@ -33,11 +33,8 @@ DeleteRequest& DeleteRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
-    Aws::Map<Aws::String, JsonView> keyJsonMap = jsonValue.GetObject("Key").GetAllObjects();
-    for(auto& keyItem : keyJsonMap)
-    {
-      m_key[keyItem.first] = keyItem.second.AsObject();
-    }
+    m_key = jsonValue.GetObject("Key");
+
     m_keyHasBeenSet = true;
   }
 
@@ -50,12 +47,7 @@ JsonValue DeleteRequest::Jsonize() const
 
   if(m_keyHasBeenSet)
   {
-   JsonValue keyJsonMap;
-   for(auto& keyItem : m_key)
-   {
-     keyJsonMap.WithObject(keyItem.first, keyItem.second.Jsonize());
-   }
-   payload.WithObject("Key", std::move(keyJsonMap));
+   payload.WithObject("Key", m_key.Jsonize());
 
   }
 

@@ -6,11 +6,9 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/BatchResponse.h>
 #include <aws/dynamodb/model/KeysAndAttributes.h>
-#include <aws/dynamodb/model/ConsumedCapacity.h>
-#include <aws/dynamodb/model/AttributeValue.h>
 #include <utility>
 
 namespace Aws
@@ -29,12 +27,6 @@ namespace DynamoDB
 {
 namespace Model
 {
-  /**
-   * <p>Represents the output of a <code>BatchGetItem</code> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItemOutput">AWS
-   * API Reference</a></p>
-   */
   class BatchGetItemResult
   {
   public:
@@ -44,42 +36,22 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>A map of table name or table ARN to a list of items. Each object in
-     * <code>Responses</code> consists of a table name or ARN, along with a map of
-     * attribute data consisting of the data type and attribute value.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>& GetResponses() const{ return m_responses; }
-    inline void SetResponses(const Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>& value) { m_responses = value; }
-    inline void SetResponses(Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>&& value) { m_responses = std::move(value); }
-    inline BatchGetItemResult& WithResponses(const Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>& value) { SetResponses(value); return *this;}
-    inline BatchGetItemResult& WithResponses(Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>&& value) { SetResponses(std::move(value)); return *this;}
-    inline BatchGetItemResult& AddResponses(const Aws::String& key, const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_responses.emplace(key, value); return *this; }
-    inline BatchGetItemResult& AddResponses(Aws::String&& key, const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_responses.emplace(std::move(key), value); return *this; }
-    inline BatchGetItemResult& AddResponses(const Aws::String& key, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_responses.emplace(key, std::move(value)); return *this; }
-    inline BatchGetItemResult& AddResponses(Aws::String&& key, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_responses.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchGetItemResult& AddResponses(const char* key, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_responses.emplace(key, std::move(value)); return *this; }
-    inline BatchGetItemResult& AddResponses(const char* key, const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_responses.emplace(key, value); return *this; }
+    
+    inline const Aws::Map<Aws::String, BatchResponse>& GetResponses() const{ return m_responses; }
+    inline void SetResponses(const Aws::Map<Aws::String, BatchResponse>& value) { m_responses = value; }
+    inline void SetResponses(Aws::Map<Aws::String, BatchResponse>&& value) { m_responses = std::move(value); }
+    inline BatchGetItemResult& WithResponses(const Aws::Map<Aws::String, BatchResponse>& value) { SetResponses(value); return *this;}
+    inline BatchGetItemResult& WithResponses(Aws::Map<Aws::String, BatchResponse>&& value) { SetResponses(std::move(value)); return *this;}
+    inline BatchGetItemResult& AddResponses(const Aws::String& key, const BatchResponse& value) { m_responses.emplace(key, value); return *this; }
+    inline BatchGetItemResult& AddResponses(Aws::String&& key, const BatchResponse& value) { m_responses.emplace(std::move(key), value); return *this; }
+    inline BatchGetItemResult& AddResponses(const Aws::String& key, BatchResponse&& value) { m_responses.emplace(key, std::move(value)); return *this; }
+    inline BatchGetItemResult& AddResponses(Aws::String&& key, BatchResponse&& value) { m_responses.emplace(std::move(key), std::move(value)); return *this; }
+    inline BatchGetItemResult& AddResponses(const char* key, BatchResponse&& value) { m_responses.emplace(key, std::move(value)); return *this; }
+    inline BatchGetItemResult& AddResponses(const char* key, const BatchResponse& value) { m_responses.emplace(key, value); return *this; }
     ///@}
 
     ///@{
-    /**
-     * <p>A map of tables and their respective keys that were not processed with the
-     * current response. The <code>UnprocessedKeys</code> value is in the same form as
-     * <code>RequestItems</code>, so the value can be provided directly to a subsequent
-     * <code>BatchGetItem</code> operation. For more information, see
-     * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each element
-     * consists of:</p> <ul> <li> <p> <code>Keys</code> - An array of primary key
-     * attribute values that define specific items in the table.</p> </li> <li> <p>
-     * <code>ProjectionExpression</code> - One or more attributes to be retrieved from
-     * the table or index. By default, all attributes are returned. If a requested
-     * attribute is not found, it does not appear in the result.</p> </li> <li> <p>
-     * <code>ConsistentRead</code> - The consistency of a read operation. If set to
-     * <code>true</code>, then a strongly consistent read is used; otherwise, an
-     * eventually consistent read is used.</p> </li> </ul> <p>If there are no
-     * unprocessed keys remaining, the response contains an empty
-     * <code>UnprocessedKeys</code> map.</p>
-     */
+    
     inline const Aws::Map<Aws::String, KeysAndAttributes>& GetUnprocessedKeys() const{ return m_unprocessedKeys; }
     inline void SetUnprocessedKeys(const Aws::Map<Aws::String, KeysAndAttributes>& value) { m_unprocessedKeys = value; }
     inline void SetUnprocessedKeys(Aws::Map<Aws::String, KeysAndAttributes>&& value) { m_unprocessedKeys = std::move(value); }
@@ -94,23 +66,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The read capacity units consumed by the entire <code>BatchGetItem</code>
-     * operation.</p> <p>Each element consists of:</p> <ul> <li> <p>
-     * <code>TableName</code> - The table that consumed the provisioned throughput.</p>
-     * </li> <li> <p> <code>CapacityUnits</code> - The total number of capacity units
-     * consumed.</p> </li> </ul>
-     */
-    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const{ return m_consumedCapacity; }
-    inline void SetConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { m_consumedCapacity = value; }
-    inline void SetConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { m_consumedCapacity = std::move(value); }
-    inline BatchGetItemResult& WithConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { SetConsumedCapacity(value); return *this;}
-    inline BatchGetItemResult& WithConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { SetConsumedCapacity(std::move(value)); return *this;}
-    inline BatchGetItemResult& AddConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity.push_back(value); return *this; }
-    inline BatchGetItemResult& AddConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -122,11 +77,9 @@ namespace Model
     ///@}
   private:
 
-    Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>> m_responses;
+    Aws::Map<Aws::String, BatchResponse> m_responses;
 
     Aws::Map<Aws::String, KeysAndAttributes> m_unprocessedKeys;
-
-    Aws::Vector<ConsumedCapacity> m_consumedCapacity;
 
     Aws::String m_requestId;
   };

@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/dynamodb/model/ConsumedCapacity.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/AttributeValue.h>
 #include <utility>
@@ -27,12 +26,6 @@ namespace DynamoDB
 {
 namespace Model
 {
-  /**
-   * <p>Represents the output of a <code>GetItem</code> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItemOutput">AWS
-   * API Reference</a></p>
-   */
   class GetItemResult
   {
   public:
@@ -42,10 +35,7 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>A map of attribute names to <code>AttributeValue</code> objects, as specified
-     * by <code>ProjectionExpression</code>.</p>
-     */
+    
     inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const{ return m_item; }
     inline void SetItem(const Aws::Map<Aws::String, AttributeValue>& value) { m_item = value; }
     inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_item = std::move(value); }
@@ -60,22 +50,10 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The capacity units consumed by the <code>GetItem</code> operation. The data
-     * returned includes the total provisioned throughput consumed, along with
-     * statistics for the table and any indexes involved in the operation.
-     * <code>ConsumedCapacity</code> is only returned if the
-     * <code>ReturnConsumedCapacity</code> parameter was specified. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#read-operation-consumption">Capacity
-     * unit consumption for read operations</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.</p>
-     */
-    inline const ConsumedCapacity& GetConsumedCapacity() const{ return m_consumedCapacity; }
-    inline void SetConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity = value; }
-    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = std::move(value); }
-    inline GetItemResult& WithConsumedCapacity(const ConsumedCapacity& value) { SetConsumedCapacity(value); return *this;}
-    inline GetItemResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
+    
+    inline double GetConsumedCapacityUnits() const{ return m_consumedCapacityUnits; }
+    inline void SetConsumedCapacityUnits(double value) { m_consumedCapacityUnits = value; }
+    inline GetItemResult& WithConsumedCapacityUnits(double value) { SetConsumedCapacityUnits(value); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +70,7 @@ namespace Model
 
     Aws::Map<Aws::String, AttributeValue> m_item;
 
-    ConsumedCapacity m_consumedCapacity;
+    double m_consumedCapacityUnits;
 
     Aws::String m_requestId;
   };

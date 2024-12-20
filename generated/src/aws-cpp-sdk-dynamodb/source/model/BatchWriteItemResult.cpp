@@ -29,6 +29,15 @@ BatchWriteItemResult::BatchWriteItemResult(const Aws::AmazonWebServiceResult<Jso
 BatchWriteItemResult& BatchWriteItemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Responses"))
+  {
+    Aws::Map<Aws::String, JsonView> responsesJsonMap = jsonValue.GetObject("Responses").GetAllObjects();
+    for(auto& responsesItem : responsesJsonMap)
+    {
+      m_responses[responsesItem.first] = responsesItem.second.AsObject();
+    }
+  }
+
   if(jsonValue.ValueExists("UnprocessedItems"))
   {
     Aws::Map<Aws::String, JsonView> unprocessedItemsJsonMap = jsonValue.GetObject("UnprocessedItems").GetAllObjects();
@@ -42,31 +51,6 @@ BatchWriteItemResult& BatchWriteItemResult::operator =(const Aws::AmazonWebServi
         writeRequestsList.push_back(writeRequestsJsonList[writeRequestsIndex].AsObject());
       }
       m_unprocessedItems[unprocessedItemsItem.first] = std::move(writeRequestsList);
-    }
-  }
-
-  if(jsonValue.ValueExists("ItemCollectionMetrics"))
-  {
-    Aws::Map<Aws::String, JsonView> itemCollectionMetricsJsonMap = jsonValue.GetObject("ItemCollectionMetrics").GetAllObjects();
-    for(auto& itemCollectionMetricsItem : itemCollectionMetricsJsonMap)
-    {
-      Aws::Utils::Array<JsonView> itemCollectionMetricsMultipleJsonList = itemCollectionMetricsItem.second.AsArray();
-      Aws::Vector<ItemCollectionMetrics> itemCollectionMetricsMultipleList;
-      itemCollectionMetricsMultipleList.reserve((size_t)itemCollectionMetricsMultipleJsonList.GetLength());
-      for(unsigned itemCollectionMetricsMultipleIndex = 0; itemCollectionMetricsMultipleIndex < itemCollectionMetricsMultipleJsonList.GetLength(); ++itemCollectionMetricsMultipleIndex)
-      {
-        itemCollectionMetricsMultipleList.push_back(itemCollectionMetricsMultipleJsonList[itemCollectionMetricsMultipleIndex].AsObject());
-      }
-      m_itemCollectionMetrics[itemCollectionMetricsItem.first] = std::move(itemCollectionMetricsMultipleList);
-    }
-  }
-
-  if(jsonValue.ValueExists("ConsumedCapacity"))
-  {
-    Aws::Utils::Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
-    for(unsigned consumedCapacityIndex = 0; consumedCapacityIndex < consumedCapacityJsonList.GetLength(); ++consumedCapacityIndex)
-    {
-      m_consumedCapacity.push_back(consumedCapacityJsonList[consumedCapacityIndex].AsObject());
     }
   }
 

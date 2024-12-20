@@ -19,10 +19,7 @@ namespace Model
     CREATING,
     UPDATING,
     DELETING,
-    ACTIVE,
-    INACCESSIBLE_ENCRYPTION_CREDENTIALS,
-    ARCHIVING,
-    ARCHIVED
+    ACTIVE
   };
 
 namespace TableStatusMapper

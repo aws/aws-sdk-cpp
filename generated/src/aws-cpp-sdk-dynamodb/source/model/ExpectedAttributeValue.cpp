@@ -21,10 +21,7 @@ namespace Model
 ExpectedAttributeValue::ExpectedAttributeValue() : 
     m_valueHasBeenSet(false),
     m_exists(false),
-    m_existsHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_attributeValueListHasBeenSet(false)
+    m_existsHasBeenSet(false)
 {
 }
 
@@ -50,23 +47,6 @@ ExpectedAttributeValue& ExpectedAttributeValue::operator =(JsonView jsonValue)
     m_existsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ComparisonOperator"))
-  {
-    m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
-
-    m_comparisonOperatorHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("AttributeValueList"))
-  {
-    Aws::Utils::Array<JsonView> attributeValueListJsonList = jsonValue.GetArray("AttributeValueList");
-    for(unsigned attributeValueListIndex = 0; attributeValueListIndex < attributeValueListJsonList.GetLength(); ++attributeValueListIndex)
-    {
-      m_attributeValueList.push_back(attributeValueListJsonList[attributeValueListIndex].AsObject());
-    }
-    m_attributeValueListHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -83,22 +63,6 @@ JsonValue ExpectedAttributeValue::Jsonize() const
   if(m_existsHasBeenSet)
   {
    payload.WithBool("Exists", m_exists);
-
-  }
-
-  if(m_comparisonOperatorHasBeenSet)
-  {
-   payload.WithString("ComparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
-  }
-
-  if(m_attributeValueListHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributeValueListJsonList(m_attributeValueList.size());
-   for(unsigned attributeValueListIndex = 0; attributeValueListIndex < attributeValueListJsonList.GetLength(); ++attributeValueListIndex)
-   {
-     attributeValueListJsonList[attributeValueListIndex].AsObject(m_attributeValueList[attributeValueListIndex].Jsonize());
-   }
-   payload.WithArray("AttributeValueList", std::move(attributeValueListJsonList));
 
   }
 

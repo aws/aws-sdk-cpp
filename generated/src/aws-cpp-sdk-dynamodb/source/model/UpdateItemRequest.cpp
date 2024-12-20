@@ -17,20 +17,8 @@ UpdateItemRequest::UpdateItemRequest() :
     m_keyHasBeenSet(false),
     m_attributeUpdatesHasBeenSet(false),
     m_expectedHasBeenSet(false),
-    m_conditionalOperator(ConditionalOperator::NOT_SET),
-    m_conditionalOperatorHasBeenSet(false),
     m_returnValues(ReturnValue::NOT_SET),
-    m_returnValuesHasBeenSet(false),
-    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
-    m_returnConsumedCapacityHasBeenSet(false),
-    m_returnItemCollectionMetrics(ReturnItemCollectionMetrics::NOT_SET),
-    m_returnItemCollectionMetricsHasBeenSet(false),
-    m_updateExpressionHasBeenSet(false),
-    m_conditionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false),
-    m_expressionAttributeValuesHasBeenSet(false),
-    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
-    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
+    m_returnValuesHasBeenSet(false)
 {
 }
 
@@ -46,12 +34,7 @@ Aws::String UpdateItemRequest::SerializePayload() const
 
   if(m_keyHasBeenSet)
   {
-   JsonValue keyJsonMap;
-   for(auto& keyItem : m_key)
-   {
-     keyJsonMap.WithObject(keyItem.first, keyItem.second.Jsonize());
-   }
-   payload.WithObject("Key", std::move(keyJsonMap));
+   payload.WithObject("Key", m_key.Jsonize());
 
   }
 
@@ -77,63 +60,9 @@ Aws::String UpdateItemRequest::SerializePayload() const
 
   }
 
-  if(m_conditionalOperatorHasBeenSet)
-  {
-   payload.WithString("ConditionalOperator", ConditionalOperatorMapper::GetNameForConditionalOperator(m_conditionalOperator));
-  }
-
   if(m_returnValuesHasBeenSet)
   {
    payload.WithString("ReturnValues", ReturnValueMapper::GetNameForReturnValue(m_returnValues));
-  }
-
-  if(m_returnConsumedCapacityHasBeenSet)
-  {
-   payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
-  }
-
-  if(m_returnItemCollectionMetricsHasBeenSet)
-  {
-   payload.WithString("ReturnItemCollectionMetrics", ReturnItemCollectionMetricsMapper::GetNameForReturnItemCollectionMetrics(m_returnItemCollectionMetrics));
-  }
-
-  if(m_updateExpressionHasBeenSet)
-  {
-   payload.WithString("UpdateExpression", m_updateExpression);
-
-  }
-
-  if(m_conditionExpressionHasBeenSet)
-  {
-   payload.WithString("ConditionExpression", m_conditionExpression);
-
-  }
-
-  if(m_expressionAttributeNamesHasBeenSet)
-  {
-   JsonValue expressionAttributeNamesJsonMap;
-   for(auto& expressionAttributeNamesItem : m_expressionAttributeNames)
-   {
-     expressionAttributeNamesJsonMap.WithString(expressionAttributeNamesItem.first, expressionAttributeNamesItem.second);
-   }
-   payload.WithObject("ExpressionAttributeNames", std::move(expressionAttributeNamesJsonMap));
-
-  }
-
-  if(m_expressionAttributeValuesHasBeenSet)
-  {
-   JsonValue expressionAttributeValuesJsonMap;
-   for(auto& expressionAttributeValuesItem : m_expressionAttributeValues)
-   {
-     expressionAttributeValuesJsonMap.WithObject(expressionAttributeValuesItem.first, expressionAttributeValuesItem.second.Jsonize());
-   }
-   payload.WithObject("ExpressionAttributeValues", std::move(expressionAttributeValuesJsonMap));
-
-  }
-
-  if(m_returnValuesOnConditionCheckFailureHasBeenSet)
-  {
-   payload.WithString("ReturnValuesOnConditionCheckFailure", ReturnValuesOnConditionCheckFailureMapper::GetNameForReturnValuesOnConditionCheckFailure(m_returnValuesOnConditionCheckFailure));
   }
 
   return payload.View().WriteReadable();
@@ -142,7 +71,7 @@ Aws::String UpdateItemRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection UpdateItemRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.UpdateItem"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20111205.UpdateItem"));
   return headers;
 
 }

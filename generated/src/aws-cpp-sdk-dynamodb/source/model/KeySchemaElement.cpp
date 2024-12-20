@@ -20,8 +20,8 @@ namespace Model
 
 KeySchemaElement::KeySchemaElement() : 
     m_attributeNameHasBeenSet(false),
-    m_keyType(KeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false)
+    m_attributeType(ScalarAttributeType::NOT_SET),
+    m_attributeTypeHasBeenSet(false)
 {
 }
 
@@ -40,11 +40,11 @@ KeySchemaElement& KeySchemaElement::operator =(JsonView jsonValue)
     m_attributeNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("KeyType"))
+  if(jsonValue.ValueExists("AttributeType"))
   {
-    m_keyType = KeyTypeMapper::GetKeyTypeForName(jsonValue.GetString("KeyType"));
+    m_attributeType = ScalarAttributeTypeMapper::GetScalarAttributeTypeForName(jsonValue.GetString("AttributeType"));
 
-    m_keyTypeHasBeenSet = true;
+    m_attributeTypeHasBeenSet = true;
   }
 
   return *this;
@@ -60,9 +60,9 @@ JsonValue KeySchemaElement::Jsonize() const
 
   }
 
-  if(m_keyTypeHasBeenSet)
+  if(m_attributeTypeHasBeenSet)
   {
-   payload.WithString("KeyType", KeyTypeMapper::GetNameForKeyType(m_keyType));
+   payload.WithString("AttributeType", ScalarAttributeTypeMapper::GetNameForScalarAttributeType(m_attributeType));
   }
 
   return payload;

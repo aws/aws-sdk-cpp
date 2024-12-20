@@ -14,28 +14,18 @@ using namespace Aws::Utils;
 
 QueryRequest::QueryRequest() : 
     m_tableNameHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_select(Select::NOT_SET),
-    m_selectHasBeenSet(false),
     m_attributesToGetHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
     m_consistentRead(false),
     m_consistentReadHasBeenSet(false),
-    m_keyConditionsHasBeenSet(false),
-    m_queryFilterHasBeenSet(false),
-    m_conditionalOperator(ConditionalOperator::NOT_SET),
-    m_conditionalOperatorHasBeenSet(false),
+    m_count(false),
+    m_countHasBeenSet(false),
+    m_hashKeyValueHasBeenSet(false),
+    m_rangeKeyConditionHasBeenSet(false),
     m_scanIndexForward(false),
     m_scanIndexForwardHasBeenSet(false),
-    m_exclusiveStartKeyHasBeenSet(false),
-    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
-    m_returnConsumedCapacityHasBeenSet(false),
-    m_projectionExpressionHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false),
-    m_keyConditionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false),
-    m_expressionAttributeValuesHasBeenSet(false)
+    m_exclusiveStartKeyHasBeenSet(false)
 {
 }
 
@@ -47,17 +37,6 @@ Aws::String QueryRequest::SerializePayload() const
   {
    payload.WithString("TableName", m_tableName);
 
-  }
-
-  if(m_indexNameHasBeenSet)
-  {
-   payload.WithString("IndexName", m_indexName);
-
-  }
-
-  if(m_selectHasBeenSet)
-  {
-   payload.WithString("Select", SelectMapper::GetNameForSelect(m_select));
   }
 
   if(m_attributesToGetHasBeenSet)
@@ -83,31 +62,22 @@ Aws::String QueryRequest::SerializePayload() const
 
   }
 
-  if(m_keyConditionsHasBeenSet)
+  if(m_countHasBeenSet)
   {
-   JsonValue keyConditionsJsonMap;
-   for(auto& keyConditionsItem : m_keyConditions)
-   {
-     keyConditionsJsonMap.WithObject(keyConditionsItem.first, keyConditionsItem.second.Jsonize());
-   }
-   payload.WithObject("KeyConditions", std::move(keyConditionsJsonMap));
+   payload.WithBool("Count", m_count);
 
   }
 
-  if(m_queryFilterHasBeenSet)
+  if(m_hashKeyValueHasBeenSet)
   {
-   JsonValue queryFilterJsonMap;
-   for(auto& queryFilterItem : m_queryFilter)
-   {
-     queryFilterJsonMap.WithObject(queryFilterItem.first, queryFilterItem.second.Jsonize());
-   }
-   payload.WithObject("QueryFilter", std::move(queryFilterJsonMap));
+   payload.WithObject("HashKeyValue", m_hashKeyValue.Jsonize());
 
   }
 
-  if(m_conditionalOperatorHasBeenSet)
+  if(m_rangeKeyConditionHasBeenSet)
   {
-   payload.WithString("ConditionalOperator", ConditionalOperatorMapper::GetNameForConditionalOperator(m_conditionalOperator));
+   payload.WithObject("RangeKeyCondition", m_rangeKeyCondition.Jsonize());
+
   }
 
   if(m_scanIndexForwardHasBeenSet)
@@ -118,57 +88,7 @@ Aws::String QueryRequest::SerializePayload() const
 
   if(m_exclusiveStartKeyHasBeenSet)
   {
-   JsonValue exclusiveStartKeyJsonMap;
-   for(auto& exclusiveStartKeyItem : m_exclusiveStartKey)
-   {
-     exclusiveStartKeyJsonMap.WithObject(exclusiveStartKeyItem.first, exclusiveStartKeyItem.second.Jsonize());
-   }
-   payload.WithObject("ExclusiveStartKey", std::move(exclusiveStartKeyJsonMap));
-
-  }
-
-  if(m_returnConsumedCapacityHasBeenSet)
-  {
-   payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
-  }
-
-  if(m_projectionExpressionHasBeenSet)
-  {
-   payload.WithString("ProjectionExpression", m_projectionExpression);
-
-  }
-
-  if(m_filterExpressionHasBeenSet)
-  {
-   payload.WithString("FilterExpression", m_filterExpression);
-
-  }
-
-  if(m_keyConditionExpressionHasBeenSet)
-  {
-   payload.WithString("KeyConditionExpression", m_keyConditionExpression);
-
-  }
-
-  if(m_expressionAttributeNamesHasBeenSet)
-  {
-   JsonValue expressionAttributeNamesJsonMap;
-   for(auto& expressionAttributeNamesItem : m_expressionAttributeNames)
-   {
-     expressionAttributeNamesJsonMap.WithString(expressionAttributeNamesItem.first, expressionAttributeNamesItem.second);
-   }
-   payload.WithObject("ExpressionAttributeNames", std::move(expressionAttributeNamesJsonMap));
-
-  }
-
-  if(m_expressionAttributeValuesHasBeenSet)
-  {
-   JsonValue expressionAttributeValuesJsonMap;
-   for(auto& expressionAttributeValuesItem : m_expressionAttributeValues)
-   {
-     expressionAttributeValuesJsonMap.WithObject(expressionAttributeValuesItem.first, expressionAttributeValuesItem.second.Jsonize());
-   }
-   payload.WithObject("ExpressionAttributeValues", std::move(expressionAttributeValuesJsonMap));
+   payload.WithObject("ExclusiveStartKey", m_exclusiveStartKey.Jsonize());
 
   }
 
@@ -178,7 +98,7 @@ Aws::String QueryRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection QueryRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.Query"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20111205.Query"));
   return headers;
 
 }

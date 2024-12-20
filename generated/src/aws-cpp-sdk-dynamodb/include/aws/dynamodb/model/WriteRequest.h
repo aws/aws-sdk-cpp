@@ -24,15 +24,6 @@ namespace DynamoDB
 namespace Model
 {
 
-  /**
-   * <p>Represents an operation to perform - either <code>DeleteItem</code> or
-   * <code>PutItem</code>. You can only request one of these operations, not both, in
-   * a single <code>WriteRequest</code>. If you do need to perform both of these
-   * operations, you need to provide two separate <code>WriteRequest</code>
-   * objects.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/WriteRequest">AWS
-   * API Reference</a></p>
-   */
   class WriteRequest
   {
   public:
@@ -43,9 +34,7 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>A request to perform a <code>PutItem</code> operation.</p>
-     */
+    
     inline const PutRequest& GetPutRequest() const{ return m_putRequest; }
     inline bool PutRequestHasBeenSet() const { return m_putRequestHasBeenSet; }
     inline void SetPutRequest(const PutRequest& value) { m_putRequestHasBeenSet = true; m_putRequest = value; }
@@ -55,9 +44,7 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>A request to perform a <code>DeleteItem</code> operation.</p>
-     */
+    
     inline const DeleteRequest& GetDeleteRequest() const{ return m_deleteRequest; }
     inline bool DeleteRequestHasBeenSet() const { return m_deleteRequestHasBeenSet; }
     inline void SetDeleteRequest(const DeleteRequest& value) { m_deleteRequestHasBeenSet = true; m_deleteRequest = value; }

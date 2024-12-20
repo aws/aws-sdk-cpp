@@ -33,7 +33,7 @@ Aws::String DescribeTableRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection DescribeTableRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.DescribeTable"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20111205.DescribeTable"));
   return headers;
 
 }

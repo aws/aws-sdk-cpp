@@ -6,7 +6,7 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/dynamodb/model/KeyType.h>
+#include <aws/dynamodb/model/ScalarAttributeType.h>
 #include <utility>
 
 namespace Aws
@@ -24,20 +24,6 @@ namespace DynamoDB
 namespace Model
 {
 
-  /**
-   * <p>Represents <i>a single element</i> of a key schema. A key schema specifies
-   * the attributes that make up the primary key of a table, or the key attributes of
-   * an index.</p> <p>A <code>KeySchemaElement</code> represents exactly one
-   * attribute of the primary key. For example, a simple primary key would be
-   * represented by one <code>KeySchemaElement</code> (for the partition key). A
-   * composite primary key would require one <code>KeySchemaElement</code> for the
-   * partition key, and another <code>KeySchemaElement</code> for the sort key.</p>
-   * <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a
-   * nested attribute). The data type must be one of String, Number, or Binary. The
-   * attribute cannot be nested within a List or a Map.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/KeySchemaElement">AWS
-   * API Reference</a></p>
-   */
   class KeySchemaElement
   {
   public:
@@ -48,9 +34,7 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>The name of a key attribute.</p>
-     */
+    
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
@@ -62,31 +46,21 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The role that this key attribute will assume:</p> <ul> <li> <p>
-     * <code>HASH</code> - partition key</p> </li> <li> <p> <code>RANGE</code> - sort
-     * key</p> </li> </ul>  <p>The partition key of an item is also known as its
-     * <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage
-     * of an internal hash function to evenly distribute data items across partitions,
-     * based on their partition key values.</p> <p>The sort key of an item is also
-     * known as its <i>range attribute</i>. The term "range attribute" derives from the
-     * way DynamoDB stores items with the same partition key physically close together,
-     * in sorted order by the sort key value.</p> 
-     */
-    inline const KeyType& GetKeyType() const{ return m_keyType; }
-    inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
-    inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
-    inline void SetKeyType(KeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
-    inline KeySchemaElement& WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
-    inline KeySchemaElement& WithKeyType(KeyType&& value) { SetKeyType(std::move(value)); return *this;}
+    
+    inline const ScalarAttributeType& GetAttributeType() const{ return m_attributeType; }
+    inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
+    inline void SetAttributeType(const ScalarAttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
+    inline void SetAttributeType(ScalarAttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
+    inline KeySchemaElement& WithAttributeType(const ScalarAttributeType& value) { SetAttributeType(value); return *this;}
+    inline KeySchemaElement& WithAttributeType(ScalarAttributeType&& value) { SetAttributeType(std::move(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet = false;
 
-    KeyType m_keyType;
-    bool m_keyTypeHasBeenSet = false;
+    ScalarAttributeType m_attributeType;
+    bool m_attributeTypeHasBeenSet = false;
   };
 
 } // namespace Model

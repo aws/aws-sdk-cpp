@@ -6,11 +6,10 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/dynamodb/model/ConsumedCapacity.h>
+#include <aws/dynamodb/model/BatchWriteResponse.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/WriteRequest.h>
-#include <aws/dynamodb/model/ItemCollectionMetrics.h>
 #include <utility>
 
 namespace Aws
@@ -29,12 +28,6 @@ namespace DynamoDB
 {
 namespace Model
 {
-  /**
-   * <p>Represents the output of a <code>BatchWriteItem</code>
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItemOutput">AWS
-   * API Reference</a></p>
-   */
   class BatchWriteItemResult
   {
   public:
@@ -44,32 +37,22 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>A map of tables and requests against those tables that were not processed.
-     * The <code>UnprocessedItems</code> value is in the same form as
-     * <code>RequestItems</code>, so you can provide this value directly to a
-     * subsequent <code>BatchWriteItem</code> operation. For more information, see
-     * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
-     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
-     * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
-     * a <code>DeleteItem</code> operation on the specified item. The item to be
-     * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>
-     * <code>Key</code> - A map of primary key attribute values that uniquely identify
-     * the item. Each entry in this map consists of an attribute name and an attribute
-     * value.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
-     * <code>Item</code> - A map of attributes and their values. Each entry in this map
-     * consists of an attribute name and an attribute value. Attribute values must not
-     * be null; string and binary type attributes must have lengths greater than zero;
-     * and set type attributes must not be empty. Requests that contain empty values
-     * will be rejected with a <code>ValidationException</code> exception.</p> <p>If
-     * you specify any attributes that are part of an index key, then the data types
-     * for those attributes must match those of the schema in the table's attribute
-     * definition.</p> </li> </ul> </li> </ul> <p>If there are no unprocessed items
-     * remaining, the response contains an empty <code>UnprocessedItems</code> map.</p>
-     */
+    
+    inline const Aws::Map<Aws::String, BatchWriteResponse>& GetResponses() const{ return m_responses; }
+    inline void SetResponses(const Aws::Map<Aws::String, BatchWriteResponse>& value) { m_responses = value; }
+    inline void SetResponses(Aws::Map<Aws::String, BatchWriteResponse>&& value) { m_responses = std::move(value); }
+    inline BatchWriteItemResult& WithResponses(const Aws::Map<Aws::String, BatchWriteResponse>& value) { SetResponses(value); return *this;}
+    inline BatchWriteItemResult& WithResponses(Aws::Map<Aws::String, BatchWriteResponse>&& value) { SetResponses(std::move(value)); return *this;}
+    inline BatchWriteItemResult& AddResponses(const Aws::String& key, const BatchWriteResponse& value) { m_responses.emplace(key, value); return *this; }
+    inline BatchWriteItemResult& AddResponses(Aws::String&& key, const BatchWriteResponse& value) { m_responses.emplace(std::move(key), value); return *this; }
+    inline BatchWriteItemResult& AddResponses(const Aws::String& key, BatchWriteResponse&& value) { m_responses.emplace(key, std::move(value)); return *this; }
+    inline BatchWriteItemResult& AddResponses(Aws::String&& key, BatchWriteResponse&& value) { m_responses.emplace(std::move(key), std::move(value)); return *this; }
+    inline BatchWriteItemResult& AddResponses(const char* key, BatchWriteResponse&& value) { m_responses.emplace(key, std::move(value)); return *this; }
+    inline BatchWriteItemResult& AddResponses(const char* key, const BatchWriteResponse& value) { m_responses.emplace(key, value); return *this; }
+    ///@}
+
+    ///@{
+    
     inline const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& GetUnprocessedItems() const{ return m_unprocessedItems; }
     inline void SetUnprocessedItems(const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& value) { m_unprocessedItems = value; }
     inline void SetUnprocessedItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { m_unprocessedItems = std::move(value); }
@@ -84,53 +67,6 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>A list of tables that were processed by <code>BatchWriteItem</code> and, for
-     * each table, information about any item collections that were affected by
-     * individual <code>DeleteItem</code> or <code>PutItem</code> operations.</p>
-     * <p>Each entry consists of the following subelements:</p> <ul> <li> <p>
-     * <code>ItemCollectionKey</code> - The partition key value of the item collection.
-     * This is the same as the partition key value of the item.</p> </li> <li> <p>
-     * <code>SizeEstimateRangeGB</code> - An estimate of item collection size,
-     * expressed in GB. This is a two-element array containing a lower bound and an
-     * upper bound for the estimate. The estimate includes the size of all the items in
-     * the table, plus the size of all attributes projected into all of the local
-     * secondary indexes on the table. Use this estimate to measure whether a local
-     * secondary index is approaching its size limit.</p> <p>The estimate is subject to
-     * change over time; therefore, do not rely on the precision or accuracy of the
-     * estimate.</p> </li> </ul>
-     */
-    inline const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& GetItemCollectionMetrics() const{ return m_itemCollectionMetrics; }
-    inline void SetItemCollectionMetrics(const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& value) { m_itemCollectionMetrics = value; }
-    inline void SetItemCollectionMetrics(Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>&& value) { m_itemCollectionMetrics = std::move(value); }
-    inline BatchWriteItemResult& WithItemCollectionMetrics(const Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>& value) { SetItemCollectionMetrics(value); return *this;}
-    inline BatchWriteItemResult& WithItemCollectionMetrics(Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>>&& value) { SetItemCollectionMetrics(std::move(value)); return *this;}
-    inline BatchWriteItemResult& AddItemCollectionMetrics(const Aws::String& key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(key, value); return *this; }
-    inline BatchWriteItemResult& AddItemCollectionMetrics(Aws::String&& key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(std::move(key), value); return *this; }
-    inline BatchWriteItemResult& AddItemCollectionMetrics(const Aws::String& key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(key, std::move(value)); return *this; }
-    inline BatchWriteItemResult& AddItemCollectionMetrics(Aws::String&& key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchWriteItemResult& AddItemCollectionMetrics(const char* key, Aws::Vector<ItemCollectionMetrics>&& value) { m_itemCollectionMetrics.emplace(key, std::move(value)); return *this; }
-    inline BatchWriteItemResult& AddItemCollectionMetrics(const char* key, const Aws::Vector<ItemCollectionMetrics>& value) { m_itemCollectionMetrics.emplace(key, value); return *this; }
-    ///@}
-
-    ///@{
-    /**
-     * <p>The capacity units consumed by the entire <code>BatchWriteItem</code>
-     * operation.</p> <p>Each element consists of:</p> <ul> <li> <p>
-     * <code>TableName</code> - The table that consumed the provisioned throughput.</p>
-     * </li> <li> <p> <code>CapacityUnits</code> - The total number of capacity units
-     * consumed.</p> </li> </ul>
-     */
-    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const{ return m_consumedCapacity; }
-    inline void SetConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { m_consumedCapacity = value; }
-    inline void SetConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { m_consumedCapacity = std::move(value); }
-    inline BatchWriteItemResult& WithConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { SetConsumedCapacity(value); return *this;}
-    inline BatchWriteItemResult& WithConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { SetConsumedCapacity(std::move(value)); return *this;}
-    inline BatchWriteItemResult& AddConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity.push_back(value); return *this; }
-    inline BatchWriteItemResult& AddConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity.push_back(std::move(value)); return *this; }
-    ///@}
-
-    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
@@ -142,11 +78,9 @@ namespace Model
     ///@}
   private:
 
+    Aws::Map<Aws::String, BatchWriteResponse> m_responses;
+
     Aws::Map<Aws::String, Aws::Vector<WriteRequest>> m_unprocessedItems;
-
-    Aws::Map<Aws::String, Aws::Vector<ItemCollectionMetrics>> m_itemCollectionMetrics;
-
-    Aws::Vector<ConsumedCapacity> m_consumedCapacity;
 
     Aws::String m_requestId;
   };

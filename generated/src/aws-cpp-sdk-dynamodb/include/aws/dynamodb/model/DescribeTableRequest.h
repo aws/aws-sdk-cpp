@@ -17,10 +17,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <code>DescribeTable</code> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableInput">AWS
-   * API Reference</a></p>
    */
   class DescribeTableRequest : public DynamoDBRequest
   {
@@ -39,10 +35,7 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>The name of the table to describe. You can also provide the Amazon Resource
-     * Name (ARN) of the table in this parameter.</p>
-     */
+    
     inline const Aws::String& GetTableName() const{ return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }

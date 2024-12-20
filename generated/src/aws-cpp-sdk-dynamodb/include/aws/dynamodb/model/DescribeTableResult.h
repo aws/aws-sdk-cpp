@@ -25,12 +25,6 @@ namespace DynamoDB
 {
 namespace Model
 {
-  /**
-   * <p>Represents the output of a <code>DescribeTable</code>
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableOutput">AWS
-   * API Reference</a></p>
-   */
   class DescribeTableResult
   {
   public:
@@ -40,9 +34,7 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>The properties of the table.</p>
-     */
+    
     inline const TableDescription& GetTable() const{ return m_table; }
     inline void SetTable(const TableDescription& value) { m_table = value; }
     inline void SetTable(TableDescription&& value) { m_table = std::move(value); }

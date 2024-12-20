@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetItemResult::GetItemResult()
+GetItemResult::GetItemResult() : 
+    m_consumedCapacityUnits(0.0)
 {
 }
 
 GetItemResult::GetItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+  : GetItemResult()
 {
   *this = result;
 }
@@ -38,9 +40,9 @@ GetItemResult& GetItemResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     }
   }
 
-  if(jsonValue.ValueExists("ConsumedCapacity"))
+  if(jsonValue.ValueExists("ConsumedCapacityUnits"))
   {
-    m_consumedCapacity = jsonValue.GetObject("ConsumedCapacity");
+    m_consumedCapacityUnits = jsonValue.GetDouble("ConsumedCapacityUnits");
 
   }
 

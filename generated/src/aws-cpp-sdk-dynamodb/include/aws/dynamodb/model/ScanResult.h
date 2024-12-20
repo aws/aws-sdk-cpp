@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/dynamodb/model/ConsumedCapacity.h>
+#include <aws/dynamodb/model/Key.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/dynamodb/model/AttributeValue.h>
 #include <utility>
 
@@ -28,12 +28,6 @@ namespace DynamoDB
 {
 namespace Model
 {
-  /**
-   * <p>Represents the output of a <code>Scan</code> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ScanOutput">AWS
-   * API Reference</a></p>
-   */
   class ScanResult
   {
   public:
@@ -43,10 +37,7 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>An array of item attributes that match the scan criteria. Each element in
-     * this array consists of an attribute name and the value for that attribute.</p>
-     */
+    
     inline const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& GetItems() const{ return m_items; }
     inline void SetItems(const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_items = value; }
     inline void SetItems(Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_items = std::move(value); }
@@ -57,76 +48,33 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The number of items in the response.</p> <p>If you set
-     * <code>ScanFilter</code> in the request, then <code>Count</code> is the number of
-     * items returned after the filter was applied, and <code>ScannedCount</code> is
-     * the number of matching items before the filter was applied.</p> <p>If you did
-     * not use a filter in the request, then <code>Count</code> is the same as
-     * <code>ScannedCount</code>.</p>
-     */
+    
     inline int GetCount() const{ return m_count; }
     inline void SetCount(int value) { m_count = value; }
     inline ScanResult& WithCount(int value) { SetCount(value); return *this;}
     ///@}
 
     ///@{
-    /**
-     * <p>The number of items evaluated, before any <code>ScanFilter</code> is applied.
-     * A high <code>ScannedCount</code> value with few, or no, <code>Count</code>
-     * results indicates an inefficient <code>Scan</code> operation. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     * and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>If
-     * you did not use a filter in the request, then <code>ScannedCount</code> is the
-     * same as <code>Count</code>.</p>
-     */
+    
     inline int GetScannedCount() const{ return m_scannedCount; }
     inline void SetScannedCount(int value) { m_scannedCount = value; }
     inline ScanResult& WithScannedCount(int value) { SetScannedCount(value); return *this;}
     ///@}
 
     ///@{
-    /**
-     * <p>The primary key of the item where the operation stopped, inclusive of the
-     * previous result set. Use this value to start a new operation, excluding this
-     * value in the new request.</p> <p>If <code>LastEvaluatedKey</code> is empty, then
-     * the "last page" of results has been processed and there is no more data to be
-     * retrieved.</p> <p>If <code>LastEvaluatedKey</code> is not empty, it does not
-     * necessarily mean that there is more data in the result set. The only way to know
-     * when you have reached the end of the result set is when
-     * <code>LastEvaluatedKey</code> is empty.</p>
-     */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetLastEvaluatedKey() const{ return m_lastEvaluatedKey; }
-    inline void SetLastEvaluatedKey(const Aws::Map<Aws::String, AttributeValue>& value) { m_lastEvaluatedKey = value; }
-    inline void SetLastEvaluatedKey(Aws::Map<Aws::String, AttributeValue>&& value) { m_lastEvaluatedKey = std::move(value); }
-    inline ScanResult& WithLastEvaluatedKey(const Aws::Map<Aws::String, AttributeValue>& value) { SetLastEvaluatedKey(value); return *this;}
-    inline ScanResult& WithLastEvaluatedKey(Aws::Map<Aws::String, AttributeValue>&& value) { SetLastEvaluatedKey(std::move(value)); return *this;}
-    inline ScanResult& AddLastEvaluatedKey(const Aws::String& key, const AttributeValue& value) { m_lastEvaluatedKey.emplace(key, value); return *this; }
-    inline ScanResult& AddLastEvaluatedKey(Aws::String&& key, const AttributeValue& value) { m_lastEvaluatedKey.emplace(std::move(key), value); return *this; }
-    inline ScanResult& AddLastEvaluatedKey(const Aws::String& key, AttributeValue&& value) { m_lastEvaluatedKey.emplace(key, std::move(value)); return *this; }
-    inline ScanResult& AddLastEvaluatedKey(Aws::String&& key, AttributeValue&& value) { m_lastEvaluatedKey.emplace(std::move(key), std::move(value)); return *this; }
-    inline ScanResult& AddLastEvaluatedKey(const char* key, AttributeValue&& value) { m_lastEvaluatedKey.emplace(key, std::move(value)); return *this; }
-    inline ScanResult& AddLastEvaluatedKey(const char* key, const AttributeValue& value) { m_lastEvaluatedKey.emplace(key, value); return *this; }
+    
+    inline const Key& GetLastEvaluatedKey() const{ return m_lastEvaluatedKey; }
+    inline void SetLastEvaluatedKey(const Key& value) { m_lastEvaluatedKey = value; }
+    inline void SetLastEvaluatedKey(Key&& value) { m_lastEvaluatedKey = std::move(value); }
+    inline ScanResult& WithLastEvaluatedKey(const Key& value) { SetLastEvaluatedKey(value); return *this;}
+    inline ScanResult& WithLastEvaluatedKey(Key&& value) { SetLastEvaluatedKey(std::move(value)); return *this;}
     ///@}
 
     ///@{
-    /**
-     * <p>The capacity units consumed by the <code>Scan</code> operation. The data
-     * returned includes the total provisioned throughput consumed, along with
-     * statistics for the table and any indexes involved in the operation.
-     * <code>ConsumedCapacity</code> is only returned if the
-     * <code>ReturnConsumedCapacity</code> parameter was specified. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#read-operation-consumption">Capacity
-     * unit consumption for read operations</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.</p>
-     */
-    inline const ConsumedCapacity& GetConsumedCapacity() const{ return m_consumedCapacity; }
-    inline void SetConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity = value; }
-    inline void SetConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity = std::move(value); }
-    inline ScanResult& WithConsumedCapacity(const ConsumedCapacity& value) { SetConsumedCapacity(value); return *this;}
-    inline ScanResult& WithConsumedCapacity(ConsumedCapacity&& value) { SetConsumedCapacity(std::move(value)); return *this;}
+    
+    inline double GetConsumedCapacityUnits() const{ return m_consumedCapacityUnits; }
+    inline void SetConsumedCapacityUnits(double value) { m_consumedCapacityUnits = value; }
+    inline ScanResult& WithConsumedCapacityUnits(double value) { SetConsumedCapacityUnits(value); return *this;}
     ///@}
 
     ///@{
@@ -147,9 +95,9 @@ namespace Model
 
     int m_scannedCount;
 
-    Aws::Map<Aws::String, AttributeValue> m_lastEvaluatedKey;
+    Key m_lastEvaluatedKey;
 
-    ConsumedCapacity m_consumedCapacity;
+    double m_consumedCapacityUnits;
 
     Aws::String m_requestId;
   };

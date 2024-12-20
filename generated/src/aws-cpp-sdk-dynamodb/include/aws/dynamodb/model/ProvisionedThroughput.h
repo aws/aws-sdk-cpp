@@ -21,17 +21,6 @@ namespace DynamoDB
 namespace Model
 {
 
-  /**
-   * <p>Represents the provisioned throughput settings for a specified table or
-   * index. The settings can be modified using the <code>UpdateTable</code>
-   * operation.</p> <p>For current minimum and maximum provisioned throughput values,
-   * see <a
-   * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-   * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ProvisionedThroughput">AWS
-   * API Reference</a></p>
-   */
   class ProvisionedThroughput
   {
   public:
@@ -42,15 +31,7 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>The maximum number of strongly consistent reads consumed per second before
-     * DynamoDB returns a <code>ThrottlingException</code>. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
-     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.</p> <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code>
-     * the value is set to 0.</p>
-     */
+    
     inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
     inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
@@ -58,14 +39,7 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <code>ThrottlingException</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
-     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.</p> <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code>
-     * the value is set to 0.</p>
-     */
+    
     inline long long GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
     inline bool WriteCapacityUnitsHasBeenSet() const { return m_writeCapacityUnitsHasBeenSet; }
     inline void SetWriteCapacityUnits(long long value) { m_writeCapacityUnitsHasBeenSet = true; m_writeCapacityUnits = value; }

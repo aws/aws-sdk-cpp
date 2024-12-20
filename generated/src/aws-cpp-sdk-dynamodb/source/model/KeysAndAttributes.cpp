@@ -22,9 +22,7 @@ KeysAndAttributes::KeysAndAttributes() :
     m_keysHasBeenSet(false),
     m_attributesToGetHasBeenSet(false),
     m_consistentRead(false),
-    m_consistentReadHasBeenSet(false),
-    m_projectionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false)
+    m_consistentReadHasBeenSet(false)
 {
 }
 
@@ -41,13 +39,7 @@ KeysAndAttributes& KeysAndAttributes::operator =(JsonView jsonValue)
     Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
-      Aws::Map<Aws::String, JsonView> keyJsonMap = keysJsonList[keysIndex].GetAllObjects();
-      Aws::Map<Aws::String, AttributeValue> keyMap;
-      for(auto& keyItem : keyJsonMap)
-      {
-        keyMap[keyItem.first] = keyItem.second.AsObject();
-      }
-      m_keys.push_back(std::move(keyMap));
+      m_keys.push_back(keysJsonList[keysIndex].AsObject());
     }
     m_keysHasBeenSet = true;
   }
@@ -69,23 +61,6 @@ KeysAndAttributes& KeysAndAttributes::operator =(JsonView jsonValue)
     m_consistentReadHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ProjectionExpression"))
-  {
-    m_projectionExpression = jsonValue.GetString("ProjectionExpression");
-
-    m_projectionExpressionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("ExpressionAttributeNames"))
-  {
-    Aws::Map<Aws::String, JsonView> expressionAttributeNamesJsonMap = jsonValue.GetObject("ExpressionAttributeNames").GetAllObjects();
-    for(auto& expressionAttributeNamesItem : expressionAttributeNamesJsonMap)
-    {
-      m_expressionAttributeNames[expressionAttributeNamesItem.first] = expressionAttributeNamesItem.second.AsString();
-    }
-    m_expressionAttributeNamesHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -98,12 +73,7 @@ JsonValue KeysAndAttributes::Jsonize() const
    Aws::Utils::Array<JsonValue> keysJsonList(m_keys.size());
    for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
    {
-     JsonValue keyJsonMap;
-     for(auto& keyItem : m_keys[keysIndex])
-     {
-       keyJsonMap.WithObject(keyItem.first, keyItem.second.Jsonize());
-     }
-     keysJsonList[keysIndex].AsObject(std::move(keyJsonMap));
+     keysJsonList[keysIndex].AsObject(m_keys[keysIndex].Jsonize());
    }
    payload.WithArray("Keys", std::move(keysJsonList));
 
@@ -123,23 +93,6 @@ JsonValue KeysAndAttributes::Jsonize() const
   if(m_consistentReadHasBeenSet)
   {
    payload.WithBool("ConsistentRead", m_consistentRead);
-
-  }
-
-  if(m_projectionExpressionHasBeenSet)
-  {
-   payload.WithString("ProjectionExpression", m_projectionExpression);
-
-  }
-
-  if(m_expressionAttributeNamesHasBeenSet)
-  {
-   JsonValue expressionAttributeNamesJsonMap;
-   for(auto& expressionAttributeNamesItem : m_expressionAttributeNames)
-   {
-     expressionAttributeNamesJsonMap.WithString(expressionAttributeNamesItem.first, expressionAttributeNamesItem.second);
-   }
-   payload.WithObject("ExpressionAttributeNames", std::move(expressionAttributeNamesJsonMap));
 
   }
 

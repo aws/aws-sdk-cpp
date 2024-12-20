@@ -17,11 +17,7 @@ GetItemRequest::GetItemRequest() :
     m_keyHasBeenSet(false),
     m_attributesToGetHasBeenSet(false),
     m_consistentRead(false),
-    m_consistentReadHasBeenSet(false),
-    m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
-    m_returnConsumedCapacityHasBeenSet(false),
-    m_projectionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false)
+    m_consistentReadHasBeenSet(false)
 {
 }
 
@@ -37,12 +33,7 @@ Aws::String GetItemRequest::SerializePayload() const
 
   if(m_keyHasBeenSet)
   {
-   JsonValue keyJsonMap;
-   for(auto& keyItem : m_key)
-   {
-     keyJsonMap.WithObject(keyItem.first, keyItem.second.Jsonize());
-   }
-   payload.WithObject("Key", std::move(keyJsonMap));
+   payload.WithObject("Key", m_key.Jsonize());
 
   }
 
@@ -63,35 +54,13 @@ Aws::String GetItemRequest::SerializePayload() const
 
   }
 
-  if(m_returnConsumedCapacityHasBeenSet)
-  {
-   payload.WithString("ReturnConsumedCapacity", ReturnConsumedCapacityMapper::GetNameForReturnConsumedCapacity(m_returnConsumedCapacity));
-  }
-
-  if(m_projectionExpressionHasBeenSet)
-  {
-   payload.WithString("ProjectionExpression", m_projectionExpression);
-
-  }
-
-  if(m_expressionAttributeNamesHasBeenSet)
-  {
-   JsonValue expressionAttributeNamesJsonMap;
-   for(auto& expressionAttributeNamesItem : m_expressionAttributeNames)
-   {
-     expressionAttributeNamesJsonMap.WithString(expressionAttributeNamesItem.first, expressionAttributeNamesItem.second);
-   }
-   payload.WithObject("ExpressionAttributeNames", std::move(expressionAttributeNamesJsonMap));
-
-  }
-
   return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetItemRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.GetItem"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20111205.GetItem"));
   return headers;
 
 }

@@ -41,7 +41,7 @@ Aws::String ListTablesRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection ListTablesRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.ListTables"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20111205.ListTables"));
   return headers;
 
 }

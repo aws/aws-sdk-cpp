@@ -13,23 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateTableRequest::UpdateTableRequest() : 
-    m_attributeDefinitionsHasBeenSet(false),
     m_tableNameHasBeenSet(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_billingModeHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_globalSecondaryIndexUpdatesHasBeenSet(false),
-    m_streamSpecificationHasBeenSet(false),
-    m_sSESpecificationHasBeenSet(false),
-    m_replicaUpdatesHasBeenSet(false),
-    m_tableClass(TableClass::NOT_SET),
-    m_tableClassHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_multiRegionConsistency(MultiRegionConsistency::NOT_SET),
-    m_multiRegionConsistencyHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false),
-    m_warmThroughputHasBeenSet(false)
+    m_provisionedThroughputHasBeenSet(false)
 {
 }
 
@@ -37,93 +22,15 @@ Aws::String UpdateTableRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_attributeDefinitionsHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> attributeDefinitionsJsonList(m_attributeDefinitions.size());
-   for(unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength(); ++attributeDefinitionsIndex)
-   {
-     attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject(m_attributeDefinitions[attributeDefinitionsIndex].Jsonize());
-   }
-   payload.WithArray("AttributeDefinitions", std::move(attributeDefinitionsJsonList));
-
-  }
-
   if(m_tableNameHasBeenSet)
   {
    payload.WithString("TableName", m_tableName);
 
   }
 
-  if(m_billingModeHasBeenSet)
-  {
-   payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
-  }
-
   if(m_provisionedThroughputHasBeenSet)
   {
    payload.WithObject("ProvisionedThroughput", m_provisionedThroughput.Jsonize());
-
-  }
-
-  if(m_globalSecondaryIndexUpdatesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> globalSecondaryIndexUpdatesJsonList(m_globalSecondaryIndexUpdates.size());
-   for(unsigned globalSecondaryIndexUpdatesIndex = 0; globalSecondaryIndexUpdatesIndex < globalSecondaryIndexUpdatesJsonList.GetLength(); ++globalSecondaryIndexUpdatesIndex)
-   {
-     globalSecondaryIndexUpdatesJsonList[globalSecondaryIndexUpdatesIndex].AsObject(m_globalSecondaryIndexUpdates[globalSecondaryIndexUpdatesIndex].Jsonize());
-   }
-   payload.WithArray("GlobalSecondaryIndexUpdates", std::move(globalSecondaryIndexUpdatesJsonList));
-
-  }
-
-  if(m_streamSpecificationHasBeenSet)
-  {
-   payload.WithObject("StreamSpecification", m_streamSpecification.Jsonize());
-
-  }
-
-  if(m_sSESpecificationHasBeenSet)
-  {
-   payload.WithObject("SSESpecification", m_sSESpecification.Jsonize());
-
-  }
-
-  if(m_replicaUpdatesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> replicaUpdatesJsonList(m_replicaUpdates.size());
-   for(unsigned replicaUpdatesIndex = 0; replicaUpdatesIndex < replicaUpdatesJsonList.GetLength(); ++replicaUpdatesIndex)
-   {
-     replicaUpdatesJsonList[replicaUpdatesIndex].AsObject(m_replicaUpdates[replicaUpdatesIndex].Jsonize());
-   }
-   payload.WithArray("ReplicaUpdates", std::move(replicaUpdatesJsonList));
-
-  }
-
-  if(m_tableClassHasBeenSet)
-  {
-   payload.WithString("TableClass", TableClassMapper::GetNameForTableClass(m_tableClass));
-  }
-
-  if(m_deletionProtectionEnabledHasBeenSet)
-  {
-   payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
-
-  }
-
-  if(m_multiRegionConsistencyHasBeenSet)
-  {
-   payload.WithString("MultiRegionConsistency", MultiRegionConsistencyMapper::GetNameForMultiRegionConsistency(m_multiRegionConsistency));
-  }
-
-  if(m_onDemandThroughputHasBeenSet)
-  {
-   payload.WithObject("OnDemandThroughput", m_onDemandThroughput.Jsonize());
-
-  }
-
-  if(m_warmThroughputHasBeenSet)
-  {
-   payload.WithObject("WarmThroughput", m_warmThroughput.Jsonize());
 
   }
 
@@ -133,7 +40,7 @@ Aws::String UpdateTableRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection UpdateTableRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20120810.UpdateTable"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DynamoDB_20111205.UpdateTable"));
   return headers;
 
 }

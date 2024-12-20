@@ -17,10 +17,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <code>ListTables</code> operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTablesInput">AWS
-   * API Reference</a></p>
    */
   class ListTablesRequest : public DynamoDBRequest
   {
@@ -39,11 +35,7 @@ namespace Model
 
 
     ///@{
-    /**
-     * <p>The first table name that this operation will evaluate. Use the value that
-     * was returned for <code>LastEvaluatedTableName</code> in a previous operation, so
-     * that you can obtain the next page of results.</p>
-     */
+    
     inline const Aws::String& GetExclusiveStartTableName() const{ return m_exclusiveStartTableName; }
     inline bool ExclusiveStartTableNameHasBeenSet() const { return m_exclusiveStartTableNameHasBeenSet; }
     inline void SetExclusiveStartTableName(const Aws::String& value) { m_exclusiveStartTableNameHasBeenSet = true; m_exclusiveStartTableName = value; }
@@ -55,10 +47,7 @@ namespace Model
     ///@}
 
     ///@{
-    /**
-     * <p>A maximum number of table names to return. If this parameter is not
-     * specified, the limit is 100.</p>
-     */
+    
     inline int GetLimit() const{ return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
