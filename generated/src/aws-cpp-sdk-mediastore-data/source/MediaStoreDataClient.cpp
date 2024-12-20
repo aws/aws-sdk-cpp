@@ -4,19 +4,17 @@
  */
 
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClient.h>
-#include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+
 
 #include <aws/mediastore-data/MediaStoreDataClient.h>
 #include <aws/mediastore-data/MediaStoreDataErrorMarshaller.h>
@@ -29,6 +27,9 @@
 
 #include <smithy/tracing/TracingUtils.h>
 
+#include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -44,100 +45,106 @@ namespace Aws
 {
   namespace MediaStoreData
   {
-    const char SERVICE_NAME[] = "mediastore";
     const char ALLOCATION_TAG[] = "MediaStoreDataClient";
+    const char SERVICE_NAME[] = "mediastore";
   }
 }
 const char* MediaStoreDataClient::GetServiceName() {return SERVICE_NAME;}
 const char* MediaStoreDataClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MediaStoreDataClient::MediaStoreDataClient(const MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration,
-                                           std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                                                  SERVICE_NAME,
-                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
+                           std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
+        })
 {
   init(m_clientConfiguration);
 }
 
 MediaStoreDataClient::MediaStoreDataClient(const AWSCredentials& credentials,
-                                           std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider,
-                                           const MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                                  SERVICE_NAME,
-                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
+                           std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider,
+                           const MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
+        })
 {
   init(m_clientConfiguration);
 }
 
 MediaStoreDataClient::MediaStoreDataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider,
-                                           const MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  credentialsProvider,
-                                                                  SERVICE_NAME,
-                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
+                           std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider,
+                           const MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG),
+        endpointProvider ? endpointProvider : Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+            {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{ Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+        })
 {
   init(m_clientConfiguration);
 }
 
-    /* Legacy constructors due deprecation */
-  MediaStoreDataClient::MediaStoreDataClient(const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-                                                                  SERVICE_NAME,
-                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-  m_clientConfiguration(clientConfiguration),
-  m_endpointProvider(Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
+/* Legacy constructors due deprecation */
+MediaStoreDataClient::MediaStoreDataClient(const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+      GetServiceName(),
+      Aws::Http::CreateHttpClient(clientConfiguration),
+      Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG),
+      Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG),
+      Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+      {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}}
+      })
 {
   init(m_clientConfiguration);
 }
 
 MediaStoreDataClient::MediaStoreDataClient(const AWSCredentials& credentials,
-                                           const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                                  SERVICE_NAME,
-                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
+                           const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG),
+        Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}}
+        })
 {
   init(m_clientConfiguration);
 }
 
 MediaStoreDataClient::MediaStoreDataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(clientConfiguration,
-            Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  credentialsProvider,
-                                                                  SERVICE_NAME,
-                                                                  Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-            Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-    m_clientConfiguration(clientConfiguration),
-    m_endpointProvider(Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
+                           const Client::ClientConfiguration& clientConfiguration) :
+    AwsSmithyClientT(clientConfiguration,
+        GetServiceName(),
+        Aws::Http::CreateHttpClient(clientConfiguration),
+        Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG),
+        Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG),
+        Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+        {
+          {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId, smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider), GetServiceName(), clientConfiguration.region}}
+        })
 {
   init(m_clientConfiguration);
 }
+/* End of legacy constructors due deprecation */
 
-    /* End of legacy constructors due deprecation */
 MediaStoreDataClient::~MediaStoreDataClient()
 {
   ShutdownSdkClient(this, -1);
@@ -150,7 +157,6 @@ std::shared_ptr<MediaStoreDataEndpointProviderBase>& MediaStoreDataClient::acces
 
 void MediaStoreDataClient::init(const MediaStoreData::MediaStoreDataClientConfiguration& config)
 {
-  AWSClient::SetServiceClientName("MediaStore Data");
   if (!m_clientConfiguration.executor) {
     if (!m_clientConfiguration.configFactories.executorCreateFn()) {
       AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
@@ -165,8 +171,8 @@ void MediaStoreDataClient::init(const MediaStoreData::MediaStoreDataClientConfig
 
 void MediaStoreDataClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->OverrideEndpoint(endpoint);
+    AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+    m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest& request) const
@@ -178,23 +184,26 @@ DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest
     AWS_LOGSTREAM_ERROR("DeleteObject", "Required field: Path, is not set");
     return DeleteObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DeleteObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DeleteObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteObject",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DeleteObjectOutcome>(
     [&]()-> DeleteObjectOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
-      return DeleteObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
+      endpointOverrides.AddPathSegment(request.GetPath());
+      return DeleteObjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_DELETE, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -210,23 +219,26 @@ DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectR
     AWS_LOGSTREAM_ERROR("DescribeObject", "Required field: Path, is not set");
     return DescribeObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, DescribeObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, DescribeObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeObject",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<DescribeObjectOutcome>(
     [&]()-> DescribeObjectOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
-      return DescribeObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_HEAD, Aws::Auth::SIGV4_SIGNER));
+      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
+      endpointOverrides.AddPathSegment(request.GetPath());
+      return DescribeObjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_HEAD, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -242,23 +254,26 @@ GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request
     AWS_LOGSTREAM_ERROR("GetObject", "Required field: Path, is not set");
     return GetObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetObject",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetObjectOutcome>(
     [&]()-> GetObjectOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
-      return GetObjectOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
+      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
+      endpointOverrides.AddPathSegment(request.GetPath());
+      return GetObjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -269,22 +284,24 @@ ListItemsOutcome MediaStoreDataClient::ListItems(const ListItemsRequest& request
 {
   AWS_OPERATION_GUARD(ListItems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListItems, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListItems, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, ListItems, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListItems",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<ListItemsOutcome>(
     [&]()-> ListItemsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      return ListItemsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+      return ListItemsOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -300,26 +317,30 @@ PutObjectOutcome MediaStoreDataClient::PutObject(const PutObjectRequest& request
     AWS_LOGSTREAM_ERROR("PutObject", "Required field: Path, is not set");
     return PutObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, PutObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, PutObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutObject",
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<PutObjectOutcome>(
     [&]()-> PutObjectOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPath());
-      return PutObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
+      endpointOverrides.AddPathSegment(request.GetPath());
+      return PutObjectOutcome(MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_PUT, [& , endpointOverrides ](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+        for(const auto& pathSegment : endpointOverrides.pathSegments)
+        {
+            resolvedEndpoint.AddPathSegment(pathSegment);
+        }
+        resolvedEndpoint.SetRfc3986Encoded(endpointOverrides.setRfc3986Encoded);
+        resolvedEndpoint.SetQueryString(endpointOverrides.queryString);
+        AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+      }));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
+
 

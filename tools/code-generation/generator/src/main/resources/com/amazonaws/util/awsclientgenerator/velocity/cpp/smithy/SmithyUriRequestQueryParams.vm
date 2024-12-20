@@ -39,7 +39,8 @@ ${indent}  Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
 ${indent}  endpointOverrides.setRfc3986Encoded = true;
 #end
 ${indent}  endpointOverrides.AddPathSegment("$uriPartString");
-#elseif($uriParts.size() > 1)
+#elseif($uriVars.size() > 0)
+#set($hasEndPointOverrides = true)
 ${indent}  Aws::Endpoint::AWSEndpointResolutionOverrides endpointOverrides;
 #end## ---------------------------- if (request uri contains query) end ------
 #foreach($var in $uriVars)## for (parameter in request uri parameters) -------
