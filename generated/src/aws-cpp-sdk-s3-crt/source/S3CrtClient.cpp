@@ -517,8 +517,24 @@ void S3CrtClient::OverrideEndpoint(const Aws::String& endpoint)
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
+void S3CrtClient::CrtClientShutdownCallback(void *data)
+{
+  auto *wrappedData = static_cast<CrtClientShutdownCallbackDataWrapper*>(data);
+  if (wrappedData->fn)
+  {
+    wrappedData->fn(wrappedData->data);
+  }
+  wrappedData->clientShutdownSem->Release();
+}
 
-static int S3CrtRequestHeadersCallback(struct aws_s3_meta_request *meta_request, const struct aws_http_headers *headers,
+void S3CrtClient::CancelCrtRequest(aws_s3_meta_request *meta_request) const {
+  assert(meta_request);
+  m_clientConfiguration.executor->Submit([meta_request]() {
+    aws_s3_meta_request_cancel(meta_request);
+  });
+}
+
+int S3CrtClient::S3CrtRequestHeadersCallback(struct aws_s3_meta_request *meta_request, const struct aws_http_headers *headers,
     int response_status, void *user_data)
 {
   AWS_UNREFERENCED_PARAM(meta_request);
@@ -531,10 +547,16 @@ static int S3CrtRequestHeadersCallback(struct aws_s3_meta_request *meta_request,
     userData->response->AddHeader(StringUtils::FromByteCursor(header.name), StringUtils::FromByteCursor(header.value));
   }
   userData->response->SetResponseCode(static_cast<HttpResponseCode>(response_status));
+
+  auto& shouldContinueFn = userData->originalRequest->GetContinueRequestHandler();
+  if (shouldContinueFn && !shouldContinueFn(/*const HttpRequest* */ nullptr)) {
+    userData->s3CrtClient->CancelCrtRequest(meta_request);
+  }
+
   return AWS_OP_SUCCESS;
 }
 
-static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request, const struct aws_byte_cursor *body, uint64_t range_start, void *user_data)
+int S3CrtClient::S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request, const struct aws_byte_cursor *body, uint64_t range_start, void *user_data)
 {
   AWS_UNREFERENCED_PARAM(range_start);
 
@@ -557,11 +579,15 @@ static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request,
       receivedHandler(userData->request.get(), userData->response.get(), static_cast<long long>(body->len));
   }
   AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, body->len << " bytes written to response.");
+  auto& shouldContinueFn = userData->originalRequest->GetContinueRequestHandler();
+  if (shouldContinueFn && !shouldContinueFn(/*const HttpRequest* */ nullptr)) {
+    userData->s3CrtClient->CancelCrtRequest(meta_request);
+  }
 
   return AWS_OP_SUCCESS;
 }
 
-static void S3CrtRequestProgressCallback(struct aws_s3_meta_request *meta_request, const struct aws_s3_meta_request_progress *progress, void *user_data)
+void S3CrtClient::S3CrtRequestProgressCallback(struct aws_s3_meta_request *meta_request, const struct aws_s3_meta_request_progress *progress, void *user_data)
 {
   AWS_UNREFERENCED_PARAM(meta_request);
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
@@ -569,14 +595,93 @@ static void S3CrtRequestProgressCallback(struct aws_s3_meta_request *meta_reques
   auto& progressHandler = userData->request->GetDataSentEventHandler();
   if (progressHandler)
   {
-  progressHandler(userData->request.get(), static_cast<long long>(progress->bytes_transferred));
+    progressHandler(userData->request.get(), static_cast<long long>(progress->bytes_transferred));
   }
   AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, progress->bytes_transferred << " bytes transferred.");
+  auto& shouldContinueFn = userData->originalRequest->GetContinueRequestHandler();
+  if (shouldContinueFn && !shouldContinueFn(/*const HttpRequest* */ nullptr)) {
+    userData->s3CrtClient->CancelCrtRequest(meta_request);
+  }
 
   return;
 }
 
-static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
+CoreErrors MapCrtError(const int crtErrorCode) {
+  switch (crtErrorCode) {
+    case aws_s3_errors::AWS_ERROR_S3_MISSING_CONTENT_RANGE_HEADER:
+      return CoreErrors::MISSING_PARAMETER;
+    case aws_s3_errors::AWS_ERROR_S3_INVALID_CONTENT_RANGE_HEADER:
+      return CoreErrors::INVALID_PARAMETER_VALUE;
+    case aws_s3_errors::AWS_ERROR_S3_MISSING_CONTENT_LENGTH_HEADER:
+      return CoreErrors::MISSING_PARAMETER;
+    case aws_s3_errors::AWS_ERROR_S3_INVALID_CONTENT_LENGTH_HEADER:
+      return CoreErrors::INVALID_PARAMETER_VALUE;
+    case aws_s3_errors::AWS_ERROR_S3_MISSING_ETAG:
+      return CoreErrors::MISSING_PARAMETER;
+    case aws_s3_errors::AWS_ERROR_S3_INTERNAL_ERROR:
+      return CoreErrors::INTERNAL_FAILURE;
+    case aws_s3_errors::AWS_ERROR_S3_SLOW_DOWN:
+      return CoreErrors::SLOW_DOWN;
+    case aws_s3_errors::AWS_ERROR_S3_INVALID_RESPONSE_STATUS:
+      return CoreErrors::VALIDATION;
+    case aws_s3_errors::AWS_ERROR_S3_MISSING_UPLOAD_ID:
+      return CoreErrors::MISSING_PARAMETER;
+    case aws_s3_errors::AWS_ERROR_S3_PROXY_PARSE_FAILED:
+      return CoreErrors::INTERNAL_FAILURE;
+    case aws_s3_errors::AWS_ERROR_S3_UNSUPPORTED_PROXY_SCHEME:
+      return CoreErrors::INTERNAL_FAILURE;
+    case aws_s3_errors::AWS_ERROR_S3_CANCELED:
+      return CoreErrors::USER_CANCELLED;
+    case aws_s3_errors::AWS_ERROR_S3_INVALID_RANGE_HEADER:
+      return CoreErrors::INVALID_PARAMETER_VALUE;
+    case aws_s3_errors::AWS_ERROR_S3_MULTIRANGE_HEADER_UNSUPPORTED:
+      return CoreErrors::INVALID_PARAMETER_VALUE;
+    case aws_s3_errors::AWS_ERROR_S3_RESPONSE_CHECKSUM_MISMATCH:
+      return CoreErrors::VALIDATION;
+    case aws_s3_errors::AWS_ERROR_S3_CHECKSUM_CALCULATION_FAILED:
+      return CoreErrors::VALIDATION;
+    case aws_s3_errors::AWS_ERROR_S3_PAUSED:
+      return CoreErrors::UNKNOWN;
+    case aws_s3_errors::AWS_ERROR_S3_LIST_PARTS_PARSE_FAILED:
+      return CoreErrors::VALIDATION;
+    case aws_s3_errors::AWS_ERROR_S3_RESUMED_PART_CHECKSUM_MISMATCH:
+      return CoreErrors::VALIDATION;
+    case aws_s3_errors::AWS_ERROR_S3_RESUME_FAILED:
+      return CoreErrors::UNKNOWN;
+    case aws_s3_errors::AWS_ERROR_S3_OBJECT_MODIFIED:
+      return CoreErrors::UNKNOWN;
+    case aws_s3_errors::AWS_ERROR_S3_NON_RECOVERABLE_ASYNC_ERROR:
+      return CoreErrors::INTERNAL_FAILURE;
+    case aws_s3_errors::AWS_ERROR_S3_METRIC_DATA_NOT_AVAILABLE:
+      return CoreErrors::INTERNAL_FAILURE;
+    case aws_s3_errors::AWS_ERROR_S3_INCORRECT_CONTENT_LENGTH:
+      return CoreErrors::INVALID_PARAMETER_VALUE;
+    case aws_s3_errors::AWS_ERROR_S3_REQUEST_TIME_TOO_SKEWED:
+      return CoreErrors::REQUEST_TIME_TOO_SKEWED;
+    case aws_s3_errors::AWS_ERROR_S3_FILE_MODIFIED:
+      return CoreErrors::VALIDATION;
+    case aws_s3_errors::AWS_ERROR_S3_EXCEEDS_MEMORY_LIMIT:
+      return CoreErrors::INTERNAL_FAILURE;
+    case aws_s3_errors::AWS_ERROR_S3_INVALID_MEMORY_LIMIT_CONFIG:
+      return CoreErrors::INVALID_PARAMETER_VALUE;
+    case aws_s3_errors::AWS_ERROR_S3EXPRESS_CREATE_SESSION_FAILED:
+      return CoreErrors::CLIENT_SIGNING_FAILURE;
+    case aws_s3_errors::AWS_ERROR_S3_INTERNAL_PART_SIZE_MISMATCH_RETRYING_WITH_RANGE:
+      return CoreErrors::VALIDATION;
+    case aws_s3_errors::AWS_ERROR_S3_REQUEST_HAS_COMPLETED:
+      return CoreErrors::OK;
+    case aws_s3_errors::AWS_ERROR_S3_RECV_FILE_ALREADY_EXISTS:
+      return CoreErrors::VALIDATION;
+    case aws_s3_errors::AWS_ERROR_S3_RECV_FILE_NOT_FOUND:
+      return CoreErrors::VALIDATION;
+    case aws_s3_errors::AWS_ERROR_S3_REQUEST_TIMEOUT:
+      return CoreErrors::REQUEST_TIMEOUT;
+    default:
+      return CoreErrors::INTERNAL_FAILURE;
+  }
+}
+
+void S3CrtClient::S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
     const struct aws_s3_meta_request_result *meta_request_result, void *user_data)
 {
   AWS_UNREFERENCED_PARAM(meta_request);
@@ -623,7 +728,7 @@ static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
          << " (" << aws_error_lib_name(meta_request_result->error_code) << ": " << aws_error_name(meta_request_result->error_code) << ")";
 
       userData->response->SetClientErrorMessage(ss.str());
-      userData->response->SetClientErrorType(CoreErrors::INTERNAL_FAILURE);
+      userData->response->SetClientErrorType(MapCrtError(meta_request_result->error_code));
   }
 
   aws_s3_meta_request_release(meta_request);
