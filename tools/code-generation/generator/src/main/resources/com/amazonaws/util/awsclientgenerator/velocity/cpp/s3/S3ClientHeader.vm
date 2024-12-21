@@ -225,14 +225,12 @@ namespace ${rootNamespace}
           std::shared_ptr<Aws::Utils::Threading::Semaphore> clientShutdownSem;
         };
 
-        static void CrtClientShutdownCallback(void *data) {
-          auto *wrappedData = static_cast<CrtClientShutdownCallbackDataWrapper*>(data);
-          if (wrappedData->fn)
-          {
-            wrappedData->fn(wrappedData->data);
-          }
-          wrappedData->clientShutdownSem->Release();
-        }
+        static void CrtClientShutdownCallback(void *data);
+        void CancelCrtRequestAsync(aws_s3_meta_request *meta_request) const;
+        static int S3CrtRequestHeadersCallback(aws_s3_meta_request *meta_request, const struct aws_http_headers *headers, int response_status, void *user_data);
+        static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request, const struct aws_byte_cursor *body, uint64_t range_start, void *user_data);
+        static void S3CrtRequestProgressCallback(struct aws_s3_meta_request *meta_request, const struct aws_s3_meta_request_progress *progress, void *user_data);
+        static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request, const struct aws_s3_meta_request_result *meta_request_result, void *user_data);
 
         void InitCrtEndpointFromUri(aws_uri &endpoint_uri, const Aws::Http::URI &uri) const;
         
