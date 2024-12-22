@@ -1,5 +1,5 @@
-#set($hasEndPointOverrides = false)
 #foreach($operation in $serviceModel.operations)
+#set($hasEndPointOverrides = false)
 ## todo: add support for request stream
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")

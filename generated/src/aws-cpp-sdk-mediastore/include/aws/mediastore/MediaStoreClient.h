@@ -6,25 +6,35 @@
 #pragma once
 #include <aws/mediastore/MediaStore_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediastore/MediaStoreServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
 
 namespace Aws
 {
 namespace MediaStore
 {
+  AWS_MEDIASTORE_API extern const char SERVICE_NAME[];
   /**
    * <p>An AWS Elemental MediaStore container is a namespace that holds folders and
    * objects. You use a container endpoint to create, read, and delete objects. </p>
    */
-  class AWS_MEDIASTORE_API MediaStoreClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreClient>
+  class AWS_MEDIASTORE_API MediaStoreClient : smithy::client::AwsSmithyClientT<Aws::MediaStore::SERVICE_NAME,
+      Aws::MediaStore::MediaStoreClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      MediaStoreEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome>,
+    Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "MediaStore"; }
 
       typedef MediaStoreClientConfiguration ClientConfigurationType;
       typedef MediaStoreEndpointProvider EndpointProviderType;
@@ -686,8 +696,6 @@ namespace MediaStore
       friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreClient>;
       void init(const MediaStoreClientConfiguration& clientConfiguration);
 
-      MediaStoreClientConfiguration m_clientConfiguration;
-      std::shared_ptr<MediaStoreEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace MediaStore
