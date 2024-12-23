@@ -41,6 +41,7 @@
 #include <aws/eks/model/DescribeAddonConfigurationResult.h>
 #include <aws/eks/model/DescribeAddonVersionsResult.h>
 #include <aws/eks/model/DescribeClusterResult.h>
+#include <aws/eks/model/DescribeClusterVersionsResult.h>
 #include <aws/eks/model/DescribeEksAnywhereSubscriptionResult.h>
 #include <aws/eks/model/DescribeFargateProfileResult.h>
 #include <aws/eks/model/DescribeIdentityProviderConfigResult.h>
@@ -75,6 +76,7 @@
 #include <aws/eks/model/UpdateNodegroupVersionResult.h>
 #include <aws/eks/model/UpdatePodIdentityAssociationResult.h>
 #include <aws/eks/model/ListEksAnywhereSubscriptionsRequest.h>
+#include <aws/eks/model/DescribeClusterVersionsRequest.h>
 #include <aws/eks/model/ListAccessPoliciesRequest.h>
 #include <aws/eks/model/ListClustersRequest.h>
 #include <aws/eks/model/DescribeAddonVersionsRequest.h>
@@ -141,6 +143,7 @@ namespace Aws
       class DescribeAddonConfigurationRequest;
       class DescribeAddonVersionsRequest;
       class DescribeClusterRequest;
+      class DescribeClusterVersionsRequest;
       class DescribeEksAnywhereSubscriptionRequest;
       class DescribeFargateProfileRequest;
       class DescribeIdentityProviderConfigRequest;
@@ -200,6 +203,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAddonConfigurationResult, EKSError> DescribeAddonConfigurationOutcome;
       typedef Aws::Utils::Outcome<DescribeAddonVersionsResult, EKSError> DescribeAddonVersionsOutcome;
       typedef Aws::Utils::Outcome<DescribeClusterResult, EKSError> DescribeClusterOutcome;
+      typedef Aws::Utils::Outcome<DescribeClusterVersionsResult, EKSError> DescribeClusterVersionsOutcome;
       typedef Aws::Utils::Outcome<DescribeEksAnywhereSubscriptionResult, EKSError> DescribeEksAnywhereSubscriptionOutcome;
       typedef Aws::Utils::Outcome<DescribeFargateProfileResult, EKSError> DescribeFargateProfileOutcome;
       typedef Aws::Utils::Outcome<DescribeIdentityProviderConfigResult, EKSError> DescribeIdentityProviderConfigOutcome;
@@ -259,6 +263,7 @@ namespace Aws
       typedef std::future<DescribeAddonConfigurationOutcome> DescribeAddonConfigurationOutcomeCallable;
       typedef std::future<DescribeAddonVersionsOutcome> DescribeAddonVersionsOutcomeCallable;
       typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
+      typedef std::future<DescribeClusterVersionsOutcome> DescribeClusterVersionsOutcomeCallable;
       typedef std::future<DescribeEksAnywhereSubscriptionOutcome> DescribeEksAnywhereSubscriptionOutcomeCallable;
       typedef std::future<DescribeFargateProfileOutcome> DescribeFargateProfileOutcomeCallable;
       typedef std::future<DescribeIdentityProviderConfigOutcome> DescribeIdentityProviderConfigOutcomeCallable;
@@ -321,6 +326,7 @@ namespace Aws
     typedef std::function<void(const EKSClient*, const Model::DescribeAddonConfigurationRequest&, const Model::DescribeAddonConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddonConfigurationResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeAddonVersionsRequest&, const Model::DescribeAddonVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddonVersionsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::DescribeClusterVersionsRequest&, const Model::DescribeClusterVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterVersionsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeEksAnywhereSubscriptionRequest&, const Model::DescribeEksAnywhereSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEksAnywhereSubscriptionResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeFargateProfileRequest&, const Model::DescribeFargateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFargateProfileResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeIdentityProviderConfigRequest&, const Model::DescribeIdentityProviderConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityProviderConfigResponseReceivedHandler;

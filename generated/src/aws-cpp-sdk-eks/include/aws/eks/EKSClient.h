@@ -836,6 +836,32 @@ namespace EKS
         }
 
         /**
+         * <p>Lists available Kubernetes versions for Amazon EKS clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeClusterVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClusterVersionsOutcome DescribeClusterVersions(const Model::DescribeClusterVersionsRequest& request = {}) const;
+
+        /**
+         * A Callable wrapper for DescribeClusterVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeClusterVersionsRequestT = Model::DescribeClusterVersionsRequest>
+        Model::DescribeClusterVersionsOutcomeCallable DescribeClusterVersionsCallable(const DescribeClusterVersionsRequestT& request = {}) const
+        {
+            return SubmitCallable(&EKSClient::DescribeClusterVersions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeClusterVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeClusterVersionsRequestT = Model::DescribeClusterVersionsRequest>
+        void DescribeClusterVersionsAsync(const DescribeClusterVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DescribeClusterVersionsRequestT& request = {}) const
+        {
+            return SubmitAsync(&EKSClient::DescribeClusterVersions, request, handler, context);
+        }
+
+        /**
          * <p>Returns descriptive information about a subscription.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeEksAnywhereSubscription">AWS

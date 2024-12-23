@@ -75,13 +75,31 @@ namespace Model
 
     ///@{
     /**
-     * <p>When specified as true, iterates through the account and returns all catalog
-     * resources (including top-level resources and child resources)</p>
+     * <p>Whether to list all catalogs across the catalog hierarchy, starting from the
+     * <code>ParentCatalogId</code>. Defaults to <code>false</code> . When
+     * <code>true</code>, all catalog objects in the <code>ParentCatalogID</code>
+     * hierarchy are enumerated in the response.</p>
      */
     inline bool GetRecursive() const{ return m_recursive; }
     inline bool RecursiveHasBeenSet() const { return m_recursiveHasBeenSet; }
     inline void SetRecursive(bool value) { m_recursiveHasBeenSet = true; m_recursive = value; }
     inline GetCatalogsRequest& WithRecursive(bool value) { SetRecursive(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>Whether to list the default catalog in the account and region in the
+     * response. Defaults to <code>false</code>. When <code>true</code> and
+     * <code>ParentCatalogId = NULL | Amazon Web Services Account ID</code>, all
+     * catalogs and the default catalog are enumerated in the response.</p> <p>When the
+     * <code>ParentCatalogId</code> is not equal to null, and this attribute is passed
+     * as <code>false</code> or <code>true</code>, an
+     * <code>InvalidInputException</code> is thrown.</p>
+     */
+    inline bool GetIncludeRoot() const{ return m_includeRoot; }
+    inline bool IncludeRootHasBeenSet() const { return m_includeRootHasBeenSet; }
+    inline void SetIncludeRoot(bool value) { m_includeRootHasBeenSet = true; m_includeRoot = value; }
+    inline GetCatalogsRequest& WithIncludeRoot(bool value) { SetIncludeRoot(value); return *this;}
     ///@}
   private:
 
@@ -96,6 +114,9 @@ namespace Model
 
     bool m_recursive;
     bool m_recursiveHasBeenSet = false;
+
+    bool m_includeRoot;
+    bool m_includeRootHasBeenSet = false;
   };
 
 } // namespace Model
