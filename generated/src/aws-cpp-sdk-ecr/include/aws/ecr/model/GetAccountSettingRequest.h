@@ -36,7 +36,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Basic scan type version name. </p>
+     * <p>The name of the account setting, such as <code>BASIC_SCAN_TYPE_VERSION</code>
+     * or <code>REGISTRY_POLICY_SCOPE</code>. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

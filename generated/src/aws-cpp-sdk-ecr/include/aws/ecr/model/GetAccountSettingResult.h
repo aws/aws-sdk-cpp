@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Retrieves the basic scan type version name.</p>
+     * <p>Retrieves the name of the account setting.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline void SetName(const Aws::String& value) { m_name = value; }
@@ -47,8 +47,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Retrieves the value that specifies what basic scan type is being used:
-     * <code>AWS_NATIVE</code> or <code>CLAIR</code>.</p>
+     * <p>The setting value for the setting name. The following are valid values for
+     * the basic scan type being used: <code>AWS_NATIVE</code> or <code>CLAIR</code>.
+     * The following are valid values for the registry policy scope being used:
+     * <code>V1</code> or <code>V2</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
     inline void SetValue(const Aws::String& value) { m_value = value; }

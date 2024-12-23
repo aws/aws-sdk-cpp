@@ -34,7 +34,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Retrieves the the basic scan type version name.</p>
+     * <p>Retrieves the name of the account setting.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
     inline void SetName(const Aws::String& value) { m_name = value; }
@@ -47,8 +47,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Retrieves the basic scan type value, either <code>AWS_NATIVE</code> or
-     * <code>-</code>.</p>
+     * <p>Retrieves the value of the specified account setting.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
     inline void SetValue(const Aws::String& value) { m_value = value; }

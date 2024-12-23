@@ -18,7 +18,9 @@ GetCatalogsRequest::GetCatalogsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_recursive(false),
-    m_recursiveHasBeenSet(false)
+    m_recursiveHasBeenSet(false),
+    m_includeRoot(false),
+    m_includeRootHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,12 @@ Aws::String GetCatalogsRequest::SerializePayload() const
   if(m_recursiveHasBeenSet)
   {
    payload.WithBool("Recursive", m_recursive);
+
+  }
+
+  if(m_includeRootHasBeenSet)
+  {
+   payload.WithBool("IncludeRoot", m_includeRoot);
 
   }
 

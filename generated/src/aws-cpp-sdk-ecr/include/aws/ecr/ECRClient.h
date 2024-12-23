@@ -666,7 +666,8 @@ namespace ECR
         }
 
         /**
-         * <p>Retrieves the basic scan type version name.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the account setting value for the specified setting
+         * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAccountSetting">AWS
          * API Reference</a></p>
          */
@@ -975,9 +976,8 @@ namespace ECR
         }
 
         /**
-         * <p>Allows you to change the basic scan type version by setting the
-         * <code>name</code> parameter to either <code>CLAIR</code> to
-         * <code>AWS_NATIVE</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows you to change the basic scan type version or registry policy
+         * scope.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutAccountSetting">AWS
          * API Reference</a></p>
          */

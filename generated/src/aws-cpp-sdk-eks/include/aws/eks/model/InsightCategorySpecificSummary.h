@@ -58,8 +58,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>A list of <code>AddonCompatibilityDetail</code> objects for Amazon EKS
-     * add-ons.</p>
+     * <p>A list of AddonCompatibilityDetail objects for Amazon EKS add-ons.</p>
      */
     inline const Aws::Vector<AddonCompatibilityDetail>& GetAddonCompatibilityDetails() const{ return m_addonCompatibilityDetails; }
     inline bool AddonCompatibilityDetailsHasBeenSet() const { return m_addonCompatibilityDetailsHasBeenSet; }
