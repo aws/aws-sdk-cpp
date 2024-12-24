@@ -20,6 +20,7 @@ foreach(TEST IN LISTS TEST_LIST)
             "${TEST_MAIN_FILE}"
             "BucketAndObjectOperationTest.cpp"
             "S3ExpressTest.cpp"
+            "CancelCrtRequestTest.cpp"
     )
 
     file(GLOB AWS_S3_CRT_INTEGRATION_TESTS_SRC
