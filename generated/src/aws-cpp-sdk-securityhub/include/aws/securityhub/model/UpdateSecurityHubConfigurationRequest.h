@@ -37,7 +37,15 @@ namespace Model
      * <p>Whether to automatically enable new controls when they are added to standards
      * that are enabled.</p> <p>By default, this is set to <code>true</code>, and new
      * controls are enabled automatically. To not automatically enable new controls,
-     * set this to <code>false</code>. </p>
+     * set this to <code>false</code>. </p> <p>When you automatically enable new
+     * controls, you can interact with the controls in the console and programmatically
+     * immediately after release. However, automatically enabled controls have a
+     * temporary default status of <code>DISABLED</code>. It can take up to several
+     * days for Security Hub to process the control release and designate the control
+     * as <code>ENABLED</code> in your account. During the processing period, you can
+     * manually enable or disable a control, and Security Hub will maintain that
+     * designation regardless of whether you have <code>AutoEnableControls</code> set
+     * to <code>true</code>.</p>
      */
     inline bool GetAutoEnableControls() const{ return m_autoEnableControls; }
     inline bool AutoEnableControlsHasBeenSet() const { return m_autoEnableControlsHasBeenSet; }
