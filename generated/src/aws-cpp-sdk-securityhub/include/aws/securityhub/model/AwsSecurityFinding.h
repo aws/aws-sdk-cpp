@@ -224,21 +224,9 @@ namespace Model
     ///@{
     /**
      * <p>Indicates when the security findings provider first observed the potential
-     * security issue that a finding captured.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
+     * security issue that a finding captured.</p> <p>For more information about the
+     * validation and formatting of timestamp fields in Security Hub, see <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
     inline const Aws::String& GetFirstObservedAt() const{ return m_firstObservedAt; }
     inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
@@ -252,22 +240,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates when the security findings provider most recently observed the
-     * potential security issue that a finding captured.</p> <p>This field accepts only
-     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
-     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
-     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
-     * valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
+     * <p>Indicates when the security findings provider most recently observed a change
+     * in the resource that is involved in the finding.</p> <p>For more information
+     * about the validation and formatting of timestamp fields in Security Hub, see <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
     inline const Aws::String& GetLastObservedAt() const{ return m_lastObservedAt; }
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
@@ -282,20 +258,9 @@ namespace Model
     ///@{
     /**
      * <p>Indicates when the security findings provider created the potential security
-     * issue that a finding captured.</p> <p>This field accepts only the specified
-     * formats. Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour
-     * [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum
-     * of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats
-     * with examples:</p> <ul> <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
+     * issue that a finding captured.</p> <p>For more information about the validation
+     * and formatting of timestamp fields in Security Hub, see <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
@@ -310,20 +275,9 @@ namespace Model
     ///@{
     /**
      * <p>Indicates when the security findings provider last updated the finding
-     * record.</p> <p>This field accepts only the specified formats. Timestamps can end
-     * with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
-     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
-     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
-     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
+     * record.</p> <p>For more information about the validation and formatting of
+     * timestamp fields in Security Hub, see <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
@@ -749,20 +703,9 @@ namespace Model
     ///@{
     /**
      * <p>A timestamp that indicates when Security Hub received a finding and begins to
-     * process it.</p> <p>This field accepts only the specified formats. Timestamps can
-     * end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>.
-     * The time-secfrac after seconds is limited to a maximum of 9 digits. The offset
-     * is bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
-     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
+     * process it.</p> <p>For more information about the validation and formatting of
+     * timestamp fields in Security Hub, see <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
     inline const Aws::String& GetProcessedAt() const{ return m_processedAt; }
     inline bool ProcessedAtHasBeenSet() const { return m_processedAtHasBeenSet; }
@@ -795,8 +738,8 @@ namespace Model
      * <p> Provides details about an Amazon GuardDuty Extended Threat Detection attack
      * sequence. GuardDuty generates an attack sequence finding when multiple events
      * align to a potentially suspicious activity. To receive GuardDuty attack sequence
-     * findings in Security Hub, you must have GuardDuty and GuardDuty S3 Protection
-     * enabled. For more information, see <a
+     * findings in Security Hub, you must have GuardDuty enabled. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty
      * Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>. </p>
      */

@@ -213,8 +213,8 @@ namespace Model
     /**
      * <p>The severity associated with the signal. For more information about severity,
      * see <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings
-     * severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Severity
+     * levels for GuardDuty findings</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
      */
     inline double GetSeverity() const{ return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }

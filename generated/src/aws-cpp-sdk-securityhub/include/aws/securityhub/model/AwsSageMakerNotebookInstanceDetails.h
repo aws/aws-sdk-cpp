@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p> Provides details about an Amazon SageMaker notebook instance. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> Provides details about an Amazon SageMaker AI notebook instance.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSageMakerNotebookInstanceDetails">AWS
    * API Reference</a></p>
    */
@@ -67,8 +67,8 @@ namespace Model
      * as the default repository of your notebook instance. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git repositories with SageMaker notebook instances</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
+     * Git repositories with SageMaker AI notebook instances</a> in the <i>Amazon
+     * SageMaker AI Developer Guide</i>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const{ return m_additionalCodeRepositories; }
     inline bool AdditionalCodeRepositoriesHasBeenSet() const { return m_additionalCodeRepositoriesHasBeenSet; }
@@ -90,8 +90,8 @@ namespace Model
      * or in any other Git repository. When you open a notebook instance, it opens in
      * the directory that contains this repository. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git repositories with SageMaker notebook instances</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
+     * Git repositories with SageMaker AI notebook instances</a> in the <i>Amazon
+     * SageMaker AI Developer Guide</i>. </p>
      */
     inline const Aws::String& GetDefaultCodeRepository() const{ return m_defaultCodeRepository; }
     inline bool DefaultCodeRepositoryHasBeenSet() const { return m_defaultCodeRepositoryHasBeenSet; }
@@ -105,11 +105,11 @@ namespace Model
 
     ///@{
     /**
-     * <p> Sets whether SageMaker provides internet access to the notebook instance. If
-     * you set this to <code>Disabled</code>, this notebook instance is able to access
-     * resources only in your VPC, and is not be able to connect to SageMaker training
-     * and endpoint services unless you configure a Network Address Translation (NAT)
-     * Gateway in your VPC. </p>
+     * <p> Sets whether SageMaker AI provides internet access to the notebook instance.
+     * If you set this to <code>Disabled</code>, this notebook instance is able to
+     * access resources only in your VPC, and is not be able to connect to SageMaker AI
+     * training and endpoint services unless you configure a Network Address
+     * Translation (NAT) Gateway in your VPC. </p>
      */
     inline const Aws::String& GetDirectInternetAccess() const{ return m_directInternetAccess; }
     inline bool DirectInternetAccessHasBeenSet() const { return m_directInternetAccessHasBeenSet; }
@@ -165,8 +165,9 @@ namespace Model
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of an Key Management Service (KMS) key that
-     * SageMaker uses to encrypt data on the storage volume attached to your notebook
-     * instance. The KMS key you provide must be enabled. For information, see <a
+     * SageMaker AI uses to encrypt data on the storage volume attached to your
+     * notebook instance. The KMS key you provide must be enabled. For information, see
+     * <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
      * and disabling keys</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
@@ -183,7 +184,7 @@ namespace Model
 
     ///@{
     /**
-     * <p> The network interface ID that SageMaker created when the instance was
+     * <p> The network interface ID that SageMaker AI created when the instance was
      * created. </p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
