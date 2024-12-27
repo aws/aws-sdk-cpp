@@ -960,7 +960,7 @@ namespace Model
     ///@{
     /**
      * <p>Indicates whether minor version patches are applied automatically.</p>
-     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>This setting is for Aurora DB clusters and Multi-AZ DB clusters.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
@@ -971,8 +971,8 @@ namespace Model
     ///@{
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
-     * collected for the DB cluster.</p> <p>This setting is only for non-Aurora
-     * Multi-AZ DB clusters.</p>
+     * collected for the DB cluster.</p> <p>This setting is only for -Aurora DB
+     * clusters and Multi-AZ DB clusters.</p>
      */
     inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
     inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
@@ -983,8 +983,8 @@ namespace Model
     ///@{
     /**
      * <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics
-     * to Amazon CloudWatch Logs.</p> <p>This setting is only for non-Aurora Multi-AZ
-     * DB clusters.</p>
+     * to Amazon CloudWatch Logs.</p> <p>This setting is only for Aurora DB clusters
+     * and Multi-AZ DB clusters.</p>
      */
     inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
     inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
@@ -998,7 +998,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The mode of Database Insights that is enabled for the cluster.</p>
+     * <p>The mode of Database Insights that is enabled for the DB cluster.</p>
      */
     inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
     inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }
@@ -1011,7 +1011,7 @@ namespace Model
     ///@{
     /**
      * <p>Indicates whether Performance Insights is enabled for the DB cluster.</p>
-     * <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>This setting is only for Aurora DB clusters and Multi-AZ DB clusters.</p>
      */
     inline bool GetPerformanceInsightsEnabled() const{ return m_performanceInsightsEnabled; }
     inline bool PerformanceInsightsEnabledHasBeenSet() const { return m_performanceInsightsEnabledHasBeenSet; }
@@ -1024,7 +1024,7 @@ namespace Model
      * <p>The Amazon Web Services KMS key identifier for encryption of Performance
      * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
      * key ID, alias ARN, or alias name for the KMS key.</p> <p>This setting is only
-     * for non-Aurora Multi-AZ DB clusters.</p>
+     * for Aurora DB clusters and Multi-AZ DB clusters.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
@@ -1039,11 +1039,12 @@ namespace Model
     ///@{
     /**
      * <p>The number of days to retain Performance Insights data.</p> <p>This setting
-     * is only for non-Aurora Multi-AZ DB clusters.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>7</code> </p> </li> <li> <p> <i>month</i> * 31, where <i>month</i> is
-     * a number of months from 1-23. Examples: <code>93</code> (3 months * 31),
-     * <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p> </li>
-     * <li> <p> <code>731</code> </p> </li> </ul> <p>Default: <code>7</code> days</p>
+     * is only for Aurora DB clusters and Multi-AZ DB clusters.</p> <p>Valid
+     * Values:</p> <ul> <li> <p> <code>7</code> </p> </li> <li> <p> <i>month</i> * 31,
+     * where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3
+     * months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months *
+     * 31)</p> </li> <li> <p> <code>731</code> </p> </li> </ul> <p>Default:
+     * <code>7</code> days</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
