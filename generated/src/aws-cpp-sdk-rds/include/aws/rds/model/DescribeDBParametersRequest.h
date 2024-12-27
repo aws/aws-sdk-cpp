@@ -71,7 +71,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB parameters to describe.</p> <p>The
+     * only supported filter is <code>parameter-name</code>. The results list only
+     * includes information about the DB parameters with these names.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

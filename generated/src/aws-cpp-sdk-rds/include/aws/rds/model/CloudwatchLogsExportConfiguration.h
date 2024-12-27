@@ -54,7 +54,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of log types to enable.</p>
+     * <p>The list of log types to enable.</p> <p>The following values are valid for
+     * each DB engine:</p> <ul> <li> <p>Aurora MySQL - <code>audit | error | general |
+     * slowquery</code> </p> </li> <li> <p>Aurora PostgreSQL - <code>postgresql</code>
+     * </p> </li> <li> <p>RDS for MySQL - <code>error | general | slowquery</code> </p>
+     * </li> <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
+     * </ul>
      */
     inline const Aws::Vector<Aws::String>& GetEnableLogTypes() const{ return m_enableLogTypes; }
     inline bool EnableLogTypesHasBeenSet() const { return m_enableLogTypesHasBeenSet; }
@@ -69,7 +74,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The list of log types to disable.</p>
+     * <p>The list of log types to disable.</p> <p>The following values are valid for
+     * each DB engine:</p> <ul> <li> <p>Aurora MySQL - <code>audit | error | general |
+     * slowquery</code> </p> </li> <li> <p>Aurora PostgreSQL - <code>postgresql</code>
+     * </p> </li> <li> <p>RDS for MySQL - <code>error | general | slowquery</code> </p>
+     * </li> <li> <p>RDS for PostgreSQL - <code>postgresql | upgrade</code> </p> </li>
+     * </ul>
      */
     inline const Aws::Vector<Aws::String>& GetDisableLogTypes() const{ return m_disableLogTypes; }
     inline bool DisableLogTypesHasBeenSet() const { return m_disableLogTypesHasBeenSet; }

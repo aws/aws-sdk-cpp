@@ -479,7 +479,8 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the mode of Database Insights.</p>
+     * <p>The mode of Database Insights to enable for the read replica.</p> 
+     * <p>Currently, this setting is not supported.</p> 
      */
     inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
     inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }
@@ -827,9 +828,10 @@ namespace Model
     /**
      * <p>The amount of storage (in gibibytes) to allocate initially for the read
      * replica. Follow the allocation rules specified in
-     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough storage
-     * for your read replica so that the create operation can succeed. You can also
-     * allocate additional storage for future growth.</p> 
+     * <code>CreateDBInstance</code>.</p> <p>This setting isn't valid for RDS for SQL
+     * Server.</p>  <p>Be sure to allocate enough storage for your read replica
+     * so that the create operation can succeed. You can also allocate additional
+     * storage for future growth.</p> 
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }

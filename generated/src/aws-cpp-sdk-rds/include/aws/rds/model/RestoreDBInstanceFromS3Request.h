@@ -77,9 +77,10 @@ namespace Model
     /**
      * <p>The amount of storage (in gibibytes) to allocate initially for the DB
      * instance. Follow the allocation rules specified in
-     * <code>CreateDBInstance</code>.</p>  <p>Be sure to allocate enough storage
-     * for your new DB instance so that the restore operation can succeed. You can also
-     * allocate additional storage for future growth.</p> 
+     * <code>CreateDBInstance</code>.</p> <p>This setting isn't valid for RDS for SQL
+     * Server.</p>  <p>Be sure to allocate enough storage for your new DB
+     * instance so that the restore operation can succeed. You can also allocate
+     * additional storage for future growth.</p> 
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
@@ -629,7 +630,10 @@ namespace Model
 
     ///@{
     /**
-     * <p>Specifies the mode of Database Insights to enable for the instance.</p>
+     * <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
+     * <p>This setting only applies to Amazon Aurora DB instances.</p> 
+     * <p>Currently, this value is inherited from the DB cluster and can't be
+     * changed.</p> 
      */
     inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
     inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }

@@ -60,8 +60,8 @@ namespace Model
     ///@{
     /**
      * <p>A specific source to return parameters for.</p> <p>Valid Values:</p> <ul>
-     * <li> <p> <code>customer</code> </p> </li> <li> <p> <code>engine</code> </p>
-     * </li> <li> <p> <code>service</code> </p> </li> </ul>
+     * <li> <p> <code>engine-default</code> </p> </li> <li> <p> <code>system</code>
+     * </p> </li> <li> <p> <code>user</code> </p> </li> </ul>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
@@ -75,7 +75,9 @@ namespace Model
 
     ///@{
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more DB cluster parameters to describe.</p>
+     * <p>The only supported filter is <code>parameter-name</code>. The results list
+     * only includes information about the DB cluster parameters with these names.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

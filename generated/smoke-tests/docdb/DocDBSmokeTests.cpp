@@ -18,6 +18,7 @@
 #include <aws/docdb/model/DescribeDBInstancesRequest.h>
 #include <aws/docdb/model/DescribeDBEngineVersionsRequest.h>
 #include <aws/docdb/DocDBClient.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace DocDBSmokeTest{
 using namespace Aws::Auth;
@@ -31,6 +32,19 @@ class DocDBSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char DocDBSmokeTestSuite::ALLOCATION_TAG[] = "DocDBSmokeTest";
+TEST_F(DocDBSmokeTestSuite, DescribeDBEngineVersionsSuccess )
+{
+    Aws::DocDB::DocDBClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<DocDBClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    DescribeDBEngineVersionsRequest input;
+    auto outcome = clientSp->DescribeDBEngineVersions(input);
+    EXPECT_TRUE( outcome.IsSuccess());
+}
 TEST_F(DocDBSmokeTestSuite, DescribeDBInstancesFailure )
 {
     Aws::DocDB::DocDBClientConfiguration clientConfiguration;
@@ -44,18 +58,5 @@ TEST_F(DocDBSmokeTestSuite, DescribeDBInstancesFailure )
     input.SetDBInstanceIdentifier("fake-id");
     auto outcome = clientSp->DescribeDBInstances(input);
     EXPECT_FALSE( outcome.IsSuccess());
-}
-TEST_F(DocDBSmokeTestSuite, DescribeDBEngineVersionsSuccess )
-{
-    Aws::DocDB::DocDBClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<DocDBClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    DescribeDBEngineVersionsRequest input;
-    auto outcome = clientSp->DescribeDBEngineVersions(input);
-    EXPECT_TRUE( outcome.IsSuccess());
 }
 }
