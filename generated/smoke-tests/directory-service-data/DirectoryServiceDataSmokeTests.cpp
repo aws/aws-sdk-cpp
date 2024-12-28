@@ -32,21 +32,6 @@ class DirectoryServiceDataSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSu
     static const char ALLOCATION_TAG[];
 };
 const char DirectoryServiceDataSmokeTestSuite::ALLOCATION_TAG[] = "DirectoryServiceDataSmokeTest";
-TEST_F(DirectoryServiceDataSmokeTestSuite, DescribeUserFailure )
-{
-    Aws::DirectoryServiceData::DirectoryServiceDataClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<DirectoryServiceDataClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    DescribeUserRequest input;
-    input.SetDirectoryId("d-1111111111");
-    input.SetSAMAccountName("test-user");
-    auto outcome = clientSp->DescribeUser(input);
-    EXPECT_FALSE( outcome.IsSuccess());
-}
 TEST_F(DirectoryServiceDataSmokeTestSuite, DescribeGroupFailure )
 {
     Aws::DirectoryServiceData::DirectoryServiceDataClientConfiguration clientConfiguration;
@@ -60,6 +45,21 @@ TEST_F(DirectoryServiceDataSmokeTestSuite, DescribeGroupFailure )
     input.SetDirectoryId("d-1111111111");
     input.SetSAMAccountName("test-group");
     auto outcome = clientSp->DescribeGroup(input);
+    EXPECT_FALSE( outcome.IsSuccess());
+}
+TEST_F(DirectoryServiceDataSmokeTestSuite, DescribeUserFailure )
+{
+    Aws::DirectoryServiceData::DirectoryServiceDataClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<DirectoryServiceDataClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    DescribeUserRequest input;
+    input.SetDirectoryId("d-1111111111");
+    input.SetSAMAccountName("test-user");
+    auto outcome = clientSp->DescribeUser(input);
     EXPECT_FALSE( outcome.IsSuccess());
 }
 }
