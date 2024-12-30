@@ -57,7 +57,7 @@
     "MMSYSERR",
     "WAVEFORMATEX",
     "Unprepare",
-    "DDISABLE_IMDSV1",
+    "DDISABLE",
     "SENDREQUEST",
     "threadpool",
     "stdlib",

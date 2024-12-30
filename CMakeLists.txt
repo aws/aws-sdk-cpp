@@ -67,6 +67,7 @@ if (LEGACY_BUILD)
     option(USE_TLS_V1_2 "Set http client to enforce TLS 1.2" ON)
     option(USE_TLS_V1_3 "Set http client to enforce TLS 1.3" OFF)
     option(ENABLE_SMOKE_TESTS "Enable smoke tests" OFF)
+    option(DISABLE_DNS_REQUIRED_TESTS "Disable unit tests that require DNS lookup to succeed, useful when using a http client that does not perform DNS lookup" OFF)
 
 
     set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")
@@ -87,6 +88,10 @@ if (LEGACY_BUILD)
     endif ()
     if (USE_TLS_V1_3)
         add_definitions(-DENFORCE_TLS_V1_3)
+    endif ()
+
+    if (DISABLE_DNS_REQUIRED_TESTS)
+        add_definitions(-DDISABLE_DNS_REQUIRED_TESTS)
     endif ()
 
     #From https://stackoverflow.com/questions/18968979/how-to-get-colorized-output-with-cmake
