@@ -2,7 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-
+#ifndef DISABLE_DNS_REQUIRED_TESTS
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/HttpResponse.h>
@@ -385,3 +385,4 @@ TEST_F(CURLHttpClientTest, TestHttpRequestWorksFine)
 #endif // ENABLE_CURL_CLIENT
 #endif // ENABLE_HTTP_CLIENT_TESTING
 #endif // NO_HTTP_CLIENT
+#endif  // DISABLE_DNS_REQUIRED_TESTS
