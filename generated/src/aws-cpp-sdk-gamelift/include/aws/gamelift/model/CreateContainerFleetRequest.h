@@ -85,9 +85,11 @@ namespace Model
      * with your game server build and support software onto each fleet instance. You
      * can specify the container group definition's name to use the latest version.
      * Alternatively, provide an ARN value with a specific version number.</p>
-     * <p>Create a container group definition by calling
-     * <a>CreateContainerGroupDefinition</a>. This operation creates a
-     * <a>ContainerGroupDefinition</a> resource. </p>
+     * <p>Create a container group definition by calling <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>.
+     * This operation creates a <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+     * resource. </p>
      */
     inline const Aws::String& GetGameServerContainerGroupDefinitionName() const{ return m_gameServerContainerGroupDefinitionName; }
     inline bool GameServerContainerGroupDefinitionNameHasBeenSet() const { return m_gameServerContainerGroupDefinitionNameHasBeenSet; }
@@ -107,9 +109,11 @@ namespace Model
      * fleet to add or remove a per-instance container group at any time. You can
      * specify the container group definition's name to use the latest version.
      * Alternatively, provide an ARN value with a specific version number. </p>
-     * <p>Create a container group definition by calling
-     * <a>CreateContainerGroupDefinition</a>. This operation creates a
-     * <a>ContainerGroupDefinition</a> resource.</p>
+     * <p>Create a container group definition by calling <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html</a>.
+     * This operation creates a <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html</a>
+     * resource.</p>
      */
     inline const Aws::String& GetPerInstanceContainerGroupDefinitionName() const{ return m_perInstanceContainerGroupDefinitionName; }
     inline bool PerInstanceContainerGroupDefinitionNameHasBeenSet() const { return m_perInstanceContainerGroupDefinitionNameHasBeenSet; }

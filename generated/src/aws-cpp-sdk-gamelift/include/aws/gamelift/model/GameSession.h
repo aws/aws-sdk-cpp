@@ -174,10 +174,15 @@ namespace Model
 
     ///@{
     /**
-     * <p>Provides additional information about game session status.
-     * <code>INTERRUPTED</code> indicates that the game session was hosted on a spot
-     * instance that was reclaimed, causing the active game session to be
-     * terminated.</p>
+     * <p>Provides additional information about game session status. </p> <ul> <li> <p>
+     * <code>INTERRUPTED</code> -- The game session was hosted on an EC2 Spot instance
+     * that was reclaimed, causing the active game session to be stopped.</p> </li>
+     * <li> <p> <code>TRIGGERED_ON_PROCESS_TERMINATE</code> – The game session was
+     * stopped by calling <code>TerminateGameSession</code> with the termination mode
+     * <code>TRIGGER_ON_PROCESS_TERMINATE</code>. </p> </li> <li> <p>
+     * <code>FORCE_TERMINATED</code> – The game session was stopped by calling
+     * <code>TerminateGameSession</code> with the termination mode
+     * <code>FORCE_TERMINATE</code>. </p> </li> </ul> <p/>
      */
     inline const GameSessionStatusReason& GetStatusReason() const{ return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
@@ -253,7 +258,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Indicates whether or not the game session is accepting new players.</p>
+     * <p>Indicates whether the game session is accepting new players.</p>
      */
     inline const PlayerSessionCreationPolicy& GetPlayerSessionCreationPolicy() const{ return m_playerSessionCreationPolicy; }
     inline bool PlayerSessionCreationPolicyHasBeenSet() const { return m_playerSessionCreationPolicyHasBeenSet; }

@@ -26,8 +26,10 @@ namespace Model
   /**
    * <p>A unique identifier for a container in a compute on a managed container fleet
    * instance. This information makes it possible to remotely connect to a specific
-   * container on a fleet instance.</p> <p> <b>Related to:</b>
-   * <a>ContainerAttribute</a> </p> <p> <b>Use with: </b> <a>GetComputeAccess</a>
+   * container on a fleet instance.</p> <p> <b>Related to:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerAttribute.html">ContainerAttribute</a>
+   * </p> <p> <b>Use with: </b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html">GetComputeAccess</a>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerIdentifier">AWS
    * API Reference</a></p>

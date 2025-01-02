@@ -18,7 +18,6 @@
 #include <aws/ecr/model/ListImagesRequest.h>
 #include <aws/ecr/model/DescribeRepositoriesRequest.h>
 #include <aws/ecr/ECRClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace ECRSmokeTest{
 using namespace Aws::Auth;
@@ -32,19 +31,6 @@ class ECRSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char ECRSmokeTestSuite::ALLOCATION_TAG[] = "ECRSmokeTest";
-TEST_F(ECRSmokeTestSuite, DescribeRepositoriesSuccess )
-{
-    Aws::ECR::ECRClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<ECRClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    DescribeRepositoriesRequest input;
-    auto outcome = clientSp->DescribeRepositories(input);
-    EXPECT_TRUE( outcome.IsSuccess());
-}
 TEST_F(ECRSmokeTestSuite, ListImagesFailure )
 {
     Aws::ECR::ECRClientConfiguration clientConfiguration;
@@ -58,5 +44,18 @@ TEST_F(ECRSmokeTestSuite, ListImagesFailure )
     input.SetRepositoryName("not-a-real-repository");
     auto outcome = clientSp->ListImages(input);
     EXPECT_FALSE( outcome.IsSuccess());
+}
+TEST_F(ECRSmokeTestSuite, DescribeRepositoriesSuccess )
+{
+    Aws::ECR::ECRClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<ECRClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    DescribeRepositoriesRequest input;
+    auto outcome = clientSp->DescribeRepositories(input);
+    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

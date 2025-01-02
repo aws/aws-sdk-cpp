@@ -30,7 +30,8 @@ ModelPackageContainerDefinition::ModelPackageContainerDefinition() :
     m_frameworkHasBeenSet(false),
     m_frameworkVersionHasBeenSet(false),
     m_nearestModelNameHasBeenSet(false),
-    m_additionalS3DataSourceHasBeenSet(false)
+    m_additionalS3DataSourceHasBeenSet(false),
+    m_modelDataETagHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,13 @@ ModelPackageContainerDefinition& ModelPackageContainerDefinition::operator =(Jso
     m_additionalS3DataSourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelDataETag"))
+  {
+    m_modelDataETag = jsonValue.GetString("ModelDataETag");
+
+    m_modelDataETagHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -210,6 +218,12 @@ JsonValue ModelPackageContainerDefinition::Jsonize() const
   if(m_additionalS3DataSourceHasBeenSet)
   {
    payload.WithObject("AdditionalS3DataSource", m_additionalS3DataSource.Jsonize());
+
+  }
+
+  if(m_modelDataETagHasBeenSet)
+  {
+   payload.WithString("ModelDataETag", m_modelDataETag);
 
   }
 

@@ -45,8 +45,9 @@ namespace Model
    * set of attributes, because most fleet configurations are set directly on the
    * fleet's computes. Attributes include fleet identifiers and descriptive
    * properties, creation/termination time, and fleet status.</p> </li> </ul> <p>
-   * <b>Returned by:</b> <a>DescribeFleetAttributes</a> </p><p><h3>See Also:</h3>  
-   * <a
+   * <b>Returned by:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetAttributes">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetAttributes</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes">AWS
    * API Reference</a></p>
    */
@@ -116,7 +117,7 @@ namespace Model
      * storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
      * Instance Types</a> for detailed descriptions. This attribute is used with fleets
-     * where <code>ComputeType</code> is "EC2".</p>
+     * where <code>ComputeType</code> is <code>EC2</code>.</p>
      */
     inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -332,10 +333,11 @@ namespace Model
     /**
      * <p>The type of game session protection to set on all new instances that are
      * started in the fleet. This attribute is used with fleets where
-     * <code>ComputeType</code> is "EC2".</p> <ul> <li> <p> <b>NoProtection</b> -- The
-     * game session can be terminated during a scale-down event.</p> </li> <li> <p>
-     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code>
-     * status, it cannot be terminated during a scale-down event.</p> </li> </ul>
+     * <code>ComputeType</code> is <code>EC2</code>.</p> <ul> <li> <p>
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
     inline bool NewGameSessionProtectionPolicyHasBeenSet() const { return m_newGameSessionProtectionPolicyHasBeenSet; }
@@ -350,10 +352,10 @@ namespace Model
      * <p>The operating system of the fleet's computing resources. A fleet's operating
      * system is determined by the OS of the build or script that is deployed on this
      * fleet. This attribute is used with fleets where <code>ComputeType</code> is
-     * "EC2".</p>  <p>Amazon Linux 2 (AL2) will reach end of support on
-     * 6/30/2025. See more details in the <a
+     * <code>EC2</code>.</p>  <p>Amazon Linux 2 (AL2) will reach end of support
+     * on 6/30/2025. See more details in the <a
      * href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-     * game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x,
+     * game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x.,
      * first update the game server build to server SDK 5.x, and then deploy to AL2023
      * instances. See <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
@@ -382,7 +384,8 @@ namespace Model
      * <p>Name of a metric group that metrics for this fleet are added to. In Amazon
      * CloudWatch, you can view aggregated metrics for fleets that are in a metric
      * group. A fleet can be included in only one metric group at a time. This
-     * attribute is used with fleets where <code>ComputeType</code> is "EC2".</p>
+     * attribute is used with fleets where <code>ComputeType</code> is
+     * <code>EC2</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
     inline bool MetricGroupsHasBeenSet() const { return m_metricGroupsHasBeenSet; }
@@ -400,7 +403,7 @@ namespace Model
      * <p>A list of fleet activity that has been suspended using <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>.
      * This includes fleet auto-scaling. This attribute is used with fleets where
-     * <code>ComputeType</code> is "EC2".</p>
+     * <code>ComputeType</code> is <code>EC2</code>.</p>
      */
     inline const Aws::Vector<FleetAction>& GetStoppedActions() const{ return m_stoppedActions; }
     inline bool StoppedActionsHasBeenSet() const { return m_stoppedActionsHasBeenSet; }
@@ -423,7 +426,7 @@ namespace Model
      * credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>. This attribute is used with
-     * fleets where <code>ComputeType</code> is "EC2".</p>
+     * fleets where <code>ComputeType</code> is <code>EC2</code>.</p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
@@ -465,7 +468,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>Amazon GameLift Anywhere configuration options.</p>
+     * <p>A set of attributes that are specific to an Anywhere fleet.</p>
      */
     inline const AnywhereConfiguration& GetAnywhereConfiguration() const{ return m_anywhereConfiguration; }
     inline bool AnywhereConfigurationHasBeenSet() const { return m_anywhereConfigurationHasBeenSet; }
@@ -485,7 +488,8 @@ namespace Model
      * about using shared credentials, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Communicate with other Amazon Web Services resources from your fleets</a>. This
-     * attribute is used with fleets where <code>ComputeType</code> is "EC2".</p>
+     * attribute is used with fleets where <code>ComputeType</code> is
+     * <code>EC2</code>.</p>
      */
     inline const InstanceRoleCredentialsProvider& GetInstanceRoleCredentialsProvider() const{ return m_instanceRoleCredentialsProvider; }
     inline bool InstanceRoleCredentialsProviderHasBeenSet() const { return m_instanceRoleCredentialsProviderHasBeenSet; }

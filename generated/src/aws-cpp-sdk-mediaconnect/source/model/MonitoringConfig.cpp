@@ -20,7 +20,11 @@ namespace Model
 
 MonitoringConfig::MonitoringConfig() : 
     m_thumbnailState(ThumbnailState::NOT_SET),
-    m_thumbnailStateHasBeenSet(false)
+    m_thumbnailStateHasBeenSet(false),
+    m_audioMonitoringSettingsHasBeenSet(false),
+    m_contentQualityAnalysisState(ContentQualityAnalysisState::NOT_SET),
+    m_contentQualityAnalysisStateHasBeenSet(false),
+    m_videoMonitoringSettingsHasBeenSet(false)
 {
 }
 
@@ -39,6 +43,33 @@ MonitoringConfig& MonitoringConfig::operator =(JsonView jsonValue)
     m_thumbnailStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("audioMonitoringSettings"))
+  {
+    Aws::Utils::Array<JsonView> audioMonitoringSettingsJsonList = jsonValue.GetArray("audioMonitoringSettings");
+    for(unsigned audioMonitoringSettingsIndex = 0; audioMonitoringSettingsIndex < audioMonitoringSettingsJsonList.GetLength(); ++audioMonitoringSettingsIndex)
+    {
+      m_audioMonitoringSettings.push_back(audioMonitoringSettingsJsonList[audioMonitoringSettingsIndex].AsObject());
+    }
+    m_audioMonitoringSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("contentQualityAnalysisState"))
+  {
+    m_contentQualityAnalysisState = ContentQualityAnalysisStateMapper::GetContentQualityAnalysisStateForName(jsonValue.GetString("contentQualityAnalysisState"));
+
+    m_contentQualityAnalysisStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("videoMonitoringSettings"))
+  {
+    Aws::Utils::Array<JsonView> videoMonitoringSettingsJsonList = jsonValue.GetArray("videoMonitoringSettings");
+    for(unsigned videoMonitoringSettingsIndex = 0; videoMonitoringSettingsIndex < videoMonitoringSettingsJsonList.GetLength(); ++videoMonitoringSettingsIndex)
+    {
+      m_videoMonitoringSettings.push_back(videoMonitoringSettingsJsonList[videoMonitoringSettingsIndex].AsObject());
+    }
+    m_videoMonitoringSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +80,33 @@ JsonValue MonitoringConfig::Jsonize() const
   if(m_thumbnailStateHasBeenSet)
   {
    payload.WithString("thumbnailState", ThumbnailStateMapper::GetNameForThumbnailState(m_thumbnailState));
+  }
+
+  if(m_audioMonitoringSettingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> audioMonitoringSettingsJsonList(m_audioMonitoringSettings.size());
+   for(unsigned audioMonitoringSettingsIndex = 0; audioMonitoringSettingsIndex < audioMonitoringSettingsJsonList.GetLength(); ++audioMonitoringSettingsIndex)
+   {
+     audioMonitoringSettingsJsonList[audioMonitoringSettingsIndex].AsObject(m_audioMonitoringSettings[audioMonitoringSettingsIndex].Jsonize());
+   }
+   payload.WithArray("audioMonitoringSettings", std::move(audioMonitoringSettingsJsonList));
+
+  }
+
+  if(m_contentQualityAnalysisStateHasBeenSet)
+  {
+   payload.WithString("contentQualityAnalysisState", ContentQualityAnalysisStateMapper::GetNameForContentQualityAnalysisState(m_contentQualityAnalysisState));
+  }
+
+  if(m_videoMonitoringSettingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> videoMonitoringSettingsJsonList(m_videoMonitoringSettings.size());
+   for(unsigned videoMonitoringSettingsIndex = 0; videoMonitoringSettingsIndex < videoMonitoringSettingsJsonList.GetLength(); ++videoMonitoringSettingsIndex)
+   {
+     videoMonitoringSettingsJsonList[videoMonitoringSettingsIndex].AsObject(m_videoMonitoringSettings[videoMonitoringSettingsIndex].Jsonize());
+   }
+   payload.WithArray("videoMonitoringSettings", std::move(videoMonitoringSettingsJsonList));
+
   }
 
   return payload;

@@ -25,8 +25,9 @@ namespace Model
 
   /**
    * <p>Properties of a custom location for use in an Amazon GameLift Anywhere fleet.
-   * This data type is returned in response to a call to
-   * <a>CreateLocation</a>.</p><p><h3>See Also:</h3>   <a
+   * This data type is returned in response to a call to <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation">https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateLocation</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LocationModel">AWS
    * API Reference</a></p>
    */

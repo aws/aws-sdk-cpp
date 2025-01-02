@@ -168,6 +168,34 @@ namespace Model
     inline S3ModelDataSource& WithManifestS3Uri(Aws::String&& value) { SetManifestS3Uri(std::move(value)); return *this;}
     inline S3ModelDataSource& WithManifestS3Uri(const char* value) { SetManifestS3Uri(value); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ETag associated with S3 URI.</p>
+     */
+    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
+    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
+    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
+    inline S3ModelDataSource& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline S3ModelDataSource& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
+    inline S3ModelDataSource& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
+     * <p>The ETag associated with Manifest S3URI.</p>
+     */
+    inline const Aws::String& GetManifestEtag() const{ return m_manifestEtag; }
+    inline bool ManifestEtagHasBeenSet() const { return m_manifestEtagHasBeenSet; }
+    inline void SetManifestEtag(const Aws::String& value) { m_manifestEtagHasBeenSet = true; m_manifestEtag = value; }
+    inline void SetManifestEtag(Aws::String&& value) { m_manifestEtagHasBeenSet = true; m_manifestEtag = std::move(value); }
+    inline void SetManifestEtag(const char* value) { m_manifestEtagHasBeenSet = true; m_manifestEtag.assign(value); }
+    inline S3ModelDataSource& WithManifestEtag(const Aws::String& value) { SetManifestEtag(value); return *this;}
+    inline S3ModelDataSource& WithManifestEtag(Aws::String&& value) { SetManifestEtag(std::move(value)); return *this;}
+    inline S3ModelDataSource& WithManifestEtag(const char* value) { SetManifestEtag(value); return *this;}
+    ///@}
   private:
 
     Aws::String m_s3Uri;
@@ -187,6 +215,12 @@ namespace Model
 
     Aws::String m_manifestS3Uri;
     bool m_manifestS3UriHasBeenSet = false;
+
+    Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
+
+    Aws::String m_manifestEtag;
+    bool m_manifestEtagHasBeenSet = false;
   };
 
 } // namespace Model

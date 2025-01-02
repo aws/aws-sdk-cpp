@@ -66,8 +66,8 @@ namespace Model
     ///@{
     /**
      * <p>The number of game sessions in status <code>ACTIVATING</code> to allow on an
-     * instance. This setting limits the instance resources that can be used for new
-     * game activations at any one time.</p>
+     * instance or compute. This setting limits the instance resources that can be used
+     * for new game activations at any one time.</p>
      */
     inline int GetMaxConcurrentGameSessionActivations() const{ return m_maxConcurrentGameSessionActivations; }
     inline bool MaxConcurrentGameSessionActivationsHasBeenSet() const { return m_maxConcurrentGameSessionActivationsHasBeenSet; }

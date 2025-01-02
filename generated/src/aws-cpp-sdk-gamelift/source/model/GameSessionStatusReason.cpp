@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int INTERRUPTED_HASH = HashingUtils::HashString("INTERRUPTED");
+        static const int TRIGGERED_ON_PROCESS_TERMINATE_HASH = HashingUtils::HashString("TRIGGERED_ON_PROCESS_TERMINATE");
+        static const int FORCE_TERMINATED_HASH = HashingUtils::HashString("FORCE_TERMINATED");
 
 
         GameSessionStatusReason GetGameSessionStatusReasonForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == INTERRUPTED_HASH)
           {
             return GameSessionStatusReason::INTERRUPTED;
+          }
+          else if (hashCode == TRIGGERED_ON_PROCESS_TERMINATE_HASH)
+          {
+            return GameSessionStatusReason::TRIGGERED_ON_PROCESS_TERMINATE;
+          }
+          else if (hashCode == FORCE_TERMINATED_HASH)
+          {
+            return GameSessionStatusReason::FORCE_TERMINATED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +58,10 @@ namespace Aws
             return {};
           case GameSessionStatusReason::INTERRUPTED:
             return "INTERRUPTED";
+          case GameSessionStatusReason::TRIGGERED_ON_PROCESS_TERMINATE:
+            return "TRIGGERED_ON_PROCESS_TERMINATE";
+          case GameSessionStatusReason::FORCE_TERMINATED:
+            return "FORCE_TERMINATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

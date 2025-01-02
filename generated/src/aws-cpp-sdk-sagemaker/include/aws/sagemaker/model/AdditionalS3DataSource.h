@@ -81,6 +81,20 @@ namespace Model
     inline AdditionalS3DataSource& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
     inline AdditionalS3DataSource& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
     ///@}
+
+    ///@{
+    /**
+     * <p>The ETag associated with S3 URI.</p>
+     */
+    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
+    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
+    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
+    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
+    inline AdditionalS3DataSource& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+    inline AdditionalS3DataSource& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
+    inline AdditionalS3DataSource& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
   private:
 
     AdditionalS3DataSourceDataType m_s3DataType;
@@ -91,6 +105,9 @@ namespace Model
 
     CompressionType m_compressionType;
     bool m_compressionTypeHasBeenSet = false;
+
+    Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
   };
 
 } // namespace Model

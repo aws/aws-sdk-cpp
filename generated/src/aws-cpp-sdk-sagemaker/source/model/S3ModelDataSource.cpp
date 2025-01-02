@@ -26,7 +26,9 @@ S3ModelDataSource::S3ModelDataSource() :
     m_compressionTypeHasBeenSet(false),
     m_modelAccessConfigHasBeenSet(false),
     m_hubAccessConfigHasBeenSet(false),
-    m_manifestS3UriHasBeenSet(false)
+    m_manifestS3UriHasBeenSet(false),
+    m_eTagHasBeenSet(false),
+    m_manifestEtagHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,20 @@ S3ModelDataSource& S3ModelDataSource::operator =(JsonView jsonValue)
     m_manifestS3UriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ETag"))
+  {
+    m_eTag = jsonValue.GetString("ETag");
+
+    m_eTagHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ManifestEtag"))
+  {
+    m_manifestEtag = jsonValue.GetString("ManifestEtag");
+
+    m_manifestEtagHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +134,18 @@ JsonValue S3ModelDataSource::Jsonize() const
   if(m_manifestS3UriHasBeenSet)
   {
    payload.WithString("ManifestS3Uri", m_manifestS3Uri);
+
+  }
+
+  if(m_eTagHasBeenSet)
+  {
+   payload.WithString("ETag", m_eTag);
+
+  }
+
+  if(m_manifestEtagHasBeenSet)
+  {
+   payload.WithString("ManifestEtag", m_manifestEtag);
 
   }
 

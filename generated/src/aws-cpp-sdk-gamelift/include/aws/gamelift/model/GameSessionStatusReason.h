@@ -16,7 +16,9 @@ namespace Model
   enum class GameSessionStatusReason
   {
     NOT_SET,
-    INTERRUPTED
+    INTERRUPTED,
+    TRIGGERED_ON_PROCESS_TERMINATE,
+    FORCE_TERMINATED
   };
 
 namespace GameSessionStatusReasonMapper

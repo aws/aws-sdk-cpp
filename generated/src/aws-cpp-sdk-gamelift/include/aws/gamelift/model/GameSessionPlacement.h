@@ -37,9 +37,10 @@ namespace Model
    * not active and ready to accept players until placement status reaches
    * <code>FULFILLED</code>. When the placement is in <code>PENDING</code> status,
    * Amazon GameLift may attempt to place a game session multiple times before
-   * succeeding. With each attempt it creates a <a>GameSession</a> object and updates
-   * this placement object with the new game session properties..</p>
-   * <p><h3>See Also:</h3>   <a
+   * succeeding. With each attempt it creates a <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession</a>
+   * object and updates this placement object with the new game session
+   * properties..</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionPlacement">AWS
    * API Reference</a></p>
    */
@@ -89,7 +90,7 @@ namespace Model
      * -- A new game session has been successfully placed. Game session properties are
      * now final.</p> </li> <li> <p> <b>CANCELLED</b> -- The placement request was
      * canceled.</p> </li> <li> <p> <b>TIMED_OUT</b> -- A new game session was not
-     * successfully created before the time limit expired. You can resubmit as a new
+     * successfully created before the time limit expired. You can resubmit the
      * placement request as needed.</p> </li> <li> <p> <b>FAILED</b> -- Amazon GameLift
      * is not able to complete the process of placing the game session. Common reasons
      * are the game session terminated before the placement process was completed, or

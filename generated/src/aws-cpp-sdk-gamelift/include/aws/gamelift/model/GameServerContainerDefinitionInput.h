@@ -32,11 +32,15 @@ namespace Model
    * <p>Describes the configuration for a container that runs your game server
    * executable. This definition includes container configuration, resources, and
    * start instructions. Use this data type when creating or updating a game server
-   * container group definition. For properties of a deployed container, see
-   * <a>GameServerContainerDefinition</a>. A game server container is automatically
-   * considered essential; if an essential container fails, the entire container
-   * group restarts.</p> <p> <b>Use with: </b> <a>CreateContainerGroupDefinition</a>,
-   * <a>UpdateContainerGroupDefinition</a> </p><p><h3>See Also:</h3>   <a
+   * container group definition. For properties of a deployed container, see <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinition.html">GameServerContainerDefinition</a>.
+   * A game server container is automatically considered essential; if an essential
+   * container fails, the entire container group restarts.</p> <p> <b>Use with: </b>
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerContainerDefinitionInput">AWS
    * API Reference</a></p>
    */
