@@ -28,7 +28,9 @@ namespace Model
   /**
    * <p>Information and credentials that you can use to remotely connect to an
    * instance in an EC2 managed fleet. This data type is returned in response to a
-   * call to <a>GetInstanceAccess</a>. </p><p><h3>See Also:</h3>   <a
+   * call to <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceAccess">AWS
    * API Reference</a></p>
    */

@@ -18,7 +18,6 @@
 #include <aws/pinpoint/PinpointClient.h>
 #include <aws/pinpoint/model/GetAppsRequest.h>
 #include <aws/pinpoint/model/GetAppRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace PinpointSmokeTest{
 using namespace Aws::Auth;
@@ -32,19 +31,6 @@ class PinpointSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char PinpointSmokeTestSuite::ALLOCATION_TAG[] = "PinpointSmokeTest";
-TEST_F(PinpointSmokeTestSuite, GetAppsSuccess )
-{
-    Aws::Pinpoint::PinpointClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<PinpointClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    GetAppsRequest input;
-    auto outcome = clientSp->GetApps(input);
-    EXPECT_TRUE( outcome.IsSuccess());
-}
 TEST_F(PinpointSmokeTestSuite, GetAppFailure )
 {
     Aws::Pinpoint::PinpointClientConfiguration clientConfiguration;
@@ -58,5 +44,18 @@ TEST_F(PinpointSmokeTestSuite, GetAppFailure )
     input.SetApplicationId("InvalidApplicationId");
     auto outcome = clientSp->GetApp(input);
     EXPECT_FALSE( outcome.IsSuccess());
+}
+TEST_F(PinpointSmokeTestSuite, GetAppsSuccess )
+{
+    Aws::Pinpoint::PinpointClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<PinpointClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    GetAppsRequest input;
+    auto outcome = clientSp->GetApps(input);
+    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

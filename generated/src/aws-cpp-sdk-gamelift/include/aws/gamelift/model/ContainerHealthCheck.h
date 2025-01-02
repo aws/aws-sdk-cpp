@@ -38,8 +38,11 @@ namespace Model
    * seconds after launch before counting failed health checks.</p> <p>
    * <code>{"Command": [ "CMD-SHELL", "ps cax | grep "processmanager" || exit 1" ],
    * "Interval": 60, "Timeout": 10, "Retries": 3, "StartPeriod": 100 }</code> </p>
-   * <p> <b>Part of:</b> <a>SupportContainerDefinition</a>,
-   * <a>SupportContainerDefinitionInput</a> </p><p><h3>See Also:</h3>   <a
+   * <p> <b>Part of:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html">SupportContainerDefinitionInput</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerHealthCheck">AWS
    * API Reference</a></p>
    */

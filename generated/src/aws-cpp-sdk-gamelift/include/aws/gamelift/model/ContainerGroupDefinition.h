@@ -33,10 +33,15 @@ namespace Model
   /**
    * <p>The properties that describe a container group resource. You can update all
    * properties of a container group definition properties. Updates to a container
-   * group definition are saved as new versions. </p> <p> <b>Used with:</b>
-   * <a>CreateContainerGroupDefinition</a> </p> <p> <b>Returned by:</b>
-   * <a>DescribeContainerGroupDefinition</a>, <a>ListContainerGroupDefinitions</a>,
-   * <a>UpdateContainerGroupDefinition</a> </p><p><h3>See Also:</h3>   <a
+   * group definition are saved as new versions. </p> <p> <b>Used with:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>
+   * </p> <p> <b>Returned by:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html">DescribeContainerGroupDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html">ListContainerGroupDefinitions</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerGroupDefinition">AWS
    * API Reference</a></p>
    */
@@ -245,11 +250,11 @@ namespace Model
      * <p>Additional information about a container group definition that's in
      * <code>FAILED</code> status. Possible reasons include:</p> <ul> <li> <p>An
      * internal issue prevented Amazon GameLift from creating the container group
-     * definition resource. Delete the failed resource and call
-     * <a>CreateContainerGroupDefinition</a>again. </p> </li> <li> <p>An access-denied
-     * message means that you don't have permissions to access the container image on
-     * ECR. See <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">
+     * definition resource. Delete the failed resource and call <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.
+     * </p> </li> <li> <p>An access-denied message means that you don't have
+     * permissions to access the container image on ECR. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html">
      * IAM permission examples</a> for help setting up required IAM permissions for
      * Amazon GameLift.</p> </li> <li> <p>The <code>ImageUri</code> value for at least
      * one of the containers in the container group definition was invalid or not found

@@ -35,10 +35,17 @@ namespace Model
    * an essential container fails, the entire container group restarts.</p> <p>You
    * can update a container definition and deploy the updates to an existing fleet.
    * When creating or updating a game server container group definition, use the
-   * property <a>GameServerContainerDefinitionInput</a>. </p> <p> <b>Part of:</b>
-   * <a>ContainerGroupDefinition</a> </p> <p> <b>Returned by:</b>
-   * <a>DescribeContainerGroupDefinition</a>, <a>ListContainerGroupDefinitions</a>,
-   * <a>UpdateContainerGroupDefinition</a> </p><p><h3>See Also:</h3>   <a
+   * property <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput</a>.
+   * </p> <p> <b>Part of:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+   * </p> <p> <b>Returned by:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html">DescribeContainerGroupDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListContainerGroupDefinitions.html">ListContainerGroupDefinitions</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateContainerGroupDefinition.html">UpdateContainerGroupDefinition</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerContainerDefinition">AWS
    * API Reference</a></p>
    */

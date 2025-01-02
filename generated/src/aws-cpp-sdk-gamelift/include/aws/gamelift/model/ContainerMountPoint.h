@@ -26,9 +26,15 @@ namespace Model
 
   /**
    * <p>A mount point that binds a container to a file or directory on the host
-   * system. </p> <p> <b>Part of:</b> <a>GameServerContainerDefinition</a>,
-   * <a>GameServerContainerDefinitionInput</a>, <a>SupportContainerDefinition</a>,
-   * <a>SupportContainerDefinitionInput</a> </p><p><h3>See Also:</h3>   <a
+   * system. </p> <p> <b>Part of:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinition.html">GameServerContainerDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput.html</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerMountPoint">AWS
    * API Reference</a></p>
    */

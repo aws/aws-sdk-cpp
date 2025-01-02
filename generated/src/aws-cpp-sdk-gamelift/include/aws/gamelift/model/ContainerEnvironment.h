@@ -25,9 +25,15 @@ namespace Model
 
   /**
    * <p>An environment variable to set inside a container, in the form of a key-value
-   * pair. </p> <p> <b>Part of:</b> <a>GameServerContainerDefinition</a>,
-   * <a>GameServerContainerDefinitionInput</a>, <a>SupportContainerDefinition</a>,
-   * <a>SupportContainerDefinitionInput</a> </p><p><h3>See Also:</h3>   <a
+   * pair. </p> <p> <b>Part of:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinition.html">GameServerContainerDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput.html">GameServerContainerDefinitionInput</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html">SupportContainerDefinitionInput</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerEnvironment">AWS
    * API Reference</a></p>
    */

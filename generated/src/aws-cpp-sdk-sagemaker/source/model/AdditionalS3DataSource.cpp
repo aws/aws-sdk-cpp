@@ -23,7 +23,8 @@ AdditionalS3DataSource::AdditionalS3DataSource() :
     m_s3DataTypeHasBeenSet(false),
     m_s3UriHasBeenSet(false),
     m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false)
+    m_compressionTypeHasBeenSet(false),
+    m_eTagHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,13 @@ AdditionalS3DataSource& AdditionalS3DataSource::operator =(JsonView jsonValue)
     m_compressionTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ETag"))
+  {
+    m_eTag = jsonValue.GetString("ETag");
+
+    m_eTagHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -77,6 +85,12 @@ JsonValue AdditionalS3DataSource::Jsonize() const
   if(m_compressionTypeHasBeenSet)
   {
    payload.WithString("CompressionType", CompressionTypeMapper::GetNameForCompressionType(m_compressionType));
+  }
+
+  if(m_eTagHasBeenSet)
+  {
+   payload.WithString("ETag", m_eTag);
+
   }
 
   return payload;

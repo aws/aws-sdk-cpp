@@ -28,8 +28,11 @@ namespace Model
    * fleet is capable of hosting concurrently. For example, if a fleet has 50 game
    * server container groups, and the game server container in each group runs 1 game
    * server process, then the fleet has the capacity to run host 50 game sessions at
-   * a time. </p> <p> <b>Returned by:</b> <a>DescribeFleetCapacity</a>,
-   * <a>DescribeFleetLocationCapacity</a> </p><p><h3>See Also:</h3>   <a
+   * a time. </p> <p> <b>Returned by:</b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html</a>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerContainerGroupCounts">AWS
    * API Reference</a></p>
    */
