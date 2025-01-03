@@ -6,6 +6,8 @@
 
 #include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
+#include <aws/testing/s3-test-utils/S3TestUtils.h>
+
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -64,7 +66,6 @@ namespace
     static const char PRESIGNED_URLS_BUCKET_NAME[] = "presignedaccesspointbucket";
     static const char PRESIGNED_URLS_ACCESS_POINT[] = "presignedaccesspoint";
     static const char TEST_OBJECT_KEY[] = "TestObjectKey";
-    static const char TEST_BUCKET_TAG[] = "IntegrationTestResource";
     static const int TIMEOUT_MAX = 20;
 
     class S3ControlTest : public ::testing::Test
@@ -144,61 +145,6 @@ namespace
             return {configuration};
         }
 
-        static void TagTestBucket(const Aws::String& bucketName, const S3::S3Client& client) {
-            ASSERT_TRUE(!bucketName.empty());
-
-            Aws::S3::Model::PutBucketTaggingRequest taggingRequest;
-            taggingRequest.SetBucket(bucketName);
-            Aws::S3::Model::Tag tag;
-            tag.SetKey(TEST_BUCKET_TAG);
-            tag.SetValue(TEST_BUCKET_TAG);
-            Aws::S3::Model::Tagging tagging;
-            tagging.AddTagSet(tag);
-            taggingRequest.SetTagging(tagging);
-
-            auto taggingOutcome = CallOperationWithUnconditionalRetry(&client, &Aws::S3::S3Client::PutBucketTagging, taggingRequest);
-            AWS_ASSERT_SUCCESS(taggingOutcome);
-        }
-
-        static bool WaitForBucketToPropagate(const Aws::String& bucketName, const S3::S3Client& client)
-        {
-            unsigned timeoutCount = 0;
-            while (timeoutCount++ < TIMEOUT_MAX)
-            {
-                S3::Model::ListObjectsRequest ListObjectsRequest;
-                ListObjectsRequest.SetBucket(bucketName);
-                auto listObjectsOutcome = client.ListObjects(ListObjectsRequest);
-                if (listObjectsOutcome.IsSuccess())
-                {
-                    return true;
-                }
-
-                std::this_thread::sleep_for(std::chrono::seconds(10));
-            }
-
-            return false;
-        }
-
-        static bool WaitForObjectToPropagate(const Aws::String& accessPointArn, const char* objectKey, const S3::S3Client& client)
-        {
-            unsigned timeoutCount = 0;
-            while (timeoutCount++ < TIMEOUT_MAX)
-            {
-                S3::Model::GetObjectRequest getObjectRequest;
-                getObjectRequest.SetBucket(accessPointArn);
-                getObjectRequest.SetKey(objectKey);
-                auto getObjectOutcome = client.GetObject(getObjectRequest);
-                if (getObjectOutcome.IsSuccess())
-                {
-                    return true;
-                }
-
-                std::this_thread::sleep_for(std::chrono::seconds(5));
-            }
-
-            return false;
-        }
-
         /**
          * Wait for S3-MRAP server-side asynchronous Operation completion
          *
@@ -264,8 +210,8 @@ namespace
             createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
             auto createBucketOutcome = m_s3Client.CreateBucket(createBucketRequest);
             AWS_ASSERT_SUCCESS(createBucketOutcome);
-            ASSERT_TRUE(WaitForBucketToPropagate(bucketName, m_s3Client));
-            TagTestBucket(bucketName, m_s3Client);
+            ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(m_s3Client, bucketName));
+            Testing::S3TestUtils::TagTestBucket(m_s3Client, bucketName);
 
             CreateAccessPointRequest createAccessPointRequest;
             createAccessPointRequest.SetName(accessPointName);
@@ -323,8 +269,8 @@ namespace
                 createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
                 auto createBucketOutcome = s3Client.CreateBucket(createBucketRequest);
                 AWS_ASSERT_SUCCESS(createBucketOutcome);
-                ASSERT_TRUE(WaitForBucketToPropagate(regionalBucketName, s3Client));
-                TagTestBucket(regionalBucketName, s3Client);
+                ASSERT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(s3Client, regionalBucketName));
+                Testing::S3TestUtils::TagTestBucket(m_s3Client, regionalBucketName);
 
                 S3Control::Model::Region regionalBucket;
                 regionalBucket.SetBucket(regionalBucketName);
@@ -397,7 +343,7 @@ namespace
 
             ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
 
-            ASSERT_TRUE(WaitForObjectToPropagate(accessPointArn, TEST_OBJECT_KEY, m_s3Client));
+            ASSERT_TRUE(Testing::S3TestUtils::WaitForObjectToPropagate(m_s3Client, accessPointArn, TEST_OBJECT_KEY));
 
             // GetObject with presigned url
             Aws::String presignedUrlGet = m_s3Client.GeneratePresignedUrl(accessPointArn, TEST_OBJECT_KEY, HttpMethod::HTTP_GET);
