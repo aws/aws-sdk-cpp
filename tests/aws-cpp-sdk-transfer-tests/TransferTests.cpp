@@ -6,6 +6,8 @@
 #include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/ProxyConfig.h>
+#include <aws/testing/s3-test-utils/S3TestUtils.h>
+
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/DeleteObjectsRequest.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>
@@ -684,21 +686,7 @@ protected:
 
     static bool WaitForBucketToPropagate(const Aws::String& bucketName)
     {
-        unsigned timeoutCount = 0;
-        while (timeoutCount++ < WAIT_MAX_RETRIES)
-        {
-            ListObjectsRequest listObjectsRequest;
-            listObjectsRequest.SetBucket(bucketName);
-            ListObjectsOutcome listObjectsOutcome = m_s3Clients[TestType::Https]->ListObjects(listObjectsRequest);
-            if (listObjectsOutcome.IsSuccess())
-            {
-                return true;
-            }
-
-            std::this_thread::sleep_for(std::chrono::seconds(10));
-        }
-
-        return false;
+      return Aws::Testing::S3TestUtils::WaitForBucketToPropagate(m_s3Clients[TestType::Https], bucketName);
     }
 
     static bool WaitForObjectToPropagate(const Aws::String& bucketName,
@@ -776,23 +764,7 @@ protected:
 
     static void WaitForBucketToEmpty(const Aws::String& bucketName)
     {
-        ListObjectsRequest listObjectsRequest;
-        listObjectsRequest.SetBucket(bucketName);
-
-        unsigned checkForObjectsCount = 0;
-        while (checkForObjectsCount++ < WAIT_MAX_RETRIES)
-        {
-            ListObjectsOutcome listObjectsOutcome = m_s3Clients[TestType::Https]->ListObjects(listObjectsRequest);
-
-            if (!listObjectsOutcome.IsSuccess() || listObjectsOutcome.GetResult().GetContents().size() > 0)
-            {
-                std::this_thread::sleep_for(std::chrono::seconds(5));
-            }
-            else
-            {
-                break;
-            }
-        }
+      return Aws::Testing::S3TestUtils::WaitForBucketToEmpty(m_s3Clients[TestType::Https], bucketName);
     }
 
     static void DeleteBucket(const Aws::String& bucketName)

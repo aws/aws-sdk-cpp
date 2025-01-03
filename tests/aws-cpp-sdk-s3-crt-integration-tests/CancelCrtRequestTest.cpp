@@ -16,6 +16,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/testing/platform/PlatformTesting.h>
+#include <aws/testing/s3-test-utils/S3TestUtils.h>
 #include <gtest/gtest.h>
 
 #include <random>
@@ -46,7 +47,7 @@ class CancelCrtRequestTest : public ::testing::Test {
     configuration.region = "us-east-1";
     m_client = Aws::MakeShared<S3CrtClient>(ALLOCATION_TAG, configuration);
 
-    m_bucketName = CalculateBucketName(BUCKET_NAME);
+    m_bucketName = Testing::S3TestUtils::CalculateBucketName(BUCKET_NAME);
     SCOPED_TRACE(Aws::String("FullBucketName ") + m_bucketName);
     CreateBucketRequest createBucketRequest;
     createBucketRequest.SetBucket(m_bucketName);
@@ -54,106 +55,14 @@ class CancelCrtRequestTest : public ::testing::Test {
 
     CreateBucketOutcome createBucketOutcome = m_client->CreateBucket(createBucketRequest);
     AWS_EXPECT_SUCCESS(createBucketOutcome);
-    EXPECT_TRUE(WaitForBucketToPropagate(m_bucketName));
-    TagTestBucket(m_bucketName);
+    EXPECT_TRUE(Testing::S3TestUtils::WaitForBucketToPropagate(m_client, m_bucketName));
+    Testing::S3TestUtils::TagTestBucket(m_client, m_bucketName);
   }
 
   void TearDown() override {
-    DeleteBucket(m_bucketName);
+    Testing::S3TestUtils::DeleteBucket(m_client, m_bucketName);
     m_client.reset();
   }
-
-  void EmptyBucket(const Aws::String& bucketName) {
-    ListObjectsRequest listObjectsRequest;
-    listObjectsRequest.SetBucket(bucketName);
-
-    ListObjectsOutcome listObjectsOutcome = m_client->ListObjects(listObjectsRequest);
-
-    if (!listObjectsOutcome.IsSuccess()) return;
-
-    for (const auto& object : listObjectsOutcome.GetResult().GetContents()) {
-      DeleteObjectRequest deleteObjectRequest;
-      deleteObjectRequest.SetBucket(bucketName);
-      deleteObjectRequest.SetKey(object.GetKey());
-      auto deleteOutcome = m_client->DeleteObject(deleteObjectRequest);
-      AWS_UNREFERENCED_PARAM(deleteOutcome);
-    }
-  }
-
-  void WaitForBucketToEmpty(const Aws::String& bucketName) {
-    ListObjectsRequest listObjectsRequest;
-    listObjectsRequest.SetBucket(bucketName);
-
-    unsigned checkForObjectsCount = 0;
-    static const int TIMEOUT_MAX = 20;
-    while (checkForObjectsCount++ < TIMEOUT_MAX) {
-      ListObjectsOutcome listObjectsOutcome = m_client->ListObjects(listObjectsRequest);
-      AWS_ASSERT_SUCCESS(listObjectsOutcome);
-
-      if (!listObjectsOutcome.GetResult().GetContents().empty()) {
-        std::this_thread::sleep_for(std::chrono::seconds(5));
-      } else {
-        break;
-      }
-    }
-  }
-
-  void DeleteBucket(const Aws::String& bucketName) {
-    HeadBucketRequest headBucketRequest;
-    headBucketRequest.SetBucket(bucketName);
-    HeadBucketOutcome bucketOutcome = m_client->HeadBucket(headBucketRequest);
-
-    if (bucketOutcome.IsSuccess()) {
-      EmptyBucket(bucketName);
-      WaitForBucketToEmpty(bucketName);
-
-      DeleteBucketRequest deleteBucketRequest;
-      deleteBucketRequest.SetBucket(bucketName);
-
-      auto deleteBucketOutcome =
-          CallOperationWithUnconditionalRetry(m_client.get(), &Aws::S3Crt::S3CrtClient::DeleteBucket, deleteBucketRequest);
-      AWS_ASSERT_SUCCESS(deleteBucketOutcome);
-    }
-  }
-
-  bool WaitForBucketToPropagate(const Aws::String& bucketName) {
-    unsigned timeoutCount = 0;
-    static const int TIMEOUT_MAX = 20;
-    while (timeoutCount++ < TIMEOUT_MAX) {
-      ListObjectsRequest listObjectsRequest;
-      listObjectsRequest.SetBucket(bucketName);
-      ListObjectsOutcome listObjectsOutcome = m_client->ListObjects(listObjectsRequest);
-      if (listObjectsOutcome.IsSuccess()) {
-        return true;
-      }
-
-      std::this_thread::sleep_for(std::chrono::seconds(10));
-    }
-
-    return false;
-  }
-
-  void TagTestBucket(const Aws::String& bucketName) {
-    ASSERT_TRUE(!bucketName.empty());
-    ASSERT_TRUE(m_client);
-
-    PutBucketTaggingRequest taggingRequest;
-    taggingRequest.SetBucket(bucketName);
-    Tag tag;
-    static const char* TEST_BUCKET_TAG = "IntegrationTestResource";
-    tag.SetKey(TEST_BUCKET_TAG);
-    tag.SetValue(TEST_BUCKET_TAG);
-    Tagging tagging;
-    tagging.AddTagSet(tag);
-    taggingRequest.SetTagging(tagging);
-
-    auto taggingOutcome = CallOperationWithUnconditionalRetry(m_client.get(), &Aws::S3Crt::S3CrtClient::PutBucketTagging, taggingRequest);
-    AWS_ASSERT_SUCCESS(taggingOutcome);
-  }
-
-  static Aws::String CalculateBucketName(const Aws::String& bucketPrefix) { return Aws::Testing::GetAwsResourcePrefix() + bucketPrefix; }
-
-  static Aws::String randomString() { return StringUtils::ToLower(Aws::String(UUID::RandomUUID()).c_str()); }
 
   std::shared_ptr<S3CrtClient> m_client;
   Aws::String m_bucketName;
