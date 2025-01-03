@@ -39,12 +39,12 @@ namespace client
             const std::shared_ptr<EndpointProviderT> endpointProvider,
             const std::shared_ptr<ServiceAuthSchemeResolverT>& authSchemeResolver,
             const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
-            : AwsSmithyClientBase(Aws::MakeUnique<ServiceClientConfigurationT>(ServiceNameT, clientConfig), serviceName, httpClient, errorMarshaller),
+            : AwsSmithyClientBase(Aws::MakeShared<ServiceClientConfigurationT>(ServiceNameT, clientConfig), serviceName, httpClient, errorMarshaller),
               m_clientConfiguration(*static_cast<ServiceClientConfigurationT*>(AwsSmithyClientBase::m_clientConfig.get())),
               m_endpointProvider(endpointProvider),
               m_authSchemeResolver(authSchemeResolver),
               m_authSchemes(authSchemes),
-              m_serializer(Aws::MakeUnique<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider))
+              m_serializer(Aws::MakeShared<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider))
         {
             m_serviceName = ServiceNameT;
         }
@@ -135,7 +135,7 @@ namespace client
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
         Aws::UnorderedMap<Aws::String, AuthSchemesVariantT> m_authSchemes{};
-        Aws::UniquePtr<SerializerT> m_serializer{};
+        std::shared_ptr<SerializerT> m_serializer{};
     };
 
 } // namespace client

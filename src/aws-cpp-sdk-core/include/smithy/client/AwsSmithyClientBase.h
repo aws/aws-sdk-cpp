@@ -17,6 +17,8 @@
 #include <aws/core/utils/FutureOutcome.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/client/AWSErrorMarshaller.h>
 
 namespace Aws
 {
@@ -65,6 +67,8 @@ namespace client
     /* Non-template base client class that contains main Aws Client Request pipeline logic */
     class SMITHY_API AwsSmithyClientBase
     {
+    private:
+        const char* ALLOC_TAG{"AwsSmithyClientBase"};
     public:
         using HttpRequest = Aws::Http::HttpRequest;
         using HttpResponse = Aws::Http::HttpResponse;
@@ -79,7 +83,7 @@ namespace client
         using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSError>;
         using ResolveEndpointOutcome = Aws::Utils::Outcome<Aws::Endpoint::AWSEndpoint, AWSError>;
 
-        AwsSmithyClientBase(Aws::UniquePtr<Aws::Client::ClientConfiguration>&& clientConfig,
+        AwsSmithyClientBase(std::shared_ptr<Aws::Client::ClientConfiguration>&& clientConfig,
                             Aws::String serviceName,
                             std::shared_ptr<Aws::Http::HttpClient> httpClient,
                             std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) :
@@ -119,10 +123,76 @@ namespace client
             m_userAgent = Aws::Client::ComputeUserAgentString(m_clientConfig.get());
         }
 
-        AwsSmithyClientBase(const AwsSmithyClientBase&) = delete;
-        AwsSmithyClientBase(AwsSmithyClientBase&&) = delete;
-        AwsSmithyClientBase& operator=(const AwsSmithyClientBase&) = delete;
-        AwsSmithyClientBase& operator=(AwsSmithyClientBase&&) = delete;
+
+        AwsSmithyClientBase& operator=(const AwsSmithyClientBase& target)
+        {
+            if (this != &target)
+            {
+                m_clientConfig = target.m_clientConfig;
+                m_serviceName = target.m_serviceName;
+                m_userAgent = target.m_userAgent;
+                m_httpClient = Aws::Http::CreateHttpClient(*target.m_clientConfig);
+
+                // marshaller could be of different types
+                if (auto jsonMarshaller = std::dynamic_pointer_cast<Aws::Client::JsonErrorMarshaller>(m_errorMarshaller)) {
+                    m_errorMarshaller = Aws::MakeShared<Aws::Client::JsonErrorMarshaller>(ALLOC_TAG);
+                }
+                else if (auto xmlMarshaller = std::dynamic_pointer_cast<Aws::Client::XmlErrorMarshaller>(m_errorMarshaller)) {
+                    m_errorMarshaller = Aws::MakeShared<Aws::Client::XmlErrorMarshaller>(ALLOC_TAG);
+                }
+                else if (auto jsonQueryCompatibleMarshaller = std::dynamic_pointer_cast<Aws::Client::JsonErrorMarshallerQueryCompatible>(m_errorMarshaller)) {
+                    m_errorMarshaller = Aws::MakeShared<Aws::Client::JsonErrorMarshallerQueryCompatible>(ALLOC_TAG);
+                }
+
+                m_interceptors = {Aws::MakeShared<ChecksumInterceptor>(ALLOC_TAG)};
+            }
+            return *this;
+        }
+
+        AwsSmithyClientBase(const AwsSmithyClientBase& target): 
+            m_clientConfig{target.m_clientConfig},
+            m_serviceName{target.m_serviceName},
+            m_userAgent{target.m_userAgent},
+            m_httpClient{Aws::Http::CreateHttpClient(*target.m_clientConfig)}
+        {
+            // marshaller could be of different types
+            if (auto jsonMarshaller = std::dynamic_pointer_cast<Aws::Client::JsonErrorMarshaller>(m_errorMarshaller)) {
+                m_errorMarshaller = Aws::MakeShared<Aws::Client::JsonErrorMarshaller>(ALLOC_TAG);
+            }
+            else if (auto xmlMarshaller = std::dynamic_pointer_cast<Aws::Client::XmlErrorMarshaller>(m_errorMarshaller)) {
+                m_errorMarshaller = Aws::MakeShared<Aws::Client::XmlErrorMarshaller>(ALLOC_TAG);
+            }
+            else if (auto jsonQueryCompatibleMarshaller = std::dynamic_pointer_cast<Aws::Client::JsonErrorMarshallerQueryCompatible>(m_errorMarshaller)) {
+                m_errorMarshaller = Aws::MakeShared<Aws::Client::JsonErrorMarshallerQueryCompatible>(ALLOC_TAG);
+            }
+
+            m_interceptors = {Aws::MakeShared<ChecksumInterceptor>(ALLOC_TAG)};
+        }
+
+        AwsSmithyClientBase(AwsSmithyClientBase&& target):
+            m_clientConfig{std::move(target.m_clientConfig)},         
+            m_serviceName{std::move(target.m_serviceName)},           
+            m_userAgent{std::move(target.m_userAgent)},             
+            m_httpClient{std::move(target.m_httpClient)},    
+            m_errorMarshaller{std::move(target.m_errorMarshaller)},     
+            m_interceptors{std::move(target.m_interceptors)}
+        {
+
+        }
+
+        AwsSmithyClientBase& operator=(AwsSmithyClientBase&& target) 
+        {
+            if (this != &target)
+            {
+                m_clientConfig = std::move(target.m_clientConfig);
+                m_serviceName = std::move(std::move(target.m_serviceName));
+                m_userAgent = std::move(target.m_userAgent);
+                m_httpClient = std::move(target.m_httpClient); 
+                m_errorMarshaller = std::move(target.m_errorMarshaller);
+                m_interceptors = std::move(target.m_interceptors);
+            }
+            return *this;
+        }
 
         virtual ~AwsSmithyClientBase() = default;
 
@@ -160,7 +230,7 @@ namespace client
         virtual bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const = 0;
 
     protected:
-        Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
+        std::shared_ptr<Aws::Client::ClientConfiguration> m_clientConfig;
         Aws::String m_serviceName;
         Aws::String m_userAgent;
 
