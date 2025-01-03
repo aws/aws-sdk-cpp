@@ -1105,7 +1105,7 @@ namespace ECS
 
         /**
          * <p>This operation lists all the service deployments that meet the specified
-         * filter criteria.</p> <p>A service deployment happens when you release a softwre
+         * filter criteria.</p> <p>A service deployment happens when you release a software
          * update for the service. You route traffic from the running service revisions to
          * the new service revison and control the number of running tasks. </p> <p>This
          * API returns the values that you use for the request parameters in <a
