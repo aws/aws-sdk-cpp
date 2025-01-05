@@ -132,18 +132,6 @@ namespace client
                 m_serviceName = target.m_serviceName;
                 m_userAgent = target.m_userAgent;
                 m_httpClient = Aws::Http::CreateHttpClient(*target.m_clientConfig);
-
-                // marshaller could be of different types
-                if (auto jsonMarshaller = std::dynamic_pointer_cast<Aws::Client::JsonErrorMarshaller>(m_errorMarshaller)) {
-                    m_errorMarshaller = Aws::MakeShared<Aws::Client::JsonErrorMarshaller>(ALLOC_TAG);
-                }
-                else if (auto xmlMarshaller = std::dynamic_pointer_cast<Aws::Client::XmlErrorMarshaller>(m_errorMarshaller)) {
-                    m_errorMarshaller = Aws::MakeShared<Aws::Client::XmlErrorMarshaller>(ALLOC_TAG);
-                }
-                else if (auto jsonQueryCompatibleMarshaller = std::dynamic_pointer_cast<Aws::Client::JsonErrorMarshallerQueryCompatible>(m_errorMarshaller)) {
-                    m_errorMarshaller = Aws::MakeShared<Aws::Client::JsonErrorMarshallerQueryCompatible>(ALLOC_TAG);
-                }
-
                 m_interceptors = {Aws::MakeShared<ChecksumInterceptor>(ALLOC_TAG)};
             }
             return *this;
@@ -155,44 +143,12 @@ namespace client
             m_userAgent{target.m_userAgent},
             m_httpClient{Aws::Http::CreateHttpClient(*target.m_clientConfig)}
         {
-            // marshaller could be of different types
-            if (auto jsonMarshaller = std::dynamic_pointer_cast<Aws::Client::JsonErrorMarshaller>(m_errorMarshaller)) {
-                m_errorMarshaller = Aws::MakeShared<Aws::Client::JsonErrorMarshaller>(ALLOC_TAG);
-            }
-            else if (auto xmlMarshaller = std::dynamic_pointer_cast<Aws::Client::XmlErrorMarshaller>(m_errorMarshaller)) {
-                m_errorMarshaller = Aws::MakeShared<Aws::Client::XmlErrorMarshaller>(ALLOC_TAG);
-            }
-            else if (auto jsonQueryCompatibleMarshaller = std::dynamic_pointer_cast<Aws::Client::JsonErrorMarshallerQueryCompatible>(m_errorMarshaller)) {
-                m_errorMarshaller = Aws::MakeShared<Aws::Client::JsonErrorMarshallerQueryCompatible>(ALLOC_TAG);
-            }
-
             m_interceptors = {Aws::MakeShared<ChecksumInterceptor>(ALLOC_TAG)};
         }
 
-        AwsSmithyClientBase(AwsSmithyClientBase&& target):
-            m_clientConfig{std::move(target.m_clientConfig)},         
-            m_serviceName{std::move(target.m_serviceName)},           
-            m_userAgent{std::move(target.m_userAgent)},             
-            m_httpClient{std::move(target.m_httpClient)},    
-            m_errorMarshaller{std::move(target.m_errorMarshaller)},     
-            m_interceptors{std::move(target.m_interceptors)}
-        {
+        AwsSmithyClientBase(AwsSmithyClientBase&& target) = default;
 
-        }
-
-        AwsSmithyClientBase& operator=(AwsSmithyClientBase&& target) 
-        {
-            if (this != &target)
-            {
-                m_clientConfig = std::move(target.m_clientConfig);
-                m_serviceName = std::move(std::move(target.m_serviceName));
-                m_userAgent = std::move(target.m_userAgent);
-                m_httpClient = std::move(target.m_httpClient); 
-                m_errorMarshaller = std::move(target.m_errorMarshaller);
-                m_interceptors = std::move(target.m_interceptors);
-            }
-            return *this;
-        }
+        AwsSmithyClientBase& operator=(AwsSmithyClientBase&& target) = default;
 
         virtual ~AwsSmithyClientBase() = default;
 

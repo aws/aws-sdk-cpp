@@ -75,6 +75,29 @@ namespace Client
             return *this;
         }
 
+        ClientWithAsyncTemplateMethods& operator=(ClientWithAsyncTemplateMethods&& other)
+        {
+            if (&other != this)
+            {
+                ShutdownSdkClient(static_cast<AwsServiceClientT*>(this));
+                m_isInitialized = other.m_isInitialized.load();
+                m_operationsProcessed = other.m_operationsProcessed.load();
+            }
+
+            return *this;
+        }
+
+        ClientWithAsyncTemplateMethods(ClientWithAsyncTemplateMethods&& other): 
+            m_isInitialized(other.m_isInitialized.load()),
+           m_operationsProcessed(other.m_operationsProcessed.load())
+        {
+
+            AwsServiceClientT* pThis = static_cast<AwsServiceClientT*>(this);
+            Aws::Utils::ComponentRegistry::RegisterComponent(AwsServiceClientT::GetServiceName(),
+                                                             pThis,
+                                                             &AwsServiceClientT::ShutdownSdkClient);
+        }
+
         virtual ~ClientWithAsyncTemplateMethods()
         {
             AwsServiceClientT* pClient = static_cast<AwsServiceClientT*>(this);

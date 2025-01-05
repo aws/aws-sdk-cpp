@@ -29,10 +29,15 @@ namespace client
              typename AuthSchemesVariantT,
              typename EndpointProviderT,
              typename SerializerT,
-             typename ResponseT>
+             typename ResponseT,
+             typename MarshallerT>
     class AwsSmithyClientT : public AwsSmithyClientBase
     {
+    private: 
+        
     public:
+        static_assert(std::is_base_of<Aws::Client::AWSErrorMarshaller, MarshallerT>::value, "MarshallerT must be derived from class Aws::Client::AWSErrorMarshaller");
+
         explicit AwsSmithyClientT(const ServiceClientConfigurationT& clientConfig, const Aws::String& serviceName,
             const std::shared_ptr<Aws::Http::HttpClient>& httpClient,
             const std::shared_ptr<Aws::Client::AWSErrorMarshaller>& errorMarshaller,
@@ -48,6 +53,38 @@ namespace client
         {
             m_serviceName = ServiceNameT;
         }
+
+        AwsSmithyClientT(const AwsSmithyClientT& other):
+            AwsSmithyClientBase(other),
+            m_clientConfiguration{other.m_clientConfiguration},
+            m_endpointProvider{other.m_endpointProvider},
+            m_authSchemeResolver{other.m_authSchemeResolver},
+            m_authSchemes{other.m_authSchemes},
+            m_serializer{Aws::MakeShared<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider)}
+        {
+            m_errorMarshaller = Aws::MakeShared<MarshallerT>(other.m_serviceName.c_str());
+        }
+
+
+        AwsSmithyClientT& operator=(const AwsSmithyClientT& other)
+        {   
+            if(this != &other)
+            {
+                AwsSmithyClientBase::operator=(other);
+                m_clientConfiguration = other.m_clientConfiguration;
+                m_endpointProvider = other.m_endpointProvider;
+                m_authSchemeResolver = other.m_authSchemeResolver;
+                m_authSchemes = other.m_authSchemes;
+                m_serializer = Aws::MakeShared<SerializerT>(other.m_serviceName.c_str(), m_clientConfiguration.telemetryProvider);
+                m_errorMarshaller = Aws::MakeShared<MarshallerT>(other.m_serviceName.c_str());
+            }
+
+            return *this;
+        }
+
+        AwsSmithyClientT (AwsSmithyClientT&&) = default;
+
+        AwsSmithyClientT& operator=(AwsSmithyClientT&&) = default;
 
         virtual ~AwsSmithyClientT() = default;
 
@@ -131,7 +168,7 @@ namespace client
         }
 
     protected:
-        ServiceClientConfigurationT& m_clientConfiguration;
+        ServiceClientConfigurationT m_clientConfiguration;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
         Aws::UnorderedMap<Aws::String, AuthSchemesVariantT> m_authSchemes{};

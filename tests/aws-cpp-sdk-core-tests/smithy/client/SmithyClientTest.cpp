@@ -155,7 +155,8 @@ using MySmithyClient = smithy::client::AwsSmithyClientT<MyServiceName,
                                                         SigVariant,
                                                         TestEndPointProvider,
                                                         MockDeserializer,
-                                                        Aws::String>;
+                                                        Aws::String,
+                                                        Aws::Client::XmlErrorMarshaller>;
 
 class TestClient : public MySmithyClient
 {

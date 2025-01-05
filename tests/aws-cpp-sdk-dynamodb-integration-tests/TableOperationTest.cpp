@@ -130,6 +130,7 @@ public:
         {
             putItemResultSemaphore.notify_all();
         }
+        
     }
 
     void DeleteItemOutcomeReceived(const DynamoDBClient* sender, const DeleteItemRequest& request, const DeleteItemOutcome& outcome, const std::shared_ptr<const AsyncCallerContext>& context)
@@ -1508,6 +1509,176 @@ TEST_F(TableOperationTest, TestEndpointOverride)
         Aws::DynamoDB::Model::ListTablesOutcome outcome = client.ListTables(request);
         AWS_ASSERT_SUCCESS(outcome);
     }
+}
+
+TEST_F(TableOperationTest, TestClientCopy)
+{
+
+    Aws::Http::TransferLibType transferType = Aws::Http::TransferLibType::DEFAULT_CLIENT;
+    auto limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 200000);
+    // Create a client
+    ClientConfiguration config;
+    config.endpointOverride = ENDPOINT_OVERRIDE;
+    config.scheme = Scheme::HTTPS;
+    config.connectTimeoutMs = 30000;
+    config.requestTimeoutMs = 30000;
+    config.readRateLimiter = limiter;
+    config.writeRateLimiter = limiter;
+    config.httpLibOverride = transferType;
+    config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
+    config.disableExpectHeader = true;
+    config.enableHttpClientTrace = true;
+
+    //invoke copy constructor
+    auto client = DynamoDBClient(config);
+
+    DYNAMODB_INTEGRATION_TEST_ID = Aws::String(Aws::Utils::UUID::RandomUUID()).c_str();
+
+    //======test crud operations with callback =====/
+
+    Aws::String crudCallbacksTestTableName = BuildTableName(BASE_CRUD_CALLBACKS_TEST_TABLE);
+    {
+        //create a table and verify it's output
+        CreateTableRequest createTableRequest;
+        AttributeDefinition hashKey;
+        hashKey.SetAttributeName(HASH_KEY_NAME);
+        hashKey.SetAttributeType(ScalarAttributeType::S);
+        createTableRequest.AddAttributeDefinitions(hashKey);
+        KeySchemaElement hashKeySchemaElement;
+        hashKeySchemaElement.WithAttributeName(HASH_KEY_NAME).WithKeyType(KeyType::HASH);
+        createTableRequest.AddKeySchema(hashKeySchemaElement);
+        ProvisionedThroughput provisionedThroughput;
+        provisionedThroughput.SetReadCapacityUnits(50);
+        provisionedThroughput.SetWriteCapacityUnits(50);
+        createTableRequest.WithProvisionedThroughput(provisionedThroughput);
+        createTableRequest.WithTableName(crudCallbacksTestTableName);
+
+        CreateTableOutcome createTableOutcome = client.CreateTable(createTableRequest);
+        if (createTableOutcome.IsSuccess())
+        {
+            ASSERT_EQ(crudCallbacksTestTableName, createTableOutcome.GetResult().GetTableDescription().GetTableName());
+            m_tablesCreated.emplace_back(crudCallbacksTestTableName);
+        }
+        else
+        {
+            ASSERT_EQ(createTableOutcome.GetError().GetErrorType(), DynamoDBErrors::RESOURCE_IN_USE);
+        }
+    }
+
+    //since we need to wait for the table to finish creating anyways,
+    //let's go ahead and test describe table api while we are at it.
+    {
+        DescribeTableRequest describeTableRequest;
+        describeTableRequest.SetTableName(crudCallbacksTestTableName);
+        bool shouldContinue = true;
+        DescribeTableOutcome outcome = client.DescribeTable(describeTableRequest);
+
+        while (shouldContinue)
+        {
+            if (outcome.IsSuccess() && outcome.GetResult().GetTable().GetTableStatus() == TableStatus::ACTIVE)
+            {
+                break;
+            }
+            else
+            {
+                std::this_thread::sleep_for(std::chrono::seconds(1));
+            }
+
+            outcome = client.DescribeTable(describeTableRequest);
+        }
+    }
+
+    //registering a member function is ugly business even in modern c++
+    auto putItemHandler = std::bind(&TableOperationTest::PutItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
+                                    std::placeholders::_3, std::placeholders::_4);
+
+    auto getItemHandler = std::bind(&TableOperationTest::GetItemOutcomeReceived, this, std::placeholders::_1, std::placeholders::_2,
+            std::placeholders::_3, std::placeholders::_4);
+
+    auto putGetFunc = [&crudCallbacksTestTableName, putItemHandler, getItemHandler, this](DynamoDBClient& client){
+
+        //now put 50 items in the table asynchronously
+        Aws::String testValueColumnName = "TestValue";
+        Aws::StringStream ss;
+        for (unsigned i = 0; i < 50; ++i)
+        {
+            ss << HASH_KEY_NAME << i;
+            PutItemRequest putItemRequest;
+            putItemRequest.SetTableName(crudCallbacksTestTableName);
+            AttributeValue hashKeyAttribute;
+            hashKeyAttribute.SetS(ss.str());
+            ss.str("");
+            putItemRequest.AddItem(HASH_KEY_NAME, hashKeyAttribute);
+            AttributeValue testValueAttribute;
+            ss << testValueColumnName << i;
+            testValueAttribute.SetS(ss.str());
+            putItemRequest.AddItem(testValueColumnName, testValueAttribute);
+            ss.str("");
+            client.PutItemAsync(putItemRequest, putItemHandler);
+        }
+
+        //wait for the callbacks to finish.
+        std::unique_lock<std::mutex> putItemResultLock(putItemResultMutex);
+        putItemResultSemaphore.wait(putItemResultLock);
+
+        //now we get the items we were supposed to be putting and make sure
+        //they were put successfully.
+        for (unsigned i = 0; i < 50; ++i)
+        {
+            GetItemRequest getItemRequest;
+            ss << HASH_KEY_NAME << i;
+            AttributeValue hashKey;
+            hashKey.SetS(ss.str());
+            getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
+            getItemRequest.SetTableName(crudCallbacksTestTableName);
+            getItemRequest.SetConsistentRead(true);
+
+            Aws::Vector<Aws::String> attributesToGet;
+            attributesToGet.push_back(HASH_KEY_NAME);
+            attributesToGet.push_back(testValueColumnName);
+            ss.str("");
+            client.GetItemAsync(getItemRequest, getItemHandler);
+        }
+
+        //wait for the callbacks to finish.
+        std::unique_lock<std::mutex> getItemResultLock(getItemResultMutex);
+        getItemResultSemaphore.wait(getItemResultLock);
+
+        Aws::Map<Aws::String, Aws::String> getItemResults;
+        //The values are not in order, so let's verify the values by using a map.
+        for (unsigned i = 0; i < 50; ++i)
+        {
+            GetItemOutcome outcome = getItemResultsFromCallbackTest[i];
+            AWS_EXPECT_SUCCESS(outcome);
+            GetItemResult result = outcome.GetResult();
+            Aws::Map<Aws::String, AttributeValue> returnedItemCollection = result.GetItem();
+            getItemResults[returnedItemCollection[HASH_KEY_NAME].GetS()] = returnedItemCollection[testValueColumnName].GetS();
+        }
+
+        for (unsigned i = 0; i < 50; ++i)
+        {
+            ss << HASH_KEY_NAME << i;
+            Aws::String hashKey = ss.str();
+            ss.str("");
+            ss << testValueColumnName << i;
+            EXPECT_EQ(ss.str(), getItemResults[hashKey]);
+            ss.str("");
+        }
+        putItemResultsFromCallbackTest.clear();
+        getItemResultsFromCallbackTest.clear();
+        
+    };
+
+    putGetFunc(client);
+
+    DynamoDBClient client2 = client;
+    
+    putGetFunc(client2);
+
+    auto client3 = std::move(client2);
+
+    putGetFunc(client3);
+
 }
 
 } // anonymous namespace

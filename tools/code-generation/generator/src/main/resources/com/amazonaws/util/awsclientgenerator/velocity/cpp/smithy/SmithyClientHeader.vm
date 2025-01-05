@@ -21,7 +21,7 @@
 \#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 \#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 \#include <smithy/client/serializer/${serializer}.h>
-
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
 namespace ${rootNamespace}
 {
 namespace ${serviceNamespace}
@@ -42,7 +42,8 @@ namespace ${serviceNamespace}
       ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
       ${metadata.classNamePrefix}EndpointProviderBase,
       smithy::client::$serializer,
-      smithy::client::$serializerOutcome>,
+      smithy::client::$serializerOutcome,
+      Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<${className}>
   {
     public:

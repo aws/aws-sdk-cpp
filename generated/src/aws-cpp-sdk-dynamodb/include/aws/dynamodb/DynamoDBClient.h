@@ -12,7 +12,7 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
-
+#include <aws/dynamodb/DynamoDBErrorMarshaller.h>
 namespace Aws
 {
 namespace DynamoDB
@@ -42,7 +42,8 @@ namespace DynamoDB
       Aws::Crt::Variant<smithy::SigV4AuthScheme>,
       DynamoDBEndpointProviderBase,
       smithy::client::JsonOutcomeSerializer,
-      smithy::client::JsonOutcome>,
+      smithy::client::JsonOutcome,
+      Aws::Client::DynamoDBErrorMarshaller>,
     Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>
   {
     public:
