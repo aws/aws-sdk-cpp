@@ -55,7 +55,7 @@ namespace client
         }
 
         AwsSmithyClientT(const AwsSmithyClientT& other):
-            AwsSmithyClientBase(other.m_clientConfig, other.m_serviceName, Aws::Http::CreateHttpClient(*other.m_clientConfig), Aws::MakeShared<MarshallerT>(other.m_serviceName.c_str())),
+            AwsSmithyClientBase(Aws::MakeShared<ServiceClientConfigurationT>(ServiceNameT, other.m_clientConfig), other.m_serviceName, Aws::Http::CreateHttpClient(*other.m_clientConfig), Aws::MakeShared<MarshallerT>(other.m_serviceName.c_str())),
             m_clientConfiguration{other.m_clientConfiguration},
             m_endpointProvider{other.m_endpointProvider},
             m_authSchemeResolver{other.m_authSchemeResolver},
