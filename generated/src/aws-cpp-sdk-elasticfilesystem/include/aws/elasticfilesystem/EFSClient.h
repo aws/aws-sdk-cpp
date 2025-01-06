@@ -6,15 +6,18 @@
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elasticfilesystem/EFSServiceClientModel.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
 
 namespace Aws
 {
 namespace EFS
 {
+  AWS_EFS_API extern const char SERVICE_NAME[];
   /**
    * <fullname>Amazon Elastic File System</fullname> <p>Amazon Elastic File System
    * (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2
@@ -27,12 +30,19 @@ namespace EFS
    * href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon Elastic
    * File System User Guide</a>.</p>
    */
-  class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>
+  class AWS_EFS_API EFSClient : smithy::client::AwsSmithyClientT<Aws::EFS::SERVICE_NAME,
+      Aws::EFS::EFSClientConfiguration,
+      smithy::SigV4AuthSchemeResolver<>,
+      Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+      EFSEndpointProviderBase,
+      smithy::client::JsonOutcomeSerializer,
+      smithy::client::JsonOutcome>,
+    Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>
   {
     public:
-      typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* GetServiceName();
       static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "EFS"; }
 
       typedef EFSClientConfiguration ClientConfigurationType;
       typedef EFSEndpointProvider EndpointProviderType;
@@ -1154,8 +1164,6 @@ namespace EFS
       friend class Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>;
       void init(const EFSClientConfiguration& clientConfiguration);
 
-      EFSClientConfiguration m_clientConfiguration;
-      std::shared_ptr<EFSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EFS
