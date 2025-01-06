@@ -63,6 +63,18 @@ namespace Client
                                                              &AwsServiceClientT::ShutdownSdkClient);
         }
 
+        ClientWithAsyncTemplateMethods& operator=(const ClientWithAsyncTemplateMethods& other)
+        {
+            if (&other != this)
+            {
+                ShutdownSdkClient(static_cast<AwsServiceClientT*>(this));
+                m_operationsProcessed = 0;
+                m_isInitialized = other.m_isInitialized.load();
+            }
+
+            return *this;
+        }
+
         virtual ~ClientWithAsyncTemplateMethods()
         {
             AwsServiceClientT* pClient = static_cast<AwsServiceClientT*>(this);
