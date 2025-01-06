@@ -84,6 +84,23 @@ namespace Model
 
     ///@{
     /**
+     * <p>The DNS subdomain of the web app. This would be "example" in the URL
+     * "example.scn.global.on.aws". You can set this to a custom value, as long as the
+     * domain isn't already being used by someone else. The name may only include
+     * alphanumeric characters and hyphens.</p>
+     */
+    inline const Aws::String& GetWebAppDnsDomain() const{ return m_webAppDnsDomain; }
+    inline bool WebAppDnsDomainHasBeenSet() const { return m_webAppDnsDomainHasBeenSet; }
+    inline void SetWebAppDnsDomain(const Aws::String& value) { m_webAppDnsDomainHasBeenSet = true; m_webAppDnsDomain = value; }
+    inline void SetWebAppDnsDomain(Aws::String&& value) { m_webAppDnsDomainHasBeenSet = true; m_webAppDnsDomain = std::move(value); }
+    inline void SetWebAppDnsDomain(const char* value) { m_webAppDnsDomainHasBeenSet = true; m_webAppDnsDomain.assign(value); }
+    inline CreateInstanceRequest& WithWebAppDnsDomain(const Aws::String& value) { SetWebAppDnsDomain(value); return *this;}
+    inline CreateInstanceRequest& WithWebAppDnsDomain(Aws::String&& value) { SetWebAppDnsDomain(std::move(value)); return *this;}
+    inline CreateInstanceRequest& WithWebAppDnsDomain(const char* value) { SetWebAppDnsDomain(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The Amazon Web Services tags of an instance to be created.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -124,6 +141,9 @@ namespace Model
 
     Aws::String m_kmsKeyArn;
     bool m_kmsKeyArnHasBeenSet = false;
+
+    Aws::String m_webAppDnsDomain;
+    bool m_webAppDnsDomainHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -18,6 +18,7 @@
 #include <aws/eventbridge/EventBridgeClient.h>
 #include <aws/eventbridge/model/ListRulesRequest.h>
 #include <aws/eventbridge/model/DescribeRuleRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace EventBridgeSmokeTest{
 using namespace Aws::Auth;
@@ -31,6 +32,19 @@ class EventBridgeSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char EventBridgeSmokeTestSuite::ALLOCATION_TAG[] = "EventBridgeSmokeTest";
+TEST_F(EventBridgeSmokeTestSuite, ListRulesSuccess )
+{
+    Aws::EventBridge::EventBridgeClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<EventBridgeClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    ListRulesRequest input;
+    auto outcome = clientSp->ListRules(input);
+    EXPECT_TRUE( outcome.IsSuccess());
+}
 TEST_F(EventBridgeSmokeTestSuite, DescribeRuleFailure )
 {
     Aws::EventBridge::EventBridgeClientConfiguration clientConfiguration;
@@ -44,18 +58,5 @@ TEST_F(EventBridgeSmokeTestSuite, DescribeRuleFailure )
     input.SetName("fake-rule");
     auto outcome = clientSp->DescribeRule(input);
     EXPECT_FALSE( outcome.IsSuccess());
-}
-TEST_F(EventBridgeSmokeTestSuite, ListRulesSuccess )
-{
-    Aws::EventBridge::EventBridgeClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<EventBridgeClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    ListRulesRequest input;
-    auto outcome = clientSp->ListRules(input);
-    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

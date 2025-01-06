@@ -18,7 +18,6 @@
 #include <aws/logs/model/DescribeLogGroupsRequest.h>
 #include <aws/logs/model/GetLogEventsRequest.h>
 #include <aws/logs/CloudWatchLogsClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace CloudWatchLogsSmokeTest{
 using namespace Aws::Auth;
@@ -32,19 +31,6 @@ class CloudWatchLogsSmokeTestSuite : public Aws::Testing::AwsCppSdkGTestSuite {
     static const char ALLOCATION_TAG[];
 };
 const char CloudWatchLogsSmokeTestSuite::ALLOCATION_TAG[] = "CloudWatchLogsSmokeTest";
-TEST_F(CloudWatchLogsSmokeTestSuite, DescribeLogGroupsSuccess )
-{
-    Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration clientConfiguration;
-    clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
-    auto clientSp = Aws::MakeShared<CloudWatchLogsClient>(ALLOCATION_TAG, clientConfiguration);
-    //populate input params
-    
-    DescribeLogGroupsRequest input;
-    auto outcome = clientSp->DescribeLogGroups(input);
-    EXPECT_TRUE( outcome.IsSuccess());
-}
 TEST_F(CloudWatchLogsSmokeTestSuite, GetLogEventsFailure )
 {
     Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration clientConfiguration;
@@ -59,5 +45,18 @@ TEST_F(CloudWatchLogsSmokeTestSuite, GetLogEventsFailure )
     input.SetLogStreamName("fakestream");
     auto outcome = clientSp->GetLogEvents(input);
     EXPECT_FALSE( outcome.IsSuccess());
+}
+TEST_F(CloudWatchLogsSmokeTestSuite, DescribeLogGroupsSuccess )
+{
+    Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration clientConfiguration;
+    clientConfiguration.region = "us-west-2";
+    clientConfiguration.useFIPS = false;
+    clientConfiguration.useDualStack = false;
+    auto clientSp = Aws::MakeShared<CloudWatchLogsClient>(ALLOCATION_TAG, clientConfiguration);
+    //populate input params
+    
+    DescribeLogGroupsRequest input;
+    auto outcome = clientSp->DescribeLogGroups(input);
+    EXPECT_TRUE( outcome.IsSuccess());
 }
 }

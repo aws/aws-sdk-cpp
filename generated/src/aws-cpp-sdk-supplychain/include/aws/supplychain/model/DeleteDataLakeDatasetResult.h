@@ -53,7 +53,7 @@ namespace Model
 
     ///@{
     /**
-     * <p>The namespace of deleted dataset.</p>
+     * <p>The name space of deleted dataset.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
     inline void SetNamespace(const Aws::String& value) { m_namespace = value; }

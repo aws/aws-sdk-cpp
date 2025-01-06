@@ -57,11 +57,12 @@ namespace Model
 
     ///@{
     /**
-     * <p>The namespace of the dataset. The available values are:</p> <ul> <li> <p>asc:
-     * for <a
-     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">
-     * AWS Supply Chain supported datasets </a>.</p> </li> <li> <p>default: for
-     * datasets with custom user-defined schemas.</p> </li> </ul>
+     * <p>The name space of the dataset. The available values are:</p> <ul> <li> <p>
+     * <b>asc</b> - For information on the Amazon Web Services Supply Chain supported
+     * datasets see <a
+     * href="https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html">https://docs.aws.amazon.com/aws-supply-chain/latest/userguide/data-model-asc.html</a>.</p>
+     * </li> <li> <p> <b>default</b> - For datasets with custom user-defined
+     * schemas.</p> </li> </ul>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
