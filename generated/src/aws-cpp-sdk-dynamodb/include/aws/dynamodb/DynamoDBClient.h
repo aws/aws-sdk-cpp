@@ -62,14 +62,7 @@ namespace DynamoDB
         {
             return *this;
         }
-        smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME,
-          Aws::DynamoDB::DynamoDBClientConfiguration,
-          smithy::SigV4AuthSchemeResolver<>,
-          Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-          DynamoDBEndpointProviderBase,
-          smithy::client::JsonOutcomeSerializer,
-          smithy::client::JsonOutcome,
-          Aws::Client::DynamoDBErrorMarshaller>::operator=(other);
+        AwsSmithyClientT::operator=(other);
         Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>::operator=(other);
         init(m_clientConfiguration);
         return *this;
@@ -81,15 +74,8 @@ namespace DynamoDB
         {
             return *this;
         }
-        smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME,
-          Aws::DynamoDB::DynamoDBClientConfiguration,
-          smithy::SigV4AuthSchemeResolver<>,
-          Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-          DynamoDBEndpointProviderBase,
-          smithy::client::JsonOutcomeSerializer,
-          smithy::client::JsonOutcome,
-          Aws::Client::DynamoDBErrorMarshaller>::operator=(other);
-        Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>::operator=(other);
+        AwsSmithyClientT::operator=(std::move(other));
+        Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>::operator=(std::move(other));
         init(m_clientConfiguration);
         return *this;
       }

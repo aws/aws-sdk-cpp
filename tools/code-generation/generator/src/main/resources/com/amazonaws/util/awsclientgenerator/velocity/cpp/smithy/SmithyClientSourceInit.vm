@@ -145,7 +145,8 @@ ${className}::${className}(const ${className}& other):
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
     other.m_endpointProvider,
     Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
-    other.m_authSchemes)
+    other.m_authSchemes),
+    Aws::Client::ClientWithAsyncTemplateMethods<${className}>(other)
 {
   init(m_clientConfiguration);
 }

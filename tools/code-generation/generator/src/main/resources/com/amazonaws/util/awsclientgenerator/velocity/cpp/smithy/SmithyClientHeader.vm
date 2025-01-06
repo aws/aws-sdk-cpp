@@ -62,14 +62,7 @@ namespace ${serviceNamespace}
         {
             return *this;
         }
-        smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
-          ${serviceConfiguration},
-          smithy::${AuthSchemeResolver}<>,
-          ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
-          ${metadata.classNamePrefix}EndpointProviderBase,
-          smithy::client::$serializer,
-          smithy::client::$serializerOutcome,
-          Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>::operator=(other);
+        AwsSmithyClientT::operator=(other);
         Aws::Client::ClientWithAsyncTemplateMethods<${className}>::operator=(other);
         init(m_clientConfiguration);
         return *this;
@@ -81,15 +74,8 @@ namespace ${serviceNamespace}
         {
             return *this;
         }
-        smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
-          ${serviceConfiguration},
-          smithy::${AuthSchemeResolver}<>,
-          ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
-          ${metadata.classNamePrefix}EndpointProviderBase,
-          smithy::client::$serializer,
-          smithy::client::$serializerOutcome,
-          Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>::operator=(other);
-        Aws::Client::ClientWithAsyncTemplateMethods<${className}>::operator=(other);
+        AwsSmithyClientT::operator=(std::move(other));
+        Aws::Client::ClientWithAsyncTemplateMethods<${className}>::operator=(std::move(other));
         init(m_clientConfiguration);
         return *this;
       }

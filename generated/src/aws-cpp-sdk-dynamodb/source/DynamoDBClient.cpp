@@ -236,7 +236,8 @@ DynamoDBClient::DynamoDBClient(const DynamoDBClient& other):
     Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG),
     other.m_endpointProvider,
     Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
-    other.m_authSchemes)
+    other.m_authSchemes),
+    Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>(other)
 {
   init(m_clientConfiguration);
 }
