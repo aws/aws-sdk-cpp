@@ -130,7 +130,6 @@ public:
         {
             putItemResultSemaphore.notify_all();
         }
-        
     }
 
     void DeleteItemOutcomeReceived(const DynamoDBClient* sender, const DeleteItemRequest& request, const DeleteItemOutcome& outcome, const std::shared_ptr<const AsyncCallerContext>& context)
