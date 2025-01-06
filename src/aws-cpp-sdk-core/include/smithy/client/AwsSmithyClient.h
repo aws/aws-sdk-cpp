@@ -55,14 +55,13 @@ namespace client
         }
 
         AwsSmithyClientT(const AwsSmithyClientT& other):
-            AwsSmithyClientBase(other),
+            AwsSmithyClientBase(other.m_clientConfig, other.m_serviceName, Aws::Http::CreateHttpClient(*other.m_clientConfig), Aws::MakeShared<MarshallerT>(other.m_serviceName.c_str())),
             m_clientConfiguration{other.m_clientConfiguration},
             m_endpointProvider{other.m_endpointProvider},
             m_authSchemeResolver{other.m_authSchemeResolver},
             m_authSchemes{other.m_authSchemes},
             m_serializer{Aws::MakeShared<SerializerT>(ServiceNameT, m_clientConfiguration.telemetryProvider)}
         {
-            m_errorMarshaller = Aws::MakeShared<MarshallerT>(other.m_serviceName.c_str());
         }
 
 

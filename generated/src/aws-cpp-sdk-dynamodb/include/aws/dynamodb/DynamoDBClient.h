@@ -12,8 +12,8 @@
 #include <smithy/identity/auth/built-in/SigV4AuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 #include <smithy/client/serializer/JsonOutcomeSerializer.h>
-
 #include <aws/dynamodb/DynamoDBErrorMarshaller.h>
+
 namespace Aws
 {
 namespace DynamoDB
