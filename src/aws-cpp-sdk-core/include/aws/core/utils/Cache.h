@@ -27,31 +27,6 @@ namespace Aws
             explicit Cache(size_t initialSize = 1000) : m_maxSize(initialSize)
             {
             }
-            
-            //this can't be default as compiler wont implicitly create copy constructor for const qualified members
-            Cache(const Cache& other):m_entries{other.m_entries},m_maxSize{other.m_maxSize}{
-            }
-
-            Cache(Cache&& other):m_entries{std::move(other.m_entries)},m_maxSize{other.m_maxSize}{
-            }
-
-            //m_maxSize is a const, so we don't touch it
-            Cache& operator=(const Cache& other){
-                if(&other == this){
-                    return *this;
-                }
-                m_entries = other.m_entries;
-                return *this;
-            }
-
-            Cache& operator=(Cache&& other){
-                if(&other == this){
-                    return *this;
-                }
-                m_entries = std::move(other.m_entries);
-                return *this;
-            }
-
 
             struct Value
             {

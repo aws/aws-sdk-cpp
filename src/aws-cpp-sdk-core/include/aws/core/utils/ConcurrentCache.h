@@ -19,33 +19,6 @@ namespace Aws
         public:
             explicit ConcurrentCache(size_t size = 1000) : m_cache(size) { }
 
-
-            ConcurrentCache(const ConcurrentCache& other) : m_cache(other.m_cache) { 
-
-            }
-
-            ConcurrentCache(ConcurrentCache& other) : m_cache(std::move(other.m_cache)) { 
-
-            }
-
-            ConcurrentCache& operator=(const ConcurrentCache& other){ 
-                if(&other != this)
-                {
-                    m_cache = other.m_cache;
-                }
-                return *this;
-            }
-
-            ConcurrentCache& operator=(ConcurrentCache&& other){ 
-                if(&other != this)
-                {
-                    m_cache = std::move(other.m_cache);
-                }
-                return *this;
-            }
-
-
-
             bool Get(const TKey& key, TValue& value) const
             {
                 Aws::Utils::Threading::ReaderLockGuard g(m_rwlock);
