@@ -136,3 +136,23 @@ void ${className}::OverrideEndpoint(const Aws::String& endpoint)
     AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
+
+${className}::${className}(const ${className}& other):
+  AwsSmithyClientT(
+    *other.m_clientConfig,
+    GetServiceName(),
+    Aws::Http::CreateHttpClient(other.m_clientConfiguration),
+    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
+    other.m_endpointProvider,
+    Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG),
+    other.m_authSchemes)
+{
+  init(m_clientConfiguration);
+}
+
+${className}::${className}(${className}&& other): 
+  AwsSmithyClientT(std::move(other)),
+  Aws::Client::ClientWithAsyncTemplateMethods<${className}>(std::move(other))
+{
+  init(m_clientConfiguration);
+}

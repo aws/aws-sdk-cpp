@@ -51,6 +51,48 @@ namespace DynamoDB
       static const char* GetServiceName();
       static const char* GetAllocationTag();
       inline const char* GetServiceClientName() const override { return "DynamoDB"; }
+      
+      DynamoDBClient(const DynamoDBClient& other);
+
+      DynamoDBClient(DynamoDBClient&& other);
+
+      DynamoDBClient& operator=(const DynamoDBClient& other)
+      {
+        if(this == &other) 
+        {
+            return *this;
+        }
+        smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME,
+          Aws::DynamoDB::DynamoDBClientConfiguration,
+          smithy::SigV4AuthSchemeResolver<>,
+          Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+          DynamoDBEndpointProviderBase,
+          smithy::client::JsonOutcomeSerializer,
+          smithy::client::JsonOutcome,
+          Aws::Client::DynamoDBErrorMarshaller>::operator=(other);
+        Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>::operator=(other);
+        init(m_clientConfiguration);
+        return *this;
+      }
+
+      DynamoDBClient& operator=(DynamoDBClient&& other)
+      {
+        if(this == &other) 
+        {
+            return *this;
+        }
+        smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME,
+          Aws::DynamoDB::DynamoDBClientConfiguration,
+          smithy::SigV4AuthSchemeResolver<>,
+          Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+          DynamoDBEndpointProviderBase,
+          smithy::client::JsonOutcomeSerializer,
+          smithy::client::JsonOutcome,
+          Aws::Client::DynamoDBErrorMarshaller>::operator=(other);
+        Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>::operator=(other);
+        init(m_clientConfiguration);
+        return *this;
+      }
 
       typedef DynamoDBClientConfiguration ClientConfigurationType;
       typedef DynamoDBEndpointProvider EndpointProviderType;

@@ -228,6 +228,26 @@ void DynamoDBClient::OverrideEndpoint(const Aws::String& endpoint)
     m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
+DynamoDBClient::DynamoDBClient(const DynamoDBClient& other):
+  AwsSmithyClientT(
+    *other.m_clientConfig,
+    GetServiceName(),
+    Aws::Http::CreateHttpClient(other.m_clientConfiguration),
+    Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG),
+    other.m_endpointProvider,
+    Aws::MakeShared<smithy::SigV4AuthSchemeResolver<>>(ALLOCATION_TAG),
+    other.m_authSchemes)
+{
+  init(m_clientConfiguration);
+}
+
+DynamoDBClient::DynamoDBClient(DynamoDBClient&& other): 
+  AwsSmithyClientT(std::move(other)),
+  Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>(std::move(other))
+{
+  init(m_clientConfiguration);
+}
+
 BatchExecuteStatementOutcome DynamoDBClient::BatchExecuteStatement(const BatchExecuteStatementRequest& request) const
 {
   AWS_OPERATION_GUARD(BatchExecuteStatement);

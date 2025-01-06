@@ -51,6 +51,48 @@ namespace ${serviceNamespace}
       static const char* GetServiceName();
       static const char* GetAllocationTag();
       inline const char* GetServiceClientName() const override { return "${metadata.serviceId}"; }
+      
+      ${className}(const ${className}& other);
+
+      ${className}(${className}&& other);
+
+      ${className}& operator=(const ${className}& other)
+      {
+        if(this == &other) 
+        {
+            return *this;
+        }
+        smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
+          ${serviceConfiguration},
+          smithy::${AuthSchemeResolver}<>,
+          ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
+          ${metadata.classNamePrefix}EndpointProviderBase,
+          smithy::client::$serializer,
+          smithy::client::$serializerOutcome,
+          Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>::operator=(other);
+        Aws::Client::ClientWithAsyncTemplateMethods<${className}>::operator=(other);
+        init(m_clientConfiguration);
+        return *this;
+      }
+
+      ${className}& operator=(${className}&& other)
+      {
+        if(this == &other) 
+        {
+            return *this;
+        }
+        smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
+          ${serviceConfiguration},
+          smithy::${AuthSchemeResolver}<>,
+          ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
+          ${metadata.classNamePrefix}EndpointProviderBase,
+          smithy::client::$serializer,
+          smithy::client::$serializerOutcome,
+          Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>::operator=(other);
+        Aws::Client::ClientWithAsyncTemplateMethods<${className}>::operator=(other);
+        init(m_clientConfiguration);
+        return *this;
+      }
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConfigTypeDeclarations.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
