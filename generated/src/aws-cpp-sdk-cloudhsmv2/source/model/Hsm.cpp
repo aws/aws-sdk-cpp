@@ -26,6 +26,7 @@ Hsm::Hsm() :
     m_eniIpHasBeenSet(false),
     m_eniIpV6HasBeenSet(false),
     m_hsmIdHasBeenSet(false),
+    m_hsmTypeHasBeenSet(false),
     m_state(HsmState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateMessageHasBeenSet(false)
@@ -89,6 +90,13 @@ Hsm& Hsm::operator =(JsonView jsonValue)
     m_hsmIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HsmType"))
+  {
+    m_hsmType = jsonValue.GetString("HsmType");
+
+    m_hsmTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("State"))
   {
     m_state = HsmStateMapper::GetHsmStateForName(jsonValue.GetString("State"));
@@ -149,6 +157,12 @@ JsonValue Hsm::Jsonize() const
   if(m_hsmIdHasBeenSet)
   {
    payload.WithString("HsmId", m_hsmId);
+
+  }
+
+  if(m_hsmTypeHasBeenSet)
+  {
+   payload.WithString("HsmType", m_hsmType);
 
   }
 

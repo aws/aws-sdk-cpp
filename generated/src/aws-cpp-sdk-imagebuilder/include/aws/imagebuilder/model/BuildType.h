@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     USER_INITIATED,
     SCHEDULED,
-    IMPORT
+    IMPORT,
+    IMPORT_ISO
   };
 
 namespace BuildTypeMapper

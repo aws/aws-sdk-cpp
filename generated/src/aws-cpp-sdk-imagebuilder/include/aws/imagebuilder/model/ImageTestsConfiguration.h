@@ -52,7 +52,7 @@ namespace Model
     ///@{
     /**
      * <p>The maximum time in minutes that tests are permitted to run.</p> 
-     * <p>The timeout attribute is not currently active. This value is ignored.</p>
+     * <p>The timeout property is not currently active. This value is ignored.</p>
      * 
      */
     inline int GetTimeoutMinutes() const{ return m_timeoutMinutes; }

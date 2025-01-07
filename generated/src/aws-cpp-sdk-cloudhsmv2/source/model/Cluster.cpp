@@ -26,6 +26,7 @@ Cluster::Cluster() :
     m_createTimestampHasBeenSet(false),
     m_hsmsHasBeenSet(false),
     m_hsmTypeHasBeenSet(false),
+    m_hsmTypeRollbackExpirationHasBeenSet(false),
     m_preCoPasswordHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
     m_sourceBackupIdHasBeenSet(false),
@@ -94,6 +95,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_hsmType = jsonValue.GetString("HsmType");
 
     m_hsmTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HsmTypeRollbackExpiration"))
+  {
+    m_hsmTypeRollbackExpiration = jsonValue.GetDouble("HsmTypeRollbackExpiration");
+
+    m_hsmTypeRollbackExpirationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PreCoPassword"))
@@ -223,6 +231,11 @@ JsonValue Cluster::Jsonize() const
   {
    payload.WithString("HsmType", m_hsmType);
 
+  }
+
+  if(m_hsmTypeRollbackExpirationHasBeenSet)
+  {
+   payload.WithDouble("HsmTypeRollbackExpiration", m_hsmTypeRollbackExpiration.SecondsWithMSPrecision());
   }
 
   if(m_preCoPasswordHasBeenSet)

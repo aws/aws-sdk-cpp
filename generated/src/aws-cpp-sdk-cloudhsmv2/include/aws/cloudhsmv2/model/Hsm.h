@@ -139,6 +139,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The type of HSM.</p>
+     */
+    inline const Aws::String& GetHsmType() const{ return m_hsmType; }
+    inline bool HsmTypeHasBeenSet() const { return m_hsmTypeHasBeenSet; }
+    inline void SetHsmType(const Aws::String& value) { m_hsmTypeHasBeenSet = true; m_hsmType = value; }
+    inline void SetHsmType(Aws::String&& value) { m_hsmTypeHasBeenSet = true; m_hsmType = std::move(value); }
+    inline void SetHsmType(const char* value) { m_hsmTypeHasBeenSet = true; m_hsmType.assign(value); }
+    inline Hsm& WithHsmType(const Aws::String& value) { SetHsmType(value); return *this;}
+    inline Hsm& WithHsmType(Aws::String&& value) { SetHsmType(std::move(value)); return *this;}
+    inline Hsm& WithHsmType(const char* value) { SetHsmType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>The HSM's state.</p>
      */
     inline const HsmState& GetState() const{ return m_state; }
@@ -184,6 +198,9 @@ namespace Model
 
     Aws::String m_hsmId;
     bool m_hsmIdHasBeenSet = false;
+
+    Aws::String m_hsmType;
+    bool m_hsmTypeHasBeenSet = false;
 
     HsmState m_state;
     bool m_stateHasBeenSet = false;

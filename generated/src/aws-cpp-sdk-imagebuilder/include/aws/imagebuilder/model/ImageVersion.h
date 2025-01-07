@@ -182,7 +182,8 @@ namespace Model
      * manual pipeline build request.</p> </li> <li> <p> <b>SCHEDULED</b> – A pipeline
      * build initiated by a cron expression in the Image Builder pipeline, or from
      * EventBridge.</p> </li> <li> <p> <b>IMPORT</b> – A VM import created the image to
-     * use as the base image for the recipe.</p> </li> </ul>
+     * use as the base image for the recipe.</p> </li> <li> <p> <b>IMPORT_ISO</b> – An
+     * ISO disk import created the image.</p> </li> </ul>
      */
     inline const BuildType& GetBuildType() const{ return m_buildType; }
     inline bool BuildTypeHasBeenSet() const { return m_buildTypeHasBeenSet; }

@@ -56,6 +56,7 @@
 #include <aws/imagebuilder/model/GetWorkflowExecutionResult.h>
 #include <aws/imagebuilder/model/GetWorkflowStepExecutionResult.h>
 #include <aws/imagebuilder/model/ImportComponentResult.h>
+#include <aws/imagebuilder/model/ImportDiskImageResult.h>
 #include <aws/imagebuilder/model/ImportVmImageResult.h>
 #include <aws/imagebuilder/model/ListComponentBuildVersionsResult.h>
 #include <aws/imagebuilder/model/ListComponentsResult.h>
@@ -182,6 +183,7 @@ namespace Aws
       class GetWorkflowExecutionRequest;
       class GetWorkflowStepExecutionRequest;
       class ImportComponentRequest;
+      class ImportDiskImageRequest;
       class ImportVmImageRequest;
       class ListComponentBuildVersionsRequest;
       class ListComponentsRequest;
@@ -259,6 +261,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetWorkflowExecutionResult, ImagebuilderError> GetWorkflowExecutionOutcome;
       typedef Aws::Utils::Outcome<GetWorkflowStepExecutionResult, ImagebuilderError> GetWorkflowStepExecutionOutcome;
       typedef Aws::Utils::Outcome<ImportComponentResult, ImagebuilderError> ImportComponentOutcome;
+      typedef Aws::Utils::Outcome<ImportDiskImageResult, ImagebuilderError> ImportDiskImageOutcome;
       typedef Aws::Utils::Outcome<ImportVmImageResult, ImagebuilderError> ImportVmImageOutcome;
       typedef Aws::Utils::Outcome<ListComponentBuildVersionsResult, ImagebuilderError> ListComponentBuildVersionsOutcome;
       typedef Aws::Utils::Outcome<ListComponentsResult, ImagebuilderError> ListComponentsOutcome;
@@ -336,6 +339,7 @@ namespace Aws
       typedef std::future<GetWorkflowExecutionOutcome> GetWorkflowExecutionOutcomeCallable;
       typedef std::future<GetWorkflowStepExecutionOutcome> GetWorkflowStepExecutionOutcomeCallable;
       typedef std::future<ImportComponentOutcome> ImportComponentOutcomeCallable;
+      typedef std::future<ImportDiskImageOutcome> ImportDiskImageOutcomeCallable;
       typedef std::future<ImportVmImageOutcome> ImportVmImageOutcomeCallable;
       typedef std::future<ListComponentBuildVersionsOutcome> ListComponentBuildVersionsOutcomeCallable;
       typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
@@ -416,6 +420,7 @@ namespace Aws
     typedef std::function<void(const ImagebuilderClient*, const Model::GetWorkflowExecutionRequest&, const Model::GetWorkflowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowExecutionResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::GetWorkflowStepExecutionRequest&, const Model::GetWorkflowStepExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowStepExecutionResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ImportComponentRequest&, const Model::ImportComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportComponentResponseReceivedHandler;
+    typedef std::function<void(const ImagebuilderClient*, const Model::ImportDiskImageRequest&, const Model::ImportDiskImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportDiskImageResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ImportVmImageRequest&, const Model::ImportVmImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportVmImageResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListComponentBuildVersionsRequest&, const Model::ListComponentBuildVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentBuildVersionsResponseReceivedHandler;
     typedef std::function<void(const ImagebuilderClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
