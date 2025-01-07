@@ -1068,6 +1068,33 @@ namespace imagebuilder
         }
 
         /**
+         * <p>Import a Windows operating system image from a verified Microsoft ISO disk
+         * file. The following disk images are supported:</p> <ul> <li> <p>Windows 11
+         * Enterprise</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportDiskImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportDiskImageOutcome ImportDiskImage(const Model::ImportDiskImageRequest& request) const;
+
+        /**
+         * A Callable wrapper for ImportDiskImage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ImportDiskImageRequestT = Model::ImportDiskImageRequest>
+        Model::ImportDiskImageOutcomeCallable ImportDiskImageCallable(const ImportDiskImageRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::ImportDiskImage, request);
+        }
+
+        /**
+         * An Async wrapper for ImportDiskImage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ImportDiskImageRequestT = Model::ImportDiskImageRequest>
+        void ImportDiskImageAsync(const ImportDiskImageRequestT& request, const ImportDiskImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::ImportDiskImage, request, handler, context);
+        }
+
+        /**
          * <p>When you export your virtual machine (VM) from its virtualization
          * environment, that process creates a set of one or more disk container files that
          * act as snapshots of your VM’s environment, settings, and data. The Amazon EC2

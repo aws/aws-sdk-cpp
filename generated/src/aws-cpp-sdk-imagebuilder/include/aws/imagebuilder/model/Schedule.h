@@ -76,17 +76,18 @@ namespace Model
 
     ///@{
     /**
-     * <p>The condition configures when the pipeline should trigger a new image build.
-     * When the <code>pipelineExecutionStartCondition</code> is set to
-     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use
-     * semantic version filters on the base image or components in your image recipe,
-     * EC2 Image Builder will build a new image only when there are new versions of the
-     * image or components in your recipe that match the semantic version filter. When
-     * it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every
-     * time the CRON expression matches the current time. For semantic version syntax,
-     * see <a
-     * href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>
-     * in the <i> EC2 Image Builder API Reference</i>.</p>
+     * <p>The start condition configures when the pipeline should trigger a new image
+     * build, as follows. If no value is set Image Builder defaults to
+     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>.</p> <ul> <li>
+     * <p> <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code> (default) –
+     * When you use semantic version filters on the base image or components in your
+     * image recipe, EC2 Image Builder builds a new image only when there are new
+     * versions of the base image or components in your recipe that match the
+     * filter.</p>  <p>For semantic version syntax, see <a
+     * href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>.</p>
+     *  </li> <li> <p> <code>EXPRESSION_MATCH_ONLY</code> – This condition
+     * builds a new image every time the CRON expression matches the current time.</p>
+     * </li> </ul>
      */
     inline const PipelineExecutionStartCondition& GetPipelineExecutionStartCondition() const{ return m_pipelineExecutionStartCondition; }
     inline bool PipelineExecutionStartConditionHasBeenSet() const { return m_pipelineExecutionStartConditionHasBeenSet; }

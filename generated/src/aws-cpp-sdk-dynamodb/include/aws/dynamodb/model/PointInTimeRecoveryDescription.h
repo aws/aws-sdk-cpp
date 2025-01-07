@@ -55,6 +55,19 @@ namespace Model
 
     ///@{
     /**
+     * <p>The number of preceding days for which continuous backups are taken and
+     * maintained. Your table data is only recoverable to any point-in-time from within
+     * the configured recovery period. This parameter is optional. If no value is
+     * provided, the value will default to 35.</p>
+     */
+    inline int GetRecoveryPeriodInDays() const{ return m_recoveryPeriodInDays; }
+    inline bool RecoveryPeriodInDaysHasBeenSet() const { return m_recoveryPeriodInDaysHasBeenSet; }
+    inline void SetRecoveryPeriodInDays(int value) { m_recoveryPeriodInDaysHasBeenSet = true; m_recoveryPeriodInDays = value; }
+    inline PointInTimeRecoveryDescription& WithRecoveryPeriodInDays(int value) { SetRecoveryPeriodInDays(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>Specifies the earliest point in time you can restore your table to. You can
      * restore your table to any point in time during the last 35 days. </p>
      */
@@ -82,6 +95,9 @@ namespace Model
 
     PointInTimeRecoveryStatus m_pointInTimeRecoveryStatus;
     bool m_pointInTimeRecoveryStatusHasBeenSet = false;
+
+    int m_recoveryPeriodInDays;
+    bool m_recoveryPeriodInDaysHasBeenSet = false;
 
     Aws::Utils::DateTime m_earliestRestorableDateTime;
     bool m_earliestRestorableDateTimeHasBeenSet = false;

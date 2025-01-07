@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ModifyClusterRequest::ModifyClusterRequest() : 
+    m_hsmTypeHasBeenSet(false),
     m_backupRetentionPolicyHasBeenSet(false),
     m_clusterIdHasBeenSet(false)
 {
@@ -21,6 +22,12 @@ ModifyClusterRequest::ModifyClusterRequest() :
 Aws::String ModifyClusterRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_hsmTypeHasBeenSet)
+  {
+   payload.WithString("HsmType", m_hsmType);
+
+  }
 
   if(m_backupRetentionPolicyHasBeenSet)
   {

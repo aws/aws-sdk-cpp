@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/cloudhsmv2/CloudHSMV2Request.h>
-#include <aws/cloudhsmv2/model/BackupRetentionPolicy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cloudhsmv2/model/BackupRetentionPolicy.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +37,20 @@ namespace Model
 
     ///@{
     /**
+     * <p>The desired HSM type of the cluster.</p>
+     */
+    inline const Aws::String& GetHsmType() const{ return m_hsmType; }
+    inline bool HsmTypeHasBeenSet() const { return m_hsmTypeHasBeenSet; }
+    inline void SetHsmType(const Aws::String& value) { m_hsmTypeHasBeenSet = true; m_hsmType = value; }
+    inline void SetHsmType(Aws::String&& value) { m_hsmTypeHasBeenSet = true; m_hsmType = std::move(value); }
+    inline void SetHsmType(const char* value) { m_hsmTypeHasBeenSet = true; m_hsmType.assign(value); }
+    inline ModifyClusterRequest& WithHsmType(const Aws::String& value) { SetHsmType(value); return *this;}
+    inline ModifyClusterRequest& WithHsmType(Aws::String&& value) { SetHsmType(std::move(value)); return *this;}
+    inline ModifyClusterRequest& WithHsmType(const char* value) { SetHsmType(value); return *this;}
+    ///@}
+
+    ///@{
+    /**
      * <p>A policy that defines how the service retains backups.</p>
      */
     inline const BackupRetentionPolicy& GetBackupRetentionPolicy() const{ return m_backupRetentionPolicy; }
@@ -62,6 +76,9 @@ namespace Model
     inline ModifyClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
     ///@}
   private:
+
+    Aws::String m_hsmType;
+    bool m_hsmTypeHasBeenSet = false;
 
     BackupRetentionPolicy m_backupRetentionPolicy;
     bool m_backupRetentionPolicyHasBeenSet = false;
