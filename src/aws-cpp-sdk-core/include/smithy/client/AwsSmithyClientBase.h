@@ -69,6 +69,31 @@ namespace client
     {
     private:
         const char* ALLOC_TAG{"AwsSmithyClientBase"};
+
+
+        void deepCopyClientConfiguration(const AwsSmithyClientBase& target)
+        {
+            //first create copy from target
+            m_clientConfig = Aws::MakeShared<Aws::Client::ClientConfiguration>(target.m_serviceName.c_str(), *target.m_clientConfig);
+            
+            //then reinitialize appropriate fields unconditionally
+            assert(m_clientConfig->configFactories.retryStrategyCreateFn);
+            m_clientConfig->retryStrategy = m_clientConfig->configFactories.retryStrategyCreateFn();
+            
+            assert(m_clientConfig->configFactories.executorCreateFn);
+            m_clientConfig->executor = m_clientConfig->configFactories.executorCreateFn();
+            
+            assert(m_clientConfig->configFactories.writeRateLimiterCreateFn);
+            m_clientConfig->writeRateLimiter = m_clientConfig->configFactories.writeRateLimiterCreateFn();
+
+            assert(m_clientConfig->configFactories.readRateLimiterCreateFn);
+            m_clientConfig->readRateLimiter = m_clientConfig->configFactories.readRateLimiterCreateFn();
+            
+            assert(m_clientConfig->configFactories.telemetryProviderCreateFn);
+            m_clientConfig->telemetryProvider = m_clientConfig->configFactories.telemetryProviderCreateFn();
+            
+        }
+
     public:
         using HttpRequest = Aws::Http::HttpRequest;
         using HttpResponse = Aws::Http::HttpResponse;
@@ -128,22 +153,23 @@ namespace client
         {
             if (this != &target)
             {
-                m_clientConfig = target.m_clientConfig;
+                deepCopyClientConfiguration(target);
                 m_serviceName = target.m_serviceName;
                 m_userAgent = target.m_userAgent;
                 m_httpClient = Aws::Http::CreateHttpClient(*target.m_clientConfig);
                 m_interceptors = {Aws::MakeShared<ChecksumInterceptor>(ALLOC_TAG)};
+                m_userAgent = Aws::Client::ComputeUserAgentString(m_clientConfig.get());
             }
             return *this;
         }
 
         AwsSmithyClientBase(const AwsSmithyClientBase& target): 
-            m_clientConfig{target.m_clientConfig},
             m_serviceName{target.m_serviceName},
             m_userAgent{target.m_userAgent},
-            m_httpClient{Aws::Http::CreateHttpClient(*target.m_clientConfig)}
+            m_httpClient{Aws::Http::CreateHttpClient(*target.m_clientConfig)},
+            m_interceptors{Aws::MakeShared<ChecksumInterceptor>(ALLOC_TAG)}
         {
-            m_interceptors = {Aws::MakeShared<ChecksumInterceptor>(ALLOC_TAG)};
+            deepCopyClientConfiguration(target);  
         }
 
         AwsSmithyClientBase(AwsSmithyClientBase&& target) = default;

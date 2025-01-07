@@ -56,7 +56,7 @@ namespace client
 
         AwsSmithyClientT(const AwsSmithyClientT& other):
             AwsSmithyClientBase(Aws::MakeShared<ServiceClientConfigurationT>(ServiceNameT, other.m_clientConfig), other.m_serviceName, Aws::Http::CreateHttpClient(*other.m_clientConfig), Aws::MakeShared<MarshallerT>(other.m_serviceName.c_str())),
-            m_clientConfiguration{other.m_clientConfiguration},
+            m_clientConfiguration{*static_cast<ServiceClientConfigurationT*>(AwsSmithyClientBase::m_clientConfig.get())},
             m_endpointProvider{other.m_endpointProvider},
             m_authSchemeResolver{other.m_authSchemeResolver},
             m_authSchemes{other.m_authSchemes},
@@ -70,7 +70,7 @@ namespace client
             if(this != &other)
             {
                 AwsSmithyClientBase::operator=(other);
-                m_clientConfiguration = other.m_clientConfiguration;
+                m_clientConfiguration = *static_cast<ServiceClientConfigurationT*>(AwsSmithyClientBase::m_clientConfig.get());
                 m_endpointProvider = other.m_endpointProvider;
                 m_authSchemeResolver = other.m_authSchemeResolver;
                 m_authSchemes = other.m_authSchemes;
@@ -167,7 +167,7 @@ namespace client
         }
 
     protected:
-        ServiceClientConfigurationT m_clientConfiguration;
+        ServiceClientConfigurationT& m_clientConfiguration;
         std::shared_ptr<EndpointProviderT> m_endpointProvider{};
         std::shared_ptr<ServiceAuthSchemeResolverT> m_authSchemeResolver{};
         Aws::UnorderedMap<Aws::String, AuthSchemesVariantT> m_authSchemes{};
